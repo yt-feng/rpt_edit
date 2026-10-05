@@ -20,7 +20,8 @@ from consume_legacy_mineru import chart_assets, figure_source_status, safe_unzip
 from mineru_figure_sources import ERRORS as FIGURE_ERROR_CATEGORIES, FigureSourceError, validate_figure_sources
 import inspect_legacy_mineru as inspect
 import seed_legacy_market_views_cache as legacy
-from recover_durable_mineru_sources import digest, decode, manifest_bindings, MANIFEST, exact_date, frozen_inputs
+from recover_durable_mineru_sources import (digest, decode, manifest_bindings, MANIFEST,
+                                           exact_date, frozen_inputs, safe_figure_source_ordinal)
 
 WORKFLOW = '.github/workflows/market-views-legacy-recovery.yml'
 RECEIPT = 'legacy-source-receipt.json'
@@ -294,14 +295,18 @@ def materialize(authority, manifest, input_dir, results, private, cache, destina
                 directory = stage / directory_name; directory.mkdir()
                 (directory / 'source_mineru.md').write_bytes(markdown)
                 assets = directory / 'assets'; assets.mkdir()
-                with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
-                    if asset_writer is chart_assets:
-                        images = asset_writer(raw_dir, assets, 100,
-                            original_pdf_sha256=original['content_sha256'],
-                            auth_original_pdf=original_paths[original['source_pdf']],
-                            markdown_sha256=digest(markdown))
-                    else:
-                        images = asset_writer(raw_dir, assets, 100)
+                try:
+                    with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
+                        if asset_writer is chart_assets:
+                            images = asset_writer(raw_dir, assets, 100,
+                                original_pdf_sha256=original['content_sha256'],
+                                auth_original_pdf=original_paths[original['source_pdf']],
+                                markdown_sha256=digest(markdown))
+                        else:
+                            images = asset_writer(raw_dir, assets, 100)
+                except FigureSourceError as error:
+                    error.source_ordinal = index
+                    raise
                 duplicate = first.setdefault(original['content_sha256'], directory_name)
                 duplicate = duplicate if duplicate != directory_name else None
                 status = {'source_pdf': original['source_pdf'], 'original_filename': original['original_filename'],
@@ -382,7 +387,11 @@ def main(argv=None):
             category = candidate if type(candidate) is str and candidate in FIGURE_ERROR_CATEGORIES else 'figure_proof_invalid'
         else:
             category = error.args[0] if isinstance(error, LegacySourceError) and len(error.args) == 1 and type(error.args[0]) is str and error.args[0] in SAFE else 'source_failed'
-        print(json.dumps({'success': False, 'category': category, 'provider_posts': 0, 'canonical_task_admission': False}))
+        result = {'success': False, 'category': category, 'provider_posts': 0, 'canonical_task_admission': False}
+        ordinal = safe_figure_source_ordinal(error, args.expected_reports)
+        if ordinal is not None:
+            result['source_ordinal'] = ordinal
+        print(json.dumps(result))
         return 2
 
 

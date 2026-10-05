@@ -36,6 +36,17 @@ HASH = re.compile(r'[a-f0-9]{64}')
 RUN = re.compile(r'[1-9][0-9]{0,19}')
 MAX_RECEIPT = 16 * 1024 * 1024
 
+
+def safe_figure_source_ordinal(error, expected_reports):
+    """Only the bounded report position may accompany a fixed figure category."""
+    ordinal = getattr(error, 'source_ordinal', None)
+    if (isinstance(error, FigureSourceError) and type(ordinal) is int
+            and type(expected_reports) is int and 1 <= expected_reports <= 1000
+            and 1 <= ordinal <= expected_reports):
+        return ordinal
+    return None
+
+
 # Exact upstream messages only: no arbitrary provider, URL, source or storage
 # exception text is ever copied to public diagnostics. Unknowns stay generic.
 LEDGER_ERROR_CATEGORIES = {
@@ -564,13 +575,17 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
                 directory = stage / directory_name; directory.mkdir()
                 (directory / 'source_mineru.md').write_bytes(markdown)
                 assets = directory / 'assets'; assets.mkdir()
-                with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
-                    if asset_writer is chart_assets:
-                        images = asset_writer(raw_dir, assets, 100,
-                            original_pdf_sha256=binding['content_sha256'], auth_original_pdf=path,
-                            markdown_sha256=digest(markdown))
-                    else:
-                        images = asset_writer(raw_dir, assets, 100)
+                try:
+                    with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
+                        if asset_writer is chart_assets:
+                            images = asset_writer(raw_dir, assets, 100,
+                                original_pdf_sha256=binding['content_sha256'], auth_original_pdf=path,
+                                markdown_sha256=digest(markdown))
+                        else:
+                            images = asset_writer(raw_dir, assets, 100)
+                except FigureSourceError as error:
+                    error.source_ordinal = index
+                    raise
                 value = row.get('_recovery_lineage')
                 if not isinstance(value, dict):
                     reject('result_lineage_missing')
@@ -663,7 +678,9 @@ def main():
         else:
             category = (safe_ledger_error_category(error) if isinstance(error, LedgerError)
                         else str(error) if isinstance(error, (RecoveryError, NetworkStop)) else type(error).__name__)
-        print('MinerU source recovery stopped: ' + category, file=sys.stderr)
+        ordinal = safe_figure_source_ordinal(error, args.expected_reports)
+        suffix = ' source_ordinal=' + str(ordinal) if ordinal is not None else ''
+        print('MinerU source recovery stopped: ' + category + suffix, file=sys.stderr)
         return 2
     except Exception as error:
         print('MinerU source recovery stopped: ' + type(error).__name__, file=sys.stderr)

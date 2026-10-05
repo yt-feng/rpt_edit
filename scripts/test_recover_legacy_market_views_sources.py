@@ -55,6 +55,32 @@ class SourceTests(unittest.TestCase):
         self.assertEqual(len(list(self.destination.glob('report_*/source_mineru.md'))), 6)
         self.assertFalse(list(self.destination.rglob('*.zip'))); self.assertFalse(list(self.destination.rglob('*.pdf')))
 
+    def test_figure_failure_binds_original_ordinal_independent_of_result_order(self):
+        seen = []
+        error = source.FigureSourceError('figure_metadata_invalid')
+        error.source_ordinal = 'PRIVATE source.pdf https://PRIVATE.invalid'
+        def writer(raw_dir, asset_dir, maximum, **kwargs):
+            seen.append(kwargs['auth_original_pdf'])
+            if len(seen) == 3:
+                raise error
+            return fake_asset_writer(raw_dir, asset_dir, maximum)
+        with patch.object(source, 'chart_assets', writer), self.assertRaises(source.FigureSourceError) as stopped:
+            source.materialize(self.authority, self.manifest, self.manifest.parent, list(reversed(self.results)),
+                self.private, self.fixture.cache, self.destination, self.context, asset_writer=writer)
+        self.assertIs(stopped.exception, error)
+        self.assertEqual(seen, [self.manifest.parent / row['source_pdf']
+                               for row in self.authority['original_inventory'][:3]])
+        self.assertEqual(error.source_ordinal, 3)
+        self.assertFalse(self.destination.exists())
+        output = io.StringIO()
+        with patch.object(source, 'validate_sources', side_effect=error), redirect_stdout(output):
+            self.assertEqual(source.main(['validate', '--output-dir', str(self.destination),
+                             '--date-folder', '261001', '--expected-reports', '6']), 2)
+        self.assertEqual(json.loads(output.getvalue()), {'success': False,
+            'category': 'figure_metadata_invalid', 'source_ordinal': 3,
+            'provider_posts': 0, 'canonical_task_admission': False})
+        self.assertNotIn('PRIVATE', output.getvalue())
+
     def test_complete_alias_inventory_survives_real_renderer_dedup(self):
         first, duplicate = self.fixture.names[0], self.fixture.names[1]
         original = next(row for row in self.authority['original_inventory'] if row['source_pdf'] == first)
@@ -216,6 +242,31 @@ class SourceTests(unittest.TestCase):
             result = json.loads(output.getvalue())
             self.assertEqual(result, {'success': False, 'category': expected,
                                      'provider_posts': 0, 'canonical_task_admission': False})
+
+    def test_cli_figure_ordinal_must_be_plain_integer_inside_report_limit(self):
+        class UnsafeInt(int):
+            pass
+        cases = [(1, 6, 1), (6, 6, 6), (1000, 1000, 1000),
+                 (0, 6, None), (-1, 6, None), (7, 6, None), (1001, 1000, None),
+                 (1, 0, None), (1, 1001, None)]
+        cases += [(value, 6, None) for value in
+                  (True, False, 3.0, 'PRIVATE source.pdf https://PRIVATE.invalid',
+                   {'PRIVATE': 3}, ['PRIVATE'], UnsafeInt(3), None)]
+        for ordinal, count, expected in cases:
+            error = source.FigureSourceError('figure_metadata_invalid')
+            error.source_ordinal = ordinal
+            output = io.StringIO()
+            with self.subTest(ordinal_type=type(ordinal).__name__, count=count), \
+                    patch.object(source, 'validate_sources', side_effect=error), redirect_stdout(output):
+                code = source.main(['validate', '--output-dir', str(self.destination),
+                                    '--date-folder', '261001', '--expected-reports', str(count)])
+            self.assertEqual(code, 2)
+            result = {'success': False, 'category': 'figure_metadata_invalid',
+                      'provider_posts': 0, 'canonical_task_admission': False}
+            if expected is not None:
+                result['source_ordinal'] = expected
+            self.assertEqual(json.loads(output.getvalue()), result)
+            self.assertNotIn('PRIVATE', output.getvalue())
 
     def test_real_pdf_workflow_step_accepts_exact_receipt_and_blocks_failed_readback_before_validation(self):
         root = Path(__file__).resolve().parents[1]

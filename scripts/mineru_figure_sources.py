@@ -196,16 +196,18 @@ def _block_text(block):
 
 
 def _table_html_matches(content_html, middle_html):
-    """Allow only MinerU's exact inline-equation serialization difference.
+    """Allow only MinerU's exact equation and image-path serialization.
 
     The hybrid content list emits `` $...$ `` where middle JSON retains
-    ``<eq>...</eq>``. Every formula character, table cell and other HTML byte
-    must remain identical. Unbalanced or nested equation wrappers reject.
+    ``<eq>...</eq>`` and prefixes ``images/`` on its bare hashed JPEG img src.
+    Every formula character, image basename, table cell and other HTML byte
+    must remain identical. Unbalanced or nested equation wrappers reject;
+    this does not parse, clean or otherwise normalise arbitrary HTML.
     """
     if content_html == middle_html:
         return True
     parts = middle_html.split("<eq>")
-    if len(parts) == 1 or "</eq>" in parts[0]:
+    if "</eq>" in parts[0]:
         return False
     converted = [parts[0]]
     for part in parts[1:]:
@@ -213,7 +215,12 @@ def _table_html_matches(content_html, middle_html):
         if not closing or "</eq>" in tail:
             return False
         converted.extend((" $", equation, "$ ", tail))
-    return content_html == "".join(converted)
+    equation_html = "".join(converted)
+    if content_html == equation_html:
+        return True
+    image_html = re.sub(r'<img src="([0-9a-f]{64}\.jpg)"/>',
+                        r'<img src="images/\1"/>', equation_html)
+    return content_html == image_html
 
 
 def _metadata_files(root):
