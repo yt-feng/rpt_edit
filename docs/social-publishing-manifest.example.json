@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "content_id": "2026-09-01-example-market-brief",
+  "approved": false,
+  "not_before": "2026-09-01T09:30:00+08:00",
+  "source_url": "https://example.invalid/research/example-market-brief",
+  "source": {
+    "run_id": "123456789",
+    "artifact_name": "bilingual-podcast-videos-2026-09-01-123456789"
+  },
+  "platforms": {
+    "youtube": {
+      "enabled": true,
+      "media_path": "example_market_brief/video_bilingual.mp4",
+      "media_sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+      "title": "The market variable worth watching after this week's move",
+      "description": "A source-grounded review of what changed, the transmission mechanism behind the move, and the next variable worth watching. The supporting research and source notes are available at https://example.invalid/research/example-market-brief",
+      "category_id": "27",
+      "privacy_status": "private",
+      "publish_at": "2026-09-01T10:00:00+08:00",
+      "made_for_kids": false,
+      "contains_synthetic_media": true,
+      "notify_subscribers": false,
+      "tags": [
+        "markets",
+        "research"
+      ]
+    },
+    "linkedin": {
+      "enabled": true,
+      "text": "Three market moves looked unrelated this week. The source data points to one shared transmission mechanism and a specific variable worth watching next. I have put the evidence chain and full explanation here: {{YOUTUBE_URL}} #Markets #Research"
+    },
+    "x": {
+      "enabled": true,
+      "text": "Three market moves, one shared mechanism. The useful signal is not the headline but the next variable in the chain. Evidence and full explanation: {{YOUTUBE_URL}} #Markets"
+    }
+  }
+}
