@@ -131,6 +131,28 @@ three numeric values, saves the complete ZIP, and immediately replays it from
 R2 with downloading disabled. An accepted task is resumed rather than reposted.
 Cloud acceptance is recorded separately from offline regressions below.
 
+PR 259 merged at `f08dce92` on October 5 at 18:10:33 UTC after all five cloud
+check jobs passed, including source recovery and API smoke contracts. Live
+one-page workflow `37353991034` completed successfully at 18:11:46 UTC on that
+exact main revision. All four credential slots loaded; one task was accepted,
+one PDF completed and no member failed or remained pending. The known expired
+leaf was freshly authenticated at 18:11:39 UTC, and the complete 16,941-byte ZIP
+passed extraction, marker and three-value checks. The receipt explicitly
+retains `pki_verified_now=false`; the supplier certificate remains expired.
+
+Private R2 write/readback and the immediate original-task cache replay passed.
+The initial attempt submitted exactly once; replay submitted zero times and
+downloaded zero result ZIPs. Its synthetic ZIP SHA-256 is
+`75c7b9781c678d8c179543fa4380512e54a17a4596ea79ed4b411bf64d363e74`.
+This is live acceptance of the shared primary download mechanism and R2
+continuation, distinct from a new full scheduled Daily-to-PDF publication.
+The same workflow's second job attempt then passed on a fresh runner. It hit
+the persisted cache before any result download, submitted zero parses, and
+reproduced the first attempt's PDF/ZIP/Markdown hashes and authentication
+receipt exactly. Its further original-task replay again recorded zero
+submissions and zero downloads. This confirms continuation across runner loss,
+not only an in-process replay.
+
 R2 is also checked for existing source-generation checkpoints and exact final
 PDFs through `market-views-r2-cache-inspect.yml`. A checkpoint identity and archive
 hash are not by themselves proof that it matches the current original batch;
@@ -1128,8 +1150,8 @@ still requires its own end-to-end acceptance.
 October 1 cloud backup remains incomplete. PR 253 merged at `b9a79ae0`; actual
 probe `37336781381` passed the earlier 0.1373-pixel horizontal word-box
 intersection but still rejected a second thin word crossing chart regions.
-That affected page and the complete 63-alias/62-unique batch need further cloud
-acceptance. The switch does not bypass this rejection or claim all dates are
+At that stage the affected page and complete 63-alias/62-unique batch needed
+further cloud acceptance. The switch does not bypass rejection or claim all dates are
 covered. Complete-source, readability and independent numeric gates remain
 unchanged; geometric local replay alone is not OCR acceptance.
 Private probe `37340394718` kept its original failed exit and retained two
@@ -1165,7 +1187,11 @@ A complete producer, composed-text and consumer replay using the eight cached
 cloud reads passed without running local OCR. It preserved 85 unique source
 word edits and 38 horizontal numeric positions; all 272 rotated numeric
 mentions remain unresolved rather than gaining confirmation from this repair.
-Fresh cloud whole-page and golden numeric acceptance remain separate gates.
+Fresh cloud whole-page and golden numeric probe `37351321483` subsequently
+passed on main `a0c69fe6`. This resolves the affected-page probe; it does not
+establish a complete October 1 backup PDF. Further OCR refinement is secondary
+to the primary MinerU delivery path; the retained backup target is readable
+output with unresolved values clearly marked and original source binding kept.
 
 PR 256 merged at `1da60820` at 17:19 UTC. All four required CI checks passed
 on `693b31f5`, including actual workflow-resolver regressions. Same-date reruns

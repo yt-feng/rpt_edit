@@ -164,7 +164,15 @@ MinerU task API. Strict Cloudflare probes also rejected that certificate; R2
 can retain verified result bytes but cannot supply a ZIP not yet retrieved.
 The daily path now tries strict PKI first and has the automatic, exact-identity
 recovery described above. The provider certificate itself remains expired;
-successful automatic retrieval must be established by a cloud smoke result.
+automatic retrieval passed live cloud smoke `37353991034` on main
+`f08dce92` at 18:11 UTC. It accepted and parsed one synthetic PDF, recovered the
+16,941-byte complete result ZIP through the exact-leaf path, verified its known
+text and three numeric values, then persisted and read it back from private R2.
+An immediate original-task replay used zero new submissions and zero result
+downloads. A second job attempt on a fresh runner also passed, initially hitting
+the persisted cache with zero submissions and identical source/result hashes
+and authentication facts. This verifies API parsing, authenticated result recovery and durable
+cache reuse; it does not claim a new full scheduled Daily publication.
 No local network workaround or local OCR service is required.
 
 PR 251 merged at `95110608`; PR 252 merged at `eb80a3e5` at 10:35:54 UTC after
@@ -215,7 +223,8 @@ Daily automatic-fallback run has not yet been accepted end to end.
 October 1 is still a separate open backup case. PR 253 merged at `b9a79ae0`;
 actual probe `37336781381` passed the prior 0.1373-pixel horizontal word-box
 intersection but rejected a second thin word spanning chart regions. The
-remaining affected-page and full-batch acceptance is pending. Enabling the
+affected page subsequently passed cloud golden-field probe `37351321483` on
+`a0c69fe6`; full-batch backup acceptance remains pending. Enabling the
 already-accepted backup capability does not claim success for every source
 shape or every October date. Readability, complete-source and independent
 numeric gates remain strict; new rotated values remain masked until confirmed.
