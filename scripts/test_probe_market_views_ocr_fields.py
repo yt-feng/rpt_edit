@@ -155,6 +155,160 @@ class FieldProbeTests(unittest.TestCase):
         self.assertEqual(result["model_call_count"], 0)
         self.assertEqual(result["r2_source_admission_count"], 0)
 
+    def rotated_fixture(self):
+        """Use genuine source pixels and the unchanged numeric three reads."""
+        import ocr_rotated_axis_evidence as axis
+        from test_ocr_rotated_axis_evidence import synthetic_case, numeric_engine
+        document, page, _, recovery, _ = synthetic_case()
+        self.addCleanup(document.close)
+        proof = recovery["proof"]
+        proof["runtime"]["languages"] = probe.native.OCR_LANGUAGES
+        proof["runtime"]["traineddata"] = [
+            {"language": language, "filename": language + ".traineddata", "sha256": "a" * 64}
+            for language in probe.native.OCR_LANGUAGES.split("+")]
+        reader, _ = numeric_engine(page, recovery)
+        with mock.patch.object(numeric, "_read_tesseract", side_effect=reader):
+            result = numeric.audit_numeric_evidence(page, recovery["primary_text"], primary_words=recovery["primary_words"],
+                language=probe.native.OCR_LANGUAGES, tesseract_command="fixture-engine", rotated_axis_proof=proof)
+        path = self.originals / "PRIVATE-REPORT-TITLE.pdf"
+        path.write_bytes(document.tobytes())
+        sha = hashlib.sha256(path.read_bytes()).hexdigest()
+        self.rows[0]["content_sha256"] = sha
+        self.manifest.write_text(json.dumps(self.rows))
+        self.checks = [{"id": "horizontal_scale", "source_pdf_sha256": sha, "page": 1,
+                       "expected_literal": "25,000", "expected_bbox": result["evidence"]["records"][0]["bbox"]}]
+        self.fixtures.write_text(json.dumps({"schema": 1, "checks": self.checks}))
+        provenance = {"engine": axis.ENGINE, "languages": probe.native.OCR_LANGUAGES,
+                      "traineddata": proof["runtime"]["traineddata"], "rotated_axis": proof,
+                      "numeric_evidence": result["evidence"]}
+        diagnostic = {"selection": "rotated-axis", "recognition_attempted": True, "rotated_axis_attempted": True,
+                      "source_flow_same_glyphs": True,
+                      "sorted_readability": probe.native.page_readability(proof["candidates"]["geometric-sorted"]["text"], allow_sparse_ocr=True),
+                      "source_flow_readability": probe.native.page_readability(proof["candidates"]["source-flow"]["text"], allow_sparse_ocr=True),
+                      "alternate_readability": probe.native.page_readability(proof["candidates"]["full-page-psm11"]["text"], allow_sparse_ocr=True),
+                      "rotated_axis_readability": probe.native.page_readability(recovery["primary_text"], allow_sparse_ocr=True)}
+        return page, recovery, result, provenance, diagnostic
+
+    def test_rotated_fixture_passes_private_proof_to_consumer_without_admitting_axis_numbers(self):
+        _, recovery, numeric_result, provenance, _ = self.rotated_fixture()
+        with mock.patch.object(probe.native, "_ocr_page", return_value=(numeric_result["safe_text"], provenance)), \
+                mock.patch.object(probe, "validate_numeric_evidence", wraps=probe.validate_numeric_evidence) as validator:
+            result = self.call()
+        self.assert_single_page_probe_contract(result)
+        self.assertTrue(result["success"])
+        self.assertEqual(validator.call_args.kwargs["rotated_axis_proof"], recovery["proof"])
+        axis_record = numeric_result["evidence"]["records"][2]
+        quad = axis_record["rotated_axis"]["source_quad"]
+        self.checks[0].update(expected_literal=axis_record["literal"],
+            expected_bbox=[min(p[0] for p in quad), min(p[1] for p in quad), max(p[0] for p in quad), max(p[1] for p in quad)])
+        self.fixtures.write_text(json.dumps({"schema": 1, "checks": self.checks}))
+        with mock.patch.object(probe.native, "_ocr_page", return_value=(numeric_result["safe_text"], provenance)):
+            rejected = self.call()
+        self.assertFalse(rejected["success"])
+        self.assertFalse(rejected["production_acceptance"])
+        self.assertEqual(rejected["fixtures"][0]["category"], "position_missing")
+        self.assertEqual(rejected["fixture_passed_count"], 0)
+        for private in ("Reliable", "primary_text", "rotated_axis", "ink_profile", "traineddata", "PRIVATE"):
+            self.assertNotIn(private, json.dumps(rejected))
+
+    def test_rotated_ordinal_preserves_proof_privately_and_reports_original_rejected_candidate_positions(self):
+        page, recovery, _, provenance, diagnostic = self.rotated_fixture()
+        self.make_archive_context()
+        from test_ocr_rotated_axis_evidence import numeric_engine
+        reader, calls = numeric_engine(page, recovery)
+        with mock.patch.object(probe.native, "_recognize_ocr_page",
+                return_value=(recovery["primary_text"], recovery["primary_words"], "PRIVATE-models", provenance, diagnostic)), \
+                mock.patch.object(numeric, "_read_tesseract", side_effect=reader), \
+                mock.patch.object(numeric.shutil, "which", return_value="fixture-engine"), \
+                mock.patch.object(probe, "audit_numeric_evidence", wraps=probe.audit_numeric_evidence) as auditor, \
+                mock.patch.object(probe, "validate_numeric_evidence", wraps=probe.validate_numeric_evidence) as validator:
+            result = self.call_pages()
+        self.assertTrue(result["success"])
+        self.assertFalse(result["production_acceptance"])
+        self.assertFalse(result["complete_source_handoff"])
+        self.assertEqual(result["fixture_acceptance"], "not_requested")
+        self.assertEqual(calls, [(450, 3), (600, 6), (600, 11)])
+        self.assertEqual(auditor.call_args.kwargs["rotated_axis_proof"], recovery["proof"])
+        self.assertEqual(validator.call_args.kwargs["rotated_axis_proof"], recovery["proof"])
+        record = result["pages"][0]
+        self.assertEqual(record["numeric_counts"]["verified_count"], 2)
+        self.assertEqual(record["numeric_counts"]["unresolved_count"], 6)
+        self.assertEqual(record["ocr_layout"]["selection"], "rotated-axis")
+        self.assertTrue(record["ocr_layout"]["rotated_axis_attempted"])
+        self.assertTrue(record["ocr_layout"]["rotated_axis_readability"]["accepted"])
+        self.assertEqual(set(record["ocr_layout"]["opaque_runs"]), probe.OPAQUE_CANDIDATES)
+        for candidate in record["ocr_layout"]["opaque_runs"].values():
+            self.assertEqual(candidate["runs"][0]["characters"], 85)
+            self.assertEqual(candidate["runs"][0]["bbox"], [50, 120, 190, 127])
+        raw = json.dumps(result, allow_nan=False)
+        for private in ("Reliable", "2020/01", "primary_text", "rotated_axis_proof", "ink_profile", "traineddata", "PRIVATE", "https://"):
+            self.assertNotIn(private, raw)
+        with mock.patch.object(probe.native, "_recognize_ocr_page",
+                return_value=(recovery["primary_text"], recovery["primary_words"], "PRIVATE-models", provenance, diagnostic)):
+            _, _, _, private_record = probe._raw_page_ocr(page)
+        self.assertEqual(private_record.ocr_provenance, provenance)
+        self.assertNotIn("Reliable", json.dumps(private_record))
+        self.assertNotIn("rotated_axis", json.dumps(private_record).replace("rotated_axis_attempted", "").replace("rotated_axis_readability", ""))
+
+    def test_rotated_proof_tamper_rejects_before_fixture_acceptance(self):
+        _, recovery, numeric_result, provenance, _ = self.rotated_fixture()
+        changed = json.loads(json.dumps(provenance))
+        changed["rotated_axis"]["regions"][0]["reads"][0]["affine"][0] = 1
+        changed["numeric_evidence"]["rotated_axis_sha256"] = probe.native.sha256_bytes(probe.native.canonical_bytes(changed["rotated_axis"]))
+        evidence = changed["numeric_evidence"]
+        evidence["evidence_sha256"] = probe.native.sha256_bytes(probe.native.canonical_bytes({k: v for k, v in evidence.items() if k != "evidence_sha256"}))
+        with mock.patch.object(probe.native, "_ocr_page", return_value=(numeric_result["safe_text"], changed)):
+            self.assertEqual(self.cli(), 2)
+        result = json.loads(self.summary.read_text())
+        self.assertEqual(result["category"], "rotated_axis_proof_invalid")
+        self.assertFalse(result["production_acceptance"])
+        self.assertNotIn("PRIVATE", json.dumps(result))
+
+    def test_rotated_missing_private_provenance_or_changed_model_binding_cannot_downgrade_to_normal_audit(self):
+        page, recovery, numeric_result, provenance, diagnostic = self.rotated_fixture()
+        self.make_archive_context()
+        for change in ("attribute", "proof", "engine", "models"):
+            changed = json.loads(json.dumps(provenance))
+            if change == "proof": changed.pop("rotated_axis")
+            if change == "engine": changed["engine"] = "tesseract-via-pymupdf"
+            if change == "models": changed["traineddata"][0]["sha256"] = "0" * 64
+            layout = dict(diagnostic) if change == "attribute" else probe._PrivateRecognitionDiagnostic(diagnostic, changed)
+            with self.subTest(change=change), \
+                    mock.patch.object(probe, "_raw_page_ocr", return_value=(recovery["primary_text"], recovery["primary_words"], "PRIVATE", layout)), \
+                    mock.patch.object(probe, "audit_numeric_evidence") as auditor:
+                result = self.call_pages()
+            self.assertEqual(result["pages"][0]["category"], "rotated_axis_proof_invalid")
+            self.assertFalse(result["production_acceptance"])
+            auditor.assert_not_called()
+            if change != "attribute":
+                with mock.patch.object(probe.native, "_ocr_page", return_value=(numeric_result["safe_text"], changed)):
+                    with self.assertRaisesRegex(probe.ProbeError, '^rotated_axis_proof_invalid$'):
+                        probe.probe_fields(self.originals, self.manifest, self.fixtures, self.metadata,
+                            date_folder="261004", source_run_id="12345", expected_articles=1,
+                            source_kind="original-archive", repository="owner/repo")
+        with mock.patch.object(probe.native, "_recognize_ocr_page",
+                return_value=(recovery["primary_text"], recovery["primary_words"], "PRIVATE", {}, diagnostic)):
+            with self.assertRaisesRegex(probe.ProbeError, '^rotated_axis_proof_invalid$'):
+                probe._raw_page_ocr(page)
+
+    def test_rotated_fixed_failure_categories_cross_both_probe_paths_without_raw_errors(self):
+        self.make_archive_context()
+        for category in sorted(probe.native.ROTATED_AXIS_FAILURE_CATEGORIES) + ["PRIVATE source https://private.invalid"]:
+            expected = category if category in probe.native.ROTATED_AXIS_FAILURE_CATEGORIES else "page_ocr_or_numeric_validation_failed"
+            error = probe.native.SourceValidationError("PRIVATE engine details", category=category)
+            with self.subTest(category=category), mock.patch.object(probe.native, "_recognize_ocr_page", side_effect=error):
+                result = self.call_pages()
+                self.assertEqual(result["pages"][0]["category"], expected)
+                self.assertNotIn("PRIVATE", json.dumps(result))
+            # Restore Daily metadata for the separate fixture path.
+            archive_metadata = self.metadata.read_bytes()
+            self.metadata.write_text(json.dumps({"id": 12345, "path": probe.DAILY_WORKFLOW, "status": "completed",
+                "conclusion": "failure", "head_branch": "main", "head_sha": "a" * 40}))
+            with mock.patch.object(probe.native, "_ocr_page", side_effect=error):
+                self.assertEqual(self.cli(), 2)
+            self.assertEqual(json.loads(self.summary.read_text())["category"], expected)
+            self.metadata.write_bytes(archive_metadata)
+
     def test_known_page_numeric_failure_preserves_only_fixed_category(self):
         error = probe.native.SourceValidationError("PRIVATE source and engine details", category="numeric_crop_geometry_mismatch")
         with mock.patch.object(probe.native, "_ocr_page", side_effect=error):

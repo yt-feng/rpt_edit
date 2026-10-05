@@ -232,10 +232,14 @@ TLS checks. GitHub authorization and MinerU task APIs are working.
 
 Current October 4 cloud OCR source producer `37244394621` passed all four
 originals and 109 pages (82 native, 27 OCR). Real field probes confirmed the
-October 4 `17%` and October 2 `31%` fixtures. The PDF consumer now supports a
-complete cloud acceptance build without replacing the recovered live primary
-PDF. Daily `MARKET_VIEWS_OCR_BACKUP_ENABLED` remains false until this final
-consumer acceptance passes. The detailed state and architecture are maintained
+October 4 `17%` and October 2 `31%` fixtures. A local, not-yet-deployed PDF
+consumer change adds complete cloud acceptance builds without replacing the
+recovered live primary PDF. A separate locally tested bounded rotated-date
+route retains complete source and geometry proof; its new rotated values remain
+masked until independently confirmed. Actual affected-page and complete-batch
+cloud acceptance remain pending. Daily `MARKET_VIEWS_OCR_BACKUP_ENABLED`
+remains false until those checks and the final PDF consumer acceptance pass.
+The detailed state and architecture are maintained
 in [Market Views source recovery](market-views-source-recovery.md).
 
 ## Main Workflow Groups

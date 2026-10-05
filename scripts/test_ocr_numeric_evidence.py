@@ -29,6 +29,67 @@ def sign_evidence(evidence):
 
 
 class NumericUnitTests(unittest.TestCase):
+    def rotated_numeric_fixture(self):
+        from test_ocr_rotated_axis_evidence import synthetic_case, numeric_engine
+        document, page, _, recovery, _ = synthetic_case()
+        self.addCleanup(document.close)
+        engine, calls = numeric_engine(page, recovery)
+        with mock.patch.object(numeric, "_read_tesseract", side_effect=engine):
+            result = numeric.audit_numeric_evidence(page, recovery["primary_text"], primary_words=recovery["primary_words"],
+                language="eng", tesseract_command="unused", rotated_axis_proof=recovery["proof"])
+        return document, page, recovery, result, calls
+
+    def test_rotated_axis_numbers_remain_unresolved_with_quads_horizontal_three_reads_unchanged(self):
+        _, page, recovery, result, calls = self.rotated_numeric_fixture()
+        self.assertEqual(calls, [(450, 3), (600, 6), (600, 11)])
+        records = result["evidence"]["records"]
+        horizontal = [r for r in records if "rotated_axis" not in r]
+        rotated = [r for r in records if "rotated_axis" in r]
+        self.assertEqual([r["literal"] for r in horizontal], ["25,000", "35,000"])
+        self.assertTrue(all(r["status"] == "verified" and len(r["reads"]) == 3 for r in horizontal))
+        self.assertEqual(len(rotated), 6)
+        self.assertTrue(all(r["status"] == "unresolved" and r["bbox"] is None and r["reads"] == [] for r in rotated))
+        self.assertTrue(all(len(r["rotated_axis"]["source_quad"]) == 4 for r in rotated))
+        self.assertNotIn("2020/01", result["safe_text"])
+        self.assertIn("25,000", result["safe_text"])
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "original.png"
+            page.get_pixmap(dpi=300, colorspace=fitz.csRGB, alpha=False).save(str(path))
+            numeric.validate_numeric_evidence(result["safe_text"], result["evidence"],
+                result["evidence"]["input_pixel_sha256"], image_path=path, rotated_axis_proof=recovery["proof"])
+
+    def test_rotated_numeric_proof_deleted_quads_changed_or_verified_status_are_rejected(self):
+        _, page, recovery, result, _ = self.rotated_numeric_fixture()
+        image = numeric._image(page.get_pixmap(dpi=300, colorspace=fitz.csRGB, alpha=False))
+        source_hash = result["evidence"]["input_pixel_sha256"]
+        with self.assertRaisesRegex(ValueError, 'rotated source proof mismatch'):
+            numeric.validate_numeric_evidence(result["safe_text"], result["evidence"], source_hash)
+        mutations = (
+            lambda e: e.pop("rotated_axis_sha256"),
+            lambda e: e.__setitem__("rotated_axis_sha256", "a" * 64),
+            lambda e: e["records"][2].__setitem__("status", "verified"),
+            lambda e: e["records"][2].__setitem__("bbox", [50, 100, 60, 120]),
+            lambda e: e["records"][2]["rotated_axis"]["source_quad"][0].__setitem__(0, 1),
+            lambda e: e["records"][2]["rotated_axis"].__setitem__("word_index", 1),
+        )
+        for mutate in mutations:
+            evidence = copy.deepcopy(result["evidence"]); mutate(evidence); sign_evidence(evidence)
+            with self.subTest(mutate=mutate), self.assertRaisesRegex(ValueError, 'rotated source proof mismatch'):
+                numeric.validate_numeric_evidence(result["safe_text"], evidence, source_hash, rotated_axis_proof=recovery["proof"],
+                                                  source_image=image)
+
+    def test_tesseract_budget_is_forwarded_and_invalid_timeouts_never_start_process(self):
+        header = b"level\tpage_num\tblock_num\tpar_num\tline_num\tword_num\tleft\ttop\twidth\theight\tconf\ttext\n"
+        with mock.patch.object(numeric.subprocess, "run", return_value=subprocess.CompletedProcess([], 0, header, b"")) as runner:
+            numeric._read_tesseract(Image.new("RGB", (10, 10)), language="eng", tessdata=None,
+                command="unused", psm=6, dpi=300, timeout_seconds=2.5)
+            self.assertEqual(runner.call_args.kwargs["timeout"], 2.5)
+        for timeout in (True, 0, -1, 121, float("nan"), float("inf"), "30"):
+            with self.subTest(timeout=timeout), mock.patch.object(numeric.subprocess, "run") as runner, self.assertRaises(ValueError):
+                numeric._read_tesseract(Image.new("RGB", (10, 10)), language="eng", tessdata=None,
+                    command="unused", psm=6, dpi=300, timeout_seconds=timeout)
+            runner.assert_not_called()
+
     def test_preserves_decimal_sign_percent_and_grouping(self):
         mentions = numeric.numeric_mentions("Value 4.8 -3.1% (2.7)% 12,580 $1,250.88 +7.5%")
         self.assertEqual([r["normalized"] for r in mentions], ["4.8", "-3.1%", "-2.7%", "12580", "$1250.88", "+7.5%"])

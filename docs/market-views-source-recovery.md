@@ -729,3 +729,59 @@ validated public-safe PDF as a one-day Actions artifact. Source originals,
 Markdown, logs and audit/usage JSON are not artifacts in this mode. Its default
 false preserves the publishing route. An acceptance artifact is evidence of
 PDF construction, not a new live publication.
+
+### Bounded recovery of vertically printed chart dates
+
+The retained cloud OCR backup now has a locally implemented rotated-date route
+for pages whose geometric, source-flow and full-page PSM 11 transcripts all fail
+only the unchanged long-ASCII readability rule. It identifies at most four
+interior axis bands from complete retained word positions and original 300-dpi
+RGB pixels. Each band receives fixed 90- and 270-degree reads, at most eight
+reads total, with a shared 180-second budget and a 30-second per-read limit.
+Only one unambiguous direction containing complete date words is eligible;
+prose, clipped words, partial dates and ambiguous directions reject the page.
+
+Private provenance preserves all three rejected transcripts, every original
+word, original pixels, crop and rotated hashes, affine mappings and the exact
+replacement ledger. The consumer reconstructs the selection from these inputs
+and validates every numeric binding. Unchanged horizontal values retain their
+independent full-page, two crop and punctuation checks. Newly rotated values
+remain unconfirmed and are masked; this route does not authorize their use as
+verified numbers. Both real-field and ordinal probes forward the same private
+proof without including transcripts or proof contents in public diagnostics.
+
+The current integrated offline regression ran 230 tests: 217 passed and 13
+require actual cloud OCR. Independent root checks passed the 131-test source,
+numeric and axis group (11 cloud-only skips), 52 audit/workflow tests, and the
+53-test probe group (two cloud-only skips). These are local implementation
+checks, not cloud deployment or real-source acceptance. The affected October 1
+chart page, complete backup batches and PDF consumer still require cloud
+acceptance before enabling the daily backup switch. MinerU remains the primary
+parser and GitHub Actions remains the production execution environment.
+
+### Primary PDF visual acceptance and retained figure defects
+
+The recovered October 1, 3 and 4 public-safe files have verified hashes and
+46, 47 and 18 pages respectively. October 1's complete 46-page contact sheets
+have now been inspected: all 44 images have same-page captions, with no
+out-of-page text or image/text overlap. Its source coverage is 63 original
+aliases, 62 unique contents and one preserved duplicate binding.
+
+This proves complete source binding and PDF pagination, not perfect MinerU
+figure selection. Four October 1 embedded images on PDF pages 24, 38 and 42
+are disclaimer blocks rather than analytical charts. The Cash Flow table on
+PDF page 28 has title glyphs already cut at the embedded JPEG's top edge;
+the PDF renderer preserves that JPEG and its data table. Separate original-page
+comparisons also identified cut title/legend material in the October 3 page-36
+and October 4 page-11 source crops. Raw result ZIPs remain in private R2;
+the consumed handoff excludes raw MinerU JSON, so source `page_idx`/`bbox`
+metadata must be recovered from those cached ZIPs before implementing a
+source-bound figure repair. These defects remain open and must not be called
+visual source-fidelity acceptance.
+
+Original-page visual comparisons bind October 1 PDF page 28 image 2 to source
+ordinal 27 page 2; page 24 image 1 to ordinal 8 page 3; page 38 image 1 to
+ordinal 11 page 10; and page 42 images 1 and 2 to ordinal 10 pages 16 and 13.
+These are visual original-page bindings under the verified complete manifest,
+not yet provider `img_path`/`page_idx`/`bbox` bindings. Repair must obtain the
+actual cached metadata and retain both forms of provenance.

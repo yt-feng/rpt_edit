@@ -211,7 +211,9 @@ def _align_mentions(primary: list[dict[str, Any]], positioned: list[dict[str, An
 
 
 def _read_tesseract(image: Image.Image, *, language: str, tessdata: str | None,
-                    command: str, psm: int, dpi: int) -> list[dict[str, Any]]:
+                    command: str, psm: int, dpi: int, timeout_seconds: float = 120) -> list[dict[str, Any]]:
+    if type(timeout_seconds) not in (int, float) or not math.isfinite(timeout_seconds) or not 0 < timeout_seconds <= 120:
+        raise NumericEvidenceError("Numeric verification OCR did not complete")
     if image.width * image.height > MAX_IMAGE_PIXELS:
         raise NumericEvidenceError("Numeric OCR image exceeds the pixel bound")
     with tempfile.TemporaryDirectory(prefix="numeric-ocr-") as directory:
@@ -222,7 +224,7 @@ def _read_tesseract(image: Image.Image, *, language: str, tessdata: str | None,
             args += ["--tessdata-dir", tessdata]
         args += ["tsv"]
         try:
-            result = subprocess.run(args, check=False, capture_output=True, timeout=120)
+            result = subprocess.run(args, check=False, capture_output=True, timeout=timeout_seconds)
         except (OSError, subprocess.SubprocessError) as exc:
             raise NumericEvidenceError("Numeric verification OCR did not complete") from exc
         if result.returncode or len(result.stdout) > 16_000_000:
@@ -609,7 +611,8 @@ def _supplemental_markers(fields: list[dict[str, Any]]) -> str:
 
 def audit_numeric_evidence(page: fitz.Page, primary_text: str, *, primary_words: Iterable[Any] | None = None,
                            language: str = "eng+chi_sim", tessdata: str | Path | None = None,
-                           tesseract_command: str | None = None) -> dict[str, Any]:
+                           tesseract_command: str | None = None,
+                           rotated_axis_proof: dict[str, Any] | None = None) -> dict[str, Any]:
     if not isinstance(primary_text, str) or not isinstance(language, str) or not re.fullmatch(r"[a-z_]+(?:\+[a-z_]+)*", language):
         raise NumericEvidenceError("Numeric audit text or language is invalid")
     primary = numeric_mentions(primary_text)
@@ -619,6 +622,11 @@ def audit_numeric_evidence(page: fitz.Page, primary_text: str, *, primary_words:
     source_hash = _sha(source_image.tobytes())
     size = [float(page.rect.width), float(page.rect.height)]
     records, supplemental, second = [], [], []
+    axis = None
+    if rotated_axis_proof is not None:
+        from ocr_rotated_axis_evidence import replay_rotated_axis_proof
+        axis = replay_rotated_axis_proof(rotated_axis_proof, primary_text, input_pixel_sha256=source_hash,
+                                        page_size_points=size, source_image=source_image, language=language)
     runtime = {"engine": "tesseract-cli", "language": language, "second_page_dpi": SECOND_DPI,
                "crop_dpi": CROP_DPI, "crop_psm": [6, 11], "confidence_used_for_acceptance": False}
     # Even a first transcript containing no numbers can have omitted an entire
@@ -629,10 +637,10 @@ def audit_numeric_evidence(page: fitz.Page, primary_text: str, *, primary_words:
         if not command:
             raise NumericEvidenceError("Tesseract CLI is required for numeric verification")
         directory = str(tessdata) if tessdata else None
-        if primary_words is None and primary:
+        if axis is None and primary_words is None and primary:
             words = _read_tesseract(source_image, language=language, tessdata=directory, command=command, psm=3, dpi=SOURCE_DPI)
             primary_words = [{**word, "bbox": [value * 72 / SOURCE_DPI for value in word["bbox"]]} for word in words]
-        positioned = _align_mentions(primary, _word_mentions(primary_words or []))
+        positioned = axis["positioned"] if axis is not None else _align_mentions(primary, _word_mentions(primary_words or []))
         second_image = _image(page.get_pixmap(dpi=SECOND_DPI, colorspace=fitz.csRGB, alpha=False))
         second_words = _read_tesseract(second_image, language=language, tessdata=directory,
                                       command=command, psm=3, dpi=SECOND_DPI)
@@ -643,6 +651,8 @@ def audit_numeric_evidence(page: fitz.Page, primary_text: str, *, primary_words:
             record = {"id": f"n{index + 1:04d}", **mention, "safe_literal": _replacement(index),
                       "status": "unresolved", "reason": "source_position_unresolved", "bbox": None,
                       "source_pixel_bbox": None, "pixel_punctuation": None, "reads": []}
+            if axis is not None and index in axis["rotated_mentions"]:
+                record.update(reason="rotated_source_field_unconfirmed", rotated_axis=axis["rotated_mentions"][index])
             if index in positioned:
                 box = positioned[index]["bbox"]
                 pixel_box = _pixel_box(box, source_image, size)
@@ -690,13 +700,22 @@ def audit_numeric_evidence(page: fitz.Page, primary_text: str, *, primary_words:
                 "secondary_only_count": len(supplemental), "secondary_only_fields": supplemental,
                 "observed_num_count": len(records) + len(supplemental),
                 "second_page_fields": [{"literal": row["literal"], "normalized": row["normalized"], "bbox": row["bbox"]} for row in second]}
+    if rotated_axis_proof is not None:
+        from ocr_rotated_axis_evidence import proof_sha256
+        evidence["rotated_axis_sha256"] = proof_sha256(rotated_axis_proof)
     evidence["evidence_sha256"] = _sha(_canonical(evidence))
-    validate_numeric_evidence(safe_text, evidence, source_hash)
+    if rotated_axis_proof is None:
+        validate_numeric_evidence(safe_text, evidence, source_hash)
+    else:
+        validate_numeric_evidence(safe_text, evidence, source_hash, rotated_axis_proof=rotated_axis_proof,
+                                  source_image=source_image)
     return {"safe_text": safe_text, "evidence": evidence}
 
 
 def validate_numeric_evidence(safe_text: str, evidence: dict[str, Any], image_pixel_sha256: str,
-                              *, image_path: str | Path | None = None) -> None:
+                              *, image_path: str | Path | None = None,
+                              rotated_axis_proof: dict[str, Any] | None = None,
+                              source_image: Image.Image | None = None) -> None:
     """Rebuild the admitted transcript and, when present, its actual pixel marks."""
     if not isinstance(evidence, dict) or evidence.get("schema") != SCHEMA or evidence.get("source_dpi") != SOURCE_DPI:
         raise NumericEvidenceError("Numeric evidence schema is invalid")
@@ -714,17 +733,26 @@ def validate_numeric_evidence(safe_text: str, evidence: dict[str, Any], image_pi
     mentions = numeric_mentions(primary_text)
     if not isinstance(records, list) or len(records) != len(mentions) or len(records) > MAX_FIELDS:
         raise NumericEvidenceError("Numeric evidence omitted source fields")
-    source_image = None
     if image_path is not None:
         path = Path(image_path)
         if path.is_symlink() or not path.is_file():
             raise NumericEvidenceError("Numeric evidence original image is unavailable")
         with Image.open(path) as image:
             source_image = image.convert("RGB")
-        if source_image.width * source_image.height > MAX_IMAGE_PIXELS or _sha(source_image.tobytes()) != image_pixel_sha256:
+    if source_image is not None:
+        if (not isinstance(source_image, Image.Image) or source_image.mode != "RGB"
+                or source_image.width * source_image.height > MAX_IMAGE_PIXELS or _sha(source_image.tobytes()) != image_pixel_sha256):
             raise NumericEvidenceError("Numeric evidence original pixels mismatch")
         if list(source_image.size) != evidence.get("source_image_size"):
             raise NumericEvidenceError("Numeric evidence original image size mismatch")
+    axis = None
+    if rotated_axis_proof is not None or "rotated_axis_sha256" in evidence:
+        from ocr_rotated_axis_evidence import proof_sha256, replay_rotated_axis_proof
+        if rotated_axis_proof is None or evidence.get("rotated_axis_sha256") != proof_sha256(rotated_axis_proof):
+            raise NumericEvidenceError("Numeric evidence rotated source proof mismatch")
+        axis = replay_rotated_axis_proof(rotated_axis_proof, primary_text, input_pixel_sha256=image_pixel_sha256,
+                                        page_size_points=evidence.get("page_size_points"), source_image=source_image,
+                                        language=evidence.get("runtime", {}).get("language"))
     def validate_crop(field):
         box, witness = field.get("source_pixel_bbox"), field.get("pixel_punctuation")
         point_box = field.get("bbox")
@@ -791,6 +819,18 @@ def validate_numeric_evidence(safe_text: str, evidence: dict[str, Any], image_pi
         if status not in counts or not isinstance(record.get("safe_literal"), str):
             raise NumericEvidenceError("Numeric evidence field decision is invalid")
         counts[status] += 1
+        expected_axis = axis["rotated_mentions"].get(index) if axis is not None else None
+        if expected_axis is not None:
+            if (_canonical(record.get("rotated_axis")) != _canonical(expected_axis) or record.get("reason") != "rotated_source_field_unconfirmed"
+                    or status != "unresolved" or record.get("bbox") is not None or record.get("reads") != []
+                    or record.get("source_pixel_bbox") is not None or record.get("pixel_punctuation") is not None):
+                raise NumericEvidenceError("Numeric evidence rotated source proof mismatch")
+        elif "rotated_axis" in record or record.get("reason") == "rotated_source_field_unconfirmed":
+            raise NumericEvidenceError("Numeric evidence rotated source proof mismatch")
+        if axis is not None:
+            expected_position = axis["positioned"].get(index)
+            if record.get("bbox") != (expected_position["bbox"] if expected_position else None):
+                raise NumericEvidenceError("Numeric evidence rotated source proof mismatch")
         box, witness, reads = record.get("source_pixel_bbox"), record.get("pixel_punctuation"), record.get("reads")
         if record.get("bbox") is not None:
             validate_crop(record)
