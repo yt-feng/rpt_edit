@@ -1262,3 +1262,39 @@ The recovery job reserves its final fallback budget: optional OCR installation i
 limited to 5 minutes, strict extraction/validation to 20 minutes and receipt audit
 to 10 minutes, within the 120-minute job. Original-page preparation has its own
 15-minute limit; strict-attempt timeout is eligible for the subsequent page path.
+
+
+#### Replay the real Daily graph without new MinerU submissions
+
+`dropbox-latest-pdf-to-xhs-sharded.yml` also supports the optional manual-only
+`replay_source_run_id` input. Leave it empty for the normal daily schedule. A
+replay verifies the completed main producer and successful source-artifact upload,
+downloads that frozen selection, checks every PDF SHA against its unchanged
+manifest and requires every original Dropbox path to belong to the requested
+root/date. The current run uploads its own verified source artifact and a small
+receipt linking original/current run and code identities.
+
+Replay requires `force_reprocess=false`, `wechat_draft_upload=false`,
+`translated_report_count=0`, `max_total_reports=0` and an explicit
+`dropbox_date_folder`. It skips source download/classification and sets
+`MINERU_FORBID_NEW_SUBMISSIONS=1` for the real generation wrapper. The ledger
+rejects missing, changed or never-accepted bindings before any task claim or POST;
+definitively rejected authentication claims also cannot rotate credentials and
+submit. These conditions fail the replay and do not authorize a backup. Trusted
+accepted tasks are queried normally; their actual provider failure may enter the
+usual source-outcome, bounded recovery, downstream Market Views and final
+publication gate. Completed tasks and original result caches are preserved.
+
+For the retained four-report October 4 batch, dispatch the real Daily workflow on
+`main` with `replay_source_run_id=37232504334`, `dropbox_date_folder=261004`, the four
+required safe options above, and the original extraction settings
+`mineru_model=vlm`, `language=en`, `ocr=true`, `reports_per_shard=5`, `batch_size=5`,
+`shard_count=40`, `report_selection_mode=all`. Keep `wechat_freepublish=false` and
+`commit_results=false`. Historical evidence shows one accepted original batch
+with three completed reports and one failed report. Re-observing this state
+requires no new MinerU POST and skips article synthesis; the downstream child
+can verify and reuse the existing complete October 4 publication. If the provider
+now reports every original completed, normal report synthesis may run on a new
+code-bound generation checkpoint. Zero new MinerU submissions does not imply
+zero model calls in that different branch. The final Daily and child run results,
+not an isolated renderer test, determine end-to-end acceptance.

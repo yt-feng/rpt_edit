@@ -1132,7 +1132,10 @@ def main() -> int:
     try:
         mineru_tokens = mineru_tokens_from_env()
         if not mineru_tokens:
-            record_provider_outcome(args, "mineru_unavailable")
+            # Replay must first prove an existing accepted binding. Missing
+            # credentials cannot become a synthetic provider failure receipt.
+            if os.environ.get("MINERU_FORBID_NEW_SUBMISSIONS") != "1":
+                record_provider_outcome(args, "mineru_unavailable")
             raise RuntimeError("Missing MinerU token. Please add repo secret MINER_U.")
         input_dir = Path(args.input_dir).resolve()
         output_dir = Path(args.output_dir).resolve()

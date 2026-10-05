@@ -96,6 +96,31 @@ def require_preview_producer(producer, jobs_page, run_id, repository):
     return producer["head_sha"]
 
 
+def verify_frozen_daily(run, jobs_page, run_id, repository):
+    if (run.get('id') != int(run_id) or run.get('head_branch') != 'main'
+            or run.get('path') != '.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml'
+            or run.get('event') not in {'schedule', 'workflow_dispatch'}
+            or run.get('status') != 'completed'
+            or run.get('repository', {}).get('full_name') != repository
+            or run.get('head_repository', {}).get('full_name') != repository
+            or not re.fullmatch('[a-f0-9]{40}', run.get('head_sha', ''))):
+        raise ValueError('Frozen original producer is not an exact completed main Daily')
+    jobs = jobs_page.get('jobs', [])
+    if jobs_page.get('total_count') != len(jobs) or len(jobs) > 100:
+        raise ValueError('Frozen producer job inventory is incomplete')
+    matches = [job for job in jobs if job.get('name') == 'select-macro-reports']
+    if len(matches) != 1:
+        raise ValueError('Frozen source selection is ambiguous')
+    job = matches[0]
+    if (job.get('run_id') != int(run_id) or job.get('head_sha') != run['head_sha']
+            or job.get('status') != 'completed' or job.get('conclusion') != 'success'):
+        raise ValueError('Frozen source selection did not succeed')
+    matches = [step for step in job.get('steps', []) if step.get('name') == 'Upload selected macro PDFs artifact']
+    if len(matches) != 1 or matches[0].get('conclusion') != 'success':
+        raise ValueError('Frozen originals were not uploaded completely')
+    return run['head_sha']
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--jobs", required=True)

@@ -267,7 +267,7 @@ class Provider:
 
 
 class Ledger:
-    def __init__(self, store, provider, scope, endpoint, options, tokens, *, clock=time.monotonic, sleep=time.sleep):
+    def __init__(self, store, provider, scope, endpoint, options, tokens, *, clock=time.monotonic, sleep=time.sleep, forbid_new_submissions=False):
         validate_scope(scope)
         if endpoint != 'https://mineru.net':
             raise LedgerError('Unexpected extraction provider endpoint')
@@ -280,6 +280,9 @@ class Ledger:
         if not self.tokens:
             raise LedgerError('No MinerU token identities available')
         self.clock, self.sleep = clock, sleep
+        if type(forbid_new_submissions) is not bool:
+            raise LedgerError('Invalid no-new-submission policy')
+        self.forbid_new_submissions = forbid_new_submissions
         self.submission_posts = 0
 
     def bind(self, path, source):
@@ -343,6 +346,8 @@ class Ledger:
         return remaining
 
     def _create(self, items, paths, deadline):
+        if self.forbid_new_submissions:
+            raise LedgerError('Replay requires existing accepted source bindings; new submissions forbidden')
         key = 'batches/' + uuid.uuid4().hex
         row = {'schema': 1, 'key': key, 'scope': self.scope, 'endpoint': self.endpoint,
                'options': self.options, 'token_identity': next(iter(self.tokens)), 'files': items,
@@ -356,6 +361,8 @@ class Ledger:
 
     def _submit_claimed(self, row, version, paths, deadline):
         """Try another key only after durable, definitive pre-acceptance rejection."""
+        if self.forbid_new_submissions:
+            raise LedgerError('Replay cannot submit an unaccepted task; new submissions forbidden')
         items, key = row['files'], row['key']
         if row.get('state') not in {'claiming', 'auth_rejected'} or row.get('batch_id') is not None:
             raise LedgerError('Only unaccepted or definitively auth-rejected claims may be submitted')
@@ -494,6 +501,8 @@ class Ledger:
                 rejected_batches.append((batch, version))
             elif batch.get('state') not in {'accepted', 'uploaded', 'terminal'} or not batch.get('batch_id'):
                 raise LedgerError('Ambiguous existing task blocks new submissions')
+        if self.forbid_new_submissions and (fresh or rejected_batches):
+            raise LedgerError('Replay requires existing accepted source bindings; new submissions forbidden')
         deadline = self.clock() + timeout
         for batch, version in rejected_batches:
             self._submit_claimed(batch, version, paths, deadline)
@@ -534,7 +543,11 @@ def from_environment(output_dir, http, endpoint, options, tokens):
         store = FileStore(Path(output_dir) / '.mineru-task-ledger' / scope)
     else:
         raise LedgerError('Unknown MinerU ledger backend')
-    return Ledger(store, Provider(http, endpoint), scope, endpoint, options, tokens)
+    policy = os.environ.get('MINERU_FORBID_NEW_SUBMISSIONS', '0')
+    if policy not in {'0', '1'}:
+        raise LedgerError('Invalid no-new-submission policy')
+    return Ledger(store, Provider(http, endpoint), scope, endpoint, options, tokens,
+                  forbid_new_submissions=policy == '1')
 
 
 def input_sources(pdfs, input_dir, source_map=None):
