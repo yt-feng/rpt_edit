@@ -20,6 +20,7 @@ on:
       - "scripts/*package_publish_ready_outputs*"
       - ".github/workflows/market-views-latex-pdf.yml"
       - ".github/workflows/market-views-native-recovery.yml"
+      - ".github/workflows/market-views-native-reaudit.yml"
       - ".github/workflows/market-views-ocr-field-probe.yml"
       - "scripts/build_portal_translated_reports.py"
       - "scripts/select_macro_trend_pdfs.py"
@@ -65,6 +66,7 @@ on:
       - "scripts/*package_publish_ready_outputs*"
       - ".github/workflows/market-views-latex-pdf.yml"
       - ".github/workflows/market-views-native-recovery.yml"
+      - ".github/workflows/market-views-native-reaudit.yml"
       - ".github/workflows/market-views-ocr-field-probe.yml"
       - "scripts/build_portal_translated_reports.py"
       - "scripts/select_macro_trend_pdfs.py"
@@ -143,6 +145,7 @@ jobs:
           python scripts/test_ocr_numeric_evidence.py
           python scripts/test_ocr_rotated_axis_evidence.py
           python scripts/test_audit_market_views_ocr_receipt.py
+          python scripts/test_reaudit_market_views_native_sources.py
           python scripts/test_probe_market_views_ocr_fields.py
           python scripts/test_post_blog_refresh.py
           python scripts/test_check_completed_shard.py

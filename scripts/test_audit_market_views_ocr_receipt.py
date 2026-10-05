@@ -414,6 +414,48 @@ class FullSourceAuditTests(unittest.TestCase):
         self.assertEqual(result["page_methods"], {"native": 1, "ocr": 0, "blank": 0})
         self.assertNotIn("PRIVATE-TITLE", json.dumps(result))
 
+    def test_receipt_audit_does_not_use_fixture_json_size_limit_or_extra_json_parse(self):
+        receipt_path = self.sources / audit.RECEIPT_NAME
+        expected = hashlib.sha256(receipt_path.read_bytes()).hexdigest()
+        # Real native validation still runs. The removed receipt-only size gate
+        # and discarded full JSON copy must never be used by this path.
+        with mock.patch.object(audit, "_read_json", side_effect=AssertionError("receipt parsed twice")):
+            result = audit.audit_sources(self.sources, 1)
+        self.assertEqual(result["receipt_sha256"], expected)
+
+    def test_streamed_receipt_identity_hashes_a_real_file_above_legacy_limit(self):
+        path = self.root / "large-receipt.json"
+        block = b"x" * (1024 * 1024)
+        with path.open("wb") as stream:
+            for _ in range(245):
+                stream.write(block)
+        self.assertGreater(path.stat().st_size, 256_000_000)
+        # Hashing a genuinely over-limit regular file does not parse or retain
+        # source bytes. Full schema validation is independently exercised above.
+        digest = hashlib.sha256()
+        for _ in range(245):
+            digest.update(block)
+        identity = audit.receipt_identity(path)
+        self.assertEqual(identity, {"sha256": digest.hexdigest(), "bytes": 245 * len(block)})
+
+    def test_receipt_changed_during_full_validation_is_rejected(self):
+        original = audit.validate_sources
+        def validate_then_mutate(*args, **kwargs):
+            receipt = original(*args, **kwargs)
+            with (self.sources / audit.RECEIPT_NAME).open("ab") as output:
+                output.write(b"\n")
+            return receipt
+        with mock.patch.object(audit, "validate_sources", side_effect=validate_then_mutate):
+            with self.assertRaisesRegex(audit.AuditError, "receipt_changed_during_audit"):
+                audit.audit_sources(self.sources, 1)
+
+    def test_receipt_symlink_and_directory_rejected(self):
+        link = self.root / "receipt-link"
+        link.symlink_to(self.sources / audit.RECEIPT_NAME)
+        for path in (link, self.sources):
+            with self.subTest(path=path.name), self.assertRaisesRegex(audit.AuditError, "invalid_receipt_file"):
+                audit.receipt_identity(path)
+
     def test_tampered_source_file_is_rejected_before_summary(self):
         raw = self.sources / next(self.sources.glob("report_*" )).name / "source_native_pdf.md"
         raw.write_text(raw.read_text() + "\nTampering")

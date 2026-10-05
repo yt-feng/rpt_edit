@@ -226,12 +226,17 @@ results, with private R2 PDF/index readbacks and dated catalogue entries
 verified by live inspection `37243817037`. October 1 preserved all 63 source
 aliases (62 unique contents); October 3 covered 54 originals and October 4
 covered four. October 2 intake accepted all 50 originals: 42 DONE result ZIPs
-are cached; the remaining eight guarded retries completed parsing and await
-result retrieval. The provider's shared result certificate still fails strict
+are cached; the remaining eight completed results were retrieved into R2 by
+`37283194807` after PR 249. Its complete 50-file binding, eight distinct cached
+results and zero parsing POSTs were verified. The historical failed-child
+counter includes an intermediate retry and does not represent missing output.
+Complete October 2 recovery `37284033767` is rebuilding the source/PDF path.
+The provider's shared result certificate still fails strict
 TLS checks. Previously verified GitHub authorization and successful MinerU task
 API calls do not validate that separate result-download connection. A later
 GitHub TLS handshake timeout stopped remote Git/GitHub operations under the
-user's network-failure instruction; no newer run status is inferred.
+user's network-failure instruction. The user's continuation request on October
+5 authorized the unchanged-connection retry, which succeeded.
 
 Independent normal Cloudflare OAuth/R2 access on October 5 recovered seven
 cached result ZIPs for private figure QA, with matching immutable cache
@@ -241,25 +246,32 @@ it cannot supply ZIPs that have not yet crossed the result-download step.
 The temporary probe Worker was deleted and verified absent. Figure repair
 preserves actual provider boxes and authenticated original page pixels;
 rewritten PDFs inside result ZIPs do not replace the original-file binding.
-The local figure repair adds a private, status-bound metadata/pixel sidecar,
+The figure repair adds a private, status-bound metadata/pixel sidecar,
 spatially complete original-page crops and exact consumer replay. Older
 metadata-free caches remain compatible. Source proof is preserved during
 finalization and excluded from public packages; selected chart assets remain
 available to the PDF. Seven actual cached results and a three-figure production
-renderer layout check passed locally. This is not yet a deployed complete
-Market Views rebuild; the cloud Actions path remains the execution target.
+renderer layout check passed locally. PR 251 passed cloud CI and merged at
+`95110608`; complete source/PDF rebuilds are now running in Actions. Code
+deployment alone does not establish the newly rebuilt PDF's live acceptance.
 
 Current October 4 cloud OCR source producer `37244394621` passed all four
 originals and 109 pages (82 native, 27 OCR). Real field probes confirmed the
-October 4 `17%` and October 2 `31%` fixtures. A local, not-yet-deployed PDF
+October 4 `17%` and October 2 `31%` fixtures. The deployed PDF
 consumer change adds complete cloud acceptance builds without replacing the
-recovered live primary PDF. A separate locally tested bounded rotated-date
+recovered live primary PDF. The bounded rotated-date
 route retains complete source and geometry proof; its new rotated values remain
 masked until independently confirmed. Original-page QA found chart baselines
-and horizontal scale zero mixed into proposed date bands; a local follow-up
+and horizontal scale zero mixed into proposed date bands; the repair
 uses bounded original-pixel white gaps and retains complete word and numeric
 checks. Geometry-only local replays are not OCR acceptance. A new real
-Tesseract regression is mandatory in Linux CI and remains unexecuted there.
+Tesseract regression passed in Linux CI `37283762826`, along with the other
+previously cloud-only OCR cases. October 3 complete OCR source run
+`37245279463` passed 54 reports and 1,029 pages. October 2 run `37245268724`
+completed 50 reports and 663 pages plus private handoff, but its later audit
+failed. A source-preserving re-audit path is being added to reuse that handoff
+without repeating recognition; it must prove the original receipt identity
+and pass the unchanged complete validation before consumption.
 Actual affected-page and complete-batch cloud acceptance remain pending.
 Daily `MARKET_VIEWS_OCR_BACKUP_ENABLED`
 remains false until those checks and the final PDF consumer acceptance pass.

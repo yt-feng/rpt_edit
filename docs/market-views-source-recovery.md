@@ -881,7 +881,7 @@ Worker's execution location was not observed. This current certificate-validity
 failure is separate from successful R2 cache reads and from GitHub authorization.
 It does not re-identify the certificate leaf or prove a new expiry timestamp.
 
-### Source-bound figure repair awaiting cloud deployment
+### Source-bound figure repair and cloud deployment
 
 `scripts/mineru_figure_sources.py` validates the actual content-list/middle-file
 pair and each unique provider image reference. Metadata absent from both
@@ -933,12 +933,41 @@ packaged as an extra original-page attachment.
 
 The integration regression includes source contracts, old-cache compatibility,
 numeric/axis proof, private transfer, packaging and actual ReportLab rendering.
-The latest run has 410 passing tests and 14 skipped actual-cloud-OCR tests;
+The offline run has 410 passing tests and 14 skipped actual-cloud-OCR tests;
 no local OCR was executed. The new module and consumer checks are included in
 the Actions regression workflow. Isolated subprocess checks also preserve
 stdlib-only authorization/source checks and keep TLS/cache entry points usable
 before image dependencies are installed; image decoding and PDF rendering
-load their dependencies only when invoked. These changes still require cloud CI,
-complete source/PDF acceptance and deployment after GitHub remote access is
-authorized again. The primary cloud architecture is unchanged, and the OCR
-backup remains disabled pending its independent cloud acceptance.
+load their dependencies only when invoked. Cloud CI `37283762826` subsequently
+passed the actual OCR cases. PR 251 merged at `95110608` after the real-engine
+test fixture was corrected to include its intended chart baseline. No production
+OCR admission rule was relaxed. Complete source/PDF rebuilds are running;
+the primary cloud architecture is unchanged and the OCR backup remains disabled
+pending its independent real-source/PDF acceptance.
+
+### October 5 resumed retrieval and source-preserving OCR re-audit
+
+The unchanged GitHub connection succeeded after the user's continuation request.
+PR 249 passed its current-head checks and merged at `60565115`. Cache run
+`37283194807` verified the original 50-file manifest and retrieved eight distinct
+completed child ZIPs with zero parsing POSTs. The original 42 completed results
+plus these eight cover the full batch. `authorized_child_failed=1` counts an
+earlier intermediate failure in the accepted chain, not an unresolved source.
+Complete primary recovery `37284033767` is using those results.
+
+October 3 cloud OCR `37245279463` completed all 54 reports and 1,029 pages.
+October 2 `37245268724` completed extraction/validation for 50 reports and 663
+pages (341 OCR), then uploaded the 777-file private handoff before its audit
+failed. The auditor had a separate 256,000,000-byte receipt limit not shared
+by the complete source validator. A cloud re-audit must measure the actual
+receipt before this is identified as the incident's confirmed cause.
+
+The re-audit repair hashes a stable regular receipt in bounded chunks before
+and after the unchanged full validator. A separate main-only workflow reuses
+an existing handoff only after confirming its original extraction and archive
+steps passed and its audit failed. It preserves the old producer and receipt;
+a small immutable receipt binds the new successful audit run/attempt/SHA to the
+old source run/SHA/date/count and receipt hash/bytes. Explicit PDF consumption
+requires that binding, then still performs complete validation and numeric
+audit. Ordinary source-readiness gates remain unchanged. No OCR, parsing or
+model request is performed by re-audit.

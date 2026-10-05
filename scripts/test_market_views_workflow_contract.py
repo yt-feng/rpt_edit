@@ -220,7 +220,7 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         self.assertIn("'--producer-run-id', source_run", block)
         self.assertIn("'--execution-sha', producer['head_sha']", block)
         self.assertIn('/jobs?filter=latest&per_page=100', block)
-        self.assertIn('require_source_readiness(producer, json.loads(jobs_result.stdout))', block)
+        self.assertIn('require_source_readiness(producer, source_jobs)', block)
         self.assertIn("'scripts/audit_market_views_ocr_receipt.py'", block)
 
     def test_cloud_ocr_is_staged_and_source_only_review_keeps_the_private_handoff(self):

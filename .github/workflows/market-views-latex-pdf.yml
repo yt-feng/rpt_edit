@@ -27,6 +27,10 @@ on:
         description: "Optional numeric value and page-position acceptance fixtures for native PDF sources"
         required: false
         default: ""
+      native_reaudit_run_id:
+        description: "Optional successful main re-audit attesting the exact retained native source receipt"
+        required: false
+        default: ""
       source_artifact_run_id:
         description: "Historical Actions run containing final-dropbox-macro-shard artifacts"
         required: false
@@ -213,6 +217,11 @@ jobs:
           EXPECTED_BANK_DATE: ${{ inputs.expected_bank_date }}
           EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
           NATIVE_QUALITY_FIXTURE_JSON: ${{ inputs.native_quality_fixture_json || '' }}
+          NATIVE_REAUDIT_RUN_ID: ${{ inputs.native_reaudit_run_id || '' }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
         run: |
           python - <<'PY'
           import json
@@ -242,10 +251,20 @@ jobs:
           jobs_result = subprocess.run(['gh', 'api',
               f"repos/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{source_run}/jobs?filter=latest&per_page=100"],
               check=True, capture_output=True, text=True, timeout=30)
-          require_source_readiness(producer, json.loads(jobs_result.stdout))
           root = Path('xhs_notes/dropbox') / date / 'shard_0'
-          receipt = json.loads((root / 'source_receipt.json').read_text())
-          context = receipt.get('source_context')
+          source_jobs = json.loads(jobs_result.stdout)
+          reaudit_run = os.environ.get('NATIVE_REAUDIT_RUN_ID', '')
+          if reaudit_run:
+              from reaudit_market_views_native_sources import consume_attestation
+              from private_workflow_handoff import build_r2_client, r2_bucket
+              context = consume_attestation(root, producer, source_jobs, reaudit_run,
+                  os.environ['GITHUB_REPOSITORY'], date, int(expected),
+                  client=build_r2_client(), bucket=r2_bucket())
+          else:
+              require_source_readiness(producer, source_jobs)
+              receipt = json.loads((root / 'source_receipt.json').read_text())
+              context = receipt.get('source_context')
+              del receipt
           if not isinstance(context, dict):
               raise SystemExit('Native source receipt lacks its frozen cloud producer context.')
           original = context.get('original_source_run_id')

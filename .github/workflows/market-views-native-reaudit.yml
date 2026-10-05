@@ -1,0 +1,78 @@
+name: Re-audit retained Market Views native sources
+run-name: Re-audit retained Market Views ${{ inputs.date_folder }} from ${{ inputs.source_run_id }}
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Failed main native recovery with completed extraction and private source archive
+        required: true
+        type: string
+      date_folder:
+        description: Exact original Dropbox date, YYMMDD
+        required: true
+        type: string
+      expected_articles:
+        description: Exact complete original PDF count
+        required: true
+        type: string
+      original_source_run_id:
+        description: Original Daily ID bound by the retained receipt; empty for a fresh Dropbox batch
+        required: false
+        default: ''
+        type: string
+      quality_fixture_json:
+        description: Optional numeric fixture JSON for the retained evidence; no new OCR is performed
+        required: false
+        default: ''
+        type: string
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: market-views-native-reaudit-${{ inputs.source_run_id }}-${{ inputs.date_folder }}
+  cancel-in-progress: false
+jobs:
+  reaudit:
+    if: ${{ github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout: scripts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install retained-evidence validation dependencies
+        run: python -m pip install PyMuPDF Pillow requests "boto3>=1.37.32,<2"
+      - name: Re-audit retained native sources without extraction
+        env:
+          GH_TOKEN: ${{ github.token }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          ORIGINAL_SOURCE_RUN_ID: ${{ inputs.original_source_run_id }}
+          QUALITY_FIXTURE_JSON: ${{ inputs.quality_fixture_json }}
+          PYTHONUNBUFFERED: '1'
+        run: |
+          FIXTURE_ARGS=()
+          if [ -n "$QUALITY_FIXTURE_JSON" ]; then
+            python - <<'PY'
+          import os
+          from pathlib import Path
+          raw = os.environ['QUALITY_FIXTURE_JSON']
+          if len(raw.encode('utf-8')) > 65536:
+              raise SystemExit('Numeric fixture input exceeds its size bound.')
+          Path(os.environ['RUNNER_TEMP'], 'native-reaudit-fixtures.json').write_text(raw, encoding='utf-8')
+          PY
+            FIXTURE_ARGS+=(--fixtures "$RUNNER_TEMP/native-reaudit-fixtures.json")
+          fi
+          python scripts/reaudit_market_views_native_sources.py \
+            --source-run-id "$SOURCE_RUN_ID" --date-folder "$DATE_FOLDER" \
+            --expected-reports "$EXPECTED_ARTICLES" --original-source-run-id "$ORIGINAL_SOURCE_RUN_ID" \
+            --source-dir "$RUNNER_TEMP/retained-native-sources" "${FIXTURE_ARGS[@]}"
