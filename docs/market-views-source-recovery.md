@@ -976,7 +976,7 @@ Current independent backup acceptance and enablement are recorded below.
 ### October 5 current delivery and cloud backup acceptance
 
 The primary architecture remains Dropbox → GitHub Actions → MinerU API →
-private R2 → Market Views PDF → KCDesk. Cloud OCR is a retained automatic
+private R2 → Market Views PDF → member portal. Cloud OCR is a retained automatic
 backup; production execution does not depend on local QA or a local computer.
 The provider's strict result-CDN probe `37336151221` still reported an expired
 certificate at 15:52 UTC, independently of successful task API authentication
