@@ -546,12 +546,13 @@ def _select_regions(candidates, page_size, image_size, source_image=None):
             raise original
 
 
-def _date_component_coverage(gray, words, *, maximum_edge_pixels=1, allow_untranscribed=False):
+def _date_component_coverage(gray, words, *, maximum_edge_pixels=1, allow_untranscribed=False,
+                             source_component=None):
     """Account for light edges without expanding any OCR box.
 
-    Each connected component has one original date-word owner. Every core
-    pixel stays in that unmodified box. Each outside step must become darker
-    and strictly closer to that box, reaching it within the bounded depth.
+    Each transcribed component has one original date-word owner. Every core
+    pixel stays in that unmodified box. Outside steps get closer to that box
+    within the bounded depth; a quantized plateau still needs a darker step.
     Detached very light micro-components, when enabled, have their own
     untranscribed pixel ledger and never count as date-word coverage.
     """
@@ -577,8 +578,26 @@ def _date_component_coverage(gray, words, *, maximum_edge_pixels=1, allow_untran
                    and deeper_path(ny * width + nx, owner, remaining - 1)
                    for ny in range(max(0, y - 1), min(height, y + 2))
                    for nx in range(max(0, x - 1), min(width, x + 2)))
+    def plateau_path(offset, owner, remaining, darkened=False):
+        x, y, value = offset % width, offset // width, pixels[offset]
+        box, d = words[owner]["bbox"], distance(words[owner]["bbox"], x, y)
+        if d == 0 and darkened:
+            return [offset]
+        if remaining == 0:
+            return None
+        for ny in range(max(0, y - 1), min(height, y + 2)):
+            for nx in range(max(0, x - 1), min(width, x + 2)):
+                neighbor, nd = ny * width + nx, distance(box, nx, ny)
+                if neighbor == offset or pixels[neighbor] > value or (nd >= d if d else nd != 0):
+                    continue
+                path = plateau_path(neighbor, owner, remaining - 1, darkened or pixels[neighbor] < value)
+                if path:
+                    return [offset] + path
+        return None
     components, totals, untranscribed = [], [0] * len(words), []
-    untranscribed_limit = min(16, sum(gray.histogram()[:245]) // 2000)
+    version3 = source_component is not None
+    absolute_limit, ratio_denominator = (32, 1000) if version3 else (16, 2000)
+    untranscribed_limit = min(absolute_limit, sum(gray.histogram()[:245]) // ratio_denominator)
     untranscribed_count = 0
     for start, value in enumerate(pixels):
         if value >= 245 or visited[start]:
@@ -615,27 +634,36 @@ def _date_component_coverage(gray, words, *, maximum_edge_pixels=1, allow_untran
         if allow_untranscribed and not owners and not core_owners:
             if count > 2 or any(pixels[offset] < 240 for offset in fringe):
                 _fail("uncovered_source_ink")
-            nearest = []
+            nearest, positions = [], []
             for offset in fringe:
                 distances = [distance(word["bbox"], offset % width, offset // width) for word in words]
                 minimum = min(distances)
-                if minimum > 4 or distances.count(minimum) != 1:
+                if not version3 and (minimum > 4 or distances.count(minimum) != 1):
                     _fail("uncovered_source_ink")
                 nearest.append(distances.index(minimum))
-            if len(set(nearest)) != 1:
+                positions.append({"pixel": [offset % width, offset // width], "distance": minimum,
+                                  "word_indices": [i for i, d in enumerate(distances) if d == minimum]})
+            if not version3 and len(set(nearest)) != 1:
                 _fail("uncovered_source_ink")
             untranscribed_count += count
             if untranscribed_count > untranscribed_limit:
                 _fail("uncovered_source_ink")
-            untranscribed.append({"kind": "untranscribed_light_micro_component", "bbox": bounds,
-                "pixels": count, "nearest_word_index": nearest[0],
+            record = {"kind": "untranscribed_light_micro_component", "bbox": bounds,
+                "pixels": count,
                 "source_pixels": [[offset % width, offset // width, pixels[offset]] for offset in sorted(fringe)],
-                "pixel_support_sha256": digest.hexdigest()})
+                "pixel_support_sha256": digest.hexdigest()}
+            if version3:
+                record.update(position_diagnostics=sorted(positions, key=lambda row: row["pixel"][::-1]),
+                              source_component=source_component(record["source_pixels"]))
+            else:
+                record["nearest_word_index"] = nearest[0]
+            untranscribed.append(record)
             continue
         if len(owners) != 1 or (fringe and core_owners != owners):
             _fail("uncovered_source_ink")
         owner = next(iter(owners))
         box = words[owner]["bbox"]
+        edge_paths = []
         for offset in fringe:
             x, y, value = offset % width, offset // width, pixels[offset]
             if distance(box, x, y) > maximum_edge_pixels:
@@ -645,23 +673,66 @@ def _date_component_coverage(gray, words, *, maximum_edge_pixels=1, allow_untran
                     adjacent_owner = owner_at(nx, ny)
                     if adjacent_owner not in (-1, owner):
                         _fail("uncovered_source_ink")
-            if not deeper_path(offset, owner, maximum_edge_pixels):
+            if version3:
+                path = plateau_path(offset, owner, maximum_edge_pixels)
+                if not path:
+                    _fail("uncovered_source_ink")
+                edge_paths.append([[n % width, n // width, pixels[n]] for n in path])
+            elif not deeper_path(offset, owner, maximum_edge_pixels):
                 _fail("uncovered_source_ink")
         totals[owner] += count
         components.append({"word_index": owner, "bbox": bounds, "pixels": count, "core_pixels": core_count,
                            "fringe_pixels": len(fringe), "pixel_support_sha256": digest.hexdigest()})
+        if version3:
+            components[-1]["edge_paths"] = edge_paths
         if len(components) > MAX_WORDS:
             _fail("uncovered_source_ink")
     support = {"core_threshold": 96, "maximum_edge_pixels": maximum_edge_pixels, "components": components}
     if allow_untranscribed:
         support.update(untranscribed_components=untranscribed, untranscribed_policy={"minimum_gray": 240,
-            "maximum_component_pixels": 2, "maximum_distance": 4, "absolute_pixel_limit": 16,
-            "ink_ratio_denominator": 2000, "pixel_limit": untranscribed_limit})
+            "maximum_component_pixels": 2, "absolute_pixel_limit": absolute_limit,
+            "ink_ratio_denominator": ratio_denominator, "pixel_limit": untranscribed_limit})
+        if version3:
+            support["edge_policy"] = "two-step-nonincreasing-with-strict-darkening"
+            support["untranscribed_policy"]["source_component_policy"] = "complete-source-eight-neighbor-halo"
+        else:
+            support["untranscribed_policy"]["maximum_distance"] = 4
     return support, totals
 
 
-def _date_pixel_coverage(crop, read):
-    """Require all source ink in a new fragment band to belong to full dates.
+def _source_micro_component_validator(source_image, source_pixel_box, crop, angle):
+    """Bind the unchanged crop, then prove tiny components against the full page."""
+    if (not isinstance(source_image, Image.Image) or source_image.mode != "RGB"
+            or not isinstance(source_pixel_box, (list, tuple)) or len(source_pixel_box) != 4
+            or any(type(v) is not int for v in source_pixel_box)):
+        _fail("uncovered_source_ink")
+    left, top, right, bottom = source_pixel_box
+    if (not 0 <= left < right <= source_image.width or not 0 <= top < bottom <= source_image.height
+            or (right - left, bottom - top) != crop.size
+            or source_image.crop(tuple(source_pixel_box)).tobytes() != crop.tobytes()):
+        _fail("uncovered_source_ink")
+    source = source_image.convert("L")
+    def validate(points):
+        mapped = [(right - 1 - y, top + x, value) if angle == 90
+                  else (left + y, bottom - 1 - x, value) for x, y, value in points]
+        positions, halo = {(x, y) for x, y, _ in mapped}, set()
+        for x, y, value in mapped:
+            if source.getpixel((x, y)) != value:
+                _fail("uncovered_source_ink")
+            for ny in range(max(0, y - 1), min(source.height, y + 2)):
+                for nx in range(max(0, x - 1), min(source.width, x + 2)):
+                    if (nx, ny) not in positions:
+                        shade = source.getpixel((nx, ny))
+                        if shade < 245:
+                            _fail("uncovered_source_ink")
+                        halo.add((nx, ny, shade))
+        return {"pixels": [list(point) for point in sorted(mapped)], "halo_pixel_count": len(halo),
+                "halo_sha256": _hash(_canonical(sorted(halo)))}
+    return validate
+
+
+def _date_pixel_coverage(crop, read, *, source_image=None, source_pixel_box=None):
+    """Account for all source ink with complete dates and explicit residuals.
 
     No box dilation, omitted words, threshold relaxation or inferred date
     values are used. The existing exact-box proof is unchanged when it
@@ -690,8 +761,14 @@ def _date_pixel_coverage(crop, read):
             support, totals = _date_component_coverage(rotated.convert("L"), words)
         except RotatedAxisError:
             policy = "complete-date-source-ink-ledger-v2"
-            support, totals = _date_component_coverage(rotated.convert("L"), words,
-                maximum_edge_pixels=2, allow_untranscribed=True)
+            try:
+                support, totals = _date_component_coverage(rotated.convert("L"), words,
+                    maximum_edge_pixels=2, allow_untranscribed=True)
+            except RotatedAxisError:
+                validator = _source_micro_component_validator(source_image, source_pixel_box, crop, read["angle"])
+                policy = "complete-date-source-ink-ledger-v3"
+                support, totals = _date_component_coverage(rotated.convert("L"), words,
+                    maximum_edge_pixels=2, allow_untranscribed=True, source_component=validator)
             result["untranscribed_pixels"] = sum(row["pixels"] for row in support["untranscribed_components"])
         result.update(policy=policy, component_support=support,
                       words=[{**row, "box_pixels": row["pixels"], "pixels": total} for row, total in zip(counts, totals)])
@@ -871,7 +948,8 @@ def recover_rotated_axes(page, candidates, *, language, tessdata, tesseract_comm
         region["selected_angle"] = accepted[0]["angle"]
         if "fragment_support" in plan:
             try:
-                region["date_pixel_coverage"] = _date_pixel_coverage(crop, accepted[0])
+                region["date_pixel_coverage"] = _date_pixel_coverage(crop, accepted[0],
+                    source_image=image, source_pixel_box=plan["source_pixel_box"])
             except RotatedAxisError:
                 if not first_rejection:
                     _record_diagnostic(diagnostics, "region_recognition", "uncovered_source_ink", region=plan["id"],
@@ -976,7 +1054,8 @@ def replay_rotated_axis_proof(proof, primary_text, *, input_pixel_sha256, page_s
             _fail()
         if coverage_keys:
             selected_read = next(read for read in region["reads"] if read["angle"] == region["selected_angle"])
-            if _canonical(region["date_pixel_coverage"]) != _canonical(_date_pixel_coverage(crop, selected_read)):
+            if _canonical(region["date_pixel_coverage"]) != _canonical(_date_pixel_coverage(crop, selected_read,
+                    source_image=source_image, source_pixel_box=plan["source_pixel_box"])):
                 _fail()
     selected, ledger, inserted = _compose(candidates, regions)
     if (selected != primary_text or _canonical(proof["ledger"]) != _canonical(ledger)
