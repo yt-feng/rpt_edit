@@ -334,8 +334,8 @@ class ContinuationTests(unittest.TestCase):
         value=source_unit_protection_signals(text)
         self.assertEqual(value['numeric_ascii_bp']['rows'],
             [{'number':'171','value_truncated':False,'unit':'bp','tight_non_ascii_word':True}])
-        self.assertEqual(value['current_repair_bp_count'],1)
-        self.assertEqual(value['adapter_retained_basis_point_count'],1)
+        self.assertEqual(value['current_repair_bp_count'],2)
+        self.assertEqual(value['adapter_retained_basis_point_count'],2)
         self.assertEqual(value['adapter_escaped_character_count'],1)
         self.assertNotIn('Private phrase',json.dumps(value))
         self.assertNotIn('符号',json.dumps(value,ensure_ascii=False))

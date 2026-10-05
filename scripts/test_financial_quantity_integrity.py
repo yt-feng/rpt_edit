@@ -4,6 +4,20 @@ from financial_quantity_integrity import quantity_issues
 
 
 class FinancialQuantityTests(unittest.TestCase):
+    def test_ascii_basis_points_adjacent_to_non_latin_prose_keep_their_scale(self):
+        for source in ('利差扩大171bp至2%。', '利差扩大171BPS至2%。',
+                       'កើន171bpទៅ2%。', '利差扩大171 basis points至2%。'):
+            with self.subTest(source=source):
+                self.assertEqual(quantity_issues(source, 'Spread rose 1.71 percentage points to 2%.'), [])
+                for changed in ('Spread rose 1.72 percentage points to 2%.',
+                                'Spread rose 171 percentage points to 2%.',
+                                'Spread rose 1.71% to 2%.', 'Spread rose 170 bps to 2%.'):
+                    self.assertTrue(quantity_issues(source, changed))
+        self.assertEqual(quantity_issues('变化-5.25bp后', 'Changed -0.0525 percentage points.'), [])
+        for suffix in ('bpm', 'bpword', 'bp2', 'bp_total', 'bpsunexpected', 'basis pointsExtra'):
+            with self.subTest(suffix=suffix):
+                self.assertTrue(quantity_issues('Value 171'+suffix, 'Value 1.71 percentage points.'))
+
     def test_singular_basis_point_abbreviation_is_exact_and_does_not_match_words(self):
         self.assertEqual(quantity_issues('收益率上升50个基点。', 'Yield rose 50 bp.'), [])
         self.assertEqual(quantity_issues('收益率上升50个基点。', 'Yield rose 50 bps.'), [])

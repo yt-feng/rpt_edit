@@ -73,6 +73,26 @@ class RepairTests(unittest.TestCase):
             with self.subTest(value=value),self.assertRaisesRegex(repair.TargetedRepairError,'original quality'):
                 repair.ProtectedBasisPointTranslator(Base(),{'50个基点'}).translate('50个基点',target='fr',source='zh')
 
+    def test_repair_protects_ascii_bp_adjacent_to_chinese_and_khmer(self):
+        for source in ('利差扩大171bp后，收益率变化-5.25bps至2%。',
+                       '利差扩大171BPទៅ，收益率变化-5.25BPS至2%。'):
+            calls = []
+            class Base:
+                def translate(self, text, **kwargs):
+                    calls.append(text)
+                    return 'La marge monte de __HYMTPH_9000__, taux __HYMTPH_9001__ à 2%.'
+            with self.subTest(source=source):
+                translated = repair.ProtectedBasisPointTranslator(Base(), {source}).translate(
+                    source, target='fr', source='zh')
+                self.assertIn('171 bps', translated)
+                self.assertIn('-5.25 bps', translated)
+                self.assertNotIn('171', calls[0])
+                self.assertNotIn('-5.25', calls[0])
+                repair.validate_text(source, translated, 'fr', 'zh')
+        for value in ('171bpm', '171bpword', '171bp2', '171bp_total', '171bpsunexpected'):
+            with self.subTest(value=value):
+                self.assertIsNone(repair.BP.search(value))
+
     def test_fixed_failure_diagnostic_keeps_gate_and_unit_without_source_or_error_text(self):
         source='私人报告内容：收益率上升50个基点。'
         class Base:
