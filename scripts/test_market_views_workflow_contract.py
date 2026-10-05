@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Guard dependency isolation and input lifetime for every Dropbox R2 consumer."""
 
+import contextlib
+import io
+import json
 import re
 import os
 import subprocess
@@ -9,11 +12,35 @@ import tempfile
 import textwrap
 import unittest
 from pathlib import Path
+from unittest import mock
 
 
 WORKFLOWS = Path(__file__).resolve().parents[1] / ".github/workflows"
 UPSTREAM = WORKFLOWS / "dropbox-latest-pdf-to-xhs-sharded.yml"
 MARKET = WORKFLOWS / "market-views-latex-pdf.yml"
+
+
+def run_actual_market_resolver(root, environment, client):
+    """Run the actual workflow Python, replacing only the external R2 client."""
+    import upload_market_view_to_r2 as uploader
+    step = MARKET.read_text().split("- name: Resolve and validate primary bank source", 1)[1].split("\n      - name:", 1)[0]
+    command = textwrap.dedent(step.split("        run: |\n", 1)[1])
+    program = command.split("python - <<'PYTHON'\n", 1)[1].rsplit("\nPYTHON", 1)[0]
+    stdout, stderr = io.StringIO(), io.StringIO()
+    previous_path = list(sys.path)
+    returncode = 0
+    try:
+        with contextlib.chdir(root), mock.patch.dict(os.environ, environment, clear=True), \
+                mock.patch.object(uploader, "build_r2_client", return_value=client), \
+                contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+            try:
+                exec(compile(program, str(MARKET), "exec"), {"__name__": "__main__"})
+            except (Exception, SystemExit) as exc:
+                returncode = 1
+                print(str(exc), file=stderr)
+    finally:
+        sys.path[:] = previous_path
+    return subprocess.CompletedProcess(["actual-workflow-resolver"], returncode, stdout.getvalue(), stderr.getvalue())
 
 
 def job(path, name):
@@ -496,9 +523,8 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
 
     def test_actual_resolver_cannot_skip_new_bank_batch_because_of_future_auxiliary_pdf(self):
-        market = MARKET.read_text()
-        step = market.split("- name: Resolve and validate primary bank source", 1)[1].split("\n      - name:", 1)[0]
-        command = textwrap.dedent(step.split("        run: |\n", 1)[1])
+        import upload_market_view_to_r2 as uploader
+        from test_upload_market_view_to_r2 import FakeR2Client
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             (root / "scripts").symlink_to(WORKFLOWS.parents[1] / "scripts", target_is_directory=True)
@@ -516,32 +542,30 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
             environment = {**os.environ, "PATH": str(binaries) + os.pathsep + os.environ["PATH"],
                            "GITHUB_ENV": str(env_file), "REQUESTED_DATE_FOLDER": "latest",
                            "EXPECTED_BANK_DATE": "261003", "EXPECTED_ARTICLES": "1", "FORCE_REBUILD": "false"}
-            result = subprocess.run(["bash", "-e", "-o", "pipefail", "-c", command],
-                                    cwd=root, env=environment, capture_output=True, text=True)
+            client = FakeR2Client()
+            result = run_actual_market_resolver(root, environment, client)
             self.assertEqual(result.returncode, 0, result.stderr)
             values = dict(line.split("=", 1) for line in env_file.read_text().splitlines())
             self.assertEqual(values["BUILD_DATE_FOLDER"], "261003")
             self.assertEqual(values["DATE_FOLDER"], "261003")
             self.assertEqual(values["SHOULD_BUILD"], "true")
             environment["EXPECTED_ARTICLES"] = "2"
-            result = subprocess.run(["bash", "-e", "-o", "pipefail", "-c", command],
-                                    cwd=root, env=environment, capture_output=True, text=True)
+            result = run_actual_market_resolver(root, environment, client)
             self.assertNotEqual(result.returncode, 0)
             self.assertIn("Expected 2 bank reports, received 1", result.stderr)
             environment["EXPECTED_ARTICLES"] = "1"
             same_date = root / "market_view_summaries/261003/market_views_261003.pdf"
             same_date.parent.mkdir(parents=True)
             same_date.write_bytes(existing.read_bytes())
+            uploader.upload_market_view(same_date, "261003", client=client, bucket="test")
             env_file.write_text("")
-            result = subprocess.run(["bash", "-e", "-o", "pipefail", "-c", command],
-                                    cwd=root, env=environment, capture_output=True, text=True)
+            result = run_actual_market_resolver(root, environment, client)
             self.assertEqual(result.returncode, 0, result.stderr)
             values = dict(line.split("=", 1) for line in env_file.read_text().splitlines())
             self.assertEqual(values["SHOULD_BUILD"], "false")
             environment["FORCE_REBUILD"] = "true"
             env_file.write_text("")
-            result = subprocess.run(["bash", "-e", "-o", "pipefail", "-c", command],
-                                    cwd=root, env=environment, capture_output=True, text=True)
+            result = run_actual_market_resolver(root, environment, client)
             self.assertEqual(result.returncode, 0, result.stderr)
             values = dict(line.split("=", 1) for line in env_file.read_text().splitlines())
             self.assertEqual(values["SHOULD_BUILD"], "true")
@@ -550,16 +574,89 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
             environment["FORCE_REBUILD"] = "false"
             environment["ACCEPTANCE_ONLY"] = "true"
             env_file.write_text("")
-            result = subprocess.run(["bash", "-e", "-o", "pipefail", "-c", command],
-                                    cwd=root, env=environment, capture_output=True, text=True)
+            result = run_actual_market_resolver(root, environment, client)
             self.assertEqual(result.returncode, 0, result.stderr)
             values = dict(line.split("=", 1) for line in env_file.read_text().splitlines())
             self.assertEqual(values["SHOULD_BUILD"], "true")
             environment["EXPECTED_ARTICLES"] = "2"
-            result = subprocess.run(["bash", "-e", "-o", "pipefail", "-c", command],
-                                    cwd=root, env=environment, capture_output=True, text=True)
+            result = run_actual_market_resolver(root, environment, client)
             self.assertNotEqual(result.returncode, 0)
             self.assertIn("Expected 2 bank reports, received 1", result.stderr)
+
+    def test_existing_public_pdf_requires_complete_private_publication_to_skip(self):
+        import upload_market_view_to_r2 as uploader
+        from test_upload_market_view_to_r2 import FakeR2Client, R2ServiceError
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            report = root / "xhs_notes/dropbox/261003/report"
+            report.mkdir(parents=True)
+            (report / "source_native_pdf.md").write_text("# Exact complete source report")
+            public_pdf = root / "market_view_summaries/261003/market_views_261003.pdf"
+            public_pdf.parent.mkdir(parents=True)
+            public_bytes = b"%PDF-1.7\n" + b"public-safe" * 200
+            public_pdf.write_bytes(public_bytes)
+            private_pdf = root / "private-original.pdf"
+            private_bytes = b"%PDF-1.7\n" + b"complete-private-original" * 200
+            private_pdf.write_bytes(private_bytes)
+            client = FakeR2Client()
+            uploader.upload_market_view(private_pdf, "261003", client=client, bucket="test")
+            private_pdf.unlink()
+            original_objects = dict(client.objects)
+            pdf_key, item_key = "_market-views/pdfs/261003.pdf", "_market-views/items/261003.json"
+            env_file = root / "env"
+            environment = {**os.environ, "GITHUB_ENV": str(env_file), "REQUESTED_DATE_FOLDER": "261003",
+                           "EXPECTED_BANK_DATE": "261003", "EXPECTED_ARTICLES": "1",
+                           "FORCE_REBUILD": "false", "ACCEPTANCE_ONLY": "false"}
+
+            def run(expected):
+                env_file.write_text("")
+                client.calls.clear()
+                result = run_actual_market_resolver(root, environment, client)
+                self.assertEqual(result.returncode, 0, result.stderr)
+                values = dict(line.split("=", 1) for line in env_file.read_text().splitlines())
+                self.assertEqual(values["SHOULD_BUILD"], expected)
+                self.assertFalse(any(operation == "put" for operation, _ in client.calls))
+                self.assertEqual(public_pdf.read_bytes(), public_bytes)
+
+            # Private original and public-safe hashes intentionally differ.
+            run("false")
+            self.assertIn(("get", pdf_key), client.calls)
+            self.assertIn(("get", item_key), client.calls)
+            self.assertEqual(client.objects[pdf_key]["Body"], private_bytes)
+            for missing in ((pdf_key,), (item_key,), (pdf_key, item_key)):
+                client.objects = {key: value for key, value in original_objects.items() if key not in missing}
+                run("true")
+            client.objects = dict(original_objects)
+            item = json.loads(original_objects[item_key]["Body"])
+            item["sha256"] = "0" * 64
+            client.objects[item_key] = {**original_objects[item_key], "Body": json.dumps(item).encode()}
+            run("true")
+
+            client.objects = dict(original_objects)
+            for error in (R2ServiceError("AccessDenied", 403), TimeoutError("private read timeout")):
+                env_file.write_text("")
+                with mock.patch.object(client, "get_object", side_effect=error):
+                    result = run_actual_market_resolver(root, environment, client)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertNotIn("SHOULD_BUILD=", env_file.read_text())
+
+            # Explicit force and acceptance retain their existing rebuild
+            # semantics without adding a private-publication availability gate.
+            for field in ("FORCE_REBUILD", "ACCEPTANCE_ONLY"):
+                environment[field] = "true"
+                with mock.patch.object(client, "head_object", side_effect=AssertionError("unneeded R2 probe")):
+                    run("true")
+                environment[field] = "false"
+
+        market = MARKET.read_text()
+        for name in ("Build market views data and LaTeX source", "Render fast PDF without LaTeX install",
+                     "Archive exact Market Views PDF in private R2", "Commit public-safe Market Views PDF to main"):
+            step = market.split(f"- name: {name}", 1)[1].split("\n      - name:", 1)[0]
+            self.assertIn("env.SHOULD_BUILD != 'false'", step)
+        self.assertLess(market.index("- name: Verify complete native PDF source receipt"),
+                        market.index("- name: Resolve and validate primary bank source"))
+        self.assertLess(market.index("- name: Archive exact Market Views PDF in private R2"),
+                        market.index("- name: Prepare public-safe Market Views PDF"))
 
     def test_scheduled_daily_flow_rejects_stale_dropbox_folders(self):
         workflow = UPSTREAM.read_text(encoding="utf-8")

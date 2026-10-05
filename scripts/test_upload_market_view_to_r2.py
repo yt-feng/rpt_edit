@@ -5,6 +5,7 @@ import hashlib
 import io
 import json
 import os
+import ssl
 import sys
 import tempfile
 import types
@@ -13,6 +14,12 @@ from pathlib import Path
 from unittest import mock
 
 import upload_market_view_to_r2 as uploader
+
+
+class R2ServiceError(Exception):
+    def __init__(self, code: str, status: int) -> None:
+        super().__init__(code)
+        self.response = {"Error": {"Code": code}, "ResponseMetadata": {"HTTPStatusCode": status}}
 
 
 class FakeR2Client:
@@ -34,6 +41,8 @@ class FakeR2Client:
     def head_object(self, **kwargs):
         key = kwargs["Key"]
         self.calls.append(("head", key))
+        if key not in self.objects:
+            raise R2ServiceError("NoSuchKey", 404)
         stored = self.objects[key]
         response = {
             "ContentLength": len(stored["Body"]),
@@ -46,6 +55,8 @@ class FakeR2Client:
     def get_object(self, **kwargs):
         key = kwargs["Key"]
         self.calls.append(("get", key))
+        if key not in self.objects:
+            raise R2ServiceError("NoSuchKey", 404)
         body = self.objects[key]["Body"]
         if kwargs.get("Range") == "bytes=0-4":
             body = body[:5]
@@ -85,6 +96,111 @@ class PdfValidationTests(unittest.TestCase):
             non_pdf = write_pdf(directory, magic=b"not-pdf\n")
             with self.assertRaisesRegex(ValueError, "PDF magic"):
                 uploader.read_valid_pdf(non_pdf)
+
+
+class PublicationCompletenessTests(unittest.TestCase):
+    PDF_KEY = "_market-views/pdfs/260802.pdf"
+    ITEM_KEY = "_market-views/items/260802.json"
+
+    def setUp(self):
+        directory = tempfile.TemporaryDirectory()
+        self.addCleanup(directory.cleanup)
+        self.client = FakeR2Client()
+        uploader.upload_market_view(write_pdf(directory.name), "260802", client=self.client, bucket="test")
+        self.client.calls.clear()
+
+    def complete(self):
+        return uploader.private_publication_complete("260802", client=self.client, bucket="test")
+
+    def tearDown(self):
+        self.assertFalse(any(operation == "put" for operation, _ in self.client.calls))
+
+    def test_complete_pair_reads_full_private_bytes_and_never_writes(self):
+        self.assertTrue(self.complete())
+        self.assertEqual(self.client.calls, [("head", self.PDF_KEY), ("head", self.ITEM_KEY),
+                                             ("get", self.PDF_KEY), ("get", self.ITEM_KEY)])
+
+    def test_missing_both_or_either_object_is_not_complete(self):
+        originals = dict(self.client.objects)
+        for missing in ((self.PDF_KEY,), (self.ITEM_KEY,), (self.PDF_KEY, self.ITEM_KEY)):
+            with self.subTest(missing=missing):
+                self.client.objects = {key: value for key, value in originals.items() if key not in missing}
+                self.assertFalse(self.complete())
+
+    def test_explicit_get_404_after_successful_head_is_not_complete(self):
+        real_get = self.client.get_object
+        for missing in (self.PDF_KEY, self.ITEM_KEY):
+            def get(**kwargs):
+                if kwargs["Key"] == missing:
+                    raise R2ServiceError("NoSuchKey", 404)
+                return real_get(**kwargs)
+            with self.subTest(missing=missing), mock.patch.object(self.client, "get_object", side_effect=get):
+                self.assertFalse(self.complete())
+
+    def test_fully_read_inconsistent_bytes_or_index_require_rebuild(self):
+        original_pdf = dict(self.client.objects[self.PDF_KEY])
+        original_item = dict(self.client.objects[self.ITEM_KEY])
+        for mutation in ("pdf_hash", "item_hash", "item_date", "item_pdf_key", "item_size", "item_json"):
+            with self.subTest(mutation=mutation):
+                self.client.objects[self.PDF_KEY] = dict(original_pdf)
+                self.client.objects[self.ITEM_KEY] = dict(original_item)
+                if mutation == "pdf_hash":
+                    body = original_pdf["Body"]
+                    self.client.objects[self.PDF_KEY]["Body"] = body[:-1] + b"y"
+                else:
+                    item = json.loads(original_item["Body"])
+                    if mutation == "item_json":
+                        body = b"invalid json"
+                    else:
+                        field, value = {"item_hash": ("sha256", "0" * 64),
+                                        "item_date": ("date_key", "260803"),
+                                        "item_pdf_key": ("pdf_key", "_market-views/pdfs/260803.pdf"),
+                                        "item_size": ("size_bytes", 9999)}[mutation]
+                        item[field] = value
+                        body = json.dumps(item).encode()
+                    self.client.objects[self.ITEM_KEY]["Body"] = body
+                self.assertFalse(self.complete())
+
+    def test_head_get_and_body_read_failures_never_look_missing(self):
+        real_head, real_get = self.client.head_object, self.client.get_object
+        for stage in ("head", "get", "read"):
+            for key in (self.PDF_KEY, self.ITEM_KEY):
+                for error in (R2ServiceError("AccessDenied", 403), TimeoutError("timeout"), ssl.SSLError("TLS")):
+                    def invoke(**kwargs):
+                        if kwargs["Key"] == key:
+                            if stage == "read":
+                                body = mock.Mock()
+                                body.read.side_effect = error
+                                return {"Body": body}
+                            raise error
+                        return (real_head if stage == "head" else real_get)(**kwargs)
+                    method = "head_object" if stage == "head" else "get_object"
+                    with self.subTest(stage=stage, key=key, error=type(error).__name__), \
+                            mock.patch.object(self.client, method, side_effect=invoke):
+                        with self.assertRaises(type(error)):
+                            self.complete()
+
+    def test_short_pdf_or_json_body_is_unknown_not_incomplete(self):
+        real_get = self.client.get_object
+        for key in (self.PDF_KEY, self.ITEM_KEY):
+            def get(**kwargs):
+                if kwargs["Key"] == key:
+                    # The item's last byte is a newline: shortened JSON still
+                    # parses, so its successful parse cannot prove a full read.
+                    return {"Body": io.BytesIO(self.client.objects[key]["Body"][:-1])}
+                return real_get(**kwargs)
+            with self.subTest(key=key), mock.patch.object(self.client, "get_object", side_effect=get):
+                with self.assertRaisesRegex(RuntimeError, "body length") as raised:
+                    self.complete()
+                self.assertNotIsInstance(raised.exception, uploader.PrivatePublicationInvalid)
+
+    def test_unreadable_head_size_is_unknown_not_incomplete(self):
+        for size in (None, "unreadable", -1):
+            with self.subTest(size=size):
+                self.client.head_overrides = {"ContentLength": size}
+                with self.assertRaisesRegex(RuntimeError, "ContentLength") as raised:
+                    self.complete()
+                self.assertNotIsInstance(raised.exception, uploader.PrivatePublicationInvalid)
 
 
 class UploadTests(unittest.TestCase):
