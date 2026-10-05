@@ -292,6 +292,37 @@ class RecoveryTests(unittest.TestCase):
     def test_receipt_rejects_source_identity_rebinding(self):
         self.recover(); self.rewrite_receipt(lambda receipt: receipt['reports'][0]['source_binding'].__setitem__('size', 999))
         with self.assertRaisesRegex(r.RecoveryError, 'receipt_source_binding'): self.validate()
+
+    def test_default_writer_receives_each_frozen_original_path_and_hash(self):
+        calls = []
+        def create(raw_dir, assets_dir, maximum, **kwargs):
+            calls.append(kwargs)
+            return assets(raw_dir, assets_dir, maximum)
+        with patch('pdf_to_xhs_batch.create_chart_source_assets', side_effect=create):
+            self.recover(asset_writer=r.chart_assets)
+        self.assertEqual(len(calls), 7)
+        for (path, _), row, call in zip(self.pairs, self.rows, calls):
+            self.assertEqual(call['auth_original_pdf'], path)
+            self.assertEqual(call['original_pdf_sha256'], row['content_sha256'])
+            self.assertEqual(m.digest(path.read_bytes()), call['original_pdf_sha256'])
+            self.assertEqual(call['markdown_sha256'], m.digest(b'# Original report\nVerified source revenue 125.50.\n'))
+        self.validate()
+
+    def test_rehashed_invalid_optional_figure_sidecar_is_rejected(self):
+        self.recover()
+        directory = next(self.output.glob('report_*'))
+        (directory / 'source_figure_map.json').write_bytes(b'[]')
+        self.rewrite_receipt(lambda _: None, refresh_files=True)
+        with self.assertRaisesRegex(r.RecoveryError, 'report_figure_source'): self.validate()
+
+    def test_declared_figure_sidecar_cannot_disappear_or_be_null(self):
+        self.recover()
+        directory = next(self.output.glob('report_*')); path = directory / 'status.json'
+        status = json.loads(path.read_bytes())
+        for name, sha in [('source_figure_map.json', 'a' * 64), (None, None)]:
+            status.update(source_figure_map=name, source_figure_map_sha256=sha)
+            path.write_bytes(m.encoded(status)); self.rewrite_receipt(lambda _: None, refresh_files=True)
+            with self.subTest(name=name), self.assertRaisesRegex(r.RecoveryError, 'report_figure_source'): self.validate()
     def test_receipt_rejects_missing_file(self):
         self.recover(); next(self.output.rglob('source_image_map.json')).unlink()
         with self.assertRaises(r.RecoveryError): self.validate()

@@ -740,3 +740,205 @@ ambiguous, changed-order or invalid geometry remains explicitly unlocated.
 The output contains fixed categories, coordinates and counts, never OCR words
 or source names. It reuses the existing recognition result and does not change
 readability, numeric checks or production source admission.
+
+### Complete cloud PDF acceptance without live publication
+
+The PDF consumer's explicit `acceptance_only=true` mode rebuilds the complete
+selected source even when a valid dated live PDF already exists. Source
+producer/receipt checks, numeric fixtures, model synthesis, rendering, public
+sanitization and identity validation all run normally. It skips the live R2
+PDF/catalogue archive and main-branch commit, retaining only the successfully
+validated public-safe PDF as a one-day Actions artifact. Source originals,
+Markdown, logs and audit/usage JSON are not artifacts in this mode. Its default
+false preserves the publishing route. An acceptance artifact is evidence of
+PDF construction, not a new live publication.
+
+### Bounded recovery of vertically printed chart dates
+
+The retained cloud OCR backup now has a locally implemented rotated-date route
+for pages whose geometric, source-flow and full-page PSM 11 transcripts all fail
+only the unchanged long-ASCII readability rule. It identifies at most four
+interior axis bands from complete retained word positions and original 300-dpi
+RGB pixels. Each band receives fixed 90- and 270-degree reads, at most eight
+reads total, with a shared 180-second budget and a 30-second per-read limit.
+Only one unambiguous direction containing complete date words is eligible;
+prose, clipped words, partial dates and ambiguous directions reject the page.
+
+Original-PDF visual QA of October 1 source ordinal 23 page 3 confirms four
+bottom-to-top axes with full `YYYY/MM` labels. A fresh 300-dpi render of the
+verified original is 2550 by 3234 pixels. The older 980 by 1242 PNG is a reduced
+preview and must not be described as a full-resolution OCR proof. Replaying
+the retained opaque-run positions against the fresh render found that the
+proposed bands also included the chart baseline and horizontal scale zero.
+That extra content can correctly cause the date-only reader to reject a band.
+
+The local follow-up separates an axis band from a chart baseline only when
+the original pixels contain a bounded, sufficiently wide white gap. Complete
+word containment, body collisions, region boundaries and pixel margins still
+apply, and the consumer recomputes the selection from the original RGB image.
+Horizontal zero and all other text outside the replacement spans remain in
+the original transcript and their existing numeric checks. Identical opaque
+strings on separate axes are allowed only through their exact original word
+indices and global spans; exchanging those positions still rejects the proof.
+
+The retained diagnostic omits the full word list. Its geometry-only replay uses
+explicit synthetic placeholders for the known positions and performs no OCR,
+source admission or numeric acceptance. Real affected-page recognition remains
+an independent cloud acceptance requirement.
+
+Private provenance preserves all three rejected transcripts, every original
+word, original pixels, crop and rotated hashes, affine mappings and the exact
+replacement ledger. The consumer reconstructs the selection from these inputs
+and validates every numeric binding. Unchanged horizontal values retain their
+independent full-page, two crop and punctuation checks. Newly rotated values
+remain unconfirmed and are masked; this route does not authorize their use as
+verified numbers. Both real-field and ordinal probes forward the same private
+proof without including transcripts or proof contents in public diagnostics.
+
+The updated integrated offline regression ran 234 tests: 220 passed and 14
+require actual cloud OCR. The axis module includes a Linux-only actual
+Tesseract regression with the production `eng+chi_sim` models, real model
+hashes, vertical `YYYY/MM` labels and adjacent scale zero. It does not mock
+the region reader or independent numeric reads. The regression workflow's
+required-OCR flag makes missing CLI/models a failure; macOS skips this case
+without executing local OCR. This new real-engine test has not yet run in CI.
+
+Independent source review passed 26 targeted cases with one cloud-only skip.
+The original source, auditor, probe and legacy groups passed in the integrated
+run. These are local implementation checks, not cloud deployment or real-source
+acceptance. The affected October 1 chart page, complete backup batches and
+PDF consumer still require cloud
+acceptance before enabling the daily backup switch. MinerU remains the primary
+parser and GitHub Actions remains the production execution environment.
+
+The October 5 boundary follow-up and complete-PDF acceptance mode are still
+local changes. A GitHub GraphQL request failed with a TLS handshake timeout;
+remote Git/GitHub operations stopped under the user's network-failure rule.
+No CI result, deployment or new complete-source acceptance is inferred from
+the offline checks, and the daily backup switch remains disabled.
+
+### Primary PDF visual acceptance and retained figure defects
+
+The recovered October 1, 3 and 4 public-safe files have verified hashes and
+46, 47 and 18 pages respectively. October 1's complete 46-page contact sheets
+have now been inspected: all 44 images have same-page captions, with no
+out-of-page text or image/text overlap. Its source coverage is 63 original
+aliases, 62 unique contents and one preserved duplicate binding.
+
+This proves complete source binding and PDF pagination, not perfect MinerU
+figure selection. Four October 1 embedded images on PDF pages 24, 38 and 42
+are disclaimer blocks rather than analytical charts. The Cash Flow table on
+PDF page 28 has title glyphs already cut at the embedded JPEG's top edge;
+the PDF renderer preserves that JPEG and its data table. Separate original-page
+comparisons also identified cut title/legend material in the October 3 page-36
+and October 4 page-11 source crops. Raw result ZIPs remain in private R2;
+the consumed handoff excludes raw MinerU JSON, so source `page_idx`/`bbox`
+metadata had to be recovered from those cached ZIPs before implementing a
+source-bound figure repair. The existing published files still contain these
+defects; the locally implemented repair below is not deployed acceptance.
+
+Original-page visual comparisons bind October 1 PDF page 28 image 2 to source
+ordinal 27 page 2; page 24 image 1 to ordinal 8 page 3; page 38 image 1 to
+ordinal 11 page 10; and page 42 images 1 and 2 to ordinal 10 pages 16 and 13.
+These visual bindings under the verified complete manifest have now been
+matched to the actual cached provider image hashes and `img_path`/`page_idx`
+metadata. Both original-page and provider metadata provenance must accompany
+any repaired crop.
+
+The initial independent R2 check on October 5 at approximately 03:42 UTC
+timed out before identifying an account or retrieving an object. A subsequent
+normal Wrangler OAuth identity check at 04:13 UTC succeeded without changing
+local network or Git transport settings. Read-only R2 access to the existing
+configured private R2 bucket then retrieved five October 1 legacy result ZIPs and
+the October 3/4 target ZIPs. Their receipts, admitted cache identities, byte
+counts and ZIP hashes match the previously verified seed records. These are
+private source QA reads, with no new parsing POST, R2 write or source admission.
+
+The actual `content_list` and `middle_v2` metadata establish exact
+`img_path`, zero-based `page_idx` and image-body boxes. Content-list coordinates
+are normalized to 0–1000 and checked against middle-file point boxes using the
+provider's recorded page size. Original-page crops instead use the exact
+300/72 render matrix and actual original geometry, without stretching point
+coordinates through rounded provider dimensions. Parent boxes do not include
+captions or footnotes. Some footnotes are assigned to another column's parent,
+so parent membership alone cannot authorize enlarging a crop. Generic
+`image` entries include valid analytical charts and must not be excluded by type.
+
+Comparisons of the affected original pages with the rewritten PDF inside each
+ZIP found identical page frames and 300-dpi RGB pixels. Their PDF byte hashes
+are different: the ZIP's PDF is not an authenticated substitute for the original.
+In particular, October 1 original 27 page 2 has a fractional crop-box height
+while the provider records integer page dimensions; both coordinate frames
+must be retained explicitly. The local selection/crop repair uses these actual
+source bindings, not a schema inferred from cache summaries.
+
+An independent Cloudflare Worker strict-HTTPS HEAD check at approximately
+04:36 UTC still returned `526` with category `tls_invalid_certificate` for
+`cdn-mineru.openxlab.org.cn`. It performed one provider HEAD and no ZIP download,
+parsing POST or R2 write. The temporary Worker was deleted and its absence
+confirmed by a separate 404 readback. `SJC` describes request ingress; the
+Worker's execution location was not observed. This current certificate-validity
+failure is separate from successful R2 cache reads and from GitHub authorization.
+It does not re-identify the certificate leaf or prove a new expiry timestamp.
+
+### Source-bound figure repair awaiting cloud deployment
+
+`scripts/mineru_figure_sources.py` validates the actual content-list/middle-file
+pair and each unique provider image reference. Metadata absent from both
+families preserves the older cache route; incomplete, ambiguous or malformed
+present metadata rejects instead of reverting to image guessing. Legal-body
+cues and an immediate same-column disclosure heading exclude the confirmed
+disclaimer images. Valid generic `image` entries remain eligible, and a report
+with no reliable analytical images may have zero figures.
+
+Daily and complete-source recovery producers pass the frozen original PDF
+path and admitted SHA. They compare each used page with the rewritten provider
+PDF, retaining actual geometry and 300-dpi RGB identity. Body, captions and
+footnotes receive a single unambiguous spatial owner across the page; a wrong
+parent, wide cross-column note or equally near alternative does not authorize
+including another column. Old filename-only legacy consumption explicitly
+retains an unproven original identity and provider JPEGs, without original-page
+recropping.
+
+The private `source_figure_map.json` binds typed metadata, every inclusion or
+exclusion, provider JPEG hashes, original-page PNG carriers and exact derived
+crop pixels. The existing closed v1 image map remains compatible. Status binds
+the sidecar name and SHA; the source and PDF consumers replay the proof and
+require each canonical reference to map to its exact asset. Deleted, empty,
+mutated or dangling declarations cannot downgrade to an older route. Original
+identity comes from the trusted producer and outer immutable receipt, not
+from a self-declared inner hash.
+
+The PDF consumer ranks retained figures by the unchanged provider image's
+existing visual score and byte size, including its original filename hint,
+then displays the repaired crop. This retains prior visual priority while
+avoiding a blind first-page selection. Lower-ranked valid figures remain
+eligible. Under the default four-figure limit, the actual Cash Flow, Factor
+Profile and Figure 9 targets remain selected at ranks 1, 2 and 4 respectively.
+
+Seven actual cached results passed original/ZIP hash checks, source generation,
+consumer replay and figure extraction. The three repaired unions match the
+independent original-page QA: `[310,290,563,493]`, `[358,497,554,649]` and
+`[46,188,293,343]`. The production ReportLab renderer also produced a private
+nine-page layout QA file with all three source images: embedded RGB hashes
+and pixel dimensions match the derived PNGs, and all three captions follow
+their complete image on the same page. This is a layout/pixel check, not a
+complete dated Market Views rebuild, cloud OCR run or live publication.
+
+Finalization and sensitive-text guards preserve the sidecar and all files in
+`figure_source_evidence`. Private handoff retains these carriers; public
+publish-ready packages exclude them while retaining selected figure assets
+and generated public articles. Source proof must never be edited as copy or
+packaged as an extra original-page attachment.
+
+The integration regression includes source contracts, old-cache compatibility,
+numeric/axis proof, private transfer, packaging and actual ReportLab rendering.
+The latest run has 410 passing tests and 14 skipped actual-cloud-OCR tests;
+no local OCR was executed. The new module and consumer checks are included in
+the Actions regression workflow. Isolated subprocess checks also preserve
+stdlib-only authorization/source checks and keep TLS/cache entry points usable
+before image dependencies are installed; image decoding and PDF rendering
+load their dependencies only when invoked. These changes still require cloud CI,
+complete source/PDF acceptance and deployment after GitHub remote access is
+authorized again. The primary cloud architecture is unchanged, and the OCR
+backup remains disabled pending its independent cloud acceptance.

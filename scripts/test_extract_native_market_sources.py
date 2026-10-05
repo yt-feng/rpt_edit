@@ -340,6 +340,228 @@ class NativeMarketSourcesTests(unittest.TestCase):
         self.assertFalse(self.output.exists())
         self.assertEqual(list(self.root.glob(".sources-native-*")), [])
 
+    def make_rotated_axis_receipt(self, *, alias=False, numeric_error=None):
+        """Mock recognition reads only; retain actual original pixels and audit."""
+        import ocr_numeric_evidence as numeric
+        import ocr_rotated_axis_evidence as axis
+        self.select("axis.pdf")
+        source = self.input / "axis.pdf"
+        with fitz.open() as vector:
+            visible = vector.new_page(width=400, height=650)
+            visible.insert_text((20, 30), "Reliable revenue supply demand outlook recovery remains steady", fontsize=8)
+            visible.insert_text((20, 65), "25,000 35,000", fontsize=16)
+            source_words = [{"bbox": list(w[:4]), "text": w[4], "block": w[5], "paragraph": 0, "line": w[6]}
+                            for w in visible.get_text("words")]
+            second_words = self.raster_words(visible, 450)
+            for x, literal in zip((70, 115, 160), ("2020/01", "2021/02", "2022/03")):
+                visible.insert_text((x, 125), literal, fontsize=6, rotate=90)
+            raster = visible.get_pixmap(dpi=300, colorspace=fitz.csRGB, alpha=False)
+        opaque_word = {"bbox": [50, 120, 190, 127], "text": "A" * 85, "block": 10, "paragraph": 0, "line": 0}
+        source_words.append(opaque_word)
+        primary = "\n".join(word["text"] for word in source_words)
+        alternate_words = [{**word, "bbox": [math.floor(word["bbox"][0] * raster.width / 400),
+                                                 math.floor(word["bbox"][1] * raster.height / 650),
+                                                 math.ceil(word["bbox"][2] * raster.width / 400),
+                                                 math.ceil(word["bbox"][3] * raster.height / 650)]}
+                           for word in source_words]
+        changed = self.root / "axis-with-scan.pdf"
+        with fitz.open(source) as document:
+            scan = document.new_page(width=400, height=650)
+            scan.insert_image(scan.rect, pixmap=raster)
+            document.save(changed)
+        source.write_bytes(changed.read_bytes())
+        self.update_hash("axis.pdf")
+        if alias:
+            (self.input / "axis-copy.pdf").write_bytes(source.read_bytes())
+            rows = json.loads(self.manifest.read_bytes())
+            rows.append({"process_local_path": "/runner/selected/axis-copy.pdf", "content_sha256": rows[0]["content_sha256"]})
+            self.manifest.write_text(json.dumps(rows))
+        calls, textpage, region_reads = [], object(), 0
+        original_get_text = fitz.Page.get_text
+        def primary_read(page, kind, *args, **options):
+            if options.get("textpage") is textpage:
+                return primary if kind == "text" else copy.deepcopy(source_words)
+            return original_get_text(page, kind, *args, **options)
+        def engine_read(image, **options):
+            nonlocal region_reads
+            calls.append((options["psm"], options["dpi"]))
+            if options["dpi"] == 300 and options["psm"] == 11:
+                return copy.deepcopy(alternate_words)
+            if options["dpi"] == 300:
+                region_reads += 1
+                self.assertLessEqual(options["timeout_seconds"], axis.READ_TIMEOUT)
+                if region_reads == 1:
+                    return [{"bbox": [3, 3, 15, 15], "text": "garbage", "block": 0, "paragraph": 0, "line": 0}]
+                return [{"bbox": [3, 30 + i * 90, min(image.width - 3, 85), 45 + i * 90], "text": literal,
+                         "block": 1, "paragraph": 0, "line": i + 1}
+                        for i, literal in enumerate(("2020/01", "2021/02", "2022/03"))]
+            if options["dpi"] == 450:
+                return copy.deepcopy(second_words)
+            positioned = numeric._align_mentions(numeric.numeric_mentions(primary), numeric._word_mentions(source_words))
+            rows, top = [], 24
+            for index, field in positioned.items():
+                size = numeric._ocr_crop_pixel_size(numeric._ocr_crop_clip(field["bbox"], [400.0, 650.0]))
+                rows.append({"text": field["literal"], "bbox": [25, top + 1, 24 + size[0] - 1, top + size[1] - 1],
+                             "block": index, "paragraph": 0, "line": 0})
+                top += size[1] + 48
+            return rows
+        with patch.object(fitz, "get_tessdata", return_value=str(self.fixture_models())), \
+                patch.object(fitz.Page, "get_textpage_ocr", return_value=textpage) as default_engine, \
+                patch.object(fitz.Page, "get_text", primary_read), \
+                patch.object(native, "_tesseract_version", return_value="5.3.0"), \
+                patch.object(native.shutil, "which", return_value="fixture-engine"), \
+                patch.object(numeric, "_read_tesseract", side_effect=engine_read), \
+                patch.object(numeric, "audit_numeric_evidence", wraps=numeric.audit_numeric_evidence,
+                             side_effect=numeric_error) as audit:
+            receipt = self.extract(expected=2 if alias else 1, enable_ocr=True)
+        self.assertEqual(default_engine.call_count, 1)
+        self.assertEqual(audit.call_count, 1)
+        self.assertEqual(calls, [(11, 300), (6, 300), (6, 300), (3, 450), (6, 600), (11, 600)])
+        return receipt
+
+    def test_rotated_axis_full_extraction_keeps_horizontal_three_reads_and_pending_source_quads(self):
+        receipt = self.make_rotated_axis_receipt(alias=True)
+        page = receipt["reports"][0]["pages"][1]
+        ocr, evidence = page["ocr"], page["ocr"]["numeric_evidence"]
+        self.assertEqual(ocr["engine"], native.OCR_ROTATED_AXIS_ENGINE)
+        self.assertNotIn("recognition", ocr)
+        self.assertNotIn("text_layout", ocr)
+        self.assertEqual(evidence["rotated_axis_sha256"], page["rotated_axis_selection"]["rotated_axis_sha256"])
+        self.assertEqual(evidence["input_pixel_sha256"], ocr["rotated_axis"]["input_pixel_sha256"])
+        horizontal = evidence["records"][:2]
+        self.assertEqual([row["literal"] for row in horizontal], ["25,000", "35,000"])
+        self.assertTrue(all(row["status"] == "verified" for row in horizontal))
+        self.assertEqual([[read["method"] for read in row["reads"]] for row in horizontal],
+                         [["second-page-psm-3", "source-crop-psm-6", "source-crop-psm-11"]] * 2)
+        rotated = evidence["records"][2:]
+        self.assertEqual(len(rotated), 6)
+        self.assertTrue(all(row["status"] == "unresolved" and row["bbox"] is None and row["reads"] == []
+                            and row["reason"] == "rotated_source_field_unconfirmed" for row in rotated))
+        self.assertTrue(all(len(row["rotated_axis"]["source_quad"]) == 4 for row in rotated))
+        self.assertEqual(receipt["report_count"], 2)
+        self.assertEqual(receipt["unique_content_count"], 1)
+        for report in receipt["reports"]:
+            status = json.loads((self.output / report["status"]["path"]).read_bytes())
+            self.assertEqual(status["ocr_rotated_axis_bindings"], [{"page": 2, **report["pages"][1]["rotated_axis_selection"]}])
+        shutil.rmtree(self.input)
+        with patch.object(native, "_recognize_ocr_page", side_effect=AssertionError("Consumer cannot perform OCR")):
+            self.assertEqual(native.validate_sources(self.output, self.manifest, 2), receipt)
+
+    def test_rotated_axis_consumer_rejects_deleted_or_resigned_proof_and_downgrade(self):
+        receipt = self.make_rotated_axis_receipt()
+        report = receipt["reports"][0]
+        status_path, receipt_path = self.output / report["status"]["path"], self.output / native.RECEIPT_NAME
+        original_status = status_path.read_bytes()
+        for change in ("proof", "indicator", "engine", "all_indicators", "numeric_hash", "runtime", "ledger", "affine",
+                       "candidate", "models", "status", "metadata_and_numeric_hash", "full_metadata_downgrade", "axis_record"):
+            # A transferred JSON receipt has no shared Python references
+            # between the outer model record and the recognition proof.
+            tampered = json.loads(json.dumps(receipt))
+            changed_report, page = tampered["reports"][0], tampered["reports"][0]["pages"][1]
+            ocr, proof = page["ocr"], page["ocr"]["rotated_axis"]
+            downgrades = {"metadata_and_numeric_hash", "full_metadata_downgrade"}
+            if change in {"proof", "all_indicators"} | downgrades: ocr.pop("rotated_axis")
+            if change in {"indicator", "all_indicators"} | downgrades: page.pop("rotated_axis_selection")
+            if change in {"engine", "all_indicators"} | downgrades: ocr["engine"] = "tesseract-via-pymupdf"
+            if change in {"numeric_hash"} | downgrades: ocr["numeric_evidence"].pop("rotated_axis_sha256")
+            if change == "runtime": proof["runtime"]["psm"] = 11
+            if change == "ledger": proof["ledger"]["retained"][0]["old_end"] += 1
+            if change == "affine": proof["regions"][0]["reads"][1]["affine"][2] += 1
+            if change == "candidate": proof["candidates"]["source-flow"]["words"][-1]["bbox"][0] += 2
+            if change == "models": proof["runtime"]["traineddata"][0]["sha256"] = "0" * 64
+            if change == "full_metadata_downgrade":
+                for row in ocr["numeric_evidence"]["records"]:
+                    if "rotated_axis" in row:
+                        row.pop("rotated_axis")
+                        row["reason"] = "source_position_unresolved"
+            if change == "axis_record":
+                ocr["numeric_evidence"]["records"][2]["rotated_axis"]["source_quad"][0][0] += 1
+            # Re-sign the optional private metadata and evidence to exercise
+            # independent replay rather than merely detecting stale hashes.
+            if change in {"runtime", "ledger", "affine", "candidate", "models"}:
+                digest = native.sha256_bytes(native.canonical_bytes(proof))
+                page["rotated_axis_selection"]["rotated_axis_sha256"] = digest
+                ocr["numeric_evidence"]["rotated_axis_sha256"] = digest
+            evidence = ocr["numeric_evidence"]
+            evidence["evidence_sha256"] = native.sha256_bytes(native.canonical_bytes({k: v for k, v in evidence.items() if k != "evidence_sha256"}))
+            status = json.loads(original_status)
+            if change == "status": status.pop("ocr_rotated_axis_bindings")
+            elif "rotated_axis_selection" in page: status["ocr_rotated_axis_bindings"] = [{"page": 2, **page["rotated_axis_selection"]}]
+            native.write_json(status_path, status)
+            changed_report["status"] = native.file_record(status_path, self.output)
+            receipt_path.write_text(json.dumps(tampered))
+            with self.subTest(change=change), self.assertRaises(native.SourceValidationError):
+                native.validate_sources(self.output, self.manifest, 1)
+        status_path.write_bytes(original_status)
+        receipt_path.write_text(json.dumps(receipt))
+        self.assertEqual(native.validate_sources(self.output, self.manifest, 1), receipt)
+
+    def test_rotated_axis_numeric_failure_stops_before_any_complete_receipt(self):
+        from ocr_numeric_evidence import NumericEvidenceError
+        import ocr_rotated_axis_evidence as axis
+        with patch.object(axis, "recover_rotated_axes", wraps=axis.recover_rotated_axes) as recognition:
+            with self.assertRaises(native.SourceValidationError) as failure:
+                self.make_rotated_axis_receipt(numeric_error=NumericEvidenceError("Numeric evidence rotated source proof mismatch"))
+        self.assertEqual(recognition.call_count, 1)
+        self.assertEqual(failure.exception.category, "numeric_rotated_source_proof_mismatch")
+        self.assertFalse(self.output.exists())
+        self.assertEqual(list(self.root.glob(".sources-native-*")), [])
+
+    def test_rotated_axis_trigger_requires_all_three_unchanged_opaque_rejections(self):
+        import ocr_numeric_evidence as numeric
+        import ocr_rotated_axis_evidence as axis
+        with fitz.open() as document:
+            page = document.new_page(width=400, height=650)
+            page.draw_rect(fitz.Rect(45, 45, 150, 80), fill=(0, 0, 0))
+            healthy = "Reliable revenue supply demand outlook recovery remains steady"
+            for default, alternative, attempted, accepted in (("A" * 120, healthy, False, True),
+                    ("A" * 120, "short", False, False), ("short", "A" * 120, False, False),
+                    ("A" * 120, "B" * 120, True, False)):
+                words = [{"bbox": [20, 20, 200, 60], "text": word, "block": 1, "paragraph": 1, "line": i}
+                         for i, word in enumerate(alternative.split())]
+                with self.subTest(default_length=len(default), alternate_length=len(alternative)), \
+                        patch.object(fitz, "get_tessdata", return_value=str(self.fixture_models())), \
+                        patch.object(fitz.Page, "get_textpage_ocr", return_value=object()), \
+                        patch.object(fitz.Page, "get_text", return_value=default), \
+                        patch.object(native, "_tesseract_version", return_value="5.3.0"), \
+                        patch.object(native.shutil, "which", return_value="fixture-engine"), \
+                        patch.object(numeric, "_read_tesseract", return_value=words), \
+                        patch.object(axis, "recover_rotated_axes", return_value=None) as recovery:
+                    if accepted:
+                        result = native._recognize_ocr_page(page, "private-source.pdf", 1)
+                        self.assertEqual(result[3]["engine"], "tesseract-cli")
+                    else:
+                        with self.assertRaises(native.SourceValidationError):
+                            native._recognize_ocr_page(page, "private-source.pdf", 1)
+                    self.assertEqual(recovery.call_count, int(attempted))
+
+    def test_rotated_axis_typed_rejections_keep_fixed_categories_without_private_error_text(self):
+        import ocr_numeric_evidence as numeric
+        import ocr_rotated_axis_evidence as axis
+        with fitz.open() as document:
+            page = document.new_page(width=400, height=650)
+            page.draw_rect(fitz.Rect(45, 45, 150, 80), fill=(0, 0, 0))
+            words = [{"bbox": [20, 20, 200, 60], "text": "A" * 120, "block": 1, "paragraph": 1, "line": 1}]
+            for message in sorted(native.ROTATED_AXIS_FAILURE_CATEGORIES) + ["PRIVATE source text https://private.invalid"]:
+                with self.subTest(message=message), \
+                        patch.object(fitz, "get_tessdata", return_value=str(self.fixture_models())), \
+                        patch.object(fitz.Page, "get_textpage_ocr", return_value=object()), \
+                        patch.object(fitz.Page, "get_text", return_value="A" * 120), \
+                        patch.object(native, "_tesseract_version", return_value="5.3.0"), \
+                        patch.object(native.shutil, "which", return_value="fixture-engine"), \
+                        patch.object(numeric, "_read_tesseract", return_value=words) as full_page, \
+                        patch.object(axis, "recover_rotated_axes", side_effect=axis.RotatedAxisError(message)) as recovery, \
+                        patch.object(numeric, "audit_numeric_evidence") as audit:
+                    with self.assertRaises(native.SourceValidationError) as failure:
+                        native._ocr_page(page, "private-source.pdf", 1)
+                    self.assertEqual(failure.exception.category,
+                                     message if message in native.ROTATED_AXIS_FAILURE_CATEGORIES else "rotated_axis_proof_invalid")
+                    self.assertNotIn("PRIVATE", str(failure.exception))
+                    self.assertNotIn("private-source", str(failure.exception))
+                    self.assertEqual(recovery.call_count, 1)
+                    self.assertEqual(full_page.call_count, 1)
+                    audit.assert_not_called()
+
     def test_alternate_primary_runs_once_only_after_two_readability_rejections(self):
         import ocr_numeric_evidence as numeric
         with fitz.open() as document:

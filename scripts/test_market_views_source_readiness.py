@@ -203,7 +203,7 @@ class ReadinessTests(unittest.TestCase):
         self.assertIn("'--execution-sha', producer['head_sha']", block)
         self.assertNotIn('continue-on-error:', block)
         artifact = workflow.split('- name: Preserve sanitized native source numeric audit', 1)[1].split('\n      - name:', 1)[0]
-        self.assertIn("if: ${{ always() && inputs.source_handoff_kind == 'native-pdf' }}", artifact)
+        self.assertIn("if: ${{ always() && inputs.source_handoff_kind == 'native-pdf' && inputs.acceptance_only != true }}", artifact)
         self.assertIn('path: ${{ runner.temp }}/market-views-native-source-audit.json', artifact)
         self.assertIn('retention-days: 7', artifact)
 

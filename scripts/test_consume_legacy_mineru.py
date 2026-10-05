@@ -460,6 +460,67 @@ class MaterializedVerificationTests(unittest.TestCase):
         path.write_bytes(canonical(value)); self.rehash(path); self.freeze()
         with self.assertRaisesRegex(c.ConsumerError, 'materialized_image_map'): self.verify()
 
+    def test_rehashed_invalid_figure_sidecar_cannot_pass_existing_map_checks(self):
+        path = self.report_dir() / 'source_figure_map.json'; path.write_bytes(b'[]')
+        self.receipt['files'].append({'path': path.relative_to(self.root).as_posix(),
+                                     'sha256': c.digest(path.read_bytes()), 'bytes': path.stat().st_size})
+        self.freeze()
+        with self.assertRaisesRegex(c.ConsumerError, 'materialized_figure_source'): self.verify()
+
+    def test_new_sidecar_marker_cannot_be_deleted_or_partially_downgraded(self):
+        self.change_status(lambda status: status.update(source_figure_map='source_figure_map.json',
+                                                       source_figure_map_sha256='a' * 64))
+        with self.assertRaisesRegex(c.ConsumerError, 'materialized_figure_source'): self.verify()
+        self.change_status(lambda status: status.pop('source_figure_map_sha256'))
+        with self.assertRaisesRegex(c.ConsumerError, 'materialized_reports'): self.verify()
+
+    def test_default_writer_explicitly_forwards_unknown_original_identity(self):
+        destination = self.root.parent / 'default-writer'
+        raw = zip_bytes([('full.md', b'# Original source')])
+        calls = []
+        def create(raw_dir, assets_dir, maximum, **kwargs):
+            calls.append(kwargs)
+            return fake_asset_writer(raw_dir, assets_dir, maximum)
+        with patch('pdf_to_xhs_batch.create_chart_source_assets', side_effect=create):
+            result = c.materialize(prepare_fixture(), destination, downloader=lambda _: raw)
+        self.assertEqual(len(calls), 5)
+        for call in calls:
+            self.assertIsNone(call['original_pdf_sha256']); self.assertIsNone(call['auth_original_pdf'])
+            self.assertEqual(call['markdown_sha256'], c.digest(b'# Original source'))
+        self.assertIsNone(result['original_pdf_sha256'])
+
+    def test_real_metadata_sidecar_retains_unknown_original_provenance(self):
+        from test_mineru_figure_sources import Fixture
+        fixture = Fixture(self.root.parent / 'metadata-fixture')
+        markdown = (fixture.report / 'source_mineru.md').read_bytes()
+        entries = [(path.relative_to(fixture.raw).as_posix(), path.read_bytes())
+                   for path in fixture.raw.rglob('*') if path.is_file()]
+        entries.append(('full.md', markdown))
+        destination = self.root.parent / 'metadata-output'
+        result = c.materialize(prepare_fixture(), destination, downloader=lambda _: zip_bytes(entries))
+        receipt = json.loads((destination / '_legacy_output_receipt.json').read_bytes())
+        c.verify_materialized_output(destination, canonical(receipt))
+        self.assertFalse(result['original_source_bytes_proven'])
+        for status in receipt['reports']:
+            self.assertIsNone(status['original_pdf_sha256'])
+            self.assertEqual(status['source_figure_map'], 'source_figure_map.json')
+            sidecar = destination / c.output_name(status['source_pdf']) / status['source_figure_map']
+            self.assertEqual(status['source_figure_map_sha256'], c.digest(sidecar.read_bytes()))
+            proof = json.loads(sidecar.read_bytes())
+            self.assertEqual(proof['original_identity'], 'unproven')
+            self.assertFalse(proof['authenticated_original_render']); self.assertEqual(proof['pages'], [])
+        directory = destination / c.output_name(receipt['reports'][0]['source_pdf'])
+        mapping_path = directory / 'source_image_map.json'
+        mapping = json.loads(mapping_path.read_bytes())
+        ref, asset = next(iter(mapping['images'].items()))
+        mapping['images'] = {'images/swapped-alias.jpg': asset}
+        mapping_path.write_bytes(canonical(mapping))
+        row = next(row for row in receipt['files'] if row['path'] == mapping_path.relative_to(destination).as_posix())
+        row.update(sha256=c.digest(mapping_path.read_bytes()), bytes=mapping_path.stat().st_size)
+        (destination / '_legacy_output_receipt.json').write_bytes(canonical(receipt))
+        with self.assertRaisesRegex(c.ConsumerError, 'materialized_figure_source'):
+            c.verify_materialized_output(destination, canonical(receipt))
+
     def test_receipt_cannot_declare_duplicate_or_escaping_paths(self):
         original = deepcopy(self.receipt['files'])
         self.receipt['files'].append(deepcopy(self.receipt['files'][0])); self.freeze()

@@ -38,6 +38,7 @@ RAW_DIR_PATTERNS = [
 ]
 EXCLUDED_FILENAMES = {
     "source_mineru.md",
+    "source_figure_map.json",
     "shard_run_summary.md",
     "podcast_en_script.txt",
     "podcast_script.txt",
@@ -76,10 +77,13 @@ def log(message: str) -> None:
 
 
 def is_raw_dir(path: Path) -> bool:
-    return any(pattern.search(path.name.strip()) for pattern in RAW_DIR_PATTERNS)
+    return path.name.strip().lower() == "figure_source_evidence" or any(
+        pattern.search(path.name.strip()) for pattern in RAW_DIR_PATTERNS)
 
 
 def is_excluded_file(path: Path, exclude_source_mineru: bool) -> bool:
+    if any(part.lower() == "figure_source_evidence" for part in path.parts):
+        return True
     name = path.name.strip()
     if name in EXCLUDED_FILENAMES:
         return True

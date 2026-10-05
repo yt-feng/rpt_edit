@@ -147,6 +147,40 @@ class SourceTests(unittest.TestCase):
             with self.assertRaises(ValueError): source.validate_sources(self.destination, 6, '261001')
             status_path.write_bytes(original_status); (self.destination / source.RECEIPT).write_bytes(original_receipt)
 
+    def test_default_writer_receives_each_authenticated_frozen_original(self):
+        calls = []
+        def create(raw_dir, assets_dir, maximum, **kwargs):
+            calls.append(kwargs)
+            return fake_asset_writer(raw_dir, assets_dir, maximum)
+        with patch('pdf_to_xhs_batch.create_chart_source_assets', side_effect=create):
+            source.materialize(self.authority, self.manifest, self.manifest.parent, self.results,
+                self.private, self.fixture.cache, self.destination, self.context)
+        self.assertEqual(len(calls), 6)
+        for original, call in zip(self.authority['original_inventory'], calls):
+            self.assertEqual(call['auth_original_pdf'], self.manifest.parent / original['source_pdf'])
+            self.assertEqual(call['original_pdf_sha256'], original['content_sha256'])
+            self.assertEqual(source.digest(call['auth_original_pdf'].read_bytes()), original['content_sha256'])
+            self.assertRegex(call['markdown_sha256'], r'^[a-f0-9]{64}$')
+        source.validate_sources(self.destination, 6, '261001')
+
+    def test_rehashed_invalid_figure_sidecar_is_rejected(self):
+        receipt = self.recover()
+        directory = self.destination / receipt['reports'][0]['directory']
+        (directory / 'source_figure_map.json').write_bytes(b'[]')
+        self.rewrite(lambda _: None, files=True)
+        with self.assertRaisesRegex(source.LegacySourceError, 'source_images'):
+            source.validate_sources(self.destination, 6, '261001')
+
+    def test_declared_figure_sidecar_cannot_disappear_or_be_null(self):
+        receipt = self.recover()
+        path = self.destination / receipt['reports'][0]['directory'] / 'status.json'
+        status = json.loads(path.read_bytes())
+        for name, sha in [('source_figure_map.json', 'a' * 64), (None, None)]:
+            status.update(source_figure_map=name, source_figure_map_sha256=sha)
+            path.write_bytes(legacy.canonical(status)); self.rewrite(lambda _: None, files=True)
+            with self.subTest(name=name), self.assertRaisesRegex(source.LegacySourceError, 'source_images'):
+                source.validate_sources(self.destination, 6, '261001')
+
     def test_real_private_handoff_archive_roundtrip_retains_the_complete_receipt(self):
         self.recover()
         import private_workflow_handoff as handoff

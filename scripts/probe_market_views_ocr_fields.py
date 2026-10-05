@@ -26,6 +26,7 @@ import fitz
 import audit_market_views_ocr_receipt as audit
 import extract_native_market_sources as native
 from ocr_numeric_evidence import MAX_IMAGE_PIXELS, SECOND_DPI, NumericEvidenceError, audit_numeric_evidence, validate_numeric_evidence, safe_geometry_diagnostics
+from ocr_rotated_axis_evidence import RotatedAxisError
 
 
 DAILY_WORKFLOW = ".github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml"
@@ -45,6 +46,38 @@ READABILITY_COUNTS = ("characters", "minimum_characters", "invalid_unicode_chara
                       "long_ascii_characters", "numeric_tokens")
 READABILITY_REASONS = {"insufficient_characters", "invalid_unicode", "opaque_ascii_runs",
                        "missing_language_or_table_structure", "readable", "readable_sparse_structural_ocr"}
+OCR_FAILURE_CATEGORIES = native.NUMERIC_FAILURE_CATEGORIES | native.ROTATED_AXIS_FAILURE_CATEGORIES | {
+    "ocr_language_data_unavailable", "ocr_engine_failed", "page_ocr_or_numeric_validation_failed",
+}
+
+
+class _PrivateRecognitionDiagnostic(dict):
+    """Carry producer provenance internally, outside serializable diagnostics."""
+
+    __slots__ = ("ocr_provenance",)
+
+    def __init__(self, counts, provenance):
+        super().__init__(counts)
+        self.ocr_provenance = provenance
+
+
+def _axis_failure_category(error):
+    return str(error) if str(error) in native.ROTATED_AXIS_FAILURE_CATEGORIES else "rotated_axis_proof_invalid"
+
+
+def _rotated_axis_arguments(provenance, *, selected_route=False):
+    proof_present = isinstance(provenance, dict) and "rotated_axis" in provenance
+    engine = provenance.get("engine") if isinstance(provenance, dict) else None
+    if not selected_route and not proof_present and engine != native.OCR_ROTATED_AXIS_ENGINE:
+        return {}
+    proof = provenance.get("rotated_axis") if isinstance(provenance, dict) else None
+    runtime = proof.get("runtime") if isinstance(proof, dict) else None
+    if (engine != native.OCR_ROTATED_AXIS_ENGINE or not isinstance(proof, dict)
+            or not isinstance(runtime, dict) or runtime.get("languages") != native.OCR_LANGUAGES
+            or provenance.get("languages") != native.OCR_LANGUAGES
+            or native.canonical_bytes(runtime.get("traineddata")) != native.canonical_bytes(provenance.get("traineddata"))):
+        raise ProbeError("rotated_axis_proof_invalid")
+    return {"rotated_axis_proof": proof}
 
 
 class ProbeError(ValueError):
@@ -307,17 +340,21 @@ def probe_fields(input_dir: Path, manifest: Path, fixtures: Path, producer_metad
                         safe_text, ocr = native._ocr_page(page, "field-probe", number)
                     native.require_readable_page(native._ocr_primary_text(ocr), "field-probe", number,
                                                  allow_sparse_ocr=True)
+                    axis_arguments = _rotated_axis_arguments(ocr)
                     validate_numeric_evidence(safe_text, ocr.get("numeric_evidence"), pixel_sha,
-                                              image_path=image_path)
+                                              image_path=image_path, **axis_arguments)
                 except native.SourceValidationError as exc:
                     category = getattr(exc, "category", None)
-                    allowed = native.NUMERIC_FAILURE_CATEGORIES | {"ocr_language_data_unavailable", "ocr_engine_failed"}
-                    if isinstance(category, str) and category in allowed:
+                    if isinstance(category, str) and category in OCR_FAILURE_CATEGORIES:
                         raise ProbeError(category, geometry_diagnostics=safe_geometry_diagnostics(exc)) from None
                     raise ProbeError("page_ocr_or_numeric_validation_failed") from None
                 except NumericEvidenceError as exc:
                     raise ProbeError(native._numeric_failure_category(exc),
                                      geometry_diagnostics=safe_geometry_diagnostics(exc)) from None
+                except RotatedAxisError as exc:
+                    raise ProbeError(_axis_failure_category(exc)) from None
+                except ProbeError:
+                    raise
                 except Exception as exc:
                     raise ProbeError("page_ocr_or_numeric_validation_failed") from exc
                 reports[sha]["pages"][number - 1] = {"extraction_method": "ocr", "ocr": ocr}
@@ -531,29 +568,38 @@ def _raw_page_ocr(page: fitz.Page) -> tuple[str, list[Any], str, dict[str, Any]]
     """Use the production full-page engine parameters without admitting sources."""
     observed = _ObservedOCRPage(page)
     try:
-        primary, words, tessdata, _, diagnostic = native._recognize_ocr_page(observed, "page-probe", 1,
+        primary, words, tessdata, provenance, diagnostic = native._recognize_ocr_page(observed, "page-probe", 1,
                                                                            allow_rejected=True)
     except native.SourceValidationError as exc:
         category = getattr(exc, "category", None)
-        raise ProbeError(category if category in {"ocr_language_data_unavailable", "ocr_engine_failed"}
-                         else "ocr_engine_failed") from None
+        raise ProbeError(category if isinstance(category, str) and category in OCR_FAILURE_CATEGORIES
+                         else "page_ocr_or_numeric_validation_failed") from None
     except Exception:
         raise ProbeError("ocr_engine_failed") from None
+    _rotated_axis_arguments(provenance, selected_route=diagnostic.get("selection") == "rotated-axis")
     opaque = {}
     rect = getattr(page, "rect", None)
+    rotated = provenance.get("rotated_axis") if isinstance(provenance, dict) else None
+    retained = rotated.get("candidates") if isinstance(rotated, dict) else None
     for sort, label, assessment in ((True, "geometric-sorted", "sorted_readability"),
                                     (False, "source-flow", "source_flow_readability")):
-        if sort in observed.texts and diagnostic.get(assessment, {}).get("accepted") is False:
+        candidate = retained.get(label) if isinstance(retained, dict) else None
+        if isinstance(candidate, dict) and diagnostic.get(assessment, {}).get("accepted") is False:
+            opaque[label] = _opaque_run_positions(candidate.get("text"), candidate.get("words"), rect)
+        elif sort in observed.texts and diagnostic.get(assessment, {}).get("accepted") is False:
             try:
                 positioned = page.get_text("words", textpage=observed.textpage, sort=sort) if _page_bounds(rect) else None
             except Exception:
                 positioned = None
             opaque[label] = _opaque_run_positions(observed.texts[sort], positioned, rect)
     if diagnostic.get("alternate_readability", {}).get("accepted") is False:
-        opaque["full-page-psm11"] = _opaque_run_positions(primary, words, rect)
+        candidate = retained.get("full-page-psm11") if isinstance(retained, dict) else None
+        opaque["full-page-psm11"] = _opaque_run_positions(
+            candidate.get("text") if isinstance(candidate, dict) else primary,
+            candidate.get("words") if isinstance(candidate, dict) else words, rect)
     if opaque:
         diagnostic = {**diagnostic, "opaque_runs": opaque}
-    return primary, words, tessdata, diagnostic
+    return primary, words, tessdata, _PrivateRecognitionDiagnostic(diagnostic, provenance)
 
 
 def _diagnose_page(page: fitz.Page, image_path: Path) -> dict[str, Any]:
@@ -565,14 +611,14 @@ def _diagnose_page(page: fitz.Page, image_path: Path) -> dict[str, Any]:
             primary, words, tessdata, layout = _raw_page_ocr(page)
             result["ocr_readability"] = _readability_projection(primary, allow_sparse_ocr=True)
             if (isinstance(layout, dict) and isinstance(layout.get("selection"), str)
-                    and layout["selection"] in {"geometric-sorted", "source-flow", "full-page-psm11", "rejected"}):
+                    and layout["selection"] in {"geometric-sorted", "source-flow", "full-page-psm11", "rotated-axis", "rejected"}):
                 result["ocr_layout"] = {"selection": layout["selection"],
                     "sorted_readability": _safe_readability(layout.get("sorted_readability")),
                     "selected_readability": dict(result["ocr_readability"])}
-                for key in ("source_flow_readability", "alternate_readability"):
+                for key in ("source_flow_readability", "alternate_readability", "rotated_axis_readability"):
                     if key in layout:
                         result["ocr_layout"][key] = _safe_readability(layout[key])
-                for key in ("source_flow_same_glyphs", "recognition_attempted"):
+                for key in ("source_flow_same_glyphs", "recognition_attempted", "rotated_axis_attempted"):
                     if type(layout.get(key)) is bool:
                         result["ocr_layout"][key] = layout[key]
                 if isinstance(layout.get("opaque_runs"), dict):
@@ -586,13 +632,15 @@ def _diagnose_page(page: fitz.Page, image_path: Path) -> dict[str, Any]:
             # ordinal selectors never replace expected-value acceptance fixtures.
             native.require_readable_page(primary, "page-probe", 1, allow_sparse_ocr=True)
             result["numeric_audit_performed"] = True
+            provenance = getattr(layout, "ocr_provenance", None)
+            axis_arguments = _rotated_axis_arguments(provenance, selected_route=layout.get("selection") == "rotated-axis")
             numeric = audit_numeric_evidence(page, primary, primary_words=words,
-                                            language=native.OCR_LANGUAGES, tessdata=tessdata)
+                                            language=native.OCR_LANGUAGES, tessdata=tessdata, **axis_arguments)
             image = fitz.Pixmap(str(image_path))
             validate_numeric_evidence(numeric["safe_text"], numeric["evidence"], native.sha256_bytes(image.samples),
-                                      image_path=image_path)
+                                      image_path=image_path, **axis_arguments)
     except ProbeError as exc:
-        result["category"] = str(exc) if str(exc) in {"ocr_language_data_unavailable", "ocr_engine_failed"} else "page_ocr_or_numeric_validation_failed"
+        result["category"] = str(exc) if str(exc) in OCR_FAILURE_CATEGORIES else "page_ocr_or_numeric_validation_failed"
         return result
     except NumericEvidenceError as exc:
         result["category"] = native._numeric_failure_category(exc)
@@ -600,6 +648,9 @@ def _diagnose_page(page: fitz.Page, image_path: Path) -> dict[str, Any]:
             diagnostic = safe_geometry_diagnostics(exc)
             if diagnostic:
                 result["geometry_diagnostics"] = diagnostic
+        return result
+    except RotatedAxisError as exc:
+        result["category"] = _axis_failure_category(exc)
         return result
     except Exception:
         result["category"] = "page_ocr_or_numeric_validation_failed"

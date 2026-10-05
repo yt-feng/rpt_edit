@@ -42,6 +42,8 @@ READABILITY_POLICY = "lexical-and-table-v2"
 SPARSE_OCR_SUBTYPE = "sparse-structural-ocr-v1"
 OCR_TEXT_LAYOUT_POLICY = "same-textpage-source-flow-v1"
 OCR_RECOGNITION_POLICY = "full-page-cli-psm11-after-unreadable-v1"
+OCR_ROTATED_AXIS_POLICY = "rotated-axis-regions-v1"
+OCR_ROTATED_AXIS_ENGINE = "tesseract-cli-rotated-axis"
 MAX_ALTERNATE_WORDS = 20_000
 MAX_ALTERNATE_TEXT_BYTES = 1_000_000
 LATIN_WORD = re.compile(r"[A-Za-z]+(?:['’][A-Za-z]+)*")
@@ -86,6 +88,7 @@ NUMERIC_FAILURE_MESSAGES = {
     "Numeric evidence schema is invalid": "numeric_schema_invalid",
     "Numeric evidence digest mismatch": "numeric_digest_mismatch",
     "Numeric evidence original transcript mismatch": "numeric_original_transcript_mismatch",
+    "Numeric evidence rotated source proof mismatch": "numeric_rotated_source_proof_mismatch",
     "Numeric evidence is not bound to the source page": "numeric_source_binding_mismatch",
     "Numeric evidence summary transcript mismatch": "numeric_summary_transcript_mismatch",
     "Numeric evidence omitted source fields": "numeric_source_fields_missing",
@@ -116,6 +119,9 @@ NUMERIC_FAILURE_MESSAGES = {
     "Numeric evidence cannot reproduce the summary transcript": "numeric_summary_reconstruction_mismatch",
 }
 NUMERIC_FAILURE_CATEGORIES = frozenset(NUMERIC_FAILURE_MESSAGES.values()) | {"numeric_evidence_invalid"}
+ROTATED_AXIS_FAILURE_CATEGORIES = frozenset({
+    "rotated_axis_proof_invalid", "rotated_axis_not_eligible", "rotated_axis_time_budget_exhausted",
+})
 
 
 def _numeric_failure_category(error: Exception) -> str:
@@ -447,6 +453,39 @@ def _validate_ocr_text_layout(page: dict[str, Any], recognized_text: str) -> dic
     return {"page": page["page"], **binding}
 
 
+def _validate_ocr_rotated_axis(page: dict[str, Any], recognized_text: str, *,
+                              image_path: Path | None = None) -> dict[str, Any] | None:
+    ocr = page.get("ocr")
+    present = isinstance(ocr, dict) and "rotated_axis" in ocr
+    indicator_present = "rotated_axis_selection" in page
+    if not present and not indicator_present:
+        if isinstance(ocr, dict) and ocr.get("engine") == OCR_ROTATED_AXIS_ENGINE:
+            raise SourceValidationError("Rotated OCR recognition is missing its source proof")
+        return None
+    try:
+        from ocr_rotated_axis_evidence import replay_rotated_axis_proof
+        proof, image = ocr["rotated_axis"], page["original_page"]
+        evidence = ocr["numeric_evidence"]
+        if (page.get("extraction_method") != "ocr" or ocr.get("engine") != OCR_ROTATED_AXIS_ENGINE
+                or not isinstance(proof, dict) or type(proof.get("schema")) is not int
+                or proof.get("policy") != OCR_ROTATED_AXIS_POLICY
+                or "recognition" in ocr or "recognition_selection" in page
+                or "text_layout" in ocr or "text_layout_selection" in page
+                or not isinstance(image, dict) or not isinstance(evidence, dict) or image_path is None):
+            raise ValueError("rotated-proof")
+        binding = {"policy": OCR_ROTATED_AXIS_POLICY, "selection": "rotated-axis",
+                   "rotated_axis_sha256": sha256_bytes(canonical_bytes(proof))}
+        if (canonical_bytes(page.get("rotated_axis_selection")) != canonical_bytes(binding)
+                or evidence.get("rotated_axis_sha256") != binding["rotated_axis_sha256"]):
+            raise ValueError("rotated-binding")
+        replay_rotated_axis_proof(proof, recognized_text,
+            input_pixel_sha256=image["pixel_sha256"], page_size_points=evidence["page_size_points"],
+            image_path=image_path, language=ocr["languages"], traineddata=ocr["traineddata"])
+    except (ImportError, KeyError, TypeError, ValueError, OverflowError) as exc:
+        raise SourceValidationError("Rotated OCR recognition differs from its complete source proof") from exc
+    return {"page": page["page"], **binding}
+
+
 def _source_context(value: Any) -> dict[str, str]:
     required = {"date_folder", "producer_run_id", "execution_sha", "original_source_run_id"}
     if not isinstance(value, dict) or set(value) != required or any(not isinstance(item, str) for item in value.values()):
@@ -549,6 +588,42 @@ def _recognize_ocr_page(page: fitz.Page, source_name: str, number: int, *,
         provenance.update(engine="tesseract-cli", recognition=recognition)
         diagnostic.update(recognition_attempted=True, alternate_readability=recognition["selected_readability"],
                           selection="full-page-psm11" if recognition["selected_readability"]["accepted"] else "rejected")
+        # Axis recovery cannot replace a healthy recognition, a different
+        # rejection class, or a numeric-audit failure. All three complete-page
+        # candidates must first fail the unchanged opaque-glyph gate.
+        assessments = (candidates["sorted_readability"], candidates["source_flow_readability"],
+                       recognition["selected_readability"])
+        if all(value.get("accepted") is False and value.get("reason") == "opaque_ascii_runs"
+               for value in assessments):
+            try:
+                from ocr_rotated_axis_evidence import RotatedAxisError, recover_rotated_axes
+                try:
+                    rotated = recover_rotated_axes(page, {
+                        "geometric-sorted": {"text": sorted_text,
+                            "words": page.get_text("words", textpage=textpage, sort=True)},
+                        "source-flow": {"text": candidates["source_flow_text"],
+                            "words": page.get_text("words", textpage=textpage, sort=False)},
+                        "full-page-psm11": {"text": text, "words": primary_words},
+                    }, language=OCR_LANGUAGES, tessdata=str(tessdata), tesseract_command=command,
+                       tesseract_version=version, traineddata=models, reader=_read_tesseract)
+                except RotatedAxisError as exc:
+                    category = str(exc) if str(exc) in ROTATED_AXIS_FAILURE_CATEGORIES else "rotated_axis_proof_invalid"
+                    raise SourceValidationError(f"Runner OCR axis recovery rejected at page {number}: {category}",
+                                                category=category) from exc
+                if rotated is not None:
+                    text, primary_words = rotated["primary_text"], rotated["primary_words"]
+                    require_readable_page(text, source_name, number, allow_sparse_ocr=True)
+                    provenance.pop("recognition")
+                    provenance.update(engine=OCR_ROTATED_AXIS_ENGINE, rotated_axis=rotated["proof"])
+                    diagnostic.update(selection="rotated-axis", rotated_axis_attempted=True,
+                                      rotated_axis_readability=page_readability(text, allow_sparse_ocr=True))
+                else:
+                    diagnostic["rotated_axis_attempted"] = True
+            except SourceValidationError:
+                raise
+            except Exception as exc:
+                raise SourceValidationError(f"Runner OCR axis recovery failed at page {number}: ocr_engine_failed",
+                                            category="ocr_engine_failed") from exc
     else:
         if text is None:
             # A changed-glyph source-flow result may not authorize another
@@ -575,8 +650,11 @@ def _ocr_page(page: fitz.Page, source_name: str, number: int) -> tuple[str, dict
         raise SourceValidationError(f"Runner OCR support unavailable at page {number}: ocr_numeric_support_missing",
                                     category="ocr_numeric_support_missing") from exc
     try:
+        axis_arguments = ({"rotated_axis_proof": provenance["rotated_axis"]}
+                          if "rotated_axis" in provenance else {})
         audit = audit_numeric_evidence(
             page, text, language=OCR_LANGUAGES, tessdata=tessdata, primary_words=primary_words,
+            **axis_arguments,
         )
         text = audit["safe_text"]
     except NumericEvidenceError as exc:
@@ -695,6 +773,11 @@ def _extract_report(pdf: Path, binding: dict[str, str], root: Path, index: int,
                             "policy": OCR_RECOGNITION_POLICY, "selection": "full-page-psm11",
                             "recognition_sha256": sha256_bytes(canonical_bytes(ocr["recognition"])),
                         }
+                    if "rotated_axis" in ocr:
+                        page_record["rotated_axis_selection"] = {
+                            "policy": OCR_ROTATED_AXIS_POLICY, "selection": "rotated-axis",
+                            "rotated_axis_sha256": sha256_bytes(canonical_bytes(ocr["rotated_axis"])),
+                        }
                 elif method == "blank":
                     page_record["blank_proof"] = {"criterion": "all-rgb-samples-255",
                                                  "ocr_attempted": False}
@@ -734,7 +817,7 @@ def _extract_report(pdf: Path, binding: dict[str, str], root: Path, index: int,
         "blank_page_count": sum(page["extraction_method"] == "blank" for page in page_records),
         "images": [str(PurePosixPath(asset["path"]).relative_to(directory.name)) for asset in assets],
     }
-    layout_bindings, recognition_bindings = [], []
+    layout_bindings, recognition_bindings, rotated_axis_bindings = [], [], []
     for page_record in page_records:
         primary = _ocr_primary_text(page_record["ocr"]) if page_record["extraction_method"] == "ocr" else ""
         layout_binding = _validate_ocr_text_layout(page_record, primary)
@@ -743,12 +826,18 @@ def _extract_report(pdf: Path, binding: dict[str, str], root: Path, index: int,
         recognition_binding = _validate_ocr_recognition(page_record, primary)
         if recognition_binding is not None:
             recognition_bindings.append(recognition_binding)
+        rotated_axis_binding = _validate_ocr_rotated_axis(page_record, primary,
+            image_path=root / page_record["original_page"]["path"] if "original_page" in page_record else None)
+        if rotated_axis_binding is not None:
+            rotated_axis_bindings.append(rotated_axis_binding)
     if layout_bindings:
         # This immutable file's receipt hash also binds the optional page
         # metadata: deleting both layout fields cannot pose as an old receipt.
         status["ocr_text_layout_bindings"] = layout_bindings
     if recognition_bindings:
         status["ocr_recognition_bindings"] = recognition_bindings
+    if rotated_axis_bindings:
+        status["ocr_rotated_axis_bindings"] = rotated_axis_bindings
     write_json(directory / "status.json", status)
     return {
         **binding, "directory": directory.name, "source_method": "original-pdf", "duplicate_of": None,
@@ -1081,7 +1170,7 @@ def _validate_sources_v2(output_dir: Path, manifest: Path, expected_reports: int
         markdown_raw = (root / report["markdown"]["path"]).read_bytes()
         markdown_text = markdown_raw.decode("utf-8")
         previous_end = text_total = native_total = recognized_total = ocr_count = blank_count = 0
-        page_texts, layout_bindings, recognition_bindings = [], [], []
+        page_texts, layout_bindings, recognition_bindings, rotated_axis_bindings = [], [], [], []
         for number, page in enumerate(pages, 1):
             if (not isinstance(page, dict) or type(page.get("page")) is not int or page["page"] != number
                     or page.get("source_pdf_sha256") != binding["content_sha256"]
@@ -1107,6 +1196,7 @@ def _validate_sources_v2(output_dir: Path, manifest: Path, expected_reports: int
                     or page.get("text_readability") != page_readability(text)):
                 raise SourceValidationError("Receipt page readability evidence differs from bound source text")
             method, image = page["extraction_method"], page.get("original_page")
+            image_path = None
             if image is not None:
                 image_path = _validate_page_image(root, image, binding, number)
                 if image_path != root / directory / "pages" / f"source_page_{number:04d}.png":
@@ -1131,7 +1221,7 @@ def _validate_sources_v2(output_dir: Path, manifest: Path, expected_reports: int
                 else:
                     ocr = page.get("ocr")
                     if (image is None or not isinstance(ocr, dict)
-                            or ocr.get("engine") not in {"tesseract-via-pymupdf", "tesseract-cli"}
+                            or ocr.get("engine") not in {"tesseract-via-pymupdf", "tesseract-cli", OCR_ROTATED_AXIS_ENGINE}
                             or not isinstance(ocr.get("pymupdf_version"), str) or not ocr["pymupdf_version"]
                             or ocr.get("languages") != OCR_LANGUAGES or ocr.get("full_page") is not True
                             or type(ocr.get("dpi")) is not int or ocr["dpi"] != PAGE_DPI
@@ -1146,8 +1236,11 @@ def _validate_sources_v2(output_dir: Path, manifest: Path, expected_reports: int
                         raise SourceValidationError("OCR language data provenance is incomplete")
                     try:
                         from ocr_numeric_evidence import validate_numeric_evidence
+                        axis_arguments = ({"rotated_axis_proof": ocr["rotated_axis"]}
+                                          if "rotated_axis" in ocr else {})
                         validate_numeric_evidence(
                             text, ocr.get("numeric_evidence"), image["pixel_sha256"], image_path=image_path,
+                            **axis_arguments,
                         )
                     except (ImportError, TypeError, ValueError, KeyError) as exc:
                         raise SourceValidationError("OCR numeric evidence is missing or differs from the original page") from exc
@@ -1167,6 +1260,9 @@ def _validate_sources_v2(output_dir: Path, manifest: Path, expected_reports: int
             recognition_binding = _validate_ocr_recognition(page, recognized_text)
             if recognition_binding is not None:
                 recognition_bindings.append(recognition_binding)
+            rotated_axis_binding = _validate_ocr_rotated_axis(page, recognized_text, image_path=image_path)
+            if rotated_axis_binding is not None:
+                rotated_axis_bindings.append(rotated_axis_binding)
             recognized_readability = page_readability(recognized_text, allow_sparse_ocr=method == "ocr")
             recognized_characters = recognized_readability["characters"]
             if (page.get("recognized_text_characters") != recognized_characters
@@ -1198,6 +1294,9 @@ def _validate_sources_v2(output_dir: Path, manifest: Path, expected_reports: int
         if ((recognition_bindings or "ocr_recognition_bindings" in status)
                 and canonical_bytes(status.get("ocr_recognition_bindings")) != canonical_bytes(recognition_bindings)):
             raise SourceValidationError("Original source status disagrees with OCR recognition bindings")
+        if ((rotated_axis_bindings or "ocr_rotated_axis_bindings" in status)
+                and canonical_bytes(status.get("ocr_rotated_axis_bindings")) != canonical_bytes(rotated_axis_bindings)):
+            raise SourceValidationError("Original source status disagrees with rotated OCR recognition bindings")
         asset_pages, expected_assets = set(), []
         for asset_index, asset in enumerate(assets, 1):
             page_number = asset.get("source_page")

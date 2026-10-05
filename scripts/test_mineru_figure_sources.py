@@ -1,0 +1,539 @@
+#!/usr/bin/env python3
+"""Actual-shape provider fixtures plus real PDF/pixel crop replay, without OCR."""
+from __future__ import annotations
+
+import copy
+import hashlib
+import json
+import subprocess
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+
+import fitz
+from PIL import Image
+
+import mineru_figure_sources as figures
+
+
+def digest(data):
+    return hashlib.sha256(data).hexdigest()
+
+
+def text_block(box, text, kind="text", level=0):
+    return {"type": kind, "bbox": box, "level": level,
+            "lines": [{"bbox": box, "spans": [{"type": "text", "bbox": box, "content": text}]}]}
+
+
+def visual(index, box, *, kind="table", body="", captions=(), footnotes=(), page_idx=0, size=(400, 500), ref=None):
+    ref = ref or f"images/image-{index}.jpg"
+    children = [{"type": kind + "_body", "bbox": box,
+                 "lines": [{"spans": [{"type": kind, "bbox": box, "image_path": ref[7:], "html": body}]}]}]
+    for label, entries in (("caption", captions), ("footnote", footnotes)):
+        children.extend({**text_block(b, t), "type": kind + "_" + label} for b, t in entries)
+    parent = {"type": kind, "bbox": box, "blocks": children, "index": index}
+    content = {"type": kind, "page_idx": page_idx,
+               "bbox": [round(box[0] * 1000 / size[0]), round(box[1] * 1000 / size[1]),
+                        round(box[2] * 1000 / size[0]), round(box[3] * 1000 / size[1])],
+               "img_path": ref, kind + "_caption": [t for _, t in captions], kind + "_footnote": [t for _, t in footnotes],
+               "table_body" if kind == "table" else "content": body}
+    return content, parent
+
+
+class Fixture:
+    def __init__(self, root, visuals=None, text_blocks=(), size=(400, 500), actual_size=None, pages=1):
+        self.root = root
+        self.raw = root / "report" / "mineru_raw"
+        self.report = self.raw.parent
+        self.assets = self.report / "assets"
+        self.raw.mkdir(parents=True)
+        self.size = size
+        self.actual_size = actual_size or size
+        self.content = []
+        self.middle = {"_backend": "hybrid", "_version_name": "3.4.4", "_ocr_enable": True, "_effort": "medium", "pdf_info": []}
+        visuals = visuals if visuals is not None else [visual(0, [35, 100, 185, 260], kind="chart",
+                    captions=[([35, 80, 180, 99], "Figure 1: Growth")], size=size)]
+        # Inputs use lists of (bbox,text); convenient single-tuples are normalised.
+        for pi in range(pages):
+            self.middle["pdf_info"].append({"page_idx": pi, "page_size": list(size), "para_blocks": list(text_blocks) if pi == 0 else []})
+        for content, parent in visuals:
+            self.content.append(content)
+            self.middle["pdf_info"][content["page_idx"]]["para_blocks"].append(parent)
+            ref = content["img_path"]
+            if ref:
+                path = self.raw / ref
+                path.parent.mkdir(parents=True, exist_ok=True)
+                Image.new("RGB", (700, 500), (40, 100, 160)).save(path, "JPEG")
+        self.original = root / "original.pdf"
+        doc = fitz.open()
+        for pi in range(pages):
+            page = doc.new_page(width=self.actual_size[0], height=self.actual_size[1])
+            page.insert_text((20, 30), "Verified source page", fontsize=12)
+            for c, p in visuals:
+                if c["page_idx"] != pi:
+                    continue
+                page.draw_rect(fitz.Rect(p["bbox"]), color=(.2, .4, .6), fill=(.8, .9, 1))
+                for child in p["blocks"]:
+                    if child["type"].endswith(("_caption", "_footnote")):
+                        b = child["bbox"]
+                        page.draw_rect(fitz.Rect(b), color=(.7, .1, .1), fill=(.9, .5, .5))
+        doc.save(self.original)
+        doc.close()
+        (self.raw / "source.pdf").write_bytes(self.original.read_bytes())
+        self.original_sha = digest(self.original.read_bytes())
+        (self.report / "source_mineru.md").write_text("\n".join("![](" + c["img_path"] + ")" for c, _ in visuals))
+        self.md_sha = digest((self.report / "source_mineru.md").read_bytes())
+        self.write_metadata()
+
+    def write_metadata(self):
+        (self.raw / "content_list.json").write_text(json.dumps(self.content))
+        (self.raw / "middle.json").write_text(json.dumps(self.middle))
+
+    def create(self, *, auth=True, admitted=True, maximum=100):
+        self.selection = figures.create_figure_sources(self.raw, self.assets,
+            original_pdf_sha256=self.original_sha if admitted else None,
+            markdown_sha256=self.md_sha, auth_original_pdf=self.original if auth else None, max_images=maximum)
+        self.admitted = admitted
+        return self.selection
+
+    def status(self):
+        value = {"source_markdown": "source_mineru.md", "original_pdf_sha256": self.original_sha if self.admitted else None,
+                 "images": self.selection["images"], "source_figure_map": figures.SIDECAR,
+                 "source_figure_map_sha256": digest((self.report / figures.SIDECAR).read_bytes())}
+        (self.report / "status.json").write_text(json.dumps(value))
+
+    def validate(self):
+        return figures.validate_figure_sources(self.report,
+            expected_original_sha256=self.original_sha if self.admitted else None,
+            expected_markdown_sha256=self.md_sha, expected_images=self.selection["images"])
+
+    def proof(self):
+        return json.loads((self.report / figures.SIDECAR).read_bytes())
+
+    def mutate(self, callback, *, reseal=True):
+        value = self.proof()
+        callback(value)
+        if reseal:
+            value["metadata_sha256"] = digest(figures._canonical(value["metadata"]))
+        (self.report / figures.SIDECAR).write_bytes(figures._canonical(value))
+
+
+class FigureSourceTests(unittest.TestCase):
+    def fixture(self, **kwargs):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        return Fixture(Path(tmp.name), **kwargs)
+
+    def test_authority_helpers_import_in_true_stdlib_only_subprocess(self):
+        # GitHub's authorization step runs before PyMuPDF/Pillow installation.
+        # -S removes site-packages rather than mocking successful library loads.
+        program = r'''
+import sys, tempfile
+from pathlib import Path
+sys.path.insert(0, sys.argv[1])
+import mineru_figure_sources as figures
+import consume_legacy_mineru as consumer
+import recover_durable_mineru_sources as recovery
+assert not any(name.split('.')[0] in {'PIL','fitz','pymupdf'} for name in sys.modules)
+producer={'id':123,'path':recovery.PRODUCER,'head_branch':'main',
+          'repository':{'full_name':'owner/repo'},'head_sha':'a'*40}
+assert recovery.check_producer(producer,'123','owner/repo')=='a'*40
+consumer.valid_url('https://example.invalid/result.zip')
+assert figures._cues('Statistical distribution of returns')['disclosures']==0
+with tempfile.TemporaryDirectory() as temp:
+ root=Path(temp);raw=root/'raw';raw.mkdir()
+ assert figures.create_figure_sources(raw,root/'assets',original_pdf_sha256=None,markdown_sha256='') is None
+ assert figures.validate_figure_sources(root,expected_original_sha256=None,expected_markdown_sha256='',expected_images=[]) is None
+assert not any(name.split('.')[0] in {'PIL','fitz','pymupdf'} for name in sys.modules)
+print('stdlib_authority_import_ready')
+'''
+        result = subprocess.run([sys.executable, "-S", "-B", "-c", program, str(Path(figures.__file__).parent)],
+                                capture_output=True, timeout=30, check=False)
+        self.assertEqual(result.returncode, 0, "Pre-install source authority imports failed")
+        self.assertIn(b"stdlib_authority_import_ready", result.stdout)
+
+    def test_tls_cache_and_auth_imports_do_not_attempt_image_libraries(self):
+        # TLS already requires requests/certifi/urllib3. Keep those real modules,
+        # but fail every attempt to import either new source-image dependency.
+        program = r'''
+import sys, importlib.abc, socket
+sys.path.insert(0, sys.argv[1])
+attempted=[]
+class NoImageDependencies(importlib.abc.MetaPathFinder):
+ def find_spec(self, fullname, path=None, target=None):
+  if fullname.split('.')[0] in {'PIL','fitz','pymupdf'}:
+   attempted.append(fullname)
+   raise ImportError('image_dependencies_not_installed')
+sys.meta_path.insert(0,NoImageDependencies())
+def no_network(*args,**kwargs): raise AssertionError('No network allowed')
+socket.create_connection=no_network
+import consume_legacy_mineru
+import recover_durable_mineru_sources
+import probe_mineru_result_tls
+import mineru_result_cache
+import mineru_pinned_result_transport
+import seed_mineru_result_cache
+assert not attempted
+assert not any(name.split('.')[0] in {'PIL','fitz','pymupdf'} for name in sys.modules)
+assert probe_mineru_result_tls.cloud_manual_execution_allowed({}) is False
+assert callable(seed_mineru_result_cache.check_producer)
+print('tls_cache_authority_import_ready')
+'''
+        result = subprocess.run([sys.executable, "-B", "-c", program, str(Path(figures.__file__).parent)],
+                                capture_output=True, timeout=30, check=False)
+        self.assertEqual(result.returncode, 0, "Existing TLS/cache imports attempted image dependencies")
+        self.assertIn(b"tls_cache_authority_import_ready", result.stdout)
+
+    def test_missing_metadata_is_only_legacy_none_and_missing_hashes_allowed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            raw = Path(tmp) / "raw"
+            raw.mkdir()
+            self.assertIsNone(figures.create_figure_sources(raw, Path(tmp) / "assets", original_pdf_sha256=None, markdown_sha256=""))
+            (raw / "middle.json").write_text("{}")
+            with self.assertRaises(figures.FigureSourceError):
+                figures.create_figure_sources(raw, Path(tmp) / "assets", original_pdf_sha256=None, markdown_sha256="")
+
+    def test_authenticated_crop_preserves_caption_pixels_and_replays_after_raw_removed(self):
+        fixture = self.fixture(visuals=[visual(0, [35, 100, 185, 260], kind="chart",
+            captions=[([35, 80, 180, 99], "Figure 1: Growth")], footnotes=[([35, 264, 180, 276], "Source data")])])
+        selection = fixture.create()
+        fixture.status()
+        value = fixture.proof()
+        self.assertEqual(value["assets"][0]["crop"]["union_bbox"], [35, 80, 185, 276])
+        self.assertEqual(len(value["pages"]), 1)
+        import shutil
+        shutil.rmtree(fixture.raw)
+        self.assertEqual(fixture.validate(), {"images/image-0.jpg": selection["images"][0]})
+
+    def test_no_auth_preserves_provider_bytes_and_explicit_unproven_identity(self):
+        fixture = self.fixture(visuals=[visual(0, [35, 100, 185, 260])])
+        original_bytes = (fixture.raw / "images/image-0.jpg").read_bytes()
+        fixture.create(auth=False, admitted=False)
+        fixture.status()
+        value = fixture.proof()
+        self.assertEqual(value["original_identity"], "unproven")
+        self.assertFalse(value["authenticated_original_render"])
+        self.assertEqual(value["pages"], [])
+        self.assertEqual((fixture.report / fixture.selection["images"][0]).read_bytes(), original_bytes)
+        self.assertEqual(len(fixture.validate()), 1)
+
+    def test_all_legal_records_audited_and_zero_images_is_valid(self):
+        body = "<table><tr><td>Important disclosures. Analyst compensation. Legal/compliance. " + "Explanation. " * 30 + "</td></tr></table>"
+        fixture = self.fixture(visuals=[visual(0, [35, 100, 350, 360], body=body)])
+        fixture.create()
+        fixture.status()
+        self.assertEqual(fixture.selection["images"], [])
+        self.assertTrue(fixture.proof()["decisions"][0]["legal"]["exclude"])
+        self.assertEqual(fixture.validate(), {})
+
+    def test_near_legal_heading_plus_body_cue_excludes_but_footer_does_not(self):
+        heading = text_block([35, 80, 180, 98], "OTHER DISCLOSURES", "title", 2)
+        body = "<table><tr><td>Conflicts of interest. " + "Explanatory terms. " * 20 + "</td></tr></table>"
+        fixture = self.fixture(visuals=[visual(0, [35, 100, 350, 360], body=body)], text_blocks=[heading])
+        fixture.create(auth=False)
+        self.assertEqual(fixture.proof()["decisions"][0]["reason"], "exclude_nearby_legal_scope")
+        normal = self.fixture(visuals=[visual(0, [35, 100, 350, 360], body="Distribution of returns. Compensation expenses. " * 8)],
+                              text_blocks=[text_block([35, 480, 390, 493], "Copyright. Important disclosures. Legal/compliance.")])
+        normal.create()
+        self.assertEqual(len(normal.selection["images"]), 1)
+
+    def test_generic_images_and_tables_are_not_blacklisted_and_limit_keeps_all_decisions(self):
+        data = [visual(i, [35, 100, 180, 200], kind=kind, page_idx=i) for i, kind in enumerate(("table", "image", "chart"))]
+        fixture = self.fixture(visuals=data, pages=3)
+        fixture.create(maximum=1)
+        self.assertEqual(len(fixture.proof()["decisions"]), 3)
+        self.assertEqual([d["reason"] for d in fixture.proof()["decisions"]], ["selected_source_visual", "selection_limit", "selection_limit"])
+        self.assertEqual(len(fixture.validate()), 1)
+
+    def test_parent_wrong_column_footnote_excluded_nearest_other_parent_note_included(self):
+        # Shape of the actual Cash Flow defect: the note attached to the right
+        # table belongs left, while its real source line is attached left.
+        left = visual(0, [35, 290, 180, 460], captions=[([35, 275, 180, 289], "Income")],
+                      footnotes=[([230, 322, 375, 336], "Cash Flow source")])
+        right = visual(1, [230, 180, 375, 320], captions=[([232, 174, 300, 187], "Cash Flow")],
+                       footnotes=[([35, 264, 180, 276], "Left source")])
+        fixture = self.fixture(visuals=[left, right])
+        fixture.create()
+        crop = fixture.proof()["assets"][1]["crop"]
+        self.assertEqual(crop["union_bbox"], [230, 174, 375, 336])
+        self.assertTrue(any(a["owner"] == 0 and a["kind"] == "footnotes" and a["include"] for a in crop["attachments"]))
+        self.assertFalse(any(a["owner"] == 1 and a["kind"] == "footnotes" and a["include"] for a in crop["attachments"]))
+        self.assertEqual(len(fixture.validate()), 2)
+
+    def test_title_misattached_as_previous_table_note_is_uniquely_recovered(self):
+        previous = visual(0, [220, 100, 375, 220], footnotes=[([225, 221, 280, 233], "Factor Profile")])
+        chart = visual(1, [220, 230, 375, 370], kind="chart", footnotes=[([230, 376, 375, 392], "Source explanation")])
+        fixture = self.fixture(visuals=[previous, chart])
+        fixture.create()
+        self.assertEqual(fixture.proof()["assets"][1]["crop"]["union_bbox"], [220, 221, 375, 392])
+        fixture.validate()
+
+    def test_actual_factor_profile_metadata_shape_recovers_only_misattached_title_and_own_note(self):
+        # Sanitised, source-verified provider coordinates; no private report
+        # transcript, original bytes, or provider credentials are in the test.
+        size = (604, 776)
+        previous = visual(0, [358, 370, 555, 495], size=size,
+                          footnotes=[([359, 497, 429, 508], "Factor Profile")])
+        chart = visual(1, [358, 504, 554, 625], size=size, kind="chart",
+                       footnotes=[([370, 631, 554, 649], "Source: synthetic measurements")])
+        left = visual(2, [40, 504, 320, 625], size=size,
+                      footnotes=[([40, 631, 320, 649], "Left source")])
+        fixture = self.fixture(visuals=[previous, chart, left], size=size, actual_size=(604.3864746, 776.0369873))
+        fixture.create()
+        crop = fixture.proof()["assets"][1]["crop"]
+        self.assertEqual(crop["union_bbox"], [358, 497, 554, 649])
+        self.assertEqual(crop["pixel_box"], [1488, 2067, 2312, 2708])
+        self.assertFalse(any(a["owner"] == 2 and a["include"] for a in crop["attachments"]))
+        self.assertEqual(fixture.validate(), fixture.selection["reference_images"])
+
+    def test_actual_adjacent_chart_shape_preserves_caption_and_lower_legend_without_right_column(self):
+        size = (595, 826)
+        left = visual(0, [46, 212, 293, 329], size=size, kind="chart",
+                      captions=[([48, 188, 277, 212], "Figure 9: Synthetic growth")],
+                      footnotes=[([49, 333, 202, 343], "Source: synthetic data")])
+        right = visual(1, [302, 213, 549, 327], size=size, kind="chart",
+                       captions=[([301, 188, 549, 213], "Right figure")],
+                       footnotes=[([302, 333, 530, 343], "Right source")])
+        fixture = self.fixture(visuals=[left, right], size=size, actual_size=(595, 826.2036743))
+        # The real provider body stops before the third legend. Insert the same
+        # class of source ink, then prove the crop uses original pixels below it.
+        with fitz.open(fixture.original) as doc:
+            doc[0].draw_rect(fitz.Rect(70, 329.2, 210, 330.24), color=(0, 0, 0), fill=(0, 0, 0))
+            data = doc.tobytes()
+        fixture.original.write_bytes(data)
+        (fixture.raw / "source.pdf").write_bytes(data)
+        fixture.original_sha = digest(data)
+        fixture.create()
+        crop = fixture.proof()["assets"][0]["crop"]
+        self.assertEqual(crop["union_bbox"], [46, 188, 293, 343])
+        self.assertEqual(crop["pixel_box"], [188, 780, 1224, 1433])
+        self.assertFalse(any(a["owner"] == 1 and a["include"] for a in crop["attachments"]))
+        with Image.open(fixture.report / fixture.selection["images"][0]) as im:
+            self.assertEqual(im.getpixel((400 - 188, 1374 - 780)), (0, 0, 0))
+        fixture.validate()
+
+    def test_ambiguous_and_cross_column_notes_cannot_expand_crop(self):
+        first = visual(0, [35, 100, 180, 260], footnotes=[([35, 264, 180, 276], "Ambiguous"), ([230, 264, 375, 276], "Different column")])
+        second = visual(1, [35, 100, 180, 260])
+        # Ref mapping is unique although overlapping source figures make note
+        # ownership genuinely ambiguous. Neither candidate gets the note.
+        fixture = self.fixture(visuals=[first, second])
+        fixture.create()
+        for asset in fixture.proof()["assets"]:
+            self.assertEqual(asset["crop"]["union_bbox"], [35, 100, 180, 260])
+        fixture.validate()
+
+    def test_multiple_images_on_page_share_one_original_carrier(self):
+        fixture = self.fixture(visuals=[visual(0, [35, 100, 180, 260]), visual(1, [230, 100, 375, 260])])
+        fixture.create()
+        self.assertEqual(len(fixture.proof()["pages"]), 1)
+        self.assertEqual(len(fixture.validate()), 2)
+
+    def test_fractional_auth_rect_is_recorded_separately_from_provider_frame(self):
+        fixture = self.fixture(visuals=[visual(0, [230, 180, 375, 320], captions=[([232, 174, 300, 187], "Cash Flow")])], actual_size=(400.386, 500.504))
+        fixture.create()
+        page = fixture.proof()["pages"][0]
+        self.assertEqual(page["provider_size"], [400, 500])
+        self.assertGreater(page["geometry"]["rect"][2], 400)
+        self.assertEqual(page["pixel_size"], [1669, 2086])
+        crop = fixture.proof()["assets"][0]["crop"]
+        # Integer provider height must not stretch 320pt into 1337px; actual
+        # 300dpi matrix gives ceil(320*300/72)+3 == 1337 including margin.
+        self.assertEqual(crop["pixel_box"], [955, 722, 1566, 1337])
+        self.assertEqual(crop["point_to_pixel"], [300/72, 0, 0, 300/72, 0, 0])
+        fixture.validate()
+
+    def test_wide_note_crossing_adjacent_columns_never_expands_left_crop(self):
+        left = visual(0, [46, 212, 293, 329], footnotes=[([49, 333, 463, 343], "Cross-column note")], size=(600, 700))
+        right = visual(1, [301, 213, 549, 327], size=(600, 700))
+        fixture = self.fixture(visuals=[left, right], size=(600, 700))
+        fixture.create()
+        self.assertEqual(fixture.proof()["assets"][0]["crop"]["union_bbox"], [46, 212, 293, 329])
+        self.assertEqual(fixture.proof()["assets"][1]["crop"]["union_bbox"], [301, 213, 549, 327])
+        fixture.validate()
+
+    def test_conflicting_title_and_footnote_roles_are_globally_ambiguous(self):
+        previous = visual(0, [220, 100, 375, 220], footnotes=[([225, 222, 280, 227], "Short note")])
+        chart = visual(1, [220, 229, 375, 370], kind="chart")
+        fixture = self.fixture(visuals=[previous, chart])
+        fixture.create()
+        for asset in fixture.proof()["assets"]:
+            note = asset["crop"]["attachments"][0]
+            self.assertEqual(note["reason"], "ambiguous_same_column")
+            self.assertIsNone(note["winner"])
+            self.assertFalse(note["include"])
+        fixture.validate()
+
+    def test_wrong_source_hash_and_embedded_pixel_mutation_fail_before_writes(self):
+        fixture = self.fixture(visuals=[visual(0, [35, 100, 180, 260])])
+        with self.assertRaisesRegex(figures.FigureSourceError, "source_binding"):
+            figures.create_figure_sources(fixture.raw, fixture.assets, original_pdf_sha256="0" * 64,
+                markdown_sha256=fixture.md_sha, auth_original_pdf=fixture.original)
+        self.assertFalse((fixture.report / "figure_source_evidence").exists())
+        path = fixture.raw / "source.pdf"
+        with fitz.open(path) as doc:
+            doc[0].insert_text((30, 70), "Changed", fontsize=15)
+            data = doc.tobytes()
+        path.write_bytes(data)
+        with self.assertRaisesRegex(figures.FigureSourceError, "source_pixels"):
+            fixture.create()
+        self.assertFalse((fixture.report / "figure_source_evidence").exists())
+
+    def test_duplicate_metadata_ref_unsafe_path_and_profile_change_never_fallback(self):
+        for case in ("duplicate", "unsafe", "profile", "bool_bbox", "bad_span"):
+            fixture = self.fixture(visuals=[visual(0, [35, 100, 180, 260])])
+            if case == "duplicate":
+                fixture.content.append(copy.deepcopy(fixture.content[0]))
+            elif case == "unsafe":
+                fixture.content[0]["img_path"] = "../private.jpg"
+            elif case == "profile":
+                fixture.middle["_version_name"] = "unknown"
+            elif case == "bool_bbox":
+                fixture.content[0]["bbox"][0] = True
+            else:
+                fixture.middle["pdf_info"][0]["para_blocks"].insert(0, text_block([35, 30, 180, 50], "Title"))
+                fixture.middle["pdf_info"][0]["para_blocks"][0]["lines"][0]["spans"] = [None]
+            fixture.write_metadata()
+            with self.assertRaises(figures.FigureSourceError):
+                fixture.create()
+
+    def test_asset_pixel_and_original_or_markdown_binding_tamper_rejected(self):
+        fixture = self.fixture(visuals=[visual(0, [35, 100, 180, 260])])
+        fixture.create()
+        asset = fixture.report / fixture.selection["images"][0]
+        with Image.open(asset) as im:
+            value = im.copy()
+        value.putpixel((0, 0), (1, 2, 3))
+        value.save(asset)
+        fixture.mutate(lambda p: p["assets"][0].update(sha256=digest(asset.read_bytes()), rgb_sha256=digest(value.tobytes())))
+        with self.assertRaises(figures.FigureSourceError):
+            fixture.validate()
+        original = self.fixture(visuals=[visual(0, [35, 100, 180, 260])])
+        original.create()
+        with self.assertRaises(figures.FigureSourceError):
+            figures.validate_figure_sources(original.report, expected_original_sha256="0" * 64,
+                expected_markdown_sha256=original.md_sha, expected_images=original.selection["images"])
+        (original.report / "source_mineru.md").write_text("altered")
+        with self.assertRaises(figures.FigureSourceError):
+            original.validate()
+
+    def test_legal_decision_profile_and_crop_proof_tamper_rejected_even_rehashed(self):
+        for case in ("legal", "profile", "crop", "bool_index", "extra"):
+            fixture = self.fixture(visuals=[visual(0, [35, 100, 180, 260])])
+            fixture.create()
+            def mutate(p):
+                if case == "legal": p["decisions"][0]["legal"]["exclude"] = True
+                elif case == "profile": p["metadata"]["profile"]["_backend"] = "other"
+                elif case == "crop": p["assets"][0]["crop"]["pixel_box"][1] += 10
+                elif case == "bool_index": p["assets"][0]["index"] = False
+                else: p["assets"][0]["private_extra"] = "not accepted"
+            fixture.mutate(mutate)
+            with self.assertRaises(figures.FigureSourceError):
+                fixture.validate()
+
+    def test_deleted_sidecar_and_partial_or_changed_status_marker_fail_closed(self):
+        for case in ("delete", "partial", "path", "sha", "evidence_only", "null", "dangling"):
+            fixture = self.fixture(visuals=[visual(0, [35, 100, 180, 260])])
+            fixture.create()
+            fixture.status()
+            if case in ("delete", "evidence_only", "dangling"):
+                (fixture.report / figures.SIDECAR).unlink()
+                if case == "evidence_only": (fixture.report / "status.json").unlink()
+                if case == "dangling":
+                    (fixture.report / figures.SIDECAR).symlink_to("missing.json")
+                    (fixture.report / "status.json").unlink()
+            else:
+                path = fixture.report / "status.json"
+                value = json.loads(path.read_bytes())
+                if case == "partial": del value["source_figure_map_sha256"]
+                elif case == "path": value["source_figure_map"] = "other.json"
+                elif case == "null": value.update(source_figure_map=None, source_figure_map_sha256=None)
+                else: value["source_figure_map_sha256"] = True
+                path.write_text(json.dumps(value))
+            with self.assertRaises(figures.FigureSourceError):
+                fixture.validate()
+
+    def test_duplicate_json_keys_and_symlink_source_image_rejected(self):
+        fixture = self.fixture(visuals=[visual(0, [35, 100, 180, 260])])
+        middle = fixture.raw / "middle.json"
+        data = middle.read_text()
+        middle.write_text(data.replace('"_backend": "hybrid"', '"_backend": "hybrid", "_backend": "hybrid"'))
+        with self.assertRaises(figures.FigureSourceError): fixture.create()
+        fixture.write_metadata()
+        image = fixture.raw / "images/image-0.jpg"
+        existing = image.read_bytes()
+        outside = fixture.root / "outside.jpg"
+        outside.write_bytes(existing)
+        image.unlink()
+        image.symlink_to(outside)
+        with self.assertRaises(figures.FigureSourceError): fixture.create()
+
+    def test_png_dimensions_are_bounded_before_decode(self):
+        fixture = self.fixture(visuals=[visual(0, [35, 100, 180, 260])])
+        fixture.create()
+        value = fixture.proof()
+        carrier = fixture.report / value["pages"][0]["path"]
+        data = bytearray(carrier.read_bytes())
+        data[16:24] = (100000).to_bytes(4, "big") * 2
+        carrier.write_bytes(data)
+        with self.assertRaises(figures.FigureSourceError): fixture.validate()
+
+    def test_native_pdf_diagnostics_suppressed_and_switches_restored_on_success_and_failure(self):
+        program = r'''
+import sys, tempfile
+from pathlib import Path
+from unittest.mock import patch
+sys.path.insert(0, sys.argv[1])
+import fitz
+import mineru_figure_sources as f
+from test_mineru_figure_sources import Fixture, digest, visual
+for desired in (True, False):
+ for failure in (False, True):
+  with tempfile.TemporaryDirectory() as tmp:
+   fixture = Fixture(Path(tmp), visuals=[visual(0,[35,100,180,260])])
+   with fitz.open(fixture.original) as doc:
+    xref=doc[0].get_contents()[0]
+    doc.update_stream(xref,doc.xref_stream(xref)+b'\nq PRIVATE_SYNTHETIC_OPERATOR Q\n')
+    data=doc.tobytes()
+   fixture.original.write_bytes(data)
+   (fixture.raw/'source.pdf').write_bytes(data)
+   fixture.original_sha=digest(data)
+   fitz.TOOLS.mupdf_display_errors(desired)
+   fitz.TOOLS.mupdf_display_warnings(desired)
+   render=f._render
+   def fail_after_render(page):
+    render(page)
+    raise RuntimeError('PRIVATE_SYNTHETIC_OPERATOR')
+   try:
+    if failure:
+     with patch.object(f,'_render',side_effect=fail_after_render): fixture.create()
+    else: fixture.create()
+    assert not failure
+   except f.FigureSourceError as exc:
+    assert failure and exc.category=='figure_metadata_invalid'
+   assert fitz.TOOLS.mupdf_display_errors() is desired
+   assert fitz.TOOLS.mupdf_display_warnings() is desired
+print('native_diagnostics_suppressed')
+'''
+        result = subprocess.run([sys.executable, "-B", "-c", program, str(Path(figures.__file__).parent)],
+                                capture_output=True, timeout=60, check=False)
+        self.assertEqual(result.returncode, 0, "Native PDF diagnostic regression failed")
+        self.assertNotIn(b"PRIVATE_SYNTHETIC_OPERATOR", result.stdout)
+        self.assertNotIn(b"PRIVATE_SYNTHETIC_OPERATOR", result.stderr)
+        self.assertIn(b"native_diagnostics_suppressed", result.stdout)
+
+    def test_empty_provider_table_is_audited_without_inventing_image(self):
+        content, parent = visual(0, [35, 100, 180, 260])
+        content["img_path"] = ""
+        content.pop("table_body")
+        parent["blocks"][0]["lines"] = []
+        parent["blocks"][0]["lines_deleted"] = True
+        fixture = self.fixture(visuals=[(content, parent)])
+        fixture.create()
+        self.assertEqual(fixture.proof()["decisions"][0]["reason"], "no_provider_image")
+        self.assertEqual(fixture.validate(), {})
+
+
+if __name__ == "__main__":
+    unittest.main()

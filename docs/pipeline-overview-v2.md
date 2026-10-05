@@ -221,13 +221,50 @@ parses remain a separate recovery step. Normal current-PKI result downloads
 still fail on the provider's expired leaf certificate; this manual identity
 authentication expires at the fixed October 4 UTC cutoff.
 
-October 4 complete cloud OCR source producer `37238241161` passed all four
-originals and the real numeric fixture. Consumer `37239371856` archived the
-private PDF and committed its 14-page public-safe counterpart, with all nine
-source-page images visually checked. One caption pagination defect is being
-corrected and live portal acceptance is pending. October 1-3 full backfill remains
-in progress; `MARKET_VIEWS_OCR_BACKUP_ENABLED` remains false. The detailed source-only status is maintained in
-[Market Views source recovery](market-views-source-recovery.md).
+October 1, 3 and 4 primary PDFs have now been generated from complete MinerU
+results, with private R2 PDF/index readbacks and dated catalogue entries
+verified by live inspection `37243817037`. October 1 preserved all 63 source
+aliases (62 unique contents); October 3 covered 54 originals and October 4
+covered four. October 2 intake accepted all 50 originals: 42 DONE result ZIPs
+are cached; the remaining eight guarded retries completed parsing and await
+result retrieval. The provider's shared result certificate still fails strict
+TLS checks. Previously verified GitHub authorization and successful MinerU task
+API calls do not validate that separate result-download connection. A later
+GitHub TLS handshake timeout stopped remote Git/GitHub operations under the
+user's network-failure instruction; no newer run status is inferred.
+
+Independent normal Cloudflare OAuth/R2 access on October 5 recovered seven
+cached result ZIPs for private figure QA, with matching immutable cache
+receipts and ZIP hashes. A separate strict Cloudflare Worker HEAD at 04:36 UTC
+still received `526` from the MinerU result host. R2 storage is accessible;
+it cannot supply ZIPs that have not yet crossed the result-download step.
+The temporary probe Worker was deleted and verified absent. Figure repair
+preserves actual provider boxes and authenticated original page pixels;
+rewritten PDFs inside result ZIPs do not replace the original-file binding.
+The local figure repair adds a private, status-bound metadata/pixel sidecar,
+spatially complete original-page crops and exact consumer replay. Older
+metadata-free caches remain compatible. Source proof is preserved during
+finalization and excluded from public packages; selected chart assets remain
+available to the PDF. Seven actual cached results and a three-figure production
+renderer layout check passed locally. This is not yet a deployed complete
+Market Views rebuild; the cloud Actions path remains the execution target.
+
+Current October 4 cloud OCR source producer `37244394621` passed all four
+originals and 109 pages (82 native, 27 OCR). Real field probes confirmed the
+October 4 `17%` and October 2 `31%` fixtures. A local, not-yet-deployed PDF
+consumer change adds complete cloud acceptance builds without replacing the
+recovered live primary PDF. A separate locally tested bounded rotated-date
+route retains complete source and geometry proof; its new rotated values remain
+masked until independently confirmed. Original-page QA found chart baselines
+and horizontal scale zero mixed into proposed date bands; a local follow-up
+uses bounded original-pixel white gaps and retains complete word and numeric
+checks. Geometry-only local replays are not OCR acceptance. A new real
+Tesseract regression is mandatory in Linux CI and remains unexecuted there.
+Actual affected-page and complete-batch cloud acceptance remain pending.
+Daily `MARKET_VIEWS_OCR_BACKUP_ENABLED`
+remains false until those checks and the final PDF consumer acceptance pass.
+The detailed state and architecture are maintained
+in [Market Views source recovery](market-views-source-recovery.md).
 
 ## Main Workflow Groups
 

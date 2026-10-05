@@ -413,11 +413,49 @@ def report_extract(report_dir: Path, max_chars: int) -> str:
     return trim_text("\n\n".join(blocks), max_chars)
 
 
+def source_image_mapping(markdown_path: Path) -> dict[str, str] | None:
+    """Validate a present private image map before either selection route."""
+    mapping_path = markdown_path.parent / "source_image_map.json"
+    if mapping_path.exists() or mapping_path.is_symlink():
+        def unique_keys(pairs):
+            value = {}
+            for key, item in pairs:
+                if key in value:
+                    raise ValueError("duplicate image-map key")
+                value[key] = item
+            return value
+        try:
+            if mapping_path.is_symlink() or (markdown_path.parent / "assets").is_symlink():
+                raise ValueError("image-map symlink")
+            mapping = json.loads(mapping_path.read_bytes(), object_pairs_hook=unique_keys)
+            if (not isinstance(mapping, dict) or set(mapping) != {"version", "source_sha256", "images"}
+                    or type(mapping["version"]) is not int or mapping["version"] != 1
+                    or mapping["source_sha256"] != file_sha256(markdown_path)
+                    or not isinstance(mapping["images"], dict)):
+                raise ValueError("image-map contract")
+            for alias, target in mapping["images"].items():
+                if (not isinstance(alias, str) or not alias or not isinstance(target, str)
+                        or not re.fullmatch(r"assets/source_image_\d{2,}\.(?:png|jpe?g|webp|gif|bmp|tiff?)", target)):
+                    raise ValueError("image-map asset")
+                candidate = markdown_path.parent / target
+                if (not candidate.is_file() or candidate.is_symlink()
+                        or candidate.resolve().parent != (markdown_path.parent / "assets").resolve()):
+                    raise ValueError("image-map path")
+            return mapping["images"]
+        except (OSError, ValueError, TypeError, KeyError) as exc:
+            raise RuntimeError("MinerU figure image map is invalid") from exc
+    return None
+
+
 def resolve_image_path(markdown_path: Path, image_ref: str) -> Path | None:
     ref = image_ref.strip().strip("<>")
     if ref.startswith("http://") or ref.startswith("https://"):
         return None
     ref = ref.split("#", 1)[0].split("?", 1)[0]
+    mapping = source_image_mapping(markdown_path)
+    if mapping is not None:
+        target = mapping.get(ref)
+        return markdown_path.parent / target if target is not None else None
     for candidate in [
         markdown_path.parent / ref,
         markdown_path.parent / "mineru_raw" / ref,
@@ -543,6 +581,50 @@ def extract_exhibit_figures(report_dir: Path, report_id: str, title: str, max_pe
             "source_page": asset["source_page"],
         } for asset in source["assets"]]
         return native_figures[:max_per_report] if max_per_report > 0 else native_figures
+    image_map = source_image_mapping(md_path)
+    sidecar = report_dir / "source_figure_map.json"
+    status = load_status(report_dir)
+    if (sidecar.exists() or sidecar.is_symlink()
+            or (report_dir / "figure_source_evidence").exists()
+            or "source_figure_map" in status or "source_figure_map_sha256" in status):
+        from mineru_figure_sources import validate_figure_sources
+        validated = validate_figure_sources(
+            report_dir, expected_original_sha256=status.get("original_pdf_sha256"),
+            expected_markdown_sha256=file_sha256(md_path), expected_images=status.get("images"),
+        )
+        if (validated is None or image_map is None
+                or set(validated.values()) != set(image_map.values())
+                or any(image_map.get(ref) != target for ref, target in validated.items())):
+            raise RuntimeError("MinerU figure selection lacks its complete image map")
+        # This sidecar has already replayed metadata selection and source-pixel
+        # crops. Captions printed in the crop remain intact; the PDF adds only
+        # a page label and does not infer association from adjacent Markdown.
+        metadata = json.loads(sidecar.read_bytes())
+        from pdf_to_xhs_batch import chart_image_score
+        def original_visual_priority(asset):
+            original = report_dir / metadata["provider_images"][asset["ref"]]["path"]
+            score, _ = chart_image_score(original, filename_hint=Path(asset["ref"]).name)
+            return score, original.stat().st_size
+        # Preserve the previous visual priority using the unchanged, verified
+        # provider JPEG, while rendering the complete original-page crop.
+        ranked = sorted(metadata["assets"], key=original_visual_priority, reverse=True)
+        figures = []
+        seen = set()
+        for asset in ranked:
+            image_path = report_dir / asset["path"]
+            digest = file_sha256(image_path)
+            if digest in seen:
+                continue
+            seen.add(digest)
+            source_page = asset["page_idx"] + 1
+            figures.append({
+                "report_id": report_id, "report_title": title,
+                "source_path": str(image_path), "source_page": source_page,
+                "label": f"原报告第 {source_page} 页",
+                "context": sanitize_text(f"{title}｜原报告第 {source_page} 页图表")[:260],
+                "figure_type": "source_exhibit", "selection_source": "mineru_source_figure",
+            })
+        return figures[:max_per_report] if max_per_report > 0 else figures
     lines = md_path.read_text(encoding="utf-8", errors="ignore").splitlines() if md_path.exists() else []
     figures: list[dict[str, Any]] = []
     seen_paths: set[str] = set()
@@ -589,9 +671,11 @@ def extract_exhibit_figures(report_dir: Path, report_id: str, title: str, max_pe
     # The short-lived private handoff intentionally excludes ``mineru_raw``.
     # Recover the selected MinerU charts from the stable copies created by the
     # upstream parser.  These images have already passed the chart-image
-    # heuristic; use a neutral, report-scoped caption because their renamed
-    # handoff filenames cannot be mapped safely back to one Markdown caption.
+    # heuristic in older results. Explicit map targets constrain this fallback;
+    # reports with a validated figure sidecar have already returned above.
     for index, image_path in enumerate(handoff_source_images(report_dir), 1):
+        if image_map is not None and image_path.relative_to(report_dir).as_posix() not in image_map.values():
+            continue
         if max_per_report > 0 and len(figures) >= max_per_report:
             break
         resolved = str(image_path.resolve())

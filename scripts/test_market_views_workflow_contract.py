@@ -52,6 +52,63 @@ def gate(block, results, *, selected="64", cancelled=False, plan=None):
 
 
 class MarketViewsWorkflowContractTests(unittest.TestCase):
+    def test_acceptance_pdf_keeps_complete_build_gates_and_skips_every_publish_write(self):
+        market = MARKET.read_text(encoding="utf-8")
+        input_block = market.split("      acceptance_only:\n", 1)[1].split("\npermissions:", 1)[0]
+        self.assertIn("type: boolean", input_block)
+        self.assertIn("default: false", input_block)
+        steps = dict(re.findall(r"(?ms)^      - name: ([^\n]+)\n(.*?)(?=^      - name: |^  [\w-]+:|\Z)", market))
+
+        def enabled(name, acceptance, *, should_build="true", public_pdf="success"):
+            expression = re.search(r"if: \$\{\{(.*?)\}\}", steps[name]).group(1)
+            expression = expression.replace("true", "True").replace("&&", " and ").replace("||", " or ")
+            expression = expression.replace("inputs.acceptance_only", repr(acceptance))
+            expression = expression.replace("inputs.source_handoff_kind", repr("native-pdf"))
+            expression = expression.replace("env.SHOULD_BUILD", repr(should_build))
+            expression = expression.replace("steps.public_pdf.conclusion", repr(public_pdf))
+            return eval(expression, {"__builtins__": {}}, {
+                "always": lambda: True, "hashFiles": lambda path: "available",
+            })
+
+        writes = [name for name, block in steps.items()
+                  if "scripts/upload_market_view_to_r2.py" in block or "scripts/commit_output_dir.sh" in block]
+        self.assertEqual(set(writes), {"Archive exact Market Views PDF in private R2",
+                                     "Commit public-safe Market Views PDF to main"})
+        for name in writes:
+            self.assertIn("inputs.acceptance_only != true", steps[name])
+            self.assertNotIn("||", re.search(r"if:.*", steps[name]).group(0))
+            self.assertFalse(enabled(name, True))
+            self.assertTrue(enabled(name, False))
+            self.assertFalse(enabled(name, False, should_build="false"))
+        for name in ("Verify complete native PDF source receipt", "Verify complete MinerU recovery source receipt",
+                     "Verify complete accepted legacy Daily source receipt", "Build market views data and LaTeX source",
+                     "Render fast PDF without LaTeX install", "Verify PDF exists before upload and commit",
+                     "Prepare public-safe Market Views PDF"):
+            self.assertNotIn("acceptance_only", steps[name])
+        prepared = steps["Prepare public-safe Market Views PDF"]
+        self.assertIn("id: public_pdf", prepared)
+        self.assertLess(prepared.index("scripts/prepare_public_market_view_pdf.py"),
+                        prepared.index("scripts/check_public_identity.py"))
+
+        artifact = steps["Preserve public-safe acceptance PDF"]
+        self.assertTrue(enabled("Preserve public-safe acceptance PDF", True))
+        self.assertFalse(enabled("Preserve public-safe acceptance PDF", False))
+        for conclusion in ("failure", "cancelled", "skipped", ""):
+            self.assertFalse(enabled("Preserve public-safe acceptance PDF", True, public_pdf=conclusion))
+        self.assertFalse(enabled("Preserve public-safe acceptance PDF", True, should_build="false"))
+        self.assertIn("uses: actions/upload-artifact@v4", artifact)
+        self.assertEqual(re.search(r"(?m)^          path: (.+)$", artifact).group(1),
+                         "market_view_summaries/${{ env.DATE_FOLDER }}/market_views_${{ env.DATE_FOLDER }}.pdf")
+        self.assertIn("if-no-files-found: error", artifact)
+        self.assertIn("retention-days: 1", artifact)
+        self.assertNotIn("always()", artifact)
+        for name, block in steps.items():
+            if "actions/upload-artifact@" in block or "resilient-diagnostic-artifact" in block:
+                if name != "Preserve public-safe acceptance PDF":
+                    self.assertIn("inputs.acceptance_only != true", block)
+                    self.assertFalse(enabled(name, True))
+                    self.assertTrue(enabled(name, False))
+
     def test_every_r2_consumer_is_isolated_and_participates_in_cleanup(self):
         blocks = dict(re.findall(
             r"(?ms)^  ([\w-]+):\n(.*?)(?=^  [\w-]+:\n|\Z)",
@@ -468,6 +525,21 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
             values = dict(line.split("=", 1) for line in env_file.read_text().splitlines())
             self.assertEqual(values["SHOULD_BUILD"], "true")
+            # Acceptance must rebuild an already published issue while still
+            # checking the real complete source count before synthesis.
+            environment["FORCE_REBUILD"] = "false"
+            environment["ACCEPTANCE_ONLY"] = "true"
+            env_file.write_text("")
+            result = subprocess.run(["bash", "-e", "-o", "pipefail", "-c", command],
+                                    cwd=root, env=environment, capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            values = dict(line.split("=", 1) for line in env_file.read_text().splitlines())
+            self.assertEqual(values["SHOULD_BUILD"], "true")
+            environment["EXPECTED_ARTICLES"] = "2"
+            result = subprocess.run(["bash", "-e", "-o", "pipefail", "-c", command],
+                                    cwd=root, env=environment, capture_output=True, text=True)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("Expected 2 bank reports, received 1", result.stderr)
 
     def test_scheduled_daily_flow_rejects_stale_dropbox_folders(self):
         workflow = UPSTREAM.read_text(encoding="utf-8")

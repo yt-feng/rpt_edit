@@ -1092,8 +1092,8 @@ def deepseek_rewrite(text: str, detected_hits: list[dict[str, Any]], model: str,
 
 def is_source_material(path: Path) -> bool:
     """Original extraction files are input evidence, never generated copy."""
-    return path.name.lower() in {"source_mineru.md", "source_image_map.json"} or any(
-        part.lower() == "mineru_raw" for part in path.parts
+    return path.name.lower() in {"source_mineru.md", "source_image_map.json", "source_figure_map.json"} or any(
+        part.lower() in {"mineru_raw", "figure_source_evidence"} for part in path.parts
     )
 
 

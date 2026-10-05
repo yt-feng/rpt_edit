@@ -243,7 +243,7 @@ def image_edge_density(image: Image.Image) -> float:
     return edges / max(1, total)
 
 
-def chart_image_score(path: Path) -> tuple[int, str]:
+def chart_image_score(path: Path, *, filename_hint: str | None = None) -> tuple[int, str]:
     image = safe_open_image(path)
     if image is None:
         return -100, "unreadable"
@@ -255,16 +255,17 @@ def chart_image_score(path: Path) -> tuple[int, str]:
 
     score = 0
     reasons: list[str] = []
-    if CHART_FILENAME_RE.search(path.name):
+    name = path.name if filename_hint is None else filename_hint
+    if CHART_FILENAME_RE.search(name):
         score += 2
         reasons.append("chart_filename")
-    if NON_CHART_FILENAME_RE.search(path.name):
+    if NON_CHART_FILENAME_RE.search(name):
         score -= 4
         reasons.append("non_chart_filename")
     if 1.05 <= ratio <= 3.8:
         score += 1
         reasons.append("chart_ratio")
-    if 0.72 <= ratio <= 1.35 and not CHART_FILENAME_RE.search(path.name):
+    if 0.72 <= ratio <= 1.35 and not CHART_FILENAME_RE.search(name):
         score -= 3
         reasons.append("square_without_chart_hint")
     if ratio < 0.38 or ratio > 4.8:
@@ -438,7 +439,8 @@ def render_pdf_page_cards(pdf_path: Path, assets_dir: Path, max_pages: int, titl
     return cards
 
 
-def write_source_image_map(result_dir: Path, assets_dir: Path, copied_images: list[tuple[Path, Path]]) -> None:
+def write_source_image_map(result_dir: Path, assets_dir: Path, copied_images: list[tuple[Path, Path]], *,
+                           provider_references: dict[str, str] | None = None) -> None:
     """Preserve original Markdown references after private handoff drops raw OCR."""
     import hashlib
 
@@ -458,6 +460,10 @@ def write_source_image_map(result_dir: Path, assets_dir: Path, copied_images: li
             references[reference] = asset
     for reference in ambiguous:
         references.pop(reference, None)
+    for reference, target in (provider_references or {}).items():
+        if reference in references and references[reference] != target:
+            raise ValueError("Conflicting provider image reference")
+        references[reference] = target
     source = report_dir / "source_mineru.md"
     payload = {
         "version": 1,
@@ -504,9 +510,27 @@ def create_visual_assets(result_dir: Path, pdf_path: Path, assets_dir: Path, max
     return cards
 
 
-def create_chart_source_assets(result_dir: Path, assets_dir: Path, max_images: int) -> list[str]:
-    """Keep only the original chart candidates needed by the chart indexer."""
+def create_chart_source_assets(result_dir: Path, assets_dir: Path, max_images: int, *,
+                               original_pdf_sha256: str | None = None,
+                               auth_original_pdf: Path | None = None,
+                               markdown_sha256: str | None = None) -> list[str]:
+    """Retain source figures and their provider page/caption bindings."""
+    from mineru_figure_sources import create_figure_sources
+
     assets_dir.mkdir(parents=True, exist_ok=True)
+    source = assets_dir.parent / "source_mineru.md"
+    source_sha = markdown_sha256 or (digest(source.read_bytes()) if source.is_file() else "")
+    selection = create_figure_sources(
+        result_dir, assets_dir, original_pdf_sha256=original_pdf_sha256,
+        markdown_sha256=source_sha, auth_original_pdf=auth_original_pdf,
+        max_images=max_images,
+    )
+    if selection is not None:
+        write_source_image_map(result_dir, assets_dir, selection["copied_images"],
+                               provider_references=selection["reference_images"])
+        return selection["images"]
+
+    # Older cached results without provider metadata keep their previous route.
     images = [p for p in result_dir.rglob("*") if p.is_file() and p.suffix.lower() in IMAGE_SUFFIXES]
     copied: list[str] = []
     copied_images: list[tuple[Path, Path]] = []
@@ -909,7 +933,16 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
     if chart_source_only:
         status["chart_source_only"] = True
         status["source_markdown"] = "source_mineru.md"
-        status["images"] = create_chart_source_assets(raw_dir, assets_dir, args.max_images)
+        status["original_pdf_sha256"] = digest(pdf_path.read_bytes())
+        status["images"] = create_chart_source_assets(
+            raw_dir, assets_dir, args.max_images,
+            original_pdf_sha256=status["original_pdf_sha256"], auth_original_pdf=pdf_path,
+            markdown_sha256=digest((item_dir / "source_mineru.md").read_bytes()),
+        )
+        sidecar = item_dir / "source_figure_map.json"
+        if sidecar.is_file():
+            status["source_figure_map"] = sidecar.name
+            status["source_figure_map_sha256"] = digest(sidecar.read_bytes())
         status["chart_source_image_count"] = len(status["images"])
         if not getattr(args, "keep_mineru_raw", False):
             shutil.rmtree(raw_dir)

@@ -16,7 +16,8 @@ import re
 import shutil
 import tempfile
 
-from consume_legacy_mineru import chart_assets, safe_unzip
+from consume_legacy_mineru import chart_assets, figure_source_status, safe_unzip
+from mineru_figure_sources import FigureSourceError, validate_figure_sources
 import inspect_legacy_mineru as inspect
 import seed_legacy_market_views_cache as legacy
 from recover_durable_mineru_sources import digest, decode, manifest_bindings, MANIFEST, exact_date, frozen_inputs
@@ -249,6 +250,13 @@ def validate_sources(root, expected_reports, date_folder, *, expected_producer_r
                 or any(not isinstance(ref, str) or not ref or target not in images for ref, target in mapping['images'].items())
                 or set(mapping['images'].values()) != set(images)):
             fail('source_images')
+        try:
+            selected = validate_figure_sources(directory, expected_original_sha256=binding['content_sha256'],
+                expected_markdown_sha256=report['source_markdown_sha256'], expected_images=images)
+            if selected is not None and any(mapping['images'].get(ref) != asset for ref, asset in selected.items()):
+                fail('source_images')
+        except FigureSourceError:
+            fail('source_images')
         directories.add(directory_name)
     actual = {path.name for path in root.iterdir() if path.is_dir()}
     if actual != directories or type(receipt['unique_content_count']) is not int or receipt['unique_content_count'] != len(first):
@@ -262,11 +270,12 @@ def materialize(authority, manifest, input_dir, results, private, cache, destina
     destination = Path(destination)
     if destination.exists() or destination.is_symlink():
         fail('destination_exists')
-    raw, originals, _ = frozen_inputs(input_dir, manifest, authority['expected_reports'], authority['date_folder'])
+    raw, originals, original_pairs = frozen_inputs(input_dir, manifest, authority['expected_reports'], authority['date_folder'])
     validate_authority(authority, originals, authority['date_folder'])
     if digest(raw) != authority['manifest_sha256'] or originals != authority['original_inventory']:
         fail('source_inputs_changed')
     by_source = {binding['source_pdf']: binding for binding, _ in results}
+    original_paths = {name: path for path, name in original_pairs}
     tasks = terminal_projection(authority, private)
     destination.parent.mkdir(parents=True, exist_ok=True)
     stage = Path(tempfile.mkdtemp(prefix='.legacy-market-source-', dir=destination.parent))
@@ -286,7 +295,13 @@ def materialize(authority, manifest, input_dir, results, private, cache, destina
                 (directory / 'source_mineru.md').write_bytes(markdown)
                 assets = directory / 'assets'; assets.mkdir()
                 with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
-                    images = asset_writer(raw_dir, assets, 100)
+                    if asset_writer is chart_assets:
+                        images = asset_writer(raw_dir, assets, 100,
+                            original_pdf_sha256=original['content_sha256'],
+                            auth_original_pdf=original_paths[original['source_pdf']],
+                            markdown_sha256=digest(markdown))
+                    else:
+                        images = asset_writer(raw_dir, assets, 100)
                 duplicate = first.setdefault(original['content_sha256'], directory_name)
                 duplicate = duplicate if duplicate != directory_name else None
                 status = {'source_pdf': original['source_pdf'], 'original_filename': original['original_filename'],
@@ -294,6 +309,7 @@ def materialize(authority, manifest, input_dir, results, private, cache, destina
                           'source_markdown': 'source_mineru.md', 'images': images, 'chart_source_image_count': len(images),
                           'canonical_task_admission': False, 'original_provider_bytes_proven': False,
                           'mineru_legacy': binding, 'duplicate_of': duplicate}
+                status.update(figure_source_status(directory))
                 (directory / 'status.json').write_bytes(legacy.canonical(status))
                 reports.append({'directory': directory_name, 'source_pdf': original['source_pdf'], 'content_sha256': original['content_sha256'],
                                 'binding': binding, 'zip_sha256': digest(payload), 'source_markdown_sha256': digest(markdown), 'duplicate_of': duplicate})
