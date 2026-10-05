@@ -709,3 +709,15 @@ results are consumed and workers joined before any ZIP request or cache write.
 A changed or unreadable record rejects the operation with the same fixed
 category. Submission, result downloads, cache writes and cutoff checks remain
 serial and unchanged.
+
+### Proposed explicit second manual recovery window
+
+The original fixed window ended at 2026-10-04T23:59:59Z while the October 2
+failed-member recovery was still running. A separate reviewed change proposes
+one additional fixed day, ending 2026-10-05T23:59:59Z. This proposal is pending
+explicit user authorization and must not be deployed or used before approval.
+It preserves the exact same leaf, host, historical system/certifi chain checks,
+current intermediate checks, complete-source/task proofs and GET-only cache
+route. Daily TLS stays strict. Old authenticated R2 cache bytes remain reusable;
+this window only governs new manual result retrieval and cache writes. The
+transport cannot extend the new cutoff itself.

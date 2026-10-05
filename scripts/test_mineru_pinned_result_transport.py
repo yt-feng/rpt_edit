@@ -76,8 +76,8 @@ class AuthenticationTests(unittest.TestCase):
     def test_public_fixed_identity_and_deadline_cannot_be_runtime_options(self):
         self.assertEqual(p.LEAF_SHA256, '12137420c572ee3fde42af27309c8f36efdfc4d07e76dcba801ddf6bc308aeb3')
         self.assertEqual(p.HOST, 'cdn-mineru.openxlab.org.cn')
-        self.assertEqual(p.CUTOFF.isoformat(), '2026-10-04T23:59:59+00:00')
-        self.assertEqual(p.CUTOFF - p.LEAF_EXPIRY, timedelta(hours=48))
+        self.assertEqual(p.CUTOFF.isoformat(), '2026-10-05T23:59:59+00:00')
+        self.assertEqual(p.CUTOFF - p.LEAF_EXPIRY, timedelta(hours=72))
 
     def test_one_strict_no_http_handshake_then_two_offline_chain_and_san_checks(self):
         leaf_hash, runner, calls = self.setup_runner()
@@ -148,7 +148,7 @@ class AuthenticationTests(unittest.TestCase):
     def test_authentication_has_a_strict_numeric_and_hash_whitelist(self):
         for change in ({'url': 'https://PRIVATE'}, {'pki_verified_now': True}, {'historical_ca_checks': True},
                        {'peer_chain_sha256': [p.LEAF_SHA256, 'PRIVATE']}, {'leaf_sha256': 'a' * 64},
-                       {'cutoff_utc': '2026-10-05T23:59:59+00:00'}):
+                       {'cutoff_utc': '2026-10-06T23:59:59+00:00'}):
             with self.subTest(change=change), self.assertRaises(p.PinnedTransportError):
                 p.verified_authentication(authentication() | change)
 

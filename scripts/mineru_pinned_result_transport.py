@@ -28,7 +28,7 @@ from probe_mineru_result_tls import (PEM_RE, bounded_process_output,
 HOST = 'cdn-mineru.openxlab.org.cn'
 LEAF_SHA256 = '12137420c572ee3fde42af27309c8f36efdfc4d07e76dcba801ddf6bc308aeb3'
 LEAF_EXPIRY = datetime(2026, 10, 2, 23, 59, 59, tzinfo=timezone.utc)
-CUTOFF = datetime(2026, 10, 4, 23, 59, 59, tzinfo=timezone.utc)
+CUTOFF = datetime(2026, 10, 5, 23, 59, 59, tzinfo=timezone.utc)
 WORKFLOW = '.github/workflows/mineru-result-cache-seed.yml'
 AUTH_MODE = 'exact_leaf_pin'
 AUTH_KEYS = {'auth_mode', 'pki_verified_now', 'historical_chain_verified', 'historical_ca_checks',
