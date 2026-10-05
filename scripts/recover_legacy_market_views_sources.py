@@ -17,7 +17,7 @@ import shutil
 import tempfile
 
 from consume_legacy_mineru import chart_assets, figure_source_status, safe_unzip
-from mineru_figure_sources import FigureSourceError, validate_figure_sources
+from mineru_figure_sources import ERRORS as FIGURE_ERROR_CATEGORIES, FigureSourceError, validate_figure_sources
 import inspect_legacy_mineru as inspect
 import seed_legacy_market_views_cache as legacy
 from recover_durable_mineru_sources import digest, decode, manifest_bindings, MANIFEST, exact_date, frozen_inputs
@@ -377,7 +377,11 @@ def main(argv=None):
                           'canonical_task_admission': False}, sort_keys=True))
         return 0
     except Exception as error:
-        category = error.args[0] if isinstance(error, LegacySourceError) and len(error.args) == 1 and type(error.args[0]) is str and error.args[0] in SAFE else 'source_failed'
+        if isinstance(error, FigureSourceError):
+            candidate = getattr(error, 'category', None)
+            category = candidate if type(candidate) is str and candidate in FIGURE_ERROR_CATEGORIES else 'figure_proof_invalid'
+        else:
+            category = error.args[0] if isinstance(error, LegacySourceError) and len(error.args) == 1 and type(error.args[0]) is str and error.args[0] in SAFE else 'source_failed'
         print(json.dumps({'success': False, 'category': category, 'provider_posts': 0, 'canonical_task_admission': False}))
         return 2
 

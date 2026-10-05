@@ -574,6 +574,24 @@ class SafeDiagnosticTests(unittest.TestCase):
             self.assertEqual(stderr.getvalue(), 'MinerU source recovery stopped: ' + expected + '\n')
             self.assertNotIn('PRIVATE', stderr.getvalue())
 
+    def test_real_cli_reports_only_allowlisted_figure_failure_category(self):
+        cases = [(r.FigureSourceError(category), category) for category in sorted(r.FIGURE_ERROR_CATEGORIES)]
+        private = 'PRIVATE source.pdf https://PRIVATE.invalid?token=PRIVATE'
+        cases.append((r.FigureSourceError(private), 'figure_proof_invalid'))
+        corrupted = r.FigureSourceError('figure_metadata_invalid')
+        corrupted.category, corrupted.args = private, (private,)
+        cases.append((corrupted, 'figure_proof_invalid'))
+        for error, expected in cases:
+            with self.subTest(category=expected), \
+                    patch('sys.argv', ['recover', 'validate', '--output-dir', 'PRIVATE', '--expected-reports', '1',
+                                       '--date-folder', '261003']), \
+                    patch.object(r, 'validate_sources', side_effect=error), \
+                    patch('socket.create_connection', side_effect=AssertionError('Offline tests')), \
+                    patch('sys.stderr', new_callable=io.StringIO) as stderr:
+                self.assertEqual(r.main(), 2)
+            self.assertEqual(stderr.getvalue(), 'MinerU source recovery stopped: ' + expected + '\n')
+            self.assertNotIn('PRIVATE', stderr.getvalue())
+
 
 if __name__ == '__main__':
     unittest.main()

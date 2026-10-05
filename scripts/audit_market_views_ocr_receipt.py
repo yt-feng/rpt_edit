@@ -18,6 +18,7 @@ from pathlib import Path
 import re
 import sys
 import tempfile
+import stat
 from typing import Any
 
 from extract_native_market_sources import MANIFEST_NAME, RECEIPT_NAME, validate_sources
@@ -318,12 +319,42 @@ def audit_sources(source_dir: Path, expected_reports: int, *, manifest: Path | N
     if type(expected_reports) is not int or expected_reports <= 0:
         raise AuditError("invalid_expected_reports")
     checks = read_fixtures(fixtures)
-    raw, _ = _read_json(source_dir / RECEIPT_NAME, 256_000_000)
+    # A complete OCR receipt can legitimately exceed the old audit-only 256 MB
+    # limit. The source validator owns the full evidence contract. Hash it in
+    # bounded chunks instead of retaining another bytes/JSON copy beside it.
+    before = receipt_identity(source_dir / RECEIPT_NAME)
     receipt = validate_sources(source_dir, manifest or source_dir / MANIFEST_NAME, expected_reports,
                                expected_source_context=expected_source_context)
-    if (source_dir / RECEIPT_NAME).read_bytes() != raw:
+    if receipt_identity(source_dir / RECEIPT_NAME) != before:
         raise AuditError("receipt_changed_during_audit")
-    return summarize_verified_receipt(receipt, hashlib.sha256(raw).hexdigest(), checks)
+    return summarize_verified_receipt(receipt, before["sha256"], checks)
+
+
+def receipt_identity(path: Path) -> dict[str, Any]:
+    """Hash a stable regular receipt without materializing its source contents."""
+    path = Path(path)
+    if path.is_symlink():
+        raise AuditError("invalid_receipt_file")
+    flags = os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_NONBLOCK", 0)
+    try:
+        fd = os.open(path, flags)
+        with os.fdopen(fd, "rb") as stream:
+            before = os.fstat(stream.fileno())
+            if not stat.S_ISREG(before.st_mode):
+                raise AuditError("invalid_receipt_file")
+            digest, size = hashlib.sha256(), 0
+            while block := stream.read(1024 * 1024):
+                size += len(block)
+                digest.update(block)
+            after = os.fstat(stream.fileno())
+        current = path.lstat()
+    except OSError:
+        raise AuditError("invalid_receipt_file") from None
+    signature = lambda value: (value.st_dev, value.st_ino, value.st_size, value.st_mtime_ns, value.st_ctime_ns)
+    if (not stat.S_ISREG(current.st_mode) or signature(before) != signature(after)
+            or signature(after) != signature(current) or size != after.st_size):
+        raise AuditError("receipt_changed_during_audit")
+    return {"sha256": digest.hexdigest(), "bytes": size}
 
 
 def write_summary(path: Path, summary: dict[str, Any], *, source_dir: Path) -> None:

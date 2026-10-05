@@ -52,6 +52,26 @@ def gate(block, results, *, selected="64", cancelled=False, plan=None):
 
 
 class MarketViewsWorkflowContractTests(unittest.TestCase):
+    def test_acceptance_runs_have_independent_queues_while_publications_remain_serialized(self):
+        from types import SimpleNamespace
+        text = MARKET.read_text(encoding="utf-8")
+        block = text.split("\nconcurrency:\n", 1)[1].split("\njobs:\n", 1)[0]
+        expression = re.search(r"group: \$\{\{(.*?)\}\}", block).group(1)
+        expression = expression.replace("true", "True").replace("&&", " and ").replace("||", " or ")
+        def group(acceptance, run_id):
+            return eval(expression, {"__builtins__": {}}, {
+                "inputs": SimpleNamespace(acceptance_only=acceptance),
+                "github": SimpleNamespace(run_id=run_id),
+                "format": lambda pattern, value: pattern.format(value),
+            })
+        self.assertEqual(group(False, "100"), "market-views-daily-pdf")
+        self.assertEqual(group(False, "101"), group(False, "100"))
+        self.assertEqual(group(None, "102"), "market-views-daily-pdf")
+        self.assertNotEqual(group(True, "100"), group(True, "101"))
+        self.assertNotEqual(group(True, "100"), group(False, "100"))
+        self.assertIn("100", group(True, "100"))
+        self.assertIn("cancel-in-progress: false", block)
+
     def test_acceptance_pdf_keeps_complete_build_gates_and_skips_every_publish_write(self):
         market = MARKET.read_text(encoding="utf-8")
         input_block = market.split("      acceptance_only:\n", 1)[1].split("\npermissions:", 1)[0]
@@ -220,7 +240,7 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         self.assertIn("'--producer-run-id', source_run", block)
         self.assertIn("'--execution-sha', producer['head_sha']", block)
         self.assertIn('/jobs?filter=latest&per_page=100', block)
-        self.assertIn('require_source_readiness(producer, json.loads(jobs_result.stdout))', block)
+        self.assertIn('require_source_readiness(producer, source_jobs)', block)
         self.assertIn("'scripts/audit_market_views_ocr_receipt.py'", block)
 
     def test_cloud_ocr_is_staged_and_source_only_review_keeps_the_private_handoff(self):
