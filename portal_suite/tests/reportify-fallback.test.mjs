@@ -51,6 +51,7 @@ function harness({ payload = fixture(), owner = false, session = null, status = 
     jsonResponse: (_request, _env, statusCode, data) => new Response(JSON.stringify(data), { status: statusCode }),
     privateJsonResponse: (_request, _env, statusCode, data) => new Response(JSON.stringify(data), { status: statusCode }),
     derivedPasswordMatches: async () => false,
+    membershipRequestAction: () => ({ kind: "access" }),
     accountDownloadDecision: async () => ({ allowed: true }),
     finalizeAccountDownloadDecision: async () => { finalized += 1; return { ok: true }; },
     scheduleHotReportArchive: () => {},
@@ -164,12 +165,13 @@ test("connected but unreadable source is an access requirement, not an anonymous
   assert.equal(h.calls.some(({ url }) => url.includes("api.github.com")), false);
 });
 
-test("member full PDF request returns only its preview path without upstream identity, token, or QR", async () => {
+test("member source-access failure offers preview and full-text request without credentials or QR", async () => {
   const h = harness({ session: freshSession() });
   const response = await h.context.handleExternalPdf(h.request, h.env);
   const data = await response.json();
-  assert.equal(response.status, 403);
+  assert.equal(response.status, 503);
   assert.equal(data.preview_only, true);
+  assert.equal(data.request_required, true);
   assert.equal(data.preview_report_id, "1256239582803005440");
   assert.doesNotMatch(JSON.stringify(data), /reportify|qrcode|test-session-value/i);
   assert.equal(h.calls.length, 0);
@@ -246,6 +248,44 @@ test("verified complete cache is delivered even when upstream now requires acces
   assert.equal(response.headers.get("Content-Type"), "application/pdf");
   assert.equal(h.finalized(), 1);
   assert.equal(h.calls.length, 0);
+});
+
+test("eligible member acquisition is queued, not downgraded to preview or charged before delivery", async () => {
+  const h = harness({ payload: fixture({ readable: true }) });
+  const response = await h.context.handleExternalPdf(h.request, h.env);
+  const data = await response.json();
+  assert.equal(response.status, 202);
+  assert.equal(data.preview_only, undefined);
+  assert.equal(h.finalized(), 0);
+  assert.equal(h.calls.filter(({ url }) => url.includes("api.github.com")).length, 1);
+});
+
+test("failed member acquisition and source timeouts expose preview plus request, never credentials", async () => {
+  const h = harness({ status: { status: "failed", updated_at: new Date().toISOString() } });
+  const failed = await (await h.context.handleExternalStatus(
+    new Request("https://worker.example.test/external/status?id=1256239582803005440"), h.env)).json();
+  assert.equal(failed.preview_only, true);
+  assert.equal(failed.request_required, true);
+  assert.equal(failed.ready, false);
+  assert.equal(h.finalized(), 0);
+  h.context.externalDirectPdfUrl = async () => { throw new Error("private upstream failure"); };
+  const timedOut = await (await h.context.handleExternalPdf(h.request, h.env)).json();
+  assert.equal(timedOut.preview_only, true);
+  assert.equal(timedOut.request_required, true);
+  assert.doesNotMatch(JSON.stringify(timedOut), /private upstream failure|token|qrcode/);
+  assert.equal(h.finalized(), 0);
+});
+
+test("a revoked member entitlement prevents cache delivery and is not relabeled as preview", async () => {
+  const object = { body: new TextEncoder().encode("%PDF-verified-six-pages"),
+    customMetadata: { validated: "true", page_count: "6", expected_page_count: "6" } };
+  const h = harness({ object });
+  h.context.finalizeAccountDownloadDecision = async () => ({ ok: false, status: 403, error: "Access expired" });
+  const response = await h.context.handleExternalPdf(h.request, h.env);
+  assert.equal(response.status, 403);
+  const data = await response.json();
+  assert.equal(data.preview_only, undefined);
+  assert.equal(data.error, "Access expired");
 });
 
 test("upstream authentication rejection prompts owner reconnect even with a stored token", async () => {
