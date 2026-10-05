@@ -1,0 +1,115 @@
+name: Provider API health and balance mail
+
+on:
+  schedule:
+    - cron: '27 * * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Check account health and report access without sending email
+        type: boolean
+        default: false
+  pull_request:
+    paths:
+      - 'scripts/provider_health_monitor.py'
+      - 'scripts/notify_provider_health.py'
+      - 'scripts/test_provider_health_monitor.py'
+      - '.github/workflows/provider-api-health.yml'
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: provider-api-health-${{ github.event_name == 'pull_request' && github.ref || 'production' }}
+  cancel-in-progress: false
+
+jobs:
+  contract:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: scripts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -B scripts/test_provider_health_monitor.py
+
+  monitor:
+    needs: contract
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && vars.PORTAL_AUTOMATION_ENABLED == 'true'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: scripts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Probe each configured production DeepSeek slot without generation
+        env:
+          DEEPSEEK_SELECTION_API_KEY: ${{ secrets.DEEPSEEK_SELECTION_API_KEY }}
+          DEEPSEEK_REPORT_NOTES_API_KEY: ${{ secrets.DEEPSEEK_REPORT_NOTES_API_KEY }}
+          DEEPSEEK_PODCAST_API_KEY: ${{ secrets.DEEPSEEK_PODCAST_API_KEY }}
+          DEEPSEEK_FINALIZE_API_KEY: ${{ secrets.DEEPSEEK_FINALIZE_API_KEY }}
+          DEEPSEEK_REPORT_TRANSLATION_API_KEY: ${{ secrets.DEEPSEEK_REPORT_TRANSLATION_API_KEY }}
+          DEEPSEEK_MARKET_VIEWS_API_KEY: ${{ secrets.DEEPSEEK_MARKET_VIEWS_API_KEY }}
+          DEEPSEEK_CATALOG_TITLES_API_KEY: ${{ secrets.DEEPSEEK_CATALOG_TITLES_API_KEY }}
+          DEEPSEEK_PORTAL_RUNTIME_API_KEY: ${{ secrets.DEEPSEEK_PORTAL_RUNTIME_API_KEY }}
+          PROVIDER_DEEPSEEK_LOW_CNY: ${{ vars.PROVIDER_DEEPSEEK_LOW_CNY || '20' }}
+          PROVIDER_DEEPSEEK_LOW_USD: ${{ vars.PROVIDER_DEEPSEEK_LOW_USD || '5' }}
+        run: |
+          python3 -B scripts/provider_health_monitor.py \
+            --key deepseek:DEEPSEEK_SELECTION_API_KEY \
+            --key deepseek:DEEPSEEK_REPORT_NOTES_API_KEY \
+            --key deepseek:DEEPSEEK_PODCAST_API_KEY \
+            --key deepseek:DEEPSEEK_FINALIZE_API_KEY \
+            --key deepseek:DEEPSEEK_REPORT_TRANSLATION_API_KEY \
+            --key deepseek:DEEPSEEK_MARKET_VIEWS_API_KEY \
+            --key deepseek:DEEPSEEK_CATALOG_TITLES_API_KEY \
+            --key deepseek:DEEPSEEK_PORTAL_RUNTIME_API_KEY \
+            --output "$RUNNER_TEMP/provider-health-report.json"
+      - name: Materialize existing operations email runtime
+        if: inputs.dry_run != true
+        env:
+          PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}
+        run: |
+          python3 -B scripts/render_private_config.py \
+            --root scripts/send_portal_ops_alert.py --github-add-mask --skip-generated-files
+      - name: Collect consumer reports and send deduplicated alerts
+        env:
+          PROVIDER_HEALTH_READ_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
+          PROVIDER_HEALTH_REPOSITORIES: ${{ vars.PROVIDER_HEALTH_REPOSITORIES }}
+          OPS_ALERT_SIGNING_KEY: ${{ secrets.OPS_ALERT_SIGNING_KEY || secrets.PASSWORD_SECRET }}
+          PORTAL_WORKER_URL: ${{ secrets.PORTAL_WORKER_URL }}
+          DRY_RUN: ${{ inputs.dry_run || false }}
+        run: |
+          set -euo pipefail
+          args=()
+          IFS=',' read -ra repositories <<< "$PROVIDER_HEALTH_REPOSITORIES"
+          for repository in "${repositories[@]}"; do
+            if [[ -n "$repository" ]]; then args+=(--consumer "$repository"); fi
+          done
+          if [[ "$DRY_RUN" == true ]]; then args+=(--dry-run); fi
+          python3 -B scripts/notify_provider_health.py \
+            --local-report "$RUNNER_TEMP/provider-health-report.json" \
+            --output "$RUNNER_TEMP/provider-health-mail-summary.json" "${args[@]}"
+      - name: Publish sanitized status counts
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          result=json.loads((Path(os.environ['RUNNER_TEMP'])/'provider-health-mail-summary.json').read_text())
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as out:
+              out.write(f"Provider health: {result['reports']} reports, {result['issues']} actionable groups.\n")
+              out.write(f"Consumer reports unavailable: {len(result['consumer_report_unavailable'])}.\n")
+              for item in result['emails']:
+                  out.write(f"{item['repository']} {item['provider']}: sent={item['sent']}, deduplicated={item['deduplicated']}\n")
+          PY
