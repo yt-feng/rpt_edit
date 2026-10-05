@@ -206,10 +206,14 @@ PR 255 merged at `8e984e74` after actual Ubuntu OCR CI `37345360545`
 passed. Real-page probe `37346104127` then passed the four-band planner and
 unique complete-date direction, but its source-pixel check rejected light
 glyph edges and eight isolated near-white pixels. Follow-up coverage work
-retains these pixels explicitly instead of inventing date text: glyph edges
-need at most two strictly darker steps into their original box; isolated
-near-white components have a separate bounded untranscribed ledger and never
-confirm numbers. The consumer recomputes the complete pixel accounting.
+retains these pixels explicitly instead of inventing date text. PR 257 merged
+at `dcf10862`; private probe `37348761613` retained all four regions. Its
+follow-up handles bounded equal-gray edges and records complete near-white
+source components independently, without imposing date-word ownership on
+untranscribed pixels. All four regions passed cached-read producer/consumer
+replay: 127,723 ink pixels are fully accounted for, including 53 explicitly
+untranscribed pixels. Original boxes and independent numeric confirmation
+remain unchanged; source-component halos are checked against the full page.
 Affected-page and complete-batch acceptance remain open; diagnostic files are not complete
 source handoffs.
 PR 256 merged at `1da60820` after all four required CI checks passed. A

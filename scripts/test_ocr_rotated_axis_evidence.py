@@ -185,7 +185,7 @@ def source_date_reader(page, plans):
 
 
 class RotatedAxisTests(unittest.TestCase):
-    def fragment_recovery(self, *, observed_edge=False, untranscribed=False):
+    def fragment_recovery(self, *, observed_edge=False, untranscribed=False, distant_residue=False):
         document, page, candidates, image = fragmented_axis_case()
         self.addCleanup(document.close)
         plans = axis._select_regions(candidates, [700, 650], list(image.size), image)
@@ -201,12 +201,13 @@ class RotatedAxisTests(unittest.TestCase):
                         word["bbox"] = box
                 return words
         recognition_page = page
-        if untranscribed:
+        if untranscribed or distant_residue:
             from types import SimpleNamespace
             box = plans[0]["source_pixel_box"]
             crop = image.crop(tuple(box)).transpose(Image.Transpose.ROTATE_270)
-            self.assertEqual(crop.getpixel((21, 40)), (255, 255, 255))
-            crop.putpixel((21, 40), (243, 243, 243))
+            point = (10, 40) if distant_residue else (21, 40)
+            self.assertEqual(crop.getpixel(point), (255, 255, 255))
+            crop.putpixel(point, (243, 243, 243))
             image.paste(crop.transpose(Image.Transpose.ROTATE_90), tuple(box))
             recognition_page = SimpleNamespace(rect=page.rect, get_pixmap=lambda **kwargs:
                 SimpleNamespace(width=image.width, height=image.height, samples=image.tobytes()))
@@ -215,6 +216,132 @@ class RotatedAxisTests(unittest.TestCase):
             tesseract_command="unused", tesseract_version="5.3.0", traineddata=MODELS,
             reader=reader, private_trace=trace)
         return page, candidates, image, result, calls, trace
+
+    @staticmethod
+    def coverage_source_context(rotated, angle=270):
+        crop = rotated.transpose(Image.Transpose.ROTATE_90 if angle == 270 else Image.Transpose.ROTATE_270)
+        source = Image.new("RGB", (crop.width + 20, crop.height + 20), "white")
+        box = [10, 10, crop.width + 10, crop.height + 10]
+        source.paste(crop, tuple(box))
+        return crop, {"source_image": source, "source_pixel_box": box}
+
+    @staticmethod
+    def micro_component_fixture(*, large=False, rows=(20, 80, 140)):
+        words = [{"bbox": [20, y, 360 if large else 180, y + (50 if large else 45)],
+                  "text": literal, "block": 1, "paragraph": 0, "line": i}
+                 for i, (y, literal) in enumerate(zip(rows, ("2020/01", "2021/02", "2022/03")))]
+        image = Image.new("RGB", (400 if large else 200, 240 if large else 200), "white")
+        for word in words:
+            x0, y0, x1, y1 = word["bbox"]
+            ImageDraw.Draw(image).rectangle((x0, y0, x1 - 1, y1 - 1), fill="black")
+        return image, words
+
+    def test_v3_two_step_plateau_requires_strict_darkening_and_original_owner(self):
+        image = Image.new("RGB", (60, 100), "white")
+        words = [{"bbox": [10, y, 45, y + 15], "text": literal, "block": 1, "paragraph": 0, "line": i}
+                 for i, (y, literal) in enumerate(zip((10, 40, 70), ("2020/01", "2021/02", "2022/03")))]
+        for x, y, shade in ((33, 9, 243), (34, 10, 243), (35, 11, 217), (36, 12, 0),
+                            (20, 45, 0), (20, 75, 0)):
+            image.putpixel((x, y), (shade, shade, shade))
+        def coverage(source, read_words=words):
+            crop, context = self.coverage_source_context(source)
+            return axis._date_pixel_coverage(crop, {"angle": 270, "words": read_words}, **context)
+        result = coverage(image)
+        self.assertEqual(result["policy"], "complete-date-source-ink-ledger-v3")
+        component = next(c for c in result["component_support"]["components"] if c["fringe_pixels"])
+        self.assertEqual(component["edge_paths"], [[[33, 9, 243], [34, 10, 243], [35, 11, 217]]])
+        for kind in ("all-equal", "brightens", "third-step", "core-outside", "second-owner"):
+            changed, changed_words = image.copy(), copy.deepcopy(words)
+            if kind in ("all-equal", "third-step"):
+                changed.putpixel((35, 11), (243, 243, 243))
+            elif kind == "brightens": changed.putpixel((34, 10), (244, 244, 244))
+            elif kind == "core-outside": changed.putpixel((33, 9), (95, 95, 95))
+            else: changed_words[1]["bbox"] = [10, 26, 45, 55]
+            if kind == "all-equal":
+                changed.putpixel((36, 12), (243, 243, 243))
+                changed.putpixel((37, 13), (0, 0, 0))
+            if kind == "second-owner":
+                changed.putpixel((33, 24), (0, 0, 0)); changed.putpixel((33, 25), (243, 243, 243))
+            with self.subTest(kind=kind), self.assertRaises(axis.RotatedAxisError):
+                coverage(changed, changed_words)
+
+    def test_v3_untranscribed_distance_and_ties_are_geometry_only(self):
+        image, words = self.micro_component_fixture(rows=(20, 72, 140))
+        for x, y in ((0, 0), (5, 25), (100, 68)):
+            image.putpixel((x, y), (244, 244, 244))
+        for angle in (90, 270):
+            crop, context = self.coverage_source_context(image, angle)
+            result = axis._date_pixel_coverage(crop, {"angle": angle, "words": words}, **context)
+            self.assertEqual(result["policy"], "complete-date-source-ink-ledger-v3")
+            self.assertEqual(result["untranscribed_pixels"], 3)
+            self.assertEqual(result["pixels"], sum(w["pixels"] for w in result["words"]) + 3)
+            records = result["component_support"]["untranscribed_components"]
+            self.assertTrue(any(row["word_indices"] == [0, 1] for r in records for row in r["position_diagnostics"]))
+            self.assertTrue(all("word_index" not in r and "nearest_word_index" not in r for r in records))
+            self.assertTrue(all(r["source_component"]["halo_pixel_count"] >= 5 for r in records))
+
+    def test_v3_whole_source_halo_rejects_clipped_components_and_mismatched_context(self):
+        image, words = self.micro_component_fixture()
+        image.putpixel((0, 0), (242, 242, 242))
+        for angle in (90, 270):
+            crop, context = self.coverage_source_context(image, angle)
+            read = {"angle": angle, "words": words}
+            result = axis._date_pixel_coverage(crop, read, **context)
+            pixel, = result["component_support"]["untranscribed_components"][0]["source_component"]["pixels"]
+            for kind in ("corner-gray", "edge-core", "missing", "wrong-box", "wrong-crop"):
+                changed = {"source_image": context["source_image"].copy(), "source_pixel_box": list(context["source_pixel_box"])}
+                if kind in ("corner-gray", "edge-core"):
+                    x, y, _ = pixel
+                    dx = -1 if x == 10 else 1
+                    dy = -1 if y == 10 else 1
+                    changed["source_image"].putpixel((x + dx, y + (dy if kind == "corner-gray" else 0)),
+                                                    (244, 244, 244) if kind == "corner-gray" else (0, 0, 0))
+                elif kind == "missing": changed = {}
+                elif kind == "wrong-box": changed["source_pixel_box"][0] += 1
+                else: changed["source_image"].putpixel((15, 15), (0, 0, 0))
+                with self.subTest(angle=angle, kind=kind), self.assertRaises(axis.RotatedAxisError):
+                    axis._date_pixel_coverage(crop, read, **changed)
+
+    def test_v3_micro_components_keep_gray_size_relative_and_absolute_limits(self):
+        for kind in ("accepted17", "gray239", "three-pixels", "relative-limit", "absolute-limit"):
+            image, words = self.micro_component_fixture(large=kind == "absolute-limit", rows=(20, 90, 160)
+                                                        if kind == "absolute-limit" else (20, 80, 140))
+            count = 33 if kind == "absolute-limit" else 22 if kind == "relative-limit" else 17 if kind == "accepted17" else 1
+            for i in range(count):
+                image.putpixel((5, 5 + i * 3), (244, 244, 244))
+            if kind == "gray239": image.putpixel((5, 5), (239, 239, 239))
+            if kind == "three-pixels":
+                image.putpixel((5, 6), (244, 244, 244)); image.putpixel((5, 7), (244, 244, 244))
+            crop, context = self.coverage_source_context(image)
+            with self.subTest(kind=kind):
+                if kind == "accepted17":
+                    result = axis._date_pixel_coverage(crop, {"angle": 270, "words": words}, **context)
+                    self.assertEqual(result["untranscribed_pixels"], 17)
+                    self.assertEqual(result["component_support"]["untranscribed_policy"]["pixel_limit"], 21)
+                else:
+                    with self.assertRaises(axis.RotatedAxisError):
+                        axis._date_pixel_coverage(crop, {"angle": 270, "words": words}, **context)
+
+    def test_v3_consumer_recomputes_positions_source_halo_and_separate_residue_ledger(self):
+        _, _, image, result, calls, _ = self.fragment_recovery(observed_edge=True, distant_residue=True)
+        self.assertIsNotNone(result)
+        self.assertEqual(len(calls), 4)
+        coverage = result["proof"]["regions"][0]["date_pixel_coverage"]
+        self.assertEqual(coverage["policy"], "complete-date-source-ink-ledger-v3")
+        self.assertEqual(coverage["untranscribed_pixels"], 1)
+        derived = axis.replay_rotated_axis_proof(result["proof"], result["primary_text"],
+            input_pixel_sha256=axis._hash(image.tobytes()), page_size_points=[700.0, 650.0], source_image=image)
+        self.assertEqual(len(derived["rotated_mentions"]), 12)
+        self.assertEqual([row["literal"] for row in derived["positioned"].values()], ["25,000", "35,000", "0", "0"])
+        changes = (lambda p: p["position_diagnostics"].clear(), lambda p: p["source_component"].__setitem__("halo_sha256", "a" * 64),
+                   lambda p: p["source_component"]["pixels"][0].__setitem__(0, 0), lambda p: p.__setitem__("pixels", 0),
+                   lambda p: p.__setitem__("kind", "date"), lambda p: p.__setitem__("nearest_word_index", 0))
+        for change in changes:
+            proof = copy.deepcopy(result["proof"])
+            change(proof["regions"][0]["date_pixel_coverage"]["component_support"]["untranscribed_components"][0])
+            with self.subTest(change=change), self.assertRaises(axis.RotatedAxisError):
+                axis.replay_rotated_axis_proof(proof, result["primary_text"], input_pixel_sha256=axis._hash(image.tobytes()),
+                    page_size_points=[700.0, 650.0], source_image=image)
 
     def test_observed_cloud_word_edges_preserve_all_245_pixels_without_changing_boxes(self):
         _, _, image, result, calls, _ = self.fragment_recovery(observed_edge=True)

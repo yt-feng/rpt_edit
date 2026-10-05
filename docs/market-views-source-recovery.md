@@ -807,22 +807,28 @@ using all original non-white pixels across the complete set of bands; any
 baseline exception must identify the actual long gray separator stroke and
 its proved white gap. A successful rotated direction must contain complete
 date words in separate non-overlapping rows. Original boxes remain unchanged.
-Successful exact-box and one-pixel component proofs keep their existing shape.
-For trimmed glyph edges, a connected component must have all dark core pixels
-in one original word box, and every outside pixel must reach that box within
-two strictly darker steps, each closer to the box. Other-word contact, longer
-tails and dark-core overhang still reject.
+Earlier successful exact-box, one-pixel component and version-2 ledger proofs
+keep their existing shape. The version-3 fallback still requires every dark
+core pixel to remain in one original date box and rejects other-word contact
+or overhang beyond two pixels. A supporting path takes at most two steps,
+never gets lighter, and must become strictly darker at least once. Every step
+outside the box moves closer; after entering the box, a final darker step
+inside the same box may prove a quantized equal-gray edge.
 
-Completely isolated near-white micro-components are never called dates. They
-receive a separate untranscribed ledger containing original positions, gray
-values and pixel hashes: each component has at most two pixels, all values
-are 240–244, and all share one uniquely nearest original date box within four
-pixels. Their combined size is at most 0.05% of the band’s ink and 16 pixels,
-whichever is smaller. Every pixel below the unchanged 245 threshold must
-belong either to a proved glyph component or this bounded untranscribed ledger.
-The ledger cannot supply numeric confirmation or invented text. Original
-candidates, word indices, support hashes and replacement spans remain, and
-the consumer recomputes the complete pixel/support/coverage proof. A short token, thin box or missing
+Completely isolated near-white micro-components are never called dates. Each
+has at most two pixels, all gray 240–244, and an independent untranscribed
+ledger of original coordinates, values and hashes. Version 3 records nearest
+word distances only as diagnostics, allowing ties without assigning semantic
+ownership. Combined residual size is at most 0.1% of the band's ink and 32
+pixels, whichever is smaller. The unchanged source crop is bound to the full
+original page, and every residual component is mapped back to verify its full
+eight-neighbor halo, including across crop boundaries. A cropped fragment of
+a larger source stroke therefore cannot be accepted as a micro-component.
+Every pixel below the unchanged 245 threshold belongs either to a proved
+glyph component or the bounded untranscribed ledger. The ledger cannot supply
+numeric confirmation or invented text. Original candidates, word indices,
+support hashes and replacement spans remain; the consumer recomputes the full
+pixel/support/coverage proof. A short token, thin box or missing
 alternate read alone never authorizes deletion. The actual affected-page cloud
 acceptance remains pending; a geometric replay is not recognition acceptance.
 
@@ -1107,6 +1113,21 @@ regions within the existing eight-read/180-second budget after a first
 rejection, preserves that rejection and never emits a partial success proof.
 Default production still stops at its first rejected region. Affected-page
 and full-batch acceptance remain open. Private diagnostics are not complete source handoffs.
+
+
+PR 257 merged at `dcf10862` after real OCR CI `37348001486` passed.
+Private probe `37348761613` retained all eight reads for four regions; each
+region had one unambiguous 34-word complete-date direction. The first region
+passed, while later regions exposed a same-gray quantization edge and
+independent near-white residuals beyond version 2's arbitrary nearest-word
+and per-region limits. Full-page component analysis verified that none was a
+clipped larger stroke. The version-3 repair accounts for 127,723 ink pixels as
+127,670 glyph pixels plus 53 explicitly untranscribed pixels across four bands.
+A complete producer, composed-text and consumer replay using the eight cached
+cloud reads passed without running local OCR. It preserved 85 unique source
+word edits and 38 horizontal numeric positions; all 272 rotated numeric
+mentions remain unresolved rather than gaining confirmation from this repair.
+Fresh cloud whole-page and golden numeric acceptance remain separate gates.
 
 PR 256 merged at `1da60820` at 17:19 UTC. All four required CI checks passed
 on `693b31f5`, including actual workflow-resolver regressions. Same-date reruns
