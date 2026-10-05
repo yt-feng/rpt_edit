@@ -152,6 +152,42 @@ class AuthenticationTests(unittest.TestCase):
             with self.subTest(change=change), self.assertRaises(p.PinnedTransportError):
                 p.verified_authentication(authentication() | change)
 
+    def test_stored_authentication_accepts_only_fixed_prior_and_current_windows(self):
+        current = authentication()
+        prior = current | {'cutoff_utc': '2026-10-04T23:59:59+00:00'}
+        for value in (current, prior):
+            validated = p.verified_stored_authentication(value)
+            self.assertEqual(validated, value)
+            self.assertIsNot(validated['peer_chain_sha256'], value['peer_chain_sha256'])
+        with self.assertRaisesRegex(p.PinnedTransportError, '^prepared_authentication_required$'):
+            p.verified_authentication(prior)
+        factory = Mock()
+        with self.assertRaisesRegex(p.PinnedTransportError, '^prepared_authentication_required$'):
+            p.PinnedResultTransport(prior, now=lambda: NOW, pool_factory=factory)
+        factory.assert_not_called()
+        for cutoff in ('2026-10-03T23:59:59+00:00', '2026-10-06T23:59:59+00:00',
+                       '2026-10-04T23:59:59Z', True, [], {}):
+            with self.subTest(cutoff=cutoff), self.assertRaisesRegex(p.PinnedTransportError, '^prepared_authentication_required$'):
+                p.verified_stored_authentication(current | {'cutoff_utc': cutoff})
+
+    def test_stored_and_current_authentication_share_every_other_strict_field(self):
+        changes = ({'url': 'https://PRIVATE'}, {'auth_mode': 'other'}, {'pki_verified_now': 0},
+                   {'historical_chain_verified': 1}, {'historical_ca_checks': True},
+                   {'leaf_sha256': 'a' * 64}, {'leaf_not_after_utc': p.CUTOFF.isoformat()},
+                   {'preflight_tls_connections': True}, {'preflight_http_requests': False},
+                   {'peer_chain_sha256': [p.LEAF_SHA256, 'PRIVATE']},
+                   {'peer_chain_sha256': [p.LEAF_SHA256]},
+                   {'peer_chain_sha256': [p.LEAF_SHA256] * 9})
+        for cutoff in (p.CUTOFF.isoformat(), '2026-10-04T23:59:59+00:00'):
+            value = authentication() | {'cutoff_utc': cutoff}
+            for change in changes:
+                with self.subTest(cutoff=cutoff, change=change), self.assertRaisesRegex(p.PinnedTransportError, '^prepared_authentication_required$'):
+                    p.verified_stored_authentication(value | change)
+            for key in p.AUTH_KEYS:
+                incomplete = dict(value); incomplete.pop(key)
+                with self.subTest(missing=key), self.assertRaisesRegex(p.PinnedTransportError, '^prepared_authentication_required$'):
+                    p.verified_stored_authentication(incomplete)
+
 
 class DownloadTests(unittest.TestCase):
     def make(self, response=None, now=lambda: NOW):

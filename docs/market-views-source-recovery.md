@@ -721,3 +721,14 @@ current intermediate checks, complete-source/task proofs and GET-only cache
 route. Daily TLS stays strict. Old authenticated R2 cache bytes remain reusable;
 this window only governs new manual result retrieval and cache writes. The
 transport cannot extend the new cutoff itself.
+
+The proposed second window preserves complete legacy caches with a separate
+stored-authentication validator. It accepts only the original fixed October 4
+cutoff or the explicitly deployed current cutoff, retaining every other strict
+field, fingerprint and chain condition. Only reads of already bound immutable
+ZIP/authentication/proof receipts use this validator. New connections, new cache
+authentication and legacy writes still require the current cutoff exactly.
+A partial previous authentication object without a complete cache cannot be
+overwritten: it remains an explicit immutable-write conflict. Cross-window
+fixtures verify complete old bytes are reused without new result retrieval or
+cache writes.

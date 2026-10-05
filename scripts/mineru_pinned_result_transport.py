@@ -29,6 +29,7 @@ HOST = 'cdn-mineru.openxlab.org.cn'
 LEAF_SHA256 = '12137420c572ee3fde42af27309c8f36efdfc4d07e76dcba801ddf6bc308aeb3'
 LEAF_EXPIRY = datetime(2026, 10, 2, 23, 59, 59, tzinfo=timezone.utc)
 CUTOFF = datetime(2026, 10, 5, 23, 59, 59, tzinfo=timezone.utc)
+HISTORICAL_CACHE_CUTOFF = '2026-10-04T23:59:59+00:00'
 WORKFLOW = '.github/workflows/mineru-result-cache-seed.yml'
 AUTH_MODE = 'exact_leaf_pin'
 AUTH_KEYS = {'auth_mode', 'pki_verified_now', 'historical_chain_verified', 'historical_ca_checks',
@@ -69,12 +70,12 @@ def fixed_result_uri(url):
     return (parsed.path or '/') + ('?' + parsed.query if parsed.query else '')
 
 
-def verified_authentication(value):
+def _verified_authentication(value, accepted_cutoffs):
     if (not isinstance(value, dict) or set(value) != AUTH_KEYS or value.get('auth_mode') != AUTH_MODE
             or value.get('pki_verified_now') is not False or value.get('historical_chain_verified') is not True
             or type(value.get('historical_ca_checks')) is not int or value['historical_ca_checks'] != 2
             or value.get('leaf_sha256') != LEAF_SHA256 or value.get('leaf_not_after_utc') != LEAF_EXPIRY.isoformat()
-            or value.get('cutoff_utc') != CUTOFF.isoformat()
+            or value.get('cutoff_utc') not in accepted_cutoffs
             or type(value.get('preflight_tls_connections')) is not int or value['preflight_tls_connections'] != 1
             or type(value.get('preflight_http_requests')) is not int or value['preflight_http_requests'] != 0
             or not isinstance(value.get('peer_chain_sha256'), list) or not 2 <= len(value['peer_chain_sha256']) <= 8
@@ -82,6 +83,20 @@ def verified_authentication(value):
             or any(not isinstance(item, str) or not re.fullmatch(r'[a-f0-9]{64}', item) for item in value['peer_chain_sha256'])):
         raise PinnedTransportError('prepared_authentication_required')
     return {key: list(item) if isinstance(item, list) else item for key, item in value.items()}
+
+
+def verified_authentication(value):
+    """Require the current fixed window for new connections and writes."""
+    return _verified_authentication(value, (CUTOFF.isoformat(),))
+
+
+def verified_stored_authentication(value):
+    """Read an immutable cache authenticated in the fixed prior/current window.
+
+    This does not authorize a connection or write and does not change the
+    current transport deadline. All other authentication fields remain exact.
+    """
+    return _verified_authentication(value, (HISTORICAL_CACHE_CUTOFF, CUTOFF.isoformat()))
 
 
 def prepare_authentication(*, runner=subprocess.run, now=utc_now, env=None):
