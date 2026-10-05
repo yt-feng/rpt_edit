@@ -849,7 +849,7 @@ The initial independent R2 check on October 5 at approximately 03:42 UTC
 timed out before identifying an account or retrieving an object. A subsequent
 normal Wrangler OAuth identity check at 04:13 UTC succeeded without changing
 local network or Git transport settings. Read-only R2 access to the existing
-`kc-desk-notes-pdfs` bucket then retrieved five October 1 legacy result ZIPs and
+configured private R2 bucket then retrieved five October 1 legacy result ZIPs and
 the October 3/4 target ZIPs. Their receipts, admitted cache identities, byte
 counts and ZIP hashes match the previously verified seed records. These are
 private source QA reads, with no new parsing POST, R2 write or source admission.
