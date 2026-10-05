@@ -5,6 +5,10 @@ from __future__ import annotations
 import tempfile
 import sys
 import unittest
+from contextlib import redirect_stdout
+import hashlib
+import io
+import zipfile
 from pathlib import Path
 from unittest.mock import patch
 
@@ -233,6 +237,104 @@ class DisabledOutputTests(unittest.TestCase):
 
 
 class RepeatSafeFinalizationTests(unittest.TestCase):
+    def test_full_finalizer_does_not_process_direct_source_evidence_directory(self):
+        for existing_status in (False, True):
+            with self.subTest(existing_status=existing_status), tempfile.TemporaryDirectory() as temporary:
+                output = Path(temporary); evidence = output / 'figure_source_evidence'
+                evidence.mkdir(); (evidence / 'page.png').write_bytes(b'original-page-pixel-carrier')
+                (evidence / 'caption.txt').write_bytes(b'Goldman Sachs original evidence caption.\n')
+                if existing_status:
+                    (evidence / 'status.json').write_bytes(b'{"source": "Goldman Sachs original status"}\n')
+                before = {p.relative_to(evidence).as_posix(): p.read_bytes() for p in evidence.rglob('*') if p.is_file()}
+                normal = output / 'generated_report'; normal.mkdir()
+                (normal / 'source_mineru.md').write_text('# Original report\n\nSupported delivery data and research observations.\n')
+                argv = ['finalize', '--output-dir', str(output), '--sensitive-guard', 'false']
+                with patch.object(sys, 'argv', argv), redirect_stdout(io.StringIO()), \
+                        patch.object(finalize, 'call_deepseek', return_value='# Facts\nSupported delivery observations.\n') as model, \
+                        patch.object(guard, 'free_api_check', side_effect=AssertionError('Unexpected API request')):
+                    self.assertEqual(finalize.main(), 0)
+                after = {p.relative_to(evidence).as_posix(): p.read_bytes() for p in evidence.rglob('*') if p.is_file()}
+                self.assertEqual(after, before)
+                self.assertEqual((evidence / 'status.json').exists(), existing_status)
+                model.assert_called_once()
+                self.assertTrue((normal / 'zhihu_article.md').is_file())
+                import json
+                status = json.loads((normal / 'status.json').read_text())
+                self.assertEqual(status['zhihu_article.md'], 'zhihu_article.md')
+                summary = json.loads((output / 'finalize_summary.json').read_text())
+                self.assertEqual([row['item'] for row in summary], ['generated_report'])
+
+    def test_figure_proof_is_preserved_in_private_handoff_and_excluded_from_public_package(self):
+        from private_workflow_handoff import create_archive, extract_archive
+        from test_mineru_figure_sources import Fixture, visual
+
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary); date_dir = root / '261003'
+            fixture = Fixture(date_dir / 'shard_0', visuals=[visual(0, [35, 100, 185, 260], kind='chart',
+                captions=[([35, 80, 180, 99], 'Goldman Sachs Research: Figure 1')],
+                footnotes=[([35, 264, 180, 276], 'Morgan Stanley source evidence')])])
+            selection = fixture.create(); fixture.status()
+            public_article = fixture.report / 'wechat_article.md'
+            public_article.write_text('# Goldman Sachs delivery report\n\nPublic evidence summary.\n')
+            evidence_note = fixture.report / 'figure_source_evidence' / 'notes' / 'wechat_article.md'
+            evidence_note.parent.mkdir(); evidence_note.write_text('Goldman Sachs original carrier annotation.\n')
+            sidecar = fixture.report / 'source_figure_map.json'
+            preserved = [sidecar] + [p for p in (fixture.report / 'figure_source_evidence').rglob('*') if p.is_file()]
+            frozen = {path: hashlib.sha256(path.read_bytes()).hexdigest() for path in preserved}
+            self.assertIn(b'Goldman Sachs', sidecar.read_bytes())
+            self.assertTrue(any(path.suffix == '.png' for path in preserved))
+            self.assertTrue(any(path.suffix == '.jpg' for path in preserved))
+
+            self.assertEqual(finalize.sanitize_output_dir(fixture.report), 1)
+            self.assertIn('GS', public_article.read_text()); self.assertNotIn('Goldman Sachs', public_article.read_text())
+            args = guard.build_arg_parser().parse_args(['--output-dir', str(date_dir)])
+            with patch.object(guard, 'free_api_check', side_effect=AssertionError('Original proof reached API')), \
+                    patch.object(guard, 'deepseek_rewrite', side_effect=AssertionError('Original proof reached model')):
+                for path in preserved:
+                    self.assertTrue(guard.is_source_material(path)); self.assertFalse(guard.should_process(path))
+                    self.assertEqual(guard.guard_file(path, args)['skipped'], 'original_source_material')
+                    self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), frozen[path])
+            fixture.validate()
+
+            archive = root / 'private-handoff.tar.gz'; restored = root / 'restored' / '261003'
+            create_archive(date_dir, archive); extract_archive(archive, restored)
+            restored_report = restored / 'shard_0' / 'report'
+            self.assertFalse((restored_report / 'mineru_raw').exists())
+            for path in preserved:
+                self.assertEqual(hashlib.sha256((restored / path.relative_to(date_dir)).read_bytes()).hexdigest(), frozen[path])
+            from mineru_figure_sources import validate_figure_sources
+            validate_figure_sources(restored_report, expected_original_sha256=fixture.original_sha,
+                expected_markdown_sha256=fixture.md_sha, expected_images=selection['images'])
+            with redirect_stdout(io.StringIO()):
+                files, shards, skipped = package.collect_package_files(restored, True)
+            self.assertEqual(len(shards), 1); self.assertEqual(skipped, [])
+            package_path = root / 'publish-ready.zip'; package.write_zip(package_path, files)
+            with zipfile.ZipFile(package_path) as public_zip:
+                names = public_zip.namelist()
+                self.assertTrue(any(name.endswith('/wechat_article.txt') for name in names))
+                self.assertTrue(any(name.endswith('/' + selection['images'][0]) for name in names))
+                self.assertFalse(any('figure_source_evidence' in name or 'source_figure_map' in name for name in names))
+                article = next(name for name in names if name.endswith('/wechat_article.txt'))
+                self.assertIn(b'GS', public_zip.read(article))
+            self.assertFalse(package.include_report_file(restored_report / 'figure_source_evidence' / 'pages' / 'page_0001.png', False))
+            self.assertTrue(package.include_report_file(restored_report / selection['images'][0], True))
+
+    def test_finalizer_import_fallback_preserves_reserved_figure_material(self):
+        import builtins
+        original_import = builtins.__import__
+        def import_without_guard(name, *args, **kwargs):
+            if name == 'sensitive_content_guard':
+                raise ImportError('Offline fallback fixture')
+            return original_import(name, *args, **kwargs)
+        namespace = {'__name__': 'offline_finalizer_import'}
+        with patch('builtins.__import__', side_effect=import_without_guard):
+            exec(compile((ROOT / 'scripts/finalize_outputs.py').read_text(), 'finalize_outputs.py', 'exec'), namespace)
+        for path in (Path('report/source_figure_map.json'),
+                     Path('report/figure_source_evidence/notes/wechat_article.md'),
+                     Path('report/Figure_Source_Evidence/provider_images/original.jpg')):
+            self.assertTrue(namespace['is_source_material'](path))
+        self.assertFalse(namespace['is_source_material'](Path('report/assets/source_image_01.png')))
+
     def test_original_extraction_is_byte_preserved_and_never_sent_to_guard(self):
         with tempfile.TemporaryDirectory() as temporary:
             output = Path(temporary)

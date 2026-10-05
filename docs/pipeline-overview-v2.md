@@ -228,7 +228,26 @@ aliases (62 unique contents); October 3 covered 54 originals and October 4
 covered four. October 2 intake accepted all 50 originals: 42 DONE result ZIPs
 are cached; the remaining eight guarded retries completed parsing and await
 result retrieval. The provider's shared result certificate still fails strict
-TLS checks. GitHub authorization and MinerU task APIs are working.
+TLS checks. Previously verified GitHub authorization and successful MinerU task
+API calls do not validate that separate result-download connection. A later
+GitHub TLS handshake timeout stopped remote Git/GitHub operations under the
+user's network-failure instruction; no newer run status is inferred.
+
+Independent normal Cloudflare OAuth/R2 access on October 5 recovered seven
+cached result ZIPs for private figure QA, with matching immutable cache
+receipts and ZIP hashes. A separate strict Cloudflare Worker HEAD at 04:36 UTC
+still received `526` from the MinerU result host. R2 storage is accessible;
+it cannot supply ZIPs that have not yet crossed the result-download step.
+The temporary probe Worker was deleted and verified absent. Figure repair
+preserves actual provider boxes and authenticated original page pixels;
+rewritten PDFs inside result ZIPs do not replace the original-file binding.
+The local figure repair adds a private, status-bound metadata/pixel sidecar,
+spatially complete original-page crops and exact consumer replay. Older
+metadata-free caches remain compatible. Source proof is preserved during
+finalization and excluded from public packages; selected chart assets remain
+available to the PDF. Seven actual cached results and a three-figure production
+renderer layout check passed locally. This is not yet a deployed complete
+Market Views rebuild; the cloud Actions path remains the execution target.
 
 Current October 4 cloud OCR source producer `37244394621` passed all four
 originals and 109 pages (82 native, 27 OCR). Real field probes confirmed the

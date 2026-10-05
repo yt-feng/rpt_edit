@@ -18,7 +18,8 @@ import sys
 import tempfile
 
 from consume_legacy_mineru import (ConsumerError, NetworkStop, chart_assets,
-                                 download_once, safe_unzip, valid_url)
+                                 download_once, figure_source_status, safe_unzip, valid_url)
+from mineru_figure_sources import FigureSourceError, validate_figure_sources
 from mineru_task_ledger import (DONE, FAILED, Ledger, LedgerError, Provider, R2Store,
                                digest, encoded, exact_json, schema_v1)
 from mineru_terminal_recovery import TerminalRecovery, task_identity
@@ -422,6 +423,13 @@ def validate_sources(output_dir, expected_reports, date_folder, *, expected_reco
                        for ref, target in mapping['images'].items())
                 or set(mapping['images'].values()) != set(status['images'])):
             reject('report_image_map')
+        try:
+            selected = validate_figure_sources(directory, expected_original_sha256=binding['content_sha256'],
+                expected_markdown_sha256=report['source_markdown_sha256'], expected_images=status['images'])
+            if selected is not None and any(mapping['images'].get(ref) != asset for ref, asset in selected.items()):
+                reject('report_figure_source')
+        except FigureSourceError:
+            reject('report_figure_source')
         identities.append(report['source_id'])
     if set(identities) != set(admitted) or len(set(identities)) != expected_reports:
         reject('receipt_admission_coverage')
@@ -557,7 +565,12 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
                 (directory / 'source_mineru.md').write_bytes(markdown)
                 assets = directory / 'assets'; assets.mkdir()
                 with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
-                    images = asset_writer(raw_dir, assets, 100)
+                    if asset_writer is chart_assets:
+                        images = asset_writer(raw_dir, assets, 100,
+                            original_pdf_sha256=binding['content_sha256'], auth_original_pdf=path,
+                            markdown_sha256=digest(markdown))
+                    else:
+                        images = asset_writer(raw_dir, assets, 100)
                 value = row.get('_recovery_lineage')
                 if not isinstance(value, dict):
                     reject('result_lineage_missing')
@@ -568,6 +581,7 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
                           'original_pdf_sha256': binding['content_sha256'], 'mineru_state': 'done',
                           'chart_source_only': True, 'source_markdown': 'source_mineru.md', 'images': images,
                           'chart_source_image_count': len(images), 'mineru_recovery': task}
+                status.update(figure_source_status(directory))
                 (directory / 'status.json').write_bytes(encoded(status))
                 reports.append({'directory': directory_name, 'binding': binding,
                                 'source_binding': ledger.bind(path, source), 'source_id': source_id,

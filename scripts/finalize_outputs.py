@@ -35,8 +35,8 @@ except Exception:
     def sanitize_wechat_stock_language(text: str) -> tuple[str, list[str]]:
         return text, []
     def is_source_material(path: Path) -> bool:
-        return path.name.lower() in {"source_mineru.md", "source_image_map.json"} or any(
-            part.lower() == "mineru_raw" for part in path.parts
+        return path.name.lower() in {"source_mineru.md", "source_image_map.json", "source_figure_map.json"} or any(
+            part.lower() in {"mineru_raw", "figure_source_evidence"} for part in path.parts
         )
 
 TEXT_SUFFIXES = {".md", ".txt", ".json", ".srt", ".vtt"}
@@ -468,6 +468,8 @@ def main() -> int:
 
     summary: list[dict[str, Any]] = []
     for item_dir in sorted(p for p in output_dir.iterdir() if p.is_dir()):
+        if is_source_material(item_dir):
+            continue
         update: dict[str, Any] = {}
         if str(args.generate_xianyu).lower() in {"1", "true", "yes", "y", "on"}:
             log(f"Generating Xianyu note for {item_dir.name}")

@@ -30,6 +30,8 @@ import urllib.request
 import zipfile
 
 from inspect_legacy_mineru import MAX_BODY, canonical, classify_response, validate_request
+from mineru_figure_sources import (FigureSourceError, MAX_JSON as MAX_FIGURE_JSON,
+                                  SIDECAR as FIGURE_SIDECAR, validate_figure_sources)
 
 MAX_METADATA = 3 * 1024 * 1024
 MAX_LOG = 16 * 1024 * 1024
@@ -410,11 +412,30 @@ def safe_unzip(raw, root):
     return markdown
 
 
-def chart_assets(raw_dir, assets_dir, maximum):
+def chart_assets(raw_dir, assets_dir, maximum, *, original_pdf_sha256=None,
+                 auth_original_pdf=None, markdown_sha256=None):
     from pdf_to_xhs_batch import create_chart_source_assets
     # The cloud caller receives only fixed public counts, not producer filenames.
     with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
-        return create_chart_source_assets(raw_dir, assets_dir, maximum)
+        return create_chart_source_assets(raw_dir, assets_dir, maximum,
+            original_pdf_sha256=original_pdf_sha256, auth_original_pdf=auth_original_pdf,
+            markdown_sha256=markdown_sha256)
+
+
+def figure_source_status(directory):
+    """Bind a newly produced sidecar so its later removal cannot become legacy."""
+    sidecar = Path(directory) / FIGURE_SIDECAR
+    if sidecar.is_symlink():
+        fail('figure_source_contract')
+    if not sidecar.exists():
+        return {}
+    if not sidecar.is_file():
+        fail('figure_source_contract')
+    with sidecar.open('rb') as stream:
+        payload = stream.read(MAX_FIGURE_JSON + 1)
+    if len(payload) > MAX_FIGURE_JSON:
+        fail('figure_source_contract')
+    return {'source_figure_map': FIGURE_SIDECAR, 'source_figure_map_sha256': digest(payload)}
 
 
 def materialize(plan, destination, *, downloader=download_once, asset_writer=chart_assets, max_images=28):
@@ -439,7 +460,11 @@ def materialize(plan, destination, *, downloader=download_once, asset_writer=cha
             markdown = safe_unzip(raw, directory / 'mineru_raw')
             (directory / 'source_mineru.md').write_bytes(markdown)
             assets = directory / 'assets'; assets.mkdir()
-            images = asset_writer(directory / 'mineru_raw', assets, max_images)
+            if asset_writer is chart_assets:
+                images = asset_writer(directory / 'mineru_raw', assets, max_images,
+                    original_pdf_sha256=None, auth_original_pdf=None, markdown_sha256=digest(markdown))
+            else:
+                images = asset_writer(directory / 'mineru_raw', assets, max_images)
             if (not isinstance(images, list) or len(images) > max_images
                     or not all(isinstance(image, str) for image in images) or len(set(images)) != len(images)):
                 fail('image_contract')
@@ -452,6 +477,13 @@ def materialize(plan, destination, *, downloader=download_once, asset_writer=cha
                     or not isinstance(mapping.get('images'), dict)
                     or any(not isinstance(ref, str) or target not in images for ref, target in mapping['images'].items())):
                 fail('image_map_contract')
+            try:
+                selected = validate_figure_sources(directory, expected_original_sha256=None,
+                    expected_markdown_sha256=digest(markdown), expected_images=images)
+                if selected is not None and any(mapping['images'].get(ref) != asset for ref, asset in selected.items()):
+                    fail('figure_source_contract')
+            except FigureSourceError:
+                fail('figure_source_contract')
             status = {
                 'source_pdf': member['source_filename'], 'original_filename': member['original_filename'],
                 'mineru_state': 'done', 'chart_source_only': True, 'source_markdown': 'source_mineru.md',
@@ -465,6 +497,7 @@ def materialize(plan, destination, *, downloader=download_once, asset_writer=cha
                     'inspection_receipt_sha256': plan['context']['inspection_receipt_sha256'],
                     'provider_response_sha256': plan['selected_response_sha256']},
             }
+            status.update(figure_source_status(directory))
             (directory / 'status.json').write_bytes(canonical(status))
             statuses.append(status)
         files = []
@@ -580,7 +613,9 @@ def verify_materialized_output(root, receipt_bytes):
     provenance_keys = {'run_id', 'job_id', 'batch_id', 'data_id', 'credential_slot', 'zip_sha256', 'source_markdown_sha256',
                        'inspection_receipt_sha256', 'provider_response_sha256'}
     for index, report in enumerate(reports, 1):
-        if (not isinstance(report, dict) or set(report) != status_keys or report['mineru_state'] != 'done'
+        if (not isinstance(report, dict)
+                or set(report) not in (status_keys, status_keys | {'source_figure_map', 'source_figure_map_sha256'})
+                or report['mineru_state'] != 'done'
                 or report['chart_source_only'] is not True or report['source_markdown'] != 'source_mineru.md'
                 or report['original_source_bytes_proven'] is not False or report['canonical_task_admission'] is not False
                 or report['original_pdf_sha256'] is not None): fail('materialized_reports')
@@ -625,6 +660,13 @@ def verify_materialized_output(root, receipt_bytes):
                 or any(not isinstance(ref, str) or not ref or value not in images for ref, value in mapping['images'].items())
                 or set(mapping['images'].values()) != set(images)):
             fail('materialized_image_map')
+        try:
+            selected = validate_figure_sources(directory, expected_original_sha256=None,
+                expected_markdown_sha256=legacy['source_markdown_sha256'], expected_images=images)
+            if selected is not None and any(mapping['images'].get(ref) != asset for ref, asset in selected.items()):
+                fail('materialized_figure_source')
+        except FigureSourceError:
+            fail('materialized_figure_source')
     if any(PurePosixPath(row['path']).parts[0] not in report_dirs for row in rows): fail('materialized_membership')
     return {'status': 'legacy-source-only-verified', 'source_count': len(reports),
             'legacy_output_receipt_sha256': digest(receipt_bytes), 'original_source_bytes_proven': False,
