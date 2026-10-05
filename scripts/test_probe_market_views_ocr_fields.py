@@ -577,6 +577,116 @@ class FieldProbeTests(unittest.TestCase):
                 date_folder="261004", source_run_id="12345", expected_articles=len(self.rows),
                 source_kind="original-archive", repository="owner/repo")
 
+    def test_private_capture_reuses_retained_candidates_without_recognizing_again(self):
+        page, recovery, _, provenance, diagnostic = self.rotated_fixture()
+        captured = {}
+        with mock.patch.object(probe.native, "_recognize_ocr_page", return_value=(
+                recovery["primary_text"], recovery["primary_words"], "PRIVATE-models", provenance, diagnostic)) as recognition, \
+                mock.patch.object(fitz.Page, "get_textpage_ocr", side_effect=AssertionError("No new OCR")):
+            returned = probe._raw_page_ocr(page, private_evidence=captured)
+        self.assertEqual(recognition.call_count, 1)
+        self.assertEqual(captured["candidates"], recovery["proof"]["candidates"])
+        self.assertEqual(captured["provenance"]["traineddata"], provenance["traineddata"])
+        self.assertEqual(returned[0], recovery["primary_text"])
+
+    def test_private_capture_preserves_failed_full_page_candidates_from_existing_textpage(self):
+        path = self.originals / "PRIVATE-REPORT-TITLE.pdf"
+        alternate = "A" * 120
+        alternate_words = [{"text": alternate, "bbox": [10, 10, 200, 20], "block": 1, "paragraph": 0, "line": 0}]
+        provenance = {"engine": "tesseract-cli", "recognition": {"tesseract_version": "5.3.0"}}
+        def recognize(observed, *args, **options):
+            # A native TextPage stands in for the engine's already-created
+            # TextPage; the collector must only read its existing words.
+            observed.textpage = observed.page.get_textpage()
+            for sort in (True, False):
+                observed.get_text("text", textpage=observed.textpage, sort=sort)
+            return alternate, alternate_words, "PRIVATE-models", provenance, {"selection": "rejected"}
+        with fitz.open(path) as document, \
+                mock.patch.object(probe.native, "_recognize_ocr_page", side_effect=recognize) as engine, \
+                mock.patch.object(fitz.Page, "get_textpage_ocr", side_effect=AssertionError("No additional OCR")):
+            captured = {}
+            returned = probe._raw_page_ocr(document[0], private_evidence=captured)
+            self.assertEqual(captured["candidates"]["source-flow"]["words"], document[0].get_text("words", sort=False))
+            self.assertEqual(captured["candidates"]["geometric-sorted"]["text"], document[0].get_text("text", sort=True).strip())
+        self.assertEqual(engine.call_count, 1)
+        self.assertEqual(returned[0], alternate)
+        self.assertEqual(captured["candidates"]["full-page-psm11"], {"text": alternate, "words": alternate_words})
+
+    def test_failed_single_archive_page_retains_only_private_evidence_and_original_exit(self):
+        import private_workflow_handoff as handoff
+        self.make_archive_context()
+        destination = self.root / "private-evidence"
+        primary = "A" * 120 + " PRIVATE"
+        provenance = {"engine": "tesseract-cli", "pymupdf_version": fitz.VersionBind,
+                      "languages": "eng+chi_sim", "traineddata": [{"language": "eng", "filename": "eng.traineddata", "sha256": "a" * 64}],
+                      "recognition": {"tesseract_version": "5.3.0"}}
+        def recognition(page, *, private_evidence):
+            words = [{"text": primary.split()[0], "bbox": [10, 10, 200, 20], "block": 1, "paragraph": 0, "line": 0}]
+            private_evidence.update(candidates={name: {"text": primary, "words": words} for name in probe.OPAQUE_CANDIDATES},
+                                    provenance=provenance, diagnostic={"selection": "rejected"})
+            return primary, words, "PRIVATE-models", {"selection": "rejected"}
+        arguments = ["--input-dir", str(self.originals), "--manifest", str(self.manifest),
+            "--page-checks", str(self.page_checks), "--producer-metadata", str(self.metadata),
+            "--source-run-id", "12345", "--date-folder", "261004", "--expected-articles", "1",
+            "--source-kind", "original-archive", "--repository", "owner/repo", "--summary", str(self.summary),
+            "--private-evidence-dir", str(destination)]
+        output = io.StringIO()
+        with mock.patch.dict(os.environ, {"GITHUB_RUN_ID": "67890", "GITHUB_SHA": "b" * 40}), \
+                mock.patch.object(probe, "_raw_page_ocr", side_effect=recognition) as engine, \
+                mock.patch.object(probe, "audit_numeric_evidence") as numeric_audit, \
+                contextlib.redirect_stdout(output), contextlib.redirect_stderr(output):
+            self.assertEqual(probe.main(arguments), 3)
+        self.assertEqual(engine.call_count, 1)
+        numeric_audit.assert_not_called()
+        summary = json.loads(self.summary.read_text())
+        self.assertFalse(summary["success"])
+        self.assertFalse(summary["complete_source_handoff"])
+        self.assertEqual(summary["private_evidence"]["file_count"], 2)
+        self.assertEqual(summary["private_evidence"]["candidate_count"], 3)
+        self.assertNotIn("PRIVATE", json.dumps(summary) + output.getvalue())
+        self.assertEqual({p.name for p in destination.iterdir()}, {"ocr-evidence.json", "page.png"})
+        payload = json.loads((destination / "ocr-evidence.json").read_text())
+        self.assertEqual(payload["source_context"]["source_run_id"], "12345")
+        self.assertEqual(payload["source_context"]["probe_run_id"], "67890")
+        self.assertEqual(payload["source_context"]["date_folder"], "261004")
+        self.assertEqual(payload["source_pdf_sha256"], self.rows[0]["content_sha256"])
+        self.assertEqual(payload["page"], 1)
+        self.assertFalse(payload["source_admission"])
+        self.assertEqual(payload["recognition"]["provenance"], provenance)
+        self.assertEqual(payload["page_png_sha256"], hashlib.sha256((destination / "page.png").read_bytes()).hexdigest())
+        self.assertEqual(summary["private_evidence"]["evidence_json_sha256"], hashlib.sha256((destination / "ocr-evidence.json").read_bytes()).hexdigest())
+        archive = self.root / "private.tar.gz"
+        self.assertEqual(handoff.create_archive(destination, archive)[0], 2)
+        restored = self.root / "restored-private"
+        self.assertEqual(handoff.extract_archive(archive, restored), 2)
+        self.assertEqual((restored / "ocr-evidence.json").read_bytes(), (destination / "ocr-evidence.json").read_bytes())
+        self.assertFalse((restored / probe.native.RECEIPT_NAME).exists())
+        shutil.rmtree(destination)
+        with mock.patch.dict(os.environ, {"GITHUB_RUN_ID": "67890", "GITHUB_SHA": "b" * 40}), \
+                mock.patch.object(probe, "_raw_page_ocr", side_effect=recognition), \
+                mock.patch.object(probe, "MAX_PRIVATE_EVIDENCE_JSON_BYTES", 1), \
+                contextlib.redirect_stdout(io.StringIO()):
+            self.assertEqual(probe.main(arguments), 3)
+        self.assertEqual(json.loads(self.summary.read_text())["private_evidence"]["status"], "unavailable")
+        self.assertFalse(destination.exists())
+
+    def test_private_capture_rejects_multiple_pages_or_unsafe_destination_before_ocr(self):
+        self.make_source(pages=2)
+        self.make_archive_context()
+        self.page_checks.write_text(json.dumps({"schema": 1, "pages": [{"source_ordinal": 1, "page": number} for number in (1, 2)]}))
+        with mock.patch.dict(os.environ, {"GITHUB_RUN_ID": "67890", "GITHUB_SHA": "b" * 40}), \
+                mock.patch.object(probe, "_raw_page_ocr") as engine:
+            with self.assertRaisesRegex(probe.ProbeError, "private_evidence_requires_single_page"):
+                probe.probe_pages(self.originals, self.manifest, self.page_checks, self.metadata,
+                    date_folder="261004", source_run_id="12345", expected_articles=1,
+                    source_kind="original-archive", repository="owner/repo", private_evidence_dir=self.root / "private")
+            self.page_checks.write_text(json.dumps({"schema": 1, "pages": [{"source_ordinal": 1, "page": 1}]}))
+            with self.assertRaisesRegex(probe.ProbeError, "private_evidence_destination_invalid"):
+                probe.probe_pages(self.originals, self.manifest, self.page_checks, self.metadata,
+                    date_folder="261004", source_run_id="12345", expected_articles=1,
+                    source_kind="original-archive", repository="owner/repo", private_evidence_dir=self.originals / "private")
+            engine.assert_not_called()
+
     def raw_fixture(self, page):
         primary = page.get_text("text", sort=True).strip()
         return primary, page.get_text("words", sort=True), "fixture-models", {
@@ -1067,8 +1177,17 @@ class FieldProbeWorkflowTests(unittest.TestCase):
         self.assertIn("selected-macro-pdfs-${{ inputs.source_run_id }}", text)
         self.assertIn("if: ${{ always() }}", text)
         self.assertIn("path: ${{ runner.temp }}/market-views-ocr-field-probe.json", text)
-        for forbidden in ("private_workflow_handoff", "MINERU", "build_market_views", "upload-dir", "workflow run"):
+        for forbidden in ("MINERU", "build_market_views", "workflow run", "_private-workflow-handoff/market-sources/"):
             self.assertNotIn(forbidden, text)
+        private_input = text.split("retain_private_evidence:", 1)[1].split("archive_original_source_run_id:", 1)[0]
+        self.assertIn("type: boolean", private_input)
+        self.assertIn("default: false", private_input)
+        self.assertIn("always() && inputs.retain_private_evidence && inputs.source_kind == 'original-archive'", text)
+        self.assertIn("_private-workflow-handoff/ocr-probe-evidence/$GITHUB_RUN_ID/$DATE_FOLDER/page-evidence.tar.gz", text)
+        self.assertIn("retain_private and len(checks) != 1", text)
+        artifact = text.split("uses: actions/upload-artifact@v4", 1)[1]
+        self.assertNotIn("private-evidence", artifact)
+        self.assertNotIn("page.png", artifact)
         regression = (root / ".github/workflows/wechat-pipeline-regression.yml").read_text()
         self.assertIn("python scripts/test_probe_market_views_ocr_fields.py", regression)
         self.assertEqual(regression.count('      - ".github/workflows/market-views-ocr-field-probe.yml"'), 2)
