@@ -546,13 +546,14 @@ def _select_regions(candidates, page_size, image_size, source_image=None):
             raise original
 
 
-def _date_component_coverage(gray, words):
-    """Account for a one-pixel light edge without expanding any OCR box.
+def _date_component_coverage(gray, words, *, maximum_edge_pixels=1, allow_untranscribed=False):
+    """Account for light edges without expanding any OCR box.
 
     Each connected component has one original date-word owner. Every core
-    pixel stays in that unmodified box; an outside pixel needs a directly
-    adjacent darker pixel inside it. A gray chain to a distant dark core,
-    another word, a detached mark or a second outside row is not sufficient.
+    pixel stays in that unmodified box. Each outside step must become darker
+    and strictly closer to that box, reaching it within the bounded depth.
+    Detached very light micro-components, when enabled, have their own
+    untranscribed pixel ledger and never count as date-word coverage.
     """
     width, height = gray.size
     pixels, visited = gray.tobytes(), bytearray(width * height)
@@ -563,7 +564,22 @@ def _date_component_coverage(gray, words):
     def owner_at(x, y):
         owner = row_owners[y]
         return owner if owner >= 0 and words[owner]["bbox"][0] <= x < words[owner]["bbox"][2] else -1
-    components, totals = [], [0] * len(words)
+    def distance(box, x, y):
+        return max(box[0] - x, x - box[2] + 1, box[1] - y, y - box[3] + 1, 0)
+    def deeper_path(offset, owner, remaining):
+        x, y, value = offset % width, offset // width, pixels[offset]
+        box = words[owner]["bbox"]
+        if distance(box, x, y) == 0:
+            return True
+        if remaining == 0:
+            return False
+        return any(pixels[ny * width + nx] < value and distance(box, nx, ny) < distance(box, x, y)
+                   and deeper_path(ny * width + nx, owner, remaining - 1)
+                   for ny in range(max(0, y - 1), min(height, y + 2))
+                   for nx in range(max(0, x - 1), min(width, x + 2)))
+    components, totals, untranscribed = [], [0] * len(words), []
+    untranscribed_limit = min(16, sum(gray.histogram()[:245]) // 2000)
+    untranscribed_count = 0
     for start, value in enumerate(pixels):
         if value >= 245 or visited[start]:
             continue
@@ -596,30 +612,52 @@ def _date_component_coverage(gray, words):
                     if not visited[neighbor] and pixels[neighbor] < 245:
                         visited[neighbor] = 1
                         queue.append(neighbor)
+        if allow_untranscribed and not owners and not core_owners:
+            if count > 2 or any(pixels[offset] < 240 for offset in fringe):
+                _fail("uncovered_source_ink")
+            nearest = []
+            for offset in fringe:
+                distances = [distance(word["bbox"], offset % width, offset // width) for word in words]
+                minimum = min(distances)
+                if minimum > 4 or distances.count(minimum) != 1:
+                    _fail("uncovered_source_ink")
+                nearest.append(distances.index(minimum))
+            if len(set(nearest)) != 1:
+                _fail("uncovered_source_ink")
+            untranscribed_count += count
+            if untranscribed_count > untranscribed_limit:
+                _fail("uncovered_source_ink")
+            untranscribed.append({"kind": "untranscribed_light_micro_component", "bbox": bounds,
+                "pixels": count, "nearest_word_index": nearest[0],
+                "source_pixels": [[offset % width, offset // width, pixels[offset]] for offset in sorted(fringe)],
+                "pixel_support_sha256": digest.hexdigest()})
+            continue
         if len(owners) != 1 or (fringe and core_owners != owners):
             _fail("uncovered_source_ink")
         owner = next(iter(owners))
         box = words[owner]["bbox"]
         for offset in fringe:
             x, y, value = offset % width, offset // width, pixels[offset]
-            if not (box[0] - 1 <= x < box[2] + 1 and box[1] - 1 <= y < box[3] + 1):
+            if distance(box, x, y) > maximum_edge_pixels:
                 _fail("uncovered_source_ink")
-            supported = False
             for ny in range(max(0, y - 1), min(height, y + 2)):
                 for nx in range(max(0, x - 1), min(width, x + 2)):
                     adjacent_owner = owner_at(nx, ny)
                     if adjacent_owner not in (-1, owner):
                         _fail("uncovered_source_ink")
-                    if adjacent_owner == owner and pixels[ny * width + nx] < value:
-                        supported = True
-            if not supported:
+            if not deeper_path(offset, owner, maximum_edge_pixels):
                 _fail("uncovered_source_ink")
         totals[owner] += count
         components.append({"word_index": owner, "bbox": bounds, "pixels": count, "core_pixels": core_count,
                            "fringe_pixels": len(fringe), "pixel_support_sha256": digest.hexdigest()})
         if len(components) > MAX_WORDS:
             _fail("uncovered_source_ink")
-    return {"core_threshold": 96, "maximum_edge_pixels": 1, "components": components}, totals
+    support = {"core_threshold": 96, "maximum_edge_pixels": maximum_edge_pixels, "components": components}
+    if allow_untranscribed:
+        support.update(untranscribed_components=untranscribed, untranscribed_policy={"minimum_gray": 240,
+            "maximum_component_pixels": 2, "maximum_distance": 4, "absolute_pixel_limit": 16,
+            "ink_ratio_denominator": 2000, "pixel_limit": untranscribed_limit})
+    return support, totals
 
 
 def _date_pixel_coverage(crop, read):
@@ -627,8 +665,9 @@ def _date_pixel_coverage(crop, read):
 
     No box dilation, omitted words, threshold relaxation or inferred date
     values are used. The existing exact-box proof is unchanged when it
-    succeeds. Only a pixel-proved light component edge may extend one pixel
-    beyond an original word box. The consumer recomputes this from pixels.
+    succeeds. Bounded darker paths account for light component edges; tiny
+    detached light pixels remain explicitly untranscribed. The consumer
+    recomputes every pixel and ownership claim from the unchanged source.
     """
     rotated = crop.transpose(Image.Transpose.ROTATE_90 if read["angle"] == 90 else Image.Transpose.ROTATE_270)
     ink = rotated.convert("L").point(lambda value: 255 if value < 245 else 0)
@@ -646,9 +685,18 @@ def _date_pixel_coverage(crop, read):
     result = {"policy": "complete-date-source-ink-v1", "threshold": 245,
             "source_ink_sha256": _hash(ink.tobytes()), "pixels": ink.histogram()[255], "words": counts}
     if ImageChops.subtract(ink, covered).getbbox() is not None:
-        support, totals = _date_component_coverage(rotated.convert("L"), words)
-        result.update(policy="complete-date-source-ink-components-v1", component_support=support,
+        policy = "complete-date-source-ink-components-v1"
+        try:
+            support, totals = _date_component_coverage(rotated.convert("L"), words)
+        except RotatedAxisError:
+            policy = "complete-date-source-ink-ledger-v2"
+            support, totals = _date_component_coverage(rotated.convert("L"), words,
+                maximum_edge_pixels=2, allow_untranscribed=True)
+            result["untranscribed_pixels"] = sum(row["pixels"] for row in support["untranscribed_components"])
+        result.update(policy=policy, component_support=support,
                       words=[{**row, "box_pixels": row["pixels"], "pixels": total} for row, total in zip(counts, totals)])
+        if result["pixels"] != sum(totals) + result.get("untranscribed_pixels", 0):
+            _fail("uncovered_source_ink")
     return result
 
 
@@ -773,51 +821,71 @@ def recover_rotated_axes(page, candidates, *, language, tessdata, tesseract_comm
     runtime = _runtime(language, tesseract_version, traineddata)
     if private_trace is not None:
         private_trace.update(stage="region_recognition", plans=plans, runtime=runtime)
-    regions = []
+    regions, first_rejection = [], False
     for plan in plans:
         crop = image.crop(tuple(plan["source_pixel_box"]))
         region = {**plan, "source_crop_sha256": _hash(crop.tobytes()), "reads": []}
         if private_trace is not None:
             private_trace["regions"].append(region)
-        for angle, operation in ((90, Image.Transpose.ROTATE_90), (270, Image.Transpose.ROTATE_270)):
-            remaining = TIME_BUDGET - (clock() - started)
-            if remaining <= 0:
-                raise RotatedAxisError("rotated_axis_time_budget_exhausted")
-            rotated = crop.transpose(operation)
-            words = reader(rotated, language=language, tessdata=tessdata, command=tesseract_command,
-                           psm=6, dpi=300, timeout_seconds=min(READ_TIMEOUT, remaining))
-            exhausted = clock() - started >= TIME_BUDGET
-            if exhausted and private_trace is None:
-                raise RotatedAxisError("rotated_axis_time_budget_exhausted")
-            try:
-                words = _words(words, list(rotated.size), pixels=True)
-                matrix, inverse = _transform(plan["source_pixel_box"], angle)
-                region["reads"].append({"angle": angle, "image_size": list(rotated.size),
-                    "input_pixel_sha256": _hash(rotated.tobytes()), "affine": matrix, "inverse_affine": inverse,
-                    "words": words})
-            finally:
-                # Opt-in diagnostics may retain an already completed read,
-                # but cannot change the original timeout exception priority.
-                if exhausted:
+        try:
+            for angle, operation in ((90, Image.Transpose.ROTATE_90), (270, Image.Transpose.ROTATE_270)):
+                remaining = TIME_BUDGET - (clock() - started)
+                if remaining <= 0:
                     raise RotatedAxisError("rotated_axis_time_budget_exhausted")
+                rotated = crop.transpose(operation)
+                words = reader(rotated, language=language, tessdata=tessdata, command=tesseract_command,
+                               psm=6, dpi=300, timeout_seconds=min(READ_TIMEOUT, remaining))
+                exhausted = clock() - started >= TIME_BUDGET
+                if exhausted and private_trace is None:
+                    raise RotatedAxisError("rotated_axis_time_budget_exhausted")
+                try:
+                    words = _words(words, list(rotated.size), pixels=True)
+                    matrix, inverse = _transform(plan["source_pixel_box"], angle)
+                    region["reads"].append({"angle": angle, "image_size": list(rotated.size),
+                        "input_pixel_sha256": _hash(rotated.tobytes()), "affine": matrix, "inverse_affine": inverse,
+                        "words": words})
+                finally:
+                    # Opt-in diagnostics may retain an already completed read,
+                    # but cannot change the original timeout exception priority.
+                    if exhausted:
+                        raise RotatedAxisError("rotated_axis_time_budget_exhausted")
+        except Exception:
+            if private_trace is None or not first_rejection:
+                raise
+            private_trace["collection_stopped"] = "subsequent_region_error_or_budget"
+            return None  # Preserve the first page rejection, never a proof.
         accepted = [r for r in region["reads"] if _region_text(r["words"], r["image_size"])[2]]
         if len(accepted) != 1:
-            _record_diagnostic(diagnostics, "region_recognition",
-                "no_valid_direction" if not accepted else "ambiguous_directions", region=plan["id"],
-                planned_region_count=len(plans), source_pixel_box=plan["source_pixel_box"],
-                reads=[{"angle": r["angle"], "words": len(r["words"]),
-                        "date_words": sum(bool(DATE.fullmatch(w["text"])) for w in r["words"]),
-                        "accepted": _region_text(r["words"], r["image_size"])[2]} for r in region["reads"]])
-            return None  # Both valid directions are ambiguous, including equal dates.
+            reason = "no_valid_direction" if not accepted else "ambiguous_directions"
+            if not first_rejection:
+                _record_diagnostic(diagnostics, "region_recognition", reason, region=plan["id"],
+                    planned_region_count=len(plans), source_pixel_box=plan["source_pixel_box"],
+                    reads=[{"angle": r["angle"], "words": len(r["words"]),
+                            "date_words": sum(bool(DATE.fullmatch(w["text"])) for w in r["words"]),
+                            "accepted": _region_text(r["words"], r["image_size"])[2]} for r in region["reads"]])
+            if private_trace is None:
+                return None
+            private_trace.setdefault("first_rejection", {"region": plan["id"], "reason": reason})
+            first_rejection = True
+            continue
         region["selected_angle"] = accepted[0]["angle"]
         if "fragment_support" in plan:
             try:
                 region["date_pixel_coverage"] = _date_pixel_coverage(crop, accepted[0])
             except RotatedAxisError:
-                _record_diagnostic(diagnostics, "region_recognition", "uncovered_source_ink", region=plan["id"],
-                                   planned_region_count=len(plans), source_pixel_box=plan["source_pixel_box"])
-                return None
+                if not first_rejection:
+                    _record_diagnostic(diagnostics, "region_recognition", "uncovered_source_ink", region=plan["id"],
+                                       planned_region_count=len(plans), source_pixel_box=plan["source_pixel_box"])
+                if private_trace is None:
+                    return None
+                private_trace.setdefault("first_rejection", {"region": plan["id"], "reason": "uncovered_source_ink"})
+                first_rejection = True
+                continue
         regions.append(region)
+    if private_trace is not None:
+        private_trace["collection_complete"] = True
+    if first_rejection:
+        return None  # Private diagnosis cannot promote a partially read page.
     if private_trace is not None:
         private_trace["stage"] = "composed_readability"
     text, ledger, _ = _compose(candidates, regions)

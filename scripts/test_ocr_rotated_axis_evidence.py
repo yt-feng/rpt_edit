@@ -18,7 +18,7 @@ import ocr_numeric_evidence as numeric
 MODELS = [{"language": "eng", "filename": "eng.traineddata", "sha256": "a" * 64}]
 
 
-def synthetic_case(regions=1, *, reader=None, clock=None, multiline=False, repeated_axes=False, diagnostics=None):
+def synthetic_case(regions=1, *, reader=None, clock=None, multiline=False, repeated_axes=False, diagnostics=None, private_trace=None):
     document = fitz.open()
     page = document.new_page(width=400, height=650)
     if multiline:
@@ -57,7 +57,7 @@ def synthetic_case(regions=1, *, reader=None, clock=None, multiline=False, repea
         return date_words(image.size)
     result = axis.recover_rotated_axes(page, candidates, language="eng", tessdata=None,
                 tesseract_command="unused", tesseract_version="5.3.0", traineddata=MODELS,
-                reader=engine, clock=clock, diagnostics=diagnostics)
+                reader=engine, clock=clock, diagnostics=diagnostics, private_trace=private_trace)
     return document, page, candidates, result, calls
 
 
@@ -185,7 +185,7 @@ def source_date_reader(page, plans):
 
 
 class RotatedAxisTests(unittest.TestCase):
-    def fragment_recovery(self, *, observed_edge=False):
+    def fragment_recovery(self, *, observed_edge=False, untranscribed=False):
         document, page, candidates, image = fragmented_axis_case()
         self.addCleanup(document.close)
         plans = axis._select_regions(candidates, [700, 650], list(image.size), image)
@@ -200,8 +200,18 @@ class RotatedAxisTests(unittest.TestCase):
                     for word, box in zip(words, ([25, 30, 165, 61], [25, 363, 173, 394], [25, 696, 173, 727])):
                         word["bbox"] = box
                 return words
+        recognition_page = page
+        if untranscribed:
+            from types import SimpleNamespace
+            box = plans[0]["source_pixel_box"]
+            crop = image.crop(tuple(box)).transpose(Image.Transpose.ROTATE_270)
+            self.assertEqual(crop.getpixel((21, 40)), (255, 255, 255))
+            crop.putpixel((21, 40), (243, 243, 243))
+            image.paste(crop.transpose(Image.Transpose.ROTATE_90), tuple(box))
+            recognition_page = SimpleNamespace(rect=page.rect, get_pixmap=lambda **kwargs:
+                SimpleNamespace(width=image.width, height=image.height, samples=image.tobytes()))
         trace = {}
-        result = axis.recover_rotated_axes(page, candidates, language="eng", tessdata=None,
+        result = axis.recover_rotated_axes(recognition_page, candidates, language="eng", tessdata=None,
             tesseract_command="unused", tesseract_version="5.3.0", traineddata=MODELS,
             reader=reader, private_trace=trace)
         return page, candidates, image, result, calls, trace
@@ -231,6 +241,88 @@ class RotatedAxisTests(unittest.TestCase):
         self.assertEqual(result["proof"]["regions"][1]["date_pixel_coverage"]["policy"], "complete-date-source-ink-v1")
         self.assertNotIn("component_support", result["proof"]["regions"][1]["date_pixel_coverage"])
 
+    def test_two_step_edges_are_darker_and_closer_without_changing_legacy_component_proofs(self):
+        image = Image.new("RGB", (60, 100), "white")
+        words = [{"bbox": [10, y, 40, y + 10], "text": literal, "block": 1, "paragraph": 0, "line": i}
+                 for i, (y, literal) in enumerate(zip((10, 40, 70), ("2020/01", "2021/02", "2022/03")))]
+        for word in words:
+            y = word["bbox"][1]
+            ImageDraw.Draw(image).rectangle((15, y, 25, y + 8), fill="black")
+        image.putpixel((20, 9), (187, 187, 187))
+        first = axis._date_pixel_coverage(image.transpose(Image.Transpose.ROTATE_90), {"angle": 270, "words": words})
+        self.assertEqual(first["policy"], "complete-date-source-ink-components-v1")
+        self.assertEqual(set(first["component_support"]), {"core_threshold", "maximum_edge_pixels", "components"})
+        image.putpixel((20, 8), (240, 240, 240))
+        second = axis._date_pixel_coverage(image.transpose(Image.Transpose.ROTATE_90), {"angle": 270, "words": words})
+        self.assertEqual(second["policy"], "complete-date-source-ink-ledger-v2")
+        self.assertEqual(second["untranscribed_pixels"], 0)
+        self.assertEqual(second["pixels"], sum(word["pixels"] for word in second["words"]))
+        self.assertEqual(sum(row["fringe_pixels"] for row in second["component_support"]["components"]), 2)
+        image.putpixel((20, 8), (255, 255, 255))
+        self.assertEqual(axis._canonical(first), axis._canonical(axis._date_pixel_coverage(
+            image.transpose(Image.Transpose.ROTATE_90), {"angle": 270, "words": words})))
+
+    def test_untranscribed_micro_components_have_separate_bounded_pixel_ledger(self):
+        def build(*, large=False, rows=(20, 80, 140)):
+            words = [{"bbox": [20, y, 360 if large else 180, y + (50 if large else 45)],
+                      "text": literal, "block": 1, "paragraph": 0, "line": i}
+                     for i, (y, literal) in enumerate(zip(rows, ("2020/01", "2021/02", "2022/03")))]
+            image = Image.new("RGB", (400 if large else 200, 220 if large else 200), "white")
+            for word in words:
+                x0, y0, x1, y1 = word["bbox"]
+                ImageDraw.Draw(image).rectangle((x0, y0, x1 - 1, y1 - 1), fill="black")
+            return image, words
+        def coverage(image, words):
+            return axis._date_pixel_coverage(image.transpose(Image.Transpose.ROTATE_90), {"angle": 270, "words": words})
+        image, words = build()
+        image.putpixel((16, 25), (240, 240, 240)); image.putpixel((16, 26), (244, 244, 244))
+        result = coverage(image, words)
+        self.assertEqual(result["untranscribed_pixels"], 2)
+        self.assertEqual(result["pixels"], 21602)
+        self.assertEqual(sum(row["pixels"] for row in result["words"]), 21600)
+        residual, = result["component_support"]["untranscribed_components"]
+        self.assertEqual(residual["kind"], "untranscribed_light_micro_component")
+        self.assertEqual(residual["source_pixels"], [[16, 25, 240], [16, 26, 244]])
+        self.assertNotIn("word_index", residual)
+        self.assertEqual(result["component_support"]["untranscribed_policy"]["pixel_limit"], 10)
+        for kind in ("gray239", "three-pixels", "distance5", "relative-limit", "absolute-limit", "equal-distance", "inconsistent-nearest"):
+            if kind == "absolute-limit": source, read = build(large=True, rows=(20, 90, 160))
+            elif kind == "equal-distance": source, read = build(rows=(20, 72, 140))
+            elif kind == "inconsistent-nearest": source, read = build(rows=(20, 73, 140))
+            else: source, read = build()
+            if kind in ("gray239", "three-pixels", "distance5"):
+                x = 15 if kind == "distance5" else 16
+                for y in range(25, 28 if kind == "three-pixels" else 27):
+                    value = 239 if kind == "gray239" else 244
+                    source.putpixel((x, y), (value, value, value))
+            elif kind in ("relative-limit", "absolute-limit"):
+                for n in range(17 if kind == "absolute-limit" else 11):
+                    source.putpixel((16, 25 + 2 * n), (244, 244, 244))
+            else:
+                source.putpixel((100, 68), (244, 244, 244))
+                if kind == "inconsistent-nearest": source.putpixel((100, 69), (244, 244, 244))
+            with self.subTest(kind=kind), self.assertRaises(axis.RotatedAxisError):
+                coverage(source, read)
+
+    def test_untranscribed_pixels_cannot_confirm_numbers_or_survive_tampered_consumer_ledger(self):
+        _, _, image, result, calls, _ = self.fragment_recovery(observed_edge=True, untranscribed=True)
+        self.assertIsNotNone(result)
+        self.assertEqual(len(calls), 4)
+        coverage = result["proof"]["regions"][0]["date_pixel_coverage"]
+        self.assertEqual(coverage["untranscribed_pixels"], 1)
+        self.assertEqual(coverage["pixels"], sum(word["pixels"] for word in coverage["words"]) + 1)
+        derived = axis.replay_rotated_axis_proof(result["proof"], result["primary_text"],
+            input_pixel_sha256=axis._hash(image.tobytes()), page_size_points=[700.0, 650.0], source_image=image)
+        self.assertEqual(len(derived["rotated_mentions"]), 12)
+        self.assertEqual([row["literal"] for row in derived["positioned"].values()], ["25,000", "35,000", "0", "0"])
+        for field, value in (("pixels", 0), ("nearest_word_index", 2), ("source_pixels", [[21, 40, 239]]),
+                             ("pixel_support_sha256", "a" * 64), ("kind", "date")):
+            proof = copy.deepcopy(result["proof"])
+            proof["regions"][0]["date_pixel_coverage"]["component_support"]["untranscribed_components"][0][field] = value
+            with self.subTest(field=field), self.assertRaises(axis.RotatedAxisError):
+                axis.replay_rotated_axis_proof(proof, result["primary_text"], input_pixel_sha256=axis._hash(image.tobytes()),
+                    page_size_points=[700.0, 650.0], source_image=image)
+
     def test_component_edges_reject_detached_gray_marks_dark_core_tails_and_other_words(self):
         words = [{"bbox": [10, y, 40, y + 10], "text": literal, "block": 1, "paragraph": 0, "line": i}
                  for i, (y, literal) in enumerate(zip((10, 40, 70), ("2020/01", "2021/02", "2022/03")))]
@@ -242,10 +334,12 @@ class RotatedAxisTests(unittest.TestCase):
         def coverage(source, read_words):
             return axis._date_pixel_coverage(source.transpose(Image.Transpose.ROTATE_90), {"angle": 270, "words": read_words})
         self.assertEqual(sum(row["fringe_pixels"] for row in coverage(image, words)["component_support"]["components"]), 1)
-        for kind in ("dark-core", "two-pixel-tail", "detached-gray", "no-core", "gray-chain", "other-word"):
+        for kind in ("dark-core", "three-pixel-tail", "nondeeper-two-pixel-tail", "detached-gray", "no-core", "gray-chain", "other-word"):
             changed, changed_words = image.copy(), copy.deepcopy(words)
             if kind == "dark-core": changed.putpixel((20, 9), (95, 95, 95))
-            elif kind == "two-pixel-tail": changed.putpixel((20, 8), (230, 230, 230))
+            elif kind == "three-pixel-tail":
+                changed.putpixel((20, 8), (230, 230, 230)); changed.putpixel((20, 7), (244, 244, 244))
+            elif kind == "nondeeper-two-pixel-tail": changed.putpixel((20, 8), (180, 180, 180))
             elif kind == "detached-gray": changed.putpixel((35, 9), (187, 187, 187))
             elif kind == "no-core":
                 changed.putpixel((35, 10), (187, 187, 187)); changed.putpixel((35, 9), (230, 230, 230))
@@ -358,10 +452,12 @@ class RotatedAxisTests(unittest.TestCase):
             tesseract_command="unused", tesseract_version="5.3.0", traineddata=MODELS,
             reader=reader, private_trace=trace, diagnostics=diagnostics)
         self.assertIsNone(result)
-        self.assertEqual(len(calls), 2)
+        self.assertEqual(len(calls), 4)
         self.assertEqual(trace["stage"], "region_recognition")
         self.assertEqual(len(trace["plans"]), 2)
-        self.assertEqual(len(trace["regions"][0]["reads"]), 2)
+        self.assertEqual([len(region["reads"]) for region in trace["regions"]], [2, 2])
+        self.assertTrue(trace["collection_complete"])
+        self.assertEqual(trace["first_rejection"], {"region": 1, "reason": "uncovered_source_ink"})
         self.assertEqual(diagnostics["reason"], "uncovered_source_ink")
         self.assertNotIn("words", str(diagnostics))
         self.assertNotIn("private_trace", trace)
@@ -379,6 +475,45 @@ class RotatedAxisTests(unittest.TestCase):
                     tesseract_command="unused", tesseract_version="5.3.0", traineddata=MODELS,
                     reader=lambda *args, **kwargs: "malformed", private_trace=malformed_trace,
                     clock=iter((0, 0, 180)).__next__)
+
+    def test_private_trace_collects_all_planned_bands_with_first_rejection_and_original_budget(self):
+        def unreadable(image, call, options):
+            return date_words(image.size, ("bad", "bad", "bad"))
+        diagnostics, trace = {}, {}
+        document, _, _, result, calls = synthetic_case(4, reader=unreadable, diagnostics=diagnostics, private_trace=trace)
+        self.addCleanup(document.close)
+        self.assertIsNone(result)
+        self.assertEqual(len(calls), 8)
+        self.assertEqual([len(region["reads"]) for region in trace["regions"]], [2, 2, 2, 2])
+        self.assertEqual(diagnostics["region"], 1)
+        self.assertEqual(diagnostics["reason"], "no_valid_direction")
+        self.assertTrue(trace["collection_complete"])
+        self.assertNotIn("ledger", trace)
+        document, _, _, result, calls = synthetic_case(4, reader=unreadable)
+        self.addCleanup(document.close)
+        self.assertIsNone(result)
+        self.assertEqual(len(calls), 2)  # Default production still stops here.
+        for times, expected_calls in (((0, 0, 1, 1, 2, 180), 2), ((0, 0, 1, 1, 2, 2, 180), 3)):
+            diagnostics, trace = {}, {}
+            document, _, _, result, calls = synthetic_case(4, reader=unreadable, diagnostics=diagnostics,
+                private_trace=trace, clock=iter(times).__next__)
+            self.addCleanup(document.close)
+            self.assertIsNone(result)
+            self.assertEqual(len(calls), expected_calls)
+            self.assertEqual(diagnostics["reason"], "no_valid_direction")
+            self.assertEqual(diagnostics["region"], 1)
+            self.assertEqual(trace["collection_stopped"], "subsequent_region_error_or_budget")
+            self.assertNotIn("collection_complete", trace)
+        def later_error(image, call, options):
+            if call == 3: raise RuntimeError("private error must not replace original rejection")
+            return unreadable(image, call, options)
+        diagnostics, trace = {}, {}
+        document, _, _, result, calls = synthetic_case(4, reader=later_error, diagnostics=diagnostics, private_trace=trace)
+        self.addCleanup(document.close)
+        self.assertIsNone(result)
+        self.assertEqual(len(calls), 3)
+        self.assertEqual(diagnostics["reason"], "no_valid_direction")
+        self.assertNotIn("private error", str(trace))
 
     def replay(self, page, result, proof=None, text=None):
         pix = page.get_pixmap(dpi=300, colorspace=fitz.csRGB, alpha=False)
