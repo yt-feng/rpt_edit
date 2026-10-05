@@ -23,7 +23,7 @@ from portal_extended_recovery_intent import (acknowledged, key, read_index, read
 
 POLICY = 'explicit-rejected-legacy-unit-repair-v1'
 WORKFLOW = '.github/workflows/portal-extended-locales-r2.yml'
-BP = re.compile(rf'({NUMBER})\s*(?:个基点|個基點|基点|基點|basis\s+points?|bps?\b)', re.I)
+BP = re.compile(rf'({NUMBER})\s*(?:个基点|個基點|基点|基點|(?:basis\s+points?|bps?)(?![A-Za-z0-9_]))', re.I)
 
 
 def once_store():

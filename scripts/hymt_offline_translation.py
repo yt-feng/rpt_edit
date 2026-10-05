@@ -24,7 +24,7 @@ import time
 from typing import Callable, Sequence
 
 from compare_hymt_translation import LANGUAGES, SCRIPT_PATTERNS, ModelHTTPError, request_json, require_actions, verify_model, file_sha256
-from financial_quantity_integrity import FIVE_YEAR_PERIOD_RE, quantity_issues
+from financial_quantity_integrity import FIVE_YEAR_PERIOD_RE, NUMBER, quantity_issues
 
 MANIFEST_PATH = Path(__file__).with_name('hymt_translation_model_manifest.json')
 MANIFEST = json.loads(MANIFEST_PATH.read_text(encoding='utf-8'))
@@ -53,6 +53,9 @@ _QUANTITY_FACT = re.compile(
     r'(?<![A-Za-z0-9_])(?:'
     r'(?:USD|CNY|RMB|HKD|JPY|EUR|GBP|US\$|HK\$|\$|€|£)\s*[+\-−]?\d+(?:[.,]\d+)*'
     r'(?:\s*(?:thousand|million|billion|trillion|mn|mln|bn|bln|tn|万亿|千亿|百亿|十亿|千万|百万|十万|亿元|亿美元|港元|人民币|美元|元))?'
+    # Keep the basis-point scale with its number, including ASCII units
+    # touching Chinese/Khmer prose. Unicode word boundaries miss that case.
+    rf'|{NUMBER}\s*(?:(?i:basis\s+points?|bps?)(?![A-Za-z0-9_])|(?:个|個)?(?:基点|基點))'
     r'|[+\-−]?\d+(?:[.,]\d+)*\s*(?:%|％|percentage\s+points?|百分点|個百分點|百分點|亿元|亿美元|港元|人民币|美元|元人民币|元|万亿|千亿|百亿|十亿|千万|百万|十万|亿|万)'
     r'|\d{4}年\d{1,2}月(?:\d{1,2}日)?'
     r'|\d{4}[-/]\d{1,2}(?:[-/]\d{1,2})?'
@@ -220,7 +223,13 @@ def _mask_quantity_facts(text: str, start: int) -> tuple[str, dict[str, str]]:
     replacements: dict[str, str] = {}
 
     def reserve(match: re.Match[str]) -> str:
-        token = f'__HYMTPH_{start + len(replacements):04d}__'
+        index = start + len(replacements)
+        token = f'__HYMTPH_{index:04d}__'
+        # Existing caller tokens can have sparse identifiers, so the number
+        # of adapter replacements is not the next unused token identifier.
+        while token in text or token in replacements:
+            index += 1
+            token = f'__HYMTPH_{index:04d}__'
         replacements[token] = match.group()
         return token
 

@@ -267,7 +267,7 @@ def quantities(text: str, *, bare_months: bool = False) -> Counter:
     # Alphabetic boundaries avoid interpreting the suffix of e.g. "dollars".
     take(rf"(?<![A-Za-z])(?P<currency>{CURRENCY})\s*(?P<number>{NUMBER})\s*(?P<scale>{SCALE})?(?![\dA-Za-z])", money)
     take(rf"(?<![\dA-Za-z])(?P<number>{NUMBER})\s*(?P<scale>{SCALE})?\s*(?:(?:of|de|do|da|dos|das|des|d')\s*)?(?P<currency>{CURRENCY})(?![A-Za-z])", money)
-    take(rf"({NUMBER})\s*(?:basis\s+points?|bps?\b|(?:个)?基点|(?:個)?基點|ចំណុច\s*មូលដ្ឋាន|ពិន្ទុ\s*មូលដ្ឋាន|points?\s+de\s+base|pontos?[- ]base|puntos?\s+básicos?|punti\s+base|Basispunkte?|procentpunt(?:en)?|punkty\s+procentowe|процентн(?:ых|ых)\s+пункт(?:ов)?|відсотков(?:их|і)\s+пункт(?:ів)?|yüzde\s+puan|điểm\s+cơ\s+bản|pontos?\s+base|आधार\s+अंक|बेसिस\s+पॉइंट्स?)",
+    take(rf"({NUMBER})\s*(?:(?:basis\s+points?|bps?)(?![A-Za-z0-9_])|(?:个)?基点|(?:個)?基點|ចំណុច\s*មូលដ្ឋាន|ពិន្ទុ\s*មូលដ្ឋាន|points?\s+de\s+base|pontos?[- ]base|puntos?\s+básicos?|punti\s+base|Basispunkte?|procentpunt(?:en)?|punkty\s+procentowe|процентн(?:ых|ых)\s+пункт(?:ов)?|відсотков(?:их|і)\s+пункт(?:ів)?|yüzde\s+puan|điểm\s+cơ\s+bản|pontos?\s+base|आधार\s+अंक|बेसिस\s+पॉइंट्स?)",
          lambda m: ("percentage_points", _decimal(m[1]) / 100))
     take(rf"(?P<number>{NUMBER})\s*(?:percentage\s+points?|percent(?:age)?\s+points?|points?\s+de\s+pourcentage|points?\s+de\s+pourcent|pontos?\s+percentuais?|puntos?\s+porcentuales?|punti\s+percentuali|Prozentpunkte?|procentpunt(?:en)?|punkty\s+procentowe|процентн(?:ых|ых)\s+пункт(?:ов)?|відсотков(?:их|і)\s+пункт(?:ів)?|yüzde\s+puan|điểm\s+phần\s+trăm|个百分点|個百分點|パーセントポイント|퍼센트포인트|نقطة\s+مئوية|نقاط\s+مئوية|प्रतिशत\s+(?:अंक|बिंदु))",
          lambda m: ("percentage_points", _decimal(m['number'])))

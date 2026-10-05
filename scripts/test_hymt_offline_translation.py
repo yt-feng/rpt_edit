@@ -65,6 +65,65 @@ class HyMTTests(unittest.TestCase):
         self.assertEqual(translator.translate(source, 'hi', 'en'), 'मार्जिन 2.5 percentage points बढ़ा।')
         self.assertEqual([row[3] for row in self.engine.calls], [0, 1, 2])
 
+    def test_quantity_retry_masks_complete_basis_points_touching_non_ascii_prose(self):
+        for quantity, following in (
+            ('171bp', '至'), ('171BP', 'ទៅ'), ('171bps', '至'),
+            ('-17.1BP', '至'), ('−17.1 bps', 'ទៅ'),
+            ('-0.25 basis points', '至'), ('-17.1个基点', '至'),
+            ('-17.1基點', 'ទៅ'),
+        ):
+            with self.subTest(quantity=quantity, following=following):
+                source = f'收益率变化{quantity}{following}2%。'
+                masked, replacements = h._mask_quantity_facts(source, 0)
+                self.assertEqual(list(replacements.values()), [quantity, '2%'])
+                self.assertEqual(masked, f'收益率变化__HYMTPH_0000__{following}__HYMTPH_0001__。')
+                self.assertEqual(h._restore_terms(masked, replacements), source)
+
+    def test_quantity_retry_does_not_treat_ascii_identifiers_as_basis_points(self):
+        for value in ('171bpm', '171bpword', '171bp2', '171bp_total'):
+            with self.subTest(value=value):
+                masked, replacements = h._mask_quantity_facts(value, 0)
+                self.assertEqual(masked, value)
+                self.assertEqual(replacements, {})
+
+    def test_basis_point_retry_preserves_caller_and_opaque_token_identity_and_cache(self):
+        source = '收益率按__HYMTPH_0001__和`USD`上升171bp至2%。'
+
+        def respond(text, retry):
+            self.assertIn('__HYMTPH_0001__', text)
+            self.assertIn('__HYMTPH_0000__', text)
+            if retry < 2:
+                self.assertIn('171bp至2%', text)
+                return 'អត្រាតាម __HYMTPH_0001__ និង __HYMTPH_0000__ កើន 171% ដល់ 2%។'
+            self.assertEqual(text, '收益率按__HYMTPH_0001__和__HYMTPH_0000__上升__HYMTPH_0002__至__HYMTPH_0003__。')
+            return 'អត្រាតាម __HYMTPH_0001__ និង __HYMTPH_0000__ កើន __HYMTPH_0002__ ដល់ __HYMTPH_0003__។'
+
+        translator = self.retrying_translator(respond)
+        expected = 'អត្រាតាម __HYMTPH_0001__ និង `USD` កើន 171bp ដល់ 2%។'
+        self.assertEqual(translator.translate(source, 'km', 'zh'), expected)
+        self.assertEqual(translator.translate(source, 'km', 'zh'), expected)
+        self.assertEqual([row[3] for row in self.engine.calls], [0, 1, 2])
+        self.assertEqual(translator.stats['cache_hits'], 1)
+
+    def test_basis_point_retry_rejects_missing_or_duplicated_quantity_tokens_without_caching(self):
+        for damaged in ('អត្រាកើន ដល់ __HYMTPH_0001__។',
+                        'អត្រាកើន __HYMTPH_0000__ __HYMTPH_0000__ ដល់ __HYMTPH_0001__។'):
+            with self.subTest(damaged=damaged):
+                translator = self.retrying_translator(
+                    lambda _text, retry: 'អត្រាកើន 171% ដល់ 2%។' if retry < 2 else damaged)
+                with self.assertRaisesRegex(h.OfflineTranslationValidationError, 'placeholder'):
+                    translator.translate('收益率上升171bp至2%。', 'km', 'zh')
+                self.assertEqual([row[3] for row in self.engine.calls], [0, 1, 2])
+                self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
+
+    def test_basis_point_equivalence_keeps_percentage_points_distinct_from_percent(self):
+        source = '收益率上升171bp至2%。'
+        h.validate_result(source, 'អត្រាកើន 1.71 percentage points ដល់ 2%។', 'zh', 'km')
+        for changed in ('1.71%', '171 percentage points', '170bp'):
+            with self.subTest(changed=changed):
+                with self.assertRaisesRegex(h.OfflineTranslationValidationError, 'quantity'):
+                    h.validate_result(source, f'អត្រាកើន {changed} ដល់ 2%។', 'zh', 'km')
+
     def test_pinned_engine_retries_short_heading_with_target_script(self):
         source = 'Market Outlook'
 
