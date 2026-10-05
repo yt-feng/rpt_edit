@@ -149,9 +149,18 @@ contents. Original-page carriers are written and replayed individually, with
 80 million pixels per page and one billion across unique selected pages.
 The proof schema is unchanged. After that release, October 4 source rebuild
 `37297655439` and PDF `37297840175`, and October 1 legacy rebuild `37297927956`
-and child PDF `37298965236`, succeeded. October 3 figure rebuild acceptance
-remains open. Earlier live checks do not verify these newer rendered figures;
-local QA remains a development check only.
+and child PDF `37298965236`, succeeded. October 3 rebuild `37340380301`
+passed all 54 source checks at 16:30:59 UTC and private R2 handoff at 16:31:38.
+Its PDF child `37341517817` succeeded at 16:42:21 on `ce16fb2a`; the parent
+completed at 16:42:30, with public-safe PDF commit `615d5602`.
+Earlier live checks do not verify these newer rendered figures; local QA
+remains a development check only.
+
+PR 254 merged at `ce16fb2a` at 16:22 UTC after CI `37339774011` passed actual
+OCR and renderer checks in 3 minutes 45 seconds. Final ReportLab/LaTeX output
+now displays complete internal numeric-pending markers as an explicit Chinese
+pending-value message. Original field IDs, inputs, receipts, structured data
+and unresolved numeric status remain unchanged.
 
 | Complete cloud backup | Source evidence | Successful acceptance-only PDF |
 | --- | --- | --- |
@@ -183,6 +192,11 @@ remaining affected-page and full-batch acceptance is pending. Enabling the
 already-accepted backup capability does not claim success for every source
 shape or every October date. Readability, complete-source and independent
 numeric gates remain strict; new rotated values remain masked until confirmed.
+Private diagnostic probe `37340394718` retained its original failed exit and
+saved two verified private evidence files with source, pixel and model bindings.
+They confirm multiple short horizontal OCR word boxes cross date-axis regions.
+A general original-pixel coverage repair is in progress; these diagnostic
+files are not a complete source handoff or evidence that the page is repaired.
 The detailed contracts and historical evidence are maintained in
 [Market Views source recovery](market-views-source-recovery.md).
 

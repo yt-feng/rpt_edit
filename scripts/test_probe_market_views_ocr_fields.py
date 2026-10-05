@@ -585,6 +585,7 @@ class FieldProbeTests(unittest.TestCase):
                 mock.patch.object(fitz.Page, "get_textpage_ocr", side_effect=AssertionError("No new OCR")):
             returned = probe._raw_page_ocr(page, private_evidence=captured)
         self.assertEqual(recognition.call_count, 1)
+        self.assertIs(recognition.call_args.kwargs["private_region_trace"], captured)
         self.assertEqual(captured["candidates"], recovery["proof"]["candidates"])
         self.assertEqual(captured["provenance"]["traineddata"], provenance["traineddata"])
         self.assertEqual(returned[0], recovery["primary_text"])
@@ -686,6 +687,43 @@ class FieldProbeTests(unittest.TestCase):
                     date_folder="261004", source_run_id="12345", expected_articles=1,
                     source_kind="original-archive", repository="owner/repo", private_evidence_dir=self.originals / "private")
             engine.assert_not_called()
+
+    def test_native_region_error_retains_private_reads_without_public_payload_or_exit_change(self):
+        self.make_archive_context()
+        destination = self.root / "private-region-evidence"
+        provenance = {"engine": "tesseract-cli", "languages": "eng+chi_sim",
+            "traineddata": [{"language": "eng", "filename": "eng.traineddata", "sha256": "a" * 64}]}
+        trace = {"schema": 1, "stage": "region_recognition", "plans": [{"id": 1}],
+                 "regions": [{"reads": [{"words": [{"text": "PRIVATE-REGIONAL-READ"}]}]}]}
+        def failed_recognition(*args, private_region_trace, **kwargs):
+            private_region_trace.update(candidates={name: {"text": "PRIVATE-ORIGINAL", "words": []}
+                for name in probe.OPAQUE_CANDIDATES}, provenance=provenance,
+                diagnostic={"selection": "rejected"}, region_trace=trace)
+            raise probe.native.SourceValidationError("PRIVATE exception text", category="rotated_axis_time_budget_exhausted")
+        arguments = ["--input-dir", str(self.originals), "--manifest", str(self.manifest),
+            "--page-checks", str(self.page_checks), "--producer-metadata", str(self.metadata),
+            "--source-run-id", "12345", "--date-folder", "261004", "--expected-articles", "1",
+            "--source-kind", "original-archive", "--repository", "owner/repo", "--summary", str(self.summary),
+            "--private-evidence-dir", str(destination)]
+        output = io.StringIO()
+        with mock.patch.dict(os.environ, {"GITHUB_RUN_ID": "67890", "GITHUB_SHA": "b" * 40}), \
+                mock.patch.object(probe.native, "_recognize_ocr_page", side_effect=failed_recognition) as engine, \
+                mock.patch.object(probe, "audit_numeric_evidence") as numeric_audit, \
+                contextlib.redirect_stdout(output), contextlib.redirect_stderr(output):
+            self.assertEqual(probe.main(arguments), 3)
+        self.assertEqual(engine.call_count, 1)
+        numeric_audit.assert_not_called()
+        summary = json.loads(self.summary.read_text())
+        self.assertFalse(summary["success"])
+        self.assertEqual(summary["pages"][0]["category"], "rotated_axis_time_budget_exhausted")
+        self.assertEqual(summary["private_evidence"]["status"], "ready")
+        self.assertNotIn("PRIVATE", json.dumps(summary) + output.getvalue())
+        self.assertNotIn("region_trace", json.dumps(summary))
+        payload = json.loads((destination / "ocr-evidence.json").read_text())
+        self.assertEqual(payload["recognition"]["region_trace"], trace)
+        self.assertEqual(payload["recognition"]["provenance"], provenance)
+        self.assertFalse(payload["complete_source_handoff"])
+        self.assertEqual({path.name for path in destination.iterdir()}, {"ocr-evidence.json", "page.png"})
 
     def raw_fixture(self, page):
         primary = page.get_text("text", sort=True).strip()
@@ -1012,6 +1050,7 @@ class FieldProbeTests(unittest.TestCase):
         self.assertEqual(result, (primary, words, "private-models", diagnostic))
         self.assertEqual(recognize.call_count, 1)
         self.assertTrue(recognize.call_args.kwargs["allow_rejected"])
+        self.assertNotIn("private_region_trace", recognize.call_args.kwargs)
         audit.assert_not_called()
 
     def test_rejected_source_flow_and_alternate_counts_are_independent_without_private_payloads(self):

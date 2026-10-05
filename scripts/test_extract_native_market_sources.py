@@ -588,6 +588,52 @@ class NativeMarketSourcesTests(unittest.TestCase):
                 self.assertTrue(layout["rotated_axis_attempted"])
                 audit.assert_not_called()
 
+    def test_private_region_trace_is_opt_in_and_preserves_completed_reads_on_rejection(self):
+        import ocr_numeric_evidence as numeric
+        import ocr_rotated_axis_evidence as axis
+        with fitz.open() as document:
+            page = document.new_page(width=400, height=650)
+            page.insert_text((20, 40), "A" * 120, fontsize=4)
+            textpage = page.get_textpage()
+            words = [{"bbox": [20, 20, 200, 60], "text": "B" * 120,
+                      "block": 1, "paragraph": 1, "line": 1}]
+            for enabled in (False, True):
+                for outcome in ("rejected", "raised"):
+                    captured = {} if enabled else None
+                    def reject(*args, **kwargs):
+                        self.assertEqual("private_trace" in kwargs, enabled)
+                        if enabled:
+                            kwargs["private_trace"].update(schema=1, stage="region_recognition",
+                                plans=[{"id": 1}], regions=[{"reads": [{"words": ["PRIVATE-REGIONAL-READ"]}]}])
+                        if outcome == "raised":
+                            raise axis.RotatedAxisError("rotated_axis_time_budget_exhausted")
+                        return None
+                    with self.subTest(enabled=enabled, outcome=outcome), \
+                            patch.object(fitz, "get_tessdata", return_value=str(self.fixture_models())), \
+                            patch.object(fitz.Page, "get_textpage_ocr", return_value=textpage) as primary, \
+                            patch.object(native, "_tesseract_version", return_value="5.3.0"), \
+                            patch.object(native.shutil, "which", return_value="fixture-engine"), \
+                            patch.object(numeric, "_read_tesseract", return_value=words) as alternate, \
+                            patch.object(axis, "recover_rotated_axes", side_effect=reject) as recovery:
+                        options = {"private_region_trace": captured} if enabled else {}
+                        if outcome == "raised":
+                            with self.assertRaises(native.SourceValidationError) as failure:
+                                native._recognize_ocr_page(page, "private-source.pdf", 1, allow_rejected=True, **options)
+                            self.assertEqual(failure.exception.category, "rotated_axis_time_budget_exhausted")
+                        else:
+                            result = native._recognize_ocr_page(page, "private-source.pdf", 1,
+                                                               allow_rejected=True, **options)
+                            self.assertEqual(result[4]["selection"], "rejected")
+                            self.assertNotIn("region_trace", result[3])
+                            self.assertNotIn("PRIVATE-REGIONAL-READ", json.dumps(result[3:]))
+                        self.assertEqual((primary.call_count, alternate.call_count, recovery.call_count), (1, 1, 1))
+                    if enabled:
+                        self.assertEqual(set(captured["candidates"]), set(axis.LABELS))
+                        self.assertEqual(captured["provenance"]["engine"], "tesseract-cli")
+                        self.assertEqual(len(captured["provenance"]["traineddata"]), 2)
+                        self.assertEqual(captured["region_trace"]["regions"][0]["reads"][0]["words"],
+                                         ["PRIVATE-REGIONAL-READ"])
+
     def test_alternate_primary_runs_once_only_after_two_readability_rejections(self):
         import ocr_numeric_evidence as numeric
         with fitz.open() as document:

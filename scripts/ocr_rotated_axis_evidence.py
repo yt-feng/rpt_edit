@@ -17,7 +17,7 @@ import time
 from typing import Any
 
 import fitz
-from PIL import Image
+from PIL import Image, ImageChops, ImageDraw
 
 POLICY = "rotated-axis-regions-v1"
 ENGINE = "tesseract-cli-rotated-axis"
@@ -56,7 +56,7 @@ DIAGNOSTIC_REASONS = {"invalid_candidate_evidence", "not_eligible", "no_valid_di
     "crop_bounds", "crop_area", "total_crop_area", "overlapping_regions", "geometric-sorted_words",
     "source-flow_words", "full-page-psm11_words", "geometric-sorted_glyphs", "source-flow_glyphs",
     "full-page-psm11_glyphs", "candidate_readability", "candidate_same_glyphs", "cli_transcript_order",
-    "source_transcript_spans"}
+    "source_transcript_spans", "fragment_pixel_support", "uncovered_source_ink"}
 
 
 def safe_rotated_axis_diagnostics(value):
@@ -311,7 +311,7 @@ def _separate_chart_top(image, pixel_box, earliest_axis_top, glyph_height_pixels
     return list(pixel_box), profile
 
 
-def _select_regions(candidates, page_size, image_size, source_image=None):
+def _select_axis_regions(candidates, page_size, image_size, source_image=None, *, seeds_only=False):
     base = candidates["source-flow"]
     try:
         spans = _spans(base["text"], base["words"])
@@ -342,6 +342,8 @@ def _select_regions(candidates, page_size, image_size, source_image=None):
     if not 1 <= len(clusters) <= MAX_REGIONS:
         raise RotatedAxisError("rotated_axis_not_eligible", guard="region_count")
     regions, assigned = [], set()
+    def axis_word(word, height):
+        return bool(LONG.search(word["text"])) if seeds_only else _axis_word(word, height)
     glyph_height = statistics.median(b[3] - b[1] for b in targets)
     for box in sorted(clusters, key=lambda b: (b[1], b[0])):
         # A long horizontal garbage row can be only one slice of vertical
@@ -357,12 +359,12 @@ def _select_regions(candidates, page_size, image_size, source_image=None):
             for word in base["words"]:
                 wb = word["bbox"]
                 gap = max(0, wb[0] - box[2], box[0] - wb[2])
-                if _axis_word(word, glyph_height) and gap <= 2 * glyph_height and min(wb[3], box[3]) > max(wb[1], box[1]):
+                if axis_word(word, glyph_height) and gap <= 2 * glyph_height and min(wb[3], box[3]) > max(wb[1], box[1]):
                     expanded = _union([box, wb])
                     if expanded != box:
                         box = expanded; grew = True
         ids = {i for i, word in enumerate(base["words"])
-               if _axis_word(word, glyph_height) and _intersects(word["bbox"], box)}
+               if axis_word(word, glyph_height) and _intersects(word["bbox"], box)}
         if ids & assigned:
             raise RotatedAxisError("rotated_axis_not_eligible", guard="word_assignment")
         assigned |= ids
@@ -389,7 +391,7 @@ def _select_regions(candidates, page_size, image_size, source_image=None):
             top = pixel_box[1]
             scale_x, scale_y = image_size[0] / page_size[0], image_size[1] / page_size[1]
             edges = [math.ceil(word["bbox"][3] * scale_y) for word in base["words"]
-                     if not _axis_word(word, glyph_height)
+                     if not axis_word(word, glyph_height)
                      and word["bbox"][0] * scale_x < pixel_box[2]
                      and word["bbox"][2] * scale_x > pixel_box[0]
                      and word["bbox"][1] * scale_y < top < word["bbox"][3] * scale_y <= top + 1]
@@ -407,19 +409,22 @@ def _select_regions(candidates, page_size, image_size, source_image=None):
         # Include every whole word, and refuse horizontal chart scales/prose.
         grown = [pixel_box[0] * page_size[0] / image_size[0], pixel_box[1] * page_size[1] / image_size[1],
                  pixel_box[2] * page_size[0] / image_size[0], pixel_box[3] * page_size[1] / image_size[1]]
-        all_ids = {i for i, word in enumerate(base["words"]) if _intersects(word["bbox"], grown)}
-        if (not ids <= all_ids or len(all_ids) > MAX_REGION_WORDS
-                or any(i not in ids and i in assigned for i in all_ids)):
-            raise RotatedAxisError("rotated_axis_not_eligible", guard="grown_word_membership")
-        for i in all_ids:
-            word = base["words"][i]; wb = word["bbox"]
-            if not _axis_word(word, glyph_height):
-                raise RotatedAxisError("rotated_axis_not_eligible", guard="horizontal_word_intersection",
-                                       source_pixel_box=pixel_box, source_word_box=wb)
-            if not (grown[0] <= wb[0] and grown[1] <= wb[1] and wb[2] <= grown[2] and wb[3] <= grown[3]):
-                raise RotatedAxisError("rotated_axis_not_eligible", guard="partial_word_intersection",
-                                       source_pixel_box=pixel_box, source_word_box=wb)
-        assigned |= all_ids
+        if seeds_only:
+            all_ids = ids
+        else:
+            all_ids = {i for i, word in enumerate(base["words"]) if _intersects(word["bbox"], grown)}
+            if (not ids <= all_ids or len(all_ids) > MAX_REGION_WORDS
+                    or any(i not in ids and i in assigned for i in all_ids)):
+                raise RotatedAxisError("rotated_axis_not_eligible", guard="grown_word_membership")
+            for i in all_ids:
+                word = base["words"][i]; wb = word["bbox"]
+                if not axis_word(word, glyph_height):
+                    raise RotatedAxisError("rotated_axis_not_eligible", guard="horizontal_word_intersection",
+                                           source_pixel_box=pixel_box, source_word_box=wb)
+                if not (grown[0] <= wb[0] and grown[1] <= wb[1] and wb[2] <= grown[2] and wb[3] <= grown[3]):
+                    raise RotatedAxisError("rotated_axis_not_eligible", guard="partial_word_intersection",
+                                           source_pixel_box=pixel_box, source_word_box=wb)
+            assigned |= all_ids
         if min(pixel_box) < 2 or pixel_box[2] > image_size[0] - 2 or pixel_box[3] > image_size[1] - 2:
             raise RotatedAxisError("rotated_axis_not_eligible", guard="crop_bounds")
         if (pixel_box[2] - pixel_box[0]) * (pixel_box[3] - pixel_box[1]) > image_size[0] * image_size[1] * .04:
@@ -433,6 +438,138 @@ def _select_regions(candidates, page_size, image_size, source_image=None):
         if any(_intersects(a["source_pixel_box"], b["source_pixel_box"]) for b in regions[i + 1:]):
             raise RotatedAxisError("rotated_axis_not_eligible", guard="overlapping_regions")
     return regions
+
+
+def _pixel_word_box(word, page_size, image_size):
+    return [operation(word["bbox"][i] * image_size[i % 2] / page_size[i % 2])
+            for i, operation in enumerate((math.floor, math.floor, math.ceil, math.ceil))]
+
+
+def _select_fragment_regions(candidates, page_size, image_size, source_image):
+    """Close complete source-word ink over independently separated date bands.
+
+    Whole-page OCR can assign one word to slices of several vertical labels,
+    even across adjacent charts. Character shape is not ownership evidence.
+    Every non-white source pixel must instead belong to a planned band, or to
+    its independently detected final gray baseline row. Acceptance remains
+    pending until complete rotated date words cover every band pixel.
+    """
+    plans = _select_axis_regions(candidates, page_size, image_size, source_image, seeds_only=True)
+    if any(p["top_separation"]["white_gap"] is None for p in plans):
+        raise RotatedAxisError("rotated_axis_not_eligible", guard="fragment_pixel_support")
+    gray = source_image.convert("L")
+    for plan in plans:
+        left, _, right, _ = plan["seed_pixel_box"]
+        separator = plan["top_separation"]["separator_row"]
+        row = gray.crop((left, separator, right, separator + 1)).tobytes()
+        runs, begin = [], None
+        for x, value in enumerate((*row, 255)):
+            if value < 245 and begin is None:
+                begin = x
+            elif value >= 245 and begin is not None:
+                if x - begin >= math.ceil((right - left) * .6):
+                    runs.append([left + begin, left + x])
+                begin = None
+        if len(runs) != 1:
+            raise RotatedAxisError("rotated_axis_not_eligible", guard="fragment_pixel_support")
+        plan["fragment_separator_run"] = runs[0]
+        plan["fragment_support"] = []
+        plan["source_word_indices"] = []
+    base = candidates["source-flow"]
+    scanned_pixels = 0
+    for index, word in enumerate(base["words"]):
+        box = _pixel_word_box(word, page_size, image_size)
+        touching = [p for p in plans if _intersects(box, p["source_pixel_box"])]
+        if not touching:
+            continue
+        scanned_pixels += (box[2] - box[0]) * (box[3] - box[1])
+        if scanned_pixels > MAX_PIXELS:
+            raise RotatedAxisError("rotated_axis_not_eligible", guard="fragment_pixel_support")
+        crop = gray.crop(tuple(box))
+        pixels = crop.tobytes()
+        support, separators, outside = {}, {}, 0
+        for offset, value in enumerate(pixels):
+            if value >= 245:
+                continue
+            x, y = box[0] + offset % crop.width, box[1] + offset // crop.width
+            owners = [p for p in touching if p["source_pixel_box"][0] <= x < p["source_pixel_box"][2]
+                      and p["source_pixel_box"][1] <= y < p["source_pixel_box"][3]]
+            if len(owners) == 1:
+                support.setdefault(owners[0]["id"], []).append((offset, value))
+                continue
+            # The word box may include the chart's gray baseline, separated
+            # from the labels by a proved white gap. Only that exact detected
+            # row is admissible; dark strokes or any other row stay outside.
+            owners = [p for p in touching if value >= 96
+                      and y == p["top_separation"]["separator_row"]
+                      and p["fragment_separator_run"][0] <= x < p["fragment_separator_run"][1]]
+            if len(owners) == 1:
+                separators.setdefault(owners[0]["id"], []).append((offset, value))
+            else:
+                outside += 1
+        if not support and outside:
+            continue  # The original word's actual ink is entirely retained.
+        if (outside or not support or not any(value < 96 for rows in support.values() for _, value in rows)):
+            raise RotatedAxisError("rotated_axis_not_eligible", guard="fragment_pixel_support",
+                                   source_pixel_box=touching[0]["source_pixel_box"], source_word_box=word["bbox"])
+        supported = [p for p in touching if p["id"] in support]
+        # A cross-chart word must lie in the same independently proved blank
+        # separator band. Vertically unrelated regions cannot absorb it.
+        if len(supported) > 1 and max(p["top_separation"]["white_gap"][0] for p in supported) >= min(
+                p["top_separation"]["white_gap"][1] for p in supported):
+            raise RotatedAxisError("rotated_axis_not_eligible", guard="fragment_pixel_support")
+        def evidence(groups):
+            return [{"region_id": region_id, "pixels": len(rows),
+                     "core_pixels": sum(value < 96 for _, value in rows),
+                     "pixel_support_sha256": _hash(_canonical(rows))} for region_id, rows in sorted(groups.items())]
+        owner = supported[0]
+        owner["source_word_indices"].append(index)
+        owner["fragment_support"].append({"word_index": index, "word_pixel_box": box,
+            "support": evidence(support), "separator_support": evidence(separators)})
+    assigned = {index for p in plans for index in p["source_word_indices"]}
+    seed_ids = {i for i, word in enumerate(base["words"]) if LONG.search(word["text"])}
+    if (not seed_ids <= assigned or any(not p["source_word_indices"] or len(p["source_word_indices"]) > MAX_REGION_WORDS for p in plans)):
+        raise RotatedAxisError("rotated_axis_not_eligible", guard="fragment_pixel_support")
+    return plans
+
+
+def _select_regions(candidates, page_size, image_size, source_image=None):
+    try:
+        return _select_axis_regions(candidates, page_size, image_size, source_image)
+    except RotatedAxisError as original:
+        if source_image is None or original.guard not in {
+                "horizontal_word_intersection", "partial_word_intersection", "grown_word_membership"}:
+            raise
+        try:
+            return _select_fragment_regions(candidates, page_size, image_size, source_image)
+        except RotatedAxisError:
+            raise original
+
+
+def _date_pixel_coverage(crop, read):
+    """Require all source ink in a new fragment band to belong to full dates.
+
+    No dilation, omitted words, gray threshold relaxation or inferred date
+    values are used. Separated word rows prohibit one connected stroke from
+    being split between date words. The consumer recomputes this from pixels.
+    """
+    rotated = crop.transpose(Image.Transpose.ROTATE_90 if read["angle"] == 90 else Image.Transpose.ROTATE_270)
+    ink = rotated.convert("L").point(lambda value: 255 if value < 245 else 0)
+    words = sorted(read["words"], key=lambda word: (word["bbox"][1], word["bbox"][0]))
+    if not 3 <= len(words) <= MAX_REGION_WORDS or any(a["bbox"][3] >= b["bbox"][1] for a, b in zip(words, words[1:])):
+        _fail("uncovered_source_ink")
+    covered, counts = Image.new("L", rotated.size), []
+    for word in words:
+        box = word["bbox"]
+        count = ink.crop(tuple(box)).histogram()[255]
+        if not count:
+            _fail("uncovered_source_ink")
+        ImageDraw.Draw(covered).rectangle((box[0], box[1], box[2] - 1, box[3] - 1), fill=255)
+        counts.append({"bbox": box, "pixels": count})
+    if ImageChops.subtract(ink, covered).getbbox() is not None:
+        _fail("uncovered_source_ink")
+    return {"policy": "complete-date-source-ink-v1", "threshold": 245,
+            "source_ink_sha256": _hash(ink.tobytes()), "pixels": ink.histogram()[255], "words": counts}
 
 
 def _transform(box, angle):
@@ -528,7 +665,7 @@ def _compose(candidates, regions):
 
 
 def recover_rotated_axes(page, candidates, *, language, tessdata, tesseract_command,
-                         tesseract_version, traineddata, reader=None, clock=None, diagnostics=None):
+                         tesseract_version, traineddata, reader=None, clock=None, diagnostics=None, private_trace=None):
     from ocr_numeric_evidence import _read_tesseract
     reader, clock = reader or _read_tesseract, clock or time.monotonic
     started = clock()
@@ -536,22 +673,32 @@ def recover_rotated_axes(page, candidates, *, language, tessdata, tesseract_comm
     pixmap = page.get_pixmap(dpi=300, colorspace=fitz.csRGB, alpha=False)
     image = Image.frombytes("RGB", (pixmap.width, pixmap.height), pixmap.samples)
     _size(list(image.size), integer=True)
+    if private_trace is not None:
+        private_trace.clear()
+        private_trace.update(schema=1, stage="candidate_validation", input_pixel_sha256=_hash(image.tobytes()),
+                             plans=[], regions=[])
     try:
         candidates = _candidates(candidates, size)
     except RotatedAxisError as exc:
         _record_diagnostic(diagnostics, "candidate_validation", exc.guard or "invalid_candidate_evidence")
         return None
     try:
+        if private_trace is not None:
+            private_trace["stage"] = "region_planning"
         plans = _select_regions(candidates, size, list(image.size), source_image=image)
     except RotatedAxisError as exc:
         geometry = {key: getattr(exc, key) for key in ("source_pixel_box", "source_word_box") if getattr(exc, key) is not None}
         _record_diagnostic(diagnostics, "region_planning", exc.guard or "not_eligible", **geometry)
         return None  # Preserve the original page rejection for ineligible input.
     runtime = _runtime(language, tesseract_version, traineddata)
+    if private_trace is not None:
+        private_trace.update(stage="region_recognition", plans=plans, runtime=runtime)
     regions = []
     for plan in plans:
         crop = image.crop(tuple(plan["source_pixel_box"]))
         region = {**plan, "source_crop_sha256": _hash(crop.tobytes()), "reads": []}
+        if private_trace is not None:
+            private_trace["regions"].append(region)
         for angle, operation in ((90, Image.Transpose.ROTATE_90), (270, Image.Transpose.ROTATE_270)):
             remaining = TIME_BUDGET - (clock() - started)
             if remaining <= 0:
@@ -559,13 +706,20 @@ def recover_rotated_axes(page, candidates, *, language, tessdata, tesseract_comm
             rotated = crop.transpose(operation)
             words = reader(rotated, language=language, tessdata=tessdata, command=tesseract_command,
                            psm=6, dpi=300, timeout_seconds=min(READ_TIMEOUT, remaining))
-            if clock() - started >= TIME_BUDGET:
+            exhausted = clock() - started >= TIME_BUDGET
+            if exhausted and private_trace is None:
                 raise RotatedAxisError("rotated_axis_time_budget_exhausted")
-            words = _words(words, list(rotated.size), pixels=True)
-            matrix, inverse = _transform(plan["source_pixel_box"], angle)
-            region["reads"].append({"angle": angle, "image_size": list(rotated.size),
-                "input_pixel_sha256": _hash(rotated.tobytes()), "affine": matrix, "inverse_affine": inverse,
-                "words": words})
+            try:
+                words = _words(words, list(rotated.size), pixels=True)
+                matrix, inverse = _transform(plan["source_pixel_box"], angle)
+                region["reads"].append({"angle": angle, "image_size": list(rotated.size),
+                    "input_pixel_sha256": _hash(rotated.tobytes()), "affine": matrix, "inverse_affine": inverse,
+                    "words": words})
+            finally:
+                # Opt-in diagnostics may retain an already completed read,
+                # but cannot change the original timeout exception priority.
+                if exhausted:
+                    raise RotatedAxisError("rotated_axis_time_budget_exhausted")
         accepted = [r for r in region["reads"] if _region_text(r["words"], r["image_size"])[2]]
         if len(accepted) != 1:
             _record_diagnostic(diagnostics, "region_recognition",
@@ -576,7 +730,16 @@ def recover_rotated_axes(page, candidates, *, language, tessdata, tesseract_comm
                         "accepted": _region_text(r["words"], r["image_size"])[2]} for r in region["reads"]])
             return None  # Both valid directions are ambiguous, including equal dates.
         region["selected_angle"] = accepted[0]["angle"]
+        if "fragment_support" in plan:
+            try:
+                region["date_pixel_coverage"] = _date_pixel_coverage(crop, accepted[0])
+            except RotatedAxisError:
+                _record_diagnostic(diagnostics, "region_recognition", "uncovered_source_ink", region=plan["id"],
+                                   planned_region_count=len(plans), source_pixel_box=plan["source_pixel_box"])
+                return None
         regions.append(region)
+    if private_trace is not None:
+        private_trace["stage"] = "composed_readability"
     text, ledger, _ = _compose(candidates, regions)
     if not _readability(text)["accepted"]:
         _record_diagnostic(diagnostics, "composed_readability", "page_readability_rejected", planned_region_count=len(plans))
@@ -589,6 +752,8 @@ def recover_rotated_axes(page, candidates, *, language, tessdata, tesseract_comm
                 page_size_points=size, source_image=image, language=language, traineddata=traineddata)
     if clock() - started >= TIME_BUDGET:
         raise RotatedAxisError("rotated_axis_time_budget_exhausted")
+    if private_trace is not None:
+        private_trace["stage"] = "complete"
     return {"primary_text": text, "primary_words": derived["primary_words"], "proof": proof}
 
 
@@ -630,7 +795,8 @@ def replay_rotated_axis_proof(proof, primary_text, *, input_pixel_sha256, page_s
     if not isinstance(regions, list) or len(regions) != len(plans):
         _fail()
     for region, plan in zip(regions, plans):
-        if (not isinstance(region, dict) or set(region) != set(plan) | {"source_crop_sha256", "reads", "selected_angle"}
+        coverage_keys = {"date_pixel_coverage"} if "fragment_support" in plan else set()
+        if (not isinstance(region, dict) or set(region) != set(plan) | {"source_crop_sha256", "reads", "selected_angle"} | coverage_keys
                 or any(_canonical(region[k]) != _canonical(v) for k, v in plan.items())
                 or not isinstance(region["source_crop_sha256"], str) or not HASH.fullmatch(region["source_crop_sha256"])
                 or type(region["selected_angle"]) is not int or region["selected_angle"] not in (90, 270)
@@ -660,6 +826,10 @@ def replay_rotated_axis_proof(proof, primary_text, *, input_pixel_sha256, page_s
                 accepted.append(angle)
         if accepted != [region["selected_angle"]]:
             _fail()
+        if coverage_keys:
+            selected_read = next(read for read in region["reads"] if read["angle"] == region["selected_angle"])
+            if _canonical(region["date_pixel_coverage"]) != _canonical(_date_pixel_coverage(crop, selected_read)):
+                _fail()
     selected, ledger, inserted = _compose(candidates, regions)
     if (selected != primary_text or _canonical(proof["ledger"]) != _canonical(ledger)
             or proof["primary_text_sha256"] != _hash(selected.encode()) or not _readability(selected)["accepted"]):
