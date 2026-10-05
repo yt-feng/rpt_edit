@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from functools import lru_cache
 import hashlib
 import json
 import os
@@ -21,6 +22,14 @@ MAX_PAGES = 120
 MAX_BYTES = 64 * 1024 * 1024
 MAX_SCAN_PAGES = 20
 MARKET_WORDS = re.compile(r"market|outlook|investment|econom|equity|bond|rate|inflation|valuation|forecast|市场|展望|投资|经济|利率|估值|预测", re.I)
+TEXT_FONT_NAME = "SourcePreviewCJK"
+
+
+@lru_cache(maxsize=1)
+def _text_font_buffer():
+    # MuPDF ships this font. Embed its bytes instead of relying on a reader's
+    # optional Adobe-GB1 CJK package (the built-in china-s alias is unembedded).
+    return fitz.Font("cjk").buffer
 
 
 def digest(path):
@@ -159,7 +168,8 @@ def validate(root, expected_reports, *, date, run_id, sha):
 
 
 def _text(page, rect, text, size=11, color=(.12, .16, .22)):
-    if page.insert_textbox(fitz.Rect(rect), text, fontname="china-s", fontsize=size, color=color) < 0:
+    page.insert_font(fontname=TEXT_FONT_NAME, fontbuffer=_text_font_buffer())
+    if page.insert_textbox(fitz.Rect(rect), text, fontname=TEXT_FONT_NAME, fontsize=size, color=color) < 0:
         raise ValueError("Source edition text does not fit")
 
 
@@ -202,6 +212,7 @@ def render(root, output, expected_reports, *, date, run_id, sha):
         end.insert_text((40, 180), ENDING_PAGE_MARKER, fontname="helv", fontsize=16)
         document.set_metadata({"title": f"{TITLE} {date}", "author": "", "subject": "degraded source-page edition"})
         temporary = output.with_name(output.name + ".tmp")
+        document.subset_fonts()
         document.save(temporary, garbage=4, deflate=True)
     verify_pdf(temporary, receipt["selected_page_count"])
     os.replace(temporary, output)
@@ -218,7 +229,16 @@ def verify_pdf(path, minimum_source_pages=1):
             raise ValueError("Source edition label is missing")
         if sum(bool(page.get_images()) for page in document) < minimum_source_pages:
             raise ValueError("Source edition original images are missing")
+        embedded_fonts = set()
         for page in document:
+            text_fonts = [font for font in page.get_fonts() if font[4] == TEXT_FONT_NAME]
+            if len(text_fonts) != 1:
+                raise ValueError("Source edition portable label font is missing")
+            xref = text_fonts[0][0]
+            if xref not in embedded_fonts:
+                if not document.extract_font(xref)[3]:
+                    raise ValueError("Source edition label font is not embedded")
+                embedded_fonts.add(xref)
             pixmap = page.get_pixmap(matrix=fitz.Matrix(.2, .2), alpha=False)
             if not pixmap.samples:
                 raise ValueError("Source edition contains an unrenderable page")

@@ -3,6 +3,8 @@ import copy
 import contextlib
 import io
 import os
+import shutil
+import subprocess
 import sys
 import textwrap
 import json
@@ -101,6 +103,57 @@ class PreviewTests(unittest.TestCase):
         self.assertFalse(private_publication_complete(CTX['date'], client=client, bucket='test', expected_sha256='a' * 64))
         with self.assertRaisesRegex(RuntimeError, 'editions disagree'):
             private_publication_complete(CTX['date'], client=client, bucket='test', expected_edition='standard')
+
+    def test_private_and_public_labels_embed_the_bundled_cjk_font(self):
+        self.pdf()
+        self.prepare()
+        private, public = self.root / 'private.pdf', self.root / 'public.pdf'
+        preview.render(self.source, private, 1, **CTX)
+        prepare_public_copy(private, public)
+        for path in (private, public):
+            with self.subTest(path=path.name), fitz.open(path) as document:
+                for page in document:
+                    fonts = [font for font in page.get_fonts() if font[4] == preview.TEXT_FONT_NAME]
+                    self.assertEqual(len(fonts), 1)
+                    _, extension, _, font_bytes = document.extract_font(fonts[0][0])
+                    self.assertEqual(extension, 'ttf')
+                    self.assertTrue(font_bytes)
+                    self.assertLess(len(font_bytes), len(preview._text_font_buffer()))
+                self.assertIn('备用来源版', document[0].get_text())
+            preview.verify_pdf(path, 2)
+
+    def test_verifier_rejects_original_unembedded_china_s_regression(self):
+        self.pdf()
+        self.prepare()
+        def legacy_text(page, rect, text, size=11, color=(.12, .16, .22)):
+            page.insert_textbox(fitz.Rect(rect), text, fontname='china-s', fontsize=size, color=color)
+        with patch.object(preview, '_text', legacy_text), \
+                self.assertRaisesRegex(ValueError, 'portable label font'):
+            preview.render(self.source, self.root / 'legacy.pdf', 1, **CTX)
+
+    @unittest.skipUnless(shutil.which('pdftoppm'), 'Poppler is needed for cross-renderer verification')
+    def test_poppler_renders_cover_directory_and_source_labels_without_cjk_pack(self):
+        self.pdf()
+        self.prepare()
+        private, public = self.root / 'private.pdf', self.root / 'public.pdf'
+        preview.render(self.source, private, 1, **CTX)
+        prepare_public_copy(private, public)
+        result = subprocess.run(['pdftoppm', '-scale-to', '1000', '-png', str(public), str(self.root / 'poppler')],
+                                check=True, capture_output=True, text=True, timeout=60)
+        self.assertNotIn('Syntax Error', result.stderr)
+        images = sorted(self.root.glob('poppler-*.png'))
+        self.assertEqual(len(images), 4)
+        for index, image in enumerate(images):
+            pixmap = fitz.Pixmap(str(image))
+            gray = fitz.Pixmap(fitz.csGRAY, pixmap)
+            self.assertGreater(sum(value < 245 for value in gray.samples), 1000,
+                               f'Page {index + 1} must not be blank')
+            if index >= 2:
+                # Source images cannot make a missing degradation label pass.
+                for top, bottom in ((14, 53), (783, 831)):
+                    start = round(top / 842 * gray.height) * gray.width
+                    end = round(bottom / 842 * gray.height) * gray.width
+                    self.assertGreater(sum(value < 245 for value in gray.samples[start:end]), 100)
 
     def test_acceptance_private_roundtrip_does_not_write_any_production_object(self):
         from test_upload_market_view_to_r2 import FakeR2Client
