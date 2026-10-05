@@ -3,6 +3,8 @@ from __future__ import annotations
 import io
 import json
 import re
+import copy
+from datetime import timedelta
 from pathlib import Path
 import ssl
 import tempfile
@@ -14,6 +16,7 @@ import zipfile
 import consume_legacy_mineru as result_helpers
 import mineru_task_ledger as durable
 import smoke_mineru_api as smoke
+from test_mineru_result_cache import MemoryR2
 
 TOKENS = [('MINER_U', 'private-key-a'), ('MINER_U_2', 'private-key-b')]
 
@@ -37,6 +40,7 @@ class FakeHTTP:
         self.mode = 'done'
         self.reject_first = False
         self.reject_all = False
+        self.result_url = 'https://results.invalid/private?signed=secret'
     def post(self, url, **kw):
         self.posts.append(kw)
         if self.mode == 'unknown':
@@ -52,7 +56,7 @@ class FakeHTTP:
     def get(self, url, **kw):
         self.polls.append(kw)
         rows = [{'data_id': item['data_id'], 'state': self.mode,
-                 **({'full_zip_url': 'https://results.invalid/private?signed=secret'} if self.mode == 'done' else {})}
+                 **({'full_zip_url': self.result_url} if self.mode == 'done' else {})}
                 for item in self.files]
         return Response(200, {'code': 0, 'data': {'extract_result': rows}})
 
@@ -72,9 +76,10 @@ class SmokeTests(unittest.TestCase):
         self.store = durable.FileStore(self.root / 'ledger')
         self.http = FakeHTTP()
         self.clock = Clock()
-    def run_smoke(self, *, tokens=TOKENS, downloader=lambda _: zipped(), run_id='123456'):
+    def run_smoke(self, *, tokens=TOKENS, downloader=lambda _: zipped(), run_id='123456', result_downloader=None):
         return smoke.run_smoke(run_id, self.store, durable.Provider(self.http, smoke.ENDPOINT), tokens,
-                               downloader=downloader, clock=self.clock.time, sleep=self.clock.sleep)
+                               downloader=downloader, result_downloader=result_downloader,
+                               clock=self.clock.time, sleep=self.clock.sleep)
     def batches(self):
         return [json.loads(path.read_text()) for path in (self.root / 'ledger' / 'batches').glob('*.json')]
     def test_deterministic_fixture_is_exactly_one_page_without_private_report(self):
@@ -270,6 +275,153 @@ class SmokeTests(unittest.TestCase):
         self.assertEqual(smoke.credentials({'MINER_U':'same', 'MINER_U_2':'same', 'MINER_U_3':'new'}),
                          [('MINER_U','same'), ('MINER_U_3','new')])
         with self.assertRaises(smoke.SmokeError): smoke.credentials({})
+
+    def cloud_storage(self):
+        client = MemoryR2()
+        self.store = durable.R2Store(smoke.SCOPE, client=client, bucket='private-smoke')
+        return client
+
+    def test_r2_result_is_immutable_smoke_scoped_and_replay_never_downloads_or_posts(self):
+        client = self.cloud_storage()
+        downloads = []
+        def download(url): downloads.append(url); return zipped()
+        first = self.run_smoke(downloader=download)
+        self.assertEqual(first['status'], 'passed')
+        self.assertEqual(first['result_cache'], {'enabled': True, 'durable_readback': True, 'initial_hit': False,
+            'replay_hit': True, 'replay_provider_posts': 0, 'replay_result_downloads': 0})
+        self.assertEqual((len(downloads), len(self.http.posts), len(self.http.polls)), (1, 1, 2))
+        objects = {k: v for k, v in client.objects.items() if k.startswith(smoke.CACHE_PREFIX + '/')}
+        self.assertEqual(len(objects), 2)
+        receipt = json.loads(next(v['Body'] for k, v in objects.items() if k.endswith('receipt.json')))
+        self.assertEqual(receipt['source_binding']['scope'], smoke.SCOPE)
+        self.assertEqual(receipt['policy'], smoke.CACHE_POLICY)
+        self.assertNotIn('dropbox', json.dumps(receipt))
+        self.assertNotIn('full_zip_url', receipt)
+        for operation in client.puts:
+            if operation['Key'].startswith(smoke.CACHE_PREFIX + '/'):
+                self.assertEqual(operation['IfNoneMatch'], '*')
+        def no_cdn(url): self.fail('Cached smoke must not GET CDN')
+        second = self.run_smoke(downloader=no_cdn)
+        self.assertEqual(second['status'], 'passed')
+        self.assertEqual(second['provider_posts'], 0)
+        self.assertTrue(second['result_cache']['initial_hit'])
+        self.assertEqual((len(self.http.posts), len(self.http.polls)), (1, 4))
+        self.assertEqual(first['hashes'], second['hashes'])
+        self.assertEqual(objects, {k: v for k, v in client.objects.items() if k.startswith(smoke.CACHE_PREFIX + '/')})
+
+    def test_shared_transport_strict_then_pin_persists_authentication_and_replays_from_r2(self):
+        import mineru_daily_result_transport as transport
+        from test_mineru_pinned_result_transport import authentication
+        client = self.cloud_storage()
+        self.http.result_url = 'https://cdn-mineru.openxlab.org.cn/pdf/synthetic.zip'
+        now = transport.utc_now()
+        auth = authentication(); auth.pop('cutoff_utc')
+        auth.update(schema_version=1, policy=transport.POLICY, issued_at_utc=now.isoformat(),
+                    expires_at_utc=(now + timedelta(minutes=15)).isoformat(), repository='example/research',
+                    workflow_path=smoke.WORKFLOW, event='workflow_dispatch')
+        env = {'GITHUB_ACTIONS': 'true', 'GITHUB_EVENT_NAME': 'workflow_dispatch', 'GITHUB_REF': 'refs/heads/main',
+               'GITHUB_REPOSITORY': 'example/research',
+               'GITHUB_WORKFLOW_REF': 'example/research/' + smoke.WORKFLOW + '@refs/heads/main'}
+        calls = []
+        def strict(url): calls.append('strict'); raise result_helpers.NetworkStop('tls_certificate_expired')
+        def pinned(url): calls.append('pin'); return zipped()
+        with patch.dict(smoke.os.environ, env, clear=True), \
+             patch.object(transport, '_prepare_daily_authentication', return_value=auth) as prepare, \
+             patch.object(transport, 'DailyPinnedResultTransport', return_value=pinned):
+            first = self.run_smoke(downloader=strict, result_downloader=transport.download_result)
+        self.assertEqual(first['status'], 'passed')
+        self.assertEqual(calls, ['strict', 'pin'])
+        prepare.assert_called_once()
+        self.assertEqual(first['result_authentication']['auth_mode'], 'exact_leaf_pin')
+        self.assertIs(first['result_authentication']['pki_verified_now'], False)
+        self.assertEqual(first['provider_posts'], 1)
+        self.assertTrue(first['result_cache']['replay_hit'])
+        records = [json.loads(v['Body']) for k, v in client.objects.items()
+                   if k.startswith(smoke.CACHE_PREFIX + '/') and k.endswith('receipt.json')]
+        self.assertEqual(records[0]['authentication'], auth)
+        # Stored authentication is historical evidence, not a new lease.
+        with patch.object(transport, 'validate_daily_authentication', side_effect=AssertionError('No new live auth')):
+            again = self.run_smoke(downloader=lambda _: self.fail('No new CDN GET'), result_downloader=transport.download_result)
+        self.assertEqual(again['status'], 'passed')
+        self.assertEqual(again['provider_posts'], 0)
+        public = json.dumps(first)
+        for private in ('private-key', 'results.invalid', 'signed=', smoke.MARKER, 'single-accepted-task'):
+            self.assertNotIn(private, public)
+
+    def test_bad_marker_or_numeric_result_never_enters_result_cache(self):
+        client = self.cloud_storage()
+        for raw in (b'not ZIP', zipped(text='42.75 125.50 168.25'), zipped(text=smoke.MARKER + ' 42.75')):
+            with self.subTest(raw_length=len(raw)):
+                result = self.run_smoke(downloader=lambda _: raw)
+                self.assertEqual(result['status'], 'failed')
+                self.assertFalse(result['result_cache']['durable_readback'])
+                self.assertFalse(any(k.startswith(smoke.CACHE_PREFIX + '/') for k in client.objects))
+        self.assertEqual(len(self.http.posts), 1)
+
+    def test_corrupted_cache_receipt_or_blob_stops_without_a_new_download(self):
+        client = self.cloud_storage()
+        self.assertEqual(self.run_smoke()['status'], 'passed')
+        original = copy.deepcopy(client.objects)
+        receipt_key = next(k for k in client.objects if k.startswith(smoke.CACHE_PREFIX + '/') and k.endswith('receipt.json'))
+        blob_key = next(k for k in client.objects if k.startswith(smoke.CACHE_PREFIX + '/') and k.endswith('.zip'))
+        for kind in ('source-scope', 'task', 'markdown', 'blob', 'receipt-hash'):
+            client.objects = copy.deepcopy(original)
+            if kind == 'blob': client.objects[blob_key]['Body'] += b'changed'
+            elif kind == 'receipt-hash': client.objects[receipt_key]['Metadata']['sha256'] = 'a' * 64
+            else:
+                receipt = json.loads(client.objects[receipt_key]['Body'])
+                if kind == 'source-scope': receipt['source_binding']['scope'] = 'dropbox'
+                elif kind == 'task': receipt['lineage']['batch_id'] = 'another-task'
+                else: receipt['markdown_sha256'] = 'a' * 64
+                raw = durable.encoded(receipt)
+                client.objects[receipt_key]['Body'] = raw
+                client.objects[receipt_key]['Metadata']['sha256'] = durable.digest(raw)
+            with self.subTest(kind=kind):
+                result = self.run_smoke(downloader=lambda _: self.fail('Bad cache must not redownload'))
+                self.assertEqual(result['status'], 'failed')
+                self.assertFalse(result['result_cache']['replay_hit'])
+                self.assertEqual(result['provider_posts'], 0)
+
+    def test_r2_write_readback_failure_never_claims_durable_or_cache_replay_success(self):
+        client = self.cloud_storage()
+        def corrupt(key, operation):
+            if key.startswith(smoke.CACHE_PREFIX + '/') and key.endswith('.zip'):
+                client.objects[key]['Body'] += b'changed'
+        client.after_put = corrupt
+        result = self.run_smoke()
+        self.assertEqual(result['status'], 'failed')
+        self.assertEqual(result['category'], 'result_cache_contract')
+        self.assertFalse(result['marker_verified'])
+        self.assertFalse(result['result_cache']['durable_readback'])
+        self.assertFalse(result['result_cache']['replay_hit'])
+        self.assertEqual(len([k for k in client.objects if k.startswith(smoke.CACHE_PREFIX + '/')]), 1)
+        self.assertEqual(len(self.http.posts), 1)
+
+    def test_replay_rechecks_current_original_task_before_using_a_valid_cache(self):
+        self.cloud_storage()
+        original = self.http.get
+        def fail_second_poll(url, **kwargs):
+            if self.http.polls: self.http.mode = 'failed'
+            return original(url, **kwargs)
+        with patch.object(self.http, 'get', side_effect=fail_second_poll):
+            result = self.run_smoke()
+        self.assertEqual(result['category'], 'result_cache_replay_task')
+        self.assertTrue(result['result_cache']['durable_readback'])
+        self.assertFalse(result['result_cache']['replay_hit'])
+        self.assertEqual(len(self.http.posts), 1)
+
+    def test_main_passes_shared_cloud_result_transport_and_keeps_public_summary_only(self):
+        import mineru_daily_result_transport as transport
+        env = {'GITHUB_ACTIONS': 'true', 'GITHUB_EVENT_NAME': 'workflow_dispatch', 'GITHUB_REF': 'refs/heads/main',
+               'GITHUB_REPOSITORY': 'example/research', 'GITHUB_RUN_ID': '123456', 'MINER_U': 'private-key',
+               'GITHUB_WORKFLOW_REF': 'example/research/' + smoke.WORKFLOW + '@refs/heads/main',
+               'RUNNER_TEMP': str(self.root)}
+        passed = {'schema_version': 1, 'status': 'passed', 'marker_verified': True}
+        with patch.dict(smoke.os.environ, env, clear=True), patch.object(smoke, 'cloud_store'), \
+             patch.object(smoke, 'run_smoke', return_value=passed) as run, patch('builtins.print'):
+            self.assertEqual(smoke.main(), 0)
+        self.assertIs(run.call_args.kwargs['result_downloader'], transport.download_result)
+        self.assertEqual(json.loads((self.root / 'mineru-api-smoke-summary.json').read_text()), passed)
 
 
 if __name__ == '__main__':

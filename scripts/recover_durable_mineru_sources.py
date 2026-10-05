@@ -37,6 +37,18 @@ RUN = re.compile(r'[1-9][0-9]{0,19}')
 MAX_RECEIPT = 16 * 1024 * 1024
 
 
+def download_result(url, **kwargs):
+    # Workflow metadata checks import this module before dependencies are
+    # installed. Only actual result delivery requires the transport packages.
+    from mineru_daily_result_transport import download_result as retrieve
+    return retrieve(url, **kwargs)
+
+
+def persist_authentication(*args):
+    from mineru_daily_result_cache import persist_authentication as persist
+    return persist(*args)
+
+
 def safe_figure_source_ordinal(error, expected_reports):
     """Only the bounded report position may accompany a fixed figure category."""
     ordinal = getattr(error, 'source_ordinal', None)
@@ -451,7 +463,8 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
                     source_run_id='', allow_fresh=False, recovery_run_id, source_execution_sha,
                     recovery_execution_sha=None,
                     allowed_error_codes=(), allowed_error_hashes=(), downloader=download_once,
-                    asset_writer=chart_assets, timeout=1800, interval=15, queue_budget=300, result_cache=None):
+                    asset_writer=chart_assets, timeout=1800, interval=15, queue_budget=300, result_cache=None,
+                    authenticated_downloader=None):
     if ledger.scope != 'dropbox' or not exact_json(ledger.options, OPTIONS):
         reject('ledger_scope_options')
     if (not RUN.fullmatch(str(recovery_run_id)) or (source_run_id and not RUN.fullmatch(str(source_run_id)))
@@ -492,9 +505,13 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
                 if cache_key not in cache:
                     payload = result_cache.get(source_bindings[source_id], lineage) if result_cache is not None else None
                     cache_hit = payload is not None
+                    authentication = None
                     if not cache_hit:
                         try:
-                            payload = downloader(url)
+                            if result_cache is not None and authenticated_downloader is not None:
+                                payload, authentication = authenticated_downloader(url, strict_downloader=downloader)
+                            else:
+                                payload = downloader(url)
                         except NetworkStop as error:
                             child = (isinstance(lineage, dict) and type(lineage.get('child_ordinal')) is int
                                      and lineage['child_ordinal'] in {1, 2}
@@ -510,6 +527,9 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
                     folder = Path(cache_dir) / str(len(cache))
                     markdown = safe_unzip(payload, folder / 'raw')
                     if result_cache is not None and not cache_hit:
+                        if authentication is not None:
+                            persist_authentication(result_cache, source_bindings[source_id], lineage,
+                                                   payload, authentication)
                         result_cache.put(source_bindings[source_id], lineage, payload)
                     cache[cache_key] = (folder / 'raw', markdown, digest(payload))
             def record_task(batch):
@@ -670,7 +690,8 @@ def main():
                 args.output_dir, args.expected_reports, args.date_folder, source_run_id=args.source_run_id,
                 allow_fresh=args.allow_fresh, recovery_run_id=env.get('GITHUB_RUN_ID', ''), source_execution_sha=sha,
                 recovery_execution_sha=env.get('GITHUB_SHA', ''),
-                allowed_error_codes=codes, allowed_error_hashes=hashes, result_cache=ResultCache(client, bucket))
+                allowed_error_codes=codes, allowed_error_hashes=hashes, result_cache=ResultCache(client, bucket),
+                authenticated_downloader=download_result)
     except (RecoveryError, LedgerError, ConsumerError, OSError, ValueError, KeyError, TypeError) as error:
         if isinstance(error, FigureSourceError):
             candidate = getattr(error, 'category', None)

@@ -22,7 +22,7 @@ The repository automates a document-processing pipeline:
 flowchart TD
   A["Dropbox and other PDF sources"] --> B["GitHub Actions: select and bind exact PDF batch"]
   B --> C["MinerU API: durable submission and original-task polling"]
-  C --> D["Retrieve completed result ZIPs from private R2 cache or MinerU HTTPS"]
+  C --> D["Private R2 cache; otherwise strict MinerU HTTPS with known expired-certificate recovery"]
   C --> M["Explicit cloud recovery: verified transient failure, at most two failed-member child tasks"]
   M --> D
   D --> N["Verify full ZIP and source/task binding; immediately persist complete ZIP in private R2"]
@@ -75,8 +75,27 @@ PDF bytes, source name, parser options and accepted task lineage; temporary
 signed URLs are not cache identities. A successful download is validated and
 persisted before report generation, so later failures and runner termination
 do not discard it. Cache reuse still requires current provider polling and the
-complete original-batch gate. An absent cache may use strict HTTPS; corrupt or
+complete original-batch gate. An absent cache first uses strict HTTPS; corrupt or
 unverifiable stored objects stop processing rather than silently falling back.
+
+The main daily workflow and exact-date source recovery automatically recover the
+known result-CDN leaf-expiry error through `mineru_daily_result_transport.py`.
+Every cache miss still tries normal PKI first. Only the known hostname and exact
+previously verified leaf fingerprint can enter recovery, after a fresh strict
+handshake confirms a depth-zero expiry and both system and certifi historical
+chain/hostname checks pass. Intermediates must be currently valid. The actual
+download connection pins that same leaf, rejects redirects, sends no API token
+and has a fresh lease of at most 15 minutes. Unknown certificates and unrelated
+failures remain errors. When the provider renews its certificate, ordinary PKI
+works directly and the recovery path is unused.
+
+The complete ZIP is checked before a separate immutable daily authentication
+receipt and the existing source-bound result cache are written and read back.
+The receipt honestly records `pki_verified_now=false`. Existing complete caches
+remain usable after a lease expires. This automatic policy is separate from the
+manual seeder's fixed cutoff and does not require repeated date extensions.
+`mineru-api-smoke.yml` verifies the same transport with one synthetic page,
+known text/numbers, private R2 persistence and an immediate cache-only replay.
 
 The separate manual cloud `mineru-result-cache-seed.yml` verifies the complete
 original Daily artifact and accepted task inventory before caching completed
@@ -84,8 +103,8 @@ original ZIPs. It submits no new parses. Its temporary transport authenticates
 only the documented exact CDN leaf fingerprint, verifies the historical chain
 and hostname, and stops at the reviewed fixed `2026-10-05T23:59:59Z` cutoff. Previously
 authenticated complete caches retain their original October 4 receipts. It records
-`pki_verified_now=false` in a separate immutable private authentication receipt;
-normal daily PKI verification is unchanged. The default one-ZIP canary must pass
+`pki_verified_now=false` in a separate immutable private authentication receipt.
+The default one-ZIP canary must pass
 full ZIP checks and R2 readback before bulk seeding. Failed parses, complete
 handoff and actual dated PDF delivery remain separate gates; see
 [source recovery](market-views-source-recovery.md) for the exact policy.
@@ -143,9 +162,10 @@ TLS probe `37347310154` still reported an expired certificate at 17:18 UTC.
 The result-download connection is separate from GitHub authorization and the
 MinerU task API. Strict Cloudflare probes also rejected that certificate; R2
 can retain verified result bytes but cannot supply a ZIP not yet retrieved.
-Normal daily TLS verification remains strict. Bounded manual retrieval and
-its fixed certificate identity/window are detailed in the source-recovery
-contract; no local network workaround or local OCR service is required.
+The daily path now tries strict PKI first and has the automatic, exact-identity
+recovery described above. The provider certificate itself remains expired;
+successful automatic retrieval must be established by a cloud smoke result.
+No local network workaround or local OCR service is required.
 
 PR 251 merged at `95110608`; PR 252 merged at `eb80a3e5` at 10:35:54 UTC after
 cloud CI `37297176568` passed. Source-bound figure proof retains original

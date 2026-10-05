@@ -12,6 +12,9 @@ on:
       - scripts/test_mineru_result_cache.py
       - scripts/pdf_to_xhs_batch.py
       - scripts/test_mineru_daily_result_cache.py
+      - scripts/mineru_daily_result_cache.py
+      - scripts/mineru_daily_result_transport.py
+      - scripts/test_mineru_daily_result_transport.py
       - .github/workflows/mineru-result-cache-seed.yml
       - scripts/seed_mineru_result_cache.py
       - scripts/test_seed_mineru_result_cache.py
@@ -64,12 +67,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Verify producer checks before dependency installation
+        run: python3 -S -c "import sys; sys.path.insert(0, 'scripts'); from recover_durable_mineru_sources import check_producer"
       - name: Install real source image regression dependencies
-        run: python3 -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF
+        run: python3 -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF 'urllib3>=2.2,<3' certifi
       - run: python3 -B scripts/test_mineru_terminal_recovery.py
       - run: python3 -B scripts/test_recover_durable_mineru_sources.py
       - run: python3 -B scripts/test_mineru_result_cache.py
       - run: python3 -B scripts/test_mineru_daily_result_cache.py
+      - run: python3 -B scripts/test_mineru_daily_result_transport.py
       - run: python3 -B scripts/test_mineru_pinned_result_transport.py
       - run: python3 -B scripts/test_seed_mineru_result_cache.py
   recover:
@@ -108,7 +114,7 @@ jobs:
           PY
           fi
       - name: Install private recovery and source image dependencies
-        run: python3 -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF 'boto3>=1.37.32,<2'
+        run: python3 -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF 'boto3>=1.37.32,<2' 'urllib3>=2.2,<3' certifi
       - name: Download complete exact original selected PDF artifact
         if: inputs.source_run_id != ''
         uses: actions/download-artifact@v4

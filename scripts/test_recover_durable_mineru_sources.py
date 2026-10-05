@@ -4,6 +4,7 @@ import copy
 import io
 import importlib.util
 import json
+import shutil
 from pathlib import Path
 import tempfile
 import unittest
@@ -444,6 +445,22 @@ class RecoveryTests(unittest.TestCase):
         self.assertEqual(child['state'], 'terminal')
         self.assertEqual(child['batch_id'], 'child-1')
         self.assertFalse((self.output / r.RECEIPT).exists())
+
+    def test_cloud_authenticated_delivery_persists_proof_before_cache_and_resumes_without_download(self):
+        import mineru_daily_result_cache as authentication_cache
+        memory = MemoryR2()
+        cache = ResultCache(memory, 'private-test')
+        auth = {'test_verified_authentication': 'fresh-lease'}
+        with patch.object(authentication_cache, 'validate_daily_authentication', return_value=auth), \
+             patch.object(r, 'download_result', return_value=(result_zip(), auth)) as download:
+            self.recover(result_cache=cache, authenticated_downloader=r.download_result)
+        self.assertEqual(download.call_count, len(self.rows))
+        self.assertEqual(len([key for key in memory.objects
+                              if key.startswith(authentication_cache.AUTH_PREFIX + '/')]), len(self.rows))
+        shutil.rmtree(self.output)
+        with patch.object(r, 'download_result', side_effect=AssertionError('Use original verified cache')):
+            self.recover(result_cache=cache, authenticated_downloader=r.download_result)
+        self.assertEqual(self.provider.posts, [])
 
     def cached_failed_parents(self):
         cache = ResultCache(MemoryR2(), 'private-test')
