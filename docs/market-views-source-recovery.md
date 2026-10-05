@@ -785,3 +785,18 @@ ordinal 11 page 10; and page 42 images 1 and 2 to ordinal 10 pages 16 and 13.
 These are visual original-page bindings under the verified complete manifest,
 not yet provider `img_path`/`page_idx`/`bbox` bindings. Repair must obtain the
 actual cached metadata and retain both forms of provenance.
+
+An independent R2 access check on October 5 at approximately 03:42 UTC did
+not retrieve any object. Local S3 credentials were absent; an existing Wrangler
+identity check failed with a Cloudflare API request timeout. The Chrome
+dashboard reached the sign-in page. These observations do not prove that the
+R2 cache is absent or unusable from Actions, whose cloud credentials are
+separate. They prevent claiming a new independent object-read acceptance.
+
+A read-only inventory of the retained local recovery evidence found no complete
+MinerU result ZIP, `content_list` or provider image mapping fields. Cache-seed
+summaries establish cached object identities and hashes, but do not supply
+`img_path`/`page_idx`/`bbox` provenance. Numeric position diagnostics cannot
+substitute for that figure metadata. Figure repair remains dependent on reading
+the actual authenticated cached results; no schema was inferred from the
+summary files.
