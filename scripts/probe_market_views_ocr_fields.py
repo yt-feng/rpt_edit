@@ -37,6 +37,8 @@ MAX_DIAGNOSTIC_PAGES = 8
 MAX_OPAQUE_RUNS = 512
 MAX_POSITION_WORDS = 20_000
 MAX_POSITION_TEXT_BYTES = 1_000_000
+MAX_PRIVATE_EVIDENCE_JSON_BYTES = 8_000_000
+MAX_PRIVATE_EVIDENCE_PNG_BYTES = 64_000_000
 OPAQUE_POSITION_STATUSES = {"mapped", "text_order_mismatch", "word_geometry_unavailable",
                             "word_geometry_invalid", "word_bound_exceeded", "word_boundary_mismatch",
                             "duplicate_position_ambiguous", "page_geometry_unavailable", "input_bound_exceeded"}
@@ -570,7 +572,7 @@ class _ObservedOCRPage:
         return value
 
 
-def _raw_page_ocr(page: fitz.Page) -> tuple[str, list[Any], str, dict[str, Any]]:
+def _raw_page_ocr(page: fitz.Page, *, private_evidence=None) -> tuple[str, list[Any], str, dict[str, Any]]:
     """Use the production full-page engine parameters without admitting sources."""
     observed = _ObservedOCRPage(page)
     try:
@@ -582,6 +584,20 @@ def _raw_page_ocr(page: fitz.Page) -> tuple[str, list[Any], str, dict[str, Any]]
                          else "page_ocr_or_numeric_validation_failed") from None
     except Exception:
         raise ProbeError("ocr_engine_failed") from None
+    if private_evidence is not None:
+        # Reuse the existing TextPage and returned alternate/proof candidates.
+        # Collecting this private diagnostic never starts another recognition.
+        try:
+            rotated = provenance.get("rotated_axis") if isinstance(provenance, dict) else None
+            retained = rotated.get("candidates") if isinstance(rotated, dict) else None
+            candidates = retained if isinstance(retained, dict) else {
+                label: {"text": observed.texts[sort], "words": page.get_text("words", textpage=observed.textpage, sort=sort)}
+                for sort, label in ((True, "geometric-sorted"), (False, "source-flow")) if sort in observed.texts}
+            if not isinstance(retained, dict) and isinstance(provenance.get("recognition"), dict):
+                candidates["full-page-psm11"] = {"text": primary, "words": words}
+            private_evidence.update(candidates=candidates, provenance=provenance, diagnostic=dict(diagnostic))
+        except Exception:
+            private_evidence.clear()
     _rotated_axis_arguments(provenance, selected_route=diagnostic.get("selection") == "rotated-axis")
     opaque = {}
     rect = getattr(page, "rect", None)
@@ -608,13 +624,14 @@ def _raw_page_ocr(page: fitz.Page) -> tuple[str, list[Any], str, dict[str, Any]]
     return primary, words, tessdata, _PrivateRecognitionDiagnostic(diagnostic, provenance)
 
 
-def _diagnose_page(page: fitz.Page, image_path: Path) -> dict[str, Any]:
+def _diagnose_page(page: fitz.Page, image_path: Path, *, private_evidence=None) -> dict[str, Any]:
     """Publish only counts; a language rejection still retains its actual reason."""
     result = {"native_readability": _readability_projection(page.get_text("text", sort=True).strip()),
               "ocr_attempted": True, "numeric_audit_performed": False}
     try:
         with open(os.devnull, "w") as silent, contextlib.redirect_stdout(silent), contextlib.redirect_stderr(silent):
-            primary, words, tessdata, layout = _raw_page_ocr(page)
+            primary, words, tessdata, layout = (_raw_page_ocr(page) if private_evidence is None
+                else _raw_page_ocr(page, private_evidence=private_evidence))
             result["ocr_readability"] = _readability_projection(primary, allow_sparse_ocr=True)
             if (isinstance(layout, dict) and isinstance(layout.get("selection"), str)
                     and layout["selection"] in {"geometric-sorted", "source-flow", "full-page-psm11", "rotated-axis", "rejected"}):
@@ -672,9 +689,37 @@ def _diagnose_page(page: fitz.Page, image_path: Path) -> dict[str, Any]:
     return result
 
 
+def _write_private_evidence(destination: Path, payload: dict[str, Any], png: bytes) -> dict[str, Any]:
+    """Two private diagnostic files; never the source-handoff receipt layout."""
+    raw = native.canonical_bytes(payload)
+    provenance = payload.get("recognition", {}).get("provenance", {})
+    models = provenance.get("traineddata", [])
+    if (len(raw) > MAX_PRIVATE_EVIDENCE_JSON_BYTES or not 0 < len(png) <= MAX_PRIVATE_EVIDENCE_PNG_BYTES
+            or not isinstance(payload.get("recognition", {}).get("candidates"), dict)
+            or not 1 <= len(payload["recognition"]["candidates"]) <= 3
+            or provenance.get("engine") not in {"tesseract-via-pymupdf", "tesseract-cli", native.OCR_ROTATED_AXIS_ENGINE}
+            or not isinstance(models, list) or not models
+            or any(not isinstance(model, dict) or not isinstance(model.get("sha256"), str)
+                   or not re.fullmatch(r"[a-f0-9]{64}", model["sha256"]) for model in models)):
+        raise ProbeError("private_evidence_unavailable")
+    if destination.exists() or destination.is_symlink():
+        raise ProbeError("private_evidence_destination_invalid")
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix=".ocr-probe-evidence-", dir=destination.parent) as temporary:
+        root = Path(temporary)
+        for name, content in (("ocr-evidence.json", raw), ("page.png", png)):
+            path = root / name
+            path.write_bytes(content)
+            path.chmod(0o600)
+        os.replace(root, destination)
+    return {"status": "ready", "file_count": 2, "candidate_count": len(payload["recognition"]["candidates"]),
+            "evidence_json_sha256": native.sha256_bytes(raw), "page_png_sha256": native.sha256_bytes(png)}
+
+
 def probe_pages(input_dir: Path, manifest: Path, page_checks: Path, producer_metadata: Path, *,
                 date_folder: str, source_run_id: str, expected_articles: int,
-                source_kind: str, repository: str, original_source_run_id: str = "") -> dict[str, Any]:
+                source_kind: str, repository: str, original_source_run_id: str = "",
+                private_evidence_dir: Path | None = None) -> dict[str, Any]:
     if source_kind != "original-archive":
         raise ProbeError("page_diagnostics_require_original_archive")
     validate_inputs(date_folder, source_run_id, expected_articles)
@@ -682,6 +727,17 @@ def probe_pages(input_dir: Path, manifest: Path, page_checks: Path, producer_met
     execution_sha = verify_producer(producer_metadata, source_run_id, source_kind=source_kind, repository=repository)
     request_raw, _ = _json_file(Path(page_checks), FIXTURE_BYTE_LIMIT)
     requests = read_page_checks(page_checks)
+    if private_evidence_dir is not None:
+        private_evidence_dir = Path(private_evidence_dir)
+        if len(requests) != 1:
+            raise ProbeError("private_evidence_requires_single_page")
+        if (not re.fullmatch(r"[1-9][0-9]*", os.getenv("GITHUB_RUN_ID", ""))
+                or not re.fullmatch(r"[a-f0-9]{40}", os.getenv("GITHUB_SHA", ""))):
+            raise ProbeError("private_evidence_context_invalid")
+        if (private_evidence_dir.exists() or private_evidence_dir.is_symlink()
+                or Path(input_dir).resolve() == private_evidence_dir.resolve()
+                or Path(input_dir).resolve() in private_evidence_dir.resolve().parents):
+            raise ProbeError("private_evidence_destination_invalid")
     input_dir, manifest = Path(input_dir), Path(manifest)
     raw_manifest, sources = _preflight(input_dir, manifest, expected_articles, date_folder, [], page_checks=requests)
     archive_raw = _archive_receipt(input_dir, manifest, source_run_id=source_run_id, date_folder=date_folder,
@@ -690,7 +746,7 @@ def probe_pages(input_dir: Path, manifest: Path, page_checks: Path, producer_met
     if Path(producer_metadata).read_bytes() != producer_raw or Path(page_checks).read_bytes() != request_raw:
         raise ProbeError("probe_inputs_changed")
     rows = json.loads(raw_manifest)
-    results = []
+    results, private_payload, private_png = [], None, None
     with tempfile.TemporaryDirectory(prefix="market-views-page-probe-") as temporary:
         for ordinal, request in enumerate(requests, 1):
             sha = rows[request["source_ordinal"] - 1]["content_sha256"]
@@ -701,7 +757,24 @@ def probe_pages(input_dir: Path, manifest: Path, page_checks: Path, producer_met
                 page = document[request["page"] - 1]
                 image_path = Path(temporary) / f"page-{ordinal}.png"
                 page.get_pixmap(dpi=native.PAGE_DPI, colorspace=fitz.csRGB, alpha=False).save(str(image_path))
-                results.append({**request, "source_pdf_sha256": sha, **_diagnose_page(page, image_path)})
+                recognition = {} if private_evidence_dir is not None else None
+                result = (_diagnose_page(page, image_path) if recognition is None
+                          else _diagnose_page(page, image_path, private_evidence=recognition))
+                results.append({**request, "source_pdf_sha256": sha, **result})
+                if recognition is not None:
+                    private_png = image_path.read_bytes()
+                    pixels = fitz.Pixmap(str(image_path))
+                    private_payload = {"schema": 1, "kind": "market-views-ocr-probe-evidence",
+                        "diagnostic_only": True, "complete_source_handoff": False, "source_admission": False,
+                        "source_context": {"source_kind": source_kind, "source_run_id": source_run_id,
+                            "original_source_run_id": original_source_run_id, "source_execution_sha": execution_sha,
+                            "date_folder": date_folder, "manifest_sha256": native.sha256_bytes(raw_manifest),
+                            "probe_run_id": os.environ["GITHUB_RUN_ID"], "probe_execution_sha": os.environ["GITHUB_SHA"]},
+                        "source_pdf_sha256": sha, **request,
+                        "page_size_points": [float(page.rect.width), float(page.rect.height)],
+                        "image_size": [pixels.width, pixels.height], "render_dpi": native.PAGE_DPI,
+                        "page_png_sha256": native.sha256_bytes(private_png), "pixel_sha256": native.sha256_bytes(pixels.samples),
+                        "recognition": recognition, "result": result}
     if Path(producer_metadata).read_bytes() != producer_raw or Path(page_checks).read_bytes() != request_raw:
         raise ProbeError("probe_inputs_changed")
     final_raw, _ = _preflight(input_dir, manifest, expected_articles, date_folder, [], page_checks=requests)
@@ -719,6 +792,12 @@ def probe_pages(input_dir: Path, manifest: Path, page_checks: Path, producer_met
                    manifest_sha256=native.sha256_bytes(raw_manifest), original_file_count=expected_articles,
                    unique_original_content_count=len(sources), probed_page_count=len(results),
                    request_sha256=native.sha256_bytes(request_raw), fixture_acceptance="not_requested", pages=results)
+    if private_evidence_dir is not None:
+        try:
+            summary["private_evidence"] = _write_private_evidence(private_evidence_dir, private_payload, private_png)
+        except Exception:
+            # Evidence retention must not promote or replace the page result.
+            summary["private_evidence"] = {"status": "unavailable", "file_count": 0, "candidate_count": 0}
     return summary
 
 
@@ -736,15 +815,22 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--date-folder", required=True)
     parser.add_argument("--expected-articles", required=True)
     parser.add_argument("--summary", type=Path, required=True)
+    parser.add_argument("--private-evidence-dir", type=Path)
     args = parser.parse_args(argv)
     try:
         if (args.fixtures is None) == (args.page_checks is None):
             raise ProbeError("exactly_one_probe_request_required")
+        if args.private_evidence_dir is not None and (args.page_checks is None or args.source_kind != "original-archive"):
+            raise ProbeError("private_evidence_requires_single_archive_page")
+        if args.private_evidence_dir is not None and (args.private_evidence_dir.resolve() == args.summary.resolve()
+                or args.private_evidence_dir.resolve() in args.summary.resolve().parents):
+            raise ProbeError("private_evidence_destination_invalid")
         if args.page_checks is not None:
             summary = probe_pages(args.input_dir, args.manifest, args.page_checks, args.producer_metadata,
                                   date_folder=args.date_folder, source_run_id=args.source_run_id,
                                   expected_articles=positive_count(args.expected_articles), source_kind=args.source_kind,
-                                  repository=args.repository, original_source_run_id=args.original_source_run_id)
+                                  repository=args.repository, original_source_run_id=args.original_source_run_id,
+                                  private_evidence_dir=args.private_evidence_dir)
         else:
             summary = probe_fields(args.input_dir, args.manifest, args.fixtures, args.producer_metadata,
                                    date_folder=args.date_folder, source_run_id=args.source_run_id,

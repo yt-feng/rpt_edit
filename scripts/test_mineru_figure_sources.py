@@ -254,6 +254,55 @@ print('tls_cache_authority_import_ready')
         for malformed in ("<eq>x", "x</eq>", "<eq>x</eq></eq>", "<eq><eq>x</eq></eq>"):
             self.assertFalse(figures._table_html_matches(" $x$ ", malformed))
 
+    def test_table_image_directory_serialization_preserves_source_and_pixel_proof(self):
+        # Real provider shape: the content list prefixes images/ on an inline
+        # hashed JPEG. The middle JSON keeps that same image's bare basename.
+        filename = "a" * 64 + ".jpg"
+        for equation, prefix_image in (("", True), ("<eq>x_1</eq>", True), ("<eq>x_1</eq>", False)):
+            with self.subTest(equation=bool(equation), prefix_image=prefix_image):
+                middle = f'<table><tr><td><img src="{filename}"/></td><td>27{equation}</td></tr></table>'
+                # Keep accepting the pre-existing eq-only serialization too:
+                # adding a new path form must not require it in old results.
+                content = middle.replace(f'src="{filename}"', f'src="images/{filename}"') if prefix_image else middle
+                content = content.replace("<eq>", " $").replace("</eq>", "$ ")
+                fixture = self.fixture(visuals=[visual(0, [35, 100, 350, 360], body=middle)])
+                fixture.content[0]["table_body"] = content
+                fixture.write_metadata()
+                raw_hashes = {"content_list": digest((fixture.raw / "content_list.json").read_bytes()),
+                              "middle": digest((fixture.raw / "middle.json").read_bytes())}
+                fixture.create()
+                fixture.status()
+                proof = fixture.proof()
+                self.assertEqual(proof["provider_json_sha256"], raw_hashes)
+                self.assertEqual(proof["metadata"]["records"][0]["body_text"], content)
+                self.assertEqual(proof["assets"][0]["mode"], "authenticated_original_crop")
+                import shutil
+                shutil.rmtree(fixture.raw)
+                self.assertEqual(len(fixture.validate()), 1)
+
+    def test_table_image_directory_compatibility_rejects_content_or_path_changes(self):
+        filename = "a" * 64 + ".jpg"
+        middle = f'<table><tr><td><img src="{filename}"/></td><td>27<eq>x_1</eq></td></tr></table>'
+        valid = middle.replace(f'src="{filename}"', f'src="images/{filename}"')
+        valid = valid.replace("<eq>", " $").replace("</eq>", "$ ")
+        changed_values = (valid.replace(filename, "b" * 64 + ".jpg"),
+                          valid.replace("images/", "images/../"),
+                          valid.replace("images/", "other/"), valid.replace(".jpg", ".png"),
+                          valid.replace(">27", ">28"), valid.replace("x_1", "x_2"),
+                          valid.replace("<td>", "<th>", 1), valid.replace("/>", " />"),
+                          valid.replace("src=", "data-src="), valid.replace("</tr>", "<td></td></tr>"))
+        for index, changed in enumerate(changed_values):
+            with self.subTest(change=index):
+                fixture = self.fixture(visuals=[visual(0, [35, 100, 350, 360], body=middle)])
+                fixture.content[0]["table_body"] = changed
+                fixture.write_metadata()
+                with self.assertRaisesRegex(figures.FigureSourceError, "figure_metadata_invalid"):
+                    fixture.create()
+                self.assertFalse((fixture.report / figures.SIDECAR).exists())
+        for ref in ("../" + filename, "https://example.invalid/" + filename, "unhashed.jpg"):
+            raw = f'<table><tr><td><img src="{ref}"/></td></tr></table>'
+            self.assertFalse(figures._table_html_matches(raw.replace('src="', 'src="images/'), raw))
+
     def test_page_carriers_are_streamed_and_replayed_without_retaining_all_page_pixels(self):
         fixture = self.fixture(pages=3, visuals=[visual(pi, [35, 100, 185, 260], page_idx=pi)
                                                for pi in (2, 0, 1)])

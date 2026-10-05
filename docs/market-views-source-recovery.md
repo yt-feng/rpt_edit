@@ -200,7 +200,10 @@ The old eight-file experiment remains preserved as an immutable
 The current implementation adds cloud dependencies and stronger gates. Local
 tests do not establish cloud recovery or publication; real OCR regression
 dependencies are mandatory in CI, and full actual-report quality review is
-required before enabling daily OCR backup.
+required before enabling daily OCR backup. The daily variable was enabled and
+read back at 16:06 UTC on October 5 after complete October 2–4 source and PDF
+acceptance. October 1 special-page acceptance remains open; the full-source and
+numeric gates still reject any batch that does not pass.
 
 [`market-views-native-recovery.yml`](../.github/workflows/market-views-native-recovery.yml)
 accepts an exact `date_folder` and `expected_articles`, with `enable_ocr=false`
@@ -216,9 +219,10 @@ existing-PDF skip. Backup handoffs use a separate private R2 prefix; temporary
 inputs are deleted only after their PDF consumer succeeds, and failed/cancelled
 consumers retain their inputs.
 
-## Recorded incident and remaining acceptance
+## Historical incident evidence
 
-The public catalogue observed on 2026-10-04 had `market-view:260930` as its newest
+The run states in this historical section are superseded by the current
+acceptance summary below. The public catalogue observed on 2026-10-04 had `market-view:260930` as its newest
 entry. Saved Daily report diagnostics after that date show late Dropbox batches,
 terminal MinerU failures and a result-download certificate failure at
 `cdn-mineru.openxlab.org.cn`. The 2026-10-03 inspection of run `37159099752`
@@ -466,9 +470,8 @@ and 1,029 pages. The stronger language gate classified 798 pages as readable,
 231 pages therefore require cloud OCR. That inventory audit did not establish
 OCR acceptance. Subsequent source run `37245279463` completed the full batch,
 and acceptance-only PDF consumer `37284342786` succeeded. These backup checks
-do not replace the recovered primary publication. The remaining backup
-acceptance and daily switch enablement are tracked below;
-`MARKET_VIEWS_OCR_BACKUP_ENABLED` remains false.
+do not replace the recovered primary publication. Current backup acceptance
+and daily switch status are tracked in the final section below.
 ## 2026-10-04 cloud delivery follow-through
 
 The original October 3 result ZIP cache is complete: 36 original DONE results
@@ -740,6 +743,17 @@ The output contains fixed categories, coordinates and counts, never OCR words
 or source names. It reuses the existing recognition result and does not change
 readability, numeric checks or production source admission.
 
+The field probe's `retain_private_evidence` option defaults to false and permits
+only one explicitly selected `original-archive` page. It preserves the existing
+recognition candidates and 300-dpi pixels, bound to the source run/date/PDF
+hash/page, manifest hash, probe commit and model provenance. It performs no
+additional OCR. The two files use a private directory and the separate private
+R2 `ocr-probe-evidence` namespace; public artifacts still contain only the
+sanitized summary. They contain no complete-source receipt or manifest and
+cannot enter the PDF source-consumption contract. Failed page checks retain
+their original nonzero exit; retention failure is reported as unavailable and
+never promotes the page to accepted source material.
+
 ### Complete cloud PDF acceptance without live publication
 
 The PDF consumer's explicit `acceptance_only=true` mode rebuilds the complete
@@ -801,7 +815,8 @@ the region reader or independent numeric reads. The regression workflow's
 required-OCR flag makes missing CLI/models a failure; macOS skips this case
 without executing local OCR. Cloud regression `37283762826` passed the actual
 engine cases before PR 251 merged. Actual affected-page and remaining complete
-backup acceptance are separate checks; the daily backup switch remains disabled.
+backup acceptance are separate checks. The daily switch was still disabled at
+that stage; its later enablement is recorded in the current acceptance below.
 MinerU remains the primary parser and GitHub Actions remains the production
 execution environment. Local geometry and rendering QA provide development
 evidence and are never scheduled production dependencies.
@@ -934,53 +949,94 @@ OCR admission rule was relaxed. The subsequent PR 252 follow-up permits only
 MinerU's exact table-equation serialization difference: middle-file
 `<eq>...</eq>` must match content-list ` $...$ ` with every formula character,
 table cell and other HTML byte preserved. Both original provider hashes remain
-bound. Original-page carriers are written and replayed one page at a time,
+bound. The narrow image-path compatibility additionally permits only a bare
+64-lowercase-hex `.jpg` in the exact `<img src="..."/>` form to gain `images/`
+in the content list. Image basenames, formula characters, cell structure and
+all remaining bytes must match. Exact equality and the earlier equation-only
+form remain accepted; arbitrary HTML cleanup or path rewriting is forbidden.
+Regression fixtures retain both raw JSON hashes and complete consumer pixel
+replay, and reject changed numbers, formulas, image identities and paths.
+
+Both complete-source recovery CLIs bind a figure failure to the actual report
+enumeration and publish only its fixed category plus an optional
+`source_ordinal`. The ordinal must be a plain integer between one and the exact
+expected report count, with a maximum of 1,000. Filenames, titles, source text,
+URLs, booleans, malformed values and out-of-range ordinals are not diagnostic
+output. This adds report-level location without accepting a partial handoff.
+
+Original-page carriers are written and replayed one page at a time,
 with at most 80 million pixels per page and one billion pixels across unique
 selected pages. Duplicate image references still reject; aggregate overages
 report `figure_page_budget_exceeded`. Existing proof schemas and complete crop
 replay remain unchanged. Ten distinct cached reports passed private source QA;
-that local check does not establish cloud publication. PR 252 remains pending
-remote verification and deployment, and the OCR backup remains disabled pending
-independent acceptance.
+that local check does not establish cloud publication. PR 252 merged at
+`eb80a3e5` on October 5 at 10:35:54 UTC after cloud CI `37297176568` passed.
+Current independent backup acceptance and enablement are recorded below.
 
-### October 5 resumed retrieval and source-preserving OCR re-audit
+### October 5 current delivery and cloud backup acceptance
 
-The unchanged GitHub connection succeeded after the user's continuation request.
-PR 249 passed its current-head checks and merged at `60565115`. Cache run
-`37283194807` verified the original 50-file manifest and retrieved eight distinct
-completed child ZIPs with zero parsing POSTs. The original 42 completed results
-plus these eight cover the full batch. `authorized_child_failed=1` counts an
-earlier intermediate failure in the accepted chain, not an unresolved source.
-Complete primary recovery `37284033767` and PDF consumer `37284226601` both
-succeeded for all 50 originals. Live inspection `37285056164` passed for
-October 1, 2, 3 and 4: each full private PDF hash and index matched the public
-dated list. Customer-authenticated member downloads have not been verified.
+The primary architecture remains Dropbox → GitHub Actions → MinerU API →
+private R2 → Market Views PDF → member portal. Cloud OCR is a retained automatic
+backup; production execution does not depend on local QA or a local computer.
+The provider's strict result-CDN probe `37336151221` still reported an expired
+certificate at 15:52 UTC, independently of successful task API authentication
+and GitHub access. Daily TLS verification has not been relaxed.
 
-October 3 cloud OCR `37245279463` completed all 54 reports and 1,029 pages;
-consumer `37284342786` built the complete PDF successfully in
-`acceptance_only` mode, with no live publication.
-October 2 `37245268724` completed extraction/validation for 50 reports and 663
-pages (341 OCR), then uploaded the 777-file private handoff before its audit
-failed. The auditor had a separate 256,000,000-byte receipt limit not shared
-by the complete source validator. A cloud re-audit must measure the actual
-receipt before this is identified as the incident's confirmed cause.
+Complete primary recovery `37284033767` and PDF consumer `37284226601`
+succeeded for all 50 October 2 originals. Live inspection `37285056164`
+verified October 1–4 full private PDF hashes and index records against the
+public dated list; the website lists all four dates. An actual authenticated
+member-browser download of `market_views_261002.pdf` then matched the private
+R2 receipt exactly: 54 pages, 3,619,892 bytes, SHA-256
+`dc902a24cae3672e7f5292a600048436b5805b3a111403aea48269262394acd3`.
+The separate public-safe PDF has 53 pages after sanitization. These are distinct
+versions; public-safe page counts or hashes must not be compared with the
+member original. Authenticated downloads of the other dates are not established
+by this October 2 check.
 
-PR 252's pending re-audit repair hashes a stable regular receipt in bounded chunks before
-and after the unchanged full validator. A separate main-only workflow reuses
-an existing handoff only after confirming its original extraction and archive
-steps passed and its audit failed. It preserves the old producer and receipt;
-a small immutable receipt binds the new successful audit run/attempt/SHA to the
-old source run/SHA/date/count and receipt hash/bytes. Explicit PDF consumption
-requires that binding, then still performs complete validation and numeric
-audit. Ordinary source-readiness gates remain unchanged. No OCR, parsing or
-model request is performed by re-audit.
+After PR 252, October 4 primary source rebuild `37297655439` and PDF
+`37297840175`, and October 1 legacy source rebuild `37297927956` and child PDF
+`37298965236`, succeeded. October 3 figure rebuild acceptance remains open.
+The earlier live inspection does not establish visual acceptance of every
+newly rebuilt figure.
 
-The same pending release gives each acceptance-only PDF run a concurrency
-group containing its own run ID. Normal publications retain their shared
-serial queue. This prevents separate acceptance runs replacing one another
-in GitHub's single pending slot, or displacing a pending publication. The
-cloud backup flag remains off until the remaining real-source and PDF checks
-pass; recovered primary delivery and backup enablement are separate outcomes.
-PR 252 commit `d270eb4e` was pushed and CI started, but a subsequent GitHub
-GraphQL TLS handshake timeout stopped remote checks under the user's network
-instruction. Its latest CI result and deployment are not yet verified.
+| Complete cloud backup | Source evidence | Successful acceptance-only PDF |
+| --- | --- | --- |
+| October 2 | 50 originals, 663 pages (341 OCR); producer `37245268724`, re-audit `37297634646` | `37335782776` |
+| October 3 | 54 originals, 1,029 pages; producer `37245279463` | `37284342786` |
+| October 4 | Four originals, 109 pages (82 native, 27 OCR); producer `37244394621` | `37297644728` |
+
+All three complete PDF consumers passed their source, numeric, synthesis,
+rendering and sanitization gates with `acceptance_only=true`, without replacing
+live publications. October 2's old source run completed extraction/validation
+and the 777-file private handoff before its audit failed. Successful re-audit
+measured the unchanged receipt at 325,008,524 bytes, confirming it exceeded the
+old independent 256,000,000-byte audit limit. All 50 reports and 663 pages
+passed with zero OCR, MinerU or model calls.
+
+The deployed re-audit hashes a stable regular receipt in bounded chunks before
+and after the unchanged full validator. Its main-only workflow admits an old
+handoff only when original extraction/archive succeeded and audit failed.
+The original producer and receipt remain unchanged; a small immutable receipt
+binds the new successful audit run/attempt/SHA to the old source run/SHA/date,
+count and receipt hash/bytes. The explicit PDF consumer verifies that binding
+and repeats complete validation and numeric audit. Ordinary readiness gates
+remain unchanged. Acceptance-only PDF concurrency is isolated by run ID;
+normal publications keep their shared serial queue.
+
+Based on these three complete real-source and PDF acceptances, the repository
+variable `MARKET_VIEWS_OCR_BACKUP_ENABLED` was set to `true` and read back at
+16:06 UTC on October 5. This enables the verified backup capability before
+October 1's exceptional page is resolved. Daily fallback uses only that run's
+exact selected originals, requires the complete source and numeric receipts,
+and stops on invalid evidence; failed report notes remain failed. Enablement
+is confirmed, while the next actual Daily fallback-to-publication execution
+still requires its own end-to-end acceptance.
+
+October 1 cloud backup remains incomplete. PR 253 merged at `b9a79ae0`; actual
+probe `37336781381` passed the earlier 0.1373-pixel horizontal word-box
+intersection but still rejected a second thin word crossing chart regions.
+That affected page and the complete 63-alias/62-unique batch need further cloud
+acceptance. The switch does not bypass this rejection or claim all dates are
+covered. Complete-source, readability and independent numeric gates remain
+unchanged; geometric local replay alone is not OCR acceptance.

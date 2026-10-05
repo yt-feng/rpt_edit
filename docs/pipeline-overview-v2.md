@@ -41,8 +41,11 @@ The solid path is the primary architecture. The dashed path is a cloud backup
 for Market Views, not a replacement for MinerU or a way to mark failed report
 generation successful. OCR is an explicit cloud opt-in: manual recovery uses
 `enable_ocr=true`; daily fallback uses `MARKET_VIEWS_OCR_BACKUP_ENABLED=true`.
-Both default to disabled. Actions installs Tesseract English and Simplified
-Chinese models; the user's computer supplies no production OCR service.
+Code defaults remain disabled; the daily repository variable was enabled and
+read back on October 5 at 16:06 UTC after complete October 2–4 backup PDF
+acceptance. October 1 special-page acceptance remains open. Actions installs
+Tesseract English and Simplified Chinese models; the user's computer supplies
+no production OCR service.
 The retained original experiment is archived separately; the current extension
 adds readable-language gates and independent numeric checks. Code, CI, full
 real-report quality review, automatic enablement and dated PDF delivery remain
@@ -79,7 +82,8 @@ The separate manual cloud `mineru-result-cache-seed.yml` verifies the complete
 original Daily artifact and accepted task inventory before caching completed
 original ZIPs. It submits no new parses. Its temporary transport authenticates
 only the documented exact CDN leaf fingerprint, verifies the historical chain
-and hostname, and stops at the fixed `2026-10-04T23:59:59Z` cutoff. It records
+and hostname, and stops at the reviewed fixed `2026-10-05T23:59:59Z` cutoff. Previously
+authenticated complete caches retain their original October 4 receipts. It records
 `pki_verified_now=false` in a separate immutable private authentication receipt;
 normal daily PKI verification is unchanged. The default one-ZIP canary must pass
 full ZIP checks and R2 readback before bulk seeding. Failed parses, complete
@@ -114,180 +118,73 @@ cloud implementation requires real OCR regressions with unavailable models
 treated as failure, followed by complete real-source validation and normal
 publication checks before enabling the daily switch.
 
-The 2026-10-04 cloud smoke run
-`37212761333`
-completed parsing of one new PDF but could not download its result because the
-provider CDN certificate was expired. Authentication and parsing succeeded;
-result delivery and the missing dated issues remain incomplete. Run
-`37217880580` subsequently observed an expired certificate using both the runner
-system CA store and Requests with certifi `2026.07.22`. This is a result-CDN
-delivery problem, not evidence of rejected API credentials. Separate cloud
-workflows inspect the exact October 1-3 private R2 caches and test one fixed CDN
-HEAD from a temporary authenticated Cloudflare Worker; neither alone proves a
-complete result ZIP or final PDF has been restored.
+Current delivery and fallback state, verified on October 5:
 
-Read-only R2 inventory run `37219229168` found no objects in the exact October
-1-3 generation-cache/original-handoff prefixes and no canonical final PDF/item
-pairs. The first temporary-Worker run returned a deployment HTTP 404 before
-producing CDN evidence; authenticated, provider-free readiness checks distinguish
-that stage from the subsequent single CDN request. Missing PDF delivery remains
-open.
+October 1–4 primary PDFs were generated from complete MinerU results and appear
+in the live catalogue: 63 original aliases (62 unique contents), 50 originals,
+54 originals and four originals respectively. October 2 source recovery
+`37284033767` and PDF `37284226601` succeeded; live inspection `37285056164`
+matched full private PDF hashes and index records with all four dated public
+entries. A later actual member-browser download of `market_views_261002.pdf`
+matched its private R2 receipt exactly: 54 pages, 3,619,892 bytes, SHA-256
+`dc902a24cae3672e7f5292a600048436b5805b3a111403aea48269262394acd3`.
+The 53-page public-safe PDF is a separately sanitized version; its page count
+and hash must not be used to check the member original.
 
-The subsequent readiness-verified Cloudflare run `37229206987` at 2026-10-04
-19:42 UTC made one strict HTTPS HEAD and received HTTP 526
-(`tls_invalid_certificate`), then deleted its temporary Worker. Attempt 2 of
-smoke run `37212761333` resumed the existing completed task with zero new POSTs
-and again retrieved zero bytes due to an expired certificate. Result delivery
-through Cloudflare is therefore still blocked in this probe; no ZIP mirror or
-dated PDF recovery is claimed. LAX recorded request ingress; execution placement
-was not independently observed in that run. Attempt 3 of the same smoke at
-19:57 UTC again retained the completed task, made zero parsing POSTs and failed
-result retrieval with zero bytes. A separate read-only public TLS handshake
-observed a valid September 17–December 16 certificate chain for the same
-hostname, so the failure is not established for every possible CDN path.
+MinerU task authentication and parsing have succeeded, while strict result-CDN
+TLS probe `37336151221` still reported an expired certificate at 15:52 UTC.
+The result-download connection is separate from GitHub authorization and the
+MinerU task API. Strict Cloudflare probes also rejected that certificate; R2
+can retain verified result bytes but cannot supply a ZIP not yet retrieved.
+Normal daily TLS verification remains strict. Bounded manual retrieval and
+its fixed certificate identity/window are detailed in the source-recovery
+contract; no local network workaround or local OCR service is required.
 
-The temporary-Worker probe now supports explicit Asian region hints through the
-[Cloudflare placement API](https://developers.cloudflare.com/workers/configuration/placement/).
-It preserves strict HTTPS and the official hostname. A valid platform
-`cf-placement` response header is required to report actual execution location;
-an input hint is not location evidence. A successful probe would still need a
-complete ZIP download and source validation before a private R2 mirror could
-restore processing. R2 storage and task metadata cannot substitute for the
-missing completed-result bytes.
+PR 251 merged at `95110608`; PR 252 merged at `eb80a3e5` at 10:35:54 UTC after
+cloud CI `37297176568` passed. Source-bound figure proof retains original
+provider metadata hashes and authenticated original-page pixels, preserves
+complete chart context, and verifies the consumer crop replay. Exact
+`<eq>...</eq>` versus ` $...$ ` serialization preserves all formula and table
+contents. Original-page carriers are written and replayed individually, with
+80 million pixels per page and one billion across unique selected pages.
+The proof schema is unchanged. After that release, October 4 source rebuild
+`37297655439` and PDF `37297840175`, and October 1 legacy rebuild `37297927956`
+and child PDF `37298965236`, succeeded. October 3 figure rebuild acceptance
+remains open. Earlier live checks do not verify these newer rendered figures;
+local QA remains a development check only.
 
-Regional runs `37231111280` and `37231384448` subsequently proved execution in
-TPE and SIN through platform headers and each received HTTP 526. Both temporary
-Workers were deleted; neither downloaded a ZIP or wrote source bytes to R2.
-Runner diagnostic `37232259586` then received the same RapidSSL-issued
-`*.openxlab.org.cn` leaf under default and TLS 1.2 RSA handshakes. That leaf
-expired at 2026-10-02 23:59:59 UTC; both reported verification code 10 at depth 0.
-The valid Let's Encrypt chain seen on another connection does not prove a cloud
-ZIP download. Complete verified result bytes are still required before an R2
-mirror can restore the primary source path.
-After PR 228 merged at `f7c5a0097b86a37670c54b91c2988bd8b2557deb`, GitHub-hosted
-macOS ARM64 diagnostic `37233771704` at 20:53 UTC reproduced the same RapidSSL
-leaf and peer chain, October 2 expiry, and depth-0/code-10 failure under both
-handshakes. It downloaded no ZIP. The prepared provider report remains
-unsubmitted while submission permission is unanswered.
+| Complete cloud backup | Source evidence | Successful acceptance-only PDF |
+| --- | --- | --- |
+| October 2 | 50 originals, 663 pages; original producer `37245268724` retained and re-audit `37297634646` passed | `37335782776` |
+| October 3 | 54 originals, 1,029 pages; producer `37245279463` passed | `37284342786` |
+| October 4 | Four originals, 109 pages (82 native, 27 OCR); producer `37244394621` passed | `37297644728` |
 
-October 2 Daily run `37067138754` stopped before downloading or parsing: its
-expected folder was `261003`, latest was `261001`, and age 2 exceeded the allowed
-0–1 days. The earlier `261002=4` inventory note remains unverified and is
-superseded for current recovery by the complete 50-file Dropbox listing; the
-reason for that difference is not established. Source-only recovery now binds
-`261001` to `36932674491` (63 files/62 unique; recovery `37232969584`), `261002`
-to the fresh 50-file listing (empty original source run; `37233084607`),
-`261003` to `37159099752` (54 files/1,029 pages; `37231899669`), and `261004`
-to verified producer `37232504334` (4 unique files; `37233077480`). October 1–3
-complete-source recovery all failed: report ordinal 10/page 9 for October 1,
-6/page 5 for October 2, and 24/page 49 for October 3. The inspected October 1
-and October 3 pages are short Q&A and disclosure-appendix dividers; October 2's
-page type remains uninspected. October 3 run `37231899669` failed at
-20:55:55 UTC during complete-source extraction, with a generic
-`SourceValidationError` at report ordinal 24, page 49; its cause is under
-investigation. Earlier successful OCR does not support attributing that message
-to absent models. No complete R2 handoff, source-auditor acceptance or
-golden-fixture acceptance was reached for that run. October 4 extraction and its
-source-contract audit succeeded: 109 pages (82 native, 27 OCR, no blank), with
-the complete handoff saved privately in R2. Its fixture acceptance was
-`not_requested`; 1,413 of 1,775 numeric mentions remained unconfirmed. Numeric
-quality approval remains pending. PRs 228 and 229 are merged on main at the
-recorded `0ead65e` state. PR 229's consumer readiness and known-field fixture
-checks passed focused suites of 12 and 17 tests. Real consumer `37235097133`
-then stopped before synthesis on **`field_unresolved`** for the visual `17%`
-field, rather than a fixture-input format error. Zero model calls and zero PDFs
-were produced. The guard ran against the actual handoff; numerical acceptance
-and live delivery remain pending. PR 230 merged the narrow short-structure OCR
-fix at `2bebbacb`; cloud regression `37236018141` passed all 43 source tests,
-including six real OCR cases, plus 32 receipt-audit tests. It adds bounded
-numeric-only failed-fixture diagnostics without changing field acceptance.
-The manual OCR field probe can recognize explicitly selected original pages
-after whole-batch validation, but always marks its output as probe-only with
-no complete source handoff or production acceptance.
-Roughly 231 October 3 pages require OCR, with five real
-numeric golden fixtures available for cloud quality checks; the failed run did
-not reach their acceptance. PR 231's isolated crop fix then passed mandatory
-cloud regression `37237898234`; real-page probes `37238121375` and
-`37238128801` accepted the October 4 `17%` field and all five October 3 table
-fixtures, respectively. These are page diagnostics, not full handoffs.
-PR 232's actual cloud cache canary `37238317495` verified all 54 October 3
-originals and their accepted task groups before retrieving one 7,848,078-byte
-ZIP with the fixed leaf identity and two historical chain checks. Complete ZIP,
-private authentication receipt and standard R2 cache readback passed with
-zero parsing POSTs. Bulk run `37238421286` subsequently cached all 36 original
-DONE results (182,020,443 bytes); child cache runs `37239513878` and
-`37240060718` verified the first two accepted recovery results. The other failed
-parses remain a separate recovery step. Normal current-PKI result downloads
-still fail on the provider's expired leaf certificate; this manual identity
-authentication expires at the fixed October 4 UTC cutoff.
+These complete PDF builds run the normal source, numeric, synthesis, rendering
+and sanitization checks without replacing live publications. October 2 re-audit
+measured its unchanged receipt at 325,008,524 bytes, confirming the old
+256,000,000-byte audit limit caused the rejection. Re-audit retains the original
+producer/receipt identity, validates the complete source and issues an immutable
+binding for the PDF consumer, with zero OCR, MinerU or model calls. Ordinary
+source-readiness gates remain unchanged. Acceptance-only PDF runs have separate
+concurrency groups; publications retain their shared queue.
 
-October 1–4 primary PDFs have been generated from complete MinerU results.
-October 1 preserved 63 source aliases (62 unique contents); October 2 covered
-50 originals, October 3 covered 54 and October 4 covered four. The remaining
-eight October 2 completed ZIPs were cached by `37283194807` with zero parsing
-POSTs; complete source recovery `37284033767` and PDF consumer `37284226601`
-then succeeded. Live inspection `37285056164` passed all four dates, verifying
-full private PDF hashes and index records against the public dated list.
-Customer-authenticated member downloads have not been verified.
-The provider's shared result certificate still fails strict
-TLS checks. Previously verified GitHub authorization and successful MinerU task
-API calls do not validate that separate result-download connection. A later
-GitHub TLS handshake timeout stopped remote Git/GitHub operations under the
-user's network-failure instruction. The user's continuation request on October
-5 authorized the unchanged-connection retry, which succeeded.
+Based on these three complete real batches and PDF acceptances,
+`MARKET_VIEWS_OCR_BACKUP_ENABLED=true` was enabled and read back at 16:06 UTC.
+Daily failures can now recover the exact selected original artifact entirely
+in Actions, followed by full source/numeric validation, private R2 handoff and
+the normal PDF consumer. Invalid or incomplete evidence still stops the batch;
+failed report-note generation keeps its failure state. A subsequent actual
+Daily automatic-fallback run has not yet been accepted end to end.
 
-Independent normal Cloudflare OAuth/R2 access on October 5 recovered seven
-cached result ZIPs for private figure QA, with matching immutable cache
-receipts and ZIP hashes. A separate strict Cloudflare Worker HEAD at 04:36 UTC
-still received `526` from the MinerU result host. R2 storage is accessible;
-it cannot supply ZIPs that have not yet crossed the result-download step.
-The temporary probe Worker was deleted and verified absent. Figure repair
-preserves actual provider boxes and authenticated original page pixels;
-rewritten PDFs inside result ZIPs do not replace the original-file binding.
-The figure repair adds a private, status-bound metadata/pixel sidecar,
-spatially complete original-page crops and exact consumer replay. Older
-metadata-free caches remain compatible. Source proof is preserved during
-finalization and excluded from public packages; selected chart assets remain
-available to the PDF. Seven actual cached results and a three-figure production
-renderer layout check passed locally. PR 251 passed cloud CI and merged at
-`95110608`. The pending PR 252 follow-up admits only the provider's exact
-`<eq>...</eq>` versus ` $...$ ` table serialization while preserving formula
-and cell contents. It writes and replays original-page carriers individually,
-retaining the 80-million-pixel page limit and bounding unique selected pages
-to one billion pixels in total. The proof schema and pixel/crop replay remain
-unchanged. Ten distinct cached reports passed private QA; the release and
-subsequent figure rebuild still require their own cloud acceptance. These
-local checks do not become a production dependency.
-PR 252's pushed commit `d270eb4e` has CI started but its result and deployment
-remain unverified: a subsequent GitHub TLS handshake timeout stopped remote
-checks under the user's network instruction.
-
-Current October 4 cloud OCR source producer `37244394621` passed all four
-originals and 109 pages (82 native, 27 OCR). Real field probes confirmed the
-October 4 `17%` and October 2 `31%` fixtures. The deployed PDF
-consumer change adds complete cloud acceptance builds without replacing the
-recovered live primary PDF. The bounded rotated-date
-route retains complete source and geometry proof; its new rotated values remain
-masked until independently confirmed. Original-page QA found chart baselines
-and horizontal scale zero mixed into proposed date bands; the repair
-uses bounded original-pixel white gaps and retains complete word and numeric
-checks. Geometry-only local replays are not OCR acceptance. A new real
-Tesseract regression passed in Linux CI `37283762826`, along with the other
-previously cloud-only OCR cases. October 3 complete OCR source run
-`37245279463` passed 54 reports and 1,029 pages, and complete PDF acceptance
-`37284342786` succeeded with `acceptance_only=true`, without publishing.
-October 2 run `37245268724`
-completed 50 reports and 663 pages plus private handoff, but its later audit
-failed. PR 252's pending source-preserving re-audit path reuses that handoff
-without repeating recognition; it must prove the original receipt identity
-and pass the unchanged complete validation before consumption. The same
-release isolates acceptance PDF concurrency by run ID while normal
-publications retain their shared queue. Remaining affected-page and
-complete-batch backup acceptance is pending.
-Daily `MARKET_VIEWS_OCR_BACKUP_ENABLED`
-remains false until those checks and the final PDF consumer acceptance pass.
-The detailed state and architecture are maintained
-in [Market Views source recovery](market-views-source-recovery.md).
+October 1 is still a separate open backup case. PR 253 merged at `b9a79ae0`;
+actual probe `37336781381` passed the prior 0.1373-pixel horizontal word-box
+intersection but rejected a second thin word spanning chart regions. The
+remaining affected-page and full-batch acceptance is pending. Enabling the
+already-accepted backup capability does not claim success for every source
+shape or every October date. Readability, complete-source and independent
+numeric gates remain strict; new rotated values remain masked until confirmed.
+The detailed contracts and historical evidence are maintained in
+[Market Views source recovery](market-views-source-recovery.md).
 
 ## Main Workflow Groups
 

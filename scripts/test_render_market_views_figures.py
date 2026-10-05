@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import json
+import hashlib
+import re
 import tempfile
 import unittest
 from pathlib import Path
@@ -11,7 +13,7 @@ from pathlib import Path
 from PIL import Image
 import fitz
 
-from render_market_views_reportlab_pdf import build_pdf
+from render_market_views_reportlab_pdf import build_pdf, clean_text
 
 
 def write_json(path: Path, value: object) -> None:
@@ -118,6 +120,61 @@ class RenderMarketViewsFigureTests(unittest.TestCase):
 
             with self.assertRaisesRegex(RuntimeError, "not rendered"):
                 build_pdf(summary_dir, output)
+
+    def test_pending_number_display_accepts_only_complete_producer_markers(self) -> None:
+        from build_market_views_pdf import latex_escape
+        # :04d is a minimum width, including supplemental IDs above 9999.
+        known = ("[数值待核对:n0001]", "[漏识数值待核对:s0001]", "[漏识数值待核对:s10000]")
+        for escape in (clean_text, latex_escape):
+            for marker in known:
+                with self.subTest(escape=escape.__name__, marker=marker):
+                    self.assertEqual(escape("12" + marker + "34"), "12（该数值待核对）34")
+            for unknown in ("[数值待核对:n12]", "[数值待核对:p2n3]", "[数值待核对:arbitrary]",
+                            "[数值待核对:s0001]", "[漏识数值待核对:n0001]", "[数值待核对:n0001",
+                            "[数值待核对:n0001 trailing]", "n0001", "[数值待核对:n０００１]"):
+                with self.subTest(escape=escape.__name__, unknown=unknown):
+                    self.assertEqual(escape(unknown), unknown)
+
+    def test_pdf_and_latex_show_pending_numbers_without_internal_ids_or_evidence_mutation(self) -> None:
+        from build_market_views_pdf import render_latex
+        with tempfile.TemporaryDirectory() as temp_dir:
+            summary_dir, output = self.make_summary(Path(temp_dir))
+            summary_path = summary_dir / "market_views_structured.json"
+            figure_path = summary_dir / "figure_candidates.json"
+            inputs_path = summary_dir / "report_inputs.json"
+            summary = json.loads(summary_path.read_text())
+            summary["title"] = "Market Views [数值待核对:n0001]"
+            section = summary["bank_roundup"]["sections"][0]
+            section["bank_views"][0]["view"] = "字段[数值待核对:n0002]尚待核对；已确认数值222%、203.46。"
+            section["bank_views"][0]["data_points"] = ["日期2026-09-28；补充字段[漏识数值待核对:s0001]。"]
+            figures = json.loads(figure_path.read_text())
+            figures[0]["context"] = "Exhibit [数值待核对:n0003]；原页数字保留。"
+            inputs = json.loads(inputs_path.read_text())
+            inputs[0]["digest"] = "Input evidence [数值待核对:n0002]"
+            inputs[0]["has_pending_numeric_values"] = True
+            write_json(summary_path, summary)
+            write_json(figure_path, figures)
+            write_json(inputs_path, inputs)
+            preserved = [summary_path, figure_path, inputs_path, summary_dir / "figures/fig_001.png"]
+            hashes = {path: hashlib.sha256(path.read_bytes()).hexdigest() for path in preserved}
+            latex = render_latex(summary, {row["id"]: row for row in inputs},
+                                 {row["figure_id"]: row for row in figures}, "261002")
+            build_pdf(summary_dir, output)
+            with fitz.open(output) as document:
+                text = re.sub(r"\s+", "", "\n".join(page.get_text() for page in document))
+                self.assertEqual(sum(len(page.get_image_info()) for page in document), 2)
+            for label, value in (("pdf", text), ("latex", latex)):
+                with self.subTest(output=label):
+                    self.assertIn("该数值待核对", value)
+                    for internal in ("n0001", "n0002", "n0003", "s0001", "[数值待核对:", "[漏识数值待核对:"):
+                        self.assertNotIn(internal, value)
+                    for confirmed in ("222", "203.46", "2026-09-28"):
+                        self.assertIn(confirmed, value)
+            self.assertIn("222%", text)
+            self.assertIn(r"222\%", latex)
+            self.assertEqual(hashes, {path: hashlib.sha256(path.read_bytes()).hexdigest() for path in preserved})
+            stats = json.loads((summary_dir / "market_views_render_stats.json").read_text())
+            self.assertEqual(stats["rendered_figure_ids"], ["F001"])
 
     def test_portrait_original_pages_keep_wrapped_captions_on_the_same_page(self) -> None:
         """Three 1224x1584 originals can fit while the last caption cannot."""

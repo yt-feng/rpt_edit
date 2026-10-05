@@ -33,6 +33,11 @@ on:
         required: false
         type: string
         default: ''
+      retain_private_evidence:
+        description: Preserve one archive page's existing OCR candidates and pixels in private R2 for diagnosis only
+        required: false
+        type: boolean
+        default: false
       archive_original_source_run_id:
         description: Original Daily ID bound by the archive receipt; empty for a fresh Dropbox archive
         required: false
@@ -91,6 +96,7 @@ jobs:
           PAGE_PROBE_JSON: ${{ inputs.page_probe_json }}
           SOURCE_KIND: ${{ inputs.source_kind }}
           ARCHIVE_ORIGINAL_SOURCE_RUN_ID: ${{ inputs.archive_original_source_run_id }}
+          RETAIN_PRIVATE_EVIDENCE: ${{ inputs.retain_private_evidence }}
         run: |
           python - <<'PY'
           import os, subprocess, sys
@@ -111,6 +117,9 @@ jobs:
                   raise probe.ProbeError('exactly_one_probe_request_required')
               if kind == 'daily' and (page_raw or os.environ['ARCHIVE_ORIGINAL_SOURCE_RUN_ID']):
                   raise probe.ProbeError('page_diagnostics_require_original_archive')
+              retain_private = os.environ['RETAIN_PRIVATE_EVIDENCE'] == 'true'
+              if retain_private and (kind != 'original-archive' or not page_raw):
+                  raise probe.ProbeError('private_evidence_requires_single_archive_page')
               raw = fixture_raw or page_raw
               if len(raw.encode('utf-8')) > probe.FIXTURE_BYTE_LIMIT:
                   raise probe.ProbeError('fixture_input_size_exceeded')
@@ -119,7 +128,9 @@ jobs:
               if fixture_raw:
                   probe.read_checks(fixtures)
               else:
-                  probe.read_page_checks(fixtures)
+                  checks = probe.read_page_checks(fixtures)
+                  if retain_private and len(checks) != 1:
+                      raise probe.ProbeError('private_evidence_requires_single_page')
               response = subprocess.run(['gh', 'api', f"repos/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{os.environ['SOURCE_RUN_ID']}"],
                                         text=True, capture_output=True, check=False, timeout=60)
               if response.returncode != 0:
@@ -171,11 +182,13 @@ jobs:
           SOURCE_KIND: ${{ inputs.source_kind }}
           PAGE_PROBE_JSON: ${{ inputs.page_probe_json }}
           ARCHIVE_ORIGINAL_SOURCE_RUN_ID: ${{ inputs.archive_original_source_run_id }}
+          RETAIN_PRIVATE_EVIDENCE: ${{ inputs.retain_private_evidence }}
         run: |
           INPUT_DIR=_selected_macro_pdfs
           REQUEST_ARGS=(--fixtures "$RUNNER_TEMP/market-views-ocr-field-fixtures.json")
           if [ "$SOURCE_KIND" = "original-archive" ]; then INPUT_DIR="$RUNNER_TEMP/market-views-originals"; fi
           if [ -n "$PAGE_PROBE_JSON" ]; then REQUEST_ARGS=(--page-checks "$RUNNER_TEMP/market-views-ocr-field-fixtures.json"); fi
+          if [ "$RETAIN_PRIVATE_EVIDENCE" = true ]; then REQUEST_ARGS+=(--private-evidence-dir "$RUNNER_TEMP/market-views-ocr-private-evidence"); fi
           python scripts/probe_market_views_ocr_fields.py \
             --input-dir "$INPUT_DIR" \
             --manifest "$INPUT_DIR/selected_to_process_manifest.json" \
@@ -187,6 +200,23 @@ jobs:
             --date-folder "$DATE_FOLDER" \
             --expected-articles "$EXPECTED_ARTICLES" \
             --summary "$RUNNER_TEMP/market-views-ocr-field-probe.json"
+      - name: Preserve requested single-page OCR evidence only in private R2
+        if: ${{ always() && inputs.retain_private_evidence && inputs.source_kind == 'original-archive' }}
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+        run: |
+          PRIVATE_DIR="$RUNNER_TEMP/market-views-ocr-private-evidence"
+          if [ -f "$PRIVATE_DIR/ocr-evidence.json" ] && [ -f "$PRIVATE_DIR/page.png" ]; then
+            python scripts/private_workflow_handoff.py upload-dir \
+              --source "$PRIVATE_DIR" \
+              --key "_private-workflow-handoff/ocr-probe-evidence/$GITHUB_RUN_ID/$DATE_FOLDER/page-evidence.tar.gz"
+          else
+            echo 'Private OCR evidence unavailable; original probe result is unchanged.'
+          fi
       - name: Preserve only sanitized probe diagnostics
         if: ${{ always() }}
         uses: actions/upload-artifact@v4

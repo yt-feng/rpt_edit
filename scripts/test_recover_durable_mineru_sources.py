@@ -111,6 +111,29 @@ class RecoveryTests(unittest.TestCase):
         self.assertEqual(len(self.validate()['reports']), 7)
         self.assertFalse(list(self.output.rglob('*.zip')))
         self.assertFalse(list(self.output.rglob('mineru_raw')))
+
+    def test_figure_failure_binds_manifest_ordinal_before_safe_cli_output(self):
+        seen = []
+        error = r.FigureSourceError('figure_metadata_invalid')
+        error.source_ordinal = 'PRIVATE source.pdf https://PRIVATE.invalid'
+        def writer(raw_dir, asset_dir, maximum, **kwargs):
+            seen.append(kwargs['auth_original_pdf'])
+            if len(seen) == 3:
+                raise error
+            return assets(raw_dir, asset_dir, maximum)
+        with patch.object(r, 'chart_assets', writer), self.assertRaises(r.FigureSourceError) as stopped:
+            self.recover(asset_writer=writer)
+        self.assertIs(stopped.exception, error)
+        self.assertEqual(seen, [path for path, _ in self.pairs[:3]])
+        self.assertEqual(error.source_ordinal, 3)
+        self.assertFalse(self.output.exists())
+        with patch('sys.argv', ['recover', 'validate', '--output-dir', 'PRIVATE',
+                               '--expected-reports', '7', '--date-folder', '261003']), \
+                patch.object(r, 'validate_sources', side_effect=error), \
+                patch('sys.stderr', new_callable=io.StringIO) as stderr:
+            self.assertEqual(r.main(), 2)
+        self.assertEqual(stderr.getvalue(),
+            'MinerU source recovery stopped: figure_metadata_invalid source_ordinal=3\n')
     def test_persistent_cache_hit_survives_changed_signed_urls_and_broken_cdn(self):
         cache = ResultCache(MemoryR2(), 'private-test')
         before = {str(path.relative_to(self.store.root)): path.read_bytes() for path in self.store.root.rglob('*.json')}
@@ -590,6 +613,29 @@ class SafeDiagnosticTests(unittest.TestCase):
                     patch('sys.stderr', new_callable=io.StringIO) as stderr:
                 self.assertEqual(r.main(), 2)
             self.assertEqual(stderr.getvalue(), 'MinerU source recovery stopped: ' + expected + '\n')
+            self.assertNotIn('PRIVATE', stderr.getvalue())
+
+    def test_cli_figure_ordinal_must_be_plain_integer_inside_report_limit(self):
+        class UnsafeInt(int):
+            pass
+        cases = [(1, 7, 1), (7, 7, 7), (1000, 1000, 1000),
+                 (0, 7, None), (-1, 7, None), (8, 7, None), (1001, 1000, None),
+                 (1, 0, None), (1, 1001, None)]
+        cases += [(value, 7, None) for value in
+                  (True, False, 3.0, 'PRIVATE source.pdf https://PRIVATE.invalid',
+                   {'PRIVATE': 3}, ['PRIVATE'], UnsafeInt(3), None)]
+        for ordinal, count, expected in cases:
+            error = r.FigureSourceError('figure_metadata_invalid')
+            error.source_ordinal = ordinal
+            with self.subTest(ordinal_type=type(ordinal).__name__, count=count), \
+                    patch('sys.argv', ['recover', 'validate', '--output-dir', 'PRIVATE',
+                                       '--expected-reports', str(count), '--date-folder', '261003']), \
+                    patch.object(r, 'validate_sources', side_effect=error), \
+                    patch('sys.stderr', new_callable=io.StringIO) as stderr:
+                self.assertEqual(r.main(), 2)
+            suffix = ' source_ordinal=' + str(expected) if expected is not None else ''
+            self.assertEqual(stderr.getvalue(),
+                'MinerU source recovery stopped: figure_metadata_invalid' + suffix + '\n')
             self.assertNotIn('PRIVATE', stderr.getvalue())
 
 
