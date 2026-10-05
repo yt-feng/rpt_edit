@@ -546,12 +546,89 @@ def _select_regions(candidates, page_size, image_size, source_image=None):
             raise original
 
 
+def _date_component_coverage(gray, words):
+    """Account for a one-pixel light edge without expanding any OCR box.
+
+    Each connected component has one original date-word owner. Every core
+    pixel stays in that unmodified box; an outside pixel needs a directly
+    adjacent darker pixel inside it. A gray chain to a distant dark core,
+    another word, a detached mark or a second outside row is not sufficient.
+    """
+    width, height = gray.size
+    pixels, visited = gray.tobytes(), bytearray(width * height)
+    row_owners = [-1] * height
+    for index, word in enumerate(words):
+        for y in range(word["bbox"][1], word["bbox"][3]):
+            row_owners[y] = index
+    def owner_at(x, y):
+        owner = row_owners[y]
+        return owner if owner >= 0 and words[owner]["bbox"][0] <= x < words[owner]["bbox"][2] else -1
+    components, totals = [], [0] * len(words)
+    for start, value in enumerate(pixels):
+        if value >= 245 or visited[start]:
+            continue
+        queue, visited[start] = [start], 1
+        owners, core_owners, fringe = set(), set(), []
+        count = core_count = 0
+        bounds = [width, height, 0, 0]
+        digest = hashlib.sha256()
+        while queue:
+            offset = queue.pop()
+            x, y, value = offset % width, offset // width, pixels[offset]
+            count += 1
+            bounds = [min(bounds[0], x), min(bounds[1], y), max(bounds[2], x + 1), max(bounds[3], y + 1)]
+            digest.update(offset.to_bytes(4, "big") + bytes((value,)))
+            owner = owner_at(x, y)
+            if owner < 0:
+                fringe.append(offset)
+            else:
+                owners.add(owner)
+            if value < 96:
+                if owner < 0:
+                    _fail("uncovered_source_ink")
+                core_count += 1
+                core_owners.add(owner)
+            if len(owners) > 1 or len(core_owners) > 1:
+                _fail("uncovered_source_ink")
+            for ny in range(max(0, y - 1), min(height, y + 2)):
+                for nx in range(max(0, x - 1), min(width, x + 2)):
+                    neighbor = ny * width + nx
+                    if not visited[neighbor] and pixels[neighbor] < 245:
+                        visited[neighbor] = 1
+                        queue.append(neighbor)
+        if len(owners) != 1 or (fringe and core_owners != owners):
+            _fail("uncovered_source_ink")
+        owner = next(iter(owners))
+        box = words[owner]["bbox"]
+        for offset in fringe:
+            x, y, value = offset % width, offset // width, pixels[offset]
+            if not (box[0] - 1 <= x < box[2] + 1 and box[1] - 1 <= y < box[3] + 1):
+                _fail("uncovered_source_ink")
+            supported = False
+            for ny in range(max(0, y - 1), min(height, y + 2)):
+                for nx in range(max(0, x - 1), min(width, x + 2)):
+                    adjacent_owner = owner_at(nx, ny)
+                    if adjacent_owner not in (-1, owner):
+                        _fail("uncovered_source_ink")
+                    if adjacent_owner == owner and pixels[ny * width + nx] < value:
+                        supported = True
+            if not supported:
+                _fail("uncovered_source_ink")
+        totals[owner] += count
+        components.append({"word_index": owner, "bbox": bounds, "pixels": count, "core_pixels": core_count,
+                           "fringe_pixels": len(fringe), "pixel_support_sha256": digest.hexdigest()})
+        if len(components) > MAX_WORDS:
+            _fail("uncovered_source_ink")
+    return {"core_threshold": 96, "maximum_edge_pixels": 1, "components": components}, totals
+
+
 def _date_pixel_coverage(crop, read):
     """Require all source ink in a new fragment band to belong to full dates.
 
-    No dilation, omitted words, gray threshold relaxation or inferred date
-    values are used. Separated word rows prohibit one connected stroke from
-    being split between date words. The consumer recomputes this from pixels.
+    No box dilation, omitted words, threshold relaxation or inferred date
+    values are used. The existing exact-box proof is unchanged when it
+    succeeds. Only a pixel-proved light component edge may extend one pixel
+    beyond an original word box. The consumer recomputes this from pixels.
     """
     rotated = crop.transpose(Image.Transpose.ROTATE_90 if read["angle"] == 90 else Image.Transpose.ROTATE_270)
     ink = rotated.convert("L").point(lambda value: 255 if value < 245 else 0)
@@ -566,10 +643,13 @@ def _date_pixel_coverage(crop, read):
             _fail("uncovered_source_ink")
         ImageDraw.Draw(covered).rectangle((box[0], box[1], box[2] - 1, box[3] - 1), fill=255)
         counts.append({"bbox": box, "pixels": count})
-    if ImageChops.subtract(ink, covered).getbbox() is not None:
-        _fail("uncovered_source_ink")
-    return {"policy": "complete-date-source-ink-v1", "threshold": 245,
+    result = {"policy": "complete-date-source-ink-v1", "threshold": 245,
             "source_ink_sha256": _hash(ink.tobytes()), "pixels": ink.histogram()[255], "words": counts}
+    if ImageChops.subtract(ink, covered).getbbox() is not None:
+        support, totals = _date_component_coverage(rotated.convert("L"), words)
+        result.update(policy="complete-date-source-ink-components-v1", component_support=support,
+                      words=[{**row, "box_pixels": row["pixels"], "pixels": total} for row, total in zip(counts, totals)])
+    return result
 
 
 def _transform(box, angle):

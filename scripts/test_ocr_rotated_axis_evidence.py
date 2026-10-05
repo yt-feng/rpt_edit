@@ -185,16 +185,78 @@ def source_date_reader(page, plans):
 
 
 class RotatedAxisTests(unittest.TestCase):
-    def fragment_recovery(self):
+    def fragment_recovery(self, *, observed_edge=False):
         document, page, candidates, image = fragmented_axis_case()
         self.addCleanup(document.close)
         plans = axis._select_regions(candidates, [700, 650], list(image.size), image)
         reader, calls = source_date_reader(page, plans)
+        if observed_edge:
+            exact_reader = reader
+            def reader(image, **options):
+                words = exact_reader(image, **options)
+                if len(calls) == 2:
+                    # Actual Ubuntu Tesseract boxes for this anonymous page:
+                    # run 37344057107 / head 135ee633, 70 light edge pixels.
+                    for word, box in zip(words, ([25, 30, 165, 61], [25, 363, 173, 394], [25, 696, 173, 727])):
+                        word["bbox"] = box
+                return words
         trace = {}
         result = axis.recover_rotated_axes(page, candidates, language="eng", tessdata=None,
             tesseract_command="unused", tesseract_version="5.3.0", traineddata=MODELS,
             reader=reader, private_trace=trace)
         return page, candidates, image, result, calls, trace
+
+    def test_observed_cloud_word_edges_preserve_all_245_pixels_without_changing_boxes(self):
+        _, _, image, result, calls, _ = self.fragment_recovery(observed_edge=True)
+        self.assertIsNotNone(result)
+        self.assertEqual(len(calls), 4)
+        coverage = result["proof"]["regions"][0]["date_pixel_coverage"]
+        self.assertEqual(coverage["policy"], "complete-date-source-ink-components-v1")
+        self.assertEqual(coverage["threshold"], 245)
+        self.assertEqual([row["bbox"] for row in coverage["words"]],
+                         [[25, 30, 165, 61], [25, 363, 173, 394], [25, 696, 173, 727]])
+        self.assertEqual(sum(row["fringe_pixels"] for row in coverage["component_support"]["components"]), 70)
+        self.assertEqual(coverage["pixels"], sum(row["pixels"] for row in coverage["words"]))
+        self.assertEqual(coverage["pixels"], sum(row["pixels"] for row in coverage["component_support"]["components"]))
+        axis.replay_rotated_axis_proof(result["proof"], result["primary_text"],
+            input_pixel_sha256=axis._hash(image.tobytes()), page_size_points=[700.0, 650.0], source_image=image)
+        for field, value in (("fringe_pixels", 0), ("word_index", 2), ("pixel_support_sha256", "a" * 64)):
+            proof = copy.deepcopy(result["proof"])
+            component = next(row for row in proof["regions"][0]["date_pixel_coverage"]["component_support"]["components"] if row["fringe_pixels"])
+            component[field] = value
+            with self.subTest(field=field), self.assertRaises(axis.RotatedAxisError):
+                axis.replay_rotated_axis_proof(proof, result["primary_text"], input_pixel_sha256=axis._hash(image.tobytes()),
+                    page_size_points=[700.0, 650.0], source_image=image)
+        # Successful original zero-edge proofs retain their original payload.
+        self.assertEqual(result["proof"]["regions"][1]["date_pixel_coverage"]["policy"], "complete-date-source-ink-v1")
+        self.assertNotIn("component_support", result["proof"]["regions"][1]["date_pixel_coverage"])
+
+    def test_component_edges_reject_detached_gray_marks_dark_core_tails_and_other_words(self):
+        words = [{"bbox": [10, y, 40, y + 10], "text": literal, "block": 1, "paragraph": 0, "line": i}
+                 for i, (y, literal) in enumerate(zip((10, 40, 70), ("2020/01", "2021/02", "2022/03")))]
+        image = Image.new("RGB", (60, 100), "white")
+        for word in words:
+            y = word["bbox"][1]
+            ImageDraw.Draw(image).rectangle((15, y, 25, y + 8), fill="black")
+        image.putpixel((20, 9), (187, 187, 187))
+        def coverage(source, read_words):
+            return axis._date_pixel_coverage(source.transpose(Image.Transpose.ROTATE_90), {"angle": 270, "words": read_words})
+        self.assertEqual(sum(row["fringe_pixels"] for row in coverage(image, words)["component_support"]["components"]), 1)
+        for kind in ("dark-core", "two-pixel-tail", "detached-gray", "no-core", "gray-chain", "other-word"):
+            changed, changed_words = image.copy(), copy.deepcopy(words)
+            if kind == "dark-core": changed.putpixel((20, 9), (95, 95, 95))
+            elif kind == "two-pixel-tail": changed.putpixel((20, 8), (230, 230, 230))
+            elif kind == "detached-gray": changed.putpixel((35, 9), (187, 187, 187))
+            elif kind == "no-core":
+                changed.putpixel((35, 10), (187, 187, 187)); changed.putpixel((35, 9), (230, 230, 230))
+            elif kind == "gray-chain":
+                ImageDraw.Draw(changed).line((26, 10, 38, 10), fill=(187, 187, 187))
+                changed.putpixel((38, 9), (180, 180, 180))
+            else:
+                changed_words[1]["bbox"] = [10, 21, 40, 50]
+                changed.putpixel((20, 19), (0, 0, 0)); changed.putpixel((20, 20), (187, 187, 187))
+            with self.subTest(kind=kind), self.assertRaises(axis.RotatedAxisError):
+                coverage(changed, changed_words)
 
     def test_fragmented_cross_chart_words_have_unique_pixel_closed_ledger_and_date_coverage(self):
         page, candidates, image, result, calls, trace = self.fragment_recovery()
@@ -849,6 +911,7 @@ class RotatedAxisCloudTests(unittest.TestCase):
                         ImageDraw.Draw(covered).rectangle((x0, y0, x1 - 1, y1 - 1), fill=255)
                     missing = axis.ImageChops.subtract(ink, covered)
                     details.append({"region": region["id"], "angle": read["angle"], "words": read["words"],
+                        "input_pixel_sha256": read["input_pixel_sha256"],
                         "uncovered_pixels": missing.histogram()[255], "uncovered_bbox": missing.getbbox()})
             self.fail(f"Real fragmented date bands must recover: {diagnostics}; anonymous_fixture_reads={details}")
         self.assertEqual(len(recovery["proof"]["regions"]), 2)
