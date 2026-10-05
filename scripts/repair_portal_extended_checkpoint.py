@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import re
+from collections import Counter
 
 from build_portal_extended_locales import (CHECKPOINT_VERSION, SOURCE_FALLBACK_VERSION,
     build, translate_document, validate_text)
@@ -270,6 +271,9 @@ class ProtectedBasisPointTranslator:
         # Hy-MT callbacks describe one split fragment, so tokens belonging to
         # other fragments are not missing from this raw fragment.
         terms = {token for token in self.current['terms'] if token in model_input}
+        from hymt_offline_translation import _PLACEHOLDERS
+        expected, actual = Counter(_PLACEHOLDERS.findall(model_input)), Counter(_PLACEHOLDERS.findall(raw))
+        missing, extra = expected-actual, actual-expected
         quantities = numeric_diagnostic(self.current['unit_sha256'], model_input, raw)
         self.model_signals.append({'quality_retry': attempt,
             'model_input_sha256': digest(model_input.encode('utf-8',errors='surrogatepass')),
@@ -277,6 +281,13 @@ class ProtectedBasisPointTranslator:
             'translated_characters': len(raw),
             'missing_basis_point_placeholders': sum(raw.count(token) == 0 for token in terms),
             'duplicate_basis_point_placeholders': sum(raw.count(token) > 1 for token in terms),
+            'all_placeholders':{'expected_count':sum(expected.values()), 'actual_count':sum(actual.values()),
+                'missing_count':sum(missing.values()), 'extra_count':sum(extra.values()),
+                'missing_basis_point_count':sum(n for token,n in missing.items() if token in terms),
+                'missing_other_count':sum(n for token,n in missing.items() if token not in terms),
+                'maximum_reported_tokens':20, 'missing_token_sha256':[digest(token.encode()) for token in list(missing)[:20]],
+                'extra_token_sha256':[digest(token.encode()) for token in list(extra)[:20]],
+                'truncated':len(missing)>20 or len(extra)>20},
             'quantity_diagnostics': quantities})
     def set_deadline(self, value):
         method = getattr(self.base, 'set_deadline', None)

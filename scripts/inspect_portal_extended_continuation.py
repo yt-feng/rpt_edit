@@ -73,9 +73,45 @@ def quantity_diagnostics(checkpoint):
         failed.append({'unit_sha256': key, 'source_sha256': digest(source.encode()),
                        'translated_sha256': digest(translated.encode()),
                        'source_quantities': signature(before), 'translated_quantities': signature(after),
+                       'source_unit_protection_signals': source_unit_protection_signals(source),
                        'translated_unit_alias_signals': unit_alias_signals(translated)})
     return {'failed_unit_count': total, 'reported_units': failed, 'maximum_reported_units': 20,
             'maximum_quantity_rows_per_side': 64, 'maximum_value_characters': 128}
+
+
+def source_unit_protection_signals(text):
+    """Reproduce the existing repair mask without inference or source output."""
+    from financial_quantity_integrity import NUMBER
+    from repair_portal_extended_checkpoint import BP
+    from hymt_offline_translation import _mask, _mask_quantity_facts, _PLACEHOLDERS
+    matches = list(re.finditer(rf'({NUMBER})\s*(bps?)(?![A-Za-z0-9_])', text, re.I))
+    rows = []
+    for match in matches[:20]:
+        value = match[1]
+        following = text[match.end():match.end()+1]
+        rows.append({'number':value[:128], 'value_truncated':len(value)>128,
+            'unit':match[2].lower(), 'tight_non_ascii_word':bool(following and following.isalnum() and ord(following)>127)})
+    protected = {}
+    def reserve(match):
+        token = f'__HYMTPH_{9000+len(protected):04d}__'
+        protected[token] = match[1]+' bps'
+        return token
+    masked = BP.sub(reserve, text).strip()
+    adapter, opaque, controlled = _mask(masked, 'km')
+    third, extra = _mask_quantity_facts(adapter, len(opaque)+len(controlled))
+    return {'numeric_ascii_bp':{'rows':rows, 'total_rows':len(matches),
+                'truncated':len(matches)>20 or any(row['value_truncated'] for row in rows)},
+            'current_repair_bp_count':len(protected),
+            'source_placeholder_count':len(_PLACEHOLDERS.findall(text)),
+            'repair_masked_sha256':digest(masked.encode()),
+            'adapter_masked_sha256':digest(adapter.encode()),
+            'adapter_placeholder_count':len(_PLACEHOLDERS.findall(adapter)),
+            'adapter_opaque_count':len(opaque), 'adapter_controlled_count':len(controlled),
+            'adapter_retained_basis_point_count':sum(adapter.count(token)==1 for token in protected),
+            'adapter_escaped_character_count':sum(value.startswith('\\') for value in opaque.values()),
+            'third_masked_sha256':digest(third.encode()),
+            'third_placeholder_count':len(_PLACEHOLDERS.findall(third)),
+            'third_extra_quantity_count':len(extra)}
 
 
 def inspect(store, generation, locale, checkpoint_sha, candidate_id, output):
