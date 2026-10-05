@@ -49,6 +49,8 @@ from deepseek_http import deepseek_api_keys_from_env, request_with_key_fallback
 from wechat_editorial_binding import bind_generated_article
 from mineru_task_ledger import R2Store, digest, exact_json, from_environment, input_sources, schema_v1
 from mineru_result_cache import ResultCache, ResultCacheError
+from mineru_daily_result_cache import persist_authentication
+from mineru_daily_result_transport import download_result
 from consume_legacy_mineru import ConsumerError, NetworkStop, download_once, safe_unzip, valid_url
 
 MINERU_BASE_URL = "https://mineru.net"
@@ -170,14 +172,17 @@ def download_cached_result(pdf_path, row, raw_dir, cache, contexts):
     valid_url(row['full_zip_url'])
     payload = cache.get(binding, lineage)
     cache_hit = payload is not None
+    authentication = None
     if not cache_hit:
-        payload = download_once(row['full_zip_url'])
+        payload, authentication = download_result(row['full_zip_url'], strict_downloader=download_once)
     # Never merge a new extraction into an old raw directory. Validate and
     # persist the complete archive before releasing text to paid generation.
     with tempfile.TemporaryDirectory(prefix='.mineru-result-', dir=raw_dir.parent) as temporary:
         stage = Path(temporary) / 'raw'
         safe_unzip(payload, stage)
         if not cache_hit:
+            if authentication is not None:
+                persist_authentication(cache, binding, lineage, payload, authentication)
             cache.put(binding, lineage, payload)
         if raw_dir.is_symlink():
             raise ResultCacheError('cache_raw_symlink')

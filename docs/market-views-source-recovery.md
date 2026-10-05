@@ -17,7 +17,7 @@ computer is not a production dependency. The repository architecture map is
 flowchart TD
   A["Actions: select exact dated original PDFs"] --> B["MinerU API and durable R2 task ledger"]
   B --> C["All original task members completed"]
-  C --> D["Resolve exact result ZIP from private R2 cache or MinerU HTTPS"]
+  C --> D["Private R2 cache; otherwise strict HTTPS with known expired-certificate recovery"]
   D --> K["Validate complete ZIP and persist verified bytes in private R2"]
   K --> E["Generate complete report articles and private R2 shards"]
   E --> F["Actions: Market Views synthesis and PDF"]
@@ -97,6 +97,40 @@ batch; a matching cache hit supplies the ZIP without another CDN download.
 Corrupt or mismatched cache evidence stops processing rather than substituting
 another source. Raw ZIPs remain private and outside public handoff artifacts.
 
+### Automatic recovery for the known expired result certificate
+
+The main daily workflow and `market-views-mineru-recovery.yml` now use
+`mineru_daily_result_transport.download_result` on a result-cache miss. Normal
+PKI is always attempted first. Only the exact `tls_certificate_expired` category
+can enter a separate cloud-main recovery path for
+`cdn-mineru.openxlab.org.cn`, leaf SHA-256
+`12137420c572ee3fde42af27309c8f36efdfc4d07e76dcba801ddf6bc308aeb3`.
+An independent strict handshake must reproduce depth-zero certificate expiry,
+the leaf bytes must match, intermediate certificates must be currently valid,
+and system and certifi roots must both verify historical server-purpose and
+hostname identity. The dedicated result connection itself asserts the same leaf
+fingerprint, with no redirects or API credentials.
+
+Each attempt has a fresh lease of at most 15 minutes, bounded further by the
+intermediate certificate expiry. Connections and body reads enforce it. This
+policy does not extend or reuse the historical manual-seed cutoff. Once a normal
+provider certificate succeeds, recovery is not used. A changed untrusted leaf,
+another hostname, generic TLS error, timeout or HTTP error cannot enter it.
+
+After full ZIP validation, `mineru_daily_result_cache.py` writes an immutable
+authentication sidecar binding the source/task identity, ZIP hash/size and lease
+facts, then the normal result cache persists and reads back the ZIP. The sidecar
+records historical authentication and `pki_verified_now=false`; it never claims
+that the vendor certificate was renewed. Its receipt-hash key permits a fresh
+attempt after an interruption without overwriting earlier evidence. Cache hits
+continue to work after old leases expire and require no download connection.
+
+The one-page API smoke workflow is the only additional allowed caller. Its
+synthetic source uses an independent private namespace, checks known text and
+three numeric values, saves the complete ZIP, and immediately replays it from
+R2 with downloading disabled. An accepted task is resumed rather than reposted.
+Cloud acceptance is recorded separately from offline regressions below.
+
 R2 is also checked for existing source-generation checkpoints and exact final
 PDFs through `market-views-r2-cache-inspect.yml`. A checkpoint identity and archive
 hash are not by themselves proof that it matches the current original batch;
@@ -130,13 +164,15 @@ can retrieve completed original tasks with a fixed, previously observed leaf
 certificate identity. This cloud recovery is limited to
 `cdn-mineru.openxlab.org.cn`, SHA-256
 `12137420c572ee3fde42af27309c8f36efdfc4d07e76dcba801ddf6bc308aeb3`,
-and the fixed cutoff `2026-10-04T23:59:59Z`. It first verifies the exact leaf and
+and the fixed cutoff `2026-10-05T23:59:59Z` (the original October 4 window was
+extended once as recorded below). It first verifies the exact leaf and
 peer chain against system and certifi roots at the last instant before that
 leaf's expiry, including server purpose and hostname. This is historical chain
 verification plus exact-leaf authentication; it is explicitly **not current PKI
 verification**. The dedicated connection asserts the same leaf before HTTP,
 rejects redirects and other origins, and checks the cutoff before connections,
-body reads and private R2 writes. Normal daily HTTPS verification is unchanged.
+body reads and private R2 writes. This manual policy is independent of the
+automatic daily recovery described above.
 
 Before downloading any ZIP, the seeder verifies the full original Daily
 artifact, every PDF hash/date binding and all accepted original task members
@@ -720,7 +756,8 @@ one additional fixed day, ending 2026-10-05T23:59:59Z. The user instructed the
 repair to continue after the pending window and connection retry were explained.
 It preserves the exact same leaf, host, historical system/certifi chain checks,
 current intermediate checks, complete-source/task proofs and GET-only cache
-route. Daily TLS stays strict. Old authenticated R2 cache bytes remain reusable;
+route. At that release Daily still used strict PKI alone; the later automatic
+recovery above resolves that remaining delivery gap. Old authenticated R2 cache bytes remain reusable;
 this window only governs new manual result retrieval and cache writes. The
 transport cannot extend the new cutoff itself.
 
@@ -1018,7 +1055,8 @@ private R2 → Market Views PDF → member portal. Cloud OCR is a retained autom
 backup; production execution does not depend on local QA or a local computer.
 The provider's final strict result-CDN probe `37347310154` still reported an
 expired certificate at 17:18 UTC, independently of successful task API
-authentication and GitHub access. Daily TLS verification has not been relaxed.
+authentication and GitHub access. The primary path now retains strict PKI first
+and adds the automatic known-certificate identity recovery described above.
 
 Complete primary recovery `37284033767` and PDF consumer `37284226601`
 succeeded for all 50 October 2 originals. Fresh live inspection `37343103500`

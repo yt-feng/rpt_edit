@@ -13,6 +13,7 @@ import unittest
 from unittest.mock import patch
 
 from consume_legacy_mineru import NetworkStop
+import mineru_daily_result_cache as authentication_cache
 import mineru_result_cache as c
 import mineru_task_ledger as m
 import pdf_to_xhs_batch as p
@@ -168,6 +169,61 @@ class DailyResultCacheTests(unittest.TestCase):
         for ledger in (local, consulting, institution):
             with self.subTest(scope=ledger.scope):
                 self.assertEqual(p.result_cache_contexts(ledger, self.sources, {}), (None, {}))
+
+    def test_recovered_zip_has_private_authentication_readback_before_result_release(self):
+        # Transport policy/lease is tested by the transport suite. Here exercise
+        # the real CLI, original task ledger, immutable R2 writes and source release.
+        auth = {'test_verified_authentication': 'first-lease'}
+        with patch.object(p, 'download_result', return_value=(result_zip(), auth)) as download, \
+             patch.object(authentication_cache, 'validate_daily_authentication', return_value=auth):
+            self.assertEqual(self.cli(), 0)
+        self.assertEqual(download.call_count, 3)
+        receipts = [row for row in self.r2.puts if row['Key'].startswith(authentication_cache.AUTH_PREFIX + '/')]
+        self.assertEqual(len(receipts), 3)
+        for row in receipts:
+            proof = json.loads(row['Body'])
+            identity_sha = proof['identity_sha256']
+            self.assertEqual(proof['policy'], 'daily-exact-leaf-result-cache-v1')
+            self.assertEqual(proof['zip_sha256'], m.digest(result_zip()))
+            self.assertEqual(proof['authentication'], auth)
+            self.assertIn(row['Key'], self.r2.gets)
+            writes = [item['Key'] for item in self.r2.puts]
+            self.assertLess(writes.index(row['Key']), writes.index(c.ResultCache.receipt_key(identity_sha)))
+        shutil.rmtree(self.output)
+        with patch.object(p, 'download_result', side_effect=AssertionError('Complete cache must not reconnect')):
+            self.assertEqual(self.cli(), 0)
+        self.assertEqual(len(self.provider.polls), 2)
+
+    def test_authentication_write_failure_never_releases_zip_or_model_input(self):
+        auth = {'test_verified_authentication': 'first-lease'}
+        def fail_auth(key, _):
+            if key.startswith(authentication_cache.AUTH_PREFIX + '/'):
+                raise OSError('private storage write failed')
+        self.r2.before_put = fail_auth
+        with patch.object(p, 'download_result', return_value=(result_zip(), auth)), \
+             patch.object(authentication_cache, 'validate_daily_authentication', return_value=auth):
+            self.assertEqual(self.cli(), 2)
+        self.assertEqual(self.cache_objects(), {})
+        self.assertFalse(list(self.output.rglob('source_mineru.md')))
+
+    def test_invalid_recovered_zip_is_rejected_before_authentication_write(self):
+        with patch.object(p, 'download_result', return_value=(b'incomplete archive', {'test': True})), \
+             patch.object(authentication_cache, 'validate_daily_authentication') as validation:
+            self.assertEqual(self.cli(), 2)
+        validation.assert_not_called()
+        self.assertFalse(any(key.startswith(authentication_cache.AUTH_PREFIX + '/') for key in self.r2.objects))
+        self.assertFalse(list(self.output.rglob('source_mineru.md')))
+
+    def test_interrupted_attempt_authentication_does_not_conflict_with_a_fresh_lease(self):
+        cache, contexts, _ = self.context()
+        binding, lineage = contexts[self.sources[0][0]]
+        for lease in ('earlier', 'fresh'):
+            auth = {'test_verified_authentication': lease}
+            with patch.object(authentication_cache, 'validate_daily_authentication', return_value=auth):
+                authentication_cache.persist_authentication(cache, binding, lineage, result_zip(), auth)
+        proofs = [key for key in self.r2.objects if key.startswith(authentication_cache.AUTH_PREFIX + '/')]
+        self.assertEqual(len(proofs), 2)
+        self.assertIsNone(cache.get(binding, lineage))
 
 
 if __name__ == '__main__':

@@ -103,6 +103,14 @@ def prepare_authentication(*, runner=subprocess.run, now=utc_now, env=None):
     """One strict, no-HTTP handshake, then two offline historical CA checks."""
     require_cloud_manual(env)
     observed = require_before_cutoff(now)
+    authentication, _ = _prepare_expired_leaf_identity(
+        runner=runner, observed=observed, check_time=lambda: require_before_cutoff(now))
+    return {**authentication, 'cutoff_utc': CUTOFF.isoformat()}
+
+
+def _prepare_expired_leaf_identity(*, runner, observed, check_time):
+    """Shared identity checks; each caller owns its separate cloud/time policy."""
+    check_time()
     command = ['openssl', 's_client', '-connect', HOST + ':443', '-servername', HOST,
                '-verify_hostname', HOST, '-verify_return_error', '-showcerts', '-no_ign_eof']
     try:
@@ -131,7 +139,7 @@ def prepare_authentication(*, runner=subprocess.run, now=utc_now, env=None):
             # The second verification uses only certifi's roots, rather than
             # silently falling back to the runner's default CA path/store.
             for ca_options in ([], ['-CAfile', certifi.where(), '-no-CApath', '-no-CAstore']):
-                require_before_cutoff(now)
+                check_time()
                 verify = runner(['openssl', 'verify', '-attime', str(int(LEAF_EXPIRY.timestamp()) - 1),
                                  '-purpose', 'sslserver', '-verify_hostname', HOST,
                                  '-untrusted', str(intermediates), *ca_options, str(leaf)],
@@ -139,28 +147,20 @@ def prepare_authentication(*, runner=subprocess.run, now=utc_now, env=None):
                 bounded_process_output(verify)
                 if verify.returncode != 0:
                     raise PinnedTransportError('historical_chain_or_hostname_failed')
-        require_before_cutoff(now)
-        return {'auth_mode': AUTH_MODE, 'pki_verified_now': False, 'historical_chain_verified': True,
+        check_time()
+        return ({'auth_mode': AUTH_MODE, 'pki_verified_now': False, 'historical_chain_verified': True,
                 'historical_ca_checks': 2, 'leaf_sha256': LEAF_SHA256,
-                'leaf_not_after_utc': LEAF_EXPIRY.isoformat(), 'cutoff_utc': CUTOFF.isoformat(),
+                'leaf_not_after_utc': LEAF_EXPIRY.isoformat(),
                 'peer_chain_sha256': [row['sha256'] for row in metadata],
-                'preflight_tls_connections': 1, 'preflight_http_requests': 0}
+                'preflight_tls_connections': 1, 'preflight_http_requests': 0},
+                min(datetime.fromisoformat(row['not_after_utc']) for row in metadata[1:]))
     except PinnedTransportError:
         raise
     except Exception:
         raise PinnedTransportError('authentication_preflight_failed') from None
 
 
-class PinnedResultTransport:
-    def __init__(self, authentication, *, now=utc_now, pool_factory=urllib3.HTTPSConnectionPool,
-                 monotonic=time.monotonic):
-        self.authentication = verified_authentication(authentication)
-        self.now, self.pool_factory, self.monotonic = now, pool_factory, monotonic
-        self.result_gets = 0
-
-    def check_cutoff(self):
-        require_before_cutoff(self.now)
-
+class _ExactLeafResultTransport:
     def __call__(self, url):
         uri = fixed_result_uri(url)
         self.check_cutoff()
@@ -220,3 +220,15 @@ class PinnedResultTransport:
                 response.close()
             if pool is not None:
                 pool.close()
+
+
+class PinnedResultTransport(_ExactLeafResultTransport):
+    """The original manual transport retains its exact fixed-window contract."""
+    def __init__(self, authentication, *, now=utc_now, pool_factory=urllib3.HTTPSConnectionPool,
+                 monotonic=time.monotonic):
+        self.authentication = verified_authentication(authentication)
+        self.now, self.pool_factory, self.monotonic = now, pool_factory, monotonic
+        self.result_gets = 0
+
+    def check_cutoff(self):
+        require_before_cutoff(self.now)
