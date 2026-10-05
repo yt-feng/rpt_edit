@@ -26,6 +26,10 @@ METADATA_CONTENT_TYPE = "application/json; charset=utf-8"
 MIN_PDF_BYTES = 1024
 
 
+class PrivatePublicationInvalid(RuntimeError):
+    """Stored publication contents are demonstrably incomplete or inconsistent."""
+
+
 def require_env(name: str) -> str:
     value = os.getenv(name, "").strip()
     if not value:
@@ -83,17 +87,21 @@ def _utc_timestamp(value: str | None = None) -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
+def _r2_response_is_missing(exc: Exception) -> bool:
+    response = getattr(exc, "response", {})
+    error = response.get("Error", {}) if isinstance(response, dict) else {}
+    status = response.get("ResponseMetadata", {}).get("HTTPStatusCode") if isinstance(response, dict) else None
+    code = str(error.get("Code") or "")
+    return status == 404 or code in {"404", "NoSuchKey", "NotFound"}
+
+
 def r2_object_exists(client: Any, bucket: str, key: str) -> tuple[bool, dict[str, Any]]:
     try:
         return True, dict(client.head_object(Bucket=bucket, Key=key) or {})
     except (FileNotFoundError, KeyError):
         return False, {}
     except Exception as exc:
-        response = getattr(exc, "response", {})
-        error = response.get("Error", {}) if isinstance(response, dict) else {}
-        status = response.get("ResponseMetadata", {}).get("HTTPStatusCode") if isinstance(response, dict) else None
-        code = str(error.get("Code") or "")
-        if status == 404 or code in {"404", "NoSuchKey", "NotFound"}:
+        if _r2_response_is_missing(exc):
             return False, {}
         raise
 
@@ -127,12 +135,14 @@ def validate_existing_pdf_object(
         stored_size = int(head.get("ContentLength", -1))
     except (TypeError, ValueError) as exc:
         raise RuntimeError(f"Existing R2 PDF has invalid ContentLength: {key}") from exc
+    if stored_size < 0:
+        raise RuntimeError(f"Existing R2 PDF has invalid ContentLength: {key}")
     if stored_size <= MIN_PDF_BYTES:
-        raise RuntimeError(f"Existing R2 PDF is too small: {key} ({stored_size} bytes)")
+        raise PrivatePublicationInvalid(f"Existing R2 PDF is too small: {key} ({stored_size} bytes)")
 
     stored_type = str(head.get("ContentType") or "").split(";", 1)[0].strip().lower()
     if stored_type != PDF_CONTENT_TYPE:
-        raise RuntimeError(
+        raise PrivatePublicationInvalid(
             f"Existing R2 PDF has invalid content-type: {key} ({stored_type or 'missing'})"
         )
     stored_metadata = {
@@ -141,9 +151,9 @@ def validate_existing_pdf_object(
     }
     metadata_sha256 = stored_metadata.get("sha256", "").lower()
     if not re.fullmatch(r"[0-9a-f]{64}", metadata_sha256):
-        raise RuntimeError(f"Existing R2 PDF is missing valid SHA-256 metadata: {key}")
+        raise PrivatePublicationInvalid(f"Existing R2 PDF is missing valid SHA-256 metadata: {key}")
     if stored_metadata.get("date-key") != date_key:
-        raise RuntimeError(f"Existing R2 PDF has mismatched date metadata: {key}")
+        raise PrivatePublicationInvalid(f"Existing R2 PDF has mismatched date metadata: {key}")
 
     stored_data = _read_r2_body(client.get_object(Bucket=bucket, Key=key), key)
     if len(stored_data) != stored_size:
@@ -152,12 +162,12 @@ def validate_existing_pdf_object(
             f"({len(stored_data)} != {stored_size})"
         )
     if not stored_data.startswith(b"%PDF-"):
-        raise RuntimeError(f"Existing R2 object is missing the PDF magic header: {key}")
+        raise PrivatePublicationInvalid(f"Existing R2 object is missing the PDF magic header: {key}")
     actual_sha256 = hashlib.sha256(stored_data).hexdigest()
     if actual_sha256 != metadata_sha256:
-        raise RuntimeError(f"Existing R2 PDF bytes disagree with SHA-256 metadata: {key}")
+        raise PrivatePublicationInvalid(f"Existing R2 PDF bytes disagree with SHA-256 metadata: {key}")
     if expected_sha256 is not None and actual_sha256 != expected_sha256:
-        raise RuntimeError(f"Existing R2 PDF has unexpected SHA-256 content: {key}")
+        raise PrivatePublicationInvalid(f"Existing R2 PDF has unexpected SHA-256 content: {key}")
     return {"size_bytes": stored_size, "sha256": actual_sha256}
 
 
@@ -186,16 +196,22 @@ def validate_existing_private_pair(
 
     item_type = str(item_head.get("ContentType") or "").split(";", 1)[0].strip().lower()
     if item_type != "application/json":
-        raise RuntimeError(
+        raise PrivatePublicationInvalid(
             f"Existing R2 Market Views item has invalid content-type: {item_key} "
             f"({item_type or 'missing'})"
         )
 
     item_body = _read_r2_body(client.get_object(Bucket=bucket, Key=item_key), item_key)
     try:
+        item_size = int(item_head.get("ContentLength", -1))
+    except (TypeError, ValueError) as exc:
+        raise RuntimeError(f"Existing R2 Market Views item has invalid ContentLength: {item_key}") from exc
+    if len(item_body) != item_size:
+        raise RuntimeError(f"Existing R2 Market Views item body length disagrees with ContentLength: {item_key}")
+    try:
         item = json.loads(item_body.decode("utf-8"))
     except (UnicodeDecodeError, json.JSONDecodeError) as exc:
-        raise RuntimeError(f"Existing R2 Market Views item is invalid JSON: {item_key}") from exc
+        raise PrivatePublicationInvalid(f"Existing R2 Market Views item is invalid JSON: {item_key}") from exc
     expected = {
         "schema_version": 1,
         "id": f"market-view:{date_key}",
@@ -208,14 +224,55 @@ def validate_existing_private_pair(
         "content_type": PDF_CONTENT_TYPE,
     }
     if not isinstance(item, dict):
-        raise RuntimeError(f"Existing R2 Market Views item is not an object: {item_key}")
+        raise PrivatePublicationInvalid(f"Existing R2 Market Views item is not an object: {item_key}")
     mismatches = [key for key, value in expected.items() if item.get(key) != value]
     if mismatches:
-        raise RuntimeError(
+        raise PrivatePublicationInvalid(
             f"Existing R2 Market Views item disagrees with its PDF for {item_key}: "
             + ", ".join(mismatches)
         )
     return item
+
+
+def private_publication_complete(
+    date_value: str,
+    *,
+    client: Any | None = None,
+    bucket: str | None = None,
+) -> bool:
+    """Read only: distinguish missing/invalid contents from an unavailable R2.
+
+    A false result permits rebuilding from the already validated full sources.
+    Authentication, transport and unreadable-response errors propagate instead
+    of being mistaken for a missing publication and triggering paid synthesis.
+    """
+    issue_date, date_key = parse_issue_date(date_value)
+    resolved_bucket = (bucket or os.getenv("R2_BUCKET", "").strip() or DEFAULT_BUCKET).strip()
+    if not resolved_bucket:
+        raise RuntimeError("R2 bucket name is empty")
+    resolved_client = client or build_r2_client()
+    pdf_key = f"{MARKET_VIEWS_PREFIX}/pdfs/{date_key}.pdf"
+    item_key = f"{MARKET_VIEWS_PREFIX}/items/{date_key}.json"
+    pdf_exists, pdf_head = r2_object_exists(resolved_client, resolved_bucket, pdf_key)
+    item_exists, item_head = r2_object_exists(resolved_client, resolved_bucket, item_key)
+    if not pdf_exists or not item_exists:
+        return False
+    try:
+        validate_existing_private_pair(
+            resolved_client, resolved_bucket, pdf_key=pdf_key, item_key=item_key,
+            pdf_head=pdf_head, item_head=item_head, issue_date=issue_date,
+            date_key=date_key, filename=f"market_views_{date_key}.pdf",
+        )
+    except PrivatePublicationInvalid:
+        return False
+    except Exception as exc:
+        # An object can disappear between HEAD and GET. Only an explicit R2
+        # not-found response is missing; truncated reads and transport errors
+        # cannot authorize rebuilding an apparently existing publication.
+        if _r2_response_is_missing(exc):
+            return False
+        raise
+    return True
 
 
 def archive_private_variant(

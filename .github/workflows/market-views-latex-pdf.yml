@@ -378,6 +378,10 @@ jobs:
           EXPECTED_ARTICLES: ${{ inputs.expected_articles || '0' }}
           FORCE_REBUILD: ${{ github.event.inputs.force_rebuild || 'false' }}
           ACCEPTANCE_ONLY: ${{ inputs.acceptance_only }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET || 'portal-suite-pdfs' }}
         run: |
           python - <<'PYTHON'
           import os
@@ -385,6 +389,7 @@ jobs:
           from pathlib import Path
           sys.path.insert(0, "scripts")
           from build_market_views_pdf import source_date_dirs, require_primary_report_dirs, find_report_dirs
+          from upload_market_view_to_r2 import private_publication_complete
 
           root = Path("xhs_notes/dropbox")
           requested = os.environ["REQUESTED_DATE_FOLDER"]
@@ -405,6 +410,10 @@ jobs:
                             and pdf.open("rb").read(5) == b"%PDF-")
           should_build = (os.environ["FORCE_REBUILD"] == "true"
                           or os.environ.get("ACCEPTANCE_ONLY", "") == "true" or not valid_existing)
+          if not should_build:
+              # The checked-out PDF is public-safe. Repair missing private
+              # publication only by rebuilding from the verified full sources.
+              should_build = not private_publication_complete(issue_date)
           with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as env:
               for key, value in {
                   "BUILD_DATE_FOLDER": issue_date,
