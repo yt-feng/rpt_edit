@@ -186,7 +186,18 @@ def accepted_child_results(ledger, groups, original_rows, recovery_run_id, error
         snapshots.append((controller_key, encoded(control)))
         snapshots.append((root['key'], encoded(root)))
         entries = control['children']
-        if any(entry['authorization']['manifest_sha256'] != manifest_sha for entry in entries):
+        current_authorization = {'run_id': recovery_run_id, 'manifest_sha256': manifest_sha}
+        extension = control.get('daily_retry_extension') or {}
+        rebound = any(exact_json(current_authorization, auth)
+                      for auth in extension.get('authorizations', []))
+        # _read_control binds the extension to the unchanged original task and
+        # hashes its historical prefix. Both callers also verify the complete
+        # current manifest/PDF inventory before arriving here. A new manifest
+        # may therefore retain older proofs only through its exact registered
+        # run+manifest authorization; that never relabels an old run's outputs.
+        if (any(entry['authorization']['manifest_sha256'] != manifest_sha for entry in entries) and not rebound
+                or any(entry['authorization']['run_id'] == recovery_run_id
+                       and entry['authorization']['manifest_sha256'] != manifest_sha for entry in entries)):
             raise SeedError('child_authorization_invalid')
         # Other producers' controllers are not selected as this run's output.
         # Their structure/policy still passed _read_control above.
@@ -197,10 +208,8 @@ def accepted_child_results(ledger, groups, original_rows, recovery_run_id, error
         resolved = {source_id for source_id, row in rows.items() if str(row['state']).lower() in DONE}
         for entry in entries:
             cutoff_check()
-            if entry['authorization']['manifest_sha256'] != manifest_sha:
-                raise SeedError('child_authorization_invalid')
             if (entry['proof']['value']['task_identity_sha256'] != task_identity(predecessor)
-                    or not exact_json(terminal._proof(predecessor, rows), entry['proof'])):
+                    or not exact_json(terminal._proof_for_entry(predecessor, rows, control, entry), entry['proof'])):
                 raise SeedError('accepted_child_proof_mismatch')
             child, _ = terminal._child(root, controller_key, entry, create=False)
             if (child is None or child['state'] not in {'accepted', 'uploaded', 'terminal'}

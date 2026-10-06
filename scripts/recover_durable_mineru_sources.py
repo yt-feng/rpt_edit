@@ -405,7 +405,7 @@ def validate_sources(output_dir, expected_reports, date_folder, *, expected_reco
                 or lineage['data_id'] != report['source_id']
                 or not re.fullmatch(r'batches/[a-f0-9]{32}', str(lineage['batch_key']))
                 or not isinstance(lineage['batch_id'], str) or not lineage['batch_id']
-                or type(lineage['child_ordinal']) is not int or not 0 <= lineage['child_ordinal'] <= 2
+                or type(lineage['child_ordinal']) is not int or not 0 <= lineage['child_ordinal'] <= 3
                 or lineage['parent_batch_key'] != lineage['root_key']
                 or (lineage['child_ordinal'] == 0 and (lineage['batch_key'] != lineage['root_key']
                     or lineage['batch_id'] != task_map[lineage['root_key']]['batch_id']))
@@ -464,7 +464,10 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
                     recovery_execution_sha=None,
                     allowed_error_codes=(), allowed_error_hashes=(), downloader=download_once,
                     asset_writer=chart_assets, timeout=1800, interval=15, queue_budget=300, result_cache=None,
-                    authenticated_downloader=None, terminal_factory=None, total_timeout=None):
+                    authenticated_downloader=None, terminal_factory=None, total_timeout=None,
+                    continue_batches=False):
+    if type(continue_batches) is not bool or (continue_batches and (terminal_factory is None or allow_fresh)):
+        reject('daily_batch_continuation_requires_bound_terminal_factory')
     if ledger.scope != 'dropbox' or not exact_json(ledger.options, OPTIONS):
         reject('ledger_scope_options')
     if (not RUN.fullmatch(str(recovery_run_id)) or (source_run_id and not RUN.fullmatch(str(source_run_id)))
@@ -496,9 +499,34 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
     try:
         with tempfile.TemporaryDirectory(prefix='mineru-source-results-') as cache_dir:
             cache, deferred, root_for_id, resolved, posts, tasks = {}, {}, {}, {}, 0, []
+            active_batch_deadline, verified_outcomes = None, {}
             source_bindings = {item['id']: item for item in (ledger.bind(path, source) for path, source in pairs)}
+            source_ordinals = {ledger.bind(path, source)['id']: index
+                               for index, (path, source) in enumerate(pairs, 1)}
+            def daily_progress(index, batch, status, *, ready=False, summary=None, category=None):
+                outcomes = {row.get('data_id'): row for row in (summary or {}).get('source_outcomes', [])
+                            if isinstance(row, dict)}
+                sources = []
+                for item in batch['files']:
+                    outcome = outcomes.get(item['id'], verified_outcomes.get(item['id'], {}))
+                    state = outcome.get('status')
+                    count = outcome.get('retry_count')
+                    sources.append({'source_ordinal': source_ordinals[item['id']],
+                                    'status': state if state in {'done', 'retry_exhausted', 'pending',
+                                                                 'submission_unknown', 'failed'} else 'unobserved',
+                                    'reserved_retry_count': count if type(count) is int and 0 <= count <= 3 else None})
+                value = {'event': 'daily_mineru_batch', 'batch_ordinal': index, 'batch_count': len(groups),
+                         'status': status, 'ready': ready, 'sources': sources}
+                if category is not None:
+                    value['category'] = category
+                print(json.dumps(value, sort_keys=True), flush=True)
+            def check_download_budget():
+                if (continue_batches and active_batch_deadline is not None
+                        and ledger.clock() >= active_batch_deadline):
+                    reject('daily_batch_time_budget_exhausted')
             def verify_done(path, row):
-                remaining()
+                if not continue_batches:
+                    remaining()
                 if str(row.get('state', '')).lower() not in DONE:
                     return
                 source_id = row.get('data_id')
@@ -515,10 +543,12 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
                         reject('deferred_result_lineage_changed')
                     return
                 if cache_key not in cache:
+                    check_download_budget()
                     payload = result_cache.get(source_bindings[source_id], lineage) if result_cache is not None else None
                     cache_hit = payload is not None
                     authentication = None
                     if not cache_hit:
+                        check_download_budget()
                         try:
                             if result_cache is not None and authenticated_downloader is not None:
                                 payload, authentication = authenticated_downloader(url, strict_downloader=downloader)
@@ -526,7 +556,7 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
                                 payload = downloader(url)
                         except NetworkStop as error:
                             child = (isinstance(lineage, dict) and type(lineage.get('child_ordinal')) is int
-                                     and lineage['child_ordinal'] in {1, 2}
+                                     and lineage['child_ordinal'] in {1, 2, 3}
                                      and lineage.get('parent_batch_key') == root_for_id.get(source_id)
                                      and lineage.get('batch_key') != lineage.get('parent_batch_key'))
                             if (not child or len(error.args) != 1 or type(error.args[0]) is not str
@@ -544,6 +574,7 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
                                                    payload, authentication)
                         result_cache.put(source_bindings[source_id], lineage, payload)
                     cache[cache_key] = (folder / 'raw', markdown, digest(payload))
+                verified_outcomes[source_id] = {'status': 'done', 'retry_count': lineage['child_ordinal']}
             def record_task(batch):
                 tasks.append({'key': batch['key'], 'task_identity_sha256': task_identity(batch),
                               'batch_id': batch['batch_id'], 'data_ids': [item['id'] for item in batch['files']]})
@@ -552,9 +583,9 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
             default_terminal = TerminalRecovery(ledger, allowed_error_codes=allowed_error_codes,
                                                 allowed_error_hashes=allowed_error_hashes)
             terminals = {}
-            # Complete all original GETs and validate every successful original ZIP
-            # before even one failed member can be admitted to a recovery child.
-            preflight = []
+            # Validate every stored controller before any provider operation.
+            # Daily's per-batch continuation never makes malformed saved state
+            # an excuse to create an unrelated fresh source task.
             for batch, group_pairs in groups:
                 terminal = (terminal_factory(ledger, batch) if terminal_factory is not None else default_terminal)
                 if terminal_factory is None:
@@ -567,29 +598,75 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
                     reject('terminal_recovery_factory_invalid')
                 terminal._read_control(batch)
                 terminals[batch['key']] = terminal
-                rows, summary = ledger._poll(batch['key'], batch['files'], ledger.clock() + remaining(),
-                                             interval, queue_budget, persist_terminal=False)
-                if (summary['missing'] or summary['pending'] or len(rows) != len(batch['files'])):
-                    reject('original_task_incomplete')
-                terminal._proof(batch, rows)  # Validate every original failure before any child POST.
-                preflight.append((batch, rows))
                 record_task(batch)
-            for batch, rows in preflight:
-                terminal = terminals[batch['key']]
-                for row in rows.values():
-                    verify_done(None, terminal._lineage(row, batch, batch, 0))
-            assert_inputs(ledger, pairs, bindings)
-            for batch, group_pairs in groups:
-                terminal = terminals[batch['key']]
-                rows, summary = terminal.run(group_pairs,
-                    authorization={'run_id': str(recovery_run_id), 'manifest_sha256': digest(raw_manifest)},
-                    timeout=remaining(), interval=interval, queue_budget=queue_budget, done_verifier=verify_done)
-                posts += summary['provider_posts']
-                if summary.get('ready_for_generation') is not True or len(rows) != len(group_pairs):
-                    reject('recovery_task_incomplete')
-                for path, row in rows:
-                    verify_done(path, row)
-                    resolved[row['data_id']] = row
+            incomplete_batches = []
+            if continue_batches:
+                for index, (batch, group_pairs) in enumerate(groups, 1):
+                    assert_inputs(ledger, pairs, bindings)
+                    # A pending first batch cannot consume the whole Daily run.
+                    # Unused time is redistributed to the remaining batches.
+                    budget = timeout if deadline is None else min(
+                        timeout, max(0, deadline - ledger.clock()) / (len(groups) - index + 1))
+                    if budget <= 0:
+                        incomplete_batches.append(batch['key'])
+                        daily_progress(index, batch, 'budget_exhausted')
+                        continue
+                    terminal = terminals[batch['key']]
+                    counted_posts = False
+                    active_batch_deadline = ledger.clock() + budget
+                    try:
+                        rows, summary = terminal.run(group_pairs,
+                            authorization={'run_id': str(recovery_run_id), 'manifest_sha256': digest(raw_manifest)},
+                            timeout=budget, interval=interval, queue_budget=queue_budget,
+                            done_verifier=verify_done, partial=True)
+                        posts += summary['provider_posts']
+                        counted_posts = True
+                        for path, row in rows:
+                            verify_done(path, row)
+                            resolved[row['data_id']] = row
+                        ready = (summary.get('ready_for_generation') is True and len(rows) == len(group_pairs)
+                                 and all((row['data_id'], row['full_zip_url']) in cache for _, row in rows))
+                        if not ready:
+                            incomplete_batches.append(batch['key'])
+                        daily_progress(index, batch, 'complete' if ready else 'incomplete', ready=ready, summary=summary)
+                    except (LedgerError, ConsumerError, RecoveryError) as error:
+                        if not counted_posts:
+                            posts += ledger.submission_posts
+                        incomplete_batches.append(batch['key'])
+                        category = safe_ledger_error_category(error) if isinstance(error, LedgerError) else type(error).__name__
+                        daily_progress(index, batch, 'incomplete', category=category)
+                        # Accepted/ambiguous tasks and completed ZIP cache entries
+                        # remain durable; proceed without resubmitting this group.
+                    finally:
+                        active_batch_deadline = None
+            else:
+                # Manual strict mode keeps its complete original GET/ZIP
+                # preflight before admitting even one failed recovery member.
+                preflight = []
+                for batch, group_pairs in groups:
+                    terminal = terminals[batch['key']]
+                    rows, summary = ledger._poll(batch['key'], batch['files'], ledger.clock() + remaining(),
+                                                 interval, queue_budget, persist_terminal=False)
+                    if (summary['missing'] or summary['pending'] or len(rows) != len(batch['files'])):
+                        reject('original_task_incomplete')
+                    terminal._proof(batch, rows)
+                    preflight.append((batch, rows))
+                for batch, rows in preflight:
+                    terminal = terminals[batch['key']]
+                    for row in rows.values():
+                        verify_done(None, terminal._lineage(row, batch, batch, 0))
+                assert_inputs(ledger, pairs, bindings)
+                for batch, group_pairs in groups:
+                    terminal = terminals[batch['key']]
+                    rows, summary = terminal.run(group_pairs,
+                        authorization={'run_id': str(recovery_run_id), 'manifest_sha256': digest(raw_manifest)},
+                        timeout=remaining(), interval=interval, queue_budget=queue_budget, done_verifier=verify_done)
+                    posts += summary['provider_posts']
+                    if summary.get('ready_for_generation') is not True or len(rows) != len(group_pairs):
+                        reject('recovery_task_incomplete')
+                    for path, row in rows:
+                        verify_done(path, row)
+                        resolved[row['data_id']] = row
             for group_pairs in fresh:
                 rows, summary = ledger.run(group_pairs, timeout=remaining(), interval=interval, queue_budget=queue_budget)
                 posts += summary['provider_posts']
@@ -608,6 +685,8 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
             # child ZIP forbids every complete-source handoff and downstream PDF.
             if deferred:
                 reject('ledger_child_result_tls_certificate_expired')
+            if incomplete_batches:
+                reject('recovery_task_incomplete')
             if len(resolved) != expected_reports:
                 reject('complete_source_gate')
             reports = []
