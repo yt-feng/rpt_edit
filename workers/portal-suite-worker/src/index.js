@@ -10945,41 +10945,62 @@ function marketViewsListCacheRequest(request) {
   return new Request(key.toString(), { method: "GET" });
 }
 
-function marketViewsListCacheResponse(response, request, env, status) {
+function marketViewsListCacheResponse(response, request, env, status, readStatus, storeStatus = "not_attempted") {
   const headers = new Headers(response.headers);
   // Recompute CORS even on hits; never reuse a previous caller's origin.
   for (const [name, value] of Object.entries(corsHeaders(request, env))) headers.set(name, value);
   headers.set("X-Portal-Market-Views-Cache", status);
+  // Fixed enums only: no cache keys, storage paths or provider exception text.
+  headers.set("X-Portal-Market-Views-Cache-Read", readStatus);
+  headers.set("X-Portal-Market-Views-Cache-Store", storeStatus);
   return new Response(response.body, { status: response.status, headers });
 }
 
 async function handleMarketViewsList(request, env) {
   const cacheRequest = marketViewsListCacheRequest(request);
   const cache = cacheRequest ? hotReportCacheStorage() : null;
+  let readStatus = cache ? "miss" : "bypass";
   if (cache) {
     try {
       const cached = await cache.match(cacheRequest);
       if (cached && hotReportResponseIsCacheable(cached)) {
-        return marketViewsListCacheResponse(cached, request, env, "HIT");
+        return marketViewsListCacheResponse(cached, request, env, "HIT", "hit");
       }
+      if (cached) readStatus = "rejected";
     } catch (_error) {
+      readStatus = "read_error";
       // Cache failures must not hide the public R2 directory.
     }
   }
   try {
     const items = await listMarketViewItems(env);
-    const response = jsonResponse(request, env, 200, {
+    // Set the storage policy when constructing the response. Keep this public
+    // directory independent of the generic no-store JSON response helper.
+    const response = new Response(JSON.stringify({
       items,
       total: items.length,
       required_plan: MARKET_VIEW_REQUIRED_PLAN,
       required_months: MARKET_VIEW_MIN_MONTHS,
       generated_at: new Date().toISOString(),
+    }), {
+      status: 200,
+      headers: {
+        ...corsHeaders(request, env),
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": cacheRequest ? "public, max-age=30" : "no-store",
+      },
     });
-    if (cacheRequest) response.headers.set("Cache-Control", "public, max-age=30");
+    let storeStatus = "not_attempted";
     if (cache) {
-      try { await cache.put(cacheRequest, response.clone()); } catch (_error) { /* Return the fresh directory. */ }
+      try {
+        await cache.put(cacheRequest, response.clone());
+        // A successful put is not proof that the platform retained the entry.
+        storeStatus = "put_ok";
+      } catch (_error) {
+        storeStatus = "put_error";
+      }
     }
-    return marketViewsListCacheResponse(response, request, env, cache ? "MISS" : "BYPASS");
+    return marketViewsListCacheResponse(response, request, env, cache ? "MISS" : "BYPASS", readStatus, storeStatus);
   } catch (error) {
     return jsonResponse(request, env, 503, { detail: error.message || "Market Views 暂时无法读取。" });
   }
