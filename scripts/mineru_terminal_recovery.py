@@ -18,6 +18,7 @@ from mineru_task_ledger import (
 )
 
 POLICY = 'terminal-failed-recovery-v1'
+AUTOMATIC_POLICY = 'daily-terminal-failed-recovery-v1'
 MAX_CHILDREN = 2
 HASH = re.compile(r'[a-f0-9]{64}')
 CODE = re.compile(r'[A-Za-z0-9_.:-]{1,128}')
@@ -48,17 +49,20 @@ class TerminalRecovery:
 
     ``authorization`` is an explicit reviewed-dispatch run ID and the complete
     original manifest hash. The caller must enforce its cloud workflow origin
-    and verify that manifest. An empty allowlist never retries any failure.
+    and verify that manifest. Manual recovery requires an explicit allowlist;
+    the separately named automatic policy permits only verified terminal failures.
     """
 
-    def __init__(self, ledger, *, allowed_error_codes=(), allowed_error_hashes=()):
+    def __init__(self, ledger, *, allowed_error_codes=(), allowed_error_hashes=(), automatic=False):
         self.ledger = ledger
         self.store = ledger.store
         codes, hashes = list(allowed_error_codes), list(allowed_error_hashes)
-        if (not all(isinstance(value, str) and CODE.fullmatch(value) for value in codes)
+        if (type(automatic) is not bool
+                or (automatic and (codes or hashes))
+                or not all(isinstance(value, str) and CODE.fullmatch(value) for value in codes)
                 or not all(isinstance(value, str) and HASH.fullmatch(value) for value in hashes)):
             raise LedgerError('Invalid explicit terminal recovery allowlist')
-        self.policy = {'name': POLICY, 'max_children': MAX_CHILDREN,
+        self.policy = {'name': AUTOMATIC_POLICY if automatic else POLICY, 'max_children': MAX_CHILDREN,
                        'allowed_error_codes': sorted(set(codes)),
                        'allowed_error_hashes': sorted(set(hashes))}
 
@@ -73,8 +77,15 @@ class TerminalRecovery:
         return copy.deepcopy(value)
 
     def _allowed(self, row):
-        return (error_code(row) in self.policy['allowed_error_codes']
-                or failure_hash(row) in self.policy['allowed_error_hashes'])
+        return self._allowed_proof(error_code(row), failure_hash(row))
+
+    def _allowed_proof(self, code, message_hash):
+        # Automatic recovery is authorized only by its caller's exact main
+        # Daily context. _proof still requires a fresh complete terminal GET;
+        # pending, missing and successful members can never become children.
+        return (self.policy['name'] == AUTOMATIC_POLICY
+                or code in self.policy['allowed_error_codes']
+                or message_hash in self.policy['allowed_error_hashes'])
 
     @staticmethod
     def _assert_bytes(files, paths):
@@ -205,8 +216,7 @@ class TerminalRecovery:
                     if (not isinstance(member['error_hash'], str) or not HASH.fullmatch(member['error_hash'])
                             or not isinstance(member['error_code'], str)
                             or (member['error_code'] and not CODE.fullmatch(member['error_code']))
-                            or not (member['error_code'] in self.policy['allowed_error_codes']
-                                    or member['error_hash'] in self.policy['allowed_error_hashes'])):
+                            or not self._allowed_proof(member['error_code'], member['error_hash'])):
                         raise LedgerError('Stored failure proof is not explicitly authorized')
                     failed.append(source_id)
                 elif member['error_hash'] is not None or member['error_code'] != '':
@@ -218,14 +228,13 @@ class TerminalRecovery:
             keys.add(previous_key)
         return key, control, version
 
-    @staticmethod
-    def _child_row(root, controller_key, entry):
+    def _child_row(self, root, controller_key, entry):
         ids = set(entry['file_ids'])
         return {'schema': 1, 'key': entry['key'], 'scope': root['scope'], 'endpoint': root['endpoint'],
                 'options': root['options'], 'token_identity': entry['initial_token_identity'],
                 'files': [item for item in root['files'] if item['id'] in ids],
                 'state': 'claiming', 'batch_id': None,
-                'recovery_parent': {'policy': POLICY, 'root_key': root['key'],
+                'recovery_parent': {'policy': self.policy['name'], 'root_key': root['key'],
                                     'controller_key': controller_key, 'ordinal': entry['ordinal'],
                                     'proof_sha256': entry['proof']['sha256']}}
 
@@ -342,7 +351,7 @@ class TerminalRecovery:
         unresolved = {item['id'] for item in root['files']} - set(resolved)
         failed = sum(source_id in unresolved and str(row['state']).lower() in FAILED
                      for source_id, row in latest_rows.items())
-        summary = {'policy': POLICY, 'root_key': root['key'], 'requested': len(root['files']),
+        summary = {'policy': self.policy['name'], 'root_key': root['key'], 'requested': len(root['files']),
                    'completed': len(resolved), 'failed': failed,
                    'pending': len(unresolved) - failed, 'provider_posts': self.ledger.submission_posts,
                    'original_batch': root_summary, 'recovery_children': child_summaries,

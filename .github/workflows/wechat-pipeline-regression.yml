@@ -21,6 +21,8 @@ on:
       - "scripts/*mineru_figure_sources*"
       - "scripts/*consume_legacy_mineru*"
       - "scripts/*recover_durable_mineru_sources*"
+      - "scripts/*recover_daily_mineru_sources*"
+      - "scripts/*private_market_ocr_checkpoint*"
       - "scripts/*package_publish_ready_outputs*"
       - ".github/workflows/market-views-latex-pdf.yml"
       - ".github/workflows/market-views-native-recovery.yml"
@@ -71,6 +73,8 @@ on:
       - "scripts/*mineru_figure_sources*"
       - "scripts/*consume_legacy_mineru*"
       - "scripts/*recover_durable_mineru_sources*"
+      - "scripts/*recover_daily_mineru_sources*"
+      - "scripts/*private_market_ocr_checkpoint*"
       - "scripts/*package_publish_ready_outputs*"
       - ".github/workflows/market-views-latex-pdf.yml"
       - ".github/workflows/market-views-native-recovery.yml"
@@ -142,6 +146,10 @@ jobs:
           python scripts/test_archive_market_views_originals.py
           python scripts/test_recover_private_wechat_handoff.py
           python scripts/test_market_views_workflow_contract.py
+          python scripts/test_market_views_publication.py
+          python scripts/test_build_market_views_ocr_fallback.py
+          python scripts/test_recover_daily_mineru_sources.py
+          python scripts/test_private_market_ocr_checkpoint.py
           python scripts/test_market_views_source_preview.py
           python scripts/test_replay_daily_sources.py
           python scripts/test_market_views_source_dates.py

@@ -97,7 +97,14 @@ def latest_date_dir(root: Path) -> Path:
     return max(candidates, key=lambda p: int(p.name))
 
 
-def register_cjk_font() -> str:
+def register_cjk_font(*, embedded: bool = False) -> str:
+    if embedded:
+        # OCR synthesis is a complete public report. Embed the bundled font so
+        # its Chinese text does not depend on a reader's external CID font pack.
+        import io
+        import fitz
+        pdfmetrics.registerFont(TTFont("MARKET_EMBEDDED_CJK", io.BytesIO(fitz.Font("cjk").buffer)))
+        return "MARKET_EMBEDDED_CJK"
     try:
         pdfmetrics.registerFont(UnicodeCIDFont("STSong-Light"))
         return "STSong-Light"
@@ -610,8 +617,8 @@ class MarketDocTemplate(BaseDocTemplate):
 
 
 def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
-    font = register_cjk_font()
     summary = load_json(summary_dir / "market_views_structured.json")
+    font = register_cjk_font(embedded=summary.get("source_kind") == "ocr-synthesis")
     reports = {item["id"]: item for item in load_json(summary_dir / "report_inputs.json")}
     figures = {
         item["figure_id"]: item
@@ -716,7 +723,8 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
     story.append(Paragraph(
         clean_text(
             f"投行/券商 {source_counts['bank_research']} 篇 | 战略咨询 {source_counts['consulting']} 篇 | "
-            f"智库/国际机构 {source_counts['institution']} 篇 | 正文原始图表 {len(selected_figure_ids)} 张 | 日期 {summary_dir.name}"
+            f"智库/国际机构 {source_counts['institution']} 篇 | "
+            f"{'正文重绘图表' if summary.get('source_kind') == 'ocr-synthesis' else '正文原始图表'} {len(selected_figure_ids)} 张 | 日期 {summary_dir.name}"
         ),
         styles["PortalRef"],
     ))
@@ -808,6 +816,18 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
         ),
         styles["PortalBody"],
     ))
+    if summary.get("source_kind") == "ocr-synthesis":
+        inventory = summary.get("source_inventory") or {}
+        story.append(Paragraph(clean_text(
+            f"原始文件 {inventory.get('selected_originals', len(reports))} 份；"
+            f"已尝试 {inventory.get('attempted_originals', len(reports))} 份；"
+            f"完成整理 {len(reports)} 份；跳过 {inventory.get('skipped_originals', 0)} 份。"
+        ), styles["PortalBody"]))
+        skipped = summary.get("skipped_reports") or []
+        if skipped:
+            story.append(Paragraph("跳过文件（单篇处理未完成，已继续其余报告）", styles["PortalH2"]))
+            for report in skipped:
+                story.append(Paragraph(clean_text(report.get("source_pdf") or "未命名文件"), styles["PortalSmall"]))
     original_coverage = original_source_coverage_sentence(reports)
     if original_coverage:
         story.append(Paragraph(clean_text(original_coverage), styles["PortalBody"]))
@@ -860,7 +880,8 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
     stats_path.write_text(json.dumps(render_stats, ensure_ascii=False, indent=2), encoding="utf-8")
     log(
         f"Fast PDF generated: {output_pdf} ({output_pdf.stat().st_size} bytes); "
-        f"MinerU figures rendered={len(rendered_figure_ids)}/{len(selected_figure_ids)}"
+        f"{'OCR reconstructed charts' if summary.get('source_kind') == 'ocr-synthesis' else 'MinerU figures'} "
+        f"rendered={len(rendered_figure_ids)}/{len(selected_figure_ids)}"
     )
 
 
