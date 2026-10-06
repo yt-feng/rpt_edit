@@ -8,6 +8,7 @@ exact-version environment variables before submitting the ordinary review.
 from __future__ import annotations
 
 import json
+from email.utils import parsedate_to_datetime
 import os
 from pathlib import Path
 import re
@@ -25,6 +26,70 @@ from portal_extended_publication import checked_batches, read_active_batches
 from portal_extended_r2 import DEFAULT_PREFIX, R2Store
 
 ENVIRONMENT = 'portal-extended-locales-production'
+RETRY_DELAYS = (5, 15, 30)
+
+
+class ReviewAPIError(ExpansionError):
+    def __init__(self, status=None, *, transient=False, retry_after=0):
+        self.status, self.transient, self.retry_after = status, transient, retry_after
+        super().__init__('Delegated review API failed: ' + (f'HTTP {status}' if status else 'transport or response'))
+
+
+def retry_delay(error, attempt):
+    delay = max(RETRY_DELAYS[attempt], error.retry_after)
+    require(delay <= 300, 'Delegated review Retry-After exceeds the bounded recovery window')
+    return delay
+
+
+def response_parts(raw):
+    headers = {}
+    while raw.startswith(b'HTTP/'):
+        separator = b'\r\n\r\n' if b'\r\n\r\n' in raw else b'\n\n'
+        head, found, body = raw.partition(separator)
+        require(bool(found), 'Delegated review response headers are incomplete')
+        lines = head.decode(errors='replace').splitlines()
+        headers = {key.strip().lower(): value.strip() for line in lines[1:] if ':' in line
+                   for key, value in [line.split(':', 1)]}
+        headers['status'] = lines[0].split()[1]
+        raw = body
+    return headers, raw
+
+
+def api_once(path, payload, method):
+    command = ['gh', 'api', path, '--include']
+    if method:
+        command += ['--method', method]
+    if payload is not None:
+        command += ['--input', '-']
+    try:
+        result = subprocess.run(command, input=stable_bytes(payload) if payload is not None else None,
+                                capture_output=True, check=False, timeout=60)
+    except subprocess.TimeoutExpired:
+        raise ReviewAPIError(transient=True) from None
+    headers, body = response_parts(result.stdout)
+    if result.returncode:
+        error = result.stderr.decode(errors='replace')
+        match = re.search(r'HTTP (\d{3})', error)
+        status = int(headers.get('status') or match[1]) if headers.get('status') or match else None
+        # Inspect diagnostic text only to classify it; never emit its contents.
+        forbidden = re.search(r'certificate|x509|permission denied|access denied|not logged in|sandbox', error, re.I)
+        transient = not forbidden and (status in (408, 429) or status is not None and 500 <= status <= 599
+            or status is None and re.search(r'timeout|timed out|error connecting|connection (?:reset|refused|aborted)|\bEOF\b|temporary failure|no such host', error, re.I))
+        retry_after = 0
+        if headers.get('retry-after'):
+            try:
+                retry_after = max(0, float(headers['retry-after']))
+            except ValueError:
+                try:
+                    retry_after = max(0, parsedate_to_datetime(headers['retry-after']).timestamp() - time.time())
+                except (ValueError, TypeError, OverflowError):
+                    raise ReviewAPIError(status) from None
+        raise ReviewAPIError(status, transient=bool(transient) and status not in (401, 403), retry_after=retry_after)
+    try:
+        return json.loads(body) if body.strip() else None
+    except (ValueError, UnicodeError):
+        # A successful write with an unreadable response may have been applied.
+        raise ReviewAPIError(transient=payload is not None or method not in (None, 'GET')) from None
 
 
 def require(condition, message):
@@ -34,18 +99,110 @@ def require(condition, message):
 
 def api(path, payload=None, method=None):
     require(path.startswith('repos/'), 'Unexpected delegated review API route')
-    command = ['gh', 'api', path]
-    if method:
-        command += ['--method', method]
-    if payload is not None:
-        command += ['--input', '-']
-    result = subprocess.run(command, input=stable_bytes(payload) if payload is not None else None,
-                            capture_output=True, check=False)
-    if result.returncode:
-        # Do not print credentials, signed redirects or arbitrary API bodies.
-        status = re.search(r'HTTP \d{3}', result.stderr.decode(errors='replace'))
-        raise ExpansionError(f'Delegated review API failed: {path} ({status[0] if status else result.returncode})')
-    return json.loads(result.stdout) if result.stdout.strip() else None
+    read_only = payload is None and method in (None, 'GET')
+    for attempt in range(4):
+        try:
+            return api_once(path, payload, method)
+        except ReviewAPIError as error:
+            if not read_only or not error.transient or attempt == 3:
+                raise
+            delay = retry_delay(error, attempt)
+            print(f'::notice::Transient delegated review read failure; retrying after {delay:g}s.')
+            time.sleep(delay)
+
+
+def approval_run_identity(run, repository, run_id, attempt, sha):
+    require(run.get('id') == int(run_id) and run.get('run_attempt') == int(attempt)
+            and run.get('head_sha') == sha and run.get('head_branch') == 'main'
+            and run.get('event') == 'workflow_dispatch'
+            and run.get('path') == '.github/workflows/neutral-edge-cutover.yml'
+            and all((run.get(key) or {}).get('full_name') == repository for key in ('repository', 'head_repository')),
+            'Delegated approval release run identity changed')
+
+
+def check_live_state(previous):
+    with requests.Session() as session:
+        response = session.get(ORIGIN+'/.well-known/edge-state', timeout=(10, 30), allow_redirects=False)
+        require(response.status_code == 200 and len(response.content) <= 65536 and response.json() == previous,
+                'Live release changed before delegated review')
+
+
+def accepted_approval_job(api_call, run_path, attempt, sha, approval_job):
+    for check in range(4):
+        jobs = api_call(run_path + f'/attempts/{attempt}/jobs?per_page=100')
+        require(jobs.get('total_count', 101) <= 100, 'Delegated approval jobs exceed verification bound')
+        selected = [job for job in jobs.get('jobs', []) if job.get('name') == approval_job]
+        require(len(selected) == 1 and selected[0].get('run_id') == int(run_path.rsplit('/', 1)[1])
+                and selected[0].get('head_sha') == sha,
+                'Accepted review approval job identity differs')
+        job = selected[0]
+        if job.get('started_at') and (job.get('status') == 'in_progress' or job.get('status') == 'completed'
+                                     and job.get('conclusion') in ('success', 'failure', 'timed_out')):
+            return
+        require(job.get('status') in ('queued', 'waiting', 'pending'),
+                'Accepted review has no eligible approval job')
+        if check < 3:
+            time.sleep(RETRY_DELAYS[check])
+    raise ExpansionError('Accepted review lacks an exact-attempt started approval job')
+
+
+def submit_approval(repository, run_id, environment, variables, comment, *, approval_job,
+                    revalidate, api_call=None):
+    """Reconcile an ambiguous approval before any bounded resubmission."""
+    api_call = api_call or api
+    attempt, sha = os.environ['GITHUB_RUN_ATTEMPT'], os.environ['GITHUB_SHA']
+    run_path = f'repos/{repository}/actions/runs/{run_id}'
+    env_path = f'repos/{repository}/environments/{ENVIRONMENT}'
+    pending_path = run_path + '/pending_deployments'
+    marker = digest(stable_bytes({'run_id': run_id, 'attempt': attempt, 'sha': sha,
+                                 'environment_id': environment['id'], 'variables': variables}))
+    comment += f' Review identity: {marker}.'
+    payload = {'environment_ids': [environment['id']], 'state': 'approved', 'comment': comment}
+    approval_run_identity(api_call(run_path), repository, run_id, attempt, sha)
+    baseline_history = api_call(run_path + '/approvals')
+    require(isinstance(baseline_history, list), 'Delegated approval history is invalid')
+    baseline = [stable_bytes(row) for row in baseline_history]
+    for submission in range(4):
+        try:
+            result = api_call(pending_path, payload, 'POST')
+            require(isinstance(result, list) and result, 'Delegated approval response lacks deployment records')
+            return result
+        except ReviewAPIError as error:
+            if not error.transient:
+                raise
+            # Even after the final POST, reconcile once: a failed response can
+            # hide a successful review. Empty pending alone proves nothing.
+            print('::notice::Ambiguous delegated review write; verifying existing approval before retry.')
+            if submission < 3:
+                time.sleep(retry_delay(error, submission))
+            approval_run_identity(api_call(run_path), repository, run_id, attempt, sha)
+            current = api_call(env_path)
+            keys = ('id', 'name', 'protection_rules', 'deployment_branch_policy')
+            require(all(current.get(key) == environment.get(key) for key in keys),
+                    'Delegated approval environment identity changed')
+            saved = api_call(env_path + '/variables?per_page=100')
+            require(saved.get('total_count', 101) <= 100
+                    and all({row['name']: row['value'] for row in saved['variables']}.get(key) == value
+                            for key, value in variables.items()), 'Delegated approval version identity changed')
+            pending = api_call(pending_path)
+            require(isinstance(pending, list), 'Delegated approval pending state is invalid')
+            pending = [row for row in pending if row.get('environment', {}).get('id') == environment['id']]
+            history = api_call(run_path + '/approvals')
+            require(isinstance(history, list), 'Delegated approval history is invalid')
+            approved = [row for row in history if stable_bytes(row) not in baseline
+                        and row.get('state') == 'approved' and row.get('comment') == comment
+                        and any(env.get('id') == environment['id'] and env.get('name') == ENVIRONMENT
+                                for env in row.get('environments', []))]
+            if approved:
+                require(not pending, 'Delegated approval acceptance conflicts with pending state')
+                accepted_approval_job(api_call, run_path, attempt, sha, approval_job)
+                approval_run_identity(api_call(run_path), repository, run_id, attempt, sha)
+                print('::notice::Ambiguous review response reconciled as accepted; deployment is not verified.')
+                return []
+            require(len(pending) == 1 and pending[0].get('current_user_can_approve') is True,
+                    'Ambiguous delegated approval remains unverified; no second submission')
+            require(submission < 3, 'Delegated approval transient retry budget exhausted')
+            revalidate()
 
 
 def admission_is_valid(admitted, run, jobs, repository):
@@ -214,10 +371,7 @@ def main():
                 'Handoff source scope or page count differs')
     root = Path('_release_validation')
     previous = json.loads((root/'previous/edge-state.json').read_text())
-    with requests.Session() as session:
-        response = session.get(ORIGIN+'/.well-known/edge-state', timeout=(10, 30), allow_redirects=False)
-        require(response.status_code == 200 and len(response.content) <= 65536 and response.json() == previous,
-                'Live release changed before delegated review')
+    check_live_state(previous)
     active = read_active_batches(store, previous)
     identity = json.loads((root/'candidate/extended-locale-review-identity.json').read_text())
     assembly = json.loads((root/'candidate/extended-assembly.json').read_text())
@@ -256,8 +410,9 @@ def main():
     record_key = store.key('publication-approvals', digest(record), 'receipt.json')
     store._put(record_key, record, metadata={'kind': 'delegated-publication-approval'})
     require(store._get(record_key, maximum=65536) == record, 'Private approval record did not persist')
-    result = api(pending_path, {'environment_ids': [environment['id']], 'state': 'approved',
-        'comment': f'Operator-delegated daily review: exact private handoff {receipt_id}, prepared tree {identity["static_tree_sha256"]}; existing locale scope, source day, producer, active ledger and full preparation verified. Normal cutover acceptance and rollback remain required.'}, 'POST')
+    result = submit_approval(repository, run_id, environment, variables,
+        f'Operator-delegated daily review: exact private handoff {receipt_id}, prepared tree {identity["static_tree_sha256"]}; existing locale scope, source day, producer, active ledger and full preparation verified. Normal cutover acceptance and rollback remain required.',
+        approval_job='extended_locales_approval', revalidate=lambda: check_live_state(previous), api_call=api)
     print(json.dumps({'review_submitted': True, 'deployed': False, 'release_run_id': run_id,
                       'handoff': receipt_id, 'deployment_ids': [row['id'] for row in result]}))
 

@@ -262,6 +262,10 @@ class EnglishPublicationTests(unittest.TestCase):
                    'head_repository': {'full_name': 'example/repo'}}
         cpu = {**capture, 'id': 456, 'head_sha': 'c'*40, 'head_branch': 'main', 'path': CPU_PRODUCER['workflow'], 'conclusion': 'failure'}
         def api(path, payload=None, method=None):
+            if path.endswith('/runs/900'):
+                return {**cpu, 'id': 900, 'head_sha': 'a'*40,
+                        'path': '.github/workflows/neutral-edge-cutover.yml'}
+            if path.endswith('/runs/900/approvals'): return []
             if '/runs/123/attempts/1/jobs' in path:
                 return {'total_count': 1, 'jobs': [{'name': 'source_snapshot', 'status': 'completed', 'conclusion': 'success',
                          'started_at': DAY+'T01:00:00Z', 'completed_at': DAY+'T01:10:00Z'}]}
@@ -273,7 +277,7 @@ class EnglishPublicationTests(unittest.TestCase):
                 return {'id': 42, 'name': 'portal-extended-locales-production',
                         'protection_rules': [{'type': 'required_reviewers', 'reviewers': [{'type': 'User'}]}]}
             if '/pending_deployments' in path:
-                if payload is not None: submitted.append(payload); return []
+                if payload is not None: submitted.append(payload); return [{'id': 999}]
                 return [{'environment': {'id': 42}, 'current_user_can_approve': can_approve}]
             if '/variables' in path:
                 if payload is not None: variables[payload['name']] = payload['value']; return None
@@ -282,6 +286,7 @@ class EnglishPublicationTests(unittest.TestCase):
             raise AssertionError('unexpected reviewer API route: '+path)
         environment = {'GITHUB_ACTIONS': 'true', 'GITHUB_REF': 'refs/heads/main', 'GITHUB_EVENT_NAME': 'workflow_dispatch',
                        'KC_ENGLISH_AUTO_REVIEW': 'true', 'GITHUB_REPOSITORY': 'example/repo', 'GITHUB_RUN_ID': '900',
+                       'GITHUB_RUN_ATTEMPT': '1',
                        'GITHUB_SHA': 'a'*40, 'GH_TOKEN': 'synthetic', 'ENGLISH_HANDOFF': handoff_id,
                        'CANDIDATE_SLOT': 'b', 'CANDIDATE_RELEASE': 'b'*32, 'CANDIDATE_STATIC_TREE': candidate['tree_sha256']}
         session = mock.Mock(); session.get.return_value = mock.Mock(status_code=200, content=stable_bytes(previous), json=lambda: previous)
