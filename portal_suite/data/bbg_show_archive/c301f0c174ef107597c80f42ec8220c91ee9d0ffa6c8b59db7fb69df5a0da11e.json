@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "id": "c301f0c174ef107597c80f42ec8220c91ee9d0ffa6c8b59db7fb69df5a0da11e",
+  "slug": "bbg-20261005-c301f0c174ef1075",
+  "date": "2026-10-05",
+  "title": "拿不到高端芯片：中国AI把差距压到3%，美国还能守住领先吗？",
+  "speaker": "Robert Lee",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-10-05/the-china-show-10-5-2026-video",
+  "start": 4520.8,
+  "end": 4588.7,
+  "segments": [
+    {
+      "start": 4520.8,
+      "end": 4527.0,
+      "en": "done it again. How do they get there? With a sole focus on architectural efficiency so again",
+      "zh": "又做到了。它们是怎么做到的？靠的是专注架构效率，"
+    },
+    {
+      "start": 4527.0,
+      "end": 4532.4,
+      "en": "essentially doing more with less because as we were aware Chinese firms are precluded from",
+      "zh": "本质上是以更少资源做更多事，因为众所周知，中国企业被限制"
+    },
+    {
+      "start": 4532.4,
+      "end": 4537.6,
+      "en": "accessing high-end Nvidia chips so therefore it's forced them to innovate, forced them to focus on",
+      "zh": "获取英伟达高端芯片，这迫使它们创新，迫使它们聚焦"
+    },
+    {
+      "start": 4537.6,
+      "end": 4544.2,
+      "en": "software optimization to squeeze more out of these models so by focusing on memory efficiencies",
+      "zh": "软件优化，从这些模型中榨出更多性能，通过聚焦内存效率"
+    },
+    {
+      "start": 4544.2,
+      "end": 4549.4,
+      "en": "and also computational efficiencies. So the results as we've seen speak for themselves the gap",
+      "zh": "以及计算效率。结果正如我们所见，不言自明，差距"
+    },
+    {
+      "start": 4549.4,
+      "end": 4554.7,
+      "en": "in terms of overall performance in these models is narrowed to a record low of 3%. So really",
+      "zh": "在这些模型的整体表现上已缩小至3%的历史低位。所以真的"
+    },
+    {
+      "start": 4554.7,
+      "end": 4559.7,
+      "en": "it's a neck and neck race between China and America at the moment. Where are we in that neck and",
+      "zh": "目前中美之间是一场并驾齐驱的竞赛。我们在这场"
+    },
+    {
+      "start": 4559.7,
+      "end": 4564.2,
+      "en": "neck race now? Do you ever see China could one day overtake the US when it comes to AI?",
+      "zh": "竞赛中处于什么位置？你认为中国有朝一日会在AI上超越美国吗？"
+    },
+    {
+      "start": 4564.9,
+      "end": 4569.4,
+      "en": "Without contradicting what I've just said I think the Americans because they still have access",
+      "zh": "不与我刚才说的矛盾，我认为美国因为仍能获取"
+    },
+    {
+      "start": 4569.4,
+      "end": 4577.1,
+      "en": "to high-end chips will probably maintain a narrow lead overall but again in the absence of legally",
+      "zh": "高端芯片，总体上可能保持微弱领先，但同样，在无法合法"
+    },
+    {
+      "start": 4577.1,
+      "end": 4581.9,
+      "en": "obtaining those chips then you know is a heads breath between the two countries at the moment.",
+      "zh": "获得这些芯片的情况下，目前两国之间是并驾齐驱。"
+    },
+    {
+      "start": 4581.9,
+      "end": 4588.7,
+      "en": "So it really is a global race neck and neck race between these two economic and technology superpowers.",
+      "zh": "所以这确实是一场全球竞赛，两个经济与技术超级大国之间的并驾齐驱。"
+    }
+  ]
+}
