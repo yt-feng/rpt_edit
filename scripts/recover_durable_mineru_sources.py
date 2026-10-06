@@ -22,7 +22,7 @@ from consume_legacy_mineru import (ConsumerError, NetworkStop, chart_assets,
 from mineru_figure_sources import ERRORS as FIGURE_ERROR_CATEGORIES, FigureSourceError, validate_figure_sources
 from mineru_task_ledger import (DONE, FAILED, Ledger, LedgerError, Provider, R2Store,
                                digest, encoded, exact_json, schema_v1)
-from mineru_terminal_recovery import TerminalRecovery, task_identity
+from mineru_terminal_recovery import AUTOMATIC_POLICY, TerminalRecovery, task_identity
 from mineru_result_cache import ResultCache, identity as result_identity
 from smoke_mineru_api import NoRedirectHTTP, credentials
 
@@ -464,7 +464,7 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
                     recovery_execution_sha=None,
                     allowed_error_codes=(), allowed_error_hashes=(), downloader=download_once,
                     asset_writer=chart_assets, timeout=1800, interval=15, queue_budget=300, result_cache=None,
-                    authenticated_downloader=None):
+                    authenticated_downloader=None, terminal_factory=None, total_timeout=None):
     if ledger.scope != 'dropbox' or not exact_json(ledger.options, OPTIONS):
         reject('ledger_scope_options')
     if (not RUN.fullmatch(str(recovery_run_id)) or (source_run_id and not RUN.fullmatch(str(source_run_id)))
@@ -476,6 +476,17 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
         reject('recovery_execution_sha')
     raw_manifest, bindings, pairs = frozen_inputs(input_dir, manifest_path, expected_reports, date_folder)
     groups, fresh = original_groups(ledger, pairs, source_run_id=source_run_id, allow_fresh=allow_fresh)
+    if total_timeout is not None and (type(total_timeout) not in {int, float}
+            or not 0 < total_timeout <= 3600):
+        reject('recovery_time_budget_invalid')
+    deadline = None if total_timeout is None else ledger.clock() + total_timeout
+    def remaining():
+        if deadline is None:
+            return timeout
+        budget = min(timeout, deadline - ledger.clock())
+        if budget <= 0:
+            reject('recovery_time_budget_exhausted')
+        return budget
     destination = Path(output_dir)
     if destination.exists() or destination.is_symlink():
         reject('destination_exists')
@@ -487,6 +498,7 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
             cache, deferred, root_for_id, resolved, posts, tasks = {}, {}, {}, {}, 0, []
             source_bindings = {item['id']: item for item in (ledger.bind(path, source) for path, source in pairs)}
             def verify_done(path, row):
+                remaining()
                 if str(row.get('state', '')).lower() not in DONE:
                     return
                 source_id = row.get('data_id')
@@ -537,13 +549,25 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
                               'batch_id': batch['batch_id'], 'data_ids': [item['id'] for item in batch['files']]})
                 for item in batch['files']:
                     root_for_id[item['id']] = batch['key']
-            terminal = TerminalRecovery(ledger, allowed_error_codes=allowed_error_codes,
-                                        allowed_error_hashes=allowed_error_hashes)
+            default_terminal = TerminalRecovery(ledger, allowed_error_codes=allowed_error_codes,
+                                                allowed_error_hashes=allowed_error_hashes)
+            terminals = {}
             # Complete all original GETs and validate every successful original ZIP
             # before even one failed member can be admitted to a recovery child.
             preflight = []
             for batch, group_pairs in groups:
-                rows, summary = ledger._poll(batch['key'], batch['files'], ledger.clock() + timeout,
+                terminal = (terminal_factory(ledger, batch) if terminal_factory is not None else default_terminal)
+                if terminal_factory is None:
+                    control, _ = ledger.store.get('recoveries/' + batch['key'].split('/')[1])
+                    if isinstance(control, dict) and isinstance(control.get('policy'), dict) and control['policy'].get('name') == AUTOMATIC_POLICY:
+                        # A manual continuation resumes the already authorized
+                        # Daily controller; it cannot reset its child budget.
+                        terminal = TerminalRecovery(ledger, automatic=True)
+                if not isinstance(terminal, TerminalRecovery) or terminal.ledger is not ledger:
+                    reject('terminal_recovery_factory_invalid')
+                terminal._read_control(batch)
+                terminals[batch['key']] = terminal
+                rows, summary = ledger._poll(batch['key'], batch['files'], ledger.clock() + remaining(),
                                              interval, queue_budget, persist_terminal=False)
                 if (summary['missing'] or summary['pending'] or len(rows) != len(batch['files'])):
                     reject('original_task_incomplete')
@@ -551,13 +575,15 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
                 preflight.append((batch, rows))
                 record_task(batch)
             for batch, rows in preflight:
+                terminal = terminals[batch['key']]
                 for row in rows.values():
                     verify_done(None, terminal._lineage(row, batch, batch, 0))
             assert_inputs(ledger, pairs, bindings)
             for batch, group_pairs in groups:
+                terminal = terminals[batch['key']]
                 rows, summary = terminal.run(group_pairs,
                     authorization={'run_id': str(recovery_run_id), 'manifest_sha256': digest(raw_manifest)},
-                    timeout=timeout, interval=interval, queue_budget=queue_budget, done_verifier=verify_done)
+                    timeout=remaining(), interval=interval, queue_budget=queue_budget, done_verifier=verify_done)
                 posts += summary['provider_posts']
                 if summary.get('ready_for_generation') is not True or len(rows) != len(group_pairs):
                     reject('recovery_task_incomplete')
@@ -565,7 +591,7 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
                     verify_done(path, row)
                     resolved[row['data_id']] = row
             for group_pairs in fresh:
-                rows, summary = ledger.run(group_pairs, timeout=timeout, interval=interval, queue_budget=queue_budget)
+                rows, summary = ledger.run(group_pairs, timeout=remaining(), interval=interval, queue_budget=queue_budget)
                 posts += summary['provider_posts']
                 if summary.get('ready_for_generation') is not True or len(rows) != len(group_pairs):
                     reject('fresh_task_incomplete')

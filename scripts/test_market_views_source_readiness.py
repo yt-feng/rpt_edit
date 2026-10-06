@@ -5,7 +5,7 @@ import re
 import unittest
 from pathlib import Path
 
-from market_views_source_readiness import SOURCE_GATES, SourceReadinessError, require_source_readiness
+from market_views_source_readiness import SOURCE_GATES, SOURCE_KIND_GATES, SourceReadinessError, require_source_readiness
 
 WORKFLOWS = Path(__file__).resolve().parents[1] / '.github/workflows'
 MANUAL = '.github/workflows/market-views-native-recovery.yml'
@@ -29,6 +29,59 @@ def evidence(workflow=MANUAL, *, status='in_progress', conclusion=None):
 
 
 class ReadinessTests(unittest.TestCase):
+    def kind_evidence(self, workflow, kind):
+        producer, jobs = evidence(DAILY)
+        producer['path'] = workflow
+        job_name, gates = SOURCE_KIND_GATES[(workflow, kind)]
+        jobs['jobs'][0].update(name=job_name, steps=[
+            {'name': name, 'number': number, 'status': 'completed', 'conclusion': 'success'}
+            for number, name in enumerate(gates, start=3)
+        ])
+        return producer, jobs
+
+    def test_daily_mineru_and_ocr_require_their_own_exact_complete_handoff(self):
+        for kind in ('mineru-recovery', 'ocr-synthesis'):
+            producer, jobs = self.kind_evidence(DAILY, kind)
+            report = require_source_readiness(producer, jobs, source_kind=kind)
+            self.assertEqual(report['source_kind'], kind)
+            for other in ('native-pdf', 'mineru-recovery', 'ocr-synthesis'):
+                if other != kind:
+                    with self.subTest(kind=kind, other=other), self.assertRaises(SourceReadinessError):
+                        require_source_readiness(producer, jobs, source_kind=other)
+            for index in range(2):
+                for conclusion in ('failure', 'skipped', 'cancelled', None):
+                    changed = copy.deepcopy(jobs)
+                    changed['jobs'][0]['steps'][index]['conclusion'] = conclusion
+                    with self.subTest(kind=kind, index=index, conclusion=conclusion), self.assertRaises(SourceReadinessError):
+                        require_source_readiness(producer, changed, source_kind=kind)
+
+    def test_failed_native_gates_do_not_block_independently_complete_mineru_recovery(self):
+        producer, jobs = self.kind_evidence(DAILY, 'mineru-recovery')
+        jobs['jobs'][0]['steps'].append({'name': SOURCE_GATES[DAILY][1][0], 'number': 8,
+                                        'status': 'completed', 'conclusion': 'failure'})
+        producer.update(status='completed', conclusion='failure')
+        self.assertTrue(require_source_readiness(producer, jobs, source_kind='mineru-recovery')['ready'])
+
+    def test_manual_mineru_recovery_has_exact_existing_gates_and_event(self):
+        workflow = '.github/workflows/market-views-mineru-recovery.yml'
+        producer, jobs = self.kind_evidence(workflow, 'mineru-recovery')
+        self.assertTrue(require_source_readiness(producer, jobs, source_kind='mineru-recovery')['ready'])
+        with self.assertRaisesRegex(SourceReadinessError, 'explicit_source_kind_required'):
+            require_source_readiness(producer, jobs)
+        for event in ('schedule', 'pull_request', None):
+            with self.subTest(event=event), self.assertRaisesRegex(SourceReadinessError, 'invalid_mineru_source_producer'):
+                require_source_readiness({**producer, 'event': event}, jobs, source_kind='mineru-recovery')
+        text = (WORKFLOWS / Path(workflow).name).read_text()
+        gate_positions = [text.index('- name: ' + name + '\n') for name in SOURCE_KIND_GATES[(workflow, 'mineru-recovery')][1]]
+        self.assertEqual(gate_positions, sorted(gate_positions))
+
+    def test_source_pages_and_unknown_kind_cannot_claim_complete_synthesis(self):
+        producer, jobs = self.kind_evidence(DAILY, 'ocr-synthesis')
+        for kind in ('source-pages', 'standard', '', [], 'PRIVATE unknown'):
+            with self.subTest(kind=kind), self.assertRaisesRegex(SourceReadinessError, 'unsupported_source_kind_for_producer') as error:
+                require_source_readiness(producer, jobs, source_kind=kind)
+            self.assertNotIn('PRIVATE', str(error.exception))
+
     def test_legacy_sources_require_all_complete_materialization_archive_and_readback_gates(self):
         producer, jobs = evidence(LEGACY)
         self.assertTrue(require_source_readiness(producer, jobs)['ready'])
@@ -172,14 +225,26 @@ class ReadinessTests(unittest.TestCase):
                 require_source_readiness(producer, jobs)
 
     def test_declared_gate_titles_match_current_producer_workflows_and_order(self):
-        for workflow, (name, gates) in SOURCE_GATES.items():
-            text = (WORKFLOWS / Path(workflow).name).read_text()
-            block = re.search(rf'(?ms)^  {re.escape(name)}:\n(.*?)(?=^  [\w-]+:\n|\Z)', text).group(1)
-            positions = []
-            for gate in gates:
-                self.assertEqual(block.count('- name: ' + gate + '\n'), 1)
-                positions.append(block.index('- name: ' + gate + '\n'))
-            self.assertEqual(positions, sorted(positions))
+        # Old Daily native-PDF runs remain admissible from their captured gates.
+        # Today's Daily producer uses MinerU recovery or OCR synthesis instead.
+        historical_daily_native = (DAILY, 'native-pdf')
+        self.assertEqual(SOURCE_KIND_GATES[historical_daily_native], SOURCE_GATES[DAILY])
+        producer, jobs = self.kind_evidence(*historical_daily_native)
+        self.assertTrue(require_source_readiness(producer, jobs, source_kind='native-pdf')['ready'])
+        current = {key: gates for key, gates in SOURCE_KIND_GATES.items()
+                   if key != historical_daily_native}
+        self.assertTrue({(DAILY, 'mineru-recovery'), (DAILY, 'ocr-synthesis')}.issubset(current))
+        for (workflow, kind), (name, gates) in current.items():
+            with self.subTest(workflow=workflow, kind=kind):
+                text = (WORKFLOWS / Path(workflow).name).read_text()
+                match = re.search(rf'(?ms)^  {re.escape(name)}:\n(.*?)(?=^  [\w-]+:\n|\Z)', text)
+                self.assertIsNotNone(match, 'Declared source job is absent from its current workflow')
+                block = match.group(1)
+                positions = []
+                for gate in gates:
+                    self.assertEqual(block.count('- name: ' + gate + '\n'), 1)
+                    positions.append(block.index('- name: ' + gate + '\n'))
+                self.assertEqual(positions, sorted(positions))
 
     def test_consumer_checks_latest_source_gates_before_receipt_and_paid_generation(self):
         workflow = (WORKFLOWS / 'market-views-latex-pdf.yml').read_text()

@@ -239,6 +239,8 @@ def private_publication_complete(
     *,
     expected_sha256: str | None = None,
     expected_edition: str | None = None,
+    allow_edition_upgrade: bool = False,
+    expected_source_inventory_sha256: str | None = None,
     client: Any | None = None,
     bucket: str | None = None,
 ) -> bool:
@@ -275,7 +277,15 @@ def private_publication_complete(
             return False
         raise
     if expected_edition is not None and item.get("edition", "standard") != expected_edition:
+        ranks = {"source-pages": 0, "ocr-synthesis": 1, "standard": 2}
+        current = item.get("edition", "standard")
+        if (allow_edition_upgrade and current in ranks and expected_edition in ranks
+                and ranks[current] < ranks[expected_edition]):
+            return False
         raise RuntimeError("Private and public Market Views editions disagree; refusing ambiguous reuse")
+    if (expected_source_inventory_sha256 is not None
+            and item.get("source_inventory_sha256") != expected_source_inventory_sha256):
+        return False
     return expected_sha256 is None or item["sha256"] == expected_sha256
 
 
@@ -336,12 +346,35 @@ def upload_market_view(
     updated_at: str | None = None,
     if_absent: bool = False,
     edition: str = "standard",
+    source_receipt: Path | str | None = None,
 ) -> dict[str, Any]:
     """Upload and verify the PDF, then publish its metadata item."""
     issue_date, date_key = parse_issue_date(date_value)
-    if edition not in {"standard", "source-pages"}:
+    if edition not in {"standard", "source-pages", "ocr-synthesis"}:
         raise ValueError("Unknown Market Views edition")
     path = Path(pdf_path).expanduser()
+    synthesis = None
+    if edition == "ocr-synthesis":
+        if source_receipt is None:
+            raise ValueError("OCR synthesis publication requires its verified source receipt")
+        from market_views_publication import validate_ocr_synthesis_receipt
+        receipt_path = Path(source_receipt)
+        if receipt_path.parent.resolve() != path.parent.resolve():
+            raise ValueError("OCR receipt and generated PDF must belong to the same output directory")
+        raw_receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+        synthesis = validate_ocr_synthesis_receipt(
+            receipt_path.parent, date_folder=date_key,
+            expected_reports=raw_receipt.get("expected_reports"),
+            source_run_id=raw_receipt.get("source_run_id"),
+            execution_sha=raw_receipt.get("execution_sha"),
+        )
+        import fitz
+        from market_views_source_preview import degraded_pdf
+        with fitz.open(path) as document:
+            if not len(document) or not any(page.get_text().strip() for page in document):
+                raise ValueError("OCR synthesis PDF must contain actual generated text")
+        if degraded_pdf(path):
+            raise ValueError("Source-page PDF cannot be relabelled as OCR synthesis")
     if edition == "source-pages":
         from market_views_source_preview import verify_pdf
         verify_pdf(path)
@@ -440,6 +473,17 @@ def upload_market_view(
     if edition == "source-pages":
         item.update(edition="source-pages", quality_status="degraded",
                     title=f"Market Views 备用来源版（解析服务异常） · {issue_date.isoformat()}")
+    elif synthesis is not None:
+        item.update(
+            edition="ocr-synthesis",
+            quality_status="partial" if synthesis["skipped_reports"] else "generated",
+            title=f"Market Views · {issue_date.isoformat()}（OCR整理，{synthesis['summarized_reports']}/{synthesis['expected_reports']}篇）",
+            source_inventory_sha256=synthesis["source_inventory_sha256"],
+            source_receipt_sha256=synthesis["source_receipt_sha256"],
+            source_expected_reports=synthesis["expected_reports"],
+            source_summarized_reports=synthesis["summarized_reports"],
+            source_skipped_reports=synthesis["skipped_reports"],
+        )
     item_body = (json.dumps(item, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n").encode(
         "utf-8"
     )
@@ -458,7 +502,8 @@ def main() -> int:
     parser.add_argument("--date", required=True, help="Issue date in YYMMDD or YYYYMMDD form.")
     parser.add_argument("--pdf", required=True, help="Path to market_views_<date>.pdf.")
     parser.add_argument("--bucket", default="", help="Optional R2 bucket override.")
-    parser.add_argument("--edition", choices=("standard", "source-pages"), default="standard")
+    parser.add_argument("--edition", choices=("standard", "source-pages", "ocr-synthesis"), default="standard")
+    parser.add_argument("--source-receipt", default=None, help="Exact OCR synthesis receipt beside the generated PDF.")
     parser.add_argument(
         "--if-absent",
         action="store_true",
@@ -476,6 +521,7 @@ def main() -> int:
             bucket=args.bucket or None,
             if_absent=args.if_absent,
             edition=args.edition,
+            source_receipt=args.source_receipt,
         )
     except (FileNotFoundError, RuntimeError, ValueError) as exc:
         raise SystemExit(str(exc)) from exc

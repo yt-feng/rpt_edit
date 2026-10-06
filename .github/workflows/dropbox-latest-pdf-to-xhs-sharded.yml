@@ -768,29 +768,80 @@ jobs:
           retention-days: 2
 
   recover-market-sources:
-    # Completed original PDF artifacts remain usable when MinerU extraction,
-    # its result CDN, or report-copy generation fails. This branch never makes
-    # another MinerU submission or changes the notes job's failure state.
+    # Resume accepted MinerU tasks first, then summarize all original PDFs with
+    # cloud OCR if needed. Failed reports remain recorded; successful work stays.
     needs: [resolve-inputs, select-macro-reports, process-shard, source-outcome]
     if: ${{ always() && !cancelled() && needs.select-macro-reports.result == 'success' && needs.source-outcome.outputs.primary_ready == 'false' && needs.select-macro-reports.outputs.selected_count != '0' && (needs.resolve-inputs.outputs.replay_source_run_id == '' || needs.source-outcome.outputs.provider_only == 'true') }}
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 150
     outputs:
       source_kind: ${{ steps.source-kind.outputs.source_kind }}
     steps:
+      - name: Initialize DeepSeek usage ledger
+        shell: bash
+        run: |
+          usage_dir="$(mktemp -d "$RUNNER_TEMP/deepseek-usage.XXXXXX")"
+          usage_dir="$(cd "$usage_dir" && pwd -P)"
+          echo "DEEPSEEK_USAGE_DIR=$usage_dir" >> "$GITHUB_ENV"
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
-          sparse-checkout: scripts
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github
+            scripts
+            prompts
+            requirements.txt
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Install native source and handoff dependencies
-        run: python -m pip install PyMuPDF Pillow "boto3>=1.37.32,<2"
-      - name: Install enabled cloud OCR backup
+      - name: Install source recovery and synthesis dependencies
         timeout-minutes: 5
+        run: python -m pip install -r requirements.txt reportlab "boto3>=1.37.32,<2"
+      - name: Download exact selected original PDFs
+        timeout-minutes: 5
+        uses: actions/download-artifact@v4
+        with:
+          name: selected-macro-pdfs-${{ github.run_id }}
+          path: _selected_macro_pdfs
+      - name: Recover existing MinerU tasks for daily Market Views
+        id: mineru-recover
+        timeout-minutes: 15
         continue-on-error: true
-        if: ${{ vars.MARKET_VIEWS_OCR_BACKUP_ENABLED == 'true' }}
+        if: ${{ needs.resolve-inputs.outputs.replay_source_run_id == '' && needs.source-outcome.outputs.provider_only == 'true' }}
+        env:
+          REPLAY_SOURCE_RUN_ID: ${{ needs.resolve-inputs.outputs.replay_source_run_id }}
+          MINERU_FORBID_NEW_SUBMISSIONS: ${{ needs.resolve-inputs.outputs.forbid_new_submissions }}
+          MINER_U: ${{ secrets.MINER_U }}
+          MINER_U_2: ${{ secrets.MINER_U_2 }}
+          MINER_U_3: ${{ secrets.MINER_U_3 }}
+          MINER_U_4: ${{ secrets.MINER_U_4 }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}
+          EXPECTED_ARTICLES: ${{ needs.select-macro-reports.outputs.selected_count }}
+        run: |
+          python scripts/recover_daily_mineru_sources.py \
+            --input-dir _selected_macro_pdfs --output-dir _mineru_market_sources/shard_0 \
+            --expected-reports "$EXPECTED_ARTICLES" --date-folder "$DATE_FOLDER" --timeout 840
+      - name: Save complete recovered MinerU sources to private R2
+        timeout-minutes: 5
+        if: ${{ steps.mineru-recover.outcome == 'success' }}
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python scripts/private_workflow_handoff.py upload-dir \
+            --source _mineru_market_sources/shard_0 \
+            --key "_private-workflow-handoff/mineru-market-sources/${{ github.run_id }}/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_0.tar.gz"
+      - name: Install complete cloud OCR synthesis dependencies
+        timeout-minutes: 5
+        if: ${{ steps.mineru-recover.outcome != 'success' }}
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends tesseract-ocr tesseract-ocr-eng tesseract-ocr-chi-sim
@@ -799,75 +850,60 @@ jobs:
           test -f "$TESSDATA_DIR/eng.traineddata"
           test -f "$TESSDATA_DIR/chi_sim.traineddata"
           echo "TESSDATA_PREFIX=$TESSDATA_DIR" >> "$GITHUB_ENV"
-      - name: Download exact selected original PDFs
-        uses: actions/download-artifact@v4
-        with:
-          name: selected-macro-pdfs-${{ github.run_id }}
-          path: _selected_macro_pdfs
-      - name: Extract and verify every original report for Market Views
-        timeout-minutes: 20
-        id: native-extract
+      - name: Restore private source-bound OCR synthesis cache
+        timeout-minutes: 3
         continue-on-error: true
-        env:
-          ENABLE_OCR: ${{ vars.MARKET_VIEWS_OCR_BACKUP_ENABLED || 'false' }}
-          DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}
-        run: |
-          OCR_ARGS=()
-          if [ "$ENABLE_OCR" = "true" ]; then OCR_ARGS+=(--enable-ocr); fi
-          python scripts/extract_native_market_sources.py \
-            --input-dir _selected_macro_pdfs \
-            --manifest _selected_macro_pdfs/selected_to_process_manifest.json \
-            --output-dir _native_market_sources/shard_0 \
-            --expected-reports "${{ needs.select-macro-reports.outputs.selected_count }}" \
-            --date-folder "$DATE_FOLDER" \
-            --producer-run-id "$GITHUB_RUN_ID" \
-            --execution-sha "$GITHUB_SHA" \
-            --original-source-run-id "$GITHUB_RUN_ID" \
-            "${OCR_ARGS[@]}"
-          python scripts/extract_native_market_sources.py validate \
-            --manifest _native_market_sources/shard_0/selected_to_process_manifest.json \
-            --output-dir _native_market_sources/shard_0 \
-            --expected-reports "${{ needs.select-macro-reports.outputs.selected_count }}" \
-            --date-folder "$DATE_FOLDER" \
-            --producer-run-id "$GITHUB_RUN_ID" \
-            --execution-sha "$GITHUB_SHA" \
-            --original-source-run-id "$GITHUB_RUN_ID"
-      - name: Audit complete cloud OCR backup evidence
-        timeout-minutes: 10
-        id: native-audit
-        if: ${{ steps.native-extract.outcome == 'success' }}
-        continue-on-error: true
-        run: |
-          python scripts/audit_market_views_ocr_receipt.py \
-            --source-dir _native_market_sources/shard_0 \
-            --expected-reports "${{ needs.select-macro-reports.outputs.selected_count }}" \
-            --summary "$RUNNER_TEMP/market-views-ocr-audit.json"
-      - name: Save complete native sources to private R2
-        if: ${{ steps.native-audit.outcome == 'success' }}
+        if: ${{ steps.mineru-recover.outcome != 'success' }}
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
-        run: |
-          python scripts/private_workflow_handoff.py upload-dir \
-            --source _native_market_sources/shard_0 \
-            --key "_private-workflow-handoff/market-sources/${{ github.run_id }}/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_0.tar.gz"
-
-      - name: Prepare bounded original-page edition
-        timeout-minutes: 15
-        if: ${{ steps.native-extract.outcome != 'success' || steps.native-audit.outcome != 'success' }}
-        env:
           DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}
           EXPECTED_ARTICLES: ${{ needs.select-macro-reports.outputs.selected_count }}
         run: |
-          python scripts/market_views_source_preview.py prepare \
-            --input-dir _selected_macro_pdfs --manifest _selected_macro_pdfs/selected_to_process_manifest.json \
-            --source-dir _market_preview_sources/shard_0 --expected-reports "$EXPECTED_ARTICLES" \
-            --date "$DATE_FOLDER" --producer-run-id "$GITHUB_RUN_ID" --execution-sha "$GITHUB_SHA"
-
-      - name: Save bounded original-page edition to private R2
-        if: ${{ steps.native-extract.outcome != 'success' || steps.native-audit.outcome != 'success' }}
+          python scripts/private_market_ocr_checkpoint.py restore \
+            --manifest _selected_macro_pdfs/selected_to_process_manifest.json \
+            --date-folder "$DATE_FOLDER" --expected-reports "$EXPECTED_ARTICLES" \
+            --directory _market_ocr_cache
+      - name: Build complete OCR summaries and charts for Market Views
+        id: ocr-synthesis
+        timeout-minutes: 90
+        if: ${{ steps.mineru-recover.outcome != 'success' }}
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_MARKET_VIEWS_API_KEY }}
+          DEEPSEEK_USAGE_STAGE: market-views-ocr-synthesis
+          MODEL: ${{ needs.resolve-inputs.outputs.model }}
+          BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
+          DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}
+          EXPECTED_ARTICLES: ${{ needs.select-macro-reports.outputs.selected_count }}
+        run: |
+          python scripts/build_market_views_ocr_fallback.py \
+            --input-dir _selected_macro_pdfs \
+            --manifest _selected_macro_pdfs/selected_to_process_manifest.json \
+            --expected-reports "$EXPECTED_ARTICLES" --date-folder "$DATE_FOLDER" \
+            --output-root _market_ocr_synthesis --cache-dir _market_ocr_cache \
+            --source-run-id "$GITHUB_RUN_ID" --execution-sha "$GITHUB_SHA" \
+            --workers 4 --ocr-all-pages --model "$MODEL" --base-url "$BASE_URL"
+      - name: Save private OCR synthesis cache even after interruption
+        timeout-minutes: 3
+        continue-on-error: true
+        if: ${{ always() && steps.ocr-synthesis.outcome != 'skipped' && hashFiles('scripts/private_market_ocr_checkpoint.py') != '' }}
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}
+          EXPECTED_ARTICLES: ${{ needs.select-macro-reports.outputs.selected_count }}
+        run: |
+          python scripts/private_market_ocr_checkpoint.py save \
+            --manifest _selected_macro_pdfs/selected_to_process_manifest.json \
+            --date-folder "$DATE_FOLDER" --expected-reports "$EXPECTED_ARTICLES" \
+            --directory _market_ocr_cache
+      - name: Save complete OCR synthesis to private R2
+        timeout-minutes: 5
+        if: ${{ steps.ocr-synthesis.outcome == 'success' }}
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -875,20 +911,35 @@ jobs:
           R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
         run: |
           python scripts/private_workflow_handoff.py upload-dir \
-            --source _market_preview_sources/shard_0 \
-            --key "_private-workflow-handoff/market-preview-sources/${{ github.run_id }}/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_0.tar.gz"
-
+            --source "_market_ocr_synthesis/${{ needs.select-macro-reports.outputs.latest_folder }}" \
+            --key "_private-workflow-handoff/market-ocr-synthesis/${{ github.run_id }}/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_0.tar.gz"
       - name: Select the verified source edition
         id: source-kind
         env:
-          NATIVE_AUDIT: ${{ steps.native-audit.outcome }}
+          MINERU_RECOVER: ${{ steps.mineru-recover.outcome }}
+          OCR_SYNTHESIS: ${{ steps.ocr-synthesis.outcome }}
         run: |
-          if [ "$NATIVE_AUDIT" = success ]; then
-            echo "source_kind=native-pdf" >> "$GITHUB_OUTPUT"
+          if [ "$MINERU_RECOVER" = success ]; then
+            echo "source_kind=mineru-recovery" >> "$GITHUB_OUTPUT"
           else
-            echo "source_kind=source-pages" >> "$GITHUB_OUTPUT"
-            echo "::warning::Structured degraded outcome: original-page edition; parsing and OCR synthesis are unavailable."
+            test "$OCR_SYNTHESIS" = success
+            echo "source_kind=ocr-synthesis" >> "$GITHUB_OUTPUT"
+            echo "::notice::Complete original inventory attempted through OCR and DeepSeek synthesis."
           fi
+      - name: Summarize DeepSeek usage
+        if: ${{ always() && hashFiles('scripts/summarize_deepseek_usage.py') != '' }}
+        run: |
+          python scripts/summarize_deepseek_usage.py \
+            --input-dir "$DEEPSEEK_USAGE_DIR" --output "$DEEPSEEK_USAGE_DIR/summary.json" \
+            --markdown "$DEEPSEEK_USAGE_DIR/summary.md" --github-summary
+      - name: Upload DeepSeek usage
+        if: ${{ always() && hashFiles('.github/actions/resilient-diagnostic-artifact/action.yml') != '' }}
+        uses: ./.github/actions/resilient-diagnostic-artifact
+        with:
+          name: deepseek-usage-market-source-recovery-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ env.DEEPSEEK_USAGE_DIR }}
+          if-no-files-found: error
+          retention-days: 30
 
   trigger-market-views:
     # PDF synthesis consumes the complete R2 shards directly, not the ZIP artifact.
@@ -1496,7 +1547,7 @@ jobs:
           gh run watch "$CHART_RUN_ID" --repo "$GITHUB_REPOSITORY" --compact --exit-status --interval 15
 
   cleanup-market-source-recovery:
-    # Native sources have only one consumer; a successful PDF can release them
+    # Recovered sources have one consumer; a successful PDF can release them
     # even while the independent report-notes failure remains visible.
     needs: [select-macro-reports, recover-market-sources, trigger-market-views]
     if: ${{ always() && !cancelled() && needs.recover-market-sources.result == 'success' && needs.trigger-market-views.result == 'success' }}
@@ -1521,8 +1572,8 @@ jobs:
           SOURCE_KIND: ${{ needs.recover-market-sources.outputs.source_kind }}
         run: |
           case "$SOURCE_KIND" in
-            native-pdf) SOURCE_PREFIX=market-sources ;;
-            source-pages) SOURCE_PREFIX=market-preview-sources ;;
+            mineru-recovery) SOURCE_PREFIX=mineru-market-sources ;;
+            ocr-synthesis) SOURCE_PREFIX=market-ocr-synthesis ;;
             *) echo "Unknown recovery source kind" >&2; exit 1 ;;
           esac
           python scripts/private_workflow_handoff.py delete-prefix \

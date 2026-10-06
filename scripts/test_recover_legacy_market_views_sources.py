@@ -5,6 +5,7 @@ import io
 import json
 import os
 from pathlib import Path
+import re
 import textwrap
 from types import SimpleNamespace
 import unittest
@@ -324,7 +325,16 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn("original_sha != receipt['source_context']['original_execution_sha']", block)
         self.assertLess(end, consumer.index('- name: Build market views data and LaTeX source'))
         self.assertIn('PRIVATE_LEGACY_SOURCES_ROOT', consumer)
-        self.assertIn('options: [xhs, native-pdf, mineru-recovery, legacy-daily, source-pages]', consumer)
+        handoff = re.search(
+            r'(?ms)^      source_handoff_kind:\n(.*?)(?=^      [\w-]+:|\Z)', consumer)
+        self.assertIsNotNone(handoff, 'The explicit handoff-kind input must remain available')
+        options = re.search(r'(?m)^        options: \[([^\]\n]+)\]\s*$', handoff.group(1))
+        self.assertIsNotNone(options, 'The handoff-kind input must declare its allowed choices')
+        choices = [value.strip().strip("\"'") for value in options.group(1).split(',')]
+        self.assertEqual(len(choices), len(set(choices)))
+        self.assertIn('legacy-daily', choices)
+        self.assertIn('ocr-synthesis', choices)
+        self.assertNotIn('source-pages', choices)
 
 
 if __name__ == '__main__':

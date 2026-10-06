@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """Guard dependency isolation and input lifetime for every Dropbox R2 consumer."""
 
+import ast
 import contextlib
 import io
 import json
 import re
+import shlex
 import os
 import subprocess
 import sys
@@ -18,6 +20,32 @@ from unittest import mock
 WORKFLOWS = Path(__file__).resolve().parents[1] / ".github/workflows"
 UPSTREAM = WORKFLOWS / "dropbox-latest-pdf-to-xhs-sharded.yml"
 MARKET = WORKFLOWS / "market-views-latex-pdf.yml"
+
+
+
+def test_python_environment(binaries):
+    """Keep the parent interpreter and resolved dependencies in nested CLIs."""
+    wrapper = binaries / "python"
+    # A symlink outside a venv can lose its pyvenv.cfg. Exec the original path
+    # instead, and preserve dependency paths added by a test runtime launcher.
+    wrapper.write_text("#!/bin/sh\nexec " + shlex.quote(sys.executable) + ' "$@"\n')
+    wrapper.chmod(0o755)
+    return {
+        "PATH": str(binaries) + os.pathsep + os.environ["PATH"],
+        "PYTHONPATH": os.pathsep.join(str(Path(entry).resolve()) for entry in sys.path if entry),
+    }
+
+
+def make_readable_pdf(path, label="Actual generated research summary"):
+    """Use a real multi-page PDF for the resolver's render/readability gate."""
+    import fitz
+    with fitz.open() as document:
+        for number in range(1, 3):
+            page = document.new_page()
+            page.insert_text((40, 50), f"{label} - page {number}\nSource analysis and observations.")
+            page.draw_rect(fitz.Rect(40, 90, 500, 180), color=(0.2, 0.3, 0.7))
+        document.save(path)
+    return path.read_bytes()
 
 
 def run_actual_market_resolver(root, environment, client):
@@ -235,7 +263,7 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         self.assertIn('--expected-count "$EXPECTED_SHARDS"', download)
         self.assertIn('gh run watch "$MARKET_RUN_ID"', trigger)
 
-    def test_complete_native_sources_restore_pdf_after_failed_notes_without_unblocking_drafts(self):
+    def test_recovered_or_synthesized_sources_restore_pdf_without_unblocking_drafts(self):
         recovery = job(UPSTREAM, "recover-market-sources")
         results = {"select-macro-reports": "success", "process-shard": "failure"}
         self.assertTrue(gate(recovery, results))
@@ -243,9 +271,14 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
             self.assertFalse(gate(recovery, {**results, "process-shard": status}))
         self.assertFalse(gate(recovery, results, cancelled=True))
         self.assertIn("--manifest _selected_macro_pdfs/selected_to_process_manifest.json", recovery)
-        self.assertIn('--expected-reports "${{ needs.select-macro-reports.outputs.selected_count }}"', recovery)
-        self.assertNotIn("MINER_U:", recovery)
-        self.assertNotIn("DEEPSEEK_API_KEY:", recovery)
+        self.assertIn('EXPECTED_ARTICLES: ${{ needs.select-macro-reports.outputs.selected_count }}', recovery)
+        self.assertIn('--expected-reports "$EXPECTED_ARTICLES"', recovery)
+        mineru = recovery.split('- name: Recover existing MinerU tasks for daily Market Views', 1)[1].split('\n      - name:', 1)[0]
+        synthesis = recovery.split('- name: Build complete OCR summaries and charts for Market Views', 1)[1].split('\n      - name:', 1)[0]
+        self.assertIn('MINER_U: ${{ secrets.MINER_U }}', mineru)
+        self.assertNotIn('DEEPSEEK_API_KEY:', mineru)
+        self.assertIn('DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_MARKET_VIEWS_API_KEY }}', synthesis)
+        self.assertNotIn('MINER_U:', synthesis)
         trigger = job(UPSTREAM, "trigger-market-views")
         for status in ("failure", "cancelled", "skipped"):
             self.assertFalse(gate(trigger, {**results, "recover-market-sources": status}))
@@ -271,21 +304,42 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         self.assertIn('needs.trigger-market-views.result', final)
         self.assertIn('validate-market-delivery', job(UPSTREAM, 'notify-failure'))
         recovery = job(UPSTREAM, 'recover-market-sources')
-        self.assertIn('market_views_source_preview.py prepare', recovery)
-        self.assertIn('source_kind=source-pages', recovery)
+        self.assertIn('recover_daily_mineru_sources.py', recovery)
+        self.assertIn('build_market_views_ocr_fallback.py', recovery)
+        self.assertIn('source_kind=mineru-recovery', recovery)
+        self.assertIn('source_kind=ocr-synthesis', recovery)
+        self.assertNotIn('market_views_source_preview.py', recovery)
+        self.assertNotIn('source_kind=source-pages', recovery)
         self.assertNotIn('--mineru-retries', recovery)
 
-    def test_strict_backup_attempts_leave_budget_for_the_source_page_fallback(self):
+    def test_bounded_mineru_recovery_leaves_time_for_complete_ocr_synthesis(self):
         recovery = job(UPSTREAM, 'recover-market-sources')
-        self.assertIn('timeout-minutes: 120', recovery)
-        for name, timeout in [('Install enabled cloud OCR backup', 5),
-                              ('Extract and verify every original report for Market Views', 20),
-                              ('Audit complete cloud OCR backup evidence', 10),
-                              ('Prepare bounded original-page edition', 15)]:
+        self.assertIn('timeout-minutes: 150', recovery)
+        names = [('Recover existing MinerU tasks for daily Market Views', 15),
+                 ('Save complete recovered MinerU sources to private R2', 5),
+                 ('Install complete cloud OCR synthesis dependencies', 5),
+                 ('Build complete OCR summaries and charts for Market Views', 90),
+                 ('Save complete OCR synthesis to private R2', 5)]
+        blocks = {}
+        for name, timeout in names:
             block = recovery.split('- name: ' + name, 1)[1].split('\n      - name:', 1)[0]
+            blocks[name] = block
             self.assertIn(f'timeout-minutes: {timeout}', block)
-            if name != 'Prepare bounded original-page edition':
+            if name == names[0][0]:
                 self.assertIn('continue-on-error: true', block)
+            else:
+                self.assertNotIn('continue-on-error:', block)
+        mineru = blocks[names[0][0]]
+        self.assertIn('--timeout 840', mineru)
+        self.assertIn("needs.resolve-inputs.outputs.replay_source_run_id == ''", mineru)
+        self.assertIn("needs.source-outcome.outputs.provider_only == 'true'", mineru)
+        self.assertIn("steps.mineru-recover.outcome == 'success'", blocks[names[1][0]])
+        self.assertIn("steps.mineru-recover.outcome != 'success'", blocks[names[3][0]])
+        self.assertIn("steps.ocr-synthesis.outcome == 'success'", blocks[names[4][0]])
+        self.assertIn('_private-workflow-handoff/mineru-market-sources/', blocks[names[1][0]])
+        self.assertIn('_private-workflow-handoff/market-ocr-synthesis/', blocks[names[4][0]])
+        self.assertLess(recovery.index(names[0][0]), recovery.index(names[1][0]))
+        self.assertLess(recovery.index(names[3][0]), recovery.index(names[4][0]))
 
     def test_frozen_replay_cannot_recover_when_accepted_task_binding_was_not_proven(self):
         results = {'resolve-inputs': 'success', 'select-macro-reports': 'success', 'process-shard': 'success'}
@@ -323,7 +377,8 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         self.assertIn("env.BACKUP_NOTICE != ''", step)
         self.assertNotIn('failure()', step)
         self.assertIn('native-pdf)', step)
-        self.assertIn('source-pages-reused)', step)
+        self.assertIn('ocr-synthesis)', step)
+        self.assertNotIn('source-pages', step)
         self.assertIn('--dedupe-hours 24', step)
         self.assertLess(market.index('- name: Verify the completed private publication receipt'),
                         market.index('- name: Send deduplicated backup exception notice'))
@@ -355,11 +410,27 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
             block = recovery.split(f"- name: {step_name}", 1)[1].split("\n      - name:", 1)[0]
             self.assertIn("if: ${{ inputs.generate_pdf && !inputs.archive_originals_only }}", block)
         daily = job(UPSTREAM, "recover-market-sources")
-        self.assertIn("ENABLE_OCR: ${{ vars.MARKET_VIEWS_OCR_BACKUP_ENABLED || 'false' }}", daily)
-        self.assertIn("OCR_ARGS+=(--enable-ocr)", daily)
-        self.assertIn('"${OCR_ARGS[@]}"', daily)
-        self.assertIn('--producer-run-id "$GITHUB_RUN_ID"', daily)
-        self.assertIn('--original-source-run-id "$GITHUB_RUN_ID"', daily)
+        self.assertIn('--ocr-all-pages', daily)
+        self.assertNotIn('MARKET_VIEWS_OCR_BACKUP_ENABLED', daily)
+        self.assertIn('--cache-dir _market_ocr_cache', daily)
+        self.assertIn('--source-run-id "$GITHUB_RUN_ID"', daily)
+        self.assertIn('--execution-sha "$GITHUB_SHA"', daily)
+        self.assertIn('--model "$MODEL" --base-url "$BASE_URL"', daily)
+        self.assertIn('MODEL: ${{ needs.resolve-inputs.outputs.model }}', daily)
+        self.assertIn('BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}', daily)
+        cache_restore = daily.split('- name: Restore private source-bound OCR synthesis cache', 1)[1].split('\n      - name:', 1)[0]
+        cache_save = daily.split('- name: Save private OCR synthesis cache even after interruption', 1)[1].split('\n      - name:', 1)[0]
+        self.assertIn('private_market_ocr_checkpoint.py restore', cache_restore)
+        self.assertIn('private_market_ocr_checkpoint.py save', cache_save)
+        self.assertIn('always()', cache_save)
+        self.assertIn("steps.ocr-synthesis.outcome != 'skipped'", cache_save)
+        self.assertNotIn('uses: actions/upload-artifact', cache_save)
+        for block in (cache_restore, cache_save):
+            self.assertIn('timeout-minutes: 3', block)
+            self.assertIn('continue-on-error: true', block)
+            self.assertIn('--manifest _selected_macro_pdfs/selected_to_process_manifest.json', block)
+            self.assertIn('--date-folder "$DATE_FOLDER" --expected-reports "$EXPECTED_ARTICLES"', block)
+
         for workflow in (daily, recovery, (WORKFLOWS / "wechat-pipeline-regression.yml").read_text()):
             self.assertIn("tesseract-ocr-eng tesseract-ocr-chi-sim", workflow)
             self.assertIn('test -f "$TESSDATA_DIR/eng.traineddata"', workflow)
@@ -368,7 +439,7 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         self.assertIn('REQUIRE_MARKET_VIEWS_OCR_TESTS: "1"', regression)
         self.assertIn('python scripts/test_ocr_numeric_evidence.py', regression)
         self.assertIn('python scripts/test_audit_market_views_ocr_receipt.py', regression)
-        self.assertIn('PyMuPDF Pillow', daily)
+        self.assertIn('pip install -r requirements.txt reportlab', daily)
         self.assertIn('PyMuPDF Pillow requests', recovery)
         market = MARKET.read_text()
         dependency = market.index('- name: Install private handoff dependency')
@@ -413,7 +484,7 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
             extract_sources(originals, manifest, sources, 1, source_context=context)
             binaries = root / "bin"
             binaries.mkdir()
-            (binaries / "python").symlink_to(sys.executable)
+            python_environment = test_python_environment(binaries)
             gh = binaries / "gh"
             gh.write_text(f"#!{sys.executable}\n" + textwrap.dedent('''\
                 import json
@@ -451,7 +522,7 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
             gh.chmod(0o755)
             runtime = root / 'runtime'
             runtime.mkdir()
-            environment = {**os.environ, "PATH": str(binaries) + os.pathsep + os.environ["PATH"],
+            environment = {**os.environ, **python_environment,
                            "GITHUB_REPOSITORY": "example/project", "SOURCE_HANDOFF_RUN_ID": context["producer_run_id"],
                            "EXPECTED_BANK_DATE": "261003", "EXPECTED_ARTICLES": "1", "RUNNER_TEMP": str(runtime),
                            "NATIVE_QUALITY_FIXTURE_JSON": ''}
@@ -517,10 +588,10 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
             extract_sources(originals, manifest, source_dir, 1, source_context=context)
             binaries = root / "bin"
             binaries.mkdir()
-            (binaries / "python").symlink_to(sys.executable)
+            python_environment = test_python_environment(binaries)
             runtime = root / "runtime"
             runtime.mkdir()
-            environment = {**os.environ, "PATH": str(binaries) + os.pathsep + os.environ["PATH"],
+            environment = {**os.environ, **python_environment,
                            "RUNNER_TEMP": str(runtime), "EXPECTED_ARTICLES": "1", "DATE_FOLDER": "261003",
                            "GITHUB_RUN_ID": context["producer_run_id"], "GITHUB_SHA": context["execution_sha"],
                            "SOURCE_RUN_ID": context["original_source_run_id"], "QUALITY_FIXTURE_JSON": ""}
@@ -542,12 +613,15 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
             self.assertFalse(sentinel.exists())
             self.assertTrue((source_dir / "source_receipt.json").is_file())
 
-    def test_native_archive_is_released_only_after_its_pdf_consumer_succeeds(self):
+    def test_recovery_archive_is_released_only_after_its_pdf_consumer_succeeds(self):
         cleanup = job(UPSTREAM, "cleanup-market-source-recovery")
         self.assertTrue(gate(cleanup, {"recover-market-sources": "success", "trigger-market-views": "success"}))
         for consumer in ("failure", "cancelled", "skipped"):
             self.assertFalse(gate(cleanup, {"recover-market-sources": "success", "trigger-market-views": consumer}))
         self.assertFalse(gate(cleanup, {"recover-market-sources": "success", "trigger-market-views": "success"}, cancelled=True))
+        self.assertIn('mineru-recovery) SOURCE_PREFIX=mineru-market-sources', cleanup)
+        self.assertIn('ocr-synthesis) SOURCE_PREFIX=market-ocr-synthesis', cleanup)
+        self.assertNotIn('SOURCE_PREFIX=market-preview-sources', cleanup)
         recovery = (WORKFLOWS / "market-views-native-recovery.yml").read_text()
         self.assertLess(recovery.index('gh run watch "$MARKET_RUN_ID"'),
                         recovery.index('name: Delete consumed native source handoff'))
@@ -559,10 +633,27 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         build = market.index("- name: Build market views data and LaTeX source")
         self.assertLess(receipt, resolve)
         self.assertLess(resolve, build)
-        block = market[receipt:resolve]
-        self.assertIn("recover_durable_mineru_sources.py validate", block)
-        self.assertIn('--expected-reports "$EXPECTED_ARTICLES"', block)
-        self.assertIn('--date-folder "$EXPECTED_BANK_DATE"', block)
+        block = market[receipt:resolve].split("\n      - name:", 1)[0]
+        command = textwrap.dedent(block.split("        run: |\n", 1)[1])
+        program = command.split("python - <<'PYTHON'\n", 1)[1].rsplit("\nPYTHON", 1)[0]
+        calls = [node for node in ast.walk(ast.parse(program))
+                 if isinstance(node, ast.Call) and ast.unparse(node.func) == "subprocess.run"]
+        self.assertEqual(len(calls), 1)
+        call = calls[0]
+        self.assertIsInstance(call.args[0], ast.List)
+        argv = call.args[0].elts
+        self.assertEqual(ast.unparse(argv[0]), "sys.executable")
+        self.assertEqual([ast.literal_eval(value) for value in argv[1:3]],
+                         ["scripts/recover_durable_mineru_sources.py", "validate"])
+        options = {ast.literal_eval(argv[index]): ast.unparse(argv[index + 1])
+                   for index in range(3, len(argv), 2)}
+        self.assertEqual(options["--expected-reports"], "os.environ['EXPECTED_ARTICLES']")
+        self.assertEqual(options["--date-folder"], "os.environ['EXPECTED_BANK_DATE']")
+        self.assertEqual(options["--expected-recovery-run-id"], "run")
+        self.assertEqual(options["--expected-execution-sha"], "producer['head_sha']")
+        self.assertEqual({keyword.arg: ast.literal_eval(keyword.value) for keyword in call.keywords},
+                         {"check": True})
+        self.assertIn("require_source_readiness(producer, jobs, source_kind='mineru-recovery')", block)
         self.assertIn('PRIVATE_MINERU_SOURCES_ROOT: "_private-workflow-handoff/mineru-market-sources"', market)
 
     def test_mineru_recovery_input_requires_complete_explicit_handoff(self):
@@ -610,7 +701,7 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
                 (report / "source_native_pdf.md").write_text("# Exact source report")
             existing = root / "market_view_summaries/261004/market_views_261004.pdf"
             existing.parent.mkdir(parents=True)
-            existing.write_bytes(b"%PDF-" + b"x" * 2048)
+            make_readable_pdf(existing)
             binaries = root / "bin"
             binaries.mkdir()
             (binaries / "python").symlink_to(sys.executable)
@@ -671,11 +762,9 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
             (report / "source_native_pdf.md").write_text("# Exact complete source report")
             public_pdf = root / "market_view_summaries/261003/market_views_261003.pdf"
             public_pdf.parent.mkdir(parents=True)
-            public_bytes = b"%PDF-1.7\n" + b"public-safe" * 200
-            public_pdf.write_bytes(public_bytes)
+            public_bytes = make_readable_pdf(public_pdf, "Public research analysis")
             private_pdf = root / "private-original.pdf"
-            private_bytes = b"%PDF-1.7\n" + b"complete-private-original" * 200
-            private_pdf.write_bytes(private_bytes)
+            private_bytes = make_readable_pdf(private_pdf, "Complete private research analysis")
             client = FakeR2Client()
             uploader.upload_market_view(private_pdf, "261003", client=client, bucket="test")
             private_pdf.unlink()
