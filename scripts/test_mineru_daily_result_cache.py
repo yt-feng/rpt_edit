@@ -17,6 +17,7 @@ import mineru_daily_result_cache as authentication_cache
 import mineru_result_cache as c
 import mineru_task_ledger as m
 import pdf_to_xhs_batch as p
+from test_mineru_completed_child_reuse import recovered_fixture, no_mutations
 from test_mineru_result_cache import MemoryR2, result_zip
 
 
@@ -107,6 +108,39 @@ class DailyResultCacheTests(unittest.TestCase):
         self.assertFalse(list(self.output.rglob('source_mineru.md')))
         self.assertEqual(len(self.downloads), 3)
 
+    def test_primary_reuses_completed_children_and_their_exact_cached_zips_without_paid_requests(self):
+        fixture = recovered_fixture(self.root, third=True)
+        self.ledger, self.store, self.r2, self.provider = fixture.ledger, fixture.store, fixture.r2, fixture.provider
+        self.sources, self.items = fixture.sources, fixture.items
+        rows, _ = p.reuse_completed_children(self.ledger, self.sources, fixture.results, fixture.summary)
+        cache, contexts = p.result_cache_contexts(self.ledger, self.sources, dict(rows))
+        payload = result_zip()
+        for path, _ in rows:
+            cache.put(*contexts[path], payload)
+        before = copy.deepcopy(self.r2.objects)
+        def no_download(_url): self.fail('Recovered child must reuse its own cached ZIP')
+        with no_mutations(fixture), patch.object(self.r2, 'put_object', side_effect=AssertionError('No R2 write')):
+            self.assertEqual(self.cli(downloader=no_download), 0)
+        self.assertEqual(self.r2.objects, before)
+        summary = json.loads((self.output / 'mineru_attempts_summary.json').read_text())
+        self.assertEqual((summary['original_batches'][0]['failed'], summary['failed']), (2, 0))
+        self.assertEqual(summary['completed_child_reuse']['reused_sources'], 2)
+        self.assertTrue(summary['ready_for_generation'])
+        self.assertEqual(len(list(self.output.rglob('source_mineru.md'))), 3)
+
+    def test_primary_pending_child_does_not_release_sources_or_create_new_task(self):
+        fixture = recovered_fixture(self.root)
+        self.ledger, self.store, self.r2, self.provider = fixture.ledger, fixture.store, fixture.r2, fixture.provider
+        self.sources = fixture.sources
+        key = fixture.control['children'][0]['key']
+        child, version = self.store.get(key); child['state'] = 'uploaded'
+        self.store.put(key, child, version)
+        self.provider.plans[1] = ['running', 'running']
+        with no_mutations(fixture):
+            self.assertEqual(self.cli(), 2)
+        self.assertFalse(list(self.output.rglob('source_mineru.md')))
+        self.assertEqual(self.downloads, [])
+
     def test_primary_first_source_cache_survives_next_tls_failure_and_stops_later_downloads(self):
         attempts = []
         def partial(url):
@@ -174,7 +208,8 @@ class DailyResultCacheTests(unittest.TestCase):
         # Transport policy/lease is tested by the transport suite. Here exercise
         # the real CLI, original task ledger, immutable R2 writes and source release.
         auth = {'test_verified_authentication': 'first-lease'}
-        with patch.object(p, 'download_result', return_value=(result_zip(), auth)) as download, \
+        payload = result_zip()
+        with patch.object(p, 'download_result', return_value=(payload, auth)) as download, \
              patch.object(authentication_cache, 'validate_daily_authentication', return_value=auth):
             self.assertEqual(self.cli(), 0)
         self.assertEqual(download.call_count, 3)
@@ -184,7 +219,7 @@ class DailyResultCacheTests(unittest.TestCase):
             proof = json.loads(row['Body'])
             identity_sha = proof['identity_sha256']
             self.assertEqual(proof['policy'], 'daily-exact-leaf-result-cache-v1')
-            self.assertEqual(proof['zip_sha256'], m.digest(result_zip()))
+            self.assertEqual(proof['zip_sha256'], m.digest(payload))
             self.assertEqual(proof['authentication'], auth)
             self.assertIn(row['Key'], self.r2.gets)
             writes = [item['Key'] for item in self.r2.puts]
