@@ -34,6 +34,18 @@ def _annotation_uris(page: Any) -> list[str]:
     return uris
 
 
+def _navigation_labels(reader: PdfReader) -> list[str]:
+    labels = list(reader.named_destinations)
+    def collect(items: list[Any]) -> None:
+        for item in items:
+            if isinstance(item, list):
+                collect(item)
+            else:
+                labels.append(str(item.title))
+    collect(reader.outline)
+    return labels
+
+
 def prepare_public_copy(source: Path | str, output: Path | str) -> dict[str, int]:
     source_path = Path(source).expanduser().resolve()
     output_path = Path(output).expanduser().resolve()
@@ -62,8 +74,9 @@ def prepare_public_copy(source: Path | str, output: Path | str) -> dict[str, int
             raise ValueError("Private identity remains in the public Market Views PDF")
 
         writer = PdfWriter()
-        for page in reader.pages[:-1]:
-            writer.add_page(page)
+        # Merge only public pages so pypdf remaps their TOC links, named
+        # destinations and outlines, filtering targets on the private ending.
+        writer.append(reader, pages=(0, len(reader.pages) - 1), import_outline=True)
         title = str((reader.metadata or {}).get("/Title") or "Market Views")
         writer.add_metadata(
             {
@@ -92,10 +105,12 @@ def prepare_public_copy(source: Path | str, output: Path | str) -> dict[str, int
             raise ValueError("Public Market Views PDF page-count verification failed")
         public_text = "\n".join(page.extract_text() or "" for page in public_document.pages)
         public_uris = [uri for page in public_document.pages for uri in _annotation_uris(page)]
-        if ENDING_PAGE_MARKER in public_text or ENDING_PAGE_MARKER in "\n".join(public_uris):
+        navigation_labels = _navigation_labels(public_document)
+        public_searchable = "\n".join((public_text, *public_uris, *navigation_labels))
+        if ENDING_PAGE_MARKER in public_searchable:
             raise ValueError("Private ending-page marker remains in public PDF")
-        if _contains_private_identity("\n".join((public_text, *public_uris))):
-            raise ValueError("Private identity remains in verified public PDF text or links")
+        if _contains_private_identity(public_searchable):
+            raise ValueError("Private identity remains in verified public PDF text, links or navigation")
 
         os.replace(temp_path, output_path)
         temp_path = None
