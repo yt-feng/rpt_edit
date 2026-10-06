@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 from bisect import bisect_left, bisect_right
 import hashlib
+import html
 import json
 import os
 import re
@@ -562,6 +563,78 @@ def clean_exhibit_context(raw_context: str, fallback_label: str) -> str | None:
     return candidate[:260]
 
 
+def source_figure_display_exclusion(record: dict[str, Any]) -> str | None:
+    """Classify only one verified visual's own text, never nearby page text.
+
+    This is an editorial display policy, separate from the immutable source
+    proof's selection decisions. Unknown/pixel-only visuals remain eligible.
+    Generic valuation, target-price and credit-rating words are not exclusions.
+    """
+    parts = [record.get("body_text") or ""]
+    heading_parts = list(parts)
+    for field in ("content_captions", "content_footnotes", "captions", "footnotes"):
+        for item in record.get(field) or []:
+            value = item.get("text", "") if isinstance(item, dict) else item
+            parts.append(value)
+            if field in ("content_captions", "captions"):
+                heading_parts.append(value)
+    text = "\n".join(re.sub(r"\s+", " ", html.unescape(HTML_TAG_RE.sub(" ", str(part)))).strip()
+                     for part in parts if part)
+    if not text:
+        return None
+
+    # Broker appendix plots, including the exact GS/MS/Bernstein shapes seen
+    # in the 261006 PDF. A current price target or valuation matrix is research.
+    history = re.search(
+        r"\bstock\s+ratings?\s+history\b|"
+        r"\bratings?\s+and\s+(?:stock\s+price(?:\s+targets?)?|price\s+targets?)\s+history\b|"
+        r"\b(?:stock\s+)?price\s+targets?\s+(?:and\s+ratings?\s+)?history\b|"
+        r"\bratings?\s+history\s+for\s+Bernstein\b|"
+        r"(?:股票|股价)?评级(?:与|和|及)(?:股价)?目标价历史|股票评级历史|目标价历史", text, re.I)
+    target_caveat = re.search(
+        r"\bprice\s+targets?\s+shown\b.{0,180}\bprior\s+published\b.{0,120}\bresearch\b",
+        text, re.I | re.S)
+    analyst_legend = (re.search(r"\bcovered\s+by\s+[A-Z][\w.'’-]*(?:\s+[A-Z][\w.'’-]*){1,4}\b", text, re.I)
+                      and re.search(r"\bnot\s+covered\s+by\s+(?:the\s+)?current\s+analyst\b", text, re.I)
+                      and re.search(r"\bprice\s+target(?:\s+removal)?\b", text, re.I))
+    if history or target_caveat or analyst_legend:
+        return "exclude_broker_rating_history"
+
+    if record.get("kind") == "table":
+        rating_footer = (re.search(r"\bstock\s+ratings?\s+are\s+subject\s+to\s+change\b", text, re.I)
+                         and re.search(r"\b(?:please\s+)?see\s+(?:the\s+)?latest\s+research\s+for\s+each\s+company\b", text, re.I))
+        # Standard footnotes can accompany real research tables. Require the
+        # coverage table's own repeated ticker + dated broker-rating rows too.
+        body = re.sub(r"\s+", " ", html.unescape(HTML_TAG_RE.sub(" ", str(record.get("body_text") or ""))))
+        stock_rating_rows = re.findall(
+            r"\([A-Z][A-Z0-9.:/-]{0,15}\)\s+(?:O|E|U|OW|EW|UW|NR|NC|BUY|HOLD|SELL)\s*\(\d{1,2}/\d{1,2}/\d{2,4}\)",
+            body, re.I)
+        coverage_header = re.search(r"(?:^|\n)\s*(?:analyst\s+coverage(?:\s+universe)?|research\s+analyst\s+coverage|分析师覆盖(?:名单|表)?)\s*[:：]?\s*(?:\n|$)", text, re.I)
+        coverage_columns = (re.search(r"\b(?:company|ticker)\b|公司|代码", text, re.I)
+                            and re.search(r"\b(?:rating|recommendation)\b|评级", text, re.I)
+                            and re.search(r"\b(?:price\s+target|target\s+price)\b|目标价", text, re.I))
+        if rating_footer and len(stock_rating_rows) >= 2 or coverage_header and coverage_columns:
+            return "exclude_analyst_coverage_table"
+
+    # Require two explicit publication declarations; a useful chart's ordinary
+    # Source note, financial compensation expense or regulatory topic survives.
+    headings = [re.sub(r"\s+", " ", html.unescape(HTML_TAG_RE.sub(" ", str(part)))).strip()
+                for part in heading_parts if part]
+    legal_heading = any(re.match(r"(?:(?:exhibit|figure|table)\s*\d+\s*[:.\-]?\s*)?(?:important\s+disclosures|analyst\s+certification|disclaimer)\b|(?:免责声明|分析师认证)", heading, re.I)
+                        for heading in headings)
+    legal_declaration = re.search(r"\b(?:analysts?['’]?\s+compensation|conflicts?\s+of\s+interest|not\s+(?:an?\s+)?offer|does\s+not\s+constitute\s+(?:an?\s+)?offer|investment\s+banking\s+clients|all\s+rights\s+reserved)\b|利益冲突|不构成.{0,12}(?:要约|投资建议)|版权所有", text, re.I)
+    if legal_heading and legal_declaration:
+        return "exclude_publication_disclosure"
+    # Credit/portfolio rating distributions are substantive research. Only a
+    # broker's recommendation/client breakdown is publication disclosure.
+    distribution_heading = any(re.match(r"(?:(?:exhibit|figure|table)\s*\d+\s*[:.\-]?\s*)?(?:ratings?\s+distribution|distribution\s+of\s+ratings)\b|评级分布", heading, re.I)
+                               for heading in headings)
+    broker_distribution = re.search(r"\binvestment\s+banking\s+clients\b|\bbroker\s+(?:stock\s+)?recommendations\b|\bbuy\b.{0,40}\bhold\b.{0,40}\bsell\b|投行(?:业务)?客户|股票推荐评级", text, re.I | re.S)
+    if distribution_heading and broker_distribution:
+        return "exclude_publication_disclosure"
+    return None
+
+
 def extract_exhibit_figures(report_dir: Path, report_id: str, title: str, max_per_report: int) -> list[dict[str, Any]]:
     md_path = report_dir / "source_mineru.md"
     if not md_path.exists():
@@ -604,6 +677,17 @@ def extract_exhibit_figures(report_dir: Path, report_id: str, title: str, max_pe
         # crops. Captions printed in the crop remain intact; the PDF adds only
         # a page label and does not infer association from adjacent Markdown.
         metadata = json.loads(sidecar.read_bytes())
+        records = {record["index"]: record for record in metadata["metadata"]["records"]}
+        display_assets = []
+        for asset in metadata["assets"]:
+            record = records.get(asset["index"])
+            if record is None or record["ref"] != asset["ref"]:
+                raise RuntimeError("MinerU figure display lacks its verified record")
+            exclusion = source_figure_display_exclusion(record)
+            if exclusion:
+                log(f"Skip publication-only figure {report_id} asset_index={asset['index']}: {exclusion}")
+            else:
+                display_assets.append(asset)
         from pdf_to_xhs_batch import chart_image_score
         def original_visual_priority(asset):
             original = report_dir / metadata["provider_images"][asset["ref"]]["path"]
@@ -611,7 +695,7 @@ def extract_exhibit_figures(report_dir: Path, report_id: str, title: str, max_pe
             return score, original.stat().st_size
         # Preserve the previous visual priority using the unchanged, verified
         # provider JPEG, while rendering the complete original-page crop.
-        ranked = sorted(metadata["assets"], key=original_visual_priority, reverse=True)
+        ranked = sorted(display_assets, key=original_visual_priority, reverse=True)
         figures = []
         seen = set()
         for asset in ranked:
