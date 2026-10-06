@@ -6,14 +6,18 @@ import os
 from pathlib import Path
 import re
 
-from inspect_legacy_mineru import canonical, inspect_batches, sha256
-from mineru_task_ledger import Ledger, R2Store, token_fingerprint, validate_scope
+from inspect_legacy_mineru import NetworkStop, canonical, get_once, inspect_batches, sha256
+from mineru_task_ledger import Ledger, LedgerError, R2Store, token_fingerprint, validate_scope
 from persist_legacy_mineru_inspection import persist, single_attempt_store
 
 
 def validate_request(value):
-    if not isinstance(value, dict) or set(value) != {'run_id', 'scope', 'batches'}:
+    if (not isinstance(value, dict)
+            or set(value) not in ({'run_id', 'scope', 'batches'},
+                                  {'run_id', 'scope', 'batches', 'include_completed_children'})):
         raise ValueError('request_shape')
+    if 'include_completed_children' in value and type(value['include_completed_children']) is not bool:
+        raise ValueError('completed_children_flag')
     validate_scope(value['scope'])
     if not isinstance(value['run_id'], str) or not re.fullmatch(r'[1-9][0-9]{0,19}', value['run_id']):
         raise ValueError('run_identity')
@@ -29,6 +33,100 @@ def validate_request(value):
             raise ValueError('batch_identity')
         seen.add(row['key'])
     return value
+
+
+class ReadOnlyInspectionStore:
+    """Reject mutation and changes to any stored proof during this inspection."""
+    def __init__(self, store):
+        self.store, self.snapshots = store, {}
+
+    def get(self, key):
+        value, version = self.store.get(key)
+        raw = canonical(value)
+        if key in self.snapshots and self.snapshots[key] != raw:
+            raise LedgerError('Inspection stored binding changed')
+        self.snapshots[key] = raw
+        return value, version
+
+    def put(self, *_args, **_kwargs):
+        raise LedgerError('Inspection cannot write canonical task state')
+
+
+class ReadOnlyInspectionProvider:
+    """Reuse the original GET bytes; read accepted children at most once."""
+    def __init__(self, getter, credentials, store, run_id):
+        self.getter, self.credentials, self.store, self.run_id = getter, credentials, store, run_id
+        self.responses, self.gets = {}, 0
+        self.slots = {token_fingerprint(token): slot for slot, token in credentials.items() if token}
+        self.job_id = None
+
+    def get(self, endpoint, token, timeout):
+        identity = (endpoint, token_fingerprint(token))
+        if identity not in self.responses:
+            self.gets += 1
+            self.responses[identity] = self.getter(endpoint, token, timeout)
+        return self.responses[identity]
+
+    def poll(self, batch_id, token, _timeout):
+        tasks = [json.loads(raw) for key, raw in self.store.snapshots.items() if key.startswith('batches/')]
+        tasks = [row for row in tasks if isinstance(row, dict) and row.get('batch_id') == batch_id]
+        if len(tasks) != 1 or tasks[0]['token_identity'] != token_fingerprint(token):
+            raise LedgerError('Inspection GET differs from its accepted task binding')
+        request = {'run_id': self.run_id, 'job_id': self.job_id, 'batch_id': batch_id,
+                   'credential_slot': self.slots[token_fingerprint(token)],
+                   'expected_data_ids': [row['id'] for row in tasks[0]['files']]}
+        public, private = inspect_batches({'schema_version': 1, 'batches': [request]},
+                                           self.credentials, getter=self.get)
+        if public['network_stop']:
+            raise NetworkStop('network_stop')
+        row = public['batches'][0]
+        # Missing pending rows remain pending. Unknown, duplicate, malformed or
+        # URL-less completed rows cannot become an effective success.
+        if (row.get('category') not in {'identified', 'membership_mismatch'}
+                or any(row.get(key) != 0 for key in ('invalid_row_count', 'duplicate_member_count',
+                    'unknown_member_count', 'completed_result_url_missing_count'))):
+            raise LedgerError('Inspection accepted task GET response is invalid')
+        return private['batches'][0]['provider_response']['data']['extract_result']
+
+    def submit(self, *_args, **_kwargs):
+        raise LedgerError('Inspection cannot submit provider tasks')
+
+    def upload(self, *_args, **_kwargs):
+        raise LedgerError('Inspection cannot upload provider files')
+
+
+def inspect_completed_children(value, store, provider, tokens, roots, original_gets):
+    from mineru_completed_child_reuse import read_completed_batch
+
+    batches = []
+    for item, root in zip(value['batches'], roots):
+        provider.job_id = item['job_id']
+        ledger = Ledger(store, provider, value['scope'], root['endpoint'], root['options'], tokens)
+        effective, counts = read_completed_batch(ledger, root)
+        controller_key = 'recoveries/' + root['key'].split('/')[1]
+        controller = json.loads(store.snapshots[controller_key])
+        children = []
+        for entry in (controller or {}).get('children', []):
+            raw = store.snapshots.get(entry['key'])
+            if raw is not None and json.loads(raw) is not None:
+                children.append({'ordinal': entry['ordinal'], 'binding_sha256': sha256(raw)})
+        batches.append({**counts, 'original_binding_sha256': sha256(canonical(root)),
+            'controller_binding_sha256': sha256(canonical(controller)) if controller is not None else None,
+            'checked_child_bindings': children,
+            'completed_lineage_counts': dict(Counter(str(row['_recovery_lineage']['child_ordinal'])
+                for row in effective.values() if row['state'] == 'done'))})
+    for key in list(store.snapshots):
+        store.get(key)
+    # The legacy private receipt still authenticates precisely the original
+    # GETs. Additional reads have separate explicit counters and proof hashes.
+    return {'schema_version': 1, 'source_bytes_proven': False, 'canonical_task_admission': False,
+            'canonical_ledger_writes': 0, 'provider_posts': 0,
+            'original_provider_gets': original_gets,
+            'additional_provider_gets': provider.gets - original_gets,
+            'total_provider_gets': provider.gets,
+            'effective_counts': {key: sum(row[key] for row in batches)
+                                 for key in ('admitted', 'completed', 'failed', 'pending', 'reused_sources')},
+            'all_succeeded': all(row['all_succeeded'] for row in batches), 'batches': batches}
 
 
 # Public diagnostics are a projection onto a fixed vocabulary, never a copy of
@@ -115,10 +213,17 @@ def safe_failure_reason(row, private_terms=()):
 
 def inspect(value, store, credentials, *, getter=None):
     validate_request(value)
+    include_children = value.get('include_completed_children', False)
+    provider = None
+    if include_children:
+        store = ReadOnlyInspectionStore(store)
+        provider = ReadOnlyInspectionProvider(getter or get_once, credentials, store, value['run_id'])
+        getter = provider.get
     tokens = [(slot, token) for slot, token in credentials.items() if token]
     slots = {token_fingerprint(token): slot for slot, token in tokens}
     requests = []
     bindings = []
+    roots = []
     private_terms = list(credentials.values())
     # Validate every stored binding before any provider request.
     for item in value['batches']:
@@ -135,6 +240,7 @@ def inspect(value, store, credentials, *, getter=None):
                          'batch_id': batch['batch_id'], 'credential_slot': slots[batch['token_identity']],
                          'expected_data_ids': [row['id'] for row in batch['files']]})
         bindings.append({'key': item['key'], 'binding_sha256': sha256(canonical(batch))})
+        roots.append(batch)
     kwargs = {} if getter is None else {'getter': getter}
     public, private = inspect_batches({'schema_version': 1, 'batches': requests}, credentials, **kwargs)
     categories = Counter(); hashes = Counter(); reasons = Counter()
@@ -151,6 +257,9 @@ def inspect(value, store, credentials, *, getter=None):
                    'failure_reasons': [dict(json.loads(reason), count=count)
                                        for reason, count in sorted(reasons.items())],
                    'verified_task_bindings': bindings, 'canonical_ledger_writes': 0}
+    if include_children and not public['network_stop']:
+        diagnostics['completed_child_inspection'] = inspect_completed_children(
+            value, store, provider, tokens, roots, public['provider_gets'])
     return public, private, diagnostics
 
 
@@ -182,10 +291,14 @@ def main():
         Path(os.environ['RUNNER_TEMP'], 'mineru-durable-summary.json').write_text(json.dumps(public, sort_keys=True)+'\n')
         # The full public receipt retains existing exact task bindings in its
         # artifact. Console output only carries counts and safe failure reasons.
-        print(json.dumps({key: public[key] for key in (
+        console = {key: public[key] for key in (
             'provider_gets', 'provider_posts', 'new_submissions', 'paid_requests',
             'network_stop', 'uninspected_count', 'failure_categories', 'failure_reasons',
-            'private_receipt_sha256', 'canonical_ledger_writes')}, sort_keys=True))
+            'private_receipt_sha256', 'canonical_ledger_writes')}
+        if 'completed_child_inspection' in diagnostics:
+            console['completed_child_inspection'] = {key: item for key, item in
+                diagnostics['completed_child_inspection'].items() if key != 'batches'}
+        print(json.dumps(console, sort_keys=True))
         return 0
     except Exception as error:
         print(json.dumps({'status': 'inspection_failed', 'stage': stage, 'exception_class': type(error).__name__}))

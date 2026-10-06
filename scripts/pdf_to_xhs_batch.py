@@ -51,6 +51,7 @@ from mineru_task_ledger import R2Store, digest, exact_json, from_environment, in
 from mineru_result_cache import ResultCache, ResultCacheError
 from mineru_daily_result_cache import persist_authentication
 from mineru_daily_result_transport import download_result
+from mineru_completed_child_reuse import result_lineage, reuse_completed_children
 from consume_legacy_mineru import ConsumerError, NetworkStop, download_once, safe_unzip, valid_url
 
 MINERU_BASE_URL = "https://mineru.net"
@@ -136,7 +137,7 @@ def download_and_unzip(url: str, result_dir: Path) -> None:
 
 
 def result_cache_contexts(ledger, sources, results):
-    """Read original claims only, after the durable full-batch completion gate."""
+    """Read bound original or verified recovery contexts after the full-batch gate."""
     if not isinstance(ledger.store, R2Store) or ledger.scope != 'dropbox':
         return None, {}
     cache = ResultCache.single_attempt(ledger.store.client, ledger.store.bucket)
@@ -154,8 +155,7 @@ def result_cache_contexts(ledger, sources, results):
                 or not isinstance(results.get(Path(path)), dict)
                 or results[Path(path)].get('data_id') != binding['id']):
             raise ResultCacheError('cache_original_task')
-        lineage = {'batch_id': batch['batch_id'], 'batch_key': batch['key'],
-                   'parent_batch_key': batch['key'], 'data_id': binding['id'], 'child_ordinal': 0}
+        lineage = result_lineage(ledger, binding, batch, results[Path(path)])
         contexts[Path(path).resolve()] = (binding, lineage)
     return cache, contexts
 
@@ -1154,6 +1154,7 @@ def main() -> int:
             timeout=args.poll_timeout, interval=args.poll_interval,
             queue_budget=args.mineru_no_progress_timeout,
         )
+        results, task_summary = reuse_completed_children(ledger, sources, results, task_summary)
         successful_rows = dict(results)
         (output_dir / "mineru_attempts_summary.json").write_text(
             json.dumps(task_summary, ensure_ascii=False, indent=2), encoding="utf-8")

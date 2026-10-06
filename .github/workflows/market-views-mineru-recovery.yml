@@ -12,6 +12,8 @@ on:
       - scripts/test_mineru_result_cache.py
       - scripts/pdf_to_xhs_batch.py
       - scripts/test_mineru_daily_result_cache.py
+      - scripts/mineru_completed_child_reuse.py
+      - scripts/test_mineru_completed_child_reuse.py
       - scripts/mineru_daily_result_cache.py
       - scripts/mineru_daily_result_transport.py
       - scripts/test_mineru_daily_result_transport.py
@@ -75,6 +77,7 @@ jobs:
       - run: python3 -B scripts/test_recover_durable_mineru_sources.py
       - run: python3 -B scripts/test_mineru_result_cache.py
       - run: python3 -B scripts/test_mineru_daily_result_cache.py
+      - run: python3 -B scripts/test_mineru_completed_child_reuse.py
       - run: python3 -B scripts/test_mineru_daily_result_transport.py
       - run: python3 -B scripts/test_mineru_pinned_result_transport.py
       - run: python3 -B scripts/test_seed_mineru_result_cache.py
