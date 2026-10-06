@@ -9,7 +9,7 @@ are only temporary OCR inputs; the public report contains text and redrawn chart
 from __future__ import annotations
 
 import argparse
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import Future, ThreadPoolExecutor
 from datetime import datetime, timezone
 import hashlib
 import io
@@ -322,7 +322,7 @@ def build(input_dir: Path, manifest: Path, expected_reports: int, date_folder: s
     if invoke is call_model and not os.environ.get("DEEPSEEK_API_KEY", "").strip():
         raise ProviderConfigurationError("DEEPSEEK_API_KEY is required")
 
-    def process_report(item: tuple[int, dict[str, str]]) -> dict[str, Any]:
+    def prepare_report(item: tuple[int, dict[str, str]]) -> dict[str, Any]:
         index, binding = item
         rid = f"R{index:03d}"
         extraction_key = sha(json.dumps([PROMPT_VERSION, binding["content_sha256"], languages, dpi, ocr_all_pages]).encode())
@@ -338,37 +338,59 @@ def build(input_dir: Path, manifest: Path, expected_reports: int, date_folder: s
                 or any(sha(row["text"].encode()) != row.get("text_sha256") for row in pages)):
             raise ValueError("Cached extraction has incomplete or corrupt page coverage")
         chunks = chunk_pages(pages, chunk_chars)
+        return {"id": rid, **binding, "pages": pages, "chunks": chunks, "page_count": count}
+
+    def process_report(prepared: dict[str, Any]) -> dict[str, Any]:
+        # This worker only handles JSON/text and model I/O. PyMuPDF extraction,
+        # cached page-count checks and all figure rendering stay on the caller.
+        rid, pages, chunks = prepared["id"], prepared["pages"], prepared["chunks"]
         summaries = []
         for chunk in chunks:
-            value = cached_model(chunk_prompt(binding["source_pdf"], chunk, binding["content_sha256"]),
+            value = cached_model(chunk_prompt(prepared["source_pdf"], chunk, prepared["content_sha256"]),
                                  cache_dir / "model", model, base_url, invoke)
             summaries.append(validate_summary(value, chunk["pages"]))
         report_dir = output / "ocr_sources" / rid
         write_json(report_dir / "pages.json", pages)
         write_json(report_dir / "chunks.json", chunks)
         write_json(report_dir / "summaries.json", summaries)
-        print(f"OCR_SYNTHESIS_REPORT={rid} pages={count} chunks={len(chunks)} complete=true", flush=True)
-        return {"id": rid, **binding, "status": "summarized", "pages": pages, "chunks": chunks, "summaries": summaries}
+        print(f"OCR_SYNTHESIS_REPORT={rid} pages={prepared['page_count']} chunks={len(chunks)} complete=true", flush=True)
+        return {**prepared, "status": "summarized", "summaries": summaries}
 
-    def process(item: tuple[int, dict[str, str]]) -> dict[str, Any]:
+    def skipped_report(rid: str, binding: dict[str, Any], exc: Exception) -> dict[str, Any]:
+        # Source-specific errors do not prevent attempting later originals.
+        # Keep raw provider responses and traceback strings out of public metadata.
+        reason = "source_or_synthesis_failed"
+        if isinstance(exc, subprocess.TimeoutExpired):
+            reason = "ocr_timeout"
+        elif isinstance(exc, ValueError):
+            reason = "source_or_synthesis_invalid"
+        print(f"OCR_SYNTHESIS_SKIPPED={rid} reason={reason} error_type={type(exc).__name__}", flush=True)
+        return {"id": rid, "source_pdf": binding["source_pdf"], "content_sha256": binding["content_sha256"],
+                "status": "skipped", "reason": reason}
+
+    def process(prepared: dict[str, Any]) -> dict[str, Any]:
         try:
-            return process_report(item)
+            return process_report(prepared)
         except ProviderConfigurationError:
             raise
         except Exception as exc:
-            # Source-specific errors do not prevent attempting later originals.
-            # Keep raw provider responses and traceback strings out of public metadata.
-            reason = "source_or_synthesis_failed"
-            if isinstance(exc, subprocess.TimeoutExpired):
-                reason = "ocr_timeout"
-            elif isinstance(exc, ValueError):
-                reason = "source_or_synthesis_invalid"
-            index, binding = item
-            print(f"OCR_SYNTHESIS_SKIPPED=R{index:03d} reason={reason} error_type={type(exc).__name__}", flush=True)
-            return {"id": f"R{index:03d}", **binding, "status": "skipped", "reason": reason}
+            return skipped_report(prepared["id"], prepared, exc)
 
     with ThreadPoolExecutor(max_workers=max(1, min(workers, 8))) as pool:
-        results = list(pool.map(process, enumerate(bindings, 1)))
+        pending: list[Future | dict[str, Any]] = []
+        for index, binding in enumerate(bindings, 1):
+            try:
+                # PyMuPDF does not support multi-threaded access, even when
+                # each thread opens a different document. Prepare serially, and
+                # overlap the next PDF's OCR with already-submitted model calls.
+                prepared = prepare_report((index, binding))
+            except ProviderConfigurationError:
+                raise
+            except Exception as exc:
+                pending.append(skipped_report(f"R{index:03d}", binding, exc))
+                continue
+            pending.append(pool.submit(process, prepared))
+        results = [item.result() if isinstance(item, Future) else item for item in pending]
     successful = [result for result in results if result["status"] == "summarized"]
     skipped = [result for result in results if result["status"] == "skipped"]
     if not successful:

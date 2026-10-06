@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import re
 import tempfile
+import threading
 import unittest
 from unittest.mock import patch
 
@@ -86,6 +87,62 @@ class OCRSynthesisTests(unittest.TestCase):
         self.assertEqual(calls, [0])
         self.assertIn("图中数据", rows[0]["text"])
         self.assertEqual(rows[0]["method"], "native+ocr")
+
+    def test_pdf_access_stays_on_main_thread_while_model_requests_overlap(self):
+        manifest = self.originals_fixture(count=2, pages=1)
+        main_thread = threading.get_ident()
+        open_threads, pixel_threads, extractor_threads, model_threads = [], [], [], []
+        real_open, real_pixmap = fitz.open, fitz.Page.get_pixmap
+        first_model_started = threading.Event()
+        simultaneous_models = threading.Barrier(2, timeout=5)
+
+        def tracked_open(*args, **kwargs):
+            open_threads.append(threading.get_ident())
+            self.assertEqual(threading.get_ident(), main_thread)
+            return real_open(*args, **kwargs)
+
+        def tracked_pixmap(page, *args, **kwargs):
+            pixel_threads.append(threading.get_ident())
+            self.assertEqual(threading.get_ident(), main_thread)
+            return real_pixmap(page, *args, **kwargs)
+
+        def reader(page, **kwargs):
+            # Exercise the actual raster API used by full-page Tesseract OCR.
+            page.get_pixmap(dpi=72)
+            return "OCR source text with demand growth 3.4 and 5.6 percent."
+
+        def extractor(path, **kwargs):
+            extractor_threads.append(threading.get_ident())
+            if path.name.startswith("02_"):
+                # The first summary must already be running while the main
+                # thread prepares the next PDF, rather than batching all OCR.
+                self.assertTrue(first_model_started.wait(5))
+            return fallback.extract_pages(path, reader=reader, **kwargs)
+
+        def invoke(prompt, *args):
+            if not prompt.startswith("将以下全部研究"):
+                model_threads.append(threading.get_ident())
+                first_model_started.set()
+                simultaneous_models.wait()
+            return model_fixture(prompt, *args)
+
+        with patch.object(fitz, "open", tracked_open), patch.object(fitz.Page, "get_pixmap", tracked_pixmap):
+            receipt = self.build(manifest, count=2, extractor=extractor, invoke=invoke, ocr_all_pages=True)
+            self.assertEqual(receipt["summarized_reports"], 2)
+            self.assertEqual(len(set(model_threads)), 2)
+            self.assertNotIn(main_thread, model_threads)
+            self.assertEqual(extractor_threads, [main_thread, main_thread])
+            self.assertTrue(open_threads)
+            self.assertTrue(pixel_threads)
+            self.assertEqual(set(open_threads + pixel_threads), {main_thread})
+            calls_before_cache_resume = len(open_threads)
+            def unexpected(*args, **kwargs):
+                raise AssertionError("Cached extraction or model call was repeated")
+            resumed = self.build(manifest, count=2, extractor=unexpected, invoke=unexpected, ocr_all_pages=True)
+            self.assertEqual(resumed["summarized_reports"], 2)
+            # Cache hits still verify real original-PDF page counts, on main.
+            self.assertGreater(len(open_threads), calls_before_cache_resume)
+            self.assertEqual(set(open_threads + pixel_threads), {main_thread})
 
     def test_garbled_structure_is_sent_to_model_and_last_page_survives(self):
         manifest = self.originals_fixture()
