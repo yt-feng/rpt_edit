@@ -20,6 +20,9 @@ def page_record(number: int, text: str) -> dict:
 
 
 def model_fixture(prompt: str, model: str, url: str) -> dict:
+    if prompt.startswith("market-cross-report-v1 "):
+        from test_market_views_cross_report import model as final_model
+        return final_model(prompt, model, url)
     if prompt.startswith("将以下全部研究"):
         return {"executive_summary": ["全球需求温和修复，资本开支与盈利增长存在分化。"], "closing": "后续观察需求与盈利兑现。"}
     pages = json.loads(re.search(r"；页码：(\[[^\n]+\])", prompt).group(1))
@@ -121,7 +124,7 @@ class OCRSynthesisTests(unittest.TestCase):
             return fallback.extract_pages(path, reader=reader, **kwargs)
 
         def invoke(prompt, *args):
-            if not prompt.startswith("将以下全部研究"):
+            if not prompt.startswith(("将以下全部研究", "market-cross-report-v1 ")):
                 model_threads.append(threading.get_ident())
                 first_model_started.set()
                 simultaneous_models.wait()
@@ -305,7 +308,7 @@ class OCRSynthesisTests(unittest.TestCase):
             return [page_record(n, f"Original page {n}. " + "x" * 200) for n in (1, 2, 3)]
         def invoke(prompt, *args):
             value = model_fixture(prompt, *args)
-            if prompt.startswith("将以下全部研究"):
+            if prompt.startswith(("将以下全部研究", "market-cross-report-v1 ")):
                 return value
             page = value["pages"][0]
             if page == 1:
@@ -332,8 +335,8 @@ class OCRSynthesisTests(unittest.TestCase):
         self.assertEqual(private_before, {str(path): path.read_bytes() for path in (directory / "ocr_sources").rglob("*.json")})
         structured = json.loads((directory / "market_views_structured.json").read_text())
         section = structured["bank_roundup"]["sections"][0]
-        self.assertIn("6.84亿港元", section["thesis"])
-        self.assertNotIn("6.84亿港元", section["bank_views"][0]["view"])
+        self.assertIn("6.84亿港元", section["bank_views"][0]["view"])
+        self.assertEqual(structured["synthesis_mode"], "cross-report-v1")
         self.assertIn("收入增长20%", section["bank_views"][0]["view"])
         self.assertNotIn("法律声明", json.dumps(structured, ensure_ascii=False))
         self.assertIn("法律声明", (directory / "ocr_sources/R001/summaries.json").read_text())
@@ -342,6 +345,59 @@ class OCRSynthesisTests(unittest.TestCase):
         validate_ocr_synthesis_receipt(directory, date_folder="261005", expected_reports=1,
             source_run_id="37388263555", execution_sha="a" * 40)
         self.assertEqual(fallback.PROMPT_VERSION, "complete-ocr-synthesis-v1")
+
+    def test_publication_titles_institutions_and_charts_remove_metadata_without_changing_cache(self):
+        manifest = self.originals_fixture(count=1, pages=1)
+        def invoke(prompt, *args):
+            value = model_fixture(prompt, *args)
+            if prompt.startswith("market-cross-report-v1 "):
+                return value
+            value.update(title="Author: John Analyst", institution="Morgan Stanley analyst John, Tel: +1 212 555 0000, john@bank.com")
+            value["key_points"] = ["作者：John Analyst", "Email: john@bank.com", "MS预计收入增长15%。"]
+            value["charts"] = [{**value["charts"][0], "title": "Ratings distribution: Buy 55%, Sell 5%."},
+                               {**value["charts"][0], "title": "Copyright licensing revenue is expected to grow 15%."}]
+            return value
+        self.build(manifest, count=1, invoke=invoke)
+        output = self.root / "summaries/261005"
+        report = json.loads((output / "report_inputs.json").read_text())[0]
+        figures = json.loads((output / "figure_candidates.json").read_text())
+        self.assertEqual(report["institution_name"], "摩根士丹利")
+        self.assertEqual(report["title"], "R001 研究主题")
+        self.assertEqual(len(figures), 1)
+        self.assertIn("licensing revenue", figures[0]["label"])
+        for value in (report, figures):
+            text = json.dumps(value, ensure_ascii=False)
+            for absent in ("John", "john@", "555", "Ratings distribution"):
+                self.assertNotIn(absent, text)
+        self.assertIn("John Analyst", (output / "ocr_sources/R001/summaries.json").read_text())
+
+    def test_clean_qualitative_points_and_pure_legal_report_has_no_placeholder_chart(self):
+        spec = {"kind": "qualitative", "title": "行业监管变化影响需求", "points": ["Author: John Analyst", "评级分布：买入55%。", "GS预计收入增长15%。"], "source_pages": [1]}
+        cleaned = fallback.publication_chart(spec)
+        self.assertEqual(cleaned["points"], ["GS预计收入增长15%。"])
+        self.assertEqual(len(spec["points"]), 3)
+        manifest = self.originals_fixture(count=1, pages=1)
+        def legal(prompt, *args):
+            value = model_fixture(prompt, *args)
+            if not prompt.startswith("market-cross-report-v1 "):
+                value.update(summary="Disclaimer: for institutional clients only.", key_points=[], differences=[], data_points=[], charts=[])
+            return value
+        receipt = self.build(manifest, count=1, invoke=legal)
+        output = self.root / "summaries/261005"
+        self.assertEqual(json.loads((output / "figure_candidates.json").read_text()), [])
+        self.assertEqual(receipt["reports"][0]["pages_covered"], [1])
+
+    def test_explicit_legal_summary_does_not_erase_real_numeric_chart(self):
+        manifest = self.originals_fixture(count=1, pages=1)
+        def mixed(prompt, *args):
+            value = model_fixture(prompt, *args)
+            if not prompt.startswith("market-cross-report-v1 "):
+                value.update(summary="免责声明：仅供参考。", key_points=[], differences=[], data_points=[])
+            return value
+        self.build(manifest, count=1, invoke=mixed)
+        figures = json.loads((self.root / "summaries/261005/figure_candidates.json").read_text())
+        self.assertEqual(len(figures), 1)
+        self.assertEqual(figures[0]["chart_spec"]["series"][0]["values"], [3.4, 5.6])
 
     def test_changed_original_sha_does_not_reuse_old_model_results(self):
         manifest = self.originals_fixture(count=1)
@@ -356,7 +412,8 @@ class OCRSynthesisTests(unittest.TestCase):
             calls.append(prompt)
             return model_fixture(prompt, *args)
         self.build(manifest, count=1, invoke=changed_source)
-        self.assertEqual(len(calls), 2)
+        self.assertEqual(sum(prompt.startswith("你是中文研究编辑") for prompt in calls), 1)
+        self.assertGreater(sum(prompt.startswith("market-cross-report-v1 ") for prompt in calls), 0)
         self.assertIn(bindings[0]["content_sha256"], calls[0])
 
     def test_uncertain_request_is_not_blindly_repeated(self):

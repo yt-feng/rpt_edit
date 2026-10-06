@@ -63,6 +63,7 @@ jobs:
             scripts/test_portal_hot_retention_first_added.js
             scripts/test_portal_hot_reports.js
             scripts/test_portal_market_views.js
+            scripts/test_market_views_list_cache.js
             scripts/test_portal_multi_institution_access.js
             scripts/test_portal_newsfeed_access.js
             scripts/test_portal_text_only_pdf_upload.js
@@ -106,6 +107,7 @@ jobs:
           node scripts/test_portal_hot_retention_first_added.js
           node scripts/test_portal_hot_reports.js
           node scripts/test_portal_market_views.js
+          node scripts/test_market_views_list_cache.js
           node scripts/test_portal_multi_institution_access.js
           node scripts/test_portal_text_only_pdf_upload.js
           node scripts/test_portal_text_only_text_access.js

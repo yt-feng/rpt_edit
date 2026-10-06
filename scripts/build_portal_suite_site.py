@@ -3782,7 +3782,7 @@ def render_bbg_show_module(articles: list[dict[str, Any]]) -> str:
         )
     content = '<div class="blog-card-grid">' + "".join(cards) + '</div>' if cards else '<p>双语脚本整理后将展示在这里。</p>'
     return (
-        '<section class="bbg-blog-module" aria-labelledby="bbgShowTitle">'
+        '<section class="bbg-blog-module" id="blogBbgShow" aria-labelledby="bbgShowTitle">'
         '<div class="bbg-module-heading"><div><p class="blog-kicker">BBG SHOW · BILINGUAL SCRIPTS</p>'
         '<h2 id="bbgShowTitle">BBG Show 中英对照</h2><p>从节目片段到可阅读的双语脚本，逐段对照、保留时间与来源。</p></div>'
         f'<a class="blog-read-more" href="bbg-show.html">查看全部 {len(articles)} 篇 →</a></div>{content}</section>'
@@ -3809,7 +3809,7 @@ def render_blog_index(
     collection_name = "BBG Show 中英对照" if bbg_collection else f"{BLOG_PUBLIC_BRAND} Blog"
     collection_description = (
         "BBG Show 已发布视频片段的中英双语脚本，逐段对照，保留节目时间与来源。"
-        if bbg_collection else f"{BLOG_PUBLIC_BRAND}每日研究文章与公众号正文存档。"
+        if bbg_collection else f"{BLOG_PUBLIC_BRAND}每日 Market Views PDF、研究文章与 BBG Show 双语脚本；按日期阅读研究观点与来源。"
     )
     page_title = f"{collection_name}{page_suffix} | {'双语节目脚本' if bbg_collection else '每日研报与研究文章'}"
     grouped: dict[str, list[dict[str, Any]]] = {}
@@ -3879,6 +3879,7 @@ def render_blog_index(
           <div>
             <p class="blog-kicker">DAILY MARKET VIEWS</p>
             <h2 id="blogMarketViewsTitle">每日 Market Views</h2>
+            <p class="blog-market-description">先读最新日报，快速浏览研究观点与配套图表。</p>
           </div>
           <p>开通时长至少 1 个月的会员可下载 PDF。</p>
         </div>
@@ -3886,6 +3887,7 @@ def render_blog_index(
         <div id="blogMarketViewsList" class="blog-market-views-list">
           <div class="loading-state"><span class="loading-spinner" aria-hidden="true"></span><span>正在读取每日 PDF…</span></div>
         </div>
+        <noscript><p>PDF 下载需要启用 JavaScript 并登录。下方研究文章可直接阅读。</p></noscript>
       </section>"""
     return f"""<!doctype html>
 <html lang="zh-Hans">
@@ -3939,16 +3941,18 @@ def render_blog_index(
     <main class="blog-shell">
       <header class="blog-hero">
         <p class="blog-kicker">{BLOG_PUBLIC_BRAND} · DAILY RESEARCH</p>
-        <h1>{'BBG Show 中英对照' if bbg_collection else f'{BLOG_PUBLIC_BRAND} Blog'}{page_suffix}</h1>
-        <p>{'按节目与片段整理已发布的双语脚本，中文和英文逐段对应，可回到节目来源核对。' if bbg_collection else f'{BLOG_PUBLIC_BRAND}从 {html_escape(start_date.isoformat())} 起完整保存每日公众号文章，按首次入库日期倒序展示。'}</p>
-        <div class="blog-summary"><strong>{len(articles)}</strong> 篇文章 · 第 {page_number}/{total_pages} 页</div>
-        <nav class="blog-module-nav" aria-label="Blog 内容模块"><a href="./">研究文章</a><a href="bbg-show.html"{' aria-current="page"' if bbg_collection else ''}>BBG Show 中英对照</a><a href="../research.html">AI 研究</a></nav>
+        <h1>{'BBG Show 中英对照' if bbg_collection else '每日研究，集中阅读'}{page_suffix}</h1>
+        <p>{'按节目与片段整理已发布的双语脚本，中文和英文逐段对应，可回到节目来源核对。' if bbg_collection else '下载每日 Market Views，阅读专题研究，或逐段查看财经节目中英脚本。'}</p>
+        <nav class="blog-module-nav" aria-label="Blog 内容模块"><a href="{'./#blogMarketViews' if page_number != 1 or bbg_collection else '#blogMarketViews'}">最新日报</a><a href="{'./#blogResearch' if bbg_collection else '#blogResearch'}">研究文章</a><a href="{'bbg-show.html' if bbg_collection else './#blogBbgShow'}"{' aria-current="page"' if bbg_collection else ''}>BBG Show 中英对照</a><a href="../research.html">AI 研究</a></nav>
       </header>
-      {render_bbg_show_module(bbg_articles or []) if page_number == 1 and not bbg_collection else ''}
       {market_views_block}
+      <section class="blog-research" id="blogResearch" aria-labelledby="blogResearchTitle">
+      <div class="blog-section-heading"><div><p class="blog-kicker">{'BILINGUAL SCRIPTS' if bbg_collection else 'RESEARCH ARTICLES'}</p><h2 id="blogResearchTitle">{'节目脚本' if bbg_collection else '研究文章'}</h2></div><p>{len(articles)} 篇 · 第 {page_number}/{total_pages} 页</p></div>
       {pagination}
       {"".join(sections)}
       {pagination}
+      </section>
+      {render_bbg_show_module(bbg_articles or []) if page_number == 1 and not bbg_collection else ''}
     </main>
     <footer class="legal-footer blog-footer">
       <a href="../">首页检索</a>

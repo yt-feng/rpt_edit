@@ -12731,18 +12731,90 @@
     return match ? `${match[1]}-${match[2]}-${match[3]}` : text;
   }
 
-  function blogMarketViewCard(item) {
+  function blogMarketViewCard(item, latest) {
     const date = blogMarketViewDateLabel(item && item.date);
     const size = formatSize(item && item.size_bytes);
     const title = publicBrandText(item && item.title, "Market Views");
     return `
-      <article class="blog-market-view-card">
-        <time datetime="${escapeHtml(date)}">${escapeHtml(date || "每日更新")}</time>
-        <strong>${escapeHtml(title)}</strong>
-        ${size ? `<span class="subtle">PDF · ${escapeHtml(size)}</span>` : '<span class="subtle">PDF</span>'}
-        <button class="secondary-button blog-market-view-download" type="button" data-market-view-id="${escapeHtml(item && item.id || "")}">下载 PDF</button>
+      <article class="blog-market-view-card${latest ? " is-latest" : ""}">
+        <div class="blog-market-view-meta">${latest ? '<span class="blog-latest-label">最新日报</span>' : ""}<time datetime="${escapeHtml(date)}">${escapeHtml(date || "每日更新")}</time></div>
+        <h3>${escapeHtml(title)}</h3>
+        <span class="subtle">PDF${size ? ` · ${escapeHtml(size)}` : ""}</span>
+        <div class="blog-download-actions">
+          <button class="${latest ? "primary-link" : "secondary-button"} blog-market-view-download" type="button" data-market-view-id="${escapeHtml(item && item.id || "")}">${latest ? "下载最新日报" : "下载 PDF"}</button>
+          <button class="secondary-button blog-download-cancel" type="button" hidden>取消下载</button>
+        </div>
+        <div class="blog-download-state" role="status" aria-live="polite" aria-atomic="true"></div>
+        <progress class="blog-download-progress" aria-label="PDF 下载进度" hidden></progress>
       </article>
     `;
+  }
+
+  function blogMarketViewHistory(items, date, page) {
+    const filtered = items.filter((item) => !date || item.date === date);
+    const pages = Math.max(1, Math.ceil(filtered.length / 6));
+    const current = Math.max(1, Math.min(pages, page));
+    return { items: filtered.slice((current - 1) * 6, current * 6), page: current, pages, count: filtered.length };
+  }
+
+  async function fetchBlogMarketView(url, headers, controller, onProgress) {
+    let idleTimer;
+    let timedOut = false;
+    let reader;
+    const touch = () => {
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(() => { timedOut = true; controller.abort(); }, 60000);
+    };
+    touch();
+    try {
+      const response = await fetch(url, { cache: "no-store", headers, signal: controller.signal });
+      touch();
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.detail || (response.status === 401 ? "请重新登录后下载。" : "PDF 下载失败，请重试。"));
+      }
+      if (!/application\/pdf/i.test(response.headers.get("Content-Type") || "")) {
+        throw new Error("未收到有效 PDF，请稍后重试。");
+      }
+      const length = Number(response.headers.get("Content-Length"));
+      const encoding = response.headers.get("Content-Encoding");
+      const total = Number.isSafeInteger(length) && length > 0 && (!encoding || encoding === "identity") ? length : 0;
+      let received = 0;
+      let blob;
+      onProgress(received, total);
+      if (response.body && typeof response.body.getReader === "function") {
+        reader = response.body.getReader();
+        const chunks = [];
+        while (true) {
+          const part = await reader.read();
+          if (part.done) break;
+          if (controller.signal.aborted) throw new Error("下载已取消。");
+          chunks.push(part.value);
+          received += part.value.byteLength;
+          touch();
+          onProgress(received, total);
+        }
+        blob = new Blob(chunks, { type: "application/pdf" });
+      } else {
+        // Older browsers expose no byte stream; keep the progress indeterminate.
+        blob = await response.blob();
+        received = blob.size;
+      }
+      if (controller.signal.aborted) throw new Error("下载已取消。");
+      if (!received || (total && received !== total)) throw new Error("PDF 传输不完整，请重试。");
+      onProgress(received, total);
+      return { blob, disposition: response.headers.get("Content-Disposition") || "" };
+    } catch (error) {
+      if (timedOut) throw new Error("60 秒未收到数据，下载已停止。请重试。");
+      if (controller.signal.aborted) throw new Error("下载已取消，可重新下载。");
+      throw error;
+    } finally {
+      clearTimeout(idleTimer);
+      if (reader) {
+        if (controller.signal.aborted) await reader.cancel().catch(() => {});
+        reader.releaseLock();
+      }
+    }
   }
 
   async function initBlog() {
@@ -12751,6 +12823,9 @@
     const accessStatus = document.getElementById("blogMarketViewsAccess");
     initAccountGate(workerUrl);
     if (!list || !accessStatus) return;
+    let activeDownload = null;
+    let historyItems = [];
+    let historyPage = 1;
 
     function setAccessStatus(text, kind = "") {
       accessStatus.className = kind ? `status-line ${kind}` : "status-line";
@@ -12765,8 +12840,7 @@
       setAccessStatus("正在核验会员资格…", "");
       try {
         const response = await fetch(`${workerUrl}/market-views/access`, {
-          cache: "no-store",
-          headers: authHeaders(),
+          cache: "no-store", headers: authHeaders(),
         });
         const data = await response.json().catch(() => ({}));
         if (!response.ok) throw new Error(data.detail || "会员资格核验失败。");
@@ -12778,21 +12852,61 @@
       }
     }
 
-    async function loadMarketViews() {
+    function renderHistory() {
+      const target = list.querySelector(".blog-history-list");
+      if (!target) return;
+      const view = blogMarketViewHistory(historyItems, list.querySelector(".blog-history-date").value, historyPage);
+      historyPage = view.page;
+      target.innerHTML = view.items.length ? view.items.map((item) => blogMarketViewCard(item, false)).join("")
+        : '<p class="empty-state">这个日期没有已发布日报，请选择其他日期。</p>';
+      list.querySelector(".blog-history-page").textContent = `第 ${view.page} / ${view.pages} 页 · ${view.count} 份`;
+      list.querySelector('[data-history-page="previous"]').disabled = view.page === 1;
+      list.querySelector('[data-history-page="next"]').disabled = view.page === view.pages;
+    }
+
+    async function loadMarketViews(force = false) {
       try {
-        const response = await fetch(`${workerUrl}/market-views`, { cache: "no-store" });
+        const response = await fetch(`${workerUrl}/market-views`, { cache: force ? "no-store" : "default", credentials: "omit" });
         const data = await response.json().catch(() => ({}));
         if (!response.ok) throw new Error(data.detail || "每日 PDF 读取失败。");
-        const items = Array.isArray(data.items) ? data.items : [];
-        list.innerHTML = items.length
-          ? items.map(blogMarketViewCard).join("")
-          : '<div class="empty-state">今日 Market Views PDF 正在准备中。</div>';
+        const items = (Array.isArray(data.items) ? data.items : []).slice().sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
+        historyItems = items.slice(1);
+        list.innerHTML = items.length ? blogMarketViewCard(items[0], true) + (historyItems.length ? `
+          <details class="blog-market-history"><summary>历史日报 <span>${historyItems.length} 份 · 按日期查找</span></summary>
+            <div class="blog-history-filter"><label>选择日期 <input class="blog-history-date" type="date" min="${escapeHtml(historyItems[historyItems.length - 1].date)}" max="${escapeHtml(historyItems[0].date)}"></label><button class="secondary-button" type="button" data-history-clear>全部日期</button></div>
+            <div class="blog-history-list"></div>
+            <nav class="blog-history-pagination" aria-label="历史日报分页"><button class="secondary-button" type="button" data-history-page="previous">上一页</button><span class="blog-history-page" role="status"></span><button class="secondary-button" type="button" data-history-page="next">下一页</button></nav>
+          </details>` : "") : '<div class="empty-state">Market Views PDF 正在准备中。</div>';
+        renderHistory();
       } catch (error) {
-        list.innerHTML = `<div class="error-state">${escapeHtml(error.message || "每日 PDF 暂时无法读取。")}</div>`;
+        list.innerHTML = `<div class="error-state">${escapeHtml(error.message || "每日 PDF 暂时无法读取。")}</div><button class="secondary-button" type="button" data-market-reload>重新加载日报</button>`;
       }
     }
 
+    list.addEventListener("change", (event) => {
+      if (!event.target.matches(".blog-history-date") || activeDownload) return;
+      historyPage = 1;
+      renderHistory();
+    });
     list.addEventListener("click", async (event) => {
+      if (event.target.closest(".blog-download-cancel")) {
+        if (activeDownload) activeDownload.abort();
+        return;
+      }
+      if (activeDownload) return;
+      if (event.target.closest("[data-market-reload]")) { await loadMarketViews(true); return; }
+      const pageButton = event.target.closest("[data-history-page]");
+      if (pageButton) {
+        historyPage += pageButton.dataset.historyPage === "next" ? 1 : -1;
+        renderHistory();
+        return;
+      }
+      if (event.target.closest("[data-history-clear]")) {
+        list.querySelector(".blog-history-date").value = "";
+        historyPage = 1;
+        renderHistory();
+        return;
+      }
       const button = event.target.closest("button[data-market-view-id]");
       if (!button) return;
       if (!loadAuthSession()) {
@@ -12802,31 +12916,53 @@
       }
       const id = String(button.dataset.marketViewId || "");
       if (!id) return;
-      button.disabled = true;
-      setAccessStatus("正在准备 PDF…", "");
+      const card = button.closest(".blog-market-view-card");
+      const status = card.querySelector(".blog-download-state");
+      const progress = card.querySelector("progress");
+      const cancel = card.querySelector(".blog-download-cancel");
+      const controller = new AbortController();
+      activeDownload = controller;
+      const disabled = Array.from(list.querySelectorAll("button:not(.blog-download-cancel), input"), (control) => [control, control.disabled]);
+      disabled.forEach(([control]) => { control.disabled = true; });
+      cancel.hidden = false;
+      progress.hidden = false;
+      progress.removeAttribute("value");
+      status.className = "blog-download-state";
+      status.textContent = "正在准备 PDF，等待服务器响应…";
+      button.textContent = "下载中…";
+      let lastUpdate = 0;
       try {
-        const response = await fetch(`${workerUrl}/market-views/pdf?id=${encodeURIComponent(id)}`, {
-          cache: "no-store",
-          headers: authHeaders(),
+        const result = await fetchBlogMarketView(`${workerUrl}/market-views/pdf?id=${encodeURIComponent(id)}`, authHeaders(), controller, (received, total) => {
+          const now = Date.now();
+          if (received && received !== total && now - lastUpdate < 200) return;
+          lastUpdate = now;
+          if (total && received <= total) {
+            progress.max = total;
+            progress.value = received;
+            status.textContent = `正在接收 ${Math.floor(received / total * 100)}% · ${formatSize(received) || "0 B"} / ${formatSize(total)}`;
+          } else {
+            progress.removeAttribute("value");
+            status.textContent = received ? `已接收 ${formatSize(received)}，正在继续下载…` : "已连接，等待 PDF 数据…";
+          }
         });
-        if (!response.ok) {
-          const data = await response.json().catch(() => ({}));
-          throw new Error(data.detail || "PDF 下载失败。");
-        }
-        triggerBlobDownload(
-          await response.blob(),
-          response.headers.get("Content-Disposition"),
-          `${id.replace(/[^a-z0-9-]+/gi, "-") || "market-views"}.pdf`,
-        );
-        setAccessStatus("PDF 下载已开始。", "ok");
+        triggerBlobDownload(result.blob, result.disposition, `${id.replace(/[^a-z0-9-]+/gi, "-") || "market-views"}.pdf`);
+        status.className = "blog-download-state ok";
+        status.textContent = `PDF 已接收（${formatSize(result.blob.size)}），已交给浏览器保存。`;
+        button.textContent = "再次下载";
       } catch (error) {
-        setAccessStatus(error.message || "PDF 下载失败。", "error");
+        status.className = "blog-download-state error";
+        status.textContent = error.message || "PDF 下载失败，请重试。";
+        button.textContent = controller.signal.aborted ? "重新下载" : "重试下载";
       } finally {
-        button.disabled = false;
+        cancel.hidden = true;
+        progress.hidden = true;
+        activeDownload = null;
+        disabled.forEach(([control, previous]) => { control.disabled = previous; });
       }
     });
 
     document.addEventListener("portal-auth-change", refreshAccess);
+    window.addEventListener("pagehide", () => { if (activeDownload) activeDownload.abort(); });
     await Promise.all([loadMarketViews(), refreshAccess()]);
   }
 

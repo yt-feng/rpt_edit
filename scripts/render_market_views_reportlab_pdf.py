@@ -12,6 +12,7 @@ import json
 import re
 from pathlib import Path
 from typing import Any
+from market_views_publication_budget import MAX_PAGES, bound_roundups, concise
 
 try:
     from reportlab.lib import colors
@@ -532,7 +533,7 @@ def normalized_bank_roundup(
             view_ids = [
                 str(report_id)
                 for report_id in raw_view.get("report_ids") or []
-                if str(report_id) in bank_ids and str(report_id) not in covered
+                if str(report_id) in bank_ids and (summary.get("synthesis_mode") == "cross-report-v1" or str(report_id) not in covered)
             ]
             if not view_ids:
                 continue
@@ -542,10 +543,11 @@ def normalized_bank_roundup(
                 "data_points": clean_list(raw_view.get("data_points") or [], 4),
                 "marginal_change": clean_plain(raw_view.get("marginal_change") or ""),
                 "report_ids": view_ids,
+                "sources": raw_view.get("sources") or [],
             })
             covered.update(view_ids)
         for report_id in refs:
-            if report_id not in covered:
+            if report_id not in covered and summary.get("synthesis_mode") != "cross-report-v1":
                 views.append(fallback_bank_view(report_id, reports[report_id]))
                 covered.add(report_id)
         sections.append({
@@ -553,6 +555,7 @@ def normalized_bank_roundup(
             "thesis": clean_plain(raw_section.get("thesis") or ""),
             "consensus": clean_list(raw_section.get("consensus") or raw_section.get("bullets") or [], 6),
             "divergences": clean_list(raw_section.get("divergences") or [], 5),
+            "catalysts": clean_list(raw_section.get("catalysts") or [], 4),
             "bank_views": views,
             "data_points": clean_list(raw_section.get("data_points") or [], 10),
             "figure_ids": [str(fig_id) for fig_id in raw_section.get("figure_ids") or [] if str(fig_id) in figures][:4],
@@ -610,13 +613,29 @@ class MarketDocTemplate(BaseDocTemplate):
         if not isinstance(flowable, Paragraph):
             return
         style_name = getattr(flowable.style, "name", "")
-        if style_name == "PortalH1":
-            self.notify("TOCEntry", (0, flowable.getPlainText(), self.page))
-        elif style_name == "PortalH2":
-            self.notify("TOCEntry", (1, flowable.getPlainText(), self.page))
+        if style_name in ("PortalH1", "PortalH2"):
+            import hashlib
+            level = 0 if style_name == "PortalH1" else 1
+            label = flowable.getPlainText()
+            key = "section-" + hashlib.sha256((label + str(self.page)).encode()).hexdigest()[:16]
+            self.canv.bookmarkPage(key)
+            self.canv.addOutlineEntry(label, key, level=level, closed=False)
+            self.notify("TOCEntry", (level, label, self.page, key))
 
 
-def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
+def page_ranges(pages: list) -> str:
+    """Keep late/discrete evidence pages without printing long consecutive lists."""
+    ordered = sorted({page for page in pages if type(page) is int and page > 0})
+    ranges = []
+    for page in ordered:
+        if ranges and page == ranges[-1][1] + 1:
+            ranges[-1][1] = page
+        else:
+            ranges.append([page, page])
+    return ",".join(str(start) if start == end else f"{start}–{end}" for start, end in ranges)
+
+
+def build_pdf(summary_dir: Path, output_pdf: Path, *, _budget_chars: int = 4200) -> None:
     summary = load_json(summary_dir / "market_views_structured.json")
     font = register_cjk_font(embedded=summary.get("source_kind") == "ocr-synthesis")
     reports = {item["id"]: item for item in load_json(summary_dir / "report_inputs.json")}
@@ -627,6 +646,9 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
     }
     bank_roundup = normalized_bank_roundup(summary, reports, figures)
     supporting_roundups = normalized_supporting_roundups(summary, reports, figures)
+    bank_roundup, supporting_roundups = bound_roundups(bank_roundup, supporting_roundups,
+        module_chars=max(4200, _budget_chars) if summary.get("synthesis_mode") == "cross-report-v1" else _budget_chars,
+        figures_per_module=3 if summary.get("synthesis_mode") == "cross-report-v1" else 4)
     cta_path = repo_asset_path(summary_dir, "prompts/zsxq_img.jpg")
     if not cta_path.exists():
         raise RuntimeError(f"Required Market Views ending image is missing: {cta_path}")
@@ -736,8 +758,8 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
     story.append(PageBreak())
 
     story.append(Paragraph("一页摘要", styles["PortalH1"]))
-    for item in summary.get("executive_summary", []):
-        story.append(Paragraph("- " + clean_text(item), styles["PortalBody"]))
+    for item in summary.get("executive_summary", [])[:10]:
+        story.append(Paragraph("- " + clean_text(concise(item, 300)), styles["PortalBody"]))
 
     story.append(PageBreak())
     story.append(Paragraph(clean_text(bank_roundup.get("title") or "全球投行叙事汇编"), styles["PortalH1"]))
@@ -761,7 +783,11 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
             for point in section.get("divergences") or []:
                 story.append(Paragraph("- " + clean_text(point), styles["PortalBody"]))
 
-        story.append(Paragraph("<b>机构观点</b>", styles["PortalLabel"]))
+        if section.get("catalysts"):
+            story.append(Paragraph("<b>催化剂与后续观察</b>", styles["PortalLabel"]))
+            for point in section["catalysts"]:
+                story.append(Paragraph("- " + clean_text(point), styles["PortalBody"]))
+        story.append(Paragraph("<b>机构观点对照</b>", styles["PortalLabel"]))
         for view in section.get("bank_views") or []:
             bank = clean_text(view.get("bank") or "投行")
             body = clean_text(view.get("view") or "")
@@ -770,6 +796,14 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
                 story.append(Paragraph("数据：" + clean_text(data_point), styles["PortalSmall"]))
             if view.get("marginal_change"):
                 story.append(Paragraph("边际变化：" + clean_text(view.get("marginal_change")), styles["PortalSmall"]))
+            source_labels = []
+            for source in view.get("sources") or []:
+                if not isinstance(source, dict) or source.get("report_id") not in reports:
+                    continue
+                pages = page_ranges(source.get("pages") or [])
+                source_labels.append(str(source["report_id"]) + (" 第" + pages + "页" if pages else ""))
+            if source_labels:
+                story.append(Paragraph(clean_text("来源：" + "；".join(source_labels)), styles["PortalRef"]))
 
         if section.get("data_points"):
             story.append(Paragraph("<b>关键数据</b>", styles["PortalLabel"]))
@@ -805,7 +839,7 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
 
     if summary.get("closing"):
         story.append(Paragraph("结语", styles["PortalH1"]))
-        story.append(Paragraph(clean_text(summary.get("closing")), styles["PortalBody"]))
+        story.append(Paragraph(clean_text(concise(summary.get("closing"), 600)), styles["PortalBody"]))
 
     story.append(PageBreak())
     story.append(Paragraph("覆盖概览", styles["PortalH1"]))
@@ -846,6 +880,11 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
             "- " + clean_text(f"{section.get('heading') or '投行主题'}：{len(section.get('references') or [])} 篇"),
             styles["PortalBody"],
         ))
+    if summary.get("synthesis_mode") == "cross-report-v1":
+        story.append(Paragraph("报告来源索引", styles["PortalH2"]))
+        for rid, report in reports.items():
+            story.append(Paragraph(clean_text(f"{rid} · {report_source_name(report)} · "
+                                              + concise(report.get("title"), 100)), styles["PortalSmall"]))
 
     story.append(PageBreak())
     story.append(Paragraph("Disclaimer", styles["PortalH1"]))
@@ -863,6 +902,14 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
     doc.multiBuild(story)
     if not output_pdf.exists() or output_pdf.stat().st_size < 1024:
         raise RuntimeError(f"PDF was not created or is too small: {output_pdf}")
+    import fitz
+    with fitz.open(output_pdf) as rendered_pdf:
+        page_count = len(rendered_pdf)
+    if page_count > MAX_PAGES:
+        if _budget_chars > 1600 and summary.get("synthesis_mode") != "cross-report-v1":
+            log(f"PDF has {page_count} pages; compacting module detail while retaining every source reference.")
+            return build_pdf(summary_dir, output_pdf, _budget_chars=max(1600, _budget_chars - 1300))
+        raise RuntimeError(f"Market Views exceeds the {MAX_PAGES}-page publication limit ({page_count}).")
     missing_figure_ids = sorted(selected_figure_ids.difference(rendered_figure_ids))
     if missing_figure_ids:
         raise RuntimeError(
@@ -875,6 +922,10 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
         "rendered_figure_count": len(rendered_figure_ids),
         "rendered_figure_ids": sorted(rendered_figure_ids),
         "pdf_size_bytes": output_pdf.stat().st_size,
+        "page_count": page_count,
+        "max_pages": MAX_PAGES,
+        "module_count": len(bank_roundup.get("sections") or []) + len(supporting_roundups),
+        "module_detail_budget": _budget_chars,
     }
     stats_path = summary_dir / "market_views_render_stats.json"
     stats_path.write_text(json.dumps(render_stats, ensure_ascii=False, indent=2), encoding="utf-8")

@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       request:
-        description: Exact original run and accepted ledger keys; GET only
+        description: Exact original run and accepted ledger keys; GET only, safe error codes and redacted operation reasons
         type: string
         required: true
 permissions:
@@ -35,7 +35,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: python3 -m pip install 'boto3>=1.37.32,<2'
-      - name: Inspect exact saved tasks and preserve independent private receipt
+      - name: Inspect accepted tasks and print safe failure reasons without private provider text
         env:
           INSPECTION_REQUEST: ${{ inputs.request }}
           MINER_U: ${{ secrets.MINER_U }}
@@ -47,7 +47,8 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
         run: python3 -B scripts/inspect_durable_mineru.py
-      - uses: actions/upload-artifact@v4
+      - name: Preserve counts safe failure reasons and exact binding hashes
+        uses: actions/upload-artifact@v4
         with:
           name: mineru-durable-summary-${{ github.run_id }}
           path: ${{ runner.temp }}/mineru-durable-summary.json

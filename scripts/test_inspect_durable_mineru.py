@@ -40,6 +40,8 @@ class InspectionTests(unittest.TestCase):
         self.assertEqual(len(self.calls), 1); self.assertEqual(self.calls[0][1], 'second')
         self.assertEqual(public['provider_posts'], 0); self.assertTrue(public['batches'][0]['membership_proven'])
         self.assertEqual(diag['failure_categories'], {'page_limit': 1})
+        self.assertEqual(diag['failure_reasons'][0]['error_message_safe'], 'pdf page limit exceeded [redacted]')
+        self.assertEqual(diag['failure_reasons'][0]['count'], 1)
         self.assertNotIn('SECRET-REPORT', json.dumps(public | diag))
         self.assertIn('SECRET-REPORT', json.dumps(private))
         self.assertEqual(before, {str(p): p.read_bytes() for p in self.root.rglob('*.json')})
@@ -73,6 +75,67 @@ class InspectionTests(unittest.TestCase):
         for raw, category in [('password protected PDF', 'encrypted_pdf'), ('Insufficient quota', 'quota'),
                                ('download failed', 'file_download'), ('arbitrary-private-url', 'other_provider_failure')]:
             self.assertEqual(m.error_category({'err_msg': raw}), category)
+
+    def test_failure_reason_never_copies_unknown_words_numbers_urls_or_names(self):
+        row = {'err_msg': ('Unable to parse PRIVATE_RESEARCH.pdf data_id a1b2c3d4 '
+                          'https://example.invalid/private.zip?token=SIGNEDSECRET '
+                          'at /private/folder/report.pdf AccessToken timeout'),
+               'err_code': 'A0301', 'data_id': 'a1b2c3d4', 'file_name': 'PRIVATE_RESEARCH.pdf'}
+        result = m.safe_failure_reason(row, ['AccessToken'])
+        public = json.dumps(result)
+        for private in ('PRIVATE_RESEARCH', 'a1b2c3d4', 'example.invalid', 'SIGNEDSECRET',
+                        'private/folder', 'AccessToken', 'https://', '.pdf'):
+            self.assertNotIn(private, public)
+        self.assertIn('unable to parse', result['error_message_safe'])
+        self.assertIn('timeout', result['error_message_safe'])
+        self.assertEqual(result['error_codes'], ['A0301'])
+        self.assertTrue(result['message_redacted'])
+
+    def test_codes_are_bounded_and_never_freeform_identifiers_or_credentials(self):
+        for value in ['token_PRIVATE', 'E-123456789', 'a' * 64, True, 1000000, {'code':'A0301'}]:
+            with self.subTest(value=value):
+                self.assertEqual(m.safe_failure_reason({'err_code':value})['error_codes'], [])
+        self.assertEqual(m.safe_failure_reason({'err_code':'A0202'}, ['A0202'])['error_codes'], [])
+        self.assertEqual(m.safe_failure_reason({'err_code':123}, ['123'])['error_codes'], [])
+        self.assertEqual(m.safe_failure_reason({'err_code':-500,'error_code':'A0202'})['error_codes'], ['-500','A0202'])
+
+    def test_unknown_failure_retains_safe_operation_words_and_original_hash(self):
+        row = {'err_msg':'Failed to extract PDF: exception RETRY-PRIVATE-IDENTIFIER', 'err_code':None}
+        result = m.safe_failure_reason(row)
+        self.assertEqual(result['category'], 'document_processing')
+        self.assertIn('failed to extract', result['error_message_safe'])
+        self.assertNotIn('PRIVATE', json.dumps(result))
+        self.assertEqual(result['failure_message_sha256'], m.sha256(m.canonical({k:row.get(k) for k in m.ERROR_FIELDS})))
+
+    def test_nested_and_chinese_errors_have_fixed_categories_without_copying_report_text(self):
+        for row, expected in [
+            ({'error':{'message':'CUDA out of memory PRIVATE_REPORT'}}, 'provider_memory'),
+            ({'error_message':'文件转换失败 私有公司报告'}, 'document_processing'),
+            ({'message':'任务执行失败 私有文件'}, 'provider_worker'),
+            ({'err_msg':'未知错误 私有文件'}, 'provider_unknown'),
+        ]:
+            with self.subTest(row=row):
+                result = m.safe_failure_reason(row)
+                self.assertEqual(result['category'], expected)
+                self.assertNotIn('私有', json.dumps(result, ensure_ascii=False))
+                self.assertNotIn('PRIVATE_REPORT', json.dumps(result))
+
+    def test_multiple_failed_members_are_aggregated_with_zero_provider_writes(self):
+        second = self.ledger.bind(self.root/'source.pdf', 'other.pdf')
+        self.batch['files'].append(second)
+        (self.root/'ledger'/(self.key+'.json')).write_bytes(encoded(self.batch))
+        def getter(endpoint, token, timeout):
+            self.calls.append(endpoint)
+            return 200, encoded({'code':0,'data':{'batch_id':self.batch['batch_id'],'extract_result':[
+                {'data_id':item['id'],'state':'failed','err_msg':'PDF parsing failed','err_code':'A0301'}
+                for item in self.batch['files']]}})
+        with patch.object(self.store, 'put', side_effect=AssertionError('must not write')):
+            public, private, diag=m.inspect(self.request,self.store,self.credentials,getter=getter)
+        self.assertEqual(len(self.calls),1)
+        self.assertEqual(public['provider_posts'],0)
+        self.assertEqual(diag['failure_reasons'][0]['count'],2)
+        self.assertEqual(diag['failure_reasons'][0]['error_codes'],['A0301'])
+        self.assertEqual(public['batches'][0]['state_counts'],{'failed':2})
 
 
 if __name__ == '__main__': unittest.main()

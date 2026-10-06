@@ -148,6 +148,8 @@ jobs:
           python scripts/test_market_views_workflow_contract.py
           python scripts/test_market_views_publication.py
           python scripts/test_build_market_views_ocr_fallback.py
+          python scripts/test_market_views_cross_report.py
+          python scripts/test_inspect_durable_mineru.py
           python scripts/test_recover_daily_mineru_sources.py
           python scripts/test_private_market_ocr_checkpoint.py
           python scripts/test_market_views_source_preview.py

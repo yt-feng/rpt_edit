@@ -265,6 +265,8 @@ jobs:
           node scripts/test_portal_chart_search_frontend.js
           node scripts/test_portal_site_runtime.js
           node scripts/test_portal_newsfeed_lazy.js
+          node scripts/test_portal_market_views.js
+          node scripts/test_market_views_list_cache.js
           python3 -m py_compile \
             scripts/build_member_contact_card.py \
             scripts/check_public_brand.py \

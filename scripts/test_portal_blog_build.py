@@ -107,6 +107,30 @@ class BlogSanitizerTests(unittest.TestCase):
 
 
 class BlogBuildTests(unittest.TestCase):
+    def test_blog_prioritizes_latest_pdf_then_static_research_and_bbg_without_losing_seo(self) -> None:
+        articles = [{"slug": "research-example", "date": "2026-10-05", "title": "研究观点",
+                     "digest": "来源清晰的研究摘要", "origins": []}]
+        first = builder.render_blog_index(articles, "https://portal.example.invalid", date(2026, 7, 27))
+        self.assertLess(first.index('id="blogMarketViews"'), first.index('id="blogResearch"'))
+        self.assertLess(first.index('id="blogResearch"'), first.index('id="blogBbgShow"'))
+        self.assertIn('href="#blogMarketViews"', first)
+        self.assertIn('href="#blogResearch"', first)
+        self.assertIn('href="research-example.html"', first, "articles must remain static crawlable links")
+        self.assertIn('href="bbg-show.html"', first)
+        self.assertIn('rel="canonical" href="https://portal.example.invalid/blog/"', first)
+        self.assertIn('content="index,follow,max-snippet:-1,max-image-preview:large"', first)
+        self.assertIn('<noscript>', first)
+        schema = first_json_ld(first)
+        self.assertEqual(schema["@type"], "Blog")
+        self.assertEqual(schema["blogPost"][0]["@type"], "BlogPosting")
+        self.assertEqual(schema["blogPost"][0]["url"], "https://portal.example.invalid/blog/research-example.html")
+        self.assertEqual(schema["blogPost"][0]["datePublished"], "2026-10-05")
+        second = builder.render_blog_index(articles * 31, "https://portal.example.invalid", date(2026, 7, 27), page_number=2)
+        self.assertNotIn('id="blogMarketViews"', second)
+        self.assertIn('href="./#blogMarketViews"', second)
+        self.assertIn('id="blogResearch"', second)
+        self.assertIn('rel="canonical" href="https://portal.example.invalid/blog/page-2.html"', second)
+
     def test_bbg_scripts_have_safe_bilingual_pairs_and_separate_pagination(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

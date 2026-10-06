@@ -152,11 +152,14 @@ const reader = { email: "reader@example.com" };
   assert.equal(snapshotResult.files.some((file) => /market/i.test(JSON.stringify(file))), false, "legacy Market Views snapshot rows must be discarded");
   assert.equal(snapshotResult.stale_groups.includes("market-views"), false, "legacy Market Views must not survive as a stale group");
 
-  assert.doesNotMatch(workflow, /actions\/upload-artifact/, "paid PDFs must not be exposed as Actions artifacts");
+  const artifactSteps = workflow.split(/\n      - name: /).filter((step) => /actions\/upload-artifact/.test(step) && !/path: \$\{\{ runner\.temp \}\}\/market-views-native-source-audit\.json/.test(step));
+  assert.equal(artifactSteps.length, 1, "only the public-safe acceptance PDF has an artifact step");
+  assert.match(artifactSteps[0], /inputs\.acceptance_only == true.*steps\.public_pdf\.conclusion == 'success'/);
+  assert.match(artifactSteps[0], /path: market_view_summaries\/\$\{\{ env\.DATE_FOLDER \}\}\/market_views_\$\{\{ env\.DATE_FOLDER \}\}\.pdf/);
   assert.match(workflow, /prepare_public_market_view_pdf\.py/, "the public copy must remove the private ending page");
   assert.match(workflow, /force_rebuild:[\s\S]*?type: boolean[\s\S]*?default: false/, "same-date rebuilds must require an explicit opt-in");
-  assert.match(workflow, /should_build = os\.environ\["FORCE_REBUILD"\] == "true" or not valid_existing[\s\S]*?"SHOULD_BUILD": str\(should_build\)\.lower\(\)/, "a valid same-date main PDF must make reruns idempotent");
-  assert.match(workflow, /Archive exact Market Views PDF in private R2\n\s*if: \$\{\{ env\.SHOULD_BUILD != 'false' \}\}/, "an idempotent rerun must not replace the private R2 original with the public copy");
+  assert.match(workflow, /force_rebuild=os\.environ\['FORCE_REBUILD'\] == 'true'[\s\S]*?should_build = plan\['should_build'\][\s\S]*?"SHOULD_BUILD": str\(should_build\)\.lower\(\)/, "the validated publication plan must control same-date reuse");
+  assert.match(workflow, /Archive exact Market Views PDF in private R2\n\s*if: \$\{\{ env\.SHOULD_BUILD != 'false' && inputs\.acceptance_only != true \}\}/, "an idempotent rerun must not replace the private R2 original with the public copy");
   assert.match(
     workflow,
     /PDF_PATH="market_view_summaries\/\$DATE_FOLDER\/market_views_\$DATE_FOLDER\.pdf"[\s\S]*?commit_output_dir\.sh[\s\\]*\n\s*"\$PDF_PATH"[\s\S]*?8[\s\\]*\n\s*true[\s\\]*\n\s*true/,
@@ -173,6 +176,125 @@ const reader = { email: "reader@example.com" };
   assert.match(app, /\/market-views\/pdf\?id=/);
   assert.match(app, /id="accountAdminMarketViewsSection"/, "the operations dashboard must expose a dedicated Market Views section");
   assert.match(app, /loadAccountAdminMarketViews\(workerUrl, targets\)/, "the operations dashboard must load private-R2 Market Views metadata");
+
+  const transfer = { Blob, AbortController, setTimeout, clearTimeout, fetch: null, api: null };
+  vm.runInNewContext(`${extractFunction(app, "fetchBlogMarketView")} api = fetchBlogMarketView;`, transfer);
+  const bytes = new TextEncoder().encode("%PDF-1.7\nactual streamed content");
+  function responseFor(length, options = {}) {
+    const headers = { "Content-Type": "application/pdf", ...options.headers };
+    if (length !== null) headers["Content-Length"] = String(length);
+    return new Response(new ReadableStream({ start(controller) {
+      controller.enqueue(bytes.slice(0, 8));
+      controller.enqueue(bytes.slice(8));
+      controller.close();
+    } }), { headers });
+  }
+  for (const length of [bytes.length, null]) {
+    transfer.fetch = async () => responseFor(length);
+    const progress = [];
+    const result = await transfer.api("/api/market-views/pdf?id=market-view:261005", { Authorization: "Bearer fixture" }, new AbortController(), (received, total) => progress.push([received, total]));
+    assert.equal(result.blob.size, bytes.length);
+    assert.equal(await result.blob.text(), new TextDecoder().decode(bytes));
+    assert.deepEqual(progress[0], [0, length || 0]);
+    assert.ok(progress.some(([received]) => received === 8), "real intermediate chunk size must be visible");
+    assert.deepEqual(progress.at(-1), [bytes.length, length || 0]);
+  }
+  transfer.fetch = async () => responseFor(bytes.length + 1);
+  await assert.rejects(transfer.api("/api/pdf", {}, new AbortController(), () => {}), /传输不完整/);
+  transfer.fetch = async () => responseFor(bytes.length, { headers: { "Content-Encoding": "gzip" } });
+  await transfer.api("/api/pdf", {}, new AbortController(), (_, total) => assert.equal(total, 0, "compressed Content-Length is not decoded stream length"));
+  transfer.fetch = async () => new Response("login required", { headers: { "Content-Type": "text/html" } });
+  await assert.rejects(transfer.api("/api/pdf", {}, new AbortController(), () => {}), /有效 PDF/);
+  for (const code of [401, 402, 503]) {
+    transfer.fetch = async () => new Response(JSON.stringify({ detail: `server gate ${code}` }), { status: code });
+    await assert.rejects(transfer.api("/api/pdf", {}, new AbortController(), () => {}), new RegExp(`server gate ${code}`));
+  }
+  const cancelled = new AbortController();
+  transfer.fetch = async (_url, options) => {
+    assert.equal(options.headers.Authorization, "Bearer fixture");
+    return new Response(new ReadableStream({ start(controller) {
+      options.signal.addEventListener("abort", () => controller.error(new DOMException("aborted", "AbortError")));
+    } }), { headers: { "Content-Type": "application/pdf" } });
+  };
+  const cancelling = transfer.api("/api/pdf", { Authorization: "Bearer fixture" }, cancelled, () => cancelled.abort());
+  await assert.rejects(cancelling, /已取消/);
+  let timeout;
+  transfer.setTimeout = (callback, delay) => { assert.equal(delay, 60000); timeout = callback; return 1; };
+  transfer.clearTimeout = () => {};
+  transfer.fetch = (_url, options) => new Promise((_resolve, reject) => options.signal.addEventListener("abort", () => reject(new DOMException("aborted", "AbortError"))));
+  const timed = transfer.api("/api/pdf", {}, new AbortController(), () => {});
+  timeout();
+  await assert.rejects(timed, /60 秒未收到数据/);
+
+  const historySandbox = { api: null };
+  vm.runInNewContext(`${extractFunction(app, "blogMarketViewHistory")} api = blogMarketViewHistory;`, historySandbox);
+  const dated = Array.from({ length: 19 }, (_, i) => ({ id: String(i), date: `2026-09-${String(30 - i).padStart(2, "0")}` }));
+  assert.equal(historySandbox.api(dated, "", 1).items.length, 6);
+  assert.equal(historySandbox.api(dated, "", 2).items[0].id, "6");
+  assert.equal(historySandbox.api(dated, "", 99).page, 4);
+  assert.equal(historySandbox.api(dated, "", 0).page, 1);
+  assert.equal(historySandbox.api(dated, "2026-09-27", 3).items[0].id, "3");
+  assert.equal(historySandbox.api(dated, "2026-01-01", 1).items.length, 0);
+
+  const cardStatus = { textContent: "", className: "" };
+  const progressElement = { hidden: true, removeAttribute() {} };
+  const cancelButton = { hidden: true };
+  const card = { querySelector(selector) { return selector === "progress" ? progressElement : selector === ".blog-download-cancel" ? cancelButton : cardStatus; } };
+  const downloadButton = { disabled: false, dataset: { marketViewId: "market-view:261005" }, closest() { return card; } };
+  const handlers = {};
+  const list = { innerHTML: "", addEventListener(name, callback) { handlers[name] = callback; }, querySelector() { return null; }, querySelectorAll() { return [downloadButton]; } };
+  let loggedIn = false, modal = 0, downloads = 0, starts = 0, finish;
+  const listRequests = [];
+  const ui = { api: null, AbortController, Date, formatSize: (size) => `${size} B`, escapeHtml: String,
+    document: { getElementById(id) { return id === "blogMarketViewsList" ? list : { textContent: "", className: "" }; }, addEventListener() {} },
+    window: { addEventListener() {} }, initAccountGate() {}, loadAuthSession: () => loggedIn,
+    authHeaders: () => ({ Authorization: "Bearer fixture" }), showAccountModal() { modal += 1; },
+    blogMarketViewCard: () => "latest PDF", blogMarketViewHistory: historySandbox.api,
+    fetch: async (url, options) => { listRequests.push({ url, ...options }); return { ok: true, json: async () => ({ items: [{ id: "market-view:261005", date: "2026-10-05" }] }) }; },
+    fetchBlogMarketView: async (_url, headers, _controller, progress) => { starts += 1; assert.equal(headers.Authorization, "Bearer fixture"); progress(8, bytes.length); return new Promise((resolve) => { finish = resolve; }); },
+    triggerBlobDownload() { downloads += 1; },
+  };
+  vm.runInNewContext(`${extractFunction(app, "initBlog")} api = initBlog;`, ui);
+  await ui.api();
+  assert.equal(listRequests[0].url, "/api/market-views");
+  assert.equal(listRequests[0].cache, "default");
+  assert.equal(listRequests[0].credentials, "omit", "public metadata must not carry same-origin login cookies");
+  assert.equal(listRequests[0].headers, undefined, "public metadata must not carry the bearer token");
+  await handlers.click({ target: { closest(selector) { return selector === "[data-market-reload]" ? {} : null; } } });
+  assert.equal(listRequests[1].cache, "no-store", "explicit retry bypasses the public directory cache");
+  assert.equal(listRequests[1].credentials, "omit");
+  const click = { target: { closest(selector) { return selector === "button[data-market-view-id]" ? downloadButton : null; } } };
+  await handlers.click(click);
+  assert.equal(modal, 1, "anonymous download prompts login");
+  assert.equal(starts, 0, "anonymous users cannot start a PDF request");
+  loggedIn = true;
+  const firstClick = handlers.click(click);
+  assert.equal(downloadButton.disabled, true);
+  assert.equal(cancelButton.hidden, false);
+  assert.match(cardStatus.textContent, /正在接收/);
+  await handlers.click(click);
+  assert.equal(starts, 1, "repeated clicks cannot create a concurrent download");
+  finish({ blob: new Blob([bytes]), disposition: "" });
+  await firstClick;
+  assert.equal(downloads, 1);
+  assert.equal(downloadButton.disabled, false);
+  assert.equal(cancelButton.hidden, true);
+  assert.match(cardStatus.textContent, /交给浏览器保存/);
+  ui.fetchBlogMarketView = async () => { throw new Error("fixture interrupted"); };
+  await handlers.click(click);
+  assert.equal(downloads, 1, "a failed transfer cannot save a PDF");
+  assert.equal(downloadButton.textContent, "重试下载");
+  assert.equal(downloadButton.disabled, false);
+  ui.fetchBlogMarketView = async (_url, _headers, controller) => new Promise((_resolve, reject) => {
+    controller.signal.addEventListener("abort", () => reject(new Error("下载已取消，可重新下载。")));
+  });
+  const cancelledClick = handlers.click(click);
+  await handlers.click({ target: { closest(selector) { return selector === ".blog-download-cancel" ? cancelButton : null; } } });
+  await cancelledClick;
+  assert.match(cardStatus.textContent, /已取消/);
+  assert.equal(downloadButton.textContent, "重新下载");
+  assert.equal(downloadButton.disabled, false);
+  assert.equal(downloads, 1, "cancel cannot save a partial PDF");
 
   console.log("portal Market Views membership and private-download checks passed");
 })().catch((error) => {

@@ -1094,7 +1094,22 @@ def heuristic_bank_plan(reports: list[dict[str, Any]], max_reports_per_section: 
         for index, chunk in enumerate(chunks, 1):
             chunk_heading = heading if len(chunks) == 1 else f"{heading}（{index}）"
             plan.append({"heading": chunk_heading, "report_ids": chunk})
-    return plan
+    return cap_bank_plan(plan)
+
+
+def cap_bank_plan(plan: list[dict[str, Any]], max_modules: int = 10) -> list[dict[str, Any]]:
+    """Keep every source in a bounded dynamic directory on unusually busy days."""
+    result = [{"heading": row["heading"], "report_ids": list(row["report_ids"])} for row in plan]
+    while len(result) > max_modules:
+        # Reunite split subcategories first, then combine the smallest modules.
+        names = [re.sub(r"（\d+）$", "", row["heading"]) for row in result]
+        pair = next(((i, j) for i in range(len(result)) for j in range(i + 1, len(result))
+                     if names[i] == names[j]), None)
+        i, j = pair or tuple(sorted(sorted(range(len(result)), key=lambda k: len(result[k]["report_ids"]))[:2]))
+        result[i] = {"heading": names[i] if names[i] == names[j] else names[i] + " / " + names[j],
+                     "report_ids": result[i]["report_ids"] + result[j]["report_ids"]}
+        result.pop(j)
+    return result
 
 
 def normalize_bank_plan(
@@ -1125,11 +1140,11 @@ def normalize_bank_plan(
 
     missing_reports = [report for report in reports if report["id"] not in assigned]
     normalized.extend(heuristic_bank_plan(missing_reports, max_reports_per_section=max_reports_per_section))
-    return normalized or heuristic_bank_plan(reports, max_reports_per_section=max_reports_per_section)
+    return cap_bank_plan(normalized) if normalized else heuristic_bank_plan(reports, max_reports_per_section=max_reports_per_section)
 
 
 def bank_plan_prompt(reports: list[dict[str, Any]]) -> str:
-    target_sections = max(4, min(14, (len(reports) + 7) // 8))
+    target_sections = max(1, min(10, (len(reports) + 7) // 8))
     inventory = [
         {"id": report["id"], "bank": bank_alias(report), "title": report.get("title") or ""}
         for report in reports
@@ -1138,7 +1153,7 @@ def bank_plan_prompt(reports: list[dict[str, Any]]) -> str:
 请只根据下面的投行报告清单，为今日 Market Views 规划动态目录。
 
 硬性要求：
-1. 目标约 {target_sections} 个类别，通常每类 5-12 篇；类别数量随当天内容调整。
+1. 目标约 {target_sections} 个类别，最多10个；类别数量随当天内容调整，报告多时合并相关主题。
 2. 每个报告 ID 必须且只能出现一次，不能遗漏，不能重复。
 3. 类别按资产、市场或产业主题命名，例如宏观、利率、FX、Equity、科技、能源、消费、医疗、区域市场；不要按投行名称分类。
 4. 避免一个笼统的“其他”吞掉大量报告；相关性弱时拆成更清楚的行业或市场类别。
@@ -1220,6 +1235,8 @@ def bank_section_prompt(
 6. 从候选中选择最多 {getattr(args, 'figures_per_bank_section', 4)} 张真正支撑观点的原始报告图；优先来自不同报告。没有合适图可以少选，禁止编造 figure_id。
 7. 不写买卖评级，不写逐篇报告标题，不输出文件名，不做纯翻译堆叠。
 8. references 必须列出本栏目全部输入 ID，供程序校验，但这些 ID 不会在 PDF 正文显示。
+9. 本栏目正文总计不超过3500中文字，写跨报告的因果联系与观点比较；不堆叠逐篇摘要。
+10. 删除原报告作者名单、电话、邮箱、办公地址、免责声明、分析师认证和评级分布，来源保留机构与报告ID。
 
 {OCR_NUMBER_POLICY}
 
