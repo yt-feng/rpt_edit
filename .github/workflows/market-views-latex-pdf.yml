@@ -507,7 +507,8 @@ jobs:
         continue-on-error: true
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends fonts-noto-cjk
+          sudo apt-get install -y --no-install-recommends fonts-noto-cjk tesseract-ocr tesseract-ocr-eng
+          python scripts/test_market_views_figures.py MarketViewsFigureTests.test_installed_tesseract_screens_synthetic_roster_and_keeps_research
 
       - name: Optionally install minimal LaTeX
         if: ${{ env.SHOULD_BUILD != 'false' && github.event.inputs.compile_latex == 'true' }}
@@ -578,12 +579,19 @@ jobs:
           python - "$STATS_PATH" "$MINERU_SOURCE_IMAGE_COUNT" <<'PY'
           import json
           import sys
+          from pathlib import Path
+          sys.path.insert(0, "scripts")
+          from publication_figure_ocr import all_candidates_are_publication_only
 
           stats = json.load(open(sys.argv[1], encoding="utf-8"))
           retained = int(sys.argv[2])
           candidates = int(stats.get("figure_candidate_count") or 0)
           rendered = int(stats.get("rendered_figure_count") or 0)
-          if retained > 0 and candidates <= 0:
+          audit_path = Path(sys.argv[1]).with_name("figure_publication_audit.json")
+          publication_only = False
+          if candidates <= 0 and audit_path.is_file():
+              publication_only = all_candidates_are_publication_only(json.loads(audit_path.read_text(encoding="utf-8")))
+          if retained > 0 and candidates <= 0 and not publication_only:
               raise SystemExit(
                   f"Retained MinerU images were present ({retained}) but no Market Views candidates were built."
               )

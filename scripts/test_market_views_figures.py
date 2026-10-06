@@ -6,14 +6,32 @@ from __future__ import annotations
 import tempfile
 import hashlib
 import json
+import inspect
+import contextlib
+import io
+import re
+import shutil
+import subprocess
+import threading
+import textwrap
+import time
 import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 
 from build_market_views_pdf import (copy_figures, extract_exhibit_figures, handoff_source_images,
                                    resolve_image_path, select_section_figures, source_figure_display_exclusion)
+from publication_figure_ocr import all_candidates_are_publication_only, filter_publication_figures
+
+
+STAFF_ROSTER = """Research leadership
+Alex Example - Group Chief Economist and Global Head of Research
+Jamie Sample - COO and Head of Fixed Income Research
+Chris Placeholder - Global Head of Company Research and Sales
+Pat Example - Global Head of Macro and Thematic Research
+"""
 
 
 def make_image(path: Path, color: tuple[int, int, int] = (20, 80, 140)) -> None:
@@ -22,6 +40,173 @@ def make_image(path: Path, color: tuple[int, int, int] = (20, 80, 140)) -> None:
 
 
 class MarketViewsFigureTests(unittest.TestCase):
+    def test_research_staff_roster_is_not_substantive_company_organization(self) -> None:
+        self.assertEqual(source_figure_display_exclusion({"body_text": STAFF_ROSTER}),
+                         "exclude_research_staff_roster")
+        self.assertEqual(source_figure_display_exclusion({"body_text": 'Chief Economist Head of Research Head of Fixed Income Research Research leadership'}),
+                         "exclude_research_staff_roster")
+        for text in (
+            "Revenue forecast: 2027 120 million. Source: Alex Example, Head of Research.",
+            "Figure5: Company R&D organization and technology platforms. Head of Oncology Research: Alice. Head of Immunology Research: Bob. Chief Research Officer: Carol. Research pipeline organization connects target discovery, drug screening and clinical validation.",
+            "Figure2: CPI inflation forecast 2.4%, policy rate 3.5%, unemployment 4.0%. Sources: Head of Global Research Alice; Head of European Research Bob; Chief Economist Carol. Research department.",
+            STAFF_ROSTER + "Inflation forecast 2.4%; policy rate 3.5%.",
+            "Figure2: USD/EUR FX forecast1.08, CPI index120, output350. Sources: " + STAFF_ROSTER,
+            "Revenue100 EBITDA20. Sources: " + STAFF_ROSTER,
+        ):
+            with self.subTest(text=text):
+                self.assertIsNone(source_figure_display_exclusion({"body_text": text}))
+
+    def test_pixel_screening_precedes_copy_and_no_section_fill_resurrects_staff(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            staff, chart = root / 'staff.png', root / 'chart.png'
+            make_image(staff); make_image(chart, (140, 80, 20))
+            candidates = [{"source_path": str(p), "report_id": "R001", "figure_type": "source_exhibit"} for p in (staff, chart)]
+            before = {p: p.read_bytes() for p in (staff, chart)}
+            def fake_run(command, **kwargs):
+                self.assertEqual(kwargs['timeout'], 15)
+                self.assertEqual(command[-4:], ['-l', 'eng', '--psm', '11'])
+                self.assertEqual(kwargs['env']['OMP_THREAD_LIMIT'], '1')
+                return subprocess.CompletedProcess(command, 0, STAFF_ROSTER if command[1] == str(staff.resolve()) else 'Valuation sensitivity: target price150, EBITDA20%', '')
+            with patch('publication_figure_ocr.shutil.which', return_value='/local/tesseract'), patch('publication_figure_ocr.subprocess.run', side_effect=fake_run):
+                clean, audit = filter_publication_figures(candidates, root / 'cache', source_figure_display_exclusion, log_fn=lambda _: None)
+            self.assertEqual(clean, [candidates[1]])
+            self.assertEqual(audit['excluded'], 1)
+            figures = copy_figures(clean, root / 'display', 0)
+            self.assertEqual(select_section_figures([], ['R001'], figures, 4), [figures[0]['figure_id']])
+            self.assertEqual(before, {p: p.read_bytes() for p in (staff, chart)})
+            self.assertNotIn('Alex Example', json.dumps(audit))
+        import build_market_views_pdf as builder
+        main = inspect.getsource(builder.main)
+        self.assertLess(main.index('raw_figures, publication_audit = filter_publication_figures('), main.index('figures = copy_figures('))
+        self.assertLess(main.index('figures = copy_figures('), main.index('summary = build_market_summary('))
+        self.assertIn('min(args.max_figures_per_report, 6)', main)
+
+    def test_ocr_failures_are_per_image_retained_and_never_cached(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root / 'chart.png'; make_image(path)
+            candidates = [{"source_path": str(path), "report_id": "R001"}]
+            errors = [(subprocess.TimeoutExpired('tesseract', 15), 'timeout'),
+                      (OSError('not executable'), 'execution_error'),
+                      (subprocess.CompletedProcess([], 1, '', 'sensitive stderr'), 'ocr_error')]
+            for effect, status in errors:
+                with self.subTest(status=status), patch('publication_figure_ocr.shutil.which', return_value='/local/tesseract'), patch('publication_figure_ocr.subprocess.run', side_effect=effect if isinstance(effect, Exception) else None, return_value=effect):
+                    clean, audit = filter_publication_figures(candidates, root/'cache', source_figure_display_exclusion, log_fn=lambda _: None)
+                self.assertEqual(clean, candidates)
+                self.assertEqual(audit['entries'][0]['ocr_status'], status)
+                self.assertFalse(list((root/'cache').glob('*.json')))
+            with patch('publication_figure_ocr.shutil.which', return_value=None), patch('publication_figure_ocr.subprocess.run') as run:
+                clean, audit = filter_publication_figures(candidates, root/'cache', source_figure_display_exclusion, log_fn=lambda _: None)
+                run.assert_not_called()
+                self.assertEqual(audit['statuses'], {'unavailable': 1})
+                self.assertEqual(clean, candidates)
+            with patch('publication_figure_ocr.OCR_MAX_IMAGE_BYTES', 1), patch('publication_figure_ocr.subprocess.run') as run:
+                clean, audit = filter_publication_figures(candidates, root/'cache', source_figure_display_exclusion, log_fn=lambda _: None)
+                run.assert_not_called()
+                self.assertEqual(audit['statuses'], {'image_limit': 1})
+
+    def test_ocr_hash_cache_replays_but_reclassifies_and_invalidates_changed_pixels(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root/'chart.png'; make_image(path)
+            candidates = [{"source_path": str(path), "report_id": "R001"}]
+            with patch('publication_figure_ocr.shutil.which', return_value='/local/tesseract'), patch('publication_figure_ocr.subprocess.run', return_value=subprocess.CompletedProcess([], 0, STAFF_ROSTER, '')) as run:
+                clean, audit = filter_publication_figures(candidates, root/'cache', lambda _: None, log_fn=lambda _: None)
+                self.assertEqual(len(clean), 1)
+                clean, audit = filter_publication_figures(candidates, root/'cache', source_figure_display_exclusion, log_fn=lambda _: None)
+                self.assertEqual(clean, [])
+                self.assertEqual(audit['statuses'], {'cache_hit': 1})
+                self.assertTrue(all_candidates_are_publication_only(audit))
+                for invalid in ({**audit, 'entries': []}, {**audit, 'retained': 1},
+                                {**audit, 'candidates': 0}, {**audit, 'excluded': 2},
+                                {**audit, 'entries': [{**audit['entries'][0], 'ocr_status': 'timeout'}]},
+                                {**audit, 'entries': [{**audit['entries'][0], 'decision': 'retain'}]}):
+                    self.assertFalse(all_candidates_are_publication_only(invalid))
+                self.assertEqual(run.call_count, 1)
+                make_image(path, (20, 10, 140))
+                filter_publication_figures(candidates, root/'cache', source_figure_display_exclusion, log_fn=lambda _: None)
+                self.assertEqual(run.call_count, 2)
+
+    def test_ocr_concurrency_is_bounded_and_output_order_preserved(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory); candidates=[]
+            for i in range(9):
+                path=root/f'{i}.png'; make_image(path, (i*20, 30, 40))
+                candidates.append({'source_path': str(path), 'report_id': f'R{i:03}'})
+            active=peak=0; lock=threading.Lock()
+            def fake_run(command, **kwargs):
+                nonlocal active, peak
+                with lock:
+                    active+=1; peak=max(peak, active)
+                time.sleep(.02)
+                with lock:
+                    active-=1
+                return subprocess.CompletedProcess(command, 0, 'Revenue outlook 15%', '')
+            with patch('publication_figure_ocr.shutil.which', return_value='/local/tesseract'), patch('publication_figure_ocr.subprocess.run', side_effect=fake_run):
+                clean, audit=filter_publication_figures(candidates, root/'cache', source_figure_display_exclusion, log_fn=lambda _: None)
+            self.assertEqual(clean, candidates)
+            self.assertGreater(peak, 1); self.assertLessEqual(peak, 4)
+            self.assertEqual([e['report_id'] for e in audit['entries']], [c['report_id'] for c in candidates])
+
+    def test_real_workflow_zero_figure_gate_requires_complete_publication_exclusion(self) -> None:
+        workflow=(Path(__file__).resolve().parents[1]/'.github/workflows/market-views-latex-pdf.yml').read_text()
+        script=textwrap.dedent(re.search(r'python - "\$STATS_PATH" "\$MINERU_SOURCE_IMAGE_COUNT" <<\'PY\'\n(.*?)\n          PY', workflow, re.S).group(1))
+        complete={'schema_version':1, 'candidates':1, 'excluded':1, 'retained':0,
+                  'entries':[{'candidate_index':0, 'ocr_status':'ok', 'decision':'exclude_research_staff_roster'}]}
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory); stats=root/'market_views_render_stats.json'; audit=root/'figure_publication_audit.json'
+            for candidates, rendered, proof, passes in (
+                (0, 0, None, False), (0, 0, complete, True),
+                (0, 0, {**complete, 'entries':[]}, False),
+                (0, 0, {**complete, 'entries':[{**complete['entries'][0], 'ocr_status':'timeout'}]}, False),
+                (1, 0, complete, False), (1, 1, None, True),
+            ):
+                with self.subTest(candidates=candidates, rendered=rendered, proof=proof):
+                    stats.write_text(json.dumps({'figure_candidate_count':candidates, 'rendered_figure_count':rendered}))
+                    if proof is None:
+                        audit.unlink(missing_ok=True)
+                    else:
+                        audit.write_text(json.dumps(proof))
+                    with patch('sys.argv', ['gate', str(stats), '10']), contextlib.redirect_stdout(io.StringIO()):
+                        if passes:
+                            exec(compile(script, '<workflow-figure-gate>', 'exec'), {})
+                        else:
+                            with self.assertRaises(SystemExit):
+                                exec(compile(script, '<workflow-figure-gate>', 'exec'), {})
+
+    @unittest.skipUnless(shutil.which('tesseract'), 'Tesseract not installed; mock contract tests still run')
+    def test_installed_tesseract_screens_synthetic_roster_and_keeps_research(self) -> None:
+        # Synthetic fixture only: never commit a user's research/personnel PNG.
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory); candidates=[]
+            try:
+                font=ImageFont.truetype('DejaVuSans.ttf', 28)
+            except OSError:
+                font=ImageFont.load_default(size=28)
+            for index, content in enumerate((STAFF_ROSTER, 'Revenue and margin forecast\n2026 revenue 100 million, 2027 revenue 120 million\nMargin 15% to 18%\nSource: Alex Example, Head of Research')):
+                path=root/f'{index}.png'
+                image=Image.new('RGB', (1500, 450), 'white')
+                ImageDraw.Draw(image).multiline_text((35,35), content, fill='black', font=font, spacing=20)
+                image.save(path)
+                candidates.append({'source_path': str(path), 'report_id': f'R{index:03}'})
+            # The observed residual is a four-column role grid, with role names
+            # split over lines. Keep the layout, but use entirely fictional staff.
+            path=root/'grid.png'; image=Image.new('RGB', (2200, 700), 'white')
+            draw=ImageDraw.Draw(image)
+            draw.multiline_text((660,35), 'Alex Example\nChief Economist and Global Head of Research', fill='black', font=font, spacing=15)
+            for column, card in enumerate((
+                'Jamie Sample\nCOO and Head of Fixed\nIncome Research',
+                'Chris Placeholder\nGlobal Head of Company\nResearch and Sales',
+                'Pat Example\nGlobal Head of Macro\nand Thematic Research',
+                'Taylor Sample\nHead of European\nCompany Research',
+            )):
+                draw.multiline_text((40+column*540,260), card, fill='black', font=font, spacing=20)
+            image.save(path); candidates.append({'source_path':str(path), 'report_id':'R002'})
+            clean, audit=filter_publication_figures(candidates, root/'cache', source_figure_display_exclusion)
+            self.assertEqual(audit['statuses'], {'ok': 3}, audit)
+            self.assertEqual(clean, [candidates[1]])
+
     def test_display_filter_rejects_actual_rating_history_in_each_owned_text_field(self) -> None:
         for field in ("body_text", "content_captions", "content_footnotes", "captions", "footnotes"):
             with self.subTest(field=field):
