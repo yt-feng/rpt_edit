@@ -30,7 +30,8 @@ const cache = {
   async match(request) { matches++; const item = stored.get(request.url); return item && now - item.at < 30000 ? item.response.clone() : undefined; },
   async put(request, response) { puts++; stored.set(request.url, { response: response.clone(), at: now }); },
 };
-const sandbox = { Request, Response: ObservedResponse, Headers, URL, caches: { default: cache }, api: null,
+class CacheClock extends Date { static now() { return 1700000000000 + now; } }
+const sandbox = { Request, Response: ObservedResponse, Headers, URL, Date: CacheClock, caches: { default: cache }, api: null,
   publicSourceText: String, cleanHotReportText: String, safePdfFilename: String, publicBrandText: String,
   listR2JsonObjects: async () => { reads++; return [{ id: "market-view:261005", title: "Market Views", size_bytes: 7500000, private_key: "not-public" }]; },
 };
@@ -42,8 +43,8 @@ vm.runInNewContext(`
   const MARKET_VIEW_MIN_MONTHS = 1;
   ${["allowedOrigin", "corsHeaders", "jsonResponse", "hotReportCacheStorage", "hotReportResponseIsCacheable",
     "marketViewDateKeyFromId", "marketViewDateIso", "publicMarketViewItem", "listMarketViewItems",
-    "marketViewsListCacheRequest", "marketViewsListCacheResponse", "handleMarketViewsList"].map(extract).join("\n")}
-  api = { handleMarketViewsList, marketViewsListCacheRequest };
+    "marketViewsListCacheRequest", "marketViewsListCacheEntryIsValid", "marketViewsListCacheResponse", "handleMarketViewsList"].map(extract).join("\n")}
+  api = { handleMarketViewsList, marketViewsListCacheRequest, marketViewsListCacheEntryIsValid };
 `, sandbox);
 const env = { ALLOWED_ORIGIN: "https://site.example,https://reader.example" };
 const request = (headers = {}, suffix = "") => new Request(`https://site.example/api/market-views${suffix}`, { headers });
@@ -57,6 +58,13 @@ const call = (headers, suffix) => sandbox.api.handleMarketViewsList(request(head
   assert.equal(first.headers.get("X-Portal-Market-Views-Cache-Store"), "put_ok");
   assert.equal(reads, 1);
   assert.equal(puts, 1);
+  assert.match(sandbox.api.marketViewsListCacheRequest(request()).url, /public-list-v2/);
+  const storedEntry = stored.values().next().value.response;
+  assert.equal(storedEntry.headers.get("X-Portal-Market-Views-Cache-Entry"), "public-list-v2");
+  assert.equal(storedEntry.headers.get("X-Portal-Market-Views-Cache-Expires"), String(CacheClock.now() + 30000));
+  for (const name of ["X-Portal-Market-Views-Cache-Entry", "X-Portal-Market-Views-Cache-Expires"]) {
+    assert.equal(first.headers.get(name), null, "cache metadata must not be sent to readers");
+  }
   const data = await first.json();
   assert.equal(data.items[0].id, "market-view:261005");
   assert.equal(data.items[0].private_key, undefined, "only the existing public item projection is cached");
@@ -66,6 +74,25 @@ const call = (headers, suffix) => sandbox.api.handleMarketViewsList(request(head
   assert.equal(second.headers.get("X-Portal-Market-Views-Cache-Store"), "not_attempted");
   assert.equal(reads, 1, "an edge hit must not read R2 again");
   assert.deepEqual(await second.json(), data);
+  assert.equal(second.headers.get("X-Portal-Market-Views-Cache-Entry"), null);
+  assert.equal(second.headers.get("X-Portal-Market-Views-Cache-Expires"), null);
+  // Real edge caches may omit public or normalize max-age; the private cache
+  // marker and exact expiry are the storage contract, not echoed policy text.
+  for (const policy of [null, "max-age=25", "max-age=300", "public, max-age=29"]) {
+    sandbox.caches = { default: {
+      match: async () => { const cached = await cache.match(sandbox.api.marketViewsListCacheRequest(request())); if (policy === null) cached.headers.delete("Cache-Control"); else cached.headers.set("Cache-Control", policy); return cached; },
+      put: cache.put,
+    } };
+    const before = reads;
+    const normalized = await call();
+    assert.equal(normalized.headers.get("X-Portal-Market-Views-Cache"), "HIT");
+    assert.equal(normalized.headers.get("Cache-Control"), "public, max-age=30");
+    assert.equal(reads, before, "normalized cache headers must not trigger a fresh R2 read");
+  }
+  sandbox.caches = { default: cache };
+  now = 5000;
+  assert.equal((await call()).headers.get("Cache-Control"), "public, max-age=25", "browser freshness must not outlive the original entry");
+  now = 0;
   assert.equal(second.headers.get("Vary"), "Origin");
   assert.equal(second.headers.get("Access-Control-Allow-Origin"), "https://site.example");
   const configured = await sandbox.api.handleMarketViewsList(request(), { ALLOWED_ORIGIN: "https://new.example" });
@@ -128,6 +155,35 @@ const call = (headers, suffix) => sandbox.api.handleMarketViewsList(request(head
   const rejectedCache = await call();
   assert.equal(rejectedCache.headers.get("X-Portal-Market-Views-Cache-Read"), "rejected");
   assert.equal((await rejectedCache.json()).items.length, 1, "untrusted non-public cached response is ignored");
+  const makeEntry = (changes = {}, status = 200) => new Response("{}", { status, headers: {
+    "Content-Type": "application/json", "Cache-Control": "public, max-age=30",
+    "X-Portal-Market-Views-Cache-Entry": "public-list-v2",
+    "X-Portal-Market-Views-Cache-Expires": String(CacheClock.now() + 30000), ...changes,
+  } });
+  assert.equal(sandbox.api.marketViewsListCacheEntryIsValid(makeEntry()), true);
+  for (const changes of [
+    { "X-Portal-Market-Views-Cache-Entry": "" },
+    { "X-Portal-Market-Views-Cache-Entry": "public-list-v1" },
+    { "X-Portal-Market-Views-Cache-Expires": String(CacheClock.now()) },
+    { "X-Portal-Market-Views-Cache-Expires": String(CacheClock.now() - 1) },
+    { "X-Portal-Market-Views-Cache-Expires": String(CacheClock.now() + 30001) },
+    { "X-Portal-Market-Views-Cache-Expires": "1700000030junk" },
+    { "X-Portal-Market-Views-Cache-Expires": "9007199254740993" },
+    { "Cache-Control": "private, max-age=30" },
+    { "Cache-Control": "public, no-store" },
+    { "Cache-Control": 'private="Set-Cookie"' },
+    { "Set-Cookie": "fixture=1" },
+    { "Content-Type": "text/html" },
+    { "Content-Type": "application/jsonp" },
+  ]) {
+    const forged = makeEntry(changes);
+    assert.equal(sandbox.api.marketViewsListCacheEntryIsValid(forged), false, JSON.stringify(changes));
+    sandbox.caches = { default: { match: async () => forged.clone(), put: async () => {} } };
+    const rejected = await call();
+    assert.equal(rejected.headers.get("X-Portal-Market-Views-Cache-Read"), "rejected");
+    assert.equal(rejected.headers.get("X-Portal-Market-Views-Cache"), "MISS");
+  }
+  assert.equal(sandbox.api.marketViewsListCacheEntryIsValid(makeEntry({}, 503)), false);
   assert.doesNotMatch(extract("handleMarketViewsAccess"), /CacheRequest|cache\.put|public, max-age/);
   assert.doesNotMatch(extract("handleMarketViewsPdf"), /CacheRequest|cache\.put|public, max-age/);
   assert.match(app, /async function loadMarketViews\(force = false\)[\s\S]*?cache: force \? "no-store" : "default"/);

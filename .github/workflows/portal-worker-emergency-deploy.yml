@@ -28,6 +28,7 @@ jobs:
           filter: blob:none
           sparse-checkout-cone-mode: false
           sparse-checkout: |
+            .github/workflows/public-identity-guard.yml
             .gitignore
             .github/workflows/portal-worker-emergency-deploy.yml
             .github/workflows/reportify-grab.yml
@@ -77,6 +78,8 @@ jobs:
             scripts/test_check_public_brand.py
             scripts/test_encrypt_member_course_directory.mjs
             scripts/test_portal_worker_emergency_deploy_workflow.py
+            scripts/portal_smoke_get.py
+            scripts/test_portal_smoke_get.py
             scripts/test_render_private_config.py
             scripts/test_source_lead_adapter.js
             scripts/test_portal_r2_prefix.py
@@ -121,6 +124,7 @@ jobs:
           python3 -B scripts/test_render_private_config.py
           python3 -B scripts/test_check_public_brand.py
           python3 -B scripts/test_portal_worker_emergency_deploy_workflow.py
+          python3 -B scripts/test_portal_smoke_get.py
           node --test scripts/test_encrypt_member_course_directory.mjs
           python3 scripts/test_portal_r2_prefix.py
 
@@ -453,11 +457,9 @@ jobs:
 
           # Exercise the real catalog and R2 read paths. A shallow health check
           # and anonymous auth rejection do not detect resource exhaustion.
-          curl --fail --silent --show-error --max-time 30 \
-            "$origin/api/health?runtime-data=1" \
+          python3 -B scripts/portal_smoke_get.py --endpoint runtime-data \
             --output "$RUNNER_TEMP/api-runtime-health.json"
-          curl --fail --silent --show-error --max-time 30 \
-            "$origin/api/market-views" \
+          python3 -B scripts/portal_smoke_get.py --endpoint market-views \
             --output "$RUNNER_TEMP/api-market-views.json"
           python3 - "$RUNNER_TEMP/api-runtime-health.json" "$RUNNER_TEMP/api-market-views.json" <<'PY'
           import json

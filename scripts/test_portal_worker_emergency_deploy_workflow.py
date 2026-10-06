@@ -87,6 +87,29 @@ class PortalWorkerEmergencyDeployWorkflowTests(unittest.TestCase):
         self.assertIn('test "$code" = 400', smoke)
         self.assertIn('test "$code" = 503', smoke)
 
+    def test_only_expensive_read_smokes_use_bounded_get_helper_and_keep_json_gate(self) -> None:
+        sparse = self.workflow.split('sparse-checkout: |', 1)[1].split('\n      - name:', 1)[0]
+        for name in ('portal_smoke_get.py', 'test_portal_smoke_get.py'):
+            self.assertIn('scripts/' + name, sparse)
+        self.assertIn('.github/workflows/public-identity-guard.yml', sparse)
+        self.assertIn('python3 -B scripts/test_portal_smoke_get.py', self.workflow)
+        smoke = self.workflow.split('- name: Smoke deployed API through the live edge', 1)[1].split('- name: Roll back', 1)[0]
+        self.assertEqual(smoke.count('scripts/portal_smoke_get.py --endpoint '), 2)
+        self.assertIn('--endpoint runtime-data', smoke)
+        self.assertIn('--endpoint market-views', smoke)
+        self.assertIn('"$RUNNER_TEMP/api-runtime-health.json"', smoke)
+        self.assertIn('"$RUNNER_TEMP/api-market-views.json"', smoke)
+        self.assertIn('health.get("ok") is not True or not runtime.get("rules_loaded")', smoke)
+        self.assertIn('int(runtime.get("catalog_item_count") or 0) < 1', smoke)
+        self.assertIn('not isinstance(views.get("items"), list) or not views["items"]', smoke)
+        self.assertNotIn('continue-on-error:', smoke)
+        self.assertIn('steps.portal_smoke.outcome != \'success\'', self.workflow)
+
+    def test_smoke_transport_regressions_run_on_pull_requests(self) -> None:
+        workflow = (ROOT / '.github/workflows/public-identity-guard.yml').read_text(encoding='utf-8')
+        self.assertIn('  pull_request:', workflow.split('permissions:', 1)[0])
+        self.assertIn('python3 -B scripts/test_portal_smoke_get.py', workflow)
+
     def test_portal_suite_uses_stable_isolated_node_runner(self) -> None:
         self.assertIn("portal_suite/locale_assets", self.workflow)
         self.assertIn("for test_file in portal_suite/tests/*.test.mjs; do", self.workflow)

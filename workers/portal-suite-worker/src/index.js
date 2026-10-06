@@ -10941,12 +10941,33 @@ function marketViewsListCacheRequest(request) {
   if (/(?:^|,)\s*(?:no-cache|no-store|max-age\s*=\s*0)(?:\s*(?:,|$))/.test(control)
     || /(?:^|,)\s*no-cache(?:\s*(?:,|$))/.test(pragma)) return null;
   const key = new URL("/api/market-views", url.origin);
-  key.searchParams.set("portal_cache", "public-list-v1");
+  key.searchParams.set("portal_cache", "public-list-v2");
   return new Request(key.toString(), { method: "GET" });
+}
+
+function marketViewsListCacheEntryIsValid(response, now = Date.now()) {
+  if (!response || response.status !== 200 || response.headers.has("set-cookie")) return false;
+  if (String(response.headers.get("content-type") || "").split(";")[0].trim().toLowerCase() !== "application/json") return false;
+  const control = String(response.headers.get("cache-control") || "").toLowerCase();
+  if (/(?:^|,)\s*(?:private|no-store)(?:\s*(?:=|,|$))/.test(control)) return false;
+  if (response.headers.get("X-Portal-Market-Views-Cache-Entry") !== "public-list-v2") return false;
+  const expiresText = response.headers.get("X-Portal-Market-Views-Cache-Expires") || "";
+  if (!/^[1-9]\d{0,15}$/.test(expiresText)) return false;
+  const expires = Number(expiresText);
+  // Cache API may normalize public/max-age on reads. Our own immutable expiry
+  // still bounds freshness and rejects entries with a forged future deadline.
+  return Number.isSafeInteger(expires) && expires > now && expires <= now + 30000;
 }
 
 function marketViewsListCacheResponse(response, request, env, status, readStatus, storeStatus = "not_attempted") {
   const headers = new Headers(response.headers);
+  if (status === "HIT") {
+    const remaining = Math.max(0, Math.floor((Number(headers.get("X-Portal-Market-Views-Cache-Expires")) - Date.now()) / 1000));
+    headers.set("Cache-Control", `public, max-age=${remaining}`);
+  }
+  // Internal storage metadata belongs only to the cached copy.
+  headers.delete("X-Portal-Market-Views-Cache-Entry");
+  headers.delete("X-Portal-Market-Views-Cache-Expires");
   // Recompute CORS even on hits; never reuse a previous caller's origin.
   for (const [name, value] of Object.entries(corsHeaders(request, env))) headers.set(name, value);
   headers.set("X-Portal-Market-Views-Cache", status);
@@ -10963,7 +10984,7 @@ async function handleMarketViewsList(request, env) {
   if (cache) {
     try {
       const cached = await cache.match(cacheRequest);
-      if (cached && hotReportResponseIsCacheable(cached)) {
+      if (cached && marketViewsListCacheEntryIsValid(cached)) {
         return marketViewsListCacheResponse(cached, request, env, "HIT", "hit");
       }
       if (cached) readStatus = "rejected";
@@ -10993,7 +11014,10 @@ async function handleMarketViewsList(request, env) {
     let storeStatus = "not_attempted";
     if (cache) {
       try {
-        await cache.put(cacheRequest, response.clone());
+        const cacheCopy = response.clone();
+        cacheCopy.headers.set("X-Portal-Market-Views-Cache-Entry", "public-list-v2");
+        cacheCopy.headers.set("X-Portal-Market-Views-Cache-Expires", String(Date.now() + 30000));
+        await cache.put(cacheRequest, cacheCopy);
         // A successful put is not proof that the platform retained the entry.
         storeStatus = "put_ok";
       } catch (_error) {
