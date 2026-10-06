@@ -45,6 +45,14 @@ class MarketViewsFigureTests(unittest.TestCase):
                          "exclude_research_staff_roster")
         self.assertEqual(source_figure_display_exclusion({"body_text": 'Chief Economist Head of Research Head of Fixed Income Research Research leadership'}),
                          "exclude_research_staff_roster")
+        # PSM11 can interleave columns, leaving no continuous role + Research.
+        interleaved = ('Alex Example Chief Economist and Global Head of Research '
+                       'Jamie Sample Chris Placeholder Pat Example Taylor Sample '
+                       'COO and Head of Fixed Global Head of Company Global Head of Macro '
+                       'Head of European Income Research Research and Sales '
+                       'and Thematic Research Company Research')
+        self.assertEqual(source_figure_display_exclusion({'body_text': interleaved}),
+                         'exclude_research_staff_roster')
         for text in (
             "Revenue forecast: 2027 120 million. Source: Alex Example, Head of Research.",
             "Figure5: Company R&D organization and technology platforms. Head of Oncology Research: Alice. Head of Immunology Research: Bob. Chief Research Officer: Carol. Research pipeline organization connects target discovery, drug screening and clinical validation.",
@@ -52,6 +60,9 @@ class MarketViewsFigureTests(unittest.TestCase):
             STAFF_ROSTER + "Inflation forecast 2.4%; policy rate 3.5%.",
             "Figure2: USD/EUR FX forecast1.08, CPI index120, output350. Sources: " + STAFF_ROSTER,
             "Revenue100 EBITDA20. Sources: " + STAFF_ROSTER,
+            'Figure7: FX forecast USD/EUR1.08, CPI120, policy rate3.5%, spread25bps. Sources: ' + interleaved,
+            interleaved + ' CPI120 FX1.08 output350 revenue100 EBITDA20',
+            'Company R&D organization. Chief Research Officer. Head of Oncology Head of Immunology Head of Chemistry. Research Research Research. Discovery, screening and clinical validation.',
         ):
             with self.subTest(text=text):
                 self.assertIsNone(source_figure_display_exclusion({"body_text": text}))
@@ -205,7 +216,10 @@ class MarketViewsFigureTests(unittest.TestCase):
             image.save(path); candidates.append({'source_path':str(path), 'report_id':'R002'})
             clean, audit=filter_publication_figures(candidates, root/'cache', source_figure_display_exclusion)
             self.assertEqual(audit['statuses'], {'ok': 3}, audit)
-            self.assertEqual(clean, [candidates[1]])
+            # Only this test's fictional images may expose OCR text on failure.
+            # The production helper continues to emit fixed statuses, never text.
+            synthetic_ocr=[json.loads(p.read_text())['text'][:4000] for p in (root/'cache').glob('*.json')]
+            self.assertEqual(clean, [candidates[1]], {'audit':audit, 'synthetic_ocr_only':synthetic_ocr})
 
     def test_display_filter_rejects_actual_rating_history_in_each_owned_text_field(self) -> None:
         for field in ("body_text", "content_captions", "content_footnotes", "captions", "footnotes"):

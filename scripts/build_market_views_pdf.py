@@ -589,6 +589,7 @@ def source_figure_display_exclusion(record: dict[str, Any]) -> str | None:
     # a single named source analyst or executive quote is insufficient.
     research_heads = re.findall(
         r"\bhead\s+of\s+(?:[a-z&/-]+\s+){0,7}?research\b", text, re.I)
+    head_fragments = len(re.findall(r"\bhead\s+of\b", text, re.I))
     chief_roles = re.findall(r"\bchief\s+(?:economist|research\s+officer)\b", text, re.I)
     research_mentions = len(re.findall(r"\bresearch\b", text, re.I))
     financial_research_role = re.search(
@@ -600,9 +601,20 @@ def source_figure_display_exclusion(record: dict[str, Any]) -> str | None:
     leading_content = text[:attribution.start()] if attribution else text
     leading_content = re.sub(r"\b(?:figure|exhibit|table)\s*\d+\s*[:.\-]?", "", leading_content, flags=re.I)
     quantitative_content = (re.search(r"\d", leading_content)
-                            or re.search(r"\d(?:[\d,.]*\d)?\s*(?:%|bps\b|million\b|billion\b)", text, re.I))
-    if (len(research_heads) >= 2 and len(research_heads) + len(chief_roles) >= 3
-            and research_mentions >= 3 and financial_research_role and not quantitative_content):
+                            or re.search(r"\d(?:[\d,.]*\d)?\s*(?:%|bps\b|million\b|billion\b)", text, re.I)
+                            or re.search(
+                                r"\b(?:CPI|FX|output|rates?|yields?|inflation|unemployment|GDP|"
+                                r"EBITDA|revenue|sales|margin|profit|earnings|production|USD|EUR|JPY|GBP|CNY)"
+                                r"(?![a-z])[^\d\n]{0,32}\d", text, re.I))
+    continuous_roster = (len(research_heads) >= 2 and len(research_heads) + len(chief_roles) >= 3
+                         and financial_research_role)
+    # Sparse OCR reads multi-column role cards row-first, separating "Head of"
+    # from its "Research" suffix. Still require repeated roles AND explicit
+    # financial research context, so corporate/R&D organization charts survive.
+    interleaved_roster = (head_fragments >= 3
+                         and (financial_research_role or re.search(r"\bchief\s+economist\b", text, re.I)))
+    if ((continuous_roster or interleaved_roster)
+            and research_mentions >= 3 and not quantitative_content):
         return "exclude_research_staff_roster"
 
     # Broker appendix plots, including the exact GS/MS/Bernstein shapes seen
