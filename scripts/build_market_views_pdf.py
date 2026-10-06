@@ -567,7 +567,8 @@ def source_figure_display_exclusion(record: dict[str, Any]) -> str | None:
     """Classify only one verified visual's own text, never nearby page text.
 
     This is an editorial display policy, separate from the immutable source
-    proof's selection decisions. Unknown/pixel-only visuals remain eligible.
+    proof's selection decisions. The same policy also receives bounded local
+    OCR of selected candidates; uncertain visuals remain eligible.
     Generic valuation, target-price and credit-rating words are not exclusions.
     """
     parts = [record.get("body_text") or ""]
@@ -582,6 +583,39 @@ def source_figure_display_exclusion(record: dict[str, Any]) -> str | None:
                      for part in parts if part)
     if not text:
         return None
+
+    # Research-department rosters are publication furniture, not company
+    # operating charts. Require repeated explicit research leadership roles;
+    # a single named source analyst or executive quote is insufficient.
+    research_heads = re.findall(
+        r"\bhead\s+of\s+(?:[a-z&/-]+\s+){0,7}?research\b", text, re.I)
+    head_fragments = len(re.findall(r"\bhead\s+of\b", text, re.I))
+    chief_roles = re.findall(r"\bchief\s+(?:economist|research\s+officer)\b", text, re.I)
+    research_mentions = len(re.findall(r"\bresearch\b", text, re.I))
+    financial_research_role = re.search(
+        r"\bhead\s+of\s+(?:[a-z&/-]+\s+){0,3}(?:fixed\s+income|equity|macro|economics?)"
+        r"(?:\s+[a-z&/-]+){0,3}\s+research\b|\bcompany\s+research\s+and\s+sales\b", text, re.I)
+    # Quantitative charts can carry several attribution lines. Do not remove
+    # their substance just because those lines also list research leaders.
+    attribution = re.search(r"\bsources?\s*:|\bhead\s+of\b|\bchief\s+(?:economist|research\s+officer)\b", text, re.I)
+    leading_content = text[:attribution.start()] if attribution else text
+    leading_content = re.sub(r"\b(?:figure|exhibit|table)\s*\d+\s*[:.\-]?", "", leading_content, flags=re.I)
+    quantitative_content = (re.search(r"\d", leading_content)
+                            or re.search(r"\d(?:[\d,.]*\d)?\s*(?:%|bps\b|million\b|billion\b)", text, re.I)
+                            or re.search(
+                                r"\b(?:CPI|FX|output|rates?|yields?|inflation|unemployment|GDP|"
+                                r"EBITDA|revenue|sales|margin|profit|earnings|production|USD|EUR|JPY|GBP|CNY)"
+                                r"(?![a-z])[^\d\n]{0,32}\d", text, re.I))
+    continuous_roster = (len(research_heads) >= 2 and len(research_heads) + len(chief_roles) >= 3
+                         and financial_research_role)
+    # Sparse OCR reads multi-column role cards row-first, separating "Head of"
+    # from its "Research" suffix. Still require repeated roles AND explicit
+    # financial research context, so corporate/R&D organization charts survive.
+    interleaved_roster = (head_fragments >= 3
+                         and (financial_research_role or re.search(r"\bchief\s+economist\b", text, re.I)))
+    if ((continuous_roster or interleaved_roster)
+            and research_mentions >= 3 and not quantitative_content):
+        return "exclude_research_staff_roster"
 
     # Broker appendix plots, including the exact GS/MS/Bernstein shapes seen
     # in the 261006 PDF. A current price target or valuation matrix is research.
@@ -2157,7 +2191,8 @@ def main() -> int:
     parser.add_argument("--per-report-extract-chars", type=int, default=2200)
     parser.add_argument("--max-figures", type=int, default=0, help="0 means no limit")
     parser.add_argument("--max-selected-figures", type=int, default=0, help="0 means no limit")
-    parser.add_argument("--max-figures-per-report", type=int, default=0, help="0 means no limit")
+    parser.add_argument("--max-figures-per-report", type=int, default=6,
+                        help="Candidate budget per report, capped at 6 for bounded local publication OCR")
     parser.add_argument("--max-external-visuals-per-report", type=int, default=0,
                         help="Deprecated; Market Views uses source exhibits only, not generated visual cards.")
     parser.add_argument("--max-external-roundup-items", type=int, default=24,
@@ -2230,7 +2265,8 @@ def main() -> int:
         })
         retained_handoff_images = handoff_source_images(report_dir)
         handoff_source_image_count += len(retained_handoff_images)
-        figs = extract_exhibit_figures(report_dir, rid, digest["title"], args.max_figures_per_report)
+        candidate_limit = min(args.max_figures_per_report, 6) if args.max_figures_per_report > 0 else 6
+        figs = extract_exhibit_figures(report_dir, rid, digest["title"], candidate_limit)
         for fig in figs:
             fig["source_group"] = source_group
             fig["source_label"] = source_group_label(source_group)
@@ -2242,13 +2278,23 @@ def main() -> int:
             f"| figure_candidates={len(figs)}"
         )
 
+    from publication_figure_ocr import all_candidates_are_publication_only, filter_publication_figures
+    raw_figures, publication_audit = filter_publication_figures(
+        raw_figures, Path(args.output_root).parent / ".cache" / "market_views_figure_ocr",
+        source_figure_display_exclusion, log_fn=log,
+    )
+    (out_dir / "figure_publication_audit.json").write_text(
+        json.dumps(publication_audit, ensure_ascii=False, indent=2), encoding="utf-8")
     figures = copy_figures(raw_figures, figures_dir, args.max_figures)
-    if handoff_source_image_count > 0 and not figures:
+    all_candidates_publication_only = not raw_figures and all_candidates_are_publication_only(publication_audit)
+    if handoff_source_image_count > 0 and not figures and not all_candidates_publication_only:
         raise RuntimeError(
             "MinerU handoff contains selected source images but Market Views copied zero figures: "
             f"retained_source_images={handoff_source_image_count}."
         )
     log(f"Copied {len(figures)} clean exhibit-style figures to {figures_dir}")
+    if all_candidates_publication_only:
+        log("All selected figures were publication-only; continuing with source-grounded text.")
     (out_dir / "report_inputs.json").write_text(json.dumps(reports, ensure_ascii=False, indent=2), encoding="utf-8")
     (out_dir / "figure_candidates.json").write_text(json.dumps(figures, ensure_ascii=False, indent=2), encoding="utf-8")
 
