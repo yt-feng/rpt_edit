@@ -19,7 +19,7 @@ from portal_english_publication import checked_assembly, read_active, verify_pre
 from portal_english_pipeline import hash_value, put_verified
 from portal_extended_locales import ORIGIN, digest, stable_bytes
 from portal_extended_r2 import DEFAULT_PREFIX, R2Store
-from review_portal_extended_handoff import ENVIRONMENT, api, admission_is_valid
+from review_portal_extended_handoff import ENVIRONMENT, api, admission_is_valid, check_live_state, submit_approval
 
 
 def producer_is_valid(receipt, run, jobs, repository):
@@ -94,10 +94,7 @@ def main():
         verifier(value, api(path), jobs['jobs'], repository)
     root = Path('_release_validation')
     previous_identity = json.loads((root/'previous/edge-state.json').read_bytes())
-    with requests.Session() as session:
-        response = session.get(ORIGIN+'/.well-known/edge-state', timeout=(10, 30), allow_redirects=False)
-        require(response.status_code == 200 and len(response.content) <= 65536 and response.json() == previous_identity,
-                'Live version changed before English delegated review')
+    check_live_state(previous_identity)
     active = read_active(store, previous_identity)
     identity = json.loads((root/'candidate/english-review-identity.json').read_bytes())
     require(identity['handoff'] == handoff_id)
@@ -131,8 +128,9 @@ def main():
               'decision': 'approved-for-required-reviewer-submission'}
     put_verified(store, store.key('publication-approvals', digest(stable_bytes(record)), 'receipt.json'), record,
                  'english-exact-publication-approval', immutable=True)
-    api(pending_path, {'environment_ids': [environment['id']], 'state': 'approved',
-                      'comment': 'Operator-delegated English secondary-commentary review; exact source, CPU, preview-only static tree, private ledger, active baseline and versioned rollback verified. Normal cutover gates remain required.'}, 'POST')
+    submit_approval(repository, run_id, environment, variables,
+        'Operator-delegated English secondary-commentary review; exact source, CPU, preview-only static tree, private ledger, active baseline and versioned rollback verified. Normal cutover gates remain required.',
+        approval_job='english_approval', revalidate=lambda: check_live_state(previous_identity), api_call=api)
     print(json.dumps({'review_submitted': True, 'release_run_id': run_id, 'deployed': False}))
 
 

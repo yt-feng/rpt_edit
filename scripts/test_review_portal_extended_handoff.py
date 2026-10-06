@@ -5,6 +5,7 @@ import json
 import os
 from pathlib import Path
 import tempfile
+import subprocess
 import unittest
 from unittest.mock import MagicMock, patch
 
@@ -159,6 +160,11 @@ class DailyReviewTests(unittest.TestCase):
 
         def api(path, payload=None, method=None):
             self.api_calls.append((path, method, payload))
+            if path == 'repos/example/repo/actions/runs/456':
+                return {**self.run, 'id': 456, 'head_sha': '1'*40, 'event': 'workflow_dispatch',
+                        'path': '.github/workflows/neutral-edge-cutover.yml'}
+            if path == 'repos/example/repo/actions/runs/456/approvals':
+                return []
             if path == producer_path:
                 return self.run
             if path == producer_path+'/jobs?per_page=100':
@@ -195,6 +201,7 @@ class DailyReviewTests(unittest.TestCase):
         environment = {'GITHUB_ACTIONS': 'true', 'GITHUB_REF': 'refs/heads/main',
                        'GITHUB_EVENT_NAME': 'workflow_dispatch', 'GITHUB_REPOSITORY': 'example/repo',
                        'GITHUB_RUN_ID': '456', 'GITHUB_SHA': '1'*40, 'GH_TOKEN': 'test-only-not-a-credential',
+                       'GITHUB_RUN_ATTEMPT': '1',
                        'EXTENDED_HANDOFF': 'a'*64, 'ENABLED_LOCALES': 'fr',
                        'CANDIDATE_IDS': self.expected['candidate_specs'], 'CANDIDATE_LOCALES': 'fr,pt',
                        'CANDIDATE_STATIC_TREE': '2'*64, 'CANDIDATE_PAGES_PER_LOCALE': '1'}
@@ -244,6 +251,196 @@ class DailyReviewTests(unittest.TestCase):
         self.assertFalse(any(path.endswith('/pending_deployments') and method == 'POST'
                              for path, method, _payload in self.api_calls))
         self.assertFalse(any('/publication-approvals/' in key for key in self.review_objects))
+
+
+class APIRecoveryTests(unittest.TestCase):
+    def response(self, status=200, body=b'{}', error=b'', headers=b''):
+        return subprocess.CompletedProcess([], 0 if status < 400 and not error else 1,
+            b'HTTP/2.0 '+str(status).encode()+b' Test\r\n'+headers+b'\r\n'+body, error)
+
+    def test_read_transients_are_bounded_and_preserve_original_request(self):
+        failed = self.response(502, error=b'gh: HTTP 502 private response')
+        with patch.object(reviewer.subprocess, 'run', side_effect=[failed]*3+[self.response()]) as run, \
+                patch.object(reviewer.time, 'sleep') as sleep, patch('builtins.print'):
+            self.assertEqual(reviewer.api('repos/example/repo/actions/runs/456'), {})
+        self.assertEqual(run.call_count, 4)
+        self.assertEqual([call.args[0] for call in sleep.call_args_list], [5, 15, 30])
+        self.assertTrue(all(call == run.call_args_list[0] for call in run.call_args_list))
+
+    def test_timeout_is_retried_but_write_is_never_blindly_repeated(self):
+        with patch.object(reviewer.subprocess, 'run', side_effect=[subprocess.TimeoutExpired('gh', 60), self.response()]) as run, \
+                patch.object(reviewer.time, 'sleep'), patch('builtins.print'):
+            reviewer.api('repos/example/repo'); self.assertEqual(run.call_count, 2)
+        with patch.object(reviewer.subprocess, 'run', return_value=self.response(502, error=b'HTTP 502')) as run, \
+                patch.object(reviewer.time, 'sleep') as sleep:
+            with self.assertRaises(reviewer.ReviewAPIError): reviewer.api('repos/example/repo', {'state': 'approved'}, 'POST')
+        self.assertEqual(run.call_count, 1); sleep.assert_not_called()
+
+    def test_gh_connection_failure_is_retried_without_transport_changes(self):
+        failed = subprocess.CompletedProcess([], 1, b'', b'error connecting to api.github.com')
+        with patch.object(reviewer.subprocess, 'run', side_effect=[failed, self.response()]) as run, \
+                patch.object(reviewer.time, 'sleep') as sleep, patch('builtins.print'):
+            self.assertEqual(reviewer.api('repos/example/repo/actions/runs/456'), {})
+        self.assertEqual(run.call_count, 2)
+        self.assertEqual(run.call_args_list[0], run.call_args_list[1])
+        sleep.assert_called_once_with(5)
+
+    def test_auth_certificate_and_unclassified_failures_do_not_retry_or_echo_details(self):
+        for status, error in [(401, b'HTTP 401 secret'), (403, b'HTTP 403 secret'),
+                              (502, b'x509: certificate signed by unknown authority secret'),
+                              (200, b'unknown client failure secret')]:
+            with self.subTest(status=status, error=error), \
+                    patch.object(reviewer.subprocess, 'run', return_value=self.response(status, error=error)) as run, \
+                    patch.object(reviewer.time, 'sleep') as sleep:
+                with self.assertRaises(reviewer.ReviewAPIError) as caught: reviewer.api('repos/example/repo')
+                self.assertNotIn('secret', str(caught.exception))
+                self.assertEqual(run.call_count, 1); sleep.assert_not_called()
+
+    def test_retry_after_is_respected_and_fourth_failure_stops(self):
+        for status in (408, 429, 503):
+            failed = self.response(status, error=f'HTTP {status}'.encode(), headers=b'Retry-After: 20\r\n')
+            with self.subTest(status=status), patch.object(reviewer.subprocess, 'run', return_value=failed) as run, \
+                    patch.object(reviewer.time, 'sleep') as sleep, patch('builtins.print'):
+                with self.assertRaises(reviewer.ReviewAPIError): reviewer.api('repos/example/repo')
+                self.assertEqual(run.call_count, 4)
+                self.assertEqual([call.args[0] for call in sleep.call_args_list], [20, 20, 30])
+
+
+class ApprovalRecoveryTests(unittest.TestCase):
+    def setUp(self):
+        self.environment = {'id': 789, 'name': reviewer.ENVIRONMENT,
+                            'protection_rules': [{'type': 'required_reviewers', 'reviewers': [{'id': 42}]}]}
+        self.variables = {'PORTAL_EXTENDED_APPROVED_STATIC_TREE': '2'*64}
+        self.run = {'id': 456, 'run_attempt': 1, 'head_sha': '1'*40, 'head_branch': 'main',
+                    'event': 'workflow_dispatch', 'path': '.github/workflows/neutral-edge-cutover.yml',
+                    'repository': {'full_name': 'example/repo'}, 'head_repository': {'full_name': 'example/repo'}}
+        self.job = {'id': 1234, 'run_id': 456, 'head_sha': '1'*40, 'name': 'extended_locales_approval',
+                    'status': 'in_progress', 'started_at': '2026-10-06T18:00:00Z'}
+        self.history, self.calls, self.posts = [], [], []
+        self.pending = [{'environment': {'id': 789}, 'current_user_can_approve': True}]
+        self.on_failure = lambda payload: None
+        self.failure = reviewer.ReviewAPIError(502, transient=True)
+        self.always_fail = False
+
+    def api(self, path, payload=None, method=None):
+        self.calls.append((path, method))
+        if method == 'POST':
+            self.posts.append(copy.deepcopy(payload))
+            if len(self.posts) == 1 or self.always_fail:
+                self.on_failure(payload)
+                raise self.failure
+            return [{'id': 999}]
+        if path.endswith('/runs/456'): return copy.deepcopy(self.run)
+        if path.endswith('/approvals'): return copy.deepcopy(self.history)
+        if path.endswith('/pending_deployments'): return copy.deepcopy(self.pending)
+        if '/attempts/1/jobs' in path: return {'total_count': 1, 'jobs': [copy.deepcopy(self.job)]}
+        if path.endswith('/variables?per_page=100'):
+            return {'total_count': len(self.variables), 'variables': [
+                {'name': key, 'value': value} for key, value in self.variables.items()]}
+        if '/environments/' in path: return copy.deepcopy(self.environment)
+        self.fail('Unexpected API route')
+
+    def invoke(self, revalidate=None):
+        with patch.dict(os.environ, {'GITHUB_RUN_ATTEMPT': '1', 'GITHUB_SHA': '1'*40}), \
+                patch.object(reviewer.time, 'sleep') as sleep, patch('builtins.print'):
+            self.sleeps = sleep
+            return reviewer.submit_approval('example/repo', '456', copy.deepcopy(self.environment),
+                copy.deepcopy(self.variables), 'Exact approved release.', approval_job='extended_locales_approval',
+                revalidate=revalidate or (lambda: None), api_call=self.api)
+
+    def accept(self, payload):
+        self.pending = []
+        self.history.append({'state': 'approved', 'comment': payload['comment'],
+                             'environments': [{'id': 789, 'name': reviewer.ENVIRONMENT}]})
+
+    def test_502_not_applied_requires_exact_pending_identity_before_retry(self):
+        revalidate = MagicMock()
+        self.assertEqual(self.invoke(revalidate), [{'id': 999}])
+        self.assertEqual(len(self.posts), 2); self.assertEqual(self.posts[0], self.posts[1])
+        revalidate.assert_called_once()
+        self.assertEqual([call.args[0] for call in self.sleeps.call_args_list], [5])
+        self.assertIn(('repos/example/repo/actions/runs/456/pending_deployments', None), self.calls)
+
+    def test_502_after_acceptance_does_not_submit_twice_or_claim_deployment(self):
+        self.on_failure = self.accept
+        self.assertEqual(self.invoke(), [])
+        self.assertEqual(len(self.posts), 1)
+        self.assertTrue(any('/attempts/1/jobs' in path for path, _ in self.calls))
+
+    def test_empty_pending_without_exact_new_review_is_not_success(self):
+        self.on_failure = lambda payload: setattr(self, 'pending', [])
+        with self.assertRaisesRegex(ExpansionError, 'remains unverified'): self.invoke()
+        self.assertEqual(len(self.posts), 1)
+
+    def test_old_approval_history_cannot_prove_the_current_write_was_accepted(self):
+        marker = reviewer.digest(reviewer.stable_bytes({'run_id': '456', 'attempt': '1', 'sha': '1'*40,
+            'environment_id': 789, 'variables': self.variables}))
+        self.history = [{'state': 'approved', 'comment': f'Exact approved release. Review identity: {marker}.',
+                         'environments': [{'id': 789, 'name': reviewer.ENVIRONMENT}]}]
+        self.on_failure = lambda payload: setattr(self, 'pending', [])
+        with self.assertRaisesRegex(ExpansionError, 'remains unverified'): self.invoke()
+        self.assertEqual(len(self.posts), 1)
+
+    def test_accepted_review_for_another_environment_is_not_success(self):
+        def wrong_environment(payload):
+            self.accept(payload)
+            self.history[-1]['environments'][0]['id'] = 790
+        self.on_failure = wrong_environment
+        with self.assertRaisesRegex(ExpansionError, 'remains unverified'): self.invoke()
+        self.assertEqual(len(self.posts), 1)
+
+    def test_accepted_queued_job_is_observed_until_it_starts_without_another_post(self):
+        self.on_failure = self.accept
+        original = self.api
+        reads = 0
+        def api(path, payload=None, method=None):
+            nonlocal reads
+            if '/attempts/1/jobs' in path:
+                reads += 1
+                self.job.update(status='queued' if reads == 1 else 'in_progress',
+                                started_at=None if reads == 1 else '2026-10-06T18:00:00Z')
+            return original(path, payload, method)
+        self.api = api
+        self.assertEqual(self.invoke(), [])
+        self.assertEqual(len(self.posts), 1); self.assertEqual(reads, 2)
+
+    def test_wrong_attempt_sha_environment_variables_or_review_authority_stops_retry(self):
+        changes = [lambda: self.run.update(run_attempt=2), lambda: self.run.update(head_sha='f'*40),
+                   lambda: self.environment.update(protection_rules=[]),
+                   lambda: self.variables.update(PORTAL_EXTENDED_APPROVED_STATIC_TREE='3'*64),
+                   lambda: self.pending[0].update(current_user_can_approve=False)]
+        for change in changes:
+            with self.subTest(change=change):
+                self.setUp()
+                self.on_failure = lambda payload: change()
+                with self.assertRaises(ExpansionError): self.invoke()
+                self.assertEqual(len(self.posts), 1)
+
+    def test_accepted_history_requires_exact_current_attempt_job_to_start(self):
+        for update in ({'run_id': 999}, {'head_sha': 'a'*40}, {'status': 'completed', 'conclusion': 'skipped'},
+                       {'status': 'queued', 'started_at': None}):
+            with self.subTest(update=update):
+                self.setUp(); self.on_failure = self.accept; self.job.update(update)
+                with self.assertRaises(ExpansionError): self.invoke()
+                self.assertEqual(len(self.posts), 1)
+
+    def test_auth_failure_and_live_state_change_never_resubmit(self):
+        self.failure = reviewer.ReviewAPIError(403)
+        with self.assertRaises(reviewer.ReviewAPIError): self.invoke()
+        self.assertEqual(len(self.posts), 1); self.sleeps.assert_not_called()
+        self.setUp()
+        with self.assertRaisesRegex(ExpansionError, 'live changed'):
+            self.invoke(MagicMock(side_effect=ExpansionError('live changed')))
+        self.assertEqual(len(self.posts), 1)
+
+    def test_write_budget_is_four_total_and_final_result_is_still_reconciled(self):
+        self.always_fail = True
+        with self.assertRaisesRegex(ExpansionError, 'budget exhausted'): self.invoke()
+        self.assertEqual(len(self.posts), 4)
+        self.assertEqual([call.args[0] for call in self.sleeps.call_args_list], [5, 15, 30])
+        self.setUp(); self.always_fail = True
+        self.on_failure = lambda payload: self.accept(payload) if len(self.posts) == 4 else None
+        self.assertEqual(self.invoke(), []); self.assertEqual(len(self.posts), 4)
 
 
 if __name__ == '__main__':
