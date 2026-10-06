@@ -773,7 +773,7 @@ jobs:
     needs: [resolve-inputs, select-macro-reports, process-shard, source-outcome]
     if: ${{ always() && !cancelled() && needs.select-macro-reports.result == 'success' && needs.source-outcome.outputs.primary_ready == 'false' && needs.select-macro-reports.outputs.selected_count != '0' && (needs.resolve-inputs.outputs.replay_source_run_id == '' || needs.source-outcome.outputs.provider_only == 'true') }}
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 180
     outputs:
       source_kind: ${{ steps.source-kind.outputs.source_kind }}
     steps:
@@ -807,7 +807,7 @@ jobs:
           path: _selected_macro_pdfs
       - name: Recover existing MinerU tasks for daily Market Views
         id: mineru-recover
-        timeout-minutes: 15
+        timeout-minutes: 30
         continue-on-error: true
         if: ${{ needs.resolve-inputs.outputs.replay_source_run_id == '' && needs.source-outcome.outputs.provider_only == 'true' }}
         env:
@@ -826,7 +826,7 @@ jobs:
         run: |
           python scripts/recover_daily_mineru_sources.py \
             --input-dir _selected_macro_pdfs --output-dir _mineru_market_sources/shard_0 \
-            --expected-reports "$EXPECTED_ARTICLES" --date-folder "$DATE_FOLDER" --timeout 840
+            --expected-reports "$EXPECTED_ARTICLES" --date-folder "$DATE_FOLDER" --timeout 1740
       - name: Save complete recovered MinerU sources to private R2
         timeout-minutes: 5
         if: ${{ steps.mineru-recover.outcome == 'success' }}

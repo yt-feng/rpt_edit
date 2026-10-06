@@ -360,6 +360,11 @@ class RecoveryTests(unittest.TestCase):
     def test_receipt_rejects_wrong_task_data_id(self):
         self.recover(); self.rewrite_receipt(lambda receipt: receipt['reports'][0]['task'].__setitem__('data_id', 'f' * 64))
         with self.assertRaises(r.RecoveryError): self.validate()
+    def test_receipt_rejects_a_fourth_child_ordinal(self):
+        self.recover()
+        self.rewrite_receipt(lambda receipt: receipt['reports'][0]['task'].__setitem__('child_ordinal', 4))
+        with self.assertRaisesRegex(r.RecoveryError, 'receipt_lineage'):
+            self.validate()
     def test_receipt_binds_the_consumer_requested_recovery_run(self):
         self.recover()
         self.assertEqual(r.validate_sources(self.output, 7, '261003', expected_recovery_run_id='456')['recovery_run_id'], '456')

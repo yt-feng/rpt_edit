@@ -42,7 +42,7 @@ def terminal_for_original(ledger, root):
     """Resume the immutable original policy; never reset a recovery budget."""
     value, _ = ledger.store.get('recoveries/' + root['key'].split('/')[1])
     if value is None:
-        terminal = TerminalRecovery(ledger, automatic=True)
+        terminal = TerminalRecovery(ledger, automatic=True, daily_retry_limit=3)
     else:
         policy = value.get('policy') if isinstance(value, dict) else None
         if (not isinstance(policy, dict)
@@ -52,7 +52,8 @@ def terminal_for_original(ledger, root):
                 or not isinstance(policy.get('allowed_error_hashes'), list)):
             raise LedgerError('Stored terminal recovery controller does not match its original task or fixed policy')
         terminal = TerminalRecovery(ledger, automatic=policy['name'] == AUTOMATIC_POLICY,
-            allowed_error_codes=policy['allowed_error_codes'], allowed_error_hashes=policy['allowed_error_hashes'])
+            allowed_error_codes=policy['allowed_error_codes'], allowed_error_hashes=policy['allowed_error_hashes'],
+            daily_retry_limit=3)
         if not exact_json(terminal.policy, policy):
             raise LedgerError('Stored terminal recovery controller does not match its original task or fixed policy')
     # Validate every saved proof, predecessor and immutable member inventory
@@ -70,7 +71,7 @@ def recover_daily(ledger, input_dir, output_dir, expected_reports, date_folder, 
         expected_reports, date_folder, source_run_id=run_id, allow_fresh=False,
         recovery_run_id=run_id, source_execution_sha=sha, recovery_execution_sha=sha,
         terminal_factory=terminal_for_original, total_timeout=total_timeout,
-        timeout=total_timeout, interval=interval, queue_budget=0, **result_options)
+        timeout=total_timeout, interval=interval, queue_budget=0, continue_batches=True, **result_options)
 
 
 def main(argv=None):

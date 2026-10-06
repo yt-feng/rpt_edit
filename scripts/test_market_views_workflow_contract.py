@@ -314,8 +314,8 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
 
     def test_bounded_mineru_recovery_leaves_time_for_complete_ocr_synthesis(self):
         recovery = job(UPSTREAM, 'recover-market-sources')
-        self.assertIn('timeout-minutes: 150', recovery)
-        names = [('Recover existing MinerU tasks for daily Market Views', 15),
+        self.assertIn('timeout-minutes: 180', recovery)
+        names = [('Recover existing MinerU tasks for daily Market Views', 30),
                  ('Save complete recovered MinerU sources to private R2', 5),
                  ('Install complete cloud OCR synthesis dependencies', 5),
                  ('Build complete OCR summaries and charts for Market Views', 90),
@@ -330,7 +330,7 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
             else:
                 self.assertNotIn('continue-on-error:', block)
         mineru = blocks[names[0][0]]
-        self.assertIn('--timeout 840', mineru)
+        self.assertIn('--timeout 1740', mineru)
         self.assertIn("needs.resolve-inputs.outputs.replay_source_run_id == ''", mineru)
         self.assertIn("needs.source-outcome.outputs.provider_only == 'true'", mineru)
         self.assertIn("steps.mineru-recover.outcome == 'success'", blocks[names[1][0]])

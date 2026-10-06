@@ -176,6 +176,19 @@ class ResultCacheTests(unittest.TestCase):
         self.cache.put(self.binding, self.lineage, self.payload)
         self.assertIsNone(self.cache.get(self.binding, child))
 
+    def test_third_retry_roundtrips_without_rebinding_prior_cache_and_fourth_is_rejected(self):
+        original_identity = c.identity(self.binding, self.lineage)
+        self.cache.put(self.binding, self.lineage, self.payload)
+        third = dict(self.lineage, batch_id='child-task-3', batch_key='batches/' + 'c' * 32, child_ordinal=3)
+        self.cache.put(self.binding, third, self.payload)
+        self.assertEqual(self.cache.get(self.binding, third), self.payload)
+        self.assertEqual(self.cache.get(self.binding, self.lineage), self.payload)
+        self.assertEqual(c.identity(self.binding, self.lineage), original_identity)
+        before = len(self.r2.gets)
+        with self.assertRaises(c.ResultCacheError):
+            self.cache.get(self.binding, dict(third, child_ordinal=4))
+        self.assertEqual(len(self.r2.gets), before)
+
     def test_receipt_source_task_and_blob_rebinding_are_rejected(self):
         self.cache.put(self.binding, self.lineage, self.payload)
         receipt_key, _ = self.keys(); original = copy.deepcopy(self.r2.objects[receipt_key])

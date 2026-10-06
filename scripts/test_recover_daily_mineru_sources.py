@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Exercise the complete source adapter with real ledger/cache/receipt code."""
 import json
+import io
+from contextlib import redirect_stdout
 import shutil
 import unittest
 
@@ -50,7 +52,7 @@ class DailyTests(unittest.TestCase):
         self.assertEqual(self.provider.posts, [])
         self.assertEqual(before, self.source_claims())
 
-    def test_only_failed_members_submitted_after_every_success_zip_is_saved(self):
+    def test_only_failed_members_submitted_after_their_original_success_zips_are_saved(self):
         self.provider.plans['root-1'] = ['done', 'failed', 'failed']
         before = self.source_claims()
         receipt = self.recover(result_cache=ResultCache(fixture.MemoryR2(), 'test'))
@@ -58,7 +60,7 @@ class DailyTests(unittest.TestCase):
         self.assertEqual([item['id'] for item in self.provider.posts[0]],
                          [item['id'] for item in self.originals[0]['files'][1:]])
         first_post = self.provider.events.index('post')
-        self.assertEqual(self.provider.events[:first_post].count('zip'), 5)
+        self.assertEqual(self.provider.events[:first_post].count('zip'), 1)
         self.assertEqual(before, self.source_claims())
         control = json.loads(next(iter(self.controls().values())))
         self.assertEqual(control['policy']['name'], AUTOMATIC_POLICY)
@@ -78,25 +80,41 @@ class DailyTests(unittest.TestCase):
         self.assertEqual(self.source_claims(), claims)
         self.assertEqual(self.controls(), controls)
 
-    def test_two_children_is_lifetime_limit_across_daily_retries(self):
+    def test_three_children_is_lifetime_limit_and_later_batch_still_cached(self):
         self.provider.plans.update({'root-1': ['done', 'failed', 'done'],
-                                    'child-1': ['failed'], 'child-2': ['failed']})
+                                    'child-1': ['failed'], 'child-2': ['failed'], 'child-3': ['failed']})
         cache = ResultCache(fixture.MemoryR2(), 'test')
-        for _ in range(2):
-            with self.assertRaisesRegex(RecoveryError, 'recovery_task_incomplete'):
-                self.recover(result_cache=cache)
-            self.assertFalse(self.output.exists())
-        self.assertEqual([len(items) for items in self.provider.posts], [1, 1])
-        self.assertEqual(len(json.loads(next(iter(self.controls().values())))['children']), 2)
+        captured = io.StringIO()
+        with redirect_stdout(captured):
+            for _ in range(2):
+                with self.assertRaisesRegex(RecoveryError, 'recovery_task_incomplete'):
+                    self.recover(result_cache=cache)
+                self.assertFalse(self.output.exists())
+        self.assertEqual([len(items) for items in self.provider.posts], [1, 1, 1])
+        self.assertEqual(len(json.loads(next(iter(self.controls().values())))['children']), 3)
+        self.assertIn('root-2', self.provider.polls)
+        root = self.originals[1]
+        for binding in root['files']:
+            lineage = {'batch_id': root['batch_id'], 'batch_key': root['key'],
+                       'parent_batch_key': root['key'], 'data_id': binding['id'], 'child_ordinal': 0}
+            self.assertIsNotNone(cache.get(binding, lineage))
+        events = [json.loads(line) for line in captured.getvalue().splitlines()]
+        exhausted = next(row for event in events for row in event['sources'] if row['status'] == 'retry_exhausted')
+        self.assertEqual((exhausted['source_ordinal'], exhausted['reserved_retry_count']), (3, 3))
+        self.assertEqual([event['batch_ordinal'] for event in events], [1, 2, 1, 2])
+        for secret in ('report-', 'results.invalid', 'private-token', 'full_zip_url'):
+            self.assertNotIn(secret, captured.getvalue())
 
     def test_pending_task_only_gets_without_reservation_or_post(self):
         self.clock()
         self.provider.plans['root-1'] = ['done', 'running', 'done']
         claims = self.source_claims()
-        with self.assertRaisesRegex(RecoveryError, 'original_task_incomplete'):
-            self.recover(total_timeout=3)
-        self.assertEqual(self.now, 3)
+        cache = ResultCache(fixture.MemoryR2(), 'test')
+        with self.assertRaisesRegex(RecoveryError, 'recovery_task_incomplete'):
+            self.recover(total_timeout=3, result_cache=cache)
+        self.assertLess(self.now, 3)
         self.assertGreater(len(self.provider.polls), 1)
+        self.assertIn('root-2', self.provider.polls)
         self.assertEqual(self.provider.posts, [])
         self.assertEqual(self.controls(), {})
         self.assertEqual(self.source_claims(), claims)
@@ -126,7 +144,14 @@ class DailyTests(unittest.TestCase):
         shutil.rmtree(self.output)
         result = self.recover()
         self.assertEqual((result['provider_posts'], len(self.provider.posts)), (0, 1))
-        self.assertEqual(self.controls(), controls)
+        # Daily appends its separately authenticated third-retry extension;
+        # every prior policy field, reservation and proof remains unchanged.
+        after = self.controls()
+        self.assertEqual(set(after), set(controls))
+        for name, previous in controls.items():
+            prior, current = json.loads(previous), json.loads(after[name])
+            self.assertEqual({key: current[key] for key in prior}, prior)
+            self.assertEqual(set(current) - set(prior), {'daily_retry_extension'})
         self.assertEqual(self.source_claims(), claims)
 
     def test_manual_continuation_reuses_automatic_controller_without_new_posts(self):
@@ -164,7 +189,7 @@ class DailyTests(unittest.TestCase):
         base = self.downloader
         def slow(url):
             result = base(url); self.now += 6; return result
-        with self.assertRaisesRegex(RecoveryError, 'recovery_time_budget_exhausted'):
+        with self.assertRaisesRegex(RecoveryError, 'recovery_task_incomplete'):
             self.recover(total_timeout=5, result_cache=cache, downloader=slow)
         self.assertEqual(self.provider.posts, [])
         self.assertFalse(self.output.exists())
@@ -172,6 +197,73 @@ class DailyTests(unittest.TestCase):
         lineage = {'batch_id': root['batch_id'], 'batch_key': root['key'],
                    'parent_batch_key': root['key'], 'data_id': binding['id'], 'child_ordinal': 0}
         self.assertIsNotNone(cache.get(binding, lineage))
+
+    def test_slow_zip_stops_only_its_batch_and_reserves_time_for_later_batch(self):
+        self.clock()
+        cache = ResultCache(fixture.MemoryR2(), 'test')
+        fetched = []
+        def slow_first(url):
+            fetched.append(url)
+            result = self.downloader(url)
+            if len(fetched) == 1:
+                self.now += 6
+            return result
+        with self.assertRaisesRegex(RecoveryError, 'recovery_task_incomplete'):
+            self.recover(total_timeout=10, result_cache=cache, downloader=slow_first)
+        # Batch 1 owns five seconds. Its first verified ZIP is saved even when
+        # that single call overruns; no more batch-1 downloads use batch 2's time.
+        self.assertEqual(sum('/root-1/' in url for url in fetched), 1)
+        self.assertEqual(sum('/root-2/' in url for url in fetched), 4)
+        self.assertIn('root-2', self.provider.polls)
+        self.assertEqual(self.provider.posts, [])
+        first = self.originals[0]
+        binding = first['files'][0]
+        self.assertIsNotNone(cache.get(binding, {'batch_id': first['batch_id'], 'batch_key': first['key'],
+            'parent_batch_key': first['key'], 'data_id': binding['id'], 'child_ordinal': 0}))
+
+    def test_third_retry_success_has_a_valid_complete_receipt_and_manual_resume(self):
+        self.provider.plans.update({'root-1': ['done', 'failed', 'done'],
+                                    'child-1': ['failed'], 'child-2': ['failed'], 'child-3': ['done']})
+        receipt = self.recover()
+        self.assertEqual(receipt['provider_posts'], 3)
+        self.assertEqual(sum(report['task']['child_ordinal'] == 3 for report in self.validate()['reports']), 1)
+        shutil.rmtree(self.output)
+        resumed = fixture.RecoveryTests.recover(self, allowed_error_codes=[])
+        self.assertEqual(resumed['provider_posts'], 0)
+        self.assertEqual(len(self.provider.posts), 3)
+
+    def test_third_child_expired_zip_defers_but_later_batch_is_still_cached(self):
+        from consume_legacy_mineru import NetworkStop
+        self.provider.plans.update({'root-1': ['done', 'failed', 'done'],
+                                    'child-1': ['failed'], 'child-2': ['failed'], 'child-3': ['done']})
+        cache = ResultCache(fixture.MemoryR2(), 'test')
+        def download(url):
+            if '/child-3/' in url:
+                raise NetworkStop('tls_certificate_expired')
+            return self.downloader(url)
+        with self.assertRaisesRegex(RecoveryError, 'ledger_child_result_tls_certificate_expired'):
+            self.recover(result_cache=cache, downloader=download)
+        self.assertEqual(len(self.provider.posts), 3)
+        root = self.originals[1]
+        binding = root['files'][0]
+        self.assertIsNotNone(cache.get(binding, {'batch_id': root['batch_id'], 'batch_key': root['key'],
+            'parent_batch_key': root['key'], 'data_id': binding['id'], 'child_ordinal': 0}))
+        self.assertFalse(self.output.exists())
+
+    def test_ambiguous_child_is_not_resubmitted_and_later_batch_keeps_progress(self):
+        self.provider.plans['root-1'] = ['done', 'failed', 'done']
+        original_submit = self.provider.submit
+        def unknown(*args):
+            original_submit(*args)
+            raise TimeoutError('provider response lost')
+        self.provider.submit = unknown
+        cache = ResultCache(fixture.MemoryR2(), 'test')
+        for _ in range(2):
+            with self.assertRaisesRegex(RecoveryError, 'recovery_task_incomplete'):
+                self.recover(result_cache=cache)
+        self.assertEqual(len(self.provider.posts), 1)
+        self.assertGreaterEqual(self.provider.polls.count('root-2'), 2)
+        self.assertFalse(self.output.exists())
 
     def test_context_replay_and_identity_denials_have_no_provider_activity(self):
         for updates in ({'GITHUB_EVENT_NAME': 'pull_request'}, {'GITHUB_REF': 'refs/heads/branch'},

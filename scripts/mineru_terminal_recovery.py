@@ -2,7 +2,8 @@
 
 The normal Ledger.run() contract is unchanged. Original source claims continue
 to point to their original task and credential. A private recovery controller
-reserves at most two child tasks; only its failed members can be submitted.
+reserves two child tasks by default; Daily can durably extend the limit to three.
+Only verified failed members can be submitted.
 Accepted and ambiguous children are never submitted again.
 """
 from __future__ import annotations
@@ -20,6 +21,7 @@ from mineru_task_ledger import (
 POLICY = 'terminal-failed-recovery-v1'
 AUTOMATIC_POLICY = 'daily-terminal-failed-recovery-v1'
 MAX_CHILDREN = 2
+DAILY_MAX_CHILDREN = 3
 HASH = re.compile(r'[a-f0-9]{64}')
 CODE = re.compile(r'[A-Za-z0-9_.:-]{1,128}')
 
@@ -53,9 +55,13 @@ class TerminalRecovery:
     the separately named automatic policy permits only verified terminal failures.
     """
 
-    def __init__(self, ledger, *, allowed_error_codes=(), allowed_error_hashes=(), automatic=False):
+    def __init__(self, ledger, *, allowed_error_codes=(), allowed_error_hashes=(), automatic=False,
+                 daily_retry_limit=None):
         self.ledger = ledger
         self.store = ledger.store
+        if daily_retry_limit is not None and (type(daily_retry_limit) is not int or daily_retry_limit != DAILY_MAX_CHILDREN):
+            raise LedgerError('Daily recovery retry limit must be exactly three')
+        self.daily_retry_limit = daily_retry_limit
         codes, hashes = list(allowed_error_codes), list(allowed_error_hashes)
         if (type(automatic) is not bool
                 or (automatic and (codes or hashes))
@@ -77,7 +83,8 @@ class TerminalRecovery:
         return copy.deepcopy(value)
 
     def _allowed(self, row):
-        return self._allowed_proof(error_code(row), failure_hash(row))
+        return (self.daily_retry_limit == DAILY_MAX_CHILDREN
+                or self._allowed_proof(error_code(row), failure_hash(row)))
 
     def _allowed_proof(self, code, message_hash):
         # Automatic recovery is authorized only by its caller's exact main
@@ -149,14 +156,14 @@ class TerminalRecovery:
         return (set(rows) == {item['id'] for item in files}
                 and all(str(row['state']).lower() in DONE | FAILED for row in rows.values()))
 
-    def _proof(self, predecessor, rows):
+    def _proof(self, predecessor, rows, *, allow_daily=False):
         if not self._terminal(rows, predecessor['files']):
             raise LedgerError('Only a complete freshly verified terminal task authorizes a recovery child')
         values = []
         for item in predecessor['files']:
             row = rows[item['id']]
             failed = str(row['state']).lower() in FAILED
-            if failed and not self._allowed(row):
+            if failed and not (allow_daily or self._allowed(row)):
                 raise LedgerError('Terminal failure is not explicitly authorized for recovery')
             values.append({'data_id': item['id'], 'state': 'failed' if failed else 'done',
                            'error_code': error_code(row) if failed else '',
@@ -165,18 +172,85 @@ class TerminalRecovery:
                  'members': values}
         return {'value': value, 'sha256': digest(encoded(value))}
 
+    def _extension(self, root, control):
+        extension = control.get('daily_retry_extension')
+        if extension is None:
+            return None
+        expected = {'schema', 'max_children', 'root_identity_sha256',
+                    'previous_controller_sha256', 'previous_children_count', 'authorizations'}
+        if (not isinstance(extension, dict) or set(extension) != expected
+                or type(extension['schema']) is not int or extension['schema'] != 1
+                or type(extension['max_children']) is not int or extension['max_children'] != DAILY_MAX_CHILDREN
+                or extension['root_identity_sha256'] != task_identity(root)
+                or type(extension['previous_children_count']) is not int
+                or not 0 <= extension['previous_children_count'] <= MAX_CHILDREN
+                or extension['previous_children_count'] > len(control['children'])
+                or not isinstance(extension['authorizations'], list)
+                or not 1 <= len(extension['authorizations']) <= 1024):
+            raise LedgerError('Invalid Daily retry budget extension')
+        previous = {key: copy.deepcopy(value) for key, value in control.items() if key != 'daily_retry_extension'}
+        previous['children'] = previous['children'][:extension['previous_children_count']]
+        if extension['previous_controller_sha256'] != digest(encoded(previous)):
+            raise LedgerError('Daily retry extension does not preserve its previous controller')
+        seen = set()
+        for authorization in extension['authorizations']:
+            self._authorization(authorization)
+            identity = (authorization['run_id'], authorization['manifest_sha256'])
+            if identity in seen:
+                raise LedgerError('Duplicate Daily manifest authorization')
+            seen.add(identity)
+        return extension
+
+    @staticmethod
+    def _daily_entry_authorized(control, entry):
+        extension = control.get('daily_retry_extension')
+        return bool(extension and entry['ordinal'] > extension['previous_children_count']
+                    and any(exact_json(entry['authorization'], auth) for auth in extension['authorizations']))
+
+    def _proof_for_entry(self, predecessor, rows, control, entry):
+        """Recheck an already validated reservation without broadening old proofs."""
+        if not any(exact_json(entry, saved) for saved in control['children']):
+            raise LedgerError('Recovery proof entry is absent from its controller')
+        return self._proof(predecessor, rows, allow_daily=self._daily_entry_authorized(control, entry))
+
+    def _extend_daily(self, root, paths_and_sources, authorization):
+        """CAS-append explicit Daily authority while preserving every old byte binding."""
+        verified, paths = self._original(paths_and_sources)
+        if verified['key'] != root['key'] or task_identity(verified) != task_identity(root):
+            raise LedgerError('Original task changed before Daily retry extension')
+        self._assert_bytes(root['files'], paths)
+        key, control, version = self._read_control(root)
+        if control is None:
+            control = {'schema': 1, 'policy': copy.deepcopy(self.policy), 'root_key': root['key'],
+                       'root_identity_sha256': task_identity(root), 'children': []}
+        extension = control.get('daily_retry_extension')
+        if extension and any(exact_json(authorization, auth) for auth in extension['authorizations']):
+            return
+        updated = copy.deepcopy(control)
+        if extension is None:
+            updated['daily_retry_extension'] = {'schema': 1, 'max_children': DAILY_MAX_CHILDREN,
+                'root_identity_sha256': task_identity(root),
+                'previous_controller_sha256': digest(encoded(control)),
+                'previous_children_count': len(control['children']), 'authorizations': []}
+        updated['daily_retry_extension']['authorizations'].append(copy.deepcopy(authorization))
+        self._extension(root, updated)
+        self.store.put(key, updated, version)  # Conflict leaves the winning history intact; never reset.
+
     def _read_control(self, root):
         key = 'recoveries/' + root['key'].split('/')[1]
         control, version = self.store.get(key)
         if control is None:
             return key, None, None
         expected = {'schema', 'policy', 'root_key', 'root_identity_sha256', 'children'}
-        if (not schema_v1(control) or set(control) != expected
+        if (not schema_v1(control) or set(control) not in (expected, expected | {'daily_retry_extension'})
                 or not exact_json(control['policy'], self.policy)
                 or control['root_key'] != root['key']
                 or control['root_identity_sha256'] != task_identity(root)
-                or not isinstance(control['children'], list) or len(control['children']) > MAX_CHILDREN):
+                or not isinstance(control['children'], list) or len(control['children']) > DAILY_MAX_CHILDREN):
             raise LedgerError('Stored terminal recovery controller does not match its original task or fixed policy')
+        extension = self._extension(root, control)
+        if len(control['children']) > (DAILY_MAX_CHILDREN if extension else MAX_CHILDREN):
+            raise LedgerError('Stored terminal recovery child count exceeds its durable budget')
         previous_files, previous_key = root['files'], root['key']
         manifest_hash = None
         keys = {root['key']}
@@ -189,7 +263,11 @@ class TerminalRecovery:
                     or not HASH.fullmatch(entry['initial_token_identity'])):
                 raise LedgerError('Stored terminal recovery child reservation is malformed')
             self._authorization(entry['authorization'])
-            if manifest_hash is None:
+            daily_entry = bool(extension and ordinal > extension['previous_children_count'])
+            if daily_entry:
+                if not self._daily_entry_authorized(control, entry):
+                    raise LedgerError('Recovery child lacks its registered Daily authorization')
+            elif manifest_hash is None:
                 manifest_hash = entry['authorization']['manifest_sha256']
             elif entry['authorization']['manifest_sha256'] != manifest_hash:
                 raise LedgerError('Stored recovery children refer to different original manifests')
@@ -216,7 +294,7 @@ class TerminalRecovery:
                     if (not isinstance(member['error_hash'], str) or not HASH.fullmatch(member['error_hash'])
                             or not isinstance(member['error_code'], str)
                             or (member['error_code'] and not CODE.fullmatch(member['error_code']))
-                            or not self._allowed_proof(member['error_code'], member['error_hash'])):
+                            or not (daily_entry or self._allowed_proof(member['error_code'], member['error_hash']))):
                         raise LedgerError('Stored failure proof is not explicitly authorized')
                     failed.append(source_id)
                 elif member['error_hash'] is not None or member['error_code'] != '':
@@ -264,8 +342,11 @@ class TerminalRecovery:
         if control is None:
             control = {'schema': 1, 'policy': copy.deepcopy(self.policy), 'root_key': root['key'],
                        'root_identity_sha256': task_identity(root), 'children': []}
-        if len(control['children']) >= MAX_CHILDREN:
+        if len(control['children']) >= (self.daily_retry_limit or MAX_CHILDREN):
             raise LedgerError('Terminal recovery child limit reached; saved tasks retained')
+        if self.daily_retry_limit is not None and not any(exact_json(authorization, auth)
+                for auth in (control.get('daily_retry_extension') or {}).get('authorizations', [])):
+            raise LedgerError('Daily retry reservation requires its persisted authority')
         control = copy.deepcopy(control)
         control['children'].append({'key': 'batches/' + uuid.uuid4().hex,
             'ordinal': len(control['children']) + 1, 'file_ids': failed,
@@ -275,8 +356,10 @@ class TerminalRecovery:
         return control
 
     def run(self, paths_and_sources, *, authorization, timeout=1800, interval=15, queue_budget=300,
-            done_verifier=None):
-        """Return every original source's unique done row only when all are covered."""
+            done_verifier=None, partial=False):
+        """Return full coverage by default; opt-in partial rows retain explicit outcomes."""
+        if type(partial) is not bool:
+            raise LedgerError('Partial recovery mode must be boolean')
         authorization = self._authorization(authorization)
         if (any(type(value) not in {int, float} or not math.isfinite(value)
                 for value in (timeout, interval, queue_budget))
@@ -286,25 +369,32 @@ class TerminalRecovery:
             raise LedgerError('Completed result verifier must be callable')
         self.ledger.submission_posts = 0
         try:
-            return self._run(paths_and_sources, authorization, timeout, interval, queue_budget, done_verifier)
+            return self._run(paths_and_sources, authorization, timeout, interval, queue_budget, done_verifier, partial)
         except LedgerError:
             raise
         except Exception as error:
             # Provider/store transport text can contain credentials or signed URLs.
             raise LedgerError('Terminal recovery stopped; saved tasks retained (' + type(error).__name__ + ')') from None
 
-    def _run(self, paths_and_sources, authorization, timeout, interval, queue_budget, done_verifier):
+    def _run(self, paths_and_sources, authorization, timeout, interval, queue_budget, done_verifier, partial):
         root, paths = self._original(paths_and_sources)
         deadline = self.ledger.clock() + timeout
         controller_key, control, _ = self._read_control(root)
-        if control is not None and control['children'] and (
-                control['children'][0]['authorization']['manifest_sha256'] != authorization['manifest_sha256']):
-            raise LedgerError('Recovery authorization differs from the frozen original manifest')
+        if control is not None and control['children'] and self.daily_retry_limit is None:
+            manifests = {entry['authorization']['manifest_sha256'] for entry in control['children']}
+            manifests.update(auth['manifest_sha256'] for auth in
+                             (control.get('daily_retry_extension') or {}).get('authorizations', []))
+            if authorization['manifest_sha256'] not in manifests:
+                raise LedgerError('Recovery authorization differs from the frozen original manifest')
         root_rows, root_summary = self._poll(root, root, paths, deadline, interval, queue_budget, 0, done_verifier)
+        if self.daily_retry_limit is not None and (control is not None or
+                (self._terminal(root_rows, root['files']) and any(str(row['state']).lower() in FAILED for row in root_rows.values()))):
+            self._extend_daily(root, paths_and_sources, authorization)
         resolved = {source_id: row for source_id, row in root_rows.items() if str(row['state']).lower() in DONE}
         lineage = {source_id: root['key'] for source_id in resolved}
         predecessor, latest_rows = root, root_rows
         child_summaries = []
+        interrupted = {}
         index = 0
         while self._terminal(latest_rows, predecessor['files']):
             controller_key, control, version = self._read_control(root)
@@ -312,7 +402,7 @@ class TerminalRecovery:
             if index == len(entries):
                 if len(resolved) == len(root['files']):
                     break
-                if index >= MAX_CHILDREN:
+                if index >= (self.daily_retry_limit or MAX_CHILDREN):
                     break
                 control = self._reserve(root, controller_key, control, version, predecessor, latest_rows, authorization)
                 entries = control['children']
@@ -323,14 +413,29 @@ class TerminalRecovery:
             if (entry['proof']['value']['task_identity_sha256'] != task_identity(predecessor)
                     or current_failed != entry['file_ids']):
                 raise LedgerError('Fresh terminal membership differs from the saved recovery reservation')
-            if not exact_json(self._proof(predecessor, latest_rows), entry['proof']):
+            if not exact_json(self._proof_for_entry(predecessor, latest_rows, control, entry), entry['proof']):
                 raise LedgerError('Fresh terminal failure proof differs from the saved recovery reservation')
             child, child_version = self._child(root, controller_key, entry, create=True)
             if child['state'] == 'submitting':
-                raise LedgerError('Ambiguous recovery child blocks new submissions; saved task retained')
+                if not partial:
+                    raise LedgerError('Ambiguous recovery child blocks new submissions; saved task retained')
+                interrupted = {item['id']: ('submission_unknown', child['key']) for item in child['files']}
+                break
             if child['state'] in {'claiming', 'auth_rejected'}:
                 self._assert_bytes(root['files'], paths)
-                self.ledger._submit_claimed(child, child_version, paths, deadline)
+                try:
+                    self.ledger._submit_claimed(child, child_version, paths, deadline)
+                except Exception:
+                    if not partial:
+                        raise
+                    saved, _ = self._child(root, controller_key, entry)
+                    if saved['state'] == 'submitting':
+                        interrupted = {item['id']: ('submission_unknown', saved['key']) for item in saved['files']}
+                    elif saved['state'] in {'accepted', 'uploaded', 'terminal'}:
+                        interrupted = {item['id']: ('pending', saved['key']) for item in saved['files']}
+                    else:
+                        raise
+                    break
                 child, _ = self._child(root, controller_key, entry)
             elif child['state'] not in {'accepted', 'uploaded', 'terminal'}:
                 raise LedgerError('Unrecognized recovery child state')
@@ -349,12 +454,29 @@ class TerminalRecovery:
         ready = (len(resolved) == len(root['files'])
                  and self._terminal(latest_rows, predecessor['files']))
         unresolved = {item['id'] for item in root['files']} - set(resolved)
-        failed = sum(source_id in unresolved and str(row['state']).lower() in FAILED
-                     for source_id, row in latest_rows.items())
+        _, final_control, _ = self._read_control(root)
+        entries = final_control['children'] if final_control else []
+        outcomes = []
+        for item in root['files']:
+            source_id = item['id']
+            retries = [entry for entry in entries if source_id in entry['file_ids']]
+            last_key = retries[-1]['key'] if retries else root['key']
+            if source_id in resolved:
+                status, last_key = 'done', lineage[source_id]
+            elif source_id in interrupted:
+                status, last_key = interrupted[source_id]
+            elif str(latest_rows.get(source_id, {}).get('state', '')).lower() in FAILED:
+                status = 'retry_exhausted' if len(retries) >= (self.daily_retry_limit or MAX_CHILDREN) else 'failed'
+            else:
+                status = 'pending'
+            outcomes.append({'data_id': source_id, 'status': status, 'retry_count': len(retries), 'last_task_key': last_key})
+        failed = sum(row['status'] in {'failed', 'retry_exhausted'} for row in outcomes)
         summary = {'policy': self.policy['name'], 'root_key': root['key'], 'requested': len(root['files']),
                    'completed': len(resolved), 'failed': failed,
                    'pending': len(unresolved) - failed, 'provider_posts': self.ledger.submission_posts,
                    'original_batch': root_summary, 'recovery_children': child_summaries,
-                   'source_task_keys': lineage, 'ready_for_generation': ready}
-        rows = [(Path(paths[item['id']]), resolved[item['id']]) for item in root['files']] if ready else []
+                   'source_task_keys': lineage, 'ready_for_generation': ready,
+                   'partial': not ready, 'source_outcomes': outcomes}
+        rows = [(Path(paths[item['id']]), resolved[item['id']]) for item in root['files']
+                if item['id'] in resolved] if (ready or partial) else []
         return rows, summary

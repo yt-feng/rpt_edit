@@ -118,6 +118,44 @@ class SeedTests(unittest.TestCase):
         return {'recovery_run_id': '67890', 'allowed_error_hashes': [error_hash],
                 'expected_manifest_sha256': manifest_sha}, control_key, entries[-1]['key']
 
+    def third_child_fixture(self, *, changed_third_failure=False, prior_manifest_sha256=''):
+        """A retained two-child policy extended once by an authenticated Daily run."""
+        kwargs, control_key, second_key = self.child_fixture(ordinal_two=True, prior_run_id='67889')
+        root = self.store.get('batches/' + '1' * 32)[0]
+        control, version = self.store.get(control_key)
+        for entry in control['children']:
+            entry['authorization']['run_id'] = '67889'
+            if prior_manifest_sha256:
+                entry['authorization']['manifest_sha256'] = prior_manifest_sha256
+        predecessor = self.store.get(second_key)[0]
+        previous_rows = self.responses[predecessor['batch_id']]['data']['extract_result']
+        previous_rows[0]['state'] = 'failed'
+        if changed_third_failure:
+            previous_rows[0]['err_msg'] = 'PRIVATE different second-child terminal error'
+        rows = {row['data_id']: row for row in previous_rows}
+        authorization = {'run_id': kwargs['recovery_run_id'],
+                         'manifest_sha256': kwargs['expected_manifest_sha256']}
+        previous = copy.deepcopy(control)
+        control['daily_retry_extension'] = {
+            'schema': 1, 'max_children': 3, 'root_identity_sha256': task_identity(root),
+            'previous_controller_sha256': ledger_module.digest(ledger_module.encoded(previous)),
+            'previous_children_count': 2, 'authorizations': [authorization],
+        }
+        entry = {'key': 'batches/' + '5' * 32, 'ordinal': 3,
+                 'file_ids': [self.bindings[1]['id']], 'initial_token_identity': root['token_identity'],
+                 'proof': TerminalRecovery(self.ledger, automatic=True)._proof(predecessor, rows),
+                 'authorization': authorization}
+        terminal = TerminalRecovery(self.ledger, allowed_error_hashes=kwargs['allowed_error_hashes'])
+        child = terminal._child_row(root, control_key, entry)
+        child.update(state='accepted', batch_id='00000000-0000-4000-8000-000000000005')
+        self.store.put(entry['key'], child)
+        child_rows = [dict(previous_rows[0], state='done')]
+        self.responses[child['batch_id']] = {'code': 0, 'data': {'batch_id': child['batch_id'],
+                                                               'extract_result': child_rows}}
+        control['children'].append(entry)
+        self.store.put(control_key, control, version)
+        return kwargs, control_key, entry['key'], previous
+
     def archive_fixture(self):
         producer = {'id': 54321, 'path': archive_module.WORKFLOW, 'event': 'workflow_dispatch',
                     'head_branch': 'main', 'head_sha': 'a' * 40, 'status': 'completed', 'conclusion': 'success',
@@ -611,6 +649,151 @@ class SeedTests(unittest.TestCase):
                     if key.startswith(seed.AUTH_PREFIX)]
         self.assertEqual(receipts[0]['lineage']['child_ordinal'], 2)
         self.assertEqual(receipts[0]['lineage']['batch_key'], child_key)
+
+    def test_third_child_cache_roundtrip_retains_old_two_child_policy_and_complete_proof(self):
+        kwargs, control_key, child_key, original = self.third_child_fixture()
+        before = {str(path): path.read_bytes() for path in self.store.root.rglob('*.json')}
+        with patch.object(TerminalRecovery, 'run', side_effect=AssertionError('No recovery or extension writes')):
+            summary = self.run_seed(max_results=0, **kwargs)
+        self.assertEqual(summary['provider_gets'], 5)
+        self.assertEqual((summary['provider_posts'], summary['canonical_ledger_writes']), (0, 0))
+        self.assertEqual((summary['authorized_child_members'], summary['authorized_child_done']), (1, 1))
+        self.assertEqual(summary['cached_results'], 1)
+        control = self.store.get(control_key)[0]
+        self.assertEqual(control['policy'], original['policy'])
+        self.assertEqual(control['policy']['max_children'], 2)
+        self.assertEqual(control['children'][:2], original['children'])
+        receipts = [json.loads(value['Body']) for key, value in self.r2.objects.items()
+                    if key.startswith(seed.AUTH_PREFIX)]
+        self.assertEqual(len(receipts), 1)
+        lineage = receipts[0]['lineage']
+        self.assertEqual((lineage['child_ordinal'], lineage['batch_key']), (3, child_key))
+        self.assertEqual(self.cache.get(self.bindings[1], lineage), self.payload)
+        self.assertEqual(before, {str(path): path.read_bytes() for path in self.store.root.rglob('*.json')})
+        objects = copy.deepcopy(self.r2.objects)
+        self.provider.seen.clear(); self.factory.reset_mock(); self.transport.reset_mock()
+        second = self.run_seed(max_results=0, **kwargs)
+        self.assertEqual((second['existing_cache_hits'], second['new_result_downloads']), (1, 0))
+        self.factory.assert_not_called(); self.transport.assert_not_called()
+        self.assertEqual(self.r2.objects, objects)
+
+    def test_third_daily_authorization_allows_new_error_but_rechecks_its_exact_live_proof(self):
+        kwargs, control_key, child_key, original = self.third_child_fixture(changed_third_failure=True)
+        control = self.store.get(control_key)[0]
+        self.assertNotIn(control['children'][2]['proof']['value']['members'][0]['error_hash'],
+                         original['policy']['allowed_error_hashes'])
+        summary = self.run_seed(**kwargs)
+        self.assertEqual(summary['cached_results'], 1)
+        predecessor = self.store.get(control['children'][1]['key'])[0]
+        self.responses[predecessor['batch_id']]['data']['extract_result'][0]['err_msg'] = 'PRIVATE later changed error'
+        self.provider.seen.clear(); self.factory.reset_mock()
+        before = copy.deepcopy(self.r2.objects)
+        with self.assertRaisesRegex(seed.SeedError, 'accepted_child_proof_mismatch'):
+            self.run_seed(**kwargs)
+        self.factory.assert_not_called()
+        self.assertEqual(self.r2.objects, before)
+        self.assertEqual(self.store.get(control_key)[0], control)
+
+    def test_new_manifest_seed_preserves_old_prefix_and_uses_only_registered_current_run(self):
+        kwargs, control_key, child_key, original = self.third_child_fixture(prior_manifest_sha256='d' * 64)
+        before = {str(path): path.read_bytes() for path in self.store.root.rglob('*.json')}
+        with patch.object(TerminalRecovery, 'run', side_effect=AssertionError('No recovery or extension writes')):
+            summary = self.run_seed(max_results=0, **kwargs)
+        self.assertEqual((summary['cached_results'], summary['provider_gets']), (1, 5))
+        self.assertEqual((summary['provider_posts'], summary['canonical_ledger_writes']), (0, 0))
+        self.assertEqual(summary['manifest_sha256'], kwargs['expected_manifest_sha256'])
+        control = self.store.get(control_key)[0]
+        self.assertEqual(control['children'][:2], original['children'])
+        self.assertEqual({entry['authorization']['manifest_sha256'] for entry in original['children']}, {'d' * 64})
+        receipts = [json.loads(value['Body']) for key, value in self.r2.objects.items()
+                    if key.startswith(seed.AUTH_PREFIX)]
+        self.assertEqual(len(receipts), 1)
+        self.assertEqual(receipts[0]['lineage']['batch_key'], child_key)
+        self.assertEqual(receipts[0]['lineage']['child_ordinal'], 3)
+        self.assertEqual(self.cache.get(self.bindings[1], receipts[0]['lineage']), self.payload)
+        self.assertEqual(before, {str(path): path.read_bytes() for path in self.store.root.rglob('*.json')})
+        self.provider.seen.clear(); self.factory.reset_mock(); self.transport.reset_mock()
+        second = self.run_seed(max_results=0, **kwargs)
+        self.assertEqual((second['existing_cache_hits'], second['new_result_downloads']), (1, 0))
+        self.factory.assert_not_called(); self.transport.assert_not_called()
+
+    def test_manifest_migration_requires_exact_current_authority_and_never_relabels_old_run(self):
+        kwargs, control_key, _, _ = self.third_child_fixture(prior_manifest_sha256='d' * 64)
+        for requested_run in ('99999', '67889'):
+            control, version = self.store.get(control_key)
+            if requested_run == '67889':
+                # A later authorization for the old run cannot turn its old
+                # manifest reservations into the new manifest's own outputs.
+                control['daily_retry_extension']['authorizations'].append({
+                    'run_id': requested_run, 'manifest_sha256': kwargs['expected_manifest_sha256']})
+                self.store.put(control_key, control, version)
+            before = {str(path): path.read_bytes() for path in self.store.root.rglob('*.json')}
+            self.provider.seen.clear()
+            with self.subTest(run=requested_run), self.assertRaisesRegex(seed.SeedError, '^child_authorization_invalid$'):
+                self.run_seed(**dict(kwargs, recovery_run_id=requested_run))
+            self.factory.assert_not_called()
+            self.assertEqual(self.r2.puts, [])
+            self.assertEqual(before, {str(path): path.read_bytes() for path in self.store.root.rglob('*.json')})
+
+    def test_manifest_migration_cannot_admit_changed_original_pdf_bytes(self):
+        kwargs, _, _, _ = self.third_child_fixture(prior_manifest_sha256='d' * 64)
+        original = self.originals / 'PRIVATE-2.pdf'
+        original.write_bytes(b'%PDF-1.7\nchanged source')
+        self.rows[2]['content_sha256'] = ledger_module.digest(original.read_bytes())
+        self.manifest.write_text(json.dumps(self.rows))
+        kwargs['expected_manifest_sha256'] = ledger_module.digest(self.manifest.read_bytes())
+        before = {str(path): path.read_bytes() for path in self.store.root.rglob('*.json')}
+        with self.assertRaises((ValueError, ledger_module.LedgerError)):
+            self.run_seed(**kwargs)
+        self.assertEqual(self.gets, [])
+        self.factory.assert_not_called()
+        self.assertEqual(self.r2.puts, [])
+        self.assertEqual(before, {str(path): path.read_bytes() for path in self.store.root.rglob('*.json')})
+
+    def test_archive_third_child_cache_checks_intake_and_never_rewrites_old_controller(self):
+        fixture = self.archive_fixture()
+        kwargs, _, child_key, _ = self.third_child_fixture(prior_manifest_sha256='d' * 64)
+        before = {str(path): path.read_bytes() for path in self.store.root.rglob('*.json')}
+        result = self.archive_seed(fixture, max_results=0, **kwargs)
+        self.assertEqual((result['provider_gets'], result['cached_results']), (4, 1))
+        self.assertEqual((result['provider_posts'], result['canonical_ledger_writes']), (0, 0))
+        receipts = [json.loads(value['Body']) for key, value in self.r2.objects.items()
+                    if key.startswith(seed.AUTH_PREFIX)]
+        self.assertEqual((receipts[0]['lineage']['child_ordinal'], receipts[0]['lineage']['batch_key']),
+                         (3, child_key))
+        self.assertEqual(self.cache.get(self.bindings[1], receipts[0]['lineage']), self.payload)
+        self.assertEqual(before, {str(path): path.read_bytes() for path in self.store.root.rglob('*.json')})
+
+    def test_unbound_third_child_extension_is_rejected_before_zip_or_cache_writes(self):
+        kwargs, control_key, _, _ = self.third_child_fixture()
+        original = self.store.get(control_key)[0]
+        changes = [
+            lambda control: control.pop('daily_retry_extension'),
+            lambda control: control['daily_retry_extension'].update(previous_controller_sha256='f' * 64),
+            lambda control: control['daily_retry_extension'].update(previous_children_count=True),
+            lambda control: control['daily_retry_extension']['authorizations'][0].update(run_id='99999'),
+            lambda control: control['daily_retry_extension']['authorizations'][0].update(manifest_sha256='d' * 64),
+        ]
+        for change in changes:
+            value = copy.deepcopy(original); change(value)
+            _, version = self.store.get(control_key)
+            self.store.put(control_key, value, version)
+            self.provider.seen.clear()
+            with self.subTest(change=change), self.assertRaises((ValueError, ledger_module.LedgerError)):
+                self.run_seed(**kwargs)
+            self.factory.assert_not_called()
+            self.assertEqual(self.r2.puts, [])
+
+    def test_third_child_pending_result_is_not_cached_or_treated_as_completed(self):
+        kwargs, _, child_key, _ = self.third_child_fixture()
+        child = self.store.get(child_key)[0]
+        self.responses[child['batch_id']]['data']['extract_result'][0]['state'] = 'pending'
+        before = {str(path): path.read_bytes() for path in self.store.root.rglob('*.json')}
+        with self.assertRaises((ValueError, ledger_module.LedgerError)):
+            self.run_seed(**kwargs)
+        self.factory.assert_not_called()
+        self.assertEqual(self.r2.puts, [])
+        self.assertEqual(before, {str(path): path.read_bytes() for path in self.store.root.rglob('*.json')})
 
     def test_child_mode_manifest_and_failure_hash_are_distinct_and_checked_before_any_zip(self):
         kwargs, _, _ = self.child_fixture()

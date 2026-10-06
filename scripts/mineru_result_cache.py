@@ -52,7 +52,7 @@ def identity(source_binding, lineage):
             or any(not isinstance(lineage[key], str) or not BATCH.fullmatch(lineage[key])
                    for key in ('batch_key', 'parent_batch_key'))
             or lineage['data_id'] != source_binding['id']
-            or type(lineage['child_ordinal']) is not int or not 0 <= lineage['child_ordinal'] <= 2
+            or type(lineage['child_ordinal']) is not int or not 0 <= lineage['child_ordinal'] <= 3
             or (lineage['batch_key'] == lineage['parent_batch_key']) != (lineage['child_ordinal'] == 0)):
         reject('cache_task_binding')
     value = {'source_binding': source_binding, 'lineage': lineage}
