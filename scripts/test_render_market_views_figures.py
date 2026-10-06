@@ -96,6 +96,63 @@ class RenderMarketViewsFigureTests(unittest.TestCase):
             self.assertEqual(stats["rendered_figure_ids"], ["F001"])
             self.assertGreater(output.stat().st_size, 1024)
 
+    def test_cross_report_edition_is_bounded_navigable_and_retains_sources(self):
+        from copy import deepcopy
+        from market_views_publication_budget import bound_roundups
+        with tempfile.TemporaryDirectory() as temp_dir:
+            summary_dir, output = self.make_summary(Path(temp_dir))
+            path = summary_dir / "market_views_structured.json"
+            summary = json.loads(path.read_text())
+            summary.update(source_kind="ocr-synthesis", synthesis_mode="cross-report-v1")
+            section = summary["bank_roundup"]["sections"][0]
+            section["thesis"] = "需求和估值的跨报告比较。" * 400
+            section["bank_views"][0].update(view="经营增长并未同步转化为现金流，机构结论取决于投资周期。" * 1500,
+                                           sources=[{"report_id": "R001", "pages": list(range(1, 11)) + [40]}])
+            section["catalysts"] = ["观察下一季度订单与库存变化。"]
+            summary["bank_roundup"]["sections"] = [{**deepcopy(section), "heading": f"研究主题 {i}"} for i in range(10)]
+            original = deepcopy(summary["bank_roundup"])
+            budgeted, _ = bound_roundups(original, [])
+            self.assertEqual(original, summary["bank_roundup"])
+            self.assertTrue(all(row["references"] == ["R001"] for row in budgeted["sections"]))
+            write_json(path, summary)
+            original_bytes = path.read_bytes()
+            build_pdf(summary_dir, output)
+            with fitz.open(output) as document:
+                self.assertLessEqual(len(document), 70)
+                self.assertGreaterEqual(len(document.get_toc()), 10)
+                self.assertTrue(any(page.get_links() for page in document))
+                text = "".join(page.get_text() for page in document)
+                self.assertIn("R001", text)
+                self.assertIn("催化剂", text)
+                self.assertIn("40页", text)
+            stats = json.loads((summary_dir / "market_views_render_stats.json").read_text())
+            self.assertEqual(stats["module_count"], 10)
+            self.assertLessEqual(stats["page_count"], stats["max_pages"])
+            self.assertEqual(path.read_bytes(), original_bytes)
+
+    def test_cross_report_retains_multiple_comparisons_from_same_sources(self):
+        from render_market_views_reportlab_pdf import normalized_bank_roundup
+        reports = {"R001": {"id": "R001", "source_group": "bank_research"}}
+        views = [{"bank": "Bank", "view": text, "report_ids": ["R001"],
+                  "sources": [{"report_id": "R001", "pages": [page]}]}
+                 for text, page in [("需求比较", 2), ("估值比较", 40)]]
+        summary = {"synthesis_mode": "cross-report-v1", "bank_roundup": {"sections": [
+            {"references": ["R001"], "bank_views": views}]}}
+        normalized = normalized_bank_roundup(summary, reports, {})["sections"][0]["bank_views"]
+        self.assertEqual([row["view"] for row in normalized], ["需求比较", "估值比较"])
+        self.assertEqual(normalized[-1]["sources"][0]["pages"], [40])
+
+    def test_primary_directory_never_exceeds_ten_modules_or_loses_sources(self):
+        from build_market_views_pdf import normalize_bank_plan
+        reports = [{"id": f"R{i:03}", "title": "Research"} for i in range(1, 161)]
+        raw = {"categories": [{"heading": f"Topic {i}", "report_ids": [row["id"]]}
+                              for i, row in enumerate(reports)]}
+        plan = normalize_bank_plan(raw, reports)
+        refs = [rid for item in plan for rid in item["report_ids"]]
+        self.assertLessEqual(len(plan), 10)
+        self.assertEqual(len(refs), len(set(refs)))
+        self.assertEqual(set(refs), {row["id"] for row in reports})
+
     def test_rendered_pdf_retains_original_file_coverage_without_duplicate_summaries(self) -> None:
         from pypdf import PdfReader
         with tempfile.TemporaryDirectory() as temp_dir:

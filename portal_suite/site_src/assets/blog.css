@@ -24,8 +24,8 @@
 .blog-hero {
   display: grid;
   gap: 12px;
-  margin-bottom: 42px;
-  padding: clamp(28px, 5vw, 52px);
+  margin-bottom: 28px;
+  padding: clamp(24px, 4vw, 36px);
   overflow: hidden;
   border: 1px solid rgba(15, 118, 110, 0.18);
   border-radius: 22px;
@@ -45,8 +45,8 @@
 
 .blog-hero h1 {
   margin: 0;
-  font-size: clamp(42px, 8vw, 76px);
-  line-height: 0.98;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.12;
   letter-spacing: -0.055em;
 }
 
@@ -107,7 +107,7 @@
 
 .blog-market-views-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 12px;
 }
 
@@ -126,9 +126,40 @@
   font-weight: 700;
 }
 
-.blog-market-view-card strong {
+.blog-market-view-card h3 {
+  margin: 0;
+  font-size: 17px;
   line-height: 1.4;
 }
+
+.blog-market-view-card.is-latest { padding: clamp(20px, 3vw, 28px); grid-template-columns: minmax(0, 1fr) auto; column-gap: 28px; border-color: rgba(15, 118, 110, .3); background: var(--panel); }
+.blog-market-view-card.is-latest > :is(.blog-market-view-meta, h3, .subtle) { grid-column: 1; }
+.blog-market-view-card.is-latest > .blog-download-actions { grid-column: 2; grid-row: 1 / span 3; align-self: center; }
+.blog-market-view-card.is-latest > :is(.blog-download-state, progress) { grid-column: 1 / -1; }
+.blog-market-view-card.is-latest h3 { font-size: clamp(21px, 3vw, 28px); }
+.blog-market-view-card.is-latest .blog-market-view-download { border: 0; font: inherit; font-weight: 800; cursor: pointer; }
+.blog-market-view-meta, .blog-download-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.blog-latest-label { color: var(--accent-strong); font-size: 12px; font-weight: 800; }
+.blog-market-description { margin-top: 12px !important; color: var(--muted); line-height: 1.6; font-size: 14px; }
+.blog-download-state { font-size: 13px; line-height: 1.6; overflow-wrap: anywhere; }
+.blog-download-state:empty { display: none; }
+.blog-download-progress { width: 100%; height: 8px; accent-color: var(--accent-strong); }
+.blog-market-history { border-top: 1px solid var(--line); margin-top: 10px; padding-top: 20px; }
+.blog-market-history summary { cursor: pointer; font-weight: 700; padding: 8px 0; }
+.blog-market-history summary span { margin-left: 10px; font-weight: 400; color: var(--muted); font-size: 13px; }
+.blog-history-filter { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin: 16px 0; }
+.blog-history-filter label { display: flex; align-items: center; gap: 12px; }
+.blog-history-date { padding: 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); color: var(--ink); font: inherit; }
+.blog-history-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.blog-history-pagination { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 18px; font-size: 13px; }
+.blog-market-views button:disabled { cursor: default; opacity: .55; }
+.blog-market-views [hidden] { display: none !important; }
+.blog-section-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 24px; }
+.blog-section-heading h2 { margin: 8px 0 0; font-size: 28px; }
+.blog-section-heading > p { color: var(--muted); font-size: 13px; }
+.blog-research { margin: 40px 0; }
+:is(.blog-research, .blog-market-views, .bbg-blog-module) { scroll-margin-top: 100px; }
+.blog-market-views :is(button, input, summary):focus-visible { outline: 3px solid var(--accent-strong); outline-offset: 3px; }
 
 .blog-market-view-download {
   width: fit-content;
@@ -384,6 +415,13 @@
   .blog-market-views-list {
     grid-template-columns: 1fr;
   }
+
+  .blog-history-list { grid-template-columns: minmax(0, 1fr); }
+  :is(.blog-research, .blog-market-views, .bbg-blog-module) { scroll-margin-top: 190px; }
+  .blog-market-view-card.is-latest { grid-template-columns: minmax(0, 1fr); }
+  .blog-market-view-card.is-latest > .blog-download-actions { grid-column: 1; grid-row: auto; }
+  .blog-market-history summary span { display: block; margin: 8px 0 0; }
+  .blog-history-pagination { gap: 6px; }
 
   .blog-card {
     min-height: 220px;

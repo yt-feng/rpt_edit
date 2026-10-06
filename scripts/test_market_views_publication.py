@@ -103,6 +103,58 @@ class PublicationTests(unittest.TestCase):
                 self.save({**self.receipt, field: value})
                 with self.assertRaises(ValueError): self.validate()
 
+    def test_cross_report_modules_cover_sources_once_and_validate_citations(self):
+        inputs = json.loads((self.root / "report_inputs.json").read_text())
+        inputs.append({"id": "R002", "digest": "Second actual report summary.", "source_pdf": "skipped.pdf"})
+        write_json(self.root / "report_inputs.json", inputs)
+        for name in ("pages", "chunks", "summaries"):
+            write_json(self.root / f"ocr_sources/R002/{name}.json", [{"page": 1, "text": "Second source evidence"}])
+        write_json(self.root / "cross_report_evidence.json", {"source_ids": ["R001", "R002"]})
+        second = {**self.receipt["reports"][0], "id": "R002", "source_pdf": "skipped.pdf", "content_sha256": "b" * 64}
+        self.receipt["reports"][1] = second
+        self.receipt.update(summarized_reports=2, skipped_reports=0, report_count=2, total_pages=2)
+        summary = {"synthesis_mode": "cross-report-v1", "publication_limits": {"max_modules": 10, "max_pages": 70},
+                   "bank_roundup": {"sections": [{"heading": "Macro", "references": ["R001", "R002"],
+                       "figure_ids": ["F001"], "bank_views": [{"report_ids": ["R001", "R002"],
+                           "view": "Both reports discuss growth with different assumptions.",
+                           "sources": [{"report_id": "R002", "pages": [1]}, {"report_id": "R001", "pages": [1]}]}]}]}}
+        def save_summary(value):
+            write_json(self.root / "market_views_structured.json", value)
+            self.receipt["files"] = [{"path": p.relative_to(self.root).as_posix(), "bytes": len(p.read_bytes()),
+                                      "sha256": hashlib.sha256(p.read_bytes()).hexdigest()}
+                                     for p in self.root.rglob("*") if p.is_file() and p.name != publication.RECEIPT_NAME]
+            self.save(self.receipt)
+        save_summary(summary)
+        self.assertEqual(self.validate()["summarized_reports"], 2)
+        for refs in (["R001"], ["R001", "R001"], ["R001", "R003"]):
+            changed = copy.deepcopy(summary)
+            changed["bank_roundup"]["sections"][0]["references"] = refs
+            save_summary(changed)
+            with self.assertRaisesRegex(ValueError, "source_coverage"):
+                self.validate()
+        changed = copy.deepcopy(summary)
+        changed["bank_roundup"]["sections"][0]["bank_views"][0]["sources"][0]["pages"] = [2]
+        save_summary(changed)
+        with self.assertRaisesRegex(ValueError, "evidence_page"):
+            self.validate()
+        changed = copy.deepcopy(summary)
+        changed["bank_roundup"]["sections"] *= 11
+        save_summary(changed)
+        with self.assertRaisesRegex(ValueError, "module_count"):
+            self.validate()
+        for mutation, reason in (("no_views", "missing_cross_report_views"),
+                                 ("no_ids", "view_source"), ("no_sources", "view_evidence"),
+                                 ("no_pages", "evidence_page"), ("wrong_attribution", "attribution_mismatch")):
+            changed = copy.deepcopy(summary)
+            section = changed["bank_roundup"]["sections"][0]
+            if mutation == "no_views": section["bank_views"] = []
+            elif mutation == "no_ids": section["bank_views"][0]["report_ids"] = []
+            elif mutation == "no_sources": section["bank_views"][0]["sources"] = []
+            elif mutation == "no_pages": section["bank_views"][0]["sources"][0]["pages"] = []
+            else: section["bank_views"][0]["sources"] = [{"report_id": "R001", "pages": [1]}]
+            save_summary(changed)
+            with self.subTest(mutation=mutation), self.assertRaisesRegex(ValueError, reason): self.validate()
+
     def test_exact_date_producer_and_inventory_are_bound(self):
         for args in ({"date_folder": "260803"}, {"source_run_id": "999"}, {"execution_sha": "d" * 40},
                      {"expected_reports": 3}):

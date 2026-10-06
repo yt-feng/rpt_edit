@@ -114,8 +114,50 @@ def validate_ocr_synthesis_receipt(root, *, date_folder, expected_reports, sourc
         and figure.get("latex_path") in checked for figure in figures), "missing_synthesis_chart_content")
     _require(isinstance(summary, dict) and isinstance(summary.get("bank_roundup"), dict)
              and isinstance(summary["bank_roundup"].get("sections"), list)
-             and len(summary["bank_roundup"]["sections"]) == summarized,
+             and summary["bank_roundup"]["sections"],
              "missing_synthesized_sections")
+    sections = summary["bank_roundup"]["sections"]
+    if summary.get("synthesis_mode") == "cross-report-v1":
+        _require(len(sections) <= 10 and all(isinstance(section, dict) for section in sections),
+                 "invalid_cross_report_module_count")
+        references = [rid for section in sections for rid in section.get("references", [])]
+        _require(len(references) == len(successful_ids) and set(references) == successful_ids,
+                 "incomplete_cross_report_source_coverage")
+        limits = summary.get("publication_limits") or {}
+        _require(limits.get("max_modules") == 10 and limits.get("max_pages") == 70,
+                 "missing_cross_report_publication_limits")
+        _require("cross_report_evidence.json" in checked, "missing_cross_report_evidence")
+        page_counts = {row["id"]: row["page_count"] for row in successful}
+        figure_ids = {figure.get("figure_id") for figure in figures}
+        figure_sources = {figure.get("figure_id"): figure.get("report_id") for figure in figures}
+        for section in sections:
+            refs = set(section["references"])
+            selected = section.get("figure_ids") or []
+            _require(len(selected) <= 3 and set(selected).issubset(figure_ids)
+                     and all(figure_sources[fid] in refs for fid in selected), "invalid_cross_report_figures")
+            views = section.get("bank_views") or []
+            _require(isinstance(views, list) and 1 <= len(views) <= 4, "missing_cross_report_views")
+            covered = set()
+            for view in views:
+                _require(isinstance(view, dict) and isinstance(view.get("view"), str) and view["view"].strip()
+                         and isinstance(view.get("report_ids"), list) and view["report_ids"]
+                         and len(set(view["report_ids"])) == len(view["report_ids"])
+                         and set(view["report_ids"]).issubset(refs),
+                         "invalid_cross_report_view_source")
+                sources = view.get("sources") or []
+                _require(isinstance(sources, list) and sources, "missing_cross_report_view_evidence")
+                for source in sources:
+                    _require(isinstance(source, dict) and source.get("report_id") in refs,
+                             "invalid_cross_report_evidence_source")
+                    _require(isinstance(source.get("pages"), list) and source["pages"]
+                             and all(type(page) is int and 1 <= page <= page_counts[source["report_id"]]
+                                 for page in source.get("pages") or []), "invalid_cross_report_evidence_page")
+                _require({source["report_id"] for source in sources} == set(view["report_ids"]),
+                         "cross_report_attribution_mismatch")
+                covered.update(view["report_ids"])
+            _require(covered == refs, "incomplete_cross_report_content_coverage")
+    else:
+        _require(len(sections) == summarized, "missing_synthesized_sections")
     # An explicit disclosure is required even though a skipped report is allowed.
     if failed:
         serialized = json.dumps(summary, ensure_ascii=False)

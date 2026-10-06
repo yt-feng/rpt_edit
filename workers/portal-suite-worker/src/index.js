@@ -10931,16 +10931,55 @@ async function listMarketViewItems(env) {
   return archived.sort((left, right) => right.date.localeCompare(left.date));
 }
 
+function marketViewsListCacheRequest(request) {
+  if (!request || request.method !== "GET") return null;
+  const url = new URL(request.url);
+  if (!["/market-views", "/api/market-views"].includes(url.pathname) || url.search) return null;
+  if (["origin", "authorization", "cookie"].some((name) => request.headers.has(name))) return null;
+  const control = String(request.headers.get("cache-control") || "").toLowerCase();
+  const pragma = String(request.headers.get("pragma") || "").toLowerCase();
+  if (/(?:^|,)\s*(?:no-cache|no-store|max-age\s*=\s*0)(?:\s*(?:,|$))/.test(control)
+    || /(?:^|,)\s*no-cache(?:\s*(?:,|$))/.test(pragma)) return null;
+  const key = new URL("/api/market-views", url.origin);
+  key.searchParams.set("portal_cache", "public-list-v1");
+  return new Request(key.toString(), { method: "GET" });
+}
+
+function marketViewsListCacheResponse(response, request, env, status) {
+  const headers = new Headers(response.headers);
+  // Recompute CORS even on hits; never reuse a previous caller's origin.
+  for (const [name, value] of Object.entries(corsHeaders(request, env))) headers.set(name, value);
+  headers.set("X-Portal-Market-Views-Cache", status);
+  return new Response(response.body, { status: response.status, headers });
+}
+
 async function handleMarketViewsList(request, env) {
+  const cacheRequest = marketViewsListCacheRequest(request);
+  const cache = cacheRequest ? hotReportCacheStorage() : null;
+  if (cache) {
+    try {
+      const cached = await cache.match(cacheRequest);
+      if (cached && hotReportResponseIsCacheable(cached)) {
+        return marketViewsListCacheResponse(cached, request, env, "HIT");
+      }
+    } catch (_error) {
+      // Cache failures must not hide the public R2 directory.
+    }
+  }
   try {
     const items = await listMarketViewItems(env);
-    return jsonResponse(request, env, 200, {
+    const response = jsonResponse(request, env, 200, {
       items,
       total: items.length,
       required_plan: MARKET_VIEW_REQUIRED_PLAN,
       required_months: MARKET_VIEW_MIN_MONTHS,
       generated_at: new Date().toISOString(),
     });
+    if (cacheRequest) response.headers.set("Cache-Control", "public, max-age=30");
+    if (cache) {
+      try { await cache.put(cacheRequest, response.clone()); } catch (_error) { /* Return the fresh directory. */ }
+    }
+    return marketViewsListCacheResponse(response, request, env, cache ? "MISS" : "BYPASS");
   } catch (error) {
     return jsonResponse(request, env, 503, { detail: error.message || "Market Views 暂时无法读取。" });
   }
