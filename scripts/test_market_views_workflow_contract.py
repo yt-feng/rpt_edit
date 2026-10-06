@@ -20,6 +20,7 @@ from unittest import mock
 WORKFLOWS = Path(__file__).resolve().parents[1] / ".github/workflows"
 UPSTREAM = WORKFLOWS / "dropbox-latest-pdf-to-xhs-sharded.yml"
 MARKET = WORKFLOWS / "market-views-latex-pdf.yml"
+NOTICE_RECOVERY = WORKFLOWS / "market-views-notice-recovery.yml"
 
 
 
@@ -384,6 +385,133 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
                         market.index('- name: Send deduplicated backup exception notice'))
         self.assertIn("expected_sha256=os.environ['PRIVATE_PDF_SHA256']", market)
         self.assertLess(market.index('PRIVATE_PDF_SHA256={sha}'), market.index('- name: Prepare public-safe Market Views PDF'))
+
+    def test_backup_notice_requires_successful_private_runtime_materialization(self):
+        market = MARKET.read_text()
+        materialize = market.split('- name: Materialize private backup alert runtime values', 1)[1].split('\n      - name:', 1)[0]
+        send = market.split('- name: Send deduplicated backup exception notice', 1)[1].split('\n      - name:', 1)[0]
+        self.assertIn('id: backup-alert-runtime', materialize)
+        self.assertIn('continue-on-error: true', materialize)
+        self.assertIn('PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}', materialize)
+        for flag in ('scripts/render_private_config.py', '--root scripts/send_portal_ops_alert.py',
+                     '--github-add-mask', '--skip-generated-files'):
+            self.assertIn(flag, materialize)
+        for block in (materialize, send):
+            expression = re.search(r'if: \$\{\{(.*?)\}\}', block).group(1)
+            for notice in ('', 'ocr-synthesis', 'native-pdf'):
+                for acceptance in (True, False):
+                    for outcome in ('success', 'failure', 'skipped'):
+                        evaluated = expression.replace('env.BACKUP_NOTICE', repr(notice))
+                        evaluated = evaluated.replace('inputs.acceptance_only', repr(acceptance))
+                        evaluated = evaluated.replace('steps.backup-alert-runtime.outcome', repr(outcome))
+                        evaluated = evaluated.replace('true', 'True').replace('&&', ' and ')
+                        expected = bool(notice) and not acceptance and (block == materialize or outcome == 'success')
+                        self.assertEqual(eval(evaluated, {'__builtins__': {}}), expected)
+        self.assertLess(market.index('- name: Verify the completed private publication receipt'),
+                        market.index('- name: Materialize private backup alert runtime values'))
+        self.assertLess(market.index('- name: Materialize private backup alert runtime values'),
+                        market.index('- name: Send deduplicated backup exception notice'))
+
+    def test_actual_alert_materialization_resolves_empty_and_relative_origins(self):
+        import base64
+        script_dir = Path(__file__).resolve().parent
+        profile = {'version': 1, 'replacements': [
+            {'public': 'portal.example.invalid', 'private': 'notify.example.test'}], 'files': []}
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            target = root / 'scripts/send_portal_ops_alert.py'
+            target.parent.mkdir()
+            target.write_bytes((script_dir / 'send_portal_ops_alert.py').read_bytes())
+            result = subprocess.run([sys.executable, str(script_dir / 'render_private_config.py'),
+                                     '--root', 'scripts/send_portal_ops_alert.py', '--github-add-mask',
+                                     '--skip-generated-files'], cwd=root, capture_output=True, text=True,
+                                    env={**os.environ, 'PORTAL_PRIVATE_CONFIG_B64': base64.b64encode(
+                                        json.dumps(profile).encode()).decode()})
+            self.assertEqual(result.returncode, 0, result.stderr)
+            namespace = {'__name__': 'materialized_alert_for_test'}
+            exec(compile(target.read_text(), str(target), 'exec'), namespace)
+            for value in ('', '/api'):
+                self.assertEqual(namespace['normalize_worker_url'](value),
+                                 'https://notify.example.test/api/ops/alerts/email')
+
+    def test_notice_recovery_only_verifies_then_sends_with_original_deduplication(self):
+        recovery = NOTICE_RECOVERY.read_text()
+        self.assertIn('workflow_dispatch:', recovery)
+        self.assertNotIn('workflow_run:', recovery)
+        self.assertNotIn('schedule:', recovery)
+        self.assertIn("if: ${{ github.ref == 'refs/heads/main' }}", recovery)
+        self.assertIn('contents: read', recovery)
+        self.assertNotIn('contents: write', recovery)
+        for forbidden in ('DEEPSEEK_API_KEY', 'MINERU_API_KEY', 'commit_output_dir.sh',
+                          'build_market_views', 'upload-artifact', 'download-artifact'):
+            self.assertNotIn(forbidden, recovery)
+        self.assertLess(recovery.index('- name: Verify original run and exact published PDF'),
+                        recovery.index('- name: Materialize private alert runtime values'))
+        self.assertLess(recovery.index('- name: Materialize private alert runtime values'),
+                        recovery.index('- name: Send deduplicated backup exception notice'))
+        self.assertNotIn('continue-on-error', recovery)
+        materialize = recovery.split('- name: Materialize private alert runtime values', 1)[1].split('\n      - name:', 1)[0]
+        self.assertIn('PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}', materialize)
+        for flag in ('scripts/render_private_config.py', '--root scripts/send_portal_ops_alert.py',
+                     '--github-add-mask', '--skip-generated-files'):
+            self.assertIn(flag, materialize)
+        for text in (MARKET.read_text(), recovery):
+            self.assertIn('--dedupe-key "market-views-source-edition:$DATE_FOLDER" --dedupe-hours 24', text)
+        self.assertIn('/actions/runs/$PUBLICATION_RUN_ID', recovery)
+
+    def test_actual_notice_recovery_verifier_requires_successful_run_and_exact_private_pdf(self):
+        import upload_market_view_to_r2 as uploader
+        step = NOTICE_RECOVERY.read_text().split('- name: Verify original run and exact published PDF', 1)[1].split('\n      - name:', 1)[0]
+        shell = textwrap.dedent(step.split('        run: |\n', 1)[1])
+        program = shell.split("python - <<'PY'\n", 1)[1].rsplit('\nPY', 1)[0]
+        base = {'DATE_FOLDER': '261005', 'PUBLICATION_RUN_ID': '37452939157',
+                'PRIVATE_PDF_SHA256': 'a' * 64, 'BACKUP_NOTICE': 'ocr-synthesis',
+                'GITHUB_REPOSITORY': 'example/reports'}
+        original = {'id': 37452939157, 'repository': {'full_name': 'example/reports'},
+                    'path': '.github/workflows/market-views-latex-pdf.yml', 'head_branch': 'main',
+                    'status': 'completed', 'conclusion': 'success', 'event': 'workflow_dispatch'}
+
+        def execute(*, environment=None, run=None, complete=True, r2_error=None):
+            response = subprocess.CompletedProcess(['gh'], 0, json.dumps(run or original), '')
+            previous_path = list(sys.path)
+            try:
+                with mock.patch.dict(os.environ, {**base, **(environment or {})}, clear=True), \
+                        mock.patch('subprocess.run', return_value=response) as github, \
+                        mock.patch.object(uploader, 'private_publication_complete', return_value=complete,
+                                          side_effect=r2_error) as private, \
+                        contextlib.redirect_stdout(io.StringIO()):
+                    error = None
+                    try:
+                        exec(compile(program, str(NOTICE_RECOVERY), 'exec'), {'__name__': '__main__'})
+                    except (Exception, SystemExit) as exc:
+                        error = exc
+                    return error, github, private
+            finally:
+                sys.path[:] = previous_path
+
+        for notice, edition in (('ocr-synthesis', 'ocr-synthesis'), ('native-pdf', 'standard')):
+            error, github, private = execute(environment={'BACKUP_NOTICE': notice})
+            self.assertIsNone(error)
+            github.assert_called_once_with(['gh', 'api', 'repos/example/reports/actions/runs/37452939157'],
+                                           check=True, capture_output=True, text=True)
+            private.assert_called_once_with('261005', expected_sha256='a' * 64, expected_edition=edition)
+        for changed in ({'DATE_FOLDER': 'latest'}, {'DATE_FOLDER': '261332'},
+                        {'PRIVATE_PDF_SHA256': ''}, {'PRIVATE_PDF_SHA256': 'A' * 64},
+                        {'PUBLICATION_RUN_ID': '../wrong'}, {'BACKUP_NOTICE': 'source-pages'}):
+            error, github, private = execute(environment=changed)
+            self.assertIsNotNone(error, changed)
+            github.assert_not_called()
+            private.assert_not_called()
+        for changed in ({'id': 1}, {'repository': {'full_name': 'other/reports'}},
+                        {'path': '.github/workflows/unrelated.yml'}, {'head_branch': 'feature'},
+                        {'status': 'in_progress'}, {'conclusion': 'failure'}, {'event': 'pull_request'}):
+            error, _, private = execute(run={**original, **changed})
+            self.assertIsNotNone(error, changed)
+            private.assert_not_called()
+        for arguments in ({'complete': False}, {'r2_error': RuntimeError('unavailable R2')}):
+            error, _, private = execute(**arguments)
+            self.assertIsNotNone(error)
+            private.assert_called_once()
 
     def test_native_receipt_is_checked_before_idempotency_or_paid_synthesis(self):
         market = MARKET.read_text()

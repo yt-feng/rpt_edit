@@ -1,0 +1,122 @@
+name: Market Views exception notice recovery
+
+run-name: Market Views notice ${{ inputs.date_folder }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      date_folder:
+        description: "Published Market Views date, YYMMDD"
+        required: true
+        type: string
+      publication_run_id:
+        description: "Successful main Market views daily PDF run to link in the notice"
+        required: true
+        type: string
+      private_pdf_sha256:
+        description: "Exact private PDF SHA-256 recorded by that publication run"
+        required: true
+        type: string
+      backup_notice:
+        description: "Verified backup edition used by that publication"
+        required: true
+        type: choice
+        options: [ocr-synthesis, native-pdf]
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: market-views-notice-${{ inputs.date_folder }}
+  cancel-in-progress: false
+
+jobs:
+  verify-and-notify:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      DATE_FOLDER: ${{ inputs.date_folder }}
+      PUBLICATION_RUN_ID: ${{ inputs.publication_run_id }}
+      PRIVATE_PDF_SHA256: ${{ inputs.private_pdf_sha256 }}
+      BACKUP_NOTICE: ${{ inputs.backup_notice }}
+    steps:
+      - name: Checkout notification and read-only publication verifier
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            scripts/render_private_config.py
+            scripts/send_portal_ops_alert.py
+            scripts/upload_market_view_to_r2.py
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install read-only R2 client
+        run: python -m pip install --disable-pip-version-check "boto3>=1.34,<2"
+
+      - name: Verify original run and exact published PDF
+        env:
+          GH_TOKEN: ${{ github.token }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET || 'portal-suite-pdfs' }}
+        run: |
+          python - <<'PY'
+          import json, os, re, subprocess, sys
+          sys.path.insert(0, 'scripts')
+          from upload_market_view_to_r2 import parse_issue_date, private_publication_complete
+          date = os.environ['DATE_FOLDER']
+          run_id = os.environ['PUBLICATION_RUN_ID']
+          digest = os.environ['PRIVATE_PDF_SHA256']
+          edition = {'ocr-synthesis': 'ocr-synthesis', 'native-pdf': 'standard'}.get(os.environ['BACKUP_NOTICE'])
+          if (not re.fullmatch(r'[0-9]{6}', date) or parse_issue_date(date)[1] != date
+                  or not re.fullmatch(r'[1-9][0-9]*', run_id)
+                  or not re.fullmatch(r'[a-f0-9]{64}', digest) or edition is None):
+              raise SystemExit('Invalid published notice identity.')
+          repository = os.environ['GITHUB_REPOSITORY']
+          response = subprocess.run(['gh', 'api', f'repos/{repository}/actions/runs/{run_id}'],
+                                    check=True, capture_output=True, text=True)
+          run = json.loads(response.stdout)
+          if (str(run.get('id')) != run_id or run.get('repository', {}).get('full_name') != repository
+                  or run.get('path') != '.github/workflows/market-views-latex-pdf.yml'
+                  or run.get('head_branch') != 'main' or run.get('status') != 'completed'
+                  or run.get('conclusion') != 'success' or run.get('event') != 'workflow_dispatch'):
+              raise SystemExit('Original Market Views publication run is not a successful main run.')
+          if not private_publication_complete(date, expected_sha256=digest, expected_edition=edition):
+              raise SystemExit('Exact private Market Views publication did not verify; no notice sent.')
+          print('Verified original successful run and exact private PDF; notification only.')
+          PY
+
+      - name: Materialize private alert runtime values
+        env:
+          PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}
+        run: |
+          python -B scripts/render_private_config.py \
+            --root scripts/send_portal_ops_alert.py \
+            --github-add-mask \
+            --skip-generated-files
+
+      - name: Send deduplicated backup exception notice
+        env:
+          OPS_ALERT_SIGNING_KEY: ${{ secrets.OPS_ALERT_SIGNING_KEY || secrets.PASSWORD_SECRET }}
+          PORTAL_WORKER_URL: ${{ secrets.PORTAL_WORKER_URL }}
+        run: |
+          case "$BACKUP_NOTICE" in
+            ocr-synthesis) DETAIL='MinerU 主路未完成；已通过 OCR 和 DeepSeek 生成文字汇总及配套图表。个别无法处理的报告会在正文末列明。' ;;
+            native-pdf) DETAIL='MinerU 主路未完成；已通过严格原生文字或OCR校验并发布备用解析生成的日报。' ;;
+            *) echo 'Unknown backup notice category' >&2; exit 1 ;;
+          esac
+          python scripts/send_portal_ops_alert.py \
+            --subject 'Market Views 解析例外及交付结果' \
+            --text "$DETAIL 批次：$DATE_FOLDER。原始完成任务未重复提交。详情：$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$PUBLICATION_RUN_ID" \
+            --dedupe-key "market-views-source-edition:$DATE_FOLDER" --dedupe-hours 24 --severity warning

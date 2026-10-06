@@ -687,8 +687,20 @@ jobs:
           print('Verified actual Market Views PDF and publication receipt in private R2.')
           PY
 
-      - name: Send deduplicated backup exception notice
+      - name: Materialize private backup alert runtime values
+        id: backup-alert-runtime
         if: ${{ env.BACKUP_NOTICE != '' && inputs.acceptance_only != true }}
+        continue-on-error: true
+        env:
+          PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}
+        run: |
+          python -B scripts/render_private_config.py \
+            --root scripts/send_portal_ops_alert.py \
+            --github-add-mask \
+            --skip-generated-files
+
+      - name: Send deduplicated backup exception notice
+        if: ${{ env.BACKUP_NOTICE != '' && inputs.acceptance_only != true && steps.backup-alert-runtime.outcome == 'success' }}
         continue-on-error: true
         env:
           OPS_ALERT_SIGNING_KEY: ${{ secrets.OPS_ALERT_SIGNING_KEY || secrets.PASSWORD_SECRET }}
