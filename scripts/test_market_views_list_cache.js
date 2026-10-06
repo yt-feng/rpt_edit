@@ -18,12 +18,19 @@ function extract(name) {
   throw new Error(`Cannot extract ${name}`);
 }
 let reads = 0, matches = 0, puts = 0, now = 0;
+const constructedPolicies = [];
+class ObservedResponse extends Response {
+  constructor(body, init) {
+    super(body, init);
+    constructedPolicies.push(this.headers.get("Cache-Control"));
+  }
+}
 const stored = new Map();
 const cache = {
   async match(request) { matches++; const item = stored.get(request.url); return item && now - item.at < 30000 ? item.response.clone() : undefined; },
   async put(request, response) { puts++; stored.set(request.url, { response: response.clone(), at: now }); },
 };
-const sandbox = { Request, Response, Headers, URL, caches: { default: cache }, api: null,
+const sandbox = { Request, Response: ObservedResponse, Headers, URL, caches: { default: cache }, api: null,
   publicSourceText: String, cleanHotReportText: String, safePdfFilename: String, publicBrandText: String,
   listR2JsonObjects: async () => { reads++; return [{ id: "market-view:261005", title: "Market Views", size_bytes: 7500000, private_key: "not-public" }]; },
 };
@@ -45,6 +52,9 @@ const call = (headers, suffix) => sandbox.api.handleMarketViewsList(request(head
   const first = await call();
   assert.equal(first.headers.get("X-Portal-Market-Views-Cache"), "MISS");
   assert.equal(first.headers.get("Cache-Control"), "public, max-age=30");
+  assert.equal(constructedPolicies[0], "public, max-age=30", "the stored response must be constructed with its final public cache policy");
+  assert.equal(first.headers.get("X-Portal-Market-Views-Cache-Read"), "miss");
+  assert.equal(first.headers.get("X-Portal-Market-Views-Cache-Store"), "put_ok");
   assert.equal(reads, 1);
   assert.equal(puts, 1);
   const data = await first.json();
@@ -52,6 +62,8 @@ const call = (headers, suffix) => sandbox.api.handleMarketViewsList(request(head
   assert.equal(data.items[0].private_key, undefined, "only the existing public item projection is cached");
   const second = await call();
   assert.equal(second.headers.get("X-Portal-Market-Views-Cache"), "HIT");
+  assert.equal(second.headers.get("X-Portal-Market-Views-Cache-Read"), "hit");
+  assert.equal(second.headers.get("X-Portal-Market-Views-Cache-Store"), "not_attempted");
   assert.equal(reads, 1, "an edge hit must not read R2 again");
   assert.deepEqual(await second.json(), data);
   assert.equal(second.headers.get("Vary"), "Origin");
@@ -67,6 +79,8 @@ const call = (headers, suffix) => sandbox.api.handleMarketViewsList(request(head
     assert.equal(response.status, 200);
     assert.equal(response.headers.get("Cache-Control"), "no-store");
     assert.equal(response.headers.get("X-Portal-Market-Views-Cache"), "BYPASS");
+    assert.equal(response.headers.get("X-Portal-Market-Views-Cache-Read"), "bypass");
+    assert.equal(response.headers.get("X-Portal-Market-Views-Cache-Store"), "not_attempted");
     assert.equal(reads, before.reads + 1);
     assert.equal(matches, before.matches);
     assert.equal(puts, before.puts);
@@ -94,11 +108,26 @@ const call = (headers, suffix) => sandbox.api.handleMarketViewsList(request(head
   assert.equal(puts, beforeFailure, "503 must never be cached");
   sandbox.listR2JsonObjects = originalR2;
   sandbox.caches = undefined;
-  assert.equal((await call()).status, 200, "missing Cache API must preserve the directory");
+  const noCache = await call();
+  assert.equal(noCache.status, 200, "missing Cache API must preserve the directory");
+  assert.equal(noCache.headers.get("X-Portal-Market-Views-Cache-Read"), "bypass");
+  assert.equal(noCache.headers.get("X-Portal-Market-Views-Cache-Store"), "not_attempted");
   sandbox.caches = { default: { match: async () => { throw new Error("cache read failed"); }, put: async () => { throw new Error("cache write failed"); } } };
-  assert.equal((await call()).status, 200, "cache read/write failures must preserve the directory");
+  const failedCache = await call();
+  assert.equal(failedCache.status, 200, "cache read/write failures must preserve the directory");
+  assert.equal(failedCache.headers.get("X-Portal-Market-Views-Cache-Read"), "read_error");
+  assert.equal(failedCache.headers.get("X-Portal-Market-Views-Cache-Store"), "put_error");
+  assert.doesNotMatch(JSON.stringify([...failedCache.headers]), /cache read failed|cache write failed/);
+  assert.equal((await failedCache.json()).items.length, 1);
+  sandbox.caches = { default: { match: async () => undefined, put: async () => {} } };
+  const silentNoop = await call();
+  assert.equal(silentNoop.headers.get("X-Portal-Market-Views-Cache"), "MISS");
+  assert.equal(silentNoop.headers.get("X-Portal-Market-Views-Cache-Store"), "put_ok");
+  assert.equal((await call()).headers.get("X-Portal-Market-Views-Cache"), "MISS", "a put that returns successfully must not be described as a hit");
   sandbox.caches = { default: { match: async () => new Response("private", { status: 200, headers: { "Set-Cookie": "fixture=1", "Cache-Control": "public, max-age=30", "Content-Type": "application/json" } }), put: async () => {} } };
-  assert.equal((await (await call()).json()).items.length, 1, "untrusted non-public cached response is ignored");
+  const rejectedCache = await call();
+  assert.equal(rejectedCache.headers.get("X-Portal-Market-Views-Cache-Read"), "rejected");
+  assert.equal((await rejectedCache.json()).items.length, 1, "untrusted non-public cached response is ignored");
   assert.doesNotMatch(extract("handleMarketViewsAccess"), /CacheRequest|cache\.put|public, max-age/);
   assert.doesNotMatch(extract("handleMarketViewsPdf"), /CacheRequest|cache\.put|public, max-age/);
   assert.match(app, /async function loadMarketViews\(force = false\)[\s\S]*?cache: force \? "no-store" : "default"/);
