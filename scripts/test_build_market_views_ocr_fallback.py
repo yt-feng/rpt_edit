@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import copy
 from pathlib import Path
 import re
 import tempfile
@@ -205,6 +206,142 @@ class OCRSynthesisTests(unittest.TestCase):
             raise AssertionError("A cached paid request was resubmitted")
         second = self.build(manifest, count=1, invoke=unexpected)
         self.assertEqual(first["reports"], second["reports"])
+
+    def test_editorial_filter_removes_explicit_disclosures_not_research_words(self):
+        legal = [
+            "本页为研究报告的合规披露与分销声明，不含公司经营或财务分析内容。",
+            "研究仅面向专业投资者，不构成投资建议或公开发行。",
+            "分析师薪酬与集团整体盈利挂钩，可能存在利益冲突。",
+            "评级分布：买入55%、中性40%、卖出6%。",
+            "瑞银印度SEBI注册号：INH000001204。",
+            "未经许可不得复制或转载本报告，版权归研究机构所有。",
+            "报告日期：2026年10月5日", "原始文件SHA256：" + "a" * 64,
+        ]
+        research = [
+            "公司收入预计同比增长15%，下调目标价至675美元，维持买入评级。",
+            "监管政策暂停数据中心项目，影响行业产能增长。",
+            "行业监管趋严，未来可能导致供给减少。",
+            "投资风险包括客户需求下降、供应中断及毛利率承压。",
+            "估值仍有吸引力，但需求恢复时间存在不确定性。",
+            "该公司评级由买入降至中性，价格下跌可能反映需求担忧。",
+            "监管机构限制公司生产，预计收入下降10%。",
+            "Spotify版权成本仍然高企，长期内容授权是主要议价约束。",
+            "公司版权内容库没有明显扩张，但预计订阅收入增长15%。",
+            "报告认为英国监管机构可能阻止这项并购。",
+            "公司正以法律手段追讨专利许可费，诉讼进展将影响竞争格局。",
+        ]
+        for text in legal:
+            with self.subTest(text=text): self.assertTrue(fallback.boilerplate_only(text))
+        for text in research:
+            with self.subTest(text=text): self.assertFalse(fallback.boilerplate_only(text))
+
+    def test_mixed_summary_keeps_research_and_later_page_facts(self):
+        first = fallback.validate_summary({
+            "title": "公司研究", "institution": "研究机构", "pages": [1],
+            "summary": "数据中心增长前景大体不变。报告后部为法律声明。预计收入同比增长15%。",
+            "key_points": ["监管政策暂停数据中心项目，影响行业产能增长。"],
+            "data_points": ["毛利率为32.9%。"], "differences": ["投资风险包括客户需求下降。"]}, [1])
+        second = fallback.validate_summary({
+            "title": "研究附录", "pages": [2], "summary": "本页为法律声明，不含新增研究数据。",
+            "key_points": ["后续订单预计增长20%。"], "data_points": [], "differences": []}, [2])
+        original = copy.deepcopy([first, second])
+        result = fallback.assemble_research([first, second])
+        body = result["thesis"] + result["narrative"]
+        for retained in ("增长前景大体不变", "收入同比增长15%", "监管政策暂停", "32.9%", "客户需求下降", "订单预计增长20%"):
+            self.assertIn(retained, body)
+        self.assertNotIn("法律声明", body)
+        self.assertEqual([first, second], original)
+
+    def test_typographic_dedup_keeps_decimal_sign_and_distinct_values(self):
+        value = fallback.validate_summary({"title": "增长", "pages": [1],
+            "summary": "公司营业收入增长 15%，毛利率为 32.9%。",
+            "key_points": ["公司营业收入增长15%，毛利率为32.9%。", "公司营业收入增长15%，毛利率为32.9%！"],
+            "data_points": ["另一口径为3.29%。", "另一口径为32.9%。", "利润变化-5%。", "利润变化+5%。"]}, [1])
+        result = fallback.assemble_research([value, copy.deepcopy(value)])
+        self.assertEqual(result["removed_duplicate_sentences"], 9)
+        self.assertNotIn("公司营业收入", result["narrative"])
+        for retained in ("3.29%", "32.9%", "-5%", "+5%"):
+            self.assertIn(retained, result["narrative"])
+
+    def test_pure_legal_chunk_and_coverage_chart_do_not_enter_public_body(self):
+        value = model_fixture("；页码：[2]", "", "")
+        value.update(summary="本页为法律声明，不含新增研究观点。",
+                     key_points=["仅向专业投资者分发。", "联系地址：伦敦办公室。"],
+                     differences=["不构成投资建议。"], data_points=["SEBI注册号：INH000001204。"])
+        value["charts"][0]["title"] = "评级覆盖占比"
+        result = fallback.assemble_research([value])
+        self.assertEqual(result["charts"], [])
+        self.assertNotIn("伦敦", result["narrative"])
+        self.assertGreater(result["removed_boilerplate_sentences"], 3)
+
+    def test_dedup_preserves_opposite_views_and_accounting_negative_parentheses(self):
+        positive = "公司营业收入增长将带来经营利润率持续改善以及未来自由现金流回升。"
+        value = fallback.validate_summary({"title": "盈利分歧", "pages": [1],
+            "summary": "管理层不再预计" + positive,
+            "key_points": [positive],
+            "data_points": ["2026年公司净收益（5.1亿元）。", "2026年公司净收益5.1亿元。"]}, [1])
+        result = fallback.assemble_research([value])
+        self.assertIn("不再预计", result["thesis"])
+        self.assertIn(positive, result["narrative"])
+        self.assertIn("（5.1亿元）", result["narrative"])
+        self.assertIn("净收益5.1亿元", result["narrative"])
+        self.assertEqual(result["removed_duplicate_sentences"], 0)
+
+    def test_legal_summary_never_discards_actual_chart_or_uncertain_research_point(self):
+        value = model_fixture("；页码：[2]", "", "")
+        value.update(summary="本页仅为免责声明。", key_points=["竞争格局发生变化，未来仍需观察。"],
+                     differences=[], data_points=[])
+        value["charts"][0]["title"] = "订阅收入预测"
+        result = fallback.assemble_research([value])
+        self.assertEqual(result["charts"], value["charts"])
+        self.assertIn("竞争格局发生变化", result["thesis"] + result["narrative"])
+        value["summary"] = "需求逐季恢复\n渠道补库加快"
+        result = fallback.assemble_research([value])
+        self.assertIn("恢复\n渠道", result["thesis"])
+
+    def test_publication_cleanup_reuses_old_cache_and_preserves_private_page_coverage(self):
+        manifest = self.originals_fixture(count=1, pages=3)
+        def extractor(path, **kwargs):
+            return [page_record(n, f"Original page {n}. " + "x" * 200) for n in (1, 2, 3)]
+        def invoke(prompt, *args):
+            value = model_fixture(prompt, *args)
+            if prompt.startswith("将以下全部研究"):
+                return value
+            page = value["pages"][0]
+            if page == 1:
+                value.update(summary="公司计划以6.84亿港元收购57%股权。", key_points=["公司计划以6.84亿港元收购57%股权。"],
+                             differences=[], data_points=[])
+            elif page == 2:
+                value.update(summary="本页为法律声明，不含新的市场观点。", key_points=["分析师认证与薪酬披露。"],
+                             differences=[], data_points=["注册号：INH00001204。"], charts=[])
+            else:
+                value.update(summary="后部研究附录预计收入增长20%，毛利率为32.9%。", key_points=[],
+                             differences=[], data_points=[])
+            return value
+        first = self.build(manifest, count=1, extractor=extractor, invoke=invoke, chunk_chars=256)
+        directory = self.root / "summaries/261005"
+        cache_before = {str(path): path.read_bytes() for path in (self.root / "cache").rglob("*.json")}
+        private_before = {str(path): path.read_bytes() for path in (directory / "ocr_sources").rglob("*.json")}
+        def unexpected(*args, **kwargs):
+            raise AssertionError("No new OCR or model request during cached publication cleanup")
+        second = self.build(manifest, count=1, extractor=unexpected, invoke=unexpected, chunk_chars=256)
+        self.assertEqual(first["reports"], second["reports"])
+        self.assertEqual(second["reports"][0]["pages_covered"], [1, 2, 3])
+        self.assertEqual(second["reports"][0]["chunks_completed"], 3)
+        self.assertEqual(cache_before, {str(path): path.read_bytes() for path in (self.root / "cache").rglob("*.json")})
+        self.assertEqual(private_before, {str(path): path.read_bytes() for path in (directory / "ocr_sources").rglob("*.json")})
+        structured = json.loads((directory / "market_views_structured.json").read_text())
+        section = structured["bank_roundup"]["sections"][0]
+        self.assertIn("6.84亿港元", section["thesis"])
+        self.assertNotIn("6.84亿港元", section["bank_views"][0]["view"])
+        self.assertIn("收入增长20%", section["bank_views"][0]["view"])
+        self.assertNotIn("法律声明", json.dumps(structured, ensure_ascii=False))
+        self.assertIn("法律声明", (directory / "ocr_sources/R001/summaries.json").read_text())
+        self.assertGreater(second["reports"][0]["publication_editing"]["removed_boilerplate_sentences"], 0)
+        from market_views_publication import validate_ocr_synthesis_receipt
+        validate_ocr_synthesis_receipt(directory, date_folder="261005", expected_reports=1,
+            source_run_id="37388263555", execution_sha="a" * 40)
+        self.assertEqual(fallback.PROMPT_VERSION, "complete-ocr-synthesis-v1")
 
     def test_changed_original_sha_does_not_reuse_old_model_results(self):
         manifest = self.originals_fixture(count=1)
