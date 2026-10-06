@@ -181,25 +181,44 @@ class PreviewTests(unittest.TestCase):
         self.assertEqual(result['provider_posts'], 0)
 
     def test_actual_workflow_reuses_primary_without_degraded_label_or_exception_email(self):
-        import daily_market_source_status as daily
         import upload_market_view_to_r2 as uploader
-        workflow = Path(__file__).resolve().parents[1] / '.github/workflows/market-views-latex-pdf.yml'
-        step = workflow.read_text().split('- name: Verify and render the exact bounded original-page edition', 1)[1].split('\n      - name:', 1)[0]
-        program = textwrap.dedent(step.split('        run: |\n', 1)[1]).split("python - <<'PY'\n", 1)[1].rsplit('\nPY', 1)[0]
+        from test_upload_market_view_to_r2 import FakeR2Client
+        from test_market_views_workflow_contract import run_actual_market_resolver
+
+        workflows = Path(__file__).resolve().parents[1] / '.github/workflows'
+        market = (workflows / 'market-views-latex-pdf.yml').read_text()
+        daily = (workflows / 'dropbox-latest-pdf-to-xhs-sharded.yml').read_text()
+        self.assertNotIn('market_views_source_preview.py', daily)
+        self.assertNotIn('source_kind=source-pages', daily)
+        self.assertNotIn('Verify and render the exact bounded original-page edition', market)
+        # OCR summaries must replace a same-day page-image edition by rendering
+        # their verified content; standard publication reuse cannot bypass it.
+        ocr = market.split('- name: Verify and materialize OCR summaries and charts', 1)[1].split('\n      - name:', 1)[0]
+        self.assertIn("'SHOULD_BUILD': 'true'", ocr)
+        self.assertNotIn('publication_plan(', ocr)
+
         source = self.pdf(scanned=False)
         pdf = self.root / 'market_view_summaries' / CTX['date'] / f"market_views_{CTX['date']}.pdf"
         pdf.parent.mkdir(parents=True)
         pdf.write_bytes(source.read_bytes())
-        environment = {'GITHUB_REPOSITORY': 'owner/repo', 'SOURCE_RUN_ID': CTX['run_id'],
-            'SOURCE_DATE': CTX['date'], 'EXPECTED_ARTICLES': '1', 'GITHUB_ENV': str(self.root / 'env')}
-        with contextlib.chdir(self.root), patch.dict(os.environ, environment, clear=True), \
-                patch('subprocess.check_output', return_value='{}'), \
-                patch.object(daily, 'require_preview_producer', return_value=CTX['sha']), \
-                patch.object(preview, 'validate'), patch.object(preview, 'render') as render, \
-                patch.object(uploader, 'private_publication_complete', return_value=True):
-            with contextlib.redirect_stdout(io.StringIO()):
-                exec(compile(program, str(workflow), 'exec'), {'__name__': '__main__'})
+        report = self.root / 'xhs_notes/dropbox' / CTX['date'] / 'report'
+        report.mkdir(parents=True)
+        (report / 'source_native_pdf.md').write_text('# Exact complete source report')
+        client = FakeR2Client()
+        uploader.upload_market_view(source, CTX['date'], client=client, bucket='test')
+        before = copy.deepcopy(client.objects)
+        client.calls.clear()
+        environment = {'GITHUB_ENV': str(self.root / 'env'),
+            'REQUESTED_DATE_FOLDER': CTX['date'], 'EXPECTED_BANK_DATE': CTX['date'],
+            'EXPECTED_ARTICLES': '1', 'FORCE_REBUILD': 'false',
+            'ACCEPTANCE_ONLY': 'false', 'SOURCE_HANDOFF_KIND': 'xhs'}
+        with patch.object(preview, 'render') as render:
+            result = run_actual_market_resolver(self.root, environment, client)
+        self.assertEqual(result.returncode, 0, result.stderr)
         render.assert_not_called()
+        self.assertEqual(client.objects, before)
+        self.assertFalse(any(operation == 'put' for operation, _ in client.calls))
+        self.assertEqual(pdf.read_bytes(), source.read_bytes())
         values = dict(line.split('=', 1) for line in (self.root / 'env').read_text().splitlines())
         self.assertEqual(values['SHOULD_BUILD'], 'false')
         self.assertEqual(values['MARKET_EDITION'], 'standard')
