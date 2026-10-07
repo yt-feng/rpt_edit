@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "id": "5abcf8778aba020946a569618064c6ea1b42b3e4277b7dc3cae865b2b52c0c96",
+  "slug": "bbg-20261007-5abcf8778aba0209",
+  "date": "2026-10-07",
+  "title": "AI越强漏洞越多：Zscaler需求暴涨，CEO点破真正原因？",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-10-06/zscaler-ceo-ai-models-are-raising-demand-for-security-video",
+  "start": 0.0,
+  "end": 86.04,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 6.04,
+      "en": "Start off first with this idea here of Zero Trust, the Signature Cloud Security platform.",
+      "zh": "首先从零信任这个标志性云安全平台说起。"
+    },
+    {
+      "start": 6.04,
+      "end": 15.16,
+      "en": "And some sense here, Jay, can you share with us what demand is looking like and whether that demand has actually increased materially this year,",
+      "zh": "Jay，能否分享一下当前需求情况，以及今年需求是否显著增长，"
+    },
+    {
+      "start": 15.16,
+      "end": 19.48,
+      "en": "given all of the incidents and focus on cybersecurity?",
+      "zh": "考虑到所有事件和对网络安全的关注？"
+    },
+    {
+      "start": 19.48,
+      "end": 23.0,
+      "en": "In short, the demand is growing very rapidly.",
+      "zh": "简而言之，需求正在快速增长。"
+    },
+    {
+      "start": 23.0,
+      "end": 32.12,
+      "en": "Let me explain why. Every CEO and every board believes that AI must be adopted because it can increase your top line",
+      "zh": "让我解释原因。每位CEO和董事会都认为必须采用AI，因为它能提升营收"
+    },
+    {
+      "start": 32.12,
+      "end": 40.4,
+      "en": "and it can improve your bottom line as well. But the biggest concern CIOs and CISOs have is cyber security.",
+      "zh": "也能改善利润。但CIO和CISO最担心的是网络安全。"
+    },
+    {
+      "start": 40.4,
+      "end": 49.64,
+      "en": "Can these agents go rogue and the like? That is why it's creating a big demand for cyber security and especially for Zero Trust Security.",
+      "zh": "这些代理会失控吗？因此对网络安全，尤其是零信任安全的需求大增。"
+    },
+    {
+      "start": 49.64,
+      "end": 57.28,
+      "en": "Because you don't want AI agents to be running on your corporate network and Z-scaler fixes that.",
+      "zh": "因为你不希望AI代理在企业网络上运行，Zscaler解决了这个问题。"
+    },
+    {
+      "start": 57.28,
+      "end": 66.04,
+      "en": "Well, give me a sense here, though. I remember on your last conference call, you talked about this idea of a lot of the frontier models were sort of multiplying at sort of this exponential level",
+      "zh": "不过，请谈谈。我记得上次电话会议，你提到许多前沿模型正以指数级速度增长"
+    },
+    {
+      "start": 66.04,
+      "end": 75.76,
+      "en": "almost. And I do wonder how you keep up as a cybersecurity company when the technology that effectively you're up against has, if not the same power as you,",
+      "zh": "几乎如此。作为网络安全公司，当面对的技术力量与你相当甚至更强时，你如何跟上？"
+    },
+    {
+      "start": 75.76,
+      "end": 81.16,
+      "en": "maybe even more. Well, it is true that frontier models are very powerful.",
+      "zh": "甚至更多。前沿模型确实非常强大。"
+    },
+    {
+      "start": 81.16,
+      "end": 86.04,
+      "en": "These models can find vulnerabilities in almost any software.",
+      "zh": "这些模型能发现几乎所有软件中的漏洞。"
+    }
+  ]
+}

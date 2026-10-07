@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "4e1356c3acaa243e81226404132b50eee089d77f8090ce6d8fb9d0a4ad3aa012",
+  "slug": "bbg-20261006-4e1356c3acaa243e",
+  "date": "2026-10-06",
+  "title": "MS Capital张凯：AI如何增强量化策略与风控？",
+  "speaker": "Kate Zhang",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-10-06/the-china-show-10-6-2026-video",
+  "start": 3224.0,
+  "end": 3288.0,
+  "segments": [
+    {
+      "start": 3224.0,
+      "end": 3228.5,
+      "en": "I mean, it's quite remarkable because as we understand it, fast-moving markets, your models have been able to pick up some of these shifts.",
+      "zh": "这相当了不起，因为据我们了解，在快速变动的市场中，你们的模型能够捕捉到一些变化。"
+    },
+    {
+      "start": 3231.3,
+      "end": 3238.4,
+      "en": "Can you walk us through how exactly they're being structured to be able to do this? Yes.",
+      "zh": "你能详细介绍一下它们是如何构建来实现这一点的吗？是的。"
+    },
+    {
+      "start": 3242.0,
+      "end": 3248.7,
+      "en": "I think we have a very disciplined process of making the strategy.",
+      "zh": "我认为我们有一个非常严谨的策略制定流程。"
+    },
+    {
+      "start": 3248.7,
+      "end": 3254.3,
+      "en": "We first, we process the data and then we identify the pattern.",
+      "zh": "我们首先处理数据，然后识别模式。"
+    },
+    {
+      "start": 3254.3,
+      "end": 3258.3,
+      "en": "Then we have a vigorous risk control management.",
+      "zh": "然后我们有严格的风险控制管理。"
+    },
+    {
+      "start": 3258.3,
+      "end": 3263.1,
+      "en": "So I think the whole process is also enhanced by AI.",
+      "zh": "所以我认为整个过程也由AI增强。"
+    },
+    {
+      "start": 3263.1,
+      "end": 3273.7,
+      "en": "Now we even developed our own LLN to read and interpret this signal into our own pattern.",
+      "zh": "现在我们甚至开发了自己的LLN来读取和解读这些信号，形成我们自己的模式。"
+    },
+    {
+      "start": 3273.7,
+      "end": 3282.7,
+      "en": "And then we adapted all these factors, all these strategies due to the market regime.",
+      "zh": "然后我们根据市场状态调整所有这些因子和策略。"
+    },
+    {
+      "start": 3282.7,
+      "end": 3288.0,
+      "en": "And how exactly is AI helping with the risk assessment side of the process? You talk about these LLMs.",
+      "zh": "AI在风险评估方面具体如何帮助？你谈到这些LLM。"
+    }
+  ]
+}
