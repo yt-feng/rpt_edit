@@ -679,6 +679,20 @@ def source_figure_display_exclusion(record: dict[str, Any]) -> str | None:
         recommendation_categories = sum(bool(re.search(pattern, disclosure_text, re.I)) for pattern in (
             r"\b(?:buy|outperform|overweight)\b", r"\b(?:hold|neutral|market[-\s]perform|equal[-\s]weight)\b",
             r"\b(?:sell|underperform|underweight)\b"))
+        # A cropped broker disclosure can contain only its IB heading, the
+        # Buy/Hold/Sell columns and percentages. Require that complete small
+        # table grammar in one evidence group; ordinary business/valuation
+        # prose and a generic IB source footer cannot complete this pattern.
+        cropped_labels = (r"\bbuy(?![a-z])", r"\bhold(?![a-z])", r"\bsell(?![a-z])")
+        percentages = re.findall(r"(?<![\d.])\d{1,3}(?:\.\d+)?\s*%", disclosure_text)
+        cropped_remainder = re.sub(
+            r"\binvestment\s+banking\s+(?:services?|relationships?|relations)\b|"
+            r"\b(?:buy|hold|sell)(?![a-z])|\d{1,3}(?:\.\d+)?\s*%|"
+            r"\b(?:figure|exhibit|table)\s*\d+", "", disclosure_text, flags=re.I)
+        if (ib_relationships and len(percentages) >= 3
+                and all(re.search(pattern, disclosure_text, re.I) for pattern in cropped_labels)
+                and not re.search(r"[^\s|:;,./()\[\]—–-]", cropped_remainder)):
+            return "exclude_publication_disclosure"
         clipped_distribution_columns = (re.search(r"\b(?:equity|stock)\s+ratings?\b", disclosure_text, re.I)
                                         and re.search(r"\bglobal\s+ratings?\s+distribution\b", disclosure_text, re.I)
                                         and regulatory_rating_column)

@@ -227,8 +227,24 @@ class MarketViewsFigureTests(unittest.TestCase):
                     draw.text((x,260+row*90), value, fill='black', font=font)
             draw.text((40,560), 'Percent of research coverage with investment banking services within prior 12 months.', fill='black', font=font)
             image.save(path); candidates.append({'source_path':str(path), 'report_id':'R003'})
+            # Cropped version: neither Equity nor Distribution survives, but
+            # the relationship heading and recommendation percentages do.
+            path=root/'cropped-relationships.png'; image=Image.new('RGB', (1500, 450), 'white')
+            draw=ImageDraw.Draw(image)
+            draw.text((120,40), 'Investment Banking Relationships', fill='black', font=font)
+            # Keep the observed crop's two horizontal rules and partial column
+            # borders, so the real engine also exercises table-line artifacts.
+            draw.line((80,125,1450,125), fill='black', width=3)
+            draw.line((80,235,1450,235), fill='black', width=3)
+            draw.line((1450,35,1450,235), fill='black', width=3)
+            for x in (535,1000):
+                draw.line((x,235,x,340), fill='black', width=3)
+            for x, label, value in ((160,'Buy','65%'),(650,'Hold','59%'),(1150,'Sell','43%')):
+                draw.text((x,160), label, fill='black', font=font)
+                draw.text((x,260), value, fill='black', font=font)
+            image.save(path); candidates.append({'source_path':str(path), 'report_id':'R004'})
             clean, audit=filter_publication_figures(candidates, root/'cache', source_figure_display_exclusion)
-            self.assertEqual(audit['statuses'], {'ok': 4}, audit)
+            self.assertEqual(audit['statuses'], {'ok': 5}, audit)
             # Only this test's fictional images may expose OCR text on failure.
             # The production helper continues to emit fixed statuses, never text.
             synthetic_ocr=[json.loads(p.read_text())['text'][:4000] for p in (root/'cache').glob('*.json')]
@@ -331,6 +347,37 @@ class MarketViewsFigureTests(unittest.TestCase):
             'body_text':'Investment Banking Services revenue100; advisory60; underwriting40.',
             'content_captions':['Revenue and business mix'],
             'content_footnotes':['Distribution of equity ratings BUY 50% HOLD 30% SELL 20%']}))
+
+    def test_cropped_ib_relationship_table_requires_its_own_complete_percentage_columns(self) -> None:
+        cropped='Investment Banking Relationships\nBuy Hold Sell\n65% 59% 43%'
+        for field in ('body_text','content_captions','content_footnotes','captions','footnotes'):
+            value=cropped if field=='body_text' else ([{'text':cropped}] if field in ('captions','footnotes') else [cropped])
+            with self.subTest(field=field):
+                self.assertEqual(source_figure_display_exclusion({field:value}), 'exclude_publication_disclosure')
+        for body in (
+            'Investment Banking Services\nBuy 65 %\nHold 59 %\nSell 43 %',
+            '<table><tr><td>Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>65%</td><td>59%</td><td>43%</td></tr></table>',
+            'Investment Banking Relationships BUY65% HOLD59% SELL43%',
+        ):
+            with self.subTest(body=body):
+                self.assertEqual(source_figure_display_exclusion({'body_text':body}), 'exclude_publication_disclosure')
+        self.assertEqual(source_figure_display_exclusion({'body_text':'Buy Hold Sell 65% 59% 43%',
+            'content_captions':['Investment Banking Relationships']}), 'exclude_publication_disclosure')
+        for body in (
+            'Investment Banking Services Revenue 100; advisory 65%; underwriting 59%; lending 43%',
+            'Investment Banking Relationships AAA 65% AA 59% BBB 43%',
+            'Valuation sensitivity: Investment Banking Services Buy Hold Sell upside 65% 59% 43%; EV/EBITDA 20x',
+            'CEO: investment banking relationships help fund capacity. Buy 65% hold 59% sell 43% of inventory.',
+            'Investment Banking Relationships Buy Hold Sell 65 59 43',
+        ):
+            with self.subTest(body=body):
+                self.assertIsNone(source_figure_display_exclusion({'body_text':body}))
+        # A common footer must not borrow the research figure's columns.
+        for field in ('content_footnotes','footnotes'):
+            footer=[{'text':'Investment Banking Relationships'}] if field=='footnotes' else ['Investment Banking Relationships']
+            self.assertIsNone(source_figure_display_exclusion({'body_text':'Buy Hold Sell 65% 59% 43%',field:footer}))
+            footer=[{'text':'Buy Hold Sell 65% 59% 43%'}] if field=='footnotes' else ['Buy Hold Sell 65% 59% 43%']
+            self.assertIsNone(source_figure_display_exclusion({'body_text':'Investment Banking Services revenue100',field:footer}))
 
     def test_verified_display_filter_preserves_source_proof_and_cannot_be_refilled(self) -> None:
         from test_mineru_figure_sources import Fixture, visual
