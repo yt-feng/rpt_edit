@@ -659,6 +659,33 @@ def source_figure_display_exclusion(record: dict[str, Any]) -> str | None:
     legal_declaration = re.search(r"\b(?:analysts?['’]?\s+compensation|conflicts?\s+of\s+interest|not\s+(?:an?\s+)?offer|does\s+not\s+constitute\s+(?:an?\s+)?offer|investment\s+banking\s+clients|all\s+rights\s+reserved)\b|利益冲突|不构成.{0,12}(?:要约|投资建议)|版权所有", text, re.I)
     if legal_heading and legal_declaration:
         return "exclude_publication_disclosure"
+    # Equity-recommendation/IB-relationship tables are broker disclosures.
+    # Require the combined signals within the body/caption group or within
+    # complete footnotes, never borrowing generic IB boilerplate from a footer.
+    disclosure_footnotes = []
+    for field in ("content_footnotes", "footnotes"):
+        for item in record.get(field) or []:
+            value = item.get("text", "") if isinstance(item, dict) else item
+            disclosure_footnotes.append(re.sub(r"\s+", " ", html.unescape(HTML_TAG_RE.sub(" ", str(value)))).strip())
+    for disclosure_text in ("\n".join(headings), "\n".join(disclosure_footnotes)):
+        equity_distribution = re.search(
+            r"\b(?:distribution\s+of\s+(?:equity|stock)\s+(?:recommendation\s+)?ratings?|"
+            r"(?:equity|stock)\s+(?:recommendation\s+)?ratings?\s+distribution|"
+            r"distribution\s+of\s+stock\s+recommendations?|stock\s+recommendation\s+distribution)\b|"
+            r"(?:股票|权益)(?:推荐)?评级分布|股票推荐分布", disclosure_text, re.I)
+        ib_relationships = re.search(r"\binvestment\s+banking\s+(?:services?|relationships?|relations)\b|投行业务(?:服务|关系)", disclosure_text, re.I)
+        regulatory_rating_column = (re.search(r"\b(?:FINRA|MAR)\b", disclosure_text, re.I)
+                                    and re.search(r"\bratings?\s+category\b", disclosure_text, re.I))
+        recommendation_categories = sum(bool(re.search(pattern, disclosure_text, re.I)) for pattern in (
+            r"\b(?:buy|outperform|overweight)\b", r"\b(?:hold|neutral|market[-\s]perform|equal[-\s]weight)\b",
+            r"\b(?:sell|underperform|underweight)\b"))
+        clipped_distribution_columns = (re.search(r"\b(?:equity|stock)\s+ratings?\b", disclosure_text, re.I)
+                                        and re.search(r"\bglobal\s+ratings?\s+distribution\b", disclosure_text, re.I)
+                                        and regulatory_rating_column)
+        if (ib_relationships
+                and ((equity_distribution and (regulatory_rating_column or recommendation_categories >= 2))
+                     or clipped_distribution_columns)):
+            return "exclude_publication_disclosure"
     # Credit/portfolio rating distributions are substantive research. Only a
     # broker's recommendation/client breakdown is publication disclosure.
     distribution_heading = any(re.match(r"(?:(?:exhibit|figure|table)\s*\d+\s*[:.\-]?\s*)?(?:ratings?\s+distribution|distribution\s+of\s+ratings)\b|评级分布", heading, re.I)

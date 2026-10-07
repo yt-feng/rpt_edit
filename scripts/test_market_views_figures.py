@@ -214,8 +214,21 @@ class MarketViewsFigureTests(unittest.TestCase):
             )):
                 draw.multiline_text((40+column*540,260), card, fill='black', font=font, spacing=20)
             image.save(path); candidates.append({'source_path':str(path), 'report_id':'R002'})
+            # Fictional publication table, matching the class of the p15
+            # residual without copying an original broker's text or pixels.
+            path=root/'distribution.png'; image=Image.new('RGB', (2200, 650), 'white')
+            draw=ImageDraw.Draw(image)
+            draw.text((40,30), 'DISTRIBUTION OF EQUITY RATINGS / INVESTMENT BANKING SERVICES', fill='black', font=font)
+            for x, label in ((40,'Equity Rating'), (530,'Market Abuse Regulation (MAR)\nand FINRA Rating Category'),
+                             (1200,'Global Rating\nDistribution'), (1700,'Investment Banking\nRelationships')):
+                draw.multiline_text((x,120), label, fill='black', font=font, spacing=15)
+            for row, values in enumerate((('Outperform','BUY','50%','10%'),('Market-Perform','HOLD','30%','20%'),('Underperform','SELL','20%','30%'))):
+                for x, value in zip((40,530,1200,1700), values):
+                    draw.text((x,260+row*90), value, fill='black', font=font)
+            draw.text((40,560), 'Percent of research coverage with investment banking services within prior 12 months.', fill='black', font=font)
+            image.save(path); candidates.append({'source_path':str(path), 'report_id':'R003'})
             clean, audit=filter_publication_figures(candidates, root/'cache', source_figure_display_exclusion)
-            self.assertEqual(audit['statuses'], {'ok': 3}, audit)
+            self.assertEqual(audit['statuses'], {'ok': 4}, audit)
             # Only this test's fictional images may expose OCR text on failure.
             # The production helper continues to emit fixed statuses, never text.
             synthetic_ocr=[json.loads(p.read_text())['text'][:4000] for p in (root/'cache').glob('*.json')]
@@ -280,6 +293,44 @@ class MarketViewsFigureTests(unittest.TestCase):
             with self.subTest(caption=caption):
                 self.assertIsNone(source_figure_display_exclusion({"kind": "chart", "body_text": "AAA15%; AA25%; A35%; BBB25%",
                     "content_captions": [caption], "content_footnotes": ["Source: Moody's. All rights reserved."]}))
+
+    def test_equity_rating_ib_disclosure_requires_own_table_evidence(self) -> None:
+        title='DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES'
+        columns='Equity Rating; Market Abuse Regulation (MAR) and FINRA Rating Category; Global Rating Distribution; Investment Banking Relationships'
+        rows='Outperform BUY50%10%; Market-Perform HOLD30%20%; Underperform SELL20%30%'
+        # Each own metadata field, as well as OCR-only body text, is eligible.
+        for field in ('body_text','content_captions','content_footnotes','captions','footnotes'):
+            text=title+' '+columns+' '+rows
+            value=text if field=='body_text' else ([{'text':text}] if field in ('captions','footnotes') else [text])
+            with self.subTest(field=field):
+                self.assertEqual(source_figure_display_exclusion({field:value}), 'exclude_publication_disclosure')
+        for body in (columns, title+'\nBUY 50% HOLD 30%\nInvestment Banking Relationships',
+                     'Stock recommendation distribution\nInvestment Banking Services\nOutperform 50% Underperform 20%',
+                     'Distribution of stock ratings\nInvestment Banking\nRelations\nFINRA\nRating Category',
+                     '股票推荐评级分布\n投行业务关系\nBUY 50% HOLD 30%'):
+            with self.subTest(body=body):
+                self.assertEqual(source_figure_display_exclusion({'body_text':body}), 'exclude_publication_disclosure')
+        for body, caption in (
+            ('AAA15% AA25% BBB60%. Investment Banking Services. FINRA rating category.', 'Ratings Distribution of the corporate bond portfolio'),
+            ('Investment banking services revenue100. Advisory60 Underwriting40. Equity research revenue20.', 'Revenue and segment mix'),
+            ('CEO: Our investment banking relationships help fund new factories and improve output.', 'Management comments on industrial capacity'),
+            ('Stock Rating Overweight Industry View Attractive Price Target150 EV/EBITDA20x. Investment Banking Services.', 'Current valuation snapshot'),
+            ('Buy a diverse stock portfolio, hold liquidity, sell weak assets. Investment Banking Services.', 'Portfolio allocation and valuation sensitivity'),
+            ('Investment Banking Services revenue100; no recommendation rows.', 'Distribution of stock ratings'),
+        ):
+            with self.subTest(caption=caption):
+                self.assertIsNone(source_figure_display_exclusion({'kind':'table','body_text':body,'content_captions':[caption]}))
+        # Real recommendation research can have a generic legal source footer.
+        for field in ('content_footnotes', 'footnotes'):
+            value='Our affiliates provide Investment Banking Services.'
+            footer=[{'text':value}] if field=='footnotes' else [value]
+            self.assertIsNone(source_figure_display_exclusion({'kind':'chart',
+                'body_text':'BUY 50% HOLD 30% SELL 20%',
+                'content_captions':['Distribution of Equity Ratings: sector consensus'], field:footer}))
+        self.assertIsNone(source_figure_display_exclusion({'kind':'chart',
+            'body_text':'Investment Banking Services revenue100; advisory60; underwriting40.',
+            'content_captions':['Revenue and business mix'],
+            'content_footnotes':['Distribution of equity ratings BUY 50% HOLD 30% SELL 20%']}))
 
     def test_verified_display_filter_preserves_source_proof_and_cannot_be_refilled(self) -> None:
         from test_mineru_figure_sources import Fixture, visual
