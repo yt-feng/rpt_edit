@@ -243,8 +243,24 @@ class MarketViewsFigureTests(unittest.TestCase):
                 draw.text((x,160), label, fill='black', font=font)
                 draw.text((x,260), value, fill='black', font=font)
             image.save(path); candidates.append({'source_path':str(path), 'report_id':'R004'})
+            # Same multi-author contact-card layout as the observed residual;
+            # all names, addresses and phone numbers below are fictional.
+            path=root/'author-contacts.png'; image=Image.new('RGB', (1700, 850), 'white')
+            draw=ImageDraw.Draw(image)
+            draw.text((40,25), 'EXAMPLE SECURITIES RESEARCH', fill='black', font=font)
+            for row, (name, role, email, phone) in enumerate((
+                ('Alex Example, CFA','Equity Analyst','alex.example@example.com','+1 202 555-0101'),
+                ('Jamie Sample, CFA','Research Associate','jamie.sample@example.com','+1 202 555-0102'),
+                ('Taylor Example','Research Associate','taylor.example@example.com','+1 202 555-0103'),
+            )):
+                y=100+row*230
+                draw.text((40,y), name, fill='black', font=font)
+                draw.text((40,y+65), role, fill='black', font=font)
+                draw.text((40,y+130), email, fill='black', font=font)
+                draw.text((1180,y+130), phone, fill='black', font=font)
+            image.save(path); candidates.append({'source_path':str(path), 'report_id':'R005'})
             clean, audit=filter_publication_figures(candidates, root/'cache', source_figure_display_exclusion)
-            self.assertEqual(audit['statuses'], {'ok': 5}, audit)
+            self.assertEqual(audit['statuses'], {'ok': 6}, audit)
             # Only this test's fictional images may expose OCR text on failure.
             # The production helper continues to emit fixed statuses, never text.
             synthetic_ocr=[json.loads(p.read_text())['text'][:4000] for p in (root/'cache').glob('*.json')]
@@ -378,6 +394,46 @@ class MarketViewsFigureTests(unittest.TestCase):
             self.assertIsNone(source_figure_display_exclusion({'body_text':'Buy Hold Sell 65% 59% 43%',field:footer}))
             footer=[{'text':'Buy Hold Sell 65% 59% 43%'}] if field=='footnotes' else ['Buy Hold Sell 65% 59% 43%']
             self.assertIsNone(source_figure_display_exclusion({'body_text':'Investment Banking Services revenue100',field:footer}))
+
+    def test_author_contact_cards_require_own_roles_and_contacts_without_research(self) -> None:
+        # Observed p32 shape, with fictional names and contacts only.
+        card=('MORGAN STANLEY & CO. LLC\nAlex Example, CFA\nEquity Analyst\n'
+              'alex.example@example.com +1 202 555-0101\nJamie Sample, CFA\nResearch Associate\n'
+              'jamie.sample@example.com +1 202 555-0102\nTaylor Example\nResearch Associate\n'
+              'taylor.example@example.com +1 202 555-0103')
+        for field in ('body_text','content_captions','captions'):
+            value=card if field=='body_text' else ([{'text':card}] if field=='captions' else [card])
+            with self.subTest(field=field):
+                self.assertEqual(source_figure_display_exclusion({field:value}), 'exclude_research_staff_roster')
+        for role in ('Analyst','Equity Analyst','Research Analyst','Research Associate','Strategist','Credit Research Analyst'):
+            for phone in ('+1 202 555-0101','(202) 555-0101','202-555-0101','Tel: 020 5555 0101'):
+                with self.subTest(role=role,phone=phone):
+                    self.assertEqual(source_figure_display_exclusion({'body_text':
+                        f'Alex Example, CFA {role} alex@example.com {phone}'}), 'exclude_research_staff_roster')
+        self.assertEqual(source_figure_display_exclusion({'body_text':
+            'Alex Example Research Analyst alex@example.com Jamie Sample Research Associate jamie@example.com'}),
+            'exclude_research_staff_roster')
+        self.assertEqual(source_figure_display_exclusion({'body_text':
+            'Alex Example Analyst alex@example.com +1 202 555-0101 '
+            'Jamie Sample Analyst jamie@example.com +1 202 555-0102'}), 'exclude_research_staff_roster')
+        # Contact digits alone must not be counted as substantive chart data.
+        single='Alex Example Equity Analyst alex@example.com +1 202 555-0101'
+        self.assertIsNone(source_figure_display_exclusion({'body_text':'Source: Alex Example Equity Analyst alex@example.com'}))
+        for footnote_field in ('content_footnotes','footnotes'):
+            value=[{'text':card}] if footnote_field=='footnotes' else [card]
+            self.assertIsNone(source_figure_display_exclusion({'body_text':'Revenue and valuation outlook',footnote_field:value}))
+            # Neither group may borrow the other group's author role/contact.
+            value=[{'text':'alex@example.com +1 202 555-0101'}] if footnote_field=='footnotes' else ['alex@example.com +1 202 555-0101']
+            self.assertIsNone(source_figure_display_exclusion({'body_text':'Alex Example Equity Analyst',footnote_field:value}))
+        for research in ('Revenue 100 million; EBITDA margin 18%',
+                         'Figure 1: Free cash flow 2025 80',
+                         'Figure 1: Capex (USD bn) 2025 80',
+                         'Valuation sensitivity: price target $150; EV/EBITDA20x',
+                         'CPI120 FX1.08 output350',
+                         'Industry survey 2023 14 2024 17 2025 20'):
+            for content in (research+' Source: '+single, card+' '+research):
+                with self.subTest(content=content):
+                    self.assertIsNone(source_figure_display_exclusion({'body_text':content}))
 
     def test_verified_display_filter_preserves_source_proof_and_cannot_be_refilled(self) -> None:
         from test_mineru_figure_sources import Fixture, visual

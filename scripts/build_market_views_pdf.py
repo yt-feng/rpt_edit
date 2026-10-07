@@ -584,6 +584,34 @@ def source_figure_display_exclusion(record: dict[str, Any]) -> str | None:
     if not text:
         return None
 
+    # Author contact cards are publication furniture. Use only this visual's
+    # body/captions, never a research chart's ordinary Source contact footnote.
+    # Strip contacts before assessing numbers: phone digits are not research.
+    own_text = "\n".join(re.sub(r"\s+", " ", html.unescape(HTML_TAG_RE.sub(" ", str(part)))).strip()
+                         for part in heading_parts if part)
+    author_roles = re.findall(
+        r"\b(?:(?:equity|credit|research|investment|financial|fixed\s+income)(?:\s+research)?\s+"
+        r"(?:analyst|associate)|analyst|(?:research\s+)?strategist|economist)\b|"
+        r"股票分析师|研究分析师|研究助理|策略师|经济学家", own_text, re.I)
+    author_emails = re.findall(r"[A-Z0-9._%+-]+\s*@\s*[A-Z0-9.-]+\.[A-Z]{2,}", own_text, re.I)
+    contactless = re.sub(r"[A-Z0-9._%+-]+\s*@\s*[A-Z0-9.-]+\.[A-Z]{2,}", "", own_text, flags=re.I)
+    phone_pattern = (r"(?:\+\s*\d{1,3}|\b(?:tel(?:ephone)?|phone|mobile|fax)\s*[:：]?)[\s().-]*\d(?:[\d ().-]{5,24}\d)|"
+                     r"\(\d{2,4}\)\s*\d{3,4}[ -]\d{4}\b|\b\d{3}[ -]\d{3}[ -]\d{4}\b")
+    author_phones = re.findall(phone_pattern, contactless, re.I)
+    contactless = re.sub(phone_pattern, "", contactless, flags=re.I)
+    # A role and contact line may be embedded in genuine quantitative research.
+    # Retain that mixed content, including numbers OCR reads after the contacts.
+    has_research_data = (len(re.findall(r"(?<![\w.])[-+]?\d+(?:[,.]\d+)*(?!\w)", contactless)) >= 4
+                         or re.search(r"\d(?:[\d,.]*\d)?\s*(?:%|bps\b|million\b|billion\b)|[$€£¥]\s*\d", contactless, re.I)
+                         or re.search(r"\b(?:revenue|sales|earnings|profit|margin|EBITDA|EPS|EV|P/?E|valuation|cash\s*flow|capex|capital\s+expenditures?|"
+                                      r"price\s+target|target\s+price|CPI|GDP|FX|yield|rate|inflation|output|unemployment)"
+                                      r"(?![a-z])[^\d\n]{0,40}\d|(?:营收|收入|利润|估值|目标价|利率|产量)[^\d\n]{0,30}\d",
+                                      contactless, re.I))
+    if (author_roles and not has_research_data
+            and ((len(author_roles) >= 2 and len(author_emails) >= 2)
+                 or (author_emails and author_phones))):
+        return "exclude_research_staff_roster"
+
     # Research-department rosters are publication furniture, not company
     # operating charts. Require repeated explicit research leadership roles;
     # a single named source analyst or executive quote is insufficient.
