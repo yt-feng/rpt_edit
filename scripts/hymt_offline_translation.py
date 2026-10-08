@@ -426,6 +426,23 @@ class _HyMTEngine:
                       'Copy each complete numeric expression, date, percentage, currency and unit exactly '
                       'from the input; do not convert its scale or currency. Preserve every placeholder and '
                       'Markdown delimiter exactly. Output only the corrected translation.\n' + prompt)
+        if target == 'en' and quality_retry == 2 and _PLACEHOLDERS.search(text):
+            # The final English attempt may protect a whole financial fact.
+            # Describe the actual tokens, not invented namespace examples or
+            # only noun/resource semantics. Validation still requires every
+            # original token and the fully restored source quantities.
+            counts = Counter(_PLACEHOLDERS.findall(text))
+            inventory = '; '.join(f'{token}: {count} occurrence(s)' for token, count in counts.items())
+            prompt = (
+                f'Translate the following {LANGUAGES[source]} text into English. '
+                'Output only the translation, without explanation, commentary, or notes. '
+                'The input contains literal protected values. Each token represents one complete '
+                'financial quantity (including its currency, scale, or unit), translated term, or resource. '
+                f'These exact tokens must appear with these counts: {inventory}. '
+                'Copy each token unchanged at its corresponding place in the translated sentence, '
+                'in the same order. Do not translate, omit, duplicate, or explain a token. '
+                'Do not add numbers, units, or formatting. Preserve all other source figures and Markdown. '
+                'Translate this source text only:\n' + text)
         sampling = dict(MANIFEST['sampling'])
         if quality_retry:
             # Keep the pinned model/runtime and all sampling bounds, while
