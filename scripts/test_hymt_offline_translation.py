@@ -102,6 +102,7 @@ class HyMTTests(unittest.TestCase):
         with mock.patch.object(h, 'request_json', return_value=response) as request:
             engine.translate(source, 'zh', 'en', quality_retry=2)
         payload = request.call_args.args[2]; prompt = payload['messages'][0]['content']
+        self.assertEqual(engine.last_request_sha256, h.hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest())
         instruction, actual = prompt.rsplit('\n', 1)
         self.assertEqual(actual, source)
         self.assertIn('__HYMTPH_0000__: 1 occurrence(s)', instruction)
@@ -199,6 +200,33 @@ class HyMTTests(unittest.TestCase):
         self.assertEqual(len(self.engine.calls), 3)
         self.assertEqual(self.engine.calls[0][0], source)
         self.assertEqual(self.engine.calls[1][0], source)
+        self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
+        self.assertEqual(translator.failure_diagnostics[0]['quantities']['extra']['rows'],
+                         [{'kind': 'percent', 'values': ['30'], 'count': 1}])
+
+    def test_terminal_numeric_signatures_are_bounded_and_exclude_prose(self):
+        source = 'PRIVATE_SOURCE amount EUR 15000000000.'
+        response = 'PRIVATE_RESPONSE amount EUR 15000000000 and 30%.'
+        result = h.quantity_failure_diagnostics(source, response)
+        self.assertEqual(result['extra']['rows'], [{'kind': 'percent', 'values': ['30'], 'count': 1}])
+        self.assertEqual(result['missing']['rows'], [])
+        self.assertNotIn('PRIVATE', json.dumps(result))
+        many = h.quantity_failure_diagnostics('', ' '.join(f'{n}%' for n in range(40)))
+        self.assertEqual(len(many['response']['rows']), 20)
+        self.assertTrue(many['response']['truncated'])
+        self.assertFalse(h.quantity_failure_diagnostics(source, None)['response_available'])
+
+    def test_terminal_quantity_diagnostics_restore_protected_facts_before_comparison(self):
+        source = '私有变化为150bps。'
+        def respond(value, attempt):
+            amount = ' '.join(h._PLACEHOLDERS.findall(value)) if attempt == 2 else '150 bps'
+            return 'The change is ' + amount + ' and 30%.'
+        translator = self.retrying_translator(respond)
+        with self.assertRaises(h.OfflineTranslationValidationError):
+            translator.translate(source, 'en', 'zh', markdown=False)
+        facts = translator.failure_diagnostics[0]['quantities']
+        self.assertEqual(facts['missing']['rows'], [])
+        self.assertEqual(facts['extra']['rows'], [{'kind': 'percent', 'values': ['30'], 'count': 1}])
         self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
 
     def test_visible_english_retry_preserves_resources_identifiers_and_rejects_changed_facts(self):

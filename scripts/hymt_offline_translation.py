@@ -292,6 +292,25 @@ def _quantity_retry_input(text: str, start: int, *, target: str) -> tuple[str, d
     return masked, replacements, visible
 
 
+def quantity_failure_diagnostics(source: str, response: str | None) -> dict:
+    """Only bounded normalized numeric facts; never source or rejected prose."""
+    def signature(counter):
+        rows = []; truncated = len(counter) > 20
+        for fact, count in list(counter.items())[:20]:
+            values = [str(value) if value is not None else None for value in fact[1:]]
+            truncated = truncated or any(value is not None and len(value) > 128 for value in values)
+            rows.append({'kind': fact[0], 'values': [value[:128] if value is not None else None for value in values],
+                         'count': count})
+        return {'rows': rows, 'total_rows': len(counter), 'truncated': truncated}
+    before = quantities(source)
+    result = {'source': signature(before), 'response_available': isinstance(response, str),
+              'maximum_rows': 20, 'maximum_value_characters': 128}
+    if isinstance(response, str):
+        after = quantities(response)
+        result.update(response=signature(after), missing=signature(before-after), extra=signature(after-before))
+    return result
+
+
 def placeholder_diagnostics(model_input: str, response: str | None) -> dict:
     """Content-free counts distinguish missing tokens from spelling damage."""
     expected = Counter(_PLACEHOLDERS.findall(model_input))
@@ -388,6 +407,7 @@ class _HyMTEngine:
             if receipt.get('runtime_revision') != MANIFEST['runtime']['revision'] or receipt.get('model_sha256') != MANIFEST['model']['sha256']:
                 raise ValueError('Manifest identity mismatch')
             verify_model(self.model, MANIFEST)
+            self.server_sha256 = receipt.get('server_sha256')
             if not binary.is_file() or file_sha256(binary) != receipt.get('server_sha256'):
                 raise ValueError('Pinned runtime binary checksum mismatch')
         except (OSError, ValueError) as error:
@@ -479,10 +499,12 @@ class _HyMTEngine:
             if timeout <= 0:
                 raise TranslationBudgetExceeded('Local translation time budget reached')
             try:
-                response = request_json(self.port, '/v1/chat/completions', {
+                payload = {
                     'model': 'hymt-offline', 'messages': [{'role': 'user', 'content': prompt}],
                     'stream': False, 'cache_prompt': False, 'grammar': UNICODE_TEXT_GRAMMAR, **sampling,
-                }, timeout=timeout)
+                }
+                self.last_request_sha256 = hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest()
+                response = request_json(self.port, '/v1/chat/completions', payload, timeout=timeout)
                 break
             except (OSError, http.client.HTTPException, ModelHTTPError, json.JSONDecodeError) as error:
                 if deadline is not None and time.monotonic() >= deadline:
@@ -631,10 +653,15 @@ class HyMTOfflineTranslator:
                                     'source_characters': len(core), 'target_language': target,
                                     'quality_retry': attempt,
                                     'model_input_sha256': hashlib.sha256(model_input.encode()).hexdigest(),
+                                    'request_sha256': getattr(engine, 'last_request_sha256', None),
+                                    'server_sha256': getattr(engine, 'server_sha256', None),
                                     'response_sha256': hashlib.sha256(value.encode(errors='surrogatepass')).hexdigest()
                                         if isinstance(value, str) else None,
                                     'response_characters': len(value) if isinstance(value, str) else None,
-                                    'placeholders': placeholder_diagnostics(model_input, value)})
+                                    'placeholders': placeholder_diagnostics(model_input, value),
+                                    'quantities': quantity_failure_diagnostics(core,
+                                        _restore_terms(_restore_terms(_restore_terms(value, quantity_retry_replacements), terms), replacements)
+                                        if isinstance(value, str) else None)})
                             raise
             except OfflineTranslationError:
                 raise
