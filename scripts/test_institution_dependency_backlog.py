@@ -248,5 +248,20 @@ class BacklogTests(unittest.TestCase):
             path.write_text(json.dumps(value))
             with self.assertRaises(m.LedgerError): b.verify_handoff(extracted, translated)
 
+    def test_cloud_hold_check_is_positive_read_only_and_denies_provider_requests(self):
+        self.hold(); original = copy.deepcopy(self.client.objects); polls = len(self.provider.polls)
+        result = b.check_holds(self.ledger, [self.root_key])
+        self.assertEqual(result, dict(status='dependencies_unchanged', held_roots=1, unchanged_roots=1,
+            changed_roots=0, deferred_sources=3, provider_gets=0, provider_posts=0,
+            original_pdf_gets=0, production_writes=0))
+        self.assertEqual(self.client.objects, original); self.assertEqual(len(self.provider.polls), polls)
+        with self.assertRaisesRegex(m.LedgerError, 'requires existing roots'):
+            b.check_holds(self.ledger, ['batches/'+'f'*32])
+        self.originals()
+        self.assertEqual(b.check_holds(self.ledger, [self.root_key])['changed_roots'], 1)
+        with patch.object(b, 'dependency', side_effect=lambda ledger, *_: ledger.provider.poll('task')):
+            with self.assertRaisesRegex(m.LedgerError, 'provider access'):
+                b.check_holds(self.ledger, [self.root_key])
+
 
 if __name__ == '__main__': unittest.main()

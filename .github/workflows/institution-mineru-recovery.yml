@@ -24,7 +24,7 @@ on:
     inputs:
       operation:
         type: choice
-        options: [verify, recover, seed-holds]
+        options: [verify, recover, seed-holds, check-holds]
         default: verify
         required: true
         description: Verify complete original PDF bytes; recover retries only explicitly reviewed terminal failures

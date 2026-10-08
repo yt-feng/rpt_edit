@@ -360,6 +360,30 @@ def cli_ledger(output):
         {'model': 'vlm', 'language': 'en', 'ocr': True}, mineru_tokens_from_env())
 
 
+def check_holds(ledger, keys):
+    """Cloud acceptance of unchanged dependencies without provider access."""
+    import copy
+    class DenyProvider:
+        def __getattr__(self, name):
+            raise LedgerError('Institution hold check attempted provider access')
+    reader = copy.copy(ledger); reader.provider = DenyProvider()
+    cache, backlog = configured(reader)
+    records = {key: row for key, row in backlog.entries().items() if key in keys}
+    require(bool(records), 'Institution hold check requires existing roots')
+    unchanged, changed, sources = 0, 0, set()
+    for key, record in records.items():
+        root, _ = reader._read_batch(key)
+        require(exact_json(root['files'], record['files']), 'Institution check inventory changed')
+        checksum, _ = dependency(reader, root, cache)
+        if record['status'] == 'dependency_hold' and record['dependency_sha256'] == checksum:
+            unchanged += 1
+        else: changed += 1
+        sources.update(item['id'] for item in record['files'])
+    return {'status': 'dependencies_unchanged' if not changed else 'dependency_change_available',
+            'held_roots': len(records), 'unchanged_roots': unchanged, 'changed_roots': changed,
+            'deferred_sources': len(sources), 'provider_gets': 0, 'provider_posts': 0,
+            'original_pdf_gets': 0, 'production_writes': 0}
+
 def seed(ledger, keys, version_loader=None):
     cache, backlog = configured(ledger)
     roots = [ledger._read_batch(key)[0] for key in keys]

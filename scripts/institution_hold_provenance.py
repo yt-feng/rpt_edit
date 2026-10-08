@@ -22,7 +22,6 @@ import zipfile
 
 from institution_original_cache import validate_binding
 
-REPOSITORY = 'yt-feng/rpt_edit'
 REPOSITORY_ID = 1225092405
 PRODUCER = '.github/workflows/institution-latest-pdf-to-wechat.yml'
 MANIFEST = '_institution_latest_pdfs/institution_run_manifest.json'
@@ -71,13 +70,20 @@ def bounded_command(command, maximum, deadline):
         process.stdout.close()
 
 
+def repository_name():
+    value = os.environ.get('GITHUB_REPOSITORY', '')
+    require(re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', value), 'repository context')
+    return value
+
+
 class GitHubAPI:
     def __init__(self):
+        self.repository = repository_name()
         self.deadline = time.monotonic()+MAX_SECONDS
 
     def get(self, suffix, binary=False):
         raw = bounded_command(['gh', 'api', '--hostname', 'github.com',
-                               f'repos/{REPOSITORY}/{suffix}'],
+                               f'repos/{self.repository}/{suffix}'],
                               MAX_ARCHIVE if binary else MAX_METADATA, self.deadline)
         return raw if binary else json.loads(raw)
 
@@ -92,7 +98,7 @@ def validate_run(run, run_id):
             'producer run')
     for key in ('repository', 'head_repository'):
         repository = run.get(key)
-        require(isinstance(repository, dict) and repository.get('full_name') == REPOSITORY
+        require(isinstance(repository, dict) and repository.get('full_name') == repository_name()
                 and type(repository.get('id')) is int and repository['id'] == REPOSITORY_ID,
                 'repository identity')
 
@@ -229,6 +235,7 @@ def get_original_versions(run_ids, bindings, *, api=None):
     require(isinstance(bindings, list) and len(bindings) <= 200, 'bindings limit')
     for binding in bindings:
         validate_binding(binding)
+    repository_name()  # Require the runtime repository context before any API call.
     api = api or GitHubAPI()
     downloaded, receipts, total = [], [], 0
     for value in run_ids:

@@ -229,6 +229,12 @@ def write_summary(output_dir: Path, payload: dict[str, Any]) -> None:
             with open(output, 'a') as stream:
                 stream.write(f"generated_report_count={payload.get('generated_report_count', 0)}\n")
                 stream.write(f"deferred_source_count={payload.get('deferred_sources', 0)}\n")
+        summary = os.environ.get('GITHUB_STEP_SUMMARY')
+        if summary:
+            with open(summary, 'a') as stream:
+                stream.write(f"Institution reports: generated **{payload.get('generated_report_count', 0)}**, "
+                    f"dependency-held **{payload.get('deferred_sources', 0)}**. "
+                    "Held sources remain pending and are not published.\n")
 
 
 def write_empty_summary(output_dir: Path, input_dir: Path, args: argparse.Namespace, total_pdf_count: int, skipped: list[dict[str, str]] | None = None) -> None:

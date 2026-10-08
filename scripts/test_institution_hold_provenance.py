@@ -46,8 +46,8 @@ def fixtures(rows=None, *, run_id=123, entries=None):
     archive = output.getvalue()
     run = {'id': run_id, 'run_attempt': 1, 'path': p.PRODUCER, 'head_branch': 'main',
            'head_sha': 'a'*40, 'event': 'schedule', 'status': 'completed', 'conclusion': 'failure',
-           'repository': {'id': p.REPOSITORY_ID, 'full_name': p.REPOSITORY},
-           'head_repository': {'id': p.REPOSITORY_ID, 'full_name': p.REPOSITORY}}
+           'repository': {'id': p.REPOSITORY_ID, 'full_name': 'example/reports'},
+           'head_repository': {'id': p.REPOSITORY_ID, 'full_name': 'example/reports'}}
     artifact = {'id': run_id+1000, 'name': f'institution-pdf-run-261008-{run_id}',
                 'size_in_bytes': len(archive), 'expired': False,
                 'digest': 'sha256:'+hashlib.sha256(archive).hexdigest(),
@@ -64,6 +64,18 @@ def responses(run, artifact, archive):
 
 
 class ProvenanceTests(unittest.TestCase):
+    def setUp(self):
+        context = patch.dict(p.os.environ, {'GITHUB_REPOSITORY': 'example/reports'})
+        context.start(); self.addCleanup(context.stop)
+
+    def test_missing_or_malformed_runtime_repository_rejects_before_api(self):
+        for value in ('', '../other/path', 'bad/owner/extra'):
+            api = API({})
+            with patch.dict(p.os.environ, {'GITHUB_REPOSITORY': value}):
+                with self.assertRaisesRegex(ValueError, 'repository context'):
+                    p.get_original_versions(['123'], [binding()], api=api)
+            self.assertEqual(api.calls, [])
+
     def test_failed_main_producer_legacy_manifest_matches_without_invented_sha(self):
         run, artifact, archive = fixtures(entries=[('institution_fetch_progress.log', b'log')])
         api = API(responses(run, artifact, archive))
@@ -84,7 +96,7 @@ class ProvenanceTests(unittest.TestCase):
     def test_run_rejects_pr_fork_wrong_workflow_and_incomplete(self):
         for changes in ({'event': 'pull_request'}, {'head_branch': 'feature'}, {'path': 'other.yml'},
                         {'status': 'in_progress'}, {'id': True}, {'run_attempt': True},
-                        {'head_repository': {'id': 7, 'full_name': p.REPOSITORY}},
+                        {'head_repository': {'id': 7, 'full_name': 'example/reports'}},
                         {'repository': {'id': p.REPOSITORY_ID, 'full_name': 'other/repo'}}):
             with self.subTest(changes=changes):
                 run, artifact, archive = fixtures()
@@ -194,7 +206,7 @@ class ProvenanceTests(unittest.TestCase):
             api.get('actions/artifacts/1123/zip', binary=True)
             one, two = command.call_args_list
             self.assertEqual(one.args[0], ['gh', 'api', '--hostname', 'github.com',
-                                         'repos/yt-feng/rpt_edit/actions/runs/123'])
+                                         'repos/example/reports/actions/runs/123'])
             self.assertEqual(one.args[2], two.args[2])
             self.assertEqual(two.args[1], p.MAX_ARCHIVE)
 
