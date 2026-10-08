@@ -13,12 +13,16 @@ from persist_legacy_mineru_inspection import persist, single_attempt_store
 
 def validate_request(value):
     if (not isinstance(value, dict)
-            or set(value) not in ({'run_id', 'scope', 'batches'},
-                                  {'run_id', 'scope', 'batches', 'include_completed_children'})):
+            or not {'run_id', 'scope', 'batches'} <= set(value)
+            or set(value) - {'run_id', 'scope', 'batches', 'include_completed_children', 'original_pdf_probe_sha256'}):
         raise ValueError('request_shape')
     if 'include_completed_children' in value and type(value['include_completed_children']) is not bool:
         raise ValueError('completed_children_flag')
     validate_scope(value['scope'])
+    if 'original_pdf_probe_sha256' in value and (value['scope'] != 'institution'
+            or not isinstance(value['original_pdf_probe_sha256'], str)
+            or not re.fullmatch(r'[a-f0-9]{64}', value['original_pdf_probe_sha256'])):
+        raise ValueError('original_probe_identity')
     if not isinstance(value['run_id'], str) or not re.fullmatch(r'[1-9][0-9]{0,19}', value['run_id']):
         raise ValueError('run_identity')
     batches = value['batches']
@@ -211,12 +215,82 @@ def safe_failure_reason(row, private_terms=()):
             'failure_message_sha256': sha256(canonical({key: row.get(key) for key in ERROR_FIELDS}))}
 
 
-def inspect(value, store, credentials, *, getter=None):
+def probe_original_pdf(source_hash, roots, public, private, store, *, downloader=None):
+    """Inspect at most one already completed result with strict existing GET.
+
+    This is an inventory diagnostic, not full-source recovery authorization.
+    The selected original can only be proven by exact PDF bytes in its result;
+    no filenames, report text, result URLs or PDF payloads leave this function.
+    """
+    from consume_legacy_mineru import ConsumerError, NetworkStop as ResultNetworkStop, download_once, safe_unzip
+    import tempfile
+    matches = [(root, item) for root in roots for item in root['files']
+               if sha256(item['source'].encode()) == source_hash]
+    if len(matches) != 1:
+        raise ValueError('original_probe_ambiguous')
+    root, item = matches[0]
+    if 'recovery_parent' in root:
+        raise ValueError('original_probe_requires_root')
+    report = {'source_name_sha256': source_hash, 'source_binding_sha256': item['id'],
+              'source_pdf_sha256': item['sha256'], 'source_pdf_bytes': item['size'],
+              'original_members': sum(len(row['files']) for row in roots),
+              'source_bytes_proven': False, 'selected_original_bytes_proven': False,
+              'result_gets': 0, 'provider_posts': 0, 'canonical_ledger_writes': 0}
+    # Do not inspect a result while any requested root has incomplete or
+    # mismatched current membership, even if the selected row says done.
+    if public['network_stop'] or not all(row.get('identified_complete') is True for row in public['batches']):
+        return dict(report, status='original_membership_incomplete')
+    batches = [row for row in private['batches'] if row['input']['batch_id'] == root['batch_id']]
+    if len(batches) != 1:
+        raise ValueError('original_probe_response')
+    rows = batches[0]['provider_response']['data']['extract_result']
+    selected = [row for row in rows if row['data_id'] == item['id']]
+    if len(selected) != 1:
+        raise ValueError('original_probe_member')
+    row = selected[0]
+    report['selected_state'] = row['state']
+    if row['state'] != 'done':
+        return dict(report, status='original_result_unavailable')
+    # Check every source claim of the selected full original root before GET.
+    for member in root['files']:
+        claim, _ = store.get('sources/'+member['id'])
+        if (not isinstance(claim, dict) or claim.get('schema') != 1
+                or canonical(claim.get('binding')) != canonical(member) or claim.get('batch_key') != root['key']):
+            raise ValueError('original_probe_source_claim')
+    for key in list(store.snapshots):
+        store.get(key)
+    try:
+        report['result_gets'] = 1
+        raw = (downloader or download_once)(row['full_zip_url'])
+        with tempfile.TemporaryDirectory(prefix='institution-original-probe-') as temporary:
+            directory = Path(temporary)/'result'
+            safe_unzip(raw, directory)
+            pdfs = [path for path in directory.rglob('*') if path.is_file() and path.suffix.lower() == '.pdf']
+            matched = 0
+            for path in pdfs:
+                if path.stat().st_size == item['size']:
+                    payload = path.read_bytes()
+                    matched += int(payload.startswith(b'%PDF-') and sha256(payload) == item['sha256'])
+            report.update(result_zip_sha256=sha256(raw), result_zip_bytes=len(raw),
+                          pdf_member_count=len(pdfs), matching_original_pdf_count=matched,
+                          selected_original_bytes_proven=matched > 0, status='result_inventory_verified')
+    except ConsumerError as error:
+        report.update(status='result_inventory_stopped', category=str(error),
+                      network_stop=isinstance(error, ResultNetworkStop))
+        if getattr(error, 'http_status', None): report['http_status'] = error.http_status
+        return report
+    for key in list(store.snapshots):
+        store.get(key)
+    return report
+
+
+def inspect(value, store, credentials, *, getter=None, result_downloader=None):
     validate_request(value)
     include_children = value.get('include_completed_children', False)
     provider = None
-    if include_children:
+    if include_children or 'original_pdf_probe_sha256' in value:
         store = ReadOnlyInspectionStore(store)
+    if include_children:
         provider = ReadOnlyInspectionProvider(getter or get_once, credentials, store, value['run_id'])
         getter = provider.get
     tokens = [(slot, token) for slot, token in credentials.items() if token]
@@ -260,6 +334,9 @@ def inspect(value, store, credentials, *, getter=None):
     if include_children and not public['network_stop']:
         diagnostics['completed_child_inspection'] = inspect_completed_children(
             value, store, provider, tokens, roots, public['provider_gets'])
+    if 'original_pdf_probe_sha256' in value:
+        diagnostics['original_pdf_probe'] = probe_original_pdf(value['original_pdf_probe_sha256'],
+            roots, public, private, store, downloader=result_downloader)
     return public, private, diagnostics
 
 
@@ -283,6 +360,13 @@ def main():
         if public['network_stop']:
             print(json.dumps({'status': 'network_stop', 'provider_gets': public['provider_gets']}))
             return 2
+        if diagnostics.get('original_pdf_probe', {}).get('status') == 'result_inventory_stopped':
+            # A failed result GET ends remote work, including receipt writes.
+            report = {'provider_gets': public['provider_gets'], 'provider_posts': 0,
+                      'original_pdf_probe': diagnostics['original_pdf_probe']}
+            Path(os.environ['RUNNER_TEMP'], 'mineru-durable-summary.json').write_text(json.dumps(report)+'\n')
+            print(json.dumps(report))
+            return 2
         stage = 'private_receipt'
         public.update(persist(private_store, public, private,
                       {'run_id': os.environ['GITHUB_RUN_ID'], 'attempt': os.environ['GITHUB_RUN_ATTEMPT'],
@@ -298,6 +382,8 @@ def main():
         if 'completed_child_inspection' in diagnostics:
             console['completed_child_inspection'] = {key: item for key, item in
                 diagnostics['completed_child_inspection'].items() if key != 'batches'}
+        if 'original_pdf_probe' in diagnostics:
+            console['original_pdf_probe'] = diagnostics['original_pdf_probe']
         print(json.dumps(console, sort_keys=True))
         return 0
     except Exception as error:
