@@ -85,6 +85,17 @@ DEFAULT_USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 )
+
+
+def source_request_headers(user_agent: str = DEFAULT_USER_AGENT) -> dict[str, str]:
+    """Ordinary source request headers shared by ingestion and exact verification."""
+    return {
+        "User-Agent": user_agent,
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+    }
+
+
 HTTP_RETRYABLE_STATUSES = {408, 425, 429, 500, 502, 503, 504}
 HTTP_MAX_ATTEMPTS = 3
 HTTP_RETRY_BASE_SECONDS = 2.0
@@ -1653,11 +1664,7 @@ def main() -> int:
             raise SystemExit(f"Unknown institution keys: {unknown}. Known: {list(INSTITUTIONS)}")
 
     session = requests.Session()
-    session.headers.update({
-        "User-Agent": args.user_agent,
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.9",
-    })
+    session.headers.update(source_request_headers(args.user_agent))
 
     state = load_seen_state(seen_path)
     seen_items = state["items"]

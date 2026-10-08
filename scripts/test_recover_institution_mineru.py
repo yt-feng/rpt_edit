@@ -114,6 +114,36 @@ class InstitutionRecoveryTests(unittest.TestCase):
         with self.assertRaises(OSError): self.prepare(fetch)
         self.assertEqual(len(calls), 1); self.assertEqual(self.r2.objects, self.originals)
 
+    def test_source_http_failure_keeps_status_and_only_bounded_identity_diagnostics(self):
+        name = self.inputs[0][1]; self.urls[name].add('https://www.imf.org/other.pdf')
+        calls = []
+        def fetch(*args): calls.append(args); raise r.SourceHTTPError(403)
+        with self.assertRaises(r.SourceHTTPError) as caught: self.prepare(fetch)
+        self.assertEqual(caught.exception.status, 403)
+        details = caught.exception.source_diagnostic
+        self.assertEqual(details['source_name_sha256'], m.digest(name.encode()))
+        self.assertEqual(details['candidate_url_sha256'], m.digest(calls[0][0].encode()))
+        self.assertEqual((details['verified_original_members'], details['original_members'], details['provider_posts']), (0, 3, 0))
+        self.assertNotIn(name, json.dumps(details)); self.assertNotIn('https:', json.dumps(details))
+        self.assertEqual(len(calls), 1); self.assertEqual(self.r2.objects, self.originals)
+
+    def test_download_uses_original_producer_headers_and_preserves_http_status(self):
+        from fetch_institution_latest_pdfs import source_request_headers, DEFAULT_USER_AGENT
+        from unittest.mock import MagicMock
+        response = MagicMock(); response.__enter__.return_value = response; response.status_code = 503
+        with patch('requests.get', return_value=response) as request:
+            with self.assertRaises(r.SourceHTTPError) as caught:
+                r.download('https://www.imf.org/original.pdf', 15)
+        self.assertEqual(caught.exception.status, 503)
+        self.assertEqual(request.call_count, 1)
+        kwargs = request.call_args.kwargs
+        self.assertEqual(kwargs['headers'], source_request_headers())
+        self.assertEqual(kwargs['headers']['User-Agent'], DEFAULT_USER_AGENT)
+        self.assertEqual(source_request_headers('custom-producer-agent')['User-Agent'], 'custom-producer-agent')
+        self.assertFalse(kwargs['allow_redirects']); self.assertTrue(kwargs['stream'])
+        self.assertNotIn('verify', kwargs); self.assertNotIn('proxies', kwargs)
+        response.iter_content.assert_not_called()
+
     def test_recovery_retries_only_failed_members_and_preserves_original_claims(self):
         proof = self.prepare(); verified = []
         summary = r.recover(self.ledger, self.directory, run_id='456', expected_proof=proof['proof_sha256'],
