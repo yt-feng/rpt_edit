@@ -88,6 +88,25 @@ class InstitutionRecoveryTests(unittest.TestCase):
         result = self.prepare(lambda *_: self.fail('Unbounded candidates must stop before downloads'))
         self.assertFalse(result['verified']); self.assertEqual(result['missing_url_count'], 1)
 
+    def test_two_original_batches_keep_distinct_bytes_under_the_same_filename(self):
+        name = self.inputs[0][1]
+        newer = self.root/'newer'/name; newer.parent.mkdir()
+        newer_raw = b'%PDF-revised--0'; newer.write_bytes(newer_raw)
+        self.assertEqual(len(newer_raw), len(self.inputs[0][0].read_bytes()))
+        binding = self.ledger.bind(newer, name)
+        key = self.ledger._create([binding], {binding['id']: newer}, self.ledger.clock()+60)
+        self.value['batches'].append(key)
+        url = 'https://www.imf.org/revised-chapter.pdf'
+        self.urls[name].add(url); self.payloads[url] = newer_raw
+        before = copy.deepcopy(self.r2.objects)
+        proof = self.prepare()
+        self.assertTrue(proof['verified']); self.assertEqual(proof['original_members'], 4)
+        original_binding = self.ledger.bind(*self.inputs[0])
+        self.assertNotEqual(original_binding['id'], binding['id'])
+        self.assertEqual((self.directory/original_binding['id']).read_bytes(), self.inputs[0][0].read_bytes())
+        self.assertEqual((self.directory/binding['id']).read_bytes(), newer_raw)
+        self.assertEqual(self.r2.objects, before); self.assertEqual(len(self.provider.posts), 2)
+
     def test_alternative_candidate_does_not_hide_transport_or_status_failure(self):
         name = self.inputs[0][1]; self.urls[name].add('https://www.imf.org/other.pdf')
         calls = []
