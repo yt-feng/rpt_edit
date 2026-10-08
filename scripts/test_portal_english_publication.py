@@ -91,6 +91,48 @@ class EnglishPublicationTests(unittest.TestCase):
         self.assertIn('data-english-commentary-link', (self.root/'index.html').read_text())
         self.assertFalse(any('/releases/' in key for key in self.engine.client.objects))
 
+    def test_current_homepage_div_navigation_accepts_approved_english(self):
+        batch = self.candidate()
+        homepage = (Path(__file__).resolve().parents[1]/'portal_suite/site_src/index.html').read_text()
+        self.assertIn('<div class="topbar-actions">', homepage)
+        (self.root/'index.html').write_text(homepage)
+        result = self.assemble([batch])
+        self.assertTrue(result['ready'])
+        updated = (self.root/'index.html').read_text()
+        anchor = '<a class="topbar-link" data-english-commentary-link href="/en/">English commentary</a>'
+        self.assertEqual(updated.count(anchor), 1)
+        self.assertEqual(updated.replace(anchor, ''), homepage)
+
+    def test_navigation_class_tokens_quotes_and_ambiguous_boundaries(self):
+        batch = self.candidate()
+        source = next((self.root/'blog').glob('*.html'))
+        source_name, source_bytes = source.name, source.read_bytes()
+        def fresh_source_tree():
+            self.root = self.fresh_tree(); (self.root/'blog').mkdir()
+            (self.root/'blog'/source_name).write_bytes(source_bytes)
+        for boundary in ("<div class='wide topbar-actions compact'>", '<nav class="compact topbar-actions">'):
+            with self.subTest(boundary=boundary):
+                fresh_source_tree()
+                (self.root/'index.html').write_text(boundary+'Existing navigation</'+('div' if boundary.startswith('<div') else 'nav')+'>')
+                self.assertTrue(self.assemble([batch])['ready'])
+                self.assertIn(boundary+'<a class="topbar-link" data-english-commentary-link', (self.root/'index.html').read_text())
+        for boundary in ('<div class="topbar-actions-copy"></div>', '<div>Missing</div>',
+                         '<div data-class="topbar-actions"></div>',
+                         '<div aria-class="topbar-actions"></div>',
+                         '''<div title=" class='topbar-actions'"></div>''',
+                         '<div class="topbar-actions" class="other"></div>',
+                         '<div class="other" class="topbar-actions"></div>',
+                         '<nav class="topbar-actions"></nav><div class="topbar-actions"></div>'):
+            with self.subTest(boundary=boundary):
+                fresh_source_tree()
+                (self.root/'index.html').write_text(boundary)
+                stored = copy.deepcopy(self.engine.client.objects)
+                with self.assertRaisesRegex(ExpansionError, 'navigation boundary'):
+                    self.assemble([batch])
+                self.assertEqual(self.engine.client.objects, stored)
+                self.assertEqual((self.root/'index.html').read_text(), boundary)
+                self.assertFalse((self.root/'en').exists())
+
     def test_prepared_english_has_no_read_authority_until_exact_protected_version_binding(self):
         batch = self.candidate(); result = self.assemble([batch]); identity = self.pin()
         self.assertEqual(read_static_assembly(self.store, identity)['page_count'], 1)

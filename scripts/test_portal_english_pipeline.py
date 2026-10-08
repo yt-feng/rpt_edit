@@ -219,6 +219,67 @@ class EnglishPipelineTests(unittest.TestCase):
         self.assertTrue(all(obj['CacheControl'] == 'private, no-store' for obj in self.client.objects.values()))
         self.assertFalse(any(key.endswith('/active.json') for key in self.client.objects))
 
+    def test_preview_revision_creates_new_identity_for_complete_and_incomplete_candidates(self):
+        import portal_english_ui as ui
+        for incomplete in (False, True):
+            with self.subTest(incomplete=incomplete):
+                engine = EnglishPipelineTests(); engine.setUp(); self.addCleanup(engine.tearDown)
+                engine.admit(2)
+                prepared = prepare_queued(engine.store, engine.original)
+                _, _, source = batch_admission(engine.store, engine.original, prepared['job']['generation'])
+                saved, manifests, dirs = [], [], []
+                for revision in ('old', 'new'):
+                    directory = engine.root/revision
+                    translator = SyntheticTranslator()
+                    translate = translator.translate
+                    failed = False
+                    def fail_once(value, *args, **kwargs):
+                        nonlocal failed
+                        if incomplete and not failed:
+                            failed = True
+                            raise RuntimeError('synthetic translation failure')
+                        return translate(value, *args, **kwargs)
+                    translator.translate = fail_once
+                    original_head = ui.head
+                    def revised_head(*args, **kwargs):
+                        return original_head(*args, **kwargs).replace('</head>', f'<meta name="revision" content="{revision}"></head>')
+                    with mock.patch.object(ui, 'head', side_effect=revised_head):
+                        manifest = build(source, directory, engine.root/(revision+'.json'), translator)
+                        result = persist_candidate(engine.store, engine.original, source, directory, CPU_PRODUCER)
+                    saved.append(result); manifests.append(manifest); dirs.append(directory)
+                    self.assertEqual(result['ready'], not incomplete)
+                self.assertEqual(manifests[0]['items'], manifests[1]['items'])
+                self.assertEqual(manifests[0]['translation_calls'], manifests[1]['translation_calls'])
+                self.assertNotEqual(saved[0]['candidate_id'], saved[1]['candidate_id'])
+                for result, directory in zip(saved, dirs):
+                    base = engine.store.key('candidates', source['generation'], result['candidate_id'])
+                    self.assertEqual(engine.store._get(base+'/public/en/index.html', maximum=2*1024*1024),
+                                     (directory/'public/en/index.html').read_bytes())
+                    if not incomplete:
+                        restore_candidate(engine.store, engine.original, source['generation'], result['candidate_id'],
+                                          engine.root/('restore-'+result['candidate_id']))
+                if incomplete:
+                    self.assertEqual(read_completed(engine.store, DAY), {})
+                    self.assertEqual(read_ready_queue(engine.store), [])
+
+    def test_legacy_candidate_restores_and_carries_forward_after_manifest_upgrade(self):
+        self.admit(); _, source, directory, _, manifest = self.build_candidate()
+        manifest['schema_version'] = 1; manifest.pop('public_files_sha256')
+        (directory/'candidate-manifest.json').write_bytes(stable_bytes(manifest))
+        saved = persist_candidate(self.store, self.original, source, directory, CPU_PRODUCER)
+        _, restored, _ = restore_candidate(self.store, self.original, source['generation'], saved['candidate_id'], self.root/'legacy')
+        self.assertEqual(restored, manifest)
+        self.admit(1, '2026-10-03')
+        self.assertEqual(len(read_ready_queue(self.store)), 1)
+
+    def test_manifest_preview_digest_rejects_edited_preview_inventory(self):
+        self.admit(); _, source, directory, _, manifest = self.build_candidate()
+        manifest['public_files_sha256'] = 'f'*64
+        (directory/'candidate-manifest.json').write_bytes(stable_bytes(manifest))
+        with self.assertRaisesRegex(ExpansionError, 'preview identity differs'):
+            persist_candidate(self.store, self.original, source, directory, CPU_PRODUCER)
+        self.assertFalse(any('/candidates/' in key for key in self.client.objects))
+
     def test_unchanged_comments_skip_even_after_navigation_html_changes(self):
         self.admit(); _, source, directory, _, _ = self.build_candidate()
         persist_candidate(self.store, self.original, source, directory, CPU_PRODUCER)
