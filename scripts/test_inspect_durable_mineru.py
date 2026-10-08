@@ -1,4 +1,6 @@
 import copy
+import io
+import zipfile
 import json
 from pathlib import Path
 import tempfile
@@ -64,6 +66,144 @@ class InspectionTests(unittest.TestCase):
         self.assertNotIn('SECRET-REPORT', json.dumps(public | diag))
         self.assertIn('SECRET-REPORT', json.dumps(private))
         self.assertEqual(before, {str(p): p.read_bytes() for p in self.root.rglob('*.json')})
+
+    def enable_original_probe(self):
+        self.request['scope'] = self.batch['scope'] = 'institution'
+        self.ledger.scope = 'institution'
+        self.item = self.ledger.bind(self.root/'source.pdf', 'source.pdf')
+        self.batch['files'] = [self.item]
+        (self.root/'ledger'/(self.key+'.json')).write_bytes(encoded(self.batch))
+        self.store.put('sources/'+self.item['id'], {'schema': 1, 'batch_key': self.key, 'binding': self.item})
+        self.request['original_pdf_probe_sha256'] = m.sha256(b'source.pdf')
+
+    def result_getter(self, state='done', **changes):
+        def get(*args):
+            self.calls.append(args)
+            row = {'data_id': self.item['id'], 'state': state,
+                   'full_zip_url': 'https://results.invalid/PRIVATE-SIGNED-RESULT'}
+            row.update(changes)
+            return 200, encoded({'code': 0, 'data': {'batch_id': self.batch['batch_id'], 'extract_result': [row]}})
+        return get
+
+    @staticmethod
+    def original_result_zip(pdf=b'%PDF-exact', name='payload/report_origin.pdf'):
+        stream = io.BytesIO()
+        with zipfile.ZipFile(stream, 'w') as archive:
+            archive.writestr('payload/full.md', 'PRIVATE REPORT BODY')
+            archive.writestr(name, pdf)
+        return stream.getvalue()
+
+    def test_selected_completed_result_proves_only_exact_original_bytes_without_writes(self):
+        self.enable_original_probe(); calls = []
+        before = {str(p): p.read_bytes() for p in self.root.rglob('*.json')}
+        def download(url): calls.append(url); return self.original_result_zip()
+        with patch.object(self.store, 'put', side_effect=AssertionError('must not write')):
+            public, private, diag = m.inspect(self.request, self.store, self.credentials,
+                getter=self.result_getter(), result_downloader=download)
+        result = diag['original_pdf_probe']
+        self.assertTrue(result['selected_original_bytes_proven'])
+        self.assertFalse(result['source_bytes_proven'])
+        self.assertEqual((result['pdf_member_count'], result['matching_original_pdf_count'], result['result_gets']), (1, 1, 1))
+        self.assertEqual((public['provider_posts'], result['canonical_ledger_writes']), (0, 0))
+        self.assertEqual((len(self.calls), len(calls)), (1, 1))
+        for secret in ('source.pdf', 'PRIVATE', 'origin.pdf', 'https:'):
+            self.assertNotIn(secret, json.dumps(result))
+        self.assertEqual(before, {str(p): p.read_bytes() for p in self.root.rglob('*.json')})
+
+    def test_failed_or_incomplete_member_never_downloads_a_result(self):
+        self.enable_original_probe()
+        for getter, status in ((self.result_getter('failed'), 'original_result_unavailable'),
+                               (self.result_getter(data_id='unknown'), 'original_membership_incomplete')):
+            with self.subTest(status=status):
+                _, _, diag = m.inspect(self.request, self.store, self.credentials, getter=getter,
+                    result_downloader=lambda *_: self.fail('No result GET permitted'))
+                self.assertEqual(diag['original_pdf_probe']['status'], status)
+                self.assertEqual(diag['original_pdf_probe']['result_gets'], 0)
+
+    def test_origin_filename_is_not_source_byte_proof(self):
+        self.enable_original_probe()
+        _, _, diag = m.inspect(self.request, self.store, self.credentials, getter=self.result_getter(),
+            result_downloader=lambda *_: self.original_result_zip(b'%PDF-other'))
+        self.assertFalse(diag['original_pdf_probe']['selected_original_bytes_proven'])
+        self.assertEqual(diag['original_pdf_probe']['matching_original_pdf_count'], 0)
+
+    def test_result_inventory_keeps_existing_path_crc_and_size_gates(self):
+        self.enable_original_probe()
+        for payload in (self.original_result_zip(name='../escape.pdf'), b'not a zip'):
+            _, _, diag = m.inspect(self.request, self.store, self.credentials, getter=self.result_getter(),
+                result_downloader=lambda *_: payload)
+            self.assertEqual(diag['original_pdf_probe']['status'], 'result_inventory_stopped')
+            self.assertFalse(diag['original_pdf_probe']['selected_original_bytes_proven'])
+        self.assertFalse((self.root/'escape.pdf').exists())
+
+    def test_selected_result_transport_stops_after_one_attempt_without_fallback(self):
+        from consume_legacy_mineru import NetworkStop, ResultHTTPError
+        self.enable_original_probe()
+        for error in (NetworkStop('tls_certificate_expired'), ResultHTTPError(403)):
+            calls = []
+            def download(*args): calls.append(args); raise error
+            _, _, diag = m.inspect(self.request, self.store, self.credentials, getter=self.result_getter(),
+                result_downloader=download)
+            result = diag['original_pdf_probe']
+            self.assertEqual(result['status'], 'result_inventory_stopped')
+            self.assertEqual(len(calls), 1)
+            if isinstance(error, ResultHTTPError): self.assertEqual(result['http_status'], 403)
+            else: self.assertTrue(result['network_stop'])
+
+    def test_changed_source_claim_stops_before_result_get(self):
+        self.enable_original_probe()
+        path = self.root/'ledger'/('sources/'+self.item['id']+'.json')
+        claim = json.loads(path.read_bytes()); claim['batch_key'] = 'batches/'+'b'*32
+        path.write_bytes(encoded(claim))
+        with self.assertRaisesRegex(ValueError, 'original_probe_source_claim'):
+            m.inspect(self.request, self.store, self.credentials, getter=self.result_getter(),
+                result_downloader=lambda *_: self.fail('Mismatched claim must stop'))
+
+    def test_ambiguous_same_filename_roots_never_select_a_result(self):
+        self.enable_original_probe()
+        path = self.root/'changed.pdf'; path.write_bytes(b'%PDF-other')
+        other = self.ledger.bind(path, 'source.pdf')
+        second = dict(self.batch, key='batches/'+'b'*32, files=[other], batch_id=str(uuid.uuid4()))
+        self.store.put(second['key'], second)
+        self.request['batches'].append({'key': second['key'], 'job_id': '457'})
+        with self.assertRaisesRegex(ValueError, 'original_probe_ambiguous'):
+            m.inspect(self.request, self.store, self.credentials, getter=self.result_getter(),
+                result_downloader=lambda *_: self.fail('Ambiguous original cannot be selected'))
+
+    def test_changed_root_after_download_never_returns_verified_probe(self):
+        self.enable_original_probe()
+        def download(*args):
+            changed = dict(self.batch, state='uploaded')
+            (self.root/'ledger'/(self.key+'.json')).write_bytes(encoded(changed))
+            return self.original_result_zip()
+        with self.assertRaisesRegex(LedgerError, 'stored binding changed'):
+            m.inspect(self.request, self.store, self.credentials, getter=self.result_getter(), result_downloader=download)
+
+    def test_result_failure_stops_before_private_receipt_writes(self):
+        import os
+        from types import SimpleNamespace
+        environment = {'GITHUB_ACTIONS': 'true', 'GITHUB_REF': 'refs/heads/main',
+            'GITHUB_EVENT_NAME': 'workflow_dispatch', 'GITHUB_REPOSITORY': 'example/repo',
+            'GITHUB_WORKFLOW_REF': 'example/repo/.github/workflows/mineru-durable-inspect.yml@refs/heads/main',
+            'RUNNER_TEMP': str(self.root), 'INSPECTION_REQUEST': json.dumps(self.request)}
+        report = {'status': 'result_inventory_stopped', 'category': 'tls_certificate_expired', 'network_stop': True}
+        with patch.dict(os.environ, environment, clear=True), \
+             patch.object(m, 'single_attempt_store', return_value=SimpleNamespace(client=None, bucket='private')), \
+             patch.object(m, 'R2Store'), \
+             patch.object(m, 'inspect', return_value=({'network_stop': False, 'provider_gets': 1}, {}, {'original_pdf_probe': report})), \
+             patch.object(m, 'persist') as persist, patch('builtins.print'):
+            self.assertEqual(m.main(), 2)
+        persist.assert_not_called()
+        result = json.loads((self.root/'mineru-durable-summary.json').read_bytes())
+        self.assertEqual(result['original_pdf_probe'], report)
+        self.assertEqual(result['provider_posts'], 0)
+
+    def test_original_probe_is_exact_hash_and_institution_only(self):
+        for bad in ('source.pdf', 'A'*64, None):
+            value = dict(self.request, original_pdf_probe_sha256=bad)
+            with self.assertRaises(ValueError): m.validate_request(value)
+        with self.assertRaises(ValueError):
+            m.validate_request(dict(self.request, original_pdf_probe_sha256='a'*64))
 
     def test_corrupt_source_binding_fails_before_get(self):
         self.batch['files'][0]['sha256'] = '0' * 64
