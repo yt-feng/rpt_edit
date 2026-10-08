@@ -95,6 +95,32 @@ class HyMTTests(unittest.TestCase):
         self.assertEqual(len(translator.failure_diagnostics), 20)
         self.assertEqual(len(self.engine.calls), 66)
 
+    def test_final_english_prompt_names_actual_complete_facts_without_template_tokens(self):
+        engine = object.__new__(h._HyMTEngine); engine.port = 12345
+        source = '投资 __HYMTPH_0000__，参见 __KC_PH_0001__ 与 __KC_PH_0001__。'
+        response = {'choices': [{'finish_reason': 'stop', 'message': {'content': 'translation'}}]}
+        with mock.patch.object(h, 'request_json', return_value=response) as request:
+            engine.translate(source, 'zh', 'en', quality_retry=2)
+        payload = request.call_args.args[2]; prompt = payload['messages'][0]['content']
+        instruction, actual = prompt.rsplit('\n', 1)
+        self.assertEqual(actual, source)
+        self.assertIn('__HYMTPH_0000__: 1 occurrence(s)', instruction)
+        self.assertIn('__KC_PH_0001__: 2 occurrence(s)', instruction)
+        self.assertIn('complete financial quantity', instruction)
+        self.assertNotIn('__HYMTPH_...__', instruction)
+        self.assertNotIn('__KC_PH_...__', instruction)
+        self.assertNotIn('previous draft', instruction)
+        self.assertEqual(payload['seed'], int(h.MANIFEST['sampling'].get('seed', 0)) + 2)
+        self.assertEqual(payload['grammar'], h.UNICODE_TEXT_GRAMMAR)
+        self.assertEqual(request.call_count, 1)
+        for target, retry, text in [('en', 0, source), ('en', 1, source), ('ar', 2, source),
+                                    ('en', 2, '普通标题')]:
+            with self.subTest(target=target, retry=retry), mock.patch.object(h, 'request_json', return_value=response) as request:
+                engine.translate(text, 'zh', target, quality_retry=retry)
+                prompt = request.call_args.args[2]['messages'][0]['content']
+                self.assertNotIn('These exact tokens must appear', prompt)
+                self.assertTrue(prompt.endswith(text))
+
     def test_placeholder_diagnostics_describe_format_damage_without_repairing_it(self):
         original = '__HYMTPH_0000__ and __HYMTPH_0001__'
         raw = r'__ HYMTPH_0000 __ and \_\_HYMTPH\_0001\_\_'
