@@ -4,6 +4,8 @@ on:
     paths:
       - .github/workflows/institution-mineru-recovery.yml
       - scripts/recover_institution_mineru.py
+      - scripts/institution_original_cache.py
+      - scripts/test_institution_original_cache.py
       - scripts/fetch_institution_latest_pdfs.py
       - scripts/test_recover_institution_mineru.py
       - scripts/mineru_completed_child_reuse.py
@@ -40,6 +42,7 @@ jobs:
           python-version: '3.11'
       - run: python3 -m pip install --disable-pip-version-check requests Pillow PyMuPDF 'urllib3>=2.2,<3' certifi
       - run: python3 -B scripts/test_recover_institution_mineru.py
+      - run: python3 -B scripts/test_institution_original_cache.py
       - run: python3 -B scripts/test_fetch_institution_latest_pdfs.py
       - run: python3 -B scripts/test_mineru_terminal_recovery.py
       - run: python3 -B scripts/test_mineru_completed_child_reuse.py
