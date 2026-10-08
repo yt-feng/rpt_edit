@@ -189,7 +189,8 @@ def run_batch(batch_index: int, batch: list[PDFRecord], args: argparse.Namespace
             raw = target.read_bytes()
             if raw != source.read_bytes():
                 raise RuntimeError("PDF changed while freezing batch input")
-            bindings[target.name] = {"source": source.relative_to(root).as_posix(),
+            original_name = getattr(args, '_institution_source_names', {}).get(str(source.resolve()), source.relative_to(root).as_posix())
+            bindings[target.name] = {"source": original_name,
                 "size": len(raw), "sha256": hashlib.sha256(raw).hexdigest()}
         source_map = Path(tmp) / "mineru-source-map.json"
         source_map.write_text(json.dumps({"schema": 1, "files": bindings}), encoding="utf-8")
@@ -198,10 +199,16 @@ def run_batch(batch_index: int, batch: list[PDFRecord], args: argparse.Namespace
         cmd.extend(["--provider-outcome-path", str(outcome_path)])
         result = subprocess.run(cmd, text=True)
         provider_category = ""
+        deferred_sources = 0
         if outcome_path.is_file():
             outcome = json.loads(outcome_path.read_text())
             if outcome == {"schema": 1, "category": "mineru_unavailable"}:
                 provider_category = "mineru_unavailable"
+            elif (set(outcome) == {'schema', 'category', 'deferred_sources'} and outcome['schema'] == 1
+                  and outcome['category'] == 'institution_dependencies_deferred'
+                  and type(outcome['deferred_sources']) is int and 0 <= outcome['deferred_sources'] <= len(batch)
+                  and os.environ.get('INSTITUTION_DEPENDENCY_BACKLOG') == '1' and result.returncode == 0):
+                deferred_sources = outcome['deferred_sources']
         return {
             "batch_index": batch_index,
             "pdf_count": len(batch),
@@ -209,12 +216,25 @@ def run_batch(batch_index: int, batch: list[PDFRecord], args: argparse.Namespace
             "returncode": result.returncode,
             "status": "ok" if result.returncode == 0 else "failed",
             "provider_failure_category": provider_category,
+            "deferred_sources": deferred_sources,
         }
 
 
 def write_summary(output_dir: Path, payload: dict[str, Any]) -> None:
     summary_path = output_dir / "batch_run_summary.json"
     summary_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    if os.environ.get('INSTITUTION_DEPENDENCY_BACKLOG') == '1':
+        output = os.environ.get('GITHUB_OUTPUT')
+        if output:
+            with open(output, 'a') as stream:
+                stream.write(f"generated_report_count={payload.get('generated_report_count', 0)}\n")
+                stream.write(f"deferred_source_count={payload.get('deferred_sources', 0)}\n")
+        summary = os.environ.get('GITHUB_STEP_SUMMARY')
+        if summary:
+            with open(summary, 'a') as stream:
+                stream.write(f"Institution reports: generated **{payload.get('generated_report_count', 0)}**, "
+                    f"dependency-held **{payload.get('deferred_sources', 0)}**. "
+                    "Held sources remain pending and are not published.\n")
 
 
 def write_empty_summary(output_dir: Path, input_dir: Path, args: argparse.Namespace, total_pdf_count: int, skipped: list[dict[str, str]] | None = None) -> None:
@@ -289,8 +309,22 @@ def main() -> int:
     input_dir = Path(args.input_dir).resolve()
     output_dir = Path(args.output_dir).resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
+    backlog_deferred = 0
+    dependencies_enabled = os.environ.get('INSTITUTION_DEPENDENCY_BACKLOG') == '1'
+    if os.environ.get('INSTITUTION_DEPENDENCY_BACKLOG') == '1':
+        if (args.shard_index != 0 or args.shard_count != 1 or args.max_reports_per_shard != 0
+                or args.max_total_reports != 0 or as_bool(args.skip_existing)):
+            raise ValueError('Institution backlog requires complete unsharded selection and skip-existing=false')
+        from institution_dependency_backlog import cli_ledger, resume
+        ledger = cli_ledger(output_dir)
+        args._institution_source_names, acknowledgements, backlog_deferred = resume(ledger, input_dir)
+        (output_dir/'institution-resume-context.json').write_text(json.dumps(acknowledgements))
     all_pdfs = find_pdfs(input_dir, output_dir)
     if not all_pdfs:
+        if os.environ.get('INSTITUTION_DEPENDENCY_BACKLOG') == '1':
+            write_summary(output_dir, {'status': 'dependencies_deferred' if backlog_deferred else 'no_new_sources',
+                'generated_report_count': 0, 'deferred_sources': backlog_deferred, 'failures': 0, 'batches': []})
+            return 0
         print(f"ERROR: No PDFs found under {input_dir}", file=sys.stderr)
         return 2
 
@@ -352,6 +386,10 @@ def main() -> int:
         generate_xhs=args.generate_xhs,
     )
 
+    if dependencies_enabled:
+        from institution_dependency_backlog import deferred_count
+        backlog_deferred = deferred_count(ledger, acknowledgements)
+    total_deferred = backlog_deferred if dependencies_enabled else sum(item.get('deferred_sources', 0) for item in summary)
     write_summary(output_dir, {
         "input_dir": str(input_dir),
         "total_pdf_count_before_shard": len(all_pdfs),
@@ -368,13 +406,15 @@ def main() -> int:
         "skipped_existing_count": len(skipped_existing),
         "skipped_existing": skipped_existing,
         "failures": failures,
+        "status": "failed" if failures else (("generated_with_dependencies_deferred" if generated_report_count else "dependencies_deferred") if total_deferred else "completed"),
+        "deferred_sources": total_deferred,
         "batches": summary,
     })
     if failures:
         log(f"Completed with {failures} failed batch(es). See {output_dir / 'batch_run_summary.json'}")
         # Continuing independent batches never converts incomplete extraction to green.
         return 75 if all(item.get("returncode") in (0, 75) for item in summary) else 2
-    log(f"All batches completed successfully. Generated {generated_report_count} report directories.")
+    log(f"Generated {generated_report_count} report directories; dependency-held sources={total_deferred}.")
     return 0
 
 

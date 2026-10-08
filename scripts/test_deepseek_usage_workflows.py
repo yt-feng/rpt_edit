@@ -9,6 +9,7 @@ the same initializer to exercise the real artifact globber.
 from __future__ import annotations
 
 import io
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -24,6 +25,7 @@ import zipfile
 from collect_deepseek_usage_artifacts import extract_events
 from deepseek_usage import record_attempt
 from summarize_deepseek_usage import summarize
+from verify_uploaded_usage_fixture import verify
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -156,10 +158,26 @@ class UsageWorkflowTests(unittest.TestCase):
         self.assertEqual(workflow.count("- '.github/workflows/*.yml'"), 2)
         self.assertIn("python scripts/test_deepseek_usage_workflows.py", workflow)
         self.assertIn("actions/upload-artifact@v4", workflow)
-        self.assertIn("actions/download-artifact@v4", workflow)
+        self.assertNotIn("actions/download-artifact@v4", workflow)
+        self.assertIn("steps.fixture_upload.outputs.artifact-id", workflow)
+        self.assertIn("steps.fixture_upload.outputs.artifact-digest", workflow)
         self.assertIn("if-no-files-found: error", workflow)
         self.assertNotIn("name: deepseek-usage-", workflow)
-        self.assertIn('cmp "$DEEPSEEK_USAGE_DIR/fixture/path-check.json"', workflow)
+        self.assertIn('python scripts/verify_uploaded_usage_fixture.py', workflow)
+
+    def test_exact_uploaded_archive_rejects_different_bytes_or_fixture(self):
+        fixture = b'{"kind":"artifact-path-smoke"}\n'
+        raw = io.BytesIO()
+        with zipfile.ZipFile(raw, 'w') as archive:
+            archive.writestr('fixture/path-check.json', fixture)
+            archive.writestr('../../unrelated', b'never extracted')
+        payload = raw.getvalue()
+        checksum = hashlib.sha256(payload).hexdigest()
+        verify(payload, checksum, fixture)
+        with self.assertRaisesRegex(ValueError, 'checksum mismatch'):
+            verify(payload + b'changed', checksum, fixture)
+        with self.assertRaisesRegex(ValueError, 'contents changed'):
+            verify(payload, checksum, b'wrong fixture')
 
     def test_exhausted_upload_retry_warns_without_blocking_article_delivery(self):
         action = (ROOT / ".github/actions/resilient-diagnostic-artifact/action.yml").read_text()

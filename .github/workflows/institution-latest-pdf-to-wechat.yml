@@ -4,7 +4,7 @@ name: Institution latest PDF to WeChat
 # public PDF reports from IMF / World Bank / BIS / OECD / ADB / WEF / UNCTAD / WTO /
 # Bruegel, runs them through the existing MinerU -> Portal translated -> WeChat draft
 # pipeline, and archives the original PDF links. The source PDFs themselves are
-# transient and never committed. Daily volume is bounded by max_total (default 100).
+# privately archived before extraction and never committed. Daily volume is bounded by max_total (default 100).
 
 on:
   workflow_dispatch:
@@ -72,7 +72,8 @@ jobs:
     timeout-minutes: 120
     outputs:
       date_folder: ${{ steps.fetch.outputs.date_folder }}
-      pdf_count: ${{ steps.fetch.outputs.pdf_count }}
+      pdf_count: ${{ steps.extract.outputs.generated_report_count }}
+      deferred_source_count: ${{ steps.extract.outputs.deferred_source_count }}
     steps:
       - name: Initialize DeepSeek usage ledger
         shell: bash
@@ -114,6 +115,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends fonts-noto-cjk
 
+      - name: Export visible dependency holds before fetching originals
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: python scripts/institution_dependency_backlog.py export --path "$RUNNER_TEMP/institution-held-sources.json"
+
       - name: Fetch latest institution PDFs
         id: fetch
         env:
@@ -124,6 +133,7 @@ jobs:
           echo "date_folder=$DATE" >> "$GITHUB_OUTPUT"
           python scripts/fetch_institution_latest_pdfs.py \
             --output-dir _institution_latest_pdfs \
+            --dependency-holds "$RUNNER_TEMP/institution-held-sources.json" \
             --date "$DATE" \
             --institutions "${{ github.event.inputs.institutions || 'all' }}" \
             --since-days "${{ github.event.inputs.since_days || '7' }}" \
@@ -133,10 +143,12 @@ jobs:
             2>&1 | tee institution_fetch_progress.log
 
       - name: Extract MinerU source and original images without paid copy
-        if: ${{ steps.fetch.outputs.pdf_count != '0' }}
+        id: extract
         env:
           MINERU_LEDGER_BACKEND: r2
           MINERU_CHECKPOINT_SCOPE: institution
+          INSTITUTION_DEPENDENCY_BACKLOG: "1"
+          INSTITUTION_SOURCE_MANIFEST: _institution_latest_pdfs/institution_run_manifest.json
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
@@ -148,7 +160,7 @@ jobs:
         run: |
           set -o pipefail
           DATE="${{ steps.fetch.outputs.date_folder }}"
-          SKIP_EXISTING="true"
+          SKIP_EXISTING="false"
           if [ "${{ github.event.inputs.force_reprocess || 'false' }}" = "true" ]; then
             rm -rf "xhs_notes/institutions/$DATE"
             SKIP_EXISTING="false"
@@ -162,14 +174,14 @@ jobs:
             --skip-existing "$SKIP_EXISTING" 2>&1 | tee institution_xhs_progress.log
 
       - name: Set up free local translation models
-        if: ${{ steps.fetch.outputs.pdf_count != '0' }}
+        if: ${{ steps.extract.outputs.generated_report_count != '0' }}
         uses: ./.github/actions/setup-offline-translation
         with:
           targets: zh,en
 
       - name: Restore private report translation checkpoint
         id: translation_checkpoint
-        if: ${{ steps.fetch.outputs.pdf_count != '0' }}
+        if: ${{ steps.extract.outputs.generated_report_count != '0' }}
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -184,7 +196,7 @@ jobs:
 
       - name: Build Portal translated report PDFs
         timeout-minutes: 60
-        if: ${{ steps.fetch.outputs.pdf_count != '0' }}
+        if: ${{ steps.extract.outputs.generated_report_count != '0' }}
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_REPORT_NOTES_API_KEY }}
           DEEPSEEK_USAGE_STAGE: report-article
@@ -218,12 +230,15 @@ jobs:
             --scope institution --date-folder "${{ steps.fetch.outputs.date_folder }}" \
             --directory "$RUNNER_TEMP/report-translation-cache"
 
-      - name: Commit PDF link archive and seen state
+      - name: Verify complete translated source coverage before handoff
+        if: ${{ steps.extract.outputs.generated_report_count != '0' }}
         run: |
-          bash scripts/commit_output_dir.sh "institution_feeds" "Update institution PDF link archive" 8
+          python scripts/institution_dependency_backlog.py verify-handoff \
+            --extracted "xhs_notes/institutions/${{ steps.fetch.outputs.date_folder }}" \
+            --translated "portal_translated_reports/institutions/${{ steps.fetch.outputs.date_folder }}"
 
       - name: Upload translated reports to private R2 handoff
-        if: ${{ steps.fetch.outputs.pdf_count != '0' }}
+        if: ${{ steps.extract.outputs.generated_report_count != '0' }}
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -235,6 +250,23 @@ jobs:
             --source "portal_translated_reports/institutions/$DATE" \
             --key "$PRIVATE_HANDOFF_ROOT/${{ github.run_id }}/$DATE/translated.tar.gz"
 
+      - name: Complete resumed dependencies after private translated handoff
+        if: ${{ steps.extract.outputs.generated_report_count != '0' }}
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python scripts/institution_dependency_backlog.py complete \
+            --path "xhs_notes/institutions/${{ steps.fetch.outputs.date_folder }}/institution-resume-context.json"
+
+      # A downloaded source is only marked seen after successful translated
+      # handoff. Held roots already have their own durable private manifest.
+      - name: Commit PDF link archive and seen state
+        run: |
+          bash scripts/commit_output_dir.sh "institution_feeds" "Update institution PDF link archive" 8
+
       - name: Upload run artifacts
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
@@ -244,6 +276,7 @@ jobs:
             _institution_latest_pdfs/institution_run_manifest.json
             institution_fetch_progress.log
             institution_xhs_progress.log
+            xhs_notes/institutions/*/batch_run_summary.json
             institution_translated_progress.log
           if-no-files-found: ignore
           retention-days: 2

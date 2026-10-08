@@ -153,6 +153,179 @@ class BISRedesignTests(unittest.TestCase):
         self.assertEqual(state["items"]["bis:older"]["status"], "too_old")
 
 
+class DependencyHoldFetchTests(unittest.TestCase):
+    def item(self, identity, title="Fixture report", *, landing=False):
+        url = "https://www.bis.org/publ/" + identity + ".htm"
+        return {"title": title, "source_url": url, "guid": url,
+                "date": fetcher.datetime.now(fetcher.timezone.utc).isoformat(),
+                "pdf_candidates": [] if landing else [url.removesuffix(".htm") + ".pdf"],
+                "scrape_url": url if landing else ""}
+
+    def held_name(self, item):
+        key = "bis:" + item["guid"]
+        return f"{fetcher.INSTITUTIONS['bis']['token']}_{fetcher.slug(item['title'])}_{fetcher.short_hash(key)}.pdf"
+
+    def hold(self, item):
+        return {'source': self.held_name(item), 'sha256': fetcher.hashlib.sha256(b'%PDF-1.7 fixture original').hexdigest(),
+                'size': len(b'%PDF-1.7 fixture original')}
+
+    def archive(self, path, item, **changes):
+        record = dict(local_filename=self.held_name(item), source_page_url=item['source_url'], published=item['date'],
+            pdf_url=item['source_url'].removesuffix('.htm')+'.pdf', bytes=self.hold(item)['size'],
+            sha256=self.hold(item)['sha256'], feed_pdf_candidates=item['pdf_candidates'])
+        record.update(changes)
+        fetcher.append_archive(path/'archive.jsonl', record)
+        return record
+
+    def run_fetch(self, path, items, holds, *, force=False):
+        hold_path = path / "holds.json"
+        hold_path.write_text(json.dumps(holds))
+        state_path = path / "seen.json"
+        argv = ["fetcher", "--institutions", "bis", "--output-dir", str(path / "pdfs"),
+                "--seen-state-path", str(state_path), "--archive-path", str(path / "archive.jsonl"),
+                "--dependency-holds", str(hold_path), "--force-reprocess", str(force).lower()]
+        def download(session, candidates, destination, *args, **kwargs):
+            destination.write_bytes(b"%PDF-1.7 fixture original")
+            return candidates[0], "ok"
+        with (patch.object(fetcher.sys, "argv", argv),
+              patch.object(fetcher, "collect_rss_items", return_value=items) as collect,
+              patch.object(fetcher, "download_pdf", side_effect=download) as get_pdf,
+              patch.object(fetcher, "http_get", side_effect=lambda session, url, *a, **kw: FakeResponse(text='<a href="'+url.removesuffix(".htm")+'.pdf">Report</a>')) as get_page,
+              patch.object(fetcher, "collect_coveo_preview_candidates", side_effect=AssertionError("No preview request")),
+              patch.object(fetcher, "write_github_output") as output,
+              patch.object(fetcher, "write_source_health_summary"),
+              patch.object(fetcher, "log")):
+            code = fetcher.main()
+        return (code, json.loads(state_path.read_text()),
+                json.loads((path / "pdfs" / "institution_run_manifest.json").read_text()),
+                get_pdf.call_args_list, get_page.call_args_list, output.call_args_list)
+
+    def test_known_hold_checks_landing_without_pdf_and_new_identity_still_downloads(self):
+        held = self.item("work-held", landing=True)
+        fresh = self.item("work-new")  # Same title, different exact source identity.
+        holds = {"schema": 1, "sources": [self.hold(held)]}
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory)
+            self.archive(path, held)
+            code, state, manifest, pdf_calls, page_calls, outputs = self.run_fetch(path, [held, fresh], holds)
+            self.assertEqual(code, 0)
+            self.assertEqual(manifest["dependency_held_count"], 1)
+            self.assertEqual(manifest["downloaded_count"], 1)
+            self.assertEqual(manifest["source_checks"][0]["status"], "ok")
+            self.assertEqual(manifest["source_checks"][0]["eligible_item_count"], 2)
+            self.assertEqual(len(pdf_calls), 1)
+            self.assertEqual(pdf_calls[0].args[1], fresh["pdf_candidates"])
+            self.assertEqual(len(page_calls), 1)
+            self.assertNotIn("bis:" + held["guid"], state["items"])
+            self.assertEqual(state["items"]["bis:" + fresh["guid"]]["status"], "downloaded")
+            archived = (path / "archive.jsonl").read_text()
+            self.assertEqual(archived.count(held["source_url"]), 1)
+            self.assertIn(fresh["source_url"], archived)
+            # The next schedule must still classify the hold, not silently mark
+            # it completed; the unrelated successful download is seen normally.
+            again = self.run_fetch(path, [held, fresh], holds)
+            self.assertEqual(again[2]["dependency_held_count"], 1)
+            self.assertEqual(again[2]["downloaded_count"], 0)
+            self.assertEqual(again[3], [])
+            self.assertNotIn("bis:" + held["guid"], again[1]["items"])
+
+    def test_hold_is_not_overridden_by_force_reprocess(self):
+        item = self.item("work-held", landing=True)
+        with tempfile.TemporaryDirectory() as directory:
+            self.archive(Path(directory), item)
+            result = self.run_fetch(Path(directory), [item],
+                                    {"schema": 1, "sources": [self.hold(item)]}, force=True)
+        self.assertEqual(result[0], 0)
+        self.assertEqual(result[1]["items"], {})
+        self.assertEqual(result[2]["dependency_held_count"], 1)
+        self.assertEqual(result[2]["downloaded_count"], 0)
+        self.assertEqual(result[3], [])
+        self.assertEqual(len(result[4]), 1)
+
+    def test_malformed_export_is_rejected_before_source_requests(self):
+        source = self.hold(self.item('held'))
+        for holds in ({'schema': True, 'sources': []}, {'schema': 2, 'sources': []},
+                      {'schema': 1, 'sources': [dict(source, source='../report.pdf')]},
+                      {'schema': 1, 'sources': [dict(source, source='bad\\name.pdf')]},
+                      {'schema': 1, 'sources': [dict(source, source='bad\x00name.pdf')]},
+                      {'schema': 1, 'sources': [dict(source, size=True)]},
+                      {'schema': 1, 'sources': 'report.pdf'}, {'schema': 1, 'sources': [], 'extra': True}):
+            with self.subTest(holds=holds), tempfile.TemporaryDirectory() as directory:
+                with patch.object(fetcher, "collect_rss_items", side_effect=AssertionError("No source request")):
+                    with self.assertRaisesRegex(ValueError, "dependency export invalid"):
+                        self.run_fetch(Path(directory), [], holds)
+
+    def test_same_guid_and_title_changed_date_or_direct_pdf_bypasses_hold(self):
+        original = self.item('unchanged-guid')
+        for changes in ({'date': '2099-10-09T00:00:00Z'},
+                        {'pdf_candidates': ['https://www.bis.org/publ/revised.pdf']}):
+            with self.subTest(changes=changes), tempfile.TemporaryDirectory() as directory:
+                path = Path(directory); self.archive(path, original)
+                changed = dict(original, **changes)
+                result = self.run_fetch(path, [changed], {'schema': 1, 'sources': [self.hold(original)]})
+                self.assertEqual(result[2]['dependency_held_count'], 0)
+                self.assertEqual(result[2]['downloaded_count'], 1)
+                self.assertEqual(len(result[3]), 1)
+                row = result[2]['downloaded'][0]
+                self.assertEqual(row['sha256'], self.hold(original)['sha256'])
+                self.assertEqual(row['feed_pdf_candidates'], changed['pdf_candidates'])
+
+    def test_coming_soon_filename_collision_never_suppresses_new_report(self):
+        original = self.item('same-guid', title='Coming Soon')
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory)
+            self.archive(path, original, pdf_url='https://www.imf.org/gfsr-oct2026.pdf')
+            self.archive(path, original, pdf_url='https://www.imf.org/weo-oct2021.pdf')
+            result = self.run_fetch(path, [original], {'schema': 1, 'sources': [self.hold(original)]})
+            self.assertEqual(result[2]['dependency_held_count'], 0)
+            self.assertEqual(result[2]['downloaded_count'], 1)
+
+    def test_missing_wrong_size_or_wrong_sha_archive_never_suppresses(self):
+        original = self.item('held')
+        for changes in (None, {'bytes': 1}, {'sha256': '0'*64}, {'published': ''}):
+            with self.subTest(changes=changes), tempfile.TemporaryDirectory() as directory:
+                path = Path(directory)
+                if changes is not None: self.archive(path, original, **changes)
+                result = self.run_fetch(path, [original], {'schema': 1, 'sources': [self.hold(original)]})
+                self.assertEqual(result[2]['dependency_held_count'], 0)
+                self.assertEqual(result[2]['downloaded_count'], 1)
+
+    def test_legacy_unique_url_page_date_size_requires_matching_current_direct_pdf(self):
+        original = self.item('held')
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory); record = self.archive(path, original)
+            del record['sha256']; del record['feed_pdf_candidates']
+            (path/'archive.jsonl').write_text(json.dumps(record)+'\n')
+            result = self.run_fetch(path, [original], {'schema': 1, 'sources': [self.hold(original)]})
+            self.assertEqual(result[2]['dependency_held_count'], 1)
+            versions = fetcher.dependency_hold_versions(path/'archive.jsonl', [self.hold(original)])
+            self.assertFalse(fetcher.matches_dependency_hold(versions, self.held_name(original), dict(original, pdf_candidates=[])))
+
+    def test_private_manifest_supplement_enables_missing_archive_but_conflicts_fail_open(self):
+        item = self.item('held')
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory); row = self.archive(path, item)
+            (path/'archive.jsonl').unlink()
+            holds = {'schema': 1, 'sources': [self.hold(item)], 'versions': [row]}
+            result = self.run_fetch(path, [item], holds)
+            self.assertEqual(result[2]['dependency_held_count'], 1)
+            self.archive(path, item, pdf_url='https://www.bis.org/different.pdf')
+            result = self.run_fetch(path, [item], holds)
+            self.assertEqual(result[2]['dependency_held_count'], 0)
+            self.assertEqual(result[2]['downloaded_count'], 1)
+
+    def test_empty_candidate_lists_require_landing_resolution_and_changed_link_bypasses_hold(self):
+        item = self.item('held', landing=True)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory); self.archive(path, item)
+            versions = fetcher.dependency_hold_versions(path/'archive.jsonl', [self.hold(item)])
+            self.assertFalse(fetcher.matches_dependency_hold(versions, self.held_name(item), item))
+            self.assertFalse(fetcher.matches_dependency_hold(versions, self.held_name(item), item,
+                             ['https://www.bis.org/new.pdf']))
+            self.assertTrue(fetcher.matches_dependency_hold(versions, self.held_name(item), item,
+                            [item['source_url'].removesuffix('.htm')+'.pdf']))
+
+
 class CoveoPreviewTests(unittest.TestCase):
     def test_cached_html_exposes_country_report_pdf(self) -> None:
         cached_html = (

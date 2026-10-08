@@ -1152,12 +1152,51 @@ def main() -> int:
         sources = input_sources(pdfs, input_dir, args.mineru_source_map)
         from institution_original_cache import preserve_sources
         preserve_sources(ledger, sources)
+        dependencies_enabled = os.environ.get('INSTITUTION_DEPENDENCY_BACKLOG') == '1'
+        deferred_sources = 0
+        def record_deferred(count):
+            if args.provider_outcome_path:
+                Path(args.provider_outcome_path).write_text(json.dumps({'schema': 1,
+                    'category': 'institution_dependencies_deferred', 'deferred_sources': count}))
+        if dependencies_enabled:
+            from institution_dependency_backlog import filter_sources, hold_terminal_failure, preserve_manifest_versions
+            preserve_manifest_versions(ledger, sources)
+            sources, deferred_sources = filter_sources(ledger, sources)
+            if not sources:
+                record_deferred(deferred_sources)
+                log(f'Institution dependency hold: {deferred_sources} source(s); no provider requests or publication.')
+                return 0
+            eligible_paths = {Path(path) for path, _ in sources}
+            pdfs = [path for path in pdfs if path in eligible_paths]
         results, task_summary = ledger.run(
             sources,
             timeout=args.poll_timeout, interval=args.poll_interval,
             queue_budget=args.mineru_no_progress_timeout,
         )
         results, task_summary = reuse_completed_children(ledger, sources, results, task_summary)
+        if (dependencies_enabled and not task_summary.get("ready_for_generation")
+                and hold_terminal_failure(ledger, sources)):
+            sources, held_now = filter_sources(ledger, sources)
+            deferred_sources += held_now
+            if sources:
+                # These sources were already admitted by the first pass. A
+                # healthy sibling must finish, but this pass grants no POST.
+                import copy
+                reader = copy.copy(ledger)
+                reader.forbid_new_submissions = True
+                first_summary = task_summary
+                results, task_summary = reader.run(sources, timeout=args.poll_timeout,
+                    interval=args.poll_interval, queue_budget=args.mineru_no_progress_timeout)
+                results, task_summary = reuse_completed_children(reader, sources, results, task_summary)
+                task_summary['before_dependency_holds'] = first_summary
+                task_summary['provider_posts'] += first_summary.get('provider_posts', 0)
+                eligible_paths = {Path(path) for path, _ in sources}
+                pdfs = [path for path in pdfs if path in eligible_paths]
+            else:
+                record_deferred(deferred_sources)
+                (output_dir / "mineru_attempts_summary.json").write_text(json.dumps(task_summary, indent=2))
+                log(f'Institution terminal dependencies preserved: {deferred_sources} source(s); no incomplete report released.')
+                return 0
         successful_rows = dict(results)
         (output_dir / "mineru_attempts_summary.json").write_text(
             json.dumps(task_summary, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -1208,6 +1247,8 @@ def main() -> int:
                     successful_reports += 1
         (output_dir / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
         log(f"Done. Results written to {output_dir}; successful_reports={successful_reports}.")
+        if deferred_sources:
+            record_deferred(deferred_sources)
         return 0 if successful_reports == len(pdfs) else 2
     except Exception as exc:
         if recoverable_provider_error(exc):

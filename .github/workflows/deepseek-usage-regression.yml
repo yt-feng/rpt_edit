@@ -5,17 +5,20 @@ on:
     paths:
       - 'scripts/*deepseek*'
       - 'scripts/*generation_cost_controls*'
+      - 'scripts/verify_uploaded_usage_fixture.py'
       - '.github/workflows/*.yml'
   push:
     branches: [main]
     paths:
       - 'scripts/*deepseek*'
       - 'scripts/*generation_cost_controls*'
+      - 'scripts/verify_uploaded_usage_fixture.py'
       - '.github/workflows/*.yml'
   workflow_dispatch:
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   test:
@@ -44,6 +47,7 @@ jobs:
           mkdir -p "$DEEPSEEK_USAGE_DIR/fixture"
           printf '%s\n' '{"kind":"artifact-path-smoke"}' > "$DEEPSEEK_USAGE_DIR/fixture/path-check.json"
       - name: Verify canonical usage directory uploads
+        id: fixture_upload
         uses: actions/upload-artifact@v4
         with:
           # Keep fixtures outside the daily collector's deepseek-usage-* prefix.
@@ -51,10 +55,10 @@ jobs:
           path: ${{ env.DEEPSEEK_USAGE_DIR }}
           if-no-files-found: error
           retention-days: 1
-      - name: Download synthetic upload fixture
-        uses: actions/download-artifact@v4
-        with:
-          name: usage-path-smoke-${{ github.run_id }}-${{ github.run_attempt }}
-          path: ${{ runner.temp }}/usage-path-roundtrip
-      - name: Verify uploaded ledger layout and contents
-        run: cmp "$DEEPSEEK_USAGE_DIR/fixture/path-check.json" "$RUNNER_TEMP/usage-path-roundtrip/fixture/path-check.json"
+      - name: Verify exact uploaded fixture without a name-index lookup
+        timeout-minutes: 1
+        env:
+          GH_TOKEN: ${{ github.token }}
+          UPLOADED_ARTIFACT_ID: ${{ steps.fixture_upload.outputs.artifact-id }}
+          UPLOADED_ARTIFACT_SHA256: ${{ steps.fixture_upload.outputs.artifact-digest }}
+        run: python scripts/verify_uploaded_usage_fixture.py
