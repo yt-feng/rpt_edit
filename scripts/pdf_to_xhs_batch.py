@@ -48,7 +48,7 @@ from wechat_article_quality import (
 from deepseek_http import deepseek_api_keys_from_env, request_with_key_fallback
 from wechat_editorial_binding import bind_generated_article
 from mineru_task_ledger import R2Store, digest, exact_json, from_environment, input_sources, schema_v1, LedgerError, DefinitiveAuthRejection
-from mineru_result_cache import ResultCache, ResultCacheError
+from mineru_result_cache import OPTIONS as CACHE_OPTIONS, SUPPORTED_SCOPES, ResultCache, ResultCacheError
 from mineru_daily_result_cache import persist_authentication
 from mineru_daily_result_transport import download_result
 from mineru_completed_child_reuse import result_lineage, reuse_completed_children
@@ -138,7 +138,8 @@ def download_and_unzip(url: str, result_dir: Path) -> None:
 
 def result_cache_contexts(ledger, sources, results):
     """Read bound original or verified recovery contexts after the full-batch gate."""
-    if not isinstance(ledger.store, R2Store) or ledger.scope != 'dropbox':
+    if (not isinstance(ledger.store, R2Store) or ledger.scope not in SUPPORTED_SCOPES
+            or (ledger.scope == 'institution' and not exact_json(ledger.options, CACHE_OPTIONS))):
         return None, {}
     cache = ResultCache.single_attempt(ledger.store.client, ledger.store.bucket)
     contexts = {}

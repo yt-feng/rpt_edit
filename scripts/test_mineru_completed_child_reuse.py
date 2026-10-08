@@ -15,16 +15,16 @@ from test_mineru_result_cache import MemoryR2
 from test_mineru_terminal_recovery import Provider, ERROR, AUTH
 
 
-def recovered_fixture(folder, *, third=False):
+def recovered_fixture(folder, *, third=False, scope='dropbox'):
     folder = Path(folder)
     inputs = folder / 'pdfs'; inputs.mkdir(exist_ok=True)
     sources = []
     for index in range(3):
         path = inputs / f'original-{index}.pdf'; path.write_bytes(b'%PDF-original-' + str(index).encode())
         sources.append((path.resolve(), path.name))
-    r2 = MemoryR2(); store = m.R2Store('dropbox', client=r2, bucket='private-test')
+    r2 = MemoryR2(); store = m.R2Store(scope, client=r2, bucket='private-test')
     provider = Provider()
-    ledger = m.Ledger(store, provider, 'dropbox', 'https://mineru.net', c.OPTIONS,
+    ledger = m.Ledger(store, provider, scope, 'https://mineru.net', c.OPTIONS,
                       [('MINER_U', 'test-private-token')])
     items = [ledger.bind(*source) for source in sources]
     root_key = ledger._create(items, {item['id']: path for item, (path, _) in zip(items, sources)}, ledger.clock() + 60)
@@ -90,6 +90,17 @@ class CompletedChildReuseTests(unittest.TestCase):
         for path, row in rows:
             binding = self.f.ledger.bind(path, path.name)
             self.assertEqual(reuse.result_lineage(self.f.ledger, binding, self.f.root, row), row['_recovery_lineage'])
+
+    def test_institution_reuses_only_proven_completed_children_without_writes(self):
+        with tempfile.TemporaryDirectory() as other:
+            self.f = recovered_fixture(other, scope='institution')
+            rows, summary = self.invoke()
+            self.assertTrue(summary['ready_for_generation'])
+            self.assertEqual(summary['completed_child_reuse']['provider_posts'], 0)
+            self.assertEqual(summary['completed_child_reuse']['reused_sources'], 2)
+            for path, row in rows:
+                binding = self.f.ledger.bind(path, path.name)
+                self.assertEqual(reuse.result_lineage(self.f.ledger, binding, self.f.root, row), row['_recovery_lineage'])
 
     def test_third_child_extension_preserves_old_policy_and_new_manifest_authorization(self):
         with tempfile.TemporaryDirectory() as other:
