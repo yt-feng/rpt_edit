@@ -16,6 +16,7 @@ from mineru_task_ledger import Ledger, LedgerError, Provider, R2Store, digest, e
 from mineru_terminal_recovery import TerminalRecovery, task_identity
 from persist_legacy_mineru_inspection import single_attempt_store
 from smoke_mineru_api import NoRedirectHTTP, credentials
+from fetch_institution_latest_pdfs import source_request_headers
 
 WORKFLOW = '.github/workflows/institution-mineru-recovery.yml'
 PRODUCER = '.github/workflows/institution-latest-pdf-to-wechat.yml'
@@ -23,6 +24,12 @@ DOMAINS = {'imf.org', 'worldbank.org', 'bis.org', 'oecd.org', 'adb.org', 'weforu
 MAX_PDF = 64 * 1024 * 1024
 MAX_TOTAL = 512 * 1024 * 1024
 MAX_SOURCE_URLS = 4
+
+
+class SourceHTTPError(ValueError):
+    def __init__(self, status):
+        super().__init__('source_http_status')
+        self.status = status
 
 
 def require(condition, code):
@@ -94,10 +101,12 @@ def download(url, expected_size):
     require(type(expected_size) is int and 0 < expected_size <= MAX_PDF, 'source_size')
     for _ in range(4):
         official_url(url)
-        with requests.get(url, timeout=(20, 120), allow_redirects=False, stream=True) as response:
+        with requests.get(url, timeout=(20, 120), allow_redirects=False, stream=True,
+                          headers=source_request_headers()) as response:
             if response.status_code in {301, 302, 303, 307, 308}:
                 url = official_url(urljoin(url, response.headers.get('Location', ''))); continue
-            require(response.status_code == 200, 'source_http_status')
+            if response.status_code != 200:
+                raise SourceHTTPError(response.status_code)
             length = response.headers.get('Content-Length')
             require(length is None or int(length) == expected_size, 'source_length')
             parts, size = [], 0
@@ -133,21 +142,29 @@ def prepare(ledger, value, urls, directory, *, fetch=download):
                                        'candidate_count': len(urls.get(item['source'], set()))} for item in missing],
                 'provider_posts': 0}
     directory.mkdir(parents=True, exist_ok=True)
+    verified = 0
     for item in bindings.values():
-        raw = None
-        for url in sorted(urls[item['source']]):
-            try:
-                candidate = fetch(url, item['size'])
-            except ValueError as error:
-                # A different-size or non-PDF official chapter is not this source.
-                # Transport/status failures still stop instead of being retried.
-                if str(error) in {'source_length', 'source_pdf'}: continue
-                raise
-            if len(candidate) == item['size'] and digest(candidate) == item['sha256']:
-                raw = candidate; break
-        require(raw is not None, 'original_source_bytes_changed')
-        path = directory/item['id']; path.write_bytes(raw)
-        require(exact_json(ledger.bind(path, item['source']), item), 'source_binding_changed')
+        raw = None; url = None
+        try:
+            for url in sorted(urls[item['source']]):
+                try:
+                    candidate = fetch(url, item['size'])
+                except ValueError as error:
+                    # A different-size or non-PDF official chapter is not this source.
+                    # Transport/status failures still stop instead of being retried.
+                    if str(error) in {'source_length', 'source_pdf'}: continue
+                    raise
+                if len(candidate) == item['size'] and digest(candidate) == item['sha256']:
+                    raw = candidate; break
+            require(raw is not None, 'original_source_bytes_changed')
+            path = directory/item['id']; path.write_bytes(raw)
+            require(exact_json(ledger.bind(path, item['source']), item), 'source_binding_changed')
+            verified += 1
+        except Exception as error:
+            error.source_diagnostic = {'source_name_sha256': digest(item['source'].encode()),
+                'candidate_url_sha256': digest(url.encode()) if url else None,
+                'verified_original_members': verified, 'original_members': len(bindings), 'provider_posts': 0}
+            raise
     # _original checks every source claim, accepted task, credential and option,
     # and requires the full original inventory; no regrouping or fresh admission.
     terminal = TerminalRecovery(ledger, allowed_error_hashes=value['allowed_error_hashes'])
@@ -240,8 +257,11 @@ def main():
         return 0 if summary.get('ready_for_generation', True) else 1
     except Exception as error:
         report = {'status': 'stopped', 'stage': stage, 'exception_class': type(error).__name__}
-        if type(error) is ValueError and re.fullmatch(r'[a-z_]{1,64}', str(error)):
+        if type(error) in {ValueError, SourceHTTPError} and re.fullmatch(r'[a-z_]{1,64}', str(error)):
             report['error_code'] = str(error)
+        if isinstance(error, SourceHTTPError): report['source_http_status'] = error.status
+        report.update(getattr(error, 'source_diagnostic', {}))
+        Path(os.environ['RUNNER_TEMP'], 'institution-recovery-summary.json').write_bytes(encoded(report))
         print(json.dumps(report))
         return 1
 
