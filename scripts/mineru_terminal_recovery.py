@@ -27,7 +27,7 @@ CODE = re.compile(r'[A-Za-z0-9_.:-]{1,128}')
 
 
 def failure_hash(row):
-    """Matches inspect_durable_mineru's private failure-message digest."""
+    """Immutable v1 three-field identity used by persisted recovery proofs."""
     return digest(encoded({key: row.get(key) for key in ('err_msg', 'error', 'err_code')}))
 
 

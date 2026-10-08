@@ -12,8 +12,10 @@ import re
 import subprocess
 from urllib.parse import urljoin, urlsplit
 
-from mineru_task_ledger import Ledger, LedgerError, Provider, R2Store, digest, encoded, exact_json
-from mineru_terminal_recovery import TerminalRecovery, task_identity
+from mineru_task_ledger import FAILED, Ledger, LedgerError, Provider, R2Store, digest, encoded, exact_json
+from mineru_terminal_recovery import TerminalRecovery, failure_hash, task_identity
+from mineru_completed_child_reuse import _read_once
+from inspect_durable_mineru import failure_message_hash
 from persist_legacy_mineru_inspection import single_attempt_store
 from smoke_mineru_api import NoRedirectHTTP, credentials
 from fetch_institution_latest_pdfs import source_request_headers
@@ -209,6 +211,21 @@ def freeze_sources(store, directory, expected_proof):
         require(store._get(key, maximum=MAX_PDF) == payload, 'private_source_readback')
 
 
+class ReviewedRecovery(TerminalRecovery):
+    """Bridge reviewed diagnostic digests without changing durable v1 proofs."""
+
+    def __init__(self, ledger, requested, resolved):
+        self.requested = frozenset(requested)
+        super().__init__(ledger, allowed_error_hashes=resolved)
+
+    def _allowed(self, row):
+        # The v1 digest omits three current diagnostic fields. Recheck the
+        # reviewed full error on every fresh root/child proof, so a changed
+        # message cannot inherit authority through that lossy conversion.
+        return (super()._allowed(row) and (failure_hash(row) in self.requested
+                or failure_message_hash(row) in self.requested))
+
+
 def recover(ledger, directory, *, run_id, expected_proof, verifier):
     require(re.fullmatch(r'[1-9][0-9]{0,19}', run_id), 'recovery_run')
     raw = (directory/'proof.json').read_bytes(); require(digest(raw) == expected_proof, 'proof_changed')
@@ -218,6 +235,30 @@ def recover(ledger, directory, *, run_id, expected_proof, verifier):
     for root in proof['roots']:
         actual, _ = terminal._original([(directory/item['id'], item['source']) for item in root['files']])
         require(exact_json(actual, root), 'source_task_changed')
+    # Only freshly read, exact original inventories may translate a reviewed
+    # six-field diagnostic hash to the three-field v1 recovery identity. No
+    # static error mapping, provider POST, ledger write or proof rewrite occurs.
+    requested = set(proof['allowed_error_hashes'])
+    resolved = set(requested)
+    observations = []
+    for root in proof['roots']:
+        rows, _ = _read_once(ledger, root)
+        if not terminal._terminal(rows, root['files']):
+            raise LedgerError('Only a complete freshly verified terminal task authorizes a recovery child')
+        for row in rows.values():
+            if str(row['state']).lower() in FAILED and failure_message_hash(row) in requested:
+                resolved.add(failure_hash(row))
+        observations.append(rows)
+    terminal = ReviewedRecovery(ledger, requested, resolved)
+    for root, rows in zip(proof['roots'], observations):
+        terminal._proof(root, rows)  # Unknown failures in later roots stop all POSTs.
+        _, control, _ = terminal._read_control(root)
+        if control is not None and control['children']:
+            manifests = {entry['authorization']['manifest_sha256'] for entry in control['children']}
+            manifests.update(auth['manifest_sha256'] for auth in
+                             (control.get('daily_retry_extension') or {}).get('authorizations', []))
+            if expected_proof not in manifests:
+                raise LedgerError('Recovery authorization differs from the frozen original manifest')
     summaries = []
     for root in proof['roots']:
         _, summary = terminal.run([(directory/item['id'], item['source']) for item in root['files']],

@@ -10,8 +10,12 @@ from unittest.mock import patch
 import recover_institution_mineru as r
 import mineru_task_ledger as m
 from mineru_terminal_recovery import failure_hash
+from inspect_durable_mineru import failure_message_hash
 from test_mineru_result_cache import MemoryR2
 from test_mineru_terminal_recovery import Provider, ERROR
+
+PROVIDER_ERROR = {'err_msg': 'parsing failed, please try again later'}
+REVIEWED_ERROR_HASH = '0401d529faef13a557a665756d64dc03c646206ce7e74b41854493ec66695f4d'
 
 
 class InstitutionRecoveryTests(unittest.TestCase):
@@ -36,6 +40,24 @@ class InstitutionRecoveryTests(unittest.TestCase):
     def prepare(self, fetch=None):
         return r.prepare(self.ledger, self.value, self.urls, self.directory,
                          fetch=fetch or (lambda url, size: self.payloads[url]))
+
+    def provider_error(self, error=PROVIDER_ERROR):
+        def results(batch_id, items):
+            plan = self.provider.plans[min(int(batch_id)-1, len(self.provider.plans)-1)]
+            return [{'data_id': item['id'], 'state': state,
+                     **({'full_zip_url': 'https://results.invalid/'+batch_id+'/'+item['id']}
+                        if state == 'done' else copy.deepcopy(error))}
+                    for item, state in zip(items, plan)]
+        self.provider.on_poll = results
+
+    def add_original(self):
+        path = self.root/'IMF_later.pdf'; raw = b'%PDF-later'; path.write_bytes(raw)
+        binding = self.ledger.bind(path, path.name)
+        key = self.ledger._create([binding], {binding['id']: path}, self.ledger.clock()+60)
+        self.value['batches'].append(key)
+        self.urls[path.name] = {'https://www.imf.org/'+path.name}
+        self.payloads['https://www.imf.org/'+path.name] = raw
+        return key
 
     def test_prepare_proves_every_original_and_does_not_poll_or_mutate_tasks(self):
         result = self.prepare()
@@ -231,6 +253,97 @@ class InstitutionRecoveryTests(unittest.TestCase):
         # Replaying the same complete proof consumes accepted children, no POST.
         again = r.recover(self.ledger, self.directory, run_id='457', expected_proof=proof['proof_sha256'], verifier=lambda *args: None)
         self.assertTrue(again['ready_for_generation']); self.assertEqual(again['provider_posts'], 0)
+
+    def test_reviewed_six_field_provider_error_bridges_without_rewriting_proof(self):
+        self.assertEqual(failure_message_hash(PROVIDER_ERROR), REVIEWED_ERROR_HASH)
+        self.assertNotEqual(failure_hash(PROVIDER_ERROR), REVIEWED_ERROR_HASH)
+        self.provider_error(); self.value['allowed_error_hashes'] = [REVIEWED_ERROR_HASH]
+        proof = self.prepare(); frozen = (self.directory/'proof.json').read_bytes()
+        self.assertEqual(self.provider.polls, [])
+        result = r.recover(self.ledger, self.directory, run_id='456', expected_proof=proof['proof_sha256'],
+                           verifier=lambda *_: None)
+        self.assertEqual((result['completed'], result['provider_posts']), (3, 2))
+        self.assertEqual((self.directory/'proof.json').read_bytes(), frozen)
+        self.assertEqual(json.loads(frozen)['allowed_error_hashes'], [REVIEWED_ERROR_HASH])
+        control, _ = self.store.get('recoveries/'+self.key.split('/')[1])
+        self.assertEqual(control['policy']['allowed_error_hashes'],
+                         sorted([REVIEWED_ERROR_HASH, failure_hash(PROVIDER_ERROR)]))
+        for entry in control['children']:
+            self.assertEqual({item['error_hash'] for item in entry['proof']['value']['members']
+                              if item['state'] == 'failed'}, {failure_hash(PROVIDER_ERROR)})
+        before = copy.deepcopy(self.r2.objects)
+        replay = r.recover(self.ledger, self.directory, run_id='457', expected_proof=proof['proof_sha256'],
+                           verifier=lambda *_: None)
+        self.assertTrue(replay['ready_for_generation']); self.assertEqual(replay['provider_posts'], 0)
+        self.assertEqual(self.r2.objects, before)
+
+    def test_real_provider_error_legacy_authorization_replays_byte_identical(self):
+        self.provider_error(); legacy = failure_hash(PROVIDER_ERROR)
+        self.value['allowed_error_hashes'] = [legacy]; proof = self.prepare()
+        r.recover(self.ledger, self.directory, run_id='456', expected_proof=proof['proof_sha256'], verifier=lambda *_: None)
+        control, _ = self.store.get('recoveries/'+self.key.split('/')[1])
+        self.assertEqual(control['policy']['allowed_error_hashes'], [legacy])
+        before = copy.deepcopy(self.r2.objects)
+        replay = r.recover(self.ledger, self.directory, run_id='457', expected_proof=proof['proof_sha256'], verifier=lambda *_: None)
+        self.assertEqual(replay['provider_posts'], 0); self.assertEqual(self.r2.objects, before)
+
+    def test_unreviewed_six_field_error_cannot_inherit_legacy_bridge(self):
+        self.provider_error({**PROVIDER_ERROR, 'error_message': 'different current failure'})
+        self.value['allowed_error_hashes'] = [REVIEWED_ERROR_HASH]; proof = self.prepare()
+        with self.assertRaisesRegex(m.LedgerError, 'not explicitly authorized'):
+            r.recover(self.ledger, self.directory, run_id='456', expected_proof=proof['proof_sha256'], verifier=lambda *_: None)
+        self.assertEqual(len(self.provider.posts), 1); self.assertEqual(self.r2.objects, self.originals)
+
+    def test_error_change_after_bridge_preflight_still_stops_before_post(self):
+        self.provider_error(); original_poll = self.provider.on_poll
+        def changing(batch_id, items):
+            rows = original_poll(batch_id, items)
+            if len(self.provider.polls) > 1:
+                for row in rows:
+                    if row['state'] == 'failed': row['message'] = 'unreviewed new detail'
+            return rows
+        self.provider.on_poll = changing
+        self.value['allowed_error_hashes'] = [REVIEWED_ERROR_HASH]; proof = self.prepare()
+        with self.assertRaisesRegex(m.LedgerError, 'not explicitly authorized'):
+            r.recover(self.ledger, self.directory, run_id='456', expected_proof=proof['proof_sha256'], verifier=lambda *_: None)
+        self.assertEqual(len(self.provider.posts), 1); self.assertEqual(self.r2.objects, self.originals)
+
+    def test_later_unknown_reviewed_digest_stops_all_root_submissions(self):
+        self.add_original(); self.provider.plans = [['failed']*3, ['failed']]
+        self.provider_error(); original_poll = self.provider.on_poll
+        self.value['allowed_error_hashes'] = [REVIEWED_ERROR_HASH]; proof = self.prepare()
+        roots = json.loads((self.directory/'proof.json').read_bytes())['roots']
+        def later_unknown(batch_id, items):
+            rows = original_poll(batch_id, items)
+            if batch_id == roots[-1]['batch_id']:
+                for row in rows: row['message'] = 'unknown later root'
+            return rows
+        self.provider.on_poll = later_unknown; before = copy.deepcopy(self.r2.objects)
+        with self.assertRaisesRegex(m.LedgerError, 'not explicitly authorized'):
+            r.recover(self.ledger, self.directory, run_id='456', expected_proof=proof['proof_sha256'], verifier=lambda *_: None)
+        self.assertEqual(len(self.provider.posts), 2); self.assertEqual(self.r2.objects, before)
+
+    def test_later_controller_policy_mismatch_stops_all_root_submissions(self):
+        self.add_original(); self.provider.plans = [['failed']*3, ['failed']]
+        self.provider_error(); self.value['allowed_error_hashes'] = [REVIEWED_ERROR_HASH]; proof = self.prepare()
+        root = json.loads((self.directory/'proof.json').read_bytes())['roots'][-1]
+        policy = r.TerminalRecovery(self.ledger, allowed_error_hashes=[failure_hash(PROVIDER_ERROR)]).policy
+        self.store.put('recoveries/'+root['key'].split('/')[1], {'schema': 1, 'policy': policy,
+            'root_key': root['key'], 'root_identity_sha256': r.task_identity(root), 'children': []})
+        before = copy.deepcopy(self.r2.objects)
+        with self.assertRaisesRegex(m.LedgerError, 'fixed policy'):
+            r.recover(self.ledger, self.directory, run_id='456', expected_proof=proof['proof_sha256'], verifier=lambda *_: None)
+        self.assertEqual(len(self.provider.posts), 2); self.assertEqual(self.r2.objects, before)
+
+    def test_reviewed_bridge_waits_for_all_frozen_original_roots(self):
+        self.add_original(); self.provider_error(); self.value['allowed_error_hashes'] = [REVIEWED_ERROR_HASH]
+        proof = self.prepare(); saved = json.loads((self.directory/'proof.json').read_bytes())
+        (self.directory/saved['roots'][-1]['files'][-1]['id']).write_bytes(b'%PDF-tampered')
+        before = copy.deepcopy(self.r2.objects)
+        with self.assertRaises(m.LedgerError):
+            r.recover(self.ledger, self.directory, run_id='456', expected_proof=proof['proof_sha256'], verifier=lambda *_: None)
+        self.assertEqual((len(self.provider.posts), len(self.provider.polls)), (2, 0))
+        self.assertEqual(self.r2.objects, before)
 
     def test_changed_last_frozen_file_stops_before_first_retry(self):
         proof = self.prepare(); value = json.loads((self.directory/'proof.json').read_bytes())

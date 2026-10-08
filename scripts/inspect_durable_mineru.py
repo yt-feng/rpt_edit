@@ -185,6 +185,10 @@ def error_category(row):
     return next((name for name, pattern in patterns if re.search(pattern, text)), 'other_provider_failure')
 
 
+def failure_message_hash(row):
+    """Current reviewed diagnostic identity; legacy recovery proofs stay v1."""
+    return sha256(canonical({key: row.get(key) for key in ERROR_FIELDS}))
+
 def safe_failure_reason(row, private_terms=()):
     """Keep readable error-operation words; omit every unapproved literal."""
     text = error_text(row)
@@ -212,7 +216,7 @@ def safe_failure_reason(row, private_terms=()):
             'error_message_safe': ' '.join(words[:80]) if words else '[no safe message tokens]',
             'message_redacted': True,
             'error_fields_present': [key for key in ERROR_FIELDS if row.get(key) is not None],
-            'failure_message_sha256': sha256(canonical({key: row.get(key) for key in ERROR_FIELDS}))}
+            'failure_message_sha256': failure_message_hash(row)}
 
 
 def probe_original_pdf(source_hash, roots, public, private, store, *, downloader=None):
