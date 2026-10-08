@@ -11,7 +11,7 @@ import time
 
 from build_portal_extended_locales import extended_source_language, safe_failure_code, validate_text
 from financial_quantity_integrity import quantities
-from hymt_offline_translation import (MODEL_ID, OfflineTranslationError, _HyMTEngine, _mask,
+from hymt_offline_translation import (MODEL_ID, OfflineTranslationError, OfflineTranslationValidationError, _HyMTEngine, _mask,
     _quantity_retry_input, _restore_terms, placeholder_diagnostics, split_sentences, validate_result)
 from inspect_portal_extended_continuation import inspect_english, quantity_signature
 from portal_english_commentary import PREFIX, require, text as editorial_text
@@ -89,12 +89,24 @@ def numeric_signals(value):
     }.items()}
 
 
-def probe(store, source_store, generation, checkpoint_sha, candidate_id, unit_sha, output, *, engine_factory=None):
+def probe(store, source_store, generation, checkpoint_sha, candidate_id, unit_sha, output, *, engine_factory=None, mode="equivalent-forms"):
     require(not output.exists(), 'Probe output already exists')
     with tempfile.TemporaryDirectory(prefix='english-unit-proof-') as directory:
         original, field, proof = select_unit(store, source_store, generation, checkpoint_sha,
             candidate_id, unit_sha, Path(directory))
-    forms = input_forms(original)  # Prove every variant before even creating the engine.
+    require(mode in {'equivalent-forms', 'production-sequence'}, 'Invalid probe mode')
+    if mode == 'equivalent-forms':
+        forms = [(name, value, protected, terms, opaque, 2)
+                 for name, value, protected, terms, opaque in input_forms(original)]
+    else:
+        masked, opaque, terms = _mask(original, 'en')
+        final, protected, _ = _quantity_retry_input(masked, len(opaque)+len(terms), target='en')
+        forms = [('attempt-0', masked, {}, terms, opaque, 0),
+                 ('attempt-1', masked, {}, terms, opaque, 1),
+                 ('attempt-2', final, protected, terms, opaque, 2)]
+    for _, value, protected, terms, opaque, _ in forms:
+        materialized = _restore_terms(_restore_terms(_restore_terms(value, protected), terms), opaque)
+        require(quantities(materialized) == quantities(original), 'Probe input changed original quantities')
     language = extended_source_language(original)
     require(language == 'zh', 'Probe requires the admitted Chinese source')
     before = quantities(original)
@@ -103,7 +115,7 @@ def probe(store, source_store, generation, checkpoint_sha, candidate_id, unit_sh
         'source_sha256': proof['source_sha256'], 'source_admission': proof['source_admission'],
         'english_admission': proof['english_admission'], 'checkpoint_rows': proof['checkpoint_rows'],
         'completed_page_count': proof['completed_page_count'], 'source_characters': len(original),
-        'source_quantities': quantity_signature(before), 'model': MODEL_ID, 'quality_retry': 2,
+        'source_quantities': quantity_signature(before), 'model': MODEL_ID, 'mode': mode,
         'maximum_model_calls': 3, 'model_calls': 0, 'production_writes': 0, 'paid_provider_requests': 0,
         'results': []}
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -112,15 +124,18 @@ def probe(store, source_store, generation, checkpoint_sha, candidate_id, unit_sh
     factory = engine_factory or (lambda: _HyMTEngine(Path(os.environ['HYMT_MODEL_DIR'])))
     engine = factory()
     try:
-        for name, model_input, protected, terms, opaque in forms:
+        for name, model_input, protected, terms, opaque, retry in forms:
             require(time.monotonic() < deadline, 'Probe deadline exceeded')
             row = {'form': name, 'model_input_sha256': digest(model_input.encode()),
                    'model_input_characters': len(model_input), 'input_quantities_verified': True,
-                   'accepted': False}
+                   'accepted': False, 'quality_retry': retry, 'adapter_accepted': False}
+            continue_sequence = True
             result['model_calls'] += 1
             try:
-                response = engine.translate(model_input, language, 'en', quality_retry=2, deadline=deadline)
-                row.update(response_sha256=digest(response.encode(errors='surrogatepass')),
+                response = engine.translate(model_input, language, 'en', quality_retry=retry, deadline=deadline)
+                row.update(request_sha256=getattr(engine, 'last_request_sha256', None),
+                    server_sha256=getattr(engine, 'server_sha256', None),
+                    response_sha256=digest(response.encode(errors='surrogatepass')),
                     response_characters=len(response), placeholders=placeholder_diagnostics(model_input, response),
                     raw_response_quantities=quantity_signature(quantities(response)),
                     numeric_signals=numeric_signals(response))
@@ -131,13 +146,17 @@ def probe(store, source_store, generation, checkpoint_sha, candidate_id, unit_sh
                     missing_quantities=quantity_signature(before-after), extra_quantities=quantity_signature(after-before))
                 validate_result(model_input, response, language, 'en', markdown=False, check_quantities=False)
                 validate_result(original, materialized, language, 'en', markdown=False)
+                row['adapter_accepted'] = True
                 validate_text(original, materialized, 'en', language)
                 editorial_text(materialized, 500 if field == 'title' else 12000, english=True)
                 row['accepted'] = True
             except (OfflineTranslationError, ExpansionError, TimeoutError) as error:
                 row['failure_code'] = safe_failure_code(error)
+                continue_sequence = isinstance(error, OfflineTranslationValidationError)
             result['results'].append(row)
             output.write_bytes(stable_bytes(result))
+            if mode == 'production-sequence' and (row['adapter_accepted'] or not continue_sequence):
+                break
     finally:
         engine.close()
     return result
@@ -148,11 +167,12 @@ def main():
     for option in ('generation', 'checkpoint-sha', 'candidate-id', 'unit-sha'):
         parser.add_argument('--'+option, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--mode', choices=['production-sequence', 'equivalent-forms'], default='production-sequence')
     args = parser.parse_args()
     try:
         store = R2Store.from_env(PREFIX)
         result = probe(store, R2Store(store.client, store.bucket, DEFAULT_PREFIX), args.generation,
-            args.checkpoint_sha, args.candidate_id, args.unit_sha, args.output)
+            args.checkpoint_sha, args.candidate_id, args.unit_sha, args.output, mode=args.mode)
         print(json.dumps(result, sort_keys=True))
     except Exception as error:
         # No traceback or exception prose: engine/storage errors may contain private text.

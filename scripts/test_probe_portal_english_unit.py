@@ -75,6 +75,29 @@ class ProbeTests(unittest.TestCase):
         self.assertEqual(result['results'][2]['extra_quantities']['rows'][0]['count'], 1)
         self.assertFalse(list(self.fixture.root.glob('**/*translation*.json')))
 
+    def test_production_sequence_matches_actual_inputs_and_retry_indices(self):
+        self.responses = ['Investment is EUR 15 billion and 30%.',
+                          'Investment is EUR 15 billion and 30%.', 'Investment is EUR 15 billion.']
+        result = self.run_probe(mode='production-sequence')
+        self.assertEqual([call[3]['quality_retry'] for call in self.calls], [0,1,2])
+        self.assertEqual([call[0] for call in self.calls[:2]], [PRIVATE, PRIVATE])
+        self.assertIn('EUR 15,000,000,000', self.calls[2][0])
+        self.assertEqual([row['accepted'] for row in result['results']], [False,False,True])
+        self.assertEqual(self.fixture.client.objects, self.before)
+
+    def test_production_sequence_stops_when_adapter_accepts_or_runtime_fails(self):
+        self.responses = ['Investment is EUR 15 billion.']
+        result = self.run_probe(mode='production-sequence')
+        self.assertEqual(result['model_calls'], 1)
+        self.assertTrue(result['results'][0]['accepted'])
+        (self.fixture.root/'numeric-result.json').unlink()
+        from hymt_offline_translation import OfflineTranslationError
+        self.engine.translate = mock.Mock(side_effect=OfflineTranslationError('private failure'))
+        result = self.run_probe(mode='production-sequence')
+        self.assertEqual(result['model_calls'], 1)
+        self.assertNotIn('private failure', json.dumps(result))
+        self.assertEqual(self.fixture.client.objects, self.before)
+
     def test_wrong_source_or_cached_unit_rejected_before_model(self):
         for sha in ('f'*64, digest(TITLE.encode())):
             with self.assertRaises(ExpansionError): self.run_probe(unit_sha=sha)
@@ -126,6 +149,8 @@ class ProbeTests(unittest.TestCase):
         path = Path(__file__).resolve().parents[1]/'.github/workflows/portal-english-unit-probe.yml'
         value = path.read_text()
         self.assertIn('contents: read', value)
+        self.assertIn('runs-on: ubuntu-22.04', value)
+        self.assertIn('default: production-sequence', value)
         self.assertNotIn('contents: write', value)
         self.assertIn('persist-audit: \'false\'', value)
         self.assertIn('path: ${{ runner.temp }}/english-unit-probe.json', value)

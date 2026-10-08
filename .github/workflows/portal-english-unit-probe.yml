@@ -18,6 +18,14 @@ on:
         description: Exact first uncached failed fragment SHA256
         required: true
         type: string
+      mode:
+        description: Reproduce actual attempts or compare three equivalent inputs
+        required: true
+        type: choice
+        default: production-sequence
+        options:
+          - production-sequence
+          - equivalent-forms
 permissions:
   contents: read
 concurrency:
@@ -26,7 +34,7 @@ concurrency:
 jobs:
   probe:
     if: github.ref == 'refs/heads/main' && github.event.repository.private == false
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     timeout-minutes: 25
     env:
       KC_PUBLIC_REPOSITORY: 'true'
@@ -53,11 +61,12 @@ jobs:
           CHECKPOINT_SHA: ${{ inputs.checkpoint_sha }}
           CANDIDATE_ID: ${{ inputs.candidate_id }}
           UNIT_SHA: ${{ inputs.unit_sha }}
+          PROBE_MODE: ${{ inputs.mode }}
         run: |
           set -euo pipefail
           python -B scripts/probe_portal_english_unit.py \
             --generation "$SOURCE_GENERATION" --checkpoint-sha "$CHECKPOINT_SHA" \
-            --candidate-id "$CANDIDATE_ID" --unit-sha "$UNIT_SHA" \
+            --candidate-id "$CANDIDATE_ID" --unit-sha "$UNIT_SHA" --mode "$PROBE_MODE" \
             --output "$RUNNER_TEMP/english-unit-probe.json"
       - uses: actions/upload-artifact@v4
         if: always()
