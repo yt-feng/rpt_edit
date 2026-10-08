@@ -381,13 +381,20 @@ def build(source, output, checkpoint, translator, *, seconds=14400, seed_checkpo
     memo.save()
     # Public candidate files contain only projected previews, never private body
     # JSON. Even complete candidates remain noindex until normal approval.
+    public_files = {}
     if items:
         from portal_english_ui import detail, homepage
-        public = output/'public'/'en'; (public/'blog').mkdir(parents=True, exist_ok=True)
-        for item in items:
-            (public/'blog'/f'{item["id"]}.html').write_bytes(detail(item))
-        (public/'index.html').write_bytes(homepage(items))
-    result = {'schema_version': 1, 'policy': POLICY, 'locale': 'en', 'scope': SCOPE, 'day': source['day'],
+        public_files = {f'public/en/blog/{item["id"]}.html': detail(item) for item in items}
+        public_files['public/en/index.html'] = homepage(items)
+        for relative, raw in public_files.items():
+            path = output/relative; path.parent.mkdir(parents=True, exist_ok=True); path.write_bytes(raw)
+    # The manifest is the immutable candidate identity. Include rendered preview
+    # bytes so asset/template changes cannot collide with a previous candidate
+    # that has identical translations and inference counters.
+    public_files_sha256 = digest(stable_bytes({relative: {'sha256': digest(raw), 'bytes': len(raw)}
+                                               for relative, raw in public_files.items()}))
+    result = {'schema_version': 2, 'public_files_sha256': public_files_sha256,
+              'policy': POLICY, 'locale': 'en', 'scope': SCOPE, 'day': source['day'],
               'provider': PROVIDER, 'model': MODEL_ID, 'paid_provider_requests': 0,
               'generation': source['generation'], 'source_document_count': len(docs),
               'completed_page_count': len(items), 'items': items, 'failures': failures,

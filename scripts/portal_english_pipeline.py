@@ -264,10 +264,14 @@ def followup_needed(store, source_store, admission, before):
 
 def verify_manifest(value, source):
     docs = validate_source(source)
+    version = value.get('schema_version') if isinstance(value, dict) else None
+    require(type(version) is int and version in {1, 2}, 'English candidate schema differs')
     exact(value, ['schema_version', 'policy', 'locale', 'scope', 'day', 'provider', 'model', 'paid_provider_requests',
                   'generation', 'source_document_count', 'completed_page_count', 'items', 'failures', 'budget_exhausted',
-                  'translation_calls', 'cache_hits', 'indexable', 'status'])
-    require(value['schema_version'] == 1 and value['policy'] == POLICY and value['locale'] == 'en'
+                  'translation_calls', 'cache_hits', 'indexable', 'status']
+                 + (['public_files_sha256'] if version == 2 else []))
+    if version == 2: hash_value(value['public_files_sha256'])
+    require(value['policy'] == POLICY and value['locale'] == 'en'
             and value['scope'] == SCOPE and value['day'] == source['day'] and value['generation'] == source['generation']
             and value['model'] == MODEL_ID and value['provider'] == PROVIDER and value['paid_provider_requests'] == 0
             and value['indexable'] is False, 'English candidate provenance differs')
@@ -331,6 +335,10 @@ def candidate_files(directory, manifest, source, *, check_current_ui=True):
     for relative, raw in expected.items():
         require(0 < len(raw) <= MAX_MANIFEST and (directory/relative).read_bytes() == raw, 'English public/private candidate bytes differ')
         files[relative] = {'sha256': digest(raw), 'bytes': len(raw)}
+    if manifest['schema_version'] == 2:
+        public_files = {relative: descriptor for relative, descriptor in files.items() if relative.startswith('public/')}
+        require(manifest['public_files_sha256'] == digest(stable_bytes(public_files)),
+                'English candidate preview identity differs')
     return files
 
 

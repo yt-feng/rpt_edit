@@ -217,9 +217,21 @@ def compose(root, store, source_store, active, batches, workspace):
     root_html = (root/'index.html').read_text()
     anchor = '<a class="topbar-link" data-english-commentary-link href="/en/">English commentary</a>'
     if 'data-english-commentary-link' not in root_html:
-        match = re.search(r'<nav\b[^>]*class="[^"]*topbar-actions[^"]*"[^>]*>', root_html)
-        require(match is not None, 'Established portal navigation boundary is missing')
-        planned['index.html'] = (root_html[:match.end()]+anchor+root_html[match.end():]).encode()
+        # The established Chinese homepage uses a div; localized shells also
+        # use nav. Identify the exact class token instead of assuming one tag.
+        boundaries = []
+        for match in re.finditer(r'<(?:nav|div)\b[^>]*>', root_html, re.IGNORECASE):
+            # Consume complete attributes so data-class or class-like text in
+            # another quoted attribute cannot masquerade as the class itself.
+            attributes = re.findall(r'''\s+([^\s=/>]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))''',
+                                    match.group(), re.DOTALL)
+            classes = [double or single or bare for name, double, single, bare in attributes if name.lower() == 'class']
+            if any('topbar-actions' in value.split() for value in classes):
+                require(len(classes) == 1, 'Established portal navigation boundary is missing or ambiguous')
+                boundaries.append(match.end())
+        require(len(boundaries) == 1, 'Established portal navigation boundary is missing or ambiguous')
+        boundary = boundaries[0]
+        planned['index.html'] = (root_html[:boundary]+anchor+root_html[boundary:]).encode()
     for relative in planned: reject_symlinks(root/safe_relative(relative))
     for checksum, raw in bodies.items():
         put_immutable_bytes(store, store.key('bodies', checksum+'.json'), raw, 'english-private-body', MAX_BODY)
