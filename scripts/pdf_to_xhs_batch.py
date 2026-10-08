@@ -1150,6 +1150,8 @@ def main() -> int:
             "ocr": args.ocr.lower() == "true",
         }, mineru_tokens)
         sources = input_sources(pdfs, input_dir, args.mineru_source_map)
+        from institution_original_cache import preserve_sources
+        preserve_sources(ledger, sources)
         results, task_summary = ledger.run(
             sources,
             timeout=args.poll_timeout, interval=args.poll_interval,

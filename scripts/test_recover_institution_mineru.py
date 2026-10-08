@@ -43,6 +43,79 @@ class InstitutionRecoveryTests(unittest.TestCase):
         self.assertEqual(self.r2.objects, self.originals)
         self.assertEqual((len(self.provider.posts), len(self.provider.polls)), (1, 0))
 
+    def test_primary_institution_cli_archives_every_original_before_provider_poll(self):
+        import os, sys
+        import pdf_to_xhs_batch as cli
+        from institution_original_cache import OriginalCache
+        cache = OriginalCache(self.r2, 'private-test')
+        def inspect_archived(*_):
+            for source in self.inputs:
+                self.assertEqual(cache.get(self.ledger.bind(*source)), source[0].read_bytes())
+        self.provider.on_poll = inspect_archived
+        args = ['pdf', '--input-dir', str(self.root), '--output-dir', str(self.root/'out'), '--chart-source-only']
+        with patch.object(sys, 'argv', args), patch.dict(os.environ, {'MINER_U': 'test-token'}), \
+             patch.object(cli, 'from_environment', return_value=self.ledger), patch.object(cli, 'log'):
+            self.assertEqual(cli.main(), 2)
+        self.assertEqual(len(self.provider.posts), 1)
+        self.assertTrue(self.provider.polls)
+
+    def test_fresh_institution_submission_cannot_precede_verified_private_originals(self):
+        import os, sys
+        import pdf_to_xhs_batch as cli
+        from institution_original_cache import OriginalCache
+        self.r2.objects.clear(); self.provider.posts.clear(); self.provider.tasks.clear()
+        self.provider.plans = [['done', 'done', 'done']]
+        cache = OriginalCache(self.r2, 'private-test')
+        def before_submission(_batch):
+            for source in self.inputs:
+                self.assertEqual(cache.get(self.ledger.bind(*source)), source[0].read_bytes())
+        self.provider.on_submit = before_submission
+        args = ['pdf', '--input-dir', str(self.root), '--output-dir', str(self.root/'out'), '--chart-source-only']
+        with patch.object(sys, 'argv', args), patch.dict(os.environ, {'MINER_U': 'test-token'}), \
+             patch.object(cli, 'from_environment', return_value=self.ledger), patch.object(cli, 'log'), \
+             patch.object(cli, 'process_pdf', return_value={'chart_source_only': True}):
+            self.assertEqual(cli.main(), 0)
+        self.assertEqual(len(self.provider.posts), 1)
+
+    def test_private_original_read_failure_stops_primary_before_any_provider_operation(self):
+        import os, sys
+        import pdf_to_xhs_batch as cli
+        from institution_original_cache import PREFIX
+        def fail_cache(key):
+            if key.startswith(PREFIX): raise OSError('private read stopped')
+        self.r2.before_get = fail_cache
+        args = ['pdf', '--input-dir', str(self.root), '--output-dir', str(self.root/'out'), '--chart-source-only']
+        with patch.object(sys, 'argv', args), patch.dict(os.environ, {'MINER_U': 'test-token'}), \
+             patch.object(cli, 'from_environment', return_value=self.ledger), patch.object(cli, 'log'), \
+             patch('builtins.print'):
+            self.assertNotEqual(cli.main(), 0)
+        self.assertEqual(len(self.provider.posts), 1); self.assertEqual(self.provider.polls, [])
+
+    def test_verified_private_originals_avoid_official_url_discovery_and_fetch(self):
+        originals = {self.ledger.bind(*row)['id']: row[0].read_bytes() for row in self.inputs}
+        result = r.prepare(self.ledger, self.value,
+            lambda *_: self.fail('Frozen originals require no GitHub log discovery'), self.directory,
+            restore=lambda item: originals[item['id']], fetch=lambda *_: self.fail('No official source fetch'))
+        self.assertTrue(result['verified'])
+        self.assertEqual((result['restored_original_members'], result['downloaded_original_members']), (3, 0))
+        self.assertEqual(self.r2.objects, self.originals)
+
+    def test_missing_private_original_only_fetches_the_missing_exact_source(self):
+        first = self.ledger.bind(*self.inputs[0]); requests = []; wanted = []
+        def registry(names): wanted.append(names); return self.urls
+        def restore(item): return None if item['id'] == first['id'] else self.root.joinpath(item['source']).read_bytes()
+        def fetch(url, size): requests.append(url); return self.payloads[url]
+        result = r.prepare(self.ledger, self.value, registry, self.directory, restore=restore, fetch=fetch)
+        self.assertEqual(wanted, [{first['source']}]); self.assertEqual(len(requests), 1)
+        self.assertEqual((result['restored_original_members'], result['downloaded_original_members']), (2, 1))
+
+    def test_private_original_mismatch_or_read_error_stops_before_public_fetch(self):
+        for restore in (lambda *_: b'%PDF-wrong', lambda *_: (_ for _ in ()).throw(OSError('storage unavailable'))):
+            with self.subTest(restore=restore), self.assertRaises((ValueError, OSError)):
+                r.prepare(self.ledger, self.value, lambda *_: self.fail('No discovery after cache error'), self.directory,
+                    restore=restore, fetch=lambda *_: self.fail('No public fetch after cache error'))
+        self.assertFalse(self.directory.exists()); self.assertEqual(self.r2.objects, self.originals)
+
     def test_missing_original_url_stops_before_any_download_or_provider_operation(self):
         self.urls.pop(self.inputs[-1][1]); calls = []
         result = self.prepare(lambda *args: calls.append(args))

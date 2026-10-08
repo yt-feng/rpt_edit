@@ -118,7 +118,7 @@ def download(url, expected_size):
     raise ValueError('source_redirect_limit')
 
 
-def prepare(ledger, value, urls, directory, *, fetch=download):
+def prepare(ledger, value, urls, directory, *, fetch=download, restore=None):
     require(ledger.scope == 'institution', 'source_scope')
     require(not directory.exists() or not any(directory.iterdir()), 'source_directory')
     roots, bindings, root_bytes = [], {}, {}
@@ -132,9 +132,21 @@ def prepare(ledger, value, urls, directory, *, fetch=download):
             require(item['source'] == Path(item['source']).name, 'source_filename')
             bindings[item['id']] = item
     require(sum(item['size'] for item in bindings.values()) <= MAX_TOTAL, 'source_total_size')
+    restored = {}
+    if restore is not None:
+        for item in bindings.values():
+            payload = restore(item)
+            if payload is not None:
+                require(isinstance(payload, bytes) and payload.startswith(b'%PDF-')
+                        and len(payload) == item['size'] and digest(payload) == item['sha256'], 'private_source_mismatch')
+                restored[item['id']] = payload
+    if callable(urls):
+        wanted = {item['source'] for item in bindings.values() if item['id'] not in restored}
+        urls = urls(wanted) if wanted else {}
     # A stable publication filename can have different chapter URLs over time.
     # Only the original ledger bytes select a candidate; recency never does.
-    missing = [item for item in bindings.values() if not 1 <= len(urls.get(item['source'], set())) <= MAX_SOURCE_URLS]
+    missing = [item for item in bindings.values() if item['id'] not in restored
+               and not 1 <= len(urls.get(item['source'], set())) <= MAX_SOURCE_URLS]
     if missing:
         return {'verified': False, 'original_members': len(bindings), 'missing_url_count': len(missing),
                 'missing_source_hashes': [digest(item['source'].encode()) for item in missing],
@@ -144,9 +156,9 @@ def prepare(ledger, value, urls, directory, *, fetch=download):
     directory.mkdir(parents=True, exist_ok=True)
     verified = 0
     for item in bindings.values():
-        raw = None; url = None
+        raw = restored.get(item['id']); url = None
         try:
-            for url in sorted(urls[item['source']]):
+            for url in (() if raw is not None else sorted(urls[item['source']])):
                 try:
                     candidate = fetch(url, item['size'])
                 except ValueError as error:
@@ -175,6 +187,7 @@ def prepare(ledger, value, urls, directory, *, fetch=download):
              'allowed_error_hashes': value['allowed_error_hashes']}
     raw = encoded(proof); (directory/'proof.json').write_bytes(raw)
     return {'verified': True, 'original_members': len(bindings), 'original_batches': len(roots),
+            'restored_original_members': len(restored), 'downloaded_original_members': len(bindings)-len(restored),
             'proof_sha256': digest(raw), 'provider_posts': 0}
 
 
@@ -231,8 +244,10 @@ def main():
                         'https://mineru.net', {'model': 'vlm', 'language': 'en', 'ocr': True}, credentials(os.environ))
         directory = Path(os.environ['RUNNER_TEMP'])/'institution-originals'
         stage = 'source_verification'
-        wanted = {item['source'] for key in value['batches'] for item in ledger._read_batch(key)[0]['files']}
-        summary = prepare(ledger, value, registry(value, os.environ['GITHUB_REPOSITORY'], wanted), directory)
+        from institution_original_cache import OriginalCache
+        originals = OriginalCache.single_attempt(store.client, store.bucket)
+        summary = prepare(ledger, value, lambda wanted: registry(value, os.environ['GITHUB_REPOSITORY'], wanted), directory,
+                          restore=originals.get)
         Path(os.environ['RUNNER_TEMP'], 'institution-recovery-summary.json').write_bytes(encoded(summary))
         print(json.dumps(summary, sort_keys=True))
         if not summary['verified']: return 1
