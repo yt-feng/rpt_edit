@@ -1619,7 +1619,7 @@ def translate_missing_units(
     if provider in OFFLINE_PROVIDERS:
         # Offline inference uses the runner-local server; no paid provider or paid repair.
         # Save valid rows even if a neighbouring row fails the quality gate.
-        from offline_translation import (OfflineTranslator, OfflineTranslationError,
+        from offline_translation import (OfflineTranslator, OfflineTranslationError, TranslationBudgetExceeded,
                                          OfflineTranslationValidationError, PROVIDER as offline_provider)
         translator = OfflineTranslator()
         run_state.data.update(provider=provider, offline_engine=offline_provider, api_cost_cny=0, repair_provider="none", workers=1)
@@ -1646,6 +1646,16 @@ def translate_missing_units(
         failed = 0
         budget_reached = False
         deadline = time.monotonic() + offline_time_budget_seconds
+        set_deadline = getattr(translator, "set_deadline", None)
+        if callable(set_deadline):
+            set_deadline(deadline)
+
+        def stop_offline_budget() -> None:
+            write_cache(cache_path, cache)
+            run_state.stop("Offline translation time window ended; completed rows saved", category="budget")
+            run_state.write()
+            raise TranslationStopped(run_state.stop_reason)
+
         for locale, batch in jobs:
             run_state.check()
             translated_batch: list[str] | None = None
@@ -1654,6 +1664,8 @@ def translate_missing_units(
                     and callable(getattr(type(translator), "translate_many", None))):
                 try:
                     translated_batch = translate_many([unit.source for unit in batch], locale)
+                except TranslationBudgetExceeded:
+                    stop_offline_budget()
                 except OfflineTranslationValidationError:
                     # Retry only the independent local units. Completed fragments
                     # already reside in the exact-source memo; never use a paid repair.
@@ -1665,10 +1677,7 @@ def translate_missing_units(
                     if allow_source_fallback:
                         budget_reached = True
                         break
-                    write_cache(cache_path, cache)
-                    run_state.stop("Offline translation time window ended; completed rows saved", category="budget")
-                    run_state.write()
-                    raise TranslationStopped(run_state.stop_reason)
+                    stop_offline_budget()
                 try:
                     translated = (translated_batch[index] if translated_batch is not None
                                   else translator.translate(unit.source, locale))
@@ -1676,6 +1685,11 @@ def translate_missing_units(
                     cache["locales"][locale][unit.key] = {
                         **_translation_cache_row(unit, translated), "provider": provider, "offline_engine": offline_provider, "model": model,
                     }
+                except TranslationBudgetExceeded:
+                    if allow_source_fallback:
+                        budget_reached = True
+                        break
+                    stop_offline_budget()
                 except (OfflineTranslationValidationError, TranslationQualityError) as error:
                     failed += 1
                     run_state.failure(locale, error, [unit])
