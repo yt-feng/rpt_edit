@@ -40,6 +40,54 @@ def unit_alias_signals(text):
     return result
 
 
+def quantity_signature(counter):
+    """Render normalized numeric facts with the same public diagnostic bounds."""
+    rows = []; truncated = len(counter) > 64
+    for key, count in list(counter.items())[:64]:
+        values = [str(value) if value is not None else None for value in key[1:]]
+        value_truncated = any(value is not None and len(value) > 128 for value in values)
+        truncated = truncated or value_truncated
+        rows.append({'kind': key[0], 'values': [value[:128] if value is not None else None for value in values],
+                     'count': count, 'value_truncated': value_truncated})
+    return {'rows': rows, 'total_rows': len(counter), 'truncated': truncated}
+
+
+def english_source_quantity_signals(text):
+    """Reproduce the final retry mask in memory, without translating private text."""
+    from collections import Counter
+    from financial_quantity_integrity import quantities
+    from hymt_offline_translation import (OfflineTranslationError, _mask, _mask_quantity_facts,
+                                         _PLACEHOLDERS, split_sentences)
+    result = {'source_quantities': quantity_signature(quantities(text)),
+              'maximum_reported_fragments': 20, 'maximum_quantity_rows_per_side': 64,
+              'maximum_value_characters': 128}
+    try:
+        fragments = split_sentences(text)
+    except OfflineTranslationError:
+        return {**result, 'mask_status': 'offline-context-limit'}
+    rows = []
+    for fragment in fragments[:20]:
+        core = fragment.strip()
+        masked, opaque, controlled = _mask(core, 'en')
+        third, protected = _mask_quantity_facts(masked, len(opaque) + len(controlled))
+        protected_facts = Counter()
+        for value in protected.values():
+            protected_facts.update(quantities(value))
+        rows.append({'source_sha256': digest(core.encode()), 'source_characters': len(core),
+            'adapter_masked_sha256': digest(masked.encode()), 'adapter_opaque_count': len(opaque),
+            'adapter_controlled_count': len(controlled),
+            'adapter_escaped_character_count': sum(value.startswith('\\') for value in opaque.values()),
+            'third_masked_sha256': digest(third.encode()),
+            'third_placeholder_count': len(_PLACEHOLDERS.findall(third)),
+            'third_protected_fact_count': len(protected),
+            'third_protected_quantities': quantity_signature(protected_facts),
+            'third_residual_quantities': quantity_signature(quantities(third)),
+            'third_protected_han_fact_count': sum(bool(re.search(r'[\u3400-\u9fff]', value))
+                                                 for value in protected.values())})
+    return {**result, 'mask_status': 'available', 'fragment_count': len(fragments),
+            'fragments': rows, 'fragments_truncated': len(fragments) > len(rows)}
+
+
 def quantity_diagnostics(checkpoint):
     """Bounded numeric signatures only; never emit either checkpoint text."""
     from financial_quantity_integrity import quantities, quantity_issues
@@ -61,18 +109,9 @@ def quantity_diagnostics(checkpoint):
         bare_months = any(k[0] == 'month' and k[1] is None for k in before.keys() | after.keys())
         if bare_months:
             before, after = quantities(source, bare_months=True), quantities(translated, bare_months=True)
-        def signature(counter):
-            rows = []; truncated = len(counter) > 64
-            for k, n in list(counter.items())[:64]:
-                values = [str(v) if v is not None else None for v in k[1:]]
-                value_truncated = any(v is not None and len(v) > 128 for v in values)
-                truncated = truncated or value_truncated
-                rows.append({'kind': k[0], 'values': [v[:128] if v is not None else None for v in values],
-                             'count': n, 'value_truncated': value_truncated})
-            return {'rows': rows, 'total_rows': len(counter), 'truncated': truncated}
         failed.append({'unit_sha256': key, 'source_sha256': digest(source.encode()),
                        'translated_sha256': digest(translated.encode()),
-                       'source_quantities': signature(before), 'translated_quantities': signature(after),
+                       'source_quantities': quantity_signature(before), 'translated_quantities': quantity_signature(after),
                        'source_unit_protection_signals': source_unit_protection_signals(source),
                        'translated_unit_alias_signals': unit_alias_signals(translated)})
     return {'failed_unit_count': total, 'reported_units': failed, 'maximum_reported_units': 20,
@@ -204,7 +243,8 @@ def inspect_english(store, source_store, generation, checkpoint_sha, candidate_i
             language = extended_source_language(original)
             row = checkpoint['rows'].get(memo.key(original, language))
             check = {'field': field, 'source_sha256': digest(original.encode()),
-                     'source_characters': len(original), 'cached': row is not None}
+                     'source_characters': len(original), 'cached': row is not None,
+                     'quantity_signals': english_source_quantity_signals(original)}
             if row is not None:
                 translated = row['text']; check['cached_characters'] = len(translated)
                 try:
@@ -228,7 +268,9 @@ def inspect_english(store, source_store, generation, checkpoint_sha, candidate_i
             except ExpansionError:
                 preview_check = 'english-preview-validation'
         diagnostics.append({'document_sha256': digest(doc['id'].encode()), 'code': failed[doc['id']],
-                            'units': checks, 'preview_validation': preview_check})
+                            'units': checks, 'preview_validation': preview_check,
+                            'first_unvalidated_unit_index': next((index for index, check in enumerate(checks)
+                                if check.get('validation') != 'passed'), None)})
     result = {'schema_version': 1, 'read_only': True, 'locale': 'en', 'generation': generation,
         'source_day': source['day'], 'source_sha256': digest(stable_bytes(source)),
         'source_admission': admission['source_admission'], 'english_admission': proof['admission'],
