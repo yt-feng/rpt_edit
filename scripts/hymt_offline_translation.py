@@ -241,11 +241,11 @@ def _english_quantity_fact(value: str) -> str:
         return value
     (fact,) = facts
     kind = fact[0]
-    def decimal_text(number):
-        value = format(number, 'f')
+    def decimal_text(number, *, grouped=False):
+        value = format(number, ',f' if grouped else 'f')
         return value.rstrip('0').rstrip('.') if '.' in value else value
     if kind == 'currency':
-        return f'{fact[1]} {decimal_text(fact[2])}'
+        return f'{fact[1]} {decimal_text(fact[2], grouped=True)}'
     if kind == 'percent':
         return f'{decimal_text(fact[1])}%'
     if kind in {'quarter', 'half'}:

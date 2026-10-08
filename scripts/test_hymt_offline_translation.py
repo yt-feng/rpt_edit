@@ -145,9 +145,9 @@ class HyMTTests(unittest.TestCase):
             ('第三季度订单观察', 'Q3'),
             ('一季度增长8%，四季度增长2%。', 'Q1|8%|Q4|2%'),
             ('预期Q1增长三成。', 'Q1|30%'),
-            ('投资金额为150亿欧元。', 'EUR 15000000000'),
+            ('投资金额为150亿欧元。', 'EUR 15,000,000,000'),
             ('预期2Q增长10%。', 'Q2|10%'),
-            ('2026年下半年投资1.2亿美元。', 'H2 2026|USD 120000000'),
+            ('2026年下半年投资1.2亿美元。', 'H2 2026|USD 120,000,000'),
         ]
         from financial_quantity_integrity import quantity_issues
         from portal_english_commentary import text as english_text
@@ -173,14 +173,42 @@ class HyMTTests(unittest.TestCase):
                 self.assertEqual(translator.translate(source, 'en', 'zh'), translated)
                 self.assertEqual(len(self.engine.calls), 3)
 
+    def test_english_currency_grouping_preserves_decimal_sign_and_fraction(self):
+        for source, expected in (
+            ('150亿欧元', 'EUR 15,000,000,000'),
+            ('EUR -12345.67', 'EUR -12,345.67'),
+            ('USD 1000.00001', 'USD 1,000.00001'),
+            ('GBP 1234567.8900', 'GBP 1,234,567.89'),
+            ('USD 0.125', 'USD 0.125'),
+        ):
+            with self.subTest(source=source):
+                self.assertEqual(h._english_quantity_fact(source), expected)
+                self.assertEqual(h.quantities(source), h.quantities(expected))
+        self.assertEqual(h._english_quantity_fact('三成'), '30%')
+        self.assertEqual(h._english_quantity_fact('第三季度'), 'Q3')
+
+    def test_grouped_currency_retry_still_rejects_observed_invented_percent(self):
+        source = '企业投资150亿欧元，并重视长期回报。'
+        def respond(value, attempt):
+            if attempt == 2:
+                self.assertIn('EUR 15,000,000,000', value)
+            return 'The company invests EUR 15 billion with a return of 30%.'
+        translator = self.retrying_translator(respond)
+        with self.assertRaisesRegex(h.OfflineTranslationValidationError, 'quantity'):
+            translator.translate(source, 'en', 'zh', markdown=False)
+        self.assertEqual(len(self.engine.calls), 3)
+        self.assertEqual(self.engine.calls[0][0], source)
+        self.assertEqual(self.engine.calls[1][0], source)
+        self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
+
     def test_visible_english_retry_preserves_resources_identifiers_and_rejects_changed_facts(self):
         source = '按`原始资料`及CO2在第三季度150亿欧元投资。'
         masked, resources, terms = h._mask(source, 'en')
         model_input, protected, visible = h._quantity_retry_input(masked, len(resources) + len(terms), target='en')
-        self.assertEqual(set(visible.values()), {'Q3', 'EUR 15000000000'})
+        self.assertEqual(set(visible.values()), {'Q3', 'EUR 15,000,000,000'})
         self.assertEqual(list(protected.values()), ['CO2'])
         self.assertIn('__HYMTPH_0000__', model_input)
-        self.assertIn(' Q3  EUR 15000000000 ', model_input)
+        self.assertIn(' Q3  EUR 15,000,000,000 ', model_input)
         self.assertEqual(h._quantity_retry_input(masked, 1, target='km')[:2], h._mask_quantity_facts(masked, 1, target='km'))
         with mock.patch.object(h, '_english_quantity_fact', return_value='USD 1'):
             with self.assertRaisesRegex(h.OfflineTranslationValidationError, 'canonicalization'):
@@ -206,7 +234,7 @@ class HyMTTests(unittest.TestCase):
     def test_english_retry_keeps_identifier_opaque_and_other_locale_contracts(self):
         source = '__HYMTPH_0001__ 私有第三季度150亿欧元订单三成。'
         masked, facts = h._mask_quantity_facts(source, 1, target='en')
-        self.assertEqual(list(facts.values()), ['Q3', 'EUR 15000000000', '30%'])
+        self.assertEqual(list(facts.values()), ['Q3', 'EUR 15,000,000,000', '30%'])
         self.assertNotIn('__HYMTPH_0001__', facts)
         self.assertEqual(masked.count('__HYMTPH_0001__'), 1)
         _, identifiers = h._mask_quantity_facts('CO2 ModelX1 171bpm', 0, target='en')

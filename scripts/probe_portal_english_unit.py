@@ -64,8 +64,11 @@ def input_forms(original):
     number = format(amount/scale, 'f')
     if '.' in number: number = number.rstrip('0').rstrip('.')
     scaled = f'{currency} {number}' + (f' {label}' if label else '')
+    absolute = format(amount, 'f')
+    if '.' in absolute: absolute = absolute.rstrip('0').rstrip('.')
+    alternate = ('absolute', f'{currency} {absolute}') if value == grouped else ('grouped', grouped)
     forms = []; seen = set()
-    for name, spelling in (('production', value), ('grouped', grouped), ('scaled', scaled)):
+    for name, spelling in (('production', value), alternate, ('scaled', scaled)):
         model_input = current.replace(value, spelling, 1)
         if model_input in seen: continue
         seen.add(model_input)
