@@ -141,7 +141,7 @@ class EnglishPipelineTests(unittest.TestCase):
         self.assertEqual(signals['source_quantities']['total_rows'], 2)
         fragment = signals['fragments'][0]
         self.assertEqual(fragment['third_protected_quantities']['rows'][0]['values'], ['5.3'])
-        self.assertEqual(fragment['third_residual_quantities']['rows'][0]['values'], ['90'])
+        self.assertEqual(fragment['third_residual_quantities']['rows'], [])
         self.assertEqual((result['production_writes'], result['model_calls'], result['paid_provider_requests']), (0, 0, 0))
         for private in (COMMENT, quantity_text, later_text, 'Growth is 5.4%', source['documents'][0]['id']):
             self.assertNotIn(private, json.dumps(result, ensure_ascii=False))
@@ -153,9 +153,9 @@ class EnglishPipelineTests(unittest.TestCase):
         result = english_source_quantity_signals(source)
         fragment = result['fragments'][0]
         self.assertEqual(fragment['adapter_escaped_character_count'], 1)
-        self.assertEqual(fragment['third_protected_fact_count'], 2)
-        self.assertEqual(fragment['third_protected_han_fact_count'], 1)
-        self.assertEqual(fragment['third_residual_quantities']['rows'][0]['values'], ['90'])
+        self.assertEqual(fragment['third_protected_fact_count'], 3)
+        self.assertEqual(fragment['third_protected_han_fact_count'], 0)
+        self.assertEqual(fragment['third_residual_quantities']['rows'], [])
         self.assertNotIn('私有标题', json.dumps(result, ensure_ascii=False))
         self.assertNotIn('3亿元', json.dumps(result, ensure_ascii=False))
         self.assertNotIn('171bp', json.dumps(result, ensure_ascii=False))

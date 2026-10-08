@@ -181,22 +181,24 @@ def quantities(text: str, *, bare_months: bool = False) -> Counter:
         return int(value) + (2000 if len(value) == 2 else 0)
     take(rf"(?<!\d)({year})\s*年\s*第?([一二三四1-4])季度",
          lambda m: ("quarter", period_year(m[1]), ordinals.get(m[2], int(m[2]) if m[2].isdigit() else 0)))
-    take(rf"\bQ([1-4])\s*[,'’\-]?\s*({year})\b", lambda m: ("quarter", period_year(m[2]), int(m[1])))
-    take(rf"\b({year})\s*Q([1-4])\b", lambda m: ("quarter", period_year(m[1]), int(m[2])))
+    # Han prose touches ASCII period labels without spaces. Unicode word
+    # boundaries erase that distinction; keep ASCII identifier edges strict.
+    take(rf"(?<![A-Za-z0-9])Q([1-4])\s*[,'’\-]?\s*({year})(?![A-Za-z0-9])", lambda m: ("quarter", period_year(m[2]), int(m[1])))
+    take(rf"(?<![A-Za-z0-9])({year})\s*Q([1-4])(?![A-Za-z0-9])", lambda m: ("quarter", period_year(m[1]), int(m[2])))
     take(rf"(?<![A-Za-z0-9])([1-4])Q\s*['’]?\s*({year})(?![A-Za-z0-9])", lambda m: ("quarter", period_year(m[2]), int(m[1])))
     take(rf"\b(first|second|third|fourth)\s+quarter(?:\s+of)?\s+({year})\b",
          lambda m: ("quarter", period_year(m[2]), ordinals[m[1].casefold()]))
-    take(rf"\bH([12])\s*['’]?\s*({year})\b", lambda m: ("half", period_year(m[2]), int(m[1])))
-    take(rf"\b({year})\s*H([12])\b", lambda m: ("half", period_year(m[1]), int(m[2])))
+    take(rf"(?<![A-Za-z0-9])H([12])\s*['’]?\s*({year})(?![A-Za-z0-9])", lambda m: ("half", period_year(m[2]), int(m[1])))
+    take(rf"(?<![A-Za-z0-9])({year})\s*H([12])(?![A-Za-z0-9])", lambda m: ("half", period_year(m[1]), int(m[2])))
     take(rf"(?<![A-Za-z0-9])([12])H\s*['’]?\s*({year})(?![A-Za-z0-9])", lambda m: ("half", period_year(m[2]), int(m[1])))
     take(rf"\b(first|second)\s+half(?:\s+of)?\s+({year})\b",
          lambda m: ("half", period_year(m[2]), ordinals[m[1].casefold()]))
     take(rf"(?<!\d)({year})\s*年\s*([上下])半年", lambda m: ("half", period_year(m[1]), 1 if m[2] == '上' else 2))
-    take(r"\b(?:Q([1-4])|([1-4])Q)\b", lambda m: ("quarter", None, int(m[1] or m[2])))
+    take(r"(?<![A-Za-z0-9])(?:Q([1-4])|([1-4])Q)(?![A-Za-z0-9])", lambda m: ("quarter", None, int(m[1] or m[2])))
     take(r"第?([一二三四1-4])季度",
          lambda m: ("quarter", None, ordinals.get(m[1], int(m[1]) if m[1].isdigit() else 0)))
     take(r"\b(first|second|third|fourth)\s+quarter\b", lambda m: ("quarter", None, ordinals[m[1].casefold()]))
-    take(r"\b(?:H([12])|([12])H)\b", lambda m: ("half", None, int(m[1] or m[2])))
+    take(r"(?<![A-Za-z0-9])(?:H([12])|([12])H)(?![A-Za-z0-9])", lambda m: ("half", None, int(m[1] or m[2])))
     take(r"([上下])半年", lambda m: ("half", None, 1 if m[1] == '上' else 2))
     take(r"\b(first|second)\s+half\b", lambda m: ("half", None, ordinals[m[1].casefold()]))
 

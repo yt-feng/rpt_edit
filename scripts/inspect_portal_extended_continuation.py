@@ -69,7 +69,7 @@ def english_source_quantity_signals(text):
     for fragment in fragments[:20]:
         core = fragment.strip()
         masked, opaque, controlled = _mask(core, 'en')
-        third, protected = _mask_quantity_facts(masked, len(opaque) + len(controlled))
+        third, protected = _mask_quantity_facts(masked, len(opaque) + len(controlled), target='en')
         protected_facts = Counter()
         for value in protected.values():
             protected_facts.update(quantities(value))

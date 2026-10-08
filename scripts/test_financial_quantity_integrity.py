@@ -18,6 +18,24 @@ class FinancialQuantityTests(unittest.TestCase):
             with self.subTest(suffix=suffix):
                 self.assertTrue(quantity_issues('Value 171'+suffix, 'Value 1.71 percentage points.'))
 
+    def test_reporting_periods_touching_han_keep_kind_year_and_value(self):
+        for source, translated in [('本季Q1订单', 'Q1 orders'), ('本季2Q交付', '2Q deliveries'),
+                                   ('本季H2订单', 'H2 orders'), ('本季1H交付', '1H deliveries'),
+                                   ('预期Q3 2026交付', 'Q3 2026 deliveries'),
+                                   ('预期2026 Q4交付', '2026 Q4 deliveries'),
+                                   ('预期H1 2026交付', 'H1 2026 deliveries'),
+                                   ('预期2026 H2交付', '2026 H2 deliveries')]:
+            with self.subTest(source=source):
+                self.assertEqual(quantity_issues(source, translated), [])
+                self.assertTrue(quantity_issues(source, translated.replace('Q', 'H') if 'Q' in translated
+                                                else translated.replace('H', 'Q')))
+                self.assertTrue(quantity_issues(source, 'Orders'))
+        for value in ('AQ1', 'Q1X', '2QX', 'X2Q', 'AH2', 'H2X', '2HX', 'X2H'):
+            with self.subTest(value=value):
+                self.assertTrue(quantity_issues(value, 'Q1' if 'Q' in value else 'H2'))
+        self.assertTrue(quantity_issues('预期Q1订单', 'Q2 orders'))
+        self.assertTrue(quantity_issues('预期Q1 2026订单', 'Q1 2025 orders'))
+
     def test_singular_basis_point_abbreviation_is_exact_and_does_not_match_words(self):
         self.assertEqual(quantity_issues('收益率上升50个基点。', 'Yield rose 50 bp.'), [])
         self.assertEqual(quantity_issues('收益率上升50个基点。', 'Yield rose 50 bps.'), [])

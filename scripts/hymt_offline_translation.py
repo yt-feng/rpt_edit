@@ -24,7 +24,7 @@ import time
 from typing import Callable, Sequence
 
 from compare_hymt_translation import LANGUAGES, SCRIPT_PATTERNS, ModelHTTPError, request_json, require_actions, verify_model, file_sha256
-from financial_quantity_integrity import FIVE_YEAR_PERIOD_RE, NUMBER, quantity_issues
+from financial_quantity_integrity import FIVE_YEAR_PERIOD_RE, NUMBER, CURRENCY, SCALE, quantities, quantity_issues
 
 MANIFEST_PATH = Path(__file__).with_name('hymt_translation_model_manifest.json')
 MANIFEST = json.loads(MANIFEST_PATH.read_text(encoding='utf-8'))
@@ -65,6 +65,21 @@ _QUANTITY_FACT = re.compile(
     r'|[+\-−]?\d+(?:[.,]\d+)*(?![A-Za-z0-9_])'
     r'|\d{1,8}'
     r')(?![A-Za-z0-9_])')
+# English recovery protects complete source facts, including the unit and the
+# reporting period. Materialization is derived from the strict quantity parser,
+# so Chinese scale words are not copied into an otherwise English sentence.
+_ENGLISH_FACT = (
+    rf'(?<![A-Za-z0-9_])(?:(?:{CURRENCY})\s*{NUMBER}\s*(?:{SCALE})?'
+    rf'|{NUMBER}\s*(?:{SCALE})?\s*(?:{CURRENCY})'
+    r'|(?:\d{4}|\d{2})\s*(?:Q[1-4]|H[12])'
+    r'|(?:Q[1-4]|[1-4]Q|H[12]|[12]H)(?:\s*[,\'’\-]?\s*(?:\d{4}|\d{2}))?)(?![A-Za-z0-9_])'
+    r'|(?<!\d)(?:(?:\d{4}|\d{2})\s*年\s*)?第?[一二三四1-4]季度'
+    r'|(?<!\d)(?:(?:\d{4}|\d{2})\s*年\s*)?[上下]半年'
+    r'|(?<![零〇一二两三四五六七八九十\d])[一二两三四五六七八九十]成[零〇一二两三四五六七八九]?(?!不变|不變)'
+)
+_ENGLISH_QUANTITY_FACT = re.compile(
+    r'(?P<english_fact>' + _ENGLISH_FACT + r')|' + _QUANTITY_FACT.pattern, re.I)
+
 # Financial amounts, dates, percentages, names, and predicates are intentionally
 # absent from opaque-resource masking: splitting those away from the sentence
 # changed financial meaning. Exact five-year period terminology is handled
@@ -219,7 +234,25 @@ def _mask(text: str, target: str) -> tuple[str, dict[str, str], dict[str, str]]:
     return masked, replacements, terms
 
 
-def _mask_quantity_facts(text: str, start: int) -> tuple[str, dict[str, str]]:
+def _english_quantity_fact(value: str) -> str:
+    facts = quantities(value)
+    if len(facts) != 1 or sum(facts.values()) != 1:
+        return value
+    (fact,) = facts
+    kind = fact[0]
+    def decimal_text(number):
+        value = format(number, 'f')
+        return value.rstrip('0').rstrip('.') if '.' in value else value
+    if kind == 'currency':
+        return f'{fact[1]} {decimal_text(fact[2])}'
+    if kind == 'percent':
+        return f'{decimal_text(fact[1])}%'
+    if kind in {'quarter', 'half'}:
+        return ('Q' if kind == 'quarter' else 'H') + str(fact[2]) + (f' {fact[1]}' if fact[1] is not None else '')
+    return value
+
+
+def _mask_quantity_facts(text: str, start: int, *, target: str | None = None) -> tuple[str, dict[str, str]]:
     replacements: dict[str, str] = {}
 
     def reserve(match: re.Match[str]) -> str:
@@ -230,10 +263,13 @@ def _mask_quantity_facts(text: str, start: int) -> tuple[str, dict[str, str]]:
         while token in text or token in replacements:
             index += 1
             token = f'__HYMTPH_{index:04d}__'
-        replacements[token] = match.group()
+        original = match.group()
+        replacements[token] = (_english_quantity_fact(original)
+            if target == 'en' and match.groupdict().get('english_fact') else original)
         return token
 
-    return _QUANTITY_FACT.sub(reserve, text), replacements
+    pattern = _ENGLISH_QUANTITY_FACT if target == 'en' else _QUANTITY_FACT
+    return pattern.sub(reserve, text), replacements
 
 
 def _restore_terms(value: str, terms: dict[str, str]) -> str:
@@ -490,7 +526,7 @@ class HyMTOfflineTranslator:
                     quantity_retry_replacements: dict[str, str] = {}
                     if attempt == 2 and isinstance(engine, _HyMTEngine):
                         model_input, quantity_retry_replacements = _mask_quantity_facts(
-                            masked, len(replacements) + len(terms))
+                            masked, len(replacements) + len(terms), target=target)
                     try:
                         with _LOCK:
                             if isinstance(engine, _HyMTEngine):

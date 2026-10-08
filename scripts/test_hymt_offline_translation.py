@@ -65,6 +65,53 @@ class HyMTTests(unittest.TestCase):
         self.assertEqual(translator.translate(source, 'hi', 'en'), 'मार्जिन 2.5 percentage points बढ़ा।')
         self.assertEqual([row[3] for row in self.engine.calls], [0, 1, 2])
 
+    def test_english_final_retry_materializes_complete_source_facts_without_han(self):
+        cases = [
+            ('第三季度订单观察', 'Q3'),
+            ('一季度增长8%，四季度增长2%。', 'Q1|8%|Q4|2%'),
+            ('预期Q1增长三成。', 'Q1|30%'),
+            ('投资金额为150亿欧元。', 'EUR 15000000000'),
+            ('预期2Q增长10%。', 'Q2|10%'),
+            ('2026年下半年投资1.2亿美元。', 'H2 2026|USD 120000000'),
+        ]
+        from financial_quantity_integrity import quantity_issues
+        from portal_english_commentary import text as english_text
+        for source, expected in cases:
+            with self.subTest(source=source):
+                masked, facts = h._mask_quantity_facts(source, 0, target='en')
+                self.assertEqual(list(facts.values()), expected.split('|'))
+                self.assertFalse(h.quantities(masked))
+                self.assertEqual(quantity_issues(source, ' and '.join(facts.values())), [])
+                def respond(value, attempt):
+                    if attempt < 2: return 'The outlook is unchanged.'
+                    return 'Outlook: ' + ' and '.join(h._PLACEHOLDERS.findall(value)) + '.'
+                translator = self.retrying_translator(respond)
+                translated = translator.translate(source, 'en', 'zh')
+                self.assertEqual(quantity_issues(source, translated), [])
+                english_text(translated, 12000, english=True)
+                self.assertEqual(len(self.engine.calls), 3)
+                self.assertEqual(self.engine.calls[0][0], source)
+                self.assertEqual(self.engine.calls[1][0], source)
+                self.assertEqual(translator.translate(source, 'en', 'zh'), translated)
+                self.assertEqual(len(self.engine.calls), 3)
+
+    def test_english_retry_keeps_identifier_opaque_and_other_locale_contracts(self):
+        source = '__HYMTPH_0001__ 私有第三季度150亿欧元订单三成。'
+        masked, facts = h._mask_quantity_facts(source, 1, target='en')
+        self.assertEqual(list(facts.values()), ['Q3', 'EUR 15000000000', '30%'])
+        self.assertNotIn('__HYMTPH_0001__', facts)
+        self.assertEqual(masked.count('__HYMTPH_0001__'), 1)
+        _, identifiers = h._mask_quantity_facts('CO2 ModelX1 171bpm', 0, target='en')
+        self.assertEqual(list(identifiers.values()), ['CO2', 'ModelX1'])
+        self.assertEqual(h._mask_quantity_facts('第三季度150亿欧元三成', 0, target='km'),
+                         h._mask_quantity_facts('第三季度150亿欧元三成', 0))
+        for bad in ('Outlook: __HYMTPH_0000__ and USD 1.',
+                    'Outlook: __HYMTPH_0000__ __HYMTPH_0000__.', 'Outlook unchanged.'):
+            with self.subTest(bad=bad):
+                translator = self.retrying_translator(lambda _value, _attempt: bad)
+                with self.assertRaises(h.OfflineTranslationValidationError):
+                    translator.translate('本期150亿欧元投资。', 'en', 'zh')
+
     def test_quantity_retry_masks_complete_basis_points_touching_non_ascii_prose(self):
         for quantity, following in (
             ('171bp', '至'), ('171BP', 'ទៅ'), ('171bps', '至'),
