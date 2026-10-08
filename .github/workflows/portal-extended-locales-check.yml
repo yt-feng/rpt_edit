@@ -9,6 +9,8 @@ on:
       - 'scripts/*english_commentary*'
       - 'scripts/*english_ui*'
       - 'scripts/*english_pipeline*'
+      - 'scripts/*probe_portal_english_unit*'
+      - '.github/workflows/portal-english-unit-probe.yml'
       - 'scripts/*english_publication*'
       - 'scripts/*english_handoff*'
       - 'scripts/build_portal_locale_resume_workflow.py'
@@ -41,6 +43,8 @@ on:
       - 'scripts/*english_commentary*'
       - 'scripts/*english_ui*'
       - 'scripts/*english_pipeline*'
+      - 'scripts/*probe_portal_english_unit*'
+      - '.github/workflows/portal-english-unit-probe.yml'
       - 'scripts/*english_publication*'
       - 'scripts/*english_handoff*'
       - 'scripts/build_portal_locale_resume_workflow.py'
@@ -109,6 +113,7 @@ jobs:
           python -B scripts/test_portal_extended_source_refresh.py
           python -B scripts/test_portal_english_commentary.py
           python -B scripts/test_portal_english_pipeline.py
+          python -B scripts/test_probe_portal_english_unit.py
           python -B scripts/test_portal_english_publication.py
           python -B scripts/test_neutral_edge_cutover_workflow.py
           python -B scripts/build_portal_locale_resume_workflow.py --check
