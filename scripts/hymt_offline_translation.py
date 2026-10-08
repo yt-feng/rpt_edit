@@ -273,6 +273,25 @@ def _mask_quantity_facts(text: str, start: int, *, target: str | None = None) ->
     return pattern.sub(reserve, text), replacements
 
 
+def _quantity_retry_input(text: str, start: int, *, target: str) -> tuple[str, dict[str, str], dict[str, str]]:
+    """Expose canonical English facts while retaining opaque resource tokens."""
+    masked, replacements = _mask_quantity_facts(text, start, target=target)
+    visible = {}
+    if target == 'en':
+        for token, value in list(replacements.items()):
+            facts = quantities(value)
+            if (len(facts) == 1 and sum(facts.values()) == 1
+                    and next(iter(facts))[0] in {'currency', 'percent', 'quarter', 'half'}
+                    and not re.search(r'[\u3400-\u9fff]', value)):
+                # This spelling is derived from the source parser. The final
+                # full-source quantity comparison still rejects any change.
+                masked = masked.replace(token, ' ' + value + ' ')
+                visible[token] = replacements.pop(token)
+        if visible and quantities(text) != quantities(_restore_terms(masked, replacements)):
+            raise OfflineTranslationValidationError('English retry quantity canonicalization changed a source fact')
+    return masked, replacements, visible
+
+
 def placeholder_diagnostics(model_input: str, response: str | None) -> dict:
     """Content-free counts distinguish missing tokens from spelling damage."""
     expected = Counter(_PLACEHOLDERS.findall(model_input))
@@ -426,21 +445,24 @@ class _HyMTEngine:
                       'Copy each complete numeric expression, date, percentage, currency and unit exactly '
                       'from the input; do not convert its scale or currency. Preserve every placeholder and '
                       'Markdown delimiter exactly. Output only the corrected translation.\n' + prompt)
-        if target == 'en' and quality_retry == 2 and _PLACEHOLDERS.search(text):
+        if target == 'en' and quality_retry == 2:
             # The final English attempt may protect a whole financial fact.
             # Describe the actual tokens, not invented namespace examples or
             # only noun/resource semantics. Validation still requires every
             # original token and the fully restored source quantities.
             counts = Counter(_PLACEHOLDERS.findall(text))
             inventory = '; '.join(f'{token}: {count} occurrence(s)' for token, count in counts.items())
-            prompt = (
-                f'Translate the following {LANGUAGES[source]} text into English. '
-                'Output only the translation, without explanation, commentary, or notes. '
+            protected_instruction = (
                 'The input contains literal protected values. Each token represents one complete '
                 'financial quantity (including its currency, scale, or unit), translated term, or resource. '
                 f'These exact tokens must appear with these counts: {inventory}. '
                 'Copy each token unchanged at its corresponding place in the translated sentence, '
                 'in the same order. Do not translate, omit, duplicate, or explain a token. '
+            ) if counts else ''
+            prompt = (
+                f'Translate the following {LANGUAGES[source]} text into English. '
+                'Output only the translation, without explanation, commentary, or notes. '
+                + protected_instruction +
                 'Do not add numbers, units, or formatting. Preserve all other source figures and Markdown. '
                 'Translate this source text only:\n' + text)
         sampling = dict(MANIFEST['sampling'])
@@ -567,7 +589,7 @@ class HyMTOfflineTranslator:
                     model_input = masked
                     quantity_retry_replacements: dict[str, str] = {}
                     if attempt == 2 and isinstance(engine, _HyMTEngine):
-                        model_input, quantity_retry_replacements = _mask_quantity_facts(
+                        model_input, quantity_retry_replacements, _visible_facts = _quantity_retry_input(
                             masked, len(replacements) + len(terms), target=target)
                     value = None
                     try:

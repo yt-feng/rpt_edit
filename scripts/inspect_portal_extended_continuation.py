@@ -56,7 +56,7 @@ def english_source_quantity_signals(text):
     """Reproduce the final retry mask in memory, without translating private text."""
     from collections import Counter
     from financial_quantity_integrity import quantities
-    from hymt_offline_translation import (OfflineTranslationError, _mask, _mask_quantity_facts,
+    from hymt_offline_translation import (OfflineTranslationError, _mask, _quantity_retry_input,
                                          _PLACEHOLDERS, split_sentences)
     result = {'source_quantities': quantity_signature(quantities(text)),
               'maximum_reported_fragments': 20, 'maximum_quantity_rows_per_side': 64,
@@ -69,10 +69,13 @@ def english_source_quantity_signals(text):
     for fragment in fragments[:20]:
         core = fragment.strip()
         masked, opaque, controlled = _mask(core, 'en')
-        third, protected = _mask_quantity_facts(masked, len(opaque) + len(controlled), target='en')
+        third, protected, visible = _quantity_retry_input(masked, len(opaque) + len(controlled), target='en')
         protected_facts = Counter()
         for value in protected.values():
             protected_facts.update(quantities(value))
+        visible_facts = Counter()
+        for value in visible.values():
+            visible_facts.update(quantities(value))
         rows.append({'source_sha256': digest(core.encode()), 'source_characters': len(core),
             'adapter_masked_sha256': digest(masked.encode()), 'adapter_opaque_count': len(opaque),
             'adapter_controlled_count': len(controlled),
@@ -81,6 +84,8 @@ def english_source_quantity_signals(text):
             'third_placeholder_count': len(_PLACEHOLDERS.findall(third)),
             'third_protected_fact_count': len(protected),
             'third_protected_quantities': quantity_signature(protected_facts),
+            'third_visible_fact_count': len(visible),
+            'third_visible_quantities': quantity_signature(visible_facts),
             'third_residual_quantities': quantity_signature(quantities(third)),
             'third_protected_han_fact_count': sum(bool(re.search(r'[\u3400-\u9fff]', value))
                                                  for value in protected.values())})

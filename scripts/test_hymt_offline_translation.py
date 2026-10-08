@@ -67,7 +67,7 @@ class HyMTTests(unittest.TestCase):
         self.assertEqual([row[3] for row in self.engine.calls], [0, 1, 2])
 
     def test_terminal_placeholder_failure_reports_only_bounded_counts_and_hashes(self):
-        source = '私有源文第三季度增长三成。'
+        source = '私有源文`a`与`b`。'
         def respond(value, attempt):
             if attempt < 2: return 'Private rejected response with changed quantities.'
             return 'Private rejected response __HYMTPH_0000__ __HYMTPH_0000__.'
@@ -120,6 +120,9 @@ class HyMTTests(unittest.TestCase):
                 prompt = request.call_args.args[2]['messages'][0]['content']
                 self.assertNotIn('These exact tokens must appear', prompt)
                 self.assertTrue(prompt.endswith(text))
+                if target == 'en' and retry == 2:
+                    self.assertNotIn('HYMTPH', prompt)
+                    self.assertNotIn('KC_PH', prompt)
 
     def test_placeholder_diagnostics_describe_format_damage_without_repairing_it(self):
         original = '__HYMTPH_0000__ and __HYMTPH_0001__'
@@ -156,7 +159,10 @@ class HyMTTests(unittest.TestCase):
                 self.assertEqual(quantity_issues(source, ' and '.join(facts.values())), [])
                 def respond(value, attempt):
                     if attempt < 2: return 'The outlook is unchanged.'
-                    return 'Outlook: ' + ' and '.join(h._PLACEHOLDERS.findall(value)) + '.'
+                    self.assertFalse(h._PLACEHOLDERS.findall(value))
+                    self.assertEqual(quantity_issues(source, value), [])
+                    for fact in expected.split('|'): self.assertIn(fact, value)
+                    return 'Outlook: ' + ' and '.join(expected.split('|')) + '.'
                 translator = self.retrying_translator(respond)
                 translated = translator.translate(source, 'en', 'zh')
                 self.assertEqual(quantity_issues(source, translated), [])
@@ -166,6 +172,36 @@ class HyMTTests(unittest.TestCase):
                 self.assertEqual(self.engine.calls[1][0], source)
                 self.assertEqual(translator.translate(source, 'en', 'zh'), translated)
                 self.assertEqual(len(self.engine.calls), 3)
+
+    def test_visible_english_retry_preserves_resources_identifiers_and_rejects_changed_facts(self):
+        source = '按`原始资料`及CO2在第三季度150亿欧元投资。'
+        masked, resources, terms = h._mask(source, 'en')
+        model_input, protected, visible = h._quantity_retry_input(masked, len(resources) + len(terms), target='en')
+        self.assertEqual(set(visible.values()), {'Q3', 'EUR 15000000000'})
+        self.assertEqual(list(protected.values()), ['CO2'])
+        self.assertIn('__HYMTPH_0000__', model_input)
+        self.assertIn(' Q3  EUR 15000000000 ', model_input)
+        self.assertEqual(h._quantity_retry_input(masked, 1, target='km')[:2], h._mask_quantity_facts(masked, 1, target='km'))
+        with mock.patch.object(h, '_english_quantity_fact', return_value='USD 1'):
+            with self.assertRaisesRegex(h.OfflineTranslationValidationError, 'canonicalization'):
+                h._quantity_retry_input('投资150亿欧元。', 0, target='en')
+        def respond(value, attempt):
+            if attempt < 2: return 'An investment changed.'
+            return 'An investment of EUR 15 billion in Q3 follows ' + ' and '.join(h._PLACEHOLDERS.findall(value)) + '.'
+        translator = self.retrying_translator(respond)
+        translated = translator.translate(source, 'en', 'zh')
+        self.assertIn('`原始资料`', translated)
+        self.assertIn('CO2', translated)
+        self.assertEqual(h.quantities(source), h.quantities(translated))
+        for changed in ('EUR 1500000000', 'USD 15000000000', 'EUR 15000000000 and EUR 15000000000',
+                        'an investment', 'EUR 15000000000 and 1%'):
+            with self.subTest(changed=changed), tempfile.TemporaryDirectory() as directory:
+                engine = RetryingEngine(lambda value, attempt: 'The investment is ' + changed + '.')
+                translator = h.OfflineTranslator(cache_dir=directory, engine_factory=lambda *_: engine)
+                with self.assertRaises(h.OfflineTranslationValidationError):
+                    translator.translate('投资150亿欧元。', 'en', 'zh')
+                self.assertEqual(len(engine.calls), 3)
+                self.assertFalse(list(Path(directory).rglob('*.json')))
 
     def test_english_retry_keeps_identifier_opaque_and_other_locale_contracts(self):
         source = '__HYMTPH_0001__ 私有第三季度150亿欧元订单三成。'
