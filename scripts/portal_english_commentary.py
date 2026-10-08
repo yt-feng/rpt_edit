@@ -443,11 +443,15 @@ def main():
     require(os.environ.get('GITHUB_REF') == 'refs/heads/main', 'English production inference requires reviewed main')
     require(all((args.corpus, args.output, args.checkpoint)), 'English corpus/output/checkpoint required')
     require(args.corpus.stat().st_size <= MAX_SOURCE_BYTES, 'English corpus too large')
+    translator = OfflineTranslator(validation_attempts=3)
     result = build(json.loads(args.corpus.read_text()), args.output, args.checkpoint,
-                   OfflineTranslator(validation_attempts=3), seconds=args.seconds, seed_checkpoint=args.seed_checkpoint)
+                   translator, seconds=args.seconds, seed_checkpoint=args.seed_checkpoint)
     summary = {k: result[k] for k in ('status', 'source_document_count', 'completed_page_count',
                                     'budget_exhausted', 'translation_calls', 'cache_hits', 'paid_provider_requests')}
     summary['failure_code_counts'] = failure_code_counts(result['failures'])
+    summary['terminal_translation_diagnostics'] = getattr(translator, 'failure_diagnostics', [])
+    summary['terminal_validation_failure_count'] = getattr(translator, 'validation_failure_count', 0)
+    summary['maximum_reported_translation_diagnostics'] = 20
     print(json.dumps(summary))
     return 0 if result['status'] == 'complete-candidate' else 75 if result['budget_exhausted'] else 1
 
