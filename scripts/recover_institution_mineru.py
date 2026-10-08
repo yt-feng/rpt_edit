@@ -22,6 +22,7 @@ PRODUCER = '.github/workflows/institution-latest-pdf-to-wechat.yml'
 DOMAINS = {'imf.org', 'worldbank.org', 'bis.org', 'oecd.org', 'adb.org', 'weforum.org', 'unctad.org', 'wto.org', 'bruegel.org'}
 MAX_PDF = 64 * 1024 * 1024
 MAX_TOTAL = 512 * 1024 * 1024
+MAX_SOURCE_URLS = 4
 
 
 def require(condition, code):
@@ -122,15 +123,29 @@ def prepare(ledger, value, urls, directory, *, fetch=download):
             require(item['source'] == Path(item['source']).name, 'source_filename')
             bindings[item['id']] = item
     require(sum(item['size'] for item in bindings.values()) <= MAX_TOTAL, 'source_total_size')
-    # Missing URLs are diagnosed before downloading anything or polling tasks.
-    missing = [item for item in bindings.values() if len(urls.get(item['source'], set())) != 1]
+    # A stable publication filename can have different chapter URLs over time.
+    # Only the original ledger bytes select a candidate; recency never does.
+    missing = [item for item in bindings.values() if not 1 <= len(urls.get(item['source'], set())) <= MAX_SOURCE_URLS]
     if missing:
         return {'verified': False, 'original_members': len(bindings), 'missing_url_count': len(missing),
-                'missing_source_hashes': [digest(item['source'].encode()) for item in missing], 'provider_posts': 0}
+                'missing_source_hashes': [digest(item['source'].encode()) for item in missing],
+                'source_url_counts': [{'source_sha256': digest(item['source'].encode()),
+                                       'candidate_count': len(urls.get(item['source'], set()))} for item in missing],
+                'provider_posts': 0}
     directory.mkdir(parents=True, exist_ok=True)
     for item in bindings.values():
-        raw = fetch(next(iter(urls[item['source']])), item['size'])
-        require(len(raw) == item['size'] and digest(raw) == item['sha256'], 'original_source_bytes_changed')
+        raw = None
+        for url in sorted(urls[item['source']]):
+            try:
+                candidate = fetch(url, item['size'])
+            except ValueError as error:
+                # A different-size or non-PDF official chapter is not this source.
+                # Transport/status failures still stop instead of being retried.
+                if str(error) in {'source_length', 'source_pdf'}: continue
+                raise
+            if len(candidate) == item['size'] and digest(candidate) == item['sha256']:
+                raw = candidate; break
+        require(raw is not None, 'original_source_bytes_changed')
         path = directory/item['id']; path.write_bytes(raw)
         require(exact_json(ledger.bind(path, item['source']), item), 'source_binding_changed')
     # _original checks every source claim, accepted task, credential and option,
@@ -224,7 +239,10 @@ def main():
         print(json.dumps(summary, sort_keys=True))
         return 0 if summary.get('ready_for_generation', True) else 1
     except Exception as error:
-        print(json.dumps({'status': 'stopped', 'stage': stage, 'exception_class': type(error).__name__}))
+        report = {'status': 'stopped', 'stage': stage, 'exception_class': type(error).__name__}
+        if type(error) is ValueError and re.fullmatch(r'[a-z_]{1,64}', str(error)):
+            report['error_code'] = str(error)
+        print(json.dumps(report))
         return 1
 
 
