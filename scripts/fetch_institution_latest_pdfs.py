@@ -1669,7 +1669,16 @@ def matches_dependency_hold(versions: dict, filename: str, item: dict, candidate
     current = list(item.get('pdf_candidates', [])) if candidates is None else list(candidates)
     if held['feed_pdf_candidates'] is not None and candidates is None:
         return bool(current) and current == held['feed_pdf_candidates']
-    return bool(current) and set(current) == {held['pdf_url']}
+    if current and set(current) == {held['pdf_url']}: return True
+    # The producer's legacy IMF working-paper metadata has two deterministic
+    # candidates for one publication. Only its unchanged preferred URL and
+    # exact same-stem fallback may use the older single-URL archive proof.
+    match = re.fullmatch(r'https://www\.imf\.org/-/media/files/publications/wp/(20[0-9]{2})/english/wpiea\1([0-9]{3,4})-source-pdf\.pdf', held['pdf_url'])
+    if held['feed_pdf_candidates'] is None and match:
+        expected = derive_imf_pdf_candidates({'imfseries': 'Working Papers',
+                    'seriesvolumeno': match[1]+'/'+str(int(match[2]))})
+        return current == expected and current[0] == held['pdf_url']
+    return False
 
 # ------------------------------------------------------------------
 # Main

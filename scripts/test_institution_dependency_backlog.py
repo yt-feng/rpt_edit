@@ -40,7 +40,8 @@ class BacklogTests(unittest.TestCase):
         self.root_key = self.create_root(self.inputs)
         self.cache = OriginalCache(self.client, 'private-test')
         self.backlog = b.Backlog(self.client, 'private-test')
-        allowed = patch.object(b, 'ALLOWED', frozenset({failure_hash(ERROR)})); allowed.start(); self.addCleanup(allowed.stop)
+        self.allowed_patch = patch.object(b, 'ALLOWED', frozenset({b.failure_message_hash(ERROR)}))
+        self.allowed_patch.start(); self.addCleanup(self.allowed_patch.stop)
 
     def sleep(self, seconds): self.now += seconds
     def create_root(self, sources):
@@ -262,6 +263,51 @@ class BacklogTests(unittest.TestCase):
         with patch.object(b, 'dependency', side_effect=lambda ledger, *_: ledger.provider.poll('task')):
             with self.assertRaisesRegex(m.LedgerError, 'provider access'):
                 b.check_holds(self.ledger, [self.root_key])
+
+    def test_observed_provider_error_uses_reviewed_six_field_identity_not_legacy_proof(self):
+        error = {'err_msg': 'parsing failed, please try again later'}
+        observed = '0401d529faef13a557a665756d64dc03c646206ce7e74b41854493ec66695f4d'
+        self.assertEqual(b.failure_message_hash(error), observed)
+        self.assertNotEqual(failure_hash(error), observed)
+        original = self.provider.poll
+        def real_shape(*args):
+            rows = original(*args)
+            return [dict(data_id=row['data_id'], state='failed', **error) if row['state'] == 'failed' else row for row in rows]
+        self.allowed_patch.stop()  # Exercise the actual reviewed production allowlist.
+        self.assertIn(observed, b.ALLOWED)
+        with patch.object(self.provider, 'poll', side_effect=real_shape):
+            result = b.seed(self.ledger, [self.root_key])
+        self.assertEqual((result['held_roots'], result['deferred_sources'], result['failed_originals']), (1, 3, 2))
+
+    def test_seed_mixed_known_and_unreviewed_or_pending_roots_never_writes_partial_hold(self):
+        path = self.folder/'second.pdf'; path.write_bytes(b'%PDF-second')
+        key = self.create_root([(path, path.name)])
+        for state in ('failed', 'pending'):
+            with self.subTest(state=state):
+                self.provider.plans[1] = [state]
+                def unreviewed(batch_id, items):
+                    if batch_id == '2' and state == 'failed':
+                        return [dict(data_id=items[0]['id'], state='failed', err_msg='unreviewed new error')]
+                self.provider.on_poll = unreviewed
+                before = copy.deepcopy(self.client.objects)
+                loader = Mock(side_effect=AssertionError('No provenance access'))
+                with self.assertRaisesRegex(m.LedgerError, 'unreviewed or pending'):
+                    b.seed(self.ledger, [self.root_key, key], version_loader=loader)
+                loader.assert_not_called(); self.assertEqual(self.client.objects, before)
+        self.provider.on_poll = None; self.provider.plans[1] = ['done']
+        self.provider.polls.clear()
+        result = b.seed(self.ledger, [self.root_key, key])
+        self.assertEqual((result['original_members'], result['held_roots'], result['deferred_sources']), (4,1,3))
+        self.assertEqual(len(self.provider.polls), 2)  # One full read per root.
+        self.assertEqual(set(self.backlog.entries()), {self.root_key})
+
+    def test_zero_recognized_seed_rejects_before_provenance_or_any_hold_write(self):
+        before = copy.deepcopy(self.client.objects)
+        loader = Mock(side_effect=AssertionError('No provenance write or fetch'))
+        self.provider.plans[0] = ['done'] * 3
+        with self.assertRaisesRegex(m.LedgerError, 'no reviewed terminal'):
+            b.seed(self.ledger, [self.root_key], version_loader=loader)
+        loader.assert_not_called(); self.assertEqual(self.client.objects, before)
 
 
 if __name__ == '__main__': unittest.main()

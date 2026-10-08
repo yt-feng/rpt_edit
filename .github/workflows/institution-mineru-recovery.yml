@@ -11,6 +11,9 @@ on:
       - scripts/test_institution_backlog_pipeline.py
       - scripts/institution_hold_provenance.py
       - scripts/test_institution_hold_provenance.py
+      - scripts/inspect_durable_mineru.py
+      - scripts/inspect_institution_feed_holds.py
+      - scripts/test_inspect_institution_feed_holds.py
       - scripts/run_pdf_to_xhs_in_batches.py
       - .github/workflows/institution-latest-pdf-to-wechat.yml
       - scripts/fetch_institution_latest_pdfs.py
@@ -24,7 +27,7 @@ on:
     inputs:
       operation:
         type: choice
-        options: [verify, recover, seed-holds, check-holds]
+        options: [verify, recover, seed-holds, check-holds, check-feed-holds]
         default: verify
         required: true
         description: Verify complete original PDF bytes; recover retries only explicitly reviewed terminal failures
@@ -32,6 +35,10 @@ on:
         type: string
         required: true
         description: Exact accepted batch keys, original institutional producer run IDs, and reviewed failure hashes
+      expected_source_name_sha256:
+        type: string
+        required: false
+        description: Required for check-feed-holds; exact held source filename SHA256
 permissions:
   contents: read
   actions: read
@@ -53,6 +60,8 @@ jobs:
       - run: python3 -B scripts/test_institution_dependency_backlog.py
       - run: python3 -B scripts/test_institution_backlog_pipeline.py
       - run: python3 -B scripts/test_institution_hold_provenance.py
+      - run: python3 -B scripts/test_inspect_durable_mineru.py
+      - run: python3 -B scripts/test_inspect_institution_feed_holds.py
       - run: python3 -B scripts/test_fetch_institution_latest_pdfs.py
       - run: python3 -B scripts/test_mineru_terminal_recovery.py
       - run: python3 -B scripts/test_mineru_completed_child_reuse.py
@@ -74,6 +83,7 @@ jobs:
           python-version: '3.11'
       - run: python3 -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF 'boto3>=1.37.32,<2' 'urllib3>=2.2,<3' certifi
       - name: Prove and freeze every original source before bounded terminal recovery
+        if: inputs.operation != 'check-feed-holds'
         env:
           GH_TOKEN: ${{ github.token }}
           RECOVERY_OPERATION: ${{ inputs.operation }}
@@ -87,6 +97,18 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
         run: python3 -B scripts/recover_institution_mineru.py
+      - name: Verify held source selection from one current institution feed response
+        if: inputs.operation == 'check-feed-holds'
+        timeout-minutes: 2
+        env:
+          EXPECTED_SOURCE_NAME_SHA256: ${{ inputs.expected_source_name_sha256 }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python3 -B scripts/institution_dependency_backlog.py export --path "$RUNNER_TEMP/institution-holds.json"
+          python3 -B scripts/inspect_institution_feed_holds.py --holds "$RUNNER_TEMP/institution-holds.json" --archive institution_feeds/institution_pdf_archive.jsonl --expected-source-name-sha256 "$EXPECTED_SOURCE_NAME_SHA256" --output "$RUNNER_TEMP/institution-recovery-summary.json"
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -11,7 +11,7 @@ from unittest.mock import patch
 
 import institution_dependency_backlog as backlog
 import mineru_task_ledger as m
-from mineru_terminal_recovery import failure_hash
+from inspect_durable_mineru import failure_message_hash
 import pdf_to_xhs_batch as primary
 import run_pdf_to_xhs_in_batches as wrapper
 from test_mineru_result_cache import MemoryR2, result_zip, S3Error
@@ -87,7 +87,7 @@ class BacklogPipelineTests(unittest.TestCase):
                 '--chart-source-only', '--provider-outcome-path', str(self.outcome)]
         with (patch.object(sys, 'argv', argv),
               patch.dict(os.environ, {'MINER_U': 'test-token', 'INSTITUTION_DEPENDENCY_BACKLOG': '1'}),
-              patch.object(backlog, 'ALLOWED', frozenset({failure_hash(ERROR)})),
+              patch.object(backlog, 'ALLOWED', frozenset({failure_message_hash(ERROR)})),
               patch.object(primary, 'from_environment', return_value=self.ledger),
               patch.object(primary, 'download_once', return_value=result_zip()) as download,
               patch.object(primary, 'download_and_unzip', side_effect=AssertionError('Use source-bound result cache')),

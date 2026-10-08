@@ -301,6 +301,39 @@ class DependencyHoldFetchTests(unittest.TestCase):
             versions = fetcher.dependency_hold_versions(path/'archive.jsonl', [self.hold(original)])
             self.assertFalse(fetcher.matches_dependency_hold(versions, self.held_name(original), dict(original, pdf_candidates=[])))
 
+    def test_legacy_imf_working_paper_uses_only_exact_producer_candidate_pair(self):
+        name = 'IMF_Does-Foreign-Borrowing-Lift-Growth_8aaa5d8a.pdf'
+        primary = 'https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026216-source-pdf.pdf'
+        page = 'https://www.imf.org/en/publications/wp/issues/2026/10/03/does-foreign-borrowing-lift-growth-580148'
+        date = '2026-10-02T04:00:00+00:00'
+        candidates = fetcher.derive_imf_pdf_candidates({'imfseries': 'Working Papers', 'seriesvolumeno': '2026/216'})
+        source = {'source': name, 'sha256': 'fc791b9b2374eadd7820527ea99e160a5d7802ac17fc5e1df658f2b6c876975b', 'size': 17202708}
+        row = dict(local_filename=name, source_page_url=page, published=date, pdf_url=primary, bytes=source['size'])
+        item = dict(source_url=page, date=date, pdf_candidates=candidates)
+        with tempfile.TemporaryDirectory() as directory:
+            archive = Path(directory) / 'archive.jsonl'
+            versions = fetcher.dependency_hold_versions(archive, [source], [row])
+            self.assertEqual(candidates, [primary, primary.replace('-source-pdf', '')])
+            self.assertTrue(fetcher.matches_dependency_hold(versions, name, item))
+            for changes in ({'pdf_candidates': list(reversed(candidates))},
+                            {'pdf_candidates': candidates + ['https://www.imf.org/other.pdf']},
+                            {'pdf_candidates': [primary, 'https://www.imf.org/other.pdf']},
+                            {'pdf_candidates': [value.replace('2026216', '2026217') for value in candidates]},
+                            {'date': '2026-10-03T04:00:00+00:00'},
+                            {'source_url': page + '-revised'}):
+                with self.subTest(changes=changes):
+                    self.assertFalse(fetcher.matches_dependency_hold(versions, name, dict(item, **changes)))
+            # A legacy archive using the alternate URL cannot prove that the
+            # currently preferred PDF is unchanged.
+            alternate = fetcher.dependency_hold_versions(archive, [source], [dict(row, pdf_url=candidates[1])])
+            self.assertFalse(fetcher.matches_dependency_hold(alternate, name, item))
+            wrong_size = fetcher.dependency_hold_versions(archive, [source], [dict(row, bytes=1)])
+            self.assertFalse(fetcher.matches_dependency_hold(wrong_size, name, item))
+            # Modern records retain exact ordered feed-candidate matching.
+            modern = fetcher.dependency_hold_versions(archive, [source], [dict(row, feed_pdf_candidates=candidates)])
+            self.assertTrue(fetcher.matches_dependency_hold(modern, name, item))
+            self.assertFalse(fetcher.matches_dependency_hold(modern, name, dict(item, pdf_candidates=[primary])))
+
     def test_private_manifest_supplement_enables_missing_archive_but_conflicts_fail_open(self):
         item = self.item('held')
         with tempfile.TemporaryDirectory() as directory:

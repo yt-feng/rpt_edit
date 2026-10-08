@@ -11,7 +11,7 @@ from pathlib import Path
 import re
 from mineru_task_ledger import LedgerError, R2Store, encoded, digest, exact_json, schema_v1
 from mineru_completed_child_reuse import _controller, read_completed_batch
-from mineru_terminal_recovery import failure_hash
+from inspect_durable_mineru import failure_message_hash
 from mineru_result_cache import missing
 from institution_original_cache import OriginalCache, MAX_TOTAL, validate_binding
 
@@ -222,7 +222,7 @@ def dependency(ledger, root, cache):
 def known_hold(ledger, root, cache, observed=None):
     rows, counts = observed if observed is not None else read_completed_batch(ledger, root)
     if counts['pending'] or not counts['failed']: return None
-    hashes = {failure_hash(row) for row in rows.values() if str(row['state']).lower() in {'failed', 'fail', 'error'}}
+    hashes = {failure_message_hash(row) for row in rows.values() if str(row['state']).lower() in {'failed', 'fail', 'error'}}
     if not hashes or not hashes <= ALLOWED: return None
     checksum, _ = dependency(ledger, root, cache)
     return {'schema': 1, 'scope': 'institution', 'root_key': root['key'], 'files': root['files'],
@@ -389,10 +389,14 @@ def seed(ledger, keys, version_loader=None):
     roots = [ledger._read_batch(key)[0] for key in keys]
     plans = []
     for root in roots:
-        row = known_hold(ledger, root, cache)
-        if row is not None: plans.append(row)
+        observed = read_completed_batch(ledger, root)
+        if observed[1]['all_succeeded']: continue
+        row = known_hold(ledger, root, cache, observed)
+        require(row is not None, 'Institution seed found unreviewed or pending dependency')
+        plans.append(row)
     # Verify all dependencies before recording any hold. No original PDF fetch,
     # provider submission, upload, generation or publication occurs here.
+    require(bool(plans), 'Institution seed found no reviewed terminal dependencies')
     if version_loader is not None:
         bindings = [item for root in roots for item in root['files']]
         versions, receipts = version_loader(bindings)
