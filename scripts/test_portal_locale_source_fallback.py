@@ -9,7 +9,7 @@ import unittest
 from unittest import mock
 
 import build_portal_locales as b
-from offline_translation import OfflineTranslationError, OfflineTranslationValidationError
+from offline_translation import OfflineTranslationError, OfflineTranslationValidationError, TranslationBudgetExceeded
 
 
 COPY = {'ko': '검증된 보고서를 읽으세요', 'ja': '検証済みレポートを読む', 'ar': 'اقرأ التقرير الموثوق'}
@@ -99,6 +99,47 @@ class SourceFallbackTests(unittest.TestCase):
             with self.assertRaises(b.TranslationStopped):
                 self.run_translation(valid_translation, offline_time_budget_seconds=1)
         self.assertNotIn('_source_fallbacks', self.cache)
+
+    def test_inner_model_deadline_preserves_completed_rows_and_leaves_pending_units_retryable(self):
+        class Translator:
+            deadline = None
+            calls = 0
+            def set_deadline(self, deadline): self.deadline = deadline
+            def translate(self, source, locale):
+                self.calls += 1
+                # Simulate a long chunk reaching the model request's own deadline,
+                # before control returns to the caller's between-unit check.
+                if self.calls == 2 and self.deadline is not None:
+                    raise TranslationBudgetExceeded('request exhausted remaining run budget')
+                return valid_translation(source, locale)
+        translator = Translator()
+        with mock.patch('offline_translation.OfflineTranslator', return_value=translator), \
+             mock.patch.object(b.time, 'monotonic', return_value=100), \
+             mock.patch.object(b, 'deepseek_translate_batch', side_effect=AssertionError('Paid fallback')):
+            b.translate_missing_units(self.units, self.cache, cache_path=self.cache_path,
+                model='hymt-offline-v1', base_url='https://example.invalid', workers=1,
+                timeout=1, attempts=1, provider='hymt', allow_source_fallback=True, offline_time_budget_seconds=600)
+        self.assertEqual(translator.deadline, 700)
+        self.assertEqual(translator.calls, 2)
+        self.assertEqual(sum(len(rows) for rows in self.saved()['locales'].values()), 1)
+        self.assertEqual(sum(len(rows) for rows in self.cache['_source_fallbacks'].values()), len(self.units)*len(b.LOCALES)-1)
+        self.assertNotIn('_source_fallbacks', self.saved())
+        calls = self.run_translation(valid_translation, allow_source_fallback=True)
+        self.assertEqual(len(calls), len(self.units)*len(b.LOCALES)-1)
+
+    def test_inner_strict_batch_deadline_checkpoints_without_source_overlay(self):
+        class Translator:
+            def set_deadline(self, deadline): self.deadline = deadline
+            def translate_many(self, *_args): raise TranslationBudgetExceeded('bounded batch expired')
+        diagnostics = Path(self.temporary.name)/'strict-budget.json'
+        with mock.patch('offline_translation.OfflineTranslator', return_value=Translator()):
+            with self.assertRaises(b.TranslationStopped):
+                b.translate_missing_units(self.units, self.cache, cache_path=self.cache_path,
+                    model='hymt-offline-v1', base_url='https://example.invalid', workers=1,
+                    timeout=1, attempts=1, provider='hymt', diagnostics_out=diagnostics)
+        self.assertEqual(sum(len(rows) for rows in self.saved()['locales'].values()), 0)
+        self.assertNotIn('_source_fallbacks', self.cache)
+        self.assertEqual(json.loads(diagnostics.read_text())['stop_category'], 'budget')
 
     def test_caller_rejection_discards_only_its_real_hymt_memo(self):
         from hymt_offline_translation import HyMTOfflineTranslator
