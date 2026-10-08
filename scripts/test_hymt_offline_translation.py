@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import os
+import json
 from pathlib import Path
 import tempfile
 import time
@@ -64,6 +65,51 @@ class HyMTTests(unittest.TestCase):
         translator = self.retrying_translator(respond)
         self.assertEqual(translator.translate(source, 'hi', 'en'), 'मार्जिन 2.5 percentage points बढ़ा।')
         self.assertEqual([row[3] for row in self.engine.calls], [0, 1, 2])
+
+    def test_terminal_placeholder_failure_reports_only_bounded_counts_and_hashes(self):
+        source = '私有源文第三季度增长三成。'
+        def respond(value, attempt):
+            if attempt < 2: return 'Private rejected response with changed quantities.'
+            return 'Private rejected response __HYMTPH_0000__ __HYMTPH_0000__.'
+        translator = self.retrying_translator(respond)
+        with self.assertRaises(h.OfflineTranslationValidationError):
+            translator.translate(source, 'en', 'zh')
+        self.assertEqual(len(self.engine.calls), 3)
+        self.assertEqual(translator.validation_failure_count, 1)
+        self.assertEqual(len(translator.failure_diagnostics), 1)
+        row = translator.failure_diagnostics[0]
+        self.assertEqual(row['source_sha256'], h.hashlib.sha256(source.encode()).hexdigest())
+        self.assertEqual(row['quality_retry'], 2)
+        self.assertEqual(row['placeholders']['expected'], 2)
+        self.assertEqual(row['placeholders']['canonical'],
+                         {'found': 2, 'missing': 1, 'extra': 1, 'duplicate_expected': 1})
+        self.assertEqual(len(row['placeholders']['missing_token_sha256']), 1)
+        rendered = json.dumps(row, ensure_ascii=False)
+        for private in (source, 'Private rejected response', '__HYMTPH_0000__', '__HYMTPH_0001__'):
+            self.assertNotIn(private, rendered)
+        self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
+        for number in range(21):
+            with self.assertRaises(h.OfflineTranslationValidationError):
+                translator.translate(source + str(number), 'en', 'zh')
+        self.assertEqual(translator.validation_failure_count, 22)
+        self.assertEqual(len(translator.failure_diagnostics), 20)
+        self.assertEqual(len(self.engine.calls), 66)
+
+    def test_placeholder_diagnostics_describe_format_damage_without_repairing_it(self):
+        original = '__HYMTPH_0000__ and __HYMTPH_0001__'
+        raw = r'__ HYMTPH_0000 __ and \_\_HYMTPH\_0001\_\_'
+        result = h.placeholder_diagnostics(original, raw)
+        self.assertEqual(result['canonical']['missing'], 2)
+        self.assertEqual(result['no_whitespace']['missing'], 1)
+        self.assertEqual(result['markdown_unescaped'],
+                         {'found': 2, 'missing': 0, 'extra': 0, 'duplicate_expected': 0})
+        with self.assertRaises(h.OfflineTranslationValidationError):
+            h.validate_result(original, raw, 'zh', 'en')
+        self.assertEqual(h.placeholder_diagnostics(original, None),
+                         {'expected': 2, 'response_available': False})
+        many = h.placeholder_diagnostics(' '.join(f'__KC_PH_{n:04d}__' for n in range(30)), '')
+        self.assertEqual(len(many['missing_token_sha256']), 20)
+        self.assertTrue(many['missing_tokens_truncated'])
 
     def test_english_final_retry_materializes_complete_source_facts_without_han(self):
         cases = [

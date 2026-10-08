@@ -21,6 +21,7 @@ import subprocess
 import tempfile
 import threading
 import time
+import unicodedata
 from typing import Callable, Sequence
 
 from compare_hymt_translation import LANGUAGES, SCRIPT_PATTERNS, ModelHTTPError, request_json, require_actions, verify_model, file_sha256
@@ -272,6 +273,28 @@ def _mask_quantity_facts(text: str, start: int, *, target: str | None = None) ->
     return pattern.sub(reserve, text), replacements
 
 
+def placeholder_diagnostics(model_input: str, response: str | None) -> dict:
+    """Content-free counts distinguish missing tokens from spelling damage."""
+    expected = Counter(_PLACEHOLDERS.findall(model_input))
+    def counts(value):
+        actual = Counter(_PLACEHOLDERS.findall(value))
+        missing, extra = expected - actual, actual - expected
+        return {'found': sum(actual.values()), 'missing': sum(missing.values()),
+                'extra': sum(extra.values()),
+                'duplicate_expected': sum(max(actual[token] - count, 0) for token, count in expected.items())}
+    result = {'expected': sum(expected.values()), 'response_available': isinstance(response, str)}
+    if not isinstance(response, str):
+        return result
+    actual = Counter(_PLACEHOLDERS.findall(response)); missing = expected - actual
+    compact = re.sub(r'\s+', '', response)
+    nfkc = re.sub(r'\s+', '', unicodedata.normalize('NFKC', response))
+    unescaped = nfkc.replace('\\_', '_')
+    return {**result, 'canonical': counts(response), 'no_whitespace': counts(compact),
+            'nfkc_no_whitespace': counts(nfkc), 'markdown_unescaped': counts(unescaped),
+            'missing_token_sha256': [hashlib.sha256(token.encode()).hexdigest() for token in list(missing)[:20]],
+            'maximum_reported_tokens': 20, 'missing_tokens_truncated': len(missing) > 20}
+
+
 def _restore_terms(value: str, terms: dict[str, str]) -> str:
     for token, term in terms.items():
         value = value.replace(token, term)
@@ -460,6 +483,8 @@ class HyMTOfflineTranslator:
         self.deadline = None
         self.model_id = MODEL_ID
         self.stats = {'cache_hits': 0, 'translated_fragments': 0, 'batch_requests': 0}
+        self.failure_diagnostics: list[dict] = []
+        self.validation_failure_count = 0
 
     def set_deadline(self, deadline: float) -> None:
         self.deadline = deadline
@@ -527,6 +552,7 @@ class HyMTOfflineTranslator:
                     if attempt == 2 and isinstance(engine, _HyMTEngine):
                         model_input, quantity_retry_replacements = _mask_quantity_facts(
                             masked, len(replacements) + len(terms), target=target)
+                    value = None
                     try:
                         with _LOCK:
                             if isinstance(engine, _HyMTEngine):
@@ -559,6 +585,17 @@ class HyMTOfflineTranslator:
                         break
                     except OfflineTranslationValidationError as error:
                         if attempt + 1 >= attempt_count:
+                            self.validation_failure_count += 1
+                            if len(self.failure_diagnostics) < 20:
+                                self.failure_diagnostics.append({
+                                    'source_sha256': hashlib.sha256(core.encode()).hexdigest(),
+                                    'source_characters': len(core), 'target_language': target,
+                                    'quality_retry': attempt,
+                                    'model_input_sha256': hashlib.sha256(model_input.encode()).hexdigest(),
+                                    'response_sha256': hashlib.sha256(value.encode(errors='surrogatepass')).hexdigest()
+                                        if isinstance(value, str) else None,
+                                    'response_characters': len(value) if isinstance(value, str) else None,
+                                    'placeholders': placeholder_diagnostics(model_input, value)})
                             raise
             except OfflineTranslationError:
                 raise

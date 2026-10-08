@@ -189,6 +189,35 @@ class EnglishEditorialTests(unittest.TestCase):
             with self.assertRaises(ExpansionError): english_main()
             translator.assert_not_called()
 
+    def test_main_emits_safe_terminal_diagnostics_without_publishing_failed_body(self):
+        from hymt_offline_translation import OfflineTranslationValidationError
+        corpus = self.root/'source.json'; corpus.write_text(json.dumps(self.source))
+        fake = SyntheticTranslator()
+        fake.failure_diagnostics = [{'source_sha256': digest(COMMENT.encode()),
+                                     'placeholders': {'expected': 1, 'canonical': {'missing': 1}}}]
+        fake.validation_failure_count = 1
+        original = fake.translate
+        def translate(value, **kwargs):
+            if value == TITLE: return original(value, **kwargs)
+            raise OfflineTranslationValidationError('offline-placeholder-validation')
+        fake.translate = translate
+        environment = {'KC_PUBLIC_REPOSITORY': 'true', 'GITHUB_REF': 'refs/heads/main'}
+        with mock.patch.dict('os.environ', environment, clear=True), \
+             mock.patch('sys.argv', ['english', '--corpus', str(corpus), '--output', str(self.root/'out'),
+                                     '--checkpoint', str(self.root/'memo.json')]), \
+             mock.patch('portal_english_commentary.require_actions'), \
+             mock.patch('portal_english_commentary.OfflineTranslator', return_value=fake) as factory, \
+             mock.patch('builtins.print') as printed:
+            self.assertEqual(english_main(), 1)
+        factory.assert_called_once_with(validation_attempts=3)
+        summary = json.loads(printed.call_args.args[0])
+        self.assertEqual(summary['terminal_translation_diagnostics'], fake.failure_diagnostics)
+        self.assertEqual(summary['terminal_validation_failure_count'], 1)
+        self.assertEqual(summary['failure_code_counts'], {'offline-placeholder-validation': 1})
+        self.assertEqual(summary['completed_page_count'], 0)
+        self.assertNotIn(COMMENT, json.dumps(summary, ensure_ascii=False))
+        self.assertFalse((self.root/'out'/'private').exists())
+
     def test_frozen_source_receipt_is_bound_to_original_admission_and_has_no_ready_or_active_pointer(self):
         producer = {'run_id': '123', 'attempt': '1', 'sha': 'b'*40, 'repository': 'example/repo', 'workflow': WORKFLOW}
         result = freeze_editorial(self.store, [self.doc], DAY, producer, 'c'*64)
