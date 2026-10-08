@@ -55,6 +55,46 @@ class InstitutionRecoveryTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'original_source_bytes_changed'): self.prepare()
         self.assertEqual(len(self.provider.posts), 1); self.assertEqual(self.r2.objects, self.originals)
 
+    def test_same_publication_filename_selects_exact_original_chapter_bytes(self):
+        name = self.inputs[0][1]; original_url = next(iter(self.urls[name]))
+        self.urls[name] = {'https://www.imf.org/0-earlier-chapter.pdf', original_url,
+                           'https://www.imf.org/1-different-chapter.pdf', 'https://www.imf.org/z-latest-chapter.pdf'}
+        original = self.payloads.pop(original_url)
+        self.payloads[original_url] = original
+        calls = []
+        def fetch(url, size):
+            calls.append(url)
+            if url.endswith('0-earlier-chapter.pdf'): raise ValueError('source_length')
+            if url.endswith('1-different-chapter.pdf'): return b'%PDF-modified-0'
+            if url.endswith('z-latest-chapter.pdf'): return b'%PDF-new-chapter'
+            return self.payloads[url]
+        proof = self.prepare(fetch)
+        self.assertTrue(proof['verified'])
+        binding = self.ledger.bind(*self.inputs[0])
+        self.assertEqual((self.directory/binding['id']).read_bytes(), original)
+        self.assertIn('https://www.imf.org/0-earlier-chapter.pdf', calls)
+        self.assertIn('https://www.imf.org/1-different-chapter.pdf', calls)
+        self.assertNotIn('https://www.imf.org/z-latest-chapter.pdf', calls)
+        self.assertEqual(self.r2.objects, self.originals); self.assertEqual(len(self.provider.posts), 1)
+
+    def test_all_candidate_byte_mismatches_and_too_many_urls_do_not_authorize_retry(self):
+        name = self.inputs[0][1]
+        self.urls[name] = {'https://www.imf.org/ch1.pdf', 'https://www.imf.org/ch2.pdf'}
+        with self.assertRaisesRegex(ValueError, 'original_source_bytes_changed'):
+            self.prepare(lambda *_: b'%PDF-unrelated')
+        self.assertEqual(self.r2.objects, self.originals); self.assertEqual(len(self.provider.posts), 1)
+        self.directory.rmdir()
+        self.urls[name] = {'https://www.imf.org/ch'+str(i)+'.pdf' for i in range(r.MAX_SOURCE_URLS+1)}
+        result = self.prepare(lambda *_: self.fail('Unbounded candidates must stop before downloads'))
+        self.assertFalse(result['verified']); self.assertEqual(result['missing_url_count'], 1)
+
+    def test_alternative_candidate_does_not_hide_transport_or_status_failure(self):
+        name = self.inputs[0][1]; self.urls[name].add('https://www.imf.org/other.pdf')
+        calls = []
+        def fetch(*args): calls.append(args); raise OSError('transport stopped')
+        with self.assertRaises(OSError): self.prepare(fetch)
+        self.assertEqual(len(calls), 1); self.assertEqual(self.r2.objects, self.originals)
+
     def test_recovery_retries_only_failed_members_and_preserves_original_claims(self):
         proof = self.prepare(); verified = []
         summary = r.recover(self.ledger, self.directory, run_id='456', expected_proof=proof['proof_sha256'],
