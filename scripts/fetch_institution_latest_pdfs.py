@@ -1623,6 +1623,54 @@ def append_archive(path: Path, record: dict[str, Any]) -> None:
         f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
 
+def dependency_hold_versions(archive: Path, sources: list[dict], supplemental: list[dict] | None = None) -> dict[str, dict]:
+    """Conservatively link held bytes to one observed publication version.
+
+    Legacy archive rows lack SHA256. They are eligible only when every historical
+    row agrees on URL/page/date/size and a current direct PDF candidate agrees.
+    Missing or conflicting provenance permits normal fetching, never completion.
+    """
+    if not sources: return {}
+    if archive.is_file() and archive.stat().st_size > 16 * 1024 * 1024: return {}
+    by_name = {}
+    for source in sources: by_name.setdefault(source['source'], []).append(source)
+    records = {name: [] for name in by_name}
+    try:
+        all_rows = [json.loads(line) for line in archive.read_text().splitlines()] if archive.is_file() else []
+        all_rows.extend(supplemental or [])
+        for row in all_rows:
+            if row.get('local_filename') in records: records[row['local_filename']].append(row)
+    except (ValueError, OSError): return {}
+    result = {}
+    for name, rows in records.items():
+        bindings = {(entry['sha256'], entry['size']) for entry in by_name[name]}
+        if len(bindings) != 1 or not rows: continue
+        checksum, size = next(iter(bindings)); versions = set(); valid = True
+        for row in rows:
+            values = tuple(row.get(field) for field in ('source_page_url', 'published', 'pdf_url'))
+            if (not all(isinstance(value, str) and value for value in values)
+                    or type(row.get('bytes')) is not int or row['bytes'] != size
+                    or (row.get('sha256') is not None and row['sha256'] != checksum)):
+                valid = False; break
+            versions.add(values)
+        if not valid or len(versions) != 1: continue
+        page, published, url = next(iter(versions))
+        feed_values = {json.dumps(row.get('feed_pdf_candidates'), sort_keys=True) for row in rows}
+        feed = rows[0].get('feed_pdf_candidates') if len(feed_values) == 1 else None
+        if not isinstance(feed, list) or not all(isinstance(url, str) for url in feed): feed = None
+        result[name] = dict(source_page_url=page, published=published, pdf_url=url, feed_pdf_candidates=feed)
+    return result
+
+
+def matches_dependency_hold(versions: dict, filename: str, item: dict, candidates=None) -> bool:
+    held = versions.get(filename)
+    if not held or item.get('source_url') != held['source_page_url'] or item.get('date') != held['published']:
+        return False
+    current = list(item.get('pdf_candidates', [])) if candidates is None else list(candidates)
+    if held['feed_pdf_candidates'] is not None and candidates is None:
+        return bool(current) and current == held['feed_pdf_candidates']
+    return bool(current) and set(current) == {held['pdf_url']}
+
 # ------------------------------------------------------------------
 # Main
 # ------------------------------------------------------------------
@@ -1642,14 +1690,38 @@ def main() -> int:
     parser.add_argument("--imf-rows", type=int, default=60, help="Coveo results to scan for IMF (newest first).")
     parser.add_argument("--ddg-df", default="", help="DuckDuckGo date filter for search sources: d/w/m/y or '' for none. The html endpoint returns nothing with a date filter, so default is none; recent reports still surface by relevance and seen-dedup avoids reprocessing.")
     parser.add_argument("--force-reprocess", default="false", help="Ignore seen-state dedup and redownload matching fresh PDFs.")
+    parser.add_argument('--dependency-holds', type=Path, help='Private exported original source names awaiting a dependency change')
     parser.add_argument("--max-total", type=int, default=0, help="Cap new PDFs across ALL institutions this run (0 = no cap). Keeps the daily WeChat output bounded; earlier institutions in the list get priority.")
     parser.add_argument("--request-timeout", type=int, default=60)
     parser.add_argument("--user-agent", default=DEFAULT_USER_AGENT)
     args = parser.parse_args()
+    held_sources = []
+    held_supplemental = []
+    if args.dependency_holds:
+        if args.dependency_holds.stat().st_size > 256 * 1024:
+            raise ValueError('Institution dependency export exceeds bound')
+        holds = json.loads(args.dependency_holds.read_text())
+        if (not isinstance(holds, dict) or set(holds) not in ({'schema', 'sources'}, {'schema', 'sources', 'versions'})
+                or type(holds['schema']) is not int or holds['schema'] != 1
+                or not isinstance(holds['sources'], list) or len(holds['sources']) > 1000):
+            raise ValueError('Institution dependency export invalid')
+        for source in holds['sources']:
+            if (not isinstance(source, dict) or set(source) != {'source', 'sha256', 'size'}
+                    or not isinstance(source['source'], str) or not source['source']
+                    or '\x00' in source['source'] or '\\' in source['source']
+                    or source['source'] != Path(source['source']).name or not source['source'].endswith('.pdf')
+                    or not isinstance(source['sha256'], str) or not re.fullmatch(r'[a-f0-9]{64}', source['sha256'])
+                    or type(source['size']) is not int or not 0 < source['size'] <= 64*1024*1024):
+                raise ValueError('Institution dependency export invalid')
+        held_sources = holds['sources']
+        held_supplemental = holds.get('versions', [])
+        if not isinstance(held_supplemental, list) or len(held_supplemental) > 16000 or not all(isinstance(row, dict) for row in held_supplemental):
+            raise ValueError('Institution dependency export invalid')
 
     output_dir = Path(args.output_dir).resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
     archive_path = Path(args.archive_path)
+    held_versions = dependency_hold_versions(archive_path, held_sources, held_supplemental)
     seen_path = Path(args.seen_state_path)
     max_bytes = int(args.max_pdf_mb * 1024 * 1024)
 
@@ -1762,6 +1834,11 @@ def main() -> int:
                 break
 
             dedup_key = f"{key}:{item['guid'] or item['source_url']}"
+            known_title = item['title'] or item['guid'] or item['source_url']
+            held_name = f"{cfg['token']}_{slug(known_title)}_{short_hash(dedup_key)}.pdf"
+            if matches_dependency_hold(held_versions, held_name, item):
+                skipped.append({'institution': key, 'reason': 'dependency_hold', 'source_url': item['source_url']})
+                continue
             if dedup_key in seen_items and not force_reprocess:
                 continue
 
@@ -1773,7 +1850,8 @@ def main() -> int:
                 continue
 
             eligible_count += 1
-            candidates = list(item["pdf_candidates"])
+            feed_pdf_candidates = list(item["pdf_candidates"])
+            candidates = list(feed_pdf_candidates)
             landing_attempted = False
             preview_attempted = False
             if not candidates and item.get("coveo_unique_id"):
@@ -1824,6 +1902,9 @@ def main() -> int:
 
             title = item["title"] or item["guid"] or item["source_url"]
             filename = f"{cfg['token']}_{slug(title)}_{short_hash(dedup_key)}.pdf"
+            if matches_dependency_hold(held_versions, filename, item, candidates):
+                skipped.append({'institution': key, 'reason': 'dependency_hold', 'source_url': item['source_url']})
+                continue
             dest = output_dir / filename
             used_url, status = download_pdf(session, candidates[:3], dest, args.request_timeout, max_bytes, impersonate=cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"), proxy=cfg.get("_proxy"))
             # A deterministic/direct candidate may have changed on the source site.
@@ -1916,6 +1997,8 @@ def main() -> int:
                 "pdf_url": used_url,
                 "local_filename": filename,
                 "bytes": dest.stat().st_size,
+                "sha256": hashlib.sha256(dest.read_bytes()).hexdigest(),
+                "feed_pdf_candidates": feed_pdf_candidates,
                 "force_reprocess": force_reprocess,
             }
             append_archive(archive_path, record)
@@ -1957,6 +2040,7 @@ def main() -> int:
         "since_days": args.since_days,
         "institutions": enabled,
         "downloaded_count": len(downloaded),
+        "dependency_held_count": sum(row.get('reason') == 'dependency_hold' for row in skipped),
         "skipped_count": len(skipped),
         "source_checks": source_checks,
         "force_reprocess": force_reprocess,

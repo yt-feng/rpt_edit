@@ -243,6 +243,15 @@ def main():
         ledger = Ledger(store, Provider(NoRedirectHTTP(requests.request), 'https://mineru.net'), 'institution',
                         'https://mineru.net', {'model': 'vlm', 'language': 'en', 'ocr': True}, credentials(os.environ))
         directory = Path(os.environ['RUNNER_TEMP'])/'institution-originals'
+        if os.environ.get('RECOVERY_OPERATION') == 'seed-holds':
+            from institution_dependency_backlog import seed
+            stage = 'dependency_hold_seed'
+            from institution_hold_provenance import get_original_versions
+            summary = seed(ledger, value['batches'],
+                version_loader=lambda bindings: get_original_versions(value['source_runs'], bindings))
+            Path(os.environ['RUNNER_TEMP'], 'institution-recovery-summary.json').write_bytes(encoded(summary))
+            print(json.dumps(summary, sort_keys=True))
+            return 0
         stage = 'source_verification'
         from institution_original_cache import OriginalCache
         originals = OriginalCache.single_attempt(store.client, store.bucket)
