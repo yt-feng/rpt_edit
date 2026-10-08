@@ -106,6 +106,68 @@ class EnglishPipelineTests(unittest.TestCase):
             self.assertNotIn(private, public)
         self.assertEqual([path.name for path in (self.root/'inspection').iterdir()], ['inspection.json'])
 
+    def test_missing_quantity_translation_has_source_mask_diagnostics_without_model_or_writes(self):
+        from inspect_portal_extended_continuation import inspect_english
+        quantity_text = '我的理解是增长5.3%，九成订单仍未交付。'
+        later_text = '尚未尝试的私有后续评论。'
+        self.admit(content=f'<section><strong>KC评论：</strong><p>{COMMENT}</p>'
+                           f'<p>{quantity_text}</p><p>{later_text}</p></section>')
+        prepared = prepare_queued(self.store, self.original)
+        _, _, source = batch_admission(self.store, self.original, prepared['job']['generation'])
+        directory = self.root/'quantity-candidate'; checkpoint = self.root/'quantity-checkpoint.json'
+        translator = SyntheticTranslator(); original = translator.translate
+        def translate(value, *args, **kwargs):
+            if value == quantity_text:
+                from hymt_offline_translation import validate_result
+                rejected = 'Growth is 5.4%; 90% of orders are undelivered.'
+                validate_result(value, rejected, 'zh', 'en')
+                return rejected
+            return original(value, *args, **kwargs)
+        translator.translate = translate
+        manifest = build(source, directory, checkpoint, translator)
+        self.assertEqual(manifest['failures'][0]['code'], 'offline-quantity-validation')
+        saved = remember_checkpoint(self.store, source['generation'], checkpoint)
+        candidate = persist_candidate(self.store, self.original, source, directory, CPU_PRODUCER)
+        before = copy.deepcopy(self.client.objects)
+        with mock.patch('hymt_offline_translation.HyMTOfflineTranslator._engine',
+                        side_effect=AssertionError('Inspection must never start a model')):
+            result = inspect_english(self.store, self.original, source['generation'], saved['sha256'],
+                                     candidate['candidate_id'], self.root/'quantity-inspection')
+        self.assertEqual(self.client.objects, before)
+        diagnostic = result['failed_documents'][0]
+        self.assertEqual(diagnostic['first_unvalidated_unit_index'], 2)
+        self.assertEqual([unit['cached'] for unit in diagnostic['units']], [True, True, False, False])
+        signals = diagnostic['units'][2]['quantity_signals']
+        self.assertEqual(signals['source_quantities']['total_rows'], 2)
+        fragment = signals['fragments'][0]
+        self.assertEqual(fragment['third_protected_quantities']['rows'][0]['values'], ['5.3'])
+        self.assertEqual(fragment['third_residual_quantities']['rows'][0]['values'], ['90'])
+        self.assertEqual((result['production_writes'], result['model_calls'], result['paid_provider_requests']), (0, 0, 0))
+        for private in (COMMENT, quantity_text, later_text, 'Growth is 5.4%', source['documents'][0]['id']):
+            self.assertNotIn(private, json.dumps(result, ensure_ascii=False))
+        self.assertEqual([path.name for path in (self.root/'quantity-inspection').iterdir()], ['inspection.json'])
+
+    def test_english_source_quantity_signals_match_retry_fragments_and_never_emit_source_facts(self):
+        from inspect_portal_extended_continuation import english_source_quantity_signals
+        source = r'私有标题 171bp后，九成订单，3亿元，符号\%。'
+        result = english_source_quantity_signals(source)
+        fragment = result['fragments'][0]
+        self.assertEqual(fragment['adapter_escaped_character_count'], 1)
+        self.assertEqual(fragment['third_protected_fact_count'], 2)
+        self.assertEqual(fragment['third_protected_han_fact_count'], 1)
+        self.assertEqual(fragment['third_residual_quantities']['rows'][0]['values'], ['90'])
+        self.assertNotIn('私有标题', json.dumps(result, ensure_ascii=False))
+        self.assertNotIn('3亿元', json.dumps(result, ensure_ascii=False))
+        self.assertNotIn('171bp', json.dumps(result, ensure_ascii=False))
+        self.assertEqual(english_source_quantity_signals('私' * 1801)['mask_status'], 'offline-context-limit')
+        many = english_source_quantity_signals(('Private sentence. ' * 110) * 25)
+        self.assertGreater(many['fragment_count'], 20)
+        self.assertEqual(len(many['fragments']), 20); self.assertTrue(many['fragments_truncated'])
+        crowded = english_source_quantity_signals(' '.join(['9' * 500] + [str(n) for n in range(1, 80)]))
+        signatures = crowded['source_quantities']
+        self.assertEqual(signatures['total_rows'], 80); self.assertEqual(len(signatures['rows']), 64)
+        self.assertEqual(len(signatures['rows'][0]['values'][0]), 128); self.assertTrue(signatures['truncated'])
+
     def test_english_inspection_rejects_unknown_error_kind_without_printing_it(self):
         from inspect_portal_extended_continuation import inspect_english
         source, checkpoint, candidate, manifest = self.failed_inspection_fixture()
