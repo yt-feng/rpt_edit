@@ -15,6 +15,7 @@ from mineru_task_ledger import digest, encoded, exact_json, validate_source
 
 PREFIX = '_workflow-cache/mineru-results/v1/dropbox'
 POLICY = 'complete-source-bound-mineru-result-v1'
+SUPPORTED_SCOPES = frozenset({'dropbox', 'institution'})
 MAX_RECEIPT = 64 * 1024
 HASH = re.compile(r'[a-f0-9]{64}')
 BATCH = re.compile(r'batches/[a-f0-9]{32}')
@@ -32,7 +33,9 @@ def reject(category):
 def identity(source_binding, lineage):
     if (not isinstance(source_binding, dict) or set(source_binding) !=
             {'source', 'sha256', 'size', 'scope', 'endpoint', 'options', 'id'}
-            or source_binding['scope'] != 'dropbox' or source_binding['endpoint'] != 'https://mineru.net'
+            or source_binding['scope'] not in SUPPORTED_SCOPES
+            or (source_binding['scope'] == 'institution' and not exact_json(source_binding['options'], OPTIONS))
+            or source_binding['endpoint'] != 'https://mineru.net'
             or not isinstance(source_binding['options'], dict)
             or set(source_binding['options']) != {'model', 'language', 'ocr'}
             or not all(isinstance(source_binding['options'][key], str) and source_binding['options'][key]

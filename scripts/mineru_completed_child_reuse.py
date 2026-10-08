@@ -11,7 +11,7 @@ from pathlib import Path
 
 from mineru_task_ledger import DONE, FAILED, LedgerError, R2Store, encoded, exact_json, schema_v1
 from mineru_terminal_recovery import AUTOMATIC_POLICY, POLICY, TerminalRecovery, task_identity
-from mineru_result_cache import identity
+from mineru_result_cache import OPTIONS, SUPPORTED_SCOPES, identity
 
 
 def _controller(ledger, root):
@@ -137,7 +137,8 @@ def read_completed_batch(ledger, root):
 
 def reuse_completed_children(ledger, sources, results, summary):
     """Return effective full-batch results while retaining original diagnostics."""
-    if not isinstance(ledger.store, R2Store) or ledger.scope != 'dropbox':
+    if (not isinstance(ledger.store, R2Store) or ledger.scope not in SUPPORTED_SCOPES
+            or (ledger.scope == 'institution' and not exact_json(ledger.options, OPTIONS))):
         return results, summary
     if summary.get('ready_for_generation') is True:
         # This reserved metadata is ours, never an assertion from provider JSON.
