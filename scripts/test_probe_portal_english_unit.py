@@ -113,9 +113,9 @@ class ProbeTests(unittest.TestCase):
 
     def test_input_form_scope_and_exact_decimal(self):
         forms = input_forms(PRIVATE)
-        self.assertEqual([row[0] for row in forms], ['production','grouped','scaled'])
-        self.assertIn('EUR 15000000000', forms[0][1])
-        self.assertIn('EUR 15,000,000,000', forms[1][1])
+        self.assertEqual([row[0] for row in forms], ['production','absolute','scaled'])
+        self.assertIn('EUR 15,000,000,000', forms[0][1])
+        self.assertIn('EUR 15000000000', forms[1][1])
         self.assertIn('EUR 15 billion', forms[2][1])
         for unsupported in ('没有金额。', '金额150亿欧元及100亿美元。', '金额150亿欧元，增长10%。'):
             with self.assertRaises(ExpansionError): input_forms(unsupported)
