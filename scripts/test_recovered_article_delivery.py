@@ -5,6 +5,7 @@ from contextlib import redirect_stdout
 import io
 import json
 from pathlib import Path
+import re
 import tempfile
 import unittest
 from unittest.mock import Mock, patch
@@ -229,6 +230,20 @@ class IntentTests(unittest.TestCase):
 
 
 class DeliveryWorkflowTests(unittest.TestCase):
+    def test_generation_timeout_leaves_budget_for_always_saved_checkpoint(self):
+        path = Path(__file__).resolve().parents[1] / '.github/workflows/recover-report-article-delivery.yml'
+        workflow = path.read_text()
+        job = workflow.split('\n  generate:\n', 1)[1].split('\n  deliver:\n', 1)[0]
+        job_timeout = int(re.search(r'^    timeout-minutes: (\d+)$', job, re.M)[1])
+        generate = job.split('- name: Generate only missing bound report articles\n', 1)[1].split('\n      - ', 1)[0]
+        step_timeout = int(re.search(r'^        timeout-minutes: (\d+)$', generate, re.M)[1])
+        self.assertEqual((job_timeout, step_timeout), (180, 120))
+        self.assertGreaterEqual(job_timeout - step_timeout, 60)
+        checkpoint = job.split('- name: Save generation progress even after interruption\n', 1)[1].split('\n      - ', 1)[0]
+        self.assertIn("always() && steps.prepare.outcome == 'success'", checkpoint)
+        self.assertIn('recovered_article_delivery.py save-generation', checkpoint)
+        self.assertLess(job.index('Generate only missing bound report articles'), job.index('Save generation progress'))
+
     def test_workflow_exposes_complete_retained_shards_and_is_draft_only(self):
         path = Path(__file__).resolve().parents[1] / '.github/workflows/recover-report-article-delivery.yml'
         text = path.read_text()

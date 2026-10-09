@@ -14,6 +14,7 @@ from pathlib import Path
 import re
 import shutil
 import sys
+import traceback
 
 import pdf_to_xhs_batch as producer
 from wechat_editorial_binding import FIELD, read_bound_article
@@ -445,7 +446,7 @@ def recover_articles(source_dir, source_kind, output_dir, expected_reports, date
             if isinstance(error, ArticleRecoveryError):
                 error.source_ordinal = ordinal
                 raise
-            raise ArticleRecoveryError("article_generation_failed", ordinal) from None
+            raise ArticleRecoveryError("article_generation_failed", ordinal) from error
     receipt = {key: metadata[key] for key in ("source_kind", "date_folder", "expected_reports", "source_run_id",
                "source_execution_sha", "source_handoff_run_id", "source_handoff_execution_sha",
                "source_receipt_sha256", "source_inventory_sha256")}
@@ -473,6 +474,8 @@ def main():
     parser.add_argument("--source-handoff-execution-sha")
     parser.add_argument("--model", default=producer.build_arg_parser().get_default("model"))
     parser.add_argument("--deepseek-base-url", default=producer.build_arg_parser().get_default("deepseek_base_url"))
+    parser.add_argument("--private-diagnostics", action="store_true",
+                        help="Write exception tracebacks to stderr; use only with private log storage")
     options = parser.parse_args()
     args = producer.build_arg_parser().parse_args([])
     args.model, args.deepseek_base_url = options.model, options.deepseek_base_url
@@ -483,6 +486,8 @@ def main():
             source_execution_sha=options.source_execution_sha, source_handoff_run_id=options.source_handoff_run_id,
             source_handoff_execution_sha=options.source_handoff_execution_sha)
     except Exception as error:
+        if options.private_diagnostics:
+            traceback.print_exc(file=sys.stderr)
         category = error.category if isinstance(error, ArticleRecoveryError) else "article_source_validation_failed"
         ordinal = getattr(error, "source_ordinal", None)
         suffix = f" source_ordinal={ordinal}" if type(ordinal) is int else ""

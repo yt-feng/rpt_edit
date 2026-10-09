@@ -234,6 +234,31 @@ class ArticleRecoveryTests(unittest.TestCase):
             self.recover(fixture)
         self.assertFalse((self.root / "articles" / articles.RECEIPT).exists())
 
+    def test_cli_generation_exception_details_require_private_diagnostics_opt_in(self):
+        fixture = self.mineru()
+        for private in (False, True):
+            with self.subTest(private=private):
+                self.calls.clear()
+                output = self.root / ("private-cli" if private else "public-cli")
+                command = ["recover", "--source-dir", str(fixture.output), "--source-kind", "mineru-recovery",
+                    "--output-dir", str(output), "--expected-reports", "7", "--date-folder", "261003"]
+                if private:
+                    command.append("--private-diagnostics")
+                with patch("sys.argv", command), self.paid(fail_at=1), \
+                        patch("sys.stderr", new_callable=io.StringIO) as errors, \
+                        patch("sys.stdout", new_callable=io.StringIO) as output_log:
+                    self.assertEqual(articles.main(), 2)
+                diagnostic = errors.getvalue()
+                self.assertIn("article_generation_failed source_ordinal=1", diagnostic)
+                self.assertNotIn("PRIVATE model response", output_log.getvalue())
+                if private:
+                    self.assertIn("RuntimeError: PRIVATE model response must stay out of CLI", diagnostic)
+                    self.assertIn("Traceback (most recent call last)", diagnostic)
+                else:
+                    self.assertNotIn("PRIVATE", diagnostic)
+                    self.assertNotIn("Traceback", diagnostic)
+                self.assertFalse((output / articles.RECEIPT).exists())
+
     def test_source_symlink_and_ocr_provenance_traversal_do_not_reach_generation(self):
         fixture = self.mineru()
         source = next(fixture.output.glob("report_*/source_mineru.md"))

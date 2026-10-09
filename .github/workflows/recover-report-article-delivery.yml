@@ -101,7 +101,7 @@ jobs:
   generate:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 180
     outputs:
       article_handoff_prefix: ${{ steps.complete.outputs.article_handoff_prefix }}
       article_count: ${{ steps.complete.outputs.article_count }}
@@ -125,6 +125,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: python scripts/recovered_article_delivery.py prepare --workspace "$DELIVERY_WORKSPACE"
       - name: Generate only missing bound report articles
+        timeout-minutes: 120
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_REPORT_NOTES_API_KEY }}
           MODEL: ${{ inputs.model }}
@@ -139,7 +140,7 @@ jobs:
             --expected-reports "$EXPECTED_ARTICLES" --date-folder "$DATE_FOLDER" \
             --source-run-id "$SOURCE_RUN_ID" --source-execution-sha "$ORIGINAL_SHA" \
             --source-handoff-run-id "$SOURCE_HANDOFF_RUN_ID" --source-handoff-execution-sha "$HANDOFF_SHA" \
-            --model "$MODEL" --deepseek-base-url "$BASE_URL" \
+            --model "$MODEL" --deepseek-base-url "$BASE_URL" --private-diagnostics \
             > "$DELIVERY_WORKSPACE/private-generation.log" 2>&1
       - name: Save generation progress even after interruption
         if: ${{ always() && steps.prepare.outcome == 'success' }}
