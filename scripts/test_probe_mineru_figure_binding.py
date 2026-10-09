@@ -149,11 +149,81 @@ class ProbeTests(unittest.TestCase):
         page.get_text.assert_not_called()
         page.get_image_info.return_value=[{'width':20,'height':20}]
         page.get_images.return_value=[(1,2,20,20)]
-        page.parent.xref_get_key.side_effect=[('int','999999'),('int','999999')]
+        page.parent.xref_get_key.side_effect=lambda _ref,key:('int','999999') if key in {'Width','Height'} else ('null','null')
         with patch('fitz.Pixmap',side_effect=AssertionError('Mask decode before bounds')):
             with self.assertRaisesRegex(probe.ProbeError,'displayed_image_dimensions_bound'):
                 probe._image_semantics(page)
         page.get_text.assert_not_called()
+
+    def test_displayed_image_and_different_size_softmask_are_independently_hashed(self):
+        from PIL import Image
+        image=io.BytesIO(); Image.new('RGB',(20,20),(255,0,0)).save(image,'PNG')
+        with fitz.open() as document:
+            page=document.new_page()
+            xref=page.insert_image(fitz.Rect(20,20,120,120),stream=image.getvalue())
+            mask=document.get_new_xref()
+            document.update_object(mask,'<</Type/XObject/Subtype/Image/Width 9/Height 13/ColorSpace/DeviceGray/BitsPerComponent 8>>')
+            document.update_stream(mask,bytes([128])*(9*13))
+            document.xref_set_key(xref,'SMask',str(mask)+' 0 R')
+            result=probe._image_semantics(page)
+        self.assertEqual(result['status'],'checked')
+        displayed=result['images'][0]
+        self.assertEqual((displayed['base_image']['width'],displayed['base_image']['height']),(20,20))
+        self.assertEqual((displayed['displayed_block_mask']['width'],displayed['displayed_block_mask']['height']),(9,13))
+        self.assertEqual(len(displayed['displayed_block_mask']['pixel_sha256']),64)
+        self.assertFalse(displayed['resource_candidates_are_exact_binding'])
+        self.assertIn('Matte',displayed['resource_candidate_metadata'][0]['mask_dictionary_fields_sha256'])
+        self.assertNotIn('DeviceGray',json.dumps(result))
+
+    def test_unused_resource_softmask_is_not_claimed_as_displayed_mask(self):
+        from PIL import Image
+        def png(size):
+            stream=io.BytesIO(); Image.new('RGB',size,(255,0,0)).save(stream,'PNG'); return stream.getvalue()
+        with fitz.open() as document:
+            page=document.new_page()
+            page.insert_image(fitz.Rect(20,20,120,120),stream=png((20,20)))
+            original_contents=page.get_contents()
+            unused=page.insert_image(fitz.Rect(130,20,230,120),stream=png((40,40)))
+            mask=document.get_new_xref()
+            document.update_object(mask,'<</Type/XObject/Subtype/Image/Width 9/Height 13/ColorSpace/DeviceGray/BitsPerComponent 8>>')
+            document.update_stream(mask,bytes([128])*(9*13))
+            document.xref_set_key(unused,'SMask',str(mask)+' 0 R')
+            document.xref_set_key(page.xref,'Contents','['+' '.join(str(ref)+' 0 R' for ref in original_contents)+']')
+            result=probe._image_semantics(page)
+        self.assertEqual(result['placement_count'],1)
+        self.assertEqual(result['resource_inventory_count'],2)
+        self.assertIsNone(result['images'][0]['displayed_block_mask'])
+        self.assertFalse(result['images'][0]['resource_candidate_metadata'][0]['has_soft_mask'])
+
+    def test_render_context_detects_group_and_transparency_without_private_values(self):
+        with fitz.open(self.fixture.original) as document:
+            page=document[0]
+            before=probe._render_resource_context(page)
+            document.xref_set_key(page.xref,'Group','<</S/Transparency/I true/K false/CS/DeviceRGB>>')
+            state=document.get_new_xref()
+            document.update_object(state,'<</Type/ExtGState/ca 0.5/CA 0.7/BM/Multiply>>')
+            resources=int(document.xref_get_key(page.xref,'Resources')[1].split()[0])
+            document.xref_set_key(resources,'ExtGState','<</SECRET_RESOURCE '+str(state)+' 0 R>>')
+            document.xref_set_key(document.pdf_catalog(),'OCProperties','<</PRIVATE_LABEL(SECRET_TEXT)>>')
+            after=probe._render_resource_context(page)
+        self.assertNotEqual(before['sha256'],after['sha256'])
+        self.assertTrue(after['page_group']['I']['present'])
+        self.assertEqual(after['page_transparency']['entry_count'],1)
+        self.assertTrue(after['page_transparency']['entries'][0]['fields']['ca']['present'])
+        self.assertTrue(after['catalog']['OCProperties']['present'])
+        for private in ('SECRET_RESOURCE','SECRET_TEXT','PRIVATE_LABEL','Multiply','DeviceRGB'):
+            self.assertNotIn(private,json.dumps(after))
+
+    def test_resource_fingerprint_does_not_treat_xref_renumbering_as_difference(self):
+        with fitz.open(self.fixture.original) as document:
+            first,second=document.get_new_xref(),document.get_new_xref()
+            for reference in (first,second):
+                document.update_object(reference,'<</S/Transparency/I true/CS/DeviceRGB>>')
+            document.xref_set_key(document[0].xref,'Group',str(first)+' 0 R')
+            before=probe._pdf_key_fingerprint(document,document[0].xref,'Group')
+            document.xref_set_key(document[0].xref,'Group',str(second)+' 0 R')
+            after=probe._pdf_key_fingerprint(document,document[0].xref,'Group')
+        self.assertEqual(before,after)
 
     def test_selected_crop_uses_exact_fractional_source_viewport(self):
         self.fixture=Fixture(self.root/'fractional',actual_size=(400.3,500.8))
