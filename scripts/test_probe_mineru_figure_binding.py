@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock,patch
 import zipfile
 
 import fitz
@@ -95,6 +95,76 @@ class ProbeTests(unittest.TestCase):
         self.assertFalse(page['default_rgb_equal']); self.assertFalse(page['annots_false_equal'])
         self.assertGreater(page['annots_true']['diff_pixel_ratio'],0)
         self.assertIsNotNone(page['annots_true']['diff_bbox'])
+    def test_semantic_text_change_is_distinguished_without_plaintext(self):
+        self.change_embedded(lambda doc:doc[0].insert_text((50,150),'CHANGED SECRET',fontsize=10))
+        result=self.compare(); page=result['pages'][0]; semantic=page['semantic_diagnostics']
+        self.assertFalse(semantic['text']['equal'])
+        self.assertTrue(semantic['images']['equal']); self.assertTrue(semantic['drawings']['equal'])
+        self.assertNotEqual(semantic['text']['original']['characters_sha256'],semantic['text']['embedded']['characters_sha256'])
+        self.assertFalse(semantic['content_streams']['equal'])
+        self.assertNotIn('CHANGED',json.dumps(result)); self.assertNotIn('Helvetica',json.dumps(result))
+        selected=page['selected_visual_differences'][0]
+        self.assertGreater(selected['body_diff_pixel_count'],0)
+        self.assertNotEqual(selected['union_crop_original_rgb_sha256'],selected['union_crop_embedded_rgb_sha256'])
+
+    def test_semantic_displayed_image_change_ignores_unrelated_resource_inventory(self):
+        from PIL import Image
+        image=io.BytesIO(); Image.new('RGB',(20,20),(255,0,0)).save(image,'PNG')
+        self.change_embedded(lambda doc:doc[0].insert_image(fitz.Rect(50,120,100,170),stream=image.getvalue()))
+        result=self.compare(); semantic=result['pages'][0]['semantic_diagnostics']
+        self.assertTrue(semantic['text']['equal']); self.assertTrue(semantic['drawings']['equal'])
+        self.assertFalse(semantic['images']['equal'])
+        self.assertEqual(semantic['images']['embedded']['placement_count'],1)
+        self.assertEqual(semantic['images']['original']['placement_count'],0)
+        displayed=semantic['images']['embedded']['images'][0]
+        self.assertEqual((displayed['width'],displayed['height']),(20,20))
+        self.assertEqual(len(displayed['content_sha256']),64); self.assertEqual(len(displayed['pixel_sha256']),64)
+        self.assertFalse(semantic['content_streams']['equal'])
+
+    def test_semantic_vector_change_and_diff_outside_selected_crop(self):
+        self.change_embedded(lambda doc:doc[0].draw_rect(fitz.Rect(5,40,15,50),fill=(1,0,0)))
+        result=self.compare(); page=result['pages'][0]; semantic=page['semantic_diagnostics']
+        self.assertTrue(semantic['text']['equal']); self.assertTrue(semantic['images']['equal'])
+        self.assertFalse(semantic['drawings']['equal']); self.assertFalse(semantic['content_streams']['equal'])
+        selected=page['selected_visual_differences'][0]
+        self.assertEqual(selected['body_diff_pixel_count'],0)
+        self.assertEqual(selected['union_crop_diff_pixel_count'],0)
+        self.assertEqual(selected['union_crop_original_rgb_sha256'],selected['union_crop_embedded_rgb_sha256'])
+        self.assertFalse(result['all_selected_pages_equal'])
+
+    def test_image_dimensions_are_bounded_before_hashing_or_decoding(self):
+        page=Mock()
+        page.get_image_info.return_value=[{'width':20001,'height':1}]
+        with patch('fitz.Pixmap',side_effect=AssertionError('Pixel decode before bounds')):
+            with self.assertRaisesRegex(probe.ProbeError,'displayed_image_dimensions_bound'):
+                probe._image_semantics(page)
+        page.get_image_info.assert_called_once_with(hashes=False,xrefs=False)
+        page.get_images.assert_not_called(); page.get_text.assert_not_called()
+
+    def test_image_aggregate_and_mask_bounds_precede_extraction(self):
+        page=Mock()
+        page.get_image_info.return_value=[{'width':2000,'height':2000}]*2
+        with self.assertRaisesRegex(probe.ProbeError,'displayed_image_decoded_bytes_bound'):
+            probe._image_semantics(page)
+        page.get_text.assert_not_called()
+        page.get_image_info.return_value=[{'width':20,'height':20}]
+        page.get_images.return_value=[(1,2,20,20)]
+        page.parent.xref_get_key.side_effect=[('int','999999'),('int','999999')]
+        with patch('fitz.Pixmap',side_effect=AssertionError('Mask decode before bounds')):
+            with self.assertRaisesRegex(probe.ProbeError,'displayed_image_dimensions_bound'):
+                probe._image_semantics(page)
+        page.get_text.assert_not_called()
+
+    def test_selected_crop_uses_exact_fractional_source_viewport(self):
+        self.fixture=Fixture(self.root/'fractional',actual_size=(400.3,500.8))
+        self.change_embedded(lambda doc:doc[0].insert_text((50,150),'CHANGED',fontsize=10))
+        page=self.compare()['pages'][0]
+        selected=page['selected_visual_differences'][0]
+        self.assertEqual(selected['source_rect_size'],page['original_geometry']['rect'][2:])
+        self.assertNotEqual(selected['source_rect_size'],page['provider_size'])
+        self.assertEqual(selected['point_to_pixel'],[300/72,0,0,300/72,0,0])
+        self.assertGreater(selected['union_crop_diff_pixel_count'],0)
+
     def test_annotation_change_is_classified_but_never_accepted(self):
         def annotate(doc):
             annotation=doc[0].add_rect_annot(fitz.Rect(20,40,100,100))

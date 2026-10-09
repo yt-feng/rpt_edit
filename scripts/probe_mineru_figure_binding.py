@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 from collections import Counter
 import copy
+import hashlib
 import itertools
 import json
 import math
@@ -113,6 +114,257 @@ def _difference(left,right):
     return result
 
 
+MAX_SEMANTIC_BYTES = 64 * 1024 * 1024
+MAX_GLYPHS = 200000
+MAX_IMAGE_PLACEMENTS = 1000
+MAX_FONTS = 256
+
+
+def _semantic_canonical(value):
+    """Canonicalize internal PDF data for hashing; never return its raw text."""
+    if value is None or type(value) in {bool,int,str}:
+        return value
+    if type(value) is float:
+        require(math.isfinite(value),'semantic_nonfinite_number')
+        return value
+    if isinstance(value,bytes):
+        return {'bytes':len(value),'sha256':digest(value)}
+    if isinstance(value,dict):
+        require(all(isinstance(key,str) for key in value),'semantic_mapping_key')
+        return {key:_semantic_canonical(item) for key,item in value.items()}
+    if isinstance(value,(list,tuple)) or type(value).__name__ in {'Rect','IRect','Point','Quad','Matrix'}:
+        return [_semantic_canonical(item) for item in value]
+    raise ProbeError('semantic_value_type')
+
+
+def _semantic_hash(value):
+    raw=encoded(_semantic_canonical(value))
+    require(len(raw)<=MAX_SEMANTIC_BYTES,'semantic_bytes_bound')
+    return digest(raw)
+
+
+def _text_semantics(page):
+    import fitz
+    raw=page.get_text('rawdict',flags=fitz.TEXTFLAGS_RAWDICT & ~fitz.TEXT_PRESERVE_IMAGES)
+    blocks,lines,spans,glyphs,geometry,characters=0,0,[],[],[],[]
+    for block in raw['blocks']:
+        if block.get('type')!=0: continue
+        blocks+=1
+        for line in block['lines']:
+            lines+=1
+            for span in line['spans']:
+                span_index=len(spans)
+                chars=span.get('chars',[])
+                require(len(glyphs)+len(chars)<=MAX_GLYPHS,'glyph_count_bound')
+                spans.append({'line':lines-1,'line_dir':line.get('dir'),'wmode':line.get('wmode'),
+                    **{key:span.get(key) for key in ('size','flags','font','color','alpha','ascender','descender','origin','bbox')}})
+                for char in chars:
+                    entry={'span':span_index,**{key:char.get(key) for key in ('c','origin','bbox','synthetic')}}
+                    glyphs.append(entry)
+                    characters.append(char.get('c'))
+                    geometry.append({key:item for key,item in entry.items() if key!='c'})
+    trace=page.get_texttrace()
+    require(len(trace)<=MAX_OBJECTS_PER_PAGE,'text_trace_count_bound')
+    trace_chars=[]
+    for span in trace:
+        chars=span.get('chars',[])
+        require(len(trace_chars)+len(chars)<=MAX_GLYPHS,'text_trace_glyph_count_bound')
+        trace_chars.extend(chars)
+    rawdict_sha=_semantic_hash({'spans':spans,'glyphs':glyphs})
+    trace_sha=_semantic_hash(trace)
+    return {'status':'checked','block_count':blocks,'line_count':lines,'span_count':len(spans),
+        'glyph_count':len(glyphs),'sha256':_semantic_hash([rawdict_sha,trace_sha]),
+        'rawdict_sha256':rawdict_sha,'texttrace_sha256':trace_sha,
+        'glyph_ids_sha256':_semantic_hash([char[1] for char in trace_chars]),
+        'unicode_sha256':_semantic_hash([char[0] for char in trace_chars]),
+        'characters_sha256':_semantic_hash(characters),'glyph_geometry_sha256':_semantic_hash(geometry),
+        'span_style_sha256':_semantic_hash(spans)}
+
+
+def _drawings_semantics(page):
+    rows=page.get_drawings(extended=True)
+    require(len(rows)<=MAX_OBJECTS_PER_PAGE,'drawing_count_bound')
+    item_count=sum(len(row.get('items',[])) for row in rows)
+    require(item_count<=MAX_GLYPHS,'drawing_item_count_bound')
+    return {'status':'checked','path_count':len(rows),'item_count':item_count,'sha256':_semantic_hash(rows)}
+
+
+def _font_semantics(page):
+    fonts=page.get_fonts(full=True)
+    require(len(fonts)<=MAX_FONTS,'font_count_bound')
+    rows,total=[],0
+    for value in fonts:
+        xref=value[0]
+        basename,extension,kind,program=page.parent.extract_font(xref)
+        total+=len(program)
+        require(total<=MAX_SEMANTIC_BYTES,'font_program_bytes_bound')
+        rows.append({'embedded':bool(program),'program_bytes':len(program),'program_sha256':digest(program),
+            'font_type_sha256':_semantic_hash(kind),'encoding_sha256':_semantic_hash(value[5]),
+            'font_identity_sha256':_semantic_hash([basename,extension,kind])})
+    rows.sort(key=lambda row:encoded(row))
+    return {'status':'checked','resource_count':len(fonts),'embedded_program_bytes':total,
+        'sha256':_semantic_hash(rows),'programs':rows}
+
+
+def _stream_semantics(page):
+    refs=page.get_contents()
+    require(len(refs)<=MAX_OBJECTS_PER_PAGE,'content_stream_count_bound')
+    rows,total=[],0
+    combined=hashlib.sha256()
+    for ref in refs:
+        raw=page.parent.xref_stream(ref)
+        require(isinstance(raw,bytes),'content_stream_missing')
+        total+=len(raw); require(total<=MAX_SEMANTIC_BYTES,'content_stream_bytes_bound')
+        combined.update(raw)
+        rows.append({'bytes':len(raw),'sha256':digest(raw)})
+    return {'status':'checked','stream_count':len(rows),'decoded_bytes':total,
+            'sha256':combined.hexdigest(),'stream_inventory_sha256':_semantic_hash(rows)}
+
+
+def _bboxlog_semantics(page):
+    rows=page.get_bboxlog()
+    require(len(rows)<=MAX_GLYPHS,'bboxlog_count_bound')
+    return {'status':'checked','entry_count':len(rows),'sha256':_semantic_hash(rows)}
+
+
+def _image_semantics(page):
+    import fitz
+    import io
+    from PIL import Image
+    # xrefs=True would hash every resource image, including unrelated pages.
+    # Read actual placements without hashes, bound their decoded size first,
+    # then obtain only displayed image blocks. No resource image is decoded.
+    images=page.get_image_info(hashes=False,xrefs=False)
+    require(len(images)<=MAX_IMAGE_PLACEMENTS,'image_placement_count_bound')
+    def dimensions(width,height):
+        require(type(width) is int and type(height) is int and 1<=width<=20000 and 1<=height<=20000,
+                'displayed_image_dimensions_bound')
+        # Allow source channels, mask, RGB conversion and copied samples.
+        estimate=width*height*16
+        require(estimate<=MAX_SEMANTIC_BYTES,'displayed_image_pixels_bound')
+        return estimate
+    estimate=0
+    for item in images:
+        estimate+=dimensions(item.get('width'),item.get('height'))
+        require(estimate<=MAX_SEMANTIC_BYTES,'displayed_image_decoded_bytes_bound')
+    if not images:
+        return {'status':'checked','placement_count':0,'sha256':_semantic_hash([]),
+            'content_sha256':_semantic_hash([]),'placements_sha256':_semantic_hash([]),'images':[]}
+    # A PDF soft mask can declare dimensions different from its base image.
+    # Check headers before get_text can extract / decode any displayed mask.
+    resources=page.get_images(full=True)
+    require(len(resources)<=MAX_OBJECTS_PER_PAGE,'page_objects_bound')
+    for resource in resources:
+        mask_ref=resource[1]
+        if mask_ref:
+            width_kind,width=page.parent.xref_get_key(mask_ref,'Width')
+            height_kind,height=page.parent.xref_get_key(mask_ref,'Height')
+            require(width_kind==height_kind=='int','image_mask_dimensions_missing')
+            dimensions(int(width),int(height))
+            require((int(width),int(height))==(resource[2],resource[3]),'image_mask_geometry_bound')
+    blocks=[block for block in page.get_text('dict')['blocks'] if block.get('type')==1]
+    require(len(blocks)==len(images),'displayed_image_inventory_mismatch')
+    rows,total=[],0
+    def decode(raw,expected):
+        nonlocal total
+        require(isinstance(raw,bytes),'displayed_image_content_missing')
+        total+=len(raw)
+        require(total<=MAX_SEMANTIC_BYTES,'displayed_image_bytes_bound')
+        # Pillow reads these extracted PNG/JPEG headers without allocating pixels.
+        with Image.open(io.BytesIO(raw)) as header:
+            dimensions(*header.size)
+            require(header.size==expected,'displayed_image_header_mismatch')
+        return fitz.Pixmap(raw)
+    for item in images:
+        matches=[block for block in blocks if block.get('number')==item.get('number')
+                 and exact_json(list(block['bbox']),list(item['bbox']))
+                 and block.get('width')==item['width'] and block.get('height')==item['height']]
+        require(len(matches)==1,'displayed_image_ambiguous')
+        block=matches[0]; raw=block['image']; expected=(item['width'],item['height'])
+        pix=decode(raw,expected)
+        if block.get('mask') and not pix.alpha:
+            mask=decode(block['mask'],expected)
+            pix=fitz.Pixmap(pix,mask)
+            del mask
+        if pix.colorspace is not None and pix.colorspace.n!=3:
+            pix=fitz.Pixmap(fitz.csRGB,pix)
+        require(pix.width==expected[0] and pix.height==expected[1] and pix.n<=4,
+                'displayed_image_decoded_geometry_mismatch')
+        require(total+pix.width*pix.height*pix.n<=MAX_SEMANTIC_BYTES,'displayed_image_bytes_bound')
+        pixels=pix.samples
+        total+=len(pixels)
+        row={'bbox':list(item['bbox']),'transform':list(item['transform']),
+            'width':item['width'],'height':item['height'],'bpc':item.get('bpc'),
+            'colorspace':item.get('colorspace'),'content_bytes':len(raw),'content_sha256':digest(raw),
+            'pixel_sha256':digest(encoded([pix.width,pix.height,pix.n,pix.alpha])+pixels)}
+        rows.append(row)
+        del pix,pixels
+    content=sorted([{key:row[key] for key in ('content_bytes','content_sha256','pixel_sha256')} for row in rows],key=encoded)
+    placements=[{key:row[key] for key in ('bbox','transform','width','height','bpc','colorspace')} for row in rows]
+    return {'status':'checked','placement_count':len(rows),'sha256':_semantic_hash(rows),
+        'content_sha256':_semantic_hash(content),'placements_sha256':_semantic_hash(placements),'images':rows}
+
+
+def semantic_diagnostics(original,embedded,budget=lambda:None):
+    """Emit only hashes, typed geometry and counts from the first failed page."""
+    result={}
+    for name,inspect in [('text',_text_semantics),('images',_image_semantics),
+                         ('drawings',_drawings_semantics),('fonts',_font_semantics),('content_streams',_stream_semantics),
+                         ('display_operations',_bboxlog_semantics)]:
+        values=[]
+        for page in (original,embedded):
+            budget()
+            try: values.append(inspect(page))
+            except Exception as error:
+                values.append({'status':'unavailable','category':str(error) if isinstance(error,ProbeError) else type(error).__name__})
+        result[name]={'original':values[0],'embedded':values[1],
+            'equal':values[0].get('sha256')==values[1].get('sha256') if all(row['status']=='checked' for row in values) else None}
+    return result
+
+
+def selected_visual_differences(left,right,metadata,decisions,page_index,page_size):
+    import mineru_figure_sources as figures
+    from PIL import ImageChops
+    same_size=left.size==right.size
+    mask=None
+    if same_size:
+        difference=ImageChops.difference(left,right)
+        channels=difference.split()
+        mask=ImageChops.lighter(ImageChops.lighter(channels[0],channels[1]),channels[2])
+        difference.close()
+        for channel in channels: channel.close()
+    results=[]
+    try:
+        for record,decision in zip(metadata['records'],decisions):
+            if record['page_idx']!=page_index or not decision['selected']: continue
+            crop=figures._crop(record,metadata['records'],page_size,list(left.size))
+            body=record['body_bbox']; scale=crop['point_to_pixel'][0]
+            body_pixels=[max(0,math.floor(body[0]*scale)),max(0,math.floor(body[1]*scale)),
+                         min(left.width,math.ceil(body[2]*scale)),min(left.height,math.ceil(body[3]*scale))]
+            row={'record_index':record['index'],'kind':record['kind'],'body_bbox':body,
+                'union_bbox':crop['union_bbox'],'body_pixel_box':body_pixels,'crop_pixel_box':crop['pixel_box'],
+                'source_rect_size':crop['source_rect_size'],'point_to_pixel':crop['point_to_pixel'],
+                'caption_count':len(record['captions']),'footnote_count':len(record['footnotes']),
+                'included_attachment_count':sum(bool(item['include']) for item in crop['attachments']),
+                'same_pixel_size':same_size}
+            if same_size:
+                for name,box in [('body',body_pixels),('union_crop',crop['pixel_box'])]:
+                    part=mask.crop(box)
+                    count=part.width*part.height-part.histogram()[0]
+                    row[name+'_diff_pixel_count']=count
+                    row[name+'_diff_pixel_ratio']=count/(part.width*part.height) if part.width*part.height else 0
+                    row[name+'_diff_bbox']=list(part.getbbox()) if count else None
+                    part.close()
+                    for label,image in [('original',left),('embedded',right)]:
+                        cropped=image.crop(box)
+                        row[name+'_'+label+'_rgb_sha256']=digest(cropped.tobytes())
+                        cropped.close()
+            results.append(row)
+    finally:
+        if mask is not None: mask.close()
+    return results
+
+
 def compare_cached_pdf(original_path,payload,*,original_sha256,clock=time.monotonic,deadline=None):
     """Match the four production gates; alternate annotation renders are diagnostic only."""
     import fitz
@@ -171,7 +423,11 @@ def compare_cached_pdf(original_path,payload,*,original_sha256,clock=time.monoto
                 require(total_pixels<=figures.MAX_CARRIED_PAGE_PIXELS,'render_pixels_bound')
                 budget()
                 left,right = figures._render(actual),figures._render(other)
-                try: difference = _difference(left,right)
+                try:
+                    difference = _difference(left,right)
+                    if not difference['same_size'] or difference.get('diff_pixel_count'):
+                        page['selected_visual_differences'] = selected_visual_differences(
+                            left,right,metadata,decisions,index,left_geometry['rect'][2:])
                 finally: left.close(); right.close()
                 default_equal = difference['same_size'] and difference.get('diff_pixel_count') == 0
                 page['default_rgb_equal'] = default_equal
@@ -189,6 +445,8 @@ def compare_cached_pdf(original_path,payload,*,original_sha256,clock=time.monoto
                     finally: left.close(); right.close()
                     page['annots_false_equal'] = (page['annots_false']['same_size']
                         and page['annots_false'].get('diff_pixel_count') == 0)
+                    if not default_equal:
+                        page['semantic_diagnostics'] = semantic_diagnostics(actual,other,budget)
                     require(digest(original_path.read_bytes())==original_sha256,'original_bytes_changed')
                     return result
                 page['rgb_sha256'] = difference['original_rgb_sha256']
