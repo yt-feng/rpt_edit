@@ -39,7 +39,8 @@ MARGIN_PIXELS = 3
 KINDS = {"table", "chart", "image"}
 ERRORS = {"figure_metadata_invalid", "figure_metadata_ambiguous",
           "figure_source_binding_mismatch", "figure_source_pixels_mismatch",
-          "figure_asset_mismatch", "figure_proof_invalid", "figure_page_budget_exceeded"}
+          "figure_asset_mismatch", "figure_proof_invalid", "figure_page_budget_exceeded",
+          "figure_render_cache_isolation_failed"}
 
 
 class FigureSourceError(ValueError):
@@ -589,14 +590,23 @@ def _silent_mupdf():
             fitz.TOOLS.mupdf_display_warnings(warnings)
 
 
-def _render(page):
+def _render(page, *, annots=True):
     import fitz
     from PIL import Image
 
     w, h = math.ceil(page.rect.width * 300 / 72), math.ceil(page.rect.height * 300 / 72)
     if not (1 <= w <= MAX_DIMENSION and 1 <= h <= MAX_DIMENSION and w * h <= MAX_PIXELS):
         _fail("figure_source_pixels_mismatch")
-    pix = page.get_pixmap(matrix=fitz.Matrix(300 / 72, 300 / 72), alpha=False, colorspace=fitz.csRGB)
+    # MuPDF's process-wide resource store can make interleaved source/provider
+    # renders depend on previous pages, even when each PDF renders identically
+    # in a fresh process. Isolate every comparison and carried source image;
+    # never accept a warmed-cache mismatch or relax the exact RGB comparison.
+    try:
+        fitz.TOOLS.store_shrink(100)
+    except Exception:
+        _fail("figure_render_cache_isolation_failed")
+    pix = page.get_pixmap(matrix=fitz.Matrix(300 / 72, 300 / 72), alpha=False,
+                          colorspace=fitz.csRGB, annots=annots)
     return Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
 
 

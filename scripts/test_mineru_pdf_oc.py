@@ -52,12 +52,86 @@ def changed_provider(raw,kind):
         return document.tobytes(no_new_id=True)
 
 
+def forward_link_optional_content_fixture():
+    """Build our own hidden-layer pages, then exercise MinerU's real PDFium copy."""
+    import pypdfium2 as pdfium
+    original,_=optional_content_fixture(pages=2,size=(200,300))
+    with fitz.open(stream=original,filetype='pdf') as document:
+        link=document.get_new_xref()
+        document.update_object(link,
+            '<</Type/Annot/Subtype/Link/Rect[10 270 160 285]/Border[0 0 0]'
+            f'/Dest[{document[1].xref} 0 R/XYZ 0 0 0]>>')
+        document.xref_set_key(document[0].xref,'Annots',f'[{link} 0 R]')
+        original=document.tobytes(no_new_id=True)
+    source=pdfium.PdfDocument(original)
+    target=pdfium.PdfDocument.new()
+    try:
+        target.import_pages(source,list(range(len(source))))
+        output=io.BytesIO();target.save(output)
+        embedded=output.getvalue()
+    finally:
+        target.close();source.close()
+    return original,embedded
+
+
 def render(document,index=0):
     pix=document[index].get_pixmap(matrix=fitz.Matrix(300/72,300/72),colorspace=fitz.csRGB,alpha=False)
     return pix.width,pix.height,oc.digest(pix.samples)
 
 
 class OptionalContentTests(unittest.TestCase):
+    def test_pdfium_forward_link_loss_restores_all_hidden_layer_pages_without_mutation(self):
+        original,embedded=forward_link_optional_content_fixture()
+        with fitz.open(stream=original,filetype='pdf') as a,fitz.open(stream=embedded,filetype='pdf') as e:
+            original_links=[xref for xref in range(1,a.xref_length())
+                            if a.xref_get_key(xref,'Subtype')==('name','/Link')]
+            embedded_links=[xref for xref in range(1,e.xref_length())
+                            if e.xref_get_key(xref,'Subtype')==('name','/Link')]
+            self.assertEqual(len(original_links),1)
+            self.assertEqual(len(embedded_links),1)
+            self.assertEqual(a.xref_get_key(original_links[0],'Dest')[0],'array')
+            self.assertEqual(e.xref_get_key(embedded_links[0],'Dest')[0],'null')
+            self.assertTrue(oc.has_missing_optional_content(a,e))
+            before=oc._provider_inventory(e,lambda:None)
+            original_before=oc._provider_inventory(a,lambda:None)
+            self.assertEqual(len(a),len(e))
+            self.assertEqual(len(a),2)
+            for index in range(len(a)):
+                self.assertNotEqual(render(a,index),render(e,index))
+            restored,receipt=oc.restore_missing_optional_content(a,e,
+                original_sha256=oc.digest(original),embedded_sha256=oc.digest(embedded))
+            try:
+                self.assertEqual(oc._provider_inventory(restored,lambda:None),before)
+                for index in range(len(a)):
+                    self.assertEqual(a[index].mediabox,restored[index].mediabox)
+                    self.assertEqual(a[index].cropbox,restored[index].cropbox)
+                    self.assertEqual(a[index].rotation,restored[index].rotation)
+                    self.assertEqual(render(a,index),render(restored,index))
+                receipt['verified_page_indices']=[0,1]
+                oc.validate_restoration_receipt(receipt,original_sha256=oc.digest(original),
+                    embedded_sha256=oc.digest(embedded),page_indices=[0,1])
+            finally:restored.close()
+            self.assertEqual(oc._provider_inventory(a,lambda:None),original_before)
+            self.assertEqual(oc._provider_inventory(e,lambda:None),before)
+            self.assertEqual(e.xref_get_key(e.pdf_catalog(),'OCProperties')[0],'null')
+            self.assertEqual(e.xref_get_key(embedded_links[0],'Dest')[0],'null')
+        self.assertEqual(receipt['embedded_pdf_sha256'],oc.digest(embedded))
+
+    def test_missing_forward_destination_does_not_allow_changed_link_border(self):
+        original,embedded=forward_link_optional_content_fixture()
+        with fitz.open(stream=embedded,filetype='pdf') as changed:
+            link=next(xref for xref in range(1,changed.xref_length())
+                      if changed.xref_get_key(xref,'Subtype')==('name','/Link'))
+            changed.xref_set_key(link,'Border','[0 0 2]')
+            embedded=changed.tobytes(no_new_id=True)
+        with fitz.open(stream=original,filetype='pdf') as a,fitz.open(stream=embedded,filetype='pdf') as e:
+            before=oc._provider_inventory(e,lambda:None)
+            with self.assertRaises(ValueError):
+                oc.restore_missing_optional_content(a,e,
+                    original_sha256=oc.digest(original),embedded_sha256=oc.digest(embedded))
+            self.assertEqual(oc._provider_inventory(e,lambda:None),before)
+            self.assertEqual(e.xref_get_key(e.pdf_catalog(),'OCProperties')[0],'null')
+
     def test_restoration_changes_only_catalog_and_preserves_exact_original_pixels(self):
         original,embedded=optional_content_fixture(pages=2)
         with fitz.open(stream=original,filetype='pdf') as a,fitz.open(stream=embedded,filetype='pdf') as e:

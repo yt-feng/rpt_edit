@@ -122,6 +122,58 @@ class Fixture:
 
 
 class FigureSourceTests(unittest.TestCase):
+    def test_interleaved_document_cache_cannot_change_carried_source_or_provider_pixels(self):
+        # Model the observed cross-document warmed-store corruption without
+        # publishing the private 42-page regression report. All PDF inputs here
+        # are generated; the real renderer still produces and replays carriers.
+        with tempfile.TemporaryDirectory() as temporary:
+            visuals = [
+                visual(0, [35, 100, 185, 260], kind="chart", page_idx=0),
+                visual(1, [35, 100, 185, 260], kind="chart", page_idx=1)]
+            fixture = Fixture(Path(temporary) / "isolated", pages=2, visuals=visuals)
+            native_render, native_clear = fitz.Page.get_pixmap, fitz.TOOLS.store_shrink
+            warmed = {"document": None}
+            events = []
+
+            def clear(percent):
+                self.assertEqual(percent, 100)
+                native_clear(percent)
+                warmed["document"] = None
+                events.append("clear")
+
+            def render(page, **kwargs):
+                image = native_render(page, **kwargs)
+                if warmed["document"] is not None and warmed["document"] != id(page.parent):
+                    image.set_pixel(0, 0, (17, 23, 41))
+                warmed["document"] = id(page.parent)
+                events.append("render")
+                return image
+
+            unisolated = Fixture(Path(temporary) / "warmed", pages=2, visuals=visuals)
+            with patch.object(fitz.TOOLS, "store_shrink", return_value=0), \
+                    patch.object(fitz.Page, "get_pixmap", render):
+                with self.assertRaisesRegex(figures.FigureSourceError, "figure_source_pixels_mismatch"):
+                    unisolated.create()
+            events.clear()
+            with patch.object(fitz.TOOLS, "store_shrink", side_effect=clear), \
+                    patch.object(fitz.Page, "get_pixmap", render):
+                fixture.create()
+            self.assertEqual(events, ["clear", "render"] * 4)
+            self.assertEqual(fixture.proof()["schema"], 1)
+            self.assertEqual(len(fixture.proof()["pages"]), 2)
+            self.assertIsNotNone(fixture.validate())
+
+    def test_cache_isolation_failure_stops_before_any_render(self):
+        with fitz.open() as document:
+            page = document.new_page(width=20, height=20)
+            with patch.object(fitz.TOOLS, "store_shrink", side_effect=RuntimeError("private detail")), \
+                    patch.object(fitz.Page, "get_pixmap") as render:
+                with self.assertRaises(figures.FigureSourceError) as caught:
+                    figures._render(page)
+            self.assertEqual(caught.exception.category, "figure_render_cache_isolation_failed")
+            self.assertNotIn("private detail", str(caught.exception))
+            render.assert_not_called()
+
     def fixture(self, **kwargs):
         tmp = tempfile.TemporaryDirectory()
         self.addCleanup(tmp.cleanup)
