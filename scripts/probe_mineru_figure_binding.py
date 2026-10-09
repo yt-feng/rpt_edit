@@ -118,6 +118,7 @@ MAX_SEMANTIC_BYTES = 64 * 1024 * 1024
 MAX_GLYPHS = 200000
 MAX_IMAGE_PLACEMENTS = 1000
 MAX_FONTS = 256
+MAX_PDFIUM_REWRITE_BYTES = 512 * 1024 * 1024
 
 
 def _semantic_canonical(value):
@@ -227,6 +228,56 @@ def _bboxlog_semantics(page):
     return {'status':'checked','entry_count':len(rows),'sha256':_semantic_hash(rows)}
 
 
+def _pdf_key_fingerprint(document,xref,key):
+    """Hash typed metadata with reference numbers removed; no image decoding."""
+    kind,value=document.xref_get_key(xref,key)
+    references=re.findall(r'(?<![0-9])([0-9]+) [0-9]+ R',value)
+    require(len(references)<=MAX_OBJECTS_PER_PAGE,'resource_reference_count_bound')
+    def normalized(raw):
+        return re.sub(r'(?<![0-9])[0-9]+ [0-9]+ R','<reference>',raw)
+    # One-level target dictionary hashes are enough to expose changed known
+    # entries without walking shared image resources or disclosing xref IDs.
+    targets=[]; total=len(value)
+    for reference in references:
+        raw=document.xref_object(int(reference),compressed=True)
+        total+=len(raw)
+        require(total<=MAX_SEMANTIC_BYTES,'resource_metadata_bytes_bound')
+        targets.append(_semantic_hash(normalized(raw)))
+    return {'type':kind,'present':kind!='null','sha256':_semantic_hash([kind,normalized(value),targets])}
+
+
+def _render_resource_context(page):
+    document=page.parent
+    def group(xref,path):
+        return {key:_pdf_key_fingerprint(document,xref,path+'/'+key) for key in ('S','I','K','CS')}
+    def transparency(xref):
+        root=_pdf_key_fingerprint(document,xref,'Resources/ExtGState')
+        kind,value=document.xref_get_key(xref,'Resources/ExtGState')
+        if kind=='xref':
+            value=document.xref_object(int(value.split()[0]),compressed=True)
+        refs=re.findall(r'/[^\s/<>()\[\]]+\s+([0-9]+) [0-9]+ R',value)
+        require(len(refs)<=256,'extgstate_count_bound')
+        entries=[]
+        for ref in refs:
+            ref=int(ref)
+            entries.append({'fields':{key:_pdf_key_fingerprint(document,ref,key) for key in ('ca','CA','BM','SMask')},
+                'soft_mask_fields':{key:_pdf_key_fingerprint(document,ref,'SMask/'+key) for key in ('S','BC','TR')},
+                'soft_mask_group':group(ref,'SMask/G/Group')})
+        entries.sort(key=encoded)
+        return {'dictionary':root,'entry_count':len(entries),'entries':entries}
+    forms=page.get_xobjects()
+    require(len(forms)<=MAX_OBJECTS_PER_PAGE,'form_count_bound')
+    form_rows=[{'group':group(row[0],'Group'),'transparency':transparency(row[0]),
+                'colorspace':_pdf_key_fingerprint(document,row[0],'Resources/ColorSpace')} for row in forms]
+    form_rows.sort(key=encoded)
+    catalog=document.pdf_catalog()
+    data={'page_group':group(page.xref,'Group'),'page_transparency':transparency(page.xref),
+        'page_colorspace':_pdf_key_fingerprint(document,page.xref,'Resources/ColorSpace'),
+        'form_count':len(forms),'forms':form_rows,
+        'catalog':{key:_pdf_key_fingerprint(document,catalog,key) for key in ('OutputIntents','OCProperties')}}
+    return {'status':'checked','sha256':_semantic_hash(data),**data}
+
+
 def _image_semantics(page):
     import fitz
     import io
@@ -250,59 +301,82 @@ def _image_semantics(page):
     if not images:
         return {'status':'checked','placement_count':0,'sha256':_semantic_hash([]),
             'content_sha256':_semantic_hash([]),'placements_sha256':_semantic_hash([]),'images':[]}
-    # A PDF soft mask can declare dimensions different from its base image.
-    # Check headers before get_text can extract / decode any displayed mask.
+    # Resource dictionaries can be shared with other pages. Inspect only their
+    # headers / dictionary hashes; do not claim they were actually displayed.
     resources=page.get_images(full=True)
     require(len(resources)<=MAX_OBJECTS_PER_PAGE,'page_objects_bound')
+    resource_rows=[]
+    metadata_keys=('ColorSpace','SMask','Matte','Interpolate','Decode','DecodeParms',
+                   'Filter','Intent','ImageMask','Mask','BitsPerComponent','SMaskInData')
     for resource in resources:
-        mask_ref=resource[1]
+        xref,mask_ref,width,height=resource[:4]
+        row={'width':width,'height':height,'has_soft_mask':bool(mask_ref),
+             'dictionary_fields_sha256':{key:_pdf_key_fingerprint(page.parent,xref,key)['sha256'] for key in metadata_keys}}
         if mask_ref:
-            width_kind,width=page.parent.xref_get_key(mask_ref,'Width')
-            height_kind,height=page.parent.xref_get_key(mask_ref,'Height')
+            width_kind,mask_width=page.parent.xref_get_key(mask_ref,'Width')
+            height_kind,mask_height=page.parent.xref_get_key(mask_ref,'Height')
             require(width_kind==height_kind=='int','image_mask_dimensions_missing')
-            dimensions(int(width),int(height))
-            require((int(width),int(height))==(resource[2],resource[3]),'image_mask_geometry_bound')
+            dimensions(int(mask_width),int(mask_height))
+            row['mask_dimensions']=[int(mask_width),int(mask_height)]
+            row['mask_dictionary_fields_sha256']={key:_pdf_key_fingerprint(page.parent,mask_ref,key)['sha256'] for key in metadata_keys}
+        resource_rows.append(row)
+    # Before block extraction, conservatively reserve the largest candidate
+    # mask for each displayed placement. Candidate dictionaries are not proof
+    # of which resource was drawn; actual mask evidence comes from its block.
+    for item in images:
+        candidates=[row for row in resource_rows if (row['width'],row['height'])==(item['width'],item['height'])]
+        estimate+=max([dimensions(*row['mask_dimensions']) for row in candidates if row['has_soft_mask']] or [0])
+        require(estimate<=MAX_SEMANTIC_BYTES,'displayed_image_decoded_bytes_bound')
     blocks=[block for block in page.get_text('dict')['blocks'] if block.get('type')==1]
     require(len(blocks)==len(images),'displayed_image_inventory_mismatch')
     rows,total=[],0
-    def decode(raw,expected):
+    def decode_metadata(raw,expected=None):
         nonlocal total
         require(isinstance(raw,bytes),'displayed_image_content_missing')
         total+=len(raw)
         require(total<=MAX_SEMANTIC_BYTES,'displayed_image_bytes_bound')
-        # Pillow reads these extracted PNG/JPEG headers without allocating pixels.
+        # Pillow reads extracted PNG/JPEG headers without allocating pixels.
         with Image.open(io.BytesIO(raw)) as header:
             dimensions(*header.size)
-            require(header.size==expected,'displayed_image_header_mismatch')
-        return fitz.Pixmap(raw)
+            size=header.size
+            require(expected is None or size==expected,'displayed_image_header_mismatch')
+        pix=fitz.Pixmap(raw)
+        try:
+            if pix.colorspace is not None and pix.colorspace.n not in (1,3):
+                pix=fitz.Pixmap(fitz.csRGB,pix)
+            require((pix.width,pix.height)==size and pix.n<=4,'displayed_image_decoded_geometry_mismatch')
+            require(total+pix.width*pix.height*pix.n<=MAX_SEMANTIC_BYTES,'displayed_image_bytes_bound')
+            pixels=pix.samples
+            total+=len(pixels)
+            return {'width':pix.width,'height':pix.height,'channels':pix.n,'alpha':bool(pix.alpha),
+                'content_bytes':len(raw),'content_sha256':digest(raw),
+                'pixel_sha256':digest(encoded([pix.width,pix.height,pix.n,pix.alpha])+pixels)}
+        finally: del pix
     for item in images:
         matches=[block for block in blocks if block.get('number')==item.get('number')
                  and exact_json(list(block['bbox']),list(item['bbox']))
                  and block.get('width')==item['width'] and block.get('height')==item['height']]
         require(len(matches)==1,'displayed_image_ambiguous')
-        block=matches[0]; raw=block['image']; expected=(item['width'],item['height'])
-        pix=decode(raw,expected)
-        if block.get('mask') and not pix.alpha:
-            mask=decode(block['mask'],expected)
-            pix=fitz.Pixmap(pix,mask)
-            del mask
-        if pix.colorspace is not None and pix.colorspace.n!=3:
-            pix=fitz.Pixmap(fitz.csRGB,pix)
-        require(pix.width==expected[0] and pix.height==expected[1] and pix.n<=4,
-                'displayed_image_decoded_geometry_mismatch')
-        require(total+pix.width*pix.height*pix.n<=MAX_SEMANTIC_BYTES,'displayed_image_bytes_bound')
-        pixels=pix.samples
-        total+=len(pixels)
+        block=matches[0]; expected=(item['width'],item['height'])
+        base=decode_metadata(block['image'],expected)
+        # Different-size masks are legal PDF objects. Keep independent decoded
+        # hashes and geometry; never rescale or compose them in this diagnostic.
+        mask=decode_metadata(block['mask']) if block.get('mask') else None
+        candidates=sorted([row for row in resource_rows if (row['width'],row['height'])==expected],key=encoded)
         row={'bbox':list(item['bbox']),'transform':list(item['transform']),
             'width':item['width'],'height':item['height'],'bpc':item.get('bpc'),
-            'colorspace':item.get('colorspace'),'content_bytes':len(raw),'content_sha256':digest(raw),
-            'pixel_sha256':digest(encoded([pix.width,pix.height,pix.n,pix.alpha])+pixels)}
+            'colorspace':item.get('colorspace'),'content_bytes':base['content_bytes'],
+            'content_sha256':base['content_sha256'],'pixel_sha256':base['pixel_sha256'],
+            'base_image':base,'displayed_block_mask':mask,
+            'resource_candidates_are_exact_binding':False,'resource_candidate_count':len(candidates),
+            'resource_candidates_sha256':_semantic_hash(candidates),'resource_candidate_metadata':candidates[:8],
+            'resource_candidates_truncated':len(candidates)>8}
         rows.append(row)
-        del pix,pixels
-    content=sorted([{key:row[key] for key in ('content_bytes','content_sha256','pixel_sha256')} for row in rows],key=encoded)
+    content=sorted([{key:row[key] for key in ('content_bytes','content_sha256','pixel_sha256','displayed_block_mask')} for row in rows],key=encoded)
     placements=[{key:row[key] for key in ('bbox','transform','width','height','bpc','colorspace')} for row in rows]
     return {'status':'checked','placement_count':len(rows),'sha256':_semantic_hash(rows),
-        'content_sha256':_semantic_hash(content),'placements_sha256':_semantic_hash(placements),'images':rows}
+        'content_sha256':_semantic_hash(content),'placements_sha256':_semantic_hash(placements),'images':rows,
+        'resource_inventory_count':len(resource_rows),'resource_inventory_sha256':_semantic_hash(sorted(resource_rows,key=encoded))}
 
 
 def semantic_diagnostics(original,embedded,budget=lambda:None):
@@ -310,7 +384,7 @@ def semantic_diagnostics(original,embedded,budget=lambda:None):
     result={}
     for name,inspect in [('text',_text_semantics),('images',_image_semantics),
                          ('drawings',_drawings_semantics),('fonts',_font_semantics),('content_streams',_stream_semantics),
-                         ('display_operations',_bboxlog_semantics)]:
+                         ('display_operations',_bboxlog_semantics),('render_resources',_render_resource_context)]:
         values=[]
         for page in (original,embedded):
             budget()
@@ -363,6 +437,97 @@ def selected_visual_differences(left,right,metadata,decisions,page_index,page_si
     finally:
         if mask is not None: mask.close()
     return results
+
+
+def _pdfium_rewrite(original,budget=lambda:None):
+    """Reproduce upstream whole-document import/save; diagnostic only."""
+    import io
+    import pypdfium2 as pdfium
+    require(len(original)<=512*1024*1024,'pdfium_source_bytes_bound')
+    class BoundedBuffer(io.BytesIO):
+        failure=None
+        def write(self,data):
+            # The SDK writes through a ctypes callback, which cannot propagate
+            # Python exceptions. Stop retaining bytes and fail after save returns.
+            if self.failure is not None: return len(data)
+            if self.tell()+len(data)>MAX_PDFIUM_REWRITE_BYTES:
+                self.failure='pdfium_rewritten_bytes_bound'
+                return len(data)
+            try: budget()
+            except Exception:
+                self.failure='probe_deadline'
+                return len(data)
+            return super().write(data)
+    budget()
+    source=pdfium.PdfDocument(original)
+    destination=None
+    try:
+        require(1<=len(source)<=1000,'pdfium_page_count_bound')
+        destination=pdfium.PdfDocument.new()
+        budget()
+        destination.import_pages(source,list(range(len(source))))
+        require(len(destination)==len(source),'pdfium_import_page_count_mismatch')
+        budget()
+        with BoundedBuffer() as buffer:
+            destination.save(buffer)
+            require(buffer.failure is None,buffer.failure or 'pdfium_save_failed')
+            rewritten=buffer.getvalue()
+        budget()
+        return rewritten,{'pypdfium2':str(pdfium.PYPDFIUM_INFO),'pdfium':str(pdfium.PDFIUM_INFO)}
+    finally:
+        if destination is not None: destination.close()
+        source.close()
+
+
+def pdfium_rewrite_diagnostics(original,authentic,supplied,page_index,metadata,decisions,budget=lambda:None):
+    """Compare reproducible derived bytes; equality does not accept content loss."""
+    import fitz
+    import mineru_figure_sources as figures
+    result={'diagnostic_only':True,'production_acceptance':False,
+        'recipe':'mineru-3.4.4-whole-document-pdfium-import-save',
+        'upstream_commit':'0dfc9460cd9ab693b9af60ae3fbffd7bc111b062',
+        'page_index':page_index,'render_dpi':300}
+    try:
+        rewritten,runtime=_pdfium_rewrite(original,budget)
+        result.update(runtime=runtime,rewritten_pdf_sha256=digest(rewritten),rewritten_pdf_bytes=len(rewritten),
+            original_pdf_sha256=digest(original),original_pages=len(authentic),embedded_pages=len(supplied))
+        budget()
+        with fitz.open(stream=rewritten,filetype='pdf') as document:
+            result.update(rewritten_pages=len(document),rewritten_encrypted=bool(document.is_encrypted),
+                original_page_count_equal=len(document)==len(authentic),embedded_page_count_equal=len(document)==len(supplied))
+            require(len(document)==len(authentic),'pdfium_rewritten_page_count_mismatch')
+            require(not document.is_encrypted and page_index<len(document),'pdfium_rewritten_page_missing')
+            actual,derived,embedded=authentic[page_index],document[page_index],supplied[page_index]
+            geometry=figures._geometry(derived)
+            result.update(rewritten_geometry=geometry,
+                original_geometry_equal=exact_json(figures._geometry(actual),geometry),
+                embedded_geometry_equal=exact_json(figures._geometry(embedded),geometry))
+            budget()
+            transformed=figures._render(derived)
+            try:
+                budget()
+                left=figures._render(actual)
+                try:
+                    result['original_vs_rewritten']=_difference(left,transformed)
+                    result['original_vs_rewritten']['selected_visual_differences']=selected_visual_differences(
+                        left,transformed,metadata,decisions,page_index,figures._geometry(actual)['rect'][2:])
+                finally: left.close()
+                budget()
+                right=figures._render(embedded)
+                try:
+                    result['rewritten_vs_embedded']=_difference(transformed,right)
+                    result['rewritten_vs_embedded']['selected_visual_differences']=selected_visual_differences(
+                        transformed,right,metadata,decisions,page_index,geometry['rect'][2:])
+                finally: right.close()
+            finally: transformed.close()
+            for label in ('original_vs_rewritten','rewritten_vs_embedded'):
+                comparison=result[label]
+                comparison['rgb_equal']=comparison['same_size'] and comparison.get('diff_pixel_count')==0
+            result['status']='checked'
+            budget()
+    except Exception as error:
+        result.update(status='unavailable',category=str(error) if isinstance(error,ProbeError) else type(error).__name__)
+    return result
 
 
 def compare_cached_pdf(original_path,payload,*,original_sha256,clock=time.monotonic,deadline=None):
@@ -447,6 +612,8 @@ def compare_cached_pdf(original_path,payload,*,original_sha256,clock=time.monoto
                         and page['annots_false'].get('diff_pixel_count') == 0)
                     if not default_equal:
                         page['semantic_diagnostics'] = semantic_diagnostics(actual,other,budget)
+                    page['pdfium_rewrite'] = pdfium_rewrite_diagnostics(
+                        original,authentic,supplied,index,metadata,decisions,budget)
                     require(digest(original_path.read_bytes())==original_sha256,'original_bytes_changed')
                     return result
                 page['rgb_sha256'] = difference['original_rgb_sha256']

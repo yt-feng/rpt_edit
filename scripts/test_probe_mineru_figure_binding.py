@@ -149,11 +149,81 @@ class ProbeTests(unittest.TestCase):
         page.get_text.assert_not_called()
         page.get_image_info.return_value=[{'width':20,'height':20}]
         page.get_images.return_value=[(1,2,20,20)]
-        page.parent.xref_get_key.side_effect=[('int','999999'),('int','999999')]
+        page.parent.xref_get_key.side_effect=lambda _ref,key:('int','999999') if key in {'Width','Height'} else ('null','null')
         with patch('fitz.Pixmap',side_effect=AssertionError('Mask decode before bounds')):
             with self.assertRaisesRegex(probe.ProbeError,'displayed_image_dimensions_bound'):
                 probe._image_semantics(page)
         page.get_text.assert_not_called()
+
+    def test_displayed_image_and_different_size_softmask_are_independently_hashed(self):
+        from PIL import Image
+        image=io.BytesIO(); Image.new('RGB',(20,20),(255,0,0)).save(image,'PNG')
+        with fitz.open() as document:
+            page=document.new_page()
+            xref=page.insert_image(fitz.Rect(20,20,120,120),stream=image.getvalue())
+            mask=document.get_new_xref()
+            document.update_object(mask,'<</Type/XObject/Subtype/Image/Width 9/Height 13/ColorSpace/DeviceGray/BitsPerComponent 8>>')
+            document.update_stream(mask,bytes([128])*(9*13))
+            document.xref_set_key(xref,'SMask',str(mask)+' 0 R')
+            result=probe._image_semantics(page)
+        self.assertEqual(result['status'],'checked')
+        displayed=result['images'][0]
+        self.assertEqual((displayed['base_image']['width'],displayed['base_image']['height']),(20,20))
+        self.assertEqual((displayed['displayed_block_mask']['width'],displayed['displayed_block_mask']['height']),(9,13))
+        self.assertEqual(len(displayed['displayed_block_mask']['pixel_sha256']),64)
+        self.assertFalse(displayed['resource_candidates_are_exact_binding'])
+        self.assertIn('Matte',displayed['resource_candidate_metadata'][0]['mask_dictionary_fields_sha256'])
+        self.assertNotIn('DeviceGray',json.dumps(result))
+
+    def test_unused_resource_softmask_is_not_claimed_as_displayed_mask(self):
+        from PIL import Image
+        def png(size):
+            stream=io.BytesIO(); Image.new('RGB',size,(255,0,0)).save(stream,'PNG'); return stream.getvalue()
+        with fitz.open() as document:
+            page=document.new_page()
+            page.insert_image(fitz.Rect(20,20,120,120),stream=png((20,20)))
+            original_contents=page.get_contents()
+            unused=page.insert_image(fitz.Rect(130,20,230,120),stream=png((40,40)))
+            mask=document.get_new_xref()
+            document.update_object(mask,'<</Type/XObject/Subtype/Image/Width 9/Height 13/ColorSpace/DeviceGray/BitsPerComponent 8>>')
+            document.update_stream(mask,bytes([128])*(9*13))
+            document.xref_set_key(unused,'SMask',str(mask)+' 0 R')
+            document.xref_set_key(page.xref,'Contents','['+' '.join(str(ref)+' 0 R' for ref in original_contents)+']')
+            result=probe._image_semantics(page)
+        self.assertEqual(result['placement_count'],1)
+        self.assertEqual(result['resource_inventory_count'],2)
+        self.assertIsNone(result['images'][0]['displayed_block_mask'])
+        self.assertFalse(result['images'][0]['resource_candidate_metadata'][0]['has_soft_mask'])
+
+    def test_render_context_detects_group_and_transparency_without_private_values(self):
+        with fitz.open(self.fixture.original) as document:
+            page=document[0]
+            before=probe._render_resource_context(page)
+            document.xref_set_key(page.xref,'Group','<</S/Transparency/I true/K false/CS/DeviceRGB>>')
+            state=document.get_new_xref()
+            document.update_object(state,'<</Type/ExtGState/ca 0.5/CA 0.7/BM/Multiply>>')
+            resources=int(document.xref_get_key(page.xref,'Resources')[1].split()[0])
+            document.xref_set_key(resources,'ExtGState','<</SECRET_RESOURCE '+str(state)+' 0 R>>')
+            document.xref_set_key(document.pdf_catalog(),'OCProperties','<</PRIVATE_LABEL(SECRET_TEXT)>>')
+            after=probe._render_resource_context(page)
+        self.assertNotEqual(before['sha256'],after['sha256'])
+        self.assertTrue(after['page_group']['I']['present'])
+        self.assertEqual(after['page_transparency']['entry_count'],1)
+        self.assertTrue(after['page_transparency']['entries'][0]['fields']['ca']['present'])
+        self.assertTrue(after['catalog']['OCProperties']['present'])
+        for private in ('SECRET_RESOURCE','SECRET_TEXT','PRIVATE_LABEL','Multiply','DeviceRGB'):
+            self.assertNotIn(private,json.dumps(after))
+
+    def test_resource_fingerprint_does_not_treat_xref_renumbering_as_difference(self):
+        with fitz.open(self.fixture.original) as document:
+            first,second=document.get_new_xref(),document.get_new_xref()
+            for reference in (first,second):
+                document.update_object(reference,'<</S/Transparency/I true/CS/DeviceRGB>>')
+            document.xref_set_key(document[0].xref,'Group',str(first)+' 0 R')
+            before=probe._pdf_key_fingerprint(document,document[0].xref,'Group')
+            document.xref_set_key(document[0].xref,'Group',str(second)+' 0 R')
+            after=probe._pdf_key_fingerprint(document,document[0].xref,'Group')
+        self.assertEqual(before,after)
 
     def test_selected_crop_uses_exact_fractional_source_viewport(self):
         self.fixture=Fixture(self.root/'fractional',actual_size=(400.3,500.8))
@@ -164,6 +234,65 @@ class ProbeTests(unittest.TestCase):
         self.assertNotEqual(selected['source_rect_size'],page['provider_size'])
         self.assertEqual(selected['point_to_pixel'],[300/72,0,0,300/72,0,0])
         self.assertGreater(selected['union_crop_diff_pixel_count'],0)
+
+    def test_pdfium_rewrite_imports_all_real_pages_with_recorded_runtime(self):
+        with fitz.open(self.fixture.original) as original:
+            original.new_page().insert_text((30,50),'SECOND PAGE CONTENT')
+            raw=original.tobytes(no_new_id=True)
+        rewritten,runtime=probe._pdfium_rewrite(raw)
+        self.assertEqual(runtime['pypdfium2'],'5.13.0')
+        self.assertTrue(runtime['pdfium'])
+        import mineru_figure_sources as figures
+        with fitz.open(stream=raw,filetype='pdf') as original, fitz.open(stream=rewritten,filetype='pdf') as derived:
+            self.assertEqual((len(original),len(derived)),(2,2))
+            for index in range(2):
+                left,right=figures._render(original[index]),figures._render(derived[index])
+                try: self.assertEqual(probe._difference(left,right)['diff_pixel_count'],0)
+                finally: left.close(); right.close()
+
+    def test_pdfium_rewrite_rejects_incomplete_whole_document_import(self):
+        import pypdfium2 as pdfium
+        with fitz.open(self.fixture.original) as original:
+            original.new_page()
+            raw=original.tobytes(no_new_id=True)
+        importer=pdfium.PdfDocument.import_pages
+        with patch.object(pdfium.PdfDocument,'import_pages',
+                          lambda target,source,pages:importer(target,source,pages[:1])):
+            with self.assertRaisesRegex(probe.ProbeError,'pdfium_import_page_count_mismatch'):
+                probe._pdfium_rewrite(raw)
+
+    def test_pdfium_save_bound_fails_after_callback_without_retaining_overflow(self):
+        with patch.object(probe,'MAX_PDFIUM_REWRITE_BYTES',100):
+            with self.assertRaisesRegex(probe.ProbeError,'pdfium_rewritten_bytes_bound'):
+                probe._pdfium_rewrite(self.fixture.original.read_bytes())
+
+    def test_pdfium_derived_provider_is_reproducible_but_diagnostic_only(self):
+        import mineru_figure_sources as figures
+        raw=self.fixture.original.read_bytes()
+        rewritten,_=probe._pdfium_rewrite(raw)
+        (self.fixture.raw/'source.pdf').write_bytes(rewritten)
+        (_,content),(_,middle),_=figures._metadata_files(self.fixture.raw)
+        metadata=figures._normalise(content,middle)
+        with fitz.open(stream=raw,filetype='pdf') as original, fitz.open(stream=rewritten,filetype='pdf') as supplied:
+            result=probe.pdfium_rewrite_diagnostics(raw,original,supplied,0,metadata,figures._decisions(metadata,100))
+        self.assertEqual(result['status'],'checked')
+        self.assertTrue(result['rewritten_vs_embedded']['rgb_equal'])
+        self.assertTrue(result['original_page_count_equal']); self.assertTrue(result['embedded_page_count_equal'])
+        self.assertEqual(len(result['rewritten_pdf_sha256']),64)
+        self.assertTrue(result['diagnostic_only']); self.assertFalse(result['production_acceptance'])
+        self.assertNotIn('Verified source page',json.dumps(result))
+        self.assertNotIn('Figure 1',json.dumps(result))
+
+    def test_pdfium_rewrite_does_not_explain_modified_provider_body(self):
+        self.change_embedded(lambda doc:doc[0].insert_text((50,150),'CHANGED SECRET',fontsize=10))
+        result=self.compare(); derived=result['pages'][0]['pdfium_rewrite']
+        self.assertEqual(derived['status'],'checked')
+        self.assertTrue(derived['original_vs_rewritten']['rgb_equal'])
+        self.assertFalse(derived['rewritten_vs_embedded']['rgb_equal'])
+        self.assertGreater(derived['rewritten_vs_embedded']['selected_visual_differences'][0]['body_diff_pixel_count'],0)
+        self.assertEqual(result['status'],'mismatch'); self.assertFalse(result['all_selected_pages_equal'])
+        self.assertFalse(derived['production_acceptance'])
+        self.assertNotIn('CHANGED',json.dumps(derived))
 
     def test_annotation_change_is_classified_but_never_accepted(self):
         def annotate(doc):
