@@ -336,12 +336,107 @@ class RecoveryTests(unittest.TestCase):
             self.assertEqual(call['markdown_sha256'], m.digest(b'# Original report\nVerified source revenue 125.50.\n'))
         self.validate()
 
+    def test_real_chart_wrapper_receipt_validates_fractional_page_status_map_and_proof(self):
+        from test_mineru_figure_sources import Fixture
+        from consume_legacy_mineru import figure_source_status
+        fixture = Fixture(self.root / 'provider-fixture', size=(595, 842), actual_size=(595.2, 842))
+        # Admit these exact fractional-page bytes to a fresh fixture ledger.
+        # PyMuPDF stores 595.2 as 595.200012..., whose 300dpi raster is 2480px.
+        raw = fixture.original.read_bytes()
+        for (path, _), row in zip(self.pairs, self.rows):
+            path.write_bytes(raw)
+            row['content_sha256'] = m.digest(raw)
+        self.save_manifest()
+        self.store = m.FileStore(self.root / 'fractional-ledger')
+        self.provider = Provider()
+        self.ledger = m.Ledger(self.store, self.provider, 'dropbox', 'https://mineru.net', r.OPTIONS,
+                              [('MINER_U', 'private-token')], sleep=lambda seconds: None)
+        for number, indices in enumerate(([0, 2, 4], [1, 3, 5, 6]), 1):
+            items = [self.ledger.bind(*self.pairs[index]) for index in indices]
+            key, batch_id = 'batches/' + str(number) * 32, 'root-' + str(number)
+            self.store.put(key, {'schema': 1, 'key': key, 'scope': 'dropbox', 'endpoint': 'https://mineru.net',
+                'options': r.OPTIONS, 'token_identity': next(iter(self.ledger.tokens)),
+                'files': items, 'state': 'accepted', 'batch_id': batch_id})
+            for item in items:
+                self.store.put('sources/' + item['id'], {'schema': 1, 'binding': item, 'batch_key': key})
+            self.provider.tasks[batch_id] = items
+        markdown = (fixture.report / 'source_mineru.md').read_bytes()
+        originals = {self.ledger.bind(path, source)['id']: path for path, source in self.pairs}
+        def provider_zip(url):
+            source = originals[url.rsplit('/', 1)[1]]
+            buffer = io.BytesIO()
+            with zipfile.ZipFile(buffer, 'w') as archive:
+                archive.writestr('full.md', markdown)
+                for path in fixture.raw.rglob('*'):
+                    if path.is_file():
+                        archive.writestr(path.relative_to(fixture.raw).as_posix(),
+                            source.read_bytes() if path.name == 'source.pdf' else path.read_bytes())
+            return buffer.getvalue()
+        receipt = self.recover(downloader=provider_zip, asset_writer=r.chart_assets)
+        self.assertEqual(receipt['report_count'], 7)
+        for report in receipt['reports']:
+            directory = self.output / report['directory']
+            status = json.loads((directory / 'status.json').read_bytes())
+            mapping = json.loads((directory / 'source_image_map.json').read_bytes())
+            self.assertEqual(status['images'], ['assets/source_image_01.png'])
+            self.assertEqual(status['source_figure_map'], 'source_figure_map.json')
+            self.assertEqual(status['source_figure_map_sha256'],
+                             m.digest((directory / 'source_figure_map.json').read_bytes()))
+            proof = json.loads((directory / 'source_figure_map.json').read_bytes())
+            self.assertEqual(proof['pages'][0]['pixel_size'][0], 2480)
+            self.assertEqual(figure_source_status(directory), {
+                key: status[key] for key in ('source_figure_map', 'source_figure_map_sha256')})
+            selected = r.validate_figure_sources(directory,
+                expected_original_sha256=report['binding']['content_sha256'],
+                expected_markdown_sha256=report['source_markdown_sha256'], expected_images=status['images'])
+            self.assertTrue(selected)
+            for reference, target in selected.items():
+                self.assertEqual(mapping['images'][reference], target)
+        self.assertEqual(self.validate()['report_count'], 7)
+        self.assertFalse(list(self.output.rglob('mineru_raw')))
+        self.assertEqual(self.provider.posts, [])
+
+    def test_final_figure_validation_retains_safe_category_and_manifest_ordinal(self):
+        self.recover()
+        error = r.FigureSourceError('figure_asset_mismatch')
+        error.source_ordinal = 'PRIVATE source.pdf https://PRIVATE.invalid'
+        calls = []
+        def validation(directory, **kwargs):
+            calls.append(directory)
+            if len(calls) == 3:
+                raise error
+            return None
+        with patch.object(r, 'validate_figure_sources', side_effect=validation), \
+                self.assertRaises(r.FigureSourceError) as stopped:
+            self.validate()
+        self.assertIs(stopped.exception, error)
+        self.assertEqual(error.source_ordinal, 3)
+        self.assertEqual(calls, [self.output / row['directory'] for row in
+            json.loads((self.output / r.RECEIPT).read_bytes())['reports'][:3]])
+        calls.clear()
+        with patch.object(r, 'validate_figure_sources', side_effect=validation), \
+                patch('sys.argv', ['recover', 'validate', '--output-dir', str(self.output),
+                                   '--expected-reports', '7', '--date-folder', '261003']), \
+                patch('sys.stderr', new_callable=io.StringIO) as stderr:
+            self.assertEqual(r.main(), 2)
+        self.assertEqual(stderr.getvalue(),
+            'MinerU source recovery stopped: figure_asset_mismatch source_ordinal=3\n')
+
+    def test_conflicting_figure_selection_has_safe_binding_category_and_ordinal(self):
+        self.recover()
+        with patch.object(r, 'validate_figure_sources', return_value={'PRIVATE reference': 'PRIVATE asset'}), \
+                self.assertRaisesRegex(r.FigureSourceError, 'figure_source_binding_mismatch') as stopped:
+            self.validate()
+        self.assertEqual(stopped.exception.source_ordinal, 1)
+        self.assertNotIn('PRIVATE', str(stopped.exception))
+
     def test_rehashed_invalid_optional_figure_sidecar_is_rejected(self):
         self.recover()
-        directory = next(self.output.glob('report_*'))
+        directory = sorted(self.output.glob('report_*'))[0]
         (directory / 'source_figure_map.json').write_bytes(b'[]')
         self.rewrite_receipt(lambda _: None, refresh_files=True)
-        with self.assertRaisesRegex(r.RecoveryError, 'report_figure_source'): self.validate()
+        with self.assertRaisesRegex(r.FigureSourceError, 'figure_proof_invalid') as stopped: self.validate()
+        self.assertEqual(stopped.exception.source_ordinal, 1)
 
     def test_declared_figure_sidecar_cannot_disappear_or_be_null(self):
         self.recover()
@@ -350,7 +445,8 @@ class RecoveryTests(unittest.TestCase):
         for name, sha in [('source_figure_map.json', 'a' * 64), (None, None)]:
             status.update(source_figure_map=name, source_figure_map_sha256=sha)
             path.write_bytes(m.encoded(status)); self.rewrite_receipt(lambda _: None, refresh_files=True)
-            with self.subTest(name=name), self.assertRaisesRegex(r.RecoveryError, 'report_figure_source'): self.validate()
+            with self.subTest(name=name), self.assertRaisesRegex(r.FigureSourceError, 'figure_source_binding_mismatch'):
+                self.validate()
     def test_receipt_rejects_missing_file(self):
         self.recover(); next(self.output.rglob('source_image_map.json')).unlink()
         with self.assertRaises(r.RecoveryError): self.validate()
