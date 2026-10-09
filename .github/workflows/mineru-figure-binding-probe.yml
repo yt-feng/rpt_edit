@@ -29,6 +29,11 @@ on:
         description: One-based selected original source ordinal
         required: true
         type: string
+      recipient_cert_pem:
+        description: Optional RSA X509 certificate (3072+ bits) for encrypted exact-source debugging
+        required: false
+        default: ''
+        type: string
 permissions:
   contents: read
   actions: read
@@ -86,6 +91,20 @@ jobs:
           PY
       - name: Install bounded read-only probe dependencies
         run: python3 -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF pypdf==6.19.0 pypdfium2==5.13.0 'boto3>=1.37.32,<2'
+      - name: Validate optional encryption recipient before source/cache access
+        if: inputs.recipient_cert_pem != ''
+        env:
+          RECIPIENT_CERT_PEM: ${{ inputs.recipient_cert_pem }}
+        run: |
+          python3 - <<'PY'
+          import os, sys
+          sys.path.insert(0, 'scripts')
+          from export_market_views_original_page_qa import checked_recipient
+          try:
+              checked_recipient(os.environ['RECIPIENT_CERT_PEM'])
+          except Exception:
+              raise SystemExit('Optional encrypted diagnostic recipient rejected.')
+          PY
       - name: Download exact complete selected original artifact
         uses: actions/download-artifact@v4
         with:
@@ -97,6 +116,7 @@ jobs:
       - name: Probe one exact cached source without new provider work or writes
         timeout-minutes: 10
         env:
+          RECIPIENT_CERT_PEM: ${{ inputs.recipient_cert_pem }}
           SOURCE_RUN_ID: ${{ inputs.source_run_id }}
           DATE_FOLDER: ${{ inputs.date_folder }}
           EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
@@ -122,3 +142,11 @@ jobs:
           path: ${{ runner.temp }}/mineru-figure-binding-probe.json
           if-no-files-found: ignore
           retention-days: 7
+      - name: Retain optional encrypted exact source only
+        if: always() && inputs.recipient_cert_pem != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: mineru-figure-binding-encrypted-${{ github.run_id }}
+          path: ${{ runner.temp }}/mineru-figure-binding-export.cms
+          if-no-files-found: ignore
+          retention-days: 1

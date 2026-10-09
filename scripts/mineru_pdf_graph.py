@@ -24,6 +24,34 @@ MAX_HEADER_BYTES = 2 * 1024 * 1024
 MAX_STREAM_BYTES = 64 * 1024 * 1024
 MAX_TOTAL_BYTES = 256 * 1024 * 1024
 MAX_CONTAINER_ITEMS = 20000
+MAX_DIAGNOSTIC_KEYS = 64
+MAX_DIAGNOSTIC_UNKNOWN_KEYS = 16
+MAX_DIAGNOSTIC_NODES = 10000
+# Only these literal PDF specification keys can be exposed in diagnostics.
+# Resource identifiers and all dictionary values are always hashed.
+DIAGNOSTIC_STANDARD_KEYS = frozenset("""
+/Type /Subtype /Length /Length1 /Length2 /Length3 /DL /Filter /DecodeParms
+/F /FFilter /FDecodeParms /Metadata /PieceInfo /LastModified /StructParent /StructParents
+/Width /Height /ColorSpace /CS /BitsPerComponent /Decode /Interpolate /ImageMask
+/Mask /SMask /Matte /SMaskInData /Intent /Alternates /OC /OPI
+/Predictor /Columns /Colors /EarlyChange /K /EndOfLine /EncodedByteAlign /Rows
+/EndOfBlock /BlackIs1 /DamagedRowsBeforeError /ColorTransform /JBIG2Globals
+/Resources /Contents /Group /Annots /XObject /ExtGState /Font /Pattern /Shading /Properties /ProcSet
+/S /I /N /C /BC /TR /TR2 /G /BBox /Matrix /FormType /Ref
+/LW /LC /LJ /ML /D /RI /OP /op /OPM /BG /BG2 /UCR /UCR2 /HT /FL /SM /SA /BM /CA /ca /AIS /TK
+/BaseFont /FirstChar /LastChar /Widths /FontDescriptor /Encoding /ToUnicode /DescendantFonts
+/CIDSystemInfo /CIDToGIDMap /DW /W /DW2 /W2 /FontFile /FontFile2 /FontFile3
+/FontName /FontFamily /FontStretch /FontWeight /Flags /FontBBox /ItalicAngle /Ascent /Descent
+/Leading /CapHeight /XHeight /StemV /StemH /AvgWidth /MaxWidth /MissingWidth /CharSet
+/FontMatrix /CharProcs /Differences /BaseEncoding /Registry /Ordering /Supplement
+/OCGs /VE /P /Name /Usage /CreatorInfo /Creator /View /ViewState /Print /PrintState /Export /ExportState
+/OCProperties /Configs /BaseState /ON /OFF /AS /Order /ListMode /RBGroups /Locked
+/OutputIntents /DestOutputProfile /OutputCondition /OutputConditionIdentifier /Info
+/MediaBox /CropBox /BleedBox /TrimBox /ArtBox /Rotate /UserUnit
+/Rect /AP /AS /Border /BS /A /AA /Parent /Kids /T /V /DA /DR /AcroForm /NeedsRendering /XFA
+/ShadingType /Function /FunctionType /Domain /Range /Coords /Extend /Background /AntiAlias
+/Size /BitsPerSample /Encode /Bounds /Functions /C0 /C1 /PatternType /PaintType /TilingType /XStep /YStep
+""".split())
 _PARSER = SimpleNamespace(strict=True)
 _PARSER_LOADED = False
 
@@ -44,6 +72,7 @@ class PdfGraphError(ValueError):
     def __init__(self, category):
         self.category = category
         self.path_sha256 = None
+        self.sanitized_details = None
         super().__init__(category)
 
 
@@ -91,6 +120,105 @@ def _reference(value):
     # aware accessor is used, accepting nonzero generations would be guessing.
     _require(value.generation == 0 and value.idnum > 0, "pdf_graph_reference_generation")
     return value.idnum, value.generation
+
+
+def _value_kind(value):
+    for kind, classes in (("dictionary", (DictionaryObject, dict)), ("array", (ArrayObject,)),
+                          ("reference", (IndirectObject,)), ("boolean", (BooleanObject,)),
+                          ("null", (NullObject,)), ("number", (NumberObject, FloatObject)),
+                          ("name", (NameObject,)), ("string", (TextStringObject,)),
+                          ("bytes", (ByteStringObject,))):
+        if isinstance(value, classes):
+            return kind
+    return "unsupported"
+
+
+def _key_hash(key):
+    return hashlib.sha256(str(key).encode("utf-8")).hexdigest()
+
+
+def _value_summary(value):
+    """Summarize typed values without resolving references or exposing strings."""
+    kind = _value_kind(value)
+    result = {"type": kind, "empty": kind == "null" or (
+        kind in {"dictionary", "array", "name", "string", "bytes"} and len(value) == 0)}
+    hasher = hashlib.sha256()
+    nodes, size = 0, 0
+
+    def visit(item, depth=0):
+        nonlocal nodes, size
+        nodes += 1
+        if nodes > MAX_DIAGNOSTIC_NODES or depth > MAX_DEPTH:
+            raise ValueError
+        item_kind = _value_kind(item)
+        payload = item_kind.encode("ascii")
+        if item_kind in {"name", "string", "number"}:
+            payload += str(item).encode("utf-8")
+        elif item_kind == "bytes":
+            payload += bytes(item)
+        elif item_kind == "boolean":
+            payload += b"true" if item.value else b"false"
+        # Normalize xref numbers: this describes value shape, not an additional
+        # graph-binding proof. Indirect target content is checked by the binder.
+        size += len(payload)
+        if size > MAX_HEADER_BYTES:
+            raise ValueError
+        hasher.update(len(payload).to_bytes(8, "big")); hasher.update(payload)
+        if item_kind == "dictionary":
+            for key in sorted(item, key=str):
+                raw_key = str(key).encode("utf-8")
+                size += len(raw_key)
+                if size > MAX_HEADER_BYTES:
+                    raise ValueError
+                hasher.update(len(raw_key).to_bytes(8, "big")); hasher.update(raw_key)
+                visit(item.raw_get(key) if isinstance(item, DictionaryObject) else item[key], depth + 1)
+        elif item_kind == "array":
+            for member in item:
+                visit(member, depth + 1)
+    try:
+        visit(value)
+        result.update(sha256=hasher.hexdigest(), hash_status="complete")
+    except Exception:
+        result.update(sha256=None, hash_status="bounded")
+    if kind == "dictionary":
+        keys = {str(key) for key in value}
+        unknown = sorted(_key_hash(key) for key in keys - DIAGNOSTIC_STANDARD_KEYS)
+        result.update(key_count=len(keys), known_keys=sorted(keys & DIAGNOSTIC_STANDARD_KEYS),
+                      unknown_key_count=len(unknown), unknown_key_sha256=unknown[:MAX_DIAGNOSTIC_UNKNOWN_KEYS],
+                      unknown_keys_truncated=len(unknown) > MAX_DIAGNOSTIC_UNKNOWN_KEYS)
+    return result
+
+
+def _sanitized_details(a, b, path, path_sha256):
+    """Expose standard key names only; private path components stay hashed."""
+    standard_path_keys = [part for part in path if isinstance(part, str) and part in DIAGNOSTIC_STANDARD_KEYS]
+    result = {"schema": 1, "path_sha256": path_sha256,
+              "scope": "page" if path and path[0] == "page" else "catalog" if path and path[0] == "catalog" else "graph",
+              "last_standard_key": standard_path_keys[-1] if standard_path_keys else None,
+              "original": _value_summary(a), "embedded": _value_summary(b)}
+    if len(path) >= 2 and path[0] == "page" and type(path[1]) is int:
+        result["page_index"] = path[1]
+    if isinstance(a, (DictionaryObject, dict)) and isinstance(b, (DictionaryObject, dict)):
+        original_only = set(a) - set(b)
+        embedded_only = set(b) - set(a)
+        def keys(values):
+            known = sorted(str(key) for key in values if str(key) in DIAGNOSTIC_STANDARD_KEYS)
+            unknown = sorted(_key_hash(key) for key in values if str(key) not in DIAGNOSTIC_STANDARD_KEYS)
+            return {"known": known, "unknown_count": len(unknown),
+                    "unknown_sha256": unknown[:MAX_DIAGNOSTIC_UNKNOWN_KEYS],
+                    "unknown_truncated": len(unknown) > MAX_DIAGNOSTIC_UNKNOWN_KEYS}
+        changed = sorted(original_only | embedded_only,
+                         key=lambda key: (str(key) not in DIAGNOSTIC_STANDARD_KEYS, str(key)))
+        values = []
+        for key in changed[:MAX_DIAGNOSTIC_KEYS]:
+            row = {"key": str(key)} if str(key) in DIAGNOSTIC_STANDARD_KEYS else {"key_sha256": _key_hash(key)}
+            for label, value in (("original", a), ("embedded", b)):
+                row[label] = _value_summary(value.raw_get(key) if isinstance(value, DictionaryObject) else value[key]) \
+                    if key in value else {"type": "missing", "empty": True, "sha256": None, "hash_status": "missing"}
+            values.append(row)
+        result["dictionary_difference"] = {"original_only": keys(original_only), "embedded_only": keys(embedded_only),
+                                           "values": values, "values_truncated": len(changed) > MAX_DIAGNOSTIC_KEYS}
+    return result
 
 
 @dataclass(frozen=True)
@@ -299,6 +427,14 @@ def bind_pdf_render_graph(original_doc, embedded_doc, *, budget=lambda: None):
             if error.path_sha256 is None:
                 error.path_sha256 = hashlib.sha256(json.dumps(path, ensure_ascii=True,
                     separators=(",", ":")).encode("ascii")).hexdigest()
+            if error.sanitized_details is None:
+                try:
+                    error.sanitized_details = _sanitized_details(a, b, path, error.path_sha256)
+                except Exception:
+                    # Diagnostics never replace the original rejection or
+                    # report parser exceptions containing source material.
+                    error.sanitized_details = {"schema": 1, "path_sha256": error.path_sha256,
+                                               "status": "unavailable"}
             raise
 
     def compare_value(a, b, depth, path):

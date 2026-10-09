@@ -11,6 +11,7 @@ import fitz
 from PIL import Image
 import pypdfium2 as pdfium
 
+import mineru_pdf_graph as graph
 from mineru_pdf_graph import (PdfGraphError, bind_pdf_render_graph,
                              parse_pdf_value, validate_graph_receipt)
 
@@ -126,6 +127,56 @@ class GraphTests(unittest.TestCase):
             document.xref_set_key(resources, "PRIVATE_EXTRA_KEY", "42")
         with self.assertRaisesRegex(PdfGraphError, "pdf_graph_dictionary_keys_mismatch"):
             binding(self.original, changed(self.embedded, operation))
+
+    def test_dictionary_failure_details_expose_only_known_pdf_keys(self):
+        def operation(document):
+            resources = int(document.xref_get_key(document[0].xref, "Resources")[1].split()[0])
+            document.xref_set_key(resources, "DL", "123")
+            document.xref_set_key(resources, "CONFIDENTIAL_RESOURCE", "(PRIVATE_SOURCE_TEXT)")
+            document.xref_set_key(resources, "CONFIDENTIAL_NAME", "/PRIVATE_NAME_VALUE")
+        with self.assertRaisesRegex(PdfGraphError, "pdf_graph_dictionary_keys_mismatch") as caught:
+            binding(self.original, changed(self.embedded, operation))
+        details = caught.exception.sanitized_details
+        self.assertEqual((details["page_index"], details["last_standard_key"]), (0, "/Resources"))
+        self.assertEqual(details["path_sha256"], caught.exception.path_sha256)
+        difference = details["dictionary_difference"]
+        self.assertEqual(difference["embedded_only"]["known"], ["/DL"])
+        self.assertEqual(difference["embedded_only"]["unknown_count"], 2)
+        dl = next(value for value in difference["values"] if value.get("key") == "/DL")
+        self.assertEqual(dl["original"]["type"], "missing")
+        self.assertEqual(dl["embedded"]["type"], "number")
+        self.assertFalse(dl["embedded"]["empty"])
+        self.assertRegex(dl["embedded"]["sha256"], "^[0-9a-f]{64}$")
+        serialized = json.dumps(details)
+        for private in ("CONFIDENTIAL_RESOURCE", "CONFIDENTIAL_NAME", "PRIVATE_SOURCE_TEXT", "PRIVATE_NAME_VALUE", "PRIVATE FIRST"):
+            self.assertNotIn(private, serialized)
+
+    def test_scalar_failure_details_never_expose_pdf_name_or_string_values(self):
+        def operation(document):
+            group = next(x for x in range(1, document.xref_length()) if document.xref_get_key(x, "Type") == ("name", "/OCG"))
+            document.xref_set_key(group, "Name", "(CHANGED_SECRET_NAME)")
+        with self.assertRaisesRegex(PdfGraphError, "pdf_graph_scalar_mismatch") as caught:
+            binding(self.original, changed(self.embedded, operation))
+        details = caught.exception.sanitized_details
+        self.assertEqual(details["last_standard_key"], "/Name")
+        self.assertEqual(details["original"]["type"], "string")
+        self.assertNotEqual(details["original"]["sha256"], details["embedded"]["sha256"])
+        for private in ("CHANGED_SECRET_NAME", "PRIVATE FIRST", "PRIVATE SECOND"):
+            self.assertNotIn(private, json.dumps(details))
+
+    def test_diagnostic_unknown_keys_and_value_hash_work_are_bounded(self):
+        private = parse_pdf_value("<<" + " ".join(f"/SECRET_RESOURCE_{i}(SECRET_VALUE_{i})" for i in range(200)) + ">>")
+        with patch("mineru_pdf_graph.MAX_DIAGNOSTIC_NODES", 1):
+            details = graph._sanitized_details(private, parse_pdf_value("<<>>"),
+                ("page", 3, "/Resources", "key", "/SECRET_RESOURCE_199"), "a" * 64)
+        self.assertEqual(details["original"]["hash_status"], "bounded")
+        self.assertEqual(details["last_standard_key"], "/Resources")
+        difference = details["dictionary_difference"]
+        self.assertEqual(len(difference["original_only"]["unknown_sha256"]), graph.MAX_DIAGNOSTIC_UNKNOWN_KEYS)
+        self.assertEqual(len(difference["values"]), graph.MAX_DIAGNOSTIC_KEYS)
+        self.assertTrue(difference["values_truncated"])
+        self.assertNotIn("SECRET_RESOURCE", json.dumps(details))
+        self.assertNotIn("SECRET_VALUE", json.dumps(details))
 
     def test_extra_unreferenced_ocg_is_rejected_by_inventory(self):
         def operation(document):

@@ -577,6 +577,8 @@ def optional_content_restoration_diagnostics(original,embedded_bytes,authentic,s
         result.update(status='rejected',category=str(error) if isinstance(error,(OptionalContentError,PdfGraphError,ProbeError)) else type(error).__name__)
         path=getattr(error,'path_sha256',None)
         if isinstance(path,str) and re.fullmatch(r'[0-9a-f]{64}',path):result['path_sha256']=path
+        details=getattr(error,'sanitized_details',None)
+        if isinstance(error,PdfGraphError) and isinstance(details,dict):result['graph_details']=details
     finally:
         if restored is not None:restored.close()
     return result
@@ -676,8 +678,56 @@ def compare_cached_pdf(original_path,payload,*,original_sha256,clock=time.monoto
         return result
 
 
-def probe(ledger,result_cache,input_dir,expected_articles,date_folder,source_ordinal):
+ENCRYPTED_EXPORT_NAME='mineru-figure-binding-export.cms'
+MAX_EXPORT_BYTES=128*1024*1024
+
+
+def _prepare_encrypted_export(recipient_cert_pem,encrypted_output,input_dir):
+    if not recipient_cert_pem:
+        require(encrypted_output is None,'export_recipient_required')
+        return None
+    from export_market_views_original_page_qa import checked_recipient
+    recipient,certificate=checked_recipient(recipient_cert_pem)
+    require(encrypted_output is not None,'encrypted_export_output_required')
+    target=Path(encrypted_output)
+    require(target.name==ENCRYPTED_EXPORT_NAME and not target.exists() and not target.is_symlink()
+            and target.parent.is_dir() and not target.parent.is_symlink(),'encrypted_export_output_invalid')
+    require(Path(input_dir).resolve() not in (target.resolve(),*target.resolve().parents),'encrypted_export_output_invalid')
+    return recipient,certificate,target
+
+
+def _write_encrypted_export(prepared,original,payload,private_receipt):
+    import io
+    import zipfile
+    from export_market_views_original_page_qa import encrypt_payload
+    recipient,certificate,target=prepared
+    manifest=encoded(private_receipt)
+    require(0<len(original)+len(payload)+len(manifest)<=MAX_EXPORT_BYTES,'encrypted_export_size_bound')
+    buffer=io.BytesIO()
+    with zipfile.ZipFile(buffer,'w',compression=zipfile.ZIP_STORED) as archive:
+        for name,raw in [('original.pdf',original),('result.zip',payload),('binding-manifest.json',manifest)]:
+            item=zipfile.ZipInfo(name,(1980,1,1,0,0,0));item.external_attr=0o600<<16
+            archive.writestr(item,raw)
+    plaintext=buffer.getvalue()
+    require(len(plaintext)<=MAX_EXPORT_BYTES,'encrypted_export_size_bound')
+    ciphertext=encrypt_payload(plaintext,recipient)
+    descriptor=os.open(target,os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600)
+    try:
+        with os.fdopen(descriptor,'wb') as output:output.write(ciphertext)
+    except Exception:
+        target.unlink(missing_ok=True)
+        raise
+    return {'schema':1,'status':'encrypted_exact_source_export','diagnostic_only':True,
+        'production_acceptance':False,'cipher':'CMS-EnvelopedData-AES-256-CBC',
+        'plaintext_payload_sha256':digest(plaintext),'ciphertext_sha256':digest(ciphertext),
+        'ciphertext_bytes':len(ciphertext),'original_pdf_sha256':digest(original),'result_zip_sha256':digest(payload),
+        **certificate}
+
+
+def probe(ledger,result_cache,input_dir,expected_articles,date_folder,source_ordinal,*,
+          recipient_cert_pem='',encrypted_output=None,export_context=None):
     require(type(source_ordinal) is int and 1<=source_ordinal<=expected_articles,'source_ordinal_invalid')
+    export=_prepare_encrypted_export(recipient_cert_pem,encrypted_output,input_dir)
     deadline = ledger.clock()+MAX_PROBE_SECONDS
     raw_manifest,bindings,pairs = frozen_inputs(input_dir,Path(input_dir)/MANIFEST,expected_articles,date_folder)
     readonly = copy.copy(ledger); readonly.store = ReadOnlyStore(ledger.store)
@@ -700,13 +750,24 @@ def probe(ledger,result_cache,input_dir,expected_articles,date_folder,source_ord
     readonly.store.verify()
     raw_after,bindings_after,pairs_after = frozen_inputs(input_dir,Path(input_dir)/MANIFEST,expected_articles,date_folder)
     require(raw_after==raw_manifest and exact_json(bindings_after,bindings),'original_inventory_changed')
-    return {'schema':1,'diagnostic_only':True,'production_acceptance':False,'complete_source_handoff':False,
+    response = {'schema':1,'diagnostic_only':True,'production_acceptance':False,'complete_source_handoff':False,
         'provider_posts':0,'provider_uploads':0,'provider_zip_downloads':0,'canonical_ledger_writes':0,
         'cache_writes':0,'provider_gets':readonly.provider.gets,'source_ordinal':source_ordinal,
         'original_report_count':expected_articles,'manifest_sha256':digest(raw_manifest),
         'source_binding_sha256':binding['id'],'cache_identity_sha256':identity,
         'selected_root_members':counts['admitted'],'selected_root_completed':counts['completed'],
         'selected_child_ordinal':lineage['child_ordinal'],'comparison':result}
+    if export is not None:
+        original=selected_path.read_bytes()
+        require(digest(original)==binding['sha256'],'original_bytes_changed')
+        private={'schema':1,'kind':'exact_mineru_figure_binding_export','source_context':export_context or {},
+            'date_folder':date_folder,'source_ordinal':source_ordinal,'expected_articles':expected_articles,
+            'manifest_sha256':digest(raw_manifest),'source_binding':binding,'cache_lineage':lineage,
+            'cache_identity_sha256':identity,'files':{
+                'original.pdf':{'sha256':digest(original),'bytes':len(original)},
+                'result.zip':{'sha256':digest(payload),'bytes':len(payload)}}}
+        response['encrypted_export']=_write_encrypted_export(export,original,payload,private)
+    return response
 
 
 def main(argv=None):
@@ -715,6 +776,7 @@ def main(argv=None):
     parser.add_argument('--source-run-id',required=True); parser.add_argument('--producer-json',required=True)
     parser.add_argument('--date-folder',required=True); parser.add_argument('--expected-articles',required=True,type=int)
     parser.add_argument('--source-ordinal',required=True,type=int)
+    parser.add_argument('--recipient-cert-pem',default=os.environ.get('RECIPIENT_CERT_PEM',''))
     args = parser.parse_args(argv)
     result = {'schema':1,'diagnostic_only':True,'production_acceptance':False,'complete_source_handoff':False,
         'provider_posts':0,'provider_uploads':0,'provider_zip_downloads':0,'canonical_ledger_writes':0,'cache_writes':0}
@@ -743,7 +805,10 @@ def main(argv=None):
         ledger = Ledger(R2Store('dropbox',client=client,bucket=bucket),
             Provider(NoRedirectHTTP(requests.request),'https://mineru.net'),'dropbox','https://mineru.net',
             OPTIONS,credentials(env))
-        result = probe(ledger,ResultCache(client,bucket),args.input_dir,args.expected_articles,args.date_folder,args.source_ordinal)
+        result = probe(ledger,ResultCache(client,bucket),args.input_dir,args.expected_articles,args.date_folder,args.source_ordinal,
+            recipient_cert_pem=args.recipient_cert_pem,
+            encrypted_output=Path(args.output).with_name(ENCRYPTED_EXPORT_NAME) if args.recipient_cert_pem else None,
+            export_context={'source_run_id':args.source_run_id,'source_execution_sha':source_sha,'probe_execution_sha':env['GITHUB_SHA']})
         result.update(source_run_id=args.source_run_id,date_folder=args.date_folder,
             source_execution_sha=source_sha,probe_execution_sha=env['GITHUB_SHA'])
         code = 0

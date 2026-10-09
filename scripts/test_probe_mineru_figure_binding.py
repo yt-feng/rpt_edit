@@ -2,6 +2,7 @@
 import copy
 import io
 import json
+import subprocess
 from pathlib import Path
 import tempfile
 import unittest
@@ -327,6 +328,26 @@ class ProbeTests(unittest.TestCase):
                 self.assertFalse(restored['all_selected_pages_equal'])
                 self.assertFalse(restored['production_acceptance'])
 
+    def test_graph_failure_details_expose_no_unknown_resource_names_or_values(self):
+        from test_mineru_pdf_oc import optional_content_fixture
+        original,embedded=optional_content_fixture()
+        self.fixture.original.write_bytes(original)
+        with fitz.open(stream=embedded,filetype='pdf') as document:
+            image=document[0].get_images()[0][0]
+            document.xref_set_key(image,'CONFIDENTIAL_PRIVATE_RESOURCE','(PRIVATE_SOURCE_TEXT)')
+            embedded=document.tobytes(no_new_id=True)
+        (self.fixture.raw/'source.pdf').write_bytes(embedded)
+        result=self.compare()['pages'][-1]['optional_content_restoration']
+        self.assertEqual(result['status'],'rejected')
+        self.assertEqual(result['category'],'pdf_graph_dictionary_keys_mismatch')
+        self.assertIsInstance(result['graph_details'],dict)
+        self.assertTrue(result['graph_details'])
+        encoded_result=json.dumps(result)
+        for private in ('CONFIDENTIAL_PRIVATE_RESOURCE','PRIVATE_SOURCE_TEXT','fixture-hidden','Hidden_A'):
+            self.assertNotIn(private,encoded_result)
+        self.assertEqual(len(result['path_sha256']),64)
+        self.assertFalse(result['production_acceptance'])
+
     def test_annotation_change_is_classified_but_never_accepted(self):
         def annotate(doc):
             annotation=doc[0].add_rect_annot(fitz.Rect(20,40,100,100))
@@ -406,6 +427,71 @@ class ProbeTests(unittest.TestCase):
         with self.assertRaisesRegex(probe.ProbeError,'probe_deadline'):
             probe.compare_cached_pdf(self.fixture.original,pack(self.fixture.raw),
                 original_sha256=digest(self.fixture.original.read_bytes()),clock=lambda:10,deadline=9)
+
+
+class EncryptedExportTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        from export_market_views_original_page_qa import OPENSSL
+        cls.crypto=tempfile.TemporaryDirectory();cls.addClassCleanup(cls.crypto.cleanup)
+        cls.key=Path(cls.crypto.name)/'key.pem';cls.cert=Path(cls.crypto.name)/'cert.pem'
+        created=subprocess.run([OPENSSL,'req','-x509','-newkey','rsa:3072','-nodes','-days','1',
+            '-subj','/CN=offline-mineru-binding','-keyout',str(cls.key),'-out',str(cls.cert)],
+            capture_output=True,timeout=120,check=False)
+        if created.returncode:raise AssertionError('System OpenSSL fixture creation required')
+        cls.key.chmod(0o600);cls.cert.chmod(0o600);cls.pem=cls.cert.read_text()
+    def setUp(self):
+        self.fixture=ProbeTests();self.fixture.setUp();self.addCleanup(self.fixture.doCleanups)
+        self.input,self.ledger,self.cache,self.binding=self.fixture.prepared()
+        self.output=self.fixture.root/probe.ENCRYPTED_EXPORT_NAME
+    def test_invalid_certificate_fails_before_original_ledger_provider_or_cache_reads(self):
+        for pem in ('https://PRIVATE.invalid/cert',self.key.read_text(),self.pem+self.pem,'invalid'):
+            with self.subTest(length=len(pem)),patch.object(self.cache,'get',side_effect=AssertionError('No cache read')),\
+                    patch.object(self.ledger.store,'get',side_effect=AssertionError('No ledger read')),\
+                    patch.object(probe,'frozen_inputs',side_effect=AssertionError('No original read')):
+                with self.assertRaises(ValueError):
+                    probe.probe(self.ledger,self.cache,self.input,1,'261009',1,
+                                recipient_cert_pem=pem,encrypted_output=self.output)
+        self.assertEqual(self.ledger.provider.gets,0);self.assertFalse(self.output.exists())
+    def test_real_cms_export_contains_exact_original_cache_zip_and_private_binding_only(self):
+        from export_market_views_original_page_qa import OPENSSL
+        before=copy.deepcopy(self.cache.client.objects)
+        with patch.object(self.cache,'put',side_effect=AssertionError('No cache write')),\
+                patch.object(self.ledger.store,'put',side_effect=AssertionError('No ledger write')):
+            result=probe.probe(self.ledger,self.cache,self.input,1,'261009',1,
+                recipient_cert_pem=self.pem,encrypted_output=self.output,
+                export_context={'source_run_id':'123','source_execution_sha':'a'*40,'probe_execution_sha':'b'*40})
+        ciphertext=self.output.read_bytes()
+        decrypted=subprocess.run([OPENSSL,'cms','-decrypt','-binary','-inform','DER',
+            '-recip',str(self.cert),'-inkey',str(self.key)],input=ciphertext,capture_output=True,timeout=120,check=False)
+        self.assertEqual(decrypted.returncode,0)
+        summary=result['encrypted_export']
+        self.assertEqual(summary['ciphertext_sha256'],digest(ciphertext))
+        self.assertEqual(summary['plaintext_payload_sha256'],digest(decrypted.stdout))
+        self.assertEqual(self.output.stat().st_mode&0o777,0o600)
+        self.assertEqual(result['provider_gets'],1);self.assertEqual(before,self.cache.client.objects)
+        with zipfile.ZipFile(io.BytesIO(decrypted.stdout)) as archive:
+            self.assertEqual(set(archive.namelist()),{'original.pdf','result.zip','binding-manifest.json'})
+            original=archive.read('original.pdf');payload=archive.read('result.zip')
+            manifest=json.loads(archive.read('binding-manifest.json'))
+            self.assertEqual(original,(self.input/'selected.pdf').read_bytes())
+            self.assertEqual(digest(payload),result['comparison']['result_zip_sha256'])
+            self.assertEqual(manifest['source_binding'],self.binding)
+            self.assertEqual(manifest['files']['original.pdf'],{'sha256':digest(original),'bytes':len(original)})
+            self.assertEqual(manifest['source_context']['source_run_id'],'123')
+        for private in ('PRIVATE','selected.pdf','SECRET_TOKEN','Verified source page','https://'):
+            self.assertNotIn(private,json.dumps(result))
+        self.assertFalse(summary['production_acceptance'])
+    def test_plaintext_and_zip_size_bound_precedes_encryption_and_output(self):
+        with patch.object(probe,'MAX_EXPORT_BYTES',100),\
+                patch('export_market_views_original_page_qa.encrypt_payload',side_effect=AssertionError('No oversized encryption')):
+            with self.assertRaisesRegex(probe.ProbeError,'encrypted_export_size_bound'):
+                probe.probe(self.ledger,self.cache,self.input,1,'261009',1,
+                    recipient_cert_pem=self.pem,encrypted_output=self.output)
+        self.assertFalse(self.output.exists())
+    def test_omitted_recipient_produces_no_encrypted_artifact(self):
+        result=probe.probe(self.ledger,self.cache,self.input,1,'261009',1)
+        self.assertNotIn('encrypted_export',result);self.assertFalse(self.output.exists())
 
 
 if __name__=='__main__': unittest.main(verbosity=2)
