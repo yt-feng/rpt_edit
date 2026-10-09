@@ -22,13 +22,14 @@ from consume_legacy_mineru import (ConsumerError, NetworkStop, chart_assets,
 from mineru_figure_sources import ERRORS as FIGURE_ERROR_CATEGORIES, FigureSourceError, validate_figure_sources
 from mineru_task_ledger import (DONE, FAILED, Ledger, LedgerError, Provider, R2Store,
                                digest, encoded, exact_json, schema_v1)
-from mineru_terminal_recovery import AUTOMATIC_POLICY, TerminalRecovery, task_identity
+from mineru_terminal_recovery import AUTOMATIC_POLICY, TerminalRecovery, task_identity, page_limit_failure
 from mineru_result_cache import ResultCache, identity as result_identity
 from smoke_mineru_api import NoRedirectHTTP, credentials
 
 WORKFLOW = '.github/workflows/market-views-mineru-recovery.yml'
 PRODUCER = '.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml'
 POLICY = 'durable-mineru-complete-market-source-v1'
+SEGMENT_POLICY = 'durable-mineru-complete-market-source-v2'
 MANIFEST = 'selected_to_process_manifest.json'
 RECEIPT = 'source-recovery-receipt.json'
 OPTIONS = {'model': 'vlm', 'language': 'en', 'ocr': True}
@@ -331,9 +332,12 @@ def validate_sources(output_dir, expected_reports, date_folder, *, expected_reco
     expected_keys = {'schema_version', 'policy', 'date_folder', 'source_run_id', 'recovery_run_id',
                      'source_execution_sha', 'recovery_execution_sha', 'manifest_sha256', 'original_inventory', 'report_count',
                      'original_tasks', 'provider_posts', 'reports', 'files'}
+    version = receipt.get('schema_version') if isinstance(receipt, dict) else None
+    if version == 2 and type(version) is int:
+        expected_keys.add('segmented_originals')
     if (not isinstance(receipt, dict) or set(receipt) != expected_keys
-            or type(receipt['schema_version']) is not int or receipt['schema_version'] != 1
-            or receipt['policy'] != POLICY or receipt['date_folder'] != exact_date(date_folder)
+            or type(version) is not int or version not in {1, 2}
+            or receipt['policy'] != (POLICY if version == 1 else SEGMENT_POLICY) or receipt['date_folder'] != exact_date(date_folder)
             or receipt['report_count'] != expected_reports or type(receipt['report_count']) is not int
             or not isinstance(receipt['recovery_run_id'], str) or not RUN.fullmatch(receipt['recovery_run_id'])
             or not isinstance(receipt['source_run_id'], str)
@@ -360,7 +364,7 @@ def validate_sources(output_dir, expected_reports, date_folder, *, expected_reco
             or not exact_json(receipt['files'], regular_inventory(root))):
         reject('receipt_inventory_hash')
     tasks = receipt['original_tasks']
-    if not isinstance(tasks, list) or not tasks:
+    if not isinstance(tasks, list) or (not tasks and version == 1):
         reject('receipt_tasks')
     task_map, admitted = {}, []
     for task in tasks:
@@ -374,14 +378,21 @@ def validate_sources(output_dir, expected_reports, date_folder, *, expected_reco
             reject('receipt_task_binding')
         task_map[task['key']] = task
         admitted.extend(task['data_ids'])
+    standalone = receipt.get('segmented_originals', [])
+    if (not isinstance(standalone, list) or any(not isinstance(value, str) or not HASH.fullmatch(value) for value in standalone)
+            or len(set(standalone)) != len(standalone) or set(standalone) & set(admitted)):
+        reject('receipt_segmented_admission')
+    admitted.extend(standalone)
     reports = receipt['reports']
     if (not isinstance(reports, list) or len(reports) != expected_reports
             or len(admitted) != expected_reports or len(set(admitted)) != len(admitted)):
         reject('receipt_source_count')
     identities = []
     for report, binding in zip(reports, bindings):
-        if (not isinstance(report, dict) or set(report) != {'directory', 'binding', 'source_binding', 'source_id', 'task',
-                                                        'zip_sha256', 'source_markdown_sha256'}
+        report_keys = {'directory', 'binding', 'source_binding', 'source_id', 'task', 'zip_sha256', 'source_markdown_sha256'}
+        if version == 2:
+            report_keys.add('delivery')
+        if (not isinstance(report, dict) or set(report) != report_keys
                 or not exact_json(report['binding'], binding)
                 or not isinstance(report['source_id'], str) or not HASH.fullmatch(report['source_id'])
                 or not re.fullmatch(r'report_[0-9]{4}_[a-f0-9]{12}', str(report['directory']))
@@ -398,8 +409,24 @@ def validate_sources(output_dir, expected_reports, date_folder, *, expected_reco
                 or not exact_json(source_binding['options'], OPTIONS)
                 or digest(encoded({key: value for key, value in source_binding.items() if key != 'id'})) != report['source_id']):
             reject('receipt_source_binding')
+        delivery = report.get('delivery', {'kind': 'provider'})
+        segmented = version == 2 and isinstance(delivery, dict) and delivery.get('kind') == 'page_segments'
+        if segmented:
+            from mineru_page_segments import validate_segment_receipt
+            if (set(delivery) != {'kind', 'receipt', 'original_provider_state'}
+                    or delivery['original_provider_state'] not in {None, 'failed', 'fail', 'error'}):
+                reject('receipt_segmented_delivery')
+            validate_segment_receipt(delivery['receipt'], source_binding)
+            if (report['zip_sha256'] != delivery['receipt']['merged_zip_sha256']
+                    or (report['source_id'] in standalone) != (delivery['original_provider_state'] is None)):
+                reject('receipt_segmented_delivery')
+        elif not exact_json(delivery, {'kind': 'provider'}):
+            reject('receipt_provider_delivery')
         lineage = report['task']
-        if (not isinstance(lineage, dict) or set(lineage) != {'root_key', 'batch_key', 'batch_id', 'data_id', 'parent_batch_key', 'child_ordinal'}
+        unsubmitted_original = segmented and report['source_id'] in standalone
+        if unsubmitted_original and lineage is not None:
+            reject('receipt_segmented_admission')
+        if not unsubmitted_original and (not isinstance(lineage, dict) or set(lineage) != {'root_key', 'batch_key', 'batch_id', 'data_id', 'parent_batch_key', 'child_ordinal'}
                 or lineage['root_key'] not in task_map
                 or report['source_id'] not in task_map[lineage['root_key']]['data_ids']
                 or lineage['data_id'] != report['source_id']
@@ -422,9 +449,10 @@ def validate_sources(output_dir, expected_reports, date_folder, *, expected_reco
                 or not isinstance(status, dict) or status.get('source_pdf') != binding['source_pdf']
                 or status.get('original_filename') != binding['original_filename']
                 or status.get('original_pdf_sha256') != binding['content_sha256']
-                or status.get('mineru_state') != 'done' or status.get('chart_source_only') is not True
+                or status.get('mineru_state') != ('segmented_complete' if segmented else 'done') or status.get('chart_source_only') is not True
                 or status.get('source_markdown') != 'source_mineru.md'
                 or not exact_json(status.get('mineru_recovery'), report['task'])
+                or (version == 2 and not exact_json(status.get('source_delivery'), delivery))
                 or not isinstance(status.get('images'), list)
                 or not all(isinstance(image, str) for image in status['images'])
                 or not 0 <= len(status['images']) <= 100
@@ -459,7 +487,7 @@ def validate_sources(output_dir, expected_reports, date_folder, *, expected_reco
     return receipt
 
 
-def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_reports, date_folder, *,
+def _recover_provider_sources(ledger, input_dir, manifest_path, output_dir, expected_reports, date_folder, * ,
                     source_run_id='', allow_fresh=False, recovery_run_id, source_execution_sha,
                     recovery_execution_sha=None,
                     allowed_error_codes=(), allowed_error_hashes=(), downloader=download_once,
@@ -733,6 +761,264 @@ def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_repor
                        'manifest_sha256': digest(raw_manifest),
                        'original_inventory': bindings, 'report_count': expected_reports, 'original_tasks': tasks,
                        'provider_posts': posts, 'reports': reports, 'files': regular_inventory(stage)}
+            (stage / RECEIPT).write_bytes(encoded(receipt))
+            validate_sources(stage, expected_reports, date_folder)
+            stage.replace(destination); complete = True
+            return receipt
+    finally:
+        if not complete:
+            shutil.rmtree(stage, ignore_errors=True)
+
+
+def recover_sources(ledger, input_dir, manifest_path, output_dir, expected_reports, date_folder, **options):
+    """Keep the legacy provider contract; use explicit source delivery for long PDFs."""
+    from mineru_page_segments import PAGE_LIMIT, page_count
+    _, _, pairs = frozen_inputs(input_dir, manifest_path, expected_reports, date_folder)
+    long_ids = {ledger.bind(path, source)['id'] for path, source in pairs if page_count(path) > PAGE_LIMIT}
+    if not long_ids:
+        return _recover_provider_sources(ledger, input_dir, manifest_path, output_dir,
+                                         expected_reports, date_folder, **options)
+    return _recover_segmented_sources(ledger, input_dir, manifest_path, output_dir,
+                                      expected_reports, date_folder, long_ids=long_ids, **options)
+
+
+def _recover_segmented_sources(ledger, input_dir, manifest_path, output_dir, expected_reports, date_folder, *,
+                    long_ids, source_run_id='', allow_fresh=False, recovery_run_id, source_execution_sha,
+                    recovery_execution_sha=None, allowed_error_codes=(), allowed_error_hashes=(),
+                    downloader=download_once, asset_writer=chart_assets, timeout=1800, interval=15,
+                    queue_budget=300, result_cache=None, authenticated_downloader=None,
+                    terminal_factory=None, total_timeout=None, continue_batches=False):
+    """Complete source coverage without altering a failed provider task or retry budget.
+
+    All original roots and existing recovery chains are checked before creating a
+    segment task. A long source is a separate, page-bound delivery; its original
+    provider failure remains in the receipt and in the immutable ledger.
+    """
+    from mineru_completed_child_reuse import _controller, read_completed_batch
+    from mineru_page_segments import (prepare_segments, read_segment_plan, run_segments,
+                                      preflight_segment_claims, validate_segment_receipt, SegmentArchive)
+    if type(continue_batches) is not bool or (continue_batches and (terminal_factory is None or allow_fresh)):
+        reject('daily_batch_continuation_requires_bound_terminal_factory')
+    if ledger.scope != 'dropbox' or not exact_json(ledger.options, OPTIONS):
+        reject('ledger_scope_options')
+    if (not RUN.fullmatch(str(recovery_run_id)) or (source_run_id and not RUN.fullmatch(str(source_run_id)))
+            or not isinstance(source_execution_sha, str) or not re.fullmatch(r'[a-f0-9]{40}', source_execution_sha)):
+        reject('recovery_authorization')
+    recovery_execution_sha = source_execution_sha if recovery_execution_sha is None else recovery_execution_sha
+    if not isinstance(recovery_execution_sha, str) or not re.fullmatch(r'[a-f0-9]{40}', recovery_execution_sha):
+        reject('recovery_execution_sha')
+    if (type(timeout) not in {int, float} or timeout <= 0 or interval <= 0
+            or (total_timeout is not None and (type(total_timeout) not in {int, float} or not 0 < total_timeout <= 3600))):
+        reject('recovery_time_budget_invalid')
+    if result_cache is None:
+        reject('segmented_result_cache_required')
+    deadline = ledger.clock() + (timeout if total_timeout is None else total_timeout)
+    def remaining():
+        value = min(timeout, deadline - ledger.clock())
+        if value <= 0:
+            reject('recovery_time_budget_exhausted')
+        return value
+    raw_manifest, bindings, pairs = frozen_inputs(input_dir, manifest_path, expected_reports, date_folder)
+    source_bindings = {ledger.bind(path, source)['id']: ledger.bind(path, source) for path, source in pairs}
+    claimed, standalone, snapshots = [], [], {}
+    for path, source in pairs:
+        binding = ledger.bind(path, source)
+        key = 'sources/' + binding['id']
+        claim, _ = ledger.store.get(key)
+        snapshots[key] = encoded(claim)
+        if claim is None:
+            plan = read_segment_plan(ledger, binding) if binding['id'] in long_ids else None
+            if plan is None:
+                reject('missing_original_claim')
+            preflight_segment_claims(ledger, plan, required=ledger.forbid_new_submissions)
+            standalone.append(binding['id'])
+        else:
+            claimed.append((path, source))
+    groups = original_groups(ledger, claimed, source_run_id=source_run_id, allow_fresh=False)[0] if claimed else []
+    # Validate all immutable controllers, including roots unrelated to long PDFs,
+    # before any provider GET, plan write, segment upload or POST.
+    terminals = {}
+    for root, _ in groups:
+        stored_terminal, controller_key, controller = _controller(ledger, root)
+        for entry in (controller or {}).get('children', []):
+            child, _ = stored_terminal._child(root, controller_key, entry, create=False)
+            if (child is None or child['state'] not in {'accepted', 'uploaded', 'terminal'}
+                    or not child.get('batch_id')):
+                reject('saved_submission_ambiguous')
+        if terminal_factory is not None:
+            terminal = terminal_factory(ledger, root)
+            if not isinstance(terminal, TerminalRecovery) or terminal.ledger is not ledger:
+                reject('terminal_recovery_factory_invalid')
+            terminal._read_control(root)
+        else:
+            terminal = TerminalRecovery(ledger, allowed_error_codes=allowed_error_codes,
+                                        allowed_error_hashes=allowed_error_hashes)
+            if controller and controller['policy']['name'] == AUTOMATIC_POLICY:
+                terminal = TerminalRecovery(ledger, automatic=True)
+            terminal._read_control(root)
+        terminals[root['key']] = terminal
+        snapshots[root['key']] = encoded(root)
+        key = 'recoveries/' + root['key'].split('/')[1]
+        value, _ = ledger.store.get(key)
+        snapshots[key] = encoded(value)
+    observed, root_for_id, tasks = {}, {}, []
+    for root, _ in groups:
+        remaining()
+        rows, _ = read_completed_batch(ledger, root)
+        if set(rows) != {item['id'] for item in root['files']}:
+            reject('original_task_incomplete')
+        tasks.append({'key': root['key'], 'task_identity_sha256': task_identity(root),
+                      'batch_id': root['batch_id'], 'data_ids': [item['id'] for item in root['files']]})
+        for item in root['files']:
+            sid, row = item['id'], rows[item['id']]
+            state = str(row.get('state', '')).lower()
+            if sid in long_ids and state in FAILED and not page_limit_failure(row):
+                reject('long_source_failure_not_page_limit')
+            observed[sid] = row
+            root_for_id[sid] = root['key']
+    def assert_snapshot():
+        assert_inputs(ledger, pairs, bindings)
+        for key, value in snapshots.items():
+            current, _ = ledger.store.get(key)
+            if encoded(current) != value:
+                reject('original_snapshot_changed')
+    assert_snapshot()
+    destination = Path(output_dir)
+    if destination.exists() or destination.is_symlink():
+        reject('destination_exists')
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    stage = Path(tempfile.mkdtemp(prefix='.mineru-segmented-source-', dir=destination.parent))
+    complete = False
+    try:
+        with tempfile.TemporaryDirectory(prefix='mineru-segmented-recovery-') as temporary:
+            workspace = Path(temporary)
+            outputs, plans, posts = {}, {}, 0
+            def save_done(_path, row):
+                sid = row.get('data_id')
+                if sid not in source_bindings or str(row.get('state', '')).lower() not in DONE:
+                    reject('result_unknown_source')
+                remaining()
+                binding, lineage = source_bindings[sid], row['_recovery_lineage']
+                result_identity(binding, lineage)
+                payload = result_cache.get(binding, lineage)
+                if payload is None:
+                    valid_url(row['full_zip_url'])
+                    if authenticated_downloader is None:
+                        payload, authentication = downloader(row['full_zip_url']), None
+                    else:
+                        payload, authentication = authenticated_downloader(row['full_zip_url'], strict_downloader=downloader)
+                    safe_unzip(payload, workspace / ('verify-' + sid))
+                    if authentication is not None:
+                        persist_authentication(result_cache, binding, lineage, payload, authentication)
+                    result_cache.put(binding, lineage, payload)
+                outputs[sid] = (payload, {'kind': 'provider'})
+            # Preserve ordinary successes first. Independent short-source roots
+            # retain their existing bounded recovery policy even in a manifest
+            # containing a physically segmented report.
+            for row in observed.values():
+                if str(row.get('state', '')).lower() in DONE:
+                    save_done(None, row)
+            unresolved = False
+            for root, group_pairs in groups:
+                rows = [observed[item['id']] for item in root['files']]
+                failed = [row for row in rows if str(row.get('state', '')).lower() in FAILED]
+                if any(str(row.get('state', '')).lower() not in DONE | FAILED for row in rows):
+                    unresolved = True
+                    continue
+                ordinary_failed = [row for row in failed if row['data_id'] not in long_ids]
+                if not ordinary_failed:
+                    continue
+                if any(row['data_id'] in long_ids for row in failed):
+                    # This root cannot reset its immutable failed-member policy
+                    # or repost the oversized original. Other roots still progress.
+                    unresolved = True
+                    continue
+                terminal = terminals[root['key']]
+                recovered, summary = terminal.run(group_pairs,
+                    authorization={'run_id': str(recovery_run_id), 'manifest_sha256': digest(raw_manifest)},
+                    timeout=remaining(), interval=interval, queue_budget=queue_budget,
+                    done_verifier=save_done, partial=True)
+                posts += summary['provider_posts']
+                for path, row in recovered:
+                    save_done(path, row)
+                    observed[row['data_id']] = row
+                if summary.get('ready_for_generation') is not True:
+                    unresolved = True
+                terminal._read_control(root)
+                key = 'recoveries/' + root['key'].split('/')[1]
+                snapshots[key] = encoded(ledger.store.get(key)[0])
+            assert_snapshot()
+            if unresolved or any(sid not in outputs and sid not in long_ids for sid in source_bindings):
+                reject('recovery_task_incomplete')
+            # Freeze and preflight every segment plan before the first POST.
+            for path, source in pairs:
+                sid = ledger.bind(path, source)['id']
+                if sid in outputs:
+                    continue
+                remaining()
+                plans[sid] = prepare_segments(ledger, path, source, workspace / ('parts-' + sid),
+                                               allow_plan_write=sid not in standalone,
+                    archive=SegmentArchive(result_cache.client, result_cache.bucket))
+                preflight_segment_claims(ledger, plans[sid], required=ledger.forbid_new_submissions)
+            assert_snapshot()
+            for path, source in pairs:
+                sid = ledger.bind(path, source)['id']
+                if sid in outputs:
+                    continue
+                def retrieve(url):
+                    remaining()
+                    return (downloader(url) if authenticated_downloader is None else
+                            authenticated_downloader(url, strict_downloader=downloader))
+                assembled = run_segments(ledger, path, source, workspace / ('parts-' + sid),
+                    result_cache=result_cache, downloader=retrieve, timeout=remaining(), interval=interval,
+                    allow_new=not ledger.forbid_new_submissions)
+                posts += assembled['provider_posts']
+                validate_segment_receipt(assembled['receipt'], source_bindings[sid], assembled['zip_bytes'])
+                original_state = str(observed[sid]['state']).lower() if sid in observed else None
+                outputs[sid] = (assembled['zip_bytes'], {'kind': 'page_segments',
+                    'receipt': assembled['receipt'], 'original_provider_state': original_state})
+            assert_snapshot()
+            if set(outputs) != set(source_bindings):
+                reject('complete_source_gate')
+            reports = []
+            for index, ((path, source), binding) in enumerate(zip(pairs, bindings), 1):
+                sid = ledger.bind(path, source)['id']
+                payload, delivery = outputs[sid]
+                raw_dir = workspace / ('merged-' + sid)
+                markdown = safe_unzip(payload, raw_dir)
+                directory_name = f'report_{index:04d}_{sid[:12]}'
+                directory = stage / directory_name; directory.mkdir()
+                (directory / 'source_mineru.md').write_bytes(markdown)
+                assets = directory / 'assets'; assets.mkdir()
+                try:
+                    with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
+                        if asset_writer is chart_assets:
+                            images = asset_writer(raw_dir, assets, 100,
+                                original_pdf_sha256=binding['content_sha256'], auth_original_pdf=path,
+                                markdown_sha256=digest(markdown))
+                        else:
+                            images = asset_writer(raw_dir, assets, 100)
+                except FigureSourceError as error:
+                    error.source_ordinal = index
+                    raise
+                task = None if sid in standalone else dict(observed[sid]['_recovery_lineage'], root_key=root_for_id[sid])
+                status = {'source_pdf': source, 'original_filename': binding['original_filename'],
+                    'original_pdf_sha256': binding['content_sha256'],
+                    'mineru_state': 'segmented_complete' if delivery['kind'] == 'page_segments' else 'done',
+                    'chart_source_only': True, 'source_markdown': 'source_mineru.md', 'images': images,
+                    'chart_source_image_count': len(images), 'mineru_recovery': task, 'source_delivery': delivery}
+                status.update(figure_source_status(directory))
+                (directory / 'status.json').write_bytes(encoded(status))
+                reports.append({'directory': directory_name, 'binding': binding, 'source_binding': source_bindings[sid],
+                    'source_id': sid, 'task': task, 'zip_sha256': digest(payload),
+                    'source_markdown_sha256': digest(markdown), 'delivery': delivery})
+            (stage / MANIFEST).write_bytes(raw_manifest)
+            receipt = {'schema_version': 2, 'policy': SEGMENT_POLICY, 'date_folder': date_folder,
+                'source_run_id': source_run_id, 'recovery_run_id': str(recovery_run_id),
+                'source_execution_sha': source_execution_sha, 'recovery_execution_sha': recovery_execution_sha,
+                'manifest_sha256': digest(raw_manifest), 'original_inventory': bindings,
+                'report_count': expected_reports, 'original_tasks': tasks, 'segmented_originals': standalone,
+                'provider_posts': posts, 'reports': reports, 'files': regular_inventory(stage)}
             (stage / RECEIPT).write_bytes(encoded(receipt))
             validate_sources(stage, expected_reports, date_folder)
             stage.replace(destination); complete = True

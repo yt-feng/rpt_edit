@@ -71,7 +71,11 @@ class BacklogPipelineTests(unittest.TestCase):
         items = {}
         self.sources = []
         for index, name in enumerate(('good', 'bad')):
-            path = self.inputs/(name+'.pdf'); path.write_bytes(b'%PDF-fixture-' + name.encode())
+            import fitz
+            path = self.inputs/(name+'.pdf')
+            with fitz.open() as document:
+                document.new_page().insert_text((72, 72), name)
+                path.write_bytes(document.tobytes(no_new_id=True))
             binding = self.ledger.bind(path, path.name); items[name] = binding
             key = 'batches/' + ('a' if name == 'good' else 'b') * 32
             row = {'schema': 1, 'key': key, 'scope': 'institution', 'endpoint': 'https://mineru.net',

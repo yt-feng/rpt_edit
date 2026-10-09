@@ -58,7 +58,11 @@ class LedgerTests(unittest.TestCase):
         self.clock = Clock()
         self.inputs = []
         for index in range(5):
-            path = self.root / f'{index}.pdf'; path.write_bytes(b'%PDF-' + bytes([index]))
+            import fitz
+            path = self.root / f'{index}.pdf'
+            with fitz.open() as document:
+                document.new_page().insert_text((72,72), 'Original ' + str(index))
+                path.write_bytes(document.tobytes(no_new_id=True))
             self.inputs.append((path, f'source/{index}.pdf'))
     def ledger(self, **kw):
         return m.Ledger(kw.pop('store', self.store), self.provider, kw.pop('scope', 'daily'),
@@ -745,11 +749,16 @@ class StoreAndIntegrationTests(unittest.TestCase):
             with self.assertRaises(m.LedgerError):m.input_sources([pdf],root,source_map)
     def test_partial_pending_cli_cannot_generate_or_publish(self):
         import pdf_to_xhs_batch as cli
-        for task,code in [({'pending':1,'failed':0},75),({'pending':0,'failed':1},2)]:
+        import fitz
+        for mode,code in [('pending',75),('failed',2)]:
             with tempfile.TemporaryDirectory() as tmp:
-                root=Path(tmp);(root/'one.pdf').write_bytes(b'%PDF-source')
-                fake=unittest.mock.Mock();fake.run.return_value=([],task)
-                with patch.object(sys,'argv',['pdf','--input-dir',str(root),'--output-dir',str(root/'out')]),patch.dict(os.environ,{'MINER_U':'test'}),patch.object(cli,'from_environment',return_value=fake),patch.object(cli,'process_pdf') as generate:
+                root=Path(tmp)
+                with fitz.open() as document:
+                    document.new_page(); (root/'one.pdf').write_bytes(document.tobytes(no_new_id=True))
+                provider=FakeProvider(); provider.mode=mode; clock=Clock()
+                ledger=m.Ledger(m.FileStore(root/'ledger'),provider,'daily','https://mineru.net',OPTIONS,TOKENS,
+                                clock=clock.time,sleep=clock.sleep)
+                with patch.object(sys,'argv',['pdf','--input-dir',str(root),'--output-dir',str(root/'out')]),patch.dict(os.environ,{'MINER_U':'test'}),patch.object(cli,'from_environment',return_value=ledger),patch.object(cli,'process_pdf') as generate:
                     self.assertEqual(cli.main(),code);generate.assert_not_called()
     def test_wrapper_cannot_green_partial_output_with_continue_enabled(self):
         import run_pdf_to_xhs_in_batches as wrapper

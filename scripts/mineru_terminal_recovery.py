@@ -40,6 +40,17 @@ def error_code(row):
     return value if isinstance(value, str) and CODE.fullmatch(value) else ''
 
 
+def page_limit_failure(row):
+    """A larger PDF cannot recover by submitting its unchanged bytes again."""
+    if str(row.get('state', '')).lower() not in FAILED:
+        return False
+    if error_code(row) == '-60006':
+        return True
+    return any(isinstance(row.get(field), str) and re.search(
+        r'\b(?:number\s+of\s+)?pages\s+exceeds?\s+(?:the\s+)?limit\b',
+        row[field], re.IGNORECASE) for field in ('err_msg', 'error', 'message'))
+
+
 def task_identity(batch):
     """Immutable accepted-task identity; no credentials or signed URLs."""
     fields = ('key', 'scope', 'endpoint', 'options', 'token_identity', 'files', 'batch_id')
@@ -395,6 +406,7 @@ class TerminalRecovery:
         predecessor, latest_rows = root, root_rows
         child_summaries = []
         interrupted = {}
+        blocked_by_page_limit = False
         index = 0
         while self._terminal(latest_rows, predecessor['files']):
             controller_key, control, version = self._read_control(root)
@@ -403,6 +415,9 @@ class TerminalRecovery:
                 if len(resolved) == len(root['files']):
                     break
                 if index >= (self.daily_retry_limit or MAX_CHILDREN):
+                    break
+                if any(page_limit_failure(row) for row in latest_rows.values()):
+                    blocked_by_page_limit = True
                     break
                 control = self._reserve(root, controller_key, control, version, predecessor, latest_rows, authorization)
                 entries = control['children']
@@ -422,6 +437,9 @@ class TerminalRecovery:
                 interrupted = {item['id']: ('submission_unknown', child['key']) for item in child['files']}
                 break
             if child['state'] in {'claiming', 'auth_rejected'}:
+                if any(page_limit_failure(row) for row in latest_rows.values()):
+                    blocked_by_page_limit = True
+                    break
                 self._assert_bytes(root['files'], paths)
                 try:
                     self.ledger._submit_claimed(child, child_version, paths, deadline)
@@ -477,6 +495,8 @@ class TerminalRecovery:
                    'original_batch': root_summary, 'recovery_children': child_summaries,
                    'source_task_keys': lineage, 'ready_for_generation': ready,
                    'partial': not ready, 'source_outcomes': outcomes}
+        if blocked_by_page_limit:
+            summary['retry_blocked_by_page_limit'] = True
         rows = [(Path(paths[item['id']]), resolved[item['id']]) for item in root['files']
                 if item['id'] in resolved] if (ready or partial) else []
         return rows, summary

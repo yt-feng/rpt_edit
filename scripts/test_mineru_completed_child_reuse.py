@@ -20,7 +20,11 @@ def recovered_fixture(folder, *, third=False, scope='dropbox'):
     inputs = folder / 'pdfs'; inputs.mkdir(exist_ok=True)
     sources = []
     for index in range(3):
-        path = inputs / f'original-{index}.pdf'; path.write_bytes(b'%PDF-original-' + str(index).encode())
+        import fitz
+        path = inputs / f'original-{index}.pdf'
+        with fitz.open() as document:
+            document.new_page().insert_text((72, 72), 'Original ' + str(index))
+            path.write_bytes(document.tobytes(no_new_id=True))
         sources.append((path.resolve(), path.name))
     r2 = MemoryR2(); store = m.R2Store(scope, client=r2, bucket='private-test')
     provider = Provider()
