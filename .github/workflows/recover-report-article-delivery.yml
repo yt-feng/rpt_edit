@@ -197,6 +197,15 @@ jobs:
             --blog-archive-root portal_suite/data/blog_archive
           bash scripts/commit_output_dir.sh portal_suite/data/blog_archive \
             "Archive recovered report articles $DATE_FOLDER" 8 true
+      # Source and article handoffs remain available to the independent PDF,
+      # translation and chart consumers. This workflow never deletes them.
+
+  publish:
+    needs: [deliver]
+    if: ${{ inputs.upload_wechat && needs.deliver.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
       - name: Publish and wait for the exact incremental website refresh
         env:
           GH_TOKEN: ${{ github.token }}
@@ -207,5 +216,3 @@ jobs:
           [[ "$RELEASE_RUN_ID" =~ ^[1-9][0-9]*$ ]]
           echo "Recovered article website publication: $RUN_URL" >> "$GITHUB_STEP_SUMMARY"
           gh run watch "$RELEASE_RUN_ID" --repo "$GITHUB_REPOSITORY" --compact --exit-status --interval 20
-      # Source and article handoffs remain available to the independent PDF,
-      # translation and chart consumers. This workflow never deletes them.

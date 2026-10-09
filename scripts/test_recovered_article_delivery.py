@@ -117,7 +117,7 @@ class SourceAuthenticationTests(unittest.TestCase):
                              ('repository', {'full_name': 'other/repo'})):
             with self.subTest(field=field), self.assertRaises(delivery.DeliveryError):
                 delivery.validate_original(dict(run, **{field: value}), pages, config(), 'owner/repo', '999')
-        with patch.object(delivery.subprocess, 'run') as command:
+        with patch('requests.get') as command:
             with self.assertRaises(delivery.DeliveryError):
                 delivery.api('owner/repo/escape', '1')
             command.assert_not_called()
@@ -135,6 +135,115 @@ class SourceAuthenticationTests(unittest.TestCase):
         with patch.object(store, 'head_object', side_effect=StorageError('AccessDenied')):
             with self.assertRaisesRegex(delivery.DeliveryError, 'checkpoint_unavailable'):
                 delivery.optional_download('x', Path('/unused'), store, 'private')
+
+
+class MetadataResponse:
+    def __init__(self, body=b'{"id":123}', *, status=200, headers=None, chunks=None):
+        self.status_code = status
+        self.headers = headers or {}
+        self.chunks = [body] if chunks is None else chunks
+        self.closed = False
+        self.read = False
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *args):
+        self.closed = True
+
+    def iter_content(self, *, chunk_size):
+        assert chunk_size == 64 * 1024
+        self.read = True
+        for chunk in self.chunks:
+            if isinstance(chunk, Exception):
+                raise chunk
+            yield chunk
+
+
+class MetadataApiTests(unittest.TestCase):
+    def test_authenticated_fixed_host_requests_work_without_any_cli(self):
+        for suffix in ('123', '123/jobs?per_page=100&page=10&filter=latest',
+                       '123/attempts/10/jobs?per_page=100&page=1'):
+            response = MetadataResponse()
+            with self.subTest(suffix=suffix), patch.dict(delivery.os.environ, {'GH_TOKEN': 'PRIVATE_TOKEN'}), \
+                 patch('requests.get', return_value=response) as get, \
+                 patch('subprocess.run', side_effect=FileNotFoundError('gh')) as command:
+                self.assertEqual(delivery.api('owner/repo', suffix), {'id': 123})
+                command.assert_not_called()
+                get.assert_called_once_with('https://api.github.com/repos/owner/repo/actions/runs/' + suffix,
+                    headers={'Authorization': 'Bearer PRIVATE_TOKEN', 'Accept': 'application/vnd.github+json',
+                             'X-GitHub-Api-Version': '2022-11-28'},
+                    timeout=45, allow_redirects=False, stream=True)
+                self.assertTrue(response.closed)
+
+    def test_invalid_coordinates_and_absent_auth_never_send_a_request(self):
+        with patch.dict(delivery.os.environ, {'GH_TOKEN': 'PRIVATE_TOKEN'}), patch('requests.get') as get:
+            for repository in ('../repo', 'owner/..', 'owner/repo/escape', 'owner/repo?token=secret',
+                               'owner@host/repo', 'https://example.com/owner/repo'):
+                with self.subTest(repository=repository), self.assertRaisesRegex(delivery.DeliveryError, '^invalid_delivery_repository$'):
+                    delivery.api(repository, '123')
+            for suffix in ('../secrets', '123/../../secrets', '123?token=secret', '123#fragment',
+                           '123/jobs?per_page=100&page=11&filter=latest',
+                           '123/attempts/0/jobs?per_page=100&page=1', 'https://example.com/'):
+                with self.subTest(suffix=suffix), self.assertRaisesRegex(delivery.DeliveryError, '^invalid_delivery_metadata_path$'):
+                    delivery.api('owner/repo', suffix)
+            for token in ('', ' PRIVATE_TOKEN', 'PRIVATE_TOKEN\n', 'PRIVATE\rTOKEN'):
+                with patch.dict(delivery.os.environ, {'GH_TOKEN': token}), \
+                     self.assertRaisesRegex(delivery.DeliveryError, '^delivery_github_token_missing_or_invalid$'):
+                    delivery.api('owner/repo', '123')
+            get.assert_not_called()
+
+    def test_non_success_and_redirects_are_closed_without_reading_private_bodies(self):
+        for status in (301, 302, 307, 401, 403, 404, 500):
+            response = MetadataResponse(b'PRIVATE_BODY PRIVATE_TOKEN', status=status,
+                                        headers={'Location': 'https://untrusted.example/'})
+            with self.subTest(status=status), patch.dict(delivery.os.environ, {'GH_TOKEN': 'PRIVATE_TOKEN'}), \
+                 patch('requests.get', return_value=response), \
+                 self.assertRaisesRegex(delivery.DeliveryError, '^delivery_github_metadata_failed$'):
+                delivery.api('owner/repo', '123')
+            self.assertTrue(response.closed)
+            self.assertFalse(response.read)
+
+    def test_metadata_has_both_declared_and_streamed_size_limits(self):
+        limit = 16 * 1024 * 1024
+        for response in (MetadataResponse(headers={'Content-Length': str(limit + 1)}),
+                         MetadataResponse(headers={'Content-Length': '10'},
+                                          chunks=[b' ' * (64 * 1024)] * 256 + [b'x'])):
+            with patch.dict(delivery.os.environ, {'GH_TOKEN': 'PRIVATE_TOKEN'}), \
+                 patch('requests.get', return_value=response), \
+                 self.assertRaisesRegex(delivery.DeliveryError, '^delivery_github_metadata_oversized$'):
+                delivery.api('owner/repo', '123')
+            self.assertTrue(response.closed)
+        self.assertTrue(response.read)
+
+    def test_invalid_json_or_headers_never_expose_server_text(self):
+        for response in (MetadataResponse(b'PRIVATE_BODY PRIVATE_TOKEN'), MetadataResponse(b'[]'),
+                         MetadataResponse(b'\xff'), MetadataResponse(headers={'Content-Length': 'PRIVATE_BODY'})):
+            with patch.dict(delivery.os.environ, {'GH_TOKEN': 'PRIVATE_TOKEN'}), \
+                 patch('requests.get', return_value=response), \
+                 self.assertRaisesRegex(delivery.DeliveryError, '^delivery_github_metadata_invalid$'):
+                delivery.api('owner/repo', '123')
+            self.assertTrue(response.closed)
+
+    def test_transport_and_stream_errors_have_only_fixed_public_categories(self):
+        import requests
+        import traceback
+        for at_request in (True, False):
+            error = requests.Timeout('PRIVATE_TOKEN PRIVATE_BODY')
+            response = MetadataResponse(chunks=[b'{', error])
+            kwargs = {'side_effect': error} if at_request else {'return_value': response}
+            with patch.dict(delivery.os.environ, {'GH_TOKEN': 'PRIVATE_TOKEN'}), patch('requests.get', **kwargs):
+                try:
+                    delivery.api('owner/repo', '123')
+                except delivery.DeliveryError as caught:
+                    self.assertEqual(str(caught), 'delivery_github_metadata_failed')
+                    rendered = ''.join(traceback.format_exception(caught))
+                    self.assertNotIn('PRIVATE_TOKEN', rendered)
+                    self.assertNotIn('PRIVATE_BODY', rendered)
+                else:
+                    self.fail('Transport failure was accepted')
+            if not at_request:
+                self.assertTrue(response.closed)
 
 
 class IntentTests(unittest.TestCase):
@@ -230,6 +339,26 @@ class IntentTests(unittest.TestCase):
 
 
 class DeliveryWorkflowTests(unittest.TestCase):
+    def test_website_publish_wait_runs_on_hosted_runner_after_successful_delivery(self):
+        path = Path(__file__).resolve().parents[1] / '.github/workflows/recover-report-article-delivery.yml'
+        workflow = path.read_text()
+        deliver, publish = workflow.split('\n  deliver:\n', 1)[1].split('\n  publish:\n', 1)
+        self.assertIn('runs-on: [self-hosted, wechat-draft]', deliver)
+        self.assertNotRegex(deliver, r'\bgh\s+(?:api|workflow|run)\b')
+        self.assertIn('validate-delivery --workspace', deliver)
+        self.assertIn('bash scripts/commit_output_dir.sh portal_suite/data/blog_archive', deliver)
+        self.assertIn('needs: [deliver]', publish)
+        self.assertIn("if: ${{ inputs.upload_wechat && needs.deliver.result == 'success' }}", publish)
+        self.assertIn('runs-on: ubuntu-latest', publish)
+        self.assertNotIn('always()', publish)
+        self.assertIn('GH_TOKEN: ${{ github.token }}', publish)
+        self.assertIn('gh workflow run neutral-edge-cutover.yml --repo "$GITHUB_REPOSITORY"', publish)
+        self.assertIn('--ref main -f operation=migrate -f translation_scope=incremental', publish)
+        self.assertIn('RELEASE_RUN_ID="${RUN_URL##*/}"', publish)
+        self.assertIn('[[ "$RELEASE_RUN_ID" =~ ^[1-9][0-9]*$ ]]', publish)
+        self.assertIn('gh run watch "$RELEASE_RUN_ID" --repo "$GITHUB_REPOSITORY" --compact --exit-status', publish)
+        self.assertNotIn('gh run list', publish)
+
     def test_workspace_uses_runner_environment_after_job_starts_not_job_expression_context(self):
         path = Path(__file__).resolve().parents[1] / '.github/workflows/recover-report-article-delivery.yml'
         workflow = path.read_text()

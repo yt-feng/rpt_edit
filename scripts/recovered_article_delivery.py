@@ -16,7 +16,6 @@ import os
 from pathlib import Path
 import re
 import shutil
-import subprocess
 import sys
 import tempfile
 
@@ -73,13 +72,43 @@ def inputs(env):
 
 
 def api(repository, suffix):
-    require(re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', repository), 'invalid_delivery_repository')
-    # gh inherits the workflow token; no token appears in arguments or errors.
-    result = subprocess.run(['gh', 'api', f'repos/{repository}/actions/runs/{suffix}'],
-                            capture_output=True, timeout=45)
-    require(result.returncode == 0, 'delivery_github_metadata_failed')
-    require(len(result.stdout) <= 16 * 1024 * 1024, 'delivery_github_metadata_oversized')
-    return json.loads(result.stdout)
+    require(isinstance(repository, str) and re.fullmatch(
+        r'[A-Za-z0-9][A-Za-z0-9-]{0,38}/[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}', repository),
+        'invalid_delivery_repository')
+    require(isinstance(suffix, str) and re.fullmatch(
+        r'[1-9][0-9]{0,19}(?:/jobs\?per_page=100&page=(?:[1-9]|10)&filter=latest'
+        r'|/attempts/(?:[1-9]|10)/jobs\?per_page=100&page=(?:[1-9]|10))?', suffix),
+        'invalid_delivery_metadata_path')
+    token = os.environ.get('GH_TOKEN', '')
+    require(token and token == token.strip() and '\r' not in token and '\n' not in token,
+            'delivery_github_token_missing_or_invalid')
+    # The WeChat runner needs only the declared Python dependencies. Never invoke
+    # a local CLI, forward authentication to redirects, or expose provider errors.
+    import requests
+    limit = 16 * 1024 * 1024
+    try:
+        with requests.get(f'https://api.github.com/repos/{repository}/actions/runs/{suffix}',
+                          headers={'Authorization': f'Bearer {token}',
+                                   'Accept': 'application/vnd.github+json',
+                                   'X-GitHub-Api-Version': '2022-11-28'},
+                          timeout=45, allow_redirects=False, stream=True) as response:
+            require(response.status_code == 200, 'delivery_github_metadata_failed')
+            length = response.headers.get('Content-Length')
+            if length is not None:
+                require(re.fullmatch(r'[0-9]{1,20}', length), 'delivery_github_metadata_invalid')
+                require(int(length) <= limit, 'delivery_github_metadata_oversized')
+            body = bytearray()
+            for chunk in response.iter_content(chunk_size=64 * 1024):
+                require(len(body) + len(chunk) <= limit, 'delivery_github_metadata_oversized')
+                body.extend(chunk)
+    except requests.RequestException:
+        raise DeliveryError('delivery_github_metadata_failed') from None
+    try:
+        value = json.loads(body)
+    except (ValueError, UnicodeDecodeError):
+        raise DeliveryError('delivery_github_metadata_invalid') from None
+    require(isinstance(value, dict), 'delivery_github_metadata_invalid')
+    return value
 
 
 def jobs(repository, run_id, attempt=None):
