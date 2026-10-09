@@ -196,6 +196,48 @@ print('tls_cache_authority_import_ready')
             with self.assertRaises(figures.FigureSourceError):
                 figures.create_figure_sources(raw, Path(tmp) / "assets", original_pdf_sha256=None, markdown_sha256="")
 
+    def test_missing_oc_configuration_restores_exact_all_selected_pages_and_v2_replay(self):
+        from test_mineru_pdf_oc import optional_content_fixture
+        fixture=self.fixture(pages=2,visuals=[visual(0,[35,100,185,260],kind='chart',page_idx=0),
+                                              visual(1,[35,100,185,260],kind='chart',page_idx=1)])
+        original,embedded=optional_content_fixture(pages=2,plain_first=True)
+        fixture.original.write_bytes(original);fixture.original_sha=digest(original)
+        (fixture.raw/'source.pdf').write_bytes(embedded)
+        fixture.create();fixture.status()
+        proof=fixture.proof()
+        self.assertEqual(proof['schema'],2)
+        self.assertEqual(proof['embedded_pdf_sha256'],digest(embedded))
+        repair=proof['embedded_pdf_render_restoration']
+        self.assertEqual(repair['verified_page_indices'],[0,1])
+        self.assertEqual(repair['original_pdf_sha256'],digest(original))
+        self.assertEqual((fixture.raw/'source.pdf').read_bytes(),embedded)
+        self.assertTrue(all(asset['mode']=='authenticated_original_crop' for asset in proof['assets']))
+        import shutil
+        shutil.rmtree(fixture.raw)
+        self.assertEqual(len(fixture.validate()),2)
+
+    def test_oc_repair_refuses_hidden_content_changes_or_existing_provider_config(self):
+        from test_mineru_pdf_oc import optional_content_fixture,changed_provider
+        for change in ('image','text','swap','extra','existing'):
+            with self.subTest(change=change):
+                fixture=self.fixture()
+                original,embedded=optional_content_fixture()
+                fixture.original.write_bytes(original);fixture.original_sha=digest(original)
+                (fixture.raw/'source.pdf').write_bytes(changed_provider(embedded,change))
+                with self.assertRaises(figures.FigureSourceError): fixture.create()
+                self.assertFalse((fixture.report/figures.SIDECAR).exists())
+
+    def test_v2_oc_proof_binding_and_verified_page_tampering_are_rejected(self):
+        from test_mineru_pdf_oc import optional_content_fixture
+        for key,value in [('embedded_pdf_sha256','0'*64),('verified_page_indices',[]),('verified_page_indices',[False]),('schema',True)]:
+            with self.subTest(key=key):
+                fixture=self.fixture();original,embedded=optional_content_fixture()
+                fixture.original.write_bytes(original);fixture.original_sha=digest(original)
+                (fixture.raw/'source.pdf').write_bytes(embedded)
+                fixture.create()
+                fixture.mutate(lambda proof:proof['embedded_pdf_render_restoration'].__setitem__(key,value))
+                with self.assertRaises(figures.FigureSourceError):fixture.validate()
+
     def test_authenticated_crop_preserves_caption_pixels_and_replays_after_raw_removed(self):
         fixture = self.fixture(visuals=[visual(0, [35, 100, 185, 260], kind="chart",
             captions=[([35, 80, 180, 99], "Figure 1: Growth")], footnotes=[([35, 264, 180, 276], "Source data")])])

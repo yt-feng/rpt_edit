@@ -530,6 +530,58 @@ def pdfium_rewrite_diagnostics(original,authentic,supplied,page_index,metadata,d
     return result
 
 
+def optional_content_restoration_diagnostics(original,embedded_bytes,authentic,supplied,metadata,decisions,used_pages,budget=lambda:None):
+    """Test the production restoration with all selected pages; never hand off."""
+    import mineru_figure_sources as figures
+    from mineru_pdf_oc import (has_missing_optional_content,restore_missing_optional_content,
+                               validate_restoration_receipt,OptionalContentError)
+    from mineru_pdf_graph import PdfGraphError
+    result={'diagnostic_only':True,'production_acceptance':False,'complete_source_handoff':False,
+        'selected_page_count':len(used_pages),'checked_page_count':0,'all_selected_pages_equal':False,'pages':[]}
+    if not has_missing_optional_content(authentic,supplied):
+        result['status']='not_applicable'
+        return result
+    restored=None
+    try:
+        budget()
+        restored,proof=restore_missing_optional_content(authentic,supplied,
+            original_sha256=digest(original),embedded_sha256=digest(embedded_bytes),budget=budget)
+        total=0
+        for index in used_pages:
+            budget()
+            actual,other=authentic[index],restored[index]
+            geometry=figures._geometry(actual)
+            equal=exact_json(geometry,figures._geometry(other))
+            size=metadata['pages'][index]['provider_size']
+            provider_size_equal=not any(abs(a-b)>=1.1 for a,b in zip(size,[actual.rect.width,actual.rect.height]))
+            page={'page_index':index,'geometry_equal':equal,'provider_size_equal':provider_size_equal}
+            result['pages'].append(page);result['checked_page_count']+=1
+            if not equal or not provider_size_equal:
+                result.update(status='mismatch',stage='geometry')
+                return result
+            total+=math.ceil(actual.rect.width*300/72)*math.ceil(actual.rect.height*300/72)
+            require(total<=figures.MAX_CARRIED_PAGE_PIXELS,'render_pixels_bound')
+            left,right=figures._render(actual),figures._render(other)
+            try:
+                page['comparison']=_difference(left,right)
+                if not page['comparison']['same_size'] or page['comparison'].get('diff_pixel_count'):
+                    page['selected_visual_differences']=selected_visual_differences(left,right,metadata,decisions,index,geometry['rect'][2:])
+                    result.update(status='mismatch',stage='rgb_pixels')
+                    return result
+            finally:left.close();right.close()
+        proof['verified_page_indices']=used_pages
+        validate_restoration_receipt(proof,original_sha256=digest(original),embedded_sha256=proof['embedded_pdf_sha256'],page_indices=used_pages)
+        result.update(status='verified',all_selected_pages_equal=True,restoration_proof=proof)
+        budget()
+    except Exception as error:
+        result.update(status='rejected',category=str(error) if isinstance(error,(OptionalContentError,PdfGraphError,ProbeError)) else type(error).__name__)
+        path=getattr(error,'path_sha256',None)
+        if isinstance(path,str) and re.fullmatch(r'[0-9a-f]{64}',path):result['path_sha256']=path
+    finally:
+        if restored is not None:restored.close()
+    return result
+
+
 def compare_cached_pdf(original_path,payload,*,original_sha256,clock=time.monotonic,deadline=None):
     """Match the four production gates; alternate annotation renders are diagnostic only."""
     import fitz
@@ -614,6 +666,8 @@ def compare_cached_pdf(original_path,payload,*,original_sha256,clock=time.monoto
                         page['semantic_diagnostics'] = semantic_diagnostics(actual,other,budget)
                     page['pdfium_rewrite'] = pdfium_rewrite_diagnostics(
                         original,authentic,supplied,index,metadata,decisions,budget)
+                    page['optional_content_restoration'] = optional_content_restoration_diagnostics(
+                        original,embedded_raw,authentic,supplied,metadata,decisions,used_pages,budget)
                     require(digest(original_path.read_bytes())==original_sha256,'original_bytes_changed')
                     return result
                 page['rgb_sha256'] = difference['original_rgb_sha256']
