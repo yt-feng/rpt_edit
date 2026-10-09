@@ -136,6 +136,183 @@ def download_and_unzip(url: str, result_dir: Path) -> None:
         zf.extractall(result_dir)
 
 
+def reuse_segmented_originals(ledger, sources, plans, workspace, result_cache, *, timeout, interval):
+    """GET-only effective coverage; an original provider failure remains a failure."""
+    from mineru_completed_child_reuse import _controller, read_completed_batch
+    from mineru_page_segments import preflight_segment_claims, run_segments
+    from mineru_terminal_recovery import page_limit_failure
+    from mineru_task_ledger import DONE, FAILED, encoded
+    selected, groups, snapshots, segment_tasks = {}, {}, {}, {}
+    deadline = ledger.clock() + timeout
+    for path, source in sources:
+        binding = ledger.bind(path, source); sid = binding['id']
+        key = 'sources/' + sid; claim, _ = ledger.store.get(key)
+        if (not schema_v1(claim) or not exact_json(claim.get('binding'), binding)
+                or not isinstance(claim.get('batch_key'), str)):
+            raise LedgerError('Completed-child source claim mismatch')
+        root, _ = ledger._read_batch(claim['batch_key'])
+        if (root['state'] not in {'accepted', 'uploaded', 'terminal'} or not root.get('batch_id')
+                or 'recovery_parent' in root or sum(exact_json(item,binding) for item in root['files']) != 1):
+            raise LedgerError('Completed-child original task mismatch')
+        selected[sid] = (Path(path), source, binding); groups[root['key']] = root
+        snapshots[key] = encoded(claim); snapshots[root['key']] = encoded(root)
+    for root in groups.values():
+        terminal, key, control = _controller(ledger,root)
+        snapshots[key] = encoded(control)
+        for entry in (control or {}).get('children', []):
+            child, _ = terminal._child(root,key,entry,create=False)
+            if child is None or child['state'] not in {'accepted','uploaded','terminal'} or not child.get('batch_id'):
+                raise LedgerError('Page segments: original child submission unresolved')
+    for sid, plan in plans.items():
+        if sid in selected:
+            segment_tasks[sid] = preflight_segment_claims(ledger,plan,required=False)
+    resolved, batches, gets = {}, [], 0
+    for root in groups.values():
+        rows, counts = read_completed_batch(ledger,root)
+        gets += counts.pop('provider_gets'); counts.pop('provider_posts'); counts.pop('reused_sources')
+        batches.append(counts); resolved.update(rows)
+    original = {key: sum(row[key] for row in batches) for key in ('completed','failed','pending')}
+    deliveries = {}
+    for sid, (path, source, binding) in selected.items():
+        row = resolved.get(sid)
+        if row is None or not page_limit_failure(row) or sid not in segment_tasks:
+            continue
+        tasks = segment_tasks[sid]
+        if not all(task is not None and task['state'] in {'accepted','uploaded','terminal'} and task.get('batch_id')
+                   for task in tasks):
+            continue  # Existing provider failure stays incomplete until reviewed recovery.
+        if result_cache is None:
+            raise LedgerError('Page segments: durable result cache required')
+        budget = deadline - ledger.clock()
+        if budget <= 0:
+            raise LedgerError('Page segments: execution deadline reached')
+        assembled = run_segments(ledger,path,source,Path(workspace)/sid,result_cache=result_cache,
+            downloader=lambda url: download_result(url,strict_downloader=download_once),
+            timeout=budget,interval=interval,allow_new=False)
+        deliveries[sid] = {'state':'segmented_complete','data_id':sid,'_segment_delivery':assembled}
+    for key, expected in snapshots.items():
+        if encoded(ledger.store.get(key)[0]) != expected:
+            raise LedgerError('Completed-child accepted snapshot changed')
+    for path, source, binding in selected.values():
+        if not exact_json(ledger.bind(path,source),binding):
+            raise LedgerError('Completed-child source bytes changed')
+    effective = {sid: row for sid,row in resolved.items() if str(row.get('state','')).lower() in DONE}
+    effective.update(deliveries)
+    # Every member of every original root must be covered, including unselected
+    # members; selecting the four healthy siblings cannot bypass a failed fifth.
+    ready = all(all(item['id'] in effective for item in root['files']) for root in groups.values())
+    completed = sum(sid in effective for sid in selected)
+    failed = sum(sid not in effective and str(resolved.get(sid,{}).get('state','')).lower() in FAILED for sid in selected)
+    summary = {'requested':len(sources),'completed':completed,'failed':failed,'pending':len(sources)-completed-failed,
+        'batch_keys':list(groups),'provider_posts':0,'provider_gets':gets,'original_batches':batches,
+        'original_outcomes':original,'ready_for_generation':ready,
+        'source_delivery_counts':{'provider':completed-len(deliveries),'page_segments':len(deliveries)}}
+    return ([(path,effective[sid]) for sid,(path,_,_) in selected.items()] if ready else []),summary
+
+
+def run_source_batch(ledger, sources, *, timeout, interval=15, queue_budget=600, result_cache=None):
+    """Resolve original PDFs, keeping physically split delivery distinct from provider rows."""
+    from mineru_page_segments import prepare_segments, preflight_segment_claims, run_segments, SegmentArchive
+    if result_cache is None and isinstance(ledger.store, R2Store):
+        result_cache = ResultCache.single_attempt(ledger.store.client, ledger.store.bucket)
+    archive = SegmentArchive(result_cache.client, result_cache.bucket) if result_cache is not None else None
+    deadline = ledger.clock() + timeout
+    def remaining():
+        value = deadline - ledger.clock()
+        if value <= 0:
+            raise LedgerError('Page segments: execution deadline reached')
+        return value
+    with tempfile.TemporaryDirectory(prefix='mineru-batch-segments-') as temporary:
+        plans, normal, segmented, existing_long = {}, [], [], set()
+        for path, source in sources:
+            binding = ledger.bind(path, source)
+            plan = prepare_segments(ledger, path, source, Path(temporary) / binding['id'],
+                                    allow_plan_write=not ledger.forbid_new_submissions, archive=archive)
+            claim, _ = ledger.store.get('sources/' + binding['id'])
+            # Existing original failures retain their complete provider admission
+            # gate. The full-source recovery adapter resolves them via segments.
+            if plan is not None:
+                plans[binding['id']] = plan
+            if plan is None or claim is not None:
+                normal.append((path, source))
+                if plan is not None:
+                    existing_long.add(binding['id'])
+            else:
+                plans[binding['id']] = plan
+                segmented.append((path, source, binding))
+        if segmented:
+            from mineru_completed_child_reuse import _controller
+            for path, source in normal:
+                binding = ledger.bind(path,source)
+                claim, _ = ledger.store.get('sources/'+binding['id'])
+                if claim is None:
+                    continue
+                if not schema_v1(claim) or not exact_json(claim.get('binding'),binding):
+                    raise LedgerError('Source claim binding mismatch')
+                root, _ = ledger._read_batch(claim['batch_key'])
+                if sum(exact_json(item,binding) for item in root['files']) != 1:
+                    raise LedgerError('Completed-child original task mismatch')
+                terminal, key, control = _controller(ledger,root)
+                for entry in (control or {}).get('children',[]):
+                    child, _ = terminal._child(root,key,entry,create=False)
+                    if child is None or child['state'] not in {'accepted','uploaded','terminal'} or not child.get('batch_id'):
+                        raise LedgerError('Page segments: original child submission unresolved')
+        for plan in plans.values():
+            preflight_segment_claims(ledger, plan, required=ledger.forbid_new_submissions)
+        if existing_long:
+            claimed, fresh = [], []
+            for path, source in normal:
+                binding = ledger.bind(path,source)
+                claim, _ = ledger.store.get('sources/'+binding['id'])
+                (fresh if claim is None else claimed).append((path,source))
+            results, summary = reuse_segmented_originals(ledger,claimed,plans,temporary,result_cache,
+                timeout=remaining(),interval=interval)
+            if fresh:
+                fresh_results, fresh_summary = ledger.run(fresh,timeout=remaining(),interval=interval,queue_budget=queue_budget)
+                ready = summary['ready_for_generation'] and fresh_summary['ready_for_generation']
+                summary['requested'] += fresh_summary['requested']
+                for key in ('completed','failed','pending','provider_posts'):
+                    summary[key] += fresh_summary[key]
+                summary['batch_keys'].extend(fresh_summary['batch_keys'])
+                summary['original_batches'].extend(fresh_summary['original_batches'])
+                for key in ('completed','failed','pending'):
+                    summary['original_outcomes'][key] += fresh_summary[key]
+                summary['source_delivery_counts']['provider'] += fresh_summary['completed']
+                summary['ready_for_generation'] = ready
+                results = results+fresh_results if ready else []
+        elif normal:
+            results, summary = ledger.run(normal, timeout=remaining(), interval=interval, queue_budget=queue_budget)
+            results, summary = reuse_completed_children(ledger, normal, results, summary)
+        else:
+            results, summary = [], {'requested': 0, 'completed': 0, 'failed': 0, 'pending': 0,
+                'batch_keys': [], 'provider_posts': 0, 'original_batches': [], 'ready_for_generation': True}
+        if not segmented:
+            return results, summary
+        if result_cache is None:
+            if not isinstance(ledger.store, R2Store):
+                raise LedgerError('Page segments: durable result cache required')
+            result_cache = ResultCache.single_attempt(ledger.store.client, ledger.store.bucket)
+        original_outcomes = summary.get('original_outcomes',
+            {key: summary[key] for key in ('completed', 'failed', 'pending')})
+        previous_delivery = summary.get('source_delivery_counts',
+            {'provider':summary['completed'],'page_segments':0})
+        deliveries = []
+        for path, source, binding in segmented:
+            assembled = run_segments(ledger, path, source, Path(temporary) / binding['id'],
+                result_cache=result_cache,
+                downloader=lambda url: download_result(url, strict_downloader=download_once),
+                timeout=remaining(), interval=interval, allow_new=not ledger.forbid_new_submissions)
+            summary['provider_posts'] += assembled['provider_posts']
+            deliveries.append((Path(path), {'state': 'segmented_complete', 'data_id': binding['id'],
+                '_segment_delivery': assembled}))
+        summary.update(requested=len(sources), completed=summary['completed'] + len(deliveries),
+            original_outcomes=original_outcomes,
+            source_delivery_counts={'provider':previous_delivery['provider'],
+                'page_segments':previous_delivery['page_segments']+len(deliveries)})
+        # A complete derived PDF cannot release a missing member of another root.
+        return (results + deliveries if summary['ready_for_generation'] else []), summary
+
+
 def result_cache_contexts(ledger, sources, results):
     """Read bound original or verified recovery contexts after the full-batch gate."""
     if (not isinstance(ledger.store, R2Store) or ledger.scope not in SUPPORTED_SCOPES
@@ -144,6 +321,8 @@ def result_cache_contexts(ledger, sources, results):
     cache = ResultCache.single_attempt(ledger.store.client, ledger.store.bucket)
     contexts = {}
     for path, source in sources:
+        if results.get(Path(path), {}).get('state') == 'segmented_complete':
+            continue
         binding = ledger.bind(path, source)
         claim, _ = ledger.store.get('sources/' + binding['id'])
         if (not schema_v1(claim) or not exact_json(claim.get('binding'), binding)
@@ -900,7 +1079,8 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
         "mineru_state": result_row.get("state"),
         "mineru_error": result_row.get("err_msg") or result_row.get("error") or "",
     }
-    if state not in DONE_STATES or not result_row.get("full_zip_url"):
+    segmented = state == "segmented_complete" and isinstance(result_row.get("_segment_delivery"), dict)
+    if not segmented and (state not in DONE_STATES or not result_row.get("full_zip_url")):
         status["error"] = "MinerU did not return a successful full_zip_url for this PDF."
         log(f"Skipping incomplete MinerU result for {pdf_path.name}: state={result_row.get('state')}")
         return status
@@ -910,7 +1090,25 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
     assets_dir = item_dir / "assets"
     item_dir.mkdir(parents=True, exist_ok=True)
     result_cache = getattr(args, '_mineru_result_cache', None)
-    if result_cache is None:
+    if segmented:
+        from mineru_page_segments import validate_segment_receipt
+        assembled = result_row['_segment_delivery']
+        receipt = assembled['receipt']
+        original = receipt['original_binding']
+        if (digest(pdf_path.read_bytes()) != original['sha256']
+                or pdf_path.stat().st_size != original['size'] or result_row.get('data_id') != original['id']):
+            raise LedgerError('Page segments: original bytes changed')
+        validate_segment_receipt(receipt, original, assembled['zip_bytes'])
+        status['source_delivery'] = {'kind': 'page_segments', 'receipt': receipt}
+        if raw_dir.is_symlink():
+            raise LedgerError('Page segments: output directory symlink')
+        with tempfile.TemporaryDirectory(prefix='.mineru-segment-result-', dir=item_dir) as temporary:
+            stage = Path(temporary) / 'raw'
+            safe_unzip(assembled['zip_bytes'], stage)
+            if raw_dir.exists():
+                shutil.rmtree(raw_dir)
+            stage.replace(raw_dir)
+    elif result_cache is None:
         download_and_unzip(result_row["full_zip_url"], raw_dir)
     else:
         download_cached_result(pdf_path, result_row, raw_dir, result_cache,
@@ -1168,12 +1366,11 @@ def main() -> int:
                 return 0
             eligible_paths = {Path(path) for path, _ in sources}
             pdfs = [path for path in pdfs if path in eligible_paths]
-        results, task_summary = ledger.run(
+        results, task_summary = run_source_batch(ledger,
             sources,
             timeout=args.poll_timeout, interval=args.poll_interval,
             queue_budget=args.mineru_no_progress_timeout,
         )
-        results, task_summary = reuse_completed_children(ledger, sources, results, task_summary)
         if (dependencies_enabled and not task_summary.get("ready_for_generation")
                 and hold_terminal_failure(ledger, sources)):
             sources, held_now = filter_sources(ledger, sources)
@@ -1185,9 +1382,8 @@ def main() -> int:
                 reader = copy.copy(ledger)
                 reader.forbid_new_submissions = True
                 first_summary = task_summary
-                results, task_summary = reader.run(sources, timeout=args.poll_timeout,
+                results, task_summary = run_source_batch(reader, sources, timeout=args.poll_timeout,
                     interval=args.poll_interval, queue_budget=args.mineru_no_progress_timeout)
-                results, task_summary = reuse_completed_children(reader, sources, results, task_summary)
                 task_summary['before_dependency_holds'] = first_summary
                 task_summary['provider_posts'] += first_summary.get('provider_posts', 0)
                 eligible_paths = {Path(path) for path, _ in sources}

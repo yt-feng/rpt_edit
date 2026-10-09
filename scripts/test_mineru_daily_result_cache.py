@@ -44,7 +44,11 @@ class DailyResultCacheTests(unittest.TestCase):
                                [('MINER_U', 'test-private-token')])
         self.sources = []
         for index in range(3):
-            path = self.input / f'original-{index}.pdf'; path.write_bytes(b'%PDF-original-' + str(index).encode())
+            import fitz
+            path = self.input / f'original-{index}.pdf'
+            with fitz.open() as document:
+                document.new_page().insert_text((72, 72), 'Original ' + str(index))
+                path.write_bytes(document.tobytes(no_new_id=True))
             self.sources.append((path.resolve(), path.name))
         self.items = [self.ledger.bind(*source) for source in self.sources]
         self.provider = Provider(self.items); self.ledger.provider = self.provider

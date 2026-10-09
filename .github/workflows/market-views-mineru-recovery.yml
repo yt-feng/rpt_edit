@@ -8,6 +8,9 @@ on:
       - scripts/test_recover_durable_mineru_sources.py
       - scripts/mineru_terminal_recovery.py
       - scripts/test_mineru_terminal_recovery.py
+      - scripts/mineru_page_segments.py
+      - scripts/test_mineru_page_segments.py
+      - scripts/test_mineru_segmented_delivery.py
       - scripts/mineru_result_cache.py
       - scripts/test_mineru_result_cache.py
       - scripts/pdf_to_xhs_batch.py
@@ -74,6 +77,8 @@ jobs:
       - name: Install real source image regression dependencies
         run: python3 -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF 'urllib3>=2.2,<3' certifi
       - run: python3 -B scripts/test_mineru_terminal_recovery.py
+      - run: python3 -B scripts/test_mineru_page_segments.py
+      - run: python3 -B scripts/test_mineru_segmented_delivery.py
       - run: python3 -B scripts/test_recover_durable_mineru_sources.py
       - run: python3 -B scripts/test_mineru_result_cache.py
       - run: python3 -B scripts/test_mineru_daily_result_cache.py

@@ -62,7 +62,11 @@ class RecoveryTests(unittest.TestCase):
         self.rows = []
         for index in range(7):
             name = f'{index + 1:02d}-report-{index}.pdf'
-            raw = b'%PDF-1.4 test source ' + str(index).encode()
+            import fitz
+            with fitz.open() as document:
+                page = document.new_page()
+                page.insert_text((72, 72), 'Original report ' + str(index))
+                raw = document.tobytes(no_new_id=True)
             (self.input / name).write_bytes(raw)
             self.rows.append({'process_local_path': '_selected/' + name, 'content_sha256': m.digest(raw),
                               'dropbox_path': '/zip_backup/261003/report-' + str(index) + '.pdf',

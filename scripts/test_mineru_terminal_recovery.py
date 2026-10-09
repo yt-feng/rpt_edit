@@ -131,6 +131,50 @@ class RecoveryTests(unittest.TestCase):
         self.assertFalse((self.folder / 'ledger/recoveries').exists())
         self.assert_original_unchanged()
 
+    def test_page_limit_never_resubmits_unchanged_pdf(self):
+        for error in ({'err_code': -60006}, {'error_code': '-60006'},
+                      {'err_msg': 'The number of pages exceeds limit 200 pages please split the file and try again'}):
+            with self.subTest(error=error), patch.dict(ERROR, error, clear=True):
+                recovery = TerminalRecovery(self.ledger(), automatic=True)
+                rows, summary = recovery.run(self.inputs, authorization=AUTH, timeout=20, partial=True)
+                self.assertEqual(len(rows), 1)
+                self.assertEqual(summary['provider_posts'], 0)
+                self.assertEqual(summary['failed'], 2)
+                self.assertTrue(summary['retry_blocked_by_page_limit'])
+                self.assertFalse(summary['ready_for_generation'])
+                self.assertFalse((self.folder / 'ledger/recoveries').exists())
+        self.assertEqual(len(self.provider.posts), 1)
+        self.assert_original_unchanged()
+
+    def test_existing_page_limit_children_remain_valid_and_readable(self):
+        with patch.dict(ERROR, {'err_code': -60006, 'err_msg': 'number of pages exceeds limit'}, clear=True):
+            # Model an already accepted historical chain, without changing its proofs.
+            with patch('mineru_terminal_recovery.page_limit_failure', return_value=False):
+                first, _ = self.run_recovery()
+            self.assertEqual(len(first), 3)
+            saved = copy.deepcopy(self.control())
+            rows, summary = self.run_recovery()
+            self.assertEqual(len(rows), 3)
+            self.assertEqual(summary['provider_posts'], 0)
+            self.assertEqual(self.control(), saved)
+        self.assertEqual(len(self.provider.posts), 3)
+        self.assert_original_unchanged()
+
+    def test_reserved_page_limit_child_stops_before_post(self):
+        with patch.dict(ERROR, {'err_code': -60006}, clear=True):
+            recovery = TerminalRecovery(self.ledger(), automatic=True)
+            with patch('mineru_terminal_recovery.page_limit_failure', return_value=False), \
+                    patch.object(recovery.ledger, '_submit_claimed', side_effect=RuntimeError('before post')):
+                with self.assertRaisesRegex(m.LedgerError, 'saved tasks retained'):
+                    recovery.run(self.inputs, authorization=AUTH, timeout=20)
+            saved = copy.deepcopy(self.control())
+            rows, summary = recovery.run(self.inputs, authorization=AUTH, timeout=20, partial=True)
+            self.assertEqual(len(rows), 1)
+            self.assertTrue(summary['retry_blocked_by_page_limit'])
+            self.assertEqual(self.control(), saved)
+        self.assertEqual(len(self.provider.posts), 1)
+        self.assert_original_unchanged()
+
     def test_two_children_is_lifetime_bound_even_across_days(self):
         self.provider.plans = [['failed'] * 3] * 3
         for _ in range(3):
@@ -516,6 +560,17 @@ class DailyRetryTests(unittest.TestCase):
         terminal = TerminalRecovery(self.ledger(), allowed_error_hashes=[failure_hash(ERROR)], daily_retry_limit=3)
         return terminal.run(self.inputs, authorization=authorization, timeout=20, interval=2,
                             queue_budget=4, partial=True, **kwargs)
+
+    def test_daily_page_limit_does_not_consume_three_child_budget(self):
+        with patch.dict(ERROR, {'err_msg': 'The number of pages exceeds limit 200 pages'}, clear=True):
+            for _ in range(2):
+                rows, summary = self.daily()
+                self.assertEqual((len(rows), summary['provider_posts']), (1, 0))
+                self.assertTrue(summary['retry_blocked_by_page_limit'])
+                self.assertEqual([row['retry_count'] for row in summary['source_outcomes']], [0, 0, 0])
+            self.assertEqual(self.control()['children'], [])
+        self.assertEqual(len(self.provider.posts), 1)
+        self.assert_original_unchanged()
 
     def test_three_retries_submit_only_still_failed_members(self):
         self.provider.plans = [['done', 'failed', 'failed'], ['done', 'failed'], ['failed'], ['done']]
