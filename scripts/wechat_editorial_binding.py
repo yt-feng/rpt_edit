@@ -46,15 +46,53 @@ def _title_metadata(status: dict[str, Any], article: str) -> dict[str, Any] | No
 
 
 def _fingerprints(directory: Path, status: dict[str, Any]) -> tuple[dict[str, Any], str] | None:
-    source, article = directory / "source_mineru.md", directory / "wechat_article.md"
+    provenance = status.get("wechat_source_provenance")
+    extra = {}
+    source_name = "source_mineru.md"
+    if provenance is not None:
+        if not isinstance(provenance, dict):
+            return None
+        kind = provenance.get("source_kind")
+        keys = {"source_kind", "source_pdf", "content_sha256", "source_receipt_sha256", "source_report_id"}
+        if kind == "ocr-synthesis":
+            keys.add("source_pages_sha256")
+            source_name = "source_ocr.md"
+        if (kind not in {"mineru-recovery", "ocr-synthesis"} or set(provenance) != keys
+                or provenance.get("source_pdf") != status.get("source_pdf")
+                or status.get("source_method") != ("ocr" if kind == "ocr-synthesis" else "mineru")
+                or status.get("source_markdown") != source_name
+                or not isinstance(provenance.get("source_report_id"), str)
+                or not re.fullmatch(r"[A-Za-z0-9_-]{1,160}", provenance["source_report_id"])
+                or any(not isinstance(provenance.get(key), str)
+                       or not re.fullmatch(r"[a-f0-9]{64}", provenance[key])
+                       for key in keys if key.endswith("sha256"))):
+            return None
+        extra = {"source_kind": kind, "source_markdown": source_name,
+                 "source_provenance_sha256": digest(json.dumps(provenance, sort_keys=True, ensure_ascii=True).encode())}
+    source, article = directory / source_name, directory / "wechat_article.md"
     if source.is_symlink() or article.is_symlink():
         return None
     source_bytes, article_bytes = source.read_bytes(), article.read_bytes()
+    if provenance is not None:
+        other = directory / ("source_mineru.md" if source_name == "source_ocr.md" else "source_ocr.md")
+        if other.exists() or other.is_symlink():
+            return None
+        if provenance["source_kind"] == "ocr-synthesis":
+            from report_extraction_source import ocr_markdown_from_pages
+            pages_path = directory / "source_ocr_pages.json"
+            if pages_path.is_symlink() or not pages_path.is_file():
+                return None
+            raw_pages = pages_path.read_bytes()
+            if digest(raw_pages) != provenance["source_pages_sha256"]:
+                return None
+            pages = json.loads(raw_pages)
+            if not isinstance(pages, list) or ocr_markdown_from_pages(pages, len(pages)) != source_bytes:
+                return None
     body = article_bytes.decode("utf-8")
     metadata = _title_metadata(status, body)
     if not source_bytes or not body.strip() or metadata is None:
         return None
-    return {"version": VERSION, "source_sha256": digest(source_bytes),
+    return {"version": 2 if extra else VERSION, **extra, "source_sha256": digest(source_bytes),
             "article_sha256": digest(article_bytes),
             "title_metadata_sha256": digest(json.dumps(metadata, sort_keys=True, ensure_ascii=True).encode())}, body
 
@@ -98,8 +136,8 @@ Otherwise update the on-disk status. Never accept source or title changes here.
         if not isinstance(status, dict) or status.get(FIELD) != before.binding:
             return False
         current = _fingerprints(directory, status)
-        if current is None or any(current[0][key] != before.binding[key]
-                                  for key in ("source_sha256", "title_metadata_sha256")):
+        if current is None or {key: value for key, value in current[0].items() if key != "article_sha256"} != {
+                key: value for key, value in before.binding.items() if key != "article_sha256"}:
             return False
         status[FIELD] = current[0]
         if not supplied:

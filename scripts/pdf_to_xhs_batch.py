@@ -1070,6 +1070,89 @@ def make_cover(pdf_path: Path, cover_path: Path, title: str, subtitle: str, wate
     image.convert("RGB").save(cover_path, quality=92)
 
 
+def generate_wechat_article(item_dir: Path, source_filename: str, source_text: str,
+                            args: argparse.Namespace, status: dict[str, Any]) -> dict[str, Any]:
+    """Generate from already authenticated text/assets without provider parsing."""
+    institution_name = infer_institution_name(source_filename, status.get("source_pdf"), source_text[:2000])
+    if institution_name:
+        status["institution_name"] = institution_name
+    wechat_prompt = build_wechat_prompt(Path(args.wechat_prompt_template), source_text, args, institution_name)
+    (item_dir / "prompt_for_wechat.md").write_text(wechat_prompt, encoding="utf-8")
+    wechat_article = safe_generate_text(
+        wechat_prompt,
+        args,
+        "WeChat article",
+        temperature=0.38,
+        system_content=WECHAT_EDITOR_SYSTEM_PROMPT,
+    )
+    wechat_article, stock_changes = sanitize_wechat_stock_language(wechat_article)
+    if stock_changes:
+        status["wechat_stock_language_sanitized"] = stock_changes[:40]
+    wechat_article, quality_changes = sanitize_wechat_article_markdown(wechat_article)
+    if quality_changes:
+        status["wechat_editorial_guard_changes"] = quality_changes[:40]
+    wechat_article = ensure_markdown_h1_institution(wechat_article, institution_name)
+    refined_wechat_title, title_decision = wechat_title_from_filename(
+        source_filename,
+        wechat_article,
+        institution_name,
+        args,
+    )
+    refined_wechat_title, title_stock_changes = sanitize_wechat_stock_language(
+        refined_wechat_title,
+        strict_wording=False,
+    )
+    if title_stock_changes:
+        status["wechat_title_stock_language_sanitized"] = title_stock_changes[:20]
+    title_before_neutralization = refined_wechat_title
+    refined_wechat_title, title_neutralization_changes = ensure_publishable_neutral_title(
+        refined_wechat_title,
+        institution_name,
+        source_filename,
+        evidence_text=wechat_article,
+    )
+    if title_neutralization_changes:
+        status["wechat_title_neutralization_changes"] = title_neutralization_changes
+        title_decision["pre_neutralization_title"] = title_before_neutralization
+        title_decision["pre_neutralization_selection_reason"] = title_decision.get("selection_reason", "")
+        title_decision["selection_reason"] = "deterministic_neutralization"
+        title_decision["neutralization_changes"] = title_neutralization_changes
+        title_decision["selected_title"] = refined_wechat_title
+        log(
+            "Neutralized WeChat title while keeping the report: "
+            f"{title_before_neutralization[:80]} -> {refined_wechat_title[:80]}"
+        )
+    title_decision["final_title_after_wording_guard"] = refined_wechat_title
+    wechat_article = replace_first_markdown_heading(wechat_article, refined_wechat_title)
+    status["wechat_title"] = refined_wechat_title
+    status["wechat_title_source"] = "source_filename_weighted_finetune"
+    status["wechat_title_decision"] = title_decision
+    wechat_article = embed_images_in_wechat_article(wechat_article, status.get("images", []), max_images=3)
+    wechat_article, stock_changes_after_images = sanitize_wechat_stock_language(
+        wechat_article,
+        strict_h1_wording=False,
+    )
+    if stock_changes_after_images:
+        status.setdefault("wechat_stock_language_sanitized", [])
+        status["wechat_stock_language_sanitized"].extend(stock_changes_after_images[:20])
+    wechat_article, final_quality_changes = sanitize_wechat_article_markdown(wechat_article)
+    if final_quality_changes:
+        status.setdefault("wechat_editorial_guard_changes", [])
+        status["wechat_editorial_guard_changes"].extend(final_quality_changes[:20])
+    blocking_issues = [
+        issue
+        for issue in audit_wechat_article_markdown(wechat_article)
+        if issue in {"forbidden_meta_section", "model_cta"}
+    ]
+    if blocking_issues:
+        raise RuntimeError(f"WeChat article failed deterministic editorial guard: {blocking_issues}")
+    (item_dir / "wechat_article.md").write_text(wechat_article, encoding="utf-8")
+    status["wechat_article"] = "wechat_article.md"
+    status["wechat_editorial_model"] = args.model
+    bind_generated_article(item_dir, status)
+    return status
+
+
 def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, args: argparse.Namespace) -> dict[str, Any]:
     state = str(result_row.get("state", "")).lower()
     fallback_title = slug(pdf_path.name)[:18]
@@ -1173,85 +1256,12 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
     status["cover_short_title"] = title
     status["cover_subtitle"] = subtitle
     status["images"] = create_visual_assets(raw_dir, pdf_path, assets_dir, args.max_images, title=title)
-    wechat_prompt = build_wechat_prompt(Path(args.wechat_prompt_template), source_text, args, institution_name)
-    (item_dir / "prompt_for_wechat.md").write_text(wechat_prompt, encoding="utf-8")
-    wechat_article = safe_generate_text(
-        wechat_prompt,
-        args,
-        "WeChat article",
-        temperature=0.38,
-        system_content=WECHAT_EDITOR_SYSTEM_PROMPT,
-    )
-    wechat_article, stock_changes = sanitize_wechat_stock_language(wechat_article)
-    if stock_changes:
-        status["wechat_stock_language_sanitized"] = stock_changes[:40]
-    wechat_article, quality_changes = sanitize_wechat_article_markdown(wechat_article)
-    if quality_changes:
-        status["wechat_editorial_guard_changes"] = quality_changes[:40]
-    wechat_article = ensure_markdown_h1_institution(wechat_article, institution_name)
-    refined_wechat_title, title_decision = wechat_title_from_filename(
-        pdf_path.name,
-        wechat_article,
-        institution_name,
-        args,
-    )
-    refined_wechat_title, title_stock_changes = sanitize_wechat_stock_language(
-        refined_wechat_title,
-        strict_wording=False,
-    )
-    if title_stock_changes:
-        status["wechat_title_stock_language_sanitized"] = title_stock_changes[:20]
-    title_before_neutralization = refined_wechat_title
-    refined_wechat_title, title_neutralization_changes = ensure_publishable_neutral_title(
-        refined_wechat_title,
-        institution_name,
-        pdf_path.name,
-        evidence_text=wechat_article,
-    )
-    if title_neutralization_changes:
-        status["wechat_title_neutralization_changes"] = title_neutralization_changes
-        title_decision["pre_neutralization_title"] = title_before_neutralization
-        title_decision["pre_neutralization_selection_reason"] = title_decision.get("selection_reason", "")
-        title_decision["selection_reason"] = "deterministic_neutralization"
-        title_decision["neutralization_changes"] = title_neutralization_changes
-        title_decision["selected_title"] = refined_wechat_title
-        log(
-            "Neutralized WeChat title while keeping the report: "
-            f"{title_before_neutralization[:80]} -> {refined_wechat_title[:80]}"
-        )
-    title_decision["final_title_after_wording_guard"] = refined_wechat_title
-    wechat_article = replace_first_markdown_heading(wechat_article, refined_wechat_title)
-    status["wechat_title"] = refined_wechat_title
-    status["wechat_title_source"] = "source_filename_weighted_finetune"
-    status["wechat_title_decision"] = title_decision
-    wechat_article = embed_images_in_wechat_article(wechat_article, status.get("images", []), max_images=3)
-    wechat_article, stock_changes_after_images = sanitize_wechat_stock_language(
-        wechat_article,
-        strict_h1_wording=False,
-    )
-    if stock_changes_after_images:
-        status.setdefault("wechat_stock_language_sanitized", [])
-        status["wechat_stock_language_sanitized"].extend(stock_changes_after_images[:20])
-    wechat_article, final_quality_changes = sanitize_wechat_article_markdown(wechat_article)
-    if final_quality_changes:
-        status.setdefault("wechat_editorial_guard_changes", [])
-        status["wechat_editorial_guard_changes"].extend(final_quality_changes[:20])
-    blocking_issues = [
-        issue
-        for issue in audit_wechat_article_markdown(wechat_article)
-        if issue in {"forbidden_meta_section", "model_cta"}
-    ]
-    if blocking_issues:
-        raise RuntimeError(f"WeChat article failed deterministic editorial guard: {blocking_issues}")
-    (item_dir / "wechat_article.md").write_text(wechat_article, encoding="utf-8")
+    generate_wechat_article(item_dir, pdf_path.name, source_text, args, status)
     try:
         make_cover(pdf_path, assets_dir / "cover.png", title, subtitle, args.watermark)
         status["cover"] = "assets/cover.png"
     except Exception as exc:
         status["cover_error"] = str(exc)
-    status["wechat_article"] = "wechat_article.md"
-    status["wechat_editorial_model"] = args.model
-    bind_generated_article(item_dir, status)
     (item_dir / "status.json").write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")
     return status
 

@@ -1021,12 +1021,8 @@ jobs:
           fi
           test "$SELECTED_COUNT" -gt 0
           test "$DELIVERY_RESULT" = success
-          if [ "$PRIMARY_READY" != true ] && [ "$PROVIDER_ONLY" != true ]; then
-            echo "Non-provider pipeline failure remains unresolved; backup delivery cannot hide it." >&2
-            exit 1
-          fi
           if [ "$PRIMARY_READY" != true ]; then
-            echo "::warning::Market Views delivered through the verified backup. Report notes and derivative outputs remain deferred."
+            echo "::notice::Market Views delivered through verified recovered sources. Article delivery is checked separately."
           fi
 
   push-xhs-notes-wechat-drafts:
@@ -1180,15 +1176,37 @@ jobs:
           echo "WeChat draft upload failed; diagnostics were archived before marking the job failed." >&2
           exit 1
 
+  deliver-recovered-report-articles:
+    needs: [resolve-inputs, select-macro-reports, source-outcome, recover-market-sources, push-xhs-notes-wechat-drafts]
+    if: >-
+      ${{ !cancelled() && needs.recover-market-sources.result == 'success' &&
+          needs.source-outcome.outputs.primary_ready == 'false' &&
+          needs.resolve-inputs.outputs.replay_source_run_id == '' &&
+          (needs.resolve-inputs.outputs.wechat_draft_upload == 'true' ||
+           needs.resolve-inputs.outputs.translated_report_count != '0' ||
+           (vars.CHART_SEARCH_ENABLED == 'true' && needs.recover-market-sources.outputs.source_kind == 'mineru-recovery')) }}
+    uses: ./.github/workflows/recover-report-article-delivery.yml
+    with:
+      source_run_id: ${{ github.run_id }}
+      source_handoff_run_id: ${{ github.run_id }}
+      source_kind: ${{ needs.recover-market-sources.outputs.source_kind }}
+      date_folder: ${{ needs.select-macro-reports.outputs.latest_folder }}
+      expected_articles: ${{ needs.select-macro-reports.outputs.selected_count }}
+      model: ${{ needs.resolve-inputs.outputs.model }}
+      deepseek_base_url: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
+      upload_wechat: ${{ needs.resolve-inputs.outputs.wechat_draft_upload == 'true' && needs.resolve-inputs.outputs.wechat_draft_source == 'xhs_notes' }}
+    secrets: inherit
+
   plan-portal-translated-reports:
-    needs: [resolve-inputs, select-macro-reports, process-shard, source-outcome]
-    if: ${{ !cancelled() && needs.process-shard.result == 'success' && needs.source-outcome.outputs.primary_ready == 'true' && needs.resolve-inputs.outputs.translated_report_count != '0' }}
+    needs: [resolve-inputs, select-macro-reports, process-shard, source-outcome, deliver-recovered-report-articles]
+    if: ${{ !cancelled() && ((needs.process-shard.result == 'success' && needs.source-outcome.outputs.primary_ready == 'true') || needs.deliver-recovered-report-articles.result == 'success') && needs.resolve-inputs.outputs.translated_report_count != '0' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     outputs:
       shard_indices: ${{ steps.plan.outputs.shard_indices }}
       shard_count: ${{ steps.plan.outputs.shard_count }}
       selected_count: ${{ steps.plan.outputs.selected_count }}
+      source_prefix: ${{ steps.sources.outputs.source_prefix }}
     env:
       R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
       R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -1205,11 +1223,23 @@ jobs:
       - name: Install planning dependencies
         run: python -m pip install -r requirements.txt boto3
       - name: Download generated shards from private R2
+        id: sources
+        env:
+          RECOVERED_PREFIX: ${{ needs.deliver-recovered-report-articles.outputs.article_handoff_prefix }}
+          RECOVERED_RESULT: ${{ needs.deliver-recovered-report-articles.result }}
         run: |
+          SOURCE_PREFIX="$PRIVATE_HANDOFF_ROOT/${{ github.run_id }}/${{ needs.select-macro-reports.outputs.latest_folder }}"
+          EXPECTED_SHARDS="${{ needs.select-macro-reports.outputs.effective_shard_count }}"
+          if [ "$RECOVERED_RESULT" = success ]; then
+            test -n "$RECOVERED_PREFIX"
+            SOURCE_PREFIX="$RECOVERED_PREFIX"
+            EXPECTED_SHARDS=1
+          fi
           python scripts/private_workflow_handoff.py download-shards \
-            --prefix "$PRIVATE_HANDOFF_ROOT/${{ github.run_id }}/${{ needs.select-macro-reports.outputs.latest_folder }}" \
+            --prefix "$SOURCE_PREFIX" \
             --destination "xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}" \
-            --expected-count "${{ needs.select-macro-reports.outputs.effective_shard_count }}"
+            --expected-count "$EXPECTED_SHARDS"
+          echo "source_prefix=$SOURCE_PREFIX" >> "$GITHUB_OUTPUT"
       - name: Freeze global report selection into bounded translation shards
         id: plan
         run: |
@@ -1260,7 +1290,7 @@ jobs:
           python scripts/portal_translation_shards.py materialize \
             --plan "$RUNNER_TEMP/translation-plan/plan.json" \
             --shard-index "${{ matrix.translation_shard_index }}" \
-            --prefix "$PRIVATE_HANDOFF_ROOT/${{ github.run_id }}/${{ needs.select-macro-reports.outputs.latest_folder }}" \
+            --prefix "${{ needs.plan-portal-translated-reports.outputs.source_prefix }}" \
             --date-dir "xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}"
       - name: Install Chinese fonts
         timeout-minutes: 5
@@ -1346,7 +1376,7 @@ jobs:
 
   build-portal-translated-reports:
     needs: [resolve-inputs, select-macro-reports, process-shard, plan-portal-translated-reports, translate-report-shard, source-outcome]
-    if: ${{ !cancelled() && needs.process-shard.result == 'success' && needs.source-outcome.outputs.primary_ready == 'true' && needs.translate-report-shard.result == 'success' && needs.resolve-inputs.outputs.translated_report_count != '0' }}
+    if: ${{ !cancelled() && needs.plan-portal-translated-reports.result == 'success' && needs.translate-report-shard.result == 'success' && needs.resolve-inputs.outputs.translated_report_count != '0' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     env:
@@ -1520,11 +1550,54 @@ jobs:
             });
             core.info('Queued incremental public refresh after accepted articles and Blog archive.');
 
+  validate-report-delivery:
+    needs: [resolve-inputs, select-macro-reports, source-outcome, deliver-recovered-report-articles, push-xhs-notes-wechat-drafts, build-portal-translated-reports, push-portal-translated-wechat-drafts]
+    if: ${{ always() && !cancelled() && needs.resolve-inputs.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Require configured article and translation delivery
+        env:
+          SELECTION_RESULT: ${{ needs.select-macro-reports.result }}
+          SOURCE_STATUS: ${{ needs.source-outcome.result }}
+          SELECTED_COUNT: ${{ needs.select-macro-reports.outputs.selected_count }}
+          NO_WORK: ${{ needs.source-outcome.outputs.no_work }}
+          PRIMARY_READY: ${{ needs.source-outcome.outputs.primary_ready }}
+          RECOVERED_DELIVERY: ${{ needs.deliver-recovered-report-articles.result }}
+          WECHAT_ENABLED: ${{ needs.resolve-inputs.outputs.wechat_draft_upload }}
+          WECHAT_SOURCE: ${{ needs.resolve-inputs.outputs.wechat_draft_source }}
+          WECHAT_RESULT: ${{ needs.push-xhs-notes-wechat-drafts.result }}
+          TRANSLATION_COUNT: ${{ needs.resolve-inputs.outputs.translated_report_count }}
+          TRANSLATION_RESULT: ${{ needs.build-portal-translated-reports.result }}
+          TRANSLATED_WECHAT_RESULT: ${{ needs.push-portal-translated-wechat-drafts.result }}
+        run: |
+          test "$SELECTION_RESULT" = success
+          test "$SOURCE_STATUS" = success
+          if [ "$SELECTED_COUNT" = 0 ] && [ "$NO_WORK" = true ]; then
+            echo "No new selected sources; no article delivery claimed."
+            exit 0
+          fi
+          test "$SELECTED_COUNT" -gt 0
+          if [ "$WECHAT_ENABLED" = true ]; then
+            if [ "$WECHAT_SOURCE" = portal_translated ]; then
+              test "$TRANSLATED_WECHAT_RESULT" = success
+            elif [ "$PRIMARY_READY" = true ]; then
+              test "$WECHAT_RESULT" = success
+            else
+              test "$RECOVERED_DELIVERY" = success
+            fi
+          fi
+          if [ "$TRANSLATION_COUNT" != 0 ]; then
+            test "$TRANSLATION_RESULT" = success
+          fi
+          echo "Configured article and translation consumers completed."
+
   trigger-chart-search-index:
-    needs: [resolve-inputs, select-macro-reports, process-shard, source-outcome]
+    needs: [resolve-inputs, select-macro-reports, process-shard, source-outcome, recover-market-sources, deliver-recovered-report-articles]
     if: >-
       ${{
-        !cancelled() && needs.process-shard.result == 'success' && needs.source-outcome.outputs.primary_ready == 'true' &&
+        !cancelled() && ((needs.process-shard.result == 'success' && needs.source-outcome.outputs.primary_ready == 'true') ||
+          (needs.deliver-recovered-report-articles.result == 'success' && needs.recover-market-sources.outputs.source_kind == 'mineru-recovery')) &&
         needs.select-macro-reports.outputs.selected_count != '0' &&
         vars.CHART_SEARCH_ENABLED == 'true'
       }}
@@ -1538,16 +1611,27 @@ jobs:
           EXPECTED_SHARDS: ${{ needs.select-macro-reports.outputs.effective_shard_count }}
           MAX_IMAGES: ${{ vars.VISION_INDEX_MAX_IMAGES_PER_RUN || '0' }}
           SOURCE_RUN_ID: ${{ github.run_id }}
+          RECOVERED_RESULT: ${{ needs.deliver-recovered-report-articles.result }}
+          RECOVERED_MANIFEST: ${{ needs.deliver-recovered-report-articles.outputs.manifest_sha256 }}
+          EXPECTED_ARTICLES: ${{ needs.select-macro-reports.outputs.selected_count }}
         run: |
           set -euo pipefail
           printf '%s' "$DATE_FOLDER" | grep -Eq '^[0-9]{6,8}$'
           printf '%s' "$SOURCE_RUN_ID" | grep -Eq '^[0-9]+$'
+          MANIFEST_SHA=""
+          if [ "$RECOVERED_RESULT" = success ]; then
+            printf '%s' "$RECOVERED_MANIFEST" | grep -Eq '^[a-f0-9]{64}$'
+            MANIFEST_SHA="$RECOVERED_MANIFEST"
+            EXPECTED_SHARDS=1
+          fi
           RUN_URL="$(gh workflow run portal-chart-search-index.yml \
             --repo "$GITHUB_REPOSITORY" \
             --ref main \
             -f date_folder="$DATE_FOLDER" \
             -f source_handoff_run_id="$SOURCE_RUN_ID" \
+            -f source_handoff_manifest_sha256="$MANIFEST_SHA" \
             -f expected_shards="$EXPECTED_SHARDS" \
+            -f expected_articles="$EXPECTED_ARTICLES" \
             -f max_images="$MAX_IMAGES")"
           CHART_RUN_ID="${RUN_URL##*/}"
           if ! printf '%s\n' "$CHART_RUN_ID" | grep -Eq '^[0-9]+$'; then
@@ -1558,10 +1642,10 @@ jobs:
           gh run watch "$CHART_RUN_ID" --repo "$GITHUB_REPOSITORY" --compact --exit-status --interval 15
 
   cleanup-market-source-recovery:
-    # Recovered sources have one consumer; a successful PDF can release them
-    # even while the independent report-notes failure remains visible.
-    needs: [select-macro-reports, recover-market-sources, trigger-market-views]
-    if: ${{ always() && !cancelled() && needs.recover-market-sources.result == 'success' && needs.trigger-market-views.result == 'success' }}
+    # Keep the source checkpoint until both PDF and configured article consumers
+    # finish. The independent source-bound article checkpoint remains durable.
+    needs: [select-macro-reports, recover-market-sources, trigger-market-views, validate-report-delivery]
+    if: ${{ always() && !cancelled() && needs.recover-market-sources.result == 'success' && needs.trigger-market-views.result == 'success' && needs.validate-report-delivery.result == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -1596,6 +1680,8 @@ jobs:
       - select-macro-reports
       - package-publish-ready
       - recover-market-sources
+      - deliver-recovered-report-articles
+      - validate-report-delivery
       - trigger-market-views
       - trigger-chart-search-index
       - push-xhs-notes-wechat-drafts
@@ -1637,6 +1723,8 @@ jobs:
     needs:
       - source-outcome
       - validate-market-delivery
+      - deliver-recovered-report-articles
+      - validate-report-delivery
       - resolve-inputs
       - select-macro-reports
       - process-shard
@@ -1661,6 +1749,8 @@ jobs:
         shards=${{ needs.process-shard.result }},
         source_outcome=${{ needs.source-outcome.result }},
         delivery_gate=${{ needs.validate-market-delivery.result }},
+        article_delivery_gate=${{ needs.validate-report-delivery.result }},
+        recovered_articles=${{ needs.deliver-recovered-report-articles.result }},
         package=${{ needs.package-publish-ready.result }},
         market_source_recovery=${{ needs.recover-market-sources.result }},
         market_views=${{ needs.trigger-market-views.result }},
