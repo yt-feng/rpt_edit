@@ -1,0 +1,117 @@
+name: Probe exact cached MinerU figure binding
+run-name: MinerU figure binding probe source ${{ inputs.source_ordinal }} from ${{ inputs.source_run_id }}
+on:
+  pull_request:
+    paths:
+      - .github/workflows/mineru-figure-binding-probe.yml
+      - scripts/probe_mineru_figure_binding.py
+      - scripts/test_probe_mineru_figure_binding.py
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Completed original main Daily producer
+        required: true
+        type: string
+      date_folder:
+        description: Exact selected Dropbox date YYMMDD
+        required: true
+        type: string
+      expected_articles:
+        description: Complete frozen original source count
+        required: true
+        type: string
+      source_ordinal:
+        description: One-based selected original source ordinal
+        required: true
+        type: string
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: mineru-figure-binding-probe-${{ inputs.source_run_id || github.run_id }}-${{ inputs.source_ordinal || 'contract' }}
+  cancel-in-progress: false
+jobs:
+  contract:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -S -c "import sys; sys.path.insert(0, 'scripts'); import probe_mineru_figure_binding"
+      - run: python3 -m pip install --retries 0 --disable-pip-version-check PyMuPDF Pillow
+      - run: python3 -B scripts/test_probe_mineru_figure_binding.py
+  probe:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: scripts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Authenticate exact completed original producer before dependencies
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          SOURCE_ORDINAL: ${{ inputs.source_ordinal }}
+        run: |
+          [[ "$SOURCE_RUN_ID" =~ ^[1-9][0-9]{0,19}$ ]]
+          [[ "$EXPECTED_ARTICLES" =~ ^[1-9][0-9]{0,3}$ ]]
+          [[ "$SOURCE_ORDINAL" =~ ^[1-9][0-9]{0,3}$ ]]
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_RUN_ID" > "$RUNNER_TEMP/mineru-original-producer.json"
+          python3 -S - <<'PY'
+          import json, os, sys
+          from pathlib import Path
+          sys.path.insert(0, 'scripts')
+          from probe_mineru_figure_binding import validate_request
+          validate_request(json.loads(Path(os.environ['RUNNER_TEMP'], 'mineru-original-producer.json').read_bytes()),
+              os.environ['SOURCE_RUN_ID'], os.environ['DATE_FOLDER'], int(os.environ['EXPECTED_ARTICLES']),
+              int(os.environ['SOURCE_ORDINAL']), os.environ['GITHUB_REPOSITORY'])
+          PY
+      - name: Install bounded read-only probe dependencies
+        run: python3 -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF 'boto3>=1.37.32,<2'
+      - name: Download exact complete selected original artifact
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_run_id }}
+          name: selected-macro-pdfs-${{ inputs.source_run_id }}
+          path: _selected_macro_pdfs
+      - name: Probe one exact cached source without new provider work or writes
+        timeout-minutes: 10
+        env:
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          SOURCE_ORDINAL: ${{ inputs.source_ordinal }}
+          MINER_U: ${{ secrets.MINER_U }}
+          MINER_U_2: ${{ secrets.MINER_U_2 }}
+          MINER_U_3: ${{ secrets.MINER_U_3 }}
+          MINER_U_4: ${{ secrets.MINER_U_4 }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python3 -B scripts/probe_mineru_figure_binding.py \
+            --input-dir _selected_macro_pdfs --output "$RUNNER_TEMP/mineru-figure-binding-probe.json" \
+            --source-run-id "$SOURCE_RUN_ID" --producer-json "$RUNNER_TEMP/mineru-original-producer.json" \
+            --date-folder "$DATE_FOLDER" --expected-articles "$EXPECTED_ARTICLES" --source-ordinal "$SOURCE_ORDINAL"
+      - name: Retain sanitized diagnostic counts and hashes only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mineru-figure-binding-probe-${{ github.run_id }}
+          path: ${{ runner.temp }}/mineru-figure-binding-probe.json
+          if-no-files-found: ignore
+          retention-days: 7
