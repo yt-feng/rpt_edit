@@ -311,6 +311,136 @@ class PrivateRoundTripTests(unittest.TestCase):
                 source_handoff_run_id='456', source_handoff_execution_sha='b' * 40)
         self.store = Store()
 
+    def add_policy_fixture(self, count, *, root=None, generation_failure=False):
+        import recover_report_articles as articles
+        from wechat_editorial_binding import bind_generated_article, FIELD
+        root = root or self.workspace / 'checkpoint/articles'
+        receipt = articles.read_json(root / articles.RECEIPT)
+        for row in receipt['reports'][:count]:
+            directory = root / row['directory']
+            status = articles.read_json(directory / 'status.json')
+            title = '野村：行业技术与相关数据观察'
+            body = '# ' + title + '\n\n自建样本的企业交付数据保持稳定。\n'
+            if generation_failure:
+                body += '\nInsufficient Balance\n'
+            (directory / 'wechat_article.md').write_text(body)
+            status['wechat_title'] = title
+            status['wechat_title_decision'].update(final_title_after_wording_guard=title,
+                neutralization_changes=['neutralized:china_systemic_topic'])
+            self.assertTrue(bind_generated_article(directory, status))
+            articles.write_json(directory / 'status.json', status)
+            row.update(article_sha256=status[FIELD]['article_sha256'], editorial_binding=status[FIELD])
+        receipt['files'] = articles.inventory(root, exclude=(articles.RECEIPT,))
+        articles.write_json(root / articles.RECEIPT, receipt)
+        self.assertEqual(articles.validate_articles(root, 7, '261003'), receipt)
+        return receipt
+
+    def run_policy_fixture(self, count):
+        from contextlib import ExitStack
+        import push_xhs_notes_to_wechat_drafts as uploader
+        import push_portal_translated_to_wechat_drafts as api_module
+        self.add_policy_fixture(count)
+        with redirect_stdout(io.StringIO()):
+            outputs = delivery.save_generation(self.workspace, self.store, 'private', complete=True)
+        self.assertEqual(outputs['article_count'], 7)  # Translation/chart handoff remains complete.
+        environment = {'DELIVERY_MANIFEST_SHA256': outputs['manifest_sha256'],
+                       'DELIVERY_CONTEXT_SHA256': outputs['context_sha256']}
+        consumer = self.harness.root / 'policy-dispatch'
+        consumer.mkdir()
+        with patch.object(delivery, 'authenticated_context', return_value=('a' * 40, 'b' * 40)), redirect_stdout(io.StringIO()):
+            delivery.restore_delivery(consumer, self.config, environment, self.store, 'private')
+
+        def build(report_dir, index, *args):
+            title = f'Fixture {index}'
+            return {'title': title, 'wechat_title': title, 'raw_title': title,
+                'article': {'title': title, 'author': 'KC', 'content': f'<p>Body {index}</p>', 'thumb_media_id': 'THUMB'},
+                'institution_name': 'Fixture', 'source_report_name': f'fixture-{index}.pdf',
+                'report_dir': str(report_dir), 'content_chars': 100, 'content_bytes': 200,
+                'visible_text_chars': 100, 'inline_images': [], 'body_image_count': 0,
+                'cover_image': '', 'title_decision': {}}
+
+        with ExitStack() as stack, redirect_stdout(io.StringIO()):
+            stack.enter_context(patch.dict(delivery.os.environ, {
+                'PORTAL_SITE_URL': 'https://private.example.invalid', 'WECHAT_MP_APPID': 'TEST', 'WECHAT_MP_APPSECRET': 'TEST'}))
+            token = Mock(return_value='TOKEN')
+            readback = {'ok': True, 'article_count': 7-count, 'matches_editorial_contract': True,
+                        'matches_expected_article_count': True, 'matches_expected_titles': True}
+            for name, value in {'get_stable_access_token': token, 'build_article': build,
+                                'pacing_sleep': Mock(), 'DEFAULT_TRAILING_IMAGE': '',
+                                'find_recent_draft_by_titles': Mock(return_value=''),
+                                'verify_draft_get': Mock(return_value=readback)}.items():
+                stack.enter_context(patch.object(uploader, name, value))
+            post = stack.enter_context(patch.object(api_module, 'post_wechat_json', return_value=object()))
+            stack.enter_context(patch.object(api_module, 'parse_wechat_json', return_value={'media_id': 'ELIGIBLE_ACK'}))
+            receipt = delivery.upload_wechat(consumer, self.store, 'private')
+            self.assertTrue(delivery.save_receipts(consumer, self.store, 'private'))
+            if count == 7:
+                token.assert_not_called()
+                post.assert_not_called()
+            else:
+                post.assert_called_once()
+        self.assertEqual((receipt['source_report_count'], receipt['article_count'], receipt['policy_excluded_count'],
+                          receipt['accounted_report_count']), (7, 7-count, count, 7))
+        return consumer, environment
+
+    def test_real_policy_exclusion_delivers_remaining_six_and_rejects_forged_partition(self):
+        consumer, _ = self.run_policy_fixture(1)
+        path = delivery.receipt_root(consumer, self.context) / 'wechat_draft_summary.json'
+        summary = delivery.read_json(path)
+        self.assertEqual(summary['skipped_title_policy'][0]['skip_reason'], 'nomura_sensitive_report')
+        mutations = []
+        wrong_reason = copy.deepcopy(summary)
+        wrong_reason['skipped_title_policy'][0]['skip_reason'] = 'invented_policy'
+        mutations.append(wrong_reason)
+        forged_allowed = copy.deepcopy(summary)
+        record = forged_allowed['skipped_title_policy'][0]
+        allowed = forged_allowed['articles'][0]['report_dir']
+        record.update(report_dir=allowed, wechat_markdown=allowed + '/wechat_article.md')
+        mutations.append(forged_allowed)
+        missing = copy.deepcopy(summary)
+        missing.update(skipped_title_policy=[], skipped_title_policy_count=0)
+        mutations.append(missing)
+        duplicate = copy.deepcopy(summary)
+        duplicate['skipped_title_policy'] *= 2
+        duplicate['skipped_title_policy_count'] = 2
+        mutations.append(duplicate)
+        duplicate_delivered = copy.deepcopy(summary)
+        duplicate_delivered['articles'][0] = duplicate_delivered['articles'][1]
+        mutations.append(duplicate_delivered)
+        omitted_delivered = copy.deepcopy(summary)
+        omitted_delivered['articles'].pop()
+        mutations.append(omitted_delivered)
+        generation_skip = copy.deepcopy(summary)
+        generation_skip['skipped_generation_failure_count'] = 1
+        mutations.append(generation_skip)
+        for index, changed in enumerate(mutations):
+            delivery.write_json(path, changed)
+            with self.subTest(index=index), self.assertRaises(delivery.DeliveryError):
+                delivery.validate_delivery(consumer)
+        delivery.write_json(path, summary)
+        self.add_policy_fixture(1, root=consumer / 'checkpoint/articles', generation_failure=True)
+        with self.assertRaisesRegex(delivery.DeliveryError, 'generation_failure_present'):
+            delivery.validate_delivery(consumer)
+
+    def test_all_policy_blocked_roundtrip_records_zero_real_delivery_without_api_calls(self):
+        consumer, environment = self.run_policy_fixture(7)
+        root = delivery.receipt_root(consumer, self.context)
+        summary = delivery.read_json(root / 'wechat_draft_summary.json')
+        self.assertEqual((summary['status'], summary['drafts'], summary['articles']), ('skipped_title_policy', [], []))
+        self.assertTrue((root / 'wechat_delivery_receipt.json').is_file())
+        restored = self.harness.root / 'policy-next-dispatch'
+        restored.mkdir()
+        with patch.object(delivery, 'authenticated_context', return_value=('a' * 40, 'b' * 40)), redirect_stdout(io.StringIO()):
+            delivery.restore_delivery(restored, self.config, environment, self.store, 'private')
+        receipt = delivery.validate_delivery(restored)
+        self.assertEqual((receipt['source_report_count'], receipt['article_count'], receipt['policy_excluded_count']), (7, 0, 7))
+        # The Blog loader scans payloads independently of summary.json. A stale
+        # payload must not become publishable merely because every source skipped.
+        delivery.write_json(delivery.receipt_root(restored, self.context) / 'draft_payload_stale.json',
+                            {'articles': [{'title': 'Stale', 'content': '<p>Old body</p>'}]})
+        with self.assertRaisesRegex(delivery.DeliveryError, 'unaccounted_archive_payload'):
+            delivery.validate_delivery(restored)
+
     def test_full_real_source_generation_archive_restore_and_existing_receipts_across_dispatch(self):
         with redirect_stdout(io.StringIO()):
             outputs = delivery.save_generation(self.workspace, self.store, 'private', complete=True)

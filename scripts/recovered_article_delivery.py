@@ -295,9 +295,15 @@ def restore_delivery(workspace, config, env, client, bucket):
         restored = Path(temporary) / 'receipts'
         if optional_download(prefix + '/wechat-receipts.tar.gz', restored, client, bucket):
             require(read_json(restored / 'delivery_identity.json') == identity, 'accepted_article_identity_changed')
-            from recover_private_wechat_handoff import merge_receipts
-            merge_receipts(receipts, restored)
+            restored_summary = read_json(restored / 'wechat_draft_summary.json')
+            if restored_summary.get('status') == 'skipped_title_policy' and restored_summary.get('drafts') == []:
+                shutil.copytree(restored, receipts)
+            else:
+                from recover_private_wechat_handoff import merge_receipts
+                merge_receipts(receipts, restored)
     write_json(receipts / 'delivery_identity.json', identity)
+    if (receipts / 'wechat_draft_summary.json').is_file() and read_json(receipts / 'wechat_draft_summary.json').get('status') == 'skipped_title_policy':
+        validate_delivery(workspace)
     return context
 
 
@@ -314,10 +320,15 @@ def save_receipts(workspace, client, bucket):
     summary = read_json(root / 'wechat_draft_summary.json')
     require(summary.get('dry_run') is False, 'dry_run_receipt_forbidden')
     if not any(row.get('media_id') for row in summary.get('drafts', []) if isinstance(row, dict)):
-        return False
+        if summary.get('status') != 'skipped_title_policy':
+            return False
+        validate_delivery(workspace)
     require(read_json(root / 'delivery_identity.json') == delivery_identity(context, workspace / 'checkpoint' / 'articles'),
             'accepted_article_identity_changed')
     save_private_logs(workspace, root / 'private-diagnostics')
+    final_receipt = workspace / 'wechat_delivery_receipt.json'
+    if final_receipt.is_file():
+        shutil.copyfile(final_receipt, root / final_receipt.name)
     upload_directory(root, context_prefix(context) + '/wechat-receipts.tar.gz', client=client, bucket=bucket)
     return True
 
@@ -338,17 +349,46 @@ def validate_delivery(workspace):
     root = receipt_root(workspace, context)
     summary = read_json(root / 'wechat_draft_summary.json')
     expected = context['expected_articles']
+    from push_xhs_notes_to_wechat_drafts import xhs_article_title_metadata, hard_blocked_xhs_title_record
+    eligible, blocked = set(), {}
+    article_root = workspace / 'checkpoint' / 'articles'
+    for report in receipt['reports']:
+        name = report['directory']
+        metadata = xhs_article_title_metadata(article_root / name)
+        # A failed body cannot hide behind an otherwise legitimate title policy.
+        require(not metadata.get('generation_failure_reason'), 'wechat_generation_failure_present')
+        exclusion = hard_blocked_xhs_title_record(metadata)
+        if exclusion:
+            blocked[name] = canonical_policy_record(exclusion)
+        else:
+            eligible.add(name)
+    require(len(eligible) + len(blocked) == expected, 'wechat_source_partition_invalid')
+    recorded_exclusions = summary.get('skipped_title_policy', [])
+    require(isinstance(recorded_exclusions, list) and len(recorded_exclusions) == len(blocked),
+            'wechat_policy_exclusion_mismatch')
+    observed = {}
+    for row in recorded_exclusions:
+        normalized = canonical_policy_record(row)
+        name = normalized['report_dir']
+        require(name not in observed and name in blocked and normalized == blocked[name],
+                'wechat_policy_exclusion_mismatch')
+        observed[name] = normalized
+    require(observed == blocked, 'wechat_policy_exclusion_mismatch')
     require(summary.get('dry_run') is False and summary.get('publish') is False
-            and summary.get('status') == 'verified' and summary.get('date_folder') == context['date_folder']
-            and summary.get('input_selected_count') == expected and summary.get('selected_count') == expected
-            and summary.get('skipped_title_policy_count') == 0 and summary.get('skipped_generation_failure_count') == 0,
+            and summary.get('status') == ('verified' if eligible else 'skipped_title_policy')
+            and summary.get('date_folder') == context['date_folder']
+            and summary.get('input_selected_count') == expected and summary.get('selected_count') == len(eligible)
+            and summary.get('skipped_title_policy_count') == len(blocked)
+            and summary.get('skipped_generation_failure_count') == 0
+            and summary.get('skipped_generation_failures', []) == [],
             'wechat_article_coverage_incomplete')
     rows = summary.get('articles', [])
-    names = {row['directory'] for row in receipt['reports']}
-    require(len(rows) == expected and {Path(row.get('report_dir', '')).name for row in rows} == names,
+    require(isinstance(rows, list) and all(isinstance(row, dict) for row in rows)
+            and len(rows) == len(eligible) and {Path(row.get('report_dir', '')).name for row in rows} == eligible,
             'wechat_article_identity_incomplete')
     drafts = summary.get('drafts', [])
-    require(drafts and summary.get('draft_count') == len(drafts), 'wechat_drafts_missing')
+    require(isinstance(drafts, list) and bool(drafts) == bool(eligible)
+            and summary.get('draft_count') == len(drafts), 'wechat_drafts_missing')
     media, groups, count = set(), set(), 0
     from push_portal_translated_to_wechat_drafts import draft_group_key
     for draft in drafts:
@@ -368,12 +408,35 @@ def validate_delivery(workspace):
         require(articles and len(articles) == draft.get('article_count') == result.get('article_count')
                 and draft_group_key(articles) == group, 'wechat_payload_identity_changed')
         count += len(articles); media.add(media_id); groups.add(group)
-    require(count == expected, 'wechat_article_coverage_incomplete')
+    require(count == len(eligible), 'wechat_article_coverage_incomplete')
+    # Blog ingestion scans payload files, including restored aliases. Do not
+    # let an old, now-unaccounted payload bypass the verified current partition.
+    for path in root.glob('draft_payload_*.json'):
+        payload = read_json(path)
+        articles = payload.get('articles')
+        require(isinstance(articles, list) and articles and draft_group_key(articles) in groups,
+                'wechat_unaccounted_archive_payload')
     result = {'schema_version': 1, 'complete': True, 'source_run_id': context['source_run_id'],
               'date_folder': context['date_folder'], 'article_count': count, 'draft_count': len(drafts),
+              'source_report_count': expected, 'policy_excluded_count': len(blocked),
+              'accounted_report_count': count + len(blocked),
               'article_receipt_sha256': digest((workspace / 'checkpoint' / 'articles' / ARTICLE_RECEIPT).read_bytes())}
     write_json(workspace / 'wechat_delivery_receipt.json', result)
     return result
+
+
+def canonical_policy_record(record):
+    """Compare the complete recomputed policy evidence across runner paths."""
+    require(isinstance(record, dict) and isinstance(record.get('report_dir'), str)
+            and isinstance(record.get('wechat_markdown'), str), 'wechat_policy_exclusion_mismatch')
+    value = dict(record)
+    directory = Path(value['report_dir']).name
+    markdown = Path(value['wechat_markdown'])
+    require(markdown.name == 'wechat_article.md' and markdown.parent.name == directory,
+            'wechat_policy_exclusion_mismatch')
+    value['report_dir'] = directory
+    value['wechat_markdown'] = directory + '/wechat_article.md'
+    return value
 
 
 def guarded_add_draft(client, bucket, prefix, session, token, articles, timeout):
@@ -488,7 +551,8 @@ def main(argv=None):
                 for key, value in result.items():
                     output.write(f'{key}={value}\n')
         print(json.dumps({'status': 'complete', 'stage': args.command,
-                          **({key: result[key] for key in ('article_count', 'draft_count') if key in result})}))
+                          **({key: result[key] for key in ('article_count', 'draft_count', 'source_report_count',
+                              'policy_excluded_count', 'accounted_report_count') if key in result})}))
         return 0
     except Exception as error:
         # Error text from SDKs, HTML generation or providers may contain bodies.
