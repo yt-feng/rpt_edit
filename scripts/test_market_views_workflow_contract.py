@@ -79,8 +79,15 @@ def job(path, name):
     ).group(1)
 
 
-def gate(block, results, *, selected="64", cancelled=False, plan=None, primary_ready=None, provider_only="false"):
+def gate(block, results, *, selected="64", cancelled=False, plan=None, primary_ready=None, provider_only="false",
+         steps=None, prior_steps_success=True):
     expression = re.search(r"(?s)\bif:.*?\$\{\{(.*?)\}\}", block).group(1)
+    # GitHub adds success() when an expression has no explicit status function.
+    # A continue-on-error step has failure outcome but successful conclusion;
+    # callers model that distinction with steps and prior_steps_success.
+    if not re.search(r'\b(?:always|cancelled|failure|success)\s*\(', expression):
+        if cancelled or not prior_steps_success:
+            return False
     expression = expression.replace("needs.*.result", repr(list(results.values())))
     expression = re.sub(
         r"needs\.([\w-]+)\.result", lambda m: repr(results.get(m[1], "skipped")), expression
@@ -101,6 +108,8 @@ def gate(block, results, *, selected="64", cancelled=False, plan=None, primary_r
         r"needs\.resolve-inputs\.outputs\.(\w+)",
         lambda m: repr(options[m[1]]), expression,
     )
+    expression = re.sub(r"steps\.([\w-]+)\.outcome",
+                        lambda m: repr((steps or {}).get(m[1], "skipped")), expression)
     expression = expression.replace("vars.CHART_SEARCH_ENABLED", repr("true"))
     expression = expression.replace("always()", "True")
     expression = expression.replace("cancelled()", repr(cancelled))
@@ -333,14 +342,62 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         mineru = blocks[names[0][0]]
         self.assertIn('--timeout 1740', mineru)
         self.assertIn("needs.resolve-inputs.outputs.replay_source_run_id == ''", mineru)
-        self.assertIn("needs.source-outcome.outputs.provider_only == 'true'", mineru)
+        self.assertNotIn('provider_only', mineru)
         self.assertIn("steps.mineru-recover.outcome == 'success'", blocks[names[1][0]])
-        self.assertIn("steps.mineru-recover.outcome != 'success'", blocks[names[3][0]])
+        self.assertIn("steps.mineru-recover.outcome == 'failure'", blocks[names[3][0]])
         self.assertIn("steps.ocr-synthesis.outcome == 'success'", blocks[names[4][0]])
         self.assertIn('_private-workflow-handoff/mineru-market-sources/', blocks[names[1][0]])
         self.assertIn('_private-workflow-handoff/market-ocr-synthesis/', blocks[names[4][0]])
         self.assertLess(recovery.index(names[0][0]), recovery.index(names[1][0]))
         self.assertLess(recovery.index(names[3][0]), recovery.index(names[4][0]))
+
+    def test_normal_recovery_precedes_ocr_for_provider_generation_and_pending_segment_failures(self):
+        recovery = job(UPSTREAM, 'recover-market-sources')
+        def block(name):
+            return recovery.split('- name: ' + name, 1)[1].split('\n      - name:', 1)[0]
+        mineru = block('Recover existing MinerU tasks for daily Market Views')
+        ocr = [block(name) for name in ('Install complete cloud OCR synthesis dependencies',
+               'Restore private source-bound OCR synthesis cache',
+               'Build complete OCR summaries and charts for Market Views')]
+        results = {'resolve-inputs': 'success', 'select-macro-reports': 'success', 'process-shard': 'success'}
+        for failure, provider_only in [('provider', 'true'), ('article_generation', 'false'),
+                                       ('pending_page_segment', 'false')]:
+            with self.subTest(failure=failure):
+                self.assertTrue(gate(recovery, results, primary_ready='false', provider_only=provider_only))
+                self.assertTrue(gate(mineru, results, provider_only=provider_only))
+            for outcome in ('success', 'failure', 'skipped', 'cancelled', 'timed_out', ''):
+                for step in ocr:
+                    with self.subTest(failure=failure, outcome=outcome):
+                        self.assertEqual(gate(step, results, provider_only=provider_only,
+                            steps={'mineru-recover': outcome}), outcome == 'failure')
+            for step in [mineru, *ocr]:
+                for stopped in ({'cancelled': True}, {'prior_steps_success': False}):
+                    self.assertFalse(gate(step, results, provider_only=provider_only,
+                        steps={'mineru-recover': 'failure'}, **stopped))
+
+    def test_frozen_replay_has_separate_provider_proven_ocr_route_without_mineru_recovery(self):
+        recovery = job(UPSTREAM, 'recover-market-sources')
+        def block(name):
+            return recovery.split('- name: ' + name, 1)[1].split('\n      - name:', 1)[0]
+        mineru = block('Recover existing MinerU tasks for daily Market Views')
+        ocr = [block(name) for name in ('Install complete cloud OCR synthesis dependencies',
+               'Restore private source-bound OCR synthesis cache',
+               'Build complete OCR summaries and charts for Market Views')]
+        results = {'resolve-inputs': 'success', 'select-macro-reports': 'success', 'process-shard': 'success'}
+        plan = {'replay_source_run_id': '123'}
+        for proven in ('true', 'false', ''):
+            self.assertFalse(gate(mineru, results, plan=plan, provider_only=proven))
+            self.assertEqual(gate(recovery, results, plan=plan, primary_ready='false',
+                                  provider_only=proven), proven == 'true')
+            for outcome in ('success', 'failure', 'skipped', 'cancelled', 'timed_out', ''):
+                for step in ocr:
+                    with self.subTest(proven=proven, outcome=outcome):
+                        self.assertEqual(gate(step, results, plan=plan, provider_only=proven,
+                            steps={'mineru-recover': outcome}), proven == 'true' and outcome == 'skipped')
+            for step in ocr:
+                for stopped in ({'cancelled': True}, {'prior_steps_success': False}):
+                    self.assertFalse(gate(step, results, plan=plan, provider_only=proven,
+                        steps={'mineru-recover': 'skipped'}, **stopped))
 
     def test_frozen_replay_cannot_recover_when_accepted_task_binding_was_not_proven(self):
         results = {'resolve-inputs': 'success', 'select-macro-reports': 'success', 'process-shard': 'success'}
