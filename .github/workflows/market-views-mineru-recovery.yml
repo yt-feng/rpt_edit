@@ -182,6 +182,20 @@ jobs:
             --expected-reports "$EXPECTED_ARTICLES" --date-folder "$DATE_FOLDER" \
             --allowed-error-codes "$ALLOWED_ERROR_CODES" \
             --allowed-error-hashes "$ALLOWED_ERROR_HASHES" "${EXTRA_ARGS[@]}"
+          python - <<'PY'
+          import json, sys
+          from pathlib import Path
+          sys.path.insert(0, 'scripts')
+          from recover_durable_mineru_sources import RECEIPT
+          receipt = json.loads((Path('_mineru_market_sources/shard_0') / RECEIPT).read_text())
+          segments = [{'source_ordinal': ordinal, 'pages': row['delivery']['receipt']['page_count'],
+                       'ranges': [[part['page_start'], part['page_end']] for part in row['delivery']['receipt']['segments']]}
+                      for ordinal, row in enumerate(receipt['reports'], 1)
+                      if row.get('delivery', {}).get('kind') == 'page_segments']
+          print('MinerU verified delivery: ' + json.dumps({'reports': receipt['report_count'],
+                'provider_posts': receipt['provider_posts'], 'provider_sources': receipt['report_count']-len(segments),
+                'segmented_sources': segments, 'manifest_sha256': receipt['manifest_sha256']}))
+          PY
       - name: Archive complete verified sources in private R2
         env:
           DATE_FOLDER: ${{ inputs.date_folder }}
