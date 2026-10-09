@@ -51,6 +51,19 @@ def changed(raw, operation):
         return document.tobytes(no_new_id=True)
 
 
+def link_fixture():
+    def forward_link(document):
+        link = document.get_new_xref()
+        document.update_object(link, f"<</Type/Annot/Subtype/Link/Rect[10 10 40 30]/Border[0 0 0]"
+                               f"/Dest[{document.page_xref(1)} 0 R /XYZ 10 180 0]>>")
+        document.xref_set_key(document.page_xref(0), "Annots", f"[{link} 0 R]")
+    return changed(fixture(pages=2), forward_link)
+
+
+def link_reference(document):
+    return parse_pdf_value(document.xref_get_key(document.page_xref(0), "Annots")[1])[0].idnum
+
+
 def binding(original, embedded):
     with fitz.open(stream=original, filetype="pdf") as left, fitz.open(stream=embedded, filetype="pdf") as right:
         return bind_pdf_render_graph(left, right)
@@ -285,6 +298,66 @@ class GraphTests(unittest.TestCase):
         original = changed(self.original, annotation)
         result = binding(original, rewrite(original))
         self.assertEqual(result.receipt["pages"], 1)
+
+    def test_pdfium_forward_link_destination_is_ignored_only_for_static_annotation_binding(self):
+        original = link_fixture(); embedded = rewrite(original)
+        with fitz.open(stream=original, filetype="pdf") as a, fitz.open(stream=embedded, filetype="pdf") as e:
+            self.assertEqual(a.xref_get_key(link_reference(a), "Dest")[0], "array")
+            self.assertEqual(e.xref_get_key(link_reference(e), "Dest")[0], "null")
+        result = binding(original, embedded)
+        self.assertEqual(result.receipt["pages"], 2)
+        self.assertEqual(result.receipt["ocg_count"], 2)
+
+    def test_link_border_appearance_and_optional_content_changes_are_rejected(self):
+        original = link_fixture(); embedded = rewrite(original)
+        def alter(document, kind):
+            link = link_reference(document)
+            if kind == "border":
+                document.xref_set_key(link, "Border", "[0 0 1]")
+            elif kind == "appearance":
+                form = document.get_new_xref()
+                document.update_object(form, "<</Type/XObject/Subtype/Form/BBox[0 0 30 20]>>")
+                document.update_stream(form, b"q 1 0 0 rg 0 0 30 20 re f Q")
+                document.xref_set_key(link, "AP", f"<</N {form} 0 R>>")
+            elif kind == "oc":
+                group = next(x for x in range(1, document.xref_length()) if document.xref_get_key(x, "Type") == ("name", "/OCG"))
+                document.xref_set_key(link, "OC", f"{group} 0 R")
+            else:
+                document.xref_set_key(link, "Rect", "[10 10 45 35]")
+        for kind in ("border", "appearance", "oc", "rect"):
+            with self.subTest(kind=kind), self.assertRaises(PdfGraphError):
+                binding(original, changed(embedded, lambda doc: alter(doc, kind)))
+
+    def test_nested_link_dictionary_has_no_destination_exception(self):
+        def insert(document):
+            resources = int(document.xref_get_key(document[0].xref, "Resources")[1].split()[0])
+            document.xref_set_key(resources, "PRIVATE_NESTED", f"<</Subtype/Link/Dest[{document.page_xref(0)} 0 R /Fit]>>")
+        original = changed(self.original, insert)
+        def drop(document):
+            resources = int(document.xref_get_key(document[0].xref, "Resources")[1].split()[0])
+            document.xref_set_key(resources, "PRIVATE_NESTED", "<</Subtype/Link>>")
+        with self.assertRaisesRegex(PdfGraphError, "pdf_graph_dictionary_keys_mismatch"):
+            binding(original, changed(original, drop))
+
+    def test_malformed_or_action_conflicting_link_destination_is_not_ignored(self):
+        original = link_fixture()
+        for value in ("[42 /XYZ 10 180 0]", "[42 0 R /Unknown 10]", "<< /PRIVATE(SECRET) >>"):
+            with self.subTest(case=len(value)):
+                invalid = changed(original, lambda doc: doc.xref_set_key(link_reference(doc), "Dest", value))
+                with self.assertRaisesRegex(PdfGraphError, "pdf_graph_link_destination_invalid"):
+                    binding(invalid, invalid)
+        conflicted = changed(original, lambda doc: doc.xref_set_key(link_reference(doc), "A", "<</S/GoTo/D(named)>>"))
+        with self.assertRaisesRegex(PdfGraphError, "pdf_graph_link_destination_invalid"):
+            binding(conflicted, conflicted)
+
+    def test_shared_link_object_in_resources_still_gets_full_non_annotation_comparison(self):
+        def alias(document):
+            resources = int(document.xref_get_key(document[0].xref, "Resources")[1].split()[0])
+            document.xref_set_key(resources, "PRIVATE_ALIAS", f"{link_reference(document)} 0 R")
+        original = changed(link_fixture(), alias)
+        embedded = rewrite(original)
+        with self.assertRaisesRegex(PdfGraphError, "pdf_graph_dictionary_keys_mismatch"):
+            binding(original, embedded)
 
     def test_dynamic_forms_are_not_admitted(self):
         original = changed(self.original, lambda document: document.xref_set_key(document.pdf_catalog(), "AcroForm", "<<>>"))

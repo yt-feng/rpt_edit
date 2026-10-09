@@ -656,9 +656,7 @@ def compare_cached_pdf(original_path,payload,*,original_sha256,clock=time.monoto
                                   'provider_page_size' if not provider_size_equal else 'rgb_pixels')
                     budget()
                     def without_annotations(value):
-                        pix = value.get_pixmap(matrix=fitz.Matrix(300/72,300/72),alpha=False,
-                                               colorspace=fitz.csRGB,annots=False)
-                        return Image.frombytes('RGB',(pix.width,pix.height),pix.samples)
+                        return figures._render(value,annots=False)
                     left,right = without_annotations(actual),without_annotations(other)
                     try: page['annots_false'] = _difference(left,right)
                     finally: left.close(); right.close()

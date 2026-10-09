@@ -48,7 +48,7 @@ DIAGNOSTIC_STANDARD_KEYS = frozenset("""
 /OCProperties /Configs /BaseState /ON /OFF /AS /Order /ListMode /RBGroups /Locked
 /OutputIntents /DestOutputProfile /OutputCondition /OutputConditionIdentifier /Info
 /MediaBox /CropBox /BleedBox /TrimBox /ArtBox /Rotate /UserUnit
-/Rect /AP /AS /Border /BS /A /AA /Parent /Kids /T /V /DA /DR /AcroForm /NeedsRendering /XFA
+/Rect /AP /AS /Border /BS /A /AA /Dest /QuadPoints /Parent /Kids /T /V /DA /DR /AcroForm /NeedsRendering /XFA
 /ShadingType /Function /FunctionType /Domain /Range /Coords /Extend /Background /AntiAlias
 /Size /BitsPerSample /Encode /Bounds /Functions /C0 /C1 /PatternType /PaintType /TilingType /XStep /YStep
 """.split())
@@ -399,7 +399,7 @@ def bind_pdf_render_graph(original_doc, embedded_doc, *, budget=lambda: None):
     left, right = _Document(original_doc, budget), _Document(embedded_doc, budget)
     left_pages, right_pages = left.page_references(), right.page_references()
     _require(len(left_pages) == len(right_pages), "pdf_graph_page_count_mismatch")
-    mapping, reverse, ordinals, ocgs, visited = {}, {}, {}, {}, set()
+    mapping, reverse, ordinals, ocgs, visited, compared_pairs = {}, {}, {}, {}, set(), set()
     fingerprint = hashlib.sha256()
     counts = {"pages": len(left_pages), "objects": 0, "streams": 0, "nodes": 0}
 
@@ -418,7 +418,64 @@ def bind_pdf_render_graph(original_doc, embedded_doc, *, budget=lambda: None):
     # Annotation /P links back to an already paired page, not its full Pages
     # parent tree. Every page's drawing roots are checked separately below.
     for a, b in zip(left_pages, right_pages):
-        bind(a, b); visited.add((a, b))
+        bind(a, b); visited.add((a, b, False)); compared_pairs.add((a, b))
+
+    def annotation_root(path):
+        return (len(path) == 5 and path[0] == "page" and type(path[1]) is int
+                and path[2:4] == ("/Annots", "index") and type(path[4]) is int)
+
+    def checked_link_destination(document, page_references, value):
+        """Validate navigation syntax only; it is not a drawing dependency."""
+        def resolved(item):
+            seen = set()
+            while isinstance(item, IndirectObject):
+                reference = _reference(item)
+                _require(reference not in seen and len(seen) < MAX_DEPTH,
+                         "pdf_graph_link_destination_invalid")
+                seen.add(reference); item = document.header(reference)
+            return item
+        value = resolved(value)
+        if isinstance(value, (NameObject, TextStringObject, ByteStringObject)):
+            _require(0 < len(value) <= MAX_HEADER_BYTES, "pdf_graph_link_destination_invalid")
+            return
+        _require(isinstance(value, ArrayObject) and 2 <= len(value) <= 6,
+                 "pdf_graph_link_destination_invalid")
+        _require(isinstance(value[0], IndirectObject) and _reference(value[0]) in page_references,
+                 "pdf_graph_link_destination_invalid")
+        mode = resolved(value[1])
+        arities = {"/XYZ": 5, "/Fit": 2, "/FitH": 3, "/FitV": 3, "/FitR": 6,
+                   "/FitB": 2, "/FitBH": 3, "/FitBV": 3}
+        _require(isinstance(mode, NameObject) and str(mode) in arities and len(value) == arities[str(mode)],
+                 "pdf_graph_link_destination_invalid")
+        numbers = [resolved(item) for item in value[2:]]
+        for item in numbers:
+            _require(isinstance(item, (NumberObject, FloatObject)) and Decimal(str(item)).is_finite()
+                     or isinstance(item, NullObject) and mode != "/FitR",
+                     "pdf_graph_link_destination_invalid")
+        if mode == "/XYZ" and not isinstance(numbers[2], NullObject):
+            _require(Decimal(str(numbers[2])) >= 0, "pdf_graph_link_destination_invalid")
+
+    def drawing_annotation(a, b, path):
+        if not annotation_root(path):
+            return a, b
+        def raw(item, key):
+            return item.raw_get(key) if isinstance(item, DictionaryObject) and key in item else item.get(key, NullObject())
+        if not all(raw(item, "/Subtype") == "/Link" and
+                   (isinstance(raw(item, "/Type"), NullObject) or raw(item, "/Type") == "/Annot")
+                   for item in (a, b)):
+            return a, b
+        for item, document, pages in ((a, left, left_pages), (b, right, right_pages)):
+            if "/Dest" in item:
+                _require(isinstance(raw(item, "/A"), NullObject), "pdf_graph_link_destination_invalid")
+                checked_link_destination(document, pages, raw(item, "/Dest"))
+        # /Dest controls interactive navigation, not Link appearance. PDFium
+        # removes forward-page destinations during import (CPDF_PageOrganizer
+        # UpdateReference/GetNewObjId). This exception applies only to a page's
+        # actual annotation entry: every AP/OC/Border/Rect and nested dictionary
+        # remains subject to the full typed graph comparison.
+        # https://pdfium.googlesource.com/pdfium/+/refs/heads/main/core/fpdfapi/edit/cpdf_pageorganizer.cpp
+        return ({key: raw(a, key) for key in a if key != "/Dest"},
+                {key: raw(b, key) for key in b if key != "/Dest"})
 
     def compare(a, b, depth=0, path=()):
         try:
@@ -446,11 +503,14 @@ def bind_pdf_render_graph(original_doc, embedded_doc, *, budget=lambda: None):
                      "pdf_graph_reference_shape_mismatch")
             ar, br = _reference(a), _reference(b)
             pair = bind(ar, br)
+            scoped_pair = (*pair, annotation_root(path))
             # Stable traversal ordinal preserves alias topology without xrefs.
             note("reference", ordinals[ar])
-            if pair in visited:
+            if scoped_pair in visited:
                 return
-            visited.add(pair); counts["objects"] += 1
+            visited.add(scoped_pair)
+            if pair not in compared_pairs:
+                compared_pairs.add(pair); counts["objects"] += 1
             ah, bh = left.header(ar), right.header(br)
             ast, bst = left.stream(ar), right.stream(br)
             _require((ast is None) == (bst is None), "pdf_graph_stream_kind_mismatch")
@@ -470,6 +530,7 @@ def bind_pdf_render_graph(original_doc, embedded_doc, *, budget=lambda: None):
                      "pdf_graph_value_type_mismatch")
             _require(len(a) <= MAX_CONTAINER_ITEMS and len(b) <= MAX_CONTAINER_ITEMS,
                      "pdf_graph_container_bound")
+            a, b = drawing_annotation(a, b, path)
             _require(set(a) == set(b), "pdf_graph_dictionary_keys_mismatch")
             note("dictionary", sorted(str(key) for key in a))
             for key in sorted(a, key=str):
