@@ -14,6 +14,10 @@ on:
       - scripts/mineru_result_cache.py
       - scripts/test_mineru_result_cache.py
       - scripts/pdf_to_xhs_batch.py
+      - scripts/mineru_pdf_graph.py
+      - scripts/mineru_pdf_oc.py
+      - scripts/test_mineru_pdf_graph.py
+      - scripts/test_mineru_pdf_oc.py
       - scripts/test_mineru_daily_result_cache.py
       - scripts/mineru_completed_child_reuse.py
       - scripts/test_mineru_completed_child_reuse.py
@@ -75,8 +79,10 @@ jobs:
       - name: Verify producer checks before dependency installation
         run: python3 -S -c "import sys; sys.path.insert(0, 'scripts'); from recover_durable_mineru_sources import check_producer"
       - name: Install real source image regression dependencies
-        run: python3 -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF 'urllib3>=2.2,<3' certifi
+        run: python3 -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF pypdf==6.19.0 pypdfium2==5.13.0 'urllib3>=2.2,<3' certifi
       - run: python3 -B scripts/test_mineru_terminal_recovery.py
+      - run: python3 -B scripts/test_mineru_pdf_graph.py
+      - run: python3 -B scripts/test_mineru_pdf_oc.py
       - run: python3 -B scripts/test_mineru_page_segments.py
       - run: python3 -B scripts/test_mineru_segmented_delivery.py
       - run: python3 -B scripts/test_recover_durable_mineru_sources.py
@@ -122,7 +128,7 @@ jobs:
           PY
           fi
       - name: Install private recovery and source image dependencies
-        run: python3 -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF 'boto3>=1.37.32,<2' 'urllib3>=2.2,<3' certifi
+        run: python3 -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF pypdf==6.19.0 'boto3>=1.37.32,<2' 'urllib3>=2.2,<3' certifi
       - name: Download complete exact original selected PDF artifact
         if: inputs.source_run_id != ''
         uses: actions/download-artifact@v4

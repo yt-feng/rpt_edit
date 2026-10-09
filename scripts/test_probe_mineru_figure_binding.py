@@ -9,7 +9,7 @@ from unittest.mock import Mock,patch
 import zipfile
 
 import fitz
-from test_mineru_figure_sources import Fixture
+from test_mineru_figure_sources import Fixture,visual
 from test_mineru_result_cache import MemoryR2
 from mineru_task_ledger import Ledger,FileStore,digest,encoded
 from mineru_result_cache import ResultCache
@@ -293,6 +293,39 @@ class ProbeTests(unittest.TestCase):
         self.assertEqual(result['status'],'mismatch'); self.assertFalse(result['all_selected_pages_equal'])
         self.assertFalse(derived['production_acceptance'])
         self.assertNotIn('CHANGED',json.dumps(derived))
+
+    def test_actual_pdfium_oc_loss_has_graph_bound_all_selected_page_restoration(self):
+        from test_mineru_pdf_oc import optional_content_fixture
+        self.fixture=Fixture(self.root/'oc-pdfium',pages=2,visuals=[
+            visual(0,[35,100,185,260],kind='chart',page_idx=0),
+            visual(1,[35,100,185,260],kind='chart',page_idx=1)])
+        original,_=optional_content_fixture(pages=2,plain_first=True)
+        embedded,_=probe._pdfium_rewrite(original)
+        self.fixture.original.write_bytes(original);(self.fixture.raw/'source.pdf').write_bytes(embedded)
+        result=self.compare()
+        self.assertEqual(result['status'],'mismatch')
+        restored=result['pages'][-1]['optional_content_restoration']
+        self.assertEqual(restored['status'],'verified')
+        self.assertEqual(restored['checked_page_count'],2)
+        self.assertTrue(restored['all_selected_pages_equal'])
+        self.assertEqual(restored['restoration_proof']['verified_page_indices'],[0,1])
+        self.assertEqual(restored['restoration_proof']['embedded_pdf_sha256'],digest(embedded))
+        self.assertFalse(restored['production_acceptance']);self.assertFalse(restored['complete_source_handoff'])
+        self.assertNotIn('fixture-hidden',json.dumps(restored))
+
+    def test_oc_restoration_probe_rejects_provider_hidden_changes_and_ref_swaps(self):
+        from test_mineru_pdf_oc import optional_content_fixture,changed_provider
+        original,_=optional_content_fixture()
+        embedded,_=probe._pdfium_rewrite(original)
+        self.fixture.original.write_bytes(original)
+        for change in ('image','text','swap','extra'):
+            with self.subTest(change=change):
+                (self.fixture.raw/'source.pdf').write_bytes(changed_provider(embedded,change))
+                result=self.compare()
+                restored=result['pages'][-1]['optional_content_restoration']
+                self.assertEqual(restored['status'],'rejected')
+                self.assertFalse(restored['all_selected_pages_equal'])
+                self.assertFalse(restored['production_acceptance'])
 
     def test_annotation_change_is_classified_but_never_accepted(self):
         def annotate(doc):

@@ -15,11 +15,12 @@ import json
 import math
 import re
 import struct
-from contextlib import contextmanager
+from contextlib import ExitStack, contextmanager
 from pathlib import Path, PurePosixPath
 from typing import Any
 
 POLICY = "mineru-source-figures-v1"
+RESTORED_POLICY = "mineru-source-figures-v2"
 SIDECAR = "source_figure_map.json"
 MAX_JSON = 32 * 1024 * 1024
 MAX_ITEMS = 20000
@@ -681,6 +682,7 @@ def _create(result_dir, assets_dir, found, original_sha, markdown_sha, original,
     pages, carried_pixels = [], 0
     original_bytes = None
     embedded_bytes = None
+    restoration_proof = None
     if original is not None:
         original = Path(original)
         original_bytes = _regular(original, original.parent, 512 * 1024 * 1024)
@@ -692,12 +694,13 @@ def _create(result_dir, assets_dir, found, original_sha, markdown_sha, original,
         embedded_bytes = _regular(embedded[0], result_dir, 512 * 1024 * 1024)
         import fitz
 
-        with _silent_mupdf(), fitz.open(stream=original_bytes, filetype="pdf") as authentic, fitz.open(stream=embedded_bytes, filetype="pdf") as rewritten:
+        with _silent_mupdf(), fitz.open(stream=original_bytes, filetype="pdf") as authentic, fitz.open(stream=embedded_bytes, filetype="pdf") as rewritten, ExitStack() as restoration_stack:
             if authentic.is_encrypted or rewritten.is_encrypted or len(authentic) != len(metadata["pages"]) or len(rewritten) != len(authentic):
                 _fail("figure_source_pixels_mismatch")
             used_pages = sorted({r["page_idx"] for r, d in zip(metadata["records"], decisions) if d["selected"]})
+            render_document = rewritten
             for pi in used_pages:
-                actual, supplied = authentic[pi], rewritten[pi]
+                actual, supplied = authentic[pi], render_document[pi]
                 geometry = _geometry(actual)
                 if _canonical(geometry) != _canonical(_geometry(supplied)):
                     _fail("figure_source_pixels_mismatch")
@@ -706,7 +709,37 @@ def _create(result_dir, assets_dir, found, original_sha, markdown_sha, original,
                     _fail("figure_source_pixels_mismatch")
                 image, other = _render(actual), _render(supplied)
                 if image.size != other.size or image.tobytes() != other.tobytes():
-                    _fail("figure_source_pixels_mismatch")
+                    # Repair only a missing catalog configuration after binding
+                    # every existing page drawing object to the admitted source.
+                    # The cache / raw provider file and original crop stay intact.
+                    from mineru_pdf_oc import has_missing_optional_content, restore_missing_optional_content
+                    if restoration_proof is not None or not has_missing_optional_content(authentic, rewritten):
+                        image.close(); other.close()
+                        _fail("figure_source_pixels_mismatch")
+                    try:
+                        restored, restoration_proof = restore_missing_optional_content(authentic, rewritten,
+                            original_sha256=original_sha, embedded_sha256=_sha(embedded_bytes))
+                        restoration_stack.callback(restored.close)
+                        for prior in pages:
+                            previous = restored[prior["page_idx"]]
+                            if _canonical(_geometry(previous)) != _canonical(prior["geometry"]):
+                                _fail("figure_source_pixels_mismatch")
+                            carried = _read_carried_page(report, prior)
+                            candidate = _render(previous)
+                            try:
+                                if carried.size != candidate.size or carried.tobytes() != candidate.tobytes():
+                                    _fail("figure_source_pixels_mismatch")
+                            finally:
+                                carried.close(); candidate.close()
+                        render_document = restored
+                        other.close(); other = _render(restored[pi])
+                        if _canonical(_geometry(restored[pi])) != _canonical(geometry):
+                            _fail("figure_source_pixels_mismatch")
+                        if image.size != other.size or image.tobytes() != other.tobytes():
+                            _fail("figure_source_pixels_mismatch")
+                    except Exception:
+                        image.close(); other.close()
+                        _fail("figure_source_pixels_mismatch")
                 carried_pixels += image.width * image.height
                 if carried_pixels > MAX_CARRIED_PAGE_PIXELS:
                     _fail("figure_page_budget_exceeded")
@@ -717,6 +750,11 @@ def _create(result_dir, assets_dir, found, original_sha, markdown_sha, original,
                 image.close()
                 other.close()
                 del image, other
+            if restoration_proof is not None:
+                from mineru_pdf_oc import validate_restoration_receipt
+                restoration_proof["verified_page_indices"] = used_pages
+                validate_restoration_receipt(restoration_proof, original_sha256=original_sha,
+                    embedded_sha256=_sha(embedded_bytes), page_indices=used_pages)
     for item in provider.values():
         target = report / item["path"]
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -752,7 +790,8 @@ def _create(result_dir, assets_dir, found, original_sha, markdown_sha, original,
         copied.append((source_info["original_path"], asset_path))
     if image is not None:
         image.close()
-    payload = {"schema": 1, "policy": POLICY,
+    payload = {"schema": 2 if restoration_proof is not None else 1,
+               "policy": RESTORED_POLICY if restoration_proof is not None else POLICY,
                "authority": "trusted-producer-and-outer-receipt",
                "original_pdf_sha256": original_sha,
                "original_identity": "unproven" if original_sha is None else "admitted_sha256",
@@ -764,6 +803,8 @@ def _create(result_dir, assets_dir, found, original_sha, markdown_sha, original,
                "max_images": maximum, "decisions": decisions,
                "provider_images": {ref: {k: v for k, v in p.items() if k not in {"original_path", "data"}} for ref, p in provider.items()},
                "pages": pages, "assets": assets}
+    if restoration_proof is not None:
+        payload["embedded_pdf_render_restoration"] = restoration_proof
     # Detect source mutation before sealing. Outer inventory independently binds
     # this sidecar and its private carriers after the producer returns.
     if original is not None and _sha(_regular(original, original.parent, 512 * 1024 * 1024)) != original_sha:
@@ -815,17 +856,20 @@ def _validate(report, original_sha, markdown_sha, images):
     original_sha = _hash(original_sha, optional=True)
     markdown_sha = _hash(markdown_sha)
     value = _json(_regular(report / SIDECAR, report, MAX_JSON))
-    _keys(value, {"schema", "policy", "authority", "original_pdf_sha256", "original_identity", "markdown_sha256",
-                  "authenticated_original_render", "embedded_pdf_sha256", "metadata", "metadata_sha256", "provider_json_sha256",
-                  "max_images", "decisions", "provider_images", "pages", "assets"})
-    if (type(value["schema"]) is not int or value["schema"] != 1 or value["policy"] != POLICY
+    restored = isinstance(value, dict) and type(value.get("schema")) is int and value["schema"] == 2
+    fields = {"schema", "policy", "authority", "original_pdf_sha256", "original_identity", "markdown_sha256",
+              "authenticated_original_render", "embedded_pdf_sha256", "metadata", "metadata_sha256", "provider_json_sha256",
+              "max_images", "decisions", "provider_images", "pages", "assets"}
+    _keys(value, fields | ({"embedded_pdf_render_restoration"} if restored else set()))
+    if (type(value["schema"]) is not int or value["schema"] not in (1, 2)
+            or value["policy"] != (RESTORED_POLICY if restored else POLICY)
             or value["authority"] != "trusted-producer-and-outer-receipt"
             or value["original_pdf_sha256"] != original_sha or value["markdown_sha256"] != markdown_sha
             or value["original_identity"] != ("unproven" if original_sha is None else "admitted_sha256")
             or type(value["authenticated_original_render"]) is not bool):
         _fail("figure_source_binding_mismatch")
     auth = value["authenticated_original_render"]
-    if auth and original_sha is None:
+    if (auth and original_sha is None) or (restored and not auth):
         _fail("figure_source_binding_mismatch")
     if auth:
         _hash(value["embedded_pdf_sha256"])
@@ -875,6 +919,10 @@ def _validate(report, original_sha, markdown_sha, images):
         _fail()
     carried_pixels = 0
     expected_pages = sorted({r["page_idx"] for r, d in zip(metadata["records"], decisions) if d["selected"]}) if auth else []
+    if restored:
+        from mineru_pdf_oc import validate_restoration_receipt
+        validate_restoration_receipt(value["embedded_pdf_render_restoration"], original_sha256=original_sha,
+            embedded_sha256=value["embedded_pdf_sha256"], page_indices=expected_pages)
     if not isinstance(value["pages"], list) or [p.get("page_idx") for p in value["pages"]] != expected_pages:
         _fail()
     for page in value["pages"]:
