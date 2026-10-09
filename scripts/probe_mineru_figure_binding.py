@@ -118,6 +118,7 @@ MAX_SEMANTIC_BYTES = 64 * 1024 * 1024
 MAX_GLYPHS = 200000
 MAX_IMAGE_PLACEMENTS = 1000
 MAX_FONTS = 256
+MAX_PDFIUM_REWRITE_BYTES = 512 * 1024 * 1024
 
 
 def _semantic_canonical(value):
@@ -365,6 +366,97 @@ def selected_visual_differences(left,right,metadata,decisions,page_index,page_si
     return results
 
 
+def _pdfium_rewrite(original,budget=lambda:None):
+    """Reproduce upstream whole-document import/save; diagnostic only."""
+    import io
+    import pypdfium2 as pdfium
+    require(len(original)<=512*1024*1024,'pdfium_source_bytes_bound')
+    class BoundedBuffer(io.BytesIO):
+        failure=None
+        def write(self,data):
+            # The SDK writes through a ctypes callback, which cannot propagate
+            # Python exceptions. Stop retaining bytes and fail after save returns.
+            if self.failure is not None: return len(data)
+            if self.tell()+len(data)>MAX_PDFIUM_REWRITE_BYTES:
+                self.failure='pdfium_rewritten_bytes_bound'
+                return len(data)
+            try: budget()
+            except Exception:
+                self.failure='probe_deadline'
+                return len(data)
+            return super().write(data)
+    budget()
+    source=pdfium.PdfDocument(original)
+    destination=None
+    try:
+        require(1<=len(source)<=1000,'pdfium_page_count_bound')
+        destination=pdfium.PdfDocument.new()
+        budget()
+        destination.import_pages(source,list(range(len(source))))
+        require(len(destination)==len(source),'pdfium_import_page_count_mismatch')
+        budget()
+        with BoundedBuffer() as buffer:
+            destination.save(buffer)
+            require(buffer.failure is None,buffer.failure or 'pdfium_save_failed')
+            rewritten=buffer.getvalue()
+        budget()
+        return rewritten,{'pypdfium2':str(pdfium.PYPDFIUM_INFO),'pdfium':str(pdfium.PDFIUM_INFO)}
+    finally:
+        if destination is not None: destination.close()
+        source.close()
+
+
+def pdfium_rewrite_diagnostics(original,authentic,supplied,page_index,metadata,decisions,budget=lambda:None):
+    """Compare reproducible derived bytes; equality does not accept content loss."""
+    import fitz
+    import mineru_figure_sources as figures
+    result={'diagnostic_only':True,'production_acceptance':False,
+        'recipe':'mineru-3.4.4-whole-document-pdfium-import-save',
+        'upstream_commit':'0dfc9460cd9ab693b9af60ae3fbffd7bc111b062',
+        'page_index':page_index,'render_dpi':300}
+    try:
+        rewritten,runtime=_pdfium_rewrite(original,budget)
+        result.update(runtime=runtime,rewritten_pdf_sha256=digest(rewritten),rewritten_pdf_bytes=len(rewritten),
+            original_pdf_sha256=digest(original),original_pages=len(authentic),embedded_pages=len(supplied))
+        budget()
+        with fitz.open(stream=rewritten,filetype='pdf') as document:
+            result.update(rewritten_pages=len(document),rewritten_encrypted=bool(document.is_encrypted),
+                original_page_count_equal=len(document)==len(authentic),embedded_page_count_equal=len(document)==len(supplied))
+            require(len(document)==len(authentic),'pdfium_rewritten_page_count_mismatch')
+            require(not document.is_encrypted and page_index<len(document),'pdfium_rewritten_page_missing')
+            actual,derived,embedded=authentic[page_index],document[page_index],supplied[page_index]
+            geometry=figures._geometry(derived)
+            result.update(rewritten_geometry=geometry,
+                original_geometry_equal=exact_json(figures._geometry(actual),geometry),
+                embedded_geometry_equal=exact_json(figures._geometry(embedded),geometry))
+            budget()
+            transformed=figures._render(derived)
+            try:
+                budget()
+                left=figures._render(actual)
+                try:
+                    result['original_vs_rewritten']=_difference(left,transformed)
+                    result['original_vs_rewritten']['selected_visual_differences']=selected_visual_differences(
+                        left,transformed,metadata,decisions,page_index,figures._geometry(actual)['rect'][2:])
+                finally: left.close()
+                budget()
+                right=figures._render(embedded)
+                try:
+                    result['rewritten_vs_embedded']=_difference(transformed,right)
+                    result['rewritten_vs_embedded']['selected_visual_differences']=selected_visual_differences(
+                        transformed,right,metadata,decisions,page_index,geometry['rect'][2:])
+                finally: right.close()
+            finally: transformed.close()
+            for label in ('original_vs_rewritten','rewritten_vs_embedded'):
+                comparison=result[label]
+                comparison['rgb_equal']=comparison['same_size'] and comparison.get('diff_pixel_count')==0
+            result['status']='checked'
+            budget()
+    except Exception as error:
+        result.update(status='unavailable',category=str(error) if isinstance(error,ProbeError) else type(error).__name__)
+    return result
+
+
 def compare_cached_pdf(original_path,payload,*,original_sha256,clock=time.monotonic,deadline=None):
     """Match the four production gates; alternate annotation renders are diagnostic only."""
     import fitz
@@ -447,6 +539,8 @@ def compare_cached_pdf(original_path,payload,*,original_sha256,clock=time.monoto
                         and page['annots_false'].get('diff_pixel_count') == 0)
                     if not default_equal:
                         page['semantic_diagnostics'] = semantic_diagnostics(actual,other,budget)
+                    page['pdfium_rewrite'] = pdfium_rewrite_diagnostics(
+                        original,authentic,supplied,index,metadata,decisions,budget)
                     require(digest(original_path.read_bytes())==original_sha256,'original_bytes_changed')
                     return result
                 page['rgb_sha256'] = difference['original_rgb_sha256']

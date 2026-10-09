@@ -165,6 +165,65 @@ class ProbeTests(unittest.TestCase):
         self.assertEqual(selected['point_to_pixel'],[300/72,0,0,300/72,0,0])
         self.assertGreater(selected['union_crop_diff_pixel_count'],0)
 
+    def test_pdfium_rewrite_imports_all_real_pages_with_recorded_runtime(self):
+        with fitz.open(self.fixture.original) as original:
+            original.new_page().insert_text((30,50),'SECOND PAGE CONTENT')
+            raw=original.tobytes(no_new_id=True)
+        rewritten,runtime=probe._pdfium_rewrite(raw)
+        self.assertEqual(runtime['pypdfium2'],'5.13.0')
+        self.assertTrue(runtime['pdfium'])
+        import mineru_figure_sources as figures
+        with fitz.open(stream=raw,filetype='pdf') as original, fitz.open(stream=rewritten,filetype='pdf') as derived:
+            self.assertEqual((len(original),len(derived)),(2,2))
+            for index in range(2):
+                left,right=figures._render(original[index]),figures._render(derived[index])
+                try: self.assertEqual(probe._difference(left,right)['diff_pixel_count'],0)
+                finally: left.close(); right.close()
+
+    def test_pdfium_rewrite_rejects_incomplete_whole_document_import(self):
+        import pypdfium2 as pdfium
+        with fitz.open(self.fixture.original) as original:
+            original.new_page()
+            raw=original.tobytes(no_new_id=True)
+        importer=pdfium.PdfDocument.import_pages
+        with patch.object(pdfium.PdfDocument,'import_pages',
+                          lambda target,source,pages:importer(target,source,pages[:1])):
+            with self.assertRaisesRegex(probe.ProbeError,'pdfium_import_page_count_mismatch'):
+                probe._pdfium_rewrite(raw)
+
+    def test_pdfium_save_bound_fails_after_callback_without_retaining_overflow(self):
+        with patch.object(probe,'MAX_PDFIUM_REWRITE_BYTES',100):
+            with self.assertRaisesRegex(probe.ProbeError,'pdfium_rewritten_bytes_bound'):
+                probe._pdfium_rewrite(self.fixture.original.read_bytes())
+
+    def test_pdfium_derived_provider_is_reproducible_but_diagnostic_only(self):
+        import mineru_figure_sources as figures
+        raw=self.fixture.original.read_bytes()
+        rewritten,_=probe._pdfium_rewrite(raw)
+        (self.fixture.raw/'source.pdf').write_bytes(rewritten)
+        (_,content),(_,middle),_=figures._metadata_files(self.fixture.raw)
+        metadata=figures._normalise(content,middle)
+        with fitz.open(stream=raw,filetype='pdf') as original, fitz.open(stream=rewritten,filetype='pdf') as supplied:
+            result=probe.pdfium_rewrite_diagnostics(raw,original,supplied,0,metadata,figures._decisions(metadata,100))
+        self.assertEqual(result['status'],'checked')
+        self.assertTrue(result['rewritten_vs_embedded']['rgb_equal'])
+        self.assertTrue(result['original_page_count_equal']); self.assertTrue(result['embedded_page_count_equal'])
+        self.assertEqual(len(result['rewritten_pdf_sha256']),64)
+        self.assertTrue(result['diagnostic_only']); self.assertFalse(result['production_acceptance'])
+        self.assertNotIn('Verified source page',json.dumps(result))
+        self.assertNotIn('Figure 1',json.dumps(result))
+
+    def test_pdfium_rewrite_does_not_explain_modified_provider_body(self):
+        self.change_embedded(lambda doc:doc[0].insert_text((50,150),'CHANGED SECRET',fontsize=10))
+        result=self.compare(); derived=result['pages'][0]['pdfium_rewrite']
+        self.assertEqual(derived['status'],'checked')
+        self.assertTrue(derived['original_vs_rewritten']['rgb_equal'])
+        self.assertFalse(derived['rewritten_vs_embedded']['rgb_equal'])
+        self.assertGreater(derived['rewritten_vs_embedded']['selected_visual_differences'][0]['body_diff_pixel_count'],0)
+        self.assertEqual(result['status'],'mismatch'); self.assertFalse(result['all_selected_pages_equal'])
+        self.assertFalse(derived['production_acceptance'])
+        self.assertNotIn('CHANGED',json.dumps(derived))
+
     def test_annotation_change_is_classified_but_never_accepted(self):
         def annotate(doc):
             annotation=doc[0].add_rect_annot(fitz.Rect(20,40,100,100))
