@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 from pathlib import Path
 import re
 import tempfile
@@ -11,6 +12,7 @@ from unittest import mock
 
 import build_portal_translated_reports as reports
 import portal_translation_shards as shards
+from report_extraction_source import ocr_markdown_from_pages
 from private_workflow_handoff import SHARD_KEY_RE
 
 
@@ -58,6 +60,7 @@ class TranslationShardTests(unittest.TestCase):
                     {'token': '[[PORTAL_IMAGE_001]]', 'relative_path': image.name, 'path': str(image)},
                 ]))
                 status = {'global_index': index, 'source_report_dir': str(self.date / record['relative_dir']), 'pdf': pdf_name}
+                status.update({key: record[key] for key in ('source_method', 'source_markdown', 'source_sha256', 'source_provenance_sha256') if key in record})
                 shards.write_json(directory / 'translation_status.json', status)
                 items.append({**status, 'output_dir': str(directory), 'pdf_path': str(directory / pdf_name)})
             shards.write_json(date_root / f'translation_shard_{shard_index}.json', {
@@ -95,6 +98,94 @@ class TranslationShardTests(unittest.TestCase):
         source.write_text('changed after plan')
         with self.assertRaisesRegex(ValueError, 'Source changed'):
             shards.selected_reports(plan, 0, self.date)
+
+    def convert_to_ocr(self, directory):
+        source = directory / 'source_mineru.md'
+        text = 'Public fixture. Revenue was 10%.'
+        pages = [{'page': 1, 'text': text, 'text_sha256': hashlib.sha256(text.encode()).hexdigest(), 'empty_text': False, 'method': 'ocr'}]
+        source.unlink()
+        (directory / 'source_ocr.md').write_bytes(ocr_markdown_from_pages(pages, 1))
+        raw_pages = json.dumps(pages).encode()
+        (directory / 'source_ocr_pages.json').write_bytes(raw_pages)
+        status = {'source_method': 'ocr', 'source_markdown': 'source_ocr.md', 'source_pdf': 'fixture.pdf',
+                  'wechat_source_provenance': {'source_kind': 'ocr-synthesis', 'source_pdf': 'fixture.pdf',
+                     'content_sha256': 'a' * 64,
+                     'source_receipt_sha256': 'b' * 64, 'source_pages_sha256': hashlib.sha256(raw_pages).hexdigest(), 'source_report_id': 'R001'}}
+        (directory / 'status.json').write_text(json.dumps(status))
+        return status
+
+    def test_mixed_plan_preserves_ocr_identity_through_materialize_and_merge(self):
+        self.sources(6)
+        directory = self.date / 'shard_0/report-0'
+        self.convert_to_ocr(directory)
+        plan = shards.load_plan(self.save_plan(shards.create_plan(self.date)))
+        self.assertEqual(plan['reports'][0]['source_method'], 'ocr')
+        self.assertEqual(plan['reports'][1]['source_method'], 'mineru')
+        with mock.patch('private_workflow_handoff.download_directory'):
+            shards.materialize(plan, 0, 'private/run/date', self.date)
+        merged = shards.merge_shards(plan, self.outputs(plan), self.root / 'merged')
+        self.assertEqual(merged['reports'][0]['source_method'], 'ocr')
+        self.assertEqual(merged['reports'][0]['source_markdown'], 'source_ocr.md')
+
+    def test_identical_bytes_switching_extraction_invalidates_plan_and_checkpoint(self):
+        self.sources(1)
+        directory = self.date / 'shard_0/report-0'
+        self.convert_to_ocr(directory)
+        # Equal Markdown bytes cannot make different extraction methods equal.
+        ocr = shards.create_plan(self.date)
+        saved_status = (directory / 'status.json').read_bytes()
+        (directory / 'source_ocr.md').rename(directory / 'source_mineru.md')
+        (directory / 'status.json').unlink()
+        mineru = shards.create_plan(self.date)
+        (directory / 'source_mineru.md').rename(directory / 'source_ocr.md')
+        (directory / 'status.json').write_bytes(saved_status)
+        with self.assertRaisesRegex(ValueError, 'Source changed'):
+            shards.selected_reports(mineru, 0, self.date)
+        self.assertNotEqual(ocr['plan_sha256'], mineru['plan_sha256'])
+        self.assertNotEqual(shards.checkpoint_scope(ocr, 0), shards.checkpoint_scope(mineru, 0))
+        (directory / 'source_ocr.md').rename(directory / 'source_mineru.md')
+        (directory / 'status.json').unlink()
+        with self.assertRaisesRegex(ValueError, 'Source changed'):
+            shards.selected_reports(ocr, 0, self.date)
+
+    def test_provenance_change_invalidates_ocr_plan_and_checkpoint(self):
+        self.sources(1)
+        directory = self.date / 'shard_0/report-0'
+        status = self.convert_to_ocr(directory)
+        plan = shards.create_plan(self.date)
+        status['wechat_source_provenance']['source_receipt_sha256'] = 'd' * 64
+        (directory / 'status.json').write_text(json.dumps(status))
+        with self.assertRaisesRegex(ValueError, 'Source changed'):
+            shards.selected_reports(plan, 0, self.date)
+        self.assertNotEqual(shards.checkpoint_scope(plan, 0), shards.checkpoint_scope(shards.create_plan(self.date), 0))
+
+    def test_mislabeled_ocr_output_is_rejected_before_merge(self):
+        self.sources(1)
+        self.convert_to_ocr(self.date / 'shard_0/report-0')
+        plan = shards.create_plan(self.date)
+        root = self.outputs(plan)
+        status_path = root / 'shard_0/portal_translated_reports/260919/01-report/translation_status.json'
+        status = json.loads(status_path.read_text())
+        status['source_method'] = 'mineru'
+        status_path.write_text(json.dumps(status))
+        with self.assertRaisesRegex(ValueError, 'extraction identity changed'):
+            shards.merge_shards(plan, root, self.root / 'merged')
+        self.assertFalse((self.root / 'merged').exists())
+
+    def test_legacy_plan_accepts_only_original_mineru_source(self):
+        self.sources(1)
+        plan = shards.create_plan(self.date)
+        plan['schema_version'] = 1
+        for record in plan['reports']:
+            for key in ('source_method', 'source_markdown', 'source_provenance_sha256'):
+                del record[key]
+        del plan['plan_sha256']
+        plan['plan_sha256'] = hashlib.sha256(json.dumps(plan, sort_keys=True).encode()).hexdigest()
+        loaded = shards.load_plan(self.save_plan(plan))
+        self.assertEqual(len(shards.selected_reports(loaded, 0, self.date)), 1)
+        self.convert_to_ocr(self.date / 'shard_0/report-0')
+        with self.assertRaisesRegex(ValueError, 'Source changed'):
+            shards.selected_reports(loaded, 0, self.date)
 
     def test_private_scopes_are_stable_across_runs_but_worker_specific(self):
         self.sources(6)

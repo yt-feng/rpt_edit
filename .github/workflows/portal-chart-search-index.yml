@@ -12,6 +12,16 @@ on:
         description: "Active private handoff run id (daily incremental mode)"
         required: false
         type: string
+      source_handoff_manifest_sha256:
+        description: "Exact selected manifest hash for an authenticated recovered article handoff"
+        required: false
+        default: ""
+        type: string
+      expected_articles:
+        description: "Exact recovered report count; required only with a recovered manifest hash"
+        required: false
+        default: "0"
+        type: string
       source_artifact_run_id:
         description: "Historical Actions run id containing a split publish-ready artifact or legacy shard artifacts"
         required: false
@@ -64,6 +74,8 @@ jobs:
           DATE_FOLDER: ${{ inputs.date_folder }}
           HANDOFF_RUN_ID: ${{ inputs.source_handoff_run_id }}
           ARTIFACT_RUN_ID: ${{ inputs.source_artifact_run_id }}
+          HANDOFF_MANIFEST_SHA256: ${{ inputs.source_handoff_manifest_sha256 }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
           EXPECTED_SHARDS: ${{ inputs.expected_shards }}
           MAX_IMAGES: ${{ inputs.max_images }}
           RETRY_ERRORS_NOW: ${{ inputs.retry_errors_now }}
@@ -80,6 +92,17 @@ jobs:
           fi
           if [ -n "$HANDOFF_RUN_ID" ]; then printf '%s' "$HANDOFF_RUN_ID" | grep -Eq '^[0-9]+$'; fi
           if [ -n "$ARTIFACT_RUN_ID" ]; then printf '%s' "$ARTIFACT_RUN_ID" | grep -Eq '^[0-9]+$'; fi
+          printf '%s' "$EXPECTED_ARTICLES" | grep -Eq '^[0-9]+$'
+          if [ -n "$HANDOFF_MANIFEST_SHA256" ]; then
+            printf '%s' "$HANDOFF_MANIFEST_SHA256" | grep -Eq '^[a-f0-9]{64}$'
+            printf '%s' "$HANDOFF_RUN_ID" | grep -Eq '^[1-9][0-9]{0,19}$'
+            test -z "$ARTIFACT_RUN_ID"
+            test "$EXPECTED_SHARDS" = 1
+            test "$EXPECTED_ARTICLES" -gt 0
+            test "$EXPECTED_ARTICLES" -le 1000
+          else
+            test "$EXPECTED_ARTICLES" = 0
+          fi
 
       - name: Checkout public source
         uses: actions/checkout@v4
@@ -99,19 +122,20 @@ jobs:
           cache: "pip"
 
       - name: Install chart indexing dependencies
-        run: python -m pip install --disable-pip-version-check "requests>=2.31,<3" "Pillow>=10,<12" "boto3>=1.34,<2"
+        run: python -m pip install --disable-pip-version-check "requests>=2.31,<3" "Pillow>=10,<12" "boto3>=1.34,<2" "PyMuPDF>=1.24"
 
       - name: Test chart indexing recovery contract
         run: |
           python scripts/test_chart_search_index.py
           python scripts/test_chart_builder_source_dates.py
           python scripts/test_merge_chart_date_folder.py
+          python scripts/test_chart_recovered_handoff.py
 
       - name: Test historical artifact materialization
         run: python scripts/test_materialize_shard_artifacts.py
 
       - name: Download daily private shard handoff
-        if: inputs.source_handoff_run_id != ''
+        if: inputs.source_handoff_run_id != '' && inputs.source_handoff_manifest_sha256 == ''
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -127,6 +151,21 @@ jobs:
             --prefix "$PRIVATE_HANDOFF_ROOT/${{ inputs.source_handoff_run_id }}/${{ inputs.date_folder }}" \
             --destination "_chart_input/${{ inputs.date_folder }}" \
             "${EXPECT_ARGS[@]}"
+
+      - name: Download and authenticate recovered article chart sources
+        if: inputs.source_handoff_manifest_sha256 != ''
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          HANDOFF_RUN_ID: ${{ inputs.source_handoff_run_id }}
+          ARTIFACT_RUN_ID: ${{ inputs.source_artifact_run_id }}
+          HANDOFF_MANIFEST_SHA256: ${{ inputs.source_handoff_manifest_sha256 }}
+          EXPECTED_SHARDS: ${{ inputs.expected_shards }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+        run: python scripts/chart_recovered_handoff.py --destination _chart_input
 
       - name: Download historical shard artifacts
         if: inputs.source_artifact_run_id != ''

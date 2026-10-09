@@ -96,6 +96,7 @@ class OfflineTranslationCallerTests(unittest.TestCase):
             root = Path(tmp)
             source = root / 'source'
             source.mkdir()
+            (source / 'source_mineru.md').write_text('# Revenue grew.\n\nCash reserves were USD 120 million.\n')
             translator = OfflineTranslator(cache_dir=root / 'memo', engine_factory=lambda *_: engine)
             self.factory.return_value = translator
             args = Namespace(max_images_per_report=1, title_refine=True)

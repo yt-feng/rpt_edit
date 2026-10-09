@@ -10,6 +10,7 @@ import os
 from pathlib import Path, PurePosixPath
 import re
 import shutil
+from report_extraction_source import resolve_extraction_source
 
 
 def digest(path: Path) -> str:
@@ -39,9 +40,9 @@ def create_plan(date_dir: Path, max_reports: str = "all", reports_per_shard: int
         if not re.fullmatch(r"shard_\d+/[^/]+", relative):
             raise ValueError("Dropbox translation plans require shard_<index>/<report> inputs")
         records.append({"global_index": index, "relative_dir": relative,
-                        "source_sha256": digest(directory / "source_mineru.md")})
+                        **resolve_extraction_source(directory).identity()})
     plan = {
-        "schema_version": 1, "date_folder": date_dir.name, "source_count": len(available),
+        "schema_version": 2, "date_folder": date_dir.name, "source_count": len(available),
         "max_reports": "all" if limit is None else limit, "selected_count": len(selected),
         "reports_per_shard": reports_per_shard, "shard_count": math.ceil(len(selected) / reports_per_shard),
         "reports": records,
@@ -54,7 +55,7 @@ def load_plan(path: Path) -> dict:
     plan = json.loads(path.read_text(encoding="utf-8"))
     stored_digest = plan.get("plan_sha256")
     actual = hashlib.sha256(json.dumps({key: value for key, value in plan.items() if key != "plan_sha256"}, sort_keys=True).encode()).hexdigest()
-    if stored_digest != actual or plan.get("schema_version") != 1:
+    if stored_digest != actual or plan.get("schema_version") not in {1, 2}:
         raise ValueError("Translation plan checksum or schema mismatch")
     reports = plan["reports"]
     if not reports or len(reports) != plan["selected_count"]:
@@ -67,6 +68,20 @@ def load_plan(path: Path) -> dict:
         relative = PurePosixPath(item["relative_dir"])
         if len(relative.parts) != 2 or ".." in relative.parts or not re.fullmatch(r"shard_\d+", relative.parts[0]):
             raise ValueError("Unsafe source report path in translation plan")
+        if not isinstance(item.get("source_sha256"), str) or not re.fullmatch(r"[a-f0-9]{64}", item["source_sha256"]):
+            raise ValueError("Invalid translation source hash")
+        if plan["schema_version"] == 2:
+            method = item.get("source_method")
+            expected_name = {"mineru": "source_mineru.md", "ocr": "source_ocr.md"}.get(method) if isinstance(method, str) else None
+            provenance = item.get("source_provenance_sha256")
+            if (expected_name is None or item.get("source_markdown") != expected_name
+                    or "source_provenance_sha256" not in item
+                    or (method == "ocr" and provenance is None)
+                    or (provenance is not None and (not isinstance(provenance, str)
+                        or not re.fullmatch(r"[a-f0-9]{64}", provenance)))):
+                raise ValueError("Invalid translation extraction identity")
+        elif any(key in item for key in ("source_method", "source_markdown", "source_provenance_sha256")):
+            raise ValueError("Legacy translation plans cannot declare a different extraction")
     per_shard = plan["reports_per_shard"]
     if not 1 <= per_shard <= 8 or plan["shard_count"] != math.ceil(len(reports) / per_shard):
         raise ValueError("Translation plan shard dimensions are inconsistent")
@@ -88,7 +103,12 @@ def selected_reports(plan: dict, shard_index: int, date_dir: Path) -> list[tuple
         directory = date_dir / record["relative_dir"]
         if not directory.resolve().is_relative_to(date_dir.resolve()):
             raise ValueError("Source report escapes the planned date directory")
-        if digest(directory / "source_mineru.md") != record["source_sha256"]:
+        extraction = resolve_extraction_source(directory)
+        if plan["schema_version"] == 1:
+            matches = extraction.method == "mineru" and extraction.sha256 == record["source_sha256"]
+        else:
+            matches = all(record.get(key) == value for key, value in extraction.identity().items())
+        if not matches:
             raise ValueError(f"Source changed after planning: global index {record['global_index']}")
         selected.append((record["global_index"], directory))
     return selected
@@ -98,7 +118,12 @@ def checkpoint_scope(plan: dict, shard_index: int) -> str:
     shard_records(plan, shard_index)
     # No run ID: reruns of the same date and dimensions reuse successful
     # content-addressed segments, without workers overwriting one another.
-    return f"dropbox-p{plan['reports_per_shard']}-n{plan['shard_count']}-i{shard_index}"
+    scope = f"dropbox-p{plan['reports_per_shard']}-n{plan['shard_count']}-i{shard_index}"
+    records = shard_records(plan, shard_index)
+    if any(record.get("source_method") == "ocr" for record in records):
+        identity = [{key: record[key] for key in ("global_index", "source_method", "source_markdown", "source_sha256", "source_provenance_sha256")} for record in records]
+        scope += "-ocr-" + hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()[:16]
+    return scope
 
 
 def materialize(plan: dict, shard_index: int, prefix: str, date_dir: Path) -> None:
@@ -152,6 +177,15 @@ def merge_shards(plan: dict, shard_root: Path, output_root: Path) -> dict:
             status = json.loads((directory / "translation_status.json").read_text(encoding="utf-8"))
             if status.get("global_index") != index or not str(status.get("source_report_dir", "")).endswith("/" + expected_source):
                 raise ValueError(f"Translation status points at a different source: {index}")
+            if plan["schema_version"] == 2 and any(
+                    status.get(key) != expected[index].get(key) for key in
+                    ("source_method", "source_markdown", "source_sha256", "source_provenance_sha256")):
+                raise ValueError(f"Translation extraction identity changed: {index}")
+            if plan["schema_version"] == 1 and (
+                    status.get("source_method", "mineru") != "mineru"
+                    or status.get("source_markdown", "source_mineru.md") != "source_mineru.md"
+                    or status.get("source_sha256", expected[index]["source_sha256"]) != expected[index]["source_sha256"]):
+                raise ValueError(f"Legacy translation extraction identity changed: {index}")
             pdf_name = f"portal_translated_report_{index:02d}.pdf"
             if (status.get("pdf") != pdf_name or not (directory / "translated.md").is_file()
                     or not (directory / pdf_name).is_file() or (directory / pdf_name).stat().st_size <= 1024):

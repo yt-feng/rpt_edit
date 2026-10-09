@@ -1,0 +1,209 @@
+name: Recover report article delivery
+run-name: Recover report articles ${{ inputs.date_folder }} from Daily ${{ inputs.source_run_id }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Original Daily run whose article upload never started
+        required: true
+        type: string
+      source_handoff_run_id:
+        description: Run that saved the verified recovery sources
+        required: true
+        type: string
+      source_kind:
+        required: true
+        type: choice
+        options: [mineru-recovery, ocr-synthesis]
+      date_folder:
+        description: Exact original batch date
+        required: true
+        type: string
+      expected_articles:
+        description: Exact original selected report count
+        required: true
+        type: string
+      model:
+        required: false
+        type: string
+        default: deepseek-flash
+      deepseek_base_url:
+        required: false
+        type: string
+        default: https://api.deepseek.com
+      upload_wechat:
+        description: Upload verified articles as drafts and publish their Blog archive
+        required: false
+        type: boolean
+        default: true
+  workflow_call:
+    inputs:
+      source_run_id:
+        required: true
+        type: string
+      source_handoff_run_id:
+        required: true
+        type: string
+      source_kind:
+        required: true
+        type: string
+      date_folder:
+        required: true
+        type: string
+      expected_articles:
+        required: true
+        type: string
+      model:
+        required: false
+        type: string
+        default: deepseek-flash
+      deepseek_base_url:
+        required: false
+        type: string
+        default: https://api.deepseek.com
+      upload_wechat:
+        required: false
+        type: boolean
+        default: true
+    outputs:
+      article_handoff_prefix:
+        description: Private complete article shards, retained for downstream consumers
+        value: ${{ jobs.generate.outputs.article_handoff_prefix }}
+      article_count:
+        description: Strictly verified generated article count
+        value: ${{ jobs.generate.outputs.article_count }}
+      manifest_sha256:
+        description: Exact selected original manifest identity
+        value: ${{ jobs.generate.outputs.manifest_sha256 }}
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: recovered-report-articles-${{ inputs.source_run_id }}-${{ inputs.date_folder }}
+  cancel-in-progress: false
+
+env:
+  PYTHONUNBUFFERED: '1'
+  SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+  SOURCE_HANDOFF_RUN_ID: ${{ inputs.source_handoff_run_id }}
+  SOURCE_KIND: ${{ inputs.source_kind }}
+  DATE_FOLDER: ${{ inputs.date_folder }}
+  EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+  R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+  R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+  R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+  R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+
+jobs:
+  generate:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    outputs:
+      article_handoff_prefix: ${{ steps.complete.outputs.article_handoff_prefix }}
+      article_count: ${{ steps.complete.outputs.article_count }}
+      context_sha256: ${{ steps.complete.outputs.context_sha256 }}
+      manifest_sha256: ${{ steps.complete.outputs.manifest_sha256 }}
+    env:
+      DELIVERY_WORKSPACE: ${{ runner.temp }}/recovered-report-articles-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install generation and source verification dependencies
+        run: python -m pip install -r requirements.txt boto3 reportlab
+      - name: Authenticate original upload and restore exact recovery sources
+        id: prepare
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/recovered_article_delivery.py prepare --workspace "$DELIVERY_WORKSPACE"
+      - name: Generate only missing bound report articles
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_REPORT_NOTES_API_KEY }}
+          MODEL: ${{ inputs.model }}
+          BASE_URL: ${{ inputs.deepseek_base_url }}
+          DEEPSEEK_USAGE_STAGE: recovered-report-articles
+        run: |
+          ORIGINAL_SHA="$(python -c 'import json,os; print(json.load(open(os.environ["DELIVERY_WORKSPACE"]+"/context.json"))["source_execution_sha"])')"
+          HANDOFF_SHA="$(python -c 'import json,os; print(json.load(open(os.environ["DELIVERY_WORKSPACE"]+"/context.json"))["handoff_execution_sha"])')"
+          python scripts/recover_report_articles.py \
+            --source-dir "$DELIVERY_WORKSPACE/source" --source-kind "$SOURCE_KIND" \
+            --output-dir "$DELIVERY_WORKSPACE/checkpoint/articles" \
+            --expected-reports "$EXPECTED_ARTICLES" --date-folder "$DATE_FOLDER" \
+            --source-run-id "$SOURCE_RUN_ID" --source-execution-sha "$ORIGINAL_SHA" \
+            --source-handoff-run-id "$SOURCE_HANDOFF_RUN_ID" --source-handoff-execution-sha "$HANDOFF_SHA" \
+            --model "$MODEL" --deepseek-base-url "$BASE_URL" \
+            > "$DELIVERY_WORKSPACE/private-generation.log" 2>&1
+      - name: Save generation progress even after interruption
+        if: ${{ always() && steps.prepare.outcome == 'success' }}
+        run: python scripts/recovered_article_delivery.py save-generation --workspace "$DELIVERY_WORKSPACE"
+      - name: Verify and archive complete article handoff
+        id: complete
+        run: python scripts/recovered_article_delivery.py complete-generation --workspace "$DELIVERY_WORKSPACE"
+
+  deliver:
+    needs: [generate]
+    if: ${{ inputs.upload_wechat && needs.generate.result == 'success' }}
+    runs-on: [self-hosted, wechat-draft]
+    timeout-minutes: 180
+    env:
+      DELIVERY_WORKSPACE: ${{ runner.temp }}/recovered-report-article-delivery-${{ github.run_id }}-${{ github.run_attempt }}
+      DELIVERY_CONTEXT_SHA256: ${{ needs.generate.outputs.context_sha256 }}
+      DELIVERY_MANIFEST_SHA256: ${{ needs.generate.outputs.manifest_sha256 }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install article delivery dependencies
+        run: python -m pip install -r requirements.txt boto3 reportlab
+      - name: Restore complete articles and cross-run accepted draft receipts
+        id: restore
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/recovered_article_delivery.py restore-delivery --workspace "$DELIVERY_WORKSPACE"
+      - name: Materialize private publishing image
+        env:
+          PORTAL_PRIVATE_PUBLISH_ASSET_KEY: ${{ secrets.PORTAL_PRIVATE_PUBLISH_ASSET_KEY }}
+        run: bash scripts/materialize_private_social_asset.sh prompts
+      - name: Upload drafts and require exact article readback
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+        run: python scripts/recovered_article_delivery.py upload-wechat --workspace "$DELIVERY_WORKSPACE"
+      - name: Save accepted draft receipts even after interruption
+        if: ${{ always() && steps.restore.outcome == 'success' }}
+        run: python scripts/recovered_article_delivery.py save-receipts --workspace "$DELIVERY_WORKSPACE"
+      - name: Verify full delivery before archiving Blog articles
+        run: python scripts/recovered_article_delivery.py validate-delivery --workspace "$DELIVERY_WORKSPACE"
+      - name: Update and commit the verified public Blog archive
+        run: |
+          python scripts/update_blog_archive_from_wechat_drafts.py \
+            --wechat-drafts-root "$DELIVERY_WORKSPACE/wechat_drafts" \
+            --blog-archive-root portal_suite/data/blog_archive
+          bash scripts/commit_output_dir.sh portal_suite/data/blog_archive \
+            "Archive recovered report articles $DATE_FOLDER" 8 true
+      - name: Publish and wait for the exact incremental website refresh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          RUN_URL="$(gh workflow run neutral-edge-cutover.yml --repo "$GITHUB_REPOSITORY" \
+            --ref main -f operation=migrate -f translation_scope=incremental)"
+          RELEASE_RUN_ID="${RUN_URL##*/}"
+          [[ "$RELEASE_RUN_ID" =~ ^[1-9][0-9]*$ ]]
+          echo "Recovered article website publication: $RUN_URL" >> "$GITHUB_STEP_SUMMARY"
+          gh run watch "$RELEASE_RUN_ID" --repo "$GITHUB_REPOSITORY" --compact --exit-status --interval 20
+      # Source and article handoffs remain available to the independent PDF,
+      # translation and chart consumers. This workflow never deletes them.

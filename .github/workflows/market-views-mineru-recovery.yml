@@ -49,6 +49,16 @@ on:
         required: false
         type: boolean
         default: false
+      recover_articles:
+        description: Restore missing WeChat articles and Blog delivery after the PDF for an exact original Daily run
+        required: false
+        type: boolean
+        default: true
+      generate_pdf:
+        description: Generate the Market Views PDF; disable only when its delivery has already been verified
+        required: false
+        type: boolean
+        default: true
       allowed_error_codes:
         description: Explicitly reviewed terminal failure codes as a JSON string array
         required: false
@@ -95,7 +105,7 @@ jobs:
   recover:
     if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 360
     steps:
       - uses: actions/checkout@v4
         with:
@@ -214,6 +224,7 @@ jobs:
             --source _mineru_market_sources/shard_0 \
             --key "_private-workflow-handoff/mineru-market-sources/$GITHUB_RUN_ID/$DATE_FOLDER/shard_0.tar.gz"
       - name: Generate and wait for exact dated Market Views PDF
+        if: ${{ inputs.generate_pdf }}
         env:
           GH_TOKEN: ${{ github.token }}
           DATE_FOLDER: ${{ inputs.date_folder }}
@@ -229,7 +240,24 @@ jobs:
           [[ "$MARKET_RUN_ID" =~ ^[1-9][0-9]*$ ]]
           echo "Market Views recovery: $RUN_URL" >> "$GITHUB_STEP_SUMMARY"
           gh run watch "$MARKET_RUN_ID" --repo "$GITHUB_REPOSITORY" --compact --exit-status --interval 15
-      - name: Delete consumed private source handoff after PDF succeeds
+      - name: Restore and verify missing WeChat articles and Blog delivery
+        if: ${{ inputs.recover_articles && inputs.source_run_id != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+        run: |
+          RUN_URL="$(gh workflow run recover-report-article-delivery.yml \
+            --repo "$GITHUB_REPOSITORY" --ref main \
+            -f source_run_id="$SOURCE_RUN_ID" -f source_handoff_run_id="$GITHUB_RUN_ID" \
+            -f source_kind=mineru-recovery -f date_folder="$DATE_FOLDER" \
+            -f expected_articles="$EXPECTED_ARTICLES" -f upload_wechat=true)"
+          ARTICLE_RUN_ID="${RUN_URL##*/}"
+          [[ "$ARTICLE_RUN_ID" =~ ^[1-9][0-9]*$ ]]
+          echo "Recovered article delivery: $RUN_URL" >> "$GITHUB_STEP_SUMMARY"
+          gh run watch "$ARTICLE_RUN_ID" --repo "$GITHUB_REPOSITORY" --compact --exit-status --interval 15
+      - name: Delete consumed private source handoff after all requested consumers succeed
         env:
           DATE_FOLDER: ${{ inputs.date_folder }}
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}

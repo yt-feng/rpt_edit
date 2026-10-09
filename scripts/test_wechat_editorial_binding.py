@@ -202,6 +202,34 @@ class EditorialBindingTests(unittest.TestCase):
         self.assertIn(binding.FIELD, status)
         self.assertIsNotNone(binding.read_bound_article(directory))
 
+    def test_ocr_binding_cannot_be_relabelled_or_advanced_after_page_evidence_changes(self):
+        from report_extraction_source import ocr_markdown_from_pages
+        pages = [{"page": 1, "method": "ocr", "text": "Original OCR source evidence.",
+                  "text_sha256": binding.digest(b"Original OCR source evidence."), "empty_text": False}]
+        raw_pages = json.dumps(pages).encode()
+        (self.report / "source_mineru.md").unlink()
+        (self.report / "source_ocr_pages.json").write_bytes(raw_pages)
+        (self.report / "source_ocr.md").write_bytes(ocr_markdown_from_pages(pages, 1))
+        provenance = {"source_kind": "ocr-synthesis", "source_pdf": self.status["source_pdf"],
+            "content_sha256": "a" * 64, "source_receipt_sha256": "b" * 64,
+            "source_report_id": "R001", "source_pages_sha256": binding.digest(raw_pages)}
+        self.status.update(source_method="ocr", source_markdown="source_ocr.md", wechat_source_provenance=provenance)
+        self.bind()
+        before = binding.read_bound_article(self.report)
+        self.assertEqual(before.binding["version"], 2)
+        self.assertEqual(before.binding["source_kind"], "ocr-synthesis")
+        for key, value in (("source_method", "mineru"), ("source_markdown", "../source_ocr.md")):
+            changed = {**self.status, key: value}
+            self.write_status(changed)
+            self.assertIsNone(binding.read_bound_article(self.report))
+        self.write_status(self.status)
+        changed = json.loads(json.dumps(self.status))
+        changed["wechat_source_provenance"]["source_receipt_sha256"] = "c" * 64
+        self.assertFalse(binding.advance_binding(self.report, before, status=changed))
+        (self.report / "source_ocr_pages.json").write_text("[]")
+        self.assertIsNone(binding.read_bound_article(self.report))
+        self.assertFalse(binding.advance_binding(self.report, before))
+
 
 if __name__ == "__main__":
     unittest.main()

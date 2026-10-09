@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build branded Chinese translation PDFs from existing MinerU outputs.
+"""Build branded Chinese translation PDFs from verified report extractions.
 
 Input is the post-MinerU report folders created by the XHS shard workflow:
 
@@ -28,6 +28,7 @@ import requests
 
 from deepseek_http import deepseek_api_keys_from_env, request_with_key_fallback
 from wechat_editorial_binding import BoundArticle, read_bound_article
+from report_extraction_source import has_extraction_source, resolve_extraction_source
 
 try:
     from finalize_outputs import sanitize_text
@@ -375,10 +376,12 @@ def find_report_dirs(date_dir: Path) -> list[Path]:
         if not shard.is_dir():
             continue
         for item in sorted(shard.iterdir(), key=lambda p: p.name):
-            if item.is_dir() and (item / "source_mineru.md").exists():
+            if item.is_dir() and has_extraction_source(item):
+                resolve_extraction_source(item)
                 report_dirs.append(item)
     for item in sorted(date_dir.iterdir(), key=lambda p: p.name):
-        if item.is_dir() and (item / "source_mineru.md").exists():
+        if item.is_dir() and has_extraction_source(item):
+            resolve_extraction_source(item)
             report_dirs.append(item)
 
     seen: set[str] = set()
@@ -667,7 +670,7 @@ def prepare_clean_markdown(
     max_images: int,
     strict_chart_images: bool = False,
 ) -> tuple[str, list[dict[str, Any]]]:
-    source_markdown = report_dir / "source_mineru.md"
+    source_markdown = resolve_extraction_source(report_dir).path
     lines = source_markdown.read_text(encoding="utf-8", errors="ignore").splitlines()
     lines = lines[: find_disclosure_start(lines)]
     lines = strip_details_blocks(lines)
@@ -1327,6 +1330,7 @@ def reusable_upstream_editorial(report_dir: Path, figures: list[dict[str, Any]])
 
 
 def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.Namespace) -> dict[str, Any]:
+    extraction = resolve_extraction_source(report_dir)
     source_title = report_title(report_dir)
     report_out_dir = out_dir / f"{index:02d}-{slug(report_dir.name)}"
     report_out_dir.mkdir(parents=True, exist_ok=True)
@@ -1337,7 +1341,7 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
     log(f"Processing report {index}: {source_title}")
 
     source_preview = ""
-    source_path = report_dir / "source_mineru.md"
+    source_path = extraction.path
     if source_path.exists():
         source_preview = source_path.read_text(encoding="utf-8", errors="ignore")[:1600]
     institution_name = infer_institution_name(report_dir.name, source_title, source_preview)
@@ -1355,6 +1359,8 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
     (report_out_dir / "figure_manifest.json").write_text(json.dumps(figures, ensure_ascii=False, indent=2), encoding="utf-8")
 
     cache_root = Path(os.environ.get("REPORT_TRANSLATION_CACHE_DIR", str(out_dir / ".translation_cache")))
+    if extraction.cache_namespace():
+        cache_root = cache_root / extraction.cache_namespace()
     args._generation_cache_dir = cache_root / "editorial"
     reused = reusable_upstream_editorial(report_dir, figures) if article_style else None
     if reused:
@@ -1416,6 +1422,7 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
     status = {
         "global_index": index,
         "source_report_dir": str(report_dir),
+        **extraction.identity(),
         "title": display_title,
         "source_title": source_title,
         "wechat_title_source": "verified_upstream_filename_title" if reused else "source_filename_weighted_finetune" if article_style else "offline_filename_translation",
@@ -1480,7 +1487,7 @@ def main() -> int:
 
     all_reports = find_report_dirs(date_dir)
     if not all_reports:
-        raise RuntimeError(f"No report outputs with source_mineru.md found under {date_dir}")
+        raise RuntimeError(f"No report outputs with verified extraction Markdown found under {date_dir}")
 
     included_cn = parse_institution_filter(args.include_institutions)
     if included_cn:
