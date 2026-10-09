@@ -18,6 +18,15 @@ PROVIDER_ERROR = {'err_msg': 'parsing failed, please try again later'}
 REVIEWED_ERROR_HASH = '0401d529faef13a557a665756d64dc03c646206ce7e74b41854493ec66695f4d'
 
 
+def pdf_bytes(label):
+    # The primary producer now inspects the physical page count before submit.
+    # Bind and archive these real one-page bytes, never a PDF-looking stub.
+    import fitz
+    with fitz.open() as document:
+        document.new_page().insert_text((72, 72), label)
+        return document.tobytes(no_new_id=True)
+
+
 class InstitutionRecoveryTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory(); self.addCleanup(self.temp.cleanup)
@@ -28,7 +37,7 @@ class InstitutionRecoveryTests(unittest.TestCase):
                               {'model': 'vlm', 'language': 'en', 'ocr': True}, [('MINER_U', 'test-token')])
         self.inputs, self.payloads = [], {}
         for index in range(3):
-            path = self.root/f'IMF_report-{index}.pdf'; raw = b'%PDF-original-'+str(index).encode(); path.write_bytes(raw)
+            path = self.root/f'IMF_report-{index}.pdf'; raw = pdf_bytes('Original '+str(index)); path.write_bytes(raw)
             self.inputs.append((path, path.name)); self.payloads['https://www.imf.org/'+path.name] = raw
         items = [self.ledger.bind(*row) for row in self.inputs]
         self.key = self.ledger._create(items, {item['id']: path for item, (path, _) in zip(items, self.inputs)}, self.ledger.clock()+60)
@@ -51,7 +60,7 @@ class InstitutionRecoveryTests(unittest.TestCase):
         self.provider.on_poll = results
 
     def add_original(self):
-        path = self.root/'IMF_later.pdf'; raw = b'%PDF-later'; path.write_bytes(raw)
+        path = self.root/'IMF_later.pdf'; raw = pdf_bytes('Later report'); path.write_bytes(raw)
         binding = self.ledger.bind(path, path.name)
         key = self.ledger._create([binding], {binding['id']: path}, self.ledger.clock()+60)
         self.value['batches'].append(key)
@@ -186,7 +195,7 @@ class InstitutionRecoveryTests(unittest.TestCase):
     def test_two_original_batches_keep_distinct_bytes_under_the_same_filename(self):
         name = self.inputs[0][1]
         newer = self.root/'newer'/name; newer.parent.mkdir()
-        newer_raw = b'%PDF-revised--0'; newer.write_bytes(newer_raw)
+        newer_raw = pdf_bytes('Revised  0'); newer.write_bytes(newer_raw)
         self.assertEqual(len(newer_raw), len(self.inputs[0][0].read_bytes()))
         binding = self.ledger.bind(newer, name)
         key = self.ledger._create([binding], {binding['id']: newer}, self.ledger.clock()+60)
@@ -353,7 +362,7 @@ class InstitutionRecoveryTests(unittest.TestCase):
         self.assertEqual(len(self.provider.posts), 1); self.assertEqual(self.r2.objects, self.originals)
 
     def test_later_original_root_mismatch_stops_before_first_root_retry(self):
-        path = self.root/'IMF_later.pdf'; raw = b'%PDF-later'; path.write_bytes(raw)
+        path = self.root/'IMF_later.pdf'; raw = pdf_bytes('Later report'); path.write_bytes(raw)
         binding = self.ledger.bind(path, path.name)
         later_key = self.ledger._create([binding], {binding['id']: path}, self.ledger.clock()+60)
         self.value['batches'].append(later_key)

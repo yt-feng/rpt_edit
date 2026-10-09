@@ -369,25 +369,35 @@ class ProviderClassificationTests(unittest.TestCase):
     def test_actual_batch_cli_keeps_mixed_editorial_and_provider_failure_fatal(self):
         import pdf_to_xhs_batch as batch
         from consume_legacy_mineru import NetworkStop
+        from mineru_task_ledger import FileStore, Ledger
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
             sources = [root / 'a.pdf', root / 'b.pdf']
             for source in sources:
-                source.write_bytes(b'%PDF-synthetic')
+                with fitz.open() as document:
+                    document.new_page().insert_text((42, 65), 'Research source '+source.stem)
+                    document.save(source)
             marker = root / 'provider.json'
             argv = ['batch', '--input-dir', str(root), '--output-dir', str(root / 'out'), '--provider-outcome-path', str(marker)]
-            ledger = Mock()
-            ledger.run.return_value = ([(source, {'state': 'done'}) for source in sources],
-                {'ready_for_generation': True, 'pending': 0, 'failed': 0})
+            provider = Mock()
+            provider.submit.return_value = ('accepted-batch', ['https://upload.invalid/a', 'https://upload.invalid/b'])
+            ledger = Ledger(FileStore(root / 'ledger'), provider, 'dropbox', 'https://mineru.net',
+                {'model': 'vlm', 'language': 'en', 'ocr': True}, [('MINER_U', 'test')])
+            pairs = [(source, source.name) for source in sources]
+            provider.poll.return_value = [{'data_id': ledger.bind(source, name)['id'], 'state': 'done',
+                'full_zip_url': 'https://results.invalid/'+source.stem} for source, name in pairs]
+            ledger.run(pairs, timeout=20)
             for first, expects_marker in ((RuntimeError('editorial quality failure'), False),
                                            ({'wechat_article': 'wechat_article.md'}, True)):
                 with patch.object(sys, 'argv', argv), patch.object(batch, 'mineru_tokens_from_env', return_value=[('MINER_U', 'test')]), \
                         patch.object(batch, 'from_environment', return_value=ledger), \
-                        patch.object(batch, 'find_pdfs', return_value=sources), patch.object(batch, 'input_sources'), \
+                        patch.object(batch, 'find_pdfs', return_value=sources), patch.object(batch, 'input_sources', return_value=pairs), \
                         patch.object(batch, 'result_cache_contexts', return_value=(object(), {})), \
-                        patch.object(batch, 'process_pdf', side_effect=[first, NetworkStop('network_stop')]), \
+                        patch.object(batch, 'process_pdf', side_effect=[first, NetworkStop('network_stop')]) as process, \
                         patch.object(batch, 'log'), contextlib.redirect_stderr(io.StringIO()):
                     self.assertEqual(batch.main(), 2)
+                self.assertEqual(process.call_count, 2)
+                self.assertEqual(provider.submit.call_count, 1, 'Accepted originals must not be submitted again')
                 self.assertEqual(marker.exists(), expects_marker)
                 marker.unlink(missing_ok=True)
 
