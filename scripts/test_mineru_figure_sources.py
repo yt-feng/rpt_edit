@@ -5,6 +5,7 @@ from __future__ import annotations
 import copy
 import hashlib
 import json
+import math
 import subprocess
 import sys
 import tempfile
@@ -122,6 +123,49 @@ class Fixture:
 
 
 class FigureSourceTests(unittest.TestCase):
+    def test_fractional_page_dimensions_create_status_and_replay_with_exact_mupdf_raster(self):
+        for actual, provider, expected in (((595.2, 500), (595, 500), [2480, 2084]),
+                                          ((400.08001, 500.16), (400, 500), [1667, 2084])):
+            with self.subTest(size=actual):
+                fixture = self.fixture(size=provider, actual_size=actual)
+                fixture.create(); fixture.status()
+                page = fixture.proof()["pages"][0]
+                self.assertEqual(page["pixel_size"], expected)
+                self.assertNotEqual(expected, [math.ceil(value * 300 / 72) for value in page["geometry"]["rect"][2:]])
+                self.assertEqual(figures._raster_size(page["geometry"]["rect"]), expected)
+                import shutil
+                shutil.rmtree(fixture.raw)
+                self.assertEqual(len(fixture.validate()), 1)
+
+    def test_fractional_carrier_cannot_gain_a_pixel_even_if_hashes_are_resealed(self):
+        for axis in (0, 1):
+            with self.subTest(axis=axis):
+                fixture = self.fixture(size=(595, 500), actual_size=(595.2, 500.16))
+                fixture.create()
+                proof = fixture.proof(); page = proof["pages"][0]
+                path = fixture.report / page["path"]
+                with Image.open(path) as image:
+                    size = list(image.size); size[axis] += 1
+                    forged = Image.new("RGB", tuple(size), (255, 255, 255))
+                    forged.paste(image, (0, 0))
+                page.update(figures._save(forged, path)); forged.close()
+                (fixture.report / figures.SIDECAR).write_bytes(figures._canonical(proof))
+                fixture.status()
+                with self.assertRaisesRegex(figures.FigureSourceError, "figure_source_pixels_mismatch"):
+                    fixture.validate()
+
+    def test_renderer_pixel_dimensions_must_equal_its_bounded_raster_rectangle(self):
+        with fitz.open() as document:
+            page = document.new_page(width=20, height=20)
+            width, height = figures._raster_size(list(page.rect))
+            wrong = fitz.Pixmap(fitz.csRGB, fitz.IRect(0, 0, width + 1, height), False)
+            with patch.object(fitz.Page, "get_pixmap", return_value=wrong):
+                with self.assertRaisesRegex(figures.FigureSourceError, "figure_source_pixels_mismatch"):
+                    figures._render(page)
+        for rect in ([0, 0, float("inf"), 1], [0, 0, 20000, 20000], [1, 0, 10, 10], [0, 0, 0, 10]):
+            with self.subTest(rect=rect), self.assertRaisesRegex(figures.FigureSourceError, "figure_source_pixels_mismatch"):
+                figures._raster_size(rect)
+
     def test_interleaved_document_cache_cannot_change_carried_source_or_provider_pixels(self):
         # Model the observed cross-document warmed-store corruption without
         # publishing the private 42-page regression report. All PDF inputs here

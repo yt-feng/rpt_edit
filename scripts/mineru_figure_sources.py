@@ -590,13 +590,31 @@ def _silent_mupdf():
             fitz.TOOLS.mupdf_display_warnings(warnings)
 
 
+def _raster_size(rect):
+    """Match MuPDF's transformed integer rectangle, including float rounding."""
+    import fitz
+
+    if (not isinstance(rect, (list, tuple)) or len(rect) != 4
+            or any(type(value) not in (int, float) or not math.isfinite(value) for value in rect)
+            or list(rect[:2]) != [0, 0] or rect[2] <= 0 or rect[3] <= 0
+            or any(value > MAX_DIMENSION * 72 / 300 + 1 for value in rect[2:])):
+        _fail("figure_source_pixels_mismatch")
+    # Rect/Matrix multiplication uses the renderer's float precision and
+    # endpoint rounding. ceil(width * dpi / 72) differs for legitimate pages
+    # such as 595.2 pt: MuPDF emits 2480 pixels, while double-precision ceil
+    # applied to the stored 595.200012... point width yields 2481.
+    raster = (fitz.Rect(rect) * fitz.Matrix(300 / 72, 300 / 72)).irect
+    w, h = raster.width, raster.height
+    if not (1 <= w <= MAX_DIMENSION and 1 <= h <= MAX_DIMENSION and w * h <= MAX_PIXELS):
+        _fail("figure_source_pixels_mismatch")
+    return [w, h]
+
+
 def _render(page, *, annots=True):
     import fitz
     from PIL import Image
 
-    w, h = math.ceil(page.rect.width * 300 / 72), math.ceil(page.rect.height * 300 / 72)
-    if not (1 <= w <= MAX_DIMENSION and 1 <= h <= MAX_DIMENSION and w * h <= MAX_PIXELS):
-        _fail("figure_source_pixels_mismatch")
+    expected_size = _raster_size(list(page.rect))
     # MuPDF's process-wide resource store can make interleaved source/provider
     # renders depend on previous pages, even when each PDF renders identically
     # in a fresh process. Isolate every comparison and carried source image;
@@ -607,6 +625,8 @@ def _render(page, *, annots=True):
         _fail("figure_render_cache_isolation_failed")
     pix = page.get_pixmap(matrix=fitz.Matrix(300 / 72, 300 / 72), alpha=False,
                           colorspace=fitz.csRGB, annots=annots)
+    if [pix.width, pix.height] != expected_size:
+        _fail("figure_source_pixels_mismatch")
     return Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
 
 
@@ -953,8 +973,7 @@ def _validate(report, original_sha, markdown_sha, images):
         if any(abs(a - b) >= 1.1 for a, b in zip(page["provider_size"], rect_size)):
             _fail()
         im = _read_carried_page(report, page)
-        # MuPDF may round the two raster endpoints separately; here rect starts0.
-        if list(im.size) != [math.ceil(s * 300 / 72) for s in rect_size]:
+        if list(im.size) != _raster_size(geometry["rect"]):
             _fail("figure_source_pixels_mismatch")
         carried_pixels += im.width * im.height
         if carried_pixels > MAX_CARRIED_PAGE_PIXELS:

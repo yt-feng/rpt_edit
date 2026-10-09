@@ -320,6 +320,28 @@ def regular_inventory(root):
     return files
 
 
+def _validate_report_figures(directory, status, original_sha256, markdown_sha256, source_ordinal):
+    """Check the private carriers while preserving a bounded source position."""
+    mapping = decode((directory / 'source_image_map.json').read_bytes())
+    if (not isinstance(mapping, dict) or set(mapping) != {'version', 'source_sha256', 'images'}
+            or type(mapping['version']) is not int or mapping['version'] != 1
+            or mapping.get('source_sha256') != markdown_sha256
+            or not isinstance(mapping.get('images'), dict)
+            or any(not isinstance(ref, str) or not ref or target not in status['images']
+                   for ref, target in mapping['images'].items())
+            or set(mapping['images'].values()) != set(status['images'])):
+        reject('report_image_map')
+    try:
+        selected = validate_figure_sources(directory, expected_original_sha256=original_sha256,
+            expected_markdown_sha256=markdown_sha256, expected_images=status['images'])
+        if selected is not None and any(mapping['images'].get(ref) != asset for ref, asset in selected.items()):
+            raise FigureSourceError('figure_source_binding_mismatch')
+    except FigureSourceError as error:
+        # Keep the fixed category, and bind position to the complete manifest.
+        error.source_ordinal = source_ordinal
+        raise
+
+
 def validate_sources(output_dir, expected_reports, date_folder, *, expected_recovery_run_id=None,
                      expected_execution_sha=None):
     root = Path(output_dir)
@@ -388,7 +410,7 @@ def validate_sources(output_dir, expected_reports, date_folder, *, expected_reco
             or len(admitted) != expected_reports or len(set(admitted)) != len(admitted)):
         reject('receipt_source_count')
     identities = []
-    for report, binding in zip(reports, bindings):
+    for source_ordinal, (report, binding) in enumerate(zip(reports, bindings), 1):
         report_keys = {'directory', 'binding', 'source_binding', 'source_id', 'task', 'zip_sha256', 'source_markdown_sha256'}
         if version == 2:
             report_keys.add('delivery')
@@ -465,22 +487,8 @@ def validate_sources(output_dir, expected_reports, date_folder, *, expected_reco
                     or not re.fullmatch(r'assets/source_image_' + f'{ordinal:02d}' + r'\.(?:png|jpe?g|webp|gif|bmp|tiff?)', image)
                     or not (directory / image).is_file()):
                 reject('report_image')
-        mapping = decode((directory / 'source_image_map.json').read_bytes())
-        if (not isinstance(mapping, dict) or set(mapping) != {'version', 'source_sha256', 'images'}
-                or type(mapping['version']) is not int or mapping['version'] != 1
-                or mapping.get('source_sha256') != digest(markdown)
-                or not isinstance(mapping.get('images'), dict)
-                or any(not isinstance(ref, str) or not ref or target not in status['images']
-                       for ref, target in mapping['images'].items())
-                or set(mapping['images'].values()) != set(status['images'])):
-            reject('report_image_map')
-        try:
-            selected = validate_figure_sources(directory, expected_original_sha256=binding['content_sha256'],
-                expected_markdown_sha256=report['source_markdown_sha256'], expected_images=status['images'])
-            if selected is not None and any(mapping['images'].get(ref) != asset for ref, asset in selected.items()):
-                reject('report_figure_source')
-        except FigureSourceError:
-            reject('report_figure_source')
+        _validate_report_figures(directory, status, binding['content_sha256'],
+                                 report['source_markdown_sha256'], source_ordinal)
         identities.append(report['source_id'])
     if set(identities) != set(admitted) or len(set(identities)) != expected_reports:
         reject('receipt_admission_coverage')
