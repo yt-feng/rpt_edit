@@ -4164,6 +4164,66 @@
     "wto:https://www.wto.org/english/news_e/news26_e/envir_28sep26_501_e.htm": {
       "first_seen": "2026-10-01",
       "status": "no_pdf"
+    },
+    "imf:483667803164e8902de39db7a54bfed0d4dfbeac7553fceefeb3c0c208f6": {
+      "first_seen": "2026-10-09",
+      "status": "too_old"
+    },
+    "imf:7fe914f2766ae189fd495c1b92a631c09559cf60137a5606dea0db403366": {
+      "first_seen": "2026-10-09",
+      "status": "too_old"
+    },
+    "imf:d57950a09e72e7b244c45ba472348d696d92400de0b04c83fcc970fde9bc": {
+      "first_seen": "2026-10-09",
+      "status": "too_old"
+    },
+    "imf:8153f05d1eb77b849b6ba3587c32dca2e38b1f9313603c8cf124070dd6ca": {
+      "first_seen": "2026-10-09",
+      "status": "too_old"
+    },
+    "worldbank:099339010082617806": {
+      "first_seen": "2026-10-09",
+      "status": "downloaded"
+    },
+    "worldbank:099533110082623167": {
+      "first_seen": "2026-10-09",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publications/paper-174-artificial-intelligence-and-climate-change-balancing-innovation-and-sustainability": {
+      "first_seen": "2026-10-09",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/bisbull137.htm": {
+      "first_seen": "2026-10-09",
+      "status": "too_old"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/stat_08oct26_510_e.htm": {
+      "first_seen": "2026-10-09",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/tessd_02oct26_507_e.htm": {
+      "first_seen": "2026-10-09",
+      "status": "too_old"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/igmsm_02oct26_505_e.htm": {
+      "first_seen": "2026-10-09",
+      "status": "too_old"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/ddgjn_01oct26_506_e.htm": {
+      "first_seen": "2026-10-09",
+      "status": "too_old"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/tnc_01oct26_502_e.htm": {
+      "first_seen": "2026-10-09",
+      "status": "too_old"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/ppesp_01oct26_504_e.htm": {
+      "first_seen": "2026-10-09",
+      "status": "too_old"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/refrm_30sep26_503_e.htm": {
+      "first_seen": "2026-10-09",
+      "status": "too_old"
     }
   }
 }
