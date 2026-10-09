@@ -107,9 +107,9 @@ jobs:
       article_count: ${{ steps.complete.outputs.article_count }}
       context_sha256: ${{ steps.complete.outputs.context_sha256 }}
       manifest_sha256: ${{ steps.complete.outputs.manifest_sha256 }}
-    env:
-      DELIVERY_WORKSPACE: ${{ runner.temp }}/recovered-report-articles-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
+      - name: Initialize isolated article generation workspace
+        run: echo "DELIVERY_WORKSPACE=$RUNNER_TEMP/recovered-report-articles-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" >> "$GITHUB_ENV"
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
@@ -155,10 +155,11 @@ jobs:
     runs-on: [self-hosted, wechat-draft]
     timeout-minutes: 180
     env:
-      DELIVERY_WORKSPACE: ${{ runner.temp }}/recovered-report-article-delivery-${{ github.run_id }}-${{ github.run_attempt }}
       DELIVERY_CONTEXT_SHA256: ${{ needs.generate.outputs.context_sha256 }}
       DELIVERY_MANIFEST_SHA256: ${{ needs.generate.outputs.manifest_sha256 }}
     steps:
+      - name: Initialize isolated article delivery workspace
+        run: echo "DELIVERY_WORKSPACE=$RUNNER_TEMP/recovered-report-article-delivery-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" >> "$GITHUB_ENV"
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1

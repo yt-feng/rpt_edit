@@ -230,6 +230,21 @@ class IntentTests(unittest.TestCase):
 
 
 class DeliveryWorkflowTests(unittest.TestCase):
+    def test_workspace_uses_runner_environment_after_job_starts_not_job_expression_context(self):
+        path = Path(__file__).resolve().parents[1] / '.github/workflows/recover-report-article-delivery.yml'
+        workflow = path.read_text()
+        for job_name, prefix, consumer in (
+                ('generate', 'recovered-report-articles', 'Authenticate original upload'),
+                ('deliver', 'recovered-report-article-delivery', 'Restore complete articles')):
+            block = workflow.split('\n  ' + job_name + ':\n', 1)[1].split('\n  deliver:\n', 1)[0]
+            job_configuration, steps = block.split('    steps:\n', 1)
+            self.assertNotRegex(job_configuration, r'\$\{\{\s*runner\.')
+            initialization = steps.split('\n      - ', 1)[0]
+            self.assertIn('Initialize isolated article', initialization)
+            self.assertIn(f'DELIVERY_WORKSPACE=$RUNNER_TEMP/{prefix}-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT', initialization)
+            self.assertIn('>> "$GITHUB_ENV"', initialization)
+            self.assertLess(steps.index('Initialize isolated article'), steps.index(consumer))
+
     def test_generation_timeout_leaves_budget_for_always_saved_checkpoint(self):
         path = Path(__file__).resolve().parents[1] / '.github/workflows/recover-report-article-delivery.yml'
         workflow = path.read_text()
@@ -250,7 +265,7 @@ class DeliveryWorkflowTests(unittest.TestCase):
         for required in ('workflow_dispatch:', 'workflow_call:', 'article_handoff_prefix:', 'article_count:',
                          'inputs.upload_wechat', 'secrets.DEEPSEEK_REPORT_NOTES_API_KEY',
                          '--source-handoff-run-id "$SOURCE_HANDOFF_RUN_ID"',
-                         'github.run_id }}-${{ github.run_attempt', 'gh run watch "$RELEASE_RUN_ID"',
+                         '$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT', 'gh run watch "$RELEASE_RUN_ID"',
                          "always() && steps.prepare.outcome == 'success'", "always() && steps.restore.outcome == 'success'"):
             self.assertIn(required, text)
         self.assertNotIn('delete-prefix', text)
