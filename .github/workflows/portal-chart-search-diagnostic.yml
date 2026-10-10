@@ -5,6 +5,7 @@ on:
   pull_request:
     paths:
       - ".github/workflows/portal-chart-search-diagnostic.yml"
+      - ".github/workflows/portal-chart-search-index.yml"
       - "scripts/diagnose_chart_search_state.py"
       - "scripts/test_chart_search_diagnostic.py"
       - "scripts/diagnose_chart_vision_config.py"
@@ -85,7 +86,7 @@ jobs:
           VISION_MODEL_OVERRIDE: ${{ inputs.model_override }}
           VISION_INDEX_API_KEY: ${{ secrets.VISION_INDEX_API_KEY }}
           VISION_INDEX_API_BASE_URL: ${{ secrets.VISION_INDEX_API_BASE_URL }}
-          VISION_INDEX_MODEL: ${{ vars.VISION_INDEX_MODEL || 'qwen3-vl-flash' }}
+          VISION_INDEX_MODEL: ${{ vars.VISION_INDEX_MODEL || 'qwen3-vl-plus' }}
         run: python scripts/diagnose_chart_vision_config.py --operation "$VISION_OPERATION" --model-override "$VISION_MODEL_OVERRIDE" --output _chart_diagnostic/report.json
 
       - name: Upload only the filtered diagnostic

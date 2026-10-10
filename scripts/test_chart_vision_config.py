@@ -4,6 +4,7 @@ import json
 import contextlib
 import io
 from pathlib import Path
+import re
 import tempfile
 import unittest
 from unittest.mock import Mock, patch
@@ -22,6 +23,34 @@ def response_fixture(status=200, payload=None, raw=None, headers=None):
 
 
 class VisionConfigTests(unittest.TestCase):
+    def test_production_and_probe_share_verified_fallback_with_explicit_model_precedence(self):
+        root = Path(__file__).resolve().parents[1]
+        expression = "${{ vars.VISION_INDEX_MODEL || 'qwen3-vl-plus' }}"
+        for name, expected_count in (
+            ('portal-chart-search-index.yml', 2),
+            ('portal-chart-search-diagnostic.yml', 1),
+        ):
+            with self.subTest(workflow=name):
+                workflow = (root / '.github/workflows' / name).read_text()
+                declarations = re.findall(r'^\s+VISION_INDEX_MODEL: (.+)$', workflow, re.MULTILINE)
+                self.assertEqual(declarations, [expression] * expected_count)
+
+    def test_python_client_still_requires_model_when_credentials_are_present(self):
+        for missing_model in (None, '', '   '):
+            env = {key: value for key, value in ENV.items() if key != 'VISION_INDEX_MODEL'}
+            if missing_model is not None:
+                env['VISION_INDEX_MODEL'] = missing_model
+            with self.subTest(model=missing_model), patch.dict(diagnostic.os.environ, env, clear=True), \
+                 patch.object(diagnostic.chart.requests, 'Session') as session:
+                report = diagnostic.inspect_configuration()
+                self.assertEqual(report['probe_status'], 'configuration_invalid')
+                self.assertEqual(report['provider_posts'], 0)
+                with self.assertRaises(diagnostic.chart.VisionConfigurationError):
+                    diagnostic.chart.VisionClient(api_base=env['VISION_INDEX_API_BASE_URL'],
+                        api_key=env['VISION_INDEX_API_KEY'], model=missing_model or '',
+                        timeout=90, retries=4, retry_backoff=1.5, min_interval=.4)
+                session.assert_not_called()
+
     def test_fixed_classification_never_copies_provider_detail(self):
         for message, expected in (
             ("model_not_found PRIVATE_SECRET", "model_unavailable"),

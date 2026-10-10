@@ -107,11 +107,17 @@ The public repository contains no endpoint or credential. Actions reads:
 | --- | --- | --- |
 | `VISION_INDEX_API_KEY` | GitHub Actions secret | API bearer credential. |
 | `VISION_INDEX_API_BASE_URL` | GitHub Actions secret | Credential-free HTTPS OpenAI-compatible base URL. |
-| `VISION_INDEX_MODEL` | Repository variable | Production value verified as `qwen3-vl-plus` on 2026-10-10; the code fallback remains `qwen3-vl-flash`, so an absent variable does not constitute a verified provider configuration. |
+| `VISION_INDEX_MODEL` | Repository variable | An explicit value takes precedence. If absent or empty, production and diagnostic workflows both use `qwen3-vl-plus`, verified on 2026-10-10. |
 | `VISION_INDEX_MAX_IMAGES_PER_RUN` | Repository variable | Whole-run ceiling for new API calls; defaults to `0` so no selected daily chart is silently dropped. |
 | `VISION_INDEX_MAX_PER_REPORT` | Repository variable | Per-report image ceiling; defaults to `0` so every retained MinerU image is examined. |
 | `VISION_INDEX_MIN_INTERVAL_SECONDS` | Repository variable | Minimum delay between requests; defaults to 0.4 seconds. |
 | `VISION_INDEX_CHECKPOINT_BATCH_SIZE` | Repository variable | Maximum calls between private R2 state uploads; defaults to 20. |
+
+The production configuration check, indexing step, and synthetic diagnostic share
+the same verified fallback model, so removing the optional repository variable
+cannot silently restore the rejected `qwen3-vl-flash` default. Direct Python callers
+must still supply a nonempty model; no client-side model guessing or endpoint
+substitution is introduced.
 
 The client rejects non-HTTPS bases, embedded URL credentials, query strings, and
 fragments. Authentication/configuration failures such as HTTP 401/403 stop the run
