@@ -197,7 +197,7 @@ jobs:
         env:
           VISION_INDEX_API_KEY: ${{ secrets.VISION_INDEX_API_KEY }}
           VISION_INDEX_API_BASE_URL: ${{ secrets.VISION_INDEX_API_BASE_URL }}
-          VISION_INDEX_MODEL: ${{ vars.VISION_INDEX_MODEL || 'qwen3-vl-flash' }}
+          VISION_INDEX_MODEL: ${{ vars.VISION_INDEX_MODEL || 'qwen3-vl-plus' }}
         run: |
           set -euo pipefail
           for name in VISION_INDEX_API_KEY VISION_INDEX_API_BASE_URL VISION_INDEX_MODEL; do
@@ -224,7 +224,7 @@ jobs:
         env:
           VISION_INDEX_API_KEY: ${{ secrets.VISION_INDEX_API_KEY }}
           VISION_INDEX_API_BASE_URL: ${{ secrets.VISION_INDEX_API_BASE_URL }}
-          VISION_INDEX_MODEL: ${{ vars.VISION_INDEX_MODEL || 'qwen3-vl-flash' }}
+          VISION_INDEX_MODEL: ${{ vars.VISION_INDEX_MODEL || 'qwen3-vl-plus' }}
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
