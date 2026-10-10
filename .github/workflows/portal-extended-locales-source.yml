@@ -1,34 +1,40 @@
-# Fast source admission is intentionally independent of the slow CPU matrix lock.
-# It freezes the latest published source day in private R2, even after midnight.
+# Freeze each publication event before GitHub can replace a pending queue writer.
+# Only source_snapshot owns the non-CAS source queues; capture writes immutable envelopes.
 name: Extended locale source admission
 on:
   workflow_run:
-    workflows: [Neutral edge catalog refresh, Recover report article delivery]
+    workflows: [Neutral edge catalog refresh, Recover report article delivery, Daily report articles and translations]
     types: [completed]
     branches: [main]
   workflow_dispatch:
     inputs:
       recovered_publication_run_id:
-        description: Exact successful recovered article delivery run with accepted live Blog receipts
+        description: Exact completed Daily or recovered-delivery run to capture; blank reconciles durable pending events
         required: false
         type: string
         default: ''
+      reconcile_only:
+        description: Reconcile durable pending publications without collecting the latest source day
+        required: false
+        type: boolean
+        default: false
 permissions:
   contents: read
   actions: read
-concurrency:
-  group: extended-locales-source-admission
-  cancel-in-progress: false
 jobs:
-  source_snapshot:
+  capture:
     if: >-
       ${{ github.event.repository.private == false && github.ref == 'refs/heads/main' &&
           (github.event_name == 'workflow_dispatch' ||
-           (github.event.workflow_run.conclusion == 'success' &&
+           ((github.event.workflow_run.conclusion == 'success' ||
+             (github.event.workflow_run.path == '.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml' &&
+              contains(fromJSON('["failure","timed_out"]'), github.event.workflow_run.conclusion))) &&
             github.event.workflow_run.head_branch == github.event.repository.default_branch &&
             github.event.workflow_run.head_repository.full_name == github.repository)) }}
     runs-on: ubuntu-22.04
-    timeout-minutes: 30
+    timeout-minutes: 25
+    outputs:
+      latest_day: ${{ steps.capture.outputs.latest_day }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -38,7 +44,8 @@ jobs:
           python-version: '3.11'
       - name: Install bounded collector and private R2 client
         run: python3 -m pip install --disable-pip-version-check 'boto3>=1.34,<2' 'requests>=2.31,<3'
-      - name: Freeze latest source release and content day before the locale CPU queue
+      - name: Freeze exact publication receipts before entering the writer queue
+        id: capture
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -46,11 +53,46 @@ jobs:
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
           KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
           GH_TOKEN: ${{ github.token }}
-          RECOVERED_PUBLICATION_RUN: ${{ inputs.recovered_publication_run_id || (github.event.workflow_run.path == '.github/workflows/recover-report-article-delivery.yml' && github.event.workflow_run.id) || '' }}
+          RECOVERED_PUBLICATION_RUN: ${{ inputs.recovered_publication_run_id || '' }}
+          RECONCILE_ONLY: ${{ inputs.reconcile_only && 'true' || 'false' }}
         run: |
           set -euo pipefail
-          source_args=()
+          capture_args=()
           if [ -n "$RECOVERED_PUBLICATION_RUN" ]; then
-            source_args+=(--recovered-publication-run "$RECOVERED_PUBLICATION_RUN")
+            capture_args+=(--run-id "$RECOVERED_PUBLICATION_RUN")
           fi
-          python3 -B scripts/portal_extended_daily_queue.py "${source_args[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
+          if [ "$RECONCILE_ONLY" = true ]; then
+            capture_args+=(--reconcile-only)
+          fi
+          python3 -B scripts/portal_extended_publication_ingress.py capture "${capture_args[@]}" --github-output "$GITHUB_OUTPUT" | tee -a "$GITHUB_STEP_SUMMARY"
+  source_snapshot:
+    needs: capture
+    concurrency:
+      group: extended-locales-source-admission
+      cancel-in-progress: false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install bounded collector and private R2 client
+        run: python3 -m pip install --disable-pip-version-check 'boto3>=1.34,<2' 'requests>=2.31,<3'
+      - name: Admit latest published day and reconcile durable historical publications
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
+          GH_TOKEN: ${{ github.token }}
+          LATEST_DAY: ${{ needs.capture.outputs.latest_day }}
+        run: |
+          set -euo pipefail
+          if [ "$LATEST_DAY" = true ]; then
+            python3 -B scripts/portal_extended_daily_queue.py | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+          python3 -B scripts/portal_extended_publication_ingress.py reconcile | tee -a "$GITHUB_STEP_SUMMARY"

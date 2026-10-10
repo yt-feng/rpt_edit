@@ -291,9 +291,10 @@ class QueueTests(unittest.TestCase):
         import yaml
         root = Path(__file__).resolve().parents[1]
         source = yaml.safe_load((root/'.github/workflows/portal-extended-locales-source.yml').read_text())
-        self.assertEqual(source['concurrency']['group'], 'extended-locales-source-admission')
-        self.assertFalse(source['concurrency']['cancel-in-progress'])
-        self.assertEqual(set(source['jobs']), {'source_snapshot'})
+        self.assertNotIn('concurrency', source)
+        self.assertEqual(source['jobs']['source_snapshot']['concurrency']['group'], 'extended-locales-source-admission')
+        self.assertFalse(source['jobs']['source_snapshot']['concurrency']['cancel-in-progress'])
+        self.assertEqual(set(source['jobs']), {'capture', 'source_snapshot'})
         self.assertIn('Recover report article delivery', (root/'.github/workflows/portal-extended-locales-source.yml').read_text())
         pipeline = yaml.safe_load((root/'.github/workflows/portal-extended-locales-r2.yml').read_text())
         self.assertEqual(pipeline['jobs']['locale']['strategy']['max-parallel'], 2)

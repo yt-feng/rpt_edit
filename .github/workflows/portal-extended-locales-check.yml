@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'scripts/*extended*'
+      - 'scripts/fixtures/extended_source_readers_335.json'
       - 'scripts/*french_source_fallback*'
       - 'scripts/*restore_published_catalog*'
       - 'scripts/*portal_candidate_replay*'
@@ -34,12 +35,14 @@ on:
       - '.github/workflows/portal-extended-continuation-inspect.yml'
       - '.github/workflows/portal-extended-recovery-intent.yml'
       - '.github/workflows/portal-extended-locales-source.yml'
+      - '.github/workflows/portal-extended-source-wakeup.yml'
       - '.github/workflows/neutral-edge-cutover.yml'
       - '.github/workflows/neutral-locale-resume.yml'
   push:
     branches: [main, codex/extended-locales-r2-20260924]
     paths:
       - 'scripts/*extended*'
+      - 'scripts/fixtures/extended_source_readers_335.json'
       - 'scripts/*french_source_fallback*'
       - 'scripts/*restore_published_catalog*'
       - 'scripts/*portal_candidate_replay*'
@@ -70,6 +73,7 @@ on:
       - '.github/workflows/portal-extended-continuation-inspect.yml'
       - '.github/workflows/portal-extended-recovery-intent.yml'
       - '.github/workflows/portal-extended-locales-source.yml'
+      - '.github/workflows/portal-extended-source-wakeup.yml'
       - '.github/workflows/neutral-edge-cutover.yml'
       - '.github/workflows/neutral-locale-resume.yml'
   workflow_dispatch:
@@ -122,6 +126,7 @@ jobs:
           python -B scripts/test_portal_extended_daily_queue.py
           python -B scripts/test_portal_extended_source_refresh.py
           python -B scripts/test_portal_extended_recovered_admission.py
+          python -B scripts/test_portal_extended_publication_ingress.py
           python -B scripts/test_portal_english_commentary.py
           python -B scripts/test_portal_english_pipeline.py
           python -B scripts/test_probe_portal_english_unit.py
