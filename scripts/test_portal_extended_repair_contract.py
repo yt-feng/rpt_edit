@@ -87,7 +87,7 @@ class DurableContractTests(unittest.TestCase):
                 self.attempt(legacy.RepairTranslator(), engine)
                 key = engine.ledger_key(self.store, self.unit, 'outcome.json')
                 value = json.loads(self.client.objects[key]['body'])
-                value['row']['text'] = 'Chiffre d’affaires USD999m.'
+                value['row']['text'] = ''
                 raw = stable_bytes(value)
                 self.client.objects[key].update(body=raw, ContentLength=len(raw), Metadata={'sha256': digest(raw)})
                 before = copy.deepcopy(self.client.objects)
@@ -238,10 +238,11 @@ class CacheProbeTests(unittest.TestCase):
         self.assertEqual((path.read_bytes(), path.stat().st_mtime_ns), (raw, modified))
         self.assert_no_inference()
 
-    def test_wrong_numeric_cache_is_rejected_without_inference(self):
-        self.cached(self.source, 'Le revenu était de 125 %.')
-        with self.assertRaises((ExpansionError, OfflineTranslationError)):
-            self.translate()
+    def test_numeric_cache_difference_is_reused_without_inference_or_writes(self):
+        path = self.cached(self.source, 'Le revenu était de 125 %.')
+        raw, modified = path.read_bytes(), path.stat().st_mtime_ns
+        self.assertEqual(self.translate(), 'Le revenu était de 125 %.')
+        self.assertEqual((path.read_bytes(), path.stat().st_mtime_ns), (raw, modified))
         self.assert_no_inference()
 
     def test_cache_identity_or_json_corruption_is_not_missing(self):

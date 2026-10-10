@@ -67,13 +67,13 @@ class InspectorTests(unittest.TestCase):
             [(source, 'es', language, markdown)])
         return report, report['failures'][0]
 
-    def test_probe_distinguishes_rejected_row_from_missing_approved_fallback(self):
+    def test_probe_distinguishes_numeric_advisory_from_missing_approved_fallback(self):
         source = 'Private source revenue USD10m.'
         key = inspector.unit_key('es', source, 'en', False)
         seed = {'rows': {key: {'source': source, 'language': 'en', 'text': 'Ingresos USD11m.'}}}
         report, item = self.unit_probe(source, seed=seed, approved_keys=[key])
         self.assertTrue(item['exact_translation_identity_matches'])
-        self.assertEqual(item['current_validation'], 'financial-quantity-validation')
+        self.assertEqual(item['current_validation'], 'accepted')
         self.assertEqual(item['approved_quantity_validation'], 'financial-quantity-validation')
         self.assertTrue(item['approved_fallback_member'])
         self.assertEqual(report['approved_fallback_keys_absent'], 1)
@@ -178,17 +178,20 @@ class InspectorTests(unittest.TestCase):
         self.assertFalse(inspector.quantity_signature('9月 90%', september+' 80%', 'bn')['language_scoped_month_repair_matches'])
         self.assertFalse(inspector.quantity_signature('9月', september+'ে', 'bn')['language_scoped_month_repair_matches'])
 
-    def test_inspector_records_current_first_and_actual_frozen_contract_selection(self):
+    def test_inspector_replays_both_historical_numeric_rules_under_current_seo_policy(self):
         old = self.fixture.legacy_bn_candidate()
         result = inspector.compare(self.store, old, 'bn', self.base/'legacy-inspect', frozen_approval=True)
         self.assertTrue(result['matches'])
-        self.assertEqual(result['quantity_contract'], inspector.CONTRACT_ID)
-        self.assertEqual([a['contract'] for a in result['baseline_attempts']], ['current', inspector.CONTRACT_ID])
-        self.assertFalse(result['baseline_attempts'][0]['matches']); self.assertTrue(result['baseline_attempts'][1]['matches'])
+        self.assertEqual(result['quantity_contract'], 'current')
+        self.assertEqual([a['contract'] for a in result['baseline_attempts']], ['current'])
+        self.assertTrue(result['baseline_attempts'][0]['matches'])
+        self.assertEqual(result['translation_calls'], 0)
+        self.assertEqual(result['rejected_rows_total'], 0)
         new = self.fixture.legacy_bn_candidate(current_rule=True)
         result = inspector.compare(self.store, new, 'bn', self.base/'new-inspect', frozen_approval=True)
         self.assertTrue(result['matches']); self.assertEqual(result['quantity_contract'], 'current')
         self.assertEqual(len(result['baseline_attempts']), 1)
+        self.assertEqual(result['translation_calls'], 0)
 
     def test_exact_candidate_replays_without_writes_or_inference(self):
         before = {key: dict(value) for key, value in self.store.client.objects.items()}
@@ -236,7 +239,7 @@ class InspectorTests(unittest.TestCase):
     def test_every_baseline_attempt_reports_only_bounded_replay_counters(self):
         batch = self.fixture.legacy_bn_candidate()
         result = inspector.compare(self.store, batch, 'bn', self.base/'attempts', frozen_approval=True)
-        self.assertEqual(len(result['baseline_attempts']), 2)
+        self.assertEqual(len(result['baseline_attempts']), 1)
         for attempt in result['baseline_attempts']:
             self.assertEqual(attempt['approved_pages'], 1)
             self.assertIn('replayed_pages', attempt)
@@ -305,17 +308,23 @@ class InspectorTests(unittest.TestCase):
         for secret in ('Autre traduction', fixtures.URL, 'Source based', 'Texte traduit'):
             self.assertNotIn(secret, public)
 
-    def test_rejected_checkpoint_unit_reports_gate_and_cache_miss(self):
+    def test_numeric_advisory_does_not_approve_changed_candidate_html(self):
         self.mutate_checkpoint('Valeur privée 99999%.')
         result = self.compare()
         self.assertFalse(result['matches'])
-        self.assertEqual(result['status'], 'incomplete-candidate')
-        self.assertGreater(result['rejected_rows_total'], 0)
-        self.assertIn('offline-approval-cache-miss', result['failure_codes'])
-        self.assertEqual(result['translation_calls'], 1)
-        # CacheOnly raises before invoking any translator/provider. The build's
-        # attempt count documents that absent approval instead of hiding it.
+        self.assertEqual(result['status'], 'complete-candidate')
+        self.assertEqual(result['rejected_rows_total'], 0)
+        self.assertEqual(result['failure_codes'], {})
+        self.assertEqual(result['translation_calls'], 0)
+        # Numeric prose can pass the SEO validator, while different rendered
+        # bytes still cannot stand in for the authenticated approved page.
+        self.assertEqual(len(result['changed_pages']), 1)
+        change = result['changed_pages'][0]
+        self.assertFalse(change['descriptor_only'])
+        self.assertNotEqual(change['approved_shape']['visible_text_sha256'],
+                            change['replay_shape']['visible_text_sha256'])
         self.assertNotIn('Valeur privée', json.dumps(result))
+        self.assertNotIn('99999', json.dumps(result))
 
     def test_missing_checkpoint_is_a_fixed_mismatch(self):
         key = self.store.checkpoint_pointer_key('fr', self.batch['generation'])
@@ -436,7 +445,8 @@ class InspectorTests(unittest.TestCase):
             result = inspector.inspect(self.store, target, 'a'*32, {'release_id': 'a'*32})
         audit = result['carry_forward_cache_audit']
         self.assertEqual([row['locale'] for row in audit], ['fr', 'pt'])
-        self.assertEqual(audit[0]['rejected_codes']['financial-quantity-validation'], 1)
+        self.assertEqual(audit[0]['rejected_codes'], {})
+        self.assertEqual(audit[0]['quantity_signatures'], [])
         self.assertEqual(audit[1]['rejected_codes'], {})
         self.assertEqual(before, self.store.client.objects)
         self.assertNotIn('99999', json.dumps(result)); self.assertNotIn('Valeur privée', json.dumps(result))

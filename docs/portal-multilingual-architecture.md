@@ -1,6 +1,6 @@
 # KC 桌面多语言生成与发布架构
 
-本文以 2026-10-10 核对的默认分支为准，取代早期 DeepSeek/DeepL 主翻译及“全历史镜像”设计描述。实现入口和当前事故证据分别见下文与[多语言架构核对记录](extended-locales-architecture-audit.md)。跨语种数量门禁见[数字翻译契约](financial-quantity-translation.md)，历史 fallback 的自动有界恢复见[质量欠账恢复](extended-locale-quality-recovery.md)。配置支持、候选生成、译文覆盖、正式发布和线上可读是不同状态。
+本文的生成与发布架构于 2026-10-11 更新，取代早期 DeepSeek/DeepL 主翻译及“全历史镜像”设计描述。实现入口和当前事故证据分别见下文与[多语言架构核对记录](extended-locales-architecture-audit.md)。多语种 SEO 正文采用数字告警策略，边界见[数字翻译契约](financial-quantity-translation.md)，历史 fallback 的自动有界恢复见[质量欠账恢复](extended-locale-quality-recovery.md)。配置支持、候选生成、译文覆盖、正式发布和线上可读是不同状态。
 
 ## 语言与产品范围
 
@@ -31,9 +31,9 @@ flowchart TD
     C --> X[33 语言阅读候选]
     C --> E[英文纯评论候选]
     X --> Q[完整渲染及翻译就绪分别记账]
-    Q --> D[精确 source fallback 欠账]
+    Q --> D[非数字类 source fallback 欠账]
     D --> C
-    Q --> H[零 fallback 候选 handoff]
+    Q --> H[页面可发布候选 handoff]
     E --> H
     H --> P[Neutral edge 未激活目录组装]
     L --> P
@@ -69,7 +69,9 @@ flowchart TD
 - checkpoint 精确绑定模型、目标语、源语言与源文本；当前 generation 与跨代 seed 都要重新校验。只把本次实际用到的合法 seed 单元写入新 checkpoint，不能把未用到的历史内容全量搬入。
 - 内容校验失败只处理对应单元。已验证单元可跨失败恢复；损坏身份、存储权限和读回摘要错误仍明确失败。
 
-模型输出必须通过数量、金额/百分比、占位符、表格边界、目标文字、内容长度和源语言残留等门禁。命名活动的数字表达只能按明确等价规则识别；不能忽略译文任意多出的数字，也不修改坏输出后冒充模型验收成功。
+2026-10-11 起，`ko/ja/ar` 和 33 个新增非英文 SEO/GEO 页面显式使用数字告警策略。正文中的数量、金额、百分比、日期、数量级或数字格式差异只计入诊断，不因这类差异重试模型、删除缓存、退回源文或阻断网站发布。共享 Hy-MT2 适配器与外层页面 Memo 使用同一策略，避免外层放行、底层继续重试。缓存身份保持不变，旧译文按当前页面结构规则复用。
+
+非空内容、目标文字、乱码、表格边界、资源与链接、必要模板占位符和页面代码仍检查。核心镜像已识别为纯正文数字的 `data_placeholders` 可以省略或重复；资源、URL 和运行时代码占位符不属于此例外。英文评论、报告翻译与中文编辑调用者保留默认严格数量校验；SEO 调用者不通过修改共享默认值影响这些流程。数字告警仅保存固定类别、计数和哈希，不公开原文或译文。
 
 ### 当前并发与恢复限制
 
@@ -90,7 +92,11 @@ flowchart TD
 - `translation_complete`：是否没有原文回退；
 - `source_fallback_unit_count`：回退的唯一单元数；
 - `source_fallback_occurrences`：页面中实际出现次数；
-- `translation_policy` 与固定错误码计数。
+- `translation_policy` 与固定错误码计数；
+- `publication_ready`：页面是否具备发布条件，与译文是否全部完成分开；
+- 数字告警与 `numeric_source_fallback_unit_count`：保留历史数字回退的真实数量。
+
+只有数字校验导致的历史源文回退，可以在完整候选、精确 source/manifest/proof 身份及回退清单验证后继续发布；`translation_complete` 和 `translation_ready` 仍为 false，不把原文冒充译文。混合其他失败类别、清单缺失、计数不符或页面不完整继续按原发布门禁处理。自动恢复不为纯数字差异再次安排模型调用；已接受的恢复结果仍可零调用完成原有写入尾部。已验证数字类告警不占可执行修复队列，旧记录通过既有有界轮转扫描移出，但不可变来源、候选、回退和质量 proof 保留，避免非阻断告警累积填满队列后再次影响发布。
 
 英文始终不允许源文回退。英文评论校验必须在 Memo 写入和复用之前执行，包括无中文/日文/韩文残留、无原文/图片/URL 嵌入、标题及正文长度限制。遇到旧版本已保存的无效单元，只清理该精确单元的 Memo/模型缓存后重新生成，其余合法进度继续复用。诊断输出固定的 `english-language-validation`、`english-asset-validation`、`english-size-validation` 等类别，不输出评论正文。
 
@@ -395,13 +401,13 @@ URL 节点使用 XHTML alternate 标注全部已完成的 hreflang 对应页。`
 
 ## 已完成页面的翻译欠账与有界恢复
 
-33 个扩展语言的完整页面、日完成游标和发布 ACK 均不等同于译文全部完成。`portal_extended_quality.py` 保留独立、绑定精确 source/manifest 的质量欠账；只有 `translation_complete=true`、零 fallback、完整页集合、零 budget/failure 的新候选才进入自动 handoff。英文和 `ko/ja/ar` 保持各自原有链路，不使用这套 33 语言恢复策略。
+33 个扩展语言的完整页面、日完成游标和发布 ACK 均不等同于译文全部完成。`portal_extended_quality.py` 保留独立、绑定精确 source/manifest 的质量欠账；自动 handoff 检查独立的 `publication_ready`：完整页集合、零 budget/failure，且没有非数字类 fallback。零 fallback 的候选继续具备 `translation_ready`；仅历史数字校验回退的候选可发布但仍如实记录未全译。旧不可变 proof 经同样精确身份、计数、完整哈希清单和数字错误类别验证后可按新策略读取，无须覆盖原 manifest 或调用模型。英文和 `ko/ja/ar` 保持各自链路，不使用这套 33 语言恢复策略。
 
-`portal_extended_quality_recovery.py` 在原全局串行 workflow 内、原 `max-parallel: 2` 矩阵中给每个语言选择 1..20 个精确旧 fallback。source/manifest/原 producer 必须可验证；缓存或已接受 ledger 优先，全部已有 accepted outcome 的计划显式 `requires_engine=false`，跳过模型 setup，build 禁止构造翻译适配器。其它计划仅授权所选单元一次离线尝试，paid provider 为零。当前普通文章队列与历史欠账按每语言交替；只在存在普通待办时交出该轮，不插入空转轮次。
+`portal_extended_quality_recovery.py` 在原全局串行 workflow 内、原 `max-parallel: 2` 矩阵中给每个语言选择 1..20 个非数字类精确旧 fallback。source/manifest/原 producer 必须可验证；缓存或已接受 ledger 优先，全部已有 accepted outcome 的计划显式 `requires_engine=false`，跳过模型 setup，build 禁止构造翻译适配器。其它计划仅授权所选单元一次离线尝试，paid provider 为零。当前普通文章队列与历史欠账按每语言交替；只在存在普通待办时交出该轮，不插入空转轮次。
 
 恢复采用法语旧流程的完整 render/cache/proof 契约并保留其兼容入口，但旧法语终止或未知请求不会因新策略、新运行或新 validator revision 被重新打开。完整候选重建不调用模型，未选中的有效译文与 fallback、原 source/origin、continuation 计数保持。精确 prepared tail 可零推理完成；只有已验证的 durable accepted-unit delta 或原普通页进展才续发下一轮，纯 terminal/unknown 不循环。ACK 前保留绑定 quality proof 的完整 immutable outcome 定位；旧无定位资料只在四种合法 continuation 计数中有唯一原结果时恢复，无法验证就保留 typed blocker。
 
-参见[详细边界、计数及验收](extended-locale-quality-recovery.md)。代码/合成回归、真实 fallback 减少、候选翻译就绪、protected 发布审核和线上 URL 是分别验收的阶段；此机制不宣称所有旧语言已追平中文。
+参见[详细边界、计数及验收](extended-locale-quality-recovery.md)。代码/合成回归、真实译文覆盖、候选页面可发布、protected 发布审核和线上 URL 是分别验收的阶段；非数字类实际修复核对 fallback 减少，数字告警类保持原真实未译计数；此机制不宣称所有旧语言已追平中文。
 
 ## 已批准候选重放的只读诊断
 
@@ -413,8 +419,12 @@ URL 节点使用 XHTML alternate 标注全部已完成的 hreflang 对应页。`
 
 已认证活动 ledger 的 `batches` 和 `replays` 必须来自同一静态 manifest 校验过的 JSON 字节。发布对仍拥有页面的活动 `(approved_generation, locale, approved_candidate)` 查找唯一 `replays.checkpoint_sha256`，从原 generation 的 SHA 定址对象读取当时的种子，不再以可变 `latest` 指针重解释旧批准。对象完整字节 SHA、检查点 locale/model/version/source identity 均需验证；随后仍用原 `prove_approved_baseline` 要求完整已批准 HTML 文件清单逐字节相等、零 cache miss，并只将实际消费的单位送入当前 source 重建。
 
-缺记录、同 tuple 重复记录、非法 SHA、缺对象、损坏对象或检查点身份不符均停止，不退回 latest。完全被后续批次覆盖、实际不重放的历史 tuple 不要求额外恢复资料；部分覆盖仍需原批准种子。incoming 新候选继续使用当前校验和逐字节证明，输入上自带的 checkpoint/quantity 字段不能获得活动批准资格。新的 assembly `replays` 继续保留原批准 generation/candidate 和原种子 SHA，并记录 `checkpoint_binding`，不误用当前重建输出的 SHA。来源内容变化、新旧 locale 保留、中文历史、静态版本 identity 和切换审核均沿用原门禁。本地检查点漂移回归通过不等同于任何具体线上失败已定位或恢复，须以精确活动版本诊断和后续发布验收确认。
+缺记录、同 tuple 重复记录、非法 SHA、缺对象、损坏对象或检查点身份不符均停止，不退回 latest。完全被后续批次覆盖、实际不重放的历史 tuple 不要求额外恢复资料；部分覆盖仍需原批准种子。incoming 新候选使用当前 SEO 数字告警策略与逐字节证明，输入上自带的 checkpoint/quantity 字段不能获得活动批准资格。新的 assembly `replays` 继续保留原批准 generation/candidate 和原种子 SHA，并记录 `checkpoint_binding`，不误用当前重建输出的 SHA。来源内容变化、新旧 locale 保留、中文历史、静态版本 identity 和切换审核均沿用原门禁。本地检查点漂移回归通过不等同于任何具体线上失败已定位或恢复，须以精确活动版本诊断和后续发布验收确认。
 
 只读诊断同时保留 latest 的 `checkpoint_sha256/matches/baseline_attempts` 对照，并对每个仍拥有页面的活动 tuple 增加 `approved_checkpoint_replay`，含认证 pin SHA、current/frozen exact-byte 尝试和固定类别。`publication_matches` 使用生产实际要求的 pin 证明；latest 缺失或漂移不能代替也不能掩盖这份证明。总体 `all-matched` 要求 `checked_candidates == selected_candidates` 且全部 active pin 通过；首个失败返回 `mismatch`，不是全批通过。后续可选 latest cache audit 的失败仍单独报告，所有路径仅 HEAD/GET，不调用模型，不写生产对象。
 
 pin 和本次 latest 读取的完整字节相同、两边散列与检查点身份均已独立验证、原批准 tuple 相同时，可复用刚完成的同一 baseline proof，报告 `reused_verified_latest_replay=true`，不重复 build。不同字节必须单独证明；workflow 的原 15 分钟上限不扩大。合并前可在本仓库候选 branch 运行此只读诊断，但必须显式提供与实际运行提交完全一致的 40 位 `expected_head`，仍固定 `active_release`；workflow job 条件及执行前 shell 均检查 head。它不启用 branch 上的发布或模型工作流。
+
+## 历史数字规则冲突的处理
+
+旧发布重放曾同时依赖现行数量解析和冻结的旧数量解析；同一候选中的不同译文可分别被两版规则拒绝，导致中文网站刷新也被历史语言重放卡住。当前优先按 SEO 数字告警策略做纯缓存重放；已批准 HTML 的文件集合和完整字节仍必须相等，源身份不变，模型调用为零。冻结解析只保留精确旧版本兼容用途，不再作为新 SEO 正文的质量要求。数字策略放宽不授权改写已批准页面，也不放宽代码、链接、权限、canonical、hreflang、来源或发布目录完整性检查。

@@ -97,14 +97,31 @@ class SourceFallbackTests(unittest.TestCase):
         # Shared rejected units are attempted once per run, not once per page.
         self.assertEqual(translator.calls, 1)
 
-    def test_outer_quantity_rejection_never_renders_damaged_model_output(self):
+    def test_outer_quantity_difference_renders_once_as_warning_and_reuses_cache(self):
         class Damaged(FakeTranslator):
             def translate(self, text, target, source=None, *, markdown=True):
-                return text.replace('USD10m', 'EUR999m')
-        result = self.run_build(Damaged())
+                if 'USD10m' in text:
+                    self.calls += 1
+                    return 'Le chiffre d’affaires EUR999m.'
+                return super().translate(text, target, source, markdown=markdown)
+        translator = Damaged()
+        result = self.run_build(translator)
         self.assertEqual(result['completed_page_count'], 2)
-        self.assertNotIn('EUR999m', (self.root/'out/fr/index.html').read_text())
-        self.assertNotIn('EUR999m', (self.root/'memo.json').read_text())
+        self.assertTrue(result['translation_complete'])
+        self.assertEqual(result['source_fallback_unit_count'], 0)
+        self.assertEqual(result['quantity_validation_policy'], 'seo-advisory-v1')
+        self.assertEqual((result['quantity_warning_unit_count'], result['quantity_warning_occurrences']), (1, 2))
+        self.assertIn('EUR999m', (self.root/'out/fr/index.html').read_text())
+        self.assertIn('EUR999m', (self.root/'memo.json').read_text())
+        original_checkpoint = (self.root/'memo.json').read_bytes()
+        replay = Damaged()
+        resumed = self.run_build(replay, output='resumed')
+        self.assertEqual(replay.calls, 0)
+        self.assertEqual((self.root/'memo.json').read_bytes(), original_checkpoint)
+        self.assertEqual((resumed['quantity_warning_unit_count'], resumed['quantity_warning_occurrences']), (1, 2))
+        self.assertEqual(resumed['files_sha256'], result['files_sha256'])
+        public = json.dumps({key:value for key,value in result.items() if key.startswith('quantity_')})
+        for text in ('EUR', '999', 'chiffre'): self.assertNotIn(text, public)
 
     def test_runtime_failure_and_budget_are_not_content_fallbacks(self):
         class RuntimeFailure(FakeTranslator):
@@ -142,7 +159,7 @@ class SourceFallbackTests(unittest.TestCase):
              patch.object(builder, 'OfflineTranslator', return_value=translator) as factory, \
              redirect_stdout(io.StringIO()) as output:
             self.assertEqual(builder.main(), 0)
-        factory.assert_called_once_with(validation_attempts=1)
+        factory.assert_called_once_with(validation_attempts=1, quantity_policy='advisory')
         summary = json.loads(output.getvalue())
         self.assertEqual(summary['source_fallback_unit_count'], 1)
         self.assertEqual(summary['source_fallback_occurrences'], 2)

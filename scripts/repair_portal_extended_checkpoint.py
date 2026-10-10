@@ -9,8 +9,8 @@ import re
 from collections import Counter
 
 from build_portal_extended_locales import (CHECKPOINT_VERSION, SOURCE_FALLBACK_VERSION,
-    build, translate_document, validate_text)
-from financial_quantity_integrity import NUMBER
+    build, translate_document, validate_text as validate_current_text)
+from financial_quantity_integrity import NUMBER, quantity_issues
 from offline_translation import MODEL_ID, OfflineTranslationValidationError
 from portal_extended_continuation import (checkpoint_evidence, producer_identity, queue,
     read_origin, record_result, register, verify_origin_run)
@@ -24,6 +24,14 @@ from portal_extended_recovery_intent import (acknowledged, key, read_index, read
 POLICY = 'explicit-rejected-legacy-unit-repair-v1'
 WORKFLOW = '.github/workflows/portal-extended-locales-r2.yml'
 BP = re.compile(rf'({NUMBER})\s*(?:个基点|個基點|基点|基點|(?:basis\s+points?|bps?)(?![A-Za-z0-9_]))', re.I)
+
+
+def validate_text(source, translated, locale, source_language):
+    # This explicitly requested legacy repair must still verify the contract
+    # bound into its immutable receipts. Automatic SEO generation/debt recovery
+    # uses the current advisory builder directly and never enters this helper.
+    return validate_current_text(source, translated, locale, source_language,
+                                 quantity_validator=quantity_issues)
 
 
 def once_store():
@@ -464,7 +472,7 @@ def main():
     if args.operation=='build':
         from offline_translation import OfflineTranslator
         protected=ProtectedBasisPointTranslator(None,{old['rows'][k]['source'] for k in repair['units']})
-        translator=OfflineTranslator(diagnostic_callback=protected.observe_model)
+        translator=OfflineTranslator(diagnostic_callback=protected.observe_model, quantity_policy='strict')
         protected.base=translator
         wrapped=PrivateUnitTranslator(protected,store,repair,args.generation,args.locale,owner)
         result=build(corpus,args.locale,args.output,args.checkpoint,wrapped,budget_seconds=args.seconds,allow_source_fallback=True)

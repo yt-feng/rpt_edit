@@ -1,10 +1,10 @@
 # 扩展语言质量欠账的有界恢复
 
-本契约覆盖登记的全部 33 个 `all-supported` 非英文静态阅读目标；`en`、中文源站和 `ko/ja/ar` 使用各自既有流程。总范围和发布阶段见[主架构](portal-multilingual-architecture.md)，数量规则见[数字翻译契约](financial-quantity-translation.md)。代码以 `portal_extended_quality_recovery.py`、`portal_extended_repair_contract.py`、既有法语 `RepairEngine/RepairPipeline` 为入口。
+本契约覆盖登记的全部 33 个 `all-supported` 非英文静态阅读目标；`en`、中文源站和 `ko/ja/ar` 使用各自既有流程。总范围和发布阶段见[主架构](portal-multilingual-architecture.md)，SEO 数字告警与严格调用边界见[数字翻译契约](financial-quantity-translation.md)。代码以 `portal_extended_quality_recovery.py`、`portal_extended_repair_contract.py`、既有法语 `RepairEngine/RepairPipeline` 为入口。
 
 ## 固定身份与界限
 
-`extended-quality-debt-v1` 的当前 validator 修订为 `cldr48-complete-number-v1`。每个 source job、每种语言最多扫描 4 个既有 debt generation、每 generation 最多 60 个 fallback 单元，从中选 1..20 个；generation 和 unit 均有有界持久轮转，前面的 terminal/blocked 项不能永远遮住后面的债。每个候选仍为原固定 1..24 页，不重新抓取来源。source 阶段的 tail 与债扫描共享 5 分钟 monotonic 准入期限、1200 次 R2 HEAD/GET 和 16 次 GitHub GET 上限；缓存 API 响应仅限同一 source job。小型 scheduler cursor 的控制读写，以及至多 33 语言、每语言 3 个小型 active/plan/prepared-pointer 控制对象的尾部预留清单单独有界；不读取 source、页或 unit ledger，用于确保预算耗尽也能写回位置并阻止同语言普通 Memo 越过未完 tail。期限在请求之间检查，已进入的 SDK 调用仍受既有超时/重试配置约束；整个 source job 保留原 20 分钟硬上限。耗尽后保留已选计划和 locale/generation 游标，普通当前日路径继续，预算停止本身不算进展也不触发自续。原全局 `extended-locales-r2-pipeline` 串行组、`cancel-in-progress=false` 和最多 2 个 CPU job 保持。
+`extended-quality-debt-v1` 的当前 validator 修订为 `cldr48-complete-number-v1`。每个 source job、每种语言最多扫描 4 个既有 debt generation、每 generation 最多 60 个 fallback 单元，从非数字类失败中选 1..20 个；generation 和 unit 均有有界持久轮转，前面的 terminal/blocked 项不能永远遮住后面的债。每个候选仍为原固定 1..24 页，不重新抓取来源。source 阶段的 tail 与债扫描共享 5 分钟 monotonic 准入期限、1200 次 R2 HEAD/GET 和 16 次 GitHub GET 上限；缓存 API 响应仅限同一 source job。小型 scheduler cursor 的控制读写，以及至多 33 语言、每语言 3 个小型 active/plan/prepared-pointer 控制对象的尾部预留清单单独有界；不读取 source、页或 unit ledger，用于确保预算耗尽也能写回位置并阻止同语言普通 Memo 越过未完 tail。期限在请求之间检查，已进入的 SDK 调用仍受既有超时/重试配置约束；整个 source job 保留原 20 分钟硬上限。耗尽后保留已选计划和 locale/generation 游标，普通当前日路径继续，预算停止本身不算进展也不触发自续。原全局 `extended-locales-r2-pipeline` 串行组、`cancel-in-progress=false` 和最多 2 个 CPU job 保持。
 
 债 proof 必须逐字节绑定 locale、source、candidate、manifest；原 immutable origin、原 source 和 locale job 必须有精确 producer/run/attempt/SHA 且实际完成成功。已注册 complete row 必须仍匹配原快照。已 ACK 的行优先通过绑定 quality proof SHA 的 reverse anchor 找回完整 immutable outcome（包括 repair/completion）；没有 anchor 的普通旧行仅枚举合法 continuation 计数 0..3，必须存在唯一、逐字节相等的 immutable result。零个或多个匹配、旧已修复行缺 anchor、较新页面 receipt、坏源/缓存等保留 typed blocker；不能重新 fetch 或自行扩大历史准入。
 
@@ -12,7 +12,11 @@
 
 源文回退只保存原文和错误类别，已拒绝响应通常被丢弃。可零推理恢复的证据仅为实际存在且通过当前质量门的 adapter cache，或完整 accepted unit ledger。源计划显式记录每个单元是 accepted-ledger 复用还是 fresh-authorized；全部属于前者时 `requires_engine=false`，restore 将该字段传至 workflow，模型 setup 跳过，build 使用禁止推理的实现且不构造 adapter。
 
-需要处理新单元时，先用独立 adapter 的禁止 engine factory 读取真实 cache；现存 JSON/身份/结构/数量错误不会被当作缺文件。只有明确 cache miss 才使用计划已经授权的离线推理，每个单元一个质量尝试。模型的单元可由多个片段构成，所以 unit attempts 与实际片段数不是同一个计数。没有任何付费 provider fallback。
+仅数字类的已验证记录不进入可执行修复队列，已有记录通过既有有界轮转扫描验证后移出队列；不可变来源、候选、回退和 quality proof 全部保留，真实未译计数不变。混合或未知失败继续留存。
+
+纯数字错误不进入新的自动推理计划，摘要记录 `skipped_numeric_units`，不会因策略修订无限重试；已有 accepted-ledger 的精确尾部仍可零调用完成。仅显式 `repair_portal_extended_checkpoint.py` 手工入口保留当前严格数字解析和适配器契约；法语旧入口保留 source/receipt 身份约束，但数字采用 SEO 告警策略。两者都不能重新成为普通自动 SEO 的严格数字门禁。
+
+需要处理新单元时，先用独立 adapter 的禁止 engine factory 读取真实 cache；现存 JSON/身份/结构错误不会被当作缺文件；SEO 正文数量差异只记录告警。只有明确 cache miss 才使用计划已经授权的离线推理，每个单元一个质量尝试。模型的单元可由多个片段构成，所以 unit attempts 与实际片段数不是同一个计数。没有任何付费 provider fallback。
 
 原子 started 写入并精确读回后才可处理单元；accepted/terminal outcome 不覆盖。自动 ledger 的 namespace 不随 validator revision 改变，旧 revision claim 不兼容时 fail closed；法语还显式读取旧 `fr-space-grouping-quarter-v1` ledger。旧 unknown started/terminal 不因新策略重新尝试，旧 accepted 必须通过当前质量校验才迁移。批次对全部选中单元预检，再启动任何新工作。缓存损坏或未知结果保留 started，待明确诊断，不自动重放。
 
@@ -22,7 +26,7 @@
 
 prepared tail 中断可从同一 proof 只完成原精确 before/after 写入。source-only completion 绑定完成尾部的新 producer；active marker 保留到实际已完成的 source/locale job 被精确验真，不能因 source 脚本中途成功就提前清除。普通 source 后续失败时，下个串行 run 可再次零推理补齐并绑定成功 source。无法验证的 tail 留下 typed blocker，不覆盖较新内容。预算在 queue-after、completion 前后任一写边界中断时，该语言继续保留 lane，完成尾部前本轮普通页和质量修复均不会改它的 Memo；没有 prepared proof 的 unknown unit 不占这个预留位置，其他语言照常推进。
 
-自动 handoff 支持每种 locale 的精确 repair/completion proof，但仍只接受 translation-ready、零 fallback、完整且无 budget/failure 的新候选。已有活动 fallback 页及批准 ledger 保留原契约。源正文变化继续阻止旧译文改绑；修复数字识别不会以 metadata 让历史 accepted 行自动合格。
+自动 handoff 支持每种 locale 的精确 repair/completion proof，按独立 publication-ready 判断完整且无 budget/failure 的候选。零 fallback 继续 translation-ready；仅已验证数字校验类别的历史 fallback 可发布，但 translation-ready 仍为 false，原回退记录与数量保留。新 proof 记录独立字段；旧不可变 proof 通过完整计数/哈希清单、错误码与 source/manifest 身份验证后按同一策略读取，不覆盖旧对象。混合或未知非数字类别继续阻断。已有活动页面仍须逐字节复现批准 HTML；源正文变化继续阻止旧译文改绑。
 
 ## 公平推进与摘要
 
@@ -34,4 +38,4 @@ prepared tail 中断可从同一 proof 只完成原精确 before/after 写入。
 
 本地回归使用真实两页/两 fallback 的 render/checkpoint/R2 契约、原子 fake R2 及合成 translator，覆盖整批/部分恢复、缓存零推理、单元终止与未知、旧 revision 桥接、ACK 前 anchor 和唯一旧结果恢复、producer/locale/源/完整 row 篡改、断点尾部、当前日公平及进展续跑。workflow 测试实际执行 shell 路由，并检查空 needs-model 不触发 setup。
 
-这些是机制验收。真实运行仍需依次核对原 source 的 fallback 减少、各语言 translation-ready、保护审核、正式发布和公共 URL；旧运行仍使用自己的旧提交，不能仅因新代码合并就算已恢复。
+这些是机制验收。真实运行中，非数字类实际修复须核对原 source 的 fallback 减少；数字告警类则核对 publication-ready 与原真实未译计数保持。两者仍需验证保护审核、正式发布和公共 URL；旧运行仍使用自己的旧提交，不能仅因新代码合并就算已恢复。

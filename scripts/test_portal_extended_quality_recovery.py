@@ -19,16 +19,36 @@ from portal_extended_incremental import read_state, write_state, state_key, reme
 from portal_extended_locales import ExpansionError, stable_bytes, digest
 from build_portal_extended_locales import build
 from repair_portal_french_source_fallback import RepairEngine
+from offline_translation import OfflineTranslationValidationError
+
+
+class StructuralRejected(fixtures.OriginalRejected):
+    """Repair control tests keep exercising blocking display failures."""
+    def translate(self, text, target, source=None, *, markdown=True):
+        if 'USD' in text:
+            self.calls += 1
+            raise OfflineTranslationValidationError('Hy-MT2 placeholder validation failed')
+        return super().translate(text, target, source, markdown=markdown)
 
 
 class RecoveryTests(unittest.TestCase):
+    numeric_fallback = False
+
     def setUp(self):
         self.f = fixtures.IntegrationTests('test_real_restore_build_persist_preserves_origin_other_locale_and_counters')
-        self.f.setUp(); self.addCleanup(self.f.doCleanups)
+        with patch.object(fixtures, 'OriginalRejected', fixtures.OriginalRejected if self.numeric_fallback else StructuralRejected):
+            self.f.setUp()
+        self.addCleanup(self.f.doCleanups)
         self.store, self.client = self.f.store, self.f.client
         self.locale, self.generation = 'fr', self.f.generation
         self.pipeline = RepairPipeline(quality_contract('fr'))
-        self.quality()
+        proof = self.quality()
+        if self.numeric_fallback:
+            # Model the old policy's already persisted queue row. Current
+            # record_quality no longer adds a numeric-only advisory to debt.
+            row = {key:proof[key] for key in ('proof_sha256', 'candidate_id',
+                                            'source_fallback_unit_count', 'quality_status')}
+            write_state(self.store, 'quality-debt', 'fr', {'generations':{self.generation:row}})
 
     def quality(self):
         row = queue(self.store, self.locale)[self.generation]
@@ -295,7 +315,7 @@ class RecoveryTests(unittest.TestCase):
         self.locale='de'; self.pipeline=RepairPipeline(quality_contract('de'))
         self.f.jobs[1]['name']='locale (de)'
         old_dir=self.f.root/'de-old'; old_path=self.f.root/'de-old.json'
-        build(self.f.corpus,'de',old_dir,old_path,fixtures.OriginalRejected(),allow_source_fallback=True,budget_seconds=30)
+        build(self.f.corpus,'de',old_dir,old_path,StructuralRejected(),allow_source_fallback=True,budget_seconds=30)
         remember_checkpoint(self.store,'de',self.generation,old_path)
         remember_candidate(self.store,'de',self.f.corpus,old_dir)
         self.quality();jobs,blocked=self.select();self.assertFalse(blocked)
@@ -418,6 +438,79 @@ class RecoveryTests(unittest.TestCase):
         write_state(self.store,'quality-recovery-turn','fr',{'last':'quality'})
         with patch.object(recovery,'normal_work',return_value=False):
             jobs,_=self.select();self.assertTrue(jobs)
+
+    def test_numeric_only_historical_fallback_never_authorizes_inference_or_followup(self):
+        numeric = RecoveryTests()
+        numeric.numeric_fallback = True
+        numeric.setUp(); self.addCleanup(numeric.doCleanups)
+        before_queue = copy.deepcopy(queue(numeric.store, 'fr'))
+        proof_key = recovery.proof_key(numeric.store, debt_rows(numeric.store, 'fr')[numeric.generation]['proof_sha256'])
+        original_proof = numeric.client.objects[proof_key]['body']
+        before_checkpoint = numeric.f.old_path.read_bytes()
+        for _ in range(2):
+            jobs, blocked = numeric.select()
+            self.assertEqual((jobs, blocked), ([], []))
+            self.assertFalse(recovery.followup(numeric.store, [], fixtures.OWNER)['continue'])
+        state = read_state(numeric.store, 'quality-recovery-status', 'fr')['generations'][numeric.generation]
+        self.assertEqual((state['code'], state['skipped_numeric_units'], state['fresh_authorized_units']),
+                         ('numeric_advisory_no_repair', 2, 0))
+        self.assertEqual(queue(numeric.store, 'fr'), before_queue)
+        self.assertEqual(debt_rows(numeric.store, 'fr'), {})
+        self.assertEqual(numeric.client.objects[proof_key]['body'], original_proof)
+        self.assertEqual(numeric.f.old_path.read_bytes(), before_checkpoint)
+        self.assertFalse(any('/source-fallback-repair-units/' in key or '/quality-recovery-plans/' in key
+                             for key in numeric.client.objects))
+
+    def test_numeric_debt_removal_preserves_existing_accepted_ledger_without_provider_work(self):
+        numeric = RecoveryTests()
+        numeric.numeric_fallback = True
+        numeric.setUp(); self.addCleanup(numeric.doCleanups)
+        engine = numeric.pipeline.units
+        required = engine.required_units(numeric.f.corpus)
+        for unit in numeric.f.request['units']:
+            engine.attempt_unit(numeric.store, unit, required[unit], fixtures.OWNER, fixtures.RepairTranslator())
+        saved = {key:copy.deepcopy(value) for key,value in numeric.client.objects.items()
+                 if '/source-fallback-repair-units/' in key}
+        jobs, blocked = numeric.select()
+        self.assertEqual(blocked, [])
+        self.assertEqual(jobs, [])
+        self.assertEqual(debt_rows(numeric.store, 'fr'), {})
+        self.assertEqual({key:numeric.client.objects[key] for key in saved}, saved)
+
+    def test_mixed_debt_keeps_structural_work_and_never_selects_numeric_units(self):
+        class Mixed(StructuralRejected):
+            def translate(self, text, target, source=None, *, markdown=True):
+                if 'Revenue' in text:
+                    self.calls += 1
+                    raise OfflineTranslationValidationError('Hy-MT2 quantity validation failed')
+                return super().translate(text, target, source, markdown=markdown)
+        mixed = RecoveryTests()
+        with patch(__name__ + '.StructuralRejected', Mixed): mixed.setUp()
+        self.addCleanup(mixed.doCleanups)
+        jobs, blocked = mixed.select()
+        self.assertEqual(blocked, [])
+        self.assertEqual(len(jobs), 1)
+        plan = recovery.read_plan(mixed.store, jobs[0]['quality_repair'])
+        self.assertEqual(len(plan['request']['units']), 1)
+        selected = mixed.f.old['source_fallbacks'][plan['request']['units'][0]]
+        self.assertEqual(selected['code'], 'offline-placeholder-validation')
+        state = read_state(mixed.store, 'quality-recovery-status', 'fr')['generations'][mixed.generation]
+        self.assertEqual(state['skipped_numeric_units'], 1)
+        self.assertIn(mixed.generation, debt_rows(mixed.store, 'fr'))
+
+    def test_unverifiable_old_numeric_debt_is_not_removed(self):
+        numeric = RecoveryTests()
+        numeric.numeric_fallback = True
+        numeric.setUp(); self.addCleanup(numeric.doCleanups)
+        before = copy.deepcopy(debt_rows(numeric.store, 'fr'))
+        checksum = before[numeric.generation]['proof_sha256']
+        key = recovery.proof_key(numeric.store, checksum)
+        numeric.store._put(key, b'{}', metadata={'kind':'corrupt-proof-fixture'})
+        jobs, blocked = numeric.select()
+        self.assertEqual(jobs, [])
+        self.assertEqual(blocked[0]['code'], 'debt_proof_checksum_invalid')
+        self.assertEqual(debt_rows(numeric.store, 'fr'), before)
+        self.assertFalse(any('/source-fallback-repair-units/' in item for item in numeric.client.objects))
 
 
 if __name__=='__main__':unittest.main()

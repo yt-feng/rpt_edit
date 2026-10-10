@@ -470,7 +470,7 @@ class RepairPipeline:
                                 raise ExpansionError('quality_repair_unplanned_inference')
                         translator = LedgerOnlyTranslator()
                     else:
-                        translator = OfflineTranslator(validation_attempts=1)
+                        translator = OfflineTranslator(validation_attempts=1, quantity_policy='advisory')
                         if self.contract.automatic:
                             from portal_extended_repair_cache import CacheFirstTranslator
                             translator = CacheFirstTranslator(translator)

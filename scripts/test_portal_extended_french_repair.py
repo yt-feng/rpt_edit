@@ -248,15 +248,18 @@ class IntegrationTests(unittest.TestCase):
             self.store._put(self.store.key('publication-handoffs',checksum,'receipt.json'),raw,metadata={'kind':'fixture'})
             with self.subTest(change=change), self.assertRaises(ExpansionError): read_handoff(self.store,checksum)
 
-    def test_partial_repair_retains_debt_and_cannot_auto_publish(self):
-        from portal_extended_quality import quality_summary
+    def test_partial_numeric_repair_retains_honest_proof_without_blocking_debt(self):
+        from portal_extended_quality import quality_summary, handoff_quality
         result = self.finish()
         row = queue(self.store, 'fr')[self.generation]
         batch = {'generation': self.generation, 'candidates': {'fr': row['snapshot']['candidate_id']}}
         self.assertTrue(result['changed'])
-        with self.assertRaisesRegex(ExpansionError, 'translated-ready'):
-            save_handoff(self.store, batch, day=DAY, pages=2, producer=OWNER)
-        self.assertEqual(quality_summary(self.store, ('fr',))['quality_debt_source_fallback_units'], 1)
+        receipt = read_handoff(self.store, save_handoff(self.store, batch, day=DAY, pages=2, producer=OWNER))
+        quality = handoff_quality(self.store, receipt)['fr']
+        self.assertTrue(quality['publication_ready'])
+        self.assertFalse(quality['translation_ready'])
+        self.assertEqual(quality['source_fallback_unit_count'], 1)
+        self.assertEqual(quality_summary(self.store, ('fr',))['quality_debt_source_fallback_units'], 0)
         self.assertIn(self.generation, queue(self.store, 'fr'))
 
     def test_repair_producer_requires_main_manual_exact_successful_source_and_fr_jobs(self):

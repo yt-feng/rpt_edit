@@ -96,6 +96,63 @@ class OfflineLocaleTests(unittest.TestCase):
             self.assertEqual(factory.return_value.translate.call_count, 1)
         self.assertTrue(self.path.exists())
 
+    def test_core_locales_use_advisory_numbers_without_source_fallback(self):
+        from offline_translation import OfflineTranslator
+        self.unit = b.unit_for_text('收入增长三成，阅读完整报告。', 'html:text:p')[1]
+        responses = {'ko': '매출은 31% 증가했습니다. 전체 보고서를 읽으세요.',
+                     'ja': '売上は31%増加しました。完全なレポートをお読みください。',
+                     'ar': 'نمت الإيرادات بنسبة 31%. اقرأ التقرير الكامل.'}
+        calls = []
+        class Engine:
+            def translate(self, source, source_language, target):
+                calls.append(target)
+                return responses[target]
+        def factory(**kwargs):
+            self.assertEqual(kwargs, {'quantity_policy': 'advisory'})
+            return OfflineTranslator(cache_dir=Path(self.temp.name)/'memo',
+                                     engine_factory=lambda *_: Engine(), **kwargs)
+        cache = b.empty_cache('hymt-offline-v1', provider='hymt')
+        diagnostics = Path(self.temp.name)/'diagnostics.json'
+        with mock.patch('offline_translation.OfflineTranslator', side_effect=factory), \
+             mock.patch.object(b, 'deepseek_translate_batch', side_effect=AssertionError('Paid fallback')):
+            b.translate_missing_units({self.unit.key: self.unit}, cache, cache_path=self.path,
+                model='hymt-offline-v1', base_url='https://example.invalid', workers=1,
+                timeout=1, attempts=1, provider='hymt', allow_source_fallback=True,
+                diagnostics_out=diagnostics)
+        self.assertEqual(sorted(calls), sorted(b.LOCALES))
+        self.assertFalse(any(cache['_source_fallbacks'].values()))
+        for locale in b.LOCALES:
+            self.assertEqual(cache['locales'][locale][self.unit.key]['translation'], responses[locale])
+        status = json.loads(diagnostics.read_text())
+        self.assertEqual(status['quantity_policy'], 'advisory')
+        self.assertEqual(status['quantity_warning_count'], 3)
+        self.assertEqual(status['failed_units'], 0)
+
+    def test_core_numeric_placeholder_omission_keeps_link_and_uses_one_call_per_locale(self):
+        from offline_translation import OfflineTranslator
+        self.unit = b.unit_for_text('收入增长12.5%，请阅读 https://example.invalid/report。', 'html:text:p')[1]
+        required = [token for token in b.PLACEHOLDER_RE.findall(self.unit.source)
+                    if token not in self.unit.data_placeholders]
+        self.assertTrue(self.unit.data_placeholders)
+        self.assertTrue(required)
+        calls = []
+        class Engine:
+            def translate(self, source, source_language, target):
+                calls.append(target)
+                return {'ko': '전체 보고서를 읽으세요', 'ja': '完全なレポートを読む',
+                        'ar': 'اقرأ التقرير الكامل'}[target] + ' ' + ' '.join(required)
+        def factory(**kwargs):
+            return OfflineTranslator(cache_dir=Path(self.temp.name)/'memo',
+                                     engine_factory=lambda *_: Engine(), **kwargs)
+        cache = b.empty_cache('hymt-offline-v1', provider='hymt')
+        with mock.patch('offline_translation.OfflineTranslator', side_effect=factory):
+            self.run_translation(cache)  # Strict publication, advisory numeric copy.
+        self.assertEqual(sorted(calls), sorted(b.LOCALES))
+        for locale in b.LOCALES:
+            translated = cache['locales'][locale][self.unit.key]['translation']
+            self.assertTrue(all(token in translated for token in required))
+            self.assertTrue(all(token not in translated for token in self.unit.data_placeholders))
+
 
 class PercentPlaceholderRestorationTests(unittest.TestCase):
     def test_added_percent_is_removed_only_for_known_percent_value(self):

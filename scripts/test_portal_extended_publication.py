@@ -99,8 +99,8 @@ class PublicationTests(unittest.TestCase):
         result = self.publish_frozen(batch)
         self.assertTrue(result['ready']); self.assertEqual(result['page_counts'], {'bn': 1})
         self.assertEqual(result['replays'][0]['translation_calls'], 0)
-        self.assertEqual(result['replays'][0]['quantity_contract'], CONTRACT_ID)
-        self.assertEqual(result['replays'][0]['quantity_parser_sha256'], PARSER_SHA256)
+        self.assertEqual(result['replays'][0]['quantity_contract'], 'current')
+        self.assertIsNone(result['replays'][0]['quantity_parser_sha256'])
         self.assertIn('২৫ বেসিস পয়েন্ট', (self.root/'bn'/file_for_url(URL)).read_text())
 
     def test_active_approval_ignores_changed_latest_and_reuses_original_seed(self):
@@ -222,21 +222,63 @@ class PublicationTests(unittest.TestCase):
         self.assertEqual(result['replays'][0]['translation_calls'], 0)
         self.assertIn('৯০%', (self.root/'bn'/file_for_url(URL)).read_text())
 
-    def test_unapproved_incoming_candidate_keeps_current_numeric_gate(self):
+    def test_incoming_complete_seo_candidate_is_not_blocked_by_numeric_prose(self):
         batch = self.legacy_bn_candidate()
-        with self.assertRaisesRegex(ExpansionError, 'approved candidate bytes'): self.publish([batch])
-        self.assertFalse((self.root/'bn').exists())
+        result = self.publish([batch])
+        self.assertTrue(result['ready'])
+        self.assertEqual(result['replays'][0]['translation_calls'], 0)
+        self.assertEqual(result['replays'][0]['checkpoint_binding'], 'incoming-exact-byte-replay')
 
-    def test_incoming_cannot_forge_an_active_approval_quantity_contract(self):
+    def test_incoming_forged_active_fields_do_not_change_seed_authority(self):
         active = self.candidate('fr', url=ORIGIN+'/blog/20260925-active.html')
         incoming = self.legacy_bn_candidate()
         incoming['quantity_contract'] = CONTRACT_ID
         incoming['checkpoint_sha256'] = self.active_ledger([active])['replays'][0]['checkpoint_sha256']
         identity = {'slot': 'a', 'release_id': 'a'*32, 'tree_sha256': 'b'*64}
         with mock.patch('portal_extended_publication.read_active_ledger', return_value=self.active_ledger([active])):
-            with self.assertRaisesRegex(ExpansionError, 'approved candidate bytes'):
-                compose(self.root, self.store, [active, incoming], Path(tempfile.mkdtemp(dir=self.base)), active_identity=identity)
-        self.assertFalse((self.root/'bn').exists())
+            result = compose(self.root, self.store, [active, incoming], Path(tempfile.mkdtemp(dir=self.base)), active_identity=identity)
+        replay = next(row for row in result['replays'] if row['locale'] == 'bn')
+        self.assertEqual(replay['checkpoint_binding'], 'incoming-exact-byte-replay')
+        self.assertEqual(replay['quantity_contract'], 'current')
+        self.assertNotEqual(replay['checkpoint_sha256'], incoming['checkpoint_sha256'])
+
+    def test_mixed_historical_numeric_rules_replay_all_pages_without_inference(self):
+        from financial_quantity_integrity import quantity_issues
+        old_source, old_text = '政策利率上升25个基点。', 'নীতিগত সুদের হার ২৫ বেসিস পয়েন্ট বেড়েছে।'
+        new_source, new_text = '政策利率上升九成。', 'নীতিগত হার ৯০% বৃদ্ধি।'
+        self.assertTrue(quantity_issues(old_source, old_text, 'zh', 'bn'))
+        self.assertEqual(frozen_quantity_issues(old_source, old_text, 'zh', 'bn'), [])
+        self.assertEqual(quantity_issues(new_source, new_text, 'zh', 'bn'), [])
+        self.assertTrue(frozen_quantity_issues(new_source, new_text, 'zh', 'bn'))
+        other = ORIGIN+'/blog/20260925-mixed-numeric.html'
+        bodies = {URL: '<h1>Research</h1><p>'+old_source+'</p>',
+                  other: '<h1>Research</h1><p>'+new_source+'</p>'}
+        corpus = make_corpus([daily_doc(url, body=body) for url, body in bodies.items()])
+        class Historical:
+            def translate(self, text, *args, **kwargs):
+                return {old_source: old_text, new_source: new_text}.get(text, 'গবেষণা তথ্য ও বিশ্লেষণ।')
+        def historical_validator(source, text, source_language, locale):
+            validator = frozen_quantity_issues if source == old_source else quantity_issues
+            return validator(source, text, source_language, locale)
+        work = self.base/'mixed-history'; work.mkdir()
+        manifest = build(corpus, 'bn', work/'candidate', work/'checkpoint.json', Historical(),
+                         allow_source_fallback=True, quantity_validator=historical_validator)
+        self.assertEqual(manifest['completed_page_count'], 2)
+        self.assertEqual(manifest['source_fallback_unit_count'], 0)
+        generation = corpus['documents_sha256']; self.store.put_source(corpus)
+        seed = self.store.put_checkpoint('bn', generation, work/'checkpoint.json')
+        candidate = self.store.upload_candidate(work/'candidate', 'bn', generation)['candidate_id']
+        self.approved_seeds[generation, 'bn', candidate] = seed['sha256']
+        for url, body in bodies.items():
+            target = self.root/file_for_url(url); target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(raw_page(url, body=body))
+        with mock.patch('offline_translation.OfflineTranslator', side_effect=AssertionError('No inference adapter')):
+            result = self.publish_frozen({'generation': generation, 'candidates': {'bn': candidate}})
+        self.assertEqual(result['page_counts'], {'bn': 2})
+        self.assertEqual(result['replays'][0]['translation_calls'], 0)
+        self.assertEqual(result['replays'][0]['quantity_contract'], 'current')
+        self.assertIn(old_text, (self.root/'bn'/file_for_url(URL)).read_text())
+        self.assertIn(new_text, (self.root/'bn'/file_for_url(other)).read_text())
 
     def test_candidate_integrity_failure_is_not_a_parser_fallback(self):
         batch = self.legacy_bn_candidate()

@@ -17,6 +17,7 @@ from portal_extended_locales import *
 from build_portal_extended_locales import build, Memo, extended_source_language, validate_text, MODEL_ID
 from assemble_portal_extended_locales import assemble, verified_candidate, head_alternates
 from collect_portal_extended_sources import select_urls, read_public
+from financial_quantity_integrity import quantity_issues
 
 ROOT = Path(__file__).resolve().parent.parent
 HOME = ORIGIN + '/'
@@ -159,6 +160,24 @@ class QualityTests(unittest.TestCase):
     def test_changed_quantities_rejected(self):
         for text in ['Revenue USD20m.', 'Revenue CNY10m.', 'Revenue 10.', 'Revenue USD10bn.']:
             with self.subTest(text=text),self.assertRaises(ExpansionError):validate_text('Revenue USD10m.',text,'en','en')
+    def test_seo_quantity_differences_are_advisory_but_explicit_replay_remains_strict(self):
+        for text in ('Le chiffre d’affaires EUR999m.', 'Le chiffre d’affaires USD10bn.',
+                     'Le chiffre d’affaires progresse.'):
+            with self.subTest(text=text):
+                self.assertTrue(validate_text('Revenue USD10m.', text, 'fr', 'en'))
+                with self.assertRaisesRegex(ExpansionError, 'Financial quantity'):
+                    validate_text('Revenue USD10m.', text, 'fr', 'en', quantity_validator=quantity_issues)
+    def test_numeric_diagnostic_exception_cannot_block_seo_but_explicit_replay_stays_exact(self):
+        with mock.patch('build_portal_extended_locales.quantity_issues', side_effect=ValueError('diagnostic')):
+            self.assertTrue(validate_text('Revenue USD10m.', 'Le revenu USD99m.', 'fr', 'en'))
+            with self.assertRaises(ValueError):
+                validate_text('Revenue USD10m.', 'Revenue USD99m.', 'en', 'en')
+    def test_advisory_numbers_do_not_relax_display_contracts(self):
+        for source, text in (('Revenue USD10m.', ''), ('Revenue USD10m.', 'Texte \ufffd'),
+                             ('Revenue USD10m.', 'Texte __KC_PH_000__'),
+                             ('2026 | USD10m', '2027 USD999m')):
+            with self.subTest(text=text), self.assertRaises(ExpansionError):
+                validate_text(source, text, 'fr', 'en')
     def test_table_column_loss_rejected(self):
         with self.assertRaises(ExpansionError):validate_text('2026 | USD10m','2026 USD10m','en','en')
     def test_target_script_is_required(self):

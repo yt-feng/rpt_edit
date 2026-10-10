@@ -1,7 +1,9 @@
 """Compose approved reading pages after the established locale build.
 
-Only previously approved, byte-identical translations may be replayed against
-current source HTML. Missing units are errors, never new source fallbacks. The
+Previously approved translations are replayed against current source HTML.
+Numeric prose differences are advisory for SEO locales; they do not authorize
+new translation or changes to an already approved page. Missing units are
+errors, never new source fallbacks. The
 complete current candidate is stored privately and checked by the unchanged
 exact-HTML assembler. No inference or deployment occurs in this module.
 """
@@ -125,11 +127,13 @@ def checked_batches(batches: list[dict]) -> list[dict]:
 
 
 def prove_approved_baseline(corpus, locale, work, seed, approved_manifest, *, allow_frozen=False, require_match=True):
-    """Try today's gate first; only authenticated active bytes may use v1.
+    """Try the current SEO policy first; active bytes may also use legacy v1.
 
     Both attempts are isolated and read-only. A validator is selected only when
     every page reproduces the complete approved file inventory with zero cache
     misses. The returned checkpoint contains only these demonstrated units.
+    Numeric warnings alone never reject the current SEO replay. The historical
+    strict policy remains only for reproducing an older approved rendering.
     """
     policies = [('current', None, None)]
     if allow_frozen: policies.append((CONTRACT_ID, approved_quantity_issues, PARSER_SHA256))
