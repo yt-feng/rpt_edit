@@ -185,7 +185,8 @@ def load_sources(source_dir, source_kind, expected_reports, date_folder, *, sour
 
 def generation_contract(args):
     files = ("pdf_to_xhs_batch.py", "wechat_editorial_binding.py", "wechat_article_quality.py",
-             "wechat_title_optimizer.py", "sensitive_content_guard.py", "institution_names.py")
+             "wechat_title_optimizer.py", "sensitive_content_guard.py", "institution_names.py",
+             "article_generation_progress.py", "legacy_article_title_resume.py")
     value = {"files": {name: digest((Path(__file__).parent / name).read_bytes()) for name in files},
         "prompt_sha256": digest(Path(args.wechat_prompt_template).read_bytes()),
         "options": {key: getattr(args, key) for key in
@@ -419,8 +420,10 @@ def validate_articles(output_dir, expected_reports, date_folder, *, source_kind=
 
 def recover_articles(source_dir, source_kind, output_dir, expected_reports, date_folder, args, *,
                      source_run_id=None, source_execution_sha=None, source_handoff_run_id=None,
-                     source_handoff_execution_sha=None):
+                     source_handoff_execution_sha=None, checkpoint_progress=False,
+                     persist_progress=None, delivery_context=None):
     source_dir, output = Path(source_dir), Path(output_dir)
+    require(not checkpoint_progress or callable(persist_progress), "progress_durable_callback_required")
     require(not output.resolve().is_relative_to(source_dir.resolve())
             and not source_dir.resolve().is_relative_to(output.resolve()), "overlapping_source_output")
     metadata, plans = load_sources(source_dir, source_kind, expected_reports, date_folder,
@@ -445,7 +448,7 @@ def recover_articles(source_dir, source_kind, output_dir, expected_reports, date
         return validate_articles(output, expected_reports, date_folder, source_kind=source_kind,
                                  source_receipt_sha256=metadata["source_receipt_sha256"])
     (output / RECEIPT).unlink(missing_ok=True)
-    reports = []
+    reports, failures = [], []
     for ordinal, plan in enumerate(plans, 1):
         directory = output / plan["directory"]
         context = {"policy": POLICY, "generation_contract_sha256": contract}
@@ -458,10 +461,31 @@ def recover_articles(source_dir, source_kind, output_dir, expected_reports, date
                 status = existing
                 print(f"RECOVERED_ARTICLE ordinal={ordinal} reused=true", flush=True)
             else:
+                progress, previous_decision = None, None
+                if checkpoint_progress:
+                    from article_generation_progress import Progress
+                    identity = {key:metadata[key] for key in ("source_run_id","source_execution_sha","source_handoff_run_id",
+                        "source_handoff_execution_sha","source_kind","manifest_sha256","source_receipt_sha256")}
+                    identity.update(directory=plan['directory'],source_sha256=digest(plan['source_bytes']),
+                        provenance_sha256=digest(encoded(plan['provenance'])),generation_contract_sha256=contract)
+                    progress_dir = output.parent/'generation-progress'/plan['directory']
+                    had_progress = (progress_dir/'article_generation_progress.json').is_file()
+                    progress = Progress(progress_dir,identity=identity,persist=persist_progress)
+                    from legacy_article_title_resume import seed
+                    previous_decision = seed(progress,output,directory,plan,delivery_context or {})
+                    if previous_decision is not None:
+                        require(args.model == 'deepseek-flash' and args.deepseek_base_url.rstrip('/') == 'https://api.deepseek.com',
+                            'legacy_title_model_contract_mismatch')
+                    if not had_progress and previous_decision is None:
+                        require(not (directory/'wechat_article.md').exists() and not (directory/'prompt_for_wechat.md').exists(),
+                            'unresolved_legacy_generation')
                 status = _stage_source(plan, directory)
                 status["article_recovery"] = context
+                if checkpoint_progress:
+                    write_json(directory / "status.json", status)
                 producer.generate_wechat_article(directory, plan["original_filename"],
-                    plan["source_bytes"].decode("utf-8"), args, status)
+                    plan["source_bytes"].decode("utf-8"), args, status,
+                    **({"progress":progress,"previous_decision":previous_decision} if checkpoint_progress else {}))
                 write_json(directory / "status.json", status)
                 bound = usable_article(directory)
                 require(bound is not None, "generated_article_unbound")
@@ -471,10 +495,19 @@ def recover_articles(source_dir, source_kind, output_dir, expected_reports, date
                 "source_markdown_sha256": digest(plan["source_bytes"]), "article_sha256": bound.binding["article_sha256"],
                 "editorial_binding": bound.binding})
         except Exception as error:
+            if checkpoint_progress:
+                # Independent reports may finish; the batch cannot be delivered until every report binds.
+                from article_generation_progress import ProgressError
+                category = error.category if isinstance(error,(ArticleRecoveryError,ProgressError)) else "article_generation_failed"
+                failures.append(ArticleRecoveryError(category,ordinal))
+                if persist_progress is not None: persist_progress()
+                continue
             if isinstance(error, ArticleRecoveryError):
                 error.source_ordinal = ordinal
                 raise
             raise ArticleRecoveryError("article_generation_failed", ordinal) from error
+    if failures:
+        raise failures[0]
     receipt = {key: metadata[key] for key in ("source_kind", "date_folder", "expected_reports", "source_run_id",
                "source_execution_sha", "source_handoff_run_id", "source_handoff_execution_sha",
                "source_receipt_sha256", "source_inventory_sha256")}
@@ -502,6 +535,8 @@ def main():
     parser.add_argument("--source-handoff-execution-sha")
     parser.add_argument("--model", default=producer.build_arg_parser().get_default("model"))
     parser.add_argument("--deepseek-base-url", default=producer.build_arg_parser().get_default("deepseek_base_url"))
+    parser.add_argument("--checkpoint-workspace", type=Path,
+                        help="Durably save body/title request progress in the prepared private workspace")
     parser.add_argument("--private-diagnostics", action="store_true",
                         help="Write exception tracebacks to stderr; use only with private log storage")
     options = parser.parse_args()
@@ -509,10 +544,22 @@ def main():
     args.model, args.deepseek_base_url = options.model, options.deepseek_base_url
     args.wechat_prompt_template = str(Path(__file__).resolve().parents[1] / args.wechat_prompt_template)
     try:
+        persist_progress, delivery_context = None, None
+        if options.checkpoint_workspace is not None:
+            workspace = options.checkpoint_workspace.resolve()
+            require(options.output_dir.resolve() == workspace/'checkpoint/articles'
+                    and options.source_dir.resolve() == workspace/'source', 'progress_workspace_mismatch')
+            from recovered_article_delivery import save_generation, state
+            from private_workflow_handoff import build_r2_client, r2_bucket
+            delivery_context = state(workspace)
+            client, bucket = build_r2_client(), r2_bucket()
+            persist_progress = lambda: save_generation(workspace,client,bucket)
         receipt = recover_articles(options.source_dir, options.source_kind, options.output_dir,
             options.expected_reports, options.date_folder, args, source_run_id=options.source_run_id,
             source_execution_sha=options.source_execution_sha, source_handoff_run_id=options.source_handoff_run_id,
-            source_handoff_execution_sha=options.source_handoff_execution_sha)
+            source_handoff_execution_sha=options.source_handoff_execution_sha,
+            checkpoint_progress=options.checkpoint_workspace is not None, persist_progress=persist_progress,
+            delivery_context=delivery_context)
     except Exception as error:
         if options.private_diagnostics:
             traceback.print_exc(file=sys.stderr)

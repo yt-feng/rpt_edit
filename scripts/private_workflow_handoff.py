@@ -185,6 +185,8 @@ def upload_directory(source: Path, key: str, *, client: Any | None = None, bucke
         stored_size = int(head.get("ContentLength") or 0)
         if stored_size != size:
             raise RuntimeError(f"R2 size verification failed for {key}: local={size}, remote={stored_size}")
+        if (head.get("Metadata") or {}).get("sha256") != digest:
+            raise RuntimeError("R2 archive checksum metadata verification failed")
         print(f"Uploaded private handoff: key={key}, files={file_count}, bytes={size}")
 
 

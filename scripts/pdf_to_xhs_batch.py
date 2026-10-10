@@ -785,6 +785,8 @@ def call_deepseek(
     system_content: str | None = None,
 ) -> str:
     api_keys = deepseek_api_keys_from_env()
+    if getattr(args, "checkpoint_single_request", False):
+        api_keys = api_keys[:1]
     if not api_keys:
         raise RuntimeError(f"Missing DEEPSEEK_API_KEY for {label}")
     url = args.deepseek_base_url.rstrip("/") + "/chat/completions"
@@ -806,7 +808,8 @@ def call_deepseek(
         label=label,
         api_keys=api_keys,
         timeout=180,
-        max_attempts=getattr(args, "deepseek_max_attempts", 4),
+        max_attempts=1 if getattr(args, "checkpoint_single_request", False) else getattr(args, "deepseek_max_attempts", 4),
+        allow_model_fallback=not getattr(args, "checkpoint_single_request", False),
         retry_base_seconds=getattr(args, "deepseek_retry_base_seconds", 4),
         retry_max_seconds=getattr(args, "deepseek_retry_max_seconds", 45),
         logger=log,
@@ -845,24 +848,33 @@ def wechat_title_from_filename(
     wechat_article: str,
     institution_name: str,
     args: argparse.Namespace,
+    *, request=None, previous_decision=None,
 ) -> tuple[str, dict[str, Any]]:
+    from article_generation_progress import ProgressError
+    request = request or call_deepseek
     if not getattr(args, "wechat_title_refine", True):
         return decide_filename_anchored_title([], source_filename, institution_name)
     article_excerpt = re.sub(r"[ \t]+", " ", re.sub(r"[#>*`!\\[\\]()]+", " ", wechat_article))
     article_excerpt = re.sub(r"\n{2,}", "\n", article_excerpt).strip()[:2200]
     prompt = build_filename_title_translation_prompt(source_filename, institution_name, article_excerpt)
-    try:
-        raw = call_deepseek(
-            prompt,
-            args,
-            f"WeChat filename title: {source_filename[:40]}",
-            temperature=0.25,
-            system_content="你是中文标题编辑，以原始 PDF 文件名为语义锚点，公开标题必须事实化、无立场、无好坏判断，只输出严格 JSON。",
-        )
-        candidates = extract_title_candidates(raw)
-    except Exception as exc:
-        print(f"Filename-anchored title fine-tuning failed for {source_filename[:80]}: {exc}", flush=True)
-        candidates = []
+    if previous_decision is not None:
+        # Only a separately authenticated retained body supplies this decision.
+        candidates = list(previous_decision.get("raw_candidates", []))
+    else:
+        try:
+            raw = request(
+                prompt,
+                args,
+                f"WeChat filename title: {source_filename[:40]}",
+                temperature=0.25,
+                system_content="你是中文标题编辑，以原始 PDF 文件名为语义锚点，公开标题必须事实化、无立场、无好坏判断，只输出严格 JSON。",
+            )
+            candidates = extract_title_candidates(raw)
+        except ProgressError:
+            raise
+        except Exception as exc:
+            print(f"Filename-anchored title fine-tuning failed for {source_filename[:80]}: {exc}", flush=True)
+            candidates = []
     selected, decision = decide_filename_anchored_title(
         candidates,
         source_filename,
@@ -884,7 +896,7 @@ def wechat_title_from_filename(
         list(dict.fromkeys(repair_reasons)),
     )
     try:
-        repair_raw = call_deepseek(
+        repair_raw = request(
             repair_prompt,
             args,
             f"WeChat title repair: {source_filename[:40]}",
@@ -905,7 +917,28 @@ def wechat_title_from_filename(
             "quality_issues": decision.get("selected_quality_issues", []),
         }
         repaired_decision["repair_candidates"] = repair_candidates
+        if getattr(args, "checkpoint_single_request", False) and repaired_decision.get("needs_model_repair"):
+            for round_number in (2, 3):
+                reasons = list(repaired_decision.get("selected_quality_issues") or [])
+                for rejected in repaired_decision.get("rejected_candidates", [])[:6]:
+                    reasons.extend(rejected.get("reasons") or [])
+                followup = build_filename_title_repair_prompt(source_filename, institution_name, article_excerpt,
+                    [*repair_candidates, *candidates], list(dict.fromkeys(reasons)))
+                followup += f"\n修订轮次 {round_number}。上一轮未通过来源语义约束；请重新提出忠于文件名和正文证据的完整标题，不要复用被拒绝候选。\n"
+                extra_raw = request(followup,args,f"WeChat title repair: {source_filename[:40]}",temperature=0.15,
+                    system_content="你是中文标题纠错编辑，只输出严格 JSON；标题必须完整、自然、事实化、无立场、无好坏判断。")
+                extra = extract_title_candidates(extra_raw)
+                repair_candidates = [*extra, *repair_candidates]
+                repaired, repaired_decision = decide_filename_anchored_title([*repair_candidates,*candidates],
+                    source_filename,institution_name,evidence_text=article_excerpt)
+                repaired_decision.update(repair_attempted=True,repair_candidates=repair_candidates,
+                    repair_rounds=round_number,initial_selection={"title":selected,"reason":decision.get("selection_reason"),
+                    "quality_issues":decision.get("selected_quality_issues",[])})
+                if not repaired_decision.get("needs_model_repair"):
+                    break
         return repaired, repaired_decision
+    except ProgressError:
+        raise
     except Exception as exc:
         decision["repair_attempted"] = True
         decision["repair_error"] = str(exc)
@@ -1071,20 +1104,30 @@ def make_cover(pdf_path: Path, cover_path: Path, title: str, subtitle: str, wate
 
 
 def generate_wechat_article(item_dir: Path, source_filename: str, source_text: str,
-                            args: argparse.Namespace, status: dict[str, Any]) -> dict[str, Any]:
+                            args: argparse.Namespace, status: dict[str, Any], *, progress=None, previous_decision=None) -> dict[str, Any]:
     """Generate from already authenticated text/assets without provider parsing."""
     institution_name = infer_institution_name(source_filename, status.get("source_pdf"), source_text[:2000])
     if institution_name:
         status["institution_name"] = institution_name
     wechat_prompt = build_wechat_prompt(Path(args.wechat_prompt_template), source_text, args, institution_name)
     (item_dir / "prompt_for_wechat.md").write_text(wechat_prompt, encoding="utf-8")
-    wechat_article = safe_generate_text(
-        wechat_prompt,
-        args,
-        "WeChat article",
-        temperature=0.38,
-        system_content=WECHAT_EDITOR_SYSTEM_PROMPT,
-    )
+    if progress is not None:
+        import copy
+        args = copy.copy(args)
+        args.checkpoint_single_request = True
+        def request_text(prompt, options, label, **kwargs):
+            kind = "body" if label == "WeChat article" else "title"
+            identity = {"model": options.model, "base_url": options.deepseek_base_url, **kwargs}
+            return progress.request(kind, prompt, identity,
+                lambda: call_deepseek(prompt, options, label, **kwargs))
+        wechat_article = progress.saved_body()
+        if wechat_article is None:
+            wechat_article = request_text(wechat_prompt,args,"WeChat article",temperature=0.38,
+                system_content=WECHAT_EDITOR_SYSTEM_PROMPT)
+    else:
+        request_text = None
+        wechat_article = safe_generate_text(wechat_prompt,args,"WeChat article",temperature=0.38,
+            system_content=WECHAT_EDITOR_SYSTEM_PROMPT)
     wechat_article, stock_changes = sanitize_wechat_stock_language(wechat_article)
     if stock_changes:
         status["wechat_stock_language_sanitized"] = stock_changes[:40]
@@ -1097,6 +1140,7 @@ def generate_wechat_article(item_dir: Path, source_filename: str, source_text: s
         wechat_article,
         institution_name,
         args,
+        **({"request": request_text, "previous_decision": previous_decision} if progress is not None else {}),
     )
     refined_wechat_title, title_stock_changes = sanitize_wechat_stock_language(
         refined_wechat_title,
