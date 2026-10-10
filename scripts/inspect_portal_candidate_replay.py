@@ -19,8 +19,9 @@ import requests
 from assemble_portal_extended_locales import verified_candidate
 from build_portal_extended_locales import build, validate_text, safe_failure_code
 from portal_extended_locales import ORIGIN, daily_corpus_day, digest, validate_corpus
-from portal_extended_publication import CacheOnly, checked_batches, read_active_batches, prove_approved_baseline
-from portal_extended_r2 import R2Store, R2StoreError
+from portal_extended_publication import (CacheOnly, checked_batches, read_active_ledger,
+    prove_approved_baseline, restore_active_checkpoint, active_checkpoint_sha)
+from portal_extended_r2 import R2Store, R2StoreError, R2NotFound
 from financial_quantity_integrity import quantities
 from portal_approved_quantity_contract import CONTRACT_ID, PARSER_SHA256, bindings, quantity_issues as approved_quantity_issues
 
@@ -214,6 +215,53 @@ def audit_cached_rows(store, batches, corpora, owners, root):
     return results
 
 
+def compare_active_checkpoint(store, ledger, batch, locale, work, latest_result=None):
+    """Prove the same immutable seed used by production without any R2 write."""
+    outcome = {'matches': False, 'checkpoint_sha256': None, 'inference_calls': 0}
+    try:
+        checksum = active_checkpoint_sha(ledger, locale, batch['generation'], batch['candidates'][locale])
+        outcome['checkpoint_sha256'] = checksum
+    except Exception:
+        return {**outcome, 'code': 'approved-checkpoint-receipt-invalid'}
+    replay_work = work/'approved-checkpoint-replay'; replay_work.mkdir()
+    try:
+        restored = restore_active_checkpoint(store, ledger, locale, batch['generation'],
+                                              batch['candidates'][locale], replay_work/'seed.json')
+    except R2NotFound:
+        return {**outcome, 'code': 'approved-checkpoint-missing'}
+    except Exception:
+        return {**outcome, 'code': 'approved-checkpoint-unavailable-or-invalid'}
+    try:
+        corpus = validated_corpus(work/'corpus.json')
+        approved, _ = verified_candidate(work/'approved', corpus)
+        if (isinstance(latest_result, dict) and latest_result.get('checkpoint_sha256') == checksum
+            and (latest_result.get('locale'), latest_result.get('generation'), latest_result.get('candidate'))
+                == (locale, batch['generation'], batch['candidates'][locale])
+            and latest_result.get('baseline_attempts') and (work/'seed.json').is_file()
+            and (work/'seed.json').read_bytes() == (replay_work/'seed.json').read_bytes()):
+            # Both complete blobs were read and verified in this inspection.
+            # The same seed/corpus/approved candidate has already traversed the
+            # exact current/frozen proof; a second identical build adds nothing.
+            return {**outcome, 'matches': latest_result['matches'],
+                'code': 'matched' if latest_result['matches'] else 'approved-bytes-mismatch',
+                'quantity_contract': latest_result['quantity_contract'],
+                'baseline_attempts': latest_result['baseline_attempts'],
+                'approved_pages': latest_result['approved_pages'], 'replayed_pages': latest_result['replayed_pages'],
+                'cache_miss_attempts': latest_result['translation_calls'], 'failure_codes': latest_result['failure_codes'],
+                'binding': restored['binding'], 'reused_verified_latest_replay': True}
+        proof = prove_approved_baseline(corpus, locale, replay_work, replay_work/'seed.json',
+                                       approved, allow_frozen=True, require_match=False)
+    except Exception:
+        return {**outcome, 'code': 'approved-baseline-unavailable-or-invalid'}
+    manifest = proof['manifest']
+    return {**outcome, 'matches': proof['matches'], 'code': 'matched' if proof['matches'] else 'approved-bytes-mismatch',
+        'quantity_contract': proof['quantity_contract'], 'baseline_attempts': proof['attempts'],
+        'approved_pages': len(approved['pages']), 'replayed_pages': len(manifest['pages']),
+        'cache_miss_attempts': manifest['translation_calls_this_run'],
+        'failure_codes': dict(Counter(row['code'] for row in manifest['failures'])),
+        'binding': restored['binding'], 'reused_verified_latest_replay': False}
+
+
 def read_identity():
     with requests.get(ORIGIN+'/.well-known/edge-state', timeout=(10, 30), allow_redirects=False, stream=True) as response:
         response.raise_for_status()
@@ -229,7 +277,8 @@ def inspect(store, target, expected_release, identity):
     if identity.get('release_id') != expected_release:
         raise InspectionError('active-release-changed')
     store = R2Store(ReadOnlyClient(store.client), store.bucket, store.prefix)
-    active = checked_batches(phase('active-ledger-read', read_active_batches, store, identity))
+    active_ledger = phase('active-ledger-read', read_active_ledger, store, identity)
+    active = checked_batches(active_ledger['batches'])
     active_approvals = bindings(active)
     batches = checked_batches(active + ([target] if target is not None else []))
     identity_summary = {'mode': 'active-only' if target is None else 'candidate',
@@ -251,7 +300,8 @@ def inspect(store, target, expected_release, identity):
                 for doc in corpus['documents']: owners[locale, doc['url']] = index
         def report(status, results):
             result = {**identity_summary, 'status': status, 'production_writes': 0,
-                      'inference_calls': 0, 'results': results}
+                      'inference_calls': 0, 'results': results,
+                      'checked_candidates': len(results), 'selected_candidates': selected_candidates}
             try:
                 result['carry_forward_cache_audit'] = audit_cached_rows(store, batches, corpora, owners, root)
             except Exception as error:
@@ -266,15 +316,27 @@ def inspect(store, target, expected_release, identity):
                 result['cache_audit_complete'] = True
             return result
         results = []
+        selected_candidates = sum(any(owners[locale, doc['url']] == index for doc in corpus['documents'])
+            for index, (batch, corpus) in enumerate(zip(batches, corpora, strict=True)) for locale in batch['candidates'])
         for index, (batch, corpus) in enumerate(zip(batches, corpora, strict=True)):
             for locale in batch['candidates']:
                 if not any(owners[locale, d['url']] == index for d in corpus['documents']): continue
-                result = compare(store, batch, locale, root/f'{index}-{locale}',
-                                 frozen_approval=(batch['generation'], locale, batch['candidates'][locale]) in active_approvals)
+                frozen = (batch['generation'], locale, batch['candidates'][locale]) in active_approvals
+                work = root/f'{index}-{locale}'
+                try:
+                    result = compare(store, batch, locale, work, frozen_approval=frozen)
+                except PhaseError:
+                    if not frozen: raise
+                    result = {'locale': locale, 'generation': batch['generation'], 'candidate': batch['candidates'][locale],
+                              'matches': False, 'code': 'latest-comparison-unavailable'}
+                result['publication_matches'] = result['matches']
+                if frozen:
+                    result['approved_checkpoint_replay'] = compare_active_checkpoint(store, active_ledger, batch, locale, work, result)
+                    result['publication_matches'] = result['approved_checkpoint_replay']['matches']
                 result['batch_index'] = index
                 result['target_candidate'] = batch == target and locale in target['candidates']
                 results.append(result)
-                if not result['matches']:
+                if not result['publication_matches']:
                     return report('mismatch', results)
         return report('all-matched', results)
 

@@ -23,7 +23,7 @@ from portal_extended_locales import (
     document_from_html, file_for_url, locale_url, make_corpus, select_locales,
     stable_bytes, validate_corpus,
 )
-from portal_extended_r2 import HEX64, safe_part
+from portal_extended_r2 import HEX64, MAX_CHECKPOINT_BYTES, checkpoint_is_valid, safe_part
 from portal_extended_ui import UI_VERSION, standard_detail, standard_homepage, ui_assets
 from portal_approved_quantity_contract import CONTRACT_ID, PARSER_SHA256, bindings, quantity_issues as approved_quantity_issues
 
@@ -51,22 +51,59 @@ def current_document(root: Path, original: dict) -> dict:
     return current
 
 
-def read_active_batches(store, identity: dict | None) -> list[dict]:
+def read_active_ledger(store, identity: dict | None) -> dict:
     if identity is None:
-        return []
+        return {'batches': []}
     from resume_portal_locale_candidate import read_pinned_manifest
     from publish_static_slot import slot_prefix
     from verify_prepared_static_slot import read_verified_candidate_body
     manifest = read_pinned_manifest(store.client, store.bucket, identity)
     descriptor = manifest['files'].get(LEDGER)
     if descriptor is None:
-        return []
+        return {'batches': []}
     raw = read_verified_candidate_body(store.client, store.bucket,
         slot_prefix(identity['slot']) + LEDGER, descriptor, maximum=1024 * 1024)
     value = json.loads(raw)
     if value.get('schema_version') != 2 or value.get('status') != 'assembled' or not value.get('batches'):
         raise ExpansionError('Active extended release has no verified carry-forward ledger')
-    return value['batches']
+    return value
+
+
+def read_active_batches(store, identity: dict | None) -> list[dict]:
+    return read_active_ledger(store, identity)['batches']
+
+
+def active_checkpoint_sha(ledger, locale, generation, candidate):
+    """Find one seed receipt for the original approval, not its replay output."""
+    rows = ledger.get('replays')
+    if not isinstance(rows, list) or len(rows) > 20000:
+        raise ExpansionError('Active approval checkpoint receipts are absent or unbounded')
+    matches = [row for row in rows if isinstance(row, dict)
+        and (row.get('locale'), row.get('approved_generation'), row.get('approved_candidate'))
+        == (locale, generation, candidate)]
+    if len(matches) != 1:
+        raise ExpansionError('Active approval requires one exact checkpoint receipt')
+    checksum = matches[0].get('checkpoint_sha256')
+    if not isinstance(checksum, str) or HEX64.fullmatch(checksum) is None:
+        raise ExpansionError('Active approved checkpoint checksum is invalid')
+    return checksum
+
+
+def restore_active_checkpoint(store, ledger, locale, generation, candidate, destination):
+    """Restore the seed bound by the authenticated active publication ledger.
+
+    This selects no new approval: the ordinary byte-identical baseline proof
+    still follows. A mutable latest pointer is never authority for old approval.
+    """
+    checksum = active_checkpoint_sha(ledger, locale, generation, candidate)
+    key = store.checkpoint_object_key(locale, generation, checksum)
+    raw = store._get(key, maximum=MAX_CHECKPOINT_BYTES)
+    if digest(raw) != checksum:
+        raise ExpansionError('Active approved checkpoint checksum differs')
+    checkpoint_is_valid(json.loads(raw), locale, generation)
+    destination.write_bytes(raw)
+    return {'present': True, 'sha256': checksum, 'bytes': len(raw), 'object_key': key,
+            'binding': 'authenticated-active-ledger'}
 
 
 def checked_batches(batches: list[dict]) -> list[dict]:
@@ -116,7 +153,8 @@ def prove_approved_baseline(corpus, locale, work, seed, approved_manifest, *, al
 
 def compose(root: Path, store, batches: list[dict], workspace: Path, *, active_identity: dict | None = None) -> dict:
     batches = checked_batches(batches)
-    active = checked_batches(read_active_batches(store, active_identity)) if active_identity is not None else []
+    active_ledger = read_active_ledger(store, active_identity) if active_identity is not None else {'batches': []}
+    active = checked_batches(active_ledger['batches'])
     if batches[:len(active)] != active:
         raise ExpansionError('Authenticated active approval batches must be retained exactly')
     active_approvals = bindings(active)
@@ -151,7 +189,8 @@ def compose(root: Path, store, batches: list[dict], workspace: Path, *, active_i
             approved_manifest, _approved_files = verified_candidate(original_dir, corpus)
             frozen = (row['generation'], locale, candidate_id) in active_approvals
             seed = work/'seed.json'
-            restored = store.restore_checkpoint(locale, row['generation'], seed)
+            restored = (restore_active_checkpoint(store, active_ledger, locale, row['generation'], candidate_id, seed)
+                        if frozen else store.restore_checkpoint(locale, row['generation'], seed))
             if not restored.get('present'):
                 raise ExpansionError('Approved checkpoint is absent')
             # Prove the checkpoint reproduces the actual approved HTML, not
@@ -199,6 +238,7 @@ def compose(root: Path, store, batches: list[dict], workspace: Path, *, active_i
                 'approved_candidate': candidate_id, 'source_generation': generation,
                 'candidate_id': saved['candidate_id'], 'quantity_contract': proof['quantity_contract'],
                 'quantity_parser_sha256': proof['quantity_parser_sha256'], 'checkpoint_sha256': restored['sha256'],
+                'checkpoint_binding': restored.get('binding', 'incoming-exact-byte-replay'),
                 'pages': len(current_docs), 'translation_calls': 0})
     planned, clusters = {}, {}
     locales = tuple(locale for locale in select_locales('all-supported') if any(k[0] == locale for k in pages))

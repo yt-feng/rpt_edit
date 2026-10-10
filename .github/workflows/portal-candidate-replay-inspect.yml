@@ -19,11 +19,16 @@ on:
       active_release:
         required: true
         type: string
+      expected_head:
+        description: Exact tested commit SHA; required to inspect a candidate branch before merge
+        required: false
+        type: string
+        default: ''
 permissions:
   contents: read
 jobs:
   inspect:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' || (inputs.expected_head != '' && inputs.expected_head == github.sha)
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -45,8 +50,15 @@ jobs:
           CANDIDATE: ${{ inputs.candidate }}
           ACTIVE_RELEASE: ${{ inputs.active_release }}
           ACTIVE_ONLY: ${{ inputs.active_only }}
+          EXPECTED_HEAD: ${{ inputs.expected_head }}
         run: |
           set -euo pipefail
+          if [ "$GITHUB_REF" != 'refs/heads/main' ] || [ -n "$EXPECTED_HEAD" ]; then
+            if ! [[ "$EXPECTED_HEAD" =~ ^[a-f0-9]{40}$ ]] || [ "$EXPECTED_HEAD" != "$GITHUB_SHA" ]; then
+              echo 'Exact tested inspection commit is required' >&2
+              exit 1
+            fi
+          fi
           mode=(--active-release "$ACTIVE_RELEASE")
           if [ "$ACTIVE_ONLY" = 'true' ]; then mode+=(--active-only); fi
           python3 -B scripts/inspect_portal_candidate_replay.py \

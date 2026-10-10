@@ -408,3 +408,13 @@ URL 节点使用 XHTML alternate 标注全部已完成的 hreflang 对应页。`
 `portal-candidate-replay-inspect.yml` 的 `active_only=true` 模式只需精确 `active_release`；`generation/locale/candidate` 必须为空。它先核对公开 edge-state 的 release ID，再用同一 slot/release/tree 身份校验 R2 静态 manifest 和已批准 assembly ledger，按实际发布相同的 page-owner 顺序检查活动候选。仅允许 R2 HEAD/GET，不执行对象写入、模型推理、常规 ko/ja/ar 构建或发布，不占用翻译全局锁。
 
 摘要保留 locale、source/candidate/checkpoint SHA、current 与冻结数量解析器的重放次数/完整页数/缓存 miss/固定失败类别，以及页面字节和可见文本散列差异；不输出原文、译文、源 URL 或异常正文。`all-matched` 仅说明已批准候选在当前代码下可逐字节重放；`mismatch` 用于区分检查点变化、校验拒绝与渲染差异；空活动集合为 `no-active-batches`。首个 mismatch 取得后，后续可选缓存审计即使超出原 128 项上限或读取失败，也保留该证据，并报告 `cache_audit_complete=false` 与固定类别；不得把失败审计当作通过。诊断不放宽 `prove_approved_baseline`、当前 source content 绑定、原 HTML SHA、批准 identity 或发布门禁。若 release 已改变则停止，不自动追随另一版本。原 incoming-candidate 模式仍要求完整三项输入，不能与 active-only 混用。
+
+### 活动候选固定检查点
+
+已认证活动 ledger 的 `batches` 和 `replays` 必须来自同一静态 manifest 校验过的 JSON 字节。发布对仍拥有页面的活动 `(approved_generation, locale, approved_candidate)` 查找唯一 `replays.checkpoint_sha256`，从原 generation 的 SHA 定址对象读取当时的种子，不再以可变 `latest` 指针重解释旧批准。对象完整字节 SHA、检查点 locale/model/version/source identity 均需验证；随后仍用原 `prove_approved_baseline` 要求完整已批准 HTML 文件清单逐字节相等、零 cache miss，并只将实际消费的单位送入当前 source 重建。
+
+缺记录、同 tuple 重复记录、非法 SHA、缺对象、损坏对象或检查点身份不符均停止，不退回 latest。完全被后续批次覆盖、实际不重放的历史 tuple 不要求额外恢复资料；部分覆盖仍需原批准种子。incoming 新候选继续使用当前校验和逐字节证明，输入上自带的 checkpoint/quantity 字段不能获得活动批准资格。新的 assembly `replays` 继续保留原批准 generation/candidate 和原种子 SHA，并记录 `checkpoint_binding`，不误用当前重建输出的 SHA。来源内容变化、新旧 locale 保留、中文历史、静态版本 identity 和切换审核均沿用原门禁。本地检查点漂移回归通过不等同于任何具体线上失败已定位或恢复，须以精确活动版本诊断和后续发布验收确认。
+
+只读诊断同时保留 latest 的 `checkpoint_sha256/matches/baseline_attempts` 对照，并对每个仍拥有页面的活动 tuple 增加 `approved_checkpoint_replay`，含认证 pin SHA、current/frozen exact-byte 尝试和固定类别。`publication_matches` 使用生产实际要求的 pin 证明；latest 缺失或漂移不能代替也不能掩盖这份证明。总体 `all-matched` 要求 `checked_candidates == selected_candidates` 且全部 active pin 通过；首个失败返回 `mismatch`，不是全批通过。后续可选 latest cache audit 的失败仍单独报告，所有路径仅 HEAD/GET，不调用模型，不写生产对象。
+
+pin 和本次 latest 读取的完整字节相同、两边散列与检查点身份均已独立验证、原批准 tuple 相同时，可复用刚完成的同一 baseline proof，报告 `reused_verified_latest_replay=true`，不重复 build。不同字节必须单独证明；workflow 的原 15 分钟上限不扩大。合并前可在本仓库候选 branch 运行此只读诊断，但必须显式提供与实际运行提交完全一致的 40 位 `expected_head`，仍固定 `active_release`；workflow job 条件及执行前 shell 均检查 head。它不启用 branch 上的发布或模型工作流。

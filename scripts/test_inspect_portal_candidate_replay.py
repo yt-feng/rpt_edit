@@ -70,7 +70,7 @@ class InspectorTests(unittest.TestCase):
 
     def test_active_only_uses_only_pinned_active_batches_and_stays_read_only(self):
         before = {key: dict(value) for key, value in self.store.client.objects.items()}
-        with mock.patch.object(inspector, 'read_active_batches', return_value=[self.batch]):
+        with mock.patch.object(inspector, 'read_active_ledger', return_value=self.fixture.active_ledger([self.batch])):
             result = inspector.inspect(self.store, None, 'a'*32, {'release_id': 'a'*32})
         self.assertEqual(result['status'], 'all-matched')
         self.assertEqual(result['mode'], 'active-only')
@@ -80,11 +80,12 @@ class InspectorTests(unittest.TestCase):
         self.assertEqual(before, self.store.client.objects)
         self.assertEqual(result['inference_calls'], 0)
         self.assertEqual(result['production_writes'], 0)
+        self.assertTrue(result['results'][0]['approved_checkpoint_replay']['reused_verified_latest_replay'])
         for private in ('Texte traduit', fixtures.URL, 'Source based'):
             self.assertNotIn(private, json.dumps(result))
 
     def test_empty_active_only_is_explicitly_not_a_replay_acceptance(self):
-        with mock.patch.object(inspector, 'read_active_batches', return_value=[]), \
+        with mock.patch.object(inspector, 'read_active_ledger', return_value={'batches':[]}), \
              mock.patch.object(inspector, 'compare') as compare:
             result = inspector.inspect(self.store, None, 'a'*32, {'release_id': 'a'*32})
         self.assertEqual(result['status'], 'no-active-batches')
@@ -113,20 +114,28 @@ class InspectorTests(unittest.TestCase):
             self.assertNotIn('source', attempt)
         self.assertTrue(result['baseline_attempts'][-1]['matches'])
 
-    def test_active_only_mismatch_keeps_current_and_frozen_evidence(self):
+    def test_active_only_latest_mismatch_is_compared_with_exact_approved_seed(self):
         self.mutate_checkpoint('Autre traduction valide et privée.')
-        with mock.patch.object(inspector, 'read_active_batches', return_value=[self.batch]):
+        with mock.patch.object(inspector, 'read_active_ledger', return_value=self.fixture.active_ledger([self.batch])):
             result = inspector.inspect(self.store, None, 'a'*32, {'release_id': 'a'*32})
-        self.assertEqual(result['status'], 'mismatch')
+        self.assertEqual(result['status'], 'all-matched')
         self.assertEqual(len(result['results'][0]['baseline_attempts']), 2)
+        self.assertFalse(result['results'][0]['matches'])
+        self.assertTrue(result['results'][0]['publication_matches'])
+        pin = result['results'][0]['approved_checkpoint_replay']
+        self.assertTrue(pin['matches']); self.assertEqual(pin['code'], 'matched')
+        self.assertEqual(pin['cache_miss_attempts'], 0)
+        self.assertFalse(pin['reused_verified_latest_replay'])
+        self.assertNotEqual(pin['checkpoint_sha256'], result['results'][0]['checkpoint_sha256'])
         self.assertFalse(result['results'][0]['target_candidate'])
         self.assertNotIn('Autre traduction', json.dumps(result))
 
     def test_active_only_preserves_first_mismatch_if_later_audit_fails(self):
         self.mutate_checkpoint('Autre traduction valide et privée.')
+        ledger = self.ledger_using_latest()
         for index, error in enumerate((inspector.InspectionError('too-many-cache-audits'),
                                        RuntimeError('private https://secret/?token=hidden'))):
-            with self.subTest(index=index), mock.patch.object(inspector, 'read_active_batches', return_value=[self.batch]), \
+            with self.subTest(index=index), mock.patch.object(inspector, 'read_active_ledger', return_value=ledger), \
                  mock.patch.object(inspector, 'audit_cached_rows', side_effect=error):
                 result = inspector.inspect(self.store, None, 'a'*32, {'release_id': 'a'*32})
             self.assertEqual(result['status'], 'mismatch')
@@ -144,6 +153,12 @@ class InspectorTests(unittest.TestCase):
         next(iter(value['rows'].values()))['text'] = text
         seed.write_text(json.dumps(value))
         self.store.put_checkpoint('fr', self.batch['generation'], seed)
+
+    def ledger_using_latest(self):
+        ledger = self.fixture.active_ledger([self.batch])
+        restored = self.store.restore_checkpoint('fr', self.batch['generation'], self.base/'latest-receipt.json')
+        ledger['replays'][0]['checkpoint_sha256'] = restored['sha256']
+        return ledger
 
     def test_latest_checkpoint_drift_is_detected_with_private_text_omitted(self):
         self.mutate_checkpoint('Autre traduction valide et privée.')
@@ -179,7 +194,7 @@ class InspectorTests(unittest.TestCase):
         self.assertEqual(result['failure_codes'], {'checkpoint-absent': 1})
 
     def test_changed_active_identity_stops_before_private_reads(self):
-        with mock.patch.object(inspector, 'read_active_batches') as reader:
+        with mock.patch.object(inspector, 'read_active_ledger') as reader:
             with self.assertRaisesRegex(inspector.InspectionError, 'active-release-changed'):
                 inspector.inspect(self.store, self.batch, 'a'*32, {'release_id': 'b'*32})
             reader.assert_not_called()
@@ -187,7 +202,7 @@ class InspectorTests(unittest.TestCase):
     def test_first_carry_forward_mismatch_precedes_new_target(self):
         target = self.fixture.candidate('pt')
         self.mutate_checkpoint('Autre traduction valide.')
-        with mock.patch.object(inspector, 'read_active_batches', return_value=[self.batch]):
+        with mock.patch.object(inspector, 'read_active_ledger', return_value=self.ledger_using_latest()):
             result = inspector.inspect(self.store, target, 'a'*32, {'release_id': 'a'*32})
         self.assertEqual(result['status'], 'mismatch')
         self.assertEqual(len(result['results']), 1)
@@ -196,9 +211,85 @@ class InspectorTests(unittest.TestCase):
         self.assertEqual(result['production_writes'], 0)
         self.assertEqual(result['inference_calls'], 0)
 
+    def test_all_owned_active_tuple_pins_are_verified_before_all_matched(self):
+        other = self.fixture.candidate('pt')
+        ledger = self.fixture.active_ledger([self.batch, other])
+        self.mutate_checkpoint('Autre traduction valide et privée.')
+        before = {key: dict(value) for key, value in self.store.client.objects.items()}
+        with mock.patch.object(inspector, 'read_active_ledger', return_value=ledger), \
+             mock.patch('offline_translation.OfflineTranslator', side_effect=AssertionError('No inference adapter')):
+            result = inspector.inspect(self.store, None, 'a'*32, {'release_id':'a'*32})
+        self.assertEqual(result['status'], 'all-matched')
+        self.assertEqual(result['checked_candidates'], result['selected_candidates'])
+        self.assertEqual(result['checked_candidates'], 2)
+        self.assertTrue(all(row['approved_checkpoint_replay']['matches'] for row in result['results']))
+        self.assertEqual(before, self.store.client.objects)
+
+    def test_same_exact_seed_reuses_baseline_only_after_reading_pinned_object(self):
+        ledger=self.fixture.active_ledger([self.batch]); checksum=ledger['replays'][0]['checkpoint_sha256']
+        key=self.store.checkpoint_object_key('fr',self.batch['generation'],checksum)
+        reads=[]; original=self.store.client.get_object
+        def read(**kwargs):
+            reads.append(kwargs['Key']); return original(**kwargs)
+        with mock.patch.object(inspector,'read_active_ledger',return_value=ledger), \
+             mock.patch.object(self.store.client,'get_object',side_effect=read), \
+             mock.patch.object(inspector,'prove_approved_baseline',wraps=inspector.prove_approved_baseline) as proof:
+            result=inspector.inspect(self.store,None,'a'*32,{'release_id':'a'*32})
+        self.assertEqual(proof.call_count,1)
+        self.assertGreaterEqual(reads.count(key),2)
+        self.assertTrue(result['results'][0]['approved_checkpoint_replay']['reused_verified_latest_replay'])
+
+    def test_same_pin_digest_does_not_reuse_when_second_read_is_corrupt(self):
+        ledger=self.fixture.active_ledger([self.batch]); checksum=ledger['replays'][0]['checkpoint_sha256']
+        key=self.store.checkpoint_object_key('fr',self.batch['generation'],checksum)
+        work=self.base/'latest-first'; latest=inspector.compare(self.store,self.batch,'fr',work,frozen_approval=True)
+        self.store._put(key,b'private corrupted object',metadata={'kind':'test'})
+        with mock.patch.object(inspector,'prove_approved_baseline') as proof:
+            result=inspector.compare_active_checkpoint(self.store,ledger,self.batch,'fr',work,latest)
+        self.assertFalse(result['matches']); proof.assert_not_called()
+        self.assertEqual(result['code'],'approved-checkpoint-unavailable-or-invalid')
+        self.assertNotIn('private corrupted',json.dumps(result))
+
+    def test_missing_or_corrupt_latest_does_not_hide_valid_active_pin_evidence(self):
+        key = self.store.checkpoint_pointer_key('fr', self.batch['generation'])
+        original = self.store.client.objects.pop(key)
+        ledger = self.fixture.active_ledger([self.batch])
+        for state in ('missing', 'corrupt'):
+            if state == 'corrupt':
+                self.store._put(key,b'invalid private pointer',metadata={'kind':'test'})
+            with self.subTest(state=state), mock.patch.object(inspector, 'read_active_ledger', return_value=ledger):
+                result = inspector.inspect(self.store, None, 'a'*32, {'release_id':'a'*32})
+            self.assertEqual(result['status'],'all-matched')
+            self.assertFalse(result['results'][0]['matches'])
+            self.assertTrue(result['results'][0]['approved_checkpoint_replay']['matches'])
+            self.assertEqual(result['cache_audit_complete'], state == 'missing')
+            self.assertNotIn('private pointer',json.dumps(result))
+        self.store.client.objects[key] = original
+
+    def test_missing_or_ambiguous_active_pin_is_not_excused_by_matching_latest(self):
+        original = self.fixture.active_ledger([self.batch])
+        for rows in ([], original['replays']*2):
+            ledger = {**original,'replays':rows}
+            with self.subTest(rows=len(rows)), mock.patch.object(inspector, 'read_active_ledger',return_value=ledger):
+                result = inspector.inspect(self.store,None,'a'*32,{'release_id':'a'*32})
+            self.assertEqual(result['status'],'mismatch')
+            self.assertTrue(result['results'][0]['matches'])
+            self.assertFalse(result['results'][0]['publication_matches'])
+            self.assertEqual(result['results'][0]['approved_checkpoint_replay']['code'],'approved-checkpoint-receipt-invalid')
+
+    def test_missing_active_blob_reports_pin_hash_and_keeps_latest_comparison(self):
+        ledger = self.fixture.active_ledger([self.batch]); ledger['replays'][0]['checkpoint_sha256']='f'*64
+        with mock.patch.object(inspector,'read_active_ledger',return_value=ledger):
+            result=inspector.inspect(self.store,None,'a'*32,{'release_id':'a'*32})
+        pin=result['results'][0]['approved_checkpoint_replay']
+        self.assertEqual(result['status'],'mismatch')
+        self.assertEqual(pin['checkpoint_sha256'],'f'*64)
+        self.assertEqual(pin['code'],'approved-checkpoint-missing')
+        self.assertTrue(result['results'][0]['matches'])
+
     def test_superseded_candidate_is_skipped_like_publication_owner_order(self):
         target = {'generation': self.batch['generation'], 'candidates': {'fr': 'c'*64}}
-        with mock.patch.object(inspector, 'read_active_batches', return_value=[self.batch]), \
+        with mock.patch.object(inspector, 'read_active_ledger', return_value=self.fixture.active_ledger([self.batch])), \
              mock.patch.object(inspector, 'compare', return_value={'matches': True}) as compare:
             result = inspector.inspect(self.store, target, 'a'*32, {'release_id': 'a'*32})
         self.assertEqual(result['status'], 'all-matched')
@@ -210,7 +301,7 @@ class InspectorTests(unittest.TestCase):
         target = self.fixture.candidate('pt')
         self.mutate_checkpoint('Valeur privée 99999%.')
         before = {key: dict(value) for key, value in self.store.client.objects.items()}
-        with mock.patch.object(inspector, 'read_active_batches', return_value=[self.batch]):
+        with mock.patch.object(inspector, 'read_active_ledger', return_value=self.fixture.active_ledger([self.batch])):
             result = inspector.inspect(self.store, target, 'a'*32, {'release_id': 'a'*32})
         audit = result['carry_forward_cache_audit']
         self.assertEqual([row['locale'] for row in audit], ['fr', 'pt'])
@@ -222,14 +313,14 @@ class InspectorTests(unittest.TestCase):
     def test_checkpoint_audit_count_is_bounded(self):
         target = self.fixture.candidate('pt')
         self.mutate_checkpoint('Autre traduction valide.')
-        with mock.patch.object(inspector, 'read_active_batches', return_value=[self.batch]), \
+        with mock.patch.object(inspector, 'read_active_ledger', return_value=self.fixture.active_ledger([self.batch])), \
              mock.patch.object(inspector, 'MAX_CACHE_AUDITS', 1):
             with self.assertRaisesRegex(inspector.InspectionError, 'too-many-cache-audits'):
                 inspector.inspect(self.store, target, 'a'*32, {'release_id': 'a'*32})
 
     def test_batch_bound_precedes_corpus_restoration(self):
         rows = [{'generation': f'{i:064x}', 'candidates': {'fr': 'c'*64}} for i in range(37)]
-        with mock.patch.object(inspector, 'read_active_batches', return_value=rows), \
+        with mock.patch.object(inspector, 'read_active_ledger', return_value={'batches':rows}), \
              mock.patch.object(self.store, 'restore_source') as restore:
             with self.assertRaisesRegex(inspector.InspectionError, 'too-many-batches'):
                 inspector.inspect(self.store, self.batch, 'a'*32, {'release_id': 'a'*32})
@@ -295,6 +386,7 @@ class InspectorTests(unittest.TestCase):
             candidate = '' if active == 'true' else '$(touch '+str(self.base/'unexpected')+')'
             env = dict(os.environ, PATH=str(binary)+os.pathsep+os.environ.get('PATH',''),
                        ARGUMENT_FILE=str(output), ACTIVE_ONLY=active, ACTIVE_RELEASE='a'*32,
+                       EXPECTED_HEAD='', GITHUB_REF='refs/heads/main', GITHUB_SHA='b'*40,
                        GENERATION='' if active == 'true' else 'b'*64,
                        LOCALE='' if active == 'true' else 'fr', CANDIDATE=candidate)
             subprocess.run(['bash', '-c', shell], env=env, check=True, capture_output=True)
@@ -303,6 +395,14 @@ class InspectorTests(unittest.TestCase):
             self.assertEqual(args[args.index('--candidate')+1], candidate)
             self.assertEqual(args[args.index('--active-release')+1], 'a'*32)
             self.assertFalse((self.base/'unexpected').exists())
+        for expected, valid in (('b'*40, True), ('a'*40, False), ('', False), ('invalid', False)):
+            output=self.base/'branch-arguments.json'
+            if output.exists(): output.unlink()
+            env.update(ARGUMENT_FILE=str(output),EXPECTED_HEAD=expected,GITHUB_REF='refs/heads/codex/test',
+                       ACTIVE_ONLY='true',GENERATION='',LOCALE='',CANDIDATE='')
+            result=subprocess.run(['bash','-c',shell],env=env,capture_output=True)
+            self.assertEqual(result.returncode == 0, valid)
+            self.assertEqual(output.exists(), valid)
 
     def test_runtime_exception_body_never_leaks(self):
         args = ['inspect', '--generation', 'a'*64, '--locale', 'fr', '--candidate', 'b'*64, '--active-release', 'a'*32]

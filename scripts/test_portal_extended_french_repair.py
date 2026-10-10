@@ -343,7 +343,7 @@ class IntegrationTests(unittest.TestCase):
             path=fixture.root/file_for_url(doc['url']); path.parent.mkdir(parents=True,exist_ok=True)
             path.write_bytes(raw_page(doc['url'],body=BODY))
         work=self.root/'publication'; work.mkdir()
-        with patch('portal_extended_publication.read_active_batches',return_value=[old]):
+        with patch('portal_extended_publication.read_active_ledger',return_value={'batches':[old]}):
             assembled=compose(fixture.root,self.store,[old,new],work,active_identity={'slot':'a'})
         self.assertEqual(assembled['batches'],[old,new])
         self.assertEqual(len(assembled['replays']),1)
