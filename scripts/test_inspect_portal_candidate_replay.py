@@ -4,8 +4,12 @@ import io
 import gzip
 from urllib3.response import HTTPResponse
 import json
+import os
 from pathlib import Path
+import subprocess
+import sys
 import tempfile
+import textwrap
 import unittest
 from unittest import mock
 
@@ -63,6 +67,75 @@ class InspectorTests(unittest.TestCase):
         self.assertEqual(result['changed_pages'], [])
         self.assertEqual(result['rejected_rows_total'], 0)
         self.assertEqual(before, self.store.client.objects)
+
+    def test_active_only_uses_only_pinned_active_batches_and_stays_read_only(self):
+        before = {key: dict(value) for key, value in self.store.client.objects.items()}
+        with mock.patch.object(inspector, 'read_active_batches', return_value=[self.batch]):
+            result = inspector.inspect(self.store, None, 'a'*32, {'release_id': 'a'*32})
+        self.assertEqual(result['status'], 'all-matched')
+        self.assertEqual(result['mode'], 'active-only')
+        self.assertEqual(result['active_release'], 'a'*32)
+        self.assertEqual(len(result['results']), 1)
+        self.assertFalse(result['results'][0]['target_candidate'])
+        self.assertEqual(before, self.store.client.objects)
+        self.assertEqual(result['inference_calls'], 0)
+        self.assertEqual(result['production_writes'], 0)
+        for private in ('Texte traduit', fixtures.URL, 'Source based'):
+            self.assertNotIn(private, json.dumps(result))
+
+    def test_empty_active_only_is_explicitly_not_a_replay_acceptance(self):
+        with mock.patch.object(inspector, 'read_active_batches', return_value=[]), \
+             mock.patch.object(inspector, 'compare') as compare:
+            result = inspector.inspect(self.store, None, 'a'*32, {'release_id': 'a'*32})
+        self.assertEqual(result['status'], 'no-active-batches')
+        self.assertEqual(result['results'], [])
+        compare.assert_not_called()
+
+    def test_read_only_client_forbids_mutating_operations_before_call(self):
+        underlying = mock.Mock()
+        client = inspector.ReadOnlyClient(underlying)
+        for name in ('put_object', 'delete_object', 'copy_object', 'list_objects_v2'):
+            with self.subTest(name=name), self.assertRaisesRegex(inspector.InspectionError, 'storage-operation-forbidden'):
+                getattr(client, name)
+        self.assertEqual(underlying.mock_calls, [])
+        client.head_object(Key='safe'); client.get_object(Key='safe')
+        self.assertEqual(len(underlying.mock_calls), 2)
+
+    def test_every_baseline_attempt_reports_only_bounded_replay_counters(self):
+        batch = self.fixture.legacy_bn_candidate()
+        result = inspector.compare(self.store, batch, 'bn', self.base/'attempts', frozen_approval=True)
+        self.assertEqual(len(result['baseline_attempts']), 2)
+        for attempt in result['baseline_attempts']:
+            self.assertEqual(attempt['approved_pages'], 1)
+            self.assertIn('replayed_pages', attempt)
+            self.assertIn('cache_hits', attempt)
+            self.assertIn('failure_codes', attempt)
+            self.assertNotIn('source', attempt)
+        self.assertTrue(result['baseline_attempts'][-1]['matches'])
+
+    def test_active_only_mismatch_keeps_current_and_frozen_evidence(self):
+        self.mutate_checkpoint('Autre traduction valide et privée.')
+        with mock.patch.object(inspector, 'read_active_batches', return_value=[self.batch]):
+            result = inspector.inspect(self.store, None, 'a'*32, {'release_id': 'a'*32})
+        self.assertEqual(result['status'], 'mismatch')
+        self.assertEqual(len(result['results'][0]['baseline_attempts']), 2)
+        self.assertFalse(result['results'][0]['target_candidate'])
+        self.assertNotIn('Autre traduction', json.dumps(result))
+
+    def test_active_only_preserves_first_mismatch_if_later_audit_fails(self):
+        self.mutate_checkpoint('Autre traduction valide et privée.')
+        for index, error in enumerate((inspector.InspectionError('too-many-cache-audits'),
+                                       RuntimeError('private https://secret/?token=hidden'))):
+            with self.subTest(index=index), mock.patch.object(inspector, 'read_active_batches', return_value=[self.batch]), \
+                 mock.patch.object(inspector, 'audit_cached_rows', side_effect=error):
+                result = inspector.inspect(self.store, None, 'a'*32, {'release_id': 'a'*32})
+            self.assertEqual(result['status'], 'mismatch')
+            self.assertEqual(len(result['results']), 1)
+            self.assertFalse(result['cache_audit_complete'])
+            self.assertEqual(result['carry_forward_cache_audit'], [])
+            self.assertEqual(result['cache_audit_code'], 'cache-audit-bound' if index == 0 else 'cache-audit-unavailable')
+            for private in ('Autre traduction', 'private', 'secret', 'hidden'):
+                self.assertNotIn(private, json.dumps(result))
 
     def mutate_checkpoint(self, text):
         seed = self.base/'mutated.json'
@@ -177,6 +250,59 @@ class InspectorTests(unittest.TestCase):
         reader.assert_not_called(); storage.assert_not_called()
         self.assertEqual(json.loads(output.getvalue())['status'], 'failed')
         self.assertNotIn('../bad', output.getvalue())
+
+    def test_cli_modes_are_exclusive_and_complete_before_any_external_read(self):
+        cases = [[], ['--generation', 'b'*64],
+                 ['--active-only', '--locale', 'fr'],
+                 ['--active-only', '--generation', 'b'*64, '--locale', 'fr', '--candidate', 'c'*64]]
+        for case in cases:
+            with self.subTest(case=case), mock.patch('sys.argv', ['inspect', '--active-release', 'a'*32, *case]), \
+                 mock.patch.object(inspector, 'read_identity') as reader, \
+                 mock.patch.object(inspector.R2Store, 'from_env') as storage, contextlib.redirect_stdout(io.StringIO()) as output:
+                self.assertEqual(inspector.main(), 1)
+            reader.assert_not_called(); storage.assert_not_called()
+            self.assertEqual(json.loads(output.getvalue())['code'], 'invalid-inspection-mode')
+
+    def test_active_only_cli_checks_exact_release_before_storage(self):
+        args = ['inspect', '--active-only', '--active-release', 'a'*32]
+        with mock.patch('sys.argv', args), \
+             mock.patch.object(inspector, 'read_identity', return_value={'release_id': 'b'*32}), \
+             mock.patch.object(inspector.R2Store, 'from_env') as storage, contextlib.redirect_stdout(io.StringIO()) as output:
+            self.assertEqual(inspector.main(), 1)
+        storage.assert_not_called()
+        self.assertEqual(json.loads(output.getvalue())['code'], 'active-release-changed')
+
+    def test_active_only_cli_passes_no_synthetic_candidate(self):
+        args = ['inspect', '--active-only', '--active-release', 'a'*32]
+        identity = {'release_id': 'a'*32}
+        with mock.patch('sys.argv', args), mock.patch.object(inspector, 'read_identity', return_value=identity), \
+             mock.patch.object(inspector.R2Store, 'from_env', return_value=self.store), \
+             mock.patch.object(inspector, 'inspect', return_value={'status':'all-matched'}) as inspect, \
+             contextlib.redirect_stdout(io.StringIO()):
+            self.assertEqual(inspector.main(), 0)
+        inspect.assert_called_once_with(self.store, None, 'a'*32, identity)
+
+    def test_actual_workflow_shell_forwards_modes_without_evaluating_inputs(self):
+        workflow = Path(__file__).resolve().parent.parent/'.github/workflows/portal-candidate-replay-inspect.yml'
+        shell = textwrap.dedent(workflow.read_text().rsplit('        run: |\n', 1)[1])
+        binary = self.base/'bin'; binary.mkdir()
+        fake = binary/'python3'
+        fake.write_text('#!'+sys.executable+'\nimport json,os,sys\n'
+                        'open(os.environ["ARGUMENT_FILE"],"w").write(json.dumps(sys.argv[1:]))\n')
+        fake.chmod(0o755)
+        for active in ('true', 'false'):
+            output = self.base/f'arguments-{active}.json'
+            candidate = '' if active == 'true' else '$(touch '+str(self.base/'unexpected')+')'
+            env = dict(os.environ, PATH=str(binary)+os.pathsep+os.environ.get('PATH',''),
+                       ARGUMENT_FILE=str(output), ACTIVE_ONLY=active, ACTIVE_RELEASE='a'*32,
+                       GENERATION='' if active == 'true' else 'b'*64,
+                       LOCALE='' if active == 'true' else 'fr', CANDIDATE=candidate)
+            subprocess.run(['bash', '-c', shell], env=env, check=True, capture_output=True)
+            args = json.loads(output.read_text())
+            self.assertEqual('--active-only' in args, active == 'true')
+            self.assertEqual(args[args.index('--candidate')+1], candidate)
+            self.assertEqual(args[args.index('--active-release')+1], 'a'*32)
+            self.assertFalse((self.base/'unexpected').exists())
 
     def test_runtime_exception_body_never_leaks(self):
         args = ['inspect', '--generation', 'a'*64, '--locale', 'fr', '--candidate', 'b'*64, '--active-release', 'a'*32]

@@ -2,14 +2,19 @@ name: Inspect approved candidate replay
 on:
   workflow_dispatch:
     inputs:
+      active_only:
+        description: Inspect only the exact active approved batches; leave candidate inputs empty
+        required: false
+        type: boolean
+        default: false
       generation:
-        required: true
+        required: false
         type: string
       locale:
-        required: true
+        required: false
         type: string
       candidate:
-        required: true
+        required: false
         type: string
       active_release:
         required: true
@@ -39,7 +44,11 @@ jobs:
           LOCALE: ${{ inputs.locale }}
           CANDIDATE: ${{ inputs.candidate }}
           ACTIVE_RELEASE: ${{ inputs.active_release }}
+          ACTIVE_ONLY: ${{ inputs.active_only }}
         run: |
+          set -euo pipefail
+          mode=(--active-release "$ACTIVE_RELEASE")
+          if [ "$ACTIVE_ONLY" = 'true' ]; then mode+=(--active-only); fi
           python3 -B scripts/inspect_portal_candidate_replay.py \
             --generation "$GENERATION" --locale "$LOCALE" \
-            --candidate "$CANDIDATE" --active-release "$ACTIVE_RELEASE"
+            --candidate "$CANDIDATE" "${mode[@]}"
