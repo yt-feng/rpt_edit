@@ -390,7 +390,9 @@ def acknowledge_published(store, locales, active):
         from portal_extended_quality import record_quality
         for generation, row in rows.items():
             if row['status'] == 'complete' and (locale, generation, row['snapshot']['candidate_id']) in published:
-                record_quality(store, locale, generation, row['snapshot']['candidate_id'])
+                quality = record_quality(store, locale, generation, row['snapshot']['candidate_id'])
+                from portal_extended_quality_recovery import save_ack_anchor
+                save_ack_anchor(store, locale, generation, row, quality)
         keep = {generation: row for generation, row in rows.items() if not (
             row['status'] == 'complete' and (locale, generation, row['snapshot']['candidate_id']) in published)}
         if keep != rows:

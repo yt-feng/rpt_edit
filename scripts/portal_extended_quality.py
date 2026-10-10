@@ -2,7 +2,8 @@
 
 Quality receipts are immutable and bind exact private source/manifest bytes.
 The bounded debt ledger is independent of publication ACKs and render cursors;
-it never schedules a retry or erases an accepted translation checkpoint.
+it never schedules inference or erases an accepted translation checkpoint.
+The separate bounded quality-recovery planner consumes exact debt proofs.
 """
 from __future__ import annotations
 

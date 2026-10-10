@@ -61,11 +61,11 @@
 
 数量修复由共用 financial quantity validator 及其合成回归覆盖。该英文诊断不能推断法语全部 100 个回退都属于同一原因；各语种还需按固定源、校验错误及恢复后的结果分别核对。恢复使用当前合法 checkpoint，不清空所有合格译文，不重新抓取或改写来源 generation。
 
-法语另有两类已离线复现的格式误判：合法千分组 `1 234,5` 被拆成两个数字，以及 `troisième trimestre de 2026` 未识别为带年份的第三季度。共用数量校验现在仅在显式 `fr` 一侧、Unicode 空格折叠之前识别完整合法分组（普通空格、不换行空格或窄不换行空格；首组 1–3 位、后组严格三位、可选逗号小数），并识别四个固定法语季度序数及四位年份或无年份表达。坏分组、额外数字、金额/币种/比例、季度或年份变化继续拒绝；默认及其它语言语法、既有“双十一”契约保持不变。合成正反向与变异回归已经通过，但这不证明真实法语 100 项回退都由这两类造成，也不代表对应生产译文已经恢复或上线。
+法语另有两类已离线复现的格式误判：合法千分组 `1 234,5` 被拆成两个数字，以及 `troisième trimestre de 2026` 未识别为带年份的第三季度。早期法语修订仅在显式 `fr` 一侧、Unicode 空格折叠之前识别完整合法分组（普通空格、不换行空格或窄不换行空格；首组 1–3 位、后组严格三位、可选逗号小数），并识别四个固定法语季度序数及四位年份或无年份表达。坏分组、额外数字、金额/币种/比例、季度或年份变化继续拒绝；当时默认及其它语言语法、既有“双十一”契约保持不变。后续已按 CLDR/ICU 证据补齐所有 33 个扩展语言的相关数字语法，详见[共用数字翻译契约](financial-quantity-translation.md)；以下法语段落保留原策略的历史与兼容入口说明。合成正反向与变异回归已经通过，但这不证明真实法语 100 项回退都由这两类造成，也不代表对应生产译文已经恢复或上线。
 
 ## 法语已完成候选的精确回退恢复
 
-`fr-quantity-fallback-v1` 是独立于原有 legacy basis-point `checkpoint-repair` 的窄策略，校验修订固定为 `fr-space-grouping-quarter-v1`。普通已完成候选仍不会自动重试全部 fallback；新入口也不清空全局 Memo、不更改其它 locale、不重开历史 admission。原 producer 必须已经结束，原 source 与 `locale (fr)` job 成功；同一全局串行队列及 `max-parallel: 2` 保持不变。
+`fr-quantity-fallback-v1` 是独立于原有 legacy basis-point `checkpoint-repair` 的窄策略，校验修订固定为 `fr-space-grouping-quarter-v1`。该兼容入口不会自动重试全部 fallback；新入口也不清空全局 Memo、不更改其它 locale、不重开历史 admission。原 producer 必须已经结束，原 source 与 `locale (fr)` job 成功；同一全局串行队列及 `max-parallel: 2` 保持不变。
 
 1. 在现有 `portal-extended-locales-r2.yml` 的主线人工入口选择 `source-fallback-inspect`，`locales=fr`，固定 `source_generation`；`continuation_evidence` 提供策略、修订、原 producer 的 `run_id/attempt/sha`、原 checkpoint SHA、candidate ID、manifest SHA 和 `units: []`。只读步骤可从校验过的 immutable origin 补齐 `source_sha256/origin_sha256`。它重新验证原页、完整缓存覆盖和原候选字节，仅输出 eligible unit hashes、完整 request、计数；模型调用与 R2 写入均为零，locale 与 publication job 不运行。
 2. 将只读结果中的完整 request 固定下来，把 `units` 换成 1..20 个排序且不重复的明确 eligible hashes，使用同 workflow 的 `checkpoint-repair`。所有选中项必须是当前精确旧 checkpoint 内的 `offline-quantity-validation` 源文回退。未选中的译文/回退逐项保留；模型只处理选中单元，仍使用完整质量门，每个单元只允许一个模型尝试。
@@ -76,7 +76,7 @@
 
 本地回归覆盖 restore→build→persist、manifest/ready 中断、prepared tail 跨 run 恢复、连续两批修复、较新 Memo/页面冲突、无页面变化、handoff 精确身份及保留原批准 ledger 的零模型 compose。这些是恢复机制验收，真实旧法语 100 项的重新翻译、回退下降和生产发布仍待验收；只读旧响应诊断不可用，也不能声称这 100 项都由空格或季度格式引起。
 
-截至上述 10/34 矩阵快照，另外已完成的非英文候选也均为 24/24 页面且 `translation_complete=false`：`pt` 109、`es` 100、`tr` 127、`ru` 113、`th` 124、`it` 118、`de` 116、`vi` 114 个源文回退单元。除 `th` 同时有数量与目标文字校验外，其余已列候选仅报告数量校验；未保存的拒绝响应不能由错误码推断具体原因。法语窄策略不自动适用于这些语言。已发布 37 个语言/变体的路由证据仍不等于新日期内容全部翻译完成。
+截至上述 10/34 矩阵快照，另外已完成的非英文候选也均为 24/24 页面且 `translation_complete=false`：`pt` 109、`es` 100、`tr` 127、`ru` 113、`th` 124、`it` 118、`de` 116、`vi` 114 个源文回退单元。除 `th` 同时有数量与目标文字校验外，其余已列候选仅报告数量校验；未保存的拒绝响应不能由错误码推断具体原因。原法语窄策略不直接用于这些语言；后续通用质量欠账策略在固定各自 locale/source/unit 身份下复用同一恢复引擎，见文末。已发布 37 个语言/变体的路由证据仍不等于新日期内容全部翻译完成。
 
 ## 跨语种渲染进度与翻译质量欠账
 
@@ -133,3 +133,12 @@
 - 该法语固定 generation 为 `f334aac3023978818d18a4d28ed16cb2541a7b9b6ea803021f1fcd0502c812aa`；恢复 checkpoint `8f7adda70f3265a9a417a995747a4fa297150368c8c9ba42ca9c8736e297f351`（50,868 字节），保存为 `cba1d08b0c9ef8dd1ec2396874b0ef94e17d86b31c4ff3f68094c34819a3036c`（81,992 字节）。
 - 当轮去掉重复外层重试，以精确源文回退使剩余单元继续；后来范围明确收敛为当天新增，预算从当时 2,400 秒调整为当前 14,400 秒。此前固定历史 generation 不作为新的日常 admission 继续扩展。
 - 当时英文被排除在阅读页矩阵外，且没有本轮所述的独立评论发布器；该旧限制仍适用于“英文全文镜像”，不能误读为今天完全没有英文评论链条。
+
+
+## 33 语言旧质量欠账的自动有界准入
+
+原质量欠账版本只保存 rendered-complete 与 translation-ready 的区别，普通 pending=0 时不会自动启动模型；旧法语人工修复是当时唯一精确重译入口。后续 `extended-quality-debt-v1` 将相同引擎推广至 33 个明确登记的非英文目标，保留旧策略、旧 ledger 和原 source，增加可验证、每次 1..20 单元的自动准入。所有数字规则继续使用[共用数量契约](financial-quantity-translation.md)，完整机制见[质量欠账恢复](extended-locale-quality-recovery.md)。
+
+已明确的拒绝输出多数未保存，不能假装对旧失败文本做零模型复验；只有实际存在、当前校验通过的 adapter cache 或完整 accepted ledger 可零推理恢复。未知 started、terminal、坏缓存、缺少原 immutable snapshot 均有明确阻断。质量债与普通文章按语言交替，完整历史结果的 ACK 不再丢失修复 proof 定位，原双 worker 和完整页/原文绑定保持。
+
+现有真实旧批的 fallback 计数仅为待恢复证据。新机制需先在 GitHub CI、真实原 source 的逐语言有界恢复、fallback下降/translation-ready、handoff 和线上发布逐步验收；不能以这里的实现或离线测试代替生产结果。旧已修复且已 ACK、又没有完整 reverse anchor 的记录不能从裸 snapshot 猜回，保留 typed blocker 等待精确证据。被新版数量校验判为无效的旧 accepted 行仍 fail closed，不通过清空缓存或篡改 metadata 宣称完成。
