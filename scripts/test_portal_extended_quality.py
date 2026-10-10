@@ -1,13 +1,15 @@
 """Quality debt remains visible after render dedup and publication ACKs."""
 import copy
 import json
+import os
 from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import patch
 
 from build_portal_extended_locales import build
-from portal_extended_continuation import acknowledge_published, partition_stopped_locales, pending, queue, register
+from portal_extended_continuation import (acknowledge_published, action_owner, partition_stopped_locales,
+                                         pending, queue, register, require_active_owner)
 from portal_extended_handoff import next_registered_batch, pending_batch, read_handoff, save_handoff
 from portal_extended_incremental import prepare, read_state, remember_candidate, remember_checkpoint, write_state
 from portal_extended_locales import ExpansionError, digest, make_corpus, stable_bytes
@@ -33,6 +35,14 @@ class Accepted(FakeTranslator):
 
 class QualityTests(unittest.TestCase):
     def setUp(self):
+        # Keep the real Actions ownership gate enabled while binding this
+        # synthetic R2 fixture to its own original producer and attempt.
+        environment = patch.dict(os.environ, {
+            'GITHUB_ACTIONS': 'true', 'GITHUB_REF': 'refs/heads/main',
+            'GITHUB_RUN_ID': PRODUCER['run_id'], 'GITHUB_RUN_ATTEMPT': PRODUCER['attempt'],
+            'GITHUB_SHA': PRODUCER['sha'],
+        })
+        environment.start(); self.addCleanup(environment.stop)
         temporary = tempfile.TemporaryDirectory(); self.addCleanup(temporary.cleanup)
         self.root = Path(temporary.name)
         self.store = R2Store(FakeR2(), 'private', '_extended-locales/staging/quality')
@@ -41,6 +51,17 @@ class QualityTests(unittest.TestCase):
         self.store.put_source(self.corpus)
         self.active = [{'generation': 'a' * 64, 'candidates': {'fr': 'b' * 64, 'pt': 'c' * 64}}]
         self.number = 0
+
+    def test_fixture_enforces_exact_actions_producer_and_rejects_other_attempts(self):
+        self.assertEqual(action_owner(), PRODUCER)
+        register(self.store, self.corpus, ('fr',), PRODUCER)
+        require_active_owner(self.store, 'fr', self.generation)
+        before = copy.deepcopy(self.store.client.objects)
+        for changes in ({'GITHUB_RUN_ID': '2'}, {'GITHUB_RUN_ATTEMPT': '2'}, {'GITHUB_SHA': 'b' * 40}):
+            with self.subTest(changes=changes), patch.dict(os.environ, changes), \
+                 self.assertRaisesRegex(ExpansionError, 'exact Actions attempt'):
+                require_active_owner(self.store, 'fr', self.generation)
+        self.assertEqual(self.store.client.objects, before)
 
     def candidate(self, locale='fr', *, rejected=True, registered=False):
         self.number += 1
