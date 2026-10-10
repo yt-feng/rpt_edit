@@ -13,6 +13,8 @@ import unittest
 from unittest.mock import patch
 
 import inspect_market_views_r2_cache as inventory
+from private_market_ocr_checkpoint import checkpoint_key
+from recover_durable_mineru_sources import PRODUCER, RecoveryError
 
 
 def json_bytes(value):
@@ -226,6 +228,138 @@ class InventoryTests(unittest.TestCase):
             self.assertFalse(result["success"])
             self.assertEqual(result["category"], "storage_read_failed")
             self.assertNotIn("private-account", output.read_text())
+
+
+class OCRPresenceTests(unittest.TestCase):
+    def setUp(self):
+        temporary = tempfile.TemporaryDirectory(); self.addCleanup(temporary.cleanup)
+        self.root = Path(temporary.name); self.client = FakeR2()
+        self.manifest = self.root/'selected_to_process_manifest.json'
+        self.rows = [{"process_local_path": f"/runner/private-title-{index}.pdf",
+                      "content_sha256": str(index+1)*64,
+                      "dropbox_path": f"/zip_backup/261007/private-title-{index}.pdf"} for index in range(2)]
+        self.manifest.write_bytes(json_bytes(self.rows))
+        self.repository = 'owner/reports'
+        self.producer = {"id": 37695511597, "path": PRODUCER, "head_branch": "main", "head_sha": "a"*40,
+                         "status": "completed", "event": "schedule", "repository": {"full_name": self.repository},
+                         "head_repository": {"full_name": self.repository}}
+        self.request = inventory.validate_ocr_request('37695511597', '261007', '2',
+                                                      hashlib.sha256(self.manifest.read_bytes()).hexdigest())
+        self.key = checkpoint_key(self.manifest, '261007', 2)
+
+    def inspect(self, request=None, producer=None):
+        return inventory.inspect_ocr_presence(self.client, 'private-bucket', self.manifest,
+            self.producer if producer is None else producer, self.request if request is None else request,
+            self.repository)
+
+    def test_present_is_one_head_of_real_canonical_key_without_archive_download(self):
+        self.client.add(self.key, b'opaque archive is deliberately never parsed')
+        result = self.inspect(); row = result['ocr_checkpoint']
+        self.assertTrue(result['success']); self.assertTrue(row['present'])
+        self.assertTrue(row['source_binding_verified']); self.assertFalse(row['archive_bytes_verified'])
+        self.assertEqual(row['object_count'], 1); self.assertGreater(row['size_bytes'], 0)
+        self.assertEqual(self.client.calls, [('head', self.key)])
+        public = json.dumps(result)
+        for forbidden in ('private-title', 'zip_backup', 'private-bucket', self.key, '/runner/'):
+            self.assertNotIn(forbidden, public)
+        for field in ('provider_posts', 'object_writes', 'object_deletions'):
+            self.assertEqual(result[field], 0)
+
+    def test_absence_is_known_only_after_exact_head_and_does_not_trigger_generation(self):
+        result = self.inspect(); row = result['ocr_checkpoint']
+        self.assertTrue(result['success']); self.assertFalse(row['present'])
+        self.assertEqual(row['object_count'], 0); self.assertEqual(row['size_bytes'], 0)
+        self.assertIsNone(row['archive_sha256']); self.assertEqual(self.client.calls, [('head', self.key)])
+
+    def test_reordered_manifest_uses_same_checkpoint_but_requires_its_exact_raw_hash(self):
+        self.manifest.write_bytes(json_bytes(list(reversed(self.rows))))
+        with self.assertRaises(inventory.InvalidObject): self.inspect()
+        self.assertEqual(self.client.calls, [])
+        request = {**self.request, 'manifest_sha256': hashlib.sha256(self.manifest.read_bytes()).hexdigest()}
+        self.inspect(request=request)
+        self.assertEqual(self.client.calls, [('head', self.key)])
+
+    def test_wrong_count_date_and_duplicate_sources_fail_before_storage(self):
+        for request in ({**self.request, 'expected_reports': 3}, {**self.request, 'date_folder': '261008'}):
+            with self.subTest(request=request):
+                with self.assertRaises(inventory.InvalidObject): self.inspect(request=request)
+        self.manifest.write_bytes(json_bytes([self.rows[0], self.rows[0]]))
+        request = {**self.request, 'manifest_sha256': hashlib.sha256(self.manifest.read_bytes()).hexdigest()}
+        with self.assertRaises(inventory.InvalidObject): self.inspect(request=request)
+        self.assertEqual(self.client.calls, [])
+
+    def test_unrelated_or_unfinished_run_cannot_inspect_cache(self):
+        for field, value in [('id', 123), ('path', '.github/workflows/other.yml'), ('head_branch', 'feature'),
+                             ('status', 'in_progress'), ('event', 'pull_request'), ('head_sha', 'x'*40),
+                             ('repository', {'full_name': 'other/reports'}),
+                             ('head_repository', {'full_name': 'other/reports'})]:
+            with self.subTest(field=field):
+                with self.assertRaises((RecoveryError, inventory.InvalidObject)):
+                    self.inspect(producer={**self.producer, field: value})
+        self.assertEqual(self.client.calls, [])
+
+    def test_missing_symlink_and_oversized_manifest_cannot_read_storage(self):
+        self.manifest.unlink()
+        with self.assertRaises(inventory.InvalidObject): self.inspect()
+        target = self.root/'real.json'; target.write_bytes(json_bytes(self.rows)); self.manifest.symlink_to(target)
+        with self.assertRaises(inventory.InvalidObject): self.inspect()
+        self.manifest.unlink(); self.manifest.write_bytes(b'x'*(16*1024*1024+1))
+        with self.assertRaises(inventory.InvalidObject): self.inspect()
+        self.assertEqual(self.client.calls, [])
+
+    def test_archive_metadata_is_reported_only_with_valid_size_and_hash(self):
+        for size, checksum in [(0, 'a'*64), (inventory.MAX_BYTES+1, 'a'*64), (1, ''), (1, 'private-text')]:
+            with self.subTest(size=size, checksum=checksum):
+                self.client.add(self.key, b'x', metadata={'sha256': checksum})
+                self.client.objects[self.key]['ContentLength'] = size
+                with self.assertRaises(inventory.InvalidObject): self.inspect()
+        self.assertTrue(all(operation == 'head' for operation, key in self.client.calls))
+
+    def test_head_permission_or_transport_failure_is_not_absence_and_is_sanitized(self):
+        producer_path = self.root/'producer.json'; producer_path.write_bytes(json_bytes(self.producer))
+        class Denied(Exception):
+            response = {'Error': {'Code': '403'}, 'ResponseMetadata': {'HTTPStatusCode': 403}}
+        for error in (Denied('private-object'), TimeoutError('https://private-endpoint')):
+            with self.subTest(error=type(error).__name__):
+                output = self.root/'receipt.json'
+                args = ['--output', str(output), '--source-run-id', self.request['source_run_id'],
+                        '--date-folder', '261007', '--expected-reports', '2',
+                        '--manifest-sha256', self.request['manifest_sha256'], '--manifest', str(self.manifest),
+                        '--producer-json', str(producer_path)]
+                with patch.object(inventory, 'build_client', return_value=self.client), \
+                     patch.object(self.client, 'head_object', side_effect=error) as head, \
+                     patch.dict('os.environ', {'R2_BUCKET': 'private-bucket', 'GITHUB_REPOSITORY': self.repository}), \
+                     redirect_stdout(io.StringIO()):
+                    self.assertEqual(inventory.main(args), 1)
+                result = json.loads(output.read_bytes())
+                self.assertFalse(result['success']); self.assertNotIn('ocr_checkpoint', result)
+                self.assertEqual(result['category'], 'storage_read_failed'); head.assert_called_once()
+                self.assertNotIn('private-', output.read_text())
+
+    def test_inputs_are_all_or_none_and_default_dates_are_unchanged(self):
+        self.assertIsNone(inventory.validate_ocr_request())
+        self.assertEqual(inventory.DATES, ('261001', '261002', '261003'))
+        for args in [('37695511597', '', '', ''), ('1/2', '261007', '2', 'a'*64),
+                     ('1', '261032', '2', 'a'*64), ('1', '261007', '1001', 'a'*64),
+                     ('1', '261007', '02', 'a'*64), ('1', '261007', '2', 'A'*64)]:
+            with self.subTest(args=args):
+                with self.assertRaises((RecoveryError, inventory.InvalidObject)):
+                    inventory.validate_ocr_request(*args)
+
+    def test_cli_presence_never_falls_through_to_incident_downloads(self):
+        producer = self.root/'producer.json'; producer.write_bytes(json_bytes(self.producer))
+        output = self.root/'receipt.json'
+        args = ['--output', str(output), '--source-run-id', self.request['source_run_id'],
+                '--date-folder', '261007', '--expected-reports', '2',
+                '--manifest-sha256', self.request['manifest_sha256'], '--manifest', str(self.manifest),
+                '--producer-json', str(producer)]
+        with patch.object(inventory, 'build_client', return_value=self.client), \
+             patch.object(inventory, 'inspect_cache', side_effect=AssertionError('wrong mode')), \
+             patch.dict('os.environ', {'R2_BUCKET': 'private-bucket', 'GITHUB_REPOSITORY': self.repository}), \
+             redirect_stdout(io.StringIO()):
+            self.assertEqual(inventory.main(args), 0)
+        self.assertEqual(json.loads(output.read_bytes())['mode'], 'ocr-presence')
+        self.assertEqual(self.client.calls, [('head', self.key)])
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read only the three incident dates' private R2 caches; emit public-safe counts.
+"""Inspect fixed incident caches or one exact OCR checkpoint without mutation.
 
 An archive's stored generation identity is reported, never treated as a match to
 current source bytes or code. No provider calls, writes, deletions or PDF creation.
@@ -32,6 +32,74 @@ HANDOFF_RUNS = {"261001": "36932674491", "261002": "37067138754", "261003": "371
 
 class InvalidObject(ValueError):
     """A bounded private object failed verification; messages are fixed labels."""
+
+
+def validate_ocr_request(source_run_id="", date_folder="", expected_reports="", manifest_sha256=""):
+    """Empty inputs retain the original incident inventory; partial inputs fail."""
+    values = (source_run_id, date_folder, expected_reports, manifest_sha256)
+    if values == ("", "", "", ""):
+        return None
+    if (not all(isinstance(value, str) for value in values)
+            or not re.fullmatch(r"[1-9][0-9]{0,19}", source_run_id)
+            or not re.fullmatch(r"[1-9][0-9]{0,3}", expected_reports)
+            or int(expected_reports) > 1000 or not HASH.fullmatch(manifest_sha256)):
+        raise InvalidObject("ocr_request_invalid")
+    from recover_durable_mineru_sources import exact_date, RecoveryError
+    try:
+        exact_date(date_folder)
+    except RecoveryError:
+        raise InvalidObject("ocr_request_invalid") from None
+    return {"source_run_id": source_run_id, "date_folder": date_folder,
+            "expected_reports": int(expected_reports), "manifest_sha256": manifest_sha256}
+
+
+def validate_ocr_producer(producer, request, repository):
+    from recover_durable_mineru_sources import check_producer, RecoveryError
+    if (not isinstance(repository, str) or not re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", repository)
+            or not isinstance(producer, dict) or producer.get("status") != "completed"
+            or producer.get("event") not in {"schedule", "workflow_dispatch"}
+            or (producer.get("head_repository") or {}).get("full_name") != repository):
+        raise InvalidObject("ocr_producer_invalid")
+    try:
+        return check_producer(producer, request["source_run_id"], repository)
+    except RecoveryError:
+        raise InvalidObject("ocr_producer_invalid") from None
+
+
+def inspect_ocr_presence(client, bucket, manifest, producer, request, repository):
+    """Validate retained source bytes, then HEAD exactly one derived cache key.
+
+    Presence and stored archive metadata do not prove OCR completeness. Never
+    download/extract the checkpoint or admit it for article generation here.
+    """
+    from private_market_ocr_checkpoint import checkpoint_key
+    from recover_durable_mineru_sources import MAX_RECEIPT, RecoveryError
+    validate_ocr_producer(producer, request, repository)
+    if (not manifest or manifest.is_symlink() or not manifest.is_file()
+            or not 0 < manifest.stat().st_size <= MAX_RECEIPT):
+        raise InvalidObject("ocr_manifest_invalid")
+    raw = manifest.read_bytes()
+    if hashlib.sha256(raw).hexdigest() != request["manifest_sha256"]:
+        raise InvalidObject("ocr_manifest_sha256_mismatch")
+    try:
+        key = checkpoint_key(manifest, request["date_folder"], request["expected_reports"])
+    except RecoveryError:
+        raise InvalidObject("ocr_manifest_binding_invalid") from None
+    # Require the derivation to consume exactly the bytes whose hash was pinned.
+    if manifest.read_bytes() != raw:
+        raise InvalidObject("ocr_manifest_changed")
+    present, head = r2_object_exists(client, bucket, key)
+    row = {**request, "source_binding_verified": True, "present": present,
+           "object_count": int(present), "checkpoint_identity": Path(key).name.removesuffix(".tar.gz"),
+           "archive_bytes_verified": False, "size_bytes": 0, "archive_sha256": None}
+    if present:
+        row["size_bytes"] = bounded_size(head)
+        checksum = (head.get("Metadata") or {}).get("sha256")
+        if not isinstance(checksum, str) or not HASH.fullmatch(checksum):
+            raise InvalidObject("ocr_archive_metadata_invalid")
+        row["archive_sha256"] = checksum
+    return {"schema_version": 1, "mode": "ocr-presence", "success": True, "provider_posts": 0,
+            "object_writes": 0, "object_deletions": 0, "ocr_checkpoint": row}
 
 
 class BoundedBody:
@@ -288,13 +356,31 @@ def inspect_cache(client, bucket):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--source-run-id", default="")
+    parser.add_argument("--date-folder", default="")
+    parser.add_argument("--expected-reports", default="")
+    parser.add_argument("--manifest-sha256", default="")
+    parser.add_argument("--manifest", type=Path)
+    parser.add_argument("--producer-json", type=Path)
     args = parser.parse_args(argv)
     result = {"schema_version": 1, "success": False, "provider_posts": 0, "object_writes": 0,
               "object_deletions": 0, "dates": [], "category": "storage_read_failed"}
     # Helper logs and SDK errors can contain private keys, endpoints or filenames.
     with open(os.devnull, "w") as sink, redirect_stdout(sink), redirect_stderr(sink):
         try:
-            result = inspect_cache(build_client(), handoff.require_env("R2_BUCKET"))
+            request = validate_ocr_request(args.source_run_id, args.date_folder,
+                                           args.expected_reports, args.manifest_sha256)
+            if request is None:
+                if args.manifest is not None or args.producer_json is not None:
+                    raise InvalidObject("ocr_request_invalid")
+                result = inspect_cache(build_client(), handoff.require_env("R2_BUCKET"))
+            else:
+                if not args.producer_json or args.producer_json.is_symlink() or not args.producer_json.is_file():
+                    raise InvalidObject("ocr_producer_invalid")
+                result = inspect_ocr_presence(build_client(), handoff.require_env("R2_BUCKET"), args.manifest,
+                    read_json(args.producer_json), request, os.environ.get("GITHUB_REPOSITORY", ""))
+        except InvalidObject as error:
+            result["category"] = str(error)
         except Exception:
             pass
     args.output.parent.mkdir(parents=True, exist_ok=True)

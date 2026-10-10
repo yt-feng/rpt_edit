@@ -139,7 +139,7 @@ def _decimal(value: str) -> Decimal:
     return Decimal(value)
 
 
-def quantities(text: str, *, bare_months: bool = False) -> Counter:
+def quantities(text: str, *, bare_months: bool = False, named_events: bool = False) -> Counter:
     text = _normalized(text)
     original_month_only = text.strip().casefold() in {"may", "march"}
     found = Counter()
@@ -157,14 +157,16 @@ def quantities(text: str, *, bare_months: bool = False) -> Counter:
         except ValueError:
             return ("invalid_date", str((year, month, day)))
 
-    # A named shopping event can contain digits only after translation:
-    # 双十一 -> Double 11. Preserve the event as a counted fact rather than
-    # discarding its numeral, so omissions, replacements and extra numbers
-    # remain detectable. Bare 11 and November 11 are not event aliases.
-    take(r"(?<![A-Za-z0-9_])(?:[双雙](?:十一|11)(?![零〇一二两三四五六七八九十百千万亿\d])"
-         r"|Double[\s-]*(?:Eleven|11)"
-         r"|Singles['’]?\s+Day)(?![A-Za-z0-9_]|[.,]\d|\s*[%％])",
-         lambda _m: ("shopping_event", "double_eleven"))
+    if named_events:
+        # A named shopping event can contain digits only after translation:
+        # 双十一 -> Double 11. Count the event so omissions and extra numbers
+        # remain detectable. This opt-in grammar covers Chinese and English;
+        # other languages and existing unscoped signatures keep their numeric
+        # contract. Bare 11 and November 11 are not event aliases.
+        take(r"(?<![A-Za-z0-9_])(?:[双雙](?:十一|11)(?![零〇一二两三四五六七八九十百千万亿\d])"
+             r"|Double[\s-]*(?:Eleven|11)"
+             r"|Singles['’]?\s+Day)(?![A-Za-z0-9_]|[.,]\d|\s*[%％])",
+             lambda _m: ("shopping_event", "double_eleven"))
 
     take(r"(?<!\d)(\d{4})\s*(?:[-/]\s*|年\s*|년\s*)(\d{1,2})\s*(?:[-/]\s*|月\s*|월\s*)(\d{1,2})\s*(?:日|일)?(?!\d)",
          lambda m: day_key(m[1], m[2], m[3]))
@@ -292,9 +294,15 @@ def quantities(text: str, *, bare_months: bool = False) -> Counter:
 
 
 def quantity_issues(source: str, translated: str, source_language: str = "", target_language: str = "") -> list[str]:
-    before, after = quantities(source), quantities(translated)
+    # Only this verified translation pair has a complete named-event alias
+    # contract. A French natural event name, for example, must not acquire a
+    # new unsupported requirement from the Chinese/English equivalence.
+    named_events = {source_language, target_language} == {"zh", "en"}
+    before = quantities(source, named_events=named_events)
+    after = quantities(translated, named_events=named_events)
     if any(key[0] == "month" and key[1] is None for key in before.keys() | after.keys()):
-        before, after = quantities(source, bare_months=True), quantities(translated, bare_months=True)
+        before = quantities(source, bare_months=True, named_events=named_events)
+        after = quantities(translated, bare_months=True, named_events=named_events)
     issues = []
     if any(key[0] == 'invalid_date' for key in before.keys() | after.keys()):
         issues.append("invalid_calendar_date")
