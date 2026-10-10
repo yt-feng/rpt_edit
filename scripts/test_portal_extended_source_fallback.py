@@ -1,12 +1,19 @@
 """Source fallback contracts: synthetic responses only, no local model calls."""
 import json
+import copy
+from contextlib import redirect_stdout
+import hashlib
+import io
 from pathlib import Path
 import tempfile
 import time
 import unittest
+from unittest.mock import patch
 
-from build_portal_extended_locales import Memo, build, translate_document
+import build_portal_extended_locales as builder
+from build_portal_extended_locales import Memo, build, translate_document, public_translation_diagnostics
 from hymt_offline_translation import OfflineTranslationError, OfflineTranslationValidationError
+from hymt_offline_translation import quantity_failure_diagnostics
 from portal_extended_locales import PublicParser, document_from_html, make_corpus
 from assemble_portal_extended_locales import assemble, verified_candidate
 import test_portal_extended_locales as fixtures
@@ -20,6 +27,25 @@ class RejectedQuantity(FakeTranslator):
             self.calls += 1
             # Simulates a completed response rejected by the inner model gate.
             raise OfflineTranslationValidationError('Hy-MT2 quantity validation failed')
+        return super().translate(text, target, source, markdown=markdown)
+
+
+class DiagnosticRejectedQuantity(RejectedQuantity):
+    def __init__(self):
+        super().__init__()
+        self.failure_diagnostics = []
+        self.validation_failure_count = 0
+
+    def translate(self, text, target, source=None, *, markdown=True):
+        if 'USD10m' in text:
+            self.validation_failure_count += 1
+            self.failure_diagnostics.append({
+                'source_sha256': hashlib.sha256(text.encode()).hexdigest(),
+                'response_sha256': hashlib.sha256(b'PRIVATE_RESPONSE_USD11m').hexdigest(),
+                'target_language': target,
+                'quantities': quantity_failure_diagnostics(text, 'PRIVATE_RESPONSE USD11m.'),
+                'raw_translation': 'PRIVATE_RESPONSE USD11m.', 'model_input': 'PRIVATE_INPUT',
+            })
         return super().translate(text, target, source, markdown=markdown)
 
 
@@ -104,6 +130,86 @@ class SourceFallbackTests(unittest.TestCase):
         translate_document(document, memo)
         self.assertIn(sentence, calls)
         self.assertNotIn('同比增长5%', calls)
+
+    def test_cli_emits_only_bounded_hash_diagnostics_without_changing_fallback_or_candidate(self):
+        source = self.root / 'corpus.json'; source.write_text(json.dumps(self.corpus))
+        translator = DiagnosticRejectedQuantity()
+        argv = ['builder', '--corpus', str(source), '--locale', 'fr',
+                '--output', str(self.root / 'out'), '--checkpoint', str(self.root / 'memo.json'),
+                '--allow-source-fallback']
+        with patch('sys.argv', argv), patch.object(builder, 'require_actions'), \
+             patch.dict(builder.os.environ, {'KC_PUBLIC_REPOSITORY': 'true'}), \
+             patch.object(builder, 'OfflineTranslator', return_value=translator) as factory, \
+             redirect_stdout(io.StringIO()) as output:
+            self.assertEqual(builder.main(), 0)
+        factory.assert_called_once_with(validation_attempts=1)
+        summary = json.loads(output.getvalue())
+        self.assertEqual(summary['source_fallback_unit_count'], 1)
+        self.assertEqual(summary['source_fallback_occurrences'], 2)
+        self.assertEqual(summary['completed_page_count'], 2)
+        self.assertEqual(summary['terminal_validation_failure_count'], 1)
+        self.assertFalse(summary['translation_diagnostics_truncated'])
+        entry = summary['terminal_translation_diagnostics'][0]
+        self.assertEqual(entry['failure_type'], 'offline-quantity-validation')
+        self.assertEqual(entry['quantities']['missing']['type_counts'], {'currency': 1})
+        self.assertEqual(entry['quantities']['extra']['type_counts'], {'currency': 1})
+        self.assertNotEqual(entry['quantities']['source']['signature_sha256'],
+                            entry['quantities']['response']['signature_sha256'])
+        for forbidden in ('PRIVATE_', 'USD', '10000000', '11000000', 'Revenue', 'values'):
+            self.assertNotIn(forbidden, output.getvalue())
+        manifest = json.loads((self.root / 'out' / 'candidate-manifest.json').read_bytes())
+        self.assertNotIn('terminal_translation_diagnostics', manifest)
+        verified_candidate(self.root / 'out', self.corpus)
+        # Reading public diagnostics causes no additional translations. Resume
+        # retains the established source-fallback policy and also makes no calls.
+        before = translator.calls
+        public_translation_diagnostics(translator, 'fr')
+        self.assertEqual(translator.calls, before)
+        resumed = DiagnosticRejectedQuantity()
+        self.run_build(resumed, output='resumed')
+        self.assertEqual(resumed.calls, 0)
+        self.assertEqual(public_translation_diagnostics(resumed, 'fr')['terminal_translation_diagnostics'], [])
+
+    def test_public_diagnostics_cap_and_no_untrusted_type_or_failure_text(self):
+        translator = DiagnosticRejectedQuantity(); self.run_build(translator)
+        row = translator.failure_diagnostics[0]
+        translator.failure_diagnostics = [copy.deepcopy(row) for _ in range(25)]
+        translator.validation_failure_count = 100
+        result = public_translation_diagnostics(translator, 'fr')
+        self.assertEqual(len(result['terminal_translation_diagnostics']), 20)
+        self.assertEqual(result['terminal_validation_failure_count'], 100)
+        self.assertTrue(result['translation_diagnostics_truncated'])
+        translator.failure_diagnostics = [copy.deepcopy(row)]
+        item = translator.failure_diagnostics[0]
+        item['failure_code'] = 'PRIVATE_ERROR'
+        item['quantities']['source']['rows'][0]['kind'] = 'PRIVATE_UNIT'
+        result = public_translation_diagnostics(translator, 'fr')
+        entry = result['terminal_translation_diagnostics'][0]
+        self.assertEqual(entry['failure_type'], 'offline-validation')
+        self.assertIsNone(entry['quantities']['source'])
+        self.assertNotIn('PRIVATE', json.dumps(result))
+        item['quantities']['source']['rows'][0]['kind'] = []
+        self.assertIsNone(public_translation_diagnostics(translator, 'fr')
+                          ['terminal_translation_diagnostics'][0]['quantities']['source'])
+
+    def test_diagnostic_hash_binds_numeric_values_without_printing_them(self):
+        first = quantity_failure_diagnostics('USD 1234.5', 'USD 1235.5')['source']
+        second = quantity_failure_diagnostics('USD 1235.5', 'USD 1235.5')['source']
+        a, b = builder.public_quantity_signature(first), builder.public_quantity_signature(second)
+        self.assertEqual(a['type_counts'], b['type_counts'])
+        self.assertNotEqual(a['signature_sha256'], b['signature_sha256'])
+        self.assertNotIn('1234', json.dumps(a))
+        self.assertNotIn('USD', json.dumps(a))
+
+    def test_invalid_hash_and_other_locale_are_not_reflected(self):
+        translator = DiagnosticRejectedQuantity(); self.run_build(translator)
+        row = translator.failure_diagnostics[0]
+        for field, value in [('source_sha256', 'PRIVATE_SOURCE'), ('response_sha256', 'PRIVATE_RESPONSE'),
+                             ('target_language', 'PRIVATE_LANGUAGE')]:
+            translator.failure_diagnostics = [{**row, field: value}]
+            result = public_translation_diagnostics(translator, 'fr')
+            self.assertEqual(result['terminal_translation_diagnostics'], [])
+            self.assertNotIn('PRIVATE', json.dumps(result))
 
 
 class ExistingMirrorAssemblyTests(unittest.TestCase):

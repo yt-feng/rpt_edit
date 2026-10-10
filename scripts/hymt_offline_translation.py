@@ -292,7 +292,8 @@ def _quantity_retry_input(text: str, start: int, *, target: str) -> tuple[str, d
     return masked, replacements, visible
 
 
-def quantity_failure_diagnostics(source: str, response: str | None) -> dict:
+def quantity_failure_diagnostics(source: str, response: str | None,
+                                 source_language: str = "", target_language: str = "") -> dict:
     """Only bounded normalized numeric facts; never source or rejected prose."""
     def signature(counter):
         rows = []; truncated = len(counter) > 20
@@ -302,11 +303,19 @@ def quantity_failure_diagnostics(source: str, response: str | None) -> dict:
             rows.append({'kind': fact[0], 'values': [value[:128] if value is not None else None for value in values],
                          'count': count})
         return {'rows': rows, 'total_rows': len(counter), 'truncated': truncated}
-    before = quantities(source)
+    named_events = {source_language, target_language} == {"zh", "en"}
+    before = quantities(source, named_events=named_events, language=source_language)
+    after = None
+    if isinstance(response, str):
+        after = quantities(response, named_events=named_events, language=target_language)
+        # Match the gate's context-sensitive month pass as well as its locale
+        # and named-event grammar; diagnostics must describe the same facts.
+        if any(key[0] == "month" and key[1] is None for key in before.keys() | after.keys()):
+            before = quantities(source, bare_months=True, named_events=named_events, language=source_language)
+            after = quantities(response, bare_months=True, named_events=named_events, language=target_language)
     result = {'source': signature(before), 'response_available': isinstance(response, str),
               'maximum_rows': 20, 'maximum_value_characters': 128}
-    if isinstance(response, str):
-        after = quantities(response)
+    if after is not None:
         result.update(response=signature(after), missing=signature(before-after), extra=signature(after-before))
     return result
 
@@ -661,7 +670,7 @@ class HyMTOfflineTranslator:
                                     'placeholders': placeholder_diagnostics(model_input, value),
                                     'quantities': quantity_failure_diagnostics(core,
                                         _restore_terms(_restore_terms(_restore_terms(value, quantity_retry_replacements), terms), replacements)
-                                        if isinstance(value, str) else None)})
+                                        if isinstance(value, str) else None, detected, target)})
                             raise
             except OfflineTranslationError:
                 raise
