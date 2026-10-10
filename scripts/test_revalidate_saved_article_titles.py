@@ -128,13 +128,20 @@ class RevalidationTests(unittest.TestCase):
 
     def test_inspect_real44_uses_four_saved_responses_zero_posts_writes_and_keeps_every_other_byte(self):
         before = revalidation.snapshot(self.checkpoint)
-        result = self.execute()
+        with patch.object(revalidation, 'observe_saved_title_gates', wraps=revalidation.observe_saved_title_gates) as observe:
+            result = self.execute()
+        self.assertEqual(observe.call_count, 1)
+        self.assertEqual(observe.call_args.args[2], (self.directory/'source_ocr.md').read_text())
         self.assertTrue(result['revalidation_ready'])
         self.assertFalse(result['applied'])
         self.assertEqual(result['completed_article_count_after'], 44)
         self.assertEqual(result['unchanged_article_count'], 43)
         self.assertEqual(result['retained_title_response_count'], 4)
         self.assertEqual((result['provider_posts'], result['object_writes']), (0, 0))
+        diagnosis = result['saved_candidate_evidence_diagnosis']
+        self.assertTrue(diagnosis['observational_only'])
+        self.assertEqual(diagnosis['response_count'], 4)
+        self.assertEqual(diagnosis['candidate_count'], 4)
         self.assertEqual(self.case.f.client.objects, self.objects_before)
         self.assertEqual(revalidation.snapshot(self.checkpoint), before)
         candidate = self.case.f.root / 'revalidation-inspect/candidate/checkpoint'
@@ -247,6 +254,15 @@ class RevalidationTests(unittest.TestCase):
         self.publish_snapshot()
         with self.assertRaisesRegex(revalidation.RevalidationError, '^revalidation_incident_invalid$'):
             self.execute('apply')
+        self.assertEqual(self.case.f.client.objects, self.objects_before)
+
+    def test_unverified_source_markdown_never_reaches_content_free_diagnostic(self):
+        (self.directory/'source_ocr.md').write_text('PRIVATE unverified replacement evidence')
+        self.publish_snapshot()
+        with patch.object(revalidation, 'observe_saved_title_gates') as observe:
+            with self.assertRaises(ValueError):
+                self.execute()
+        observe.assert_not_called()
         self.assertEqual(self.case.f.client.objects, self.objects_before)
 
     def test_unready_saved_candidates_do_not_enable_new_request_or_object_write(self):
