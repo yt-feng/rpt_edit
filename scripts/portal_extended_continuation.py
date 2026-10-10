@@ -284,6 +284,12 @@ def partition_stopped_locales(store, locales):
                 raise ExpansionError('Registered cursor has no valid original source')
             if row['status'] != 'started':
                 validate_snapshot(store, locale, generation, row)
+            if row['status'] == 'complete':
+                # Backfill explicit debt for old rendered outcomes before a
+                # no-op source job can hide them behind zero pending pages.
+                from portal_extended_quality import record_quality
+                record_quality(store, locale, generation, row['snapshot']['candidate_id'],
+                               manifest_sha256=row['snapshot']['manifest_sha256'])
             if row['status'] in {'started', 'claimed'}:
                 producer_identity(row.get('owner'))
             reason = ''
@@ -380,6 +386,11 @@ def acknowledge_published(store, locales, active):
     published = {(locale, row['generation'], candidate) for row in active for locale, candidate in row['candidates'].items()}
     for locale in locales:
         rows = queue(store, locale)
+        # Preserve quality debt before ACK removes a legacy active render receipt.
+        from portal_extended_quality import record_quality
+        for generation, row in rows.items():
+            if row['status'] == 'complete' and (locale, generation, row['snapshot']['candidate_id']) in published:
+                record_quality(store, locale, generation, row['snapshot']['candidate_id'])
         keep = {generation: row for generation, row in rows.items() if not (
             row['status'] == 'complete' and (locale, generation, row['snapshot']['candidate_id']) in published)}
         if keep != rows:

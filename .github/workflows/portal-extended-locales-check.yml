@@ -109,6 +109,7 @@ jobs:
           python -B scripts/test_portal_extended_hardening.py
           python -B scripts/test_portal_extended_source_fallback.py
           python -B scripts/test_portal_extended_r2.py
+          python -B scripts/test_portal_extended_quality.py
           python -B scripts/test_portal_extended_incremental.py
           python -B scripts/test_portal_extended_continuation.py
           python -B scripts/test_portal_extended_recovery_intent.py

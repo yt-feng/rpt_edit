@@ -78,6 +78,22 @@
 
 截至上述 10/34 矩阵快照，另外已完成的非英文候选也均为 24/24 页面且 `translation_complete=false`：`pt` 109、`es` 100、`tr` 127、`ru` 113、`th` 124、`it` 118、`de` 116、`vi` 114 个源文回退单元。除 `th` 同时有数量与目标文字校验外，其余已列候选仅报告数量校验；未保存的拒绝响应不能由错误码推断具体原因。法语窄策略不自动适用于这些语言。已发布 37 个语言/变体的路由证据仍不等于新日期内容全部翻译完成。
 
+## 跨语种渲染进度与翻译质量欠账
+
+`complete-candidate`、R2 ready 和 `completed` 日游标只证明页面已完整渲染、上传和可复用，不再被自动发布入口解释为“全部翻译完成”。这两个状态必须独立：保留 render receipts 的去重，避免普通定时任务重复调用已拒绝的模型单元；`translation_complete=true`、零源文回退、完整页面集合、零 budget/failure 才能进入新的自动 handoff。
+
+`portal_extended_quality.py` 在候选持久化后、完成日游标之前保存 immutable quality proof，绑定 locale、source generation、实际 source bytes SHA、candidate ID 和实际 manifest bytes SHA。新 build manifest 仅附加本次实际使用的 fallback unit hashes，不能把跨代 seed 中未使用的旧 fallback 计入本批。旧 manifest 缺少明确质量字段时记为 `unproven`，不会从页面成功状态推断为就绪。没有 hash 清单的旧 fallback 仍保留其精确 manifest 身份和欠账计数，不伪造单元级证据。
+
+每个 locale 的 `incremental/quality-debt/<locale>/latest/state.json` 独立记录最多 500 个 generation；每份 quality proof 的 fallback hashes 最多 10,000 个、字节不超过 1 MiB。完整证据先写入并读回，再更新欠账。相同结果重复保存不产生新模型调用；翻译完全就绪只清理相同 generation 的欠账。原注册结果、日完成页、有效 Memo、continuation 计数、其它语言和较新源不被重置。正常 prepare 即使 `has_work=false/pending_page_count=0`，摘要仍显示各语言的 quality debt 与 fallback 数；源任务也会从旧 registered complete outcomes 补齐质量欠账。既有 active fallback 候选被 publication ACK 移除队列前，先保留其质量欠账。
+
+自动 handoff 对每种语言分别验证候选字节与 quality proof，只选择已证明 translation-ready 的新候选；一个语言欠账不会阻断同批其它已就绪语言。handoff receipt 包含每种候选的 quality proof SHA，读回及自动 reviewer 重新验证 source/manifest 的精确身份。旧无质量证明的 handoff 不可直接取得新的自动批准。现有 active approval ledger、已发布 fallback 页面和 source-content binding 保持原契约：只在已批准的同一源内容上零模型重放。`current_document` 遇到正文变化仍拒绝把旧译文重新绑定到新源，也不借此覆盖中文正文。
+
+法语窄修复的 accepted 单元可以继续逐批持久化，但若仍有其它 fallback，新候选只记为质量欠账；直到全部单元符合原质量门，才允许正常自动 handoff。已准备尾部的跨 run 恢复仍复用原 proof，不重新调用模型。此变化不自动把同一修订的 terminal/unknown 单元重新排队，也不推断其它语言的具体数量误差原因。
+
+原 continuation 的 64-generation 上限和双 CPU worker 限制保持不变。未发布且仍欠账的 registered complete rows 保留，便于精确人工恢复；达到该既有上限时仍显式停止，不静默删除历史结果。今后若要退休这些队列行，必须同时提供绑定 immutable quality proof 的恢复入口，不能靠删除行或清缓存消除欠账。
+
+回归使用两页、两个真实渲染 fallback 单元证明：页面去重后模型工作为零但欠账仍为二；正常重放不重试；ready sibling 可独立 handoff；active ACK 不删除欠账；完全恢复只清同 generation；hash/源/manifest/候选变化、伪造就绪、旧无证明 handoff 均拒绝。另验证已有 active fallback 的原字节继承以及正文变化仍阻断。该机制不代表旧批所有语言已经恢复，需以实际逐语种回退下降、handoff、正式切换和公共 URL 继续验收。
+
 ## 已完成的回归与待完成的云端验收
 
 本轮英文发布、UI、评论与 pipeline 共 92 个测试通过；新增语言相关 260 个测试通过，其中 1 个既有 opt-in 测试未启用。测试覆盖实际资产物化差异、旧坏缓存/跨代 seed、原文嵌入、字段长度、精确数量、私有正文隔离以及跨日队列。它们证明本地修复契约，不代替云端模型输出与正式发布验收。

@@ -93,6 +93,7 @@ class IncrementalR2Tests(unittest.TestCase):
 
     def test_complete_receipt_skips_unchanged_content_but_changed_content_returns(self):
         build(self.corpus, 'fr', self.root/'out', self.root/'memo.json', FakeTranslator())
+        self.store.put_source(self.corpus)
         remember_candidate(self.store, 'fr', self.corpus, self.root/'out')
         result = prepare(self.store, [self.doc], ('fr',), DAY, self.root/'source.json')
         self.assertFalse(result['has_work'])
@@ -107,6 +108,7 @@ class IncrementalR2Tests(unittest.TestCase):
 
     def test_incomplete_candidate_never_marks_pages_done(self):
         build(self.corpus, 'fr', self.root/'out', self.root/'memo.json', FakeTranslator(), budget_seconds=-1)
+        self.store.put_source(self.corpus)
         saved = remember_candidate(self.store, 'fr', self.corpus, self.root/'out')
         self.assertFalse(saved['ready'])
         self.assertEqual(read_state(self.store, 'completed', 'fr', DAY), {})
@@ -124,6 +126,7 @@ class IncrementalR2Tests(unittest.TestCase):
 
     def test_other_language_does_not_inherit_french_completion(self):
         build(self.corpus, 'fr', self.root/'out', self.root/'memo.json', FakeTranslator())
+        self.store.put_source(self.corpus)
         remember_candidate(self.store, 'fr', self.corpus, self.root/'out')
         result = prepare(self.store, [self.doc], ('fr','pt'), DAY, self.root/'source.json')
         self.assertTrue(result['has_work'])
@@ -159,6 +162,7 @@ class IncrementalR2Tests(unittest.TestCase):
     def test_changed_content_reactivates_all_previously_completed_locales(self):
         for locale in ('fr', 'pt'):
             build(self.corpus, locale, self.root/locale, self.root/(locale+'.json'), FakeTranslator())
+            self.store.put_source(self.corpus)
             remember_candidate(self.store, locale, self.corpus, self.root/locale)
         changed = daily_doc(body='<h1>New findings</h1><p>Changed content.</p>')
         result = prepare(self.store, [changed], ('fr', 'pt'), DAY, self.root/'source.json')

@@ -98,6 +98,10 @@ def pending_batch(store, corpus, requested, enabled, active_batches, workspace):
         directory = workspace/locale
         store.restore_candidate(locale, batch['generation'], candidate, directory)
         verified_candidate(directory, corpus)
+        from portal_extended_quality import record_quality
+        quality = record_quality(store, locale, batch['generation'], candidate)
+        if not quality['translation_ready']:
+            continue
         selected[locale] = candidate
     return {'generation': corpus['documents_sha256'], 'candidates': selected}
 
@@ -112,6 +116,12 @@ def save_handoff(store, batch, *, day, pages, producer):
         raise ExpansionError('Invalid handoff page count')
     value = {'schema_version': 1, 'producer': producer, 'source_day': day,
              'pages_per_locale': pages, 'batch': batch, 'paid_provider_requests': 0}
+    from portal_extended_quality import record_quality
+    qualities = {locale: record_quality(store, locale, batch['generation'], candidate)
+                 for locale, candidate in batch['candidates'].items()}
+    if not all(proof['translation_ready'] for proof in qualities.values()):
+        raise ExpansionError('Automatic handoff requires translated-ready candidates')
+    value['translation_quality_proofs'] = {locale: proof['proof_sha256'] for locale, proof in qualities.items()}
     from portal_extended_continuation import checkpoint_evidence, origin_allows_locale, queue, read_origin
     origin = read_origin(store, batch['generation'])
     if origin:
@@ -197,6 +207,8 @@ def read_handoff(store, identity):
     if value.get('schema_version') != 1 or value.get('paid_provider_requests') != 0:
         raise ExpansionError('Invalid handoff receipt provenance')
     checked_batches([value['batch']])
+    from portal_extended_quality import handoff_quality
+    handoff_quality(store, value)
     proofs = source_repair_proofs(store, value)
     source_repair_completions(store, value, proofs)
     return value
@@ -288,7 +300,13 @@ def next_registered_batch(store, requested, enabled, active, workspace, *, gener
             verified_candidate(directory, corpus)
             if digest((directory/'candidate-manifest.json').read_bytes()) != snapshot['manifest_sha256']:
                 raise ExpansionError('Completed continuation manifest differs from exact outcome')
-            candidates[locale] = snapshot['candidate_id']
+            from portal_extended_quality import record_quality
+            quality = record_quality(store, locale, ready_generation, snapshot['candidate_id'],
+                                     manifest_sha256=snapshot['manifest_sha256'])
+            if quality['translation_ready']:
+                candidates[locale] = snapshot['candidate_id']
+        if not candidates:
+            continue
         return {'generation': ready_generation, 'candidates': candidates}, corpus
     return None
 
@@ -363,7 +381,9 @@ def main():
         if ready is None and repair_generation is None:
             ready = next_ready_refresh(store, args.day, args.locales, args.enabled_locales, active, workspace)
         if ready is None:
-            print(json.dumps({'dispatched': False, 'reason': 'No new complete already-approved locale candidates'}))
+            from portal_extended_quality import quality_summary
+            print(json.dumps({'dispatched': False, 'reason': 'No new translated-ready already-approved locale candidates',
+                              **quality_summary(store, select_locales(args.locales))}))
             return
         batch, corpus = ready
         receipt = save_handoff(store, batch, day=daily_corpus_day(corpus), pages=len(corpus['documents']), producer={

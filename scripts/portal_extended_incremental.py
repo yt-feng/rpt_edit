@@ -113,6 +113,8 @@ def prepare(store: R2Store, docs: list[dict], locales: tuple[str, ...], day: str
               'has_work': bool(pending), 'generation': '', 'locales_json': json.dumps(active_locales),
               'requested_locale_count': len(locales), 'pending_locale_count': len(active_locales),
               'paid_provider_requests': 0}
+    from portal_extended_quality import quality_summary
+    result.update(quality_summary(store, locales))
     if not pending: return result
     corpus = make_corpus(selected)
     # No varying timestamps/counts in the immutable source object.
@@ -158,6 +160,12 @@ def remember_candidate(store: R2Store, locale: str, corpus: dict, directory: Pat
     manifest = json.loads((directory/'candidate-manifest.json').read_text())
     if manifest.get('status') == 'complete-candidate': verified_candidate(directory, corpus)
     result = store.upload_candidate(directory, locale, generation)
+    from portal_extended_quality import record_quality
+    quality = record_quality(store, locale, generation, result['candidate_id'],
+                             manifest_sha256=result['manifest_sha256'])
+    result.update(translation_ready=quality['translation_ready'],
+                  quality_proof_sha256=quality['proof_sha256'],
+                  source_fallback_unit_count=quality['source_fallback_unit_count'])
     from portal_extended_continuation import record_result
     record_result(store, locale, corpus, result)
     if not result['ready']: return result
@@ -328,6 +336,8 @@ def main() -> int:
             full = read_corpus(store, admitted['generation'])
             result['pending_counts_json'] = json.dumps({locale: len(pending_docs(store, full['documents'], locale, admitted['day']))
                                                        for locale in requested_locales})
+        from portal_extended_quality import quality_summary
+        result.update(quality_summary(store, requested_locales))
         result['stopped_locales_json'] = json.dumps(stopped)
         if args.include_english:
             result = include_english_matrix(store, result)
