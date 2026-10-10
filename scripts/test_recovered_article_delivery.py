@@ -350,13 +350,14 @@ class DeliveryWorkflowTests(unittest.TestCase):
         self.assertIn('needs: [deliver]', publish)
         self.assertIn("if: ${{ inputs.upload_wechat && needs.deliver.result == 'success' }}", publish)
         self.assertIn('runs-on: ubuntu-latest', publish)
-        self.assertNotIn('always()', publish)
+        self.assertNotIn('always()', publish.split('    steps:', 1)[0])
         self.assertIn('GH_TOKEN: ${{ github.token }}', publish)
-        self.assertIn('gh workflow run neutral-edge-cutover.yml --repo "$GITHUB_REPOSITORY"', publish)
-        self.assertIn('--ref main -f operation=migrate -f translation_scope=incremental', publish)
-        self.assertIn('RELEASE_RUN_ID="${RUN_URL##*/}"', publish)
-        self.assertIn('[[ "$RELEASE_RUN_ID" =~ ^[1-9][0-9]*$ ]]', publish)
-        self.assertIn('gh run watch "$RELEASE_RUN_ID" --repo "$GITHUB_REPOSITORY" --compact --exit-status', publish)
+        self.assertIn('watch_recovered_article_publication.py watch', publish)
+        self.assertIn('timeout-minutes: 360', publish)
+        self.assertIn('Locate a previous publication attempt without redispatching', publish)
+        self.assertIn('artifact-ids: ${{ steps.prior.outputs.id }}', publish)
+        self.assertIn('if: ${{ always() }}', publish.split('Preserve publication state', 1)[1])
+        self.assertLess(publish.index('artifact-ids:'), publish.index('watch_recovered_article_publication.py watch'))
         self.assertNotIn('gh run list', publish)
 
     def test_workspace_uses_runner_environment_after_job_starts_not_job_expression_context(self):
@@ -394,12 +395,17 @@ class DeliveryWorkflowTests(unittest.TestCase):
         for required in ('workflow_dispatch:', 'workflow_call:', 'article_handoff_prefix:', 'article_count:',
                          'inputs.upload_wechat', 'secrets.DEEPSEEK_REPORT_NOTES_API_KEY',
                          '--source-handoff-run-id "$SOURCE_HANDOFF_RUN_ID"',
-                         '$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT', 'gh run watch "$RELEASE_RUN_ID"',
+                         '$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT', 'watch_recovered_article_publication.py watch',
                          "always() && steps.prepare.outcome == 'success'", "always() && steps.restore.outcome == 'success'"):
             self.assertIn(required, text)
         self.assertNotIn('delete-prefix', text)
         self.assertNotIn('--publish', text)
-        self.assertNotIn('upload-artifact', text)
+        # Public publication requests contain only identities/digests. Original
+        # sources, article bodies and draft receipts remain in private storage.
+        for upload in text.split('uses: actions/upload-artifact@v4')[1:]:
+            block = upload.split('\n      - ', 1)[0]
+            self.assertRegex(block, r'path: .*\b(?:recovered-publication-request|publication-state)\.json')
+            self.assertNotIn('DELIVERY_WORKSPACE', block)
         self.assertLess(text.index('validate-delivery --workspace'), text.index('Update and commit'))
 
     def test_main_exposes_fixed_category_and_never_provider_text(self):

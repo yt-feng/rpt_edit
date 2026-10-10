@@ -67,7 +67,31 @@ permissions:
   contents: read
 
 concurrency:
-  group: portal-production-release
+  # A rejected workflow_run event still enters workflow-level concurrency before
+  # job conditions run. Keep it out of the single pending production slot.
+  group: >-
+    ${{
+      (
+        github.event_name == 'workflow_dispatch' ||
+        (
+          vars.NEUTRAL_SCHEDULE_ENABLED == 'true' &&
+          (
+            vars.PORTAL_MULTILINGUAL_ENABLED != 'true' ||
+            vars.PORTAL_MULTILINGUAL_LIVE == 'true'
+          ) &&
+          (
+            github.event_name == 'schedule' ||
+            (
+              github.event_name == 'workflow_run' &&
+              github.event.workflow_run.conclusion == 'success' &&
+              github.event.workflow_run.head_branch == github.event.repository.default_branch &&
+              github.event.workflow_run.head_repository.full_name == github.repository
+            )
+          )
+        )
+      ) && 'portal-production-release' ||
+      format('portal-release-ineligible-{0}-{1}', github.run_id, github.run_attempt)
+    }}
   cancel-in-progress: false
 
 jobs:
@@ -2456,12 +2480,203 @@ jobs:
             --handoff "$ENGLISH_HANDOFF" --tree "$ENGLISH_TREE" --release "$ENGLISH_RELEASE" \
             --approved-ledger "$ENGLISH_LEDGER"
 
+  reject_failed_daily_review:
+    # Review scripts must run alongside the protected approval jobs: they wait
+    # for pending_deployments before submitting the ordinary required review.
+    # Making approval depend on review would deadlock that handshake. Instead,
+    # explicitly reject this attempt's pending environment when review fails.
+    needs: [prepare_release, extended_daily_review, english_daily_review]
+    if: >-
+      ${{ always() && needs.prepare_release.result == 'success' &&
+          (needs.extended_daily_review.result == 'failure' || needs.extended_daily_review.result == 'cancelled' ||
+           needs.english_daily_review.result == 'failure' || needs.english_daily_review.result == 'cancelled') }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      # Only the independent failure fallback needs this: it cancels this exact
+      # rejected release attempt when the delegated reviewer token is unusable.
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install delegated review readers
+        timeout-minutes: 3
+        run: python3 -m pip install --disable-pip-version-check 'boto3>=1.34,<2' 'requests>=2.31,<3'
+      - name: Reject pending approval after failed automatic review
+        id: reject_review
+        if: always()
+        timeout-minutes: 5
+        env:
+          GH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
+          EXTENDED_REVIEW_RESULT: ${{ needs.extended_daily_review.result }}
+          ENGLISH_REVIEW_RESULT: ${{ needs.english_daily_review.result }}
+        run: |
+          python3 -B - <<'PY'
+          import os
+          import sys
+          import time
+          sys.path.insert(0, 'scripts')
+          from review_portal_extended_handoff import (
+              ENVIRONMENT, ReviewAPIError, api, approval_run_identity, require,
+          )
+
+          require(os.environ.get('GITHUB_ACTIONS') == 'true' and
+                  os.environ.get('GITHUB_REF') == 'refs/heads/main' and
+                  os.environ.get('GITHUB_EVENT_NAME') == 'workflow_dispatch',
+                  'Failed review cleanup requires the exact main dispatch')
+          repository, run_id = os.environ['GITHUB_REPOSITORY'], os.environ['GITHUB_RUN_ID']
+          attempt, sha = os.environ['GITHUB_RUN_ATTEMPT'], os.environ['GITHUB_SHA']
+          failures = {
+              review: (approval, result)
+              for review, approval, result in (
+                  ('extended_daily_review', 'extended_locales_approval', os.environ['EXTENDED_REVIEW_RESULT']),
+                  ('english_daily_review', 'english_approval', os.environ['ENGLISH_REVIEW_RESULT']),
+              ) if result in ('failure', 'cancelled')
+          }
+          require(bool(failures), 'No attempted automatic review failed')
+          path = f'repos/{repository}/actions/runs/{run_id}'
+          environment = api(f'repos/{repository}/environments/{ENVIRONMENT}')
+          require(environment.get('name') == ENVIRONMENT and any(
+              row.get('type') == 'required_reviewers' and row.get('reviewers')
+              for row in environment.get('protection_rules', [])),
+              'Required reviewers must remain configured during failed review cleanup')
+          comment = f'Automatic review failed; rejecting release {run_id} attempt {attempt} at {sha}.'
+          payload = {'environment_ids': [environment['id']], 'state': 'rejected', 'comment': comment}
+          writes = 0
+          for check in range(12):
+              approval_run_identity(api(path), repository, run_id, attempt, sha)
+              jobs = api(path + f'/attempts/{attempt}/jobs?per_page=100')
+              require(jobs.get('total_count', 101) <= 100, 'Failed review jobs exceed bound')
+              approvals = []
+              for review, (approval, result) in failures.items():
+                  selected = [row for row in jobs['jobs'] if row.get('name') == review]
+                  expected = ('failure', 'timed_out') if result == 'failure' else ('cancelled',)
+                  require(len(selected) == 1 and selected[0].get('run_id') == int(run_id) and
+                          selected[0].get('head_sha') == sha and selected[0].get('status') == 'completed' and
+                          selected[0].get('conclusion') in expected, 'Automatic review failure identity differs')
+                  selected = [row for row in jobs['jobs'] if row.get('name') == approval]
+                  require(len(selected) == 1 and selected[0].get('run_id') == int(run_id) and
+                          selected[0].get('head_sha') == sha, 'Pending approval job identity differs')
+                  approvals.extend(selected)
+              pending = api(path + '/pending_deployments')
+              require(isinstance(pending, list), 'Pending approval response is invalid')
+              pending = [row for row in pending if row.get('environment', {}).get('id') == environment['id']]
+              if not pending and all(row.get('status') == 'completed' and
+                      row.get('conclusion') in ('failure', 'cancelled', 'skipped') for row in approvals):
+                  print('Failed automatic review has no remaining protected approval wait')
+                  break
+              require(all(row.get('status') in ('queued', 'waiting', 'pending') for row in approvals),
+                      'Failed review cleanup cannot change an already started approval')
+              if pending:
+                  require(len(pending) == 1 and pending[0].get('environment', {}).get('name') == ENVIRONMENT and
+                          pending[0].get('current_user_can_approve') is True,
+                          'Configured reviewer cannot reject the exact pending environment')
+                  require(writes < 4, 'Failed review rejection retry budget exhausted')
+                  writes += 1
+                  try:
+                      api(path + '/pending_deployments', payload, 'POST')
+                  except ReviewAPIError as error:
+                      if not error.transient:
+                          raise
+                      # A lost response can conceal an accepted rejection. The
+                      # next iteration reads exact-attempt jobs/pending first.
+              if check < 11:
+                  time.sleep(5)
+          else:
+              raise SystemExit('Failed automatic review still has an unverified approval wait')
+          PY
+
+      - name: Cancel this failed release if delegated rejection is unavailable
+        if: failure() && steps.reject_review.outcome == 'failure'
+        timeout-minutes: 3
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXTENDED_REVIEW_RESULT: ${{ needs.extended_daily_review.result }}
+          ENGLISH_REVIEW_RESULT: ${{ needs.english_daily_review.result }}
+        run: |
+          # Use only the standard library and the hosted runner's GitHub CLI;
+          # this must work even if reviewer credentials or setup failed.
+          python3 -B - <<'PY'
+          import json
+          import os
+          import re
+          import subprocess
+
+          def require(condition, message):
+              if not condition:
+                  raise SystemExit(message)
+
+          def api(path, method='GET'):
+              result = subprocess.run(['gh', 'api', path, '--method', method],
+                                      capture_output=True, check=False, timeout=45)
+              require(result.returncode == 0, 'Exact failed-release cancellation API request failed')
+              return json.loads(result.stdout) if result.stdout.strip() else None
+
+          require(os.environ.get('GITHUB_ACTIONS') == 'true' and
+                  os.environ.get('GITHUB_REF') == 'refs/heads/main' and
+                  os.environ.get('GITHUB_EVENT_NAME') == 'workflow_dispatch',
+                  'Failed release cancellation requires the exact main dispatch')
+          repository, run_id = os.environ['GITHUB_REPOSITORY'], os.environ['GITHUB_RUN_ID']
+          attempt, sha = os.environ['GITHUB_RUN_ATTEMPT'], os.environ['GITHUB_SHA']
+          require(re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', repository) and
+                  run_id.isdigit() and attempt.isdigit() and re.fullmatch(r'[0-9a-f]{40}', sha),
+                  'Failed release cancellation identity is invalid')
+          failures = {name: result for name, result in (
+              ('extended_daily_review', os.environ['EXTENDED_REVIEW_RESULT']),
+              ('english_daily_review', os.environ['ENGLISH_REVIEW_RESULT']),
+          ) if result in ('failure', 'cancelled')}
+          require(bool(failures), 'No attempted automatic review failed')
+          path = f'repos/{repository}/actions/runs/{run_id}'
+          run = api(path)
+          require(run.get('id') == int(run_id) and run.get('run_attempt') == int(attempt) and
+                  run.get('head_sha') == sha and run.get('head_branch') == 'main' and
+                  run.get('event') == 'workflow_dispatch' and
+                  run.get('path') == '.github/workflows/neutral-edge-cutover.yml' and
+                  all((run.get(key) or {}).get('full_name') == repository
+                      for key in ('repository', 'head_repository')),
+                  'Failed release cancellation identity changed')
+          jobs = api(path + f'/attempts/{attempt}/jobs?per_page=100')
+          require(jobs.get('total_count', 101) == len(jobs.get('jobs', [])) <= 100,
+                  'Failed release job inventory is incomplete')
+          for name, result in failures.items():
+              selected = [row for row in jobs['jobs'] if row.get('name') == name]
+              expected = ('failure', 'timed_out') if result == 'failure' else ('cancelled',)
+              require(len(selected) == 1 and selected[0].get('run_id') == int(run_id) and
+                      selected[0].get('head_sha') == sha and selected[0].get('status') == 'completed' and
+                      selected[0].get('conclusion') in expected,
+                      'Automatic review failure identity differs before cancellation')
+          cutovers = [row for row in jobs['jobs'] if row.get('name') == 'cutover']
+          require(len(cutovers) <= 1 and all(
+              row.get('run_id') == int(run_id) and row.get('head_sha') == sha and
+              (row.get('status') in ('queued', 'waiting', 'pending') or
+               row.get('status') == 'completed' and row.get('conclusion') == 'skipped') and
+              not any(step.get('status') == 'in_progress' or
+                      step.get('status') == 'completed' and step.get('conclusion') != 'skipped'
+                      for step in row.get('steps', [])) for row in cutovers),
+              'Cannot cancel a release whose cutover already started')
+          if run.get('status') == 'completed':
+              require(run.get('conclusion') in ('failure', 'cancelled'),
+                      'Failed release has an unexpected completed conclusion')
+              print('Exact failed release already finished; no cancellation needed')
+          else:
+              api(path + '/cancel', 'POST')
+              print('Cancellation requested for this exact failed release attempt')
+          PY
+
   cutover:
-    needs: [prepare_release, multilingual_approval, extended_locales_approval, english_approval]
+    needs: [prepare_release, multilingual_approval, extended_locales_approval, english_approval, extended_daily_review, english_daily_review]
     if: >-
       ${{
         always() &&
         needs.prepare_release.result == 'success' &&
+        (needs.extended_daily_review.result == 'success' || needs.extended_daily_review.result == 'skipped') &&
+        (needs.english_daily_review.result == 'success' || needs.english_daily_review.result == 'skipped') &&
         (
           needs.prepare_release.outputs.multilingual_enabled != 'true' ||
           needs.prepare_release.outputs.locale_ready == 'true'

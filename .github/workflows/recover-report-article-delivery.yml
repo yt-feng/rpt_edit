@@ -197,6 +197,21 @@ jobs:
             --blog-archive-root portal_suite/data/blog_archive
           bash scripts/commit_output_dir.sh portal_suite/data/blog_archive \
             "Archive recovered report articles $DATE_FOLDER" 8 true
+      - name: Bind publication request to the pushed archive and exact articles
+        run: |
+          python scripts/watch_recovered_article_publication.py request \
+            --drafts-root "$DELIVERY_WORKSPACE/wechat_drafts" \
+            --archive-root portal_suite/data/blog_archive \
+            --archive-commit "$(git rev-parse HEAD)" \
+            --output "$RUNNER_TEMP/recovered-publication-request.json"
+      - name: Save the resumable public article publication request
+        uses: actions/upload-artifact@v4
+        with:
+          name: recovered-publication-request-${{ github.run_id }}
+          path: ${{ runner.temp }}/recovered-publication-request.json
+          if-no-files-found: error
+          retention-days: 30
+          overwrite: true
       # Source and article handoffs remain available to the independent PDF,
       # translation and chart consumers. This workflow never deletes them.
 
@@ -204,15 +219,47 @@ jobs:
     needs: [deliver]
     if: ${{ inputs.upload_wechat && needs.deliver.result == 'success' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 360
     steps:
-      - name: Publish and wait for the exact incremental website refresh
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          name: recovered-publication-request-${{ github.run_id }}
+          path: ${{ runner.temp }}/recovered-publication
+      - name: Locate a previous publication attempt without redispatching
+        id: prior
+        env:
+          GH_TOKEN: ${{ github.token }}
+          STATE_ARTIFACT: recovered-publication-state-${{ github.run_id }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?per_page=100" > "$RUNNER_TEMP/publication-artifacts.json"
+          STATE_ID="$(jq -r --arg name "$STATE_ARTIFACT" '[.artifacts[] | select(.name == $name and .expired == false)] | if length == 0 then "" elif length == 1 then .[0].id else error("duplicate publication state") end' "$RUNNER_TEMP/publication-artifacts.json")"
+          echo "id=$STATE_ID" >> "$GITHUB_OUTPUT"
+      - uses: actions/download-artifact@v4
+        if: ${{ steps.prior.outputs.id != '' }}
+        with:
+          artifact-ids: ${{ steps.prior.outputs.id }}
+          path: ${{ runner.temp }}/recovered-publication
+          merge-multiple: true
+      - name: Require a containing release and every exact live Blog article
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          RUN_URL="$(gh workflow run neutral-edge-cutover.yml --repo "$GITHUB_REPOSITORY" \
-            --ref main -f operation=migrate -f translation_scope=incremental)"
-          RELEASE_RUN_ID="${RUN_URL##*/}"
-          [[ "$RELEASE_RUN_ID" =~ ^[1-9][0-9]*$ ]]
-          echo "Recovered article website publication: $RUN_URL" >> "$GITHUB_STEP_SUMMARY"
-          gh run watch "$RELEASE_RUN_ID" --repo "$GITHUB_REPOSITORY" --compact --exit-status --interval 20
+          python scripts/watch_recovered_article_publication.py watch \
+            --request "$RUNNER_TEMP/recovered-publication/recovered-publication-request.json" \
+            --state "$RUNNER_TEMP/recovered-publication/publication-state.json"
+      - name: Preserve publication state and acceptance without repeating drafts
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: recovered-publication-state-${{ github.run_id }}
+          path: ${{ runner.temp }}/recovered-publication/publication-state.json
+          if-no-files-found: warn
+          retention-days: 30
+          overwrite: true

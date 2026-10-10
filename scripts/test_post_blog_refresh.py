@@ -86,7 +86,17 @@ class PostBlogRefreshTests(unittest.TestCase):
         self.assertNotIn("build-portal-translated-reports", body)
         neutral = (ROOT / ".github/workflows/neutral-edge-cutover.yml").read_text()
         self.assertIn("- Daily report articles and translations", neutral)
-        self.assertIn("group: portal-production-release", neutral)
+        concurrency = re.search(r'^concurrency:\n(.*?)(?=^jobs:\n)', neutral, re.M | re.S).group(1)
+        group = re.search(r'^  group: >-\n(.*?)^  cancel-in-progress: false$',
+                          concurrency, re.M | re.S)
+        self.assertIsNotNone(group, 'The root release lock must remain non-cancelling')
+        preparation = neutral.split('\n  prepare_release:\n', 1)[1]
+        admission = preparation.split('    if: >-\n', 1)[1].split('    runs-on:', 1)[0].strip()
+        self.assertTrue(admission.startswith('${{') and admission.endswith('}}'))
+        expected = ("${{ ( " + ' '.join(admission[3:-2].split()) +
+                    " ) && 'portal-production-release' || "
+                    "format('portal-release-ineligible-{0}-{1}', github.run_id, github.run_attempt) }}")
+        self.assertEqual(' '.join(group.group(1).split()), expected)
 
 
 if __name__ == "__main__":

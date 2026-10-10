@@ -583,8 +583,10 @@ test("neutral deployment keeps the canonical gateway cache disabled and verifies
   assert.match(workflow, /\[cache\]\s+enabled = false/);
   assert.match(workflow, /wranglerVersion: ["']4\.125\.0["']/);
   assert.match(workflow, /compatibility_date = ["']2026-08-12["']/);
-  assert.match(workflow, /group: portal-production-release/);
-  assert.match(workflow, /cancel-in-progress: false/);
+  const concurrency = workflow.match(/^concurrency:\n([\s\S]*?)\n\njobs:/m)?.[1] || "";
+  assert.match(concurrency, /&& 'portal-production-release' \|\|/);
+  assert.match(concurrency, /format\('portal-release-ineligible-\{0\}-\{1\}'/);
+  assert.match(concurrency, /cancel-in-progress: false/);
   assert.match(workflow, /test -s "_neutral_site\/\$required"/);
   assert.match(workflow, /\.well-known\/edge-release\/\$STATIC_RELEASE\/data\/catalog\.json/);
   assert.match(workflow, /STATIC_PREFIX = "\$STATIC_PREFIX"/);

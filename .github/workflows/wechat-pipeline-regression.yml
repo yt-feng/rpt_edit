@@ -6,6 +6,7 @@ on:
       - "scripts/*wechat*"
       - "scripts/*recover_report_articles*"
       - "scripts/*recovered_article_delivery*"
+      - "scripts/*watch_recovered_article_publication*"
       - "scripts/*report_extraction_source*"
       - "scripts/*chart_recovered_handoff*"
       - ".github/workflows/portal-chart-search-index.yml"
@@ -69,6 +70,7 @@ on:
       - "scripts/*wechat*"
       - "scripts/*recover_report_articles*"
       - "scripts/*recovered_article_delivery*"
+      - "scripts/*watch_recovered_article_publication*"
       - "scripts/*report_extraction_source*"
       - "scripts/*chart_recovered_handoff*"
       - ".github/workflows/portal-chart-search-index.yml"
@@ -166,6 +168,7 @@ jobs:
           python scripts/test_wechat_editorial_binding.py
           python scripts/test_recover_report_articles.py
           python scripts/test_recovered_article_delivery.py
+          python scripts/test_watch_recovered_article_publication.py
           python scripts/test_report_extraction_source.py
           python scripts/test_chart_recovered_handoff.py
           python scripts/test_private_generation_checkpoint.py
