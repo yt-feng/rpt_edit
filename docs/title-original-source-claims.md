@@ -34,7 +34,8 @@ bag. The new route requires:
   clause cannot supply that claim's evidence.
 - Both the candidate and original sentence must have a direct subject/topic →
   single metric → quantity structure. The entire prefix must contain exactly the
-  literal subject and required-topic tokens (with only possessive or generic
+  ordered literal subject and required-topic tokens, with the same subject order
+  in the filename (with only possessive or generic
   product wording); the intervening relationship words and trailing period/basis
   syntax are bounded. Reporting attribution, customers, unknown prepositions and
   a third subject fail regardless of capitalization. Co-occurrence in one sentence

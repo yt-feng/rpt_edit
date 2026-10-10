@@ -129,6 +129,21 @@ class SourceClaimTests(unittest.TestCase):
             claims.source_context(filename,'AMD AI revenue grows 30%.'))
         self.assertFalse(result['candidate_direct_claim'])
         self.assertFalse(result['supported'])
+        filename='Apple Watch GPU shipments.pdf'
+        candidate='Apple Watch GPU产品交付量增长30%'
+        for source,expected in [('Watch Apple GPU shipments grow 30%.',False),
+                ('GPU Apple Watch shipments grow 30%.',False),
+                ('Apple Watch GPU shipments grow 30%.',True)]:
+            self.assertEqual(claims.contextual_numeric_support(candidate,{'30'},filename,['GPU'],
+                claims.source_context(filename,source))['supported'],expected)
+        filename='Watch Apple GPU shipments.pdf'
+        self.assertFalse(claims.contextual_numeric_support(candidate,{'30'},filename,['GPU'],
+            claims.source_context(filename,'Apple Watch GPU shipments grow 30%.'))['supported'])
+        filename='GS-Watchlist-Apple Watch GPU shipments.pdf'
+        self.assertFalse(claims.contextual_numeric_support('Watch Apple GPU产品交付量增长30%',{'30'},filename,['GPU'],
+            claims.source_context(filename,'Watch Apple GPU shipments grow 30%.'))['supported'])
+        self.assertTrue(claims.contextual_numeric_support(candidate,{'30'},filename,['GPU'],
+            claims.source_context(filename,'Apple Watch GPU shipments grow 30%.'))['supported'])
 
     def test_uncovered_number_and_other_added_hooks_are_not_authorized(self):
         context=claims.source_context(self.SOURCE, 'Apple AI revenue grows 12.5%.')

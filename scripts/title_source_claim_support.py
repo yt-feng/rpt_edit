@@ -7,7 +7,6 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from decimal import Decimal, InvalidOperation
-from collections import Counter
 import hashlib
 import re
 
@@ -190,11 +189,19 @@ def literal_subjects(candidate, filename, required_terms):
     for word in re.findall(r'[\u4e00-\u9fff]{2,8}', filename):
         if word in body and not categories(word, METRICS) and not categories(word, STATE_PATTERNS):
             subjects.append(word)
-    return subjects
+    matches = {word: (literal_match(body, word), literal_match(filename, word)) for word in set(subjects)}
+    ordered = sorted((word for word,(title_match,file_match) in matches.items() if title_match and file_match),
+        key=lambda word: matches[word][0].start())
+    filename_order = sorted(ordered, key=lambda word: matches[word][1].start())
+    return ordered if filename_order == ordered else []
+
+
+def literal_match(text, term):
+    return re.search(r'(?<![A-Za-z0-9])' + re.escape(term) + r'(?![A-Za-z0-9])', text, re.I)
 
 
 def contains_literal(text, term):
-    return bool(re.search(r'(?<![A-Za-z0-9])' + re.escape(term) + r'(?![A-Za-z0-9])', text, re.I))
+    return literal_match(text, term) is not None
 
 
 def sentences(text):
@@ -223,7 +230,7 @@ def direct_claim(text, atom, subjects, required_terms, metric):
     prefix = re.sub(r'\bproducts?\b|产品|的', ' ', prefix, flags=re.I)
     tokens = re.findall(r'[A-Za-z][A-Za-z0-9]*|[\u4e00-\u9fff]+', prefix)
     residue = re.sub(r'[A-Za-z][A-Za-z0-9]*|[\u4e00-\u9fff]+', '', prefix)
-    if residue.strip() or Counter(word.lower() for word in tokens) != Counter([*subjects, *(term.lower() for term in required_terms)]):
+    if residue.strip() or [word.lower() for word in tokens] != [*subjects, *(term.lower() for term in required_terms)]:
         return False
     middle = re.sub(PERIOD_PATTERN, ' ', text[match.end():atom.start()], flags=re.I).strip()
     english_relation = (r'(?:(?:is|are|was|were|has|have|had|will|would|may|might|could|can|should|does|do|did|'
