@@ -122,16 +122,23 @@ class DiagnosticTests(unittest.TestCase):
         self.assertEqual(report["related_errors"], [])
         self.assertEqual(report["candidate_coverage"]["status"], "unavailable")
 
-    def test_workflow_has_only_filtered_artifact_and_no_model_credentials(self):
+    def test_workflow_has_only_filtered_artifact_and_scoped_probe_credentials(self):
         workflow = (Path(__file__).resolve().parents[1] / ".github/workflows/portal-chart-search-diagnostic.yml").read_text()
-        self.assertIn('required: true\n        default: ""', workflow)
+        self.assertIn("default: checkpoint", workflow)
+        self.assertIn("github.ref == 'refs/heads/main'", workflow)
         self.assertIn("contents: read", workflow)
         self.assertIn("pull_request:", workflow)
-        self.assertEqual(workflow.count("if: github.event_name == 'workflow_dispatch'"), 2)
+        self.assertEqual(workflow.count("if: github.event_name == 'workflow_dispatch'"), 3)
         self.assertIn("if: always() && github.event_name == 'workflow_dispatch'", workflow)
         self.assertEqual(workflow.count("uses: actions/upload-artifact@"), 1)
         self.assertIn("path: _chart_diagnostic/report.json", workflow)
-        self.assertNotIn("VISION_INDEX_API_KEY", workflow)
+        checkpoint_step = workflow.split("- name: Read checkpoint", 1)[1].split("- name: Probe", 1)[0]
+        self.assertNotIn("VISION_INDEX_API_KEY", checkpoint_step)
+        self.assertIn("inputs.operation != 'vision-config'", checkpoint_step)
+        probe_step = workflow.split("- name: Probe", 1)[1].split("- name: Upload", 1)[0]
+        self.assertIn("inputs.operation == 'vision-config'", probe_step)
+        self.assertIn("VISION_INDEX_API_KEY", probe_step)
+        self.assertNotIn("R2_ACCESS_KEY_ID", probe_step)
         self.assertNotIn("publish-state", workflow)
         self.assertNotIn("chart_search_r2.py publish", workflow)
         self.assertNotIn("python scripts/build_chart_search_index.py", workflow)

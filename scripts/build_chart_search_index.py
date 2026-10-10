@@ -96,6 +96,13 @@ quality_score 用 0 到 100 表示该图片作为独立、可搜索图表的有�
 class VisionConfigurationError(RuntimeError):
     """The endpoint, credential, model, or request contract is misconfigured."""
 
+    def __init__(self, message: str, *, reason: str = "configuration", status: int | None = None) -> None:
+        super().__init__(message)
+        self.reason = reason if reason in {
+            "configuration", "authentication", "model_unavailable", "route_not_found", "request_contract"
+        } else "configuration"
+        self.status = status if type(status) is int and 400 <= status < 500 else None
+
 
 class RetryableVisionError(RuntimeError):
     """A service-wide or transport failure that must never quarantine an image."""
@@ -594,7 +601,7 @@ def response_error_text(response: requests.Response) -> str:
     if isinstance(payload, dict):
         error = payload.get("error")
         if isinstance(error, dict):
-            payload = error.get("message") or error.get("code") or ""
+            payload = " ".join(str(error.get(field) or "") for field in ("code", "message"))
         else:
             payload = error or payload.get("message") or ""
     return clean_text(payload, 2_000).casefold()
@@ -608,12 +615,32 @@ def classify_http_error(response: requests.Response) -> RuntimeError:
             reason="http_transient",
         )
     if status in CONFIGURATION_HTTP_STATUSES:
-        return VisionConfigurationError(f"Vision service configuration was rejected (status={status})")
+        reason = "authentication" if status in {401, 403} else "configuration"
+        if status == 404:
+            detail = response_error_text(response)
+            if any(marker in detail for marker in (
+                "model_not_found", "modelnotfound", "model_not_supported", "model not found",
+                "model does not exist", "model is not supported", "model not supported",
+                "no available channel", "无可用渠道", "模型不存在", "不支持该模型",
+            )):
+                reason = "model_unavailable"
+            elif any(marker in detail for marker in (
+                "route not found", "endpoint not found", "unknown endpoint", "cannot post",
+                "404 page not found", "unknown route",
+            )):
+                reason = "route_not_found"
+        return VisionConfigurationError(
+            f"Vision service configuration was rejected (status={status}, reason={reason})",
+            reason=reason, status=status,
+        )
     if 400 <= status < 500:
         detail = response_error_text(response)
         if status in {413, 415} or any(marker in detail for marker in IMAGE_ERROR_MARKERS):
             return StableImageError(f"Vision service rejected this image (status={status})")
-        return VisionConfigurationError(f"Vision request contract was rejected (status={status})")
+        return VisionConfigurationError(
+            f"Vision request contract was rejected (status={status}, reason=request_contract)",
+            reason="request_contract", status=status,
+        )
     return RetryableVisionError(
         f"Vision service returned an unexpected status ({status})",
         reason="http_unexpected",
@@ -632,6 +659,7 @@ class VisionClient:
         retry_backoff: float,
         min_interval: float,
         max_read_timeout: float = 240.0,
+        allow_redirects: bool = True,
     ) -> None:
         self.endpoint = validate_api_base(api_base)
         self.model = clean_text(model, 160)
@@ -640,6 +668,7 @@ class VisionClient:
         self.timeout = timeout
         self.connect_timeout = min(timeout, 15.0)
         self.max_read_timeout = max(timeout, max_read_timeout)
+        self.allow_redirects = allow_redirects
         self.retries = max(1, retries)
         self.retry_backoff = max(0.1, retry_backoff)
         self.min_interval = max(0.0, min_interval)
@@ -683,6 +712,7 @@ class VisionClient:
                     self.endpoint,
                     json=payload,
                     timeout=(self.connect_timeout, read_timeout),
+                    allow_redirects=self.allow_redirects,
                 )
             except requests.RequestException as exc:
                 reason = transport_reason_code(exc)
