@@ -88,7 +88,6 @@ jobs:
       MANIFEST_SHA256: ${{ inputs.manifest_sha256 }}
       ARCHIVE_SHA256: ${{ inputs.archive_sha256 }}
       ARCHIVE_SIZE_BYTES: ${{ inputs.archive_size_bytes }}
-      RECOVERY_WORKSPACE: ${{ runner.temp }}/ocr-cache-recovery
     steps:
       - uses: actions/checkout@v4
         with:
@@ -138,7 +137,7 @@ jobs:
         run: |
           python -B scripts/recover_ocr_cache_sources.py recover \
             --input-dir "$RUNNER_TEMP/ocr-selected-originals" \
-            --producer-json "$RUNNER_TEMP/ocr-original-producer.json" --workspace "$RECOVERY_WORKSPACE"
+            --producer-json "$RUNNER_TEMP/ocr-original-producer.json" --workspace "$RUNNER_TEMP/ocr-cache-recovery"
       - name: Archive and verify recovered OCR sources in private R2
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
@@ -148,7 +147,7 @@ jobs:
         run: |
           python -B scripts/recover_ocr_cache_sources.py archive \
             --input-dir "$RUNNER_TEMP/ocr-selected-originals" \
-            --producer-json "$RUNNER_TEMP/ocr-original-producer.json" --workspace "$RECOVERY_WORKSPACE"
+            --producer-json "$RUNNER_TEMP/ocr-original-producer.json" --workspace "$RUNNER_TEMP/ocr-cache-recovery"
 
   deliver:
     needs: recover
