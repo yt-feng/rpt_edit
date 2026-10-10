@@ -123,16 +123,42 @@ store only bounded, provider-neutral reason codes (for example `read_timeout`,
 output.
 
 The manual checkpoint diagnostic defaults to `operation=checkpoint`, retaining
-its read-only storage behavior. A main-branch `operation=vision-config` instead
-uses one generated synthetic chart with the exact configured endpoint, credential,
-model, and normal client request contract. It makes at most one provider request,
-reads no report or R2 object, and writes no R2 object. Its artifact contains only
-fixed status/reason codes and a coarse endpoint path category; no endpoint,
-credential, response body, or model output is retained. A successful diagnostic
-workflow means the observation completed: only `probe_status=accepted` confirms
-the synthetic request succeeded. HTTP 404 is separately classified as a recognized
-model-availability rejection, a recognized route rejection, or unknown configuration;
-the client never guesses another destination, weakens TLS, or switches providers.
+its read-only storage behavior. The two other main-branch operations do not read
+reports or R2 objects and do not write R2 objects:
+
+- `vision-models` makes at most one GET to the configured endpoint's same base
+  path, replacing its terminal `/chat/completions` with `/models`. It preserves
+  the origin, port, credential and base prefix; it never follows redirects or
+  paginates. A successful response exposes only the intersection with
+  `qwen3-vl-flash`, `qwen3-vl-plus`, `qwen-vl-plus`, `qwen-vl-max`, and
+  `qwen2.5-vl-72b-instruct`, in that order. The rest of the model inventory,
+  provider fields and inventory size are not retained. An empty intersection
+  does not select an alternative model. Non-200 status, malformed/duplicate-key
+  JSON, partial/paginated inventory, invalid rows, and oversized/truncated bodies
+  cannot produce an accepted result.
+- `vision-config` uses one generated synthetic chart and the normal vision
+  request contract. Empty `model_override` preserves the configured model.
+  A nonempty override must be one of the five identifiers above; it applies to
+  this one probe only and never changes repository variables. First inspect
+  `vision-models`, then explicitly choose one returned candidate for a single
+  `vision-config` probe. Availability in `/models` alone does not establish that
+  the model accepts image input or the required response contract.
+
+Both responses are streamed with a one-MiB decoded-body limit, bounded timeouts,
+and no retry or redirect. The artifact contains fixed status/reason codes, coarse
+endpoint path classification, request counts, and only permitted model identifiers;
+it never contains a host, credential, raw response or generated model content.
+A green diagnostic workflow means observation completed: `probe_status=accepted`
+means an inventory read succeeded for `vision-models`, or the synthetic image
+request succeeded for `vision-config`. A confirmed probe is required before an
+operator updates the configured model and resumes the real chart job. The
+diagnostic does not guess a model, change an endpoint, or mutate configuration.
+
+The completed diagnostic run `38049040838` reported HTTP 404 with
+`reason=model_unavailable` and `endpoint_path_kind=versioned_chat_completions`.
+That identifies the configured model rejection, not a verified replacement.
+HTTP 404 is classified separately from a recognized route rejection or unknown
+configuration; no alternate destination is inferred.
 
 Requests begin with a 90-second response deadline and at most 15 seconds to connect.
 A read timeout doubles only that image's next response deadline, capped at 240 seconds
