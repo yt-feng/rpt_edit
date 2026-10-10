@@ -134,7 +134,19 @@ def main() -> int:
     # Only this newly constructed allowlisted report ever reaches disk/artifacts.
     Path(args.output).parent.mkdir(parents=True, exist_ok=True)
     Path(args.output).write_text(json.dumps(report, sort_keys=True, indent=2) + "\n", encoding="utf-8")
-    print("chart_checkpoint_diagnostic status=" + report["read_status"])
+    # Keep progress visible when artifact downloads are unavailable. This is a
+    # structural projection only: no image hashes, provider diagnostics or text.
+    summary = {"read_status": report["read_status"], "provider_posts": 0, "object_writes": 0}
+    if report["read_status"] == "available":
+        summary.update(
+            requested_run_id=report["requested_run_id"],
+            checkpoint_status_counts=report["checkpoint_status_counts"],
+            checkpoint_reusable_count=report["checkpoint_reusable_count"],
+            matched_status_counts=report["selection"]["matched_status_counts"],
+            matched_reusable_count=report["selection"]["matched_reusable_count"],
+            candidate_coverage="unavailable",
+        )
+    print("chart_checkpoint_diagnostic " + json.dumps(summary, sort_keys=True))
     return status
 
 
