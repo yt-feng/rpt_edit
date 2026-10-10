@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'scripts/*extended*'
+      - 'scripts/*french_source_fallback*'
       - 'scripts/*restore_published_catalog*'
       - 'scripts/*portal_candidate_replay*'
       - '.github/workflows/portal-candidate-replay-inspect.yml'
@@ -39,6 +40,7 @@ on:
     branches: [main, codex/extended-locales-r2-20260924]
     paths:
       - 'scripts/*extended*'
+      - 'scripts/*french_source_fallback*'
       - 'scripts/*restore_published_catalog*'
       - 'scripts/*portal_candidate_replay*'
       - '.github/workflows/portal-candidate-replay-inspect.yml'
@@ -111,6 +113,8 @@ jobs:
           python -B scripts/test_portal_extended_continuation.py
           python -B scripts/test_portal_extended_recovery_intent.py
           python -B scripts/test_repair_portal_extended_checkpoint.py
+          python -B scripts/test_repair_portal_french_source_fallback.py
+          python -B scripts/test_portal_extended_french_repair.py
           python -B scripts/test_portal_extended_daily_queue.py
           python -B scripts/test_portal_extended_source_refresh.py
           python -B scripts/test_portal_english_commentary.py

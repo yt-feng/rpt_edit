@@ -425,7 +425,7 @@ def resume_prepared(store,value,corpus,old,repair,locale,prepared):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('operation',choices=['prepare','restore','build','persist'])
+    parser.add_argument('operation',choices=['prepare','restore','build','persist','inspect'])
     parser.add_argument('--generation',required=True);parser.add_argument('--locale',required=True)
     parser.add_argument('--request',required=True);parser.add_argument('--corpus',type=Path)
     parser.add_argument('--checkpoint',type=Path);parser.add_argument('--output',type=Path)
@@ -438,9 +438,15 @@ def main():
         or os.environ.get('GITHUB_WORKFLOW_REF')!=os.environ.get('GITHUB_REPOSITORY','')+'/'+WORKFLOW+'@refs/heads/main'):
         raise ExpansionError('Exact checkpoint repair requires reviewed-main public dispatch')
     owner=producer_identity({k:os.environ[v] for k,v in {'run_id':'GITHUB_RUN_ID','attempt':'GITHUB_RUN_ATTEMPT','sha':'GITHUB_SHA'}.items()})
-    repair=request(json.loads(args.request));store=once_store()
+    value=json.loads(args.request)
     from review_portal_extended_handoff import api
     repository=os.environ['GITHUB_REPOSITORY']
+    from portal_extended_french_repair import POLICY as FRENCH_POLICY, run as french_repair
+    if isinstance(value,dict) and value.get('policy') == FRENCH_POLICY:
+        return french_repair(args,value,owner,store=once_store(),repository=repository,api=api)
+    if args.operation == 'inspect':
+        raise ExpansionError('Source fallback inspection requires its exact supported policy')
+    repair=request(value);store=once_store()
     if args.operation=='prepare':
         result=prepare(store,args.generation,args.locale,repair,repository,api,owner)
         if args.github_output:
