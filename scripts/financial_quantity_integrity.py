@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from collections import Counter
 from datetime import date
-from decimal import Decimal
+from decimal import Decimal, InvalidOperation
 import re
 import unicodedata
 
@@ -17,6 +17,9 @@ import unicodedata
 # Keep a complete decimal indivisible. Otherwise a failed suffix match can
 # backtrack USD1.2bn into USD1 plus a stray 2, hiding a changed magnitude.
 NUMBER = r"(?>[+\-−]?\d+(?:[,٬]\d{3})*(?:[.٫,]\d+)?)"
+# Localized comma decimals must not first be greedily consumed as a three-digit
+# grouping prefix (0,000125 is one decimal, not numbers 0 and 125).
+COMMA_DECIMAL_NUMBER = r"(?>[+\-−]?\d+(?:٬\d{3})*(?:[.٫,]\d+)?)"
 SCALES = {
     "thousand": 10**3, "million": 10**6, "billion": 10**9, "trillion": 10**12,
     "k": 10**3, "m": 10**6, "b": 10**9, "t": 10**12,
@@ -122,36 +125,86 @@ FIVE_YEAR_PERIOD_RE = re.compile(
     r"(?<![A-Za-z0-9])(\d+)(?:st|nd|rd|th)\s+Five[~\s-]+Year(?![A-Za-z0-9])", re.IGNORECASE)
 
 
-def _french_grouped_numbers(text: str) -> str:
+COMMA_DECIMAL_LANGUAGES = frozenset({'fr', 'es', 'de', 'id'})
+
+
+def _locale_number_runs(text: str, language: str) -> tuple[str, int]:
+    """Normalize only complete, explicitly supported localized numeric runs.
+
+    CLDR 48: French groups with narrow no-break spaces; German, Spanish and
+    Indonesian group with dots. All four use decimal commas. Keep the former
+    French ordinary/NBSP space aliases and unambiguous dot decimals, but never
+    choose a meaning by comparing it with the source's value.
+    """
     # Inspect the whole numeric run before NFKC collapses distinct spaces.
     # A malformed group must not be normalized by matching only its suffix.
-    spaces = " \u00a0\u202f"
-    candidate = rf"(?<![\w.,+\-−])[+\-−]?[0-9]+(?:[{spaces}.,][0-9]+)+(?!\w|[.,][0-9]|[{spaces}][0-9])"
-    grouped = rf"([+\-−]?)([1-9][0-9]{{0,2}}(?:[{spaces}][0-9]{{3}})+)(?:,([0-9]+))?"
+    groups = " \u00a0\u202f" if language == 'fr' else '.'
+    candidate = rf"(?<![\d.,٬٫+\-−])[+\-−]*[.,٬٫]*[0-9]+(?:[{groups}.,٬٫]+[0-9]+)+(?![0-9]|[.,٬٫][0-9]|[{groups}][0-9])"
+    grouped = rf"([+\-−]?)([1-9][0-9]{{0,2}}(?:[{groups}][0-9]{{3}})+)(?:,([0-9]+))?"
+    invalid = 0
+
+    def normalize_piece(piece):
+        nonlocal invalid
+        value = re.fullmatch(grouped, piece)
+        if value is not None:
+            integer = value[1] + re.sub(rf"[{groups}]", "", value[2])
+            return integer + ("." + value[3] if value[3] is not None else "")
+        # A single comma always denotes a decimal in these locales, even
+        # with three fractional digits. _decimal handles it without grouping.
+        if re.fullmatch(r'[+\-−]?[0-9]+,[0-9]+', piece):
+            return piece
+        if ',' in piece:
+            # Malformed mixed/grouped decimals must not fall through to the
+            # legacy scanner as several individually valid number fragments.
+            invalid += 1
+            return ' ' * len(piece)
+        # Do not invent a locale interpretation for version-like dotted
+        # identifiers or space-separated lists. Their existing scanner and
+        # multiset checks remain intact. Non-grouping dot decimals also stay.
+        return piece
 
     def normalize(match):
-        value = re.fullmatch(grouped, match[0])
-        if value is None:
-            return match[0]
-        integer = value[1] + re.sub(rf"[{spaces}]", "", value[2])
-        # The comma is unambiguously decimal after explicit space grouping,
-        # including exactly three fractional digits (1 234,567 = 1234.567).
-        return integer + ("." + value[3] if value[3] is not None else "")
+        value = match[0]
+        if language == 'fr':
+            # A comma followed by whitespace, or whitespace after a complete
+            # comma fraction, separates quantities. Check every resulting
+            # piece so a valid first decimal cannot hide a malformed second.
+            result, start = [], 0
+            for boundary in re.finditer(
+                r'(?P<list>,[ \u00a0\u202f]+)|(?P<fraction>,[0-9]+)[ \u00a0\u202f]+', value
+            ):
+                split = boundary.start() if boundary['list'] else boundary.end('fraction')
+                result.append(normalize_piece(value[start:split]))
+                result.append(value[split:boundary.end()])
+                start = boundary.end()
+            if start:
+                result.append(normalize_piece(value[start:]))
+                return ''.join(result)
+        return normalize_piece(value)
 
-    return re.sub(candidate, normalize, text)
+    return re.sub(candidate, normalize, text), invalid
 
 
-def _normalized(text: str, *, language: str = "") -> str:
-    if language == "fr":
-        text = _french_grouped_numbers(text)
-    text = unicodedata.normalize("NFKC", text).replace("−", "-").replace("٬", ",").replace("٫", ".")
+def _normalized(text: str, *, language: str = "") -> tuple[str, int]:
+    invalid = 0
+    if language in COMMA_DECIMAL_LANGUAGES:
+        # Fold numeric width/digits before parsing, while retaining the exact
+        # whitespace spelling needed to validate French grouping.
+        text = text.translate(str.maketrans({'，': ',', '．': '.', '＋': '+', '－': '-'}))
+        text = ''.join(str(unicodedata.decimal(c)) if c.isdecimal() else c for c in text)
+        text, invalid = _locale_number_runs(text, language)
+    text = unicodedata.normalize("NFKC", text).replace("−", "-")
+    if language not in COMMA_DECIMAL_LANGUAGES:
+        text = text.replace("٬", ",").replace("٫", ".")
     text = "".join(str(unicodedata.decimal(c)) if c.isdecimal() else c for c in text)
-    return re.sub(r"__(?:KC_PH|HYMTPH)_\d+__", " ", text)
+    return re.sub(r"__(?:KC_PH|HYMTPH)_\d+__", " ", text), invalid
 
 
-def _decimal(value: str) -> Decimal:
-    value = value.replace("−", "-")
+def _decimal(value: str, *, language: str = "") -> Decimal:
+    value = value.replace("−", "-").replace('٬', '').replace('٫', '.')
     if "," in value:
+        if language in COMMA_DECIMAL_LANGUAGES:
+            return Decimal(value.replace(',', '.'))
         # A sole non-thousands comma is a decimal separator; never use floats.
         if "." not in value and value.count(",") == 1 and len(value.rsplit(",", 1)[1]) != 3:
             value = value.replace(",", ".")
@@ -161,9 +214,21 @@ def _decimal(value: str) -> Decimal:
 
 
 def quantities(text: str, *, bare_months: bool = False, named_events: bool = False, language: str = "") -> Counter:
-    text = _normalized(text, language=language)
+    text, invalid = _normalized(text, language=language)
+    number = COMMA_DECIMAL_NUMBER if language in COMMA_DECIMAL_LANGUAGES else NUMBER
     original_month_only = text.strip().casefold() in {"may", "march"}
     found = Counter()
+    if invalid:
+        found[('invalid_number',)] = invalid
+
+    def decimal(value):
+        try:
+            return _decimal(value, language=language)
+        except InvalidOperation:
+            # An unsupported mixed separator token must remain a validation
+            # failure, not escape as an uncategorized translator/runtime error.
+            found[('invalid_number',)] += 1
+            return Decimal(0)
 
     def take(pattern: str, key) -> None:
         nonlocal text
@@ -304,20 +369,20 @@ def quantities(text: str, *, bare_months: bool = False, named_events: bool = Fal
     # separate so USD120m can never match an unqualified 120 or CNY120m.
     def money(m):
         scale = (m['scale'] or '').casefold()
-        return ("currency", ALIASES[m['currency'].casefold()], _decimal(m['number']) * SCALES.get(scale, 1))
+        return ("currency", ALIASES[m['currency'].casefold()], decimal(m['number']) * SCALES.get(scale, 1))
     # Alphabetic boundaries avoid interpreting the suffix of e.g. "dollars".
-    take(rf"(?<![A-Za-z])(?P<currency>{CURRENCY})\s*(?P<number>{NUMBER})\s*(?P<scale>{SCALE})?(?![\dA-Za-z])", money)
-    take(rf"(?<![\dA-Za-z])(?P<number>{NUMBER})\s*(?P<scale>{SCALE})?\s*(?:(?:of|de|do|da|dos|das|des|d')\s*)?(?P<currency>{CURRENCY})(?![A-Za-z])", money)
-    take(rf"({NUMBER})\s*(?:(?:basis\s+points?|bps?)(?![A-Za-z0-9_])|(?:个)?基点|(?:個)?基點|ចំណុច\s*មូលដ្ឋាន|ពិន្ទុ\s*មូលដ្ឋាន|points?\s+de\s+base|pontos?[- ]base|puntos?\s+básicos?|punti\s+base|Basispunkte?|procentpunt(?:en)?|punkty\s+procentowe|процентн(?:ых|ых)\s+пункт(?:ов)?|відсотков(?:их|і)\s+пункт(?:ів)?|yüzde\s+puan|điểm\s+cơ\s+bản|pontos?\s+base|आधार\s+अंक|बेसिस\s+पॉइंट्स?)",
-         lambda m: ("percentage_points", _decimal(m[1]) / 100))
-    take(rf"(?P<number>{NUMBER})\s*(?:percentage\s+points?|percent(?:age)?\s+points?|points?\s+de\s+pourcentage|points?\s+de\s+pourcent|pontos?\s+percentuais?|puntos?\s+porcentuales?|punti\s+percentuali|Prozentpunkte?|procentpunt(?:en)?|punkty\s+procentowe|процентн(?:ых|ых)\s+пункт(?:ов)?|відсотков(?:их|і)\s+пункт(?:ів)?|yüzde\s+puan|điểm\s+phần\s+trăm|个百分点|個百分點|パーセントポイント|퍼센트포인트|نقطة\s+مئوية|نقاط\s+مئوية|प्रतिशत\s+(?:अंक|बिंदु))",
-         lambda m: ("percentage_points", _decimal(m['number'])))
-    take(rf"(?P<number>{NUMBER})\s*(?:%|٪|percent(?:age)?(?![a-z])|per\s+cent(?![a-z])|pour\s*cent|pourcentage|por\s+ciento|por\s+cento|porcent(?:aje|agem|ual)?|per\s+cento|percentuale|Prozent|procent|procenten|procentowy|процент(?:а|ов)?|відсот(?:ок|ка|ків)?|yüzde|phần\s+trăm|persen|peratus|เปอร์เซ็นต์|ភាគរយ|ရာခိုင်နှုန်း|درصد|אחוז(?:ים)?|प्रतिशत|ટકા|শতাংশ|శాతం|சதவீதம்|パーセント|퍼센트|في\s+المائة|في\s+المئة)",
-         lambda m: ("percent", _decimal(m['number'])))
-    take(rf"百分之\s*({NUMBER})", lambda m: ("percent", _decimal(m[1])))
-    take(rf"(?<![\dA-Za-z])({NUMBER})\s*({SCALE})(?![A-Za-z])",
-         lambda m: ("number", _decimal(m[1]) * SCALES[m[2].casefold()]))
-    take(NUMBER, lambda m: ("number", _decimal(m[0])))
+    take(rf"(?<![A-Za-z])(?P<currency>{CURRENCY})\s*(?P<number>{number})\s*(?P<scale>{SCALE})?(?![\dA-Za-z])", money)
+    take(rf"(?<![\dA-Za-z])(?P<number>{number})\s*(?P<scale>{SCALE})?\s*(?:(?:of|de|do|da|dos|das|des|d')\s*)?(?P<currency>{CURRENCY})(?![A-Za-z])", money)
+    take(rf"({number})\s*(?:(?:basis\s+points?|bps?)(?![A-Za-z0-9_])|(?:个)?基点|(?:個)?基點|ចំណុច\s*មូលដ្ឋាន|ពិន្ទុ\s*មូលដ្ឋាន|points?\s+de\s+base|pontos?[- ]base|puntos?\s+básicos?|punti\s+base|Basispunkte?|procentpunt(?:en)?|punkty\s+procentowe|процентн(?:ых|ых)\s+пункт(?:ов)?|відсотков(?:их|і)\s+пункт(?:ів)?|yüzde\s+puan|điểm\s+cơ\s+bản|pontos?\s+base|आधार\s+अंक|बेसिस\s+पॉइंट्स?)",
+         lambda m: ("percentage_points", decimal(m[1]) / 100))
+    take(rf"(?P<number>{number})\s*(?:percentage\s+points?|percent(?:age)?\s+points?|points?\s+de\s+pourcentage|points?\s+de\s+pourcent|pontos?\s+percentuais?|puntos?\s+porcentuales?|punti\s+percentuali|Prozentpunkte?|procentpunt(?:en)?|punkty\s+procentowe|процентн(?:ых|ых)\s+пункт(?:ов)?|відсотков(?:их|і)\s+пункт(?:ів)?|yüzde\s+puan|điểm\s+phần\s+trăm|个百分点|個百分點|パーセントポイント|퍼센트포인트|نقطة\s+مئوية|نقاط\s+مئوية|प्रतिशत\s+(?:अंक|बिंदु))",
+         lambda m: ("percentage_points", decimal(m['number'])))
+    take(rf"(?P<number>{number})\s*(?:%|٪|percent(?:age)?(?![a-z])|per\s+cent(?![a-z])|pour\s*cent|pourcentage|por\s+ciento|por\s+cento|percentuale|Prozent|procent|procenten|procentowy|процент(?:а|ов)?|відсот(?:ок|ка|ків)?|yüzde|phần\s+trăm|persen|peratus|เปอร์เซ็นต์|ភាគរយ|ရာခိုင်နှုန်း|درصد|אחוז(?:ים)?|प्रतिशत|ટકા|শতাংশ|శాతం|சதவீதம்|パーセント|퍼센트|في\s+المائة|في\s+المئة)",
+         lambda m: ("percent", decimal(m['number'])))
+    take(rf"百分之\s*({number})", lambda m: ("percent", decimal(m[1])))
+    take(rf"(?<![\dA-Za-z])({number})\s*({SCALE})(?![A-Za-z])",
+         lambda m: ("number", decimal(m[1]) * SCALES[m[2].casefold()]))
+    take(number, lambda m: ("number", decimal(m[0])))
     return found
 
 
@@ -334,6 +399,8 @@ def quantity_issues(source: str, translated: str, source_language: str = "", tar
     issues = []
     if any(key[0] == 'invalid_date' for key in before.keys() | after.keys()):
         issues.append("invalid_calendar_date")
+    if ('invalid_number',) in before or ('invalid_number',) in after:
+        issues.append('invalid_numeric_format')
     if before != after:
         issues.append("financial_quantity_changed_missing_or_added")
     return issues
