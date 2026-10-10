@@ -32,7 +32,17 @@ class ResearchRefreshConcurrencyTests(unittest.TestCase):
 
     def test_real_publishers_still_share_a_non_cancelling_lock(self):
         release = (ROOT / '.github/workflows/neutral-edge-cutover.yml').read_text()
-        self.assertIn('concurrency:\n  group: portal-production-release\n  cancel-in-progress: false', release)
+        concurrency = re.search(r'^concurrency:\n(.*?)(?=^jobs:\n)', release, re.M | re.S).group(1)
+        group = re.search(r'^  group: >-\n(.*?)^  cancel-in-progress: false$',
+                          concurrency, re.M | re.S)
+        self.assertIsNotNone(group, 'The root release lock must remain non-cancelling')
+        preparation = release.split('\n  prepare_release:\n', 1)[1]
+        admission = preparation.split('    if: >-\n', 1)[1].split('    runs-on:', 1)[0].strip()
+        self.assertTrue(admission.startswith('${{') and admission.endswith('}}'))
+        expected = ("${{ ( " + ' '.join(admission[3:-2].split()) +
+                    " ) && 'portal-production-release' || "
+                    "format('portal-release-ineligible-{0}-{1}', github.run_id, github.run_attempt) }}")
+        self.assertEqual(' '.join(group.group(1).split()), expected)
         self.assertIn('default: false', self.workflow)
         self.assertIn('contents: read', self.workflow)
         self.assertIn('scripts/test_research_refresh_concurrency.py', self.workflow)
