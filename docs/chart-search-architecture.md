@@ -1,6 +1,6 @@
 # Chart Search Architecture
 
-Last updated: 2026-08-29
+Last updated: 2026-10-10
 
 ## Goal
 
@@ -42,6 +42,28 @@ refresh then:
 1. downloads the latest chart index;
 2. merges report-level chart text into `data/search_index.json`;
 3. publishes `data/chart_search_index.json` for a chart-specific search view.
+
+The source handoff has two distinct input contracts:
+
+| Source | Handoff selection | Counts |
+| --- | --- | --- |
+| Normal daily MinerU shards | `source_handoff_run_id`; empty `source_handoff_manifest_sha256` | `expected_shards` is the daily effective shard count (16 for 79 reports at five reports per shard); `expected_articles=0`. |
+| Recovered MinerU article package | The original source run ID plus the exact selected-manifest SHA-256 | `expected_shards=1`; `expected_articles` is the exact selected report count. |
+
+Normal daily input is read from the run/date shard namespace. Recovered input is
+read from the run/date/manifest-bound recovery namespace and materialized as one
+shard. `chart_recovered_handoff.py` verifies the complete article recovery receipt,
+source date, source run ID, manifest hash, report count, and retained original
+images before candidate discovery. Its report count is the selected source count,
+not the number of WeChat drafts or published articles. Mixing the two contracts is
+rejected: normal shards cannot carry a recovered article count, and a recovered
+manifest cannot omit its exact positive count. A historical artifact run is a
+separate, mutually exclusive source selection.
+
+Recovered chart input must have `source_kind=mineru-recovery`. An OCR-synthesized
+article package is not an authenticated original-image handoff and is rejected
+before chart candidate discovery. Article fallback delivery and original-image
+chart indexing therefore have separate acceptance gates.
 
 The static release also publishes `charts.html`, `assets/charts.js`, and
 `assets/charts.css`. The page flattens only valid chart records, supports
@@ -303,6 +325,18 @@ Already completed hashes are skipped. Historical backfill requires a still-avail
 private handoff or Actions artifact containing `assets/source_image_*`; diagnostic-only
 artifacts do not contain chart images. Process older dates in chronological batches so
 each run persists its checkpoint before the next begins.
+
+## Source-contract Regression Fixture
+
+`python3 scripts/test_chart_recovered_handoff.py` exercises the actual workflow
+source-selection shell, daily dispatch arguments, authenticated recovery receipt,
+and original-image bytes. The sparse-checkout regression builds an independent
+local Git repository from the checked-out scripts, both workflow files, and the
+real article prompt, then applies the chart workflow's actual sparse patterns.
+It does not clone the Actions checkout or share its object store: a partial or
+promisor checkout may not contain the unrelated Git blobs needed by such a clone.
+Removing the real prompt must still fail, and wrong source identities or missing
+receipts remain rejected. This fixture change does not relax production admission.
 
 ## Operational Verification
 

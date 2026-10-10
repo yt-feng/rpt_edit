@@ -1,126 +1,77 @@
-# 多语言架构核对与本轮修正（2026-09-25）
+# 多语言架构与恢复核对（2026-10-10）
 
-## 最新范围覆盖说明
+当前架构见[多语言生成与发布](portal-multilingual-architecture.md)。本记录替代 2026-09-25 的一次性首批说明：同源发布、跨批继承、跨日队列和英文发布器已经实现，不能继续把这些能力写成“尚未对接”。但候选存在也不能等同于全语种已发布。
 
-用户随后明确取消历史补齐，只翻译北京时间当天新发布的详情页。24 是单批网站页面
-上限，不是 PDF 页数，也不再要求凑满；首页、About、机构/主题目录和历史推荐列表排除。
-自 2026-09-25 起，采集核对页面自身 Article/Report 的发表日期，旧文章仅修改 lastmod
-不会被当成新增。当天没有新增就跳过模型；超过 24 页的部分由后续同日增量任务按 R2
-完成记录推进。未知日期不猜测。下述旧批次的证据保留，但不再续跑历史 generation。
+本轮审阅基线为 `47066698b690a953b7163923c11dcb2ff69cdad1`。下列运行状态为 2026-10-10 的取证快照，之后的进度须以对应 run 和正式 active release 重新确认。
 
-预算改为每语言最多 14400 秒（四小时），job 270 分钟，保留初始化/检查点上传余量。
-R2 完成记录只证明候选内容生成完成，不是审批或上线；待审核页面仍 noindex。
-不同 source generation 仅复用 R2 校验过的同模型、同语言、精确源文本单元，并再次执行
-译文校验；未使用的历史单元不并入新检查点。新增摘要/图表政策不变：英文不参与本管线。
+## 范围与入口核对
 
-自动入口为默认分支 `Neutral edge catalog refresh` 成功事件；当前 PR 合入 main 后才生效，
-2026-09-26 用户授权扩展全部 33 个非英语目标，默认改为 `all-supported`；
-`PORTAL_EXTENDED_INCREMENTAL_LOCALES` 仍可限定子集。所选批次已完成的语言不再进入模型矩阵。
-这不是自动生产切换；已有未激活目录、版本核对、审批和回滚继续保留。
+| 核对项 | 代码事实 |
+| --- | --- |
+| 登记总数 | 38 个语言/变体：中文 1 + 既有镜像 3 + 新增非英文阅读目标 33 + 英文评论 1 |
+| `all-supported` | 33 个新增非英文目标；英文由独立开关和 source admission 进入矩阵 |
+| 当前自动入口 | `Neutral edge catalog refresh` 成功 → 独立 `Extended locale source admission` → `Extended locales private R2 pipeline` |
+| 来源范围 | 2026-09-25 起北京时间当天新增详情；单批 1..24 个网站页面；跨日保留已 admission 待办 |
+| CPU 调度 | 全局互斥、`cancel-in-progress: false`、单矩阵 `max-parallel: 2` |
+| 预算 | 每语言默认/上限 14,400 秒，job 270 分钟；有效截止时间传入模型 |
+| 非英文回退 | 被拒绝模型文本不落库；精确源文保存在独立 fallback 记录，候选计数明确披露 |
+| 英文 | 只翻译明确的 KC/编辑评论；禁止原文回退、全文镜像和图表；完整正文私有 |
+| 自动发布 | 非英文仅对开关允许且已正式启用的语言 handoff；英文使用独立开关、ready queue、审核 |
 
-## 结论
+新增语言的具体 33 个代码、产品边界和发布门禁以主架构文档及代码登记为准，不能由模型支持列表推断每个语言已经在线。
 
-新增语种卡住的主要原因不是 R2 权限、Actions 没有 CPU，或模型只支持
-日/韩/阿语，而是两条管线的处理和发布口径不一致。日/韩/阿语允许
-翻译失败单元保留原文；新增管线先前遇到一个失败字段就放弃整页，并要求
-24 页全部完成才能产生可审批候选。不断换语言、重跑同一失败批次不能解决这个差异。
+## 实际队列与失败证据
 
-用户本轮明确接受以 SEO/GEO 发布为目的的翻译质量，现将新增管线也接入
-`--allow-source-fallback`：失败单元精确保留原文，后续单元继续处理。
-仍然使用固定 Hy-MT2、公共 Linux CPU runner；没有付费兜底。
+- 中文目录恢复生产 [38036944110](https://github.com/yt-feng/rpt_edit/actions/runs/38036944110) 后，[source admission 38043173198](https://github.com/yt-feng/rpt_edit/actions/runs/38043173198) 成功。新 R2 run [38043249029](https://github.com/yt-feng/rpt_edit/actions/runs/38043249029) 取证时为 pending。
+- 旧矩阵持有者 [38030674044](https://github.com/yt-feng/rpt_edit/actions/runs/38030674044) 的总状态显示 queued，但 job 明细已经完成 6/34 个 locale job，其他语言仍运行/排队。它不是“CPU 完全未启动”，新 workflow 也不能绕过这个互斥组。
+- 该 source 摘要中，33 个非英文目标各有 83 个 pending，选 24 个、余 59 个；英文有 81 个 pending，选 24 个。数字是各自语言队列，不应合并成不重复的源文章数量。
+- [英文 job 114151900663](https://github.com/yt-feng/rpt_edit/actions/runs/38030674044/job/114151900663) 完成后失败：22/24 个页面完成，62 次调用、0 次 Memo 命中；错误各为 `expansion-validation` 1、`offline-quantity-validation` 1，没有预算耗尽。
+- [法语 job 114151900697](https://github.com/yt-feng/rpt_edit/actions/runs/38030674044/job/114151900697) 的候选为 24/24，但 `translation_complete=false`：100 个原文回退单元、104 次使用，原因均为 `offline-quantity-validation`；315 次调用、403 次缓存命中。该候选可恢复和审核，不代表全部内容已译成法语。
 
-## 两条现有路径
+本轮尚未取得同一 active release 下全部语言的公共 manifest/assembly、sitemap、最新日期和正文验收证据。因此**当前实际上线语言数与各语种 freshness 待线上验收**；不能把 38 个登记代码、34 个矩阵 job 或单语 24/24 候选写成“38 语种正常上线”。
 
-| 环节 | 中文与日/韩/阿语 | 33 个新增阅读页目标 |
-| --- | --- | --- |
-| 中文源 | 构建当次 `_neutral_site`，目录、Blog、公开数据与应用页面 | 从公开 canonical 页面采集一批 24 页，固定 corpus generation |
-| 取词 | `build_portal_locales.py` 的 DOM 文本节点、元数据、JSON-LD、目录字段等 | `PublicParser` 抽取标题、摘要、HTML 文本块、相关链接标签 |
-| 页面形态 | 保留原应用布局与功能，通过 locale assets/data overlays 本地化 | 独立静态阅读页，原报告、会员、图表访问回到中文源页面 |
-| 翻译 | 去重文本单元 → Hy-MT2 → 持久缓存 | 去重文本字段 → 同一 Hy-MT2 → R2 checkpoint |
-| 单元失败 | 生产参数已经启用 `--allow-source-fallback` | 本轮改为相同原文回退；默认 CLI 严格模式仍可用于诊断 |
-| 预算 | 当次增量、历史 cohort、已发布历史状态分开管理 | 每 locale 1..2400 秒，24 页，matrix 最大并发 2 |
-| 发布 | 未激活目录 → 校验 → 审批 → 原子切换 → 线上验收/回滚 | 私有完整候选 → 恢复/组装 → 同一生产流程；还有下述集成缺口 |
+## 本轮修复的确定性失败类别
 
-新增目标由 `compare_hymt_translation.LANGUAGES` / `portal_extended_locales.ADDITIONAL`
-登记。按用户最新要求，英文只允许纯文字 summary／解读，不放原文或全文阅读镜像，
-也不带 chart（不嵌入图表、不生成英文 Charts 入口）。本轮不新增英文摘要发布器。
-38 个模型语言/变体减去中文、日语、韩语、阿语，再排除英文，得到 33 个阅读页目标。
-默认值、`all-supported`、真实模型 canary 和候选发布校验均排除英文；现有英文摘要能力不变。
-登记可用不等于已上线。新增阅读页没有将会员应用复制成 33 套；这与公开 SEO/GEO 入口的范围相符。
+### 1. 英文审核取错资源版本
 
-## 具体失败原因
+此前 [生产 run 37785895519](https://github.com/yt-feng/rpt_edit/actions/runs/37785895519) 的 `english_daily_review` 在精确预览投影门禁失败。prepare job 已物化部署配置，fresh review checkout 的 `app.js` 尚未物化；两者生成的 `?v=` 资产 token 不同，导致合法预览 HTML 也被判成 `Prepared English public HTML is not a preview-only projection`。
 
-1. **页面与文本单元耦合。** 原 `translate_document()` 的第一处异常会退出本页。
-   多页共用的一个标题/链接失败，会挡住多页后续文本。现在内容校验失败只回退该单元。
-2. **重试叠加。** 模型有三次尝试，外层还有一次重试，多个页面又会反复触发同一源文本。
-   本轮新增回退模式每单元只做一次模型尝试；精确源文本、语言和 policy 绑定的
-   回退记录单独持久化，重复页面和续跑直接复用。严格模式也去掉了外层重复重试。
-3. **颗粒度不同。** 原管线处理 DOM 文本节点；新增抽取会将列表内的报告标题和机构文字
-   拼成一块。例如当前公开页中可见 `...-260923Goldman Sachs · 高盛`。
-   新增构建器还曾按所有逗号/分号再拆句，破坏上下文。本轮移除该拆句；结构性 `|`
-   仍在模型外保留，长文继续使用共用模型适配器的句末分段。DOM 抽取层尚未改成原应用的
-   完整字段清单；当前固定 corpus 不会在续跑时重新抓取。
-4. **校验与语种不完全匹配。** `zh-Hant` 的汉字与简体可能相同，通用“原文未翻译”规则会
-   拒绝部分合法同文；数量识别也不覆盖全部语言写法。允许回退后这类内容不再整页失败。
-   本轮没有以关闭金额/日期校验来接受错误模型输出。
-5. **结构错误进入外层才被发现。** 模型会在纯文本标题中添加 `|`；原适配器只在 Markdown
-   模式校验结构，外层才发现并失败。本轮将 pipe 检查移到适配器缓存之前。
-6. **生产组装的确定性错误。** `existing_locales=('ko','ja','ar')` 曾调用仅接受新增语种的
-   `locale_url()`，必然抛错。本轮修复为只纳入实际存在、自 canonical 正确且可索引的旧语言页；
-   缺失或 noindex 的旧语言页不会被虚构成 hreflang。
-7. **此前“第二条任务排队”不是 CPU 卡住。** workflow 有全局互斥组；`max-parallel: 2` 只对
-   同一 workflow 的 locale matrix 生效。另发一个 workflow 会等待前一条结束。
+修复后，英文 compose 从**最终未激活目录的资产字节**计算版本，review 从固定上传 manifest 取同一 SHA 重建 HTML，并有界读回全部 7 项实际资产核对长度与内容 SHA。仍然精确核对预览投影，不忽略脚本 URL、HTML 差异或私有正文。回归覆盖不同部署配置、fresh reviewer 不存在本地资产、渲染后资产被篡改、固定 manifest 后任一资产被改写或删除、缺失资产及隐藏私有正文。
 
-## 本轮实现后的数据口径
+### 2. 英文严格校验发生在 checkpoint 写入之后
 
-```text
-固定 R2 corpus
-  → 每个标题/摘要/正文块/链接标签
-      → 已验收译文：复用 checkpoint.rows
-      → 已记录回退：复用 checkpoint.source_fallbacks 中绑定的原文
-      → 尚未处理：Hy-MT2 一次 → 合格译文或精确原文回退
-  → 完整 24 页候选（仍 noindex）
-  → R2 manifest / ready receipt
-  → 源版本匹配 + 正常审批后才进入生产切换
-```
+共享 Memo 的普通阅读页校验允许少量机构名汉字，而英文评论要求完全不含中日韩残留、原文链接或过长标题。旧实现先保存 Memo，之后才由英文外层拒绝；下次恢复重复命中同一个坏单元，即使有可用的新译文也不重新调用模型。
 
-`complete-candidate` 表示页面集合完整、可进入审批，不表示所有单元都翻译成功。
-清单新增 `translation_complete`、`translation_policy`、`source_fallback_unit_count`、
-`source_fallback_occurrences` 与固定枚举原因。被拒绝的模型响应不会写进 checkpoint 或页面。
-原文回退与合格译文分开保存；严格模式不会把回退记录当成译文。
-预算到期仍为未完成并持久化检查点；模型缺失、权限/存储错误、损坏的 source/candidate 仍是异常。
-预算也传到模型请求，避免临近预算结束时启动额外的长重试。
+离线复现表现为首次失败、第二次仍失败，第二次 0 次模型调用、2 次缓存命中。修复把英文内容门禁移入 Memo 写入/复用之前；旧坏 checkpoint 或 seed 只剔除对应精确单元，并清理该单元的模型缓存。合格单元继续复用，坏响应不写候选、正文或成功缓存。
 
-## 发布集成仍待完成的事项
+新增固定错误码区分 `english-language-validation`、`english-asset-validation`、`english-size-validation`，不输出原始异常正文。旧 `expansion-validation` 候选仍可只读检查和恢复。该缺陷是已复现的恢复阻塞类别，不能仅凭当前云端一个通用错误码就断定它解释了所有英文失败。
 
-- **固定源必须与发布树同源。** 当前候选从线上抓取，而 `neutral-edge-cutover.yml` 会重建
-  新的中文目录。组装器比较每页原始 HTML SHA；更新日期、目录内容或 head 改动都会导致不匹配。
-  应在同一未激活树上冻结 source，再恢复候选组装；不能去掉 SHA 校验接受旧版本。
-- **旧镜像构建与新增组装的顺序。** 目前 extended assembly 在 ko/ja/ar locale build 之前，
-  后者会改写根页 alternate。应在最终旧镜像树上统一合并 alternate，并验证互相引用。
-- **后续批次保留。** 当前 assembler 只接受新目录与同一 generation 的完整批准集合；
-  普通生产刷新也未从 active release 继承已批准新增语言。还需要持久化批准集合、继承旧页面、
-  对新变化生成候选，并合并 sitemap/hreflang。
-- **历史游标。** 当前 collector 有 500 页硬上限与稳定排序，但尚无跨批次持久游标。
-  现有“24 页首批”不能被描述成已覆盖全档案。
+### 3. 数量门禁保留严格等价
 
-这些事项与翻译容错是不同层次的问题；本轮 Action 只生成候选，不声称完成上线。
+当前英文数量诊断显示源有 `27`，响应有 `27` 与 `11`。对源文本 SHA 及最终模型输入 SHA 的精确绑定确认，其中额外记号来自“双十一”的英文活动名称表达。此类修复必须识别同一购物活动的等价值，不能删除未知数字或跳过数量校验；其它新增、遗漏、改写金额、日期和比例仍应被拒绝。
 
-## 已核对证据与停止点
+数量修复由共用 financial quantity validator 及其合成回归覆盖。该英文诊断不能推断法语全部 100 个回退都属于同一原因；各语种还需按固定源、校验错误及恢复后的结果分别核对。恢复使用当前合法 checkpoint，不清空所有合格译文，不重新抓取或改写来源 generation。
 
-- 核对时 main：`681eae64969bfe2c39aa802dc7d4f4e7eadb5424`；已合入隔离开发分支，保留
-  PR #182 的 `e3992f1d335939633ee30b12b2c8020d0239e1c6` 修改。
-- 现有生产 `36064006057`：成功；源码 `681eae64969bfe2c39aa802dc7d4f4e7eadb5424`。
-- 旧严格候选：`hi 36063797431` 为 `0/24`；`zh-Hant 36068010264` 为 `0/24`；
-  `fr 36069389027` 为 `1/24`、预算到期。均非成功发布。
-- 法语 run 恢复 R2 checkpoint SHA `8f7adda70f3265a9a417a995747a4fa297150368c8c9ba42ca9c8736e297f351`
-  （50,868 字节），保存为 `cba1d08b0c9ef8dd1ec2396874b0ef94e17d86b31c4ff3f68094c34819a3036c`
-  （81,992 字节）。源 generation 不变：
-  `f334aac3023978818d18a4d28ed16cb2541a7b9b6ea803021f1fcd0502c812aa`。
-- 用户随后排除英文；已向英文 run `36075707981` 提交取消请求，未轮询确认终态。
-- 改为使用已有固定 source / checkpoint，法语首批 24 页、2400 秒，显式开启原文回退。
-  提交、触发 Actions 后停止。用户已要求不持续监控；不设置后台轮询或自动监控。
+## 已完成的回归与待完成的云端验收
 
-相关源码：`build_portal_locales.py`、`portal_extended_locales.py`、
-`build_portal_extended_locales.py`、`hymt_offline_translation.py`、
-`assemble_portal_extended_locales.py` 与两个 release/candidate workflows。
+本轮英文发布、UI、评论与 pipeline 共 92 个测试通过；新增语言相关 260 个测试通过，其中 1 个既有 opt-in 测试未启用。测试覆盖实际资产物化差异、旧坏缓存/跨代 seed、原文嵌入、字段长度、精确数量、私有正文隔离以及跨日队列。它们证明本地修复契约，不代替云端模型输出与正式发布验收。
+
+后续验收须依次记录：
+
+1. 修复合入的默认分支 SHA、真实 Actions 检查；
+2. 原英文 generation 的恢复结果，确认剩余失败页面通过原有严格门禁，已完成单元复用；
+3. 33 个新增目标的完整矩阵、逐语种页数、fallback 和实际剩余队列；
+4. handoff、未激活目录、英文/非英文 review、正式切换的同一发布身份；
+5. 公共语言集合、各语种最新源日期、实际页面/评论接口与旧已发布内容继承。
+
+仓库仅保留公开运行链接、计数、错误类别和合成测试。source、checkpoint、候选原文、完整评论、模型响应及其私有读取证据不进入本文件或公开 artifact。
+
+## 历史取证：2026-09-25 首批修复
+
+以下是旧轮次的证据，保留用于追溯，不能代表 2026-10-10 的现状或待办：
+
+- 当时 main 为 `681eae64969bfe2c39aa802dc7d4f4e7eadb5424`，保留 PR #182 的 `e3992f1d335939633ee30b12b2c8020d0239e1c6` 改动。既有生产 [36064006057](https://github.com/yt-feng/rpt_edit/actions/runs/36064006057) 成功。
+- 旧严格候选：Hindi [36063797431](https://github.com/yt-feng/rpt_edit/actions/runs/36063797431) 为 0/24；繁体中文 [36068010264](https://github.com/yt-feng/rpt_edit/actions/runs/36068010264) 为 0/24；法语 [36069389027](https://github.com/yt-feng/rpt_edit/actions/runs/36069389027) 为 1/24、预算到期。它们均不是成功发布。
+- 该法语固定 generation 为 `f334aac3023978818d18a4d28ed16cb2541a7b9b6ea803021f1fcd0502c812aa`；恢复 checkpoint `8f7adda70f3265a9a417a995747a4fa297150368c8c9ba42ca9c8736e297f351`（50,868 字节），保存为 `cba1d08b0c9ef8dd1ec2396874b0ef94e17d86b31c4ff3f68094c34819a3036c`（81,992 字节）。
+- 当轮去掉重复外层重试，以精确源文回退使剩余单元继续；后来范围明确收敛为当天新增，预算从当时 2,400 秒调整为当前 14,400 秒。此前固定历史 generation 不作为新的日常 admission 继续扩展。
+- 当时英文被排除在阅读页矩阵外，且没有本轮所述的独立评论发布器；该旧限制仍适用于“英文全文镜像”，不能误读为今天完全没有英文评论链条。
