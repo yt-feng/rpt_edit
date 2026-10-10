@@ -17,6 +17,7 @@ import inspect_recovered_article_generation as inspection
 import recover_report_articles as articles
 import recovered_article_delivery as delivery
 import wechat_title_optimizer as titles
+from saved_article_title_diagnostics import observe_saved_title_gates, title_excerpt
 from inspect_market_views_r2_cache import ReadOnlyClient, build_client
 from private_workflow_handoff import download_directory, require_env
 from recover_ocr_cache_sources import exact_head
@@ -61,7 +62,7 @@ def snapshot(root):
 
 
 def validator_identity():
-    files = ('revalidate_saved_article_titles.py', 'wechat_title_optimizer.py', 'sensitive_content_guard.py',
+    files = ('revalidate_saved_article_titles.py', 'saved_article_title_diagnostics.py', 'wechat_title_optimizer.py', 'sensitive_content_guard.py',
              'wechat_article_quality.py', 'wechat_editorial_binding.py')
     return {name: articles.digest((Path(__file__).parent / name).read_bytes()) for name in files}
 
@@ -118,8 +119,7 @@ def select_title(status, body, batches):
     source, institution = status.get('original_filename'), status.get('institution_name', '')
     require(isinstance(source, str) and 0 < len(source) <= 2048 and isinstance(institution, str)
         and len(institution) <= 200, 'revalidation_incident_invalid')
-    excerpt = re.sub(r'[ \t]+', ' ', re.sub(r'[#>*`!\\[\\]()]+', ' ', body))
-    excerpt = re.sub(r'\n{2,}', '\n', excerpt).strip()[:2200]
+    excerpt = title_excerpt(body)
     # Match production repair precedence: newest response first, initial last.
     candidates = [value for batch in reversed(batches) for value in batch]
     # The selector also considers filename/evidence fallbacks. Only genuine
@@ -195,9 +195,11 @@ def revalidate_checkpoint(root, candidate_workspace, original_sha, handoff_sha):
         and status.get('wechat_source_provenance') == source['provenance']
         and status.get('wechat_article') == 'wechat_article.md' and not status.get('error')
         and articles.FIELD not in status, 'revalidation_incident_invalid')
+    pinned_files = {}
     for name, (size, sha) in FILE_PINS.items():
         raw = inspection.read(directory / name, articles.MAX_FILE_BYTES)
         require(len(raw) == size and articles.digest(raw) == sha, 'revalidation_file_mismatch')
+        pinned_files[name] = raw
     state, batches = retained_progress(root, metadata, source)
     body = inspection.read(directory / 'wechat_article.md', articles.MAX_FILE_BYTES)
     require(not {'forbidden_meta_section', 'model_cta'} & set(audit_wechat_article_markdown(body.decode('utf-8'))),
@@ -209,7 +211,9 @@ def revalidate_checkpoint(root, candidate_workspace, original_sha, handoff_sha):
         'provider_posts': 0, 'object_writes': 0, 'object_deletions': 0, 'archive_sha256': ARCHIVE_SHA,
         'context_sha256': CONTEXT_SHA, 'progress_sha256': PROGRESS_SHA,
         'new_validator_sha256': articles.digest(articles.encoded(validator_identity())),
-        'title_diagnosis': inspection.title_selection_diagnostic(decision)}
+        'title_diagnosis': inspection.title_selection_diagnostic(decision),
+        'saved_candidate_evidence_diagnosis': observe_saved_title_gates(status, body.decode('utf-8'),
+            pinned_files['source_ocr.md'].decode('utf-8'), batches, decision)}
     if title is None:
         require(snapshot(root) == original_inventory, 'revalidation_unexpected_changes')
         return result
