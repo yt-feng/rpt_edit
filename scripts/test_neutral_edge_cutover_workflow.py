@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import subprocess
 import re
+import os
 import sys
 import tempfile
 import textwrap
@@ -20,6 +21,52 @@ WORKFLOW = ROOT / ".github/workflows/neutral-edge-cutover.yml"
 
 
 class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
+    def test_catalog_inheritance_precedes_scan_and_is_checked_before_upload(self):
+        names = ["Inherit published report catalog before Dropbox refresh",
+                 "Refresh report catalog with additive PDF sync", "Build private static release",
+                 "Verify published report IDs survive the Chinese build",
+                 "Verify catalog inheritance before publication",
+                 "Upload inactive static slot and immutable runtime"]
+        offsets = [self.workflow.index("      - name: " + name + "\n") for name in names]
+        self.assertEqual(offsets, sorted(offsets))
+        for name in (names[3], names[4]):
+            step = self.workflow.split("      - name: " + name + "\n", 1)[1].split("      - name:", 1)[0]
+            self.assertIn('scripts/restore_published_catalog.py validate', step)
+            self.assertIn('--catalog-path _neutral_site/data/catalog.json', step)
+            self.assertIn('--manifest "$RUNNER_TEMP/catalog-inheritance.json"', step)
+            self.assertNotIn('continue-on-error', step)
+            self.assertNotIn('|| true', step)
+
+    def test_actual_restore_step_forbids_automatic_historical_override(self):
+        block = self.workflow.split("      - name: Inherit published report catalog before Dropbox refresh\n", 1)[1].split("      - name:", 1)[0]
+        script = textwrap.dedent(block.split("        run: |\n", 1)[1])
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            record = root / 'args.txt'
+            python = root / 'python3'
+            python.write_text('#!/bin/sh\nprintf "%s\\n" "$@" > "$ARG_RECORD"\n')
+            python.chmod(0o755)
+            env = {**os.environ, 'PATH': str(root) + os.pathsep + os.environ['PATH'],
+                   'RUNNER_TEMP': str(root), 'R2_OBJECT_PREFIX': 'reports', 'ARG_RECORD': str(record)}
+            release = 'a' * 32
+            for event, recovery, accepted in [('schedule', '', True), ('workflow_dispatch', release, True),
+                                              ('schedule', release, False), ('workflow_run', release, False)]:
+                with self.subTest(event=event, recovery=bool(recovery)):
+                    record.unlink(missing_ok=True)
+                    result = subprocess.run(['bash', '-c', script], cwd=root,
+                                            env={**env, 'GITHUB_EVENT_NAME': event, 'CATALOG_RECOVERY_RELEASE': recovery},
+                                            capture_output=True, text=True)
+                    self.assertEqual(result.returncode == 0, accepted, result.stderr)
+                    self.assertEqual(record.exists(), accepted)
+                    if accepted:
+                        args = record.read_text().splitlines()
+                        self.assertIn('scripts/restore_published_catalog.py', args)
+                        self.assertIn(str(root / 'previous-edge-state.json'), args)
+                        self.assertIn(str(root / 'previous-public-catalog.json'), args)
+                        self.assertEqual('--recovery-release' in args, bool(recovery))
+                        if recovery:
+                            self.assertEqual(args[args.index('--recovery-release') + 1], release)
+
     def test_fresh_cutover_runner_installs_storage_and_live_audit_dependencies(self):
         for path in (WORKFLOW, ROOT / '.github/workflows/neutral-locale-resume.yml'):
             step = path.read_text().split('      - name: Verify committed candidate immediately before cutover', 1)[1]
