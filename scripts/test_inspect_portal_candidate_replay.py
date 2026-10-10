@@ -29,6 +29,137 @@ class InspectorTests(unittest.TestCase):
     def compare(self):
         return inspector.compare(self.store, self.batch, 'fr', self.base/'inspect')
 
+    def test_actual_missing_call_has_exact_field_hash_and_never_repairs_a_cache(self):
+        corpus = fixtures.make_corpus([fixtures.daily_doc()])
+        source = corpus['documents'][0]['title']
+        self.assertNotIn('|', source)
+        language = inspector.extended_source_language(source)
+        key = inspector.unit_key('fr', source, language, False)
+        path = self.base/'missing.json'
+        self.store.restore_checkpoint('fr', self.batch['generation'], path)
+        seed = json.loads(path.read_bytes()); del seed['rows'][key]
+        path.write_text(json.dumps(seed)); self.store.put_checkpoint('fr', self.batch['generation'], path)
+        before = {k: dict(v) for k, v in self.store.client.objects.items()}
+        original = inspector.publication.CacheOnly
+        result = inspector.compare(self.store, self.batch, 'fr', self.base/'missing-inspect', frozen_approval=True)
+        self.assertFalse(result['matches']); self.assertIs(inspector.publication.CacheOnly, original)
+        self.assertEqual(before, self.store.client.objects)
+        for attempt in result['baseline_attempts']:
+            item = attempt['failed_unit_diagnostics']['failures'][0]
+            self.assertEqual(item['field'], 'title')
+            self.assertEqual(item['source_sha256'], inspector.digest(source.encode()))
+            self.assertEqual(item['unit_sha256'], key)
+            self.assertTrue(item['actual_call_matches_resolved_field'])
+            self.assertFalse(item['exact_translation_key_present'])
+            self.assertFalse(item['exact_fallback_key_present'])
+            self.assertEqual(item['same_source_variants']['count'], 0)
+        self.assertNotIn(source, json.dumps(result)); self.assertNotIn(fixtures.URL, json.dumps(result))
+
+    def unit_probe(self, source='Private factual research prose.', *, seed=None, approved_keys=None,
+                   field='title', parent=None, markdown=False, include_inventory=True):
+        doc = {'url': fixtures.URL, 'title': parent or source, 'description': '', 'blocks': [], 'links': []}
+        if field.startswith('block.'):
+            doc['blocks'] = [{'tag': 'p', 'text': parent or source}]
+        language = inspector.extended_source_language(source)
+        approved = {'source_fallback_unit_sha256': approved_keys or []} if include_inventory else {}
+        report = inspector.failed_unit_diagnostics({'documents': [doc]}, 'es', seed or {'rows': {}}, approved,
+            {'failures': [{'url': fixtures.URL, 'field': field, 'code': 'offline-approval-cache-miss'}]},
+            [(source, 'es', language, markdown)])
+        return report, report['failures'][0]
+
+    def test_probe_distinguishes_rejected_row_from_missing_approved_fallback(self):
+        source = 'Private source revenue USD10m.'
+        key = inspector.unit_key('es', source, 'en', False)
+        seed = {'rows': {key: {'source': source, 'language': 'en', 'text': 'Ingresos USD11m.'}}}
+        report, item = self.unit_probe(source, seed=seed, approved_keys=[key])
+        self.assertTrue(item['exact_translation_identity_matches'])
+        self.assertEqual(item['current_validation'], 'financial-quantity-validation')
+        self.assertEqual(item['approved_quantity_validation'], 'financial-quantity-validation')
+        self.assertTrue(item['approved_fallback_member'])
+        self.assertEqual(report['approved_fallback_keys_absent'], 1)
+        seed['source_fallbacks'] = {key: {'source': source, 'language': 'en', 'policy': 'wrong'}}
+        report, item = self.unit_probe(source, seed=seed, approved_keys=[key])
+        self.assertTrue(item['exact_fallback_key_present'])
+        self.assertFalse(item['exact_fallback_identity_matches'])
+        self.assertEqual(report['approved_fallback_keys_present'], 1)
+        self.assertNotIn('USD10m', json.dumps(report)); self.assertNotIn('USD11m', json.dumps(report))
+
+    def test_probe_separates_other_language_and_markdown_keys_without_using_them(self):
+        source = 'Private factual research prose.'
+        seed = {'rows': {inspector.unit_key('es', source, language, markdown):
+            {'source': source, 'language': language, 'text': 'Análisis publicado.'}
+            for language, markdown in (('zh', False), ('en', True))}}
+        _, item = self.unit_probe(source, seed=seed)
+        self.assertFalse(item['exact_translation_key_present'])
+        self.assertEqual(item['same_source_variants']['count'], 2)
+        self.assertEqual({(r['language'], tuple(r['key_matches_markdown']))
+            for r in item['same_source_variants']['rows']}, {('zh', (False,)), ('en', (True,))})
+
+    def test_probe_finds_whole_pipe_parent_and_preserves_part_markdown(self):
+        source = 'Private part'; parent = source + '| second private part'
+        key = inspector.unit_key('es', parent, 'en', True)
+        seed = {'source_fallbacks': {key: {'source': parent, 'language': 'en', 'policy': inspector.SOURCE_FALLBACK_VERSION}}}
+        _, item = self.unit_probe(source, parent=parent, field='block.0.p.part0', markdown=True,
+            seed=seed, approved_keys=[key])
+        self.assertTrue(item['actual_call_matches_resolved_field']); self.assertTrue(item['markdown'])
+        self.assertEqual(item['same_source_variants']['count'], 0)
+        self.assertEqual(item['whole_pipe_parent']['variants']['count'], 1)
+        self.assertTrue(item['whole_pipe_parent']['variants']['rows'][0]['approved_fallback_member'])
+        self.assertFalse(item['approved_fallback_member'])
+        self.assertNotIn(parent, json.dumps(item)); self.assertNotIn(source, json.dumps(item))
+
+    def test_real_pipe_split_miss_is_bound_to_the_actual_builder_call(self):
+        corpus = fixtures.make_corpus([fixtures.daily_doc(body='<h1>Research</h1><p>Private left | private right</p>')])
+        work = self.base/'pipe'; work.mkdir()
+        fixtures.build(corpus, 'es', work/'candidate', work/'memo.json', fixtures.FakeTranslator(), allow_source_fallback=True)
+        seed = json.loads((work/'memo.json').read_bytes())
+        parent = corpus['documents'][0]['blocks'][1]['text']
+        source = parent.split('|')[0]
+        del seed['rows'][inspector.unit_key('es', source, 'en', True)]
+        key = inspector.unit_key('es', parent, 'en', True)
+        seed.setdefault('source_fallbacks', {})[key] = {'source': parent, 'language': 'en',
+            'policy': inspector.SOURCE_FALLBACK_VERSION, 'code': 'offline-validation'}
+        (work/'memo.json').write_text(json.dumps(seed))
+        generation = corpus['documents_sha256']
+        self.store.put_source(corpus); self.store.put_checkpoint('es', generation, work/'memo.json')
+        saved = self.store.upload_candidate(work/'candidate', 'es', generation)
+        result = inspector.compare(self.store, {'generation': generation, 'candidates': {'es': saved['candidate_id']}},
+            'es', self.base/'pipe-inspect', frozen_approval=True)
+        self.assertFalse(result['matches'])
+        for attempt in result['baseline_attempts']:
+            item = attempt['failed_unit_diagnostics']['failures'][0]
+            self.assertEqual(item['field'], 'block.1.p.part0')
+            self.assertTrue(item['actual_call_matches_resolved_field']); self.assertTrue(item['markdown'])
+            self.assertEqual(item['whole_pipe_parent']['variants']['rows'][0]['unit_sha256'], key)
+
+    def test_old_manifest_inventory_unknown_is_not_reported_as_absent_or_false(self):
+        report, item = self.unit_probe(include_inventory=False)
+        self.assertFalse(report['approved_fallback_inventory_present'])
+        self.assertIsNone(report['approved_fallback_keys_absent'])
+        self.assertIsNone(item['approved_fallback_member'])
+
+    def test_unresolved_fields_and_trace_disagreement_are_explicit_and_redacted(self):
+        for field in ('private secret', 'copy.private-secret', 'block.9.p', 'title.part0', 'link.99999', 'title.part1.part2'):
+            report, item = self.unit_probe(field=field)
+            self.assertEqual(item, {'code': 'unresolved-field'})
+            self.assertNotIn('private secret', json.dumps(report))
+        _, item = self.unit_probe(markdown=True)
+        self.assertFalse(item['actual_call_matches_resolved_field'])
+
+    def test_variant_output_is_bounded_and_exception_restores_cache_only_factory(self):
+        source = 'Private factual research prose.'
+        seed = {'rows': {f'{n:064x}': {'source': source, 'language': 'private-secret', 'text': 'private raw'}
+                        for n in range(12)}}
+        _, item = self.unit_probe(source, seed=seed)
+        self.assertEqual(item['same_source_variants']['count'], 12)
+        self.assertEqual(len(item['same_source_variants']['rows']), inspector.MAX_UNIT_VARIANTS)
+        self.assertTrue(item['same_source_variants']['truncated'])
+        self.assertNotIn('private-secret', json.dumps(item)); self.assertNotIn('private raw', json.dumps(item))
+        original = inspector.publication.CacheOnly
+        with self.assertRaisesRegex(ValueError, 'stop'):
+            with inspector.record_cache_misses(): raise ValueError('stop')
+        self.assertIs(inspector.publication.CacheOnly, original)
+
     def test_missing_quantity_category_is_reported_without_values(self):
         result = inspector.quantity_signature('Revenue USD120m.', 'Revenue USD999m.', 'fr')
         self.assertEqual(result['missing_kinds'], {'currency': 1})
