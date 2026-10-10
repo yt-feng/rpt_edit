@@ -130,12 +130,17 @@ The workflow authenticates the completed original Daily run on the same
 repository's `main`, downloads `selected-macro-manifest-<source_run_id>` only,
 and verifies the retained manifest's raw SHA-256, date, count and source
 bindings. It derives the production OCR checkpoint key from those actual
-bindings and makes one R2 `HEAD`; it does not download PDFs, read the cache
-archive, parse reports, call a model, or write/delete R2 objects.
+bindings and checks the exact temporary source handoff at
+`_private-workflow-handoff/market-ocr-synthesis/<source_run_id>/<date_folder>/shard_0.tar.gz`.
+It makes one R2 `HEAD` per object, with no alternate-run discovery. It does not
+download PDFs, read either archive, parse reports, call a model, or write/delete
+R2 objects.
 
 Check the `market-views-r2-cache-inventory-<inspection_run_id>` artifact:
-`success=true` and `ocr_checkpoint.present=true` establish presence and stored
-size/hash metadata only. `archive_bytes_verified` remains `false`; this is
+`success=true` permits reading the independent `ocr_checkpoint` and
+`ocr_source_handoff` presence results. The durable checkpoint may survive after
+the temporary source handoff has been cleaned up. Each `present=true` establishes
+presence and stored size/hash metadata only. `archive_bytes_verified` remains `false`; this is
 neither archive integrity/completeness nor article, draft or Blog delivery
 acceptance. A verified absence reports `present=false`; a missing source
 artifact, mismatched manifest, permission error or transport failure stops the
