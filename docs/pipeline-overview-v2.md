@@ -35,6 +35,9 @@ flowchart TD
   OC["Retained OCR checkpoint plus exact original PDF artifact"] --> CR["Cache-only source reconstruction: original and recovery identities"]
   CR --> CG["Verify complete source package and new private handoff readback"]
   CG --> Q
+  OC --> CP["Explicit pages mode: verify all original PDFs and cached pages; no synthesis"]
+  CP --> PG["Independent ocr-pages receipt, private namespace and pages success gates"]
+  PG --> Q
   E --> F["Private R2: verified article handoff and durable receipts"]
   Q --> F
   F --> W["WeChat drafts: idempotent upload and exact draft/get readback"]
@@ -65,6 +68,24 @@ and manifest, and all required cached source/model-prompt identities. It
 reconstructs the complete source package without OCR, MinerU or model calls;
 incomplete or mismatched cache contents stop this path.
 
+The default `source_mode=synthesis` preserves this complete synthesis contract.
+An explicit `source_mode=pages` can instead restore complete original page text
+for report articles while an old Market Views summary remains unresolved. It
+never calls the synthesis builder, reads/clears pending-summary state or
+resubmits a model request. All original PDF hashes and actual page counts,
+production page-cache identities, ordered page text hashes/methods/empty flags
+are verified before a handoff is written. This is `ocr-pages`, with its own
+`ocr_pages_receipt.json`, `market-ocr-pages-cache-recovery` namespace and two
+distinct successful producer gates. It supplies no reconstructed charts or
+successful-synthesis claim and cannot authorize a synthesized Market Views PDF.
+
+Only this validated source package may explicitly include its exact
+`originals/RNNN.pdf` inventory in the same private R2 bucket so consumers can
+recheck PDF SHA/page counts. Original PDFs stay excluded by default from other
+handoffs and from downstream article checkpoints; there is no arbitrary
+include-PDF CLI option. Article consumers use the full verified page Markdown,
+with `ocr_pages_text_only` figure provenance and no generated chart substitutes.
+
 The receipt keeps the original Daily run/SHA and adds a separately authenticated
 recovery run/SHA, manifest/checkpoint identity and archive pins. The new package
 uses the `market-ocr-cache-recovery` private namespace, never the original Daily
@@ -74,7 +95,11 @@ package and exact receipt bytes, preserving generation/draft checkpoint
 identity. It does not grant another recovery run automatic reuse of a changed
 context. The downstream article workflow can then generate missing articles,
 verify drafts and publish Blog output; those stages retain their own acceptance
-receipts. See the [OCR cache recovery procedure](wechat-pipeline-recovery.md#restore-ocr-sources-after-the-temporary-handoff-expires).
+receipts. Pages mode follows the same downstream delivery and exact-byte replay
+contract through its independent namespace. Cloud run `38049925018` stopped at
+`summary_submission_pending` after checkpoint verification with zero OCR/model
+calls; new pages-mode historical source/draft/Blog acceptance remains pending.
+See the [OCR cache recovery procedure](wechat-pipeline-recovery.md#restore-ocr-sources-after-the-temporary-handoff-expires).
 
 Source parsing, article generation, draft acceptance, Blog archival, public
 release and locale publication are separate acceptance boundaries. A successful
