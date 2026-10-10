@@ -78,6 +78,15 @@ def title_selection_diagnostic(decision):
         return (len(value) if isinstance(value, list) and len(value) <= maximum
                 and all(isinstance(item, str) for item in value) else None)
 
+    raw_candidates = decision.get('raw_candidates')
+    raw_valid = (isinstance(raw_candidates,list) and len(raw_candidates)<=MAX_TITLE_CANDIDATES
+                 and all(isinstance(value,str) and len(value)<=1000 for value in raw_candidates))
+    raw_long, joined_long = None, None
+    if raw_valid:
+        bodies=[value.replace(':','：').split('：',1)[-1] for value in raw_candidates]
+        raw_long=sum(bool(re.search(r'[A-Za-z]{10,}',value)) for value in bodies)
+        joined_long=sum(not re.search(r'[A-Za-z]{10,}',value)
+                        and bool(re.search(r'[A-Za-z]{10,}',re.sub(r'\s+','',value))) for value in bodies)
     initial = decision.get('initial_selection')
     if not isinstance(initial, dict): initial = {}
     rejected = decision.get('rejected_candidates')
@@ -107,6 +116,8 @@ def title_selection_diagnostic(decision):
         'initial_selection_reason': selection(initial.get('reason')),
         'pre_neutralization_selection_reason': selection(decision.get('pre_neutralization_selection_reason')),
         'raw_candidate_count': count('raw_candidates'),
+        'raw_long_english_candidate_count':raw_long,
+        'whitespace_join_introduces_long_english_count':joined_long,
         'cleaned_candidate_count': count('cleaned_candidates'),
         'repair_candidate_count': count('repair_candidates'),
         'required_term_count': count('required_terms', 6),
