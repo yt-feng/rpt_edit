@@ -6,6 +6,7 @@ page. This module performs no network requests and reads no source contents.
 from __future__ import annotations
 
 import re
+from market_views_publication import OCR_CACHE_RECOVERY_WORKFLOW
 
 MAX_JOBS = 100
 SOURCE_GATES = {
@@ -36,6 +37,11 @@ SOURCE_KIND_GATES = {
     for workflow, gate in SOURCE_GATES.items()
 }
 SOURCE_KIND_GATES.update({
+    (OCR_CACHE_RECOVERY_WORKFLOW, 'ocr-synthesis'): (
+        'recover',
+        ('Restore and verify complete OCR sources from cache only',
+         'Archive and verify recovered OCR sources in private R2'),
+    ),
     ('.github/workflows/market-views-mineru-recovery.yml', 'mineru-recovery'): (
         'recover',
         ('Recover complete source-only MinerU batch with durable lineage',
@@ -98,6 +104,8 @@ def require_source_readiness(producer, jobs_page, *, source_kind=None):
     _require(len(job_ids) == len(set(job_ids)), 'ambiguous_jobs_response')
     if workflow == '.github/workflows/market-views-mineru-recovery.yml':
         _require(producer.get('event') == 'workflow_dispatch', 'invalid_mineru_source_producer')
+    if workflow == OCR_CACHE_RECOVERY_WORKFLOW:
+        _require(producer.get('event') == 'workflow_dispatch', 'invalid_ocr_cache_source_producer')
     job_name, step_names = SOURCE_KIND_GATES[(workflow, source_kind)]
     matches = [item for item in jobs if item.get('name') == job_name]
     _require(len(matches) == 1, 'missing_or_ambiguous_source_job')

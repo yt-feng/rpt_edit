@@ -163,9 +163,14 @@ class ArticleRecoveryTests(unittest.TestCase):
         self.assertEqual(articles.inventory(self.root / "articles"), before)
         self.assertEqual(len(self.calls), 7)
 
-    def ocr(self, *, partial=False):
+    def ocr(self, *, partial=False, cache_recovery=False):
         fixture = self.fixtures(ocr_fixture.OCRSynthesisTests)
         manifest = fixture.originals_fixture(count=2, pages=2)
+        if cache_recovery:
+            rows = articles.read_json(manifest)
+            for row in rows:
+                row['dropbox_path'] = '/reports/261005/' + Path(row['process_local_path']).name
+            articles.write_json(manifest, rows)
         if partial:
             def extract(path, **kwargs):
                 if path.name.startswith("02"):
@@ -174,7 +179,87 @@ class ArticleRecoveryTests(unittest.TestCase):
             fixture.build(manifest, count=2, extractor=extract)
         else:
             fixture.build(manifest, count=2)
+        if cache_recovery:
+            from market_views_publication import RECEIPT_NAME, OCR_CACHE_RECOVERY_WORKFLOW
+            from private_market_ocr_checkpoint import checkpoint_key
+            root = fixture.root / 'summaries/261005'
+            receipt = articles.read_json(root / RECEIPT_NAME)
+            receipt['cache_recovery'] = {
+                'schema_version': 1, 'workflow': OCR_CACHE_RECOVERY_WORKFLOW,
+                'recovery_run_id': '456', 'recovery_execution_sha': 'b' * 40,
+                'source_run_id': receipt['source_run_id'], 'source_execution_sha': receipt['execution_sha'],
+                'manifest_sha256': receipt['selected_manifest_sha256'],
+                'checkpoint_identity': Path(checkpoint_key(manifest, '261005', 2)).name[:-7],
+                'archive_sha256': 'c' * 64, 'archive_size_bytes': 2397894,
+                'cache_only': True, 'ocr_calls': 0, 'provider_posts': 0}
+            articles.write_json(root / RECEIPT_NAME, receipt)
         return fixture
+
+    def test_cache_recovered_ocr_generates_and_replays_with_distinct_original_and_handoff_identity(self):
+        fixture = self.ocr(cache_recovery=True)
+        source = fixture.root / 'summaries/261005'
+        before = articles.inventory(source)
+        identity = dict(source_run_id='37388263555', source_execution_sha='a' * 40,
+                        source_handoff_run_id='456', source_handoff_execution_sha='b' * 40)
+        with self.paid():
+            receipt = self.recover(fixture, expected=2, date='261005', kind='ocr-synthesis', **identity)
+            completed = articles.inventory(self.root / 'articles')
+            repeated = self.recover(fixture, expected=2, date='261005', kind='ocr-synthesis', **identity)
+        self.assertEqual(receipt, repeated)
+        self.assertEqual(articles.inventory(self.root / 'articles'), completed)
+        self.assertEqual(articles.inventory(source), before)
+        self.assertEqual(len(self.calls), 2)
+        self.assertTrue(all('LAST_PAGE_FACT' in prompt for prompt in self.calls))
+        self.assertEqual((receipt['source_run_id'], receipt['source_handoff_run_id']), ('37388263555', '456'))
+        self.assertEqual((receipt['source_execution_sha'], receipt['source_handoff_execution_sha']), ('a' * 40, 'b' * 40))
+        self.assertEqual(articles.validate_articles(self.root / 'articles', 2, '261005'), receipt)
+
+    def test_cache_recovery_rejects_wrong_or_self_asserted_lineage_before_article_calls(self):
+        fixture = self.ocr(cache_recovery=True)
+        from market_views_publication import RECEIPT_NAME
+        root = fixture.root / 'summaries/261005'
+        baseline = articles.read_json(root / RECEIPT_NAME)
+        identities = ({}, {'source_handoff_run_id': '456'},
+                      {'source_handoff_run_id': '456', 'source_handoff_execution_sha': 'c' * 40},
+                      {'source_handoff_run_id': '37388263555', 'source_handoff_execution_sha': 'a' * 40})
+        for identity in identities:
+            with self.subTest(identity=identity), self.paid(), self.assertRaises(ValueError):
+                self.recover(fixture, expected=2, date='261005', kind='ocr-synthesis', **identity)
+        mutations = [('workflow', '.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml'),
+                     ('source_run_id', '777'), ('source_execution_sha', 'c' * 40),
+                     ('recovery_run_id', '777'), ('recovery_execution_sha', 'c' * 40),
+                     ('manifest_sha256', 'c' * 64), ('checkpoint_identity', 'd' * 64),
+                     ('archive_sha256', 'invalid'), ('archive_size_bytes', True),
+                     ('cache_only', False), ('ocr_calls', 1), ('provider_posts', True),
+                     ('extra_unchecked_identity', 'other')]
+        for field, value in mutations:
+            changed = copy.deepcopy(baseline)
+            changed['cache_recovery'][field] = value
+            articles.write_json(root / RECEIPT_NAME, changed)
+            with self.subTest(field=field), self.paid(), self.assertRaises(ValueError):
+                self.recover(fixture, expected=2, date='261005', kind='ocr-synthesis',
+                    source_handoff_run_id='456', source_handoff_execution_sha='b' * 40)
+        self.assertEqual(self.calls, [])
+        baseline.pop('cache_recovery')
+        articles.write_json(root / RECEIPT_NAME, baseline)
+        with self.paid(), self.assertRaises(ValueError):
+            self.recover(fixture, expected=2, date='261005', kind='ocr-synthesis',
+                source_handoff_run_id='456', source_handoff_execution_sha='b' * 40)
+
+    def test_completed_ocr_articles_recheck_recovery_lineage_even_after_file_inventory_rehash(self):
+        fixture = self.ocr(cache_recovery=True)
+        with self.paid():
+            self.recover(fixture, expected=2, date='261005', kind='ocr-synthesis',
+                source_handoff_run_id='456', source_handoff_execution_sha='b' * 40)
+        output = self.root / 'articles'
+        source = articles.read_json(output / articles.PROVENANCE)
+        source['manifest_sha256'] = 'f' * 64
+        articles.write_json(output / articles.PROVENANCE, source)
+        receipt = articles.read_json(output / articles.RECEIPT)
+        receipt['files'] = articles.inventory(output, exclude=(articles.RECEIPT,))
+        articles.write_json(output / articles.RECEIPT, receipt)
+        with self.assertRaisesRegex(articles.ArticleRecoveryError, 'source_receipt_identity'):
+            articles.validate_articles(output, 2, '261005')
 
     def test_real_ocr_receipt_uses_raw_page_text_not_summaries_and_distinct_binding(self):
         fixture = self.ocr()
