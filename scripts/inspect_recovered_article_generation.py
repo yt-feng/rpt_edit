@@ -31,7 +31,7 @@ CATEGORIES = {'article_generation_failed', 'article_source_validation_failed', '
     'ocr_page_evidence', 'source_count', 'article_binding', 'article_source_inventory',
     'article_directory_inventory', 'invalid_tree_file', 'tree_file_count', 'tree_symlink', 'invalid_json_file'}
 TYPES = {'ReadTimeout', 'ConnectTimeout', 'ConnectionError', 'Timeout', 'SSLError', 'HTTPError', 'ChunkedEncodingError', 'ProxyError',
-         'JSONDecodeError', 'KeyError', 'TypeError', 'ValueError', 'RuntimeError', 'FileNotFoundError', 'ArticleRecoveryError'}
+         'ProgressError', 'JSONDecodeError', 'KeyError', 'TypeError', 'ValueError', 'RuntimeError', 'FileNotFoundError', 'ArticleRecoveryError'}
 HTTP_CODES = {400, 401, 402, 403, 404, 408, 409, 413, 422, 425, 429, 500, 502, 503, 504}
 SAFE_SITES = {
     ('pdf_to_xhs_batch.py', 'call_deepseek'), ('pdf_to_xhs_batch.py', 'safe_generate_text'),
@@ -42,6 +42,12 @@ SAFE_SITES = {
     ('recover_report_articles.py', 'load_sources'), ('recover_report_articles.py', 'recover_articles'),
     ('recover_report_articles.py', 'validate_articles'),
 }
+
+CATEGORIES |= {'unresolved_legacy_generation', 'article_progress_pending',
+    'article_progress_request_pending', 'article_progress_title_budget',
+    'article_progress_identity_mismatch', 'article_progress_intent_persistence_failed',
+    'article_progress_result_persistence_failed', 'article_progress_response_changed',
+    'legacy_title_model_contract_mismatch'}
 
 # These are producer-owned reason codes, never model/source text. Dynamic
 # reasons below are normalized to fixed names without exposing their payload.
@@ -131,6 +137,7 @@ def failed_checkpoint_files(directory, status):
     return result
 
 PUBLIC_FAILURE_CODES = {
+    'inspection_recovery_run_invalid',
     'inspection_article_binding_mismatch',
     'inspection_article_directory_unbound',
     'inspection_article_page_binding_mismatch',
@@ -217,6 +224,40 @@ def authenticate(original, handoff, jobs, repository):
     return original_sha, handoff['head_sha']
 
 
+def authenticate_recovery(run, jobs, repository, run_id):
+    """Bind a later standalone attempt before observing the retained checkpoint."""
+    require(isinstance(run_id,str) and re.fullmatch(r'[1-9][0-9]{5,19}',run_id)
+            and isinstance(run,dict) and str(run.get('id')) == run_id
+            and run.get('path') == '.github/workflows/recover-report-article-delivery.yml'
+            and run.get('event') == 'workflow_dispatch' and run.get('head_branch') == 'main'
+            and isinstance(run.get('head_sha'),str) and re.fullmatch(r'[a-f0-9]{40}',run['head_sha'])
+            and run.get('status') == 'completed' and run.get('conclusion') == 'failure'
+            and run.get('repository',{}).get('full_name') == repository
+            and run.get('head_repository',{}).get('full_name') == repository,
+            'inspection_recovery_run_invalid')
+    require(isinstance(jobs,dict) and isinstance(jobs.get('jobs'),list), 'inspection_generation_job_missing')
+    matches=[row for row in jobs['jobs'] if isinstance(row,dict) and row.get('name') == 'generate']
+    require(len(matches)==1,'inspection_generation_job_missing')
+    job=matches[0]
+    require(type(job.get('id')) is int and job['id'] > 0 and job.get('run_id') == int(run_id)
+            and job.get('head_sha') == run['head_sha'] and job.get('status') == 'completed'
+            and job.get('conclusion') == 'failure','inspection_generation_job_invalid')
+    steps=job.get('steps')
+    require(isinstance(steps,list) and all(isinstance(row,dict) for row in steps), 'inspection_generation_steps_invalid')
+    checked=[]
+    for name,outcome in (
+        ('Authenticate original upload and restore exact recovery sources','success'),
+        ('Generate only missing bound report articles','failure'),
+        ('Save generation progress even after interruption','success')):
+        rows=[row for row in steps if row.get('name')==name]
+        require(len(rows)==1 and rows[0].get('status')=='completed'
+                and rows[0].get('conclusion')==outcome and type(rows[0].get('number')) is int,
+                'inspection_generation_gate_invalid')
+        checked.append(rows[0]['number'])
+    require(checked==sorted(set(checked)) and all(n>0 for n in checked),'inspection_generation_gate_order_invalid')
+    return job['id']
+
+
 def diagnostic(log, status):
     """Classify fixed code sites and typed markers, never return captured text."""
     matches = list(re.finditer(r'^Report article recovery stopped: ([a-z_]{1,80})(?: source_ordinal=([0-9]{1,4}))?$', log, re.M))
@@ -265,6 +306,41 @@ def diagnostic(log, status):
         'title_repair_error_present': bool(repair_error), 'title_needs_repair': decision.get('needs_model_repair') is True,
         'title_quality_issues_present': bool(decision.get('selected_quality_issues')),
         'title_selection': title_selection_diagnostic(decision)}
+
+
+def progress_observation(root, sources):
+    """Observe retained state only; never initialize Progress or replay a request."""
+    result=[]
+    from article_generation_progress import MAX_STATE_BYTES, RECEIPT, POLICY, Progress
+    for number,source in enumerate(sources,1):
+        directory=root/'generation-progress'/source['directory']
+        path=directory/RECEIPT
+        if not path.exists():
+            continue
+        raw=read(path,MAX_STATE_BYTES)
+        value=decode(raw)
+        require(isinstance(value,dict) and isinstance(value.get('identity'),dict), 'inspection_generation_steps_invalid')
+        # _load checks exact state keys, bounded requests, response hashes and
+        # pending ordering; unlike the constructor it creates no lock or files.
+        observer=object.__new__(Progress)
+        observer.directory=directory; observer.path=path; observer.identity=value['identity']
+        require(not directory.is_symlink(),'inspection_article_symlink')
+        state=observer._load()
+        identity=state['identity']
+        require(identity.get('source_run_id')==SOURCE_RUN_ID
+                and identity.get('source_handoff_run_id')==HANDOFF_RUN_ID
+                and identity.get('source_kind')=='ocr-pages'
+                and identity.get('manifest_sha256')==MANIFEST_SHA256
+                and identity.get('directory')==source['directory']
+                and identity.get('source_sha256')==source['source_markdown_sha256'],
+                'inspection_source_inventory_mismatch')
+        entries=state['requests']
+        result.append({'source_ordinal':number,'state_sha256':digest(raw),
+            'body_complete':sum(e['kind']=='body' and e['state']=='complete' for e in entries),
+            'title_complete':sum(e['kind']=='title' and e['state']=='complete' for e in entries),
+            'pending':sum(e['state']=='pending' for e in entries),
+            'legacy_body':sum(e['kind']=='body' and e['origin']=='legacy' for e in entries)})
+    return result
 
 
 def inspect_checkpoint(root, original_sha, handoff_sha):
@@ -391,6 +467,14 @@ def inspect_checkpoint(root, original_sha, handoff_sha):
     summary = diagnostic(log, statuses.get(ordinal, {}))
     failed_files = (failed_checkpoint_files(article_root/sources[ordinal-1]['directory'], statuses.get(ordinal, {}))
                     if ordinal is not None and ordinal <= len(sources) else None)
+    incomplete = []
+    for number, source in enumerate(sources, 1):
+        directory=article_root/source['directory']
+        if directory.exists() and usable_article(directory) is None:
+            incomplete.append({'source_ordinal':number,
+                'title':title_selection_diagnostic(statuses[number].get('wechat_title_decision',{})
+                        if isinstance(statuses[number].get('wechat_title_decision'),dict) else {}),
+                'files':failed_checkpoint_files(directory,statuses[number])})
     pending = list(article_root.rglob('*.pending.json'))
     require(len(pending) <= 1000, 'inspection_pending_inventory_oversized')
     return {'schema_version':1,'diagnostics_only':True,'source_run_id':SOURCE_RUN_ID,'handoff_run_id':HANDOFF_RUN_ID,
@@ -398,22 +482,28 @@ def inspect_checkpoint(root, original_sha, handoff_sha):
         'context_sha256':digest(context_raw),'source_provenance_present':metadata is not None,
         'private_log_sha256':digest(log_path.read_bytes()),'completed_article_count':completed,
         'complete_article_receipt_present':(article_root/'article_recovery_receipt.json').is_file(),
-        'failed_checkpoint_files':failed_files,
+        'failed_checkpoint_files':failed_files,'incomplete_articles':incomplete,
+        'retained_progress_observations':progress_observation(root,sources),
         'pending_marker_count':len(pending),'prior_provider_request_count':'unknown','provider_outcome_resolved':False,
         'inspection_provider_posts':0,'object_writes':0,'object_deletions':0,**summary}
 
 
-def inspect(client, bucket, original, handoff, jobs, repository, workspace):
+def inspect(client, bucket, original, handoff, jobs, repository, workspace, *, recovery_run=None, recovery_jobs=None, recovery_run_id=None):
     original_sha, handoff_sha = authenticate(original, handoff, jobs, repository)
+    generation_job_id = (authenticate_recovery(recovery_run,recovery_jobs,repository,recovery_run_id)
+                         if recovery_run_id is not None else GENERATION_JOB_ID)
     head = exact_head(client, bucket, KEY)
     # Only the adapter is passed to download_directory: it has no mutation API.
     download_directory(KEY, workspace/'checkpoint', client=ReadOnlyClient(client, head), bucket=bucket)
     result = inspect_checkpoint(workspace/'checkpoint', original_sha, handoff_sha)
-    return {**result, 'archive_sha256':head['Metadata']['sha256'],'archive_size_bytes':head['ContentLength']}
+    return {**result,'generation_job_id':generation_job_id,
+            'generation_run_id':recovery_run_id or HANDOFF_RUN_ID,
+            'checkpoint_observation_only':True, 'archive_sha256':head['Metadata']['sha256'],'archive_size_bytes':head['ContentLength']}
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--generation-run-id',default='')
     parser.add_argument('--output',type=Path,required=True)
     args = parser.parse_args(argv)
     try:
@@ -421,9 +511,14 @@ def main(argv=None):
         from recovered_article_delivery import api, jobs
         original, handoff = api(repository,SOURCE_RUN_ID), api(repository,HANDOFF_RUN_ID)
         job_page = jobs(repository,HANDOFF_RUN_ID)
+        require(not args.generation_run_id or re.fullmatch(r'[1-9][0-9]{5,19}',args.generation_run_id),
+                'inspection_recovery_run_invalid')
+        recovery = ({'recovery_run':api(repository,args.generation_run_id),
+                     'recovery_jobs':jobs(repository,args.generation_run_id),
+                     'recovery_run_id':args.generation_run_id} if args.generation_run_id else {})
         with tempfile.TemporaryDirectory(prefix='generation-inspection-') as temp:
             with (Path(temp)/'private-inspection.log').open('w') as private, redirect_stdout(private), redirect_stderr(private):
-                result = inspect(build_client(),require_env('R2_BUCKET'),original,handoff,job_page,repository,Path(temp))
+                result = inspect(build_client(),require_env('R2_BUCKET'),original,handoff,job_page,repository,Path(temp),**recovery)
         result = {'success':True,**result}
     except Exception as error:
         # No arbitrary exception strings/classes, URLs or provider messages.

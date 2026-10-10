@@ -93,6 +93,59 @@ Report article recovery stopped: article_generation_failed source_ordinal=3
         for forbidden in ('PRIVATE','SECRET','secret.invalid','Revenue','研究','report-000','/scripts/'):
             self.assertNotIn(forbidden,json.dumps(result,ensure_ascii=False))
 
+    def test_standalone_latest_failed_run_gates_before_read(self):
+        run={**self.handoff,'id':38056186143,'path':'.github/workflows/recover-report-article-delivery.yml',
+             'head_sha':'c'*40,'run_attempt':1}
+        job=copy.deepcopy(self.jobs['jobs'][1]);job.update(id=114225092309,run_id=run['id'],head_sha=run['head_sha'],name='generate')
+        kwargs=dict(recovery_run=run,recovery_jobs={'jobs':[job]},recovery_run_id=str(run['id']))
+        destination=self.f.root/'latest';destination.mkdir()
+        with self.f.forbidden():
+            result=inspector.inspect(self.f.client,'private',self.original,self.handoff,self.jobs,
+                                     'owner/repo',destination,**kwargs)
+        self.assertEqual(result['generation_job_id'],job['id'])
+        self.assertEqual(result['generation_run_id'],str(run['id']))
+        self.assertTrue(result['checkpoint_observation_only'])
+        self.assertEqual(self.f.client.objects,self.before)
+        for field,value in [('head_branch','wrong'),('event','pull_request'),('conclusion','success'),
+                            ('status','in_progress'),('path','.github/workflows/other.yml')]:
+            bad={**run,field:value}
+            with patch.object(self.f.client,'head_object') as read,self.assertRaises(ValueError):
+                inspector.inspect(self.f.client,'private',self.original,self.handoff,self.jobs,'owner/repo',destination,
+                                  **{**kwargs,'recovery_run':bad})
+            read.assert_not_called()
+        badjob=copy.deepcopy(job);badjob['steps'][-1]['conclusion']='failure'
+        with patch.object(self.f.client,'head_object') as read,self.assertRaises(ValueError):
+            inspector.inspect(self.f.client,'private',self.original,self.handoff,self.jobs,'owner/repo',destination,
+                              **{**kwargs,'recovery_jobs':{'jobs':[badjob]}})
+        read.assert_not_called()
+
+    def test_progress_counts_do_not_create_lock_or_disclose_responses(self):
+        from article_generation_progress import Progress,ProgressError
+        root=self.workspace/'checkpoint'
+        metadata=json.loads((root/'articles/source_provenance.json').read_bytes())
+        source=metadata['sources'][2]
+        directory=root/'generation-progress'/source['directory']
+        identity=dict(source_run_id=inspector.SOURCE_RUN_ID,source_handoff_run_id=inspector.HANDOFF_RUN_ID,
+                      source_kind='ocr-pages',manifest_sha256=inspector.MANIFEST_SHA256,
+                      directory=source['directory'],source_sha256=source['source_markdown_sha256'])
+        progress=Progress(directory,identity=identity,persist=lambda:True)
+        progress.request('body','PRIVATE_PROMPT',{},lambda:'PRIVATE_BODY')
+        with self.assertRaises(ProgressError):
+            progress.request('title','PRIVATE_TITLE',{},lambda:(_ for _ in ()).throw(TimeoutError('SECRET')))
+        (directory/'.article_generation_progress.lock').unlink()
+        before={str(p.relative_to(root)):p.read_bytes() for p in root.rglob('*') if p.is_file()}
+        result=inspector.progress_observation(root,metadata['sources'])
+        self.assertEqual(len(result),1)
+        self.assertEqual((result[0]['body_complete'],result[0]['title_complete'],result[0]['pending']),(1,0,1))
+        self.assertNotIn('PRIVATE',json.dumps(result));self.assertNotIn('SECRET',json.dumps(result))
+        self.assertEqual(before,{str(p.relative_to(root)):p.read_bytes() for p in root.rglob('*') if p.is_file()})
+
+    def test_current_durable_failure_category_is_typed(self):
+        r=inspector.diagnostic('Report article recovery stopped: article_progress_pending source_ordinal=28',{})
+        self.assertEqual(r['terminal_category'],'article_progress_pending')
+        self.assertEqual(r['failed_source_ordinal'],28)
+
+
     def test_wrong_original_handoff_generation_job_or_save_gate_blocks_before_r2(self):
         mutations=(lambda o,h,j:o.update(id=123),lambda o,h,j:h.update(id=999),
             lambda o,h,j:j['jobs'][0].update(id=99),
@@ -345,7 +398,7 @@ class DiagnosticTests(unittest.TestCase):
         import yaml
         path=Path(__file__).resolve().parents[1]/inspector.WORKFLOW
         value=yaml.safe_load(path.read_text());on=value.get('on',value.get(True))
-        self.assertIsNone(on['workflow_dispatch'])
+        self.assertEqual(set(on['workflow_dispatch']['inputs']),{'generation_run_id'})
         self.assertEqual(value['permissions'],{'contents':'read','actions':'read'})
         text=path.read_text()
         for forbidden in ('DEEPSEEK','MINER_U','prepare --workspace','save-generation','upload-wechat','delete-prefix'):
