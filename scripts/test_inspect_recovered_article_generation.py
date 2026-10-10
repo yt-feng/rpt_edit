@@ -298,6 +298,21 @@ class DiagnosticTests(unittest.TestCase):
             'missing_anchor_segment':1,'missing_required_terms':1,'unsupported_hook_addition':1})
         for private in ('PRIVATE','SECRET','GPU','0.50'): self.assertNotIn(private,json.dumps(result))
 
+    def test_word_boundary_diagnosis_only_exposes_bounded_counts(self):
+        value=inspector.title_selection_diagnostic({'raw_candidates':[
+            '机构：Apple Watch新品带动穿戴产品收入增长',
+            '机构：AMD Instinct新品进入AI服务器量产期',
+            '机构：Salesforce业务增长数据更新',
+            '机构：公司产品更新带动需求增长']})
+        self.assertEqual(value['raw_long_english_candidate_count'],1)
+        self.assertEqual(value['whitespace_join_introduces_long_english_count'],2)
+        for token in ['Apple','Watch','AMD','Instinct','Salesforce','机构']:
+            self.assertNotIn(token,json.dumps(value))
+        for raw in [None,['x'*1001],['x']*33,[{}]]:
+            value=inspector.title_selection_diagnostic({'raw_candidates':raw})
+            self.assertIsNone(value['raw_long_english_candidate_count'])
+            self.assertIsNone(value['whitespace_join_introduces_long_english_count'])
+
     def test_empty_model_candidate_list_is_distinct_from_unknown_or_malformed(self):
         decision={'raw_candidates':[],'repair_candidates':[],'cleaned_candidates':['PRIVATE'],
             'rejected_candidates':[],'required_terms':[],'faithful_candidate_missing_terms':[],
