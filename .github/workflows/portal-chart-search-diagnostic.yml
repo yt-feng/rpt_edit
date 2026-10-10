@@ -15,13 +15,18 @@ on:
   workflow_dispatch:
     inputs:
       operation:
-        description: "Checkpoint read or one synthetic-image probe of the existing vision configuration"
+        description: "Checkpoint read, one same-base models GET, or one synthetic-image probe"
         type: choice
-        options: [checkpoint, vision-config]
+        options: [checkpoint, vision-models, vision-config]
         default: checkpoint
         required: true
       run_id:
         description: "Required historical chart-index workflow run ID to inspect"
+        type: string
+        required: false
+        default: ""
+      model_override:
+        description: "Optional allowlisted model for vision-config only; leave empty to use the configured model"
         type: string
         required: false
         default: ""
@@ -36,7 +41,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Validate run filter
-        if: github.event_name == 'workflow_dispatch' && inputs.operation != 'vision-config'
+        if: github.event_name == 'workflow_dispatch' && inputs.operation != 'vision-config' && inputs.operation != 'vision-models'
         env:
           TARGET_RUN_ID: ${{ inputs.run_id }}
         run: |
@@ -64,7 +69,7 @@ jobs:
           python scripts/test_chart_vision_config.py
 
       - name: Read checkpoint without model requests or storage writes
-        if: github.event_name == 'workflow_dispatch' && inputs.operation != 'vision-config'
+        if: github.event_name == 'workflow_dispatch' && inputs.operation != 'vision-config' && inputs.operation != 'vision-models'
         env:
           TARGET_RUN_ID: ${{ inputs.run_id }}
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
@@ -73,13 +78,15 @@ jobs:
           R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
         run: python scripts/diagnose_chart_search_state.py --run-id "$TARGET_RUN_ID" --output _chart_diagnostic/report.json
 
-      - name: Probe the existing vision configuration with one synthetic chart
-        if: github.event_name == 'workflow_dispatch' && inputs.operation == 'vision-config'
+      - name: Probe the existing vision configuration or read allowlisted models
+        if: github.event_name == 'workflow_dispatch' && (inputs.operation == 'vision-config' || inputs.operation == 'vision-models')
         env:
+          VISION_OPERATION: ${{ inputs.operation }}
+          VISION_MODEL_OVERRIDE: ${{ inputs.model_override }}
           VISION_INDEX_API_KEY: ${{ secrets.VISION_INDEX_API_KEY }}
           VISION_INDEX_API_BASE_URL: ${{ secrets.VISION_INDEX_API_BASE_URL }}
           VISION_INDEX_MODEL: ${{ vars.VISION_INDEX_MODEL || 'qwen3-vl-flash' }}
-        run: python scripts/diagnose_chart_vision_config.py --output _chart_diagnostic/report.json
+        run: python scripts/diagnose_chart_vision_config.py --operation "$VISION_OPERATION" --model-override "$VISION_MODEL_OVERRIDE" --output _chart_diagnostic/report.json
 
       - name: Upload only the filtered diagnostic
         if: always() && github.event_name == 'workflow_dispatch'
