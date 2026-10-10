@@ -23,7 +23,7 @@ from wechat_article_quality import audit_wechat_article_markdown
 RECEIPT = "article_recovery_receipt.json"
 PROVENANCE = "source_provenance.json"
 POLICY = "verified-source-article-recovery-v1"
-KINDS = {"mineru-recovery", "ocr-synthesis"}
+KINDS = {"mineru-recovery", "ocr-synthesis", "ocr-pages"}
 SHA = re.compile(r"[a-f0-9]{64}")
 MAX_FILE_BYTES = 128 * 1024 * 1024
 MAX_FILES = 30000
@@ -122,23 +122,28 @@ def load_sources(source_dir, source_kind, expected_reports, date_folder, *, sour
                 "source_status_json": (directory / "status.json").read_text()})
     else:
         from market_views_publication import RECEIPT_NAME as SOURCE_RECEIPT, validate_ocr_synthesis_receipt
+        validator = validate_ocr_synthesis_receipt
+        if source_kind == 'ocr-pages':
+            from ocr_page_sources import RECEIPT as SOURCE_RECEIPT, validate_pages_receipt
+            validator = validate_pages_receipt
         initial = read_json(root / SOURCE_RECEIPT)
         require(isinstance(initial, dict), "invalid_ocr_receipt")
         source_run_id = source_run_id or initial.get("source_run_id")
         source_execution_sha = source_execution_sha or initial.get("execution_sha")
-        receipt = validate_ocr_synthesis_receipt(root, date_folder=date_folder, expected_reports=expected_reports,
+        receipt = validator(root, date_folder=date_folder, expected_reports=expected_reports,
             source_run_id=source_run_id, execution_sha=source_execution_sha,
             recovery_run_id=source_handoff_run_id, recovery_execution_sha=source_handoff_execution_sha)
         source_handoff_run_id = source_handoff_run_id or source_run_id
         source_handoff_execution_sha = source_handoff_execution_sha or source_execution_sha
-        require(receipt["skipped_reports"] == 0 and receipt["summarized_reports"] == expected_reports,
-                "ocr_article_sources_incomplete")
+        if source_kind == 'ocr-synthesis':
+            require(receipt["skipped_reports"] == 0 and receipt["summarized_reports"] == expected_reports,
+                    "ocr_article_sources_incomplete")
         raw = (root / SOURCE_RECEIPT).read_bytes()
         from extract_native_market_sources import read_manifest
         _, bindings = read_manifest(manifest_path, expected_reports)
         reports = {row["source_pdf"]: row for row in receipt["reports"]}
         files = {row["path"] for row in receipt["files"]}
-        figures = read_json(root / "figure_candidates.json")
+        figures = read_json(root / "figure_candidates.json") if source_kind == 'ocr-synthesis' else []
         for ordinal, binding in enumerate(bindings, 1):
             report = reports[binding["source_pdf"]]
             rid = report["id"]
@@ -161,7 +166,7 @@ def load_sources(source_dir, source_kind, expected_reports, date_folder, *, sour
         plan["provenance"] = {"source_kind": source_kind, "source_pdf": plan["source_pdf"],
             "content_sha256": plan["content_sha256"], "source_receipt_sha256": source_hash,
             "source_report_id": plan["source_report_id"]}
-        if source_kind == "ocr-synthesis":
+        if source_kind in {"ocr-synthesis", "ocr-pages"}:
             plan["provenance"]["source_pages_sha256"] = plan["source_pages_sha256"]
     from market_views_publication import source_inventory_sha256
     metadata = {"schema_version": 1, "source_kind": source_kind, "date_folder": date_folder,
@@ -249,7 +254,8 @@ def _stage_source(plan, directory):
             provenance.append({"path": relative, "kind": "ocr_reconstructed_chart", "source_pages": row.get("source_pages", []),
                                "sha256": digest(target.read_bytes()), "source_figure_id": row.get("figure_id"),
                                "source_figure_path": row["latex_path"]})
-        status.update(images=images, image_source_kind="ocr_reconstructed_chart", ocr_figures=provenance)
+        status.update(images=images, image_source_kind=("ocr_pages_text_only"
+            if plan['provenance']['source_kind'] == 'ocr-pages' else "ocr_reconstructed_chart"), ocr_figures=provenance)
     status.update(source_pdf=plan["source_pdf"], original_filename=plan["original_filename"],
         original_pdf_sha256=plan["content_sha256"], source_markdown=plan["source_markdown"],
         source_method="ocr" if "pages_path" in plan else "mineru",
@@ -291,10 +297,19 @@ def validate_source_evidence(root, metadata):
                     require(target.is_file() and target.stat().st_size == item["bytes"]
                             and digest(target.read_bytes()) == item["sha256"], "source_evidence_hash")
     else:
-        require(receipt["date_folder"] == metadata["date_folder"] and receipt["source_run_id"] == metadata["source_run_id"]
+        pages_only = metadata['source_kind'] == 'ocr-pages'
+        require(receipt.get('source_kind') == metadata['source_kind'] and receipt.get('complete') is True
+                and receipt["date_folder"] == metadata["date_folder"] and receipt["source_run_id"] == metadata["source_run_id"]
                 and receipt["execution_sha"] == metadata["source_execution_sha"]
-                and receipt["selected_manifest_sha256"] == metadata["manifest_sha256"]
-                and receipt["skipped_reports"] == 0, "source_receipt_identity")
+                and receipt["selected_manifest_sha256"] == metadata["manifest_sha256"], "source_receipt_identity")
+        if pages_only:
+            from ocr_page_sources import POLICY as PAGES_POLICY, EXTRACTION
+            require(receipt.get('policy') == PAGES_POLICY and receipt.get('extraction') == EXTRACTION
+                    and receipt.get('expected_reports') == receipt.get('report_count') == metadata['expected_reports']
+                    and 'cache_recovery' in receipt and 'source_figures_json' not in metadata,
+                    'ocr_pages_article_contract_invalid')
+        else:
+            require(receipt['skipped_reports'] == 0, 'source_receipt_identity')
         if "cache_recovery" in receipt or metadata["source_run_id"] != metadata["source_handoff_run_id"]:
             from market_views_publication import validate_ocr_cache_recovery_lineage
             validate_ocr_cache_recovery_lineage(receipt, source_run_id=metadata["source_run_id"],
@@ -303,15 +318,17 @@ def validate_source_evidence(root, metadata):
         else:
             require(metadata["source_execution_sha"] == metadata["source_handoff_execution_sha"],
                     "source_receipt_identity")
-        figure_raw = metadata.get("source_figures_json", "")
-        require(digest(figure_raw.encode()) == source_files["figure_candidates.json"]["sha256"], "source_figures_binding")
-        figures = json.loads(figure_raw)
+        figures = []
+        if not pages_only:
+            figure_raw = metadata.get("source_figures_json", "")
+            require(digest(figure_raw.encode()) == source_files["figure_candidates.json"]["sha256"], "source_figures_binding")
+            figures = json.loads(figure_raw)
         by_id = {row["id"]: row for row in originals}
         for source in sources:
             provenance = source["provenance"]
             rid = provenance["source_report_id"]
             original = by_id[rid]
-            require(provenance == {"source_kind": "ocr-synthesis", "source_pdf": original["source_pdf"],
+            require(provenance == {"source_kind": metadata['source_kind'], "source_pdf": original["source_pdf"],
                 "content_sha256": original["content_sha256"], "source_receipt_sha256": metadata["source_receipt_sha256"],
                 "source_report_id": rid, "source_pages_sha256": source_files[f"ocr_sources/{rid}/pages.json"]["sha256"]},
                 "ocr_source_binding")
@@ -331,7 +348,8 @@ def validate_source_evidence(root, metadata):
                 expected_proofs.append({"path": path, "kind": "ocr_reconstructed_chart", "source_pages": figure.get("source_pages", []),
                     "sha256": digest(data), "source_figure_id": figure.get("figure_id"), "source_figure_path": figure["latex_path"]})
             require(status.get("images") == expected_images and status.get("ocr_figures") == expected_proofs
-                    and status.get("image_source_kind") == "ocr_reconstructed_chart", "ocr_figure_binding")
+                    and status.get("image_source_kind") == ("ocr_pages_text_only" if pages_only else "ocr_reconstructed_chart"),
+                    "ocr_figure_binding")
 
 
 def validate_articles(output_dir, expected_reports, date_folder, *, source_kind=None, source_receipt_sha256=None):

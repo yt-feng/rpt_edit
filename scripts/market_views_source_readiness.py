@@ -37,6 +37,11 @@ SOURCE_KIND_GATES = {
     for workflow, gate in SOURCE_GATES.items()
 }
 SOURCE_KIND_GATES.update({
+    (OCR_CACHE_RECOVERY_WORKFLOW, 'ocr-pages'): (
+        'recover',
+        ('Restore and verify complete original OCR pages from cache only',
+         'Archive and verify recovered original OCR pages in private R2'),
+    ),
     (OCR_CACHE_RECOVERY_WORKFLOW, 'ocr-synthesis'): (
         'recover',
         ('Restore and verify complete OCR sources from cache only',

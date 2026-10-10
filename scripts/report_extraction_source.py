@@ -93,7 +93,7 @@ def resolve_extraction_source(directory: Path) -> ExtractionSource:
         if method == "ocr":
             fields.add("source_pages_sha256")
         if (not isinstance(provenance, dict) or set(provenance) != fields
-                or provenance.get("source_kind") != {"mineru": "mineru-recovery", "ocr": "ocr-synthesis"}[method]
+                or provenance.get("source_kind") not in {"mineru": {"mineru-recovery"}, "ocr": {"ocr-synthesis", "ocr-pages"}}[method]
                 or not isinstance(status.get("source_pdf"), str) or not status["source_pdf"]
                 or provenance.get("source_pdf") != status["source_pdf"]
                 or not isinstance(provenance.get("source_report_id"), str)

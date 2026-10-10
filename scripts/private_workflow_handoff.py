@@ -3,8 +3,10 @@
 
 The public repository contains only source code. Generated report text and images are
 packed into short-lived ``.tar.gz`` objects in a private R2 bucket, then materialized
-by downstream jobs. Raw PDFs, ZIPs, media files, and MinerU raw directories are never
-included in the handoff archive.
+by downstream jobs. Original PDFs are excluded by default. The independent,
+validated OCR-pages source contract alone may opt in its exact originals/RNNN.pdf
+inventory in its private recovery namespace for downstream identity verification.
+Article checkpoints do not opt in. ZIPs, media and MinerU raw directories stay out.
 """
 from __future__ import annotations
 
@@ -70,34 +72,49 @@ def validate_prefix(prefix: str) -> str:
     return cleaned + "/"
 
 
-def is_private_handoff_file(path: Path, source: Path, *, include_translated_pdfs: bool = False) -> bool:
+def is_private_handoff_file(path: Path, source: Path, *, include_translated_pdfs: bool = False,
+                            include_ocr_page_originals: bool = False) -> bool:
     relative = path.relative_to(source)
     if any(part in EXCLUDED_DIR_NAMES for part in relative.parts[:-1]):
         return False
     if path.suffix.lower() in EXCLUDED_SUFFIXES:
-        # Only the translated renderer's named outputs may opt into the private
-        # handoff. Source PDFs, other PDFs, raw directories and media stay out.
-        if not (include_translated_pdfs
+        # Both exceptions are explicit, exact-path opt-ins. Other sources,
+        # arbitrary PDFs and media retain the default exclusion.
+        translated = (include_translated_pdfs
                 and re.fullmatch(r"portal_translated_report_\d+\.pdf", path.name)
-                and (path.parent / "translation_status.json").is_file()):
+                and (path.parent / "translation_status.json").is_file())
+        ocr_original = (include_ocr_page_originals and re.fullmatch(r'originals/R[0-9]{3,4}\.pdf', relative.as_posix())
+                        and (source / 'ocr_pages_receipt.json').is_file())
+        if not (translated or ocr_original):
             return False
     return path.is_file() and not path.is_symlink()
 
 
-def iter_handoff_files(source: Path, *, include_translated_pdfs: bool = False) -> Iterable[Path]:
+def iter_handoff_files(source: Path, *, include_translated_pdfs: bool = False,
+                       include_ocr_page_originals: bool = False) -> Iterable[Path]:
     for path in sorted(source.rglob("*")):
-        if is_private_handoff_file(path, source, include_translated_pdfs=include_translated_pdfs):
+        if is_private_handoff_file(path, source, include_translated_pdfs=include_translated_pdfs,
+                                   include_ocr_page_originals=include_ocr_page_originals):
             yield path
 
 
-def create_archive(source: Path, archive_path: Path, *, include_translated_pdfs: bool = False) -> tuple[int, int, str]:
+def create_archive(source: Path, archive_path: Path, *, include_translated_pdfs: bool = False,
+                   include_ocr_page_originals: bool = False) -> tuple[int, int, str]:
     source = source.resolve()
     if not source.is_dir():
         raise RuntimeError(f"Handoff source directory does not exist: {source}")
+    if include_ocr_page_originals:
+        from ocr_page_sources import RECEIPT, decode, read, validate_pages_receipt
+        receipt = decode(read(source / RECEIPT))
+        lineage = receipt['cache_recovery']
+        validate_pages_receipt(source, date_folder=receipt['date_folder'], expected_reports=receipt['expected_reports'],
+            source_run_id=receipt['source_run_id'], execution_sha=receipt['execution_sha'],
+            recovery_run_id=lineage['recovery_run_id'], recovery_execution_sha=lineage['recovery_execution_sha'])
 
     file_count = 0
     with tarfile.open(archive_path, "w:gz", format=tarfile.PAX_FORMAT) as archive:
-        for path in iter_handoff_files(source, include_translated_pdfs=include_translated_pdfs):
+        for path in iter_handoff_files(source, include_translated_pdfs=include_translated_pdfs,
+                                       include_ocr_page_originals=include_ocr_page_originals):
             archive.add(path, arcname=path.relative_to(source).as_posix(), recursive=False)
             file_count += 1
 
@@ -137,13 +154,17 @@ def extract_archive(archive_path: Path, destination: Path, *, replace: bool = Tr
 
 
 def upload_directory(source: Path, key: str, *, client: Any | None = None, bucket: str | None = None,
-                     include_translated_pdfs: bool = False) -> None:
+                     include_translated_pdfs: bool = False, include_ocr_page_originals: bool = False) -> None:
     key = validate_key(key)
+    if include_ocr_page_originals and not re.fullmatch(
+            r'_private-workflow-handoff/market-ocr-pages-cache-recovery/[1-9][0-9]{0,19}/[0-9]{6}/shard_0\.tar\.gz', key):
+        raise ValueError('ocr_pages_archive_namespace_invalid')
     resolved_client = client or build_r2_client()
     resolved_bucket = bucket or r2_bucket()
     with tempfile.TemporaryDirectory(prefix="private-handoff-") as temp_dir:
         archive_path = Path(temp_dir) / "payload.tar.gz"
-        file_count, size, digest = create_archive(source, archive_path, include_translated_pdfs=include_translated_pdfs)
+        file_count, size, digest = create_archive(source, archive_path, include_translated_pdfs=include_translated_pdfs,
+                                                include_ocr_page_originals=include_ocr_page_originals)
         resolved_client.upload_file(
             str(archive_path),
             resolved_bucket,
