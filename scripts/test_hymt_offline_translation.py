@@ -216,6 +216,56 @@ class HyMTTests(unittest.TestCase):
         self.assertTrue(many['response']['truncated'])
         self.assertFalse(h.quantity_failure_diagnostics(source, None)['response_available'])
 
+    def test_quantity_diagnostics_match_french_grouping_quarter_and_month_gate(self):
+        source = '2026年第三季度的9月收入为1234.5美元，增长5%。'
+        response = ('En septembre du troisième trimestre de 2026, les revenus sont de '
+                    '1\u202f234,5 dollars, en hausse de 5 %.')
+        for original, translated, source_language, target_language in (
+            (source, response, 'zh', 'fr'), (response, source, 'fr', 'zh')):
+            with self.subTest(target=target_language):
+                self.assertEqual(h.quantity_issues(original, translated, source_language, target_language), [])
+                facts = h.quantity_failure_diagnostics(original, translated, source_language, target_language)
+                self.assertEqual(facts['missing']['rows'], [])
+                self.assertEqual(facts['extra']['rows'], [])
+        facts = h.quantity_failure_diagnostics(source, response.replace('5 %', '6 %'), 'zh', 'fr')
+        self.assertEqual(facts['missing']['rows'], [{'kind': 'percent', 'values': ['5'], 'count': 1}])
+        self.assertEqual(facts['extra']['rows'], [{'kind': 'percent', 'values': ['6'], 'count': 1}])
+
+    def test_quantity_diagnostics_named_event_scope_and_default_are_compatible(self):
+        source = '9月双十一周期27天'
+        response = 'In September, the Double 11 cycle lasts 27 days.'
+        for original, translated, source_language, target_language in (
+            (source, response, 'zh', 'en'), (response, source, 'en', 'zh')):
+            with self.subTest(target=target_language):
+                facts = h.quantity_failure_diagnostics(original, translated, source_language, target_language)
+                self.assertEqual(facts['missing']['rows'], [])
+                self.assertEqual(facts['extra']['rows'], [])
+        legacy = h.quantity_failure_diagnostics('双十一周期27天', 'Double 11 lasts 27 days.')
+        self.assertEqual(legacy['extra']['rows'], [{'kind': 'number', 'values': ['11'], 'count': 1}])
+        french = h.quantity_failure_diagnostics('双十一周期27天',
+                    'La fête des célibataires dure 27 jours.', 'zh', 'fr')
+        self.assertEqual(french['extra']['rows'], [])
+        self.assertEqual(french['missing']['rows'], [])
+
+    def test_real_terminal_diagnostics_receive_detected_and_target_language(self):
+        cases = [
+            ('2026年第三季度的9月收入为1234.5美元，增长5%。',
+             'En septembre du troisième trimestre de 2026, le revenu est de 1\u202f234,5 dollars, en hausse de 6 %.',
+             'fr', 'percent', '5', '6'),
+            ('9月双十一周期27天', 'In September, the Double 11 cycle lasts 28 days.',
+             'en', 'number', '27', '28'),
+        ]
+        for source, response, target, kind, before, after in cases:
+            with self.subTest(target=target):
+                translator = self.translator(lambda _, result=response: result)
+                with self.assertRaisesRegex(h.OfflineTranslationValidationError, 'quantity'):
+                    translator.translate(source, target, markdown=False)
+                self.assertEqual(self.engine.calls[0][1:3], ('zh', target))
+                facts = translator.failure_diagnostics[0]['quantities']
+                self.assertEqual(facts['missing']['rows'], [{'kind': kind, 'values': [before], 'count': 1}])
+                self.assertEqual(facts['extra']['rows'], [{'kind': kind, 'values': [after], 'count': 1}])
+                self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
+
     def test_terminal_quantity_diagnostics_restore_protected_facts_before_comparison(self):
         source = '私有变化为150bps。'
         def respond(value, attempt):

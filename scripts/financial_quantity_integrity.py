@@ -122,7 +122,28 @@ FIVE_YEAR_PERIOD_RE = re.compile(
     r"(?<![A-Za-z0-9])(\d+)(?:st|nd|rd|th)\s+Five[~\s-]+Year(?![A-Za-z0-9])", re.IGNORECASE)
 
 
-def _normalized(text: str) -> str:
+def _french_grouped_numbers(text: str) -> str:
+    # Inspect the whole numeric run before NFKC collapses distinct spaces.
+    # A malformed group must not be normalized by matching only its suffix.
+    spaces = " \u00a0\u202f"
+    candidate = rf"(?<![\w.,+\-−])[+\-−]?[0-9]+(?:[{spaces}.,][0-9]+)+(?!\w|[.,][0-9]|[{spaces}][0-9])"
+    grouped = rf"([+\-−]?)([1-9][0-9]{{0,2}}(?:[{spaces}][0-9]{{3}})+)(?:,([0-9]+))?"
+
+    def normalize(match):
+        value = re.fullmatch(grouped, match[0])
+        if value is None:
+            return match[0]
+        integer = value[1] + re.sub(rf"[{spaces}]", "", value[2])
+        # The comma is unambiguously decimal after explicit space grouping,
+        # including exactly three fractional digits (1 234,567 = 1234.567).
+        return integer + ("." + value[3] if value[3] is not None else "")
+
+    return re.sub(candidate, normalize, text)
+
+
+def _normalized(text: str, *, language: str = "") -> str:
+    if language == "fr":
+        text = _french_grouped_numbers(text)
     text = unicodedata.normalize("NFKC", text).replace("−", "-").replace("٬", ",").replace("٫", ".")
     text = "".join(str(unicodedata.decimal(c)) if c.isdecimal() else c for c in text)
     return re.sub(r"__(?:KC_PH|HYMTPH)_\d+__", " ", text)
@@ -139,8 +160,8 @@ def _decimal(value: str) -> Decimal:
     return Decimal(value)
 
 
-def quantities(text: str, *, bare_months: bool = False, named_events: bool = False) -> Counter:
-    text = _normalized(text)
+def quantities(text: str, *, bare_months: bool = False, named_events: bool = False, language: str = "") -> Counter:
+    text = _normalized(text, language=language)
     original_month_only = text.strip().casefold() in {"may", "march"}
     found = Counter()
 
@@ -199,6 +220,13 @@ def quantities(text: str, *, bare_months: bool = False, named_events: bool = Fal
     take(rf"(?<![A-Za-z0-9])([1-4])Q\s*['’]?\s*({year})(?![A-Za-z0-9])", lambda m: ("quarter", period_year(m[2]), int(m[1])))
     take(rf"\b(first|second|third|fourth)\s+quarter(?:\s+of)?\s+({year})\b",
          lambda m: ("quarter", period_year(m[2]), ordinals[m[1].casefold()]))
+    if language == "fr":
+        french_ordinals = {'premier': 1, 'deuxième': 2, 'troisième': 3, 'quatrième': 4}
+        french_quarter = r"(?<!\w)(premier|deuxième|troisième|quatrième)\s+trimestre"
+        take(french_quarter + r"(?:\s+de)?\s+([0-9]{4})(?!\w|[.,][0-9])",
+             lambda m: ("quarter", int(m[2]), french_ordinals[m[1].casefold()]))
+        take(french_quarter + r"(?!\w)",
+             lambda m: ("quarter", None, french_ordinals[m[1].casefold()]))
     take(rf"(?<![A-Za-z0-9])H([12])\s*['’]?\s*({year})(?![A-Za-z0-9])", lambda m: ("half", period_year(m[2]), int(m[1])))
     take(rf"(?<![A-Za-z0-9])({year})\s*H([12])(?![A-Za-z0-9])", lambda m: ("half", period_year(m[1]), int(m[2])))
     take(rf"(?<![A-Za-z0-9])([12])H\s*['’]?\s*({year})(?![A-Za-z0-9])", lambda m: ("half", period_year(m[2]), int(m[1])))
@@ -298,11 +326,11 @@ def quantity_issues(source: str, translated: str, source_language: str = "", tar
     # contract. A French natural event name, for example, must not acquire a
     # new unsupported requirement from the Chinese/English equivalence.
     named_events = {source_language, target_language} == {"zh", "en"}
-    before = quantities(source, named_events=named_events)
-    after = quantities(translated, named_events=named_events)
+    before = quantities(source, named_events=named_events, language=source_language)
+    after = quantities(translated, named_events=named_events, language=target_language)
     if any(key[0] == "month" and key[1] is None for key in before.keys() | after.keys()):
-        before = quantities(source, bare_months=True, named_events=named_events)
-        after = quantities(translated, bare_months=True, named_events=named_events)
+        before = quantities(source, bare_months=True, named_events=named_events, language=source_language)
+        after = quantities(translated, bare_months=True, named_events=named_events, language=target_language)
     issues = []
     if any(key[0] == 'invalid_date' for key in before.keys() | after.keys()):
         issues.append("invalid_calendar_date")

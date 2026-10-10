@@ -7,6 +7,90 @@ from financial_quantity_integrity import quantities, quantity_issues
 
 
 class FinancialQuantityTests(unittest.TestCase):
+    def test_french_complete_space_grouping_preserves_numbers_currency_and_fractional_precision(self):
+        for space in (' ', '\u00a0', '\u202f'):
+            for source, translated in (
+                ('销量为1234.5件。', f'Les ventes atteignent 1{space}234,5 unités.'),
+                ('金额为1234.5美元。', f'Le montant est de 1{space}234,5 dollars.'),
+                ('金额为-1234.567美元。', f'Le montant est de −1{space}234,567 dollars.'),
+                ('数量为1234567。', f'Le total est de 1{space}234{space}567.'),
+                ('增长1234.5%。', f'La croissance est de 1{space}234,5 %.'),
+            ):
+                with self.subTest(space=repr(space), source=source):
+                    self.assertEqual(quantity_issues(source, translated, 'zh', 'fr'), [])
+                    self.assertEqual(quantity_issues(translated, source, 'fr', 'zh'), [])
+        self.assertEqual(quantities('1\u202f234,567 dollars', language='fr'),
+                         Counter({('currency', 'USD', Decimal('1234.567')): 1}))
+
+    def test_french_grouping_does_not_hide_bad_groups_changes_extra_numbers_or_units(self):
+        source = '金额为1234.5美元。'
+        for translated in (
+            'Le montant est de 1\u202f235,5 dollars.',
+            'Le montant est de 1\u202f234,5 euros.',
+            'Le montant est de 1\u202f234,5.',
+            'Le montant est de 1\u202f234,5 dollars, plus 2 unités.',
+            'Le montant est de -1\u202f234,5 dollars.',
+            'Le montant est de 1\u202f234,5 %.',
+        ):
+            with self.subTest(translated=translated):
+                self.assertTrue(quantity_issues(source, translated, 'zh', 'fr'))
+        for malformed in ('12 34,5', '1 23 4,5', '1234 567,5', '1 234 56,5',
+                          '1 234,5,6', '1 234.5,6', '1\t234,5', '1\n234,5',
+                          '1  234,5', '1\u2009234,5', '0 1234,5'):
+            with self.subTest(malformed=malformed):
+                self.assertTrue(quantity_issues('数量为1234.5。', malformed, 'zh', 'fr'))
+        # A malformed prefix must not allow its otherwise valid suffix to be
+        # merged, turning two distinct observed quantities into one.
+        self.assertTrue(quantity_issues('数量为12和34567。', '12 34 567', 'zh', 'fr'))
+        self.assertTrue(quantity_issues('数量为1和234.567。', '1\u202f234,567', 'zh', 'fr'))
+
+    def test_explicit_french_quarters_preserve_attached_year_and_ordinal_both_directions(self):
+        for number, ordinal in enumerate(('premier', 'deuxième', 'troisième', 'quatrième'), 1):
+            for connector in (' de ', ' '):
+                source = f'2026年第{number}季度增长5%。'
+                translated = f'Au {ordinal} trimestre{connector}2026, la croissance est de 5 %.'
+                with self.subTest(number=number, connector=connector):
+                    self.assertEqual(quantity_issues(source, translated, 'zh', 'fr'), [])
+                    self.assertEqual(quantity_issues(translated, source, 'fr', 'zh'), [])
+            self.assertEqual(quantity_issues(f'第{number}季度增长5%。',
+                             f'Au {ordinal} trimestre, la croissance est de 5 %.', 'zh', 'fr'), [])
+        self.assertEqual(quantities('Au troisième trimestre de 2026', language='fr'),
+                         Counter({('quarter', 2026, 3): 1}))
+
+    def test_french_quarter_changes_omissions_and_unsupported_periods_still_fail(self):
+        source = '2026年第三季度增长5%。'
+        for translated in (
+            'Au quatrième trimestre de 2026, la croissance est de 5 %.',
+            'Au troisième trimestre de 2025, la croissance est de 5 %.',
+            'Au troisième trimestre de 2026, la croissance est de 6 %.',
+            'Au troisième trimestre, la croissance est de 5 %.',
+            'En 2026, la croissance est de 5 %.',
+            'Au troisième trimestre de 2026, la croissance est de 5 points de pourcentage.',
+            'Au troisième trimestre de 2026, la croissance est de 5 % et de 2 %.',
+            'Au troisième trimestre de 2026 et au troisième trimestre de 2026, croissance de 5 %.',
+            'Au troisième semestre de 2026, la croissance est de 5 %.',
+            'Au cinquième trimestre de 2026, la croissance est de 5 %.',
+            'Au troisième trimestre de 26, la croissance est de 5 %.',
+            'Au troisième trimestriel de 2026, la croissance est de 5 %.',
+        ):
+            with self.subTest(translated=translated):
+                self.assertTrue(quantity_issues(source, translated, 'zh', 'fr'))
+        self.assertTrue(quantity_issues('第三季度增长5%。',
+                        'Au troisième trimestre de 2026, la croissance est de 5 %.', 'zh', 'fr'))
+
+    def test_french_only_grammar_keeps_default_other_languages_and_month_recheck_contracts(self):
+        source = '2026年第三季度的9月收入为1234.5美元，增长5%。'
+        translated = ('En septembre du troisième trimestre de 2026, les revenus sont de '
+                      '1\u202f234,5 dollars, en hausse de 5 %.')
+        self.assertEqual(quantity_issues(source, translated, 'zh', 'fr'), [])
+        self.assertEqual(quantity_issues(translated, source, 'fr', 'zh'), [])
+        for language in ('', 'en', 'de', 'fr-unsupported'):
+            with self.subTest(language=language):
+                self.assertTrue(quantity_issues(source, translated, 'zh', language))
+                self.assertEqual(quantities('1\u202f234,5', language=language),
+                                 Counter({('number', Decimal(1)): 1, ('number', Decimal('234.5')): 1}))
+        self.assertTrue(quantity_issues(source, translated.replace('septembre', 'octobre'), 'zh', 'fr'))
+
     def test_observed_double_eleven_title_preserves_event_and_day_count(self):
         # The exact public source and final retry input match failed run
         # 38030674044; its diagnostic reported an extra bare number 11.

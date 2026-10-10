@@ -27,6 +27,70 @@ MAX_CHECKPOINT_BYTES = 8 * 1024 * 1024
 CHECKPOINT_VERSION = 'extended-static-v2'
 SOURCE_FALLBACK_VERSION = 'exact-source-v1'
 MAX_TRANSLATION_SECONDS = 4 * 60 * 60
+MAX_PUBLIC_TRANSLATION_DIAGNOSTICS = 20
+QUANTITY_DIAGNOSTIC_KINDS = frozenset({
+    'number', 'currency', 'percent', 'percentage_points', 'date', 'invalid_date',
+    'month', 'month_day', 'quarter', 'half', 'five_year_plan', 'shopping_event',
+})
+PUBLIC_VALIDATION_CODES = frozenset({
+    'offline-quantity-validation', 'offline-placeholder-validation', 'offline-markdown-validation',
+    'offline-target-script-validation', 'offline-empty-validation', 'offline-token-limit',
+    'offline-unicode-validation', 'offline-validation',
+})
+
+
+def public_quantity_signature(value):
+    """Expose fact types and counts, never numeric values or currency labels."""
+    if not isinstance(value, dict) or not isinstance(value.get('rows'), list):
+        return None
+    rows = value['rows']
+    total = value.get('total_rows')
+    if (len(rows) > 20 or type(total) is not int or total < len(rows)
+            or type(value.get('truncated')) is not bool):
+        return None
+    canonical, counts = [], {}
+    for row in rows:
+        if (not isinstance(row, dict) or not isinstance(row.get('kind'), str)
+                or row['kind'] not in QUANTITY_DIAGNOSTIC_KINDS
+                or type(row.get('count')) is not int or row['count'] < 1
+                or not isinstance(row.get('values'), list) or len(row['values']) > 3
+                or any(item is not None and (not isinstance(item, str) or len(item) > 128)
+                       for item in row['values'])):
+            return None
+        kind = row['kind']
+        counts[kind] = counts.get(kind, 0) + row['count']
+        canonical.append({'kind': kind, 'values': row['values'], 'count': row['count']})
+    canonical.sort(key=stable_bytes)
+    return {'signature_sha256': digest(stable_bytes(canonical)), 'type_counts': counts,
+            'total_rows': total, 'truncated': value['truncated'] or total != len(rows)}
+
+
+def public_translation_diagnostics(translator, locale):
+    """Summarize existing terminal failures without rerunning any translation."""
+    records = getattr(translator, 'failure_diagnostics', [])
+    records = records if isinstance(records, list) else []
+    result = []
+    for row in records[:MAX_PUBLIC_TRANSLATION_DIAGNOSTICS]:
+        if (not isinstance(row, dict) or row.get('target_language') != locale
+                or not isinstance(row.get('source_sha256'), str)
+                or re.fullmatch(r'[a-f0-9]{64}', row['source_sha256']) is None):
+            continue
+        response = row.get('response_sha256')
+        if response is not None and (not isinstance(response, str)
+                                    or re.fullmatch(r'[a-f0-9]{64}', response) is None):
+            continue
+        quantities = row.get('quantities')
+        quantities = quantities if isinstance(quantities, dict) else {}
+        code = row.get('failure_code')
+        result.append({'source_sha256': row['source_sha256'], 'response_sha256': response,
+            'target_language': locale, 'failure_type': code if isinstance(code, str) and code in PUBLIC_VALIDATION_CODES else 'offline-validation',
+            'quantities': {side: public_quantity_signature(quantities.get(side))
+                           for side in ('source', 'response', 'missing', 'extra')}})
+    total = getattr(translator, 'validation_failure_count', len(records))
+    total = total if type(total) is int and total >= len(records) else len(records)
+    return {'terminal_translation_diagnostics': result, 'terminal_validation_failure_count': total,
+            'maximum_reported_translation_diagnostics': MAX_PUBLIC_TRANSLATION_DIAGNOSTICS,
+            'translation_diagnostics_truncated': total > len(result)}
 
 
 def validate_budget(seconds: int) -> int:
@@ -202,12 +266,20 @@ class Memo:
         if key in self.rejected:
             raise self.rejected[key]
         if time.monotonic() >= self.deadline: raise TranslationBudgetExceeded('Local translation time budget reached')
+        diagnostics = getattr(self.translator, 'failure_diagnostics', [])
+        diagnostic_start = len(diagnostics) if isinstance(diagnostics, list) else 0
         try:
             self.calls += 1
             translated = self.translator.translate(source, target=self.locale, source=language, markdown=markdown)
             validate_text(source, translated, self.locale, language, quantity_validator=self.quantity_validator)
             if validate_result is not None: validate_result(translated)
         except (OfflineTranslationValidationError, ExpansionError) as error:
+            # Attach only the existing fixed category to diagnostics already
+            # captured by the adapter. Never retain a rejected response here.
+            diagnostics = getattr(self.translator, 'failure_diagnostics', [])
+            if isinstance(diagnostics, list):
+                for row in diagnostics[diagnostic_start:MAX_PUBLIC_TRANSLATION_DIAGNOSTICS]:
+                    if isinstance(row, dict): row['failure_code'] = safe_failure_code(error)
             discard = getattr(self.translator, 'discard_translation', None)
             if callable(discard): discard(source, self.locale, language, markdown=markdown)
             if not self.allow_source_fallback:
@@ -355,8 +427,8 @@ def main() -> int:
     validate_budget(args.seconds)
     if args.corpus.stat().st_size > 32 * 1024 * 1024: raise ExpansionError('Corpus too large')
     corpus = json.loads(args.corpus.read_text())
-    result = build(corpus, args.locale, args.output, args.checkpoint,
-                   OfflineTranslator(validation_attempts=1 if args.allow_source_fallback else 3),
+    translator = OfflineTranslator(validation_attempts=1 if args.allow_source_fallback else 3)
+    result = build(corpus, args.locale, args.output, args.checkpoint, translator,
                    budget_seconds=args.seconds, allow_source_fallback=args.allow_source_fallback,
                    seed_checkpoint=args.seed_checkpoint)
     summary = {key: result[key] for key in ('locale', 'status', 'source_document_count', 'completed_page_count', 'paid_provider_requests', 'budget_exhausted')}
@@ -372,6 +444,7 @@ def main() -> int:
                        if str(row.get('field')) == field})
         for field in sorted({str(row.get('field')) for row in result.get('failures') or []})
     }
+    summary.update(public_translation_diagnostics(translator, args.locale))
     print(json.dumps(summary))
     return 0 if result['status'] == 'complete-candidate' else 75 if result['budget_exhausted'] and not result['failures'] else 1
 
