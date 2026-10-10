@@ -1,6 +1,6 @@
 # Automation Pipeline Overview
 
-Last reviewed: 2026-10-10.
+Last reviewed: 2026-10-11.
 
 This document is the architecture map for the repository's automation system.
 Production PDF parsing uses the **MinerU API from GitHub Actions**. Actions also
@@ -132,7 +132,11 @@ verify drafts and publish Blog output; those stages retain their own acceptance
 receipts. Pages mode follows the same downstream delivery and exact-byte replay
 contract through its independent namespace. Cloud run `38049925018` stopped at
 `summary_submission_pending` after checkpoint verification with zero OCR/model
-calls; new pages-mode historical source/draft/Blog acceptance remains pending.
+calls; it did not establish source, draft or Blog acceptance.
+The later pages-mode run `38053057754` verified all 44 original sources, and
+retained-title apply `38062813064` completed the 44-article generation handoff
+without provider requests. Draft and Blog acceptance are tracked separately in
+the current acceptance scope below.
 See the [OCR cache recovery procedure](wechat-pipeline-recovery.md#restore-ocr-sources-after-the-temporary-handoff-expires).
 
 Source parsing, article generation, draft acceptance, Blog archival, public
@@ -185,9 +189,19 @@ skipped automatic reviews are preserved; cleanup never approves a candidate.
 
 Locale capability is not locale publication. Chinese, the base locale bundle,
 English commentary and extended locale candidates retain their own readiness,
-source-generation and exact-approval contracts. Only admitted complete
-candidates enter a release. Manual no-rebuild resume reuses the immutable
-candidate and requires fresh protected approval. See
+source-generation and exact-approval contracts. SEO translations in ko/ja/ar
+and the 33 non-English extended locales treat prose-number differences as
+advisory. These differences alone do not trigger translation retries, cache
+eviction, source-text substitution or publication blocking. HTML structure,
+links, required runtime placeholders, complete page coverage and approved
+publication bytes remain checked. Original Chinese article/title evidence and English editorial
+contracts keep their existing validation scope. `publication_ready` is distinct
+from `translation_ready`: authenticated legacy numeric-only fallback may remain
+publishable without being relabeled fully translated. See
+[the quantity policy](financial-quantity-translation.md).
+
+Only admitted complete candidates enter a release. Manual no-rebuild resume
+reuses the immutable candidate and requires fresh protected approval. See
 [locale refresh reliability](locale-refresh-reliability.md),
 [base multilingual architecture](portal-multilingual-architecture.md),
 [extended locale architecture](extended-locales-architecture-audit.md), and
@@ -199,6 +213,16 @@ hashes/sizes; public acceptance then compares the live and immutable catalogs,
 preview, runtime release identity and configured content routes. Failure after
 cutover rolls back to the captured prior release.
 
+Daily and standalone recovery publication events enter the durable locale
+admission queue before its single writer lock. The consumer verifies the exact
+original run/attempt, successful nested publication jobs, archive ancestry and
+canonical/body receipt before registering source generations. Hourly bounded
+reconciliation preserves late events without recreating articles or uploading
+drafts again. This implemented route is documented in
+[durable publication ingress](extended-locale-publication-ingress.md); code and
+regression coverage do not establish that an eligible real Daily nested event
+has completed admission.
+
 ## Current acceptance scope
 
 The 2026-10-10 Chinese publication run `38036944110` passed live acceptance for
@@ -207,18 +231,98 @@ catalog baselines without ID, availability or date-membership regression.
 Its 118 Chinese Blog articles also passed independent HTTP, canonical and full
 body/reference checks. These are production receipts, not just CI results.
 
-The 118-article cohort comprises source dates 261004, 261008 and 261009.
-It proves normal and recovered MinerU delivery for those cohorts. Real
-OCR-to-draft-to-Blog production acceptance, earlier missing source-date cohorts,
-and publication in every supported locale remain separate work. Source-bound
-OCR fixtures prove full-page consumption, provenance separation and rejection
-of incomplete/altered inputs; they do not replace a real OCR production receipt.
-For the 44-source 261007 cohort, inspection run `38047483613` confirmed durable
-checkpoint presence and absence of the original temporary handoff. The new
-cache-only recovery and its downstream article/draft/Blog path still require
-real production acceptance; presence alone does not prove cache completeness.
-Use exact original manifests and retained checkpoints to close those gaps,
-without resubmitting successful parses or duplicating accepted drafts.
+The 118-article cohort comprises source dates 261004, 261008 and 261009, with
+16 accepted WeChat draft groups. It proves normal and recovered MinerU delivery
+for those cohorts. The separate 44-source 261007 OCR cohort has its own accepted
+draft receipt and separately tracked public Blog acceptance below; the old
+118-article receipt must not be reinterpreted as a check of the new cohort.
+
+For that OCR cohort, pages-mode source run `38053057754` verified all 44 sources.
+After PR #335 merged at `30169f6` with seven successful cloud checks, real
+read-only inspection `38062695853` and apply `38062813064` both validated 44/44
+articles while preserving the other 43 articles. Inspection performed zero
+object writes; apply verified both private generation and article-handoff
+writes. Both made zero provider requests. The selected retained title passed
+the original gates after whole-quantity truncation removed a complete numeric
+atom; the additional original-source semantic-support route was not needed.
+The [title recovery receipt](title-original-source-claims.md#production-revalidation-receipt)
+records the exact proof and unchanged-checkpoint boundaries.
+
+Standalone delivery `38062937361`, job `114244980478`, has verified 44 draft
+articles in six WeChat groups, with 44 source reports accounted for and zero
+exclusions. Blog archive commit `a1dec872d156e505094e77bd4df582a95b02db5e`
+is recorded. Its exact public request artifact `11674476878` contains 44 unique
+hash-bound records; request SHA-256 is
+`e9a0235e0044d50bb711896caa981d61e10fcf653edca22815274c9b94e89eae`.
+The request itself does not establish live publication. The original standalone
+run later completed successfully at 2026-10-10 19:43:34 UTC, including publish
+job `114251477079`, without rerunning generation or duplicating accepted drafts.
+
+Production release run: `38072861358`; immutable release:
+`a7fc76874f6643ccc275778311837bcd`. Cutover succeeded at 2026-10-10 19:42:50 UTC.
+The new 44-article public cohort passed independent live acceptance at
+2026-10-10 19:44:13 UTC: all 44 canonicals and complete normalized body/reference
+hashes matched, and edge release/tree identity was unchanged before and after
+readback. Receipt SHA-256:
+`085399b6aa2ade200cd7c731d063bffd7f53ee76b114b2d6217912876522ea42`.
+The earlier 118-article cohort was independently rechecked on this same release
+at 2026-10-10 19:46:02 UTC: 118/118 canonical/body/reference matches and unchanged
+edge identity. Its new receipt SHA-256 is
+`4d5a67b9957007c90f6d563eba6feebb35d5154f8234e4cbbd2f5c5989bba10e`.
+Together, these two exact cohorts establish 162/162 live articles on this
+release; their accepted WeChat drafts comprise 22 groups. Neither live check
+made provider calls or production writes.
+
+The 261009 chart producer `38053642365` committed 10,303 charts from 2,894 reports
+to private R2. Release `38072861358` / `a7fc76874f6643ccc275778311837bcd` passed
+public chart acceptance: prepared, immutable-release and public index receipts
+are identical, including 10,303 charts / 2,894 reports and file SHA-256
+`022a192c65f6360c5cda495c28b112ddcff973ea4d21c1d85d76403d8e2386c5`.
+The same live release passed catalog acceptance with 14,760 reports and unchanged
+edge identity around the check. All 40 October 8 and 79 October 9 sources map to
+available records, with zero missing or ambiguous sources. All 14,760 inherited
+IDs, availability, source-date memberships and archive states remain intact;
+all 12 public/immutable/runtime/preview checks passed. This catalog receipt
+verifies public source mapping, not authenticated PDF download behavior.
+
+The recovered standalone publication event was captured and frozen with exact
+run `38062937361` / attempt 1 identity. Source-admission run `38080940054`
+succeeded at 2026-10-10 19:46:24 UTC: one event captured, checked and admitted,
+zero blocked or retained events, and zero paid-provider requests. This closes
+the real standalone OCR-publication ingress path; an eligible real Daily nested
+publication still needs its own admission receipt. Neutral-triggered admission
+`38080888840` separately registered the latest 2026-10-10 inventory of 83 pages;
+that inventory must not be described as the recovered 44-article generation.
+
+The resulting current-main successor is `38081129295`, at `39e54e5`, observed
+**pending with zero jobs at 2026-10-10 19:48 UTC**. The prior pending runs
+`38072881611` and `38081042864` were naturally replaced before execution, both
+with zero jobs. The existing active run `38030674044` remained running, with
+19 non-English locales successful, Persian/Gujarati running and 12 queued at
+that observation. The non-cancelling translation lock preserves active work;
+its successor reads admitted original generations/checkpoints before selecting
+new sources. Admission or dispatch does not establish publication in every
+supported locale. Earlier missing cohorts likewise require their exact
+manifests and accepted draft/archive identities, without resubmitting successful
+parses or duplicating accepted drafts.
+
+English remains a separate editorial acceptance lane. In the older active run
+`38030674044`, job `114151900663` completed 22 of 24 pages with one
+`expansion-validation` and one `offline-quantity-validation` failure; the budget
+was not exhausted and there were zero paid-provider requests. The newer source
+planner includes pending English work in the latest successor `38081129295`,
+using the same two-worker matrix and retained checkpoints; the originally
+queued `38072881611` never executed. Current-main read-only inspector
+`38074947529` verified the exact 61-row checkpoint and 22/24 candidate with zero
+model calls, paid-provider requests and production writes. The quantity-failed
+title has no retained translation; its two subsequent blocks are also uncached.
+In the other failed document, the cached title and first block pass current
+strict validation, while the second block still fails `english-source-residue`.
+The cache-validation repair allows that rejected unit to be regenerated instead
+of repeatedly reused; it does not make the existing invalid text acceptable.
+Complete-candidate and live English publication acceptance remain unverified.
+SEO numeric advisory excludes English editorial content, so non-English success
+does not establish that the English quantity failure is resolved.
 
 ## MinerU recovery and acceptance
 
