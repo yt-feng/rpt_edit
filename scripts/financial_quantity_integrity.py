@@ -125,20 +125,22 @@ FIVE_YEAR_PERIOD_RE = re.compile(
     r"(?<![A-Za-z0-9])(\d+)(?:st|nd|rd|th)\s+Five[~\s-]+Year(?![A-Za-z0-9])", re.IGNORECASE)
 
 
-COMMA_DECIMAL_LANGUAGES = frozenset({'fr', 'es', 'de', 'id'})
+COMMA_SPACE_GROUP_LANGUAGES = frozenset({'fr', 'ru', 'pl', 'cs', 'uk', 'kk'})
+COMMA_DOT_GROUP_LANGUAGES = frozenset({'es', 'de', 'id', 'pt', 'tr', 'it', 'vi', 'nl'})
+COMMA_DECIMAL_LANGUAGES = COMMA_SPACE_GROUP_LANGUAGES | COMMA_DOT_GROUP_LANGUAGES
+INDIAN_GROUP_LANGUAGES = frozenset({'hi', 'gu', 'te', 'mr', 'bn', 'ta'})
 
 
 def _locale_number_runs(text: str, language: str) -> tuple[str, int]:
     """Normalize only complete, explicitly supported localized numeric runs.
 
-    CLDR 48: French groups with narrow no-break spaces; German, Spanish and
-    Indonesian group with dots. All four use decimal commas. Keep the former
-    French ordinary/NBSP space aliases and unambiguous dot decimals, but never
-    choose a meaning by comparing it with the source's value.
+    CLDR 48 defines the explicit dot/space grouping families above. Space
+    families accept ordinary, NBSP and narrow NBSP typography. Keep unambiguous
+    dot decimals, but never choose a meaning from the source's value.
     """
     # Inspect the whole numeric run before NFKC collapses distinct spaces.
     # A malformed group must not be normalized by matching only its suffix.
-    groups = " \u00a0\u202f" if language == 'fr' else '.'
+    groups = " \u00a0\u202f" if language in COMMA_SPACE_GROUP_LANGUAGES else '.'
     candidate = rf"(?<![\d.,٬٫+\-−])[+\-−]*[.,٬٫]*[0-9]+(?:[{groups}.,٬٫]+[0-9]+)+(?![0-9]|[.,٬٫][0-9]|[{groups}][0-9])"
     grouped = rf"([+\-−]?)([1-9][0-9]{{0,2}}(?:[{groups}][0-9]{{3}})+)(?:,([0-9]+))?"
     invalid = 0
@@ -165,7 +167,7 @@ def _locale_number_runs(text: str, language: str) -> tuple[str, int]:
 
     def normalize(match):
         value = match[0]
-        if language == 'fr':
+        if language in COMMA_SPACE_GROUP_LANGUAGES:
             # A comma followed by whitespace, or whitespace after a complete
             # comma fraction, separates quantities. Check every resulting
             # piece so a valid first decimal cannot hide a malformed second.
@@ -185,14 +187,52 @@ def _locale_number_runs(text: str, language: str) -> tuple[str, int]:
     return re.sub(candidate, normalize, text), invalid
 
 
+def _indian_number_runs(text: str) -> tuple[str, int]:
+    """Normalize complete 3+2 digit groups, retaining Western numeric notation."""
+    candidate = r"(?<![\d.,٬٫+\-−])[+\-−]*[.,٬٫]*[0-9]+(?:[.,٬٫]+[0-9]+)+(?![0-9]|[.,٬٫][0-9])"
+    grouped = r"[+\-−]?(?:[1-9][0-9]?(?:,[0-9]{2})*,[0-9]{3}|[1-9][0-9]{0,2}(?:,[0-9]{3})+)(?:\.[0-9]+)?"
+    invalid = 0
+
+    def normalize(match):
+        nonlocal invalid
+        value = match[0]
+        if re.fullmatch(grouped, value):
+            return value.replace(',', '')
+        if ',' in value:
+            # Do not split malformed or comma-decimal notation into amounts
+            # whose multiset could accidentally equal unrelated source values.
+            invalid += 1
+            return ' ' * len(value)
+        return value
+
+    return re.sub(candidate, normalize, text), invalid
+
+
 def _normalized(text: str, *, language: str = "") -> tuple[str, int]:
     invalid = 0
-    if language in COMMA_DECIMAL_LANGUAGES:
+    if language in {'fa', 'ur', 'he'}:
+        # ICU emits LRM immediately before the sign in these number formats.
+        # Remove only numeric-adjacent LRM while preserving every sign. A
+        # mark must not turn a malformed sign cluster into an accepted value.
+        def numeric_marks(match):
+            nonlocal invalid
+            value = match[0]
+            if '\u200e' not in value:
+                return value
+            signs = value.replace('\u200e', '')
+            if len(signs) > 1:
+                invalid += 1
+            return signs
+        text = re.sub(r'[+\-−\u200e]+(?=\d)', numeric_marks, text)
+    if language in COMMA_DECIMAL_LANGUAGES | INDIAN_GROUP_LANGUAGES:
         # Fold numeric width/digits before parsing, while retaining the exact
         # whitespace spelling needed to validate French grouping.
         text = text.translate(str.maketrans({'，': ',', '．': '.', '＋': '+', '－': '-'}))
         text = ''.join(str(unicodedata.decimal(c)) if c.isdecimal() else c for c in text)
-        text, invalid = _locale_number_runs(text, language)
+        if language in COMMA_DECIMAL_LANGUAGES:
+            text, invalid = _locale_number_runs(text, language)
+        else:
+            text, invalid = _indian_number_runs(text)
     text = unicodedata.normalize("NFKC", text).replace("−", "-")
     if language not in COMMA_DECIMAL_LANGUAGES:
         text = text.replace("٬", ",").replace("٫", ".")
@@ -377,8 +417,16 @@ def quantities(text: str, *, bare_months: bool = False, named_events: bool = Fal
          lambda m: ("percentage_points", decimal(m[1]) / 100))
     take(rf"(?P<number>{number})\s*(?:percentage\s+points?|percent(?:age)?\s+points?|points?\s+de\s+pourcentage|points?\s+de\s+pourcent|pontos?\s+percentuais?|puntos?\s+porcentuales?|punti\s+percentuali|Prozentpunkte?|procentpunt(?:en)?|punkty\s+procentowe|процентн(?:ых|ых)\s+пункт(?:ов)?|відсотков(?:их|і)\s+пункт(?:ів)?|yüzde\s+puan|điểm\s+phần\s+trăm|个百分点|個百分點|パーセントポイント|퍼센트포인트|نقطة\s+مئوية|نقاط\s+مئوية|प्रतिशत\s+(?:अंक|बिंदु))",
          lambda m: ("percentage_points", decimal(m['number'])))
-    take(rf"(?P<number>{number})\s*(?:%|٪|percent(?:age)?(?![a-z])|per\s+cent(?![a-z])|pour\s*cent|pourcentage|por\s+ciento|por\s+cento|percentuale|Prozent|procent|procenten|procentowy|процент(?:а|ов)?|відсот(?:ок|ка|ків)?|yüzde|phần\s+trăm|persen|peratus|เปอร์เซ็นต์|ភាគរយ|ရာခိုင်နှုန်း|درصد|אחוז(?:ים)?|प्रतिशत|ટકા|শতাংশ|శాతం|சதவீதம்|パーセント|퍼센트|في\s+المائة|في\s+المئة)",
-         lambda m: ("percent", decimal(m['number'])))
+    percent_suffix = rf"(?P<number>{number})\s*(?:%|٪|percent(?:age)?(?![a-z])|per\s+cent(?![a-z])|pour\s*cent|pourcentage|por\s+ciento|por\s+cento|percentuale|Prozent|procent|procenten|procentowy|процент(?:а|ов)?|відсот(?:ок|ка|ків)?|yüzde|phần\s+trăm|persen|peratus|เปอร์เซ็นต์|ភាគរយ|ရာခိုင်နှုန်း|درصد|אחוז(?:ים)?|प्रतिशत|ટકા|শতাংশ|శాతం|சதவீதம்|パーセント|퍼센트|في\s+المائة|في\s+المئة)"
+    if language == 'tr':
+        # A single left-to-right pass preserves ownership of neighboring
+        # percent signs in both "5% 0,125" and "-%5 %0,125".
+        prefix = rf"(?<![\d.,٬٫+\-−%])(?P<prefix_sign>[+\-−](?:\s*[+\-−])*)?\s*%\s*(?P<prefix_number>{number})"
+        take(prefix + '|' + percent_suffix,
+             lambda m: ("percent", decimal(re.sub(r'\s', '', m['prefix_sign'] or '') + m['prefix_number'])
+                        if m['prefix_number'] is not None else decimal(m['number'])))
+    else:
+        take(percent_suffix, lambda m: ("percent", decimal(m['number'])))
     take(rf"百分之\s*({number})", lambda m: ("percent", decimal(m[1])))
     take(rf"(?<![\dA-Za-z])({number})\s*({SCALE})(?![A-Za-z])",
          lambda m: ("number", decimal(m[1]) * SCALES[m[2].casefold()]))
