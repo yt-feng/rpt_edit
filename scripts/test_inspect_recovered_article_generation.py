@@ -221,6 +221,85 @@ Report article recovery stopped: article_generation_failed source_ordinal=3
 
 
 class DiagnosticTests(unittest.TestCase):
+    def test_saved_successful_repair_can_still_select_emergency_without_quality_issues(self):
+        decision = {'needs_model_repair':True,'repair_attempted':True,'selected_quality_issues':[],
+            'selection_reason':'evidence_or_emergency_fallback',
+            'initial_selection':{'title':'PRIVATE_INITIAL','reason':'evidence_or_emergency_fallback','quality_issues':[]},
+            'raw_candidates':['PRIVATE_REPAIR','PRIVATE_INITIAL'], 'cleaned_candidates':['PRIVATE_ONE','PRIVATE_TWO','PRIVATE_THREE'],
+            'repair_candidates':['PRIVATE_REPAIR'], 'required_terms':['SECRET','GPU'],
+            'faithful_candidate_missing_terms':['SECRET'],
+            'rejected_candidates':[
+                {'title':'PRIVATE_ONE','reasons':['missing_required_terms=SECRET,GPU','english_heavy_fragment']},
+                {'title':'PRIVATE_TWO','reasons':['anchor_coverage=0.50','missing_anchor_segment']},
+                {'title':'PRIVATE_THREE','reasons':['unsupported_hook_addition','english_heavy_fragment']}]}
+        result=inspector.diagnostic('Report article recovery stopped: generated_article_unbound source_ordinal=28\n',
+                                    {'wechat_title_decision':decision})
+        self.assertTrue(result['title_needs_repair']);self.assertFalse(result['title_quality_issues_present'])
+        self.assertFalse(result['title_repair_error_present']);self.assertTrue(result['title_repair_attempted'])
+        value=result['title_selection']
+        self.assertEqual(value['selection_reason'],'evidence_or_emergency_fallback')
+        self.assertEqual(value['initial_selection_reason'],'evidence_or_emergency_fallback')
+        self.assertEqual((value['raw_candidate_count'],value['repair_candidate_count'],value['rejected_candidate_count']),(2,1,3))
+        self.assertEqual((value['required_term_count'],value['faithful_missing_required_term_count']),(2,1))
+        self.assertEqual(value['rejection_reason_counts'],{'anchor_coverage':1,'english_heavy_fragment':2,
+            'missing_anchor_segment':1,'missing_required_terms':1,'unsupported_hook_addition':1})
+        for private in ('PRIVATE','SECRET','GPU','0.50'): self.assertNotIn(private,json.dumps(result))
+
+    def test_empty_model_candidate_list_is_distinct_from_unknown_or_malformed(self):
+        decision={'raw_candidates':[],'repair_candidates':[],'cleaned_candidates':['PRIVATE'],
+            'rejected_candidates':[],'required_terms':[],'faithful_candidate_missing_terms':[],
+            'selection_reason':'deterministic_fallback','initial_selection':{'reason':'faithful_filename_anchor'}}
+        value=inspector.title_selection_diagnostic(decision)
+        self.assertEqual((value['raw_candidate_count'],value['repair_candidate_count'],value['rejected_candidate_count']),(0,0,0))
+        self.assertEqual(value['selection_reason'],'deterministic_fallback')
+        unknown=inspector.title_selection_diagnostic({})
+        self.assertIsNone(unknown['raw_candidate_count']);self.assertIsNone(unknown['repair_candidate_count'])
+        self.assertIsNone(unknown['rejected_candidate_count']);self.assertEqual(unknown['selection_reason'],'unknown')
+
+    def test_title_reason_payloads_never_escape_codes_or_bounds(self):
+        decision={'selection_reason':'PRIVATE_SECRET','initial_selection':{'reason':['PRIVATE']},
+            'pre_neutralization_selection_reason':'supported_hook',
+            'raw_candidates':['PRIVATE']*33,'repair_candidates':[{'PRIVATE':'SECRET'}],
+            'required_terms':['SECRET']*7,
+            'rejected_candidates':[{'title':'PRIVATE','reasons':['PRIVATE','missing_required_terms=GPU\nSECRET',
+                'missing_required_terms=PRIVATE SECRET','anchor_coverage=9.99','anchor_coverage=0.50 PRIVATE',
+                {'private':'SECRET'},'listing_suffix']}]}
+        value=inspector.title_selection_diagnostic(decision)
+        self.assertEqual(value['selection_reason'],'unknown');self.assertEqual(value['initial_selection_reason'],'unknown')
+        self.assertEqual(value['pre_neutralization_selection_reason'],'supported_hook')
+        self.assertEqual(value['rejection_reason_counts'],{'listing_suffix':1})
+        self.assertEqual(value['unrecognized_rejection_reason_count'],6)
+        self.assertIsNone(value['raw_candidate_count']);self.assertIsNone(value['repair_candidate_count']);self.assertIsNone(value['required_term_count'])
+        for private in ('PRIVATE','SECRET','GPU','9.99','0.50'): self.assertNotIn(private,json.dumps(value))
+        for rejected in ([{'reasons':['listing_suffix']*33}], [{'reasons':[]}]*33, [{'reasons':'PRIVATE'}]):
+            value=inspector.title_selection_diagnostic({'rejected_candidates':rejected})
+            self.assertFalse(value['rejection_inventory_valid']);self.assertEqual(value['rejection_reason_counts'],{})
+            self.assertIsNone(value['rejected_candidate_count'])
+
+    def test_failed_saved_files_emit_only_bounded_hashes_not_reuse_approval(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp)
+            for name in ('wechat_article.md','prompt_for_wechat.md','source_ocr.md'):
+                (root/name).write_text('PRIVATE_BODY_SOURCE_PROMPT_SECRET')
+            status={'article_recovery':{'generation_contract_sha256':'a'*64}}
+            value=inspector.failed_checkpoint_files(root,status)
+            self.assertEqual(value['saved_generation_contract_sha256'],'a'*64)
+            for key in ('body','prompt','source_markdown'):
+                self.assertTrue(value[key]['present']);self.assertEqual(len(value[key]['sha256']),64)
+            self.assertNotIn('PRIVATE',json.dumps(value));self.assertNotIn('SECRET',json.dumps(value))
+            self.assertNotIn('ready',value)
+            (root/'wechat_article.md').unlink()
+            missing=inspector.failed_checkpoint_files(root,{'article_recovery':{'generation_contract_sha256':'SECRET'}})
+            self.assertIsNone(missing['saved_generation_contract_sha256'])
+            self.assertFalse(missing['body']['present'])
+            (root/'wechat_article.md').symlink_to(root/'source_ocr.md')
+            with self.assertRaisesRegex(ValueError,'invalid_private_file'):
+                inspector.failed_checkpoint_files(root,status)
+            (root/'wechat_article.md').unlink();(root/'wechat_article.md').write_bytes(b'x')
+            with patch.object(inspector,'MAX_JSON_BYTES',0),self.assertRaisesRegex(ValueError,'invalid_private_file'):
+                inspector.failed_checkpoint_files(root,status)
+
     def test_title_http_failure_and_safe_status_have_specific_causes_without_text(self):
         status={'wechat_title_decision':{'needs_model_repair':True,'repair_attempted':True,
             'repair_error':'DeepSeek generate WeChat title repair: PRIVATE TITLE: HTTP 429, response=SECRET',

@@ -43,6 +43,93 @@ SAFE_SITES = {
     ('recover_report_articles.py', 'validate_articles'),
 }
 
+# These are producer-owned reason codes, never model/source text. Dynamic
+# reasons below are normalized to fixed names without exposing their payload.
+TITLE_SELECTION_REASONS = {
+    'evidence_or_emergency_fallback', 'series_body_thesis', 'supported_hook',
+    'fallback_missing_required_terms', 'faithful_filename_anchor',
+    'deterministic_fallback', 'deterministic_neutralization',
+}
+TITLE_REJECTION_REASONS = {
+    'body_too_short', 'generic_series_title', 'vague_observation_template',
+    'promotional_or_template_noise', 'generic_emergency_title', 'dangling_suffix',
+    'incomplete_last_segment', 'listing_suffix', 'long_untranslated_english',
+    'english_heavy_fragment', 'forbidden_public_wording', 'malformed_numeric_range',
+    'bare_trailing_number', 'series_missing_body_thesis',
+    'series_title_without_concrete_thesis', 'missing_anchor_segment', 'unsupported_hook_addition',
+}
+MAX_TITLE_CANDIDATES = 32
+MAX_TITLE_REASONS = 32
+
+
+def title_selection_diagnostic(decision):
+    """Inspect title decisions without publishing titles, terms or percentages."""
+    def selection(value):
+        return value if isinstance(value, str) and value in TITLE_SELECTION_REASONS else 'unknown'
+
+    def count(name, maximum=MAX_TITLE_CANDIDATES):
+        value = decision.get(name)
+        return (len(value) if isinstance(value, list) and len(value) <= maximum
+                and all(isinstance(item, str) for item in value) else None)
+
+    initial = decision.get('initial_selection')
+    if not isinstance(initial, dict): initial = {}
+    rejected = decision.get('rejected_candidates')
+    valid = isinstance(rejected, list) and len(rejected) <= MAX_TITLE_CANDIDATES
+    counts, unknown = {}, 0
+    if valid:
+        for candidate in rejected:
+            reasons = candidate.get('reasons') if isinstance(candidate, dict) else None
+            if not isinstance(reasons, list) or len(reasons) > MAX_TITLE_REASONS:
+                valid = False
+                break
+            for reason in reasons:
+                code = None
+                if isinstance(reason, str):
+                    if reason in TITLE_REJECTION_REASONS:
+                        code = reason
+                    elif re.fullmatch(r'missing_required_terms=[A-Z]{2,8}(?:,[A-Z]{2,8}){0,5}', reason):
+                        code = 'missing_required_terms'
+                    elif re.fullmatch(r'anchor_coverage=(?:0\.[0-9]{2}|1\.00)', reason):
+                        code = 'anchor_coverage'
+                if code is None:
+                    unknown += 1
+                else:
+                    counts[code] = counts.get(code, 0) + 1
+    return {
+        'selection_reason': selection(decision.get('selection_reason')),
+        'initial_selection_reason': selection(initial.get('reason')),
+        'pre_neutralization_selection_reason': selection(decision.get('pre_neutralization_selection_reason')),
+        'raw_candidate_count': count('raw_candidates'),
+        'cleaned_candidate_count': count('cleaned_candidates'),
+        'repair_candidate_count': count('repair_candidates'),
+        'required_term_count': count('required_terms', 6),
+        'faithful_missing_required_term_count': count('faithful_candidate_missing_terms', 6),
+        'rejected_candidate_count': len(rejected) if valid else None,
+        'rejection_reason_counts': dict(sorted(counts.items())) if valid else {},
+        'unrecognized_rejection_reason_count': unknown if valid else None,
+        'rejection_inventory_valid': valid,
+    }
+
+
+def failed_checkpoint_files(directory, status):
+    """Observed file hashes support diagnosis, never certify body reuse/readiness."""
+    recovery = status.get('article_recovery')
+    contract = recovery.get('generation_contract_sha256') if isinstance(recovery, dict) else None
+    if not isinstance(contract, str) or not re.fullmatch(r'[a-f0-9]{64}', contract): contract = None
+    result = {'saved_generation_contract_sha256': contract}
+    for label, filename in (('body', 'wechat_article.md'), ('prompt', 'prompt_for_wechat.md'),
+                            ('source_markdown', 'source_ocr.md')):
+        path = directory/filename
+        if not path.exists() and not path.is_symlink():
+            result[label] = {'present': False, 'bytes': 0, 'sha256': None}
+            continue
+        require(path.is_file() and not path.is_symlink() and path.stat().st_size <= MAX_JSON_BYTES,
+                'invalid_private_file')
+        raw = path.read_bytes()
+        result[label] = {'present': True, 'bytes': len(raw), 'sha256': digest(raw)}
+    return result
+
 PUBLIC_FAILURE_CODES = {
     'inspection_article_binding_mismatch',
     'inspection_article_directory_unbound',
@@ -176,7 +263,8 @@ def diagnostic(log, status):
         'code_sites': [{'file': file, 'function': function} for file, function in sites], 'http_statuses': http,
         'title_repair_attempted': decision.get('repair_attempted') is True,
         'title_repair_error_present': bool(repair_error), 'title_needs_repair': decision.get('needs_model_repair') is True,
-        'title_quality_issues_present': bool(decision.get('selected_quality_issues'))}
+        'title_quality_issues_present': bool(decision.get('selected_quality_issues')),
+        'title_selection': title_selection_diagnostic(decision)}
 
 
 def inspect_checkpoint(root, original_sha, handoff_sha):
@@ -301,6 +389,8 @@ def inspect_checkpoint(root, original_sha, handoff_sha):
                     and article.binding['source_sha256'] == source['source_markdown_sha256'], 'inspection_article_binding_mismatch')
             completed += 1
     summary = diagnostic(log, statuses.get(ordinal, {}))
+    failed_files = (failed_checkpoint_files(article_root/sources[ordinal-1]['directory'], statuses.get(ordinal, {}))
+                    if ordinal is not None and ordinal <= len(sources) else None)
     pending = list(article_root.rglob('*.pending.json'))
     require(len(pending) <= 1000, 'inspection_pending_inventory_oversized')
     return {'schema_version':1,'diagnostics_only':True,'source_run_id':SOURCE_RUN_ID,'handoff_run_id':HANDOFF_RUN_ID,
@@ -308,6 +398,7 @@ def inspect_checkpoint(root, original_sha, handoff_sha):
         'context_sha256':digest(context_raw),'source_provenance_present':metadata is not None,
         'private_log_sha256':digest(log_path.read_bytes()),'completed_article_count':completed,
         'complete_article_receipt_present':(article_root/'article_recovery_receipt.json').is_file(),
+        'failed_checkpoint_files':failed_files,
         'pending_marker_count':len(pending),'prior_provider_request_count':'unknown','provider_outcome_resolved':False,
         'inspection_provider_posts':0,'object_writes':0,'object_deletions':0,**summary}
 
