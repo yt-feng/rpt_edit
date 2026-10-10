@@ -31,6 +31,8 @@ flowchart TD
   R --> V["Verify complete source edition and original run/task identity"]
   R -. "Actual recovery failure" .-> O["Actions OCR: all original pages and independent provenance"]
   O --> V
+  O -. "Summary unavailable, complete pages retained" .-> DP["Same-run Daily page-cache verification and private readback"]
+  DP --> Q
   V --> Q["Generate only missing recovered articles from full source text"]
   OC["Retained OCR checkpoint plus exact original PDF artifact"] --> CR["Cache-only source reconstruction: original and recovery identities"]
   CR --> CG["Verify complete source package and new private handoff readback"]
@@ -58,6 +60,38 @@ article, WeChat draft, Blog and configured translation consumers; it is not
 limited to Market Views PDF generation. Its article input is all hash-bound
 page text, never a summary substituted for the original source. MinerU and OCR
 keep distinct text, figure and cache identities.
+
+The recurring Daily path also separates original-page readiness from summary
+readiness. `recover-market-sources` exports its actual MinerU/OCR step outcomes
+and whether a full article source was archived, even when synthesis fails.
+`recover-ocr-page-sources` runs only on an ordinary, non-replay Daily with a
+failed MinerU recovery, an actual OCR attempt, no accepted primary article
+handoff and no successfully archived recovery edition. It downloads that same
+run's exact selected PDF artifact and manifest, restores the durable cache with
+verified archive SHA/size, and validates every original PDF and every cached
+page before emitting an `ocr-pages` source. This step performs zero OCR,
+MinerU, synthesis or model requests; it never interprets or clears old pending
+summary requests. Partial or changed page caches remain failures.
+
+The new source has an exclusive `daily_cache_origin` envelope, with the same
+Daily source/handoff run ID and execution SHA, and the separate private
+`market-ocr-pages-daily/<run_id>/<date>/shard_0.tar.gz` namespace. Historical
+`cache_recovery` envelopes require distinct original/recovery identities;
+both envelopes together, cross-namespace uploads, or changed original bindings
+are rejected. Independent consumer admission checks the failed prior recovery,
+its completed MinerU/OCR attempt gates, absence of a successfully saved full
+source edition, and both new page verification/archive gates. The reusable
+`deliver-recovered-report-articles` consumer then retains draft readback, Blog
+publication and configured translated-report generation. A same-run retry
+reuses the exact archived pages receipt before inspecting the mutable OCR cache.
+
+Page-only article delivery does not authorize Market Views synthesis/PDF or
+chart indexing. Their existing gates remain independent, and an unresolved
+summary still leaves the PDF delivery check failed. The daily pages source is
+retained as a private checkpoint, with no automatic source cleanup before its
+separate delivery acceptance. Automated regressions exercise the Daily path
+with real PDFs and cached page evidence; production execution and downstream
+WeChat/Blog acceptance must still be verified on an eligible Daily run.
 
 Historical OCR recovery has a separate main-only manual producer,
 [`recover-ocr-cache-sources.yml`](../.github/workflows/recover-ocr-cache-sources.yml).

@@ -104,12 +104,12 @@ def create_archive(source: Path, archive_path: Path, *, include_translated_pdfs:
     if not source.is_dir():
         raise RuntimeError(f"Handoff source directory does not exist: {source}")
     if include_ocr_page_originals:
-        from ocr_page_sources import RECEIPT, decode, read, validate_pages_receipt
+        from ocr_page_sources import RECEIPT, decode, read, validate_pages_receipt, handoff_identity
         receipt = decode(read(source / RECEIPT))
-        lineage = receipt['cache_recovery']
+        handoff_run_id, handoff_sha = handoff_identity(receipt)
         validate_pages_receipt(source, date_folder=receipt['date_folder'], expected_reports=receipt['expected_reports'],
             source_run_id=receipt['source_run_id'], execution_sha=receipt['execution_sha'],
-            recovery_run_id=lineage['recovery_run_id'], recovery_execution_sha=lineage['recovery_execution_sha'])
+            recovery_run_id=handoff_run_id, recovery_execution_sha=handoff_sha)
 
     file_count = 0
     with tarfile.open(archive_path, "w:gz", format=tarfile.PAX_FORMAT) as archive:
@@ -156,9 +156,13 @@ def extract_archive(archive_path: Path, destination: Path, *, replace: bool = Tr
 def upload_directory(source: Path, key: str, *, client: Any | None = None, bucket: str | None = None,
                      include_translated_pdfs: bool = False, include_ocr_page_originals: bool = False) -> None:
     key = validate_key(key)
-    if include_ocr_page_originals and not re.fullmatch(
-            r'_private-workflow-handoff/market-ocr-pages-cache-recovery/[1-9][0-9]{0,19}/[0-9]{6}/shard_0\.tar\.gz', key):
-        raise ValueError('ocr_pages_archive_namespace_invalid')
+    if include_ocr_page_originals:
+        from ocr_page_sources import RECEIPT, decode, read, handoff_key
+        receipt = decode(read(source / RECEIPT))
+        if not re.fullmatch(
+                r'_private-workflow-handoff/market-ocr-pages-(?:cache-recovery|daily)/[1-9][0-9]{0,19}/[0-9]{6}/shard_0\.tar\.gz', key
+                ) or key != handoff_key(receipt):
+            raise ValueError('ocr_pages_archive_namespace_invalid')
     resolved_client = client or build_r2_client()
     resolved_bucket = bucket or r2_bucket()
     with tempfile.TemporaryDirectory(prefix="private-handoff-") as temp_dir:
