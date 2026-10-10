@@ -159,6 +159,9 @@ def verify_prepared_ledger(store, source_store, identity, workspace):
         descriptor = pinned['files'].get('assets/'+name)
         require(isinstance(descriptor, dict), 'Prepared English public asset is missing')
         hash_value(descriptor['sha256'])
+        read_verified_candidate_body(store.client, store.bucket,
+                                     slot_prefix(identity['slot'])+'assets/'+name,
+                                     descriptor, maximum=MAX_MANIFEST)
         asset_hashes[name] = descriptor['sha256']
     expected = {'en/index.html': homepage(ordered, approved=True, asset_hashes=asset_hashes)}
     expected.update({f'en/blog/{item["id"]}.html': detail(item, approved=True, asset_hashes=asset_hashes)

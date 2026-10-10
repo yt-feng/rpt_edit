@@ -241,6 +241,31 @@ class EnglishPublicationTests(unittest.TestCase):
         with self.assertRaisesRegex(ExpansionError, 'public asset is missing'):
             verify_prepared_ledger(self.store, self.original, identity, self.base/'missing-asset-review')
 
+    def test_pinned_asset_objects_must_still_match_manifest_bytes(self):
+        from portal_english_ui import PUBLIC_ASSET_NAMES
+        batch = self.candidate(); self.assemble([batch]); identity = self.pin()
+        for name in PUBLIC_ASSET_NAMES:
+            with self.subTest(asset=name):
+                key = slot_prefix(identity['slot'])+'assets/'+name
+                row = self.store.client.objects[key]; original = row['body']
+                # Same length and unchanged metadata/manifest: only a bounded
+                # content read can prove this is still the pinned object.
+                row['body'] = bytes([original[0] ^ 1])+original[1:]
+                with self.assertRaisesRegex(RuntimeError, 'Prepared object'):
+                    verify_prepared_ledger(self.store, self.original, identity, self.base/('corrupt-'+name))
+                row['body'] = original
+
+    def test_pinned_asset_objects_cannot_disappear_after_manifest_upload(self):
+        from portal_english_ui import PUBLIC_ASSET_NAMES
+        batch = self.candidate(); self.assemble([batch]); identity = self.pin()
+        for name in PUBLIC_ASSET_NAMES:
+            with self.subTest(asset=name):
+                key = slot_prefix(identity['slot'])+'assets/'+name
+                original = self.store.client.objects.pop(key)
+                with self.assertRaisesRegex(RuntimeError, 'Prepared object'):
+                    verify_prepared_ledger(self.store, self.original, identity, self.base/('missing-'+name))
+                self.store.client.objects[key] = original
+
     def test_batch_and_metadata_bounds_reject_original_or_unknown_routes(self):
         batch = self.candidate(); self.assemble([batch]); assembly = json.loads((self.root/ASSEMBLY).read_bytes())
         for rows in ([batch, batch], [{**batch, 'original': 'secret'}], [batch]*501):
