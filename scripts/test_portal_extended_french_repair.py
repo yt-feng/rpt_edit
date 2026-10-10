@@ -232,6 +232,7 @@ class IntegrationTests(unittest.TestCase):
         self.assertEqual(self.client.objects,before); self.assertEqual(self.translator.calls,[])
 
     def test_handoff_binds_exact_proof_and_immutable_new_candidate(self):
+        self.translator = RepairTranslator()
         result=self.finish(); row=queue(self.store,'fr')[self.generation]
         batch={'generation':self.generation,'candidates':{'fr':row['snapshot']['candidate_id']}}
         identity=save_handoff(self.store,batch,day=DAY,pages=2,producer=OWNER)
@@ -246,6 +247,17 @@ class IntegrationTests(unittest.TestCase):
             raw=stable_bytes(corrupted); checksum=digest(raw)
             self.store._put(self.store.key('publication-handoffs',checksum,'receipt.json'),raw,metadata={'kind':'fixture'})
             with self.subTest(change=change), self.assertRaises(ExpansionError): read_handoff(self.store,checksum)
+
+    def test_partial_repair_retains_debt_and_cannot_auto_publish(self):
+        from portal_extended_quality import quality_summary
+        result = self.finish()
+        row = queue(self.store, 'fr')[self.generation]
+        batch = {'generation': self.generation, 'candidates': {'fr': row['snapshot']['candidate_id']}}
+        self.assertTrue(result['changed'])
+        with self.assertRaisesRegex(ExpansionError, 'translated-ready'):
+            save_handoff(self.store, batch, day=DAY, pages=2, producer=OWNER)
+        self.assertEqual(quality_summary(self.store, ('fr',))['quality_debt_source_fallback_units'], 1)
+        self.assertIn(self.generation, queue(self.store, 'fr'))
 
     def test_repair_producer_requires_main_manual_exact_successful_source_and_fr_jobs(self):
         result=self.finish(); proof=integrated.verify_proof(self.store,result['proof_sha256'],self.generation)
@@ -267,6 +279,7 @@ class IntegrationTests(unittest.TestCase):
         with self.assertRaisesRegex(ExpansionError,'continuation counters'): integrated.verify_proof(self.store,identity,self.generation)
 
     def test_failed_persist_new_source_only_run_completes_and_passes_handoff_review(self):
+        self.translator = RepairTranslator()
         self.build_repair(); self.client.fail_key=state_key(self.store,'completed','fr',DAY)
         with self.assertRaises(R2TransportError): self.operation('persist')
         identity=integrated.prepared_proof(self.store,self.request)

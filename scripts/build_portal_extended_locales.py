@@ -398,6 +398,7 @@ def build(corpus: dict, locale: str, output: Path, checkpoint: Path, translator:
                 'translation_policy': 'validated-units-with-source-fallback' if allow_source_fallback else 'strict',
                 'translation_complete': complete and not memo.fallback_keys,
                 'source_fallback_unit_count': len(memo.fallback_keys),
+                'source_fallback_unit_sha256': sorted(memo.fallback_keys),
                 'source_fallback_occurrences': memo.fallback_uses,
                 'source_fallback_codes': sorted({memo.source_fallbacks[key]['code'] for key in memo.fallback_keys}),
                 'budget_exhausted': timed_out, 'failures': failures, 'pages': records,
