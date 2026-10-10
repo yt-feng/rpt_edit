@@ -6,6 +6,7 @@ import unittest
 from pathlib import Path
 
 from market_views_source_readiness import SOURCE_GATES, SOURCE_KIND_GATES, SourceReadinessError, require_source_readiness
+from market_views_publication import OCR_CACHE_RECOVERY_WORKFLOW
 
 WORKFLOWS = Path(__file__).resolve().parents[1] / '.github/workflows'
 MANUAL = '.github/workflows/market-views-native-recovery.yml'
@@ -54,6 +55,24 @@ class ReadinessTests(unittest.TestCase):
                     changed['jobs'][0]['steps'][index]['conclusion'] = conclusion
                     with self.subTest(kind=kind, index=index, conclusion=conclusion), self.assertRaises(SourceReadinessError):
                         require_source_readiness(producer, changed, source_kind=kind)
+
+    def test_cache_recovery_only_admits_exact_manual_main_producer_and_both_completed_gates(self):
+        producer, jobs = self.kind_evidence(OCR_CACHE_RECOVERY_WORKFLOW, 'ocr-synthesis')
+        self.assertTrue(require_source_readiness(producer, jobs, source_kind='ocr-synthesis')['ready'])
+        for field, value in (('event', 'schedule'), ('event', 'pull_request'), ('event', None),
+                             ('head_branch', 'feature'), ('path', DAILY), ('head_sha', 'a' * 40)):
+            with self.subTest(field=field, value=value), self.assertRaises(SourceReadinessError):
+                require_source_readiness({**producer, field: value}, jobs, source_kind='ocr-synthesis')
+        for index in range(2):
+            for status, conclusion in (('completed', 'failure'), ('completed', 'skipped'),
+                                       ('completed', 'cancelled'), ('in_progress', None)):
+                changed = copy.deepcopy(jobs)
+                changed['jobs'][0]['steps'][index].update(status=status, conclusion=conclusion)
+                with self.subTest(index=index, conclusion=conclusion), self.assertRaises(SourceReadinessError):
+                    require_source_readiness(producer, changed, source_kind='ocr-synthesis')
+        for kind in ('mineru-recovery', 'native-pdf', 'legacy-daily'):
+            with self.subTest(kind=kind), self.assertRaises(SourceReadinessError):
+                require_source_readiness(producer, jobs, source_kind=kind)
 
     def test_failed_native_gates_do_not_block_independently_complete_mineru_recovery(self):
         producer, jobs = self.kind_evidence(DAILY, 'mineru-recovery')

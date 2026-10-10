@@ -127,10 +127,10 @@ def load_sources(source_dir, source_kind, expected_reports, date_folder, *, sour
         source_run_id = source_run_id or initial.get("source_run_id")
         source_execution_sha = source_execution_sha or initial.get("execution_sha")
         receipt = validate_ocr_synthesis_receipt(root, date_folder=date_folder, expected_reports=expected_reports,
-            source_run_id=source_run_id, execution_sha=source_execution_sha)
-        require(source_handoff_run_id is None or source_handoff_run_id == source_run_id, "ocr_handoff_run")
-        require(source_handoff_execution_sha is None or source_handoff_execution_sha == source_execution_sha, "ocr_handoff_sha")
-        source_handoff_run_id, source_handoff_execution_sha = source_run_id, source_execution_sha
+            source_run_id=source_run_id, execution_sha=source_execution_sha,
+            recovery_run_id=source_handoff_run_id, recovery_execution_sha=source_handoff_execution_sha)
+        source_handoff_run_id = source_handoff_run_id or source_run_id
+        source_handoff_execution_sha = source_handoff_execution_sha or source_execution_sha
         require(receipt["skipped_reports"] == 0 and receipt["summarized_reports"] == expected_reports,
                 "ocr_article_sources_incomplete")
         raw = (root / SOURCE_RECEIPT).read_bytes()
@@ -293,9 +293,16 @@ def validate_source_evidence(root, metadata):
     else:
         require(receipt["date_folder"] == metadata["date_folder"] and receipt["source_run_id"] == metadata["source_run_id"]
                 and receipt["execution_sha"] == metadata["source_execution_sha"]
-                and metadata["source_run_id"] == metadata["source_handoff_run_id"]
-                and metadata["source_execution_sha"] == metadata["source_handoff_execution_sha"]
+                and receipt["selected_manifest_sha256"] == metadata["manifest_sha256"]
                 and receipt["skipped_reports"] == 0, "source_receipt_identity")
+        if "cache_recovery" in receipt or metadata["source_run_id"] != metadata["source_handoff_run_id"]:
+            from market_views_publication import validate_ocr_cache_recovery_lineage
+            validate_ocr_cache_recovery_lineage(receipt, source_run_id=metadata["source_run_id"],
+                source_execution_sha=metadata["source_execution_sha"], recovery_run_id=metadata["source_handoff_run_id"],
+                recovery_execution_sha=metadata["source_handoff_execution_sha"], manifest_sha256=metadata["manifest_sha256"])
+        else:
+            require(metadata["source_execution_sha"] == metadata["source_handoff_execution_sha"],
+                    "source_receipt_identity")
         figure_raw = metadata.get("source_figures_json", "")
         require(digest(figure_raw.encode()) == source_files["figure_candidates.json"]["sha256"], "source_figures_binding")
         figures = json.loads(figure_raw)

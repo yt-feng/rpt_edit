@@ -7,6 +7,7 @@ from pathlib import Path
 import re
 
 RECEIPT_NAME = "ocr_synthesis_receipt.json"
+OCR_CACHE_RECOVERY_WORKFLOW = ".github/workflows/recover-ocr-cache-sources.yml"
 SHA256 = re.compile(r"[a-f0-9]{64}")
 NORMAL_KINDS = {"xhs", "native-pdf", "mineru-recovery", "legacy-daily"}
 
@@ -31,7 +32,47 @@ def source_inventory_sha256(reports):
     return hashlib.sha256(raw).hexdigest()
 
 
-def validate_ocr_synthesis_receipt(root, *, date_folder, expected_reports, source_run_id, execution_sha):
+def validate_ocr_cache_recovery_lineage(receipt, *, source_run_id, source_execution_sha,
+                                      recovery_run_id, recovery_execution_sha, manifest_sha256,
+                                      source_dir=None):
+    """Bind a cache-only handoff to independently authenticated producer IDs."""
+    value = receipt.get("cache_recovery") if isinstance(receipt, dict) else None
+    keys = {"schema_version", "workflow", "recovery_run_id", "recovery_execution_sha",
+            "source_run_id", "source_execution_sha", "manifest_sha256", "checkpoint_identity",
+            "archive_sha256", "archive_size_bytes", "cache_only", "ocr_calls", "provider_posts"}
+    _require(isinstance(value, dict) and set(value) == keys
+             and type(value["schema_version"]) is int and value["schema_version"] == 1
+             and value["workflow"] == OCR_CACHE_RECOVERY_WORKFLOW
+             and value["cache_only"] is True
+             and type(value["ocr_calls"]) is int and value["ocr_calls"] == 0
+             and type(value["provider_posts"]) is int and value["provider_posts"] == 0,
+             "invalid_ocr_cache_recovery_contract")
+    _require(all(isinstance(item, str) and re.fullmatch(r"[1-9][0-9]{0,19}", item)
+                 for item in (source_run_id, recovery_run_id))
+             and recovery_run_id != source_run_id
+             and all(isinstance(item, str) and re.fullmatch(r"[a-f0-9]{40}", item)
+                     for item in (source_execution_sha, recovery_execution_sha))
+             and value["source_run_id"] == receipt.get("source_run_id") == source_run_id
+             and value["source_execution_sha"] == receipt.get("execution_sha") == source_execution_sha
+             and value["recovery_run_id"] == recovery_run_id
+             and value["recovery_execution_sha"] == recovery_execution_sha,
+             "ocr_cache_recovery_identity_mismatch")
+    _require(all(isinstance(value[key], str) and SHA256.fullmatch(value[key])
+                 for key in ("manifest_sha256", "checkpoint_identity", "archive_sha256"))
+             and value["manifest_sha256"] == receipt.get("selected_manifest_sha256") == manifest_sha256
+             and type(value["archive_size_bytes"]) is int and value["archive_size_bytes"] > 0,
+             "ocr_cache_recovery_checkpoint_mismatch")
+    if source_dir is not None:
+        from private_market_ocr_checkpoint import checkpoint_key
+        manifest = Path(source_dir) / "selected_to_process_manifest.json"
+        identity = Path(checkpoint_key(manifest, receipt["date_folder"], receipt["expected_reports"])).name[:-7]
+        _require(hashlib.sha256(manifest.read_bytes()).hexdigest() == manifest_sha256
+                 and value["checkpoint_identity"] == identity, "ocr_cache_recovery_checkpoint_mismatch")
+    return value
+
+
+def validate_ocr_synthesis_receipt(root, *, date_folder, expected_reports, source_run_id, execution_sha,
+                                   recovery_run_id=None, recovery_execution_sha=None):
     """Validate exact handoff identity, per-report outcomes and all output bytes.
 
     Complete means every selected original was attempted, with at least one
@@ -67,6 +108,15 @@ def validate_ocr_synthesis_receipt(root, *, date_folder, expected_reports, sourc
     manifest_raw, manifest_rows = read_manifest(root / "selected_to_process_manifest.json", expected)
     _require(hashlib.sha256(manifest_raw).hexdigest() == value["selected_manifest_sha256"]
              and source_inventory_sha256(manifest_rows) == inventory_sha, "selected_manifest_identity_mismatch")
+    if "cache_recovery" in value or (recovery_run_id is not None and str(recovery_run_id) != str(source_run_id)):
+        validate_ocr_cache_recovery_lineage(value, source_run_id=str(source_run_id),
+            source_execution_sha=execution_sha, recovery_run_id=recovery_run_id,
+            recovery_execution_sha=recovery_execution_sha, manifest_sha256=value["selected_manifest_sha256"],
+            source_dir=root)
+    else:
+        _require((recovery_run_id is None or str(recovery_run_id) == str(source_run_id))
+                 and (recovery_execution_sha is None or recovery_execution_sha == execution_sha),
+                 "ocr_handoff_identity_mismatch")
     successful = [row for row in rows if row.get("status") == "summarized"]
     failed = [row for row in rows if row.get("status") == "skipped"]
     _require(len(successful) == summarized and len(failed) == skipped, "source_outcome_count_mismatch")

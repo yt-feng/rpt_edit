@@ -73,6 +73,80 @@ def context():
 
 
 class SourceAuthenticationTests(unittest.TestCase):
+    def cache_recovery_metadata(self):
+        from market_views_publication import OCR_CACHE_RECOVERY_WORKFLOW
+        from market_views_source_readiness import SOURCE_KIND_GATES
+        config = delivery.inputs({'SOURCE_RUN_ID': '37388263555', 'SOURCE_HANDOFF_RUN_ID': '456',
+            'SOURCE_KIND': 'ocr-synthesis', 'DATE_FOLDER': '261005', 'EXPECTED_ARTICLES': '2'})
+        original, pages = original_fixture()
+        original['id'] = int(config['SOURCE_RUN_ID'])
+        for job in pages[0]['jobs']:
+            job['run_id'] = original['id']
+        handoff = dict(original, id=456, path=OCR_CACHE_RECOVERY_WORKFLOW, head_sha='b' * 40,
+                       event='workflow_dispatch', status='in_progress', conclusion=None)
+        name, gates = SOURCE_KIND_GATES[(OCR_CACHE_RECOVERY_WORKFLOW, 'ocr-synthesis')]
+        handoff_jobs = {'total_count': 1, 'jobs': [dict(id=10, name=name, run_id=456, head_sha='b' * 40,
+            status='completed', conclusion='success', steps=[
+                dict(name=gate, number=index, status='completed', conclusion='success')
+                for index, gate in enumerate(gates, 1)])]}
+        env = {'GITHUB_REPOSITORY': 'owner/repo', 'GITHUB_ACTIONS': 'true', 'GITHUB_REF': 'refs/heads/main',
+               'GITHUB_WORKFLOW_REF': 'owner/repo/' + OCR_CACHE_RECOVERY_WORKFLOW + '@refs/heads/main',
+               'GITHUB_RUN_ID': '456'}
+        def api(repository, run):
+            assert repository == 'owner/repo'
+            return {config['SOURCE_RUN_ID']: original, '456': handoff}[run]
+        def jobs(repository, run, attempt=None):
+            assert repository == 'owner/repo'
+            assert (run, attempt) in {(config['SOURCE_RUN_ID'], 1), ('456', None)}
+            return pages[0] if run == config['SOURCE_RUN_ID'] else handoff_jobs
+        return config, env, original, handoff, handoff_jobs, api, jobs
+
+    def test_cache_recovery_uses_real_source_validation_and_only_new_private_namespace(self):
+        from test_recover_report_articles import ArticleRecoveryTests
+        from private_workflow_handoff import upload_directory
+        harness = ArticleRecoveryTests()
+        harness.setUp()
+        self.addCleanup(harness.doCleanups)
+        source = harness.ocr(cache_recovery=True).root / 'summaries/261005'
+        config, env, original, handoff, handoff_jobs, api, jobs = self.cache_recovery_metadata()
+        store = Store()
+        key = '_private-workflow-handoff/market-ocr-cache-recovery/456/261005/shard_0.tar.gz'
+        with redirect_stdout(io.StringIO()):
+            upload_directory(source, key, client=store, bucket='private')
+        workspace = harness.root / 'generation'
+        with patch.object(delivery, 'api', side_effect=api), patch.object(delivery, 'jobs', side_effect=jobs), \
+             redirect_stdout(io.StringIO()):
+            actual = delivery.prepare(workspace, config, env, store, 'private')
+        self.assertEqual((actual['source_run_id'], actual['source_handoff_run_id']), ('37388263555', '456'))
+        self.assertEqual((actual['source_execution_sha'], actual['handoff_execution_sha']), ('a' * 40, 'b' * 40))
+        self.assertEqual(actual['source_receipt_sha256'], delivery.digest((source / 'ocr_synthesis_receipt.json').read_bytes()))
+        self.assertFalse(any('/market-ocr-synthesis/' in path for path in store.objects))
+        self.assertEqual(harness.calls, [])
+
+    def test_distinct_ocr_daily_or_failed_recovery_is_rejected_before_private_download(self):
+        config, env, original, handoff, handoff_jobs, api, jobs = self.cache_recovery_metadata()
+        baseline = copy.deepcopy(handoff)
+        baseline_jobs = copy.deepcopy(handoff_jobs)
+        mutations = [('path', delivery.DAILY), ('path', delivery.MANUAL), ('event', 'schedule'),
+                     ('head_branch', 'feature'), ('repository', {'full_name': 'other/repo'}),
+                     ('head_repository', {'full_name': 'other/repo'})]
+        for field, value in mutations:
+            handoff.clear(); handoff.update(copy.deepcopy(baseline)); handoff[field] = value
+            with self.subTest(field=field, value=value), patch.object(delivery, 'api', side_effect=api), \
+                 patch.object(delivery, 'jobs', side_effect=jobs), \
+                 patch('private_workflow_handoff.download_directory') as download, self.assertRaises(ValueError):
+                delivery.prepare(Path('/unused'), config, env, Store(), 'private')
+            download.assert_not_called()
+        handoff.clear(); handoff.update(baseline)
+        for index in range(2):
+            handoff_jobs.clear(); handoff_jobs.update(copy.deepcopy(baseline_jobs))
+            handoff_jobs['jobs'][0]['steps'][index]['conclusion'] = 'failure'
+            with self.subTest(index=index), patch.object(delivery, 'api', side_effect=api), \
+                 patch.object(delivery, 'jobs', side_effect=jobs), \
+                 patch('private_workflow_handoff.download_directory') as download, self.assertRaises(ValueError):
+                delivery.prepare(Path('/unused'), config, env, Store(), 'private')
+            download.assert_not_called()
+
     def test_historical_original_and_distinct_handoff_identity(self):
         run, pages = original_fixture()
         self.assertEqual(delivery.validate_original(run, pages, config(), 'owner/repo', '999'), 'a' * 40)

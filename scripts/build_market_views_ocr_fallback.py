@@ -342,7 +342,7 @@ def publication_chart(spec: dict[str, Any]) -> dict[str, Any] | None:
 
 
 def cached_model(prompt: str, cache: Path, model: str, base_url: str,
-                 invoke: Callable[[str, str, str], dict[str, Any]]) -> dict[str, Any]:
+                 invoke: Callable[[str, str, str], dict[str, Any]], *, cache_only: bool = False) -> dict[str, Any]:
     digest = sha((PROMPT_VERSION + "\0" + model + "\0" + base_url + "\0" + prompt).encode())
     path, pending = cache / f"{digest}.json", cache / f"{digest}.pending.json"
     if path.is_file():
@@ -352,6 +352,8 @@ def cached_model(prompt: str, cache: Path, model: str, base_url: str,
         return value["response"]
     if pending.exists():
         raise RuntimeError(f"Prior model submission has unknown/incomplete outcome; inspect checkpoint {pending.name}")
+    if cache_only:
+        raise ValueError("cache_only_summary_missing")
     write_json(pending, {"request_sha256": digest, "started_at": datetime.now(timezone.utc).isoformat()})
     try:
         result = invoke(prompt, model, base_url)
@@ -428,7 +430,8 @@ def build(input_dir: Path, manifest: Path, expected_reports: int, date_folder: s
           model: str = "deepseek-flash", base_url: str = "https://api.deepseek.com", workers: int = 4,
           chunk_chars: int = 18000, languages: str = "eng+chi_sim", dpi: int = 220,
           ocr_all_pages: bool = False, invoke: Callable[..., dict[str, Any]] = call_model,
-          extractor: Callable[..., list[dict[str, Any]]] = extract_pages) -> dict[str, Any]:
+          extractor: Callable[..., list[dict[str, Any]]] = extract_pages,
+          cache_only: bool = False) -> dict[str, Any]:
     if not re.fullmatch(r"\d{6}|\d{8}", date_folder):
         raise ValueError("An exact date folder is required")
     raw, bindings = read_manifest(manifest, expected_reports)
@@ -445,7 +448,7 @@ def build(input_dir: Path, manifest: Path, expected_reports: int, date_folder: s
     (output / "figures").mkdir(exist_ok=True)
     cache_dir.mkdir(parents=True, exist_ok=True)
     model = normalize_deepseek_model_name(model)
-    if invoke is call_model and not os.environ.get("DEEPSEEK_API_KEY", "").strip():
+    if not cache_only and invoke is call_model and not os.environ.get("DEEPSEEK_API_KEY", "").strip():
         raise ProviderConfigurationError("DEEPSEEK_API_KEY is required")
 
     def prepare_report(item: tuple[int, dict[str, str]]) -> dict[str, Any]:
@@ -456,6 +459,8 @@ def build(input_dir: Path, manifest: Path, expected_reports: int, date_folder: s
         if page_cache.exists():
             pages = json.loads(page_cache.read_text())["pages"]
         else:
+            if cache_only:
+                raise ValueError("cache_only_pages_missing")
             pages = extractor(originals[binding["source_pdf"]], languages=languages, dpi=dpi, ocr_all_pages=ocr_all_pages)
             write_json(page_cache, {"pages": pages})
         with fitz.open(originals[binding["source_pdf"]]) as document:
@@ -473,7 +478,7 @@ def build(input_dir: Path, manifest: Path, expected_reports: int, date_folder: s
         summaries = []
         for chunk in chunks:
             value = cached_model(chunk_prompt(prepared["source_pdf"], chunk, prepared["content_sha256"]),
-                                 cache_dir / "model", model, base_url, invoke)
+                                 cache_dir / "model", model, base_url, invoke, cache_only=cache_only)
             summaries.append(validate_summary(value, chunk["pages"]))
         report_dir = output / "ocr_sources" / rid
         write_json(report_dir / "pages.json", pages)
@@ -500,6 +505,8 @@ def build(input_dir: Path, manifest: Path, expected_reports: int, date_folder: s
         except ProviderConfigurationError:
             raise
         except Exception as exc:
+            if cache_only:
+                raise
             return skipped_report(prepared["id"], prepared, exc)
 
     with ThreadPoolExecutor(max_workers=max(1, min(workers, 8))) as pool:
@@ -513,6 +520,8 @@ def build(input_dir: Path, manifest: Path, expected_reports: int, date_folder: s
             except ProviderConfigurationError:
                 raise
             except Exception as exc:
+                if cache_only:
+                    raise
                 pending.append(skipped_report(f"R{index:03d}", binding, exc))
                 continue
             pending.append(pool.submit(process, prepared))
@@ -567,7 +576,8 @@ def build(input_dir: Path, manifest: Path, expected_reports: int, date_folder: s
         print(f"OCR_SYNTHESIS_EDITED={rid} boilerplate_removed={edited['removed_boilerplate_sentences']} "
               f"duplicates_removed={edited['removed_duplicate_sentences']}", flush=True)
     cross_report, audit = synthesize(successful, reports, figures, cache_dir=cache_dir,
-        model=model, base_url=base_url, invoke=invoke, is_boilerplate=boilerplate_only)
+        model=model, base_url=base_url, invoke=invoke, is_boilerplate=boilerplate_only,
+        cache_only=cache_only)
     write_json(output / "cross_report_evidence.json", audit)
     print("OCR_CROSS_REPORT " + json.dumps({"modules": len(cross_report["bank_roundup"]["sections"]),
           "status": cross_report["synthesis_status"], **audit["metrics"]}, sort_keys=True), flush=True)
@@ -617,6 +627,8 @@ def main() -> int:
     parser.add_argument("--languages", default="eng+chi_sim")
     parser.add_argument("--dpi", type=int, default=220)
     parser.add_argument("--ocr-all-pages", action="store_true")
+    parser.add_argument("--cache-only", action="store_true",
+                        help="Require all bound OCR and model cache units; never extract or submit models")
     args = parser.parse_args()
     build(**vars(args))
     return 0

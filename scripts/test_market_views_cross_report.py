@@ -58,9 +58,40 @@ class CrossReportTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory(); self.addCleanup(self.temp.cleanup)
         self.cache = Path(self.temp.name)
 
-    def run_synthesis(self, data=None, invoke=model):
+    def run_synthesis(self, data=None, invoke=model, **kwargs):
         return cross.synthesize(*(data or fixture()), cache_dir=self.cache, model="fixture", base_url="https://example.invalid",
-                                invoke=invoke, is_boilerplate=boilerplate_only)
+                                invoke=invoke, is_boilerplate=boilerplate_only, **kwargs)
+
+    def test_cache_only_each_final_stage_miss_or_invalid_fails_without_submission(self):
+        import hashlib
+        seen = {}
+        def record(prompt, model_name, base_url):
+            stage = prompt.split('\n', 1)[0].split()[-1]
+            key = hashlib.sha256((cross.VERSION + '\0' + model_name + '\0' + base_url + '\0' + prompt).encode()).hexdigest()
+            seen.setdefault(stage, self.cache / 'final_synthesis' / cross.VERSION / (key + '.json'))
+            return model(prompt, model_name, base_url)
+        self.run_synthesis(data=fixture(2), invoke=record)
+        self.assertEqual(set(seen), {'EVIDENCE', 'PLAN', 'SECTION', 'OVERVIEW'})
+        for stage, path in seen.items():
+            original = path.read_bytes()
+            for state in ['missing', 'invalid', 'pending']:
+                with self.subTest(stage=stage, state=state):
+                    path.unlink(missing_ok=True)
+                    pending = path.with_suffix('.pending.json')
+                    if state == 'invalid':
+                        path.write_text(json.dumps({'request_sha256': path.stem, 'response': {}}))
+                    elif state == 'pending':
+                        pending.write_text('{}')
+                    calls = []
+                    def forbidden(*args):
+                        calls.append(args)
+                        raise AssertionError('cache-only cannot call model')
+                    with self.assertRaises((ValueError, RuntimeError)):
+                        self.run_synthesis(data=fixture(2), invoke=forbidden, cache_only=True)
+                    self.assertEqual(calls, [])
+                    self.assertEqual(pending.exists(), state == 'pending')
+                    pending.unlink(missing_ok=True)
+                    path.write_bytes(original)
 
     def test_all_33_reports_compressed_into_topics_with_tail_evidence_and_sources(self):
         result, audit = self.run_synthesis()

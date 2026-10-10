@@ -67,6 +67,31 @@ class OCRSynthesisTests(unittest.TestCase):
                               source_run_id="37388263555", execution_sha="a" * 40, workers=2,
                               invoke=kwargs.pop("invoke", model_fixture), extractor=kwargs.pop("extractor", self.extract_fixture), **kwargs)
 
+    def test_explicit_cache_only_replays_without_api_key_and_rejects_changed_ocr_settings(self):
+        manifest = self.originals_fixture(count=2)
+        self.build(manifest, count=2, ocr_all_pages=True)
+        with patch.dict('os.environ', {'DEEPSEEK_API_KEY': ''}):
+            resumed = self.build(manifest, count=2, ocr_all_pages=True,
+                                 invoke=fallback.call_model, extractor=fallback.extract_pages, cache_only=True)
+        self.assertEqual((resumed['summarized_reports'], resumed['skipped_reports']), (2, 0))
+        for changed in [{'dpi': 221, 'ocr_all_pages': True}, {'languages': 'eng', 'ocr_all_pages': True},
+                        {'ocr_all_pages': False}, {'ocr_all_pages': True, 'chunk_chars': 256}]:
+            with self.subTest(changed=changed), patch.object(fallback.subprocess, 'run') as ocr, \
+                 patch.object(fallback, 'request_with_retry') as provider:
+                with self.assertRaisesRegex(ValueError, 'cache_only_(pages|summary)_missing'):
+                    self.build(manifest, count=2, invoke=fallback.call_model, extractor=fallback.extract_pages,
+                               cache_only=True, **changed)
+                ocr.assert_not_called(); provider.assert_not_called()
+
+    def test_cache_only_summary_binds_model_and_base_url(self):
+        manifest = self.originals_fixture(count=1)
+        self.build(manifest, count=1)
+        for changed in [{'model': 'different-model'}, {'base_url': 'https://other.invalid'}]:
+            with self.subTest(changed=changed), patch.object(fallback, 'request_with_retry') as provider:
+                with self.assertRaisesRegex(ValueError, 'cache_only_summary_missing'):
+                    self.build(manifest, count=1, cache_only=True, invoke=fallback.call_model, **changed)
+                provider.assert_not_called()
+
     def test_long_page_and_empty_page_chunks_do_not_drop_a_character(self):
         pages = [page_record(1, "a" * 513), page_record(2, ""), page_record(3, "TAIL" * 123)]
         chunks = fallback.chunk_pages(pages, 256)
