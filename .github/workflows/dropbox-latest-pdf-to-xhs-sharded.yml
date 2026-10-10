@@ -776,6 +776,9 @@ jobs:
     timeout-minutes: 180
     outputs:
       source_kind: ${{ steps.source-kind.outputs.source_kind }}
+      mineru_recovery_failed: ${{ steps.recovery-status.outputs.mineru_recovery_failed }}
+      ocr_attempted: ${{ steps.recovery-status.outputs.ocr_attempted }}
+      article_source_ready: ${{ steps.recovery-status.outputs.article_source_ready }}
     steps:
       - name: Initialize DeepSeek usage ledger
         shell: bash
@@ -831,6 +834,7 @@ jobs:
             --input-dir _selected_macro_pdfs --output-dir _mineru_market_sources/shard_0 \
             --expected-reports "$EXPECTED_ARTICLES" --date-folder "$DATE_FOLDER" --timeout 1740
       - name: Save complete recovered MinerU sources to private R2
+        id: mineru-save
         timeout-minutes: 5
         if: ${{ steps.mineru-recover.outcome == 'success' }}
         env:
@@ -913,6 +917,7 @@ jobs:
             --date-folder "$DATE_FOLDER" --expected-reports "$EXPECTED_ARTICLES" \
             --directory _market_ocr_cache
       - name: Save complete OCR synthesis to private R2
+        id: ocr-save
         timeout-minutes: 5
         if: ${{ steps.ocr-synthesis.outcome == 'success' }}
         env:
@@ -924,6 +929,15 @@ jobs:
           python scripts/private_workflow_handoff.py upload-dir \
             --source "_market_ocr_synthesis/${{ needs.select-macro-reports.outputs.latest_folder }}" \
             --key "_private-workflow-handoff/market-ocr-synthesis/${{ github.run_id }}/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_0.tar.gz"
+      - name: Capture Daily OCR page fallback eligibility
+        id: recovery-status
+        if: ${{ always() && !cancelled() && hashFiles('scripts/recover_daily_ocr_page_sources.py') != '' }}
+        env:
+          MINERU_OUTCOME: ${{ steps.mineru-recover.outcome }}
+          OCR_OUTCOME: ${{ steps.ocr-synthesis.outcome }}
+          MINERU_SAVE_OUTCOME: ${{ steps.mineru-save.outcome }}
+          OCR_SAVE_OUTCOME: ${{ steps.ocr-save.outcome }}
+        run: python -B scripts/recover_daily_ocr_page_sources.py outcomes
       - name: Select the verified source edition
         id: source-kind
         env:
@@ -951,6 +965,64 @@ jobs:
           path: ${{ env.DEEPSEEK_USAGE_DIR }}
           if-no-files-found: error
           retention-days: 30
+
+  recover-ocr-page-sources:
+    # Complete page text can feed articles while Market Views synthesis remains
+    # failed/pending. This never submits OCR, MinerU or synthesis requests.
+    needs: [resolve-inputs, select-macro-reports, source-outcome, recover-market-sources]
+    if: >-
+      ${{ always() && !cancelled() && needs.select-macro-reports.result == 'success' &&
+          needs.source-outcome.result == 'success' && needs.source-outcome.outputs.primary_ready == 'false' &&
+          needs.resolve-inputs.outputs.replay_source_run_id == '' &&
+          needs.select-macro-reports.outputs.selected_count != '0' &&
+          needs.recover-market-sources.result == 'failure' &&
+          needs.recover-market-sources.outputs.mineru_recovery_failed == 'true' &&
+          needs.recover-market-sources.outputs.ocr_attempted == 'true' &&
+          needs.recover-market-sources.outputs.article_source_ready == 'false' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      REPLAY_SOURCE_RUN_ID: ${{ needs.resolve-inputs.outputs.replay_source_run_id }}
+      PRIMARY_READY: ${{ needs.source-outcome.outputs.primary_ready }}
+      MINERU_RECOVERY_FAILED: ${{ needs.recover-market-sources.outputs.mineru_recovery_failed }}
+      OCR_ATTEMPTED: ${{ needs.recover-market-sources.outputs.ocr_attempted }}
+      ARTICLE_SOURCE_READY: ${{ needs.recover-market-sources.outputs.article_source_ready }}
+      DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}
+      EXPECTED_REPORTS: ${{ needs.select-macro-reports.outputs.selected_count }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: scripts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Daily page verification dependencies
+        run: python -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF 'boto3>=1.37.32,<2'
+      - name: Restore exact same-run selected original PDFs and manifest
+        uses: actions/download-artifact@v4
+        with:
+          name: selected-macro-pdfs-${{ github.run_id }}
+          path: ${{ runner.temp }}/daily-ocr-selected-originals
+      - name: Restore and verify complete Daily original OCR pages from cache only
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python -B scripts/recover_daily_ocr_page_sources.py recover \
+            --input-dir "$RUNNER_TEMP/daily-ocr-selected-originals" --workspace "$RUNNER_TEMP/daily-ocr-pages"
+      - name: Archive and verify complete Daily OCR page sources in private R2
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python -B scripts/recover_daily_ocr_page_sources.py archive \
+            --input-dir "$RUNNER_TEMP/daily-ocr-selected-originals" --workspace "$RUNNER_TEMP/daily-ocr-pages"
 
   trigger-market-views:
     # PDF synthesis consumes the complete R2 shards directly, not the ZIP artifact.
@@ -1177,9 +1249,9 @@ jobs:
           exit 1
 
   deliver-recovered-report-articles:
-    needs: [resolve-inputs, select-macro-reports, source-outcome, recover-market-sources, push-xhs-notes-wechat-drafts]
+    needs: [resolve-inputs, select-macro-reports, source-outcome, recover-market-sources, recover-ocr-page-sources, push-xhs-notes-wechat-drafts]
     if: >-
-      ${{ !cancelled() && needs.recover-market-sources.result == 'success' &&
+      ${{ !cancelled() && (needs.recover-market-sources.result == 'success' || needs.recover-ocr-page-sources.result == 'success') &&
           needs.source-outcome.outputs.primary_ready == 'false' &&
           needs.resolve-inputs.outputs.replay_source_run_id == '' &&
           (needs.resolve-inputs.outputs.wechat_draft_upload == 'true' ||
@@ -1189,7 +1261,7 @@ jobs:
     with:
       source_run_id: ${{ github.run_id }}
       source_handoff_run_id: ${{ github.run_id }}
-      source_kind: ${{ needs.recover-market-sources.outputs.source_kind }}
+      source_kind: ${{ needs.recover-market-sources.result == 'success' && needs.recover-market-sources.outputs.source_kind || 'ocr-pages' }}
       date_folder: ${{ needs.select-macro-reports.outputs.latest_folder }}
       expected_articles: ${{ needs.select-macro-reports.outputs.selected_count }}
       model: ${{ needs.resolve-inputs.outputs.model }}
@@ -1683,6 +1755,7 @@ jobs:
       - select-macro-reports
       - package-publish-ready
       - recover-market-sources
+      - recover-ocr-page-sources
       - deliver-recovered-report-articles
       - validate-report-delivery
       - trigger-market-views
@@ -1733,6 +1806,7 @@ jobs:
       - process-shard
       - package-publish-ready
       - recover-market-sources
+      - recover-ocr-page-sources
       - trigger-market-views
       - trigger-chart-search-index
       - push-xhs-notes-wechat-drafts
@@ -1756,6 +1830,7 @@ jobs:
         recovered_articles=${{ needs.deliver-recovered-report-articles.result }},
         package=${{ needs.package-publish-ready.result }},
         market_source_recovery=${{ needs.recover-market-sources.result }},
+        ocr_page_source_recovery=${{ needs.recover-ocr-page-sources.result }},
         market_views=${{ needs.trigger-market-views.result }},
         chart_search=${{ needs.trigger-chart-search-index.result }},
         wechat=${{ needs.push-xhs-notes-wechat-drafts.result }},

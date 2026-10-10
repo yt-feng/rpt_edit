@@ -9,6 +9,8 @@ KIND = 'ocr-pages'
 POLICY = 'verified-ocr-pages-v1'
 RECEIPT = 'ocr_pages_receipt.json'
 PREFIX = '_private-workflow-handoff/market-ocr-pages-cache-recovery'
+DAILY_PREFIX = '_private-workflow-handoff/market-ocr-pages-daily'
+DAILY_WORKFLOW = '.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml'
 EXTRACTION = {'prompt_version': 'complete-ocr-synthesis-v1', 'languages': 'eng+chi_sim',
               'dpi': 220, 'ocr_all_pages': True}
 MAX_FILE_BYTES = 128 * 1024 * 1024
@@ -88,8 +90,68 @@ def inventory(root):
     return files
 
 
+def lineage_field(receipt):
+    fields = {'cache_recovery', 'daily_cache_origin'} & set(receipt)
+    require(len(fields) == 1, 'ocr_pages_lineage_ambiguous')
+    return fields.pop()
+
+
+def handoff_identity(receipt):
+    """Receipt-declared identity; callers still validate its independent context."""
+    name = lineage_field(receipt)
+    value = receipt[name]
+    require(isinstance(value, dict), 'ocr_pages_lineage_invalid')
+    if name == 'daily_cache_origin':
+        return value.get('source_run_id'), value.get('source_execution_sha')
+    return value.get('recovery_run_id'), value.get('recovery_execution_sha')
+
+
+def handoff_key(receipt):
+    prefix = DAILY_PREFIX if lineage_field(receipt) == 'daily_cache_origin' else PREFIX
+    run_id, _ = handoff_identity(receipt)
+    return f'{prefix}/{run_id}/{receipt["date_folder"]}/shard_0.tar.gz'
+
+
+def validate_pages_lineage(receipt, *, source_run_id, source_execution_sha,
+                           recovery_run_id, recovery_execution_sha, manifest_sha256, source_dir=None):
+    """Manual recovery and same-run Daily origins are disjoint contracts."""
+    if lineage_field(receipt) == 'cache_recovery':
+        from market_views_publication import validate_ocr_cache_recovery_lineage
+        return validate_ocr_cache_recovery_lineage(receipt, source_run_id=source_run_id,
+            source_execution_sha=source_execution_sha, recovery_run_id=recovery_run_id,
+            recovery_execution_sha=recovery_execution_sha, manifest_sha256=manifest_sha256,
+            source_dir=source_dir)
+    value = receipt['daily_cache_origin']
+    keys = {'schema_version', 'workflow', 'source_run_id', 'source_execution_sha',
+            'manifest_sha256', 'checkpoint_identity', 'archive_sha256', 'archive_size_bytes',
+            'cache_only', 'ocr_calls', 'provider_posts'}
+    require(isinstance(value, dict) and set(value) == keys
+            and type(value['schema_version']) is int and value['schema_version'] == 1
+            and value['workflow'] == DAILY_WORKFLOW and value['cache_only'] is True
+            and type(value['ocr_calls']) is int and value['ocr_calls'] == 0
+            and type(value['provider_posts']) is int and value['provider_posts'] == 0,
+            'ocr_pages_daily_contract_invalid')
+    require(isinstance(source_run_id, str) and re.fullmatch(r'[1-9][0-9]{0,19}', source_run_id)
+            and isinstance(source_execution_sha, str) and re.fullmatch(r'[a-f0-9]{40}', source_execution_sha)
+            and value['source_run_id'] == receipt.get('source_run_id') == source_run_id == recovery_run_id
+            and value['source_execution_sha'] == receipt.get('execution_sha') == source_execution_sha == recovery_execution_sha,
+            'ocr_pages_daily_identity_invalid')
+    require(all(isinstance(value[key], str) and re.fullmatch(r'[a-f0-9]{64}', value[key])
+                for key in ('manifest_sha256', 'checkpoint_identity', 'archive_sha256'))
+            and value['manifest_sha256'] == receipt.get('selected_manifest_sha256') == manifest_sha256
+            and type(value['archive_size_bytes']) is int and 0 < value['archive_size_bytes'] <= MAX_TOTAL_BYTES,
+            'ocr_pages_daily_archive_invalid')
+    if source_dir is not None:
+        from private_market_ocr_checkpoint import checkpoint_key
+        manifest = Path(source_dir)/'selected_to_process_manifest.json'
+        identity = checkpoint_key(manifest, receipt['date_folder'], receipt['expected_reports']).rsplit('/', 1)[-1][:-7]
+        require(digest(read(manifest)) == manifest_sha256 and value['checkpoint_identity'] == identity,
+                'ocr_pages_daily_checkpoint_invalid')
+    return value
+
+
 def build_pages(input_dir, manifest, cache, output, *, expected_reports, date_folder,
-                source_run_id, execution_sha, recovery):
+                source_run_id, execution_sha, recovery=None, daily_origin=None):
     """Validate every original/cache unit before creating any handoff file.
 
     Does not invoke or inspect synthesis, model caches, pending submissions or
@@ -126,13 +188,15 @@ def build_pages(input_dir, manifest, cache, output, *, expected_reports, date_fo
         'expected_reports': expected_reports, 'report_count': len(reports),
         'total_pages': sum(row['page_count'] for row in reports), 'reports': reports,
         'selected_manifest_sha256': digest(raw), 'source_inventory_sha256': source_inventory_sha256(reports),
-        'extraction': dict(EXTRACTION), 'cache_recovery': recovery,
+        'extraction': dict(EXTRACTION),
         'files': [{'path': name, 'bytes': len(data), 'sha256': digest(data)} for name,data in sorted(prepared.items())]}
+    require((recovery is None) != (daily_origin is None), 'ocr_pages_lineage_ambiguous')
+    receipt['cache_recovery' if recovery is not None else 'daily_cache_origin'] = recovery if recovery is not None else daily_origin
     require(total + len(encode(receipt)) <= MAX_TOTAL_BYTES, 'ocr_pages_inventory_oversized')
     # Validate identity before committing the already validated page files.
-    from market_views_publication import validate_ocr_cache_recovery_lineage
-    validate_ocr_cache_recovery_lineage(receipt, source_run_id=source_run_id, source_execution_sha=execution_sha,
-        recovery_run_id=recovery['recovery_run_id'], recovery_execution_sha=recovery['recovery_execution_sha'],
+    handoff_run_id, handoff_sha = handoff_identity(receipt)
+    validate_pages_lineage(receipt, source_run_id=source_run_id, source_execution_sha=execution_sha,
+        recovery_run_id=handoff_run_id, recovery_execution_sha=handoff_sha,
         manifest_sha256=digest(raw))
     output.mkdir(parents=True)
     for name, data in prepared.items():
@@ -140,19 +204,21 @@ def build_pages(input_dir, manifest, cache, output, *, expected_reports, date_fo
     (output/RECEIPT).write_bytes(encode(receipt))
     validate_pages_receipt(output, date_folder=date_folder, expected_reports=expected_reports,
         source_run_id=source_run_id, execution_sha=execution_sha,
-        recovery_run_id=recovery['recovery_run_id'], recovery_execution_sha=recovery['recovery_execution_sha'])
+        recovery_run_id=handoff_run_id, recovery_execution_sha=handoff_sha)
     return receipt
 
 
 def validate_pages_receipt(root, *, date_folder, expected_reports, source_run_id, execution_sha,
                            recovery_run_id, recovery_execution_sha):
     from extract_native_market_sources import read_manifest
-    from market_views_publication import source_inventory_sha256, validate_ocr_cache_recovery_lineage
+    from market_views_publication import source_inventory_sha256
     root = Path(root)
     value = decode(read(root/RECEIPT))
     keys = {'schema_version','policy','source_kind','complete','date_folder','source_run_id','execution_sha',
         'expected_reports','report_count','total_pages','reports','selected_manifest_sha256',
-        'source_inventory_sha256','extraction','cache_recovery','files'}
+        'source_inventory_sha256','extraction','files'}
+    require(isinstance(value, dict), 'ocr_pages_receipt_contract_invalid')
+    keys.add(lineage_field(value))
     require(isinstance(value,dict) and set(value) == keys and type(value['schema_version']) is int
             and value['schema_version'] == 1 and value['policy'] == POLICY and value['source_kind'] == KIND
             and value['complete'] is True and value['extraction'] == EXTRACTION,
@@ -166,7 +232,7 @@ def validate_pages_receipt(root, *, date_folder, expected_reports, source_run_id
     require(value['files'] == files, 'ocr_pages_file_inventory_changed')
     manifest_raw, bindings = read_manifest(root/'selected_to_process_manifest.json',expected_reports)
     require(digest(manifest_raw) == value['selected_manifest_sha256'], 'ocr_pages_manifest_changed')
-    validate_ocr_cache_recovery_lineage(value, source_run_id=source_run_id, source_execution_sha=execution_sha,
+    validate_pages_lineage(value, source_run_id=source_run_id, source_execution_sha=execution_sha,
         recovery_run_id=recovery_run_id, recovery_execution_sha=recovery_execution_sha,
         manifest_sha256=digest(manifest_raw), source_dir=root)
     rows = value['reports']

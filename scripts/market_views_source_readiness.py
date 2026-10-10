@@ -37,6 +37,11 @@ SOURCE_KIND_GATES = {
     for workflow, gate in SOURCE_GATES.items()
 }
 SOURCE_KIND_GATES.update({
+    ('.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml', 'ocr-pages'): (
+        'recover-ocr-page-sources',
+        ('Restore and verify complete Daily original OCR pages from cache only',
+         'Archive and verify complete Daily OCR page sources in private R2'),
+    ),
     (OCR_CACHE_RECOVERY_WORKFLOW, 'ocr-pages'): (
         'recover',
         ('Restore and verify complete original OCR pages from cache only',
@@ -74,6 +79,42 @@ def _require(condition, category):
         raise SourceReadinessError(category)
 
 
+def require_daily_page_fallback(jobs, run_id, sha):
+    """Independent REST evidence complements the producer's outcome gate.
+
+    A continue-on-error MinerU step may have a successful REST conclusion. The
+    checked workflow uses its actual outcome; REST must still prove it ran and
+    that no full source edition was successfully archived before pages fallback.
+    """
+    matches = [job for job in jobs if job.get('name') == 'recover-market-sources']
+    _require(len(matches) == 1, 'daily_pages_recovery_job_missing_or_ambiguous')
+    job = matches[0]
+    _require(job.get('run_id') == run_id and job.get('head_sha') == sha
+             and job.get('status') == 'completed' and job.get('conclusion') == 'failure',
+             'daily_pages_recovery_not_failed')
+    steps = job.get('steps')
+    _require(isinstance(steps, list) and all(isinstance(step, dict) for step in steps),
+             'daily_pages_recovery_steps_invalid')
+    numbers = [step.get('number') for step in steps]
+    _require(all(type(n) is int and n > 0 for n in numbers) and len(numbers) == len(set(numbers)),
+             'daily_pages_recovery_steps_invalid')
+    names = (
+        ('Recover existing MinerU tasks for daily Market Views', {'success', 'failure'}),
+        ('Save complete recovered MinerU sources to private R2', {'skipped', 'failure'}),
+        ('Build complete OCR summaries and charts for Market Views', {'success', 'failure'}),
+        ('Save private OCR synthesis cache even after interruption', {'success', 'failure'}),
+        ('Save complete OCR synthesis to private R2', {'skipped', 'failure'}),
+        ('Capture Daily OCR page fallback eligibility', {'success'}),
+    )
+    selected = []
+    for name, conclusions in names:
+        matches = [step for step in steps if step.get('name') == name]
+        _require(len(matches) == 1 and matches[0].get('status') == 'completed'
+                 and matches[0].get('conclusion') in conclusions, 'daily_pages_prior_gate_invalid')
+        selected.append(matches[0]['number'])
+    _require(selected == sorted(selected), 'daily_pages_prior_gate_order_invalid')
+
+
 def require_source_readiness(producer, jobs_page, *, source_kind=None):
     """Admit only exact, successfully completed source gates for this run/SHA.
 
@@ -107,6 +148,9 @@ def require_source_readiness(producer, jobs_page, *, source_kind=None):
                  'invalid_job_metadata')
         job_ids.append(item['id'])
     _require(len(job_ids) == len(set(job_ids)), 'ambiguous_jobs_response')
+    if source_kind == 'ocr-pages' and workflow == '.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml':
+        _require(producer.get('event') in {'schedule', 'workflow_dispatch'}, 'invalid_daily_pages_producer')
+        require_daily_page_fallback(jobs, run_id, sha)
     if workflow == '.github/workflows/market-views-mineru-recovery.yml':
         _require(producer.get('event') == 'workflow_dispatch', 'invalid_mineru_source_producer')
     if workflow == OCR_CACHE_RECOVERY_WORKFLOW:

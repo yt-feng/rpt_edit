@@ -8,6 +8,9 @@ on:
       - scripts/recover_ocr_cache_sources.py
       - scripts/test_recover_ocr_cache_sources.py
       - scripts/ocr_page_sources.py
+      - scripts/recover_daily_ocr_page_sources.py
+      - scripts/test_recover_daily_ocr_page_sources.py
+      - .github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml
       - scripts/test_ocr_page_sources.py
       - scripts/report_extraction_source.py
       - scripts/wechat_editorial_binding.py
@@ -82,6 +85,8 @@ jobs:
         run: |
           python -B scripts/test_recover_ocr_cache_sources.py
           python -B scripts/test_ocr_page_sources.py
+          python -B scripts/test_recover_daily_ocr_page_sources.py
+          python -B scripts/test_market_views_workflow_contract.py
           python -B scripts/test_report_extraction_source.py
           python -B scripts/test_wechat_editorial_binding.py
           python -B scripts/test_private_workflow_handoff.py

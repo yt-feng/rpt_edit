@@ -188,8 +188,9 @@ def authenticated_context(config, env):
                              else OCR_CACHE_RECOVERY_WORKFLOW)
         require(handoff.get('path') == expected_workflow, 'ocr_handoff_workflow_invalid')
     elif config['SOURCE_KIND'] == 'ocr-pages':
-        require(config['SOURCE_HANDOFF_RUN_ID'] != config['SOURCE_RUN_ID']
-                and handoff.get('path') == OCR_CACHE_RECOVERY_WORKFLOW, 'ocr_pages_handoff_workflow_invalid')
+        expected_workflow = (DAILY if config['SOURCE_HANDOFF_RUN_ID'] == config['SOURCE_RUN_ID']
+                             else OCR_CACHE_RECOVERY_WORKFLOW)
+        require(handoff.get('path') == expected_workflow, 'ocr_pages_handoff_workflow_invalid')
     from market_views_source_readiness import require_source_readiness
     require_source_readiness(handoff, jobs(repository, config['SOURCE_HANDOFF_RUN_ID']), source_kind=config['SOURCE_KIND'])
     return original_sha, handoff['head_sha']
@@ -250,6 +251,8 @@ def prepare(workspace, config, env, client, bucket):
     prefix = PREFIXES[config['SOURCE_KIND']]
     if config['SOURCE_KIND'] == 'ocr-synthesis' and config['SOURCE_HANDOFF_RUN_ID'] != config['SOURCE_RUN_ID']:
         prefix = 'market-ocr-cache-recovery'
+    if config['SOURCE_KIND'] == 'ocr-pages' and config['SOURCE_HANDOFF_RUN_ID'] == config['SOURCE_RUN_ID']:
+        prefix = 'market-ocr-pages-daily'
     download_directory(f"_private-workflow-handoff/{prefix}/{config['SOURCE_HANDOFF_RUN_ID']}/{config['DATE_FOLDER']}/shard_0.tar.gz",
                        source, client=client, bucket=bucket)
     context = validate_source(source, config, original_sha, handoff_sha)

@@ -303,19 +303,22 @@ def validate_source_evidence(root, metadata):
                 and receipt["execution_sha"] == metadata["source_execution_sha"]
                 and receipt["selected_manifest_sha256"] == metadata["manifest_sha256"], "source_receipt_identity")
         if pages_only:
-            from ocr_page_sources import POLICY as PAGES_POLICY, EXTRACTION
+            from ocr_page_sources import POLICY as PAGES_POLICY, EXTRACTION, validate_pages_lineage
             require(receipt.get('policy') == PAGES_POLICY and receipt.get('extraction') == EXTRACTION
                     and receipt.get('expected_reports') == receipt.get('report_count') == metadata['expected_reports']
-                    and 'cache_recovery' in receipt and 'source_figures_json' not in metadata,
+                    and 'source_figures_json' not in metadata,
                     'ocr_pages_article_contract_invalid')
+            validate_pages_lineage(receipt, source_run_id=metadata['source_run_id'],
+                source_execution_sha=metadata['source_execution_sha'], recovery_run_id=metadata['source_handoff_run_id'],
+                recovery_execution_sha=metadata['source_handoff_execution_sha'], manifest_sha256=metadata['manifest_sha256'])
         else:
             require(receipt['skipped_reports'] == 0, 'source_receipt_identity')
-        if "cache_recovery" in receipt or metadata["source_run_id"] != metadata["source_handoff_run_id"]:
+        if not pages_only and ("cache_recovery" in receipt or metadata["source_run_id"] != metadata["source_handoff_run_id"]):
             from market_views_publication import validate_ocr_cache_recovery_lineage
             validate_ocr_cache_recovery_lineage(receipt, source_run_id=metadata["source_run_id"],
                 source_execution_sha=metadata["source_execution_sha"], recovery_run_id=metadata["source_handoff_run_id"],
                 recovery_execution_sha=metadata["source_handoff_execution_sha"], manifest_sha256=metadata["manifest_sha256"])
-        else:
+        elif not pages_only:
             require(metadata["source_execution_sha"] == metadata["source_handoff_execution_sha"],
                     "source_receipt_identity")
         figures = []

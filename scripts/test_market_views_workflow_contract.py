@@ -80,7 +80,8 @@ def job(path, name):
 
 
 def gate(block, results, *, selected="64", cancelled=False, plan=None, primary_ready=None, provider_only="false",
-         steps=None, prior_steps_success=True, chart_enabled="true", recovery_kind="mineru-recovery"):
+         steps=None, prior_steps_success=True, chart_enabled="true", recovery_kind="mineru-recovery",
+         recovery_outputs=None):
     expression = re.search(r"(?s)\bif:.*?\$\{\{(.*?)\}\}", block).group(1)
     # GitHub adds success() when an expression has no explicit status function.
     # A continue-on-error step has failure outcome but successful conclusion;
@@ -100,6 +101,8 @@ def gate(block, results, *, selected="64", cancelled=False, plan=None, primary_r
     expression = expression.replace("needs.source-outcome.outputs.primary_ready", repr(primary_ready))
     expression = expression.replace("needs.source-outcome.outputs.provider_only", repr(provider_only))
     expression = expression.replace("needs.recover-market-sources.outputs.source_kind", repr(recovery_kind))
+    expression = re.sub(r"needs\.recover-market-sources\.outputs\.(\w+)",
+                        lambda m: repr((recovery_outputs or {}).get(m[1], '')), expression)
     options = {
         "wechat_draft_upload": "true", "wechat_draft_source": "xhs_notes",
         "translated_report_count": "3", "replay_source_run_id": "",

@@ -174,6 +174,29 @@ Consumers require the exact main/manual producer and both successful source
 reconstruction and archive-readback gates before reading this new handoff.
 Ordinary same-run Daily OCR receipts keep their existing path and contract.
 
+For new scheduled Daily runs, the same page-only contract is automatic when
+MinerU recovery actually failed and OCR was attempted but full synthesis did
+not produce an archived article source. The always-run outcome step exports
+`mineru_recovery_failed`, `ocr_attempted`, and `article_source_ready` using step
+outcomes. The separate `recover-ocr-page-sources` job rejects replay runs and
+primary-ready/zero-source cases, uses the current run's PDF artifact, and
+verifies the exact private durable-cache archive before checking all pages.
+No additional OCR or synthesis requests are made.
+
+This same-run source uses `daily_cache_origin` instead of historical
+`cache_recovery`. It binds the Daily run ID/SHA, selected manifest, checkpoint
+identity and archive SHA/bytes in
+`_private-workflow-handoff/market-ocr-pages-daily/<run_id>/<date_folder>/shard_0.tar.gz`.
+Source consumers require the exact failed upstream recovery job and successful
+page verification/archive gates, then route through the same article delivery,
+WeChat draft readback, public Blog and configured translation workflow. The
+original PDFs remain only in the private validated source package. Reruns reuse
+that source receipt byte-for-byte; missing/partial pages fail before any model
+call. The two origin envelopes are mutually exclusive and cannot be exchanged.
+The old summary pending marker remains untouched, and Market Views PDF delivery
+is still checked independently. The automatic route needs production acceptance
+on an eligible Daily; local tests alone do not establish delivery.
+
 `source_mode=pages` is an independent recovery contract for article generation
 when every original page is cached but a Market Views summary is missing or its
 submission outcome is unknown. It does not call the synthesis builder, OCR,
