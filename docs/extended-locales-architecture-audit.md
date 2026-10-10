@@ -28,7 +28,16 @@
 - [英文 job 114151900663](https://github.com/yt-feng/rpt_edit/actions/runs/38030674044/job/114151900663) 完成后失败：22/24 个页面完成，62 次调用、0 次 Memo 命中；错误各为 `expansion-validation` 1、`offline-quantity-validation` 1，没有预算耗尽。
 - [法语 job 114151900697](https://github.com/yt-feng/rpt_edit/actions/runs/38030674044/job/114151900697) 的候选为 24/24，但 `translation_complete=false`：100 个原文回退单元、104 次使用，原因均为 `offline-quantity-validation`；315 次调用、403 次缓存命中。该候选可恢复和审核，不代表全部内容已译成法语。
 
-本轮尚未取得同一 active release 下全部语言的公共 manifest/assembly、sitemap、最新日期和正文验收证据。因此**当前实际上线语言数与各语种 freshness 待线上验收**；不能把 38 个登记代码、34 个矩阵 job 或单语 24/24 候选写成“38 语种正常上线”。
+## 已正式发布的语言覆盖与时效边界
+
+生产 [38036944110](https://github.com/yt-feng/rpt_edit/actions/runs/38036944110) 在 2026-10-10 09:56:35 UTC 的线上审计通过，发布 ID 为 `c1c0b923210a207614c8d59ad1e12a5c`，与随后读取的 edge state 和下载服务 runtime release 一致。
+
+- 33 个新增非英文语言：首页全部 HTTP 200，每语言两个确定性深页样本全部 HTTP 200。sitemap 页面计数为 `km` 79，其余 32 语言各 33；计数不等于成功翻译单元数量。
+- 既有 `ko/ja/ar`：首页、深页和 sitemap 均 HTTP 200；候选字节、canonical、lang 与路由/资产检查通过。
+- 中文加上述 36 个非中文语言具备已发布页面证据，共 37 个语言/变体；英文当次 `ENGLISH_READY=false`，assembly `ready=false,page_count=0`，不能计作英文评论已上线。
+- 新增语言审计从 sitemap 深页字典序首尾取样，Blog 样本分别为 2026-09-26 与 2026-10-06。它证明已发布 Blog URL 的日期边界到 10 月 6 日，不证明中间每天齐全，也不能证明 10 月 8–9 日中文新增已同步翻译发布。
+
+这次线上证据未给出 active release 每语种的源文回退统计，不能声称全部页面均已完整翻译。后续恢复还须证明新日期进入正式发布、英文评论可读、回退数与旧已发布集合正确；不能把 38 个登记代码、34 个矩阵 job 或单语 24/24 候选写成“38 语种正常且最新”。
 
 ## 本轮修复的确定性失败类别
 
