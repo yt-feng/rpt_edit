@@ -24,10 +24,34 @@ class ResumeWorkflowTests(unittest.TestCase):
         source, recovery = jobs(self.source), jobs(self.recovery)
         shared = {'shadow_review_hold', 'multilingual_approval', 'extended_locales_approval',
                   'english_approval', 'cutover', 'cleanup_multilingual_shadow'}
-        self.assertEqual(set(source), shared | {'prepare_release', 'extended_daily_review', 'english_daily_review'})
+        self.assertEqual(set(source), shared | {'prepare_release', 'extended_daily_review', 'english_daily_review',
+                                              'reject_failed_daily_review'})
         self.assertEqual(set(recovery), shared | {'prepare_release'})
         for job in shared:
-            self.assertEqual(source[job], recovery[job], job)
+            expected = source[job]
+            if job == 'cutover':
+                # Manual recovery has no delegated reviewers. Only remove
+                # their scheduling dependencies; retain all protected approvals
+                # and every deployment, acceptance and rollback byte.
+                expected = expected.replace(', extended_daily_review, english_daily_review]', ']')
+                for reviewer in ('extended_daily_review', 'english_daily_review'):
+                    expected = expected.replace(
+                        f"        (needs.{reviewer}.result == 'success' || needs.{reviewer}.result == 'skipped') &&\n", '')
+            self.assertEqual(expected, recovery[job], job)
+
+    def test_manual_recovery_cannot_inherit_daily_review_cancellation_or_dangling_dependencies(self):
+        for forbidden in ('extended_daily_review', 'english_daily_review', 'reject_failed_daily_review',
+                          'actions: write', "api(path + '/cancel'", 'GH_DISPATCH_TOKEN'):
+            self.assertNotIn(forbidden, self.recovery)
+        for job in ('multilingual_approval', 'extended_locales_approval', 'english_approval'):
+            self.assertIn(f"needs.{job}.result == 'success'", self.recovery)
+        # A future new daily-only condition needs a deliberate adapter; never
+        # silently delete or leave a reference to a job that recovery omits.
+        changed = self.source.replace("        always() &&\n        needs.prepare_release.result == 'success' &&",
+                                      "        always() &&\n        needs.english_daily_review.outputs.extra == 'true' &&\n"
+                                      "        needs.prepare_release.result == 'success' &&")
+        with self.assertRaisesRegex(ValueError, 'Unexpected daily-only dependency'):
+            generate(changed)
 
     def test_no_rebuild_translation_upload_or_schedule(self):
         preparation = self.recovery.split('\n  shadow_review_hold:\n')[0]
