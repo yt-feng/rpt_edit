@@ -1,5 +1,7 @@
 # Automation Pipeline Overview
 
+Last reviewed: 2026-10-10.
+
 This document is the architecture map for the repository's automation system.
 Production PDF parsing uses the **MinerU API from GitHub Actions**. Actions also
 run generation, private R2 handoff, PDF rendering and publication. The scheduled
@@ -20,38 +22,117 @@ The repository automates a document-processing pipeline:
 
 ```mermaid
 flowchart TD
-  A["Dropbox and other PDF sources"] --> B["GitHub Actions: select and bind exact PDF batch"]
-  B --> C["MinerU API: durable submission and original-task polling"]
-  C --> D["Private R2 cache; otherwise strict MinerU HTTPS with known expired-certificate recovery"]
-  C --> M["Explicit cloud recovery: verified transient failure, at most two failed-member child tasks"]
-  M --> D
-  D --> N["Verify full ZIP and source/task binding; immediately persist complete ZIP in private R2"]
-  N --> E["Actions: generate and validate report articles"]
-  E --> F["Private R2: complete report shard handoff"]
-  F --> G["Actions: Market Views synthesis and PDF rendering"]
-  G --> H["Verify exact dated PDF and original figures"]
-  H --> I["Private R2 archive and public-safe PDF commit to main"]
-  I --> J["Live catalogue and dated download acceptance"]
-  B -. "Cloud backup only; retained original PDF artifact" .-> K["Actions original-PDF backup: readable native text and explicitly enabled cloud OCR"]
-  K -. "Complete source context, page and numeric receipts" .-> L["Separate private R2 market-source handoff"]
-  L -. "Verified backup input only" .-> G
+  A["Dropbox and other PDF sources"] --> B["Actions: freeze exact original PDF manifest"]
+  B --> C["MinerU API first: accepted task and durable result cache"]
+  C --> D["Verify complete ZIP, original bytes, page ranges and figures"]
+  D --> E["Generate and validate source-bound report articles"]
+  C -. "Incomplete primary source" .-> R["Resume exact accepted MinerU tasks and recovered segments"]
+  E -. "Incomplete primary article handoff" .-> R
+  R --> V["Verify complete source edition and original run/task identity"]
+  R -. "Actual recovery failure" .-> O["Actions OCR: all original pages and independent provenance"]
+  O --> V
+  V --> Q["Generate only missing recovered articles from full source text"]
+  E --> F["Private R2: verified article handoff and durable receipts"]
+  Q --> F
+  F --> W["WeChat drafts: idempotent upload and exact draft/get readback"]
+  F --> T["Configured Portal translated-report consumers"]
+  W --> H["Sanitized public Blog archive committed to main"]
+  D --> M["Market Views synthesis, PDF validation and dated delivery"]
+  V --> M
+  H --> N["Neutral release: inherited catalog plus additive new sources"]
+  N --> L["Configured locale completeness and exact-candidate approval"]
+  L --> S["Immutable static/runtime release and atomic edge cutover"]
+  S --> U["Live catalog, article bodies and admitted locale acceptance"]
 ```
 
-The solid path is the primary architecture. The dashed path is a cloud backup
-for Market Views, not a replacement for MinerU or a way to mark failed report
-generation successful. OCR is an explicit cloud opt-in: manual recovery uses
-`enable_ocr=true`; daily fallback uses `MARKET_VIEWS_OCR_BACKUP_ENABLED=true`.
-Code defaults remain disabled; the daily repository variable was enabled and
-read back on October 5 at 16:06 UTC after complete October 2–4 backup PDF
-acceptance. October 1 special-page acceptance remains open. Actions installs
-Tesseract English and Simplified Chinese models; the user's computer supplies
-no production OCR service.
-The retained original experiment is archived separately; the current extension
-adds readable-language gates and independent numeric checks. Code, CI, full
-real-report quality review, automatic enablement and dated PDF delivery remain
-separate rollout steps. See
-[Market Views source recovery](market-views-source-recovery.md) for the backup
-limits and incident evidence.
+The regular source order is MinerU, accepted-task recovery, then complete cloud
+OCR only when that recovery fails. Frozen replay retains a separate
+provider-proven, no-new-submission path. The OCR branch now feeds the same
+article, WeChat draft, Blog and configured translation consumers; it is not
+limited to Market Views PDF generation. Its article input is all hash-bound
+page text, never a summary substituted for the original source. MinerU and OCR
+keep distinct text, figure and cache identities.
+
+Source parsing, article generation, draft acceptance, Blog archival, public
+release and locale publication are separate acceptance boundaries. A successful
+PDF, source run or dispatch acknowledgement does not establish the later
+boundaries. Recovery retains private source material until the PDF and
+configured article consumers finish, with article/draft checkpoints retained
+independently. See [WeChat generation and recovery](wechat-pipeline-recovery.md),
+[Blog output contract](blog-seo-wechat-output.md), and
+[Market Views source recovery](market-views-source-recovery.md).
+
+Production parsing, recovery and rendering run in Actions. WeChat API calls run
+on the configured `wechat-draft` runner. The user's computer is not a production
+OCR service. The legacy opt-in native/OCR reconstruction experiments and their
+older feature switches remain historical evidence; they do not describe the
+current complete-OCR-synthesis article path.
+
+## Catalog continuity and release admission
+
+`neutral-edge-cutover.yml` captures the active edge identity and public catalog,
+then `restore_published_catalog.py` reads that release's immutable runtime
+catalog, verifies its manifest/hash, and requires exact equality with the public
+catalog. It inherits published IDs and source-date memberships before the
+Dropbox refresh. Newly inherited available PDFs require exact private-object
+size checks before receiving a synced flag. Existing deletion/archive markers
+remain authoritative. An explicit manual historical release may fill missing
+IDs, but cannot overwrite the active state of an existing ID.
+
+The additive Dropbox scan does not prune old PDFs. Two mandatory retention
+gates check the candidate: after the Chinese static build and after final
+locale/English assembly, before upload. Both reject lost IDs, lost date
+memberships, unavailable formerly available PDFs, or reversed archive state.
+History/search merging keeps exact IDs rather than collapsing distinct records
+solely because their displayed titles match.
+
+Optional Chinese title translation first applies trusted seed/cache entries,
+then prioritizes new sources over older untranslated titles. Its total model
+budget is 180 seconds. Expiry keeps the original title, preserves successful
+checkpoints, and leaves unfinished items uncached so the next refresh can retry.
+This optional enrichment must not indefinitely delay the Chinese catalog.
+
+Eligible publications share the non-cancelling production release lock.
+Ineligible workflow-completion events and disabled schedules use isolated groups
+so they cannot replace a valid queued release. English and extended automatic
+review retain the protected-environment handshake. When an attempted review
+fails, cleanup rejects only that exact run's waiting environment; if rejection
+fails, the independent built-in token may cancel only the same validated
+run/attempt/SHA before cutover starts. Legitimate manual approval waits and
+skipped automatic reviews are preserved; cleanup never approves a candidate.
+
+Locale capability is not locale publication. Chinese, the base locale bundle,
+English commentary and extended locale candidates retain their own readiness,
+source-generation and exact-approval contracts. Only admitted complete
+candidates enter a release. Manual no-rebuild resume reuses the immutable
+candidate and requires fresh protected approval. See
+[locale refresh reliability](locale-refresh-reliability.md),
+[base multilingual architecture](portal-multilingual-architecture.md),
+[extended locale architecture](extended-locales-architecture-audit.md), and
+[immutable runtime data](neutral-runtime-data-versioning.md).
+
+Static files and immutable runtime catalog/rules are uploaded from the same
+candidate. Pre-cutover verification compares manifest identities and file
+hashes/sizes; public acceptance then compares the live and immutable catalogs,
+preview, runtime release identity and configured content routes. Failure after
+cutover rolls back to the captured prior release.
+
+## Current acceptance scope
+
+The 2026-10-10 Chinese publication run `38036944110` passed live acceptance for
+14,760 report IDs, all 40 October 8 and 79 October 9 source items, and both prior
+catalog baselines without ID, availability or date-membership regression.
+Its 118 Chinese Blog articles also passed independent HTTP, canonical and full
+body/reference checks. These are production receipts, not just CI results.
+
+The 118-article cohort comprises source dates 261004, 261008 and 261009.
+It proves normal and recovered MinerU delivery for those cohorts. Real
+OCR-to-draft-to-Blog production acceptance, earlier missing source-date cohorts,
+and publication in every supported locale remain separate work. Source-bound
+OCR fixtures prove full-page consumption, provenance separation and rejection
+of incomplete/altered inputs; they do not replace a real OCR production receipt.
+Use exact original manifests and retained checkpoints to close those gaps,
+without resubmitting successful parses or duplicating accepted drafts.
 
 ## MinerU recovery and acceptance
 
@@ -132,12 +213,16 @@ documented in
 a credential page, or a sibling workflow is not PDF delivery evidence. The
 [one-page cloud smoke test](../.github/workflows/mineru-api-smoke.yml) verifies
 new parsing and complete ZIP content separately. The retained OCR experiment is
-[versioned here](experiments/market-views-ocr-fallback-20261004.md). The opt-in
-cloud implementation requires real OCR regressions with unavailable models
-treated as failure, followed by complete real-source validation and normal
-publication checks before enabling the daily switch.
+[versioned here](experiments/market-views-ocr-fallback-20261004.md). The legacy opt-in
+cloud implementation has its own OCR/source acceptance history. Current
+complete-OCR-synthesis article consumers retain the separate source-binding and
+delivery gates described above.
 
-Current delivery and fallback state, verified on October 5:
+## Historical PDF and provider evidence: October 5
+
+The following observations are dated incident evidence, not current provider
+health, current feature-switch values, or proof of downstream article delivery.
+The current architecture and October 10 acceptance scope are described above.
 
 October 1–4 primary PDFs were generated from complete MinerU results and appear
 in the live catalogue: 63 original aliases (62 unique contents), 50 originals,

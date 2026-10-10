@@ -159,20 +159,33 @@ class RecoveredChartTests(unittest.TestCase):
         root = WORKFLOW.parents[2]
         with tempfile.TemporaryDirectory() as temp:
             checkout = Path(temp) / 'checkout'
+            checkout.mkdir()
 
             def git(*args, **kwargs):
-                result = subprocess.run(['git', *args], capture_output=True, text=True, timeout=60, **kwargs)
+                result = subprocess.run(['git', '-C', str(checkout), *args],
+                                        capture_output=True, text=True, timeout=60, **kwargs)
                 self.assertEqual(result.returncode, 0, result.stderr)
 
-            # Local object sharing keeps this an offline test. Applying the real
-            # workflow patterns prevents a full developer checkout hiding a
-            # missing generation prompt or another recovery-fixture dependency.
-            git('clone', '--shared', '--no-checkout', '--quiet', str(root), str(checkout))
-            git('-C', str(checkout), 'sparse-checkout', 'set', '--no-cone', '--stdin', input=patterns + '\n')
-            git('-C', str(checkout), 'checkout', '--detach', '--quiet', 'HEAD')
+            # Actions can expose a partial/promisor repository whose other blobs
+            # are unavailable offline. Build a small independent Git fixture from
+            # the actual checked-out dependencies; never clone its object store.
+            shutil.copytree(root / 'scripts', checkout / 'scripts',
+                            ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
+            for relative in (WORKFLOW.relative_to(root), DAILY_WORKFLOW.relative_to(root),
+                             Path('prompts/wechat_report_article_prompt.md')):
+                target = checkout / relative
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(root / relative, target)
+            git('init', '--quiet')
+            git('add', '--all')
+            git('-c', 'user.name=Chart fixture', '-c', 'user.email=chart-fixture@example.invalid',
+                '-c', 'commit.gpgsign=false', 'commit', '--quiet', '-m', 'Checked-out chart dependencies')
+            # Applying the real workflow patterns still catches a missing prompt
+            # declaration even when the developer checkout contains that file.
+            git('sparse-checkout', 'set', '--no-cone', '--stdin', input=patterns + '\n')
+            git('checkout', '--detach', '--quiet', 'HEAD')
             fixture_test = Path(__file__).relative_to(root)
             self.assertTrue((checkout / fixture_test).is_file())
-            (checkout / fixture_test).write_bytes(Path(__file__).read_bytes())
             selected = [
                 'RecoveredChartTests.test_real_complete_source_receipt_and_images_survive_materialization',
                 'RecoveredChartTests.test_real_receipt_wrong_manifest_run_date_or_missing_receipt_are_rejected',

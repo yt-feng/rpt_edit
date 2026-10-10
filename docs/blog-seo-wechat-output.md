@@ -1,6 +1,6 @@
 # Blog SEO and WeChat Output Contract
 
-Last updated: 2026-08-10
+Last updated: 2026-10-10
 
 This document records the public Blog title contract and the private-runtime
 boundary used by WeChat publishing.
@@ -29,6 +29,57 @@ retry helper, allowing concurrent source jobs to preserve one another's
 shards. A missed day can be recovered by rerunning its source workflow or by
 materializing its retained draft payload and running the archive updater;
 rebuilding the edge release never deletes older archive shards.
+
+### MinerU and OCR provenance through delivery
+
+Normal Daily processing prefers MinerU. If article shards are incomplete, the
+workflow first resumes accepted MinerU tasks and verified durable results; an
+actual recovery failure enables the ordinary OCR backup. Both verified source
+editions enter `recover-report-article-delivery.yml`, which generates only
+missing source-bound articles and then uses the same WeChat upload and public
+archive contracts. The OCR input is complete, hash-bound page text, not an
+already synthesized Market Views summary. OCR text, reconstructed figures and
+translation caches keep their own provenance namespace.
+
+The private handoff binds the original run and execution SHA, recovery run and
+SHA, selected manifest, source bytes and expected report count. Generated
+articles and accepted draft groups have additional body and group identities.
+Public Blog records keep only the sanitized publication fields and safe
+discovery provenance; original PDFs, raw OCR/MinerU output, provider responses,
+private handoff locations and draft media IDs do not cross that boundary.
+
+The recovery receipt accounts for all sources as accepted articles or explicit
+title-policy exclusions. Body-generation failures are errors, not exclusions.
+Accepted drafts must pass remote count/title/editorial-footer readback before
+their payloads enter the archive. Retrying a website release reuses the archive
+and publication request rather than repeating draft creation.
+
+### What establishes public acceptance
+
+After a recovered archive commit, the publication watcher stores a request
+containing only public slugs and content hashes. It accepts a successful main
+release only when that release contains the archive commit and every requested
+live article has its exact canonical URL and complete body/reference digest.
+Leading title normalization is allowed by the shared renderer; the remaining
+body and final source footer stay inside the digest. Publication state survives
+reruns, and a superseded queued release is followed only when its successor
+contains the same archive commit.
+
+The normal primary upload requests an incremental refresh after its archive
+commit. A dispatch acknowledgement or green source run is not proof that Blog
+pages are live. The final cutover must also pass its immutable runtime/static
+binding and public acceptance. The catalog inherits the active published
+catalog before the additive source scan, verifies inherited IDs before upload,
+and switches the runtime and static catalog atomically.
+
+For the 2026-10-10 verification, release run `38036944110` was independently
+checked against all 118 accepted Chinese articles from source cohorts 261004,
+261008 and 261009. HTTP status, canonical URL and complete body/reference hashes
+matched for 118/118; the edge identity stayed unchanged across the check. This
+is Chinese article acceptance. It does not establish real OCR fallback delivery,
+missing historical cohorts, or all supported language publications. Track those
+as separate source/locale receipts; see
+[WeChat generation and recovery](wechat-pipeline-recovery.md).
 
 ## Public Blog title contract
 

@@ -3,10 +3,12 @@ import copy
 import json
 from pathlib import Path
 import tempfile
+import time
 import unittest
 from unittest import mock
 
 from offline_translation import TranslationBudgetExceeded
+from build_portal_extended_locales import Memo
 from portal_english_commentary import (build, extract_editorial, freeze_editorial, make_source, put_source,
                                       PREFIX, POLICY)
 from portal_english_pipeline import (batch_admission, content_key, followup_needed, pending_docs,
@@ -64,6 +66,14 @@ class EnglishPipelineTests(unittest.TestCase):
         translator.translate = lambda value, *a, **kw: 'A' * 600 if value == TITLE else original(value, *a, **kw)
         manifest = build(source, directory, checkpoint, translator)
         self.assertEqual(manifest['status'], 'incomplete-candidate')
+        # Historic producer versions saved a generic-valid title before the
+        # stricter English size gate rejected it. Keep that real old storage
+        # shape in the read-only inspection fixture; current build must not
+        # create this poisoned row anymore.
+        memo = Memo(checkpoint, 'en', translator, time.monotonic()+30, source_generation=source['generation'])
+        memo.get(TITLE)
+        manifest['failures'][0]['code'] = 'expansion-validation'
+        (directory/'candidate-manifest.json').write_bytes(stable_bytes(manifest))
         saved_checkpoint = remember_checkpoint(self.store, source['generation'], checkpoint)
         candidate = persist_candidate(self.store, self.original, source, directory, CPU_PRODUCER)
         return source, saved_checkpoint, candidate, manifest
@@ -235,13 +245,15 @@ class EnglishPipelineTests(unittest.TestCase):
                 '--checkpoint', str(self.root/'failed-checkpoint.json')]
         environment = {'GITHUB_ACTIONS': 'true', 'RUNNER_OS': 'Linux',
                        'GITHUB_REF': 'refs/heads/main', 'KC_PUBLIC_REPOSITORY': 'true'}
+        translator = SyntheticTranslator(); original = translator.translate
+        translator.translate = lambda value, *a, **kw: 'A' * 600 if value == TITLE else original(value, *a, **kw)
         with mock.patch.dict('os.environ', environment), mock.patch('sys.argv', args), \
-             mock.patch.object(english, 'OfflineTranslator', return_value=SyntheticTranslator()), \
+             mock.patch.object(english, 'OfflineTranslator', return_value=translator), \
              mock.patch('builtins.print') as printed:
             self.assertEqual(english.main(), 1)
         summary = json.loads(printed.call_args.args[0])
         self.assertEqual(summary['status'], 'incomplete-candidate')
-        self.assertEqual(summary['failure_code_counts'], {'expansion-validation': 1})
+        self.assertEqual(summary['failure_code_counts'], {'english-size-validation': 1})
         self.assertFalse(summary['budget_exhausted'])
         self.assertNotIn(TITLE, printed.call_args.args[0]); self.assertNotIn(COMMENT, printed.call_args.args[0])
 

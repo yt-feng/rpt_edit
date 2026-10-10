@@ -173,17 +173,24 @@ class Memo:
             parts.append('markdown')
         return digest(stable_bytes(parts))
 
-    def get(self, source: str, language: str = 'zh', *, markdown: bool = False) -> str:
+    def get(self, source: str, language: str = 'zh', *, markdown: bool = False, validate_result=None) -> str:
         if not source.strip(): return source
         key = self.key(source, language, markdown=markdown)
         row = self.rows.get(key, self.seed_rows.get(key))
         if isinstance(row, dict) and row.get('source') == source and row.get('language') == language:
             try:
                 validate_text(source, row.get('text'), self.locale, language, quantity_validator=self.quantity_validator)
+                if validate_result is not None: validate_result(row['text'])
                 self.hits += 1
                 self.rows[key] = row
                 return row['text']
-            except ExpansionError: self.rows.pop(key, None)
+            except ExpansionError:
+                self.rows.pop(key, None)
+                # A stricter caller contract can reject a row accepted by the
+                # shared model adapter. Evict that exact adapter unit as well,
+                # so resuming cannot immediately return the same bad text.
+                discard = getattr(self.translator, 'discard_translation', None)
+                if callable(discard): discard(source, self.locale, language, markdown=markdown)
         fallback = self.source_fallbacks.get(key, self.seed_fallbacks.get(key))
         if (self.allow_source_fallback and isinstance(fallback, dict)
             and fallback.get('source') == source and fallback.get('language') == language
@@ -199,6 +206,7 @@ class Memo:
             self.calls += 1
             translated = self.translator.translate(source, target=self.locale, source=language, markdown=markdown)
             validate_text(source, translated, self.locale, language, quantity_validator=self.quantity_validator)
+            if validate_result is not None: validate_result(translated)
         except (OfflineTranslationValidationError, ExpansionError) as error:
             discard = getattr(self.translator, 'discard_translation', None)
             if callable(discard): discard(source, self.locale, language, markdown=markdown)

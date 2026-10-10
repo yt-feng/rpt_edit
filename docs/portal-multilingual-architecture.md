@@ -1,27 +1,138 @@
-# KC 桌面韩文、日文与阿拉伯文站点架构
+# KC 桌面多语言生成与发布架构
 
-## 文档状态与发布边界
+本文以 2026-10-10 核对的默认分支为准，取代早期 DeepSeek/DeepL 主翻译及“全历史镜像”设计描述。实现入口和当前事故证据分别见下文与[多语言架构核对记录](extended-locales-architecture-audit.md)。配置支持、候选生成、译文覆盖、正式发布和线上可读是不同状态。
 
-### 2026-09-05 更新：一个月预翻译，云端分批发布
+## 语言与产品范围
 
-本节覆盖下文旧版“全历史镜像”的范围描述。当前授权历史窗口固定为 **2026-08-05（含）至 2026-09-05（不含）**；2026-09-05 起新增公开内容持续增量翻译。不滚动删除已经发布的旧 URL。
+语言登记来自 [`portal_extended_locales.py`](../scripts/portal_extended_locales.py) 和固定离线模型适配器，共 **38 个语言/变体代码**：
 
-- 首次在 GitHub Actions 一次预翻译上述整月正文、元数据和完整 UI，复用既有成功缓存；超过窗口的历史正文不再付费补译，旧缓存不删除。DeepSeek 为主，DeepL 只补少量遗漏；两者都有调用/额度停止记录。
-- 翻译与发布分开。首批最多 100 个历史内容 canonical，之后每天（北京时间）最多新增 100 个，Blog/报告交替、各类别内部从新到旧。三种语言对应最多 300 个 URL；新增内容不占历史批次额度。
-- 日批次由**当前线上不可变发布包**的 `data/i18n/history-release.json` 推进。影子候选、CI 缓存、失败尝试不推进生产账本；同日重跑幂等，错过数日也只加一批，不集中补放。`PORTAL_MULTILINGUAL_HISTORY_PAUSED=true` 可暂停历史扩展，保留已发布页和正常新增内容。
-- 尚未发布及窗口外的外语详情路径只返回明确 `noindex,follow` 的本地化提示页；不出现在外语 sitemap、hreflang、RSS、AI 发现清单和可见内容卡片里。已有中文正文/目录/URL 不删除、不过滤。全部正文译文先存在缓存，并不因为翻译完成就全部开放收录。
-- 公开列表、结构化数据及动态目录按已发布批次一致过滤；无可用内容的分页/专题页不加入 sitemap。保留原文发布日期，不通过改日期或重复造 URL 表现为新内容。
-- 沿用现有 GitHub 发布 schedule，不创建本地定时任务。后续历史批次只读取已完成译文；仅新的或源文确有变化的文字才付费翻译。Action 摘要及生产账本记录当批 URL、累计页数、剩余页数；翻译诊断记录字符数、调用数与用量。
+| 类型 | 代码 | 当前生成范围 |
+| --- | --- | --- |
+| 中文源站 | `zh` | 既有根站、报告目录、Blog、图表与应用 |
+| 既有应用镜像 | `ko`, `ja`, `ar` | 公开页面、UI 和按需加载的本地化数据覆盖层 |
+| 新增静态阅读页 | `fr`, `pt`, `es`, `tr`, `ru`, `th`, `it`, `de`, `vi`, `ms`, `id`, `tl`, `hi`, `zh-Hant`, `pl`, `cs`, `nl`, `km`, `my`, `fa`, `gu`, `ur`, `te`, `mr`, `he`, `bn`, `ta`, `uk`, `bo`, `kk`, `mn`, `ug`, `yue` | 33 个目标；新增公开详情页的静态阅读版本，保留源页身份 |
+| 英文二次评论 | `en` | 仅中文自有 Blog 中明确标记的 KC/编辑评论；公开标题与预览，完整评论由会员接口读取 |
 
-预翻译、CI 成功和影子验收不等于正式激活；仍需完成中文对比、真实正文和 RTL 验收，再切换生产。翻译/分批提交本身不保证搜索收录、排名或 AI 引用，效果需按语种查看实际曝光与点击。
+2026-10-10 的正式发布取证已验证中文、`ko/ja/ar` 和 33 个新增非英文语言的页面；英文当次 assembly 未就绪。新增语言已发布 Blog 的审计边界到 10 月 6 日，并非全部内容已经追平中文。具体发布 ID、页数与验收限制见[核对记录](extended-locales-architecture-audit.md)。
 
-本文定义 KC 桌面多语言站点的实现架构、内容边界、生成门禁和上线顺序。代码和离线构建可以完成，但在远端同步、正式翻译、视觉验收和线上验证完成前仍不可发布。
+`all-supported` 指 33 个新增阅读页目标，不包含英文，也不重复调度 `ko/ja/ar`。英文有独立 source、checkpoint、candidate、ready queue 和发布账本；启用后每日 CPU 矩阵最多有 34 个 job。38 是登记数量，不能用作已上线语言数量。
 
-- 远端 `main` 是唯一正式基线。开始实现、合并或发布前，必须重新确认远端 `main`，并从该基线重放多语言改动。
-- 当前分支、隔离工作树、未提交文件、测试产物和影子构建都不是正式基线，也不是发布证据。
-- 当前状态不可发布：在三种语言都具备完整翻译清单、构建产物、自动化验证、影子站验收和明确激活步骤之前，不得把 locale 路由接入正式流量。
-- 本方案不改变中文根站的既有公开 UI、正文和路由语义。根站仍是当前中文站；新增语言仅使用独立前缀。
-- 发布结论必须分别说明代码、翻译覆盖、静态产物、部署、激活和线上验证，不能以其中一项代替全部完成。
+英文不复制原始研报、中文全文、图表、报告下载入口或完整阅读镜像。未标记评论的 Blog 不进入英文源。新增 33 个语言也不复制 33 套会员应用；原报告、图表及权限相关操作返回既有源站服务。
+
+## 端到端流程
+
+```mermaid
+flowchart TD
+    Z[中文公开内容与目录] --> N[Neutral edge catalog refresh]
+    N --> L[ko / ja / ar 构建与旧发布继承]
+    N --> S[Extended locale source admission]
+    S --> R[私有 R2 固定源和跨日待办]
+    R --> C[Extended locales private R2 pipeline]
+    C --> X[33 语言阅读候选]
+    C --> E[英文纯评论候选]
+    X --> H[完整候选 handoff]
+    E --> H
+    H --> P[Neutral edge 未激活目录组装]
+    L --> P
+    P --> V[源身份 / 预览 / 发布树审核]
+    V --> A[原子切换正式发布]
+    A --> O[线上页面 / 目录 / API 验收]
+```
+
+主要入口：
+
+- [`neutral-edge-cutover.yml`](../.github/workflows/neutral-edge-cutover.yml)：中文与既有镜像构建；继承已发布新增语言和英文；恢复指定候选；生成不可变发布目录，审核后切换。
+- [`portal-extended-locales-source.yml`](../.github/workflows/portal-extended-locales-source.yml)：默认分支的 `Neutral edge catalog refresh` 成功后冻结当天新增来源。其独立互斥组不被长时间 CPU 翻译阻塞。
+- [`portal-extended-locales-r2.yml`](../.github/workflows/portal-extended-locales-r2.yml)：来源 admission 成功后消费私有队列；执行模型、保存进度、产生 handoff 和有进展时的后续批次。
+- [`portal_extended_daily_queue.py`](../scripts/portal_extended_daily_queue.py)、[`portal_english_pipeline.py`](../scripts/portal_english_pipeline.py)：跨日来源、候选、完成记录和队列的身份边界。
+
+所有自动入口核对受信任的默认分支成功事件。手工恢复仍必须指定真实 source/candidate 身份，不能用本地生成物替代云端发布证据。
+
+## 源与增量身份
+
+新增语言自 2026-09-25 起只接收北京时间当天首次发现并通过日期校验的公开详情页。单批最多 24 个网站页面，不是 PDF 页数；不足 24 页可以正常处理。首页、About、机构/主题目录和历史推荐列表不作为新增详情批次。
+
+发表日期读取当前 canonical 对应的 `Article`/`BlogPosting`/`Report` 实体。仅修改 sitemap `lastmod`、收录目录或抓取时间不会变成新文章；未知日期不猜测。源 HTML SHA、canonical、内容摘要与 generation 一起绑定。英文只从同一次已接纳抓取中的明确评论区域提取，不能日后扩大到原文或补抓历史正文。
+
+已经成功 admission 的当天新增在私有 R2 队列保留，即使翻译跨到下一天也继续原 generation。新一天不覆盖旧待办。每个语言的完成记录独立；已完成部分不重新推理。续跑只在持久化页数取得进展时自动安排下一批，重复的确定性失败不会无限自我调度。
+
+## 模型、预算和可恢复缓存
+
+当前两条生成路径使用固定 **Hy-MT2 离线模型与公共 Linux CPU runner**；本流程没有付费翻译兜底。既有 `ko/ja/ar` 使用 [`build_portal_locales.py`](../scripts/build_portal_locales.py)，新增阅读页使用 [`build_portal_extended_locales.py`](../scripts/build_portal_extended_locales.py)，英文使用 [`portal_english_commentary.py`](../scripts/portal_english_commentary.py)。
+
+- 新增语言 CPU workflow 使用全局互斥组 `extended-locales-r2-pipeline`，`cancel-in-progress: false`，单次矩阵 `max-parallel: 2`。第二个 workflow 等待前一个持有者结束；不能由总状态 `queued` 推断前一个矩阵没有正在运行的 job。
+- 每个新增语言默认预算 14,400 秒，上限也是 14,400 秒，job 最长 270 分钟，预留模型初始化及 checkpoint 上传时间。期限传入底层模型调用，不能在预算结束后再启动长重试。
+- 既有镜像在 Neutral 构建中使用独立的短探针和 600 秒增量预算，恢复已有缓存，并显式允许源文回退；它不等待 33 个新增语言矩阵结束。
+- checkpoint 精确绑定模型、目标语、源语言与源文本；当前 generation 与跨代 seed 都要重新校验。只把本次实际用到的合法 seed 单元写入新 checkpoint，不能把未用到的历史内容全量搬入。
+- 内容校验失败只处理对应单元。已验证单元可跨失败恢复；损坏身份、存储权限和读回摘要错误仍明确失败。
+
+模型输出必须通过数量、金额/百分比、占位符、表格边界、目标文字、内容长度和源语言残留等门禁。命名活动的数字表达只能按明确等价规则识别；不能忽略译文任意多出的数字，也不修改坏输出后冒充模型验收成功。
+
+### 当前并发与恢复限制
+
+`cancel-in-progress: false` 保留正在执行的 workflow，但同互斥组的新运行仍可能替换已有 pending。`english-resume` 也使用这个全局组：手工加入它可能替换待执行的 `all-supported` 运行；若英文没有取得完整页面进展，或本次已经清空英文待办，现有 followup 不一定补回全部语言的唤醒。私有 R2 admission 不会因此消失，但其他语言可能等待下一次来源事件。
+
+不要为了插入修复随意取消 active 矩阵。source 阶段已为所有选中语言登记 `started`，即使对应 job 尚未开始；取消或中断可能留下没有完整持久化结果的 `started/claimed`。后续会将该语言列为 stopped；另一 run/attempt 不能直接接管原 owner，现有 legacy intent 也不能重置已注册 generation。必须先核对准确 owner、checkpoint、candidate 和终态，不能把取消后重新运行当成通用恢复。
+
+本轮保全全部语言范围的恢复入口是：修复合入后，从 **`main` 手工运行 `operation=candidate`、`locales=all-supported`，`source_generation` 与 `continuation_evidence` 留空**。普通 source 会继续已有合法待办并自动加入独立英文评论队列；不额外启动第三个 CPU，不取消 active。它仍须通过实际模型、候选与发布审核，不能保证每次都完成或自动解决已 stopped 的任务。精确只读 inspection 使用独立互斥组，可先检查英文证据而不替换翻译队列。
+
+目前两条 publication handoff 都等待整个 locale 矩阵完成，已完成的单语候选也要等待其他 job。将矩阵改成有上限的小批语言并持久化公平轮转（bounded waves）是待改善方案，当前尚未实现；本轮没有提高 `max-parallel`、拆出独立英文 CPU 或改变调度代码。
+
+## 原文回退与英文严格模式
+
+非英文阅读页的生产参数允许原文回退：被拒绝的模型响应丢弃，对应字段精确保留来源原文，并将记录单独写入 `source_fallbacks`。它不是合法译文，不混入 `rows`。重复字段和后续恢复可复用同一回退记录，避免对同一个确定性失败反复消耗 CPU。
+
+`complete-candidate` 只说明本批页面与必需字段齐全。必须同时报告：
+
+- `translation_complete`：是否没有原文回退；
+- `source_fallback_unit_count`：回退的唯一单元数；
+- `source_fallback_occurrences`：页面中实际出现次数；
+- `translation_policy` 与固定错误码计数。
+
+英文始终不允许源文回退。英文评论校验必须在 Memo 写入和复用之前执行，包括无中文/日文/韩文残留、无原文/图片/URL 嵌入、标题及正文长度限制。遇到旧版本已保存的无效单元，只清理该精确单元的 Memo/模型缓存后重新生成，其余合法进度继续复用。诊断输出固定的 `english-language-validation`、`english-asset-validation`、`english-size-validation` 等类别，不输出评论正文。
+
+## 发布、继承与审核
+
+候选和正式发布是两个阶段。完整候选在私有 R2 保存；候选公开投影保持 `noindex`。非英文自动 handoff 同时要求语言处于 `PORTAL_EXTENDED_AUTO_PUBLISH_LOCALES` 且已经在 active release 获准上线。首次启用一个新语言仍走明确的候选组装与审核。英文自动 handoff 由 `PORTAL_ENGLISH_AUTO_PUBLISH` 控制，完整候选与独立 ready queue 是前提。
+
+Neutral 的组装器从已验证的 active release 继承旧集合，再加入本次候选：
+
+- 非英文由 [`portal_extended_publication.py`](../scripts/portal_extended_publication.py) 和 [`restore_assemble_portal_extended_r2.py`](../scripts/restore_assemble_portal_extended_r2.py) 保留已批准批次、源身份与公共路径，避免普通中文刷新清空旧语言。
+- 英文由 [`portal_english_publication.py`](../scripts/portal_english_publication.py) 验证私有完整评论及发布账本，并仅向公共 HTML 投影允许的标题、预览、日期和稳定 URL。完整正文不进入公开 JSON、搜索、HTML 或诊断 artifact。
+- 英文审核逐字节重建预览投影。资源版本来自**实际候选目录的资产 SHA**，审核 job 使用固定发布 manifest 的同一 SHA，并有界读回全部 7 项资产校验长度和内容 SHA；不能取尚未物化部署配置的源码 `app.js` hash，否则合法预览也会误判不一致。
+- `extended_daily_review` / `english_daily_review` 校验身份、候选/账本集合与目录；随后才允许正常切换。发布失败继续服务上一版本。
+
+这些开关只代表配置，不能代替实际 run 和 active release 证据。正式验收必须从同一发布身份读取 manifest、sitemap、真实页面和受控正文接口，并检查已发布内容未被后续中文刷新丢弃。
+
+## 路由、数据与 SEO 契约
+
+中文保留根路径；既有镜像使用 `/ko/`、`/ja/`、`/ar/`。报告 ID、Blog ID、机构和专题 slug 不因翻译改写。新增阅读页沿用对应 locale 前缀及稳定源内容身份；英文是 `/en/` 和 `/en/blog/{id}.html`。
+
+不按 IP、浏览器语言或地理位置自动重定向。同一 URL 返回固定语言内容。简体中文浏览器环境不插入多语言选择器；公开 canonical、sitemap 和搜索可发现性仍正常。直接打开语言路径也不改变正文。
+
+既有镜像共用应用布局与原始索引，仅为可见公开字段生成 locale 数据覆盖层。首页先加载 preview，完整 catalog 及标题 overlay 在明确查询、筛选或翻页后加载；详情按当前 shard 加载小型覆盖层。原始 PDF、会员私有内容及完整原文搜索索引不复制为 38 套译文。查询层必须保留 IME、RTL 和源语言文档标注。
+
+每个已发布、可索引页面使用自 canonical；hreflang 只列实际存在且互惠的版本。缺失、未完成、`noindex` 或退役页面不得虚构 alternate。`yue` 保留其合法页面语言代码，但不进入 Google 不支持的 hreflang 映射。阿语等从右到左语言须设置对应 `dir`，金额、ticker、URL 等保持双向文本可读。
+
+既有镜像的历史 cohort 由 active release 的 `data/i18n/history-release.json` 推进，候选、失败尝试和普通缓存不能推进已发布账本；暂停历史扩展不能删除已经发布的 URL。新增 33 语言的“当天新增 admission”是另一套范围，不能拿它重启全历史翻译。
+
+sitemap、RSS、JSON-LD、机器发现文件只描述实际公开集合。保留原发布日期；归档日期、抓取时间、模板修改或翻译日期不冒充出版日期。`Report.inLanguage` 描述原报告语言，页面 locale 描述页面语言，两者分开。不得以 SEO/GEO 为由新增来源没有的事实、结论或引用。
+
+## 检查与运维证据
+
+恢复按同一份来源 → 单元/页面 checkpoint → candidate → handoff → prepared release → active release 逐层核对。最小验收包含：
+
+1. 来源当天新增数量、各语种 admitted/selected/remaining 数量和固定身份；
+2. 每语种完成页数、预算、回退数、失败类别；不以一个兄弟 job 绿色代替整个矩阵；
+3. 默认分支提交与真实 cloud run，候选 SHA 和发布审核成功；
+4. 当前线上发布 ID、实际语言集合、各语种最新日期与页面计数；
+5. 旧已发布 URL/账本持续保留、正文与访问权限正确。
+
+私有 source、checkpoint、ledger、正文留在私有 R2。公开仓库和 Actions 日志只保存代码、合成测试、固定错误枚举、计数、哈希及运行链接；不复制源标题、评论、原始模型响应、令牌或访问凭据。相关回归集中在 `test_portal_extended*.py`、`test_portal_english*.py` 和固定模型/数量校验测试中。
+
+## 既有镜像详细契约
+
+下列原有详细约束继续保留。它们主要适用于 `ko/ja/ar` 应用镜像；新增阅读页与英文的范围、离线 provider、显式回退和私有评论边界以前文为准。阶段标题是发布检查清单，不代表站点当前尚未激活。
 
 ## 不可破坏的产品契约
 
@@ -59,9 +170,9 @@
 - 即使简体中文用户知道并直接打开 `/ja/`、`/ko/` 或 `/ar/`，页面仍正常返回、访问和索引，只是不渲染语言选择器。
 - 不对 crawler、简体中文用户和其他用户返回不同的主体内容，避免形成 cloaking。
 
-## “全量翻译”的范围
+## 既有镜像的完整公开展示范围
 
-全量是“全部公开网站展示内容”的 100% 覆盖，而不是对所有被站点索引、存储或有权访问的材料做全文翻译。
+这里的完整范围是既有 `ko/ja/ar` 镜像中需要登记和处理的公开展示字段，不是翻译所有被索引、存储或有权访问的材料。字段齐全与译文齐全分别验收；生产允许的原文回退必须单独登记，不能计入成功译文。新增 33 语言和英文遵循前文各自的范围。
 
 必须翻译：
 
@@ -81,70 +192,6 @@
 搜索索引中的截断字段可以在确实会公开展示时作为独立展示字段翻译，但不能据此把对应原始文章、PDF 或研报标记为全文完成。翻译覆盖清单必须从权威公开渲染源生成，而不是从搜索 shard 的片段长度推断。
 
 机构法定名称、证券代码、ticker、报告 ID、URL、邮箱、数字和模板变量默认保留；需要本地化的机构别名另行进入受控术语表。阿拉伯文采用现代标准阿拉伯语，不自动假定某个国家方言。
-
-## 翻译数据模型与 DeepSeek 管线
-
-### 分段与覆盖清单
-
-每个可翻译 segment 必须有稳定身份，至少记录：
-
-- `content_id` 和 `content_type`
-- `source_field`
-- `source_hash`
-- `target_locale`
-- `prompt_version` 和 `glossary_version`
-- `translated_hash`
-- `status`
-- `translated_at`
-
-构建前先从全部公开页面来源生成 expected segment 清单，再与每种语言的 completed segment 清单做精确比较。只有以下条件同时满足时，该语言快照才是 complete：
-
-1. `expected_count == completed_count`；
-2. expected ID 集合与 completed ID 集合完全相同；
-3. 所有 `source_hash`、prompt 和术语表版本相符；
-4. 没有空字符串、中文 fallback、截断响应、未保护模板或无效 HTML；韩文正文必须含 Hangul，阿拉伯文必须含 Arabic script，日文必须含 kana 或发生合理变化的汉字表达；
-5. 页面级必需字段全部存在。
-
-覆盖率必须是 100%。99.9% 也不得激活新快照。`coverage=1` 只统计通过占位符、目标语脚本、目标语占比及源文残留检查的当前 inventory 条目；在原文前添加“韩文/日文/阿拉伯文翻译”等短前缀、随后保留整段英文或中文的结果必须拒绝。机构法定名称字段可以原样保留，URL、数字、ticker 和受保护的英文品牌 token 不参与语言占比计算。当前发布链使用一个不可变候选包承载中文和三种 locale；任何翻译失败都会终止该次候选发布，线上继续服务上一份完整发布，中文站不会被半成品覆盖。相应地，该次中文内容更新也会推迟到三种语言全部完成后的下一次成功切换。
-
-### 缓存与增量
-
-缓存键由标准化源文本哈希、目标语言、prompt 版本和术语表版本组成。源文本及翻译规则都未变化时必须零调用复用缓存；只有新增或发生变化的 segment 才调用 DeepSeek。
-
-每次写出 cache 前必须按当次权威公开 inventory 做精确裁剪，并重新验证所有复用项；撤稿、过期、已转私有、源 hash 不同或未通过当前质量门的 key 都不得写入候选 cache。当前过渡实现仍把这份 gzip 作为 release-visible build contract，同时使用 GitHub Actions 私有 cache 作为可恢复 checkpoint，因此 gzip 只能含本次仍公开的 presentation units，不能含历史墓碑、私有全文或会员内容。彻底迁移时应把持久副本放到发布前缀之外的私有 R2 key，并同时移除公开 active-release 冷启动回退；在这两部分原子完成前，不宣称 cache 已私有化。
-
-每日新增内容流程为：
-
-1. 完成公开内容摄取和稳定 ID 分配；
-2. 生成各 locale 的增量 segment 清单；
-3. 从哈希缓存复用未变化结果；
-4. 翻译新增或变化内容；
-5. 执行格式、占位符、术语和覆盖率验证；
-6. 生成包含中文和三种 locale 的新候选快照；
-7. 验证全部语言后一次性切换现有发布指针。
-
-该流程应运行在受控的云端 CI 中，可由内容更新事件触发并每天至少补跑一次；不依赖个人电脑上的常驻任务。
-
-### 并发和失败处理
-
-本发布链把 DeepSeek 并发 `500` 设为项目级硬上限，不是必须达到的目标，也不据此推断账户实际配额。当前默认 worker 为 32；即使所选模型的服务端额度更高，也不突破这一上限。
-
-- 实际 worker 数必须可配置且永远不超过 500。
-- 对 `429`、`Retry-After`、超时和临时 5xx 使用有界重试、指数退避和随机抖动。
-- 发生限流时降低有效并发，不通过启动额外进程绕过上限。
-- 请求必须有批次 ID 和 segment ID，但不得把正文写入日志。
-- 中断时按已验证 segment checkpoint；重跑只补缺失项。
-- 解析失败、占位符破坏、HTML 结构变化或内容被截断都视为未完成，不得静默采用源语言。
-
-现有 `scripts/translate_portal_titles.py` 只覆盖标题到 `title_zh` 的旧用途，不能作为多语言全量完成证据。新管线应复用 `scripts/deepseek_http.py` 的有界重试和 key fallback 能力，并由 locale manifest 提供严格门禁。
-
-### Secrets 与最小化日志
-
-- API key 只从 CI Secret 注入，不进入仓库、构建产物、缓存键、命令回显或 Actions artifact。
-- 不记录请求正文、翻译正文、原始 PDF 内容、会员内容或 DeepSeek 完整响应。
-- 日志仅记录批次 ID、segment ID 或哈希、locale、计数、耗时、HTTP 状态族、重试次数和错误类型。
-- 可发布的本地化页面和翻译资源必然包含公开展示文案；“不记录正文”指运行日志、诊断 artifact 和遥测不复制这些正文。
-- 私有或会员内容不得进入翻译 inventory，因此也不得发送给 DeepSeek。
 
 ## 静态站与运行时架构
 
@@ -169,13 +216,13 @@ locale 首页首屏只加载现有 preview 数据。完整 catalog 与标题 ove
 
 发布门对首屏 locale CSS/JS 和各类运行时 JSON 分别设置体积上限：preview 512 KB、单个详情 shard overlay 512 KB、完整标题 overlay 8 MB、图表 overlay 32 MB、Hot Reports overlay 6 MB、课程数据 2 MB。首页不等待后四类文件；完整目录构建索引时按小批次让出主线程，失败后保留 preview 并允许用户意图触发有冷却时间的重试。
 
-locale 搜索覆盖公开 catalog、标题、图表和 Hot Reports 的本地化字段。原始报告全文/PDF 不发送给 DeepSeek，也不复制三份；涉及该共享索引的选项必须明确标注为“源语言文档文本”，不能暗示支持目标语言全文检索。
+locale 搜索覆盖公开 catalog、标题、图表和 Hot Reports 的本地化字段。原始报告全文/PDF 不发送给翻译模型，也不复制三份；涉及该共享索引的选项必须明确标注为“源语言文档文本”，不能暗示支持目标语言全文检索。
 
-## SEO 与 GEO 契约
+## 既有镜像的 SEO 与 GEO 详细契约
 
 ### 全量预翻译、分批索引
 
-“已翻译”和“允许首批索引”是两个独立状态。每次 locale 构建仍扫描、翻译并静态生成全部公开 HTML；报告搜索 catalog overlay 也保留全部公开记录。因此未进入首批索引的历史详情仍可由站内搜索、内部链接或直接 URL 打开，且请求时不调用翻译 API。索引策略只改变 locale 详情页的 robots、hreflang、locale sitemap 和 locale `llms*.txt`，不删除页面或搜索数据，也不改变中文根站正文。
+“已翻译”和“允许首批索引”是两个独立状态。每次既有 locale 构建扫描当次公开 HTML inventory，复用合法缓存、在预算内翻译新增单元并静态生成页面；报告搜索 catalog overlay 也保留全部公开记录。因此未进入首批索引的历史详情仍可由站内搜索、内部链接或直接 URL 打开，且请求时不调用翻译 API。索引策略只改变 locale 详情页的 robots、hreflang、locale sitemap 和 locale `llms*.txt`，不删除页面或搜索数据，也不改变中文根站正文。
 
 默认策略 fail-closed：未显式配置起始日时，仅首页、根级公开页、列表分页、机构页、专题页等 hub/core 页面进入三种 locale sitemap；其余原本可索引的详情页静态生成，但写入 `noindex,follow`。这控制的是搜索结果收录，不宣称可以阻止爬虫请求这些公开 URL。激活时通过 `--index-start-date YYYY-MM-DD` 固定一个不随构建时间滚动的起始日。此后发布日期不早于该日期的新 Blog/Report 自动进入索引，已经进入的页面不会因“最近 N 天”窗口向前滚动而自动退役。需要单篇提升历史内容时，用 `--index-allowlist` 指向一份逐行列出 root canonical URL 或路径的文件；未知 URL 或中文源本身为 `noindex` 的 URL 会让构建失败。
 
@@ -189,7 +236,7 @@ locale 搜索覆盖公开 catalog、标题、图表和 Hot Reports 的本地化�
 
 locale sitemap 及 locale `llms-full.txt` 只列出 hub/core 与当前 eligible cohort，避免机器发现文件绕过分批索引策略；简版 locale `llms.txt` 同样过滤任何已知但未 eligible 的详情 URL。暂缓索引的详情页保留自引用 canonical，但中、韩、日、阿四个对应页均暂不声明该详情的 hreflang 集群；提升进入 cohort 后再由同一次不可变构建统一补齐。中文 sitemap、中文 `llms.txt`、中文 `llms-full.txt` 均不改。locale RSS 继续沿用中文构建器已限定的近期集合。
 
-Blog 的历史正文可能含不可供国际站使用的知识星球图片地址。在收集翻译单元之前，先针对 locale 副本删除 `<img>`、`<source>`、`<amp-img>` 的 `src`、`srcset`、`data-src`、`data-srcset`、`data-original`、`data-original-src`、`data-url` 或 `url` 中包含 `zsxq.img` / `zsxq_img` 的节点；HTML entity、多重百分号编码以及 inline `background-image` 也纳入识别，避免其 alt/title 等无用文案进入 DeepSeek。locale HTML 渲染后再执行同一过滤作为最终门禁。若父级是只包含该图片的 `a`、`span`、`p`、`picture`、`figure` 或 `div`，连同纯图片包装逐层删除。有正文、caption、非目标 style 或其他有效内容的容器保留。中文 Blog HTML 和其他页面不执行该清理。
+Blog 的历史正文可能含不可供国际站使用的知识星球图片地址。在收集翻译单元之前，先针对 locale 副本删除 `<img>`、`<source>`、`<amp-img>` 的 `src`、`srcset`、`data-src`、`data-srcset`、`data-original`、`data-original-src`、`data-url` 或 `url` 中包含 `zsxq.img` / `zsxq_img` 的节点；HTML entity、多重百分号编码以及 inline `background-image` 也纳入识别，避免其 alt/title 等无用文案进入翻译模型。locale HTML 渲染后再执行同一过滤作为最终门禁。若父级是只包含该图片的 `a`、`span`、`p`、`picture`、`figure` 或 `div`，连同纯图片包装逐层删除。有正文、caption、非目标 style 或其他有效内容的容器保留。中文 Blog HTML 和其他页面不执行该清理。
 
 ### Canonical 与 hreflang
 
@@ -270,10 +317,10 @@ URL 节点使用 XHTML alternate 标注全部已完成的 hreflang 对应页。`
 - 固化公开内容 inventory 和排除清单；
 - 确认阿拉伯文术语、字体和区域性 Open Graph 配置。
 
-### 阶段 1：翻译系统与首次回填
+### 阶段 1：翻译系统与已授权的首次范围
 
-- 构建稳定 segment ledger、哈希缓存、术语保护和 100% 覆盖检查；
-- 按 locale 分批回填全部公开展示内容；
+- 构建稳定 segment ledger、哈希缓存和术语保护，逐项检查当前 inventory 覆盖，合法译文与已登记源文回退分开计数；
+- 按 locale 分批处理已授权窗口的公开展示内容；不得因新增语言上线而重新启动全历史翻译；
 - 初始回填与每日增量分开，不把大规模首次翻译塞进日常发布窗口；
 - 估算并调整静态文件数、对象存储大小和上传时长门限。报告详情页镜像三种语言后，现有 20,000 文件上限不再适用。
 
@@ -292,10 +339,10 @@ URL 节点使用 XHTML alternate 标注全部已完成的 hreflang 对应页。`
 
 每个 locale 至少满足：
 
-1. 翻译 manifest 100% complete；
+1. 本次应生成的页面与字段集合完整，manifest 与实际集合逐项一致，并披露成功译文和源文回退；
 2. sitemap、RSS、llms、JSON-LD 与页面集合一致；
 3. canonical 与 hreflang 互惠完整；
-4. 无中文 fallback、无私有内容、无原始 PDF 正文；
+4. 无被拒绝的模型输出、未登记的原文回退、私有内容或原始 PDF 正文；英文始终禁止原文回退；
 5. edge 路由和末尾斜杠 canonical 测试通过；
 6. 简体中文浏览器入口零渲染测试通过；
 7. 阿拉伯文 RTL 和 bidi 移动端验收通过；
@@ -311,7 +358,7 @@ URL 节点使用 XHTML alternate 标注全部已完成的 hreflang 对应页。`
 - 整个 workflow 在等待 Environment 审批期间继续占用既有的 `portal-production-release` 非取消 concurrency 锁，避免后续发布覆盖当前非活动 slot；identity artifact 保留 7 天，超过审核窗口应重新生成候选；
 - 不得拿较早 `locale-shadow` 或另一 workflow 的 raw static tree 给新候选放行。catalog 的 `last_seen` / `updated_at` 会让另一次构建的树发生变化；同一次候选审批正是为了消除“审核旧树、重建新树”的循环；
 - 首次切换完成后仍不能由 workflow 自动把状态改为 live。只有真实 URL、RTL、资源加载和 SEO 等线上验收全部通过，运营者才可人工把仓库变量 `PORTAL_MULTILINGUAL_LIVE` 设为 `true`；首次切换失败、回滚或尚未验收时必须保持 `false`；
-- `PORTAL_MULTILINGUAL_LIVE=true` 后，schedule 和可信 `workflow_run` 产生的每日新增/变化内容仍必须通过 100% 翻译覆盖、静态完整性、性能预算、Portal Worker capability、线上前置检查和 A/B 回滚门禁，但跳过首次 Environment 人工树审批并自动切换，从而实现新增内容的日常增量发布；
+- `PORTAL_MULTILINGUAL_LIVE=true` 后，schedule 和可信 `workflow_run` 产生的每日新增/变化内容仍必须通过完整字段集合、当前翻译/回退策略、静态完整性、性能预算、Portal Worker capability、线上前置检查和 A/B 回滚门禁，但跳过首次 Environment 人工树审批并自动切换，从而实现新增内容的日常增量发布；
 - 非多语言中文发布不读取多语言 Environment 审批值，跳过该审批作业并继续沿用既有 cutover；`locale-shadow` 无论 live 状态如何都跳过审批且被 cutover 条件明确排除，不会承接正式流量；
 - 中文根站与三个 locale 一次性切到同一个通过验证的不可变 release；
 - 切换前比较中文 body 契约，切换后比较候选与线上 locale 文件及 manifest；
@@ -322,17 +369,17 @@ URL 节点使用 XHTML alternate 标注全部已完成的 hreflang 对应页。`
 
 回滚通过现有 A/B 发布指针恢复到上一份完整的整站版本，不原地覆盖或删除当前对象：
 
-- 中文根站不受影响；
+- 中文根站恢复到同一旧发布中的一致版本，不单独混用新旧目录；
 - 中文、三种 locale、sitemap、RSS、llms 和 hreflang 一起恢复到上一版一致状态；
 - 不完整的新版本保留为不可访问的诊断产物，按既有保留期清理；
 - 首次激活前没有上一份多语言版本时，保持 feature flag 关闭，不让 locale 路由进入正式发布。
 
 ## 自动化验证清单
 
-建议将门禁落在以下现有或新增测试：
+以下测试保留详细契约；回归结论必须同时说明本地、云端和线上验收阶段：
 
 - 扩展 `scripts/test_portal_seo.py`：locale 路径、lang/dir、自 canonical、互惠 hreflang、本地化 metadata、JSON-LD、sitemap alternate、RSS 和 llms。
-- `scripts/test_build_portal_locales.py`：源哈希缓存、零变化零调用、程序语义保护、重试/checkpoint、500 硬上限、100% 覆盖阻断和无源语言 fallback。
+- `scripts/test_build_portal_locales.py`：源哈希缓存、零变化零调用、程序语义保护、重试/checkpoint、完整字段集合阻断，以及合法译文与显式源文回退分离。
 - `scripts/test_portal_locale_runtime.js`：简体中文环境零入口节点、其他环境按规则显示、无自动跳转、locale-aware 数据 URL 与 Intl 配置。
 - 扩展 `portal_suite/tests/home-search-ux.test.mjs`：日文 IME、韩文和阿拉伯文查询及混合 ticker。
 - 扩展 `workers/edge-static-host/test/index.test.mjs`：`/ja` 到 `/ja/`、`/ar/index.html` 到 `/ar/`、locale 列表/详情/Blog canonical 和 query 保留。
@@ -340,4 +387,4 @@ URL 节点使用 XHTML alternate 标注全部已完成的 hreflang 对应页。`
 - 扩展 `scripts/test_audit_portal_seo_live.py`：线上 lang、dir、hreflang 互惠和每个 locale 的确定性页面样本。
 - 为中文根站增加 body/路由回归快照，并验证简体中文环境执行 locale runtime 后 DOM 不发生入口相关变化。
 
-`.github/workflows/neutral-edge-cutover.yml` 在构建、上传和激活之间执行这些门禁，并把 locale builder 与 runtime 纳入语义 build contract。首次全量回填仍通过 `locale-shadow` 在不切换流量的前提下完成审阅；首次真实切换经同一次候选审批和线上验收后，才由运营者人工设置 `PORTAL_MULTILINGUAL_LIVE=true`。此后定时发布复用活动发布中的压缩缓存，只翻译新增或变化 segment，并在完整门禁通过后自动切换。
+`.github/workflows/neutral-edge-cutover.yml` 在构建、上传和激活之间执行这些门禁，并把 locale builder 与 runtime 纳入语义 build contract。首次已授权范围仍通过 `locale-shadow` 在不切换流量的前提下完成审阅；首次真实切换经同一次候选审批和线上验收后，才由运营者人工设置 `PORTAL_MULTILINGUAL_LIVE=true`。此后定时发布恢复合法活动发布与持久检查点缓存，只翻译新增或变化 segment，并在完整门禁通过后自动切换。

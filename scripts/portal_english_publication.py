@@ -18,7 +18,7 @@ from build_portal_extended_locales import reject_symlinks
 from portal_english_commentary import PREFIX, POLICY, extract_editorial, exact, require, text
 from portal_english_pipeline import (MAX_BODY, MAX_MANIFEST, content_key, hash_value,
                                      put_verified, read_json, restore_candidate, verify_body)
-from portal_english_ui import detail, homepage, preview_item, ui_assets
+from portal_english_ui import PUBLIC_ASSET_NAMES, detail, homepage, preview_item, ui_assets
 from portal_extended_locales import ORIGIN, digest, stable_bytes
 from portal_extended_r2 import DEFAULT_PREFIX, R2NotFound, R2Store, safe_relative
 
@@ -151,8 +151,21 @@ def verify_prepared_ledger(store, source_store, identity, workspace):
     require(ordered == ledger['items'] and len(ordered) == assembly['page_count'],
             'Prepared ledger does not reproduce the exact admitted candidates')
     pinned = read_pinned_manifest(store.client, store.bucket, identity)
-    expected = {'en/index.html': homepage(ordered, approved=True)}
-    expected.update({f'en/blog/{item["id"]}.html': detail(item, approved=True) for item in ordered})
+    # prepare_release materializes deployment-specific assets; this reviewer
+    # runs in a clean checkout. Reproduce URLs from the exact uploaded tree,
+    # never from this runner's source-file hashes.
+    asset_hashes = {}
+    for name in PUBLIC_ASSET_NAMES:
+        descriptor = pinned['files'].get('assets/'+name)
+        require(isinstance(descriptor, dict), 'Prepared English public asset is missing')
+        hash_value(descriptor['sha256'])
+        read_verified_candidate_body(store.client, store.bucket,
+                                     slot_prefix(identity['slot'])+'assets/'+name,
+                                     descriptor, maximum=MAX_MANIFEST)
+        asset_hashes[name] = descriptor['sha256']
+    expected = {'en/index.html': homepage(ordered, approved=True, asset_hashes=asset_hashes)}
+    expected.update({f'en/blog/{item["id"]}.html': detail(item, approved=True, asset_hashes=asset_hashes)
+                     for item in ordered})
     for relative, raw in expected.items():
         actual = read_verified_candidate_body(store.client, store.bucket, slot_prefix(identity['slot'])+relative,
                                              pinned['files'][relative], maximum=MAX_MANIFEST)
@@ -192,11 +205,23 @@ def compose(root, store, source_store, active, batches, workspace):
     require(1 <= len(ordered) <= 5000, 'English approved page bound differs')
     if previous and batches == old_batches:
         require(previous['items'] == ordered, 'Carry-forward cannot change the approved English ledger')
+    assets = ui_assets()
+    asset_hashes = {}
+    for name in PUBLIC_ASSET_NAMES:
+        relative = 'assets/'+name
+        if relative in assets:
+            raw = assets[relative]
+        else:
+            path = root/relative; reject_symlinks(path)
+            require(path.is_file(), 'English assembly needs the final shared public assets')
+            raw = path.read_bytes()
+        asset_hashes[name] = digest(raw)
     ledger = checked_ledger({'schema_version': 1, 'policy': POLICY, 'locale': 'en', 'status': 'approved',
                              'release_id': digest(stable_bytes(ordered)), 'items': ordered})
     raw_ledger = stable_bytes(ledger); ledger_hash = digest(raw_ledger)
-    planned = {'en/index.html': homepage(ordered, approved=True)}
-    for item in ordered: planned[f'en/blog/{item["id"]}.html'] = detail(item, approved=True)
+    planned = {'en/index.html': homepage(ordered, approved=True, asset_hashes=asset_hashes)}
+    for item in ordered:
+        planned[f'en/blog/{item["id"]}.html'] = detail(item, approved=True, asset_hashes=asset_hashes)
     xml = ET.Element(f'{{{NS}}}urlset')
     for url in [ORIGIN+'/en/', *(f'{ORIGIN}/en/blog/{item["id"]}.html' for item in ordered)]:
         node = ET.SubElement(xml, f'{{{NS}}}url'); ET.SubElement(node, f'{{{NS}}}loc').text = url
@@ -205,7 +230,7 @@ def compose(root, store, source_store, active, batches, workspace):
     assembly = checked_assembly({'schema_version': 1, 'policy': POLICY, 'status': 'assembled',
                                  'batches': batches, 'ledger_sha256': ledger_hash,
                                  'page_count': len(ordered), 'public_files': public_files})
-    planned[ASSEMBLY] = stable_bytes(assembly); planned.update(ui_assets())
+    planned[ASSEMBLY] = stable_bytes(assembly); planned.update(assets)
     sitemap = ET.fromstring((root/'sitemap.xml').read_bytes())
     require(sitemap.tag == f'{{{NS}}}sitemapindex', 'Root sitemap must retain its established index')
     for node in list(sitemap):

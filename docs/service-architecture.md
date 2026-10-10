@@ -1,6 +1,6 @@
 # Protected Document Service Architecture
 
-Last updated: 2026-09-07
+Last updated: 2026-10-10
 
 This document describes the protected document service.
 
@@ -152,6 +152,56 @@ and public API responses must not contain private deployment values. Static
 completeness and identity checks run before deployment; the active route and
 the exact catalog release are verified before refreshed public data is
 committed or older static releases are pruned.
+
+## Published Catalog Continuity And Atomic Release
+
+The active published catalog is the continuity baseline. A fresh repository
+checkout alone is insufficient because source storage can stop listing older
+PDFs while the live service still owns their metadata and available files.
+Before the additive Dropbox scan, release preparation reads the active
+release's immutable runtime catalog, verifies its manifest/hash, and requires
+exact agreement with the captured public catalog. It inherits exact IDs,
+source-date memberships and archive state. Newly inherited available PDFs are
+verified against private storage before they are marked synced; inheritance
+does not turn public metadata into an unverified download claim.
+
+Two mandatory checks preserve that baseline: one after the Chinese build and
+one after final locale assembly before upload. They reject missing IDs,
+regressed PDF availability, lost date memberships and reversed archive state.
+Ordinary refresh does not delete older PDFs. An explicit manual historical
+recovery release can add absent IDs while retaining the active state of every
+ID already published. Optional title translation reuses verified seed/cache
+entries, prioritizes new sources and has a 180-second model budget; unfinished
+titles remain original and uncached for the next attempt.
+
+The static candidate and immutable runtime catalog/password rules come from
+the same build. A static manifest binds the runtime release ID, prefix and
+runtime tree hash; pre-cutover checks also require equal catalog/rules hashes
+and sizes. The edge switch selects that exact release for both public static
+discovery and gateway runtime data. Post-cutover acceptance compares immutable
+and public catalog bytes, preview/full discovery parity, runtime release ID,
+versioned-data verification, count and update identity. A failed acceptance
+restores the captured prior edge release and verifies the restored data.
+
+Only eligible publications enter the shared non-cancelling production lock;
+disabled/ineligible triggers use isolated groups. Failed automatic English or
+extended review cannot leave its environment wait holding that lock forever:
+cleanup rejects the exact failed candidate, or cancels only its verified run
+before cutover when review rejection is unavailable. It does not grant
+approval, cancel an unrelated run, or terminate a legitimate manual review.
+Manual resume retains fresh protected approval and the original immutable
+candidate. Locale admission stays bound to each candidate's source generation
+and accepted content; language support alone does not prove a live locale.
+
+The 2026-10-10 accepted Chinese release contains 14,760 IDs, all 119 selected
+October 8–9 sources and both prior catalog baselines without retention
+regression. Separately, 118 accepted Chinese Blog bodies passed live canonical
+and content-hash checks. These facts do not establish every historical article
+cohort, OCR delivery or every supported language publication. See
+[automation pipeline](pipeline-overview-v2.md),
+[immutable runtime data](neutral-runtime-data-versioning.md),
+[WeChat recovery](wechat-pipeline-recovery.md), and
+[locale refresh reliability](locale-refresh-reliability.md).
 
 ## Static Response Caching And Validators
 

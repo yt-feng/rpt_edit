@@ -1,9 +1,91 @@
+import hashlib
 import unittest
+from collections import Counter
+from decimal import Decimal
 
-from financial_quantity_integrity import quantity_issues
+from financial_quantity_integrity import quantities, quantity_issues
 
 
 class FinancialQuantityTests(unittest.TestCase):
+    def test_observed_double_eleven_title_preserves_event_and_day_count(self):
+        # The exact public source and final retry input match failed run
+        # 38030674044; its diagnostic reported an extra bare number 11.
+        source = '高盛：中国美妆双十一周期缩短至27天，KOL、短视频与AI重塑竞争'
+        self.assertEqual(hashlib.sha256(source.encode()).hexdigest(),
+                         '7b2e95afc74b770dfc7b66e845d84e4b80552b965c63f46ee22271935eafa3c3')
+        translated = ('Goldman Sachs: China’s beauty Double 11 cycle shortens to 27 days; '
+                      'KOLs, short videos and AI reshape competition.')
+        expected = Counter({('shopping_event', 'double_eleven'): 1, ('number', Decimal(27)): 1})
+        self.assertEqual(quantities(source, named_events=True), expected)
+        self.assertEqual(quantities(translated, named_events=True), expected)
+        self.assertEqual(quantity_issues(source, translated, 'zh', 'en'), [])
+
+    def test_double_eleven_aliases_are_counted_as_the_same_event(self):
+        for source in ('双十一周期27天', '双11周期27天', '雙十一周期27天', '雙11周期27天'):
+            for event in ('Double 11', 'Double11', 'Double-11', 'Double Eleven',
+                          'Double-Eleven', 'Singles Day', "Singles' Day", 'Singles’ Day'):
+                with self.subTest(source=source, event=event):
+                    translated = f'The {event} cycle lasts 27 days.'
+                    self.assertEqual(quantity_issues(source, translated, 'zh', 'en'), [])
+                    self.assertEqual(quantity_issues(translated, source, 'en', 'zh'), [])
+
+    def test_double_eleven_equivalence_rejects_changed_missing_or_extra_facts(self):
+        source = '双十一周期缩短至27天'
+        for translated in (
+            'The cycle shortens to 27 days.',
+            'The Double 12 cycle shortens to 27 days.',
+            'The Double Twelve cycle shortens to 27 days.',
+            '双十二周期缩短至27天',
+            'The Double 11 cycle shortens to 28 days.',
+            'The Double 11 cycle shortens.',
+            'The Double 11 cycle shortens to 27 days and 11 hours.',
+            'The Double 11 cycle shortens to 27 days and 27 days.',
+            'The Double 11 / Singles’ Day cycle shortens to 27 days.',
+            'The November 11 cycle shortens to 27 days.',
+        ):
+            with self.subTest(translated=translated):
+                self.assertTrue(quantity_issues(source, translated, 'zh', 'en'))
+        self.assertEqual(quantity_issues('双十一和双十一均为27天',
+                         'Double 11 and Singles’ Day both last 27 days.', 'zh', 'en'), [])
+        self.assertTrue(quantity_issues('双十一和双十一均为27天',
+                        'Double 11 lasts 27 days.', 'zh', 'en'))
+
+    def test_double_eleven_aliases_do_not_swallow_numbers_or_identifiers(self):
+        for text in ('11', 'November 11', 'Double 110', 'Double 11.5', 'Double 11,5',
+                     'Double 11%', 'Double 11 %', 'Double 11th', 'Double 11_extra',
+                     'ModelDouble11', 'DoubleElevenModel', 'Singles Daylight',
+                     '双十一百', '双110'):
+            with self.subTest(text=text):
+                self.assertNotIn(('shopping_event', 'double_eleven'), quantities(text, named_events=True))
+        self.assertTrue(quantity_issues('11份订单', 'Double 11 orders', 'zh', 'en'))
+        self.assertTrue(quantity_issues('十一份订单', 'Double Eleven orders', 'zh', 'en'))
+
+    def test_named_events_are_opt_in_and_do_not_change_other_language_contracts(self):
+        source = '双十一周期27天'
+        french = 'La fête des célibataires dure 27 jours.'
+        self.assertEqual(quantity_issues(source, french, 'zh', 'fr'), [])
+        self.assertEqual(quantity_issues(french, source, 'fr', 'zh'), [])
+        self.assertTrue(quantity_issues(source, french.replace('27', '28'), 'zh', 'fr'))
+        self.assertTrue(quantity_issues(source, french + ' 11 jours.', 'zh', 'fr'))
+        self.assertEqual(quantities(source), Counter({('number', Decimal(27)): 1}))
+        self.assertEqual(quantities('Double 11 lasts 27 days.'),
+                         Counter({('number', Decimal(11)): 1, ('number', Decimal(27)): 1}))
+        # Language-agnostic callers retain their existing signatures and
+        # checks; only explicit Chinese/English comparison opts in.
+        for source_language, target_language in (('', ''), ('zh', ''), ('', 'en'), ('zh', 'fr')):
+            with self.subTest(source_language=source_language, target_language=target_language):
+                self.assertTrue(quantity_issues(source, 'Double 11 lasts 27 days.',
+                                               source_language, target_language))
+        self.assertEqual(quantity_issues(source, 'Double 11 lasts 27 days.', 'zh', 'en'), [])
+        self.assertEqual(quantity_issues('Double 11 lasts 27 days.', source, 'en', 'zh'), [])
+
+    def test_named_event_contract_survives_month_context_comparison(self):
+        source = '9月讨论双十一周期27天'
+        translated = 'In September, we discuss the Double 11 cycle lasting 27 days.'
+        self.assertEqual(quantity_issues(source, translated, 'zh', 'en'), [])
+        self.assertTrue(quantity_issues(source, translated.replace('Double 11', 'Double 12'), 'zh', 'en'))
+        self.assertTrue(quantity_issues(source, translated.replace('September', 'October'), 'zh', 'en'))
+
     def test_ascii_basis_points_adjacent_to_non_latin_prose_keep_their_scale(self):
         for source in ('利差扩大171bp至2%。', '利差扩大171BPS至2%。',
                        'កើន171bpទៅ2%。', '利差扩大171 basis points至2%。'):
