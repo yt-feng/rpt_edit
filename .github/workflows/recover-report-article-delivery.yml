@@ -15,7 +15,7 @@ on:
       source_kind:
         required: true
         type: choice
-        options: [mineru-recovery, ocr-synthesis]
+        options: [mineru-recovery, ocr-synthesis, ocr-pages]
       date_folder:
         description: Exact original batch date
         required: true
