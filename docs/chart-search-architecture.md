@@ -122,6 +122,18 @@ store only bounded, provider-neutral reason codes (for example `read_timeout`,
 `http_transient`, or `model_json`), never response bodies, request endpoints, or model
 output.
 
+The manual checkpoint diagnostic defaults to `operation=checkpoint`, retaining
+its read-only storage behavior. A main-branch `operation=vision-config` instead
+uses one generated synthetic chart with the exact configured endpoint, credential,
+model, and normal client request contract. It makes at most one provider request,
+reads no report or R2 object, and writes no R2 object. Its artifact contains only
+fixed status/reason codes and a coarse endpoint path category; no endpoint,
+credential, response body, or model output is retained. A successful diagnostic
+workflow means the observation completed: only `probe_status=accepted` confirms
+the synthetic request succeeded. HTTP 404 is separately classified as a recognized
+model-availability rejection, a recognized route rejection, or unknown configuration;
+the client never guesses another destination, weakens TLS, or switches providers.
+
 Requests begin with a 90-second response deadline and at most 15 seconds to connect.
 A read timeout doubles only that image's next response deadline, capped at 240 seconds
 (`--max-read-timeout`). The four attempts therefore wait up to 90, 180, 240, and 240
