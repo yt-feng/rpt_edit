@@ -721,6 +721,14 @@ def truncate_chars(text: str, max_chars: int) -> str:
     return cut.strip("，,；;：: ")
 
 
+def compact_title_whitespace(value: str) -> str:
+    """Keep ASCII word boundaries while retaining compact Chinese typography."""
+    return re.sub(r"\s+", lambda match: " " if (
+        match.start() > 0 and match.end() < len(value)
+        and re.fullmatch(r"[A-Za-z0-9]", value[match.start() - 1])
+        and re.fullmatch(r"[A-Za-z0-9]", value[match.end()])) else "", value)
+
+
 def clean_wechat_title(
     title: str,
     institution_name: str = "",
@@ -734,7 +742,7 @@ def clean_wechat_title(
     cleaned = remove_redundant_title_aliases(cleaned)
     cleaned = repair_english_slug_tail(cleaned)
     cleaned = re.sub(r"\s*(?:--+|—+)\s*", "，", cleaned)
-    cleaned = re.sub(r"\s+", "", cleaned)
+    cleaned = compact_title_whitespace(cleaned)
     cleaned = re.sub(r"(真正的){2,}", "真正的", cleaned)
     cleaned = cleaned.replace("摩根斯坦利", "摩根士丹利").replace("美国银行", "美银")
     if institution_name:
@@ -913,7 +921,7 @@ def clean_filename_wechat_title(title: str, institution_name: str = "", max_char
         tail = re.sub(r"[：:]", "-", tail)
         cleaned = f"{head}：{tail}"
     cleaned = re.sub(r"\s*-\s*", "-", cleaned)
-    cleaned = re.sub(r"\s+", "", cleaned)
+    cleaned = compact_title_whitespace(cleaned)
     cleaned = limit_title_colons(cleaned).strip("：: -—")
     return fit_filename_title(cleaned, max_chars).strip("：: -—")
 

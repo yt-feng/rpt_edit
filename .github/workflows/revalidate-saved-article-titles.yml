@@ -1,0 +1,72 @@
+name: Revalidate retained article titles without model requests
+run-name: Revalidate saved title responses for Daily 37695511597
+on:
+  pull_request:
+    paths:
+      - .github/workflows/revalidate-saved-article-titles.yml
+      - scripts/revalidate_saved_article_titles.py
+      - scripts/test_revalidate_saved_article_titles.py
+      - scripts/wechat_title_optimizer.py
+      - docs/saved-article-title-revalidation.md
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Inspect first; apply writes only a fully verified 44-article package
+        required: true
+        type: choice
+        options: [inspect, apply]
+        default: inspect
+permissions:
+  contents: read
+  actions: read
+jobs:
+  contract:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF reportlab PyYAML
+      - run: |
+          python -B scripts/test_revalidate_saved_article_titles.py
+          python -B scripts/test_wechat_filename_titles.py
+          python -B scripts/test_article_generation_progress.py
+          python -B scripts/test_article_title_resume.py
+  revalidate:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    concurrency:
+      group: recovered-report-articles-37695511597-261007
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF 'boto3>=1.37.32,<2'
+      - name: Revalidate exact retained responses without provider requests
+        env:
+          REVALIDATION_MODE: ${{ inputs.mode }}
+          GH_TOKEN: ${{ github.token }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python -B scripts/revalidate_saved_article_titles.py --mode "$REVALIDATION_MODE" \
+            --output "$RUNNER_TEMP/saved-title-revalidation.json"
+      - name: Preserve content-free revalidation result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: saved-title-revalidation-${{ github.run_id }}
+          path: ${{ runner.temp }}/saved-title-revalidation.json
+          if-no-files-found: warn
+          retention-days: 14
