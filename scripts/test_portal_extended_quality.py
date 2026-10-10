@@ -229,8 +229,9 @@ class ActivePublicationTests(unittest.TestCase):
         manifest = build(corpus, 'fr', work/'candidate', work/'memo.json', OriginalRejected(), allow_source_fallback=True)
         generation = corpus['documents_sha256']
         fixture.store.put_source(corpus)
-        fixture.store.put_checkpoint('fr', generation, work/'memo.json')
+        seed = fixture.store.put_checkpoint('fr', generation, work/'memo.json')
         saved = fixture.store.upload_candidate(work/'candidate', 'fr', generation)
+        fixture.approved_seeds[generation, 'fr', saved['candidate_id']] = seed['sha256']
         source = fixture.root/file_for_url(URL); source.parent.mkdir(parents=True, exist_ok=True)
         source.write_bytes(raw_page(body=BODY))
         return fixture, {'generation': generation, 'candidates': {'fr': saved['candidate_id']}}, source
