@@ -18,7 +18,7 @@ PLAN = '1' * 64
 GENERATION = '2' * 64
 
 
-def condition(expression, values, *, cancelled=False):
+def expression_value(expression, values, *, cancelled=False):
     """Evaluate only the fixed workflow boolean grammar used by these guards."""
     expression = expression.strip().removeprefix('${{').removesuffix('}}').strip()
     expression = expression.replace('always()', 'True').replace('cancelled()', str(cancelled))
@@ -26,7 +26,70 @@ def condition(expression, values, *, cancelled=False):
                         lambda match: repr(values.get(match.group(), '')), expression)
     expression = expression.replace('&&', ' and ').replace('||', ' or ')
     expression = re.sub(r'!(?!=)', ' not ', expression)
-    return bool(eval('('+expression+')', {'__builtins__': {}}, {}))
+    return eval('('+expression+')', {'__builtins__': {},
+                'format': lambda template, *args: template.format(*args)}, {})
+
+
+def condition(expression, values, *, cancelled=False):
+    return bool(expression_value(expression, values, cancelled=cancelled))
+
+
+class ConsumerAdmissionTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.workflow = yaml.safe_load(WORKFLOW.read_text())
+
+    def setUp(self):
+        self.values = {'github.event_name': 'workflow_run', 'github.repository': 'example/repo',
+            'github.ref': 'refs/heads/main', 'github.run_id': 123, 'github.run_attempt': 1,
+            'github.event.repository.default_branch': 'main',
+            'github.event.workflow_run.conclusion': 'success',
+            'github.event.workflow_run.head_branch': 'main',
+            'github.event.workflow_run.head_repository.full_name': 'example/repo'}
+
+    def group(self, **changes):
+        return expression_value(self.workflow['concurrency']['group'], {**self.values, **changes})
+
+    def test_real_skipped_event_cannot_replace_pending_recovery(self):
+        # Replay the observed sequence: running batch, queued manual recovery,
+        # then a source workflow skipped after an unrelated release failure.
+        active, pending = {}, {}
+        shared = self.group(**{'github.event_name': 'workflow_dispatch', 'inputs.operation': 'candidate'})
+        active[shared] = 'old-active-batch'
+        pending[shared] = 'manual-recovery'
+        skipped = self.group(**{'github.event.workflow_run.conclusion': 'skipped'})
+        pending[skipped] = 'no-op-completion'
+        self.assertEqual(pending[shared], 'manual-recovery')
+        self.assertEqual(active[shared], 'old-active-batch')
+        self.assertEqual(skipped, 'extended-locales-ineligible-123-1')
+        self.assertFalse(self.workflow['concurrency']['cancel-in-progress'])
+
+    def test_every_rejected_source_event_has_an_isolated_group(self):
+        for result in ('success', 'failure', 'cancelled', 'skipped', 'timed_out', 'action_required', ''):
+            for branch in ('main', 'feature'):
+                for repo in ('example/repo', 'fork/repo', ''):
+                    changes = {'github.event.workflow_run.conclusion': result,
+                               'github.event.workflow_run.head_branch': branch,
+                               'github.event.workflow_run.head_repository.full_name': repo}
+                    with self.subTest(**changes):
+                        admitted = result == 'success' and branch == 'main' and repo == 'example/repo'
+                        self.assertEqual(condition(self.workflow['jobs']['source']['if'],
+                                                   {**self.values, **changes}), admitted)
+                        self.assertEqual(self.group(**changes), 'extended-locales-r2-pipeline' if admitted
+                                         else 'extended-locales-ineligible-123-1')
+        self.assertEqual(self.group(**{'github.event.workflow_run.conclusion': 'failure',
+                                     'github.run_id': 124, 'github.run_attempt': 2}),
+                         'extended-locales-ineligible-124-2')
+
+    def test_valid_manual_work_keeps_serialization_and_readonly_groups(self):
+        for operation in ('candidate', 'publication-resume', 'english-resume', 'checkpoint-repair',
+                          'source-fallback-inspect', 'roundtrip', 'publication-check', 'recovery-test'):
+            expected = {'roundtrip': 'extended-locales-r2-staging-refs/heads/main',
+                        'publication-check': 'extended-locales-publication-check-refs/heads/main',
+                        'recovery-test': 'extended-locales-r2-recovery-refs/heads/main'}.get(
+                            operation, 'extended-locales-r2-pipeline')
+            self.assertEqual(self.group(**{'github.event_name': 'workflow_dispatch',
+                                          'inputs.operation': operation}), expected)
 
 
 class QualityWorkflowTests(unittest.TestCase):

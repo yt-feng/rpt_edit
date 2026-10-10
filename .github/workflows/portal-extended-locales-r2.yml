@@ -54,7 +54,17 @@ permissions:
   contents: read
 
 concurrency:
-  group: ${{ inputs.operation == 'roundtrip' && format('extended-locales-r2-staging-{0}', github.ref) || inputs.operation == 'publication-check' && format('extended-locales-publication-check-{0}', github.ref) || inputs.operation == 'recovery-test' && format('extended-locales-r2-recovery-{0}', github.ref) || 'extended-locales-r2-pipeline' }}
+  # GitHub replaces a pending run before evaluating job conditions. A skipped
+  # source-admission event must therefore never enter the shared work queue.
+  group: >-
+    ${{ (github.event_name == 'workflow_run' &&
+          (github.event.workflow_run.conclusion != 'success' ||
+           github.event.workflow_run.head_branch != github.event.repository.default_branch ||
+           github.event.workflow_run.head_repository.full_name != github.repository)) &&
+        format('extended-locales-ineligible-{0}-{1}', github.run_id, github.run_attempt) ||
+        inputs.operation == 'roundtrip' && format('extended-locales-r2-staging-{0}', github.ref) ||
+        inputs.operation == 'publication-check' && format('extended-locales-publication-check-{0}', github.ref) ||
+        inputs.operation == 'recovery-test' && format('extended-locales-r2-recovery-{0}', github.ref) || 'extended-locales-r2-pipeline' }}
   cancel-in-progress: false
 
 env:
