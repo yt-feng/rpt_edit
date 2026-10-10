@@ -66,6 +66,15 @@ def read_queue(store):
     return entries
 
 
+def all_queued(store):
+    """Read both admission routes; only the fast source job writes either one."""
+    from portal_extended_recovered_admission import read_queue as recovered_queue
+    entries = read_queue(store) + recovered_queue(store)
+    if len({entry['admission'] for entry in entries}) != len(entries):
+        raise R2IntegrityError('Duplicate source admission across queues')
+    return entries
+
+
 def write_verified(store, key, value, *, kind):
     raw = stable_bytes(value)
     if len(raw) > MAX_RECORD_BYTES:
@@ -92,6 +101,21 @@ def read_admission(store, identity):
     if digest(raw) != identity:
         raise R2IntegrityError('Source-admission checksum differs')
     value = json.loads(raw)
+    if isinstance(value, dict) and value.get('schema_version') == 3:
+        from portal_extended_recovered_admission import POLICY as RECOVERED_POLICY, read_proof as recovered_proof
+        if (set(value) != {'schema_version', 'policy', 'scope', 'day', 'generation', 'pages',
+                          'producer', 'capture_day', 'recovery'}
+            or value['policy'] != RECOVERED_POLICY or value['scope'] != DAILY_SCOPE
+            or publication_day(value['day']) != value['day'] or type(value['pages']) is not int
+            or not 1 <= value['pages'] <= 500):
+            raise R2IntegrityError('Invalid recovered source-admission scope')
+        checked_producer(value['producer'])
+        corpus = read_corpus(store, value['generation'])
+        proof = recovered_proof(store, value['recovery'], corpus)
+        if (proof['day'] != value['day'] or proof['capture_day'] != value['capture_day']
+            or len(corpus['documents']) != value['pages']):
+            raise R2IntegrityError('Recovered source admission differs from proof')
+        return value
     from portal_extended_source_refresh import POLICY as REFRESH_POLICY, read_proof
     base = {'schema_version', 'policy', 'scope', 'day', 'generation', 'pages', 'producer'}
     modern = isinstance(value, dict) and value.get('schema_version') == 2
@@ -203,7 +227,7 @@ def prepare_queued(store, locales, *, limit=24):
     locales = select_locales(','.join(locales))
     if type(limit) is not int or not 1 <= limit <= 24:
         raise ExpansionError('Locale cursor must retain the 1..24-page bound')
-    entries = sorted(read_queue(store), key=lambda value: value['day'], reverse=True)
+    entries = sorted(all_queued(store), key=lambda value: value['day'], reverse=True)
     # Hot new source days take priority; older items are only previously admitted
     # R2 work, not historical discovery. Each locale advances its own cursor.
     for entry in entries:
@@ -255,7 +279,16 @@ def followup_needed(store, identity, locales, before):
     progress = any(after[locale] < before[locale] for locale in locales)
     # A failed language cannot prevent other cursors advancing; no-progress
     # failures never self-dispatch forever. A normal new source event can retry.
-    return {'continue': progress and any(after.values()), 'progress': progress,
+    remaining = any(after.values())
+    if progress and not remaining:
+        for entry in all_queued(store):
+            if entry['admission'] == identity:
+                continue
+            _, queued = inventory(store, entry)
+            if any(pending_docs(store, queued['documents'], locale, entry['day']) for locale in locales):
+                remaining = True
+                break
+    return {'continue': progress and remaining, 'progress': progress,
             'pending_counts': after, 'paid_provider_requests': 0}
 
 
@@ -323,6 +356,7 @@ def main():
     parser.add_argument('--locales', default='all-supported')
     parser.add_argument('--before')
     parser.add_argument('--github-output', type=Path)
+    parser.add_argument('--recovered-publication-run', default='')
     args = parser.parse_args()
     if args.operation == 'staging-probe':
         if os.environ.get('GITHUB_ACTIONS') != 'true' or os.environ.get('KC_PUBLIC_REPOSITORY') != 'true':
@@ -344,6 +378,20 @@ def main():
     producer = {'run_id': os.environ['GITHUB_RUN_ID'], 'attempt': os.environ['GITHUB_RUN_ATTEMPT'],
                 'sha': os.environ['GITHUB_SHA'], 'repository': os.environ['GITHUB_REPOSITORY'], 'workflow': WORKFLOW}
     capture_day = today()
+    if args.recovered_publication_run:
+        from portal_extended_recovered_admission import GitHub, authenticate, collect, admit as admit_recovered
+        publication = authenticate(GitHub(os.environ['GITHUB_REPOSITORY']), args.recovered_publication_run)
+        if publication is None:
+            print(json.dumps({'admitted': False, 'pages': 0, 'paid_provider_requests': 0,
+                              'reason': 'no-published-articles'}, sort_keys=True))
+            return
+        with requests.Session() as session:
+            corpus, proof = collect(session, publication, capture_day)
+        result = admit_recovered(store, corpus, proof, producer)
+        result.update(capture_day=capture_day, selection_policy=proof['policy'],
+                      source_release=proof['release']['release_id'])
+        print(json.dumps(result, sort_keys=True))
+        return
     # Read each current public page only once. English gets an explicit editorial
     # projection of those SAME bytes, never the generic translated report body.
     from portal_english_commentary import PREFIX as ENGLISH_PREFIX, extract_editorial, freeze_editorial

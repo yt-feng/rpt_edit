@@ -223,7 +223,7 @@ class WorkflowTests(unittest.TestCase):
     def test_daily_hook_four_hour_budget_and_persistence_margin(self):
         source = (ROOT/'.github/workflows/portal-extended-locales-r2.yml').read_text()
         admission = (ROOT/'.github/workflows/portal-extended-locales-source.yml').read_text()
-        self.assertIn('workflows: [Neutral edge catalog refresh]', admission)
+        self.assertIn('workflows: [Neutral edge catalog refresh, Recover report article delivery]', admission)
         for required in ('workflows: [Extended locale source admission]', 'timeout-minutes: 270', 'default: "14400"',
                          "inputs.seconds || '14400'", '-gt 14400', 'max-parallel: 2',
                          "needs.source.outputs.has_work == 'true'", 'cancel-in-progress: false',

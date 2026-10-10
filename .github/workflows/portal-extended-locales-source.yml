@@ -3,12 +3,19 @@
 name: Extended locale source admission
 on:
   workflow_run:
-    workflows: [Neutral edge catalog refresh]
+    workflows: [Neutral edge catalog refresh, Recover report article delivery]
     types: [completed]
     branches: [main]
   workflow_dispatch:
+    inputs:
+      recovered_publication_run_id:
+        description: Exact successful recovered article delivery run with accepted live Blog receipts
+        required: false
+        type: string
+        default: ''
 permissions:
   contents: read
+  actions: read
 concurrency:
   group: extended-locales-source-admission
   cancel-in-progress: false
@@ -38,4 +45,12 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
           KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
-        run: python3 -B scripts/portal_extended_daily_queue.py | tee -a "$GITHUB_STEP_SUMMARY"
+          GH_TOKEN: ${{ github.token }}
+          RECOVERED_PUBLICATION_RUN: ${{ inputs.recovered_publication_run_id || (github.event.workflow_run.path == '.github/workflows/recover-report-article-delivery.yml' && github.event.workflow_run.id) || '' }}
+        run: |
+          set -euo pipefail
+          source_args=()
+          if [ -n "$RECOVERED_PUBLICATION_RUN" ]; then
+            source_args+=(--recovered-publication-run "$RECOVERED_PUBLICATION_RUN")
+          fi
+          python3 -B scripts/portal_extended_daily_queue.py "${source_args[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
