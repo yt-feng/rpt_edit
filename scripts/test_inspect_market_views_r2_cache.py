@@ -246,19 +246,22 @@ class OCRPresenceTests(unittest.TestCase):
         self.request = inventory.validate_ocr_request('37695511597', '261007', '2',
                                                       hashlib.sha256(self.manifest.read_bytes()).hexdigest())
         self.key = checkpoint_key(self.manifest, '261007', 2)
+        self.handoff_key = '_private-workflow-handoff/market-ocr-synthesis/37695511597/261007/shard_0.tar.gz'
+        self.expected_heads = [('head', self.key), ('head', self.handoff_key)]
 
     def inspect(self, request=None, producer=None):
         return inventory.inspect_ocr_presence(self.client, 'private-bucket', self.manifest,
             self.producer if producer is None else producer, self.request if request is None else request,
             self.repository)
 
-    def test_present_is_one_head_of_real_canonical_key_without_archive_download(self):
+    def test_present_reads_only_exact_cache_and_handoff_heads_without_download(self):
         self.client.add(self.key, b'opaque archive is deliberately never parsed')
         result = self.inspect(); row = result['ocr_checkpoint']
         self.assertTrue(result['success']); self.assertTrue(row['present'])
         self.assertTrue(row['source_binding_verified']); self.assertFalse(row['archive_bytes_verified'])
         self.assertEqual(row['object_count'], 1); self.assertGreater(row['size_bytes'], 0)
-        self.assertEqual(self.client.calls, [('head', self.key)])
+        self.assertEqual(self.client.calls, self.expected_heads)
+        self.assertFalse(result['ocr_source_handoff']['present'])
         public = json.dumps(result)
         for forbidden in ('private-title', 'zip_backup', 'private-bucket', self.key, '/runner/'):
             self.assertNotIn(forbidden, public)
@@ -269,7 +272,8 @@ class OCRPresenceTests(unittest.TestCase):
         result = self.inspect(); row = result['ocr_checkpoint']
         self.assertTrue(result['success']); self.assertFalse(row['present'])
         self.assertEqual(row['object_count'], 0); self.assertEqual(row['size_bytes'], 0)
-        self.assertIsNone(row['archive_sha256']); self.assertEqual(self.client.calls, [('head', self.key)])
+        self.assertIsNone(row['archive_sha256']); self.assertEqual(self.client.calls, self.expected_heads)
+        self.assertFalse(result['ocr_source_handoff']['present'])
 
     def test_reordered_manifest_uses_same_checkpoint_but_requires_its_exact_raw_hash(self):
         self.manifest.write_bytes(json_bytes(list(reversed(self.rows))))
@@ -277,7 +281,54 @@ class OCRPresenceTests(unittest.TestCase):
         self.assertEqual(self.client.calls, [])
         request = {**self.request, 'manifest_sha256': hashlib.sha256(self.manifest.read_bytes()).hexdigest()}
         self.inspect(request=request)
-        self.assertEqual(self.client.calls, [('head', self.key)])
+        self.assertEqual(self.client.calls, self.expected_heads)
+
+    def test_source_handoff_presence_is_independent_and_does_not_inspect_other_runs_or_dates(self):
+        payload = b'opaque complete source handoff'
+        self.client.add(self.handoff_key, payload)
+        self.client.add(self.handoff_key.replace('37695511597', '999999'), b'other run')
+        self.client.add(self.handoff_key.replace('261007', '261008'), b'other date')
+        result = self.inspect(); handoff = result['ocr_source_handoff']
+        self.assertFalse(result['ocr_checkpoint']['present']); self.assertTrue(handoff['present'])
+        self.assertEqual(handoff['object_count'], 1); self.assertEqual(handoff['size_bytes'], len(payload))
+        self.assertEqual(handoff['archive_sha256'], hashlib.sha256(payload).hexdigest())
+        self.assertFalse(handoff['archive_bytes_verified']); self.assertEqual(self.client.calls, self.expected_heads)
+        self.assertNotIn(self.handoff_key, json.dumps(result))
+
+    def test_both_objects_can_be_present_without_claiming_archive_verification(self):
+        self.client.add(self.key, b'cache'); self.client.add(self.handoff_key, b'source handoff')
+        result = self.inspect()
+        for name in ('ocr_checkpoint', 'ocr_source_handoff'):
+            self.assertTrue(result[name]['present']); self.assertFalse(result[name]['archive_bytes_verified'])
+        self.assertEqual(self.client.calls, self.expected_heads)
+
+    def test_source_handoff_permission_or_transport_failure_cannot_be_absence(self):
+        producer = self.root/'producer.json'; producer.write_bytes(json_bytes(self.producer))
+        output = self.root/'receipt.json'; self.client.add(self.key, b'cache')
+        head = self.client.head_object
+        class Denied(Exception):
+            response = {'Error': {'Code': '403'}, 'ResponseMetadata': {'HTTPStatusCode': 403}}
+        for error in (Denied('private-handoff'), TimeoutError('https://private-endpoint')):
+            with self.subTest(error=type(error).__name__):
+                self.client.calls.clear()
+                def read(**kwargs):
+                    if kwargs['Key'] == self.handoff_key:
+                        self.client.calls.append(('head', kwargs['Key'])); raise error
+                    return head(**kwargs)
+                args = ['--output', str(output), '--source-run-id', self.request['source_run_id'],
+                        '--date-folder', '261007', '--expected-reports', '2',
+                        '--manifest-sha256', self.request['manifest_sha256'], '--manifest', str(self.manifest),
+                        '--producer-json', str(producer)]
+                with patch.object(self.client, 'head_object', side_effect=read), \
+                     patch.object(inventory, 'build_client', return_value=self.client), \
+                     patch.dict('os.environ', {'R2_BUCKET': 'private-bucket', 'GITHUB_REPOSITORY': self.repository}), \
+                     redirect_stdout(io.StringIO()):
+                    self.assertEqual(inventory.main(args), 1)
+                result = json.loads(output.read_bytes())
+                self.assertFalse(result['success']); self.assertNotIn('ocr_source_handoff', result)
+                self.assertEqual(result['category'], 'storage_read_failed')
+                self.assertEqual(self.client.calls, self.expected_heads)
+                self.assertNotIn('private-', output.read_text())
 
     def test_wrong_count_date_and_duplicate_sources_fail_before_storage(self):
         for request in ({**self.request, 'expected_reports': 3}, {**self.request, 'date_folder': '261008'}):
@@ -359,7 +410,7 @@ class OCRPresenceTests(unittest.TestCase):
              redirect_stdout(io.StringIO()):
             self.assertEqual(inventory.main(args), 0)
         self.assertEqual(json.loads(output.read_bytes())['mode'], 'ocr-presence')
-        self.assertEqual(self.client.calls, [('head', self.key)])
+        self.assertEqual(self.client.calls, self.expected_heads)
 
 
 if __name__ == "__main__":

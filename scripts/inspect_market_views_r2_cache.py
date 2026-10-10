@@ -66,8 +66,22 @@ def validate_ocr_producer(producer, request, repository):
         raise InvalidObject("ocr_producer_invalid") from None
 
 
+def inspect_object_presence(client, bucket, key):
+    """Read metadata once; only a definite missing response means absence."""
+    present, head = r2_object_exists(client, bucket, key)
+    row = {"present": present, "object_count": int(present), "archive_bytes_verified": False,
+           "size_bytes": 0, "archive_sha256": None}
+    if present:
+        row["size_bytes"] = bounded_size(head)
+        checksum = (head.get("Metadata") or {}).get("sha256")
+        if not isinstance(checksum, str) or not HASH.fullmatch(checksum):
+            raise InvalidObject("ocr_archive_metadata_invalid")
+        row["archive_sha256"] = checksum
+    return row
+
+
 def inspect_ocr_presence(client, bucket, manifest, producer, request, repository):
-    """Validate retained source bytes, then HEAD exactly one derived cache key.
+    """Validate source bytes, then HEAD its exact cache and temporary handoff.
 
     Presence and stored archive metadata do not prove OCR completeness. Never
     download/extract the checkpoint or admit it for article generation here.
@@ -88,18 +102,17 @@ def inspect_ocr_presence(client, bucket, manifest, producer, request, repository
     # Require the derivation to consume exactly the bytes whose hash was pinned.
     if manifest.read_bytes() != raw:
         raise InvalidObject("ocr_manifest_changed")
-    present, head = r2_object_exists(client, bucket, key)
-    row = {**request, "source_binding_verified": True, "present": present,
-           "object_count": int(present), "checkpoint_identity": Path(key).name.removesuffix(".tar.gz"),
-           "archive_bytes_verified": False, "size_bytes": 0, "archive_sha256": None}
-    if present:
-        row["size_bytes"] = bounded_size(head)
-        checksum = (head.get("Metadata") or {}).get("sha256")
-        if not isinstance(checksum, str) or not HASH.fullmatch(checksum):
-            raise InvalidObject("ocr_archive_metadata_invalid")
-        row["archive_sha256"] = checksum
+    row = {**request, "source_binding_verified": True,
+           "checkpoint_identity": Path(key).name.removesuffix(".tar.gz"),
+           **inspect_object_presence(client, bucket, key)}
+    # A completed source handoff is distinct from the durable model/OCR memo.
+    # Bind this lookup to the same exact Daily run/date; never list alternatives.
+    handoff_key = (f"_private-workflow-handoff/market-ocr-synthesis/{request['source_run_id']}/"
+                   f"{request['date_folder']}/shard_0.tar.gz")
+    source_handoff = inspect_object_presence(client, bucket, handoff_key)
     return {"schema_version": 1, "mode": "ocr-presence", "success": True, "provider_posts": 0,
-            "object_writes": 0, "object_deletions": 0, "ocr_checkpoint": row}
+            "object_writes": 0, "object_deletions": 0, "ocr_checkpoint": row,
+            "ocr_source_handoff": source_handoff}
 
 
 class BoundedBody:
