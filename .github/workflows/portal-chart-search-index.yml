@@ -113,6 +113,7 @@ jobs:
           sparse-checkout: |
             .github
             scripts
+            prompts/wechat_report_article_prompt.md
             portal_suite/data/catalog.json
             requirements.txt
 
