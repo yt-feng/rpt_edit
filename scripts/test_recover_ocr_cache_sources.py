@@ -245,6 +245,9 @@ class CachedSourceRecoveryTests(unittest.TestCase):
         workflow = (root / recovery.WORKFLOW).read_text()
         value = yaml.safe_load(workflow)
         recover = value['jobs']['recover']
+        # GitHub rejects runner context at job.env before registering any job;
+        # ordinary YAML parsing and sibling PR checks cannot detect this error.
+        self.assertNotIn('${{ runner.', str(recover.get('env', {})))
         names = [step.get('name') for step in recover['steps']]
         self.assertLess(names.index('Restore and verify complete OCR sources from cache only'),
                         names.index('Archive and verify recovered OCR sources in private R2'))
