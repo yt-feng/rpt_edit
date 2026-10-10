@@ -27,6 +27,13 @@ KINDS = {"mineru-recovery", "ocr-synthesis", "ocr-pages"}
 SHA = re.compile(r"[a-f0-9]{64}")
 MAX_FILE_BYTES = 128 * 1024 * 1024
 MAX_FILES = 30000
+MAX_PRIVATE_FAILURE_BYTES = 128 * 1024
+PRIVATE_EXCEPTION_TYPES = {
+    "ArticleRecoveryError", "ProgressError", "TimeoutError", "ConnectionError", "HTTPError",
+    "ReadTimeout", "ConnectTimeout", "SSLError", "RequestException", "ChunkedEncodingError",
+    "JSONDecodeError", "RuntimeError", "ValueError", "TypeError", "OSError", "KeyError",
+    "AttributeError", "UnicodeDecodeError", "FileNotFoundError", "PermissionError",
+}
 
 
 class ArticleRecoveryError(ValueError):
@@ -60,6 +67,40 @@ def write_json(path, value):
     require(not temporary.is_symlink(), "output_symlink")
     temporary.write_bytes(encoded(value) + b"\n")
     temporary.replace(path)
+
+
+def private_failure_record(output, plan, ordinal, contract, error, category):
+    """Keep bounded diagnostics outside the article/publishable handoff.
+
+    A retained record describes one failure snapshot, not the current state:
+    consumers must match its status/progress hashes before treating it as current.
+    """
+    chain, seen, current = [], set(), error
+    while current is not None and id(current) not in seen and len(chain) < 32:
+        seen.add(id(current))
+        name = type(current).__name__
+        chain.append(name if name in PRIVATE_EXCEPTION_TYPES else "UnknownException")
+        current = current.__cause__ or (None if current.__suppress_context__ else current.__context__)
+    trace = "".join(traceback.format_exception(error, limit=32)).encode("utf-8", errors="replace")
+    directory = output.parent / "private-diagnostics"
+    require(not directory.is_symlink(), "private_failure_directory_invalid")
+    directory.mkdir(exist_ok=True)
+    directory = directory / "article-failures"
+    require(not directory.is_symlink(), "private_failure_directory_invalid")
+    directory.mkdir(exist_ok=True)
+    status_path = output / plan["directory"] / "status.json"
+    progress_path = output.parent / "generation-progress" / plan["directory"] / "article_generation_progress.json"
+    snapshots = {}
+    for name, path in (("article_status_sha256", status_path), ("progress_receipt_sha256", progress_path)):
+        require(not path.is_symlink(), "private_failure_snapshot_invalid")
+        snapshots[name] = digest(path.read_bytes()) if path.is_file() else None
+    record = {"schema_version": 1, "kind": "private_article_failure_snapshot", "source_ordinal": ordinal,
+        "category": category, "typed_exception_chain": chain,
+        "source_provenance_sha256": digest(encoded(plan["provenance"])),
+        "source_markdown_sha256": digest(plan["source_bytes"]), "generation_contract_sha256": contract,
+        **snapshots, "private_traceback": trace[-MAX_PRIVATE_FAILURE_BYTES:].decode("utf-8", errors="ignore"),
+        "traceback_truncated": len(trace) > MAX_PRIVATE_FAILURE_BYTES}
+    write_json(directory / f"ordinal_{ordinal:04d}.json", record)
 
 
 def inventory(root, *, exclude=()):
@@ -452,6 +493,7 @@ def recover_articles(source_dir, source_kind, output_dir, expected_reports, date
     for ordinal, plan in enumerate(plans, 1):
         directory = output / plan["directory"]
         context = {"policy": POLICY, "generation_contract_sha256": contract}
+        status = None
         try:
             existing = read_json(directory / "status.json") if (directory / "status.json").exists() else {}
             bound = usable_article(directory)
@@ -499,8 +541,31 @@ def recover_articles(source_dir, source_kind, output_dir, expected_reports, date
                 # Independent reports may finish; the batch cannot be delivered until every report binds.
                 from article_generation_progress import ProgressError
                 category = error.category if isinstance(error,(ArticleRecoveryError,ProgressError)) else "article_generation_failed"
-                failures.append(ArticleRecoveryError(category,ordinal))
-                if persist_progress is not None: persist_progress()
+                failure = ArticleRecoveryError(category, ordinal)
+                # The batch raises after finishing other independent reports. Keep
+                # the original private cause explicitly across that loop boundary.
+                failure.__cause__, failure.__suppress_context__ = error, True
+                try:
+                    # The producer may have updated diagnostics before raising.
+                    # Never copy status from a previous report or rebind an article.
+                    if status is not None:
+                        write_json(directory / "status.json", status)
+                    private_failure_record(output, plan, ordinal, contract, error, category)
+                except Exception as diagnostic_error:
+                    stopped = ArticleRecoveryError("article_failure_diagnostics_unavailable", ordinal)
+                    name = type(diagnostic_error).__name__
+                    stopped.add_note("Private diagnostics exception type: " +
+                        (name if name in PRIVATE_EXCEPTION_TYPES else "UnknownException"))
+                    raise stopped from failure
+                try:
+                    require(persist_progress() is not False, "article_failure_checkpoint_unavailable")
+                except Exception as persistence_error:
+                    stopped = ArticleRecoveryError("article_failure_checkpoint_unavailable", ordinal)
+                    name = type(persistence_error).__name__
+                    stopped.add_note("Private checkpoint exception type: " +
+                        (name if name in PRIVATE_EXCEPTION_TYPES else "UnknownException"))
+                    raise stopped from failure
+                failures.append(failure)
                 continue
             if isinstance(error, ArticleRecoveryError):
                 error.source_ordinal = ordinal

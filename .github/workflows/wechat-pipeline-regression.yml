@@ -172,6 +172,7 @@ jobs:
           python scripts/test_wechat_editorial_binding.py
           python scripts/test_article_generation_progress.py
           python scripts/test_article_title_resume.py
+          python scripts/test_article_failure_diagnostics.py
           python scripts/test_recover_report_articles.py
           python scripts/test_recovered_article_delivery.py
           python scripts/test_watch_recovered_article_publication.py
