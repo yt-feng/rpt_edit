@@ -290,6 +290,64 @@ inspection is not permission to repeat an unresolved paid request. The next
 recovery must use this saved diagnosis and verified completed articles; successful
 inspection alone is not generation or delivery acceptance.
 
+### Durable body and title continuation
+
+Read-only diagnostic run `38055118845` completed successfully with zero provider
+posts and zero object writes/deletions. It found 27 bound articles, followed by
+`generated_article_unbound` at source ordinal 28. The rejected candidate categories
+included `long_untranslated_english`, `english_heavy_fragment`, `anchor_coverage`
+and `missing_anchor_segment`; required technical terms were empty. Its title repair returned
+without an HTTP or exception failure, but `needs_model_repair=true` remained
+while `selected_quality_issues` was empty. That combination is meaningful:
+`evidence_or_emergency_fallback` requires further semantic evidence even when a
+title passes surface-quality checks. Recovery must not clear the flag or promote
+the old selected fallback into a purported model-returned candidate.
+
+The reusable article workflow now supplies `--checkpoint-workspace` to enable
+private durable stage progress. A request intent is archived and its size/hash
+metadata verified before a model request. The returned body or title response is
+then separately saved and archived before another request may start. Each request
+uses one key, one HTTP attempt and no internal model fallback. Pending/ambiguous
+requests remain pending across runner restoration and prevent resubmission;
+changing the prompt or options cannot bypass them. Existing complete editorial
+bindings still reuse the accepted article without any body or title call.
+
+Progress binds source/handoff identities, manifest, source receipt, exact source
+Markdown/provenance, generation implementation, prompt and model options. The
+successful body is reused while title generation resumes from saved results.
+Title proposals are bounded to four distinct new requests for an ordinary
+article (initial proposal plus up to three repairs); the pinned historical
+migration resumes from its actual saved raw candidates and permits up to three
+new repairs. When long English company/product names caused rejection, repair explicitly uses
+a Chinese name or short form supported by the evidence instead of copying the
+rejected full English name; it cannot invent an alias or change the subject.
+Every proposal passes the existing filename/required-term/coverage,
+source-backed additions, neutral wording and quality gates. Rejected titles never
+become accepted just because another attempt ran.
+
+Historical ordinal 28 predates the body checkpoint. Its migration is restricted
+to the independently inspected archive SHA
+`5c94fdc2352fb0620f6fd60c208ea724874eeda23b9272cd39b2572d2e817a09`,
+exact stored context, original generation contract and verified OCR source. It
+requires the saved body, prompt, status and actual title-candidate history to
+match that pinned failure. Arbitrary unbound or legacy partial outputs are not
+adopted or silently regenerated. The migration saves an immutable private body
+receipt before title work; the 27 complete articles are left byte-for-byte intact.
+
+Stage receipts, raw model responses and legacy admission proof live alongside
+`articles/` under the private generation checkpoint, never in the final article
+handoff or publish-ready tree. A title failure or pending request lets independent
+remaining reports finish and save their own progress, but no complete article
+receipt or delivery job is admitted until every selected article binds. A failed
+stage's empty pending-file glob does not establish that no request was submitted:
+the authoritative pending state is inside its private progress receipt.
+
+Offline regressions cover the 44-source pattern with 27 unchanged accepted
+articles, the retained 28th body, exactly 16 new remaining bodies, zero-call full
+replay, real semantic-emergency title gates, bounded repairs, persisted unknown
+requests and exclusion of private progress from article handoffs. These tests do
+not replace a real resumed generation, WeChat readback or public Blog receipt.
+
 ## Acceptance ledger
 
 Keep these receipts separate: original manifest, source extraction, generated

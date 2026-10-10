@@ -259,8 +259,17 @@ def prepare(workspace, config, env, client, bucket):
     claim_original(context, client, bucket)
     write_json(workspace / 'context.json', context)
     checkpoint = workspace / 'checkpoint'
-    if optional_download(context_prefix(context) + '/generation.tar.gz', checkpoint, client, bucket):
+    from legacy_article_title_resume import incident, authorize
+    generation_client, generation_head = client, None
+    if incident(context):
+        from recover_ocr_cache_sources import exact_head
+        from inspect_market_views_r2_cache import ReadOnlyClient
+        generation_head = exact_head(client,bucket,context_prefix(context)+'/generation.tar.gz')
+        generation_client = ReadOnlyClient(client,generation_head)
+    if optional_download(context_prefix(context) + '/generation.tar.gz', checkpoint, generation_client, bucket):
         require(read_json(checkpoint / 'context.json') == context, 'generation_checkpoint_source_changed')
+        if generation_head is not None:
+            authorize(checkpoint,context,generation_head)
     else:
         write_json(checkpoint / 'context.json', context)
     (checkpoint / 'articles').mkdir(parents=True, exist_ok=True)

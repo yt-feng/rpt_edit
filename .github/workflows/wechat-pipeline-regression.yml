@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - "scripts/*wechat*"
+      - "scripts/*article_generation_progress*"
+      - "scripts/*article_title_resume*"
       - "scripts/*recover_report_articles*"
       - "scripts/*recovered_article_delivery*"
       - "scripts/*watch_recovered_article_publication*"
@@ -68,6 +70,8 @@ on:
     branches: [main]
     paths:
       - "scripts/*wechat*"
+      - "scripts/*article_generation_progress*"
+      - "scripts/*article_title_resume*"
       - "scripts/*recover_report_articles*"
       - "scripts/*recovered_article_delivery*"
       - "scripts/*watch_recovered_article_publication*"
@@ -166,6 +170,8 @@ jobs:
           python scripts/test_mineru_terminal_recovery.py
           python scripts/test_generation_cost_controls.py
           python scripts/test_wechat_editorial_binding.py
+          python scripts/test_article_generation_progress.py
+          python scripts/test_article_title_resume.py
           python scripts/test_recover_report_articles.py
           python scripts/test_recovered_article_delivery.py
           python scripts/test_watch_recovered_article_publication.py

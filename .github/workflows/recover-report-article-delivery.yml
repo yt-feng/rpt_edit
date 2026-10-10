@@ -141,6 +141,7 @@ jobs:
             --source-run-id "$SOURCE_RUN_ID" --source-execution-sha "$ORIGINAL_SHA" \
             --source-handoff-run-id "$SOURCE_HANDOFF_RUN_ID" --source-handoff-execution-sha "$HANDOFF_SHA" \
             --model "$MODEL" --deepseek-base-url "$BASE_URL" --private-diagnostics \
+            --checkpoint-workspace "$DELIVERY_WORKSPACE" \
             > "$DELIVERY_WORKSPACE/private-generation.log" 2>&1
       - name: Save generation progress even after interruption
         if: ${{ always() && steps.prepare.outcome == 'success' }}

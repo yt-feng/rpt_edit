@@ -1642,8 +1642,19 @@ def build_filename_title_repair_prompt(
     institution_name = canonicalize_institution_title_name(institution_name)
     required_terms = required_filename_terms(source_filename, institution_name)
     generic_series = source_uses_generic_series_title(source_filename, institution_name)
+    english_name_guidance = ""
+    if {"long_untranslated_english", "english_heavy_fragment"} & set(quality_issues):
+        english_name_guidance = (
+            "定向纠错：上一轮保留公司或产品的完整英文名称，触发了长英文硬校验。"
+            "即使它是专有名词，也不要原样复制完整英文名。请使用正文证据明确出现的中文名称或已定义简称，"
+            "并保留同一个公司/产品的身份和文件名主题；不得自造译名、删除研究对象或换成另一家公司。"
+            "只可保留下方指定的技术缩写，不可把被拒绝的完整英文名称当作必须保留的缩写。"
+            "先核对正文中的名称对应关系，再生成完整中文标题。"
+        )
     return f"""
 你是微信公众号标题纠错编辑。上一轮标题未通过程序硬校验，请重新生成三个完整中文标题。只返回 JSON：{{"titles":["标题1","标题2","标题3"]}}，不要解释。
+
+{english_name_guidance}
 
 必须做到：
 1. 机构只写“{institution_name or '已识别机构'}”，放在唯一的中文冒号前。
