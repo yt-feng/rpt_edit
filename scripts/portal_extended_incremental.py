@@ -296,8 +296,8 @@ def main() -> int:
         else:
             result = pending(store, locales, args.corpus) if producer else None
             if result is None:
-                from portal_extended_daily_queue import read_queue, prepare_queued, read_corpus
-                if read_queue(store):
+                from portal_extended_daily_queue import all_queued, prepare_queued, read_corpus
+                if all_queued(store):
                     result = prepare_queued(store, locales)
                     if result['has_work'] and producer:
                         # Independent admitted locale cursors may use different

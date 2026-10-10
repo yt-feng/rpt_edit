@@ -118,6 +118,7 @@ jobs:
           python -B scripts/test_portal_extended_french_repair.py
           python -B scripts/test_portal_extended_daily_queue.py
           python -B scripts/test_portal_extended_source_refresh.py
+          python -B scripts/test_portal_extended_recovered_admission.py
           python -B scripts/test_portal_english_commentary.py
           python -B scripts/test_portal_english_pipeline.py
           python -B scripts/test_probe_portal_english_unit.py

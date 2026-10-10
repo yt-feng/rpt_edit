@@ -94,6 +94,22 @@
 
 回归使用两页、两个真实渲染 fallback 单元证明：页面去重后模型工作为零但欠账仍为二；正常重放不重试；ready sibling 可独立 handoff；active ACK 不删除欠账；完全恢复只清同 generation；hash/源/manifest/候选变化、伪造就绪、旧无证明 handoff 均拒绝。另验证已有 active fallback 的原字节继承以及正文变化仍阻断。该机制不代表旧批所有语言已经恢复，需以实际逐语种回退下降、handoff、正式切换和公共 URL 继续验收。
 
+## 已验收历史 Blog 批次的精确准入
+
+正常 `latest-published-source-refresh-v1` 仍只采集网站最新内容日期。补发的较早 Blog 不会通过修改日期、倒退 latest-day 指针或重抓全部历史混入该路径。`portal-extended-locales-source.yml` 另接收成功的 **Recover report article delivery** 完成事件；也可在 `main` 手动填写 `recovered_publication_run_id`，指定已经完成的独立恢复运行。空输入仍走原有最新日准入。
+
+`portal_extended_recovered_admission.py` 先认证同仓库、公开仓库、main、精确 run/attempt/SHA，以及 `generate`、`deliver`、`publish` 三个成功任务。仅下载该运行的 `recovered-publication-request-{run}` 和 `recovered-publication-state-{run}` 两份非正文制品；要求 state 为 `complete`、request 哈希和篇数一致、成功 Neutral release 包含已提交 Blog archive commit。未完成生成、仅提交 archive、仅 dispatch 发布或未验证线上正文，均不能得到来源准入。
+
+采集集合严格等于 request 中的 canonical Blog URL（1–500 页，同一内容日），逐篇从同一 HTTP 响应验证完整正文与引用摘要，再抽取翻译 corpus。URL 日期与页面自身 JSON-LD 发布日期必须一致；前后 edge release 身份必须稳定。publication request/state、来源正文哈希、原始 HTML 哈希、corpus generation 和真实 capture day 组成不可变私有证明。准入输出只有日期、计数、hash、状态和 release identity，不上传正文或模型响应到 Actions artifacts。
+
+该证明使用 `accepted-recovered-blog-cohort-v1` / admission schema 3。历史批次存放在独立、最多32项的 `incremental/recovered-source-cohorts/queue.json`，普通最新日队列不被修改；同一天的两个恢复批次均保留。请求哈希对应的不可变 claim 使重复事件成为无写入复用；即使最终 claim 写入中断，也从已验证队列恢复原 admission。完整 immutable corpus 和证明读回成功后才写队列指针。队列满时显式停止，不清除未完成来源。
+
+消费者合并读取两种已准入队列，仍使用现有 URL＋`content_key` 完成账本、每语言独立游标、每批最多24页、原 continuation 和 quality-debt 门禁。恢复来源没有新模型入口，也不重置任何完成/欠账记录。来源准入沿用 `extended-locales-source-admission` 锁；所有翻译继续进入 `extended-locales-r2-pipeline` 全局锁和 `max-parallel: 2`。本轮已持久化的页数确实推进后，只要任一已准入批次仍有待办，便继续下一批；没有进展不会自行反复 dispatch。
+
+这一路径覆盖现有33种非英语扩展阅读页。ko/ja/ar 继续由 Neutral 自身流程处理；English 仍是独立 KC commentary 契约，其历史 cohort 是否已精确入队需要单独证明，此修复不会把源文章全文塞进英文评论队列。各语言仍须逐项通过 translation-ready、既有发布允许列表、handoff、review 和实际公共页面验收，不能从中文发布成功推断所有语种完成。
+
+261007 的 `xhs_notes` 按既有日期规则形成2026-10-08 Blog。实际待恢复的文章数量应取其已验收 publication request，而非硬编码44；如存在既定内容排除，生成44篇、微信接受数＋排除数、公开 Blog 数必须分别记录。此入口的本地合成回归不代表该真实批次已发布或已进入33语种队列；真实准入必须等恢复运行产生成功的 publication state 后再验收。
+
 ## 已完成的回归与待完成的云端验收
 
 本轮英文发布、UI、评论与 pipeline 共 92 个测试通过；新增语言相关 260 个测试通过，其中 1 个既有 opt-in 测试未启用。测试覆盖实际资产物化差异、旧坏缓存/跨代 seed、原文嵌入、字段长度、精确数量、私有正文隔离以及跨日队列。它们证明本地修复契约，不代替云端模型输出与正式发布验收。

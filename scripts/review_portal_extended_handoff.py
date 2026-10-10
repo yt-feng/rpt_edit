@@ -232,6 +232,15 @@ def admission_is_valid(admitted, run, jobs, repository):
         # latest source day, captured release and exact corpus; the GitHub job
         # must still match its real capture day, repository, attempt and SHA.
         capture_day = admitted['capture_day']
+    elif admitted.get('schema_version') == 3:
+        from portal_extended_recovered_admission import POLICY as RECOVERED_POLICY
+        require(admitted.get('policy') == RECOVERED_POLICY
+                and re.fullmatch(r'[a-f0-9]{64}', admitted.get('recovery', '')) is not None
+                and publication_day(admitted.get('capture_day', '')) == admitted.get('capture_day')
+                and admitted['day'] <= admitted['capture_day'], 'Recovered publication proof identity differs')
+        # read_admission validates the immutable exact publication request,
+        # successful acceptance, stable public source bytes and corpus binding.
+        capture_day = admitted['capture_day']
     require(capture_day in {publication_day(selected[0].get(key, '')) for key in ('started_at', 'completed_at')},
             'Admission cannot discover historical source pages')
     return admitted
