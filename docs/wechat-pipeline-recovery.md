@@ -1,6 +1,6 @@
 # WeChat generation and recovery
 
-Last reviewed: 2026-10-10.
+Last reviewed: 2026-10-11.
 
 The source fetch, WeChat draft creation, and public website release are separate
 stages. A successful upload must include a successful `draft/get` readback of
@@ -111,6 +111,20 @@ normalized body and references. A superseded pending release can be followed
 without repeating generation or draft upload. A normal primary upload also
 requests an incremental public refresh; that dispatch alone is not live Blog
 acceptance.
+
+The completed Daily and standalone recovery publications also enter a durable
+locale-source event queue before the single source writer lock. Admission
+checks exact run/attempt and nested-job identities, archive ancestry and the
+live canonical/body receipt; it does not regenerate articles or reupload
+accepted drafts. See [durable publication ingress](extended-locale-publication-ingress.md).
+A real eligible Daily nested event still needs its own admission receipt;
+implementation and regression coverage are not that receipt.
+
+SEO multilingual prose-number differences are advisory under the
+[quantity policy](financial-quantity-translation.md). This does not change
+original Chinese article/title source evidence, draft readback, required HTML
+structure, source identity or exact publication receipts. A publishable legacy
+numeric-only fallback is not relabeled a fully translated article.
 
 ### Inspect an existing OCR checkpoint
 
@@ -245,8 +259,8 @@ Inspection run `38047483613` found the 261007 durable checkpoint present at
 and the original temporary source handoff absent. This establishes the reason
 for the recovery path, not complete cache contents or delivery. Offline
 consumer regressions cover full OCR page/figure use, dual identity rejection
-and unchanged-package replay; the real 44-source reconstruction and subsequent
-article, draft and Blog acceptance remain pending.
+and unchanged-package replay. Later source and article acceptance are recorded
+below; that inspection alone did not establish either.
 
 Production recovery `38049925018` subsequently verified the pinned checkpoint
 download but stopped at `summary_submission_pending`, reporting zero OCR and
@@ -258,8 +272,10 @@ page/hash/method/identity failures and the private-PDF boundary.
 The subsequent pages-mode run `38053057754` accepted all 44 reports in source
 job `114215930086`, with verified private archive and zero OCR/provider calls.
 Its `deliver / generate` job `114216146082` then exited 2; saving generation
-progress succeeded. This proves the historical page-source handoff, while
-article generation, draft readback and public Blog acceptance remain incomplete.
+progress succeeded. This established the historical page-source handoff. Article
+generation and draft readback were subsequently accepted through the retained
+revalidation and delivery receipts below; public Blog acceptance has a separate
+release-bound record.
 
 ### Inspect retained generation before recovery
 
@@ -356,7 +372,65 @@ must be bound to the preceding exact identity. See
 [Blog output contract](blog-seo-wechat-output.md) for publication and body
 identity, and the locale architecture documents for multilingual publication.
 
-The 2026-10-10 accepted Chinese snapshot contains:
+### 261007 OCR source, generation and draft receipts
+
+PR #335 merged at `30169f6` after seven successful cloud checks. Real read-only
+inspect run `38062695853`, job `114244017112`, then returned
+`revalidation_ready=true`, 44 completed articles after revalidation, 43 unchanged
+articles, zero provider POSTs and zero object writes. Apply run `38062813064`,
+job `114244354526`, returned `applied=true` with the same 44/43 counts and zero
+provider POSTs. Its two private object writes (generation checkpoint and complete
+article handoff) were verified. Both operations bind proof SHA-256
+`26e499e12ec01b4ca2bb1c168489f9929fc9c055e6cd97accaf6d2b44d3eda9d`.
+
+The selected title came from saved response 4, candidate 3. Complete numeric-atom
+truncation produced 34 characters, removed one whole quantity and introduced no
+changed/partial quantity. The original title-hook gates passed; the optional
+original-source semantic-support route did not rescue this batch. The existing
+body, four saved title responses, all Progress bytes, private source and other
+43 bound articles were preserved. See
+[original-source title support](title-original-source-claims.md#production-revalidation-receipt)
+for the exact retained-response boundary.
+
+Standalone delivery run `38062937361`, job `114244980478`, completed its private
+WeChat draft readback: `article_count=44`, `draft_count=6`,
+`source_report_count=44`, `excluded=0`, `accounted=44`. Blog archive commit
+`a1dec872d156e505094e77bd4df582a95b02db5e` is recorded. The successful deliver
+job produced request artifact `11674476878`, with 44 unique fingerprints and
+only canonical slugs/body/title hashes. Its request SHA-256 is
+`e9a0235e0044d50bb711896caa981d61e10fcf653edca22815274c9b94e89eae`.
+The request has been schema-validated and is not itself a live Blog receipt.
+
+Production release run: `38072861358`; immutable release:
+`a7fc76874f6643ccc275778311837bcd`. Cutover succeeded at 2026-10-10 19:42:50 UTC.
+New 44-article live acceptance passed at 2026-10-10 19:44:13 UTC: every
+canonical and complete normalized body/reference hash matched, and edge
+release/tree identity stayed unchanged around readback. Receipt SHA-256:
+`085399b6aa2ade200cd7c731d063bffd7f53ee76b114b2d6217912876522ea42`.
+The earlier 118 articles also passed a fresh full readback on this same release
+at 2026-10-10 19:46:02 UTC, with all canonical/body/reference hashes matching and
+unchanged edge identity. New 118-article receipt SHA-256:
+`4d5a67b9957007c90f6d563eba6feebb35d5154f8234e4cbbd2f5c5989bba10e`.
+The two release-bound receipts together verify 162/162 live articles; accepted
+drafts total 22 groups. Both checks made zero provider calls and zero production
+writes. The original standalone run `38062937361` and publish job
+`114251477079` completed successfully, without a rerun or duplicate draft upload.
+The original source, generation, draft and archive identities remain preserved;
+publication recovery does not repeat generation or WeChat upload.
+
+The same standalone run's exact attempt-1 publication event was captured and
+frozen, then admitted by source-admission run `38080940054` at
+2026-10-10 19:46:24 UTC: captured/checked/admitted events were each 1,
+blocked/retained events and paid-provider requests were each 0. Its resulting
+current-main consumer `38081129295` was pending with zero jobs at
+2026-10-10 19:48 UTC, while active translation work was retained. This verifies
+standalone OCR publication admission and queue handoff, not complete multilingual
+publication or a real Daily nested-event admission.
+
+### Previously accepted delivery cohorts
+
+The previously accepted 2026-10-10 Chinese snapshot contains 118 articles in
+16 WeChat draft groups:
 
 | Original source date | Selected sources | Accepted draft articles | Draft groups | Explicit exclusions |
 | --- | ---: | ---: | ---: | ---: |
@@ -372,14 +446,14 @@ and unchanged edge identity before and after the readback. Its acceptance
 receipt SHA-256 is
 `2d48c5caa7105d8854295888bec7af60c483919b1a8c6c7f27fe79a1eeef32c9`.
 
-This snapshot establishes normal and recovered MinerU delivery for those three
-cohorts. It does not establish a real OCR-to-draft-to-Blog production receipt,
-every earlier October source cohort, or publication in every supported locale.
-OCR has source-binding and consumer regression coverage, but its production
-acceptance must use a real eligible retained OCR receipt without forcing a
-successful MinerU batch onto the fallback path. Audit earlier dates against
-their selected manifests and accepted draft/archive identities before claiming
-historical completion.
+That historical snapshot establishes normal and recovered MinerU delivery for
+those three cohorts. The separate 261007 section above records OCR source,
+generation and draft receipts, and tracks public-release acceptance separately.
+Neither receipt proves every earlier October source cohort or publication in
+every supported locale.
+A successful MinerU batch is never forced onto OCR just to obtain a fallback
+receipt. Audit earlier dates against their selected manifests and accepted
+draft/archive identities before claiming historical completion.
 
 **WeChat pipeline regression** checks the source resolver, UTF-8 transport,
 verification failures, receipt recovery, deletion handling, diagnostic workflow
