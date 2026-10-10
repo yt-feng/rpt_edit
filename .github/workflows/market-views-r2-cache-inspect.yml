@@ -1,5 +1,5 @@
 name: Inspect Market Views incident R2 caches
-run-name: Read-only R2 inventory for Market Views October 1-3
+run-name: Read-only Market Views cache inventory ${{ inputs.source_run_id || 'October 1-3' }}
 on:
   pull_request:
     paths:
@@ -7,6 +7,23 @@ on:
       - scripts/inspect_market_views_r2_cache.py
       - scripts/test_inspect_market_views_r2_cache.py
   workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Exact completed Daily run for OCR cache presence only; leave all inputs empty for the October 1-3 inventory
+        type: string
+        required: false
+      date_folder:
+        description: Exact source date in YYMMDD form
+        type: string
+        required: false
+      expected_reports:
+        description: Exact original source count, 1-1000
+        type: string
+        required: false
+      manifest_sha256:
+        description: SHA256 of the retained selected_to_process_manifest.json bytes
+        type: string
+        required: false
 permissions:
   contents: read
 concurrency:
@@ -28,6 +45,14 @@ jobs:
     if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    permissions:
+      contents: read
+      actions: read
+    env:
+      SOURCE_RUN_ID: ${{ inputs.source_run_id || '' }}
+      DATE_FOLDER: ${{ inputs.date_folder || '' }}
+      EXPECTED_REPORTS: ${{ inputs.expected_reports || '' }}
+      MANIFEST_SHA256: ${{ inputs.manifest_sha256 || '' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -35,14 +60,64 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Validate exact inspection inputs before remote reads
+        id: request
+        run: |
+          python3 -B - <<'PY'
+          import os, sys
+          sys.path.insert(0, 'scripts')
+          from inspect_market_views_r2_cache import validate_ocr_request
+          request = validate_ocr_request(*(os.environ[key] for key in
+              ('SOURCE_RUN_ID', 'DATE_FOLDER', 'EXPECTED_REPORTS', 'MANIFEST_SHA256')))
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write('mode=' + ('ocr-presence' if request else 'incident') + '\n')
+          PY
+      - name: Read exact original Daily identity
+        if: steps.request.outputs.mode == 'ocr-presence'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_RUN_ID" \
+            > "$RUNNER_TEMP/ocr-source-producer.json" 2> "$RUNNER_TEMP/ocr-source-read-error.txt"; then
+            echo '::error::Exact source run metadata could not be read.'
+            exit 1
+          fi
+          python3 -B - <<'PY'
+          import json, os, sys
+          from pathlib import Path
+          sys.path.insert(0, 'scripts')
+          from inspect_market_views_r2_cache import validate_ocr_request, validate_ocr_producer
+          request = validate_ocr_request(*(os.environ[key] for key in
+              ('SOURCE_RUN_ID', 'DATE_FOLDER', 'EXPECTED_REPORTS', 'MANIFEST_SHA256')))
+          producer = json.loads(Path(os.environ['RUNNER_TEMP'], 'ocr-source-producer.json').read_bytes())
+          validate_ocr_producer(producer, request, os.environ['GITHUB_REPOSITORY'])
+          PY
+      - name: Read retained lightweight source manifest without PDFs
+        if: steps.request.outputs.mode == 'ocr-presence'
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_run_id }}
+          name: selected-macro-manifest-${{ inputs.source_run_id }}
+          path: ${{ runner.temp }}/ocr-source-manifest
       - run: python3 -m pip install --disable-pip-version-check --retries 0 'boto3>=1.37.32,<2'
-      - name: Inspect fixed private dates without modifying stored objects
+      - name: Inspect private cache without modifying stored objects
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
-        run: python3 -B scripts/inspect_market_views_r2_cache.py --output "$RUNNER_TEMP/market-views-r2-cache-inventory.json"
+        run: |
+          args=()
+          if [ -n "$SOURCE_RUN_ID" ]; then
+            args+=(--source-run-id "$SOURCE_RUN_ID" --date-folder "$DATE_FOLDER"
+              --expected-reports "$EXPECTED_REPORTS" --manifest-sha256 "$MANIFEST_SHA256"
+              --manifest "$RUNNER_TEMP/ocr-source-manifest/selected_to_process_manifest.json"
+              --producer-json "$RUNNER_TEMP/ocr-source-producer.json")
+          fi
+          python3 -B scripts/inspect_market_views_r2_cache.py \
+            --output "$RUNNER_TEMP/market-views-r2-cache-inventory.json" "${args[@]}"
       - name: Preserve sanitized counts and hashes
         if: always()
         uses: actions/upload-artifact@v4
