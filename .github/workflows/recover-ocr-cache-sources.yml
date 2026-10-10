@@ -1,0 +1,167 @@
+name: Recover historical OCR sources from verified cache only
+run-name: Recover cached OCR sources ${{ inputs.date_folder }} from Daily ${{ inputs.source_run_id }}
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/recover-ocr-cache-sources.yml
+      - scripts/recover_ocr_cache_sources.py
+      - scripts/test_recover_ocr_cache_sources.py
+      - scripts/build_market_views_ocr_fallback.py
+      - scripts/test_build_market_views_ocr_fallback.py
+      - scripts/market_views_cross_report.py
+      - scripts/test_market_views_cross_report.py
+      - scripts/market_views_publication.py
+      - scripts/market_views_source_readiness.py
+      - scripts/recovered_article_delivery.py
+      - scripts/recover_report_articles.py
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Exact completed original Daily run
+        required: true
+        type: string
+      date_folder:
+        description: Exact original source date, YYMMDD
+        required: true
+        type: string
+      expected_reports:
+        description: Exact complete original PDF count
+        required: true
+        type: string
+      manifest_sha256:
+        description: SHA-256 of the retained original selected manifest bytes
+        required: true
+        type: string
+      archive_sha256:
+        description: Exact OCR checkpoint SHA-256 confirmed by the presence inspector
+        required: true
+        type: string
+      archive_size_bytes:
+        description: Exact OCR checkpoint byte count confirmed by the presence inspector
+        required: true
+        type: string
+      recover_articles:
+        description: Continue verified sources into articles, WeChat draft readback and public Blog acceptance
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: historical-ocr-cache-recovery-${{ inputs.source_run_id || github.run_id }}-${{ inputs.date_folder }}
+  cancel-in-progress: false
+
+jobs:
+  contract:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF reportlab PyYAML
+      - name: Test strict cached OCR source recovery and existing synthesis
+        run: |
+          python -B scripts/test_recover_ocr_cache_sources.py
+          python -B scripts/test_build_market_views_ocr_fallback.py
+          python -B scripts/test_market_views_cross_report.py
+          python -B scripts/test_market_views_publication.py
+          python -B scripts/test_market_views_source_readiness.py
+          python -B scripts/test_recover_report_articles.py
+          python -B scripts/test_recovered_article_delivery.py
+
+  recover:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+      DATE_FOLDER: ${{ inputs.date_folder }}
+      EXPECTED_REPORTS: ${{ inputs.expected_reports }}
+      MANIFEST_SHA256: ${{ inputs.manifest_sha256 }}
+      ARCHIVE_SHA256: ${{ inputs.archive_sha256 }}
+      ARCHIVE_SIZE_BYTES: ${{ inputs.archive_size_bytes }}
+      RECOVERY_WORKSPACE: ${{ runner.temp }}/ocr-cache-recovery
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Authenticate exact original Daily before artifact restoration
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 -B - <<'PY'
+          import os, sys
+          sys.path.insert(0, 'scripts')
+          from recover_ocr_cache_sources import request_from_env, recovery_identity
+          recovery_identity(os.environ, request_from_env(os.environ))
+          PY
+          if ! gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_RUN_ID" \
+            > "$RUNNER_TEMP/ocr-original-producer.json" 2> "$RUNNER_TEMP/ocr-original-read-error.txt"; then
+            echo '::error::Exact original Daily metadata could not be read.'
+            exit 1
+          fi
+          python3 -B - <<'PY'
+          import json, os, sys
+          from pathlib import Path
+          sys.path.insert(0, 'scripts')
+          from recover_ocr_cache_sources import request_from_env, validate_ocr_producer
+          validate_ocr_producer(json.loads(Path(os.environ['RUNNER_TEMP'], 'ocr-original-producer.json').read_bytes()),
+                                request_from_env(os.environ), os.environ['GITHUB_REPOSITORY'])
+          PY
+      - name: Restore exact selected original PDFs and manifest
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_run_id }}
+          name: selected-macro-pdfs-${{ inputs.source_run_id }}
+          path: ${{ runner.temp }}/ocr-selected-originals
+      - name: Install verification and deterministic rendering dependencies
+        run: python -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF reportlab 'boto3>=1.37.32,<2'
+      - name: Restore and verify complete OCR sources from cache only
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python -B scripts/recover_ocr_cache_sources.py recover \
+            --input-dir "$RUNNER_TEMP/ocr-selected-originals" \
+            --producer-json "$RUNNER_TEMP/ocr-original-producer.json" --workspace "$RECOVERY_WORKSPACE"
+      - name: Archive and verify recovered OCR sources in private R2
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python -B scripts/recover_ocr_cache_sources.py archive \
+            --input-dir "$RUNNER_TEMP/ocr-selected-originals" \
+            --producer-json "$RUNNER_TEMP/ocr-original-producer.json" --workspace "$RECOVERY_WORKSPACE"
+
+  deliver:
+    needs: recover
+    if: inputs.recover_articles && needs.recover.result == 'success'
+    permissions:
+      contents: write
+      actions: write
+    uses: ./.github/workflows/recover-report-article-delivery.yml
+    with:
+      source_run_id: ${{ inputs.source_run_id }}
+      source_handoff_run_id: ${{ github.run_id }}
+      source_kind: ocr-synthesis
+      date_folder: ${{ inputs.date_folder }}
+      expected_articles: ${{ inputs.expected_reports }}
+      upload_wechat: true
+    secrets: inherit
