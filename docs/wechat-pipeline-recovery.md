@@ -160,7 +160,7 @@ Pass the four exact source inputs from the inspection above, plus
 receipt. The producer verifies the downloaded archive bytes against both pins;
 the inspector's stored metadata is not sufficient. It verifies original PDF
 hashes, manifest bindings and complete cached page/chunk/model-prompt identities
-before rebuilding the source package. Source reconstruction performs no OCR,
+before rebuilding the default `source_mode=synthesis` package. Source reconstruction performs no OCR,
 MinerU or model calls. Missing, corrupt, mismatched or unresolved cache entries
 stop recovery instead of silently enabling a new processing request.
 
@@ -174,11 +174,40 @@ Consumers require the exact main/manual producer and both successful source
 reconstruction and archive-readback gates before reading this new handoff.
 Ordinary same-run Daily OCR receipts keep their existing path and contract.
 
+`source_mode=pages` is an independent recovery contract for article generation
+when every original page is cached but a Market Views summary is missing or its
+submission outcome is unknown. It does not call the synthesis builder, OCR,
+MinerU or a model, and does not interpret, clear or resubmit summary/final
+pending records. It requires every selected PDF's exact manifest/SHA, actual
+PDF page count, production extraction-cache key and full ordered page evidence:
+text SHA, allowed extraction method, consistent empty flag and at least one
+nonempty page per report. All reports pass before any source handoff is written.
+
+The independent `ocr_pages_receipt.json` has `source_kind=ocr-pages`; it contains
+no summarized-report claim, synthesized sections or reconstructed charts. Its
+private namespace is
+`_private-workflow-handoff/market-ocr-pages-cache-recovery/<recovery_run_id>/<date_folder>/shard_0.tar.gz`.
+Two separate successful pages-mode step gates, the exact producer/run/SHA and
+the strict pages receipt are all required by consumers. Synthesis-only gates
+cannot authorize this source kind, and this receipt cannot be used by the
+Market Views synthesized-PDF publisher.
+
+For independent downstream PDF SHA/page-count verification, this source
+package has one narrow private-handoff exception: the exact receipt-bound
+`originals/RNNN.pdf` inventory may be included after the full pages receipt is
+validated. It stays in the same private R2 bucket. The default archive filter
+continues excluding original PDFs; there is no general include-PDF CLI input.
+Article staging copies page evidence and full `source_ocr.md` only, marks
+`image_source_kind=ocr_pages_text_only`, and supplies no fabricated figures.
+Original PDFs are absent from article checkpoints and public Blog output.
+
 Rerun the same GitHub recovery run to resume: an existing complete package is
 downloaded, revalidated and reused with its receipt bytes unchanged; archival
 readback verifies it instead of overwriting it. This preserves the generation
 context and accepted-draft checkpoints. A different recovery run or changed
 receipt cannot inherit an earlier context merely because the date/count match.
+This same-run exact-byte reuse applies independently within each source mode;
+changing mode never reuses the other mode's source namespace or article context.
 
 `recover_articles=true` (the default) then invokes the existing article recovery
 workflow with the original run and the new handoff run as separate inputs.
@@ -195,6 +224,15 @@ for the recovery path, not complete cache contents or delivery. Offline
 consumer regressions cover full OCR page/figure use, dual identity rejection
 and unchanged-package replay; the real 44-source reconstruction and subsequent
 article, draft and Blog acceptance remain pending.
+
+Production recovery `38049925018` subsequently verified the pinned checkpoint
+download but stopped at `summary_submission_pending`, reporting zero OCR and
+provider calls. This is an unresolved Market Views summary, not proof of a
+missing original page cache. The pages-mode contract has local regressions for
+44 real PDF fixtures, 88 pages, full article generation/replay, strict missing
+page/hash/method/identity failures and the private-PDF boundary. Its real
+historical 44-report source, draft and public Blog acceptance still require a
+successful new pages-mode cloud run.
 
 ## Acceptance ledger
 

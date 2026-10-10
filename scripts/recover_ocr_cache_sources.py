@@ -36,6 +36,9 @@ def digest(data):
 
 
 def public_error_category(error):
+    from ocr_page_sources import OCRPagesError
+    if isinstance(error, OCRPagesError):
+        return str(error)
     if isinstance(error, CacheRecoveryError):
         return str(error)
     fixed = {
@@ -64,6 +67,7 @@ def public_error_category(error):
 
 
 def request_from_env(env):
+    source_mode(env)
     request = validate_ocr_request(*(env.get(name, '') for name in
         ('SOURCE_RUN_ID', 'DATE_FOLDER', 'EXPECTED_REPORTS', 'MANIFEST_SHA256')))
     require(request is not None, 'exact_source_request_required')
@@ -71,6 +75,20 @@ def request_from_env(env):
     require(bool(HASH.fullmatch(checksum)) and bool(re.fullmatch(r'[1-9][0-9]{0,9}', size))
             and int(size) <= MAX_BYTES, 'pinned_archive_request_invalid')
     return {**request, 'archive_sha256': checksum, 'archive_size_bytes': int(size)}
+
+
+def source_mode(env):
+    mode = env.get('SOURCE_MODE', 'synthesis')
+    require(mode in {'synthesis', 'pages'}, 'source_mode_invalid')
+    return mode
+
+
+def source_contract(mode):
+    if mode == 'pages':
+        from ocr_page_sources import PREFIX as prefix, RECEIPT as receipt, KIND as kind
+        return prefix, receipt, kind
+    require(mode == 'synthesis', 'source_mode_invalid')
+    return PREFIX, RECEIPT, 'ocr-synthesis'
 
 
 def recovery_identity(env, request):
@@ -105,10 +123,15 @@ def download_verified(client, bucket, key, destination, head):
     download_directory(key, destination, client=ReadOnlyClient(client, head), bucket=bucket)
 
 
-def verified_sources(root, request, original_sha, run_id, sha):
+def verified_sources(root, request, original_sha, run_id, sha, mode='synthesis'):
     from market_views_publication import validate_ocr_synthesis_receipt
     from recover_report_articles import load_sources
-    receipt = validate_ocr_synthesis_receipt(root, date_folder=request['date_folder'],
+    validator = validate_ocr_synthesis_receipt
+    if mode == 'pages':
+        from ocr_page_sources import validate_pages_receipt
+        validator = validate_pages_receipt
+    _, _, kind = source_contract(mode)
+    receipt = validator(root, date_folder=request['date_folder'],
         expected_reports=request['expected_reports'], source_run_id=request['source_run_id'],
         execution_sha=original_sha, recovery_run_id=run_id, recovery_execution_sha=sha)
     envelope = receipt['cache_recovery']
@@ -116,7 +139,7 @@ def verified_sources(root, request, original_sha, run_id, sha):
             and envelope['archive_sha256'] == request['archive_sha256']
             and envelope['archive_size_bytes'] == request['archive_size_bytes'], 'recovery_checkpoint_changed')
     # Includes every page's actual text hash and full page ordering, before upload.
-    load_sources(root, 'ocr-synthesis', request['expected_reports'], request['date_folder'],
+    load_sources(root, kind, request['expected_reports'], request['date_folder'],
         source_run_id=request['source_run_id'], source_execution_sha=original_sha,
         source_handoff_run_id=run_id, source_handoff_execution_sha=sha)
     return receipt
@@ -138,13 +161,15 @@ def frozen_context(input_dir, producer, request, env):
 def recover(input_dir, producer, request, workspace, env, client, bucket, *,
             model='deepseek-flash', base_url='https://api.deepseek.com'):
     manifest, original_sha, run_id, sha = frozen_context(input_dir, producer, request, env)
+    mode = source_mode(env)
+    prefix, receipt_name, _ = source_contract(mode)
     source = workspace / 'source'
-    key = f'{PREFIX}/{run_id}/{request["date_folder"]}/shard_0.tar.gz'
+    key = f'{prefix}/{run_id}/{request["date_folder"]}/shard_0.tar.gz'
     existing = exact_head(client, bucket, key, optional=True)
     if existing is not None:
         download_verified(client, bucket, key, source, existing)
-        receipt = verified_sources(source, request, original_sha, run_id, sha)
-        require(receipt['model'] == model, 'recovery_model_changed')
+        receipt = verified_sources(source, request, original_sha, run_id, sha, mode)
+        if mode == 'synthesis': require(receipt['model'] == model, 'recovery_model_changed')
         return {'reused': True, 'reports': request['expected_reports']}
 
     cache_key = checkpoint_key(manifest, request['date_folder'], request['expected_reports'])
@@ -153,6 +178,23 @@ def recover(input_dir, producer, request, workspace, env, client, bucket, *,
             and head['Metadata']['sha256'] == request['archive_sha256'], 'pinned_checkpoint_changed')
     cache = workspace / 'cache'
     download_verified(client, bucket, cache_key, cache, head)
+    envelope = {
+        'schema_version': 1, 'workflow': WORKFLOW, 'recovery_run_id': run_id, 'recovery_execution_sha': sha,
+        'source_run_id': request['source_run_id'], 'source_execution_sha': original_sha,
+        'manifest_sha256': request['manifest_sha256'],
+        'checkpoint_identity': cache_key.rsplit('/', 1)[-1].removesuffix('.tar.gz'),
+        'archive_sha256': request['archive_sha256'], 'archive_size_bytes': request['archive_size_bytes'],
+        'cache_only': True, 'ocr_calls': 0, 'provider_posts': 0}
+    if mode == 'pages':
+        from ocr_page_sources import build_pages
+        built = workspace / 'built' / request['date_folder']
+        build_pages(input_dir, manifest, cache, built, expected_reports=request['expected_reports'],
+            date_folder=request['date_folder'], source_run_id=request['source_run_id'], execution_sha=original_sha,
+            recovery=envelope)
+        verified_sources(built, request, original_sha, run_id, sha, mode)
+        require(not source.exists(), 'recovery_destination_not_fresh')
+        built.rename(source)
+        return {'reused': False, 'reports': request['expected_reports']}
     from build_market_views_ocr_fallback import build, write_json
     # No OCR/model credentials are passed by the producer workflow. Cache-only
     # guards are still enforced even when such credentials exist in an environment.
@@ -161,13 +203,7 @@ def recover(input_dir, producer, request, workspace, env, client, bucket, *,
         model=model, base_url=base_url, ocr_all_pages=True, cache_only=True)
     require(receipt['summarized_reports'] == request['expected_reports'] and receipt['skipped_reports'] == 0,
             'complete_cached_source_coverage_required')
-    receipt['cache_recovery'] = {
-        'schema_version': 1, 'workflow': WORKFLOW, 'recovery_run_id': run_id, 'recovery_execution_sha': sha,
-        'source_run_id': request['source_run_id'], 'source_execution_sha': original_sha,
-        'manifest_sha256': request['manifest_sha256'],
-        'checkpoint_identity': cache_key.rsplit('/', 1)[-1].removesuffix('.tar.gz'),
-        'archive_sha256': request['archive_sha256'], 'archive_size_bytes': request['archive_size_bytes'],
-        'cache_only': True, 'ocr_calls': 0, 'provider_posts': 0}
+    receipt['cache_recovery'] = envelope
     built = workspace / 'built' / request['date_folder']
     write_json(built / RECEIPT, receipt)
     verified_sources(built, request, original_sha, run_id, sha)
@@ -178,20 +214,23 @@ def recover(input_dir, producer, request, workspace, env, client, bucket, *,
 
 def archive(input_dir, producer, request, workspace, env, client, bucket):
     _, original_sha, run_id, sha = frozen_context(input_dir, producer, request, env)
+    mode = source_mode(env)
+    prefix, receipt_name, _ = source_contract(mode)
     source = workspace / 'source'
-    verified_sources(source, request, original_sha, run_id, sha)
-    key = f'{PREFIX}/{run_id}/{request["date_folder"]}/shard_0.tar.gz'
+    verified_sources(source, request, original_sha, run_id, sha, mode)
+    key = f'{prefix}/{run_id}/{request["date_folder"]}/shard_0.tar.gz'
     head = exact_head(client, bucket, key, optional=True)
     with tempfile.TemporaryDirectory(prefix='ocr-source-readback-', dir=workspace) as temp:
         readback = Path(temp) / 'source'
         if head is None:
-            upload_directory(source, key, client=client, bucket=bucket)
+            extra = {'include_ocr_page_originals': True} if mode == 'pages' else {}
+            upload_directory(source, key, client=client, bucket=bucket, **extra)
             head = exact_head(client, bucket, key)
         download_verified(client, bucket, key, readback, head)
-        verified_sources(readback, request, original_sha, run_id, sha)
+        verified_sources(readback, request, original_sha, run_id, sha, mode)
         # Never overwrite an existing source receipt: accepted consumer contexts
         # bind these exact bytes, including completion time and cache metrics.
-        require((readback / RECEIPT).read_bytes() == (source / RECEIPT).read_bytes(),
+        require((readback / receipt_name).read_bytes() == (source / receipt_name).read_bytes(),
                 'existing_handoff_receipt_changed')
     return {'reports': request['expected_reports'], 'archive_verified': True}
 

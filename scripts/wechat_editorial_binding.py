@@ -54,12 +54,12 @@ def _fingerprints(directory: Path, status: dict[str, Any]) -> tuple[dict[str, An
             return None
         kind = provenance.get("source_kind")
         keys = {"source_kind", "source_pdf", "content_sha256", "source_receipt_sha256", "source_report_id"}
-        if kind == "ocr-synthesis":
+        if kind in {"ocr-synthesis", "ocr-pages"}:
             keys.add("source_pages_sha256")
             source_name = "source_ocr.md"
-        if (kind not in {"mineru-recovery", "ocr-synthesis"} or set(provenance) != keys
+        if (kind not in {"mineru-recovery", "ocr-synthesis", "ocr-pages"} or set(provenance) != keys
                 or provenance.get("source_pdf") != status.get("source_pdf")
-                or status.get("source_method") != ("ocr" if kind == "ocr-synthesis" else "mineru")
+                or status.get("source_method") != ("ocr" if kind in {"ocr-synthesis", "ocr-pages"} else "mineru")
                 or status.get("source_markdown") != source_name
                 or not isinstance(provenance.get("source_report_id"), str)
                 or not re.fullmatch(r"[A-Za-z0-9_-]{1,160}", provenance["source_report_id"])
@@ -77,7 +77,7 @@ def _fingerprints(directory: Path, status: dict[str, Any]) -> tuple[dict[str, An
         other = directory / ("source_mineru.md" if source_name == "source_ocr.md" else "source_ocr.md")
         if other.exists() or other.is_symlink():
             return None
-        if provenance["source_kind"] == "ocr-synthesis":
+        if provenance["source_kind"] in {"ocr-synthesis", "ocr-pages"}:
             from report_extraction_source import ocr_markdown_from_pages
             pages_path = directory / "source_ocr_pages.json"
             if pages_path.is_symlink() or not pages_path.is_file():

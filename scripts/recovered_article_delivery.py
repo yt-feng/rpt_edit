@@ -22,7 +22,8 @@ import tempfile
 DAILY = '.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml'
 MANUAL = '.github/workflows/market-views-mineru-recovery.yml'
 WORKFLOW = '.github/workflows/recover-report-article-delivery.yml'
-PREFIXES = {'mineru-recovery': 'mineru-market-sources', 'ocr-synthesis': 'market-ocr-synthesis'}
+PREFIXES = {'mineru-recovery': 'mineru-market-sources', 'ocr-synthesis': 'market-ocr-synthesis',
+            'ocr-pages': 'market-ocr-pages-cache-recovery'}
 ARTICLE_RECEIPT = 'article_recovery_receipt.json'
 SHA = re.compile(r'[a-f0-9]{64}')
 
@@ -186,6 +187,9 @@ def authenticated_context(config, env):
         expected_workflow = (DAILY if config['SOURCE_HANDOFF_RUN_ID'] == config['SOURCE_RUN_ID']
                              else OCR_CACHE_RECOVERY_WORKFLOW)
         require(handoff.get('path') == expected_workflow, 'ocr_handoff_workflow_invalid')
+    elif config['SOURCE_KIND'] == 'ocr-pages':
+        require(config['SOURCE_HANDOFF_RUN_ID'] != config['SOURCE_RUN_ID']
+                and handoff.get('path') == OCR_CACHE_RECOVERY_WORKFLOW, 'ocr_pages_handoff_workflow_invalid')
     from market_views_source_readiness import require_source_readiness
     require_source_readiness(handoff, jobs(repository, config['SOURCE_HANDOFF_RUN_ID']), source_kind=config['SOURCE_KIND'])
     return original_sha, handoff['head_sha']
@@ -223,7 +227,11 @@ def validate_source(root, config, original_sha, handoff_sha):
     else:
         from market_views_publication import validate_ocr_synthesis_receipt, RECEIPT_NAME
         RECEIPT = RECEIPT_NAME
-        receipt = validate_ocr_synthesis_receipt(root, date_folder=config['DATE_FOLDER'],
+        validator = validate_ocr_synthesis_receipt
+        if config['SOURCE_KIND'] == 'ocr-pages':
+            from ocr_page_sources import RECEIPT, validate_pages_receipt
+            validator = validate_pages_receipt
+        receipt = validator(root, date_folder=config['DATE_FOLDER'],
             expected_reports=config['EXPECTED_ARTICLES'], source_run_id=config['SOURCE_RUN_ID'], execution_sha=original_sha,
             recovery_run_id=config['SOURCE_HANDOFF_RUN_ID'], recovery_execution_sha=handoff_sha)
     manifest_sha = digest((root / 'selected_to_process_manifest.json').read_bytes())
