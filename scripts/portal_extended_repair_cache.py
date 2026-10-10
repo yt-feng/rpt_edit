@@ -17,9 +17,10 @@ def forbidden_engine(*args):
 
 class CacheFirstTranslator:
     def __init__(self, translator=None):
-        self.fresh = translator or OfflineTranslator(validation_attempts=1)
+        self.fresh = translator or OfflineTranslator(validation_attempts=1, quantity_policy='advisory')
         self.cached = OfflineTranslator(cache_dir=self.fresh.cache_dir, model_dir=self.fresh.model_dir,
-                                       engine_factory=forbidden_engine, validation_attempts=1)
+                                       engine_factory=forbidden_engine, validation_attempts=1,
+                                       quantity_policy='advisory')
 
     def __getattr__(self, name): return getattr(self.fresh, name)
 

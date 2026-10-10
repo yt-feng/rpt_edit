@@ -154,10 +154,10 @@ class RepairTests(unittest.TestCase):
     def test_all_preserved_rows_current_validation_preflight_even_unused(self):
         value = copy.deepcopy(self.old)
         text = 'Earlier revenue USD50m.'
-        value['rows'][repair.unit_key(text,'en')] = {'source':text,'language':'en','text':'Ancien chiffre USD99m.'}
+        value['rows'][repair.unit_key(text,'en')] = {'source':text,'language':'en','text':''}
         self.refresh_checkpoint(value)
         translator = RepairTranslator()
-        with self.assertRaisesRegex(Exception, 'Financial quantity'): self.rebuild(translator)
+        with self.assertRaisesRegex(Exception, 'Empty translated'): self.rebuild(translator)
         self.assert_no_effect(translator)
 
     def test_row_fallback_conflict_and_unknown_schema_rejected_before_model(self):
@@ -328,7 +328,7 @@ class RepairTests(unittest.TestCase):
         self.rebuild(RepairTranslator())
         key = repair.ledger_key(self.store,self.units[0],'outcome.json')
         value = json.loads(self.client.objects[key]['body'])
-        value['row']['text'] = 'Montant USD999m.'
+        value['row']['text'] = ''
         raw = stable_bytes(value)
         self.client.objects[key].update(body=raw,ContentLength=len(raw),Metadata={'sha256':digest(raw)})
         retry = RepairTranslator()
@@ -390,10 +390,10 @@ class RepairTests(unittest.TestCase):
             repair.rebuild(self.store,self.corpus,self.oldraw,self.oldcandidate,self.root/'new',self.root/'new.json',self.request,OWNER,translator,seconds=0)
         self.assert_no_effect(translator)
 
-    def test_terminal_and_outer_quantity_failure_preserve_original_candidate_bytes(self):
+    def test_terminal_and_outer_display_failure_preserve_original_candidate_bytes(self):
         class Invalid(RepairTranslator):
             def translate(self,*args,**kwargs):
-                self.calls.append(args[0]); return 'Montant USD999m.'
+                self.calls.append(args[0]); return 'Texte __KC_PH_000__'
         translator=Invalid(); proof=self.rebuild(translator)
         self.assertFalse(proof['changed']); self.assertEqual(proof['new'],proof['old'])
         self.assertEqual(proof['fallbacks_after'],2)

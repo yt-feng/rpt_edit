@@ -369,18 +369,24 @@ def _restore_table_edges(source: str, result: str) -> str:
 
 
 def validate_result(source: str, result: str, source_language: str, target: str,
-                    *, markdown: bool = True, check_quantities: bool = True) -> None:
+                    *, markdown: bool = True, check_quantities: bool = True,
+                    optional_placeholders: tuple[str, ...] = ()) -> None:
     if not result.strip():
         raise OfflineTranslationValidationError('Empty Hy-MT2 translation')
     if re.search(r'[\ufffd\ud800-\udfff]', result):
         raise OfflineTranslationValidationError('Invalid Unicode translation')
-    if Counter(_PLACEHOLDERS.findall(source)) != Counter(_PLACEHOLDERS.findall(result)):
+    expected, actual = _PLACEHOLDERS.findall(source), _PLACEHOLDERS.findall(result)
+    optional = set(optional_placeholders)
+    if (set(actual) - set(expected)
+            or Counter(token for token in expected if token not in optional)
+            != Counter(token for token in actual if token not in optional)):
         raise OfflineTranslationValidationError('Hy-MT2 changed, omitted, or duplicated a protected placeholder')
     # HTML titles and table cells are plain text too. Validate pipe boundaries
     # inside the model retry/cache boundary, not only in the page builder.
     if source.count('|') != result.count('|'):
         raise OfflineTranslationValidationError('Hy-MT2 changed Markdown structure: |')
-    # Korean/Japanese GEO copy is gated on structure and quantities, not wording.
+    # Report/editorial callers retain strict quantities. Website SEO callers
+    # explicitly select advisory quantities while retaining structural checks.
     if check_quantities:
         problems = quantity_issues(source, result, source_language, target)
         if problems:
@@ -389,8 +395,12 @@ def validate_result(source: str, result: str, source_language: str, target: str,
     # punctuation substitutions, not Markdown. The caller must opt in to that
     # format; report Markdown retains all existing structural checks.
     if markdown:
+        # A site's numeric data token is presentation text, not Markdown
+        # emphasis. Resource/code tokens remain mandatory above.
+        format_source = _PLACEHOLDERS.sub(lambda match: '' if match[0] in optional else match[0], source)
+        format_result = _PLACEHOLDERS.sub(lambda match: '' if match[0] in optional else match[0], result)
         for marker in ('|', '[', ']', '*', '_', '~', '`'):
-            if source.count(marker) != result.count(marker):
+            if format_source.count(marker) != format_result.count(marker):
                 raise OfflineTranslationValidationError(f'Hy-MT2 changed Markdown structure: {marker}')
         destination_shape = r'\]\(__HYMTPH_\d+__\)|\]\[__HYMTPH_\d+__\]'
         if Counter(re.findall(destination_shape, source)) != Counter(re.findall(destination_shape, result)):
@@ -541,7 +551,7 @@ class HyMTOfflineTranslator:
     def __init__(self, cache_dir: str | Path | None = None, *, model_dir: str | Path | None = None,
                  engine_factory: Callable[[str, str], object] | None = None, batch_size: int = 1,
                  diagnostic_callback: Callable[[dict], None] | None = None,
-                 validation_attempts: int = 3):
+                 validation_attempts: int = 3, quantity_policy: str = 'strict'):
         self.cache_dir = Path(cache_dir or os.environ.get('HYMT_TRANSLATION_CACHE') or os.environ.get('PORTAL_OFFLINE_TRANSLATION_CACHE', '.cache/hymt-translation'))
         self.model_dir = Path(model_dir or os.environ.get('HYMT_MODEL_DIR', '.cache/hymt-model'))
         self._engine_factory = engine_factory
@@ -549,12 +559,42 @@ class HyMTOfflineTranslator:
         self._diagnostic_callback = diagnostic_callback
         if validation_attempts not in {1, 2, 3}:
             raise ValueError('validation_attempts must be 1..3')
+        if quantity_policy not in {'strict', 'advisory'}:
+            raise ValueError('quantity_policy must be strict or advisory')
         self.validation_attempts = validation_attempts
+        self.quantity_policy = quantity_policy
         self.deadline = None
         self.model_id = MODEL_ID
         self.stats = {'cache_hits': 0, 'translated_fragments': 0, 'batch_requests': 0}
         self.failure_diagnostics: list[dict] = []
         self.validation_failure_count = 0
+        self.quantity_warning_count = 0
+        self.quantity_warning_diagnostics: list[dict] = []
+
+    def _record_quantity_warning(self, source: str, translated: str, source_language: str, target: str,
+                                 optional_placeholders: tuple[str, ...] = ()) -> None:
+        """Bounded, content-free SEO diagnostics never drive retries or fallback."""
+        try:
+            problems = quantity_issues(source, translated, source_language, target)
+        except Exception:
+            # Optional diagnostics must not discard a structurally accepted
+            # SEO translation. Strict callers invoke the parser separately.
+            problems = ['quantity_diagnostic_unavailable']
+        if any(source.count(token) != translated.count(token) for token in optional_placeholders):
+            problems = [*problems, 'numeric_data_placeholder_changed']
+        if not problems:
+            return
+        self.quantity_warning_count += 1
+        if len(self.quantity_warning_diagnostics) < 20:
+            known_codes = {'invalid_calendar_date', 'invalid_numeric_format',
+                           'financial_quantity_changed_missing_or_added', 'quantity_diagnostic_unavailable',
+                           'numeric_data_placeholder_changed'}
+            self.quantity_warning_diagnostics.append({
+                'source_sha256': hashlib.sha256(source.encode()).hexdigest(),
+                'target_language': target,
+                'codes': sorted({code if code in known_codes else 'quantity_diagnostic_unavailable'
+                                 for code in problems}),
+            })
 
     def set_deadline(self, deadline: float) -> None:
         self.deadline = deadline
@@ -589,7 +629,8 @@ class HyMTOfflineTranslator:
             _identity, path = self._memo_identity(core, target, source or _detect_source(core), markdown=markdown)
             path.unlink(missing_ok=True)
 
-    def _translate_part(self, text: str, target: str, source: str | None, *, markdown: bool = True) -> str:
+    def _translate_part(self, text: str, target: str, source: str | None, *, markdown: bool = True,
+                        optional_placeholders: tuple[str, ...] = ()) -> str:
         leading, trailing = text[:len(text) - len(text.lstrip())], text[len(text.rstrip()):]
         core = text.strip()
         detected = source or _detect_source(core)
@@ -605,7 +646,8 @@ class HyMTOfflineTranslator:
             if all(cached.get(name) == value for name, value in identity.items()):
                 value = cached['translation']
                 # Cache stores the validated masked form, independent of source URLs.
-                validate_result(masked, value, detected, target, markdown=markdown, check_quantities=False)
+                validate_result(masked, value, detected, target, markdown=markdown, check_quantities=False,
+                                optional_placeholders=optional_placeholders)
                 self.stats['cache_hits'] += 1
             else:
                 raise ValueError('Cache identity changed')
@@ -619,7 +661,7 @@ class HyMTOfflineTranslator:
                     self._check_deadline()
                     model_input = masked
                     quantity_retry_replacements: dict[str, str] = {}
-                    if attempt == 2 and isinstance(engine, _HyMTEngine):
+                    if attempt == 2 and isinstance(engine, _HyMTEngine) and self.quantity_policy == 'strict':
                         model_input, quantity_retry_replacements, _visible_facts = _quantity_retry_input(
                             masked, len(replacements) + len(terms), target=target)
                     value = None
@@ -639,7 +681,8 @@ class HyMTOfflineTranslator:
                                                        'controlled_terms': dict(terms)})
                         if markdown:
                             value = _restore_table_edges(model_input, value)
-                        validate_result(model_input, value, detected, target, markdown=markdown, check_quantities=False)
+                        validate_result(model_input, value, detected, target, markdown=markdown, check_quantities=False,
+                                        optional_placeholders=optional_placeholders)
                         # Validate the materialized result inside the same
                         # bounded retry loop. Otherwise a quantity-protected
                         # third response could pass the masked check and only
@@ -648,7 +691,9 @@ class HyMTOfflineTranslator:
                         materialized = _restore_terms(cache_value, terms)
                         for token, original in replacements.items():
                             materialized = materialized.replace(token, original)
-                        validate_result(core, materialized, detected, target, markdown=markdown)
+                        validate_result(core, materialized, detected, target, markdown=markdown,
+                                        check_quantities=self.quantity_policy == 'strict',
+                                        optional_placeholders=optional_placeholders)
                         value = materialized
                         active_replacements = replacements
                         fresh_translation = True
@@ -682,11 +727,18 @@ class HyMTOfflineTranslator:
         for token, original in active_replacements.items():
             value = value.replace(token, original)
         # Validate the materialized response as well as the masked response.
-        # This keeps the standalone translator safe if a caller does not add
-        # the extended-locale builder's outer quantity gate.
-        validate_result(core, value, detected, target, markdown=markdown)
+        # Both cache and new output pass the caller's current policy. Keep the
+        # cache identity stable: advisory can reuse strict rows without new
+        # inference, and strict callers still reject numeric drift in an
+        # advisory-written row before returning it.
+        validate_result(core, value, detected, target, markdown=markdown,
+                        check_quantities=self.quantity_policy == 'strict',
+                        optional_placeholders=optional_placeholders)
+        if self.quantity_policy == 'advisory':
+            self._record_quantity_warning(core, value, detected, target, optional_placeholders)
         if fresh_translation:
-            atomic_json(path, {**identity, 'translation': cache_value, 'created_at': datetime.now(timezone.utc).isoformat()})
+            atomic_json(path, {**identity, 'translation': cache_value, 'quantity_policy': self.quantity_policy,
+                               'created_at': datetime.now(timezone.utc).isoformat()})
             self.stats['translated_fragments'] += 1
             self.stats['batch_requests'] += 1
         return leading + value.strip() + trailing
@@ -700,6 +752,18 @@ class HyMTOfflineTranslator:
 
     def translate_many(self, texts: Sequence[str], target: str, source: str | None = None) -> list[str]:
         return [self.translate(text, target, source) for text in texts]
+
+    def translate_site_text(self, text: str, target: str, *, data_placeholders: tuple[str, ...] = ()) -> str:
+        """Honor the page builder's exact numeric-token classification only."""
+        if self.quantity_policy != 'advisory':
+            raise ValueError('Site data placeholders require advisory quantity policy')
+        if (not isinstance(data_placeholders, tuple)
+                or any(not isinstance(token, str) or not re.fullmatch(r'__KC_PH_\d{3,}__', token)
+                       or token not in _PLACEHOLDERS.findall(text) for token in data_placeholders)):
+            raise ValueError('Invalid site numeric data placeholder')
+        target = normalize_language(target)
+        return ''.join(self._translate_part(piece, target, None, optional_placeholders=data_placeholders)
+                       for piece in split_sentences(text))
 
     def translate_markdown(self, markdown: str, target: str = 'zh', source: str | None = None,
                            *, source_fallback: Callable[[dict], None] | None = None) -> str:

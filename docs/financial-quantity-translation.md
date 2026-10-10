@@ -1,5 +1,48 @@
 # Financial quantity validation in localized translations
 
+## Policy scope as of 2026-10-11
+
+The quantity parser checks prose numbers, money, percentages, signs, dates,
+units and occurrence counts. It is not an HTML, CSS or JavaScript rendering
+check. For the `ko`/`ja`/`ar` site mirrors and all 33 non-English SEO/GEO reading
+locales, differences are advisory. Both the page builder and the shared Hy-MT2
+adapter explicitly select this policy. A numeric-only difference does not
+trigger another model call, cache eviction, source fallback or publication hold.
+Known numeric data placeholders use the same advisory rule; URLs, resources and
+runtime placeholders remain mandatory.
+
+The parser grammar below remains useful for bounded diagnostics and strict
+callers. English editorial, report translation and Chinese editorial callers
+retain the adapter's strict default. In this document, parser “failure” means a
+blocking result only for those strict callers; SEO callers record counts and
+fixed codes. Diagnostic samples are bounded hashes, never source/model text.
+The same model/cache identities remain reusable in both policies. Strict callers
+revalidate any cache they consume, including a row first produced in advisory
+mode. Advisory callers retain structural, link, placeholder, table, Unicode,
+nonempty-content and target-script checks.
+
+### Publication and old checkpoints
+
+Historical approved pages are replayed from their authenticated pinned cache
+without inference. Current SEO advisory validation is tried first; the frozen
+quantity parser is only an exact historical compatibility path. Full approved
+HTML inventory and bytes must still match. Changing prose numbers does not
+permit replacing an already approved page or rebinding it to a different source.
+
+A numeric-origin source fallback remains source text: `translation_complete`
+and `translation_ready` remain false. A separately verified `publication_ready`
+may permit this intact SEO page. Its complete fallback count, hash inventory,
+fixed numeric error categories and exact source/manifest/proof identity must
+agree. Missing or mixed structural evidence does not receive this exception.
+Old immutable manifests/proofs are read under this policy, not rewritten merely
+to add a flag. Automatic recovery excludes numeric-only fresh inference and
+retains accepted-ledger/cache-only completion. The explicit `repair_portal_extended_checkpoint.py` entry retains its current
+strict parser/adapter contract for exact manual checkpoint recovery. The French
+legacy recovery entry preserves its source/receipt identity contract while using
+the SEO advisory numeric policy.
+
+## Parser semantics for diagnostics and strict callers
+
 The quantity gate compares structured multisets, retaining the magnitude,
 currency, quantity kind, sign and occurrence count. It validates materialized
 Hy-MT2 output before a new cache entry is written and also validates reused
@@ -76,11 +119,14 @@ quantities continue to fail. Invalid-format diagnostics contain a fixed
 `invalid_number` fact with no source text; a downstream public diagnostic that
 does not recognize this fact reports its signature as unavailable.
 
-## Cache and publication boundaries
+## Earlier strict-policy cache and publication boundaries (historical)
 
 The model identity and `extended-static-v2` checkpoint identity are not bumped.
 This avoids discarding successful work or implicitly scheduling historical
-translations. Reuse has several distinct gates:
+translations. The earlier strict-policy behavior below remains applicable to strict callers.
+SEO publication follows the advisory policy above instead:
+
+Reuse has several distinct gates:
 
 1. The Hy-MT2 adapter materializes the cached translation and applies the current
    quantity gate before returning it. An old `125%` to `0,125%` cache entry is
@@ -103,10 +149,15 @@ translations. Reuse has several distinct gates:
    unchanged source content. This preserves the active site; it is not evidence
    that historical text was corrected under the new numeric grammar.
 
-Existing exact-source fallbacks remain terminal under their original policy.
-This parser change does not erase render receipts, clear quality debt, retry old
-failed units or establish that any recovered locale has been published. Existing
-fallback recovery still requires its exact source/producer/checkpoint proof and
+Existing exact-source fallbacks retain their source text and original outcome.
+Numeric-only records are not scheduled for fresh automatic repair under the SEO
+policy; publication eligibility is evaluated separately as described above.
+The SEO policy does not erase immutable source, candidate, checkpoint, fallback
+or quality-proof evidence. Verified numeric-only records no longer occupy the
+blocking repair queue; old records drain through the existing bounded, rotating
+authenticated scan without inference. Mixed or unknown structural debt remains.
+This does not establish that any recovered locale has been published. Actual
+translation repair still requires its exact source/producer/checkpoint proof and
 a separately verified resulting candidate.
 
 ## Validation evidence
@@ -132,6 +183,7 @@ malformed-group cases, including native and fullwidth decimal digits.
 
 These deterministic checks do not assert that every model translation is correct
 or that historical source fallbacks have been repaired. Existing cache identities,
-producer concurrency, source receipts, quality debt and publication gates are
-unchanged; real fallback recovery still requires a new verified producer result.
+producer concurrency and source receipts remain unchanged. Numeric-only SEO
+publication eligibility follows the new policy above; actual translation repair
+still requires a verified translated result.
 

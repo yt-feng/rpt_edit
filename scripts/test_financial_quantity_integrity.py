@@ -226,28 +226,48 @@ class FinancialQuantityTests(unittest.TestCase):
             self.assertEqual(quantity_issues('USD1234.50', 'USD１．２３４，５０', 'en', locale), [])
         self.assertEqual(quantity_issues('USD1234.50', 'USD１\u202f２３４，５０', 'en', 'fr'), [])
 
-    def test_registered_checkpoint_revalidates_accepted_rows_before_new_handoff(self):
+    def test_registered_seo_checkpoint_accepts_numeric_prose_differences_before_handoff(self):
+        from types import SimpleNamespace
+        from build_portal_extended_locales import CHECKPOINT_VERSION
+        from offline_translation import MODEL_ID
+        from portal_extended_continuation import checkpoint_evidence
+        from portal_extended_locales import digest, stable_bytes
+
+        generation = 'a' * 64
+        for locale in COMMA_LOCALES:
+            for source, same_quantity in (('Rate 0.125%.', True), ('Rate 125%.', False)):
+                with self.subTest(locale=locale, source=source):
+                    key = digest(stable_bytes([CHECKPOINT_VERSION, MODEL_ID, locale, 'en', source]))
+                    text = {'ru': 'Рост 0,125%.', 'uk': 'Ріст 0,125%.', 'kk': 'Өсім 0,125%.'}.get(locale, 'Ratio 0,125%.')
+                    raw = stable_bytes({'version': CHECKPOINT_VERSION, 'model': MODEL_ID,
+                        'locale': locale, 'source_generation': generation,
+                        'rows': {key: {'source': source, 'language': 'en', 'text': text}}})
+                    store = SimpleNamespace(checkpoint_object_key=lambda *_: 'exact-checkpoint',
+                                            _get=lambda *_, **__: raw)
+                    self.assertEqual(bool(quantity_issues(source, text, 'en', locale)), not same_quantity)
+                    self.assertEqual(checkpoint_evidence(store, locale, generation, digest(raw)), {key})
+
+    def test_registered_seo_checkpoint_still_rejects_broken_display_contracts(self):
         from types import SimpleNamespace
         from build_portal_extended_locales import CHECKPOINT_VERSION
         from offline_translation import MODEL_ID
         from portal_extended_continuation import checkpoint_evidence
         from portal_extended_locales import ExpansionError, digest, stable_bytes
 
-        generation = 'a' * 64
-        for locale in COMMA_LOCALES:
-            for source, accepted in (('Rate 0.125%.', True), ('Rate 125%.', False)):
-                with self.subTest(locale=locale, source=source):
-                    key = digest(stable_bytes([CHECKPOINT_VERSION, MODEL_ID, locale, 'en', source]))
-                    raw = stable_bytes({'version': CHECKPOINT_VERSION, 'model': MODEL_ID,
-                        'locale': locale, 'source_generation': generation,
-                        'rows': {key: {'source': source, 'language': 'en', 'text': {'ru': 'Рост 0,125%.', 'uk': 'Ріст 0,125%.', 'kk': 'Өсім 0,125%.'}.get(locale, 'Ratio 0,125%.')}}})
-                    store = SimpleNamespace(checkpoint_object_key=lambda *_: 'exact-checkpoint',
-                                            _get=lambda *_, **__: raw)
-                    if accepted:
-                        self.assertEqual(checkpoint_evidence(store, locale, generation, digest(raw)), {key})
-                    else:
-                        with self.assertRaisesRegex(ExpansionError, 'Financial quantity validation failed'):
-                            checkpoint_evidence(store, locale, generation, digest(raw))
+        generation, source, locale = 'a' * 64, 'Rate 125%.', 'fr'
+        key = digest(stable_bytes([CHECKPOINT_VERSION, MODEL_ID, locale, 'en', source]))
+        for text, message in (('', 'Empty translated text'),
+                              ('Valeur privée \ufffd.', 'Invalid Unicode translation'),
+                              ('Rapport __KC_PH_001__.', 'Unrestored protected identifier'),
+                              ('Ratio 0,125% | ajouté.', 'Table column boundaries changed')):
+            with self.subTest(message=message):
+                raw = stable_bytes({'version': CHECKPOINT_VERSION, 'model': MODEL_ID,
+                    'locale': locale, 'source_generation': generation,
+                    'rows': {key: {'source': source, 'language': 'en', 'text': text}}})
+                store = SimpleNamespace(checkpoint_object_key=lambda *_: 'exact-checkpoint',
+                                        _get=lambda *_, **__: raw)
+                with self.assertRaisesRegex(ExpansionError, message):
+                    checkpoint_evidence(store, locale, generation, digest(raw))
 
     def test_french_complete_space_grouping_preserves_numbers_currency_and_fractional_precision(self):
         for space in (' ', '\u00a0', '\u202f'):

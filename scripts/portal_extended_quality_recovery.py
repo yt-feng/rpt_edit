@@ -18,7 +18,9 @@ from portal_extended_continuation import (queue, save_queue, read_origin, origin
     producer_identity, checkpoint_evidence, MAX_CONTINUATIONS)
 from portal_extended_incremental import read_state, write_state, content_key
 from portal_extended_daily_queue import immutable_record
-from portal_extended_quality import debt_rows, candidate_quality, proof_key, MAX_PROOF_BYTES
+from portal_extended_quality import (debt_rows, candidate_quality, proof_key, MAX_PROOF_BYTES,
+                                     publication_ready, record_quality)
+from build_portal_extended_locales import NUMERIC_FALLBACK_CODES
 
 MAX_GENERATIONS_PER_SCAN = 4
 MAX_UNITS_PER_SCAN = 60
@@ -243,6 +245,15 @@ def status(store, locale, generation, code, **counts):
 def prepare_one(store, locale, generation, debt, owner, repository, api):
     pipeline = RepairPipeline(quality_contract(locale))
     proof = verify_debt(store, locale, generation, debt)
+    if publication_ready(proof):
+        # Reuse the existing bounded, cursor-based scan to migrate old numeric
+        # debt. The exact immutable proof/source/manifest was authenticated
+        # above; remove only its queue row, never its honest fallback evidence.
+        record_quality(store, locale, generation, proof['candidate_id'],
+                       manifest_sha256=proof['manifest_sha256'])
+        status(store, locale, generation, 'numeric_advisory_no_repair',
+               skipped_numeric_units=proof['source_fallback_unit_count'], fresh_authorized_units=0)
+        return None
     origin = read_origin(store, generation)
     require(origin is not None and origin_allows_locale(origin, locale)
             and origin['source_sha256'] == proof['source_sha256'], 'historical_origin_unproven')
@@ -274,9 +285,18 @@ def prepare_one(store, locale, generation, debt, owner, repository, api):
         require(type(offset) is int and offset >= 0, 'recovery_cursor_invalid')
         ordered = eligible[offset % len(eligible):] + eligible[:offset % len(eligible)] if eligible else []
         scanned = 0
+        skipped_numeric_units = 0
+        old_fallbacks = json.loads(old).get('source_fallbacks', {})
         for unit in ordered[:MAX_UNITS_PER_SCAN]:
             scanned += 1
             claim, outcome, legacy = pipeline.units.prior_outcome(store, unit, required[unit])
+            if (old_fallbacks.get(unit, {}).get('code') in NUMERIC_FALLBACK_CODES
+                    and (outcome is None or outcome['status'] != 'accepted')):
+                # Keep the exact source fallback and its honest untranslated
+                # count. Numeric prose quality alone no longer authorizes a
+                # provider call, including after an old terminal attempt.
+                skipped_numeric_units += 1
+                continue
             if claim is not None and outcome is None:
                 selection['unresolved_units'] += 1
             elif outcome is not None and outcome['status'] == 'terminal':
@@ -290,7 +310,8 @@ def prepare_one(store, locale, generation, debt, owner, repository, api):
         write_state(store, 'quality-recovery-cursor', locale, {'offsets':cursor})
         request['units'].sort()
         if not request['units']:
-            status(store, locale, generation, 'no_retryable_units', **selection)
+            status(store, locale, generation, 'no_retryable_units', **selection,
+                   skipped_numeric_units=skipped_numeric_units)
             return None
         pipeline.units.request(request)
         if restore:
@@ -310,7 +331,8 @@ def prepare_one(store, locale, generation, debt, owner, repository, api):
         # Save the exact plan before launch so an interrupted prepared tail can be
         # retried without selecting new units or introducing a new source.
         write_state(store, 'quality-recovery-active', locale, {'plan':identity})
-        status(store, locale, generation, 'selected', **selection)
+        status(store, locale, generation, 'selected', **selection,
+               skipped_numeric_units=skipped_numeric_units)
         return {'locale':locale, 'generation':generation, 'day':plan['day'], 'quality_repair':identity}
 
 

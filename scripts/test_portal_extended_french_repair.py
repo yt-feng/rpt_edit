@@ -248,15 +248,18 @@ class IntegrationTests(unittest.TestCase):
             self.store._put(self.store.key('publication-handoffs',checksum,'receipt.json'),raw,metadata={'kind':'fixture'})
             with self.subTest(change=change), self.assertRaises(ExpansionError): read_handoff(self.store,checksum)
 
-    def test_partial_repair_retains_debt_and_cannot_auto_publish(self):
-        from portal_extended_quality import quality_summary
+    def test_partial_numeric_repair_retains_honest_proof_without_blocking_debt(self):
+        from portal_extended_quality import quality_summary, handoff_quality
         result = self.finish()
         row = queue(self.store, 'fr')[self.generation]
         batch = {'generation': self.generation, 'candidates': {'fr': row['snapshot']['candidate_id']}}
         self.assertTrue(result['changed'])
-        with self.assertRaisesRegex(ExpansionError, 'translated-ready'):
-            save_handoff(self.store, batch, day=DAY, pages=2, producer=OWNER)
-        self.assertEqual(quality_summary(self.store, ('fr',))['quality_debt_source_fallback_units'], 1)
+        receipt = read_handoff(self.store, save_handoff(self.store, batch, day=DAY, pages=2, producer=OWNER))
+        quality = handoff_quality(self.store, receipt)['fr']
+        self.assertTrue(quality['publication_ready'])
+        self.assertFalse(quality['translation_ready'])
+        self.assertEqual(quality['source_fallback_unit_count'], 1)
+        self.assertEqual(quality_summary(self.store, ('fr',))['quality_debt_source_fallback_units'], 0)
         self.assertIn(self.generation, queue(self.store, 'fr'))
 
     def test_repair_producer_requires_main_manual_exact_successful_source_and_fr_jobs(self):
@@ -343,7 +346,7 @@ class IntegrationTests(unittest.TestCase):
             path=fixture.root/file_for_url(doc['url']); path.parent.mkdir(parents=True,exist_ok=True)
             path.write_bytes(raw_page(doc['url'],body=BODY))
         work=self.root/'publication'; work.mkdir()
-        with patch('portal_extended_publication.read_active_batches',return_value=[old]):
+        with patch('portal_extended_publication.read_active_ledger',return_value={'batches':[old]}):
             assembled=compose(fixture.root,self.store,[old,new],work,active_identity={'slot':'a'})
         self.assertEqual(assembled['batches'],[old,new])
         self.assertEqual(len(assembled['replays']),1)

@@ -59,6 +59,135 @@ class HyMTTests(unittest.TestCase):
             translator.translate('Cash reserves were USD 120 million.', 'zh', 'en')
         self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
 
+    def test_advisory_numeric_difference_is_cached_without_retry_or_fallback(self):
+        engine = RetryingEngine(lambda _text, _attempt: 'Le revenu augmente de 125%.')
+        translator = h.OfflineTranslator(cache_dir=self.directory.name,
+            engine_factory=lambda *_: engine, quantity_policy='advisory')
+        source = 'Revenue grew 12.5%.'
+        for _ in range(2):
+            self.assertEqual(translator.translate(source, 'fr', 'en'), 'Le revenu augmente de 125%.')
+        self.assertEqual(len(engine.calls), 1)
+        self.assertEqual(translator.stats['cache_hits'], 1)
+        self.assertEqual(translator.validation_failure_count, 0)
+        self.assertEqual(translator.failure_diagnostics, [])
+        self.assertEqual(translator.quantity_warning_count, 2)
+        warnings = translator.quantity_warning_diagnostics
+        self.assertEqual(warnings[0]['codes'], ['financial_quantity_changed_missing_or_added'])
+        self.assertEqual(set(warnings[0]), {'source_sha256', 'target_language', 'codes'})
+        self.assertNotIn('125', json.dumps(warnings))
+        row = json.loads(next(Path(self.directory.name).rglob('*.json')).read_text())
+        self.assertEqual(row['quantity_policy'], 'advisory')
+
+    def test_advisory_reuses_existing_strict_cache_without_inference(self):
+        strict = self.translator(lambda _: 'Le revenu augmente de 12,5%.')
+        source = 'Revenue grew 12.5%.'
+        expected = strict.translate(source, 'fr', 'en')
+        # Legacy cache rows did not persist a quantity_policy field.
+        path = next(Path(self.directory.name).rglob('*.json'))
+        row = json.loads(path.read_text()); row.pop('quantity_policy')
+        path.write_text(json.dumps(row))
+        original = path.read_bytes()
+        advisory = h.OfflineTranslator(cache_dir=self.directory.name, quantity_policy='advisory',
+            engine_factory=mock.Mock(side_effect=AssertionError('Existing cache must avoid inference')))
+        self.assertEqual(advisory.translate(source, 'fr', 'en'), expected)
+        self.assertEqual(advisory.quantity_warning_count, 0)
+        self.assertEqual(path.read_bytes(), original)
+
+    def test_advisory_cache_does_not_bypass_strict_report_validation(self):
+        advisory = h.OfflineTranslator(cache_dir=self.directory.name, quantity_policy='advisory',
+            engine_factory=lambda *_: Engine(lambda _: 'Le revenu augmente de 125%.'))
+        source = 'Revenue grew 12.5%.'
+        advisory.translate(source, 'fr', 'en')
+        path = next(Path(self.directory.name).rglob('*.json'))
+        original = path.read_bytes()
+        strict = h.OfflineTranslator(cache_dir=self.directory.name,
+            engine_factory=mock.Mock(side_effect=AssertionError('Strict cache validation must not call model')))
+        with self.assertRaisesRegex(h.OfflineTranslationValidationError, 'quantity'):
+            strict.translate(source, 'fr', 'en')
+        self.assertEqual(path.read_bytes(), original)
+        self.assertEqual(strict.quantity_warning_count, 0)
+
+    def test_advisory_preserves_structural_unicode_and_language_checks(self):
+        for source, response, reason, markdown in (
+            ('Read __KC_PH_000__ at 12.5%.', 'Lire 125%.', 'placeholder', True),
+            ('Read [report](../report.pdf) at 12.5%.', 'Lire [rapport]__HYMTPH_0000__ à 125%.', 'destination boundary', True),
+            ('Read **report** at 12.5%.', 'Lire rapport à 125%.', 'Markdown structure', True),
+            ('Revenue | 12.5%', 'Revenu 125%', 'Markdown structure', False),
+            ('Revenue grew 12.5%.', 'Revenu \ufffd 125%.', 'Unicode', True),
+            ('Revenue grew 12.5%.', '', 'Empty', True),
+            ('Revenue grew 12.5%.', '收入125%。', 'target script', True),
+        ):
+            with self.subTest(reason=reason), tempfile.TemporaryDirectory() as directory:
+                engine = RetryingEngine(lambda _text, _attempt: response)
+                translator = h.OfflineTranslator(cache_dir=directory, quantity_policy='advisory',
+                    engine_factory=lambda *_: engine)
+                with self.assertRaisesRegex(h.OfflineTranslationValidationError, reason):
+                    translator.translate(source, 'fr', 'en', markdown=markdown)
+                self.assertEqual(len(engine.calls), 3)
+                self.assertFalse(list(Path(directory).rglob('*.json')))
+                self.assertEqual(translator.quantity_warning_count, 0)
+
+    def test_advisory_diagnostics_are_bounded_and_parser_errors_do_not_retry(self):
+        engine = RetryingEngine(lambda _text, _attempt: 'Le revenu augmente de 125%.')
+        translator = h.OfflineTranslator(cache_dir=self.directory.name, quantity_policy='advisory',
+            engine_factory=lambda *_: engine)
+        diagnostic_errors = [ValueError, ArithmeticError, TypeError, RuntimeError, OSError]
+        with mock.patch.object(h, 'quantity_issues',
+                               side_effect=[diagnostic_errors[index % len(diagnostic_errors)]('private quantity contents')
+                                            for index in range(25)]):
+            for _ in range(25):
+                self.assertEqual(translator.translate('Revenue grew 12.5%.', 'fr', 'en'),
+                                 'Le revenu augmente de 125%.')
+        self.assertEqual(len(engine.calls), 1)
+        self.assertEqual(translator.quantity_warning_count, 25)
+        self.assertEqual(len(translator.quantity_warning_diagnostics), 20)
+        self.assertEqual(translator.quantity_warning_diagnostics[0]['codes'], ['quantity_diagnostic_unavailable'])
+        self.assertNotIn('private', json.dumps(translator.quantity_warning_diagnostics))
+
+    def test_quantity_policy_requires_explicit_supported_value(self):
+        for policy in ('ignore', '', None, 1):
+            with self.subTest(policy=policy), self.assertRaises(ValueError):
+                h.OfflineTranslator(cache_dir=self.directory.name, quantity_policy=policy)
+
+    def test_advisory_site_numeric_tokens_may_be_omitted_but_resources_remain_exact(self):
+        source = 'Read __KC_PH_000__ at __KC_PH_001__.'
+        engine = RetryingEngine(lambda _text, _attempt: 'Lire __KC_PH_000__.')
+        translator = h.OfflineTranslator(cache_dir=self.directory.name, quantity_policy='advisory',
+            engine_factory=lambda *_: engine)
+        for _ in range(2):
+            self.assertEqual(translator.translate_site_text(source, 'fr', data_placeholders=('__KC_PH_001__',)),
+                             'Lire __KC_PH_000__.')
+        self.assertEqual(len(engine.calls), 1)
+        self.assertEqual(translator.quantity_warning_count, 2)
+        self.assertIn('numeric_data_placeholder_changed', translator.quantity_warning_diagnostics[0]['codes'])
+        # The same cache row cannot excuse an omitted resource for another caller.
+        with self.assertRaisesRegex(h.OfflineTranslationValidationError, 'placeholder'):
+            translator.translate_site_text(source, 'fr')
+        self.assertEqual(len(engine.calls), 4)  # Existing bounded structural retry remains.
+        strict = h.OfflineTranslator(cache_dir=self.directory.name)
+        with self.assertRaisesRegex(ValueError, 'advisory'):
+            strict.translate_site_text(source, 'fr', data_placeholders=('__KC_PH_001__',))
+
+    def test_advisory_optional_numbers_do_not_allow_new_tokens_or_missing_resources(self):
+        for response in ('Lire __KC_PH_001__.', 'Lire __KC_PH_000__ __KC_PH_999__.' ):
+            with self.subTest(response=response), tempfile.TemporaryDirectory() as directory:
+                translator = h.OfflineTranslator(cache_dir=directory, quantity_policy='advisory',
+                    engine_factory=lambda *_: Engine(lambda _: response))
+                with self.assertRaisesRegex(h.OfflineTranslationValidationError, 'placeholder'):
+                    translator.translate_site_text('Read __KC_PH_000__ at __KC_PH_001__.', 'fr',
+                                                   data_placeholders=('__KC_PH_001__',))
+                self.assertFalse(list(Path(directory).rglob('*.json')))
+
+    def test_advisory_numeric_token_allowlist_cannot_skip_resource_destination_shape(self):
+        translator = h.OfflineTranslator(cache_dir=self.directory.name, quantity_policy='advisory',
+            engine_factory=lambda *_: Engine(lambda _: 'Lire [rapport]().'))
+        with self.assertRaisesRegex(h.OfflineTranslationValidationError, 'placeholder|destination boundary'):
+            translator.translate_site_text('Read [report](__KC_PH_000__).', 'fr',
+                                           data_placeholders=('__KC_PH_000__',))
+        for placeholders in (('__HYMTPH_0000__',), ('__KC_PH_999__',), ['__KC_PH_000__']):
+            with self.subTest(placeholders=placeholders), self.assertRaises(ValueError):
+                translator.translate_site_text('Read __KC_PH_000__.', 'fr', data_placeholders=placeholders)
+
     def test_locale_decimal_validation_precedes_cache_and_preserves_equivalent_result(self):
         for locale in COMMA_LOCALES:
             for source, accepted in (('Rate 0.125%.', True), ('Rate 125%.', False)):

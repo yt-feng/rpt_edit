@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
+from contextlib import contextmanager
 from html.parser import HTMLParser
 import json
 from pathlib import Path
@@ -17,10 +18,13 @@ import unicodedata
 import requests
 
 from assemble_portal_extended_locales import verified_candidate
-from build_portal_extended_locales import build, validate_text, safe_failure_code
-from portal_extended_locales import ORIGIN, daily_corpus_day, digest, validate_corpus
-from portal_extended_publication import CacheOnly, checked_batches, read_active_batches, prove_approved_baseline
-from portal_extended_r2 import R2Store, R2StoreError
+from build_portal_extended_locales import (build, validate_text, safe_failure_code,
+    Memo, extended_source_language, SOURCE_FALLBACK_VERSION)
+from portal_extended_locales import COPY, HTML_BLOCKS, ORIGIN, daily_corpus_day, digest, validate_corpus
+import portal_extended_publication as publication
+from portal_extended_publication import (CacheOnly, checked_batches, read_active_ledger,
+    prove_approved_baseline, restore_active_checkpoint, active_checkpoint_sha)
+from portal_extended_r2 import R2Store, R2StoreError, R2NotFound
 from financial_quantity_integrity import quantities
 from portal_approved_quantity_contract import CONTRACT_ID, PARSER_SHA256, bindings, quantity_issues as approved_quantity_issues
 
@@ -30,6 +34,8 @@ MAX_STATE_BYTES = 65536
 CALENDAR_MONTH_ALIASES = json.loads((Path(__file__).parent/'portal_extended_calendar_months.json').read_text(encoding='utf-8'))['languages']
 BN_MONTH_ALIASES = CALENDAR_MONTH_ALIASES['bn']
 MAX_CACHE_AUDITS = 128
+MAX_UNIT_VARIANTS = 8
+SOURCE_LANGUAGES = {'en', 'zh', 'ar', 'ja', 'ko'}
 
 
 class InspectionError(ValueError):
@@ -129,6 +135,161 @@ def quantity_signature(source, translated, locale):
     return result
 
 
+def failed_source_unit(doc, field):
+    """Resolve only the bounded field grammar emitted by translate_document.
+
+    No replay or inference is performed here. A pipe part retains its original
+    parent's markdown flag, exactly as the builder does.
+    """
+    if not isinstance(field, str) or len(field) > 80:
+        raise ValueError('unresolved-field')
+    base, *parts = field.split('.part')
+    if len(parts) > 1 or (parts and not re.fullmatch(r'0|[1-9][0-9]{0,4}', parts[0])):
+        raise ValueError('unresolved-field')
+    markdown = False
+    if base in {'title', 'description'}:
+        text = doc[base]
+    elif base.startswith('copy.') and base[5:] in COPY:
+        text = COPY[base[5:]]
+    elif match := re.fullmatch(r'block\.(0|[1-9][0-9]{0,4})\.([a-z][a-z0-9]*)', base):
+        block = doc['blocks'][int(match[1])]
+        if match[2] not in HTML_BLOCKS or block['tag'] != match[2]: raise ValueError('unresolved-field')
+        text = block['text']; markdown = block['tag'] == 'tr' or '|' in text
+    elif match := re.fullmatch(r'link\.(0|[1-9][0-9]{0,4})', base):
+        text = doc['links'][int(match[1])]['label']
+    else:
+        raise ValueError('unresolved-field')
+    parent = text if parts else None
+    if parts:
+        if '|' not in text: raise ValueError('unresolved-field')
+        text = text.split('|')[int(parts[0])]
+    elif '|' in text:
+        raise ValueError('unresolved-field')
+    return text, markdown, parent
+
+
+def unit_key(locale, source, language, markdown):
+    memo = object.__new__(Memo)
+    memo.locale = locale
+    return memo.key(source, language, markdown=markdown)
+
+
+def unit_validation(source, row, locale, validator):
+    try:
+        validate_text(source, row.get('text'), locale, row['language'], quantity_validator=validator)
+    except Exception as error:
+        code = safe_failure_code(error)
+        return code if code in {'financial-quantity-validation', 'table-structure-validation',
+            'untranslated-source-validation', 'chinese-residue-validation', 'target-script-validation',
+            'placeholder-validation', 'empty-translation-validation', 'translation-size-validation',
+            'expansion-validation'} else 'validation-unavailable'
+    return 'accepted'
+
+
+def cached_unit_variants(seed, locale, source, approved_keys):
+    result, total = [], 0
+    for kind, rows in (('translation', seed.get('rows', {})), ('source-fallback', seed.get('source_fallbacks', {}))):
+        for identity, row in rows.items():
+            if not isinstance(row, dict) or row.get('source') != source: continue
+            total += 1
+            if len(result) >= MAX_UNIT_VARIANTS: continue
+            language = row.get('language')
+            known_language = isinstance(language, str) and language in SOURCE_LANGUAGES
+            valid_hash = isinstance(identity, str) and re.fullmatch(r'[a-f0-9]{64}', identity) is not None
+            matches = [markdown for markdown in (False, True) if known_language
+                       and identity == unit_key(locale, source, language, markdown)]
+            item = {'kind': kind, 'unit_sha256': identity if valid_hash else None,
+                    'language': language if known_language else 'other', 'key_matches_markdown': matches,
+                    'approved_fallback_member': valid_hash and identity in approved_keys if approved_keys is not None else None}
+            if kind == 'translation':
+                item.update(current_validation=unit_validation(source, row, locale, None),
+                    approved_quantity_validation=unit_validation(source, row, locale, approved_quantity_issues))
+            else:
+                item['policy_matches'] = row.get('policy') == SOURCE_FALLBACK_VERSION
+            result.append(item)
+    return {'count': total, 'truncated': total > len(result), 'rows': result}
+
+
+@contextmanager
+def record_cache_misses():
+    """Observe exact failed call arguments while retaining the original error.
+
+    This single-threaded diagnostic always restores the original factory. The
+    original no-inference translator still rejects every call; raw arguments
+    remain local and are never included in the report.
+    """
+    original, attempts = publication.CacheOnly, []
+    class RecordingCacheOnly(original):
+        def __init__(self):
+            self.calls = []
+            attempts.append(self.calls)
+
+        def translate(self, text, target, source=None, *, markdown=True):
+            self.calls.append((text, target, source, markdown))
+            return super().translate(text, target, source, markdown=markdown)
+    publication.CacheOnly = RecordingCacheOnly
+    try:
+        yield attempts
+    finally:
+        publication.CacheOnly = original
+
+
+def failed_unit_diagnostics(corpus, locale, seed, approved, replay, traced_calls):
+    """Hash-only evidence for missing/rejected units; never authorization to reuse."""
+    inventory = approved.get('source_fallback_unit_sha256')
+    inventory_present = (isinstance(inventory, list) and all(isinstance(key, str)
+        and re.fullmatch(r'[a-f0-9]{64}', key) for key in inventory))
+    approved_keys = set(inventory) if inventory_present else None
+    fallback_keys = set(seed.get('source_fallbacks', {}))
+    result = {'seed_fallback_rows': len(fallback_keys),
+        'approved_fallback_inventory_present': inventory_present,
+        'approved_fallback_units': len(approved_keys) if inventory_present else None,
+        'approved_fallback_keys_present': len(approved_keys & fallback_keys) if inventory_present else None,
+        'approved_fallback_keys_absent': len(approved_keys - fallback_keys) if inventory_present else None,
+        'seed_fallback_keys_extra': len(fallback_keys - approved_keys) if inventory_present else None,
+        'traced_cache_miss_calls': len(traced_calls), 'failures': []}
+    docs = {doc['url']: doc for doc in corpus['documents']}
+    trace_index = 0
+    for failure in replay['failures'][:MAX_DOCUMENTS]:
+        field = failure.get('field')
+        try:
+            doc = docs[failure['url']]
+            source, markdown, parent = failed_source_unit(doc, field)
+        except (KeyError, IndexError, TypeError, ValueError):
+            result['failures'].append({'code': 'unresolved-field'})
+            continue
+        language = extended_source_language(source)
+        trace_matches = None
+        if failure.get('code') == 'offline-approval-cache-miss':
+            trace_matches = (trace_index < len(traced_calls)
+                and traced_calls[trace_index] == (source, locale, language, markdown))
+            trace_index += 1
+        identity = unit_key(locale, source, language, markdown)
+        row = seed.get('rows', {}).get(identity)
+        fallback = seed.get('source_fallbacks', {}).get(identity)
+        exact_row = isinstance(row, dict) and row.get('source') == source and row.get('language') == language
+        exact_fallback = (isinstance(fallback, dict) and fallback.get('source') == source
+            and fallback.get('language') == language and fallback.get('policy') == SOURCE_FALLBACK_VERSION)
+        item = {'field': field, 'document_sha256': digest(doc['url'].encode()),
+            'source_sha256': digest(source.encode()), 'source_bytes': len(source.encode()),
+            'unit_sha256': identity, 'language': language if language in SOURCE_LANGUAGES else 'other',
+            'markdown': markdown, 'actual_call_matches_resolved_field': trace_matches,
+            'approved_fallback_member': identity in approved_keys if inventory_present else None,
+            'exact_translation_key_present': identity in seed.get('rows', {}),
+            'exact_translation_identity_matches': exact_row,
+            'exact_fallback_key_present': identity in seed.get('source_fallbacks', {}),
+            'exact_fallback_identity_matches': exact_fallback,
+            'same_source_variants': cached_unit_variants(seed, locale, source, approved_keys)}
+        if exact_row:
+            item.update(current_validation=unit_validation(source, row, locale, None),
+                approved_quantity_validation=unit_validation(source, row, locale, approved_quantity_issues))
+        if parent is not None:
+            item['whole_pipe_parent'] = {'source_sha256': digest(parent.encode()), 'source_bytes': len(parent.encode()),
+                'variants': cached_unit_variants(seed, locale, parent, approved_keys)}
+        result['failures'].append(item)
+    return result
+
+
 def compare(store, batch, locale, work, *, frozen_approval=False):
     work.mkdir()
     phase('candidate-source-read', store.restore_source, batch['generation'], work/'corpus.json')
@@ -140,8 +301,9 @@ def compare(store, batch, locale, work, *, frozen_approval=False):
         return {'locale': locale, 'generation': batch['generation'], 'candidate': batch['candidates'][locale],
                 'checkpoint_present': False, 'matches': False, 'failure_codes': {'checkpoint-absent': 1}}
     seed = json.loads((work/'seed.json').read_bytes())
-    proof = phase('candidate-replay', prove_approved_baseline, corpus, locale, work,
-                  work/'seed.json', approved, allow_frozen=frozen_approval, require_match=False)
+    with record_cache_misses() as traced_attempts:
+        proof = phase('candidate-replay', prove_approved_baseline, corpus, locale, work,
+                      work/'seed.json', approved, allow_frozen=frozen_approval, require_match=False)
     replay = proof['manifest']
     replay_dir = proof['checkpoint'].with_suffix('')
     attempts = []
@@ -150,7 +312,9 @@ def compare(store, batch, locale, work, *, frozen_approval=False):
         attempts.append({**attempt, 'approved_pages': len(approved['pages']),
             'replayed_pages': len(manifest['pages']), 'cache_hits': manifest['cache_hits'],
             'source_fallback_units': manifest.get('source_fallback_unit_count'),
-            'failure_codes': dict(Counter(row['code'] for row in manifest['failures']))})
+            'failure_codes': dict(Counter(row['code'] for row in manifest['failures'])),
+            'failed_unit_diagnostics': failed_unit_diagnostics(corpus, locale, seed, approved, manifest,
+                traced_attempts[index] if index < len(traced_attempts) else [])})
     rejected, total = [], 0
     for key, row in seed['rows'].items():
         try:
@@ -214,6 +378,60 @@ def audit_cached_rows(store, batches, corpora, owners, root):
     return results
 
 
+def compare_active_checkpoint(store, ledger, batch, locale, work, latest_result=None):
+    """Prove the same immutable seed used by production without any R2 write."""
+    outcome = {'matches': False, 'checkpoint_sha256': None, 'inference_calls': 0}
+    try:
+        checksum = active_checkpoint_sha(ledger, locale, batch['generation'], batch['candidates'][locale])
+        outcome['checkpoint_sha256'] = checksum
+    except Exception:
+        return {**outcome, 'code': 'approved-checkpoint-receipt-invalid'}
+    replay_work = work/'approved-checkpoint-replay'; replay_work.mkdir()
+    try:
+        restored = restore_active_checkpoint(store, ledger, locale, batch['generation'],
+                                              batch['candidates'][locale], replay_work/'seed.json')
+    except R2NotFound:
+        return {**outcome, 'code': 'approved-checkpoint-missing'}
+    except Exception:
+        return {**outcome, 'code': 'approved-checkpoint-unavailable-or-invalid'}
+    try:
+        corpus = validated_corpus(work/'corpus.json')
+        approved, _ = verified_candidate(work/'approved', corpus)
+        if (isinstance(latest_result, dict) and latest_result.get('checkpoint_sha256') == checksum
+            and (latest_result.get('locale'), latest_result.get('generation'), latest_result.get('candidate'))
+                == (locale, batch['generation'], batch['candidates'][locale])
+            and latest_result.get('baseline_attempts') and (work/'seed.json').is_file()
+            and (work/'seed.json').read_bytes() == (replay_work/'seed.json').read_bytes()):
+            # Both complete blobs were read and verified in this inspection.
+            # The same seed/corpus/approved candidate has already traversed the
+            # exact current/frozen proof; a second identical build adds nothing.
+            return {**outcome, 'matches': latest_result['matches'],
+                'code': 'matched' if latest_result['matches'] else 'approved-bytes-mismatch',
+                'quantity_contract': latest_result['quantity_contract'],
+                'baseline_attempts': latest_result['baseline_attempts'],
+                'approved_pages': latest_result['approved_pages'], 'replayed_pages': latest_result['replayed_pages'],
+                'cache_miss_attempts': latest_result['translation_calls'], 'failure_codes': latest_result['failure_codes'],
+                'binding': restored['binding'], 'reused_verified_latest_replay': True}
+        with record_cache_misses() as traced_attempts:
+            proof = prove_approved_baseline(corpus, locale, replay_work, replay_work/'seed.json',
+                                           approved, allow_frozen=True, require_match=False)
+    except Exception:
+        return {**outcome, 'code': 'approved-baseline-unavailable-or-invalid'}
+    manifest = proof['manifest']
+    seed = json.loads((replay_work/'seed.json').read_bytes())
+    attempts = []
+    for index, attempt in enumerate(proof['attempts']):
+        replay = json.loads((replay_work/f'baseline-{index}'/'candidate-manifest.json').read_bytes())
+        attempts.append({**attempt, 'failed_unit_diagnostics': failed_unit_diagnostics(
+            corpus, locale, seed, approved, replay, traced_attempts[index] if index < len(traced_attempts) else [])})
+    return {**outcome, 'matches': proof['matches'], 'code': 'matched' if proof['matches'] else 'approved-bytes-mismatch',
+        'quantity_contract': proof['quantity_contract'], 'baseline_attempts': attempts,
+        'approved_pages': len(approved['pages']), 'replayed_pages': len(manifest['pages']),
+        'cache_miss_attempts': manifest['translation_calls_this_run'],
+        'failure_codes': dict(Counter(row['code'] for row in manifest['failures'])),
+        'binding': restored['binding'], 'reused_verified_latest_replay': False}
+
+
 def read_identity():
     with requests.get(ORIGIN+'/.well-known/edge-state', timeout=(10, 30), allow_redirects=False, stream=True) as response:
         response.raise_for_status()
@@ -229,7 +447,8 @@ def inspect(store, target, expected_release, identity):
     if identity.get('release_id') != expected_release:
         raise InspectionError('active-release-changed')
     store = R2Store(ReadOnlyClient(store.client), store.bucket, store.prefix)
-    active = checked_batches(phase('active-ledger-read', read_active_batches, store, identity))
+    active_ledger = phase('active-ledger-read', read_active_ledger, store, identity)
+    active = checked_batches(active_ledger['batches'])
     active_approvals = bindings(active)
     batches = checked_batches(active + ([target] if target is not None else []))
     identity_summary = {'mode': 'active-only' if target is None else 'candidate',
@@ -251,7 +470,8 @@ def inspect(store, target, expected_release, identity):
                 for doc in corpus['documents']: owners[locale, doc['url']] = index
         def report(status, results):
             result = {**identity_summary, 'status': status, 'production_writes': 0,
-                      'inference_calls': 0, 'results': results}
+                      'inference_calls': 0, 'results': results,
+                      'checked_candidates': len(results), 'selected_candidates': selected_candidates}
             try:
                 result['carry_forward_cache_audit'] = audit_cached_rows(store, batches, corpora, owners, root)
             except Exception as error:
@@ -266,15 +486,27 @@ def inspect(store, target, expected_release, identity):
                 result['cache_audit_complete'] = True
             return result
         results = []
+        selected_candidates = sum(any(owners[locale, doc['url']] == index for doc in corpus['documents'])
+            for index, (batch, corpus) in enumerate(zip(batches, corpora, strict=True)) for locale in batch['candidates'])
         for index, (batch, corpus) in enumerate(zip(batches, corpora, strict=True)):
             for locale in batch['candidates']:
                 if not any(owners[locale, d['url']] == index for d in corpus['documents']): continue
-                result = compare(store, batch, locale, root/f'{index}-{locale}',
-                                 frozen_approval=(batch['generation'], locale, batch['candidates'][locale]) in active_approvals)
+                frozen = (batch['generation'], locale, batch['candidates'][locale]) in active_approvals
+                work = root/f'{index}-{locale}'
+                try:
+                    result = compare(store, batch, locale, work, frozen_approval=frozen)
+                except PhaseError:
+                    if not frozen: raise
+                    result = {'locale': locale, 'generation': batch['generation'], 'candidate': batch['candidates'][locale],
+                              'matches': False, 'code': 'latest-comparison-unavailable'}
+                result['publication_matches'] = result['matches']
+                if frozen:
+                    result['approved_checkpoint_replay'] = compare_active_checkpoint(store, active_ledger, batch, locale, work, result)
+                    result['publication_matches'] = result['approved_checkpoint_replay']['matches']
                 result['batch_index'] = index
                 result['target_candidate'] = batch == target and locale in target['candidates']
                 results.append(result)
-                if not result['matches']:
+                if not result['publication_matches']:
                     return report('mismatch', results)
         return report('all-matched', results)
 

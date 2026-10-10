@@ -28,6 +28,8 @@ CHECKPOINT_VERSION = 'extended-static-v2'
 SOURCE_FALLBACK_VERSION = 'exact-source-v1'
 MAX_TRANSLATION_SECONDS = 4 * 60 * 60
 MAX_PUBLIC_TRANSLATION_DIAGNOSTICS = 20
+SEO_QUANTITY_POLICY = 'seo-advisory-v1'
+NUMERIC_FALLBACK_CODES = frozenset({'offline-quantity-validation', 'financial-quantity-validation'})
 QUANTITY_DIAGNOSTIC_KINDS = frozenset({
     'number', 'currency', 'percent', 'percentage_points', 'date', 'invalid_date',
     'month', 'month_day', 'quarter', 'half', 'five_year_plan', 'shopping_event',
@@ -171,16 +173,30 @@ def extended_source_language(text: str) -> str:
     return _detect_source(text)
 
 
-def validate_text(source: str, translated: str, locale: str, source_language: str, *, quantity_validator=None) -> None:
+def validate_text(source: str, translated: str, locale: str, source_language: str, *, quantity_validator=None) -> bool:
+    """Validate display contracts; return an advisory numeric mismatch flag.
+
+    Current SEO reading pages accept numeric prose differences. English
+    editorial callers and explicitly supplied historical replay validators keep
+    their exact blocking contract. Warning counts never contain source values.
+    """
     if not isinstance(translated, str) or not translated.strip(): raise ExpansionError('Empty translated text')
     if re.search(r'[\ufffd\ud800-\udfff]', translated): raise ExpansionError('Invalid Unicode translation')
     if len(translated) > max(2000, len(source) * 12): raise ExpansionError('Unbounded translation expansion')
     if re.search(r'__(?:KC_PH_|HYMTPH_)\d+__', translated): raise ExpansionError('Unrestored protected identifier')
     validator = quantity_issues if quantity_validator is None else quantity_validator
-    if validator(source, translated, source_language, locale): raise ExpansionError('Financial quantity validation failed')
+    advisory = quantity_validator is None and locale in ADDITIONAL
+    try:
+        quantity_warning = bool(validator(source, translated, source_language, locale))
+    except Exception:
+        if not advisory:
+            raise
+        # A prose diagnostic must not block a structurally valid SEO page.
+        quantity_warning = True
+    if quantity_warning and not advisory: raise ExpansionError('Financial quantity validation failed')
     if source.count('|') != translated.count('|'): raise ExpansionError('Table column boundaries changed')
     clean = re.sub(r'https?://\S+|\b[A-Z][A-Z0-9.-]{0,7}\b', '', source).strip()
-    if not any(c.isalpha() for c in clean): return
+    if not any(c.isalpha() for c in clean): return quantity_warning
     # Source English text can legitimately stay unchanged on /en/. This does
     # not excuse unchanged Chinese on any additional target-language page.
     source_is_english = not re.search(r'[\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af\u0600-\u06ff]', source.replace('KC桌面', ''))
@@ -194,6 +210,7 @@ def validate_text(source: str, translated: str, locale: str, source_language: st
         # Names may retain a small parenthetic Han label. Paragraph-sized Han
         # residue is not accepted as successful localization.
         if len(re.findall(r'[\u3400-\u9fff]', translated)) > 12: raise ExpansionError('Untranslated Chinese residue')
+    return quantity_warning
 
 
 class Memo:
@@ -211,6 +228,8 @@ class Memo:
         self.rows = {}
         self.seed_rows, self.seed_fallbacks = {}, {}
         self.calls = self.hits = 0
+        self.quantity_warning_keys = set()
+        self.quantity_warning_occurrences = 0
         if path.is_file():
             if path.stat().st_size > MAX_CHECKPOINT_BYTES: raise ExpansionError('Checkpoint is too large')
             payload = json.loads(path.read_text())
@@ -243,8 +262,9 @@ class Memo:
         row = self.rows.get(key, self.seed_rows.get(key))
         if isinstance(row, dict) and row.get('source') == source and row.get('language') == language:
             try:
-                validate_text(source, row.get('text'), self.locale, language, quantity_validator=self.quantity_validator)
+                warning = validate_text(source, row.get('text'), self.locale, language, quantity_validator=self.quantity_validator)
                 if validate_result is not None: validate_result(row['text'])
+                self.record_quantity_warning(key, warning)
                 self.hits += 1
                 self.rows[key] = row
                 return row['text']
@@ -271,7 +291,7 @@ class Memo:
         try:
             self.calls += 1
             translated = self.translator.translate(source, target=self.locale, source=language, markdown=markdown)
-            validate_text(source, translated, self.locale, language, quantity_validator=self.quantity_validator)
+            warning = validate_text(source, translated, self.locale, language, quantity_validator=self.quantity_validator)
             if validate_result is not None: validate_result(translated)
         except (OfflineTranslationValidationError, ExpansionError) as error:
             # Attach only the existing fixed category to diagnostics already
@@ -294,9 +314,15 @@ class Memo:
             self.save()
             return source
         self.source_fallbacks.pop(key, None)
+        self.record_quantity_warning(key, warning)
         self.rows[key] = {'source': source, 'language': language, 'text': translated}
         self.save()
         return translated
+
+    def record_quantity_warning(self, key, warning):
+        if warning and self.quantity_validator is None and self.locale in ADDITIONAL:
+            self.quantity_warning_keys.add(key)
+            self.quantity_warning_occurrences += 1
 
     def save(self):
         reject_symlinks(self.path)
@@ -403,6 +429,12 @@ def build(corpus: dict, locale: str, output: Path, checkpoint: Path, translator:
                 'source_fallback_codes': sorted({memo.source_fallbacks[key]['code'] for key in memo.fallback_keys}),
                 'budget_exhausted': timed_out, 'failures': failures, 'pages': records,
                 'files_sha256': digest(stable_bytes(records))}
+    if quantity_validator is None and locale in ADDITIONAL:
+        manifest.update(quantity_validation_policy=SEO_QUANTITY_POLICY,
+                        quantity_warning_unit_count=len(memo.quantity_warning_keys),
+                        quantity_warning_occurrences=memo.quantity_warning_occurrences,
+                        numeric_source_fallback_unit_count=sum(
+                            memo.source_fallbacks[key]['code'] in NUMERIC_FALLBACK_CODES for key in memo.fallback_keys))
     (output / 'candidate-manifest.json').write_bytes(stable_bytes(manifest))
     return manifest
 
@@ -428,7 +460,8 @@ def main() -> int:
     validate_budget(args.seconds)
     if args.corpus.stat().st_size > 32 * 1024 * 1024: raise ExpansionError('Corpus too large')
     corpus = json.loads(args.corpus.read_text())
-    translator = OfflineTranslator(validation_attempts=1 if args.allow_source_fallback else 3)
+    translator = OfflineTranslator(validation_attempts=1 if args.allow_source_fallback else 3,
+                                   quantity_policy='advisory')
     result = build(corpus, args.locale, args.output, args.checkpoint, translator,
                    budget_seconds=args.seconds, allow_source_fallback=args.allow_source_fallback,
                    seed_checkpoint=args.seed_checkpoint)
@@ -436,6 +469,9 @@ def main() -> int:
     summary['failure_count'] = len(result.get('failures') or [])
     for key in ('translation_policy', 'translation_complete', 'source_fallback_unit_count',
                 'source_fallback_occurrences', 'source_fallback_codes', 'translation_calls_this_run', 'cache_hits'):
+        summary[key] = result[key]
+    for key in ('quantity_validation_policy', 'quantity_warning_unit_count', 'quantity_warning_occurrences',
+                'numeric_source_fallback_unit_count'):
         summary[key] = result[key]
     summary['failure_types'] = sorted({str(row.get('error')) for row in result.get('failures') or []})
     summary['failure_codes'] = sorted({str(row.get('code')) for row in result.get('failures') or []})

@@ -12,6 +12,7 @@ import json
 from portal_extended_locales import ExpansionError, digest, select_locales, stable_bytes, validate_corpus
 from portal_extended_r2 import (HEX64, MAX_CANDIDATE_MANIFEST_BYTES, MAX_SOURCE_BYTES,
                                 R2NotFound, partial_manifest_is_valid, safe_part)
+from build_portal_extended_locales import SEO_QUANTITY_POLICY, NUMERIC_FALLBACK_CODES
 
 MAX_DEBT_GENERATIONS = 500
 MAX_FALLBACK_UNITS = 10000
@@ -44,13 +45,55 @@ def quality_fields(manifest):
                   or (count > 0 and not codes)):
         raise ExpansionError('Candidate translated readiness conflicts with fallback evidence')
     ready = known and complete and explicit and count == 0
-    return {'translation_ready': bool(ready),
+    result = {'translation_ready': bool(ready),
             'quality_status': 'translated' if ready else 'source-fallback' if known and count else 'unproven',
             'source_fallback_unit_count': count if known else None,
             'source_fallback_occurrences': occurrences if known else None,
             'source_fallback_codes': codes if known else [],
             'fallback_unit_hashes_complete': hashes is not None,
             'source_fallback_unit_sha256': hashes or []}
+    if 'quantity_validation_policy' in manifest:
+        numeric = manifest.get('numeric_source_fallback_unit_count')
+        warning_units, warning_uses = (manifest.get(key) for key in
+            ('quantity_warning_unit_count', 'quantity_warning_occurrences'))
+        numeric_codes = set(codes or []) & NUMERIC_FALLBACK_CODES
+        other_codes = set(codes or []) - NUMERIC_FALLBACK_CODES
+        if (manifest['quantity_validation_policy'] != SEO_QUANTITY_POLICY or not known or hashes is None
+                or type(numeric) is not int or not 0 <= numeric <= count
+                or bool(numeric) != bool(numeric_codes)
+                or (numeric == count) != (not other_codes)
+                or type(warning_units) is not int or type(warning_uses) is not int
+                or not 0 <= warning_units <= warning_uses <= 1000000):
+            raise ExpansionError('Candidate advisory numeric evidence is malformed')
+        result.update(publication_ready=bool(complete and (ready or numeric == count)),
+                      quantity_validation_policy=SEO_QUANTITY_POLICY,
+                      numeric_source_fallback_unit_count=numeric)
+    return result
+
+
+def publication_ready(proof):
+    """SEO publication may tolerate numeric-only fallback; translation truth stays separate."""
+    if 'publication_ready' in proof:
+        return proof['publication_ready'] is True
+    if proof.get('translation_ready') is True:
+        return True
+    # Existing immutable manifests/receipts cannot be rewritten merely to add
+    # the new advisory marker: their candidate identity is still the same HTML.
+    # A verified legacy proof with a complete numeric-only inventory is enough
+    # to apply the current publication policy, without inference or relabeling.
+    count, hashes, codes = (proof.get(key) for key in
+        ('source_fallback_unit_count', 'source_fallback_unit_sha256', 'source_fallback_codes'))
+    occurrences = proof.get('source_fallback_occurrences')
+    return (proof.get('render_complete') is True and proof.get('quality_status') == 'source-fallback'
+        and proof.get('fallback_unit_hashes_complete') is True
+        and type(count) is int and 1 <= count <= MAX_FALLBACK_UNITS
+        and type(occurrences) is int and count <= occurrences <= 1000000
+        and isinstance(hashes, list) and len(hashes) == count
+        and all(isinstance(key, str) and HEX64.fullmatch(key) for key in hashes)
+        and hashes == sorted(set(hashes))
+        and isinstance(codes, list) and bool(codes)
+        and all(isinstance(code, str) and code in NUMERIC_FALLBACK_CODES for code in codes)
+        and codes == sorted(set(codes)))
 
 
 def proof_key(store, checksum):
@@ -126,7 +169,10 @@ def record_quality(store, locale, generation, candidate, *, manifest_sha256=None
         raise ExpansionError('Immutable locale quality proof did not persist')
     rows = debt_rows(store, locale)
     updated = dict(rows)
-    if proof['translation_ready']:
+    if publication_ready(proof):
+        # The immutable receipt retains every actual source fallback. Numeric
+        # advisories have no repair work, so they must not consume the bounded
+        # queue and eventually turn an accepted warning into a capacity error.
         updated.pop(generation, None)
     elif proof['render_complete']:
         updated[generation] = {key: proof[key] for key in ('candidate_id', 'source_fallback_unit_count', 'quality_status')}
@@ -148,8 +194,8 @@ def verify_quality(store, checksum, locale, generation, candidate):
             or proof.get('generation') != generation or proof.get('candidate_id') != candidate):
         raise ExpansionError('Locale quality proof identity mismatch')
     expected = candidate_quality(store, locale, generation, candidate)
-    if proof != expected or not proof['translation_ready']:
-        raise ExpansionError('Automatic publication requires exact translated-ready quality evidence')
+    if proof != expected or not publication_ready(proof):
+        raise ExpansionError('Automatic publication requires exact translated-ready or advisory numeric quality evidence')
     return proof
 
 

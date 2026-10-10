@@ -23,6 +23,7 @@ from portal_extended_locales import (ORIGIN, ExpansionError, daily_corpus_day,
                                      digest, publication_day, select_locales, stable_bytes, validate_corpus)
 from portal_extended_publication import checked_batches, read_active_batches
 from portal_extended_r2 import DEFAULT_PREFIX, HEX64, R2NotFound, R2Store, safe_part
+from portal_extended_quality import publication_ready
 
 
 def read_publication_batches(store):
@@ -100,7 +101,7 @@ def pending_batch(store, corpus, requested, enabled, active_batches, workspace):
         verified_candidate(directory, corpus)
         from portal_extended_quality import record_quality
         quality = record_quality(store, locale, batch['generation'], candidate)
-        if not quality['translation_ready']:
+        if not publication_ready(quality):
             continue
         selected[locale] = candidate
     return {'generation': corpus['documents_sha256'], 'candidates': selected}
@@ -119,8 +120,8 @@ def save_handoff(store, batch, *, day, pages, producer):
     from portal_extended_quality import record_quality
     qualities = {locale: record_quality(store, locale, batch['generation'], candidate)
                  for locale, candidate in batch['candidates'].items()}
-    if not all(proof['translation_ready'] for proof in qualities.values()):
-        raise ExpansionError('Automatic handoff requires translated-ready candidates')
+    if not all(publication_ready(proof) for proof in qualities.values()):
+        raise ExpansionError('Automatic handoff requires translated-ready or advisory numeric candidates')
     value['translation_quality_proofs'] = {locale: proof['proof_sha256'] for locale, proof in qualities.items()}
     from portal_extended_continuation import checkpoint_evidence, origin_allows_locale, queue, read_origin
     origin = read_origin(store, batch['generation'])
@@ -305,7 +306,7 @@ def next_registered_batch(store, requested, enabled, active, workspace, *, gener
             from portal_extended_quality import record_quality
             quality = record_quality(store, locale, ready_generation, snapshot['candidate_id'],
                                      manifest_sha256=snapshot['manifest_sha256'])
-            if quality['translation_ready']:
+            if publication_ready(quality):
                 candidates[locale] = snapshot['candidate_id']
         if not candidates:
             continue

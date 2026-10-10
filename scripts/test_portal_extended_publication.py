@@ -8,12 +8,12 @@ from unittest import mock
 
 from build_portal_extended_locales import build
 from portal_approved_quantity_contract import CONTRACT_ID, PARSER_SHA256, quantity_issues as frozen_quantity_issues
-from portal_extended_locales import ORIGIN, ExpansionError, file_for_url, make_corpus, PublicParser, select_locales
-from portal_extended_publication import compose, checked_batches, read_active_batches
+from portal_extended_locales import ORIGIN, ExpansionError, file_for_url, make_corpus, PublicParser, select_locales, digest
+from portal_extended_publication import compose, checked_batches, read_active_batches, restore_active_checkpoint
 from restore_assemble_portal_extended_r2 import restored_identity
 from check_portal_extended_publication import StagingReplayStore, completed_candidates, snapshot_public
 from audit_portal_extended_live import audit
-from portal_extended_r2 import R2Store, R2IntegrityError
+from portal_extended_r2 import R2Store, R2IntegrityError, R2NotFound
 from test_portal_extended_r2 import FakeR2
 from test_portal_extended_locales import FakeTranslator
 from test_portal_extended_incremental import daily_doc, raw_page, URL, DAY
@@ -39,6 +39,7 @@ class PublicationTests(unittest.TestCase):
         (self.root/'robots.txt').write_text('User-agent: GPTBot\nDisallow: /\n')
         (self.root/'sitemap.xml').write_text('<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>'+ORIGIN+'/sitemap-pages.xml</loc></sitemap></sitemapindex>')
         self.number = 0
+        self.approved_seeds = {}
 
     def candidate(self, locale='fr', url=URL):
         self.number += 1
@@ -47,8 +48,9 @@ class PublicationTests(unittest.TestCase):
         build(corpus, locale, work/'candidate', work/'checkpoint.json', FakeTranslator(), allow_source_fallback=True)
         generation = corpus['documents_sha256']
         self.store.put_source(corpus)
-        self.store.put_checkpoint(locale, generation, work/'checkpoint.json')
+        seed = self.store.put_checkpoint(locale, generation, work/'checkpoint.json')
         saved = self.store.upload_candidate(work/'candidate', locale, generation)
+        self.approved_seeds[generation, locale, saved['candidate_id']] = seed['sha256']
         target = self.root/file_for_url(url); target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes(raw_page(url))
         return {'generation': generation, 'candidates': {locale: saved['candidate_id']}}
@@ -70,16 +72,24 @@ class PublicationTests(unittest.TestCase):
                        allow_source_fallback=True, quantity_validator=None if current_rule else frozen_quantity_issues)
         self.assertEqual(result['status'], 'complete-candidate')
         generation = corpus['documents_sha256']
-        self.store.put_source(corpus); self.store.put_checkpoint('bn', generation, work/'checkpoint.json')
+        self.store.put_source(corpus); seed = self.store.put_checkpoint('bn', generation, work/'checkpoint.json')
         saved = self.store.upload_candidate(work/'candidate', 'bn', generation)
+        self.approved_seeds[generation, 'bn', saved['candidate_id']] = seed['sha256']
         target = self.root/file_for_url(URL); target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes(raw_page(body=body))
         return {'generation': generation, 'candidates': {'bn': saved['candidate_id']}}
 
-    def publish_frozen(self, batch):
+    def active_ledger(self, batches):
+        return {'schema_version':2, 'status':'assembled', 'batches': batches,
+                'replays': [{'approved_generation': batch['generation'], 'locale': locale,
+                             'approved_candidate': candidate,
+                             'checkpoint_sha256': self.approved_seeds[batch['generation'], locale, candidate]}
+                            for batch in batches for locale, candidate in batch['candidates'].items()]}
+
+    def publish_frozen(self, batch, *, ledger=None):
         identity = {'slot': 'a', 'release_id': 'a'*32, 'tree_sha256': 'b'*64}
         workspace = Path(tempfile.mkdtemp(dir=self.base))
-        with mock.patch('portal_extended_publication.read_active_batches', return_value=[batch]) as reader:
+        with mock.patch('portal_extended_publication.read_active_ledger', return_value=ledger or self.active_ledger([batch])) as reader:
             result = compose(self.root, self.store, [batch], workspace, active_identity=identity)
         reader.assert_called_once_with(self.store, identity)
         return result
@@ -89,9 +99,120 @@ class PublicationTests(unittest.TestCase):
         result = self.publish_frozen(batch)
         self.assertTrue(result['ready']); self.assertEqual(result['page_counts'], {'bn': 1})
         self.assertEqual(result['replays'][0]['translation_calls'], 0)
-        self.assertEqual(result['replays'][0]['quantity_contract'], CONTRACT_ID)
-        self.assertEqual(result['replays'][0]['quantity_parser_sha256'], PARSER_SHA256)
+        self.assertEqual(result['replays'][0]['quantity_contract'], 'current')
+        self.assertIsNone(result['replays'][0]['quantity_parser_sha256'])
         self.assertIn('২৫ বেসিস পয়েন্ট', (self.root/'bn'/file_for_url(URL)).read_text())
+
+    def test_active_approval_ignores_changed_latest_and_reuses_original_seed(self):
+        batch = self.candidate(); ledger = self.active_ledger([batch])
+        original_sha = ledger['replays'][0]['checkpoint_sha256']
+        latest = self.base/'changed-latest.json'
+        self.store.restore_checkpoint('fr', batch['generation'], latest)
+        value = json.loads(latest.read_bytes())
+        next(iter(value['rows'].values()))['text'] = 'Autre traduction valide et privée.'
+        latest.write_text(json.dumps(value)); self.store.put_checkpoint('fr', batch['generation'], latest)
+        with mock.patch.object(self.store, 'restore_checkpoint', side_effect=AssertionError('Active must not follow latest')):
+            result = self.publish_frozen(batch, ledger=ledger)
+        replay = result['replays'][0]
+        self.assertEqual(replay['checkpoint_sha256'], original_sha)
+        self.assertEqual(replay['checkpoint_binding'], 'authenticated-active-ledger')
+        self.assertEqual(replay['translation_calls'], 0)
+        self.assertNotIn('Autre traduction', (self.root/'fr'/file_for_url(URL)).read_text())
+
+    def test_active_checkpoint_receipt_is_unique_and_exact_not_replay_output_identity(self):
+        batch = self.candidate(); original = self.active_ledger([batch])
+        wrong = copy.deepcopy(original)
+        wrong['replays'][0]['source_generation'] = batch['generation']
+        wrong['replays'][0]['candidate_id'] = batch['candidates']['fr']
+        wrong['replays'][0]['approved_generation'] = 'e'*64
+        cases = [dict(batches=[batch]), {**original, 'replays':[]},
+                 {**original, 'replays':original['replays']*2}, wrong]
+        for field, value in (('locale','de'), ('approved_candidate','f'*64), ('checkpoint_sha256',None),
+                             ('checkpoint_sha256','../bad'), ('checkpoint_sha256',int('1'*64))):
+            changed = copy.deepcopy(original); changed['replays'][0][field] = value; cases.append(changed)
+        for index, ledger in enumerate(cases):
+            with self.subTest(index=index), mock.patch.object(self.store, '_get') as get:
+                with self.assertRaises(ExpansionError):
+                    restore_active_checkpoint(self.store, ledger, 'fr', batch['generation'],
+                                              batch['candidates']['fr'], self.base/f'invalid-{index}.json')
+            get.assert_not_called()
+
+    def test_pinned_checkpoint_missing_cannot_fall_back_to_valid_latest(self):
+        batch = self.candidate(); ledger = self.active_ledger([batch])
+        ledger['replays'][0]['checkpoint_sha256'] = 'f'*64
+        with mock.patch.object(self.store, 'restore_checkpoint', side_effect=AssertionError('No latest fallback')):
+            with self.assertRaises(R2NotFound): self.publish_frozen(batch, ledger=ledger)
+        self.assertFalse((self.root/'fr').exists())
+
+    def test_pinned_checkpoint_hash_not_storage_metadata_is_authority(self):
+        batch = self.candidate(); ledger = self.active_ledger([batch]); row = ledger['replays'][0]
+        key = self.store.checkpoint_object_key('fr', batch['generation'], row['checkpoint_sha256'])
+        value = self.store.client.objects[key]; changed = value['body'] + b' '
+        value.update(body=changed, ContentLength=len(changed), Metadata={'sha256':digest(changed)})
+        with self.assertRaisesRegex(ExpansionError, 'checkpoint checksum differs'):
+            self.publish_frozen(batch, ledger=ledger)
+        self.assertFalse((self.root/'fr').exists())
+
+    def test_pinned_checkpoint_identity_is_checked_even_with_matching_content_hash(self):
+        batch = self.candidate(); ledger = self.active_ledger([batch]); row = ledger['replays'][0]
+        key = self.store.checkpoint_object_key('fr', batch['generation'], row['checkpoint_sha256'])
+        original = json.loads(self.store.client.objects[key]['body'])
+        for field, wrong in (('locale','de'), ('model','different'), ('version','different'),
+                             ('source_generation','f'*64)):
+            with self.subTest(field=field):
+                changed = {**original, field:wrong}; raw = json.dumps(changed).encode(); checksum = digest(raw)
+                self.store._put(self.store.checkpoint_object_key('fr',batch['generation'],checksum),raw,metadata={'kind':'test'})
+                altered = copy.deepcopy(ledger); altered['replays'][0]['checkpoint_sha256'] = checksum
+                with self.assertRaises(R2IntegrityError): self.publish_frozen(batch,ledger=altered)
+        self.assertFalse((self.root/'fr').exists())
+
+    def test_exact_active_pin_survives_second_publication_generation(self):
+        batch = self.candidate(); ledger = self.active_ledger([batch])
+        first = self.publish_frozen(batch, ledger=ledger)
+        (self.root/'data/extended-locales/assembly.json').unlink()
+        second = self.publish_frozen(batch, ledger=first)
+        for result in (first, second):
+            row = result['replays'][0]
+            self.assertEqual(row['approved_generation'], batch['generation'])
+            self.assertEqual(row['approved_candidate'], batch['candidates']['fr'])
+            self.assertEqual(row['checkpoint_sha256'], ledger['replays'][0]['checkpoint_sha256'])
+            self.assertEqual(result['batches'], [batch])
+            self.assertEqual(result['page_counts'], {'fr':1})
+
+    def test_fully_superseded_active_tuple_does_not_require_unused_seed(self):
+        old = self.candidate(); new = self.candidate()
+        # Same source+candidate can deduplicate; use a current-code new candidate
+        # with a distinct valid translation to exercise the owner override.
+        from test_portal_extended_locales import FakeTranslator
+        class Different(FakeTranslator):
+            def translate(self, *args, **kwargs): return super().translate(*args, **kwargs)+' nouveau'
+        corpus = make_corpus([daily_doc()]); work=self.base/'replacement'; work.mkdir()
+        build(corpus,'fr',work/'candidate',work/'checkpoint.json',Different(),allow_source_fallback=True)
+        self.store.put_checkpoint('fr',corpus['documents_sha256'],work/'checkpoint.json')
+        saved=self.store.upload_candidate(work/'candidate','fr',corpus['documents_sha256'])
+        new={'generation':corpus['documents_sha256'],'candidates':{'fr':saved['candidate_id']}}
+        with mock.patch('portal_extended_publication.read_active_ledger',return_value={'batches':[old]}):
+            result=compose(self.root,self.store,[old,new],Path(tempfile.mkdtemp(dir=self.base)),active_identity={'slot':'a'})
+        self.assertEqual(result['batches'],[old,new]); self.assertEqual(len(result['replays']),1)
+        self.assertEqual(result['replays'][0]['approved_candidate'],new['candidates']['fr'])
+        self.assertEqual(result['replays'][0]['checkpoint_binding'],'incoming-exact-byte-replay')
+
+    def test_partially_superseded_active_tuple_still_requires_exact_seed_receipt(self):
+        other = ORIGIN+'/blog/20260925-other.html'
+        corpus = make_corpus([daily_doc(), daily_doc(other)])
+        work = self.base/'two-approved'; work.mkdir()
+        build(corpus,'fr',work/'candidate',work/'checkpoint.json',FakeTranslator(),allow_source_fallback=True)
+        generation = corpus['documents_sha256']; self.store.put_source(corpus)
+        self.store.put_checkpoint('fr',generation,work/'checkpoint.json')
+        candidate = self.store.upload_candidate(work/'candidate','fr',generation)['candidate_id']
+        old = {'generation':generation,'candidates':{'fr':candidate}}
+        path = self.root/file_for_url(other); path.parent.mkdir(parents=True,exist_ok=True); path.write_bytes(raw_page(other))
+        incoming = self.candidate()
+        before = {p.relative_to(self.root):p.read_bytes() for p in self.root.rglob('*') if p.is_file()}
+        with mock.patch('portal_extended_publication.read_active_ledger',return_value={'batches':[old],'replays':[]}):
+            with self.assertRaisesRegex(ExpansionError, 'one exact checkpoint receipt'):
+                compose(self.root,self.store,[old,incoming],Path(tempfile.mkdtemp(dir=self.base)),active_identity={'slot':'a'})
+        self.assertEqual(before,{p.relative_to(self.root):p.read_bytes() for p in self.root.rglob('*') if p.is_file()})
 
     def test_current_rule_approved_candidate_stays_publishable_after_becoming_active(self):
         batch = self.legacy_bn_candidate(current_rule=True)
@@ -101,20 +222,63 @@ class PublicationTests(unittest.TestCase):
         self.assertEqual(result['replays'][0]['translation_calls'], 0)
         self.assertIn('৯০%', (self.root/'bn'/file_for_url(URL)).read_text())
 
-    def test_unapproved_incoming_candidate_keeps_current_numeric_gate(self):
+    def test_incoming_complete_seo_candidate_is_not_blocked_by_numeric_prose(self):
         batch = self.legacy_bn_candidate()
-        with self.assertRaisesRegex(ExpansionError, 'approved candidate bytes'): self.publish([batch])
-        self.assertFalse((self.root/'bn').exists())
+        result = self.publish([batch])
+        self.assertTrue(result['ready'])
+        self.assertEqual(result['replays'][0]['translation_calls'], 0)
+        self.assertEqual(result['replays'][0]['checkpoint_binding'], 'incoming-exact-byte-replay')
 
-    def test_incoming_cannot_forge_an_active_approval_quantity_contract(self):
+    def test_incoming_forged_active_fields_do_not_change_seed_authority(self):
         active = self.candidate('fr', url=ORIGIN+'/blog/20260925-active.html')
         incoming = self.legacy_bn_candidate()
         incoming['quantity_contract'] = CONTRACT_ID
+        incoming['checkpoint_sha256'] = self.active_ledger([active])['replays'][0]['checkpoint_sha256']
         identity = {'slot': 'a', 'release_id': 'a'*32, 'tree_sha256': 'b'*64}
-        with mock.patch('portal_extended_publication.read_active_batches', return_value=[active]):
-            with self.assertRaisesRegex(ExpansionError, 'approved candidate bytes'):
-                compose(self.root, self.store, [active, incoming], Path(tempfile.mkdtemp(dir=self.base)), active_identity=identity)
-        self.assertFalse((self.root/'bn').exists())
+        with mock.patch('portal_extended_publication.read_active_ledger', return_value=self.active_ledger([active])):
+            result = compose(self.root, self.store, [active, incoming], Path(tempfile.mkdtemp(dir=self.base)), active_identity=identity)
+        replay = next(row for row in result['replays'] if row['locale'] == 'bn')
+        self.assertEqual(replay['checkpoint_binding'], 'incoming-exact-byte-replay')
+        self.assertEqual(replay['quantity_contract'], 'current')
+        self.assertNotEqual(replay['checkpoint_sha256'], incoming['checkpoint_sha256'])
+
+    def test_mixed_historical_numeric_rules_replay_all_pages_without_inference(self):
+        from financial_quantity_integrity import quantity_issues
+        old_source, old_text = '政策利率上升25个基点。', 'নীতিগত সুদের হার ২৫ বেসিস পয়েন্ট বেড়েছে।'
+        new_source, new_text = '政策利率上升九成。', 'নীতিগত হার ৯০% বৃদ্ধি।'
+        self.assertTrue(quantity_issues(old_source, old_text, 'zh', 'bn'))
+        self.assertEqual(frozen_quantity_issues(old_source, old_text, 'zh', 'bn'), [])
+        self.assertEqual(quantity_issues(new_source, new_text, 'zh', 'bn'), [])
+        self.assertTrue(frozen_quantity_issues(new_source, new_text, 'zh', 'bn'))
+        other = ORIGIN+'/blog/20260925-mixed-numeric.html'
+        bodies = {URL: '<h1>Research</h1><p>'+old_source+'</p>',
+                  other: '<h1>Research</h1><p>'+new_source+'</p>'}
+        corpus = make_corpus([daily_doc(url, body=body) for url, body in bodies.items()])
+        class Historical:
+            def translate(self, text, *args, **kwargs):
+                return {old_source: old_text, new_source: new_text}.get(text, 'গবেষণা তথ্য ও বিশ্লেষণ।')
+        def historical_validator(source, text, source_language, locale):
+            validator = frozen_quantity_issues if source == old_source else quantity_issues
+            return validator(source, text, source_language, locale)
+        work = self.base/'mixed-history'; work.mkdir()
+        manifest = build(corpus, 'bn', work/'candidate', work/'checkpoint.json', Historical(),
+                         allow_source_fallback=True, quantity_validator=historical_validator)
+        self.assertEqual(manifest['completed_page_count'], 2)
+        self.assertEqual(manifest['source_fallback_unit_count'], 0)
+        generation = corpus['documents_sha256']; self.store.put_source(corpus)
+        seed = self.store.put_checkpoint('bn', generation, work/'checkpoint.json')
+        candidate = self.store.upload_candidate(work/'candidate', 'bn', generation)['candidate_id']
+        self.approved_seeds[generation, 'bn', candidate] = seed['sha256']
+        for url, body in bodies.items():
+            target = self.root/file_for_url(url); target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(raw_page(url, body=body))
+        with mock.patch('offline_translation.OfflineTranslator', side_effect=AssertionError('No inference adapter')):
+            result = self.publish_frozen({'generation': generation, 'candidates': {'bn': candidate}})
+        self.assertEqual(result['page_counts'], {'bn': 2})
+        self.assertEqual(result['replays'][0]['translation_calls'], 0)
+        self.assertEqual(result['replays'][0]['quantity_contract'], 'current')
+        self.assertIn(old_text, (self.root/'bn'/file_for_url(URL)).read_text())
+        self.assertIn(new_text, (self.root/'bn'/file_for_url(other)).read_text())
 
     def test_candidate_integrity_failure_is_not_a_parser_fallback(self):
         batch = self.legacy_bn_candidate()
@@ -130,8 +294,9 @@ class PublicationTests(unittest.TestCase):
                 path = self.base/'poisoned.json'; self.store.restore_checkpoint('bn', batch['generation'], path)
                 seed = json.loads(path.read_bytes())
                 row = next(row for row in seed['rows'].values() if '25个基点' in row['source']); row['text'] = text
-                path.write_text(json.dumps(seed)); self.store.put_checkpoint('bn', batch['generation'], path)
-                with self.assertRaisesRegex(ExpansionError, 'approved candidate bytes'): self.publish_frozen(batch)
+                path.write_text(json.dumps(seed)); changed = self.store.put_checkpoint('bn', batch['generation'], path)
+                ledger = self.active_ledger([batch]); ledger['replays'][0]['checkpoint_sha256'] = changed['sha256']
+                with self.assertRaisesRegex(ExpansionError, 'approved candidate bytes'): self.publish_frozen(batch, ledger=ledger)
                 self.assertFalse((self.root/'bn').exists())
 
     def test_current_replay_seed_contains_only_units_proved_against_approved_html(self):
@@ -141,9 +306,10 @@ class PublicationTests(unittest.TestCase):
         seed['rows']['f'*64] = {'source': 'Unapproved extra source.', 'language': 'en', 'text': 'নতুন অগ্রহণযোগ্য লেখা।'}
         seed.setdefault('source_fallbacks', {})['e'*64] = {'source': 'Unapproved fallback.', 'language': 'en',
             'policy': 'exact-source-v1', 'code': 'financial-quantity-validation'}
-        path.write_text(json.dumps(seed)); self.store.put_checkpoint('bn', batch['generation'], path)
+        path.write_text(json.dumps(seed)); saved = self.store.put_checkpoint('bn', batch['generation'], path)
+        ledger = self.active_ledger([batch]); ledger['replays'][0]['checkpoint_sha256'] = saved['sha256']
         with mock.patch('portal_extended_publication.build', wraps=build) as builder:
-            self.publish_frozen(batch)
+            self.publish_frozen(batch, ledger=ledger)
         used_seed = json.loads(next(call for call in builder.call_args_list if call.args[2].name == 'current').kwargs['seed_checkpoint'].read_bytes())
         self.assertNotIn('f'*64, used_seed['rows'])
         self.assertNotIn('e'*64, used_seed.get('source_fallbacks', {}))
@@ -163,10 +329,10 @@ class PublicationTests(unittest.TestCase):
 
     def test_frozen_contract_requires_authenticated_active_ledger_and_exact_prefix(self):
         batch = self.legacy_bn_candidate()
-        with mock.patch('portal_extended_publication.read_active_batches', side_effect=RuntimeError('Pinned identity differs')):
+        with mock.patch('portal_extended_publication.read_active_ledger', side_effect=RuntimeError('Pinned identity differs')):
             with self.assertRaisesRegex(RuntimeError, 'Pinned identity'): compose(self.root,self.store,[batch],self.base/'missing',active_identity={'slot':'a'})
         other = {'generation': 'c'*64, 'candidates': {'bn': 'd'*64}}
-        with mock.patch('portal_extended_publication.read_active_batches', return_value=[other]):
+        with mock.patch('portal_extended_publication.read_active_ledger', return_value={'batches':[other]}):
             with self.assertRaisesRegex(ExpansionError, 'retained exactly'): compose(self.root,self.store,[batch],self.base/'missing',active_identity={'slot':'a'})
 
     def test_head_only_change_replays_exact_units_and_rechecks_current_html(self):

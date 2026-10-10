@@ -13,7 +13,7 @@ import time
 import hymt_offline_translation as hymt
 from build_portal_extended_locales import Memo, TranslationUnitError, safe_failure_code, translate_document
 from compare_hymt_translation import require_actions
-from portal_extended_locales import digest, validate_corpus
+from portal_extended_locales import ADDITIONAL, digest, validate_corpus
 
 
 class PendingUnit(Exception):
@@ -70,7 +70,8 @@ def main():
     require_actions()
     if os.environ.get('KC_PUBLIC_REPOSITORY') != 'true':
         raise RuntimeError('Requires a verified public Actions runner')
-    translator = hymt.OfflineTranslator(cache_dir=args.cache, validation_attempts=1)
+    translator = hymt.OfflineTranslator(cache_dir=args.cache, validation_attempts=1,
+        quantity_policy='advisory' if args.locale in ADDITIONAL else 'strict')
     translator.set_deadline(time.monotonic()+600)
     result = probe(json.loads(args.corpus.read_text()), args.locale, args.checkpoint, translator)
     print(json.dumps(result, sort_keys=True))

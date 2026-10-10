@@ -20,6 +20,9 @@ from test_portal_extended_incremental import DAY, URL, daily_doc, raw_page
 from test_portal_extended_locales import FakeTranslator
 from test_portal_extended_r2 import FakeR2
 from test_repair_portal_french_source_fallback import OriginalRejected
+from financial_quantity_integrity import quantity_issues
+from offline_translation import OfflineTranslationValidationError
+from portal_extended_quality import publication_ready
 
 PRODUCER = {'run_id': '1', 'attempt': '1', 'sha': 'a' * 40}
 BODY = '<h1>Public research</h1><p>Revenue USD10m.</p><p>Profit USD2m.</p>'
@@ -30,6 +33,14 @@ class Accepted(FakeTranslator):
         if 'USD' in text:
             self.calls += 1
             return text.replace('Revenue', 'Chiffre d’affaires').replace('Profit', 'Bénéfice')
+        return super().translate(text, target, source, markdown=markdown)
+
+
+class DisplayRejected(OriginalRejected):
+    def translate(self, text, target, source=None, *, markdown=True):
+        if 'USD' in text:
+            self.calls += 1
+            raise OfflineTranslationValidationError('Hy-MT2 placeholder validation failed')
         return super().translate(text, target, source, markdown=markdown)
 
 
@@ -63,17 +74,97 @@ class QualityTests(unittest.TestCase):
                 require_active_owner(self.store, 'fr', self.generation)
         self.assertEqual(self.store.client.objects, before)
 
-    def candidate(self, locale='fr', *, rejected=True, registered=False):
+    def candidate(self, locale='fr', *, rejected=True, registered=False, advisory=False, numeric=False):
         self.number += 1
         if registered:
             register(self.store, self.corpus, (locale,), PRODUCER)
         work = self.root / str(self.number)
-        translator = OriginalRejected() if rejected else Accepted()
+        translator = (OriginalRejected() if numeric else DisplayRejected()) if rejected else Accepted()
         manifest = build(self.corpus, locale, work/'candidate', work/'memo.json', translator,
-                         allow_source_fallback=True)
+                         allow_source_fallback=True, quantity_validator=None if advisory else quantity_issues)
         remember_checkpoint(self.store, locale, self.generation, work/'memo.json')
         result = remember_candidate(self.store, locale, self.corpus, work/'candidate')
         return result, manifest, translator, work
+
+    def test_numeric_only_fallback_can_publish_without_claiming_translation_complete(self):
+        result, manifest, translator, work = self.candidate(registered=True, advisory=True, numeric=True)
+        self.assertFalse(manifest['translation_complete'])
+        self.assertFalse(result['translation_ready'])
+        self.assertEqual((manifest['source_fallback_unit_count'], manifest['numeric_source_fallback_unit_count']), (2, 2))
+        proof = candidate_quality(self.store, 'fr', self.generation, result['candidate_id'])
+        self.assertTrue(proof['publication_ready'])
+        self.assertFalse(proof['translation_ready'])
+        self.assertEqual(proof['quality_status'], 'source-fallback')
+        calls = translator.calls
+        selected = pending_batch(self.store, self.corpus, 'fr', 'fr', self.active, self.root/'numeric-handoff')
+        self.assertEqual(selected['candidates'], {'fr': result['candidate_id']})
+        batch, _ = next_registered_batch(self.store, 'fr', 'fr', self.active, self.root/'numeric-registered')
+        receipt = read_handoff(self.store, save_handoff(self.store, batch, day=DAY, pages=2, producer=PRODUCER))
+        self.assertEqual(set(handoff_quality(self.store, receipt)), {'fr'})
+        self.assertEqual(translator.calls, calls)
+        self.assertEqual(quality_summary(self.store, ('fr',))['quality_debt_source_fallback_units'], 0)
+
+    def test_mixed_numeric_and_structural_fallback_keeps_publication_blocked(self):
+        _, manifest, _, _ = self.candidate(advisory=True, numeric=True)
+        mixed = {**manifest, 'numeric_source_fallback_unit_count': 1,
+                 'source_fallback_codes': ['offline-placeholder-validation', 'offline-quantity-validation']}
+        proof = quality_fields(mixed)
+        self.assertFalse(proof['publication_ready'])
+        self.assertFalse(proof['translation_ready'])
+        for changes in ({'numeric_source_fallback_unit_count': True},
+                        {'numeric_source_fallback_unit_count': 3},
+                        {'numeric_source_fallback_unit_count': 2},
+                        {'numeric_source_fallback_unit_count': 0},
+                        {'quantity_warning_unit_count': 2, 'quantity_warning_occurrences': 1},
+                        {'quantity_validation_policy': 'unknown'},
+                        {'source_fallback_unit_sha256': ['a'*64]}):
+            with self.subTest(changes=changes), self.assertRaises(ExpansionError):
+                quality_fields({**mixed, **changes})
+
+    def test_legacy_numeric_only_proof_can_publish_without_changing_immutable_bytes(self):
+        result, manifest, translator, work = self.candidate(registered=True, numeric=True)
+        proof = candidate_quality(self.store, 'fr', self.generation, result['candidate_id'])
+        self.assertNotIn('publication_ready', proof)
+        self.assertNotIn('quantity_validation_policy', proof)
+        self.assertFalse(proof['translation_ready'])
+        self.assertTrue(publication_ready(proof))
+        manifest_key = self.store.candidate_manifest_key('fr', self.generation, result['candidate_id'])
+        proof_object = proof_key(self.store, result['quality_proof_sha256'])
+        old_bytes = {key:self.store.client.objects[key]['body'] for key in (manifest_key, proof_object)}
+        old_checkpoint, calls = (work/'memo.json').read_bytes(), translator.calls
+        selected = pending_batch(self.store, self.corpus, 'fr', 'fr', self.active, self.root/'legacy-handoff')
+        self.assertEqual(selected['candidates'], {'fr': result['candidate_id']})
+        receipt = read_handoff(self.store, save_handoff(self.store, selected, day=DAY, pages=2, producer=PRODUCER))
+        self.assertEqual(set(handoff_quality(self.store, receipt)), {'fr'})
+        self.assertEqual({key:self.store.client.objects[key]['body'] for key in old_bytes}, old_bytes)
+        self.assertEqual((work/'memo.json').read_bytes(), old_checkpoint)
+        self.assertEqual(translator.calls, calls)
+        self.assertEqual(debt_rows(self.store, 'fr'), {})
+        for changes in ({'source_fallback_codes': ['offline-quantity-validation', 'offline-placeholder-validation']},
+                        {'source_fallback_codes': ['unknown']}, {'source_fallback_codes': []},
+                        {'source_fallback_unit_sha256': []}, {'source_fallback_unit_sha256': ['a'*64, 'a'*64]},
+                        {'source_fallback_unit_count': True}, {'source_fallback_unit_count': 1},
+                        {'source_fallback_occurrences': 0}, {'fallback_unit_hashes_complete': False},
+                        {'render_complete': False}, {'quality_status': 'unproven'}):
+            with self.subTest(changes=changes):
+                self.assertFalse(publication_ready({**proof, **changes}))
+
+    def test_numeric_advisory_does_not_fill_or_fail_an_already_full_repair_queue(self):
+        result, _, translator, _ = self.candidate(registered=True, numeric=True)
+        proof = candidate_quality(self.store, 'fr', self.generation, result['candidate_id'])
+        row = {key:proof[key] for key in ('candidate_id', 'source_fallback_unit_count', 'quality_status')}
+        row['proof_sha256'] = result['quality_proof_sha256']
+        full = {f'{index:064x}':copy.deepcopy(row) for index in range(500)}
+        write_state(self.store, 'quality-debt', 'fr', {'generations':full})
+        before = copy.deepcopy(self.store.client.objects)
+        calls = translator.calls
+        actual = record_quality(self.store, 'fr', self.generation, result['candidate_id'])
+        self.assertTrue(publication_ready(actual))
+        self.assertFalse(actual['translation_ready'])
+        self.assertEqual(actual['source_fallback_unit_count'], 2)
+        self.assertEqual(debt_rows(self.store, 'fr'), full)
+        self.assertEqual(self.store.client.objects, before)
+        self.assertEqual(translator.calls, calls)
 
     def test_two_pages_two_fallbacks_stay_done_for_inference_but_not_publication(self):
         result, manifest, translator, work = self.candidate(registered=True)
@@ -229,8 +320,9 @@ class ActivePublicationTests(unittest.TestCase):
         manifest = build(corpus, 'fr', work/'candidate', work/'memo.json', OriginalRejected(), allow_source_fallback=True)
         generation = corpus['documents_sha256']
         fixture.store.put_source(corpus)
-        fixture.store.put_checkpoint('fr', generation, work/'memo.json')
+        seed = fixture.store.put_checkpoint('fr', generation, work/'memo.json')
         saved = fixture.store.upload_candidate(work/'candidate', 'fr', generation)
+        fixture.approved_seeds[generation, 'fr', saved['candidate_id']] = seed['sha256']
         source = fixture.root/file_for_url(URL); source.parent.mkdir(parents=True, exist_ok=True)
         source.write_bytes(raw_page(body=BODY))
         return fixture, {'generation': generation, 'candidates': {'fr': saved['candidate_id']}}, source

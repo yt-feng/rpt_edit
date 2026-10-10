@@ -27,7 +27,7 @@ def main() -> int:
     require_actions()
     if os.environ.get('KC_PUBLIC_REPOSITORY') != 'true':
         raise ExpansionError('Real-model canary requires a verified public repository')
-    translator = OfflineTranslator()
+    translator = OfflineTranslator(quantity_policy='advisory')
     outcomes = []
     for locale in locales:
         for identity, language, source in SAMPLES:

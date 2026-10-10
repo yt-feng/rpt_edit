@@ -1621,8 +1621,9 @@ def translate_missing_units(
         # Save valid rows even if a neighbouring row fails the quality gate.
         from offline_translation import (OfflineTranslator, OfflineTranslationError, TranslationBudgetExceeded,
                                          OfflineTranslationValidationError, PROVIDER as offline_provider)
-        translator = OfflineTranslator()
-        run_state.data.update(provider=provider, offline_engine=offline_provider, api_cost_cny=0, repair_provider="none", workers=1)
+        translator = OfflineTranslator(quantity_policy='advisory')
+        run_state.data.update(provider=provider, offline_engine=offline_provider, api_cost_cny=0,
+                              repair_provider="none", workers=1, quantity_policy="advisory")
         source_fallbacks: dict[str, dict[str, dict[str, Any]]] = {locale: {} for locale in LOCALES}
         if allow_source_fallback:
             cache["_source_fallbacks"] = source_fallbacks
@@ -1660,8 +1661,11 @@ def translate_missing_units(
             run_state.check()
             translated_batch: list[str] | None = None
             translate_many = getattr(translator, "translate_many", None)
+            site_translation_supported = (getattr(translator, 'quantity_policy', None) == 'advisory'
+                                          and callable(getattr(type(translator), 'translate_site_text', None)))
             if (not allow_source_fallback and callable(translate_many)
-                    and callable(getattr(type(translator), "translate_many", None))):
+                    and callable(getattr(type(translator), "translate_many", None))
+                    and not (site_translation_supported and any(unit.data_placeholders for unit in batch))):
                 try:
                     translated_batch = translate_many([unit.source for unit in batch], locale)
                 except TranslationBudgetExceeded:
@@ -1679,8 +1683,13 @@ def translate_missing_units(
                         break
                     stop_offline_budget()
                 try:
-                    translated = (translated_batch[index] if translated_batch is not None
-                                  else translator.translate(unit.source, locale))
+                    if translated_batch is not None:
+                        translated = translated_batch[index]
+                    elif site_translation_supported:
+                        translated = translator.translate_site_text(unit.source, locale,
+                                                                   data_placeholders=unit.data_placeholders)
+                    else:
+                        translated = translator.translate(unit.source, locale)
                     validate_translation_quality(locale, unit, translated)
                     cache["locales"][locale][unit.key] = {
                         **_translation_cache_row(unit, translated), "provider": provider, "offline_engine": offline_provider, "model": model,
@@ -1718,6 +1727,8 @@ def translate_missing_units(
         run_state.data.update(remaining_units=remaining, remaining_units_total=sum(remaining.values()),
                               failed_units=failed, failed_batches=0 if not failed else failed,
                               source_fallback_counts={locale: len(rows) for locale, rows in source_fallbacks.items()})
+        quantity_warnings = getattr(translator, 'quantity_warning_count', 0)
+        run_state.data['quantity_warning_count'] = quantity_warnings if type(quantity_warnings) is int else 0
         run_state.write()
         unresolved = {locale: sum(not _valid_cache_row(locale, unit, cache["locales"][locale].get(key))
                                  and not _valid_source_fallback(locale, unit, cache)
