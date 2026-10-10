@@ -17,6 +17,7 @@ import inspect_recovered_article_generation as inspection
 import recover_report_articles as articles
 import recovered_article_delivery as delivery
 import wechat_title_optimizer as titles
+from title_source_claim_support import source_context
 from saved_article_title_diagnostics import observe_saved_title_gates, title_excerpt
 from inspect_market_views_r2_cache import ReadOnlyClient, build_client
 from private_workflow_handoff import download_directory, require_env
@@ -62,7 +63,7 @@ def snapshot(root):
 
 
 def validator_identity():
-    files = ('revalidate_saved_article_titles.py', 'saved_article_title_diagnostics.py', 'wechat_title_optimizer.py', 'sensitive_content_guard.py',
+    files = ('revalidate_saved_article_titles.py', 'saved_article_title_diagnostics.py', 'title_source_claim_support.py', 'wechat_title_optimizer.py', 'sensitive_content_guard.py',
              'wechat_article_quality.py', 'wechat_editorial_binding.py')
     return {name: articles.digest((Path(__file__).parent / name).read_bytes()) for name in files}
 
@@ -115,10 +116,11 @@ def replace_h1(raw, title=None):
     return raw[:match.start()] + replacement + raw[match.end():]
 
 
-def select_title(status, body, batches):
+def select_title(status, body, batches, *, original_source=None, source_sha256=None):
     source, institution = status.get('original_filename'), status.get('institution_name', '')
     require(isinstance(source, str) and 0 < len(source) <= 2048 and isinstance(institution, str)
         and len(institution) <= 200, 'revalidation_incident_invalid')
+    context = source_context(source, original_source, expected_sha256=source_sha256) if source_sha256 else None
     excerpt = title_excerpt(body)
     # Match production repair precedence: newest response first, initial last.
     candidates = [value for batch in reversed(batches) for value in batch]
@@ -130,10 +132,10 @@ def select_title(status, body, batches):
         cleaned = titles.clean_filename_wechat_title(raw, institution)
         if len(cleaned.split('：', 1)[-1]) >= 4 and not titles.title_quality_issues(cleaned, institution, source):
             generated.add(cleaned)
-    chosen, decision = titles.decide_filename_anchored_title(candidates, source, institution, evidence_text=excerpt)
+    chosen, decision = titles.decide_filename_anchored_title(candidates, source, institution, evidence_text=excerpt, source_context=context)
     if chosen not in generated or decision.get('needs_model_repair') or decision.get('selected_quality_issues'):
         return None, decision
-    initial, initial_decision = titles.decide_filename_anchored_title(batches[0], source, institution, evidence_text=excerpt)
+    initial, initial_decision = titles.decide_filename_anchored_title(batches[0], source, institution, evidence_text=excerpt, source_context=context)
     decision.update(repair_attempted=len(batches) > 1,
         repair_candidates=[value for batch in reversed(batches[1:]) for value in batch],
         initial_selection={'title': initial, 'reason': initial_decision.get('selection_reason'),
@@ -204,7 +206,8 @@ def revalidate_checkpoint(root, candidate_workspace, original_sha, handoff_sha):
     body = inspection.read(directory / 'wechat_article.md', articles.MAX_FILE_BYTES)
     require(not {'forbidden_meta_section', 'model_cta'} & set(audit_wechat_article_markdown(body.decode('utf-8'))),
         'revalidation_body_invalid')
-    title, decision = select_title(status, body.decode('utf-8'), batches)
+    title, decision = select_title(status, body.decode('utf-8'), batches,
+        original_source=pinned_files['source_ocr.md'].decode('utf-8'), source_sha256=FILE_PINS['source_ocr.md'][1])
     result = {'schema_version': 1, 'policy': POLICY, 'source_ordinal': ORDINAL, 'expected_articles': inspection.EXPECTED_REPORTS,
         'completed_article_count_before': inspection.EXPECTED_REPORTS - 1, 'revalidation_ready': title is not None,
         'retained_body_count': 1, 'retained_title_response_count': len(batches), 'pending_request_count': 0,

@@ -7,6 +7,7 @@ from unittest.mock import patch
 
 import saved_article_title_diagnostics as diagnostics
 import wechat_title_optimizer as titles
+import title_source_claim_support as claims
 
 
 SOURCE = 'UBS-AI product comparison-261007.pdf'
@@ -113,7 +114,7 @@ class SavedTitleDiagnosticTests(unittest.TestCase):
         with patch.object(titles, 'title_quality_issues', return_value=['PRIVATE_ERROR_VALUE']):
             result, _ = observe([['PRIVATE_CANDIDATE_MARKER']], 'PRIVATE_BODY_MARKER', 'PRIVATE_SOURCE_MARKER')
         allowed = diagnostics.TITLE_REJECTION_REASONS | {
-            diagnostics.POLICY, 'saved_candidate', 'filename_fallback', 'evidence_fallback'}
+            diagnostics.POLICY, claims.POLICY, 'saved_candidate', 'filename_fallback', 'evidence_fallback'}
         def check(value):
             if isinstance(value, dict):
                 for item in value.values(): check(item)
