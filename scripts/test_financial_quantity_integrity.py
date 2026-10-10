@@ -5,10 +5,125 @@ from decimal import Decimal
 
 from financial_quantity_integrity import quantities, quantity_issues
 
+COMMA_LOCALES = ('fr', 'es', 'de', 'id', 'pt', 'tr', 'ru', 'it', 'vi', 'pl', 'cs', 'nl', 'uk', 'kk')
+DOT_GROUP_LOCALES = ('es', 'de', 'id', 'pt', 'tr', 'it', 'vi', 'nl')
+SPACE_GROUP_LOCALES = ('fr', 'ru', 'pl', 'cs', 'uk', 'kk')
+INDIAN_GROUP_LOCALES = ('hi', 'gu', 'te', 'mr', 'bn', 'ta')
+
 
 class FinancialQuantityTests(unittest.TestCase):
+    def test_all_33_supported_locales_match_installed_cldr_numeric_samples(self):
+        from portal_extended_locales import ADDITIONAL
+        # ICU 78.3 / CLDR 48.0 fixtures, using the repository's OG_LOCALES.
+        samples = {
+            'fr': ('0,125', '1\u202f234\u202f567,89'),
+            'pt': ('0,125', '1.234.567,89'), 'es': ('0,125', '1.234.567,89'),
+            'tr': ('0,125', '1.234.567,89'), 'ru': ('0,125', '1\u00a0234\u00a0567,89'),
+            'th': ('0.125', '1,234,567.89'), 'it': ('0,125', '1.234.567,89'),
+            'de': ('0,125', '1.234.567,89'), 'vi': ('0,125', '1.234.567,89'),
+            'ms': ('0.125', '1,234,567.89'), 'id': ('0,125', '1.234.567,89'),
+            'tl': ('0.125', '1,234,567.89'), 'hi': ('0.125', '12,34,567.89'),
+            'zh-Hant': ('0.125', '1,234,567.89'), 'pl': ('0,125', '1\u00a0234\u00a0567,89'),
+            'cs': ('0,125', '1\u00a0234\u00a0567,89'), 'nl': ('0,125', '1.234.567,89'),
+            'km': ('0.125', '1,234,567.89'), 'my': ('၀.၁၂၅', '၁,၂၃၄,၅၆၇.၈၉'),
+            'fa': ('۰٫۱۲۵', '۱٬۲۳۴٬۵۶۷٫۸۹'), 'gu': ('0.125', '12,34,567.89'),
+            'ur': ('0.125', '1,234,567.89'), 'te': ('0.125', '12,34,567.89'),
+            'mr': ('०.१२५', '१२,३४,५६७.८९'), 'he': ('0.125', '1,234,567.89'),
+            'bn': ('০.১২৫', '১২,৩৪,৫৬৭.৮৯'), 'ta': ('0.125', '12,34,567.89'),
+            'uk': ('0,125', '1\u00a0234\u00a0567,89'), 'bo': ('0.125', '1,234,567.89'),
+            'kk': ('0,125', '1\u00a0234\u00a0567,89'), 'mn': ('0.125', '1,234,567.89'),
+            'ug': ('0.125', '1,234,567.89'), 'yue': ('0.125', '1,234,567.89'),
+        }
+        self.assertEqual(set(samples), set(ADDITIONAL))
+        for locale, (fraction, large) in samples.items():
+            for source, translated in (('0.125%', fraction + '%'), ('USD1234567.89', 'USD' + large)):
+                with self.subTest(locale=locale, source=source):
+                    self.assertEqual(quantity_issues(source, translated, 'en', locale), [])
+                    self.assertEqual(quantity_issues(translated, source, locale, 'en'), [])
+            self.assertTrue(quantity_issues('125%', fraction + '%', 'en', locale))
+            self.assertTrue(quantity_issues('USD1234.56789', 'USD' + large, 'en', locale))
+
+    def test_space_group_families_do_not_merge_decimal_lists_or_source_multisets(self):
+        for locale in SPACE_GROUP_LOCALES:
+            for space in (' ', '\u00a0', '\u202f'):
+                with self.subTest(locale=locale, space=repr(space)):
+                    self.assertEqual(quantity_issues('1234.5; 6789.5', f'1{space}234,5, 6{space}789,5', 'en', locale), [])
+                    self.assertEqual(quantity_issues('0.125; 1.25', '0,125 1,250', 'en', locale), [])
+                    self.assertTrue(quantity_issues('1; 234', f'1{space}234', 'en', locale))
+                    self.assertTrue(quantity_issues('1; 234.567', f'1{space}234,567', 'en', locale))
+                    self.assertIn('invalid_numeric_format', quantity_issues('1.234; 2.345; 67', '1,234 2.345,67', 'en', locale))
+
+    def test_indian_grouping_keeps_full_numbers_units_and_existing_western_notation(self):
+        for locale in INDIAN_GROUP_LOCALES:
+            for source, translated in (
+                ('1234', '1,234'), ('12345', '12,345'), ('123456', '1,23,456'),
+                ('1234567.8901', '12,34,567.8901'), ('123456789', '12,34,56,789'),
+                ('-1234567.89%', '−12,34,567.89%'), ('USD1234567.89', 'USD12,34,567.89'),
+                ('1234567.89 bp', '12,34,567.89 bp'), ('1234567.89 million', '12,34,567.89 million'),
+                ('1234567.89', '1,234,567.89'), ('0.125%', '0.125%'),
+            ):
+                with self.subTest(locale=locale, source=source):
+                    self.assertEqual(quantity_issues(source, translated, 'en', locale), [])
+                    self.assertEqual(quantity_issues(translated, source, locale, 'en'), [])
+            for source in ('12.34; 567.89', '1234.56789', '-1234567.89', '1234567.89; 1234567.89'):
+                self.assertTrue(quantity_issues(source, '12,34,567.89', 'en', locale))
+            for malformed in ('123,45,678', '1,234,56', '0,123', '1,23', '1,,234',
+                              '1,23,456,789', '.1,23,456.78', '-+1,23,456.78', '1,23,456.7.8'):
+                with self.subTest(locale=locale, malformed=malformed):
+                    self.assertIn('invalid_numeric_format', quantity_issues(malformed, malformed, locale, locale))
+            self.assertEqual(quantity_issues('1; 2; 3', '1, 2, 3', 'en', locale), [])
+            self.assertTrue(quantity_issues('125%', '0,125%', 'en', locale))
+            self.assertEqual(quantity_issues('USD1234567.89', 'USD１２，３４，５６７．８９', 'en', locale), [])
+        # The same spelling is not a valid grouping for unrelated locales.
+        for locale in ('en', 'fr', 'de', 'ur', '', 'hi-unsupported'):
+            self.assertTrue(quantity_issues('1234567.89', '12,34,567.89', 'en', locale))
+
+    def test_turkish_percent_prefix_preserves_type_sign_precision_and_multiplicity(self):
+        for source, translated in (('0.125%', '%0,125'), ('-0.125%', '-%0,125'),
+                                   ('1234.5%', '%1.234,5'), ('0.125%', '% 0,125'),
+                                   ('-0.125%', '- %0,125'), ('-0.125%', '− %0,125'),
+                                   ('5%; 0.125', '5% 0,125'), ('5%; 0.125', '5 % 0,125'),
+                                   ('-5%; 0.125%', '-%5 %0,125'), ('-5%; 10%', '-%5 %10')):
+            self.assertEqual(quantity_issues(source, translated, 'en', 'tr'), [])
+            self.assertEqual(quantity_issues(translated, source, 'tr', 'en'), [])
+        for source, translated in (('125%', '%0,125'), ('0.125', '%0,125'),
+                                   ('0.125 percentage points', '%0,125'), ('-0.125%', '%0,125'),
+                                   ('0.125%', '%0,125 %0,125'), ('5; 0.125%', '5% 0,125'),
+                                   ('5; 0.125%', '5 % 0,125'), ('0.125%', '- %0,125'),
+                                   ('5%; -0.125%', '-%5 %0,125'), ('5%; -10%', '-%5 %10')):
+            self.assertTrue(quantity_issues(source, translated, 'en', 'tr'))
+        self.assertIn('invalid_numeric_format', quantity_issues('0.125%', '-%-0,125', 'en', 'tr'))
+        self.assertIn('invalid_numeric_format', quantity_issues('-0.125%', '--%0,125', 'en', 'tr'))
+        for locale in ('en', 'fr', 'de', 'tr-unsupported'):
+            self.assertTrue(quantity_issues('0.125%', '%0.125', 'en', locale))
+
+    def test_icu_numeric_lrm_preserves_currency_sign_magnitude_and_multiset(self):
+        for locale in ('fa', 'ur', 'he'):
+            for source, translated in (
+                ('USD-0.125', 'USD\u200e−0.125'), ('USD-0.125', 'USD−\u200e0.125'),
+                ('USD-1234567.89', 'USD\u200e−۱٬۲۳۴٬۵۶۷٫۸۹'),
+                ('-0.125%', '\u200e−0.125%'), ('USD12', 'USD1\u200e2'),
+            ):
+                with self.subTest(locale=locale, source=source):
+                    self.assertEqual(quantity_issues(source, translated, 'en', locale), [])
+                    self.assertEqual(quantity_issues(translated, source, locale, 'en'), [])
+            for source, translated in (
+                ('USD0.125', 'USD\u200e−0.125'), ('USD0.125', 'USD−\u200e0.125'),
+                ('USD-125', 'USD\u200e−0.125'), ('EUR-0.125', 'USD\u200e−0.125'),
+                ('-0.125', 'USD\u200e−0.125'), ('USD-0.125', 'USD\u200e−0.125 USD\u200e−0.125'),
+                ('USD1; 2', 'USD1\u200e2'),
+            ):
+                self.assertTrue(quantity_issues(source, translated, 'en', locale))
+            for translated in ('USD-\u200e-0.125', 'USD\u200e--0.125', 'USD+\u200e-0.125'):
+                self.assertIn('invalid_numeric_format', quantity_issues('USD-0.125', translated, 'en', locale))
+        for locale in ('en', 'fr', 'fa-unsupported'):
+            self.assertTrue(quantity_issues('USD-0.125', 'USD\u200e−0.125', 'en', locale))
+        # Unrelated direction marks and marks inside words are not stripped.
+        self.assertTrue(quantity_issues('USD-0.125', 'USD\u200f−0.125', 'en', 'fa'))
+        self.assertTrue(quantity_issues('USD12', 'US\u200eD12', 'en', 'fa'))
+
     def test_locale_decimal_comma_preserves_three_fractional_digits_not_thousands(self):
-        for locale in ('fr', 'es', 'de', 'id'):
+        for locale in COMMA_LOCALES:
             for source, translated in (
                 ('0.125%', '0,125%'), ('-0.125%', '-0,125%'),
                 ('USD0.125', 'USD0,125'), ('0.125USD', '0,125USD'),
@@ -22,7 +137,7 @@ class FinancialQuantityTests(unittest.TestCase):
             self.assertTrue(quantity_issues('USD1234', 'USD1,234', 'en', locale))
 
     def test_long_comma_fractions_are_indivisible_and_not_separate_numbers(self):
-        for locale in ('fr', 'es', 'de', 'id'):
+        for locale in COMMA_LOCALES:
             for value in ('0.000125', '1.2345', '-12.34567', '0.123456789'):
                 for form in ('{}', 'USD{}', '{}EUR', '{}%', '{} bp', '{} million'):
                     source, translated = form.format(value), form.format(value.replace('.', ','))
@@ -41,7 +156,7 @@ class FinancialQuantityTests(unittest.TestCase):
                           quantity_issues('1.234; 2.345; 67', malformed, 'en', 'fr'))
 
     def test_dot_grouping_and_decimal_comma_preserve_whole_magnitudes(self):
-        for locale in ('es', 'de', 'id'):
+        for locale in DOT_GROUP_LOCALES:
             for source, translated in (
                 ('1234', '1.234'), ('1234567', '1.234.567'),
                 ('USD1234.50', 'USD1.234,50'), ('1234.50EUR', '1.234,50EUR'),
@@ -65,14 +180,14 @@ class FinancialQuantityTests(unittest.TestCase):
                                  Counter({('number', Decimal(1234)): 1}))
                 self.assertEqual(quantities('1.234', language=locale),
                                  Counter({('number', Decimal('1.234')): 1}))
-        for locale in ('fr', 'es', 'de', 'id'):
+        for locale in COMMA_LOCALES:
             self.assertEqual(quantities('1,234', language=locale),
                              Counter({('number', Decimal('1.234')): 1}))
         self.assertEqual(quantities('1.234', language='fr'),
                          Counter({('number', Decimal('1.234')): 1}))
 
     def test_locale_normalization_keeps_currency_rate_sign_and_multiplicity_gates(self):
-        for locale in ('fr', 'es', 'de', 'id'):
+        for locale in COMMA_LOCALES:
             source = 'USD 0.125; -1.25%; 2.5 percentage points; 25 bp; 3; 3.'
             valid = 'USD 0,125; -1,25%; 2,5 percentage points; 25 bp; 3; 3.'
             with self.subTest(locale=locale):
@@ -86,7 +201,7 @@ class FinancialQuantityTests(unittest.TestCase):
                     self.assertTrue(quantity_issues(source, changed, 'en', locale), changed)
 
     def test_malformed_localized_decimal_cannot_be_accepted_as_valid_fragments(self):
-        for locale in ('fr', 'es', 'de', 'id'):
+        for locale in COMMA_LOCALES:
             for malformed in ('1.23.456,78', '1,23,456', '1.234,5,6',
                               '1,234.50', '1.234.,50', '.1.234,50',
                               '..1.234,50', '-+1.234,50', '1٬234.567,89'):
@@ -95,19 +210,19 @@ class FinancialQuantityTests(unittest.TestCase):
                     self.assertIn('invalid_numeric_format', issues)
                     self.assertTrue(quantity_issues('1; 234.50', malformed, 'en', locale))
         # Comma plus a space is a list separator, not a decimal separator.
-        for locale in ('fr', 'es', 'de', 'id'):
+        for locale in COMMA_LOCALES:
             self.assertEqual(quantity_issues('1; 2; 3', '1, 2, 3', 'en', locale), [])
             self.assertTrue(quantity_issues('1; 2', '1, 2, 3', 'en', locale))
 
     def test_numeric_width_and_arabic_separators_cannot_reintroduce_thousandfold_change(self):
-        for locale in ('fr', 'es', 'de', 'id'):
+        for locale in COMMA_LOCALES:
             with self.subTest(locale=locale):
                 self.assertEqual(quantity_issues('0.125%', '０，１２５％', 'en', locale), [])
                 self.assertTrue(quantity_issues('125%', '０，１２５％', 'en', locale))
                 self.assertEqual(quantity_issues('0.125%', '٠٫١٢٥٪', 'en', locale), [])
                 self.assertTrue(quantity_issues('125%', '٠٫١٢٥٪', 'en', locale))
                 self.assertEqual(quantity_issues('USD 1234567.50', 'USD ١٬٢٣٤٬٥٦٧٫٥٠', 'en', locale), [])
-        for locale in ('es', 'de', 'id'):
+        for locale in DOT_GROUP_LOCALES:
             self.assertEqual(quantity_issues('USD1234.50', 'USD１．２３４，５０', 'en', locale), [])
         self.assertEqual(quantity_issues('USD1234.50', 'USD１\u202f２３４，５０', 'en', 'fr'), [])
 
@@ -119,13 +234,13 @@ class FinancialQuantityTests(unittest.TestCase):
         from portal_extended_locales import ExpansionError, digest, stable_bytes
 
         generation = 'a' * 64
-        for locale in ('fr', 'es', 'de', 'id'):
+        for locale in COMMA_LOCALES:
             for source, accepted in (('Rate 0.125%.', True), ('Rate 125%.', False)):
                 with self.subTest(locale=locale, source=source):
                     key = digest(stable_bytes([CHECKPOINT_VERSION, MODEL_ID, locale, 'en', source]))
                     raw = stable_bytes({'version': CHECKPOINT_VERSION, 'model': MODEL_ID,
                         'locale': locale, 'source_generation': generation,
-                        'rows': {key: {'source': source, 'language': 'en', 'text': 'Ratio 0,125%.'}}})
+                        'rows': {key: {'source': source, 'language': 'en', 'text': {'ru': 'Рост 0,125%.', 'uk': 'Ріст 0,125%.', 'kk': 'Өсім 0,125%.'}.get(locale, 'Ratio 0,125%.')}}})
                     store = SimpleNamespace(checkpoint_object_key=lambda *_: 'exact-checkpoint',
                                             _get=lambda *_, **__: raw)
                     if accepted:

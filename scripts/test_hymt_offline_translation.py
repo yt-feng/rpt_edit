@@ -8,6 +8,12 @@ import unittest
 from unittest import mock
 import hymt_offline_translation as h
 
+COMMA_LOCALES = ('fr', 'es', 'de', 'id', 'pt', 'tr', 'ru', 'it', 'vi', 'pl', 'cs', 'nl', 'uk', 'kk')
+SPACE_GROUP_LOCALES = {'fr', 'ru', 'pl', 'cs', 'uk', 'kk'}
+
+def comma_response(locale):
+    return {'ru': 'Рост 0,125%.', 'uk': 'Ріст 0,125%.', 'kk': 'Өсім 0,125%.'}.get(locale, 'Ratio 0,125%.')
+
 class Engine:
     def __init__(self, responder):
         self.responder = responder
@@ -54,14 +60,14 @@ class HyMTTests(unittest.TestCase):
         self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
 
     def test_locale_decimal_validation_precedes_cache_and_preserves_equivalent_result(self):
-        for locale in ('fr', 'es', 'de', 'id'):
+        for locale in COMMA_LOCALES:
             for source, accepted in (('Rate 0.125%.', True), ('Rate 125%.', False)):
                 with self.subTest(locale=locale, source=source), tempfile.TemporaryDirectory() as cache:
-                    engine = Engine(lambda _: 'Ratio 0,125%.')
+                    engine = Engine(lambda _: comma_response(locale))
                     translator = h.OfflineTranslator(cache_dir=cache, engine_factory=lambda *_: engine)
                     if accepted:
-                        self.assertEqual(translator.translate(source, locale, 'en'), 'Ratio 0,125%.')
-                        self.assertEqual(translator.translate(source, locale, 'en'), 'Ratio 0,125%.')
+                        self.assertEqual(translator.translate(source, locale, 'en'), comma_response(locale))
+                        self.assertEqual(translator.translate(source, locale, 'en'), comma_response(locale))
                         self.assertTrue(list(Path(cache).rglob('*.json')))
                     else:
                         with self.assertRaises(h.OfflineTranslationValidationError):
@@ -75,8 +81,8 @@ class HyMTTests(unittest.TestCase):
                     self.assertEqual(len(engine.calls), 1)
 
     def test_locale_quantity_diagnostic_matches_grouping_and_malformed_gate(self):
-        for locale in ('fr', 'es', 'de', 'id'):
-            response = 'USD 1\u202f234,567' if locale == 'fr' else 'USD 1.234,567'
+        for locale in COMMA_LOCALES:
+            response = 'USD 1\u202f234,567' if locale in SPACE_GROUP_LOCALES else 'USD 1.234,567'
             facts = h.quantity_failure_diagnostics('USD 1234.567', response, 'en', locale)
             self.assertEqual(facts['missing']['rows'], [])
             self.assertEqual(facts['extra']['rows'], [])
@@ -88,17 +94,37 @@ class HyMTTests(unittest.TestCase):
                              [{'kind': 'invalid_number', 'values': [], 'count': 1}])
 
     def test_existing_same_model_cache_cannot_bypass_new_locale_quantity_gate(self):
-        for locale in ('fr', 'es', 'de', 'id'):
+        for locale in COMMA_LOCALES:
             for source, accepted in (('Rate 0.125%.', True), ('Rate 125%.', False)):
                 with self.subTest(locale=locale, source=source), tempfile.TemporaryDirectory() as cache:
                     engine_factory = mock.Mock(side_effect=AssertionError('Cached validation must not call a model'))
                     translator = h.OfflineTranslator(cache_dir=cache, engine_factory=engine_factory)
                     identity, path = translator._memo_identity(source, locale, 'en', markdown=True)
                     path.parent.mkdir(parents=True)
-                    h.atomic_json(path, {**identity, 'translation': 'Ratio 0,125%.'})
+                    h.atomic_json(path, {**identity, 'translation': comma_response(locale)})
                     before = path.read_bytes()
                     if accepted:
-                        self.assertEqual(translator.translate(source, locale, 'en'), 'Ratio 0,125%.')
+                        self.assertEqual(translator.translate(source, locale, 'en'), comma_response(locale))
+                    else:
+                        with self.assertRaises(h.OfflineTranslationValidationError):
+                            translator.translate(source, locale, 'en')
+                    engine_factory.assert_not_called()
+                    self.assertEqual(path.read_bytes(), before)
+
+    def test_indian_grouping_cache_revalidates_whole_values_without_inference(self):
+        for locale, word in {'hi':'आय', 'gu':'આવક', 'te':'ఆదాయం',
+                             'mr':'उत्पन्न', 'bn':'আয়', 'ta':'வருவாய்'}.items():
+            for source, accepted in (('Value 1234567.89.', True), ('Value 12.34; 567.89.', False)):
+                with self.subTest(locale=locale, source=source), tempfile.TemporaryDirectory() as cache:
+                    engine_factory = mock.Mock(side_effect=AssertionError('Cached validation must not call a model'))
+                    translator = h.OfflineTranslator(cache_dir=cache, engine_factory=engine_factory)
+                    identity, path = translator._memo_identity(source, locale, 'en', markdown=True)
+                    path.parent.mkdir(parents=True)
+                    translated = word + ' 12,34,567.89.'
+                    h.atomic_json(path, {**identity, 'translation': translated})
+                    before = path.read_bytes()
+                    if accepted:
+                        self.assertEqual(translator.translate(source, locale, 'en'), translated)
                     else:
                         with self.assertRaises(h.OfflineTranslationValidationError):
                             translator.translate(source, locale, 'en')

@@ -15,28 +15,33 @@ The targeted locale rules were checked against locally installed Unicode CLDR
 
 | Explicit language | Decimal separator | Group separator |
 | --- | --- | --- |
-| `fr` | comma | narrow no-break space; existing regular-space and NBSP aliases retained |
-| `es`, `de`, `id` | comma | dot |
-| `en` and existing unscoped callers | existing rules retained | existing rules retained |
+| `fr` | comma | narrow no-break space |
+| `ru`, `pl`, `cs`, `uk`, `kk` | comma | no-break space |
+| `es`, `de`, `id`, `pt`, `tr`, `it`, `vi`, `nl` | comma | dot |
+| `hi`, `gu`, `te`, `mr`, `bn`, `ta` | dot | rightmost 3 digits, then groups of 2; existing Western groups of 3 also retained |
+| Other supported locales, `en`, and unscoped callers | existing rules retained | existing rules retained |
 
-Only these four exact target/source language identifiers enable the new grammar.
+Only these exact target/source language identifiers enable their grammar.
+Space-group locales accept regular space, NBSP and narrow NBSP as typographic
+aliases, with complete three-digit grouping checked before normalization.
 Unknown language tags do not acquire these rules implicitly. Existing French
-quarter recognition remains; no additional quarter aliases or other language
-grammars are introduced in this change.
+quarter recognition remains; no additional quarter aliases are introduced.
+The locale inventory uses the repository's explicit `OG_LOCALES` regions,
+including `pt_BR`; the grammar does not guess an alternative regional meaning.
 
-For these four locales, a comma is decimal even with three or more fractional
+For all 14 comma-decimal locales, a comma is decimal even with three or more fractional
 digits: English `0.125%` equals localized `0,125%`, while English `125%` must fail
 against that same localized text. A locale-specific indivisible number token
 prevents `0,000125` from being split into unrelated quantities `0` and `125`.
 
-Complete dot groups in `es/de/id`, such as `1.234` and `1.234.567,50`, are
+Complete groups in the eight dot-group locales, such as `1.234` and `1.234.567,50`, are
 normalized once to `1234` and `1234567.50`. A well-formed three-digit dot group
 always retains its locale meaning. It cannot simultaneously mean an English
 decimal based on the source value. Unambiguous dot decimals that do not match
 the grouping grammar, such as `0.125`, `12.34` and `1234.567`, retain compatibility
 with prior untranslated numeric notation.
 
-French grouping is checked before Unicode normalization can collapse different
+Space grouping is checked before Unicode normalization can collapse different
 space characters. Numeric width and Unicode decimal digits are normalized without
 discarding that distinction. Explicit Arabic grouping/decimal symbols retain
 their own meaning. Comma-separated or whitespace-separated decimal lists are
@@ -44,6 +49,26 @@ validated piece by piece, so a valid first number cannot hide malformed later
 mixed separators. Recognized malformed localized decimal runs produce the fixed
 `invalid_numeric_format` failure, even when both inputs contain the same malformed
 form. Other version-like dotted text retains the existing scanner behavior.
+
+The six explicit Indian-group locales normalize a complete `12,34,567.89` to
+`1234567.89`; they must not split it into `12.34` and `567.89`. Leading groups
+have one or two digits and the rightmost group has three. Valid prior Western
+notation such as `1,234,567.89` remains supported with the same value. Malformed
+mixed or incomplete comma groups fail as a whole, independently of the source.
+Native Unicode decimal digits and fullwidth numeric forms use the same grammar.
+
+Turkish also recognizes its CLDR percent prefix (`%0,125`, `-%0,125`). A single
+left-to-right pass handles prefix and suffix percentages: `5% 0,125` retains
+the percent on 5, and `-%5 %0,125` preserves each percent quantity and its sign.
+Signs, including space-separated signs, bind to the prefix; malformed multiple
+signs fail. This prefix grammar is restricted to `tr`.
+
+For `fa`, `ur` and `he`, the ICU-generated left-to-right mark (U+200E) in a
+numeric-adjacent sign sequence is removed without discarding any sign. This
+allows a currency prefix followed by the formatted negative number to retain
+its currency type. Multiple signs separated by that mark fail as malformed;
+other directional marks, marks inside words, and other locale grammars are
+unchanged.
 
 Currency, scaled amounts, percentages, percentage-point changes and basis points
 remain distinct. Added, omitted, duplicated, sign-changed or magnitude-changed
@@ -92,7 +117,21 @@ prefixes and mixed separators, French numeric lists, currency/rate/sign/count
 preservation, same-model cache revalidation without inference, and registered
 checkpoint revalidation. Existing French grouping and quarter tests remain.
 
-Independent review additionally exercised 924 combinations across the four
-locales, numeric values, quantity forms, both directions and changed magnitudes.
+The initial four-locale repair passed an independent 924-case matrix. A follow-up
+read-only audit covered the complete 33-locale inventory using installed CLDR
+samples: it reproduced the same comma-decimal thousandfold error in the ten
+additional comma locales above, plus whole-token splitting in six Indian-group
+locales. Those exact failure classes are covered by this extension, including
+all 33 locale samples and prior-cache rejection without model calls. The final
+local CLDR matrix passed 6,897 checks: 33 locales, 11 values, six quantity forms,
+both directions, thousandfold-change rejection and native percent placement.
+The currency cases combine formatted numbers with explicit `USD`/`EUR` text;
+they do not claim coverage of every locale-specific currency/accounting layout.
+An independent review additionally passed 4,536 Indian-group checks plus 60
+malformed-group cases, including native and fullwidth decimal digits.
+
 These deterministic checks do not assert that every model translation is correct
-or that historical source fallbacks have been repaired.
+or that historical source fallbacks have been repaired. Existing cache identities,
+producer concurrency, source receipts, quality debt and publication gates are
+unchanged; real fallback recovery still requires a new verified producer result.
+
