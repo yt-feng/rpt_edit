@@ -2,8 +2,9 @@
 """Wait for a release containing an exact recovered archive, then verify its pages.
 
 Publication requests and watcher state are workflow artifacts. A superseded
-pending release can be replaced only by a same-repository main release containing
-the archive commit. A successful sibling alone never proves article delivery.
+pending or failed release can be followed only by a same-repository main release
+containing the archive commit. Every successful successor still requires exact
+live article acceptance; following a successor never submits another release.
 """
 from __future__ import annotations
 
@@ -222,6 +223,24 @@ def eligible(run, repository, archive_commit, contains):
             and contains(archive_commit, run['head_sha']))
 
 
+def failed_successor(github, failed, request, contains, visited):
+    """One bounded read; same-head retries need completed production success."""
+    rows = github.recent()
+    require(isinstance(rows, list) and len(rows) <= 100, 'publication_successor_inventory_invalid')
+    candidates = []
+    for row in rows:
+        if (not isinstance(row, dict) or type(row.get('id')) is not int
+                or row['id'] <= failed['id'] or row['id'] in visited):
+            continue
+        complete = row.get('status') == 'completed' and row.get('conclusion') == 'success'
+        active = (row.get('status') in {'queued', 'requested', 'waiting', 'pending', 'in_progress'}
+                  and row.get('conclusion') is None and row.get('head_sha') != failed['head_sha'])
+        if (complete or active) and eligible(row, github.repository, request['archive_commit'], contains):
+            candidates.append((not complete, row['id']))
+    # Prefer a verified completed run over waiting on an earlier queued attempt.
+    return min(candidates)[1] if candidates else None
+
+
 def verify_live(request, fetch=None, *, deadline=None, clock=time.monotonic):
     from fetch_release_asset import fetch_release_asset, FetchError
     fetch = fetch or fetch_release_asset
@@ -277,19 +296,31 @@ def watch(request, github, state_path, *, initial_run_id=None, budget=350 * 60,
 
     while clock() < deadline:
         run = github.run(current)
-        require(eligible(run, github.repository, request['archive_commit'], contains), 'publication_run_identity_changed')
+        require(run.get('id') == current and eligible(run, github.repository, request['archive_commit'], contains),
+                'publication_run_identity_changed')
         conclusion = run.get('conclusion') if run.get('status') == 'completed' else None
         if conclusion == 'success':
             accepted = verify(request) if verify is not None else verify_live(request, deadline=deadline, clock=clock)
             if accepted:
                 state.update(status='complete', release_run_id=current, article_count=len(request['records']))
+                state.pop('conclusion', None)
                 write_json(state_path, state)
                 return state
             state['status'] = 'awaiting_live_content'
         elif conclusion in {'failure', 'timed_out', 'action_required', 'startup_failure'}:
             state.update(status='release_failed', release_run_id=current, conclusion=conclusion)
             write_json(state_path, state)
-            raise PublicationError('publication_release_failed')
+            # Keep the original failure if there is no eligible repair. On a
+            # publish-only rerun the same saved state may now find a new release.
+            # Do not redispatch or enter an unchanged failed-run polling loop.
+            successor = failed_successor(github, run, request, contains, state['run_ids'])
+            if successor is None:
+                raise PublicationError('publication_release_failed')
+            require(len(state['run_ids']) < 100, 'publication_successor_limit_exceeded')
+            current = successor
+            state['run_ids'].append(current)
+            state['status'] = 'following_successor'
+            state.pop('conclusion', None)
         elif conclusion == 'cancelled':
             # GitHub replaces the single pending concurrency slot. Follow only a
             # later release containing this exact archive, never an older green.
@@ -298,6 +329,7 @@ def watch(request, github, state_path, *, initial_run_id=None, budget=350 * 60,
                           and row.get('conclusion') not in {'cancelled', 'skipped'}
                           and eligible(row, github.repository, request['archive_commit'], contains)]
             if candidates:
+                require(len(state['run_ids']) < 100, 'publication_successor_limit_exceeded')
                 current = min(int(row['id']) for row in candidates)
                 state['run_ids'].append(current)
                 state['status'] = 'following_successor'

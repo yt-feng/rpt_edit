@@ -47,12 +47,14 @@ class FakeGitHub:
         self.candidates = list(candidates)
         self.dispatched = 0
         self.reads = []
+        self.recent_reads = 0
 
     def run(self, run_id):
         self.reads.append(run_id)
         return copy.deepcopy(self.runs[run_id])
 
     def recent(self):
+        self.recent_reads += 1
         return copy.deepcopy(self.candidates)
 
     def contains(self, base, head):
@@ -103,12 +105,180 @@ class PublicationTests(unittest.TestCase):
         self.assertEqual(json.loads(self.state.read_text())['run_ids'], [1])
 
     def test_actual_failure_cannot_be_hidden_by_sibling_success(self):
-        github = FakeGitHub({1: run(conclusion='failure')}, [run(2)])
+        github = FakeGitHub({1: run(conclusion='failure')}, [run(2, sha='d' * 40)])
         verify = Mock(return_value=True)
         with self.assertRaisesRegex(publication.PublicationError, 'release_failed'):
             self.watch(github, verify=verify)
         verify.assert_not_called()
         self.assertEqual(json.loads(self.state.read_text())['status'], 'release_failed')
+
+    def test_failed_release_follows_new_head_success_without_new_dispatch(self):
+        for conclusion in ('failure', 'timed_out', 'action_required', 'startup_failure'):
+            with self.subTest(conclusion=conclusion):
+                self.state.unlink(missing_ok=True)
+                github = FakeGitHub({1: run(conclusion=conclusion), 2: run(2, sha=HEAD)}, [run(2, sha=HEAD)])
+                verify = Mock(return_value=True)
+                result = self.watch(github, initial_run_id=1, verify=verify)
+                self.assertEqual(result['run_ids'], [1, 2])
+                self.assertEqual(result['release_run_id'], 2)
+                self.assertEqual(result['status'], 'complete')
+                self.assertNotIn('conclusion', result)
+                self.assertEqual(github.dispatched, 0)
+                self.assertEqual(github.recent_reads, 1)
+                verify.assert_called_once_with(request())
+
+    def test_publish_only_rerun_recovers_failed_state_without_generation_or_wechat(self):
+        github = FakeGitHub({1: run(conclusion='failure')})
+        with self.assertRaisesRegex(publication.PublicationError, 'release_failed'):
+            self.watch(github, initial_run_id=1, verify=lambda _: True)
+        saved = json.loads(self.state.read_text())
+        self.assertEqual(saved['conclusion'], 'failure')
+        self.assertEqual(saved['run_ids'], [1])
+        github.runs[2] = run(2, sha=HEAD)
+        github.candidates = [run(2, sha=HEAD)]
+        verify = Mock(return_value=True)
+        result = self.watch(github, verify=verify)
+        self.assertEqual(result['run_ids'], [1, 2])
+        self.assertEqual(github.dispatched, 0)
+        self.assertEqual(github.reads, [1, 1, 2])
+        verify.assert_called_once_with(request())
+
+    def test_same_head_completed_success_is_eligible_but_active_retry_is_not(self):
+        github = FakeGitHub({1: run(conclusion='failure')}, [run(2, status='in_progress', conclusion=None)])
+        with self.assertRaisesRegex(publication.PublicationError, 'release_failed'):
+            self.watch(github, initial_run_id=1, verify=lambda _: True)
+        self.assertEqual(github.recent_reads, 1)
+        self.assertEqual(self.now, 0)
+        github.runs[2] = run(2)
+        github.candidates = [run(2)]
+        verify = Mock(return_value=True)
+        self.assertEqual(self.watch(github, verify=verify)['release_run_id'], 2)
+        verify.assert_called_once_with(request())
+        self.assertEqual(github.dispatched, 0)
+
+    def assert_admissible_state(self, result):
+        from portal_extended_recovered_admission import checked_publication
+        value = {'repository': 'owner/repo', 'run_id': '20', 'attempt': '2', 'sha': HEAD,
+                 'release_run_id': str(result['release_run_id']), 'release_attempt': '2',
+                 'release_sha': HEAD, 'request': request(), 'state': result}
+        self.assertEqual(checked_publication(value), value)
+        self.assertNotIn('conclusion', result)
+
+    def test_same_run_id_rerun_success_clears_old_failure_and_passes_locale_admission(self):
+        github = FakeGitHub({1: run(conclusion='failure')})
+        with self.assertRaisesRegex(publication.PublicationError, 'release_failed'):
+            self.watch(github, initial_run_id=1, verify=lambda _: True)
+        self.assertEqual(json.loads(self.state.read_text())['conclusion'], 'failure')
+        github.runs[1] = run()
+        verify = Mock(return_value=True)
+        result = self.watch(github, verify=verify)
+        self.assertEqual(result['run_ids'], [1])
+        self.assertEqual(github.recent_reads, 1)
+        self.assertEqual(github.dispatched, 0)
+        self.assert_admissible_state(result)
+        self.assertEqual(json.loads(self.state.read_text()), result)
+        verify.assert_called_once_with(request())
+
+    def test_failed_then_cancelled_successor_preserves_history_and_accepted_state_shape(self):
+        github = FakeGitHub({1: run(conclusion='failure'), 2: run(2, sha=HEAD, conclusion='cancelled'),
+                             3: run(3, sha=HEAD)})
+        with self.assertRaisesRegex(publication.PublicationError, 'release_failed'):
+            self.watch(github, initial_run_id=1, verify=lambda _: True)
+        github.recent = Mock(side_effect=[
+            [run(2, sha=HEAD, status='in_progress', conclusion=None)], [run(3, sha=HEAD)]])
+        verify = Mock(return_value=True)
+        result = self.watch(github, verify=verify)
+        self.assertEqual(result['run_ids'], [1, 2, 3])
+        self.assertEqual(result['release_run_id'], 3)
+        self.assertEqual(github.dispatched, 0)
+        self.assertEqual(github.recent.call_count, 2)
+        self.assert_admissible_state(result)
+        verify.assert_called_once_with(request())
+
+    def test_failed_then_cancelled_successor_cannot_exceed_admission_history_bound(self):
+        self.state.write_text(json.dumps({'schema_version': 1,
+            'request_sha256': hashlib.sha256(json.dumps(request(), sort_keys=True).encode()).hexdigest(),
+            'status': 'release_failed', 'run_ids': list(range(1, 100)),
+            'release_run_id': 99, 'conclusion': 'failure'}))
+        github = FakeGitHub({99: run(99, conclusion='failure'),
+            100: run(100, sha=HEAD, conclusion='cancelled'), 101: run(101, sha=HEAD)})
+        github.recent = Mock(side_effect=[
+            [run(100, sha=HEAD, status='in_progress', conclusion=None)], [run(101, sha=HEAD)]])
+        verify = Mock(return_value=True)
+        with self.assertRaisesRegex(publication.PublicationError, 'successor_limit_exceeded'):
+            self.watch(github, verify=verify)
+        saved = json.loads(self.state.read_text())
+        self.assertEqual(saved['run_ids'], list(range(1, 101)))
+        self.assertNotEqual(saved['status'], 'complete')
+        self.assertEqual(github.reads, [99, 100])
+        self.assertEqual(github.dispatched, 0)
+        verify.assert_not_called()
+
+    def test_new_head_active_successor_can_finish_and_is_reauthenticated(self):
+        active = run(2, sha=HEAD, status='in_progress', conclusion=None)
+        github = FakeGitHub({1: run(conclusion='failure'), 2: active}, [active])
+        original_sleep = self.sleep
+        def finish(duration):
+            original_sleep(duration)
+            github.runs[2] = run(2, sha=HEAD)
+        self.sleep = finish
+        verify = Mock(return_value=True)
+        self.assertEqual(self.watch(github, initial_run_id=1, verify=verify)['release_run_id'], 2)
+        self.assertEqual(github.dispatched, 0)
+        verify.assert_called_once_with(request())
+
+    def test_failure_successor_filters_identity_terminal_and_malformed_candidates(self):
+        candidates = [run(0, sha=HEAD), run(1, sha=HEAD), run(2, sha='d'*40),
+            run(3, sha=HEAD, path='other.yml'), run(4, sha=HEAD, event='push'),
+            run(5, sha=HEAD, head_branch='other'), run(6, sha=HEAD, repository={'full_name':'other/repo'}),
+            run(7, sha=HEAD, head_repository={'full_name':'fork/repo'}),
+            run(8, sha=HEAD, conclusion='failure'), run(9, sha=HEAD, conclusion='cancelled'),
+            run(10, sha=HEAD, conclusion='skipped'), run(11, sha=HEAD, conclusion='timed_out'),
+            run(12, sha=HEAD, status='in_progress', conclusion='success'),
+            run(13, sha=HEAD, status='completed', conclusion=None), {'id': True}, None]
+        github = FakeGitHub({1: run(conclusion='failure')}, candidates)
+        verify = Mock(return_value=True)
+        with self.assertRaisesRegex(publication.PublicationError, 'release_failed'):
+            self.watch(github, initial_run_id=1, verify=verify)
+        self.assertEqual(github.reads, [1])
+        self.assertEqual(github.recent_reads, 1)
+        self.assertEqual(github.dispatched, 0)
+        verify.assert_not_called()
+
+    def test_completed_successor_is_preferred_and_live_mismatch_never_passes(self):
+        active = run(2, sha=HEAD, status='queued', conclusion=None)
+        github = FakeGitHub({1: run(conclusion='failure'), 3: run(3, sha=HEAD)}, [active, run(3, sha=HEAD)])
+        with self.assertRaisesRegex(publication.PublicationError, 'pending_resume_required'):
+            self.watch(github, initial_run_id=1, verify=lambda _: False)
+        self.assertEqual(json.loads(self.state.read_text())['run_ids'], [1, 3])
+        self.assertNotIn(2, github.reads)
+        self.assertEqual(github.recent_reads, 1)
+        self.assertEqual(github.dispatched, 0)
+
+    def test_failed_successor_is_not_revisited_and_latest_listing_is_not_acceptance(self):
+        github = FakeGitHub({1: run(conclusion='failure'), 2: run(2, sha=HEAD, conclusion='failure')},
+                            [run(2, sha=HEAD)])
+        verify = Mock(return_value=True)
+        with self.assertRaisesRegex(publication.PublicationError, 'release_failed'):
+            self.watch(github, initial_run_id=1, verify=verify)
+        self.assertEqual(github.reads, [1, 2])
+        self.assertEqual(github.recent_reads, 2)
+        self.assertEqual(json.loads(self.state.read_text())['run_ids'], [1, 2])
+        verify.assert_not_called()
+        self.assertEqual(github.dispatched, 0)
+
+    def test_successor_endpoint_must_return_selected_run_identity(self):
+        github = FakeGitHub({1: run(conclusion='failure'), 2: run(99, sha=HEAD)}, [run(2, sha=HEAD)])
+        with self.assertRaisesRegex(publication.PublicationError, 'run_identity_changed'):
+            self.watch(github, initial_run_id=1, verify=lambda _: True)
+        self.assertEqual(github.dispatched, 0)
+
+    def test_successor_inventory_is_bounded_and_old_failure_is_saved_first(self):
+        github = FakeGitHub({1: run(conclusion='failure')}, [run(2, sha=HEAD)] * 101)
+        with self.assertRaisesRegex(publication.PublicationError, 'successor_inventory_invalid'):
+            self.watch(github, initial_run_id=1, verify=lambda _: True)
+        self.assertEqual(json.loads(self.state.read_text())['status'], 'release_failed')
+        self.assertEqual(github.dispatched, 0)
 
     def test_successful_workflow_with_missing_or_changed_live_body_does_not_pass(self):
         github = FakeGitHub({1: run()})
