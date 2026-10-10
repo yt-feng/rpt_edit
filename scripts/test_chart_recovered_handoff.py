@@ -153,6 +153,42 @@ class RecoveredChartTests(unittest.TestCase):
             validate.assert_not_called()
             candidates.assert_not_called()
 
+    def test_actual_sparse_checkout_runs_real_recovered_chart_contract(self):
+        checkout_step = WORKFLOW.read_text().split('      - name: Checkout public source\n', 1)[1].split('      - uses:', 1)[0]
+        patterns = textwrap.dedent(checkout_step.split('          sparse-checkout: |\n', 1)[1]).strip()
+        root = WORKFLOW.parents[2]
+        with tempfile.TemporaryDirectory() as temp:
+            checkout = Path(temp) / 'checkout'
+
+            def git(*args, **kwargs):
+                result = subprocess.run(['git', *args], capture_output=True, text=True, timeout=60, **kwargs)
+                self.assertEqual(result.returncode, 0, result.stderr)
+
+            # Local object sharing keeps this an offline test. Applying the real
+            # workflow patterns prevents a full developer checkout hiding a
+            # missing generation prompt or another recovery-fixture dependency.
+            git('clone', '--shared', '--no-checkout', '--quiet', str(root), str(checkout))
+            git('-C', str(checkout), 'sparse-checkout', 'set', '--no-cone', '--stdin', input=patterns + '\n')
+            git('-C', str(checkout), 'checkout', '--detach', '--quiet', 'HEAD')
+            fixture_test = Path(__file__).relative_to(root)
+            self.assertTrue((checkout / fixture_test).is_file())
+            (checkout / fixture_test).write_bytes(Path(__file__).read_bytes())
+            selected = [
+                'RecoveredChartTests.test_real_complete_source_receipt_and_images_survive_materialization',
+                'RecoveredChartTests.test_real_receipt_wrong_manifest_run_date_or_missing_receipt_are_rejected',
+            ]
+            result = subprocess.run([sys.executable, str(fixture_test), *selected], cwd=checkout,
+                                    capture_output=True, text=True, timeout=90)
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            # The fixture must still bind the actual prompt; a missing checkout
+            # input must never pass through a mocked or synthetic replacement.
+            (checkout / 'prompts/wechat_report_article_prompt.md').unlink()
+            missing = subprocess.run([sys.executable, str(fixture_test), selected[0]], cwd=checkout,
+                                     capture_output=True, text=True, timeout=90)
+            self.assertNotEqual(missing.returncode, 0)
+            self.assertIn('FileNotFoundError', missing.stderr)
+            self.assertIn('wechat_report_article_prompt.md', missing.stderr)
+
     def test_workflow_preserves_legacy_sources_and_admits_recovery_before_index(self):
         workflow = WORKFLOW.read_text()
         self.assertIn("if: inputs.source_handoff_run_id != '' && inputs.source_handoff_manifest_sha256 == ''", workflow)
