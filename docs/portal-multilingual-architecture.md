@@ -68,6 +68,16 @@ flowchart TD
 
 模型输出必须通过数量、金额/百分比、占位符、表格边界、目标文字、内容长度和源语言残留等门禁。命名活动的数字表达只能按明确等价规则识别；不能忽略译文任意多出的数字，也不修改坏输出后冒充模型验收成功。
 
+### 当前并发与恢复限制
+
+`cancel-in-progress: false` 保留正在执行的 workflow，但同互斥组的新运行仍可能替换已有 pending。`english-resume` 也使用这个全局组：手工加入它可能替换待执行的 `all-supported` 运行；若英文没有取得完整页面进展，或本次已经清空英文待办，现有 followup 不一定补回全部语言的唤醒。私有 R2 admission 不会因此消失，但其他语言可能等待下一次来源事件。
+
+不要为了插入修复随意取消 active 矩阵。source 阶段已为所有选中语言登记 `started`，即使对应 job 尚未开始；取消或中断可能留下没有完整持久化结果的 `started/claimed`。后续会将该语言列为 stopped；另一 run/attempt 不能直接接管原 owner，现有 legacy intent 也不能重置已注册 generation。必须先核对准确 owner、checkpoint、candidate 和终态，不能把取消后重新运行当成通用恢复。
+
+本轮保全全部语言范围的恢复入口是：修复合入后，从 **`main` 手工运行 `operation=candidate`、`locales=all-supported`，`source_generation` 与 `continuation_evidence` 留空**。普通 source 会继续已有合法待办并自动加入独立英文评论队列；不额外启动第三个 CPU，不取消 active。它仍须通过实际模型、候选与发布审核，不能保证每次都完成或自动解决已 stopped 的任务。精确只读 inspection 使用独立互斥组，可先检查英文证据而不替换翻译队列。
+
+目前两条 publication handoff 都等待整个 locale 矩阵完成，已完成的单语候选也要等待其他 job。将矩阵改成有上限的小批语言并持久化公平轮转（bounded waves）是待改善方案，当前尚未实现；本轮没有提高 `max-parallel`、拆出独立英文 CPU 或改变调度代码。
+
 ## 原文回退与英文严格模式
 
 非英文阅读页的生产参数允许原文回退：被拒绝的模型响应丢弃，对应字段精确保留来源原文，并将记录单独写入 `source_fallbacks`。它不是合法译文，不混入 `rows`。重复字段和后续恢复可复用同一回退记录，避免对同一个确定性失败反复消耗 CPU。

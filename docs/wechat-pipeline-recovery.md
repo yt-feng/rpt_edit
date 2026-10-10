@@ -112,6 +112,35 @@ without repeating generation or draft upload. A normal primary upload also
 requests an incremental public refresh; that dispatch alone is not live Blog
 acceptance.
 
+### Inspect an existing OCR checkpoint
+
+Run **Inspect Market Views incident R2 caches**
+(`market-views-r2-cache-inspect.yml`) on `main`. Fill all four inputs to inspect
+one exact source cohort; leaving all inputs empty retains the October 1–3
+incident inventory. For the retained 261007 cohort:
+
+| Input | Exact value |
+| --- | --- |
+| `source_run_id` | `37695511597` |
+| `date_folder` | `261007` |
+| `expected_reports` | `44` |
+| `manifest_sha256` | `d16c57d614166f46f244b4a9ae65ffecce774be8cb1a52f52cdf968574e4a961` |
+
+The workflow authenticates the completed original Daily run on the same
+repository's `main`, downloads `selected-macro-manifest-<source_run_id>` only,
+and verifies the retained manifest's raw SHA-256, date, count and source
+bindings. It derives the production OCR checkpoint key from those actual
+bindings and makes one R2 `HEAD`; it does not download PDFs, read the cache
+archive, parse reports, call a model, or write/delete R2 objects.
+
+Check the `market-views-r2-cache-inventory-<inspection_run_id>` artifact:
+`success=true` and `ocr_checkpoint.present=true` establish presence and stored
+size/hash metadata only. `archive_bytes_verified` remains `false`; this is
+neither archive integrity/completeness nor article, draft or Blog delivery
+acceptance. A verified absence reports `present=false`; a missing source
+artifact, mismatched manifest, permission error or transport failure stops the
+check and must not be treated as an absent cache or an instruction to regenerate.
+
 ## Acceptance ledger
 
 Keep these receipts separate: original manifest, source extraction, generated
