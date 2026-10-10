@@ -107,7 +107,7 @@ The public repository contains no endpoint or credential. Actions reads:
 | --- | --- | --- |
 | `VISION_INDEX_API_KEY` | GitHub Actions secret | API bearer credential. |
 | `VISION_INDEX_API_BASE_URL` | GitHub Actions secret | Credential-free HTTPS OpenAI-compatible base URL. |
-| `VISION_INDEX_MODEL` | Repository variable | Model name; defaults to `qwen3-vl-flash`. |
+| `VISION_INDEX_MODEL` | Repository variable | Production value verified as `qwen3-vl-plus` on 2026-10-10; the code fallback remains `qwen3-vl-flash`, so an absent variable does not constitute a verified provider configuration. |
 | `VISION_INDEX_MAX_IMAGES_PER_RUN` | Repository variable | Whole-run ceiling for new API calls; defaults to `0` so no selected daily chart is silently dropped. |
 | `VISION_INDEX_MAX_PER_REPORT` | Repository variable | Per-report image ceiling; defaults to `0` so every retained MinerU image is examined. |
 | `VISION_INDEX_MIN_INTERVAL_SECONDS` | Repository variable | Minimum delay between requests; defaults to 0.4 seconds. |
@@ -159,6 +159,15 @@ The completed diagnostic run `38049040838` reported HTTP 404 with
 That identifies the configured model rejection, not a verified replacement.
 HTTP 404 is classified separately from a recognized route rejection or unknown
 configuration; no alternate destination is inferred.
+
+On 2026-10-10, inventory diagnostic `38053083532` returned the permitted model
+`qwen3-vl-plus`. Synthetic image probe `38053137409` then accepted that model with
+HTTP 200 and one POST, without reading or writing report storage. After GitHub's
+account verification, the repository variable was saved and read back as
+`qwen3-vl-plus`. Real recovery `38053642365` resumes the exact `261009` handoff
+`37996300746` with 16 shards and existing private checkpoints. The model probe and
+saved configuration establish model availability only; the real index publication
+and retained-record checks remain separate acceptance gates.
 
 Requests begin with a 90-second response deadline and at most 15 seconds to connect.
 A read timeout doubles only that image's next response deadline, capped at 240 seconds
