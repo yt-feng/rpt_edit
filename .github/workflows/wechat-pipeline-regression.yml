@@ -149,7 +149,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install test dependencies
-        run: python -m pip install -r requirements.txt reportlab pypdf pypdfium2==5.13.0 "boto3>=1.37.32,<2"
+        run: python -m pip install -r requirements.txt reportlab pypdf pypdfium2==5.13.0 "boto3>=1.37.32,<2" "PyYAML>=6,<7"
       - name: Install real cloud OCR regression dependencies
         run: |
           sudo apt-get update
