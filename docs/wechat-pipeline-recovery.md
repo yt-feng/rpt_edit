@@ -253,9 +253,42 @@ download but stopped at `summary_submission_pending`, reporting zero OCR and
 provider calls. This is an unresolved Market Views summary, not proof of a
 missing original page cache. The pages-mode contract has local regressions for
 44 real PDF fixtures, 88 pages, full article generation/replay, strict missing
-page/hash/method/identity failures and the private-PDF boundary. Its real
-historical 44-report source, draft and public Blog acceptance still require a
-successful new pages-mode cloud run.
+page/hash/method/identity failures and the private-PDF boundary.
+
+The subsequent pages-mode run `38053057754` accepted all 44 reports in source
+job `114215930086`, with verified private archive and zero OCR/provider calls.
+Its `deliver / generate` job `114216146082` then exited 2; saving generation
+progress succeeded. This proves the historical page-source handoff, while
+article generation, draft readback and public Blog acceptance remain incomplete.
+
+### Inspect retained generation before recovery
+
+`recovered-article-generation-inspect.yml` is a manual, main-only, read-only
+incident diagnostic with no user-supplied scope. It pins original Daily
+`37695511597`, recovery run `38053057754`, those two exact source/generation jobs,
+date `261007`, 44 reports and the frozen manifest digest. REST must prove the
+source gates succeeded, generation failed and private checkpoint saving
+succeeded before the inspector reads the exact `generation.tar.gz` object.
+This workflow does not call delivery `prepare`, acquire a claim, change pending
+markers, write/delete R2 objects, generate articles or contact model providers.
+
+The archive is bounded to 512 MiB compressed/expanded and 20,000 members;
+checksums, duplicate paths, traversal, links and special files are rejected.
+The saved context and embedded original-page receipt must match the exact
+source/handoff identities. A completed-article count additionally requires the
+saved OCR page bytes to match the receipt, reconstructed Markdown to match the
+article source, and a valid editorial binding and recovery policy. A status file
+or article filename by itself does not count as completed.
+
+The private log remains private. The only artifact contains allowlisted failure
+category, source ordinal, known exception types and fixed code sites, HTTP status,
+generation phase, title-repair booleans, verified completed count, pending-marker
+count and hashes. Unknown causes stay `unknown`; exception text, source filenames,
+article bodies, titles, provider responses, paths, URLs and credentials are never
+included. Existing provider request count/outcome stays explicitly unknown, so an
+inspection is not permission to repeat an unresolved paid request. The next
+recovery must use this saved diagnosis and verified completed articles; successful
+inspection alone is not generation or delivery acceptance.
 
 ## Acceptance ledger
 
