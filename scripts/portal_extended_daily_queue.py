@@ -288,6 +288,12 @@ def followup_needed(store, identity, locales, before):
             if any(pending_docs(store, queued['documents'], locale, entry['day']) for locale in locales):
                 remaining = True
                 break
+    if progress and not remaining:
+        # A completed ordinary turn hands the next serialized slot back to old
+        # quality debt. Its planner still filters terminal/unknown units and only
+        # accepted repair progress may continue after that one bounded scan.
+        from portal_extended_quality import debt_rows
+        remaining = any(debt_rows(store, locale) for locale in locales)
     return {'continue': progress and remaining, 'progress': progress,
             'pending_counts': after, 'paid_provider_requests': 0}
 

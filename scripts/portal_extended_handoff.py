@@ -139,8 +139,6 @@ def save_handoff(store, batch, *, day, pages, producer):
                 raise ExpansionError('Complete handoff lacks its immutable checkpoint')
             checkpoints[locale] = checksum
             if 'source_repair_sha256' in row:
-                if locale != 'fr':
-                    raise ExpansionError('Source fallback repair is restricted to French')
                 repairs[locale] = row['source_repair_sha256']
                 if 'source_repair_completion_sha256' in row:
                     completions[locale] = row['source_repair_completion_sha256']
@@ -172,30 +170,34 @@ def save_handoff(store, batch, *, day, pages, producer):
 def source_repair_proofs(store, receipt):
     if 'source_repair_proofs' not in receipt:
         if 'source_repair_completions' in receipt:
-            raise ExpansionError('French resumption lacks its base repair proof')
+            raise ExpansionError('Source repair completion lacks its base proof')
         return {}
-    from portal_extended_french_repair import verify_proof
+    from portal_extended_french_repair import read_repair_pipeline
     repairs = receipt['source_repair_proofs']
-    if (not isinstance(repairs, dict) or set(repairs) != {'fr'}
-        or not receipt.get('source_origin_sha256')
-        or 'fr' not in receipt['batch']['candidates']
-        or 'fr' not in receipt.get('continuation_checkpoints', {})):
-        raise ExpansionError('Invalid French source repair publication evidence')
-    proof = verify_proof(store, repairs['fr'], receipt['batch']['generation'],
-        receipt['batch']['candidates']['fr'], receipt['continuation_checkpoints']['fr'])
-    if not proof['delta']['changed'] or proof['request']['origin_sha256'] != receipt['source_origin_sha256']:
-        raise ExpansionError('French source repair did not replace this exact original candidate')
-    return {'fr': proof}
+    if (not isinstance(repairs, dict) or not repairs or not receipt.get('source_origin_sha256')
+        or not set(repairs) <= set(receipt['batch']['candidates'])
+        or not set(repairs) <= set(receipt.get('continuation_checkpoints', {}))):
+        raise ExpansionError('Invalid source repair publication evidence')
+    proofs = {}
+    for locale, identity in repairs.items():
+        pipeline = read_repair_pipeline(store, identity)
+        if pipeline.locale != locale: raise ExpansionError('Source repair locale differs')
+        proof = pipeline.verify_proof(store, identity, receipt['batch']['generation'],
+            receipt['batch']['candidates'][locale], receipt['continuation_checkpoints'][locale])
+        if not proof['delta']['changed'] or proof['request']['origin_sha256'] != receipt['source_origin_sha256']:
+            raise ExpansionError('Source repair did not replace this exact original candidate')
+        proofs[locale] = proof
+    return proofs
 
 
 def source_repair_completions(store, receipt, proofs):
-    if 'source_repair_completions' not in receipt:
-        return {}
-    from portal_extended_french_repair import verify_completion
+    if 'source_repair_completions' not in receipt: return {}
+    from portal_extended_french_repair import pipeline_for_proof
     values = receipt['source_repair_completions']
-    if not isinstance(values, dict) or set(values) != {'fr'} or set(proofs) != {'fr'}:
-        raise ExpansionError('Invalid French prepared resumption inventory')
-    return {'fr': verify_completion(store, values['fr'], proofs['fr'], receipt['source_repair_proofs']['fr'])}
+    if not isinstance(values, dict) or not values or not set(values) <= set(proofs):
+        raise ExpansionError('Invalid prepared resumption inventory')
+    return {locale: pipeline_for_proof(proofs[locale]).verify_completion(store, identity,
+        proofs[locale], receipt['source_repair_proofs'][locale]) for locale, identity in values.items()}
 
 
 def read_handoff(store, identity):

@@ -240,10 +240,28 @@ def main() -> int:
             from portal_extended_recovery_intent import consume_one
             from review_portal_extended_handoff import api
             consume_one(store, locales, os.environ['GITHUB_REPOSITORY'], api)
+        from portal_extended_quality_recovery import ScanBudget
+        quality_budget = ScanBudget()
+        quality_jobs, quality_blocked, quality_resumed = [], [], []
+        quality_reserved = ()
+        if producer and args.operation == 'prepare' and not args.generation:
+            from portal_extended_quality_recovery import resume_prepared
+            from review_portal_extended_handoff import api
+            quality_resumed = resume_prepared(store, locales, producer, os.environ.get('GITHUB_REPOSITORY', ''), api, budget=quality_budget)
         stopped = []
         if producer and not recovery:
             from portal_extended_continuation import partition_stopped_locales
             locales, stopped = partition_stopped_locales(store, locales)
+        if producer and args.operation == 'prepare' and not args.generation:
+            from portal_extended_quality_recovery import prepare as prepare_quality, read_plan, pending_tail_locales
+            from review_portal_extended_handoff import api
+            resumed_locales = {read_plan(store, identity)['locale'] for identity in quality_resumed}
+            quality_reserved = pending_tail_locales(store,locales,completed=resumed_locales)
+            locales = tuple(locale for locale in locales if locale not in quality_reserved)
+            quality_jobs, quality_blocked = prepare_quality(store, tuple(locale for locale in locales if locale not in resumed_locales), producer,
+                os.environ.get('GITHUB_REPOSITORY', ''), api, budget=quality_budget)
+            selected_quality = {job['locale'] for job in quality_jobs}
+            locales = tuple(locale for locale in locales if locale not in selected_quality)
         if not locales:
             result = {'has_work': False, 'generation': '', 'locales_json': '[]', 'day': day}
         elif args.generation:
@@ -324,6 +342,24 @@ def main() -> int:
             result['locale_jobs_json'] = json.dumps([{'locale': locale, 'generation': result['generation'], 'day': result['day']}
                 for locale in json.loads(result['locales_json'])])
 
+        from portal_extended_quality_recovery import mark_ordinary
+        ordinary_jobs = json.loads(result['locale_jobs_json'])
+        if producer and args.operation == 'prepare' and not args.generation:
+            mark_ordinary(store, ordinary_jobs)
+        if quality_jobs:
+            jobs = ordinary_jobs + quality_jobs
+            if len({job['locale'] for job in jobs}) != len(jobs):
+                raise ExpansionError('Quality recovery cannot duplicate an ordinary locale matrix job')
+            result['locale_jobs_json'] = json.dumps(jobs)
+            result['locales_json'] = json.dumps([job['locale'] for job in jobs])
+            result['has_work'] = True
+            if not result.get('generation'):
+                result.update(generation=quality_jobs[0]['generation'], day=quality_jobs[0]['day'])
+        result['quality_repair_plans_json'] = json.dumps(quality_resumed + [job['quality_repair'] for job in quality_jobs])
+        result['quality_recovery_blocked'] = quality_blocked
+        result['quality_recovery_reserved_locales'] = list(quality_reserved)
+        result['quality_recovery_scan'] = quality_budget.snapshot()
+
         # Retain the admitted source's complete per-locale frontier for upstream
         # progress-driven followup, including diagnosed (never inferred) cursors.
         if not result.get('source_admission') and result.get('generation'):
@@ -338,6 +374,12 @@ def main() -> int:
                                                        for locale in requested_locales})
         from portal_extended_quality import quality_summary
         result.update(quality_summary(store, requested_locales))
+        result['quality_recovery_plan_count'] = len(quality_jobs)
+        result['quality_recovery_resumed_tail_count'] = len(quality_resumed)
+        if quality_jobs:
+            from portal_extended_quality_recovery import read_plan
+            result['quality_debt_automatic_retries'] = sum(read_plan(store, job['quality_repair'])['selection']['fresh_authorized_units']
+                                                          for job in quality_jobs)
         result['stopped_locales_json'] = json.dumps(stopped)
         if args.include_english:
             result = include_english_matrix(store, result)
@@ -347,7 +389,7 @@ def main() -> int:
                     value = str(result[key]).lower() if isinstance(result[key], bool) else result[key]
                     stream.write(f'{key}={value}\n')
                 stream.write('requested_locales='+','.join(requested_locales)+'\n')
-                for key in ('source_admission', 'pending_counts_json', 'english_admission', 'english_pending_count'):
+                for key in ('source_admission', 'pending_counts_json', 'english_admission', 'english_pending_count', 'quality_repair_plans_json'):
                     stream.write(key + '=' + result.get(key, '') + '\n')
 
     else:

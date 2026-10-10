@@ -1,6 +1,6 @@
 # KC 桌面多语言生成与发布架构
 
-本文以 2026-10-10 核对的默认分支为准，取代早期 DeepSeek/DeepL 主翻译及“全历史镜像”设计描述。实现入口和当前事故证据分别见下文与[多语言架构核对记录](extended-locales-architecture-audit.md)。配置支持、候选生成、译文覆盖、正式发布和线上可读是不同状态。
+本文以 2026-10-10 核对的默认分支为准，取代早期 DeepSeek/DeepL 主翻译及“全历史镜像”设计描述。实现入口和当前事故证据分别见下文与[多语言架构核对记录](extended-locales-architecture-audit.md)。跨语种数量门禁见[数字翻译契约](financial-quantity-translation.md)，历史 fallback 的自动有界恢复见[质量欠账恢复](extended-locale-quality-recovery.md)。配置支持、候选生成、译文覆盖、正式发布和线上可读是不同状态。
 
 ## 语言与产品范围
 
@@ -30,7 +30,10 @@ flowchart TD
     R --> C[Extended locales private R2 pipeline]
     C --> X[33 语言阅读候选]
     C --> E[英文纯评论候选]
-    X --> H[完整候选 handoff]
+    X --> Q[完整渲染及翻译就绪分别记账]
+    Q --> D[精确 source fallback 欠账]
+    D --> C
+    Q --> H[零 fallback 候选 handoff]
     E --> H
     H --> P[Neutral edge 未激活目录组装]
     L --> P
@@ -42,7 +45,7 @@ flowchart TD
 主要入口：
 
 - [`neutral-edge-cutover.yml`](../.github/workflows/neutral-edge-cutover.yml)：中文与既有镜像构建；继承已发布新增语言和英文；恢复指定候选；生成不可变发布目录，审核后切换。
-- [`portal-extended-locales-source.yml`](../.github/workflows/portal-extended-locales-source.yml)：默认分支的 `Neutral edge catalog refresh` 成功后冻结当天新增来源。其独立互斥组不被长时间 CPU 翻译阻塞。
+- [`portal-extended-locales-source.yml`](../.github/workflows/portal-extended-locales-source.yml)：默认分支的 `Neutral edge catalog refresh` 成功后冻结最新内容日新增来源；另接受已验收文章恢复运行的固定历史 Blog cohort，不重抓历史、不改正文日期。其独立互斥组不被长时间 CPU 翻译阻塞。
 - [`portal-extended-locales-r2.yml`](../.github/workflows/portal-extended-locales-r2.yml)：来源 admission 成功后消费私有队列；执行模型、保存进度、产生 handoff 和有进展时的后续批次。
 - [`portal_extended_daily_queue.py`](../scripts/portal_extended_daily_queue.py)、[`portal_english_pipeline.py`](../scripts/portal_english_pipeline.py)：跨日来源、候选、完成记录和队列的身份边界。
 
@@ -388,3 +391,14 @@ URL 节点使用 XHTML alternate 标注全部已完成的 hreflang 对应页。`
 - 为中文根站增加 body/路由回归快照，并验证简体中文环境执行 locale runtime 后 DOM 不发生入口相关变化。
 
 `.github/workflows/neutral-edge-cutover.yml` 在构建、上传和激活之间执行这些门禁，并把 locale builder 与 runtime 纳入语义 build contract。首次已授权范围仍通过 `locale-shadow` 在不切换流量的前提下完成审阅；首次真实切换经同一次候选审批和线上验收后，才由运营者人工设置 `PORTAL_MULTILINGUAL_LIVE=true`。此后定时发布恢复合法活动发布与持久检查点缓存，只翻译新增或变化 segment，并在完整门禁通过后自动切换。
+
+
+## 已完成页面的翻译欠账与有界恢复
+
+33 个扩展语言的完整页面、日完成游标和发布 ACK 均不等同于译文全部完成。`portal_extended_quality.py` 保留独立、绑定精确 source/manifest 的质量欠账；只有 `translation_complete=true`、零 fallback、完整页集合、零 budget/failure 的新候选才进入自动 handoff。英文和 `ko/ja/ar` 保持各自原有链路，不使用这套 33 语言恢复策略。
+
+`portal_extended_quality_recovery.py` 在原全局串行 workflow 内、原 `max-parallel: 2` 矩阵中给每个语言选择 1..20 个精确旧 fallback。source/manifest/原 producer 必须可验证；缓存或已接受 ledger 优先，全部已有 accepted outcome 的计划显式 `requires_engine=false`，跳过模型 setup，build 禁止构造翻译适配器。其它计划仅授权所选单元一次离线尝试，paid provider 为零。当前普通文章队列与历史欠账按每语言交替；只在存在普通待办时交出该轮，不插入空转轮次。
+
+恢复采用法语旧流程的完整 render/cache/proof 契约并保留其兼容入口，但旧法语终止或未知请求不会因新策略、新运行或新 validator revision 被重新打开。完整候选重建不调用模型，未选中的有效译文与 fallback、原 source/origin、continuation 计数保持。精确 prepared tail 可零推理完成；只有已验证的 durable accepted-unit delta 或原普通页进展才续发下一轮，纯 terminal/unknown 不循环。ACK 前保留绑定 quality proof 的完整 immutable outcome 定位；旧无定位资料只在四种合法 continuation 计数中有唯一原结果时恢复，无法验证就保留 typed blocker。
+
+参见[详细边界、计数及验收](extended-locale-quality-recovery.md)。代码/合成回归、真实 fallback 减少、候选翻译就绪、protected 发布审核和线上 URL 是分别验收的阶段；此机制不宣称所有旧语言已追平中文。
