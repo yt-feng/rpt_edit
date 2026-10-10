@@ -669,6 +669,7 @@ jobs:
             --catalog-path portal_suite/data/catalog.json \
             --cache-path "$RUNNER_TEMP/portal-title-cache/cache-v1.json" \
             --seed-catalog-path "$RUNNER_TEMP/previous-public-catalog.json" \
+            --time-budget-seconds 180 \
             --workers 1 \
             --diagnostics-out "$RUNNER_TEMP/title-translation-diagnostics.json"
           python3 - <<'PY'
