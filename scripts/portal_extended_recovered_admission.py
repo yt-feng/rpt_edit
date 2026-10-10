@@ -7,10 +7,12 @@ ordinary latest-day queue and its replacement policy are never written here.
 from __future__ import annotations
 
 import io
+from datetime import datetime
 import json
 import re
 import subprocess
 import threading
+import time
 import zipfile
 
 from collect_portal_extended_sources import read_public
@@ -24,6 +26,8 @@ from watch_recovered_article_publication import (body_identity, eligible,
 
 POLICY = 'accepted-recovered-blog-cohort-v1'
 WORKFLOW = '.github/workflows/recover-report-article-delivery.yml'
+DAILY_WORKFLOW = '.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml'
+DAILY_JOB_PREFIX = 'deliver-recovered-report-articles / '
 MAX_COHORTS = 32
 MAX_ARTIFACT_BYTES = 1024 * 1024
 MAX_API_BYTES = 4 * 1024 * 1024
@@ -43,15 +47,18 @@ class GitHub:
     def __init__(self, repository):
         require(re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', repository), 'recovered_repository_invalid')
         self.repository = repository
+        self.deadline = None
 
     def raw(self, suffix, maximum=MAX_API_BYTES):
         """Bound bytes/time, never expose gh stderr or a signed download URL."""
         process = None
         timer = None
         try:
+            remaining = 60 if self.deadline is None else min(60, self.deadline - time.monotonic())
+            require(remaining > 0, 'recovered_github_budget_exhausted')
             process = subprocess.Popen(['gh', 'api', f'repos/{self.repository}/{suffix}'],
                 stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
-            timer = threading.Timer(60, process.kill)
+            timer = threading.Timer(remaining, process.kill)
             timer.daemon = True
             timer.start()
             raw = process.stdout.read(maximum + 1)
@@ -105,8 +112,10 @@ def artifact_json(raw, member):
 
 
 def checked_publication(value):
-    require(isinstance(value, dict) and set(value) == {'repository', 'run_id', 'attempt', 'sha',
-        'release_run_id', 'release_attempt', 'release_sha', 'request', 'state'}, 'recovered_publication_fields_invalid')
+    fields = {'repository', 'run_id', 'attempt', 'sha', 'release_run_id', 'release_attempt',
+              'release_sha', 'request', 'state'}
+    require(isinstance(value, dict) and set(value) == fields,
+            'recovered_publication_fields_invalid')
     require(re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', value['repository'])
         and all(re.fullmatch(r'[1-9][0-9]*', str(value[key])) for key in
                 ('run_id', 'attempt', 'release_run_id', 'release_attempt'))
@@ -140,27 +149,61 @@ def checked_request(request):
     return request
 
 
-def authenticate(github, run_id):
+def attempt_jobs(github, run_id, attempt):
+    rows, total = [], None
+    for page in range(1, 11):
+        suffix = f'actions/runs/{run_id}/attempts/{attempt}/jobs?per_page=100'
+        value = github.api(suffix + (f'&page={page}' if page > 1 else ''))
+        count, batch = value.get('total_count'), value.get('jobs')
+        require(type(count) is int and 0 <= count <= 1000 and isinstance(batch, list)
+                and len(batch) <= 100 and all(isinstance(row, dict) for row in batch)
+                and (total is None or count == total), 'recovered_jobs_incomplete')
+        total = count
+        rows.extend(batch)
+        if len(rows) >= total:
+            break
+        require(bool(batch), 'recovered_jobs_incomplete')
+    require(len(rows) == total, 'recovered_jobs_incomplete')
+    identities = [row['id'] for row in rows if 'id' in row]
+    require(len(set(identities)) == len(identities), 'recovered_jobs_ambiguous')
+    return rows
+
+
+def timestamp(value):
+    require(isinstance(value, str) and re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z', value),
+            'recovered_job_timestamp_invalid')
+    try:
+        return datetime.fromisoformat(value.replace('Z', '+00:00'))
+    except ValueError:
+        raise ExpansionError('recovered_job_timestamp_invalid') from None
+
+
+def authenticate(github, run_id, *, expected=None, evidence_sink=None):
     require(re.fullmatch(r'[1-9][0-9]*', str(run_id)), 'recovered_run_invalid')
     run = github.api(f'actions/runs/{run_id}')
+    daily = run.get('path') == DAILY_WORKFLOW
     require(run.get('id') == int(run_id) and type(run.get('run_attempt')) is int and 1 <= run['run_attempt'] <= 10
-        and run.get('path') == WORKFLOW and run.get('head_branch') == 'main'
-        and run.get('event') == 'workflow_dispatch' and run.get('status') == 'completed'
-        and run.get('conclusion') == 'success' and re.fullmatch(r'[a-f0-9]{40}', str(run.get('head_sha', '')))
+        and run.get('path') in {WORKFLOW, DAILY_WORKFLOW} and run.get('head_branch') == 'main'
+        and (run.get('event') in {'schedule', 'workflow_dispatch'} if daily else run.get('event') == 'workflow_dispatch')
+        and run.get('status') == 'completed'
+        and (run.get('conclusion') in {'success', 'failure', 'timed_out'} if daily else run.get('conclusion') == 'success')
+        and re.fullmatch(r'[a-f0-9]{40}', str(run.get('head_sha', '')))
         and all((run.get(key) or {}).get('full_name') == github.repository for key in ('repository', 'head_repository'))
         and (run.get('repository') or {}).get('private') is False, 'recovered_run_not_verified')
     attempt = run['run_attempt']
-    latest_jobs = {}
+    if expected is not None:
+        require(all(run.get(key) == expected[key] for key in ('id', 'run_attempt', 'head_sha', 'path', 'event', 'conclusion')),
+                'recovered_captured_attempt_changed')
+    prefix = DAILY_JOB_PREFIX if daily else ''
+    latest_jobs, stage_attempts = {}, {}
     for number in range(1, attempt + 1):
-        jobs = github.api(f'actions/runs/{run_id}/attempts/{number}/jobs?per_page=100')
-        rows = jobs.get('jobs', [])
-        require(type(jobs.get('total_count')) is int and jobs['total_count'] == len(rows) <= 100,
-                'recovered_jobs_incomplete')
+        rows = attempt_jobs(github, run_id, number)
         for name in ('generate', 'deliver', 'publish'):
-            selected = [row for row in rows if row.get('name') == name]
+            selected = [row for row in rows if row.get('name') == prefix + name]
             require(len(selected) <= 1, 'recovered_jobs_ambiguous')
             if selected:
                 latest_jobs[name] = selected[0]
+                stage_attempts[name] = number
     # A publish-only rerun must not force new generation or new WeChat POSTs.
     # Authenticate each stage's latest actual execution across exact attempts.
     for name in ('generate', 'deliver', 'publish'):
@@ -168,6 +211,8 @@ def authenticate(github, run_id):
         require(selected.get('status') == 'completed' and selected.get('conclusion') == 'success'
             and selected.get('run_id') == int(run_id) and selected.get('head_sha') == run['head_sha'],
             'recovered_job_not_verified')
+        if daily or evidence_sink is not None:
+            require(type(selected.get('id')) is int and selected['id'] > 0, 'recovered_job_identity_missing')
     artifacts = github.api(f'actions/runs/{run_id}/artifacts?per_page=100')
     rows = artifacts.get('artifacts', [])
     require(type(artifacts.get('total_count')) is int and artifacts['total_count'] == len(rows) <= 100,
@@ -181,16 +226,37 @@ def authenticate(github, run_id):
             and 0 < selected[0]['size_in_bytes'] <= MAX_ARTIFACT_BYTES,
             'recovered_artifact_not_verified')
         values[kind] = github.artifact(selected[0]['id'], member)
+        if evidence_sink is not None:
+            owner = latest_jobs['deliver' if kind == 'request' else 'publish']
+            created = timestamp(selected[0].get('created_at'))
+            require(timestamp(owner.get('started_at')) <= created <= timestamp(owner.get('completed_at')),
+                    'recovered_artifact_attempt_changed')
+            evidence_sink.setdefault('artifacts', {})[kind] = {
+                'id': selected[0]['id'], 'name': selected[0]['name'],
+                'bytes': selected[0]['size_in_bytes'], 'sha256': digest(stable_bytes(values[kind])),
+                'created_at': selected[0]['created_at']}
     request, state = values['request'], values['state']
     checked_request(request)
     require(isinstance(state, dict) and state.get('schema_version') == 1 and state.get('status') == 'complete'
             and type(state.get('article_count')) is int and state['article_count'] == len(request['records'])
             and state.get('request_sha256') == request_hash(request), 'recovered_publication_not_accepted')
+    if expected is not None or evidence_sink is not None:
+        after = github.api(f'actions/runs/{run_id}')
+        require(all(after.get(key) == run.get(key) for key in ('id', 'run_attempt', 'head_sha', 'path', 'event',
+            'status', 'conclusion', 'head_branch', 'repository', 'head_repository')), 'recovered_captured_attempt_changed')
+    if evidence_sink is not None:
+        evidence_sink['jobs'] = {name: {'id': row['id'], 'attempt': stage_attempts[name],
+            'name': row['name'], 'run_id': row['run_id'], 'head_sha': row['head_sha'],
+            'status': row['status'], 'conclusion': row['conclusion'],
+            'started_at': row.get('started_at'), 'completed_at': row.get('completed_at')}
+            for name, row in latest_jobs.items()}
     # A cohort with no published articles creates no translation work.
     if request.get('records') == []:
         require(request.get('origin') == ORIGIN and state.get('status') == 'complete'
                 and state.get('article_count') == 0 and state.get('request_sha256') == request_hash(request),
                 'recovered_empty_publication_invalid')
+        if evidence_sink is not None:
+            evidence_sink['empty_publication'] = {'request': request, 'state': state}
         return None
     release_id = state.get('release_run_id')
     require(type(release_id) is int and release_id > 0, 'recovered_release_missing')
@@ -206,7 +272,7 @@ def authenticate(github, run_id):
     return checked_publication(value)
 
 
-def collect(session, publication, capture_day):
+def collect(session, publication, capture_day, *, deadline=None, clock=time.monotonic):
     checked_publication(publication)
     require(publication_day(capture_day) == capture_day, 'recovered_capture_day_invalid')
     request = publication['request']
@@ -219,6 +285,7 @@ def collect(session, publication, capture_day):
     docs = []
     source_bytes = 0
     for row in request['records']:
+        require(deadline is None or clock() < deadline, 'recovered_capture_budget_exhausted')
         url = ORIGIN + '/blog/' + row['slug'] + '.html'
         raw = read_public(session, url)
         try:
@@ -285,6 +352,75 @@ def read_queue(store):
     rows = [checked_entry(row) for row in value['entries']]
     require(len({row['admission'] for row in rows}) == len(rows), 'recovered_queue_duplicate')
     return rows
+
+
+def existing_admission(store, request_id):
+    """Queue wins after an interrupted rebind; claims are written last."""
+    from portal_extended_daily_queue import inventory, read_admission, read_corpus
+    found = []
+    for entry in read_queue(store):
+        receipt, corpus = inventory(store, entry)
+        proof = read_proof(store, receipt['recovery'], corpus)
+        if request_hash(proof['publication']['request']) == request_id:
+            found.append((entry['admission'], receipt))
+    require(len(found) <= 1, 'recovered_request_queue_ambiguous')
+    if found:
+        return found[0]
+    try:
+        claim = json.loads(store._get(store.key('recovered-publication-claims', request_id, 'receipt.json'), maximum=65536))
+    except R2NotFound:
+        return None
+    require(set(claim) == {'request_sha256', 'admission'} and claim['request_sha256'] == request_id,
+            'recovered_claim_invalid')
+    receipt = read_admission(store, claim['admission'])
+    proof = read_proof(store, receipt['recovery'], read_corpus(store, receipt['generation']))
+    require(request_hash(proof['publication']['request']) == request_id, 'recovered_claim_changed')
+    return claim['admission'], receipt
+
+
+def rebind_failed_admission(store, corpus, proof, producer, previous):
+    """Single-writer replacement after the caller verifies a failed producer.
+
+    Keep immutable content and receipts, replace the queue pointer before its
+    claim, and leave ingress pending until the new producer actually succeeds.
+    """
+    from portal_extended_daily_queue import checked_producer, immutable_record, pending_docs, read_admission, write_verified
+    from portal_extended_locales import ADDITIONAL
+    checked_producer(producer)
+    validate_proof(proof, corpus)
+    old = read_admission(store, previous)
+    old_proof = read_proof(store, old['recovery'], corpus)
+    request_id = request_hash(proof['publication']['request'])
+    require(request_hash(old_proof['publication']['request']) == request_id
+        and old['generation'] == corpus['documents_sha256'] and old['producer'] != producer,
+        'recovered_rebind_source_changed')
+    queued = read_queue(store)
+    matches = sum(row['admission'] == previous for row in queued)
+    require(matches == 1 or matches == 0 and all(
+        not pending_docs(store, corpus['documents'], locale, old['day']) for locale in ADDITIONAL),
+        'recovered_rebind_queue_changed')
+    raw = stable_bytes(proof)
+    require(len(raw) <= MAX_SOURCE_BYTES, 'recovered_proof_oversized')
+    identity = digest(raw)
+    proof_key = store.key('recovered-publications', identity, 'proof.json')
+    try:
+        existing = store._get(proof_key, maximum=MAX_SOURCE_BYTES)
+    except R2NotFound:
+        existing = None
+    require(existing in (None, raw), 'recovered_immutable_proof_changed')
+    if existing is None:
+        store._put(proof_key, raw, metadata={'kind': 'recovered-source-proof'})
+    require(store._get(proof_key, maximum=MAX_SOURCE_BYTES) == raw, 'recovered_proof_readback_changed')
+    receipt = {**old, 'producer': producer, 'capture_day': proof['capture_day'], 'recovery': identity}
+    admission = digest(stable_bytes(receipt))
+    immutable_record(store, store.key('source-admissions', admission, 'receipt.json'), receipt, kind='source-admission')
+    if matches:
+        queued = [{**row, 'admission': admission} if row['admission'] == previous else row for row in queued]
+        write_verified(store, store.key('incremental', 'recovered-source-cohorts', 'queue.json'),
+            {'schema_version': 1, 'policy': POLICY, 'entries': queued}, kind='recovered-source-queue')
+    write_verified(store, store.key('recovered-publication-claims', request_id, 'receipt.json'),
+        {'request_sha256': request_id, 'admission': admission}, kind='recovered-source-claim')
+    return {'admission': admission, 'generation': receipt['generation'], 'pages': receipt['pages']}
 
 
 def admit(store, corpus, proof, producer):
