@@ -9,6 +9,11 @@ import textwrap
 import unittest
 from pathlib import Path
 
+# This existing CI entrypoint also replays admission and failed-review cleanup.
+from test_neutral_edge_release_admission import (
+    FailedReviewCancellationTests, FailedReviewCleanupTests, ReleaseAdmissionTests,
+)
+
 
 ROOT = Path(__file__).resolve().parents[1]
 WORKFLOW = ROOT / ".github/workflows/neutral-edge-cutover.yml"
@@ -349,7 +354,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn("  multilingual_approval:\n", self.workflow)
         self.assertIn("  cutover:\n", self.workflow)
         self.assertIn(
-            "needs: [prepare_release, multilingual_approval, extended_locales_approval, english_approval]",
+            "needs: [prepare_release, multilingual_approval, extended_locales_approval, english_approval, extended_daily_review, english_daily_review]",
             self.workflow,
         )
         prepare = self.workflow.index("  prepare_release:\n")
@@ -372,8 +377,9 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
             "Roll back failed release or completed rehearsal", 1)[0]
         self.assertIn("timeout-minutes: 15", extended)
         self.assertIn("timeout-minutes: 165", transaction)
-        self.assertEqual(self.workflow.count("ref: ${{ github.sha }}"), 5)
-        for job in ('prepare_release', 'extended_daily_review', 'english_daily_review', 'english_approval', 'cutover'):
+        self.assertEqual(self.workflow.count("ref: ${{ github.sha }}"), 6)
+        for job in ('prepare_release', 'extended_daily_review', 'english_daily_review', 'english_approval',
+                    'reject_failed_daily_review', 'cutover'):
             block = re.search(r'^  '+job+r':\n(.*?)(?=^  [a-z_]+:\n|\Z)', self.workflow, re.M | re.S)[1]
             self.assertEqual(block.count("ref: ${{ github.sha }}"), 1, job)
         self.assertNotIn("ref: main", self.workflow)
@@ -993,7 +999,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
             self.workflow.index("    steps:\n", cutover_job)
         ]
         self.assertIn(
-            "needs: [prepare_release, multilingual_approval, extended_locales_approval, english_approval]",
+            "needs: [prepare_release, multilingual_approval, extended_locales_approval, english_approval, extended_daily_review, english_daily_review]",
             cutover_header,
         )
         self.assertIn("always()", cutover_header)
@@ -1342,7 +1348,13 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         )
         for path in workflows:
             body = path.read_text(encoding="utf-8")
-            self.assertIn("group: portal-production-release", body, path.name)
+            if path == WORKFLOW:
+                # ReleaseAdmissionTests evaluates the full trigger matrix; only
+                # admitted release candidates share the production lock.
+                concurrency = body.split('\nconcurrency:\n', 1)[1].split('\njobs:', 1)[0]
+                self.assertIn("&& 'portal-production-release' ||", concurrency)
+            else:
+                self.assertIn("group: portal-production-release", body, path.name)
             self.assertIn("cancel-in-progress: false", body, path.name)
 
 
