@@ -38,6 +38,17 @@ class InspectionError(ValueError):
         self.code = code
 
 
+class ReadOnlyClient:
+    """Reject accidental mutation even if an inspected helper later changes."""
+    def __init__(self, client):
+        self.client = client
+
+    def __getattr__(self, name):
+        if name not in {'head_object', 'get_object'}:
+            raise InspectionError('storage-operation-forbidden')
+        return getattr(self.client, name)
+
+
 class PhaseError(ValueError):
     def __init__(self, stage, error):
         super().__init__('inspection-failed')
@@ -133,6 +144,13 @@ def compare(store, batch, locale, work, *, frozen_approval=False):
                   work/'seed.json', approved, allow_frozen=frozen_approval, require_match=False)
     replay = proof['manifest']
     replay_dir = proof['checkpoint'].with_suffix('')
+    attempts = []
+    for index, attempt in enumerate(proof['attempts']):
+        manifest = json.loads((work/f'baseline-{index}'/'candidate-manifest.json').read_bytes())
+        attempts.append({**attempt, 'approved_pages': len(approved['pages']),
+            'replayed_pages': len(manifest['pages']), 'cache_hits': manifest['cache_hits'],
+            'source_fallback_units': manifest.get('source_fallback_unit_count'),
+            'failure_codes': dict(Counter(row['code'] for row in manifest['failures']))})
     rejected, total = [], 0
     for key, row in seed['rows'].items():
         try:
@@ -160,7 +178,7 @@ def compare(store, batch, locale, work, *, frozen_approval=False):
             differences.append(difference)
     return {'locale': locale, 'generation': batch['generation'], 'candidate': batch['candidates'][locale],
             'quantity_contract': proof['quantity_contract'],
-            'quantity_parser_sha256': proof['quantity_parser_sha256'], 'baseline_attempts': proof['attempts'],
+            'quantity_parser_sha256': proof['quantity_parser_sha256'], 'baseline_attempts': attempts,
             'checkpoint_sha256': restored['sha256'], 'matches': replay['status'] == 'complete-candidate'
                 and replay['translation_calls_this_run'] == 0 and replay['files_sha256'] == approved['files_sha256'],
             'status': replay['status'], 'approved_pages': len(before), 'replayed_pages': len(after),
@@ -210,9 +228,15 @@ def inspect(store, target, expected_release, identity):
     # Refuse a stale deployment identity before reading any private source.
     if identity.get('release_id') != expected_release:
         raise InspectionError('active-release-changed')
+    store = R2Store(ReadOnlyClient(store.client), store.bucket, store.prefix)
     active = checked_batches(phase('active-ledger-read', read_active_batches, store, identity))
     active_approvals = bindings(active)
-    batches = checked_batches(active + [target])
+    batches = checked_batches(active + ([target] if target is not None else []))
+    identity_summary = {'mode': 'active-only' if target is None else 'candidate',
+                        'active_release': expected_release}
+    if not batches:
+        return {**identity_summary, 'status': 'no-active-batches', 'production_writes': 0,
+                'inference_calls': 0, 'results': [], 'carry_forward_cache_audit': []}
     if len(batches) > MAX_BATCHES: raise InspectionError('too-many-batches')
     owners = {}
     with tempfile.TemporaryDirectory() as tmp:
@@ -225,6 +249,22 @@ def inspect(store, target, expected_release, identity):
             corpora.append(corpus)
             for locale in batch['candidates']:
                 for doc in corpus['documents']: owners[locale, doc['url']] = index
+        def report(status, results):
+            result = {**identity_summary, 'status': status, 'production_writes': 0,
+                      'inference_calls': 0, 'results': results}
+            try:
+                result['carry_forward_cache_audit'] = audit_cached_rows(store, batches, corpora, owners, root)
+            except Exception as error:
+                if target is not None:
+                    raise
+                # The first exact mismatch remains useful even if a later
+                # optional cache audit is unavailable. Never print its text.
+                result.update(carry_forward_cache_audit=[], cache_audit_complete=False,
+                    cache_audit_code='cache-audit-bound' if isinstance(error, InspectionError)
+                    and error.code == 'too-many-cache-audits' else 'cache-audit-unavailable')
+            else:
+                result['cache_audit_complete'] = True
+            return result
         results = []
         for index, (batch, corpus) in enumerate(zip(batches, corpora, strict=True)):
             for locale in batch['candidates']:
@@ -235,18 +275,22 @@ def inspect(store, target, expected_release, identity):
                 result['target_candidate'] = batch == target and locale in target['candidates']
                 results.append(result)
                 if not result['matches']:
-                    return {'status': 'mismatch', 'production_writes': 0, 'inference_calls': 0, 'results': results,
-                            'carry_forward_cache_audit': audit_cached_rows(store, batches, corpora, owners, root)}
-        return {'status': 'all-matched', 'production_writes': 0, 'inference_calls': 0, 'results': results,
-                'carry_forward_cache_audit': audit_cached_rows(store, batches, corpora, owners, root)}
+                    return report('mismatch', results)
+        return report('all-matched', results)
 
 
 def main():
     parser = argparse.ArgumentParser()
-    for name in ('generation', 'locale', 'candidate', 'active-release'): parser.add_argument('--'+name, required=True)
+    for name in ('generation', 'locale', 'candidate'): parser.add_argument('--'+name, default='')
+    parser.add_argument('--active-release', required=True)
+    parser.add_argument('--active-only', action='store_true')
     args = parser.parse_args()
     try:
-        target = checked_batches([{'generation': args.generation, 'candidates': {args.locale: args.candidate}}])[0]
+        supplied = (args.generation, args.locale, args.candidate)
+        if (args.active_only and any(supplied)) or (not args.active_only and not all(supplied)):
+            raise InspectionError('invalid-inspection-mode')
+        target = None if args.active_only else checked_batches([
+            {'generation': args.generation, 'candidates': {args.locale: args.candidate}}])[0]
         if re.fullmatch(r'[0-9a-f]{32}', args.active_release) is None: raise InspectionError('invalid-release')
         identity = phase('active-identity-read', read_identity)
         # Identity is checked before initializing the private storage client.

@@ -402,3 +402,9 @@ URL 节点使用 XHTML alternate 标注全部已完成的 hreflang 对应页。`
 恢复采用法语旧流程的完整 render/cache/proof 契约并保留其兼容入口，但旧法语终止或未知请求不会因新策略、新运行或新 validator revision 被重新打开。完整候选重建不调用模型，未选中的有效译文与 fallback、原 source/origin、continuation 计数保持。精确 prepared tail 可零推理完成；只有已验证的 durable accepted-unit delta 或原普通页进展才续发下一轮，纯 terminal/unknown 不循环。ACK 前保留绑定 quality proof 的完整 immutable outcome 定位；旧无定位资料只在四种合法 continuation 计数中有唯一原结果时恢复，无法验证就保留 typed blocker。
 
 参见[详细边界、计数及验收](extended-locale-quality-recovery.md)。代码/合成回归、真实 fallback 减少、候选翻译就绪、protected 发布审核和线上 URL 是分别验收的阶段；此机制不宣称所有旧语言已追平中文。
+
+## 已批准候选重放的只读诊断
+
+`portal-candidate-replay-inspect.yml` 的 `active_only=true` 模式只需精确 `active_release`；`generation/locale/candidate` 必须为空。它先核对公开 edge-state 的 release ID，再用同一 slot/release/tree 身份校验 R2 静态 manifest 和已批准 assembly ledger，按实际发布相同的 page-owner 顺序检查活动候选。仅允许 R2 HEAD/GET，不执行对象写入、模型推理、常规 ko/ja/ar 构建或发布，不占用翻译全局锁。
+
+摘要保留 locale、source/candidate/checkpoint SHA、current 与冻结数量解析器的重放次数/完整页数/缓存 miss/固定失败类别，以及页面字节和可见文本散列差异；不输出原文、译文、源 URL 或异常正文。`all-matched` 仅说明已批准候选在当前代码下可逐字节重放；`mismatch` 用于区分检查点变化、校验拒绝与渲染差异；空活动集合为 `no-active-batches`。首个 mismatch 取得后，后续可选缓存审计即使超出原 128 项上限或读取失败，也保留该证据，并报告 `cache_audit_complete=false` 与固定类别；不得把失败审计当作通过。诊断不放宽 `prove_approved_baseline`、当前 source content 绑定、原 HTML SHA、批准 identity 或发布门禁。若 release 已改变则停止，不自动追随另一版本。原 incoming-candidate 模式仍要求完整三项输入，不能与 active-only 混用。
