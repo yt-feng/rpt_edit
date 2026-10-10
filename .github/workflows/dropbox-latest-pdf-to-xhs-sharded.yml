@@ -1613,16 +1613,19 @@ jobs:
           SOURCE_RUN_ID: ${{ github.run_id }}
           RECOVERED_RESULT: ${{ needs.deliver-recovered-report-articles.result }}
           RECOVERED_MANIFEST: ${{ needs.deliver-recovered-report-articles.outputs.manifest_sha256 }}
-          EXPECTED_ARTICLES: ${{ needs.select-macro-reports.outputs.selected_count }}
+          SELECTED_COUNT: ${{ needs.select-macro-reports.outputs.selected_count }}
         run: |
           set -euo pipefail
           printf '%s' "$DATE_FOLDER" | grep -Eq '^[0-9]{6,8}$'
           printf '%s' "$SOURCE_RUN_ID" | grep -Eq '^[0-9]+$'
           MANIFEST_SHA=""
+          # Article counts bind recovered manifests; normal handoffs use the shard count.
+          EXPECTED_ARTICLES=0
           if [ "$RECOVERED_RESULT" = success ]; then
             printf '%s' "$RECOVERED_MANIFEST" | grep -Eq '^[a-f0-9]{64}$'
             MANIFEST_SHA="$RECOVERED_MANIFEST"
             EXPECTED_SHARDS=1
+            EXPECTED_ARTICLES="$SELECTED_COUNT"
           fi
           RUN_URL="$(gh workflow run portal-chart-search-index.yml \
             --repo "$GITHUB_REPOSITORY" \

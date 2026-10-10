@@ -6,6 +6,7 @@ from pathlib import Path
 import re
 import shutil
 import subprocess
+import sys
 import tempfile
 import textwrap
 import unittest
@@ -15,6 +16,7 @@ import chart_recovered_handoff as handoff
 
 
 WORKFLOW = Path(__file__).resolve().parents[1] / '.github/workflows/portal-chart-search-index.yml'
+DAILY_WORKFLOW = WORKFLOW.with_name('dropbox-latest-pdf-to-xhs-sharded.yml')
 
 
 class RecoveredChartTests(unittest.TestCase):
@@ -47,6 +49,63 @@ class RecoveredChartTests(unittest.TestCase):
                     result = subprocess.run(['bash', '-c', program], env={**base, key: '$(touch ' + str(marker) + ')'}, capture_output=True)
                     self.assertNotEqual(result.returncode, 0)
                     self.assertFalse(marker.exists())
+
+    def test_daily_dispatch_inputs_pass_actual_chart_source_validation(self):
+        daily = DAILY_WORKFLOW.read_text()
+        step = daily.split('      - name: Dispatch daily incremental chart index\n', 1)[1].split('\n  cleanup-market-source-recovery:', 1)[0]
+        dispatch_program = textwrap.dedent(step.split('        run: |\n', 1)[1])
+        count_variable = re.search(r'^\s+(\w+): \$\{\{ needs\.select-macro-reports\.outputs\.selected_count \}\}$',
+                                   step, flags=re.MULTILINE).group(1)
+        chart_step = WORKFLOW.read_text().split('      - name: Validate source selection\n', 1)[1].split('      - name:', 1)[0]
+        validation_program = textwrap.dedent(chart_step.split('        run: |\n', 1)[1])
+        with tempfile.TemporaryDirectory() as temp:
+            fake_gh = Path(temp) / 'gh'
+            fake_gh.write_text(
+                '#!' + sys.executable + '\n'
+                'import json, os, sys\n'
+                'with open(os.environ["GH_CALLS"], "a") as stream:\n'
+                '    stream.write(json.dumps(sys.argv[1:]) + "\\n")\n'
+                'if sys.argv[1:3] == ["workflow", "run"]:\n'
+                '    print("https://github.com/example/reports/actions/runs/456")\n'
+            )
+            fake_gh.chmod(0o755)
+            calls_path = Path(temp) / 'calls.jsonl'
+            base = {**os.environ, 'PATH': temp + os.pathsep + os.environ['PATH'],
+                    'GH_CALLS': str(calls_path), 'GITHUB_REPOSITORY': 'example/reports',
+                    'DATE_FOLDER': '261009', 'SOURCE_RUN_ID': '123', 'EXPECTED_SHARDS': '16',
+                    'MAX_IMAGES': '0', count_variable: '79'}
+            for recovered in (False, True):
+                with self.subTest(recovered=recovered):
+                    calls_path.unlink(missing_ok=True)
+                    manifest = 'a' * 64 if recovered else ''
+                    result = subprocess.run(['bash', '-c', dispatch_program],
+                                            env={**base, 'RECOVERED_RESULT': 'success' if recovered else 'skipped',
+                                                 'RECOVERED_MANIFEST': manifest}, capture_output=True, text=True)
+                    self.assertEqual(result.returncode, 0, result.stderr)
+                    calls = [json.loads(line) for line in calls_path.read_text().splitlines()]
+                    self.assertEqual(len(calls), 2)
+                    self.assertEqual(calls[0][:3], ['workflow', 'run', 'portal-chart-search-index.yml'])
+                    self.assertEqual(calls[1][:3], ['run', 'watch', '456'])
+                    inputs = dict(calls[0][i + 1].split('=', 1)
+                                  for i, item in enumerate(calls[0]) if item == '-f')
+                    self.assertEqual(inputs['expected_shards'], '1' if recovered else '16')
+                    self.assertEqual(inputs['expected_articles'], '79' if recovered else '0')
+                    self.assertEqual(inputs['source_handoff_manifest_sha256'], manifest)
+                    selected = {**os.environ, 'DATE_FOLDER': inputs['date_folder'],
+                                'HANDOFF_RUN_ID': inputs['source_handoff_run_id'], 'ARTIFACT_RUN_ID': '',
+                                'HANDOFF_MANIFEST_SHA256': inputs['source_handoff_manifest_sha256'],
+                                'EXPECTED_SHARDS': inputs['expected_shards'],
+                                'EXPECTED_ARTICLES': inputs['expected_articles'],
+                                'MAX_IMAGES': inputs['max_images'], 'RETRY_ERRORS_NOW': 'false'}
+                    validation = subprocess.run(['bash', '-c', validation_program], env=selected,
+                                                capture_output=True, text=True)
+                    self.assertEqual(validation.returncode, 0, validation.stderr)
+                    # Keep the receiver strict: neither normal input with a recovered
+                    # count nor a recovered manifest without its count is admissible.
+                    invalid = subprocess.run(['bash', '-c', validation_program],
+                                             env={**selected, 'EXPECTED_ARTICLES': '0' if recovered else '79'},
+                                             capture_output=True, text=True)
+                    self.assertNotEqual(invalid.returncode, 0)
 
     def fixture(self):
         from test_recover_report_articles import ArticleRecoveryTests
