@@ -95,7 +95,24 @@ class DiagnosticTests(unittest.TestCase):
                 self.assertEqual(diagnostic.main(), 0)
             self.assertEqual([path.name for path in Path(directory).iterdir()], ["report.json"])
             self.assertNotIn("PRIVATE", output.read_text() + log.getvalue())
+            public = json.loads(log.getvalue().split("chart_checkpoint_diagnostic ", 1)[1])
+            self.assertEqual(public["matched_status_counts"]["error"], 1)
+            self.assertEqual(public["candidate_coverage"], "unavailable")
+            self.assertEqual((public["provider_posts"], public["object_writes"]), (0, 0))
+            self.assertNotIn("a" * 64, log.getvalue())
+            self.assertNotIn("related_errors", public)
+            self.assertNotIn("failure_diagnostic", public)
         self.assertEqual(calls, [{"Bucket": "PRIVATE_BUCKET", "Key": "_chart-search/v1/state.json"}])
+
+    def test_failed_read_log_has_no_progress_counts_or_private_error(self):
+        with tempfile.TemporaryDirectory() as directory, \
+                patch.object(diagnostic.r2, "client_and_bucket", side_effect=RuntimeError("PRIVATE_TOKEN")), \
+                patch("sys.argv", ["diagnostic", "--run-id", RUN_ID, "--output", str(Path(directory) / "report.json")]), \
+                contextlib.redirect_stdout(io.StringIO()) as log:
+            self.assertEqual(diagnostic.main(), 1)
+        public = json.loads(log.getvalue().split("chart_checkpoint_diagnostic ", 1)[1])
+        self.assertEqual(public, {"read_status": "read_failed", "provider_posts": 0, "object_writes": 0})
+        self.assertNotIn("PRIVATE", log.getvalue())
 
     def test_read_errors_missing_state_and_invalid_schema_never_become_empty_success(self):
         with patch.object(diagnostic.r2, "client_and_bucket", side_effect=RuntimeError("PRIVATE_URL_TOKEN")):
