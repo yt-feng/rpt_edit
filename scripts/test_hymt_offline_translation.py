@@ -53,6 +53,58 @@ class HyMTTests(unittest.TestCase):
             translator.translate('Cash reserves were USD 120 million.', 'zh', 'en')
         self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
 
+    def test_locale_decimal_validation_precedes_cache_and_preserves_equivalent_result(self):
+        for locale in ('fr', 'es', 'de', 'id'):
+            for source, accepted in (('Rate 0.125%.', True), ('Rate 125%.', False)):
+                with self.subTest(locale=locale, source=source), tempfile.TemporaryDirectory() as cache:
+                    engine = Engine(lambda _: 'Ratio 0,125%.')
+                    translator = h.OfflineTranslator(cache_dir=cache, engine_factory=lambda *_: engine)
+                    if accepted:
+                        self.assertEqual(translator.translate(source, locale, 'en'), 'Ratio 0,125%.')
+                        self.assertEqual(translator.translate(source, locale, 'en'), 'Ratio 0,125%.')
+                        self.assertTrue(list(Path(cache).rglob('*.json')))
+                    else:
+                        with self.assertRaises(h.OfflineTranslationValidationError):
+                            translator.translate(source, locale, 'en')
+                        self.assertFalse(list(Path(cache).rglob('*.json')))
+                        facts = translator.failure_diagnostics[0]['quantities']
+                        self.assertEqual(facts['missing']['rows'],
+                                         [{'kind': 'percent', 'values': ['125'], 'count': 1}])
+                        self.assertEqual(facts['extra']['rows'],
+                                         [{'kind': 'percent', 'values': ['0.125'], 'count': 1}])
+                    self.assertEqual(len(engine.calls), 1)
+
+    def test_locale_quantity_diagnostic_matches_grouping_and_malformed_gate(self):
+        for locale in ('fr', 'es', 'de', 'id'):
+            response = 'USD 1\u202f234,567' if locale == 'fr' else 'USD 1.234,567'
+            facts = h.quantity_failure_diagnostics('USD 1234.567', response, 'en', locale)
+            self.assertEqual(facts['missing']['rows'], [])
+            self.assertEqual(facts['extra']['rows'], [])
+            malformed = 'USD 1.234,5,6'
+            with self.assertRaises(h.OfflineTranslationValidationError):
+                h.validate_result('USD 1234.56', malformed, 'en', locale)
+            facts = h.quantity_failure_diagnostics('USD 1234.56', malformed, 'en', locale)
+            self.assertEqual(facts['extra']['rows'],
+                             [{'kind': 'invalid_number', 'values': [], 'count': 1}])
+
+    def test_existing_same_model_cache_cannot_bypass_new_locale_quantity_gate(self):
+        for locale in ('fr', 'es', 'de', 'id'):
+            for source, accepted in (('Rate 0.125%.', True), ('Rate 125%.', False)):
+                with self.subTest(locale=locale, source=source), tempfile.TemporaryDirectory() as cache:
+                    engine_factory = mock.Mock(side_effect=AssertionError('Cached validation must not call a model'))
+                    translator = h.OfflineTranslator(cache_dir=cache, engine_factory=engine_factory)
+                    identity, path = translator._memo_identity(source, locale, 'en', markdown=True)
+                    path.parent.mkdir(parents=True)
+                    h.atomic_json(path, {**identity, 'translation': 'Ratio 0,125%.'})
+                    before = path.read_bytes()
+                    if accepted:
+                        self.assertEqual(translator.translate(source, locale, 'en'), 'Ratio 0,125%.')
+                    else:
+                        with self.assertRaises(h.OfflineTranslationValidationError):
+                            translator.translate(source, locale, 'en')
+                    engine_factory.assert_not_called()
+                    self.assertEqual(path.read_bytes(), before)
+
     def test_pinned_engine_retries_target_script_and_materialized_quantities(self):
         source = 'Margin rose 2.5 percentage points.'
 
