@@ -22,15 +22,15 @@
 
 ## 实际队列与失败证据
 
-- 中文目录恢复生产 [38036944110](https://github.com/yt-feng/rpt_edit/actions/runs/38036944110) 后，[source admission 38043173198](https://github.com/yt-feng/rpt_edit/actions/runs/38043173198) 成功。新 R2 run [38043249029](https://github.com/yt-feng/rpt_edit/actions/runs/38043249029) 取证时为 pending。
-- 旧矩阵持有者 [38030674044](https://github.com/yt-feng/rpt_edit/actions/runs/38030674044) 的总状态显示 queued，但 job 明细已经完成 6/34 个 locale job，其他语言仍运行/排队。它不是“CPU 完全未启动”，新 workflow 也不能绕过这个互斥组。
+- 中文目录恢复生产 `38036944110` 后，`source admission 38043173198` 成功。新 R2 run `38043249029` 取证时为 pending。
+- 旧矩阵持有者 `38030674044` 的总状态显示 queued，但 job 明细已经完成 6/34 个 locale job，其他语言仍运行/排队。它不是“CPU 完全未启动”，新 workflow 也不能绕过这个互斥组。
 - 该 source 摘要中，33 个非英文目标各有 83 个 pending，选 24 个、余 59 个；英文有 81 个 pending，选 24 个。数字是各自语言队列，不应合并成不重复的源文章数量。
-- [英文 job 114151900663](https://github.com/yt-feng/rpt_edit/actions/runs/38030674044/job/114151900663) 完成后失败：22/24 个页面完成，62 次调用、0 次 Memo 命中；错误各为 `expansion-validation` 1、`offline-quantity-validation` 1，没有预算耗尽。
-- [法语 job 114151900697](https://github.com/yt-feng/rpt_edit/actions/runs/38030674044/job/114151900697) 的候选为 24/24，但 `translation_complete=false`：100 个原文回退单元、104 次使用，原因均为 `offline-quantity-validation`；315 次调用、403 次缓存命中。该候选可恢复和审核，不代表全部内容已译成法语。
+- `英文 job 114151900663` 完成后失败：22/24 个页面完成，62 次调用、0 次 Memo 命中；错误各为 `expansion-validation` 1、`offline-quantity-validation` 1，没有预算耗尽。
+- `法语 job 114151900697` 的候选为 24/24，但 `translation_complete=false`：100 个原文回退单元、104 次使用，原因均为 `offline-quantity-validation`；315 次调用、403 次缓存命中。该候选可恢复和审核，不代表全部内容已译成法语。
 
 ## 已正式发布的语言覆盖与时效边界
 
-生产 [38036944110](https://github.com/yt-feng/rpt_edit/actions/runs/38036944110) 在 2026-10-10 09:56:35 UTC 的线上审计通过，发布 ID 为 `c1c0b923210a207614c8d59ad1e12a5c`，与随后读取的 edge state 和下载服务 runtime release 一致。
+生产 `38036944110` 在 2026-10-10 09:56:35 UTC 的线上审计通过，发布 ID 为 `c1c0b923210a207614c8d59ad1e12a5c`，与随后读取的 edge state 和下载服务 runtime release 一致。
 
 - 33 个新增非英文语言：首页全部 HTTP 200，每语言两个确定性深页样本全部 HTTP 200。sitemap 页面计数为 `km` 79，其余 32 语言各 33；计数不等于成功翻译单元数量。
 - 既有 `ko/ja/ar`：首页、深页和 sitemap 均 HTTP 200；候选字节、canonical、lang 与路由/资产检查通过。
@@ -43,7 +43,7 @@
 
 ### 1. 英文审核取错资源版本
 
-此前 [生产 run 37785895519](https://github.com/yt-feng/rpt_edit/actions/runs/37785895519) 的 `english_daily_review` 在精确预览投影门禁失败。prepare job 已物化部署配置，fresh review checkout 的 `app.js` 尚未物化；两者生成的 `?v=` 资产 token 不同，导致合法预览 HTML 也被判成 `Prepared English public HTML is not a preview-only projection`。
+此前 `生产 run 37785895519` 的 `english_daily_review` 在精确预览投影门禁失败。prepare job 已物化部署配置，fresh review checkout 的 `app.js` 尚未物化；两者生成的 `?v=` 资产 token 不同，导致合法预览 HTML 也被判成 `Prepared English public HTML is not a preview-only projection`。
 
 修复后，英文 compose 从**最终未激活目录的资产字节**计算版本，review 从固定上传 manifest 取同一 SHA 重建 HTML，并有界读回全部 7 项实际资产核对长度与内容 SHA。仍然精确核对预览投影，不忽略脚本 URL、HTML 差异或私有正文。回归覆盖不同部署配置、fresh reviewer 不存在本地资产、渲染后资产被篡改、固定 manifest 后任一资产被改写或删除、缺失资产及隐藏私有正文。
 
@@ -79,8 +79,8 @@
 
 以下是旧轮次的证据，保留用于追溯，不能代表 2026-10-10 的现状或待办：
 
-- 当时 main 为 `681eae64969bfe2c39aa802dc7d4f4e7eadb5424`，保留 PR #182 的 `e3992f1d335939633ee30b12b2c8020d0239e1c6` 改动。既有生产 [36064006057](https://github.com/yt-feng/rpt_edit/actions/runs/36064006057) 成功。
-- 旧严格候选：Hindi [36063797431](https://github.com/yt-feng/rpt_edit/actions/runs/36063797431) 为 0/24；繁体中文 [36068010264](https://github.com/yt-feng/rpt_edit/actions/runs/36068010264) 为 0/24；法语 [36069389027](https://github.com/yt-feng/rpt_edit/actions/runs/36069389027) 为 1/24、预算到期。它们均不是成功发布。
+- 当时 main 为 `681eae64969bfe2c39aa802dc7d4f4e7eadb5424`，保留 PR #182 的 `e3992f1d335939633ee30b12b2c8020d0239e1c6` 改动。既有生产 `36064006057` 成功。
+- 旧严格候选：Hindi `36063797431` 为 0/24；繁体中文 `36068010264` 为 0/24；法语 `36069389027` 为 1/24、预算到期。它们均不是成功发布。
 - 该法语固定 generation 为 `f334aac3023978818d18a4d28ed16cb2541a7b9b6ea803021f1fcd0502c812aa`；恢复 checkpoint `8f7adda70f3265a9a417a995747a4fa297150368c8c9ba42ca9c8736e297f351`（50,868 字节），保存为 `cba1d08b0c9ef8dd1ec2396874b0ef94e17d86b31c4ff3f68094c34819a3036c`（81,992 字节）。
 - 当轮去掉重复外层重试，以精确源文回退使剩余单元继续；后来范围明确收敛为当天新增，预算从当时 2,400 秒调整为当前 14,400 秒。此前固定历史 generation 不作为新的日常 admission 继续扩展。
 - 当时英文被排除在阅读页矩阵外，且没有本轮所述的独立评论发布器；该旧限制仍适用于“英文全文镜像”，不能误读为今天完全没有英文评论链条。
