@@ -300,7 +300,7 @@ class WeChatFilenameTitleTests(unittest.TestCase):
             "MS",
             evidence_text="AI持续挤出可自由支配支出，IT服务增速降至1.8%。",
         )
-        self.assertEqual("摩根士丹利：2Q26CIO调查-AI从推动力变挤出者", selected)
+        self.assertEqual("摩根士丹利：2Q26 CIO调查-AI从推动力变挤出者", selected)
         self.assertEqual([], decision["selected_quality_issues"])
         self.assertNotEqual("摩根士丹利：AI", selected)
 
