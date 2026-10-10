@@ -1,12 +1,15 @@
 """Text-only public previews: never serialize private commentary or originals."""
 from html import escape
 from pathlib import Path
+import re
 from portal_english_commentary import ID, text, require
 from portal_extended_locales import ORIGIN, digest, publication_day, stable_bytes
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT/'portal_suite/locale_assets'
 PUBLIC_KEYS = ('id', 'title', 'preview', 'datePublished')
+PUBLIC_ASSET_NAMES = ('styles.css', 'blog.css', 'extended-locales.css', 'english-commentary.css',
+                      'app.js', 'english-commentary.js', 'extended-locales.js')
 
 
 def preview_item(item):
@@ -24,8 +27,14 @@ def ui_assets():
             for name in ('english-commentary.js', 'english-commentary.css', 'extended-locales.js', 'extended-locales.css')}
 
 
-def head(title, preview, canonical, *, approved=False, article=None):
+def head(title, preview, canonical, *, approved=False, article=None, asset_hashes=None):
+    if asset_hashes is not None:
+        require(isinstance(asset_hashes, dict) and set(asset_hashes) == set(PUBLIC_ASSET_NAMES)
+                and all(isinstance(value, str) and re.fullmatch(r'[a-f0-9]{64}', value)
+                        for value in asset_hashes.values()), 'English public asset identity differs')
     def version(name):
+        if asset_hashes is not None:
+            return asset_hashes[name][:12]
         base = ASSETS if name in {'english-commentary.js', 'english-commentary.css', 'extended-locales.js', 'extended-locales.css'} \
             else ROOT/'portal_suite/site_src/assets'
         return digest((base/name).read_bytes())[:12]
@@ -66,10 +75,11 @@ def footer():
 <button type="button" class="inline-request-button" data-membership-request-open="access">Membership request</button></footer>'''
 
 
-def detail(item, *, approved=False):
+def detail(item, *, approved=False, asset_hashes=None):
     value = preview_item(item)
     canonical = f'{ORIGIN}/en/blog/{value["id"]}.html'
-    return (head(value['title'], value['preview'], canonical, approved=approved, article=value) +
+    return (head(value['title'], value['preview'], canonical, approved=approved, article=value,
+                 asset_hashes=asset_hashes) +
             f'''<body class="blog-page blog-article-page extended-page english-commentary-page" data-page="english-commentary">
 {chrome()}<main class="blog-article-shell"><a class="blog-back" href="/en/">← Commentary</a>
 <article class="blog-article"><header class="blog-article-header"><time datetime="{value['datePublished']}">{value['datePublished']}</time>
@@ -86,7 +96,7 @@ After the allowance, join as a website member to continue.</p></aside>
 </article></main>{footer()}</body></html>\n''').encode()
 
 
-def homepage(items, *, approved=False):
+def homepage(items, *, approved=False, asset_hashes=None):
     require(isinstance(items, list) and 1 <= len(items) <= 5000, 'English collection needs real completed previews')
     values = [preview_item(item) for item in items]
     require(len({item['id'] for item in values}) == len(values), 'Duplicate English preview ID')
@@ -96,7 +106,7 @@ def homepage(items, *, approved=False):
 <h2><a href="/en/blog/{row['id']}.html">{escape(row['title'])}</a></h2><p>{escape(row['preview'])}</p></article>'''
                     for row in values)
     return (head('English commentary | KC Commentary', 'Our latest secondary interpretations. Public previews; member full reading.',
-                 ORIGIN+'/en/', approved=approved) +
+                 ORIGIN+'/en/', approved=approved, asset_hashes=asset_hashes) +
             f'''<body class="blog-page extended-page english-commentary-page" data-page="english-commentary">
 {chrome()}<main class="blog-shell"><h1>English commentary</h1>
 <aside class="notice">Public summaries of our secondary interpretation, not original reports. No charts or original document downloads.</aside>

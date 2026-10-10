@@ -3,12 +3,13 @@ import copy
 import json
 from pathlib import Path
 import tempfile
+import time
 import unittest
 from unittest import mock
 
 from build_portal_extended_locales import Memo
 from offline_translation import TranslationBudgetExceeded
-from portal_english_commentary import (POLICY, build, extract_editorial, freeze_editorial, make_source, put_source,
+from portal_english_commentary import (POLICY, build, extract_editorial, failure_code_counts, freeze_editorial, make_source, put_source,
                                       read_source, staging_probe, validate_source, main as english_main)
 from portal_extended_locales import ExpansionError, ORIGIN, digest, stable_bytes
 from portal_extended_r2 import R2IntegrityError, R2PermissionError, R2Store
@@ -149,6 +150,62 @@ class EnglishEditorialTests(unittest.TestCase):
             self.assertEqual(result['completed_page_count'], 0); self.assertEqual(result['status'], 'incomplete-candidate')
             self.assertFalse((directory/'private').exists())
             self.assertNotIn(translated, json.dumps(result))
+
+    def test_editorial_rejection_never_poison_checkpoint_or_block_valid_resume(self):
+        for bad_text in ['In our view, watch orders 订单 and deliveries.',
+                         'Read https://example.invalid/original', 'Original report: private source']:
+            with self.subTest(bad_text=bad_text):
+                directory = self.root/digest(bad_text.encode()); checkpoint = directory.with_suffix('.json')
+                bad = SyntheticTranslator(); original = bad.translate
+                bad.translate = lambda value, **kwargs: original(value, **kwargs) if value == TITLE else bad_text
+                bad.discard_translation = mock.Mock()
+                first = build(self.source, directory/'first', checkpoint, bad)
+                self.assertEqual(first['completed_page_count'], 0)
+                self.assertEqual(failure_code_counts(first['failures']),
+                                 {'english-language-validation' if '订单' in bad_text else 'english-asset-validation': 1})
+                self.assertFalse((directory/'first'/'private').exists())
+                self.assertNotIn(bad_text, [row['text'] for row in json.loads(checkpoint.read_text())['rows'].values()])
+                bad.discard_translation.assert_called_once_with(COMMENT, 'en', 'zh', markdown=False)
+                good = SyntheticTranslator()
+                second = build(self.source, directory/'second', checkpoint, good)
+                self.assertEqual(second['status'], 'complete-candidate')
+                self.assertEqual(good.calls, [COMMENT]); self.assertEqual(second['cache_hits'], 1)
+
+    def test_legacy_editorial_bad_checkpoint_and_seed_discard_only_invalid_unit(self):
+        bad_text = 'In our view, watch orders 订单 and deliveries.'
+        for seeded in (False, True):
+            with self.subTest(seeded=seeded):
+                directory = self.root/str(seeded); directory.mkdir()
+                legacy = directory/'legacy.json'
+                old = SyntheticTranslator(); original = old.translate
+                old.translate = lambda value, **kwargs: original(value, **kwargs) if value == TITLE else bad_text
+                # Materialize an authentic pre-fix memo row that passes the
+                # generic language contract, but violates English policy.
+                memo = Memo(legacy, 'en', old, time.monotonic()+30, source_generation=self.source['generation'])
+                memo.get(TITLE); memo.get(COMMENT)
+                translator = SyntheticTranslator(); valid_translate = translator.translate
+                adapter_cache = {COMMENT: bad_text}; discarded = []
+                def translate(value, **kwargs):
+                    return adapter_cache[value] if value in adapter_cache else valid_translate(value, **kwargs)
+                def discard(value, target, source, **kwargs):
+                    discarded.append(value); adapter_cache.pop(value, None)
+                translator.translate = translate; translator.discard_translation = discard
+                checkpoint = directory/'fresh.json' if seeded else legacy
+                result = build(self.source, directory/'out', checkpoint, translator,
+                               seed_checkpoint=legacy if seeded else None)
+                self.assertEqual(result['status'], 'complete-candidate')
+                self.assertEqual(discarded, [COMMENT]); self.assertEqual(translator.calls, [COMMENT])
+                self.assertEqual(result['cache_hits'], 1)
+                self.assertNotIn(bad_text, [row['text'] for row in json.loads(checkpoint.read_text())['rows'].values()])
+
+    def test_oversized_english_title_is_rejected_before_cache_write(self):
+        translator = SyntheticTranslator(); original = translator.translate
+        translator.translate = lambda value, **kwargs: 'Editorial observation ' * 30 if value == TITLE else original(value, **kwargs)
+        result = build(self.source, self.root/'out', self.root/'memo.json', translator)
+        self.assertEqual(result['status'], 'incomplete-candidate')
+        self.assertEqual(failure_code_counts(result['failures']), {'english-size-validation': 1})
+        self.assertEqual(json.loads((self.root/'memo.json').read_text())['rows'], {})
+        self.assertFalse((self.root/'out'/'private').exists())
 
     def test_timeout_materializes_checkpoint_and_cannot_be_complete(self):
         fake = SyntheticTranslator(); fake.translate = mock.Mock(side_effect=TranslationBudgetExceeded('budget'))

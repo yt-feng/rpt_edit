@@ -157,6 +157,15 @@ def quantities(text: str, *, bare_months: bool = False) -> Counter:
         except ValueError:
             return ("invalid_date", str((year, month, day)))
 
+    # A named shopping event can contain digits only after translation:
+    # 双十一 -> Double 11. Preserve the event as a counted fact rather than
+    # discarding its numeral, so omissions, replacements and extra numbers
+    # remain detectable. Bare 11 and November 11 are not event aliases.
+    take(r"(?<![A-Za-z0-9_])(?:[双雙](?:十一|11)(?![零〇一二两三四五六七八九十百千万亿\d])"
+         r"|Double[\s-]*(?:Eleven|11)"
+         r"|Singles['’]?\s+Day)(?![A-Za-z0-9_]|[.,]\d|\s*[%％])",
+         lambda _m: ("shopping_event", "double_eleven"))
+
     take(r"(?<!\d)(\d{4})\s*(?:[-/]\s*|年\s*|년\s*)(\d{1,2})\s*(?:[-/]\s*|月\s*|월\s*)(\d{1,2})\s*(?:日|일)?(?!\d)",
          lambda m: day_key(m[1], m[2], m[3]))
     take(rf"\b({MONTH})\s+(\d{{1,2}})(?:st|nd|rd|th)?\s*,?\s*(\d{{4}})\b",

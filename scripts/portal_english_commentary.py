@@ -328,7 +328,21 @@ PUBLIC_FAILURE_CODES = frozenset({
     'table-structure-validation', 'untranslated-source-validation', 'chinese-residue-validation',
     'target-script-validation', 'placeholder-validation', 'empty-translation-validation',
     'translation-size-validation', 'expansion-validation', 'translation-error',
+    'english-language-validation', 'english-asset-validation', 'english-size-validation',
 })
+
+
+def english_failure_code(error):
+    if isinstance(error, ExpansionError):
+        code = {
+            'Non-English source fallback is forbidden': 'english-language-validation',
+            'Embedded/original asset reference is forbidden': 'english-asset-validation',
+            'Original report field is forbidden': 'english-asset-validation',
+            'Empty/oversized English editorial text': 'english-size-validation',
+        }.get(str(error))
+        if code:
+            return code
+    return safe_failure_code(error)
 
 
 def failure_code_counts(failures):
@@ -362,9 +376,13 @@ def build(source, output, checkpoint, translator, *, seconds=14400, seed_checkpo
     items, failures, timeout = [], [], False
     for doc in docs:
         try:
-            title = text(memo.get(doc['title'], extended_source_language(doc['title'])), 500, english=True)
-            blocks = [{'tag': row['tag'], 'text': text(memo.get(row['text'], extended_source_language(row['text'])),
-                                                      english=True)} for row in doc['blocks']]
+            # Enforce the editorial-only contract before saving or reusing a
+            # memo row. The general locale validator permits some legal-name
+            # source residue which cannot appear in English commentary.
+            title = memo.get(doc['title'], extended_source_language(doc['title']),
+                             validate_result=lambda value: text(value, 500, english=True))
+            blocks = [{'tag': row['tag'], 'text': memo.get(row['text'], extended_source_language(row['text']),
+                      validate_result=lambda value: text(value, english=True))} for row in doc['blocks']]
             body = {'schema_version': 1, 'policy': POLICY, 'locale': 'en', 'content_kind': 'secondary-commentary',
                     'id': doc['id'], 'title': title, 'preview': preview_text(blocks),
                     'datePublished': doc['datePublished'], 'editorial_sha256': doc['editorial_sha256'], 'blocks': blocks}
@@ -377,7 +395,7 @@ def build(source, output, checkpoint, translator, *, seconds=14400, seed_checkpo
         except TranslationBudgetExceeded:
             timeout = True; break
         except Exception as error:
-            failures.append({'id': doc['id'], 'code': safe_failure_code(error)})
+            failures.append({'id': doc['id'], 'code': english_failure_code(error)})
     memo.save()
     # Public candidate files contain only projected previews, never private body
     # JSON. Even complete candidates remain noindex until normal approval.

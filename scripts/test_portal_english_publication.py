@@ -40,6 +40,10 @@ class EnglishPublicationTests(unittest.TestCase):
         (root/'robots.txt').write_text('User-agent: GPTBot\nDisallow: /\nUser-agent: *\nAllow: /\n')
         (root/'sitemap.xml').write_text(f'<sitemapindex xmlns="{NS}"><sitemap><loc>{ORIGIN}/sitemap-pages.xml</loc></sitemap>'
                                        f'<sitemap><loc>{ORIGIN}/sitemap-extended-fr.xml</loc></sitemap></sitemapindex>')
+        assets = root/'assets'; assets.mkdir()
+        source = Path(__file__).resolve().parents[1]/'portal_suite/site_src/assets'
+        for name in ('styles.css', 'blog.css', 'app.js'):
+            (assets/name).write_bytes((source/name).read_bytes())
         return root
 
     def candidate(self, day=DAY):
@@ -206,6 +210,36 @@ class EnglishPublicationTests(unittest.TestCase):
         metadata['public_files'][f'en/blog/{item["id"]}.html'] = {'sha256': digest(target.read_bytes()), 'bytes': target.stat().st_size}
         (self.root/ASSEMBLY).write_bytes(stable_bytes(metadata)); repinned = self.pin('b', 'b'*32)
         with self.assertRaises(ExpansionError): verify_prepared_ledger(self.store, self.original, repinned, self.base/'bad-verified')
+
+    def test_deployment_materialized_assets_survive_clean_reviewer_checkout(self):
+        import portal_english_ui as ui
+        batch = self.candidate()
+        app = self.root/'assets/app.js'
+        app.write_bytes(app.read_bytes()+b'\n/* deployment profile fixture */\n')
+        result = self.assemble([batch]); identity = self.pin()
+        self.assertIn(f'/assets/app.js?v={digest(app.read_bytes())[:12]}'.encode(),
+                      (self.root/'en/index.html').read_bytes())
+        # A reviewer must need no materialized local assets at all. All seven
+        # version tokens come from the checksum-bound uploaded static tree.
+        with mock.patch.object(ui, 'ROOT', self.base/'absent-review-checkout'), \
+             mock.patch.object(ui, 'ASSETS', self.base/'absent-review-assets'):
+            verified = verify_prepared_ledger(self.store, self.original, identity, self.base/'clean-review')
+        self.assertEqual(verified['ledger_sha256'], result['ledger_sha256'])
+
+    def test_shared_asset_change_after_rendering_does_not_revalidate_old_preview(self):
+        batch = self.candidate(); self.assemble([batch])
+        app = self.root/'assets/app.js'
+        app.write_bytes(app.read_bytes()+b'\n/* unexpected later mutation */\n')
+        identity = self.pin()
+        with self.assertRaisesRegex(ExpansionError, 'preview-only projection'):
+            verify_prepared_ledger(self.store, self.original, identity, self.base/'wrong-asset-review')
+
+    def test_missing_shared_asset_prevents_prepared_review(self):
+        batch = self.candidate(); self.assemble([batch])
+        (self.root/'assets/app.js').unlink()
+        identity = self.pin()
+        with self.assertRaisesRegex(ExpansionError, 'public asset is missing'):
+            verify_prepared_ledger(self.store, self.original, identity, self.base/'missing-asset-review')
 
     def test_batch_and_metadata_bounds_reject_original_or_unknown_routes(self):
         batch = self.candidate(); self.assemble([batch]); assembly = json.loads((self.root/ASSEMBLY).read_bytes())
