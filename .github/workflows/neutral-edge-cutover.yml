@@ -37,6 +37,11 @@ on:
           - release
           - month
         default: incremental
+      catalog_recovery_release:
+        description: "Optional immutable previously published release to restore missing report IDs"
+        required: false
+        type: string
+        default: ""
       extended_locales:
         description: "Explicit additional-locale approval set, for example fr or fr,pt; English is summary-only; empty keeps the current set"
         required: false
@@ -327,6 +332,7 @@ jobs:
           python3 -B scripts/test_check_deepseek_balance.py
           python3 -B scripts/test_deepl_locale_repair.py
           python3 -B scripts/test_translate_portal_titles.py
+          python3 -B scripts/test_restore_published_catalog.py
           python3 -B scripts/test_portal_discovery_quality.py
           python3 -B scripts/test_hymt_offline_translation.py
           python3 -B scripts/test_financial_quantity_integrity.py
@@ -626,6 +632,28 @@ jobs:
             --candidate portal_suite/site_src/assets/app.js \
             --output "$RUNNER_TEMP/chinese-source-performance.json"
 
+      - name: Inherit published report catalog before Dropbox refresh
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          R2_OBJECT_PREFIX: ${{ vars.R2_OBJECT_PREFIX || 'reports' }}
+          CATALOG_RECOVERY_RELEASE: ${{ inputs.catalog_recovery_release || '' }}
+        run: |
+          set -euo pipefail
+          restore_args=(restore
+            --catalog-path portal_suite/data/catalog.json
+            --previous-edge-state "$RUNNER_TEMP/previous-edge-state.json"
+            --previous-public-catalog "$RUNNER_TEMP/previous-public-catalog.json"
+            --output-manifest "$RUNNER_TEMP/catalog-inheritance.json"
+            --r2-prefix "$R2_OBJECT_PREFIX")
+          if [ -n "$CATALOG_RECOVERY_RELEASE" ]; then
+            test "$GITHUB_EVENT_NAME" = "workflow_dispatch"
+            restore_args+=(--recovery-release "$CATALOG_RECOVERY_RELEASE")
+          fi
+          python3 -B scripts/restore_published_catalog.py "${restore_args[@]}"
+
       - name: Refresh report catalog with additive PDF sync
         env:
           DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
@@ -814,6 +842,12 @@ jobs:
             --catalog portal_suite/data/catalog.json \
             --chart-output _neutral_site/data/chart_search_index.json
 
+
+      - name: Verify published report IDs survive the Chinese build
+        run: |
+          python3 -B scripts/restore_published_catalog.py validate \
+            --catalog-path _neutral_site/data/catalog.json \
+            --manifest "$RUNNER_TEMP/catalog-inheritance.json"
 
       - name: Snapshot protected Chinese release before locale build
         id: chinese_snapshot
@@ -1639,6 +1673,12 @@ jobs:
             --handoff "$ENGLISH_HANDOFF" --github-output "$GITHUB_OUTPUT" \
             --evidence-out "$RUNNER_TEMP/english-assembly-evidence.json"
 
+      - name: Verify catalog inheritance before publication
+        run: |
+          python3 -B scripts/restore_published_catalog.py validate \
+            --catalog-path _neutral_site/data/catalog.json \
+            --manifest "$RUNNER_TEMP/catalog-inheritance.json"
+
       - name: Detect meaningful public release changes
         id: release_delta
         if: steps.operation.outputs.multilingual_enabled != 'true' || steps.locale_build.outputs.ready == 'true'
@@ -2086,6 +2126,11 @@ jobs:
                 _release_validation/candidate/shadow-http-audit.json
             fi
           fi
+
+      - name: Preserve catalog inheritance acceptance receipt
+        if: steps.release_delta.outputs.changed == 'true' && (steps.operation.outputs.multilingual_enabled != 'true' || steps.locale_build.outputs.ready == 'true')
+        run: |
+          install -m 0600 "$RUNNER_TEMP/catalog-inheritance.json" _release_validation/candidate/catalog-inheritance.json
 
       - name: Upload release validation artifact
         if: steps.release_delta.outputs.changed == 'true' && (steps.operation.outputs.multilingual_enabled != 'true' || steps.locale_build.outputs.ready == 'true')

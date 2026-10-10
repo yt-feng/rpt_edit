@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'scripts/*extended*'
+      - 'scripts/*restore_published_catalog*'
       - 'scripts/*portal_candidate_replay*'
       - '.github/workflows/portal-candidate-replay-inspect.yml'
       - 'scripts/*english_commentary*'
@@ -38,6 +39,7 @@ on:
     branches: [main, codex/extended-locales-r2-20260924]
     paths:
       - 'scripts/*extended*'
+      - 'scripts/*restore_published_catalog*'
       - 'scripts/*portal_candidate_replay*'
       - '.github/workflows/portal-candidate-replay-inspect.yml'
       - 'scripts/*english_commentary*'
@@ -116,6 +118,7 @@ jobs:
           python -B scripts/test_probe_portal_english_unit.py
           python -B scripts/test_portal_english_publication.py
           python -B scripts/test_neutral_edge_cutover_workflow.py
+          python -B scripts/test_restore_published_catalog.py
           python -B scripts/build_portal_locale_resume_workflow.py --check
           python -B scripts/test_portal_locale_resume_workflow.py
           python -B scripts/test_resume_portal_locale_candidate.py

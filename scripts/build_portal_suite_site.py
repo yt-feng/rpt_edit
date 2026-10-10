@@ -940,12 +940,23 @@ def merge_history_catalog(
     stats["history_total"] = len(history_items)
 
     lookup = build_title_lookup(live_items)
+    live_ids = {str(item["id"]) for item in live_items}
+    seen_history_ids: set[str] = set()
     id_remap: dict[str, str] = {}
     added_items: list[dict[str, Any]] = []
     for item in history_items:
+        history_id = str(item["id"])
+        if history_id in seen_history_ids:
+            continue
+        seen_history_ids.add(history_id)
+        # Published catalogs already contain history rows. Identity takes
+        # precedence over ambiguous/date-stripped title matches on a refresh.
+        if history_id in live_ids:
+            id_remap[history_id] = history_id
+            continue
         live_id = match_report_id(str(item.get("title") or ""), lookup)
         if live_id:
-            id_remap[str(item["id"])] = live_id
+            id_remap[history_id] = live_id
         else:
             added_items.append(public_catalog_item(item))
     stats["history_deduped"] = len(id_remap)
