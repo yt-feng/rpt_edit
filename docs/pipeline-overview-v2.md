@@ -32,6 +32,9 @@ flowchart TD
   R -. "Actual recovery failure" .-> O["Actions OCR: all original pages and independent provenance"]
   O --> V
   V --> Q["Generate only missing recovered articles from full source text"]
+  OC["Retained OCR checkpoint plus exact original PDF artifact"] --> CR["Cache-only source reconstruction: original and recovery identities"]
+  CR --> CG["Verify complete source package and new private handoff readback"]
+  CG --> Q
   E --> F["Private R2: verified article handoff and durable receipts"]
   Q --> F
   F --> W["WeChat drafts: idempotent upload and exact draft/get readback"]
@@ -52,6 +55,26 @@ article, WeChat draft, Blog and configured translation consumers; it is not
 limited to Market Views PDF generation. Its article input is all hash-bound
 page text, never a summary substituted for the original source. MinerU and OCR
 keep distinct text, figure and cache identities.
+
+Historical OCR recovery has a separate main-only manual producer,
+[`recover-ocr-cache-sources.yml`](../.github/workflows/recover-ocr-cache-sources.yml).
+A cleaned-up temporary source handoff does not imply that the durable
+source-bound OCR checkpoint is absent. After exact presence inspection, the
+producer verifies pinned archive size/hash, the retained original PDF artifact
+and manifest, and all required cached source/model-prompt identities. It
+reconstructs the complete source package without OCR, MinerU or model calls;
+incomplete or mismatched cache contents stop this path.
+
+The receipt keeps the original Daily run/SHA and adds a separately authenticated
+recovery run/SHA, manifest/checkpoint identity and archive pins. The new package
+uses the `market-ocr-cache-recovery` private namespace, never the original Daily
+namespace. Consumers admit it only after the fixed producer's two source gates
+succeed. Rerunning that same GitHub run revalidates and reuses the existing
+package and exact receipt bytes, preserving generation/draft checkpoint
+identity. It does not grant another recovery run automatic reuse of a changed
+context. The downstream article workflow can then generate missing articles,
+verify drafts and publish Blog output; those stages retain their own acceptance
+receipts. See the [OCR cache recovery procedure](wechat-pipeline-recovery.md#restore-ocr-sources-after-the-temporary-handoff-expires).
 
 Source parsing, article generation, draft acceptance, Blog archival, public
 release and locale publication are separate acceptance boundaries. A successful
@@ -131,6 +154,10 @@ OCR-to-draft-to-Blog production acceptance, earlier missing source-date cohorts,
 and publication in every supported locale remain separate work. Source-bound
 OCR fixtures prove full-page consumption, provenance separation and rejection
 of incomplete/altered inputs; they do not replace a real OCR production receipt.
+For the 44-source 261007 cohort, inspection run `38047483613` confirmed durable
+checkpoint presence and absence of the original temporary handoff. The new
+cache-only recovery and its downstream article/draft/Blog path still require
+real production acceptance; presence alone does not prove cache completeness.
 Use exact original manifests and retained checkpoints to close those gaps,
 without resubmitting successful parses or duplicating accepted drafts.
 

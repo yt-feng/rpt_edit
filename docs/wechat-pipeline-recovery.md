@@ -146,6 +146,56 @@ acceptance. A verified absence reports `present=false`; a missing source
 artifact, mismatched manifest, permission error or transport failure stops the
 check and must not be treated as an absent cache or an instruction to regenerate.
 
+### Restore OCR sources after the temporary handoff expires
+
+Use **Recover historical OCR sources from verified cache only**
+([`recover-ocr-cache-sources.yml`](../.github/workflows/recover-ocr-cache-sources.yml))
+on `main` when the exact durable checkpoint is present but the original complete
+source handoff is absent. The recovery also requires the original
+`selected-macro-pdfs-<source_run_id>` artifact, including its selected manifest
+and every original PDF. The lightweight manifest alone cannot supply those PDFs.
+
+Pass the four exact source inputs from the inspection above, plus
+`archive_sha256` and `archive_size_bytes` from that checkpoint's inspection
+receipt. The producer verifies the downloaded archive bytes against both pins;
+the inspector's stored metadata is not sufficient. It verifies original PDF
+hashes, manifest bindings and complete cached page/chunk/model-prompt identities
+before rebuilding the source package. Source reconstruction performs no OCR,
+MinerU or model calls. Missing, corrupt, mismatched or unresolved cache entries
+stop recovery instead of silently enabling a new processing request.
+
+The receipt retains the original Daily `source_run_id` and execution SHA. Its
+separate `cache_recovery` envelope binds the actual recovery run/SHA, fixed
+workflow, original manifest hash, derived checkpoint identity and pinned archive
+size/hash. The package is written only to
+`_private-workflow-handoff/market-ocr-cache-recovery/<recovery_run_id>/<date_folder>/shard_0.tar.gz`.
+It does not replace the old Daily namespace or claim to have run as that Daily.
+Consumers require the exact main/manual producer and both successful source
+reconstruction and archive-readback gates before reading this new handoff.
+Ordinary same-run Daily OCR receipts keep their existing path and contract.
+
+Rerun the same GitHub recovery run to resume: an existing complete package is
+downloaded, revalidated and reused with its receipt bytes unchanged; archival
+readback verifies it instead of overwriting it. This preserves the generation
+context and accepted-draft checkpoints. A different recovery run or changed
+receipt cannot inherit an earlier context merely because the date/count match.
+
+`recover_articles=true` (the default) then invokes the existing article recovery
+workflow with the original run and the new handoff run as separate inputs.
+That later stage may generate missing articles from verified full page text,
+then performs WeChat draft readback, Blog archival and public-body acceptance.
+The source producer's zero-call guarantee does not mean article generation is
+already complete. Use `recover_articles=false` for source reconstruction only.
+
+Inspection run `38047483613` found the 261007 durable checkpoint present at
+2,397,894 bytes, with stored SHA-256
+`3a3cf282b6ea83f1b65368c364be027b3daa808c99a2d1fc31def54b289c9f73`,
+and the original temporary source handoff absent. This establishes the reason
+for the recovery path, not complete cache contents or delivery. Offline
+consumer regressions cover full OCR page/figure use, dual identity rejection
+and unchanged-package replay; the real 44-source reconstruction and subsequent
+article, draft and Blog acceptance remain pending.
+
 ## Acceptance ledger
 
 Keep these receipts separate: original manifest, source extraction, generated
