@@ -358,6 +358,19 @@ def main():
         original_jobs, original_run = original_response['jobs'], api(original_path)
     producer_is_valid(receipt, api(producer_path), jobs['jobs'], repository, admitted,
                       origin=origin, original_run=original_run, original_jobs=original_jobs)
+    from portal_extended_handoff import source_repair_proofs, source_repair_completions
+    from portal_extended_french_repair import verify_repair_producer
+    repairs = source_repair_proofs(store, receipt)
+    completions = source_repair_completions(store, receipt, repairs)
+    for locale, proof in repairs.items():
+        completion = completions.get(locale)
+        repaired_by = (completion or proof)['producer']
+        repair_path = f'repos/{repository}/actions/runs/{repaired_by["run_id"]}/attempts/{repaired_by["attempt"]}'
+        response = api(repair_path+'/jobs?per_page=100')
+        require(type(response.get('total_count')) is int and 0 < response['total_count'] <= 100
+                and len(response.get('jobs', [])) == response['total_count'],
+                'French repair producer job inventory is incomplete')
+        verify_repair_producer(proof, api(repair_path), response['jobs'], repository, completion=completion)
     for locale, checksum in receipt.get('continuation_checkpoints', {}).items():
         require(bool(checkpoint_evidence(store, locale, receipt['batch']['generation'], checksum)),
                 'Continuation checkpoint has no resolved units')

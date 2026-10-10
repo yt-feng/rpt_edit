@@ -23,7 +23,7 @@
 ## 实际队列与失败证据
 
 - 中文目录恢复生产 `38036944110` 后，`source admission 38043173198` 成功。新 R2 run `38043249029` 取证时为 pending。
-- 旧矩阵持有者 `38030674044` 的总状态显示 queued，但 job 明细已经完成 6/34 个 locale job，其他语言仍运行/排队。它不是“CPU 完全未启动”，新 workflow 也不能绕过这个互斥组。
+- 旧矩阵持有者 `38030674044` 的总状态显示 queued，但 job 明细后续取证已经完成 10/34 个 locale job，其他语言仍运行/排队。它不是“CPU 完全未启动”，新 workflow 也不能绕过这个互斥组。
 - 该 source 摘要中，33 个非英文目标各有 83 个 pending，选 24 个、余 59 个；英文有 81 个 pending，选 24 个。数字是各自语言队列，不应合并成不重复的源文章数量。
 - `英文 job 114151900663` 完成后失败：22/24 个页面完成，62 次调用、0 次 Memo 命中；错误各为 `expansion-validation` 1、`offline-quantity-validation` 1，没有预算耗尽。
 - `法语 job 114151900697` 的候选为 24/24，但 `translation_complete=false`：100 个原文回退单元、104 次使用，原因均为 `offline-quantity-validation`；315 次调用、403 次缓存命中。该候选可恢复和审核，不代表全部内容已译成法语。
@@ -62,6 +62,21 @@
 数量修复由共用 financial quantity validator 及其合成回归覆盖。该英文诊断不能推断法语全部 100 个回退都属于同一原因；各语种还需按固定源、校验错误及恢复后的结果分别核对。恢复使用当前合法 checkpoint，不清空所有合格译文，不重新抓取或改写来源 generation。
 
 法语另有两类已离线复现的格式误判：合法千分组 `1 234,5` 被拆成两个数字，以及 `troisième trimestre de 2026` 未识别为带年份的第三季度。共用数量校验现在仅在显式 `fr` 一侧、Unicode 空格折叠之前识别完整合法分组（普通空格、不换行空格或窄不换行空格；首组 1–3 位、后组严格三位、可选逗号小数），并识别四个固定法语季度序数及四位年份或无年份表达。坏分组、额外数字、金额/币种/比例、季度或年份变化继续拒绝；默认及其它语言语法、既有“双十一”契约保持不变。合成正反向与变异回归已经通过，但这不证明真实法语 100 项回退都由这两类造成，也不代表对应生产译文已经恢复或上线。
+
+## 法语已完成候选的精确回退恢复
+
+`fr-quantity-fallback-v1` 是独立于原有 legacy basis-point `checkpoint-repair` 的窄策略，校验修订固定为 `fr-space-grouping-quarter-v1`。普通已完成候选仍不会自动重试全部 fallback；新入口也不清空全局 Memo、不更改其它 locale、不重开历史 admission。原 producer 必须已经结束，原 source 与 `locale (fr)` job 成功；同一全局串行队列及 `max-parallel: 2` 保持不变。
+
+1. 在现有 `portal-extended-locales-r2.yml` 的主线人工入口选择 `source-fallback-inspect`，`locales=fr`，固定 `source_generation`；`continuation_evidence` 提供策略、修订、原 producer 的 `run_id/attempt/sha`、原 checkpoint SHA、candidate ID、manifest SHA 和 `units: []`。只读步骤可从校验过的 immutable origin 补齐 `source_sha256/origin_sha256`。它重新验证原页、完整缓存覆盖和原候选字节，仅输出 eligible unit hashes、完整 request、计数；模型调用与 R2 写入均为零，locale 与 publication job 不运行。
+2. 将只读结果中的完整 request 固定下来，把 `units` 换成 1..20 个排序且不重复的明确 eligible hashes，使用同 workflow 的 `checkpoint-repair`。所有选中项必须是当前精确旧 checkpoint 内的 `offline-quantity-validation` 源文回退。未选中的译文/回退逐项保留；模型只处理选中单元，仍使用完整质量门，每个单元只允许一个模型尝试。
+3. 私有 durable ledger 的身份包含模型、checkpoint 版本、`fr`、单元 hash 和固定修订，独立于 run、generation 和请求包装。原子 started claim 必须写入并读回后才允许模型调用；accepted 或 terminal outcome 不可改写。已启动但结果未知时阻止重开，换 run 或重包装 request 不能重复付出模型工作。
+4. 已接受的 exact rows 合入原固定 checkpoint，使用零模型缓存重放证明原完整页面集合不变、其它单元保持原字节。页面没有改变时保留原 candidate/manifest/checkpoint，不覆盖相同 candidate ID。页面改变时生成新不可变候选，将 registered outcome 从 complete 精确替换到 complete；原 source/origin/continuation 计数与其它语言、其它完成页保持。最新增量 Memo 即使已前进到另一 generation，也只合并被接受的精确 keys，不倒退指针、不覆盖较新冲突单元。
+5. immutable proof 和候选先持久化，再写原 generation checkpoint、最新 Memo、completed receipts 和 queue。manifest 已写而 ready 未写的中断可以按相同字节补齐；prepared tail 中断则从原 proof 重新完整验证后恢复。若新 run 仅完成这个尾部，会生成绑定原 prepared proof 的独立 completion receipt；审核必须验证该新主线人工 run 的 source 成功、locale 明确 skipped。普通路径仍要求原 repair source 与法语 locale 成功，不把失败 locale 冒充成功。
+6. handoff 绑定修复 proof、原 origin、新 candidate 和精确 checkpoint；如有 completion，也绑定其独立身份。活动批准 ledger 原序保留，再追加新全页候选。正常 Environment 审核、未激活目录校验、整站切换和真实 URL 验收均保留。
+
+本地回归覆盖 restore→build→persist、manifest/ready 中断、prepared tail 跨 run 恢复、连续两批修复、较新 Memo/页面冲突、无页面变化、handoff 精确身份及保留原批准 ledger 的零模型 compose。这些是恢复机制验收，真实旧法语 100 项的重新翻译、回退下降和生产发布仍待验收；只读旧响应诊断不可用，也不能声称这 100 项都由空格或季度格式引起。
+
+截至上述 10/34 矩阵快照，另外已完成的非英文候选也均为 24/24 页面且 `translation_complete=false`：`pt` 109、`es` 100、`tr` 127、`ru` 113、`th` 124、`it` 118、`de` 116、`vi` 114 个源文回退单元。除 `th` 同时有数量与目标文字校验外，其余已列候选仅报告数量校验；未保存的拒绝响应不能由错误码推断具体原因。法语窄策略不自动适用于这些语言。已发布 37 个语言/变体的路由证据仍不等于新日期内容全部翻译完成。
 
 ## 已完成的回归与待完成的云端验收
 

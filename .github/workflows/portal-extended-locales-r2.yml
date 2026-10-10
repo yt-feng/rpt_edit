@@ -17,7 +17,7 @@ on:
         description: "R2 round-trip, daily candidate, or read-only replay of an exact failed generation"
         required: true
         type: choice
-        options: [roundtrip, candidate, recovery-test, publication-resume, publication-check, english-resume, checkpoint-repair]
+        options: [roundtrip, candidate, recovery-test, publication-resume, publication-check, english-resume, checkpoint-repair, source-fallback-inspect]
         default: roundtrip
       locales:
         description: "all-supported = 33 non-English locales, or comma-separated subset; English is summary/commentary blog only, no originals/charts; up to 24 new detail pages"
@@ -30,7 +30,7 @@ on:
         type: string
         default: ""
       continuation_evidence:
-        description: "Publication-resume exact producer/proofs; checkpoint-repair exact intent and sorted rejected unit hashes; never resets registered work"
+        description: "Publication-resume exact producer/proofs; checkpoint-repair exact legacy intent or French fallback policy and sorted unit hashes; source-fallback-inspect reads French eligibility only"
         required: false
         type: string
         default: ""
@@ -156,7 +156,7 @@ jobs:
       actions: read
     if: >-
       ${{
-        inputs.operation == 'candidate' || inputs.operation == 'recovery-test' || inputs.operation == 'publication-resume' || inputs.operation == 'english-resume' || inputs.operation == 'checkpoint-repair' ||
+        inputs.operation == 'candidate' || inputs.operation == 'recovery-test' || inputs.operation == 'publication-resume' || inputs.operation == 'english-resume' || inputs.operation == 'checkpoint-repair' || inputs.operation == 'source-fallback-inspect' ||
         (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' &&
          github.event.workflow_run.head_branch == github.event.repository.default_branch &&
          github.event.workflow_run.head_repository.full_name == github.repository) ||
@@ -200,6 +200,12 @@ jobs:
           KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
         run: |
           set -euo pipefail
+          if [ "$REQUESTED_OPERATION" = "source-fallback-inspect" ]; then
+            python3 -B scripts/repair_portal_extended_checkpoint.py inspect \
+              --generation "$REQUESTED_SOURCE_GENERATION" --locale "$REQUESTED_LOCALES" \
+              --request "$CONTINUATION_EVIDENCE" --github-output "$GITHUB_OUTPUT"
+            exit 0
+          fi
           if [ "$REQUESTED_OPERATION" = "checkpoint-repair" ]; then
             python3 -B scripts/repair_portal_extended_checkpoint.py prepare \
               --generation "$REQUESTED_SOURCE_GENERATION" --locale "$REQUESTED_LOCALES" \
