@@ -4,6 +4,7 @@ from __future__ import annotations
 import re
 
 import wechat_title_optimizer as titles
+from title_source_claim_support import boundary_observation, contextual_numeric_support, source_context
 from inspect_recovered_article_generation import TITLE_REJECTION_REASONS
 
 POLICY = 'saved-title-evidence-diagnostic-v1'
@@ -53,6 +54,7 @@ def observe_saved_title_gates(status, body, source_markdown, batches, decision):
         raise ValueError('saved_title_diagnostic_input_invalid')
     excerpt = title_excerpt(body)
     required = titles.required_filename_terms(source, institution)
+    original_context = source_context(source, source_markdown)
     # Keep the selector's newest-response-first order; observing another evidence
     # window does not select a title or replace the decision returned to callers.
     entries = [(response + 1, index + 1, raw) for response in reversed(range(len(batches)))
@@ -90,6 +92,8 @@ def observe_saved_title_gates(status, body, source_markdown, batches, decision):
         clean_missing = set(titles.missing_required_filename_terms(cleaned, required))
         raw_numbers, full_numbers, clean_numbers = (titles._numeric_title_tokens(value) for value in (raw, full, cleaned))
         hooks = {name: hook_support(finalized, faithful, source, value) for name, value in evidence.items()}
+        missing_numbers = (titles._numeric_title_tokens(finalized) - titles._numeric_title_tokens(faithful)
+            - titles._numeric_title_tokens(f'{titles.strip_source_filename_noise(source)}\n{excerpt}'))
         rows.append({'response_ordinal': response, 'candidate_ordinal': ordinal,
             'raw_character_count': len(raw), 'full_clean_character_count': len(full),
             'clean_character_count': len(cleaned), 'length_limit_changed_candidate': full != cleaned,
@@ -105,6 +109,10 @@ def observe_saved_title_gates(status, body, source_markdown, batches, decision):
             'normalization_removed_numeric_token_count': len(raw_numbers - full_numbers),
             'length_limit_removed_numeric_token_count': len(full_numbers - clean_numbers),
             'raw_to_clean_removed_numeric_token_count': len(raw_numbers - clean_numbers),
+            'normalization_quantity_integrity': boundary_observation(raw, full),
+            'length_limit_quantity_integrity': boundary_observation(full, cleaned),
+            'original_source_context_support': contextual_numeric_support(
+                finalized, missing_numbers, source, required, original_context),
             'base_valid_after_finalize': base_valid(finalized),
             'is_selected_anchor': finalized == anchor,
             'meets_existing_anchor_coverage': titles.filename_anchor_coverage(finalized, anchor) >= (0.62 if required else 0.72),

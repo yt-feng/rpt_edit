@@ -226,7 +226,7 @@ def load_sources(source_dir, source_kind, expected_reports, date_folder, *, sour
 
 def generation_contract(args):
     files = ("pdf_to_xhs_batch.py", "wechat_editorial_binding.py", "wechat_article_quality.py",
-             "wechat_title_optimizer.py", "sensitive_content_guard.py", "institution_names.py",
+             "wechat_title_optimizer.py", "title_source_claim_support.py", "sensitive_content_guard.py", "institution_names.py",
              "article_generation_progress.py", "legacy_article_title_resume.py")
     value = {"files": {name: digest((Path(__file__).parent / name).read_bytes()) for name in files},
         "prompt_sha256": digest(Path(args.wechat_prompt_template).read_bytes()),

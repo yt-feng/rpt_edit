@@ -11,6 +11,8 @@ import json
 import re
 from typing import Any
 
+from title_source_claim_support import boundary_observation, contextual_numeric_support, safe_prefix_end
+
 from sensitive_content_guard import (
     neutralize_wechat_title,
     sanitize_wechat_stock_language,
@@ -174,7 +176,7 @@ CONCRETE_TITLE_SIGNAL_RE = re.compile(
 TITLE_DANGLING_SUFFIX_RE = re.compile(
     r"(?:[-—，,：:]\s*(?:关键|核心|以及|和|与|但|而|而是|不是|的|为|是)|"
     r"(?:以及|因为|如果|但是|而是|不是|显示|指出|包括|对于|通过|需要|"
-    r"正在|成为))$"
+    r"正在|成为|增至|降至|升至|跌至|达到|约为|(?:收入|营收|产能|出货|交付|增速)(?:约|为|达)))$"
 )
 LISTING_SUFFIX_RE = re.compile(r"(?:[A-Z]{1,8}|\d{3,6})\.[A-Z]{1,3}(?![A-Za-z])", re.I)
 LONG_UNTRANSLATED_ENGLISH_RE = re.compile(r"[A-Za-z]{10,}")
@@ -702,13 +704,20 @@ def truncate_chars(text: str, max_chars: int) -> str:
     min_chars = min(18, max(8, max_chars // 2))
     candidates: list[str] = []
     for match in re.finditer(r"[，,；;。！？!?]", text):
-        candidate = text[: match.start()].strip("，,；;：: ")
+        if safe_prefix_end(text, match.start() + 1) <= match.start():
+            continue
+        candidate = text[: safe_prefix_end(text, match.start())].strip("，,；;：: ")
         if min_chars <= len(candidate) <= max_chars:
             candidates.append(candidate)
     if candidates:
         return candidates[-1]
 
-    cut = text[:max_chars].rstrip("，,；;：: ")
+    safe_end = safe_prefix_end(text, max_chars)
+    cut = text[:safe_end].rstrip("，,；;：: ")
+    if safe_end < max_chars or re.match(r'[($€¥+−\d]', text[max_chars:max_chars+1]):
+        # Keep the remaining introducer visible to the existing quality gate;
+        # e.g. '达到' must not become the deceptively complete suffix '达'.
+        return cut
     next_char = text[max_chars : max_chars + 1]
     if next_char and re.search(r"[A-Za-z]", next_char):
         cut = re.sub(r"[A-Za-z]{1,8}$", "", cut).rstrip("，,；;：: ")
@@ -876,7 +885,9 @@ def fit_filename_title(text: str, max_chars: int) -> str:
         return cleaned
     boundaries: list[str] = []
     for match in re.finditer(r"[-，,；;。！？!?]", cleaned):
-        candidate = cleaned[: match.start()].strip(" -，,；;。！？!?")
+        if safe_prefix_end(cleaned, match.start() + 1) <= match.start():
+            continue
+        candidate = cleaned[: safe_prefix_end(cleaned, match.start())].strip(" -，,；;。！？!?")
         if 10 <= len(candidate) <= max_chars:
             boundaries.append(candidate)
     if boundaries:
@@ -1237,10 +1248,13 @@ def filename_title_additions_are_supported(
     anchor: str,
     source_filename: str,
     evidence_text: str,
+    *, source_context=None, required_terms=(),
 ) -> bool:
     evidence = f"{strip_source_filename_noise(source_filename)}\n{evidence_text}"
     added_numbers = _numeric_title_tokens(candidate) - _numeric_title_tokens(anchor)
-    if not added_numbers.issubset(_numeric_title_tokens(evidence)):
+    missing_numbers = added_numbers - _numeric_title_tokens(evidence)
+    if missing_numbers and not contextual_numeric_support(
+        candidate, missing_numbers, source_filename, required_terms, source_context)["supported"]:
         return False
     added_names = [term for term in BIG_NAME_TERMS if term in candidate and term not in anchor]
     if not all(term.lower() in evidence.lower() for term in added_names):
@@ -1264,6 +1278,7 @@ def decide_filename_anchored_title(
     institution_name: str = "",
     max_chars: int = 35,
     evidence_text: str = "",
+    *, source_context=None,
 ) -> tuple[str, dict[str, Any]]:
     """Select a title and return an auditable record of every deterministic gate."""
     institution_name = canonicalize_institution_title_name(institution_name)
@@ -1289,6 +1304,11 @@ def decide_filename_anchored_title(
         cleaned = finalize_filename_wechat_title(raw, source_filename, institution_name, max_chars=max_chars)
         if cleaned and cleaned not in generated_pool:
             generated_pool.append(cleaned)
+    # A cleaner must never create a different numeric claim. This also rejects
+    # malformed pre-existing raw-to-clean normalization, not only new cuts.
+    numeric_invalid = {finalize_filename_wechat_title(raw, source_filename, institution_name, max_chars=max_chars)
+        for raw in candidates if not boundary_observation(raw,
+            clean_filename_wechat_title(raw, institution_name, max_chars=max_chars))["preserves_quantity_atoms"]}
     pool = list(generated_pool)
     if fallback and fallback not in pool:
         pool.append(fallback)
@@ -1299,6 +1319,8 @@ def decide_filename_anchored_title(
         if missing_terms:
             reasons.append("missing_required_terms=" + ",".join(missing_terms))
         reasons.extend(title_quality_issues(candidate, institution_name, source_filename))
+        if candidate in numeric_invalid:
+            reasons.append("malformed_numeric_range")
         return reasons
 
     valid_generated = [candidate for candidate in generated_pool if not base_reasons(candidate)]
@@ -1350,7 +1372,8 @@ def decide_filename_anchored_title(
                 reasons.append(f"anchor_coverage={coverage:.2f}")
             if not preserves_each_segment(candidate):
                 reasons.append("missing_anchor_segment")
-        if not filename_title_additions_are_supported(candidate, faithful, source_filename, evidence_text):
+        if not filename_title_additions_are_supported(candidate, faithful, source_filename, evidence_text,
+                source_context=source_context, required_terms=required_terms):
             reasons.append("unsupported_hook_addition")
         if reasons:
             rejected.append({"title": candidate, "reasons": reasons})

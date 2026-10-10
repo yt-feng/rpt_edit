@@ -9,8 +9,13 @@ on:
       - scripts/saved_article_title_diagnostics.py
       - scripts/test_saved_article_title_diagnostics.py
       - scripts/wechat_title_optimizer.py
+      - scripts/title_source_claim_support.py
+      - scripts/test_title_source_claim_support.py
+      - scripts/pdf_to_xhs_batch.py
+      - scripts/recover_report_articles.py
       - docs/saved-article-title-revalidation.md
       - docs/saved-article-title-evidence-diagnostics.md
+      - docs/title-original-source-claims.md
   workflow_dispatch:
     inputs:
       mode:
@@ -35,6 +40,7 @@ jobs:
           python-version: '3.11'
       - run: python -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF reportlab PyYAML
       - run: |
+          python -B scripts/test_title_source_claim_support.py
           python -B scripts/test_saved_article_title_diagnostics.py
           python -B scripts/test_revalidate_saved_article_titles.py
           python -B scripts/test_wechat_filename_titles.py

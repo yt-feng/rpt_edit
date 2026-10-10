@@ -848,9 +848,11 @@ def wechat_title_from_filename(
     wechat_article: str,
     institution_name: str,
     args: argparse.Namespace,
-    *, request=None, previous_decision=None,
+    *, request=None, previous_decision=None, source_text=None,
 ) -> tuple[str, dict[str, Any]]:
     from article_generation_progress import ProgressError
+    from title_source_claim_support import source_context
+    context = source_context(source_filename, source_text)
     request = request or call_deepseek
     if not getattr(args, "wechat_title_refine", True):
         return decide_filename_anchored_title([], source_filename, institution_name)
@@ -879,7 +881,7 @@ def wechat_title_from_filename(
         candidates,
         source_filename,
         institution_name,
-        evidence_text=article_excerpt,
+        evidence_text=article_excerpt, source_context=context,
     )
     decision["repair_attempted"] = False
     if not decision.get("needs_model_repair"):
@@ -908,7 +910,7 @@ def wechat_title_from_filename(
             [*repair_candidates, *candidates],
             source_filename,
             institution_name,
-            evidence_text=article_excerpt,
+            evidence_text=article_excerpt, source_context=context,
         )
         repaired_decision["repair_attempted"] = True
         repaired_decision["initial_selection"] = {
@@ -930,7 +932,7 @@ def wechat_title_from_filename(
                 extra = extract_title_candidates(extra_raw)
                 repair_candidates = [*extra, *repair_candidates]
                 repaired, repaired_decision = decide_filename_anchored_title([*repair_candidates,*candidates],
-                    source_filename,institution_name,evidence_text=article_excerpt)
+                    source_filename,institution_name,evidence_text=article_excerpt,source_context=context)
                 repaired_decision.update(repair_attempted=True,repair_candidates=repair_candidates,
                     repair_rounds=round_number,initial_selection={"title":selected,"reason":decision.get("selection_reason"),
                     "quality_issues":decision.get("selected_quality_issues",[])})
@@ -1140,6 +1142,7 @@ def generate_wechat_article(item_dir: Path, source_filename: str, source_text: s
         wechat_article,
         institution_name,
         args,
+        source_text=source_text,
         **({"request": request_text, "previous_decision": previous_decision} if progress is not None else {}),
     )
     refined_wechat_title, title_stock_changes = sanitize_wechat_stock_language(

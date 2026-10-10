@@ -49,6 +49,8 @@ class WhitespaceTests(unittest.TestCase):
 
 class RevalidationTests(unittest.TestCase):
     TITLE = '国际清算银行：Apple Watch GPU产品交付数量变化'
+    SOURCE_EVIDENCE = None
+    FAITHFUL = None
 
     def setUp(self):
         self.case = fixtures.ResumeTests()
@@ -61,6 +63,10 @@ class RevalidationTests(unittest.TestCase):
             name = 'BIS-Apple Watch GPU Product Shipments-261007.pdf'
             (fixture.input / item['name']).rename(fixture.input / name)
             item.update(name=name, process_local_path='/original/' + name, dropbox_path='/zip_backup/261007/' + name)
+            if self.SOURCE_EVIDENCE:
+                content = [fixtures.pages_fixture.page_record(page, (self.SOURCE_EVIDENCE+'\n')*20) for page in (1,2)]
+                key = fixtures.pages_fixture.pages.extraction_key(item['content_sha256'])
+                (fixture.cache/'pages'/(key+'.json')).write_bytes(articles.encoded({'pages':content}))
             fixture.manifest.write_text(json.dumps(rows))
             fixture.request['manifest_sha256'] = articles.digest(fixture.manifest.read_bytes())
             fixture.publish_cache()
@@ -74,7 +80,8 @@ class RevalidationTests(unittest.TestCase):
             if label == 'WeChat article':
                 self.counter += 1
                 return fixtures.article_fixture.BODY
-            return json.dumps({'titles': [self.TITLE] if self.counter == 38 else [fixtures.article_fixture.TITLE]})
+            return json.dumps({'titles': ([self.FAITHFUL, self.TITLE] if self.FAITHFUL else [self.TITLE])
+                if self.counter == 38 else [fixtures.article_fixture.TITLE]})
         # Recreate the old defect through its single whitespace operation while
         # generating real source, progress, response and editorial-binding files.
         with patch.object(titles, 'compact_title_whitespace', side_effect=lambda value: re.sub(r'\s+', '', value)), \
@@ -339,6 +346,39 @@ class RevalidationTests(unittest.TestCase):
         key = revalidation.inspection.KEY.removesuffix('/generation.tar.gz') + '/articles/shard_0.tar.gz'
         self.assertIn(key, self.case.f.client.objects)
         self.no_model.assert_not_called()
+
+
+class OriginalSourceCohortTests(unittest.TestCase):
+    def test_source_only_numeric_claim_uses_pinned_pages_and_retains_44_progress_records_without_posts(self):
+        case = RevalidationTests()
+        case.TITLE = '国际清算银行：Apple Watch GPU产品交付量增长12.5%'
+        case.FAITHFUL = '国际清算银行：Apple Watch产品交付数量变化'
+        case.SOURCE_EVIDENCE = 'Apple Watch GPU shipments grow 12.5%.'
+        self.addCleanup(case.doCleanups)
+        case.setUp()
+        before = revalidation.snapshot(case.checkpoint)
+        result = case.execute()
+        self.assertTrue(result['revalidation_ready'])
+        self.assertEqual((result['provider_posts'], result['object_writes']), (0,0))
+        self.assertEqual(result['unchanged_article_count'], 43)
+        self.assertEqual(result['retained_title_response_count'], 4)
+        self.assertEqual(revalidation.snapshot(case.checkpoint), before)
+        rows = result['saved_candidate_evidence_diagnosis']['candidates']
+        self.assertTrue(any(row['original_source_context_support']['supported'] for row in rows))
+        self.assertTrue(all(row['length_limit_quantity_integrity']['preserves_quantity_atoms'] for row in rows))
+        applied = case.execute('apply')
+        self.assertTrue(applied['applied'])
+        self.assertEqual(applied['completed_article_count_after'], 44)
+        raw = case.case.f.client.objects[revalidation.inspection.KEY][0]
+        with tarfile.open(fileobj=io.BytesIO(raw), mode='r:gz') as archive:
+            for name, (size, digest) in before.items():
+                if name.startswith('generation-progress/'):
+                    contents = archive.extractfile(name).read()
+                    self.assertEqual((len(contents), articles.digest(contents)), (size,digest))
+        case.no_model.assert_not_called()
+        public = json.dumps(result,ensure_ascii=False)
+        for text in ('Apple','12.5','shipments','国际清算银行'):
+            self.assertNotIn(text,public)
 
 
 class RuntimeTests(unittest.TestCase):

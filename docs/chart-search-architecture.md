@@ -43,6 +43,19 @@ refresh then:
 2. merges report-level chart text into `data/search_index.json`;
 3. publishes `data/chart_search_index.json` for a chart-specific search view.
 
+Successful chart indexing triggers the existing `Portal chart search index`
+completion listener in `neutral-edge-cutover.yml`. That release uses the shared
+`portal-production-release` lock and normal automatic-release eligibility gates.
+The Charts page reads the active static release's `data/chart_search_index.json`
+with `cache: no-cache`; it changes only after that release completes. A successful
+R2 publish, including its newer counts and immutable snapshot, is therefore an
+upstream checkpoint rather than live-gallery acceptance. The Worker `/charts`
+endpoint reads the R2 index separately (with a five-minute in-memory cache); the
+page uses it only to resolve a linked image absent from its static snapshot.
+After indexing, verify the exact downstream Neutral run and its served chart-index
+hash/count acceptance before declaring the gallery refreshed. Do not dispatch a
+duplicate release while that listener run is already queued or running.
+
 The source handoff has two distinct input contracts:
 
 | Source | Handoff selection | Counts |
