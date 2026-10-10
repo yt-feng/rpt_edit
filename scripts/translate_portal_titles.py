@@ -4,19 +4,20 @@
 from __future__ import annotations
 
 import argparse
-import concurrent.futures
 import hashlib
 import json
+import math
 import os
 import re
 import sys
 import tempfile
+import time
 from collections import Counter
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Any
 
-from offline_translation import MODEL_ID, PROVIDER, OfflineTranslator, _detect_source
+from offline_translation import MODEL_ID, PROVIDER, OfflineTranslator, TranslationBudgetExceeded, _detect_source
 from portal_discovery_quality import protect_institution_prefix, repair_institution_prefix
 
 
@@ -208,6 +209,8 @@ def translate_title(title: str, args: argparse.Namespace) -> str:
         kwargs = ({"diagnostic_callback": args._offline_title_calls.append}
                   if getattr(args, "diagnostics_out", None) else {})
         args._offline_translator = OfflineTranslator(**kwargs)
+    if hasattr(args, "_title_deadline"):
+        args._offline_translator.set_deadline(args._title_deadline)
     if hasattr(args, "_offline_title_calls"):
         args._offline_title_calls.clear()
     protected, identifiers = protect_title_identifiers(title)
@@ -275,11 +278,15 @@ def main() -> int:
     parser.add_argument("--workers", type=int, default=1)
     parser.add_argument("--timeout", type=int, default=45)
     parser.add_argument("--retries", type=int, default=3)
+    parser.add_argument("--time-budget-seconds", type=float, default=180,
+                        help="Total optional title inference budget; retain original titles and retry unfinished work next run.")
     parser.add_argument("--limit", type=int, default=0, help="Translate at most this many missing titles. 0 means all.")
     parser.add_argument("--force", action="store_true", help="Retranslate titles that already have title_zh.")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--fail-on-error", action="store_true")
     args = parser.parse_args()
+    if not math.isfinite(args.time_budget_seconds) or args.time_budget_seconds <= 0:
+        parser.error("--time-budget-seconds must be a positive finite number")
     args.model = MODEL_ID
     diagnostics = {"model": MODEL_ID, "provider": PROVIDER, "failed_titles": []}
 
@@ -302,11 +309,13 @@ def main() -> int:
     cache = load_title_cache(cache_path)
     items = candidate_items(catalog, args.force, args.limit)
     seeded = 0
+    published_ids: set[str] = set()
     if args.seed_catalog_path and items and not args.force:
         seed_path = Path(args.seed_catalog_path)
         seed_catalog = json.loads(seed_path.read_text(encoding="utf-8"))
         if not isinstance(seed_catalog, dict) or not isinstance(seed_catalog.get("items"), list):
             raise RuntimeError(f"Invalid seed title catalog: {seed_path}")
+        published_ids = {str(row.get("id") or "") for row in seed_catalog["items"] if isinstance(row, dict)}
         seeded = seed_title_cache(cache, catalog, items, seed_catalog, args.model)
         if seeded:
             log(f"Seeded {seeded} title translations from matching published report sources.")
@@ -331,11 +340,19 @@ def main() -> int:
     if cached:
         log(f"Reused {cached} Portal Suite title translations from checkpoint.")
 
+    # Apply every reusable translation before spending the optional inference
+    # budget. A stale historical title must not sit ahead of today's reports.
+    sources = sorted(pending, key=lambda source: (
+        any(str(row.get("id") or "") not in published_ids for row in pending[source]),
+        max(str(row.get("date_folder") or "") for row in pending[source]),
+    ), reverse=True)
     if pending:
         log(f"Translating {sum(len(rows) for rows in pending.values())} Portal Suite titles "
-            f"with offline model={args.model}, workers=1")
+            f"with offline model={args.model}, workers=1, budget_seconds={args.time_budget_seconds:g}")
     translated = 0
     failed = 0
+    deferred = 0
+    args._title_deadline = time.monotonic() + args.time_budget_seconds
 
     def work(source: str) -> str:
         title = source.strip()
@@ -343,38 +360,47 @@ def main() -> int:
             return title
         return translate_title(title, args)
 
-    max_workers = 1
-    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-        futures = {executor.submit(work, source): source for source in pending}
-        for index, future in enumerate(concurrent.futures.as_completed(futures), start=1):
-            source = futures[future]
-            target_items = pending[source]
-            try:
-                title_zh = source_safe_title(source, future.result())
-            except Exception as exc:  # noqa: BLE001 - retry next scheduled run.
-                failed += len(target_items)
-                diagnostics["failed_titles"].append({
-                    "ids": [str(item.get("id") or "") for item in target_items],
-                    "source": source, "error": str(exc),
-                    "model_calls": getattr(exc, "translation_diagnostics", []),
-                })
-                if args.diagnostics_out is not None and not args.dry_run:
-                    write_json(args.diagnostics_out, diagnostics)
-                for item in target_items:
-                    log(f"  [failed] {str(item.get('id') or '')}: {exc}")
-            else:
-                cache["entries"][title_cache_key(source, args.model)] = {
-                    "source": source, "model": args.model, "prompt_version": TITLE_PROMPT_VERSION,
-                    "title_zh": title_zh,
-                }
-                # Persist each accepted success before later requests or catalog writes can fail.
-                if cache_path is not None and not args.dry_run:
-                    write_json(cache_path, cache)
-                for item in target_items:
-                    item["title_zh"] = title_zh
-                translated += len(target_items)
-            if index == len(futures) or index % 50 == 0:
-                log(f"  progress {index}/{len(futures)} sources translated={translated} failed={failed}")
+    # The offline runtime is serial. Do not prequeue work in an executor: its
+    # shutdown would wait for all queued titles after the budget was exhausted.
+    for index, source in enumerate(sources):
+        target_items = pending[source]
+        try:
+            if time.monotonic() >= args._title_deadline:
+                raise TranslationBudgetExceeded("Optional title translation time budget reached")
+            title_zh = source_safe_title(source, work(source))
+        except TranslationBudgetExceeded:
+            deferred = sum(len(pending[remaining]) for remaining in sources[index:])
+            log(f"::notice title=Report title translation deferred::{deferred} title(s) retain their original "
+                "source title after the optional translation budget; saved translations are reused next run.")
+            break
+        except Exception as exc:  # noqa: BLE001 - retry next scheduled run.
+            failed += len(target_items)
+            diagnostics["failed_titles"].append({
+                "ids": [str(item.get("id") or "") for item in target_items],
+                "source": source, "error": str(exc),
+                "model_calls": getattr(exc, "translation_diagnostics", []),
+            })
+            if args.diagnostics_out is not None and not args.dry_run:
+                write_json(args.diagnostics_out, diagnostics)
+            for item in target_items:
+                log(f"  [failed] {str(item.get('id') or '')}: {exc}")
+        else:
+            cache["entries"][title_cache_key(source, args.model)] = {
+                "source": source, "model": args.model, "prompt_version": TITLE_PROMPT_VERSION,
+                "title_zh": title_zh,
+            }
+            # Persist each accepted success before later requests or catalog writes can fail.
+            if cache_path is not None and not args.dry_run:
+                write_json(cache_path, cache)
+            for item in target_items:
+                item["title_zh"] = title_zh
+            translated += len(target_items)
+        if index + 1 == len(sources) or (index + 1) % 50 == 0:
+            log(f"  progress {index + 1}/{len(sources)} sources translated={translated} failed={failed}")
+
+    diagnostics.update(time_budget_seconds=args.time_budget_seconds, deferred_title_count=deferred)
+    if args.diagnostics_out is not None and not args.dry_run:
+        write_json(args.diagnostics_out, diagnostics)
 
     catalog["title_translation"] = {
         "provider": PROVIDER,
@@ -388,6 +414,8 @@ def main() -> int:
         "last_run_seeded": seeded,
         "last_run_institution_repairs": repaired,
         "last_run_failed": failed,
+        "last_run_deferred": deferred,
+        "time_budget_seconds": args.time_budget_seconds,
     }
 
     if args.dry_run:

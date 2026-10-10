@@ -322,12 +322,7 @@ class TitleCheckpointTests(unittest.TestCase):
                             {"id": "two", "title": "Second report"}])
         before = self.catalog_path.read_bytes()
 
-        def interrupt_after_first(futures):
-            yield next(iter(futures))
-            raise KeyboardInterrupt()
-
-        with mock.patch.object(titles, "translate_title", return_value="已完成报告"), \
-                mock.patch.object(titles.concurrent.futures, "as_completed", interrupt_after_first):
+        with mock.patch.object(titles, "translate_title", side_effect=["已完成报告", KeyboardInterrupt()]):
             with self.assertRaises(KeyboardInterrupt):
                 self.run_main()
         self.assertEqual(self.catalog_path.read_bytes(), before)
@@ -398,6 +393,117 @@ class TitleCheckpointTests(unittest.TestCase):
         with mock.patch.object(titles, "translate_title", return_value="新报告"):
             self.assertEqual(self.run_main("--dry-run"), 0)
         self.assertEqual((self.catalog_path.read_bytes(), self.cache_path.read_bytes()), before)
+
+    def test_real_offline_deadline_defers_without_fake_cache_and_resumes_new_titles_first(self):
+        import hymt_offline_translation as offline
+        from build_portal_suite_site import item_display_title
+        original = [
+            {'id': 'historical', 'title': 'Historical difficult report', 'date_folder': '261009'},
+            {'id': 'new-first', 'title': 'Fresh market report', 'date_folder': '261008'},
+            {'id': 'new-second', 'title': 'Fresh sector report', 'date_folder': '261007'},
+            {'id': 'new-duplicate', 'title': 'Fresh sector report', 'date_folder': '261007'},
+            {'id': 'checkpoint', 'title': 'Report outlook', 'date_folder': '260701'},
+            {'id': 'published', 'title': 'Published report', 'date_folder': '260701'},
+        ]
+        self.write_catalog(original)
+        self.seed_cache()
+        seed = self.write_seed_catalog([
+            {'id': 'historical', 'title': 'Historical difficult report', 'title_zh': ''},
+            {'id': 'published', 'title': 'Published report', 'title_zh': '已发布报告'},
+        ])
+        engine = object.__new__(offline._HyMTEngine)
+        engine.port = 1
+        translator = offline.OfflineTranslator(cache_dir=self.root / 'memo', engine_factory=lambda *_: engine)
+        clock = [100.0]
+        requests = []
+
+        def request(_port, _route, payload, timeout):
+            requests.append((payload['messages'][0]['content'], timeout))
+            if len(requests) == 1:
+                clock[0] += 1
+                return {'choices': [{'finish_reason': 'stop', 'message': {'content': '最新市场报告'}}]}
+            clock[0] += timeout
+            raise TimeoutError('runner model reached its remaining budget')
+
+        diagnostics = self.root / 'diagnostics.json'
+        with mock.patch.object(titles, 'OfflineTranslator', return_value=translator), \
+                mock.patch.object(offline, 'request_json', side_effect=request), \
+                mock.patch.object(titles.time, 'monotonic', side_effect=lambda: clock[0]):
+            self.assertEqual(self.run_main('--seed-catalog-path', seed, '--time-budget-seconds', '3',
+                                           '--diagnostics-out', str(diagnostics), '--fail-on-error'), 0)
+        self.assertEqual(len(requests), 2)
+        self.assertTrue(requests[0][0].endswith('Fresh market report'))
+        self.assertTrue(requests[1][0].endswith('Fresh sector report'))
+        self.assertEqual([row[1] for row in requests], [3, 2])
+        catalog = self.catalog()
+        self.assertEqual(catalog['title_translation']['last_run_deferred'], 3)
+        self.assertEqual(catalog['title_translation']['last_run_failed'], 0)
+        self.assertEqual(catalog['items'][1]['title_zh'], '最新市场报告')
+        self.assertEqual(catalog['items'][4]['title_zh'], '报告展望')
+        self.assertEqual(catalog['items'][5]['title_zh'], '已发布报告')
+        for index in (0, 2, 3):
+            self.assertEqual(catalog['items'][index], original[index])
+            self.assertEqual(item_display_title(catalog['items'][index]), original[index]['title'])
+        entries = titles.load_title_cache(self.cache_path)['entries']
+        self.assertEqual(len(entries), 3)
+        for title in ('Fresh sector report', 'Historical difficult report'):
+            self.assertNotIn(titles.title_cache_key(title, self.model), entries)
+        self.assertEqual(json.loads(diagnostics.read_text())['deferred_title_count'], 3)
+
+        # A fresh runner reuses every completed seed/checkpoint and retries only
+        # unfinished exact sources, including one call for duplicated reports.
+        self.write_catalog(original)
+        with mock.patch.object(titles, 'translate_title', side_effect=['最新行业报告', '历史报告']) as model:
+            self.assertEqual(self.run_main('--seed-catalog-path', seed, '--time-budget-seconds', '3'), 0)
+        self.assertEqual([call.args[0] for call in model.call_args_list],
+                         ['Fresh sector report', 'Historical difficult report'])
+        self.assertEqual(self.catalog()['title_translation']['last_run_deferred'], 0)
+        self.assertEqual(len(titles.load_title_cache(self.cache_path)['entries']), 5)
+
+    def test_expired_budget_still_applies_all_reusable_titles_without_starting_model(self):
+        self.write_catalog([{'id': 'new', 'title': 'New report'},
+                            {'id': 'cache', 'title': 'Report outlook'},
+                            {'id': 'seed', 'title': 'Published report'}])
+        self.seed_cache()
+        seed = self.write_seed_catalog([{'id': 'seed', 'title': 'Published report', 'title_zh': '已发布报告'}])
+        with mock.patch.object(titles.time, 'monotonic', side_effect=[100, 280]), \
+                mock.patch.object(titles, 'OfflineTranslator') as factory:
+            self.assertEqual(self.run_main('--seed-catalog-path', seed), 0)
+        factory.assert_not_called()
+        self.assertEqual([row.get('title_zh') for row in self.catalog()['items']], [None, '报告展望', '已发布报告'])
+        self.assertEqual(self.catalog()['title_translation']['last_run_deferred'], 1)
+        self.assertEqual(len(titles.load_title_cache(self.cache_path)['entries']), 2)
+
+    def test_budget_expiring_after_success_keeps_checkpoint_and_does_not_queue_next_title(self):
+        self.write_catalog([{'id': 'first', 'title': 'First report'}, {'id': 'second', 'title': 'Second report'}])
+        with mock.patch.object(titles.time, 'monotonic', side_effect=[100, 100, 280]), \
+                mock.patch.object(titles, 'translate_title', return_value='首篇报告') as model:
+            self.assertEqual(self.run_main(), 0)
+        model.assert_called_once()
+        self.assertEqual(self.catalog()['items'][0]['title_zh'], '首篇报告')
+        self.assertNotIn('title_zh', self.catalog()['items'][1])
+        self.assertEqual(self.catalog()['title_translation']['last_run_deferred'], 1)
+        self.assertEqual(len(titles.load_title_cache(self.cache_path)['entries']), 1)
+
+    def test_invalid_budget_is_rejected_before_catalog_or_checkpoint_changes(self):
+        self.write_catalog([{'id': 'one', 'title': 'First report'}])
+        before = self.catalog_path.read_bytes()
+        for value in ('0', '-1', 'nan', 'inf'):
+            with self.subTest(value=value), contextlib.redirect_stderr(io.StringIO()):
+                with self.assertRaises(SystemExit) as error:
+                    self.run_main('--time-budget-seconds', value)
+                self.assertEqual(error.exception.code, 2)
+                self.assertEqual(self.catalog_path.read_bytes(), before)
+                self.assertFalse(self.cache_path.exists())
+
+    def test_production_title_work_has_a_budget_and_manual_resume_stays_inference_free(self):
+        from build_portal_locale_resume_workflow import SOURCE, TARGET, generate
+        source = SOURCE.read_text()
+        step = source.split('      - name: Translate missing report titles\n', 1)[1].split('      - name:', 1)[0]
+        self.assertIn('--time-budget-seconds 180', step)
+        self.assertNotIn('--fail-on-error', step)
+        self.assertEqual(TARGET.read_text(), generate(source))
+        self.assertNotIn('scripts/translate_portal_titles.py', TARGET.read_text())
 
 
 if __name__ == "__main__":
