@@ -48,6 +48,56 @@ function events(call) {
   return body.events || [body];
 }
 
+test("membership funnel events survive client batching and Worker ingestion without form contents", async () => {
+  const client = browser();
+  const actions = ["form_impression", "form_open", "form_start", "form_submit", "submitted", "deduplicated", "form_error", "form_abandon"];
+  const outcomes = await Promise.all(actions.map((action) => client.track("membership_request", {
+    action, request_kind: "membership", measurement_version: "membership-v1",
+    placement: "membership", status: "guest", error: "validation_email",
+    requester_email: "private-form@example.invalid", contact_value: "private-contact",
+    note: "private-note", query: "private-note", report_title: "private-contact",
+    target: "private-contact", contact_channel: "private-contact",
+  })));
+  assert.ok(outcomes.every(Boolean), "the common client must accept membership events");
+  const writes = new Map();
+  for (const post of client.posts()) {
+    const response = await worker.fetch(new Request("https://worker.test/analytics", {
+      method: "POST", headers: { "Content-Type": "application/json", Origin: "https://portal.example.invalid" }, body: post.body,
+    }), {
+      ALLOWED_ORIGIN: "https://portal.example.invalid",
+      REPORT_BUCKET: { async put(key, value) { writes.set(key, JSON.parse(value)); } },
+    });
+    assert.equal(response.status, 204, "the Worker must accept the same public event contract");
+  }
+  const archived = [...writes].filter(([key]) => key.startsWith("_analytics/events/")).map(([, value]) => value);
+  assert.deepEqual(archived.map((row) => row.action).sort(), [...actions].sort());
+  assert.ok(archived.every((row) => row.request_kind === "membership" && row.measurement_version === "membership-v1" && row.session_id));
+  assert.doesNotMatch(JSON.stringify(archived), /private-form|private-contact|private-note/);
+});
+
+test("membership ingestion rejects arbitrary labels and keeps other analytics semantics", async () => {
+  const writes = [];
+  const response = await worker.fetch(new Request("https://worker.test/analytics", {
+    method: "POST", headers: { "Content-Type": "application/json", Origin: "https://portal.example.invalid" },
+    body: JSON.stringify({ events: [
+      { type: "membership_request", visitor_id: "visitor", session_id: "session", path: "/?token=secret", query: "private-note", data: {
+        action: "private-note", request_kind: "private-note", measurement_version: "private-note",
+        placement: "private-note", status: "private-note", error: "private-note", query: "private-note",
+      } },
+      { type: "search", data: { query: "research", action: "search" } },
+    ] }),
+  }), {
+    ALLOWED_ORIGIN: "https://portal.example.invalid",
+    REPORT_BUCKET: { async put(key, value) { if (key.startsWith("_analytics/events/")) writes.push(JSON.parse(value)); } },
+  });
+  assert.equal(response.status, 204);
+  const form = writes.find((row) => row.type === "membership_request");
+  for (const key of ["action", "request_kind", "measurement_version", "placement", "status", "error", "query"]) assert.equal(form[key], "");
+  assert.equal(form.path, "/");
+  assert.doesNotMatch(JSON.stringify(form), /private-note|secret/);
+  assert.equal(writes.find((row) => row.type === "search").query, "research");
+});
+
 test("12 popular impressions use one POST and preserve each event's attribution", async () => {
   const client = browser();
   const outcomes = await Promise.all(Array.from({ length: 12 }, (_, index) => client.track(
@@ -132,7 +182,7 @@ test("unsupported client audit events cannot poison a valid event batch", async 
   const client = browser();
   const outcomes = await Promise.all([
     client.track("search", { query: "valid" }),
-    client.track("membership_request", { action: "submit" }),
+    client.track("report_chat", { action: "submit" }),
     client.track("page_view", { page: "index" }),
   ]);
   assert.deepEqual(outcomes, [true, false, true]);

@@ -360,6 +360,7 @@ const PUBLIC_ANALYTICS_EVENT_TYPES = new Set([
   "download_error",
   "download_pending",
   "download_success",
+  "membership_request",
   "newsfeed_interaction",
   "newsfeed_topic_request",
   "page_view",
@@ -8051,7 +8052,38 @@ function analyticsOptionalCount(value) {
   return Number.isFinite(number) && number >= 0 ? Math.min(1000000, Math.floor(number)) : null;
 }
 
+function membershipAnalyticsPayload(payload) {
+  const data = payload && typeof payload.data === "object" && payload.data ? payload.data : {};
+  if (String(payload.type || data.type || "").trim().toLowerCase() !== "membership_request") return payload;
+  // Form telemetry carries controlled states, never form contents or response text.
+  const context = {};
+  for (const key of [
+    "page", "referrer", "session_id", "session_started_at", "client_ts",
+    "first_seen_at", "is_returning", "landing_path", "utm_source", "utm_medium",
+    "utm_campaign", "utm_term", "utm_content", "language", "screen",
+    "navigation_type", "device_type", "bot_hint",
+  ]) context[key] = data[key];
+  const controlled = (key, choices) => choices.includes(data[key]) ? data[key] : "";
+  return {
+    type: "membership_request",
+    visitor_id: payload.visitor_id,
+    session_id: payload.session_id,
+    client_ts: payload.client_ts,
+    path: payload.path,
+    data: {
+      ...context,
+      measurement_version: controlled("measurement_version", ["membership-v1"]),
+      request_kind: controlled("request_kind", ["membership", "access", "support", "privacy", "refund"]),
+      action: controlled("action", ["form_impression", "form_open", "form_start", "form_submit", "submitted", "deduplicated", "form_error", "form_abandon"]),
+      placement: controlled("placement", ["account", "membership", "access", "support", "privacy", "refund", "deep_link"]),
+      status: controlled("status", ["guest", "signed_in", "pending", "success", "error", "abandoned"]),
+      error: controlled("error", ["validation_email", "validation_contact", "network", "server", "unknown"]),
+    },
+  };
+}
+
 function analyticsEventFromPayload(request, payload, user, ipHash) {
+  payload = membershipAnalyticsPayload(payload);
   const now = new Date();
   const cf = request.cf || {};
   const data = payload && typeof payload.data === "object" && payload.data ? payload.data : {};
@@ -8104,6 +8136,10 @@ function analyticsEventFromPayload(request, payload, user, ipHash) {
     institution: cleanAnalyticsText(data.institution, 160),
     target: cleanAnalyticsText(data.target || data.material_id, 240),
     action: cleanAnalyticsText(data.action, 80),
+    ...(type === "membership_request" ? {
+      measurement_version: data.measurement_version,
+      request_kind: data.request_kind,
+    } : {}),
     status: cleanAnalyticsText(data.status || data.response_status, 80),
     access_state: cleanAnalyticsText(data.access_state, 80),
     view: cleanAnalyticsText(data.view, 80),

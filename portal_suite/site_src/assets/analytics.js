@@ -15,7 +15,7 @@
   const PUBLIC_EVENT_TYPES = new Set([
     "account_auth", "course_material_request", "daily_file_download",
     "delivery_link_generate", "download_attempt", "download_error",
-    "download_pending", "download_success", "newsfeed_interaction",
+    "download_pending", "download_success", "membership_request", "newsfeed_interaction",
     "newsfeed_topic_request", "page_view", "report_open", "report_request",
     "report_chat_interaction", "report_text_view", "reward_checkin",
     "reward_claim", "search",

@@ -354,6 +354,46 @@ h3 {
   align-self: end;
 }
 
+.search-resume {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.search-resume[hidden] {
+  display: none;
+}
+
+.search-resume button {
+  max-width: 100%;
+  min-height: 32px;
+  padding: 3px 0;
+  border: 0;
+  background: transparent;
+  color: var(--accent-strong);
+  font: inherit;
+  text-align: start;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.search-resume button:hover {
+  text-decoration: underline;
+}
+
+.search-resume button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.catalog-empty-state p {
+  margin: 0 0 10px;
+}
+
 .search-readiness {
   display: inline-flex;
   grid-column: 1 / -1;
@@ -3112,6 +3152,40 @@ a.secondary-button {
   color: var(--muted);
   font-size: 13px;
   line-height: 1.55;
+}
+
+.membership-request-intro {
+  margin: 0;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.membership-view-switch {
+  justify-self: start;
+  border: 0;
+  padding: 6px 0;
+  background: transparent;
+  color: var(--accent-strong);
+  font: inherit;
+  font-size: 13px;
+  text-align: start;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.membership-view-switch:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.account-dialog.is-request-view .membership-request-card {
+  margin-top: 0;
+}
+
+.account-dialog.is-request-view #membershipRequestTitle {
+  display: none;
 }
 
 .account-contact-qr {

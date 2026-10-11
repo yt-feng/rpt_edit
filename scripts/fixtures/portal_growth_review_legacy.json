@@ -1,0 +1,200 @@
+{
+  "schema": "portal-growth-review-v1",
+  "start_date": "2026-10-01",
+  "end_date": "2026-10-01",
+  "generated_at": "2026-10-11T12:00:00+08:00",
+  "totals": {
+    "visitors": 2,
+    "sessions": 2,
+    "engaged_sessions": 2,
+    "organic_search_sessions": 0,
+    "ai_referral_sessions": 0,
+    "report_open_sessions": 0,
+    "download_attempt_sessions": 1,
+    "download_success_sessions": 1,
+    "report_request_sessions": 0,
+    "registration_sessions": 0,
+    "page_views": 0,
+    "search_intents": 0
+  },
+  "funnel": [
+    {
+      "step": "landing_sessions",
+      "sessions": 2,
+      "rate_from_landing": 1.0
+    },
+    {
+      "step": "engaged_sessions",
+      "sessions": 2,
+      "rate_from_landing": 1.0
+    },
+    {
+      "step": "report_open_sessions",
+      "sessions": 0,
+      "rate_from_landing": 0.0
+    },
+    {
+      "step": "download_attempt_sessions",
+      "sessions": 1,
+      "rate_from_landing": 0.5
+    },
+    {
+      "step": "download_success_sessions",
+      "sessions": 1,
+      "rate_from_landing": 0.5
+    },
+    {
+      "step": "report_request_sessions",
+      "sessions": 0,
+      "rate_from_landing": 0.0
+    },
+    {
+      "step": "registration_sessions",
+      "sessions": 0,
+      "rate_from_landing": 0.0
+    }
+  ],
+  "acquisition_channels": [
+    {
+      "channel": "direct",
+      "visitors": 2,
+      "sessions": 2,
+      "engaged_sessions": 2,
+      "organic_search_sessions": 0,
+      "ai_referral_sessions": 0,
+      "report_open_sessions": 0,
+      "download_attempt_sessions": 1,
+      "download_success_sessions": 1,
+      "report_request_sessions": 0,
+      "registration_sessions": 0,
+      "session_share": 1.0,
+      "engagement_rate": 1.0,
+      "download_success_rate": 0.5
+    }
+  ],
+  "onsite_search_demand": {
+    "minimum_intent_count": 2,
+    "total_deduplicated_intents": 0,
+    "uncategorized_intents": 0,
+    "institutions": [],
+    "topics": []
+  },
+  "journey_diagnostics": {
+    "schema": "portal-journey-diagnostics-v1",
+    "client_actions": [],
+    "server_audit_actions": [],
+    "registration_error_categories": [],
+    "daily_actions": [],
+    "notes": [
+      "Missing exposure actions mean exposure is unmeasured, not that nobody saw the feature.",
+      "Historical popular_impression records list rendering, not viewport exposure.",
+      "Client session counts use explicit session_id only; server audit records never become visitor sessions.",
+      "Do not sum dimension-level sessions: the same session may contain multiple actions or placements.",
+      "Actions are observed occurrences, not a verified sequential funnel or unique registered-account count.",
+      "Feature-hashed visitor IDs prevent reliable cross-feature visitor and retention joins; use session counts for journey analysis.",
+      "Historical missing context, source_count, chart_count and current_streak cannot be reconstructed from client events.",
+      "Admin account activity on ordinary product surfaces and internal QA are not excluded automatically.",
+      "export_pdf_print_opened confirms a print dialog only, not a rendered PDF download."
+    ]
+  },
+  "top_landing_pages": [
+    {
+      "path": "/",
+      "family": "home",
+      "visitors": 2,
+      "sessions": 2,
+      "engaged_sessions": 2,
+      "organic_search_sessions": 0,
+      "ai_referral_sessions": 0,
+      "report_open_sessions": 0,
+      "download_attempt_sessions": 1,
+      "download_success_sessions": 1,
+      "report_request_sessions": 0,
+      "registration_sessions": 0,
+      "channels": [
+        {
+          "channel": "direct",
+          "sessions": 2
+        }
+      ]
+    }
+  ],
+  "landing_page_families": [
+    {
+      "family": "home",
+      "visitors": 2,
+      "sessions": 2,
+      "engaged_sessions": 2,
+      "organic_search_sessions": 0,
+      "ai_referral_sessions": 0,
+      "report_open_sessions": 0,
+      "download_attempt_sessions": 1,
+      "download_success_sessions": 1,
+      "report_request_sessions": 0,
+      "registration_sessions": 0
+    }
+  ],
+  "daily": [
+    {
+      "date": "2026-10-01",
+      "visitors": 2,
+      "sessions": 2,
+      "engaged_sessions": 2,
+      "organic_search_sessions": 0,
+      "ai_referral_sessions": 0,
+      "report_open_sessions": 0,
+      "download_attempt_sessions": 1,
+      "download_success_sessions": 1,
+      "report_request_sessions": 0,
+      "registration_sessions": 0,
+      "page_views": 0,
+      "search_intents": 0
+    }
+  ],
+  "retention": [
+    {
+      "metric": "d1",
+      "eligible_new_visitors": 0,
+      "retained_visitors": 0,
+      "retention_rate": null
+    },
+    {
+      "metric": "d7",
+      "eligible_new_visitors": 0,
+      "retained_visitors": 0,
+      "retention_rate": null
+    }
+  ],
+  "action_impacts": [],
+  "data_quality": {
+    "input_events": 2,
+    "deduplicated_events": 2,
+    "duplicate_events_removed": 0,
+    "known_bot_events_excluded": 0,
+    "administrative_events_excluded": 0,
+    "non_bot_events_without_session_identity_excluded": 0,
+    "server_audit_events_excluded_from_sessions": 0,
+    "expected_dates": [],
+    "event_date_coverage": [
+      "2026-10-01"
+    ],
+    "notes": [
+      "Known bots and administrative events are excluded from product growth metrics.",
+      "Search intents are deduplicated by session, normalized query, and one-minute time bucket.",
+      "On-site search demand uses overlapping controlled institution and topic labels; raw queries are discarded from output.",
+      "External search keywords and AI prompts are not available in site analytics.",
+      "No purchase or revenue event exists, so this report cannot attribute revenue.",
+      "Server report_chat audits are excluded from sessions; earlier v1 reports included IP-derived audit sessions and are not directly comparable.",
+      "Visitors are observed storage identities, not verified people; feature-specific visitor hashing can split cross-feature identities."
+    ]
+  },
+  "privacy": {
+    "visitor_ids_included": false,
+    "session_ids_included": false,
+    "ip_hashes_included": false,
+    "email_addresses_included": false,
+    "search_queries_included": false,
+    "full_referrer_urls_included": false,
+    "raw_user_agents_included": false
+  }
+}
