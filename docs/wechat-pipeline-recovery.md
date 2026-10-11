@@ -106,8 +106,34 @@ before diagnosing a failed cloud probe as a permission or connectivity problem.
 For `gh` 2.97+ compatibility, the probe detects local CLI support and uses
 `--allow-escape-sequences` only for job-log bytes captured into a pipe, never
 terminal output; exact-byte hashing and source authentication remain unchanged.
-The classified cloud probe stopped at GitHub job-log reading, so no consulting
-PDF pixel diagnosis or production acceptance has yet been established.
+The classified probe initially stopped at GitHub job-log reading; the later
+successful probe below establishes the pixel diagnosis separately from production
+acceptance.
+
+### Consulting catalog color-profile diagnosis
+
+The admitted-source probe `38119748871` completed after the CLI compatibility
+repair. It authenticated the original 20-page PDF and existing provider result,
+with zero new provider submissions, model calls or cache writes. Repeating
+MinerU's whole-document PDFium import/save produced exactly the provider's page
+pixels. Compared with the admitted original, the first selected page had
+49.60944% changed pixels, with a maximum channel difference of 17; geometry,
+text, content streams, drawings, fonts and display-operation diagnostics agreed.
+The original catalog contains `OutputIntents`, while the provider copy omits it.
+Optional-content restoration was not applicable. Source PDF SHA-256:
+`498dcdbfc5b65076fbfb54a0da1fa5a6a4b2265d99bfd9c0adc3f70b53dca176`.
+Provider embedded PDF SHA-256:
+`1fcd2966e9fab237dcf9082aaeba51eb773de39fbc08aff6f879e94fb73e574b`.
+
+The follow-up diagnostic copies only the authenticated original catalog's
+`OutputIntents` into an in-memory provider copy, then checks the drawing graph
+and exact 300-dpi RGB pixels on every selected page. The original and cached
+provider bytes are not modified. A graph rejection remains separately visible
+even if pixels agree; neither diagnostic result is production acceptance.
+Self-created ICC gamma fixtures exercise actual PDFium color-profile loss and
+strict two-page restoration, while altered provider content remains rejected.
+Real-source restoration across all six selected pages is pending; the production
+source/pixel guard is unchanged.
 
 ## BCG discovery evidence boundaries
 

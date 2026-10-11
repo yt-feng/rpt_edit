@@ -3,6 +3,7 @@ import copy
 import io
 import json
 import subprocess
+import struct
 from pathlib import Path
 import tempfile
 import unittest
@@ -25,6 +26,29 @@ def pack(root):
         for path in root.rglob('*'):
             if path.is_file(): archive.writestr(path.relative_to(root).as_posix(),path.read_bytes())
     return output.getvalue()
+
+
+def output_intent_fixture(*,pages=2):
+    """Self-created ICC gamma profile; PDFium drops its catalog reference."""
+    from PIL import ImageCms
+    profile=bytearray(ImageCms.ImageCmsProfile(ImageCms.createProfile('sRGB')).tobytes())
+    for index in range(struct.unpack('>I',profile[128:132])[0]):
+        position=132+index*12;tag=profile[position:position+4]
+        offset,_=struct.unpack('>II',profile[position+4:position+12])
+        if tag in (b'rTRC',b'gTRC',b'bTRC'):
+            if profile[offset:offset+4]!=b'para':raise AssertionError('Synthetic ICC parametric TRC expected')
+            profile[offset+12:offset+16]=struct.pack('>i',int(1.5*65536))
+    with fitz.open() as document:
+        for _ in range(pages):
+            page=document.new_page(width=400,height=500)
+            page.insert_text((20,30),'Synthetic color-managed source',fontsize=12)
+            page.draw_rect(fitz.Rect(35,100,185,260),fill=(.3,.5,.7))
+        xref=document.get_new_xref();document.update_object(xref,'<</N 3>>')
+        document.update_stream(xref,bytes(profile),compress=True)
+        document.xref_set_key(document.pdf_catalog(),'OutputIntents',
+            f'[<</Type/OutputIntent/S/GTS_PDFX/DestOutputProfile {xref} 0 R'
+            '/OutputConditionIdentifier(SYNTHETIC_PRIVATE_PROFILE)>>]')
+        return document.tobytes(no_new_id=True)
 
 
 class Provider:
@@ -313,6 +337,65 @@ class ProbeTests(unittest.TestCase):
         self.assertEqual(restored['restoration_proof']['embedded_pdf_sha256'],digest(embedded))
         self.assertFalse(restored['production_acceptance']);self.assertFalse(restored['complete_source_handoff'])
         self.assertNotIn('fixture-hidden',json.dumps(restored))
+
+    def test_actual_pdfium_output_intent_loss_restores_all_selected_page_pixels(self):
+        self.fixture=Fixture(self.root/'icc-pdfium',pages=2,visuals=[
+            visual(0,[35,100,185,260],kind='chart',page_idx=0),
+            visual(1,[35,100,185,260],kind='chart',page_idx=1)])
+        original=output_intent_fixture();embedded,_=probe._pdfium_rewrite(original)
+        self.fixture.original.write_bytes(original);(self.fixture.raw/'source.pdf').write_bytes(embedded)
+        result=self.compare();page=result['pages'][0]
+        self.assertEqual(result['status'],'mismatch');self.assertFalse(result['all_selected_pages_equal'])
+        self.assertTrue(page['pdfium_rewrite']['rewritten_vs_embedded']['rgb_equal'])
+        restored=page['output_intent_restoration']
+        self.assertEqual(restored['status'],'verified',restored)
+        self.assertEqual(restored['checked_page_count'],2);self.assertTrue(restored['all_selected_pages_equal'])
+        self.assertEqual([row['comparison']['diff_pixel_count'] for row in restored['pages']],[0,0])
+        self.assertEqual(restored['graph_binding']['pages'],2)
+        self.assertEqual(restored['original_pdf_sha256'],digest(original))
+        self.assertEqual(restored['embedded_pdf_sha256'],digest(embedded))
+        self.assertFalse(restored['production_acceptance']);self.assertFalse(restored['complete_source_handoff'])
+        self.assertEqual(self.fixture.original.read_bytes(),original)
+        self.assertEqual((self.fixture.raw/'source.pdf').read_bytes(),embedded)
+        for private in ('SYNTHETIC_PRIVATE_PROFILE','Synthetic color-managed','DestOutputProfile'):
+            self.assertNotIn(private,json.dumps(restored))
+
+    def test_output_intent_probe_rejects_changed_provider_content(self):
+        self.fixture=Fixture(self.root/'icc-edited')
+        original=output_intent_fixture(pages=1);embedded,_=probe._pdfium_rewrite(original)
+        self.fixture.original.write_bytes(original);(self.fixture.raw/'source.pdf').write_bytes(embedded)
+        self.change_embedded(lambda doc:doc[0].insert_text((50,150),'CHANGED PRIVATE',fontsize=10))
+        result=self.compare()['pages'][0]['output_intent_restoration']
+        self.assertEqual(result['status'],'mismatch');self.assertFalse(result['all_selected_pages_equal'])
+        self.assertEqual(result['graph_binding_status'],'rejected')
+        self.assertFalse(result['production_acceptance']);self.assertNotIn('CHANGED PRIVATE',json.dumps(result))
+
+    def test_output_intent_probe_never_overwrites_existing_provider_configuration(self):
+        self.change_embedded(lambda doc:doc[0].insert_text((50,150),'CHANGED PRIVATE',fontsize=10))
+        result=self.compare()['pages'][0]['output_intent_restoration']
+        self.assertEqual(result['status'],'not_applicable')
+        original=output_intent_fixture(pages=1)
+        self.fixture.original.write_bytes(original);(self.fixture.raw/'source.pdf').write_bytes(original)
+        self.change_embedded(lambda doc:doc[0].insert_text((50,150),'CHANGED PRIVATE',fontsize=10))
+        result=self.compare()['pages'][0]['output_intent_restoration']
+        self.assertEqual(result['status'],'not_applicable');self.assertFalse(result['all_selected_pages_equal'])
+
+    def test_output_intent_equal_pixels_do_not_hide_independent_graph_rejection(self):
+        self.fixture=Fixture(self.root/'icc-graph')
+        original=output_intent_fixture(pages=1);embedded,_=probe._pdfium_rewrite(original)
+        self.fixture.original.write_bytes(original);(self.fixture.raw/'source.pdf').write_bytes(embedded)
+        def change_resources(document):
+            kind,value=document.xref_get_key(document[0].xref,'Resources')
+            self.assertEqual(kind,'xref')
+            document.xref_set_key(int(value.split()[0]),'PRIVATE_RESOURCE','(NEVER_PUBLIC)')
+        self.change_embedded(change_resources)
+        result=self.compare()['pages'][0]['output_intent_restoration']
+        self.assertEqual(result['status'],'pixels_verified_graph_rejected')
+        self.assertTrue(result['all_selected_pages_equal'])
+        self.assertEqual(result['graph_binding_status'],'rejected')
+        self.assertFalse(result['production_acceptance'])
+        for private in ('PRIVATE_RESOURCE','NEVER_PUBLIC'):
+            self.assertNotIn(private,json.dumps(result))
 
     def test_oc_restoration_probe_rejects_provider_hidden_changes_and_ref_swaps(self):
         from test_mineru_pdf_oc import optional_content_fixture,changed_provider
