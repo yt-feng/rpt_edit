@@ -235,8 +235,10 @@ reference remain usable existing body images, not proven PDF charts. Repair
 records whether the selected cover used a retained source reference, another
 retained body image or a new illustration; existing usable images do not trigger
 extra filler just to reach a count. It never adds, deletes, publishes or
-regenerates an article. Only recognized generated image credits are excluded from prose identity;
-image-credit text and license/source links are checked separately on readback.
+regenerates an article. Complete generated image credits are excluded from prose
+identity, and attribution text plus source/license URLs are checked separately
+on readback. The one observed legacy exception is described below; it remains
+invalid for media acceptance until its image and credit are replaced.
 A WeChat 40007 response isolates an invalid historical receipt. Only a complete
 current-draft listing with one exact, ordered whole-group match of title, author,
 prose and source URL, followed by a fresh `draft/get`, can bind it to another
@@ -303,6 +305,47 @@ subset of unresolved: an update was confirmed but its readback was unavailable
 or failed validation. Such an article is never reported as verified or unwritten.
 The final `progress.json` is synchronized with the terminal result, including
 partial status and any uncertain updates.
+
+Read-only run `38123347060` isolated the two uncertain historical updates from
+`38120919897`. One contained three Commons credits; the other contained two
+Commons credits and one original-illustration credit. WeChat removed all five
+Commons external anchor elements while retaining their author, allowed license,
+fixed caption, marker and class. Removing only those complete known credit
+paragraphs for the diagnostic comparison produced exactly the original receipt's
+visible-prose hashes in both articles. Titles, authors, source URLs and group
+counts also matched. The existing image identities differed from the original
+receipt as expected after repair, but the unavailable post-update payload means
+this diagnostic alone was not full media acceptance.
+
+New Commons credits put the complete source and license URLs in visible text,
+so their destinations survive external-anchor removal. A small, explicitly
+wrapping credit paragraph keeps long file-page URLs within the article width.
+The verifier supports
+the old complete linked format and the new visible-URL format with the same
+canonical author/license/URL signature. If a client makes the visible URLs
+clickable, the two destinations must equal those exact visible URLs. HTTPS,
+host, source-file path and license-version binding remain strict; query strings,
+fragments, unknown licenses and misleading links are rejected.
+
+The exact observed legacy paragraph with no anchors, a complete fixed caption,
+an allowed license and both managed markers is recognized for prose identity
+only. Media verification explicitly rejects this incomplete attribution even
+when comparing a draft with itself. An adjacent photo with this legacy credit
+is replaced together with its entire old credit; its missing source URL is never
+guessed from the author. The cover is rebound to a known admissible image too,
+so it cannot retain an untraceable crop of the old photo. A retained original
+report chart remains the preferred candidate. Unknown or appended prose,
+different credit structures and nonadjacent text are not removed by this rule.
+Local regression exercises the observed three-Commons and two-Commons/one-local
+shapes through repair and strict readback. Cloud application of this compatibility
+fix is a separate acceptance step.
+
+The separate latest-43 maintenance run `38122896778` finished partially:
+10 existing articles passed verification, 16 remained locked for scheduled
+publication, 16 had invalid old receipt IDs without an exact current match, and
+one user-deleted article stayed deleted. That run performed zero updates;
+the 10 verified articles were not newly repaired in that run. Invalid IDs alone
+do not establish that those articles were deleted.
 
 New draft payloads carry the images and attribution into the existing Blog
 archive path. Repairing an already saved WeChat draft is a distinct operation:

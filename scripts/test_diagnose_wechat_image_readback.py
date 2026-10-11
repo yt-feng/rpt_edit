@@ -128,9 +128,12 @@ class CreditDiagnosticTests(unittest.TestCase):
 
 class CommonsCreditDiagnosticTests(unittest.TestCase):
     def setUp(self):
-        self.credit = attribution_html({'source': 'wikimedia_commons', 'author': 'PRIVATE Photographer',
-            'license': 'CC BY 4.0', 'source_url': 'https://commons.wikimedia.org/wiki/File:PRIVATE.jpg',
-            'license_url': 'https://creativecommons.org/licenses/by/4.0/'})
+        # Freeze the deployed historical format under diagnosis. New provider
+        # credits use visible URLs after the observed external-anchor removal.
+        self.credit = ('<p class="image-credit" data-editorial-credit="1">'
+            '主题配图：PRIVATE Photographer / Wikimedia Commons / CC BY 4.0；已裁剪与缩放，非报告原图。 '
+            '<a href="https://commons.wikimedia.org/wiki/File:PRIVATE.jpg">图片来源</a> · '
+            '<a href="https://creativecommons.org/licenses/by/4.0/">许可</a></p>')
         self.saved = article()
         self.target = {'article_index': 1, 'repair_expected_prose_sha256': diagnostic.digest(article_prose_text(self.saved['content']))}
 

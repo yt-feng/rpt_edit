@@ -221,13 +221,18 @@ def attribution_html(metadata: dict) -> str:
         return f'<p class="image-credit" data-editorial-credit="1">{caption}</p>'
     source = str(metadata.get("source_url", ""))
     license_url = str(metadata.get("license_url", ""))
+    # WeChat removes external anchor elements while retaining their text. Keep
+    # the complete attribution URLs visible so that source and license survive
+    # draft/get, HTML sanitization and copied article text.
     links = []
     if _allowed_url(source, {"commons.wikimedia.org"}):
-        links.append(f'<a href="{html.escape(source, quote=True)}">图片来源</a>')
+        links.append(f'图片来源：{html.escape(source, quote=True)}')
     if _allowed_url(license_url, {"creativecommons.org"}):
-        links.append(f'<a href="{html.escape(license_url, quote=True)}">许可</a>')
+        links.append(f'许可：{html.escape(license_url, quote=True)}')
     suffix = " · ".join(links)
-    return f'<p class="image-credit" data-editorial-credit="1">{caption}{" " + suffix if suffix else ""}</p>'
+    return ('<p class="image-credit" data-editorial-credit="1" '
+            'style="font-size:11px;line-height:1.5;color:#667085;word-break:break-all;overflow-wrap:anywhere;">'
+            f'{caption}{" " + suffix if suffix else ""}</p>')
 
 
 def _atomic(path: Path, data: bytes) -> None:

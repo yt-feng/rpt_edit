@@ -42,6 +42,12 @@ def response(data):
     return result
 
 
+def stripped_commons_credit(license_name='CC BY 3.0'):
+    return ('<p class="image-credit" data-editorial-credit="1">'
+            f'主题配图：Synthetic Photographer / Wikimedia Commons / {license_name}'
+            '；已裁剪与缩放，非报告原图。 图片来源 · 许可</p>')
+
+
 class ImageDownloadTests(unittest.TestCase):
     def test_untrusted_and_malformed_urls_make_no_request(self):
         session = Mock()
@@ -76,6 +82,32 @@ class ImageDownloadTests(unittest.TestCase):
 
 
 class ReplacementTests(unittest.TestCase):
+    def test_duplicate_image_renditions_replace_every_adjacent_legacy_credit_atomically(self):
+        old='https://mmbiz.qpic.cn/old-commons/0';other='https://mmbiz.qpic.cn/old-commons/640'
+        credit=stripped_commons_credit();new='https://mmbiz.qpic.cn/new-licensed/0'
+        footer=portal.image_html('https://mmbiz.qpic.cn/contact/0','KC桌面')
+        content='<p>Unchanged source prose.</p>'+portal.image_html(old)+credit+credit+'<p>Retained paragraph.</p>'+portal.image_html(other)+credit+footer
+        replacement=attribution_html({'source':'local_editorial'})
+        updated=repair.replace_image(content,old,new,replacement)
+        self.assertEqual(2,updated.count('data-editorial-credit="1"'))
+        self.assertNotIn('Synthetic Photographer',updated);self.assertNotIn('old-commons',updated)
+        self.assertEqual(2,updated.count(new));self.assertTrue(updated.endswith(footer))
+        self.assertEqual(repair.prose_identity({'content':content}),repair.prose_identity({'content':updated}))
+
+    def test_unmarked_unknown_license_extra_text_and_nonadjacent_paragraphs_are_not_stripped(self):
+        old='https://mmbiz.qpic.cn/old-commons/0';image=portal.image_html(old);credit=stripped_commons_credit()
+        variants=[credit.replace(' data-editorial-credit="1"',''),credit.replace(' class="image-credit"',''),
+                  credit.replace('CC BY 3.0','CC BY-NC 3.0'),credit.replace('</p>',' Additional body text.</p>')]
+        for note in variants:
+            with self.subTest(note_length=len(note)):
+                content=image+note
+                self.assertFalse(repair.has_incomplete_editorial_credit(content,old))
+                updated=repair.replace_image(content,old,'https://mmbiz.qpic.cn/new/0',attribution_html({'source':'local_editorial'}))
+                self.assertIn(note,updated)
+        separated=image+'<p>Intervening user text.</p>'+credit
+        self.assertFalse(repair.has_incomplete_editorial_credit(separated,old))
+        self.assertIn(credit,repair.replace_image(separated,old,'https://mmbiz.qpic.cn/new/0',''))
+
     def test_credit_replacement_is_adjacent_atomic_and_never_nested_in_image_paragraph(self):
         first = attribution_html({'source': 'local_editorial'})
         second = attribution_html({'source': 'commons', 'author': 'New Author', 'license': 'CC BY 4.0',
@@ -658,6 +690,79 @@ class DraftRepairTests(unittest.TestCase):
             again = repair.repair_drafts(receipt, object(), 'TOKEN', Path(temporary), 30, True)
             self.assertEqual(0, again['changed_articles'])
             for operation in (post, provider, upload, cover): operation.assert_not_called()
+
+    def test_real_three_commons_and_two_commons_plus_local_shapes_replace_only_unattributable_media(self):
+        for count in (3,2):
+            with self.subTest(commons_count=count), tempfile.TemporaryDirectory() as temporary, ExitStack() as stack:
+                saved=article(broken=False);live=copy.deepcopy(saved)
+                refs=repair.article_body_images(live['content'])
+                for index,(url,alt) in enumerate(refs):
+                    credit=stripped_commons_credit(('CC BY 3.0','CC BY 3.0','CC BY 2.0')[index]) if index<count else attribution_html({'source':'local_editorial'})
+                    old=portal.image_html(url,alt);live['content']=live['content'].replace(old,old+credit)
+                self.assertEqual(repair.prose_identity(saved),repair.prose_identity(live))
+                self.assertFalse(portal.wechat_media_contract_check(live,live)['matches'])
+                state,_download,provider,upload,cover,post=self.environment(stack,[live])
+                provider.side_effect=lambda _s,_title,target,*_a,**_kw:(photo(target),{
+                    'source':'wikimedia_commons','author':'New Synthetic Photographer','license':'CC BY 4.0',
+                    'source_url':'https://commons.wikimedia.org/wiki/File:New_Synthetic.jpg',
+                    'license_url':'https://creativecommons.org/licenses/by/4.0/'})
+                upload.side_effect=[f'https://mmbiz.qpic.cn/new-licensed-{i}/0' for i in range(count)]
+                result=repair.repair_drafts([{'media_id':'existing-exact-id','articles':[saved]}],object(),'TOKEN',Path(temporary),30,True)
+                self.assertTrue(result['fully_repaired']);self.assertEqual(1,result['updated_articles'])
+                self.assertEqual(count,result['body_replacements']);self.assertEqual(0,result['body_added'])
+                self.assertEqual(1,result['cover_replacements']);self.assertEqual(count,provider.call_count)
+                facts=result['drafts'][0]['changed'][0]
+                self.assertEqual('license_source_lost',facts['cover_reason'])
+                self.assertTrue(all(row['reason']=='legacy_commons_credit_missing_source' for row in facts['body_replacements']))
+                self.assertEqual('editorial_fallback' if count==3 else 'retained_body_image',facts['cover_source'])
+                for url,_alt in refs[:count]:self.assertNotIn(url,state['news_item'][0]['content'])
+                if count==2:self.assertIn(refs[2][0],state['news_item'][0]['content'])
+                self.assertEqual(repair.prose_identity(saved),repair.prose_identity(state['news_item'][0]))
+                self.assertTrue(portal.wechat_media_contract_check(state['news_item'][0],state['news_item'][0])['matches'])
+                self.assertEqual(count,state['news_item'][0]['content'].count('https://commons.wikimedia.org/wiki/File:New_Synthetic.jpg'))
+                post.assert_called_once();cover.assert_called_once()
+                post.reset_mock();provider.reset_mock();upload.reset_mock();cover.reset_mock()
+                again=repair.repair_drafts([{'media_id':'existing-exact-id','articles':[saved]}],object(),'TOKEN',Path(temporary),30,True)
+                self.assertTrue(again['fully_repaired']);self.assertEqual(0,again['changed_articles'])
+                for call in (post,provider,upload,cover):call.assert_not_called()
+
+    def test_incomplete_credit_audit_reports_license_problem_without_uploads_or_writes(self):
+        original=article(broken=False);url,alt=repair.article_body_images(original['content'])[0]
+        image=portal.image_html(url,alt);original['content']=original['content'].replace(image,image+stripped_commons_credit())
+        with tempfile.TemporaryDirectory() as temporary, ExitStack() as stack:
+            _state,_download,provider,upload,cover,post=self.environment(stack,[original])
+            result=repair.repair_drafts([{'media_id':'existing-exact-id','articles':[original]}],object(),'TOKEN',Path(temporary),30,False)
+        facts=result['drafts'][0]['changed'][0]
+        self.assertEqual('license_source_lost',facts['cover_reason'])
+        self.assertEqual('legacy_commons_credit_missing_source',facts['body_replacements'][0]['reason'])
+        self.assertFalse(result['applied']);self.assertEqual(0,result['updated_articles'])
+        for call in (provider,upload,cover,post):call.assert_not_called()
+
+    def test_known_source_chart_replaces_unattributable_cover_and_avoids_unneeded_fallback(self):
+        original=article(broken=False);refs=repair.article_body_images(original['content'])
+        first=portal.image_html(*refs[0]);original['content']=original['content'].replace(first,first+stripped_commons_credit())
+        second=portal.image_html(*refs[1]);original['content']=original['content'].replace(second,portal.image_html(refs[1][0],'assets/source_image_02.png'))
+        with tempfile.TemporaryDirectory() as temporary, ExitStack() as stack:
+            _state,_download,provider,upload,cover,_post=self.environment(stack,[original])
+            result,facts=repair.build_media_repair(object(),'TOKEN',original,Path(temporary),30)
+        self.assertEqual('license_source_lost',facts['cover_reason'])
+        self.assertEqual('retained_source_reference',facts['cover_source'])
+        self.assertEqual('remove_invalid_image',facts['body_replacements'][0]['action'])
+        self.assertNotIn(refs[0][0],result['content']);self.assertNotIn(stripped_commons_credit(),result['content'])
+        self.assertEqual(repair.prose_identity(original),repair.prose_identity(result))
+        provider.assert_not_called();upload.assert_not_called();cover.assert_called_once()
+
+    def test_remaining_incomplete_credit_never_passes_media_readback_without_a_repair(self):
+        saved=article(broken=False);live=copy.deepcopy(saved);url,alt=repair.article_body_images(live['content'])[0]
+        image=portal.image_html(url,alt);live['content']=live['content'].replace(image,image+stripped_commons_credit())
+        with tempfile.TemporaryDirectory() as temporary, ExitStack() as stack:
+            _state,_download,_provider,_upload,_cover,post=self.environment(stack,[live])
+            stack.enter_context(patch.object(repair,'build_media_repair',return_value=(copy.deepcopy(live),{'cover_replaced':False,'body_replacements':[],'body_added':0,'sources':[]})))
+            result=repair.repair_drafts([{'media_id':'existing-exact-id','articles':[saved]}],object(),'TOKEN',Path(temporary),30,True)
+        self.assertEqual(0,result['updated_articles']);self.assertEqual(0,result['article_count'])
+        self.assertFalse(result['fully_repaired']);self.assertEqual('draft_image_readback_failed',result['drafts'][0]['resolution'])
+        self.assertFalse(result['drafts'][0]['identity_diagnostics']['readback_checks']['matches_media_contract'])
+        post.assert_not_called()
 
     def test_audit_has_no_provider_upload_or_update_calls(self):
         original = [article()]

@@ -2168,14 +2168,23 @@ def visible_wechat_content_text(content: Any) -> str:
 IMAGE_CREDIT_PARAGRAPH_RE = re.compile(r'<p\b[^>]*>.*?</p>', re.I | re.S)
 
 
-def generated_image_credit_signature(paragraph: str) -> tuple[str, tuple[str, ...]] | None:
-    """Recognize only this uploader's complete, marked image-credit format."""
+COMMONS_IMAGE_CREDIT_CAPTION = (
+    r"(?P<caption>主题配图：.{1,240} / Wikimedia Commons / "
+    r"(?P<license>CC0 1\.0|CC BY (?P<version>2\.0|2\.5|3\.0|4\.0))"
+    r"；已裁剪与缩放，非报告原图。)"
+)
+
+
+def _generated_image_credit_parts(paragraph: str) -> tuple[str, list[str], list[str]] | None:
+    """Parse only the marked paragraph and its optional anchor children."""
     class Credit(HTMLParser):
         def __init__(self) -> None:
             super().__init__(convert_charrefs=True)
             self.root: dict[str, str | None] = {}
             self.parts: list[str] = []
             self.links: list[str] = []
+            self.link_texts: list[str] = []
+            self.active_link: list[str] | None = None
             self.invalid = False
             self.p_count = 0
 
@@ -2185,39 +2194,86 @@ def generated_image_credit_signature(paragraph: str) -> tuple[str, tuple[str, ..
                 self.p_count += 1
                 self.root = values
             elif tag == "a":
+                if self.active_link is not None:
+                    self.invalid = True
+                self.active_link = []
                 self.links.append(str(values.get("href") or ""))
             else:
                 self.invalid = True
 
         def handle_data(self, data):
             self.parts.append(data)
+            if self.active_link is not None:
+                self.active_link.append(data)
+
+        def handle_endtag(self, tag):
+            if tag == "a":
+                if self.active_link is None:
+                    self.invalid = True
+                else:
+                    self.link_texts.append(normalize_space("".join(self.active_link)))
+                    self.active_link = None
 
         def handle_comment(self, _data):
             self.invalid = True
 
     parsed = Credit()
     parsed.feed(paragraph)
-    if (parsed.invalid or parsed.p_count != 1 or parsed.root.get("data-editorial-credit") != "1"
+    parsed.close()
+    if (parsed.invalid or parsed.active_link is not None or parsed.p_count != 1 or parsed.root.get("data-editorial-credit") != "1"
             or "image-credit" not in str(parsed.root.get("class") or "").split()):
         return None
-    text = normalize_space("".join(parsed.parts))
-    if text == attribution_caption({"source": "local_editorial"}) and not parsed.links:
-        return text, ()
-    match = re.fullmatch(r"主题配图：.{1,240} / Wikimedia Commons / (CC0 1\.0|CC BY (2\.0|2\.5|3\.0|4\.0))；已裁剪与缩放，非报告原图。 图片来源 · 许可", text)
-    if not match or len(parsed.links) != 2:
+    return normalize_space("".join(parsed.parts)), parsed.links, parsed.link_texts
+
+
+def legacy_stripped_commons_credit(paragraph: str) -> bool:
+    """Identify the observed link-stripped credit for prose identity only.
+
+    It has lost source/license URLs and MUST NOT pass media acceptance. Repair
+    replaces its adjacent photo and entire credit rather than inventing a URL.
+    """
+    parsed = _generated_image_credit_parts(paragraph)
+    return bool(parsed and not parsed[1] and re.fullmatch(
+        COMMONS_IMAGE_CREDIT_CAPTION + r" 图片来源 · 许可", parsed[0]))
+
+
+def generated_image_credit_signature(paragraph: str) -> tuple[str, tuple[str, ...]] | None:
+    """Recognize complete credits, including URLs that survive WeChat stripping."""
+    parsed = _generated_image_credit_parts(paragraph)
+    if parsed is None:
         return None
+    text, links, link_texts = parsed
+    if text == attribution_caption({"source": "local_editorial"}) and not links:
+        return text, ()
+    match = re.fullmatch(COMMONS_IMAGE_CREDIT_CAPTION + r" 图片来源 · 许可", text)
+    if match:
+        if len(links) != 2 or link_texts != ["图片来源", "许可"]:
+            return None
+    else:
+        match = re.fullmatch(COMMONS_IMAGE_CREDIT_CAPTION
+            + r" 图片来源：(?P<source>[^\s<>]{1,2048}) · 许可：(?P<license_url>[^\s<>]{1,2048})", text)
+        if not match:
+            return None
+        visible_urls = [match["source"], match["license_url"]]
+        # A client may make the visible URLs clickable. Any supplied href must
+        # still equal the visible URI; a misleading/missing destination fails.
+        if links and (links != visible_urls or link_texts != visible_urls):
+            return None
+        links = visible_urls
     try:
-        source, license_url = (urlsplit(url) for url in parsed.links)
+        source, license_url = (urlsplit(url) for url in links)
         if any(part.scheme != "https" or part.username or part.password or part.port not in (None, 443) or part.fragment or part.query for part in (source, license_url)):
             return None
-        if source.hostname != "commons.wikimedia.org" or not source.path.startswith("/wiki/File:"):
+        if source.hostname != "commons.wikimedia.org" or not source.path.startswith("/wiki/File:") or len(source.path) <= len("/wiki/File:"):
             return None
-        license_path = "/publicdomain/zero/1.0/" if match[1] == "CC0 1.0" else f"/licenses/by/{match[2]}/"
+        license_path = "/publicdomain/zero/1.0/" if match["license"] == "CC0 1.0" else f"/licenses/by/{match['version']}/"
         if license_url.hostname != "creativecommons.org" or license_url.path != license_path:
             return None
     except ValueError:
         return None
-    return text, tuple(parsed.links)
+    # Old linked credits and the new visible-URI representation have exactly
+    # the same identity, including author, license and both complete URLs.
+    return match["caption"] + " 图片来源 · 许可", tuple(links)
 
 
 def generated_image_credits(content: Any) -> list[tuple[str, tuple[str, ...]]]:
@@ -2226,13 +2282,15 @@ def generated_image_credits(content: Any) -> list[tuple[str, tuple[str, ...]]]:
 
 
 def article_prose_text(content: Any) -> str:
-    """Stable article identity excludes only valid generated image credits.
+    """Exclude complete credits and the exact observed link-stripped legacy form.
 
-    Credits are independently checked by the media contract; generic paragraphs,
-    malformed credits and manually added notes remain part of article identity.
+    The legacy form is prose-only compatibility: the media contract rejects it
+    until its image and attribution are replaced. Other malformed credits,
+    generic paragraphs and manually added notes remain in article identity.
     """
     stripped = IMAGE_CREDIT_PARAGRAPH_RE.sub(
-        lambda match: "" if generated_image_credit_signature(match.group(0)) is not None else match.group(0),
+        lambda match: "" if (generated_image_credit_signature(match.group(0)) is not None
+            or legacy_stripped_commons_credit(match.group(0))) else match.group(0),
         str(content or ""),
     )
     return visible_wechat_content_text(stripped)
@@ -2479,7 +2537,12 @@ def wechat_media_contract_check(article: dict[str, Any], expected: dict[str, Any
     footer_count = sum(alt == "KC桌面" for _url, alt in expected_images)
     actual_credits = generated_image_credits(article.get("content"))
     expected_credits = generated_image_credits((expected or {}).get("content"))
-    matches_credits = expected is None or actual_credits == expected_credits
+    actual_incomplete = sum(legacy_stripped_commons_credit(match.group(0))
+        for match in IMAGE_CREDIT_PARAGRAPH_RE.finditer(str(article.get("content") or "")))
+    expected_incomplete = sum(legacy_stripped_commons_credit(match.group(0))
+        for match in IMAGE_CREDIT_PARAGRAPH_RE.finditer(str((expected or {}).get("content") or "")))
+    matches_credits = not actual_incomplete and not expected_incomplete and (
+        expected is None or actual_credits == expected_credits)
     return {
         "matches": matches_cover and matches_images and matches_credits,
         "matches_cover": matches_cover,
@@ -2487,6 +2550,8 @@ def wechat_media_contract_check(article: dict[str, Any], expected: dict[str, Any
         "matches_image_credits": matches_credits,
         "image_credit_count": len(actual_credits),
         "expected_image_credit_count": len(expected_credits),
+        "incomplete_image_credit_count": actual_incomplete,
+        "expected_incomplete_image_credit_count": expected_incomplete,
         "image_count": len(actual_images),
         "expected_image_count": len(expected_images),
         "expected_body_image_count": len(expected_images) - footer_count,

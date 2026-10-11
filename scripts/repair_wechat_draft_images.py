@@ -18,6 +18,7 @@ from verify_existing_wechat_drafts import load_drafts
 from push_portal_translated_to_wechat_drafts import (
     get_stable_access_token, get_draft, draft_news_items, wechat_content_images,
     materialize_private_article_payload, article_prose_text, generated_image_credit_signature,
+    legacy_stripped_commons_credit,
     post_wechat_json, parse_wechat_json, prepare_cover_upload_image,
     upload_article_image, upload_cover_material, image_html, summarize_draft_get_response,
     wechat_image_url_identity, WeChatError,
@@ -272,7 +273,8 @@ def replace_image(content, old_url, new_url, credit):
             tail = content[end:]
             whitespace = len(tail) - len(tail.lstrip())
             previous_credit = CREDIT_RE.match(tail, whitespace)
-            if not previous_credit or generated_image_credit_signature(previous_credit.group(0)) is None:
+            if not previous_credit or not (generated_image_credit_signature(previous_credit.group(0)) is not None
+                                           or legacy_stripped_commons_credit(previous_credit.group(0))):
                 break
             end += previous_credit.end()
         pieces.append(content[cursor:match.start()])
@@ -285,16 +287,29 @@ def replace_image(content, old_url, new_url, credit):
     return ''.join(pieces)
 
 
-def has_editorial_credit(content, url):
+def adjacent_image_credits(content, url):
+    """Yield only managed credits immediately following this non-contact image."""
     identity = wechat_image_url_identity(url)
     for match in IMAGE_BLOCK_RE.finditer(content):
         refs = wechat_content_images(match.group(0))
-        if refs and wechat_image_url_identity(refs[0][0]) == identity:
-            tail = content[match.end():].lstrip()
-            credit = CREDIT_RE.match(tail)
-            if credit and generated_image_credit_signature(credit.group(0)) is not None:
-                return True
-    return False
+        if refs and refs[0][1] != 'KC桌面' and wechat_image_url_identity(refs[0][0]) == identity:
+            end = match.end()
+            while True:
+                tail = content[end:]
+                credit = CREDIT_RE.match(tail, len(tail)-len(tail.lstrip()))
+                if not credit or not (generated_image_credit_signature(credit.group(0)) is not None
+                                      or legacy_stripped_commons_credit(credit.group(0))):
+                    break
+                yield credit.group(0)
+                end += credit.end()
+
+
+def has_editorial_credit(content, url):
+    return any(adjacent_image_credits(content, url))
+
+
+def has_incomplete_editorial_credit(content, url):
+    return any(legacy_stripped_commons_credit(credit) for credit in adjacent_image_credits(content, url))
 
 
 def has_source_image_reference(alt):
@@ -314,6 +329,8 @@ def build_media_repair(session, token, article, directory, timeout, min_images=3
         rejection = fetch_wechat_image(session, url, local, timeout)
         if re.search(r'(?:^|/)xhs_card_\d+\.(?:png|jpe?g)$', alt, re.I):
             rejection = 'generated_title_or_chart_card'
+        if has_incomplete_editorial_credit(content, url):
+            rejection = 'legacy_commons_credit_missing_source'
         inspected.append((index, url, alt, local, rejection))
     # Absence of a credit is not evidence of an original chart: legacy generated
     # photos were uncredited too. Keep good legacy images, without relabeling
@@ -348,6 +365,11 @@ def build_media_repair(session, token, article, directory, timeout, min_images=3
         candidates.append(local);sources.append(metadata['source']);added += 1
     cover = directory / 'old_cover.jpg'
     cover_issue = fetch_wechat_image(session, str(article.get('thumb_url') or ''), cover, timeout)
+    if any(reason == 'legacy_commons_credit_missing_source' for _, _, _, _, reason in inspected):
+        # The previous cover may be a rendition of the now-unattributable
+        # Commons image. Bind it to a retained source/credited candidate rather
+        # than claiming the old picture was visually defective.
+        cover_issue = 'license_source_lost'
     if cover_issue:
         if not candidates:
             raise ValueError('No usable image available for cover')
@@ -438,6 +460,10 @@ def repair_drafts(drafts, session, token, output, timeout, apply):
                 for i, (_url, alt) in enumerate(body):
                     if re.search(r'(?:^|/)xhs_card_\d+\.(?:png|jpe?g)$', alt, re.I):
                         issues[i] = 'generated_title_or_chart_card'
+                    if has_incomplete_editorial_credit(article.get('content') or '', _url):
+                        issues[i] = 'legacy_commons_credit_missing_source'
+                if 'legacy_commons_credit_missing_source' in issues:
+                    cover_issue = 'license_source_lost'
                 has_usable_existing = any(not issue for issue in issues)
                 facts = {'cover_replaced':bool(cover_issue),'cover_reason':cover_issue,'body_replacements':[{'index':i+1,'reason':v} for i,v in enumerate(issues) if v], 'body_added':0 if has_usable_existing else max(0,3-len(body)),'sources':[]}
             else:

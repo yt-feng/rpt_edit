@@ -321,6 +321,12 @@ class EditorialImagesTest(unittest.TestCase):
         self.assertNotIn("bad.test", rendered)
         self.assertIn("非报告原图", rendered)
         self.assertIn('data-editorial-credit="1"', rendered)
+        self.assertIn('图片来源：https://commons.wikimedia.org/wiki/File:', rendered)
+        self.assertIn('许可：https://creativecommons.org/licenses/by/4.0/', rendered)
+        self.assertNotIn('<a ', rendered)
+        self.assertIn('font-size:11px', rendered)
+        self.assertIn('word-break:break-all', rendered)
+        self.assertIn('overflow-wrap:anywhere', rendered)
 
     def test_rejects_external_or_private_source_urls(self):
         for url in ("http://upload.wikimedia.org/a.png", "https://127.0.0.1/a.png",
