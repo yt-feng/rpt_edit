@@ -425,3 +425,41 @@ test("ordinary research login still resumes its original intent", async () => {
   assert.equal(h.documentEvents.find(({ type }) => type === "portal-auth-complete").detail.resumeIntent, true);
   assert.equal(h.events.some(({ action }) => action === "intent_resumed"), true);
 });
+
+
+for (const clearedAt of ["before_submit", "before_response"]) {
+  test(`an independent auth check clearing the session ${clearedAt} restores the guest email field`, async () => {
+    let resolveRejectedRequest;
+    const h = createHarness({
+      session: { token: "expired-token", user: { id: "member-1", email: "" } },
+      fetchResponse: async (_url, options) => {
+        if (options.headers.Authorization) return new Promise((resolve) => { resolveRejectedRequest = resolve; });
+        return { ok: true, status: 200, json: async () => ({ ok: true }) };
+      },
+    });
+    await h.open();
+    await h.edit("membershipContactChannel", "telegram");
+    await h.edit("membershipContactValue", "private-handle");
+    await h.edit("membershipRequestMessage", "Saved draft");
+    if (clearedAt === "before_submit") {
+      h.setSession(null);
+      await h.submit();
+      assert.equal(h.requests.length, 0);
+    } else {
+      const pending = h.submit();
+      h.setSession(null);
+      resolveRejectedRequest({ ok: false, status: 401, json: async () => ({}) });
+      await pending;
+      assert.equal(h.requests.length, 1, "an independent logout must not trigger an automatic POST retry");
+    }
+    assert.equal(h.get("membershipRequesterEmail").readOnly, false);
+    assert.equal(h.get("membershipRequesterEmail").required, true);
+    assert.equal(h.get("membershipAccountEmailHint").hidden, true);
+    assert.equal(h.get("membershipContactValue").value, "private-handle");
+    assert.equal(h.get("membershipRequestMessage").value, "Saved draft");
+    await h.edit("membershipRequesterEmail", "guest@example.com");
+    await h.submit();
+    assert.equal(h.requests.at(-1).options.headers.Authorization, undefined);
+    assert.equal(h.get("membershipRequestSubmit").textContent, "申请已提交");
+  });
+}

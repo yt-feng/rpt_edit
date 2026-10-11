@@ -2041,6 +2041,8 @@
         const requestKind = membershipRequestKind(membershipRequestKindInput && membershipRequestKindInput.value);
         const requestSession = loadAuthSession();
         const requestToken = String(requestSession && requestSession.token || "");
+        // Another in-flight auth check may have cleared the session since this form opened.
+        updateMembershipEmailState(requestSession);
         // Authenticated requests bind the authoritative account email server-side.
         if (!requestToken && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/u.test(requesterEmail)) {
           setMembershipRequestStatus("请填写有效的常用邮箱。", "error");
@@ -2079,8 +2081,8 @@
           const data = await response.json().catch(() => ({}));
           if (response.status === 401 && requestToken) {
             const currentSession = loadAuthSession();
-            if (currentSession && currentSession.token === requestToken) {
-              clearAuthSession();
+            if (!currentSession || currentSession.token === requestToken) {
+              if (currentSession) clearAuthSession();
               // Keep the complete draft and require an explicit retry as a guest.
               updateMembershipEmailState(null);
               updateRequestView();

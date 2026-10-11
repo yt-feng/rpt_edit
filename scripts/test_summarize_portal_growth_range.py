@@ -55,6 +55,25 @@ def event(
 
 
 class GrowthReviewTest(unittest.TestCase):
+    def test_legacy_json_rendering_does_not_invent_download_intersections(self) -> None:
+        # Captured from the pre-diagnostics builder at 9e46db30, with an attempt
+        # and a success in different sessions. The old JSON has totals only.
+        legacy = json.loads(Path(__file__).with_name("fixtures").joinpath("portal_growth_review_legacy.json").read_text())
+        self.assertNotIn("download_diagnostics", legacy)
+        self.assertEqual(legacy["totals"]["download_attempt_sessions"], 1)
+        self.assertEqual(legacy["totals"]["download_success_sessions"], 1)
+        rendered = growth.markdown_summary(legacy)
+        self.assertIn("尝试下载会话：1；同会话观测到成功：未观测（不可视作 0）；错误：未观测（不可视作 0）；准备中：未观测（不可视作 0）", rendered)
+        legacy["download_diagnostics"] = None
+        del legacy["totals"]["download_attempt_sessions"]
+        self.assertIn("尝试下载会话：未观测（不可视作 0）", growth.markdown_summary(legacy))
+
+        current = growth.build_growth_review([
+            event("attempt", "2026-10-01", "a", "v", event_type="download_attempt"),
+            event("success", "2026-10-01", "b", "w", event_type="download_success"),
+        ], "2026-10-01", "2026-10-01")
+        self.assertIn("尝试下载会话：1；同会话观测到成功：0；错误：0；准备中：0", growth.markdown_summary(current))
+
     def test_intentional_engagement_excludes_passive_exposures_and_empty_searches(self) -> None:
         rows = [
             event("auto-page", "2026-10-01", "auto", "auto-v"),

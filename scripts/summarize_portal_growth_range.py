@@ -1441,10 +1441,10 @@ def markdown_summary(review: dict[str, Any]) -> str:
     for row in membership.get("by_request_kind", []):
         counts = " | ".join(observed(stage["sessions"]) for stage in row["stages"])
         lines.append(f"| {row['request_kind']} | {counts} |")
-    download = review.get("download_diagnostics", {})
+    download = review.get("download_diagnostics") or {}
     lines.extend([
         "", "## 下载过程", "",
-        f"- 尝试下载会话：{download.get('attempt_sessions', 0)}；同会话观测到成功：{download.get('attempt_and_success_sessions', 0)}；错误：{download.get('attempt_and_error_sessions', 0)}；准备中：{download.get('attempt_and_pending_sessions', 0)}。",
+        f"- 尝试下载会话：{observed(download.get('attempt_sessions', totals.get('download_attempt_sessions')))}；同会话观测到成功：{observed(download.get('attempt_and_success_sessions'))}；错误：{observed(download.get('attempt_and_error_sessions'))}；准备中：{observed(download.get('attempt_and_pending_sessions'))}。",
         "准备中、错误与成功可发生在同一会话，不能相加；未观测成功不等于下载失败。成功事件只确认文件交给浏览器保存。", "",
         "| 下载错误类别 | 会话 |", "|---|---:|",
     ])
