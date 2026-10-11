@@ -44,7 +44,14 @@ OUTAGE_COOLDOWN_SECONDS = 300
 COMMONS_LICENSE_FILTER = 'incategory:"CC-Zero|CC-BY-2.0|CC-BY-2.5|CC-BY-3.0|CC-BY-4.0"'
 _REJECTION_REASONS = {
     "metadata", "license", "format", "url", "duplicate_url", "duplicate_content",
-    "response_type", "image_validation", "download_limit", "time_budget",
+    "response_type", "image_validation", "download_limit", "time_budget", "declared_geometry",
+}
+_VALIDATION_REASONS = {
+    "declared_small", "declared_aspect", "declared_pixels", "declared_bytes",
+    "declared_dimensions", "image_too_large", "invalid_image_format", "image_too_small",
+    "image_too_many_pixels", "invalid_image_aspect", "flat_image", "image_decode",
+    "response_too_large", "untrusted_url", "untrusted_response_url", "too_many_redirects",
+    "invalid_content_length", "other_validation",
 }
 _TOPICS = (
     ("technology", "semiconductor", r"芯片|半导体|存储|晶圆|tdk|marvell|samsung|三星|科技|人工智能|数据中心|\bai\b|semiconductor|memory|technology|data cent|software|软件|电子"),
@@ -77,10 +84,43 @@ def _safe_diagnostics(value: object) -> dict:
         return value if type(value) is int and 0 <= value <= 8 else 0
     rejections = value.get("rejections", {})
     rejections = rejections if isinstance(rejections, dict) else {}
+    failures = value.get("validation_failures", {})
+    failures = failures if isinstance(failures, dict) else {}
     return {"search_results": number(value.get("search_results")),
             "admitted": number(value.get("admitted")),
             "rejections": {key: number(rejections[key]) for key in sorted(_REJECTION_REASONS)
-                           if key in rejections and number(rejections[key])}}
+                           if key in rejections and number(rejections[key])},
+            "validation_failures": {key: number(failures[key]) for key in sorted(_VALIDATION_REASONS)
+                                    if key in failures and number(failures[key])},
+            **{key: number(value.get(key)) for key in (
+                "thumbnail_candidates", "original_candidates", "thumbnail_attempts", "original_attempts")}}
+
+
+def _declared_geometry_rejection(info: dict, thumbnail: bool) -> str:
+    """Reject only dimensions of the chosen asset, not its larger original."""
+    prefix = "thumb" if thumbnail else ""
+    width, height = info.get(prefix + "width"), info.get(prefix + "height")
+    if width is not None or height is not None:
+        if type(width) is not int or type(height) is not int or width <= 0 or height <= 0:
+            return "declared_dimensions"
+        if min(width, height) < 320:
+            return "declared_small"
+        if not .6 <= width / height <= 3.5:
+            return "declared_aspect"
+        if width * height > MAX_PIXELS:
+            return "declared_pixels"
+    # API size describes the original, not the generated thumbnail.
+    if not thumbnail and type(info.get("size")) is int and info["size"] > MAX_IMAGE_BYTES:
+        return "declared_bytes"
+    return ""
+
+
+def _validation_reason(exc: Exception) -> str:
+    if isinstance(exc, Image.DecompressionBombError):
+        return "image_too_many_pixels"
+    if isinstance(exc, OSError):
+        return "image_decode"
+    return str(exc) if str(exc) in _VALIDATION_REASONS else "other_validation"
 
 
 class _Text(HTMLParser):
@@ -238,8 +278,13 @@ def _read_response(session, url: str, *, deadline: float, limit: int,
             if not _allowed_url(final, hosts):
                 raise ValueError("untrusted_response_url")
             size = response.headers.get("Content-Length")
-            if size and int(size) > limit:
-                raise ValueError("response_too_large")
+            if size:
+                try:
+                    declared_size = int(size)
+                except (ValueError, TypeError):
+                    raise ValueError("invalid_content_length") from None
+                if declared_size > limit:
+                    raise ValueError("response_too_large")
             chunks, total = [], 0
             for chunk in response.iter_content(chunk_size=65536):
                 if time.monotonic() >= deadline:
@@ -256,22 +301,25 @@ def _read_response(session, url: str, *, deadline: float, limit: int,
 
 def _search(session, query: str, deadline: float, cache_dir: Path | None) -> list[dict]:
     query = _search_query(query)
-    cached = _SEARCH_CACHE.get(query)
+    # Change identity with thumbnail parameters so old API metadata lacking
+    # bounded thumbnail dimensions does not survive this request upgrade.
+    cache_key = "thumbnail-box-1200-v2:" + query
+    cached = _SEARCH_CACHE.get(cache_key)
     if cached and time.time() - cached[0] < CACHE_TTL:
         return cached[1]
-    cache_path = cache_dir / (hashlib.sha256(query.encode()).hexdigest() + ".json") if cache_dir else None
+    cache_path = cache_dir / (hashlib.sha256(cache_key.encode()).hexdigest() + ".json") if cache_dir else None
     if cache_path and cache_path.is_file() and cache_path.stat().st_size <= MAX_JSON_BYTES:
         try:
             data = json.loads(cache_path.read_text())
             if time.time() - float(data["time"]) < CACHE_TTL and isinstance(data["results"], list):
-                _SEARCH_CACHE[query] = (float(data["time"]), data["results"][:8])
+                _SEARCH_CACHE[cache_key] = (float(data["time"]), data["results"][:8])
                 return data["results"][:8]
         except (ValueError, KeyError, OSError, TypeError):
             pass
     params = {"action": "query", "format": "json", "formatversion": 2,
               "generator": "search", "gsrnamespace": 6, "gsrlimit": 8,
               "gsrsearch": query, "prop": "imageinfo",
-              "iiprop": "url|size|mime|extmetadata", "iiurlwidth": 1200,
+              "iiprop": "url|size|mime|thumbmime|extmetadata", "iiurlwidth": 1200, "iiurlheight": 1200,
               "iiextmetadatafilter": "Artist|Credit|License|LicenseShortName|LicenseUrl|UsageTerms|Copyrighted|AttributionRequired"}
     try:
         body, content_type = _read_response(session, API_URL, deadline=deadline, limit=MAX_JSON_BYTES,
@@ -290,7 +338,7 @@ def _search(session, query: str, deadline: float, cache_dir: Path | None) -> lis
         _record_outage(exc)
         raise
     results = [p for p in pages[:8] if isinstance(p, dict)]
-    _SEARCH_CACHE[query] = (time.time(), results)
+    _SEARCH_CACHE[cache_key] = (time.time(), results)
     if cache_path:
         try:
             _atomic(cache_path, json.dumps({"time": time.time(), "results": results}).encode())
@@ -303,8 +351,12 @@ def _normalized_image(data: bytes) -> bytes:
     if len(data) > MAX_IMAGE_BYTES:
         raise ValueError("image_too_large")
     with Image.open(io.BytesIO(data)) as image:
-        if image.format not in ("JPEG", "PNG") or min(image.size) < 320 or image.width * image.height > MAX_PIXELS:
-            raise ValueError("invalid_image_dimensions_or_format")
+        if image.format not in ("JPEG", "PNG"):
+            raise ValueError("invalid_image_format")
+        if min(image.size) < 320:
+            raise ValueError("image_too_small")
+        if image.width * image.height > MAX_PIXELS:
+            raise ValueError("image_too_many_pixels")
         if not 0.6 <= image.width / image.height <= 3.5:
             raise ValueError("invalid_image_aspect")
         image.verify()
@@ -423,11 +475,15 @@ def download_editorial_image(session, title, target, timeout, index=1, cache_dir
     used = _USED.setdefault(article_key, set())
     if len(_USED) > 512:
         _USED.pop(next(iter(_USED)))
-    diagnostics = {"search_results": 0, "admitted": 0, "rejections": {}}
+    diagnostics = _safe_diagnostics({})
 
     def reject(reason):
         rejected = diagnostics["rejections"]
         rejected[reason] = rejected.get(reason, 0) + 1
+
+    def validation_failure(reason):
+        failures = diagnostics["validation_failures"]
+        failures[reason] = failures.get(reason, 0) + 1
 
     try:
         deadline = time.monotonic() + max(0.0, min(30.0, float(timeout)))
@@ -443,20 +499,28 @@ def download_editorial_image(session, title, target, timeout, index=1, cache_dir
                 continue
             info = infos[0]
             credit = _license(info)
+            thumbnail = bool(info.get("thumburl"))
             url = str(info.get("thumburl") or info.get("url", ""))
             if not credit:
                 reject("license")
                 continue
-            if info.get("mime") not in ("image/jpeg", "image/png"):
+            if (info.get("mime") not in ("image/jpeg", "image/png")
+                    or (thumbnail and info.get("thumbmime", info["mime"]) not in ("image/jpeg", "image/png"))):
                 reject("format")
                 continue
             if not _allowed_url(url, {"upload.wikimedia.org", "thumb.wikimedia.org"}):
                 reject("url")
                 continue
-            candidates.append((page, credit, url))
+            geometry_rejection = _declared_geometry_rejection(info, thumbnail)
+            if geometry_rejection:
+                reject("declared_geometry")
+                validation_failure(geometry_rejection)
+                continue
+            diagnostics["thumbnail_candidates" if thumbnail else "original_candidates"] += 1
+            candidates.append((page, credit, url, thumbnail))
         diagnostics["admitted"] = len(candidates)
         attempted = 0
-        for page, credit, url in candidates:
+        for page, credit, url, thumbnail in candidates:
             key = hashlib.sha256(url.encode()).hexdigest()
             if key in used or _BATCH_URL_OWNERS.get(key, slot) != slot:
                 reject("duplicate_url")
@@ -468,6 +532,7 @@ def download_editorial_image(session, title, target, timeout, index=1, cache_dir
                 reject("time_budget")
                 break
             attempted += 1
+            diagnostics["thumbnail_attempts" if thumbnail else "original_attempts"] += 1
             image_cache = cache_dir / (key + ".jpg") if cache_dir else None
             try:
                 if image_cache and image_cache.is_file() and image_cache.stat().st_size <= MAX_IMAGE_BYTES:
@@ -481,8 +546,9 @@ def download_editorial_image(session, title, target, timeout, index=1, cache_dir
                 image = _normalized_image(raw)
             except RequestException:
                 raise
-            except (ValueError, OSError, Image.DecompressionBombError):
+            except (ValueError, OSError, Image.DecompressionBombError) as exc:
                 reject("image_validation")
+                validation_failure(_validation_reason(exc))
                 continue
             sha = hashlib.sha256(image).hexdigest()
             if sha in used or _BATCH_CONTENT_OWNERS.get(sha, slot) != slot:
@@ -502,6 +568,7 @@ def download_editorial_image(session, title, target, timeout, index=1, cache_dir
             used.update((key, sha))
             metadata = dict(credit, source="wikimedia_commons", topic=topic,
                             sha256=sha, asset_id=str(page.get("pageid", key)), asset_url_sha256=key, modified=True)
+            metadata["download_variant"] = "thumbnail" if thumbnail else "original"
             metadata["caption"] = attribution_caption(metadata)
             metadata["search_diagnostics"] = _safe_diagnostics(diagnostics)
             return _remember_selection(slot, target, metadata, cache_dir)

@@ -246,6 +246,38 @@ groups continue. Such a completed maintenance run explicitly reports
 full repair acceptance. It never recreates a missing draft. Sanitized progress
 permits a later rerun to repair only what remains.
 
+An existing ID whose title, author, prose or source URL differs from the saved
+receipt is also unresolved at group level; that group receives no media calls,
+and later valid groups still run. The matching rule is not relaxed to accept
+edited articles. Sanitized diagnostics record per-field match booleans and
+SHA-256 values only for mismatched fields, plus article counts and positions;
+they never include titles, article text, source URLs or draft IDs. This separates
+source-URL differences from prose differences without assuming either is an
+edit or a harmless server normalization. A fresh-read mismatch during image
+preparation stops updates to that group and preserves any intervening edit.
+For that comparison, all articles' `draft/update` writable fields are compared
+strictly: title, author, digest, content, source URL, thumbnail media ID and the
+two comment settings. A changed field stops that group; prose and media checks
+remain in force. Response-only fields such as `thumb_url` and `url` are not an
+optimistic concurrency lock: they are absent from the update payload and do not
+override the thumbnail's media-ID binding. Their changes are logged separately
+with standard field names, writable/read-only classification and hashes only.
+`updated_articles` counts confirmed `draft/update` responses separately from
+examined/changed article counts; final `fully_repaired` still requires complete
+coverage and the existing media readback checks.
+After an update, a fresh `draft/get` must pass both the unchanged prose/source
+identity and the full media contract. Only that updated article then adopts the
+validated server representation as its next comparison baseline. This permits
+the server's equivalent HTML normalization without accepting edits to the other
+articles. The repair reader emits counts rather than raw media IDs.
+If a group stops partway through, `remaining_articles` and
+`unresolved_article_count` count only its unfinished members, so examined plus
+unresolved equals the expected total. `uncertain_article_count` is an explicit
+subset of unresolved: an update was confirmed but its readback was unavailable
+or failed validation. Such an article is never reported as verified or unwritten.
+The final `progress.json` is synchronized with the terminal result, including
+partial status and any uncertain updates.
+
 New draft payloads carry the images and attribution into the existing Blog
 archive path. Repairing an already saved WeChat draft is a distinct operation:
 it does not by itself prove that an older public Blog archive has been updated.

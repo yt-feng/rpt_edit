@@ -52,14 +52,14 @@ class Session:
         return result
 
 
-def picture(seed=1):
-    image = Image.new("RGB", (960, 600), "#244768")
+def picture(seed=1, size=(960, 600), image_format="PNG"):
+    image = Image.new("RGB", size, "#244768")
     draw = ImageDraw.Draw(image)
     for i in range(35):
         x, y = (i * 57 + seed * 37) % 850, (i * 81) % 470
         draw.rectangle((x, y, x + 100, y + 110), fill=(i * 7 % 255, 140 + i % 100, i * 17 % 255))
     result = io.BytesIO()
-    image.save(result, "PNG")
+    image.save(result, image_format)
     return result.getvalue()
 
 
@@ -79,6 +79,23 @@ def results(*pages):
 
 def download_response(seed=1):
     return Response(picture(seed), content_type="image/png")
+
+
+def thumbnail_page(identifier=1, **kwargs):
+    item = page(identifier, **kwargs)
+    item.update(ns=6, title=f"File:Photo{identifier}.png", imagerepository="local")
+    info = item["imageinfo"][0]
+    info.update(width=12000, height=8000, size=24 * 1024 * 1024,
+                thumburl=f"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Photo{identifier}.png/1280px-Photo{identifier}.png",
+                thumbwidth=1280, thumbheight=853, thumbmime="image/png")
+    return item
+
+
+def expected_diagnostics(**values):
+    result = dict(search_results=0, admitted=0, rejections={}, validation_failures={},
+                  thumbnail_candidates=0, original_candidates=0, thumbnail_attempts=0, original_attempts=0)
+    result.update(values)
+    return result
 
 
 class EditorialImagesTest(unittest.TestCase):
@@ -113,7 +130,8 @@ class EditorialImagesTest(unittest.TestCase):
         self.assertNotIn("私密", requests)
         self.assertNotIn("客户名字", requests)
         self.assertIn("semiconductor", requests)
-        self.assertEqual(info["search_diagnostics"], {"search_results": 1, "admitted": 1, "rejections": {}})
+        self.assertEqual(info["search_diagnostics"], expected_diagnostics(
+            search_results=1, admitted=1, original_candidates=1, original_attempts=1))
         self.assertTrue(all(not call[1]["allow_redirects"] for call in session.calls))
         self.assertTrue(all(call[1]["timeout"] <= 10 for call in session.calls))
 
@@ -135,8 +153,9 @@ class EditorialImagesTest(unittest.TestCase):
         cache = self.root / "cache"; cache.mkdir()
         query = media._topic("芯片")[1]
         stale = {"time": media.time.time(), "results": []}
-        (cache / (hashlib.sha256(query.encode()).hexdigest() + ".json")).write_text(json.dumps(stale))
-        media._SEARCH_CACHE[query] = (media.time.time(), [])
+        for old_key in (query, media._search_query(query)):
+            (cache / (hashlib.sha256(old_key.encode()).hexdigest() + ".json")).write_text(json.dumps(stale))
+            media._SEARCH_CACHE[old_key] = (media.time.time(), [])
         session = Session([results(page()), download_response()])
         _, info = self.run_provider(session, cache_dir=cache)
         self.assertEqual(info["source"], "wikimedia_commons")
@@ -144,7 +163,7 @@ class EditorialImagesTest(unittest.TestCase):
 
     def test_search_diagnostics_distinguish_empty_from_rejected_metadata(self):
         _, empty = self.run_provider(Session([results()]))
-        self.assertEqual(empty["search_diagnostics"], {"search_results": 0, "admitted": 0, "rejections": {}})
+        self.assertEqual(empty["search_diagnostics"], expected_diagnostics())
         self.reset_provider()
         no_license = page(1, license_name="CC BY-SA 4.0", license_url="https://creativecommons.org/licenses/by-sa/4.0/")
         wrong_format = page(2); wrong_format["imageinfo"][0]["mime"] = "image/gif"
@@ -152,17 +171,112 @@ class EditorialImagesTest(unittest.TestCase):
         malformed = {"pageid": 4, "imageinfo": "private malformed data"}
         session = Session([results(no_license, wrong_format, wrong_url, malformed, page(5)), download_response()])
         _, info = self.run_provider(session)
-        self.assertEqual(info["search_diagnostics"], {
-            "search_results": 5, "admitted": 1,
-            "rejections": {"license": 1, "format": 1, "url": 1, "metadata": 1}})
+        self.assertEqual(info["search_diagnostics"], expected_diagnostics(
+            search_results=5, admitted=1, original_candidates=1, original_attempts=1,
+            rejections={"license": 1, "format": 1, "url": 1, "metadata": 1}))
         self.assertNotIn("private", json.dumps(info["search_diagnostics"]))
         self.assertEqual(len(session.calls), 2)
 
     def test_diagnostics_serialization_never_accepts_untrusted_details(self):
         value = {"search_results": 100, "admitted": "private title",
                  "rejections": {"license": 3, "https://private.example": 1, "url": "private URL", "format": -1}}
-        self.assertEqual(media._safe_diagnostics(value), {
-            "search_results": 0, "admitted": 0, "rejections": {"license": 3}})
+        self.assertEqual(media._safe_diagnostics(value), expected_diagnostics(rejections={"license": 3}))
+
+    def test_large_original_uses_reported_thumbnail_not_original_limits(self):
+        item = thumbnail_page()
+        session = Session([results(item), Response(picture(size=(1280, 853)), content_type="image/png")])
+        _, info = self.run_provider(session)
+        self.assertEqual(info["source"], "wikimedia_commons")
+        self.assertEqual(info["download_variant"], "thumbnail")
+        self.assertEqual(session.calls[1][0], item["imageinfo"][0]["thumburl"])
+        self.assertNotEqual(session.calls[1][0], item["imageinfo"][0]["url"])
+        params = session.calls[0][1]["params"]
+        self.assertEqual((params["iiurlwidth"], params["iiurlheight"]), (1200, 1200))
+        self.assertIn("thumbmime", params["iiprop"].split("|"))
+        self.assertEqual(info["search_diagnostics"], expected_diagnostics(
+            search_results=1, admitted=1, thumbnail_candidates=1, thumbnail_attempts=1))
+
+    def test_bad_declared_geometry_does_not_exhaust_three_downloads(self):
+        items = [thumbnail_page(i) for i in range(4)]
+        for item in items[:3]:
+            item["imageinfo"][0].update(thumbwidth=2400, thumbheight=400)
+        session = Session([results(*items), download_response()])
+        _, info = self.run_provider(session)
+        self.assertEqual(info["source"], "wikimedia_commons")
+        self.assertEqual(len(session.calls), 2)
+        self.assertIn("Photo3.png", session.calls[1][0])
+        self.assertEqual(info["search_diagnostics"], expected_diagnostics(
+            search_results=4, admitted=1, thumbnail_candidates=1, thumbnail_attempts=1,
+            rejections={"declared_geometry": 3}, validation_failures={"declared_aspect": 3}))
+
+    def test_oversized_original_without_thumbnail_is_not_requested(self):
+        for width, height, size, reason in ((6000, 4000, 1000, "declared_pixels"),
+                                            (4000, 2500, 20 * 1024 * 1024, "declared_bytes"),
+                                            (300, 200, 1000, "declared_small")):
+            with self.subTest(reason=reason):
+                self.reset_provider()
+                item = page(); item["imageinfo"][0].update(width=width, height=height, size=size)
+                session = Session([results(item)])
+                _, info = self.run_provider(session)
+                self.assertEqual(info["source"], "local_editorial")
+                self.assertEqual(len(session.calls), 1)
+                self.assertEqual(info["search_diagnostics"]["validation_failures"], {reason: 1})
+
+    def test_thumbnail_host_and_mime_cannot_fall_back_to_original(self):
+        for field, value, reason in (("thumburl", "https://private.example/image.png", "url"),
+                                      ("thumbmime", "image/webp", "format")):
+            with self.subTest(field=field):
+                self.reset_provider()
+                item = thumbnail_page(); item["imageinfo"][0][field] = value
+                session = Session([results(item)])
+                _, info = self.run_provider(session)
+                self.assertEqual(info["source"], "local_editorial")
+                self.assertEqual(len(session.calls), 1)
+                self.assertEqual(info["search_diagnostics"]["rejections"], {reason: 1})
+
+    def test_actual_bytes_still_enforce_all_image_guards(self):
+        blank = io.BytesIO(); Image.new("RGB", (960, 600), "white").save(blank, "PNG")
+        cases = [(b"broken", "image_decode"), (picture(size=(300, 200)), "image_too_small"),
+                 (picture(size=(1800, 400)), "invalid_image_aspect"),
+                 (picture(image_format="BMP"), "invalid_image_format"), (blank.getvalue(), "flat_image")]
+        for payload, reason in cases:
+            with self.subTest(reason=reason):
+                self.reset_provider()
+                session = Session([results(thumbnail_page()), Response(payload, content_type="image/png")])
+                _, info = self.run_provider(session)
+                self.assertEqual(info["source"], "local_editorial")
+                self.assertEqual(info["search_diagnostics"]["validation_failures"], {reason: 1})
+                self.assertEqual(len(session.calls), 2)
+        with patch.object(media, "MAX_PIXELS", 500000):
+            with self.assertRaisesRegex(ValueError, "image_too_many_pixels"):
+                media._normalized_image(picture())
+
+    def test_response_size_reason_is_fixed_and_never_contains_exception_details(self):
+        session = Session([results(thumbnail_page()), Response(content_type="image/png",
+                          headers={"Content-Length": str(media.MAX_IMAGE_BYTES + 1)})])
+        _, info = self.run_provider(session)
+        self.assertEqual(info["search_diagnostics"]["validation_failures"], {"response_too_large": 1})
+        self.assertEqual(media._validation_reason(ValueError("private URL with title")), "other_validation")
+        value = dict(validation_failures={"https://private.example": 1, "image_decode": 2,
+                                          "invalid_image_aspect": "private text"}, thumbnail_attempts="private text")
+        clean = media._safe_diagnostics(value)
+        self.assertEqual(clean["validation_failures"], {"image_decode": 2})
+        self.assertEqual(clean["thumbnail_attempts"], 0)
+        self.assertNotIn("private", json.dumps(clean))
+
+    def test_smoke_manifest_carries_thumbnail_validation_evidence(self):
+        output = self.root / "smoke-thumbnail"
+        wide = thumbnail_page(1); wide["imageinfo"][0].update(thumbwidth=2400, thumbheight=400)
+        session = Session([results(wide, thumbnail_page(2)), download_response()])
+        with patch.object(media.requests.Session, "get", side_effect=session.get), \
+             patch("sys.argv", ["free_editorial_images.py", "--smoke-dir", str(output), "--require-commons"]), \
+             contextlib.redirect_stdout(io.StringIO()):
+            self.assertEqual(media._smoke_main(), 0)
+        report = json.loads((output / "provider-report.json").read_text())
+        self.assertEqual((report["search_results"], report["admitted"], report["network_requests"]), (2, 1, 2))
+        self.assertEqual(report["validation_failures"], {"declared_aspect": 1})
+        self.assertEqual((report["thumbnail_attempts"], report["original_attempts"]), (1, 0))
+        self.assertEqual(report["source"], "wikimedia_commons")
 
     def test_restrictive_or_ambiguous_licenses_do_not_download(self):
         for name, url in [
@@ -428,8 +542,9 @@ class EditorialImagesTest(unittest.TestCase):
         _, info = self.run_provider(session)
         self.assertEqual(info["source"], "local_editorial")
         self.assertEqual(len(session.calls), 4)
-        self.assertEqual(info["search_diagnostics"], {"search_results": 8, "admitted": 8,
-                         "rejections": {"image_validation": 3, "download_limit": 1}})
+        self.assertEqual(info["search_diagnostics"], expected_diagnostics(
+            search_results=8, admitted=8, original_candidates=8, original_attempts=3,
+            rejections={"image_validation": 3, "download_limit": 1}, validation_failures={"image_decode": 3}))
 
     def test_original_artworks_are_deterministic_substantive_and_distinct(self):
         hashes = set()
