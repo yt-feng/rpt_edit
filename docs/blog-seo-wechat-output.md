@@ -293,10 +293,20 @@ writes. This exception requires both the code and the observed message prefix.
 Other error codes, different messages and uncertain transport failures still
 stop execution; they are not treated as successful or safely rejected writes.
 After an update, a fresh `draft/get` must pass both the unchanged prose/source
-identity and the full media contract. Only that updated article then adopts the
+identity and the full media contract for the article just processed. Only that
+updated article then adopts the
 validated server representation as its next comparison baseline. This permits
 the server's equivalent HTML normalization without accepting edits to the other
 articles. The repair reader emits counts rather than raw media IDs.
+For a multi-article draft, every step still checks the whole group's count,
+order, titles, authors, prose, source URLs and editorial contract; later members'
+cover and inline-image identities and all complete saved credits must also stay
+equal to the frozen baseline.
+Only an exact known legacy stripped credit that remains unchanged from that
+baseline may temporarily await its member's turn, while the processed prefix
+including the current article must pass complete media acceptance.
+Deferred members are not counted as verified, and the group can finish
+successfully only after every current article passes the strict media contract.
 If a group stops partway through, `remaining_articles` and
 `unresolved_article_count` count only its unfinished members, so examined plus
 unresolved plus preserved removals equals the original expected total.

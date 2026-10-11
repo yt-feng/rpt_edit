@@ -18,7 +18,8 @@ from verify_existing_wechat_drafts import load_drafts
 from push_portal_translated_to_wechat_drafts import (
     get_stable_access_token, get_draft, draft_news_items, wechat_content_images,
     materialize_private_article_payload, article_prose_text, generated_image_credit_signature,
-    legacy_stripped_commons_credit,
+    legacy_stripped_commons_credit, generated_image_credits, IMAGE_CREDIT_PARAGRAPH_RE,
+    visible_wechat_content_text,
     post_wechat_json, parse_wechat_json, prepare_cover_upload_image,
     upload_article_image, upload_cover_material, image_html, summarize_draft_get_response,
     wechat_image_url_identity, WeChatError,
@@ -138,17 +139,55 @@ def record_unresolved_group(report, output, index, media_id, expected, category,
     print(json.dumps(safe), flush=True)
 
 
-def verify_repair_readback(session, token, media_id, timeout, expected):
+def pending_legacy_media_matches(actual, expected, media_checks):
+    """Defer only an unchanged future member's known missing-credit failure."""
+    def legacy_captions(article):
+        return [visible_wechat_content_text(match.group(0))
+                for match in IMAGE_CREDIT_PARAGRAPH_RE.finditer(str(article.get('content') or ''))
+                if legacy_stripped_commons_credit(match.group(0))]
+    original = legacy_captions(expected)
+    return (bool(original) and original == legacy_captions(actual)
+            and writable_group_unchanged([actual], [expected])
+            and media_checks.get('matches_cover') is True
+            and media_checks.get('matches_inline_images') is True
+            and generated_image_credits(actual.get('content')) == generated_image_credits(expected.get('content'))
+            and media_checks.get('incomplete_image_credit_count') == len(original)
+            and media_checks.get('expected_incomplete_image_credit_count') == len(original))
+
+
+def verify_repair_readback(session, token, media_id, timeout, expected, *, processed_count=None):
     """Validate a returned representation and retain its canonical write fields.
 
     Do not use the uploader's logging wrapper here: its messages include raw
     media IDs. Only sanitized counts/diagnostics leave the repair workflow.
     """
+    if processed_count is None:
+        processed_count = len(expected)
+    if type(processed_count) is not int or not 1 <= processed_count <= len(expected):
+        raise ValueError('Invalid processed article count')
     data = get_draft(session, token, media_id, timeout)
     articles = draft_news_items(data)
     checks = summarize_draft_get_response(data, len(expected), expected)
     checks['matches_prose_and_source'] = strict_draft_group_match(articles, expected)
-    checks['ok'] = bool(checks.get('ok') and checks['matches_prose_and_source'])
+    pending = []
+    media_checks = checks.get('media_contract', [])
+    processed_media_matches = len(articles) == len(expected) == len(media_checks)
+    if processed_media_matches:
+        for index, media_check in enumerate(media_checks):
+            if media_check.get('matches'):
+                continue
+            if index >= processed_count and pending_legacy_media_matches(articles[index], expected[index], media_check):
+                pending.append(index)
+            else:
+                processed_media_matches = False
+    # Keep the full-group result truthful while processing an earlier member.
+    # At the last member there are no deferred indices: full media must pass.
+    checks['pending_legacy_media_indices'] = pending
+    checks['matches_processed_media_contract'] = processed_media_matches
+    checks['ok'] = bool(processed_media_matches and checks['matches_prose_and_source']
+                        and checks.get('matches_expected_article_count')
+                        and checks.get('matches_expected_titles')
+                        and checks.get('matches_editorial_contract'))
     return checks, articles
 
 
@@ -514,7 +553,7 @@ def repair_drafts(drafts, session, token, output, timeout, apply):
                                       'updated_articles':report['updated_articles']}), flush=True)
                     actual[index] = repaired
                 try:
-                    verification, readback_articles = verify_repair_readback(session, token, media_id, timeout, actual)
+                    verification, readback_articles = verify_repair_readback(session, token, media_id, timeout, actual, processed_count=index+1)
                 except WeChatError as readback_error:
                     record_unresolved_group(report, output, draft_index, media_id, expected,
                                             'draft_readback_unavailable', changed=changed, errcode=readback_error.errcode,
@@ -525,7 +564,8 @@ def repair_drafts(drafts, session, token, output, timeout, apply):
                     diagnostics = group_identity_diagnostics(readback_articles, actual)
                     diagnostics['readback_checks'] = {key:bool(verification.get(key)) for key in (
                         'matches_expected_article_count','matches_expected_titles','matches_editorial_contract',
-                        'matches_media_contract','matches_prose_and_source')}
+                        'matches_media_contract','matches_processed_media_contract','matches_prose_and_source')}
+                    diagnostics['pending_legacy_media_indices'] = verification.get('pending_legacy_media_indices', [])
                     record_unresolved_group(report, output, draft_index, media_id, expected,
                                             'draft_image_readback_failed', diagnostics=diagnostics, changed=changed,
                                             remaining_articles=len(actual)-index, uncertain_articles=int(updated_this_article),

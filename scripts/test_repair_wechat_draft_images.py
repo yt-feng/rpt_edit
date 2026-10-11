@@ -48,6 +48,93 @@ def stripped_commons_credit(license_name='CC BY 3.0'):
             '；已裁剪与缩放，非报告原图。 图片来源 · 许可</p>')
 
 
+def with_legacy_commons(saved, count=3):
+    live = copy.deepcopy(saved)
+    for index, (url, alt) in enumerate(repair.article_body_images(live['content'])):
+        credit = (stripped_commons_credit(('CC BY 3.0','CC BY 3.0','CC BY 2.0')[index])
+                  if index < count else attribution_html({'source':'local_editorial'}))
+        image = portal.image_html(url, alt)
+        live['content'] = live['content'].replace(image, image + credit)
+    return live
+
+
+class IncrementalMediaReadbackTests(unittest.TestCase):
+    def baseline(self):
+        return [dict(article(broken=False), title=f'Synthetic report {index}')
+                if index == 0 else with_legacy_commons(dict(article(broken=False), title=f'Synthetic report {index}'), 1)
+                for index in range(2)]
+
+    def verify(self, actual, expected, processed_count=1):
+        with patch.object(repair, 'get_draft', return_value={'news_item':copy.deepcopy(actual)}):
+            checks, _returned = repair.verify_repair_readback(object(), 'TOKEN', 'existing-exact-id', 30,
+                                                            expected, processed_count=processed_count)
+        return checks
+
+    def test_unchanged_future_legacy_is_deferred_without_claiming_full_group_media_acceptance(self):
+        expected = self.baseline()
+        checks = self.verify(expected, expected)
+        self.assertTrue(checks['ok']);self.assertTrue(checks['matches_processed_media_contract'])
+        self.assertFalse(checks['matches_media_contract']);self.assertEqual([1],checks['pending_legacy_media_indices'])
+        final = self.verify(expected, expected, processed_count=2)
+        self.assertFalse(final['ok']);self.assertFalse(final['matches_processed_media_contract'])
+        self.assertEqual([],final['pending_legacy_media_indices'])
+
+    def test_pending_member_identity_or_any_writable_change_is_rejected(self):
+        expected = self.baseline()
+        changes = {
+            'title':lambda row:row.update(title='Edited title'),
+            'author':lambda row:row.update(author='Edited author'),
+            'prose':lambda row:row.update(content=row['content']+'<p>New user paragraph.</p>'),
+            'source':lambda row:row.update(content_source_url='https://source.example/changed'),
+            'digest':lambda row:row.update(digest='Edited summary'),
+            'comments':lambda row:row.update(need_open_comment=1),
+            'cover':lambda row:row.update(thumb_media_id='different-cover'),
+            'inline':lambda row:row.update(content=row['content'].replace('/good-1/0','/different/0')),
+            'legacy-author':lambda row:row.update(content=row['content'].replace('Synthetic Photographer','Other Photographer')),
+            'legacy-license':lambda row:row.update(content=row['content'].replace('CC BY 3.0','CC BY 4.0')),
+        }
+        for name, change in changes.items():
+            with self.subTest(field=name):
+                actual = copy.deepcopy(expected);change(actual[1])
+                checks = self.verify(actual, expected)
+                self.assertFalse(checks['ok']);self.assertFalse(checks['matches_processed_media_contract'])
+
+    def test_future_complete_credit_and_nonlegacy_media_changes_are_not_excused(self):
+        expected = self.baseline()
+        complete = attribution_html({'source':'wikimedia_commons','author':'Original Author','license':'CC BY 4.0',
+                                     'source_url':'https://commons.wikimedia.org/wiki/File:Original.jpg',
+                                     'license_url':'https://creativecommons.org/licenses/by/4.0/'})
+        expected[1]['content'] += complete
+        for before, after in (('Original Author','Changed Author'),('File:Original.jpg','File:Changed.jpg'),
+                              ('CC BY 4.0','CC BY 3.0')):
+            with self.subTest(change=before):
+                actual=copy.deepcopy(expected);actual[1]['content']=actual[1]['content'].replace(before,after)
+                checks=self.verify(actual,expected)
+                self.assertFalse(checks['ok']);self.assertFalse(checks['matches_processed_media_contract'])
+        expected[1]=article(broken=False)
+        actual=copy.deepcopy(expected);actual[1]['content']=actual[1]['content'].replace('/good-1/0','/different/0')
+        self.assertFalse(self.verify(actual,expected)['ok'])
+
+    def test_current_and_already_processed_legacy_are_never_deferred(self):
+        for legacy_index in (0,1):
+            with self.subTest(legacy_index=legacy_index):
+                expected=[article(broken=False) for _index in range(3)]
+                expected[legacy_index]=with_legacy_commons(expected[legacy_index],1)
+                checks=self.verify(expected,expected,processed_count=2)
+                self.assertFalse(checks['ok']);self.assertFalse(checks['matches_processed_media_contract'])
+        expected=self.baseline();expected[0]['content']+=attribution_html({'source':'local_editorial'})
+        actual=copy.deepcopy(expected);actual[0]['content']=actual[0]['content'].replace(attribution_html({'source':'local_editorial'}),'')
+        self.assertFalse(self.verify(actual,expected)['ok'])
+
+    def test_invalid_processed_count_fails_closed_before_readback(self):
+        expected=self.baseline()
+        for count in (True,False,0,-1,3,1.0,'1'):
+            with self.subTest(count=count), patch.object(repair,'get_draft') as get:
+                with self.assertRaises(ValueError):
+                    repair.verify_repair_readback(object(),'TOKEN','existing-exact-id',30,expected,processed_count=count)
+                get.assert_not_called()
+
+
 class ImageDownloadTests(unittest.TestCase):
     def test_untrusted_and_malformed_urls_make_no_request(self):
         session = Mock()
@@ -195,7 +282,7 @@ class ReceiptRecoveryTests(unittest.TestCase):
             provider=stack.enter_context(patch.object(repair,'download_editorial_image'))
             uploads=stack.enter_context(patch.object(repair,'upload_article_image'))
             mutations=stack.enter_context(patch.object(repair,'post_wechat_json'))
-            verification=stack.enter_context(patch.object(repair,'verify_repair_readback',side_effect=lambda _s,_t,_id,_timeout,expected: ({'ok':True},copy.deepcopy(expected))))
+            verification=stack.enter_context(patch.object(repair,'verify_repair_readback',side_effect=lambda _s,_t,_id,_timeout,expected,**_kwargs: ({'ok':True},copy.deepcopy(expected))))
             build=stack.enter_context(patch.object(repair,'build_media_repair',side_effect=lambda _s,_t,a,*args: (copy.deepcopy(a),{'cover_replaced':False,'body_replacements':[],'body_added':0,'sources':[]})))
             result=repair.repair_drafts(drafts,object(),'TOKEN',root,30,apply)
             for operation in (provider,uploads,mutations):operation.assert_not_called()
@@ -260,7 +347,7 @@ class ReceiptRecoveryTests(unittest.TestCase):
                 patch.object(repair,'read_complete_draft_catalog',return_value=[self.record('recovered-id',rows)]), \
                 patch.object(repair,'build_media_repair',side_effect=build), \
                 patch.object(repair,'post_wechat_json',side_effect=update) as writes, \
-                patch.object(repair,'verify_repair_readback',side_effect=lambda _s,_t,_id,_timeout,expected: ({'ok':True},copy.deepcopy(expected))) as verify:
+                patch.object(repair,'verify_repair_readback',side_effect=lambda _s,_t,_id,_timeout,expected,**_kwargs: ({'ok':True},copy.deepcopy(expected))) as verify:
             result=repair.repair_drafts([{'media_id':'expired-id','articles':rows}],object(),'TOKEN',Path(temporary),30,True)
         self.assertEqual(['expired-id','recovered-id','recovered-id'],[call.args[2] for call in gets.call_args_list])
         writes.assert_called_once();self.assertEqual('recovered-id',verify.call_args.args[2])
@@ -277,7 +364,7 @@ class ReceiptRecoveryTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary, redirect_stdout(log), \
                 patch.object(repair,'get_draft',side_effect=lambda _s,_t,media_id,_timeout:{'news_item':returned[media_id]}), \
                 patch.object(repair,'build_media_repair',side_effect=lambda _s,_t,a,*_args:(copy.deepcopy(a),{'cover_replaced':False,'body_replacements':[],'body_added':0,'sources':[]})) as build, \
-                patch.object(repair,'verify_repair_readback',side_effect=lambda _s,_t,_id,_timeout,expected: ({'ok':True},copy.deepcopy(expected))), patch.object(repair,'post_wechat_json') as write:
+                patch.object(repair,'verify_repair_readback',side_effect=lambda _s,_t,_id,_timeout,expected,**_kwargs: ({'ok':True},copy.deepcopy(expected))), patch.object(repair,'post_wechat_json') as write:
             result=repair.repair_drafts(drafts,object(),'TOKEN',Path(temporary),30,True)
         self.assertEqual(3,result['unresolved_draft_count']);self.assertEqual(1,result['article_count'])
         self.assertTrue(result['partial']);self.assertFalse(result['fully_repaired']);self.assertEqual(0,result['updated_articles'])
@@ -306,7 +393,7 @@ class ReceiptRecoveryTests(unittest.TestCase):
             return copy.deepcopy(a),{'cover_replaced':a['title']==first['title'],'body_replacements':[],'body_added':0,'sources':[]}
         log=io.StringIO()
         with tempfile.TemporaryDirectory() as temporary, redirect_stdout(log), patch.object(repair,'get_draft',side_effect=get), \
-                patch.object(repair,'build_media_repair',side_effect=build), patch.object(repair,'verify_repair_readback',side_effect=lambda _s,_t,_id,_timeout,expected: ({'ok':True},copy.deepcopy(expected))), \
+                patch.object(repair,'build_media_repair',side_effect=build), patch.object(repair,'verify_repair_readback',side_effect=lambda _s,_t,_id,_timeout,expected,**_kwargs: ({'ok':True},copy.deepcopy(expected))), \
                 patch.object(repair,'post_wechat_json',return_value=response({'errcode':0})) as write:
             result=repair.repair_drafts([{'media_id':'first-id','articles':[first]},{'media_id':'second-id','articles':[second]}],object(),'TOKEN',Path(temporary),30,True)
         diagnostics=result['drafts'][0]['changed'][0]['response_only_field_changes']
@@ -338,7 +425,7 @@ class ReceiptRecoveryTests(unittest.TestCase):
                 stack.enter_context(redirect_stdout(io.StringIO()))
                 stack.enter_context(patch.object(repair,'get_draft',side_effect=get))
                 stack.enter_context(patch.object(repair,'build_media_repair',side_effect=build))
-                stack.enter_context(patch.object(repair,'verify_repair_readback',side_effect=lambda _s,_t,_id,_timeout,expected: ({'ok':True},copy.deepcopy(expected))))
+                stack.enter_context(patch.object(repair,'verify_repair_readback',side_effect=lambda _s,_t,_id,_timeout,expected,**_kwargs: ({'ok':True},copy.deepcopy(expected))))
                 write=stack.enter_context(patch.object(repair,'post_wechat_json'))
                 result=repair.repair_drafts([{'media_id':'first-id','articles':[first]},{'media_id':'second-id','articles':[second]}],object(),'TOKEN',Path(temporary),30,True)
                 self.assertEqual(1,result['unresolved_draft_count']);self.assertEqual(1,result['article_count'])
@@ -663,14 +750,74 @@ class DraftRepairTests(unittest.TestCase):
 
         post = stack.enter_context(patch.object(repair, 'post_wechat_json', side_effect=update))
 
-        def verify(_session, _token, media_id, _timeout, expected):
+        real_verify = repair.verify_repair_readback
+        def verify(_session, _token, media_id, _timeout, expected, **kwargs):
             self.assertEqual('existing-exact-id', media_id)
-            result = portal.summarize_draft_get_response(copy.deepcopy(state), len(expected), expected)
+            result, returned = real_verify(_session, _token, media_id, _timeout, expected, **kwargs)
             if not verification: result['ok'] = False
-            return result, copy.deepcopy(state['news_item'])
+            return result, returned
 
         stack.enter_context(patch.object(repair, 'verify_repair_readback', side_effect=verify))
         return state, download, provider, upload, cover, post
+
+    def test_real_multimember_groups_reach_later_legacy_images_and_end_with_full_media_acceptance(self):
+        # The affected production groups had eight/four members, with the
+        # incomplete credits on the second member. Also exercise two pending
+        # members separated by a healthy one, not only a single-item draft.
+        for size, pending in ((8,{1:3}),(4,{1:2}),(4,{1:3,3:2})):
+            with self.subTest(size=size,pending=pending), tempfile.TemporaryDirectory() as temporary, ExitStack() as stack:
+                saved=[dict(article(broken=False),title=f'Synthetic report {index}') for index in range(size)]
+                live=[with_legacy_commons(row,pending[index]) if index in pending else copy.deepcopy(row)
+                      for index,row in enumerate(saved)]
+                state,_download,provider,upload,cover,post=self.environment(stack,live)
+                upload.side_effect=[f'https://mmbiz.qpic.cn/licensed-replacement-{index}/0' for index in range(sum(pending.values()))]
+                provider.side_effect=lambda _session,_title,target,*_args,**_kwargs:(photo(target),{
+                    'source':'wikimedia_commons','author':'Replacement Author','license':'CC BY 4.0',
+                    'source_url':'https://commons.wikimedia.org/wiki/File:Replacement.jpg',
+                    'license_url':'https://creativecommons.org/licenses/by/4.0/'})
+                original_verify=repair.verify_repair_readback.side_effect
+                readbacks=[]
+                def record_verify(*args,**kwargs):
+                    checks,returned=original_verify(*args,**kwargs)
+                    readbacks.append(copy.deepcopy(checks))
+                    return checks,returned
+                repair.verify_repair_readback.side_effect=record_verify
+                receipt=[{'media_id':'existing-exact-id','articles':saved}]
+                result=repair.repair_drafts(receipt,object(),'TOKEN',Path(temporary),30,True)
+                self.assertTrue(result['fully_repaired']);self.assertFalse(result['partial'])
+                self.assertEqual(size,result['article_count']);self.assertEqual(len(pending),result['updated_articles'])
+                self.assertEqual(0,result['unresolved_article_count']);self.assertEqual(0,result['uncertain_article_count'])
+                self.assertEqual(sorted(pending),[call.args[2]['index'] for call in post.call_args_list])
+                self.assertEqual(sum(pending.values()),result['body_replacements'])
+                self.assertEqual(len(pending),result['cover_replacements']);self.assertTrue(result['drafts'][0]['verified'])
+                self.assertEqual(size,len(readbacks));self.assertTrue(all(checks['ok'] for checks in readbacks))
+                self.assertFalse(readbacks[0]['matches_media_contract'])
+                self.assertEqual(sorted(pending),readbacks[0]['pending_legacy_media_indices'])
+                self.assertTrue(readbacks[-1]['matches_media_contract']);self.assertEqual([],readbacks[-1]['pending_legacy_media_indices'])
+                for before,after in zip(saved,state['news_item']):
+                    self.assertEqual(repair.prose_identity(before),repair.prose_identity(after))
+                    self.assertTrue(portal.wechat_media_contract_check(after,after)['matches'])
+                post.reset_mock();provider.reset_mock();upload.reset_mock();cover.reset_mock()
+                again=repair.repair_drafts(receipt,object(),'TOKEN',Path(temporary),30,True)
+                self.assertTrue(again['fully_repaired']);self.assertEqual(0,again['changed_articles'])
+                for operation in (post,provider,upload,cover):operation.assert_not_called()
+
+    def test_later_unrepaired_legacy_is_unresolved_without_recounting_verified_prefix(self):
+        saved=[dict(article(broken=False),title=f'Synthetic report {index}') for index in range(2)]
+        live=[saved[0],with_legacy_commons(saved[1],3)]
+        with tempfile.TemporaryDirectory() as temporary, ExitStack() as stack:
+            _state,_download,_provider,_upload,_cover,post=self.environment(stack,live)
+            stack.enter_context(patch.object(repair,'build_media_repair',side_effect=lambda _s,_t,row,*_args:(
+                copy.deepcopy(row),{'cover_replaced':False,'body_replacements':[],'body_added':0,'sources':[]})))
+            result=repair.repair_drafts([{'media_id':'existing-exact-id','articles':saved}],object(),'TOKEN',Path(temporary),30,True)
+        self.assertEqual(1,result['article_count']);self.assertEqual(1,result['unresolved_article_count'])
+        self.assertEqual(2,result['expected_article_count']);self.assertEqual(0,result['updated_articles'])
+        self.assertEqual(0,result['uncertain_article_count']);self.assertFalse(result['fully_repaired'])
+        self.assertFalse(result['drafts'][0]['verified']);self.assertEqual(1,result['drafts'][0]['processed_articles'])
+        self.assertEqual('draft_image_readback_failed',result['drafts'][0]['resolution'])
+        self.assertFalse(result['drafts'][0]['identity_diagnostics']['readback_checks']['matches_processed_media_contract'])
+        self.assertEqual([],result['drafts'][0]['identity_diagnostics']['pending_legacy_media_indices'])
+        post.assert_not_called()
 
     def test_same_receipt_repairs_existing_index_preserves_contact_and_second_run_is_noop(self):
         original = [article(broken=False), article()]
