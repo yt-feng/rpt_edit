@@ -175,6 +175,125 @@ class BISRedesignTests(unittest.TestCase):
             self.assertEqual(state["items"], {})
 
 
+class BCGDiscoveryEvidenceTests(unittest.TestCase):
+    # URLs below are present in the committed consulting archive. HTML fragments
+    # are synthetic link fixtures, not claims of a captured BCG page template.
+    OLD_PAGE = "https://www.bcg.com/publications/2021/sustainable-investing-leadership-blueprint"
+    CURRENT_PAGE = "https://www.bcg.com/publications/2026/asia-pacific-retail-leaders-growth-ai"
+    OFFICIAL_PDF = "https://web-assets.bcg.com/pdf-src/prod-live/every-drop-counts-pathways-to-restore-germanys-water-balance.pdf"
+    SEA_PDF = "https://cdn.sea.com/investor/4Q2025/JcKns4LaJC8bxcQdJwXz/2026.03.03%20Sea%20Fourth%20Quarter%20and%20Full%20Year%202025%20Results%20Deck.pdf"
+
+    class Clock(fetcher.datetime):
+        @classmethod
+        def now(cls, tz=None):
+            value = cls(2026, 10, 11, 12, tzinfo=fetcher.timezone.utc)
+            return value.astimezone(tz) if tz else value.replace(tzinfo=None)
+
+    def item(self, page=None, **changes):
+        page = page or self.CURRENT_PAGE
+        return dict({"title": "Current report citing research from 2014", "source_url": page,
+                     "guid": page, "date": "2026-10-10T02:00:00Z", "pdf_candidates": [],
+                     "scrape_url": page}, **changes)
+
+    def run_bcg_main(self, directory, item, html_text="", *, since_days=7, redirect_url=None):
+        root = Path(directory)
+        response = FakeResponse(text=html_text)
+        if redirect_url:
+            response.url = redirect_url
+        def download(session, candidates, destination, *args, **kwargs):
+            destination.write_bytes(b"%PDF-1.7 synthetic report fixture")
+            return candidates[0], "ok"
+        argv = ["fetch", "--output-dir", str(root / "pdfs"), "--date", "261011", "--institutions", "bcg",
+                "--archive-path", str(root / "archive.jsonl"), "--seen-state-path", str(root / "seen.json"),
+                "--since-days", str(since_days)]
+        with (patch.object(fetcher, "datetime", self.Clock), patch("sys.argv", argv),
+              patch.dict("os.environ", {"PROXY_SUBSCRIPTION_URL": ""}),
+              patch.object(fetcher, "collect_sitemap_items", return_value=[item]),
+              patch.object(fetcher, "http_get", return_value=response) as get,
+              patch.object(fetcher, "download_pdf", side_effect=download) as fetch_pdf,
+              patch.object(fetcher, "write_github_output"), patch.object(fetcher, "write_source_health_summary")):
+            code = fetcher.main()
+        manifest = json.loads((root / "pdfs/institution_run_manifest.json").read_text())
+        seen = json.loads((root / "seen.json").read_text())["items"]
+        return code, manifest, seen, get.call_args_list, fetch_pdf.call_args_list
+
+    def test_explicit_older_publication_year_ignores_fresh_sitemap_lastmod_and_stays_unseen(self):
+        for page in (self.OLD_PAGE, "https://www.bcg.com/publications/2025/new-zealand-growing-our-advantage-in-agritech"):
+            with self.subTest(page=page), tempfile.TemporaryDirectory() as directory:
+                code, manifest, seen, gets, downloads = self.run_bcg_main(directory, self.item(page))
+                self.assertEqual((code, gets, downloads, seen), (0, [], [], {}))
+                self.assertEqual(manifest["skipped"][0]["reason"], "publication_year_before_window")
+                self.assertEqual(manifest["source_checks"][0]["eligible_item_count"], 0)
+                self.assertEqual(manifest["source_checks"][0]["resolution_failure_count"], 0)
+
+    def test_current_year_report_quoting_old_years_and_unknown_year_page_are_not_guessed_old(self):
+        for page in (self.CURRENT_PAGE, "https://www.bcg.com/publications/a-report-without-a-year"):
+            with self.subTest(page=page), tempfile.TemporaryDirectory() as directory:
+                code, manifest, seen, gets, downloads = self.run_bcg_main(
+                    directory, self.item(page), f'<p>Research since 2014</p><a href="{self.OFFICIAL_PDF}">Download</a>')
+                self.assertEqual((code, manifest["downloaded_count"], len(gets), len(downloads)), (0, 1, 1, 1))
+                self.assertEqual(seen["bcg:" + page]["status"], "downloaded")
+
+    def test_since_window_crossing_years_does_not_discard_that_year(self):
+        page = "https://www.bcg.com/publications/2025/new-zealand-growing-our-advantage-in-agritech"
+        with tempfile.TemporaryDirectory() as directory:
+            code, manifest, _seen, _gets, downloads = self.run_bcg_main(
+                directory, self.item(page), f'<a href="{self.OFFICIAL_PDF}">Download</a>', since_days=500)
+        self.assertEqual((code, manifest["downloaded_count"], len(downloads)), (0, 1, 1))
+
+    def test_year_guard_requires_explicit_publisher_path_not_title_query_or_other_host(self):
+        self.assertEqual(fetcher.bcg_publication_year(self.OLD_PAGE), 2021)
+        for url in ("https://www.bcg.com/publications/research-from-2014?date=2014",
+                    "https://www.bcg.com/publications/2026/study-since-2014",
+                    "https://other.example/publications/2014/report",
+                    "https://www.bcg.com.evil.test/publications/2014/report"):
+            with self.subTest(url=url):
+                self.assertIn(fetcher.bcg_publication_year(url), (None, 2026))
+
+    def test_external_only_citation_is_missing_main_report_and_not_marked_seen(self):
+        for direct in (False, True):
+            item = self.item(pdf_candidates=[self.SEA_PDF] if direct else [])
+            with self.subTest(direct=direct), tempfile.TemporaryDirectory() as directory:
+                code, manifest, seen, _gets, downloads = self.run_bcg_main(
+                    directory, item, f'<a href="{self.SEA_PDF}">Referenced company filing</a>')
+            self.assertEqual((code, seen, downloads), (2, {}, []))
+            self.assertEqual(manifest["skipped"][0]["reason"], "main_pdf_missing")
+            self.assertEqual(manifest["source_checks"][0]["resolution_failure_count"], 1)
+
+    def test_ordinary_bcg_article_without_any_pdf_keeps_existing_no_pdf_behavior(self):
+        with tempfile.TemporaryDirectory() as directory:
+            code, manifest, seen, _gets, downloads = self.run_bcg_main(
+                directory, self.item(), '<p>A normal web article with no PDF attachment.</p>')
+        self.assertEqual((code, downloads), (0, []))
+        self.assertEqual(manifest["skipped"][0]["reason"], "no_pdf")
+        self.assertEqual(manifest["source_checks"][0]["resolution_failure_count"], 0)
+        self.assertEqual(seen["bcg:" + self.CURRENT_PAGE]["status"], "no_pdf")
+
+    def test_external_citation_before_official_report_cannot_win_generic_link_order(self):
+        page = f'<a href="{self.SEA_PDF}">Citation</a><a href="{self.OFFICIAL_PDF}">Report</a>'
+        with tempfile.TemporaryDirectory() as directory:
+            code, manifest, _seen, _gets, downloads = self.run_bcg_main(directory, self.item(), page)
+        self.assertEqual(code, 0)
+        self.assertEqual(downloads[0].args[1], [self.OFFICIAL_PDF])
+        self.assertEqual(manifest["downloaded"][0]["pdf_url"], self.OFFICIAL_PDF)
+
+    def test_redirected_landing_cannot_remove_bcg_source_host_restriction(self):
+        with tempfile.TemporaryDirectory() as directory:
+            code, manifest, seen, _gets, downloads = self.run_bcg_main(
+                directory, self.item(), f'<a href="{self.SEA_PDF}">Company filing</a>',
+                redirect_url="https://external.example/reference-page")
+        self.assertEqual((code, seen, downloads), (2, {}, []))
+        self.assertEqual(manifest["skipped"][0]["reason"], "main_pdf_missing")
+
+    def test_archived_bcg_owned_hosts_remain_allowed_and_other_institutions_unchanged(self):
+        owned = [self.OFFICIAL_PDF, "https://media-publications.bcg.com/report.pdf", "https://www.bcg.com/report.pdf"]
+        unrelated = [self.SEA_PDF, "https://www.hbs.edu/report.pdf",
+                     "https://web-assets.bcg.com.evil.test/report.pdf", "https://web-assets.bcg.com@evil.test/report.pdf"]
+        self.assertEqual(fetcher.filter_institution_pdf_candidates("bcg", owned + unrelated), owned)
+        for institution in ("imf", "worldbank", "bis", "mckinsey", "bain"):
+            self.assertEqual(fetcher.filter_institution_pdf_candidates(institution, unrelated), unrelated)
+
+
 class DependencyHoldFetchTests(unittest.TestCase):
     def item(self, identity, title="Fixture report", *, landing=False):
         url = "https://www.bis.org/publ/" + identity + ".htm"

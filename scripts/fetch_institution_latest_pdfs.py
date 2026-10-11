@@ -369,7 +369,8 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "token": "BCG",
         # BCG's publication list is JS-rendered and DuckDuckGo discovery is flaky, but
         # its sitemap exposes every publication URL and the pages link to downloadable
-        # PDFs (web-assets / media-publications hosts). Sort by <lastmod> for recency.
+        # PDFs (web-assets / media-publications hosts). Sort by modification time
+        # for discovery; an explicit older publication URL year is checked later.
         "kind": "sitemap",
         "pdf": "scrape",
         "impersonate": True,
@@ -378,7 +379,7 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "child_filter": r"content|latest",
         "include": r"bcg\.com/publications/",
         "sitemap_scan_limit": 40,
-        # Only publications modified within this window, so we skip old reports.
+        # Bound discovery to recently modified pages. This is not publication age.
         "sitemap_max_age_days": 120,
         "required_for_clean_zero": True,
     },
@@ -1197,7 +1198,8 @@ def collect_sitemap_items(cfg: dict[str, Any], session: requests.Session, timeou
             lm = re.search(r"<lastmod>([^<]+)</lastmod>", block)
             entries.append((lm.group(1).strip() if lm else "", loc))
     entries.sort(key=lambda e: e[0], reverse=True)  # newest <lastmod> first
-    # Keep only recently-modified publications so we don't pull in old reports.
+    # Bound page discovery by modification time; this alone cannot prove a
+    # report was published recently (BCG URL-year evidence is checked in main).
     max_age = int(cfg.get("sitemap_max_age_days", 0))
     if max_age:
         cutoff = datetime.now(timezone.utc) - timedelta(days=max_age)
@@ -1364,6 +1366,31 @@ def collect_coveo_items(cfg: dict[str, Any], session: requests.Session, timeout:
         })
     log(f"  coveo -> {len(items)} publications (total {data.get('totalCount')})")
     return items
+
+
+def bcg_publication_year(source_url: str) -> int | None:
+    """A publisher's explicit URL year; never infer dates from report text."""
+    parsed = urlsplit(source_url)
+    if parsed.hostname not in {"bcg.com", "www.bcg.com"}:
+        return None
+    match = re.match(r"^/publications/([1-9][0-9]{3})(?:/|$)", parsed.path)
+    return int(match[1]) if match else None
+
+
+def _bcg_pdf_host_allowed(url: str) -> bool:
+    try:
+        parsed = urlsplit(url)
+        return (parsed.scheme == "https" and not parsed.username and not parsed.password
+                and parsed.port in (None, 443) and parsed.hostname in {
+                    "bcg.com", "www.bcg.com", "web-assets.bcg.com", "media-publications.bcg.com"})
+    except ValueError:
+        return False
+
+
+def filter_institution_pdf_candidates(institution: str, candidates: list[str]) -> list[str]:
+    # Other institutions legitimately host their downloads across domains.
+    # BCG's own archive confirms the bounded first-party set above.
+    return [url for url in candidates if _bcg_pdf_host_allowed(url)] if institution == "bcg" else candidates
 
 
 def scrape_pdf_candidates(html_text: str, base_url: str) -> list[str]:
@@ -1852,6 +1879,15 @@ def main() -> int:
             if dedup_key in seen_items and not force_reprocess:
                 continue
 
+            source_year = bcg_publication_year(item["source_url"]) if key == "bcg" else None
+            if source_year is not None and source_year < cutoff.year:
+                # Sitemap lastmod tracks page edits, not first publication.
+                # This explicit older year proves the report is outside the
+                # window without guessing a missing publication month/day.
+                skipped.append({"institution": key, "reason": "publication_year_before_window",
+                                "source_url": item["source_url"]})
+                continue
+
             published = parse_date(item["date"])
             # Search indexes advertise reports before their PDF is released.
             # These are neither download failures nor completed seen items:
@@ -1898,6 +1934,9 @@ def main() -> int:
                     if len(resolution_failure_samples) < 3:
                         resolution_failure_samples.append(f"landing: {type(exc).__name__}: {exc}")
                     continue
+            bcg_external_only = key == "bcg" and bool(candidates)
+            candidates = filter_institution_pdf_candidates(key, candidates)
+            bcg_external_only = bcg_external_only and not candidates
             if cfg.get("pdf_exclude"):
                 candidates = [c for c in candidates if not re.search(cfg["pdf_exclude"], c, re.I)]
             # Some sites (e.g. WEF) return the bare site name as og:title.
@@ -1905,9 +1944,10 @@ def main() -> int:
                 item["title"] = _title_from_url_slug(item["source_url"]) or item["title"]
 
             if not candidates:
-                if cfg.get("require_pdf"):
-                    # A substantive report feed promises a PDF. A changed page
-                    # template must be visible and retried, not recorded as seen.
+                if cfg.get("require_pdf") or bcg_external_only:
+                    # A promised main PDF, or only third-party citations on a
+                    # BCG page, cannot establish this source report's contents.
+                    # Keep the source visible and retryable rather than seen.
                     resolution_failure_count += 1
                     if len(resolution_failure_samples) < 3:
                         resolution_failure_samples.append(f"main PDF missing: {item['source_url']}")
@@ -1937,6 +1977,7 @@ def main() -> int:
                         item["source_url"],
                         args.request_timeout,
                     )
+                    preview_candidates = filter_institution_pdf_candidates(key, preview_candidates)
                     if cfg.get("pdf_exclude"):
                         preview_candidates = [
                             candidate for candidate in preview_candidates
@@ -1964,6 +2005,7 @@ def main() -> int:
                     page = http_get(session, item["scrape_url"], args.request_timeout, cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"), proxy=cfg.get("_proxy"))
                     page.raise_for_status()
                     scraped_candidates = scrape_pdf_candidates(page.text, getattr(page, "url", None) or item["scrape_url"])
+                    scraped_candidates = filter_institution_pdf_candidates(key, scraped_candidates)
                     if cfg.get("pdf_exclude"):
                         scraped_candidates = [
                             candidate for candidate in scraped_candidates
