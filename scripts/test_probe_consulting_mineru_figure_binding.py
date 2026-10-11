@@ -260,6 +260,34 @@ class ProductionConsumerTests(unittest.TestCase):
         self.assertFalse(result['production_consumer_verified'])
         self.assertNotIn('PRIVATE ALTERED', json.dumps(result))
 
+    def test_permission_pdf_uses_real_producer_and_both_consumer_validations(self):
+        import mineru_figure_sources as figures
+        from test_mineru_pdf_output_intents import permission_protected, pdfium_copy
+        self.original=permission_protected(self.original)
+        self.embedded=pdfium_copy(self.original)
+        self.fixture.original.write_bytes(self.original)
+        (self.fixture.raw/'source.pdf').write_bytes(self.embedded)
+        raw=self.archive()
+        with patch.object(figures,'validate_figure_sources',wraps=figures.validate_figure_sources) as validate:
+            result=self.verify(raw)
+        self.assertEqual(result['status'],'verified',result)
+        self.assertTrue(result['production_consumer_verified']);self.assertTrue(result['private_handoff_replay_verified'])
+        self.assertEqual(validate.call_count,2)
+        self.assertEqual(result['image_count'],2);self.assertEqual(result['selected_page_count'],2)
+        self.assertEqual(result['restoration_policy'],'authenticated-outputintents-restoration-v1')
+        self.assertEqual(result['original_pdf_sha256'],digest(self.original))
+        self.assertEqual(result['result_zip_sha256'],digest(raw))
+        self.assertEqual(self.fixture.original.read_bytes(),self.original)
+        self.assertEqual((self.fixture.raw/'source.pdf').read_bytes(),self.embedded)
+
+    def test_real_consumer_rejects_original_that_requires_nonempty_password(self):
+        from test_mineru_pdf_output_intents import permission_protected
+        self.original=permission_protected(self.original,user_password='synthetic-required-password')
+        self.fixture.original.write_bytes(self.original)
+        result=self.verify()
+        self.assertEqual(result['status'],'rejected')
+        self.assertFalse(result['production_consumer_verified']);self.assertFalse(result['private_handoff_replay_verified'])
+
     def test_sidecar_removal_during_raw_free_handoff_is_rejected(self):
         import mineru_figure_sources as figures
         real_validate = figures.validate_figure_sources

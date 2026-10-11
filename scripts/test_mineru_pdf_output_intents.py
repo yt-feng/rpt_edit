@@ -54,12 +54,67 @@ def changed(raw,operation):
         return document.tobytes(no_new_id=True)
 
 
+def permission_protected(raw, *, user_password=''):
+    """Synthetic encryption dictionary; default bytes still open with no prompt."""
+    with fitz.open(stream=raw,filetype='pdf') as document:
+        return document.tobytes(encryption=fitz.PDF_ENCRYPT_RC4_128,
+            owner_pw='synthetic-owner-password',user_pw=user_password)
+
+
 def restore(original,embedded):
     return color.restore_missing_output_intents(original,embedded,
         original_sha256=color.digest(original),embedded_sha256=color.digest(embedded))
 
 
 class OutputIntentTests(unittest.TestCase):
+    def test_empty_password_permission_pdf_still_requires_graph_and_exact_pixels(self):
+        from pypdf import PdfReader
+        from mineru_figure_sources import _render
+        original=output_intent_fixture(pages=1);embedded=pdfium_copy(original)
+        for source_protected,provider_protected in ((True,False),(False,True),(True,True)):
+            with self.subTest(source_protected=source_protected,provider_protected=provider_protected):
+                source=permission_protected(original) if source_protected else original
+                provider=permission_protected(embedded) if provider_protected else embedded
+                pair=(source,provider)
+                for raw,protected in ((source,source_protected),(provider,provider_protected)):
+                    reader=PdfReader(io.BytesIO(raw))
+                    self.assertEqual(reader.is_encrypted,protected)
+                    if protected:
+                        self.assertNotEqual(reader.decrypt(''),0)
+                        self.assertTrue(reader.is_encrypted)
+                    with fitz.open(stream=raw,filetype='pdf') as doc:
+                        self.assertFalse(doc.is_encrypted);self.assertFalse(doc.needs_pass)
+                restored,proof=restore(source,provider)
+                try:
+                    with fitz.open(stream=source,filetype='pdf') as authentic:
+                        actual,other=_render(authentic[0]),_render(restored[0])
+                        try:
+                            self.assertEqual(actual.size,other.size)
+                            self.assertEqual(actual.tobytes(),other.tobytes())
+                        finally:actual.close();other.close()
+                    self.assertEqual(proof['graph_binding']['pages'],1)
+                    self.assertEqual(proof['original_pdf_sha256'],color.digest(source))
+                    self.assertEqual(proof['embedded_pdf_sha256'],color.digest(provider))
+                    self.assertEqual((source,provider),pair)
+                finally:restored.close()
+        altered=changed(embedded,lambda doc:doc[0].insert_text((30,80),'ALTERED',fontsize=9))
+        with self.assertRaises(PdfGraphError):
+            restore(permission_protected(original),permission_protected(altered))
+
+    def test_nonempty_password_required_source_or_provider_stays_rejected(self):
+        from pypdf import PdfReader
+        original=output_intent_fixture(pages=1);embedded=pdfium_copy(original)
+        for source_locked,provider_locked in ((True,False),(False,True),(True,True)):
+            with self.subTest(source_locked=source_locked,provider_locked=provider_locked):
+                source=permission_protected(original,user_password='synthetic-required-password') if source_locked else original
+                provider=permission_protected(embedded,user_password='synthetic-required-password') if provider_locked else embedded
+                for raw,locked in ((source,source_locked),(provider,provider_locked)):
+                    if locked:
+                        reader=PdfReader(io.BytesIO(raw));self.assertTrue(reader.is_encrypted)
+                        self.assertEqual(reader.decrypt(''),0)
+                with self.assertRaisesRegex(color.OutputIntentError,'output_intent_password_required'):
+                    restore(source,provider)
+
     def test_actual_pdfium_loss_is_restored_without_changing_any_input_bytes(self):
         from mineru_figure_sources import _render
         original=output_intent_fixture();embedded=pdfium_copy(original)
