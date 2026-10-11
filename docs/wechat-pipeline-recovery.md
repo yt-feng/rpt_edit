@@ -183,8 +183,21 @@ only successful empty-password access for either input. Documents requiring a
 nonempty password still reject; it never requests a password or changes either
 input. Synthetic permission-protected inputs cover this library distinction,
 strict graph/pixel checks and both real consumer validations. The admitted source,
-profile and exact-pixel requirements remain unchanged. A new cloud check must
-verify this compatibility repair before claiming formal-consumer acceptance.
+profile and exact-pixel requirements remain unchanged.
+
+After PR #352, formal-consumer probe run `38121962962`
+verified the same admitted source and completed-result ZIP on main
+`e97b3eabedc0d970e6bc9287eae97180b3565e1a`. Its canonical read-only evidence is
+`consulting-figure-probe.json` in successful artifact
+`consulting-figure-probe-38121962962`; the sanitized completed-job log matches it.
+`production_figure_consumer.status=verified` and both verification flags are true:
+all 6/6 selected pages and original-PDF crops passed strict RGB and full drawing
+graph checks, the real status/sidecar consumer accepted all six references, and
+the second validation passed after deleting only the temporary raw extraction.
+Original PDF and ZIP hashes stayed unchanged; provider submissions, model calls,
+canonical-ledger writes and cache writes were all zero. This accepts the source
+figure chain, not a complete new article or WeChat delivery. The historical 2014
+source was used only for verification and was not published as a new report.
 
 ## BCG discovery evidence boundaries
 
