@@ -467,9 +467,20 @@ def repair_drafts(drafts, session, token, output, timeout, apply):
                         print(json.dumps({'draft_index':draft_index, 'article_index':index,
                                           'response_only_field_changes':facts['response_only_field_changes']}), flush=True)
                     payload = {key: repaired[key] for key in WECHAT_DRAFT_WRITABLE_FIELDS if key in repaired}
-                    response = post_wechat_json(session, f'https://api.weixin.qq.com/cgi-bin/draft/update?access_token={token}', {'media_id':media_id,'index':index,'articles':payload}, timeout, max_attempts=1)
-                    if parse_wechat_json(response,'draft/update image repair').get('errcode') != 0:
-                        raise ValueError('Draft media update not confirmed')
+                    try:
+                        response = post_wechat_json(session, f'https://api.weixin.qq.com/cgi-bin/draft/update?access_token={token}', {'media_id':media_id,'index':index,'articles':payload}, timeout, max_attempts=1)
+                        if parse_wechat_json(response,'draft/update image repair').get('errcode') != 0:
+                            raise ValueError('Draft media update not confirmed')
+                    except WeChatError as update_error:
+                        # Observed server refusal: the existing draft is queued
+                        # for scheduled publication. Preserve that schedule and
+                        # do not retry or cancel it; other groups are independent.
+                        if update_error.errcode != 53407 or not update_error.errmsg.startswith('定时发布中，无法删除或修改'):
+                            raise
+                        record_unresolved_group(report, output, draft_index, media_id, expected,
+                                                'scheduled_publish_locked', changed=changed, errcode=53407,
+                                                remaining_articles=len(actual)-index, preserved_removal=preserved_removal)
+                        interrupted = True; break
                     report['updated_articles'] += 1
                     updated_this_article = True
                     (output/'progress.json').write_text(json.dumps(report,indent=2))

@@ -281,6 +281,15 @@ with standard field names, writable/read-only classification and hashes only.
 examined/changed article counts; final `fully_repaired` still requires complete
 coverage of the current articles and the existing media readback checks; an
 explicitly preserved deletion is not an unfinished article.
+The observed WeChat refusal `53407` with the fixed message
+`定时发布中，无法删除或修改` means that group is locked for scheduled publication.
+Repair records `scheduled_publish_locked` with the remaining article count and
+continues other independent groups. It neither retries that write nor cancels
+or changes the publication schedule. Already confirmed members retain their
+verified counts; the locked members remain unresolved, not repaired or uncertain
+writes. This exception requires both the code and the observed message prefix.
+Other error codes, different messages and uncertain transport failures still
+stop execution; they are not treated as successful or safely rejected writes.
 After an update, a fresh `draft/get` must pass both the unchanged prose/source
 identity and the full media contract. Only that updated article then adopts the
 validated server representation as its next comparison baseline. This permits

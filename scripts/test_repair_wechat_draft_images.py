@@ -475,6 +475,77 @@ class SavedReceiptRemovalTests(unittest.TestCase):
         self.assertTrue(result['partial']);self.assertFalse(result['fully_repaired'])
 
 
+class ScheduledPublishLockTests(unittest.TestCase):
+    def execute(self, *, lock_at=0, removed=False, error_code=53407, errmsg='定时发布中，无法删除或修改', transport_error=None):
+        original=[dict(article(broken=False),title=f'Locked source {i}') for i in range(3)]
+        later=[dict(article(broken=False),title='Independent source')]
+        drafts=[{'media_id':'locked-id','articles':copy.deepcopy(original)}, {'media_id':'independent-id','articles':copy.deepcopy(later)}]
+        state={'locked-id':copy.deepcopy(original[1:] if removed else original), 'independent-id':copy.deepcopy(later)}
+        before=copy.deepcopy(state);attempts=[]
+        def get(_s,_t,media_id,_timeout):
+            return {'news_item':copy.deepcopy(state[media_id])}
+        def build(_s,_t,current,*_args):
+            return dict(current,thumb_media_id='repaired-cover'), {'cover_replaced':True,'body_replacements':[],'body_added':0,'sources':[]}
+        def post(_s,url,payload,_timeout,**kwargs):
+            self.assertIn('/draft/update?',url);self.assertEqual(1,kwargs['max_attempts'])
+            attempts.append((payload['media_id'],payload['index']))
+            if payload['media_id']=='locked-id' and payload['index']==lock_at:
+                if transport_error is not None:raise transport_error
+                return response({'errcode':error_code,'errmsg':errmsg})
+            state[payload['media_id']][payload['index']].update(payload['articles'])
+            return response({'errcode':0})
+        with tempfile.TemporaryDirectory() as temporary, redirect_stdout(io.StringIO()), \
+                patch.object(repair,'get_draft',side_effect=get), patch.object(repair,'build_media_repair',side_effect=build), \
+                patch.object(repair,'post_wechat_json',side_effect=post):
+            try:
+                result=repair.repair_drafts(drafts,object(),'TOKEN',Path(temporary),30,True)
+            except Exception:
+                self.assertEqual([('locked-id',0)],attempts)
+                self.assertEqual(before,state)
+                raise
+            self.assertEqual(result,json.loads((Path(temporary)/'progress.json').read_text()))
+        for media_id,rows in state.items():
+            self.assertEqual([repair.prose_identity(row) for row in before[media_id]], [repair.prose_identity(row) for row in rows])
+        self.assertEqual(drafts[0]['articles'],original)
+        return result,state,attempts
+
+    def test_locked_first_article_is_unresolved_without_retry_and_later_group_updates(self):
+        result,state,attempts=self.execute()
+        self.assertEqual([('locked-id',0),('independent-id',0)],attempts)
+        self.assertEqual(1,result['updated_articles']);self.assertEqual(1,result['article_count'])
+        self.assertEqual(3,result['unresolved_article_count']);self.assertEqual(0,result['uncertain_article_count'])
+        self.assertEqual('scheduled_publish_locked',result['drafts'][0]['resolution'])
+        self.assertEqual(53407,result['drafts'][0]['wechat_errcode'])
+        self.assertEqual(0,result['drafts'][0]['processed_articles'])
+        self.assertTrue(result['partial']);self.assertFalse(result['fully_repaired'])
+
+    def test_lock_after_confirmed_member_preserves_update_and_counts_only_remaining(self):
+        result,state,attempts=self.execute(lock_at=1)
+        self.assertEqual([('locked-id',0),('locked-id',1),('independent-id',0)],attempts)
+        self.assertEqual(2,result['updated_articles']);self.assertEqual(2,result['article_count'])
+        self.assertEqual(2,result['unresolved_article_count']);self.assertEqual(0,result['uncertain_article_count'])
+        self.assertEqual((1,2),(result['drafts'][0]['processed_articles'],result['drafts'][0]['remaining_articles']))
+        self.assertEqual(1,len(result['drafts'][0]['changed']))
+
+    def test_lock_after_preserved_removal_keeps_original_coverage_counts(self):
+        result,state,attempts=self.execute(lock_at=1,removed=True)
+        self.assertEqual(1,result['preserved_removed_article_count'])
+        self.assertEqual(2,result['article_count']);self.assertEqual(1,result['unresolved_article_count'])
+        self.assertEqual(result['expected_article_count'],sum(result[k] for k in ('article_count','unresolved_article_count','preserved_removed_article_count')))
+        group=result['drafts'][0]
+        self.assertEqual((3,2,0),(group['original_articles'],group['current_articles'],group['preserved_removed_original_index']))
+        self.assertEqual((1,1),(group['processed_articles'],group['remaining_articles']))
+
+    def test_unknown_code_or_different_53407_message_is_not_swallowed(self):
+        for code,message in [(40014,'定时发布中，无法删除或修改'),(53407,'Unknown server refusal')]:
+            with self.subTest(code=code), self.assertRaises(portal.WeChatError):
+                self.execute(error_code=code,errmsg=message)
+
+    def test_network_uncertainty_stops_without_retry_or_other_group_updates(self):
+        with self.assertRaises(requests.ConnectionError):
+            self.execute(transport_error=requests.ConnectionError('Synthetic update transport failure'))
+
+
 class CanonicalReadbackTests(unittest.TestCase):
     def execute(self, mode='normalize'):
         original=[article(broken=False),dict(article(broken=False),title='Second unchanged source')]
