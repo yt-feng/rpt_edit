@@ -35,6 +35,8 @@ def gh_json(endpoint, operation):
 def github_failure_category(stderr, returncode):
     """Classify without releasing CLI response text, signed URLs or credentials."""
     message = stderr.decode('utf-8', 'replace').lower()[:65536]
+    if 'the response contains terminal escape sequences' in message:
+        return 'cli_escape_sequence_rejected'
     matches = re.findall(r'\bhttp(?:/\d(?:\.\d)?)?\s+([45][0-9]{2})\b', message)
     if matches:
         return 'http_' + matches[-1]
@@ -48,10 +50,27 @@ def github_failure_category(stderr, returncode):
     return 'cli_error'
 
 
+def job_log_flags():
+    """Only allow raw log bytes into a captured pipe, never terminal output.
+
+    gh >= 2.97 refuses escape sequences even in piped non-JSON responses.
+    Feature detection is local and precedes the single log request, so older
+    runners remain supported without a failed request followed by a retry.
+    """
+    try:
+        help_result = subprocess.run(['gh', 'api', '--help'], capture_output=True, timeout=10)
+    except (subprocess.TimeoutExpired, OSError):
+        raise ProbeError('github_job_logs_cli_help_unavailable') from None
+    require(help_result.returncode == 0 and 0 < len(help_result.stdout) <= 128 * 1024,
+        'github_job_logs_cli_help_invalid')
+    return ['--allow-escape-sequences'] if b'--allow-escape-sequences' in help_result.stdout else []
+
+
 def gh_bytes(endpoint, operation):
     require(operation in {'run_metadata', 'job_metadata', 'job_logs'}, 'github_operation_invalid')
+    flags = job_log_flags() if operation == 'job_logs' else []
     try:
-        result = subprocess.run(['gh', 'api', endpoint], capture_output=True, timeout=60)
+        result = subprocess.run(['gh', 'api', endpoint, *flags], capture_output=True, timeout=60)
     except subprocess.TimeoutExpired:
         raise ProbeError('github_' + operation + '_network_stop') from None
     except OSError:
