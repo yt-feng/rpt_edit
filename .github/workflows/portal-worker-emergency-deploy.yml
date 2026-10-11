@@ -29,6 +29,7 @@ jobs:
           sparse-checkout-cone-mode: false
           sparse-checkout: |
             .github/workflows/public-identity-guard.yml
+            .github/workflows/customer-content-publish.yml
             .gitignore
             .github/workflows/portal-worker-emergency-deploy.yml
             .github/workflows/reportify-grab.yml
@@ -50,6 +51,8 @@ jobs:
             scripts/portal_lazy_assets.py
             scripts/build_member_course_directory.py
             scripts/capture_edge_worker_deployment.py
+            scripts/sync_portal_worker_schedules.py
+            scripts/test_sync_portal_worker_schedules.py
             scripts/check_public_brand.py
             scripts/check_public_identity.py
             scripts/encrypt_member_course_directory.mjs
@@ -83,6 +86,9 @@ jobs:
             scripts/test_render_private_config.py
             scripts/test_source_lead_adapter.js
             scripts/test_portal_r2_prefix.py
+            scripts/publish_customer_content.py
+            scripts/private_workflow_handoff.py
+            scripts/test_publish_customer_content.py
 
       - name: Validate legacy access compatibility
         run: |
@@ -95,6 +101,7 @@ jobs:
           node --input-type=module --check < workers/portal-suite-worker/src/locale-report-detail.js
           node scripts/test_portal_locale_detail_server.js
           node --check portal_suite/site_src/assets/app.js
+          node --check portal_suite/site_src/assets/account-services.js
           node --check portal_suite/site_src/assets/report-chat.js
           node --check portal_suite/site_src/assets/charts.js
           node --check portal_suite/site_src/assets/site-runtime.js
@@ -121,12 +128,14 @@ jobs:
           node scripts/test_portal_site_runtime.js
           python3 -B scripts/test_build_member_course_directory.py
           python3 -B scripts/test_capture_edge_worker_deployment.py
+          python3 -B scripts/test_sync_portal_worker_schedules.py
           python3 -B scripts/test_render_private_config.py
           python3 -B scripts/test_check_public_brand.py
           python3 -B scripts/test_portal_worker_emergency_deploy_workflow.py
           python3 -B scripts/test_portal_smoke_get.py
           node --test scripts/test_encrypt_member_course_directory.mjs
           python3 scripts/test_portal_r2_prefix.py
+          python3 -B scripts/test_publish_customer_content.py
 
       - name: Materialize private deployment values
         env:
@@ -214,11 +223,9 @@ jobs:
 
           [triggers]
           crons = [
+            "* 2-3 * * *",
             "*/30 * * * *",
-            "*/10 17-18 * * *",
-            "*/10 23 * * *",
-            "*/10 0-3 * * *",
-            "*/10 5-6 * * *"
+            "*/10 0-3,5-6,17-18,23 * * *"
           ]
 
           [[r2_buckets]]
@@ -559,12 +566,21 @@ jobs:
           # index bootstrap and repair belong to their dedicated maintenance
           # path, not to a Worker version rollout.
 
+      - name: Synchronize Portal Worker cron triggers
+        id: portal_schedules
+        timeout-minutes: 4
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+        run: python3 -B scripts/sync_portal_worker_schedules.py
+
       - name: Roll back failed Portal Worker deployment
         id: portal_rollback
         if: >-
           ${{ failure() &&
               steps.deploy-worker-version.outcome != 'skipped' &&
-              steps.portal_smoke.outcome != 'success' }}
+              (steps.portal_smoke.outcome != 'success' ||
+               steps.portal_schedules.outcome != 'success') }}
         timeout-minutes: 5
         uses: cloudflare/wrangler-action@v4
         with:

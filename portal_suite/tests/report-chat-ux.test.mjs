@@ -481,6 +481,17 @@ test("usage copy shows daily member limits, administrator unlimited access, and 
   assert.match(cache.status.textContent, /热门问题 · 历史精选结果，不计使用次数/u);
 });
 
+test("research charged to added credits displays the extra balance instead of a misleading total zero", async () => {
+  for (const remaining of [3, 0]) {
+    const harness = createHarness();
+    const submitted = harness.form.dispatch("submit");
+    harness.fetches[0].resolve({ answer: "额外研究结果", usage: { tier: "standard", limit: 2, remaining: 0, period: "daily", debit_source: "credits", extra_credits_remaining: remaining } });
+    await submitted;
+    assert.match(harness.status.textContent, new RegExp(`已使用额外研究次数，额外剩余 ${remaining} 次`, "u"));
+    assert.doesNotMatch(harness.status.textContent, /今日限 2 次，剩余 0 次/u);
+  }
+});
+
 test("popular questions load on startup and render cached research through GET only", async () => {
   const harness = createHarness({ authenticated: false, includePopular: true });
   assert.equal(harness.fetches.length, 1);

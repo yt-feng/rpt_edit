@@ -406,6 +406,8 @@ const REPORT_CHAT_MEMBER_DAILY_TURNS = 2;
 const REPORT_CHAT_ADVANCED_DAILY_TURNS = 5;
 const REPORT_CHAT_ADVANCED_MIN_MONTHS = 2;
 const REPORT_CHAT_POLICY_VERSION = 3;
+const AI_RESEARCH_CREDIT_MAX_GRANT = 10000;
+const AI_RESEARCH_CREDIT_MAX_OPERATIONS = 20000;
 const REPORT_CHAT_ARCHIVE_PREFIX = "_report-chat-archive/v1";
 const REPORT_CHAT_PUBLIC_PREFIX = "_report-chat-public/v1";
 const REPORT_CHAT_PUBLIC_INDEX_KEY = `${REPORT_CHAT_PUBLIC_PREFIX}/index.json`;
@@ -15578,6 +15580,279 @@ async function newsfeedDeviceHash(env, visitorId) {
   return hmacSha256Hex(accountSecret(env), `newsfeed-device:v1:${visitorId}`);
 }
 
+function aiResearchCreditError(code, status = 503) {
+  const error = new Error("AI 研究次数暂时无法更新，请稍后重试。");
+  error.code = code;
+  error.status = status;
+  return error;
+}
+
+function aiResearchCreditKey(userId) {
+  const id = String(userId || "").trim();
+  if (!id || id.length > 160) throw aiResearchCreditError("CREDIT_INVALID", 400);
+  return accountKey("ai-research-credits-v1", id);
+}
+
+function emptyAiResearchCredits(userId) {
+  return { version: 1, user_id: String(userId), balance: 0, total_granted: 0, total_consumed: 0, updated_at: "", operations: {} };
+}
+
+async function aiResearchCreditSnapshot(env, userId) {
+  const key = aiResearchCreditKey(userId);
+  const snapshot = await r2GetJsonObjectStrict(env, key);
+  const state = snapshot ? snapshot.value : emptyAiResearchCredits(userId);
+  if (!state || state.version !== 1 || state.user_id !== String(userId)
+    || ![state.balance, state.total_granted, state.total_consumed].every((value) => Number.isSafeInteger(value) && value >= 0)
+    || state.balance !== state.total_granted - state.total_consumed
+    || !state.operations || typeof state.operations !== "object" || Array.isArray(state.operations)
+    || Object.keys(state.operations).length > AI_RESEARCH_CREDIT_MAX_OPERATIONS) {
+    throw aiResearchCreditError("CREDIT_STORAGE");
+  }
+  return { key, snapshot, state };
+}
+
+function publicAiResearchCredits(state) {
+  return {
+    balance: state.balance,
+    total_granted: state.total_granted,
+    total_consumed: state.total_consumed,
+    updated_at: String(state.updated_at || ""),
+  };
+}
+
+async function mutateAiResearchCredits(env, userId, operationId, apply) {
+  for (let attempt = 0; attempt < 12; attempt += 1) {
+    const { key, snapshot, state } = await aiResearchCreditSnapshot(env, userId);
+    const result = apply(state, state.operations[operationId]);
+    if (!result.changed) return { state, ...result, storage_requests: attempt * 2 + 1 };
+    if (Object.keys(state.operations).length > AI_RESEARCH_CREDIT_MAX_OPERATIONS) {
+      throw aiResearchCreditError("CREDIT_LEDGER_FULL", 409);
+    }
+    state.updated_at = new Date().toISOString();
+    const etag = String(snapshot && snapshot.object && snapshot.object.etag || "");
+    const written = await accountBucket(env).put(key, JSON.stringify(state), {
+      onlyIf: etag ? { etagMatches: etag } : { etagDoesNotMatch: "*" },
+      httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
+    });
+    if (written !== null) return { state, ...result, storage_requests: attempt * 2 + 2 };
+  }
+  throw aiResearchCreditError("CREDIT_BUSY", 409);
+}
+
+async function grantAiResearchCredits(env, user, adminUser, payload) {
+  const amount = payload.amount;
+  const reason = typeof payload.reason === "string" ? payload.reason.trim() : "";
+  const operationId = typeof payload.operation_id === "string" ? payload.operation_id.toLowerCase() : "";
+  if (!Number.isSafeInteger(amount) || amount < 1 || amount > AI_RESEARCH_CREDIT_MAX_GRANT
+    || !reason || reason.length > 240 || /[\u0000-\u001f\u007f]/u.test(reason)
+    || !/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/u.test(operationId)) {
+    throw aiResearchCreditError("CREDIT_INVALID", 400);
+  }
+  return mutateAiResearchCredits(env, user.id, `grant:${operationId}`, (state, existing) => {
+    if (existing) {
+      if (existing.kind !== "grant" || existing.amount !== amount || existing.reason !== reason) {
+        throw aiResearchCreditError("CREDIT_OPERATION_CONFLICT", 409);
+      }
+      return { changed: false, deduplicated: true };
+    }
+    if (!Number.isSafeInteger(state.total_granted + amount)) throw aiResearchCreditError("CREDIT_INVALID", 400);
+    state.balance += amount;
+    state.total_granted += amount;
+    // The audit and balance are one conditional write. Operation IDs are never
+    // pruned: a delayed retry cannot silently grant the same credits twice.
+    state.operations[`grant:${operationId}`] = {
+      kind: "grant", amount, reason, operation_id: operationId,
+      actor_id: String(adminUser.id), actor_email: normalizeEmail(adminUser.email),
+      target_email: normalizeEmail(user.email), created_at: new Date().toISOString(),
+    };
+    return { changed: true, deduplicated: false };
+  });
+}
+
+async function expiryReminderListUsers(env, cursor = "", limit = 20) {
+  if (hasSupabaseConfig(env)) {
+    const params = { select: "id,username,email,email_is_generated,created_at,updated_at", order: "id.asc", limit: String(limit) };
+    if (cursor) params.id = `gt.${cursor}`;
+    const rows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${queryString(params)}`);
+    if (!Array.isArray(rows)) throw new Error("Reminder account page unavailable");
+    return { items: rows.map((row) => ({ user: validateSiteUserRow(row), cursor: String(row.id) })),
+      cursor: rows.length === limit ? String(rows[rows.length - 1].id) : "" };
+  }
+  let position = { page: "", offset: 0 };
+  if (cursor) position = JSON.parse(cursor);
+  if (typeof position.page !== "string" || !Number.isInteger(position.offset) || position.offset < 0 || position.offset > limit) throw new Error("Reminder cursor invalid");
+  const page = await accountBucket(env).list({ prefix: accountKey("users", "id", ""), limit, ...(position.page ? { cursor: position.page } : {}) });
+  if (page.truncated && (!page.cursor || page.cursor === position.page)) throw new Error("Reminder account pagination stalled");
+  const objects = (page.objects || []).slice(position.offset);
+  const items = [];
+  for (let index = 0; index < objects.length; index += 1) {
+    const user = validateSiteUserRow(await r2GetJsonStrict(env, objects[index].key));
+    if (!user) throw new Error("Reminder account page changed");
+    items.push({ user, cursor: JSON.stringify({ page: position.page, offset: position.offset + index + 1 }) });
+  }
+  return { items, cursor: page.truncated ? JSON.stringify({ page: page.cursor, offset: 0 }) : "" };
+}
+
+async function expiryReminderSnapshot(env, identity, fresh) {
+  let user = identity;
+  if (fresh) {
+    // The scan already binds a stable account ID. A single authoritative ID
+    // lookup avoids email/site-origin fallbacks consuming a second request.
+    if (hasSupabaseConfig(env)) {
+      const query = queryString({ id: `eq.${identity.id}`, select: "id,username,email,email_is_generated,created_at,updated_at", limit: "1" });
+      const rows = await supabaseRequest(env, "GET", `/rest/v1/site_users?${query}`);
+      user = validateSiteUserRow(Array.isArray(rows) ? rows[0] : null, { id: identity.id });
+    } else user = validateSiteUserRow(await r2GetJsonStrict(env, accountKey("users", "id", identity.id)), { id: identity.id });
+  }
+  if (!user || String(user.id) !== String(identity.id)) return { user: {}, disabled: true };
+  const merged = await mergeSiteUserAdminState(env, user);
+  const disabled = accountDisabled(user) || accountDisabled(merged);
+  const generated = Boolean(user.email_is_generated) || isGeneratedEmail(user.email) || !normalizeEmail(user.email);
+  const privileged = isPrivilegedAccount(merged);
+  if (disabled || generated || privileged) return { user: merged, disabled, generated, privileged };
+  const email = normalizeEmail(user.email);
+  const [entitlement, admin, trial] = await Promise.all([
+    findEntitlement(env, email), findStoredAccessGrant(env, email), findStoredVid2PptTrialAccessSnapshot(env, email),
+  ]);
+  return { user: merged, disabled, generated, privileged,
+    entitlement: entitlement ? { ...entitlement, authority_occurred_at: publicEntitlement(entitlement).authority_occurred_at } : null,
+    admin,
+    trial: trial.record ? { ...trial.record, authority_occurred_at: publicAccessGrant(trial.record).authority_occurred_at } : null,
+  };
+}
+
+async function expiryReminderService() {
+  const { createExpiryReminders } = await import("./expiry-reminders.js");
+  return createExpiryReminders({
+    bucket: accountBucket, list: expiryReminderListUsers, load: expiryReminderSnapshot,
+    configured: (env) => newsfeedEmailProvider(env) !== "none",
+    send: sendNewsfeedEmail,
+    unsubscribeUrl: async (env, user) => {
+      const token = await signAccountPayload(env, { kind: "membership-reminder-unsubscribe", sub: String(user.id),
+        exp: Math.floor(Date.now() / 1000) + 366 * 86400 });
+      return `https://kcdesk.com/api/account/expiry-reminders/unsubscribe?token=${encodeURIComponent(token)}`;
+    },
+  });
+}
+
+async function handleExpiryReminders(request, env, admin = false) {
+  let user;
+  try {
+    if (admin) {
+      await requireSuperUser(request, env);
+      const email = normalizeEmail(new URL(request.url).searchParams.get("email"));
+      if (!email) return privateJsonResponse(request, env, 400, { ok: false, code: "REMINDER_INVALID", detail: "请选择已有用户。" });
+      user = await findSiteUserByEmail(env, email);
+      if (!user) return privateJsonResponse(request, env, 404, { ok: false, code: "REMINDER_USER_NOT_FOUND", detail: "用户不存在。" });
+    } else user = await currentUserFromRequest(env, request);
+  } catch (_error) {
+    return privateJsonResponse(request, env, admin ? 403 : 401, { ok: false, code: admin ? "REMINDER_FORBIDDEN" : "REMINDER_AUTH", detail: "请使用有权限的账号登录。" });
+  }
+  try {
+    const service = await expiryReminderService();
+    if (request.method === "POST") {
+      let payload;
+      try {
+        const body = await request.text();
+        if (new TextEncoder().encode(body).byteLength > 1024) throw new Error("invalid");
+        payload = JSON.parse(body);
+        if (!payload || typeof payload.enabled !== "boolean") throw new Error("invalid");
+      } catch (_error) { return privateJsonResponse(request, env, 400, { ok: false, code: "REMINDER_INVALID", detail: "请选择是否接收到期提醒。" }); }
+      await service.preferences(env, user, payload.enabled);
+    }
+    const result = await service.status(env, user);
+    return privateJsonResponse(request, env, 200, { ...result, ...(admin ? {
+      user: { id: String(user.id), email: normalizeEmail(user.email), username: String(user.username || "") },
+      scan: await service.scanStatus(env),
+    } : {}) });
+  } catch (_error) {
+    return privateJsonResponse(request, env, 503, { ok: false, code: "REMINDER_STORAGE", detail: "到期提醒设置暂时无法读取或更新，请稍后重试。" });
+  }
+}
+
+async function handleExpiryReminderUnsubscribe(request, env) {
+  const token = String(new URL(request.url).searchParams.get("token") || "");
+  let payload;
+  try {
+    if (!token || token.length > 1600) throw new Error("invalid");
+    payload = await verifyAccountPayload(env, token, "membership-reminder-unsubscribe");
+    if (typeof payload.sub !== "string" || !payload.sub || payload.sub.length > 160) throw new Error("invalid");
+  } catch (_error) { return privateJsonResponse(request, env, 400, { ok: false, code: "REMINDER_INVALID", detail: "此链接已失效，请登录账户修改到期提醒设置。" }); }
+  if (request.method === "POST") {
+    try {
+      await (await expiryReminderService()).preferences(env, { id: payload.sub }, false);
+      return privateJsonResponse(request, env, 200, { ok: true, preferences: { enabled: false }, detail: "已关闭到期邮件提醒。" });
+    } catch (_error) { return privateJsonResponse(request, env, 503, { ok: false, code: "REMINDER_STORAGE", detail: "设置暂时无法保存，请登录账户修改。" }); }
+  }
+  // GET is read-only: email link scanners must not silently unsubscribe users.
+  const action = `/api/account/expiry-reminders/unsubscribe?token=${encodeURIComponent(token)}`;
+  return new Response(`<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>KC桌面到期提醒</title><main><h1>关闭到期邮件提醒</h1><p>确认后将不再收到会员到期提醒。您仍可在账户中重新开启。</p><form method="post" action="${action}"><button type="submit">确认关闭到期邮件提醒</button></form></main></html>`, {
+    headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "private, no-store", "Referrer-Policy": "no-referrer", "X-Content-Type-Options": "nosniff", "Content-Security-Policy": "default-src 'none'; form-action 'self'; frame-ancestors 'none'" },
+  });
+}
+
+async function handleAccountAiResearchCredits(request, env) {
+  let user;
+  try { user = await currentUserFromRequest(env, request); }
+  catch (_error) { return privateJsonResponse(request, env, 401, { ok: false, code: "CREDIT_AUTH", detail: "请先登录后查看 AI 研究次数。" }); }
+  try {
+    const policy = await reportChatPolicyForUser(env, user, "");
+    const [included, ledger] = await Promise.all([
+      reportChatPolicyUsageSnapshot(env, policy), aiResearchCreditSnapshot(env, user.id),
+    ]);
+    return privateJsonResponse(request, env, 200, { ok: true, credits: publicAiResearchCredits(ledger.state), usage: publicReportChatUsage(policy, included.count) });
+  } catch (_error) {
+    return privateJsonResponse(request, env, 503, { ok: false, code: "CREDIT_STORAGE", detail: "AI 研究次数暂时无法读取，请稍后重试。" });
+  }
+}
+
+async function handleAccountAdminAiResearchCredits(request, env) {
+  let adminUser;
+  try { adminUser = await requireSuperUser(request, env); }
+  catch (_error) { return privateJsonResponse(request, env, 403, { ok: false, code: "CREDIT_FORBIDDEN", detail: "仅管理员可管理 AI 研究次数。" }); }
+  let payload = {};
+  if (request.method === "POST") {
+    try {
+      const body = await request.text();
+      if (new TextEncoder().encode(body).byteLength > 4096) throw new Error("invalid");
+      payload = JSON.parse(body);
+      if (!payload || typeof payload !== "object" || Array.isArray(payload)) throw new Error("invalid");
+    } catch (_error) {
+      return privateJsonResponse(request, env, 400, { ok: false, code: "CREDIT_INVALID", detail: "请填写有效的次数、原因和操作编号。" });
+    }
+  }
+  const email = normalizeEmail(request.method === "GET" ? new URL(request.url).searchParams.get("email") : payload.email);
+  if (!email) return privateJsonResponse(request, env, 400, { ok: false, code: "CREDIT_INVALID", detail: "请选择已有用户。" });
+  try {
+    const storedUser = await findSiteUserByEmail(env, email);
+    if (!storedUser) return privateJsonResponse(request, env, 404, { ok: false, code: "CREDIT_USER_NOT_FOUND", detail: "用户不存在。" });
+    const user = await mergeSiteUserAdminState(env, storedUser);
+    if (accountDisabled(user)) return privateJsonResponse(request, env, 409, { ok: false, code: "CREDIT_USER_DISABLED", detail: "该用户已停用。" });
+    // Read the included policy before granting so a membership lookup failure
+    // cannot turn an unacknowledged mutation into a second manual grant.
+    const policy = await reportChatPolicyForUser(env, user, "");
+    const included = await reportChatPolicyUsageSnapshot(env, policy);
+    const result = request.method === "POST"
+      ? await grantAiResearchCredits(env, user, adminUser, payload)
+      : await aiResearchCreditSnapshot(env, user.id);
+    return privateJsonResponse(request, env, 200, {
+      ok: true,
+      user: { id: String(user.id), email: normalizeEmail(user.email), username: String(user.username || "") },
+      credits: publicAiResearchCredits(result.state),
+      usage: publicReportChatUsage(policy, included.count),
+      ...(request.method === "POST" ? { deduplicated: result.deduplicated } : {}),
+    });
+  } catch (error) {
+    const codes = new Set(["CREDIT_INVALID", "CREDIT_OPERATION_CONFLICT", "CREDIT_BUSY", "CREDIT_LEDGER_FULL", "CREDIT_STORAGE"]);
+    const code = codes.has(error && error.code) ? error.code : "CREDIT_STORAGE";
+    const status = code === "CREDIT_INVALID" ? 400 : ["CREDIT_OPERATION_CONFLICT", "CREDIT_BUSY", "CREDIT_LEDGER_FULL"].includes(code) ? 409 : 503;
+    return privateJsonResponse(request, env, status, {
+      ok: false, code,
+      detail: code === "CREDIT_OPERATION_CONFLICT" ? "操作编号已用于其他追加记录，请刷新后重试。" : "AI 研究次数暂时无法更新，请核对后重试。",
+    });
+  }
+}
+
 class ReportChatLimitError extends Error {
   constructor(usage) {
     super("Daily report chat limit reached.");
@@ -15641,6 +15916,7 @@ async function reportChatPolicyForUser(env, user, visitorIdValue) {
     return {
       version: REPORT_CHAT_POLICY_VERSION,
       tier: "advanced",
+      account_id: String(user.id),
       limit: REPORT_CHAT_ADVANCED_DAILY_TURNS,
       period: "day",
       identity_kind: "account",
@@ -15652,6 +15928,7 @@ async function reportChatPolicyForUser(env, user, visitorIdValue) {
     return {
       version: REPORT_CHAT_POLICY_VERSION,
       tier: "member",
+      account_id: String(user.id),
       limit: REPORT_CHAT_MEMBER_DAILY_TURNS,
       period: "day",
       identity_kind: "account",
@@ -15662,6 +15939,7 @@ async function reportChatPolicyForUser(env, user, visitorIdValue) {
   return {
     version: REPORT_CHAT_POLICY_VERSION,
     tier: "registered",
+    account_id: String(user.id),
     limit: REPORT_CHAT_FREE_LIFETIME_TURNS,
     period: "lifetime",
     identity_kind: "account",
@@ -15677,9 +15955,9 @@ function reportChatPolicyUsageKey(policy, date = reportChatUsageDate()) {
     : accountKey("report-chat-v3", "lifetime", policy.identity_kind, policy.identity);
 }
 
-async function reportChatPolicyUsageSnapshot(env, policy) {
+async function reportChatPolicyUsageSnapshot(env, policy, reservationDate) {
   if (!policy || policy.limit === null) return { key: "", date: "", snapshot: null, count: 0 };
-  const date = policy.period === "day" ? reportChatUsageDate() : "";
+  const date = policy.period === "day" ? (reservationDate || reportChatUsageDate()) : "";
   const key = reportChatPolicyUsageKey(policy, date);
   const snapshot = await r2GetJsonObjectStrict(env, key);
   const count = Math.max(0, Math.floor(Number(snapshot && snapshot.value && snapshot.value.count) || 0));
@@ -15694,13 +15972,39 @@ async function assertReportChatPolicyTurnAvailable(env, policy) {
 }
 
 async function reserveReportChatPolicyTurn(env, policy) {
-  if (!policy || policy.limit === null) return publicReportChatUsage(policy, 0);
+  if (!policy || policy.limit === null) return { usage: publicReportChatUsage(policy, 0), reservation: null };
+  const reservationId = crypto.randomUUID();
+  const date = policy.period === "day" ? reportChatUsageDate() : "";
+  const creditAccount = policy.identity_kind === "account" ? policy.account_id : "";
   for (let attempt = 0; attempt < 6; attempt += 1) {
-    const state = await reportChatPolicyUsageSnapshot(env, policy);
-    if (state.count >= policy.limit) throw new ReportChatLimitError(publicReportChatUsage(policy, state.count));
+    const state = await reportChatPolicyUsageSnapshot(env, policy, date);
+    if (state.count >= policy.limit) {
+      const usage = publicReportChatUsage(policy, state.count);
+      if (!creditAccount) throw new ReportChatLimitError(usage);
+      const reservation = { source: "credits", account_id: creditAccount, id: reservationId, date };
+      let debit;
+      try {
+        debit = await mutateAiResearchCredits(env, creditAccount, `debit:${reservationId}`, (ledger, existing) => {
+          if (existing) return { changed: false };
+          if (ledger.balance < 1) throw new ReportChatLimitError({ ...usage, extra_credits_remaining: 0 });
+          ledger.balance -= 1;
+          ledger.total_consumed += 1;
+          ledger.operations[`debit:${reservationId}`] = { kind: "debit", status: "debited", created_at: new Date().toISOString() };
+          return { changed: true };
+        });
+      } catch (error) {
+        if (!(error instanceof ReportChatLimitError)) error.researchReservation = reservation;
+        throw error;
+      }
+      reservation.accounting_overhead = attempt * 2 + debit.storage_requests - 1;
+      return { usage: { ...usage, extra_credits_remaining: debit.state.balance, debit_source: "credits" }, reservation };
+    }
     const currentEtag = String(state.snapshot && state.snapshot.object && state.snapshot.object.etag || "");
     const nextCount = state.count + 1;
-    const written = await accountBucket(env).put(state.key, JSON.stringify({
+    const reservation = { source: "included", id: reservationId, date, key: state.key, accounting_overhead: attempt * 2 };
+    const previous = state.snapshot && state.snapshot.value || {};
+    let written;
+    try { written = await accountBucket(env).put(state.key, JSON.stringify({
       version: REPORT_CHAT_POLICY_VERSION,
       identity_kind: policy.identity_kind,
       identity: policy.identity,
@@ -15708,23 +16012,51 @@ async function reserveReportChatPolicyTurn(env, policy) {
       period: policy.period,
       date: state.date,
       count: nextCount,
+      reservations: {
+        ...Object.fromEntries(Object.entries(previous.reservations || {}).filter(([, status]) => status === "debited")),
+        [reservationId]: "debited",
+      },
       updated_at: new Date().toISOString(),
     }), {
       onlyIf: currentEtag ? { etagMatches: currentEtag } : { etagDoesNotMatch: "*" },
       httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
-    });
-    if (written !== null) return publicReportChatUsage(policy, nextCount);
+    }); } catch (error) { error.researchReservation = reservation; throw error; }
+    if (written !== null) return {
+      // Preserve the included path's response and storage budget. The additive
+      // ledger is read only when this allowance is exhausted.
+      usage: publicReportChatUsage(policy, nextCount),
+      reservation,
+    };
   }
   throw new Error("Report chat changed concurrently. Please retry.");
 }
 
-async function releaseReportChatPolicyTurn(env, policy) {
+async function releaseReportChatPolicyTurn(env, policy, reservation) {
   if (!policy || policy.limit === null) return publicReportChatUsage(policy, 0);
+  if (!reservation || !reservation.id) throw aiResearchCreditError("CREDIT_STORAGE");
+  if (reservation.source === "credits") {
+    if (policy.account_id !== reservation.account_id) throw aiResearchCreditError("CREDIT_STORAGE");
+    const refunded = await mutateAiResearchCredits(env, reservation.account_id, `debit:${reservation.id}`, (state, debit) => {
+      if (!debit || debit.status === "refunded") return { changed: false };
+      if (debit.kind !== "debit" || debit.status !== "debited") throw aiResearchCreditError("CREDIT_STORAGE");
+      state.balance += 1;
+      state.total_consumed -= 1;
+      debit.status = "refunded";
+      debit.refunded_at = new Date().toISOString();
+      return { changed: true };
+    });
+    const included = await reportChatPolicyUsageSnapshot(env, policy);
+    return { ...publicReportChatUsage(policy, included.count), extra_credits_remaining: refunded.state.balance, debit_source: "credits" };
+  }
+  if (reservation.source !== "included" || reservation.key !== reportChatPolicyUsageKey(policy, reservation.date)) {
+    throw aiResearchCreditError("CREDIT_STORAGE");
+  }
   for (let attempt = 0; attempt < 6; attempt += 1) {
-    const state = await reportChatPolicyUsageSnapshot(env, policy);
-    if (state.count <= 0) return publicReportChatUsage(policy, 0);
+    const state = await reportChatPolicyUsageSnapshot(env, policy, reservation.date);
+    const previous = state.snapshot && state.snapshot.value || {};
+    if (!previous.reservations || previous.reservations[reservation.id] !== "debited") return publicReportChatUsage(policy, state.count);
     const currentEtag = String(state.snapshot && state.snapshot.object && state.snapshot.object.etag || "");
-    const nextCount = state.count - 1;
+    const nextCount = Math.max(0, state.count - 1);
     const written = await accountBucket(env).put(state.key, JSON.stringify({
       version: REPORT_CHAT_POLICY_VERSION,
       identity_kind: policy.identity_kind,
@@ -15733,6 +16065,7 @@ async function releaseReportChatPolicyTurn(env, policy) {
       period: policy.period,
       date: state.date,
       count: nextCount,
+      reservations: { ...previous.reservations, [reservation.id]: "refunded" },
       updated_at: new Date().toISOString(),
     }), {
       onlyIf: currentEtag ? { etagMatches: currentEtag } : { etagDoesNotMatch: "*" },
@@ -16294,7 +16627,7 @@ async function handleAccountAdminReportChatCuration(request, env) {
 function reportChatRequestEmailContent(record) {
   const fields = [
     ["问题", record.question],
-    ["RAG 记录编号", record.archive_id],
+    ["AI 研究记录编号", record.archive_id],
     ["用户层级", record.tier],
     ["额度周期", record.period],
     ["额度", record.limit === null ? "无限" : String(record.limit)],
@@ -16304,7 +16637,7 @@ function reportChatRequestEmailContent(record) {
     ["页面路径", record.page_path || "/"],
   ];
   const text = [
-    "收到一条 RAG 研究需求申请。",
+    "收到一条 AI 研究需求申请。",
     "",
     ...fields.map(([label, value]) => `${label}：${value}`),
     "",
@@ -16316,12 +16649,12 @@ function reportChatRequestEmailContent(record) {
       <td style="padding:9px 12px;border-bottom:1px solid #e5e7eb;color:#101828;word-break:break-word;">${escapeNewsfeedHtml(value)}</td>
     </tr>`).join("");
   return {
-    subject: cleanReportRequestText(`RAG 研究需求：${record.question}`, 160),
+    subject: cleanReportRequestText(`AI 研究需求：${record.question}`, 160),
     text,
     html: `
       <div style="margin:0;padding:24px;background:#f6f7fb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#101828;">
         <div style="max-width:680px;margin:0 auto;background:#ffffff;border-radius:10px;padding:28px;">
-          <h1 style="margin:0 0 18px;font-size:22px;line-height:1.35;">RAG 研究需求申请</h1>
+          <h1 style="margin:0 0 18px;font-size:22px;line-height:1.35;">AI 研究需求申请</h1>
           <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border:1px solid #e5e7eb;border-radius:8px;border-collapse:collapse;">${rows}</table>
         </div>
       </div>`,
@@ -17014,7 +17347,7 @@ async function handleReportChat(request, env, ctx) {
             ? "USAGE_BUSY"
             : "CHAT_SERVICE";
       return privateJsonResponse(request, env, status, {
-        detail: status === 429 ? "今天的报告 Chat 次数已用完，请明天继续。" : "报告 Chat 暂时不可用，请稍后重试。",
+        detail: status === 429 ? "当前可用的 AI 研究次数已用完，如需追加次数请通过站内申请联系管理员。" : "AI 研究暂时不可用，请稍后重试。",
         stage_code: stageCode,
         request_hint: requestHint,
       });
@@ -17025,6 +17358,7 @@ async function handleReportChat(request, env, ctx) {
   let questionHash = "";
   let usage = null;
   let turnReserved = false;
+  let turnReservation = null;
   let turnCommitted = false;
   try {
     questionHash = await reportChatQuestionHash(question);
@@ -17032,10 +17366,13 @@ async function handleReportChat(request, env, ctx) {
     // Reserve atomically before evidence retrieval or a paid model call so a
     // concurrent burst cannot fan out beyond the account/device allowance.
     // A downstream failure releases the reservation before returning.
-    usage = await reserveReportChatPolicyTurn(env, policy);
-    turnReserved = policy.limit !== null;
+    const reserved = await reserveReportChatPolicyTurn(env, policy);
+    usage = reserved.usage;
+    turnReservation = reserved.reservation;
+    turnReserved = Boolean(turnReservation);
     const history = reportChatHistory(payload.history);
     const researchBudget = createReportResearchBudget();
+    if (turnReservation?.accounting_overhead) reportResearchBudgetSpend(researchBudget, turnReservation.accounting_overhead, "usage-accounting");
     const researchRun = await generateReportResearch(env, question, history, researchBudget, { includeNews: payload.include_news === true });
     let response = researchRun.response;
     if (!response) {
@@ -17154,9 +17491,15 @@ async function handleReportChat(request, env, ctx) {
         request_hint: requestHint,
       });
     }
+    // A storage response can be lost after its conditional debit committed.
+    // Its operation receipt makes refunding that uncertain debit safe too.
+    if (!turnReservation && error && error.researchReservation) {
+      turnReservation = error.researchReservation;
+      turnReserved = true;
+    }
     if (turnReserved && !turnCommitted && policy) {
       try {
-        usage = await releaseReportChatPolicyTurn(env, policy);
+        usage = await releaseReportChatPolicyTurn(env, policy, turnReservation);
       } catch (_releaseError) {
         // The current snapshot below remains authoritative when a release
         // races with another reservation.
@@ -17189,7 +17532,7 @@ async function handleReportChat(request, env, ctx) {
       });
     } catch (_archiveError) {
       return privateJsonResponse(request, env, 503, {
-        detail: "报告 Chat 记录服务暂时不可用，请稍后重试。",
+        detail: "AI 研究记录服务暂时不可用，请稍后重试。",
         stage_code: "ARCHIVE_SERVICE",
         request_hint: requestHint,
       });
@@ -17207,7 +17550,7 @@ async function handleReportChat(request, env, ctx) {
       return privateJsonResponse(request, env, 429, {
         detail: usage && usage.period === "lifetime"
           ? "免费试用次数已用完，可提交研究需求。"
-          : "今天的报告 Chat 次数已用完，可提交研究需求。",
+          : "当前可用的 AI 研究次数已用完，可提交研究需求。",
         stage_code: stageCode,
         request_hint: requestHint,
         request_available: true,
@@ -17217,7 +17560,7 @@ async function handleReportChat(request, env, ctx) {
       });
     }
     return privateJsonResponse(request, env, status, {
-      detail: status === 400 ? "请刷新页面后重试。" : "报告 Chat 暂时不可用，请稍后重试。",
+      detail: status === 400 ? "请刷新页面后重试。" : "AI 研究暂时不可用，请稍后重试。",
       stage_code: stageCode,
       request_hint: requestHint,
       archive_id: archive.id,
@@ -26191,7 +26534,91 @@ async function resolveLocaleDetailPublicItem(env, source, id) {
   return null;
 }
 
+async function customerContentAccount(env, identity) {
+  const stored = await findSiteUserByEmail(env, identity.email);
+  if (!stored || (identity.id && String(stored.id) !== String(identity.id))) return null;
+  const user = await mergeSiteUserAdminState(env, stored);
+  return { ...user, disabled: accountDisabled(user) };
+}
+
+async function customerContentAllowedReports(env, reports, context) {
+  // Resolve membership once per request, then apply the existing institution,
+  // industry and page filters without one entitlement read per catalog row.
+  const access = context.contentMembership || await reportAccessForUser(env, context.user, "", "catalog");
+  context.contentMembership = access;
+  if (access.effective_access_kind === "error") throw new Error("Content membership unavailable");
+  if (access.can_download) return reports;
+  return reports.filter((report) => report.source !== "processed"
+    && (access.effective_access_components || []).some((choice) => (
+      choice.kind === "admin" && accessGrantMatchesReport(choice.access, report, "catalog")
+    )));
+}
+
+async function customerContentText(env, report) {
+  const catalog = await loadCatalog(env);
+  let history = null;
+  try { history = await loadReportTextHistoryIndex(env, report); } catch { /* current shard may still be available */ }
+  if (history) {
+    const resolved = resolveReportTextEntry(catalog, history, report);
+    if (resolved?.has_body) return { text: publicBrandDocumentText(resolved.entry.text), text_scope: "partial_excerpt" };
+  }
+  for (const date of reportTextCurrentDates(report).slice(0, 3)) {
+    const index = await loadReportTextCurrentIndex(env, report, date);
+    if (!index) continue;
+    const resolved = resolveReportTextEntry(catalog, index, report);
+    if (resolved?.has_body) return { text: publicBrandDocumentText(resolved.entry.text), text_scope: "partial_excerpt" };
+  }
+  return null;
+}
+
+async function handleCustomerContentApi(request, env, ctx) {
+  const incomingUrl = new URL(request.url);
+  if (!incomingUrl.pathname.startsWith("/api/")) {
+    incomingUrl.pathname = `/api${incomingUrl.pathname}`;
+    request = new Request(incomingUrl, request);
+  }
+  const [{ createCustomerContentApi, CustomerContentApiError }, { createCustomerContentData }] = await Promise.all([
+    import("./customer-content-api.js"), import("./customer-content-data.js"),
+  ]);
+  const data = createCustomerContentData({
+    bucket: accountBucket,
+    loadCatalog,
+    loadCharts: loadChartGallery,
+    chartImagePrefix: CHART_SEARCH_IMAGE_PREFIX,
+    loadText: customerContentText,
+    allowedReports: customerContentAllowedReports,
+    canAccessReport: async (runtime, report, context) => (
+      await reportAccessForUser(runtime, context.user, report.source === "processed" ? "" : report.id, "catalog")
+    ).can_download === true,
+    pdfDescriptor: (runtime, report) => catalogReportPdfDescriptor(runtime, report, { verifyObject: true, verifyNativeObject: true }),
+    commitDownload: async (runtime, report, context) => {
+      const user = await customerContentAccount(runtime, context.user);
+      if (!user || user.disabled) throw new CustomerContentApiError(403, "membership_required");
+      const access = await reportAccessForUser(runtime, user, report.source === "processed" ? "" : report.id, "catalog");
+      if (!access.can_download) throw new CustomerContentApiError(403, "membership_required");
+      const limited = shouldConsumeAccessGrantDownload(access);
+      if (limited) {
+        const result = await consumeLimitedAccessDownload(runtime, normalizeEmail(user.email), report.id, "catalog", limited.grant.change_id, limited.storage_kind);
+        if (!result.ok) throw new CustomerContentApiError(result.status || 403, "download_limit_reached");
+      }
+    },
+  });
+  const response = await createCustomerContentApi({
+    ...data, bucket: accountBucket,
+    currentUser: currentUserFromRequest,
+    requireAdmin: (runtime, incoming) => requireSuperUser(incoming, runtime),
+    findAccount: customerContentAccount,
+  }).handle(request, env, ctx);
+  return response || privateJsonResponse(request, env, 404, { ok: false, error: "content_not_found" });
+}
+
 export default {
+  __aiResearchCreditTest: Object.freeze({
+    reserve: reserveReportChatPolicyTurn,
+    release: releaseReportChatPolicyTurn,
+    policy: reportChatPolicyForUser,
+    snapshot: aiResearchCreditSnapshot,
+  }),
   __analyticsTest: Object.freeze({
     addAnalyticsDaySummaryEvent,
     analyticsTopReports,
@@ -26246,6 +26673,11 @@ export default {
 
     if (request.method === "OPTIONS") {
       return new Response(null, { status: 204, headers: corsHeaders(request, env) });
+    }
+
+    if (pathname === "/account/content-api" || pathname.startsWith("/account/content-api/")
+      || pathname === "/admin/content-api/grant" || pathname.startsWith("/content/v1/")) {
+      return handleCustomerContentApi(request, env, ctx);
     }
 
     if (pathname === "/english/commentary" || pathname === "/english/commentary/read") {
@@ -26509,6 +26941,24 @@ export default {
       return handleAccountAdminReportChatHistory(request, env);
     }
 
+    if (pathname === "/account/expiry-reminders/unsubscribe" && ["GET", "POST"].includes(request.method)) {
+      return handleExpiryReminderUnsubscribe(request, env);
+    }
+    if (pathname === "/account/expiry-reminders" && ["GET", "POST"].includes(request.method)) {
+      return handleExpiryReminders(request, env);
+    }
+    if (pathname === "/account-admin/expiry-reminders" && request.method === "GET") {
+      return handleExpiryReminders(request, env, true);
+    }
+
+    if (pathname === "/account/ai-research-credits" && request.method === "GET") {
+      return handleAccountAiResearchCredits(request, env);
+    }
+
+    if (pathname === "/account-admin/ai-research-credits" && ["GET", "POST"].includes(request.method)) {
+      return handleAccountAdminAiResearchCredits(request, env);
+    }
+
     if (pathname === "/account-admin/report-chat-curation" && request.method === "POST") {
       return handleAccountAdminReportChatCuration(request, env);
     }
@@ -26705,6 +27155,10 @@ export default {
   async scheduled(event, env, ctx) {
     const cron = String(event && event.cron || "");
     const tasks = [];
+    if (cron === "* 2-3 * * *") {
+      ctx.waitUntil(expiryReminderService().then((service) => service.scan(env)));
+      return;
+    }
     if (!cron || cron === "*/30 * * * *") {
       tasks.push(refreshAdminDashboardSnapshots(env));
       tasks.push(warmThinkTankPdfCache(env));

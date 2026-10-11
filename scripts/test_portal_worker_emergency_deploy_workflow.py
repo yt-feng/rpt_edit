@@ -23,7 +23,7 @@ class PortalWorkerEmergencyDeployWorkflowTests(unittest.TestCase):
         self.assertNotIn("schedule:", trigger)
         self.assertIn("vars.PORTAL_AUTOMATION_ENABLED == 'true' || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.allow_manual_deploy == true)", self.workflow)
 
-    def test_release_is_version_only_and_does_not_touch_edge_or_static_data(self) -> None:
+    def test_release_does_not_touch_routes_or_static_data(self) -> None:
         self.assertIn("versions upload --keep-vars", self.workflow)
         self.assertIn("versions deploy", self.workflow)
         self.assertIn('compatibility_flags = ["global_fetch_strictly_public"]', self.workflow)
@@ -62,9 +62,37 @@ class PortalWorkerEmergencyDeployWorkflowTests(unittest.TestCase):
         self.assertIn("id: portal_rollback", self.workflow)
         self.assertIn("steps.deploy-worker-version.outcome != 'skipped'", self.workflow)
         self.assertIn("steps.portal_smoke.outcome != 'success'", self.workflow)
+        self.assertIn("steps.portal_schedules.outcome != 'success'", self.workflow)
         self.assertIn("rollback ${{ env.EDGE_PREVIOUS_VERSION_ID }}", self.workflow)
         self.assertIn("--expect-version \"$EDGE_PREVIOUS_VERSION_ID\"", self.workflow)
         self.assertIn("$origin/api/health", self.workflow)
+
+    def test_cron_sync_runs_after_smoke_and_is_checked_in_sparse_and_pr_ci(self) -> None:
+        smoke = self.workflow.index("- name: Smoke deployed API through the live edge")
+        sync = self.workflow.index("- name: Synchronize Portal Worker cron triggers")
+        rollback = self.workflow.index("- name: Roll back failed Portal Worker deployment")
+        self.assertLess(smoke, sync)
+        self.assertLess(sync, rollback)
+        step = self.workflow[sync:rollback]
+        self.assertIn("id: portal_schedules", step)
+        self.assertIn("timeout-minutes: 4", step)
+        self.assertIn("CLOUDFLARE_API_TOKEN:", step)
+        self.assertIn("CLOUDFLARE_ACCOUNT_ID:", step)
+        self.assertNotIn("continue-on-error", step)
+        self.assertIn("python3 -B scripts/sync_portal_worker_schedules.py", step)
+        sparse = self.workflow.split("sparse-checkout: |", 1)[1].split("\n      - name:", 1)[0]
+        for filename in ("sync_portal_worker_schedules.py", "test_sync_portal_worker_schedules.py"):
+            self.assertIn("scripts/" + filename, sparse)
+        public_ci = (ROOT / ".github/workflows/public-identity-guard.yml").read_text(encoding="utf-8")
+        self.assertIn("python3 -B scripts/test_sync_portal_worker_schedules.py", self.workflow)
+        self.assertIn("python3 -B scripts/test_sync_portal_worker_schedules.py", public_ci)
+
+    def test_rendered_crons_fit_five_trigger_limit_with_same_newsfeed_union(self) -> None:
+        import ast
+        config = self.workflow.split("[triggers]", 1)[1].split("[[r2_buckets]]", 1)[0]
+        crons = ast.literal_eval(config.split("crons =", 1)[1].strip())
+        self.assertEqual(set(crons), {"*/30 * * * *", "*/10 0-3,5-6,17-18,23 * * *", "* 2-3 * * *"})
+        self.assertEqual(len(crons), 3)
 
     def test_job_and_steps_reserve_time_for_rollback(self) -> None:
         self.assertIn("timeout-minutes: 35", self.workflow)

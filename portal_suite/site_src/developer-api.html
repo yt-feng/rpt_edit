@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <title>开发者 API 文档 | KC桌面</title>
+  <meta name="description" content="使用自己的 API 密钥读取已授权的 KC桌面报告、图表、图片、文本、元数据与翻译。">
+  <link rel="canonical" href="https://portal.example.invalid/developer-api.html">
+  <link rel="stylesheet" href="assets/styles.css?v=site-20260908a">
+</head>
+<body data-page="developer-api" data-analytics-auto="manual">
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="KC桌面 home"><img src="assets/app-mark.svg" alt="" width="34" height="34"><span>KC桌面</span></a>
+    <nav class="topbar-actions" aria-label="站点导航"><a class="topbar-link" href="/">报告检索</a><a class="topbar-link" href="research.html">AI 研究</a><a class="topbar-link" href="blog/">Blog</a><a id="newsfeedNav" class="topbar-link" href="newsfeed.html">Newsfeed</a><button id="accountGate" class="account-button" type="button">登录</button></nav>
+  </header>
+  <main class="shell api-docs-shell">
+    <p class="journey-eyebrow">KC桌面 · 开发者</p>
+    <h1>把已授权的研究内容接入自己的工具。</h1>
+    <p>API 只读开放报告与已生成的内容。先由管理员开通权限，再在“我的账号 → 开发者 API”生成自己的密钥。这里的内容读取与 AI 研究次数分别管理。</p>
+    <section aria-labelledby="apiStart"><h2 id="apiStart">1. 创建密钥并开始读取</h2>
+      <ol><li>联系管理员开通 API，确认内容范围、可用操作及有效期。</li><li>登录账号，展开“开发者 API”，输入用途名称并生成密钥。完整密钥只显示一次，请当场保存。</li><li>在服务端环境变量中保存密钥，通过 <code>Authorization: Bearer</code> 请求头发送。不要把密钥放进 URL、公开代码或网页前端。</li></ol>
+      <p>API 基础地址：<code>https://kcdesk.com/api/content/v1</code>。以下示例假设已在环境变量 <code>KCD_API_KEY</code> 中配置你的密钥。</p>
+      <pre><code>curl --fail-with-body \
+  -H "Authorization: Bearer $KCD_API_KEY" \
+  'https://kcdesk.com/api/content/v1/reports?limit=25'</code></pre>
+      <p>返回 <code>{"ok":true,"items":[...],"next_cursor":null}</code>。如有 <code>next_cursor</code>，原样放进下一次请求的 <code>cursor</code> 参数并进行 URL 编码；不要自行构造游标。空列表表示本次筛选中没有可返回的报告。</p>
+    </section>
+    <section aria-labelledby="apiRoutes"><h2 id="apiRoutes">2. 读取报告与关联内容</h2>
+      <table class="api-docs-table"><thead><tr><th>GET 路径（相对基础地址）</th><th>用途与参数</th></tr></thead><tbody>
+        <tr><td><code>/reports</code></td><td>报告列表。可选 <code>date=YYYY-MM-DD</code>（报告发布日期）、<code>limit</code>（默认 25，最大 100）、<code>cursor</code>。</td></tr>
+        <tr><td><code>/reports/{id}</code></td><td>单份报告的元数据。报告 ID 从列表获取，不使用 R2 路径或文件名。</td></tr>
+        <tr><td><code>/reports/{id}/download</code></td><td>原报告 PDF，直接返回文件字节；需要 <code>reports:download</code> 权限。</td></tr>
+        <tr><td><code>/reports/{id}/artifacts</code></td><td>可用关联内容列表。可选 <code>kind</code>、<code>language</code>、<code>limit</code> 和 <code>cursor</code>。</td></tr>
+        <tr><td><code>/reports/{id}/artifacts/{artifactId}</code></td><td>下载列表中指定的关联内容，返回原有 MIME 类型与文件字节；需要 <code>artifacts:read</code> 权限。</td></tr>
+      </tbody></table>
+      <h3>有哪些内容可用？</h3>
+      <p><code>kind</code> 可为 <code>text</code>（文本，可能为摘要或节选）、<code>image</code>（图片）、<code>chart</code>（图表）、<code>metadata</code>（结构数据）、<code>translation</code>（翻译）、<code>article</code>（文章）或 <code>pdf</code>。语言使用列表中的 <code>language</code>，例如 <code>zh</code>、<code>en</code>；<code>und</code> 表示未指定语言。</p>
+      <p>关联内容描述包含 <code>id</code>、<code>report_id</code>、<code>kind</code>、<code>language</code>、<code>mime_type</code>、<code>size</code>，可附文件名与校验值。文本范围由 <code>text_scope</code> 说明，<code>partial_excerpt</code> 表示节选，不应当作全文；可附 <code>page_number</code> 标明页码。部分索引图表的 <code>size</code> 尚未知时为 <code>null</code>。仅返回实际可用的产物，不保证每份报告都有图片、图表、全文或每种语言的翻译。此接口不会现场生成缺失内容。</p>
+      <pre><code># 将 REPORT_ID 替换为报告列表返回的 id
+curl --fail-with-body -H "Authorization: Bearer $KCD_API_KEY" \
+  'https://kcdesk.com/api/content/v1/reports/REPORT_ID/artifacts?kind=chart&amp;limit=25'
+
+# 将 REPORT_ID 与 ARTIFACT_ID 替换为对应列表返回的 id
+curl --fail-with-body -H "Authorization: Bearer $KCD_API_KEY" \
+  'https://kcdesk.com/api/content/v1/reports/REPORT_ID/artifacts/ARTIFACT_ID' \
+  --output research-artifact.bin</code></pre>
+    </section>
+    <section aria-labelledby="apiPermissions"><h2 id="apiPermissions">3. 权限、有效期与额度</h2>
+      <p>管理员可选择“沿用网站现有下载权限”，或单独授权一组报告（也可授权全部报告）。API 授权不会修改网站会员状态与网页下载入口。可用操作分别为 <code>reports:read</code>、<code>reports:download</code>、<code>artifacts:read</code>；用户生成的密钥继承当前授权范围。</p>
+      <p>选择沿用网站权限时，报告 PDF 和关联文件下载也共用网站原有的试用下载额度，按报告去重计次；同一报告的多个关联文件不会重复消耗一次性的报告下载名额。</p>
+      <p>API 权限有明确到期时间。新密钥默认在 90 天后或 API 授权到期时失效，以更早者为准；每个用户最多保留 5 个有效密钥。撤销单个密钥只影响该密钥；管理员撤销 API 权限会同时撤销旧密钥，重新开通后需重新生成。</p>
+      <p>默认每分钟 30 次请求、每日 1000 次请求、每日 1 GiB 文件字节，实际以管理员配置为准。同一账号的多个密钥共享额度；每日额度在 UTC 00:00（北京时间 08:00）重置，分钟限额按整分钟窗口计数。完成身份验证后的内容请求都会计入请求数，包括内容不存在的请求。文件传输开始前会预留字节额度，中途中断也可能计入额度。AI 研究额外次数由管理员另行添加，不通过此 API 兑换积分或付款。</p>
+    </section>
+    <section aria-labelledby="apiErrors"><h2 id="apiErrors">4. 错误与重试</h2>
+      <p>错误响应为 <code>{"ok":false,"error":"错误码"}</code>。请先检查 HTTP 状态和错误码，再处理响应正文。</p>
+      <table class="api-docs-table"><thead><tr><th>错误码</th><th>处理方式</th></tr></thead><tbody>
+        <tr><td><code>key_invalid</code> / <code>key_expired</code> / <code>authentication_required</code></td><td>检查请求头与密钥有效期；必要时在账号内生成新密钥。</td></tr>
+        <tr><td><code>api_permission_denied</code> / <code>scope_denied</code> / <code>report_denied</code></td><td>确认 API 已开通，并包含该操作和报告。</td></tr>
+        <tr><td><code>rate_limited</code></td><td>降低并发与频率，等待后重试；如返回 Retry-After，请遵循该值。</td></tr>
+        <tr><td><code>daily_request_limit</code> / <code>daily_byte_limit</code></td><td>当日额度已用尽，等下一个每日额度窗口或联系管理员调整。</td></tr>
+        <tr><td><code>membership_required</code> / <code>download_limit_reached</code></td><td>网站会员或试用下载权限不可用，请联系管理员核对或续期。</td></tr>
+        <tr><td><code>invalid_request</code> / <code>content_not_found</code></td><td>使用列表返回的 ID、游标与语言；确认内容仍可用。</td></tr>
+        <tr><td><code>service_unavailable</code></td><td>稍后以渐增间隔重试，保留已完成下载。</td></tr>
+      </tbody></table>
+      <p>密钥遗失后无法查看原文，可撤销并生成新密钥。密钥管理入口仍在原有账号面板，日常网页报告下载方式不变。</p>
+    </section>
+  </main>
+  <footer class="legal-footer"><a href="/">报告检索</a><a href="research.html">AI 研究</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="/?request=support">联系 KC桌面</a></footer>
+  <script src="assets/site-runtime.js"></script><script src="assets/contact.js?v=site-20260908a"></script><script src="assets/analytics.js"></script><script src="assets/app.js?v=site-20260908a"></script>
+</body>
+</html>

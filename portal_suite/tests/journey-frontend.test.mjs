@@ -105,6 +105,7 @@ test("switching from login to registration records each form start once per moda
     window: { alert() {}, clearInterval, setInterval },
     trackEvent: (_url, _type, payload) => events.push({ ...payload }),
     accountModalMarkup: () => "", loadAuthSession: () => null,
+    initLazyAccountServices: () => ({ close() {}, refresh() {} }),
     loadAccountCaptcha: () => Promise.resolve("captcha"),
     registrationNoticeText: () => "账号提示", localizedContactText: (value) => String(value || ""),
   });
@@ -172,6 +173,7 @@ test("invalid registration names preserve the solved captcha and valid names use
     window: { alert() {}, clearInterval, setInterval },
     trackEvent: (_url, _type, payload) => events.push({ ...payload }),
     accountModalMarkup: () => "", loadAuthSession: () => null,
+    initLazyAccountServices: () => ({ close() {}, refresh() {} }),
     loadAccountCaptcha: async () => { captchaLoads += 1; return "captcha"; },
     registrationNoticeText: () => "账号提示", localizedContactText: (value) => String(value || ""),
     fetch: async (_url, options) => {

@@ -63,7 +63,13 @@ jobs:
           python3 -B scripts/test_reportify_api_grab.py
           python3 -B scripts/test_reportify_local_qr.py
           python3 -B scripts/test_portal_worker_emergency_deploy_workflow.py
+          python3 -B scripts/test_sync_portal_worker_schedules.py
           python3 -B scripts/test_portal_smoke_get.py
           for test_file in portal_suite/tests/reportify*.test.mjs; do
             node "$test_file"
           done
+
+      - name: Check account services and customer content delivery
+        run: |
+          python3 -B scripts/test_publish_customer_content.py
+          node --test portal_suite/tests/customer-content-*.test.mjs portal_suite/tests/ai-research-credits.test.mjs portal_suite/tests/account-api-frontend.test.mjs portal_suite/tests/expiry-reminders.test.mjs

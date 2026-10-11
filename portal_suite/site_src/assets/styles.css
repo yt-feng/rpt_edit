@@ -8693,3 +8693,52 @@ body.chart-lightbox-open {
 .home-discovery li, .report-interpretations li { overflow-wrap: anywhere; }
 .report-interpretations { margin: 24px 0; }
 @media (max-width: 760px) { .home-discovery-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Account tools stay inside existing account and user-management panels. */
+.account-api-panel { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
+.account-api-panel summary { cursor: pointer; font-weight: 700; line-height: 1.6; }
+.account-api-panel summary span { display: inline; margin-inline-start: 8px; color: var(--muted); font-size: 12px; font-weight: 400; }
+.account-api-panel p, .account-tool-note, .account-api-grant-form > small { font-size: 12px; line-height: 1.8; color: var(--muted); overflow-wrap: anywhere; }
+.account-tool-form { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; margin: 14px 0; }
+.account-tool-form label { display: grid; flex: 1 1 180px; gap: 7px; font-size: 12px; }
+.account-tool-form input, .account-api-grant-form textarea { box-sizing: border-box; min-width: 0; width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); }
+.account-api-secret { padding: 16px; margin: 16px 0; border: 1px solid var(--accent); border-radius: 8px; background: var(--panel); }
+.account-api-secret[hidden], #accountAdminApiReportIdsField[hidden] { display: none; }
+.account-api-secret code { display: block; padding: 12px; margin: 12px 0; border: 1px solid var(--line); color: var(--ink); overflow-wrap: anywhere; white-space: pre-wrap; user-select: all; }
+.account-api-keys { margin-top: 14px; }
+.account-api-key { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0; border-top: 1px solid var(--line); }
+.account-api-key > div { min-width: 0; overflow-wrap: anywhere; }
+.account-api-key strong { font-size: 13px; }
+.account-api-key span, .account-api-key small { display: block; margin-top: 6px; font-size: 11px; line-height: 1.6; color: var(--muted); }
+.account-api-key button { flex-shrink: 0; }
+.account-api-grant-form { display: grid; gap: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+.account-api-grant-form h4, .account-research-access p { margin: 0; }
+.account-api-grant-form > label { display: grid; gap: 8px; font-size: 12px; }
+.account-api-scopes { display: flex; flex-wrap: wrap; gap: 12px 20px; padding: 12px; border: 1px solid var(--line); border-radius: 8px; }
+.account-api-scopes legend, .account-api-scopes label { font-size: 12px; }
+.account-api-scopes label { display: inline-flex; align-items: center; gap: 6px; }
+.account-api-scopes input { width: auto; }
+.api-docs-shell { max-width: 980px; }
+.api-docs-shell h1 { font-size: clamp(27px, 4vw, 38px); line-height: 1.3; }
+.api-docs-shell h2 { margin: 0 0 18px; font-size: 21px; }
+.api-docs-shell h3 { font-size: 16px; margin: 24px 0 12px; }
+.api-docs-shell section { margin: 28px 0; padding: 24px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; }
+.api-docs-shell p, .api-docs-shell li { font-size: 14px; line-height: 1.85; }
+.api-docs-shell code { overflow-wrap: anywhere; }
+.api-docs-shell pre { max-width: 100%; overflow: auto; padding: 16px; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; font-size: 12px; line-height: 1.8; }
+.api-docs-table { width: 100%; border-collapse: collapse; font-size: 12px; line-height: 1.8; }
+.api-docs-table td, .api-docs-table th { padding: 12px 8px; border-bottom: 1px solid var(--line); text-align: start; vertical-align: top; overflow-wrap: anywhere; }
+.api-docs-table th { font-weight: 700; }
+@media (max-width: 600px) {
+  .account-tool-form > button { width: 100%; }
+  .account-api-panel summary span { display: block; margin: 4px 0; }
+  .api-docs-shell section { padding: 18px; }
+  .api-docs-table td:first-child { max-width: 46vw; }
+}
+.account-reminder-choice { display: flex; align-items: start; gap: 9px; font-size: 13px; line-height: 1.7; margin: 16px 0; }
+.account-reminder-choice input { flex-shrink: 0; margin-top: 4px; }
+.account-reminder-preview { border-top: 1px solid var(--line); padding-top: 14px; margin: 12px 0; }
+.account-reminder-preview summary { cursor: pointer; font-size: 13px; }
+.account-reminder-preview > strong { display: block; margin-top: 14px; font-size: 13px; }
+.account-reminder-preview pre { white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; font-size: 12px; line-height: 1.8; color: var(--muted); }
+.account-ai-credits { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
