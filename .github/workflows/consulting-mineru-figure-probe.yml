@@ -1,0 +1,84 @@
+name: Probe admitted consulting MinerU figures
+on:
+  pull_request:
+    paths:
+      - .github/workflows/consulting-mineru-figure-probe.yml
+      - scripts/probe_consulting_mineru_figure_binding.py
+      - scripts/test_probe_consulting_mineru_figure_binding.py
+      - scripts/mineru_result_cache.py
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Exact completed original consulting run
+        required: true
+        type: string
+      source_job_id:
+        description: Exact completed fetch-and-build job
+        required: true
+        type: string
+      expected_articles:
+        description: Complete source PDF inventory count from that job
+        required: true
+        type: string
+      source_ordinal:
+        description: One-based selected PDF ordinal in the original sorted inventory
+        required: true
+        type: string
+permissions:
+  contents: read
+  actions: read
+jobs:
+  contract:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install --retries 0 requests Pillow PyMuPDF pypdf==6.19.0 pypdfium2==5.13.0
+      - run: python3 -B scripts/test_probe_consulting_mineru_figure_binding.py
+      - run: python3 -B scripts/test_mineru_result_cache.py
+  probe:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: scripts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install --retries 0 requests Pillow PyMuPDF pypdf==6.19.0 pypdfium2==5.13.0 'boto3>=1.37.32,<2'
+      - name: Authenticate original job and compare one existing result
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          SOURCE_JOB_ID: ${{ inputs.source_job_id }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          SOURCE_ORDINAL: ${{ inputs.source_ordinal }}
+          MINER_U: ${{ secrets.MINER_U }}
+          MINER_U_2: ${{ secrets.MINER_U_2 }}
+          MINER_U_3: ${{ secrets.MINER_U_3 }}
+          MINER_U_4: ${{ secrets.MINER_U_4 }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python3 -B scripts/probe_consulting_mineru_figure_binding.py \
+            --source-run-id "$SOURCE_RUN_ID" --source-job-id "$SOURCE_JOB_ID" \
+            --expected-articles "$EXPECTED_ARTICLES" --source-ordinal "$SOURCE_ORDINAL" \
+            --output "$RUNNER_TEMP/consulting-figure-probe.json"
+      - name: Preserve only sanitized counts and hashes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: consulting-figure-probe-${{ github.run_id }}
+          path: ${{ runner.temp }}/consulting-figure-probe.json
+          if-no-files-found: error
+          retention-days: 7

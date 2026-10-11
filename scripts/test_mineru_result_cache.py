@@ -92,25 +92,29 @@ class ResultCacheTests(unittest.TestCase):
         value = json.loads(item['Body']); change(value)
         item['Body'] = m.encoded(value); item['Metadata']['sha256'] = m.digest(item['Body'])
 
-    def test_institution_cache_is_source_bound_and_separate_from_dropbox(self):
+    def test_feed_caches_are_source_bound_and_separate_from_dropbox_and_each_other(self):
         original_identity = c.identity(self.binding, self.lineage)
-        base = {key: value for key, value in self.binding.items() if key != 'id'}
-        base['scope'] = 'institution'
-        binding = dict(base, id=m.digest(m.encoded(base)))
-        lineage = dict(self.lineage, data_id=binding['id'])
-        self.assertNotEqual(c.identity(binding, lineage), original_identity)
-        self.cache.put(binding, lineage, self.payload)
-        self.assertEqual(self.cache.get(binding, lineage), self.payload)
-        self.assertIsNone(self.cache.get(self.binding, self.lineage))
-
-    def test_institution_cache_rejects_other_options_before_any_storage_operation(self):
-        for options in (dict(c.OPTIONS, language='ch'), dict(c.OPTIONS, ocr=False), dict(c.OPTIONS, model='pipeline')):
+        identities = {original_identity}
+        for scope in ('institution', 'consulting'):
             base = {key: value for key, value in self.binding.items() if key != 'id'}
-            base.update(scope='institution', options=options)
+            base['scope'] = scope
             binding = dict(base, id=m.digest(m.encoded(base)))
             lineage = dict(self.lineage, data_id=binding['id'])
-            with self.subTest(options=options), self.assertRaises(c.ResultCacheError):
-                self.cache.get(binding, lineage)
+            self.assertNotIn(c.identity(binding, lineage), identities)
+            identities.add(c.identity(binding, lineage))
+            self.cache.put(binding, lineage, self.payload)
+            self.assertEqual(self.cache.get(binding, lineage), self.payload)
+        self.assertIsNone(self.cache.get(self.binding, self.lineage))
+
+    def test_feed_caches_reject_other_options_before_any_storage_operation(self):
+        for scope in ('institution', 'consulting'):
+            for options in (dict(c.OPTIONS, language='ch'), dict(c.OPTIONS, ocr=False), dict(c.OPTIONS, model='pipeline')):
+                base = {key: value for key, value in self.binding.items() if key != 'id'}
+                base.update(scope=scope, options=options)
+                binding = dict(base, id=m.digest(m.encoded(base)))
+                lineage = dict(self.lineage, data_id=binding['id'])
+                with self.subTest(scope=scope, options=options), self.assertRaises(c.ResultCacheError):
+                    self.cache.get(binding, lineage)
         self.assertEqual(self.r2.gets, []); self.assertEqual(self.r2.puts, [])
 
     def test_missing_receipt_is_only_download_admission(self):
