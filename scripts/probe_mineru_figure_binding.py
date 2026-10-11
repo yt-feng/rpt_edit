@@ -584,6 +584,114 @@ def optional_content_restoration_diagnostics(original,embedded_bytes,authentic,s
     return result
 
 
+def _restore_output_intents_diagnostic(original,embedded,budget=lambda:None):
+    """Copy only the admitted catalog color profile into an in-memory copy.
+
+    Diagnostic serialization is not a production repair. The caller compares
+    the complete drawing graph and every selected page before reporting proof.
+    No original/provider file or cache is overwritten.
+    """
+    import io
+    import logging
+    from pypdf import PdfReader,PdfWriter
+    from pypdf.generic import ArrayObject,DictionaryObject,NameObject,StreamObject
+    require(0<len(original)<=16*1024*1024 and 0<len(embedded)<=16*1024*1024,
+            'output_intent_probe_input_bound')
+    logger=logging.getLogger('pypdf')
+    previous=logger.disabled,logger.propagate,logger.handlers[:]
+    logger.disabled,logger.propagate,logger.handlers=True,False,[logging.NullHandler()]
+    try:
+        budget()
+        source=PdfReader(io.BytesIO(original));provider=PdfReader(io.BytesIO(embedded))
+        source_root=source.trailer['/Root'];provider_root=provider.trailer['/Root']
+        require('/OutputIntents' in source_root and not provider_root.get('/OutputIntents'),
+                'output_intent_probe_missing_required')
+        intents=source_root['/OutputIntents']
+        require(isinstance(intents,ArrayObject) and 1<=len(intents)<=8,'output_intent_probe_array_bound')
+        total_profiles=0
+        for item in intents:
+            budget();intent=item.get_object()
+            require(isinstance(intent,DictionaryObject) and set(intent)<={
+                '/Type','/S','/OutputCondition','/OutputConditionIdentifier','/RegistryName','/Info','/DestOutputProfile'},
+                'output_intent_probe_keys')
+            profile=intent.get('/DestOutputProfile')
+            profile=profile.get_object() if profile is not None else None
+            require(isinstance(profile,StreamObject),'output_intent_probe_profile_required')
+            require(set(profile)<={'/N','/Alternate','/Range','/Length','/Filter','/DecodeParms'},
+                    'output_intent_probe_profile_keys')
+            profile_bytes=profile.get_data();total_profiles+=len(profile_bytes)
+            require(128<=len(profile_bytes)<=8*1024*1024 and total_profiles<=16*1024*1024
+                    and profile_bytes[36:40]==b'acsp','output_intent_probe_profile_bound')
+        writer=PdfWriter();writer.clone_document_from_reader(provider)
+        writer._root_object[NameObject('/OutputIntents')]=source_root.raw_get('/OutputIntents').clone(writer)
+        output=io.BytesIO();writer.write(output);restored=output.getvalue()
+        require(0<len(restored)<=32*1024*1024,'output_intent_probe_output_bound')
+        budget()
+        return restored
+    finally:
+        logger.disabled,logger.propagate,logger.handlers=previous
+
+
+def output_intent_restoration_diagnostics(original,embedded_bytes,authentic,supplied,metadata,decisions,used_pages,budget=lambda:None):
+    """Test the observed PDFium catalog loss without relaxing production gates."""
+    import fitz
+    import mineru_figure_sources as figures
+    from mineru_pdf_graph import bind_pdf_render_graph,PdfGraphError
+    result={'diagnostic_only':True,'production_acceptance':False,'complete_source_handoff':False,
+        'selected_page_count':len(used_pages),'checked_page_count':0,'all_selected_pages_equal':False,'pages':[]}
+    if (authentic.xref_get_key(authentic.pdf_catalog(),'OutputIntents')[0]=='null'
+            or supplied.xref_get_key(supplied.pdf_catalog(),'OutputIntents')[0]!='null'):
+        result['status']='not_applicable'
+        return result
+    try:
+        restored_bytes=_restore_output_intents_diagnostic(original,embedded_bytes,budget)
+        result.update(original_pdf_sha256=digest(original),embedded_pdf_sha256=digest(embedded_bytes),
+                      restored_pdf_sha256=digest(restored_bytes),restored_pdf_bytes=len(restored_bytes))
+        with fitz.open(stream=restored_bytes,filetype='pdf') as restored:
+            require(len(restored)==len(authentic)==len(supplied),'output_intent_probe_page_count')
+            # The graph includes the original ICC stream and all existing page
+            # drawing objects. A body/annotation change cannot be repaired away.
+            try:
+                binding=bind_pdf_render_graph(authentic,restored,budget=budget)
+                result.update(graph_binding_status='verified',graph_binding=binding.receipt)
+            except PdfGraphError as error:
+                # Pixels remain useful diagnostic evidence when an independent
+                # structural check rejects. This cannot become acceptance.
+                graph={'category':str(error)}
+                if getattr(error,'path_sha256',None):graph['path_sha256']=error.path_sha256
+                if isinstance(getattr(error,'sanitized_details',None),dict):graph['details']=error.sanitized_details
+                result.update(graph_binding_status='rejected',graph_failure=graph)
+            total=0
+            for index in used_pages:
+                budget();actual,other=authentic[index],restored[index]
+                geometry=figures._geometry(actual)
+                equal=exact_json(geometry,figures._geometry(other))
+                size=metadata['pages'][index]['provider_size']
+                provider_size_equal=not any(abs(a-b)>=1.1 for a,b in zip(size,[actual.rect.width,actual.rect.height]))
+                page={'page_index':index,'geometry_equal':equal,'provider_size_equal':provider_size_equal}
+                result['pages'].append(page);result['checked_page_count']+=1
+                if not equal or not provider_size_equal:
+                    result.update(status='mismatch',stage='geometry');return result
+                total+=math.ceil(actual.rect.width*300/72)*math.ceil(actual.rect.height*300/72)
+                require(total<=figures.MAX_CARRIED_PAGE_PIXELS,'render_pixels_bound')
+                left,right=figures._render(actual),figures._render(other)
+                try:
+                    page['comparison']=_difference(left,right)
+                    if not page['comparison']['same_size'] or page['comparison'].get('diff_pixel_count'):
+                        page['selected_visual_differences']=selected_visual_differences(left,right,metadata,decisions,index,geometry['rect'][2:])
+                        result.update(status='mismatch',stage='rgb_pixels');return result
+                finally:left.close();right.close()
+            result.update(status='verified' if result['graph_binding_status']=='verified' else
+                          'pixels_verified_graph_rejected',all_selected_pages_equal=True)
+    except Exception as error:
+        result.update(status='rejected',category=str(error) if isinstance(error,(PdfGraphError,ProbeError)) else type(error).__name__)
+        path=getattr(error,'path_sha256',None)
+        if isinstance(path,str) and re.fullmatch(r'[0-9a-f]{64}',path):result['path_sha256']=path
+        details=getattr(error,'sanitized_details',None)
+        if isinstance(error,PdfGraphError) and isinstance(details,dict):result['graph_details']=details
+    return result
+
+
 def compare_cached_pdf(original_path,payload,*,original_sha256,clock=time.monotonic,deadline=None):
     """Match the four production gates; alternate annotation renders are diagnostic only."""
     import fitz
@@ -667,6 +775,8 @@ def compare_cached_pdf(original_path,payload,*,original_sha256,clock=time.monoto
                     page['pdfium_rewrite'] = pdfium_rewrite_diagnostics(
                         original,authentic,supplied,index,metadata,decisions,budget)
                     page['optional_content_restoration'] = optional_content_restoration_diagnostics(
+                        original,embedded_raw,authentic,supplied,metadata,decisions,used_pages,budget)
+                    page['output_intent_restoration'] = output_intent_restoration_diagnostics(
                         original,embedded_raw,authentic,supplied,metadata,decisions,used_pages,budget)
                     require(digest(original_path.read_bytes())==original_sha256,'original_bytes_changed')
                     return result
