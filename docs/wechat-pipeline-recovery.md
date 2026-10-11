@@ -185,7 +185,7 @@ input. Synthetic permission-protected inputs cover this library distinction,
 strict graph/pixel checks and both real consumer validations. The admitted source,
 profile and exact-pixel requirements remain unchanged.
 
-After PR #352, [formal-consumer probe 38121962962](https://github.com/yt-feng/rpt_edit/actions/runs/38121962962)
+After PR #352, formal-consumer probe run `38121962962`
 verified the same admitted source and completed-result ZIP on main
 `e97b3eabedc0d970e6bc9287eae97180b3565e1a`. Its canonical read-only evidence is
 `consulting-figure-probe.json` in successful artifact
