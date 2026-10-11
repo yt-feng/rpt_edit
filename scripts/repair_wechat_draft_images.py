@@ -45,6 +45,34 @@ def strict_draft_group_match(actual, expected):
                for a, b in zip(actual, expected))
 
 
+def saved_receipt_author_change_only(actual, expected):
+    """Allow a live author edit only after the original receipt ID still resolves.
+
+    This is not a catalog matching rule. Count, order, titles, prose and source
+    URLs retain the strict identity contract; the caller keeps live authors as
+    the update/readback baseline instead of restoring receipt authors.
+    """
+    if not actual or len(actual) != len(expected):
+        return False
+    if not any(prose_identity(a)[1] != prose_identity(b)[1] for a, b in zip(actual, expected)):
+        return False
+    with_receipt_authors = [dict(a, author=b.get('author')) for a, b in zip(actual, expected)]
+    return strict_draft_group_match(with_receipt_authors, expected)
+
+
+def saved_receipt_single_removed_index(actual, expected):
+    """Identify one uniquely deleted member; never use this to find another ID."""
+    if not actual or len(actual) != len(expected) - 1:
+        return None
+    matches = []
+    for removed in range(len(expected)):
+        retained = expected[:removed] + expected[removed + 1:]
+        with_receipt_authors = [dict(a, author=b.get('author')) for a, b in zip(actual, retained)]
+        if strict_draft_group_match(with_receipt_authors, retained):
+            matches.append(removed)
+    return matches[0] if len(matches) == 1 else None
+
+
 def group_identity_diagnostics(actual, expected):
     """Field-level evidence without article text, titles, source URLs or IDs."""
     def fields(article):
@@ -87,7 +115,7 @@ def writable_group_unchanged(actual, expected):
 
 def record_unresolved_group(report, output, index, media_id, expected, category, *,
                             diagnostics=None, changed=None, errcode=None, remaining_articles=None,
-                            uncertain_articles=0):
+                            uncertain_articles=0, preserved_removal=None):
     remaining = len(expected) if remaining_articles is None else remaining_articles
     report['unresolved_draft_count'] += 1
     report['unresolved_article_count'] += remaining
@@ -100,6 +128,7 @@ def record_unresolved_group(report, output, index, media_id, expected, category,
            'status':'unresolved', 'changed':changed or []}
     if diagnostics is not None:row['identity_diagnostics'] = diagnostics
     if errcode is not None:row['wechat_errcode'] = errcode
+    if preserved_removal:row.update(preserved_removal)
     report['drafts'].append(row)
     (output/'progress.json').write_text(json.dumps(report,indent=2))
     safe = {'draft_index':index, 'status':'unresolved', 'category':category,
@@ -339,6 +368,7 @@ def repair_drafts(drafts, session, token, output, timeout, apply):
     report = {'applied': apply, 'drafts': [], 'article_count': 0, 'expected_article_count':sum(len(d['articles']) for d in drafts),
               'changed_articles': 0, 'cover_replacements': 0, 'body_replacements': 0, 'body_added': 0, 'sources': {},
               'updated_articles':0, 'recovered_receipt_groups':0, 'unresolved_draft_count':0, 'unresolved_article_count':0,
+              'preserved_removed_article_count':0,
               'uncertain_article_count':0,
               'partial':False, 'fully_repaired':False, 'ok':False, 'status':'in_progress'}
     catalog = None; catalog_error = None
@@ -348,8 +378,11 @@ def repair_drafts(drafts, session, token, output, timeout, apply):
         expected = materialize_private_article_payload(draft['articles'], os.environ.get('PORTAL_SITE_URL', ''))
         resolution = 'saved_receipt_id'
         resolution_diagnostics = None
+        preserved_removal = None
+        saved_receipt_id_valid = False
         try:
             data = get_draft(session, token, media_id, timeout)
+            saved_receipt_id_valid = True
         except WeChatError as exc:
             if exc.errcode != 40007:
                 raise
@@ -379,9 +412,21 @@ def repair_drafts(drafts, session, token, output, timeout, apply):
                 continue
         actual = draft_news_items(data)
         if not strict_draft_group_match(actual, expected):
-            record_unresolved_group(report, output, draft_index, media_id, expected, 'saved_receipt_identity_mismatch',
-                                    diagnostics=group_identity_diagnostics(actual, expected))
-            continue
+            if saved_receipt_id_valid and saved_receipt_author_change_only(actual, expected):
+                resolution = 'author_change_preserved'
+                print(json.dumps({'draft_index':draft_index, 'resolution':resolution}), flush=True)
+            else:
+                removed = saved_receipt_single_removed_index(actual, expected) if saved_receipt_id_valid else None
+                if removed is None:
+                    record_unresolved_group(report, output, draft_index, media_id, expected, 'saved_receipt_identity_mismatch',
+                                            diagnostics=group_identity_diagnostics(actual, expected))
+                    continue
+                preserved_removal = {'original_articles':len(expected), 'current_articles':len(actual),
+                                     'preserved_removed_original_index':removed}
+                expected = expected[:removed] + expected[removed + 1:]
+                report['preserved_removed_article_count'] += 1
+                resolution = 'single_removed_article_preserved'
+                print(json.dumps({'draft_index':draft_index, 'resolution':resolution, **preserved_removal}), flush=True)
         changed = []; interrupted = False
         for index, article in enumerate(actual):
             directory = output / 'assets' / f'{draft_index:02d}_{index:02d}'
@@ -405,7 +450,7 @@ def repair_drafts(drafts, session, token, output, timeout, apply):
                         if preparation_error.errcode != 40007:raise
                         record_unresolved_group(report, output, draft_index, media_id, expected,
                                                 'draft_unavailable_during_image_preparation', changed=changed, errcode=40007,
-                                                remaining_articles=len(actual)-index)
+                                                remaining_articles=len(actual)-index, preserved_removal=preserved_removal)
                         interrupted = True; break
                     if not strict_draft_group_match(fresh, actual) or not writable_group_unchanged(fresh, actual):
                         diagnostics = group_identity_diagnostics(fresh, actual)
@@ -415,7 +460,7 @@ def repair_drafts(drafts, session, token, output, timeout, apply):
                         diagnostics['target_returned_fields'] = returned_article_diagnostics(fresh[index] if index < len(fresh) else {}, article)
                         record_unresolved_group(report, output, draft_index, media_id, expected,
                                                 'draft_changed_during_image_preparation', diagnostics=diagnostics, changed=changed,
-                                                remaining_articles=len(actual)-index)
+                                                remaining_articles=len(actual)-index, preserved_removal=preserved_removal)
                         interrupted = True; break
                     if fresh[index] != article:
                         facts['response_only_field_changes'] = returned_article_diagnostics(fresh[index], article)
@@ -436,7 +481,8 @@ def repair_drafts(drafts, session, token, output, timeout, apply):
                 except WeChatError as readback_error:
                     record_unresolved_group(report, output, draft_index, media_id, expected,
                                             'draft_readback_unavailable', changed=changed, errcode=readback_error.errcode,
-                                            remaining_articles=len(actual)-index, uncertain_articles=int(updated_this_article))
+                                            remaining_articles=len(actual)-index, uncertain_articles=int(updated_this_article),
+                                            preserved_removal=preserved_removal)
                     interrupted = True; break
                 if not verification['ok']:
                     diagnostics = group_identity_diagnostics(readback_articles, actual)
@@ -445,7 +491,8 @@ def repair_drafts(drafts, session, token, output, timeout, apply):
                         'matches_media_contract','matches_prose_and_source')}
                     record_unresolved_group(report, output, draft_index, media_id, expected,
                                             'draft_image_readback_failed', diagnostics=diagnostics, changed=changed,
-                                            remaining_articles=len(actual)-index, uncertain_articles=int(updated_this_article))
+                                            remaining_articles=len(actual)-index, uncertain_articles=int(updated_this_article),
+                                            preserved_removal=preserved_removal)
                     interrupted = True; break
                 if updated_this_article:
                     # Only our just-written member gains a new concurrency
@@ -460,7 +507,7 @@ def repair_drafts(drafts, session, token, output, timeout, apply):
             (output/'progress.json').write_text(json.dumps(report,indent=2))
             print(json.dumps({key: report[key] for key in ('article_count','changed_articles','cover_replacements','body_replacements','body_added')}), flush=True)
         if not interrupted:
-            report['drafts'].append({'index':draft_index, 'identity':hashlib.sha256(media_id.encode()).hexdigest(), 'articles':len(actual),'changed':changed,'verified':apply,'resolution':resolution})
+            report['drafts'].append({'index':draft_index, 'identity':hashlib.sha256(media_id.encode()).hexdigest(), 'articles':len(actual),'changed':changed,'verified':apply,'resolution':resolution, **(preserved_removal or {})})
     report['ok'] = report['unresolved_draft_count'] == 0
     report['partial'] = not report['ok']
     report['fully_repaired'] = bool(apply and report['ok'])
