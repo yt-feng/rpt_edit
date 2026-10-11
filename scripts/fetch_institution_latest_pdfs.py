@@ -1749,8 +1749,9 @@ def main() -> int:
 
     state = load_seen_state(seen_path)
     seen_items = state["items"]
-    cutoff = datetime.now(timezone.utc) - timedelta(days=args.since_days)
-    today = datetime.now(timezone.utc).date().isoformat()
+    observed_at = datetime.now(timezone.utc)
+    cutoff = observed_at - timedelta(days=args.since_days)
+    today = observed_at.date().isoformat()
     force_reprocess = as_bool(args.force_reprocess)
     if force_reprocess:
         log("Force reprocess enabled: ignoring seen-state dedup for matching fresh PDFs.")
@@ -1852,6 +1853,14 @@ def main() -> int:
                 continue
 
             published = parse_date(item["date"])
+            # Search indexes advertise reports before their PDF is released.
+            # These are neither download failures nor completed seen items:
+            # reconsider them on the next run, including a changed launch title.
+            if (published is not None and published.date() > observed_at.date()) or re.match(
+                    r"^\s*coming\s+soon\s*[:\-–—]", str(item.get("title", "")), re.I):
+                skipped.append({"institution": key, "reason": "publication_pending",
+                                "source_url": item["source_url"]})
+                continue
             if cfg.get("recency_filter", True) and published is not None and published < cutoff:
                 # Old item we have simply never recorded; mark it so we do not keep
                 # re-checking it every day, but do not download it.

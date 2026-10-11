@@ -47,6 +47,38 @@ consumers to succeed. A successful Market Views PDF cannot satisfy this gate.
 Recovery source cleanup waits for the PDF and configured article consumers;
 the source-bound article checkpoint remains available independently.
 
+## Institution discovery and consulting figure diagnostics
+
+Institution search feeds may advertise a future publication date or an explicit
+`Coming Soon:` launch title before its PDF exists. These entries are recorded as
+`publication_pending`, excluded from current download-failure counts, and kept
+out of the seen state so the next scheduled run can reconsider them. A changed
+release date/title is not a completed download. An actual required-source 403
+or unresolved released PDF remains a visible source-health failure; deferral
+does not assert that blocked IMF downloads are working.
+
+Consulting uses the same immutable, source-bound MinerU result cache as the
+institution route for the normal `vlm/en/ocr=true` options. Cache identity
+includes scope, original source name, complete PDF bytes, task lineage and
+parsing options, so a consulting result cannot alias an institution or Dropbox
+result. The existing complete-member and fresh task-state gates still apply;
+changing or expiring a result URL does not require another provider submission
+when its exact completed result has already been saved. Unsupported options
+retain their previous uncached route.
+
+`consulting-mineru-figure-probe.yml` diagnoses one existing admitted result
+without consuming failed-run artifacts. It authenticates the completed original
+main run, its `fetch-and-build` job, actual checkout SHA, the complete logged
+source inventory, and recorded batch keys. Its currently supported source
+retrieval is the exact original `web-assets.bcg.com` PDF URL; downloaded bytes
+must match the existing ledger's SHA-256 and size before inspecting a result.
+The selected root must still be complete. It reads a matching result cache or,
+if absent, downloads that already-completed provider result once, then emits
+only bounded geometry, pixel-difference counts and binding hashes. It performs
+no provider submissions, model calls, ledger/cache writes, article generation,
+draft updates or publication. A diagnostic result is not a production figure
+acceptance and cannot relax the original figure pixel/source checks.
+
 ## Verify an existing upload
 
 Run **Verify existing WeChat drafts** with the original upload run ID and its

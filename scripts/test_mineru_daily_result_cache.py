@@ -201,12 +201,30 @@ class DailyResultCacheTests(unittest.TestCase):
         local = m.Ledger(m.FileStore(self.root / 'local'), None, 'local', 'https://mineru.net', c.OPTIONS,
                          [('MINER_U', 'test')])
         consulting = m.Ledger(m.R2Store('consulting', client=self.r2, bucket='private-test'), None,
-                              'consulting', 'https://mineru.net', c.OPTIONS, [('MINER_U', 'test')])
+                              'consulting', 'https://mineru.net', dict(c.OPTIONS, ocr=False), [('MINER_U', 'test')])
         institution = m.Ledger(m.R2Store('institution', client=self.r2, bucket='private-test'), None,
                                'institution', 'https://mineru.net', dict(c.OPTIONS, language='ch'), [('MINER_U', 'test')])
         for ledger in (local, consulting, institution):
             with self.subTest(scope=ledger.scope):
                 self.assertEqual(p.result_cache_contexts(ledger, self.sources, {}), (None, {}))
+
+    def test_consulting_replay_reuses_exact_cached_result_without_resubmission(self):
+        self.store = m.R2Store('consulting', client=self.r2, bucket='private-test')
+        self.ledger = m.Ledger(self.store, None, 'consulting', 'https://mineru.net', c.OPTIONS,
+                               [('MINER_U', 'test-private-token')])
+        self.items = [self.ledger.bind(*source) for source in self.sources]
+        self.provider = Provider(self.items); self.ledger.provider = self.provider
+        self.batch.update(scope='consulting', files=self.items)
+        self.store.put(self.batch['key'], self.batch)
+        for item in self.items:
+            self.store.put('sources/' + item['id'], {'schema': 1, 'binding': item, 'batch_key': self.batch['key']})
+        self.assertEqual(self.cli(), 0)
+        self.assertEqual(len(self.downloads), 3)
+        shutil.rmtree(self.output)
+        self.provider.signature = 'rotated-signature'
+        self.assertEqual(self.cli(downloader=lambda _: self.fail('No second ZIP download')), 0)
+        self.assertEqual(len(self.downloads), 3)
+        self.assertEqual(len(self.provider.polls), 2)
 
     def test_recovered_zip_has_private_authentication_readback_before_result_release(self):
         # Transport policy/lease is tested by the transport suite. Here exercise

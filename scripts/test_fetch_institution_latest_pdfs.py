@@ -152,6 +152,28 @@ class BISRedesignTests(unittest.TestCase):
         self.assertEqual(state["items"]["bis:" + guid]["status"], "downloaded")
         self.assertEqual(state["items"]["bis:older"]["status"], "too_old")
 
+    def test_future_and_coming_soon_reports_stay_unseen_without_resolution_failures(self) -> None:
+        now = fetcher.datetime.now(fetcher.timezone.utc)
+        items = [
+            {"title": "Future release", "source_url": self.REPORT_URL, "guid": "future",
+             "date": (now + fetcher.timedelta(days=5)).isoformat(), "pdf_candidates": [], "scrape_url": self.REPORT_URL},
+            {"title": "Coming Soon: Global report", "source_url": self.REPORT_URL, "guid": "pending",
+             "date": now.isoformat(), "pdf_candidates": [], "scrape_url": self.REPORT_URL},
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            code, state, manifest = self.run_bis_main(directory, items)
+            self.assertEqual(code, 0)
+            self.assertEqual(state["items"], {})
+            self.assertEqual(manifest["source_checks"][0]["eligible_item_count"], 0)
+            self.assertEqual(manifest["source_checks"][0]["resolution_failure_count"], 0)
+            self.assertEqual([row["reason"] for row in manifest["skipped"]], ["publication_pending"] * 2)
+            # A publication released later is re-evaluated, not lost to dedup.
+            items[0]["date"] = now.isoformat()
+            code, state, manifest = self.run_bis_main(directory, items)
+            self.assertEqual(code, 2)
+            self.assertEqual(manifest["source_checks"][0]["resolution_failure_count"], 1)
+            self.assertEqual(state["items"], {})
+
 
 class DependencyHoldFetchTests(unittest.TestCase):
     def item(self, identity, title="Fixture report", *, landing=False):
@@ -257,7 +279,7 @@ class DependencyHoldFetchTests(unittest.TestCase):
 
     def test_same_guid_and_title_changed_date_or_direct_pdf_bypasses_hold(self):
         original = self.item('unchanged-guid')
-        for changes in ({'date': '2099-10-09T00:00:00Z'},
+        for changes in ({'date': (fetcher.datetime.now(fetcher.timezone.utc) - fetcher.timedelta(hours=1)).isoformat()},
                         {'pdf_candidates': ['https://www.bis.org/publ/revised.pdf']}):
             with self.subTest(changes=changes), tempfile.TemporaryDirectory() as directory:
                 path = Path(directory); self.archive(path, original)

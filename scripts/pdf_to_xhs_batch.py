@@ -316,7 +316,7 @@ def run_source_batch(ledger, sources, *, timeout, interval=15, queue_budget=600,
 def result_cache_contexts(ledger, sources, results):
     """Read bound original or verified recovery contexts after the full-batch gate."""
     if (not isinstance(ledger.store, R2Store) or ledger.scope not in SUPPORTED_SCOPES
-            or (ledger.scope == 'institution' and not exact_json(ledger.options, CACHE_OPTIONS))):
+            or (ledger.scope in {'institution', 'consulting'} and not exact_json(ledger.options, CACHE_OPTIONS))):
         return None, {}
     cache = ResultCache.single_attempt(ledger.store.client, ledger.store.bucket)
     contexts = {}
