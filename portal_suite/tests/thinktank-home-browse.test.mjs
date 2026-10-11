@@ -148,6 +148,7 @@ function home({ query = "", scope = "all", ignoreAbort = false } = {}) {
   vm.runInContext(`
     ${source.slice(source.indexOf("  const LAST_SEARCH_KEY ="), source.indexOf("  const HOT_REPORT_FIRST_PAGE_CACHE_KEY ="))}
     ${functionSource("hotReportLocalStorage")}
+    ${functionSource("searchResumeLocale")}
     ${functionSource("readLastSearch")}
     ${functionSource("initSearchResume")}
     let searchResume = null;
