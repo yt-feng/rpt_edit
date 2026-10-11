@@ -50,24 +50,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           SOURCE_RUN_ID: ${{ inputs.source_run_id }}
           ARTIFACT_NAME: ${{ inputs.artifact_name }}
-        run: |
-          python - <<'PY'
-          import json, os, re, subprocess
-          run_id = os.environ['SOURCE_RUN_ID']
-          name = os.environ['ARTIFACT_NAME']
-          assert re.fullmatch(r'\d+', run_id)
-          assert re.fullmatch(r'[a-zA-Z0-9_-]+', name)
-          assert 'wechat' in name and 'draft' in name
-          repo = os.environ['GITHUB_REPOSITORY']
-          def api(path):
-              return json.loads(subprocess.check_output(['gh','api',f'repos/{repo}/{path}'],text=True))
-          run = api(f'actions/runs/{run_id}')
-          assert run['conclusion'] == 'success' and run['head_repository']['full_name'] == repo
-          artifacts = api(f'actions/runs/{run_id}/artifacts?per_page=100')['artifacts']
-          matched = [a for a in artifacts if a['name'] == name and not a['expired']]
-          assert len(matched) == 1
-          print('Exact successful source and live artifact verified')
-          PY
+        run: python3 scripts/validate_wechat_image_receipt_source.py
       - run: python -m pip install -r requirements.txt boto3
       - name: Test image repair contract
         run: |
@@ -75,6 +58,7 @@ jobs:
           python scripts/test_wechat_media_contract.py
           python scripts/test_repair_wechat_draft_images.py
           python scripts/test_restore_wechat_image_repair_receipts.py
+          python scripts/test_validate_wechat_image_receipt_source.py
       - uses: actions/download-artifact@v4
         if: inputs.receipt_source == 'successful-artifact'
         with:
