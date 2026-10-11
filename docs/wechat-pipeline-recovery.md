@@ -79,6 +79,31 @@ no provider submissions, model calls, ledger/cache writes, article generation,
 draft updates or publication. A diagnostic result is not a production figure
 acceptance and cannot relax the original figure pixel/source checks.
 
+## Institution source health and accepted backlog recovery
+
+The Institution fetcher reserves exit `2` for a completed discovery run that
+downloaded zero PDFs while a required source was unhealthy. The workflow passes
+both the fetcher's exit status and `tee`'s exit status to
+`institution_source_health.py`. The helper validates the complete manifest,
+requested institution inventory, run date, source status, trusted required-source
+flags and per-source download counts. Only this exact known failure may continue
+to the existing private Institution backlog consumer. Unknown exits, incomplete
+manifests and log-write failures stop the build. The helper performs no source
+requests and changes no seen-state, source cache or dependency holds.
+
+The separate `source-health` job fails visibly whenever a checked required source
+remains unhealthy. WeChat upload and handoff cleanup depend on accepted generation
+and delivery results, independently of that health job; recovered private sources
+can therefore reach WeChat even during an unrelated discovery outage. Failure
+notification includes the source-health result. This does not resolve a source's
+HTTP 403 or label zero new PDFs as a healthy no-update result.
+
+The consulting figure probe now classifies failed GitHub reads by fixed operation
+(`run_metadata`, `job_metadata`, `job_logs`) and HTTP status, authentication error
+or `network_stop`. It never emits the CLI error response, signed URL or private
+body, and never retries or changes transport. This distinction must be available
+before diagnosing a failed cloud probe as a permission or connectivity problem.
+
 ## Verify an existing upload
 
 Run **Verify existing WeChat drafts** with the original upload run ID and its

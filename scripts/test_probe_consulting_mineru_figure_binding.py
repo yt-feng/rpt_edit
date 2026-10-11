@@ -3,13 +3,46 @@ import copy
 import json
 from pathlib import Path
 import tempfile
+import subprocess
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 import probe_consulting_mineru_figure_binding as p
 from mineru_task_ledger import FileStore, Ledger, digest, encoded
 from mineru_result_cache import ResultCache
 from test_mineru_result_cache import MemoryR2, result_zip
+
+
+class GitHubReadTests(unittest.TestCase):
+    def test_safe_failure_classification_preserves_stage_and_never_retries(self):
+        cases = (
+            (1, b'gh: Resource not accessible (HTTP 403) private-secret', 'http_403'),
+            (1, b'gh: gone (HTTP 404) https://signed.invalid/private', 'http_404'),
+            (1, b'error connecting to api.github.com private-secret', 'network_stop'),
+            (1, b'x509: certificate has expired private-secret', 'network_stop'),
+            (4, b'gh auth login private-secret', 'authentication_required'),
+            (1, b'unknown private-secret', 'cli_error'),
+        )
+        for operation in ('run_metadata', 'job_metadata', 'job_logs'):
+            for code, stderr, expected in cases:
+                with self.subTest(operation=operation, expected=expected), patch.object(p.subprocess, 'run',
+                        return_value=Mock(returncode=code, stderr=stderr, stdout=b'private body')) as call:
+                    with self.assertRaises(p.ProbeError) as error:
+                        p.gh_bytes('repos/example/report-repository/actions/runs/123', operation)
+                    self.assertEqual(str(error.exception), 'github_' + operation + '_' + expected)
+                    self.assertEqual(call.call_count, 1)
+
+    def test_timeout_and_missing_cli_stop_without_returning_exception_details(self):
+        for error, expected in ((subprocess.TimeoutExpired(['gh', 'private'], 60, stderr=b'private'), 'network_stop'),
+                                (FileNotFoundError('private executable path'), 'cli_unavailable')):
+            with self.subTest(expected=expected), patch.object(p.subprocess, 'run', side_effect=error) as call:
+                with self.assertRaisesRegex(p.ProbeError, '^github_job_logs_' + expected + '$'):
+                    p.gh_bytes('repos/example/report-repository/actions/jobs/456/logs', 'job_logs')
+                self.assertEqual(call.call_count, 1)
+
+    def test_success_keeps_exact_raw_log_bytes(self):
+        with patch.object(p.subprocess, 'run', return_value=Mock(returncode=0, stdout=b'exact log\r\n')):
+            self.assertEqual(p.gh_bytes('endpoint', 'job_logs'), b'exact log\r\n')
 
 
 class AuthTests(unittest.TestCase):
