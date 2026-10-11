@@ -139,7 +139,13 @@
     };
   }
 
-  function readLastSearch(storage, locale = CONTENT_LOCALE, now = Date.now()) {
+  function searchResumeLocale() {
+    // Shared catalog assets can serve another page language; scope only this local record.
+    const language = typeof document === "undefined" ? "" : document.documentElement?.lang;
+    return typeof language === "string" && language.trim() ? language.trim() : CONTENT_LOCALE;
+  }
+
+  function readLastSearch(storage, locale = searchResumeLocale(), now = Date.now()) {
     if (!storage) return null;
     try {
       const value = JSON.parse(storage.getItem(LAST_SEARCH_KEY) || "null");
@@ -156,7 +162,7 @@
     }
   }
 
-  function initSearchResume({ input, onRestore, storage = hotReportLocalStorage(), locale = CONTENT_LOCALE }) {
+  function initSearchResume({ input, onRestore, storage = hotReportLocalStorage(), locale = searchResumeLocale() }) {
     const container = document.getElementById("searchResume");
     const resume = document.getElementById("resumeLastSearch");
     const queryLabel = document.getElementById("lastSearchQuery");
@@ -10081,11 +10087,7 @@
     }
     searchResume = initSearchResume({
       input,
-      onRestore: () => {
-        startCatalogForUserIntent();
-        scheduleLocalRender(0);
-        scheduleHotReportSearch(scopeFilter.value === "charts" ? "" : input.value.trim(), 0);
-      },
+      onRestore: () => input.dispatchEvent(new Event("input", { bubbles: true })),
     });
     scheduleExternalSearch();
 

@@ -21,11 +21,13 @@ errors no longer log users out. All download entitlements remain server-checked.
 ## Search and return visits
 
 The original search field gains a small, conditional resume control. The browser
-stores at most one keyword for 30 days, scoped to its content language. Restoring
+stores at most one keyword for 30 days, scoped to the page language. Restoring
 it requires a click; a fresh homepage still shows current reports, and a URL
 query or text already entered takes precedence. The record can be cleared. User
 keywords are rendered as text, and unavailable browser storage does not break
-search. Filters and pagination are not automatically restored.
+search. Filters and pagination are not automatically restored. A restored query
+uses the normal input event so the catalog and any localized collection update
+together, while the existing catalog content language remains unchanged.
 
 A zero-result message applies specifically to the current catalog. When filters
 are active, an inline action clears those filters while retaining the keyword.
