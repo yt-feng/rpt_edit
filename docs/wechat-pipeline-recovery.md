@@ -109,6 +109,25 @@ terminal output; exact-byte hashing and source authentication remain unchanged.
 The classified cloud probe stopped at GitHub job-log reading, so no consulting
 PDF pixel diagnosis or production acceptance has yet been established.
 
+## BCG discovery evidence boundaries
+
+BCG sitemap `lastmod` is page modification time, so a refreshed page does not
+prove a newly published report. A BCG-owned `/publications/YYYY/` URL with an
+explicit year earlier than the `since_days` window's starting year is skipped as
+`publication_year_before_window` and remains unseen. Current-year paths, missing
+URL years and old years mentioned only in article text are not rejected by this
+guard. It does not infer a publication month/day or restore exact publication-date
+extraction; the sitemap's legacy date field must not be treated as that evidence.
+
+BCG PDF selection permits only its own archive-confirmed download hosts
+(`web-assets.bcg.com`, `media-publications.bcg.com`, `www.bcg.com` and the official
+apex). If a page offers only PDFs on external hosts, such as a cited company's
+results deck, it remains unseen with `main_pdf_missing`; the external file cannot
+stand in for the BCG report. An ordinary page with no PDF candidates retains its
+existing no-PDF handling. Other institutions' cross-domain download rules are
+unchanged. A future legitimately coauthored report hosted elsewhere needs separate
+source-binding evidence before that host can be admitted.
+
 ## Verify an existing upload
 
 Run **Verify existing WeChat drafts** with the original upload run ID and its
