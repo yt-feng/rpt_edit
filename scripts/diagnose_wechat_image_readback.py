@@ -15,12 +15,13 @@ import io
 import json
 import os
 from pathlib import Path
+import re
 from urllib.parse import parse_qs, urlsplit
 
 from free_editorial_images import attribution_caption
 from push_portal_translated_to_wechat_drafts import (
-    article_prose_text, draft_news_items, generated_image_credits, get_draft,
-    materialize_private_article_payload, parse_wechat_json,
+    article_prose_text, draft_news_items, generated_image_credits, generated_image_credit_signature, get_draft,
+    IMAGE_CREDIT_PARAGRAPH_RE, materialize_private_article_payload, normalize_space, parse_wechat_json,
     post_wechat_json, visible_wechat_content_text, wechat_content_images,
     wechat_image_url_identity, wechat_media_contract_check, WeChatError,
 )
@@ -44,6 +45,7 @@ LOCAL_CAPTION = attribution_caption({'source': 'local_editorial'})
 BLOCKS = {'p', 'div', 'section'}
 KNOWN_TAGS = BLOCKS | {'span', 'strong', 'em', 'b', 'i', 'a', 'img', 'br'}
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}
+COMMONS_CAPTION_RE = re.compile(r'主题配图：(.{1,240}) / Wikimedia Commons / (CC0 1\.0|CC BY (2\.0|2\.5|3\.0|4\.0))；已裁剪与缩放，非报告原图。( 图片来源 · 许可)?')
 
 
 class DiagnosticError(ValueError):
@@ -155,6 +157,145 @@ def known_credit_shapes(content):
             'unbalanced_markup': parser.malformed or bool(parser.stack), 'shapes': shapes}, normalized
 
 
+def known_credit_text(text):
+    """Classify exact complete known captions; never return captured authors."""
+    result = {'kind': 'unknown', 'commons_prefix': text.startswith('主题配图：'),
+              'commons_credit_suffix_present': '；已裁剪与缩放，非报告原图。' in text,
+              'text_sha256': digest(text), 'text_char_count': len(text)}
+    if text == LOCAL_CAPTION:
+        result['kind'] = 'local_editorial'
+    elif match := COMMONS_CAPTION_RE.fullmatch(text):
+        result.update(kind='commons', license=match[2], author_sha256=digest(match[1]),
+                      author_char_count=len(match[1]), link_labels_present=bool(match[4]))
+    return result
+
+
+def safe_link_shape(attrs, license_name):
+    """Only fixed host/path classes, booleans and hashes leave this function."""
+    url = str(attrs.get('href') or '')
+    result = {'href_present': bool(url), 'data_href_present': bool(attrs.get('data-href')),
+              'href_sha256': digest(url), 'valid_url': False}
+    try:
+        parsed = urlsplit(url)
+        port = parsed.port
+    except ValueError:
+        return result
+    license_path = '/publicdomain/zero/1.0/' if license_name == 'CC0 1.0' else '/licenses/by/' + license_name.removeprefix('CC BY ') + '/'
+    result.update(valid_url=bool(parsed.scheme and parsed.netloc),
+        scheme=parsed.scheme if parsed.scheme in {'https', 'http'} else 'other_or_missing',
+        source_host_allowed=parsed.hostname == 'commons.wikimedia.org',
+        license_host_allowed=parsed.hostname == 'creativecommons.org',
+        wechat_redirect_host=parsed.hostname == 'mp.weixin.qq.com',
+        source_file_path=parsed.path.startswith('/wiki/File:'),
+        license_path_matches=bool(license_name) and parsed.path == license_path,
+        has_query=bool(parsed.query), has_fragment=bool(parsed.fragment),
+        has_credentials=bool(parsed.username or parsed.password), port_allowed=port in (None, 443))
+    return result
+
+
+class CreditDetailParser(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.root = {}; self.p_count = 0; self.parts = []; self.links = []
+        self.tags = []; self.comment = False
+
+    def handle_starttag(self, tag, attrs):
+        self.tags.append(tag)
+        if tag == 'p':
+            self.p_count += 1; self.root = dict(attrs)
+        elif tag == 'a':
+            self.links.append(dict(attrs))
+
+    def handle_data(self, value):
+        self.parts.append(value)
+
+    def handle_comment(self, _value):
+        self.comment = True
+
+
+def credit_paragraph_diagnostics(fragment):
+    parsed = CreditDetailParser(); parsed.feed(fragment); parsed.close()
+    joined = normalize_space(''.join(parsed.parts))
+    text = known_credit_text(joined)
+    visible = known_credit_text(visible_wechat_content_text(fragment))
+    links = [safe_link_shape(attrs, text.get('license', '')) for attrs in parsed.links[:8]]
+    accepted = generated_image_credit_signature(fragment) is not None
+    marker = parsed.root.get('data-editorial-credit') == '1'
+    marked_class = 'image-credit' in str(parsed.root.get('class') or '').split()
+    if accepted:
+        reason = 'accepted'
+    elif parsed.comment or any(tag not in {'p', 'a'} for tag in parsed.tags):
+        reason = 'extra_tag_or_comment'
+    elif parsed.p_count != 1:
+        reason = 'paragraph_count'
+    elif not marker:
+        reason = 'missing_data_marker'
+    elif not marked_class:
+        reason = 'missing_credit_class'
+    elif text['kind'] == 'local_editorial':
+        reason = 'unexpected_local_links'
+    elif text['kind'] != 'commons' or not text.get('link_labels_present'):
+        reason = 'prefix_or_spacing_or_text_mismatch'
+    elif len(parsed.links) != 2:
+        reason = 'link_count'
+    elif any(not row['href_present'] for row in links):
+        reason = 'missing_href'
+    elif any(not row['valid_url'] for row in links):
+        reason = 'invalid_link_url'
+    elif any(row['scheme'] != 'https' for row in links):
+        reason = 'non_https'
+    elif any(row['has_query'] or row['has_fragment'] for row in links):
+        reason = 'query_or_fragment'
+    elif any(row['has_credentials'] or not row['port_allowed'] for row in links):
+        reason = 'credentials_or_port'
+    elif not links[0]['source_host_allowed'] or not links[1]['license_host_allowed']:
+        reason = 'disallowed_host'
+    elif not links[0]['source_file_path']:
+        reason = 'source_path'
+    elif not links[1]['license_path_matches']:
+        reason = 'license_path'
+    else:
+        reason = 'unclassified_contract_rejection'
+    # Diagnostic removal depends on a whole known text block, never arbitrary
+    # prose. Link validation remains separately visible and is NOT waived.
+    eligible = (parsed.p_count == 1 and not parsed.comment
+                and all(tag in {'p', 'a', 'span', 'strong', 'em', 'b', 'i', 'br'} for tag in parsed.tags)
+                and text['kind'] in {'local_editorial', 'commons'})
+    return {'has_data_marker': 'data-editorial-credit' in parsed.root, 'data_marker_equals_one': marker,
+        'has_image_credit_class': marked_class, 'paragraph_count': parsed.p_count,
+        'child_tags': sorted({tag if tag in KNOWN_TAGS else 'other' for tag in parsed.tags if tag != 'p'}),
+        'has_comment': parsed.comment, 'link_count': len(parsed.links), 'links': links,
+        'links_truncated': len(parsed.links) > len(links),
+        'joined_text': text, 'visible_text': visible,
+        'joined_and_visible_text_equal': joined == visible_wechat_content_text(fragment),
+        'current_signature_accepted': accepted, 'current_signature_rejection': reason,
+        'diagnostic_whole_known_credit_removal_eligible': eligible}
+
+
+def all_credit_diagnostics(content):
+    require(isinstance(content, str) and len(content.encode()) <= MAX_CONTENT_BYTES, 'content_bound')
+    paragraphs = []; spans = []; rejection_counts = {}
+    for match in IMAGE_CREDIT_PARAGRAPH_RE.finditer(content):
+        fragment = match.group(0)
+        # Inspect all marked credits, plus known prefixes when a marker was
+        # stripped. No arbitrary paragraph content is emitted by the parser.
+        if not any(marker in fragment for marker in ('data-editorial-credit', 'image-credit', '主题配图：', '主题示意图：')):
+            continue
+        require(len(paragraphs) < MAX_CREDIT_CANDIDATES, 'credit_candidate_bound')
+        row = credit_paragraph_diagnostics(fragment)
+        paragraphs.append(row)
+        reason = row['current_signature_rejection']
+        rejection_counts[reason] = rejection_counts.get(reason, 0) + 1
+        if row['diagnostic_whole_known_credit_removal_eligible']:
+            spans.append((match.start(), match.end()))
+    normalized = content
+    for start, end in reversed(spans):
+        normalized = normalized[:start] + normalized[end:]
+    return {'diagnostic_only': True, 'production_acceptance': False,
+            'paragraph_count': len(paragraphs), 'diagnostic_removed_count': len(spans),
+            'rejection_counts': rejection_counts, 'paragraphs': paragraphs}, normalized
+
+
 def media_inventory(article):
     images = wechat_content_images(article.get('content'))
     identities = [wechat_image_url_identity(url) for url, _ in images]
@@ -170,12 +311,16 @@ def compare_article(actual, expected, target):
     expected_content = str(expected.get('content') or '')
     actual_shapes, normalized_actual = known_credit_shapes(actual_content)
     expected_shapes, normalized_expected = known_credit_shapes(expected_content)
+    actual_credit_details, normalized_all_actual = all_credit_diagnostics(actual_content)
+    expected_credit_details, normalized_all_expected = all_credit_diagnostics(expected_content)
     actual_prose, expected_prose = article_prose_text(actual_content), article_prose_text(expected_content)
     actual_visible, expected_visible = visible_wechat_content_text(actual_content), visible_wechat_content_text(expected_content)
     # Unlike the production prose helper, this experiment removes only the
     # selected fixed local caption blocks. Other credits remain visible text.
     normalized_actual_text = visible_wechat_content_text(normalized_actual)
     normalized_expected_text = visible_wechat_content_text(normalized_expected)
+    normalized_all_actual_text = visible_wechat_content_text(normalized_all_actual)
+    normalized_all_expected_text = visible_wechat_content_text(normalized_all_expected)
     # This reference is the original saved receipt, NOT the last update request.
     # Changed cover/inline fields against that older receipt are expected after
     # repair and cannot by themselves diagnose a write/readback discrepancy.
@@ -192,6 +337,9 @@ def compare_article(actual, expected, target):
         'visible_text_sha256': {'actual': digest(actual_visible), 'saved': digest(expected_visible)},
         'diagnostic_known_caption_removal_equal': normalized_actual_text == normalized_expected_text,
         'diagnostic_known_caption_removal_sha256': {'actual': digest(normalized_actual_text), 'saved': digest(normalized_expected_text)},
+        'diagnostic_all_known_credit_removal_equal': normalized_all_actual_text == normalized_all_expected_text,
+        'diagnostic_all_known_credit_removal_sha256': {'actual': digest(normalized_all_actual_text), 'saved': digest(normalized_all_expected_text)},
+        'actual_all_credit_diagnostics': actual_credit_details, 'saved_all_credit_diagnostics': expected_credit_details,
         'saved_receipt_media_checks': {key: value for key, value in media.items() if isinstance(value, (bool, int))},
         'actual_media_inventory': media_inventory(actual), 'saved_media_inventory': media_inventory(expected),
         'actual_known_local_credits': actual_shapes, 'saved_known_local_credits': expected_shapes}
