@@ -1,0 +1,56 @@
+name: Editorial image provider checks
+
+on:
+  pull_request:
+    paths:
+      - scripts/free_editorial_images.py
+      - scripts/test_free_editorial_images.py
+      - .github/workflows/editorial-image-provider-smoke.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image dependencies
+        run: python3 -m pip install --disable-pip-version-check 'requests>=2.31,<3' 'Pillow>=10.1,<12'
+      - name: Check offline provider and image contracts
+        run: python3 -B scripts/test_free_editorial_images.py
+
+  public-provider-canary:
+    if: github.event_name == 'workflow_dispatch'
+    needs: contract
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image dependencies
+        run: python3 -m pip install --disable-pip-version-check 'requests>=2.31,<3' 'Pillow>=10.1,<12'
+      - name: Download one licensed Commons topic photo
+        run: >-
+          python3 -B scripts/free_editorial_images.py
+          --smoke-dir output/editorial-image-provider
+          --require-commons
+      - name: Save public provider evidence and decoded sample
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: editorial-image-provider-${{ github.run_id }}-${{ github.run_attempt }}
+          path: output/editorial-image-provider/
+          if-no-files-found: error
+          retention-days: 7

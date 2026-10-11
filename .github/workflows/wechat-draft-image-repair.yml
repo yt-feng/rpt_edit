@@ -1,0 +1,123 @@
+name: Repair existing WeChat draft images
+run-name: WeChat image ${{ inputs.apply && 'repair' || 'audit' }} from ${{ inputs.source_run_id }}
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Successful producer run containing the exact existing draft receipts
+        required: true
+        type: string
+      receipt_source:
+        description: Existing successful artifact or the accepted historical 261007 recovery
+        required: true
+        type: choice
+        options: [successful-artifact, recovered-261007]
+        default: successful-artifact
+      artifact_name:
+        description: Exact non-expired WeChat draft diagnostic artifact name
+        required: false
+        type: string
+      apply:
+        description: Update only defective media on the existing draft IDs; never publish or create drafts
+        required: true
+        type: boolean
+        default: false
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: wechat-existing-draft-images
+  cancel-in-progress: false
+jobs:
+  repair:
+    if: github.ref == 'refs/heads/main'
+    runs-on: [self-hosted, wechat-draft]
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .github/workflows
+            scripts
+            prompts
+            requirements.txt
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate successful producer and unexpired exact artifact
+        if: inputs.receipt_source == 'successful-artifact'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          ARTIFACT_NAME: ${{ inputs.artifact_name }}
+        run: |
+          python - <<'PY'
+          import json, os, re, subprocess
+          run_id = os.environ['SOURCE_RUN_ID']
+          name = os.environ['ARTIFACT_NAME']
+          assert re.fullmatch(r'\d+', run_id)
+          assert re.fullmatch(r'[a-zA-Z0-9_-]+', name)
+          assert 'wechat' in name and 'draft' in name
+          repo = os.environ['GITHUB_REPOSITORY']
+          def api(path):
+              return json.loads(subprocess.check_output(['gh','api',f'repos/{repo}/{path}'],text=True))
+          run = api(f'actions/runs/{run_id}')
+          assert run['conclusion'] == 'success' and run['head_repository']['full_name'] == repo
+          artifacts = api(f'actions/runs/{run_id}/artifacts?per_page=100')['artifacts']
+          matched = [a for a in artifacts if a['name'] == name and not a['expired']]
+          assert len(matched) == 1
+          print('Exact successful source and live artifact verified')
+          PY
+      - run: python -m pip install -r requirements.txt boto3
+      - name: Test image repair contract
+        run: |
+          python scripts/test_free_editorial_images.py
+          python scripts/test_wechat_media_contract.py
+          python scripts/test_repair_wechat_draft_images.py
+          python scripts/test_restore_wechat_image_repair_receipts.py
+      - uses: actions/download-artifact@v4
+        if: inputs.receipt_source == 'successful-artifact'
+        with:
+          name: ${{ inputs.artifact_name }}
+          run-id: ${{ inputs.source_run_id }}
+          github-token: ${{ github.token }}
+          path: _wechat_image_source
+      - name: Restore the exact accepted historical recovery receipts without mutation
+        if: inputs.receipt_source == 'recovered-261007'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python scripts/restore_wechat_image_repair_receipts.py \
+            --source-run-id "$SOURCE_RUN_ID" --destination _wechat_image_source \
+            --report _wechat_image_repair/receipt-restore.json
+      - name: Materialize private contact image for exact exclusion
+        env:
+          PORTAL_PRIVATE_PUBLISH_ASSET_KEY: ${{ secrets.PORTAL_PRIVATE_PUBLISH_ASSET_KEY }}
+        run: bash scripts/materialize_private_social_asset.sh prompts
+      - name: Audit or repair exact existing drafts
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+          APPLY: ${{ inputs.apply }}
+        run: |
+          OPTIONS=()
+          if [ "$APPLY" = true ]; then OPTIONS+=(--apply); fi
+          python scripts/repair_wechat_draft_images.py --artifact-root _wechat_image_source \
+            --output _wechat_image_repair "${OPTIONS[@]}"
+      - name: Save image-only progress and readback counts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wechat-image-repair-${{ github.run_id }}
+          path: |
+            _wechat_image_repair/result.json
+            _wechat_image_repair/progress.json
+            _wechat_image_repair/receipt-restore.json
+          retention-days: 7
+          if-no-files-found: warn

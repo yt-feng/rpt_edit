@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "scripts/*wechat*"
+      - "scripts/*free_editorial_images*"
       - "scripts/*article_generation_progress*"
       - "scripts/*article_title_resume*"
       - "scripts/*recover_report_articles*"
@@ -70,6 +71,7 @@ on:
     branches: [main]
     paths:
       - "scripts/*wechat*"
+      - "scripts/*free_editorial_images*"
       - "scripts/*article_generation_progress*"
       - "scripts/*article_title_resume*"
       - "scripts/*recover_report_articles*"
@@ -212,6 +214,10 @@ jobs:
           python scripts/test_check_completed_shard.py
           python scripts/test_wechat_output_contract.py
           python scripts/test_wechat_api_verification.py
+          python scripts/test_free_editorial_images.py
+          python scripts/test_wechat_media_contract.py
+          python scripts/test_wechat_editorial_images.py
+          python scripts/test_repair_wechat_draft_images.py
           python scripts/test_delete_wechat_drafts.py
           python scripts/test_xhs_draft_streaming.py
           python scripts/test_download_dropbox_latest_pdfs.py

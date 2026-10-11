@@ -25,6 +25,7 @@ import struct
 import sys
 import time
 import zlib
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
 from urllib.parse import quote, urlsplit
@@ -48,6 +49,8 @@ from sensitive_content_guard import (
     sanitize_wechat_stock_language,
 )
 from wechat_article_quality import audit_wechat_article_markdown, sanitize_wechat_article_markdown
+from wechat_image_quality import is_article_image_candidate, source_chart_images, is_publication_furniture_metadata
+from free_editorial_images import download_editorial_image, attribution_html, attribution_caption
 
 
 BRAND = "外资精译"
@@ -1400,7 +1403,9 @@ def render_fitted_wechat_html(
     translator_name: str = "",
 ) -> tuple[str, int, int, int]:
     image_limits = [len(uploaded_images)]
-    for value in [2, 1, 0]:
+    # An article with admitted body art must not silently become contact-card
+    # only when fitting the HTML limit. Preserve at least one body illustration.
+    for value in ([2, 1] if uploaded_images else [0]):
         value = min(value, len(uploaded_images))
         if value not in image_limits:
             image_limits.append(value)
@@ -1425,6 +1430,7 @@ def render_fitted_wechat_html(
                 "alt": item.get("token") or "chart",
                 "source": item.get("source", ""),
                 "context": item.get("context", ""),
+                "attribution": item.get("attribution", ""),
             }
             for item in uploaded_images[:image_limit]
             if item.get("url")
@@ -1511,6 +1517,7 @@ def markdown_to_wechat_html(
     floating_image_index = 0
     selected_image_urls = [item["url"] for item in body_images if item.get("url")]
     selected_image_set = set(selected_image_urls)
+    image_credits = {item["url"]: item.get("attribution", "") for item in body_images if item.get("url")}
     body_budget = max_visible_chars
     placement_budget = min(body_budget, max(visible_char_count(clean_markdown(markdown)), 1)) if body_budget else 0
     text_used = 0
@@ -1536,7 +1543,7 @@ def markdown_to_wechat_html(
     def maybe_render_image(url: str, alt: str) -> None:
         if not url or url not in selected_image_set or url in rendered_image_urls:
             return
-        parts.append(image_html(url, alt=alt))
+        parts.append(image_html(url, alt=alt) + image_credits.get(url, ""))
         rendered_image_urls.add(url)
 
     def maybe_insert_floating_image(force: bool = False) -> None:
@@ -1550,7 +1557,7 @@ def markdown_to_wechat_html(
             return
         threshold = placement_budget * (floating_image_index + 1) / (len(floating_images) + 1)
         if force or body_budget <= 0 or text_used >= threshold:
-            parts.append(image_html(url, alt=item.get("context") or item.get("alt") or "报告配图"))
+            parts.append(image_html(url, alt=item.get("context") or item.get("alt") or "报告配图") + image_credits.get(url, ""))
             rendered_image_urls.add(url)
             floating_image_index += 1
 
@@ -1727,7 +1734,7 @@ def load_figure_paths(report_dir: Path) -> dict[str, Path]:
     if not isinstance(manifest, list):
         return figures
     for item in manifest:
-        if not isinstance(item, dict):
+        if not isinstance(item, dict) or is_publication_furniture_metadata(item):
             continue
         token = str(item.get("token") or "")
         if not token:
@@ -1773,7 +1780,8 @@ def write_fallback_cover(path: Path, width: int = 1200, height: int = 675) -> No
     )
 
 
-def save_wechat_cover_jpeg(source: Path, target: Path) -> Path:
+def save_wechat_cover_jpeg(source: Path, target: Path, target_width: int = WECHAT_COVER_WIDTH,
+                          target_height: int = WECHAT_COVER_HEIGHT) -> Path:
     target.parent.mkdir(parents=True, exist_ok=True)
     with Image.open(source) as image:
         working = image.convert("RGB")
@@ -1781,17 +1789,17 @@ def save_wechat_cover_jpeg(source: Path, target: Path) -> Path:
     if width <= 0 or height <= 0:
         raise RuntimeError(f"Invalid cover dimensions for {source}: {width}x{height}")
     source_ratio = width / height
-    target_ratio = WECHAT_COVER_WIDTH / WECHAT_COVER_HEIGHT
+    target_ratio = target_width / target_height
     if source_ratio >= target_ratio:
-        resized_height = WECHAT_COVER_HEIGHT
-        resized_width = max(WECHAT_COVER_WIDTH, round(resized_height * source_ratio))
+        resized_height = target_height
+        resized_width = max(target_width, round(resized_height * source_ratio))
     else:
-        resized_width = WECHAT_COVER_WIDTH
-        resized_height = max(WECHAT_COVER_HEIGHT, round(resized_width / source_ratio))
+        resized_width = target_width
+        resized_height = max(target_height, round(resized_width / source_ratio))
     resized = working.resize((resized_width, resized_height), Image.Resampling.LANCZOS)
-    left = max(0, (resized_width - WECHAT_COVER_WIDTH) // 2)
-    top = max(0, (resized_height - WECHAT_COVER_HEIGHT) // 2)
-    cover = resized.crop((left, top, left + WECHAT_COVER_WIDTH, top + WECHAT_COVER_HEIGHT))
+    left = max(0, (resized_width - target_width) // 2)
+    top = max(0, (resized_height - target_height) // 2)
+    cover = resized.crop((left, top, left + target_width, top + target_height))
     cover.save(target, format="JPEG", quality=88, optimize=True, progressive=True)
     return target
 
@@ -1801,22 +1809,51 @@ def prepare_cover_upload_image(path: Path, output_dir: Path, stem: str) -> Path:
     try:
         return save_wechat_cover_jpeg(path, target)
     except Exception as exc:
-        fallback = output_dir / "_assets" / f"{stem}_fallback_cover.png"
-        write_fallback_cover(fallback, WECHAT_COVER_WIDTH, WECHAT_COVER_HEIGHT)
+        from free_editorial_images import bundled_fallback_image
+        fallback, _metadata = bundled_fallback_image(output_dir / "_assets" / f"{stem}_fallback_cover.jpg", stem)
         log(f"Could not normalize cover image {path}: {exc}; using generated fallback cover.")
         return save_wechat_cover_jpeg(fallback, target)
 
 
-def choose_cover_image(report_dir: Path, figure_paths: dict[str, Path], fallback_dir: Path) -> Path:
+def choose_cover_image(report_dir: Path, figure_paths: dict[str, Path], fallback_dir: Path,
+                       uploaded_paths: list[Path] | None = None) -> Path:
+    for path in source_chart_images(report_dir):
+        return path
     for token in sorted(figure_paths):
         path = figure_paths[token]
-        if path.exists() and path.suffix.lower() in {".jpg", ".jpeg", ".png", ".gif", ".bmp"}:
+        if is_article_image_candidate(path):
+            return path
+    for path in uploaded_paths or []:
+        if is_article_image_candidate(path):
             return path
     fallback_dir.mkdir(parents=True, exist_ok=True)
-    fallback = fallback_dir / "fallback_cover.png"
-    if not fallback.exists():
-        write_fallback_cover(fallback)
+    from free_editorial_images import bundled_fallback_image
+    fallback, _metadata = bundled_fallback_image(fallback_dir / f"{report_dir.name}_fallback_cover.jpg", report_dir.name)
     return fallback
+
+
+def select_source_figure_items(report_dir: Path, figure_paths: dict[str, Path], markdown: str,
+                              maximum: int) -> list[tuple[str, Path]]:
+    """Keep all available original exhibits ahead of illustrative fallback.
+
+    A translation may omit image tokens although its figure manifest is intact.
+    Unreferenced figures are still offered to the normal inline-image renderer.
+    """
+    ordered_tokens = list(dict.fromkeys(f"[[PORTAL_IMAGE_{m.group(1)}]]" for m in IMAGE_TOKEN_RE.finditer(markdown)))
+    ordered_tokens.extend(token for token in figure_paths if token not in ordered_tokens)
+    items = [(token, figure_paths[token]) for token in ordered_tokens if token in figure_paths]
+    items.extend((f"PORTAL_SOURCE_IMAGE_{i:03d}", path) for i, path in enumerate(source_chart_images(report_dir), 1))
+    selected = []; seen = set()
+    for token, path in items:
+        if len(selected) >= maximum:
+            break
+        if not is_article_image_candidate(path):
+            continue
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        if digest in seen:
+            continue
+        seen.add(digest); selected.append((token, path))
+    return selected
 
 
 def pollinations_context_snippets(markdown: str, title: str, count: int) -> list[str]:
@@ -1933,24 +1970,24 @@ def download_pollinations_image(
     timeout: int,
     title: str,
 ) -> tuple[Path, str, str, str]:
-    url = pollinations_url(prompt)
-    target.parent.mkdir(parents=True, exist_ok=True)
-    last_error = ""
-    for attempt in range(2):
-        try:
-            response = session.get(url, timeout=timeout, headers={"User-Agent": "PortalSuiteWeChat/1.0"})
-            response.raise_for_status()
-            raw_path = target.with_suffix(".raw")
-            raw_path.write_bytes(response.content)
-            with Image.open(raw_path) as image:
-                output = save_optimized_jpeg(image, target)
-            raw_path.unlink(missing_ok=True)
-            return output, url, "pollinations", ""
-        except Exception as exc:
-            last_error = str(exc)[:300]
-            time.sleep(1.5 * (attempt + 1))
-    write_editorial_fallback_image(target, title)
-    return target, url, "fallback", last_error
+    # Compatibility name retained for callers. The anonymous Pollinations
+    # endpoint is retired; only generic, locally classified topics reach Commons.
+    match = re.search(r"image_(\d+)", target.stem)
+    index = int(match.group(1)) if match else 1
+    path, metadata = download_editorial_image(
+        session, title, target, min(timeout, 15), index=index,
+        cache_dir=target.parent / "licensed_image_cache",
+    )
+    target.with_suffix(".image.json").write_text(json.dumps(metadata, ensure_ascii=False), encoding="utf-8")
+    return path, metadata.get("source_url", ""), metadata["source"], metadata.get("reason", "")
+
+
+def illustration_metadata(path: Path) -> dict[str, str]:
+    sidecar = path.with_suffix(".image.json")
+    if not sidecar.is_file():
+        return {}
+    metadata = json.loads(sidecar.read_text(encoding="utf-8"))
+    return {**metadata, "attribution": attribution_html(metadata)}
 
 
 def post_wechat_json(
@@ -2126,6 +2163,79 @@ def payload_article_title_keys(articles: list[dict[str, Any]]) -> list[str]:
 def visible_wechat_content_text(content: Any) -> str:
     text = re.sub(r"<[^>]+>", " ", html.unescape(str(content or "")))
     return normalize_space(text)
+
+
+IMAGE_CREDIT_PARAGRAPH_RE = re.compile(r'<p\b[^>]*>.*?</p>', re.I | re.S)
+
+
+def generated_image_credit_signature(paragraph: str) -> tuple[str, tuple[str, ...]] | None:
+    """Recognize only this uploader's complete, marked image-credit format."""
+    class Credit(HTMLParser):
+        def __init__(self) -> None:
+            super().__init__(convert_charrefs=True)
+            self.root: dict[str, str | None] = {}
+            self.parts: list[str] = []
+            self.links: list[str] = []
+            self.invalid = False
+            self.p_count = 0
+
+        def handle_starttag(self, tag, attrs):
+            values = dict(attrs)
+            if tag == "p":
+                self.p_count += 1
+                self.root = values
+            elif tag == "a":
+                self.links.append(str(values.get("href") or ""))
+            else:
+                self.invalid = True
+
+        def handle_data(self, data):
+            self.parts.append(data)
+
+        def handle_comment(self, _data):
+            self.invalid = True
+
+    parsed = Credit()
+    parsed.feed(paragraph)
+    if (parsed.invalid or parsed.p_count != 1 or parsed.root.get("data-editorial-credit") != "1"
+            or "image-credit" not in str(parsed.root.get("class") or "").split()):
+        return None
+    text = normalize_space("".join(parsed.parts))
+    if text == attribution_caption({"source": "local_editorial"}) and not parsed.links:
+        return text, ()
+    match = re.fullmatch(r"主题配图：.{1,240} / Wikimedia Commons / (CC0 1\.0|CC BY (2\.0|2\.5|3\.0|4\.0))；已裁剪与缩放，非报告原图。 图片来源 · 许可", text)
+    if not match or len(parsed.links) != 2:
+        return None
+    try:
+        source, license_url = (urlsplit(url) for url in parsed.links)
+        if any(part.scheme != "https" or part.username or part.password or part.port not in (None, 443) or part.fragment or part.query for part in (source, license_url)):
+            return None
+        if source.hostname != "commons.wikimedia.org" or not source.path.startswith("/wiki/File:"):
+            return None
+        license_path = "/publicdomain/zero/1.0/" if match[1] == "CC0 1.0" else f"/licenses/by/{match[2]}/"
+        if license_url.hostname != "creativecommons.org" or license_url.path != license_path:
+            return None
+    except ValueError:
+        return None
+    return text, tuple(parsed.links)
+
+
+def generated_image_credits(content: Any) -> list[tuple[str, tuple[str, ...]]]:
+    return [signature for match in IMAGE_CREDIT_PARAGRAPH_RE.finditer(str(content or ""))
+            if (signature := generated_image_credit_signature(match.group(0))) is not None]
+
+
+def article_prose_text(content: Any) -> str:
+    """Stable article identity excludes only valid generated image credits.
+
+    Credits are independently checked by the media contract; generic paragraphs,
+    malformed credits and manually added notes remain part of article identity.
+    """
+    stripped = IMAGE_CREDIT_PARAGRAPH_RE.sub(
+        lambda match: "" if generated_image_credit_signature(match.group(0)) is not None else match.group(0),
+        str(content or ""),
+    )
+    return visible_wechat_content_text(stripped)
 
 
 def wechat_editorial_contract_check(
@@ -2325,6 +2435,101 @@ def get_draft(session: requests.Session, access_token: str, media_id: str, timeo
     return parse_wechat_json(response, "draft/get")
 
 
+def wechat_content_images(content: Any) -> list[tuple[str, str]]:
+    class Images(HTMLParser):
+        def __init__(self) -> None:
+            super().__init__(convert_charrefs=True)
+            self.images: list[tuple[str, str]] = []
+
+        def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+            if tag.lower() == "img":
+                attributes = dict(attrs)
+                url = str(attributes.get("data-src") or attributes.get("src") or "")
+                self.images.append((url, str(attributes.get("alt") or "")))
+
+    parser = Images()
+    parser.feed(str(content or ""))
+    return parser.images
+
+
+def wechat_image_url_identity(url: str) -> str:
+    if not str(url).strip():
+        return ""
+    parts = urlsplit(html.unescape(url))
+    if parts.scheme not in {"http", "https"} or not parts.netloc:
+        return ""
+    # WeChat may return HTTPS and a resized qpic rendition of the same upload.
+    if parts.hostname in {"mmbiz.qpic.cn", "mmbiz.qlogo.cn"}:
+        path = re.sub(r"/(?:0|640|1080)$", "", parts.path)
+        return f"{parts.hostname}{path}"
+    return f"{parts.netloc.lower()}{parts.path}?{parts.query}"
+
+
+def wechat_media_contract_check(article: dict[str, Any], expected: dict[str, Any] | None) -> dict[str, Any]:
+    actual_images = wechat_content_images(article.get("content"))
+    expected_images = wechat_content_images((expected or {}).get("content"))
+    actual_urls = [wechat_image_url_identity(url) for url, _alt in actual_images]
+    expected_urls = [wechat_image_url_identity(url) for url, _alt in expected_images]
+    expected_thumb = str((expected or {}).get("thumb_media_id") or "")
+    matches_cover = not expected_thumb or str(article.get("thumb_media_id") or "") == expected_thumb
+    matches_images = expected is None or (
+        len(actual_urls) == len(expected_urls)
+        and all(actual_urls) and all(expected_urls) and actual_urls == expected_urls
+    )
+    footer_count = sum(alt == "KC桌面" for _url, alt in expected_images)
+    actual_credits = generated_image_credits(article.get("content"))
+    expected_credits = generated_image_credits((expected or {}).get("content"))
+    matches_credits = expected is None or actual_credits == expected_credits
+    return {
+        "matches": matches_cover and matches_images and matches_credits,
+        "matches_cover": matches_cover,
+        "matches_inline_images": matches_images,
+        "matches_image_credits": matches_credits,
+        "image_credit_count": len(actual_credits),
+        "expected_image_credit_count": len(expected_credits),
+        "image_count": len(actual_images),
+        "expected_image_count": len(expected_images),
+        "expected_body_image_count": len(expected_images) - footer_count,
+        "expected_trailing_image_count": footer_count,
+    }
+
+
+def repair_existing_draft_media(
+    session: requests.Session, access_token: str, media_id: str,
+    data: dict[str, Any], expected_articles: list[dict[str, Any]], timeout: int,
+) -> list[int]:
+    """Update media in the exact existing draft only while all prose is unchanged.
+
+    A retry can reupload media and obtain new URLs/IDs. Text-only draft identity
+    must continue to prevent duplicates, but is not sufficient media acceptance.
+    Do not overwrite a user's edited title, author, or body to repair images.
+    """
+    actual_articles = draft_news_items(data)
+    if len(actual_articles) != len(expected_articles) or any(
+        str(actual.get("title") or "") != str(expected.get("title") or "")
+        or str(actual.get("author") or "") != str(expected.get("author") or "")
+        or article_prose_text(actual.get("content")) != article_prose_text(expected.get("content"))
+        for actual, expected in zip(actual_articles, expected_articles)
+    ):
+        return []
+    repaired = []
+    for index, (actual, expected) in enumerate(zip(actual_articles, expected_articles)):
+        if wechat_media_contract_check(actual, expected)["matches"]:
+            continue
+        # Keep unrelated existing metadata; only replace cover/content media.
+        update = {key: actual[key] for key in ("title", "author", "digest", "content_source_url", "need_open_comment", "only_fans_can_comment") if key in actual}
+        update.update(content=expected.get("content", ""), thumb_media_id=expected.get("thumb_media_id", ""))
+        response = post_wechat_json(session,
+            f"https://api.weixin.qq.com/cgi-bin/draft/update?access_token={access_token}",
+            {"media_id": media_id, "index": index, "articles": update}, timeout,
+            max_attempts=1)
+        result = parse_wechat_json(response, "draft/update media")
+        if result.get("errcode") != 0:
+            raise WeChatError("draft/update media did not confirm success")
+        repaired.append(index)
+    return repaired
+
+
 def summarize_draft_get_response(
     data: dict[str, Any],
     expected_article_count: int,
@@ -2361,13 +2566,18 @@ def summarize_draft_get_response(
         expected_articles is None
         or titles == payload_article_titles(expected_articles)
     )
+    media_checks = [wechat_media_contract_check(item, expected_articles[index] if expected_articles is not None and index < len(expected_articles) else None)
+                    for index, item in enumerate(news_items) if isinstance(item, dict)]
+    matches_media_contract = len(media_checks) == article_count and all(item["matches"] for item in media_checks)
     return {
-        "ok": matches_expected_article_count and matches_editorial_contract and matches_expected_titles,
+        "ok": matches_expected_article_count and matches_editorial_contract and matches_expected_titles and matches_media_contract,
         "article_count": article_count,
         "expected_article_count": expected_article_count,
         "matches_expected_article_count": matches_expected_article_count,
         "matches_expected_titles": matches_expected_titles,
         "matches_editorial_contract": matches_editorial_contract,
+        "matches_media_contract": matches_media_contract,
+        "media_contract": media_checks,
         "editorial_contract": contract_checks,
         "titles": titles,
         "create_time": data.get("create_time"),
@@ -2382,16 +2592,27 @@ def verify_draft_get(
     timeout: int,
     expected_article_count: int,
     expected_articles: list[dict[str, Any]] | None = None,
+    repair_media: bool = False,
 ) -> dict[str, Any]:
     max_attempts = 3
+    repair_attempted = False
+    repaired_indices: list[int] = []
     for attempt in range(1, max_attempts + 1):
         retryable = True
         try:
+            data = get_draft(session, access_token, media_id, timeout)
             summary = summarize_draft_get_response(
-                get_draft(session, access_token, media_id, timeout),
+                data,
                 expected_article_count,
                 expected_articles,
             )
+            if (repair_media and expected_articles is not None and not repair_attempted and
+                    summary["matches_editorial_contract"] and summary["matches_expected_titles"] and
+                    not summary["matches_media_contract"]):
+                repair_attempted = True
+                repaired_indices = repair_existing_draft_media(session, access_token, media_id, data, expected_articles, timeout)
+                if repaired_indices:
+                    summary = summarize_draft_get_response(get_draft(session, access_token, media_id, timeout), expected_article_count, expected_articles)
         except WeChatError as exc:
             summary = {
                 "ok": False,
@@ -2402,6 +2623,8 @@ def verify_draft_get(
             }
             retryable = exc.errcode is None or exc.errcode in WECHAT_RETRYABLE_ERRCODES
         summary["attempts"] = attempt
+        summary["media_repair_attempted"] = repair_attempted
+        summary["media_repaired_indices"] = repaired_indices
         if summary["ok"]:
             log(f"Verified draft/get: media_id={media_id} articles={summary['article_count']}/{expected_article_count} editorial_contract=True")
             return summary
@@ -2418,7 +2641,7 @@ def draft_group_key(articles: list[dict[str, Any]]) -> str:
         {
             "title": item.get("title", ""),
             "author": item.get("author", ""),
-            "text": visible_wechat_content_text(item.get("content")),
+            "text": article_prose_text(item.get("content")),
         }
         for item in articles
     ]
@@ -2437,11 +2660,12 @@ def saved_draft_receipt(output_dir: Path, public_articles: list[dict[str, Any]])
         if not isinstance(draft, dict) or not draft.get("media_id"):
             continue
         saved_key = draft.get("group_key")
-        if not saved_key and draft.get("payload"):
+        if saved_key != key and draft.get("payload"):
             # Historical diagnostics use runner-absolute paths. Only read the
-            # known local payload basename when restoring an artifact.
+            # known local payload basename when restoring an artifact. Recompute
+            # legacy identities that included generated photo credits as prose.
             payload = read_json(output_dir / Path(draft["payload"]).name)
-            if isinstance(payload, dict) and isinstance(payload.get("articles"), list):
+            if isinstance(payload, dict) and isinstance(payload.get("articles"), list) and all(isinstance(item, dict) for item in payload["articles"]):
                 saved_key = draft_group_key(payload["articles"])
         if saved_key == key:
             return dict(draft)
@@ -2697,19 +2921,9 @@ def build_article(
         title_decision["body_heading_neutralization_changes"] = heading_neutralization_changes
     figure_paths = load_figure_paths(report_dir)
 
-    tokens = []
-    for match in IMAGE_TOKEN_RE.finditer(markdown):
-        token = f"[[PORTAL_IMAGE_{match.group(1)}]]"
-        if token not in tokens:
-            tokens.append(token)
-    tokens = tokens[: args.max_inline_images]
-
     image_urls: dict[str, str] = {}
     uploaded_images: list[dict[str, str]] = []
-    for token in tokens:
-        path = figure_paths.get(token)
-        if not path:
-            continue
+    for token, path in select_source_figure_items(report_dir, figure_paths, markdown, args.max_inline_images):
         if args.dry_run:
             image_url = fake_image_url(report_dir, token)
             upload_path = path
@@ -2722,53 +2936,31 @@ def build_article(
         image_urls[token] = image_url
         uploaded_images.append({"token": token, "path": str(upload_path), "url": image_url, "source": "mineru"})
 
-    target_min_images = min(args.min_inline_images, args.max_inline_images)
+    target_min_images = len(uploaded_images) if uploaded_images else min(args.min_inline_images, args.max_inline_images)
     ai_image_index = 1
-    ai_contexts = pollinations_context_snippets(markdown, title, target_min_images)
     while len(uploaded_images) < target_min_images:
         ai_token = f"PORTAL_AI_IMAGE_{ai_image_index:03d}"
-        context = ai_contexts[(ai_image_index - 1) % len(ai_contexts)] if ai_contexts else ""
-        prompt = pollinations_prompt(title, ai_image_index, context)
-        source_url = pollinations_url(prompt)
+        metadata = {}
         if args.dry_run:
-            image_url = fake_static_image_url(f"pollinations/{report_dir.name}/{ai_token}.jpg")
+            image_url = fake_static_image_url(f"editorial/{report_dir.name}/{ai_token}.jpg")
             ai_path = ""
-            status_name = "dry_run"
-            reason = ""
+            status_name = "editorial_dry_run"
         else:
             if session is None or access_token is None:
                 raise RuntimeError("session and access_token are required outside dry-run")
-            ai_path_obj, source_url, status_name, reason = download_pollinations_image(
-                session,
-                prompt,
-                output_dir / "_assets" / f"article_{index:02d}_{ai_token.lower()}.jpg",
-                min(args.timeout, 45),
-                title,
+            ai_path_obj, _source_url, status_name, _reason = download_pollinations_image(
+                session, "", output_dir / "_assets" / f"article_{index:02d}_{ai_token.lower()}.jpg",
+                min(args.timeout, 15), title,
             )
+            metadata = illustration_metadata(ai_path_obj)
             ai_path = str(ai_path_obj)
             image_url = upload_article_image(session, access_token, ai_path_obj, args.timeout)
-            pacing_sleep(f"After uploading AI image {index}:{ai_token}", args.image_upload_delay_seconds, args.dry_run)
-        uploaded_images.append(
-            {
-                "token": ai_token,
-                "path": ai_path,
-                "url": image_url,
-                "source": status_name,
-                "prompt": prompt,
-                "context": context,
-                "pollinations_url": source_url,
-                "reason": reason,
-            }
-        )
+            pacing_sleep(f"After uploading editorial image {index}:{ai_token}", args.image_upload_delay_seconds, args.dry_run)
+        uploaded_images.append({**metadata, "token": ai_token, "path": ai_path, "url": image_url, "source": status_name})
         ai_image_index += 1
 
-    cover_image = choose_cover_image(report_dir, figure_paths, output_dir / "_assets")
-    if not figure_paths:
-        for item in uploaded_images:
-            candidate = Path(item.get("path") or "")
-            if candidate.exists() and candidate.is_file():
-                cover_image = candidate
-                break
+    cover_image = choose_cover_image(report_dir, figure_paths, output_dir / "_assets",
+                                    [Path(item["path"]) for item in uploaded_images if item.get("path")])
     cover_image = prepare_cover_upload_image(cover_image, output_dir, f"article_{index:02d}")
     if args.dry_run:
         thumb_media_id = f"DRY_RUN_THUMB_{index:02d}"
@@ -2939,10 +3131,43 @@ def replacement_cover_media_id(
     draft_index: int,
     timeout: int,
 ) -> str:
-    fallback_png = output_dir / "_assets" / f"draft_{draft_index:02d}_replacement_cover.png"
-    fallback_png.parent.mkdir(parents=True, exist_ok=True)
-    write_fallback_cover(fallback_png, WECHAT_SAFE_COVER_WIDTH, WECHAT_SAFE_COVER_HEIGHT)
-    return upload_cover_material(session, access_token, fallback_png, timeout)
+    from free_editorial_images import bundled_fallback_image
+    fallback, _metadata = bundled_fallback_image(output_dir / "_assets" / f"draft_{draft_index:02d}_replacement_cover.jpg", str(draft_index))
+    return upload_cover_material(session, access_token, fallback, timeout)
+
+
+def clear_cover_crop_fields(articles: list[dict[str, Any]]) -> None:
+    for article in articles:
+        article.pop("pic_crop_235_1", None)
+        article.pop("pic_crop_1_1", None)
+
+
+def normalize_group_cover_media(session: requests.Session, access_token: str,
+                               group: list[dict[str, Any]], articles: list[dict[str, Any]],
+                               output_dir: Path, draft_index: int, timeout: int) -> None:
+    """Preserve each article's artwork when a cover upload needs a safer crop."""
+    if len(group) != len(articles):
+        raise WeChatError("Cover recovery article count mismatch")
+    for index, (item, article) in enumerate(zip(group, articles), 1):
+        source = Path(item.get("cover_image") or "")
+        if not is_article_image_candidate(source):
+            from free_editorial_images import bundled_fallback_image
+            source, _metadata = bundled_fallback_image(output_dir / "_assets" / f"draft_{draft_index:02d}_{index:02d}_recovery.jpg", str(article.get("title") or ""), index=index)
+        target = output_dir / "_assets" / f"draft_{draft_index:02d}_{index:02d}_safe_cover.jpg"
+        save_wechat_cover_jpeg(source, target, WECHAT_SAFE_COVER_WIDTH, WECHAT_SAFE_COVER_HEIGHT)
+        article["thumb_media_id"] = upload_cover_material(session, access_token, target, timeout)
+        item["cover_image"] = str(target)
+    clear_cover_crop_fields(articles)
+
+
+def sync_article_media_fields(public_articles: list[dict[str, Any]], articles: list[dict[str, Any]]) -> None:
+    """Persist the final cover fields without copying private runtime URLs."""
+    for public, actual in zip(public_articles, articles):
+        for key in ("thumb_media_id", "pic_crop_235_1", "pic_crop_1_1"):
+            if key in actual:
+                public[key] = actual[key]
+            else:
+                public.pop(key, None)
 
 
 def article_payload(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -3220,40 +3445,17 @@ def main() -> int:
                     media_id = add_draft(session, access_token, articles, args.timeout)
                 except WeChatError as exc:
                     if is_cover_crop_error(exc):
-                        log(
-                            "WeChat rejected a draft cover crop; replacing this draft group's "
-                            "cover images with a generated safe cover and retrying."
-                        )
-                        safe_thumb_media_id = replacement_cover_media_id(
-                            session,
-                            access_token,
-                            output_dir,
-                            draft_index,
-                            args.timeout,
-                        )
-                        for article in articles:
-                            article["thumb_media_id"] = safe_thumb_media_id
-                            article["pic_crop_235_1"] = WECHAT_SAFE_COVER_CROP_235_1
-                            article["pic_crop_1_1"] = WECHAT_SAFE_COVER_CROP_1_1
+                        log("WeChat rejected explicit cover crop fields; keeping each cover and retrying without those fields.")
+                        clear_cover_crop_fields(articles)
                         pacing_sleep(f"Before retrying WeChat draft {draft_index}", args.draft_delay_seconds, args.dry_run)
                         try:
                             media_id = add_draft(session, access_token, articles, args.timeout)
                         except WeChatError as retry_exc:
                             if not is_cover_crop_error(retry_exc):
                                 raise
-                            log(
-                                "WeChat still rejected the safe cover crop; retrying once "
-                                "without explicit cover crop fields."
-                            )
-                            for article in articles:
-                                article["thumb_media_id"] = safe_thumb_media_id
-                                article.pop("pic_crop_235_1", None)
-                                article.pop("pic_crop_1_1", None)
-                            pacing_sleep(
-                                f"Before retrying WeChat draft {draft_index} without crop fields",
-                                args.draft_delay_seconds,
-                                args.dry_run,
-                            )
+                            log("Normalizing each article's existing cover for one final crop recovery attempt.")
+                            normalize_group_cover_media(session, access_token, group, articles, output_dir, draft_index, args.timeout)
+                            pacing_sleep(f"Before retrying WeChat draft {draft_index} with normalized covers", args.draft_delay_seconds, args.dry_run)
                             media_id = add_draft(session, access_token, articles, args.timeout)
                     elif is_article_size_error(exc) and len(group) > 1:
                         split_at = max(1, len(group) // 2)
@@ -3267,6 +3469,7 @@ def main() -> int:
                     else:
                         raise
 
+        sync_article_media_fields(public_articles, articles)
         payload_path = output_dir / f"draft_payload_{draft_index:02d}.json"
         # Persist only the public template. The deployment hostname exists
         # solely in the in-memory request sent to WeChat.
@@ -3296,7 +3499,7 @@ def main() -> int:
         if not args.dry_run:
             log(f"Verifying WeChat draft {draft_index}: media_id={media_id}")
             pacing_sleep(f"Before verifying WeChat draft {draft_index}", args.draft_verify_delay_seconds, False)
-            draft_get = verify_draft_get(session, access_token, media_id, args.timeout, len(articles), articles)
+            draft_get = verify_draft_get(session, access_token, media_id, args.timeout, len(articles), articles, True)
             drafts[-1]["draft_get"] = draft_get
             drafts[-1]["status"] = "verified" if draft_get.get("ok") else "verification_failed"
             checkpoint_wechat_drafts(output_dir, drafts, dry_run=False)

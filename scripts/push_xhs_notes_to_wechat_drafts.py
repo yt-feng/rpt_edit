@@ -5,6 +5,7 @@ from __future__ import annotations
 from portal_discovery_quality import report_source_metadata
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -51,11 +52,16 @@ from push_portal_translated_to_wechat_drafts import (  # noqa: E402
     saved_draft_prefix_length,
     digest_from_markdown,
     download_pollinations_image,
+    illustration_metadata,
     fake_static_image_url,
     get_stable_access_token,
     find_recent_draft_by_titles,
     is_article_size_error,
     is_cover_crop_error,
+    is_article_image_candidate,
+    clear_cover_crop_fields,
+    normalize_group_cover_media,
+    sync_article_media_fields,
     log,
     neutralize_markdown_headings,
     pacing_sleep,
@@ -95,6 +101,7 @@ from sensitive_content_guard import (  # noqa: E402
 )
 from wechat_article_quality import sanitize_wechat_article_markdown  # noqa: E402
 from wechat_title_optimizer import ensure_publishable_neutral_title  # noqa: E402
+from wechat_image_quality import source_chart_images  # noqa: E402
 
 DATE_DIR_RE = re.compile(r"^\d{6,8}$")
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp"}
@@ -318,14 +325,8 @@ def xhs_card_number(path: Path) -> int:
 
 
 def extra_asset_images(report_dir: Path, already: set[Path]) -> list[tuple[str, Path]]:
-    assets_dir = report_dir / "assets"
-    if not assets_dir.exists():
-        return []
-    candidates = sorted(assets_dir.glob("source_image_*"))
     extras: list[tuple[str, Path]] = []
-    for path in candidates:
-        if path.suffix.lower() not in IMAGE_SUFFIXES or not path.is_file():
-            continue
+    for path in source_chart_images(report_dir):
         resolved = path.resolve()
         if resolved in already:
             continue
@@ -342,7 +343,7 @@ def xhs_card_fallback_images(report_dir: Path, already: set[Path]) -> list[tuple
     cards = sorted(assets_dir.glob("xhs_card_*"), key=lambda p: (xhs_card_number(p), p.name))
     fallbacks: list[tuple[str, Path]] = []
     for path in cards:
-        if path.suffix.lower() not in IMAGE_SUFFIXES or not path.is_file():
+        if path.suffix.lower() not in IMAGE_SUFFIXES or not is_article_image_candidate(path):
             continue
         if xhs_card_number(path) < 2:
             continue
@@ -356,21 +357,14 @@ def xhs_card_fallback_images(report_dir: Path, already: set[Path]) -> list[tuple
 
 
 def choose_cover_image(report_dir: Path, uploaded_paths: list[Path], fallback_dir: Path) -> Path:
-    for candidate in [
-        report_dir / "assets" / "cover.png",
-        report_dir / "assets" / "cover.jpg",
-        report_dir / "assets" / "source_image_01.jpg",
-        report_dir / "assets" / "source_image_01.png",
-    ]:
-        if candidate.exists() and candidate.is_file():
-            return candidate
+    for candidate in source_chart_images(report_dir):
+        return candidate
     for path in uploaded_paths:
-        if path.exists() and path.is_file():
+        if is_article_image_candidate(path):
             return path
     fallback_dir.mkdir(parents=True, exist_ok=True)
-    fallback = fallback_dir / f"{report_dir.name}_fallback_cover.png"
-    if not fallback.exists():
-        write_fallback_cover(fallback)
+    from free_editorial_images import bundled_fallback_image
+    fallback, _metadata = bundled_fallback_image(fallback_dir / f"{report_dir.name}_fallback_cover.jpg", report_dir.name)
     return fallback
 
 
@@ -448,59 +442,51 @@ def build_article(
     image_metadata: dict[str, dict[str, str]] = {}
 
     refs = [ref for ref in markdown_local_image_refs(markdown) if not is_xhs_cover_or_card(ref)]
-    target_image_count = min(max(args.min_inline_images, len(refs)), args.max_inline_images)
-    image_items: list[tuple[str, Path]] = []
+    image_items = extra_asset_images(report_dir, seen_paths)[:args.max_inline_images]
+    source_hashes = {hashlib.sha256(path.read_bytes()).hexdigest() for _, path in image_items}
     for ref in refs:
+        if len(image_items) >= args.max_inline_images:
+            break
         path = resolve_asset_path(report_dir, ref)
         if not path or path.suffix.lower() not in IMAGE_SUFFIXES:
             continue
-        if is_xhs_cover_or_card(path):
+        if is_xhs_cover_or_card(path) or not is_article_image_candidate(path):
             continue
         resolved = path.resolve()
         if resolved in seen_paths:
             continue
+        if any((report_dir / name).exists() for name in ("source_image_map.json", "source_figure_map.json")) and path.name.startswith("source_image_"):
+            # Mapped exhibits were already considered above. Do not bypass a
+            # stale/invalid map through a direct Markdown reference.
+            continue
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        if digest in source_hashes:
+            continue
+        source_hashes.add(digest)
         seen_paths.add(resolved)
         image_items.append((ref, path))
         if len(image_items) >= args.max_inline_images:
             break
 
-    if len(image_items) < target_image_count:
-        image_items.extend(extra_asset_images(report_dir, seen_paths)[: target_image_count - len(image_items)])
+    # The minimum applies only to reports without source figures. Do not pad
+    # a genuine one-chart report with unrelated stock pictures just to reach 3.
+    target_image_count = len(image_items) if image_items else min(args.min_inline_images, args.max_inline_images)
 
     ai_image_index = 1
-    ai_contexts = pollinations_context_snippets(markdown, title, target_image_count)
     while len(image_items) < target_image_count and len(image_items) < args.max_inline_images:
         ai_token = f"PORTAL_AI_IMAGE_{ai_image_index:03d}"
-        context = ai_contexts[(ai_image_index - 1) % len(ai_contexts)] if ai_contexts else ""
-        prompt = pollinations_prompt(title, ai_image_index, context)
+        ai_path_obj = output_dir / "_assets" / f"article_{index:02d}_{ai_token.lower()}.jpg"
         if args.dry_run:
-            ai_path_obj = output_dir / "_assets" / f"article_{index:02d}_{ai_token.lower()}.jpg"
             image_items.append((ai_token, ai_path_obj))
-            image_metadata[ai_token] = {"source": "pollinations_dry_run", "prompt": prompt, "context": context}
+            image_metadata[ai_token] = {"source": "editorial_dry_run"}
         else:
             if session is None or access_token is None:
                 raise RuntimeError("session and access_token are required outside dry-run")
-            ai_path_obj, source_url, status_name, reason = download_pollinations_image(
-                session,
-                prompt,
-                output_dir / "_assets" / f"article_{index:02d}_{ai_token.lower()}.jpg",
-                min(args.timeout, 45),
-                title,
+            ai_path_obj, _source_url, status_name, _reason = download_pollinations_image(
+                session, "", ai_path_obj, min(args.timeout, 15), title,
             )
-            if status_name != "pollinations":
-                log(
-                    f"Pollinations image fill failed for {report_dir.name}: {reason or status_name}; "
-                    "falling back to xhs_card_02+."
-                )
-                break
             image_items.append((ai_token, ai_path_obj))
-            image_metadata[ai_token] = {
-                "source": status_name,
-                "prompt": prompt,
-                "context": context,
-                "pollinations_url": source_url,
-                "reason": reason,
-            }
+            image_metadata[ai_token] = {**illustration_metadata(ai_path_obj), "source": status_name}
         ai_image_index += 1
 
     if len(image_items) < target_image_count:
@@ -527,7 +513,7 @@ def build_article(
             "url": image_url,
             "source": metadata.get("source", "xhs_notes"),
         }
-        for key in ["prompt", "context", "pollinations_url", "reason"]:
+        for key in ["author", "source_url", "license", "license_url", "caption", "attribution", "topic", "sha256", "reason"]:
             if metadata.get(key):
                 image_record[key] = metadata[key]
         uploaded_images.append(image_record)
@@ -666,7 +652,7 @@ def main() -> int:
     parser.add_argument(
         "--force-safe-cover",
         action="store_true",
-        help="Use a generated WeChat-safe cover for draft creation instead of report-derived thumbnails.",
+        help="Use automatic WeChat cropping while preserving each article cover.",
     )
     args = parser.parse_args()
 
@@ -839,44 +825,10 @@ def main() -> int:
             pacing_sleep("After uploading trailing image", args.image_upload_delay_seconds, args.dry_run)
 
     drafts: list[dict[str, Any]] = []
-    safe_cover_media_id = ""
     use_safe_cover_for_future = args.force_safe_cover
-    safe_cover_without_crop = False
-
-    def ensure_safe_cover_media_id(draft_index: int) -> str:
-        nonlocal safe_cover_media_id
-        if args.dry_run:
-            return f"DRY_RUN_SAFE_THUMB_{draft_index:02d}"
-        if session is None or access_token is None:
-            raise RuntimeError("session and access_token are required outside dry-run")
-        if not safe_cover_media_id:
-            safe_cover_media_id = replacement_cover_media_id(
-                session,
-                access_token,
-                output_dir,
-                draft_index,
-                args.timeout,
-            )
-            log(f"Uploaded generated safe WeChat cover: media_id={safe_cover_media_id}")
-        return safe_cover_media_id
-
-    def apply_safe_cover_fields(
-        articles: list[dict[str, Any]],
-        thumb_media_id: str,
-        *,
-        include_crop_fields: bool,
-    ) -> None:
-        for article in articles:
-            article["thumb_media_id"] = thumb_media_id
-            if include_crop_fields:
-                article["pic_crop_235_1"] = WECHAT_SAFE_COVER_CROP_235_1
-                article["pic_crop_1_1"] = WECHAT_SAFE_COVER_CROP_1_1
-            else:
-                article.pop("pic_crop_235_1", None)
-                article.pop("pic_crop_1_1", None)
 
     def create_draft(group: list[dict[str, Any]]) -> None:
-        nonlocal use_safe_cover_for_future, safe_cover_without_crop
+        nonlocal use_safe_cover_for_future
         public_articles = article_payload(group)
         articles = materialize_private_article_payload(public_articles, args.site_url)
         receipt = {} if args.dry_run else saved_draft_receipt(output_dir, public_articles)
@@ -921,17 +873,8 @@ def main() -> int:
                 log(f"Reusing existing WeChat draft with the same article titles: media_id={media_id}")
             else:
                 reused_existing = False
-                safe_cover_applied_before_add = False
                 if use_safe_cover_for_future:
-                    safe_thumb_media_id = ensure_safe_cover_media_id(draft_index)
-                    apply_safe_cover_fields(
-                        articles,
-                        safe_thumb_media_id,
-                        include_crop_fields=not safe_cover_without_crop,
-                    )
-                    safe_cover_applied_before_add = True
-                    cover_mode = "without explicit crop fields" if safe_cover_without_crop else "with safe crop fields"
-                    log(f"Using generated safe cover for WeChat draft {draft_index} {cover_mode}.")
+                    clear_cover_crop_fields(articles)
                 try:
                     log(f"Creating WeChat draft {draft_index}")
                     pacing_sleep(
@@ -943,62 +886,18 @@ def main() -> int:
                 except WeChatError as exc:
                     if is_cover_crop_error(exc):
                         use_safe_cover_for_future = True
-                        safe_thumb_media_id = ensure_safe_cover_media_id(draft_index)
-                        if safe_cover_applied_before_add and safe_cover_without_crop:
-                            raise
-                        if safe_cover_applied_before_add:
-                            log(
-                                "WeChat rejected the generated safe cover crop; retrying once "
-                                "without explicit cover crop fields."
-                            )
-                            apply_safe_cover_fields(
-                                articles,
-                                safe_thumb_media_id,
-                                include_crop_fields=False,
-                            )
-                            safe_cover_without_crop = True
-                            pacing_sleep(
-                                f"Before retrying WeChat draft {draft_index} without crop fields",
-                                args.draft_delay_seconds,
-                                args.dry_run,
-                            )
+                        log("WeChat rejected explicit cover crop fields; keeping each cover and retrying without those fields.")
+                        clear_cover_crop_fields(articles)
+                        pacing_sleep(f"Before retrying WeChat draft {draft_index}", args.draft_delay_seconds, args.dry_run)
+                        try:
                             media_id = add_draft(session, access_token, articles, args.timeout)
-                        else:
-                            log(
-                                "WeChat rejected a draft cover crop; replacing this draft group's "
-                                "cover images with a generated safe cover and retrying."
-                            )
-                            apply_safe_cover_fields(
-                                articles,
-                                safe_thumb_media_id,
-                                include_crop_fields=not safe_cover_without_crop,
-                            )
-                            pacing_sleep(
-                                f"Before retrying WeChat draft {draft_index}",
-                                args.draft_delay_seconds,
-                                args.dry_run,
-                            )
-                            try:
-                                media_id = add_draft(session, access_token, articles, args.timeout)
-                            except WeChatError as retry_exc:
-                                if not is_cover_crop_error(retry_exc):
-                                    raise
-                                log(
-                                    "WeChat still rejected the safe cover crop; retrying once "
-                                    "without explicit cover crop fields."
-                                )
-                                apply_safe_cover_fields(
-                                    articles,
-                                    safe_thumb_media_id,
-                                    include_crop_fields=False,
-                                )
-                                safe_cover_without_crop = True
-                                pacing_sleep(
-                                    f"Before retrying WeChat draft {draft_index} without crop fields",
-                                    args.draft_delay_seconds,
-                                    args.dry_run,
-                                )
-                                media_id = add_draft(session, access_token, articles, args.timeout)
+                        except WeChatError as retry_exc:
+                            if not is_cover_crop_error(retry_exc):
+                                raise
+                            log("Normalizing each article's existing cover for one final crop recovery attempt.")
+                            normalize_group_cover_media(session, access_token, group, articles, output_dir, draft_index, args.timeout)
+                            pacing_sleep(f"Before retrying WeChat draft {draft_index} with normalized covers", args.draft_delay_seconds, args.dry_run)
+                            media_id = add_draft(session, access_token, articles, args.timeout)
                     elif is_article_size_error(exc) and len(group) > 1:
                         split_at = max(1, len(group) // 2)
                         log(
@@ -1011,6 +910,7 @@ def main() -> int:
                     else:
                         raise
 
+        sync_article_media_fields(public_articles, articles)
         payload_path = output_dir / f"draft_payload_{draft_index:02d}.json"
         # Keep the deployment hostname out of public Blog archive inputs.
         write_json(payload_path, {
@@ -1039,7 +939,7 @@ def main() -> int:
         if not args.dry_run:
             log(f"Verifying WeChat draft {draft_index}: media_id={media_id}")
             pacing_sleep(f"Before verifying WeChat draft {draft_index}", args.draft_verify_delay_seconds, False)
-            draft_get = verify_draft_get(session, access_token, media_id, args.timeout, len(articles), articles)
+            draft_get = verify_draft_get(session, access_token, media_id, args.timeout, len(articles), articles, True)
             drafts[-1]["draft_get"] = draft_get
             drafts[-1]["status"] = "verified" if draft_get.get("ok") else "verification_failed"
             checkpoint_wechat_drafts(output_dir, drafts, dry_run=False)
