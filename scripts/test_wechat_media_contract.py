@@ -5,6 +5,7 @@ import copy
 import hashlib
 import json
 from pathlib import Path
+import re
 import tempfile
 from types import SimpleNamespace
 import unittest
@@ -194,6 +195,101 @@ class MediaReadbackTests(unittest.TestCase):
         return attribution_html({"source":"commons", "author":author, "license":"CC BY 4.0",
                                  "source_url":f"https://commons.wikimedia.org/wiki/File:{filename}.jpg",
                                  "license_url":"https://creativecommons.org/licenses/by/4.0/"})
+
+    def legacy_credit(self, author="Photographer", filename="Original", version="4.0"):
+        # Pin the original deployed format; the provider now renders visible
+        # URLs because WeChat stripped these external anchors in real readback.
+        return ('<p class="image-credit" data-editorial-credit="1">'
+                f'主题配图：{author} / Wikimedia Commons / CC BY {version}；已裁剪与缩放，非报告原图。 '
+                f'<a href="https://commons.wikimedia.org/wiki/File:{filename}.jpg">图片来源</a> · '
+                f'<a href="https://creativecommons.org/licenses/by/{version}/">许可</a></p>')
+
+    def test_visible_attribution_urls_survive_anchor_removal_and_whitespace(self):
+        credit = self.commons_credit("Photographer", "Original")
+        self.assertNotIn('<a ', credit)
+        self.assertIn('图片来源：https://commons.wikimedia.org/wiki/File:Original.jpg', credit)
+        self.assertIn('许可：https://creativecommons.org/licenses/by/4.0/', credit)
+        original_signature = portal.generated_image_credit_signature(self.legacy_credit())
+        self.assertEqual(original_signature, portal.generated_image_credit_signature(credit))
+        linked = re.sub(r'https://[^\s<]+', lambda match: f'<a href="{match.group()}">{match.group()}</a>', credit)
+        stripped = re.sub(r'</?a\b[^>]*>', '', linked).replace(' · ', '\n  ·\t')
+        for returned in (credit, linked, stripped):
+            with self.subTest(returned=returned):
+                self.assertEqual(original_signature, portal.generated_image_credit_signature(returned))
+                expected = dict(article(), content=article()['content'] + credit)
+                actual = dict(expected, content=article()['content'] + returned)
+                self.assertEqual(portal.article_prose_text(expected['content']), portal.article_prose_text(actual['content']))
+                self.assertTrue(portal.wechat_media_contract_check(actual, expected)['matches'])
+
+    def test_real_link_stripped_legacy_shapes_are_prose_only_never_media_accepted(self):
+        credits = [re.sub(r'</?a\b[^>]*>', '', self.legacy_credit(f'Author {index}', f'Photo{index}', version))
+                   for index, version in enumerate(('3.0', '3.0', '2.0'), 1)]
+        local = attribution_html({'source': 'local_editorial'})
+        for rows in (credits, credits[:2] + [local]):
+            with self.subTest(count=len(rows)):
+                actual = dict(article(), content=article()['content'] + ''.join(rows))
+                self.assertEqual(portal.article_prose_text(article()['content']), portal.article_prose_text(actual['content']))
+                self.assertTrue(all(portal.legacy_stripped_commons_credit(row) for row in rows if row != local))
+                for expected in (None, actual, article()):
+                    checks = portal.wechat_media_contract_check(actual, expected)
+                    self.assertFalse(checks['matches'])
+                    self.assertFalse(checks['matches_image_credits'])
+                    self.assertEqual(3 if rows == credits else 2, checks['incomplete_image_credit_count'])
+
+    def test_legacy_prose_exception_rejects_missing_markers_unknown_license_and_extra_text(self):
+        legacy = re.sub(r'</?a\b[^>]*>', '', self.legacy_credit())
+        for malformed in (
+            legacy.replace('data-editorial-credit="1"', ''),
+            legacy.replace('class="image-credit"', ''),
+            legacy.replace('CC BY 4.0', 'CC BY-NC 4.0'),
+            legacy.replace('</p>', ' Important manual note.</p>'),
+            legacy.replace('图片来源 · 许可', '图片来源'),
+            legacy.replace('图片来源', '<span>图片来源</span>'),
+            legacy.replace('</p>', '<!-- extra --></p>'),
+            self.legacy_credit().replace(' href=', ' data-href='),
+        ):
+            with self.subTest(malformed=malformed):
+                self.assertFalse(portal.legacy_stripped_commons_credit(malformed))
+                self.assertIn('主题配图', portal.article_prose_text(malformed))
+                self.assertIsNone(portal.generated_image_credit_signature(malformed))
+        changed_body = article()['content'].replace('不应被图片修复改变', 'changed') + legacy
+        self.assertNotEqual(portal.article_prose_text(article()['content']), portal.article_prose_text(changed_body))
+
+    def test_visible_source_and_license_uri_binding_remains_strict(self):
+        credit = self.commons_credit('Photographer', 'Original')
+        for bad in (
+            credit.replace('https://commons.', 'http://commons.'),
+            credit.replace('commons.wikimedia.org', 'untrusted.invalid'),
+            credit.replace('/wiki/File:', '/wiki/Category:'),
+            credit.replace('File:Original.jpg', 'File:'),
+            credit.replace('Original.jpg', 'Original.jpg?tracking=1'),
+            credit.replace('Original.jpg', 'Original.jpg#fragment'),
+            credit.replace('creativecommons.org', 'untrusted.invalid'),
+            credit.replace('/licenses/by/4.0/', '/licenses/by/3.0/'),
+            credit.replace('CC BY 4.0', 'CC BY-SA 4.0'),
+            credit.replace('图片来源：https', '图片来源：<a href="https://wrong.invalid">https').replace('jpg ·', 'jpg</a> ·'),
+        ):
+            with self.subTest(bad=bad):
+                self.assertIsNone(portal.generated_image_credit_signature(bad))
+                self.assertFalse(portal.legacy_stripped_commons_credit(bad))
+                self.assertIn('主题配图', portal.article_prose_text(bad))
+
+    def test_auto_link_anchor_text_must_equal_its_own_destination(self):
+        credit = self.commons_credit('Photographer', 'Original')
+        source = 'https://commons.wikimedia.org/wiki/File:Original.jpg'
+        license_url = 'https://creativecommons.org/licenses/by/4.0/'
+        # The complete visible text and ordered href list are still correct,
+        # but clicking the source URL would go to the license. Reject it.
+        misleading = credit.replace('图片来源：' + source,
+            f'<a href="{source}">图片来源：</a><a href="{license_url}">{source}</a>')
+        self.assertEqual(portal._generated_image_credit_parts(credit)[0], portal._generated_image_credit_parts(misleading)[0])
+        self.assertIsNone(portal.generated_image_credit_signature(misleading))
+        self.assertFalse(portal.legacy_stripped_commons_credit(misleading))
+        old = self.legacy_credit()
+        misleading_old = old.replace(f'<a href="{source}">图片来源</a>',
+            f'<a href="{source}"></a>图片来源').replace(f'<a href="{license_url}">许可</a>',
+            f'<a href="{license_url}"></a>许可')
+        self.assertIsNone(portal.generated_image_credit_signature(misleading_old))
 
     def test_changed_commons_credit_preserves_group_identity_and_repairs_same_draft(self):
         old = article()
