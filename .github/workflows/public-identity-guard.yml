@@ -63,6 +63,7 @@ jobs:
           python3 -B scripts/test_reportify_api_grab.py
           python3 -B scripts/test_reportify_local_qr.py
           python3 -B scripts/test_portal_worker_emergency_deploy_workflow.py
+          python3 -B scripts/test_sync_portal_worker_schedules.py
           python3 -B scripts/test_portal_smoke_get.py
           for test_file in portal_suite/tests/reportify*.test.mjs; do
             node "$test_file"
