@@ -3,7 +3,6 @@ import copy
 import io
 import json
 import subprocess
-import struct
 from pathlib import Path
 import tempfile
 import unittest
@@ -12,6 +11,7 @@ import zipfile
 
 import fitz
 from test_mineru_figure_sources import Fixture,visual
+from test_mineru_pdf_output_intents import output_intent_fixture
 from test_mineru_result_cache import MemoryR2
 from mineru_task_ledger import Ledger,FileStore,digest,encoded
 from mineru_result_cache import ResultCache
@@ -26,29 +26,6 @@ def pack(root):
         for path in root.rglob('*'):
             if path.is_file(): archive.writestr(path.relative_to(root).as_posix(),path.read_bytes())
     return output.getvalue()
-
-
-def output_intent_fixture(*,pages=2):
-    """Self-created ICC gamma profile; PDFium drops its catalog reference."""
-    from PIL import ImageCms
-    profile=bytearray(ImageCms.ImageCmsProfile(ImageCms.createProfile('sRGB')).tobytes())
-    for index in range(struct.unpack('>I',profile[128:132])[0]):
-        position=132+index*12;tag=profile[position:position+4]
-        offset,_=struct.unpack('>II',profile[position+4:position+12])
-        if tag in (b'rTRC',b'gTRC',b'bTRC'):
-            if profile[offset:offset+4]!=b'para':raise AssertionError('Synthetic ICC parametric TRC expected')
-            profile[offset+12:offset+16]=struct.pack('>i',int(1.5*65536))
-    with fitz.open() as document:
-        for _ in range(pages):
-            page=document.new_page(width=400,height=500)
-            page.insert_text((20,30),'Synthetic color-managed source',fontsize=12)
-            page.draw_rect(fitz.Rect(35,100,185,260),fill=(.3,.5,.7))
-        xref=document.get_new_xref();document.update_object(xref,'<</N 3>>')
-        document.update_stream(xref,bytes(profile),compress=True)
-        document.xref_set_key(document.pdf_catalog(),'OutputIntents',
-            f'[<</Type/OutputIntent/S/GTS_PDFX/DestOutputProfile {xref} 0 R'
-            '/OutputConditionIdentifier(SYNTHETIC_PRIVATE_PROFILE)>>]')
-        return document.tobytes(no_new_id=True)
 
 
 class Provider:

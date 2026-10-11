@@ -346,6 +346,58 @@ print('tls_cache_authority_import_ready')
         shutil.rmtree(fixture.raw)
         self.assertEqual(fixture.validate(), {"images/image-0.jpg": selection["images"][0]})
 
+    def test_missing_output_intents_restores_all_selected_pages_and_v2_replay(self):
+        from test_mineru_pdf_output_intents import output_intent_fixture,pdfium_copy
+        from mineru_pdf_output_intents import POLICY
+        fixture=self.fixture(pages=2,visuals=[visual(0,[35,100,185,260],kind='chart',page_idx=0),
+                                              visual(1,[35,100,185,260],kind='chart',page_idx=1)])
+        original=output_intent_fixture(plain_first=True);embedded=pdfium_copy(original)
+        fixture.original.write_bytes(original);fixture.original_sha=digest(original)
+        (fixture.raw/'source.pdf').write_bytes(embedded)
+        fixture.create();fixture.status();proof=fixture.proof()
+        self.assertEqual(proof['schema'],2)
+        repair=proof['embedded_pdf_render_restoration']
+        self.assertEqual(repair['policy'],POLICY);self.assertEqual(repair['verified_page_indices'],[0,1])
+        self.assertEqual(repair['original_pdf_sha256'],digest(original))
+        self.assertEqual(repair['embedded_pdf_sha256'],digest(embedded))
+        self.assertEqual(fixture.original.read_bytes(),original)
+        self.assertEqual((fixture.raw/'source.pdf').read_bytes(),embedded)
+        self.assertTrue(all(asset['mode']=='authenticated_original_crop' for asset in proof['assets']))
+        import shutil
+        shutil.rmtree(fixture.raw)
+        self.assertEqual(len(fixture.validate()),2)
+
+    def test_color_restoration_never_accepts_changed_provider_body_or_changed_pixels(self):
+        from test_mineru_pdf_output_intents import output_intent_fixture,pdfium_copy,changed
+        import mineru_pdf_output_intents as color
+        original=output_intent_fixture(pages=1);embedded=pdfium_copy(original)
+        fixture=self.fixture();fixture.original.write_bytes(original);fixture.original_sha=digest(original)
+        modified=changed(embedded,lambda doc:doc[0].insert_text((30,80),'ALTERED',fontsize=9))
+        (fixture.raw/'source.pdf').write_bytes(modified)
+        with self.assertRaises(figures.FigureSourceError):fixture.create()
+        self.assertFalse((fixture.report/figures.SIDECAR).exists())
+        fixture=self.fixture();fixture.original.write_bytes(original);fixture.original_sha=digest(original)
+        (fixture.raw/'source.pdf').write_bytes(embedded)
+        real_restore=color.restore_missing_output_intents
+        def bad_restore(*args,**kwargs):
+            restored,proof=real_restore(*args,**kwargs)
+            restored[0].draw_rect((35,100,185,260),fill=(0,1,0))
+            return restored,proof
+        with patch.object(color,'restore_missing_output_intents',side_effect=bad_restore),self.assertRaises(figures.FigureSourceError):
+            fixture.create()
+        self.assertFalse((fixture.report/figures.SIDECAR).exists())
+
+    def test_color_restoration_receipt_cannot_change_policy_or_verified_pages(self):
+        from test_mineru_pdf_output_intents import output_intent_fixture,pdfium_copy
+        original=output_intent_fixture(pages=1);embedded=pdfium_copy(original)
+        for key,value in [('policy','unknown'),('policy','authenticated-ocproperties-restoration-v1'),
+                          ('embedded_pdf_sha256','0'*64),('verified_page_indices',[]),('verified_page_indices',[False])]:
+            with self.subTest(key=key,value=value):
+                fixture=self.fixture();fixture.original.write_bytes(original);fixture.original_sha=digest(original)
+                (fixture.raw/'source.pdf').write_bytes(embedded);fixture.create()
+                fixture.mutate(lambda proof:proof['embedded_pdf_render_restoration'].__setitem__(key,value))
+                with self.assertRaises(figures.FigureSourceError):fixture.validate()
+
     def test_no_auth_preserves_provider_bytes_and_explicit_unproven_identity(self):
         fixture = self.fixture(visuals=[visual(0, [35, 100, 185, 260])])
         original_bytes = (fixture.raw / "images/image-0.jpg").read_bytes()

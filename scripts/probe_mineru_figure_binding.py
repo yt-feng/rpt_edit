@@ -585,51 +585,10 @@ def optional_content_restoration_diagnostics(original,embedded_bytes,authentic,s
 
 
 def _restore_output_intents_diagnostic(original,embedded,budget=lambda:None):
-    """Copy only the admitted catalog color profile into an in-memory copy.
-
-    Diagnostic serialization is not a production repair. The caller compares
-    the complete drawing graph and every selected page before reporting proof.
-    No original/provider file or cache is overwritten.
-    """
-    import io
-    import logging
-    from pypdf import PdfReader,PdfWriter
-    from pypdf.generic import ArrayObject,DictionaryObject,NameObject,StreamObject
-    require(0<len(original)<=16*1024*1024 and 0<len(embedded)<=16*1024*1024,
-            'output_intent_probe_input_bound')
-    logger=logging.getLogger('pypdf')
-    previous=logger.disabled,logger.propagate,logger.handlers[:]
-    logger.disabled,logger.propagate,logger.handlers=True,False,[logging.NullHandler()]
-    try:
-        budget()
-        source=PdfReader(io.BytesIO(original));provider=PdfReader(io.BytesIO(embedded))
-        source_root=source.trailer['/Root'];provider_root=provider.trailer['/Root']
-        require('/OutputIntents' in source_root and not provider_root.get('/OutputIntents'),
-                'output_intent_probe_missing_required')
-        intents=source_root['/OutputIntents']
-        require(isinstance(intents,ArrayObject) and 1<=len(intents)<=8,'output_intent_probe_array_bound')
-        total_profiles=0
-        for item in intents:
-            budget();intent=item.get_object()
-            require(isinstance(intent,DictionaryObject) and set(intent)<={
-                '/Type','/S','/OutputCondition','/OutputConditionIdentifier','/RegistryName','/Info','/DestOutputProfile'},
-                'output_intent_probe_keys')
-            profile=intent.get('/DestOutputProfile')
-            profile=profile.get_object() if profile is not None else None
-            require(isinstance(profile,StreamObject),'output_intent_probe_profile_required')
-            require(set(profile)<={'/N','/Alternate','/Range','/Length','/Filter','/DecodeParms'},
-                    'output_intent_probe_profile_keys')
-            profile_bytes=profile.get_data();total_profiles+=len(profile_bytes)
-            require(128<=len(profile_bytes)<=8*1024*1024 and total_profiles<=16*1024*1024
-                    and profile_bytes[36:40]==b'acsp','output_intent_probe_profile_bound')
-        writer=PdfWriter();writer.clone_document_from_reader(provider)
-        writer._root_object[NameObject('/OutputIntents')]=source_root.raw_get('/OutputIntents').clone(writer)
-        output=io.BytesIO();writer.write(output);restored=output.getvalue()
-        require(0<len(restored)<=32*1024*1024,'output_intent_probe_output_bound')
-        budget()
-        return restored
-    finally:
-        logger.disabled,logger.propagate,logger.handlers=previous
+    """Use the production catalog copy without granting production acceptance."""
+    from mineru_pdf_output_intents import copy_output_intents
+    restored,_=copy_output_intents(original,embedded,budget)
+    return restored
 
 
 def output_intent_restoration_diagnostics(original,embedded_bytes,authentic,supplied,metadata,decisions,used_pages,budget=lambda:None):
@@ -637,6 +596,7 @@ def output_intent_restoration_diagnostics(original,embedded_bytes,authentic,supp
     import fitz
     import mineru_figure_sources as figures
     from mineru_pdf_graph import bind_pdf_render_graph,PdfGraphError
+    from mineru_pdf_output_intents import OutputIntentError
     result={'diagnostic_only':True,'production_acceptance':False,'complete_source_handoff':False,
         'selected_page_count':len(used_pages),'checked_page_count':0,'all_selected_pages_equal':False,'pages':[]}
     if (authentic.xref_get_key(authentic.pdf_catalog(),'OutputIntents')[0]=='null'
@@ -684,7 +644,7 @@ def output_intent_restoration_diagnostics(original,embedded_bytes,authentic,supp
             result.update(status='verified' if result['graph_binding_status']=='verified' else
                           'pixels_verified_graph_rejected',all_selected_pages_equal=True)
     except Exception as error:
-        result.update(status='rejected',category=str(error) if isinstance(error,(PdfGraphError,ProbeError)) else type(error).__name__)
+        result.update(status='rejected',category=str(error) if isinstance(error,(PdfGraphError,ProbeError,OutputIntentError)) else type(error).__name__)
         path=getattr(error,'path_sha256',None)
         if isinstance(path,str) and re.fullmatch(r'[0-9a-f]{64}',path):result['path_sha256']=path
         details=getattr(error,'sanitized_details',None)

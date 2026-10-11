@@ -125,15 +125,36 @@ Optional-content restoration was not applicable. Source PDF SHA-256:
 Provider embedded PDF SHA-256:
 `1fcd2966e9fab237dcf9082aaeba51eb773de39fbc08aff6f879e94fb73e574b`.
 
-The follow-up diagnostic copies only the authenticated original catalog's
-`OutputIntents` into an in-memory provider copy, then checks the drawing graph
-and exact 300-dpi RGB pixels on every selected page. The original and cached
-provider bytes are not modified. A graph rejection remains separately visible
-even if pixels agree; neither diagnostic result is production acceptance.
-Self-created ICC gamma fixtures exercise actual PDFium color-profile loss and
-strict two-page restoration, while altered provider content remains rejected.
-Real-source restoration across all six selected pages is pending; the production
-source/pixel guard is unchanged.
+Follow-up probe `38120439688` completed successfully: restoring only the
+authenticated original catalog's `OutputIntents` into an in-memory provider
+copy passed the full 20-page drawing graph (158 objects and 80 streams). All six
+selected pages, zero-based indices `0, 6, 7, 8, 9, 10`, had equal geometry and
+exactly equal 300-dpi RGB pixels: zero changed pixels and zero channel delta.
+Graph receipt SHA-256:
+`8bde1232509aad4318f4da2e59c03410a96ca8abffb26518b4fba6655615a7f1`.
+The original and cached provider bytes were not modified. The historical report
+is diagnostic evidence, not evidence that it should be published as a new report.
+
+`mineru_pdf_output_intents.py` uses this same catalog-copy operation for source
+figure recovery. It requires both admitted PDF hashes, a missing provider color
+configuration, and a complete original-to-restored drawing graph including the
+ICC stream. Existing provider configurations and combined optional-content
+configurations are not overwritten. `mineru_figure_sources.py` then checks exact
+geometry and RGB equality for every selected page, including previously carried
+pages if restoration first becomes necessary later in the report. Published
+figures remain lossless crops of the authenticated original. Neither PDF nor its
+result cache is replaced by the temporary restored document.
+
+The v2 figure receipt admits only the existing optional-content policy or the
+explicit `authenticated-outputintents-restoration-v1` policy, with bound original,
+provider, restored-document and profile hashes, the drawing-graph receipt and
+the complete verified-page list. Unknown policies or altered source/page fields
+reject. Self-created ICC fixtures exercise actual PDFium profile loss, later-page
+restoration, strict source-crop replay and rejection of changed text, drawings,
+resources, pixels, existing profiles and tampered receipts. The diagnostic still
+reports a graph rejection separately even if pixels agree; this cannot grant
+production acceptance. Full five-report generation and WeChat delivery remain
+separate acceptance steps from this six-page diagnostic result.
 
 ## BCG discovery evidence boundaries
 

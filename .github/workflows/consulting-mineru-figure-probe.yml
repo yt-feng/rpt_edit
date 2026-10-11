@@ -7,6 +7,10 @@ on:
       - scripts/test_probe_consulting_mineru_figure_binding.py
       - scripts/probe_mineru_figure_binding.py
       - scripts/test_probe_mineru_figure_binding.py
+      - scripts/mineru_pdf_output_intents.py
+      - scripts/test_mineru_pdf_output_intents.py
+      - scripts/mineru_figure_sources.py
+      - scripts/test_mineru_figure_sources.py
       - scripts/mineru_result_cache.py
   workflow_dispatch:
     inputs:
@@ -43,6 +47,8 @@ jobs:
       - run: python3 -m pip install --retries 0 requests Pillow PyMuPDF pypdf==6.19.0 pypdfium2==5.13.0
       - run: python3 -B scripts/test_probe_consulting_mineru_figure_binding.py
       - run: python3 -B scripts/test_probe_mineru_figure_binding.py
+      - run: python3 -B scripts/test_mineru_pdf_output_intents.py
+      - run: python3 -B scripts/test_mineru_figure_sources.py
       - run: python3 -B scripts/test_mineru_result_cache.py
   probe:
     if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
