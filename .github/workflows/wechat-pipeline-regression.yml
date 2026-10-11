@@ -218,6 +218,8 @@ jobs:
           python scripts/test_wechat_media_contract.py
           python scripts/test_wechat_editorial_images.py
           python scripts/test_repair_wechat_draft_images.py
+          python scripts/test_restore_wechat_image_repair_receipts.py
+          python scripts/test_validate_wechat_image_receipt_source.py
           python scripts/test_delete_wechat_drafts.py
           python scripts/test_xhs_draft_streaming.py
           python scripts/test_download_dropbox_latest_pdfs.py
