@@ -2,8 +2,11 @@
 import io
 import gzip
 import json
+import re
+import subprocess
 import tarfile
 import tempfile
+import textwrap
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -360,6 +363,20 @@ class ArchiveTests(unittest.TestCase):
         result = subject.publish_run(self.client, "bucket", "123", [])
         self.assertEqual(result, {"handoffs": 2, "unique_reports": 1, "report_publications": 2, "artifact_publications": 4})
 
+    def test_only_exact_recovered_article_handoff_is_consumed(self):
+        raw = tar_bytes([("report/wechat_article.md", b"# Synthetic article\nText.")])
+        root = "_private-workflow-handoff/xhs-recovery/123/261012/" + "a" * 64
+        self.key = root + "/articles/shard_0.tar.gz"
+        self.seed(raw)
+        for key in (root + "/generation.tar.gz", root + "/wechat-receipts.tar.gz",
+                    root + "/shard_0.tar.gz", root + "/articles/shard_1.tar.gz",
+                    self.key.replace("xhs-recovery", "xhs"), self.key.replace("xhs-recovery", "mineru-market-sources")):
+            self.client.put_object(Bucket="bucket", Key=key, Body=b"must never be read")
+        result = subject.publish_run(self.client, "bucket", "123", [])
+        self.assertEqual(result["handoffs"], 1)
+        handoff_reads = [key for key in self.client.reads if key.startswith("_private-workflow-handoff/")]
+        self.assertEqual(handoff_reads, [self.key])
+
     def test_current_catalog_validation_rejects_empty_or_invalid_id_inventory(self):
         path = self.root / "catalog.json"
         for value in ({}, {"items": []}, {"items": [{"id": "../private"}]}, {"items": [{"id": "a" * 24}] * 2}):
@@ -378,6 +395,56 @@ class ArchiveTests(unittest.TestCase):
         self.assertIn('--catalog "$RUNNER_TEMP/customer-current-catalog.json"', workflow)
         self.assertIn("load_catalog(Path(sys.argv[1]))", workflow)
         self.assertLess(workflow.index("Fetch and validate current public report catalog"), workflow.index("R2_SECRET_ACCESS_KEY:"))
+        self.assertIn("  workflow_call:", workflow)
+        self.assertNotIn("  workflow_run:", workflow)
+        self.assertIn("ref: ${{ github.sha }}", workflow)
+
+    def test_actual_workflow_identity_guard_accepts_only_current_daily_or_completed_source(self):
+        workflow = (Path(__file__).resolve().parents[1] / ".github/workflows/customer-content-publish.yml").read_text()
+        script = textwrap.dedent(workflow.split("          script: |\n", 1)[1].split("\n      - name:", 1)[0])
+        program = r'''
+const assert = require('node:assert/strict');
+const AsyncFunction = Object.getPrototypeOf(async function(){}).constructor;
+const guard = new AsyncFunction('github', 'context', 'process', SCRIPT);
+const good = {id:123, path:'.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml', head_branch:'main',
+ head_repository:{full_name:'owner/repo'}, status:'in_progress', head_sha:'reviewed'};
+const daily = {runId:123, workflow:'Daily report articles and translations', sha:'reviewed', repo:{owner:'owner',repo:'repo'}};
+async function accepted(run, context) {
+ try { await guard({rest:{actions:{getWorkflowRun:async()=>({data:run})}}}, context, {env:{SOURCE_RUN_ID:'123'}}); return true; }
+ catch { return false; }
+}
+(async()=>{
+ assert.equal(await accepted(good,daily),true);
+ // A reusable workflow sees its caller's schedule/dispatch event; this guard never depends on event_name.
+ const manual = {...daily,runId:999,workflow:'Publish customer API content'};
+ assert.equal(await accepted(good,manual),false);
+ assert.equal(await accepted({...good,status:'completed'},manual),true);
+ for (const change of [{path:'.github/workflows/other.yml'},{head_branch:'feature'},
+   {head_repository:{full_name:'foreign/repo'}},{id:456},{head_sha:'changed'},{status:'queued'}])
+   assert.equal(await accepted({...good,...change},daily),false);
+ assert.equal(await accepted(good,{...daily,workflow:'Another workflow'}),false);
+})().catch(()=>{process.exitCode=1});
+'''.replace("SCRIPT", json.dumps(script))
+        result = subprocess.run(["node", "-e", program], capture_output=True, text=True, timeout=15)
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_daily_consumer_finishes_before_cleanup_without_blocking_existing_delivery(self):
+        path = Path(__file__).resolve().parents[1] / ".github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml"
+        jobs = dict(re.findall(r"(?ms)^  ([\w-]+):\n(.*?)(?=^  [\w-]+:\n|\Z)", path.read_text()))
+        publisher = jobs["publish-customer-content"]
+        self.assertIn("needs: [select-macro-reports, validate-report-delivery]", publisher)
+        self.assertIn("needs.validate-report-delivery.result == 'success'", publisher)
+        self.assertIn("contents: read", publisher)
+        self.assertIn("actions: read", publisher)
+        self.assertIn("uses: ./.github/workflows/customer-content-publish.yml", publisher)
+        self.assertIn("format('{0}', github.run_id)", publisher)
+        for name in ("cleanup-private-handoff", "cleanup-market-source-recovery"):
+            self.assertIn("publish-customer-content", jobs[name].split("    if:", 1)[0])
+            self.assertIn("needs.publish-customer-content.result == 'success'", jobs[name])
+        for name, block in jobs.items():
+            if name not in {"publish-customer-content", "cleanup-private-handoff", "cleanup-market-source-recovery", "notify-failure"}:
+                self.assertNotIn("publish-customer-content", block, name)
+        self.assertIn("customer_content=${{ needs.publish-customer-content.result }}", jobs["notify-failure"])
 
 
 if __name__ == "__main__":

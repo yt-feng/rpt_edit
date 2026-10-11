@@ -640,7 +640,10 @@ def publish_run(client: Any, bucket: str, run_id: str, catalog: list[dict], date
             raise ValueError("source_run_inventory_too_large")
         for row in response.get("Contents", []):
             key = row["Key"]
-            match = re.fullmatch(re.escape(prefix) + r"(\d{6})(?:/[a-f0-9]{64})?/(?:shard_\d+|translated_\d+)\.tar\.gz", key)
+            suffix = (r"(\d{6})/[a-f0-9]{64}/articles/shard_0\.tar\.gz" if family == "xhs-recovery"
+                      else r"(\d{6})/(?:shard_\d+|translated_\d+)\.tar\.gz" if family == "xhs"
+                      else r"(\d{6})/shard_0\.tar\.gz")
+            match = re.fullmatch(re.escape(prefix) + suffix, key)
             if match and (not date_filter or date_iso(match[1]) == date_filter):
                 if type(row.get("Size")) is not int or not 0 < row["Size"] <= MAX_COMPRESSED:
                     raise ValueError("handoff_too_large")

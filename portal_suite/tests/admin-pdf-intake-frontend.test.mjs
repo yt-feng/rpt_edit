@@ -6,7 +6,10 @@ import vm from "node:vm";
 
 const appUrl = new URL("../site_src/assets/app.js", import.meta.url);
 const stylesUrl = new URL("../site_src/assets/styles.css", import.meta.url);
-const [app, styles] = await Promise.all([readFile(appUrl, "utf8"), readFile(stylesUrl, "utf8")]);
+const [app, styles, accountServices] = await Promise.all([
+  readFile(appUrl, "utf8"), readFile(stylesUrl, "utf8"),
+  readFile(new URL("../site_src/assets/account-services.js", import.meta.url), "utf8"),
+]);
 
 function extractFunction(source, name) {
   const marker = `function ${name}(`;
@@ -16,32 +19,13 @@ function extractFunction(source, name) {
     ? markerIndex - 6
     : markerIndex;
   const bodyStart = source.indexOf("{", source.indexOf(")", markerIndex));
-  let depth = 0;
-  let quote = "";
-  let escaped = false;
+  // Let the JavaScript parser distinguish braces in code, strings, templates,
+  // and regexes (escapeHtml includes a quote inside a regex literal).
   for (let index = bodyStart; index < source.length; index += 1) {
-    const char = source[index];
-    if (escaped) {
-      escaped = false;
-      continue;
-    }
-    if (quote && char === "\\") {
-      escaped = true;
-      continue;
-    }
-    if (quote) {
-      if (char === quote) quote = "";
-      continue;
-    }
-    if (["'", '"', "`"].includes(char)) {
-      quote = char;
-      continue;
-    }
-    if (char === "{") depth += 1;
-    else if (char === "}") {
-      depth -= 1;
-      if (depth === 0) return source.slice(start, index + 1);
-    }
+    if (source[index] !== "}") continue;
+    const candidate = source.slice(start, index + 1);
+    try { new vm.Script(`(${candidate})`); return candidate; }
+    catch (error) { if (!(error instanceof SyntaxError)) throw error; }
   }
   throw new Error(`${name} body is incomplete`);
 }
@@ -430,6 +414,7 @@ test("contact request token survives search link, new page parsing, detail fetch
 });
 
 function fakeElement(id = "") {
+  const listeners = new Map();
   const element = {
     id,
     dataset: {},
@@ -442,11 +427,21 @@ function fakeElement(id = "") {
     tabIndex: 0,
     validity: { valid: true },
     style: {},
-    addEventListener() {},
+    addEventListener(type, listener) {
+      listeners.set(type, [...(listeners.get(type) || []), listener]);
+    },
+    removeEventListener(type, listener) {
+      listeners.set(type, (listeners.get(type) || []).filter((value) => value !== listener));
+    },
+    emit(type, event = {}) {
+      for (const listener of [...(listeners.get(type) || [])]) listener({ target: element, preventDefault() {}, ...event });
+    },
+    listenerCount(type) { return (listeners.get(type) || []).length; },
     insertBefore() {},
     setAttribute() {},
     remove() {},
     focus() {},
+    scrollIntoView() {},
     querySelector() { return fakeElement(`${id}-child`); },
     querySelectorAll() { return []; },
     closest() { return null; },
@@ -469,11 +464,25 @@ test("account popup and Twotigers admin initialize in their own runtime scopes",
     return tab;
   });
   get("accountAdminModal").querySelectorAll = (selector) => selector === "[data-admin-intake-mode]" ? tabs : [];
-  const document = {
+  const scripts = [];
+  for (const id of ["accountModal", "accountAdminModal"]) {
+    get(id).querySelector = (selector) => selector.startsWith("#") ? get(selector.slice(1)) : null;
+  }
+  const document = Object.assign(fakeElement("document"), {
     body: { insertAdjacentHTML() {} },
+    head: { append(script) { scripts.push(script); } },
+    createElement: (tag) => fakeElement(tag),
     getElementById: get,
-    addEventListener() {},
-  };
+  });
+  function runtime(sandbox, initializer) {
+    const context = vm.createContext(sandbox);
+    vm.runInContext([
+      "let accountServicesLoad = null;",
+      ...["loadAccountServices", "initLazyAccountServices", "authHeaders", "escapeHtml", "isAdminASession", initializer]
+        .map((name) => extractFunction(app, name)),
+    ].join("\n"), context);
+    return context;
+  }
   const common = {
     page: "index",
     trackEvent() {},
@@ -485,14 +494,31 @@ test("account popup and Twotigers admin initialize in their own runtime scopes",
     loadAccountCaptcha() { return Promise.resolve("captcha"); },
     localizedContactText(value) { return String(value || ""); },
   };
-  const showAccount = vm.runInNewContext(`(${extractFunction(app, "showAccountModal")})`, common);
-  await assert.doesNotReject(showAccount("/api"));
+  const accountRuntime = runtime(common, "showAccountModal");
+  await assert.doesNotReject(accountRuntime.showAccountModal("/api"));
+  assert.equal(scripts.length, 0, "guest popup must not request the account services module");
+  assert.equal(typeof get("accountModal").__portalCleanup, "function");
+  get("accountClose").emit("click");
 
+  const requests = [];
   const adminSandbox = {
     document,
     Map,
     Promise,
+    AbortController,
+    setTimeout,
     clearTimeout,
+    window: { setTimeout, clearTimeout, crypto: webcrypto },
+    async fetch(url, options) {
+      requests.push({ url, options });
+      const fixtures = {
+        "/api/account-admin/ai-research-credits?email=reader%40example.invalid": { ok: true, credits: { balance: 7, total_granted: 7, total_consumed: 0 } },
+        "/api/admin/content-api/grant?email=reader%40example.invalid": { ok: true, grant: { enabled: false, access_mode: "membership", report_ids: [], scopes: ["reports:read"], expires_at: null } },
+        "/api/account-admin/expiry-reminders?email=reader%40example.invalid": { ok: true, preferences: { enabled: false }, reminder: {}, preview: null },
+      };
+      assert.ok(Object.hasOwn(fixtures, url), `unexpected offline request: ${url}`);
+      return new Response(JSON.stringify(fixtures[url]), { status: 200 });
+    },
     accountAdminLastSummaryOwner: "",
     accountAdminLastSummary: null,
     accountAdminRefreshTimer: null,
@@ -501,7 +527,7 @@ test("account popup and Twotigers admin initialize in their own runtime scopes",
     accountAdminMarketViews: new Map(),
     accountAdminDailyPicks: new Map(),
     canOpenOperationsPanel() { return true; },
-    loadAuthSession() { return { user: { email: "admin@example.com" } }; },
+    loadAuthSession() { return { token: "synthetic-admin-session", user: { email: "admin@example.invalid", role: "super" } }; },
     isOperatorSession() { return false; },
     isSuperSession() { return true; },
     accountAdminModalMarkup() { return ""; },
@@ -515,9 +541,34 @@ test("account popup and Twotigers admin initialize in their own runtime scopes",
     renderAdminUsersVerificationState() {},
     loadFreshAdminUsers() { return Promise.resolve({ users: [] }); },
   };
-  const showAdmin = vm.runInNewContext(`(${extractFunction(app, "showAccountAdminModal")})`, adminSandbox);
-  assert.doesNotThrow(() => showAdmin("/api"));
+  const adminRuntime = runtime(adminSandbox, "showAccountAdminModal");
+  assert.doesNotThrow(() => adminRuntime.showAccountAdminModal("/api"));
   await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(scripts.length, 0, "opening the management popup must keep account tools lazy");
+  assert.equal(typeof get("accountAdminModal").__researchAccessControls.close, "function");
+
+  const trigger = fakeElement("research-user");
+  trigger.dataset.email = "reader@example.invalid";
+  trigger.closest = (selector) => selector === ".account-admin-research-user" ? trigger : null;
+  get("accountAdminModal").emit("click", { target: trigger });
+  assert.equal(scripts.length, 1);
+  assert.match(scripts[0].src, /^\/assets\/account-services\.js\?/u);
+  // Execute the actual lazy module in the same runtime, as a script load does.
+  vm.runInContext(accountServices, adminRuntime, { filename: "account-services.js" });
+  scripts[0].onload();
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.deepEqual(requests.map(({ url }) => url).sort(), [
+    "/api/account-admin/ai-research-credits?email=reader%40example.invalid",
+    "/api/account-admin/expiry-reminders?email=reader%40example.invalid",
+    "/api/admin/content-api/grant?email=reader%40example.invalid",
+  ].sort());
+  assert.ok(requests.every(({ options }) => options.headers.Authorization === "Bearer synthetic-admin-session"));
+  assert.match(get("accountAdminAiCreditBalance").textContent, /当前额外可用 7 次/u);
+  assert.match(get("accountAdminApiGrantStatus").textContent, /API 权限已更新/u);
+  assert.match(get("accountAdminReminderStatus").textContent, /未发送邮件/u);
+  assert.equal(document.listenerCount("portal-auth-change"), 1);
+  get("accountAdminClose").emit("click");
+  assert.equal(document.listenerCount("portal-auth-change"), 0, "closing management must clean up actual account tools");
 });
 
 test("unified intake and contact availability UI cover every supported source without exposing a naked PDF link", () => {

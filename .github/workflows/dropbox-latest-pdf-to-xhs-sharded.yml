@@ -1716,11 +1716,25 @@ jobs:
           echo "::notice::Waiting for chart-index run $CHART_RUN_ID."
           gh run watch "$CHART_RUN_ID" --repo "$GITHUB_REPOSITORY" --compact --exit-status --interval 15
 
+  publish-customer-content:
+    # Consume completed report outputs before either transient source cleanup.
+    # Existing report delivery does not depend on this additional consumer.
+    needs: [select-macro-reports, validate-report-delivery]
+    if: ${{ !cancelled() && github.ref == 'refs/heads/main' && needs.validate-report-delivery.result == 'success' && needs.select-macro-reports.outputs.selected_count != '0' }}
+    permissions:
+      contents: read
+      actions: read
+    uses: ./.github/workflows/customer-content-publish.yml
+    with:
+      source_run_id: ${{ format('{0}', github.run_id) }}
+      date: ${{ needs.select-macro-reports.outputs.latest_folder }}
+    secrets: inherit
+
   cleanup-market-source-recovery:
     # Keep the source checkpoint until both PDF and configured article consumers
     # finish. The independent source-bound article checkpoint remains durable.
-    needs: [select-macro-reports, recover-market-sources, trigger-market-views, validate-report-delivery]
-    if: ${{ always() && !cancelled() && needs.recover-market-sources.result == 'success' && needs.trigger-market-views.result == 'success' && needs.validate-report-delivery.result == 'success' }}
+    needs: [select-macro-reports, recover-market-sources, trigger-market-views, validate-report-delivery, publish-customer-content]
+    if: ${{ always() && !cancelled() && needs.recover-market-sources.result == 'success' && needs.trigger-market-views.result == 'success' && needs.validate-report-delivery.result == 'success' && needs.publish-customer-content.result == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -1765,11 +1779,13 @@ jobs:
       - translate-report-shard
       - build-portal-translated-reports
       - push-portal-translated-wechat-drafts
+      - publish-customer-content
     if: >-
       ${{
         always() && !cancelled() &&
         needs.package-publish-ready.result == 'success' &&
         needs.trigger-market-views.result == 'success' &&
+        needs.publish-customer-content.result == 'success' &&
         !contains(needs.*.result, 'cancelled') &&
         !contains(needs.*.result, 'failure')
       }}
@@ -1816,6 +1832,7 @@ jobs:
       - push-portal-translated-wechat-drafts
       - cleanup-private-handoff
       - cleanup-market-source-recovery
+      - publish-customer-content
     if: ${{ always() && (contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')) }}
     uses: ./.github/workflows/portal-ops-alert.yml
     with:
@@ -1838,5 +1855,6 @@ jobs:
         translation_shards=${{ needs.translate-report-shard.result }},
         translated=${{ needs.build-portal-translated-reports.result }},
         translated_wechat=${{ needs.push-portal-translated-wechat-drafts.result }},
+        customer_content=${{ needs.publish-customer-content.result }},
         handoff_cleanup=${{ needs.cleanup-private-handoff.result }}
     secrets: inherit

@@ -864,7 +864,7 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
     def test_recovery_archive_waits_for_pdf_and_article_consumers(self):
         cleanup = job(UPSTREAM, "cleanup-market-source-recovery")
         complete = {"recover-market-sources": "success", "trigger-market-views": "success",
-                    "validate-report-delivery": "success"}
+                    "validate-report-delivery": "success", "publish-customer-content": "success"}
         self.assertTrue(gate(cleanup, complete))
         for name in complete:
             for outcome in ("failure", "cancelled", "skipped"):
@@ -1093,7 +1093,7 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         results = {name: "success" for name in (
             "package-publish-ready", "trigger-market-views", "trigger-chart-search-index",
             "push-xhs-notes-wechat-drafts", "build-portal-translated-reports",
-            "push-portal-translated-wechat-drafts",
+            "push-portal-translated-wechat-drafts", "publish-customer-content",
         )}
         self.assertTrue(gate(cleanup, results))
         for name in results:
@@ -1101,6 +1101,7 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
                 with self.subTest(name=name, status=status):
                     self.assertFalse(gate(cleanup, {**results, name: status}))
         self.assertFalse(gate(cleanup, {**results, "trigger-market-views": "skipped"}))
+        self.assertFalse(gate(cleanup, {**results, "publish-customer-content": "skipped"}))
         for name in ("push-xhs-notes-wechat-drafts", "build-portal-translated-reports", "push-portal-translated-wechat-drafts"):
             results[name] = "skipped"
         self.assertTrue(gate(cleanup, results))

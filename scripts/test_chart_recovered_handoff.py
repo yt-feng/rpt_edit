@@ -52,7 +52,8 @@ class RecoveredChartTests(unittest.TestCase):
 
     def test_daily_dispatch_inputs_pass_actual_chart_source_validation(self):
         daily = DAILY_WORKFLOW.read_text()
-        step = daily.split('      - name: Dispatch daily incremental chart index\n', 1)[1].split('\n  cleanup-market-source-recovery:', 1)[0]
+        step = re.split(r'(?m)^  [\w-]+:[ \t]*$',
+                        daily.split('      - name: Dispatch daily incremental chart index\n', 1)[1], maxsplit=1)[0]
         dispatch_program = textwrap.dedent(step.split('        run: |\n', 1)[1])
         count_variable = re.search(r'^\s+(\w+): \$\{\{ needs\.select-macro-reports\.outputs\.selected_count \}\}$',
                                    step, flags=re.MULTILINE).group(1)

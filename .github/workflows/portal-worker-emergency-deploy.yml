@@ -30,6 +30,7 @@ jobs:
           sparse-checkout: |
             .github/workflows/public-identity-guard.yml
             .github/workflows/customer-content-publish.yml
+            .github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml
             .gitignore
             .github/workflows/portal-worker-emergency-deploy.yml
             .github/workflows/reportify-grab.yml
@@ -499,7 +500,8 @@ jobs:
           fi
           python3 -m json.tool "$RUNNER_TEMP/api-locale-invalid.json" >/dev/null
 
-          for endpoint in rewards course/access; do
+          for endpoint in rewards course/access \
+            account/ai-research-credits account/content-api account/expiry-reminders content/v1/reports; do
             code="$(curl --silent --show-error --max-time 20 \
               --output "$RUNNER_TEMP/api-anonymous.json" \
               --write-out '%{http_code}' "$origin/api/$endpoint")"
@@ -537,6 +539,9 @@ jobs:
 
           for endpoint in \
             'account-admin/report-requests' \
+            'account-admin/ai-research-credits' \
+            'account-admin/expiry-reminders' \
+            'admin/content-api/grant' \
             'account-admin/upload-status?upload_id=00000000-0000-4000-8000-000000000000'
           do
             code="$(curl --silent --show-error --max-time 20 \
