@@ -117,6 +117,9 @@
     if (tier === "public_cache" || tier === "popular_cache") {
       return "热门问题 · 历史精选结果，不计使用次数。";
     }
+    if (usage.debit_source === "credits" && Number.isFinite(usage.extra_credits_remaining)) {
+      return `已使用额外研究次数，额外剩余 ${Math.max(0, Math.floor(usage.extra_credits_remaining))} 次。`;
+    }
     const tierLabels = {
       anonymous: "游客",
       visitor: "游客",

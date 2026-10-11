@@ -1279,6 +1279,39 @@
               </div>
               <button class="secondary-button" id="accountPasswordSubmit" type="submit">修改密码</button>
             </form>
+            <section class="account-ai-credits" aria-labelledby="accountAiCreditsTitle">
+              <strong id="accountAiCreditsTitle">AI 研究次数</strong>
+              <p id="accountAiCreditsSummary" class="account-tool-note"></p>
+              <button class="secondary-button" id="accountAiCreditsRefresh" type="button">刷新次数</button>
+              <div id="accountAiCreditsStatus" class="status-line" role="status" aria-live="polite"></div>
+            </section>
+            <details class="account-api-panel" id="accountApiPanel">
+              <summary>开发者 API <span>管理自己的访问密钥</span></summary>
+              <p>管理员开通 API 权限后，可在这里生成密钥。<a href="/developer-api.html" target="_blank" rel="noopener">阅读 API 文档 ↗</a></p>
+              <div id="accountApiGrant" class="account-tool-note"></div>
+              <button class="secondary-button" id="accountApiRefresh" type="button">刷新权限与密钥</button>
+              <form id="accountApiCreate" class="account-tool-form">
+                <label>密钥名称<input id="accountApiKeyName" type="text" maxlength="80" autocomplete="off" placeholder="例如：我的研究脚本" required></label>
+                <button class="secondary-button" id="accountApiCreateButton" type="submit" disabled>生成 API 密钥</button>
+              </form>
+              <div id="accountApiSecretPanel" class="account-api-secret" hidden>
+                <strong>请现在保存：完整密钥仅显示这一次。</strong>
+                <p>关闭此面板、刷新或退出账号后不再显示。请保存在你的服务端环境变量中。</p>
+                <code id="accountApiSecret"></code>
+                <div class="account-modal-actions"><button class="secondary-button" id="accountApiCopy" type="button">复制密钥</button><button class="secondary-button" id="accountApiDismiss" type="button">已保存，隐藏密钥</button></div>
+              </div>
+              <div id="accountApiKeys" class="account-api-keys"></div>
+              <div id="accountApiStatus" class="status-line" role="status" aria-live="polite"></div>
+            </details>
+            <details class="account-api-panel" id="accountReminderPanel">
+              <summary>到期邮件提醒 <span>会员与试用权益</span></summary>
+              <p>管理自己的到期提醒偏好；不会修改当前会员权益。</p>
+              <label class="account-reminder-choice"><input id="accountReminderEnabled" type="checkbox" disabled>接收会员或试用权益的到期提醒邮件</label>
+              <p id="accountReminderSummary" class="account-tool-note"></p>
+              <details class="account-reminder-preview"><summary>查看提醒内容预览</summary><strong id="accountReminderSubject"></strong><pre id="accountReminderText"></pre></details>
+              <button class="secondary-button" id="accountReminderRefresh" type="button">刷新提醒状态</button>
+              <div id="accountReminderStatus" class="status-line" role="status" aria-live="polite"></div>
+            </details>
             <section class="account-rewards" id="accountRewards" hidden>
               <div class="account-daily-goal"><span>今日小目标</span><strong id="accountRewardGoal">签到后，选择一个问题或读一份报告。</strong><a href="${journeyPageUrl("research.html")}" data-research-entry="account_goal">开始今天的研究 →</a></div>
               <div class="account-rewards-heading">
@@ -1389,6 +1422,66 @@
     }
   }
 
+  let accountServicesLoad = null;
+  function loadAccountServices() {
+    if (window.PortalAccountServices) return Promise.resolve(window.PortalAccountServices);
+    if (accountServicesLoad) return accountServicesLoad;
+    accountServicesLoad = new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = "/assets/account-services.js?v=account-services-20261012";
+      script.async = true;
+      let settled = false;
+      const timer = window.setTimeout(() => failed(), 20000);
+      function failed() {
+        if (settled) return;
+        settled = true;
+        window.clearTimeout(timer); script.remove(); accountServicesLoad = null;
+        reject(new Error("账号工具暂时未加载成功，请关闭账号面板后重试。"));
+      }
+      script.onload = () => {
+        if (settled) return;
+        window.clearTimeout(timer);
+        if (window.PortalAccountServices) { settled = true; resolve(window.PortalAccountServices); }
+        else failed();
+      };
+      script.onerror = failed;
+      document.head.append(script);
+    });
+    return accountServicesLoad;
+  }
+
+  function initLazyAccountServices(workerUrl, modal, admin = false) {
+    let closed = false, loading = false, controls = null, visible = false, pendingTrigger = null;
+    async function activate(trigger = null) {
+      if (trigger) pendingTrigger = trigger;
+      if (closed || controls || loading) return;
+      loading = true;
+      const status = modal.querySelector(admin ? "#accountAdminStatus" : "#accountAiCreditsStatus");
+      if (status) { status.textContent = "正在加载账号工具…"; status.className = "status-line"; }
+      try {
+        const create = await loadAccountServices();
+        if (closed || modal.isConnected === false || (!admin && !visible)) return;
+        const services = create({ loadAuthSession, authHeaders, escapeHtml, isAdminASession });
+        controls = admin ? services.initAdminResearchAccessControls(workerUrl, modal) : {
+          children: [services.initAccountApiControls(workerUrl, modal), services.initAccountReminderControls(workerUrl, modal), services.initAccountCreditControls(workerUrl, modal)],
+          close() { this.children.forEach((child) => child.close()); },
+        };
+        if (admin && pendingTrigger) controls.open(pendingTrigger);
+        if (admin && status) status.textContent = "账号工具已加载。";
+      } catch (error) { if (!closed && status) { status.textContent = error.message; status.className = "status-line error"; } }
+      finally { loading = false; }
+    }
+    function onClick(event) {
+      const trigger = event.target.closest(".account-admin-research-user");
+      if (admin && trigger && isAdminASession()) activate(trigger);
+    }
+    if (admin) modal.addEventListener("click", onClick);
+    return {
+      refresh(show) { visible = show; if (!admin && show) activate(); },
+      close() { closed = true; controls?.close(); if (admin) modal.removeEventListener("click", onClick); },
+    };
+  }
+
   async function showAccountModal(workerUrl, context = {}) {
     if (!workerUrl) {
       window.alert("Account service is temporarily unavailable.");
@@ -1401,6 +1494,7 @@
     document.body.insertAdjacentHTML("beforeend", accountModalMarkup(context));
 
     const modal = document.getElementById("accountModal");
+    const accountServices = initLazyAccountServices(workerUrl, modal);
     const close = document.getElementById("accountClose");
     const form = document.getElementById("accountAuthForm");
     const summary = document.getElementById("accountSummary");
@@ -1672,6 +1766,7 @@
     }
 
     function disposeAccountModal() {
+      accountServices.close();
       if (membershipRequestStarted && !membershipRequestCompleted && !membershipRequestActive && !membershipRequestAbandoned) {
         membershipRequestAbandoned = true;
         trackMembershipRequest("form_abandon", { status: "abandoned" });
@@ -1898,6 +1993,7 @@
       }
       updateMembershipEmailState(session);
       updateRequestView();
+      accountServices.refresh(signedIn && !requestView);
       if (requestView) {
         revokeContactQr();
         return;
@@ -3327,6 +3423,38 @@
                 <button class="primary" type="submit">保存权限</button>
               </div>
             </form>
+            <section id="accountAdminResearchAccess" class="account-admin-user-editor account-research-access" hidden aria-labelledby="accountAdminResearchTitle">
+              <div class="account-admin-user-editor-head"><strong id="accountAdminResearchTitle" tabindex="-1">AI 研究与 API 权限</strong><button class="secondary-button" id="accountAdminResearchClose" type="button">关闭</button></div>
+              <p id="accountAdminResearchUser" class="account-tool-note"></p>
+              <form id="accountAdminAiCreditForm" class="account-tool-form">
+                <label>添加 AI 研究次数<input id="accountAdminAiCreditCount" type="number" min="1" max="10000" step="1" value="10" required></label>
+                <label>添加说明<input id="accountAdminAiCreditReason" type="text" maxlength="240" value="研究额度补充" required></label>
+                <button class="secondary-button" id="accountAdminAiCreditAdd" type="submit">添加次数</button>
+              </form>
+              <p id="accountAdminAiCreditBalance" class="account-tool-note"></p>
+              <div id="accountAdminAiCreditStatus" class="status-line" role="status" aria-live="polite"></div>
+              <form id="accountAdminApiGrantForm" class="account-api-grant-form">
+                <h4>开发者 API 权限</h4>
+                <p id="accountAdminApiGrantState" class="account-tool-note"></p>
+                <div class="account-admin-form-grid">
+                  <label>报告范围<select id="accountAdminApiMode"><option value="membership">沿用网站现有下载权限</option><option value="granted_corpus">单独授权 API 报告范围</option></select></label>
+                  <label>API 权限到期时间（本地时间）<input id="accountAdminApiExpiry" type="datetime-local" required></label>
+                </div>
+                <label id="accountAdminApiReportIdsField">限定报告 ID（可选）<textarea id="accountAdminApiReportIds" rows="2" placeholder="多个 ID 用逗号或换行分隔"></textarea><small id="accountAdminApiReportIdsHint">留空沿用网站现有权限；填写 ID 会进一步缩小 API 范围。</small></label>
+                <fieldset class="account-api-scopes"><legend>允许读取的内容</legend><label><input type="checkbox" value="reports:read" checked>报告目录与元数据</label><label><input type="checkbox" value="reports:download" checked>报告 PDF</label><label><input type="checkbox" value="artifacts:read" checked>图表、图片、文本及翻译</label></fieldset>
+                <div class="account-modal-actions"><button class="secondary-button" id="accountAdminApiGrantSave" type="submit">开通 / 更新 API 权限</button><button class="secondary-button" id="accountAdminApiGrantRevoke" type="button" disabled>撤销 API 权限</button></div>
+                <small>开通后由用户在“我的账号 → 开发者 API”自行生成密钥。撤销 API 权限会同时撤销全部旧密钥；重新开通后需生成新密钥。</small>
+              </form>
+              <details class="account-reminder-preview">
+                <summary>到期提醒状态与邮件预览</summary>
+                <p id="accountAdminReminderSummary" class="account-tool-note"></p>
+                <strong id="accountAdminReminderSubject"></strong><pre id="accountAdminReminderText"></pre>
+                <small>仅查看该用户的当前计划与内容，不发送邮件；提醒偏好由用户本人设置。</small>
+                <div id="accountAdminReminderStatus" class="status-line" role="status" aria-live="polite"></div>
+              </details>
+              <button class="secondary-button" id="accountAdminResearchRefresh" type="button">重新读取当前权限</button>
+              <div id="accountAdminApiGrantStatus" class="status-line" role="status" aria-live="polite"></div>
+            </section>
             <div class="account-admin-table-wrap">
               <table class="account-admin-table">
                 <thead>
@@ -3458,7 +3586,7 @@
         <td>${escapeHtml(view.last_login)}</td>
         <td>${canEditAccess || canToggleStatus ? `
           <div class="account-admin-row-actions">
-            ${canEditAccess ? `<button class="secondary-button account-admin-edit-user" type="button" data-email="${escapeHtml(email)}">编辑</button>` : ""}
+            ${canEditAccess ? `<button class="secondary-button account-admin-edit-user" type="button" data-email="${escapeHtml(email)}">编辑</button><button class="secondary-button account-admin-research-user" type="button" data-email="${escapeHtml(email)}">AI / API</button>` : ""}
             ${canToggleStatus ? `<button class="secondary-button account-admin-toggle-user" type="button" data-email="${escapeHtml(email)}" data-disabled="${disabled ? "false" : "true"}">${disabled ? "启用" : "禁用"}</button>` : ""}
           </div>
         ` : ""}</td>
@@ -6356,6 +6484,7 @@
     const existing = document.getElementById("accountAdminModal");
     if (existing) {
       if (existing.__externalSourceConnection) existing.__externalSourceConnection.close();
+      if (existing.__researchAccessControls) existing.__researchAccessControls.close();
       existing.remove();
     }
     document.body.insertAdjacentHTML("beforeend", accountAdminModalMarkup({
@@ -6371,6 +6500,8 @@
     const modal = document.getElementById("accountAdminModal");
     const sourceConnection = initExternalSourceConnection(workerUrl, modal);
     modal.__externalSourceConnection = sourceConnection;
+    const researchAccessControls = initLazyAccountServices(workerUrl, modal, true);
+    modal.__researchAccessControls = researchAccessControls;
     const title = document.getElementById("accountAdminTitle");
     const close = document.getElementById("accountAdminClose");
     const refresh = document.getElementById("accountAdminRefresh");
@@ -6978,6 +7109,7 @@
 
     function finish() {
       sourceConnection.close();
+      researchAccessControls.close();
       if (accountAdminRefreshTimer) {
         clearTimeout(accountAdminRefreshTimer);
         accountAdminRefreshTimer = null;
@@ -14297,7 +14429,7 @@
     ? initEnglishCommentaryAccount
     : page === "research"
     ? initResearch
-    : page === "blog-article"
+    : page === "blog-article" || page === "developer-api"
       ? initContentAccount
     : page === "report"
     ? initReport

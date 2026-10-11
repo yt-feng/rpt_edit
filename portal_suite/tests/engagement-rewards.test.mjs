@@ -2564,7 +2564,8 @@ test("research grounding checks local metric units and definite numeric comparis
   });
 });
 
-test("report research cold-cache worst case stays below the 50-subrequest boundary", async () => {
+for (const extraCredits of [false, true]) {
+test(`report research cold-cache worst case stays below the 50-subrequest boundary (${extraCredits ? "credits" : "included"})`, async () => {
   const bucket = new MemoryR2();
   const reportIds = ["1", "2", "3", "4"].map((digit) => digit.repeat(24));
   const items = reportIds.map((id, index) => ({
@@ -2595,6 +2596,13 @@ test("report research cold-cache worst case stays below the 50-subrequest bounda
   await seedReportResearchLookup(bucket, items, postings, evidence);
   const env = { ...envFor(bucket), DEEPSEEK_API_KEY: "configured-test-key" };
   const token = await register(env);
+  if (extraCredits) {
+    const identity = JSON.parse(Buffer.from(token.split(".")[0], "base64url").toString("utf8"));
+    const user = { id: identity.sub, username: identity.username, email: identity.email };
+    const policy = await worker.__aiResearchCreditTest.policy(env, user, "");
+    await worker.__aiResearchCreditTest.reserve(env, policy);
+    bucket.seed(`_account/ai-research-credits-v1/${encodeURIComponent(user.id)}`, { version: 1, user_id: user.id, balance: 2, total_granted: 2, total_consumed: 0, updated_at: "", operations: {} });
+  }
   bucket.getKeys.length = 0;
   bucket.putKeys.length = 0;
   bucket.rangeReadKeys.length = 0;
@@ -2620,7 +2628,7 @@ test("report research cold-cache worst case stays below the 50-subrequest bounda
     const modelInput = JSON.parse(requestPayload.messages[1].content);
     assert.deepEqual(modelInput.query_plan.terms, ["ai", "data", "power", "capital", "center", "electricity", "expenditure"]);
     assert.equal(new Set(modelInput.query_plan.terms).size, 7);
-    assert.deepEqual(modelInput.sources.map((source) => source.evidence.length), [2, 2, 1, 1]);
+    assert.deepEqual(modelInput.sources.map((source) => source.evidence.length), extraCredits ? [2, 1, 1, 1] : [2, 2, 1, 1]);
     return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({
       research_title: "AI infrastructure research",
       research_scope: "AI data-center power and capital expenditure",
@@ -2639,6 +2647,7 @@ test("report research cold-cache worst case stays below the 50-subrequest bounda
     });
     assert.equal(result.response.status, 200, JSON.stringify(result.data));
     assert.equal(result.data.mode, "research");
+    if (extraCredits) assert.equal(result.data.usage.debit_source, "credits");
     assert.equal(result.data.sources.length, 4);
     assert.equal(modelCalls, 2);
     assert.ok(bucket.rangeReadKeys.length <= 34, `unexpected research range reads: ${bucket.rangeReadKeys.length}`);
@@ -2651,6 +2660,7 @@ test("report research cold-cache worst case stays below the 50-subrequest bounda
     globalThis.fetch = originalFetch;
   }
 });
+}
 
 test("report research early miss uses only three discovery terms and four items within budget", async () => {
   const bucket = new MemoryR2();

@@ -41,7 +41,8 @@ GH_REPO = "source/example"
 # name = "EMAIL"
 
 [triggers]
-crons = ["*/30 * * * *"]
+# Membership expiry notices scan during 10:00–11:59 Beijing time.
+crons = ["*/30 * * * *", "* 2-3 * * *"]
 
 [[r2_buckets]]
 binding = "REPORT_BUCKET"
