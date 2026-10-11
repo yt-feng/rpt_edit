@@ -1,0 +1,102 @@
+name: Portal membership snapshot counts
+
+on:
+  workflow_dispatch:
+    inputs:
+      start_date:
+        description: Inclusive Beijing start date (YYYY-MM-DD)
+        type: string
+        required: true
+      end_date:
+        description: Inclusive Beijing end date (YYYY-MM-DD)
+        type: string
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portal-membership-snapshot-counts
+  cancel-in-progress: false
+
+jobs:
+  count:
+    if: github.actor == github.repository_owner && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            scripts/summarize_membership_request_snapshots.py
+            scripts/test_summarize_membership_request_snapshots.py
+            .github/workflows/portal-membership-snapshot.yml
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Test snapshot counting and privacy boundaries
+        run: python3 -B -m unittest discover -s scripts -p test_summarize_membership_request_snapshots.py
+
+      - name: Install private read client
+        run: python3 -m pip install --disable-pip-version-check --quiet boto3==1.40.1
+
+      - name: Count retained snapshots in memory
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          START_DATE: ${{ inputs.start_date }}
+          END_DATE: ${{ inputs.end_date }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p private-summary
+          status=0
+          python3 -B scripts/summarize_membership_request_snapshots.py \
+            --start-date "$START_DATE" \
+            --end-date "$END_DATE" \
+            --max-objects 5000 \
+            --output private-summary/membership-snapshots.json \
+            --markdown-output private-summary/membership-snapshots.md || status=$?
+          if [[ "$status" != 0 && "$status" != 2 ]]; then
+            exit "$status"
+          fi
+
+      - name: Recursively verify aggregate-only output before upload
+        run: |
+          python3 -B - <<'PY'
+          import json
+          from pathlib import Path
+          from scripts.summarize_membership_request_snapshots import assert_aggregate_privacy, render_markdown
+          report = json.loads(Path('private-summary/membership-snapshots.json').read_text(encoding='utf-8'))
+          assert_aggregate_privacy(report)
+          expected = render_markdown(report)
+          actual = Path('private-summary/membership-snapshots.md').read_text(encoding='utf-8')
+          if actual != expected:
+              raise SystemExit('Aggregate Markdown did not match the validated summary.')
+          PY
+
+      - name: Upload aggregate counts only
+        uses: actions/upload-artifact@v4
+        with:
+          name: portal-membership-snapshot-counts
+          path: |
+            private-summary/membership-snapshots.json
+            private-summary/membership-snapshots.md
+          if-no-files-found: error
+          retention-days: 1
+
+      - name: Require complete scan
+        run: |
+          python3 -B - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path('private-summary/membership-snapshots.json').read_text(encoding='utf-8'))
+          if not report['complete']:
+              raise SystemExit('Snapshot coverage is partial; primary counts are unavailable. See the aggregate artifact.')
+          PY
