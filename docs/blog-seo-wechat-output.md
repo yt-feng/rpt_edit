@@ -171,16 +171,58 @@ complete source sentence that fits. Headings and list items are atomic: they
 are included whole or omitted. This prevents fragments such as `关注管理。`
 from being manufactured at a body-length boundary.
 
-## Cover handling
+## Article images and covers
 
-Report-specific XHS covers are normalized to a 1200 x 675 JPEG before material
-upload. Portrait, oversized, or uncommon source dimensions are center-cropped
-after high-quality resizing. Missing or unreadable sources produce a valid
-generated fallback.
+Both the translated-report uploader and the OCR/XHS uploader use the same image
+admission and free-illustration path. Valid original report figures remain first
+choice. Known contact-card pixels (including renamed copies and cover crops),
+unreadable files and the historical navy/gold/cream placeholder are excluded from
+body illustrations and covers. White-background research charts remain valid.
+The trailing contact card has its own role and never counts toward the body-image
+minimum.
 
-The workflow no longer replaces every report-specific cover in advance. If the
-WeChat API rejects a cover crop, draft creation still retries with the generated
-safe cover and, if required, without explicit crop fields.
+When original figures are insufficient, `free_editorial_images.py` searches
+Wikimedia Commons using a fixed, locally selected generic topic. It never sends
+the report title or body to the public search API. Only explicit CC0 or CC BY
+2.0/2.5/3.0/4.0 images with consistent license metadata are accepted. Author,
+original file page and license accompany the image in the article; metadata is
+sanitized rather than inserted as arbitrary HTML. Downloads have host, redirect,
+byte, pixel and decode checks, a bounded request budget, cache and circuit breaker.
+
+The old anonymous Pollinations endpoint is no longer called. Its production
+responses included HTTP 402 and 502, and the XHS uploader discarded the fallback
+and stopped filling images. Both uploaders now accept the Commons result. When
+Commons is unavailable or has no eligible photo, an original topic illustration
+is generated locally and clearly labelled as an illustration, not a photograph,
+report figure or data chart. No blank title card or QR code substitutes for it.
+
+Covers prefer a valid report image, then the article's valid uploaded image.
+They are normalized to a 1200 x 675 JPEG. A crop rejection first removes explicit
+crop fields while retaining each article's own cover; further normalization is
+per article. It never replaces a whole group with one generic blank cover.
+HTML fitting retains at least one body image whenever images were supplied;
+credits travel with the image through compression.
+
+## Media verification and existing draft repair
+
+`draft/get` verification compares the expected cover ID and ordered body/footer
+image identities in addition to the editorial contract. Read-only audits remain
+read-only. Uploaders can explicitly repair media at the same draft ID and article
+index when titles, authors and prose still match; uncertain writes are followed
+by readback rather than duplicate draft creation.
+
+`wechat-draft-image-repair.yml` accepts an exact successful source run and its
+unexpired draft diagnostic artifact. Audit mode performs no uploads or updates.
+Apply mode checks the live draft against its saved prose identity, inspects actual
+WeChat CDN image bytes, replaces defective covers/body images and fills missing
+body illustrations, then reads back the saved media. A second fresh read before
+each update protects intervening edits. It never adds, deletes, publishes or
+regenerates an article. Managed image credits are the only prose comparison
+exception. Sanitized progress permits a later rerun to repair only what remains.
+
+New draft payloads carry the images and attribution into the existing Blog
+archive path. Repairing an already saved WeChat draft is a distinct operation:
+it does not by itself prove that an older public Blog archive has been updated.
 
 Ordinary Markdown blockquotes remain ordinary quotations. Only blockquotes
 that explicitly begin with the current or historical editorial-comment label

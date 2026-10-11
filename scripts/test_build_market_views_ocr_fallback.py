@@ -373,6 +373,21 @@ class OCRSynthesisTests(unittest.TestCase):
 
     def test_publication_titles_institutions_and_charts_remove_metadata_without_changing_cache(self):
         manifest = self.originals_fixture(count=1, pages=1)
+        # A real, unchanged source hash may contain the phone sentinel. Keep
+        # provenance checks separate from the visible-publication text checks.
+        original = self.originals / "01_Research.pdf"
+        original_bytes = original.read_bytes()
+        for index in range(4096):
+            candidate = original_bytes + f"\n% fixture binding {index}\n".encode()
+            expected_sha = fallback.sha(candidate)
+            if "555" in expected_sha:
+                original.write_bytes(candidate)
+                break
+        else:
+            self.fail("Could not construct bounded source-hash regression fixture")
+        entries = json.loads(manifest.read_text())
+        entries[0]["content_sha256"] = expected_sha
+        manifest.write_text(json.dumps(entries))
         def invoke(prompt, *args):
             value = model_fixture(prompt, *args)
             if prompt.startswith("market-cross-report-v1 "):
@@ -382,7 +397,7 @@ class OCRSynthesisTests(unittest.TestCase):
             value["charts"] = [{**value["charts"][0], "title": "Ratings distribution: Buy 55%, Sell 5%."},
                                {**value["charts"][0], "title": "Copyright licensing revenue is expected to grow 15%."}]
             return value
-        self.build(manifest, count=1, invoke=invoke)
+        receipt = self.build(manifest, count=1, invoke=invoke)
         output = self.root / "summaries/261005"
         report = json.loads((output / "report_inputs.json").read_text())[0]
         figures = json.loads((output / "figure_candidates.json").read_text())
@@ -390,7 +405,13 @@ class OCRSynthesisTests(unittest.TestCase):
         self.assertEqual(report["title"], "R001 研究主题")
         self.assertEqual(len(figures), 1)
         self.assertIn("licensing revenue", figures[0]["label"])
-        for value in (report, figures):
+        self.assertEqual(report["content_sha256"], expected_sha)
+        self.assertEqual(receipt["reports"][0]["content_sha256"], expected_sha)
+        self.assertEqual(fallback.sha(original.read_bytes()), expected_sha)
+        self.assertIn("555", report["content_sha256"])
+        report_text = {key: report[key] for key in ("title", "institution_name", "source_label", "digest", "extract")}
+        figure_text = [{key: figure[key] for key in ("label", "context", "chart_spec")} for figure in figures]
+        for value in (report_text, figure_text):
             text = json.dumps(value, ensure_ascii=False)
             for absent in ("John", "john@", "555", "Ratings distribution"):
                 self.assertNotIn(absent, text)

@@ -650,3 +650,18 @@ contract are documented in [Blog SEO and WeChat Output Contract](blog-seo-wechat
 ## Compatibility Note
 
 Some paths, scripts, prompts, workflows, and environment variables still use historical names. Renaming them would require a migration across GitHub Actions, scripts, generated folders, and downstream references, so this documentation cleanup leaves runtime names intact.
+
+
+## WeChat image continuity (2026-10-11)
+
+The two article uploaders share `wechat_image_quality.py` and
+`free_editorial_images.py`: original figures → explicitly licensed Commons
+photos → locally generated, labelled topic illustrations. Contact artwork remains
+a trailing element only. Media acceptance requires cover and inline-image
+readback; it is separate from text generation, MinerU source binding and source
+website availability. The historical anonymous Pollinations call and whole-group
+blank-cover retry are retired.
+
+See `blog-seo-wechat-output.md` for admission, attribution, bounded fallback and
+the receipt-bound image repair workflow. A successful image-provider canary,
+merged code, and repaired live drafts are separate acceptance stages.
