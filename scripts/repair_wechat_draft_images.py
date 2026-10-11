@@ -20,13 +20,75 @@ from push_portal_translated_to_wechat_drafts import (
     materialize_private_article_payload, article_prose_text, generated_image_credit_signature,
     post_wechat_json, parse_wechat_json, prepare_cover_upload_image,
     upload_article_image, upload_cover_material, image_html, verify_draft_get,
-    wechat_image_url_identity,
+    wechat_image_url_identity, WeChatError,
 )
 
 MAX_IMAGE_BYTES = 12 * 1024 * 1024
 CREDIT_RE = re.compile(r'<p\b[^>]*\bdata-editorial-credit\s*=\s*(["\'])1\1[^>]*>.*?</p>', re.I | re.S)
 IMG_RE = re.compile(r'<img\b[^>]*>', re.I | re.S)
 IMAGE_BLOCK_RE = re.compile(r'<p\b[^>]*>\s*<img\b[^>]*>\s*</p>|<img\b[^>]*>', re.I | re.S)
+MAX_DRAFT_CATALOG = 1000
+
+
+class DraftCatalogError(ValueError):
+    """Safe category only; do not include draft IDs, URLs or article text."""
+
+
+def strict_draft_group_match(actual, expected):
+    if not actual or len(actual) != len(expected):
+        return False
+    return all(prose_identity(a) == prose_identity(b)
+               and html.unescape(str(a.get('content_source_url') or '')).strip()
+               == html.unescape(str(b.get('content_source_url') or '')).strip()
+               for a, b in zip(actual, expected))
+
+
+def read_complete_draft_catalog(session, token, timeout):
+    """Read a bounded complete catalog; never infer uniqueness from a prefix."""
+    rows = []; seen = set(); total = None
+    while total is None or len(rows) < total:
+        response = post_wechat_json(session,
+            f'https://api.weixin.qq.com/cgi-bin/draft/batchget?access_token={token}',
+            {'offset':len(rows), 'count':20, 'no_content':0}, timeout, max_attempts=1)
+        data = parse_wechat_json(response, 'draft/batchget receipt recovery')
+        reported = data.get('total_count')
+        if type(reported) is not int or reported < 0:
+            raise DraftCatalogError('catalog_invalid_count')
+        if reported > MAX_DRAFT_CATALOG:
+            raise DraftCatalogError('catalog_exceeds_scan_bound')
+        if total is not None and reported != total:
+            raise DraftCatalogError('catalog_changed_during_scan')
+        total = reported
+        items = data.get('item', [] if total == 0 else None)
+        if not isinstance(items, list) or (not items and len(rows) < total) or len(rows) + len(items) > total:
+            raise DraftCatalogError('catalog_incomplete_page')
+        for item in items:
+            if not isinstance(item, dict):
+                raise DraftCatalogError('catalog_invalid_item')
+            media_id = item.get('media_id')
+            container = item.get('content') if isinstance(item.get('content'), dict) else item
+            raw_articles = container.get('news_item', container.get('articles'))
+            articles = draft_news_items(item)
+            if (not isinstance(media_id, str) or not media_id.strip() or media_id in seen
+                    or not isinstance(raw_articles, list) or any(not isinstance(a, dict) for a in raw_articles)
+                    or not articles or any(not isinstance(a.get('title'), str) or not a['title']
+                                          or not isinstance(a.get('content'), str) or not a['content'] for a in articles)):
+                raise DraftCatalogError('catalog_invalid_or_duplicate_item')
+            seen.add(media_id); rows.append(item)
+        if total == 0:
+            break
+    return rows
+
+
+def resolve_unique_receipt_candidate(catalog, expected, reserved_ids):
+    matches = [item for item in catalog if strict_draft_group_match(draft_news_items(item), expected)]
+    if not matches:
+        return None, 'invalid_receipt_no_current_match'
+    if len(matches) != 1:
+        return None, 'invalid_receipt_ambiguous_match'
+    if matches[0]['media_id'] in reserved_ids:
+        return None, 'invalid_receipt_target_already_bound'
+    return matches[0], 'unique_exact_group_match'
 
 
 def prose_identity(article):
@@ -195,13 +257,50 @@ def build_media_repair(session, token, article, directory, timeout, min_images=3
 
 def repair_drafts(drafts, session, token, output, timeout, apply):
     output.mkdir(parents=True, exist_ok=True)
-    report = {'applied': apply, 'drafts': [], 'article_count': 0, 'changed_articles': 0, 'cover_replacements': 0, 'body_replacements': 0, 'body_added': 0, 'sources': {}}
+    report = {'applied': apply, 'drafts': [], 'article_count': 0, 'expected_article_count':sum(len(d['articles']) for d in drafts),
+              'changed_articles': 0, 'cover_replacements': 0, 'body_replacements': 0, 'body_added': 0, 'sources': {},
+              'recovered_receipt_groups':0, 'unresolved_draft_count':0, 'unresolved_article_count':0}
+    catalog = None; catalog_error = None
+    reserved_ids = {draft['media_id'] for draft in drafts}
     for draft_index, draft in enumerate(drafts, 1):
         media_id = draft['media_id']
-        data = get_draft(session, token, media_id, timeout)
-        actual = draft_news_items(data)
         expected = materialize_private_article_payload(draft['articles'], os.environ.get('PORTAL_SITE_URL', ''))
-        if len(actual) != len(expected) or any(prose_identity(a) != prose_identity(b) for a,b in zip(actual, expected)):
+        resolution = 'saved_receipt_id'
+        try:
+            data = get_draft(session, token, media_id, timeout)
+        except WeChatError as exc:
+            if exc.errcode != 40007:
+                raise
+            if catalog is None and catalog_error is None:
+                try:
+                    catalog = read_complete_draft_catalog(session, token, timeout)
+                except DraftCatalogError as scan_error:
+                    catalog_error = str(scan_error)
+            candidate, resolution = (None, catalog_error) if catalog_error else resolve_unique_receipt_candidate(catalog, expected, reserved_ids)
+            if candidate is not None:
+                candidate_id = candidate['media_id']
+                try:
+                    data = get_draft(session, token, candidate_id, timeout)
+                except WeChatError as confirmation_error:
+                    if confirmation_error.errcode != 40007:
+                        raise
+                    candidate = None; resolution = 'matched_candidate_no_longer_available'
+                if candidate is not None and not strict_draft_group_match(draft_news_items(data), expected):
+                    candidate = None; resolution = 'matched_candidate_changed_before_use'
+                if candidate is not None:
+                    media_id = candidate_id; reserved_ids.add(media_id)
+                    report['recovered_receipt_groups'] += 1
+            if candidate is None:
+                report['unresolved_draft_count'] += 1; report['unresolved_article_count'] += len(expected)
+                report['drafts'].append({'index':draft_index, 'identity':hashlib.sha256(media_id.encode()).hexdigest(),
+                                        'articles':len(expected), 'verified':False, 'resolution':resolution,
+                                        'status':'unresolved', 'wechat_errcode':40007, 'changed':[]})
+                (output/'progress.json').write_text(json.dumps(report,indent=2))
+                print(json.dumps({'draft_index':draft_index, 'status':'unresolved', 'category':resolution,
+                                  'unresolved_article_count':report['unresolved_article_count']}), flush=True)
+                continue
+        actual = draft_news_items(data)
+        if not strict_draft_group_match(actual, expected):
             raise ValueError(f'Draft {draft_index} prose differs from original receipt; no overwrite')
         changed = []
         for index, article in enumerate(actual):
@@ -239,8 +338,11 @@ def repair_drafts(drafts, session, token, output, timeout, apply):
             for source in facts['sources']: report['sources'][source] = report['sources'].get(source,0)+1
             (output/'progress.json').write_text(json.dumps(report,indent=2))
             print(json.dumps({key: report[key] for key in ('article_count','changed_articles','cover_replacements','body_replacements','body_added')}), flush=True)
-        report['drafts'].append({'index':draft_index, 'identity':hashlib.sha256(media_id.encode()).hexdigest(), 'articles':len(actual),'changed':changed,'verified':apply})
-    report['ok'] = True
+        report['drafts'].append({'index':draft_index, 'identity':hashlib.sha256(media_id.encode()).hexdigest(), 'articles':len(actual),'changed':changed,'verified':apply,'resolution':resolution})
+    report['ok'] = report['unresolved_draft_count'] == 0
+    report['partial'] = not report['ok']
+    report['fully_repaired'] = bool(apply and report['ok'])
+    report['status'] = 'complete' if report['ok'] else 'partial'
     return report
 
 

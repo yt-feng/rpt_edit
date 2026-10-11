@@ -3,6 +3,7 @@ from __future__ import annotations
 import io
 import json
 import contextlib
+import hashlib
 import statistics
 from pathlib import Path
 import tempfile
@@ -111,9 +112,57 @@ class EditorialImagesTest(unittest.TestCase):
         requests = json.dumps(session.calls, ensure_ascii=False)
         self.assertNotIn("私密", requests)
         self.assertNotIn("客户名字", requests)
-        self.assertIn("semiconductor microchip", requests)
+        self.assertIn("semiconductor", requests)
+        self.assertEqual(info["search_diagnostics"], {"search_results": 1, "admitted": 1, "rejections": {}})
         self.assertTrue(all(not call[1]["allow_redirects"] for call in session.calls))
         self.assertTrue(all(call[1]["timeout"] <= 10 for call in session.calls))
+
+    def test_discovery_uses_official_category_union_and_fixed_topic_only(self):
+        for title in ("芯片 私密客户原文", "金融 未公开2027预测", "能源 一家公司"):
+            session = Session([results()])
+            self.run_provider(session, title)
+            query = session.calls[0][1]["params"]["gsrsearch"]
+            self.assertEqual(query.count("incategory:"), 1)
+            self.assertIn('incategory:"CC-Zero|CC-BY-2.0|CC-BY-2.5|CC-BY-3.0|CC-BY-4.0"', query)
+            self.assertNotIn(" OR ", query)
+            self.assertNotIn("CC-BY-SA", query)
+            self.assertNotIn("2027", query)
+            self.assertTrue(query.isascii())
+        self.assertEqual(media._topic("能源")[1], "solar panels")
+        self.assertEqual(media._topic("金融")[1], "city skyline")
+
+    def test_search_filter_has_its_own_cache_identity(self):
+        cache = self.root / "cache"; cache.mkdir()
+        query = media._topic("芯片")[1]
+        stale = {"time": media.time.time(), "results": []}
+        (cache / (hashlib.sha256(query.encode()).hexdigest() + ".json")).write_text(json.dumps(stale))
+        media._SEARCH_CACHE[query] = (media.time.time(), [])
+        session = Session([results(page()), download_response()])
+        _, info = self.run_provider(session, cache_dir=cache)
+        self.assertEqual(info["source"], "wikimedia_commons")
+        self.assertEqual(len(session.calls), 2)
+
+    def test_search_diagnostics_distinguish_empty_from_rejected_metadata(self):
+        _, empty = self.run_provider(Session([results()]))
+        self.assertEqual(empty["search_diagnostics"], {"search_results": 0, "admitted": 0, "rejections": {}})
+        self.reset_provider()
+        no_license = page(1, license_name="CC BY-SA 4.0", license_url="https://creativecommons.org/licenses/by-sa/4.0/")
+        wrong_format = page(2); wrong_format["imageinfo"][0]["mime"] = "image/gif"
+        wrong_url = page(3); wrong_url["imageinfo"][0]["url"] = "https://private.example/source.png"
+        malformed = {"pageid": 4, "imageinfo": "private malformed data"}
+        session = Session([results(no_license, wrong_format, wrong_url, malformed, page(5)), download_response()])
+        _, info = self.run_provider(session)
+        self.assertEqual(info["search_diagnostics"], {
+            "search_results": 5, "admitted": 1,
+            "rejections": {"license": 1, "format": 1, "url": 1, "metadata": 1}})
+        self.assertNotIn("private", json.dumps(info["search_diagnostics"]))
+        self.assertEqual(len(session.calls), 2)
+
+    def test_diagnostics_serialization_never_accepts_untrusted_details(self):
+        value = {"search_results": 100, "admitted": "private title",
+                 "rejections": {"license": 3, "https://private.example": 1, "url": "private URL", "format": -1}}
+        self.assertEqual(media._safe_diagnostics(value), {
+            "search_results": 0, "admitted": 0, "rejections": {"license": 3}})
 
     def test_restrictive_or_ambiguous_licenses_do_not_download(self):
         for name, url in [
@@ -379,6 +428,8 @@ class EditorialImagesTest(unittest.TestCase):
         _, info = self.run_provider(session)
         self.assertEqual(info["source"], "local_editorial")
         self.assertEqual(len(session.calls), 4)
+        self.assertEqual(info["search_diagnostics"], {"search_results": 8, "admitted": 8,
+                         "rejections": {"image_validation": 3, "download_limit": 1}})
 
     def test_original_artworks_are_deterministic_substantive_and_distinct(self):
         hashes = set()
@@ -453,6 +504,9 @@ class EditorialImagesTest(unittest.TestCase):
         self.assertEqual(report["wechat_writes"], 0)
         self.assertEqual(report["publication_writes"], 0)
         self.assertEqual(report["network_requests"], 0)
+        self.assertEqual(report["search_results"], 0)
+        self.assertEqual(report["admitted"], 0)
+        self.assertEqual(report["rejections"], {})
         self.assertTrue((output / "sample.jpg").is_file())
 
     def test_canary_workflow_network_is_manual_only_and_without_secrets(self):

@@ -184,7 +184,10 @@ minimum.
 
 When original figures are insufficient, `free_editorial_images.py` searches
 Wikimedia Commons using a fixed, locally selected generic topic. It never sends
-the report title or body to the public search API. Only explicit CC0 or CC BY
+the report title or body to the public search API. The search itself is limited
+to the supported CC0/CC-BY category union; short topic terms avoid accidentally
+requiring unrelated subjects in the same photograph. Count-only diagnostics
+distinguish an empty result from rejected license, format or URL candidates. Only explicit CC0 or CC BY
 2.0/2.5/3.0/4.0 images with consistent license metadata are accepted. Author,
 original file page and license accompany the image in the article; metadata is
 sanitized rather than inserted as arbitrary HTML. Downloads have host, redirect,
@@ -221,7 +224,9 @@ index when titles, authors and prose still match; uncertain writes are followed
 by readback rather than duplicate draft creation.
 
 `wechat-draft-image-repair.yml` accepts an exact successful source run and its
-unexpired draft diagnostic artifact. Audit mode performs no uploads or updates.
+unexpired draft diagnostic artifact. Source validation uses a bounded, authenticated
+GitHub REST read and does not require the self-hosted runner to have `gh` installed.
+Audit mode performs no uploads or updates.
 Apply mode checks the live draft against its saved prose identity, inspects actual
 WeChat CDN image bytes, replaces defective covers/body images and fills missing
 body illustrations, then reads back the saved media. A second fresh read before
@@ -231,7 +236,15 @@ records whether the selected cover used a retained source reference, another
 retained body image or a new illustration; existing usable images do not trigger
 extra filler just to reach a count. It never adds, deletes, publishes or
 regenerates an article. Only recognized generated image credits are excluded from prose identity;
-image-credit text and license/source links are checked separately on readback. Sanitized progress permits a later rerun to repair only what remains.
+image-credit text and license/source links are checked separately on readback.
+A WeChat 40007 response isolates an invalid historical receipt. Only a complete
+current-draft listing with one exact, ordered whole-group match of title, author,
+prose and source URL, followed by a fresh `draft/get`, can bind it to another
+existing ID. Missing or ambiguous matches remain unresolved while other valid
+groups continue. Such a completed maintenance run explicitly reports
+`partial=true`, `fully_repaired=false` and `ok=false`; workflow completion is not
+full repair acceptance. It never recreates a missing draft. Sanitized progress
+permits a later rerun to repair only what remains.
 
 New draft payloads carry the images and attribution into the existing Blog
 archive path. Repairing an already saved WeChat draft is a distinct operation:

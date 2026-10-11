@@ -37,14 +37,23 @@ _LOADED_SELECTION_CACHES: set[str] = set()
 _COOLDOWN_UNTIL = 0.0
 _COOLDOWN_REASON = ""
 OUTAGE_COOLDOWN_SECONDS = 300
+# Category union is a single filter. Boolean OR between separate incategory
+# keywords is not supported reliably by CirrusSearch:
+# https://phabricator.wikimedia.org/T164589
+# These categories narrow discovery only; _license still validates each file.
+COMMONS_LICENSE_FILTER = 'incategory:"CC-Zero|CC-BY-2.0|CC-BY-2.5|CC-BY-3.0|CC-BY-4.0"'
+_REJECTION_REASONS = {
+    "metadata", "license", "format", "url", "duplicate_url", "duplicate_content",
+    "response_type", "image_validation", "download_limit", "time_budget",
+}
 _TOPICS = (
-    ("technology", "semiconductor microchip", r"芯片|半导体|存储|晶圆|tdk|marvell|samsung|三星|科技|人工智能|数据中心|\bai\b|semiconductor|memory|technology|data cent|software|软件|电子"),
-    ("energy", "solar panels wind turbines", r"能源|电力|电网|电池|太阳能|石油|天然气|核电|energy|power|solar|wind|oil|gas|battery"),
-    ("industry", "industrial factory automation", r"工业|制造|机械|金属|矿|铜|钢|铝|机器人|工业|industry|industrial|mining|metal|factory|manufactur"),
-    ("transport", "container cargo port", r"运输|物流|货运|航运|航空|汽车|rail|transport|cargo|shipping|port|airline|automotive"),
-    ("health", "medical laboratory equipment", r"医疗|医药|药物|生物|医院|health|medical|pharma|biotech|medicine"),
-    ("consumer", "retail shopping storefront", r"消费|零售|电商|酒店|旅行|旅游|食品|餐饮|consumer|retail|shopping|hotel|travel|food"),
-    ("finance", "city financial district skyline", r"银行|金融|利率|宏观|基金|股|投资|市场|经济|bank|financ|market|econom|equity|invest|yield"),
+    ("technology", "semiconductor", r"芯片|半导体|存储|晶圆|tdk|marvell|samsung|三星|科技|人工智能|数据中心|\bai\b|semiconductor|memory|technology|data cent|software|软件|电子"),
+    ("energy", "solar panels", r"能源|电力|电网|电池|太阳能|石油|天然气|核电|energy|power|solar|wind|oil|gas|battery"),
+    ("industry", "factory", r"工业|制造|机械|金属|矿|铜|钢|铝|机器人|工业|industry|industrial|mining|metal|factory|manufactur"),
+    ("transport", "container port", r"运输|物流|货运|航运|航空|汽车|rail|transport|cargo|shipping|port|airline|automotive"),
+    ("health", "laboratory", r"医疗|医药|药物|生物|医院|health|medical|pharma|biotech|medicine"),
+    ("consumer", "retail", r"消费|零售|电商|酒店|旅行|旅游|食品|餐饮|consumer|retail|shopping|hotel|travel|food"),
+    ("finance", "city skyline", r"银行|金融|利率|宏观|基金|股|投资|市场|经济|bank|financ|market|econom|equity|invest|yield"),
 )
 
 
@@ -52,7 +61,26 @@ def _topic(title: str) -> tuple[str, str]:
     for name, query, pattern in _TOPICS:
         if re.search(pattern, str(title), re.I):
             return name, query
-    return "finance", "city financial district skyline"
+    return "finance", "city skyline"
+
+
+def _search_query(query: str) -> str:
+    # Fixed one/two-word topic terms avoid inadvertently requiring a single
+    # photo description to mention several different objects at once.
+    return query + " filetype:bitmap " + COMMONS_LICENSE_FILTER
+
+
+def _safe_diagnostics(value: object) -> dict:
+    """Only bounded counters and fixed rejection codes may enter CI logs."""
+    value = value if isinstance(value, dict) else {}
+    def number(value):
+        return value if type(value) is int and 0 <= value <= 8 else 0
+    rejections = value.get("rejections", {})
+    rejections = rejections if isinstance(rejections, dict) else {}
+    return {"search_results": number(value.get("search_results")),
+            "admitted": number(value.get("admitted")),
+            "rejections": {key: number(rejections[key]) for key in sorted(_REJECTION_REASONS)
+                           if key in rejections and number(rejections[key])}}
 
 
 class _Text(HTMLParser):
@@ -227,6 +255,7 @@ def _read_response(session, url: str, *, deadline: float, limit: int,
 
 
 def _search(session, query: str, deadline: float, cache_dir: Path | None) -> list[dict]:
+    query = _search_query(query)
     cached = _SEARCH_CACHE.get(query)
     if cached and time.time() - cached[0] < CACHE_TTL:
         return cached[1]
@@ -241,7 +270,7 @@ def _search(session, query: str, deadline: float, cache_dir: Path | None) -> lis
             pass
     params = {"action": "query", "format": "json", "formatversion": 2,
               "generator": "search", "gsrnamespace": 6, "gsrlimit": 8,
-              "gsrsearch": query + " filetype:bitmap", "prop": "imageinfo",
+              "gsrsearch": query, "prop": "imageinfo",
               "iiprop": "url|size|mime|extmetadata", "iiurlwidth": 1200,
               "iiextmetadatafilter": "Artist|Credit|License|LicenseShortName|LicenseUrl|UsageTerms|Copyrighted|AttributionRequired"}
     try:
@@ -394,28 +423,51 @@ def download_editorial_image(session, title, target, timeout, index=1, cache_dir
     used = _USED.setdefault(article_key, set())
     if len(_USED) > 512:
         _USED.pop(next(iter(_USED)))
+    diagnostics = {"search_results": 0, "admitted": 0, "rejections": {}}
+
+    def reject(reason):
+        rejected = diagnostics["rejections"]
+        rejected[reason] = rejected.get(reason, 0) + 1
+
     try:
         deadline = time.monotonic() + max(0.0, min(30.0, float(timeout)))
         results = _search(session, query, deadline, cache_dir)
+        diagnostics["search_results"] = len(results)
         offset = max(0, int(index) - 1) % max(1, len(results))
         results = results[offset:] + results[:offset]
-        attempted = 0
+        candidates = []
         for page in results:
             infos = page.get("imageinfo", [])
-            if not infos or not isinstance(infos[0], dict):
+            if not isinstance(infos, list) or not infos or not isinstance(infos[0], dict):
+                reject("metadata")
                 continue
             info = infos[0]
             credit = _license(info)
             url = str(info.get("thumburl") or info.get("url", ""))
-            if (not credit or info.get("mime") not in ("image/jpeg", "image/png")
-                    or not _allowed_url(url, {"upload.wikimedia.org", "thumb.wikimedia.org"})):
+            if not credit:
+                reject("license")
                 continue
+            if info.get("mime") not in ("image/jpeg", "image/png"):
+                reject("format")
+                continue
+            if not _allowed_url(url, {"upload.wikimedia.org", "thumb.wikimedia.org"}):
+                reject("url")
+                continue
+            candidates.append((page, credit, url))
+        diagnostics["admitted"] = len(candidates)
+        attempted = 0
+        for page, credit, url in candidates:
             key = hashlib.sha256(url.encode()).hexdigest()
             if key in used or _BATCH_URL_OWNERS.get(key, slot) != slot:
+                reject("duplicate_url")
                 continue
-            attempted += 1
-            if attempted > 3 or time.monotonic() >= deadline:
+            if attempted >= 3:
+                reject("download_limit")
                 break
+            if time.monotonic() >= deadline:
+                reject("time_budget")
+                break
+            attempted += 1
             image_cache = cache_dir / (key + ".jpg") if cache_dir else None
             try:
                 if image_cache and image_cache.is_file() and image_cache.stat().st_size <= MAX_IMAGE_BYTES:
@@ -424,17 +476,20 @@ def download_editorial_image(session, title, target, timeout, index=1, cache_dir
                     raw, mime = _read_response(session, url, deadline=deadline, limit=MAX_IMAGE_BYTES,
                                                hosts={"upload.wikimedia.org", "thumb.wikimedia.org"})
                     if mime not in ("image/jpeg", "image/png"):
+                        reject("response_type")
                         continue
                 image = _normalized_image(raw)
             except RequestException:
                 raise
             except (ValueError, OSError, Image.DecompressionBombError):
+                reject("image_validation")
                 continue
             sha = hashlib.sha256(image).hexdigest()
             if sha in used or _BATCH_CONTENT_OWNERS.get(sha, slot) != slot:
                 # Alias URLs returning the same image must not be tried again
                 # for every subsequent article in the batch.
                 _BATCH_URL_OWNERS[key] = _BATCH_CONTENT_OWNERS.get(sha, 'duplicate')
+                reject("duplicate_content")
                 continue
             _atomic(target, image)
             if image_cache:
@@ -448,6 +503,7 @@ def download_editorial_image(session, title, target, timeout, index=1, cache_dir
             metadata = dict(credit, source="wikimedia_commons", topic=topic,
                             sha256=sha, asset_id=str(page.get("pageid", key)), asset_url_sha256=key, modified=True)
             metadata["caption"] = attribution_caption(metadata)
+            metadata["search_diagnostics"] = _safe_diagnostics(diagnostics)
             return _remember_selection(slot, target, metadata, cache_dir)
     except (_ProviderCooldown, _DeadlineExceeded):
         pass
@@ -461,6 +517,7 @@ def download_editorial_image(session, title, target, timeout, index=1, cache_dir
         pass
     path, metadata = bundled_fallback_image(target, str(title), index)
     metadata["fallback_reason"] = _COOLDOWN_REASON if time.monotonic() < _COOLDOWN_UNTIL else "no_eligible_image"
+    metadata["search_diagnostics"] = _safe_diagnostics(diagnostics)
     return _remember_selection(slot, path, metadata, cache_dir)
 
 
@@ -808,6 +865,7 @@ def _smoke_main() -> int:
                   "author": metadata["author"], "source_url": metadata["source_url"],
                   "fallback_reason": metadata.get("fallback_reason", ""),
                   "model_calls": 0, "wechat_writes": 0, "publication_writes": 0}
+        report.update(_safe_diagnostics(metadata.get("search_diagnostics")))
     _atomic(args.smoke_dir / "provider-report.json", json.dumps(report, indent=2).encode())
     _atomic(args.smoke_dir / "caption.html", attribution_html(metadata).encode())
     print(json.dumps(report))

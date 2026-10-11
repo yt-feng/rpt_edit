@@ -107,6 +107,134 @@ class ReplacementTests(unittest.TestCase):
         self.assertEqual(1, repaired.count('data-editorial-credit="1"'))
 
 
+class ReceiptRecoveryTests(unittest.TestCase):
+    def record(self, media_id, articles):
+        return {'media_id':media_id, 'content':{'news_item':copy.deepcopy(articles)}}
+
+    def test_complete_catalog_paginates_and_never_calls_mutating_endpoints(self):
+        records = [self.record(f'current-{i}', [dict(article(broken=False), title=f'Public test title {i}')]) for i in range(23)]
+        with patch.object(repair, 'post_wechat_json', side_effect=[response({'total_count':23,'item':records[:20]}), response({'total_count':23,'item':records[20:]})]) as post:
+            actual = repair.read_complete_draft_catalog(object(), 'TOKEN', 30)
+        self.assertEqual(records, actual)
+        self.assertEqual([0,20], [call.args[2]['offset'] for call in post.call_args_list])
+        self.assertTrue(all('/draft/batchget?' in call.args[1] and call.args[2]['no_content']==0 for call in post.call_args_list))
+
+    def test_incomplete_or_mutating_catalog_cannot_establish_uniqueness(self):
+        record = self.record('public-id', [article(broken=False)])
+        cases = [
+            [response({'total_count':1001,'item':[record]})],
+            [response({'total_count':2,'item':[record]}), response({'total_count':2,'item':[]})],
+            [response({'total_count':2,'item':[record]}), response({'total_count':1,'item':[record]})],
+            [response({'total_count':2,'item':[record]}), response({'total_count':2,'item':[record]})],
+            [response({'total_count':1,'item':[{'media_id':'public-id','content':{'news_item':[article(), 'bad-row']}}]})],
+        ]
+        for pages in cases:
+            with self.subTest(page_count=len(pages)), patch.object(repair,'post_wechat_json',side_effect=pages), self.assertRaises(repair.DraftCatalogError):
+                repair.read_complete_draft_catalog(object(), 'TOKEN', 30)
+
+    def test_exact_group_requires_body_author_order_and_source_url_and_unique_id(self):
+        expected = [dict(article(broken=False), content_source_url='https://example.invalid/report-a'),
+                    dict(article(broken=False), title='Second report', content_source_url='https://example.invalid/report-b')]
+        variants = []
+        for key, value in [('title','Different'),('author','Other author'),('content','<p>Different body</p>'),('content_source_url','https://example.invalid/other')]:
+            changed = copy.deepcopy(expected); changed[0][key]=value; variants.append(changed)
+        variants.append(list(reversed(expected)))
+        for actual in variants:
+            with self.subTest(first_title=actual[0]['title']):
+                self.assertFalse(repair.strict_draft_group_match(actual,expected))
+        candidate = self.record('new-exact-id',expected)
+        self.assertEqual('unique_exact_group_match',repair.resolve_unique_receipt_candidate([candidate],expected,set())[1])
+        self.assertEqual('invalid_receipt_ambiguous_match',repair.resolve_unique_receipt_candidate([candidate,self.record('another-id',expected)],expected,set())[1])
+        self.assertEqual('invalid_receipt_target_already_bound',repair.resolve_unique_receipt_candidate([candidate],expected,{'new-exact-id'})[1])
+
+    def execute(self, root, drafts, *, candidate=None, error_code=40007, candidate_changes=False, apply=False):
+        def get(_session, _token, media_id, _timeout):
+            if media_id == 'expired-id':
+                raise portal.WeChatError('public fixture error',errcode=error_code)
+            if media_id == 'recovered-id':
+                rows = copy.deepcopy(candidate)
+                if candidate_changes:rows[0]['content'] += '<p>Edited during lookup</p>'
+                return {'news_item':rows}
+            return {'news_item':copy.deepcopy(drafts[-1]['articles'])}
+        with ExitStack() as stack:
+            get_mock=stack.enter_context(patch.object(repair,'get_draft',side_effect=get))
+            catalog=stack.enter_context(patch.object(repair,'read_complete_draft_catalog',return_value=[] if candidate is None else [self.record('recovered-id',candidate)]))
+            fetch=stack.enter_context(patch.object(repair,'fetch_wechat_image',return_value=''))
+            provider=stack.enter_context(patch.object(repair,'download_editorial_image'))
+            uploads=stack.enter_context(patch.object(repair,'upload_article_image'))
+            mutations=stack.enter_context(patch.object(repair,'post_wechat_json'))
+            verification=stack.enter_context(patch.object(repair,'verify_draft_get',return_value={'ok':True}))
+            build=stack.enter_context(patch.object(repair,'build_media_repair',side_effect=lambda _s,_t,a,*args: (copy.deepcopy(a),{'cover_replaced':False,'body_replacements':[],'body_added':0,'sources':[]})))
+            result=repair.repair_drafts(drafts,object(),'TOKEN',root,30,apply)
+            for operation in (provider,uploads,mutations):operation.assert_not_called()
+        return result,get_mock,catalog,fetch,build,verification
+
+    def test_invalid_first_id_does_not_block_later_valid_group_and_reports_partial(self):
+        rows=[article(broken=False)]
+        drafts=[{'media_id':'expired-id','articles':rows},{'media_id':'valid-id','articles':[dict(rows[0],title='Later source')]}]
+        for apply in (False,True):
+            with self.subTest(apply=apply), tempfile.TemporaryDirectory() as temporary:
+                result,*_=self.execute(Path(temporary),drafts,apply=apply)
+            self.assertEqual(1,result['article_count'])
+            self.assertEqual(1,result['unresolved_draft_count'])
+            self.assertEqual(1,result['unresolved_article_count'])
+            self.assertEqual(2,result['expected_article_count'])
+            self.assertTrue(result['partial']);self.assertFalse(result['ok']);self.assertFalse(result['fully_repaired'])
+            self.assertEqual([1,2],[d['index'] for d in result['drafts']])
+            self.assertNotIn('expired-id',json.dumps(result));self.assertNotIn('valid-id',json.dumps(result))
+
+    def test_unique_exact_candidate_is_freshly_confirmed_and_reused_without_add(self):
+        rows=[article(broken=False)]
+        with tempfile.TemporaryDirectory() as temporary:
+            result,get,catalog,fetch,build,verification=self.execute(Path(temporary),[{'media_id':'expired-id','articles':rows}],candidate=rows,apply=True)
+        self.assertEqual(['expired-id','recovered-id'],[c.args[2] for c in get.call_args_list])
+        self.assertEqual('recovered-id',verification.call_args.args[2])
+        self.assertEqual(1,result['recovered_receipt_groups'])
+        self.assertTrue(result['ok']);self.assertTrue(result['fully_repaired']);self.assertFalse(result['partial'])
+        catalog.assert_called_once();build.assert_called_once()
+
+    def test_candidate_changed_on_fresh_get_remains_unresolved_without_media_calls(self):
+        rows=[article(broken=False)]
+        with tempfile.TemporaryDirectory() as temporary:
+            result,get,catalog,fetch,build,verification=self.execute(Path(temporary),[{'media_id':'expired-id','articles':rows}],candidate=rows,candidate_changes=True,apply=True)
+        self.assertEqual('matched_candidate_changed_before_use',result['drafts'][0]['resolution'])
+        self.assertEqual(0,result['article_count']);self.assertTrue(result['partial'])
+        fetch.assert_not_called();build.assert_not_called();verification.assert_not_called()
+
+    def test_other_wechat_errors_do_not_trigger_catalog_rebinding(self):
+        rows=[article(broken=False)]
+        with tempfile.TemporaryDirectory() as temporary, patch.object(repair,'read_complete_draft_catalog') as catalog, patch.object(repair,'get_draft',side_effect=portal.WeChatError('auth fixture',errcode=40014)):
+            with self.assertRaises(portal.WeChatError):
+                repair.repair_drafts([{'media_id':'expired-id','articles':rows}],object(),'TOKEN',Path(temporary),30,False)
+            catalog.assert_not_called()
+
+    def test_recovered_group_update_targets_only_freshly_confirmed_id_and_index(self):
+        rows=[article(broken=False)]
+        state={'news_item':copy.deepcopy(rows)}
+        def get(_session,_token,media_id,_timeout):
+            if media_id=='expired-id':raise portal.WeChatError('invalid fixture',errcode=40007)
+            self.assertEqual('recovered-id',media_id)
+            return copy.deepcopy(state)
+        def build(_session,_token,current,*_args):
+            fixed=dict(current,thumb_media_id='new-thumb')
+            return fixed,{'cover_replaced':True,'body_replacements':[],'body_added':0,'sources':[]}
+        def update(_session,url,payload,_timeout,**_kwargs):
+            self.assertIn('/draft/update?',url)
+            self.assertEqual('recovered-id',payload['media_id']);self.assertEqual(0,payload['index'])
+            self.assertEqual('new-thumb',payload['articles']['thumb_media_id'])
+            state['news_item'][0].update(payload['articles'])
+            return response({'errcode':0})
+        with tempfile.TemporaryDirectory() as temporary, patch.object(repair,'get_draft',side_effect=get) as gets, \
+                patch.object(repair,'read_complete_draft_catalog',return_value=[self.record('recovered-id',rows)]), \
+                patch.object(repair,'build_media_repair',side_effect=build), \
+                patch.object(repair,'post_wechat_json',side_effect=update) as writes, \
+                patch.object(repair,'verify_draft_get',return_value={'ok':True}) as verify:
+            result=repair.repair_drafts([{'media_id':'expired-id','articles':rows}],object(),'TOKEN',Path(temporary),30,True)
+        self.assertEqual(['expired-id','recovered-id','recovered-id'],[call.args[2] for call in gets.call_args_list])
+        writes.assert_called_once();self.assertEqual('recovered-id',verify.call_args.args[2])
+        self.assertTrue(result['fully_repaired']);self.assertEqual(1,result['recovered_receipt_groups'])
+
+
 class DraftRepairTests(unittest.TestCase):
     def environment(self, stack, articles, *, verification=True):
         state = {'news_item': copy.deepcopy(articles)}
