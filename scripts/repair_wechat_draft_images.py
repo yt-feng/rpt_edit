@@ -19,7 +19,7 @@ from push_portal_translated_to_wechat_drafts import (
     get_stable_access_token, get_draft, draft_news_items, wechat_content_images,
     materialize_private_article_payload, article_prose_text, generated_image_credit_signature,
     post_wechat_json, parse_wechat_json, prepare_cover_upload_image,
-    upload_article_image, upload_cover_material, image_html, verify_draft_get,
+    upload_article_image, upload_cover_material, image_html, summarize_draft_get_response,
     wechat_image_url_identity, WeChatError,
 )
 
@@ -28,6 +28,8 @@ CREDIT_RE = re.compile(r'<p\b[^>]*\bdata-editorial-credit\s*=\s*(["\'])1\1[^>]*>
 IMG_RE = re.compile(r'<img\b[^>]*>', re.I | re.S)
 IMAGE_BLOCK_RE = re.compile(r'<p\b[^>]*>\s*<img\b[^>]*>\s*</p>|<img\b[^>]*>', re.I | re.S)
 MAX_DRAFT_CATALOG = 1000
+WECHAT_DRAFT_WRITABLE_FIELDS = ('title','author','digest','content','content_source_url',
+                                'thumb_media_id','need_open_comment','only_fans_can_comment')
 
 
 class DraftCatalogError(ValueError):
@@ -41,6 +43,83 @@ def strict_draft_group_match(actual, expected):
                and html.unescape(str(a.get('content_source_url') or '')).strip()
                == html.unescape(str(b.get('content_source_url') or '')).strip()
                for a, b in zip(actual, expected))
+
+
+def group_identity_diagnostics(actual, expected):
+    """Field-level evidence without article text, titles, source URLs or IDs."""
+    def fields(article):
+        title, author, prose = prose_identity(article)
+        return {'title':title, 'author':author, 'prose':prose,
+                'source_url':html.unescape(str(article.get('content_source_url') or '')).strip()}
+    rows = []
+    for index in range(max(len(actual), len(expected))):
+        a = fields(actual[index]) if index < len(actual) else fields({})
+        b = fields(expected[index]) if index < len(expected) else fields({})
+        matches = {key:a[key] == b[key] for key in b}
+        differences = {key:{'actual_sha256':hashlib.sha256(a[key].encode()).hexdigest(),
+                            'expected_sha256':hashlib.sha256(b[key].encode()).hexdigest()}
+                       for key in b if not matches[key]}
+        rows.append({'index':index, 'matches':matches, 'differences':differences})
+    return {'actual_article_count':len(actual), 'expected_article_count':len(expected),
+            'article_count_matches':len(actual) == len(expected), 'articles':rows}
+
+
+def returned_article_diagnostics(actual, expected):
+    # Returned URL/thumbnail fields can change independently of prose. Keep
+    # evidence for a later narrow fix; do not assume a difference is harmless.
+    known = {'title','author','content','digest','content_source_url','thumb_media_id',
+             'thumb_url','url','show_cover_pic','need_open_comment','only_fans_can_comment',
+             'article_type','is_deleted','copyright_stat'}
+    changed = {key for key in set(actual) | set(expected) if actual.get(key) != expected.get(key)}
+    def digest(value):
+        return hashlib.sha256(json.dumps(value,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+    return {'changed_fields':{key:{'matches':False, 'writable':key in WECHAT_DRAFT_WRITABLE_FIELDS,
+                                  'actual_sha256':digest(actual.get(key)),
+                                  'expected_sha256':digest(expected.get(key))} for key in sorted(changed & known)},
+            'unrecognized_changed_field_count':len(changed-known)}
+
+
+def writable_group_unchanged(actual, expected):
+    return len(actual) == len(expected) and all(
+        all(a.get(field) == b.get(field) for field in WECHAT_DRAFT_WRITABLE_FIELDS)
+        for a, b in zip(actual, expected))
+
+
+def record_unresolved_group(report, output, index, media_id, expected, category, *,
+                            diagnostics=None, changed=None, errcode=None, remaining_articles=None,
+                            uncertain_articles=0):
+    remaining = len(expected) if remaining_articles is None else remaining_articles
+    report['unresolved_draft_count'] += 1
+    report['unresolved_article_count'] += remaining
+    report['uncertain_article_count'] += uncertain_articles
+    report.update(partial=True, fully_repaired=False, ok=False, status='partial')
+    row = {'index':index, 'identity':hashlib.sha256(media_id.encode()).hexdigest(),
+           'articles':len(expected), 'remaining_articles':remaining,
+           'processed_articles':len(expected)-remaining, 'uncertain_articles':uncertain_articles,
+           'verified':False, 'resolution':category,
+           'status':'unresolved', 'changed':changed or []}
+    if diagnostics is not None:row['identity_diagnostics'] = diagnostics
+    if errcode is not None:row['wechat_errcode'] = errcode
+    report['drafts'].append(row)
+    (output/'progress.json').write_text(json.dumps(report,indent=2))
+    safe = {'draft_index':index, 'status':'unresolved', 'category':category,
+            'unresolved_article_count':report['unresolved_article_count']}
+    if diagnostics is not None:safe['identity_diagnostics'] = diagnostics
+    print(json.dumps(safe), flush=True)
+
+
+def verify_repair_readback(session, token, media_id, timeout, expected):
+    """Validate a returned representation and retain its canonical write fields.
+
+    Do not use the uploader's logging wrapper here: its messages include raw
+    media IDs. Only sanitized counts/diagnostics leave the repair workflow.
+    """
+    data = get_draft(session, token, media_id, timeout)
+    articles = draft_news_items(data)
+    checks = summarize_draft_get_response(data, len(expected), expected)
+    checks['matches_prose_and_source'] = strict_draft_group_match(articles, expected)
+    checks['ok'] = bool(checks.get('ok') and checks['matches_prose_and_source'])
+    return checks, articles
 
 
 def read_complete_draft_catalog(session, token, timeout):
@@ -259,13 +338,16 @@ def repair_drafts(drafts, session, token, output, timeout, apply):
     output.mkdir(parents=True, exist_ok=True)
     report = {'applied': apply, 'drafts': [], 'article_count': 0, 'expected_article_count':sum(len(d['articles']) for d in drafts),
               'changed_articles': 0, 'cover_replacements': 0, 'body_replacements': 0, 'body_added': 0, 'sources': {},
-              'recovered_receipt_groups':0, 'unresolved_draft_count':0, 'unresolved_article_count':0}
+              'updated_articles':0, 'recovered_receipt_groups':0, 'unresolved_draft_count':0, 'unresolved_article_count':0,
+              'uncertain_article_count':0,
+              'partial':False, 'fully_repaired':False, 'ok':False, 'status':'in_progress'}
     catalog = None; catalog_error = None
     reserved_ids = {draft['media_id'] for draft in drafts}
     for draft_index, draft in enumerate(drafts, 1):
         media_id = draft['media_id']
         expected = materialize_private_article_payload(draft['articles'], os.environ.get('PORTAL_SITE_URL', ''))
         resolution = 'saved_receipt_id'
+        resolution_diagnostics = None
         try:
             data = get_draft(session, token, media_id, timeout)
         except WeChatError as exc:
@@ -286,23 +368,21 @@ def repair_drafts(drafts, session, token, output, timeout, apply):
                         raise
                     candidate = None; resolution = 'matched_candidate_no_longer_available'
                 if candidate is not None and not strict_draft_group_match(draft_news_items(data), expected):
+                    resolution_diagnostics = group_identity_diagnostics(draft_news_items(data), expected)
                     candidate = None; resolution = 'matched_candidate_changed_before_use'
                 if candidate is not None:
                     media_id = candidate_id; reserved_ids.add(media_id)
                     report['recovered_receipt_groups'] += 1
             if candidate is None:
-                report['unresolved_draft_count'] += 1; report['unresolved_article_count'] += len(expected)
-                report['drafts'].append({'index':draft_index, 'identity':hashlib.sha256(media_id.encode()).hexdigest(),
-                                        'articles':len(expected), 'verified':False, 'resolution':resolution,
-                                        'status':'unresolved', 'wechat_errcode':40007, 'changed':[]})
-                (output/'progress.json').write_text(json.dumps(report,indent=2))
-                print(json.dumps({'draft_index':draft_index, 'status':'unresolved', 'category':resolution,
-                                  'unresolved_article_count':report['unresolved_article_count']}), flush=True)
+                record_unresolved_group(report, output, draft_index, media_id, expected, resolution,
+                                        diagnostics=resolution_diagnostics, errcode=40007)
                 continue
         actual = draft_news_items(data)
         if not strict_draft_group_match(actual, expected):
-            raise ValueError(f'Draft {draft_index} prose differs from original receipt; no overwrite')
-        changed = []
+            record_unresolved_group(report, output, draft_index, media_id, expected, 'saved_receipt_identity_mismatch',
+                                    diagnostics=group_identity_diagnostics(actual, expected))
+            continue
+        changed = []; interrupted = False
         for index, article in enumerate(actual):
             directory = output / 'assets' / f'{draft_index:02d}_{index:02d}'
             if not apply:
@@ -316,20 +396,61 @@ def repair_drafts(drafts, session, token, output, timeout, apply):
                 has_usable_existing = any(not issue for issue in issues)
                 facts = {'cover_replaced':bool(cover_issue),'cover_reason':cover_issue,'body_replacements':[{'index':i+1,'reason':v} for i,v in enumerate(issues) if v], 'body_added':0 if has_usable_existing else max(0,3-len(body)),'sources':[]}
             else:
+                updated_this_article = False
                 repaired, facts = build_media_repair(session, token, article, directory, timeout)
                 if facts['cover_replaced'] or facts['body_replacements'] or facts['body_added']:
-                    fresh = draft_news_items(get_draft(session, token, media_id, timeout))
-                    if len(fresh) != len(actual) or fresh[index] != article:
-                        raise ValueError('Draft changed during image preparation; no overwrite')
-                    allowed = ('title','author','digest','content','content_source_url','thumb_media_id','need_open_comment','only_fans_can_comment')
-                    payload = {key: repaired[key] for key in allowed if key in repaired}
+                    try:
+                        fresh = draft_news_items(get_draft(session, token, media_id, timeout))
+                    except WeChatError as preparation_error:
+                        if preparation_error.errcode != 40007:raise
+                        record_unresolved_group(report, output, draft_index, media_id, expected,
+                                                'draft_unavailable_during_image_preparation', changed=changed, errcode=40007,
+                                                remaining_articles=len(actual)-index)
+                        interrupted = True; break
+                    if not strict_draft_group_match(fresh, actual) or not writable_group_unchanged(fresh, actual):
+                        diagnostics = group_identity_diagnostics(fresh, actual)
+                        diagnostics['target_article_fields_unchanged'] = index < len(fresh) and fresh[index] == article
+                        diagnostics['protected_group_identity_matches'] = strict_draft_group_match(fresh, actual)
+                        diagnostics['writable_group_unchanged'] = writable_group_unchanged(fresh, actual)
+                        diagnostics['target_returned_fields'] = returned_article_diagnostics(fresh[index] if index < len(fresh) else {}, article)
+                        record_unresolved_group(report, output, draft_index, media_id, expected,
+                                                'draft_changed_during_image_preparation', diagnostics=diagnostics, changed=changed,
+                                                remaining_articles=len(actual)-index)
+                        interrupted = True; break
+                    if fresh[index] != article:
+                        facts['response_only_field_changes'] = returned_article_diagnostics(fresh[index], article)
+                        print(json.dumps({'draft_index':draft_index, 'article_index':index,
+                                          'response_only_field_changes':facts['response_only_field_changes']}), flush=True)
+                    payload = {key: repaired[key] for key in WECHAT_DRAFT_WRITABLE_FIELDS if key in repaired}
                     response = post_wechat_json(session, f'https://api.weixin.qq.com/cgi-bin/draft/update?access_token={token}', {'media_id':media_id,'index':index,'articles':payload}, timeout, max_attempts=1)
                     if parse_wechat_json(response,'draft/update image repair').get('errcode') != 0:
                         raise ValueError('Draft media update not confirmed')
+                    report['updated_articles'] += 1
+                    updated_this_article = True
+                    (output/'progress.json').write_text(json.dumps(report,indent=2))
+                    print(json.dumps({'draft_index':draft_index, 'article_index':index,
+                                      'updated_articles':report['updated_articles']}), flush=True)
                     actual[index] = repaired
-                verification = verify_draft_get(session, token, media_id, timeout, len(actual), actual)
+                try:
+                    verification, readback_articles = verify_repair_readback(session, token, media_id, timeout, actual)
+                except WeChatError as readback_error:
+                    record_unresolved_group(report, output, draft_index, media_id, expected,
+                                            'draft_readback_unavailable', changed=changed, errcode=readback_error.errcode,
+                                            remaining_articles=len(actual)-index, uncertain_articles=int(updated_this_article))
+                    interrupted = True; break
                 if not verification['ok']:
-                    raise ValueError('Draft image readback failed')
+                    diagnostics = group_identity_diagnostics(readback_articles, actual)
+                    diagnostics['readback_checks'] = {key:bool(verification.get(key)) for key in (
+                        'matches_expected_article_count','matches_expected_titles','matches_editorial_contract',
+                        'matches_media_contract','matches_prose_and_source')}
+                    record_unresolved_group(report, output, draft_index, media_id, expected,
+                                            'draft_image_readback_failed', diagnostics=diagnostics, changed=changed,
+                                            remaining_articles=len(actual)-index, uncertain_articles=int(updated_this_article))
+                    interrupted = True; break
+                if updated_this_article:
+                    # Only our just-written member gains a new concurrency
+                    # baseline, after both prose/source and media validation.
+                    actual[index] = copy.deepcopy(readback_articles[index])
             report['article_count'] += 1
             if facts['cover_replaced'] or facts['body_replacements'] or facts['body_added']:
                 report['changed_articles'] += 1;changed.append({'index':index,**facts})
@@ -338,11 +459,13 @@ def repair_drafts(drafts, session, token, output, timeout, apply):
             for source in facts['sources']: report['sources'][source] = report['sources'].get(source,0)+1
             (output/'progress.json').write_text(json.dumps(report,indent=2))
             print(json.dumps({key: report[key] for key in ('article_count','changed_articles','cover_replacements','body_replacements','body_added')}), flush=True)
-        report['drafts'].append({'index':draft_index, 'identity':hashlib.sha256(media_id.encode()).hexdigest(), 'articles':len(actual),'changed':changed,'verified':apply,'resolution':resolution})
+        if not interrupted:
+            report['drafts'].append({'index':draft_index, 'identity':hashlib.sha256(media_id.encode()).hexdigest(), 'articles':len(actual),'changed':changed,'verified':apply,'resolution':resolution})
     report['ok'] = report['unresolved_draft_count'] == 0
     report['partial'] = not report['ok']
     report['fully_repaired'] = bool(apply and report['ok'])
     report['status'] = 'complete' if report['ok'] else 'partial'
+    (output/'progress.json').write_text(json.dumps(report,indent=2))
     return report
 
 
