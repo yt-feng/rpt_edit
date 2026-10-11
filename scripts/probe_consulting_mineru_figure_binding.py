@@ -28,13 +28,36 @@ REPOSITORY = os.environ.get('GITHUB_REPOSITORY', 'example/report-repository')
 MAX_LOG_BYTES = 4 * 1024 * 1024
 
 
-def gh_json(endpoint):
-    return json.loads(gh_bytes(endpoint))
+def gh_json(endpoint, operation):
+    return json.loads(gh_bytes(endpoint, operation))
 
 
-def gh_bytes(endpoint):
-    result = subprocess.run(['gh', 'api', endpoint], capture_output=True, timeout=60)
-    require(result.returncode == 0, 'github_read_failed')
+def github_failure_category(stderr, returncode):
+    """Classify without releasing CLI response text, signed URLs or credentials."""
+    message = stderr.decode('utf-8', 'replace').lower()[:65536]
+    matches = re.findall(r'\bhttp(?:/\d(?:\.\d)?)?\s+([45][0-9]{2})\b', message)
+    if matches:
+        return 'http_' + matches[-1]
+    if any(token in message for token in ('tls handshake', 'x509:', 'certificate',
+            'dial tcp', 'no such host', 'network is unreachable', 'connection refused',
+            'connection reset', 'i/o timeout', 'context deadline exceeded',
+            'timeout awaiting response', 'timed out', 'error connecting to')):
+        return 'network_stop'
+    if returncode == 4 or 'gh auth login' in message:
+        return 'authentication_required'
+    return 'cli_error'
+
+
+def gh_bytes(endpoint, operation):
+    require(operation in {'run_metadata', 'job_metadata', 'job_logs'}, 'github_operation_invalid')
+    try:
+        result = subprocess.run(['gh', 'api', endpoint], capture_output=True, timeout=60)
+    except subprocess.TimeoutExpired:
+        raise ProbeError('github_' + operation + '_network_stop') from None
+    except OSError:
+        raise ProbeError('github_' + operation + '_cli_unavailable') from None
+    if result.returncode != 0:
+        raise ProbeError('github_' + operation + '_' + github_failure_category(result.stderr, result.returncode))
     require(0 < len(result.stdout) <= MAX_LOG_BYTES, 'github_response_size')
     return result.stdout
 
@@ -154,9 +177,9 @@ def main(argv=None):
             'reviewed_main_probe_required')
         require(all(re.fullmatch(r'[1-9][0-9]{0,19}', value) for value in
             (args.source_run_id, args.source_job_id)), 'producer_id_invalid')
-        run = gh_json(f'repos/{REPOSITORY}/actions/runs/{args.source_run_id}')
-        job = gh_json(f'repos/{REPOSITORY}/actions/jobs/{args.source_job_id}')
-        log = gh_bytes(f'repos/{REPOSITORY}/actions/jobs/{args.source_job_id}/logs')
+        run = gh_json(f'repos/{REPOSITORY}/actions/runs/{args.source_run_id}', 'run_metadata')
+        job = gh_json(f'repos/{REPOSITORY}/actions/jobs/{args.source_job_id}', 'job_metadata')
+        log = gh_bytes(f'repos/{REPOSITORY}/actions/jobs/{args.source_job_id}/logs', 'job_logs')
         plan = authenticate(run, job, log, args.source_run_id, args.source_job_id,
             args.expected_articles, args.source_ordinal)
         import boto3

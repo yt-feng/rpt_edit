@@ -74,6 +74,8 @@ jobs:
       date_folder: ${{ steps.fetch.outputs.date_folder }}
       pdf_count: ${{ steps.extract.outputs.generated_report_count }}
       deferred_source_count: ${{ steps.extract.outputs.deferred_source_count }}
+      source_health: ${{ steps.fetch.outputs.source_health }}
+      source_health_required_failure_count: ${{ steps.fetch.outputs.source_health_required_failure_count }}
     steps:
       - name: Initialize DeepSeek usage ledger
         shell: bash
@@ -106,7 +108,9 @@ jobs:
           python -m pip install "boto3>=1.37.32,<2"
 
       - name: Test institution PDF resolver
-        run: python scripts/test_fetch_institution_latest_pdfs.py
+        run: |
+          python scripts/test_fetch_institution_latest_pdfs.py
+          python scripts/test_institution_source_health.py
 
       - name: Install Chinese fonts
         timeout-minutes: 5
@@ -125,12 +129,14 @@ jobs:
 
       - name: Fetch latest institution PDFs
         id: fetch
+        shell: bash
         env:
           PROXY_SUBSCRIPTION_URL: ${{ secrets.PROXY_SUBSCRIPTION_URL }}
         run: |
           set -o pipefail
           DATE="$(TZ=Asia/Shanghai date +%y%m%d)"
           echo "date_folder=$DATE" >> "$GITHUB_OUTPUT"
+          set +e
           python scripts/fetch_institution_latest_pdfs.py \
             --output-dir _institution_latest_pdfs \
             --dependency-holds "$RUNNER_TEMP/institution-held-sources.json" \
@@ -141,6 +147,15 @@ jobs:
             --max-total "${{ github.event.inputs.max_total || '100' }}" \
             --force-reprocess "${{ github.event.inputs.force_reprocess || 'false' }}" \
             2>&1 | tee institution_fetch_progress.log
+          institution_fetch_status=("${PIPESTATUS[@]}")
+          set -e
+          python scripts/institution_source_health.py \
+            --producer-exit-code "${institution_fetch_status[0]}" \
+            --log-exit-code "${institution_fetch_status[1]}" \
+            --manifest _institution_latest_pdfs/institution_run_manifest.json \
+            --date-folder "$DATE" \
+            --institutions "${{ github.event.inputs.institutions || 'all' }}" \
+            --github-output "$GITHUB_OUTPUT"
 
       - name: Extract MinerU source and original images without paid copy
         id: extract
@@ -298,6 +313,21 @@ jobs:
           if-no-files-found: error
           retention-days: 30
 
+  # Source outages remain a failed job; they do not starve accepted private
+  # backlog recovery or prevent saving the recovered WeChat delivery receipts.
+  source-health:
+    needs: fetch-and-build
+    if: ${{ always() && !cancelled() && needs.fetch-and-build.outputs.source_health == 'degraded' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Report required source degradation independently
+        env:
+          REQUIRED_FAILURE_COUNT: ${{ needs.fetch-and-build.outputs.source_health_required_failure_count }}
+        run: |
+          echo "::error::Required institution source health remains degraded ($REQUIRED_FAILURE_COUNT sources). Accepted-source recovery was allowed independently."
+          exit 1
+
   upload-wechat-drafts:
     needs: fetch-and-build
     if: ${{ needs.fetch-and-build.outputs.pdf_count != '0' }}
@@ -441,13 +471,14 @@ jobs:
             --prefix "$PRIVATE_HANDOFF_ROOT/${{ github.run_id }}/${{ needs.fetch-and-build.outputs.date_folder }}"
 
   notify-failure:
-    needs: [fetch-and-build, upload-wechat-drafts, cleanup-private-handoff]
+    needs: [fetch-and-build, source-health, upload-wechat-drafts, cleanup-private-handoff]
     if: ${{ always() && !cancelled() && contains(needs.*.result, 'failure') }}
     uses: ./.github/workflows/portal-ops-alert.yml
     with:
       source_workflow: Institution latest PDF to WeChat
       source_results: >-
         build=${{ needs.fetch-and-build.result }},
+        source_health=${{ needs.source-health.result }},
         wechat=${{ needs.upload-wechat-drafts.result }},
         handoff_cleanup=${{ needs.cleanup-private-handoff.result }}
     secrets: inherit
