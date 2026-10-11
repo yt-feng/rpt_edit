@@ -134,8 +134,13 @@ not claim that synthetic tests prove production objects have been published.
 
 ## Publishing existing outputs
 
-`Publish customer API content` runs after the existing Daily report workflow,
-or manually with that workflow's completed main-branch run ID. It downloads the
+`Publish customer API content` runs as a consumer inside the Daily report workflow,
+after report delivery succeeds and before temporary source cleanup. Both cleanup
+jobs require successful API publication; existing report delivery does not depend
+on this additional consumer. Failed publication retains the source for recovery.
+It can also run manually with a completed main-branch Daily run ID whose handoffs
+still exist. The reusable call verifies the same run ID, source SHA and Daily
+workflow identity; manual calls cannot consume another running task. It downloads the
 current public catalog before binding reports; the repository's older catalog
 is not used for production binding. A unique normalized title and matching source
 date are required to attach artifacts to an existing report. Otherwise the

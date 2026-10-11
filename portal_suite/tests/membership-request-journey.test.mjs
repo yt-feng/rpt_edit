@@ -4,6 +4,7 @@ import test from "node:test";
 import vm from "node:vm";
 
 const source = await readFile(new URL("../site_src/assets/app.js", import.meta.url), "utf8");
+const accountServices = await readFile(new URL("../site_src/assets/account-services.js", import.meta.url), "utf8");
 
 function functionSource(name) {
   const start = source.indexOf(`  async function ${name}(`) >= 0
@@ -19,12 +20,21 @@ function createHarness({ session = null, fetchResponse, authRefresh } = {}) {
   const requests = [];
   const events = [];
   const documentEvents = [];
+  const documentListeners = new Map();
   const captchaLoads = [];
   const document = {
     activeElement: null,
     getElementById(id) { return elements.get(id) || null; },
-    addEventListener() {},
-    dispatchEvent(event) { documentEvents.push(event); },
+    addEventListener(type, listener) {
+      documentListeners.set(type, [...(documentListeners.get(type) || []), listener]);
+    },
+    removeEventListener(type, listener) {
+      documentListeners.set(type, (documentListeners.get(type) || []).filter((value) => value !== listener));
+    },
+    dispatchEvent(event) {
+      documentEvents.push(event);
+      for (const listener of documentListeners.get(event.type) || []) listener(event);
+    },
     body: {
       insertAdjacentHTML(_position, markup) {
         for (const match of markup.matchAll(/<([a-z][a-z0-9]*)\b([^>]*\bid="([^"]+)"[^>]*)>/gu)) {
@@ -59,6 +69,9 @@ function createHarness({ session = null, fetchResponse, authRefresh } = {}) {
         entries.push(listener);
         listeners.set(type, entries);
       },
+      removeEventListener(type, listener) {
+        listeners.set(type, (listeners.get(type) || []).filter((value) => value !== listener));
+      },
       async emit(type, details = {}) {
         const event = { target: this, preventDefault() {}, ...details };
         for (const listener of listeners.get(type) || []) await listener(event);
@@ -66,14 +79,15 @@ function createHarness({ session = null, fetchResponse, authRefresh } = {}) {
       focus(options) { document.activeElement = this; this.focusOptions = options; },
       remove() { this.isConnected = false; elements.delete(id); },
       insertBefore() {}, querySelectorAll() { return []; },
+      querySelector(selector) { return selector.startsWith("#") ? elements.get(selector.slice(1)) || null : null; },
     };
   }
   const trigger = createElement("originalRequestLink");
   document.activeElement = trigger;
   const context = vm.createContext({
-    document, page: "index", URL, Set,
+    document, page: "index", URL, Set, AbortController, setTimeout, clearTimeout,
     CustomEvent: class { constructor(type, options = {}) { this.type = type; this.detail = options.detail; } },
-    window: { alert() {}, clearInterval, setInterval },
+    window: { alert() {}, clearInterval, setInterval, setTimeout, clearTimeout },
     MEMBERSHIP_REQUEST_KINDS: new Set(["membership", "support", "privacy", "refund", "access"]),
     loadAuthSession: () => session,
     authHeaders: () => session ? { Authorization: `Bearer ${session.token}` } : {},
@@ -95,7 +109,12 @@ function createHarness({ session = null, fetchResponse, authRefresh } = {}) {
       return { ok: true, status: 200, json: async () => ({ ok: true }) };
     },
   });
+  // Exercise the actual initializer with the real module already cached. The
+  // admin runtime test separately verifies first-load script insertion.
+  vm.runInContext(accountServices, context, { filename: "account-services.js" });
   vm.runInContext([
+    "let accountServicesLoad = null;",
+    functionSource("loadAccountServices"), functionSource("initLazyAccountServices"), functionSource("isAdminASession"),
     functionSource("membershipRequestKind"), functionSource("membershipRequestCopy"),
     functionSource("accountModalMarkup"), functionSource("showAccountModal"),
   ].join("\n"), context);

@@ -1,9 +1,15 @@
 name: Publish customer API content
 
 on:
-  workflow_run:
-    workflows: ["Daily report articles and translations"]
-    types: [completed]
+  workflow_call:
+    inputs:
+      source_run_id:
+        required: true
+        type: string
+      date:
+        required: false
+        default: ""
+        type: string
   workflow_dispatch:
     inputs:
       source_run_id:
@@ -25,17 +31,13 @@ concurrency:
 
 jobs:
   publish:
-    if: >-
-      ${{ (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main') ||
-          (github.event.workflow_run.head_branch == 'main' &&
-           github.event.workflow_run.head_repository.full_name == github.repository &&
-           github.event.workflow_run.conclusion != 'cancelled') }}
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.sha }}
           fetch-depth: 1
       - uses: actions/setup-python@v5
         with:
@@ -46,15 +48,20 @@ jobs:
       - name: Verify original workflow identity
         uses: actions/github-script@v7
         env:
-          SOURCE_RUN_ID: ${{ inputs.source_run_id || github.event.workflow_run.id }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
         with:
           script: |
             const runId = process.env.SOURCE_RUN_ID;
             if (!/^[1-9][0-9]{0,19}$/.test(runId) || !Number.isSafeInteger(Number(runId))) throw new Error('Invalid source run');
             const {data: run} = await github.rest.actions.getWorkflowRun({...context.repo, run_id: Number(runId)});
+            // A reusable call consumes this exact Daily run before its cleanup.
+            // A manually selected different run must already be completed.
+            const sameDailyRun = String(context.runId) === runId && context.workflow === 'Daily report articles and translations';
             if (run.path.split('@')[0] !== '.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml'
                 || run.head_branch !== 'main' || run.head_repository.full_name !== `${context.repo.owner}/${context.repo.repo}`
-                || String(run.id) !== runId || run.status !== 'completed') throw new Error('Source must be a completed main Daily report run');
+                || String(run.id) !== runId || (sameDailyRun && run.head_sha !== context.sha)
+                || (run.status !== 'completed' && !(sameDailyRun && run.status === 'in_progress')))
+              throw new Error('Source must be this main Daily report run or a completed main Daily report run');
       - name: Fetch and validate current public report catalog
         run: |
           python -B scripts/fetch_release_asset.py \
@@ -65,7 +72,7 @@ jobs:
             "$RUNNER_TEMP/customer-current-catalog.json"
       - name: Publish existing report outputs to private delivery storage
         env:
-          SOURCE_RUN_ID: ${{ inputs.source_run_id || github.event.workflow_run.id }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
           SOURCE_DATE: ${{ inputs.date || '' }}
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}

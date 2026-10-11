@@ -72,4 +72,4 @@ jobs:
       - name: Check account services and customer content delivery
         run: |
           python3 -B scripts/test_publish_customer_content.py
-          node --test portal_suite/tests/customer-content-*.test.mjs portal_suite/tests/ai-research-credits.test.mjs portal_suite/tests/account-api-frontend.test.mjs portal_suite/tests/expiry-reminders.test.mjs
+          node --test portal_suite/tests/customer-content-*.test.mjs portal_suite/tests/ai-research-credits.test.mjs portal_suite/tests/account-api-frontend.test.mjs portal_suite/tests/admin-pdf-intake-frontend.test.mjs portal_suite/tests/membership-request-journey.test.mjs portal_suite/tests/expiry-reminders.test.mjs
