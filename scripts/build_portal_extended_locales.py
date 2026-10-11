@@ -173,19 +173,28 @@ def extended_source_language(text: str) -> str:
     return _detect_source(text)
 
 
-def validate_text(source: str, translated: str, locale: str, source_language: str, *, quantity_validator=None) -> bool:
+def quantity_is_advisory(locale, quantity_validator=None, quantity_policy=None):
+    if quantity_policy not in (None, 'strict', 'advisory'):
+        raise ExpansionError('Unsupported quantity policy')
+    # Historical replay validators always retain their explicit exact contract.
+    return quantity_validator is None and (quantity_policy == 'advisory'
+        or (quantity_policy is None and locale in ADDITIONAL))
+
+
+def validate_text(source: str, translated: str, locale: str, source_language: str, *, quantity_validator=None,
+                  quantity_policy=None) -> bool:
     """Validate display contracts; return an advisory numeric mismatch flag.
 
-    Current SEO reading pages accept numeric prose differences. English
-    editorial callers and explicitly supplied historical replay validators keep
-    their exact blocking contract. Warning counts never contain source values.
+    Additional locales default to numeric prose advisories. English SEO callers
+    opt in explicitly; other callers and historical replay validators retain
+    their blocking contract. Warning counts never contain source values.
     """
     if not isinstance(translated, str) or not translated.strip(): raise ExpansionError('Empty translated text')
     if re.search(r'[\ufffd\ud800-\udfff]', translated): raise ExpansionError('Invalid Unicode translation')
     if len(translated) > max(2000, len(source) * 12): raise ExpansionError('Unbounded translation expansion')
     if re.search(r'__(?:KC_PH_|HYMTPH_)\d+__', translated): raise ExpansionError('Unrestored protected identifier')
     validator = quantity_issues if quantity_validator is None else quantity_validator
-    advisory = quantity_validator is None and locale in ADDITIONAL
+    advisory = quantity_is_advisory(locale, quantity_validator, quantity_policy)
     try:
         quantity_warning = bool(validator(source, translated, source_language, locale))
     except Exception:
@@ -215,10 +224,13 @@ def validate_text(source: str, translated: str, locale: str, source_language: st
 
 class Memo:
     def __init__(self, path: Path, locale: str, translator: Translator, deadline: float, *, source_generation: str | None = None,
-                 allow_source_fallback: bool = False, seed_checkpoint: Path | None = None, quantity_validator=None):
+                 allow_source_fallback: bool = False, seed_checkpoint: Path | None = None, quantity_validator=None,
+                 quantity_policy=None):
         reject_symlinks(path)
         self.path, self.locale, self.translator, self.deadline = path, locale, translator, deadline
         self.quantity_validator = quantity_validator
+        self.quantity_policy = quantity_policy
+        self.quantity_advisory = quantity_is_advisory(locale, quantity_validator, quantity_policy)
         self.source_generation = source_generation
         self.allow_source_fallback = allow_source_fallback
         self.source_fallbacks = {}
@@ -262,7 +274,8 @@ class Memo:
         row = self.rows.get(key, self.seed_rows.get(key))
         if isinstance(row, dict) and row.get('source') == source and row.get('language') == language:
             try:
-                warning = validate_text(source, row.get('text'), self.locale, language, quantity_validator=self.quantity_validator)
+                warning = validate_text(source, row.get('text'), self.locale, language,
+                                        quantity_validator=self.quantity_validator, quantity_policy=self.quantity_policy)
                 if validate_result is not None: validate_result(row['text'])
                 self.record_quantity_warning(key, warning)
                 self.hits += 1
@@ -291,7 +304,8 @@ class Memo:
         try:
             self.calls += 1
             translated = self.translator.translate(source, target=self.locale, source=language, markdown=markdown)
-            warning = validate_text(source, translated, self.locale, language, quantity_validator=self.quantity_validator)
+            warning = validate_text(source, translated, self.locale, language,
+                                    quantity_validator=self.quantity_validator, quantity_policy=self.quantity_policy)
             if validate_result is not None: validate_result(translated)
         except (OfflineTranslationValidationError, ExpansionError) as error:
             # Attach only the existing fixed category to diagnostics already
@@ -320,7 +334,7 @@ class Memo:
         return translated
 
     def record_quantity_warning(self, key, warning):
-        if warning and self.quantity_validator is None and self.locale in ADDITIONAL:
+        if warning and self.quantity_advisory:
             self.quantity_warning_keys.add(key)
             self.quantity_warning_occurrences += 1
 

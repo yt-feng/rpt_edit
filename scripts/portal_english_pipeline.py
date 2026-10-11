@@ -306,11 +306,15 @@ def verify_body(raw, item, doc):
             and body['content_kind'] == 'secondary-commentary', 'English body policy differs')
     require(all(body[key] == item[key] for key in ('id', 'title', 'preview', 'datePublished', 'editorial_sha256')))
     require(isinstance(body['blocks'], list) and len(body['blocks']) == len(doc['blocks']))
-    validate_text(doc['title'], text(body['title'], 500, english=True), 'en', extended_source_language(doc['title']))
+    # Current English SEO policy also applies to immutable legacy candidates;
+    # validate their stored bytes without rewriting their manifest or body.
+    validate_text(doc['title'], text(body['title'], 500, english=True), 'en', extended_source_language(doc['title']),
+                  quantity_policy='advisory')
     for translated, original in zip(body['blocks'], doc['blocks'], strict=True):
         exact(translated, ['tag', 'text'])
         require(translated['tag'] == original['tag'] and translated['tag'] in TEXT_TAGS)
-        validate_text(original['text'], text(translated['text'], english=True), 'en', extended_source_language(original['text']))
+        validate_text(original['text'], text(translated['text'], english=True), 'en', extended_source_language(original['text']),
+                      quantity_policy='advisory')
     require(body['preview'] == preview_text(body['blocks']), 'English preview is not our secondary interpretation')
     return body
 

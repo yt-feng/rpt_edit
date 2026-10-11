@@ -56,6 +56,47 @@ class EnglishPipelineTests(unittest.TestCase):
         result = build(source, directory, checkpoint, SyntheticTranslator())
         return prepared, source, directory, checkpoint, result
 
+    def test_numeric_advisory_survives_persistence_restore_and_legacy_manifest_without_rewrite(self):
+        self.admit(content='<section><strong>KC评论：</strong>我的理解是增长5.3%。</section>')
+        prepared = prepare_queued(self.store, self.original)
+        _, _, source = batch_admission(self.store, self.original, prepared['job']['generation'])
+        for version in (1, 2):
+            with self.subTest(version=version):
+                directory = self.root/f'numeric-{version}'; checkpoint = self.root/f'numeric-{version}.json'
+                translator = SyntheticTranslator(); original = translator.translate
+                translator.translate = lambda value, **kwargs: original(value, **kwargs) if value == TITLE else 'In our view, growth is 6.3%.'
+                manifest = build(source, directory, checkpoint, translator)
+                if version == 1:
+                    manifest['schema_version'] = 1; manifest.pop('public_files_sha256')
+                    (directory/'candidate-manifest.json').write_bytes(stable_bytes(manifest))
+                original_manifest = (directory/'candidate-manifest.json').read_bytes()
+                saved = persist_candidate(self.store, self.original, source, directory, CPU_PRODUCER)
+                self.assertTrue(saved['ready'])
+                before = copy.deepcopy(self.client.objects)
+                restored = self.root/f'numeric-restored-{version}'
+                _, actual, _ = restore_candidate(self.store, self.original, source['generation'], saved['candidate_id'], restored)
+                self.assertEqual(actual, manifest)
+                self.assertEqual((restored/'candidate-manifest.json').read_bytes(), original_manifest)
+                self.assertEqual(self.client.objects, before)
+                item = manifest['items'][0]; doc = source['documents'][0]
+                raw = (restored/'private'/'bodies'/f'{item["body_sha256"]}.json').read_bytes()
+                verified = verify_body(raw, item, doc)
+                self.assertIn('6.3%', verified['blocks'][0]['text'])
+                # Altering content with a matching recomputed hash cannot
+                # bypass the remaining English asset/language/template rules.
+                for bad in ('Read https://example.invalid/chart', '<b>Growth</b>', '增长6.3%。',
+                            'Growth __KC_PH_000__', 'Growth\ufffd', 'Growth | 6.3%'):
+                    changed = copy.deepcopy(verified); changed['blocks'][0]['text'] = bad
+                    from portal_english_commentary import preview_text
+                    try:
+                        changed['preview'] = preview_text(changed['blocks'])
+                    except ExpansionError:
+                        changed['preview'] = 'Rejected invalid content.'
+                    encoded = stable_bytes(changed)
+                    changed_item = {**item, 'preview':changed['preview'], 'body_sha256':digest(encoded)}
+                    with self.subTest(bad=bad), self.assertRaises(ExpansionError):
+                        verify_body(encoded, changed_item, doc)
+
     def failed_inspection_fixture(self):
         self.admit()
         prepared = prepare_queued(self.store, self.original)

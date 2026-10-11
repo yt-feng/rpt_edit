@@ -160,6 +160,16 @@ class QualityTests(unittest.TestCase):
     def test_changed_quantities_rejected(self):
         for text in ['Revenue USD20m.', 'Revenue CNY10m.', 'Revenue 10.', 'Revenue USD10bn.']:
             with self.subTest(text=text),self.assertRaises(ExpansionError):validate_text('Revenue USD10m.',text,'en','en')
+    def test_english_advisory_requires_explicit_opt_in_and_preserves_replay_validator(self):
+        self.assertTrue(validate_text('Revenue USD10m.', 'Revenue USD99m.', 'en', 'en', quantity_policy='advisory'))
+        for kwargs in ({}, {'quantity_policy':'strict'},
+                       {'quantity_policy':'advisory', 'quantity_validator':quantity_issues}):
+            with self.subTest(kwargs=kwargs), self.assertRaisesRegex(ExpansionError, 'Financial quantity'):
+                validate_text('Revenue USD10m.', 'Revenue USD99m.', 'en', 'en', **kwargs)
+        with self.assertRaisesRegex(ExpansionError, 'Unsupported quantity policy'):
+            validate_text('Revenue USD10m.', 'Revenue USD99m.', 'en', 'en', quantity_policy='ignore-all')
+        with mock.patch('build_portal_extended_locales.quantity_issues', side_effect=ValueError('private diagnostic')):
+            self.assertTrue(validate_text('Revenue USD10m.', 'Revenue USD99m.', 'en', 'en', quantity_policy='advisory'))
     def test_seo_quantity_differences_are_advisory_but_explicit_replay_remains_strict(self):
         for text in ('Le chiffre d’affaires EUR999m.', 'Le chiffre d’affaires USD10bn.',
                      'Le chiffre d’affaires progresse.'):
