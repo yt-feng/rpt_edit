@@ -1,10 +1,13 @@
 """Exact original job, immutable admitted bytes, and zero-write probe tests."""
 import copy
+from contextlib import redirect_stderr, redirect_stdout
+import io
 import json
 from pathlib import Path
 import tempfile
 import subprocess
 import unittest
+import zipfile
 from unittest.mock import Mock, patch
 
 import probe_consulting_mineru_figure_binding as p
@@ -156,6 +159,7 @@ class ProbeTests(unittest.TestCase):
 
     def probe(self):
         with patch.object(p, 'compare_cached_pdf', return_value={'status': 'mismatch', 'stage': 'rgb_pixels'}), \
+             patch.object(p, 'verify_production_figures', return_value={'status': 'verified', 'production_consumer_verified': True}), \
              patch.object(self.ledger.store, 'put', side_effect=AssertionError('No ledger write')):
             return p.probe(self.ledger, self.cache, self.plan, self.download, expected_articles=1, ordinal=1)
 
@@ -164,6 +168,7 @@ class ProbeTests(unittest.TestCase):
         self.assertEqual(len(self.downloads), 2)
         self.assertEqual(value['provider_zip_downloads'], 1)
         self.assertEqual(value['comparison']['stage'], 'rgb_pixels')
+        self.assertTrue(value['production_figure_consumer']['production_consumer_verified'])
         self.assertEqual(self.r2.puts, [])
         self.assertNotIn('secret-signed-url', json.dumps(value))
         self.assertNotIn('BCG_a', json.dumps(value))
@@ -192,6 +197,104 @@ class ProbeTests(unittest.TestCase):
         with self.assertRaisesRegex(p.ProbeError, 'selected_source_claim'):
             self.probe()
         self.assertEqual(self.downloads, [])
+
+
+class ProductionConsumerTests(unittest.TestCase):
+    def setUp(self):
+        from test_mineru_figure_sources import Fixture, visual
+        from test_mineru_pdf_output_intents import output_intent_fixture, pdfium_copy
+        self.temp = tempfile.TemporaryDirectory(); self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.fixture = Fixture(self.root / 'fixture', pages=2, visuals=[
+            visual(0, [35,100,185,260], kind='chart', page_idx=0),
+            visual(1, [35,100,185,260], kind='chart', page_idx=1)])
+        self.original = output_intent_fixture(plain_first=True)
+        self.embedded = pdfium_copy(self.original)
+        self.fixture.original.write_bytes(self.original)
+        (self.fixture.raw / 'source.pdf').write_bytes(self.embedded)
+
+    def archive(self):
+        output = io.BytesIO()
+        with zipfile.ZipFile(output, 'w', zipfile.ZIP_DEFLATED) as archive:
+            archive.writestr('full.md', (self.fixture.report / 'source_mineru.md').read_bytes())
+            for path in self.fixture.raw.rglob('*'):
+                if path.is_file(): archive.writestr(path.relative_to(self.fixture.raw).as_posix(), path.read_bytes())
+        return output.getvalue()
+
+    def verify(self, payload=None):
+        import requests
+        import urllib.request
+        with (patch.object(requests.sessions.Session, 'request', side_effect=AssertionError('No network')),
+                patch.object(urllib.request, 'urlopen', side_effect=AssertionError('No network'))):
+            return p.verify_production_figures(self.fixture.original, payload or self.archive(), digest(self.original))
+
+    def test_real_producer_and_consumer_accept_exact_icc_repair_and_raw_free_handoff(self):
+        import mineru_figure_sources as figures
+        import pdf_to_xhs_batch as producer
+        raw = self.archive()
+        with (patch.object(producer, 'create_chart_source_assets', wraps=producer.create_chart_source_assets) as create,
+                patch.object(figures, 'validate_figure_sources', wraps=figures.validate_figure_sources) as validate):
+            result = self.verify(raw)
+        self.assertEqual(result['status'], 'verified', result)
+        self.assertTrue(result['production_consumer_verified']); self.assertTrue(result['private_handoff_replay_verified'])
+        self.assertEqual(create.call_count, 1); self.assertEqual(validate.call_count, 2)
+        self.assertEqual(create.call_args.args[2], 8)
+        self.assertEqual(result['image_count'], 2); self.assertEqual(result['selected_page_count'], 2)
+        self.assertEqual(result['validated_reference_count'], 2)
+        self.assertEqual(result['restoration_policy'], 'authenticated-outputintents-restoration-v1')
+        self.assertEqual(result['original_pdf_sha256'], digest(self.original))
+        self.assertEqual(result['result_zip_sha256'], digest(raw))
+        self.assertEqual(self.fixture.original.read_bytes(), self.original)
+        self.assertEqual((self.fixture.raw / 'source.pdf').read_bytes(), self.embedded)
+        self.assertFalse(result['production_acceptance']); self.assertFalse(result['complete_source_handoff'])
+        for private in ('Synthetic', 'PRIVATE_PROFILE', 'images/image-', 'full.md', str(self.root)):
+            self.assertNotIn(private, json.dumps(result))
+
+    def test_changed_provider_body_is_rejected_by_real_producer(self):
+        from test_mineru_pdf_output_intents import changed
+        altered = changed(self.embedded, lambda doc: doc[0].insert_text((30,80), 'PRIVATE ALTERED', fontsize=9))
+        (self.fixture.raw / 'source.pdf').write_bytes(altered)
+        result = self.verify()
+        self.assertEqual(result['status'], 'rejected')
+        self.assertEqual(result['category'], 'figure_source_pixels_mismatch')
+        self.assertFalse(result['production_consumer_verified'])
+        self.assertNotIn('PRIVATE ALTERED', json.dumps(result))
+
+    def test_sidecar_removal_during_raw_free_handoff_is_rejected(self):
+        import mineru_figure_sources as figures
+        real_validate = figures.validate_figure_sources
+        calls = 0
+        def tamper(report, **kwargs):
+            nonlocal calls
+            calls += 1
+            if calls == 2: (Path(report) / figures.SIDECAR).unlink()
+            return real_validate(report, **kwargs)
+        with patch.object(figures, 'validate_figure_sources', side_effect=tamper):
+            result = self.verify()
+        self.assertEqual(result['status'], 'rejected'); self.assertEqual(calls, 2)
+        self.assertFalse(result['private_handoff_replay_verified'])
+
+    def test_image_map_mismatch_and_producer_private_output_never_escape(self):
+        import pdf_to_xhs_batch as producer
+        real_create = producer.create_chart_source_assets
+        def bad_map(raw, assets, *args, **kwargs):
+            print('PRIVATE PRODUCER OUTPUT')
+            images = real_create(raw, assets, *args, **kwargs)
+            path = assets.parent / 'source_image_map.json'
+            value = json.loads(path.read_bytes()); value['images'] = {}; path.write_text(json.dumps(value))
+            return images
+        output = io.StringIO()
+        with patch.object(producer, 'create_chart_source_assets', side_effect=bad_map), redirect_stdout(output), redirect_stderr(output):
+            result = self.verify()
+        self.assertEqual(result['status'], 'rejected'); self.assertEqual(result['category'], 'production_image_map_mismatch')
+        self.assertEqual(output.getvalue(), '')
+        self.assertNotIn('PRIVATE PRODUCER OUTPUT', json.dumps(result))
+
+    def test_changed_admitted_original_stops_before_unpack_or_consumer(self):
+        self.fixture.original.write_bytes(self.original + b'changed')
+        with patch('consume_legacy_mineru.safe_unzip', side_effect=AssertionError('No unpack')):
+            result = self.verify()
+        self.assertEqual(result['status'], 'rejected'); self.assertEqual(result['category'], 'production_original_bytes_changed')
 
 
 if __name__ == '__main__':

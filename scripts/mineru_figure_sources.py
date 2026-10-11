@@ -743,12 +743,19 @@ def _create(result_dir, assets_dir, found, original_sha, markdown_sha, original,
                     # every existing page drawing object to the admitted source.
                     # The cache / raw provider file and original crop stay intact.
                     from mineru_pdf_oc import has_missing_optional_content, restore_missing_optional_content
-                    if restoration_proof is not None or not has_missing_optional_content(authentic, rewritten):
+                    from mineru_pdf_output_intents import has_missing_output_intents, restore_missing_output_intents
+                    missing_oc = has_missing_optional_content(authentic, rewritten)
+                    missing_output_intents = has_missing_output_intents(authentic, rewritten)
+                    if restoration_proof is not None or missing_oc == missing_output_intents:
                         image.close(); other.close()
                         _fail("figure_source_pixels_mismatch")
                     try:
-                        restored, restoration_proof = restore_missing_optional_content(authentic, rewritten,
-                            original_sha256=original_sha, embedded_sha256=_sha(embedded_bytes))
+                        if missing_oc:
+                            restored, restoration_proof = restore_missing_optional_content(authentic, rewritten,
+                                original_sha256=original_sha, embedded_sha256=_sha(embedded_bytes))
+                        else:
+                            restored, restoration_proof = restore_missing_output_intents(original_bytes, embedded_bytes,
+                                original_sha256=original_sha, embedded_sha256=_sha(embedded_bytes))
                         restoration_stack.callback(restored.close)
                         for prior in pages:
                             previous = restored[prior["page_idx"]]
@@ -781,9 +788,8 @@ def _create(result_dir, assets_dir, found, original_sha, markdown_sha, original,
                 other.close()
                 del image, other
             if restoration_proof is not None:
-                from mineru_pdf_oc import validate_restoration_receipt
                 restoration_proof["verified_page_indices"] = used_pages
-                validate_restoration_receipt(restoration_proof, original_sha256=original_sha,
+                _validate_render_restoration(restoration_proof, original_sha256=original_sha,
                     embedded_sha256=_sha(embedded_bytes), page_indices=used_pages)
     for item in provider.values():
         target = report / item["path"]
@@ -882,6 +888,18 @@ def validate_figure_sources(report_dir: Path, *, expected_original_sha256: str |
         _fail("figure_proof_invalid")
 
 
+def _validate_render_restoration(value, **bindings):
+    from mineru_pdf_oc import POLICY as OC_POLICY, validate_restoration_receipt as validate_oc
+    from mineru_pdf_output_intents import POLICY as COLOR_POLICY, validate_restoration_receipt as validate_color
+    if not isinstance(value, dict):
+        _fail("figure_proof_invalid")
+    if value.get("policy") == OC_POLICY:
+        return validate_oc(value, **bindings)
+    if value.get("policy") == COLOR_POLICY:
+        return validate_color(value, **bindings)
+    _fail("figure_proof_invalid")
+
+
 def _validate(report, original_sha, markdown_sha, images):
     original_sha = _hash(original_sha, optional=True)
     markdown_sha = _hash(markdown_sha)
@@ -950,8 +968,7 @@ def _validate(report, original_sha, markdown_sha, images):
     carried_pixels = 0
     expected_pages = sorted({r["page_idx"] for r, d in zip(metadata["records"], decisions) if d["selected"]}) if auth else []
     if restored:
-        from mineru_pdf_oc import validate_restoration_receipt
-        validate_restoration_receipt(value["embedded_pdf_render_restoration"], original_sha256=original_sha,
+        _validate_render_restoration(value["embedded_pdf_render_restoration"], original_sha256=original_sha,
             embedded_sha256=value["embedded_pdf_sha256"], page_indices=expected_pages)
     if not isinstance(value["pages"], list) or [p.get("page_idx") for p in value["pages"]] != expected_pages:
         _fail()

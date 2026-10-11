@@ -26,6 +26,7 @@ WORKFLOW = '.github/workflows/consulting-mineru-figure-probe.yml'
 PRODUCER = '.github/workflows/consulting-latest-pdf-to-wechat.yml'
 REPOSITORY = os.environ.get('GITHUB_REPOSITORY', 'example/report-repository')
 MAX_LOG_BYTES = 4 * 1024 * 1024
+PRODUCTION_MAX_IMAGES = 8  # Normal Consulting source-only wrapper default.
 
 
 def gh_json(endpoint, operation):
@@ -130,6 +131,85 @@ def authenticate(run, job, raw_log, run_id, job_id, expected_articles, ordinal):
         'batch_keys': keys}
 
 
+def verify_production_figures(original_path, payload, original_sha256, budget=lambda: None):
+    """Exercise the real producer and downstream consumer using local inputs.
+
+    Everything materialized here lives in a disposable private report directory.
+    The admitted original, provider ZIP and external caches are never modified.
+    No source handoff, article, draft or publication is created by this check.
+    """
+    from contextlib import redirect_stderr, redirect_stdout
+    import io
+    import shutil
+    import mineru_figure_sources as figures
+    from consume_legacy_mineru import chart_assets, figure_source_status, safe_unzip
+    from pdf_to_xhs_batch import find_markdown
+    result = {'status': 'rejected', 'diagnostic_only': True, 'production_acceptance': False,
+        'production_consumer_verified': False, 'complete_source_handoff': False,
+        'private_handoff_replay_verified': False, 'max_images': PRODUCTION_MAX_IMAGES}
+    try:
+        budget(); original_path = Path(original_path)
+        require(digest(original_path.read_bytes()) == original_sha256, 'production_original_bytes_changed')
+        zip_sha256 = digest(payload)
+        with tempfile.TemporaryDirectory(prefix='consulting-production-figures-') as temporary, \
+                redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()), figures._silent_mupdf():
+            report = Path(temporary) / 'report'; raw = report / 'mineru_raw'
+            safe_unzip(payload, raw)
+            markdown_path = find_markdown(raw)
+            require(markdown_path is not None, 'production_markdown_missing')
+            # Match process_pdf's real text normalization before asset binding.
+            markdown = markdown_path.read_text(encoding='utf-8', errors='ignore').encode('utf-8')
+            source = report / 'source_mineru.md'; source.write_bytes(markdown)
+            markdown_sha256 = digest(markdown)
+            budget()
+            images = chart_assets(raw, report / 'assets', PRODUCTION_MAX_IMAGES,
+                original_pdf_sha256=original_sha256, auth_original_pdf=original_path,
+                markdown_sha256=markdown_sha256)
+            status = {'chart_source_only': True, 'source_markdown': 'source_mineru.md',
+                'original_pdf_sha256': original_sha256, 'images': images,
+                'chart_source_image_count': len(images), **figure_source_status(report)}
+            require('source_figure_map' in status, 'production_figure_sidecar_missing')
+            (report / 'status.json').write_bytes(encoded(status))
+            selected = figures.validate_figure_sources(report,
+                expected_original_sha256=original_sha256, expected_markdown_sha256=markdown_sha256,
+                expected_images=images)
+            require(isinstance(selected, dict), 'production_figure_sidecar_missing')
+            mapping_bytes = (report / 'source_image_map.json').read_bytes()
+            mapping = json.loads(mapping_bytes)
+            require(mapping.get('version') == 1 and mapping.get('source_sha256') == markdown_sha256
+                and isinstance(mapping.get('images'), dict)
+                and all(mapping['images'].get(ref) == asset for ref, asset in selected.items()),
+                'production_image_map_mismatch')
+            proof_bytes = (report / figures.SIDECAR).read_bytes(); proof = json.loads(proof_bytes)
+            require(proof.get('authenticated_original_render') is True
+                and len(proof['assets']) == len(images)
+                and all(asset.get('mode') == 'authenticated_original_crop' for asset in proof['assets']),
+                'production_original_crop_required')
+            budget()
+            # Downstream private handoffs retain source carriers, not raw MinerU.
+            # Delete only this disposable extraction, then run the real consumer.
+            shutil.rmtree(raw)
+            replay = figures.validate_figure_sources(report,
+                expected_original_sha256=original_sha256, expected_markdown_sha256=markdown_sha256,
+                expected_images=images)
+            require(exact_json(replay, selected), 'production_handoff_replay_mismatch')
+            require(digest(original_path.read_bytes()) == original_sha256 and digest(payload) == zip_sha256,
+                'production_input_changed')
+            result.update(status='verified', production_consumer_verified=True,
+                private_handoff_replay_verified=True, original_pdf_sha256=original_sha256,
+                result_zip_sha256=zip_sha256, source_markdown_sha256=markdown_sha256,
+                sidecar_sha256=digest(proof_bytes), image_map_sha256=digest(mapping_bytes),
+                figure_policy=proof['policy'], restoration_policy=(proof.get('embedded_pdf_render_restoration') or {}).get('policy'),
+                selected_page_count=len(proof['pages']), image_count=len(images),
+                validated_reference_count=len(selected), image_map_reference_count=len(mapping['images']))
+            budget()
+    except Exception as error:
+        result.update(status='rejected', production_consumer_verified=False, private_handoff_replay_verified=False,
+            category=error.category if isinstance(error, figures.FigureSourceError) else
+            str(error) if isinstance(error, ProbeError) else type(error).__name__)
+    return result
+
+
 def probe(ledger, cache, plan, download, *, expected_articles, ordinal):
     readonly = copy.copy(ledger)
     deadline = ledger.clock() + MAX_PROBE_SECONDS
@@ -166,6 +246,9 @@ def probe(ledger, cache, plan, download, *, expected_articles, ordinal):
         path.write_bytes(original)
         comparison = compare_cached_pdf(path, payload, original_sha256=binding['sha256'],
             clock=ledger.clock, deadline=deadline)
+        def budget():
+            require(ledger.clock() < deadline, 'probe_deadline')
+        production_figures = verify_production_figures(path, payload, binding['sha256'], budget)
     readonly.store.verify()
     return {'schema': 1, 'diagnostic_only': True, 'production_acceptance': False,
         'provider_posts': 0, 'provider_uploads': 0, 'model_calls': 0, 'canonical_ledger_writes': 0,
@@ -173,7 +256,8 @@ def probe(ledger, cache, plan, download, *, expected_articles, ordinal):
         'provider_zip_downloads': 0 if cache_hit else 1, 'cache_hit': cache_hit,
         'provider_gets': readonly.provider.gets, 'source_ordinal': ordinal,
         'original_report_count': expected_articles, 'source_binding_sha256': binding['id'],
-        'cache_identity_sha256': identity(binding, lineage), 'comparison': comparison}
+        'cache_identity_sha256': identity(binding, lineage), 'comparison': comparison,
+        'production_figure_consumer': production_figures}
 
 
 def main(argv=None):
