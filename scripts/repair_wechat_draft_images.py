@@ -17,7 +17,7 @@ from wechat_image_quality import article_image_rejection
 from verify_existing_wechat_drafts import load_drafts
 from push_portal_translated_to_wechat_drafts import (
     get_stable_access_token, get_draft, draft_news_items, wechat_content_images,
-    materialize_private_article_payload, visible_wechat_content_text,
+    materialize_private_article_payload, article_prose_text, generated_image_credit_signature,
     post_wechat_json, parse_wechat_json, prepare_cover_upload_image,
     upload_article_image, upload_cover_material, image_html, verify_draft_get,
     wechat_image_url_identity,
@@ -30,8 +30,7 @@ IMAGE_BLOCK_RE = re.compile(r'<p\b[^>]*>\s*<img\b[^>]*>\s*</p>|<img\b[^>]*>', re
 
 
 def prose_identity(article):
-    content = CREDIT_RE.sub('', str(article.get('content') or ''))
-    return (str(article.get('title') or ''), str(article.get('author') or ''), visible_wechat_content_text(content))
+    return (str(article.get('title') or ''), str(article.get('author') or ''), article_prose_text(article.get('content')))
 
 
 def article_body_images(content):
@@ -103,7 +102,7 @@ def replace_image(content, old_url, new_url, credit):
             tail = content[end:]
             whitespace = len(tail) - len(tail.lstrip())
             previous_credit = CREDIT_RE.match(tail, whitespace)
-            if not previous_credit:
+            if not previous_credit or generated_image_credit_signature(previous_credit.group(0)) is None:
                 break
             end += previous_credit.end()
         pieces.append(content[cursor:match.start()])

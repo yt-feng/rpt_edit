@@ -50,7 +50,7 @@ from sensitive_content_guard import (
 )
 from wechat_article_quality import audit_wechat_article_markdown, sanitize_wechat_article_markdown
 from wechat_image_quality import is_article_image_candidate
-from free_editorial_images import download_editorial_image, attribution_html
+from free_editorial_images import download_editorial_image, attribution_html, attribution_caption
 
 
 BRAND = "外资精译"
@@ -2139,6 +2139,79 @@ def visible_wechat_content_text(content: Any) -> str:
     return normalize_space(text)
 
 
+IMAGE_CREDIT_PARAGRAPH_RE = re.compile(r'<p\b[^>]*>.*?</p>', re.I | re.S)
+
+
+def generated_image_credit_signature(paragraph: str) -> tuple[str, tuple[str, ...]] | None:
+    """Recognize only this uploader's complete, marked image-credit format."""
+    class Credit(HTMLParser):
+        def __init__(self) -> None:
+            super().__init__(convert_charrefs=True)
+            self.root: dict[str, str | None] = {}
+            self.parts: list[str] = []
+            self.links: list[str] = []
+            self.invalid = False
+            self.p_count = 0
+
+        def handle_starttag(self, tag, attrs):
+            values = dict(attrs)
+            if tag == "p":
+                self.p_count += 1
+                self.root = values
+            elif tag == "a":
+                self.links.append(str(values.get("href") or ""))
+            else:
+                self.invalid = True
+
+        def handle_data(self, data):
+            self.parts.append(data)
+
+        def handle_comment(self, _data):
+            self.invalid = True
+
+    parsed = Credit()
+    parsed.feed(paragraph)
+    if (parsed.invalid or parsed.p_count != 1 or parsed.root.get("data-editorial-credit") != "1"
+            or "image-credit" not in str(parsed.root.get("class") or "").split()):
+        return None
+    text = normalize_space("".join(parsed.parts))
+    if text == attribution_caption({"source": "local_editorial"}) and not parsed.links:
+        return text, ()
+    match = re.fullmatch(r"主题配图：.{1,240} / Wikimedia Commons / (CC0 1\.0|CC BY (2\.0|2\.5|3\.0|4\.0))；已裁剪与缩放，非报告原图。 图片来源 · 许可", text)
+    if not match or len(parsed.links) != 2:
+        return None
+    try:
+        source, license_url = (urlsplit(url) for url in parsed.links)
+        if any(part.scheme != "https" or part.username or part.password or part.port not in (None, 443) or part.fragment or part.query for part in (source, license_url)):
+            return None
+        if source.hostname != "commons.wikimedia.org" or not source.path.startswith("/wiki/File:"):
+            return None
+        license_path = "/publicdomain/zero/1.0/" if match[1] == "CC0 1.0" else f"/licenses/by/{match[2]}/"
+        if license_url.hostname != "creativecommons.org" or license_url.path != license_path:
+            return None
+    except ValueError:
+        return None
+    return text, tuple(parsed.links)
+
+
+def generated_image_credits(content: Any) -> list[tuple[str, tuple[str, ...]]]:
+    return [signature for match in IMAGE_CREDIT_PARAGRAPH_RE.finditer(str(content or ""))
+            if (signature := generated_image_credit_signature(match.group(0))) is not None]
+
+
+def article_prose_text(content: Any) -> str:
+    """Stable article identity excludes only valid generated image credits.
+
+    Credits are independently checked by the media contract; generic paragraphs,
+    malformed credits and manually added notes remain part of article identity.
+    """
+    stripped = IMAGE_CREDIT_PARAGRAPH_RE.sub(
+        lambda match: "" if generated_image_credit_signature(match.group(0)) is not None else match.group(0),
+        str(content or ""),
+    )
+    return visible_wechat_content_text(stripped)
+
+
 def wechat_editorial_contract_check(
     article: dict[str, Any],
     expected_article: dict[str, Any] | None = None,
@@ -2378,10 +2451,16 @@ def wechat_media_contract_check(article: dict[str, Any], expected: dict[str, Any
         and all(actual_urls) and all(expected_urls) and actual_urls == expected_urls
     )
     footer_count = sum(alt == "KC桌面" for _url, alt in expected_images)
+    actual_credits = generated_image_credits(article.get("content"))
+    expected_credits = generated_image_credits((expected or {}).get("content"))
+    matches_credits = expected is None or actual_credits == expected_credits
     return {
-        "matches": matches_cover and matches_images,
+        "matches": matches_cover and matches_images and matches_credits,
         "matches_cover": matches_cover,
         "matches_inline_images": matches_images,
+        "matches_image_credits": matches_credits,
+        "image_credit_count": len(actual_credits),
+        "expected_image_credit_count": len(expected_credits),
         "image_count": len(actual_images),
         "expected_image_count": len(expected_images),
         "expected_body_image_count": len(expected_images) - footer_count,
@@ -2403,7 +2482,7 @@ def repair_existing_draft_media(
     if len(actual_articles) != len(expected_articles) or any(
         str(actual.get("title") or "") != str(expected.get("title") or "")
         or str(actual.get("author") or "") != str(expected.get("author") or "")
-        or visible_wechat_content_text(actual.get("content")) != visible_wechat_content_text(expected.get("content"))
+        or article_prose_text(actual.get("content")) != article_prose_text(expected.get("content"))
         for actual, expected in zip(actual_articles, expected_articles)
     ):
         return []
@@ -2536,7 +2615,7 @@ def draft_group_key(articles: list[dict[str, Any]]) -> str:
         {
             "title": item.get("title", ""),
             "author": item.get("author", ""),
-            "text": visible_wechat_content_text(item.get("content")),
+            "text": article_prose_text(item.get("content")),
         }
         for item in articles
     ]
@@ -2555,11 +2634,12 @@ def saved_draft_receipt(output_dir: Path, public_articles: list[dict[str, Any]])
         if not isinstance(draft, dict) or not draft.get("media_id"):
             continue
         saved_key = draft.get("group_key")
-        if not saved_key and draft.get("payload"):
+        if saved_key != key and draft.get("payload"):
             # Historical diagnostics use runner-absolute paths. Only read the
-            # known local payload basename when restoring an artifact.
+            # known local payload basename when restoring an artifact. Recompute
+            # legacy identities that included generated photo credits as prose.
             payload = read_json(output_dir / Path(draft["payload"]).name)
-            if isinstance(payload, dict) and isinstance(payload.get("articles"), list):
+            if isinstance(payload, dict) and isinstance(payload.get("articles"), list) and all(isinstance(item, dict) for item in payload["articles"]):
                 saved_key = draft_group_key(payload["articles"])
         if saved_key == key:
             return dict(draft)

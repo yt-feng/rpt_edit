@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 import json
 from pathlib import Path
 import tempfile
@@ -14,6 +15,7 @@ import requests
 import push_portal_translated_to_wechat_drafts as portal
 import push_xhs_notes_to_wechat_drafts as xhs
 from wechat_image_quality import article_image_rejection, is_article_image_candidate, REPO_ROOT
+from free_editorial_images import attribution_html
 
 
 def image(path: Path, color=(51, 107, 151)) -> Path:
@@ -105,6 +107,71 @@ class ImageAdmissionTests(unittest.TestCase):
 
 
 class MediaReadbackTests(unittest.TestCase):
+    def commons_credit(self, author, filename):
+        return attribution_html({"source":"commons", "author":author, "license":"CC BY 4.0",
+                                 "source_url":f"https://commons.wikimedia.org/wiki/File:{filename}.jpg",
+                                 "license_url":"https://creativecommons.org/licenses/by/4.0/"})
+
+    def test_changed_commons_credit_preserves_group_identity_and_repairs_same_draft(self):
+        old = article()
+        old["content"] += self.commons_credit("First Photographer", "First")
+        expected = article()
+        expected["content"] = expected["content"].replace("body-image", "replacement-image") + self.commons_credit("Second Photographer", "Second")
+        expected["thumb_media_id"] = "new-cover"
+        self.assertEqual(portal.draft_group_key([old]), portal.draft_group_key([expected]))
+        self.assertEqual(portal.article_prose_text(old["content"]), portal.article_prose_text(expected["content"]))
+        with patch.object(portal, "batchget_recent_drafts", return_value=[{"media_id":"EXISTING", "content":{"news_item":[old]}}]):
+            self.assertEqual("EXISTING", portal.find_recent_draft_by_titles(object(), "TOKEN", [expected["title"]], 30, expected_articles=[expected]))
+        with patch.object(portal, "get_draft", side_effect=[{"news_item":[old]}, {"news_item":[expected]}]), patch.object(portal, "post_wechat_json", return_value=response({"errcode":0})) as post:
+            result = portal.verify_draft_get(object(), "TOKEN", "EXISTING", 30, 1, [expected], True)
+        self.assertTrue(result["ok"])
+        self.assertEqual(1, post.call_count)
+        self.assertIn("/draft/update?", post.call_args.args[1])
+        self.assertEqual("EXISTING", post.call_args.args[2]["media_id"])
+        self.assertEqual(0, post.call_args.args[2]["index"])
+
+    def test_missing_changed_or_invalid_license_credit_cannot_pass_media_acceptance(self):
+        expected = article()
+        expected["content"] += self.commons_credit("Photographer", "Original")
+        changed = copy.deepcopy(expected)
+        changed["content"] = changed["content"].replace("File:Original", "File:Other")
+        invalid = copy.deepcopy(expected)
+        invalid["content"] = invalid["content"].replace("creativecommons.org", "untrusted.example")
+        for actual in (article(), changed, invalid):
+            with self.subTest(content=actual["content"]):
+                checks = portal.wechat_media_contract_check(actual, expected)
+                self.assertTrue(checks["matches_inline_images"])
+                self.assertFalse(checks["matches_image_credits"])
+                self.assertFalse(checks["matches"])
+
+    def test_noncredit_prose_and_fake_marked_paragraph_stay_in_identity(self):
+        expected = article()
+        expected["content"] += self.commons_credit("First", "First")
+        old = article()
+        old["content"] += self.commons_credit("Second", "Second") + '<p class="image-credit" data-editorial-credit="1">人工补写的重要正文。</p>'
+        self.assertNotEqual(portal.draft_group_key([old]), portal.draft_group_key([expected]))
+        with patch.object(portal, "get_draft", return_value={"news_item":[old]}), patch.object(portal, "post_wechat_json") as post, patch.object(portal, "sleep_before_wechat_retry"):
+            result = portal.verify_draft_get(object(), "TOKEN", "EXISTING", 30, 1, [expected], True)
+        self.assertFalse(result["ok"])
+        post.assert_not_called()
+
+    def test_legacy_credit_key_recovers_saved_id_and_split_prefix_without_duplicate_creation(self):
+        old = article()
+        old["content"] += self.commons_credit("First", "First")
+        expected = article()
+        expected["content"] += self.commons_credit("Second", "Second")
+        identity = [{"title":old["title"], "author":old["author"], "text":portal.visible_wechat_content_text(old["content"])}]
+        old_key = hashlib.sha256(json.dumps(identity, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+        self.assertNotEqual(old_key, portal.draft_group_key([expected]))
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            portal.write_json(root / "draft_payload_01.json", {"articles":[old]})
+            portal.write_json(root / "wechat_draft_summary.json", {"dry_run":False, "drafts":[{
+                "media_id":"EXISTING_CHILD", "group_key":old_key, "payload":"/old/runner/draft_payload_01.json",
+            }]})
+            self.assertEqual("EXISTING_CHILD", portal.saved_draft_receipt(root, [expected])["media_id"])
+            self.assertEqual(1, portal.saved_draft_prefix_length(root, [expected, dict(expected, title="另一篇文章")]))
+
     def test_html_budget_cannot_silently_drop_all_body_images_and_leave_contact_card(self):
         oversized_image = "https://mmbiz.qpic.cn/" + "x" * 18000
         with self.assertRaisesRegex(RuntimeError, "exceeds limits"):

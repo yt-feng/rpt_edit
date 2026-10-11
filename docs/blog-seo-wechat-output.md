@@ -217,8 +217,8 @@ Apply mode checks the live draft against its saved prose identity, inspects actu
 WeChat CDN image bytes, replaces defective covers/body images and fills missing
 body illustrations, then reads back the saved media. A second fresh read before
 each update protects intervening edits. It never adds, deletes, publishes or
-regenerates an article. Managed image credits are the only prose comparison
-exception. Sanitized progress permits a later rerun to repair only what remains.
+regenerates an article. Only recognized generated image credits are excluded from prose identity;
+image-credit text and license/source links are checked separately on readback. Sanitized progress permits a later rerun to repair only what remains.
 
 New draft payloads carry the images and attribution into the existing Blog
 archive path. Repairing an already saved WeChat draft is a distinct operation:
