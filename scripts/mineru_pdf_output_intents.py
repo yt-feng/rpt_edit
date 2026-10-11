@@ -53,7 +53,12 @@ def copy_output_intents(original, embedded, budget=lambda: None):
     try:
         budget()
         source = PdfReader(io.BytesIO(original)); provider = PdfReader(io.BytesIO(embedded))
-        require(not source.is_encrypted and not provider.is_encrypted, 'output_intent_encrypted')
+        for reader in (source, provider):
+            # is_encrypted remains true for permission-protected PDFs that
+            # open normally without a password. Confirm empty-password access;
+            # never request or try a nonempty password, or change source bytes.
+            if reader.is_encrypted:
+                require(reader.decrypt('') != 0, 'output_intent_password_required')
         source_root = source.trailer['/Root']; provider_root = provider.trailer['/Root']
         provider_intents = provider_root.get('/OutputIntents')
         require('/OutputIntents' in source_root and (provider_intents is None or isinstance(provider_intents, NullObject)),

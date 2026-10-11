@@ -168,7 +168,23 @@ hashes, policy names and fixed results in `production_figure_consumer`; no sourc
 text, paths, images or PDF bytes are exported, and no additional network, model,
 submission or external-cache operations are performed. A verified producer plus
 raw-free consumer replay is source-figure acceptance only, not a new article or
-WeChat delivery. Cloud validation of this added formal-consumer check is pending.
+WeChat delivery. The probe's successful exit means diagnostic completion;
+acceptance requires `production_figure_consumer.status=verified` and both
+`production_consumer_verified` and `private_handoff_replay_verified` to be true.
+
+Formal-consumer probe `38121492186` completed but rejected the same source with
+`figure_source_pixels_mismatch`; the catalog diagnostic identified the narrower
+cause `output_intent_encrypted`. The production helper had incorrectly treated
+pypdf's `is_encrypted` as requiring a password. That flag remains true for a
+permission-protected PDF which opens normally with an empty password; MuPDF had
+reported the admitted original as already readable, and the earlier diagnostic
+had already copied its catalog successfully. The helper now explicitly permits
+only successful empty-password access for either input. Documents requiring a
+nonempty password still reject; it never requests a password or changes either
+input. Synthetic permission-protected inputs cover this library distinction,
+strict graph/pixel checks and both real consumer validations. The admitted source,
+profile and exact-pixel requirements remain unchanged. A new cloud check must
+verify this compatibility repair before claiming formal-consumer acceptance.
 
 ## BCG discovery evidence boundaries
 
