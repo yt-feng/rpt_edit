@@ -18,7 +18,7 @@ import tempfile
 import time
 from urllib.parse import urlsplit
 
-from build_portal_extended_locales import (Memo, extended_source_language, reject_symlinks,
+from build_portal_extended_locales import (Memo, SEO_QUANTITY_POLICY, extended_source_language, reject_symlinks,
                                           safe_failure_code, validate_budget)
 from compare_hymt_translation import require_actions
 from offline_translation import MODEL_ID, PROVIDER, OfflineTranslator, TranslationBudgetExceeded
@@ -362,14 +362,16 @@ def failure_code_counts(failures):
     return dict(sorted(counts.items()))
 
 
-def build(source, output, checkpoint, translator, *, seconds=14400, seed_checkpoint=None):
+def build(source, output, checkpoint, translator, *, seconds=14400, seed_checkpoint=None,
+          quantity_diagnostics=None):
     docs = validate_source(source)
     require(1 <= len(docs) <= 24, 'English CPU batch must be 1..24 new editorial pages')
     validate_budget(seconds); reject_symlinks(output); reject_symlinks(checkpoint)
     require(not output.exists() or not any(output.iterdir()), 'English candidate output must be empty')
     output.mkdir(parents=True, exist_ok=True)
     memo = Memo(checkpoint, 'en', translator, time.monotonic() + seconds,
-                source_generation=source['generation'], allow_source_fallback=False, seed_checkpoint=seed_checkpoint)
+                source_generation=source['generation'], allow_source_fallback=False, seed_checkpoint=seed_checkpoint,
+                quantity_policy='advisory')
     deadline = getattr(translator, 'set_deadline', None)
     if callable(deadline): deadline(memo.deadline)
     memo.save()
@@ -421,6 +423,12 @@ def build(source, output, checkpoint, translator, *, seconds=14400, seed_checkpo
               else 'incomplete-candidate'}
     # This manifest is private review evidence, NOT a public search/SEO asset.
     (output/'candidate-manifest.json').write_bytes(stable_bytes(result))
+    if quantity_diagnostics is not None:
+        # Do not extend the exact immutable manifest schema for an advisory.
+        # Counts also include revalidated memo hits; no source facts leave here.
+        quantity_diagnostics.update(quantity_validation_policy=SEO_QUANTITY_POLICY,
+            quantity_warning_unit_count=len(memo.quantity_warning_keys),
+            quantity_warning_occurrences=memo.quantity_warning_occurrences)
     return result
 
 
@@ -461,12 +469,15 @@ def main():
     require(os.environ.get('GITHUB_REF') == 'refs/heads/main', 'English production inference requires reviewed main')
     require(all((args.corpus, args.output, args.checkpoint)), 'English corpus/output/checkpoint required')
     require(args.corpus.stat().st_size <= MAX_SOURCE_BYTES, 'English corpus too large')
-    translator = OfflineTranslator(validation_attempts=3)
+    translator = OfflineTranslator(validation_attempts=3, quantity_policy='advisory')
+    quantity_diagnostics = {}
     result = build(json.loads(args.corpus.read_text()), args.output, args.checkpoint,
-                   translator, seconds=args.seconds, seed_checkpoint=args.seed_checkpoint)
+                   translator, seconds=args.seconds, seed_checkpoint=args.seed_checkpoint,
+                   quantity_diagnostics=quantity_diagnostics)
     summary = {k: result[k] for k in ('status', 'source_document_count', 'completed_page_count',
                                     'budget_exhausted', 'translation_calls', 'cache_hits', 'paid_provider_requests')}
     summary['failure_code_counts'] = failure_code_counts(result['failures'])
+    summary.update(quantity_diagnostics)
     summary['terminal_translation_diagnostics'] = getattr(translator, 'failure_diagnostics', [])
     summary['terminal_validation_failure_count'] = getattr(translator, 'validation_failure_count', 0)
     summary['maximum_reported_translation_diagnostics'] = 20

@@ -139,8 +139,10 @@ class EnglishEditorialTests(unittest.TestCase):
         second = build(self.source, self.root/'second', memo, translator)
         self.assertEqual(second['cache_hits'], 2); self.assertEqual(translator.calls, [])
 
-    def test_english_source_fallback_and_quantity_corruption_never_produce_a_body(self):
-        for translated in [COMMENT, 'In our view, growth is 6.3%.', 'Read https://example.invalid/chart.png']:
+    def test_english_source_fallback_and_display_corruption_never_produce_a_body(self):
+        for translated in [COMMENT, 'Read https://example.invalid/chart.png', '<p>Growth is 6.3%.</p>',
+                           'Growth is 6.3% __KC_PH_000__.', 'Growth is 6.3%\ufffd.',
+                           'Growth | increased to 6.3%.', '增长6.3%。']:
             doc = extract_editorial(URL, page('<section><strong>KC评论：</strong>我的理解是增长5.3%。</section>'), DAY)
             fake = SyntheticTranslator()
             original = fake.translate
@@ -150,6 +152,51 @@ class EnglishEditorialTests(unittest.TestCase):
             self.assertEqual(result['completed_page_count'], 0); self.assertEqual(result['status'], 'incomplete-candidate')
             self.assertFalse((directory/'private').exists())
             self.assertNotIn(translated, json.dumps(result))
+
+    def test_numeric_advisory_passes_real_adapter_and_memo_and_reuses_cache(self):
+        from hymt_offline_translation import OfflineTranslator
+        doc = extract_editorial(URL, page('<section><strong>KC评论：</strong>我的理解是增长5.3%。</section>'), DAY)
+        source = make_source([doc], DAY)
+        engine = mock.Mock()
+        engine.translate.side_effect = lambda value, *_: ('Watching orders and deliveries' if value == TITLE else 'In our view, growth is 6.3%.')
+        translator = OfflineTranslator(cache_dir=self.root/'adapter-cache',
+            engine_factory=lambda *_: engine, quantity_policy='advisory')
+        checkpoint = self.root/'numeric-memo.json'; diagnostics = {}
+        first = build(source, self.root/'numeric-first', checkpoint, translator, quantity_diagnostics=diagnostics)
+        self.assertEqual(first['status'], 'complete-candidate')
+        self.assertEqual(first['schema_version'], 2)
+        self.assertNotIn('quantity_warning_unit_count', first)
+        self.assertEqual(diagnostics, {'quantity_validation_policy':'seo-advisory-v1',
+            'quantity_warning_unit_count':1, 'quantity_warning_occurrences':1})
+        self.assertEqual(translator.validation_failure_count, 0)
+        self.assertEqual(translator.quantity_warning_count, 1)
+        calls = engine.translate.call_count
+        repeat = {}; second = build(source, self.root/'numeric-second', checkpoint, translator, quantity_diagnostics=repeat)
+        self.assertEqual(second['translation_calls'], 0)
+        self.assertEqual(second['cache_hits'], 2)
+        self.assertEqual(engine.translate.call_count, calls)
+        self.assertEqual(repeat, diagnostics)
+        # Adapter-level cache also passes the advisory policy without inference.
+        self.assertEqual(translator.translate('我的理解是增长5.3%。', 'en', 'zh', markdown=False), 'In our view, growth is 6.3%.')
+        self.assertEqual(engine.translate.call_count, calls)
+        for private in ('5.3', '6.3', doc['title'], doc['blocks'][0]['text']):
+            self.assertNotIn(private, json.dumps(diagnostics, ensure_ascii=False))
+
+    def test_numeric_advisory_revalidates_seed_without_retranslation(self):
+        doc = extract_editorial(URL, page('<section><strong>KC评论：</strong>我的理解是增长5.3%。</section>'), DAY)
+        source = make_source([doc], DAY); translator = SyntheticTranslator()
+        original = translator.translate
+        translator.translate = lambda value, **kwargs: original(value, **kwargs) if value == TITLE else 'In our view, growth is 6.3%.'
+        seed = self.root/'numeric-seed.json'
+        build(source, self.root/'seed-out', seed, translator)
+        no_model = mock.Mock(); no_model.translate.side_effect = AssertionError('Seed must avoid inference')
+        diagnostics = {}
+        result = build(source, self.root/'seed-resume', self.root/'seed-resume.json', no_model,
+                       seed_checkpoint=seed, quantity_diagnostics=diagnostics)
+        self.assertEqual(result['status'], 'complete-candidate')
+        self.assertEqual(result['cache_hits'], 2)
+        self.assertEqual(diagnostics['quantity_warning_unit_count'], 1)
+        no_model.translate.assert_not_called()
 
     def test_editorial_rejection_never_poison_checkpoint_or_block_valid_resume(self):
         for bad_text in ['In our view, watch orders 订单 and deliveries.',
@@ -266,12 +313,14 @@ class EnglishEditorialTests(unittest.TestCase):
              mock.patch('portal_english_commentary.OfflineTranslator', return_value=fake) as factory, \
              mock.patch('builtins.print') as printed:
             self.assertEqual(english_main(), 1)
-        factory.assert_called_once_with(validation_attempts=3)
+        factory.assert_called_once_with(validation_attempts=3, quantity_policy='advisory')
         summary = json.loads(printed.call_args.args[0])
         self.assertEqual(summary['terminal_translation_diagnostics'], fake.failure_diagnostics)
         self.assertEqual(summary['terminal_validation_failure_count'], 1)
         self.assertEqual(summary['failure_code_counts'], {'offline-placeholder-validation': 1})
         self.assertEqual(summary['completed_page_count'], 0)
+        self.assertEqual(summary['quantity_validation_policy'], 'seo-advisory-v1')
+        self.assertEqual(summary['quantity_warning_unit_count'], 0)
         self.assertNotIn(COMMENT, json.dumps(summary, ensure_ascii=False))
         self.assertFalse((self.root/'out'/'private').exists())
 

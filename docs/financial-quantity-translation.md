@@ -4,16 +4,19 @@
 
 The quantity parser checks prose numbers, money, percentages, signs, dates,
 units and occurrence counts. It is not an HTML, CSS or JavaScript rendering
-check. For the `ko`/`ja`/`ar` site mirrors and all 33 non-English SEO/GEO reading
-locales, differences are advisory. Both the page builder and the shared Hy-MT2
-adapter explicitly select this policy. A numeric-only difference does not
+check. For the `ko`/`ja`/`ar` site mirrors, all 33 non-English SEO/GEO reading
+locales and English website commentary, differences are advisory. The page builder
+and shared Hy-MT2 adapter explicitly select this policy; English also applies it
+when verifying stored candidate bodies. A numeric-only difference does not
 trigger another model call, cache eviction, source fallback or publication hold.
 Known numeric data placeholders use the same advisory rule; URLs, resources and
 runtime placeholders remain mandatory.
 
 The parser grammar below remains useful for bounded diagnostics and strict
-callers. English editorial, report translation and Chinese editorial callers
-retain the adapter's strict default. In this document, parser “failure” means a
+callers. Report translation, Chinese editorial and callers that do not explicitly
+select advisory behavior retain the adapter's strict default. English website
+commentary opts in without changing the shared default or allowing source-language
+fallback. In this document, parser “failure” means a
 blocking result only for those strict callers; SEO callers record counts and
 fixed codes. Diagnostic samples are bounded hashes, never source/model text.
 The same model/cache identities remain reusable in both policies. Strict callers
