@@ -24,7 +24,7 @@ from probe_mineru_figure_binding import (MAX_PROBE_SECONDS, ProbeError, ReadOnly
 
 WORKFLOW = '.github/workflows/consulting-mineru-figure-probe.yml'
 PRODUCER = '.github/workflows/consulting-latest-pdf-to-wechat.yml'
-REPOSITORY = 'yt-feng/rpt_edit'
+REPOSITORY = os.environ.get('GITHUB_REPOSITORY', 'example/report-repository')
 MAX_LOG_BYTES = 4 * 1024 * 1024
 
 
