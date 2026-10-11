@@ -1,0 +1,38 @@
+name: Portal single report download acceptance
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portal-single-report-download-acceptance
+  cancel-in-progress: false
+
+jobs:
+  download:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && github.actor == github.repository_owner && github.triggering_actor == github.repository_owner && github.run_attempt == '1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            scripts/portal_download_smoke.py
+            scripts/test_portal_download_smoke.py
+            .github/workflows/portal-download-smoke.yml
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Test transport and output boundaries without network
+        run: python3 -B scripts/test_portal_download_smoke.py
+
+      - name: Download the fixed report once through its normal password path
+        env:
+          PORTAL_DOWNLOAD_PASSWORD: ${{ secrets[vars.PORTAL_DOWNLOAD_SECRET_REF] }}
+        run: python3 -B scripts/portal_download_smoke.py
