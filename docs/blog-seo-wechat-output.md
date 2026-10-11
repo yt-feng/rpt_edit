@@ -347,8 +347,25 @@ so it cannot retain an untraceable crop of the old photo. A retained original
 report chart remains the preferred candidate. Unknown or appended prose,
 different credit structures and nonadjacent text are not removed by this rule.
 Local regression exercises the observed three-Commons and two-Commons/one-local
-shapes through repair and strict readback. Cloud application of this compatibility
-fix is a separate acceptance step.
+shapes through repair and strict readback.
+
+Cloud recovery run `38124781216` subsequently verified 20 of the historical 44
+articles with strict whole-group readback: groups 1, 2 and 6 contained 8, 8 and 4
+articles respectively. This run actually changed and updated 8 articles, with
+8 cover replacements, 5 body-image replacements and 18 added body images;
+the new images comprised 8 Commons photos and 15 original local illustrations.
+The other 12 verified articles did not require an update in this run. The
+previously uncertain second article of group 1 had its three incomplete Commons
+images and cover replaced, and the second article of group 6 had its two
+incomplete Commons images and cover replaced. Both passed the strict readback;
+the run ended with zero uncertain updates.
+
+The overall historical recovery remains partial: 24 articles' old receipt IDs
+returned 40007, and a complete current-draft catalog contained no exact group
+match. Those articles remain unresolved; this evidence does not establish that
+they were deleted. The completed workflow therefore does not mean all 44
+articles were repaired, and the 20 verified articles must not be reported as
+20 new repairs.
 
 The separate latest-43 maintenance run `38122896778` finished partially:
 10 existing articles passed verification, 16 remained locked for scheduled
