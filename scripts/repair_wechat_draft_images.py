@@ -94,7 +94,7 @@ def replace_image(content, old_url, new_url, credit):
             if prefix.rfind('<p') > prefix.rfind('</p>'):
                 raise ValueError('Image is inside an unsupported text paragraph')
         # Rewrite only src/data-src attributes of the matched image element.
-        result = IMG_RE.sub(lambda image: re.sub(r'\b(?:src|data-src)\s*=\s*([\"\']).*?\1', lambda m: m.group(0).split('=', 1)[0] + '="' + html.escape(new_url, quote=True) + '"', image.group(0), flags=re.I | re.S), block)
+        result = IMG_RE.sub(lambda image: re.sub(r'\b(?:src|data-src)\s*=\s*([\"\']).*?\1', lambda m: m.group(0).split('=', 1)[0] + '="' + html.escape(new_url, quote=True) + '"', image.group(0), flags=re.I | re.S), block) if new_url else ''
         end = match.end()
         # Replace the managed credit together with its image, including any
         # duplicate adjacent credits left by an interrupted historical repair.
@@ -115,22 +115,56 @@ def replace_image(content, old_url, new_url, credit):
     return ''.join(pieces)
 
 
+def has_editorial_credit(content, url):
+    identity = wechat_image_url_identity(url)
+    for match in IMAGE_BLOCK_RE.finditer(content):
+        refs = wechat_content_images(match.group(0))
+        if refs and wechat_image_url_identity(refs[0][0]) == identity:
+            tail = content[match.end():].lstrip()
+            credit = CREDIT_RE.match(tail)
+            if credit and generated_image_credit_signature(credit.group(0)) is not None:
+                return True
+    return False
+
+
+def has_source_image_reference(alt):
+    # Historical renderer labels such as "研报原图 1" and contextual prose were
+    # also assigned to Pollinations images. Only an explicit retained-asset
+    # reference supplies source provenance in a receipt without inline metadata.
+    return bool(re.fullmatch(r'(?:assets/)?source_image_\d+\.(?:png|jpe?g|webp|gif|bmp|tiff?)', str(alt or '').strip(), re.I))
+
+
 def build_media_repair(session, token, article, directory, timeout, min_images=3):
     result = copy.deepcopy(article)
     content = str(article.get('content') or '')
     body = article_body_images(content)
-    replacements = []; candidates = []; sources = []
+    replacements = []; candidates = []; sources = []; inspected = []
     for index, (url, alt) in enumerate(body, 1):
         local = directory / f'body_{index:02d}.jpg'
         rejection = fetch_wechat_image(session, url, local, timeout)
+        if re.search(r'(?:^|/)xhs_card_\d+\.(?:png|jpe?g)$', alt, re.I):
+            rejection = 'generated_title_or_chart_card'
+        inspected.append((index, url, alt, local, rejection))
+    # Absence of a credit is not evidence of an original chart: legacy generated
+    # photos were uncredited too. Keep good legacy images, without relabeling
+    # them as source figures or inventing access to missing original PDF assets.
+    usable_existing = [local for _, _, _, local, reason in inspected if not reason]
+    original_candidates = [local for _, url, alt, local, reason in inspected
+                           if not reason and has_source_image_reference(alt) and not has_editorial_credit(content, url)]
+    for index, url, _alt, local, rejection in inspected:
         if rejection:
+            if original_candidates:
+                content = replace_image(content, url, '', '')
+                replacements.append({'index': index, 'reason': rejection, 'action': 'remove_invalid_image'})
+                continue
             local, metadata = download_editorial_image(session, str(article.get('title') or ''), local, min(timeout, 15), index=index, cache_dir=directory.parent / 'licensed_cache')
             new_url = upload_article_image(session, token, local, timeout)
             content = replace_image(content, url, new_url, attribution_html(metadata))
             replacements.append({'index': index, 'reason': rejection});sources.append(metadata['source'])
         candidates.append(local)
     added = 0
-    while len(candidates) < min_images:
+    minimum = len(candidates) if usable_existing else min_images
+    while len(candidates) < minimum:
         index = len(candidates) + 1
         local, metadata = download_editorial_image(session, str(article.get('title') or ''), directory / f'fill_{index:02d}.jpg', min(timeout, 15), index=index, cache_dir=directory.parent / 'licensed_cache')
         new_url = upload_article_image(session, token, local, timeout)
@@ -147,7 +181,7 @@ def build_media_repair(session, token, article, directory, timeout, min_images=3
     if cover_issue:
         if not candidates:
             raise ValueError('No usable image available for cover')
-        normalized = prepare_cover_upload_image(candidates[0], directory, 'replacement')
+        normalized = prepare_cover_upload_image((original_candidates or usable_existing or candidates)[0], directory, 'replacement')
         result['thumb_media_id'] = upload_cover_material(session, token, normalized, timeout)
         result.pop('pic_crop_235_1', None);result.pop('pic_crop_1_1', None)
     result['content'] = content
@@ -155,7 +189,8 @@ def build_media_repair(session, token, article, directory, timeout, min_images=3
         raise ValueError('Media repair changed article prose')
     if len(content.encode('utf-8')) > 20000:
         raise ValueError('Media repair exceeds article byte budget')
-    return result, {'cover_replaced': bool(cover_issue), 'cover_reason': cover_issue, 'body_replacements': replacements, 'body_added': added, 'sources': sources}
+    cover_source = ('retained_source_reference' if original_candidates else 'retained_body_image' if usable_existing else 'editorial_fallback') if cover_issue else 'unchanged'
+    return result, {'cover_replaced': bool(cover_issue), 'cover_reason': cover_issue, 'cover_source': cover_source, 'body_replacements': replacements, 'body_added': added, 'sources': sources}
 
 
 def repair_drafts(drafts, session, token, output, timeout, apply):
@@ -176,7 +211,11 @@ def repair_drafts(drafts, session, token, output, timeout, apply):
                 body = article_body_images(article.get('content'))
                 issues = [fetch_wechat_image(session,u,directory/f'body_{i}.jpg',timeout) for i,(u,a) in enumerate(body)]
                 cover_issue = fetch_wechat_image(session,str(article.get('thumb_url') or ''),directory/'cover.jpg',timeout)
-                facts = {'cover_replaced':bool(cover_issue),'cover_reason':cover_issue,'body_replacements':[{'index':i+1,'reason':v} for i,v in enumerate(issues) if v], 'body_added':max(0,3-len(body)),'sources':[]}
+                for i, (_url, alt) in enumerate(body):
+                    if re.search(r'(?:^|/)xhs_card_\d+\.(?:png|jpe?g)$', alt, re.I):
+                        issues[i] = 'generated_title_or_chart_card'
+                has_usable_existing = any(not issue for issue in issues)
+                facts = {'cover_replaced':bool(cover_issue),'cover_reason':cover_issue,'body_replacements':[{'index':i+1,'reason':v} for i,v in enumerate(issues) if v], 'body_added':0 if has_usable_existing else max(0,3-len(body)),'sources':[]}
             else:
                 repaired, facts = build_media_repair(session, token, article, directory, timeout)
                 if facts['cover_replaced'] or facts['body_replacements'] or facts['body_added']:

@@ -154,6 +154,8 @@ class DraftRepairTests(unittest.TestCase):
             self.assertEqual(1, result['changed_articles'])
             self.assertEqual(1, post.call_count)
             self.assertEqual(1, post.call_args.args[2]['index'])
+            self.assertEqual(1, provider.call_count)
+            self.assertEqual(3, len(repair.article_body_images(state['news_item'][1]['content'])))
             self.assertEqual(portal.image_html('https://mmbiz.qpic.cn/contact/0', 'KC桌面'), state['news_item'][1]['content'][-len(portal.image_html('https://mmbiz.qpic.cn/contact/0', 'KC桌面')):])
             self.assertEqual(repair.prose_identity(original[1]), repair.prose_identity(state['news_item'][1]))
             post.reset_mock(); provider.reset_mock(); upload.reset_mock(); cover.reset_mock()
@@ -202,14 +204,66 @@ class DraftRepairTests(unittest.TestCase):
     def test_edit_during_preparation_is_rechecked_before_update(self):
         original = [article()]
         with tempfile.TemporaryDirectory() as temporary, ExitStack() as stack:
-            state, _download, provider, _upload, _cover, post = self.environment(stack, original)
-            def provider_with_user_edit(_session, _title, target, *_args, **_kwargs):
+            state, _download, provider, _upload, cover, post = self.environment(stack, original)
+            def cover_with_user_edit(*_args, **_kwargs):
                 state['news_item'][0]['content'] += '<p>准备图片期间用户的修改。</p>'
-                return photo(target), {'source':'local_editorial'}
-            provider.side_effect = provider_with_user_edit
+                return 'replacement-cover'
+            cover.side_effect = cover_with_user_edit
             with self.assertRaisesRegex(ValueError, 'changed during image preparation'):
                 repair.repair_drafts([{'media_id':'existing-exact-id','articles':original}], object(), 'TOKEN', Path(temporary), 30, True)
             post.assert_not_called()
+
+    def test_title_card_cover_uses_retained_body_chart_before_credited_stock(self):
+        original = article(broken=False)
+        first_url = repair.article_body_images(original['content'])[0][0]
+        original['content'] = repair.replace_image(original['content'], first_url, first_url, attribution_html({'source':'local_editorial'}))
+        second_url = repair.article_body_images(original['content'])[1][0]
+        original['content'] = original['content'].replace(portal.image_html(second_url, '报告图表'), portal.image_html(second_url, 'assets/source_image_02.png'))
+        with tempfile.TemporaryDirectory() as temporary, ExitStack() as stack:
+            _state, download, provider, upload, cover, _post = self.environment(stack, [original])
+            def inspect(_session, url, path, _timeout):
+                photo(path)
+                return 'generated_pdf_title_card' if 'cover' in url else ''
+            download.side_effect = inspect
+            prepare = stack.enter_context(patch.object(repair, 'prepare_cover_upload_image', side_effect=lambda path, *_args: path))
+            result, facts = repair.build_media_repair(object(), 'TOKEN', original, Path(temporary), 30)
+            self.assertTrue(facts['cover_replaced'])
+            self.assertEqual('generated_pdf_title_card', facts['cover_reason'])
+            self.assertEqual('retained_source_reference', facts['cover_source'])
+            self.assertEqual('body_02.jpg', prepare.call_args.args[0].name)
+            self.assertEqual(original['content'], result['content'])
+            provider.assert_not_called(); upload.assert_not_called()
+
+    def test_uncredited_legacy_photo_is_preserved_without_claiming_original_chart(self):
+        original = article(broken=False)
+        first_url = repair.article_body_images(original['content'])[0][0]
+        original['content'] = original['content'].replace(portal.image_html(first_url, '报告图表'), portal.image_html(first_url, '研报原图 1'))
+        with tempfile.TemporaryDirectory() as temporary, ExitStack() as stack:
+            _state, download, provider, upload, _cover, _post = self.environment(stack, [original])
+            def inspect(_session, url, path, _timeout):
+                photo(path)
+                return 'generated_pdf_title_card' if 'cover' in url else ''
+            download.side_effect = inspect
+            result, facts = repair.build_media_repair(object(), 'TOKEN', original, Path(temporary), 30)
+            self.assertEqual('retained_body_image', facts['cover_source'])
+            self.assertEqual(original['content'], result['content'])
+            self.assertFalse(repair.has_source_image_reference('研报原图 1'))
+            self.assertFalse(repair.has_source_image_reference('主题配图'))
+            self.assertFalse(repair.has_source_image_reference('assets/xhs_card_02.png'))
+            provider.assert_not_called(); upload.assert_not_called()
+
+    def test_known_source_reference_avoids_stock_replacement_for_rejected_extra(self):
+        original = article()
+        second_url = repair.article_body_images(original['content'])[1][0]
+        original['content'] = original['content'].replace(portal.image_html(second_url, '报告图表'), portal.image_html(second_url, 'assets/source_image_02.png'))
+        with tempfile.TemporaryDirectory() as temporary, ExitStack() as stack:
+            _state, _download, provider, upload, _cover, _post = self.environment(stack, [original])
+            result, facts = repair.build_media_repair(object(), 'TOKEN', original, Path(temporary), 30)
+            self.assertEqual(1, len(facts['body_replacements']))
+            self.assertEqual('remove_invalid_image', facts['body_replacements'][0]['action'])
+            self.assertEqual(2, len(repair.article_body_images(result['content'])))
+            self.assertEqual('retained_source_reference', facts['cover_source'])
+            provider.assert_not_called(); upload.assert_not_called()
 
     def test_receipt_body_mismatch_prevents_all_media_processing(self):
         original = [article()]

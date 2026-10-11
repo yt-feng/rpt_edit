@@ -3,12 +3,116 @@ from __future__ import annotations
 
 from functools import lru_cache
 from pathlib import Path
+import hashlib
+import json
 import re
 
 from PIL import Image, ImageChops, ImageDraw, ImageOps, ImageStat
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 CONTACT_IMAGE_NAMES = re.compile(r"(?:zsxq[_-]?img|(?:member[_-]?)?contact[_-]?card|(?:wechat[_-]?)?qr[_-]?code)", re.I)
+SOURCE_IMAGE_NAME = re.compile(r"source_image_\d{2,}\.(?:png|jpe?g|webp|gif|bmp|tiff?)", re.I)
+FURNITURE_ROLES = {"cover", "cover_page", "title_page", "title_card", "generated_cover", "table_of_contents", "toc", "contact_card", "qr_code", "page_render", "pdf_page"}
+
+
+def is_publication_furniture_metadata(record: dict) -> bool:
+    for key in ("role", "kind", "type", "media_role", "source_kind"):
+        value = str(record.get(key) or "").strip().lower().replace("-", "_")
+        if value in FURNITURE_ROLES:
+            return True
+    # Exact producer labels only; ordinary chart captions mentioning a report
+    # page or company contact must not become exclusion heuristics.
+    for key in ("title", "label", "caption", "body_text"):
+        if str(record.get(key) or "").strip().lower() in {"contents", "table of contents", "目录", "目錄", "contact information"}:
+            return True
+    for key in ("source_path", "relative_path", "path"):
+        path = Path(str(record.get(key) or ""))
+        if path.parent.name == "assets" and (path.stem.lower() == "cover" or re.fullmatch(r"xhs_card_\d+", path.stem, re.I)):
+            return True
+    return False
+
+
+def source_chart_images(report_dir: Path) -> list[Path]:
+    """Read retained MinerU exhibits, never generated page/title/card artwork.
+
+    A present source map limits the set to its source-bound assets, so stale
+    files left by an earlier generation cannot silently become article art.
+    Authentication of the original handoff remains the producer's contract.
+    """
+    report_dir = Path(report_dir)
+    assets = report_dir / "assets"
+    if assets.is_symlink() or not assets.is_dir():
+        return []
+    paths = sorted(assets.glob("source_image_*"))
+    mapping_path = report_dir / "source_image_map.json"
+    if mapping_path.exists() or mapping_path.is_symlink():
+        try:
+            mapping = json.loads(mapping_path.read_text())
+            source = report_dir / "source_mineru.md"
+            if (mapping_path.is_symlink() or source.is_symlink() or mapping.get("version") != 1
+                    or mapping.get("source_sha256") != hashlib.sha256(source.read_bytes()).hexdigest()
+                    or not isinstance(mapping.get("images"), dict)):
+                return []
+            refs = list(dict.fromkeys(mapping["images"].values()))
+            if not all(isinstance(ref, str) and re.fullmatch(r"assets/source_image_\d{2,}\.(?:png|jpe?g|webp|gif|bmp|tiff?)", ref, re.I) for ref in refs):
+                return []
+            paths = [report_dir / ref for ref in refs]
+        except (OSError, ValueError, AttributeError, TypeError):
+            return []
+    figure_map = report_dir / "source_figure_map.json"
+    bindings = None
+    if figure_map.exists() or figure_map.is_symlink():
+        try:
+            mapping = json.loads(figure_map.read_text())
+            if figure_map.is_symlink() or not isinstance(mapping.get("assets"), list):
+                return []
+            records = {item["index"]: item for item in mapping.get("metadata", {}).get("records", [])}
+            bindings = {item["path"]: item for item in mapping["assets"]
+                        if not is_publication_furniture_metadata(item)
+                        and not is_publication_furniture_metadata(records.get(item.get("index"), {}))}
+        except (OSError, ValueError, TypeError, AttributeError, KeyError):
+            return []
+    selected = []; seen = set()
+    for path in paths:
+        if (not SOURCE_IMAGE_NAME.fullmatch(path.name) or path.is_symlink() or not path.is_file()
+                or path.resolve().parent != assets.resolve() or not is_article_image_candidate(path)):
+            continue
+        identity = hashlib.sha256(path.read_bytes()).hexdigest()
+        if bindings is not None:
+            binding = bindings.get(path.relative_to(report_dir).as_posix())
+            if not binding or binding.get("sha256") != identity:
+                continue
+        if identity not in seen:
+            seen.add(identity); selected.append(path)
+    return selected
+
+
+def _generated_title_panel(image: Image.Image) -> bool:
+    """Recognize the exact old make_cover geometry, including WeChat crops.
+
+    This is deliberately not a white-area/entropy test. Require the renderer's
+    four specific borders and its fixed empty interior bands simultaneously.
+    Titles and PDF backgrounds are variable and never inspected as text.
+    """
+    width, height = image.size
+    if not .73 <= width / height <= 2.40:
+        return False
+    rgb = image.convert("RGB")
+    scale = width / 1080
+    offset = (1440 * scale - height) / 2
+    def light(x, y, *, border=False):
+        px, py = round(x * scale), round(y * scale - offset)
+        if not (1 <= px < width - 1 and 1 <= py < height - 1):
+            return -1
+        values = [sum(rgb.getpixel((px + dx, py + dy))) / 3
+                  for dx, dy in ([(0, 0), (-1, 0), (1, 0), (0, -1), (0, 1)] if border else [(0, 0)])]
+        return min(values)
+    white = [light(x, y) for x in (180, 320, 760, 900) for y in (535, 570, 835, 870)]
+    if min(white) < 245:
+        return False
+    groups = [([light(x, y, border=True) for x in (220, 400, 700, 860)]) for y in (501, 899)]
+    groups += [([light(x, y, border=True) for y in (550, 580, 840, 870)]) for x in (111, 969)]
+    return all(min(values) >= 0 and sum(values) / len(values) < 145 for values in groups)
 
 
 def _preview(image: Image.Image) -> Image.Image:
@@ -70,14 +174,21 @@ def article_image_rejection(path: Path) -> str:
     path = Path(path)
     if CONTACT_IMAGE_NAMES.search(path.stem):
         return "contact_card"
+    # These reserved asset names are generated by pdf_to_xhs_batch, not PDF
+    # exhibits. In particular cover.png is a blurred PDF page plus title box.
+    if path.parent.name == "assets" and (path.stem.lower() == "cover" or re.fullmatch(r"xhs_card_\d+", path.stem, re.I)):
+        return "generated_title_or_chart_card"
     try:
         with Image.open(path) as image:
             image.load()
             if min(image.size) < 64:
                 return "undersized"
             preview = _preview(image)
+            generated_title = _generated_title_panel(image)
     except (OSError, ValueError, Image.DecompressionBombError):
         return "unreadable"
+    if generated_title:
+        return "generated_pdf_title_card"
     for contact in _contact_previews():
         if max(ImageStat.Stat(ImageChops.difference(preview, contact)).mean) < 6:
             return "contact_card"

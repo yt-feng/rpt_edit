@@ -3,6 +3,7 @@ from __future__ import annotations
 import io
 import json
 import contextlib
+import statistics
 from pathlib import Path
 import tempfile
 import unittest
@@ -84,8 +85,11 @@ class EditorialImagesTest(unittest.TestCase):
         self.directory = tempfile.TemporaryDirectory()
         self.root = Path(self.directory.name)
         self.target = self.root / "image.jpg"
-        media._SEARCH_CACHE.clear()
-        media._USED.clear()
+        self.reset_provider()
+
+    def reset_provider(self):
+        for name in ("_SEARCH_CACHE", "_USED", "_SELECTIONS", "_BATCH_URL_OWNERS", "_BATCH_CONTENT_OWNERS", "_LOADED_SELECTION_CACHES"):
+            getattr(media, name).clear()
         media._COOLDOWN_UNTIL = 0.0
         media._COOLDOWN_REASON = ""
 
@@ -122,7 +126,7 @@ class EditorialImagesTest(unittest.TestCase):
             ("CC BY 4.0", "https://creativecommons.org/licenses/by-nc/4.0/"),
         ]:
             with self.subTest(name=name, url=url):
-                media._SEARCH_CACHE.clear()
+                self.reset_provider()
                 session = Session([results(page(license_name=name, license_url=url))])
                 _, info = self.run_provider(session)
                 self.assertEqual(info["source"], "local_editorial")
@@ -160,7 +164,7 @@ class EditorialImagesTest(unittest.TestCase):
                     "https://upload.wikimedia.org.evil.test/a.png", "https://user:password@upload.wikimedia.org/a.png",
                     "https://upload.wikimedia.org:8443/a.png", "file:///tmp/photo.png"):
             with self.subTest(url=url):
-                media._SEARCH_CACHE.clear()
+                self.reset_provider()
                 item = page()
                 item["imageinfo"][0]["url"] = url
                 session = Session([results(item)])
@@ -182,7 +186,7 @@ class EditorialImagesTest(unittest.TestCase):
         _, info = self.run_provider(session)
         self.assertEqual(info["source"], "wikimedia_commons")
         self.assertEqual(len(session.calls), 3)
-        media._SEARCH_CACHE.clear()
+        self.reset_provider()
         media._USED.clear()
         session = Session([results(page())] + [Response(status=302, headers={"Location": target_url}) for _ in range(4)])
         _, info = self.run_provider(session)
@@ -199,7 +203,7 @@ class EditorialImagesTest(unittest.TestCase):
         for failure in (SSLError("certificate verify failed"), Response(b"not json", content_type="text/html"),
                         Response(b"", status=429)):
             with self.subTest(failure=type(failure).__name__):
-                media._SEARCH_CACHE.clear()
+                self.reset_provider()
                 media._COOLDOWN_UNTIL = 0.0
                 session = Session([failure])
                 for index in range(43):
@@ -215,7 +219,7 @@ class EditorialImagesTest(unittest.TestCase):
         media._COOLDOWN_UNTIL = media.time.monotonic() + 300
         media._COOLDOWN_REASON = "commons_unavailable"
         session = Session()
-        _, cached = self.run_provider(session, "芯片另篇文章", cache_dir=cache)
+        _, cached = self.run_provider(session, cache_dir=cache)
         self.assertEqual(cached["source"], "wikimedia_commons")
         self.assertEqual(first["sha256"], cached["sha256"])
         self.assertEqual(session.calls, [])
@@ -251,40 +255,101 @@ class EditorialImagesTest(unittest.TestCase):
         self.assertEqual(first["source"], "wikimedia_commons")
         self.assertEqual(second["source"], "local_editorial")
 
+    def test_commons_url_is_not_reused_by_different_articles(self):
+        session = Session([results(page()), download_response()])
+        _, first = self.run_provider(session, "芯片文章一")
+        _, second = self.run_provider(session, "芯片文章二")
+        self.assertEqual(first["source"], "wikimedia_commons")
+        self.assertEqual(second["source"], "local_editorial")
+        self.assertNotEqual(first["sha256"], second["sha256"])
+        self.assertEqual(len(session.calls), 2)
+
+    def test_commons_aliases_cannot_repeat_same_pixels_across_articles(self):
+        session = Session([results(page(1), page(2)), download_response(), download_response()])
+        _, first = self.run_provider(session, "芯片文章一")
+        _, second = self.run_provider(session, "芯片文章二")
+        _, third = self.run_provider(session, "芯片文章三")
+        self.assertEqual(first["source"], "wikimedia_commons")
+        self.assertEqual(second["source"], "local_editorial")
+        self.assertEqual(third["source"], "local_editorial")
+        self.assertEqual(len(session.calls), 3)
+
+    def test_same_article_slot_reuses_exact_image_during_retry(self):
+        session = Session([results(page(1), page(2)), download_response()])
+        _, first = self.run_provider(session)
+        original = self.target.read_bytes()
+        _, retry = self.run_provider(session)
+        self.assertEqual(first, retry)
+        self.assertEqual(original, self.target.read_bytes())
+        self.assertEqual(len(session.calls), 2)
+
+    def test_persisted_claims_prevent_repeat_in_resumed_batch(self):
+        cache = self.root / "cache"
+        session = Session([results(page(1), page(2)), download_response(1)])
+        _, first = self.run_provider(session, "芯片文章一", cache_dir=cache)
+        self.reset_provider()
+        resumed = Session([download_response(2)])
+        _, second = self.run_provider(resumed, "芯片文章二", cache_dir=cache)
+        self.assertNotEqual(first["sha256"], second["sha256"])
+        self.assertEqual(second["source"], "wikimedia_commons")
+        self.assertEqual(len(resumed.calls), 1)
+        self.assertIn("Photo2.png", resumed.calls[0][0])
+
+    def test_local_choice_persists_when_provider_recovers(self):
+        cache = self.root / "cache"
+        _, first = self.run_provider(Session([results()]), cache_dir=cache)
+        original = self.target.read_bytes()
+        self.reset_provider()
+        session = Session()
+        _, retry = self.run_provider(session, cache_dir=cache)
+        self.assertEqual(first, retry)
+        self.assertEqual(original, self.target.read_bytes())
+        self.assertEqual(session.calls, [])
+
+    def test_corrupt_selection_cannot_be_replayed(self):
+        cache = self.root / "cache"
+        self.run_provider(Session([results()]), cache_dir=cache)
+        next(cache.glob("selection-*.jpg")).write_bytes(b"not an image")
+        self.reset_provider()
+        _, retry = self.run_provider(Session(), cache_dir=cache)
+        with Image.open(self.target) as image:
+            image.verify()
+        self.assertEqual(retry["source"], "local_editorial")
+
     def test_persistent_cache_keeps_bytes_and_attribution_without_more_network(self):
         cache = self.root / "cache"
         session = Session([results(page()), download_response()])
         _, first = self.run_provider(session, cache_dir=cache)
-        media._SEARCH_CACHE.clear()
+        self.reset_provider()
         media._USED.clear()
         offline = Session()
         _, second = self.run_provider(offline, cache_dir=cache)
         self.assertEqual(first, second)
         self.assertEqual(len(offline.calls), 0)
 
-    def test_expired_cache_is_not_reused(self):
+    def test_expired_search_cache_is_not_reused_for_new_article(self):
         cache = self.root / "cache"
         self.run_provider(Session([results(page()), download_response()]), cache_dir=cache)
         for path in cache.glob("*.json"):
             record = json.loads(path.read_text())
             record["time"] = 0
             path.write_text(json.dumps(record))
-        media._SEARCH_CACHE.clear()
+        self.reset_provider()
         session = Session([results()])
-        _, info = self.run_provider(session, cache_dir=cache)
+        _, info = self.run_provider(session, "芯片新的文章", cache_dir=cache)
         self.assertEqual(info["source"], "local_editorial")
         self.assertEqual(len(session.calls), 1)
 
     def test_non_image_and_empty_pixels_use_art(self):
         for body, mime in [(b"<html>error</html>", "text/html"), (b"broken bytes", "image/png")]:
             with self.subTest(mime=mime):
-                media._SEARCH_CACHE.clear()
+                self.reset_provider()
                 session = Session([results(page()), Response(body, content_type=mime)])
                 _, info = self.run_provider(session)
                 self.assertEqual(info["source"], "local_editorial")
         blank = io.BytesIO()
         Image.new("RGB", (960, 600), "white").save(blank, "PNG")
-        media._SEARCH_CACHE.clear()
+        self.reset_provider()
         session = Session([results(page()), Response(blank.getvalue(), content_type="image/png")])
         _, info = self.run_provider(session)
         self.assertEqual(info["source"], "local_editorial")
@@ -332,6 +397,36 @@ class EditorialImagesTest(unittest.TestCase):
             _, variant = media.bundled_fallback_image(self.target, title, 2)
             self.assertNotEqual(first["sha256"], variant["sha256"])
         self.assertEqual(len(hashes), 7)
+
+    def test_thirty_same_topic_illustrations_change_actual_geometry(self):
+        # Compare silhouettes after removing ALL colors and background accents.
+        # Unique hashes from palette/noise changes alone cannot pass this gate.
+        masks, variants, motifs, counts = [], set(), set(), set()
+        for index in range(30):
+            seed, plan = media._scene_plan(f"芯片研究观点 {index + 1:02d}", 1)
+            variants.add(plan["variant"])
+            counts.add(len(plan["objects"]))
+            motifs.update(obj["motif"] for obj in plan["objects"])
+            image = media._render_scene(plan, seed, geometry_only=True).resize((96, 54)).convert("L")
+            masks.append([value > 40 for value in image.tobytes()])
+        differences = [sum(a != b for a, b in zip(masks[i], masks[j])) / len(masks[i])
+                       for i in range(30) for j in range(i)]
+        self.assertEqual(variants, {"hero", "cascade", "constellation", "panorama", "duet"})
+        self.assertEqual(motifs, {"chip", "servers", "network", "board"})
+        self.assertEqual(counts, {2, 3, 4, 5})
+        self.assertGreater(min(differences), .05)
+        self.assertGreater(statistics.median(differences), .20)
+
+    def test_geometry_metadata_is_opaque_and_same_slot_stable(self):
+        title = "芯片 私密客户名称 未公开研究"
+        _, first = media.bundled_fallback_image(self.target, title, 1)
+        _, second = media.bundled_fallback_image(self.target, title, 2)
+        _, repeat = media.bundled_fallback_image(self.target, title, 1)
+        self.assertEqual(first, repeat)
+        self.assertNotEqual(first["geometry_signature"], second["geometry_signature"])
+        self.assertRegex(first["seed"], r"^[0-9a-f]{16}$")
+        self.assertRegex(first["geometry_signature"], r"^[0-9a-f]{64}$")
+        self.assertNotIn("私密客户名称", json.dumps(first, ensure_ascii=False))
 
     def test_local_attribution_does_not_imply_photo_or_external_license(self):
         _, info = media.bundled_fallback_image(self.target, "芯片")

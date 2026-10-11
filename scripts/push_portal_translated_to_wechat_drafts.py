@@ -49,7 +49,7 @@ from sensitive_content_guard import (
     sanitize_wechat_stock_language,
 )
 from wechat_article_quality import audit_wechat_article_markdown, sanitize_wechat_article_markdown
-from wechat_image_quality import is_article_image_candidate
+from wechat_image_quality import is_article_image_candidate, source_chart_images, is_publication_furniture_metadata
 from free_editorial_images import download_editorial_image, attribution_html, attribution_caption
 
 
@@ -1734,7 +1734,7 @@ def load_figure_paths(report_dir: Path) -> dict[str, Path]:
     if not isinstance(manifest, list):
         return figures
     for item in manifest:
-        if not isinstance(item, dict):
+        if not isinstance(item, dict) or is_publication_furniture_metadata(item):
             continue
         token = str(item.get("token") or "")
         if not token:
@@ -1817,6 +1817,8 @@ def prepare_cover_upload_image(path: Path, output_dir: Path, stem: str) -> Path:
 
 def choose_cover_image(report_dir: Path, figure_paths: dict[str, Path], fallback_dir: Path,
                        uploaded_paths: list[Path] | None = None) -> Path:
+    for path in source_chart_images(report_dir):
+        return path
     for token in sorted(figure_paths):
         path = figure_paths[token]
         if is_article_image_candidate(path):
@@ -1828,6 +1830,30 @@ def choose_cover_image(report_dir: Path, figure_paths: dict[str, Path], fallback
     from free_editorial_images import bundled_fallback_image
     fallback, _metadata = bundled_fallback_image(fallback_dir / f"{report_dir.name}_fallback_cover.jpg", report_dir.name)
     return fallback
+
+
+def select_source_figure_items(report_dir: Path, figure_paths: dict[str, Path], markdown: str,
+                              maximum: int) -> list[tuple[str, Path]]:
+    """Keep all available original exhibits ahead of illustrative fallback.
+
+    A translation may omit image tokens although its figure manifest is intact.
+    Unreferenced figures are still offered to the normal inline-image renderer.
+    """
+    ordered_tokens = list(dict.fromkeys(f"[[PORTAL_IMAGE_{m.group(1)}]]" for m in IMAGE_TOKEN_RE.finditer(markdown)))
+    ordered_tokens.extend(token for token in figure_paths if token not in ordered_tokens)
+    items = [(token, figure_paths[token]) for token in ordered_tokens if token in figure_paths]
+    items.extend((f"PORTAL_SOURCE_IMAGE_{i:03d}", path) for i, path in enumerate(source_chart_images(report_dir), 1))
+    selected = []; seen = set()
+    for token, path in items:
+        if len(selected) >= maximum:
+            break
+        if not is_article_image_candidate(path):
+            continue
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        if digest in seen:
+            continue
+        seen.add(digest); selected.append((token, path))
+    return selected
 
 
 def pollinations_context_snippets(markdown: str, title: str, count: int) -> list[str]:
@@ -2895,19 +2921,9 @@ def build_article(
         title_decision["body_heading_neutralization_changes"] = heading_neutralization_changes
     figure_paths = load_figure_paths(report_dir)
 
-    tokens = []
-    for match in IMAGE_TOKEN_RE.finditer(markdown):
-        token = f"[[PORTAL_IMAGE_{match.group(1)}]]"
-        if token not in tokens:
-            tokens.append(token)
-    tokens = tokens[: args.max_inline_images]
-
     image_urls: dict[str, str] = {}
     uploaded_images: list[dict[str, str]] = []
-    for token in tokens:
-        path = figure_paths.get(token)
-        if not path or not is_article_image_candidate(path):
-            continue
+    for token, path in select_source_figure_items(report_dir, figure_paths, markdown, args.max_inline_images):
         if args.dry_run:
             image_url = fake_image_url(report_dir, token)
             upload_path = path
@@ -2920,7 +2936,7 @@ def build_article(
         image_urls[token] = image_url
         uploaded_images.append({"token": token, "path": str(upload_path), "url": image_url, "source": "mineru"})
 
-    target_min_images = min(args.min_inline_images, args.max_inline_images)
+    target_min_images = len(uploaded_images) if uploaded_images else min(args.min_inline_images, args.max_inline_images)
     ai_image_index = 1
     while len(uploaded_images) < target_min_images:
         ai_token = f"PORTAL_AI_IMAGE_{ai_image_index:03d}"

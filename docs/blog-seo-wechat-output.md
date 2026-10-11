@@ -176,8 +176,9 @@ from being manufactured at a body-length boundary.
 Both the translated-report uploader and the OCR/XHS uploader use the same image
 admission and free-illustration path. Valid original report figures remain first
 choice. Known contact-card pixels (including renamed copies and cover crops),
-unreadable files and the historical navy/gold/cream placeholder are excluded from
-body illustrations and covers. White-background research charts remain valid.
+unreadable files, generated PDF-page title cards and the historical
+navy/gold/cream placeholder are excluded from body illustrations and covers.
+A PDF first page with a title overlay is not an extracted source chart. White-background research charts remain valid.
 The trailing contact card has its own role and never counts toward the body-image
 minimum.
 
@@ -195,8 +196,16 @@ and stopped filling images. Both uploaders now accept the Commons result. When
 Commons is unavailable or has no eligible photo, an original topic illustration
 is generated locally and clearly labelled as an illustration, not a photograph,
 report figure or data chart. No blank title card or QR code substitutes for it.
+The illustration varies its subject geometry, composition, count, placement and
+palette across articles and image positions, including within the same topic.
+Its article-and-position seed and saved provider selection keep retries stable.
+Photo URL and decoded-image identities are deduplicated across the batch; an
+exhausted eligible photo pool uses a distinct illustration instead of repeating
+one picture. These are supplemental visuals, never manufactured report charts.
 
-Covers prefer a valid report image, then the article's valid uploaded image.
+Covers prefer a validated original report chart, then the article's valid
+supplemental image. When OCR has no retained source charts, the licensed-photo
+and varied-illustration chain supplies the missing visuals.
 They are normalized to a 1200 x 675 JPEG. A crop rejection first removes explicit
 crop fields while retaining each article's own cover; further normalization is
 per article. It never replaces a whole group with one generic blank cover.
@@ -216,7 +225,11 @@ unexpired draft diagnostic artifact. Audit mode performs no uploads or updates.
 Apply mode checks the live draft against its saved prose identity, inspects actual
 WeChat CDN image bytes, replaces defective covers/body images and fills missing
 body illustrations, then reads back the saved media. A second fresh read before
-each update protects intervening edits. It never adds, deletes, publishes or
+each update protects intervening edits. Legacy images without an exact source
+reference remain usable existing body images, not proven PDF charts. Repair
+records whether the selected cover used a retained source reference, another
+retained body image or a new illustration; existing usable images do not trigger
+extra filler just to reach a count. It never adds, deletes, publishes or
 regenerates an article. Only recognized generated image credits are excluded from prose identity;
 image-credit text and license/source links are checked separately on readback. Sanitized progress permits a later rerun to repair only what remains.
 

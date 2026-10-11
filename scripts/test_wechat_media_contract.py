@@ -6,6 +6,7 @@ import hashlib
 import json
 from pathlib import Path
 import tempfile
+from types import SimpleNamespace
 import unittest
 from unittest.mock import Mock, patch
 
@@ -14,7 +15,7 @@ import requests
 
 import push_portal_translated_to_wechat_drafts as portal
 import push_xhs_notes_to_wechat_drafts as xhs
-from wechat_image_quality import article_image_rejection, is_article_image_candidate, REPO_ROOT
+from wechat_image_quality import article_image_rejection, is_article_image_candidate, source_chart_images, REPO_ROOT
 from free_editorial_images import attribution_html
 
 
@@ -46,6 +47,88 @@ def response(payload: dict) -> requests.Response:
 
 
 class ImageAdmissionTests(unittest.TestCase):
+    def test_actual_title_card_renderer_rejected_after_rename_crop_and_cdn_resize(self):
+        import fitz
+        from pdf_to_xhs_batch import make_cover
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            pdf = fitz.open(); page = pdf.new_page()
+            page.insert_text((60, 60), 'Original report title page', fontsize=22)
+            page.draw_rect((40, 180, 350, 450), color=(.1, .3, .6), fill=(.8, .9, .95))
+            pdf.save(root / 'fixture.pdf'); pdf.close()
+            cover = root / 'renamed.png'
+            make_cover(root / 'fixture.pdf', cover, '0001-01-Fixture', 'Research notes', 'Fixture')
+            self.assertEqual('generated_pdf_title_card', article_image_rejection(cover))
+            for size in ((1200, 675), (940, 400), (640, 360), (320, 180)):
+                with self.subTest(size=size), Image.open(cover) as original:
+                    path = root / f'cdn-{size[0]}.jpg'
+                    ImageOps.fit(original, size, method=Image.Resampling.LANCZOS).save(path, quality=82)
+                    self.assertEqual('generated_pdf_title_card', article_image_rejection(path))
+            chart = image(root / 'sparse-chart.jpg')
+            self.assertEqual('', article_image_rejection(chart))
+            # White chart panels are common; a generic framed chart must stay.
+            framed = Image.new('RGB', (1200, 675), (210, 220, 230))
+            draw = ImageDraw.Draw(framed)
+            draw.rectangle((60, 70, 1140, 620), fill='white', outline='black', width=2)
+            draw.line((100, 540, 400, 300, 1000, 150), fill='blue', width=5)
+            framed.save(root / 'framed-chart.jpg')
+            self.assertEqual('', article_image_rejection(root / 'framed-chart.jpg'))
+
+    def test_source_map_excludes_stale_art_and_cover_prefers_retained_original(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            chart = image(root / 'assets/source_image_02.png')
+            image(root / 'assets/source_image_01.jpg', (210, 40, 90))
+            image(root / 'assets/cover.png')
+            source = root / 'source_mineru.md'; source.write_text('Bound source fixture.')
+            mapping = {'version':1, 'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),
+                       'images':{'images/original.png':'assets/source_image_02.png'}}
+            (root / 'source_image_map.json').write_text(json.dumps(mapping))
+            self.assertEqual([chart], source_chart_images(root))
+            stock = image(root / 'stock.jpg')
+            self.assertEqual(chart, xhs.choose_cover_image(root, [stock], root / 'fallback'))
+            self.assertEqual(chart, portal.choose_cover_image(root, {}, root / 'fallback', [stock]))
+            source.write_text('Changed source.')
+            self.assertEqual([], source_chart_images(root))
+
+    def test_both_real_builders_use_one_original_without_padding_with_stock(self):
+        for uploader, markdown_name, status_name in ((xhs, 'wechat_article.md', 'status.json'),
+                                                    (portal, 'translated.md', 'translation_status.json')):
+            with self.subTest(uploader=uploader.__name__), tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary); report = root / 'report'; report.mkdir()
+                chart = image(report / 'assets/source_image_01.png')
+                image(report / 'assets/cover.png', (190, 20, 30))
+                (report / markdown_name).write_text('# 高盛：企业订单与交付周期更新\n\n完整的报告正文记录了企业订单与交付周期的变化。')
+                (report / status_name).write_text(json.dumps({'source_pdf':'GS-orders.pdf', 'title':'高盛：企业订单与交付周期更新'}))
+                if uploader is portal:
+                    (report / 'figure_manifest.json').write_text(json.dumps([{'token':'[[PORTAL_IMAGE_001]]', 'relative_path':'assets/source_image_01.png'}]))
+                args = SimpleNamespace(author=portal.AUTHOR, brand=portal.BRAND, body_hook='', content_source_url='', disclaimer=portal.BOTTOM_DISCLAIMER,
+                                       dry_run=True, image_upload_delay_seconds=0, max_body_chars=1200, max_content_bytes=18000,
+                                       max_content_chars=19500, max_inline_images=6, min_inline_images=3, timeout=30)
+                with patch.object(uploader, 'download_pollinations_image') as provider:
+                    built = uploader.build_article(report, 1, args, None, None, root / 'out', '')
+                provider.assert_not_called()
+                self.assertEqual(1, len(built['inline_images']))
+                self.assertEqual(str(chart), built['inline_images'][0]['path'])
+                self.assertEqual(1, built['body_image_count'])
+                self.assertNotIn('主题配图', built['article']['content'])
+
+    def test_source_provenance_excludes_toc_and_generated_page_even_when_renamed(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            chart = image(root / 'assets/source_image_01.png')
+            toc = image(root / 'assets/source_image_02.png', (180, 50, 40))
+            sidecar = {'metadata':{'records':[{'index':1, 'kind':'chart'}, {'index':2, 'body_text':'Table of Contents'}]},
+                       'assets':[{'index':i, 'path':p.relative_to(root).as_posix(), 'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for i,p in enumerate((chart,toc),1)]}
+            (root / 'source_figure_map.json').write_text(json.dumps(sidecar))
+            self.assertEqual([chart], source_chart_images(root))
+            (root / 'figure_manifest.json').write_text(json.dumps([
+                {'token':'good', 'relative_path':'assets/source_image_01.png'},
+                {'token':'toc', 'relative_path':'assets/source_image_02.png', 'role':'table_of_contents'},
+                {'token':'renamed-title', 'relative_path':'assets/source_image_02.png', 'source_path':'/old/report/assets/cover.png'},
+            ]))
+            self.assertEqual({'good':chart}, portal.load_figure_paths(root))
+
     def test_contact_card_renamed_or_cropped_is_not_article_art(self):
         source = REPO_ROOT / "prompts/zsxq_img.jpg"
         with tempfile.TemporaryDirectory() as temporary:

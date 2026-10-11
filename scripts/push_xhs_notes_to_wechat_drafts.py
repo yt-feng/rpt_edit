@@ -5,6 +5,7 @@ from __future__ import annotations
 from portal_discovery_quality import report_source_metadata
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -100,6 +101,7 @@ from sensitive_content_guard import (  # noqa: E402
 )
 from wechat_article_quality import sanitize_wechat_article_markdown  # noqa: E402
 from wechat_title_optimizer import ensure_publishable_neutral_title  # noqa: E402
+from wechat_image_quality import source_chart_images  # noqa: E402
 
 DATE_DIR_RE = re.compile(r"^\d{6,8}$")
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp"}
@@ -323,14 +325,8 @@ def xhs_card_number(path: Path) -> int:
 
 
 def extra_asset_images(report_dir: Path, already: set[Path]) -> list[tuple[str, Path]]:
-    assets_dir = report_dir / "assets"
-    if not assets_dir.exists():
-        return []
-    candidates = sorted(assets_dir.glob("source_image_*"))
     extras: list[tuple[str, Path]] = []
-    for path in candidates:
-        if path.suffix.lower() not in IMAGE_SUFFIXES or not is_article_image_candidate(path):
-            continue
+    for path in source_chart_images(report_dir):
         resolved = path.resolve()
         if resolved in already:
             continue
@@ -361,14 +357,8 @@ def xhs_card_fallback_images(report_dir: Path, already: set[Path]) -> list[tuple
 
 
 def choose_cover_image(report_dir: Path, uploaded_paths: list[Path], fallback_dir: Path) -> Path:
-    for candidate in [
-        report_dir / "assets" / "cover.png",
-        report_dir / "assets" / "cover.jpg",
-        report_dir / "assets" / "source_image_01.jpg",
-        report_dir / "assets" / "source_image_01.png",
-    ]:
-        if is_article_image_candidate(candidate):
-            return candidate
+    for candidate in source_chart_images(report_dir):
+        return candidate
     for path in uploaded_paths:
         if is_article_image_candidate(path):
             return path
@@ -452,9 +442,11 @@ def build_article(
     image_metadata: dict[str, dict[str, str]] = {}
 
     refs = [ref for ref in markdown_local_image_refs(markdown) if not is_xhs_cover_or_card(ref)]
-    target_image_count = min(max(args.min_inline_images, len(refs)), args.max_inline_images)
-    image_items: list[tuple[str, Path]] = []
+    image_items = extra_asset_images(report_dir, seen_paths)[:args.max_inline_images]
+    source_hashes = {hashlib.sha256(path.read_bytes()).hexdigest() for _, path in image_items}
     for ref in refs:
+        if len(image_items) >= args.max_inline_images:
+            break
         path = resolve_asset_path(report_dir, ref)
         if not path or path.suffix.lower() not in IMAGE_SUFFIXES:
             continue
@@ -463,13 +455,22 @@ def build_article(
         resolved = path.resolve()
         if resolved in seen_paths:
             continue
+        if any((report_dir / name).exists() for name in ("source_image_map.json", "source_figure_map.json")) and path.name.startswith("source_image_"):
+            # Mapped exhibits were already considered above. Do not bypass a
+            # stale/invalid map through a direct Markdown reference.
+            continue
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        if digest in source_hashes:
+            continue
+        source_hashes.add(digest)
         seen_paths.add(resolved)
         image_items.append((ref, path))
         if len(image_items) >= args.max_inline_images:
             break
 
-    if len(image_items) < target_image_count:
-        image_items.extend(extra_asset_images(report_dir, seen_paths)[: target_image_count - len(image_items)])
+    # The minimum applies only to reports without source figures. Do not pad
+    # a genuine one-chart report with unrelated stock pictures just to reach 3.
+    target_image_count = len(image_items) if image_items else min(args.min_inline_images, args.max_inline_images)
 
     ai_image_index = 1
     while len(image_items) < target_image_count and len(image_items) < args.max_inline_images:

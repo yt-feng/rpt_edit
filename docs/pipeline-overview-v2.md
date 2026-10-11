@@ -656,8 +656,11 @@ Some paths, scripts, prompts, workflows, and environment variables still use his
 
 The two article uploaders share `wechat_image_quality.py` and
 `free_editorial_images.py`: original figures → explicitly licensed Commons
-photos → locally generated, labelled topic illustrations. Contact artwork remains
-a trailing element only. Media acceptance requires cover and inline-image
+photos → locally generated, labelled topic illustrations with varying geometry
+and composition. Generated PDF-page title cards are excluded; missing OCR
+figures use the supplemental chain. Article/image-position seeds keep retries
+stable, while batch deduplication prevents repeated supplemental images.
+Contact artwork remains a trailing element only. Media acceptance requires cover and inline-image
 readback; it is separate from text generation, MinerU source binding and source
 website availability. The historical anonymous Pollinations call and whole-group
 blank-cover retry are retired.
