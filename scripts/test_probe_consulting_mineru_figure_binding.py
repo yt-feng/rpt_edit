@@ -21,11 +21,12 @@ class GitHubReadTests(unittest.TestCase):
             (1, b'error connecting to api.github.com private-secret', 'network_stop'),
             (1, b'x509: certificate has expired private-secret', 'network_stop'),
             (4, b'gh auth login private-secret', 'authentication_required'),
+            (1, b'the response contains terminal escape sequences; pass --allow-escape-sequences to output it anyway', 'cli_escape_sequence_rejected'),
             (1, b'unknown private-secret', 'cli_error'),
         )
         for operation in ('run_metadata', 'job_metadata', 'job_logs'):
             for code, stderr, expected in cases:
-                with self.subTest(operation=operation, expected=expected), patch.object(p.subprocess, 'run',
+                with self.subTest(operation=operation, expected=expected), patch.object(p, 'job_log_flags', return_value=[]), patch.object(p.subprocess, 'run',
                         return_value=Mock(returncode=code, stderr=stderr, stdout=b'private body')) as call:
                     with self.assertRaises(p.ProbeError) as error:
                         p.gh_bytes('repos/example/report-repository/actions/runs/123', operation)
@@ -35,14 +36,47 @@ class GitHubReadTests(unittest.TestCase):
     def test_timeout_and_missing_cli_stop_without_returning_exception_details(self):
         for error, expected in ((subprocess.TimeoutExpired(['gh', 'private'], 60, stderr=b'private'), 'network_stop'),
                                 (FileNotFoundError('private executable path'), 'cli_unavailable')):
-            with self.subTest(expected=expected), patch.object(p.subprocess, 'run', side_effect=error) as call:
+            with self.subTest(expected=expected), patch.object(p, 'job_log_flags', return_value=[]), patch.object(p.subprocess, 'run', side_effect=error) as call:
                 with self.assertRaisesRegex(p.ProbeError, '^github_job_logs_' + expected + '$'):
                     p.gh_bytes('repos/example/report-repository/actions/jobs/456/logs', 'job_logs')
                 self.assertEqual(call.call_count, 1)
 
     def test_success_keeps_exact_raw_log_bytes(self):
-        with patch.object(p.subprocess, 'run', return_value=Mock(returncode=0, stdout=b'exact log\r\n')):
+        with patch.object(p, 'job_log_flags', return_value=[]), patch.object(p.subprocess, 'run', return_value=Mock(returncode=0, stdout=b'exact log\r\n')):
             self.assertEqual(p.gh_bytes('endpoint', 'job_logs'), b'exact log\r\n')
+
+    def test_new_cli_raw_escape_log_is_captured_once_and_preserved_for_identity(self):
+        original = b'2026-10-11T00:00:00.0Z \x1b[36;1moriginal log\x1b[0m\n'
+        with patch.object(p.subprocess, 'run', side_effect=[
+                Mock(returncode=0, stdout=b'OPTIONS\n --allow-escape-sequences Allow printing terminal escape sequences\n'),
+                Mock(returncode=0, stdout=original)]) as call:
+            result = p.gh_bytes('repos/example/report-repository/actions/jobs/456/logs', 'job_logs')
+        self.assertEqual(result, original)
+        self.assertEqual(digest(result), digest(original))
+        self.assertEqual(call.call_count, 2)  # local help, then one remote read
+        self.assertEqual(call.call_args_list[0].args[0], ['gh', 'api', '--help'])
+        self.assertEqual(call.call_args_list[1].args[0][-1], '--allow-escape-sequences')
+        self.assertTrue(call.call_args_list[1].kwargs['capture_output'])
+
+    def test_old_cli_log_request_has_no_unsupported_flag(self):
+        with patch.object(p.subprocess, 'run', side_effect=[
+                Mock(returncode=0, stdout=b'OPTIONS --silent --include'),
+                Mock(returncode=0, stdout=b'original log')]) as call:
+            self.assertEqual(p.gh_bytes('endpoint', 'job_logs'), b'original log')
+        self.assertEqual(call.call_args_list[1].args[0], ['gh', 'api', 'endpoint'])
+
+    def test_metadata_never_allows_raw_escape_sequences_or_runs_help(self):
+        with patch.object(p.subprocess, 'run', return_value=Mock(returncode=0, stdout=b'{}')) as call:
+            self.assertEqual(p.gh_json('endpoint', 'run_metadata'), {})
+        self.assertEqual(call.call_count, 1)
+        self.assertEqual(call.call_args.args[0], ['gh', 'api', 'endpoint'])
+
+    def test_help_failure_stops_before_any_remote_request(self):
+        with patch.object(p.subprocess, 'run', return_value=Mock(returncode=1, stdout=b'private')) as call:
+            with self.assertRaisesRegex(p.ProbeError, '^github_job_logs_cli_help_invalid$'):
+                p.gh_bytes('endpoint', 'job_logs')
+        self.assertEqual(call.call_count, 1)
+        self.assertEqual(call.call_args.args[0], ['gh', 'api', '--help'])
 
 
 class AuthTests(unittest.TestCase):

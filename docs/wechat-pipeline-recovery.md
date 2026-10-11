@@ -103,6 +103,11 @@ The consulting figure probe now classifies failed GitHub reads by fixed operatio
 or `network_stop`. It never emits the CLI error response, signed URL or private
 body, and never retries or changes transport. This distinction must be available
 before diagnosing a failed cloud probe as a permission or connectivity problem.
+For `gh` 2.97+ compatibility, the probe detects local CLI support and uses
+`--allow-escape-sequences` only for job-log bytes captured into a pipe, never
+terminal output; exact-byte hashing and source authentication remain unchanged.
+The classified cloud probe stopped at GitHub job-log reading, so no consulting
+PDF pixel diagnosis or production acceptance has yet been established.
 
 ## Verify an existing upload
 
