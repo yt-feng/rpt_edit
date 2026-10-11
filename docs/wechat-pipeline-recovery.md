@@ -153,8 +153,22 @@ reject. Self-created ICC fixtures exercise actual PDFium profile loss, later-pag
 restoration, strict source-crop replay and rejection of changed text, drawings,
 resources, pixels, existing profiles and tampered receipts. The diagnostic still
 reports a graph rejection separately even if pixels agree; this cannot grant
-production acceptance. Full five-report generation and WeChat delivery remain
-separate acceptance steps from this six-page diagnostic result.
+production acceptance. Article generation and WeChat delivery are separate
+acceptance steps and are not performed by this historical-source probe.
+
+The consulting probe additionally runs the real `create_chart_source_assets`
+producer with Consulting's normal eight-image limit and the real
+`validate_figure_sources` consumer against the same already authenticated PDF
+and completed-result ZIP. In a disposable private report it reproduces the
+normal Markdown normalization, status/sidecar binding and source-image mapping.
+After the first validation it removes only that temporary raw extraction and
+runs the consumer again, proving that the retained page carriers and source
+figures survive the normal private-handoff shape. The probe exports only counts,
+hashes, policy names and fixed results in `production_figure_consumer`; no source
+text, paths, images or PDF bytes are exported, and no additional network, model,
+submission or external-cache operations are performed. A verified producer plus
+raw-free consumer replay is source-figure acceptance only, not a new article or
+WeChat delivery. Cloud validation of this added formal-consumer check is pending.
 
 ## BCG discovery evidence boundaries
 
