@@ -14,6 +14,8 @@
   const REPORT_PREVIEW_CACHE_KEY = "portal_report_preview_cache";
   const REPORT_PREVIEW_CACHE_MAX_ITEMS = 20;
   const REPORT_PREVIEW_CACHE_TTL_MS = 6 * 60 * 60 * 1000;
+  const LAST_SEARCH_KEY = "portal_last_search_v1";
+  const LAST_SEARCH_TTL_MS = 30 * 24 * 60 * 60 * 1000;
   const HOT_REPORT_FIRST_PAGE_CACHE_KEY = CONTENT_LOCALE === "zh-Hans"
     ? "portal_hot_report_first_page_v1"
     : `portal_hot_report_first_page_v1:${CONTENT_LOCALE}`;
@@ -135,6 +137,79 @@
       startNow,
       get started() { return started; },
     };
+  }
+
+  function readLastSearch(storage, locale = CONTENT_LOCALE, now = Date.now()) {
+    if (!storage) return null;
+    try {
+      const value = JSON.parse(storage.getItem(LAST_SEARCH_KEY) || "null");
+      if (!value) return null;
+      if (typeof value.query !== "string" || !value.query.trim() || value.query.length > 200
+        || !Number.isFinite(value.savedAt) || value.savedAt <= 0
+        || now - value.savedAt < -5 * 60 * 1000 || now - value.savedAt > LAST_SEARCH_TTL_MS) {
+        storage.removeItem(LAST_SEARCH_KEY);
+        return null;
+      }
+      return value.locale === locale ? { query: value.query.trim(), savedAt: value.savedAt } : null;
+    } catch (_error) {
+      return null;
+    }
+  }
+
+  function initSearchResume({ input, onRestore, storage = hotReportLocalStorage(), locale = CONTENT_LOCALE }) {
+    const container = document.getElementById("searchResume");
+    const resume = document.getElementById("resumeLastSearch");
+    const queryLabel = document.getElementById("lastSearchQuery");
+    const forget = document.getElementById("forgetLastSearch");
+    if (!container || !resume || !queryLabel || !forget || !input) return null;
+    let saved = readLastSearch(storage, locale);
+    let forgottenQuery = "";
+    const update = () => {
+      container.hidden = !saved || Boolean(input.value.trim());
+      queryLabel.textContent = saved ? saved.query : "";
+    };
+    input.addEventListener("input", update);
+    resume.addEventListener("click", () => {
+      // A URL query or text already entered always takes precedence.
+      if (input.value.trim()) return;
+      saved = readLastSearch(storage, locale);
+      if (!saved) { update(); return; }
+      input.value = saved.query;
+      update();
+      input.focus();
+      onRestore();
+    });
+    forget.addEventListener("click", () => {
+      forgottenQuery = saved ? saved.query : "";
+      saved = null;
+      try { if (storage) storage.removeItem(LAST_SEARCH_KEY); } catch (_error) { /* Storage may be unavailable. */ }
+      update();
+    });
+    update();
+    return {
+      remember(rawQuery) {
+        const query = String(rawQuery || "").trim().slice(0, 200);
+        if (!query || query === forgottenQuery || saved && saved.query === query) return;
+        try {
+          if (!storage) return;
+          const next = { query, savedAt: Date.now(), locale };
+          storage.setItem(LAST_SEARCH_KEY, JSON.stringify(next));
+          saved = next;
+          forgottenQuery = "";
+          update();
+        } catch (_error) { /* Search remains usable without browser storage. */ }
+      },
+    };
+  }
+
+  function renderCatalogEmptyState(results, { hasFilters, hasOtherSources, onClearFilters }) {
+    results.innerHTML = `<div class="empty-state catalog-empty-state">
+      <p>当前目录未找到匹配报告。</p>
+      ${hasOtherSources ? "<p>也可继续查看下方其他来源的搜索结果。</p>" : ""}
+      ${hasFilters ? '<button class="secondary-button" type="button" data-clear-catalog-filters>保留关键词，清除筛选</button>' : ""}
+    </div>`;
+    const clear = results.querySelector("[data-clear-catalog-filters]");
+    if (clear) clear.addEventListener("click", onClearFilters);
   }
 
   const INDUSTRY_RULES = [
@@ -981,13 +1056,17 @@
         const data = await response.json().catch(() => ({}));
         // A slow response for an earlier login must never replace a new login.
         if (authSessionRequestKey() !== entry.sessionKey) return null;
-        if (!response.ok || !data.token || !data.user) throw new Error(data.detail || "Session expired.");
+        if (response.status === 401 || response.status === 403) {
+          clearAuthSession();
+          return null;
+        }
+        if (!response.ok || !data.token || !data.user) return null;
         const refreshed = { token: data.token, user: data.user };
         entry.sessionKey = authSessionRequestKey(refreshed);
         saveAuthSession(refreshed);
         return refreshed;
       } catch (_error) {
-        if (authSessionRequestKey() === entry.sessionKey) clearAuthSession();
+        // A temporary verification failure must not sign an existing user out.
         return null;
       } finally {
         clearTimeout(timer);
@@ -1030,12 +1109,14 @@
       event.preventDefault();
       showAccountModal(workerUrl, {
         requestKind: membershipRequestKind(trigger.getAttribute("data-membership-request-open")),
+        requestPlacement: membershipRequestKind(trigger.getAttribute("data-membership-request-open")),
+        trigger,
       });
     });
 
     const deepLinkKind = new URLSearchParams(window.location.search).get("request");
     if (deepLinkKind && MEMBERSHIP_REQUEST_KINDS.has(String(deepLinkKind).trim().toLowerCase())) {
-      window.setTimeout(() => showAccountModal(workerUrl, { requestKind: membershipRequestKind(deepLinkKind) }), 0);
+      window.setTimeout(() => showAccountModal(workerUrl, { requestKind: membershipRequestKind(deepLinkKind), requestPlacement: "deep_link" }), 0);
     }
   }
 
@@ -1151,11 +1232,12 @@
       : "";
     return `
       <div class="admin-modal account-modal" id="accountModal" role="dialog" aria-modal="true" aria-labelledby="accountModalTitle">
-        <div class="admin-dialog account-dialog">
+        <div class="admin-dialog account-dialog${requestExpanded ? " is-request-view" : ""}" id="accountDialog">
           <button class="admin-close" id="accountClose" type="button" aria-label="Close">&times;</button>
-          <h3 id="accountModalTitle">${signedIn ? "我的研究账号" : context.mode === "register" ? "免费创建研究账号" : "登录 KC桌面"}</h3>
-          ${!signedIn ? '<p class="account-welcome">一个账号，连接 AI 研究、每日签到与报告权益。</p>' : ""}
-          <form id="accountAuthForm" class="auth-form" ${signedIn ? "hidden" : ""}>
+          <h3 id="accountModalTitle">${requestExpanded ? escapeHtml(requestCopy.title) : signedIn ? "我的研究账号" : context.mode === "register" ? "免费创建研究账号" : "登录 KC桌面"}</h3>
+          <p class="account-welcome" id="accountWelcome" ${signedIn || requestExpanded ? "hidden" : ""}>一个账号，连接 AI 研究、每日签到与报告权益。</p>
+          <button class="membership-view-switch" id="membershipRequestBack" type="button" hidden>← 返回申请表</button>
+          <form id="accountAuthForm" class="auth-form" ${signedIn || requestExpanded ? "hidden" : ""}>
             <div class="auth-grid">
               <label>用户名<input id="accountUsername" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" aria-describedby="accountUsernameHint" placeholder="例如 yourname_01" required><small class="auth-field-hint" id="accountUsernameHint">3–32 位，以英文字母或数字开头，可包含点、短横线和下划线；不支持中文或空格。</small></label>
               <label id="accountEmailLabel" hidden>常用邮箱（必填）<input id="accountEmail" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com"></label>
@@ -1174,7 +1256,7 @@
               <button class="secondary-button" id="accountModeToggle" type="button">注册新账号</button>
             </div>
           </form>
-          <div id="accountSummary" class="account-summary" ${signedIn ? "" : "hidden"}>
+          <div id="accountSummary" class="account-summary" ${signedIn && !requestExpanded ? "" : "hidden"}>
             <span>当前账号</span>
             <strong id="accountName">${escapeHtml(authUserLabel(session))}</strong>
             <span id="accountEmailText">${escapeHtml(session && session.user ? session.user.email : "")}</span>
@@ -1233,13 +1315,15 @@
                 <strong id="membershipRequestTitle">${escapeHtml(requestCopy.title)}</strong>
                 <span id="membershipRequestNote">${escapeHtml(requestCopy.note)}</span>
               </div>
-              <button class="secondary-button" id="membershipRequestToggle" type="button">${requestExpanded ? "收起申请表" : requestCopy.title}</button>
+              <button class="secondary-button" id="membershipRequestToggle" type="button" aria-controls="membershipRequestForm"${requestExpanded ? " hidden" : ""}>${requestExpanded ? "收起申请表" : requestCopy.title}</button>
             </div>
-            <form id="membershipRequestForm" ${requestExpanded ? "" : "hidden"}>
+            <p class="membership-request-intro" id="membershipRequestIntro" ${requestExpanded ? "" : "hidden"}>无需注册或登录，填写下面的联系方式即可提交申请。</p>
+            <form id="membershipRequestForm" novalidate ${requestExpanded ? "" : "hidden"}>
               <input id="membershipRequestKind" type="hidden" value="${escapeHtml(requestCopy.kind)}">
               <div class="membership-request-grid">
                 <label>常用邮箱
-                  <input id="membershipRequesterEmail" name="requester_email" type="email" autocomplete="email" inputmode="email" value="${escapeHtml(requesterEmail)}" placeholder="name@example.com"${signedIn ? " readonly" : ""} required>
+                  <input id="membershipRequesterEmail" name="requester_email" type="email" autocomplete="email" inputmode="email" value="${escapeHtml(requesterEmail)}" placeholder="${signedIn && !requesterEmail ? "使用当前账号邮箱" : "name@example.com"}"${signedIn ? " readonly" : " required"}>
+                  <small id="membershipAccountEmailHint" ${signedIn && !requesterEmail ? "" : "hidden"}>使用当前账号邮箱，提交时自动关联。</small>
                 </label>
                 <label>首选即时联系方式
                   <select id="membershipContactChannel" name="contact_channel" required>
@@ -1260,8 +1344,9 @@
                 <input id="membershipRequestWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
               </label>
               <button class="primary" id="membershipRequestSubmit" type="submit">${escapeHtml(requestCopy.button)}</button>
-              <div id="membershipRequestStatus" class="status-line" aria-live="polite"></div>
+              <div id="membershipRequestStatus" class="status-line" aria-live="polite" tabindex="-1"></div>
             </form>
+            <button class="membership-view-switch" id="membershipRequestLogin" type="button" ${requestExpanded ? "" : "hidden"}>${signedIn ? "查看我的账号" : "已有账号？去登录"}</button>
           </section>
           ${reportContactCard}
           <div id="accountModalStatus" class="status-line" aria-live="polite"></div>
@@ -1303,6 +1388,7 @@
       window.alert("Account service is temporarily unavailable.");
       return "";
     }
+    const returnFocus = context.trigger || document.activeElement;
     const existing = document.getElementById("accountModal");
     if (existing && typeof existing.__portalCleanup === "function") existing.__portalCleanup();
     if (existing) existing.remove();
@@ -1334,10 +1420,17 @@
     const contactQrPanel = document.getElementById("accountContactQrPanel");
     const contactQrImage = document.getElementById("accountContactQrImage");
     const contactQrStatus = document.getElementById("accountContactQrStatus");
+    const accountDialog = document.getElementById("accountDialog");
+    const accountWelcome = document.getElementById("accountWelcome");
+    const membershipRequestCard = document.getElementById("membershipRequestCard");
+    const membershipRequestIntro = document.getElementById("membershipRequestIntro");
+    const membershipRequestLogin = document.getElementById("membershipRequestLogin");
+    const membershipRequestBack = document.getElementById("membershipRequestBack");
     const membershipRequestToggle = document.getElementById("membershipRequestToggle");
     const membershipRequestForm = document.getElementById("membershipRequestForm");
     const membershipRequestKindInput = document.getElementById("membershipRequestKind");
     const membershipRequesterEmail = document.getElementById("membershipRequesterEmail");
+    const membershipAccountEmailHint = document.getElementById("membershipAccountEmailHint");
     const membershipContactChannel = document.getElementById("membershipContactChannel");
     const membershipContactValue = document.getElementById("membershipContactValue");
     const membershipRequestMessage = document.getElementById("membershipRequestMessage");
@@ -1358,7 +1451,7 @@
     const startedAuthModes = new Set();
     let authCompleted = false;
     const authPlacement = String(context.placement || (context.item ? "report_detail" : page)).slice(0, 80);
-    trackEvent(workerUrl, "account_auth", { action: "modal_open", placement: authPlacement, status: loadAuthSession() ? "signed_in" : mode });
+    let authModalOpened = false;
     let captchaToken = "";
     let currentRewardState = null;
     let rewardActionTimer = 0;
@@ -1371,6 +1464,78 @@
     let contactQrLoading = false;
     let contactQrRequest = 0;
     let membershipRequestActive = false;
+    let membershipRequestCompleted = false;
+    let membershipRequestStarted = false;
+    let membershipRequestImpressed = false;
+    let membershipRequestAbandoned = false;
+    let requestView = Boolean(context.requestKind);
+    let hasRequestView = requestView;
+    const MEMBERSHIP_REQUEST_ACTIONS = new Set(["form_impression", "form_open", "form_start", "form_submit", "submitted", "deduplicated", "form_error", "form_abandon"]);
+    const MEMBERSHIP_REQUEST_PLACEMENTS = new Set(["account", "membership", "access", "support", "privacy", "refund", "deep_link"]);
+    const MEMBERSHIP_REQUEST_STATUSES = new Set(["guest", "signed_in", "pending", "success", "error", "abandoned"]);
+    const MEMBERSHIP_REQUEST_ERRORS = new Set(["validation_email", "validation_contact", "network", "server", "unknown"]);
+    const membershipPlacement = MEMBERSHIP_REQUEST_PLACEMENTS.has(context.requestPlacement)
+      ? context.requestPlacement
+      : MEMBERSHIP_REQUEST_PLACEMENTS.has(context.requestKind) ? context.requestKind : "account";
+
+    function trackMembershipRequest(action, options = {}) {
+      if (!MEMBERSHIP_REQUEST_ACTIONS.has(action)) return;
+      const payload = {
+        measurement_version: "membership-v1",
+        action,
+        request_kind: membershipRequestKind(membershipRequestKindInput && membershipRequestKindInput.value),
+        placement: membershipPlacement,
+        status: MEMBERSHIP_REQUEST_STATUSES.has(options.status) ? options.status : loadAuthSession() ? "signed_in" : "guest",
+      };
+      if (action === "form_error") payload.error = MEMBERSHIP_REQUEST_ERRORS.has(options.error) ? options.error : "unknown";
+      trackEvent(workerUrl, "membership_request", payload);
+    }
+
+    function recordMembershipOpen() {
+      if (!membershipRequestImpressed) {
+        membershipRequestImpressed = true;
+        trackMembershipRequest("form_impression");
+      }
+      trackMembershipRequest("form_open");
+    }
+
+    function focusMembershipRequest() {
+      const target = membershipRequestCompleted ? membershipRequestStatus
+        : membershipRequesterEmail && !membershipRequesterEmail.readOnly && !membershipRequesterEmail.value ? membershipRequesterEmail : membershipContactChannel;
+      target?.focus?.({ preventScroll: true });
+    }
+
+    function updateMembershipEmailState(session = loadAuthSession()) {
+      if (!membershipRequesterEmail) return;
+      const signedIn = Boolean(session);
+      const hiddenAccountEmail = signedIn && !String(session.user && session.user.email || "").trim();
+      membershipRequesterEmail.readOnly = signedIn || membershipRequestCompleted;
+      membershipRequesterEmail.required = !signedIn;
+      membershipRequesterEmail.placeholder = hiddenAccountEmail ? "使用当前账号邮箱" : "name@example.com";
+      if (membershipAccountEmailHint) membershipAccountEmailHint.hidden = !hiddenAccountEmail;
+    }
+
+    function updateRequestView() {
+      const signedIn = Boolean(loadAuthSession());
+      accountDialog?.classList.toggle("is-request-view", requestView);
+      if (accountWelcome) accountWelcome.hidden = signedIn || requestView;
+      form.hidden = signedIn || requestView;
+      summary.hidden = !signedIn || requestView;
+      if (contactCard) contactCard.hidden = requestView;
+      if (memberContact && requestView) memberContact.hidden = true;
+      status.hidden = requestView;
+      if (membershipRequestIntro) membershipRequestIntro.hidden = !requestView;
+      if (membershipRequestToggle) membershipRequestToggle.hidden = requestView;
+      if (membershipRequestLogin) {
+        membershipRequestLogin.hidden = !requestView;
+        membershipRequestLogin.textContent = signedIn ? "查看我的账号" : "已有账号？去登录";
+      }
+      if (membershipRequestBack) membershipRequestBack.hidden = requestView || !hasRequestView;
+      if (membershipRequestCard) membershipRequestCard.hidden = !requestView && hasRequestView;
+      document.getElementById("accountModalTitle").textContent = requestView
+        ? membershipRequestCopy(membershipRequestKindInput && membershipRequestKindInput.value).title
+        : signedIn ? "我的研究账号" : mode === "register" ? "免费创建研究账号" : "登录 KC桌面";
+    }
 
     function setStatus(text, kind) {
       status.className = kind ? `status-line ${kind}` : "status-line";
@@ -1485,6 +1650,12 @@
       setContactQrStatus("");
       const verifiedSession = await refreshAuthSession(workerUrl);
       if (request !== contactQrRequest || !modal.isConnected) return;
+      if (!verifiedSession && loadAuthSession()) {
+        if (memberContact) memberContact.hidden = false;
+        if (contactQrToggle) contactQrToggle.hidden = false;
+        setContactQrStatus("账号状态暂时无法验证，请重试。", "error");
+        return;
+      }
       if (!verifiedSession || !isNewsfeedSession(verifiedSession)) {
         clearAuthSession();
         refreshUi({ statusOverride: "登录状态已失效，请重新登录。", skipContactVerification: true });
@@ -1495,6 +1666,10 @@
     }
 
     function disposeAccountModal() {
+      if (membershipRequestStarted && !membershipRequestCompleted && !membershipRequestActive && !membershipRequestAbandoned) {
+        membershipRequestAbandoned = true;
+        trackMembershipRequest("form_abandon", { status: "abandoned" });
+      }
       window.clearInterval(rewardActionTimer);
       rewardActionTimer = 0;
       revokeContactQr();
@@ -1706,7 +1881,7 @@
       if (rewards) rewards.hidden = !signedIn;
       if (contactCard) contactCard.hidden = false;
       if (memberContact) memberContact.hidden = true;
-      if (membershipRequesterEmail) {
+      if (membershipRequesterEmail && !membershipRequestCompleted) {
         if (signedIn) {
           membershipRequesterEmail.value = String(session.user.email || "").trim();
           membershipRequesterEmail.readOnly = true;
@@ -1714,6 +1889,16 @@
           if (membershipRequesterEmail.readOnly) membershipRequesterEmail.value = "";
           membershipRequesterEmail.readOnly = false;
         }
+      }
+      updateMembershipEmailState(session);
+      updateRequestView();
+      if (requestView) {
+        revokeContactQr();
+        return;
+      }
+      if (!authModalOpened) {
+        authModalOpened = true;
+        trackEvent(workerUrl, "account_auth", { action: "modal_open", placement: authPlacement, status: signedIn ? "signed_in" : mode });
       }
       if (signedIn) {
         document.getElementById("accountName").textContent = authUserLabel(session);
@@ -1762,13 +1947,47 @@
 
     function finish() {
       if (!authCompleted && startedAuthModes.has(mode) && !loadAuthSession()) trackEvent(workerUrl, "account_auth", { action: "form_abandon", placement: authPlacement, status: mode });
-      trackEvent(workerUrl, "account_auth", { action: "modal_close", placement: authPlacement, status: authCompleted ? "completed" : mode });
+      if (authModalOpened) trackEvent(workerUrl, "account_auth", { action: "modal_close", placement: authPlacement, status: authCompleted ? "completed" : mode });
       disposeAccountModal();
       modal.__portalCleanup = null;
       modal.remove();
+      if (returnFocus && returnFocus.isConnected !== false) returnFocus.focus?.({ preventScroll: true });
     }
 
     close.addEventListener("click", finish);
+    modal.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        finish();
+      }
+      if (event.key !== "Tab") return;
+      const controls = Array.from(modal.querySelectorAll("button, input, select, textarea, a[href], [tabindex]"))
+        .filter((control) => !control.disabled && control.tabIndex !== -1 && !control.closest("[hidden]") && control.getClientRects().length);
+      const first = controls[0];
+      const last = controls[controls.length - 1];
+      if (first && event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (last && !event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
+    membershipRequestLogin?.addEventListener("click", () => {
+      requestView = false;
+      refreshUi();
+      if (accountDialog) accountDialog.scrollTop = 0;
+      if (!loadAuthSession()) username.focus({ preventScroll: true });
+      else close.focus({ preventScroll: true });
+    });
+    membershipRequestBack?.addEventListener("click", () => {
+      requestView = true;
+      membershipRequestForm.hidden = false;
+      refreshUi();
+      if (accountDialog) accountDialog.scrollTop = 0;
+      recordMembershipOpen();
+      focusMembershipRequest();
+    });
     modal.addEventListener("click", (event) => {
       if (event.target === modal) finish();
     });
@@ -1791,30 +2010,47 @@
         membershipRequestToggle.textContent = membershipRequestForm.hidden
           ? membershipRequestCopy(membershipRequestKindInput && membershipRequestKindInput.value).title
           : "收起申请表";
+        if (membershipRequestIntro) membershipRequestIntro.hidden = membershipRequestForm.hidden;
         if (!membershipRequestForm.hidden) {
-          const target = membershipRequesterEmail && !membershipRequesterEmail.value
-            ? membershipRequesterEmail
-            : membershipContactChannel;
-          if (target && typeof target.focus === "function") target.focus();
+          requestView = true;
+          hasRequestView = true;
+          refreshUi();
+          if (accountDialog) accountDialog.scrollTop = 0;
+          recordMembershipOpen();
+          focusMembershipRequest();
         }
       });
     }
     if (membershipRequestForm) {
+      const startMembershipRequest = (event) => {
+        if (membershipRequestStarted || membershipRequestCompleted || event.target === membershipRequestWebsite) return;
+        if (![membershipRequesterEmail, membershipContactChannel, membershipContactValue, membershipRequestMessage].includes(event.target)) return;
+        membershipRequestStarted = true;
+        trackMembershipRequest("form_start");
+      };
+      membershipRequestForm.addEventListener("input", startMembershipRequest);
+      membershipRequestForm.addEventListener("change", startMembershipRequest);
       membershipRequestForm.addEventListener("submit", async (event) => {
         event.preventDefault();
-        if (membershipRequestActive) return;
+        if (membershipRequestActive || membershipRequestCompleted) return;
+        trackMembershipRequest("form_submit", { status: "pending" });
         const requesterEmail = String(membershipRequesterEmail && membershipRequesterEmail.value || "").trim().slice(0, 254);
         const contactChannel = String(membershipContactChannel && membershipContactChannel.value || "").trim().toLowerCase();
         const contactValue = String(membershipContactValue && membershipContactValue.value || "").trim().slice(0, 160);
         const note = String(membershipRequestMessage && membershipRequestMessage.value || "").trim().slice(0, 600);
         const requestKind = membershipRequestKind(membershipRequestKindInput && membershipRequestKindInput.value);
-        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/u.test(requesterEmail)) {
+        const requestSession = loadAuthSession();
+        const requestToken = String(requestSession && requestSession.token || "");
+        // Authenticated requests bind the authoritative account email server-side.
+        if (!requestToken && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/u.test(requesterEmail)) {
           setMembershipRequestStatus("请填写有效的常用邮箱。", "error");
+          trackMembershipRequest("form_error", { status: "error", error: "validation_email" });
           membershipRequesterEmail?.focus();
           return;
         }
         if (!["wechat", "whatsapp", "telegram"].includes(contactChannel) || !contactValue) {
           setMembershipRequestStatus("请选择微信、WhatsApp 或 Telegram，并填写对应账号或手机号。", "error");
+          trackMembershipRequest("form_error", { status: "error", error: "validation_contact" });
           (contactChannel ? membershipContactValue : membershipContactChannel)?.focus();
           return;
         }
@@ -1823,6 +2059,7 @@
         membershipRequestSubmit.disabled = true;
         membershipRequestSubmit.textContent = "正在提交…";
         setMembershipRequestStatus("正在通知 KC桌面，请稍候…");
+        let responseReceived = false;
         try {
           const response = await fetch(`${workerUrl}/membership/request`, {
             method: "POST",
@@ -1838,8 +2075,21 @@
               honeypot: String(membershipRequestWebsite && membershipRequestWebsite.value || "").slice(0, 160),
             }),
           });
+          responseReceived = true;
           const data = await response.json().catch(() => ({}));
+          if (response.status === 401 && requestToken) {
+            const currentSession = loadAuthSession();
+            if (currentSession && currentSession.token === requestToken) {
+              clearAuthSession();
+              // Keep the complete draft and require an explicit retry as a guest.
+              updateMembershipEmailState(null);
+              updateRequestView();
+              throw new Error("登录状态已过期，已保留申请内容。可直接重新提交，无需登录。");
+            }
+            throw new Error("账号状态已更新，已保留申请内容，请重新提交。");
+          }
           if (!response.ok || !data.ok) throw new Error(data.detail || "申请提交失败，请稍后重试。");
+          membershipRequestCompleted = true;
           membershipRequesterEmail.readOnly = true;
           membershipContactChannel.disabled = true;
           membershipContactValue.readOnly = true;
@@ -1849,15 +2099,12 @@
             data.detail || (data.deduplicated ? "这条申请已经收到，无需重复提交。" : "申请已提交，KC桌面会通过你留下的联系方式回复。"),
             "ok",
           );
-          trackEvent(workerUrl, "membership_request", {
-            action: data.deduplicated ? "deduplicated" : "submitted",
-            request_kind: requestKind,
-            contact_channel: contactChannel,
-          });
+          trackMembershipRequest(data.deduplicated ? "deduplicated" : "submitted", { status: "success" });
         } catch (error) {
           membershipRequestSubmit.disabled = false;
           membershipRequestSubmit.textContent = membershipRequestCopy(requestKind).button;
           setMembershipRequestStatus(error.message || "申请提交失败，请稍后重试。", "error");
+          trackMembershipRequest("form_error", { status: "error", error: responseReceived ? "server" : "network" });
         } finally {
           membershipRequestActive = false;
         }
@@ -2003,9 +2250,19 @@
         password.value = "";
         answer.value = "";
         const registrationStatus = mode === "register" ? registrationCompleteText() : "";
+        const continueMembershipRequest = hasRequestView && !membershipRequestCompleted;
+        if (continueMembershipRequest) {
+          requestView = true;
+          membershipRequestForm.hidden = false;
+        }
         refreshUi({ statusOverride: registrationStatus });
-        document.dispatchEvent(new CustomEvent("portal-auth-complete", { detail: { resumeIntent: context.resumeIntent === true, placement: authPlacement } }));
-        if (context.resumeIntent) {
+        if (continueMembershipRequest) {
+          if (accountDialog) accountDialog.scrollTop = 0;
+          recordMembershipOpen();
+          focusMembershipRequest();
+        }
+        document.dispatchEvent(new CustomEvent("portal-auth-complete", { detail: { resumeIntent: context.resumeIntent === true && !continueMembershipRequest, placement: authPlacement } }));
+        if (context.resumeIntent && !continueMembershipRequest) {
           trackEvent(workerUrl, "account_auth", { action: "intent_resumed", placement: authPlacement, status: "success" });
           finish();
         }
@@ -2037,7 +2294,10 @@
     if (rewards && summary) summary.insertBefore(rewards, passwordForm);
     refreshUi();
     if (context.focusRewards && rewards) rewards.scrollIntoView?.({ behavior: "smooth", block: "center" });
-    if (!loadAuthSession() && username) username.focus();
+    if (requestView) {
+      recordMembershipOpen();
+      focusMembershipRequest();
+    } else if (!loadAuthSession() && username) username.focus();
   }
 
   function newAdminPdfUploadId() {
@@ -7961,6 +8221,7 @@
     const pageInfo = document.getElementById("pageInfo");
     const pageSize = document.getElementById("pageSize");
     const deferLocalizedHomeCatalog = shouldDeferLocalizedHomeCatalog(CONTENT_LOCALE);
+    let searchResume = null;
     let earlyInputTouched = false;
     const captureEarlyInput = () => { earlyInputTouched = true; };
     if (input) input.addEventListener("input", captureEarlyInput, { passive: true });
@@ -8842,7 +9103,11 @@
       if (!scoped.length) {
         results.classList.remove("is-loading", "is-updating");
         results.setAttribute("aria-busy", "false");
-        results.innerHTML = '<div class="empty-state">No matching reports.</div>';
+        renderCatalogEmptyState(results, {
+          hasFilters: hasActiveFilters(),
+          hasOtherSources: Boolean(rawQuery) && scopeFilter.value !== "charts",
+          onClearFilters: clearAllFilters,
+        });
         scheduleCatalogSearchAnalytics(rawQuery, scoped.length);
         return;
       }
@@ -8923,6 +9188,7 @@
       results.setAttribute("aria-busy", "true");
       updateCatalogReadiness("正在更新结果；已保留当前列表供继续浏览…", "searching");
       localSearchTimer = window.setTimeout(() => {
+        if (searchResume) searchResume.remember(input.value);
         render({ resetPage: true });
         renderHotReports();
         updateCatalogReadiness(
@@ -9811,6 +10077,14 @@
     if (initialQuery && input) {
       input.value = initialQuery.slice(0, 200);
     }
+    searchResume = initSearchResume({
+      input,
+      onRestore: () => {
+        startCatalogForUserIntent();
+        scheduleLocalRender(0);
+        scheduleHotReportSearch(scopeFilter.value === "charts" ? "" : input.value.trim(), 0);
+      },
+    });
     scheduleExternalSearch();
 
     let searchIndexPrunedText = false;

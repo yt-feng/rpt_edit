@@ -43,7 +43,15 @@ ADMIN_EVENT_TYPES = {
     "delivery_link_generate",
 }
 SERVER_AUDIT_EVENT_TYPES = {"report_chat"}
+MEMBERSHIP_MEASUREMENT_VERSION = "membership-v1"
+MEMBERSHIP_REQUEST_KINDS = {"membership", "access", "support", "privacy", "refund"}
+MEMBERSHIP_ACTIONS = {
+    "form_impression", "form_open", "form_start", "form_submit", "submitted",
+    "deduplicated", "form_error", "form_abandon",
+}
+MEMBERSHIP_SUCCESS_ACTIONS = {"submitted", "deduplicated"}
 JOURNEY_ACTIONS: dict[str, set[str]] = {
+    "membership_request": MEMBERSHIP_ACTIONS,
     "account_auth": {
         "cta_impression", "cta_click", "modal_open", "mode_selected", "form_start",
         "form_submit", "form_abandon", "modal_close", "intent_resumed", "register",
@@ -66,11 +74,13 @@ JOURNEY_STATUSES = {
     "success", "ok", "completed", "error", "failure", "failed", "limit", "sent",
     "login", "register", "validation", "request_failed", "list_unavailable",
     "already_claimed_today", "already_owned", "anonymous", "authenticated",
+    "guest", "signed_in", "pending", "abandoned",
 }
 JOURNEY_PLACEMENTS = {
     "navigation", "home_hero", "research_intro", "research_limit", "report_detail",
     "daily_goal", "account_modal", "research_tab", "home_research", "blog_article", "public_cache",
     "guest", "registered", "member", "admin", "free", "paid", "premium",
+    "account", "membership", "access", "support", "privacy", "refund", "deep_link",
 }
 JOURNEY_CONTEXTS = {"report", "course"}
 ENGAGEMENT_EVENT_TYPES = {
@@ -83,6 +93,11 @@ ENGAGEMENT_EVENT_TYPES = {
     "report_chat_interaction",
     "newsfeed_interaction",
     "course_material_request",
+}
+INTENTIONAL_CHAT_ACTIONS = {
+    "entry_click", "composer_start", "prompt_selected", "submit", "success",
+    "popular_click", "popular_success", "export_docx_started", "export_pdf_started",
+    "limit_request_submit", "limit_request_success",
 }
 AI_HOST_RE = re.compile(r"(?:^|\.)(?:chatgpt|perplexity|claude|gemini|copilot)\.", re.IGNORECASE)
 SEARCH_HOST_RE = re.compile(
@@ -265,6 +280,8 @@ def event_fingerprint(event: dict[str, Any]) -> str:
         event.get("action"),
         event.get("status"),
         event.get("outcome"),
+        event.get("request_kind"),
+        event.get("measurement_version"),
     )
     return "fallback:" + "\u001f".join(clean_text(value, 240) for value in fields)
 
@@ -334,8 +351,8 @@ def channel_for_session(session: "Session", site_hosts: set[str]) -> str:
     return "referral"
 
 
-def safe_rate(numerator: int | float, denominator: int | float) -> float | None:
-    if not denominator:
+def safe_rate(numerator: int | float | None, denominator: int | float) -> float | None:
+    if numerator is None or not denominator:
         return None
     return round(float(numerator) / float(denominator), 4)
 
@@ -364,10 +381,46 @@ class Session:
 
     def is_engaged(self) -> bool:
         types = self.event_types()
-        return types.get("page_view", 0) >= 2 or any(types.get(name, 0) for name in ENGAGEMENT_EVENT_TYPES)
+        return (
+            types.get("page_view", 0) >= 2
+            or any(types.get(name, 0) for name in ENGAGEMENT_EVENT_TYPES)
+            or any(
+                event.get("type") == "membership_request"
+                and event.get("action") in {"form_start", "form_submit", "submitted", "deduplicated"}
+                for event in self.events
+            )
+        )
 
     def has(self, event_type: str) -> bool:
         return any(clean_text(event.get("type"), 80).lower() == event_type for event in self.events)
+
+    def is_intentionally_engaged(self) -> bool:
+        """Require a controlled active action; exposure and auto-rendering do not qualify."""
+        for event in self.events:
+            event_type = clean_text(event.get("type"), 80).lower()
+            action = clean_text(event.get("action"), 80).lower()
+            success = clean_text(event.get("status"), 80).lower() in {"success", "ok", "completed"}
+            if event_type == "search" and clean_text(event.get("query"), 240):
+                return True
+            if event_type in {"report_open", "download_attempt", "download_success"}:
+                return True
+            if event_type == "account_auth" and action in {"register", "login", "login_recovered"} and success:
+                return True
+            if event_type == "reward_checkin" and (action in {"click", "goal_click"} or action == "daily" and success):
+                return True
+            if event_type == "reward_claim" and action in {"daily", "points"} and success:
+                return True
+            if event_type == "report_chat_interaction" and action in INTENTIONAL_CHAT_ACTIONS:
+                return True
+            if event_type == "membership_request" and action in {"form_start", "form_submit", "submitted", "deduplicated"}:
+                return True
+            if event_type == "report_request" and action in {"submitted", "deduplicated"}:
+                return True
+            if event_type == "course_material_request" and action in {"submitted", "deduplicated"}:
+                return True
+            if event_type == "report_text_view" and action in {"open", "load_more"}:
+                return True
+        return False
 
     def successful_registration(self) -> bool:
         return any(
@@ -575,18 +628,200 @@ def public_journey_diagnostics(events: Iterable[dict[str, Any]], start: date, en
     }
 
 
-def session_metrics(sessions: Iterable[Session], site_hosts: set[str]) -> dict[str, int]:
+def membership_events(session: Session, kinds: set[str] | None = None) -> list[dict[str, Any]]:
+    return [
+        event for event in session.events
+        if clean_text(event.get("type"), 80).lower() == "membership_request"
+        and clean_text(event.get("session_id"), 160)
+        and (kinds is None or clean_text(event.get("request_kind"), 80).lower() in kinds)
+    ]
+
+
+def membership_success_sessions(sessions: Iterable[Session], kinds: set[str]) -> int | None:
+    """Do not turn historically rejected/uninstrumented events into zero leads."""
+    groups = [membership_events(session, kinds) for session in sessions]
+    successes = sum(any(event.get("action") in MEMBERSHIP_SUCCESS_ACTIONS for event in rows) for rows in groups)
+    instrumented = any(
+        event.get("measurement_version") == MEMBERSHIP_MEASUREMENT_VERSION
+        for rows in groups for event in rows
+    )
+    return successes if successes or instrumented else None
+
+
+def membership_version_metrics(sessions: Iterable[Session], kinds: set[str]) -> dict[str, Any]:
+    groups = [
+        [event for event in membership_events(session, kinds)
+         if event.get("measurement_version") == MEMBERSHIP_MEASUREMENT_VERSION]
+        for session in sessions
+    ]
+    observed = sum(bool(events) for events in groups)
+    successes = sum(any(event.get("action") in MEMBERSHIP_SUCCESS_ACTIONS for event in events) for events in groups)
+    return {
+        "observed_version_sessions": observed,
+        "observed_version_success_sessions": successes if observed else None,
+        "observed_version_success_rate": safe_rate(successes, observed),
+    }
+
+
+def public_membership_diagnostics(sessions: Iterable[Session]) -> dict[str, Any]:
+    rows = list(sessions)
+    all_events = [event for session in rows for event in membership_events(session)]
+    stages = [
+        "form_impression", "form_open", "form_start", "form_submit",
+        "submitted", "deduplicated", "form_error", "form_abandon",
+    ]
+
+    def summarize(events: list[dict[str, Any]]) -> dict[str, Any]:
+        marked = [event for event in events if event.get("measurement_version") == MEMBERSHIP_MEASUREMENT_VERSION]
+        dates = sorted({day.isoformat() for event in events if (day := event_date(event))})
+        marked_dates = sorted({day.isoformat() for event in marked if (day := event_date(event))})
+        explicit_sessions = {event["session_id"] for event in events}
+        version_sessions = {event["session_id"] for event in marked}
+        version_success_sessions = {event["session_id"] for event in marked if event.get("action") in MEMBERSHIP_SUCCESS_ACTIONS}
+        stage_rows = []
+        for action in stages:
+            observed = [event for event in events if event.get("action") == action]
+            count = len({event["session_id"] for event in observed}) if observed or marked else None
+            versioned_count = len({event["session_id"] for event in marked if event.get("action") == action}) if marked else None
+            stage_rows.append({
+                "action": action,
+                "observed_events": len(observed),
+                "sessions": count,
+                "coverage": "observed" if observed else ("instrumented_no_event" if marked else "unavailable"),
+                "observed_version_sessions": versioned_count,
+                "rate_from_observed_version_sessions": safe_rate(versioned_count, len(version_sessions)),
+            })
+        return {
+            "observed_sessions": len(explicit_sessions),
+            "observed_version_sessions": len(version_sessions),
+            "observed_version_success_sessions": len(version_success_sessions) if marked else None,
+            "observed_version_success_rate": safe_rate(len(version_success_sessions), len(version_sessions)),
+            "coverage": "versioned_observations" if marked else ("legacy_observations_only" if events else "unavailable"),
+            "first_observed_date": dates[0] if dates else None,
+            "last_observed_date": dates[-1] if dates else None,
+            "first_versioned_observed_date": marked_dates[0] if marked_dates else None,
+            "stages": stage_rows,
+        }
+
+    kinds = sorted(MEMBERSHIP_REQUEST_KINDS)
+    kind_events: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for event in all_events:
+        kind = controlled_journey_value(event.get("request_kind"), MEMBERSHIP_REQUEST_KINDS)
+        kind_events[kind].append(event)
+    kinds.extend(kind for kind in ("unspecified", "other") if kind_events.get(kind))
+    return {
+        "measurement_version": MEMBERSHIP_MEASUREMENT_VERSION,
+        **summarize(all_events),
+        "membership_or_access_measurement": membership_version_metrics(rows, {"membership", "access"}),
+        "by_request_kind": [{"request_kind": kind, **summarize(kind_events[kind])} for kind in kinds],
+        "notes": [
+            "Unavailable actions have null sessions/rates, not zero conversion; historical membership_request events were not accepted by the analytics endpoint.",
+            "Versioned observations establish coverage only for observed request sessions, not all traffic or the entire review window.",
+            "Stage rates use only membership-v1 observed request sessions; historical/all-traffic conversion rates are unavailable.",
+            "Versioned rates are occurrence rates, not an ordered conversion funnel.",
+            "Membership and access applications are reported separately; support, privacy, refund and unspecified requests are not membership conversions.",
+            "Submitted and deduplicated confirm an accepted request response, not payment or membership activation.",
+            "Only explicit client sessions are counted; raw contact details and free-text notes are never included.",
+        ],
+    }
+
+
+def download_error_category(event: dict[str, Any]) -> str:
+    status = clean_text(event.get("status"), 80).lower()
+    if status in {"401", "403", "404", "409", "429"}:
+        return status
+    if re.fullmatch(r"5\d\d", status):
+        return "server_error"
+    if status == "exception":
+        return "client_exception"
+    return "other" if status else "unspecified"
+
+
+def public_download_diagnostics(sessions: Iterable[Session]) -> dict[str, Any]:
+    rows = list(sessions)
+    attempts = [session for session in rows if session.has("download_attempt")]
+    error_groups: dict[str, list[Session]] = defaultdict(list)
+    for session in rows:
+        categories = {
+            download_error_category(event) for event in session.events
+            if clean_text(event.get("type"), 80).lower() == "download_error"
+        }
+        for category in categories:
+            error_groups[category].append(session)
+    return {
+        "attempt_sessions": len(attempts),
+        "attempt_and_success_sessions": sum(session.has("download_success") for session in attempts),
+        "attempt_and_error_sessions": sum(session.has("download_error") for session in attempts),
+        "attempt_and_pending_sessions": sum(session.has("download_pending") for session in attempts),
+        "attempt_without_observed_success_sessions": sum(not session.has("download_success") for session in attempts),
+        "success_without_observed_attempt_sessions": sum(session.has("download_success") and not session.has("download_attempt") for session in rows),
+        "attempt_with_observed_success_rate": safe_rate(sum(session.has("download_success") for session in attempts), len(attempts)),
+        "error_categories": [{"category": category, "sessions": len(group)} for category, group in sorted(error_groups.items())],
+        "notes": [
+            "Attempt/outcome intersections describe the same session, not a matched report or verified action order.",
+            "Pending, error and success can coexist in a session; do not sum them as mutually exclusive outcomes.",
+            "A missing success may be unobserved completion, abandonment or failure; it is not a confirmed failed download.",
+            "Download success means the file was handed to the browser save flow, not verified disk persistence.",
+        ],
+    }
+
+
+def public_session_segments(sessions: Iterable[Session], site_hosts: set[str], min_count: int) -> dict[str, Any]:
+    grouped: dict[str, dict[str, list[Session]]] = {"device": defaultdict(list), "visitor_status": defaultdict(list)}
+    for session in sessions:
+        first = session.events[0] if session.events else {}
+        device = clean_text(first.get("device_type"), 40).lower()
+        device = device if device in {"desktop", "mobile", "tablet"} else "unknown"
+        returning = first.get("is_returning")
+        # The Worker historically coerced an absent is_returning to false.
+        # A valid first-seen marker distinguishes instrumented browser state
+        # from that legacy/default false value.
+        first_seen = parse_instant(first.get("first_seen_at"))
+        status = ("returning" if returning is True else "new") if first_seen and isinstance(returning, bool) else "unknown"
+        grouped["device"][device].append(session)
+        grouped["visitor_status"][status].append(session)
+    result: dict[str, Any] = {}
+    for dimension, groups in grouped.items():
+        result[dimension] = []
+        for label, rows in sorted(groups.items()):
+            if len(rows) < min_count:
+                continue
+            metrics = session_metrics(rows, site_hosts)
+            result[dimension].append({
+                "segment": label, **metrics,
+                "report_open_rate": safe_rate(metrics["report_open_sessions"], metrics["sessions"]),
+                "download_success_rate": safe_rate(metrics["download_success_sessions"], metrics["sessions"]),
+                "membership_or_access_application_rate": None,
+                "membership_or_access_measurement": membership_version_metrics(rows, {"membership", "access"}),
+            })
+    result["notes"] = [
+        "Each session uses its first observed product event; missing device, valid first_seen_at or boolean returning state stays unknown.",
+        "Historical ingestion defaulted missing is_returning to false; an unverified false is not evidence of a new visitor.",
+        "New/returning describes browser storage state, not verified people or account tenure.",
+        "Segments below the minimum session threshold are omitted; omitted segments are not zero.",
+        "All-traffic application rates are unavailable; membership_or_access_measurement uses only versioned request sessions as its denominator.",
+    ]
+    return result
+
+
+def session_metrics(sessions: Iterable[Session], site_hosts: set[str]) -> dict[str, int | None]:
     rows = list(sessions)
     visitors = {session.visitor for session in rows if session.visitor}
     return {
         "visitors": len(visitors),
         "sessions": len(rows),
         "engaged_sessions": sum(session.is_engaged() for session in rows),
+        "intentional_engaged_sessions": sum(session.is_intentionally_engaged() for session in rows),
         "organic_search_sessions": sum(channel_for_session(session, site_hosts) == "organic_search" for session in rows),
         "ai_referral_sessions": sum(channel_for_session(session, site_hosts) == "ai_referral" for session in rows),
         "report_open_sessions": sum(session.has("report_open") for session in rows),
         "download_attempt_sessions": sum(session.has("download_attempt") for session in rows),
         "download_success_sessions": sum(session.has("download_success") for session in rows),
+        "download_error_sessions": sum(session.has("download_error") for session in rows),
+        "download_pending_sessions": sum(session.has("download_pending") for session in rows),
+        "membership_application_sessions": membership_success_sessions(rows, {"membership"}),
+        "access_application_sessions": membership_success_sessions(rows, {"access"}),
+        "membership_or_access_application_sessions": membership_success_sessions(rows, {"membership", "access"}),
         "report_request_sessions": sum(session.has("report_request") for session in rows),
         "registration_sessions": sum(session.successful_registration() for session in rows),
     }
@@ -605,6 +840,7 @@ def public_channel_rows(sessions: Iterable[Session], site_hosts: set[str]) -> li
             **metrics,
             "session_share": safe_rate(metrics["sessions"], total),
             "engagement_rate": safe_rate(metrics["engaged_sessions"], metrics["sessions"]),
+            "intentional_engagement_rate": safe_rate(metrics["intentional_engaged_sessions"], metrics["sessions"]),
             "download_success_rate": safe_rate(metrics["download_success_sessions"], metrics["sessions"]),
         })
     return result
@@ -1022,6 +1258,28 @@ def action_impact_rows(
     return rows
 
 
+def daily_session_concentration(sessions: Iterable[Session]) -> dict[str, Any]:
+    counts = Counter(session.date.isoformat() for session in sessions)
+    total = sum(counts.values())
+    ranked = sorted(counts.items(), key=lambda row: (-row[1], row[0]))
+    top_days = [
+        {"date": day, "sessions": count, "share_of_all_sessions": safe_rate(count, total)}
+        for day, count in ranked[:2]
+    ]
+    return {
+        "total_sessions": total,
+        "top_day": top_days[0] if top_days else None,
+        "top_two_days": top_days,
+        "top_two_sessions": sum(row["sessions"] for row in top_days),
+        "top_two_share": safe_rate(sum(row["sessions"] for row in top_days), total),
+        "automatically_excluded_dates": [],
+        "notes": [
+            "Dates are ranked by observed session start date in the full review window; concentration does not prove automation.",
+            "No dates are automatically removed. Inspect concentrated dates separately before interpreting full-window rates.",
+        ],
+    }
+
+
 def build_growth_review(
     events: Iterable[dict[str, Any]],
     start_date: str,
@@ -1065,18 +1323,27 @@ def build_growth_review(
         "funnel": [
             {"step": "landing_sessions", "sessions": totals["sessions"], "rate_from_landing": 1.0},
             {"step": "engaged_sessions", "sessions": totals["engaged_sessions"], "rate_from_landing": safe_rate(totals["engaged_sessions"], totals["sessions"])},
+            {"step": "intentional_engaged_sessions", "sessions": totals["intentional_engaged_sessions"], "rate_from_landing": safe_rate(totals["intentional_engaged_sessions"], totals["sessions"])},
             {"step": "report_open_sessions", "sessions": totals["report_open_sessions"], "rate_from_landing": safe_rate(totals["report_open_sessions"], totals["sessions"])},
             {"step": "download_attempt_sessions", "sessions": totals["download_attempt_sessions"], "rate_from_landing": safe_rate(totals["download_attempt_sessions"], totals["sessions"])},
             {"step": "download_success_sessions", "sessions": totals["download_success_sessions"], "rate_from_landing": safe_rate(totals["download_success_sessions"], totals["sessions"])},
+            {"step": "download_error_sessions", "sessions": totals["download_error_sessions"], "rate_from_landing": safe_rate(totals["download_error_sessions"], totals["sessions"])},
+            {"step": "download_pending_sessions", "sessions": totals["download_pending_sessions"], "rate_from_landing": safe_rate(totals["download_pending_sessions"], totals["sessions"])},
             {"step": "report_request_sessions", "sessions": totals["report_request_sessions"], "rate_from_landing": safe_rate(totals["report_request_sessions"], totals["sessions"])},
             {"step": "registration_sessions", "sessions": totals["registration_sessions"], "rate_from_landing": safe_rate(totals["registration_sessions"], totals["sessions"])},
+            {"step": "membership_application_sessions", "sessions": totals["membership_application_sessions"], "rate_from_landing": None, "rate_unavailable_reason": "full_window_measurement_not_verified"},
+            {"step": "access_application_sessions", "sessions": totals["access_application_sessions"], "rate_from_landing": None, "rate_unavailable_reason": "full_window_measurement_not_verified"},
         ],
         "acquisition_channels": channels,
         "onsite_search_demand": public_search_demand(session_rows, min_count),
         "journey_diagnostics": public_journey_diagnostics(rows, start, end),
+        "membership_request_diagnostics": public_membership_diagnostics(session_rows),
+        "download_diagnostics": public_download_diagnostics(session_rows),
+        "session_segments": public_session_segments(session_rows, site_hosts, min_count),
         "top_landing_pages": public_landing_rows(session_rows, site_hosts, min_count),
         "landing_page_families": public_landing_family_rows(session_rows, site_hosts),
         "daily": daily_rows(session_rows, rows, start, end, site_hosts),
+        "daily_session_concentration": daily_session_concentration(session_rows),
         "retention": retention_rows(session_rows, start, end),
         "action_impacts": action_impact_rows(
             session_rows,
@@ -1100,12 +1367,16 @@ def build_growth_review(
             "event_date_coverage": sorted({day.isoformat() for event in rows if (day := event_date(event))}),
             "notes": [
                 "Known bots and administrative events are excluded from product growth metrics.",
+                "Legacy engaged_sessions includes passive report_chat_interaction impressions. intentional_engaged_sessions requires controlled active actions; neither proves a human visitor or removes unknown automation.",
                 "Search intents are deduplicated by session, normalized query, and one-minute time bucket.",
                 "On-site search demand uses overlapping controlled institution and topic labels; raw queries are discarded from output.",
                 "External search keywords and AI prompts are not available in site analytics.",
                 "No purchase or revenue event exists, so this report cannot attribute revenue.",
                 "Server report_chat audits are excluded from sessions; earlier v1 reports included IP-derived audit sessions and are not directly comparable.",
                 "Visitors are observed storage identities, not verified people; feature-specific visitor hashing can split cross-feature identities.",
+                "Membership metrics are unavailable when no success or versioned measurement is observed; missing historical instrumentation is not zero conversion.",
+                "Funnel rows are overlapping session occurrence rates, not sequential conversion steps; download errors/pending are diagnostic outcomes.",
+                "D1/D7 retains its historical definition: ingestion sometimes defaulted missing is_returning to false, and feature-specific hashing can split identities. Treat legacy retention as directional, not verified account retention; new visitor-status segments require valid first_seen_at.",
             ],
         },
         "privacy": {
@@ -1123,26 +1394,80 @@ def build_growth_review(
 
 def markdown_summary(review: dict[str, Any]) -> str:
     totals = review["totals"]
+    def observed(value: Any) -> str:
+        return "未观测（不可视作 0）" if value is None else str(value)
+
     lines = [
         f"# KC桌面增长复盘：{review['start_date']} 至 {review['end_date']}",
         "",
         f"- 去除已识别机器人和后台操作后：{totals['visitors']} 位访客，{totals['sessions']} 个会话。",
         f"- 自然搜索会话：{totals['organic_search_sessions']}；AI 来源会话：{totals['ai_referral_sessions']}。",
-        f"- 参与会话：{totals['engaged_sessions']}；打开报告：{totals['report_open_sessions']}；下载成功：{totals['download_success_sessions']}；报告申请：{totals['report_request_sessions']}。",
+        f"- 旧口径参与会话：{totals['engaged_sessions']}；明确主动行为会话：{observed(totals.get('intentional_engaged_sessions'))}；打开报告：{totals['report_open_sessions']}；下载成功：{totals['download_success_sessions']}；报告申请：{totals['report_request_sessions']}。",
         f"- 已排除机器人事件：{review['data_quality']['known_bot_events_excluded']}；已排除后台事件：{review['data_quality']['administrative_events_excluded']}。",
+        "旧参与口径包含 AI 入口自动曝光，不能解释为主动使用；新主动口径排除曝光和单纯页面加载，仍不能识别所有自动化访问。",
         "",
         "## 获客渠道",
         "",
-        "| 渠道 | 会话 | 参与 | 报告打开 | 下载成功 |",
-        "|---|---:|---:|---:|---:|",
+        "| 渠道 | 会话 | 旧参与 | 明确主动行为 | 报告打开 | 下载成功 |",
+        "|---|---:|---:|---:|---:|---:|",
     ]
     for row in review.get("acquisition_channels", []):
         lines.append(
-            f"| {row['channel']} | {row['sessions']} | {row['engaged_sessions']} | "
+            f"| {row['channel']} | {row['sessions']} | {row['engaged_sessions']} | {observed(row.get('intentional_engaged_sessions'))} | "
             f"{row['report_open_sessions']} | {row['download_success_sessions']} |"
         )
+    concentration = review.get("daily_session_concentration", {})
+    lines.extend([
+        "", "## 按日会话集中度", "",
+        "| 日期（会话最多的前两天） | 会话 | 占全区间会话比例 |", "|---|---:|---:|",
+    ])
+    for row in concentration.get("top_two_days", []):
+        lines.append(f"| {row['date']} | {row['sessions']} | {row['share_of_all_sessions']:.2%} |")
+    top_two_share = concentration.get("top_two_share")
+    lines.extend([
+        f"前两天合计占比：{format(top_two_share, '.2%') if top_two_share is not None else '未观测'}。",
+        "集中日期仅列出核查，没有自动排除；不能仅据集中度断定机器人或真实增长。", "",
+    ])
+    membership = review.get("membership_request_diagnostics", {})
+    lines.extend([
+        "", "## 会员与权限申请", "",
+        f"- 会员申请会话：{observed(totals.get('membership_application_sessions'))}；权限申请会话：{observed(totals.get('access_application_sessions'))}。",
+        f"- 覆盖状态：{membership.get('coverage', 'unavailable')}；v1 已观测申请会话：{membership.get('observed_version_sessions', 0)}；首次版本化观测日期：{membership.get('first_versioned_observed_date') or '未观测'}。",
+        "历史 membership_request 曾被事件白名单拒绝；未记录不能解释为没有申请。支持、隐私和退款请求不计入会员或权限申请。",
+        "版本化覆盖只适用于已观测的申请会话；下表是行为发生会话数，不是严格顺序漏斗。", "",
+        "| 申请类型 | 展示 | 打开 | 开始填写 | 提交 | 已接收 | 重复已接收 | 错误 | 离开 |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|---:|",
+    ])
+    for row in membership.get("by_request_kind", []):
+        counts = " | ".join(observed(stage["sessions"]) for stage in row["stages"])
+        lines.append(f"| {row['request_kind']} | {counts} |")
+    download = review.get("download_diagnostics", {})
+    lines.extend([
+        "", "## 下载过程", "",
+        f"- 尝试下载会话：{download.get('attempt_sessions', 0)}；同会话观测到成功：{download.get('attempt_and_success_sessions', 0)}；错误：{download.get('attempt_and_error_sessions', 0)}；准备中：{download.get('attempt_and_pending_sessions', 0)}。",
+        "准备中、错误与成功可发生在同一会话，不能相加；未观测成功不等于下载失败。成功事件只确认文件交给浏览器保存。", "",
+        "| 下载错误类别 | 会话 |", "|---|---:|",
+    ])
+    for row in download.get("error_categories", []):
+        lines.append(f"| {row['category']} | {row['sessions']} |")
+    for title, dimension in (("设备", "device"), ("新老访客", "visitor_status")):
+        lines.extend([
+            "", f"## {title}分组", "",
+            "| 分组 | 会话 | 报告打开 | 下载成功 | 下载错误 | 会员或权限申请 |",
+            "|---|---:|---:|---:|---:|---:|",
+        ])
+        for row in review.get("session_segments", {}).get(dimension, []):
+            lines.append(
+                f"| {row['segment']} | {row['sessions']} | {row['report_open_sessions']} | "
+                f"{row['download_success_sessions']} | {row['download_error_sessions']} | "
+                f"{observed(row['membership_or_access_application_sessions'])} |"
+            )
+    lines.extend([
+        "", "新老访客分组要求会话首个事件同时具备有效 first_seen_at 和布尔回访标记，否则为 unknown；低于展示阈值的分组省略。",
+        "D1/D7 保留既有定义；历史缺失回访标记可能被归档为 false，功能内散列也会拆分身份，因此历史留存仅作方向性参考，不能当作精确账号留存。", "",
+    ])
     journey = review.get("journey_diagnostics", {})
-    for title, key in (("注册、研究与签到：客户端动作", "client_actions"), ("研究：服务端审计", "server_audit_actions")):
+    for title, key in (("注册、会员申请、研究与签到：客户端动作", "client_actions"), ("研究：服务端审计", "server_audit_actions")):
         lines.extend([
             "", f"## {title}", "",
             "| 类型 | 动作 | 状态 | 入口 | 上下文 | 事件 | 客户端会话 | 无客户端会话事件 |",

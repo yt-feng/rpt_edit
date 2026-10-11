@@ -11,6 +11,13 @@ const inputStart = source.indexOf("    let localSearchTimer = 0;");
 const inputEnd = source.indexOf('    pageSize.addEventListener("change"', inputStart);
 assert.ok(remoteStart > 0 && remoteEnd > remoteStart && inputStart > 0 && inputEnd > inputStart);
 
+function functionSource(name) {
+  const start = source.indexOf(`  function ${name}(`);
+  const end = source.indexOf("\n  }", start);
+  assert.ok(start >= 0 && end > start, `${name} must exist`);
+  return source.slice(start, end + 4);
+}
+
 function deferred() {
   let resolve;
   let reject;
@@ -29,9 +36,10 @@ function control(value = "") {
     style: {},
     classList: { add() {} },
     setAttribute() {},
-    addEventListener(name, listener) { listeners.set(name, listener); },
-    removeEventListener() {},
-    emit(name) { return listeners.get(name)?.({}); },
+    addEventListener(name, listener) { listeners.set(name, [...listeners.get(name) || [], listener]); },
+    removeEventListener(name, listener) { listeners.set(name, (listeners.get(name) || []).filter((entry) => entry !== listener)); },
+    emit(name) { return Promise.all((listeners.get(name) || []).map((listener) => listener({}))); },
+    focus() {},
   };
 }
 
@@ -43,6 +51,7 @@ function home({ query = "", scope = "all", ignoreAbort = false } = {}) {
   };
   const requests = [];
   const events = [];
+  const storage = new Map();
   const timers = new Map();
   let timerId = 0;
   let now = 0;
@@ -60,6 +69,7 @@ function home({ query = "", scope = "all", ignoreAbort = false } = {}) {
     EXTERNAL_SOURCE: "external",
     REPORT_A_SOURCE: "report-a",
     AUTHORITY_SOURCE: "authority",
+    CONTENT_LOCALE: "zh-Hans",
     searchResultCounts: counts,
     fullCatalogReady: true,
     items: [],
@@ -91,6 +101,11 @@ function home({ query = "", scope = "all", ignoreAbort = false } = {}) {
     document: { getElementById: element },
     window: {
       location: { search: query ? `?q=${encodeURIComponent(query)}` : "" },
+      localStorage: {
+        getItem: (key) => storage.get(key) || null,
+        setItem: (key, value) => storage.set(key, String(value)),
+        removeItem: (key) => storage.delete(key),
+      },
       setTimeout(fn, delay) { timers.set(++timerId, { fn, due: now + delay }); return timerId; },
       clearTimeout(id) { timers.delete(id); },
     },
@@ -130,7 +145,13 @@ function home({ query = "", scope = "all", ignoreAbort = false } = {}) {
   });
   // Execute the production request pipeline, actual initial scheduling, and
   // actual input/scope listeners; only unrelated catalog rendering is stubbed.
-  vm.runInContext(`${source.slice(remoteStart, remoteEnd)}
+  vm.runInContext(`
+    ${source.slice(source.indexOf("  const LAST_SEARCH_KEY ="), source.indexOf("  const HOT_REPORT_FIRST_PAGE_CACHE_KEY ="))}
+    ${functionSource("hotReportLocalStorage")}
+    ${functionSource("readLastSearch")}
+    ${functionSource("initSearchResume")}
+    let searchResume = null;
+    ${source.slice(remoteStart, remoteEnd)}
     ${source.slice(inputStart, inputEnd)}
     globalThis.sourceStates = remoteSourceStates;
   `, context);

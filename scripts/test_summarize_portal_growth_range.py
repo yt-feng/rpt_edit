@@ -55,6 +55,196 @@ def event(
 
 
 class GrowthReviewTest(unittest.TestCase):
+    def test_intentional_engagement_excludes_passive_exposures_and_empty_searches(self) -> None:
+        rows = [
+            event("auto-page", "2026-10-01", "auto", "auto-v"),
+            event("auto-exposure", "2026-10-01", "auto", "auto-v", event_type="report_chat_interaction", action="entry_impression"),
+            event("empty-search", "2026-10-01", "empty", "empty-v", event_type="search", query="   "),
+            event("query", "2026-10-01", "query", "query-v", event_type="search", query="private research query"),
+            event("click", "2026-10-01", "click", "click-v", event_type="report_chat_interaction", action="entry_click"),
+            event("form-auto", "2026-10-01", "form", "form-v", event_type="membership_request", action="form_impression"),
+            event("form-open", "2026-10-01", "form", "form-v", event_type="membership_request", action="form_open"),
+            event("form-start", "2026-10-01", "form-start", "form-start-v", event_type="membership_request", action="form_start"),
+            event("failed-login", "2026-10-01", "failed", "failed-v", event_type="account_auth", action="login", status="error"),
+            event("login", "2026-10-01", "login", "login-v", event_type="account_auth", action="login", status="success"),
+            event("reward-exposure", "2026-10-01", "reward-auto", "reward-auto-v", event_type="reward_checkin", action="impression"),
+            event("reward-action", "2026-10-01", "reward", "reward-v", event_type="reward_checkin", action="daily", status="success"),
+            event("unknown-action", "2026-10-01", "unknown", "unknown-v", event_type="report_chat_interaction", action="private-action"),
+        ]
+        review = growth.build_growth_review(rows, "2026-10-01", "2026-10-01")
+        self.assertEqual(review["totals"]["intentional_engaged_sessions"], 5)
+        self.assertEqual(review["totals"]["engaged_sessions"], 6, "the legacy definition remains separate")
+        self.assertEqual(review["daily"][0]["intentional_engaged_sessions"], 5)
+        self.assertEqual(review["acquisition_channels"][0]["intentional_engagement_rate"], round(5 / 11, 4))
+        serialized = json.dumps(review) + growth.markdown_summary(review)
+        self.assertNotIn("private research query", serialized)
+        self.assertIn("AI 入口自动曝光", growth.markdown_summary(review))
+
+    def test_daily_concentration_marks_observed_peaks_without_exclusion(self) -> None:
+        rows = [event(f"{day}-{index}", day, f"{day}-s-{index}", f"{day}-v-{index}")
+                for day, count in (("2026-10-01", 1), ("2026-10-02", 6), ("2026-10-03", 3))
+                for index in range(count)]
+        rows.append(event("excluded-bot", "2026-10-01", "bot", "bot-v", bot_hint="verified_bot"))
+        review = growth.build_growth_review(rows, "2026-10-01", "2026-10-03")
+        concentration = review["daily_session_concentration"]
+        self.assertEqual(concentration["total_sessions"], 10)
+        self.assertEqual(concentration["top_day"], {"date": "2026-10-02", "sessions": 6, "share_of_all_sessions": 0.6})
+        self.assertEqual([row["date"] for row in concentration["top_two_days"]], ["2026-10-02", "2026-10-03"])
+        self.assertEqual(concentration["top_two_sessions"], 9)
+        self.assertEqual(concentration["top_two_share"], 0.9)
+        self.assertEqual(concentration["automatically_excluded_dates"], [])
+        self.assertEqual(review["totals"]["sessions"], 10)
+        empty = growth.build_growth_review([], "2026-10-01", "2026-10-03")
+        self.assertIsNone(empty["daily_session_concentration"]["top_day"])
+        self.assertIsNone(empty["daily_session_concentration"]["top_two_share"])
+        self.assertIn("未观测", growth.markdown_summary(empty))
+
+    def test_membership_journey_preserves_controlled_placements_and_states(self) -> None:
+        rows = [
+            event(f"event-{index}", "2026-10-11", f"session-{index}", f"visitor-{index}",
+                  event_type="membership_request", action="form_open", request_kind="membership",
+                  measurement_version="membership-v1", placement=placement, status=status)
+            for index, (placement, status) in enumerate((
+                ("account", "guest"), ("membership", "signed_in"), ("access", "pending"),
+                ("support", "abandoned"), ("privacy", "guest"), ("refund", "guest"),
+                ("deep_link", "guest"), ("private-placement", "private-status"),
+            ))
+        ]
+        review = growth.build_growth_review(rows, "2026-10-11", "2026-10-11")
+        actions = review["journey_diagnostics"]["client_actions"]
+        pairs = {(row["placement"], row["status"]) for row in actions}
+        self.assertEqual(pairs, {
+            ("account", "guest"), ("membership", "signed_in"), ("access", "pending"),
+            ("support", "abandoned"), ("privacy", "guest"), ("refund", "guest"),
+            ("deep_link", "guest"), ("other", "other"),
+        })
+        serialized = json.dumps(review) + growth.markdown_summary(review)
+        self.assertNotIn("private-placement", serialized)
+        self.assertNotIn("private-status", serialized)
+
+    def test_historical_membership_measurement_is_unavailable_not_zero(self) -> None:
+        rows = [
+            event("page", "2026-10-01", "session", "visitor"),
+            event("support", "2026-10-01", "session", "visitor", event_type="membership_request",
+                  action="submitted", request_kind="support"),
+            event("missing-kind", "2026-10-01", "session", "visitor", event_type="membership_request",
+                  action="submitted"),
+        ]
+        review = growth.build_growth_review(rows, "2026-10-01", "2026-10-01")
+        self.assertIsNone(review["totals"]["membership_application_sessions"])
+        self.assertIsNone(review["totals"]["access_application_sessions"])
+        steps = {row["step"]: row for row in review["funnel"]}
+        self.assertIsNone(steps["membership_application_sessions"]["rate_from_landing"])
+        diagnostic = review["membership_request_diagnostics"]
+        self.assertEqual(diagnostic["coverage"], "legacy_observations_only")
+        stages = {row["action"]: row for row in diagnostic["stages"]}
+        self.assertIsNone(stages["form_impression"]["sessions"])
+        self.assertIsNone(stages["form_impression"]["rate_from_observed_version_sessions"])
+        self.assertEqual(stages["submitted"]["sessions"], 1)
+        self.assertIn("未观测（不可视作 0）", growth.markdown_summary(review))
+
+    def test_membership_versioned_stages_kind_deduplication_and_privacy(self) -> None:
+        rows = []
+        for session, kind, action in (
+            ("member-session", "membership", "form_impression"),
+            ("member-session", "membership", "form_open"),
+            ("member-session", "membership", "form_start"),
+            ("member-session", "membership", "form_submit"),
+            ("member-session", "membership", "submitted"),
+            ("member-session", "membership", "deduplicated"),
+            ("member-session", "access", "submitted"),
+            ("access-session", "access", "submitted"),
+            ("support-session", "support", "submitted"),
+            ("privacy-session", "privacy", "form_open"),
+            ("bot-session", "membership", "submitted"),
+        ):
+            rows.append(event(f"{session}-{kind}-{action}", "2026-10-11", session, "private-visitor",
+                              event_type="membership_request", action=action, request_kind=kind,
+                              measurement_version="membership-v1", contact_value="private-contact",
+                              requester_email="private@example.invalid", note="private-note",
+                              bot_hint="verified_bot" if session == "bot-session" else "unknown"))
+        rows.append(dict(rows[4]))
+        rows.append(event("no-session", "2026-10-11", "", "private-fallback", event_type="membership_request",
+                          action="submitted", request_kind="membership", measurement_version="membership-v1"))
+        review = growth.build_growth_review(rows, "2026-10-01", "2026-10-11")
+        self.assertEqual(review["totals"]["membership_application_sessions"], 1)
+        self.assertEqual(review["totals"]["access_application_sessions"], 2)
+        self.assertEqual(review["totals"]["membership_or_access_application_sessions"], 2)
+        diagnostics = review["membership_request_diagnostics"]
+        self.assertEqual(diagnostics["first_versioned_observed_date"], "2026-10-11")
+        self.assertEqual(diagnostics["observed_version_sessions"], 4)
+        steps = {row["step"]: row for row in review["funnel"]}
+        self.assertIsNone(steps["membership_application_sessions"]["rate_from_landing"])
+        kinds = {row["request_kind"]: row for row in diagnostics["by_request_kind"]}
+        stages = {row["action"]: row for row in kinds["privacy"]["stages"]}
+        self.assertEqual(stages["submitted"]["sessions"], 0)
+        self.assertEqual(stages["submitted"]["coverage"], "instrumented_no_event")
+        self.assertEqual(kinds["refund"]["coverage"], "unavailable")
+        serialized = json.dumps(review) + growth.markdown_summary(review)
+        for secret in ("private-contact", "private@example.invalid", "private-note", "member-session", "private-visitor", "private-fallback"):
+            self.assertNotIn(secret, serialized)
+
+    def test_download_diagnostics_keep_overlapping_outcomes_and_controlled_errors(self) -> None:
+        rows = [
+            event("attempt", "2026-10-01", "a", "v", event_type="download_attempt"),
+            event("pending", "2026-10-01", "a", "v", event_type="download_pending"),
+            event("error", "2026-10-01", "a", "v", event_type="download_error", status="403", error="private-detail"),
+            event("success", "2026-10-01", "a", "v", event_type="download_success"),
+            event("attempt-b", "2026-10-01", "b", "w", event_type="download_attempt"),
+            event("success-c", "2026-10-01", "c", "x", event_type="download_success"),
+            event("error-c", "2026-10-01", "c", "x", event_type="download_error", status="private-status"),
+        ]
+        review = growth.build_growth_review(rows, "2026-10-01", "2026-10-01")
+        diagnostic = review["download_diagnostics"]
+        self.assertEqual(diagnostic["attempt_sessions"], 2)
+        self.assertEqual(diagnostic["attempt_and_success_sessions"], 1)
+        self.assertEqual(diagnostic["attempt_and_error_sessions"], 1)
+        self.assertEqual(diagnostic["attempt_and_pending_sessions"], 1)
+        self.assertEqual(diagnostic["attempt_without_observed_success_sessions"], 1)
+        self.assertEqual(diagnostic["success_without_observed_attempt_sessions"], 1)
+        self.assertEqual(diagnostic["attempt_with_observed_success_rate"], 0.5)
+        self.assertEqual(diagnostic["error_categories"], [{"category": "403", "sessions": 1}, {"category": "other", "sessions": 1}])
+        self.assertEqual(review["totals"]["download_error_sessions"], 2)
+        serialized = json.dumps(review) + growth.markdown_summary(review)
+        self.assertNotIn("private-status", serialized)
+        self.assertNotIn("private-detail", serialized)
+
+    def test_session_segments_use_first_observation_and_preserve_unknown(self) -> None:
+        rows = [
+            event("first", "2026-10-01", "a", "v", returning=False, device_type="mobile",
+                  first_seen_at="2026-10-01T09:00:00+08:00"),
+            event("later", "2026-10-01", "a", "v", event_type="download_success", device_type="desktop",
+                  ts="2026-10-01T10:00:00+08:00"),
+            event("unknown", "2026-10-01", "b", "w", is_returning=None, device_type="private-device"),
+            event("returning", "2026-10-01", "c", "x", device_type="tablet",
+                  first_seen_at="2026-09-01T09:00:00+08:00"),
+        ]
+        review = growth.build_growth_review(rows, "2026-10-01", "2026-10-01", min_count=1)
+        devices = {row["segment"]: row for row in review["session_segments"]["device"]}
+        visitors = {row["segment"]: row for row in review["session_segments"]["visitor_status"]}
+        self.assertEqual(set(devices), {"mobile", "tablet", "unknown"})
+        self.assertEqual(devices["mobile"]["download_success_sessions"], 1)
+        self.assertEqual(set(visitors), {"new", "returning", "unknown"})
+        self.assertIsNone(visitors["new"]["membership_or_access_application_rate"])
+        self.assertNotIn("private-device", json.dumps(review))
+        suppressed = growth.build_growth_review(rows, "2026-10-01", "2026-10-01", min_count=2)
+        self.assertEqual(suppressed["session_segments"]["device"], [])
+
+    def test_worker_default_false_without_valid_first_seen_is_unknown(self) -> None:
+        rows = [
+            event("legacy", "2026-10-01", "legacy-session", "legacy-visitor", returning=False),
+            event("invalid", "2026-10-01", "invalid-session", "invalid-visitor", returning=False,
+                  first_seen_at="private-invalid-timestamp"),
+            event("new", "2026-10-01", "new-session", "new-visitor", returning=False,
+                  first_seen_at="2026-10-01T09:00:00+08:00"),
+        ]
+        review = growth.build_growth_review(rows, "2026-10-01", "2026-10-01", min_count=1)
+        visitors = {row["segment"]: row for row in review["session_segments"]["visitor_status"]}
+        self.assertEqual(visitors["unknown"]["sessions"], 2)
+        self.assertEqual(visitors["new"]["sessions"], 1)
+        self.assertNotIn("private-invalid-timestamp", json.dumps(review))
+        self.assertIn("历史缺失回访标记", growth.markdown_summary(review))
+
     def test_journey_actions_separate_server_audits_and_preserve_privacy(self) -> None:
         page = event("page", "2026-09-07", "private-session", "private-browser")
         submit = event(

@@ -77,6 +77,11 @@
           <span>Search</span>
           <input id="searchInput" type="search" autocomplete="off" placeholder="Topic, company, ticker, title, or keyword">
         </label>
+        <div class="search-resume" id="searchResume" hidden>
+          <button id="resumeLastSearch" type="button"><span>继续上次搜索：</span><bdi id="lastSearchQuery"></bdi></button>
+          <button id="forgetLastSearch" type="button">清除记录</button>
+          <span class="search-resume-note">仅在此浏览器保留最近一次关键词，30 天后失效</span>
+        </div>
         <div class="search-readiness" id="searchReadiness" role="status" aria-live="polite">
           <span class="search-readiness-dot" aria-hidden="true"></span>
           <span id="searchReadinessText">正在载入最新报告，完整目录会在后台继续补齐…</span>
