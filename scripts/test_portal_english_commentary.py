@@ -10,7 +10,7 @@ from unittest import mock
 from build_portal_extended_locales import Memo
 from offline_translation import TranslationBudgetExceeded
 from portal_english_commentary import (POLICY, build, extract_editorial, failure_code_counts, freeze_editorial, make_source, put_source,
-                                      read_source, staging_probe, validate_source, main as english_main)
+                                      read_source, staging_probe, validate_model_fragment, validate_source, main as english_main)
 from portal_extended_locales import ExpansionError, ORIGIN, digest, stable_bytes
 from portal_extended_r2 import R2IntegrityError, R2PermissionError, R2Store
 from test_portal_extended_r2 import FakeR2
@@ -218,6 +218,90 @@ class EnglishEditorialTests(unittest.TestCase):
                 self.assertEqual(second['status'], 'complete-candidate')
                 self.assertEqual(good.calls, [COMMENT]); self.assertEqual(second['cache_hits'], 1)
 
+    def bounded_translator(self, responder, *, cache_name='bounded-model'):
+        import hymt_offline_translation as h
+        class Engine(h._HyMTEngine):
+            def __init__(self): self.calls = []
+            def translate(self, value, source, target, *, quality_retry=0, deadline=None):
+                self.calls.append((value, quality_retry, deadline))
+                return responder(value, quality_retry)
+        engine = Engine()
+        translator = h.OfflineTranslator(cache_dir=self.root/cache_name,
+            engine_factory=lambda *_: engine, quantity_policy='advisory',
+            validation_attempts=3, materialized_validator=validate_model_fragment)
+        return translator, engine
+
+    def test_real_adapter_retries_english_residue_without_repeating_valid_checkpoint_units(self):
+        comment = '我的理解是，订单变化需要和交付情况一起观察。'
+        doc = extract_editorial(URL, page(f'<section><strong>KC评论：</strong>{comment}</section>'), DAY)
+        source = make_source([doc], DAY)
+        bad = 'In our view, watch orders 订单 and deliveries.'
+        good = 'In our view, watch orders and deliveries.'
+        def respond(value, retry):
+            if value == TITLE: return 'Watching orders and deliveries'
+            return bad if retry == 0 else good
+        translator, engine = self.bounded_translator(respond)
+        checkpoint = self.root/'bounded-checkpoint.json'
+        result = build(source, self.root/'bounded-out', checkpoint, translator)
+        self.assertEqual(result['status'], 'complete-candidate')
+        self.assertEqual([row[1] for row in engine.calls if row[0] != TITLE], [0, 1])
+        self.assertEqual(len([row for row in engine.calls if row[0] == TITLE]), 1)
+        self.assertTrue(all(row[2] == translator.deadline for row in engine.calls))
+        self.assertEqual(result['paid_provider_requests'], 0)
+        self.assertNotIn(bad, checkpoint.read_text())
+        translator._engine_factory = mock.Mock(side_effect=AssertionError('Valid checkpoint must avoid inference'))
+        resumed = build(source, self.root/'bounded-resume', checkpoint, translator)
+        self.assertEqual(resumed['status'], 'complete-candidate')
+        self.assertEqual(resumed['cache_hits'], 2)
+        translator._engine_factory.assert_not_called()
+
+    def test_repeated_editorial_rejection_is_bounded_and_never_materialized(self):
+        from offline_translation import OfflineTranslationValidationError
+        source = '我的理解是，订单变化需要和交付情况一起观察。'
+        for index, bad in enumerate(['In our view, watch orders 订单 and deliveries.',
+                                    'Read https://example.invalid/original',
+                                    'Original report: private source',
+                                    '<p>In our view, watch orders.</p>', 'a' * 12001]):
+            with self.subTest(index=index):
+                translator, engine = self.bounded_translator(lambda *_: bad, cache_name=f'rejected-{index}')
+                with self.assertRaises(OfflineTranslationValidationError):
+                    translator.translate(source, 'en', 'zh', markdown=False)
+                self.assertEqual([row[1] for row in engine.calls], [0, 1, 2])
+                self.assertEqual(translator.validation_failure_count, 1)
+                self.assertFalse(list(translator.cache_dir.rglob('*.json')))
+                self.assertNotIn(bad, json.dumps(translator.failure_diagnostics, ensure_ascii=False))
+        translator, engine = self.bounded_translator(
+            lambda value, _: 'Watching orders and deliveries' if value == TITLE else 'Watch orders 订单 and deliveries.')
+        result = build(self.source, self.root/'rejected-out', self.root/'rejected-checkpoint.json', translator)
+        self.assertEqual(result['status'], 'incomplete-candidate')
+        self.assertEqual(failure_code_counts(result['failures']), {'english-language-validation': 1})
+        self.assertFalse((self.root/'rejected-out'/'private').exists())
+
+    def test_stricter_adapter_rechecks_cached_generic_output_before_reusing_it(self):
+        import hymt_offline_translation as h
+        source = '我的理解是，订单变化需要和交付情况一起观察。'
+        bad = 'In our view, watch orders 订单 and deliveries.'
+        translator, engine = self.bounded_translator(
+            lambda _, retry: bad if retry == 0 else 'In our view, watch orders and deliveries.')
+        identity, path = translator._memo_identity(source, 'en', 'zh', markdown=False)
+        h.atomic_json(path, {**identity, 'translation': bad})
+        result = translator.translate(source, 'en', 'zh', markdown=False)
+        self.assertEqual(result, 'In our view, watch orders and deliveries.')
+        self.assertEqual([row[1] for row in engine.calls], [0, 1])
+        self.assertEqual(translator.stats['cache_hits'], 0)
+        self.assertNotIn(bad, path.read_text())
+
+    def test_editorial_retry_obeys_original_deadline(self):
+        def respond(*_):
+            translator.set_deadline(time.monotonic() - 1)
+            return 'In our view, watch orders 订单 and deliveries.'
+        translator, engine = self.bounded_translator(respond)
+        translator.set_deadline(time.monotonic() + 30)
+        with self.assertRaises(TranslationBudgetExceeded):
+            translator.translate('我的理解是，订单变化需要和交付情况一起观察。', 'en', 'zh', markdown=False)
+        self.assertEqual([row[1] for row in engine.calls], [0])
+        self.assertFalse(list(translator.cache_dir.rglob('*.json')))
+
     def test_legacy_editorial_bad_checkpoint_and_seed_discard_only_invalid_unit(self):
         bad_text = 'In our view, watch orders 订单 and deliveries.'
         for seeded in (False, True):
@@ -313,7 +397,8 @@ class EnglishEditorialTests(unittest.TestCase):
              mock.patch('portal_english_commentary.OfflineTranslator', return_value=fake) as factory, \
              mock.patch('builtins.print') as printed:
             self.assertEqual(english_main(), 1)
-        factory.assert_called_once_with(validation_attempts=3, quantity_policy='advisory')
+        factory.assert_called_once_with(validation_attempts=3, quantity_policy='advisory',
+                                        materialized_validator=validate_model_fragment)
         summary = json.loads(printed.call_args.args[0])
         self.assertEqual(summary['terminal_translation_diagnostics'], fake.failure_diagnostics)
         self.assertEqual(summary['terminal_validation_failure_count'], 1)

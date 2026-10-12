@@ -21,7 +21,8 @@ from urllib.parse import urlsplit
 from build_portal_extended_locales import (Memo, SEO_QUANTITY_POLICY, extended_source_language, reject_symlinks,
                                           safe_failure_code, validate_budget)
 from compare_hymt_translation import require_actions
-from offline_translation import MODEL_ID, PROVIDER, OfflineTranslator, TranslationBudgetExceeded
+from offline_translation import (MODEL_ID, PROVIDER, OfflineTranslator,
+                                 OfflineTranslationValidationError, TranslationBudgetExceeded)
 from portal_extended_locales import (ExpansionError, INCREMENTAL_START, MAX_DOCUMENT_BYTES,
                                     ORIGIN, VOID, digest, publication_day, stable_bytes, walk_ld)
 from portal_extended_r2 import (HEX64, MAX_SOURCE_BYTES, R2IntegrityError, R2NotFound,
@@ -55,6 +56,15 @@ def text(value, maximum=12000, *, english=False):
     if english:
         require(not re.search(r'[\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af]', value), 'Non-English source fallback is forbidden')
     return value
+
+
+def validate_model_fragment(value):
+    """Retry rejected English fragments within the adapter's existing bound."""
+    try:
+        text(value, english=True)
+    except ExpansionError as error:
+        # text() emits fixed messages only; no rejected model text is retained.
+        raise OfflineTranslationValidationError(str(error)) from None
 
 
 @dataclass
@@ -333,7 +343,7 @@ PUBLIC_FAILURE_CODES = frozenset({
 
 
 def english_failure_code(error):
-    if isinstance(error, ExpansionError):
+    if isinstance(error, (ExpansionError, OfflineTranslationValidationError)):
         code = {
             'Non-English source fallback is forbidden': 'english-language-validation',
             'Embedded/original asset reference is forbidden': 'english-asset-validation',
@@ -469,7 +479,8 @@ def main():
     require(os.environ.get('GITHUB_REF') == 'refs/heads/main', 'English production inference requires reviewed main')
     require(all((args.corpus, args.output, args.checkpoint)), 'English corpus/output/checkpoint required')
     require(args.corpus.stat().st_size <= MAX_SOURCE_BYTES, 'English corpus too large')
-    translator = OfflineTranslator(validation_attempts=3, quantity_policy='advisory')
+    translator = OfflineTranslator(validation_attempts=3, quantity_policy='advisory',
+                                   materialized_validator=validate_model_fragment)
     quantity_diagnostics = {}
     result = build(json.loads(args.corpus.read_text()), args.output, args.checkpoint,
                    translator, seconds=args.seconds, seed_checkpoint=args.seed_checkpoint,
