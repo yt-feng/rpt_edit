@@ -26,6 +26,10 @@ BOOK_RE = re.compile(r"/(?P<pdf>downloadpdf/)?display/book/(?P<isbn>[0-9]{13})/(
 class ResolutionError(ValueError):
     """Fixed, content-free failure category, safe for run summaries."""
 
+    def __init__(self, category):
+        self.category = category if isinstance(category, str) and re.fullmatch(r"[a-z_]{1,80}", category) else "invalid_metadata"
+        super().__init__(self.category)
+
 
 def checked(function):
     @wraps(function)
