@@ -75,6 +75,18 @@ row. It cannot be mixed with browser or private-cache proofs. The source DOI is
 retained as preview provenance; it does not assert DOI registration or a DOI printed
 inside the downloaded PDF.
 
+For an isolated live retest of the original 17 sources, run **Institution fetch
+test** on the merged main commit with `scope=imf-reviewed-20261012` and
+`institutions=imf`. This choice fixes the retry and PDF bounds at 17 and uses the
+original admission metadata; the recent-mode lookback and cap inputs do not
+change this cohort. Default `scope=recent` retains the usual latest-publication
+test. The exact scope still performs current discovery and resolves fresh official
+metadata. It uses no private cache or reviewed download URL and makes no downstream
+publication or production-state writes. Its artifact includes
+`exact-scope-acceptance.json`; acceptance requires all 17 exact source identities,
+complete live receipts, healthy discovery, real PDF bytes and page counts, and
+unchanged production state. New PDF hashes may differ from the reviewed originals.
+
 ## Reviewed cache manifest contract
 
 The UTF-8 JSON object has exactly `schema` (integer `1`), `institution` (`imf`),
