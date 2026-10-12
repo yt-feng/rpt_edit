@@ -28,7 +28,7 @@ PUBLICATION = dict(source_guid='test-guid', source_url='https://www.imf.org/en/p
                    title_variants=['Republic of Estonia', TITLE], doi='10.5089/9798229063937.019',
                    isbn='9798229063937', landing_url=LANDING, identity_sha256='a' * 64,
                    crossref_sha256='b' * 64)
-PAGE = dict(stage='metadata', final_url=LANDING, landing_status=200, metadata={'citation_doi': [PUBLICATION['doi']],
+PAGE = dict(stage='metadata', final_url=LANDING, landing_status=200, ready=True, metadata={'citation_doi': [PUBLICATION['doi']],
             'citation_title': [TITLE]}, h1s=[TITLE], download_hrefs=[PDF])
 RESULT = dict(stage='download', pdf_url=PDF, landing_status=200, pdf_status=200)
 ENV = dict(GITHUB_ACTIONS='true', EXPLICIT_CLOUD_BROWSER_APPROVAL='true', IMF_CLOUD_BROWSER_ENABLED='true')
@@ -144,6 +144,19 @@ class BrowserTests(unittest.TestCase):
             record = json.loads(next((dest.parent / 'evidence').glob('*.json')).read_text())
             self.assertEqual(record['page']['metadata']['citation_doi'], ['10.5089/9798229063074.029'])
             self.assertFalse(record['accepted']); proc.stdin.write.assert_not_called()
+
+    def test_unready_observation_saved_and_never_sends_click_decision(self):
+        for status, code in ((200, 'page_not_ready'), (405, 'landing_http_rejected')):
+            page = {**PAGE, 'ready': False, 'landing_status': status, 'h1s': [], 'download_hrefs': []}
+            with self.download_mocks([page]) as (instance, dest, proc, _, _), \
+                 patch.dict(os.environ, {'IMF_PUBLIC_EVIDENCE_DIR': str(dest.parent / 'evidence')}):
+                with self.assertRaisesRegex(b.BrowserDownloadError, code):
+                    instance.download(PUBLICATION, dest, 1024)
+                record = json.loads(next((dest.parent / 'evidence').glob('*.json')).read_text())
+                self.assertFalse(record['page']['ready'])
+                self.assertEqual(record['page']['landing_status'], status)
+                self.assertIn('citation_doi', record['page']['metadata'])
+                proc.stdin.write.assert_not_called(); self.assertFalse(dest.exists())
 
     def test_disabled_enter_is_zero_launch_zero_credentials(self):
         fetch = Mock()

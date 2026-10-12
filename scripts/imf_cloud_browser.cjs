@@ -8,7 +8,7 @@ const readline = require("node:readline");
 
 const knownErrors = new Set(["cloud_approval_required", "request_invalid", "page_metadata_limit",
   "download_command_invalid", "download_command_timeout", "download_link_missing", "download_failed",
-  "download_url_changed", "download_size_invalid"]);
+  "download_url_changed", "download_size_invalid", "page_not_ready"]);
 const send = message => process.stdout.write(JSON.stringify(message) + "\n");
 
 function bounded(values, max = 32) {
@@ -53,10 +53,13 @@ async function main() {
       if (target && response.url() === target) pdfStatus = response.status();
     });
     await page.goto(request.landing_url, {waitUntil: "domcontentloaded", timeout: 45000});
-    await Promise.all([
+    const readiness = await Promise.allSettled([
       page.getByRole("heading", {level: 1}).first().waitFor({state: "visible", timeout: 15000}),
       page.getByRole("link", {name: /Download PDF/i}).first().waitFor({state: "visible", timeout: 15000})
     ]);
+    const pageReady = readiness.every(result => result.status === "fulfilled");
+    // Preserve the same bounded public observation on an unready/challenge page.
+    // Neither parent nor child may authorize a download when readiness failed.
     const metadata = await page.locator("meta[name],meta[property]").evaluateAll(nodes => {
       const allow = new Set(["citation_doi", "dc.identifier.doi", "prism.doi", "citation_title", "dc.title",
         "citation_isbn", "citation_pdf_url"]);
@@ -92,9 +95,10 @@ async function main() {
       });
     });
     actualLandingStatus = landingStatus;
-    send({stage: "metadata", final_url: page.url(), landing_status: actualLandingStatus,
+    send({stage: "metadata", final_url: page.url(), landing_status: actualLandingStatus, ready: pageReady,
       metadata, h1s, download_hrefs: downloadHrefs});
     target = await command;
+    if (!pageReady) throw new Error("page_not_ready");
     // Parent bound this exact observed URL to the DOI and issue/book. Refuse
     // external/downgraded transport even if a caller supplied a bad command.
     const pdf = new URL(target);

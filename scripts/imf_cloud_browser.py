@@ -283,6 +283,7 @@ def write_public_evidence(publication, page):
               "publication": public, "page": {
                   "final_url": official_url(page.get("final_url")),
                   "landing_status": status if type(status) is int and 100 <= status <= 599 else None,
+                  "ready": page.get("ready") if type(page.get("ready")) is bool else None,
                   "metadata": observed, "h1s": values(page.get("h1s", [])),
                   "download_hrefs": [official_url(value, pdf=True) for value in values(page.get("download_hrefs", []))]}}
     temporary = None
@@ -464,6 +465,8 @@ class CloudImfBrowser:
                     raise BrowserDownloadError("imf_browser_page_not_ready")
                 if type(page.get("landing_status")) is not int or page["landing_status"] != 200:
                     raise BrowserDownloadError("imf_browser_landing_http_rejected")
+                if page.get("ready") is not True:
+                    raise BrowserDownloadError("imf_browser_page_not_ready")
                 try:
                     pdf_url = validate_landing_metadata(publication, final_url=page["final_url"],
                                                         metadata=page["metadata"], h1s=page["h1s"],

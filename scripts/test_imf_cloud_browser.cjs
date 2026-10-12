@@ -106,7 +106,10 @@ test('unready page uses no reload, click or external request and closes', async 
   const result = await simulate({unready: true});
   assert.equal(result.events.filter(x => x === 'goto').length, 1);
   assert.ok(!result.events.includes('click')); assert.ok(result.events.includes('close'));
-  assert.equal(result.output.at(-1).category, 'browser_timeout');
+  assert.equal(result.output[0].stage, 'metadata');
+  assert.equal(result.output[0].ready, false);
+  assert.ok(result.output[0].metadata.citation_doi);
+  assert.equal(result.output.at(-1).category, 'page_not_ready');
 });
 test('no parent decision times out before any download and closes', async () => {
   const result = await simulate({noDecision: true});
