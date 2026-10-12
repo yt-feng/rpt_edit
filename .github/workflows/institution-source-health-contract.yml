@@ -15,6 +15,7 @@ on:
       - scripts/imf_*
       - scripts/test_imf_*
       - scripts/fixtures/imf_*/**
+      - scripts/fixtures/institution_sources/imf_pending_acceptance_20261012.json
       - .github/actions/setup-imf-browser/**
       - .github/workflows/institution-fetch-test.yml
       - .github/workflows/institution-latest-pdf-to-wechat.yml

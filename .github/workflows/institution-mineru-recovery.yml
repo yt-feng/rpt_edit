@@ -11,6 +11,10 @@ on:
       - scripts/test_institution_backlog_pipeline.py
       - scripts/institution_hold_provenance.py
       - scripts/test_institution_hold_provenance.py
+      - scripts/institution_source_health.py
+      - scripts/imf_*
+      - scripts/test_imf_*
+      - scripts/fixtures/imf_*/**
       - scripts/inspect_durable_mineru.py
       - scripts/inspect_institution_feed_holds.py
       - scripts/test_inspect_institution_feed_holds.py
