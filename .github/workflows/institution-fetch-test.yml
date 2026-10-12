@@ -14,46 +14,41 @@ on:
 permissions:
   contents: read
 jobs:
-  cloud-access-diagnostic:
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - pool: hosted
-            runner: [ubuntu-latest]
-    runs-on: ${{ matrix.runner }}
-    timeout-minutes: 8
+  subscription-health-diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
         with:
-          sparse-checkout: |
-            scripts
-            institution_feeds/pending_intake
+          ref: e06289765e40691159daaa8b2ebf42cd61714f1a
+          sparse-checkout: scripts
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: |
-          python -m venv "$RUNNER_TEMP/imf-probe-${{ github.run_id }}"
-          "$RUNNER_TEMP/imf-probe-${{ github.run_id }}/bin/pip" install requests curl_cffi pypdf boto3
-      - name: Read public provider renewal entry point
+      - run: pip install requests curl_cffi
+      - name: Validate production subscription diagnostics with real metadata
         env:
           PROXY_SUBSCRIPTION_URL: ${{ secrets.PROXY_SUBSCRIPTION_URL }}
-        run: '"$RUNNER_TEMP/imf-probe-${{ github.run_id }}/bin/python" scripts/cloud_imf_provider_metadata.py'
-      - name: Inspect existing exact-source original cache bindings
-        env:
-          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
-          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
-        run: '"$RUNNER_TEMP/imf-probe-${{ github.run_id }}/bin/python" scripts/cloud_imf_cache_probe.py'
+        run: |
+          PYTHONPATH=scripts python - <<'PY'
+          import json, os
+          from pathlib import Path
+          import fetch_institution_latest_pdfs as f
+          route = f.resolve_working_proxy(os.environ['PROXY_SUBSCRIPTION_URL'], 15, f.IMF_PROXY_TEST_URL)
+          summary = Path(os.environ['GITHUB_STEP_SUMMARY']).read_text()
+          result = {
+              'tested_sha': 'e06289765e40691159daaa8b2ebf42cd61714f1a',
+              'validated_route_available': route is not None,
+              'explicit_expiration_reported': 'Proxy subscription expired at ' in summary,
+              'real_pdf_download_verified': False,
+              'scope': 'subscription diagnostic only',
+          }
+          Path('_subscription_health.json').write_text(json.dumps(result, indent=2) + '\n')
+          print(json.dumps(result))
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: imf-access-probe-${{ matrix.pool }}-${{ github.run_id }}
-          path: |
-            _imf_cache_probe
-            _imf_provider_metadata
+          name: imf-subscription-health-${{ github.run_id }}
+          path: _subscription_health.json
           if-no-files-found: error
-      - name: Remove isolated diagnostic Python environment
-        if: always()
-        run: 'rm -rf "$RUNNER_TEMP/imf-probe-${{ github.run_id }}"'
