@@ -20,7 +20,7 @@
       <p class="api-kicker">KC桌面 / CONTENT API / V1</p>
       <h1>让研究资料，<br>进入你的工作流。</h1>
       <p class="api-lead">从一份报告的标题与机构，到图表、解析文本、已有译文和源页面定位。通过一个 API，把已授权的研究内容接入自己的资料库、研究工作台与内部系统。</p>
-      <div class="api-hero-actions"><a class="api-primary" data-api-link href="#apiStart">开始接入 ↗</a><a data-api-link href="#api-reports">查看可用字段</a><a href="mailto:info@kcdesk.com?subject=KC%20Desk%20API">联系开通</a></div>
+      <div class="api-hero-actions"><a class="api-primary" data-api-link href="#apiStart">开始接入 ↗</a><a data-api-link href="#api-reports">查看可用字段</a><a href="/?request=access">联系开通</a></div>
       <div class="api-facts"><span><strong>5</strong> 个读取接口</span><span><strong>7</strong> 类关联材料</span><span><strong>JSON + 原文件</strong> 交付</span></div>
     </div><aside class="api-flow" aria-label="内容读取流程"><div class="api-flow-label"><span>ONE REPORT · CONNECTED CONTENT</span><span>READ ONLY</span></div><ol><li><span>01</span><div><b>找到报告</b><small>报告 ID · 标题 · 机构 · 日期</small></div></li><li><span>02</span><div><b>查看关联材料</b><small>图表 · 文本 · 译文 · 元数据</small></div></li><li><span>03</span><div><b>下载到自己的系统</b><small>PDF · Markdown · JSON · 图像</small></div></li></ol></aside></div>
     <div class="api-tab-wrap"><nav class="api-tabs" data-api-tabs aria-label="API 文档章节"><a id="tab-overview" data-api-tab href="#api-overview">概览与接入</a><a id="tab-reports" data-api-tab href="#api-reports">报告字段</a><a id="tab-charts" data-api-tab href="#api-charts">图表与图片</a><a id="tab-text" data-api-tab href="#api-text">文本与翻译</a><a id="tab-metadata" data-api-tab href="#api-metadata">过程稿元数据</a><a id="tab-examples" data-api-tab href="#api-examples">接口与示例</a><a id="tab-access" data-api-tab href="#api-access">权限与排错</a></nav><p class="api-tab-hint">左右滑动可查看全部章节</p></div>
@@ -31,7 +31,7 @@
 <article class="api-card"><p class="api-card-label">CONTENT REUSE</p><h3>复用已有文本与翻译</h3><p>读取 Markdown、已有中英文翻译、文章草稿及播客文本脚本，接入你自己的阅读和内容整理流程。</p><a data-api-link href="#api-text">查看可用文件 →</a></article>
 </div>
 <h3 id="apiStart">从开通到第一次读取</h3><ol class="api-steps">
-<li><strong>开通内容权限。</strong>联系 <a href="mailto:info@kcdesk.com">info@kcdesk.com</a> 或微信 <strong>MacroGate</strong>，确认报告范围、可用操作与有效期。</li>
+<li><strong>开通内容权限。</strong>联系 <strong>info@kcdesk.com</strong>，确认报告范围、可用操作与有效期。</li>
 <li><strong>生成自己的密钥。</strong>登录后在「我的账号 → 开发者 API」填写用途名称，例如“内部研究库”，生成并当场保存完整密钥；完整密钥只显示一次。</li>
 <li><strong>保存在服务端环境变量中。</strong>下面示例使用 <code>KCD_API_KEY</code>；通过 <code>Authorization: Bearer</code> 请求头鉴权。密钥不要写进公开代码、URL 或网页前端。</li>
 <li><strong>先获取报告 ID，再读取关联内容。</strong>从列表取得 <code>id</code>，接着调用详情、PDF 或关联内容接口。所有 ID 都应使用返回值。</li></ol><div class="api-endpoint"><span class="api-method">GET</span><code>/reports?limit=25</code><span class="api-badge">reports:read</span></div><div class="api-codebox"><div class="api-codebar"><span>cURL · 第一个请求</span><button type="button" data-api-copy="code-start" aria-label="复制cURL · 第一个请求">复制</button></div><pre><code id="code-start">curl --fail-with-body \
@@ -425,7 +425,7 @@ for report in pages(&quot;/reports&quot;, {&quot;date&quot;: &quot;2026-10-08&qu
 <tr><td>密钥生命周期</td><td>每账号最多 5 个有效密钥。新密钥默认在 90 天后或 API 授权到期时失效，以较早时间为准。</td></tr>
 <tr><td>撤销与重新开通</td><td>撤销单个密钥只影响该密钥。管理员撤销 API 权限会同时撤销旧密钥；重新开通后需要重新生成。</td></tr>
 <tr><td>密钥遗失</td><td>无法查看之前的完整密钥。请在账号面板撤销旧密钥，再生成新的密钥。</td></tr>
-</tbody></table></div><h3>默认调用额度</h3><div class="api-card-grid"><article class="api-card"><p class="api-card-label">PER MINUTE</p><h3>30 次 / 分钟</h3><p>按 UTC 整分钟窗口计数。</p></article><article class="api-card"><p class="api-card-label">PER DAY</p><h3>1,000 次 / 日</h3><p>每日北京时间 08:00 重置。</p></article><article class="api-card"><p class="api-card-label">FILE TRANSFER</p><h3>1 GiB / 日</h3><p>按下载文件预留的字节计数。</p></article></div><p>以上是默认值，实际以管理员给账号的配置为准。同一账号的多个密钥共享额度。通过身份与操作权限校验后的内容请求会计入请求数，包括后续内容不存在等失败请求；文件开始传输前会预留字节，中途断开也可能计入文件额度。列表与详情的目录 JSON 不计入文件字节额度；通过文件接口下载的元数据 JSON 属于文件，会计入。</p><div class="api-note">API 调用额度、网页试用下载次数和 AI 研究次数是不同的计数。如需调整内容范围、有效期或调用额度，请联系 <a href="mailto:info@kcdesk.com">info@kcdesk.com</a> 或微信 <strong>MacroGate</strong>。</div><h3 id="apiErrors">错误码与处理方式</h3><div class="api-codebox"><div class="api-codebar"><span>JSON · 错误响应</span><button type="button" data-api-copy="code-error" aria-label="复制JSON · 错误响应">复制</button></div><pre><code id="code-error">{
+</tbody></table></div><h3>默认调用额度</h3><div class="api-card-grid"><article class="api-card"><p class="api-card-label">PER MINUTE</p><h3>30 次 / 分钟</h3><p>按 UTC 整分钟窗口计数。</p></article><article class="api-card"><p class="api-card-label">PER DAY</p><h3>1,000 次 / 日</h3><p>每日北京时间 08:00 重置。</p></article><article class="api-card"><p class="api-card-label">FILE TRANSFER</p><h3>1 GiB / 日</h3><p>按下载文件预留的字节计数。</p></article></div><p>以上是默认值，实际以管理员给账号的配置为准。同一账号的多个密钥共享额度。通过身份与操作权限校验后的内容请求会计入请求数，包括后续内容不存在等失败请求；文件开始传输前会预留字节，中途断开也可能计入文件额度。列表与详情的目录 JSON 不计入文件字节额度；通过文件接口下载的元数据 JSON 属于文件，会计入。</p><div class="api-note">API 调用额度、网页试用下载次数和 AI 研究次数是不同的计数。如需调整内容范围、有效期或调用额度，请联系 <strong>info@kcdesk.com</strong>。</div><h3 id="apiErrors">错误码与处理方式</h3><div class="api-codebox"><div class="api-codebar"><span>JSON · 错误响应</span><button type="button" data-api-copy="code-error" aria-label="复制JSON · 错误响应">复制</button></div><pre><code id="code-error">{
   &quot;ok&quot;: false,
   &quot;error&quot;: &quot;scope_denied&quot;
 }</code></pre></div><div class="api-table-wrap" tabindex="0" role="region" aria-label="内容 API 错误参考"><table class="api-field-table"><caption>内容 API 错误参考</caption><thead><tr><th scope="col">HTTP 状态</th><th scope="col">错误码</th><th scope="col">建议处理</th></tr></thead><tbody>
@@ -441,7 +441,7 @@ for report in pages(&quot;/reports&quot;, {&quot;date&quot;: &quot;2026-10-08&qu
 <tr><td>503</td><td><code>service_unavailable</code></td><td>采用有限次数的渐增等待重试，例如 2、5、15 秒；持续失败时停止并记录错误，避免循环占用额度。</td></tr>
 </tbody></table></div><h3>接入时常见的几个问题</h3><details><summary>列表能看到报告，为什么下载不一定成功？</summary><p>列表描述的是可见记录。下载时仍会重新检查当前授权、会员或试用权限、文件是否可用，以及账号剩余额度；请始终检查下载响应的 HTTP 状态。</p></details><details><summary>查询某种语言得到空列表，是什么意思？</summary><p>当前报告没有可返回的该语言材料。可以先去掉语言筛选查看实际列表；<code>und</code> 是未标明语言，不能视为英文。</p></details><details><summary>怎样按天更新自己的资料库？</summary><p>遍历目标日期的报告，再遍历每份报告的关联文件；在自己的系统中按 ID 与可选 SHA-256 去重。近期日期可以重复复查，以发现补发的材料。当前没有“自某更新时间之后”的查询参数或推送订阅。</p></details><details><summary>能通过这个 API 发起 AI 研究或即时翻译吗？</summary><p>目前这里提供已授权内容的读取与下载。AI 研究仍使用网站现有入口和次数；缺失的译文、图表或文本不会因读取请求而现场生成。</p></details>
 </section>
-    <div class="api-docs-footer">文档版本 v1 · 字段与行为核对于 2026-10-12。实际可用内容以账号授权与关联内容列表为准。需要开通或调整额度：<a href="mailto:info@kcdesk.com">info@kcdesk.com</a> · 微信 MacroGate。</div>
+    <div class="api-docs-footer">文档版本 v1 · 字段与行为核对于 2026-10-12。实际可用内容以账号授权与关联内容列表为准。需要开通或调整额度：<strong>info@kcdesk.com</strong>。</div>
     <div id="api-copy-status" class="api-copy-status" role="status" aria-live="polite" aria-atomic="true"></div>
   </main>
   <footer class="legal-footer"><a href="/">报告检索</a><a href="research.html">AI 研究</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="/?request=support">联系 KC桌面</a></footer>
