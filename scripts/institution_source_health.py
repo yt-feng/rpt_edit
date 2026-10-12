@@ -15,8 +15,14 @@ from pathlib import Path
 import re
 import sys
 
-from fetch_institution_latest_pdfs import DEFAULT_PUBLIC_INSTITUTION_KEYS, INSTITUTIONS
+from fetch_institution_latest_pdfs import DEFAULT_PUBLIC_INSTITUTION_KEYS, INSTITUTIONS, short_hash, slug
+from imf_elibrary_resolver import ResolutionError, source_url, title_key, validate_official_pair
 from institution_verified_originals import RECOVERY_FIELDS, official_url
+
+
+LIVE_DOWNLOAD_FIELDS = {"schema", "source_guid", "source_url", "landing_url", "pdf_url", "doi", "title",
+                        "identity_sha256", "crossref_sha256", "sha256", "bytes", "pages",
+                        "landing_status", "pdf_status", "source_identity_verified", "transport"}
 
 
 class InvalidSourceHealth(ValueError):
@@ -31,6 +37,41 @@ def require(condition: bool) -> None:
 def count(value: object) -> int:
     require(type(value) is int and 0 <= value <= 1_000_000)
     return value
+
+
+def validate_live_download(row: dict) -> None:
+    """Verify the browser's complete receipt against the producer's exact row.
+
+    Identity/Crossref hashes retain upstream provenance. Their complete inputs
+    are not in this manifest, so this classifier does not claim to rehash them.
+    """
+    proof = row["imf_live_download"]
+    require(row["institution"] == "imf" and isinstance(proof, dict)
+            and set(proof) == LIVE_DOWNLOAD_FIELDS)
+    require(type(proof["schema"]) is int and proof["schema"] == 1
+            and proof["source_identity_verified"] is True
+            and proof["transport"] == "existing_subscription_vless_browser")
+    for field in ("landing_status", "pdf_status"):
+        require(type(proof[field]) is int and proof[field] == 200)
+    require(type(proof["pages"]) is int and 1 <= proof["pages"] <= 5000
+            and type(proof["bytes"]) is int and 1 <= proof["bytes"] <= 128 * 1024 * 1024)
+    for field in ("identity_sha256", "crossref_sha256", "sha256"):
+        require(isinstance(proof[field], str) and bool(re.fullmatch(r"[a-f0-9]{64}", proof[field])))
+    for field in ("source_guid", "title"):
+        require(isinstance(proof[field], str) and 0 < len(proof[field]) <= 4096
+                and not re.search(r"[\x00-\x1f\x7f\ud800-\udfff]", proof[field]))
+    require(isinstance(row.get("title"), str) and 0 < len(row["title"]) <= 4096
+            and bool(title_key(proof["title"])) and title_key(proof["title"]) == title_key(row["title"]))
+    require(proof["source_url"] == row.get("source_page_url")
+            and proof["pdf_url"] == row.get("pdf_url")
+            and proof["sha256"] == row.get("sha256")
+            and type(row.get("bytes")) is int and proof["bytes"] == row["bytes"])
+    require(row.get("local_filename") == f"IMF_{slug(row['title'])}_{short_hash('imf:' + proof['source_guid'])}.pdf")
+    try:
+        source_url(proof["source_url"])
+        validate_official_pair(proof["landing_url"], proof["pdf_url"], proof["doi"])
+    except ResolutionError:
+        raise InvalidSourceHealth("source_health_contract_invalid") from None
 
 
 def enabled_sources(value: str) -> list[str]:
@@ -82,6 +123,10 @@ def classify(manifest: object, *, producer_exit_code: int, log_exit_code: int,
     for row in downloaded:
         recovery_fields = {field for field in row if field == "acquisition_method"
                            or (isinstance(field, str) and field.startswith("verified_original_"))}
+        live_fields = {field for field in row if isinstance(field, str) and field.startswith("imf_live_download")}
+        if live_fields:
+            require(live_fields == {"imf_live_download"} and not recovery_fields)
+            validate_live_download(row)
         if not recovery_fields:
             continue
         require(recovery_fields == RECOVERY_FIELDS)
