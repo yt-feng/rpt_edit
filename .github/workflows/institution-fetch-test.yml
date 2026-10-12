@@ -13,8 +13,6 @@ jobs:
     timeout-minutes: 5
     env:
       PYTHONUNBUFFERED: '1'
-      PROBE_OUTPUT: ${{ runner.temp }}/imf-vps-elibrary-${{ github.run_id }}-${{ github.run_attempt }}
-      PROBE_VENV: ${{ runner.temp }}/imf-vps-elibrary-venv-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
       - name: Require the existing remote Linux VPS
         shell: bash
@@ -24,6 +22,8 @@ jobs:
             echo 'remote_runner_guard_failed'
             exit 1
           fi
+          printf 'PROBE_OUTPUT=%s/imf-vps-elibrary-%s-%s\n' "$RUNNER_TEMP" "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT" >> "$GITHUB_ENV"
+          printf 'PROBE_VENV=%s/imf-vps-elibrary-venv-%s-%s\n' "$RUNNER_TEMP" "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT" >> "$GITHUB_ENV"
       - name: Checkout only the reviewed probe workflow
         uses: actions/checkout@v4
         with:
