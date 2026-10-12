@@ -16,6 +16,7 @@ import re
 import sys
 
 from fetch_institution_latest_pdfs import DEFAULT_PUBLIC_INSTITUTION_KEYS, INSTITUTIONS
+from institution_verified_originals import RECOVERY_FIELDS, official_url
 
 
 class InvalidSourceHealth(ValueError):
@@ -76,10 +77,30 @@ def classify(manifest: object, *, producer_exit_code: int, log_exit_code: int,
     checked = []
     blocked = []
     actual_downloads = Counter(row["institution"] for row in downloaded)
+    recovered = Counter()
+    recovery_manifests = {}
+    for row in downloaded:
+        recovery_fields = {field for field in row if field == "acquisition_method"
+                           or (isinstance(field, str) and field.startswith("verified_original_"))}
+        if not recovery_fields:
+            continue
+        require(recovery_fields == RECOVERY_FIELDS)
+        require(row["acquisition_method"] == "verified_original_cache" and row["institution"] == "imf")
+        for field in ("verified_original_manifest_sha256", "verified_original_binding_id", "verified_original_receipt_sha256"):
+            require(isinstance(row.get(field), str) and bool(re.fullmatch(r"[a-f0-9]{64}", row[field])))
+        require(0 < count(row.get("verified_original_pages")) <= 5000)
+        require(official_url(row.get("verified_original_landing_url"), pdf=False)
+                and official_url(row.get("pdf_url"), pdf=True))
+        key = row["institution"]
+        require(key not in recovery_manifests or recovery_manifests[key] == row["verified_original_manifest_sha256"])
+        recovered[key] += 1
+        recovery_manifests[key] = row["verified_original_manifest_sha256"]
     for check in checks:
-        require(isinstance(check, dict) and set(check) == {
+        fields = {
             "institution", "institution_en", "status", "item_count", "new_pdf_count",
-            "eligible_item_count", "resolution_failure_count", "deferred_retry_count", "discovery_error", "required_for_clean_zero", "error"})
+            "eligible_item_count", "resolution_failure_count", "deferred_retry_count", "discovery_error", "required_for_clean_zero", "error"}
+        recovery_fields = {"verified_original_recovery_count", "verified_original_manifest_sha256"}
+        require(isinstance(check, dict) and set(check) in (fields, fields | recovery_fields))
         key = check["institution"]
         require(isinstance(key, str) and key in enabled and key not in checked)
         checked.append(key)
@@ -91,24 +112,32 @@ def classify(manifest: object, *, producer_exit_code: int, log_exit_code: int,
         total, new, eligible, failures = (count(check[name]) for name in (
             "item_count", "new_pdf_count", "eligible_item_count", "resolution_failure_count"))
         require(total >= eligible >= new + failures and new == actual_downloads[key])
+        recovery_count = count(check.get("verified_original_recovery_count", 0))
+        require(recovery_count == recovered[key] and recovery_count <= new)
+        if recovery_fields <= set(check):
+            require(key == "imf" and isinstance(check["verified_original_manifest_sha256"], str)
+                    and bool(re.fullmatch(r"[a-f0-9]{64}", check["verified_original_manifest_sha256"]))
+                    and (not recovery_count or check["verified_original_manifest_sha256"] == recovery_manifests[key]))
         deferred = count(check["deferred_retry_count"])
         require(deferred <= total and (key == "imf" or deferred == 0))
         discovery_error = check["discovery_error"]
         require(type(discovery_error) is bool)
         status = check["status"]
         require(status in {"ok", "empty", "error", "degraded"})
+        if discovery_error and new == recovery_count:
+            require(status == "error")
         if status == "ok":
-            require(total > 0 and failures == deferred == 0 and not discovery_error)
+            require(total > 0 and failures == deferred == recovery_count == 0 and not discovery_error)
         elif status == "empty":
             require(total == eligible == new == failures == deferred == 0 and not discovery_error)
         elif status == "degraded":
             require((0 < failures < eligible) or (deferred > 0 and (new > 0 or failures < eligible))
-                    or (discovery_error and new > 0))
+                    or (discovery_error and new > 0) or recovery_count > 0)
         else:
             require((total == eligible == new == failures == 0)
                     or (0 < eligible == failures and new == 0)
                     or (deferred > 0 and eligible == failures == new == 0)
-                    or (discovery_error and new == 0))
+                    or (discovery_error and new == recovery_count))
         if check["required_for_clean_zero"] and status != "ok":
             blocked.append(key)
     # A max-total cap may end a successful run early, but never a zero-PDF run.

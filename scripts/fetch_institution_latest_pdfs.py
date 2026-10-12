@@ -71,6 +71,7 @@ from urllib.parse import unquote, urljoin, urlsplit
 import requests
 
 from institution_pending_intake import PendingIntake
+from institution_verified_originals import VerifiedOriginalError, VerifiedOriginals
 
 try:  # Optional: impersonate a real Chrome TLS/HTTP2 fingerprint to pass WAFs (IMF).
     from curl_cffi import requests as cffi_requests  # type: ignore
@@ -429,6 +430,10 @@ def write_source_health_summary(source_checks: list[dict[str, Any]]) -> None:
             f"| {check['institution']} | {status_label.get(check['status'], check['status'])} "
             f"| {check.get('item_count', 0)} | {check.get('new_pdf_count', 0)} | {detail} |"
         )
+    for check in source_checks:
+        if check.get("verified_original_recovery_count", 0):
+            lines.append(f"- {check['institution']}: {check['verified_original_recovery_count']} reviewed original(s) "
+                         "recovered from private cache. Live PDF access remains unverified.")
     with open(summary_path, "a", encoding="utf-8") as handle:
         handle.write("\n".join(lines) + "\n")
 
@@ -1838,6 +1843,8 @@ def main() -> int:
     parser.add_argument("--worldbank-rows", type=int, default=30)
     parser.add_argument("--pending-intake-path", type=Path, help="Durable checkpoint for unresolved IMF intake (separate from seen state)")
     parser.add_argument("--imf-pending-retries", type=int, default=10, help="Maximum previously observed IMF sources to retry per run (1-100)")
+    parser.add_argument("--verified-originals-manifest", type=Path,
+                        help="Explicit reviewed allowlist for exact pending IMF originals already in private OriginalCache")
     parser.add_argument("--imf-rows", type=int, default=60, help="Coveo results to scan for IMF (newest first).")
     parser.add_argument("--ddg-df", default="", help="DuckDuckGo date filter for search sources: d/w/m/y or '' for none. The html endpoint returns nothing with a date filter, so default is none; recent reports still surface by relevance and seen-dedup avoids reprocessing.")
     parser.add_argument("--force-reprocess", default="false", help="Ignore seen-state dedup and redownload matching fresh PDFs.")
@@ -1897,6 +1904,11 @@ def main() -> int:
     pending = (PendingIntake(args.pending_intake_path, seen_items, now=observed_at,
                              retry_limit=args.imf_pending_retries)
                if args.pending_intake_path and "imf" in enabled else None)
+    verified_originals = None
+    if args.verified_originals_manifest:
+        if pending is None:
+            raise VerifiedOriginalError("verified_original_pending_required")
+        verified_originals = VerifiedOriginals(args.verified_originals_manifest)
     if pending:
         pending.save()
     force_reprocess = as_bool(args.force_reprocess)
@@ -1976,6 +1988,7 @@ def main() -> int:
             )
 
         new_count = 0
+        verified_original_count = 0
         eligible_count = 0
         resolution_failure_count = 0
         resolution_failure_samples: list[str] = []
@@ -2034,135 +2047,151 @@ def main() -> int:
                                     "reason": "invalid_intake_metadata"})
                     continue
             feed_pdf_candidates = list(item["pdf_candidates"])
-            candidates = list(feed_pdf_candidates)
-            landing_attempted = False
-            preview_attempted = False
-            if not candidates and item.get("coveo_unique_id"):
-                preview_attempted = True
+            recovered = None
+            if key == "imf" and verified_originals and verified_originals.contains(item):
+                title = item["title"] or item["guid"] or item["source_url"]
+                filename = f"{cfg['token']}_{slug(title)}_{short_hash(dedup_key)}.pdf"
+                dest = output_dir / filename
                 try:
-                    candidates = collect_coveo_preview_candidates(
-                        cfg,
-                        session,
-                        item["coveo_unique_id"],
-                        item["source_url"],
-                        args.request_timeout,
-                    )
-                except Exception as exc:  # noqa: BLE001 - use origin fallback
-                    warn(f"  Coveo preview fetch failed, will try landing page: {item['source_url']}: {exc}")
-            if not candidates and item.get("scrape_url"):
-                landing_attempted = True
-                try:
-                    page = http_get(session, item["scrape_url"], args.request_timeout, cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"), proxy=cfg.get("_proxy"))
-                    page.raise_for_status()
-                    candidates = scrape_pdf_candidates(page.text, getattr(page, "url", None) or item["scrape_url"])
-                    if not item["title"]:
-                        item["title"] = _extract_html_title(page.text)
-                except Exception as exc:  # noqa: BLE001 - network error: retry next run
-                    warn(f"  landing fetch failed, will retry next run: {item['source_url']}: {exc}")
+                    recovered = verified_originals.restore(item, filename, pending, dest, max_bytes)
+                    used_url, status = recovered["pdf_url"], "ok"
+                except VerifiedOriginalError as exc:
+                    resolution_failure_count += 1
+                    skipped.append({"institution": key, "title": title, "source_url": item["source_url"],
+                                    "reason": str(exc)})
+                    if len(resolution_failure_samples) < 3:
+                        resolution_failure_samples.append(str(exc))
+                    continue
+            if recovered is None:
+                candidates = list(feed_pdf_candidates)
+                landing_attempted = False
+                preview_attempted = False
+                if not candidates and item.get("coveo_unique_id"):
+                    preview_attempted = True
+                    try:
+                        candidates = collect_coveo_preview_candidates(
+                            cfg,
+                            session,
+                            item["coveo_unique_id"],
+                            item["source_url"],
+                            args.request_timeout,
+                        )
+                    except Exception as exc:  # noqa: BLE001 - use origin fallback
+                        warn(f"  Coveo preview fetch failed, will try landing page: {item['source_url']}: {exc}")
+                if not candidates and item.get("scrape_url"):
+                    landing_attempted = True
+                    try:
+                        page = http_get(session, item["scrape_url"], args.request_timeout, cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"), proxy=cfg.get("_proxy"))
+                        page.raise_for_status()
+                        candidates = scrape_pdf_candidates(page.text, getattr(page, "url", None) or item["scrape_url"])
+                        if not item["title"]:
+                            item["title"] = _extract_html_title(page.text)
+                    except Exception as exc:  # noqa: BLE001 - network error: retry next run
+                        warn(f"  landing fetch failed, will retry next run: {item['source_url']}: {exc}")
+                        resolution_failure_count += 1
+                        if len(resolution_failure_samples) < 3:
+                            resolution_failure_samples.append(f"landing: {type(exc).__name__}: {exc}")
+                        continue
+                bcg_external_only = key == "bcg" and bool(candidates)
+                candidates = filter_institution_pdf_candidates(key, candidates)
+                bcg_external_only = bcg_external_only and not candidates
+                if cfg.get("pdf_exclude"):
+                    candidates = [c for c in candidates if not re.search(cfg["pdf_exclude"], c, re.I)]
+                # Some sites (e.g. WEF) return the bare site name as og:title.
+                if item["title"].strip().lower() in {"", cfg["name_en"].lower()}:
+                    item["title"] = _title_from_url_slug(item["source_url"]) or item["title"]
+
+                if not candidates:
+                    if cfg.get("require_pdf") or bcg_external_only or (key == "imf" and pending):
+                        # A promised main PDF, or only third-party citations on a
+                        # BCG page, cannot establish this source report's contents.
+                        # Keep the source visible and retryable rather than seen.
+                        resolution_failure_count += 1
+                        if len(resolution_failure_samples) < 3:
+                            resolution_failure_samples.append(f"main PDF missing: {item['source_url']}")
+                        skipped.append({"institution": key, "title": item["title"], "reason": "main_pdf_missing", "source_url": item["source_url"]})
+                        continue
+                    # Page reachable but has no downloadable PDF (e.g. a Brookings op-ed).
+                    seen_items[dedup_key] = {"first_seen": today, "status": "no_pdf"}
+                    skipped.append({"institution": key, "title": item["title"], "reason": "no_pdf", "source_url": item["source_url"]})
+                    continue
+
+                title = item["title"] or item["guid"] or item["source_url"]
+                filename = f"{cfg['token']}_{slug(title)}_{short_hash(dedup_key)}.pdf"
+                if matches_dependency_hold(held_versions, filename, item, candidates):
+                    skipped.append({'institution': key, 'reason': 'dependency_hold', 'source_url': item['source_url']})
+                    continue
+                dest = output_dir / filename
+                used_url, status = download_pdf(session, candidates[:3], dest, args.request_timeout, max_bytes, impersonate=cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"), proxy=cfg.get("_proxy"))
+                # A deterministic/direct candidate may have changed on the source site.
+                # Try Coveo's cached HTML before touching the WAF-protected landing page.
+                if (status != "ok" or used_url is None) and item.get("coveo_unique_id") and not preview_attempted:
+                    preview_attempted = True
+                    try:
+                        preview_candidates = collect_coveo_preview_candidates(
+                            cfg,
+                            session,
+                            item["coveo_unique_id"],
+                            item["source_url"],
+                            args.request_timeout,
+                        )
+                        preview_candidates = filter_institution_pdf_candidates(key, preview_candidates)
+                        if cfg.get("pdf_exclude"):
+                            preview_candidates = [
+                                candidate for candidate in preview_candidates
+                                if not re.search(cfg["pdf_exclude"], candidate, re.I)
+                            ]
+                        preview_candidates = [candidate for candidate in preview_candidates if candidate not in candidates]
+                        if preview_candidates:
+                            used_url, status = download_pdf(
+                                session,
+                                preview_candidates[:3],
+                                dest,
+                                args.request_timeout,
+                                max_bytes,
+                                impersonate=cfg.get("impersonate", False),
+                                profile=cfg.get("impersonate_profile"),
+                                proxy=cfg.get("_proxy"),
+                            )
+                    except Exception as exc:  # noqa: BLE001 - use origin fallback
+                        if len(resolution_failure_samples) < 3:
+                            resolution_failure_samples.append(f"Coveo preview fallback: {type(exc).__name__}: {exc}")
+                # If Coveo cannot resolve the PDF, still try the landing page.
+                if (status != "ok" or used_url is None) and item.get("scrape_url") and not landing_attempted:
+                    landing_attempted = True
+                    try:
+                        page = http_get(session, item["scrape_url"], args.request_timeout, cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"), proxy=cfg.get("_proxy"))
+                        page.raise_for_status()
+                        scraped_candidates = scrape_pdf_candidates(page.text, getattr(page, "url", None) or item["scrape_url"])
+                        scraped_candidates = filter_institution_pdf_candidates(key, scraped_candidates)
+                        if cfg.get("pdf_exclude"):
+                            scraped_candidates = [
+                                candidate for candidate in scraped_candidates
+                                if not re.search(cfg["pdf_exclude"], candidate, re.I)
+                            ]
+                        scraped_candidates = [candidate for candidate in scraped_candidates if candidate not in candidates]
+                        if scraped_candidates:
+                            used_url, status = download_pdf(
+                                session,
+                                scraped_candidates[:3],
+                                dest,
+                                args.request_timeout,
+                                max_bytes,
+                                impersonate=cfg.get("impersonate", False),
+                                profile=cfg.get("impersonate_profile"),
+                                proxy=cfg.get("_proxy"),
+                            )
+                    except Exception as exc:  # noqa: BLE001 - retry the item next run
+                        if len(resolution_failure_samples) < 3:
+                            resolution_failure_samples.append(f"landing fallback: {type(exc).__name__}: {exc}")
+                if status != "ok" or used_url is None:
+                    # Could not download; do NOT mark seen so a transient failure is retried.
+                    warn(f"  download failed ({status}): {title[:80]}")
+                    skipped.append({"institution": key, "title": title, "reason": status, "source_url": item["source_url"]})
                     resolution_failure_count += 1
                     if len(resolution_failure_samples) < 3:
-                        resolution_failure_samples.append(f"landing: {type(exc).__name__}: {exc}")
+                        resolution_failure_samples.append(f"download: {status}: {title[:80]}")
                     continue
-            bcg_external_only = key == "bcg" and bool(candidates)
-            candidates = filter_institution_pdf_candidates(key, candidates)
-            bcg_external_only = bcg_external_only and not candidates
-            if cfg.get("pdf_exclude"):
-                candidates = [c for c in candidates if not re.search(cfg["pdf_exclude"], c, re.I)]
-            # Some sites (e.g. WEF) return the bare site name as og:title.
-            if item["title"].strip().lower() in {"", cfg["name_en"].lower()}:
-                item["title"] = _title_from_url_slug(item["source_url"]) or item["title"]
-
-            if not candidates:
-                if cfg.get("require_pdf") or bcg_external_only or (key == "imf" and pending):
-                    # A promised main PDF, or only third-party citations on a
-                    # BCG page, cannot establish this source report's contents.
-                    # Keep the source visible and retryable rather than seen.
-                    resolution_failure_count += 1
-                    if len(resolution_failure_samples) < 3:
-                        resolution_failure_samples.append(f"main PDF missing: {item['source_url']}")
-                    skipped.append({"institution": key, "title": item["title"], "reason": "main_pdf_missing", "source_url": item["source_url"]})
-                    continue
-                # Page reachable but has no downloadable PDF (e.g. a Brookings op-ed).
-                seen_items[dedup_key] = {"first_seen": today, "status": "no_pdf"}
-                skipped.append({"institution": key, "title": item["title"], "reason": "no_pdf", "source_url": item["source_url"]})
-                continue
-
-            title = item["title"] or item["guid"] or item["source_url"]
-            filename = f"{cfg['token']}_{slug(title)}_{short_hash(dedup_key)}.pdf"
-            if matches_dependency_hold(held_versions, filename, item, candidates):
-                skipped.append({'institution': key, 'reason': 'dependency_hold', 'source_url': item['source_url']})
-                continue
-            dest = output_dir / filename
-            used_url, status = download_pdf(session, candidates[:3], dest, args.request_timeout, max_bytes, impersonate=cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"), proxy=cfg.get("_proxy"))
-            # A deterministic/direct candidate may have changed on the source site.
-            # Try Coveo's cached HTML before touching the WAF-protected landing page.
-            if (status != "ok" or used_url is None) and item.get("coveo_unique_id") and not preview_attempted:
-                preview_attempted = True
-                try:
-                    preview_candidates = collect_coveo_preview_candidates(
-                        cfg,
-                        session,
-                        item["coveo_unique_id"],
-                        item["source_url"],
-                        args.request_timeout,
-                    )
-                    preview_candidates = filter_institution_pdf_candidates(key, preview_candidates)
-                    if cfg.get("pdf_exclude"):
-                        preview_candidates = [
-                            candidate for candidate in preview_candidates
-                            if not re.search(cfg["pdf_exclude"], candidate, re.I)
-                        ]
-                    preview_candidates = [candidate for candidate in preview_candidates if candidate not in candidates]
-                    if preview_candidates:
-                        used_url, status = download_pdf(
-                            session,
-                            preview_candidates[:3],
-                            dest,
-                            args.request_timeout,
-                            max_bytes,
-                            impersonate=cfg.get("impersonate", False),
-                            profile=cfg.get("impersonate_profile"),
-                            proxy=cfg.get("_proxy"),
-                        )
-                except Exception as exc:  # noqa: BLE001 - use origin fallback
-                    if len(resolution_failure_samples) < 3:
-                        resolution_failure_samples.append(f"Coveo preview fallback: {type(exc).__name__}: {exc}")
-            # If Coveo cannot resolve the PDF, still try the landing page.
-            if (status != "ok" or used_url is None) and item.get("scrape_url") and not landing_attempted:
-                landing_attempted = True
-                try:
-                    page = http_get(session, item["scrape_url"], args.request_timeout, cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"), proxy=cfg.get("_proxy"))
-                    page.raise_for_status()
-                    scraped_candidates = scrape_pdf_candidates(page.text, getattr(page, "url", None) or item["scrape_url"])
-                    scraped_candidates = filter_institution_pdf_candidates(key, scraped_candidates)
-                    if cfg.get("pdf_exclude"):
-                        scraped_candidates = [
-                            candidate for candidate in scraped_candidates
-                            if not re.search(cfg["pdf_exclude"], candidate, re.I)
-                        ]
-                    scraped_candidates = [candidate for candidate in scraped_candidates if candidate not in candidates]
-                    if scraped_candidates:
-                        used_url, status = download_pdf(
-                            session,
-                            scraped_candidates[:3],
-                            dest,
-                            args.request_timeout,
-                            max_bytes,
-                            impersonate=cfg.get("impersonate", False),
-                            profile=cfg.get("impersonate_profile"),
-                            proxy=cfg.get("_proxy"),
-                        )
-                except Exception as exc:  # noqa: BLE001 - retry the item next run
-                    if len(resolution_failure_samples) < 3:
-                        resolution_failure_samples.append(f"landing fallback: {type(exc).__name__}: {exc}")
-            if status != "ok" or used_url is None:
-                # Could not download; do NOT mark seen so a transient failure is retried.
-                warn(f"  download failed ({status}): {title[:80]}")
-                skipped.append({"institution": key, "title": title, "reason": status, "source_url": item["source_url"]})
-                resolution_failure_count += 1
-                if len(resolution_failure_samples) < 3:
-                    resolution_failure_samples.append(f"download: {status}: {title[:80]}")
-                continue
 
             if key == "imf" and pending:
                 pending.resolved.add(dedup_key)
@@ -2192,6 +2221,9 @@ def main() -> int:
                 "feed_pdf_candidates": feed_pdf_candidates,
                 "force_reprocess": force_reprocess,
             }
+            if recovered is not None:
+                record.update(recovered)
+                verified_original_count += 1
             append_archive(archive_path, record)
             downloaded.append(record)
             new_count += 1
@@ -2215,9 +2247,16 @@ def main() -> int:
             github_warning(f"{cfg['name_en']} source intake remains incomplete: {health_detail}")
 
         if discovery_error:
-            source_status = "degraded" if new_count else "error"
+            # Cached originals do not demonstrate a functioning live source.
+            source_status = "degraded" if new_count > verified_original_count else "error"
             if discovery_error not in health_detail:
                 health_detail = discovery_error + "; " + health_detail
+
+        if verified_original_count:
+            if source_status in {"ok", "empty"}:
+                source_status = "degraded"
+            health_detail += (f"; {verified_original_count} reviewed original(s) recovered from private cache; "
+                              "live PDF access for these sources was not verified")
 
         source_checks.append({
             "institution": key,
@@ -2232,6 +2271,9 @@ def main() -> int:
             "required_for_clean_zero": bool(cfg.get("required_for_clean_zero")),
             "error": health_detail,
         })
+        if key == "imf" and verified_originals:
+            source_checks[-1].update(verified_original_recovery_count=verified_original_count,
+                                    verified_original_manifest_sha256=verified_originals.manifest_sha256)
         log(f"  {cfg['name_en']}: {new_count} new PDF(s)")
 
     prune_seen_state(state, args.seen_retention_days)
