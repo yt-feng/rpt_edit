@@ -385,16 +385,36 @@ class StorageStatus(Exception):
         self.response = {'ResponseMetadata': {'HTTPStatusCode': status}}
 
 
+def transport_category(error):
+    """Classify only the exception type; never inspect its text or exception chain."""
+    from requests.exceptions import ConnectionError as RequestConnectionError, Timeout as RequestTimeout
+    from urllib3.exceptions import NewConnectionError, TimeoutError as HTTPTimeoutError
+    if isinstance(error, NewConnectionError):
+        return 'connect'
+    if isinstance(error, (TimeoutError, RequestTimeout, HTTPTimeoutError)):
+        return 'timeout'
+    if isinstance(error, (ConnectionError, RequestConnectionError)):
+        return 'connect'
+    return 'request_unknown'
+
+
+def emit_import_event(event):
+    print(json.dumps(event, sort_keys=True), file=sys.stderr, flush=True)
+
+
 class SignedStorage:
     """Only the exact S3-shaped GET and conditional PUT used by OriginalCache."""
     def __init__(self, plan, session, *, clock=time.time):
         self.plan, self.session, self.clock = plan, session, clock
         self.entries = {entry['key']: entry for entry in plan['objects']}
         self.calls = {}
+        self.last_request = None
 
     def _entry(self, bucket, key, operation):
         require(bucket == self.plan['bucket'] and key in self.entries, 'storage_target')
         entry = self.entries[key]; request = entry[operation]
+        self.last_request = {'method': operation.upper(), 'sha256': entry['binding']['sha256'],
+                             'stage': 'request_validation'}
         validate_url(request['url'], bucket=bucket, host=self.plan['host'], key=key, method=request['method'],
                      headers=request['headers'], ctx=self.plan['context'], now=int(self.clock()))
         counter = (key, operation); self.calls[counter] = self.calls.get(counter, 0) + 1
@@ -403,12 +423,18 @@ class SignedStorage:
 
     def _request(self, entry, operation, payload=None):
         request = entry[operation]
+        self.last_request['stage'] = 'request'
         try:
             response = self.session.request(request['method'], request['url'], headers=request['headers'],
                 data=payload, timeout=(20, 30), allow_redirects=False, stream=True, verify=True)
-        except Exception:
+        except Exception as error:
+            self.last_request['transport'] = transport_category(error)
             raise BridgeError('storage_transport') from None
+        self.last_request['stage'] = 'response'
+        if type(response.status_code) is int and 100 <= response.status_code <= 599:
+            self.last_request['http_status'] = response.status_code
         if response.url != request['url']:
+            self.last_request['stage'] = 'response_target'
             response.close(); raise BridgeError('storage_response_target')
         if response.status_code != 200:
             status = response.status_code; response.close(); raise StorageStatus(status)
@@ -425,13 +451,16 @@ class SignedStorage:
             require(not headers.get('content-encoding') or headers['content-encoding'] == 'identity', 'storage_encoding')
             length = int(raw_length)
             require(length == entry['binding']['size'], 'storage_length')
+            self.last_request['stage'] = 'body_read'
             payload = response.raw.read(length + 1, decode_content=False)
+            self.last_request['stage'] = 'body_complete'
             return {'ContentLength': length, 'ContentType': headers.get('content-type'),
                     'Metadata': {key.removeprefix('x-amz-meta-'): value for key, value in headers.items()
                                  if key.startswith('x-amz-meta-')}, 'Body': io.BytesIO(payload)}
         except BridgeError:
             raise
-        except Exception:
+        except Exception as error:
+            self.last_request['transport'] = transport_category(error)
             raise BridgeError('storage_body_read') from None
         finally:
             response.close()
@@ -459,20 +488,84 @@ def requests_session():
     return session
 
 
-def import_prepared(rows, prepared, plan, production, session, *, clock=time.time):
+def resume_missing_rows(rows, snapshot):
+    """Validate an externally authenticated full readback; select only definite absence."""
+    require(isinstance(snapshot, dict) and set(snapshot) == {
+        'status', 'accepted', 'manifest_sha256', 'originals', 'expected_bytes', 'counts', 'results'
+    }, 'resume_contract')
+    require(snapshot['manifest_sha256'] == MANIFEST_SHA256
+            and type(snapshot['originals']) is int and snapshot['originals'] == len(rows) == EXPECTED_COUNT
+            and type(snapshot['expected_bytes']) is int
+            and snapshot['expected_bytes'] == sum(row['size'] for row in rows), 'resume_identity')
+    categories = {'verified', 'missing', 'invalid', 'read_error'}
+    counts = snapshot['counts']
+    require(isinstance(counts, dict) and set(counts) == categories
+            and all(type(value) is int and 0 <= value <= EXPECTED_COUNT for value in counts.values()),
+            'resume_counts')
+    results = snapshot['results']
+    require(isinstance(results, list) and len(results) == EXPECTED_COUNT, 'resume_inventory')
+    expected = {(row['item']['guid'], row['sha256']) for row in rows}
+    require(len(expected) == EXPECTED_COUNT, 'resume_inventory')
+    observed, actual_counts, missing = set(), dict.fromkeys(categories, 0), set()
+    for result in results:
+        require(isinstance(result, dict) and set(result) == {'guid', 'sha256', 'status', 'code'}
+                and all(isinstance(value, str) for value in result.values()), 'resume_result')
+        identity = (result['guid'], result['sha256'])
+        require(identity in expected and identity not in observed, 'resume_inventory')
+        observed.add(identity)
+        status = result['status']
+        require(status in categories, 'resume_result')
+        actual_counts[status] += 1
+        # An uncertain or malformed object is never treated as absent or overwritten.
+        require(status in {'verified', 'missing'}, 'resume_not_definitive')
+        require(result['code'] == {'verified': 'original_verified', 'missing': 'original_missing'}[status],
+                'resume_result')
+        if status == 'missing':
+            missing.add(identity)
+    require(observed == expected and counts == actual_counts, 'resume_counts')
+    accepted = counts['verified'] == EXPECTED_COUNT
+    require(type(snapshot['accepted']) is bool and snapshot['accepted'] == accepted
+            and snapshot['status'] == ('cloud_readback_verified' if accepted else 'cloud_readback_incomplete'),
+            'resume_acceptance')
+    return [row for row in rows if (row['item']['guid'], row['sha256']) in missing]
+
+
+def import_prepared(rows, prepared, plan, production, session, *, clock=time.time, report=None,
+                    resume_readback=None):
     cache, _, _ = production
     validate_plan(plan, rows, plan['context'], int(clock()))
     require(set(prepared) == {row['binding']['id'] for row in rows}, 'prepared_inventory')
     for row in rows:
         cache.validate_payload(row['binding'], prepared[row['binding']['id']])
+    selected = rows if resume_readback is None else resume_missing_rows(rows, resume_readback)
+    carried = len(rows) - len(selected)
     adapter = SignedStorage(plan, session, clock=clock)
     original_cache = cache.OriginalCache.single_attempt(adapter, plan['bucket'])
     reused = 0
-    for row in rows:
+    for index, row in enumerate(selected):
+        adapter.last_request = None
         # put performs GET, conditional PUT if absent, then an exact GET readback.
-        reused += int(original_cache.put(row['binding'], prepared[row['binding']['id']]))
-    return {'status': 'verified', 'manifest_sha256': MANIFEST_SHA256, 'originals': len(rows),
-            'bytes': sum(row['size'] for row in rows), 'reused': reused, 'written': len(rows) - reused}
+        try:
+            existed = bool(original_cache.put(row['binding'], prepared[row['binding']['id']]))
+        except Exception as error:
+            if report is not None:
+                report({'event': 'import_stopped', 'code': safe_error_code(error),
+                        'guid': row['item']['guid'], 'sha256': row['sha256'],
+                        'completed': index, 'reused': reused, 'written': index - reused,
+                        'carried_cloud_verified': carried, 'this_attempt_verified': index,
+                        'request': adapter.last_request})
+            raise
+        reused += int(existed)
+        if report is not None:
+            report({'event': 'original_completed', 'guid': row['item']['guid'], 'sha256': row['sha256'],
+                    'result': 'reused' if existed else 'written', 'completed': index + 1,
+                    'carried_cloud_verified': carried, 'this_attempt_verified': index + 1,
+                    'reused': reused, 'written': index + 1 - reused})
+    return {'status': 'import_attempt_verified', 'accepted': False, 'requires_cloud_readback': True,
+            'manifest_sha256': MANIFEST_SHA256, 'originals': len(rows),
+            'bytes': sum(row['size'] for row in rows), 'carried_cloud_verified': carried,
+            'this_attempt_verified': len(selected), 'this_attempt_bytes': sum(row['size'] for row in selected),
+            'reused': reused, 'written': len(selected) - reused}
 
 
 def safe_error_code(error):
@@ -552,6 +645,8 @@ def main(argv=None):
             part.add_argument('--originals', type=Path, required=True)
             part.add_argument('--run-id', required=True)
             part.add_argument('--head-sha', required=True)
+            part.add_argument('--resume-readback', type=Path,
+                              help='Externally authenticated cloud readback JSON; only definite missing rows run')
     args = parser.parse_args(argv)
     if args.command == 'keygen':
         return keygen(args.session)
@@ -580,8 +675,11 @@ def main(argv=None):
     plan, ctx = open_envelope(raw, private, request, args.run_id, args.head_sha, int(time.time()))
     validate_plan(plan, rows, ctx, int(time.time()))
     prepared = prepare_files(rows, args.originals, production)
+    resume_readback = (strict_json(read_file(args.resume_readback, MAX_ENVELOPE))
+                       if args.resume_readback is not None else None)
     with requests_session() as session:
-        return import_prepared(rows, prepared, plan, production, session)
+        return import_prepared(rows, prepared, plan, production, session, report=emit_import_event,
+                               resume_readback=resume_readback)
 
 
 if __name__ == '__main__':

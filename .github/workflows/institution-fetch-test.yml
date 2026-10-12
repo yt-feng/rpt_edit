@@ -29,6 +29,7 @@ jobs:
           sparse-checkout: |
             scripts/imf_reviewed_cache_bridge.py
             scripts/reviewed-originals.json
+            scripts/imf_production_preflight.py
       - uses: actions/checkout@v4
         with:
           ref: a1b68ba1ffe4d79281ed2f015aad74182bb24d01
@@ -36,7 +37,7 @@ jobs:
           persist-credentials: false
           sparse-checkout: |
             scripts
-            institution_feeds/pending_intake
+            institution_feeds
       - uses: actions/checkout@v4
         with:
           ref: main
@@ -82,6 +83,10 @@ jobs:
             --pending current/institution_feeds/pending_intake/imf.json \
             --public-request "$RUNNER_TEMP/imf-public-request.json" \
             "${output_args[@]}" > _imf_cache_transfer/summary.json
+          if [ "$OPERATION" = verify ]; then
+            python -I scripts/imf_production_preflight.py --repo helper \
+              > _imf_cache_transfer/production-preflight.json
+          fi
       - name: Upload encrypted transfer or readback receipt only
         if: always()
         uses: actions/upload-artifact@v4
@@ -90,5 +95,6 @@ jobs:
           path: |
             _imf_cache_transfer/encrypted.json
             _imf_cache_transfer/summary.json
+            _imf_cache_transfer/production-preflight.json
           retention-days: 1
           if-no-files-found: warn
