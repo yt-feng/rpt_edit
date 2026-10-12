@@ -1,0 +1,115 @@
+/* Scoped documentation styles; the site's account and report UI stay shared. */
+.api-reference { --api-soft: #edf6f3; --api-border: #cce1dc; --api-header-height: 66px; --api-tabs-height: 0px; max-width: 1180px; padding-top: 38px; }
+.api-reference * { box-sizing: border-box; }
+.api-reference [hidden] { display: none !important; }
+.api-reference a { color: var(--accent); }
+.api-reference h1, .api-reference h2, .api-reference h3, .api-reference h4 { color: var(--ink); }
+.api-reference p, .api-reference li { line-height: 1.85; }
+.api-reference p { margin: 0 0 16px; }
+.api-reference h1 { margin: 10px 0 20px; font-size: clamp(30px, 4vw, 48px); line-height: 1.25; letter-spacing: -.04em; }
+.api-reference h2 { font-size: 27px; line-height: 1.4; margin: 0 0 10px; }
+.api-reference h3 { font-size: 19px; line-height: 1.5; margin: 30px 0 12px; }
+.api-reference h4 { font-size: 15px; margin: 20px 0 10px; }
+.api-reference :is(h2,h3,h4,[data-api-panel]) { scroll-margin-top: calc(var(--api-header-height) + var(--api-tabs-height) + 16px); }
+.api-reference :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.api-hero { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr); gap: 46px; align-items: center; padding: 14px 0 38px; }
+.api-kicker { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.api-lead { max-width: 700px; color: var(--muted); font-size: 15px; }
+.api-hero-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 24px 0; }
+.api-hero-actions a { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 16px; border: 1px solid var(--api-border); border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 700; }
+.api-hero-actions .api-primary { color: white; background: var(--accent); border-color: var(--accent); }
+.api-facts { display: flex; flex-wrap: wrap; gap: 8px 22px; color: var(--muted); font-size: 12px; }
+.api-facts strong { color: var(--ink); }
+.api-flow { background: var(--panel); border: 1px solid var(--api-border); border-radius: 16px; padding: 26px; box-shadow: var(--shadow); }
+.api-flow-label { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 20px; color: var(--muted); font-size: 11px; letter-spacing: .07em; }
+.api-flow-label span:last-child { color: var(--accent); }
+.api-flow ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 17px; }
+.api-flow li { display: grid; grid-template-columns: 27px 1fr; gap: 12px; align-items: start; }
+.api-flow li > span { display: grid; place-items: center; color: var(--accent); background: var(--api-soft); border-radius: 7px; height: 27px; font-size: 12px; font-weight: 700; }
+.api-flow b, .api-flow small { display: block; }
+.api-flow b { font-size: 14px; line-height: 1.5; }
+.api-flow small { font-size: 11px; color: var(--muted); margin-top: 4px; }
+.api-reference .api-tab-wrap { position: static; top: var(--api-header-height); z-index: 9; padding: 9px 0; background: var(--bg); border-block: 1px solid var(--line); }
+.api-reference[data-api-layout="measured"] .api-tab-wrap { position: sticky; }
+.api-tabs { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: thin; padding: 4px; }
+.api-tabs a { flex: 0 0 auto; padding: 12px 16px; border-radius: 7px; font-size: 13px; line-height: 1.4; font-weight: 700; text-decoration: none; white-space: nowrap; color: var(--muted); }
+.api-tabs a:hover { color: var(--ink); background: var(--panel); }
+.api-tabs a[aria-selected="true"] { color: var(--accent-strong); background: var(--api-soft); box-shadow: inset 0 0 0 1px var(--api-border); }
+.api-tab-hint { display: none; margin: 5px 6px 0 !important; color: var(--muted); font-size: 11px; }
+.api-panel { padding: 32px 0 12px; min-width: 0; }
+.api-panel-intro { max-width: 860px; color: var(--muted); font-size: 14px; }
+.api-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 24px 0; }
+.api-card { padding: 22px; border: 1px solid var(--line); background: var(--panel); border-radius: 12px; min-width: 0; }
+.api-card .api-card-label { font-size: 10px; color: var(--accent); letter-spacing: .1em; font-weight: 700; margin-bottom: 12px; }
+.api-card h3 { margin: 0 0 10px; font-size: 17px; }
+.api-card p { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+.api-card a { font-size: 12px; font-weight: 700; text-decoration: none; }
+.api-note { margin: 20px 0; padding: 15px 18px; border-inline-start: 3px solid var(--accent); background: var(--api-soft); border-radius: 0 8px 8px 0; font-size: 13px; line-height: 1.85; }
+.api-note p:last-child { margin-bottom: 0; }
+.api-split { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 24px; align-items: start; }
+.api-steps { margin: 16px 0 24px; padding-inline-start: 22px; }
+.api-steps li { padding-inline-start: 7px; margin: 10px 0; font-size: 14px; }
+.api-steps strong { color: var(--ink); }
+.api-codebox { margin: 18px 0 24px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; min-width: 0; background: var(--panel); }
+.api-codebar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 9px 14px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+.api-codebar button { min-height: 30px; background: transparent; border: 1px solid var(--line); border-radius: 5px; padding: 4px 10px; color: var(--ink); font-size: 11px; cursor: pointer; }
+.api-codebar button:hover { border-color: var(--accent); color: var(--accent); }
+.api-reference pre { margin: 0; max-width: 100%; padding: 20px; overflow: auto; background: var(--panel); color: var(--ink); font-size: 12px; line-height: 1.85; tab-size: 2; }
+.api-reference code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .91em; overflow-wrap: anywhere; }
+.api-reference pre code { font-size: inherit; overflow-wrap: normal; white-space: pre; }
+.api-table-wrap { margin: 16px 0 26px; border: 1px solid var(--line); border-radius: 10px; overflow: auto; background: var(--panel); }
+.api-field-table { width: 100%; border-collapse: collapse; text-align: start; font-size: 12px; line-height: 1.75; }
+.api-field-table th { padding: 12px 16px; background: var(--api-soft); font-weight: 700; color: var(--ink); }
+.api-field-table td { padding: 13px 16px; border-top: 1px solid var(--line); vertical-align: top; overflow-wrap: anywhere; }
+.api-field-table th, .api-field-table td { text-align: start; }
+.api-field-table td:first-child { width: 25%; color: var(--accent-strong); font-weight: 650; }
+.api-field-table td:nth-child(2) { width: 17%; color: var(--muted); }
+.api-field-table caption { text-align: start; padding: 12px 16px; font-size: 13px; font-weight: 700; }
+.api-endpoint { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin: 18px 0; padding: 14px 16px; border: 1px solid var(--api-border); background: var(--panel); border-radius: 8px; font-size: 13px; }
+.api-method { flex-shrink: 0; color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: .06em; }
+.api-badge { display: inline-block; padding: 2px 7px; margin: 2px 4px 2px 0; border: 1px solid var(--line); border-radius: 5px; font-size: 11px; color: var(--muted); background: var(--panel); }
+.api-reference details { margin: 16px 0; padding: 16px 18px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; }
+.api-reference summary { cursor: pointer; font-weight: 700; font-size: 14px; line-height: 1.7; }
+.api-reference details[open] summary { margin-bottom: 14px; }
+.api-reference details .api-codebox { margin-bottom: 0; }
+.api-docs-footer { padding: 25px 0 12px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.8; }
+.api-copy-status { position: fixed; bottom: 22px; inset-inline-end: 22px; z-index: 50; max-width: min(340px, calc(100vw - 40px)); border-radius: 8px; background: var(--ink); color: var(--bg); box-shadow: var(--shadow); font-size: 12px; }
+.api-copy-status:not(:empty) { padding: 12px 18px; }
+@media (prefers-color-scheme: dark) {
+  .api-reference { --api-soft: #152b2a; --api-border: #2b4643; }
+  .api-reference .api-primary { color: #081412; background: #88cfc4; border-color: #88cfc4; }
+}
+@media (max-width: 900px) {
+  .api-hero { grid-template-columns: minmax(0,1fr); gap: 18px; }
+  .api-flow { max-width: 100%; }
+  .api-flow ol { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+  .api-card-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .api-tab-hint { display: block; }
+}
+@media (max-width: 600px) {
+  .api-reference { padding-top: 22px; }
+  .api-reference h1 { font-size: 33px; }
+  .api-reference h2 { font-size: 23px; }
+  .api-hero { padding-bottom: 24px; }
+  .api-card-grid, .api-split { grid-template-columns: minmax(0,1fr); gap: 12px; }
+  .api-flow { padding: 18px; }
+  .api-flow ol { grid-template-columns: minmax(0,1fr); }
+  .api-tabs a { padding: 11px 13px; }
+  .api-field-table { min-width: 590px; }
+  .api-field-table th, .api-field-table td { padding: 12px; }
+  .api-reference pre { padding: 16px; font-size: 11px; }
+  .api-panel { padding-top: 24px; }
+}
+/* With JavaScript unavailable, keep the chapter links in normal flow and leave
+   room for the shared mobile header when following an ordinary anchor. */
+@media (max-width: 760px) {
+  .api-reference { --api-header-height: 180px; }
+}
+@media print {
+  .api-reference [data-api-panel][hidden] { display: block !important; }
+  .api-tab-wrap, .api-codebar button, .api-hero-actions, .api-copy-status { display: none; }
+  .api-reference pre { white-space: pre-wrap; }
+  .api-reference pre code { white-space: pre-wrap; }
+  .api-table-wrap { overflow: visible; }
+  .api-field-table { min-width: 0; }
+}

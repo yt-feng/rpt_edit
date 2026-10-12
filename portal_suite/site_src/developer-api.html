@@ -4,69 +4,447 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <title>开发者 API 文档 | KC桌面</title>
-  <meta name="description" content="使用自己的 API 密钥读取已授权的 KC桌面报告、图表、图片、文本、元数据与翻译。">
+  <title>开发者 API 文档 · 字段、图表与接入示例 | KC桌面</title>
+  <meta name="description" content="了解 KC桌面 API 可读取的报告字段、图表描述、解析文本、中英翻译与过程稿元数据。提供完整字段表、JSON 示例、cURL 与 Python 接入步骤。">
   <link rel="canonical" href="https://portal.example.invalid/developer-api.html">
   <link rel="stylesheet" href="assets/styles.css?v=site-20260908a">
+  <link rel="stylesheet" href="assets/developer-api.css?v=docs-20261012a">
 </head>
 <body data-page="developer-api" data-analytics-auto="manual">
   <header class="topbar">
     <a class="brand" href="/" aria-label="KC桌面 home"><img src="assets/app-mark.svg" alt="" width="34" height="34"><span>KC桌面</span></a>
     <nav class="topbar-actions" aria-label="站点导航"><a class="topbar-link" href="/">报告检索</a><a class="topbar-link" href="research.html">AI 研究</a><a class="topbar-link" href="blog/">Blog</a><a id="newsfeedNav" class="topbar-link" href="newsfeed.html">Newsfeed</a><button id="accountGate" class="account-button" type="button">登录</button></nav>
   </header>
-  <main class="shell api-docs-shell">
-    <p class="journey-eyebrow">KC桌面 · 开发者</p>
-    <h1>把已授权的研究内容接入自己的工具。</h1>
-    <p>API 只读开放报告与已生成的内容。先由管理员开通权限，再在“我的账号 → 开发者 API”生成自己的密钥。这里的内容读取与 AI 研究次数分别管理。</p>
-    <section aria-labelledby="apiStart"><h2 id="apiStart">1. 创建密钥并开始读取</h2>
-      <ol><li>联系管理员开通 API，确认内容范围、可用操作及有效期。</li><li>登录账号，展开“开发者 API”，输入用途名称并生成密钥。完整密钥只显示一次，请当场保存。</li><li>在服务端环境变量中保存密钥，通过 <code>Authorization: Bearer</code> 请求头发送。不要把密钥放进 URL、公开代码或网页前端。</li></ol>
-      <p>API 基础地址：<code>https://kcdesk.com/api/content/v1</code>。以下示例假设已在环境变量 <code>KCD_API_KEY</code> 中配置你的密钥。</p>
-      <pre><code>curl --fail-with-body \
-  -H "Authorization: Bearer $KCD_API_KEY" \
-  'https://kcdesk.com/api/content/v1/reports?limit=25'</code></pre>
-      <p>返回 <code>{"ok":true,"items":[...],"next_cursor":null}</code>。如有 <code>next_cursor</code>，原样放进下一次请求的 <code>cursor</code> 参数并进行 URL 编码；不要自行构造游标。空列表表示本次筛选中没有可返回的报告。</p>
-    </section>
-    <section aria-labelledby="apiRoutes"><h2 id="apiRoutes">2. 读取报告与关联内容</h2>
-      <table class="api-docs-table"><thead><tr><th>GET 路径（相对基础地址）</th><th>用途与参数</th></tr></thead><tbody>
-        <tr><td><code>/reports</code></td><td>报告列表。可选 <code>date=YYYY-MM-DD</code>（报告发布日期）、<code>limit</code>（默认 25，最大 100）、<code>cursor</code>。</td></tr>
-        <tr><td><code>/reports/{id}</code></td><td>单份报告的元数据。报告 ID 从列表获取，不使用 R2 路径或文件名。</td></tr>
-        <tr><td><code>/reports/{id}/download</code></td><td>原报告 PDF，直接返回文件字节；需要 <code>reports:download</code> 权限。</td></tr>
-        <tr><td><code>/reports/{id}/artifacts</code></td><td>可用关联内容列表。可选 <code>kind</code>、<code>language</code>、<code>limit</code> 和 <code>cursor</code>。</td></tr>
-        <tr><td><code>/reports/{id}/artifacts/{artifactId}</code></td><td>下载列表中指定的关联内容，返回原有 MIME 类型与文件字节；需要 <code>artifacts:read</code> 权限。</td></tr>
-      </tbody></table>
-      <h3>有哪些内容可用？</h3>
-      <p><code>kind</code> 可为 <code>text</code>（文本，可能为摘要或节选）、<code>image</code>（图片）、<code>chart</code>（图表）、<code>metadata</code>（结构数据）、<code>translation</code>（翻译）、<code>article</code>（文章）或 <code>pdf</code>。语言使用列表中的 <code>language</code>，例如 <code>zh</code>、<code>en</code>；<code>und</code> 表示未指定语言。</p>
-      <p>关联内容描述包含 <code>id</code>、<code>report_id</code>、<code>kind</code>、<code>language</code>、<code>mime_type</code>、<code>size</code>，可附文件名与校验值。文本范围由 <code>text_scope</code> 说明，<code>partial_excerpt</code> 表示节选，不应当作全文；可附 <code>page_number</code> 标明页码。部分索引图表的 <code>size</code> 尚未知时为 <code>null</code>。仅返回实际可用的产物，不保证每份报告都有图片、图表、全文或每种语言的翻译。此接口不会现场生成缺失内容。</p>
-      <pre><code># 将 REPORT_ID 替换为报告列表返回的 id
-curl --fail-with-body -H "Authorization: Bearer $KCD_API_KEY" \
-  'https://kcdesk.com/api/content/v1/reports/REPORT_ID/artifacts?kind=chart&amp;limit=25'
+  <main class="shell api-reference" data-api-docs>
+    <div class="api-hero"><div>
+      <p class="api-kicker">KC桌面 / CONTENT API / V1</p>
+      <h1>让研究资料，<br>进入你的工作流。</h1>
+      <p class="api-lead">从一份报告的标题与机构，到图表、解析文本、已有译文和源页面定位。通过一个 API，把已授权的研究内容接入自己的资料库、研究工作台与内部系统。</p>
+      <div class="api-hero-actions"><a class="api-primary" data-api-link href="#apiStart">开始接入 ↗</a><a data-api-link href="#api-reports">查看可用字段</a><a href="mailto:info@kcdesk.com?subject=KC%20Desk%20API">联系开通</a></div>
+      <div class="api-facts"><span><strong>5</strong> 个读取接口</span><span><strong>7</strong> 类关联材料</span><span><strong>JSON + 原文件</strong> 交付</span></div>
+    </div><aside class="api-flow" aria-label="内容读取流程"><div class="api-flow-label"><span>ONE REPORT · CONNECTED CONTENT</span><span>READ ONLY</span></div><ol><li><span>01</span><div><b>找到报告</b><small>报告 ID · 标题 · 机构 · 日期</small></div></li><li><span>02</span><div><b>查看关联材料</b><small>图表 · 文本 · 译文 · 元数据</small></div></li><li><span>03</span><div><b>下载到自己的系统</b><small>PDF · Markdown · JSON · 图像</small></div></li></ol></aside></div>
+    <div class="api-tab-wrap"><nav class="api-tabs" data-api-tabs aria-label="API 文档章节"><a id="tab-overview" data-api-tab href="#api-overview">概览与接入</a><a id="tab-reports" data-api-tab href="#api-reports">报告字段</a><a id="tab-charts" data-api-tab href="#api-charts">图表与图片</a><a id="tab-text" data-api-tab href="#api-text">文本与翻译</a><a id="tab-metadata" data-api-tab href="#api-metadata">过程稿元数据</a><a id="tab-examples" data-api-tab href="#api-examples">接口与示例</a><a id="tab-access" data-api-tab href="#api-access">权限与排错</a></nav><p class="api-tab-hint">左右滑动可查看全部章节</p></div>
+<section class="api-panel" id="api-overview" data-api-panel><p class="api-kicker">01 / START HERE</p><h2>把已有研究内容，接入自己的系统</h2><p class="api-panel-intro">5 个只读接口，围绕同一个报告 ID 连接资料、图表、译文与结构化说明。先跑通一个请求，再按需要选择数据。</p>
+<div class="api-card-grid">
+<article class="api-card"><p class="api-card-label">RESEARCH LIBRARY</p><h3>建立自己的研究资料库</h3><p>用报告 ID 串联机构、日期、原始 PDF、已解析文本和已有译文，让资料进入你的内部系统。</p><a data-api-link href="#api-reports">查看报告字段 →</a></article>
+<article class="api-card"><p class="api-card-label">CHART WORKFLOW</p><h3>把图表带入研究工作台</h3><p>获得图像文件，以及已索引图表的标题、趋势描述、指标名称、涉及地区与单位，便于自行筛选归类。</p><a data-api-link href="#api-charts">查看图表数据 →</a></article>
+<article class="api-card"><p class="api-card-label">CONTENT REUSE</p><h3>复用已有文本与翻译</h3><p>读取 Markdown、已有中英文翻译、文章草稿及播客文本脚本，接入你自己的阅读和内容整理流程。</p><a data-api-link href="#api-text">查看可用文件 →</a></article>
+</div>
+<h3 id="apiStart">从开通到第一次读取</h3><ol class="api-steps">
+<li><strong>开通内容权限。</strong>联系 <a href="mailto:info@kcdesk.com">info@kcdesk.com</a> 或微信 <strong>MacroGate</strong>，确认报告范围、可用操作与有效期。</li>
+<li><strong>生成自己的密钥。</strong>登录后在「我的账号 → 开发者 API」填写用途名称，例如“内部研究库”，生成并当场保存完整密钥；完整密钥只显示一次。</li>
+<li><strong>保存在服务端环境变量中。</strong>下面示例使用 <code>KCD_API_KEY</code>；通过 <code>Authorization: Bearer</code> 请求头鉴权。密钥不要写进公开代码、URL 或网页前端。</li>
+<li><strong>先获取报告 ID，再读取关联内容。</strong>从列表取得 <code>id</code>，接着调用详情、PDF 或关联内容接口。所有 ID 都应使用返回值。</li></ol><div class="api-endpoint"><span class="api-method">GET</span><code>/reports?limit=25</code><span class="api-badge">reports:read</span></div><div class="api-codebox"><div class="api-codebar"><span>cURL · 第一个请求</span><button type="button" data-api-copy="code-start" aria-label="复制cURL · 第一个请求">复制</button></div><pre><code id="code-start">curl --fail-with-body \
+  -H &quot;Authorization: Bearer $KCD_API_KEY&quot; \
+  &#x27;https://kcdesk.com/api/content/v1/reports?limit=25&#x27;</code></pre></div><div class="api-codebox"><div class="api-codebar"><span>JSON · 报告列表响应（虚构示例）</span><button type="button" data-api-copy="code-start-response" aria-label="复制JSON · 报告列表响应（虚构示例）">复制</button></div><pre><code id="code-start-response">{
+  &quot;ok&quot;: true,
+  &quot;items&quot;: [
+    {
+      &quot;id&quot;: &quot;0123456789abcdef01234567&quot;,
+      &quot;title&quot;: &quot;Global Energy Outlook — 示例报告&quot;,
+      &quot;title_zh&quot;: &quot;全球能源展望 — 示例报告&quot;,
+      &quot;title_en&quot;: &quot;Global Energy Outlook — Example&quot;,
+      &quot;institution&quot;: &quot;示例研究机构&quot;,
+      &quot;date&quot;: &quot;2026-10-08&quot;,
+      &quot;page_count&quot;: 24,
+      &quot;pdf_listed&quot;: true,
+      &quot;source&quot;: &quot;catalog&quot;,
+      &quot;processed_updated_at&quot;: &quot;2026-10-09T02:30:00Z&quot;
+    }
+  ],
+  &quot;next_cursor&quot;: null
+}</code></pre></div><div class="api-note">API 基础地址：<code>https://kcdesk.com/api/content/v1</code>。文档中的报告、图表、ID、日期与数值均为<strong>结构示例</strong>；实际内容由你的授权和已发布产物决定。</div><h3>一份报告，可以关联哪些材料？</h3><div class="api-table-wrap" tabindex="0" role="region" aria-label="内容关系"><table class="api-field-table"><caption>内容关系</caption><thead><tr><th scope="col">材料</th><th scope="col">返回形式</th><th scope="col">可以如何使用</th></tr></thead><tbody>
+<tr><td>原始报告</td><td>PDF 原文件</td><td>从报告详情关联到原 PDF，便于保留原文或进行内部归档。</td></tr>
+<tr><td>解析文本与已有译文</td><td>Markdown / TXT / 翻译 PDF</td><td>适合阅读、建立自己的文本索引和中英文资料整理。</td></tr>
+<tr><td>图表与图片</td><td>JPEG / PNG / WebP</td><td>图表索引中的图像，以及处理过程中保留下来的图片。</td></tr>
+<tr><td>结构化说明</td><td>JSON</td><td>报告字段、图表主题与描述、源页面定位、图片映射及翻译说明。</td></tr>
+</tbody></table></div><div class="api-note">这里提供<strong>已经生成的内容读取</strong>，与账号里的 AI 研究次数分别管理。并非每份报告都有全部材料；先读取关联内容列表，即可知道这份报告实际有哪些可用文件。</div>
+</section>
+<section class="api-panel" id="api-reports" data-api-panel><p class="api-kicker">02 / REPORT SCHEMA</p><h2>先看清楚，一份报告有哪些字段</h2><p class="api-panel-intro">从标题、机构和日期，到 PDF 可用性、过程稿更新时间以及文件校验信息，每个字段都有明确用途。</p>
+<div class="api-endpoint"><span class="api-method">GET</span><code>/reports/{id}</code><span class="api-badge">reports:read</span></div><p>报告列表中的每个 <code>items[]</code>，与单份报告详情的 <code>report</code> 使用同一套字段。下面列的是当前实际返回的数据；空字符串与可选字段有单独说明。</p><div class="api-table-wrap" tabindex="0" role="region" aria-label="报告元数据：11 个当前字段"><table class="api-field-table"><caption>报告元数据：11 个当前字段</caption><thead><tr><th scope="col">字段</th><th scope="col">类型 / 返回条件</th><th scope="col">说明与用途</th></tr></thead><tbody>
+<tr><td><code>id</code></td><td>string · 必有</td><td>稳定的报告标识。用于关联 PDF 和关联内容；作为字符串原样保存，不从标题或文件名自行推导。</td></tr>
+<tr><td><code>title</code></td><td>string · 必有</td><td>报告主标题。适合作为资料库中的默认展示名称。</td></tr>
+<tr><td><code>title_zh</code></td><td>string · 必有</td><td>已有中文标题；没有时返回空字符串。可以回退使用 <code>title</code>。</td></tr>
+<tr><td><code>title_en</code></td><td>string · 必有</td><td>已有英文标题；没有时返回空字符串。它表示标题，不表示一定存在英文全文。</td></tr>
+<tr><td><code>institution</code></td><td>string · 必有</td><td>研究机构名称；未知时可能为空字符串，便于在你的系统里按机构归类。</td></tr>
+<tr><td><code>date</code></td><td>string · 必有</td><td>报告记录日期，通常为 <code>YYYY-MM-DD</code>，未知时为空字符串。列表的 <code>date</code> 参数按此字段筛选。</td></tr>
+<tr><td><code>page_count</code></td><td>integer · 通常返回</td><td>非负页数。<code>0</code> 表示当前记录没有可用页数，不能据此判断 PDF 是空文件。</td></tr>
+<tr><td><code>pdf_listed</code></td><td>boolean · 必有</td><td>当前目录是否列有原报告 PDF。<code>true</code> 仍需在下载时核对授权与文件可用性。</td></tr>
+<tr><td><code>source</code></td><td>string · 必有</td><td><code>catalog</code> 为报告目录记录；<code>processed</code> 为单独发布的过程稿记录。</td></tr>
+<tr><td><code>processed_updated_at</code></td><td>string · 可选</td><td>有过程稿发布记录时提供的更新时间，通常为 ISO 8601 UTC 时间。可作为你定期复查关联内容的线索；不是独立的增量查询参数。</td></tr>
+<tr><td><code>pdf_available</code></td><td>boolean · 条件返回</td><td>当前在 <code>source=processed</code> 时返回 <code>false</code>，表示该记录不提供原报告 PDF；目录记录中通常省略此字段。</td></tr>
+</tbody></table></div><div class="api-codebox"><div class="api-codebar"><span>JSON · 单份报告详情（虚构示例）</span><button type="button" data-api-copy="code-report-detail" aria-label="复制JSON · 单份报告详情（虚构示例）">复制</button></div><pre><code id="code-report-detail">{
+  &quot;ok&quot;: true,
+  &quot;report&quot;: {
+    &quot;id&quot;: &quot;0123456789abcdef01234567&quot;,
+    &quot;title&quot;: &quot;Global Energy Outlook — 示例报告&quot;,
+    &quot;title_zh&quot;: &quot;全球能源展望 — 示例报告&quot;,
+    &quot;title_en&quot;: &quot;Global Energy Outlook — Example&quot;,
+    &quot;institution&quot;: &quot;示例研究机构&quot;,
+    &quot;date&quot;: &quot;2026-10-08&quot;,
+    &quot;page_count&quot;: 24,
+    &quot;pdf_listed&quot;: true,
+    &quot;source&quot;: &quot;catalog&quot;,
+    &quot;processed_updated_at&quot;: &quot;2026-10-09T02:30:00Z&quot;
+  }
+}</code></pre></div><details><summary>只有过程稿、没有原 PDF 的记录是什么样？</summary><div class="api-codebox"><div class="api-codebar"><span>JSON · 过程稿记录（虚构示例）</span><button type="button" data-api-copy="code-processed" aria-label="复制JSON · 过程稿记录（虚构示例）">复制</button></div><pre><code id="code-processed">{
+  &quot;ok&quot;: true,
+  &quot;report&quot;: {
+    &quot;id&quot;: &quot;abcdef0123456789abcdef01&quot;,
+    &quot;title&quot;: &quot;能源供需观察 — 示例过程稿&quot;,
+    &quot;title_zh&quot;: &quot;&quot;,
+    &quot;title_en&quot;: &quot;&quot;,
+    &quot;institution&quot;: &quot;&quot;,
+    &quot;date&quot;: &quot;2026-10-08&quot;,
+    &quot;page_count&quot;: 0,
+    &quot;pdf_listed&quot;: false,
+    &quot;pdf_available&quot;: false,
+    &quot;source&quot;: &quot;processed&quot;,
+    &quot;processed_updated_at&quot;: &quot;2026-10-09T02:30:00Z&quot;
+  }
+}</code></pre></div><p>这类记录仍可能有解析文本、译文或图片。继续查询它的关联内容列表；不要据此构造原 PDF 下载。</p></details><h3>如何把报告关联到具体文件？</h3><p>使用 <code>GET /reports/{id}/artifacts</code>，返回的每一项描述一份可读取的文件。文件描述与文件正文分开：列表先告诉你“有什么”，下载接口再返回实际字节。</p><div class="api-table-wrap" tabindex="0" role="region" aria-label="关联内容描述：10 个字段"><table class="api-field-table"><caption>关联内容描述：10 个字段</caption><thead><tr><th scope="col">字段</th><th scope="col">类型 / 返回条件</th><th scope="col">说明与用途</th></tr></thead><tbody>
+<tr><td><code>id</code></td><td>string · 必有</td><td>关联内容 ID。与 <code>report_id</code> 一起确定下载地址，不应假设每个 ID 都是哈希。</td></tr>
+<tr><td><code>report_id</code></td><td>string · 必有</td><td>所属报告 ID，用于在你的资料库中建立关联。</td></tr>
+<tr><td><code>kind</code></td><td>string · 必有</td><td><code>text / image / chart / metadata / translation / article / pdf</code> 七种材料类别。</td></tr>
+<tr><td><code>language</code></td><td>string · 必有</td><td>材料的语言，例如 <code>zh</code>、<code>en</code>；<code>und</code> 表示未标明语言，并非英文。</td></tr>
+<tr><td><code>mime_type</code></td><td>string · 必有</td><td>文件格式，例如 <code>text/markdown</code>、<code>application/json</code> 或 <code>image/jpeg</code>。</td></tr>
+<tr><td><code>size</code></td><td>integer | null · 必有</td><td>文件字节数。部分索引图表在列表中返回 <code>null</code>；下载响应会给出实际 <code>Content-Length</code>。</td></tr>
+<tr><td><code>filename</code></td><td>string · 可选</td><td>建议保存的文件名。保存前仍应在你自己的程序中处理重名；不要仅用它作为唯一标识。</td></tr>
+<tr><td><code>sha256</code></td><td>string · 可选</td><td>64 位十六进制文件校验值，可验证完整下载。已发布的静态材料通常提供；动态生成的说明、索引图表和节选不保证提供。</td></tr>
+<tr><td><code>text_scope</code></td><td>string · 可选</td><td>文本范围标识。<code>partial_excerpt</code> 明确表示节选；字段缺失也不应直接当作“已确认完整全文”。</td></tr>
+<tr><td><code>page_number</code></td><td>integer · 可选</td><td>协议预留的可选字段，当前发布内容的页码主要位于 <code>figure-metadata.json</code> 的 <code>images[].page_number</code> 中，不能依赖文件描述直接提供。</td></tr>
+</tbody></table></div><p>文件 <code>id</code> 是下载接口使用的标识，与文件内容的 <code>sha256</code> 校验值不同，请直接使用列表返回的 ID，不自行推导。</p><div class="api-codebox"><div class="api-codebar"><span>JSON · 关联内容列表（虚构示例）</span><button type="button" data-api-copy="code-artifact-descriptor" aria-label="复制JSON · 关联内容列表（虚构示例）">复制</button></div><pre><code id="code-artifact-descriptor">{
+  &quot;ok&quot;: true,
+  &quot;items&quot;: [
+    {
+      &quot;id&quot;: &quot;report-metadata&quot;,
+      &quot;report_id&quot;: &quot;0123456789abcdef01234567&quot;,
+      &quot;kind&quot;: &quot;metadata&quot;,
+      &quot;language&quot;: &quot;und&quot;,
+      &quot;mime_type&quot;: &quot;application/json&quot;,
+      &quot;size&quot;: 373,
+      &quot;filename&quot;: &quot;0123456789abcdef01234567.json&quot;
+    },
+    {
+      &quot;id&quot;: &quot;extracted-text&quot;,
+      &quot;report_id&quot;: &quot;0123456789abcdef01234567&quot;,
+      &quot;kind&quot;: &quot;text&quot;,
+      &quot;language&quot;: &quot;und&quot;,
+      &quot;mime_type&quot;: &quot;text/plain&quot;,
+      &quot;size&quot;: 4200,
+      &quot;filename&quot;: &quot;0123456789abcdef01234567.txt&quot;,
+      &quot;text_scope&quot;: &quot;partial_excerpt&quot;
+    },
+    {
+      &quot;id&quot;: &quot;abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789&quot;,
+      &quot;report_id&quot;: &quot;0123456789abcdef01234567&quot;,
+      &quot;kind&quot;: &quot;translation&quot;,
+      &quot;language&quot;: &quot;en&quot;,
+      &quot;mime_type&quot;: &quot;text/markdown&quot;,
+      &quot;size&quot;: 18524,
+      &quot;filename&quot;: &quot;translated_en.md&quot;,
+      &quot;sha256&quot;: &quot;0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef&quot;
+    }
+  ],
+  &quot;next_cursor&quot;: null
+}</code></pre></div><div class="api-note">字段缺失、<code>""</code>、<code>null</code> 含义不同：可选字段可能根本不出现；字符串为空表示当前无值；<code>size: null</code> 表示列表尚无文件大小。请按字段含义处理，不要都转换成 0。</div>
+</section>
+<section class="api-panel" id="api-charts" data-api-panel><p class="api-kicker">03 / CHARTS & IMAGES</p><h2>获得图像，也获得理解图像的线索</h2><p class="api-panel-intro">把图表图片与已有的主题、趋势和报告来源一起带入自己的工作台。</p>
+<div class="api-split"><article class="api-card"><p class="api-card-label">CHART</p><h3>已索引的图表</h3><p><code>kind=chart</code> 返回已索引图像，通常为 JPEG。对应的 JSON 描述可包含图表标题、趋势、指标名称、实体、时间范围、地区及单位。</p></article><article class="api-card"><p class="api-card-label">IMAGE</p><h3>解析保留的图片</h3><p><code>kind=image</code> 返回已发布的图片文件，可为 PNG、JPEG 或 WebP。源页码、像素大小与位置说明可能位于单独的过程稿元数据中。</p></article></div><h3>获取图像与描述的顺序</h3><ol class="api-steps"><li>按 <code>kind=chart</code> 或 <code>kind=image</code> 获取文件列表。</li><li>通过列表返回的 <code>id</code> 下载图像。按 <code>kind=metadata</code> 读取相关 JSON 文件。</li><li>用 JSON 内的 <code>image_id</code> 或 <code>filename</code> 关联图片；需要源页定位时，查看「过程稿元数据」。</li></ol><div class="api-codebox"><div class="api-codebar"><span>cURL · 查找图表文件</span><button type="button" data-api-copy="code-charts" aria-label="复制cURL · 查找图表文件">复制</button></div><pre><code id="code-charts">curl --fail-with-body \
+  -H &quot;Authorization: Bearer $KCD_API_KEY&quot; \
+  &#x27;https://kcdesk.com/api/content/v1/reports/REPORT_ID/artifacts?kind=chart&amp;limit=25&#x27;</code></pre></div><h3>图表索引 JSON：除了图片，还能获得什么？</h3><p>已建立索引的图表会有对应 <code>kind=metadata</code> 的 JSON 说明。它与下方“源页面定位元数据”是两种不同材料。</p><div class="api-table-wrap" tabindex="0" role="region" aria-label="已索引图表的 JSON 字段"><table class="api-field-table"><caption>已索引图表的 JSON 字段</caption><thead><tr><th scope="col">字段</th><th scope="col">类型 / 返回条件</th><th scope="col">说明与用途</th></tr></thead><tbody>
+<tr><td><code>id / image_id</code></td><td>string</td><td>图表记录标识与图像标识。<code>image_id</code> 用于把图表描述与对应图像关联。</td></tr>
+<tr><td><code>report_id / source_id</code></td><td>string</td><td>所属报告与来源标识；可用于你的资料库进行溯源。</td></tr>
+<tr><td><code>report_title / date_folder</code></td><td>string</td><td>所属报告标题与日期目录值。<code>date_folder</code> 保留数字日期形式；标准日期优先使用报告记录的 <code>date</code>。</td></tr>
+<tr><td><code>title</code></td><td>string</td><td>图表标题，可直接作为工作台中的展示标题。</td></tr>
+<tr><td><code>description</code></td><td>string</td><td>图表内容描述，适合作为图表卡片的说明。</td></tr>
+<tr><td><code>trend_summary</code></td><td>string</td><td>已有的趋势描述，便于快速理解图中主要变化。</td></tr>
+<tr><td><code>content_kind</code></td><td>string</td><td><code>chart</code>、<code>table</code>、<code>data_map</code>、<code>flow_diagram</code> 或 <code>data_visual</code>。</td></tr>
+<tr><td><code>chart_type</code></td><td>string</td><td>更具体的图表类型文本；缺乏明确类型时可能为 <code>chart</code>。</td></tr>
+<tr><td><code>metrics</code></td><td>string[]</td><td>涉及的指标名称，例如“石油需求”“同比增速”。这是名称列表，不是逐点数值数据。</td></tr>
+<tr><td><code>entities</code></td><td>string[]</td><td>涉及的公司、行业或其他实体名称。</td></tr>
+<tr><td><code>periods</code></td><td>string[]</td><td>图表提到的时间范围或年份文本。</td></tr>
+<tr><td><code>geographies</code></td><td>string[]</td><td>涉及的国家、地区等地理范围。</td></tr>
+<tr><td><code>units</code></td><td>string[]</td><td>单位名称，例如“百万桶/日”“%”。</td></tr>
+<tr><td><code>keywords</code></td><td>string[]</td><td>已有主题关键词，可用于你自己系统中的分类与检索。</td></tr>
+<tr><td><code>quality_score</code></td><td>integer</td><td>图表索引筛选分，当前公开索引范围为 60–100。不是数据真实性或研究观点准确率的评分。</td></tr>
+<tr><td><code>analysis_version</code></td><td>string</td><td>当前图表描述格式标识 <code>chart-search-v2</code>，可记录下来用于兼容性处理。</td></tr>
+</tbody></table></div><div class="api-codebox"><div class="api-codebar"><span>JSON · 图表描述文件正文（虚构示例）</span><button type="button" data-api-copy="code-chart-meta" aria-label="复制JSON · 图表描述文件正文（虚构示例）">复制</button></div><pre><code id="code-chart-meta">{
+  &quot;id&quot;: &quot;example_chart_01&quot;,
+  &quot;image_id&quot;: &quot;0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef&quot;,
+  &quot;analysis_version&quot;: &quot;chart-search-v2&quot;,
+  &quot;title&quot;: &quot;全球石油需求变化 — 示例图表&quot;,
+  &quot;content_kind&quot;: &quot;chart&quot;,
+  &quot;quality_score&quot;: 86,
+  &quot;chart_type&quot;: &quot;line&quot;,
+  &quot;description&quot;: &quot;展示示例年份的全球石油需求变化。&quot;,
+  &quot;trend_summary&quot;: &quot;图中示例曲线总体上行。&quot;,
+  &quot;metrics&quot;: [
+    &quot;石油需求&quot;
+  ],
+  &quot;entities&quot;: [
+    &quot;全球能源市场&quot;
+  ],
+  &quot;periods&quot;: [
+    &quot;2020–2026&quot;
+  ],
+  &quot;geographies&quot;: [
+    &quot;全球&quot;
+  ],
+  &quot;units&quot;: [
+    &quot;百万桶/日&quot;
+  ],
+  &quot;keywords&quot;: [
+    &quot;能源&quot;,
+    &quot;石油&quot;,
+    &quot;需求&quot;
+  ],
+  &quot;report_id&quot;: &quot;0123456789abcdef01234567&quot;,
+  &quot;source_id&quot;: &quot;0123456789abcdef01234567&quot;,
+  &quot;report_title&quot;: &quot;Global Energy Outlook — 示例报告&quot;,
+  &quot;date_folder&quot;: &quot;261008&quot;
+}</code></pre></div><div class="api-note">这些字段提供图表的<strong>语义描述和关联信息</strong>。并非每张解析图片都经过图表索引；元数据也不等同于已经提取好的财务指标数值表。若要重建图中的逐点数据，需要在你自己的流程中进一步处理。</div><p><a data-api-link href="#api-metadata">继续查看源页码、图片尺寸、标题脚注与位置坐标 →</a></p>
+</section>
+<section class="api-panel" id="api-text" data-api-panel><p class="api-kicker">04 / TEXT & TRANSLATION</p><h2>接入可阅读、可整理的文本材料</h2><p class="api-panel-intro">用文件类型、语言和文本范围判断材料用途，再把已有译文与图像保存为关联资料。</p>
+<div class="api-table-wrap" tabindex="0" role="region" aria-label="文本与翻译文件类型"><table class="api-field-table"><caption>文本与翻译文件类型</caption><thead><tr><th scope="col">kind</th><th scope="col">包含什么</th><th scope="col">常见文件与含义</th></tr></thead><tbody>
+<tr><td><code>text</code></td><td>解析文本 / 文本脚本</td><td><code>source_mineru.md</code>、<code>source_clean.md</code>、播客 TXT 脚本，或索引中已有的文本节选。</td></tr>
+<tr><td><code>translation</code></td><td>已有中英文译文</td><td><code>translated.md</code>（zh）、<code>translated_en.md</code>（en）；通常为 Markdown。</td></tr>
+<tr><td><code>article</code></td><td>已有文章草稿</td><td>微信文章、笔记、知乎文章等已发布过程稿；以实际 <code>filename</code> 与 <code>language</code> 区分。</td></tr>
+<tr><td><code>pdf</code></td><td>已生成的译文 PDF</td><td>有已发布译文 PDF 时可下载，语言由 <code>language</code> 指明；原报告 PDF 使用独立 <code>/download</code> 接口。</td></tr>
+</tbody></table></div><div class="api-codebox"><div class="api-codebar"><span>cURL · 获取已有英文译文</span><button type="button" data-api-copy="code-translation" aria-label="复制cURL · 获取已有英文译文">复制</button></div><pre><code id="code-translation">curl --fail-with-body \
+  -H &quot;Authorization: Bearer $KCD_API_KEY&quot; \
+  &#x27;https://kcdesk.com/api/content/v1/reports/REPORT_ID/artifacts?kind=translation&amp;language=en&amp;limit=25&#x27;</code></pre></div><div class="api-codebox"><div class="api-codebar"><span>JSON · 英文译文列表（虚构示例）</span><button type="button" data-api-copy="code-translation-response" aria-label="复制JSON · 英文译文列表（虚构示例）">复制</button></div><pre><code id="code-translation-response">{
+  &quot;ok&quot;: true,
+  &quot;items&quot;: [
+    {
+      &quot;id&quot;: &quot;abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789&quot;,
+      &quot;report_id&quot;: &quot;0123456789abcdef01234567&quot;,
+      &quot;kind&quot;: &quot;translation&quot;,
+      &quot;language&quot;: &quot;en&quot;,
+      &quot;mime_type&quot;: &quot;text/markdown&quot;,
+      &quot;size&quot;: 18524,
+      &quot;filename&quot;: &quot;translated_en.md&quot;,
+      &quot;sha256&quot;: &quot;0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef&quot;
+    }
+  ],
+  &quot;next_cursor&quot;: null
+}</code></pre></div><div class="api-codebox"><div class="api-codebar"><span>cURL · 下载选中的译文</span><button type="button" data-api-copy="code-download-translation" aria-label="复制cURL · 下载选中的译文">复制</button></div><pre><code id="code-download-translation">curl --fail \
+  -H &quot;Authorization: Bearer $KCD_API_KEY&quot; \
+  &#x27;https://kcdesk.com/api/content/v1/reports/REPORT_ID/artifacts/ARTIFACT_ID&#x27; \
+  --output translated_en.md</code></pre></div><h3>语言、文本范围与文件名怎么配合使用？</h3><div class="api-table-wrap" tabindex="0" role="region" aria-label="如何判断拿到的文本"><table class="api-field-table"><caption>如何判断拿到的文本</caption><thead><tr><th scope="col">字段</th><th scope="col">类型 / 返回条件</th><th scope="col">说明与用途</th></tr></thead><tbody>
+<tr><td><code>language=zh / en</code></td><td>明确语言</td><td>分别表示中文与英文材料。筛选值应优先取自实际列表，其他语言是否可用取决于已发布产物。</td></tr>
+<tr><td><code>language=und</code></td><td>未标明语言</td><td>解析原文和部分图片常使用该值。第一次查询可以不加语言筛选，避免漏掉可用材料。</td></tr>
+<tr><td><code>text_scope=partial_excerpt</code></td><td>明确为节选</td><td>例如 <code>extracted-text</code>。适合预览或索引，不应保存为“完整原文”。</td></tr>
+<tr><td><code>filename</code></td><td>区分具体材料</td><td>同一 <code>kind=text</code> 可能包含解析文本或播客脚本；应结合文件名辨别用途。</td></tr>
+<tr><td><code>mime_type</code></td><td>选择读取方式</td><td><code>text/markdown</code> 与 <code>text/plain</code> 读取为文本；<code>application/pdf</code> 按二进制保存。</td></tr>
+</tbody></table></div><h3>保留 Markdown 中的图片关联</h3><p>已发布的 Markdown 图片引用会使用对应交付文件名。按报告 ID 建立本地目录，再把相关 Markdown 与图片保存到同一目录，通常就能保留图文关系；具体文件清单以关联内容列表为准。</p><div class="api-codebox"><div class="api-codebar"><span>示例 · 按报告组织本地文件</span><button type="button" data-api-copy="code-files" aria-label="复制示例 · 按报告组织本地文件">复制</button></div><pre><code id="code-files">research-library/
+  0123456789abcdef01234567/
+    source_mineru.md
+    translated.md
+    translated_en.md
+    source_image_001.png
+    figure-metadata.json
+    translation-metadata.json</code></pre></div><div class="api-note">文件树仅表示一种组织方式，不表示每份报告都具备这些文件。目录中没有目标语言时，接口返回空列表；读取 API 不会自动发起新的翻译或 AI 研究。</div>
+</section>
+<section class="api-panel" id="api-metadata" data-api-panel><p class="api-kicker">05 / PROCESS METADATA</p><h2>让资料有来源、有位置、有上下文</h2><p class="api-panel-intro">了解图像来自哪一页、有哪些标题脚注，以及译文与源图如何对应。这些字段帮助你在自己的系统里组织和展示资料。</p>
+<p>使用 <code>kind=metadata</code> 列出 JSON 材料，再下载对应文件。这里列出可公开的结构：报告说明、图表描述、源页面与图片定位、译文图片映射，以及解析与翻译说明。不同记录可能只有其中一部分。</p><div class="api-codebox"><div class="api-codebar"><span>cURL · 列出结构化说明文件</span><button type="button" data-api-copy="code-metadata-list" aria-label="复制cURL · 列出结构化说明文件">复制</button></div><pre><code id="code-metadata-list">curl --fail-with-body \
+  -H &quot;Authorization: Bearer $KCD_API_KEY&quot; \
+  &#x27;https://kcdesk.com/api/content/v1/reports/REPORT_ID/artifacts?kind=metadata&amp;limit=25&#x27;</code></pre></div><div class="api-table-wrap" tabindex="0" role="region" aria-label="元数据文件地图"><table class="api-field-table"><caption>元数据文件地图</caption><thead><tr><th scope="col">材料</th><th scope="col">常见文件名</th><th scope="col">可获得的信息</th></tr></thead><tbody>
+<tr><td>报告元数据 JSON</td><td><code>{report_id}.json</code></td><td>与「报告字段」的 Report 对象一致，文件正文不包裹 <code>ok/report</code>。</td></tr>
+<tr><td>已索引图表描述</td><td><code>{image_id}.json</code></td><td>包含图表标题、指标名称、趋势等，详见「图表与图片」。</td></tr>
+<tr><td>源页面与图像定位</td><td><code>figure-metadata.json</code></td><td>包含 <code>records</code>、<code>pages</code>、<code>images</code> 三组结构。</td></tr>
+<tr><td>译文图片映射</td><td><code>translation-figures.json</code></td><td>连接原始图片占位标记与实际交付文件名。</td></tr>
+<tr><td>解析 / 翻译说明</td><td><code>processing-metadata.json</code> 或 <code>translation-metadata.json</code></td><td>包含提取来源、已有翻译语言、翻译提示和未翻译单元数量。</td></tr>
+</tbody></table></div><h3 id="api-figure-fields">源页面与图像定位</h3><p><code>figure-metadata.json</code> 的三组数组分别描述内容块、源页与图片。可按页码和图注辅助理解关系；<code>records</code> 与 <code>images</code> 没有直接逐项映射，不能假定一一对应。嵌套字段仅在来源已有有效值时提供，数组可能为空。</p><div class="api-table-wrap" tabindex="0" role="region" aria-label="figure-metadata.json：顶层与页面 / 图像字段"><table class="api-field-table"><caption>figure-metadata.json：顶层与页面 / 图像字段</caption><thead><tr><th scope="col">字段</th><th scope="col">类型 / 返回条件</th><th scope="col">说明与用途</th></tr></thead><tbody>
+<tr><td><code>records[]</code></td><td>object[]</td><td>提取出的图像、表格、标题、文本等记录，字段见下表。</td></tr>
+<tr><td><code>pages[].page_idx</code></td><td>integer</td><td>从 0 开始的源页面索引。</td></tr>
+<tr><td><code>pages[].page_size</code></td><td>number[2] · 可选</td><td>来源提供的页面尺寸；不要默认与图像像素尺寸使用相同单位。</td></tr>
+<tr><td><code>pages[].text_blocks[]</code></td><td>object[] · 可选</td><td>页面中的文本块或其他结构块，使用与 <code>records[]</code> 相同的字段集合。</td></tr>
+<tr><td><code>images[].filename</code></td><td>string</td><td>实际交付的图像文件名；与关联文件描述中的 <code>filename</code> 关联。</td></tr>
+<tr><td><code>images[].sha256</code></td><td>string</td><td>图像内容的 SHA-256，可用于检查下载文件及确认图片关联。</td></tr>
+<tr><td><code>images[].page_number</code></td><td>integer · 可选</td><td>对应源页码，从 1 开始；由来源的页索引换算。</td></tr>
+<tr><td><code>images[].pixel_size</code></td><td>number[2] · 可选</td><td>图像的像素宽、高，可用于渲染布局或选择预览尺寸。</td></tr>
+</tbody></table></div><div class="api-table-wrap" tabindex="0" role="region" aria-label="records[] 与 pages[].text_blocks[]：结构块字段"><table class="api-field-table"><caption>records[] 与 pages[].text_blocks[]：结构块字段</caption><thead><tr><th scope="col">字段</th><th scope="col">类型 / 返回条件</th><th scope="col">说明与用途</th></tr></thead><tbody>
+<tr><td><code>index / block_index</code></td><td>integer · 可选</td><td>来源中的记录 / 块索引，便于追踪结构顺序。</td></tr>
+<tr><td><code>page_idx</code></td><td>integer · 可选</td><td>记录所处的源页面索引，从 0 开始。</td></tr>
+<tr><td><code>level</code></td><td>integer · 可选</td><td>来源提供的层级值，可辅助恢复标题等结构；不是固定的 HTML 标题级别契约。</td></tr>
+<tr><td><code>kind / type</code></td><td>string · 可选</td><td>来源类型：<code>image / table / chart / text / title / equation / figure</code>。</td></tr>
+<tr><td><code>bbox / body_bbox / content_bbox</code></td><td>number[4] · 可选</td><td>记录、主体或内容的位置数组，按来源保留。坐标未经统一归一化，不能默认均为像素坐标或相同比例。</td></tr>
+<tr><td><code>caption / text / body_text</code></td><td>string · 可选</td><td>已有标题、文本或主体内容。可以用于显示图表注释或恢复页面文本关系。</td></tr>
+<tr><td><code>captions / footnotes</code></td><td>array · 可选</td><td>标题或脚注列表。每项可能为字符串，也可能为 <code>{text, bbox?}</code>。</td></tr>
+<tr><td><code>content_captions / content_footnotes</code></td><td>array · 可选</td><td>内容区域对应的标题与脚注，元素形式同上。</td></tr>
+</tbody></table></div><div class="api-codebox"><div class="api-codebar"><span>JSON · 源页面与图片元数据（虚构示例）</span><button type="button" data-api-copy="code-figure-metadata" aria-label="复制JSON · 源页面与图片元数据（虚构示例）">复制</button></div><pre><code id="code-figure-metadata">{
+  &quot;records&quot;: [
+    {
+      &quot;index&quot;: 0,
+      &quot;page_idx&quot;: 2,
+      &quot;block_index&quot;: 4,
+      &quot;kind&quot;: &quot;chart&quot;,
+      &quot;bbox&quot;: [
+        72,
+        140,
+        540,
+        400
+      ],
+      &quot;caption&quot;: &quot;图 1：全球石油需求 — 示例&quot;,
+      &quot;footnotes&quot;: [
+        {
+          &quot;text&quot;: &quot;来源：示例研究机构&quot;,
+          &quot;bbox&quot;: [
+            72,
+            405,
+            540,
+            425
+          ]
+        }
+      ]
+    }
+  ],
+  &quot;pages&quot;: [
+    {
+      &quot;page_idx&quot;: 2,
+      &quot;page_size&quot;: [
+        612,
+        792
+      ],
+      &quot;text_blocks&quot;: [
+        {
+          &quot;type&quot;: &quot;title&quot;,
+          &quot;level&quot;: 1,
+          &quot;text&quot;: &quot;能源需求展望 — 示例&quot;,
+          &quot;bbox&quot;: [
+            72,
+            60,
+            540,
+            96
+          ]
+        }
+      ]
+    }
+  ],
+  &quot;images&quot;: [
+    {
+      &quot;filename&quot;: &quot;source_image_001.png&quot;,
+      &quot;sha256&quot;: &quot;0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef&quot;,
+      &quot;page_number&quot;: 3,
+      &quot;pixel_size&quot;: [
+        1440,
+        810
+      ]
+    }
+  ]
+}</code></pre></div><h3>译文图片映射</h3><p><code>translation-figures.json</code> 提供 <code>images[]</code>：其中 <code>token</code> 为图片占位标记，<code>filename</code> 为对应交付文件名。可以在处理已有译文时定位图片关系。</p><div class="api-codebox"><div class="api-codebar"><span>JSON · 译文图片映射（虚构示例）</span><button type="button" data-api-copy="code-translation-figures" aria-label="复制JSON · 译文图片映射（虚构示例）">复制</button></div><pre><code id="code-translation-figures">{
+  &quot;images&quot;: [
+    {
+      &quot;token&quot;: &quot;[[PORTAL_IMAGE_001]]&quot;,
+      &quot;filename&quot;: &quot;source_image_001.png&quot;
+    }
+  ]
+}</code></pre></div><h3>解析与翻译说明</h3><div class="api-table-wrap" tabindex="0" role="region" aria-label="processing-metadata.json / translation-metadata.json 字段"><table class="api-field-table"><caption>processing-metadata.json / translation-metadata.json 字段</caption><thead><tr><th scope="col">字段</th><th scope="col">类型 / 返回条件</th><th scope="col">说明与用途</th></tr></thead><tbody>
+<tr><td><code>report_id / title / date</code></td><td>string</td><td>所属报告 ID、标题及这批材料的来源日期。</td></tr>
+<tr><td><code>extraction_method</code></td><td>string</td><td><code>mineru</code> 表示已完成的相应解析来源；<code>stored_text</code> 表示使用保存的文本。此标识不承诺文本完整性或质量。</td></tr>
+<tr><td><code>translation_language</code></td><td>string</td><td>当前说明采用的首个已有翻译语言；没有翻译时为空字符串。</td></tr>
+<tr><td><code>translation_languages</code></td><td>string[]</td><td>这批材料中已有的翻译语言列表，例如 <code>["en","zh"]</code>；没有时为空数组。</td></tr>
+<tr><td><code>translation_notice</code></td><td>string</td><td>来源保存的翻译提示或说明；可能为空字符串。多语言材料合并时，它对应首个翻译状态记录，并非每种语言独立的质量报告。</td></tr>
+<tr><td><code>untranslated_unit_count</code></td><td>integer</td><td>同一翻译状态记录中的未翻译单元数量；未知或无有效值时可能为 0。不能仅凭 0 断定全部内容已准确翻译。</td></tr>
+</tbody></table></div><div class="api-codebox"><div class="api-codebar"><span>JSON · 解析与翻译说明（虚构示例）</span><button type="button" data-api-copy="code-processing-metadata" aria-label="复制JSON · 解析与翻译说明（虚构示例）">复制</button></div><pre><code id="code-processing-metadata">{
+  &quot;report_id&quot;: &quot;0123456789abcdef01234567&quot;,
+  &quot;title&quot;: &quot;Global Energy Outlook — 示例报告&quot;,
+  &quot;date&quot;: &quot;2026-10-08&quot;,
+  &quot;extraction_method&quot;: &quot;mineru&quot;,
+  &quot;translation_language&quot;: &quot;zh&quot;,
+  &quot;translation_languages&quot;: [
+    &quot;en&quot;,
+    &quot;zh&quot;
+  ],
+  &quot;translation_notice&quot;: &quot;示例：部分专有名词保留原文。&quot;,
+  &quot;untranslated_unit_count&quot;: 2
+}</code></pre></div><div class="api-note">元数据描述的是当前已有材料。没有页码、坐标或翻译说明时，对应字段会缺失或为空；请保留这种“未知”状态。需要下载文件时，仍使用关联内容列表返回的 ID，而不是把元数据文件名直接拼成下载地址。</div>
+</section>
+<section class="api-panel" id="api-examples" data-api-panel><p class="api-kicker">06 / API REFERENCE</p><h2>从单次读取，到自己的同步流程</h2><p class="api-panel-intro">每个接口都使用同一基础地址与 Bearer 密钥。下面的 cURL 和 Python 例子可以直接作为接入起点。</p>
+<h3 id="apiRoutes">五个接口，一套读取流程</h3><div class="api-table-wrap" tabindex="0" role="region" aria-label="接口总览"><table class="api-field-table"><caption>接口总览</caption><thead><tr><th scope="col">GET 路径（相对基础地址）</th><th scope="col">需要的操作权限</th><th scope="col">响应内容</th></tr></thead><tbody>
+<tr><td><code>/reports</code></td><td><code>reports:read</code></td><td>报告列表；返回 <code>{ok, items, next_cursor}</code>。</td></tr>
+<tr><td><code>/reports/{id}</code></td><td><code>reports:read</code></td><td>单份报告；返回 <code>{ok, report}</code>。</td></tr>
+<tr><td><code>/reports/{id}/download</code></td><td><code>reports:download</code></td><td>下载原报告 PDF，成功时直接返回文件字节。</td></tr>
+<tr><td><code>/reports/{id}/artifacts</code></td><td><code>artifacts:read</code></td><td>关联内容列表；返回 <code>{ok, items, next_cursor}</code>。</td></tr>
+<tr><td><code>/reports/{id}/artifacts/{artifactId}</code></td><td><code>artifacts:read</code></td><td>下载指定关联文件，成功时按其 MIME 类型返回文件字节。</td></tr>
+</tbody></table></div><h3>查询参数</h3><div class="api-table-wrap" tabindex="0" role="region" aria-label="支持的查询参数"><table class="api-field-table"><caption>支持的查询参数</caption><thead><tr><th scope="col">字段</th><th scope="col">类型 / 返回条件</th><th scope="col">说明与用途</th></tr></thead><tbody>
+<tr><td><code>date</code></td><td>报告列表 · 可选</td><td>真实有效的 <code>YYYY-MM-DD</code>，按报告日期筛选；不是上传时间或更新时间。</td></tr>
+<tr><td><code>kind</code></td><td>关联内容列表 · 可选</td><td>按材料类型精确筛选，例如 <code>chart</code>、<code>translation</code>、<code>metadata</code>。</td></tr>
+<tr><td><code>language</code></td><td>关联内容列表 · 可选</td><td>按语言标识精确筛选，例如 <code>en</code>、<code>zh</code> 或 <code>und</code>。</td></tr>
+<tr><td><code>limit</code></td><td>两种列表 · 可选</td><td>整数 1–100，默认 25。</td></tr>
+<tr><td><code>cursor</code></td><td>两种列表 · 可选</td><td>上一次响应中的 <code>next_cursor</code>，原样使用并进行 URL 编码。翻页时保持原来的日期、类型与语言筛选。</td></tr>
+</tbody></table></div><div class="api-note">详情与文件下载接口不接受查询参数。列表没有关键词搜索、日期区间或更新时间筛选参数；不要传入 <code>q</code>、<code>from</code> 等未列出的参数。同一参数也不能重复传递。</div><div class="api-codebox"><div class="api-codebar"><span>cURL · 读取指定日期的报告</span><button type="button" data-api-copy="code-report-date" aria-label="复制cURL · 读取指定日期的报告">复制</button></div><pre><code id="code-report-date">curl --fail-with-body \
+  -H &quot;Authorization: Bearer $KCD_API_KEY&quot; \
+  &#x27;https://kcdesk.com/api/content/v1/reports?date=2026-10-08&amp;limit=100&#x27;</code></pre></div><div class="api-split"><div class="api-codebox"><div class="api-codebar"><span>cURL · 查看单份报告</span><button type="button" data-api-copy="code-report-request" aria-label="复制cURL · 查看单份报告">复制</button></div><pre><code id="code-report-request">curl --fail-with-body \
+  -H &quot;Authorization: Bearer $KCD_API_KEY&quot; \
+  &#x27;https://kcdesk.com/api/content/v1/reports/REPORT_ID&#x27;</code></pre></div><div class="api-codebox"><div class="api-codebar"><span>cURL · 下载原始 PDF</span><button type="button" data-api-copy="code-report-download" aria-label="复制cURL · 下载原始 PDF">复制</button></div><pre><code id="code-report-download">curl --fail \
+  -H &quot;Authorization: Bearer $KCD_API_KEY&quot; \
+  &#x27;https://kcdesk.com/api/content/v1/reports/REPORT_ID/download&#x27; \
+  --output report.pdf</code></pre></div></div><h3>响应如何处理</h3><ul class="api-steps"><li>列表与详情返回 JSON。<code>next_cursor: null</code> 表示本次分页结束；<code>items: []</code> 不是服务错误。</li><li>文件接口返回二进制或文本正文，<strong>不是带下载链接的 JSON</strong>。先检查 HTTP 状态，再保存文件，避免把错误 JSON 保存成 PDF。下载的元数据 JSON 直接是文件内容，不额外包裹 <code>ok</code> 字段。</li><li>文件响应包含 <code>Content-Type</code>、<code>Content-Length</code>、<code>Content-Disposition</code>；部分文件还含 <code>ETag</code>。列表中的 <code>sha256</code> 可用于下载后的内容校验。</li><li>同一报告记录日期后续可能补入材料。定期复查近期日期并按报告 ID、关联文件 ID 和可选校验值去重，可避免重复保存；游标不是永久同步水位，也不代表固定不变的目录快照。报告按日期与 ID 倒序排列；关联文件按 ID 倒序排列，并非源报告的页码顺序。</li></ul><div class="api-codebox"><div class="api-codebar"><span>Python · 按日期分页，查找已有英文译文</span><button type="button" data-api-copy="code-python" aria-label="复制Python · 按日期分页，查找已有英文译文">复制</button></div><pre><code id="code-python"># Python 3 标准库。先在服务端环境变量中设置 KCD_API_KEY。
+# 这个例子只遍历目录，不会自动下载整批文件。
+import json
+import os
+import urllib.parse
+import urllib.request
 
-# 将 REPORT_ID 与 ARTIFACT_ID 替换为对应列表返回的 id
-curl --fail-with-body -H "Authorization: Bearer $KCD_API_KEY" \
-  'https://kcdesk.com/api/content/v1/reports/REPORT_ID/artifacts/ARTIFACT_ID' \
-  --output research-artifact.bin</code></pre>
-    </section>
-    <section aria-labelledby="apiPermissions"><h2 id="apiPermissions">3. 权限、有效期与额度</h2>
-      <p>管理员可选择“沿用网站现有下载权限”，或单独授权一组报告（也可授权全部报告）。API 授权不会修改网站会员状态与网页下载入口。可用操作分别为 <code>reports:read</code>、<code>reports:download</code>、<code>artifacts:read</code>；用户生成的密钥继承当前授权范围。</p>
-      <p>选择沿用网站权限时，报告 PDF 和关联文件下载也共用网站原有的试用下载额度，按报告去重计次；同一报告的多个关联文件不会重复消耗一次性的报告下载名额。</p>
-      <p>API 权限有明确到期时间。新密钥默认在 90 天后或 API 授权到期时失效，以更早者为准；每个用户最多保留 5 个有效密钥。撤销单个密钥只影响该密钥；管理员撤销 API 权限会同时撤销旧密钥，重新开通后需重新生成。</p>
-      <p>默认每分钟 30 次请求、每日 1000 次请求、每日 1 GiB 文件字节，实际以管理员配置为准。同一账号的多个密钥共享额度；每日额度在 UTC 00:00（北京时间 08:00）重置，分钟限额按整分钟窗口计数。完成身份验证后的内容请求都会计入请求数，包括内容不存在的请求。文件传输开始前会预留字节额度，中途中断也可能计入额度。AI 研究额外次数由管理员另行添加，不通过此 API 兑换积分或付款。</p>
-    </section>
-    <section aria-labelledby="apiErrors"><h2 id="apiErrors">4. 错误与重试</h2>
-      <p>错误响应为 <code>{"ok":false,"error":"错误码"}</code>。请先检查 HTTP 状态和错误码，再处理响应正文。</p>
-      <table class="api-docs-table"><thead><tr><th>错误码</th><th>处理方式</th></tr></thead><tbody>
-        <tr><td><code>key_invalid</code> / <code>key_expired</code> / <code>authentication_required</code></td><td>检查请求头与密钥有效期；必要时在账号内生成新密钥。</td></tr>
-        <tr><td><code>api_permission_denied</code> / <code>scope_denied</code> / <code>report_denied</code></td><td>确认 API 已开通，并包含该操作和报告。</td></tr>
-        <tr><td><code>rate_limited</code></td><td>降低并发与频率，等待后重试；如返回 Retry-After，请遵循该值。</td></tr>
-        <tr><td><code>daily_request_limit</code> / <code>daily_byte_limit</code></td><td>当日额度已用尽，等下一个每日额度窗口或联系管理员调整。</td></tr>
-        <tr><td><code>membership_required</code> / <code>download_limit_reached</code></td><td>网站会员或试用下载权限不可用，请联系管理员核对或续期。</td></tr>
-        <tr><td><code>invalid_request</code> / <code>content_not_found</code></td><td>使用列表返回的 ID、游标与语言；确认内容仍可用。</td></tr>
-        <tr><td><code>service_unavailable</code></td><td>稍后以渐增间隔重试，保留已完成下载。</td></tr>
-      </tbody></table>
-      <p>密钥遗失后无法查看原文，可撤销并生成新密钥。密钥管理入口仍在原有账号面板，日常网页报告下载方式不变。</p>
-    </section>
+BASE = &quot;https://kcdesk.com/api/content/v1&quot;
+TOKEN = os.environ[&quot;KCD_API_KEY&quot;]
+
+def get_json(path, params):
+    query = urllib.parse.urlencode(params)
+    request = urllib.request.Request(
+        BASE + path + (&quot;?&quot; + query if query else &quot;&quot;),
+        headers={&quot;Authorization&quot;: &quot;Bearer &quot; + TOKEN},
+    )
+    with urllib.request.urlopen(request, timeout=30) as response:
+        return json.load(response)
+
+def pages(path, params=None):
+    params = dict(params or {})
+    params[&quot;limit&quot;] = 100
+    while True:
+        payload = get_json(path, params)
+        yield from payload[&quot;items&quot;]
+        cursor = payload.get(&quot;next_cursor&quot;)
+        if not cursor:
+            break
+        params[&quot;cursor&quot;] = cursor
+
+for report in pages(&quot;/reports&quot;, {&quot;date&quot;: &quot;2026-10-08&quot;}):
+    print(report[&quot;id&quot;], report[&quot;title&quot;])
+    path = &quot;/reports/&quot; + report[&quot;id&quot;] + &quot;/artifacts&quot;
+    for item in pages(path, {&quot;kind&quot;: &quot;translation&quot;, &quot;language&quot;: &quot;en&quot;}):
+        print(&quot;  &quot;, item[&quot;id&quot;], item.get(&quot;filename&quot;), item[&quot;mime_type&quot;])</code></pre></div><p>例子适合先跑通接入。实际长期同步时，请增加请求间隔、失败记录和有限重试，并按下一个页签中的错误码处理授权与额度问题。</p>
+</section>
+<section class="api-panel" id="api-access" data-api-panel><p class="api-kicker">07 / ACCESS & SUPPORT</p><h2>把权限和调用规则，一次看明白</h2><p class="api-panel-intro">先区分授权问题、额度问题与暂时性服务问题，再决定下一步操作。</p>
+<h3 id="apiPermissions">授权范围、密钥与有效期</h3><div class="api-table-wrap" tabindex="0" role="region" aria-label="授权与密钥规则"><table class="api-field-table"><caption>授权与密钥规则</caption><thead><tr><th scope="col">项目</th><th scope="col">具体行为</th></tr></thead><tbody>
+<tr><td>沿用网站现有权限</td><td>按现有账号的报告访问权限读取。PDF 和关联文件下载共享网站原有的试用下载次数，按报告去重；同一报告的多个文件不会重复扣一次性报告下载名额。</td></tr>
+<tr><td>单独授权 API 内容</td><td>管理员可以授权指定报告集合，也可以授权全部 API 内容。此模式的内容范围独立设置，不会改变网页会员状态。</td></tr>
+<tr><td>操作权限</td><td><code>reports:read</code> 管报告列表与详情；<code>reports:download</code> 管原报告 PDF；<code>artifacts:read</code> 管关联文件的列表和下载。</td></tr>
+<tr><td>密钥生命周期</td><td>每账号最多 5 个有效密钥。新密钥默认在 90 天后或 API 授权到期时失效，以较早时间为准。</td></tr>
+<tr><td>撤销与重新开通</td><td>撤销单个密钥只影响该密钥。管理员撤销 API 权限会同时撤销旧密钥；重新开通后需要重新生成。</td></tr>
+<tr><td>密钥遗失</td><td>无法查看之前的完整密钥。请在账号面板撤销旧密钥，再生成新的密钥。</td></tr>
+</tbody></table></div><h3>默认调用额度</h3><div class="api-card-grid"><article class="api-card"><p class="api-card-label">PER MINUTE</p><h3>30 次 / 分钟</h3><p>按 UTC 整分钟窗口计数。</p></article><article class="api-card"><p class="api-card-label">PER DAY</p><h3>1,000 次 / 日</h3><p>每日北京时间 08:00 重置。</p></article><article class="api-card"><p class="api-card-label">FILE TRANSFER</p><h3>1 GiB / 日</h3><p>按下载文件预留的字节计数。</p></article></div><p>以上是默认值，实际以管理员给账号的配置为准。同一账号的多个密钥共享额度。通过身份与操作权限校验后的内容请求会计入请求数，包括后续内容不存在等失败请求；文件开始传输前会预留字节，中途断开也可能计入文件额度。列表与详情的目录 JSON 不计入文件字节额度；通过文件接口下载的元数据 JSON 属于文件，会计入。</p><div class="api-note">API 调用额度、网页试用下载次数和 AI 研究次数是不同的计数。如需调整内容范围、有效期或调用额度，请联系 <a href="mailto:info@kcdesk.com">info@kcdesk.com</a> 或微信 <strong>MacroGate</strong>。</div><h3 id="apiErrors">错误码与处理方式</h3><div class="api-codebox"><div class="api-codebar"><span>JSON · 错误响应</span><button type="button" data-api-copy="code-error" aria-label="复制JSON · 错误响应">复制</button></div><pre><code id="code-error">{
+  &quot;ok&quot;: false,
+  &quot;error&quot;: &quot;scope_denied&quot;
+}</code></pre></div><div class="api-table-wrap" tabindex="0" role="region" aria-label="内容 API 错误参考"><table class="api-field-table"><caption>内容 API 错误参考</caption><thead><tr><th scope="col">HTTP 状态</th><th scope="col">错误码</th><th scope="col">建议处理</th></tr></thead><tbody>
+<tr><td>401</td><td><code>key_invalid</code> / <code>key_expired</code></td><td>检查 Bearer 请求头与密钥。不要反复重试失效密钥；必要时重新生成。</td></tr>
+<tr><td>403</td><td><code>api_permission_denied</code> / <code>scope_denied</code> / <code>report_denied</code> / <code>account_disabled</code></td><td>核对 API 授权是否启用、有效期、操作权限及报告范围。</td></tr>
+<tr><td>403</td><td><code>membership_required</code></td><td>当前账号缺少所需的网站会员权限，请联系管理员核对授权。</td></tr>
+<tr><td>403 / 409 / 503</td><td><code>download_limit_reached</code></td><td>可能是试用下载额度不足、访问权限发生变化，或并发校验未完成；请结合 HTTP 状态处理，不能一概理解为次数已用完。</td></tr>
+<tr><td>400</td><td><code>invalid_request</code></td><td>检查日期、参数名、参数是否重复、分页游标与筛选条件。修正请求后再试。</td></tr>
+<tr><td>404</td><td><code>content_not_found</code></td><td>内容不可用或不在当前可见范围内；不一定意味着物理文件不存在。重新从列表取得 ID，并确认目标文件在当前可见材料中。</td></tr>
+<tr><td>405</td><td><code>method_not_allowed</code></td><td>内容接口仅支持 GET，请检查请求方法。</td></tr>
+<tr><td>429</td><td><code>rate_limited</code></td><td>降低调用频率，遵循 <code>Retry-After</code>；当前分钟限额响应提示等待 60 秒。</td></tr>
+<tr><td>429</td><td><code>daily_request_limit</code> / <code>daily_byte_limit</code></td><td>当日额度已满，等待新日窗口或联系管理员调整。响应可能给出保守的 <code>Retry-After: 86400</code>，并非下一次重置的精确倒计时。</td></tr>
+<tr><td>503</td><td><code>service_unavailable</code></td><td>采用有限次数的渐增等待重试，例如 2、5、15 秒；持续失败时停止并记录错误，避免循环占用额度。</td></tr>
+</tbody></table></div><h3>接入时常见的几个问题</h3><details><summary>列表能看到报告，为什么下载不一定成功？</summary><p>列表描述的是可见记录。下载时仍会重新检查当前授权、会员或试用权限、文件是否可用，以及账号剩余额度；请始终检查下载响应的 HTTP 状态。</p></details><details><summary>查询某种语言得到空列表，是什么意思？</summary><p>当前报告没有可返回的该语言材料。可以先去掉语言筛选查看实际列表；<code>und</code> 是未标明语言，不能视为英文。</p></details><details><summary>怎样按天更新自己的资料库？</summary><p>遍历目标日期的报告，再遍历每份报告的关联文件；在自己的系统中按 ID 与可选 SHA-256 去重。近期日期可以重复复查，以发现补发的材料。当前没有“自某更新时间之后”的查询参数或推送订阅。</p></details><details><summary>能通过这个 API 发起 AI 研究或即时翻译吗？</summary><p>目前这里提供已授权内容的读取与下载。AI 研究仍使用网站现有入口和次数；缺失的译文、图表或文本不会因读取请求而现场生成。</p></details>
+</section>
+    <div class="api-docs-footer">文档版本 v1 · 字段与行为核对于 2026-10-12。实际可用内容以账号授权与关联内容列表为准。需要开通或调整额度：<a href="mailto:info@kcdesk.com">info@kcdesk.com</a> · 微信 MacroGate。</div>
+    <div id="api-copy-status" class="api-copy-status" role="status" aria-live="polite" aria-atomic="true"></div>
   </main>
   <footer class="legal-footer"><a href="/">报告检索</a><a href="research.html">AI 研究</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="/?request=support">联系 KC桌面</a></footer>
-  <script src="assets/site-runtime.js"></script><script src="assets/contact.js?v=site-20260908a"></script><script src="assets/analytics.js"></script><script src="assets/app.js?v=site-20260908a"></script>
+  <script src="assets/site-runtime.js"></script><script src="assets/contact.js?v=site-20260908a"></script><script src="assets/analytics.js"></script><script src="assets/app.js?v=site-20260908a"></script><script src="assets/developer-api.js?v=docs-20261012a"></script>
 </body>
 </html>
