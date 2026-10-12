@@ -100,6 +100,30 @@ class SourceHealthTests(unittest.TestCase):
                                              source_health_failed_institutions="", source_health_backlog_only="false"))
                 self.assertNotIn("verified_original_recovery_count", data["source_checks"][0])
 
+    def test_official_preview_provenance_is_distinct_and_strict(self):
+        def preview_manifest():
+            data = live_manifest()
+            proof = data["downloaded"][0]["imf_live_download"]
+            del proof["crossref_sha256"]
+            proof.update(schema=2, metadata={"method": "official_source_preview", "preview_sha256": "c" * 64})
+            return data
+        self.assertEqual(self.classify(preview_manifest(), producer_exit_code=0)["source_health"], "healthy")
+        changes = [
+            lambda proof: proof.update(crossref_sha256="a" * 64),
+            lambda proof: proof.update(schema=1),
+            lambda proof: proof.update(metadata={}),
+            lambda proof: proof["metadata"].update(method="unreviewed_link"),
+            lambda proof: proof["metadata"].update(preview_sha256="invalid"),
+            lambda proof: proof["metadata"].update(unexpected=True),
+            lambda proof: proof.update(landing_url=proof["landing_url"].replace("-en.xml", "-es.xml"),
+                                       pdf_url=proof["pdf_url"].replace("-en.pdf", "-es.pdf")),
+        ]
+        for index, change in enumerate(changes):
+            data = preview_manifest(); row = data["downloaded"][0]; change(row["imf_live_download"])
+            row["pdf_url"] = row["imf_live_download"]["pdf_url"]
+            with self.subTest(case=index), self.assertRaises(health.InvalidSourceHealth):
+                self.classify(data, producer_exit_code=0)
+
     def test_live_receipt_requires_every_field_and_rejects_unknown_or_mixed_proofs(self):
         for missing in live_manifest()["downloaded"][0]["imf_live_download"]:
             data = live_manifest(); del data["downloaded"][0]["imf_live_download"][missing]

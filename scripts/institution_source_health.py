@@ -16,13 +16,14 @@ import re
 import sys
 
 from fetch_institution_latest_pdfs import DEFAULT_PUBLIC_INSTITUTION_KEYS, INSTITUTIONS, short_hash, slug
-from imf_elibrary_resolver import ResolutionError, source_url, title_key, validate_official_pair
+from imf_elibrary_resolver import ResolutionError, source_url, title_key, validate_official_pair, validate_publication_url
 from institution_verified_originals import RECOVERY_FIELDS, official_url
 
 
 LIVE_DOWNLOAD_FIELDS = {"schema", "source_guid", "source_url", "landing_url", "pdf_url", "doi", "title",
                         "identity_sha256", "crossref_sha256", "sha256", "bytes", "pages",
                         "landing_status", "pdf_status", "source_identity_verified", "transport"}
+PREVIEW_DOWNLOAD_FIELDS = (LIVE_DOWNLOAD_FIELDS - {"crossref_sha256"}) | {"metadata"}
 
 
 class InvalidSourceHealth(ValueError):
@@ -46,16 +47,25 @@ def validate_live_download(row: dict) -> None:
     are not in this manifest, so this classifier does not claim to rehash them.
     """
     proof = row["imf_live_download"]
-    require(row["institution"] == "imf" and isinstance(proof, dict)
-            and set(proof) == LIVE_DOWNLOAD_FIELDS)
-    require(type(proof["schema"]) is int and proof["schema"] == 1
-            and proof["source_identity_verified"] is True
+    require(row["institution"] == "imf" and isinstance(proof, dict))
+    require(type(proof.get("schema")) is int and proof["schema"] in {1, 2})
+    if proof["schema"] == 1:
+        require(set(proof) == LIVE_DOWNLOAD_FIELDS)
+        provenance_hash = proof["crossref_sha256"]
+    else:
+        require(set(proof) == PREVIEW_DOWNLOAD_FIELDS)
+        metadata = proof["metadata"]
+        require(isinstance(metadata, dict) and set(metadata) == {"method", "preview_sha256"}
+                and metadata["method"] == "official_source_preview")
+        provenance_hash = metadata["preview_sha256"]
+    require(isinstance(provenance_hash, str) and bool(re.fullmatch(r"[a-f0-9]{64}", provenance_hash)))
+    require(proof["source_identity_verified"] is True
             and proof["transport"] == "existing_subscription_vless_browser")
     for field in ("landing_status", "pdf_status"):
         require(type(proof[field]) is int and proof[field] == 200)
     require(type(proof["pages"]) is int and 1 <= proof["pages"] <= 5000
             and type(proof["bytes"]) is int and 1 <= proof["bytes"] <= 128 * 1024 * 1024)
-    for field in ("identity_sha256", "crossref_sha256", "sha256"):
+    for field in ("identity_sha256", "sha256"):
         require(isinstance(proof[field], str) and bool(re.fullmatch(r"[a-f0-9]{64}", proof[field])))
     for field in ("source_guid", "title"):
         require(isinstance(proof[field], str) and 0 < len(proof[field]) <= 4096
@@ -70,6 +80,9 @@ def validate_live_download(row: dict) -> None:
     try:
         source_url(proof["source_url"])
         validate_official_pair(proof["landing_url"], proof["pdf_url"], proof["doi"])
+        if proof["schema"] == 2:
+            locator = validate_publication_url(proof["landing_url"])
+            require(locator["kind"] == "journal" and locator["language"] == "en")
     except ResolutionError:
         raise InvalidSourceHealth("source_health_contract_invalid") from None
 
