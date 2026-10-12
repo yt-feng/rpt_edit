@@ -27,10 +27,10 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install requests curl_cffi pypdf
-      - name: Probe current nodes against frozen official PDF
+      - name: Inspect remaining subscription protocol metadata
         env:
           PROXY_SUBSCRIPTION_URL: ${{ secrets.PROXY_SUBSCRIPTION_URL }}
-        run: python scripts/cloud_imf_current_proxy_probe.py
+        run: python scripts/cloud_imf_current_proxy_probe.py --metadata-only
       - uses: actions/upload-artifact@v4
         if: always()
         with:

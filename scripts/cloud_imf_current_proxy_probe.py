@@ -10,15 +10,17 @@ from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 import contextlib
 import hashlib
+import html
 import importlib
 import io
 import json
 import os
 from pathlib import Path
+import re
 import sys
 import threading
 import time
-from urllib.parse import urlsplit
+from urllib.parse import parse_qsl, urlsplit
 
 MAX_NODES = 28
 MAX_BYTES = 32 * 1024 * 1024
@@ -26,8 +28,45 @@ TIMEOUT = 8
 OUTPUT = Path("_imf_current_proxy_probe")
 EXPECTED_PDF = "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026082.pdf"
 SCHEMES = {"http", "https", "socks5", "socks5h", "ss", "ssr", "vmess", "vless", "trojan"}
+INVENTORY_SCHEMES = SCHEMES | {"anytls", "hysteria", "hysteria2", "hy2", "tuic", "snell", "naive", "naive+https", "wireguard", "socks", "socks4", "socks4a"}
+VLESS_QUERY_KEYS = {"type", "encryption", "flow", "security", "path", "host", "serviceName", "mode", "authority", "extra", "fp", "sni", "alpn", "ech", "pcs", "vcn", "pbk", "sid", "spx", "pqv", "fm", "headerType", "seed", "mtu", "tti", "allowInsecure", "insecure", "packetEncoding", "ed", "eh"}
+VLESS_TRANSPORTS = {"tcp", "raw", "kcp", "ws", "http", "grpc", "httpupgrade", "xhttp"}
 OFFICIAL_HOSTS = {"www.imf.org", "imf.org", "origin-www.imf.org", "www.elibrary.imf.org"}
 SAVE_LOCK = threading.Lock()
+
+
+def line_scheme(line: str) -> str:
+    """Recognize URI schemes without emitting arbitrary subscription text."""
+    match = re.match(r"^([A-Za-z][A-Za-z0-9+.-]{0,31})://", line.strip())
+    if not match:
+        return "no_uri_scheme"
+    scheme = match.group(1).lower()
+    return scheme if scheme in INVENTORY_SCHEMES else "other_uri_scheme"
+
+
+def vless_metadata(line: str) -> dict:
+    """Only enumerated protocol settings, integer port and known key names."""
+    result = {"parse_valid": False}
+    try:
+        uri = urlsplit(line.strip())
+        pairs = parse_qsl(uri.query, keep_blank_values=True, errors="strict", max_num_fields=64)
+        keys = [key for key, _ in pairs]
+        values = dict(pairs)
+        result.update(
+            parse_valid=(uri.scheme == "vless" and bool(uri.hostname) and bool(uri.username)
+                         and uri.password is None and uri.port is not None and not uri.path),
+            port=uri.port,
+            transport=(values["type"] if values.get("type") in VLESS_TRANSPORTS
+                       else "absent" if "type" not in values else "other"),
+            security=(values["security"] if values.get("security") in {"none", "tls", "reality"}
+                      else "absent" if "security" not in values else "other"),
+            query_keys=sorted(set(keys) & VLESS_QUERY_KEYS),
+            unknown_query_key_count=len(set(keys) - VLESS_QUERY_KEYS),
+            duplicate_query_keys=len(keys) != len(set(keys)),
+        )
+    except Exception:
+        pass
+    return result
 
 
 def category(error: Exception) -> str:
@@ -51,7 +90,12 @@ def category(error: Exception) -> str:
 def inspect_response_markers(headers, content: bytes) -> dict:
     server = str(headers.get("server", "")).lower()
     sample = content[:65536].lower()
+    title_match = re.search(rb"<title[^>]*>(.*?)</title\s*>", sample, re.S)
+    title = " ".join(html.unescape(title_match.group(1).decode("utf-8", "replace")).split()) if title_match else ""
+    title_class = title if title in {"access denied", "403 forbidden", "forbidden", "request rejected", "error", "just a moment..."} else "other" if title_match else "absent"
     return {
+        "body_sha256": hashlib.sha256(content).hexdigest(),
+        "html_title_class": title_class,
         "server_present": bool(server),
         "server_akamai": "akamai" in server,
         "server_cloudflare": "cloudflare" in server,
@@ -141,6 +185,7 @@ def main() -> int:
         raise RuntimeError("Run only in GitHub Actions")
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--production-root", type=Path, default=Path("."))
+    parser.add_argument("--metadata-only", action="store_true", help="Inspect subscription protocol metadata without making node requests")
     args = parser.parse_args()
     root = args.production_root.resolve()
     sys.path.insert(0, str(root / "scripts"))
@@ -184,18 +229,28 @@ def main() -> int:
     if "://" not in body.splitlines()[0]:
         body = f._b64_text(body) or body
     counts = Counter()
+    detailed_counts = Counter()
+    vless_nodes = []
     nodes = []
     for line in body.splitlines():
         if not line.strip():
             continue
         scheme = line.strip().split("://", 1)[0].lower()
         counts[scheme if scheme in SCHEMES else "other"] += 1
+        detailed_counts[line_scheme(line)] += 1
+        if line_scheme(line) == "vless":
+            vless_nodes.append(vless_metadata(line))
         normalized = f._normalize_proxy_node(line)
         if normalized:
             nodes.append(normalized)
     report["subscription"].update(category="retrieved", line_scheme_counts=dict(sorted(counts.items())),
-                                   total_normalized_compatible=len(nodes), probed_nodes=min(MAX_NODES, len(nodes)))
+                                   uri_scheme_counts=dict(sorted(detailed_counts.items())), vless_metadata=vless_nodes,
+                                   total_normalized_compatible=len(nodes), probed_nodes=0 if args.metadata_only else min(MAX_NODES, len(nodes)))
     print(json.dumps({"subscription": report["subscription"]}), flush=True)
+    if args.metadata_only:
+        report["mode"] = "metadata_only"
+        (OUTPUT / "summary.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
+        return 0
     targets = (("connectivity", "https://www.gstatic.com/generate_204"),
                ("landing", source["source_url"]), ("pdf", EXPECTED_PDF))
     jobs = [(index, node, name, url) for index, node in enumerate(nodes[:MAX_NODES], 1)
