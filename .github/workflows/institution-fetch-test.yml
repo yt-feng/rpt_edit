@@ -49,34 +49,6 @@ jobs:
       - name: Test institution PDF resolver
         run: python scripts/test_fetch_institution_latest_pdfs.py
 
-      - name: Inspect official IMF eLibrary availability (read only)
-        run: |
-          python - <<'PYCODE'
-          import re
-          from urllib.parse import urljoin, urlsplit
-          import requests
-          from curl_cffi import requests as cffi
-          from concurrent.futures import ThreadPoolExecutor
-          urls = ['https://www.elibrary.imf.org/subject/2', 'https://www.elibrary.imf.org/browse.clearallfilters', 'https://www.elibrary.imf.org/Search/Search.aspx']
-          def inspect(url):
-              for label, client in [('requests', requests), ('cffi', cffi)]:
-                  try:
-                      kwargs = {'timeout': 25, 'headers': {'User-Agent': 'Mozilla/5.0'}}
-                      if label == 'cffi': kwargs['impersonate'] = 'chrome'
-                      r = client.get(url, **kwargs)
-                      print('OFFICIAL_LISTING', label, url, r.status_code, len(r.content), flush=True)
-                      if r.status_code != 200: continue
-                      links = [urljoin(url, x) for x in re.findall(r'href=[\"\']([^\"\']+)[\"\']', r.text)]
-                      pdfs = list(dict.fromkeys(x for x in links if urlsplit(x).hostname == 'www.elibrary.imf.org' and ('downloadpdf' in x or '.pdf' in x)))
-                      print('OBSERVED_PDF_LINKS', pdfs[:3], flush=True)
-                      for candidate in pdfs[:1]:
-                          pdf = client.get(candidate, **kwargs)
-                          print('OFFICIAL_PDF', candidate, pdf.status_code, len(pdf.content), pdf.content[:5] == b'%PDF-', flush=True)
-                  except Exception as exc: print('OFFICIAL_ERROR', label, url, type(exc).__name__, flush=True)
-          with ThreadPoolExecutor(max_workers=3) as pool:
-              list(pool.map(inspect, urls))
-          PYCODE
-
       - name: Fetch latest institution PDFs (test, no commit)
         env:
           PROXY_SUBSCRIPTION_URL: ${{ secrets.PROXY_SUBSCRIPTION_URL }}
@@ -84,6 +56,7 @@ jobs:
           set -o pipefail
           python scripts/fetch_institution_latest_pdfs.py \
             --output-dir _fetch_test \
+            --pending-intake-path _fetch_test/imf-pending-intake.json \
             --date "$(TZ=Asia/Shanghai date +%y%m%d)" \
             --institutions "${{ github.event.inputs.institutions || 'all' }}" \
             --since-days "${{ github.event.inputs.since_days || '14' }}" \
@@ -129,5 +102,6 @@ jobs:
           path: |
             fetch_test.log
             _fetch_test/institution_run_manifest.json
+            _fetch_test/imf-pending-intake.json
             _fetch_test/test_archive.jsonl
           if-no-files-found: warn

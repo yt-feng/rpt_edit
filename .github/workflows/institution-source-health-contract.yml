@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - scripts/institution_source_health.py
+      - scripts/institution_pending_intake.py
+      - scripts/test_institution_pending_intake.py
       - scripts/test_institution_source_health.py
       - scripts/fetch_institution_latest_pdfs.py
       - .github/workflows/institution-latest-pdf-to-wechat.yml
@@ -22,4 +24,5 @@ jobs:
           python-version: '3.11'
       - run: python3 -m pip install --disable-pip-version-check 'requests>=2.31,<3'
       - run: python3 -B scripts/test_institution_source_health.py
+      - run: python3 -B scripts/test_institution_pending_intake.py
       - run: python3 -B scripts/test_fetch_institution_latest_pdfs.py

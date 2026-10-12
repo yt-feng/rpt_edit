@@ -111,6 +111,7 @@ jobs:
         run: |
           python scripts/test_fetch_institution_latest_pdfs.py
           python scripts/test_institution_source_health.py
+          python scripts/test_institution_pending_intake.py
 
       - name: Install Chinese fonts
         timeout-minutes: 5
@@ -139,6 +140,7 @@ jobs:
           set +e
           python scripts/fetch_institution_latest_pdfs.py \
             --output-dir _institution_latest_pdfs \
+            --pending-intake-path institution_feeds/pending_intake/imf.json \
             --dependency-holds "$RUNNER_TEMP/institution-held-sources.json" \
             --date "$DATE" \
             --institutions "${{ github.event.inputs.institutions || 'all' }}" \
@@ -156,6 +158,14 @@ jobs:
             --date-folder "$DATE" \
             --institutions "${{ github.event.inputs.institutions || 'all' }}" \
             --github-output "$GITHUB_OUTPUT"
+
+      # Save discovery before fallible extraction/translation. Never commit
+      # provisional downloaded seen-state in this checkpoint.
+      - name: Persist pending IMF intake before downstream work
+        if: ${{ always() && !cancelled() && steps.fetch.outcome != 'skipped' && hashFiles('institution_feeds/pending_intake/imf.json') != '' }}
+        run: |
+          python scripts/institution_pending_intake.py institution_feeds/pending_intake/imf.json
+          bash scripts/commit_output_dir.sh "institution_feeds/pending_intake/imf.json" "Checkpoint unresolved IMF intake" 8 true
 
       - name: Extract MinerU source and original images without paid copy
         id: extract
@@ -280,7 +290,7 @@ jobs:
       # handoff. Held roots already have their own durable private manifest.
       - name: Commit PDF link archive and seen state
         run: |
-          bash scripts/commit_output_dir.sh "institution_feeds" "Update institution PDF link archive" 8
+          bash scripts/commit_output_dir.sh "institution_feeds" "Update institution PDF link archive" 8 true
 
       - name: Upload run artifacts
         if: ${{ always() }}
