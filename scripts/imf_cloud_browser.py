@@ -30,6 +30,7 @@ SAFE_ENV = {"PATH", "HOME", "RUNNER_TEMP", "PLAYWRIGHT_PACKAGE_ROOT",
 PROOF_FIELDS = {"schema", "source_guid", "source_url", "landing_url", "pdf_url", "doi", "title",
                 "identity_sha256", "crossref_sha256", "sha256", "bytes", "pages",
                 "landing_status", "pdf_status", "source_identity_verified", "transport"}
+PROOF_FIELDS_V2 = (PROOF_FIELDS - {"crossref_sha256"}) | {"metadata"}
 ERROR_CODES = {"imf_browser_" + code for code in client.ERROR_CODES} | {
     "imf_browser_cloud_approval_required", "imf_browser_subscription_unavailable", "imf_browser_subscription_limit",
     "imf_browser_valid_vless_required", "imf_browser_invalid_listener", "imf_browser_phase_timeout",
@@ -50,6 +51,25 @@ class BrowserDownloadError(ValueError):
     def __init__(self, category):
         self.category = category if category in ERROR_CODES else "imf_browser_download_failed"
         super().__init__(self.category)
+
+
+def publication_provenance(publication):
+    """Keep exact-Crossref and independently bound official-preview proof distinct."""
+    if "metadata" not in publication:
+        digest = publication["crossref_sha256"]
+        if not isinstance(digest, str) or not re.fullmatch(r"[a-f0-9]{64}", digest):
+            raise ValueError
+        return {"schema": 1, "crossref_sha256": digest}
+    metadata = publication["metadata"]
+    if (type(metadata) is not dict or set(metadata) != {"method", "preview_sha256"}
+            or metadata["method"] != "official_source_preview"
+            or "crossref_sha256" not in publication or publication["crossref_sha256"] is not None):
+        raise ValueError
+    digest = metadata["preview_sha256"]
+    if (not isinstance(digest, str) or not re.fullmatch(r"[a-f0-9]{64}", digest)
+            or digest != publication.get("preview_sha256")):
+        raise ValueError
+    return {"schema": 2, "metadata": {"method": "official_source_preview", "preview_sha256": digest}}
 
 
 def require_cloud():
@@ -438,9 +458,9 @@ class CloudImfBrowser:
                 raise ValueError
             if not re.fullmatch(r"10\.5089/97[89]\d{10}\.\d{3}(?:\.A\d{3})?", publication["doi"]):
                 raise ValueError
-            for field in ("identity_sha256", "crossref_sha256"):
-                if not re.fullmatch(r"[a-f0-9]{64}", publication[field]):
-                    raise ValueError
+            if not re.fullmatch(r"[a-f0-9]{64}", publication["identity_sha256"]):
+                raise ValueError
+            provenance = publication_provenance(publication)
             for field in ("source_guid", "title", "source_title", "full_title"):
                 if not isinstance(publication[field], str) or not 0 < len(publication[field]) <= 8192:
                     raise ValueError
@@ -491,10 +511,10 @@ class CloudImfBrowser:
                     raise BrowserDownloadError("imf_browser_process_failed")
                 downloaded = folder / "download.pdf"
                 validated = verify_pdf(downloaded, publication, max_bytes, expected_sha256)
-                proof = {"schema": 1, "source_guid": publication["source_guid"], "source_url": publication["source_url"],
+                proof = {**provenance, "source_guid": publication["source_guid"], "source_url": publication["source_url"],
                          "landing_url": page["final_url"], "pdf_url": pdf_url, "doi": publication["doi"],
                          "title": publication["source_title"],
-                         "identity_sha256": publication["identity_sha256"], "crossref_sha256": publication["crossref_sha256"],
+                         "identity_sha256": publication["identity_sha256"],
                          **validated, "landing_status": 200, "pdf_status": 200,
                          "source_identity_verified": True, "transport": "existing_subscription_vless_browser"}
                 publish_original(downloaded, destination, validated)

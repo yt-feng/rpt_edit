@@ -337,10 +337,64 @@ class BrowserTests(unittest.TestCase):
         with self.download_mocks([PAGE, RESULT]) as (instance, dest, proc, _, _), patch.object(b, 'verify_pdf', verify):
             proof = instance.download(PUBLICATION, dest, 1024)
             self.assertEqual(set(proof), b.PROOF_FIELDS)
+            self.assertEqual(proof['schema'], 1)
+            self.assertEqual(proof['crossref_sha256'], PUBLICATION['crossref_sha256'])
             self.assertEqual(proof['title'], TITLE)
             self.assertEqual(proof['sha256'], digest)
             self.assertEqual(dest.read_bytes(), data)
             self.assertEqual(list(dest.parent.glob('.imf-original-*')), [])
+
+    def preview_publication(self):
+        return {**PUBLICATION, 'crossref_sha256': None, 'preview_sha256': 'c' * 64,
+                'metadata': {'method': 'official_source_preview', 'preview_sha256': 'c' * 64}}
+
+    def test_preview_download_returns_schema2_without_claiming_crossref(self):
+        publication = self.preview_publication()
+        data = b'%PDF-mock'; digest = hashlib.sha256(data).hexdigest()
+        def verify(path, *_):
+            path.write_bytes(data)
+            return dict(sha256=digest, bytes=len(data), pages=14)
+        with self.download_mocks([PAGE, RESULT]) as (instance, dest, proc, _, _), patch.object(b, 'verify_pdf', verify):
+            proof = instance.download(publication, dest, 1024)
+            self.assertEqual(set(proof), b.PROOF_FIELDS_V2)
+            self.assertEqual(proof['schema'], 2)
+            self.assertEqual(proof['metadata'], publication['metadata'])
+            self.assertIsNot(proof['metadata'], publication['metadata'])
+            self.assertNotIn('crossref_sha256', proof)
+            self.assertEqual(proof['doi'], publication['doi'])
+            self.assertEqual(proof['identity_sha256'], publication['identity_sha256'])
+            self.assertEqual(dest.read_bytes(), data)
+            proc.stdin.write.assert_called_once()
+
+    def test_invalid_or_mixed_preview_provenance_never_starts_client_or_browser(self):
+        good = self.preview_publication()
+        changes = [dict(metadata=None), dict(metadata=[]), dict(metadata={}),
+                   dict(metadata={**good['metadata'], 'unknown': True}),
+                   dict(metadata={'method': 'crossref', 'preview_sha256': 'c' * 64}),
+                   dict(metadata={'method': 'official_source_preview', 'preview_sha256': 'd' * 64}),
+                   dict(metadata={'method': 'official_source_preview', 'preview_sha256': True}),
+                   dict(metadata={'method': 'official_source_preview', 'preview_sha256': 'C' * 64}),
+                   dict(crossref_sha256='b' * 64), dict(crossref_sha256=''),
+                   dict(preview_sha256=None)]
+        publications = [{**good, **change} for change in changes]
+        publications += [{k: v for k, v in good.items() if k != field}
+                         for field in ('crossref_sha256', 'preview_sha256', 'metadata')]
+        for publication in publications:
+            with self.subTest(publication=publication), self.download_mocks([]) as (instance, dest, _, spawn, _), \
+                 patch.object(instance, '_start') as start:
+                with self.assertRaisesRegex(b.BrowserDownloadError, '^imf_browser_publication_invalid$'):
+                    instance.download(publication, dest, 1024)
+                start.assert_not_called(); spawn.assert_not_called()
+                self.assertFalse(dest.exists())
+
+    def test_preview_receipt_still_requires_http_ready_and_same_landing_identity(self):
+        pages = [{**PAGE, 'landing_status': 404}, {**PAGE, 'ready': False},
+                 {**PAGE, 'metadata': {'citation_doi': ['10.5089/9798229063074.029']}}]
+        for page in pages:
+            with self.download_mocks([page]) as (instance, dest, proc, _, _):
+                with self.assertRaises(b.BrowserDownloadError):
+                    instance.download(self.preview_publication(), dest, 1024)
+                proc.stdin.write.assert_not_called(); self.assertFalse(dest.exists())
 
     def test_status_downgrade_and_changed_download_never_accept(self):
         for changes in (dict(pdf_status=202), dict(landing_status=403), dict(pdf_url='https://evil.invalid/a.pdf')):
