@@ -7,12 +7,14 @@ import unittest
 from unittest.mock import Mock, patch
 
 import institution_dependency_backlog as b
+import fetch_institution_latest_pdfs as fetcher
 from institution_original_cache import OriginalCache, preserve_sources
 import mineru_task_ledger as m
 from mineru_completed_child_reuse import reuse_completed_children
 from mineru_terminal_recovery import TerminalRecovery, failure_hash
 from test_mineru_result_cache import MemoryR2, S3Error
 from test_mineru_terminal_recovery import Provider, ERROR, AUTH, OPTIONS
+from test_fetch_institution_latest_pdfs import live_hold_fixture
 
 
 class HeadR2(MemoryR2):
@@ -233,6 +235,50 @@ class BacklogTests(unittest.TestCase):
             b.preserve_manifest_versions(self.ledger, sources)
         self.assertEqual(self.backlog.versions([binding])[0]['sha256'], binding['sha256'])
         self.assertEqual(len(self.provider.posts), 1)
+
+    def test_live_proof_survives_pre_handoff_versions_and_enables_exact_empty_feed_hold(self):
+        row, item, _ = live_hold_fixture()
+        path = self.folder/row['local_filename']; path.write_bytes(b'%PDF-synthetic-live-original')
+        binding = self.ledger.bind(path, path.name)
+        row.update(bytes=binding['size'], sha256=binding['sha256'])
+        row['imf_live_download'].update(bytes=binding['size'], sha256=binding['sha256'])
+        manifest = self.folder/'manifest.json'; manifest.write_text(json.dumps({'downloaded': [row]}))
+        self.hold(); held_before = self.backlog.entries()
+        before_posts, before_polls = len(self.provider.posts), len(self.provider.polls)
+        with patch.dict(b.os.environ, {'INSTITUTION_SOURCE_MANIFEST': str(manifest)}):
+            b.preserve_manifest_versions(self.ledger, [(path, path.name)])
+        stored = self.backlog.versions([binding])
+        self.assertEqual(stored, [dict(row, binding_id=binding['id'])])
+        versions = fetcher.dependency_hold_versions(self.folder/'absent-archive.jsonl',
+            [dict(source=path.name, sha256=binding['sha256'], size=binding['size'])], stored)
+        self.assertTrue(fetcher.matches_dependency_hold(versions, path.name, item))
+        self.assertEqual(self.backlog.entries(), held_before)
+        self.assertEqual((len(self.provider.posts), len(self.provider.polls)), (before_posts, before_polls))
+        puts = len(self.client.puts)
+        with patch.dict(b.os.environ, {'INSTITUTION_SOURCE_MANIFEST': str(manifest)}):
+            b.preserve_manifest_versions(self.ledger, [(path, path.name)])
+        self.assertEqual(len(self.client.puts), puts)
+
+    def test_invalid_live_proof_stops_before_metadata_or_provider_writes(self):
+        row, _, _ = live_hold_fixture()
+        path = self.folder/row['local_filename']; path.write_bytes(b'%PDF-synthetic-live-original')
+        binding = self.ledger.bind(path, path.name)
+        row.update(bytes=binding['size'], sha256=binding['sha256'])
+        row['imf_live_download'].update(bytes=binding['size'], sha256=binding['sha256'])
+        variants = []
+        for missing in row['imf_live_download']:
+            value = copy.deepcopy(row); del value['imf_live_download'][missing]; variants.append(value)
+        for changes in ({'imf_live_download_extra': True}, {'acquisition_method': 'verified_original_cache'},
+                        {'verified_original_pages': 14}, {'institution': 'bis'}, {'title': 'Different title'},
+                        {'published': '2026-10-13'}):
+            variants.append(dict(row, **changes))
+        manifest = self.folder/'manifest.json'; before = len(self.client.puts), len(self.provider.posts), len(self.provider.polls)
+        for value in variants:
+            manifest.write_text(json.dumps({'downloaded': [value]}))
+            with self.subTest(value=value), patch.dict(b.os.environ, {'INSTITUTION_SOURCE_MANIFEST': str(manifest)}):
+                with self.assertRaisesRegex(m.LedgerError, 'Institution live publication'):
+                    b.preserve_manifest_versions(self.ledger, [(path, path.name)])
+            self.assertEqual((len(self.client.puts), len(self.provider.posts), len(self.provider.polls)), before)
 
     def test_translated_handoff_requires_every_generated_source_not_a_capped_subset(self):
         extracted = self.folder/'extracted'; translated = self.folder/'translated'; translated.mkdir()

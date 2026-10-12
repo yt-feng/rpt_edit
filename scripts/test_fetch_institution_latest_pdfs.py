@@ -4,12 +4,24 @@
 from __future__ import annotations
 
 import unittest
+import copy
 import json
 import tempfile
 from pathlib import Path
 from unittest.mock import Mock, patch
 
 import fetch_institution_latest_pdfs as fetcher
+
+
+def live_hold_fixture():
+    from test_institution_source_health import live_manifest
+    row = live_manifest()['downloaded'][0]
+    row.update(published='2026-10-13T00:00:00+00:00', feed_pdf_candidates=[])
+    item = dict(title=row['title'], guid=row['imf_live_download']['source_guid'],
+                source_url=row['source_page_url'], date=row['published'], pdf_candidates=[],
+                scrape_url=row['source_page_url'], coveo_unique_id='synthetic-coveo')
+    source = dict(source=row['local_filename'], sha256=row['sha256'], size=row['bytes'])
+    return row, item, source
 
 
 COUNTRY_REPORT_URL = (
@@ -474,6 +486,78 @@ class DependencyHoldFetchTests(unittest.TestCase):
             modern = fetcher.dependency_hold_versions(archive, [source], [dict(row, feed_pdf_candidates=candidates)])
             self.assertTrue(fetcher.matches_dependency_hold(modern, name, item))
             self.assertFalse(fetcher.matches_dependency_hold(modern, name, dict(item, pdf_candidates=[primary])))
+
+    def test_live_empty_feed_hold_binds_current_identity_and_all_historical_bytes(self):
+        row, item, source = live_hold_fixture()
+        with tempfile.TemporaryDirectory() as directory:
+            archive = Path(directory)/'archive.jsonl'
+            versions = fetcher.dependency_hold_versions(archive, [source], [row])
+            self.assertTrue(fetcher.matches_dependency_hold(versions, source['source'], item))
+            for changes in ({'guid': 'different'}, {'title': item['title']+' revised'},
+                            {'source_url': item['source_url']+'-revised'}, {'date': '2026-10-12T00:00:00+00:00'},
+                            {'pdf_candidates': [row['pdf_url']]}, {'pdf_candidates': ()}):
+                with self.subTest(changes=changes):
+                    self.assertFalse(fetcher.matches_dependency_hold(versions, source['source'], dict(item, **changes)))
+            self.assertFalse(fetcher.matches_dependency_hold(versions, source['source'], item, []))
+            for fields in ({'imf_live_download', 'institution', 'title'}, {'imf_live_download'},
+                           {'sha256'}, {'feed_pdf_candidates'}):
+                changed = {key: value for key, value in row.items() if key not in fields}
+                with self.subTest(fields=fields):
+                    held = fetcher.dependency_hold_versions(archive, [source], [changed])
+                    self.assertFalse(fetcher.matches_dependency_hold(held, source['source'], item))
+            legacy = {key: value for key, value in row.items() if key not in {'imf_live_download', 'institution', 'title', 'sha256'}}
+            held = fetcher.dependency_hold_versions(archive, [source], [legacy, row])
+            self.assertFalse(fetcher.matches_dependency_hold(held, source['source'], item))
+            for change in ({'size': source['size']+1}, {'sha256': 'f'*64}):
+                held = fetcher.dependency_hold_versions(archive, [dict(source, **change)], [row])
+                self.assertFalse(fetcher.matches_dependency_hold(held, source['source'], item))
+
+    def test_live_hold_rejects_incomplete_mixed_invalid_or_conflicting_proof(self):
+        row, item, source = live_hold_fixture()
+        variants = []
+        for missing in row['imf_live_download']:
+            value = copy.deepcopy(row); del value['imf_live_download'][missing]; variants.append(value)
+        for changes in ({'imf_live_download_unknown': True}, {'acquisition_method': 'verified_original_cache'},
+                        {'verified_original_pages': 14}, {'institution': 'bis'}, {'title': 'Different title'},
+                        {'published': '2026-10-13'}, {'published': 'invalid'}, {'sha256': None}):
+            variants.append(dict(row, **changes))
+        for changes in ({'source_guid': 'wrong'}, {'source_url': row['source_page_url']+'-different'},
+                        {'landing_status': True}, {'sha256': 'f'*64}, {'bytes': True},
+                        {'pdf_url': 'https://unofficial.example/report.pdf'}, {'extra': True}):
+            variants.append(dict(row, imf_live_download=dict(row['imf_live_download'], **changes)))
+        with tempfile.TemporaryDirectory() as directory:
+            for value in variants:
+                with self.subTest(value=value):
+                    held = fetcher.dependency_hold_versions(Path(directory)/'archive.jsonl', [source], [value])
+                    self.assertFalse(fetcher.matches_dependency_hold(held, source['source'], item))
+            conflicting = copy.deepcopy(row); conflicting['imf_live_download']['identity_sha256'] = 'f'*64
+            held = fetcher.dependency_hold_versions(Path(directory)/'archive.jsonl', [source], [row, conflicting])
+            self.assertFalse(fetcher.matches_dependency_hold(held, source['source'], item))
+
+    def test_real_live_hold_skips_resolution_without_marking_seen_or_retiring_pending(self):
+        row, item, source = live_hold_fixture()
+        item['date'] = row['published'] = fetcher.datetime.now(fetcher.timezone.utc).isoformat()
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory); holds = path/'holds.json'; pending_path = path/'pending.json'
+            holds.write_text(json.dumps(dict(schema=1, sources=[source], versions=[row])))
+            pending = fetcher.PendingIntake(pending_path, {}, now=fetcher.datetime.now(fetcher.timezone.utc))
+            pending.admit(item, 7); pending.save()
+            argv = ['fetcher', '--institutions', 'imf', '--output-dir', str(path/'pdfs'),
+                    '--archive-path', str(path/'archive.jsonl'), '--seen-state-path', str(path/'seen.json'),
+                    '--dependency-holds', str(holds), '--pending-intake-path', str(pending_path)]
+            with (patch.object(fetcher.sys, 'argv', argv),
+                  patch.object(fetcher, 'collect_coveo_items', return_value=[item]),
+                  patch.object(fetcher, 'collect_coveo_preview_candidates', side_effect=AssertionError('No source resolution')),
+                  patch.object(fetcher, 'download_pdf', side_effect=AssertionError('No original download')),
+                  patch.object(fetcher, 'resolve_working_proxy', return_value=None),
+                  patch.object(fetcher, 'log'), patch.object(fetcher, 'write_github_output'),
+                  patch.object(fetcher, 'write_source_health_summary')):
+                self.assertEqual(fetcher.main(), 0)
+            manifest = json.loads((path/'pdfs/institution_run_manifest.json').read_text())
+            self.assertEqual((manifest['dependency_held_count'], manifest['downloaded_count']), (1, 0))
+            self.assertEqual(json.loads((path/'seen.json').read_text())['items'], {})
+            self.assertIn('imf:'+item['guid'], json.loads(pending_path.read_text())['items'])
+            self.assertFalse((path/'archive.jsonl').exists())
 
     def test_private_manifest_supplement_enables_missing_archive_but_conflicts_fail_open(self):
         item = self.item('held')

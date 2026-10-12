@@ -1834,7 +1834,7 @@ def dependency_hold_versions(archive: Path, sources: list[dict], supplemental: l
     for name, rows in records.items():
         bindings = {(entry['sha256'], entry['size']) for entry in by_name[name]}
         if len(bindings) != 1 or not rows: continue
-        checksum, size = next(iter(bindings)); versions = set(); valid = True
+        checksum, size = next(iter(bindings)); versions = set(); valid = True; live_rows = []
         for row in rows:
             values = tuple(row.get(field) for field in ('source_page_url', 'published', 'pdf_url'))
             if (not all(isinstance(value, str) and value for value in values)
@@ -1842,12 +1842,30 @@ def dependency_hold_versions(archive: Path, sources: list[dict], supplemental: l
                     or (row.get('sha256') is not None and row['sha256'] != checksum)):
                 valid = False; break
             versions.add(values)
+            live_fields = {field for field in row if isinstance(field, str) and field.startswith('imf_live_download')}
+            if live_fields:
+                # A real browser receipt, unlike an empty legacy candidate list,
+                # proves which original reached the existing private hold.
+                from institution_source_health import InvalidSourceHealth, validate_live_download
+                try:
+                    if (live_fields != {'imf_live_download'} or any(field == 'acquisition_method'
+                            or (isinstance(field, str) and field.startswith('verified_original_')) for field in row)):
+                        raise InvalidSourceHealth('source_health_contract_invalid')
+                    validate_live_download(row)
+                    if datetime.fromisoformat(row['published'].replace('Z', '+00:00')).tzinfo is None:
+                        raise ValueError('Publication date requires timezone')
+                except (InvalidSourceHealth, KeyError, TypeError, ValueError):
+                    valid = False; break
+                live_rows.append(dict(title=row['title'], imf_live_download=row['imf_live_download']))
         if not valid or len(versions) != 1: continue
         page, published, url = next(iter(versions))
         feed_values = {json.dumps(row.get('feed_pdf_candidates'), sort_keys=True) for row in rows}
         feed = rows[0].get('feed_pdf_candidates') if len(feed_values) == 1 else None
         if not isinstance(feed, list) or not all(isinstance(url, str) for url in feed): feed = None
         result[name] = dict(source_page_url=page, published=published, pdf_url=url, feed_pdf_candidates=feed)
+        if (live_rows and all(row.get('sha256') == checksum for row in rows)
+                and len({json.dumps(row, sort_keys=True) for row in live_rows}) == 1):
+            result[name]['live_publication'] = live_rows[0]
     return result
 
 
@@ -1857,6 +1875,12 @@ def matches_dependency_hold(versions: dict, filename: str, item: dict, candidate
         return False
     current = list(item.get('pdf_candidates', [])) if candidates is None else list(candidates)
     if held['feed_pdf_candidates'] is not None and candidates is None:
+        live = held.get('live_publication')
+        if (live is not None and item.get('pdf_candidates') == [] and held['feed_pdf_candidates'] == []
+                and item.get('guid') == live['imf_live_download']['source_guid']
+                and item.get('title') == live['title']
+                and filename == f"IMF_{slug(live['title'])}_{short_hash('imf:' + item['guid'])}.pdf"):
+            return True
         return bool(current) and current == held['feed_pdf_candidates']
     if current and set(current) == {held['pdf_url']}: return True
     # The producer's legacy IMF working-paper metadata has two deterministic
