@@ -30,8 +30,14 @@ async function main() {
     browser = await chromium.launch({headless: true});
     const context = await browser.newContext({acceptDownloads: true});
     const page = await context.newPage();
-    await page.goto(LANDING, {waitUntil: "domcontentloaded", timeout: 45000});
+    const response = await page.goto(LANDING, {waitUntil: "domcontentloaded", timeout: 45000});
+    const finalUrl = new URL(page.url());
+    Object.assign(report, {landing_status: response ? response.status() : null,
+      final_host: finalUrl.hostname, final_path: finalUrl.pathname,
+      page_title: (await page.title()).slice(0, 300),
+      heading_count: await page.getByRole("heading", {level: 1}).count()});
     const heading = await page.getByRole("heading", {level: 1}).innerText({timeout: 20000});
+    report.observed_heading = heading.slice(0, 400);
     if (!heading.includes("Republic of Estonia") || !heading.includes("Consumer Price Index")) {
       throw new Error("source_identity_mismatch");
     }
@@ -60,8 +66,8 @@ async function main() {
     report.category = known.has(error.message) ? error.message :
       error.name === "TimeoutError" ? "browser_source_timeout" : "browser_probe_failed";
   } finally {
-    if (browser) await browser.close();
     save();
+    if (browser) await browser.close();
   }
   console.log(JSON.stringify(report));
   if (!report.bytes_verified) process.exitCode = 1;
