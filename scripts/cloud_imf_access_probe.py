@@ -6,7 +6,7 @@ import io
 import json
 import os
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit, quote
 
 import requests
 from curl_cffi import requests as cffi
@@ -19,7 +19,7 @@ out.mkdir(exist_ok=True)
 seed = json.loads(Path('institution_feeds/pending_intake/imf.json').read_text())
 item = next(iter(seed['items'].values()))['item']
 pdf = item['pdf_candidates'][0]
-targets = [('connectivity', 'https://www.gstatic.com/generate_204'), ('landing', item['source_url']), ('pdf', pdf)]
+targets = [('connectivity', 'https://www.gstatic.com/generate_204'), ('landing', item['source_url']), ('pdf', pdf), ('fiscal_pdf', 'https://www.imf.org/-/media/files/publications/fiscal-monitor/2026/october/english/ch1onlineannex.pdf'), ('fiscal_index', 'https://www.imf.org/en/publications/fm/issues/2026/10/05/fiscal-monitor-october-2026/index.json')]
 result = {'source':item, 'subscription':{}, 'probes':[]}
 subscription = os.environ.get('PROXY_SUBSCRIPTION_URL', '')
 nodes = []
@@ -33,6 +33,31 @@ if subscription:
                 body = f._b64_text(body) or body
             nodes = [p for p in (f._normalize_proxy_node(x) for x in body.splitlines() if x.strip()) if p][:12]
             result['subscription']['compatible_nodes'] = len(nodes)
+            result['subscription']['structure'] = []
+            corrected = []
+            for index, line in enumerate(x for x in body.splitlines() if x.strip()):
+                legacy = f._normalize_proxy_node(line)
+                if not legacy:
+                    continue
+                record = {'index':index,'scheme':urlsplit(legacy).scheme}
+                try:
+                    parts=urlsplit(legacy)
+                    record['valid_host_and_port']=bool(parts.hostname and parts.port)
+                except ValueError:
+                    record['valid_host_and_port']=False
+                if line.startswith('https://'):
+                    decoded=f._b64_text(line.split('#',1)[0][len('https://'):])
+                    if decoded and '@' in decoded:
+                        userinfo, authority=decoded.rsplit('@',1)
+                        user, sep, password=userinfo.partition(':')
+                        record['userinfo_reserved_characters']=any(c in userinfo for c in '/?#')
+                        candidate='https://'+quote(user,safe='')+((':'+quote(password,safe='')) if sep else '')+'@'+authority.rstrip('/')
+                        record['normalization_changes']=candidate != legacy
+                        if candidate != legacy:
+                            corrected.append(candidate)
+                result['subscription']['structure'].append(record)
+            nodes=corrected[:2]  # Probe only materially changed parsing, never repeat known-dead paths.
+
     except Exception as e:
         result['subscription']['error_type'] = type(e).__name__
 
@@ -61,7 +86,7 @@ def probe(index, proxy, kind, url, client='cffi'):
 
 jobs=[]
 for index,proxy in enumerate([None]+nodes):
-    for kind,url in targets:
+    for kind,url in (targets if proxy is None else targets[:3]):
         jobs.append((index,proxy,kind,url,'cffi'))
 # Confirm official origin URL observed in the public discovery result independently.
 jobs.append((0,None,'observed_origin_pdf',pdf.replace('://www.imf.org/', '://origin-www.imf.org/'),'cffi'))

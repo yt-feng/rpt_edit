@@ -15,7 +15,15 @@ permissions:
   contents: read
 jobs:
   cloud-access-diagnostic:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - pool: hosted
+            runner: [ubuntu-latest]
+          - pool: server
+            runner: [self-hosted, wechat-draft]
+    runs-on: ${{ matrix.runner }}
     timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
@@ -26,14 +34,24 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install requests curl_cffi pypdf
+      - run: |
+          python -m venv "$RUNNER_TEMP/imf-probe-${{ github.run_id }}"
+          "$RUNNER_TEMP/imf-probe-${{ github.run_id }}/bin/pip" install requests curl_cffi pypdf
       - name: Diagnose official IMF PDF delivery with redacted route identifiers
         env:
-          PROXY_SUBSCRIPTION_URL: ${{ secrets.PROXY_SUBSCRIPTION_URL }}
-        run: python scripts/cloud_imf_access_probe.py
+          PROXY_SUBSCRIPTION_URL: ${{ matrix.pool == 'hosted' && secrets.PROXY_SUBSCRIPTION_URL || '' }}
+        run: '"$RUNNER_TEMP/imf-probe-${{ github.run_id }}/bin/python" scripts/cloud_imf_access_probe.py'
+      - name: Inspect public IMF index document delivery
+        if: matrix.pool == 'hosted'
+        run: '"$RUNNER_TEMP/imf-probe-${{ github.run_id }}/bin/python" scripts/cloud_imf_coveo_probe.py'
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: imf-access-probe-${{ github.run_id }}
-          path: _imf_access_probe
+          name: imf-access-probe-${{ matrix.pool }}-${{ github.run_id }}
+          path: |
+            _imf_access_probe
+            _imf_coveo_probe
           if-no-files-found: error
+      - name: Remove isolated diagnostic Python environment
+        if: always()
+        run: 'rm -rf "$RUNNER_TEMP/imf-probe-${{ github.run_id }}"'
