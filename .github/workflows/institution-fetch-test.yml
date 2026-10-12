@@ -27,31 +27,13 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install requests curl_cffi pypdf
-      - name: Install verified official protocol client
-        env:
-          CLIENT_VERSION: 1.14.3
-          CLIENT_SHA256: e2bdf179c15a3652955dc44867e33ca0965c9c9b91b34267dcc5a5d639a5feee
-        shell: bash
-        run: |
-          set -euo pipefail
-          archive="$RUNNER_TEMP/sing-box.tar.gz"
-          curl --fail --silent --show-error --location --connect-timeout 15 --max-time 90 \
-            "https://github.com/SagerNet/sing-box/releases/download/v${CLIENT_VERSION}/sing-box-${CLIENT_VERSION}-linux-amd64.tar.gz" \
-            --output "$archive"
-          printf '%s  %s\n' "$CLIENT_SHA256" "$archive" | sha256sum --check --strict
-          mkdir -p "$RUNNER_TEMP/imf-protocol-client"
-          tar -xzf "$archive" -C "$RUNNER_TEMP/imf-protocol-client" --strip-components=1 \
-            "sing-box-${CLIENT_VERSION}-linux-amd64/sing-box"
-      - name: Test remaining subscription protocols against exact IMF PDF
+      - name: Verify exact eLibrary PDF using fresh coherent HTTP sessions
         env:
           PROXY_SUBSCRIPTION_URL: ${{ secrets.PROXY_SUBSCRIPTION_URL }}
-        run: >-
-          python scripts/cloud_imf_protocol_client_probe.py
-          --sing-box "$RUNNER_TEMP/imf-protocol-client/sing-box"
-          --expected-version 1.14.3
+        run: python scripts/cloud_imf_elibrary_session_probe.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: imf-protocol-client-probe-${{ github.run_id }}
-          path: _imf_protocol_client_probe
+          name: imf-elibrary-session-probe-${{ github.run_id }}
+          path: _imf_elibrary_session_probe
           if-no-files-found: error
