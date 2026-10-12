@@ -118,6 +118,77 @@ class FiscalChapterTests(unittest.TestCase):
             with self.subTest(change=change),self.assertRaises(f.FiscalChapterError):
                 f.validate_fiscal_chapter_metadata({**pub['metadata'],**change},pub['source_title'],pub['doi'],pub['landing_url'])
 
+    def test_real_book_landing_keeps_main_h1_and_requires_complete_chapter_evidence(self):
+        pub = self.resolve(); page = self.case['page']
+        original = deepcopy(pub)
+        url, metadata = f.resolve_fiscal_landing(pub, page)
+        self.assertEqual(url, page['download_hrefs'][0])
+        self.assertEqual(metadata['publisher_page']['pages'], 31)
+        self.assertEqual(set(metadata), f.METADATA_FIELDS | {'publisher_page'})
+        self.assertEqual(pub, original)
+        self.assertNotEqual(f.title_key(page['h1s'][0]), f.title_key(pub['full_title']))
+        self.assertEqual(f.title_key(page['metadata']['citation_title'][0]), f.title_key(pub['full_title']))
+        f.validate_fiscal_chapter_metadata(metadata, pub['source_title'], pub['doi'], page['final_url'], url)
+
+    def test_book_landing_http_readiness_body_bounds_and_source_provenance_required(self):
+        pub = self.resolve()
+        for change in ({'landing_status':202}, {'landing_status':True}, {'ready':False},
+                       {'body_truncated':True}, {'visible_body':'x'*(80*1024+1)},
+                       {'h1s':[]}, {'h1s':[pub['full_title']]}, {'h1s':[pub['title'],pub['title']]}):
+            with self.subTest(change=list(change)), self.assertRaises(f.FiscalChapterError):
+                f.resolve_fiscal_landing(pub,{**self.case['page'],**change})
+        for change in ({'crossref_sha256':'a'*64},{'preview_sha256':'a'*64},{'year':'2025'},
+                       {'source_title':'Other topic of public finance'},{'title':'Other book'}, {'isbn':'9798229057226'}):
+            with self.subTest(change=change), self.assertRaises(f.FiscalChapterError):
+                f.resolve_fiscal_landing({**pub,**change},self.case['page'])
+
+    def test_each_book_label_must_be_unique_and_correct(self):
+        pub=self.resolve(); original=self.case['page']['visible_body']
+        for label in ('Series','Publisher','ISBN','Language','Pages','DOI','Publication Date'):
+            line=next(x for x in original.splitlines() if x.startswith(label+':'))
+            for body in (original.replace(line,''),original+'\n'+line,original+'\n'+label+': wrong'):
+                with self.subTest(label=label),self.assertRaises(f.FiscalChapterError):
+                    f.resolve_fiscal_landing(pub,{**self.case['page'],'visible_body':body})
+        for old,new in (('Language: English','Language: Spanish'),('Pages: 31','Pages: 0'),
+                        ('06 Oct 2026','06 Sep 2026'),('06 Oct 2026','32 Oct 2026'),
+                        ('Flagships, Fiscal Monitor','Flagships, World Economic Outlook'),
+                        ('ISBN: 9798229056298','ISBN: 9798229057226')):
+            with self.subTest(old=old),self.assertRaises(f.FiscalChapterError):
+                f.resolve_fiscal_landing(pub,{**self.case['page'],'visible_body':original.replace(old,new)})
+
+    def test_book_chapter_topic_must_appear_independently_in_body_and_citation(self):
+        pub=self.resolve()
+        for field in ('book_title','book_subtitle'):
+            page=deepcopy(self.case['page']);page['visible_body']=page['visible_body'].replace(pub['metadata'][field],'')
+            with self.subTest(field=field),self.assertRaises(f.FiscalChapterError):f.resolve_fiscal_landing(pub,page)
+        for tag in ('citation_title','citation_isbn'):
+            for value in (None,[],[''],[pub['title']],['Unrelated chapter title']):
+                page=deepcopy(self.case['page'])
+                if value is None:page['metadata'].pop(tag)
+                else:page['metadata'][tag]=value
+                with self.subTest(tag=tag,value=value),self.assertRaises(f.FiscalChapterError):f.resolve_fiscal_landing(pub,page)
+
+    def test_book_doi_and_pdf_anchors_duplicate_only_when_identical(self):
+        pub=self.resolve();page=deepcopy(self.case['page'])
+        page['doi_links']*=2;page['download_hrefs']*=2
+        self.assertEqual(f.resolve_fiscal_landing(pub,page)[0],page['download_hrefs'][0])
+        for field in ('doi_links','download_hrefs'):
+            for value in ([],[None],page[field][:1]*17,page[field]+['https://example.invalid/other.pdf']):
+                with self.subTest(field=field),self.assertRaises(f.FiscalChapterError):
+                    f.resolve_fiscal_landing(pub,{**page,field:value})
+
+    def test_book_same_document_and_present_metadata_conflicts_stay_strict(self):
+        pub=self.resolve()
+        for tags in ({'citation_doi':['10.5089/9798229057226.087']},{'dc.title':['Other book']},
+                     {'citation_doi':[]},{'canonical_url':[pub['landing_url'].replace('9798229056298','9798229057226')]},
+                     {'citation_pdf_url':[self.case['page']['download_hrefs'][0].replace('https:','http:')]}):
+            page=deepcopy(self.case['page']);page['metadata'].update(tags)
+            with self.subTest(tags=tags),self.assertRaises(f.FiscalChapterError):f.resolve_fiscal_landing(pub,page)
+        for change in (lambda x:x.replace('9798229056298','9798229057226'),lambda x:x.replace('https:','http:'),
+                       lambda x:x.replace('www.elibrary.imf.org','example.invalid'),lambda x:x.replace('https://','https://@')):
+            page=deepcopy(self.case['page']);page['final_url']=change(page['final_url'])
+            with self.assertRaises(f.FiscalChapterError):f.resolve_fiscal_landing(pub,page)
+
 
 if __name__ == '__main__':
     unittest.main()

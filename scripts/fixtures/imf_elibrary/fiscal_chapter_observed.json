@@ -5,6 +5,10 @@
       "preview.html": "f99c04912044c59430b2703db95751ae8b9a03e031b5bac69bc61ac200fc476b",
       "complete-book-search.json": "74bfc630b43c902b20276c059bec341c043c9b09f6060e7c405665b1a6fd907c",
       "observed-book-crossref.json": "4d212b5110f4b220596d483b93694dae99050d2d59280f8feee4f20223f63dd4"
+    },
+    "landing_observation": {
+      "run_id": 38290285415,
+      "original_sha256": "17455c2c2e7e693feb05be9eb81227e333bdabd99cc9af138f35884f467a731f"
     }
   },
   "source_item": {
@@ -253,5 +257,65 @@
         }
       }
     }
+  },
+  "page": {
+    "stage": "metadata",
+    "accepted": false,
+    "landing_status": 200,
+    "final_url": "https://www.elibrary.imf.org/display/book/9798229056298/9798229056298.xml?cid=578448-com-dsp-crossref",
+    "title": "Fiscal Monitor, October 2026: Special Edition – Chapter 1: Taxing Better to Boost Growth | IMF eLibrary",
+    "ready": true,
+    "h1s": [
+      "\n\t\t\t\t\n\t\t\t\n\t\t                \tFiscal Monitor, October 2026: Special Edition\n\t\t                \n\t\t\n\t\t\t"
+    ],
+    "metadata_keys": [
+      "og:url",
+      "og:site_name",
+      "og:type",
+      "og:title",
+      "og:description",
+      "description",
+      "og:image",
+      "og:locale",
+      "book:author",
+      "book:isbn",
+      "book:release_date",
+      "twitter:card",
+      "twitter:title",
+      "twitter:description",
+      "dc.identifier",
+      "referrer",
+      "viewport",
+      "citation_isbn",
+      "citation_language",
+      "citation_title",
+      "citation_xml_url",
+      "citation_pdf_url",
+      "citation_publisher",
+      "citation_publication_date",
+      "citation_author",
+      "citation_inbook_title"
+    ],
+    "doi_links": [
+      "https://doi.org/10.5089/9798229056298.089"
+    ],
+    "visible_body": "Loading [MathJax]/extensions/MathZoom.js\nJump to Content\nThis site uses cookies, tags, and tracking settings to store information that help give you the very best browsing experience.\nDismiss this warning\nSign in\nIMF Sites\nBROWSE TOPICS COUNTRIES SERIES RESOURCES ABOUT Search\nMetrics\n\n \n\nSeries: Flagships, Fiscal Monitor\nSearch\nPublisher: International Monetary Fund\nISBN: 9798229056298\nISSN: 2219-276X\nFiscal Monitor, October 2026: Special Edition\nChapter 1: Taxing Better to Boost Growth\nAuthor: International Monetary Fund. Fiscal Affairs Dept.\nPublication Date: 06 Oct 2026\nLanguage: English\nPages: 31\nDOI: https://doi.org/10.5089/9798229056298.089\nDownload PDF (3.2 MB)\nKeywords: tax reforms; growth; productivity; tax design\nAbstract/Excerpt\nAbstract\n\nTaxing better can support growth without sacrificing revenue. The chapter shows how reducing tax distortions—through more neutral VAT and corporate tax design, stronger work incentives, better-targeted innovation support, and stronger tax administration—can raise investment, employment, productivity, and economic efficiency.\n\nSave\nEmail this content\n\nPRIVACY POLICY\nCOPYRIGHT AND USAGE\nCONTACT US\nIMF.ORG PUBLICATIONS\nINTERNATIONAL MONETARY FUND COPYRIGHT © 2010-2026. ALL RIGHTS RESERVED.\nPowered by PubFactory",
+    "body_bytes": 1279,
+    "body_truncated": false,
+    "pdf_downloads": 0,
+    "metadata": {
+      "citation_isbn": [
+        "9798229056298"
+      ],
+      "citation_title": [
+        "Fiscal Monitor, October 2026: Special Edition: Chapter 1: Taxing Better to Boost Growth"
+      ],
+      "citation_pdf_url": [
+        "https://www.elibrary.imf.org/downloadpdf/display/book/9798229056298/9798229056298.pdf"
+      ]
+    },
+    "download_hrefs": [
+      "https://www.elibrary.imf.org/downloadpdf/display/book/9798229056298/9798229056298.pdf"
+    ]
   }
 }

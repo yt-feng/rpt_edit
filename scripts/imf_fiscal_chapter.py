@@ -5,7 +5,7 @@ publisher record by series, month, chapter number and exact chapter title; an
 independent exact-DOI response must then agree. Returned URLs still need live
 publisher-page and PDF identity verification. This module performs no I/O.
 """
-from calendar import month_name, monthrange
+from calendar import month_abbr, month_name, monthrange
 from datetime import datetime
 from functools import wraps
 import hashlib
@@ -14,7 +14,7 @@ import re
 from urllib.parse import urlsplit
 
 from imf_elibrary_resolver import (_Document, digest, isbn_valid, source_url,
-                                  title_key, validate_official_pair, validate_publication_url)
+                                  title_key, validate_landing_metadata, validate_official_pair, validate_publication_url)
 
 METADATA_FIELDS = {'method', 'preview_sha256', 'search_sha256', 'search_total_results',
                    'exact_crossref_sha256', 'chapter', 'year', 'month', 'book_title', 'book_subtitle'}
@@ -209,3 +209,71 @@ def validate_fiscal_chapter_metadata(metadata, source_title, doi, landing_url, p
         require(type(page) is dict and set(page) == {'pages', 'page_sha256'}
                 and type(page['pages']) is int and 1 <= page['pages'] <= 5000 and sha(page['page_sha256']))
     return dict(metadata)
+
+
+def one_label(lines, label):
+    values = [line[len(label) + 1:].strip() for line in lines if line.startswith(label + ':')]
+    require(len(values) == 1 and values[0])
+    return values[0]
+
+
+@checked
+def resolve_fiscal_landing(publication, page):
+    """Verify the observed book's main H1 and independently complete chapter title."""
+    metadata = validate_fiscal_chapter_metadata(publication['metadata'], publication['source_title'],
+                                               publication['doi'], publication['landing_url'])
+    require(publication.get('crossref_sha256') is None and 'crossref_sha256' in publication
+            and publication.get('preview_sha256') == metadata['preview_sha256']
+            and publication.get('year') == metadata['year'] and publication.get('language') == 'en')
+    title, subtitle = metadata['book_title'], metadata['book_subtitle']
+    full = title + ': ' + subtitle
+    require(publication['title'] == title and publication['subtitle'] == subtitle
+            and publication['full_title'] == full
+            and publication['isbn'] == publication['doi'].split('/')[1].split('.')[0])
+    require(type(page) is dict and type(page['landing_status']) is int and page['landing_status'] == 200
+            and page['ready'] is True and page['body_truncated'] is False)
+    body = page['visible_body']
+    require(isinstance(body, str) and 0 < len(body.encode()) <= 80 * 1024)
+    lines = [line.strip() for line in body.splitlines() if line.strip()]
+    require(one_label(lines, 'Series') == 'Flagships, Fiscal Monitor'
+            and one_label(lines, 'Publisher') == 'International Monetary Fund'
+            and one_label(lines, 'Language') == 'English'
+            and one_label(lines, 'ISBN') == publication['isbn'])
+    require(sum(title_key(line) == title_key(title) for line in lines) == 1
+            and sum(title_key(line) == title_key(subtitle) for line in lines) == 1)
+    date = re.fullmatch(r'([0-3]?\d) ([A-Z][a-z]{2}) (20\d{2})', one_label(lines, 'Publication Date'))
+    require(date is not None and date[2] == month_abbr[int(metadata['month'])] and date[3] == metadata['year'])
+    datetime(int(date[3]), int(metadata['month']), int(date[1]))
+    pages = one_label(lines, 'Pages')
+    require(re.fullmatch(r'[1-9]\d{0,3}', pages) is not None and int(pages) <= 5000)
+    doi_url = 'https://doi.org/' + publication['doi']
+    require(one_label(lines, 'DOI') == doi_url)
+    links, hrefs = page['doi_links'], page['download_hrefs']
+    require(isinstance(links, list) and 1 <= len(links) <= 16
+            and all(isinstance(link, str) for link in links) and set(links) == {doi_url}
+            and isinstance(hrefs, list) and 1 <= len(hrefs) <= 16
+            and all(isinstance(link, str) for link in hrefs) and len(set(hrefs)) == 1)
+    tags = page['metadata']
+    require(type(tags) is dict)
+    normalized = {}
+    for key, values in tags.items():
+        require(isinstance(key, str) and isinstance(values, list))
+        normalized.setdefault(key.lower(), []).extend(values)
+    require(normalized.get('citation_title') and all(isinstance(value, str) and title_key(value) == title_key(full)
+                                                   for value in normalized['citation_title']))
+    require(normalized.get('citation_isbn') and all(isinstance(value, str) and re.sub(r'[\s-]', '', value) == publication['isbn']
+                                                  for value in normalized['citation_isbn']))
+    # The live book uses a main-title H1, unlike journal issue pages. Its complete
+    # chapter title was required independently above; every optional DOI/title/
+    # ISBN/canonical/PDF tag still passes the ordinary conflict checks below.
+    page_publication = {**publication, 'full_title': title, 'title_variants': [title, full]}
+    pdf_url = validate_landing_metadata(page_publication, final_url=page['final_url'], metadata=tags,
+                                       h1s=page['h1s'], download_hrefs=hrefs)
+    require(pdf_url == hrefs[0])
+    final_metadata = {**metadata, 'publisher_page': {
+        'pages': int(pages), 'page_sha256': digest({key: page[key] for key in (
+            'final_url', 'landing_status', 'h1s', 'metadata', 'doi_links',
+            'download_hrefs', 'visible_body', 'body_truncated')})}}
+    validate_fiscal_chapter_metadata(final_metadata, publication['source_title'], publication['doi'],
+                                    page['final_url'], pdf_url)
+    return pdf_url, final_metadata
