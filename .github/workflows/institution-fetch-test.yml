@@ -32,8 +32,12 @@ jobs:
         uses: ./.github/actions/setup-imf-browser
         with:
           institutions: imf
+      - name: Install cloud-only SOCKS support for header checks
+        run: python -m pip install PySocks==1.7.1
       - name: Node offline observation checks
-        run: node --test scripts/test_cloud_imf_fiscal_observation.cjs
+        run: |
+          python -m unittest discover -s scripts -p 'test_cloud_imf_ieo_status.py'
+          node --test scripts/test_cloud_imf_fiscal_observation.cjs
       - name: Observe one exact observed Fiscal book page
         env:
           PROXY_SUBSCRIPTION_URL: ${{ secrets.PROXY_SUBSCRIPTION_URL }}

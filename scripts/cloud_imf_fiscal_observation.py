@@ -93,6 +93,8 @@ def main():
             if not browser.enabled:
                 raise b.BrowserDownloadError('imf_browser_not_enabled')
             browser._start()
+            from cloud_imf_ieo_status import observe_headers
+            (OUTPUT / 'ieo-status.json').write_text(json.dumps(observe_headers(browser._proxy), indent=2) + '\n')
             for publication, candidate in rows:
                 page = observe(candidate, browser._proxy)
                 name = hashlib.sha256(publication['doi'].encode()).hexdigest() + '.json'
