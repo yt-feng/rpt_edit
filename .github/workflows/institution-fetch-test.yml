@@ -49,12 +49,21 @@ jobs:
       - name: Test institution PDF resolver
         run: python scripts/test_fetch_institution_latest_pdfs.py
 
+      - name: Set up official IMF download route
+        uses: ./.github/actions/setup-imf-browser
+        with:
+          institutions: ${{ github.event.inputs.institutions || 'all' }}
+
       - name: Fetch latest institution PDFs (test, no commit)
         env:
           PROXY_SUBSCRIPTION_URL: ${{ secrets.PROXY_SUBSCRIPTION_URL }}
         run: |
           set -o pipefail
-          python scripts/fetch_institution_latest_pdfs.py \
+          fetch_runner=(python)
+          if [ "${IMF_CLOUD_BROWSER_ENABLED:-}" = true ]; then
+            fetch_runner=(xvfb-run --auto-servernum python)
+          fi
+          "${fetch_runner[@]}" scripts/fetch_institution_latest_pdfs.py \
             --output-dir _fetch_test \
             --pending-intake-path _fetch_test/imf-pending-intake.json \
             --date "$(TZ=Asia/Shanghai date +%y%m%d)" \

@@ -1452,6 +1452,7 @@ def collect_coveo_items(cfg: dict[str, Any], session: requests.Session, timeout:
     resp.raise_for_status()
     data = resp.json()
     items: list[dict[str, Any]] = []
+    cfg["_coveo_raw_by_id"] = {}
     for result in data.get("results", []):
         raw = result.get("raw", {})
         landing = raw.get("clickableuri") or result.get("clickUri") or result.get("uri") or ""
@@ -1473,6 +1474,9 @@ def collect_coveo_items(cfg: dict[str, Any], session: requests.Session, timeout:
                 date_iso = ""
         is_file = bool(re.search(r"\.(pdf|ashx)(\?|$)", landing, re.I))
         pdf_candidates = [landing] if is_file else derive_imf_pdf_candidates(raw)
+        unique_id = result.get("uniqueId") or result.get("UniqueId") or ""
+        if unique_id:
+            cfg["_coveo_raw_by_id"][unique_id] = raw
         items.append({
             "title": result.get("title") or raw.get("title") or landing,
             "source_url": landing,
@@ -1480,7 +1484,7 @@ def collect_coveo_items(cfg: dict[str, Any], session: requests.Session, timeout:
             "date": date_iso,
             "pdf_candidates": pdf_candidates,
             "scrape_url": "" if is_file else landing,
-            "coveo_unique_id": result.get("uniqueId") or result.get("UniqueId") or "",
+            "coveo_unique_id": unique_id,
         })
     log(f"  coveo -> {len(items)} publications (total {data.get('totalCount')})")
     return items
@@ -1643,18 +1647,22 @@ def scrape_imf_preview_candidates(html_text: str, base_url: str) -> list[str]:
     return candidates
 
 
-def collect_coveo_preview_candidates(
+def collect_coveo_preview_html(
     cfg: dict[str, Any],
     session: requests.Session,
     unique_id: str,
     base_url: str,
     timeout: int,
-) -> list[str]:
-    """Resolve official PDF links from Coveo's cached HTML preview."""
+) -> str:
+    """Read one publication's official indexed preview, cached for this batch."""
 
     unique_id = str(unique_id or "").strip()
     if not unique_id:
-        return []
+        return ""
+    cache = cfg.setdefault("_coveo_preview_cache", {})
+    cache_key = (unique_id, base_url)
+    if cache_key in cache:
+        return cache[cache_key]
 
     parsed = urlsplit(cfg["coveo_url"])
     preview_url = f"{parsed.scheme}://{parsed.netloc}{parsed.path.rstrip('/')}/html"
@@ -1674,7 +1682,43 @@ def collect_coveo_preview_candidates(
         },
     )
     response.raise_for_status()
-    return scrape_imf_preview_candidates(response.text, base_url)
+    if len(response.text) > 2_000_000:
+        raise ValueError("IMF preview exceeds bound")
+    cache[cache_key] = response.text
+    return response.text
+
+
+def collect_coveo_preview_candidates(cfg, session, unique_id, base_url, timeout):
+    """Resolve official PDF links from the same indexed publication preview."""
+    return scrape_imf_preview_candidates(
+        collect_coveo_preview_html(cfg, session, unique_id, base_url, timeout), base_url)
+
+
+def resolve_imf_browser_publication(cfg, session, item, timeout):
+    """Follow the publication's actual DOI to publisher-deposited metadata."""
+    from imf_elibrary_resolver import ResolutionError, bind_source, resolve_crossref
+    from urllib.parse import quote
+
+    preview = collect_coveo_preview_html(
+        cfg, session, item.get("coveo_unique_id", ""), item["source_url"], timeout)
+    raw = cfg.get("_coveo_raw_by_id", {}).get(item.get("coveo_unique_id", ""), {})
+    identity = bind_source(item, raw, preview, item["source_url"])
+    cache = cfg.setdefault("_imf_crossref_cache", {})
+    if identity.doi not in cache:
+        response = session.get(
+            "https://api.crossref.org/works/" + quote(identity.doi, safe="/"),
+            timeout=min(timeout, 30), allow_redirects=False)
+        try:
+            if response.status_code != 200:
+                raise ResolutionError("crossref_http_rejected")
+            if len(response.content) > 2_000_000:
+                raise ResolutionError("crossref_response_too_large")
+            cache[identity.doi] = response.json()
+        finally:
+            response.close()
+    # Revalidate the metadata against each exact source even when the DOI was
+    # already read in this batch. No source identity is inferred from a URL.
+    return resolve_crossref(identity, cache[identity.doi])
 
 
 def download_pdf(session: requests.Session, urls: Iterable[str], dest: Path, timeout: int, max_bytes: int, impersonate: bool = False, profile: str | None = None, proxy: str | None = None) -> tuple[str | None, str]:
@@ -1829,7 +1873,7 @@ def matches_dependency_hold(versions: dict, filename: str, item: dict, candidate
 # Main
 # ------------------------------------------------------------------
 
-def main() -> int:
+def _main(imf_browser=None) -> int:
     parser = argparse.ArgumentParser(description="Fetch latest institution PDF reports for the WeChat pipeline.")
     parser.add_argument("--output-dir", required=True, help="Where to write transient PDFs (should be git-ignored).")
     parser.add_argument("--date", default=datetime.now(timezone.utc).strftime("%y%m%d"), help="Run date tag, YYMMDD.")
@@ -1921,7 +1965,10 @@ def main() -> int:
     used_pdf_urls: set[str] = set()
 
     proxy_url: str | None = None
-    if any(INSTITUTIONS[k].get("use_proxy") for k in enabled):
+    browser_enabled = bool(imf_browser is not None and imf_browser.enabled)
+    legacy_proxy_sources = [k for k in enabled if INSTITUTIONS[k].get("use_proxy")
+                            and not (k == "imf" and browser_enabled)]
+    if legacy_proxy_sources:
         subscription = os.getenv("PROXY_SUBSCRIPTION_URL", "").strip()
         if subscription:
             # Prefer a source-specific WAF probe when one is configured. IMF is
@@ -1930,7 +1977,7 @@ def main() -> int:
             proxy_test_url = next(
                 (
                     str(INSTITUTIONS[k]["proxy_test_url"])
-                    for k in enabled
+                    for k in legacy_proxy_sources
                     if INSTITUTIONS[k].get("use_proxy")
                     and INSTITUTIONS[k].get("proxy_test_url")
                 ),
@@ -1949,6 +1996,9 @@ def main() -> int:
             log("PROXY_SUBSCRIPTION_URL not set; use_proxy sources fetch directly.")
     for key in INSTITUTIONS:
         INSTITUTIONS[key]["_proxy"] = proxy_url if INSTITUTIONS[key].get("use_proxy") else None
+        INSTITUTIONS[key].pop("_coveo_preview_cache", None)
+        INSTITUTIONS[key].pop("_imf_crossref_cache", None)
+        INSTITUTIONS[key].pop("_coveo_raw_by_id", None)
 
     for key in enabled:
         if args.max_total and len(downloaded) >= args.max_total:
@@ -2048,6 +2098,7 @@ def main() -> int:
                     continue
             feed_pdf_candidates = list(item["pdf_candidates"])
             recovered = None
+            live_download = None
             if key == "imf" and verified_originals and verified_originals.contains(item):
                 title = item["title"] or item["guid"] or item["source_url"]
                 filename = f"{cfg['token']}_{slug(title)}_{short_hash(dedup_key)}.pdf"
@@ -2062,7 +2113,23 @@ def main() -> int:
                     if len(resolution_failure_samples) < 3:
                         resolution_failure_samples.append(str(exc))
                     continue
-            if recovered is None:
+            if recovered is None and key == "imf" and browser_enabled:
+                title = item["title"] or item["guid"] or item["source_url"]
+                filename = f"{cfg['token']}_{slug(title)}_{short_hash(dedup_key)}.pdf"
+                dest = output_dir / filename
+                try:
+                    publication = resolve_imf_browser_publication(
+                        cfg, session, item, args.request_timeout)
+                    live_download = imf_browser.download(publication, dest, max_bytes)
+                    used_url, status = live_download["pdf_url"], "ok"
+                except Exception as exc:
+                    # Cloud client errors may contain private subscription data.
+                    # Only the fixed public category is ever included in logs.
+                    category = getattr(exc, "category", getattr(exc, "code", "official_browser_unavailable"))
+                    if not isinstance(category, str) or not re.fullmatch(r"[a-z_]{1,80}", category):
+                        category = "official_browser_unavailable"
+                    warn(f"  IMF official browser route: {category}; trying ordinary official PDF routes")
+            if recovered is None and live_download is None:
                 candidates = list(feed_pdf_candidates)
                 landing_attempted = False
                 preview_attempted = False
@@ -2224,6 +2291,8 @@ def main() -> int:
             if recovered is not None:
                 record.update(recovered)
                 verified_original_count += 1
+            if live_download is not None:
+                record["imf_live_download"] = live_download
             append_archive(archive_path, record)
             downloaded.append(record)
             new_count += 1
@@ -2317,6 +2386,15 @@ def main() -> int:
         )
         return 2
     return 0
+
+
+def main() -> int:
+    # The context is lazy and disabled outside the selected cloud workflow.
+    # It closes the per-batch client even when argument parsing or a source fails.
+    from imf_cloud_browser import CloudImfBrowser
+    with CloudImfBrowser(fetch_subscription=_fetch_subscription,
+                         decode_subscription=_b64_text) as browser:
+        return _main(browser)
 
 
 if __name__ == "__main__":

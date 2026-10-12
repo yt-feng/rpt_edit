@@ -29,7 +29,31 @@ represented by the explicit allowlist; the loader does not itself perform a huma
 identity review or fetch the review receipt. A valid cache read demonstrates the
 approved original's bytes, not a successful live source request.
 
-## Manifest contract
+## Live official downloads
+
+The institution production and fetch-test workflows install a pinned Linux-only
+browser and the existing subscription client when IMF is selected. The fetcher
+first resolves the exact indexed publication's DOI through Crossref, then visits
+the publisher-deposited eLibrary page using the working cloud route. It reads the
+page's actual download link and checks the publication identity before downloading.
+There is no fixed report URL, guessed journal identifier, exported browser session,
+or automatic challenge interaction in this path.
+
+The client is started lazily once per fetch batch. Connection checks can select
+among at most three strictly validated VLESS entries from the existing repository
+subscription; ordinary browser requests and PDF validation remain separate gates.
+Only the transient Linux runner uses this route. A missing or expired subscription,
+unsupported source identity, rejected page or invalid PDF keeps ordinary source
+fallbacks and durable pending intake active. It cannot mark a report as downloaded.
+
+Each successful live download records its official URLs, DOI, metadata identity,
+HTTP results, SHA-256, byte count and parsed page count in `imf_live_download`.
+The source-health contract verifies that complete proof group against the archive
+row. Live downloads can establish healthy source access; the reviewed private-cache
+path retains its separate proof and degraded-source rules below. Existing dependency
+holds and successful seen-state deduplication are checked before live downloads.
+
+## Reviewed cache manifest contract
 
 The UTF-8 JSON object has exactly `schema` (integer `1`), `institution` (`imf`),
 `frozen_pending_sha256` and `records` (1–100 entries, no duplicate identities).

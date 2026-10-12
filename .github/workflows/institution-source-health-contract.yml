@@ -12,6 +12,11 @@ on:
       - scripts/test_institution_source_health.py
       - scripts/test_source_monitoring.py
       - scripts/fetch_institution_latest_pdfs.py
+      - scripts/imf_*
+      - scripts/test_imf_*
+      - scripts/fixtures/imf_*
+      - .github/actions/setup-imf-browser/**
+      - .github/workflows/institution-fetch-test.yml
       - .github/workflows/institution-latest-pdf-to-wechat.yml
       - .github/workflows/institution-source-health-contract.yml
 permissions:
@@ -27,6 +32,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - run: python3 -m pip install --disable-pip-version-check 'requests>=2.31,<3' 'pypdf==6.19.0'
       - run: python3 -B scripts/test_institution_verified_originals.py
       - run: python3 -B scripts/test_institution_reviewed_intake.py
@@ -34,3 +42,5 @@ jobs:
       - run: python3 -B scripts/test_institution_pending_intake.py
       - run: python3 -B scripts/test_fetch_institution_latest_pdfs.py
       - run: python3 -B scripts/test_source_monitoring.py
+      - run: python3 -B -m unittest discover -s scripts -p 'test_imf_*.py'
+      - run: node --test scripts/test_imf_cloud_browser.cjs

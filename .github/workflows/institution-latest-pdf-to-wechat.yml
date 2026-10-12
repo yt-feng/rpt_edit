@@ -126,6 +126,11 @@ jobs:
           python scripts/test_institution_source_health.py
           python scripts/test_institution_pending_intake.py
 
+      - name: Set up official IMF download route
+        uses: ./.github/actions/setup-imf-browser
+        with:
+          institutions: ${{ github.event.inputs.institutions || 'all' }}
+
       - name: Select reviewed institution originals
         id: reviewed_originals
         shell: bash
@@ -215,8 +220,12 @@ jobs:
           if [ -n "$REVIEWED_ORIGINALS_MANIFEST" ]; then
             reviewed_args+=(--verified-originals-manifest "$REVIEWED_ORIGINALS_MANIFEST")
           fi
+          fetch_runner=(python)
+          if [ "${IMF_CLOUD_BROWSER_ENABLED:-}" = true ]; then
+            fetch_runner=(xvfb-run --auto-servernum python)
+          fi
           set +e
-          python scripts/fetch_institution_latest_pdfs.py \
+          "${fetch_runner[@]}" scripts/fetch_institution_latest_pdfs.py \
             --output-dir _institution_latest_pdfs \
             --pending-intake-path institution_feeds/pending_intake/imf.json \
             --imf-pending-retries "$IMF_PENDING_RETRIES" \
