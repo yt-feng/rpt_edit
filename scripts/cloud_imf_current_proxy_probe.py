@@ -138,7 +138,10 @@ def probe(index: int, proxy: str, target: str, url: str, f, cffi, PdfReader) -> 
         data = bytes(body)
         row["bytes"] = len(data)
         row.update(inspect_response_markers(response.headers, data))
-        row["official_final_host"] = urlsplit(str(response.url)).hostname in OFFICIAL_HOSTS
+        final_url = urlsplit(str(response.url))
+        row["official_final_host"] = final_url.hostname in OFFICIAL_HOSTS
+        row["official_final_https"] = (final_url.scheme == "https" and final_url.username is None
+                                       and final_url.password is None and final_url.port in (None, 443))
         row["pdf_signature"] = f.is_pdf_bytes(data)
         if row["pdf_signature"] and not row.get("too_large") and row["status"] == 200:
             try:
@@ -154,7 +157,8 @@ def probe(index: int, proxy: str, target: str, url: str, f, cffi, PdfReader) -> 
                     text = first_pages.casefold()
                     identity = "estonia" in text and "consumer price index" in text and "2026" in text
                     row.update(sha256=digest, pages=pages, source_identity_match=identity,
-                               accepted_source_pdf=(target == "pdf" and row["official_final_host"] and identity))
+                               accepted_source_pdf=(target == "pdf" and row["official_final_host"]
+                                                    and row["official_final_https"] and identity))
                     if identity:
                         row["first_page_text"] = first_page[:400]
                     with SAVE_LOCK:
