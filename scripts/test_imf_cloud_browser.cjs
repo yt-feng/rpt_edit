@@ -11,8 +11,8 @@ const landing = 'https://www.elibrary.imf.org/view/journals/019/2026/082/019.202
 const pdf = 'https://www.elibrary.imf.org/downloadpdf/view/journals/019/2026/082/019.2026.issue-082-en.pdf';
 
 async function simulate(options = {}) {
-  const pageLanding = options.originalEdition ? landing.replace('-en.', '-es.') : landing;
-  const pagePdf = options.originalEdition ? pdf.replace('-en.', '-es.') : pdf;
+  const pageLanding = options.fiscal ? 'https://www.elibrary.imf.org/display/book/9798229056298/9798229056298.xml?cid=578448-com-dsp-crossref' : options.originalEdition ? landing.replace('-en.', '-es.') : landing;
+  const pagePdf = options.fiscal ? 'https://www.elibrary.imf.org/downloadpdf/display/book/9798229056298/9798229056298.pdf' : options.originalEdition ? pdf.replace('-en.', '-es.') : pdf;
   const events = [], output = [], responses = new Map(), signals = new Map(), input = new EventEmitter();
   const frame = {}, timers = new Map();
   const metadata = options.metadata || {'citation_doi': ['10.5089/9798229063937.019'],
@@ -76,8 +76,8 @@ async function simulate(options = {}) {
   await vm.runInNewContext(code, {require: name => {
     if (name === 'node:fs') return {
       statSync: file => ({size: file.endsWith('request.json') ? 512 : options.size ?? 500}),
-      readFileSync: () => JSON.stringify({landing_url: pageLanding, max_bytes: 1024,
-        observe_original_edition: options.originalEdition ?? false}), constants: {COPYFILE_EXCL: 1},
+      readFileSync: () => JSON.stringify({landing_url: options.requestUrl || pageLanding, max_bytes: 1024,
+        observe_original_edition: options.originalEdition ?? false, observe_fiscal_chapter: options.fiscal ?? false}), constants: {COPYFILE_EXCL: 1},
       copyFileSync: () => { events.push('copy'); }
     };
     if (name === 'node:path') return path;
@@ -191,4 +191,32 @@ test('edition flag accepts only boolean and extra DOI observations are bounded',
     doiLinks: Array(17).fill('https://doi.org/10.5089/9798229063937.019')});
   assert.equal(excess.output.at(-1).category, 'page_metadata_limit');
   assert.ok(!excess.events.includes('click'));
+});
+test('Fiscal chapter book observation keeps its real query and waits for parent identity decision', async () => {
+  const result = await simulate({fiscal: true, noDecision: true,
+    doiLinks: ['https://doi.org/10.5089/9798229056298.089']});
+  assert.equal(result.events.filter(x => x === 'goto').length, 1);
+  assert.equal(result.events.filter(x => x === 'read-body').length, 1);
+  assert.ok(!result.events.includes('click'));
+  assert.deepEqual([...result.output[0].doi_links], ['https://doi.org/10.5089/9798229056298.089']);
+  for (const options of [{fiscal: 'true'}, {fiscal: true, originalEdition: true}]) {
+    const rejected = await simulate(options);
+    assert.ok(!rejected.events.includes('launch'));
+  }
+});
+
+test('Fiscal mode rejects a journal request and a changed book before observing or clicking', async () => {
+  const wrongRequest = await simulate({fiscal: true, requestUrl: landing});
+  assert.ok(!wrongRequest.events.includes('launch'));
+  const wrongBook = await simulate({fiscal: true,
+    finalUrl: 'https://www.elibrary.imf.org/display/book/9798229063937/9798229063937.xml'});
+  assert.ok(!wrongBook.events.includes('read-body'));
+  assert.ok(!wrongBook.events.includes('click'));
+  assert.equal(wrongBook.output.at(-1).category, 'page_not_ready');
+  const noQuery = await simulate({fiscal: true,
+    finalUrl: 'https://www.elibrary.imf.org/display/book/9798229056298/9798229056298.xml',
+    doiLinks: ['https://doi.org/10.5089/9798229056298.089']});
+  assert.equal(noQuery.output.at(-1).stage, 'download');
+  assert.equal(noQuery.events.filter(x => x === 'goto').length, 1);
+  assert.equal(noQuery.events.filter(x => x === 'click').length, 1);
 });

@@ -36,9 +36,12 @@ async function main() {
     throw new Error("request_invalid");
   }
   if ("observe_original_edition" in request && typeof request.observe_original_edition !== "boolean") throw new Error("request_invalid");
+  if ("observe_fiscal_chapter" in request && typeof request.observe_fiscal_chapter !== "boolean") throw new Error("request_invalid");
+  if (request.observe_original_edition && request.observe_fiscal_chapter) throw new Error("request_invalid");
   if (request.observe_original_edition && !/^\/view\/journals\/(019|029)\/(20\d{2})\/(\d{3})\/\1\.\2\.issue-\3-es\.xml$/.test(landing.pathname)) {
     throw new Error("request_invalid");
   }
+  if (request.observe_fiscal_chapter && !/^\/display\/book\/(97[89]\d{10})\/\1\.xml$/.test(landing.pathname)) throw new Error("request_invalid");
   const {chromium} = require(path.join(root, "node_modules", "playwright"));
   let browser, page, landingStatus = null, actualLandingStatus = null, pdfStatus = null, target = null;
   const terminate = async () => {
@@ -99,13 +102,13 @@ async function main() {
     }
     const downloadHrefs = bounded(hrefs);
     let editionObservation = {};
-    if (request.observe_original_edition) {
+    if (request.observe_original_edition || request.observe_fiscal_chapter) {
       const final = new URL(page.url());
       if (final.protocol !== "https:" || !["www.elibrary.imf.org", "elibrary.imf.org"].includes(final.hostname) ||
           final.username || final.password || (final.port && final.port !== "443") ||
-          final.pathname !== landing.pathname || final.search || final.hash) throw new Error("page_not_ready");
+          final.pathname !== landing.pathname || (final.search && final.search !== landing.search) || final.hash) throw new Error("page_not_ready");
       const doiLinks = await page.locator('a[href]').evaluateAll(nodes => nodes.map(n => n.href).filter(href =>
-        /^https:\/\/doi\.org\/10\.5089\/97[89]\d{10}\.(019|029)$/.test(href)));
+        /^https:\/\/doi\.org\/10\.5089\/97[89]\d{10}\.(019|029|089)$/.test(href)));
       bounded(doiLinks, 16);
       const raw = await page.locator('body').innerText({timeout: 10000});
       const bytes = Buffer.from(raw, 'utf8');

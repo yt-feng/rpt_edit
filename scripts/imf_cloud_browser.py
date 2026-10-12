@@ -65,6 +65,15 @@ def publication_provenance(publication):
             raise ValueError
         return {"schema": 1, "crossref_sha256": digest}
     metadata = publication["metadata"]
+    if type(metadata) is dict and metadata.get("method") == "official_fiscal_chapter":
+        from imf_fiscal_chapter import validate_fiscal_chapter_metadata
+        if (publication.get("crossref_sha256", "missing") is not None
+                or metadata.get("preview_sha256") != publication.get("preview_sha256")
+                or publication.get("full_title") != metadata.get("book_title", "") + ": " + metadata.get("book_subtitle", "")):
+            raise ValueError
+        result = validate_fiscal_chapter_metadata(metadata, publication["source_title"],
+                                                 publication["doi"], publication["landing_url"])
+        return {"schema": 2, "metadata": result}
     if (type(metadata) is not dict or set(metadata) != {"method", "preview_sha256"}
             or metadata["method"] != "official_source_preview"
             or "crossref_sha256" not in publication or publication["crossref_sha256"] is not None):
@@ -266,6 +275,27 @@ def spanish_series_identity(publication, pdf_title, text):
         return False
 
 
+def fiscal_pdf_identity(publication, metadata, pdf_title, pdf_subject, text, page_count):
+    """The downloaded chapter independently names its DOI, whole topic and period."""
+    from calendar import month_name
+    from imf_elibrary_resolver import title_key
+    try:
+        chapter = metadata["chapter"]
+        period = f"{month_name[int(metadata['month'])]} {metadata['year']}"
+        expected_title = f"Chapter {chapter}. {publication['source_title']}. IMF Fiscal Monitor; {period}."
+        return (metadata["method"] == "official_fiscal_chapter"
+                and type(metadata["publisher_page"]["pages"]) is int
+                and page_count == metadata["publisher_page"]["pages"]
+                and isinstance(pdf_subject, str) and pdf_subject.strip() == "https://doi.org/" + publication["doi"]
+                and isinstance(pdf_title, str) and title_key(pdf_title) == title_key(expected_title)
+                and title_words_present(publication["source_title"], text)
+                and re.search(r"\bfiscal\s+monitor\b", text, re.I) is not None
+                and re.search(r"\bchapter\s+" + str(chapter) + r"\b", text, re.I) is not None
+                and title_key(period) in title_key(text))
+    except (KeyError, TypeError, ValueError, IndexError):
+        return False
+
+
 def write_public_evidence(publication, page):
     """Optional canary artifact: bounded public identity only, never runtime state.
 
@@ -323,7 +353,7 @@ def write_public_evidence(publication, page):
         record["page"].update({
             "visible_body": body if isinstance(body, str) and len(body.encode("utf-8", errors="replace")) <= 80 * 1024 else "[invalid_body]",
             "body_truncated": page.get("body_truncated") is not False,
-            "doi_links": [value if isinstance(value, str) and re.fullmatch(r"https://doi\.org/10\.5089/97[89]\d{10}\.(019|029)", value)
+            "doi_links": [value if isinstance(value, str) and re.fullmatch(r"https://doi\.org/10\.5089/97[89]\d{10}\.(019|029|089)", value)
                           else "[invalid_doi_url]" for value in links[:16]] if isinstance(links, list) else []})
     temporary = None
     try:
@@ -342,7 +372,7 @@ def write_public_evidence(publication, page):
             Path(temporary).unlink(missing_ok=True)
 
 
-def verify_pdf(path, publication, max_bytes, expected_sha256=None, *, original_edition=None):
+def verify_pdf(path, publication, max_bytes, expected_sha256=None, *, original_edition=None, fiscal_metadata=None):
     if type(max_bytes) is not int or not 0 < max_bytes <= 128 * 1024 * 1024:
         raise BrowserDownloadError("imf_browser_size_bound_invalid")
     if not path.is_file() or not 0 < path.stat().st_size <= max_bytes:
@@ -360,6 +390,7 @@ def verify_pdf(path, publication, max_bytes, expected_sha256=None, *, original_e
             text = " ".join((page.extract_text() or "") for page in reader.pages[:3])
             page_count = len(reader.pages)
             pdf_title = (getattr(reader, "metadata", None) or {}).get("/Title", "")
+            pdf_subject = (getattr(reader, "metadata", None) or {}).get("/Subject", "")
     except BrowserDownloadError:
         raise
     except Exception:
@@ -368,7 +399,9 @@ def verify_pdf(path, publication, max_bytes, expected_sha256=None, *, original_e
     # different or unreadable PDF: require the full official title's words here.
     # A short Crossref main title can be only a country. Require the combined
     # title/subtitle, not that weaker variant, for PDF body identity.
-    if publication.get("original_language") == "es":
+    if fiscal_metadata is not None:
+        identity_verified = fiscal_pdf_identity(publication, fiscal_metadata, pdf_title, pdf_subject, text, page_count)
+    elif publication.get("original_language") == "es":
         identity_verified = spanish_series_identity(publication, pdf_title, text)
     else:
         identity_verified = title_words_present(publication.get("full_title") or publication["source_title"], text)
@@ -496,7 +529,8 @@ class CloudImfBrowser:
             for field in ("source_guid", "title", "source_title", "full_title"):
                 if not isinstance(publication[field], str) or not 0 < len(publication[field]) <= 8192:
                     raise ValueError
-            if title_key(publication["source_title"]) != title_key(publication["full_title"]):
+            if (publication.get("metadata", {}).get("method") != "official_fiscal_chapter"
+                    and title_key(publication["source_title"]) != title_key(publication["full_title"])):
                 raise ValueError
             if (type(max_bytes) is not int or not 0 < max_bytes <= 128 * 1024 * 1024
                     or (expected_sha256 is not None and not re.fullmatch(r"[a-f0-9]{64}", expected_sha256))):
@@ -515,6 +549,7 @@ class CloudImfBrowser:
         from imf_elibrary_resolver import validate_landing_metadata, validate_publication_url
         from imf_original_edition import original_edition_candidate, resolve_original_edition
         requested_landing = (original_edition_candidate(publication) if source_landing_status == 404 else publication["landing_url"])
+        fiscal = publication.get("metadata", {}).get("method") == "official_fiscal_chapter"
         destination = Path(dest)
         if destination.exists():
             raise BrowserDownloadError("imf_browser_destination_exists")
@@ -524,7 +559,8 @@ class CloudImfBrowser:
             request = folder / "request.json"
             with os.fdopen(os.open(request, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600), "w") as stream:
                 json.dump({"landing_url": requested_landing, "max_bytes": max_bytes,
-                           "observe_original_edition": source_landing_status == 404}, stream)
+                           "observe_original_edition": source_landing_status == 404,
+                           "observe_fiscal_chapter": fiscal}, stream)
             proc = None
             try:
                 proc = subprocess.Popen(["node", str(Path(__file__).with_suffix(".cjs")), str(request)],
@@ -550,7 +586,12 @@ class CloudImfBrowser:
                     raise BrowserDownloadError("imf_browser_page_not_ready")
                 try:
                     edition = None
-                    if source_landing_status == 404:
+                    fiscal_metadata = None
+                    if fiscal:
+                        from imf_fiscal_chapter import resolve_fiscal_landing
+                        pdf_url, fiscal_metadata = resolve_fiscal_landing(publication, page)
+                        provenance = {"schema": 2, "metadata": fiscal_metadata}
+                    elif source_landing_status == 404:
                         metadata = resolve_original_edition(publication, page, source_landing_status=source_landing_status)
                         provenance = {"schema": 2, "metadata": metadata}
                         edition = metadata["original_edition"]
@@ -571,8 +612,12 @@ class CloudImfBrowser:
                 if proc.wait(timeout=10) != 0:
                     raise BrowserDownloadError("imf_browser_process_failed")
                 downloaded = folder / "download.pdf"
-                validated = (verify_pdf(downloaded, publication, max_bytes, expected_sha256, original_edition=edition)
-                             if edition is not None else verify_pdf(downloaded, publication, max_bytes, expected_sha256))
+                if fiscal_metadata is not None:
+                    validated = verify_pdf(downloaded, publication, max_bytes, expected_sha256, fiscal_metadata=fiscal_metadata)
+                elif edition is not None:
+                    validated = verify_pdf(downloaded, publication, max_bytes, expected_sha256, original_edition=edition)
+                else:
+                    validated = verify_pdf(downloaded, publication, max_bytes, expected_sha256)
                 proof = {**provenance, "source_guid": publication["source_guid"], "source_url": publication["source_url"],
                          "landing_url": page["final_url"], "pdf_url": pdf_url, "doi": publication["doi"],
                          "title": publication["source_title"],

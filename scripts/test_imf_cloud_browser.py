@@ -446,6 +446,110 @@ class BrowserTests(unittest.TestCase):
         case['page']['stage'] = 'metadata'
         return case
 
+    def fiscal_publication(self):
+        import imf_fiscal_chapter as f
+        case = json.loads((Path(f.__file__).parent / 'fixtures/imf_elibrary/fiscal_chapter_observed.json').read_text())
+        source = f.prepare_fiscal_chapter(case['source_item'], case['source_preview_html'], case['source_item']['source_url'])
+        return f.resolve_fiscal_chapter(source, case['search_payload'], case['exact_payload'])
+
+    def test_fiscal_source_chapter_binds_separate_whole_book_provenance(self):
+        publication = self.fiscal_publication()
+        self.assertNotEqual(publication['full_title'], publication['source_title'])
+        proof = b.publication_provenance(publication)
+        self.assertEqual(proof['schema'], 2)
+        self.assertEqual(proof['metadata']['method'], 'official_fiscal_chapter')
+        self.assertNotIn('crossref_sha256', proof)
+        for change in ({'crossref_sha256': 'a' * 64}, {'preview_sha256': '0' * 64},
+                       {'source_title': 'Taxing Better to Reduce Growth'}, {'full_title': 'Fiscal Monitor'},
+                       {'doi': '10.5089/9798229063937.019'}):
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                b.publication_provenance({**publication, **change})
+
+    def test_fiscal_pdf_requires_independent_doi_whole_chapter_period_and_actual_pages(self):
+        publication = self.fiscal_publication()
+        metadata = {**publication['metadata'], 'publisher_page': {'pages': 1, 'page_sha256': 'd' * 64}}
+        title = 'Chapter 1. Taxing Better to Boost Growth. IMF Fiscal Monitor; October 2026.'
+        subject = 'https://doi.org/' + publication['doi']
+        body = 'IMF October 2026 CHAPTER 1 FISCAL MONITOR 1. Taxing Better to Boost Growth'
+        reader = SimpleNamespace(is_encrypted=False, metadata={'/Title': title, '/Subject': subject},
+                                 pages=[SimpleNamespace(extract_text=lambda: body)])
+        with tempfile.TemporaryDirectory() as folder, patch.dict(sys.modules, {'pypdf': SimpleNamespace(PdfReader=lambda _: reader)}):
+            file = Path(folder) / 'test.pdf'; file.write_bytes(b'%PDF-fiscal')
+            self.assertEqual(b.verify_pdf(file, publication, 1024, fiscal_metadata=metadata)['pages'], 1)
+            for change in ({'/Subject': 'https://doi.org/10.5089/9798229063937.019'},
+                           {'/Subject': ''}, {'/Title': title.replace('Chapter 1', 'Chapter 2')},
+                           {'/Title': title.replace('October 2026', 'October 2025')},
+                           {'/Title': title.replace('Boost', 'Reduce')}):
+                reader.metadata = {'/Title': title, '/Subject': subject, **change}
+                with self.assertRaisesRegex(b.BrowserDownloadError, 'pdf_title_mismatch'):
+                    b.verify_pdf(file, publication, 1024, fiscal_metadata=metadata)
+            reader.metadata = {'/Title': title, '/Subject': subject}
+            for bad in (body.replace('CHAPTER 1', 'CHAPTER 2'), body.replace('CHAPTER 1', 'CHAPTER 1a'),
+                        body.replace('Boost', 'Reduce'), body.replace('October 2026', '')):
+                reader.pages = [SimpleNamespace(extract_text=lambda: bad)]
+                with self.assertRaisesRegex(b.BrowserDownloadError, 'pdf_title_mismatch'):
+                    b.verify_pdf(file, publication, 1024, fiscal_metadata=metadata)
+            reader.pages = [SimpleNamespace(extract_text=lambda: body)]
+            with self.assertRaisesRegex(b.BrowserDownloadError, 'pdf_title_mismatch'):
+                b.verify_pdf(file, publication, 1024, fiscal_metadata={**metadata, 'publisher_page': {'pages': 2}})
+
+    def fiscal_page(self):
+        import imf_fiscal_chapter as f
+        return json.loads((Path(f.__file__).parent / 'fixtures/imf_elibrary/fiscal_chapter_observed.json').read_text())['page']
+
+    def test_actual_fiscal_page_gates_click_and_binds_chapter_proof_and_pdf_validation(self):
+        publication, page = self.fiscal_publication(), self.fiscal_page()
+        pdf = page['download_hrefs'][0]
+        result = {**RESULT, 'pdf_url': pdf}
+        data = b'%PDF-mock-fiscal'; digest = hashlib.sha256(data).hexdigest()
+        captured = []
+        def verify(path, source, *_args, fiscal_metadata=None):
+            self.assertEqual(source, publication)
+            self.assertEqual(fiscal_metadata['publisher_page']['pages'], 31)
+            self.assertRegex(fiscal_metadata['publisher_page']['page_sha256'], r'^[a-f0-9]{64}$')
+            captured.append(fiscal_metadata)
+            path.write_bytes(data)
+            return dict(sha256=digest, bytes=len(data), pages=31)
+        with self.download_mocks([page, result]) as (instance, dest, proc, spawn, _), patch.object(b, 'verify_pdf', verify):
+            requests = []
+            def launch(args, **_):
+                requests.append(json.loads(Path(args[2]).read_text()))
+                return proc
+            spawn.side_effect = launch
+            proof = instance.download(publication, dest, 1024)
+            self.assertEqual(set(proof), b.PROOF_FIELDS_V2)
+            self.assertEqual(proof['metadata'], captured[0])
+            self.assertEqual(proof['title'], publication['source_title'])
+            self.assertEqual(proof['doi'], publication['doi'])
+            self.assertEqual(proof['pages'], 31)
+            self.assertEqual(dest.read_bytes(), data)
+            self.assertEqual(len(requests), 1)
+            self.assertIs(requests[0]['observe_fiscal_chapter'], True)
+            self.assertIs(requests[0]['observe_original_edition'], False)
+            proc.stdin.write.assert_called_once_with((json.dumps({'pdf_url': pdf}) + '\n').encode())
+
+    def test_fiscal_page_missing_conflicting_or_unready_identity_never_clicks(self):
+        publication, good = self.fiscal_publication(), self.fiscal_page()
+        altered = deepcopy(good)
+        altered['metadata']['citation_title'] = [publication['title']]
+        for page in ({**good, 'landing_status': 403}, {**good, 'ready': False},
+                     {**good, 'doi_links': []}, {**good, 'body_truncated': True}, altered):
+            with self.subTest(page=page), self.download_mocks([page]) as (instance, dest, proc, spawn, _):
+                with self.assertRaises(b.BrowserDownloadError):
+                    instance.download(publication, dest, 1024)
+                self.assertEqual(spawn.call_count, 1)
+                proc.stdin.write.assert_not_called()
+                self.assertFalse(dest.exists())
+
+    def test_fiscal_pdf_failure_never_publishes_source_file(self):
+        publication, page = self.fiscal_publication(), self.fiscal_page()
+        with self.download_mocks([page, {**RESULT, 'pdf_url': page['download_hrefs'][0]}]) as (instance, dest, proc, _, _), \
+             patch.object(b, 'verify_pdf', side_effect=b.BrowserDownloadError('imf_browser_pdf_title_mismatch')):
+            with self.assertRaisesRegex(b.BrowserDownloadError, 'pdf_title_mismatch'):
+                instance.download(publication, dest, 1024)
+            proc.stdin.write.assert_called_once()
+            self.assertFalse(dest.exists())
+
     def test_real_source_404_closes_first_browser_then_one_exact_edition(self):
         case = self.edition_case(); publication, page = case['publication'], case['page']
         first = {**PAGE, 'landing_status': 404, 'ready': False, 'final_url': publication['landing_url']}
