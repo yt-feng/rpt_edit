@@ -35,6 +35,12 @@ HOST = re.compile(r'[a-f0-9]{32}\.r2\.cloudflarestorage\.com')
 BUCKET = re.compile(r'[a-z0-9][a-z0-9-]{1,61}[a-z0-9]')
 QUERY_FIELDS = {'X-Amz-Algorithm', 'X-Amz-Credential', 'X-Amz-Date', 'X-Amz-Expires',
                 'X-Amz-SignedHeaders', 'X-Amz-Signature'}
+ORIGINAL_ERROR_CODES = frozenset({
+    'original_binding', 'original_options', 'original_identity', 'original_source', 'original_binding_hash',
+    'original_bytes', 'original_bucket', 'original_read_failed', 'original_metadata',
+    'original_write_unresolved', 'original_readback', 'original_conflict', 'original_local_size',
+    'original_private_store_required', 'original_sources_empty', 'original_duplicate', 'original_total_size',
+})
 
 
 class BridgeError(ValueError):
@@ -469,7 +475,49 @@ def import_prepared(rows, prepared, plan, production, session, *, clock=time.tim
             'bytes': sum(row['size'] for row in rows), 'reused': reused, 'written': len(rows) - reused}
 
 
-def cloud_client():
+def safe_error_code(error):
+    if isinstance(error, BridgeError) and re.fullmatch(r'[a-z_]{1,64}', str(error)):
+        return str(error)
+    module = sys.modules.get('institution_original_cache')
+    if module is not None and type(error) is module.OriginalCacheError and str(error) in ORIGINAL_ERROR_CODES:
+        return str(error)
+    return 'operation_stopped'
+
+
+def cloud_readback(rows, original_cache, production):
+    """One bounded GET per exact source; no writes or repeat after an error."""
+    cache, verified, _ = production
+    require(len(rows) == EXPECTED_COUNT, 'readback_inventory')
+    results = []
+    counts = dict(verified=0, missing=0, invalid=0, read_error=0)
+    for row in rows:
+        status, code = 'verified', 'original_verified'
+        try:
+            payload = original_cache.get(row['binding'])
+        except cache.OriginalCacheError as error:
+            code = safe_error_code(error)
+            status = 'read_error' if code in {'original_read_failed', 'operation_stopped'} else 'invalid'
+        except Exception:
+            status, code = 'read_error', 'original_read_error'
+        else:
+            if payload is None:
+                status, code = 'missing', 'original_missing'
+            else:
+                try:
+                    cache.validate_payload(row['binding'], payload)
+                    if verified.pdf_pages(payload) != row['pages']:
+                        status, code = 'invalid', 'original_page_count'
+                except Exception:
+                    status, code = 'invalid', 'original_pdf_invalid'
+        counts[status] += 1
+        results.append({'guid': row['item']['guid'], 'sha256': row['sha256'], 'status': status, 'code': code})
+    accepted = counts['verified'] == EXPECTED_COUNT
+    return {'status': 'cloud_readback_verified' if accepted else 'cloud_readback_incomplete',
+            'accepted': accepted, 'manifest_sha256': MANIFEST_SHA256, 'originals': len(rows),
+            'expected_bytes': sum(row['size'] for row in rows), 'counts': counts, 'results': results}
+
+
+def cloud_client(*, read_only=False):
     import boto3
     from botocore.config import Config
     from private_workflow_handoff import require_env
@@ -479,7 +527,8 @@ def cloud_client():
     client = boto3.client('s3', endpoint_url='https://' + host,
         aws_access_key_id=require_env('R2_ACCESS_KEY_ID'), aws_secret_access_key=require_env('R2_SECRET_ACCESS_KEY'),
         region_name='auto', config=Config(signature_version='s3v4', s3={'addressing_style': 'path'},
-            connect_timeout=20, read_timeout=30, retries={'total_max_attempts': 1, 'mode': 'standard'},
+            connect_timeout=5 if read_only else 20, read_timeout=10 if read_only else 30,
+            retries={'total_max_attempts': 1, 'mode': 'standard'},
             request_checksum_calculation='when_required', response_checksum_validation='when_required'))
     return client, bucket, host
 
@@ -519,13 +568,9 @@ def main(argv=None):
             return {'status': 'encrypted_grants_created', 'manifest_sha256': MANIFEST_SHA256, 'originals': len(rows),
                     'expires_at': ctx['expires_at']}
         cache, verified, _ = production
-        client, bucket, _ = cloud_client()
+        client, bucket, _ = cloud_client(read_only=True)
         original_cache = cache.OriginalCache.single_attempt(client, bucket)
-        for row in rows:
-            payload = original_cache.get(row['binding'])
-            require(payload is not None and verified.pdf_pages(payload) == row['pages'], 'cloud_original_missing_or_invalid')
-        return {'status': 'cloud_readback_verified', 'manifest_sha256': MANIFEST_SHA256,
-                'originals': len(rows), 'bytes': sum(row['size'] for row in rows)}
+        return cloud_readback(rows, original_cache, production)
     directory = session_directory(args.session)
     require(not directory.is_symlink() and stat.S_IMODE(directory.stat().st_mode) == 0o700
             and directory.stat().st_uid == os.getuid(), 'session_mode')
@@ -544,6 +589,6 @@ if __name__ == '__main__':
         print(json.dumps(main(), sort_keys=True))
     except Exception as error:
         # Signed URLs and HTTP errors must never reach logs, including traceback.
-        code = str(error) if isinstance(error, BridgeError) else 'operation_stopped'
+        code = safe_error_code(error)
         print(json.dumps({'status': 'stopped', 'code': code}), file=sys.stderr)
         raise SystemExit(1) from None
