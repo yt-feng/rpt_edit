@@ -34,8 +34,13 @@ ERROR_CODES = {"ieo_followup_" + suffix for suffix in (
 
 
 class FollowupError(ValueError):
-    def __init__(self, category):
+    def __init__(self, category, *, http_status=None):
         self.category = category if category in ERROR_CODES else "ieo_followup_request_failed"
+        # Callers may permit one bounded alternate route for an actual HTTP 403.
+        # Never infer a status from exception text, malformed response values or
+        # other failures; the public exception message remains a fixed category.
+        self.http_status = (http_status if self.category == "ieo_followup_http_rejected"
+                            and type(http_status) is int and 100 <= http_status <= 599 else None)
         super().__init__(self.category)
 
 
@@ -188,7 +193,8 @@ def _read(session, url, limit, timeout):
     deadline = time.monotonic() + timeout
     try:
         response = session.get(url, timeout=(min(10, timeout), timeout), allow_redirects=False, stream=True)
-        require(type(response.status_code) is int and response.status_code == 200, "ieo_followup_http_rejected")
+        if type(response.status_code) is not int or response.status_code != 200:
+            raise FollowupError("ieo_followup_http_rejected", http_status=response.status_code)
         require(response.url == url, "ieo_followup_redirect_rejected")
         data = bytearray()
         for chunk in response.iter_content(65536):

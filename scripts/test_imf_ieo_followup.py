@@ -142,6 +142,37 @@ class FollowupTests(unittest.TestCase):
                 f.verify_pdf(data,TITLE,f.MAX_PDF)
         with self.assertRaises(f.FollowupError):f.verify_pdf(pdf_bytes(),TITLE,5)
 
+    def test_http_status_is_strict_public_metadata_without_request_retry(self):
+        for stage in range(3):
+            for status in (403, 401, 429, 500, 302, True, "403", 403.0, None, 99, 600):
+                responses = [Response(f.DIRECTORY_URL, directory()), Response(LANDING, landing()),
+                             Response(PDF_URL, pdf_bytes())]
+                responses[stage].status_code = status
+                session = Mock(); session.get.side_effect = responses
+                with self.subTest(stage=stage, status=status), tempfile.TemporaryDirectory() as folder:
+                    with self.assertRaises(f.FollowupError) as caught:
+                        f.download_followup(IDENTITY, session, Path(folder)/'original.pdf', f.MAX_PDF, 20)
+                    error = caught.exception
+                    expected = status if type(status) is int and 100 <= status <= 599 else None
+                    self.assertEqual(error.http_status, expected)
+                    self.assertEqual(str(error), 'ieo_followup_http_rejected')
+                    self.assertEqual(session.get.call_count, stage + 1)
+                    self.assertTrue(all(response.closed for response in responses[:stage+1]))
+                    self.assertFalse(list(Path(folder).iterdir()))
+
+    def test_non_http_failures_cannot_claim_a_status_or_expose_exception_text(self):
+        for category in ('ieo_followup_request_failed', 'ieo_followup_redirect_rejected',
+                         'ieo_followup_pdf_title_mismatch', 'SECRET unexpected category'):
+            error = f.FollowupError(category, http_status=403)
+            self.assertIsNone(error.http_status)
+            self.assertNotIn('SECRET', str(error))
+        session = Mock(); session.get.side_effect = TimeoutError('SECRET HTTP 403 endpoint')
+        with self.assertRaises(f.FollowupError) as caught:
+            f._read(session, f.DIRECTORY_URL, f.MAX_HTML, 20)
+        self.assertIsNone(caught.exception.http_status)
+        self.assertEqual(str(caught.exception), 'ieo_followup_request_failed')
+        session.get.assert_called_once()
+
     def test_receipt_requires_every_field_strict_types_and_no_unknown_claims(self):
         with tempfile.TemporaryDirectory() as folder:proof,_,_=self.run_download(Path(folder))
         for field in proof:
