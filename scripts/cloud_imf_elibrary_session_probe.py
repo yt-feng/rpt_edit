@@ -32,8 +32,10 @@ class CoherentSession:
         if url == PDF:
             headers["Referer"] = LANDING
         kwargs["headers"] = headers
-        if self.direct:
-            kwargs["curl_options"][self.curl_opt.PROXY] = ""
+        # Session.request does not accept curl_options; they are fixed once on
+        # this dedicated Session. The shared top-level probe supplies NOPROXY.
+        if kwargs.pop("curl_options", {}) != {self.curl_opt.NOPROXY: ""}:
+            raise RuntimeError("unexpected_request_options")
         return self.session.get(url, **kwargs)
 
 
@@ -64,7 +66,10 @@ def main():
     save()
     for index, node in chosen:
         for coherent in (True, False):
-            with cffi.Session() as session:
+            options = {CurlOpt.NOPROXY: ""}
+            if not node:
+                options[CurlOpt.PROXY] = ""
+            with cffi.Session(curl_options=options) as session:
                 client = CoherentSession(session, not node, CurlOpt, coherent)
                 targets = [("landing", LANDING), ("pdf", PDF)]
                 if coherent:

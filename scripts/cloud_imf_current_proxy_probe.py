@@ -71,6 +71,8 @@ def vless_metadata(line: str) -> dict:
 
 def category(error: Exception) -> str:
     """Only fixed classifications escape this function, never exception text."""
+    if isinstance(error, TypeError):
+        return "client_api_error"
     code = getattr(error, "code", None)
     detail = str(error).lower()
     if code == 67 or any(x in detail for x in (
