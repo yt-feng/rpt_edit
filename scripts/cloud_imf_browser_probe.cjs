@@ -27,7 +27,10 @@ async function main() {
   save();
   try {
     // Uses only Playwright's pinned bundled cloud browser, no executablePath.
-    browser = await chromium.launch({headless: true});
+    // Use the normal headed browser on the ephemeral Linux runner display.
+    // No fingerprint patches, challenge interaction or exported session state.
+    report.browser_mode = "headed";
+    browser = await chromium.launch({headless: false});
     const context = await browser.newContext({acceptDownloads: true});
     const page = await context.newPage();
     const response = await page.goto(LANDING, {waitUntil: "domcontentloaded", timeout: 45000});

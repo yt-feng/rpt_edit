@@ -46,7 +46,7 @@ jobs:
         env:
           EXPLICIT_CLOUD_BROWSER_APPROVAL: 'true'
           PLAYWRIGHT_PACKAGE_ROOT: ${{ runner.temp }}/imf-browser
-        run: node scripts/cloud_imf_browser_probe.cjs
+        run: xvfb-run --auto-servernum node scripts/cloud_imf_browser_probe.cjs
       - name: Verify complete PDF and exact known identity
         run: |
           python - <<'PYCODE'
