@@ -24,6 +24,7 @@ def source_check(key="imf", status="error", new=0):
     return dict(institution=key, institution_en=fetcher.INSTITUTIONS[key]["name_en"],
                 status=status, item_count=2, new_pdf_count=new, eligible_item_count=2,
                 resolution_failure_count=2 if status == "error" else 1 if status == "degraded" else 0,
+                deferred_retry_count=0, discovery_error=False,
                 required_for_clean_zero=bool(fetcher.INSTITUTIONS[key].get("required_for_clean_zero")),
                 error="private diagnostic material must not enter continuation outputs")
 

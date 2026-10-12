@@ -69,6 +69,8 @@ from urllib.parse import unquote, urljoin, urlsplit
 
 import requests
 
+from institution_pending_intake import PendingIntake
+
 try:  # Optional: impersonate a real Chrome TLS/HTTP2 fingerprint to pass WAFs (IMF).
     from curl_cffi import requests as cffi_requests  # type: ignore
     _HAS_CFFI = True
@@ -1344,7 +1346,9 @@ def collect_coveo_items(cfg: dict[str, Any], session: requests.Session, timeout:
         landing = _normalize_imf_host(landing)
         # Search results can include Special Features roll-up pages, which are
         # collections rather than individual publications with one report PDF.
-        if "/publications/sprolls/" in urlsplit(landing).path.lower():
+        publication_path = urlsplit(landing).path.lower().rstrip("/")
+        if "/publications/sprolls/" in publication_path or publication_path == "/en/publications/weo":
+            # The WEO root is a collection, not the separately dated issue.
             continue
         epoch_ms = raw.get("imfdate")
         date_iso = ""
@@ -1723,6 +1727,8 @@ def main() -> int:
     parser.add_argument("--seen-retention-days", type=int, default=120)
     parser.add_argument("--max-pdf-mb", type=float, default=60.0)
     parser.add_argument("--worldbank-rows", type=int, default=30)
+    parser.add_argument("--pending-intake-path", type=Path, help="Durable checkpoint for unresolved IMF intake (separate from seen state)")
+    parser.add_argument("--imf-pending-retries", type=int, default=10, help="Maximum previously observed IMF sources to retry per run (1-100)")
     parser.add_argument("--imf-rows", type=int, default=60, help="Coveo results to scan for IMF (newest first).")
     parser.add_argument("--ddg-df", default="", help="DuckDuckGo date filter for search sources: d/w/m/y or '' for none. The html endpoint returns nothing with a date filter, so default is none; recent reports still surface by relevance and seen-dedup avoids reprocessing.")
     parser.add_argument("--force-reprocess", default="false", help="Ignore seen-state dedup and redownload matching fresh PDFs.")
@@ -1779,6 +1785,11 @@ def main() -> int:
     observed_at = datetime.now(timezone.utc)
     cutoff = observed_at - timedelta(days=args.since_days)
     today = observed_at.date().isoformat()
+    pending = (PendingIntake(args.pending_intake_path, seen_items, now=observed_at,
+                             retry_limit=args.imf_pending_retries)
+               if args.pending_intake_path and "imf" in enabled else None)
+    if pending:
+        pending.save()
     force_reprocess = as_bool(args.force_reprocess)
     if force_reprocess:
         log("Force reprocess enabled: ignoring seen-state dedup for matching fresh PDFs.")
@@ -1824,6 +1835,7 @@ def main() -> int:
             break
         cfg = INSTITUTIONS[key]
         log(f"== {cfg['name_en']} ({cfg['name_cn']}) ==")
+        discovery_error = ""
         try:
             if cfg["kind"] == "worldbank_api":
                 items = collect_worldbank_items(cfg, session, args.request_timeout, args.worldbank_rows)
@@ -1840,19 +1852,13 @@ def main() -> int:
         except Exception as exc:  # noqa: BLE001 - never let one source kill the run
             message = f"{cfg['name_en']} source failed entirely: {exc}"
             github_warning(message)
-            source_checks.append({
-                "institution": key,
-                "institution_en": cfg["name_en"],
-                "status": "error",
-                "item_count": 0,
-                "new_pdf_count": 0,
-                "eligible_item_count": 0,
-                "resolution_failure_count": 0,
-                "required_for_clean_zero": bool(cfg.get("required_for_clean_zero")),
-                "error": str(exc),
-            })
-            continue
+            discovery_error = f"Source discovery unavailable: {type(exc).__name__}"
+            items = []
 
+        if key == "imf" and pending:
+            if not items and not discovery_error:
+                discovery_error = "Source discovery returned no publications"
+            items = pending.merge(items)
         source_status = "ok" if items else "empty"
         if source_status == "empty":
             github_warning(
@@ -1874,9 +1880,12 @@ def main() -> int:
             known_title = item['title'] or item['guid'] or item['source_url']
             held_name = f"{cfg['token']}_{slug(known_title)}_{short_hash(dedup_key)}.pdf"
             if matches_dependency_hold(held_versions, held_name, item):
+                if key == "imf" and pending:
+                    pending.observe_hold(dedup_key)
                 skipped.append({'institution': key, 'reason': 'dependency_hold', 'source_url': item['source_url']})
                 continue
-            if dedup_key in seen_items and not force_reprocess:
+            if (dedup_key in seen_items and not force_reprocess
+                    and not (key == "imf" and pending and dedup_key in pending.items)):
                 continue
 
             source_year = bcg_publication_year(item["source_url"]) if key == "bcg" else None
@@ -1897,13 +1906,24 @@ def main() -> int:
                 skipped.append({"institution": key, "reason": "publication_pending",
                                 "source_url": item["source_url"]})
                 continue
-            if cfg.get("recency_filter", True) and published is not None and published < cutoff:
+            if (cfg.get("recency_filter", True) and published is not None and published < cutoff
+                    and not (key == "imf" and pending and dedup_key in pending.items)):
                 # Old item we have simply never recorded; mark it so we do not keep
                 # re-checking it every day, but do not download it.
                 seen_items[dedup_key] = {"first_seen": today, "status": "too_old"}
                 continue
 
             eligible_count += 1
+            if key == "imf" and pending:
+                try:
+                    pending.admit(item, args.since_days)
+                except ValueError as exc:
+                    resolution_failure_count += 1
+                    if len(resolution_failure_samples) < 3:
+                        resolution_failure_samples.append(f"intake metadata: {exc}")
+                    skipped.append({"institution": key, "source_url": item["source_url"],
+                                    "reason": "invalid_intake_metadata"})
+                    continue
             feed_pdf_candidates = list(item["pdf_candidates"])
             candidates = list(feed_pdf_candidates)
             landing_attempted = False
@@ -1944,7 +1964,7 @@ def main() -> int:
                 item["title"] = _title_from_url_slug(item["source_url"]) or item["title"]
 
             if not candidates:
-                if cfg.get("require_pdf") or bcg_external_only:
+                if cfg.get("require_pdf") or bcg_external_only or (key == "imf" and pending):
                     # A promised main PDF, or only third-party citations on a
                     # BCG page, cannot establish this source report's contents.
                     # Keep the source visible and retryable rather than seen.
@@ -2035,6 +2055,8 @@ def main() -> int:
                     resolution_failure_samples.append(f"download: {status}: {title[:80]}")
                 continue
 
+            if key == "imf" and pending:
+                pending.resolved.add(dedup_key)
             if used_url in used_pdf_urls:
                 # Two feed/listing items resolved to the same PDF (e.g. a shared
                 # brochure link); keep only the first.
@@ -2066,7 +2088,7 @@ def main() -> int:
             new_count += 1
             log(f"  saved {filename} ({record['bytes'] // 1024} KB) <- {used_url}")
 
-        health_detail = ""
+        health_detail = discovery_error
         if source_status == "ok" and resolution_failure_count:
             source_status = "error" if resolution_failure_count >= eligible_count else "degraded"
             health_detail = (
@@ -2077,14 +2099,27 @@ def main() -> int:
                 health_detail += "; " + " | ".join(resolution_failure_samples)
             github_warning(f"{cfg['name_en']} source health {source_status}: {health_detail}")
 
+        deferred_retries = pending.deferred_count if key == "imf" and pending else 0
+        if deferred_retries:
+            source_status = "degraded" if new_count or resolution_failure_count < eligible_count else "error"
+            health_detail += f"; {deferred_retries} previously observed source(s) remain queued for a bounded retry"
+            github_warning(f"{cfg['name_en']} source intake remains incomplete: {health_detail}")
+
+        if discovery_error:
+            source_status = "degraded" if new_count else "error"
+            if discovery_error not in health_detail:
+                health_detail = discovery_error + "; " + health_detail
+
         source_checks.append({
             "institution": key,
             "institution_en": cfg["name_en"],
             "status": source_status,
-            "item_count": len(items),
+            "item_count": pending.item_count if key == "imf" and pending else len(items),
             "new_pdf_count": new_count,
             "eligible_item_count": eligible_count,
             "resolution_failure_count": resolution_failure_count,
+            "deferred_retry_count": deferred_retries,
+            "discovery_error": bool(discovery_error),
             "required_for_clean_zero": bool(cfg.get("required_for_clean_zero")),
             "error": health_detail,
         })

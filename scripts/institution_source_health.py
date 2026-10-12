@@ -79,7 +79,7 @@ def classify(manifest: object, *, producer_exit_code: int, log_exit_code: int,
     for check in checks:
         require(isinstance(check, dict) and set(check) == {
             "institution", "institution_en", "status", "item_count", "new_pdf_count",
-            "eligible_item_count", "resolution_failure_count", "required_for_clean_zero", "error"})
+            "eligible_item_count", "resolution_failure_count", "deferred_retry_count", "discovery_error", "required_for_clean_zero", "error"})
         key = check["institution"]
         require(isinstance(key, str) and key in enabled and key not in checked)
         checked.append(key)
@@ -91,17 +91,24 @@ def classify(manifest: object, *, producer_exit_code: int, log_exit_code: int,
         total, new, eligible, failures = (count(check[name]) for name in (
             "item_count", "new_pdf_count", "eligible_item_count", "resolution_failure_count"))
         require(total >= eligible >= new + failures and new == actual_downloads[key])
+        deferred = count(check["deferred_retry_count"])
+        require(deferred <= total and (key == "imf" or deferred == 0))
+        discovery_error = check["discovery_error"]
+        require(type(discovery_error) is bool)
         status = check["status"]
         require(status in {"ok", "empty", "error", "degraded"})
         if status == "ok":
-            require(total > 0 and failures == 0)
+            require(total > 0 and failures == deferred == 0 and not discovery_error)
         elif status == "empty":
-            require(total == eligible == new == failures == 0)
+            require(total == eligible == new == failures == deferred == 0 and not discovery_error)
         elif status == "degraded":
-            require(0 < failures < eligible)
+            require((0 < failures < eligible) or (deferred > 0 and (new > 0 or failures < eligible))
+                    or (discovery_error and new > 0))
         else:
             require((total == eligible == new == failures == 0)
-                    or (0 < eligible == failures and new == 0))
+                    or (0 < eligible == failures and new == 0)
+                    or (deferred > 0 and eligible == failures == new == 0)
+                    or (discovery_error and new == 0))
         if check["required_for_clean_zero"] and status != "ok":
             blocked.append(key)
     # A max-total cap may end a successful run early, but never a zero-PDF run.

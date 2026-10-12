@@ -58,6 +58,7 @@ on:
       - "scripts/postprocess_podcast.py"
       - "scripts/sensitive_content_guard.py"
       - "scripts/*xhs_draft*"
+      - "scripts/*institution_pending_intake*"
       - "scripts/*institution_latest*"
       - "scripts/fixtures/institution_sources/**"
       - "scripts/*publish_static_slot*"
@@ -125,6 +126,7 @@ on:
       - "scripts/postprocess_podcast.py"
       - "scripts/sensitive_content_guard.py"
       - "scripts/*xhs_draft*"
+      - "scripts/*institution_pending_intake*"
       - "scripts/*institution_latest*"
       - "scripts/fixtures/institution_sources/**"
       - "scripts/*publish_static_slot*"
@@ -164,6 +166,7 @@ jobs:
       - name: Test source discovery, draft verification and static publication
         run: |
           python scripts/test_fetch_institution_latest_pdfs.py
+          python scripts/test_institution_pending_intake.py
           python scripts/test_source_monitoring.py
           python scripts/test_publish_static_slot.py
           python scripts/test_mineru_task_ledger.py
