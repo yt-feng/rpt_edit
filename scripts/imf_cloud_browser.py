@@ -180,6 +180,66 @@ def title_words_present(title, text):
     return bool(observed and expected and expected <= observed)
 
 
+def spanish_series_identity(publication, pdf_title, text):
+    """Recognize only the two observed Spanish IMF report edition formats.
+
+    The caller has already bound DOI, official issue URL and landing metadata.
+    Here the PDF must independently name that series/edition and its substantive
+    Spanish report title must occur in its body; a country/year alone never pass.
+    """
+    from imf_elibrary_resolver import title_key, validate_publication_url
+    try:
+        # This flag is extracted from this exact IMF preview's explicit original
+        # language statement and included in its identity hash by the resolver.
+        # Crossref/landing language and DOI remain the English source edition.
+        if publication.get("original_language") != "es" or not isinstance(pdf_title, str) or not 0 < len(pdf_title) <= 4096:
+            return False
+        locator = validate_publication_url(publication["landing_url"])
+        series = publication["doi"].rsplit(".", 1)[1]
+        names = {"019": "Technical Assistance Reports", "029": "High-Level Summary Technical Assistance Reports"}
+        if (series not in names or locator["kind"] != "journal" or locator["series"] != series
+                or locator["language"] != publication.get("language") or locator["year"] != publication.get("year")
+                or locator["issue"] != publication.get("issue")
+                or title_key(names[series]) not in {title_key(x) for x in publication.get("series", [])}):
+            return False
+        source_head, separator, _ = publication["source_title"].partition(":")
+        if not separator or not re.fullmatch(r"[^\d:;\n]{2,80}", source_head):
+            return False
+        parts = [part.strip() for part in unicodedata.normalize("NFKC", pdf_title).split(";")]
+        if not 2 <= len(parts) <= 3:
+            return False
+        heading = re.fullmatch(r"([^:;\u2013\u2014]{2,80})\s*(?::|[\u2013\u2014])\s*(.+)", parts[0])
+        if heading is None or title_key(heading[1]) != title_key(source_head):
+            return False
+        patterns = {
+            "019": r"Informe de asistencia técnica del FMI n\.\s*[o°]\s*(20\d{2}|\d{2})/(\d{1,3})",
+            "029": r"Informe del FMI sobre asistencia técnica:\s*Resumen de alto nivel n\.\s*[o°]\s*(20\d{2})/(\d{1,3})",
+        }
+        edition = re.fullmatch(patterns[series], parts[1], re.I)
+        if edition is None:
+            return False
+        year = int(edition[1]) + (2000 if len(edition[1]) == 2 else 0)
+        if str(year) != publication["year"] or int(edition[2]) != int(publication["issue"]):
+            return False
+        # Remove only the observed generic type prefix. Keep the actual mission
+        # topic, date and every other title word, including accents and numbers.
+        substantive = re.sub(r"^Informe de asistencia técnica\s*[\u2013\u2014]\s*", "", heading[2], flags=re.I)
+        if len(_tokens(substantive)) < 8 or not title_words_present(substantive, text):
+            return False
+        if "fondo monetario internacional" not in title_key(text):
+            return False
+        if " " + title_key(source_head) + " " not in " " + title_key(text) + " ":
+            return False
+        if series == "029":
+            body_editions = {(int(y) + (2000 if len(y) == 2 else 0), int(i))
+                             for y, i in re.findall(r"\bHLS\s*/\s*(20\d{2}|\d{2})\s*/\s*(\d{1,3})\b", text, re.I)}
+            if body_editions != {(year, int(publication["issue"]))}:
+                return False
+        return True
+    except (KeyError, TypeError, ValueError):
+        return False
+
+
 def write_public_evidence(publication, page):
     """Optional canary artifact: bounded public identity only, never runtime state.
 
@@ -205,7 +265,7 @@ def write_public_evidence(publication, page):
         except Exception:
             return "[invalid_official_url]"
     public = {key: text(publication.get(key)) for key in (
-        "source_guid", "source_title", "title", "subtitle", "full_title", "doi", "isbn", "language",
+        "source_guid", "source_title", "title", "subtitle", "full_title", "doi", "isbn", "language", "original_language",
         "year", "issue", "identity_sha256", "crossref_sha256")}
     public["source_url"] = official_url(publication.get("source_url"), source=True)
     public["landing_url"] = official_url(publication.get("landing_url"))
@@ -259,6 +319,7 @@ def verify_pdf(path, publication, max_bytes, expected_sha256=None):
                 raise BrowserDownloadError("imf_browser_pdf_pages_invalid")
             text = " ".join((page.extract_text() or "") for page in reader.pages[:3])
             page_count = len(reader.pages)
+            pdf_title = (getattr(reader, "metadata", None) or {}).get("/Title", "")
     except BrowserDownloadError:
         raise
     except Exception:
@@ -267,7 +328,11 @@ def verify_pdf(path, publication, max_bytes, expected_sha256=None):
     # different or unreadable PDF: require the full official title's words here.
     # A short Crossref main title can be only a country. Require the combined
     # title/subtitle, not that weaker variant, for PDF body identity.
-    if not title_words_present(publication.get("full_title") or publication["source_title"], text):
+    if publication.get("original_language") == "es":
+        identity_verified = spanish_series_identity(publication, pdf_title, text)
+    else:
+        identity_verified = title_words_present(publication.get("full_title") or publication["source_title"], text)
+    if not identity_verified:
         raise BrowserDownloadError("imf_browser_pdf_title_mismatch")
     return {"sha256": digest, "bytes": len(data), "pages": page_count}
 
@@ -418,7 +483,7 @@ class CloudImfBrowser:
                 validated = verify_pdf(downloaded, publication, max_bytes, expected_sha256)
                 proof = {"schema": 1, "source_guid": publication["source_guid"], "source_url": publication["source_url"],
                          "landing_url": page["final_url"], "pdf_url": pdf_url, "doi": publication["doi"],
-                         "title": publication.get("full_title") or publication["title"],
+                         "title": publication["source_title"],
                          "identity_sha256": publication["identity_sha256"], "crossref_sha256": publication["crossref_sha256"],
                          **validated, "landing_status": 200, "pdf_status": 200,
                          "source_identity_verified": True, "transport": "existing_subscription_vless_browser"}

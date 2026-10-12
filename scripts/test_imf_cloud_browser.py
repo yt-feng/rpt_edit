@@ -49,6 +49,68 @@ class BrowserTests(unittest.TestCase):
             self.assertFalse(b.title_words_present(title, bad))
         self.assertFalse(b.title_words_present('Mission January 12-16 2026', 'Mission January 1216 2026'))
 
+    def spanish_fixture(self, series):
+        issue, isbn, name = (('083', '9798229064521', 'Technical Assistance Reports') if series == '019' else
+                            ('071', '9798229062657', 'High-Level Summary Technical Assistance Reports'))
+        publication = {**PUBLICATION, 'language': 'en', 'original_language': 'es', 'year': '2026', 'issue': issue, 'series': [name],
+                       'source_title': 'Chile: English official report title', 'doi': f'10.5089/{isbn}.{series}',
+                       'landing_url': f'https://www.elibrary.imf.org/view/journals/{series}/2026/{issue}/{series}.2026.issue-{issue}-en.xml'}
+        if series == '029':
+            title = ('Chile – Reporte sobre la misión de asistencia técnica en estadísticas de finanzas públicas; '
+                     'Informe del FMI sobre asistencia técnica: Resumen de alto nivel n.º 2026/071; 18 al 29 de mayo de 2026')
+            body = ('©2026 Fondo Monetario Internacional HLS/26/71 Resumen de alto nivel sobre informe de asistencia técnica '
+                    'Departamento de Estadística Chile – Reporte sobre la misión de asistencia técnica en estadísticas de finanzas públicas')
+        else:
+            title = ('Chile: Informe de asistencia técnica — Informe sobre la misión de asistencia técnica en estadísticas de las finanzas públicas '
+                     '(18 al 29 de mayo de 2026); Informe de asistencia técnica del FMI n.º 26/83; septiembre de 2026')
+            body = ('INFORME DE ASISTENCIA TÉCNICA CHILE Informe sobre la misión de asistencia técnica en estadísticas de las finanzas públicas '
+                    '(18 al 29 de mayo de 2026) SEPTIEMBRE DE 2026 ©2026 Fondo Monetario Internacional')
+        return publication, title, body
+
+    def test_two_observed_spanish_edition_formats_require_full_substantive_title(self):
+        for series in ('019', '029'):
+            publication, title, body = self.spanish_fixture(series)
+            self.assertTrue(b.spanish_series_identity(publication, title, body))
+            self.assertFalse(b.title_words_present(publication['source_title'], body))
+            for bad in (body.replace('estadísticas', 'inflación'), body.replace('Fondo Monetario Internacional', ''),
+                        'Chile 2026 Fondo Monetario Internacional HLS/26/71'):
+                self.assertFalse(b.spanish_series_identity(publication, title, bad))
+
+    def test_same_country_wrong_edition_series_or_language_never_accept(self):
+        for series in ('019', '029'):
+            publication, title, body = self.spanish_fixture(series)
+            for change in ({'issue': '082'}, {'year': '2025'}, {'language': 'fr'}, {'series': ['Working Papers']},
+                           {'original_language': None}, {'original_language': 'Spanish'},
+                           {'series': []}, {'doi': publication['doi'][:-3] + '001'}, {'source_title': 'Peru: Report'}):
+                self.assertFalse(b.spanish_series_identity({**publication, **change}, title, body), change)
+            for bad in (title.replace('/83', '/82').replace('/071', '/072'), title.replace('2026', '2025').replace('26/83', '25/83'),
+                        title.replace('Chile', 'Peru'), title.replace('asistencia técnica del FMI', 'Working Papers del FMI')
+                        .replace('Resumen de alto nivel n.', 'Working Paper n.')):
+                self.assertFalse(b.spanish_series_identity(publication, bad, body), bad)
+
+    def test_hls_needs_corresponding_unambiguous_body_number_and_country(self):
+        publication, title, body = self.spanish_fixture('029')
+        for bad in (body.replace('HLS/26/71', ''), body.replace('HLS/26/71', 'HLS/26/72'),
+                    body + ' HLS/25/71', body.replace('Chile', 'Chileland')):
+            self.assertFalse(b.spanish_series_identity(publication, title, bad))
+
+    def test_spanish_type_label_without_substantive_topic_never_accepts(self):
+        publication, title, body = self.spanish_fixture('019')
+        generic = 'Chile: Informe de asistencia técnica; ' + title.split('; ', 1)[1]
+        self.assertFalse(b.spanish_series_identity(publication, generic, body))
+
+    def test_spanish_pdf_path_still_needs_real_pdf_hash_pages_and_edition(self):
+        publication, title, body = self.spanish_fixture('019')
+        publication['full_title'] = publication['source_title']
+        data = b'%PDF-spanish'; digest = hashlib.sha256(data).hexdigest()
+        reader = SimpleNamespace(is_encrypted=False, metadata={'/Title': title}, pages=[SimpleNamespace(extract_text=lambda: body)])
+        with tempfile.TemporaryDirectory() as folder, patch.dict(sys.modules, {'pypdf': SimpleNamespace(PdfReader=lambda _: reader)}):
+            file = Path(folder) / 'test.pdf'; file.write_bytes(data)
+            self.assertEqual(b.verify_pdf(file, publication, 1024, digest)['pages'], 1)
+            reader.metadata = {'/Title': title.replace('26/83', '26/82')}
+            with self.assertRaisesRegex(b.BrowserDownloadError, 'pdf_title_mismatch'):
+                b.verify_pdf(file, publication, 1024, digest)
+
     def test_optional_evidence_disabled_has_no_filesystem_work(self):
         with patch.dict(os.environ, {}, clear=True), patch.object(b.tempfile, 'mkstemp') as write:
             b.write_public_evidence(PUBLICATION, PAGE)
