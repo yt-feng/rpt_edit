@@ -10,6 +10,7 @@ import unittest
 from unittest.mock import Mock, patch
 
 import fetch_institution_latest_pdfs as fetcher
+import institution_source_health as health
 
 
 NOW = datetime(2026, 10, 13, tzinfo=timezone.utc)
@@ -41,10 +42,17 @@ class LiveIntakeTests(unittest.TestCase):
         return code, manifest, resolve.call_count
 
     def test_live_route_runs_without_legacy_candidates_and_deduplicates_after_seen(self):
-        proof = {"pdf_url": PDF_URL, "source_guid": SOURCE["guid"], "sha256": hashlib.sha256(b"%PDF-fixture").hexdigest()}
+        pdf = b"%PDF-fixture"
+        proof = dict(schema=1, source_guid=SOURCE["guid"], source_url=SOURCE["source_url"],
+                     landing_url="https://www.elibrary.imf.org/view/journals/019/2026/082/019.2026.issue-082-en.xml",
+                     pdf_url=PDF_URL, doi="10.5089/9780000000002.019", title=SOURCE["title"],
+                     identity_sha256="1" * 64, crossref_sha256="2" * 64,
+                     sha256=hashlib.sha256(pdf).hexdigest(), bytes=len(pdf), pages=14,
+                     landing_status=200, pdf_status=200, source_identity_verified=True,
+                     transport="existing_subscription_vless_browser")
         def download(publication, dest, max_bytes):
             self.assertEqual(publication["source_guid"], SOURCE["guid"])
-            dest.write_bytes(b"%PDF-fixture")
+            dest.write_bytes(pdf)
             return proof
         browser = SimpleNamespace(enabled=True, download=Mock(side_effect=download))
         with tempfile.TemporaryDirectory() as directory:
@@ -55,6 +63,10 @@ class LiveIntakeTests(unittest.TestCase):
             self.assertEqual(row["imf_live_download"], proof)
             self.assertEqual(row["sha256"], proof["sha256"])
             self.assertEqual(manifest["source_checks"][0]["status"], "ok")
+            self.assertEqual(health.classify(manifest, producer_exit_code=code, log_exit_code=0,
+                                            date_folder=manifest["date"], institutions="imf"),
+                             dict(source_health="healthy", source_health_required_failure_count="0",
+                                  source_health_failed_institutions="", source_health_backlog_only="false"))
             self.assertIn("imf:stable-source", json.loads((root / "pending.json").read_text())["items"])
             # The normal durable seen state, not a transient PDF, retires intake.
             code, manifest, calls = self.invoke(root, browser)
