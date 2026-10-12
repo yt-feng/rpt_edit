@@ -19,15 +19,21 @@ on:
 permissions:
   contents: read
 jobs:
-  approved-cloud-browser-single-pdf:
-    if: ${{ inputs.allow_cloud_browser == true }}
+  approved-cloud-proxy-browser-single-pdf:
+    if: ${{ inputs.allow_cloud_browser == true && github.repository == 'yt-feng/rpt_edit' && github.ref == 'refs/heads/codex/imf-proxy-browser-20261013' && inputs.institutions == 'imf' && inputs.max_per_institution == '1' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-          sparse-checkout: scripts/cloud_imf_browser_probe.cjs
+          sparse-checkout: |
+            scripts/cloud_imf_browser_probe.cjs
+            scripts/cloud_imf_proxy_browser_probe.py
+            scripts/cloud_imf_protocol_client_probe.py
+            scripts/fetch_institution_latest_pdfs.py
+            scripts/institution_pending_intake.py
+            scripts/test_cloud_imf_proxy_browser_probe.py
           sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v4
         with:
@@ -35,39 +41,31 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install pinned official cloud browser package
+      - name: Verify offline guards
+        run: |
+          python -m unittest discover -s scripts -p test_cloud_imf_proxy_browser_probe.py
+          node --check scripts/cloud_imf_browser_probe.cjs
+      - name: Install pinned official cloud clients
         shell: bash
         run: |
           set -euo pipefail
           npm install --prefix "$RUNNER_TEMP/imf-browser" --no-audit --no-fund playwright@1.64.0
           "$RUNNER_TEMP/imf-browser/node_modules/.bin/playwright" install --with-deps chromium
-          pip install pypdf
-      - name: Download one exact official report in approved cloud browser
+          pip install requests==2.34.2 curl_cffi==0.16.3 pypdf==6.19.0
+          curl --fail --location --silent --show-error --connect-timeout 10 --max-time 90 \
+            https://github.com/SagerNet/sing-box/releases/download/v1.14.3/sing-box-1.14.3-linux-amd64.tar.gz \
+            --output "$RUNNER_TEMP/sing-box.tar.gz"
+          printf '%s  %s\n' e2bdf179c15a3652955dc44867e33ca0965c9c9b91b34267dcc5a5d639a5feee "$RUNNER_TEMP/sing-box.tar.gz" | sha256sum --check --status
+          tar -xzf "$RUNNER_TEMP/sing-box.tar.gz" -C "$RUNNER_TEMP"
+      - name: Download one exact official report through one approved cloud route
         env:
           EXPLICIT_CLOUD_BROWSER_APPROVAL: 'true'
           PLAYWRIGHT_PACKAGE_ROOT: ${{ runner.temp }}/imf-browser
-        run: xvfb-run --auto-servernum node scripts/cloud_imf_browser_probe.cjs
-      - name: Verify complete PDF and exact known identity
-        run: |
-          python - <<'PYCODE'
-          import hashlib, json
-          from pathlib import Path
-          from pypdf import PdfReader
-          folder=Path('_imf_browser_probe')
-          report=json.loads((folder/'summary.json').read_text())
-          p=folder/(report['expected_sha256']+'.pdf')
-          assert hashlib.sha256(p.read_bytes()).hexdigest()==report['expected_sha256']
-          reader=PdfReader(p)
-          assert len(reader.pages)==14 and not reader.is_encrypted
-          text=' '.join((page.extract_text() or '') for page in reader.pages[:3]).casefold()
-          assert 'estonia' in text and 'consumer price index' in text and '2026' in text
-          report.update(pdf_parser_validation='passed', pages=14, accepted=True)
-          (folder/'summary.json').write_text(json.dumps(report,indent=2)+'\n')
-          print('Exact official PDF verified: 14 pages, matching hash and source identity')
-          PYCODE
+          PROXY_SUBSCRIPTION_URL: ${{ secrets.PROXY_SUBSCRIPTION_URL }}
+        run: xvfb-run --auto-servernum python scripts/cloud_imf_proxy_browser_probe.py --sing-box "$RUNNER_TEMP/sing-box-1.14.3-linux-amd64/sing-box"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: imf-browser-probe-${{ github.run_id }}
+          name: imf-proxy-browser-probe-${{ github.run_id }}
           path: _imf_browser_probe
           if-no-files-found: warn
