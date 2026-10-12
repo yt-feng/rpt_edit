@@ -1189,6 +1189,18 @@ class CurrentCaptionCleanupTests(unittest.TestCase):
         self.assertEqual([],list(repair.adjacent_image_credits(content,old,managed_annotations=True)))
         self.assertEqual(1,len(list(repair.adjacent_image_credits(content,'https://mmbiz.qpic.cn/next/0',managed_annotations=True))))
 
+    def test_managed_photo_rewrite_preserves_other_attributes_and_supports_unquoted_urls(self):
+        old='https://mmbiz.qpic.cn/old/0'
+        new='https://mmbiz.qpic.cn/new/0'
+        preserved='data-original-src="https://example.com/retained.png" alt=\'manual src="keep" note > intact\''
+        quoted=f'<section><IMG\n SRC = \'{old}\' data-src="{old}" {preserved} loading="lazy" /></section>'
+        self.assertEqual(quoted.replace(old,new),repair.replace_image(quoted,old,new,'',managed_annotations=True))
+        unquoted=f'<p><img src={old} data-src={old} {preserved}></p>'
+        expected=unquoted.replace(f'src={old}',f'src="{new}"')
+        rewritten=repair.replace_image(unquoted,old,new,'',managed_annotations=True)
+        self.assertEqual(expected,rewritten)
+        self.assertEqual(new,portal.wechat_content_images(rewritten)[0][0])
+
     def test_chained_duplicate_annotations_bind_each_occurrence_and_change_all_duplicate_images(self):
         url='https://mmbiz.qpic.cn/repeated/0'
         photo=f'<section><span><img src="{url}" alt="主题配图"></span></section>'

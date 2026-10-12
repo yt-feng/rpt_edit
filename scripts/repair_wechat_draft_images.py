@@ -30,6 +30,9 @@ from push_portal_translated_to_wechat_drafts import (
 MAX_IMAGE_BYTES = 12 * 1024 * 1024
 CREDIT_RE = MANAGED_IMAGE_ANNOTATION_RE
 IMG_RE = re.compile(r'<img\b[^>]*>', re.I | re.S)
+MANAGED_IMG_RE = re.compile(r'''<img\b(?:[^>"']|"[^"]*"|'[^']*')*>''', re.I | re.S)
+IMAGE_ATTRIBUTE_RE = re.compile(
+    r'''\s+(?P<name>[^\s=/>]+)\s*=\s*(?P<value>"[^"]*"|'[^']*'|[^\s>]+)''', re.S)
 IMAGE_BLOCK_RE = re.compile(r'<p\b[^>]*>\s*<img\b[^>]*>\s*</p>|<img\b[^>]*>', re.I | re.S)
 STRUCTURAL_TAG_RE = re.compile(r'<\s*(/?)\s*([a-z][\w:-]*)\b[^>]*>', re.I | re.S)
 TRANSPARENT_IMAGE_TAGS = frozenset({'p','div','section','span','strong','em','b','i','u','a','br'})
@@ -303,11 +306,23 @@ def replace_image(content, old_url, new_url, credit, *, managed_annotations=Fals
                     else html.unescape(refs[0][0]) == html.unescape(old_url))
             if not same:
                 return match.group(0)
+            def update_attribute(attribute):
+                if attribute.group('name').lower() not in {'src', 'data-src'}:
+                    return attribute.group(0)
+                value = attribute.group('value')
+                quote = value[0] if value[0] in {'"', "'"} else '"'
+                prefix = attribute.group(0)[:attribute.start('value')-attribute.start()]
+                return prefix+quote+html.escape(new_url,quote=True)+quote
+            # Consume every complete attribute value before considering the
+            # next name. A src-like word inside alt/title is ordinary text.
+            result = IMAGE_ATTRIBUTE_RE.sub(update_attribute, match.group(0))
+            rewritten = wechat_content_images(result)
+            if (not rewritten or wechat_image_url_identity(rewritten[0][0])
+                    != wechat_image_url_identity(new_url)):
+                raise ValueError('managed_photo_url_not_rewritten')
             replaced += 1
-            return re.sub(r'\b(?:src|data-src)\s*=\s*([\"\']).*?\1',
-                lambda attribute:attribute.group(0).split('=',1)[0]+'="'+html.escape(new_url,quote=True)+'"',
-                match.group(0), flags=re.I | re.S)
-        result = IMG_RE.sub(update_tag, content)
+            return result
+        result = MANAGED_IMG_RE.sub(update_tag, content)
         if not replaced:
             raise ValueError('Expected image element was not found')
         return result
