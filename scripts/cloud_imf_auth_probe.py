@@ -4,6 +4,8 @@ import io
 import json
 import hashlib
 import os
+import re
+import time
 from pathlib import Path
 from urllib.parse import urlsplit, unquote, quote
 import requests
@@ -40,6 +42,9 @@ structure=[]
 if subscription:
     try:
         r=requests.get(subscription,timeout=15);r.raise_for_status();body=r.text.strip()
+        usage={key:int(value) for key,value in re.findall(r'(upload|download|total|expire)=(\d+)',r.headers.get('subscription-userinfo',''))}
+        if usage:
+            structure.append({'subscription_metadata_present':True,'expired':bool(usage.get('expire') and usage['expire']<time.time()),'quota_exhausted':bool(usage.get('total') and usage.get('upload',0)+usage.get('download',0)>=usage['total'])})
         if '://' not in body.splitlines()[0]:body=f._b64_text(body) or body
         socks=[f._normalize_proxy_node(x) for x in body.splitlines() if x.startswith('socks5://') or x.startswith('socks5h://')]
         for index,node in enumerate(socks[:1]):
