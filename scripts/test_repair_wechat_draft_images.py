@@ -1149,6 +1149,92 @@ class CurrentCaptionCleanupTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'unbound_commons_annotation'):
             repair.caption_cleanup_plan(row)
 
+    def test_transparent_image_wrappers_rebind_and_preserve_markup_exactly(self):
+        old='https://mmbiz.qpic.cn/good-0/0'
+        new='https://mmbiz.qpic.cn/new-photo/0'
+        tag=f'<img src="{old}" data-src="{old}" alt="主题配图">'
+        wrappers=[f'<p><span>{tag}</span></p>',f'<section>{tag}</section>',
+                  f'<div><section><p><span>{tag}</span></p></section></div>',
+                  f'<p>{tag}<br></p>',f'<p>{tag}&nbsp;</p>',
+                  f'<p>{tag}</p><p><br></p>',f'<p>{tag}</p><p>\u00a0</p>',
+                  f'<section><span>{tag}</span></section><div><p>&#160;<br/></p></div>']
+        credit=stripped_commons_credit()
+        for wrapped in wrappers:
+            with self.subTest(wrapped=wrapped), tempfile.TemporaryDirectory() as directory, ExitStack() as stack:
+                row=article(broken=False)
+                original=portal.image_html(old,'报告图表')
+                row['content']=row['content'].replace(original,wrapped+credit)
+                state,get,write,download,provider,upload,cover=self.environment(stack,[row])
+                result=self.run_cleanup(directory)
+                self.assertTrue(result['fully_repaired']);self.assertEqual(1,result['body_replacements'])
+                expected=row['content'].replace(old,new).replace(credit,'')
+                self.assertEqual(expected,state['news_item'][0]['content'])
+                # The unrelated receipt-based repair path remains strict.
+                self.assertEqual([],list(repair.adjacent_image_credits(row['content'],old)))
+
+    def test_transparent_adjacency_never_crosses_text_comments_images_or_semantic_tags(self):
+        old='https://mmbiz.qpic.cn/wrapped/0'
+        image=f'<p><span><img src="{old}" alt="主题配图"></span></p>'
+        gaps=['<p>Preserved manual prose.</p>','<!--manual marker-->','<hr>',
+              '<script></script>','<p>&#65;</p>',
+              '<p><img src="https://mmbiz.qpic.cn/contact/0" alt="KC桌面"></p>']
+        for gap in gaps:
+            with self.subTest(gap=gap):
+                content=image+gap+stripped_commons_credit()
+                self.assertEqual([],list(repair.adjacent_image_credits(content,old,managed_annotations=True)))
+                with self.assertRaisesRegex(ValueError,'unbound_commons_annotation'):
+                    repair.caption_cleanup_plan({'content':content})
+        next_image='<p><img src="https://mmbiz.qpic.cn/next/0" alt="主题配图"></p>'
+        content=image+next_image+stripped_commons_credit()
+        self.assertEqual([],list(repair.adjacent_image_credits(content,old,managed_annotations=True)))
+        self.assertEqual(1,len(list(repair.adjacent_image_credits(content,'https://mmbiz.qpic.cn/next/0',managed_annotations=True))))
+
+    def test_managed_photo_rewrite_preserves_other_attributes_and_supports_unquoted_urls(self):
+        old='https://mmbiz.qpic.cn/old/0'
+        new='https://mmbiz.qpic.cn/new/0'
+        preserved='data-original-src="https://example.com/retained.png" alt=\'manual src="keep" note > intact\''
+        quoted=f'<section><IMG\n SRC = \'{old}\' data-src="{old}" {preserved} loading="lazy" /></section>'
+        self.assertEqual(quoted.replace(old,new),repair.replace_image(quoted,old,new,'',managed_annotations=True))
+        unquoted=f'<p><img src={old} data-src={old} {preserved}></p>'
+        expected=unquoted.replace(f'src={old}',f'src="{new}"')
+        rewritten=repair.replace_image(unquoted,old,new,'',managed_annotations=True)
+        self.assertEqual(expected,rewritten)
+        self.assertEqual(new,portal.wechat_content_images(rewritten)[0][0])
+
+    def test_chained_duplicate_annotations_bind_each_occurrence_and_change_all_duplicate_images(self):
+        url='https://mmbiz.qpic.cn/repeated/0'
+        photo=f'<section><span><img src="{url}" alt="主题配图"></span></section>'
+        credit=stripped_commons_credit()
+        content=(photo+'<p><br></p>'+credit+'<div>&nbsp;</div>'+credit)*2
+        plan=repair.caption_cleanup_plan({'content':content})
+        self.assertEqual(4,plan['captions_removed']);self.assertEqual(1,len(plan['body_replacements']))
+        actual=repair.replace_image(content,url,'https://mmbiz.qpic.cn/replaced/0','',managed_annotations=True)
+        self.assertEqual(content.replace(url,'https://mmbiz.qpic.cn/replaced/0'),actual)
+
+    def test_orphan_diagnostics_are_bounded_and_contain_no_private_content_or_attributes(self):
+        secret_url='https://mmbiz.qpic.cn/PRIVATE_IMAGE_ID/0'
+        credit=stripped_commons_credit().replace('Synthetic Photographer','PRIVATE_AUTHOR')
+        row=article(broken=False)
+        row['content']=f'<p><span><img src="{secret_url}" alt="PRIVATE_ALT"></span></p><p>PRIVATE_PROSE</p>'+credit
+        diagnostics=repair.caption_binding_diagnostics(row)
+        text=json.dumps(diagnostics)
+        for private in ('PRIVATE_IMAGE_ID','PRIVATE_AUTHOR','PRIVATE_ALT','PRIVATE_PROSE','https://'):
+            self.assertNotIn(private,text)
+        detail=diagnostics['caption_records'][0]
+        self.assertEqual(['end:span','end:p','start:p','end:p'],detail['gap_tags'])
+        self.assertEqual(13,detail['gap_without_managed_notes_text_chars'])
+        self.assertFalse(detail['transparent_adjacency']);self.assertEqual('other',detail['nearest_image']['alt_kind'])
+        self.assertEqual(64,len(detail['nearest_image']['identity_sha256']))
+        row['content']+=credit*30
+        bounded=repair.caption_binding_diagnostics(row)
+        self.assertEqual(16,len(bounded['caption_records']));self.assertTrue(bounded['caption_records_truncated'])
+        with tempfile.TemporaryDirectory() as directory, ExitStack() as stack:
+            state,get,write,download,provider,upload,cover=self.environment(stack,[row])
+            result=self.run_cleanup(directory,False)
+            self.assertEqual('unbound_commons_annotation',result['drafts'][0]['resolution'])
+            self.assertIn('caption_records',result['drafts'][0]['identity_diagnostics'])
+            write.assert_not_called()
+
     def test_manual_notes_images_and_comments_are_not_treated_as_generated_annotations(self):
         text=portal.LEGACY_LOCAL_IMAGE_CAPTION
         for note in (f'<p>{text}补充人工备注。</p>',f'<p>{text}<!--manual--></p>',

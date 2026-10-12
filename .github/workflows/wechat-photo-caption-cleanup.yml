@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   cleanup:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' || inputs.apply == false
     runs-on: [self-hosted, wechat-draft]
     timeout-minutes: 60
     steps:

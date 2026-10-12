@@ -30,7 +30,12 @@ from push_portal_translated_to_wechat_drafts import (
 MAX_IMAGE_BYTES = 12 * 1024 * 1024
 CREDIT_RE = MANAGED_IMAGE_ANNOTATION_RE
 IMG_RE = re.compile(r'<img\b[^>]*>', re.I | re.S)
+MANAGED_IMG_RE = re.compile(r'''<img\b(?:[^>"']|"[^"]*"|'[^']*')*>''', re.I | re.S)
+IMAGE_ATTRIBUTE_RE = re.compile(
+    r'''\s+(?P<name>[^\s=/>]+)\s*=\s*(?P<value>"[^"]*"|'[^']*'|[^\s>]+)''', re.S)
 IMAGE_BLOCK_RE = re.compile(r'<p\b[^>]*>\s*<img\b[^>]*>\s*</p>|<img\b[^>]*>', re.I | re.S)
+STRUCTURAL_TAG_RE = re.compile(r'<\s*(/?)\s*([a-z][\w:-]*)\b[^>]*>', re.I | re.S)
+TRANSPARENT_IMAGE_TAGS = frozenset({'p','div','section','span','strong','em','b','i','u','a','br'})
 MAX_DRAFT_CATALOG = 1000
 WECHAT_DRAFT_WRITABLE_FIELDS = ('title','author','digest','content','content_source_url',
                                 'thumb_media_id','need_open_comment','only_fans_can_comment')
@@ -284,6 +289,43 @@ def fetch_wechat_image(session, url, target, timeout):
 
 
 def replace_image(content, old_url, new_url, credit, *, managed_annotations=False):
+    if managed_annotations:
+        # Preserve the editor's surrounding markup exactly. Caption cleanup
+        # removes the separately recognized notes after every photo is rebound;
+        # consuming wrapper closing tags here would corrupt the document tree.
+        if not new_url or credit:
+            raise ValueError('managed_photo_replacement_requires_caption_free_url')
+        old_identity = wechat_image_url_identity(old_url)
+        replaced = 0
+        def update_tag(match):
+            nonlocal replaced
+            refs = wechat_content_images(match.group(0))
+            if not refs or refs[0][1] == 'KC桌面':
+                return match.group(0)
+            same = (wechat_image_url_identity(refs[0][0]) == old_identity if old_identity
+                    else html.unescape(refs[0][0]) == html.unescape(old_url))
+            if not same:
+                return match.group(0)
+            def update_attribute(attribute):
+                if attribute.group('name').lower() not in {'src', 'data-src'}:
+                    return attribute.group(0)
+                value = attribute.group('value')
+                quote = value[0] if value[0] in {'"', "'"} else '"'
+                prefix = attribute.group(0)[:attribute.start('value')-attribute.start()]
+                return prefix+quote+html.escape(new_url,quote=True)+quote
+            # Consume every complete attribute value before considering the
+            # next name. A src-like word inside alt/title is ordinary text.
+            result = IMAGE_ATTRIBUTE_RE.sub(update_attribute, match.group(0))
+            rewritten = wechat_content_images(result)
+            if (not rewritten or wechat_image_url_identity(rewritten[0][0])
+                    != wechat_image_url_identity(new_url)):
+                raise ValueError('managed_photo_url_not_rewritten')
+            replaced += 1
+            return result
+        result = MANAGED_IMG_RE.sub(update_tag, content)
+        if not replaced:
+            raise ValueError('Expected image element was not found')
+        return result
     replaced = 0
     pieces = []
     cursor = 0
@@ -329,6 +371,29 @@ def replace_image(content, old_url, new_url, credit, *, managed_annotations=Fals
     return ''.join(pieces)
 
 
+def next_managed_image_credit(content, offset):
+    """Cross only empty presentation markup between an image and its note.
+
+    Never cross visible text, comments, a new image or another semantic tag.
+    HTML entities are decoded solely to decide whether a text gap is blank.
+    """
+    while offset < len(content):
+        end = content.find('<', offset)
+        if end < 0:
+            return None
+        if html.unescape(content[offset:end]).strip():
+            return None
+        offset = end
+        credit = CREDIT_RE.match(content, offset)
+        if credit and managed_image_annotation_kind(credit.group(0)):
+            return credit
+        tag = STRUCTURAL_TAG_RE.match(content, offset)
+        if not tag or tag.group(2).lower() not in TRANSPARENT_IMAGE_TAGS:
+            return None
+        offset = tag.end()
+    return None
+
+
 def adjacent_image_credits(content, url, *, managed_annotations=False):
     """Yield only managed credits immediately following this non-contact image."""
     identity = wechat_image_url_identity(url)
@@ -338,13 +403,14 @@ def adjacent_image_credits(content, url, *, managed_annotations=False):
             end = match.end()
             while True:
                 tail = content[end:]
-                credit = CREDIT_RE.match(tail, len(tail)-len(tail.lstrip()))
+                credit = (next_managed_image_credit(content, end) if managed_annotations
+                          else CREDIT_RE.match(tail, len(tail)-len(tail.lstrip())))
                 if not credit or not ((managed_annotations and managed_image_annotation_kind(credit.group(0)))
                                       or generated_image_credit_signature(credit.group(0)) is not None
                                       or legacy_stripped_commons_credit(credit.group(0))):
                     break
                 yield credit.group(0)
-                end += credit.end()
+                end = credit.end() if managed_annotations else end+credit.end()
 
 
 def has_editorial_credit(content, url):
@@ -597,6 +663,63 @@ def repair_drafts(drafts, session, token, output, timeout, apply):
     return report
 
 
+def caption_binding_diagnostics(article):
+    """Bounded structural evidence only: no titles, prose, image URLs or IDs."""
+    content = str(article.get('content') or '')
+    captions = [match for match in CREDIT_RE.finditer(content)
+                if managed_image_annotation_kind(match.group(0))]
+    commons = [match for match in captions if managed_image_annotation_kind(match.group(0)) == 'commons']
+    blocks = list(IMAGE_BLOCK_RE.finditer(content))
+    images = wechat_content_images(content)
+    records = []
+    for ordinal, caption in enumerate(commons[:16], 1):
+        before = [(index, block) for index, block in enumerate(blocks, 1) if block.end() <= caption.start()]
+        previous = before[-1] if before else None
+        gap = content[previous[1].end():caption.start()] if previous else content[:caption.start()]
+        stripped_gap = strip_managed_image_annotations(gap)
+        tags = [('end:' if match.group(1) else 'start:')+
+                (match.group(2).lower() if match.group(2).lower() in TRANSPARENT_IMAGE_TAGS | {'img'} else 'other')
+                for match in STRUCTURAL_TAG_RE.finditer(stripped_gap)]
+        direct = not html.unescape(stripped_gap).strip()
+        bound = False
+        nearest = None
+        if previous:
+            index, block = previous
+            refs = wechat_content_images(block.group(0))
+            if refs:
+                url, alt = refs[0]
+                alt_kind = ('contact' if alt == 'KC桌面' else 'source_reference' if has_source_image_reference(alt)
+                            else 'editorial' if alt in {'主题配图','主题示意图'} else 'other')
+                nearest = {'ordinal':index, 'block_kind':'paragraph' if block.group(0).lower().startswith('<p') else 'image',
+                           'alt_kind':alt_kind, 'identity_sha256':hashlib.sha256(wechat_image_url_identity(url).encode()).hexdigest(),
+                           'has_src':bool(re.search(r'\ssrc\s*=',block.group(0),re.I)),
+                           'has_data_src':bool(re.search(r'\sdata-src\s*=',block.group(0),re.I))}
+                offset = block.end()
+                while alt != 'KC桌面':
+                    next_credit = next_managed_image_credit(content, offset)
+                    if next_credit is None or next_credit.start() > caption.start():
+                        break
+                    if next_credit.start() == caption.start():
+                        bound = True; break
+                    offset = next_credit.end()
+        signature = generated_image_credit_signature(caption.group(0))
+        records.append({'ordinal':ordinal,
+            'caption_sha256':hashlib.sha256(caption.group(0).encode()).hexdigest(),
+            'wrapper':caption.group('tag').lower(),
+            'has_managed_marker':bool(re.search(r'data-editorial-credit\s*=\s*[\"\']1[\"\']',caption.group(0),re.I)),
+            'has_credit_class':bool(re.search(r'class\s*=\s*[\"\'][^\"\']*\bimage-credit\b',caption.group(0),re.I)),
+            'signature_kind':'complete' if signature else 'legacy_stripped' if legacy_stripped_commons_credit(caption.group(0)) else 'unknown',
+            'nearest_image':nearest, 'direct_adjacency':direct, 'transparent_adjacency':bound,
+            'gap_tags':tags[:24], 'gap_tags_truncated':len(tags)>24,
+            'gap_has_comment':'<!--' in stripped_gap,
+            'gap_text_chars':len(visible_wechat_content_text(gap)),
+            'gap_without_managed_notes_text_chars':len(visible_wechat_content_text(stripped_gap))})
+    return {'managed_caption_counts':dict(Counter(managed_image_annotation_kind(match.group(0)) for match in captions)),
+            'image_count':len(images), 'unique_body_image_count':len(article_body_images(content)),
+            'commons_caption_count':len(commons), 'caption_records':records,
+            'caption_records_truncated':len(commons)>16}
+
+
 def caption_cleanup_plan(article):
     """Identify only deployed managed annotations and their adjacent photos."""
     content = str(article.get('content') or '')
@@ -743,7 +866,8 @@ def cleanup_current_drafts(session, token, output, timeout, apply):
                             else 'caption_cleanup_failed')
                 record_unresolved_group(report, output, draft_index, media_id, baseline, category,
                     changed=changed, remaining_articles=len(baseline)-index, uncertain_articles=int(updated),
-                    errcode=exc.errcode if isinstance(exc, WeChatError) else None)
+                    errcode=exc.errcode if isinstance(exc, WeChatError) else None,
+                    diagnostics=caption_binding_diagnostics(article) if category == 'unbound_commons_annotation' else None)
                 interrupted = True; break
             (output/'progress.json').write_text(json.dumps(report, indent=2))
             print(json.dumps({key:report[key] for key in ('article_count','changed_articles','captions_removed','updated_articles')}), flush=True)
