@@ -25,6 +25,11 @@ on:
         description: "Cap new PDFs across all institutions per run (0 = no cap)"
         required: true
         default: "100"
+      imf_pending_retries:
+        description: "Previously observed IMF reports to retry in this run (1-100)"
+        required: false
+        type: number
+        default: 10
       force_reprocess:
         description: "Ignore seen-state and overwrite today's generated outputs"
         required: true
@@ -133,6 +138,7 @@ jobs:
         shell: bash
         env:
           PROXY_SUBSCRIPTION_URL: ${{ secrets.PROXY_SUBSCRIPTION_URL }}
+          IMF_PENDING_RETRIES: ${{ github.event.inputs.imf_pending_retries || '10' }}
         run: |
           set -o pipefail
           DATE="$(TZ=Asia/Shanghai date +%y%m%d)"
@@ -141,6 +147,7 @@ jobs:
           python scripts/fetch_institution_latest_pdfs.py \
             --output-dir _institution_latest_pdfs \
             --pending-intake-path institution_feeds/pending_intake/imf.json \
+            --imf-pending-retries "$IMF_PENDING_RETRIES" \
             --dependency-holds "$RUNNER_TEMP/institution-held-sources.json" \
             --date "$DATE" \
             --institutions "${{ github.event.inputs.institutions || 'all' }}" \

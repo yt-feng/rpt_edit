@@ -118,6 +118,17 @@ that official PDF intake has recovered. After renewal or replacement, verify
 real PDF bytes and source identity in a cloud fetch-only run before claiming
 availability restored.
 
+For controlled recovery of an already observed IMF backlog, the production
+workflow's optional `imf_pending_retries` dispatch input can raise the per-run
+retry allowance from its default of 10 to a value from 1 through 100 (for example,
+17 for the current admitted cohort). Scheduled runs retain 10; the existing
+source selection, PDF caps, deduplication, health checks, and dry-run behavior
+still apply. The replacement subscription supplied on 2026-10-12 belongs to a
+currently valid account; paid renewal is not required for that account. After
+updating the repository secret, validate official PDF downloads in the cloud
+before dispatching production recovery; an updated secret alone is not proof of
+restored intake.
+
 Consulting uses the same immutable, source-bound MinerU result cache as the
 institution route for the normal `vlm/en/ocr=true` options. Cache identity
 includes scope, original source name, complete PDF bytes, task lineage and
