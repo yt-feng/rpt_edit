@@ -41,6 +41,7 @@ ERROR_CODES = {"imf_browser_" + code for code in client.ERROR_CODES} | {
     "imf_browser_not_enabled", "imf_browser_publication_invalid", "imf_browser_destination_exists",
     "imf_browser_page_not_ready", "imf_browser_page_identity_mismatch", "imf_browser_download_not_verified",
     "imf_browser_process_failed", "imf_browser_download_failed", "imf_browser_landing_http_rejected",
+    "imf_browser_evidence_write_failed",
 }
 
 
@@ -177,6 +178,68 @@ def title_words_present(title, text):
             expected.difference_update(parts)
             expected.add(joined)
     return bool(observed and expected and expected <= observed)
+
+
+def write_public_evidence(publication, page):
+    """Optional canary artifact: bounded public identity only, never runtime state.
+
+    This is observation, not acceptance. Sanitized evidence must never feed the
+    validators: they always receive the original metadata from the child pipe.
+    """
+    directory = os.environ.get("IMF_PUBLIC_EVIDENCE_DIR")
+    if not directory:
+        return
+    require_cloud()
+    from imf_elibrary_resolver import source_url, validate_publication_url
+    def text(value):
+        return value if isinstance(value, str) and len(value) <= 4096 else "[invalid_value]"
+    def values(value):
+        return [text(x) for x in value[:32]] if isinstance(value, list) else ["[invalid_list]"]
+    def official_url(value, *, pdf=False, source=False):
+        try:
+            if source:
+                source_url(value)
+            else:
+                validate_publication_url(value, pdf=pdf)
+            return value
+        except Exception:
+            return "[invalid_official_url]"
+    public = {key: text(publication.get(key)) for key in (
+        "source_guid", "source_title", "title", "subtitle", "full_title", "doi", "isbn", "language",
+        "year", "issue", "identity_sha256", "crossref_sha256")}
+    public["source_url"] = official_url(publication.get("source_url"), source=True)
+    public["landing_url"] = official_url(publication.get("landing_url"))
+    public["series"] = values(publication.get("series", []))
+    public["title_variants"] = values(publication.get("title_variants", []))
+    allowed = {"citation_doi", "dc.identifier.doi", "prism.doi", "citation_title", "dc.title",
+               "citation_isbn", "citation_pdf_url", "canonical_url"}
+    metadata = page.get("metadata") if isinstance(page.get("metadata"), dict) else {}
+    observed = {key: values(value) for key, value in metadata.items() if key in allowed}
+    for key in ("canonical_url", "citation_pdf_url"):
+        if key in observed:
+            observed[key] = [official_url(value, pdf=key == "citation_pdf_url") for value in observed[key]]
+    status = page.get("landing_status")
+    record = {"schema": 1, "accepted": False, "kind": "public_landing_observation",
+              "publication": public, "page": {
+                  "final_url": official_url(page.get("final_url")),
+                  "landing_status": status if type(status) is int and 100 <= status <= 599 else None,
+                  "metadata": observed, "h1s": values(page.get("h1s", [])),
+                  "download_hrefs": [official_url(value, pdf=True) for value in values(page.get("download_hrefs", []))]}}
+    temporary = None
+    try:
+        root = Path(directory)
+        root.mkdir(parents=True, exist_ok=True)
+        filename = hashlib.sha256(publication["source_guid"].encode()).hexdigest() + ".json"
+        descriptor, temporary = tempfile.mkstemp(prefix=".imf-public-", dir=root)
+        with os.fdopen(descriptor, "w") as stream:
+            json.dump(record, stream, ensure_ascii=False, sort_keys=True)
+            stream.write("\n")
+        os.replace(temporary, root / filename)
+    except Exception:
+        raise BrowserDownloadError("imf_browser_evidence_write_failed") from None
+    finally:
+        if temporary is not None:
+            Path(temporary).unlink(missing_ok=True)
 
 
 def verify_pdf(path, publication, max_bytes, expected_sha256=None):
@@ -331,6 +394,7 @@ class CloudImfBrowser:
                                         env=child_environment(self._proxy), start_new_session=True,
                                         stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
                 page = read_message(proc, 100)
+                write_public_evidence(publication, page)
                 if page.get("stage") != "metadata":
                     raise BrowserDownloadError("imf_browser_page_not_ready")
                 if type(page.get("landing_status")) is not int or page["landing_status"] != 200:

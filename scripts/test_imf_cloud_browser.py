@@ -49,6 +49,40 @@ class BrowserTests(unittest.TestCase):
             self.assertFalse(b.title_words_present(title, bad))
         self.assertFalse(b.title_words_present('Mission January 12-16 2026', 'Mission January 1216 2026'))
 
+    def test_optional_evidence_disabled_has_no_filesystem_work(self):
+        with patch.dict(os.environ, {}, clear=True), patch.object(b.tempfile, 'mkstemp') as write:
+            b.write_public_evidence(PUBLICATION, PAGE)
+            write.assert_not_called()
+
+    def test_public_evidence_uses_fixed_bounded_fields_and_redacts_private_urls(self):
+        publication = {**PUBLICATION, 'subscription': 'SECRET', 'headers': {'Authorization': 'SECRET'}}
+        page = deepcopy(PAGE)
+        page.update(cookie='SECRET', stdout='SECRET', final_url='https://user:SECRET@www.elibrary.imf.org/x')
+        page['metadata'].update(cookie=['SECRET'], description=['SECRET'], citation_pdf_url=['https://user:SECRET@evil.invalid/x.pdf'])
+        page['h1s'] = ['x' * 5000] * 33
+        with tempfile.TemporaryDirectory() as folder, patch.dict(os.environ, {**ENV, 'IMF_PUBLIC_EVIDENCE_DIR': folder}, clear=True), \
+             patch.object(b.sys, 'platform', 'linux'):
+            b.write_public_evidence(publication, page)
+            files = list(Path(folder).iterdir()); self.assertEqual(len(files), 1)
+            self.assertEqual(files[0].name, hashlib.sha256(PUBLICATION['source_guid'].encode()).hexdigest() + '.json')
+            encoded = files[0].read_text(); self.assertNotIn('SECRET', encoded)
+            record = json.loads(encoded)
+            self.assertEqual(set(record), {'schema', 'accepted', 'kind', 'publication', 'page'})
+            self.assertFalse(record['accepted'])
+            self.assertEqual(len(record['page']['h1s']), 32)
+            self.assertEqual(record['page']['final_url'], '[invalid_official_url]')
+            self.assertNotIn('cookie', record['page']['metadata'])
+
+    def test_failed_metadata_is_retained_but_never_accepted(self):
+        page = deepcopy(PAGE); page['metadata']['citation_doi'] = ['10.5089/9798229063074.029']
+        with self.download_mocks([page]) as (instance, dest, proc, _, _), \
+             patch.dict(os.environ, {'IMF_PUBLIC_EVIDENCE_DIR': str(dest.parent / 'evidence')}):
+            with self.assertRaisesRegex(b.BrowserDownloadError, 'page_identity_mismatch'):
+                instance.download(PUBLICATION, dest, 1024)
+            record = json.loads(next((dest.parent / 'evidence').glob('*.json')).read_text())
+            self.assertEqual(record['page']['metadata']['citation_doi'], ['10.5089/9798229063074.029'])
+            self.assertFalse(record['accepted']); proc.stdin.write.assert_not_called()
+
     def test_disabled_enter_is_zero_launch_zero_credentials(self):
         fetch = Mock()
         with patch.dict(os.environ, {}, clear=True), patch.object(b.subprocess, 'Popen') as spawn:
