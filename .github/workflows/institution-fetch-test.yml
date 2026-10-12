@@ -7,7 +7,7 @@ on:
         required: true
         type: choice
         default: verify
-        options: [verify, mint]
+        options: [verify, mint, handoff_metadata]
       public_request:
         description: Ephemeral recipient public key and nonce only
         required: true
@@ -30,6 +30,7 @@ jobs:
             scripts/imf_reviewed_cache_bridge.py
             scripts/reviewed-originals.json
             scripts/imf_production_preflight.py
+            scripts/imf_handoff_metadata_export.py
       - uses: actions/checkout@v4
         with:
           ref: a1b68ba1ffe4d79281ed2f015aad74182bb24d01
@@ -50,6 +51,7 @@ jobs:
       - name: Install exact transfer dependencies
         run: python -m pip install --disable-pip-version-check 'requests==2.34.2' 'pypdf==6.19.0' 'boto3==1.43.111' 'cryptography==50.0.2'
       - name: Save public request only
+        if: ${{ inputs.operation != 'handoff_metadata' }}
         env:
           PUBLIC_REQUEST: ${{ inputs.public_request }}
         run: |
@@ -65,6 +67,7 @@ jobs:
           Path(os.environ['RUNNER_TEMP'], 'imf-public-request.json').write_bytes(raw)
           PY
       - name: Perform reviewed operation
+        if: ${{ inputs.operation != 'handoff_metadata' }}
         env:
           OPERATION: ${{ inputs.operation }}
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
@@ -87,8 +90,29 @@ jobs:
             python -I scripts/imf_production_preflight.py --repo helper \
               > _imf_cache_transfer/production-preflight.json
           fi
+      - name: Export exact production translation handoff metadata
+        if: ${{ inputs.operation == 'handoff_metadata' }}
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          umask 077
+          python -I scripts/imf_handoff_metadata_export.py --repo helper --output _imf_handoff_metadata
+      - name: Upload translation metadata only
+        if: ${{ always() && inputs.operation == 'handoff_metadata' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: imf-handoff-metadata-${{ github.run_id }}
+          path: |
+            _imf_handoff_metadata/translation_summary.json
+            _imf_handoff_metadata/handoff_metadata_receipt.json
+          retention-days: 1
+          if-no-files-found: error
       - name: Upload encrypted transfer or readback receipt only
-        if: always()
+        if: ${{ always() && inputs.operation != 'handoff_metadata' }}
         uses: actions/upload-artifact@v4
         with:
           name: imf-cache-import-${{ github.run_id }}
