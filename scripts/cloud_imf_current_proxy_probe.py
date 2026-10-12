@@ -116,9 +116,14 @@ def probe(index: int, proxy: str, target: str, url: str, f, cffi, PdfReader) -> 
            "accepted_source_pdf": False}
     response = None
     try:
+        from curl_cffi import CurlOpt
+
         response = cffi.get(
             url, timeout=TIMEOUT, impersonate=f.CFFI_IMPERSONATE,
             proxies={"http": proxy, "https": proxy}, headers=f.source_request_headers(),
+            # Bind this diagnostic request to its chosen route even if the
+            # isolated runner has an inherited NO_PROXY environment value.
+            curl_options={CurlOpt.NOPROXY: ""},
             allow_redirects=True, stream=True,
         )
         row["status"] = int(response.status_code)
