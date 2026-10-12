@@ -6,6 +6,7 @@ on:
       - scripts/institution_pending_intake.py
       - scripts/test_institution_pending_intake.py
       - scripts/test_institution_source_health.py
+      - scripts/test_source_monitoring.py
       - scripts/fetch_institution_latest_pdfs.py
       - .github/workflows/institution-latest-pdf-to-wechat.yml
       - .github/workflows/institution-source-health-contract.yml
@@ -26,3 +27,4 @@ jobs:
       - run: python3 -B scripts/test_institution_source_health.py
       - run: python3 -B scripts/test_institution_pending_intake.py
       - run: python3 -B scripts/test_fetch_institution_latest_pdfs.py
+      - run: python3 -B scripts/test_source_monitoring.py

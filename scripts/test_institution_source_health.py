@@ -11,7 +11,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 import fetch_institution_latest_pdfs as fetcher
 import institution_source_health as health
@@ -132,6 +132,34 @@ class SourceHealthTests(unittest.TestCase):
             with patch.object(fetcher, "download_pdf", side_effect=AssertionError("must not retry source")):
                 self.assertEqual(self.classify(data, producer_exit_code=code)["source_health_backlog_only"], "true")
             self.assertNotIn("imf:released", json.loads((root / "seen.json").read_text())["items"])
+
+    def test_expired_subscription_keeps_direct_fetch_and_imf_health_failure(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            args = ["fetch", "--output-dir", str(root / "pdfs"), "--date", DATE,
+                    "--institutions", "imf", "--seen-state-path", str(root / "seen.json"),
+                    "--archive-path", str(root / "archive.jsonl")]
+            item = dict(title="Released report", guid="released", source_url="https://example.org/released",
+                        date=datetime.now(timezone.utc).isoformat(), pdf_candidates=["https://example.org/released.pdf"])
+            subscription = Mock(text="socks5://private:secret@private.example:1080", status_code=200,
+                                headers={"Subscription-Userinfo": "expire=1"})
+            with (patch.object(sys, "argv", args),
+                  patch.dict("os.environ", {"PROXY_SUBSCRIPTION_URL": "https://private.example/secret", "GITHUB_OUTPUT": "",
+                                            "GITHUB_STEP_SUMMARY": str(root / "summary.md")}),
+                  patch.object(fetcher.requests, "get", return_value=subscription),
+                  patch.object(fetcher, "cffi_requests") as client,
+                  patch.object(fetcher, "collect_coveo_items", return_value=[item]),
+                  patch.object(fetcher, "download_pdf", return_value=(None, "http_403")) as download,
+                  redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO())):
+                code = fetcher.main()
+            client.get.assert_not_called()
+            self.assertEqual((code, download.call_count), (2, 1))
+            self.assertIsNone(download.call_args.kwargs["proxy"])
+            data = json.loads((root / "pdfs/institution_run_manifest.json").read_text())
+            self.assertEqual(self.classify(data, producer_exit_code=code)["source_health"], "degraded")
+            self.assertNotIn("imf:released", json.loads((root / "seen.json").read_text())["items"])
+            self.assertIn("Proxy subscription expired", (root / "summary.md").read_text())
+            self.assertNotIn("private.example", (root / "summary.md").read_text())
 
     def test_pipeline_preserves_both_exit_codes_and_only_known_failure_continues(self):
         with tempfile.TemporaryDirectory() as folder:

@@ -96,6 +96,28 @@ The seed removes only the verified WEO collection root, preserves every report's
 original admission metadata, and excludes any already durable downloaded or
 duplicate-PDF identity (none of the 17 matched).
 
+The source fetch step reads `Subscription-Userinfo` expiration metadata from
+each supported subscription transport and adds a redacted status to the Actions
+job summary. Within seven days of expiry it also emits an Actions warning to
+renew or replace the repository `PROXY_SUBSCRIPTION_URL` secret. An explicitly
+expired subscription skips node probes; it does not disable direct official
+source requests, clear pending reports, mark reports seen, or change source
+health acceptance. Missing, malformed, or zero expiration metadata is reported
+as unknown and still requires the existing source-specific node validation.
+Authentication rejection, connection/handshake failure, and source HTTP
+rejection are distinguished without exposing subscription URLs, proxy hosts,
+credentials, or raw error messages. Node validation remains bounded to ten
+nodes and ten seconds per node.
+
+Cloud diagnostics `38207756224` established that the current subscription was
+expired and that both existing and explicit SOCKS authentication were rejected.
+The same diagnostic found only HTML verification responses at the exact
+Crossref-linked eLibrary landing and its PDF candidates. This explains the
+unavailable proxy route; expiry warnings and queue durability do not establish
+that official PDF intake has recovered. After renewal or replacement, verify
+real PDF bytes and source identity in a cloud fetch-only run before claiming
+availability restored.
+
 Consulting uses the same immutable, source-bound MinerU result cache as the
 institution route for the normal `vlm/en/ocr=true` options. Cache identity
 includes scope, original source name, complete PDF bytes, task lineage and
