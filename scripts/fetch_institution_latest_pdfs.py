@@ -56,6 +56,7 @@ import os
 import re
 import subprocess
 import sys
+import tempfile
 import time
 import xml.etree.ElementTree as ET
 from collections.abc import Callable
@@ -526,7 +527,96 @@ def _normalize_proxy_node(node: str) -> str | None:
 
 
 def mask_proxy(proxy: str) -> str:
-    return re.sub(r"//[^@/]+@", "//***@", proxy)
+    # Endpoint names can identify a subscription too; never log hosts or labels.
+    scheme = proxy.split(":", 1)[0].lower()
+    return f"{scheme if scheme in {'http', 'https', 'socks5', 'socks5h'} else 'proxy'}://[redacted]"
+
+
+def _subscription_message(message: str, *, warning: bool = False) -> None:
+    """Publish only caller-controlled, redacted diagnostics to the Actions UI."""
+    (github_warning if warning else log)(message)
+    summary = os.getenv("GITHUB_STEP_SUMMARY")
+    if summary:
+        try:
+            with Path(summary).open("a", encoding="utf-8") as stream:
+                stream.write(f"- {message}\n")
+        except OSError:
+            warn("Could not append proxy subscription status to Actions summary")
+
+
+def _subscription_expired(headers: Any) -> bool:
+    """Only an explicit valid expiry may prevent use of a subscription body."""
+    userinfo = next((str(value) for key, value in headers.items()
+                     if str(key).lower() == "subscription-userinfo"), "")
+    if not userinfo:
+        _subscription_message("Proxy subscription: expiry unknown (Subscription-Userinfo absent). Node validation remains required.")
+        return False
+    values = re.findall(r"(?:^|;)\s*expire\s*=\s*([^;]*)", userinfo, re.I)
+    if len(userinfo) > 4096 or len(values) != 1 or not re.fullmatch(r"[0-9]{1,12}", values[0].strip()):
+        _subscription_message("Proxy subscription: expiry unknown (invalid or missing expire metadata). Node validation remains required.")
+        return False
+    expires = int(values[0])
+    if expires == 0:
+        _subscription_message("Proxy subscription: expiry unknown (no expiration advertised, expire=0). Node validation remains required.")
+        return False
+    try:
+        expiry = datetime.fromtimestamp(expires, tz=timezone.utc)
+    except (OverflowError, OSError, ValueError):
+        _subscription_message("Proxy subscription: expiry unknown (invalid expire timestamp). Node validation remains required.")
+        return False
+    remaining = expires - time.time()
+    date = expiry.strftime("%Y-%m-%d %H:%M UTC")
+    if remaining <= 0:
+        _subscription_message(
+            f"Proxy subscription expired at {date}; skipping its node probes. "
+            "Renew or replace the repository PROXY_SUBSCRIPTION_URL secret. "
+            "Direct source fetching remains enabled; source health still requires real downloads.",
+            warning=True,
+        )
+        return True
+    if remaining <= 7 * 86400:
+        _subscription_message(
+            f"Proxy subscription expires within 7 days ({date}); renew or replace "
+            "the repository PROXY_SUBSCRIPTION_URL secret before that time.",
+            warning=True,
+        )
+    else:
+        _subscription_message(f"Proxy subscription expires at {date} (more than 7 days remaining). Node validation remains required.")
+    return False
+
+
+def _proxy_failure_category(exc: Exception) -> str:
+    """Inspect library errors internally, but emit only this fixed vocabulary."""
+    detail = str(exc).lower()
+    code = getattr(exc, "code", None)
+    if code == 67 or any(marker in detail for marker in (
+        "user was rejected", "user rejected", "authentication failed", "auth failed",
+        "proxy authentication required", "no authentication method was acceptable",
+        "socks5 authentication", "response 407", "http 407",
+    )):
+        return "authentication_rejected"
+    if code == 97:
+        return "proxy_handshake_failed"
+    if code in {5, 6, 7, 28, 35, 52, 55, 56, 60} or isinstance(exc, requests.exceptions.ConnectionError):
+        return "connection_failed"
+    if isinstance(exc, (requests.exceptions.Timeout, TimeoutError, subprocess.TimeoutExpired)):
+        return "connection_timeout"
+    return "request_failed"
+
+
+def _curl_final_headers(raw: str) -> dict[str, str]:
+    """Read only the last HTTP response after redirects/proxy CONNECT headers."""
+    headers: dict[str, str] = {}
+    for line in raw.splitlines():
+        if line.upper().startswith("HTTP/"):
+            headers = {}
+        elif ":" in line:
+            name, value = line.split(":", 1)
+            if name.lower().strip() == "subscription-userinfo":
+                # Duplicate expiry headers are ambiguous and therefore unknown.
+                key = "subscription-userinfo"
+                headers[key] = headers[key] + ";" + value.strip() if key in headers else value.strip()
+    return headers
 
 
 def _fetch_subscription(url: str, timeout: int) -> str | None:
@@ -534,27 +624,38 @@ def _fetch_subscription(url: str, timeout: int) -> str | None:
     try:
         resp = requests.get(url, timeout=timeout, headers={"User-Agent": DEFAULT_USER_AGENT})
         resp.raise_for_status()
+        if _subscription_expired(resp.headers):
+            return None
         return resp.text.strip()
     except Exception as exc:  # noqa: BLE001
-        warn(f"subscription via requests failed: {exc}")
+        warn(f"subscription via requests failed: {_proxy_failure_category(exc)}")
     try:  # plain curl CLI is what bbg-show uses successfully
-        out = subprocess.run(
-            ["curl", "--location", "--fail", "--silent", "--show-error", url],
-            capture_output=True, text=True, timeout=90,
-        )
-        if out.returncode == 0 and out.stdout.strip():
-            return out.stdout.strip()
-        warn(f"subscription via curl failed: rc={out.returncode} {out.stderr.strip()[:120]}")
+        with tempfile.TemporaryDirectory(prefix="institution-subscription-") as temporary:
+            header_path = Path(temporary) / "headers"
+            out = subprocess.run(
+                ["curl", "--location", "--fail", "--silent", "--show-error",
+                 "--dump-header", str(header_path), url],
+                capture_output=True, text=True, timeout=90,
+            )
+            if out.returncode == 0 and out.stdout.strip():
+                raw_headers = header_path.read_text(encoding="utf-8", errors="replace") if header_path.exists() else ""
+                if _subscription_expired(_curl_final_headers(raw_headers)):
+                    return None
+                return out.stdout.strip()
+            warn(f"subscription via curl failed: exit_{out.returncode}")
     except Exception as exc:  # noqa: BLE001
-        warn(f"subscription via curl failed: {exc}")
+        warn(f"subscription via curl failed: {_proxy_failure_category(exc)}")
     if _HAS_CFFI:
         try:
             resp = cffi_requests.get(url, timeout=timeout, impersonate=CFFI_IMPERSONATE)
             if resp.status_code < 400 and resp.text.strip():
+                if _subscription_expired(resp.headers):
+                    return None
                 return resp.text.strip()
             warn(f"subscription via curl_cffi failed: http_{resp.status_code}")
         except Exception as exc:  # noqa: BLE001
-            warn(f"subscription via curl_cffi failed: {exc}")
+            warn(f"subscription via curl_cffi failed: {_proxy_failure_category(exc)}")
+    _subscription_message("Proxy subscription could not be retrieved; expiry unknown. Direct source fetching remains enabled.", warning=True)
     return None
 
 
@@ -577,7 +678,8 @@ def resolve_working_proxy(
     log(f"proxy subscription: {len(candidates)} curl-compatible node(s)")
     # Bound the health check so a subscription full of dead nodes cannot stall
     # the whole run: at most 10 nodes, 10s each.
-    for proxy in candidates[:10]:
+    failures: dict[str, int] = {}
+    for index, proxy in enumerate(candidates[:10], start=1):
         if not _HAS_CFFI:
             break
         try:
@@ -586,10 +688,17 @@ def resolve_working_proxy(
                 proxies={"http": proxy, "https": proxy},
             )
             if 200 <= resp.status_code < 400:
+                _subscription_message("Proxy node validated against the source endpoint; source downloads are still checked separately.")
                 return proxy
-        except Exception:  # noqa: BLE001
-            continue
+            category = "authentication_rejected" if resp.status_code == 407 else "source_rejected"
+            warn(f"proxy node {index}: {category} (http_{resp.status_code})")
+        except Exception as exc:  # noqa: BLE001
+            category = _proxy_failure_category(exc)
+            warn(f"proxy node {index}: {category}")
+        failures[category] = failures.get(category, 0) + 1
     warn("no working proxy node found in subscription")
+    reason = ", ".join(f"{key}={value}" for key, value in sorted(failures.items())) or "no compatible node/client"
+    _subscription_message(f"No validated proxy route ({reason}). Direct source fetching remains enabled; source health remains enforced.", warning=True)
     return None
 
 
