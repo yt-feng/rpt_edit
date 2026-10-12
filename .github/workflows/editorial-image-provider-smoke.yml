@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - scripts/free_editorial_images.py
+      - scripts/stock_editorial_photos.json
       - scripts/test_free_editorial_images.py
       - .github/workflows/editorial-image-provider-smoke.yml
   workflow_dispatch:
@@ -41,11 +42,11 @@ jobs:
           python-version: '3.12'
       - name: Install image dependencies
         run: python3 -m pip install --disable-pip-version-check 'requests>=2.31,<3' 'Pillow>=10.1,<12'
-      - name: Download one licensed Commons topic photo
+      - name: Download one reviewed stock topic photo
         run: >-
           python3 -B scripts/free_editorial_images.py
           --smoke-dir output/editorial-image-provider
-          --require-commons
+          --require-stock
       - name: Save public provider evidence and decoded sample
         if: always()
         uses: actions/upload-artifact@v4

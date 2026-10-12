@@ -14,7 +14,17 @@ import requests
 
 import repair_wechat_draft_images as repair
 import push_portal_translated_to_wechat_drafts as portal
-from free_editorial_images import attribution_html
+
+
+def attribution_html(metadata):
+    """Pin deployed historical fixtures independently from today's renderer."""
+    import html
+    if metadata.get('source') == 'local_editorial':
+        caption = '主题示意图：Portal Suite 原创插画，非实拍或数据图。'
+    else:
+        caption = f"主题配图：{metadata.get('author', '')} / Wikimedia Commons / {metadata.get('license', '')}；已裁剪与缩放，非报告原图。"
+        caption += f" 图片来源：{metadata.get('source_url', '')} · 许可：{metadata.get('license_url', '')}"
+    return '<p class="image-credit" data-editorial-credit="1">' + html.escape(caption) + '</p>'
 
 
 def photo(path):
@@ -850,9 +860,8 @@ class DraftRepairTests(unittest.TestCase):
                 self.assertFalse(portal.wechat_media_contract_check(live,live)['matches'])
                 state,_download,provider,upload,cover,post=self.environment(stack,[live])
                 provider.side_effect=lambda _s,_title,target,*_a,**_kw:(photo(target),{
-                    'source':'wikimedia_commons','author':'New Synthetic Photographer','license':'CC BY 4.0',
-                    'source_url':'https://commons.wikimedia.org/wiki/File:New_Synthetic.jpg',
-                    'license_url':'https://creativecommons.org/licenses/by/4.0/'})
+                    'source':'unsplash','author':'New Synthetic Photographer','license':'Unsplash License',
+                    'source_url':'https://unsplash.com/photos/new-synthetic'})
                 upload.side_effect=[f'https://mmbiz.qpic.cn/new-licensed-{i}/0' for i in range(count)]
                 result=repair.repair_drafts([{'media_id':'existing-exact-id','articles':[saved]}],object(),'TOKEN',Path(temporary),30,True)
                 self.assertTrue(result['fully_repaired']);self.assertEqual(1,result['updated_articles'])
@@ -866,7 +875,7 @@ class DraftRepairTests(unittest.TestCase):
                 if count==2:self.assertIn(refs[2][0],state['news_item'][0]['content'])
                 self.assertEqual(repair.prose_identity(saved),repair.prose_identity(state['news_item'][0]))
                 self.assertTrue(portal.wechat_media_contract_check(state['news_item'][0],state['news_item'][0])['matches'])
-                self.assertEqual(count,state['news_item'][0]['content'].count('https://commons.wikimedia.org/wiki/File:New_Synthetic.jpg'))
+                self.assertNotIn('https://unsplash.com/photos/new-synthetic',state['news_item'][0]['content'])
                 post.assert_called_once();cover.assert_called_once()
                 post.reset_mock();provider.reset_mock();upload.reset_mock();cover.reset_mock()
                 again=repair.repair_drafts([{'media_id':'existing-exact-id','articles':[saved]}],object(),'TOKEN',Path(temporary),30,True)
@@ -1037,6 +1046,158 @@ class DraftRepairTests(unittest.TestCase):
             self.assertEqual(0,result['article_count'])
             self.assertFalse(result['fully_repaired']);self.assertTrue(result['partial'])
             self.assertEqual(result,json.loads((Path(temporary)/'progress.json').read_text()))
+
+
+class CurrentCaptionCleanupTests(unittest.TestCase):
+    def annotated(self, note=None):
+        row=article(broken=False)
+        row['author']='Preserved author'
+        row['content_source_url']='https://example.invalid/report'
+        row['need_open_comment']=1
+        url,alt=repair.article_body_images(row['content'])[0]
+        image=portal.image_html(url,alt)
+        row['content']=row['content'].replace(image,image+(note or attribution_html({'source':'local_editorial'})))
+        return row
+
+    def environment(self, stack, rows, mutation=None):
+        state={'news_item':copy.deepcopy(rows)}
+        stack.enter_context(patch.object(repair,'read_complete_draft_catalog',
+            side_effect=lambda *_args:[{'media_id':'same-live-id','content':copy.deepcopy(state)}]))
+        get=stack.enter_context(patch.object(repair,'get_draft',side_effect=lambda *_args:copy.deepcopy(state)))
+        def post(_session,url,payload,_timeout,**_kwargs):
+            self.assertIn('/draft/update?',url);self.assertEqual('same-live-id',payload['media_id'])
+            self.assertEqual(1,_kwargs['max_attempts'])
+            state['news_item'][payload['index']].update(payload['articles'])
+            if mutation:mutation(state)
+            return response({'errcode':0})
+        write=stack.enter_context(patch.object(repair,'post_wechat_json',side_effect=post))
+        download=stack.enter_context(patch.object(repair,'fetch_wechat_image'))
+        provider=stack.enter_context(patch.object(repair,'download_editorial_image',
+            side_effect=lambda _s,_title,path,*_a,**_kw:(photo(path),{'source':'unsplash','license':'Unsplash License'})))
+        upload=stack.enter_context(patch.object(repair,'upload_article_image',return_value='https://mmbiz.qpic.cn/new-photo/0'))
+        cover=stack.enter_context(patch.object(repair,'upload_cover_material',return_value='new-cover'))
+        return state,get,write,download,provider,upload,cover
+
+    def run_cleanup(self, directory, apply=True):
+        with redirect_stdout(io.StringIO()):
+            return repair.cleanup_current_drafts(object(),'TOKEN',Path(directory),30,apply)
+
+    def test_audit_only_counts_captions_and_commons_replacements_without_media_io(self):
+        for note, replacements in ((attribution_html({'source':'local_editorial'}),0),(stripped_commons_credit(),1)):
+            with self.subTest(replacements=replacements), tempfile.TemporaryDirectory() as directory, ExitStack() as stack:
+                state,get,write,download,provider,upload,cover=self.environment(stack,[self.annotated(note)])
+                before=copy.deepcopy(state)
+                result=self.run_cleanup(directory,False)
+                self.assertTrue(result['ok']);self.assertFalse(result['fully_repaired'])
+                self.assertEqual(1,result['captions_removed']);self.assertEqual(replacements,result['body_replacements'])
+                self.assertEqual(before,state)
+                for call in (get,write,download,provider,upload,cover):call.assert_not_called()
+                self.assertNotIn('same-live-id',json.dumps(result));self.assertNotIn('https://',json.dumps(result))
+
+    def test_strips_every_managed_variant_preserves_prose_images_author_and_is_idempotent(self):
+        notes=[attribution_html({'source':'local_editorial'}),
+               '<p>主題示意圖：Ｐｏｒｔａｌ Ｓｕｉｔｅ 原創插畫，非實拍或數據圖。</p>',
+               '<p><span>主题示意图 ： Portal Suite 原创插画 ， 非实拍或数据图。</span></p>',
+               '<section>主题示意图：Portal Suite 原创插画，非实拍或数据图。</section>']
+        row=self.annotated(''.join(notes));row['content']+='<p>图表1：年度营收。</p><p>数据来源：公司年报。</p>'
+        with tempfile.TemporaryDirectory() as directory, ExitStack() as stack:
+            state,get,write,download,provider,upload,cover=self.environment(stack,[article(broken=False),row])
+            result=self.run_cleanup(directory)
+            self.assertTrue(result['fully_repaired']);self.assertEqual(4,result['captions_removed'])
+            self.assertEqual(1,result['updated_articles']);self.assertEqual(1,write.call_args.args[2]['index'])
+            after=state['news_item'][1]
+            for field in row:
+                if field!='content':self.assertEqual(row[field],after[field])
+            self.assertEqual(portal.wechat_content_images(row['content']),portal.wechat_content_images(after['content']))
+            self.assertIn('数据来源：公司年报',after['content']);self.assertIn('图表1：年度营收',after['content'])
+            self.assertNotIn('原创插画',after['content']);self.assertNotIn('原創插畫',after['content'])
+            for call in (download,provider,upload,cover):call.assert_not_called()
+            write.reset_mock();get.reset_mock()
+            again=self.run_cleanup(directory)
+            self.assertTrue(again['fully_repaired']);self.assertEqual(0,again['changed_articles'])
+            write.assert_not_called();get.assert_not_called()
+
+    def test_complete_or_link_stripped_commons_replaced_without_source_labels(self):
+        complete=attribution_html({'source':'commons','author':'Photographer','license':'CC BY 4.0',
+            'source_url':'https://commons.wikimedia.org/wiki/File:Photo.jpg',
+            'license_url':'https://creativecommons.org/licenses/by/4.0/'})
+        for note in (complete,stripped_commons_credit(),stripped_commons_credit().replace('data-editorial-credit="1"','')):
+            with self.subTest(note=note), tempfile.TemporaryDirectory() as directory, ExitStack() as stack:
+                row=self.annotated(note);old_url=repair.article_body_images(row['content'])[0][0]
+                state,get,write,download,provider,upload,cover=self.environment(stack,[row])
+                result=self.run_cleanup(directory)
+                self.assertTrue(result['fully_repaired']);self.assertEqual(1,result['body_replacements'])
+                self.assertEqual(1,result['cover_replacements']);self.assertNotIn(old_url,state['news_item'][0]['content'])
+                self.assertNotIn('Wikimedia',state['news_item'][0]['content']);self.assertNotIn('图片来源',state['news_item'][0]['content'])
+                provider.assert_called_once();upload.assert_called_once();cover.assert_called_once();download.assert_not_called()
+
+    def test_cc0_photo_retained_and_known_retained_cover_not_replaced(self):
+        cc0=attribution_html({'source':'commons','author':'Photographer','license':'CC0 1.0',
+            'source_url':'https://commons.wikimedia.org/wiki/File:Photo.jpg',
+            'license_url':'https://creativecommons.org/publicdomain/zero/1.0/'})
+        for note, expected_provider in ((cc0,0),(stripped_commons_credit(),1)):
+            with self.subTest(note=note), tempfile.TemporaryDirectory() as directory, ExitStack() as stack:
+                row=self.annotated(note);row['thumb_url']=repair.article_body_images(row['content'])[1][0]
+                state,get,write,download,provider,upload,cover=self.environment(stack,[row])
+                result=self.run_cleanup(directory)
+                self.assertTrue(result['fully_repaired']);self.assertEqual(expected_provider,provider.call_count)
+                self.assertEqual(0,result['cover_replacements']);cover.assert_not_called()
+
+    def test_orphan_duplicate_commons_note_is_not_deleted(self):
+        row=self.annotated(stripped_commons_credit())
+        row['content']+='<p>保持额外正文。</p>'+stripped_commons_credit()
+        with self.assertRaisesRegex(ValueError,'unbound_commons_annotation'):
+            repair.caption_cleanup_plan(row)
+
+    def test_manual_notes_images_and_comments_are_not_treated_as_generated_annotations(self):
+        text=portal.LEGACY_LOCAL_IMAGE_CAPTION
+        for note in (f'<p>{text}补充人工备注。</p>',f'<p>{text}<!--manual--></p>',
+                     f'<p>{text}<img src="https://mmbiz.qpic.cn/manual/0"></p>',
+                     '<p>图表来源：公司年报；图片来源：公司授权。</p>'):
+            with self.subTest(note=note):
+                self.assertEqual(note,portal.strip_managed_image_annotations(note))
+
+    def test_concurrent_edit_and_invalid_editorial_baseline_prevent_writes(self):
+        for mode in ('edit','editorial'):
+            with self.subTest(mode=mode), tempfile.TemporaryDirectory() as directory, ExitStack() as stack:
+                row=self.annotated()
+                if mode=='editorial':row['content']=row['content'].replace(portal.BRAND,'Another publication')
+                state,get,write,download,provider,upload,cover=self.environment(stack,[row])
+                if mode=='edit':get.side_effect=lambda *_args:{'news_item':[dict(row,digest='Concurrent change')]}
+                result=self.run_cleanup(directory)
+                self.assertFalse(result['ok']);self.assertEqual(1,result['unresolved_article_count'])
+                write.assert_not_called()
+                for call in (download,provider,upload,cover):call.assert_not_called()
+
+    def test_readback_reintroduced_annotations_or_changed_media_cannot_pass(self):
+        for mutation in (lambda state:state['news_item'][0].update(content=state['news_item'][0]['content']+
+                            '<p>主题示意图：Portal Suite 原创插画，非实拍或数据图。</p>'),
+                         lambda state:state['news_item'][0].update(content=state['news_item'][0]['content'].replace('/good-1/0','/changed/0'))):
+            with tempfile.TemporaryDirectory() as directory, ExitStack() as stack:
+                state,get,write,download,provider,upload,cover=self.environment(stack,[self.annotated()],mutation)
+                result=self.run_cleanup(directory)
+                self.assertFalse(result['fully_repaired']);self.assertEqual(1,result['uncertain_article_count'])
+                write.assert_called_once()
+
+    def test_locked_or_deleted_drafts_are_not_recreated_or_retried(self):
+        for code in (40007,53407):
+            with self.subTest(code=code), tempfile.TemporaryDirectory() as directory, ExitStack() as stack:
+                state,get,write,download,provider,upload,cover=self.environment(stack,[self.annotated()])
+                write.side_effect=portal.WeChatError('refused',errcode=code)
+                result=self.run_cleanup(directory)
+                self.assertFalse(result['ok']);self.assertEqual(0,result['updated_articles'])
+                write.assert_called_once()
+
+    def test_ambiguous_write_is_read_back_once_without_retry(self):
+        with tempfile.TemporaryDirectory() as directory, ExitStack() as stack:
+            state,get,write,download,provider,upload,cover=self.environment(stack,[self.annotated()])
+            def ambiguous(_s,_url,payload,*_a,**_kw):
+                state['news_item'][payload['index']].update(payload['articles'])
+                raise requests.ConnectionError('response lost')
+            write.side_effect=ambiguous
+            result=self.run_cleanup(directory)
+            self.assertTrue(result['fully_repaired']);self.assertEqual(1,result['updated_articles'])
+            write.assert_called_once();self.assertEqual(2,get.call_count)
 
 
 if __name__ == '__main__': unittest.main()

@@ -24,6 +24,7 @@ import re
 import struct
 import sys
 import time
+import unicodedata
 import zlib
 from html.parser import HTMLParser
 from pathlib import Path
@@ -50,7 +51,7 @@ from sensitive_content_guard import (
 )
 from wechat_article_quality import audit_wechat_article_markdown, sanitize_wechat_article_markdown
 from wechat_image_quality import is_article_image_candidate, source_chart_images, is_publication_furniture_metadata
-from free_editorial_images import download_editorial_image, attribution_html, attribution_caption
+from free_editorial_images import download_editorial_image, attribution_html
 
 
 BRAND = "外资精译"
@@ -994,10 +995,13 @@ def digest_from_markdown(markdown: str) -> str:
 
 
 def clean_markdown(markdown: str) -> str:
+    markdown = strip_managed_image_annotations(markdown)
     cleaned: list[str] = []
     in_code = False
     for raw in markdown.splitlines():
         line = raw.rstrip()
+        if managed_image_annotation_kind(line):
+            continue
         if line.strip().startswith("```"):
             in_code = not in_code
             continue
@@ -1517,7 +1521,6 @@ def markdown_to_wechat_html(
     floating_image_index = 0
     selected_image_urls = [item["url"] for item in body_images if item.get("url")]
     selected_image_set = set(selected_image_urls)
-    image_credits = {item["url"]: item.get("attribution", "") for item in body_images if item.get("url")}
     body_budget = max_visible_chars
     placement_budget = min(body_budget, max(visible_char_count(clean_markdown(markdown)), 1)) if body_budget else 0
     text_used = 0
@@ -1543,7 +1546,9 @@ def markdown_to_wechat_html(
     def maybe_render_image(url: str, alt: str) -> None:
         if not url or url not in selected_image_set or url in rendered_image_urls:
             return
-        parts.append(image_html(url, alt=alt) + image_credits.get(url, ""))
+        # Cached image metadata can contain retired attribution/disclaimer HTML.
+        # Displaying only the image keeps those annotations out of every render.
+        parts.append(image_html(url, alt=alt))
         rendered_image_urls.add(url)
 
     def maybe_insert_floating_image(force: bool = False) -> None:
@@ -1557,7 +1562,7 @@ def markdown_to_wechat_html(
             return
         threshold = placement_budget * (floating_image_index + 1) / (len(floating_images) + 1)
         if force or body_budget <= 0 or text_used >= threshold:
-            parts.append(image_html(url, alt=item.get("context") or item.get("alt") or "报告配图") + image_credits.get(url, ""))
+            parts.append(image_html(url, alt=item.get("context") or item.get("alt") or "报告配图"))
             rendered_image_urls.add(url)
             floating_image_index += 1
 
@@ -1816,7 +1821,8 @@ def prepare_cover_upload_image(path: Path, output_dir: Path, stem: str) -> Path:
 
 
 def choose_cover_image(report_dir: Path, figure_paths: dict[str, Path], fallback_dir: Path,
-                       uploaded_paths: list[Path] | None = None) -> Path:
+                       uploaded_paths: list[Path] | None = None, *, session=None,
+                       title: str = "", timeout: int = 15) -> Path:
     for path in source_chart_images(report_dir):
         return path
     for token in sorted(figure_paths):
@@ -1827,8 +1833,14 @@ def choose_cover_image(report_dir: Path, figure_paths: dict[str, Path], fallback
         if is_article_image_candidate(path):
             return path
     fallback_dir.mkdir(parents=True, exist_ok=True)
+    target = fallback_dir / f"{report_dir.name}_fallback_cover.jpg"
+    if session is not None:
+        fallback, _metadata = download_editorial_image(
+            session, title or report_dir.name, target, min(timeout, 15), index=0,
+            cache_dir=fallback_dir / "licensed_image_cache")
+        return fallback
     from free_editorial_images import bundled_fallback_image
-    fallback, _metadata = bundled_fallback_image(fallback_dir / f"{report_dir.name}_fallback_cover.jpg", report_dir.name)
+    fallback, _metadata = bundled_fallback_image(target, title or report_dir.name)
     return fallback
 
 
@@ -2166,6 +2178,37 @@ def visible_wechat_content_text(content: Any) -> str:
 
 
 IMAGE_CREDIT_PARAGRAPH_RE = re.compile(r'<p\b[^>]*>.*?</p>', re.I | re.S)
+MANAGED_IMAGE_ANNOTATION_RE = re.compile(
+    r'<(?P<tag>p|div|section)\b[^>]*>(?:(?!<(?:p|div|section)\b).)*?</(?P=tag)>', re.I | re.S)
+LEGACY_LOCAL_IMAGE_CAPTION = "主题示意图：Portal Suite 原创插画，非实拍或数据图。"
+
+
+def managed_image_annotation_kind(value: str) -> str:
+    """Recognize complete managed photo notes, never report/data source prose.
+
+    WeChat can discard data/class attributes and wrap text in spans. Match the
+    full old text after typography normalization, rather than trusting a marker
+    or deleting arbitrary paragraphs containing words such as 图片来源.
+    """
+    if '<!--' in value or any(tag.lower() not in {'p','div','section','span','em','strong','b','i','u','br','a'}
+                              for tag in re.findall(r'</?\s*([a-z][\w:-]*)\b', value, re.I)):
+        return ""
+    plain = unicodedata.normalize("NFKC", visible_wechat_content_text(value)).translate(
+        str.maketrans("題圖創畫實數據與縮報來許權", "题图创画实数据与缩报来许权"))
+    compact = re.sub(r"[\s:：,，;；。.!！·/]+", "", plain).casefold()
+    if re.fullmatch(r"主题(?:示意图|配图)portalsuite原创插画(?:非实拍或数据图)?", compact):
+        return "local_editorial"
+    if re.fullmatch(r"主题配图:.{1,240}\s*/\s*Wikimedia Commons\s*/\s*[^;]{1,80};"
+                    r"已裁剪与缩放,非报告原图[。.]?(?:\s*图片来源(?::https?://[^\s<>]{1,2048})?"
+                    r"\s*·\s*许可(?::https?://[^\s<>]{1,2048})?)?", plain, re.I):
+        return "commons"
+    return ""
+
+
+def strip_managed_image_annotations(content: Any) -> str:
+    return MANAGED_IMAGE_ANNOTATION_RE.sub(
+        lambda match: "" if managed_image_annotation_kind(match.group(0)) else match.group(0),
+        str(content or ""))
 
 
 COMMONS_IMAGE_CREDIT_CAPTION = (
@@ -2243,7 +2286,7 @@ def generated_image_credit_signature(paragraph: str) -> tuple[str, tuple[str, ..
     if parsed is None:
         return None
     text, links, link_texts = parsed
-    if text == attribution_caption({"source": "local_editorial"}) and not links:
+    if text == LEGACY_LOCAL_IMAGE_CAPTION and not links:
         return text, ()
     match = re.fullmatch(COMMONS_IMAGE_CREDIT_CAPTION + r" 图片来源 · 许可", text)
     if match:
@@ -3025,7 +3068,9 @@ def build_article(
         ai_image_index += 1
 
     cover_image = choose_cover_image(report_dir, figure_paths, output_dir / "_assets",
-                                    [Path(item["path"]) for item in uploaded_images if item.get("path")])
+                                    [Path(item["path"]) for item in uploaded_images if item.get("path")],
+                                    session=None if args.dry_run else session,
+                                    title=wechat_title, timeout=args.timeout)
     cover_image = prepare_cover_upload_image(cover_image, output_dir, f"article_{index:02d}")
     if args.dry_run:
         thumb_media_id = f"DRY_RUN_THUMB_{index:02d}"

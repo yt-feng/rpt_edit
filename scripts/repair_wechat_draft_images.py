@@ -2,6 +2,7 @@
 """Repair media in receipt-bound existing drafts; never add, delete or publish."""
 from __future__ import annotations
 import argparse
+from collections import Counter
 import copy
 import hashlib
 import html
@@ -19,14 +20,15 @@ from push_portal_translated_to_wechat_drafts import (
     get_stable_access_token, get_draft, draft_news_items, wechat_content_images,
     materialize_private_article_payload, article_prose_text, generated_image_credit_signature,
     legacy_stripped_commons_credit, generated_image_credits, IMAGE_CREDIT_PARAGRAPH_RE,
-    visible_wechat_content_text,
+    visible_wechat_content_text, managed_image_annotation_kind, strip_managed_image_annotations,
+    MANAGED_IMAGE_ANNOTATION_RE,
     post_wechat_json, parse_wechat_json, prepare_cover_upload_image,
     upload_article_image, upload_cover_material, image_html, summarize_draft_get_response,
-    wechat_image_url_identity, WeChatError,
+    wechat_image_url_identity, wechat_editorial_contract_check, WeChatError,
 )
 
 MAX_IMAGE_BYTES = 12 * 1024 * 1024
-CREDIT_RE = re.compile(r'<p\b[^>]*\bdata-editorial-credit\s*=\s*(["\'])1\1[^>]*>.*?</p>', re.I | re.S)
+CREDIT_RE = MANAGED_IMAGE_ANNOTATION_RE
 IMG_RE = re.compile(r'<img\b[^>]*>', re.I | re.S)
 IMAGE_BLOCK_RE = re.compile(r'<p\b[^>]*>\s*<img\b[^>]*>\s*</p>|<img\b[^>]*>', re.I | re.S)
 MAX_DRAFT_CATALOG = 1000
@@ -281,7 +283,7 @@ def fetch_wechat_image(session, url, target, timeout):
         return 'image_download_or_decode_failed'
 
 
-def replace_image(content, old_url, new_url, credit):
+def replace_image(content, old_url, new_url, credit, *, managed_annotations=False):
     replaced = 0
     pieces = []
     cursor = 0
@@ -312,7 +314,8 @@ def replace_image(content, old_url, new_url, credit):
             tail = content[end:]
             whitespace = len(tail) - len(tail.lstrip())
             previous_credit = CREDIT_RE.match(tail, whitespace)
-            if not previous_credit or not (generated_image_credit_signature(previous_credit.group(0)) is not None
+            if not previous_credit or not ((managed_annotations and managed_image_annotation_kind(previous_credit.group(0)))
+                                           or generated_image_credit_signature(previous_credit.group(0)) is not None
                                            or legacy_stripped_commons_credit(previous_credit.group(0))):
                 break
             end += previous_credit.end()
@@ -326,7 +329,7 @@ def replace_image(content, old_url, new_url, credit):
     return ''.join(pieces)
 
 
-def adjacent_image_credits(content, url):
+def adjacent_image_credits(content, url, *, managed_annotations=False):
     """Yield only managed credits immediately following this non-contact image."""
     identity = wechat_image_url_identity(url)
     for match in IMAGE_BLOCK_RE.finditer(content):
@@ -336,7 +339,8 @@ def adjacent_image_credits(content, url):
             while True:
                 tail = content[end:]
                 credit = CREDIT_RE.match(tail, len(tail)-len(tail.lstrip()))
-                if not credit or not (generated_image_credit_signature(credit.group(0)) is not None
+                if not credit or not ((managed_annotations and managed_image_annotation_kind(credit.group(0)))
+                                      or generated_image_credit_signature(credit.group(0)) is not None
                                       or legacy_stripped_commons_credit(credit.group(0))):
                     break
                 yield credit.group(0)
@@ -593,16 +597,182 @@ def repair_drafts(drafts, session, token, output, timeout, apply):
     return report
 
 
+def caption_cleanup_plan(article):
+    """Identify only deployed managed annotations and their adjacent photos."""
+    content = str(article.get('content') or '')
+    captions = [match.group(0) for match in CREDIT_RE.finditer(content)
+                if managed_image_annotation_kind(match.group(0))]
+    replace = []
+    bound = []
+    for index, (url, _alt) in enumerate(article_body_images(content), 1):
+        credits = list(adjacent_image_credits(content, url, managed_annotations=True))
+        commons = [credit for credit in credits if managed_image_annotation_kind(credit) == 'commons']
+        bound.extend(commons)
+        # An intact CC0 signature proves no display attribution is needed.
+        # All CC BY or unknown/link-stripped Commons media must be replaced.
+        if any(not (generated_image_credit_signature(credit)
+                    and '/ Wikimedia Commons / CC0 1.0' in generated_image_credit_signature(credit)[0])
+               for credit in commons):
+            replace.append({'index':index, 'url':url, 'reason':'attributed_editorial_photo'})
+    orphan = (Counter(credit for credit in captions if managed_image_annotation_kind(credit) == 'commons')
+              - Counter(bound))
+    if orphan:
+        raise ValueError('unbound_commons_annotation')
+    thumb = wechat_image_url_identity(str(article.get('thumb_url') or ''))
+    cover_is_retained = bool(thumb and any(wechat_image_url_identity(url) == thumb
+        and all(wechat_image_url_identity(item['url']) != thumb for item in replace)
+        for url, _alt in article_body_images(content)))
+    return {'captions_removed':len(captions), 'body_replacements':replace,
+            'cover_replaced':bool(replace) and not cover_is_retained, 'body_added':0, 'sources':[]}
+
+
+def build_caption_cleanup(session, token, article, directory, timeout, plan=None):
+    """Remove known notes; replace only photos whose attribution would be lost."""
+    facts = copy.deepcopy(plan if plan is not None else caption_cleanup_plan(article))
+    result = copy.deepcopy(article)
+    content = str(article.get('content') or '')
+    replacement_cover = None
+    for replacement in facts['body_replacements']:
+        index = replacement['index']
+        path, metadata = download_editorial_image(
+            session, str(article.get('title') or ''), directory/f'photo_{index:02d}.jpg',
+            min(timeout, 15), index=index, cache_dir=directory.parent/'photo_cache')
+        # Provider metadata is retained privately, never rendered in the body.
+        source = metadata.get('source')
+        if source in {'commons', 'wikimedia_commons'} and metadata.get('license') != 'CC0 1.0':
+            raise ValueError('replacement_photo_requires_attribution')
+        if metadata.get('attribution_required') is True:
+            raise ValueError('replacement_photo_requires_attribution')
+        new_url = upload_article_image(session, token, path, timeout)
+        content = replace_image(content, replacement.pop('url'), new_url, '', managed_annotations=True)
+        replacement_cover = replacement_cover or path
+        facts['sources'].append(str(source or 'unknown'))
+    content = strip_managed_image_annotations(content)
+    if replacement_cover is not None and facts['cover_replaced']:
+        # Historic covers may be alternate renditions of any replaced photo;
+        # bind the cover to the same approved replacement deterministically.
+        normalized = prepare_cover_upload_image(replacement_cover, directory, 'caption_cleanup')
+        result['thumb_media_id'] = upload_cover_material(session, token, normalized, timeout)
+        result.pop('pic_crop_235_1', None);result.pop('pic_crop_1_1', None)
+    result['content'] = content
+    if visible_wechat_content_text(strip_managed_image_annotations(article.get('content'))) != visible_wechat_content_text(content):
+        raise ValueError('caption_cleanup_changed_prose')
+    if len(content.encode('utf-8')) > 20000:
+        raise ValueError('caption_cleanup_exceeds_byte_budget')
+    return result, facts
+
+
+def cleanup_current_drafts(session, token, output, timeout, apply):
+    """Audit/apply the complete live catalog without historical receipt guesses."""
+    output.mkdir(parents=True, exist_ok=True)
+    catalog = read_complete_draft_catalog(session, token, timeout)
+    report = {'mode':'current_drafts_caption_cleanup', 'applied':apply, 'drafts':[],
+              'article_count':0, 'expected_article_count':sum(len(draft_news_items(row)) for row in catalog),
+              'changed_articles':0, 'updated_articles':0, 'captions_removed':0,
+              'body_replacements':0, 'cover_replacements':0, 'body_added':0, 'sources':{},
+              'unresolved_draft_count':0, 'unresolved_article_count':0, 'uncertain_article_count':0,
+              'partial':False, 'fully_repaired':False, 'ok':False, 'status':'in_progress'}
+    for draft_index, row in enumerate(catalog, 1):
+        media_id = row['media_id']
+        baseline = copy.deepcopy(draft_news_items(row))
+        changed = []; interrupted = False
+        if apply and any(managed_image_annotation_kind(match.group(0))
+                         for article in baseline for match in CREDIT_RE.finditer(article.get('content') or '')):
+            if any(not wechat_editorial_contract_check(article, article)['matches'] for article in baseline):
+                record_unresolved_group(report, output, draft_index, media_id, baseline,
+                                        'existing_editorial_contract_failed')
+                continue
+        for index, article in enumerate(baseline):
+            updated = False
+            try:
+                facts = caption_cleanup_plan(article)
+                if apply and facts['captions_removed']:
+                    repaired, facts = build_caption_cleanup(session, token, article,
+                        output/'assets'/f'{draft_index:04d}_{index:02d}', timeout, facts)
+                    fresh = draft_news_items(get_draft(session, token, media_id, timeout))
+                    if not writable_group_unchanged(fresh, baseline):
+                        raise ValueError('draft_changed_during_caption_preparation')
+                    payload = {key:repaired[key] for key in WECHAT_DRAFT_WRITABLE_FIELDS if key in repaired}
+                    update_error = None
+                    try:
+                        response = post_wechat_json(session,
+                            f'https://api.weixin.qq.com/cgi-bin/draft/update?access_token={token}',
+                            {'media_id':media_id, 'index':index, 'articles':payload}, timeout, max_attempts=1)
+                        if parse_wechat_json(response, 'draft/update caption cleanup').get('errcode') != 0:
+                            raise ValueError('caption_update_not_confirmed')
+                        report['updated_articles'] += 1
+                    except (WeChatError, requests.RequestException) as exc:
+                        # Read an uncertain result once. Never retry the write.
+                        if isinstance(exc, WeChatError) and exc.errcode in {40007, 53407}:
+                            raise
+                        update_error = exc
+                    updated = True
+                    expected = copy.deepcopy(baseline); expected[index] = repaired
+                    checks, returned = verify_repair_readback(session, token, media_id, timeout,
+                                                              expected, processed_count=index+1)
+                    if not checks['ok']:
+                        raise ValueError('caption_readback_contract_failed')
+                    if caption_cleanup_plan(returned[index])['captions_removed']:
+                        raise ValueError('caption_readback_still_present')
+                    # The provider can normalize media URLs, but all other write
+                    # fields and untouched group members must remain unchanged.
+                    protected = [key for key in WECHAT_DRAFT_WRITABLE_FIELDS if key not in {'content','thumb_media_id'}]
+                    if (any(returned[index].get(key) != repaired.get(key) for key in protected)
+                            or not writable_group_unchanged(returned[:index]+returned[index+1:],
+                                                            baseline[:index]+baseline[index+1:])):
+                        raise ValueError('caption_readback_protected_fields_changed')
+                    if update_error is not None:
+                        report['updated_articles'] += 1
+                    baseline[index] = copy.deepcopy(returned[index])
+                report['article_count'] += 1
+                if facts['captions_removed']:
+                    safe_facts = copy.deepcopy(facts)
+                    for replacement in safe_facts['body_replacements']:
+                        replacement.pop('url', None)
+                    changed.append({'index':index, **safe_facts})
+                    report['changed_articles'] += 1
+                    report['captions_removed'] += facts['captions_removed']
+                    report['body_replacements'] += len(facts['body_replacements'])
+                    report['cover_replacements'] += int(facts['cover_replaced'])
+                    for source in facts['sources']:
+                        report['sources'][source] = report['sources'].get(source, 0)+1
+            except (WeChatError, requests.RequestException, ValueError, OSError) as exc:
+                category = ('scheduled_publish_locked' if isinstance(exc, WeChatError) and exc.errcode == 53407
+                            else 'draft_unavailable' if isinstance(exc, WeChatError) and exc.errcode == 40007
+                            else str(exc) if isinstance(exc, ValueError) and re.fullmatch(r'[a-z_]{1,100}', str(exc))
+                            else 'caption_cleanup_failed')
+                record_unresolved_group(report, output, draft_index, media_id, baseline, category,
+                    changed=changed, remaining_articles=len(baseline)-index, uncertain_articles=int(updated),
+                    errcode=exc.errcode if isinstance(exc, WeChatError) else None)
+                interrupted = True; break
+            (output/'progress.json').write_text(json.dumps(report, indent=2))
+            print(json.dumps({key:report[key] for key in ('article_count','changed_articles','captions_removed','updated_articles')}), flush=True)
+        if not interrupted:
+            report['drafts'].append({'index':draft_index, 'identity':hashlib.sha256(media_id.encode()).hexdigest(),
+                                    'articles':len(baseline), 'changed':changed, 'verified':apply,
+                                    'resolution':'current_catalog'})
+    report['ok'] = report['unresolved_draft_count'] == 0
+    report['partial'] = not report['ok']
+    report['fully_repaired'] = bool(apply and report['ok'])
+    report['status'] = 'complete' if report['ok'] else 'partial'
+    (output/'progress.json').write_text(json.dumps(report, indent=2))
+    return report
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--artifact-root', type=Path, required=True);parser.add_argument('--output',type=Path,required=True)
+    source = parser.add_mutually_exclusive_group(required=True)
+    source.add_argument('--artifact-root', type=Path)
+    source.add_argument('--current-drafts', action='store_true')
+    parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--apply', action='store_true');parser.add_argument('--timeout',type=int,default=60)
-    args = parser.parse_args();drafts=load_drafts(args.artifact_root)
+    args = parser.parse_args()
     with requests.Session() as session:
         token=get_stable_access_token(session,os.environ['WECHAT_MP_APPID'],os.environ['WECHAT_MP_APPSECRET'],args.timeout)
-        report=repair_drafts(drafts,session,token,args.output,args.timeout,args.apply)
+        report=(cleanup_current_drafts(session,token,args.output,args.timeout,args.apply) if args.current_drafts
+                else repair_drafts(load_drafts(args.artifact_root),session,token,args.output,args.timeout,args.apply))
     (args.output/'result.json').write_text(json.dumps(report,indent=2))
     print(json.dumps({k:v for k,v in report.items() if k!='drafts'}))
-    return 0
+    return 1 if args.current_drafts and not report['ok'] else 0
 if __name__=='__main__':
     raise SystemExit(main())

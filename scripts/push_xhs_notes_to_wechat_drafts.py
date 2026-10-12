@@ -52,6 +52,7 @@ from push_portal_translated_to_wechat_drafts import (  # noqa: E402
     saved_draft_prefix_length,
     digest_from_markdown,
     download_pollinations_image,
+    choose_cover_image as choose_report_cover_image,
     illustration_metadata,
     fake_static_image_url,
     get_stable_access_token,
@@ -356,16 +357,10 @@ def xhs_card_fallback_images(report_dir: Path, already: set[Path]) -> list[tuple
     return fallbacks
 
 
-def choose_cover_image(report_dir: Path, uploaded_paths: list[Path], fallback_dir: Path) -> Path:
-    for candidate in source_chart_images(report_dir):
-        return candidate
-    for path in uploaded_paths:
-        if is_article_image_candidate(path):
-            return path
-    fallback_dir.mkdir(parents=True, exist_ok=True)
-    from free_editorial_images import bundled_fallback_image
-    fallback, _metadata = bundled_fallback_image(fallback_dir / f"{report_dir.name}_fallback_cover.jpg", report_dir.name)
-    return fallback
+def choose_cover_image(report_dir: Path, uploaded_paths: list[Path], fallback_dir: Path,
+                       *, session=None, title: str = "", timeout: int = 15) -> Path:
+    return choose_report_cover_image(report_dir, {}, fallback_dir, uploaded_paths,
+                                     session=session, title=title, timeout=timeout)
 
 
 def upload_or_fake_article_image(
@@ -527,6 +522,7 @@ def build_article(
         report_dir,
         [p for p in uploaded_paths if p.exists()],
         output_dir / "_assets",
+        session=None if args.dry_run else session, title=title, timeout=args.timeout,
     )
     cover_image = prepare_cover_upload_image(cover_source, output_dir, f"article_{index:02d}")
     if args.dry_run:

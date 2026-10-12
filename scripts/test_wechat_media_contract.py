@@ -17,7 +17,17 @@ import requests
 import push_portal_translated_to_wechat_drafts as portal
 import push_xhs_notes_to_wechat_drafts as xhs
 from wechat_image_quality import article_image_rejection, is_article_image_candidate, source_chart_images, REPO_ROOT
-from free_editorial_images import attribution_html
+
+
+def attribution_html(metadata):
+    """Pin deployed historical fixtures independently from today's renderer."""
+    import html
+    if metadata.get('source') == 'local_editorial':
+        caption = '主题示意图：Portal Suite 原创插画，非实拍或数据图。'
+    else:
+        caption = f"主题配图：{metadata.get('author', '')} / Wikimedia Commons / {metadata.get('license', '')}；已裁剪与缩放，非报告原图。"
+        caption += f" 图片来源：{metadata.get('source_url', '')} · 许可：{metadata.get('license_url', '')}"
+    return '<p class="image-credit" data-editorial-credit="1">' + html.escape(caption) + '</p>'
 
 
 def image(path: Path, color=(51, 107, 151)) -> Path:

@@ -1,4 +1,4 @@
-"""Bounded, licensed Commons photos with an original offline editorial fallback.
+"""Curated stock photos, then CC0 photos, with original artwork as a last resort.
 
 Only fixed public topic words leave this module. Titles are classified locally;
 neither titles nor article bodies are sent to the image search service.
@@ -6,7 +6,6 @@ neither titles nor article bodies are sent to the image search service.
 from __future__ import annotations
 
 import hashlib
-import html
 from html.parser import HTMLParser
 import io
 import json
@@ -37,11 +36,15 @@ _LOADED_SELECTION_CACHES: set[str] = set()
 _COOLDOWN_UNTIL = 0.0
 _COOLDOWN_REASON = ""
 OUTAGE_COOLDOWN_SECONDS = 300
+SELECTION_POLICY_VERSION = 2
+STOCK_CATALOG_PATH = Path(__file__).with_name("stock_editorial_photos.json")
+STOCK_SOURCES = frozenset({"unsplash", "pexels"})
+_STOCK_COOLDOWNS: dict[str, float] = {}
 # Category union is a single filter. Boolean OR between separate incategory
 # keywords is not supported reliably by CirrusSearch:
 # https://phabricator.wikimedia.org/T164589
 # These categories narrow discovery only; _license still validates each file.
-COMMONS_LICENSE_FILTER = 'incategory:"CC-Zero|CC-BY-2.0|CC-BY-2.5|CC-BY-3.0|CC-BY-4.0"'
+COMMONS_LICENSE_FILTER = 'incategory:"CC-Zero"'
 _REJECTION_REASONS = {
     "metadata", "license", "format", "url", "duplicate_url", "duplicate_content",
     "response_type", "image_validation", "download_limit", "time_budget", "declared_geometry",
@@ -58,7 +61,7 @@ _TOPICS = (
     ("energy", "solar panels", r"能源|电力|电网|电池|太阳能|石油|天然气|核电|energy|power|solar|wind|oil|gas|battery"),
     ("industry", "factory", r"工业|制造|机械|金属|矿|铜|钢|铝|机器人|工业|industry|industrial|mining|metal|factory|manufactur"),
     ("transport", "container port", r"运输|物流|货运|航运|航空|汽车|rail|transport|cargo|shipping|port|airline|automotive"),
-    ("health", "laboratory", r"医疗|医药|药物|生物|医院|health|medical|pharma|biotech|medicine"),
+    ("health", "laboratory", r"医疗|医药|药物|生物|医院|实验室|health|medical|pharma|biotech|medicine|laborator"),
     ("consumer", "retail", r"消费|零售|电商|酒店|旅行|旅游|食品|餐饮|consumer|retail|shopping|hotel|travel|food"),
     ("finance", "city skyline", r"银行|金融|利率|宏观|基金|股|投资|市场|经济|bank|financ|market|econom|equity|invest|yield"),
 )
@@ -180,25 +183,18 @@ def _license(info: dict) -> dict | None:
         return None
     path = parsed.path.rstrip("/")
     short = field("LicenseShortName").lower().replace("-", " ")
-    if path == "/publicdomain/zero/1.0" and short in ("cc0", "cc0 1.0", "cc0 1.0 universal"):
-        name = "CC0 1.0"
-    else:
-        match = re.fullmatch(r"/licenses/by/(2\.0|2\.5|3\.0|4\.0)", path)
-        if not match or short != "cc by " + match[1]:
-            return None
-        name = "CC BY " + match[1]
-    # Do not silently pick the permissive URL when the other metadata fields
-    # say something different. Commons may omit License, so the explicit URL
-    # and ShortName remain the minimum required pair.
+    if path != "/publicdomain/zero/1.0" or short not in ("cc0", "cc0 1.0", "cc0 1.0 universal"):
+        return None
+    name = "CC0 1.0"
+    # The article has no image credit line, so only attribution-free Commons
+    # assets can be selected. Contradictory metadata must not weaken CC0.
     canonical = field("License").lower().replace("_", "-")
-    allowed_codes = {"", "cc0", "cc-zero", "cc0-1.0", "cc-zero-1.0"} if name == "CC0 1.0" else {
-        "", "cc-by", "cc-by-" + name.removeprefix("CC BY ")}
     usage = field("UsageTerms").lower()
-    if canonical not in allowed_codes or re.search(r"non[ -]?commercial|no[ -]?deriv|share[ -]?alike|\bby[ -](?:nc|nd|sa)\b", usage):
+    if (canonical not in {"", "cc0", "cc-zero", "cc0-1.0", "cc-zero-1.0"}
+            or re.search(r"non[ -]?commercial|no[ -]?deriv|share[ -]?alike|\bcc[ -]by\b|attribution", usage)
+            or field("AttributionRequired").lower() in ("true", "1", "yes")):
         return None
     author = field("Artist")
-    if not author and name != "CC0 1.0":
-        return None
     source = str(info.get("descriptionurl", ""))
     if not _allowed_url(source, {"commons.wikimedia.org"}) or not urlsplit(source).path.startswith("/wiki/File:"):
         return None
@@ -207,32 +203,62 @@ def _license(info: dict) -> dict | None:
 
 
 def attribution_caption(metadata: dict) -> str:
-    if metadata.get("source") == "local_editorial":
-        return "主题示意图：Portal Suite 原创插画，非实拍或数据图。"
-    author = _plain(metadata.get("author", ""))
-    license_name = _plain(metadata.get("license", ""))
-    return f"主题配图：{author} / Wikimedia Commons / {license_name}；已裁剪与缩放，非报告原图。"
+    """No reader-facing stock-photo labels; provenance stays in metadata."""
+    return ""
 
 
 def attribution_html(metadata: dict) -> str:
-    """A small safe credit line; untrusted metadata HTML is never preserved."""
-    caption = html.escape(attribution_caption(metadata))
-    if metadata.get("source") == "local_editorial":
-        return f'<p class="image-credit" data-editorial-credit="1">{caption}</p>'
-    source = str(metadata.get("source_url", ""))
-    license_url = str(metadata.get("license_url", ""))
-    # WeChat removes external anchor elements while retaining their text. Keep
-    # the complete attribution URLs visible so that source and license survive
-    # draft/get, HTML sanitization and copied article text.
-    links = []
-    if _allowed_url(source, {"commons.wikimedia.org"}):
-        links.append(f'图片来源：{html.escape(source, quote=True)}')
-    if _allowed_url(license_url, {"creativecommons.org"}):
-        links.append(f'许可：{html.escape(license_url, quote=True)}')
-    suffix = " · ".join(links)
-    return ('<p class="image-credit" data-editorial-credit="1" '
-            'style="font-size:11px;line-height:1.5;color:#667085;word-break:break-all;overflow-wrap:anywhere;">'
-            f'{caption}{" " + suffix if suffix else ""}</p>')
+    """No source/disclaimer paragraphs in generated articles."""
+    return ""
+
+
+def _stock_photo(record: object) -> dict | None:
+    """Admit only reviewed ordinary-license website assets, never API results."""
+    if not isinstance(record, dict) or record.get("acquisition") != "curated-website":
+        return None
+    source, asset_id = record.get("source"), str(record.get("asset_id", ""))
+    source_url, asset_url = str(record.get("source_url", "")), str(record.get("asset_url", ""))
+    if source == "unsplash":
+        valid = (re.fullmatch(r"[A-Za-z0-9_-]{11}", asset_id)
+                 and source_url == "https://unsplash.com/photos/" + asset_id
+                 and _allowed_url(asset_url, {"images.unsplash.com"})
+                 and re.fullmatch(r"/photo-[0-9]+-[a-f0-9]+", urlsplit(asset_url).path)
+                 and record.get("license") == "Unsplash License"
+                 and record.get("license_url") == "https://unsplash.com/license")
+    elif source == "pexels":
+        valid = (asset_id.isdigit() and _allowed_url(source_url, {"www.pexels.com"})
+                 and re.fullmatch(r"/photo/[a-z0-9-]+-" + asset_id + r"/", urlsplit(source_url).path)
+                 and _allowed_url(asset_url, {"images.pexels.com"})
+                 and urlsplit(asset_url).path == f"/photos/{asset_id}/pexels-photo-{asset_id}.jpeg"
+                 and record.get("license") == "Pexels License"
+                 and record.get("license_url") == "https://www.pexels.com/license/")
+    else:
+        return None
+    if (not valid or record.get("topic") not in {item[0] for item in _TOPICS}
+            or not _plain(record.get("author"))
+            or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(record.get("verified_on", "")))):
+        return None
+    return {key: record[key] for key in ("source", "asset_id", "topic", "author", "source_url",
+            "asset_url", "license", "license_url", "acquisition", "verified_on")}
+
+
+def _stock_catalog() -> list[dict]:
+    try:
+        if STOCK_CATALOG_PATH.stat().st_size > MAX_JSON_BYTES:
+            return []
+        data = json.loads(STOCK_CATALOG_PATH.read_text())
+        if data.get("schema") != 1 or not isinstance(data.get("photos"), list):
+            return []
+        return [photo for item in data["photos"][:256] if (photo := _stock_photo(item))]
+    except (OSError, ValueError, AttributeError, TypeError):
+        return []
+
+
+def _stock_candidates(topic: str, slot: str) -> list[dict]:
+    # Stable per article/slot, varied across articles, without sending titles.
+    return sorted((p for p in _stock_catalog() if p["topic"] == topic),
+                  key=lambda p: (p["source"] != "unsplash", hashlib.sha256(
+                      (slot + "\0" + p["source"] + p["asset_id"]).encode()).hexdigest()))
 
 
 def _atomic(path: Path, data: bytes) -> None:
@@ -261,8 +287,9 @@ def _record_outage(exc: Exception) -> None:
 
 
 def _read_response(session, url: str, *, deadline: float, limit: int,
-                   hosts: set[str], params: dict | None = None) -> tuple[bytes, str]:
-    if time.monotonic() < _COOLDOWN_UNTIL:
+                   hosts: set[str], params: dict | None = None,
+                   commons_cooldown: bool = True) -> tuple[bytes, str]:
+    if commons_cooldown and time.monotonic() < _COOLDOWN_UNTIL:
         raise _ProviderCooldown(_COOLDOWN_REASON)
     for _ in range(3):
         if not _allowed_url(url, hosts):
@@ -378,12 +405,17 @@ def _normalized_image(data: bytes) -> bytes:
 
 
 def _valid_selection_record(record: dict) -> bool:
-    if not isinstance(record, dict) or record.get('schema') != 1:
+    if not isinstance(record, dict) or record.get('schema') != 2 or record.get('policy_version') != SELECTION_POLICY_VERSION:
         return False
     metadata = record.get('metadata', {})
     if (not isinstance(metadata, dict) or not re.fullmatch(r'[a-f0-9]{64}', str(record.get('slot', '')))
             or not re.fullmatch(r'[a-f0-9]{64}', str(metadata.get('sha256', '')))):
         return False
+    if metadata.get('caption') != '':
+        return False
+    if metadata.get('source') in STOCK_SOURCES:
+        photo = _stock_photo(metadata)
+        return photo is not None and photo in _stock_catalog()
     if metadata.get('source') == 'local_editorial':
         return metadata.get('license') == 'original' and not metadata.get('license_url')
     if metadata.get('source') != 'wikimedia_commons':
@@ -412,7 +444,7 @@ def _load_batch_claims(cache_dir: Path | None) -> None:
         if not record:
             continue
         metadata, slot = record['metadata'], record['slot']
-        if metadata['source'] == 'wikimedia_commons':
+        if metadata['source'] in STOCK_SOURCES or metadata['source'] == 'wikimedia_commons':
             _BATCH_CONTENT_OWNERS.setdefault(metadata['sha256'], slot)
             url_key = str(metadata.get('asset_url_sha256', ''))
             if re.fullmatch(r'[a-f0-9]{64}', url_key):
@@ -447,24 +479,76 @@ def _remember_selection(slot: str, path: Path, metadata: dict, cache_dir: Path |
     if len(_SELECTIONS) >= 512:
         _SELECTIONS.pop(next(iter(_SELECTIONS)))
     _SELECTIONS[slot] = (data, dict(metadata))
-    if metadata['source'] == 'wikimedia_commons':
+    if metadata['source'] in STOCK_SOURCES or metadata['source'] == 'wikimedia_commons':
         _BATCH_CONTENT_OWNERS[metadata['sha256']] = slot
         _BATCH_URL_OWNERS[metadata['asset_url_sha256']] = slot
     if cache_dir is not None:
         try:
             _atomic(cache_dir / ('selection-' + slot + '.jpg'), data)
             _atomic(cache_dir / ('selection-' + slot + '.json'),
-                    json.dumps({'schema': 1, 'slot': slot, 'metadata': metadata}).encode())
+                    json.dumps({'schema': 2, 'policy_version': SELECTION_POLICY_VERSION, 'slot': slot, 'metadata': metadata}).encode())
         except OSError:
             pass
     return path, metadata
 
 
-def download_editorial_image(session, title, target, timeout, index=1, cache_dir=None):
-    """Return (JPEG Path, credit metadata); network failures use local artwork.
+def _download_stock(session, topic: str, slot: str, target: Path, used: set[str],
+                    cache_dir: Path | None, deadline: float):
+    attempted = 0
+    for photo in _stock_candidates(topic, slot):
+        url = photo["asset_url"]
+        key = hashlib.sha256(url.encode()).hexdigest()
+        if key in used or _BATCH_URL_OWNERS.get(key, slot) != slot:
+            continue
+        image_cache = cache_dir / (key + ".jpg") if cache_dir else None
+        cached = bool(image_cache and image_cache.is_file() and not image_cache.is_symlink()
+                      and image_cache.stat().st_size <= MAX_IMAGE_BYTES)
+        if not cached and time.monotonic() < _STOCK_COOLDOWNS.get(photo["source"], 0):
+            continue
+        if attempted >= 3 or time.monotonic() >= deadline:
+            break
+        attempted += 1
+        try:
+            if cached:
+                raw = image_cache.read_bytes()
+            else:
+                raw, mime = _read_response(session, url, deadline=deadline, limit=MAX_IMAGE_BYTES,
+                    hosts={urlsplit(url).hostname}, commons_cooldown=False)
+                if mime not in ("image/jpeg", "image/png"):
+                    continue
+            image = _normalized_image(raw)
+        except _DeadlineExceeded:
+            break
+        except (RequestException, TimeoutError) as exc:
+            if getattr(getattr(exc, "response", None), "status_code", None) in (404, 410):
+                continue
+            _STOCK_COOLDOWNS[photo["source"]] = time.monotonic() + OUTAGE_COOLDOWN_SECONDS
+            continue
+        except (ValueError, OSError, Image.DecompressionBombError):
+            continue
+        sha = hashlib.sha256(image).hexdigest()
+        if sha in used or _BATCH_CONTENT_OWNERS.get(sha, slot) != slot:
+            _BATCH_URL_OWNERS[key] = _BATCH_CONTENT_OWNERS.get(sha, 'duplicate')
+            continue
+        _atomic(target, image)
+        if image_cache:
+            try:
+                _atomic(image_cache, raw)
+            except OSError:
+                pass
+        used.update((key, sha))
+        metadata = dict(photo, sha256=sha, asset_url_sha256=key, modified=True, caption="",
+                        download_variant="curated", selection_policy_version=SELECTION_POLICY_VERSION,
+                        search_diagnostics=_safe_diagnostics({}))
+        return _remember_selection(slot, target, metadata, cache_dir)
+    return None
 
-    One search (cached per topic/day), at most three candidate downloads, at
-    most two redirects per request, and a shared 30-second maximum budget.
+
+def download_editorial_image(session, title, target, timeout, index=1, cache_dir=None):
+    """Return (JPEG Path, provenance); stock photos are preferred over artwork.
+
+    At most three curated stock downloads, then one Commons search with up to
+    three CC0 downloads; two redirects per request; 30 seconds total.
     Shared cache_dir preserves article/slot selections and batch image claims:
     retries retain the same choice; different articles never share a photo.
     """
@@ -472,7 +556,7 @@ def download_editorial_image(session, title, target, timeout, index=1, cache_dir
     cache_dir = Path(cache_dir) if cache_dir is not None else None
     topic, query = _topic(title)
     article_key = hashlib.sha256(str(title).encode()).hexdigest()
-    slot = hashlib.sha256((str(title) + '\0' + str(index)).encode()).hexdigest()
+    slot = hashlib.sha256((str(SELECTION_POLICY_VERSION) + '\0' + str(title) + '\0' + str(index)).encode()).hexdigest()
     _load_batch_claims(cache_dir)
     selected = _selected_image(slot, target, cache_dir)
     if selected is not None:
@@ -492,6 +576,10 @@ def download_editorial_image(session, title, target, timeout, index=1, cache_dir
 
     try:
         deadline = time.monotonic() + max(0.0, min(30.0, float(timeout)))
+        stock = _download_stock(session, topic, slot, target, used, cache_dir,
+                                min(deadline, time.monotonic() + max(0, (deadline - time.monotonic()) / 2)))
+        if stock is not None:
+            return stock
         results = _search(session, query, deadline, cache_dir)
         diagnostics["search_results"] = len(results)
         offset = max(0, int(index) - 1) % max(1, len(results))
@@ -914,6 +1002,7 @@ def _smoke_main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--smoke-dir", type=Path, required=True)
     parser.add_argument("--require-commons", action="store_true")
+    parser.add_argument("--require-stock", action="store_true")
     args = parser.parse_args()
     args.smoke_dir.mkdir(parents=True, exist_ok=True)
 
@@ -924,24 +1013,39 @@ def _smoke_main() -> int:
             self.count += 1
             return super().get(*a, **kw)
 
+    topics = [(name, query) for name, query, _ in _TOPICS] if args.require_stock else [
+        ("finance", "financial district skyline")]
+    samples = []
     with CountedSession() as session:
-        path, metadata = download_editorial_image(session, "financial district skyline", args.smoke_dir / "sample.jpg", 30)
-        with Image.open(path) as image:
-            image.load()
-            dimensions = list(image.size)
-        report = {"schema_version": 1, "checked_at": datetime.now(timezone.utc).isoformat(),
-                  "source": metadata["source"], "commons_download_verified": metadata["source"] == "wikimedia_commons",
-                  "network_requests": session.count, "image_count": 1, "dimensions": dimensions,
-                  "image_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
-                  "license": metadata["license"], "license_url": metadata["license_url"],
-                  "author": metadata["author"], "source_url": metadata["source_url"],
-                  "fallback_reason": metadata.get("fallback_reason", ""),
+        for topic, title in topics:
+            target = args.smoke_dir / (topic + ".jpg" if args.require_stock else "sample.jpg")
+            # Explicit local topic words, not external report titles or bodies.
+            path, metadata = download_editorial_image(session, title, target, 30)
+            with Image.open(path) as image:
+                image.load()
+                dimensions = list(image.size)
+            samples.append({"topic": topic, "source": metadata["source"], "file": path.name,
+                "dimensions": dimensions, "image_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+                "license": metadata["license"], "license_url": metadata["license_url"],
+                "author": metadata["author"], "source_url": metadata["source_url"],
+                "caption_empty": attribution_html(metadata) == "" and metadata.get("caption", "") == "",
+                "fallback_reason": metadata.get("fallback_reason", "")})
+        distinct = len({sample["image_sha256"] for sample in samples}) == len(samples)
+        report = {"schema_version": 2, "checked_at": datetime.now(timezone.utc).isoformat(),
+                  **{key: value for key, value in samples[0].items() if key != "file"},
+                  "commons_download_verified": all(p["source"] == "wikimedia_commons" for p in samples),
+                  "stock_download_verified": all(p["source"] in STOCK_SOURCES and p["caption_empty"]
+                      and p["dimensions"] == [1200, 675] for p in samples) and distinct
+                      and session.count >= len(samples),
+                  "distinct_images": distinct, "samples": samples,
+                  "network_requests": session.count, "image_count": len(samples),
                   "model_calls": 0, "wechat_writes": 0, "publication_writes": 0}
         report.update(_safe_diagnostics(metadata.get("search_diagnostics")))
     _atomic(args.smoke_dir / "provider-report.json", json.dumps(report, indent=2).encode())
-    _atomic(args.smoke_dir / "caption.html", attribution_html(metadata).encode())
+    _atomic(args.smoke_dir / "caption.html", b"")
     print(json.dumps(report))
-    return int(args.require_commons and not report["commons_download_verified"])
+    return int((args.require_commons and not report["commons_download_verified"])
+               or (args.require_stock and not report["stock_download_verified"]))
 
 
 if __name__ == "__main__":
