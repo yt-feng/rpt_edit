@@ -465,6 +465,20 @@ class CloudImfBrowser:
             self._stack.close()
             raise BrowserDownloadError(self._startup_error) from None
 
+    @contextlib.contextmanager
+    def http_session(self):
+        """One scoped requests session over the already selected cloud client."""
+        if not self.enabled or not self._entered:
+            raise BrowserDownloadError("imf_browser_not_enabled")
+        require_cloud()
+        self._start()
+        child_environment(self._proxy)  # Reuse strict 127.0.0.1 SOCKS listener validation.
+        import requests
+        with requests.Session() as session:
+            session.trust_env = False
+            session.proxies = {"http": self._proxy, "https": self._proxy}
+            yield session
+
     def download(self, publication, dest, max_bytes, expected_sha256=None):
         if not self.enabled or not self._entered:
             raise BrowserDownloadError("imf_browser_not_enabled")

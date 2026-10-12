@@ -255,6 +255,51 @@ class BrowserTests(unittest.TestCase):
             fetch.assert_called_once()
             self.assertEqual(events[-1], ('close', 3))
 
+    def test_scoped_http_sessions_reuse_selected_client_and_close_on_failure(self):
+        first, second = Mock(), Mock()
+        sessions = []
+        @contextlib.contextmanager
+        def session_factory():
+            session = (first, second)[len(sessions)]
+            sessions.append(session)
+            try:
+                yield session
+            finally:
+                session.close()
+        with self.startup([204]) as (instance, get, fetch, events), \
+             patch.dict(sys.modules, {'requests': SimpleNamespace(Session=session_factory)}):
+            with instance.http_session() as session:
+                self.assertIs(session, first)
+                self.assertIs(session.trust_env, False)
+                self.assertEqual(session.proxies, {'http': 'socks5h://127.0.0.1:5001', 'https': 'socks5h://127.0.0.1:5001'})
+            with self.assertRaisesRegex(RuntimeError, 'caller_failed'):
+                with instance.http_session() as session:
+                    self.assertIs(session, second)
+                    raise RuntimeError('caller_failed')
+            first.close.assert_called_once(); second.close.assert_called_once()
+            first.get.assert_not_called(); second.get.assert_not_called()
+            self.assertEqual(events, [('open', 1)])
+            self.assertEqual(get.call_count, 1); fetch.assert_called_once()
+        self.assertEqual(events, [('open', 1), ('close', 1)])
+
+    def test_http_session_disabled_or_unapproved_is_zero_session_and_zero_start(self):
+        session = Mock()
+        for env, platform in (({}, 'linux'), ({**ENV, 'EXPLICIT_CLOUD_BROWSER_APPROVAL': ''}, 'linux'), (ENV, 'darwin')):
+            with patch.dict(os.environ, env, clear=True), patch.object(b.sys, 'platform', platform), \
+                 patch.dict(sys.modules, {'requests': SimpleNamespace(Session=session)}):
+                with b.CloudImfBrowser(fetch_subscription=Mock(), decode_subscription=Mock()) as instance, patch.object(instance, '_start') as start:
+                    with self.assertRaises(b.BrowserDownloadError):
+                        with instance.http_session(): self.fail('session created')
+                    start.assert_not_called(); session.assert_not_called()
+
+    def test_http_session_rejects_unvalidated_listener_before_requests(self):
+        with self.download_mocks([]) as (instance, _, _, _, _), \
+             patch.dict(sys.modules, {'requests': SimpleNamespace(Session=Mock())}):
+            instance._proxy = 'socks5h://remote.invalid:5001'
+            with self.assertRaisesRegex(b.BrowserDownloadError, 'invalid_listener'):
+                with instance.http_session(): self.fail('session created')
+            sys.modules['requests'].Session.assert_not_called()
+
     def test_sigterm_restores_handler_and_closes_selected_client(self):
         previous = signal.getsignal(signal.SIGTERM)
         with self.assertRaises(KeyboardInterrupt):
