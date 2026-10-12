@@ -1,0 +1,652 @@
+{
+  "schema": 1,
+  "institution": "imf",
+  "frozen_pending_sha256": "e0674b735b429c35515319cd6b959f8da1923dc076038ac897e020459d965a5f",
+  "records": [
+    {
+      "item": {
+        "title": "Foreign Currency Stablecoins: Initial Considerations on Policies to Manage and Enhance Macro-Financial Stability",
+        "source_url": "https://www.imf.org/en/publications/departmental-papers-policy-papers/issues/2026/10/09/foreign-currency-stablecoins-initial-considerations-on-policies-to-manage-and-enhance-579417",
+        "guid": "05cfe1aa010de068660fe2428817ca370b92a394e2b14e82e8307c57761c",
+        "date": "2026-10-09T04:00:00+00:00",
+        "pdf_candidates": [],
+        "scrape_url": "https://www.imf.org/en/publications/departmental-papers-policy-papers/issues/2026/10/09/foreign-currency-stablecoins-initial-considerations-on-policies-to-manage-and-enhance-579417",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/departmental-papers-policy-papers/issues/2026/10/09/foreign-currency-stablecoins-initial-considerations-on-policies-to-manage-and-enhance-579417"
+      },
+      "official_landing_url": "https://www.elibrary.imf.org/view/journals/087/2026/021/087.2026.issue-021-en.xml",
+      "official_pdf_url": "https://www.elibrary.imf.org/downloadpdf/view/journals/087/2026/021/087.2026.issue-021-en.pdf",
+      "doi": "10.5089/9798229057226.087",
+      "sha256": "2f513de55a780d9246f0469dfdf7da44fdd732a73e12985b638671d4a67baca6",
+      "size": 6021947,
+      "pages": 60,
+      "binding": {
+        "source": "IMF_Foreign-Currency-Stablecoins-Initial-Considerations-on-Polic_3e00b01c.pdf",
+        "sha256": "2f513de55a780d9246f0469dfdf7da44fdd732a73e12985b638671d4a67baca6",
+        "size": 6021947,
+        "scope": "institution",
+        "endpoint": "https://mineru.net",
+        "options": {
+          "model": "vlm",
+          "language": "en",
+          "ocr": true
+        },
+        "id": "4fba5b97f01e46e3a70973d8c03ca3f1394413968a6cb05844c9edd5cedbb067"
+      },
+      "verification": {
+        "method": "official_browser_download",
+        "review": "approved",
+        "receipt_sha256": "50b12dc8c02e80638dcf522c23b45a9b21de0b7b2040aecb981d2068cf2869c6",
+        "reviewed_at": "2026-10-12T07:38:51.348385+00:00"
+      }
+    },
+    {
+      "item": {
+        "title": "Republic of Albania: Toward a Sustainable and Efficient Local Government Financing Framework",
+        "source_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/09/republic-of-albania-toward-a-sustainable-and-efficient-local-government-financing-framework-580391",
+        "guid": "6272b7f5239f5e76171747a24e78516285d3e2c4ebe464d3ba02bde4d2c4",
+        "date": "2026-10-09T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026073.pdf",
+          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026073-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/09/republic-of-albania-toward-a-sustainable-and-efficient-local-government-financing-framework-580391",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/09/republic-of-albania-toward-a-sustainable-and-efficient-local-government-financing-framework-580391"
+      },
+      "official_landing_url": "https://www.elibrary.imf.org/view/journals/029/2026/073/029.2026.issue-073-en.xml",
+      "official_pdf_url": "https://www.elibrary.imf.org/downloadpdf/view/journals/029/2026/073/029.2026.issue-073-en.pdf",
+      "doi": "10.5089/9798229061933.029",
+      "sha256": "6fdc9090d4f09f2097a65a29e86b7644a398ec40f6515bd7bc06860e243e9f91",
+      "size": 166898,
+      "pages": 4,
+      "binding": {
+        "source": "IMF_Republic-of-Albania-Toward-a-Sustainable-and-Efficient-Local_f8f1ca84.pdf",
+        "sha256": "6fdc9090d4f09f2097a65a29e86b7644a398ec40f6515bd7bc06860e243e9f91",
+        "size": 166898,
+        "scope": "institution",
+        "endpoint": "https://mineru.net",
+        "options": {
+          "model": "vlm",
+          "language": "en",
+          "ocr": true
+        },
+        "id": "6a01ccf1e7682df3b8a48ab4825ffd55f03c18215dca2dcbc375f210ddb91028"
+      },
+      "verification": {
+        "method": "official_browser_download",
+        "review": "approved",
+        "receipt_sha256": "4bbeaa7ae707ed55997060eb5baf73ae256b2e06494ef99c6dc314fd8e533961",
+        "reviewed_at": "2026-10-12T07:38:51.348385+00:00"
+      }
+    },
+    {
+      "item": {
+        "title": "Chile: Report on the technical assistance mission on government finance statistics",
+        "source_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/08/chile-report-on-the-technical-assistance-mission-on-government-finance-statistics-580332",
+        "guid": "8b1786abc3855de0b42c4cf05b6c3444e7656c02333ae47620174ecd1594",
+        "date": "2026-10-09T21:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026071.pdf",
+          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026071-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/08/chile-report-on-the-technical-assistance-mission-on-government-finance-statistics-580332",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/08/chile-report-on-the-technical-assistance-mission-on-government-finance-statistics-580332"
+      },
+      "official_landing_url": "https://www.elibrary.imf.org/view/journals/029/2026/071/029.2026.issue-071-es.xml",
+      "official_pdf_url": "https://www.elibrary.imf.org/downloadpdf/view/journals/029/2026/071/029.2026.issue-071-es.pdf",
+      "doi": "10.5089/9798229063074.029",
+      "sha256": "1a99093a4352a654f5c2b496428e214b9fc6f67e420208c33f9eb1aac7f8c917",
+      "size": 264683,
+      "pages": 5,
+      "binding": {
+        "source": "IMF_Chile-Report-on-the-technical-assistance-mission-on-governme_bd536757.pdf",
+        "sha256": "1a99093a4352a654f5c2b496428e214b9fc6f67e420208c33f9eb1aac7f8c917",
+        "size": 264683,
+        "scope": "institution",
+        "endpoint": "https://mineru.net",
+        "options": {
+          "model": "vlm",
+          "language": "en",
+          "ocr": true
+        },
+        "id": "db3891f3b6cb7159e8e105e1d2494a5a914db246cf422ee769f7adcc952af632"
+      },
+      "verification": {
+        "method": "official_browser_download",
+        "review": "approved",
+        "receipt_sha256": "5a289d167f20e3765180949beecb98707d8bf0c1039a20ef79eefd2624758940",
+        "reviewed_at": "2026-10-12T07:38:51.348385+00:00"
+      }
+    },
+    {
+      "item": {
+        "title": "The AI Ecosystem: Structure, Financing, and Financial Stability Considerations",
+        "source_url": "https://www.imf.org/en/publications/tnm/issues/2026/10/06/the-ai-ecosystem-structure-financing-and-financial-stability-considerations-579504",
+        "guid": "a7ff3b348994e7ae8a4fc485643aff581ad82c8f40c47beefab23749db72",
+        "date": "2026-10-09T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/tnm/2026/english/tnmea2026013.pdf",
+          "https://www.imf.org/-/media/files/publications/tnm/2026/english/tnmea2026013-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/tnm/issues/2026/10/06/the-ai-ecosystem-structure-financing-and-financial-stability-considerations-579504",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/tnm/issues/2026/10/06/the-ai-ecosystem-structure-financing-and-financial-stability-considerations-579504"
+      },
+      "official_landing_url": "https://www.elibrary.imf.org/view/journals/005/2026/013/005.2026.issue-013-en.xml",
+      "official_pdf_url": "https://www.elibrary.imf.org/downloadpdf/view/journals/005/2026/013/005.2026.issue-013-en.pdf",
+      "doi": "10.5089/9798229059626.005",
+      "sha256": "b75f608483ee367b7bf968541f867906df45ca42d381475e914fd1c3f25cef2c",
+      "size": 1508179,
+      "pages": 24,
+      "binding": {
+        "source": "IMF_The-AI-Ecosystem-Structure-Financing-and-Financial-Stability_4ab9b9eb.pdf",
+        "sha256": "b75f608483ee367b7bf968541f867906df45ca42d381475e914fd1c3f25cef2c",
+        "size": 1508179,
+        "scope": "institution",
+        "endpoint": "https://mineru.net",
+        "options": {
+          "model": "vlm",
+          "language": "en",
+          "ocr": true
+        },
+        "id": "2c56accd40e1ccfb032327c57c09675d2e07dd2e39691e3a6d3258e69461fd42"
+      },
+      "verification": {
+        "method": "official_browser_download",
+        "review": "approved",
+        "receipt_sha256": "9902c1473fde70057b80a547d75bf5e1aa5cf1254a08425cde1b939f56134650",
+        "reviewed_at": "2026-10-12T07:38:51.348385+00:00"
+      }
+    },
+    {
+      "item": {
+        "title": "Republic of Estonia: Technical Assistance Report-Report on Consumer Price Index (January 12-16, 2026)",
+        "source_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/09/republic-of-estonia-technical-assistance-report-report-on-consumer-price-index-january-12-580315",
+        "guid": "aadee42db10b64237313019c044ba4f794f85f1ea0e11ff7bd91d281efa4",
+        "date": "2026-10-09T21:30:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026082.pdf",
+          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026082-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/09/republic-of-estonia-technical-assistance-report-report-on-consumer-price-index-january-12-580315",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/09/republic-of-estonia-technical-assistance-report-report-on-consumer-price-index-january-12-580315"
+      },
+      "official_landing_url": "https://www.elibrary.imf.org/view/journals/019/2026/082/019.2026.issue-082-en.xml?cid=580315-com-dsp-crossref",
+      "official_pdf_url": "https://www.elibrary.imf.org/downloadpdf/view/journals/019/2026/082/019.2026.issue-082-en.pdf",
+      "doi": "10.5089/9798229063937.019",
+      "sha256": "c31da5c22e845f767b39a0a16679c0f1249ce46b5f60bd0170bdb67964e663b3",
+      "size": 365715,
+      "pages": 14,
+      "binding": {
+        "source": "IMF_Republic-of-Estonia-Technical-Assistance-Report-Report-on-Co_11f44305.pdf",
+        "sha256": "c31da5c22e845f767b39a0a16679c0f1249ce46b5f60bd0170bdb67964e663b3",
+        "size": 365715,
+        "scope": "institution",
+        "endpoint": "https://mineru.net",
+        "options": {
+          "model": "vlm",
+          "language": "en",
+          "ocr": true
+        },
+        "id": "9e5c92297b3d320160086cafb18f72014a1999ab81bccb28cd987a518e33a0ec"
+      },
+      "verification": {
+        "method": "official_browser_download",
+        "review": "approved",
+        "receipt_sha256": "d42ea941a0647fb79da4cc93cfc4223a97b0bfe3230e09b3fc1d6a31d303e79a",
+        "reviewed_at": "2026-10-12T07:38:51.348385+00:00"
+      }
+    },
+    {
+      "item": {
+        "title": "Chile: Technical Assistance Report-Government Finance Statistics Mission (May 18-29, 2026)",
+        "source_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/08/chile-technical-assistance-report-government-finance-statistics-mission-may-18-29-2026-580326",
+        "guid": "e2f3ec32d2b9a070285036ad5c7fad440ec4689fc98a1a2e8b47a235b536",
+        "date": "2026-10-09T21:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026083.pdf",
+          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026083-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/08/chile-technical-assistance-report-government-finance-statistics-mission-may-18-29-2026-580326",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/08/chile-technical-assistance-report-government-finance-statistics-mission-may-18-29-2026-580326"
+      },
+      "official_landing_url": "https://www.elibrary.imf.org/view/journals/019/2026/083/019.2026.issue-083-es.xml",
+      "official_pdf_url": "https://www.elibrary.imf.org/downloadpdf/view/journals/019/2026/083/019.2026.issue-083-es.pdf",
+      "doi": "10.5089/9798229062176.019",
+      "sha256": "8f875e9c94f91ffdd31276c3503f80a6c4e19ec022b6353ff26cab2523cf74a1",
+      "size": 337525,
+      "pages": 54,
+      "binding": {
+        "source": "IMF_Chile-Technical-Assistance-Report-Government-Finance-Statist_59858d62.pdf",
+        "sha256": "8f875e9c94f91ffdd31276c3503f80a6c4e19ec022b6353ff26cab2523cf74a1",
+        "size": 337525,
+        "scope": "institution",
+        "endpoint": "https://mineru.net",
+        "options": {
+          "model": "vlm",
+          "language": "en",
+          "ocr": true
+        },
+        "id": "6ae49ca04608b63f7cd73c3f5a9f4fefab2c9d8c4ff77b7876b7269704e82a1e"
+      },
+      "verification": {
+        "method": "official_browser_download",
+        "review": "approved",
+        "receipt_sha256": "19e7fc128db90f7f643cdefd4f8d79c71f53bb9f1335f858f77e19da024a1097",
+        "reviewed_at": "2026-10-12T07:38:51.348385+00:00"
+      }
+    },
+    {
+      "item": {
+        "title": "Taxing Better to Boost Growth",
+        "source_url": "https://www.imf.org/en/publications/fm/issues/2026/10/05/fiscal-monitor-october-2026",
+        "guid": "17cd691fccecd82d2053d7d8414c2539ebf1f2f92917bc0977fa97f84ace",
+        "date": "2026-10-05T18:00:00+00:00",
+        "pdf_candidates": [],
+        "scrape_url": "https://www.imf.org/en/publications/fm/issues/2026/10/05/fiscal-monitor-october-2026",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/fm/issues/2026/10/05/fiscal-monitor-october-2026"
+      },
+      "official_landing_url": "https://www.elibrary.imf.org/display/book/9798229056298/9798229056298.xml",
+      "official_pdf_url": "https://www.elibrary.imf.org/downloadpdf/display/book/9798229056298/9798229056298.pdf",
+      "doi": "10.5089/9798229056298.089",
+      "sha256": "da3c80ba00252c9aeffcdcaf59c8d69631cc4faa35be15f043513721dd8a7060",
+      "size": 3386525,
+      "pages": 31,
+      "binding": {
+        "source": "IMF_Taxing-Better-to-Boost-Growth_8e7ddf2d.pdf",
+        "sha256": "da3c80ba00252c9aeffcdcaf59c8d69631cc4faa35be15f043513721dd8a7060",
+        "size": 3386525,
+        "scope": "institution",
+        "endpoint": "https://mineru.net",
+        "options": {
+          "model": "vlm",
+          "language": "en",
+          "ocr": true
+        },
+        "id": "6de201a8328bd1c526e1391c615b95cdcf94df9430d8608f9090ba93729865af"
+      },
+      "verification": {
+        "method": "official_browser_download",
+        "review": "approved",
+        "receipt_sha256": "b5aa9d81c6d0c56cb927284ed648d06d27bd872a6d995624f021b520ec78aa86",
+        "reviewed_at": "2026-10-12T08:05:37.583307+00:00"
+      }
+    },
+    {
+      "item": {
+        "title": "Kingdom of Eswatini: 2026 Article IV Consultation-Press Release; and Staff Report",
+        "source_url": "https://www.imf.org/en/publications/cr/issues/2026/10/05/kingdom-of-eswatini-2026-article-iv-consultation-press-release-and-staff-report-580259",
+        "guid": "1801f3ea5afb8752f33cd780a4511f6a94180c55f720e76ec5171c1b4713",
+        "date": "2026-10-06T04:00:00+00:00",
+        "pdf_candidates": [],
+        "scrape_url": "https://www.imf.org/en/publications/cr/issues/2026/10/05/kingdom-of-eswatini-2026-article-iv-consultation-press-release-and-staff-report-580259",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/cr/issues/2026/10/05/kingdom-of-eswatini-2026-article-iv-consultation-press-release-and-staff-report-580259"
+      },
+      "official_landing_url": "https://www.elibrary.imf.org/view/journals/002/2026/260/002.2026.issue-260-en.xml",
+      "official_pdf_url": "https://www.elibrary.imf.org/downloadpdf/view/journals/002/2026/260/002.2026.issue-260-en.pdf",
+      "doi": "10.5089/9798229062619.002",
+      "sha256": "05dc3b6222ec1f3916bf0e73d46170e7da7750ec6c387289f005d07ce8d20fb2",
+      "size": 3293154,
+      "pages": 85,
+      "binding": {
+        "source": "IMF_Kingdom-of-Eswatini-2026-Article-IV-Consultation-Press-Relea_45fdc78c.pdf",
+        "sha256": "05dc3b6222ec1f3916bf0e73d46170e7da7750ec6c387289f005d07ce8d20fb2",
+        "size": 3293154,
+        "scope": "institution",
+        "endpoint": "https://mineru.net",
+        "options": {
+          "model": "vlm",
+          "language": "en",
+          "ocr": true
+        },
+        "id": "4fecc5d525292a92d8b20a3756eee3dd8c3dbb987180e668cdb1253826acdf2f"
+      },
+      "verification": {
+        "method": "official_browser_download",
+        "review": "approved",
+        "receipt_sha256": "0c474269da73e4b9650a4c32ca3f40b9c5304c7ad74ca2bead082bca55603449",
+        "reviewed_at": "2026-10-12T08:05:37.583307+00:00"
+      }
+    },
+    {
+      "item": {
+        "title": "Financing Constraints and Growth Challenges of Lithuanian SMEs",
+        "source_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/10/08/financing-constraints-and-growth-challenges-of-lithuanian-smes-580344",
+        "guid": "211e543c7d59fd24ff95b0283f5363d30d55efc32310215ba4e23df9bf1c",
+        "date": "2026-10-08T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026098.pdf",
+          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026098-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/10/08/financing-constraints-and-growth-challenges-of-lithuanian-smes-580344",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/selected-issues-papers/issues/2026/10/08/financing-constraints-and-growth-challenges-of-lithuanian-smes-580344"
+      },
+      "official_landing_url": "https://www.elibrary.imf.org/view/journals/018/2026/098/018.2026.issue-098-en.xml",
+      "official_pdf_url": "https://www.elibrary.imf.org/downloadpdf/view/journals/018/2026/098/018.2026.issue-098-en.pdf",
+      "doi": "10.5089/9798229061308.018",
+      "sha256": "083225974d6e1bbcb6f20694939da2f2e5ca17d850b2a61f1110b207d08b5a24",
+      "size": 1030062,
+      "pages": 25,
+      "binding": {
+        "source": "IMF_Financing-Constraints-and-Growth-Challenges-of-Lithuanian-SM_b1639b96.pdf",
+        "sha256": "083225974d6e1bbcb6f20694939da2f2e5ca17d850b2a61f1110b207d08b5a24",
+        "size": 1030062,
+        "scope": "institution",
+        "endpoint": "https://mineru.net",
+        "options": {
+          "model": "vlm",
+          "language": "en",
+          "ocr": true
+        },
+        "id": "ea05718601c8fa0437e6e51dfbfbfd2eaa88e38a226ffc5eb2a4f1b162f6eca8"
+      },
+      "verification": {
+        "method": "official_browser_download",
+        "review": "approved",
+        "receipt_sha256": "b90bb1fdf07ccc35ad362ce48ab69211bcfc5d5937a4b791a2ccbb2eda9de5f1",
+        "reviewed_at": "2026-10-12T08:05:37.583307+00:00"
+      }
+    },
+    {
+      "item": {
+        "title": "Bolivia: Request For An Extended Arrangement under the Extended Fund Facility-Press Release; Staff Report; Staff Statement and Statement by the Executive Director for Bolivia",
+        "source_url": "https://www.imf.org/en/publications/cr/issues/2026/10/06/bolivia-request-for-an-extended-arrangement-under-the-extended-fund-facility-press-release-580254",
+        "guid": "7c7e2173a156a06e052df28ecf39db74559f6bf1c30102f96841e07b3ac6",
+        "date": "2026-10-07T04:00:00+00:00",
+        "pdf_candidates": [],
+        "scrape_url": "https://www.imf.org/en/publications/cr/issues/2026/10/06/bolivia-request-for-an-extended-arrangement-under-the-extended-fund-facility-press-release-580254",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/cr/issues/2026/10/06/bolivia-request-for-an-extended-arrangement-under-the-extended-fund-facility-press-release-580254"
+      },
+      "official_landing_url": "https://www.elibrary.imf.org/view/journals/002/2026/259/002.2026.issue-259-en.xml",
+      "official_pdf_url": "https://www.elibrary.imf.org/downloadpdf/view/journals/002/2026/259/002.2026.issue-259-en.pdf",
+      "doi": "10.5089/9798229061896.002",
+      "sha256": "d7cb59a514239dcaa8eaa104da876b9e118848bad85502ea9b46def22190aad2",
+      "size": 3080632,
+      "pages": 119,
+      "binding": {
+        "source": "IMF_Bolivia-Request-For-An-Extended-Arrangement-under-the-Extend_1636b06f.pdf",
+        "sha256": "d7cb59a514239dcaa8eaa104da876b9e118848bad85502ea9b46def22190aad2",
+        "size": 3080632,
+        "scope": "institution",
+        "endpoint": "https://mineru.net",
+        "options": {
+          "model": "vlm",
+          "language": "en",
+          "ocr": true
+        },
+        "id": "bb1921465863041183b69f82109c88e0fb42ff4c39220aba9d34f4c7be11f0a9"
+      },
+      "verification": {
+        "method": "official_browser_download",
+        "review": "approved",
+        "receipt_sha256": "90ba1d4a39f95cfca1bd13cc98979e049c54d021aeea3e21d943fbb2c511f5cb",
+        "reviewed_at": "2026-10-12T08:05:37.583307+00:00"
+      }
+    },
+    {
+      "item": {
+        "title": "Guyana: 2026 Article IV Consultation-Press Release and Staff Report",
+        "source_url": "https://www.imf.org/en/publications/cr/issues/2026/10/08/guyana-2026-article-iv-consultation-press-release-and-staff-report-580357",
+        "guid": "83b5869b34c617a31a40a266b276e393ef39a1cf68e9c9caee68b4321c26",
+        "date": "2026-10-08T04:00:00+00:00",
+        "pdf_candidates": [],
+        "scrape_url": "https://www.imf.org/en/publications/cr/issues/2026/10/08/guyana-2026-article-iv-consultation-press-release-and-staff-report-580357",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/cr/issues/2026/10/08/guyana-2026-article-iv-consultation-press-release-and-staff-report-580357"
+      },
+      "official_landing_url": "https://www.elibrary.imf.org/view/journals/002/2026/262/002.2026.issue-262-en.xml",
+      "official_pdf_url": "https://www.elibrary.imf.org/downloadpdf/view/journals/002/2026/262/002.2026.issue-262-en.pdf",
+      "doi": "10.5089/9798229064675.002",
+      "sha256": "21a1e9eebbeead45b79bd2ff57c344fc810d2e53c1de323a667339d804933449",
+      "size": 1364847,
+      "pages": 100,
+      "binding": {
+        "source": "IMF_Guyana-2026-Article-IV-Consultation-Press-Release-and-Staff-_a0bbbfec.pdf",
+        "sha256": "21a1e9eebbeead45b79bd2ff57c344fc810d2e53c1de323a667339d804933449",
+        "size": 1364847,
+        "scope": "institution",
+        "endpoint": "https://mineru.net",
+        "options": {
+          "model": "vlm",
+          "language": "en",
+          "ocr": true
+        },
+        "id": "5e09de660a95545d7ed80834511c24988051b9e26df005816357ddcf0353dc66"
+      },
+      "verification": {
+        "method": "official_browser_download",
+        "review": "approved",
+        "receipt_sha256": "5963acd65197d0ffdebe79102594d1e9c21621960ea00c8ff8c9da0de638594b",
+        "reviewed_at": "2026-10-12T08:05:37.583307+00:00"
+      }
+    },
+    {
+      "item": {
+        "title": "Ethiopia: Climate Policy Diagnostic",
+        "source_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/05/ethiopia-climate-policy-diagnostic-580269",
+        "guid": "86efd8558fb5816c60e787a676fae0614591a57f30a5851735d1eacc8711",
+        "date": "2026-10-05T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026069.pdf",
+          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026069-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/05/ethiopia-climate-policy-diagnostic-580269",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/05/ethiopia-climate-policy-diagnostic-580269"
+      },
+      "official_landing_url": "https://www.elibrary.imf.org/view/journals/029/2026/069/029.2026.issue-069-en.xml",
+      "official_pdf_url": "https://www.elibrary.imf.org/downloadpdf/view/journals/029/2026/069/029.2026.issue-069-en.pdf",
+      "doi": "10.5089/9798229063081.029",
+      "sha256": "9024221fa911f6f8f6ded9b575a28381efa904f1bb0b12b33be6df9746248fac",
+      "size": 200856,
+      "pages": 4,
+      "binding": {
+        "source": "IMF_Ethiopia-Climate-Policy-Diagnostic_772c7a6d.pdf",
+        "sha256": "9024221fa911f6f8f6ded9b575a28381efa904f1bb0b12b33be6df9746248fac",
+        "size": 200856,
+        "scope": "institution",
+        "endpoint": "https://mineru.net",
+        "options": {
+          "model": "vlm",
+          "language": "en",
+          "ocr": true
+        },
+        "id": "13b265d7e74c6c1bf1aac0c21bebc912b860157e878fef00d977149f8fd5b21e"
+      },
+      "verification": {
+        "method": "official_browser_download",
+        "review": "approved",
+        "receipt_sha256": "126e6e0205867f8b28dfb9e513c90411226c817a4e8edca135012324d11245b4",
+        "reviewed_at": "2026-10-12T08:05:37.583307+00:00"
+      }
+    },
+    {
+      "item": {
+        "title": "Kingdom of Eswatini: Selected Issues",
+        "source_url": "https://www.imf.org/en/publications/cr/issues/2026/10/05/kingdom-of-eswatini-selected-issues-580264",
+        "guid": "9015d6aeffb5989fb68211c0be0fd704b983e82e25da2369d6912b3b33e2",
+        "date": "2026-10-06T04:00:00+00:00",
+        "pdf_candidates": [],
+        "scrape_url": "https://www.imf.org/en/publications/cr/issues/2026/10/05/kingdom-of-eswatini-selected-issues-580264",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/cr/issues/2026/10/05/kingdom-of-eswatini-selected-issues-580264"
+      },
+      "official_landing_url": "https://www.elibrary.imf.org/view/journals/002/2026/261/002.2026.issue-261-en.xml",
+      "official_pdf_url": "https://www.elibrary.imf.org/downloadpdf/view/journals/002/2026/261/002.2026.issue-261-en.pdf",
+      "doi": "10.5089/9798229062893.002",
+      "sha256": "b42e38b2ace2f8acc56939f0c6d32f0e180e3186ba39cfa7074c35ffaac6caf4",
+      "size": 694299,
+      "pages": 28,
+      "binding": {
+        "source": "IMF_Kingdom-of-Eswatini-Selected-Issues_c0d4a08d.pdf",
+        "sha256": "b42e38b2ace2f8acc56939f0c6d32f0e180e3186ba39cfa7074c35ffaac6caf4",
+        "size": 694299,
+        "scope": "institution",
+        "endpoint": "https://mineru.net",
+        "options": {
+          "model": "vlm",
+          "language": "en",
+          "ocr": true
+        },
+        "id": "f742976823bbc840448f00c0e90cdf7e91edaf921e938fe7e309e2808109de9c"
+      },
+      "verification": {
+        "method": "official_browser_download",
+        "review": "approved",
+        "receipt_sha256": "427eb4a8c1cf2bc84af568b9975b9cf0ed00b897bb4c8cde33269cd8bf5e5002",
+        "reviewed_at": "2026-10-12T08:05:37.583307+00:00"
+      }
+    },
+    {
+      "item": {
+        "title": "Papua New Guinea: Public Investment Management Assessment – PIMA",
+        "source_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/05/papua-new-guinea-public-investment-management-assessment-pima-580274",
+        "guid": "b42239519da2cadff4873982ca0ac458ad4f71afddc2761139a4093ef9de",
+        "date": "2026-10-05T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026070.pdf",
+          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026070-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/05/papua-new-guinea-public-investment-management-assessment-pima-580274",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/05/papua-new-guinea-public-investment-management-assessment-pima-580274"
+      },
+      "official_landing_url": "https://www.elibrary.imf.org/view/journals/029/2026/070/029.2026.issue-070-en.xml",
+      "official_pdf_url": "https://www.elibrary.imf.org/downloadpdf/view/journals/029/2026/070/029.2026.issue-070-en.pdf",
+      "doi": "10.5089/9798229063319.029",
+      "sha256": "f334000f06e29b1ea148004e11683a778184f78abe6d93e0428088edbaa00fab",
+      "size": 228047,
+      "pages": 4,
+      "binding": {
+        "source": "IMF_Papua-New-Guinea-Public-Investment-Management-Assessment-PIM_9f9a9be2.pdf",
+        "sha256": "f334000f06e29b1ea148004e11683a778184f78abe6d93e0428088edbaa00fab",
+        "size": 228047,
+        "scope": "institution",
+        "endpoint": "https://mineru.net",
+        "options": {
+          "model": "vlm",
+          "language": "en",
+          "ocr": true
+        },
+        "id": "a89ef408a17b5fd25732a14a138a620ffe7067ab90b5f5e7f6f7d2d8a2bfa65b"
+      },
+      "verification": {
+        "method": "official_browser_download",
+        "review": "approved",
+        "receipt_sha256": "f486184e081ebe8dda4a60035169a05924ee7952aea1aa6af16c504c41bca078",
+        "reviewed_at": "2026-10-12T08:05:37.583307+00:00"
+      }
+    },
+    {
+      "item": {
+        "title": "Structural Unemployment in Lithuania",
+        "source_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/10/08/structural-unemployment-in-lithuania-580338",
+        "guid": "d5bb1c256471fd45bc1cfe579d4d20a322452246a2ad4746b1f94a7a3888",
+        "date": "2026-10-08T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026097.pdf",
+          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026097-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/10/08/structural-unemployment-in-lithuania-580338",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/selected-issues-papers/issues/2026/10/08/structural-unemployment-in-lithuania-580338"
+      },
+      "official_landing_url": "https://www.elibrary.imf.org/view/journals/018/2026/097/018.2026.issue-097-en.xml",
+      "official_pdf_url": "https://www.elibrary.imf.org/downloadpdf/view/journals/018/2026/097/018.2026.issue-097-en.pdf",
+      "doi": "10.5089/9798229063531.018",
+      "sha256": "bf204d8c653611603f1bac6e093f0e069041b8726de0a1159935a71a2bb94920",
+      "size": 995934,
+      "pages": 23,
+      "binding": {
+        "source": "IMF_Structural-Unemployment-in-Lithuania_bbc77af3.pdf",
+        "sha256": "bf204d8c653611603f1bac6e093f0e069041b8726de0a1159935a71a2bb94920",
+        "size": 995934,
+        "scope": "institution",
+        "endpoint": "https://mineru.net",
+        "options": {
+          "model": "vlm",
+          "language": "en",
+          "ocr": true
+        },
+        "id": "55f0b2eba0c87101d9c9e6e55e37033a4e1e4cd54049fd821b4a289684f1aa38"
+      },
+      "verification": {
+        "method": "official_browser_download",
+        "review": "approved",
+        "receipt_sha256": "f4ed6f2165f0f3a966e6f5c5a6cd25aa9ee9d28004ca296f8ca4ab8312766c4d",
+        "reviewed_at": "2026-10-12T08:05:37.583307+00:00"
+      }
+    },
+    {
+      "item": {
+        "title": "Eastern Caribbean Currency Union: Technical Assistance Report-Strengthening Fuel Pricing Frameworks in Small Island Economies-Lessons from Antigua and Barbuda, and Grenada",
+        "source_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/07/eastern-caribbean-currency-union-technical-assistance-report-strengthening-fuel-pricing-580249",
+        "guid": "f042f7edac1860e52e66b0da46b68dc73915f83bda2b6e25c5f44ecb9888",
+        "date": "2026-10-07T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026081.pdf",
+          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026081-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/07/eastern-caribbean-currency-union-technical-assistance-report-strengthening-fuel-pricing-580249",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/07/eastern-caribbean-currency-union-technical-assistance-report-strengthening-fuel-pricing-580249"
+      },
+      "official_landing_url": "https://www.elibrary.imf.org/view/journals/019/2026/081/019.2026.issue-081-en.xml",
+      "official_pdf_url": "https://www.elibrary.imf.org/downloadpdf/view/journals/019/2026/081/019.2026.issue-081-en.pdf",
+      "doi": "10.5089/9798229061407.019",
+      "sha256": "deaee50adbc77c61098cbad88ee9e516a1074edd05a686c25603cf9ea0d6b1a5",
+      "size": 1764129,
+      "pages": 45,
+      "binding": {
+        "source": "IMF_Eastern-Caribbean-Currency-Union-Technical-Assistance-Report_391c0ded.pdf",
+        "sha256": "deaee50adbc77c61098cbad88ee9e516a1074edd05a686c25603cf9ea0d6b1a5",
+        "size": 1764129,
+        "scope": "institution",
+        "endpoint": "https://mineru.net",
+        "options": {
+          "model": "vlm",
+          "language": "en",
+          "ocr": true
+        },
+        "id": "38cd950546d718da88985f7a11dad8180d24a6efd9cbb73d882e3ed4f1e4780c"
+      },
+      "verification": {
+        "method": "official_browser_download",
+        "review": "approved",
+        "receipt_sha256": "7b9280a6c578e58c03f8c952be8dc3ebc667f2bd94a039360514e68ffa967dff",
+        "reviewed_at": "2026-10-12T08:05:37.583307+00:00"
+      }
+    },
+    {
+      "item": {
+        "title": "Implementation Plan in Response to the Board-Endorsed Recommendations from the IEO Evaluation on IMF Advice on Fiscal Policy",
+        "source_url": "https://www.imf.org/en/publications/policy-papers/issues/2026/10/08/implementation-plan-in-response-to-the-board-endorsed-recommendations-from-the-ieo-580350",
+        "guid": "ed9f5c224968631c61c1bc4faac4d867742947f734b870f73f909841b0fe",
+        "date": "2026-10-09T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/pp/2026/english/ppea2026047.pdf",
+          "https://www.imf.org/-/media/files/publications/pp/2026/english/ppea2026047-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/policy-papers/issues/2026/10/08/implementation-plan-in-response-to-the-board-endorsed-recommendations-from-the-ieo-580350",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/policy-papers/issues/2026/10/08/implementation-plan-in-response-to-the-board-endorsed-recommendations-from-the-ieo-580350"
+      },
+      "official_landing_url": "https://ieo.imf.org/en/evaluations/completed/2025-1216-imf-advice-on-fiscal-policy",
+      "official_pdf_url": "https://ieo.imf.org/-/media/ieo/files/evaluations/follow-up/fp-mip.pdf",
+      "doi": "10.5089/9798229064200.007",
+      "sha256": "6ac0e5ff1f30c4fa48398587ed70266caa2fff698eb70d7fa9e10cc67f7fa417",
+      "size": 335356,
+      "pages": 25,
+      "binding": {
+        "source": "IMF_Implementation-Plan-in-Response-to-the-Board-Endorsed-Recomm_18247279.pdf",
+        "sha256": "6ac0e5ff1f30c4fa48398587ed70266caa2fff698eb70d7fa9e10cc67f7fa417",
+        "size": 335356,
+        "scope": "institution",
+        "endpoint": "https://mineru.net",
+        "options": {
+          "model": "vlm",
+          "language": "en",
+          "ocr": true
+        },
+        "id": "15ad2fa42bbe306a60719c2c2ef96aff662cdcef6117b73c65cc2fce306dd4b6"
+      },
+      "verification": {
+        "method": "official_https_download",
+        "review": "approved",
+        "receipt_sha256": "d4a01472365c75d01236fe47b26425cb6cc884409ea1254c14a01930a8ea0937",
+        "reviewed_at": "2026-10-12T08:05:37.583307+00:00"
+      }
+    }
+  ]
+}

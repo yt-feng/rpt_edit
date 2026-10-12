@@ -30,6 +30,14 @@ on:
         required: false
         type: number
         default: 10
+      reviewed_originals:
+        description: "Explicit reviewed private-cache originals (ordinary source health still applies)"
+        required: false
+        type: choice
+        default: none
+        options:
+          - none
+          - imf-20261012-reviewed
       force_reprocess:
         description: "Ignore seen-state and overwrite today's generated outputs"
         required: true
@@ -118,6 +126,61 @@ jobs:
           python scripts/test_institution_source_health.py
           python scripts/test_institution_pending_intake.py
 
+      - name: Select reviewed institution originals
+        id: reviewed_originals
+        shell: bash
+        env:
+          REVIEWED_ORIGINALS: ${{ github.event.inputs.reviewed_originals || 'none' }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          case "$REVIEWED_ORIGINALS" in
+            none)
+              echo "manifest_path=" >> "$GITHUB_OUTPUT"
+              exit 0
+              ;;
+            imf-20261012-reviewed)
+              if [ "$EVENT_NAME" != "workflow_dispatch" ]; then
+                echo "::error::Reviewed originals require an explicit manual dispatch."
+                exit 1
+              fi
+              ;;
+            *)
+              echo "::error::Unknown reviewed originals selection."
+              exit 1
+              ;;
+          esac
+          python - <<'PY'
+          import hashlib
+          import os
+          from pathlib import Path
+          import sys
+          import tempfile
+
+          sys.path.insert(0, "scripts")
+          from institution_verified_originals import VerifiedOriginals
+
+          source = Path("institution_feeds/reviewed_originals/imf-20261012-reviewed.json")
+          if source.is_symlink() or not source.is_file() or source.stat().st_size > 512 * 1024:
+              raise SystemExit("Reviewed originals metadata file is invalid.")
+          raw = source.read_bytes()
+          expected = "250557000edbc46f0629393a7a43a139b37926cb54c58535ea498866ccd77e67"
+          if hashlib.sha256(raw).hexdigest() != expected:
+              raise SystemExit("Reviewed originals metadata SHA-256 mismatch.")
+          with tempfile.NamedTemporaryFile(dir=os.environ["RUNNER_TEMP"], prefix="imf-reviewed-", suffix=".json", delete=False) as stream:
+              copied = Path(stream.name)
+              stream.write(raw)
+          try:
+              if hashlib.sha256(copied.read_bytes()).hexdigest() != expected:
+                  raise ValueError("Reviewed originals copy SHA-256 mismatch.")
+              VerifiedOriginals(copied)  # Full schema/binding validation; no storage access.
+          except Exception:
+              copied.unlink(missing_ok=True)
+              raise
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              output.write(f"manifest_path={copied}\n")
+          PY
+
       - name: Install Chinese fonts
         timeout-minutes: 5
         continue-on-error: true
@@ -139,10 +202,19 @@ jobs:
         env:
           PROXY_SUBSCRIPTION_URL: ${{ secrets.PROXY_SUBSCRIPTION_URL }}
           IMF_PENDING_RETRIES: ${{ github.event.inputs.imf_pending_retries || '10' }}
+          REVIEWED_ORIGINALS_MANIFEST: ${{ steps.reviewed_originals.outputs.manifest_path }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
         run: |
           set -o pipefail
           DATE="$(TZ=Asia/Shanghai date +%y%m%d)"
           echo "date_folder=$DATE" >> "$GITHUB_OUTPUT"
+          reviewed_args=()
+          if [ -n "$REVIEWED_ORIGINALS_MANIFEST" ]; then
+            reviewed_args+=(--verified-originals-manifest "$REVIEWED_ORIGINALS_MANIFEST")
+          fi
           set +e
           python scripts/fetch_institution_latest_pdfs.py \
             --output-dir _institution_latest_pdfs \
@@ -155,6 +227,7 @@ jobs:
             --max-per-institution "${{ github.event.inputs.max_per_institution || '25' }}" \
             --max-total "${{ github.event.inputs.max_total || '100' }}" \
             --force-reprocess "${{ github.event.inputs.force_reprocess || 'false' }}" \
+            "${reviewed_args[@]}" \
             2>&1 | tee institution_fetch_progress.log
           institution_fetch_status=("${PIPESTATUS[@]}")
           set -e
