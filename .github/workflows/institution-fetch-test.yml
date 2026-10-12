@@ -14,41 +14,26 @@ on:
 permissions:
   contents: read
 jobs:
-  subscription-health-diagnostic:
+  current-subscription-pdf-diagnostic:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: e06289765e40691159daaa8b2ebf42cd61714f1a
-          sparse-checkout: scripts
+          sparse-checkout: |
+            scripts
+            institution_feeds/pending_intake
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install requests curl_cffi
-      - name: Validate production subscription diagnostics with real metadata
+      - run: pip install requests curl_cffi pypdf
+      - name: Probe current nodes against frozen official PDF
         env:
           PROXY_SUBSCRIPTION_URL: ${{ secrets.PROXY_SUBSCRIPTION_URL }}
-        run: |
-          PYTHONPATH=scripts python - <<'PY'
-          import json, os
-          from pathlib import Path
-          import fetch_institution_latest_pdfs as f
-          route = f.resolve_working_proxy(os.environ['PROXY_SUBSCRIPTION_URL'], 15, f.IMF_PROXY_TEST_URL)
-          summary = Path(os.environ['GITHUB_STEP_SUMMARY']).read_text()
-          result = {
-              'tested_sha': 'e06289765e40691159daaa8b2ebf42cd61714f1a',
-              'validated_route_available': route is not None,
-              'explicit_expiration_reported': 'Proxy subscription expired at ' in summary,
-              'real_pdf_download_verified': False,
-              'scope': 'subscription diagnostic only',
-          }
-          Path('_subscription_health.json').write_text(json.dumps(result, indent=2) + '\n')
-          print(json.dumps(result))
-          PY
+        run: python scripts/cloud_imf_current_proxy_probe.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: imf-subscription-health-${{ github.run_id }}
-          path: _subscription_health.json
+          name: imf-current-proxy-probe-${{ github.run_id }}
+          path: _imf_current_proxy_probe
           if-no-files-found: error
