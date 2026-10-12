@@ -1705,12 +1705,17 @@ def resolve_imf_browser_publication(cfg, session, item, timeout):
     identity = bind_source(item, raw, preview, item["source_url"])
     cache = cfg.setdefault("_imf_crossref_cache", {})
     if identity.doi not in cache:
-        response = session.get(
-            "https://api.crossref.org/works/" + quote(identity.doi, safe="/"),
-            timeout=min(timeout, 30), allow_redirects=False)
+        metadata_url = "https://api.crossref.org/works/" + quote(identity.doi, safe="/")
+        response = _request_with_retry(
+            metadata_url,
+            lambda: session.get(metadata_url, timeout=min(timeout, 30), allow_redirects=False),
+            max_attempts=3,
+        )
         try:
             if response.status_code != 200:
-                raise ResolutionError("crossref_http_rejected")
+                category = {404: "crossref_not_found", 429: "crossref_rate_limited"}.get(
+                    response.status_code, "crossref_server_error" if response.status_code >= 500 else "crossref_http_rejected")
+                raise ResolutionError(category)
             if len(response.content) > 2_000_000:
                 raise ResolutionError("crossref_response_too_large")
             cache[identity.doi] = response.json()
