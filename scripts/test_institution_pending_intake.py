@@ -119,6 +119,13 @@ class IntakeTests(unittest.TestCase):
             self.assertEqual((code, calls), (2, []))
             self.assertEqual(manifest["skipped"][0]["reason"], "invalid_intake_metadata")
 
+    def test_empty_discovery_cannot_become_healthy_from_a_pending_download(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory); self.run_fetch(path, [item()])
+            code, calls, manifest, classified = self.run_fetch(path, [], now=NOW + timedelta(days=10), success=True)
+            self.assertEqual((code, len(calls), classified["source_health"]), (0, 1, "degraded"))
+            self.assertTrue(manifest["source_checks"][0]["discovery_error"])
+
     def test_feed_outage_still_retries_known_sources_without_claiming_healthy_intake(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory); self.run_fetch(path, [item()])

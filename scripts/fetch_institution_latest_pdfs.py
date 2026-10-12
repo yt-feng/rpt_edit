@@ -1856,6 +1856,8 @@ def main() -> int:
             items = []
 
         if key == "imf" and pending:
+            if not items and not discovery_error:
+                discovery_error = "Source discovery returned no publications"
             items = pending.merge(items)
         source_status = "ok" if items else "empty"
         if source_status == "empty":
