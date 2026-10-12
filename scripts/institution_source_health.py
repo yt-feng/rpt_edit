@@ -55,9 +55,20 @@ def validate_live_download(row: dict) -> None:
     else:
         require(set(proof) == PREVIEW_DOWNLOAD_FIELDS)
         metadata = proof["metadata"]
-        require(isinstance(metadata, dict) and set(metadata) == {"method", "preview_sha256"}
-                and metadata["method"] == "official_source_preview")
-        provenance_hash = metadata["preview_sha256"]
+        require(isinstance(metadata, dict))
+        if metadata.get("method") == "official_source_preview":
+            require(set(metadata) == {"method", "preview_sha256"})
+            provenance_hash = metadata["preview_sha256"]
+        elif metadata.get("method") == "publisher_original_edition":
+            from imf_original_edition import validate_original_edition_metadata
+            try:
+                validate_original_edition_metadata(metadata, proof["doi"], proof["landing_url"], proof["pdf_url"])
+            except ValueError:
+                raise InvalidSourceHealth("source_health_contract_invalid") from None
+            require(proof["pages"] == metadata["original_edition"]["pages"])
+            provenance_hash = metadata["source_crossref_sha256"]
+        else:
+            raise InvalidSourceHealth("source_health_contract_invalid")
     require(isinstance(provenance_hash, str) and bool(re.fullmatch(r"[a-f0-9]{64}", provenance_hash)))
     require(proof["source_identity_verified"] is True
             and proof["transport"] == "existing_subscription_vless_browser")
@@ -80,11 +91,29 @@ def validate_live_download(row: dict) -> None:
     try:
         source_url(proof["source_url"])
         validate_official_pair(proof["landing_url"], proof["pdf_url"], proof["doi"])
-        if proof["schema"] == 2:
+        if proof["schema"] == 2 and proof["metadata"]["method"] == "official_source_preview":
             locator = validate_publication_url(proof["landing_url"])
             require(locator["kind"] == "journal" and locator["language"] == "en")
     except ResolutionError:
         raise InvalidSourceHealth("source_health_contract_invalid") from None
+
+
+def validate_followup_download(row: dict) -> None:
+    """Bind the separately verified IEO HTTPS chain to its exact producer row."""
+    from imf_ieo_followup import FollowupError, validate_receipt
+    proof = row["imf_official_followup"]
+    try:
+        validate_receipt(proof)
+    except FollowupError:
+        raise InvalidSourceHealth("source_health_contract_invalid") from None
+    require(row.get("institution") == "imf" and isinstance(row.get("title"), str)
+            and title_key(row["title"]) == title_key(proof["title"]))
+    require(proof["source_url"] == row.get("source_page_url")
+            and proof["published"] == row.get("published")
+            and proof["pdf_url"] == row.get("pdf_url")
+            and proof["sha256"] == row.get("sha256")
+            and type(row.get("bytes")) is int and proof["bytes"] == row["bytes"])
+    require(row.get("local_filename") == f"IMF_{slug(row['title'])}_{short_hash('imf:' + proof['source_guid'])}.pdf")
 
 
 def enabled_sources(value: str) -> list[str]:
@@ -137,9 +166,13 @@ def classify(manifest: object, *, producer_exit_code: int, log_exit_code: int,
         recovery_fields = {field for field in row if field == "acquisition_method"
                            or (isinstance(field, str) and field.startswith("verified_original_"))}
         live_fields = {field for field in row if isinstance(field, str) and field.startswith("imf_live_download")}
+        followup_fields = {field for field in row if isinstance(field, str) and field.startswith("imf_official_followup")}
         if live_fields:
-            require(live_fields == {"imf_live_download"} and not recovery_fields)
+            require(live_fields == {"imf_live_download"} and not recovery_fields and not followup_fields)
             validate_live_download(row)
+        if followup_fields:
+            require(followup_fields == {"imf_official_followup"} and not recovery_fields and not live_fields)
+            validate_followup_download(row)
         if not recovery_fields:
             continue
         require(recovery_fields == RECOVERY_FIELDS)

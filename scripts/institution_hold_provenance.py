@@ -196,6 +196,21 @@ def normalized_row(row):
         if not isinstance(candidates, list) or len(candidates) > 20 or not all(official_url(url) for url in candidates):
             return None
         result['feed_pdf_candidates'] = candidates
+    live_fields = {key for key in row if isinstance(key, str) and key.startswith('imf_live_download')}
+    followup_fields = {key for key in row if isinstance(key, str) and key.startswith('imf_official_followup')}
+    if live_fields or followup_fields:
+        from institution_source_health import InvalidSourceHealth, validate_live_download, validate_followup_download
+        if (not ((live_fields == {'imf_live_download'} and not followup_fields)
+                 or (followup_fields == {'imf_official_followup'} and not live_fields))
+                or any(key == 'acquisition_method' or (isinstance(key, str) and key.startswith('verified_original_'))
+                       for key in row)):
+            return None
+        try:
+            (validate_live_download if live_fields else validate_followup_download)(row)
+        except (InvalidSourceHealth, KeyError, TypeError, ValueError):
+            return None
+        proof_key = 'imf_live_download' if live_fields else 'imf_official_followup'
+        result.update({key: row[key] for key in ('institution', 'title', proof_key)})
     return result
 
 

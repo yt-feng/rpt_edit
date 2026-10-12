@@ -315,22 +315,25 @@ def preserve_manifest_versions(ledger, sources):
         for row in matches:
             fields = ('local_filename', 'bytes', 'sha256', 'source_page_url', 'published', 'pdf_url', 'feed_pdf_candidates')
             live_fields = {key for key in row if isinstance(key, str) and key.startswith('imf_live_download')}
-            if live_fields:
-                # Preserve the exact live source proof before downstream failure;
+            followup_fields = {key for key in row if isinstance(key, str) and key.startswith('imf_official_followup')}
+            if live_fields or followup_fields:
+                # Preserve the exact official source proof before downstream failure;
                 # the next producer must not rediscover an already held PDF.
                 from datetime import datetime
-                from institution_source_health import InvalidSourceHealth, validate_live_download
-                require(live_fields == {'imf_live_download'} and not any(key == 'acquisition_method'
+                from institution_source_health import InvalidSourceHealth, validate_live_download, validate_followup_download
+                require(((live_fields == {'imf_live_download'} and not followup_fields)
+                         or (followup_fields == {'imf_official_followup'} and not live_fields))
+                        and not any(key == 'acquisition_method'
                         or (isinstance(key, str) and key.startswith('verified_original_')) for key in row),
                         'Institution live publication proof')
                 try:
-                    validate_live_download(row)
+                    (validate_live_download if live_fields else validate_followup_download)(row)
                     require(isinstance(row.get('published'), str), 'Institution live publication date')
                     require(datetime.fromisoformat(row['published'].replace('Z', '+00:00')).tzinfo is not None,
                             'Institution live publication date')
                 except (InvalidSourceHealth, KeyError, TypeError, ValueError):
                     raise LedgerError('Institution live publication proof') from None
-                fields += ('institution', 'title', 'imf_live_download')
+                fields += ('institution', 'title', 'imf_live_download' if live_fields else 'imf_official_followup')
             rows.append(dict({key: row[key] for key in fields if key in row}, binding_id=binding['id']))
     _, backlog = configured(ledger)
     backlog.save_versions(bindings, rows, [{'run_id': os.environ.get('GITHUB_RUN_ID', 'local'),

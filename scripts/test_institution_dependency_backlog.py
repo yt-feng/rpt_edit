@@ -15,6 +15,7 @@ from mineru_terminal_recovery import TerminalRecovery, failure_hash
 from test_mineru_result_cache import MemoryR2, S3Error
 from test_mineru_terminal_recovery import Provider, ERROR, AUTH, OPTIONS
 from test_fetch_institution_latest_pdfs import live_hold_fixture
+from test_imf_followup_intake import followup_hold_fixture
 
 
 class HeadR2(MemoryR2):
@@ -273,6 +274,57 @@ class BacklogTests(unittest.TestCase):
                         {'published': '2026-10-13'}):
             variants.append(dict(row, **changes))
         manifest = self.folder/'manifest.json'; before = len(self.client.puts), len(self.provider.posts), len(self.provider.polls)
+        for value in variants:
+            manifest.write_text(json.dumps({'downloaded': [value]}))
+            with self.subTest(value=value), patch.dict(b.os.environ, {'INSTITUTION_SOURCE_MANIFEST': str(manifest)}):
+                with self.assertRaisesRegex(m.LedgerError, 'Institution live publication'):
+                    b.preserve_manifest_versions(self.ledger, [(path, path.name)])
+            self.assertEqual((len(self.client.puts), len(self.provider.posts), len(self.provider.polls)), before)
+
+    def test_followup_and_preview_live_proofs_survive_without_changing_existing_holds(self):
+        followup, followup_item, _ = followup_hold_fixture()
+        live, live_item, _ = live_hold_fixture()
+        live['imf_live_download']['schema'] = 2
+        live['imf_live_download'].pop('crossref_sha256')
+        live['imf_live_download']['metadata'] = dict(method='official_source_preview', preview_sha256='e'*64)
+        self.hold(); held_before = self.backlog.entries()
+        before_provider = len(self.provider.posts), len(self.provider.polls)
+        for row, item, proof_key in ((followup, followup_item, 'imf_official_followup'),
+                                     (live, live_item, 'imf_live_download')):
+            path = self.folder/row['local_filename']; path.write_bytes(b'%PDF-synthetic-original')
+            binding = self.ledger.bind(path, path.name)
+            row.update(bytes=binding['size'], sha256=binding['sha256'])
+            row[proof_key].update(bytes=binding['size'], sha256=binding['sha256'])
+            manifest = self.folder/'manifest.json'; manifest.write_text(json.dumps({'downloaded': [row]}))
+            with patch.dict(b.os.environ, {'INSTITUTION_SOURCE_MANIFEST': str(manifest)}):
+                b.preserve_manifest_versions(self.ledger, [(path, path.name)])
+            stored = self.backlog.versions([binding])
+            self.assertEqual(stored, [dict(row, binding_id=binding['id'])])
+            versions = fetcher.dependency_hold_versions(self.folder/'absent.jsonl',
+                [dict(source=path.name, sha256=binding['sha256'], size=binding['size'])], stored)
+            self.assertTrue(fetcher.matches_dependency_hold(versions, path.name, item))
+            puts = len(self.client.puts)
+            with patch.dict(b.os.environ, {'INSTITUTION_SOURCE_MANIFEST': str(manifest)}):
+                b.preserve_manifest_versions(self.ledger, [(path, path.name)])
+            self.assertEqual(len(self.client.puts), puts)
+        self.assertEqual(self.backlog.entries(), held_before)
+        self.assertEqual((len(self.provider.posts), len(self.provider.polls)), before_provider)
+
+    def test_invalid_followup_proof_stops_before_metadata_or_provider_writes(self):
+        row, _, _ = followup_hold_fixture()
+        path = self.folder/row['local_filename']; path.write_bytes(b'%PDF-synthetic-original')
+        binding = self.ledger.bind(path, path.name)
+        row.update(bytes=binding['size'], sha256=binding['sha256'])
+        row['imf_official_followup'].update(bytes=binding['size'], sha256=binding['sha256'])
+        variants = []
+        for missing in row['imf_official_followup']:
+            value = copy.deepcopy(row); del value['imf_official_followup'][missing]; variants.append(value)
+        for changed in ({'imf_official_followup_extra': True}, {'imf_live_download': {}},
+                        {'verified_original_pages': 25}, {'acquisition_method': 'verified_original_cache'},
+                        {'institution': 'bis'}, {'title': 'Different title'}, {'published': '2026-10-10T00:00:00+00:00'}):
+            variants.append(dict(row, **changed))
+        manifest = self.folder/'manifest.json'
+        before = len(self.client.puts), len(self.provider.posts), len(self.provider.polls)
         for value in variants:
             manifest.write_text(json.dumps({'downloaded': [value]}))
             with self.subTest(value=value), patch.dict(b.os.environ, {'INSTITUTION_SOURCE_MANIFEST': str(manifest)}):

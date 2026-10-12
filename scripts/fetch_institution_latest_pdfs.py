@@ -1696,7 +1696,7 @@ def collect_coveo_preview_candidates(cfg, session, unique_id, base_url, timeout)
 
 def resolve_imf_browser_publication(cfg, session, item, timeout):
     """Follow the publication's actual DOI to publisher-deposited metadata."""
-    from imf_elibrary_resolver import ResolutionError, bind_source, resolve_crossref
+    from imf_elibrary_resolver import ResolutionError, bind_source, resolve_crossref, resolve_official_preview
     from urllib.parse import quote
 
     preview = collect_coveo_preview_html(
@@ -1712,6 +1712,8 @@ def resolve_imf_browser_publication(cfg, session, item, timeout):
             max_attempts=3,
         )
         try:
+            if response.status_code == 404:
+                return resolve_official_preview(identity, preview, item["source_url"])
             if response.status_code != 200:
                 category = {404: "crossref_not_found", 429: "crossref_rate_limited"}.get(
                     response.status_code, "crossref_server_error" if response.status_code >= 500 else "crossref_http_rejected")
@@ -1724,6 +1726,23 @@ def resolve_imf_browser_publication(cfg, session, item, timeout):
     # Revalidate the metadata against each exact source even when the DOI was
     # already read in this batch. No source identity is inferred from a URL.
     return resolve_crossref(identity, cache[identity.doi])
+
+
+def resolve_imf_ieo_followup(cfg, session, item, dest, timeout, max_bytes):
+    """Use the official IEO follow-up directory for its exact implementation plans."""
+    from imf_elibrary_resolver import bind_source
+    from imf_ieo_followup import FollowupError, MAX_PDF, download_followup, evaluation_title
+    try:
+        evaluation_title(item["title"])
+    except FollowupError as exc:
+        if exc.category == "ieo_followup_not_applicable":
+            return None
+        raise
+    preview = collect_coveo_preview_html(
+        cfg, session, item.get("coveo_unique_id", ""), item["source_url"], timeout)
+    raw = cfg.get("_coveo_raw_by_id", {}).get(item.get("coveo_unique_id", ""), {})
+    identity = bind_source(item, raw, preview, item["source_url"])
+    return download_followup(identity, session, dest, min(max_bytes, MAX_PDF), min(timeout, 60))
 
 
 def download_pdf(session: requests.Session, urls: Iterable[str], dest: Path, timeout: int, max_bytes: int, impersonate: bool = False, profile: str | None = None, proxy: str | None = None) -> tuple[str | None, str]:
@@ -1839,7 +1858,7 @@ def dependency_hold_versions(archive: Path, sources: list[dict], supplemental: l
     for name, rows in records.items():
         bindings = {(entry['sha256'], entry['size']) for entry in by_name[name]}
         if len(bindings) != 1 or not rows: continue
-        checksum, size = next(iter(bindings)); versions = set(); valid = True; live_rows = []
+        checksum, size = next(iter(bindings)); versions = set(); valid = True; live_rows = []; followup_rows = []
         for row in rows:
             values = tuple(row.get(field) for field in ('source_page_url', 'published', 'pdf_url'))
             if (not all(isinstance(value, str) and value for value in values)
@@ -1848,29 +1867,36 @@ def dependency_hold_versions(archive: Path, sources: list[dict], supplemental: l
                 valid = False; break
             versions.add(values)
             live_fields = {field for field in row if isinstance(field, str) and field.startswith('imf_live_download')}
-            if live_fields:
-                # A real browser receipt, unlike an empty legacy candidate list,
+            followup_fields = {field for field in row if isinstance(field, str) and field.startswith('imf_official_followup')}
+            if live_fields or followup_fields:
+                # A complete official receipt, unlike an empty legacy candidate list,
                 # proves which original reached the existing private hold.
-                from institution_source_health import InvalidSourceHealth, validate_live_download
+                from institution_source_health import InvalidSourceHealth, validate_live_download, validate_followup_download
                 try:
-                    if (live_fields != {'imf_live_download'} or any(field == 'acquisition_method'
+                    if ((live_fields and (live_fields != {'imf_live_download'} or followup_fields))
+                            or (followup_fields and followup_fields != {'imf_official_followup'})
+                            or any(field == 'acquisition_method'
                             or (isinstance(field, str) and field.startswith('verified_original_')) for field in row)):
                         raise InvalidSourceHealth('source_health_contract_invalid')
-                    validate_live_download(row)
+                    (validate_live_download if live_fields else validate_followup_download)(row)
                     if datetime.fromisoformat(row['published'].replace('Z', '+00:00')).tzinfo is None:
                         raise ValueError('Publication date requires timezone')
                 except (InvalidSourceHealth, KeyError, TypeError, ValueError):
                     valid = False; break
-                live_rows.append(dict(title=row['title'], imf_live_download=row['imf_live_download']))
+                proof_key = 'imf_live_download' if live_fields else 'imf_official_followup'
+                (live_rows if live_fields else followup_rows).append({'title': row['title'], proof_key: row[proof_key]})
         if not valid or len(versions) != 1: continue
         page, published, url = next(iter(versions))
         feed_values = {json.dumps(row.get('feed_pdf_candidates'), sort_keys=True) for row in rows}
         feed = rows[0].get('feed_pdf_candidates') if len(feed_values) == 1 else None
         if not isinstance(feed, list) or not all(isinstance(url, str) for url in feed): feed = None
         result[name] = dict(source_page_url=page, published=published, pdf_url=url, feed_pdf_candidates=feed)
-        if (live_rows and all(row.get('sha256') == checksum for row in rows)
+        if (live_rows and not followup_rows and all(row.get('sha256') == checksum for row in rows)
                 and len({json.dumps(row, sort_keys=True) for row in live_rows}) == 1):
             result[name]['live_publication'] = live_rows[0]
+        if (followup_rows and not live_rows and all(row.get('sha256') == checksum for row in rows)
+                and len({json.dumps(row, sort_keys=True) for row in followup_rows}) == 1):
+            result[name]['followup_publication'] = followup_rows[0]
     return result
 
 
@@ -1880,12 +1906,14 @@ def matches_dependency_hold(versions: dict, filename: str, item: dict, candidate
         return False
     current = list(item.get('pdf_candidates', [])) if candidates is None else list(candidates)
     if held['feed_pdf_candidates'] is not None and candidates is None:
-        live = held.get('live_publication')
-        if (live is not None and item.get('pdf_candidates') == [] and held['feed_pdf_candidates'] == []
-                and item.get('guid') == live['imf_live_download']['source_guid']
-                and item.get('title') == live['title']
-                and filename == f"IMF_{slug(live['title'])}_{short_hash('imf:' + item['guid'])}.pdf"):
-            return True
+        for publication_key, proof_key in (('live_publication', 'imf_live_download'),
+                                            ('followup_publication', 'imf_official_followup')):
+            publication = held.get(publication_key)
+            if (publication is not None and item.get('pdf_candidates') == [] and held['feed_pdf_candidates'] == []
+                    and item.get('guid') == publication[proof_key]['source_guid']
+                    and item.get('title') == publication['title']
+                    and filename == f"IMF_{slug(publication['title'])}_{short_hash('imf:' + item['guid'])}.pdf"):
+                return True
         return bool(current) and current == held['feed_pdf_candidates']
     if current and set(current) == {held['pdf_url']}: return True
     # The producer's legacy IMF working-paper metadata has two deterministic
@@ -2128,6 +2156,7 @@ def _main(imf_browser=None) -> int:
             feed_pdf_candidates = list(item["pdf_candidates"])
             recovered = None
             live_download = None
+            official_followup = None
             if key == "imf" and verified_originals and verified_originals.contains(item):
                 title = item["title"] or item["guid"] or item["source_url"]
                 filename = f"{cfg['token']}_{slug(title)}_{short_hash(dedup_key)}.pdf"
@@ -2142,7 +2171,21 @@ def _main(imf_browser=None) -> int:
                     if len(resolution_failure_samples) < 3:
                         resolution_failure_samples.append(str(exc))
                     continue
-            if recovered is None and key == "imf" and browser_enabled:
+            if recovered is None and key == "imf":
+                title = item["title"] or item["guid"] or item["source_url"]
+                filename = f"{cfg['token']}_{slug(title)}_{short_hash(dedup_key)}.pdf"
+                dest = output_dir / filename
+                try:
+                    official_followup = resolve_imf_ieo_followup(
+                        cfg, session, item, dest, args.request_timeout, max_bytes)
+                    if official_followup is not None:
+                        used_url, status = official_followup["pdf_url"], "ok"
+                except Exception as exc:
+                    category = getattr(exc, "category", "ieo_followup_unavailable")
+                    if not isinstance(category, str) or not re.fullmatch(r"[a-z_]{1,80}", category):
+                        category = "ieo_followup_unavailable"
+                    warn(f"  IMF official follow-up route: {category}; trying other official routes")
+            if recovered is None and official_followup is None and key == "imf" and browser_enabled:
                 title = item["title"] or item["guid"] or item["source_url"]
                 filename = f"{cfg['token']}_{slug(title)}_{short_hash(dedup_key)}.pdf"
                 dest = output_dir / filename
@@ -2158,7 +2201,7 @@ def _main(imf_browser=None) -> int:
                     if not isinstance(category, str) or not re.fullmatch(r"[a-z_]{1,80}", category):
                         category = "official_browser_unavailable"
                     warn(f"  IMF official browser route: {category}; trying ordinary official PDF routes")
-            if recovered is None and live_download is None:
+            if recovered is None and live_download is None and official_followup is None:
                 candidates = list(feed_pdf_candidates)
                 landing_attempted = False
                 preview_attempted = False
@@ -2322,6 +2365,8 @@ def _main(imf_browser=None) -> int:
                 verified_original_count += 1
             if live_download is not None:
                 record["imf_live_download"] = live_download
+            if official_followup is not None:
+                record["imf_official_followup"] = official_followup
             append_archive(archive_path, record)
             downloaded.append(record)
             new_count += 1

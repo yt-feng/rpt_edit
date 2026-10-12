@@ -36,6 +36,10 @@ browser and the existing subscription client when IMF is selected. The fetcher
 first resolves the exact indexed publication's DOI through Crossref, then visits
 the publisher-deposited eLibrary page using the working cloud route. It reads the
 page's actual download link and checks the publication identity before downloading.
+If the exact Crossref record returns 404, an English report may instead use an
+actual eLibrary link in its hash-bound official IMF preview. Its independently
+visible DOI, ISBN, full title, series, year and issue must all agree; this route
+records `official_source_preview` provenance rather than claiming Crossref success.
 There is no fixed report URL, guessed journal identifier, exported browser session,
 or automatic challenge interaction in this path.
 
@@ -52,6 +56,16 @@ The source-health contract verifies that complete proof group against the archiv
 row. Live downloads can establish healthy source access; the reviewed private-cache
 path retains its separate proof and degraded-source rules below. Existing dependency
 holds and successful seen-state deduplication are checked before live downloads.
+
+IEO implementation plans use a separate ordinary HTTPS route before the browser.
+The source's complete title identifies a unique evaluation in IEO's official
+directory, then an exact-title PDF in that evaluation's `Follow-up by the IMF`
+section. All three responses must be successful official URLs, and the PDF must
+contain the complete source title. The separate `imf_official_followup` receipt
+binds source identity, all page hashes, PDF bytes and parsed pages to the archive
+row. It cannot be mixed with browser or private-cache proofs. The source DOI is
+retained as preview provenance; it does not assert DOI registration or a DOI printed
+inside the downloaded PDF.
 
 ## Reviewed cache manifest contract
 
