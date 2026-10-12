@@ -34,17 +34,25 @@ jobs:
           python-version: '3.11'
       - run: |
           python -m venv "$RUNNER_TEMP/imf-probe-${{ github.run_id }}"
-          "$RUNNER_TEMP/imf-probe-${{ github.run_id }}/bin/pip" install requests curl_cffi pypdf
-      - name: Verify parsed cloud proxy authentication and official eLibrary document
+          "$RUNNER_TEMP/imf-probe-${{ github.run_id }}/bin/pip" install requests curl_cffi pypdf boto3
+      - name: Read public provider renewal entry point
         env:
           PROXY_SUBSCRIPTION_URL: ${{ secrets.PROXY_SUBSCRIPTION_URL }}
-        run: '"$RUNNER_TEMP/imf-probe-${{ github.run_id }}/bin/python" scripts/cloud_imf_auth_probe.py'
+        run: '"$RUNNER_TEMP/imf-probe-${{ github.run_id }}/bin/python" scripts/cloud_imf_provider_metadata.py'
+      - name: Inspect existing exact-source original cache bindings
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: '"$RUNNER_TEMP/imf-probe-${{ github.run_id }}/bin/python" scripts/cloud_imf_cache_probe.py'
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: imf-access-probe-${{ matrix.pool }}-${{ github.run_id }}
           path: |
-            _imf_auth_probe
+            _imf_cache_probe
+            _imf_provider_metadata
           if-no-files-found: error
       - name: Remove isolated diagnostic Python environment
         if: always()
