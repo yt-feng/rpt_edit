@@ -48,6 +48,8 @@ class BrowserTests(unittest.TestCase):
                     observed.replace('Foreign Currency', ''), 'Macrofinancial Stability'):
             self.assertFalse(b.title_words_present(title, bad))
         self.assertFalse(b.title_words_present('Mission January 12-16 2026', 'Mission January 1216 2026'))
+        self.assertFalse(b.title_words_present('Macro-Financial Policies and Macro Measures',
+                                              'Macrofinancial Policies and Measures'))
 
     def spanish_fixture(self, series):
         issue, isbn, name = (('083', '9798229064521', 'Technical Assistance Reports') if series == '019' else

@@ -169,14 +169,16 @@ def title_words_present(title, text):
     The observed Stablecoins title prints Macrofinancial while source metadata
     says Macro-Financial. Keep every other word, and never join number ranges.
     """
-    observed, expected = _tokens(text), _tokens(title)
+    observed = _tokens(text)
     normalized = unicodedata.normalize("NFKC", title).casefold()
-    for compound in re.findall(r"[^\W\d_]+(?:[-\u2010\u2011][^\W\d_]+)+", normalized):
-        parts = re.split(r"[-\u2010\u2011]", compound)
+    def join_observed(match):
+        parts = re.split(r"[-\u2010\u2011]", match[0])
         joined = "".join(parts)
-        if joined in observed:
-            expected.difference_update(parts)
-            expected.add(joined)
+        return joined if joined in observed else match[0]
+    # Replace only that exact occurrence. A component appearing separately
+    # elsewhere in the title must remain independently required.
+    normalized = re.sub(r"[^\W\d_]+(?:[-\u2010\u2011][^\W\d_]+)+", join_observed, normalized)
+    expected = _tokens(normalized)
     return bool(observed and expected and expected <= observed)
 
 
