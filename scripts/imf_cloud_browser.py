@@ -53,6 +53,10 @@ class BrowserDownloadError(ValueError):
         super().__init__(self.category)
 
 
+class _OriginalEdition404(Exception):
+    """Internal single alternate-page transition after a real source HTTP404."""
+
+
 def publication_provenance(publication):
     """Keep exact-Crossref and independently bound official-preview proof distinct."""
     if "metadata" not in publication:
@@ -313,6 +317,14 @@ def write_public_evidence(publication, page):
                   "metadata_keys": list(dict.fromkeys(keys)),
                   "metadata": observed, "h1s": values(page.get("h1s", [])),
                   "download_hrefs": [official_url(value, pdf=True) for value in values(page.get("download_hrefs", []))]}}
+    if "visible_body" in page:
+        body = page.get("visible_body")
+        links = page.get("doi_links")
+        record["page"].update({
+            "visible_body": body if isinstance(body, str) and len(body.encode("utf-8", errors="replace")) <= 80 * 1024 else "[invalid_body]",
+            "body_truncated": page.get("body_truncated") is not False,
+            "doi_links": [value if isinstance(value, str) and re.fullmatch(r"https://doi\.org/10\.5089/97[89]\d{10}\.(019|029)", value)
+                          else "[invalid_doi_url]" for value in links[:16]] if isinstance(links, list) else []})
     temporary = None
     try:
         root = Path(directory)
@@ -330,7 +342,7 @@ def write_public_evidence(publication, page):
             Path(temporary).unlink(missing_ok=True)
 
 
-def verify_pdf(path, publication, max_bytes, expected_sha256=None):
+def verify_pdf(path, publication, max_bytes, expected_sha256=None, *, original_edition=None):
     if type(max_bytes) is not int or not 0 < max_bytes <= 128 * 1024 * 1024:
         raise BrowserDownloadError("imf_browser_size_bound_invalid")
     if not path.is_file() or not 0 < path.stat().st_size <= max_bytes:
@@ -360,6 +372,12 @@ def verify_pdf(path, publication, max_bytes, expected_sha256=None):
         identity_verified = spanish_series_identity(publication, pdf_title, text)
     else:
         identity_verified = title_words_present(publication.get("full_title") or publication["source_title"], text)
+    if original_edition is not None:
+        from imf_elibrary_resolver import title_key
+        identity_verified = (identity_verified and publication.get("original_language") == "es"
+                             and type(original_edition.get("pages")) is int and page_count == original_edition["pages"]
+                             and title_key(pdf_title.split(";", 1)[0]) == title_key(original_edition["title"])
+                             and title_words_present(original_edition["title"], text))
     if not identity_verified:
         raise BrowserDownloadError("imf_browser_pdf_title_mismatch")
     return {"sha256": digest, "bytes": len(data), "pages": page_count}
@@ -472,6 +490,17 @@ class CloudImfBrowser:
         except Exception:
             raise BrowserDownloadError("imf_browser_publication_invalid") from None
         self._start()
+        try:
+            return self._download_page(publication, dest, max_bytes, expected_sha256, provenance)
+        except _OriginalEdition404:
+            # The first browser has closed in _download_page's finally. There
+            # is exactly one alternate page; no recursion or route rotation.
+            return self._download_page(publication, dest, max_bytes, expected_sha256, provenance, source_landing_status=404)
+
+    def _download_page(self, publication, dest, max_bytes, expected_sha256, provenance, *, source_landing_status=None):
+        from imf_elibrary_resolver import validate_landing_metadata, validate_publication_url
+        from imf_original_edition import original_edition_candidate, resolve_original_edition
+        requested_landing = (original_edition_candidate(publication) if source_landing_status == 404 else publication["landing_url"])
         destination = Path(dest)
         if destination.exists():
             raise BrowserDownloadError("imf_browser_destination_exists")
@@ -480,7 +509,8 @@ class CloudImfBrowser:
             folder = Path(folder)
             request = folder / "request.json"
             with os.fdopen(os.open(request, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600), "w") as stream:
-                json.dump({"landing_url": publication["landing_url"], "max_bytes": max_bytes}, stream)
+                json.dump({"landing_url": requested_landing, "max_bytes": max_bytes,
+                           "observe_original_edition": source_landing_status == 404}, stream)
             proc = None
             try:
                 proc = subprocess.Popen(["node", str(Path(__file__).with_suffix(".cjs")), str(request)],
@@ -491,13 +521,30 @@ class CloudImfBrowser:
                 if page.get("stage") != "metadata":
                     raise BrowserDownloadError("imf_browser_page_not_ready")
                 if type(page.get("landing_status")) is not int or page["landing_status"] != 200:
+                    if type(page.get("landing_status")) is int and page["landing_status"] == 404 and source_landing_status is None:
+                        try:
+                            original_edition_candidate(publication)
+                            if (validate_publication_url(page["final_url"])["document_path"] !=
+                                    validate_publication_url(publication["landing_url"])["document_path"]):
+                                raise ValueError
+                        except ValueError:
+                            pass
+                        else:
+                            raise _OriginalEdition404()
                     raise BrowserDownloadError("imf_browser_landing_http_rejected")
                 if page.get("ready") is not True:
                     raise BrowserDownloadError("imf_browser_page_not_ready")
                 try:
-                    pdf_url = validate_landing_metadata(publication, final_url=page["final_url"],
-                                                        metadata=page["metadata"], h1s=page["h1s"],
-                                                        download_hrefs=page["download_hrefs"])
+                    edition = None
+                    if source_landing_status == 404:
+                        metadata = resolve_original_edition(publication, page, source_landing_status=source_landing_status)
+                        provenance = {"schema": 2, "metadata": metadata}
+                        edition = metadata["original_edition"]
+                        pdf_url = page["download_hrefs"][0]
+                    else:
+                        pdf_url = validate_landing_metadata(publication, final_url=page["final_url"],
+                                                            metadata=page["metadata"], h1s=page["h1s"],
+                                                            download_hrefs=page["download_hrefs"])
                 except Exception:
                     raise BrowserDownloadError("imf_browser_page_identity_mismatch") from None
                 proc.stdin.write((json.dumps({"pdf_url": pdf_url}) + "\n").encode())
@@ -510,7 +557,8 @@ class CloudImfBrowser:
                 if proc.wait(timeout=10) != 0:
                     raise BrowserDownloadError("imf_browser_process_failed")
                 downloaded = folder / "download.pdf"
-                validated = verify_pdf(downloaded, publication, max_bytes, expected_sha256)
+                validated = (verify_pdf(downloaded, publication, max_bytes, expected_sha256, original_edition=edition)
+                             if edition is not None else verify_pdf(downloaded, publication, max_bytes, expected_sha256))
                 proof = {**provenance, "source_guid": publication["source_guid"], "source_url": publication["source_url"],
                          "landing_url": page["final_url"], "pdf_url": pdf_url, "doi": publication["doi"],
                          "title": publication["source_title"],
@@ -519,7 +567,7 @@ class CloudImfBrowser:
                          "source_identity_verified": True, "transport": "existing_subscription_vless_browser"}
                 publish_original(downloaded, destination, validated)
                 return proof
-            except BrowserDownloadError:
+            except (_OriginalEdition404, BrowserDownloadError):
                 raise
             except Exception:
                 raise BrowserDownloadError("imf_browser_download_failed") from None

@@ -11,6 +11,8 @@ const landing = 'https://www.elibrary.imf.org/view/journals/019/2026/082/019.202
 const pdf = 'https://www.elibrary.imf.org/downloadpdf/view/journals/019/2026/082/019.2026.issue-082-en.pdf';
 
 async function simulate(options = {}) {
+  const pageLanding = options.originalEdition ? landing.replace('-en.', '-es.') : landing;
+  const pagePdf = options.originalEdition ? pdf.replace('-en.', '-es.') : pdf;
   const events = [], output = [], responses = new Map(), signals = new Map(), input = new EventEmitter();
   const frame = {}, timers = new Map();
   const metadata = options.metadata || {'citation_doi': ['10.5089/9798229063937.019'],
@@ -20,10 +22,10 @@ async function simulate(options = {}) {
     events.push('wait'); assert.equal(timeout, 15000);
     if (options.unready) { const e = new Error('SECRET timeout'); e.name = 'TimeoutError'; throw e; }
   };
-  const link = {first: () => link, waitFor: wait, all: async () => [link], getAttribute: async () => pdf,
+  const link = {first: () => link, waitFor: wait, all: async () => [link], getAttribute: async () => pagePdf,
     click: async () => {
       events.push('click'); assert.ok(events.indexOf('decision') < events.indexOf('click'));
-      responses.get('response')({url: () => pdf, status: () => 200,
+      responses.get('response')({url: () => pagePdf, status: () => 200,
         request: () => ({isNavigationRequest: () => !!options.pdfNavigation}), frame: () => frame});
     }};
   const heading = {first: () => heading, waitFor: wait, allTextContents: async () => ['Republic of Estonia: Consumer Price Index']};
@@ -31,17 +33,21 @@ async function simulate(options = {}) {
     on: (key, fn) => responses.set(key, fn), mainFrame: () => frame,
     goto: async (_, opts) => {
       assert.equal(opts.waitUntil, 'domcontentloaded'); assert.equal(opts.timeout, 45000);
-      events.push('goto'); responses.get('response')({url: () => landing, status: () => options.landingStatus ?? 200,
+      events.push('goto'); responses.get('response')({url: () => pageLanding, status: () => options.landingStatus ?? 200,
         request: () => ({isNavigationRequest: () => true}), frame: () => frame});
     },
-    url: () => landing, getByRole: role => role === 'heading' ? heading : link,
-    locator: query => ({evaluateAll: async fn => fn(query.startsWith('meta') ?
+    url: () => options.finalUrl || pageLanding, getByRole: role => role === 'heading' ? heading : link,
+    locator: query => ({innerText: async opts => {
+      assert.equal(query, 'body'); assert.equal(opts.timeout, 10000); events.push('read-body');
+      return options.body || 'ISBN: 9798229063937\nLanguage: Spanish';
+    }, evaluateAll: async fn => fn(query === 'a[href]' ?
+      (options.doiLinks || ['https://doi.org/10.5089/9798229063937.019']).map(href => ({href})) : query.startsWith('meta') ?
       Object.entries(metadata).flatMap(([key, values]) => values.map(value => ({
         getAttribute: name => name === 'name' ? key : name === 'content' ? value : null
-      }))) : [{href: landing}])}),
+      }))) : [{href: pageLanding}])}),
     waitForEvent: async (name, opts) => {
       assert.equal(name, 'download'); assert.equal(opts.timeout, 45000);
-      return {url: () => options.changedUrl || pdf, failure: async () => null, path: async () => '/mock/download'};
+      return {url: () => options.changedUrl || pagePdf, failure: async () => null, path: async () => '/mock/download'};
     }
   };
   const browser = {newContext: async opts => {
@@ -61,7 +67,7 @@ async function simulate(options = {}) {
         queueMicrotask(async () => {
           if (options.terminate) await signals.get('SIGTERM')();
           if (options.noDecision) { [...timers.values()][0](); return; }
-          events.push('decision'); input.emit('line', JSON.stringify({pdf_url: options.decision || pdf}));
+          events.push('decision'); input.emit('line', JSON.stringify({pdf_url: options.decision || pagePdf}));
         });
       }
       if (message.stage === 'download') assert.ok(events.includes('close'));
@@ -70,7 +76,8 @@ async function simulate(options = {}) {
   await vm.runInNewContext(code, {require: name => {
     if (name === 'node:fs') return {
       statSync: file => ({size: file.endsWith('request.json') ? 512 : options.size ?? 500}),
-      readFileSync: () => JSON.stringify({landing_url: landing, max_bytes: 1024}), constants: {COPYFILE_EXCL: 1},
+      readFileSync: () => JSON.stringify({landing_url: pageLanding, max_bytes: 1024,
+        observe_original_edition: options.originalEdition ?? false}), constants: {COPYFILE_EXCL: 1},
       copyFileSync: () => { events.push('copy'); }
     };
     if (name === 'node:path') return path;
@@ -153,4 +160,35 @@ test('metadata names are deduplicated and have fixed count and character bounds'
     assert.equal(result.output.at(-1).category, 'page_metadata_limit');
     assert.ok(!result.events.includes('click'));
   }
+});
+test('edition observation reads bounded public labels and DOI anchors but awaits parent before download', async () => {
+  const result = await simulate({originalEdition: true, noDecision: true,
+    doiLinks: ['https://doi.org/10.5089/9798229063937.019', 'https://evil.invalid/SECRET']});
+  assert.equal(result.events.filter(x => x === 'goto').length, 1);
+  assert.equal(result.events.filter(x => x === 'read-body').length, 1);
+  assert.ok(!result.events.includes('click'));
+  assert.deepEqual([...result.output[0].doi_links], ['https://doi.org/10.5089/9798229063937.019']);
+  assert.equal(result.output[0].body_truncated, false);
+  assert.match(result.output[0].visible_body, /Language: Spanish/);
+  const ordinary = await simulate();
+  assert.ok(!ordinary.events.includes('read-body'));
+  assert.ok(!('visible_body' in ordinary.output[0]));
+});
+test('edition truncation remains explicit and unrelated redirects are never read', async () => {
+  const bounded = await simulate({originalEdition: true, noDecision: true, body: 'á'.repeat(90000)});
+  assert.equal(bounded.output[0].body_truncated, true);
+  assert.ok(Buffer.byteLength(bounded.output[0].visible_body) <= 80 * 1024);
+  for (const finalUrl of ['https://evil.invalid/page', landing.replace('082', '083'), landing]) {
+    const result = await simulate({originalEdition: true, finalUrl});
+    assert.ok(!result.events.includes('read-body')); assert.ok(!result.events.includes('click'));
+    assert.equal(result.output.at(-1).category, 'page_not_ready');
+  }
+});
+test('edition flag accepts only boolean and extra DOI observations are bounded', async () => {
+  const invalid = await simulate({originalEdition: 'true'});
+  assert.ok(!invalid.events.includes('launch'));
+  const excess = await simulate({originalEdition: true,
+    doiLinks: Array(17).fill('https://doi.org/10.5089/9798229063937.019')});
+  assert.equal(excess.output.at(-1).category, 'page_metadata_limit');
+  assert.ok(!excess.events.includes('click'));
 });

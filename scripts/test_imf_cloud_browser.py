@@ -396,6 +396,83 @@ class BrowserTests(unittest.TestCase):
                     instance.download(self.preview_publication(), dest, 1024)
                 proc.stdin.write.assert_not_called(); self.assertFalse(dest.exists())
 
+    def edition_case(self):
+        case = json.loads((Path(__file__).parent / 'fixtures/imf_elibrary/spanish_editions_observed.json').read_text())['observations'][0]
+        case['page']['stage'] = 'metadata'
+        return case
+
+    def test_real_source_404_closes_first_browser_then_one_exact_edition(self):
+        case = self.edition_case(); publication, page = case['publication'], case['page']
+        first = {**PAGE, 'landing_status': 404, 'ready': False, 'final_url': publication['landing_url']}
+        result = {**RESULT, 'pdf_url': page['download_hrefs'][0]}
+        data = b'%PDF-mock'; digest = hashlib.sha256(data).hexdigest()
+        captured = []
+        def verify(path, source, *_args, original_edition=None):
+            self.assertEqual(source, publication)
+            self.assertIsNotNone(original_edition)
+            captured.append(original_edition)
+            path.write_bytes(data)
+            return dict(sha256=digest, bytes=len(data), pages=original_edition['pages'])
+        with self.download_mocks([first, page, result]) as (instance, dest, proc, spawn, stop), patch.object(b, 'verify_pdf', verify):
+            second = Mock(pid=124, poll=Mock(return_value=None), wait=Mock(return_value=0))
+            second.stdin = Mock(); second.stdout = Mock()
+            requests = []
+            def launch(args, **_):
+                requests.append(json.loads(Path(args[2]).read_text()))
+                if len(requests) == 2:
+                    stop.assert_called_once_with(123, signal.SIGTERM)
+                    proc.stdin.write.assert_not_called()
+                return proc if len(requests) == 1 else second
+            spawn.side_effect = launch
+            proof = instance.download(publication, dest, 1024)
+            self.assertEqual(len(requests), 2)
+            self.assertFalse(requests[0]['observe_original_edition']); self.assertTrue(requests[1]['observe_original_edition'])
+            self.assertTrue(requests[1]['landing_url'].endswith('-es.xml'))
+            self.assertEqual(proof['doi'], publication['doi'])
+            self.assertEqual(proof['title'], publication['source_title'])
+            self.assertEqual(proof['schema'], 2)
+            self.assertEqual(proof['metadata']['source_landing_status'], 404)
+            self.assertNotEqual(proof['metadata']['original_edition']['doi'], proof['doi'])
+            self.assertEqual(proof['pages'], captured[0]['pages'])
+            self.assertEqual(stop.call_count, 2); second.stdin.write.assert_called_once()
+
+    def test_only_real_same_original_page_404_can_try_one_candidate(self):
+        case = self.edition_case(); original = case['publication']
+        for change, status, url in (({}, 403, original['landing_url']), ({}, 405, original['landing_url']),
+                    ({}, '404', original['landing_url']), ({}, 404, case['page']['final_url']),
+                    ({'original_language': None}, 404, original['landing_url'])):
+            with self.download_mocks([{**PAGE, 'landing_status': status, 'final_url': url}]) as (instance, dest, proc, spawn, _):
+                with self.assertRaisesRegex(b.BrowserDownloadError, 'landing_http_rejected'):
+                    instance.download({**original, **change}, dest, 1024)
+                self.assertEqual(spawn.call_count, 1); proc.stdin.write.assert_not_called()
+        page404 = {**PAGE, 'landing_status': 404, 'final_url': original['landing_url']}
+        with self.download_mocks([page404, {**page404, 'final_url': case['page']['final_url']}]) as (instance, dest, proc, spawn, _):
+            with self.assertRaisesRegex(b.BrowserDownloadError, 'landing_http_rejected'):
+                instance.download(original, dest, 1024)
+            self.assertEqual(spawn.call_count, 2); proc.stdin.write.assert_not_called()
+
+    def test_edition_page_missing_or_conflicting_identity_never_clicks(self):
+        case = self.edition_case(); original = case['publication']
+        first = {**PAGE, 'landing_status': 404, 'final_url': original['landing_url']}
+        page = {**case['page'], 'doi_links': []}
+        with self.download_mocks([first, page]) as (instance, dest, proc, spawn, _):
+            with self.assertRaisesRegex(b.BrowserDownloadError, 'page_identity_mismatch'):
+                instance.download(original, dest, 1024)
+            self.assertEqual(spawn.call_count, 2); proc.stdin.write.assert_not_called()
+            self.assertFalse(dest.exists())
+
+    def test_edition_pdf_requires_actual_page_count_and_complete_observed_title(self):
+        publication, title, body = self.spanish_fixture('019')
+        edition = {'pages': 1, 'title': title.split(';', 1)[0]}
+        reader = SimpleNamespace(is_encrypted=False, metadata={'/Title': title}, pages=[SimpleNamespace(extract_text=lambda: body)])
+        with tempfile.TemporaryDirectory() as folder, patch.dict(sys.modules, {'pypdf': SimpleNamespace(PdfReader=lambda _: reader)}):
+            file = Path(folder) / 'test.pdf'; file.write_bytes(b'%PDF-spanish')
+            self.assertEqual(b.verify_pdf(file, publication, 1024, original_edition=edition)['pages'], 1)
+            for wrong in ({**edition, 'pages': 2}, {**edition, 'pages': True},
+                          {**edition, 'title': edition['title'].replace('finanzas', 'comercio')}):
+                with self.assertRaisesRegex(b.BrowserDownloadError, 'pdf_title_mismatch'):
+                    b.verify_pdf(file, publication, 1024, original_edition=wrong)
+
     def test_status_downgrade_and_changed_download_never_accept(self):
         for changes in (dict(pdf_status=202), dict(landing_status=403), dict(pdf_url='https://evil.invalid/a.pdf')):
             with self.download_mocks([PAGE, {**RESULT, **changes}]) as (instance, dest, _, _, _):

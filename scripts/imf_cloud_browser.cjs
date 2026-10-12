@@ -35,6 +35,10 @@ async function main() {
       !Number.isInteger(request.max_bytes) || request.max_bytes < 1 || request.max_bytes > 128 * 1024 * 1024) {
     throw new Error("request_invalid");
   }
+  if ("observe_original_edition" in request && typeof request.observe_original_edition !== "boolean") throw new Error("request_invalid");
+  if (request.observe_original_edition && !/^\/view\/journals\/(019|029)\/(20\d{2})\/(\d{3})\/\1\.\2\.issue-\3-es\.xml$/.test(landing.pathname)) {
+    throw new Error("request_invalid");
+  }
   const {chromium} = require(path.join(root, "node_modules", "playwright"));
   let browser, page, landingStatus = null, actualLandingStatus = null, pdfStatus = null, target = null;
   const terminate = async () => {
@@ -94,6 +98,21 @@ async function main() {
       if (href) hrefs.push(new URL(href, page.url()).href);
     }
     const downloadHrefs = bounded(hrefs);
+    let editionObservation = {};
+    if (request.observe_original_edition) {
+      const final = new URL(page.url());
+      if (final.protocol !== "https:" || !["www.elibrary.imf.org", "elibrary.imf.org"].includes(final.hostname) ||
+          final.username || final.password || (final.port && final.port !== "443") ||
+          final.pathname !== landing.pathname || final.search || final.hash) throw new Error("page_not_ready");
+      const doiLinks = await page.locator('a[href]').evaluateAll(nodes => nodes.map(n => n.href).filter(href =>
+        /^https:\/\/doi\.org\/10\.5089\/97[89]\d{10}\.(019|029)$/.test(href)));
+      bounded(doiLinks, 16);
+      const raw = await page.locator('body').innerText({timeout: 10000});
+      const bytes = Buffer.from(raw, 'utf8');
+      const truncated = bytes.length > 80 * 1024;
+      const body = bytes.subarray(0, 80 * 1024).toString('utf8').replace(/\uFFFD$/, '');
+      editionObservation = {doi_links: doiLinks, visible_body: body, body_truncated: truncated};
+    }
     // Start waiting before emitting metadata, so a prompt Python reply is kept.
     const command = new Promise((resolve, reject) => {
       const timer = setTimeout(() => reject(new Error("download_command_timeout")), 20000);
@@ -109,7 +128,7 @@ async function main() {
     });
     actualLandingStatus = landingStatus;
     send({stage: "metadata", final_url: page.url(), landing_status: actualLandingStatus, ready: pageReady,
-      metadata, metadata_keys: metaNames.names, h1s, download_hrefs: downloadHrefs});
+      metadata, metadata_keys: metaNames.names, h1s, download_hrefs: downloadHrefs, ...editionObservation});
     target = await command;
     if (!pageReady) throw new Error("page_not_ready");
     // Parent bound this exact observed URL to the DOI and issue/book. Refuse
