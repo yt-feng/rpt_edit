@@ -72,6 +72,17 @@ class EditionTests(unittest.TestCase):
             case = deepcopy(CASES[0]); case['page']['metadata'] = metadata
             with self.subTest(metadata=metadata), self.assertRaises(e.EditionError): self.resolve(case)
 
+    def test_real_duplicate_doi_anchors_do_not_change_unique_publication_identity(self):
+        for original in CASES:
+            case = deepcopy(original)
+            case['page']['doi_links'] *= 2  # Actual production DOM has two identical anchors.
+            metadata = self.resolve(case)
+            self.assertEqual(metadata['original_edition']['doi'], original['page']['doi_links'][0].removeprefix('https://doi.org/'))
+            for links in (case['page']['doi_links'] + ['https://doi.org/10.5089/9798229063937.019'],
+                          case['page']['doi_links'][:1] * 17, [None]):
+                case['page']['doi_links'] = links
+                with self.assertRaises(e.EditionError): self.resolve(case)
+
     def test_receipt_groups_types_unknowns_and_status_are_strict(self):
         case = CASES[0]; original = self.resolve(case)
         variants = [{**original, 'unknown': True}, {k:v for k,v in original.items() if k!='preview_sha256'},

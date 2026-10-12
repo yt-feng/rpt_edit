@@ -130,7 +130,8 @@ def resolve_original_edition(publication, page, *, source_landing_status):
     require(edition_number == expected_number and lines.count(expected_number) == 1)
     h1s, doi_links, hrefs = page["h1s"], page["doi_links"], page["download_hrefs"]
     require(isinstance(h1s, list) and len(h1s) == 1 and isinstance(h1s[0], str) and len(h1s[0]) <= 4096
-            and isinstance(doi_links, list) and doi_links == [doi_url]
+            and isinstance(doi_links, list) and 1 <= len(doi_links) <= 16
+            and all(isinstance(value, str) for value in doi_links) and set(doi_links) == {doi_url}
             and isinstance(hrefs, list) and len(hrefs) == 1 and isinstance(hrefs[0], str))
     title = " ".join(h1s[0].split())
     source_country, sep, _ = publication["source_title"].partition(":")
