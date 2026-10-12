@@ -5,6 +5,7 @@ on:
     paths:
       - "scripts/*wechat*"
       - "scripts/*free_editorial_images*"
+      - "scripts/stock_editorial_photos.json"
       - "scripts/*article_generation_progress*"
       - "scripts/*article_title_resume*"
       - "scripts/*recover_report_articles*"
@@ -73,6 +74,7 @@ on:
     paths:
       - "scripts/*wechat*"
       - "scripts/*free_editorial_images*"
+      - "scripts/stock_editorial_photos.json"
       - "scripts/*article_generation_progress*"
       - "scripts/*article_title_resume*"
       - "scripts/*recover_report_articles*"

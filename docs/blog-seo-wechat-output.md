@@ -182,29 +182,36 @@ A PDF first page with a title overlay is not an extracted source chart. White-ba
 The trailing contact card has its own role and never counts toward the body-image
 minimum.
 
-When original figures are insufficient, `free_editorial_images.py` searches
-Wikimedia Commons using a fixed, locally selected generic topic. It never sends
-the report title or body to the public search API. The search itself is limited
-to the supported CC0/CC-BY category union; short topic terms avoid accidentally
-requiring unrelated subjects in the same photograph. Count-only diagnostics
-distinguish an empty result from rejected license, format or URL candidates. Only explicit CC0 or CC BY
-2.0/2.5/3.0/4.0 images with consistent license metadata are accepted. Author,
-original file page and license accompany the image in the article; metadata is
-sanitized rather than inserted as arbitrary HTML. Downloads have host, redirect,
-byte, pixel and decode checks, a bounded request budget, cache and circuit breaker.
+When original figures are insufficient, `free_editorial_images.py` first selects
+from a reviewed, topic-specific catalog of free Unsplash and Pexels photographs.
+These are ordinary free-license photos selected from their public source pages,
+not the Unsplash API. The catalog retains the source page, author and license internally;
+production downloads only the catalog's allowed image URLs. Neither the report
+title nor the article body is sent to a public service. Unsplash's ordinary
+[license](https://unsplash.com/license) does not require attribution, while its
+[API rules](https://help.unsplash.com/en/articles/2511245-unsplash-api-guidelines)
+require attribution and hotlinking; the API is not used for this delivery route.
+Pexels entries similarly use its ordinary [free license](https://www.pexels.com/license/)
+and retain their official source-page records in the private metadata.
 
-The old anonymous Pollinations endpoint is no longer called. Its production
-responses included HTTP 402 and 502, and the XHS uploader discarded the fallback
-and stopped filling images. Both uploaders now accept the Commons result. When
-Commons is unavailable or has no eligible photo, an original topic illustration
-is generated locally and clearly labelled as an illustration, not a photograph,
-report figure or data chart. No blank title card or QR code substitutes for it.
-The illustration varies its subject geometry, composition, count, placement and
-palette across articles and image positions, including within the same topic.
-Its article-and-position seed and saved provider selection keep retries stable.
-Photo URL and decoded-image identities are deduplicated across the batch; an
-exhausted eligible photo pool uses a distinct illustration instead of repeating
-one picture. These are supplemental visuals, never manufactured report charts.
+If the catalog has no available eligible photo, a bounded Commons search accepts
+only explicit CC0 metadata. CC BY images are excluded from this caption-free
+publication path. Provider time, host, redirect, byte, dimensions and decoded
+pixels remain checked. A distinct local illustration is the final fallback after
+photo sources, without a model call. No blank title card or QR code substitutes
+for article imagery.
+
+Supplemental pictures have no visible source, author, license, original-artwork
+claim or repeated illustration disclaimer in the article. Provenance stays in
+internal metadata. The renderer also removes recognized historical generated
+photo notices while preserving report citations, data sources, figure captions
+and editorial prose. The old anonymous Pollinations endpoint is not used.
+
+Selections remain stable for the same article and image position. Photo URL and
+decoded-image identities are deduplicated across the batch. The photo policy
+versions its selection cache so historical CC BY or illustration selections do
+not bypass the new preference order. An exhausted photo pool uses a distinct
+illustration instead of repeating one photograph.
 
 Covers prefer a validated original report chart, then the article's valid
 supplemental image. When OCR has no retained source charts, the licensed-photo
@@ -213,9 +220,21 @@ They are normalized to a 1200 x 675 JPEG. A crop rejection first removes explici
 crop fields while retaining each article's own cover; further normalization is
 per article. It never replaces a whole group with one generic blank cover.
 HTML fitting retains at least one body image whenever images were supplied;
-credits travel with the image through compression.
+generated photo credit blocks are excluded from the final HTML.
 
 ## Media verification and existing draft repair
+
+As of 2026-10-13, `--current-drafts` provides a targeted cleanup of recognized
+photo notices in currently existing drafts. The cloud workflow audits before
+applying. Original-illustration notices are removed without downloading or
+replacing their images. Historical Commons photos that need attribution are
+replaced with photos from the new no-attribution-required provider chain.
+Fresh draft content is the baseline; author, order, title, prose, report source
+and unrelated media remain protected. Each write has a fresh concurrency check
+and strict readback. Locked or deleted drafts are reported and never recreated.
+This supersedes the former visible photo-credit policy described in the
+historical diagnostic records below.
+
 
 `draft/get` verification compares the expected cover ID and ordered body/footer
 image identities in addition to the editorial contract. Read-only audits remain

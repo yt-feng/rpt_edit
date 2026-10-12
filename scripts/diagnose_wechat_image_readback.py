@@ -18,7 +18,6 @@ from pathlib import Path
 import re
 from urllib.parse import parse_qs, urlsplit
 
-from free_editorial_images import attribution_caption
 from push_portal_translated_to_wechat_drafts import (
     article_prose_text, draft_news_items, generated_image_credits, generated_image_credit_signature, get_draft,
     IMAGE_CREDIT_PARAGRAPH_RE, materialize_private_article_payload, normalize_space, parse_wechat_json,
@@ -41,7 +40,9 @@ TARGETS = {
 MAX_CONTENT_BYTES = 128 * 1024
 MAX_NODES = 4096
 MAX_CREDIT_CANDIDATES = 32
-LOCAL_CAPTION = attribution_caption({'source': 'local_editorial'})
+# These diagnostics describe already-deployed historical captions. Keep the
+# identity stable when the current image provider stops emitting credit lines.
+LOCAL_CAPTION = "主题示意图：Portal Suite 原创插画，非实拍或数据图。"
 BLOCKS = {'p', 'div', 'section'}
 KNOWN_TAGS = BLOCKS | {'span', 'strong', 'em', 'b', 'i', 'a', 'img', 'br'}
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}

@@ -10,9 +10,23 @@ from unittest.mock import Mock, patch
 import requests
 
 import diagnose_wechat_image_readback as diagnostic
-from free_editorial_images import attribution_html
 from push_portal_translated_to_wechat_drafts import article_prose_text, image_html, WeChatError
 from push_portal_translated_to_wechat_drafts import generated_image_credit_signature
+
+
+# Freeze the historical output under diagnosis independently of the current
+# provider, which no longer emits reader-facing credit paragraphs.
+HISTORICAL_LOCAL_CREDIT = (
+    '<p class="image-credit" data-editorial-credit="1">'
+    '主题示意图：Portal Suite 原创插画，非实拍或数据图。</p>'
+)
+
+
+def historical_commons_credit(author):
+    return ('<p class="image-credit" data-editorial-credit="1">'
+            f'主题配图：{author} / Wikimedia Commons / CC BY 4.0；已裁剪与缩放，非报告原图。 '
+            '图片来源：https://commons.wikimedia.org/wiki/File:Synthetic.jpg · '
+            '许可：https://creativecommons.org/licenses/by/4.0/</p>')
 
 
 def response(value):
@@ -44,7 +58,7 @@ def fixture():
 class CreditDiagnosticTests(unittest.TestCase):
     def setUp(self):
         self.saved = article()
-        self.credit = attribution_html({'source': 'local_editorial'})
+        self.credit = HISTORICAL_LOCAL_CREDIT
         self.image = image_html('https://mmbiz.qpic.cn/PRIVATE-IMAGE/0', '主题配图')
         self.target = {'article_index': 1, 'repair_expected_prose_sha256': diagnostic.digest(article_prose_text(self.saved['content']))}
 
@@ -103,9 +117,7 @@ class CreditDiagnosticTests(unittest.TestCase):
         self.assertEqual(0, commented['actual_known_local_credits']['diagnostic_removed_count'])
 
     def test_other_recognized_credit_changes_remain_visible_after_only_local_caption_removal(self):
-        commons = attribution_html({'source': 'wikimedia_commons', 'author': 'Synthetic Author A',
-            'license': 'CC BY 4.0', 'source_url': 'https://commons.wikimedia.org/wiki/File:Synthetic.jpg',
-            'license_url': 'https://creativecommons.org/licenses/by/4.0/'})
+        commons = historical_commons_credit('Synthetic Author A')
         self.saved['content'] += commons
         self.target['repair_expected_prose_sha256'] = diagnostic.digest(article_prose_text(self.saved['content']))
         result = self.compare(self.credit, body=self.saved['content'].replace('Synthetic Author A', 'Synthetic Author B'))
@@ -166,7 +178,7 @@ class CommonsCreditDiagnosticTests(unittest.TestCase):
 
     def test_two_changed_commons_plus_one_local_reproduces_one_retained_local_shape(self):
         changed = self.credit.replace('https://', 'http://')
-        local = attribution_html({'source': 'local_editorial'})
+        local = HISTORICAL_LOCAL_CREDIT
         result = self.compare(changed * 2 + local)
         self.assertEqual(1, result['actual_known_local_credits']['candidate_count'])
         self.assertEqual(1, result['actual_known_local_credits']['current_contract_credit_count'])
@@ -263,7 +275,7 @@ class TargetReadbackTests(unittest.TestCase):
     def test_real_get_path_reads_only_two_pinned_receipts_and_reports_sanitized_differences(self):
         drafts, targets = fixture()
         live = {draft['media_id']: copy.deepcopy(draft['articles']) for draft in drafts}
-        credit = attribution_html({'source': 'local_editorial'}).replace(' data-editorial-credit="1"', '')
+        credit = HISTORICAL_LOCAL_CREDIT.replace(' data-editorial-credit="1"', '')
         for group in targets:
             live[drafts[group-1]['media_id']][1]['content'] += image_html('https://mmbiz.qpic.cn/PRIVATE/0') + credit
         transport = Mock()

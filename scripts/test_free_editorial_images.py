@@ -11,7 +11,7 @@ import unittest
 from unittest.mock import patch
 
 from PIL import Image, ImageDraw
-from requests.exceptions import SSLError
+from requests.exceptions import HTTPError, SSLError
 
 import free_editorial_images as media
 
@@ -63,7 +63,7 @@ def picture(seed=1, size=(960, 600), image_format="PNG"):
     return result.getvalue()
 
 
-def page(identifier=1, *, license_name="CC BY 4.0", license_url="https://creativecommons.org/licenses/by/4.0/", author="Example Author"):
+def page(identifier=1, *, license_name="CC0 1.0", license_url="https://creativecommons.org/publicdomain/zero/1.0/", author="Example Author"):
     return {"pageid": identifier, "imageinfo": [{
         "mime": "image/png", "width": 960, "height": 600,
         "url": f"https://upload.wikimedia.org/wikipedia/commons/a/ab/Photo{identifier}.png",
@@ -104,9 +104,12 @@ class EditorialImagesTest(unittest.TestCase):
         self.root = Path(self.directory.name)
         self.target = self.root / "image.jpg"
         self.reset_provider()
+        self.stock_patch = patch.object(media, "_stock_candidates", return_value=[])
+        self.stock_patch.start()
+        self.addCleanup(self.stock_patch.stop)
 
     def reset_provider(self):
-        for name in ("_SEARCH_CACHE", "_USED", "_SELECTIONS", "_BATCH_URL_OWNERS", "_BATCH_CONTENT_OWNERS", "_LOADED_SELECTION_CACHES"):
+        for name in ("_SEARCH_CACHE", "_USED", "_SELECTIONS", "_BATCH_URL_OWNERS", "_BATCH_CONTENT_OWNERS", "_LOADED_SELECTION_CACHES", "_STOCK_COOLDOWNS"):
             getattr(media, name).clear()
         media._COOLDOWN_UNTIL = 0.0
         media._COOLDOWN_REASON = ""
@@ -121,7 +124,7 @@ class EditorialImagesTest(unittest.TestCase):
         session = Session([results(page()), download_response()])
         path, info = self.run_provider(session, "私密报告 未公开客户名字 2026 芯片需求")
         self.assertEqual(info["source"], "wikimedia_commons")
-        self.assertEqual(info["license"], "CC BY 4.0")
+        self.assertEqual(info["license"], "CC0 1.0")
         self.assertEqual(info["author"], "Example Author")
         with Image.open(path) as image:
             self.assertEqual(image.size, (1200, 675))
@@ -141,7 +144,7 @@ class EditorialImagesTest(unittest.TestCase):
             self.run_provider(session, title)
             query = session.calls[0][1]["params"]["gsrsearch"]
             self.assertEqual(query.count("incategory:"), 1)
-            self.assertIn('incategory:"CC-Zero|CC-BY-2.0|CC-BY-2.5|CC-BY-3.0|CC-BY-4.0"', query)
+            self.assertIn('incategory:"CC-Zero"', query)
             self.assertNotIn(" OR ", query)
             self.assertNotIn("CC-BY-SA", query)
             self.assertNotIn("2027", query)
@@ -298,11 +301,12 @@ class EditorialImagesTest(unittest.TestCase):
     def test_cc0_allowed_and_by_without_author_rejected(self):
         cc0 = page(license_name="CC0", license_url="http://creativecommons.org/publicdomain/zero/1.0/", author="")
         self.assertEqual(media._license(cc0["imageinfo"][0])["license"], "CC0 1.0")
-        self.assertIsNone(media._license(page(author="")["imageinfo"][0]))
+        self.assertIsNone(media._license(page(author="", license_name="CC BY 4.0",
+            license_url="https://creativecommons.org/licenses/by/4.0/")["imageinfo"][0]))
 
     def test_conflicting_license_fields_are_rejected(self):
         for key, value in [("License", "cc-by-nc-4.0"), ("License", "cc-by-sa-4.0"),
-                           ("License", "cc0"), ("UsageTerms", "Attribution-NonCommercial 4.0"),
+                           ("License", "cc-by-4.0"), ("UsageTerms", "Attribution-NonCommercial 4.0"),
                            ("UsageTerms", "CC BY-ND 4.0")]:
             with self.subTest(key=key, value=value):
                 info = page()["imageinfo"][0]
@@ -314,19 +318,10 @@ class EditorialImagesTest(unittest.TestCase):
         session = Session([results(item), download_response()])
         _, info = self.run_provider(session)
         self.assertEqual(info["author"], "A & B")
-        rendered = media.attribution_html(info)
-        self.assertIn("A &amp; B", rendered)
-        self.assertIn("creativecommons.org/licenses/by/4.0/", rendered)
-        self.assertNotIn("script", rendered)
-        self.assertNotIn("bad.test", rendered)
-        self.assertIn("非报告原图", rendered)
-        self.assertIn('data-editorial-credit="1"', rendered)
-        self.assertIn('图片来源：https://commons.wikimedia.org/wiki/File:', rendered)
-        self.assertIn('许可：https://creativecommons.org/licenses/by/4.0/', rendered)
-        self.assertNotIn('<a ', rendered)
-        self.assertIn('font-size:11px', rendered)
-        self.assertIn('word-break:break-all', rendered)
-        self.assertIn('overflow-wrap:anywhere', rendered)
+        self.assertEqual(info["caption"], "")
+        self.assertEqual(media.attribution_html(info), "")
+        self.assertIn("commons.wikimedia.org/wiki/File:", info["source_url"])
+        self.assertNotIn("script", info["author"])
 
     def test_rejects_external_or_private_source_urls(self):
         for url in ("http://upload.wikimedia.org/a.png", "https://127.0.0.1/a.png",
@@ -602,11 +597,8 @@ class EditorialImagesTest(unittest.TestCase):
 
     def test_local_attribution_does_not_imply_photo_or_external_license(self):
         _, info = media.bundled_fallback_image(self.target, "芯片")
-        rendered = media.attribution_html(info)
-        self.assertIn("原创插画", rendered)
-        self.assertIn("非实拍或数据图", rendered)
-        self.assertIn('data-editorial-credit="1"', rendered)
-        self.assertNotIn("href=", rendered)
+        self.assertEqual(info["caption"], "")
+        self.assertEqual(media.attribution_html(info), "")
 
     def test_smoke_report_does_not_claim_local_art_as_commons_acceptance(self):
         output = self.root / "smoke"
@@ -634,7 +626,7 @@ class EditorialImagesTest(unittest.TestCase):
         workflow = Path(__file__).resolve().parents[1] / ".github/workflows/editorial-image-provider-smoke.yml"
         text = workflow.read_text()
         self.assertIn("if: github.event_name == 'workflow_dispatch'", text)
-        self.assertIn("--require-commons", text)
+        self.assertIn("--require-stock", text)
         self.assertIn("contents: read", text)
         self.assertIn("persist-credentials: false", text)
         self.assertNotIn("schedule:", text)
@@ -642,6 +634,171 @@ class EditorialImagesTest(unittest.TestCase):
         contract = text.split("  public-provider-canary:", 1)[0]
         self.assertNotIn("--smoke-dir", contract)
         self.assertIn("scripts/test_free_editorial_images.py", contract)
+
+
+class StockImagesTest(unittest.TestCase):
+    reset_provider = EditorialImagesTest.reset_provider
+    run_provider = EditorialImagesTest.run_provider
+
+    def setUp(self):
+        self.directory = tempfile.TemporaryDirectory()
+        self.addCleanup(self.directory.cleanup)
+        self.root = Path(self.directory.name)
+        self.target = self.root / "image.jpg"
+        self.reset_provider()
+        self.photos = [p for p in media._stock_catalog() if p["topic"] == "technology"][:3]
+        self.stock_patch = patch.object(media, "_stock_candidates", return_value=self.photos)
+        self.stock_patch.start()
+        self.addCleanup(self.stock_patch.stop)
+
+    def test_catalog_has_reviewed_free_photo_pools_for_all_topics(self):
+        catalog = media._stock_catalog()
+        raw = json.loads(media.STOCK_CATALOG_PATH.read_text())["photos"]
+        self.assertEqual(len(catalog), len(raw))
+        self.assertEqual(len({p["asset_url"] for p in catalog}), len(catalog))
+        self.assertEqual(len({(p["source"], p["asset_id"]) for p in catalog}), len(catalog))
+        for topic, _, _ in media._TOPICS:
+            self.assertGreaterEqual(sum(p["topic"] == topic for p in catalog), 3)
+        self.assertEqual({p["source"] for p in catalog}, {"unsplash", "pexels"})
+
+    def test_curated_photo_precedes_commons_without_transmitting_title(self):
+        session = Session([download_response()])
+        _, info = self.run_provider(session, "私密半导体报告 客户甲")
+        self.assertEqual(info["source"], "unsplash")
+        self.assertEqual(info["caption"], "")
+        self.assertEqual(media.attribution_html(info), "")
+        self.assertEqual(session.calls[0][0], self.photos[0]["asset_url"])
+        self.assertEqual(len(session.calls), 1)
+        self.assertNotIn("私密", json.dumps(session.calls, ensure_ascii=False))
+        self.assertNotIn("api.unsplash", json.dumps(session.calls))
+
+    def test_stock_slot_stays_identical_on_retry(self):
+        session = Session([download_response()])
+        _, first = self.run_provider(session)
+        original = self.target.read_bytes()
+        _, second = self.run_provider(session)
+        self.assertEqual(first, second)
+        self.assertEqual(original, self.target.read_bytes())
+        self.assertEqual(len(session.calls), 1)
+
+    def test_stock_urls_are_unique_across_articles_and_slots(self):
+        session = Session([download_response(i) for i in (1, 2, 3)])
+        photos = [self.run_provider(session, title, index=index)[1]
+                  for title, index in (("芯片一", 1), ("芯片一", 2), ("芯片二", 1))]
+        self.assertEqual(len({p["sha256"] for p in photos}), 3)
+        self.assertEqual(len({p["asset_url_sha256"] for p in photos}), 3)
+        self.assertEqual(len(session.calls), 3)
+
+    def test_stock_content_alias_is_skipped_for_next_distinct_photo(self):
+        session = Session([download_response(1), download_response(1), download_response(2)])
+        _, first = self.run_provider(session, "芯片一")
+        _, second = self.run_provider(session, "芯片二")
+        self.assertNotEqual(first["sha256"], second["sha256"])
+        self.assertEqual(second["asset_id"], self.photos[2]["asset_id"])
+        self.assertEqual(len(session.calls), 3)
+
+    def test_stock_cache_and_claims_survive_process_restart(self):
+        cache = self.root / "cache"
+        _, first = self.run_provider(Session([download_response(1)]), "芯片一", cache_dir=cache)
+        self.reset_provider()
+        offline = Session()
+        _, retried = self.run_provider(offline, "芯片一", cache_dir=cache)
+        self.assertEqual(retried, first)
+        self.assertEqual(offline.calls, [])
+        resumed = Session([download_response(2)])
+        _, second = self.run_provider(resumed, "芯片二", cache_dir=cache)
+        self.assertNotEqual(second["sha256"], first["sha256"])
+        self.assertEqual(resumed.calls[0][0], self.photos[1]["asset_url"])
+
+    def test_policy_invalidates_old_local_selection(self):
+        cache = self.root / "cache"
+        with patch.object(media, "_stock_candidates", return_value=[]):
+            _, first = self.run_provider(Session([results()]), cache_dir=cache)
+        self.assertEqual(first["source"], "local_editorial")
+        record_path = next(cache.glob("selection-*.json"))
+        record = json.loads(record_path.read_text())
+        record["schema"] = 1
+        record.pop("policy_version")
+        record_path.write_text(json.dumps(record))
+        self.reset_provider()
+        _, current = self.run_provider(Session([download_response()]), cache_dir=cache)
+        self.assertEqual(current["source"], "unsplash")
+        self.assertEqual(current["caption"], "")
+
+    def test_cached_stock_license_must_still_match_reviewed_catalog(self):
+        cache = self.root / "cache"
+        self.run_provider(Session([download_response()]), cache_dir=cache)
+        record = json.loads(next(cache.glob("selection-*.json")).read_text())
+        self.assertTrue(media._valid_selection_record(record))
+        record["metadata"]["license"] = "CC BY 4.0"
+        self.assertFalse(media._valid_selection_record(record))
+        record["metadata"]["source"] = "wikimedia_commons"
+        record["metadata"]["license_url"] = "https://creativecommons.org/licenses/by/4.0/"
+        record["metadata"]["source_url"] = "https://commons.wikimedia.org/wiki/File:Old.jpg"
+        self.assertFalse(media._valid_selection_record(record))
+
+    def test_catalog_rejects_api_assets_and_unreviewed_hosts(self):
+        for field, value in (("acquisition", "unsplash-api"), ("asset_url", "https://127.0.0.1/x.jpg"),
+                             ("asset_url", "https://images.unsplash.com.evil.test/photo-1-ab"),
+                             ("license", "Unsplash+ License"), ("source_url", "https://unsplash.com/"),
+                             ("author", ""), ("verified_on", "")):
+            with self.subTest(field=field):
+                self.assertIsNone(media._stock_photo(dict(self.photos[0], **{field: value})))
+
+    def test_missing_stock_photo_does_not_cool_down_whole_library(self):
+        for status in (404, 410):
+            self.reset_provider()
+            failure = HTTPError("missing asset")
+            failure.response = Response(status=status)
+            session = Session([failure, download_response()])
+            _, info = self.run_provider(session)
+            self.assertEqual(info["source"], "unsplash")
+            self.assertEqual(info["asset_id"], self.photos[1]["asset_id"])
+            self.assertEqual(media._STOCK_COOLDOWNS, {})
+            self.assertEqual(len(session.calls), 2)
+
+    def test_stock_service_failure_still_attempts_cc0_photo(self):
+        session = Session([SSLError("failed"), results(page()), download_response()])
+        _, info = self.run_provider(session)
+        self.assertEqual(info["source"], "wikimedia_commons")
+        self.assertGreater(media._STOCK_COOLDOWNS["unsplash"], media.time.monotonic())
+        self.assertEqual(len(session.calls), 3)
+
+    def test_commons_cooldown_does_not_block_stock(self):
+        media._COOLDOWN_UNTIL = media.time.monotonic() + 300
+        _, info = self.run_provider(Session([download_response()]))
+        self.assertEqual(info["source"], "unsplash")
+
+    def test_stock_invalid_responses_are_bounded_before_cc0_fallback(self):
+        session = Session([Response(b"broken", content_type="image/png") for _ in range(3)]
+                          + [results(page()), download_response()])
+        _, info = self.run_provider(session)
+        self.assertEqual(info["source"], "wikimedia_commons")
+        self.assertEqual(len(session.calls), 5)
+
+    def test_no_stock_or_cc0_uses_captionless_offline_final_fallback(self):
+        session = Session([Response(b"broken", content_type="image/png") for _ in range(3)] + [results()])
+        _, info = self.run_provider(session)
+        self.assertEqual(info["source"], "local_editorial")
+        self.assertEqual(info["caption"], "")
+        self.assertEqual(len(session.calls), 4)
+
+    def test_require_stock_canary_checks_seven_topics_and_empty_captions(self):
+        self.stock_patch.stop()
+        output = self.root / "smoke"
+        session = Session([download_response(i) for i in range(7)])
+        with patch.object(media.requests.Session, "get", side_effect=session.get), \
+             patch("sys.argv", ["free_editorial_images.py", "--smoke-dir", str(output), "--require-stock"]), \
+             contextlib.redirect_stdout(io.StringIO()):
+            self.assertEqual(media._smoke_main(), 0)
+        report = json.loads((output / "provider-report.json").read_text())
+        self.assertTrue(report["stock_download_verified"])
+        self.assertEqual(report["image_count"], 7)
+        self.assertEqual(report["network_requests"], 7)
+        self.assertEqual({p["topic"] for p in report["samples"]}, {t[0] for t in media._TOPICS})
+        self.assertTrue(all(p["dimensions"] == [1200, 675] and p["caption_empty"] for p in report["samples"]))
+        self.assertEqual((output / "caption.html").read_text(), "")
+        self.assertEqual((report["wechat_writes"], report["publication_writes"], report["model_calls"]), (0, 0, 0))
 
 
 if __name__ == "__main__":

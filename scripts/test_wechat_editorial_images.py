@@ -12,7 +12,7 @@ class EditorialIntegrationTests(unittest.TestCase):
     def args(self):
         return SimpleNamespace(author=portal.AUTHOR,body_hook='',brand=portal.BRAND,content_source_url='',disclaimer=portal.BOTTOM_DISCLAIMER,dry_run=False,image_upload_delay_seconds=0,max_body_chars=1200,max_content_bytes=18000,max_content_chars=19500,max_inline_images=3,min_inline_images=3,timeout=30)
 
-    def test_both_real_builders_accept_free_fallback_and_include_credits(self):
+    def test_both_real_builders_accept_free_fallback_without_annotations(self):
         for module, filename in ((portal,'translated.md'),(xhs,'wechat_article.md')):
             with self.subTest(builder=module.__name__), tempfile.TemporaryDirectory() as temp:
                 root=Path(temp);report=root/'GS-semiconductor';report.mkdir()
@@ -27,17 +27,43 @@ class EditorialIntegrationTests(unittest.TestCase):
                     built=module.build_article(report,1,self.args(),object(),'token',root/'out','')
                 self.assertEqual(3,provider.call_count)
                 self.assertEqual(3,built['body_image_count'])
-                self.assertEqual(3,built['article']['content'].count('data-editorial-credit="1"'))
+                self.assertNotIn('data-editorial-credit',built['article']['content'])
+                self.assertNotIn('主题示意图',built['article']['content'])
                 self.assertNotIn('pollinations.ai',built['article']['content'])
                 self.assertEqual('good-cover',built['article']['thumb_media_id'])
 
-    def test_real_commons_credit_is_adjacent_to_its_only_image_and_html_escaped(self):
-        metadata={'source':'wikimedia_commons','author':'A <script>x</script>','license':'CC BY 4.0','license_url':'https://creativecommons.org/licenses/by/4.0/','source_url':'https://commons.wikimedia.org/wiki/File:Photo.jpg','caption':'配图'}
-        credit=attribution_html(metadata)
-        content,*_=portal.render_fitted_wechat_html('正文完整句子。\n\n第二段完整句子。','高盛：行业观察',portal.BRAND,{},[{'url':'https://mmbiz.qpic.cn/mmbiz_jpg/example/0','token':'generic','attribution':credit}],'',portal.BOTTOM_DISCLAIMER,'','source.pdf',1200,19500,18000)
-        self.assertIn(credit,content)
-        self.assertNotIn('<script>',content)
-        self.assertIn('licenses/by/4.0',content)
-        self.assertEqual(1,content.count('data-editorial-credit="1"'))
+    def test_render_discards_cached_annotation_and_markdown_variants_preserves_data_sources(self):
+        variants=['主题示意图：Portal Suite 原创插画，非实拍或数据图。',
+                  '主題示意圖：Ｐｏｒｔａｌ Ｓｕｉｔｅ 原創插畫，非實拍或數據圖。',
+                  '<p><span>主题示意图：Portal Suite 原创插画，非实拍或数据图。</span></p>']
+        credit='<p class="image-credit" data-editorial-credit="1">'+variants[0]+'</p>'
+        for note in variants:
+            for reference in ('', '![报告图表](source.png)'):
+                with self.subTest(note=note, reference=bool(reference)):
+                    markdown='正文完整句子。\n\n'+reference+'\n\n'+note+'\n\n图表1：年度收入增长。\n\n数据来源：公司年报。'
+                    content,*_=portal.render_fitted_wechat_html(markdown,'高盛：行业观察',portal.BRAND,
+                        {'source.png':'https://mmbiz.qpic.cn/example/0'},
+                        [{'url':'https://mmbiz.qpic.cn/example/0','alt':'source.png','attribution':credit}],
+                        '',portal.BOTTOM_DISCLAIMER,'','source.pdf',1200,19500,18000)
+                    self.assertNotIn('原创插画',content);self.assertNotIn('原創插畫',content)
+                    self.assertNotIn('data-editorial-credit',content)
+                    self.assertIn('图表1：年度收入增长',content);self.assertIn('数据来源：公司年报',content)
+                    self.assertIn('Original report: source.pdf',content)
+
+    def test_cover_only_production_uses_photo_provider_in_both_builders(self):
+        for module, filename in ((portal,'translated.md'),(xhs,'wechat_article.md')):
+            with self.subTest(builder=module.__name__), tempfile.TemporaryDirectory() as temp:
+                root=Path(temp);report=root/'GS-semiconductor';report.mkdir()
+                (report/filename).write_text('# 高盛：半导体行业数据更新\n\n行业数据出现新的变化。')
+                (report/'status.json').write_text(json.dumps({'source_pdf':'GS-semiconductor.pdf'}))
+                (report/'translation_status.json').write_text(json.dumps({'source_pdf':'GS-semiconductor.pdf'}))
+                args=self.args();args.min_inline_images=0;args.max_inline_images=0
+                def download(_session,title,target,timeout,index=1,cache_dir=None):
+                    return bundled_fallback_image(target,title,index)
+                with patch.object(portal,'download_editorial_image',side_effect=download) as provider, \
+                     patch.object(module,'upload_cover_material',return_value='stock-cover'):
+                    built=module.build_article(report,1,args,object(),'token',root/'out','')
+                provider.assert_called_once();self.assertEqual(0,provider.call_args.kwargs['index'])
+                self.assertEqual(0,built['body_image_count']);self.assertEqual('stock-cover',built['article']['thumb_media_id'])
 
 if __name__=='__main__':unittest.main()
