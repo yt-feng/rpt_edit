@@ -350,12 +350,22 @@ def validate_landing_metadata(publication, *, final_url, metadata, h1s, download
     for key, values in metadata.items():
         normalized.setdefault(key.lower(), []).extend(values)
     metadata = normalized
-    dois = {value.strip().lower().removeprefix("https://doi.org/") for key in ("citation_doi", "dc.identifier.doi", "prism.doi")
-            for value in metadata.get(key, [])}
-    require(dois == {publication["doi"]}, "landing_doi_mismatch")
+    # The observed official issue pages expose a complete H1 and exact download
+    # link but no citation/DC/prism metadata. The exact DOI was already bound to
+    # this publisher-deposited resource path. Missing redundant tags are allowed;
+    # every tag which is present must still agree, including conflicting aliases.
+    doi_keys = ("citation_doi", "dc.identifier.doi", "prism.doi")
+    present_doi_keys = [key for key in doi_keys if key in metadata]
+    if present_doi_keys:
+        dois = {value.strip().lower().removeprefix("https://doi.org/")
+                for key in present_doi_keys for value in metadata[key]}
+        require(all(metadata[key] for key in present_doi_keys) and dois == {publication["doi"]}, "landing_doi_mismatch")
     known_titles = {title_key(value) for value in publication["title_variants"]}
-    observed_titles = metadata.get("citation_title", []) or metadata.get("dc.title", [])
-    require(observed_titles and all(title_key(value) in known_titles for value in observed_titles), "landing_title_mismatch")
+    present_title_keys = [key for key in ("citation_title", "dc.title") if key in metadata]
+    if present_title_keys:
+        observed_titles = [value for key in present_title_keys for value in metadata[key]]
+        require(all(metadata[key] for key in present_title_keys)
+                and all(title_key(value) in known_titles for value in observed_titles), "landing_title_mismatch")
     require(len(h1s) == 1 and title_key(h1s[0]) == title_key(publication["full_title"]), "landing_heading_mismatch")
     for value in metadata.get("citation_isbn", []):
         require(re.sub(r"[\s-]", "", value) == publication["isbn"], "landing_isbn_mismatch")

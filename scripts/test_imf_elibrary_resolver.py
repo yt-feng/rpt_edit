@@ -145,8 +145,9 @@ class ResolverTests(unittest.TestCase):
         metadata = {**self.metadata, "citation_title": ["Republic of Estonia"]}
         self.assertEqual(self.parse_landing(metadata=metadata), self.landing["pdf_href"])
 
-    def test_missing_conflicting_or_case_duplicated_doi_rejected(self):
-        for metadata in ({k: v for k, v in self.metadata.items() if k != "citation_doi"},
+    def test_conflicting_empty_or_case_duplicated_doi_rejected(self):
+        for metadata in ({**self.metadata, "citation_doi": []},
+                         {**self.metadata, "citation_doi": [""]},
                          {**self.metadata, "citation_doi": ["10.5089/9798229063074.029"]},
                          {**self.metadata, "CITATION_DOI": ["10.5089/9798229063074.029"]}):
             with self.assertRaises(r.ResolutionError):
@@ -196,6 +197,54 @@ class ResolverTests(unittest.TestCase):
             self.assertNotIn("SECRET", str(caught.exception))
         with self.assertRaises(r.ResolutionError):
             r.validate_landing_metadata({}, final_url="SECRET", metadata={}, h1s=[], download_hrefs=[])
+
+
+class ObservedLandingTests(unittest.TestCase):
+    def cases(self):
+        for name in ("estonia_cpi", "guidance"):
+            yield json.loads((FIXTURE.parent / (name + "_landing_observation.json")).read_text())
+
+    def validate(self, case, **changes):
+        args = {key: case["page"][key] for key in ("final_url", "metadata", "h1s", "download_hrefs")}
+        args.update(changes)
+        return r.validate_landing_metadata(case["publication"], **args)
+
+    def test_real_cloud_pages_without_citation_tags_keep_full_resource_and_heading_binding(self):
+        for case in self.cases():
+            self.assertEqual(case["page"]["landing_status"], 200)
+            self.assertEqual(set(case["page"]["metadata"]), {"canonical_url"})
+            self.assertEqual(self.validate(case), case["page"]["download_hrefs"][0])
+
+    def test_present_doi_title_isbn_or_canonical_conflicts_are_never_ignored(self):
+        for case in self.cases():
+            publication, metadata = case["publication"], case["page"]["metadata"]
+            changes = [(key, ["10.5089/9798229063074.029"]) for key in ("citation_doi", "dc.identifier.doi", "prism.doi")]
+            changes += [(key, ["Different Report"]) for key in ("citation_title", "dc.title")]
+            changes += [("citation_isbn", ["9798229063074"]), ("canonical_url", ["https://evil.invalid/report"])]
+            changes += [(key, []) for key in ("citation_doi", "dc.identifier.doi", "prism.doi", "citation_title", "dc.title")]
+            for key, value in changes:
+                with self.subTest(key=key, value=value), self.assertRaises(r.ResolutionError):
+                    self.validate(case, metadata={**metadata, key: value})
+            for extra in ({"dc.title": ["Different Report"]}, {"DC.TITLE": ["Different Report"]}):
+                with self.assertRaisesRegex(r.ResolutionError, "landing_title_mismatch"):
+                    self.validate(case, metadata={**metadata, "citation_title": [publication["full_title"]], **extra})
+
+    def test_missing_redundant_tags_never_allow_partial_duplicate_or_wrong_heading(self):
+        for case in self.cases():
+            for headings in ([], ["Different Report"], [case["publication"]["full_title"]] * 2,
+                             [case["publication"]["full_title"].split(":")[0].split(" ")[0]]):
+                with self.subTest(headings=headings), self.assertRaisesRegex(r.ResolutionError, "landing_heading_mismatch"):
+                    self.validate(case, h1s=headings)
+
+    def test_missing_tags_never_authorize_unobserved_or_different_edition_pdf(self):
+        for case in self.cases():
+            page = case["page"]
+            wrong = page["download_hrefs"][0].replace("-en.pdf", "-es.pdf")
+            for hrefs in ([], [wrong], ["https://evil.invalid/other.pdf"]):
+                with self.assertRaises(r.ResolutionError):
+                    self.validate(case, download_hrefs=hrefs)
+            with self.assertRaisesRegex(r.ResolutionError, "landing_url_identity_mismatch"):
+                self.validate(case, final_url=page["final_url"].replace("-en.xml", "-es.xml"))
 
 
 class DeclaredOriginalLanguageTests(unittest.TestCase):
