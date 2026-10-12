@@ -8,6 +8,14 @@ name: Institution fetch test
 on:
   workflow_dispatch:
     inputs:
+      scope:
+        description: "Recent live publications, or the exact 17 previously reviewed IMF sources (live download only)"
+        required: false
+        type: choice
+        default: recent
+        options:
+          - recent
+          - imf-reviewed-20261012
       institutions:
         description: "Comma list or all (imf,worldbank,bis,oecd,adb,wef,unctad,wto,bruegel)"
         required: true
@@ -36,6 +44,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -47,23 +56,62 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Test institution PDF resolver
-        run: python scripts/test_fetch_institution_latest_pdfs.py
+        run: |
+          python scripts/test_fetch_institution_latest_pdfs.py
+          python scripts/test_imf_fetch_test_scope.py
+
+      - name: Set up official IMF download route
+        uses: ./.github/actions/setup-imf-browser
+        with:
+          institutions: ${{ github.event.inputs.institutions || 'all' }}
 
       - name: Fetch latest institution PDFs (test, no commit)
         env:
           PROXY_SUBSCRIPTION_URL: ${{ secrets.PROXY_SUBSCRIPTION_URL }}
+          IMF_PUBLIC_EVIDENCE_DIR: _fetch_test/imf-source-evidence
+          FETCH_INSTITUTIONS: ${{ github.event.inputs.institutions || 'all' }}
+          FETCH_SINCE_DAYS: ${{ github.event.inputs.since_days || '14' }}
+          FETCH_MAX_PER_INSTITUTION: ${{ github.event.inputs.max_per_institution || '2' }}
+          FETCH_SCOPE: ${{ github.event.inputs.scope || 'recent' }}
         run: |
           set -o pipefail
-          python scripts/fetch_institution_latest_pdfs.py \
-            --output-dir _fetch_test \
-            --pending-intake-path _fetch_test/imf-pending-intake.json \
-            --date "$(TZ=Asia/Shanghai date +%y%m%d)" \
-            --institutions "${{ github.event.inputs.institutions || 'all' }}" \
-            --since-days "${{ github.event.inputs.since_days || '14' }}" \
-            --max-per-institution "${{ github.event.inputs.max_per_institution || '2' }}" \
-            --archive-path "_fetch_test/test_archive.jsonl" \
-            --seen-state-path "_fetch_test/test_seen.json" \
-            2>&1 | tee fetch_test.log
+          fetch_date="$(TZ=Asia/Shanghai date +%y%m%d)"
+          fetch_runner=(python)
+          if [ "${IMF_CLOUD_BROWSER_ENABLED:-}" = true ]; then
+            fetch_runner=(xvfb-run --auto-servernum python)
+          fi
+          case "$FETCH_SCOPE" in
+            recent) ;;
+            imf-reviewed-20261012)
+              test "$FETCH_INSTITUTIONS" = imf
+              ;;
+            *) echo '::error::Unknown institution fetch scope'; exit 1 ;;
+          esac
+          set +e
+          if [ "$FETCH_SCOPE" = imf-reviewed-20261012 ]; then
+            "${fetch_runner[@]}" scripts/imf_fetch_test_scope.py --date "$fetch_date" \
+              2>&1 | tee fetch_test.log
+            statuses=("${PIPESTATUS[@]}")
+          else
+            "${fetch_runner[@]}" scripts/fetch_institution_latest_pdfs.py \
+              --output-dir _fetch_test \
+              --pending-intake-path _fetch_test/imf-pending-intake.json \
+              --date "$fetch_date" \
+              --institutions "$FETCH_INSTITUTIONS" \
+              --since-days "$FETCH_SINCE_DAYS" \
+              --max-per-institution "$FETCH_MAX_PER_INSTITUTION" \
+              --archive-path "_fetch_test/test_archive.jsonl" \
+              --seen-state-path "_fetch_test/test_seen.json" \
+              2>&1 | tee fetch_test.log
+            statuses=("${PIPESTATUS[@]}")
+          fi
+          set -e
+          python scripts/institution_source_health.py \
+            --producer-exit-code "${statuses[0]}" --log-exit-code "${statuses[1]}" \
+            --manifest _fetch_test/institution_run_manifest.json \
+            --date-folder "$fetch_date" --institutions "$FETCH_INSTITUTIONS" \
+            --github-output _fetch_test/source-health.txt
+          grep -qx 'source_health=healthy' _fetch_test/source-health.txt
 
       - name: Show what was fetched
         run: |
@@ -104,4 +152,10 @@ jobs:
             _fetch_test/institution_run_manifest.json
             _fetch_test/imf-pending-intake.json
             _fetch_test/test_archive.jsonl
+            _fetch_test/source-health.txt
+            _fetch_test/scope-before.json
+            _fetch_test/scope-discovery.json
+            _fetch_test/exact-scope-acceptance.json
+            _fetch_test/imf-source-evidence/*.json
+            _fetch_test/*.pdf
           if-no-files-found: warn

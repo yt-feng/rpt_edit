@@ -1,0 +1,98 @@
+{
+  "run_id": 38287911712,
+  "artifact_sha256": "354f3f1384cdd0b609c8315487b7d79da61ee12739d9a1c6aa5d1507b4cfabc8",
+  "observations": [
+    {
+      "publication": {
+        "source_guid": "e2f3ec32d2b9a070285036ad5c7fad440ec4689fc98a1a2e8b47a235b536",
+        "source_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/08/chile-technical-assistance-report-government-finance-statistics-mission-may-18-29-2026-580326",
+        "source_title": "Chile: Technical Assistance Report-Government Finance Statistics Mission (May 18-29, 2026)",
+        "doi": "10.5089/9798229064521.019",
+        "isbn": "9798229064521",
+        "title": "Chile",
+        "subtitle": "Technical Assistance Report-Government Finance Statistics Mission (May 18-29, 2026)",
+        "full_title": "Chile: Technical Assistance Report-Government Finance Statistics Mission (May 18-29, 2026)",
+        "title_variants": [
+          "Chile",
+          "Chile: Technical Assistance Report-Government Finance Statistics Mission (May 18-29, 2026)"
+        ],
+        "series": [
+          "Technical Assistance Reports"
+        ],
+        "year": "2026",
+        "issue": "083",
+        "language": "en",
+        "original_language": "es",
+        "landing_url": "https://elibrary.imf.org/view/journals/019/2026/083/019.2026.issue-083-en.xml?cid=580326-com-dsp-crossref",
+        "pdf_url_candidates": [],
+        "identity_sha256": "9c87cf5318f5d6b7a29619fc11b59fe0cb2b446f4a42fed1d24e69e4e0a1b6c5",
+        "preview_sha256": "55db6c4d8b161ec081cb6b3494e0027838a375901b948675a48fa61aceacbc53",
+        "crossref_sha256": "369d9131f384554aa0081b8bca092d9e14f1b4877ce2f57a9f5083ebbefcd1ee",
+        "pdf_verified": false
+      },
+      "page": {
+        "final_url": "https://www.elibrary.imf.org/view/journals/019/2026/083/019.2026.issue-083-es.xml",
+        "landing_status": 200,
+        "ready": true,
+        "h1s": [
+          "\n\t\t\t\t\n\t\t\t\n\t\t                \tChile: Informe de asistencia técnica — Informe sobre la misión de asistencia técnica en estadísticas de las finanzas públicas (18 al 29 de mayo de 2026)\n\t\t                \n\t\t\n\t\t\t"
+        ],
+        "metadata": {},
+        "doi_links": [
+          "https://doi.org/10.5089/9798229062176.019"
+        ],
+        "download_hrefs": [
+          "https://www.elibrary.imf.org/downloadpdf/view/journals/019/2026/083/019.2026.issue-083-es.pdf"
+        ],
+        "visible_body": "Loading [MathJax]/extensions/MathZoom.js\nJump to Content\nThis site uses cookies, tags, and tracking settings to store information that help give you the very best browsing experience.\nDismiss this warning\nSign in\nIMF Sites\nBROWSE TOPICS COUNTRIES SERIES RESOURCES ABOUT Search\nMetrics\n\n \n\nSeries: Books and Analytical Papers, Technical Assistance Reports\nVolume 2026: Issue 083\nSearch\n Issue  Journal\nPublisher: International Monetary Fund\nISBN: 9798229062176\nISSN: 3006-4120\nPrevious Issue\nChile: Informe de asistencia técnica — Informe sobre la misión de asistencia técnica en estadísticas de las finanzas públicas (18 al 29 de mayo de 2026)\nAuthor: International Monetary Fund. Statistics Dept.\nPublication Date: 09 Oct 2026\nVolume/Issue: Volume 2026: Issue 083\nLanguage: Spanish\nPages: 54\nDOI: https://doi.org/10.5089/9798229062176.019\nDownload PDF (329.6 KB)",
+        "body_truncated": false
+      }
+    },
+    {
+      "publication": {
+        "source_guid": "8b1786abc3855de0b42c4cf05b6c3444e7656c02333ae47620174ecd1594",
+        "source_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/08/chile-report-on-the-technical-assistance-mission-on-government-finance-statistics-580332",
+        "source_title": "Chile: Report on the technical assistance mission on government finance statistics",
+        "doi": "10.5089/9798229062657.029",
+        "isbn": "9798229062657",
+        "title": "Chile",
+        "subtitle": "Report on the technical assistance mission on government finance statistics",
+        "full_title": "Chile: Report on the technical assistance mission on government finance statistics",
+        "title_variants": [
+          "Chile",
+          "Chile: Report on the technical assistance mission on government finance statistics"
+        ],
+        "series": [
+          "High-Level Summary Technical Assistance Reports"
+        ],
+        "year": "2026",
+        "issue": "071",
+        "language": "en",
+        "original_language": "es",
+        "landing_url": "https://elibrary.imf.org/view/journals/029/2026/071/029.2026.issue-071-en.xml?cid=580332-com-dsp-crossref",
+        "pdf_url_candidates": [],
+        "identity_sha256": "297244411e74793d94c9a3c2fed18374fc78a2e88ffea20bf5452e019c356baf",
+        "preview_sha256": "ae2146a7121feb20b23ddb92ddd7a21c49349a08ce9ccfb89e9674078d6402c2",
+        "crossref_sha256": "f5754caf9f802c70062e9b2631c9d5c9eb45c0947f198e08cb67477bec66e926",
+        "pdf_verified": false
+      },
+      "page": {
+        "final_url": "https://www.elibrary.imf.org/view/journals/029/2026/071/029.2026.issue-071-es.xml",
+        "landing_status": 200,
+        "ready": true,
+        "h1s": [
+          "\n\t\t\t\t\n\t\t\t\n\t\t                \tChile: Reporte sobre la misión de asistencia técnica en estadísticas de finanzas públicas\n\t\t                \n\t\t\n\t\t\t"
+        ],
+        "metadata": {},
+        "doi_links": [
+          "https://doi.org/10.5089/9798229063074.029"
+        ],
+        "download_hrefs": [
+          "https://www.elibrary.imf.org/downloadpdf/view/journals/029/2026/071/029.2026.issue-071-es.pdf"
+        ],
+        "visible_body": "Loading [MathJax]/extensions/MathZoom.js\nJump to Content\nThis site uses cookies, tags, and tracking settings to store information that help give you the very best browsing experience.\nDismiss this warning\nSign in\nIMF Sites\nBROWSE TOPICS COUNTRIES SERIES RESOURCES ABOUT Search\nMetrics\n\n \n\nSeries: Books and Analytical Papers, High-Level Summary Technical Assistance Reports\nVolume 2026: Issue 071\nSearch\n Issue  Journal\nPublisher: International Monetary Fund\nISBN: 9798229063074\nISSN: 3079-4854\nPrevious Issue\nNext Issue\nChile: Reporte sobre la misión de asistencia técnica en estadísticas de finanzas públicas\nAuthors: Bruno Rocha and Fernando Cardoso Ferraz\nPublication Date: 09 Oct 2026\nVolume/Issue: Volume 2026: Issue 071\nLanguage: Spanish\nPages: 5\nDOI: https://doi.org/10.5089/9798229063074.029\nDownload PDF (258.5 KB)",
+        "body_truncated": false
+      }
+    }
+  ]
+}

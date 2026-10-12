@@ -1,0 +1,57 @@
+{
+  "provenance": {
+    "preview_http_status": 200,
+    "preview_bytes": 25029,
+    "preview_sha256": "08d7c965a755357c616c3987634bcb52c786c833802cf6351242867d741bda48",
+    "crossref_http_status": 200,
+    "crossref_bytes": 2392,
+    "crossref_sha256": "79deaf2800a94e9a0fb7ffeffa5942acfb968defae77be47fd1dc38ee17eee51",
+    "note": "Minimal markup preserving actual observed element types, field values and Description prefix; Description prose and unrelated navigation omitted. Full public preview and Crossref responses remain in task evidence. This is not an archived eLibrary landing HTML."
+  },
+  "item": {
+    "title": "Chile: Report on the technical assistance mission on government finance statistics",
+    "source_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/08/chile-report-on-the-technical-assistance-mission-on-government-finance-statistics-580332",
+    "guid": "8b1786abc3855de0b42c4cf05b6c3444e7656c02333ae47620174ecd1594",
+    "date": "2026-10-09T21:00:00+00:00",
+    "pdf_candidates": [
+      "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026071.pdf",
+      "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026071-source-pdf.pdf"
+    ],
+    "scrape_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/08/chile-report-on-the-technical-assistance-mission-on-government-finance-statistics-580332",
+    "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/08/chile-report-on-the-technical-assistance-mission-on-government-finance-statistics-580332"
+  },
+  "preview_excerpt": "<title>Chile: Report on the technical assistance mission on government finance statistics</title>\n<link rel=\"canonical\" href=\"https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/08/chile-report-on-the-technical-assistance-mission-on-government-finance-statistics-580332\">\n<meta name=\"Series\" content=\"High-Level Summary Technical Assistance Reports\">\n<meta name=\"Description\" content=\"[Please note this report is only available in Spanish]\">\n<h1>High-Level Summary Technical Assistance Reports</h1>\n<a href=\"https://doi.org/10.5089/9798229062657.029\">DOI</a>\n<p>Volume: 2026</p><p>Issue: 071</p><p>ISBN: 9798229062657</p>",
+  "crossref": {
+    "status": "ok",
+    "message-type": "work",
+    "message": {
+      "DOI": "10.5089/9798229062657.029",
+      "publisher": "International Monetary Fund (IMF)",
+      "title": [
+        "Chile"
+      ],
+      "subtitle": [
+        "Report on the technical assistance mission on government finance statistics"
+      ],
+      "container-title": [
+        "High-Level Summary Technical Assistance Reports"
+      ],
+      "volume": "2026",
+      "issue": "071",
+      "published": {
+        "date-parts": [
+          [
+            2026,
+            10
+          ]
+        ]
+      },
+      "language": "en",
+      "resource": {
+        "primary": {
+          "URL": "https://elibrary.imf.org/view/journals/029/2026/071/029.2026.issue-071-en.xml?cid=580332-com-dsp-crossref"
+        }
+      }
+    }
+  }
+}

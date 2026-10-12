@@ -1,0 +1,50 @@
+{
+  "accepted": false,
+  "kind": "public_landing_observation",
+  "page": {
+    "download_hrefs": [
+      "https://www.elibrary.imf.org/downloadpdf/view/journals/019/2026/082/019.2026.issue-082-en.pdf"
+    ],
+    "final_url": "https://www.elibrary.imf.org/view/journals/019/2026/082/019.2026.issue-082-en.xml?cid=580315-com-dsp-crossref",
+    "h1s": [
+      "\n\t\t\t\t\n\t\t\t\n\t\t                \tRepublic of Estonia: Technical Assistance Report-Report on Consumer Price Index (January 12-16, 2026)\n\t\t                \n\t\t\n\t\t\t"
+    ],
+    "landing_status": 200,
+    "metadata": {
+      "canonical_url": [
+        "https://www.elibrary.imf.org/view/journals/019/2026/082/019.2026.issue-082-en.xml"
+      ]
+    }
+  },
+  "publication": {
+    "crossref_sha256": "1f1f739ca0bbf49ba93bf1b313421254d279c517308aab37a58db47b9f62f543",
+    "doi": "10.5089/9798229063937.019",
+    "full_title": "Republic of Estonia: Technical Assistance Report-Report on Consumer Price Index (January 12-16, 2026)",
+    "identity_sha256": "1df76a3844913494330f94e14ff4816d12471d7a9affc751c260565f2f5473f8",
+    "isbn": "9798229063937",
+    "issue": "082",
+    "landing_url": "https://elibrary.imf.org/view/journals/019/2026/082/019.2026.issue-082-en.xml?cid=580315-com-dsp-crossref",
+    "language": "en",
+    "series": [
+      "Technical Assistance Reports"
+    ],
+    "source_guid": "aadee42db10b64237313019c044ba4f794f85f1ea0e11ff7bd91d281efa4",
+    "source_title": "Republic of Estonia: Technical Assistance Report-Report on Consumer Price Index (January 12-16, 2026)",
+    "source_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/09/republic-of-estonia-technical-assistance-report-report-on-consumer-price-index-january-12-580315",
+    "subtitle": "Technical Assistance Report-Report on Consumer Price Index (January 12-16, 2026)",
+    "title": "Republic of Estonia",
+    "title_variants": [
+      "Republic of Estonia",
+      "Republic of Estonia: Technical Assistance Report-Report on Consumer Price Index (January 12-16, 2026)"
+    ],
+    "year": "2026"
+  },
+  "schema": 1,
+  "provenance": {
+    "run_id": 38285246721,
+    "artifact_zip_sha256": "0db403243008b1208da0a76c6ffe4198e7fa6a28b8fd520117f561701f4cfcbe",
+    "observation_file": "7fe70860f58da17163192c950faa0f46f2a676a5558ab711102f6353ee9ab389.json",
+    "observation_sha256": "32f656c60fceb72e00d2e6f4fa76ce93af852ee5d1dd4b4ad9ff6e9d4018a8d4",
+    "note": "Verbatim bounded public observation fields from the verified cloud artifact. This fixture proves page metadata and visible link observations only, not downloaded PDF bytes."
+  }
+}

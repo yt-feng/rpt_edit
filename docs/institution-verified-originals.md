@@ -29,7 +29,77 @@ represented by the explicit allowlist; the loader does not itself perform a huma
 identity review or fetch the review receipt. A valid cache read demonstrates the
 approved original's bytes, not a successful live source request.
 
-## Manifest contract
+## Live official downloads
+
+The institution production and fetch-test workflows install a pinned Linux-only
+browser and the existing subscription client when IMF is selected. The fetcher
+first resolves the exact indexed publication's DOI through Crossref, then visits
+the publisher-deposited eLibrary page using the working cloud route. It reads the
+page's actual download link and checks the publication identity before downloading.
+If the exact Crossref record returns 404, an English report may instead use an
+actual eLibrary link in its hash-bound official IMF preview. Its independently
+visible DOI, ISBN, full title, series, year and issue must all agree; this route
+records `official_source_preview` provenance rather than claiming Crossref success.
+For the two supported technical-assistance series, an explicit Spanish-only
+statement in the same IMF preview permits one original-language issue candidate
+only after the deposited English page actually returns 404. The Spanish page
+must independently identify its DOI, ISBN, series, year, issue, language, complete
+title, page count and actual PDF link. The PDF must match that complete title,
+edition and page count. `publisher_original_edition` provenance retains the English
+source DOI and the Spanish edition DOI separately; an unverified candidate is
+never accepted as a download.
+Fiscal Monitor flagship pages can omit DOI and ISBN metadata. For those pages
+only, the exact chapter title, number and publication month bind a complete
+Crossref catalog query restricted to IMF edited books for that month. Exactly
+one matching registration must agree with its separate exact-DOI response before
+its actual publisher resource URL can be used. `official_fiscal_chapter`
+provenance retains both catalog hashes and the source's chapter title. The
+publisher page and PDF must independently agree on the discovered DOI, book,
+chapter, period and page count.
+There is no fixed report URL, guessed journal identifier, exported browser session,
+or automatic challenge interaction in this path.
+
+The client is started lazily once per fetch batch. Connection checks can select
+among at most three strictly validated VLESS entries from the existing repository
+subscription; ordinary browser requests and PDF validation remain separate gates.
+Only the transient Linux runner uses this route. A missing or expired subscription,
+unsupported source identity, rejected page or invalid PDF keeps ordinary source
+fallbacks and durable pending intake active. It cannot mark a report as downloaded.
+
+Each successful live download records its official URLs, DOI, metadata identity,
+HTTP results, SHA-256, byte count and parsed page count in `imf_live_download`.
+The source-health contract verifies that complete proof group against the archive
+row. Live downloads can establish healthy source access; the reviewed private-cache
+path retains its separate proof and degraded-source rules below. Existing dependency
+holds and successful seen-state deduplication are checked before live downloads.
+
+IEO implementation plans use a separate ordinary HTTPS route before the browser.
+An isolated default HTTP session avoids inheriting discovery headers and cookies.
+Only an actual HTTP 403 permits one retry of the full official chain over the
+already selected, explicitly enabled cloud client; no new route is selected after
+a publication failure. Every response and PDF check applies on both attempts.
+The source's complete title identifies a unique evaluation in IEO's official
+directory, then an exact-title PDF in that evaluation's `Follow-up by the IMF`
+section. All three responses must be successful official URLs, and the PDF must
+contain the complete source title. The separate `imf_official_followup` receipt
+binds source identity, all page hashes, PDF bytes and parsed pages to the archive
+row. It cannot be mixed with browser or private-cache proofs. The source DOI is
+retained as preview provenance; it does not assert DOI registration or a DOI printed
+inside the downloaded PDF.
+
+For an isolated live retest of the original 17 sources, run **Institution fetch
+test** on the merged main commit with `scope=imf-reviewed-20261012` and
+`institutions=imf`. This choice fixes the retry and PDF bounds at 17 and uses the
+original admission metadata; the recent-mode lookback and cap inputs do not
+change this cohort. Default `scope=recent` retains the usual latest-publication
+test. The exact scope still performs current discovery and resolves fresh official
+metadata. It uses no private cache or reviewed download URL and makes no downstream
+publication or production-state writes. Its artifact includes
+`exact-scope-acceptance.json`; acceptance requires all 17 exact source identities,
+complete live receipts, healthy discovery, real PDF bytes and page counts, and
+unchanged production state. New PDF hashes may differ from the reviewed originals.
+
+## Reviewed cache manifest contract
 
 The UTF-8 JSON object has exactly `schema` (integer `1`), `institution` (`imf`),
 `frozen_pending_sha256` and `records` (1–100 entries, no duplicate identities).

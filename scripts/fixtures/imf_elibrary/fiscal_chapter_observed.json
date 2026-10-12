@@ -1,0 +1,321 @@
+{
+  "provenance": {
+    "retained": "Actual public identity fields; unrelated Crossref fields and preview body omitted",
+    "original_sha256": {
+      "preview.html": "f99c04912044c59430b2703db95751ae8b9a03e031b5bac69bc61ac200fc476b",
+      "complete-book-search.json": "74bfc630b43c902b20276c059bec341c043c9b09f6060e7c405665b1a6fd907c",
+      "observed-book-crossref.json": "4d212b5110f4b220596d483b93694dae99050d2d59280f8feee4f20223f63dd4"
+    },
+    "landing_observation": {
+      "run_id": 38290285415,
+      "original_sha256": "17455c2c2e7e693feb05be9eb81227e333bdabd99cc9af138f35884f467a731f"
+    }
+  },
+  "source_item": {
+    "title": "Taxing Better to Boost Growth",
+    "source_url": "https://www.imf.org/en/publications/fm/issues/2026/10/05/fiscal-monitor-october-2026",
+    "guid": "17cd691fccecd82d2053d7d8414c2539ebf1f2f92917bc0977fa97f84ace",
+    "date": "2026-10-05T18:00:00+00:00",
+    "pdf_candidates": [],
+    "scrape_url": "https://www.imf.org/en/publications/fm/issues/2026/10/05/fiscal-monitor-october-2026",
+    "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/fm/issues/2026/10/05/fiscal-monitor-october-2026"
+  },
+  "source_preview_html": "<html><head><title>Taxing Better to Boost Growth </title><meta name=\"og:title\" content=\"Taxing Better to Boost Growth \"><meta name=\"parsely-title\" content=\"Taxing Better to Boost Growth \"><meta name=\"og:url\" content=\"https://www.imf.org/en/publications/fm/issues/2026/10/05/fiscal-monitor-october-2026\"><meta name=\"parsely-link\" content=\"https://www.imf.org/en/publications/fm/issues/2026/10/05/fiscal-monitor-october-2026\"><meta name=\"language\" content=\"ENG\"><meta name=\"creator\" content=\"International Monetary Fund\"><meta name=\"date\" content=\"2026-10-05\"><meta name=\"description\" content=\"Chapter 1 Fiscal Monitor recommends that taxing better can support growth without sacrificing revenue. The chapter shows how reducing tax distortions—through more neutral VAT and corporate tax design, stronger work incentives, better-targeted innovation support, and stronger tax administration—can raise investment, employment, productivity, and economic efficiency. \"><link rel=\"canonical\" href=\"https://www.imf.org/en/publications/fm/issues/2026/10/05/fiscal-monitor-october-2026\"></head><body><h1>Fiscal Monitor</h1></body></html>",
+  "search_payload": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 5,
+      "items": [
+        {
+          "DOI": "10.5089/9798229056298.089",
+          "type": "edited-book",
+          "publisher": "International Monetary Fund",
+          "title": [
+            "Fiscal Monitor, October 2026: Special Edition"
+          ],
+          "subtitle": [
+            "Chapter 1: Taxing Better to Boost Growth"
+          ],
+          "language": "en",
+          "ISBN": [
+            "9798229056298"
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                10
+              ]
+            ]
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2026,
+                10
+              ]
+            ]
+          },
+          "resource": {
+            "primary": {
+              "URL": "https://elibrary.imf.org/display/book/9798229056298/9798229056298.xml?cid=578448-com-dsp-crossref"
+            }
+          }
+        },
+        {
+          "DOI": "10.5089/9798229055079.081",
+          "type": "edited-book",
+          "publisher": "International Monetary Fund",
+          "title": [
+            "World Economic Outlook, October 2026"
+          ],
+          "subtitle": [
+            "Chapters 2 and 3"
+          ],
+          "language": "en",
+          "ISBN": [
+            "9798229055079"
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                10
+              ]
+            ]
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2026,
+                10
+              ]
+            ]
+          },
+          "resource": {
+            "primary": {
+              "URL": "https://elibrary.imf.org/display/book/9798229055079/9798229055079.xml?cid=577943-com-dsp-crossref"
+            }
+          }
+        },
+        {
+          "DOI": "10.5089/9798229055673.082",
+          "type": "edited-book",
+          "publisher": "International Monetary Fund",
+          "title": [
+            "Global Financial Stability Report, October 2026"
+          ],
+          "subtitle": [
+            "Chapters 2 and 3"
+          ],
+          "language": "en",
+          "ISBN": [
+            "9798229055673"
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                10
+              ]
+            ]
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2026,
+                10
+              ]
+            ]
+          },
+          "resource": {
+            "primary": {
+              "URL": "https://elibrary.imf.org/display/book/9798229055673/9798229055673.xml?cid=578150-com-dsp-crossref"
+            }
+          }
+        },
+        {
+          "DOI": "10.5089/9798229052108.011",
+          "type": "edited-book",
+          "publisher": "International Monetary Fund",
+          "title": [
+            "IMF Annual Report 2026"
+          ],
+          "subtitle": [
+            "Financial Statements"
+          ],
+          "language": "en",
+          "ISBN": [
+            "9798229052108"
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                10
+              ]
+            ]
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2026,
+                10
+              ]
+            ]
+          },
+          "resource": {
+            "primary": {
+              "URL": "https://elibrary.imf.org/display/book/9798229052108/9798229052108.xml?cid=577926-com-dsp-crossref"
+            }
+          }
+        },
+        {
+          "DOI": "10.5089/9798229036818.071",
+          "type": "edited-book",
+          "publisher": "International Monetary Fund",
+          "title": [
+            "Shaping the Future of Asia"
+          ],
+          "subtitle": [
+            "Opportunities and Challenges"
+          ],
+          "language": "en",
+          "ISBN": [
+            "9798229036818"
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                10
+              ]
+            ]
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2026,
+                10
+              ]
+            ]
+          },
+          "resource": {
+            "primary": {
+              "URL": "https://elibrary.imf.org/display/book/9798229036818/9798229036818.xml?cid=573484-com-dsp-crossref"
+            }
+          }
+        }
+      ],
+      "items-per-page": 100,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  },
+  "exact_payload": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "DOI": "10.5089/9798229056298.089",
+      "type": "edited-book",
+      "publisher": "International Monetary Fund",
+      "title": [
+        "Fiscal Monitor, October 2026: Special Edition"
+      ],
+      "subtitle": [
+        "Chapter 1: Taxing Better to Boost Growth"
+      ],
+      "language": "en",
+      "ISBN": [
+        "9798229056298"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2026,
+            10
+          ]
+        ]
+      },
+      "published-print": {
+        "date-parts": [
+          [
+            2026,
+            10
+          ]
+        ]
+      },
+      "resource": {
+        "primary": {
+          "URL": "https://elibrary.imf.org/display/book/9798229056298/9798229056298.xml?cid=578448-com-dsp-crossref"
+        }
+      }
+    }
+  },
+  "page": {
+    "stage": "metadata",
+    "accepted": false,
+    "landing_status": 200,
+    "final_url": "https://www.elibrary.imf.org/display/book/9798229056298/9798229056298.xml?cid=578448-com-dsp-crossref",
+    "title": "Fiscal Monitor, October 2026: Special Edition – Chapter 1: Taxing Better to Boost Growth | IMF eLibrary",
+    "ready": true,
+    "h1s": [
+      "\n\t\t\t\t\n\t\t\t\n\t\t                \tFiscal Monitor, October 2026: Special Edition\n\t\t                \n\t\t\n\t\t\t"
+    ],
+    "metadata_keys": [
+      "og:url",
+      "og:site_name",
+      "og:type",
+      "og:title",
+      "og:description",
+      "description",
+      "og:image",
+      "og:locale",
+      "book:author",
+      "book:isbn",
+      "book:release_date",
+      "twitter:card",
+      "twitter:title",
+      "twitter:description",
+      "dc.identifier",
+      "referrer",
+      "viewport",
+      "citation_isbn",
+      "citation_language",
+      "citation_title",
+      "citation_xml_url",
+      "citation_pdf_url",
+      "citation_publisher",
+      "citation_publication_date",
+      "citation_author",
+      "citation_inbook_title"
+    ],
+    "doi_links": [
+      "https://doi.org/10.5089/9798229056298.089"
+    ],
+    "visible_body": "Loading [MathJax]/extensions/MathZoom.js\nJump to Content\nThis site uses cookies, tags, and tracking settings to store information that help give you the very best browsing experience.\nDismiss this warning\nSign in\nIMF Sites\nBROWSE TOPICS COUNTRIES SERIES RESOURCES ABOUT Search\nMetrics\n\n \n\nSeries: Flagships, Fiscal Monitor\nSearch\nPublisher: International Monetary Fund\nISBN: 9798229056298\nISSN: 2219-276X\nFiscal Monitor, October 2026: Special Edition\nChapter 1: Taxing Better to Boost Growth\nAuthor: International Monetary Fund. Fiscal Affairs Dept.\nPublication Date: 06 Oct 2026\nLanguage: English\nPages: 31\nDOI: https://doi.org/10.5089/9798229056298.089\nDownload PDF (3.2 MB)\nKeywords: tax reforms; growth; productivity; tax design\nAbstract/Excerpt\nAbstract\n\nTaxing better can support growth without sacrificing revenue. The chapter shows how reducing tax distortions—through more neutral VAT and corporate tax design, stronger work incentives, better-targeted innovation support, and stronger tax administration—can raise investment, employment, productivity, and economic efficiency.\n\nSave\nEmail this content\n\nPRIVACY POLICY\nCOPYRIGHT AND USAGE\nCONTACT US\nIMF.ORG PUBLICATIONS\nINTERNATIONAL MONETARY FUND COPYRIGHT © 2010-2026. ALL RIGHTS RESERVED.\nPowered by PubFactory",
+    "body_bytes": 1279,
+    "body_truncated": false,
+    "pdf_downloads": 0,
+    "metadata": {
+      "citation_isbn": [
+        "9798229056298"
+      ],
+      "citation_title": [
+        "Fiscal Monitor, October 2026: Special Edition: Chapter 1: Taxing Better to Boost Growth"
+      ],
+      "citation_pdf_url": [
+        "https://www.elibrary.imf.org/downloadpdf/display/book/9798229056298/9798229056298.pdf"
+      ]
+    },
+    "download_hrefs": [
+      "https://www.elibrary.imf.org/downloadpdf/display/book/9798229056298/9798229056298.pdf"
+    ]
+  }
+}

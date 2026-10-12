@@ -1,0 +1,57 @@
+{
+  "provenance": {
+    "preview_http_status": 200,
+    "preview_bytes": 29666,
+    "preview_sha256": "58befa406420efe0582db3f77318bb47a1aeff3d2713c572a7390be59d1e75c7",
+    "crossref_http_status": 200,
+    "crossref_bytes": 3558,
+    "crossref_sha256": "eade890a7c5578e2dd16a666a36ff2f66d4e6794cff11900958b0cd1c54bd0d0",
+    "note": "Minimal markup preserving actual observed element types, field values and Description prefix; Description prose and unrelated navigation omitted. Full public preview and Crossref responses remain in task evidence. This is not an archived eLibrary landing HTML."
+  },
+  "item": {
+    "title": "Chile: Technical Assistance Report-Government Finance Statistics Mission (May 18-29, 2026)",
+    "source_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/08/chile-technical-assistance-report-government-finance-statistics-mission-may-18-29-2026-580326",
+    "guid": "e2f3ec32d2b9a070285036ad5c7fad440ec4689fc98a1a2e8b47a235b536",
+    "date": "2026-10-09T21:00:00+00:00",
+    "pdf_candidates": [
+      "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026083.pdf",
+      "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026083-source-pdf.pdf"
+    ],
+    "scrape_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/08/chile-technical-assistance-report-government-finance-statistics-mission-may-18-29-2026-580326",
+    "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/08/chile-technical-assistance-report-government-finance-statistics-mission-may-18-29-2026-580326"
+  },
+  "preview_excerpt": "<title>Chile: Technical Assistance Report-Government Finance Statistics Mission (May 18-29, 2026)</title>\n<link rel=\"canonical\" href=\"https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/08/chile-technical-assistance-report-government-finance-statistics-mission-may-18-29-2026-580326\">\n<meta name=\"Series\" content=\"Technical Assistance Reports\">\n<meta name=\"Description\" content=\"[This report is only available in Spanish]\">\n<h1>Technical Assistance Reports</h1>\n<a href=\"https://doi.org/10.5089/9798229064521.019\">DOI</a>\n<p>Volume: 2026</p><p>Issue: 083</p><p>ISBN: 9798229064521</p>",
+  "crossref": {
+    "status": "ok",
+    "message-type": "work",
+    "message": {
+      "DOI": "10.5089/9798229064521.019",
+      "publisher": "International Monetary Fund (IMF)",
+      "title": [
+        "Chile"
+      ],
+      "subtitle": [
+        "Technical Assistance Report-Government Finance Statistics Mission (May 18-29, 2026)"
+      ],
+      "container-title": [
+        "Technical Assistance Reports"
+      ],
+      "volume": "2026",
+      "issue": "083",
+      "published": {
+        "date-parts": [
+          [
+            2026,
+            10
+          ]
+        ]
+      },
+      "language": "en",
+      "resource": {
+        "primary": {
+          "URL": "https://elibrary.imf.org/view/journals/019/2026/083/019.2026.issue-083-en.xml?cid=580326-com-dsp-crossref"
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import copy
 import hashlib
 import io
 import json
@@ -158,6 +159,37 @@ class ProvenanceTests(unittest.TestCase):
     def test_exact_actual_hash_kept_and_mismatch_not_matched(self):
         self.assertEqual(p.match_versions([source(sha256='b'*64)], [binding()])[0]['sha256'], 'b'*64)
         self.assertEqual(p.match_versions([source(sha256='c'*64)], [binding()]), [])
+
+    def test_official_receipts_survive_authenticated_manifest_projection(self):
+        from test_imf_followup_intake import followup_hold_fixture
+        from test_fetch_institution_latest_pdfs import live_hold_fixture
+        rows = [followup_hold_fixture()[0], live_hold_fixture()[0]]
+        preview = copy.deepcopy(rows[1]); proof = preview['imf_live_download']
+        proof['schema'] = 2; proof.pop('crossref_sha256')
+        proof['metadata'] = dict(method='official_source_preview', preview_sha256='e'*64)
+        rows.append(preview)
+        for row in rows:
+            original = binding(row['local_filename'], row['bytes'], row['sha256'])
+            with self.subTest(proof=list(row)):
+                run, artifact, archive = fixtures([row])
+                preserved, _ = p.get_original_versions(['123'], [original], api=API(responses(run, artifact, archive)))
+                self.assertEqual(preserved, [dict(row, binding_id=original['id'])])
+
+    def test_invalid_or_conflicting_followup_proof_cannot_be_stripped_into_legacy_evidence(self):
+        from test_imf_followup_intake import followup_hold_fixture
+        row = followup_hold_fixture()[0]
+        original = binding(row['local_filename'], row['bytes'], row['sha256'])
+        variants = []
+        for missing in row['imf_official_followup']:
+            value = copy.deepcopy(row); del value['imf_official_followup'][missing]; variants.append(value)
+        for changed in ({'imf_official_followup_extra': True}, {'imf_live_download': {}},
+                        {'verified_original_pages': 25}, {'institution': 'bis'}, {'sha256': None}):
+            variants.append(dict(row, **changed))
+        for value in variants:
+            with self.subTest(value=value):
+                self.assertEqual(p.match_versions([value], [original]), [])
+        conflict = copy.deepcopy(row); conflict['imf_official_followup']['preview_sha256'] = 'e'*64
+        self.assertEqual(p.match_versions([row, conflict], [original]), [])
 
     def test_filename_size_and_binding_collision_remain_unmatched(self):
         self.assertEqual(p.match_versions([source(bytes=13)], [binding()]), [])

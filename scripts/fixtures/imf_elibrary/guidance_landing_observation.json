@@ -1,0 +1,49 @@
+{
+  "accepted": false,
+  "kind": "public_landing_observation",
+  "page": {
+    "download_hrefs": [
+      "https://www.elibrary.imf.org/downloadpdf/view/journals/007/2026/046/007.2026.issue-046-en.pdf"
+    ],
+    "final_url": "https://www.elibrary.imf.org/view/journals/007/2026/046/007.2026.issue-046-en.xml?cid=580320-com-dsp-crossref",
+    "h1s": [
+      "\n\t\t\t\t\n\t\t\t\n\t\t                \tGuidance Note on Engagement with Civil Society\n\t\t                \n\t\t\n\t\t\t"
+    ],
+    "landing_status": 200,
+    "metadata": {
+      "canonical_url": [
+        "https://www.elibrary.imf.org/view/journals/007/2026/046/007.2026.issue-046-en.xml"
+      ]
+    }
+  },
+  "publication": {
+    "crossref_sha256": "490af9bb49f55eb1e3d2711ef0d0e0cbd6db9db97b3a42356ec46369aa7f77c2",
+    "doi": "10.5089/9798229064149.007",
+    "full_title": "Guidance Note on Engagement with Civil Society",
+    "identity_sha256": "30eac307dd0c1d985c15e5fd4e44b060233e1a0e095830c30a1bb7bc68f38673",
+    "isbn": "9798229064149",
+    "issue": "046",
+    "landing_url": "https://elibrary.imf.org/view/journals/007/2026/046/007.2026.issue-046-en.xml?cid=580320-com-dsp-crossref",
+    "language": "en",
+    "series": [
+      "Policy Papers"
+    ],
+    "source_guid": "721579d885b8b65ed4eadde236b29e32203c53154241d779c4b3f4ffcb76",
+    "source_title": "Guidance Note on Engagement with Civil Society",
+    "source_url": "https://www.imf.org/en/publications/policy-papers/issues/2026/10/07/guidance-note-on-engagement-with-civil-society-580320",
+    "subtitle": "",
+    "title": "Guidance Note on Engagement with Civil Society",
+    "title_variants": [
+      "Guidance Note on Engagement with Civil Society"
+    ],
+    "year": "2026"
+  },
+  "schema": 1,
+  "provenance": {
+    "run_id": 38285246721,
+    "artifact_zip_sha256": "0db403243008b1208da0a76c6ffe4198e7fa6a28b8fd520117f561701f4cfcbe",
+    "observation_file": "853844a55938fe2292f3a7f2c5bc9d7edb550dfc6ce041e4748c4c3563ae6421.json",
+    "observation_sha256": "b05895d274345bcd29621fc648f23bec3b1d89cdf16cbeb55b573e9009fd6bf7",
+    "note": "Verbatim bounded public observation fields from the verified cloud artifact. This fixture proves page metadata and visible link observations only, not downloaded PDF bytes."
+  }
+}

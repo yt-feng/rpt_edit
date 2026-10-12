@@ -15,8 +15,15 @@ from pathlib import Path
 import re
 import sys
 
-from fetch_institution_latest_pdfs import DEFAULT_PUBLIC_INSTITUTION_KEYS, INSTITUTIONS
+from fetch_institution_latest_pdfs import DEFAULT_PUBLIC_INSTITUTION_KEYS, INSTITUTIONS, short_hash, slug
+from imf_elibrary_resolver import ResolutionError, source_url, title_key, validate_official_pair, validate_publication_url
 from institution_verified_originals import RECOVERY_FIELDS, official_url
+
+
+LIVE_DOWNLOAD_FIELDS = {"schema", "source_guid", "source_url", "landing_url", "pdf_url", "doi", "title",
+                        "identity_sha256", "crossref_sha256", "sha256", "bytes", "pages",
+                        "landing_status", "pdf_status", "source_identity_verified", "transport"}
+PREVIEW_DOWNLOAD_FIELDS = (LIVE_DOWNLOAD_FIELDS - {"crossref_sha256"}) | {"metadata"}
 
 
 class InvalidSourceHealth(ValueError):
@@ -31,6 +38,94 @@ def require(condition: bool) -> None:
 def count(value: object) -> int:
     require(type(value) is int and 0 <= value <= 1_000_000)
     return value
+
+
+def validate_live_download(row: dict) -> None:
+    """Verify the browser's complete receipt against the producer's exact row.
+
+    Identity/Crossref hashes retain upstream provenance. Their complete inputs
+    are not in this manifest, so this classifier does not claim to rehash them.
+    """
+    proof = row["imf_live_download"]
+    require(row["institution"] == "imf" and isinstance(proof, dict))
+    require(type(proof.get("schema")) is int and proof["schema"] in {1, 2})
+    if proof["schema"] == 1:
+        require(set(proof) == LIVE_DOWNLOAD_FIELDS)
+        provenance_hash = proof["crossref_sha256"]
+    else:
+        require(set(proof) == PREVIEW_DOWNLOAD_FIELDS)
+        metadata = proof["metadata"]
+        require(isinstance(metadata, dict))
+        if metadata.get("method") == "official_source_preview":
+            require(set(metadata) == {"method", "preview_sha256"})
+            provenance_hash = metadata["preview_sha256"]
+        elif metadata.get("method") == "publisher_original_edition":
+            from imf_original_edition import validate_original_edition_metadata
+            try:
+                validate_original_edition_metadata(metadata, proof["doi"], proof["landing_url"], proof["pdf_url"])
+            except ValueError:
+                raise InvalidSourceHealth("source_health_contract_invalid") from None
+            require(proof["pages"] == metadata["original_edition"]["pages"])
+            require(isinstance(proof["title"], str) and ":" in proof["title"]
+                    and title_key(proof["title"].split(":", 1)[0])
+                    == title_key(metadata["original_edition"]["title"].split(":", 1)[0]))
+            provenance_hash = metadata["source_crossref_sha256"]
+        elif metadata.get("method") == "official_fiscal_chapter":
+            from imf_fiscal_chapter import validate_fiscal_chapter_metadata
+            try:
+                validate_fiscal_chapter_metadata(metadata, proof["title"], proof["doi"],
+                                                proof["landing_url"], proof["pdf_url"])
+            except ValueError:
+                raise InvalidSourceHealth("source_health_contract_invalid") from None
+            require(proof["pages"] == metadata["publisher_page"]["pages"])
+            provenance_hash = metadata["exact_crossref_sha256"]
+        else:
+            raise InvalidSourceHealth("source_health_contract_invalid")
+    require(isinstance(provenance_hash, str) and bool(re.fullmatch(r"[a-f0-9]{64}", provenance_hash)))
+    require(proof["source_identity_verified"] is True
+            and proof["transport"] == "existing_subscription_vless_browser")
+    for field in ("landing_status", "pdf_status"):
+        require(type(proof[field]) is int and proof[field] == 200)
+    require(type(proof["pages"]) is int and 1 <= proof["pages"] <= 5000
+            and type(proof["bytes"]) is int and 1 <= proof["bytes"] <= 128 * 1024 * 1024)
+    for field in ("identity_sha256", "sha256"):
+        require(isinstance(proof[field], str) and bool(re.fullmatch(r"[a-f0-9]{64}", proof[field])))
+    for field in ("source_guid", "title"):
+        require(isinstance(proof[field], str) and 0 < len(proof[field]) <= 4096
+                and not re.search(r"[\x00-\x1f\x7f\ud800-\udfff]", proof[field]))
+    require(isinstance(row.get("title"), str) and 0 < len(row["title"]) <= 4096
+            and bool(title_key(proof["title"])) and title_key(proof["title"]) == title_key(row["title"]))
+    require(proof["source_url"] == row.get("source_page_url")
+            and proof["pdf_url"] == row.get("pdf_url")
+            and proof["sha256"] == row.get("sha256")
+            and type(row.get("bytes")) is int and proof["bytes"] == row["bytes"])
+    require(row.get("local_filename") == f"IMF_{slug(row['title'])}_{short_hash('imf:' + proof['source_guid'])}.pdf")
+    try:
+        source_url(proof["source_url"])
+        validate_official_pair(proof["landing_url"], proof["pdf_url"], proof["doi"])
+        if proof["schema"] == 2 and proof["metadata"]["method"] == "official_source_preview":
+            locator = validate_publication_url(proof["landing_url"])
+            require(locator["kind"] == "journal" and locator["language"] == "en")
+    except ResolutionError:
+        raise InvalidSourceHealth("source_health_contract_invalid") from None
+
+
+def validate_followup_download(row: dict) -> None:
+    """Bind the separately verified IEO HTTPS chain to its exact producer row."""
+    from imf_ieo_followup import FollowupError, validate_receipt
+    proof = row["imf_official_followup"]
+    try:
+        validate_receipt(proof)
+    except FollowupError:
+        raise InvalidSourceHealth("source_health_contract_invalid") from None
+    require(row.get("institution") == "imf" and isinstance(row.get("title"), str)
+            and title_key(row["title"]) == title_key(proof["title"]))
+    require(proof["source_url"] == row.get("source_page_url")
+            and proof["published"] == row.get("published")
+            and proof["pdf_url"] == row.get("pdf_url")
+            and proof["sha256"] == row.get("sha256")
+            and type(row.get("bytes")) is int and proof["bytes"] == row["bytes"])
+    require(row.get("local_filename") == f"IMF_{slug(row['title'])}_{short_hash('imf:' + proof['source_guid'])}.pdf")
 
 
 def enabled_sources(value: str) -> list[str]:
@@ -82,6 +177,14 @@ def classify(manifest: object, *, producer_exit_code: int, log_exit_code: int,
     for row in downloaded:
         recovery_fields = {field for field in row if field == "acquisition_method"
                            or (isinstance(field, str) and field.startswith("verified_original_"))}
+        live_fields = {field for field in row if isinstance(field, str) and field.startswith("imf_live_download")}
+        followup_fields = {field for field in row if isinstance(field, str) and field.startswith("imf_official_followup")}
+        if live_fields:
+            require(live_fields == {"imf_live_download"} and not recovery_fields and not followup_fields)
+            validate_live_download(row)
+        if followup_fields:
+            require(followup_fields == {"imf_official_followup"} and not recovery_fields and not live_fields)
+            validate_followup_download(row)
         if not recovery_fields:
             continue
         require(recovery_fields == RECOVERY_FIELDS)

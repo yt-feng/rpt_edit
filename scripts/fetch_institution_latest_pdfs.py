@@ -1452,6 +1452,7 @@ def collect_coveo_items(cfg: dict[str, Any], session: requests.Session, timeout:
     resp.raise_for_status()
     data = resp.json()
     items: list[dict[str, Any]] = []
+    cfg["_coveo_raw_by_id"] = {}
     for result in data.get("results", []):
         raw = result.get("raw", {})
         landing = raw.get("clickableuri") or result.get("clickUri") or result.get("uri") or ""
@@ -1473,6 +1474,9 @@ def collect_coveo_items(cfg: dict[str, Any], session: requests.Session, timeout:
                 date_iso = ""
         is_file = bool(re.search(r"\.(pdf|ashx)(\?|$)", landing, re.I))
         pdf_candidates = [landing] if is_file else derive_imf_pdf_candidates(raw)
+        unique_id = result.get("uniqueId") or result.get("UniqueId") or ""
+        if unique_id:
+            cfg["_coveo_raw_by_id"][unique_id] = raw
         items.append({
             "title": result.get("title") or raw.get("title") or landing,
             "source_url": landing,
@@ -1480,7 +1484,7 @@ def collect_coveo_items(cfg: dict[str, Any], session: requests.Session, timeout:
             "date": date_iso,
             "pdf_candidates": pdf_candidates,
             "scrape_url": "" if is_file else landing,
-            "coveo_unique_id": result.get("uniqueId") or result.get("UniqueId") or "",
+            "coveo_unique_id": unique_id,
         })
     log(f"  coveo -> {len(items)} publications (total {data.get('totalCount')})")
     return items
@@ -1643,18 +1647,22 @@ def scrape_imf_preview_candidates(html_text: str, base_url: str) -> list[str]:
     return candidates
 
 
-def collect_coveo_preview_candidates(
+def collect_coveo_preview_html(
     cfg: dict[str, Any],
     session: requests.Session,
     unique_id: str,
     base_url: str,
     timeout: int,
-) -> list[str]:
-    """Resolve official PDF links from Coveo's cached HTML preview."""
+) -> str:
+    """Read one publication's official indexed preview, cached for this batch."""
 
     unique_id = str(unique_id or "").strip()
     if not unique_id:
-        return []
+        return ""
+    cache = cfg.setdefault("_coveo_preview_cache", {})
+    cache_key = (unique_id, base_url)
+    if cache_key in cache:
+        return cache[cache_key]
 
     parsed = urlsplit(cfg["coveo_url"])
     preview_url = f"{parsed.scheme}://{parsed.netloc}{parsed.path.rstrip('/')}/html"
@@ -1674,7 +1682,126 @@ def collect_coveo_preview_candidates(
         },
     )
     response.raise_for_status()
-    return scrape_imf_preview_candidates(response.text, base_url)
+    if len(response.text) > 2_000_000:
+        raise ValueError("IMF preview exceeds bound")
+    cache[cache_key] = response.text
+    return response.text
+
+
+def collect_coveo_preview_candidates(cfg, session, unique_id, base_url, timeout):
+    """Resolve official PDF links from the same indexed publication preview."""
+    return scrape_imf_preview_candidates(
+        collect_coveo_preview_html(cfg, session, unique_id, base_url, timeout), base_url)
+
+
+def collect_imf_crossref_json(session, metadata_url, timeout, *, params=None):
+    """Read one bounded official metadata response with classified HTTP failures."""
+    from imf_elibrary_resolver import ResolutionError
+    response = _request_with_retry(
+        metadata_url,
+        lambda: session.get(metadata_url, params=params, timeout=min(timeout, 30), allow_redirects=False, stream=True),
+        max_attempts=3,
+    )
+    try:
+        if response.status_code != 200:
+            category = {404: "crossref_not_found", 429: "crossref_rate_limited"}.get(
+                response.status_code, "crossref_server_error" if response.status_code >= 500 else "crossref_http_rejected")
+            raise ResolutionError(category)
+        chunks, size = [], 0
+        deadline = time.monotonic() + min(timeout, 30)
+        for chunk in response.iter_content(65536):
+            if time.monotonic() > deadline:
+                raise ResolutionError("crossref_response_timeout")
+            size += len(chunk)
+            if size > 2_000_000:
+                raise ResolutionError("crossref_response_too_large")
+            chunks.append(chunk)
+        try:
+            return json.loads(b"".join(chunks))
+        except ValueError:
+            raise ResolutionError("crossref_response_invalid") from None
+    finally:
+        response.close()
+
+
+def resolve_imf_fiscal_publication(cfg, session, item, preview, timeout):
+    """Discover one exact Fiscal Monitor chapter in the complete monthly catalog."""
+    from imf_fiscal_chapter import prepare_fiscal_chapter, select_fiscal_chapter, resolve_fiscal_chapter
+    from urllib.parse import quote
+    source = prepare_fiscal_chapter(item, preview, item["source_url"])
+    params = source["query_params"]
+    search_cache = cfg.setdefault("_imf_fiscal_search_cache", {})
+    search_key = json.dumps(params, sort_keys=True, separators=(",", ":"))
+    if search_key not in search_cache:
+        search_cache[search_key] = collect_imf_crossref_json(
+            session, "https://api.crossref.org/works", timeout, params=params)
+    search = search_cache[search_key]
+    doi = select_fiscal_chapter(source, search)
+    cache = cfg.setdefault("_imf_crossref_cache", {})
+    if doi not in cache:
+        cache[doi] = collect_imf_crossref_json(session,
+            "https://api.crossref.org/works/" + quote(doi, safe="/"), timeout)
+    return resolve_fiscal_chapter(source, search, cache[doi])
+
+
+def resolve_imf_browser_publication(cfg, session, item, timeout):
+    """Follow the publication's actual DOI to publisher-deposited metadata."""
+    from imf_elibrary_resolver import ResolutionError, bind_source, resolve_crossref, resolve_official_preview
+    from urllib.parse import quote
+
+    preview = collect_coveo_preview_html(
+        cfg, session, item.get("coveo_unique_id", ""), item["source_url"], timeout)
+    raw = cfg.get("_coveo_raw_by_id", {}).get(item.get("coveo_unique_id", ""), {})
+    try:
+        identity = bind_source(item, raw, preview, item["source_url"])
+    except ResolutionError as exc:
+        if (exc.category != "explicit_doi_missing_or_ambiguous"
+                or not urlsplit(item["source_url"]).path.startswith("/en/publications/fm/issues/")):
+            raise
+        return resolve_imf_fiscal_publication(cfg, session, item, preview, timeout)
+    cache = cfg.setdefault("_imf_crossref_cache", {})
+    if identity.doi not in cache:
+        metadata_url = "https://api.crossref.org/works/" + quote(identity.doi, safe="/")
+        try:
+            cache[identity.doi] = collect_imf_crossref_json(session, metadata_url, timeout)
+        except ResolutionError as exc:
+            if exc.category == "crossref_not_found":
+                return resolve_official_preview(identity, preview, item["source_url"])
+            raise
+    # Revalidate the metadata against each exact source even when the DOI was
+    # already read in this batch. No source identity is inferred from a URL.
+    return resolve_crossref(identity, cache[identity.doi])
+
+
+def resolve_imf_ieo_followup(cfg, session, item, dest, timeout, max_bytes, *, imf_browser=None):
+    """Use the official IEO follow-up directory for its exact implementation plans."""
+    from imf_elibrary_resolver import bind_source
+    from imf_ieo_followup import FollowupError, MAX_PDF, download_followup, evaluation_title
+    try:
+        evaluation_title(item["title"])
+    except FollowupError as exc:
+        if exc.category == "ieo_followup_not_applicable":
+            return None
+        raise
+    preview = collect_coveo_preview_html(
+        cfg, session, item.get("coveo_unique_id", ""), item["source_url"], timeout)
+    raw = cfg.get("_coveo_raw_by_id", {}).get(item.get("coveo_unique_id", ""), {})
+    identity = bind_source(item, raw, preview, item["source_url"])
+    # Keep ordinary IEO HTTPS independent of the discovery client's browser
+    # headers and cross-site state. Both ordinary and cloud routes were observed
+    # working against the complete official chain in the authorized cloud probe.
+    try:
+        with requests.Session() as ieo_session:
+            ieo_session.trust_env = False
+            return download_followup(identity, ieo_session, dest, min(max_bytes, MAX_PDF), min(timeout, 60))
+    except FollowupError as exc:
+        if (exc.http_status != 403 or imf_browser is None
+                or imf_browser.enabled is not True):
+            raise
+    # A real HTTP 403 permits one whole-chain retry over the already selected
+    # cloud client. The same identity, response bounds and PDF checks still apply.
+    with imf_browser.http_session() as ieo_session:
+        return download_followup(identity, ieo_session, dest, min(max_bytes, MAX_PDF), min(timeout, 60))
 
 
 def download_pdf(session: requests.Session, urls: Iterable[str], dest: Path, timeout: int, max_bytes: int, impersonate: bool = False, profile: str | None = None, proxy: str | None = None) -> tuple[str | None, str]:
@@ -1790,7 +1917,7 @@ def dependency_hold_versions(archive: Path, sources: list[dict], supplemental: l
     for name, rows in records.items():
         bindings = {(entry['sha256'], entry['size']) for entry in by_name[name]}
         if len(bindings) != 1 or not rows: continue
-        checksum, size = next(iter(bindings)); versions = set(); valid = True
+        checksum, size = next(iter(bindings)); versions = set(); valid = True; live_rows = []; followup_rows = []
         for row in rows:
             values = tuple(row.get(field) for field in ('source_page_url', 'published', 'pdf_url'))
             if (not all(isinstance(value, str) and value for value in values)
@@ -1798,12 +1925,37 @@ def dependency_hold_versions(archive: Path, sources: list[dict], supplemental: l
                     or (row.get('sha256') is not None and row['sha256'] != checksum)):
                 valid = False; break
             versions.add(values)
+            live_fields = {field for field in row if isinstance(field, str) and field.startswith('imf_live_download')}
+            followup_fields = {field for field in row if isinstance(field, str) and field.startswith('imf_official_followup')}
+            if live_fields or followup_fields:
+                # A complete official receipt, unlike an empty legacy candidate list,
+                # proves which original reached the existing private hold.
+                from institution_source_health import InvalidSourceHealth, validate_live_download, validate_followup_download
+                try:
+                    if ((live_fields and (live_fields != {'imf_live_download'} or followup_fields))
+                            or (followup_fields and followup_fields != {'imf_official_followup'})
+                            or any(field == 'acquisition_method'
+                            or (isinstance(field, str) and field.startswith('verified_original_')) for field in row)):
+                        raise InvalidSourceHealth('source_health_contract_invalid')
+                    (validate_live_download if live_fields else validate_followup_download)(row)
+                    if datetime.fromisoformat(row['published'].replace('Z', '+00:00')).tzinfo is None:
+                        raise ValueError('Publication date requires timezone')
+                except (InvalidSourceHealth, KeyError, TypeError, ValueError):
+                    valid = False; break
+                proof_key = 'imf_live_download' if live_fields else 'imf_official_followup'
+                (live_rows if live_fields else followup_rows).append({'title': row['title'], proof_key: row[proof_key]})
         if not valid or len(versions) != 1: continue
         page, published, url = next(iter(versions))
         feed_values = {json.dumps(row.get('feed_pdf_candidates'), sort_keys=True) for row in rows}
         feed = rows[0].get('feed_pdf_candidates') if len(feed_values) == 1 else None
         if not isinstance(feed, list) or not all(isinstance(url, str) for url in feed): feed = None
         result[name] = dict(source_page_url=page, published=published, pdf_url=url, feed_pdf_candidates=feed)
+        if (live_rows and not followup_rows and all(row.get('sha256') == checksum for row in rows)
+                and len({json.dumps(row, sort_keys=True) for row in live_rows}) == 1):
+            result[name]['live_publication'] = live_rows[0]
+        if (followup_rows and not live_rows and all(row.get('sha256') == checksum for row in rows)
+                and len({json.dumps(row, sort_keys=True) for row in followup_rows}) == 1):
+            result[name]['followup_publication'] = followup_rows[0]
     return result
 
 
@@ -1813,6 +1965,14 @@ def matches_dependency_hold(versions: dict, filename: str, item: dict, candidate
         return False
     current = list(item.get('pdf_candidates', [])) if candidates is None else list(candidates)
     if held['feed_pdf_candidates'] is not None and candidates is None:
+        for publication_key, proof_key in (('live_publication', 'imf_live_download'),
+                                            ('followup_publication', 'imf_official_followup')):
+            publication = held.get(publication_key)
+            if (publication is not None and item.get('pdf_candidates') == [] and held['feed_pdf_candidates'] == []
+                    and item.get('guid') == publication[proof_key]['source_guid']
+                    and item.get('title') == publication['title']
+                    and filename == f"IMF_{slug(publication['title'])}_{short_hash('imf:' + item['guid'])}.pdf"):
+                return True
         return bool(current) and current == held['feed_pdf_candidates']
     if current and set(current) == {held['pdf_url']}: return True
     # The producer's legacy IMF working-paper metadata has two deterministic
@@ -1829,7 +1989,7 @@ def matches_dependency_hold(versions: dict, filename: str, item: dict, candidate
 # Main
 # ------------------------------------------------------------------
 
-def main() -> int:
+def _main(imf_browser=None) -> int:
     parser = argparse.ArgumentParser(description="Fetch latest institution PDF reports for the WeChat pipeline.")
     parser.add_argument("--output-dir", required=True, help="Where to write transient PDFs (should be git-ignored).")
     parser.add_argument("--date", default=datetime.now(timezone.utc).strftime("%y%m%d"), help="Run date tag, YYMMDD.")
@@ -1921,7 +2081,10 @@ def main() -> int:
     used_pdf_urls: set[str] = set()
 
     proxy_url: str | None = None
-    if any(INSTITUTIONS[k].get("use_proxy") for k in enabled):
+    browser_enabled = bool(imf_browser is not None and imf_browser.enabled)
+    legacy_proxy_sources = [k for k in enabled if INSTITUTIONS[k].get("use_proxy")
+                            and not (k == "imf" and browser_enabled)]
+    if legacy_proxy_sources:
         subscription = os.getenv("PROXY_SUBSCRIPTION_URL", "").strip()
         if subscription:
             # Prefer a source-specific WAF probe when one is configured. IMF is
@@ -1930,7 +2093,7 @@ def main() -> int:
             proxy_test_url = next(
                 (
                     str(INSTITUTIONS[k]["proxy_test_url"])
-                    for k in enabled
+                    for k in legacy_proxy_sources
                     if INSTITUTIONS[k].get("use_proxy")
                     and INSTITUTIONS[k].get("proxy_test_url")
                 ),
@@ -1949,6 +2112,9 @@ def main() -> int:
             log("PROXY_SUBSCRIPTION_URL not set; use_proxy sources fetch directly.")
     for key in INSTITUTIONS:
         INSTITUTIONS[key]["_proxy"] = proxy_url if INSTITUTIONS[key].get("use_proxy") else None
+        INSTITUTIONS[key].pop("_coveo_preview_cache", None)
+        INSTITUTIONS[key].pop("_imf_crossref_cache", None)
+        INSTITUTIONS[key].pop("_coveo_raw_by_id", None)
 
     for key in enabled:
         if args.max_total and len(downloaded) >= args.max_total:
@@ -2048,6 +2214,8 @@ def main() -> int:
                     continue
             feed_pdf_candidates = list(item["pdf_candidates"])
             recovered = None
+            live_download = None
+            official_followup = None
             if key == "imf" and verified_originals and verified_originals.contains(item):
                 title = item["title"] or item["guid"] or item["source_url"]
                 filename = f"{cfg['token']}_{slug(title)}_{short_hash(dedup_key)}.pdf"
@@ -2062,7 +2230,37 @@ def main() -> int:
                     if len(resolution_failure_samples) < 3:
                         resolution_failure_samples.append(str(exc))
                     continue
-            if recovered is None:
+            if recovered is None and key == "imf":
+                title = item["title"] or item["guid"] or item["source_url"]
+                filename = f"{cfg['token']}_{slug(title)}_{short_hash(dedup_key)}.pdf"
+                dest = output_dir / filename
+                try:
+                    official_followup = resolve_imf_ieo_followup(
+                        cfg, session, item, dest, args.request_timeout, max_bytes, imf_browser=imf_browser)
+                    if official_followup is not None:
+                        used_url, status = official_followup["pdf_url"], "ok"
+                except Exception as exc:
+                    category = getattr(exc, "category", "ieo_followup_unavailable")
+                    if not isinstance(category, str) or not re.fullmatch(r"[a-z_]{1,80}", category):
+                        category = "ieo_followup_unavailable"
+                    warn(f"  IMF official follow-up route: {category}; trying other official routes")
+            if recovered is None and official_followup is None and key == "imf" and browser_enabled:
+                title = item["title"] or item["guid"] or item["source_url"]
+                filename = f"{cfg['token']}_{slug(title)}_{short_hash(dedup_key)}.pdf"
+                dest = output_dir / filename
+                try:
+                    publication = resolve_imf_browser_publication(
+                        cfg, session, item, args.request_timeout)
+                    live_download = imf_browser.download(publication, dest, max_bytes)
+                    used_url, status = live_download["pdf_url"], "ok"
+                except Exception as exc:
+                    # Cloud client errors may contain private subscription data.
+                    # Only the fixed public category is ever included in logs.
+                    category = getattr(exc, "category", getattr(exc, "code", "official_browser_unavailable"))
+                    if not isinstance(category, str) or not re.fullmatch(r"[a-z_]{1,80}", category):
+                        category = "official_browser_unavailable"
+                    warn(f"  IMF official browser route: {category}; trying ordinary official PDF routes")
+            if recovered is None and live_download is None and official_followup is None:
                 candidates = list(feed_pdf_candidates)
                 landing_attempted = False
                 preview_attempted = False
@@ -2224,6 +2422,10 @@ def main() -> int:
             if recovered is not None:
                 record.update(recovered)
                 verified_original_count += 1
+            if live_download is not None:
+                record["imf_live_download"] = live_download
+            if official_followup is not None:
+                record["imf_official_followup"] = official_followup
             append_archive(archive_path, record)
             downloaded.append(record)
             new_count += 1
@@ -2317,6 +2519,15 @@ def main() -> int:
         )
         return 2
     return 0
+
+
+def main() -> int:
+    # The context is lazy and disabled outside the selected cloud workflow.
+    # It closes the per-batch client even when argument parsing or a source fails.
+    from imf_cloud_browser import CloudImfBrowser
+    with CloudImfBrowser(fetch_subscription=_fetch_subscription,
+                         decode_subscription=_b64_text) as browser:
+        return _main(browser)
 
 
 if __name__ == "__main__":

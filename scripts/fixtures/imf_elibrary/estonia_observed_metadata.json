@@ -1,0 +1,108 @@
+{
+  "provenance": {
+    "coveo_run": 38207394092,
+    "coveo_preview_status": 200,
+    "coveo_preview_bytes": 31602,
+    "crossref_response_sha256": "4b199e77a2db9ea0447640c7d6254fbb094a064c31ea55caaa8148481857318a",
+    "html_fixture_note": "estonia_preview_excerpt.html contains verbatim selected elements of the once-fetched official preview. Synthetic edge-case markup in tests is explicitly separate. Landing HTML is still represented by previously browser-observed metadata, not an archived raw page.",
+    "preview_http_status": 200,
+    "preview_sha256": "d539c5846d22c083deb1c497a07e947a34f42477f1901c8ccf3a587da81e29c0",
+    "preview_fixture": "estonia_preview_excerpt.html"
+  },
+  "item": {
+    "title": "Republic of Estonia: Technical Assistance Report-Report on Consumer Price Index (January 12-16, 2026)",
+    "source_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/09/republic-of-estonia-technical-assistance-report-report-on-consumer-price-index-january-12-580315",
+    "guid": "aadee42db10b64237313019c044ba4f794f85f1ea0e11ff7bd91d281efa4",
+    "date": "2026-10-09T21:30:00+00:00",
+    "pdf_candidates": [
+      "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026082.pdf",
+      "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026082-source-pdf.pdf"
+    ],
+    "scrape_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/09/republic-of-estonia-technical-assistance-report-report-on-consumer-price-index-january-12-580315",
+    "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/09/republic-of-estonia-technical-assistance-report-report-on-consumer-price-index-january-12-580315"
+  },
+  "raw": {
+    "systitle": "Republic of Estonia: Technical Assistance Report-Report on Consumer Price Index (January 12-16, 2026)",
+    "sysurihash": "qS84JmWaHXñW6jIN",
+    "urihash": "qS84JmWaHXñW6jIN",
+    "permanentid": "aadee42db10b64237313019c044ba4f794f85f1ea0e11ff7bd91d281efa4",
+    "title": "Republic of Estonia: Technical Assistance Report-Report on Consumer Price Index (January 12-16, 2026)",
+    "imfdate": 1791581400000,
+    "sourcetype": "Sitemap",
+    "clickableuri": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/09/republic-of-estonia-technical-assistance-report-report-on-consumer-price-index-january-12-580315",
+    "imfseries": [
+      "Technical Assistance Reports"
+    ],
+    "syssourcetype": "Sitemap",
+    "filetype": "html",
+    "sysclickableuri": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/09/republic-of-estonia-technical-assistance-report-report-on-consumer-price-index-january-12-580315",
+    "sysfiletype": "html",
+    "seriesvolumeno": "Technical Assistance Report No. 2026/082"
+  },
+  "preview_observed": {
+    "doi": [
+      "10.5089/9798229063937.019"
+    ],
+    "isbn": [
+      "9798229063937"
+    ],
+    "stock_number": [
+      "TAREA2026082"
+    ],
+    "text_sample": " Republic of Estonia: Technical Assistance Report-Report on Consumer Price Index (January 12-16, 2026) Technical Assistance Reports Loading component... Loading component... Loading component... Loading component... Loading component... Related Links Republic of Estonia and the IMF Technical Assistance -- A Factsheet Visit the IMF eLibrary Our eLibrary offers over 25,000 IMF publications in multiple formats. Explore IMF Publications Newsletter Latest economic research and insights delivered to y"
+  },
+  "crossref": {
+    "status": "ok",
+    "message-type": "work",
+    "message": {
+      "DOI": "10.5089/9798229063937.019",
+      "publisher": "International Monetary Fund (IMF)",
+      "title": [
+        "Republic of Estonia"
+      ],
+      "subtitle": [
+        "Technical Assistance Report-Report on Consumer Price Index (January 12-16, 2026)"
+      ],
+      "container-title": [
+        "Technical Assistance Reports"
+      ],
+      "volume": "2026",
+      "issue": "082",
+      "journal-issue": {
+        "issue": "082",
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              10
+            ]
+          ]
+        }
+      },
+      "published": {
+        "date-parts": [
+          [
+            2026,
+            10
+          ]
+        ]
+      },
+      "language": "en",
+      "resource": {
+        "primary": {
+          "URL": "https://elibrary.imf.org/view/journals/019/2026/082/019.2026.issue-082-en.xml?cid=580315-com-dsp-crossref"
+        }
+      }
+    }
+  },
+  "landing_observed": {
+    "url": "https://www.elibrary.imf.org/view/journals/019/2026/082/019.2026.issue-082-en.xml",
+    "pdf_href": "https://www.elibrary.imf.org/downloadpdf/view/journals/019/2026/082/019.2026.issue-082-en.pdf",
+    "title": "Republic of Estonia: Technical Assistance Report-Report on Consumer Price Index (January 12-16, 2026)",
+    "doi": "10.5089/9798229063937.019",
+    "isbn": "9798229063937",
+    "language": "en",
+    "year": "2026",
+    "issue": "082"
+  }
+}

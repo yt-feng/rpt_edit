@@ -1,0 +1,58 @@
+name: Set up IMF official browser downloads
+description: Install pinned cloud-only clients for the verified official eLibrary route
+inputs:
+  institutions:
+    description: Sources selected by the calling institution workflow
+    default: all
+runs:
+  using: composite
+  steps:
+    - id: selected
+      shell: bash
+      env:
+        SELECTED_INSTITUTIONS: ${{ inputs.institutions }}
+      run: |
+        python - <<'PY'
+        import os
+        with open(os.environ['GITHUB_ENV'], 'a') as stream:
+            stream.write('IMF_CLOUD_BROWSER_ENABLED=false\n')
+        value = os.environ['SELECTED_INSTITUTIONS'].strip().lower()
+        enabled = value in {'', 'all', '*', 'everything', 'all-including-consulting'} or 'imf' in {p.strip() for p in value.split(',')}
+        with open(os.environ['GITHUB_OUTPUT'], 'a') as stream:
+            stream.write(f'enabled={str(enabled).lower()}\n')
+        PY
+    - id: node
+      uses: actions/setup-node@v4
+      if: steps.selected.outputs.enabled == 'true'
+      continue-on-error: true
+      with:
+        node-version: '22'
+    - name: Install verified IMF cloud clients
+      id: install
+      if: steps.selected.outputs.enabled == 'true' && steps.node.outcome == 'success'
+      continue-on-error: true
+      shell: bash
+      run: |
+        set -euo pipefail
+        test "$GITHUB_ACTIONS" = true
+        test "$RUNNER_OS" = Linux
+        npm install --prefix "$RUNNER_TEMP/imf-source-browser" --no-audit --no-fund playwright@1.64.0
+        "$RUNNER_TEMP/imf-source-browser/node_modules/.bin/playwright" install --with-deps chromium
+        python -m pip install requests==2.34.2 curl_cffi==0.16.3 pypdf==6.19.0 PySocks==1.7.1
+        curl --fail --location --silent --show-error --connect-timeout 10 --max-time 90 \
+          https://github.com/SagerNet/sing-box/releases/download/v1.14.3/sing-box-1.14.3-linux-amd64.tar.gz \
+          --output "$RUNNER_TEMP/imf-sing-box.tar.gz"
+        printf '%s  %s\n' e2bdf179c15a3652955dc44867e33ca0965c9c9b91b34267dcc5a5d639a5feee "$RUNNER_TEMP/imf-sing-box.tar.gz" | sha256sum --check --status
+        tar -xzf "$RUNNER_TEMP/imf-sing-box.tar.gz" -C "$RUNNER_TEMP"
+        {
+          echo 'IMF_CLOUD_BROWSER_ENABLED=true'
+          echo 'EXPLICIT_CLOUD_BROWSER_APPROVAL=true'
+          echo "PLAYWRIGHT_PACKAGE_ROOT=$RUNNER_TEMP/imf-source-browser"
+          echo "IMF_SING_BOX_BINARY=$RUNNER_TEMP/sing-box-1.14.3-linux-amd64/sing-box"
+        } >> "$GITHUB_ENV"
+    - name: Keep ordinary institution fetching available
+      if: steps.selected.outputs.enabled == 'true' && (steps.node.outcome != 'success' || steps.install.outcome != 'success')
+      shell: bash
+      run: |
+        echo 'IMF_CLOUD_BROWSER_ENABLED=false' >> "$GITHUB_ENV"
+        echo '::warning::Optional IMF browser setup did not complete. Ordinary sources and durable pending intake remain enabled; source health still requires real downloads.'

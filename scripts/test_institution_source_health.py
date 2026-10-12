@@ -36,6 +36,27 @@ def manifest():
                 downloaded=[], skipped=[])
 
 
+def live_manifest():
+    """Full synthetic browser receipt and the matching actual producer row."""
+    title, guid = "Synthetic report: Analysis", "synthetic-imf-1"
+    source = "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/10/11/synthetic-report"
+    landing = "https://www.elibrary.imf.org/view/journals/019/2026/082/019.2026.issue-082-en.xml"
+    pdf_url = "https://www.elibrary.imf.org/downloadpdf/view/journals/019/2026/082/019.2026.issue-082-en.pdf"
+    proof = dict(schema=1, source_guid=guid, source_url=source, landing_url=landing,
+                 pdf_url=pdf_url, doi="10.5089/9780000000002.019", title="Synthetic report — Analysis",
+                 identity_sha256="1" * 64, crossref_sha256="2" * 64, sha256="3" * 64,
+                 bytes=365715, pages=14, landing_status=200, pdf_status=200,
+                 source_identity_verified=True, transport="existing_subscription_vless_browser")
+    data = manifest()
+    data["source_checks"] = [source_check(status="ok", new=1)]
+    data["downloaded"] = [dict(institution="imf", title=title, source_page_url=source,
+                               pdf_url=pdf_url, sha256=proof["sha256"], bytes=proof["bytes"],
+                               local_filename=f"IMF_{fetcher.slug(title)}_{fetcher.short_hash('imf:' + guid)}.pdf",
+                               imf_live_download=proof)]
+    data["downloaded_count"] = 1
+    return data
+
+
 class SourceHealthTests(unittest.TestCase):
     def classify(self, data=None, **kwargs):
         params = dict(producer_exit_code=2, log_exit_code=0, date_folder=DATE, institutions="imf")
@@ -65,6 +86,114 @@ class SourceHealthTests(unittest.TestCase):
         data["downloaded"] = [dict(institution="imf")]; data["downloaded_count"] = 1
         result = self.classify(data, producer_exit_code=0)
         self.assertEqual((result["source_health"], result["source_health_backlog_only"]), ("degraded", "false"))
+
+    def test_verified_live_download_is_healthy_without_cache_recovery_fields(self):
+        for book in (False, True):
+            with self.subTest(book=book):
+                data = live_manifest(); row = data["downloaded"][0]; proof = row["imf_live_download"]
+                if book:
+                    proof["landing_url"] = "https://elibrary.imf.org/display/book/9780000000002/9780000000002.xml"
+                    proof["pdf_url"] = row["pdf_url"] = "https://www.elibrary.imf.org/downloadpdf/display/book/9780000000002/9780000000002.pdf"
+                with patch.object(fetcher.requests, "Session", side_effect=AssertionError("Health is read-only")):
+                    result = self.classify(data, producer_exit_code=0)
+                self.assertEqual(result, dict(source_health="healthy", source_health_required_failure_count="0",
+                                             source_health_failed_institutions="", source_health_backlog_only="false"))
+                self.assertNotIn("verified_original_recovery_count", data["source_checks"][0])
+
+    def test_official_preview_provenance_is_distinct_and_strict(self):
+        def preview_manifest():
+            data = live_manifest()
+            proof = data["downloaded"][0]["imf_live_download"]
+            del proof["crossref_sha256"]
+            proof.update(schema=2, metadata={"method": "official_source_preview", "preview_sha256": "c" * 64})
+            return data
+        self.assertEqual(self.classify(preview_manifest(), producer_exit_code=0)["source_health"], "healthy")
+        changes = [
+            lambda proof: proof.update(crossref_sha256="a" * 64),
+            lambda proof: proof.update(schema=1),
+            lambda proof: proof.update(metadata={}),
+            lambda proof: proof["metadata"].update(method="unreviewed_link"),
+            lambda proof: proof["metadata"].update(preview_sha256="invalid"),
+            lambda proof: proof["metadata"].update(unexpected=True),
+            lambda proof: proof.update(landing_url=proof["landing_url"].replace("-en.xml", "-es.xml"),
+                                       pdf_url=proof["pdf_url"].replace("-en.pdf", "-es.pdf")),
+        ]
+        for index, change in enumerate(changes):
+            data = preview_manifest(); row = data["downloaded"][0]; change(row["imf_live_download"])
+            row["pdf_url"] = row["imf_live_download"]["pdf_url"]
+            with self.subTest(case=index), self.assertRaises(health.InvalidSourceHealth):
+                self.classify(data, producer_exit_code=0)
+
+    def test_live_receipt_requires_every_field_and_rejects_unknown_or_mixed_proofs(self):
+        for missing in live_manifest()["downloaded"][0]["imf_live_download"]:
+            data = live_manifest(); del data["downloaded"][0]["imf_live_download"][missing]
+            with self.subTest(missing=missing), self.assertRaises(health.InvalidSourceHealth):
+                self.classify(data, producer_exit_code=0)
+        changes = [
+            lambda row: row.update(imf_live_download=None),
+            lambda row: row.update(imf_live_download=[]),
+            lambda row: row["imf_live_download"].update(unverified_extra=True),
+            lambda row: row.update(imf_live_download_unknown=True),
+            lambda row: row.update(acquisition_method="verified_original_cache"),
+        ] + [lambda row, field=field: row.update({field: "unrecognized"})
+             for field in health.RECOVERY_FIELDS]
+        for index, change in enumerate(changes):
+            data = live_manifest(); change(data["downloaded"][0])
+            with self.subTest(case=index), self.assertRaises(health.InvalidSourceHealth):
+                self.classify(data, producer_exit_code=0)
+
+    def test_live_receipt_requires_strict_types_statuses_bounds_and_checksums(self):
+        cases = [("schema", True), ("schema", 2), ("pages", True), ("pages", 0), ("pages", 5001),
+                 ("bytes", True), ("bytes", 0), ("bytes", 128 * 1024 * 1024 + 1),
+                 ("landing_status", 200.0), ("landing_status", 302), ("pdf_status", "200"), ("pdf_status", 403),
+                 ("source_identity_verified", 1), ("source_identity_verified", False),
+                 ("transport", "direct"), ("source_guid", ""), ("source_guid", "bad\nidentity"),
+                 ("title", ""), ("title", []), ("identity_sha256", "A" * 64),
+                 ("crossref_sha256", "broken"), ("sha256", True)]
+        for field, value in cases:
+            data = live_manifest(); data["downloaded"][0]["imf_live_download"][field] = value
+            with self.subTest(field=field, value=value), self.assertRaises(health.InvalidSourceHealth):
+                self.classify(data, producer_exit_code=0)
+
+    def test_live_receipt_binds_source_guid_title_and_downloaded_bytes_to_record(self):
+        changes = [lambda row: row.update(institution="wto"), lambda row: row.update(title="Other report"),
+                   lambda row: row.update(bytes=True), lambda row: row.update(bytes=row["bytes"] + 1),
+                   lambda row: row.update(sha256="4" * 64), lambda row: row.update(local_filename="other.pdf"),
+                   lambda row: row.update(source_page_url=row["source_page_url"] + "-other"),
+                   lambda row: row.update(pdf_url=row["pdf_url"].replace("082", "083")),
+                   lambda row: row["imf_live_download"].update(source_guid="different-guid")]
+        for index, change in enumerate(changes):
+            data = live_manifest(); change(data["downloaded"][0])
+            with self.subTest(case=index), self.assertRaises(health.InvalidSourceHealth):
+                self.classify(data, producer_exit_code=0)
+
+    def test_live_official_urls_require_same_issue_language_doi_and_safe_authority(self):
+        changes = [lambda proof: proof.update(landing_url=proof["landing_url"].replace("082", "083")),
+                   lambda proof: proof.update(landing_url=proof["landing_url"].replace("-en.xml", "-es.xml")),
+                   lambda proof: proof.update(doi="10.5089/9780000000002.001"),
+                   lambda proof: proof.update(doi="10.5089/9780000000003.019"),
+                   lambda proof: proof.update(pdf_url=proof["pdf_url"].replace("https:", "http:")),
+                   lambda proof: proof.update(pdf_url=proof["pdf_url"].replace("www.elibrary.imf.org", "elibrary.imf.org.invalid")),
+                   lambda proof: proof.update(pdf_url=proof["pdf_url"].replace("https://", "https://@")),
+                   lambda proof: proof.update(pdf_url=proof["pdf_url"] + "?download=true"),
+                   lambda proof: proof.update(pdf_url=proof["pdf_url"].replace("/view/", "/%76iew/")),
+                   lambda proof: proof.update(source_url="https://example.invalid/en/publications/synthetic")]
+        for index, change in enumerate(changes):
+            data = live_manifest(); row = data["downloaded"][0]; proof = row["imf_live_download"]
+            change(proof); row["pdf_url"] = proof["pdf_url"]; row["source_page_url"] = proof["source_url"]
+            with self.subTest(case=index), self.assertRaises(health.InvalidSourceHealth):
+                self.classify(data, producer_exit_code=0)
+
+    def test_live_proof_cannot_hide_source_failures_or_invent_cache_counts(self):
+        data = live_manifest(); data["source_checks"] = [source_check(status="degraded", new=1)]
+        self.assertEqual(self.classify(data, producer_exit_code=0)["source_health"], "degraded")
+        data = live_manifest(); data["source_checks"][0].update(discovery_error=True, status="degraded")
+        self.assertEqual(self.classify(data, producer_exit_code=0)["source_health"], "degraded")
+        for change in (lambda check: check.update(discovery_error=True),
+                       lambda check: check.update(verified_original_recovery_count=1, verified_original_manifest_sha256="a" * 64),
+                       lambda check: check.update(imf_live_download_count=1)):
+            data = live_manifest(); change(data["source_checks"][0])
+            with self.assertRaises(health.InvalidSourceHealth): self.classify(data, producer_exit_code=0)
 
     def test_max_total_can_limit_successful_coverage_but_never_zero_coverage(self):
         data = manifest(); data["institutions"] = ["imf", "bis"]
