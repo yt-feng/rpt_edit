@@ -316,5 +316,69 @@ class DeclaredOriginalLanguageTests(unittest.TestCase):
                          ["High-Level Summary Technical Assistance Reports"])
 
 
+class OfficialPreviewFallbackTests(unittest.TestCase):
+    def setUp(self):
+        self.case = json.loads((FIXTURE.parent / "albania_observed_preview.json").read_text())
+        self.item = self.case["item"]
+        self.preview = self.case["preview_excerpt"]
+
+    def resolve(self, preview=None):
+        preview = self.preview if preview is None else preview
+        identity = r.bind_source(self.item, {}, preview, self.item["source_url"])
+        return identity, r.resolve_official_preview(identity, preview, self.item["source_url"])
+
+    def test_observed_albania_preview_resolves_real_link_without_claiming_crossref(self):
+        identity, publication = self.resolve()
+        self.assertEqual(publication["landing_url"], self.case["observed_landing_url"])
+        self.assertEqual(publication["doi"], "10.5089/9798229061933.029")
+        self.assertEqual(publication["isbn"], "9798229061933")
+        self.assertEqual((publication["year"], publication["issue"], publication["language"]), ("2026", "073", "en"))
+        self.assertEqual(publication["title_variants"], [self.item["title"]])
+        self.assertEqual(publication["full_title"], self.item["title"])
+        self.assertEqual(publication["metadata"], {"method": "official_source_preview", "preview_sha256": identity.preview_sha256})
+        self.assertIsNone(publication["crossref_sha256"])
+        self.assertFalse(publication["pdf_verified"])
+        self.assertEqual(publication["pdf_url_candidates"], [])
+
+    def test_independent_language_isbn_series_volume_and_issue_are_required(self):
+        for fragment in ('<meta name="Language" content="ENG">', '<p>ISBN: 9798229061933</p>',
+                         '<meta name="Series" content="High-Level Summary Technical Assistance Reports">',
+                         '<p>Volume: 2026</p>', '<p>Issue: 073</p>'):
+            with self.subTest(missing=fragment), self.assertRaises(r.ResolutionError):
+                self.resolve(self.preview.replace(fragment, ''))
+        for old, new in [('content="ENG"', 'content="SPA"'), ('ISBN: 9798229061933', 'ISBN: 9798229062657'),
+                         ('content="High-Level Summary Technical Assistance Reports"', 'content="Policy Papers"'),
+                         ('Volume: 2026', 'Volume: 2025'), ('Issue: 073', 'Issue: 072')]:
+            with self.subTest(field=old), self.assertRaises(r.ResolutionError):
+                self.resolve(self.preview.replace(old, new))
+
+    def test_actual_link_is_mandatory_no_generated_country_or_series_url(self):
+        landing = self.case["observed_landing_url"]
+        for changed in (self.preview.replace(landing, "https://www.elibrary.imf.org/"),
+                        self.preview.replace(landing, "https://evil.invalid/view/journals/029/2026/073/029.2026.issue-073-en.xml"),
+                        self.preview.replace(landing, landing.replace("/073/", "/072/").replace("issue-073", "issue-072")),
+                        self.preview.replace(landing, landing.replace("-en.xml", "-es.xml")),
+                        self.preview + '<a href="https://elibrary.imf.org/view/journals/029/2026/072/029.2026.issue-072-en.xml">Different report</a>'):
+            with self.assertRaises(r.ResolutionError):
+                self.resolve(changed)
+
+    def test_preview_content_and_url_must_match_the_previously_bound_source(self):
+        identity, _ = self.resolve()
+        with self.assertRaisesRegex(r.ResolutionError, "preview_content_mismatch"):
+            r.resolve_official_preview(identity, self.preview + ' ', self.item["source_url"])
+        with self.assertRaisesRegex(r.ResolutionError, "preview_source_mismatch"):
+            r.resolve_official_preview(identity, self.preview, self.item["source_url"] + '-other')
+        with self.assertRaisesRegex(r.ResolutionError, "preview_title_mismatch"):
+            self.resolve(self.preview.replace(html.escape(self.item["title"]), "Different report"))
+
+    def test_official_preview_tracking_value_allows_observed_dot_but_no_extra_query(self):
+        observed = self.case["observed_landing_url"]
+        self.assertEqual(r.validate_publication_url(observed)["issue"], "073")
+        for changed in (observed + '&token=unknown', observed + '&cid=other',
+                        observed.replace('lk-com-dsp-imf.org', 'https://evil.invalid'), observed + '#fragment'):
+            with self.assertRaises(r.ResolutionError):
+                r.validate_publication_url(changed)
+
+
 if __name__ == "__main__":
     unittest.main()

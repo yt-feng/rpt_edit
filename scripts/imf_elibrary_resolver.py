@@ -25,6 +25,14 @@ SPANISH_ORIGINAL_PREFIXES = (
     "[This report is only available in Spanish]",
     "[Please note this report is only available in Spanish]",
 )
+# Journal/series pairs independently observed in the validated exact-DOI cloud
+# metadata. New layouts need evidence before using the preview-only fallback.
+PREVIEW_JOURNAL_SERIES = {
+    "001": "IMF Working Papers", "002": "IMF Staff Country Reports",
+    "005": "Technical Notes and Manuals", "007": "Policy Papers",
+    "018": "Selected Issues Papers", "019": "Technical Assistance Reports",
+    "029": "High-Level Summary Technical Assistance Reports", "087": "Departmental Papers",
+}
 
 
 class ResolutionError(ValueError):
@@ -96,7 +104,7 @@ def validate_publication_url(value, *, pdf=False):
                 and "%" not in parsed.path, "invalid_official_url")
         query = parse_qsl(parsed.query, keep_blank_values=True, strict_parsing=True)
         require(not query if pdf else (not query or (len(query) == 1 and query[0][0] == "cid"
-                and re.fullmatch(r"[A-Za-z0-9-]{1,128}", query[0][1]))), "invalid_official_url")
+                and re.fullmatch(r"[A-Za-z0-9.-]{1,128}", query[0][1]))), "invalid_official_url")
         match = JOURNAL_RE.fullmatch(parsed.path) or BOOK_RE.fullmatch(parsed.path)
         require(match is not None, "invalid_official_url")
         result = match.groupdict()
@@ -115,6 +123,7 @@ class _Document(HTMLParser):
         super().__init__(convert_charrefs=True)
         require(isinstance(markup, str) and 0 < len(markup) <= MAX_HTML, "invalid_html")
         self.metadata, self.h1s, self.hrefs, self.titles, self.visible = {}, [], [], [], []
+        self.links = []
         self.capture, self.parts = None, []
         self.hidden = 0
         self.feed(markup)
@@ -128,8 +137,10 @@ class _Document(HTMLParser):
             key = (values.get("name") or values.get("property") or "").lower()
             if key:
                 self.metadata.setdefault(key, []).append(values.get("content", ""))
-        if tag == "a" and values.get("href") and urlsplit(values["href"]).path.lower().endswith(".pdf"):
-            self.hrefs.append(values["href"])
+        if tag == "a" and values.get("href"):
+            self.links.append(values["href"])
+            if urlsplit(values["href"]).path.lower().endswith(".pdf"):
+                self.hrefs.append(values["href"])
         if tag == "link" and values.get("rel", "").lower() == "canonical":
             self.metadata.setdefault("canonical_url", []).append(values.get("href", ""))
         if tag in {"h1", "title"}:
@@ -318,6 +329,60 @@ def resolve_crossref(identity, payload):
             "original_language": identity.original_language,
             "landing_url": landing, "pdf_url_candidates": candidates, "identity_sha256": identity.source_binding_sha256,
             "preview_sha256": identity.preview_sha256, "crossref_sha256": digest(payload), "pdf_verified": False}
+
+
+@checked
+def resolve_official_preview(identity, preview_html, preview_url):
+    """Resolve an actual publisher link when the caller observed Crossref 404.
+
+    This pure helper does not assert an HTTP result or synthesize a catalog URL.
+    Callers must invoke it only for a confirmed exact-DOI Crossref 404, and still
+    validate the live page, observed PDF link and PDF bytes before acceptance.
+    """
+    require(isinstance(identity, SourceIdentity), "invalid_source_metadata")
+    require(source_url(preview_url) == identity.source_url, "preview_source_mismatch")
+    require(isinstance(preview_html, str) and hashlib.sha256(preview_html.encode()).hexdigest()
+            == identity.preview_sha256, "preview_content_mismatch")
+    doc = _Document(preview_html)
+    # Require these fields independently in the exact preview, not merely
+    # inferred from its DOI or supplied only by a caller's raw search metadata.
+    require(set(doc.metadata.get("language", [])) == {"ENG"}, "preview_language_missing_or_ambiguous")
+    series = doc.metadata.get("series", [])
+    require(series and {title_key(x) for x in series} == {title_key(x) for x in identity.series},
+            "preview_series_mismatch")
+    series_name = PREVIEW_JOURNAL_SERIES.get(identity.doi.rsplit(".", 1)[1])
+    require(series_name is not None and {title_key(x) for x in series} == {title_key(series_name)},
+            "preview_series_mismatch")
+    visible = " ".join(doc.visible)
+    years = set(re.findall(r"\bVolume\s*:?\s*(20[0-9]{2})(?![0-9])", visible, re.I))
+    issues = {str(int(x)).zfill(3) for x in re.findall(r"\bIssue\s*:?\s*([0-9]{1,4})(?![0-9])", visible, re.I)}
+    require(identity.year is not None and years == {identity.year}, "preview_year_mismatch")
+    require(identity.issue is not None and issues == {identity.issue}, "preview_issue_mismatch")
+    isbns = re.findall(r"\bISBN(?:-13)?\s*:?\s*(97[89](?:[\s-]?[0-9]){10})(?![0-9])", visible, re.I)
+    for key in ("citation_isbn", "dc.identifier.isbn", "isbn"):
+        isbns.extend(doc.metadata.get(key, []))
+    require(isbns and {re.sub(r"[\s-]", "", x) for x in isbns} == {identity.isbn}, "preview_isbn_missing_or_mismatch")
+    explicit_dois = {match.group(0).lower() for match in DOI_RE.finditer(html.unescape(preview_html).replace("\\/", "/"))}
+    require(explicit_dois == {identity.doi}, "explicit_doi_missing_or_ambiguous")
+    candidates = []
+    for href in doc.links:
+        candidate = urljoin(preview_url, href)
+        parsed = urlsplit(candidate)
+        if parsed.hostname not in LIBRARY_HOSTS or not parsed.path.lower().endswith(".xml"):
+            continue  # Ignore the library home page and ordinary navigation.
+        locator = validate_publication_url(candidate)
+        require(locator["kind"] == "journal", "official_url_identity_mismatch")
+        _check_locator(identity, locator, year=identity.year, issue=identity.issue, language="en")
+        candidates.append((candidate, locator["document_path"]))
+    require(candidates and len({path for _, path in candidates}) == 1, "official_landing_missing_or_ambiguous")
+    return {"source_guid": identity.guid, "source_url": identity.source_url, "source_title": identity.title,
+            "doi": identity.doi, "isbn": identity.isbn, "title": identity.title, "subtitle": "",
+            "full_title": identity.title, "title_variants": [identity.title], "series": list(identity.series),
+            "year": identity.year, "issue": identity.issue, "language": "en", "original_language": identity.original_language,
+            "landing_url": candidates[0][0], "pdf_url_candidates": [], "identity_sha256": identity.source_binding_sha256,
+            "preview_sha256": identity.preview_sha256, "crossref_sha256": None,
+            "metadata": {"method": "official_source_preview", "preview_sha256": identity.preview_sha256},
+            "pdf_verified": False}
 
 
 @checked

@@ -1,0 +1,24 @@
+{
+  "provenance": {
+    "preview_http_status": 200,
+    "preview_bytes": 30593,
+    "preview_sha256": "99b16fc45e56b87a1d73dcbe3fcbdec434b6f3d5ede43c2fa0ddd3a840ff6922",
+    "exact_crossref_status": 404,
+    "doi_handle_status": 404,
+    "note": "Minimal markup retaining actual field values and two actual observed eLibrary anchors; navigation and description prose omitted. The URL is observed, never derived from a report number."
+  },
+  "item": {
+    "title": "Republic of Albania: Toward a Sustainable and Efficient Local Government Financing Framework",
+    "source_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/09/republic-of-albania-toward-a-sustainable-and-efficient-local-government-financing-framework-580391",
+    "guid": "6272b7f5239f5e76171747a24e78516285d3e2c4ebe464d3ba02bde4d2c4",
+    "date": "2026-10-09T04:00:00+00:00",
+    "pdf_candidates": [
+      "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026073.pdf",
+      "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026073-source-pdf.pdf"
+    ],
+    "scrape_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/09/republic-of-albania-toward-a-sustainable-and-efficient-local-government-financing-framework-580391",
+    "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/09/republic-of-albania-toward-a-sustainable-and-efficient-local-government-financing-framework-580391"
+  },
+  "preview_excerpt": "<title>Republic of Albania: Toward a Sustainable and Efficient Local Government Financing Framework</title>\n<link rel=\"canonical\" href=\"https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/09/republic-of-albania-toward-a-sustainable-and-efficient-local-government-financing-framework-580391\">\n<meta name=\"Series\" content=\"High-Level Summary Technical Assistance Reports\">\n<meta name=\"Language\" content=\"ENG\">\n<h1>High-Level Summary Technical Assistance Reports</h1>\n<a href=\"https://doi.org/10.5089/9798229061933.029\">DOI</a>\n<a href=\"https://elibrary.imf.org/view/journals/029/2026/073/029.2026.issue-073-en.xml?cid=lk-com-dsp-imf.org\">More Formats on IMF eLibrary</a>\n<a href=\"https://elibrary.imf.org/view/journals/029/2026/073/029.2026.issue-073-en.xml?cid=lk-com-dsp-imf.org\">More formats on IMF eLibrary</a>\n<p>Volume: 2026</p><p>Issue: 073</p><p>ISBN: 9798229061933</p>",
+  "observed_landing_url": "https://elibrary.imf.org/view/journals/029/2026/073/029.2026.issue-073-en.xml?cid=lk-com-dsp-imf.org"
+}
