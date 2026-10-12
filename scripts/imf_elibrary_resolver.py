@@ -21,6 +21,10 @@ DOI_RE = re.compile(r"(?<![A-Za-z0-9])10\.5089/([0-9]{13})\.([0-9]{3})(?![A-Za-z
 LIBRARY_HOSTS = {"www.elibrary.imf.org", "elibrary.imf.org"}
 JOURNAL_RE = re.compile(r"/(?P<pdf>downloadpdf/)?view/journals/(?P<series>[0-9]{3})/(?P<year>20[0-9]{2})/(?P<issue>[0-9]{3})/(?P<document>(?P=series)\.(?P=year)\.issue-(?P=issue)|article-A[0-9]{3})-(?P<language>[a-z]{2})\.(?P<extension>xml|pdf)")
 BOOK_RE = re.compile(r"/(?P<pdf>downloadpdf/)?display/book/(?P<isbn>[0-9]{13})/(?P=isbn)\.(?P<extension>xml|pdf)")
+SPANISH_ORIGINAL_PREFIXES = (
+    "[This report is only available in Spanish]",
+    "[Please note this report is only available in Spanish]",
+)
 
 
 class ResolutionError(ValueError):
@@ -157,6 +161,7 @@ class SourceIdentity:
     series: tuple[str, ...]
     year: str | None
     issue: str | None
+    original_language: str | None
     source_binding_sha256: str
     preview_sha256: str
 
@@ -226,9 +231,17 @@ def bind_source(item, raw, preview_html, preview_url):
         observed_issue = next(iter(preview_issues))
         require(issue is None or issue == observed_issue, "preview_issue_mismatch")
         issue = observed_issue
+    # These two declarations are observed on the English source's own official
+    # Description metadata. They describe original PDF language, not the DOI
+    # metadata/landing language; never substitute another edition's DOI/ISBN.
+    descriptions = doc.metadata.get("description", [])
+    original_language = "es" if descriptions and all(
+        value.strip().startswith(SPANISH_ORIGINAL_PREFIXES) for value in descriptions
+    ) else None
     binding = {"guid": guid, "source_url": canonical, "title": title, "published": published,
-               "doi": doi, "isbn": isbn, "series": series, "year": year, "issue": issue}
-    return SourceIdentity(guid, canonical, title, published, doi, isbn, series, year, issue,
+               "doi": doi, "isbn": isbn, "series": series, "year": year, "issue": issue,
+               "original_language": original_language}
+    return SourceIdentity(guid, canonical, title, published, doi, isbn, series, year, issue, original_language,
                           digest(binding), hashlib.sha256(preview_html.encode()).hexdigest())
 
 
@@ -267,8 +280,9 @@ def resolve_crossref(identity, payload):
     require(len(titles) == 1 and len(subtitles) <= 1, "crossref_title_ambiguous")
     full_title = titles[0] + (": " + subtitles[0] if subtitles else "")
     require(title_key(full_title) == title_key(identity.title), "crossref_title_mismatch")
+    crossref_series = strings(message.get("container-title"))
     if identity.series:
-        require({title_key(value) for value in identity.series} & {title_key(value) for value in strings(message.get("container-title"))},
+        require({title_key(value) for value in identity.series} & {title_key(value) for value in crossref_series},
                 "crossref_series_mismatch")
     year = _crossref_year(message)
     issue = str(message.get("issue") or message.get("journal-issue", {}).get("issue") or "")
@@ -300,7 +314,8 @@ def resolve_crossref(identity, payload):
     return {"source_guid": identity.guid, "source_url": identity.source_url, "source_title": identity.title,
             "doi": identity.doi, "isbn": identity.isbn, "title": titles[0], "subtitle": subtitles[0] if subtitles else "",
             "full_title": full_title, "title_variants": list(dict.fromkeys([titles[0], full_title])),
-            "series": list(identity.series), "year": year, "issue": issue, "language": language or locator.get("language"),
+            "series": crossref_series, "year": year, "issue": issue, "language": language or locator.get("language"),
+            "original_language": identity.original_language,
             "landing_url": landing, "pdf_url_candidates": candidates, "identity_sha256": identity.source_binding_sha256,
             "preview_sha256": identity.preview_sha256, "crossref_sha256": digest(payload), "pdf_verified": False}
 

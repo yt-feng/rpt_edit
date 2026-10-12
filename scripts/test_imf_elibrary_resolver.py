@@ -198,5 +198,74 @@ class ResolverTests(unittest.TestCase):
             r.validate_landing_metadata({}, final_url="SECRET", metadata={}, h1s=[], download_hrefs=[])
 
 
+class DeclaredOriginalLanguageTests(unittest.TestCase):
+    def cases(self):
+        for name in ("chile_hls", "chile_tar"):
+            yield json.loads((FIXTURE.parent / (name + "_observed_metadata.json")).read_text())
+
+    def bind(self, case, preview=None):
+        item = case["item"]
+        return r.bind_source(item, {}, preview or case["preview_excerpt"], item["source_url"])
+
+    def test_two_observed_sources_keep_english_doi_metadata_and_explicit_spanish_original(self):
+        expected = {"10.5089/9798229062657.029": "071", "10.5089/9798229064521.019": "083"}
+        for case in self.cases():
+            identity = self.bind(case)
+            publication = r.resolve_crossref(identity, case["crossref"])
+            self.assertEqual(identity.original_language, "es")
+            self.assertEqual(publication["original_language"], "es")
+            self.assertEqual(publication["language"], "en")
+            self.assertEqual(publication["full_title"], case["item"]["title"])
+            self.assertEqual(publication["issue"], expected[identity.doi])
+            self.assertEqual(publication["doi"], identity.doi)
+            self.assertEqual(publication["isbn"], identity.isbn)
+            self.assertEqual(publication["series"], case["crossref"]["message"]["container-title"])
+            self.assertIn("-en.xml", publication["landing_url"])
+            self.assertEqual(publication["pdf_url_candidates"], [])
+
+    def test_unknown_quoted_or_other_location_descriptions_keep_strict_default(self):
+        for case in self.cases():
+            preview = case["preview_excerpt"]
+            prefix = next(value for value in r.SPANISH_ORIGINAL_PREFIXES if value in preview)
+            variants = [preview.replace(prefix, text) for text in (
+                "[This report is only available in French]", "", "The following report says " + prefix,
+                "[This report may be available in Spanish]", "[Another report is only available in Spanish]")]
+            variants += [preview.replace('name="Description"', 'name="unrelated"'),
+                         preview.replace(f'<meta name="Description" content="{prefix}">', f'<p>{prefix}</p>'),
+                         preview + '<meta name="Description" content="This report is in English">']
+            baseline = self.bind(case)
+            for changed in variants:
+                with self.subTest(description=changed):
+                    identity = self.bind(case, changed)
+                    self.assertIsNone(identity.original_language)
+                    self.assertNotEqual(identity.source_binding_sha256, baseline.source_binding_sha256)
+                    self.assertIsNone(r.resolve_crossref(identity, case["crossref"])["original_language"])
+
+    def test_original_language_never_relaxes_source_title_doi_series_or_locator(self):
+        for case in self.cases():
+            identity = self.bind(case)
+            for key, value in (("DOI", "10.5089/9798229063074.029"),
+                               ("subtitle", ["Reporte sobre la misión de asistencia técnica en estadísticas de finanzas públicas"]),
+                               ("container-title", ["Other Series"]), ("issue", "070")):
+                changed = deepcopy(case["crossref"]); changed["message"][key] = value
+                with self.subTest(key=key), self.assertRaises(r.ResolutionError):
+                    r.resolve_crossref(identity, changed)
+            changed = deepcopy(case["crossref"])
+            changed["message"]["resource"]["primary"]["URL"] = changed["message"]["resource"]["primary"]["URL"].replace("-en.xml", "-es.xml")
+            with self.assertRaises(r.ResolutionError):
+                r.resolve_crossref(identity, changed)
+            changed = case["preview_excerpt"].replace(html.escape(case["item"]["title"]), "Different report")
+            with self.assertRaisesRegex(r.ResolutionError, "preview_title_mismatch"):
+                self.bind(case, changed)
+
+    def test_crossref_series_is_retained_when_pending_source_has_no_series_field(self):
+        case = next(self.cases())
+        preview = case["preview_excerpt"].replace('<meta name="Series" content="High-Level Summary Technical Assistance Reports">', '')
+        identity = self.bind(case, preview)
+        self.assertEqual(identity.series, ())
+        self.assertEqual(r.resolve_crossref(identity, case["crossref"])["series"],
+                         ["High-Level Summary Technical Assistance Reports"])
+
+
 if __name__ == "__main__":
     unittest.main()
