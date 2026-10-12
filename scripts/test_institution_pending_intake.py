@@ -73,6 +73,13 @@ class IntakeTests(unittest.TestCase):
             self.assertEqual(json.loads((path / "pending/imf.json").read_text())["items"], {})
             self.assertEqual(json.loads((path / "seen.json").read_text())["items"]["imf:coveo-1"]["status"], "downloaded")
 
+    def test_repeated_feed_identity_is_attempted_once_per_run(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory)
+            code, calls, _, _ = self.run_fetch(path, [item(), item()])
+            self.assertEqual((code, len(calls)), (2, 1))
+            self.assertEqual(json.loads((path / "pending/imf.json").read_text())["items"]["imf:coveo-1"]["attempts"], 1)
+
     def test_unobserved_historical_source_is_not_backfilled(self):
         with tempfile.TemporaryDirectory() as directory:
             code, calls, manifest, _ = self.run_fetch(Path(directory), [item(days=8)])

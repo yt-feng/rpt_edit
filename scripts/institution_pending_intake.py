@@ -93,7 +93,12 @@ class PendingIntake:
         selected = ordered[:self.retry_limit]
         # Preserve original URL/date/title even if feed metadata changes, and
         # don't accidentally retry a deferred entry again through today's feed.
-        fresh = [item for item in discovered if "imf:" + item["guid"] not in self.items]
+        fresh, included = [], set(self.items)
+        for item in discovered:
+            identity = "imf:" + item["guid"]
+            if identity not in included:
+                fresh.append(item)
+                included.add(identity)
         self.item_count = len(self.items) + len(fresh)
         return [copy.deepcopy(self.items[key]["item"]) for key in selected] + fresh
 
