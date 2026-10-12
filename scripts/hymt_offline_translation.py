@@ -551,12 +551,19 @@ class HyMTOfflineTranslator:
     def __init__(self, cache_dir: str | Path | None = None, *, model_dir: str | Path | None = None,
                  engine_factory: Callable[[str, str], object] | None = None, batch_size: int = 1,
                  diagnostic_callback: Callable[[dict], None] | None = None,
-                 validation_attempts: int = 3, quantity_policy: str = 'strict'):
+                 validation_attempts: int = 3, quantity_policy: str = 'strict',
+                 materialized_validator: Callable[[str], None] | None = None):
         self.cache_dir = Path(cache_dir or os.environ.get('HYMT_TRANSLATION_CACHE') or os.environ.get('PORTAL_OFFLINE_TRANSLATION_CACHE', '.cache/hymt-translation'))
         self.model_dir = Path(model_dir or os.environ.get('HYMT_MODEL_DIR', '.cache/hymt-model'))
         self._engine_factory = engine_factory
         # Explicit opt-in for the fixed public smoke corpus only; never printed or persisted here.
         self._diagnostic_callback = diagnostic_callback
+        if materialized_validator is not None and not callable(materialized_validator):
+            raise ValueError('materialized_validator must be callable')
+        # A caller may tighten output acceptance inside the existing retry
+        # bound. It must raise OfflineTranslationValidationError on rejection.
+        # The complete-unit caller contract still runs after fragment assembly.
+        self._materialized_validator = materialized_validator
         if validation_attempts not in {1, 2, 3}:
             raise ValueError('validation_attempts must be 1..3')
         if quantity_policy not in {'strict', 'advisory'}:
@@ -648,6 +655,11 @@ class HyMTOfflineTranslator:
                 # Cache stores the validated masked form, independent of source URLs.
                 validate_result(masked, value, detected, target, markdown=markdown, check_quantities=False,
                                 optional_placeholders=optional_placeholders)
+                if self._materialized_validator is not None:
+                    restored = _restore_terms(value, terms)
+                    for token, original in replacements.items():
+                        restored = restored.replace(token, original)
+                    self._materialized_validator(restored)
                 self.stats['cache_hits'] += 1
             else:
                 raise ValueError('Cache identity changed')
@@ -694,6 +706,8 @@ class HyMTOfflineTranslator:
                         validate_result(core, materialized, detected, target, markdown=markdown,
                                         check_quantities=self.quantity_policy == 'strict',
                                         optional_placeholders=optional_placeholders)
+                        if self._materialized_validator is not None:
+                            self._materialized_validator(materialized)
                         value = materialized
                         active_replacements = replacements
                         fresh_translation = True
@@ -734,6 +748,8 @@ class HyMTOfflineTranslator:
         validate_result(core, value, detected, target, markdown=markdown,
                         check_quantities=self.quantity_policy == 'strict',
                         optional_placeholders=optional_placeholders)
+        if self._materialized_validator is not None:
+            self._materialized_validator(value)
         if self.quantity_policy == 'advisory':
             self._record_quantity_warning(core, value, detected, target, optional_placeholders)
         if fresh_translation:
