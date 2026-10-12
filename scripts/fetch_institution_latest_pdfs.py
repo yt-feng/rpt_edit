@@ -1346,7 +1346,9 @@ def collect_coveo_items(cfg: dict[str, Any], session: requests.Session, timeout:
         landing = _normalize_imf_host(landing)
         # Search results can include Special Features roll-up pages, which are
         # collections rather than individual publications with one report PDF.
-        if "/publications/sprolls/" in urlsplit(landing).path.lower():
+        publication_path = urlsplit(landing).path.lower().rstrip("/")
+        if "/publications/sprolls/" in publication_path or publication_path == "/en/publications/weo":
+            # The WEO root is a collection, not the separately dated issue.
             continue
         epoch_ms = raw.get("imfdate")
         date_iso = ""

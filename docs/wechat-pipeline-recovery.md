@@ -1,6 +1,6 @@
 # WeChat generation and recovery
 
-Last reviewed: 2026-10-11.
+Last reviewed: 2026-10-12.
 
 The source fetch, WeChat draft creation, and public website release are separate
 stages. A successful upload must include a successful `draft/get` readback of
@@ -56,6 +56,45 @@ out of the seen state so the next scheduled run can reconsider them. A changed
 release date/title is not a completed download. An actual required-source 403
 or unresolved released PDF remains a visible source-health failure; deferral
 does not assert that blocked IMF downloads are working.
+
+Released IMF sources observed inside the normal intake window are saved in
+`institution_feeds/pending_intake/imf.json` before downloading. This checkpoint
+retains the original source identity, publication date, official URL candidates,
+and first observation time; it does not mark a PDF downloaded or a handoff
+complete. Each run retries at most ten previously observed sources, oldest
+attempt first. Fresh reports still use the configured discovery window; an
+unobserved old publication is never admitted by the retry path. Exact dependency
+holds rotate without consuming a new source download, so they cannot starve
+other queued sources.
+
+The workflow commits only this pending file immediately after fetching, even
+when a source fails. The provisional seen state and PDF archive are committed
+only after the existing translated-handoff checks succeed. Both commits require
+push success. A downloaded queued source remains pending until the next run sees
+its durable `downloaded` or `duplicate_pdf` entry, allowing recovery if a later
+translation or handoff fails. Previously admitted source URLs can still be
+retried when Coveo discovery is unavailable. The manifest separately reports
+`discovery_error` and `deferred_retry_count`; successful partial retries cannot
+turn an incomplete source inventory into a healthy source result.
+
+The fetch-only test workflow includes this pending checkpoint in its diagnostic
+artifact. It commits nothing and does not call MinerU, translation, or WeChat.
+The 2026-10-12 hosted baseline `38194488716` still returned 403 for all 18 recent
+IMF sources. Official eLibrary listing probes in `38194699442` returned 405/202
+responses without a verified PDF download. Pending intake durability prevents
+those already observed sources from aging out; it does not claim the upstream
+access restriction has been resolved. Of those 18 failures, one was the generic
+`/en/publications/weo` collection landing; it is now excluded while dated WEO
+issues retain normal future-publication handling. The other 17 released sources
+remain unavailable.
+
+The initial 17-source pending checkpoint comes from fetch-only run
+`38195109224` at code commit `1d1736a`, observed at
+2026-10-12 02:16:57 UTC. Its original 18-item artifact SHA-256 is
+`746afb698ed395eb4f219a504462bc12c0a6db6f704b739fa2c166dfa3d23d3e`.
+The seed removes only the verified WEO collection root, preserves every report's
+original admission metadata, and excludes any already durable downloaded or
+duplicate-PDF identity (none of the 17 matched).
 
 Consulting uses the same immutable, source-bound MinerU result cache as the
 institution route for the normal `vlm/en/ocr=true` options. Cache identity

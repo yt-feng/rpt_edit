@@ -36,7 +36,8 @@ def _official_url(value, *, pdf=False):
         return (parsed.scheme == "https" and parsed.hostname == "www.imf.org"
                 and not parsed.username and not parsed.password and parsed.port in (None, 443)
                 and not parsed.fragment and "\\" not in value and "%" not in path
-                and "/../" not in path and "/./" not in path and allowed_path)
+                and "/../" not in path and "/./" not in path and allowed_path
+                and path.rstrip("/") != "/en/publications/weo")
     except ValueError:
         return False
 

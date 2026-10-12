@@ -137,6 +137,7 @@ class IntakeTests(unittest.TestCase):
             valid = json.loads(path.read_text())
             mutations = [
                 lambda data: data.update(institution="bis"),
+                lambda data: data["items"]["imf:coveo-1"]["item"].update(source_url="https://www.imf.org/en/publications/weo"),
                 lambda data: data["items"]["imf:coveo-1"]["item"].update(source_url="https://evil.example/en/publications/report"),
                 lambda data: data["items"]["imf:coveo-1"]["item"].update(source_url="https://www.imf.org/private/report"),
                 lambda data: data["items"]["imf:coveo-1"]["item"].update(pdf_candidates=["https://www.imf.org@evil.example/report.pdf"]),
@@ -146,6 +147,25 @@ class IntakeTests(unittest.TestCase):
             for mutate in mutations:
                 data = copy.deepcopy(valid); mutate(data); path.write_text(json.dumps(data))
                 with self.assertRaises(ValueError): PendingIntake(path, {}, now=NOW)
+
+    def test_weo_collection_is_excluded_but_dated_future_issue_stays_pending(self):
+        future = item(); future["title"] = "World Economic Outlook October 2026"
+        future["date"] = (NOW + timedelta(days=1)).isoformat()
+        future["source_url"] = "https://www.imf.org/en/publications/weo/issues/2026/10/13/world-economic-outlook-october-2026"
+        with tempfile.TemporaryDirectory() as directory:
+            code, calls, manifest, _ = self.run_fetch(Path(directory), [future])
+            self.assertEqual((code, calls, manifest["skipped"][0]["reason"]), (0, [], "publication_pending"))
+            self.assertEqual(json.loads((Path(directory) / "pending/imf.json").read_text())["items"], {})
+        class Response:
+            def raise_for_status(self): pass
+            def json(self):
+                urls = ["https://www.imf.org/en/publications/weo", "https://www.imf.org/en/Publications/WEO/",
+                        "https://www.imf.org/en/publications/weo/?year=2026", future["source_url"]]
+                return {"results": [{"title": "WEO", "raw": {"clickableuri": url, "permanentid": url}}
+                                    for url in urls]}
+        with patch.object(fetcher, "http_post", return_value=Response()):
+            discovered = fetcher.collect_coveo_items(fetcher.INSTITUTIONS["imf"], object(), 10, 60)
+        self.assertEqual([record["source_url"] for record in discovered], [future["source_url"]])
 
     def test_discovery_is_saved_before_download_exception(self):
         with tempfile.TemporaryDirectory() as directory:
