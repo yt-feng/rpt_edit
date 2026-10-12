@@ -57,22 +57,36 @@ jobs:
       - name: Fetch latest institution PDFs (test, no commit)
         env:
           PROXY_SUBSCRIPTION_URL: ${{ secrets.PROXY_SUBSCRIPTION_URL }}
+          IMF_PUBLIC_EVIDENCE_DIR: _fetch_test/imf-source-evidence
+          FETCH_INSTITUTIONS: ${{ github.event.inputs.institutions || 'all' }}
+          FETCH_SINCE_DAYS: ${{ github.event.inputs.since_days || '14' }}
+          FETCH_MAX_PER_INSTITUTION: ${{ github.event.inputs.max_per_institution || '2' }}
         run: |
           set -o pipefail
+          fetch_date="$(TZ=Asia/Shanghai date +%y%m%d)"
           fetch_runner=(python)
           if [ "${IMF_CLOUD_BROWSER_ENABLED:-}" = true ]; then
             fetch_runner=(xvfb-run --auto-servernum python)
           fi
+          set +e
           "${fetch_runner[@]}" scripts/fetch_institution_latest_pdfs.py \
             --output-dir _fetch_test \
             --pending-intake-path _fetch_test/imf-pending-intake.json \
-            --date "$(TZ=Asia/Shanghai date +%y%m%d)" \
-            --institutions "${{ github.event.inputs.institutions || 'all' }}" \
-            --since-days "${{ github.event.inputs.since_days || '14' }}" \
-            --max-per-institution "${{ github.event.inputs.max_per_institution || '2' }}" \
+            --date "$fetch_date" \
+            --institutions "$FETCH_INSTITUTIONS" \
+            --since-days "$FETCH_SINCE_DAYS" \
+            --max-per-institution "$FETCH_MAX_PER_INSTITUTION" \
             --archive-path "_fetch_test/test_archive.jsonl" \
             --seen-state-path "_fetch_test/test_seen.json" \
             2>&1 | tee fetch_test.log
+          statuses=("${PIPESTATUS[@]}")
+          set -e
+          python scripts/institution_source_health.py \
+            --producer-exit-code "${statuses[0]}" --log-exit-code "${statuses[1]}" \
+            --manifest _fetch_test/institution_run_manifest.json \
+            --date-folder "$fetch_date" --institutions "$FETCH_INSTITUTIONS" \
+            --github-output _fetch_test/source-health.txt
+          grep -qx 'source_health=healthy' _fetch_test/source-health.txt
 
       - name: Show what was fetched
         run: |
@@ -113,4 +127,7 @@ jobs:
             _fetch_test/institution_run_manifest.json
             _fetch_test/imf-pending-intake.json
             _fetch_test/test_archive.jsonl
+            _fetch_test/source-health.txt
+            _fetch_test/imf-source-evidence/*.json
+            _fetch_test/*.pdf
           if-no-files-found: warn
