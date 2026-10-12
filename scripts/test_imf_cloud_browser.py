@@ -122,6 +122,7 @@ class BrowserTests(unittest.TestCase):
         publication = {**PUBLICATION, 'subscription': 'SECRET', 'headers': {'Authorization': 'SECRET'}}
         page = deepcopy(PAGE)
         page.update(cookie='SECRET', stdout='SECRET', final_url='https://user:SECRET@www.elibrary.imf.org/x')
+        page['metadata_keys'] = ['citation_title', 'og:description', 'citation_title']
         page['metadata'].update(cookie=['SECRET'], description=['SECRET'], citation_pdf_url=['https://user:SECRET@evil.invalid/x.pdf'])
         page['h1s'] = ['x' * 5000] * 33
         with tempfile.TemporaryDirectory() as folder, patch.dict(os.environ, {**ENV, 'IMF_PUBLIC_EVIDENCE_DIR': folder}, clear=True), \
@@ -136,6 +137,7 @@ class BrowserTests(unittest.TestCase):
             self.assertEqual(len(record['page']['h1s']), 32)
             self.assertEqual(record['page']['final_url'], '[invalid_official_url]')
             self.assertNotIn('cookie', record['page']['metadata'])
+            self.assertEqual(record['page']['metadata_keys'], ['citation_title', 'og:description'])
 
     def test_failed_metadata_is_retained_but_never_accepted(self):
         page = deepcopy(PAGE); page['metadata']['citation_doi'] = ['10.5089/9798229063074.029']

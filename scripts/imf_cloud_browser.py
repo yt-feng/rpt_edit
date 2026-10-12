@@ -281,11 +281,16 @@ def write_public_evidence(publication, page):
         if key in observed:
             observed[key] = [official_url(value, pdf=key == "citation_pdf_url") for value in observed[key]]
     status = page.get("landing_status")
+    keys = page.get("metadata_keys", [])
+    if (not isinstance(keys, list) or len(keys) > 128
+            or any(not isinstance(key, str) or len(key) > 128 for key in keys)):
+        keys = ["[invalid_names]"]
     record = {"schema": 1, "accepted": False, "kind": "public_landing_observation",
               "publication": public, "page": {
                   "final_url": official_url(page.get("final_url")),
                   "landing_status": status if type(status) is int and 100 <= status <= 599 else None,
                   "ready": page.get("ready") if type(page.get("ready")) is bool else None,
+                  "metadata_keys": list(dict.fromkeys(keys)),
                   "metadata": observed, "h1s": values(page.get("h1s", [])),
                   "download_hrefs": [official_url(value, pdf=True) for value in values(page.get("download_hrefs", []))]}}
     temporary = None

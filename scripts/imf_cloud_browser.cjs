@@ -60,6 +60,19 @@ async function main() {
     const pageReady = readiness.every(result => result.status === "fulfilled");
     // Preserve the same bounded public observation on an unready/challenge page.
     // Neither parent nor child may authorize a download when readiness failed.
+    const metaNames = await page.locator("meta[name],meta[property]").evaluateAll(nodes => {
+      const names = [], seen = new Set();
+      for (const node of nodes) {
+        for (const attr of ["name", "property"]) {
+          const name = node.getAttribute(attr);
+          if (name === null || seen.has(name)) continue;
+          if (name.length > 128 || names.length >= 128) return {limit: true};
+          seen.add(name); names.push(name);
+        }
+      }
+      return {names};
+    });
+    if (metaNames.limit) throw new Error("page_metadata_limit");
     const metadata = await page.locator("meta[name],meta[property]").evaluateAll(nodes => {
       const allow = new Set(["citation_doi", "dc.identifier.doi", "prism.doi", "citation_title", "dc.title",
         "citation_isbn", "citation_pdf_url"]);
@@ -96,7 +109,7 @@ async function main() {
     });
     actualLandingStatus = landingStatus;
     send({stage: "metadata", final_url: page.url(), landing_status: actualLandingStatus, ready: pageReady,
-      metadata, h1s, download_hrefs: downloadHrefs});
+      metadata, metadata_keys: metaNames.names, h1s, download_hrefs: downloadHrefs});
     target = await command;
     if (!pageReady) throw new Error("page_not_ready");
     // Parent bound this exact observed URL to the DOI and issue/book. Refuse

@@ -143,4 +143,14 @@ test('only bounded publication metadata aliases are forwarded to strict parent r
     'prism.doi': ['10.5089/9798229063937.019'], 'dc.title': ['Republic of Estonia: Consumer Price Index'],
     'description': ['SECRET unrelated document metadata']}});
   assert.deepEqual(Object.keys(result.output[0].metadata).sort(), ['canonical_url', 'dc.identifier.doi', 'dc.title', 'prism.doi']);
+  assert.deepEqual([...result.output[0].metadata_keys].sort(), ['dc.identifier.doi', 'dc.title', 'description', 'prism.doi']);
+});
+test('metadata names are deduplicated and have fixed count and character bounds', async () => {
+  const repeated = await simulate({metadata: {'citation_title': ['one', 'two']}});
+  assert.deepEqual([...repeated.output[0].metadata_keys], ['citation_title']);
+  for (const metadata of [{['x'.repeat(129)]: ['unused']}, Object.fromEntries(Array.from({length: 129}, (_, i) => ['field' + i, ['unused']]))]) {
+    const result = await simulate({metadata});
+    assert.equal(result.output.at(-1).category, 'page_metadata_limit');
+    assert.ok(!result.events.includes('click'));
+  }
 });
