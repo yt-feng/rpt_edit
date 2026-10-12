@@ -219,6 +219,62 @@ class VerifiedOriginalTests(unittest.TestCase):
             path.unlink(); target=Path(directory)/"target"; target.write_text(json.dumps(manifest())); path.symlink_to(target)
             with self.assertRaises(verified.VerifiedOriginalError): verified.VerifiedOriginals(path)
 
+    def test_book_original_requires_matching_isbn_path_pair_and_doi(self):
+        isbn = "9798229056298"
+        landing = f"https://www.elibrary.imf.org/display/book/{isbn}/{isbn}.xml"
+        pdf_url = f"https://www.elibrary.imf.org/downloadpdf/display/book/{isbn}/{isbn}.pdf"
+        row = record(); row.update(official_landing_url=landing, official_pdf_url=pdf_url, doi=f"10.5089/{isbn}.089")
+        verified._validate_record(row)
+        for field, value in (
+            ("official_pdf_url", pdf_url.replace(".org/", ".org.evil.invalid/")),
+            ("official_pdf_url", pdf_url.replace("9798229056298.pdf", "9798229056299.pdf")),
+            ("official_pdf_url", pdf_url.replace(isbn, "9798229056299")),
+            ("official_pdf_url", pdf_url.replace("/display/book/", "/display/books/")),
+            ("official_pdf_url", pdf_url.replace(isbn, "979822905629")),
+            ("official_pdf_url", pdf_url + "?private=token"),
+            ("official_landing_url", landing.replace(isbn, "9798229056299")),
+            ("doi", "10.5089/9798229056299.089"),
+        ):
+            changed = copy.deepcopy(row); changed[field] = value
+            with self.subTest(field=field, value=value), self.assertRaises(verified.VerifiedOriginalError):
+                verified._validate_record(changed)
+
+    def test_only_observed_official_acquisition_methods_are_accepted(self):
+        for method in ("official_browser_download", "official_https_download"):
+            row = record(); row["verification"]["method"] = method
+            verified._validate_record(row)
+        for method in ("", "browser", "cache", "official_http_download", None, True, [], {}):
+            row = record(); row["verification"]["method"] = method
+            with self.subTest(method=method), self.assertRaises(verified.VerifiedOriginalError):
+                verified._validate_record(row)
+
+    def test_ieo_fiscal_route_requires_exact_pair_and_pending_source_identity(self):
+        source = item()
+        source.update(guid=verified.IEO_FISCAL_GUID, source_url=verified.IEO_FISCAL_SOURCE)
+        row = record(source)
+        row.update(official_landing_url=verified.IEO_FISCAL_LANDING,
+                   official_pdf_url=verified.IEO_FISCAL_PDF, doi="10.5089/9798229064200.007")
+        row["verification"]["method"] = "official_https_download"
+        verified._validate_record(row)
+        for field, value in (
+            ("official_landing_url", verified.IEO_FISCAL_LANDING + "/other"),
+            ("official_landing_url", verified.IEO_FISCAL_LANDING.replace("2025-1216", "2025-1217")),
+            ("official_landing_url", record()["official_landing_url"]),
+            ("official_pdf_url", verified.IEO_FISCAL_PDF.replace("ieo.imf.org", "ieo.imf.org.evil.invalid")),
+            ("official_pdf_url", verified.IEO_FISCAL_PDF.replace("fp-mip.pdf", "other.pdf")),
+            ("official_pdf_url", verified.IEO_FISCAL_PDF + "?token=private"),
+            ("official_pdf_url", verified.IEO_FISCAL_PDF.replace("/-/media/", "/-/media/../media/")),
+            ("official_pdf_url", verified.IEO_FISCAL_PDF.replace("https://", "http://")),
+            ("official_pdf_url", record()["official_pdf_url"]),
+        ):
+            changed = copy.deepcopy(row); changed[field] = value
+            with self.subTest(field=field, value=value), self.assertRaises(verified.VerifiedOriginalError):
+                verified._validate_record(changed)
+        for field, value in (("guid", "different"), ("source_url", item()["source_url"])):
+            changed = copy.deepcopy(row); changed["item"][field] = value
+            with self.subTest(identity=field), self.assertRaisesRegex(verified.VerifiedOriginalError, "ieo_identity"):
+                verified._validate_record(changed)
+
     def fetch(self, root, *, enabled=True, sources=None, cache_missing=False, live_success=False):
         class Clock(datetime):
             @classmethod

@@ -26,6 +26,11 @@ MAX_RECORDS = 100
 HASH = re.compile(r"[a-f0-9]{64}")
 RECOVERY_FIELDS = {"acquisition_method", "verified_original_manifest_sha256", "verified_original_binding_id",
                    "verified_original_receipt_sha256", "verified_original_pages", "verified_original_landing_url"}
+IEO_FISCAL_LANDING = "https://ieo.imf.org/en/evaluations/completed/2025-1216-imf-advice-on-fiscal-policy"
+IEO_FISCAL_PDF = "https://ieo.imf.org/-/media/ieo/files/evaluations/follow-up/fp-mip.pdf"
+IEO_FISCAL_GUID = "ed9f5c224968631c61c1bc4faac4d867742947f734b870f73f909841b0fe"
+IEO_FISCAL_SOURCE = ("https://www.imf.org/en/publications/policy-papers/issues/2026/10/08/"
+                    "implementation-plan-in-response-to-the-board-endorsed-recommendations-from-the-ieo-580350")
 
 
 class VerifiedOriginalError(ValueError):
@@ -52,12 +57,17 @@ def official_url(value, *, pdf):
                 return False
             issue = (r"view/journals/(?P<series>[0-9]{3})/(?P<year>[0-9]{4})/(?P<issue>[0-9]{3})/"
                      r"(?:(?P=series)\.(?P=year)\.issue-(?P=issue)|article-A[0-9]{3})-[a-z]{2}")
-            return bool(re.fullmatch((r"/downloadpdf/" if pdf else "/") + issue + (r"\.pdf" if pdf else r"\.xml"), path))
+            book = r"display/book/(?P<isbn>[0-9]{13})/(?P=isbn)"
+            prefix, suffix = (r"/downloadpdf/", r"\.pdf") if pdf else ("/", r"\.xml")
+            return bool(re.fullmatch(prefix + issue + suffix, path)
+                        or re.fullmatch(prefix + book + suffix, path))
         if url.hostname == "www.imf.org":
             if url.query:
                 return False
             return bool((path.startswith("/-/media/files/publications/") or path.startswith("/external/pubs/"))
                         and path.endswith((".pdf", ".ashx"))) if pdf else path.startswith("/en/publications/")
+        if url.hostname == "ieo.imf.org":
+            return value == (IEO_FISCAL_PDF if pdf else IEO_FISCAL_LANDING)
         return False
     except ValueError:
         return False
@@ -88,8 +98,17 @@ def _validate_record(record):
         require(landing.hostname == pdf.hostname
                 and pdf.path.removeprefix("/downloadpdf").removesuffix(".pdf") == landing.path.removesuffix(".xml"),
                 "verified_original_official_url_pair")
+    if "ieo.imf.org" in (landing.hostname, pdf.hostname):
+        require(record["official_landing_url"] == IEO_FISCAL_LANDING
+                and record["official_pdf_url"] == IEO_FISCAL_PDF
+                and record["item"]["guid"] == IEO_FISCAL_GUID
+                and record["item"]["source_url"] == IEO_FISCAL_SOURCE,
+                "verified_original_ieo_identity")
     require(isinstance(record["doi"], str) and re.fullmatch(r"10\.[0-9]{4,9}/[A-Za-z0-9._;()/:-]{1,200}", record["doi"]),
             "verified_original_doi")
+    if pdf.hostname == "www.elibrary.imf.org" and "/display/book/" in pdf.path:
+        isbn = pdf.path.split("/")[-2]
+        require(record["doi"].startswith("10.5089/" + isbn + "."), "verified_original_book_doi")
     binding = record["binding"]
     require(isinstance(record["sha256"], str) and HASH.fullmatch(record["sha256"])
             and type(record["size"]) is int and 1 <= record["size"] <= MAX_PDF
@@ -98,7 +117,9 @@ def _validate_record(record):
             "verified_original_payload_metadata")
     review = record["verification"]
     require(isinstance(review, dict) and set(review) == {"method", "review", "receipt_sha256", "reviewed_at"}
-            and review["method"] == "official_browser_download" and review["review"] == "approved"
+            and isinstance(review["method"], str)
+            and review["method"] in {"official_browser_download", "official_https_download"}
+            and review["review"] == "approved"
             and isinstance(review["receipt_sha256"], str) and HASH.fullmatch(review["receipt_sha256"]),
             "verified_original_review")
     try:

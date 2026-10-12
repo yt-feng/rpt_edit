@@ -6,6 +6,8 @@ on:
       - scripts/institution_pending_intake.py
       - scripts/institution_verified_originals.py
       - scripts/test_institution_verified_originals.py
+      - scripts/test_institution_reviewed_intake.py
+      - institution_feeds/reviewed_originals/**
       - scripts/test_institution_pending_intake.py
       - scripts/test_institution_source_health.py
       - scripts/test_source_monitoring.py
@@ -27,6 +29,7 @@ jobs:
           python-version: '3.11'
       - run: python3 -m pip install --disable-pip-version-check 'requests>=2.31,<3' 'pypdf==6.19.0'
       - run: python3 -B scripts/test_institution_verified_originals.py
+      - run: python3 -B scripts/test_institution_reviewed_intake.py
       - run: python3 -B scripts/test_institution_source_health.py
       - run: python3 -B scripts/test_institution_pending_intake.py
       - run: python3 -B scripts/test_fetch_institution_latest_pdfs.py
