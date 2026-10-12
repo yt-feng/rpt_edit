@@ -42,7 +42,7 @@ jobs:
           npm install --prefix "$RUNNER_TEMP/imf-browser" --no-audit --no-fund playwright@1.64.0
           "$RUNNER_TEMP/imf-browser/node_modules/.bin/playwright" install --with-deps chromium
           pip install pypdf
-      - name: Download one exact official report in approved cloud browser
+      - name: Navigate once to the exact official PDF in approved cloud browser
         env:
           EXPLICIT_CLOUD_BROWSER_APPROVAL: 'true'
           PLAYWRIGHT_PACKAGE_ROOT: ${{ runner.temp }}/imf-browser
@@ -55,7 +55,11 @@ jobs:
           from pypdf import PdfReader
           folder=Path('_imf_browser_probe')
           report=json.loads((folder/'summary.json').read_text())
+          assert report['mode']=='direct_exact_pdf' and report['navigation_gets']==1
+          assert report['blocked_navigation_requests']==0 and report['http_status']==200
+          assert report['bytes_verified'] is True and report['accepted'] is False
           p=folder/(report['expected_sha256']+'.pdf')
+          assert p.stat().st_size==report['expected_bytes']==365715
           assert hashlib.sha256(p.read_bytes()).hexdigest()==report['expected_sha256']
           reader=PdfReader(p)
           assert len(reader.pages)==14 and not reader.is_encrypted
