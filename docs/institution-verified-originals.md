@@ -48,6 +48,14 @@ title, page count and actual PDF link. The PDF must match that complete title,
 edition and page count. `publisher_original_edition` provenance retains the English
 source DOI and the Spanish edition DOI separately; an unverified candidate is
 never accepted as a download.
+Fiscal Monitor flagship pages can omit DOI and ISBN metadata. For those pages
+only, the exact chapter title, number and publication month bind a complete
+Crossref catalog query restricted to IMF edited books for that month. Exactly
+one matching registration must agree with its separate exact-DOI response before
+its actual publisher resource URL can be used. `official_fiscal_chapter`
+provenance retains both catalog hashes and the source's chapter title. The
+publisher page and PDF must independently agree on the discovered DOI, book,
+chapter, period and page count.
 There is no fixed report URL, guessed journal identifier, exported browser session,
 or automatic challenge interaction in this path.
 
@@ -66,6 +74,10 @@ path retains its separate proof and degraded-source rules below. Existing depend
 holds and successful seen-state deduplication are checked before live downloads.
 
 IEO implementation plans use a separate ordinary HTTPS route before the browser.
+An isolated default HTTP session avoids inheriting discovery headers and cookies.
+Only an actual HTTP 403 permits one retry of the full official chain over the
+already selected, explicitly enabled cloud client; no new route is selected after
+a publication failure. Every response and PDF check applies on both attempts.
 The source's complete title identifies a unique evaluation in IEO's official
 directory, then an exact-title PDF in that evaluation's `Follow-up by the IMF`
 section. All three responses must be successful official URLs, and the PDF must

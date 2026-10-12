@@ -1694,6 +1694,56 @@ def collect_coveo_preview_candidates(cfg, session, unique_id, base_url, timeout)
         collect_coveo_preview_html(cfg, session, unique_id, base_url, timeout), base_url)
 
 
+def collect_imf_crossref_json(session, metadata_url, timeout, *, params=None):
+    """Read one bounded official metadata response with classified HTTP failures."""
+    from imf_elibrary_resolver import ResolutionError
+    response = _request_with_retry(
+        metadata_url,
+        lambda: session.get(metadata_url, params=params, timeout=min(timeout, 30), allow_redirects=False, stream=True),
+        max_attempts=3,
+    )
+    try:
+        if response.status_code != 200:
+            category = {404: "crossref_not_found", 429: "crossref_rate_limited"}.get(
+                response.status_code, "crossref_server_error" if response.status_code >= 500 else "crossref_http_rejected")
+            raise ResolutionError(category)
+        chunks, size = [], 0
+        deadline = time.monotonic() + min(timeout, 30)
+        for chunk in response.iter_content(65536):
+            if time.monotonic() > deadline:
+                raise ResolutionError("crossref_response_timeout")
+            size += len(chunk)
+            if size > 2_000_000:
+                raise ResolutionError("crossref_response_too_large")
+            chunks.append(chunk)
+        try:
+            return json.loads(b"".join(chunks))
+        except ValueError:
+            raise ResolutionError("crossref_response_invalid") from None
+    finally:
+        response.close()
+
+
+def resolve_imf_fiscal_publication(cfg, session, item, preview, timeout):
+    """Discover one exact Fiscal Monitor chapter in the complete monthly catalog."""
+    from imf_fiscal_chapter import prepare_fiscal_chapter, select_fiscal_chapter, resolve_fiscal_chapter
+    from urllib.parse import quote
+    source = prepare_fiscal_chapter(item, preview, item["source_url"])
+    params = source["query_params"]
+    search_cache = cfg.setdefault("_imf_fiscal_search_cache", {})
+    search_key = json.dumps(params, sort_keys=True, separators=(",", ":"))
+    if search_key not in search_cache:
+        search_cache[search_key] = collect_imf_crossref_json(
+            session, "https://api.crossref.org/works", timeout, params=params)
+    search = search_cache[search_key]
+    doi = select_fiscal_chapter(source, search)
+    cache = cfg.setdefault("_imf_crossref_cache", {})
+    if doi not in cache:
+        cache[doi] = collect_imf_crossref_json(session,
+            "https://api.crossref.org/works/" + quote(doi, safe="/"), timeout)
+    return resolve_fiscal_chapter(source, search, cache[doi])
+
+
 def resolve_imf_browser_publication(cfg, session, item, timeout):
     """Follow the publication's actual DOI to publisher-deposited metadata."""
     from imf_elibrary_resolver import ResolutionError, bind_source, resolve_crossref, resolve_official_preview
@@ -1702,33 +1752,28 @@ def resolve_imf_browser_publication(cfg, session, item, timeout):
     preview = collect_coveo_preview_html(
         cfg, session, item.get("coveo_unique_id", ""), item["source_url"], timeout)
     raw = cfg.get("_coveo_raw_by_id", {}).get(item.get("coveo_unique_id", ""), {})
-    identity = bind_source(item, raw, preview, item["source_url"])
+    try:
+        identity = bind_source(item, raw, preview, item["source_url"])
+    except ResolutionError as exc:
+        if (exc.category != "explicit_doi_missing_or_ambiguous"
+                or not urlsplit(item["source_url"]).path.startswith("/en/publications/fm/issues/")):
+            raise
+        return resolve_imf_fiscal_publication(cfg, session, item, preview, timeout)
     cache = cfg.setdefault("_imf_crossref_cache", {})
     if identity.doi not in cache:
         metadata_url = "https://api.crossref.org/works/" + quote(identity.doi, safe="/")
-        response = _request_with_retry(
-            metadata_url,
-            lambda: session.get(metadata_url, timeout=min(timeout, 30), allow_redirects=False),
-            max_attempts=3,
-        )
         try:
-            if response.status_code == 404:
+            cache[identity.doi] = collect_imf_crossref_json(session, metadata_url, timeout)
+        except ResolutionError as exc:
+            if exc.category == "crossref_not_found":
                 return resolve_official_preview(identity, preview, item["source_url"])
-            if response.status_code != 200:
-                category = {404: "crossref_not_found", 429: "crossref_rate_limited"}.get(
-                    response.status_code, "crossref_server_error" if response.status_code >= 500 else "crossref_http_rejected")
-                raise ResolutionError(category)
-            if len(response.content) > 2_000_000:
-                raise ResolutionError("crossref_response_too_large")
-            cache[identity.doi] = response.json()
-        finally:
-            response.close()
+            raise
     # Revalidate the metadata against each exact source even when the DOI was
     # already read in this batch. No source identity is inferred from a URL.
     return resolve_crossref(identity, cache[identity.doi])
 
 
-def resolve_imf_ieo_followup(cfg, session, item, dest, timeout, max_bytes):
+def resolve_imf_ieo_followup(cfg, session, item, dest, timeout, max_bytes, *, imf_browser=None):
     """Use the official IEO follow-up directory for its exact implementation plans."""
     from imf_elibrary_resolver import bind_source
     from imf_ieo_followup import FollowupError, MAX_PDF, download_followup, evaluation_title
@@ -1742,7 +1787,21 @@ def resolve_imf_ieo_followup(cfg, session, item, dest, timeout, max_bytes):
         cfg, session, item.get("coveo_unique_id", ""), item["source_url"], timeout)
     raw = cfg.get("_coveo_raw_by_id", {}).get(item.get("coveo_unique_id", ""), {})
     identity = bind_source(item, raw, preview, item["source_url"])
-    return download_followup(identity, session, dest, min(max_bytes, MAX_PDF), min(timeout, 60))
+    # Keep ordinary IEO HTTPS independent of the discovery client's browser
+    # headers and cross-site state. Both ordinary and cloud routes were observed
+    # working against the complete official chain in the authorized cloud probe.
+    try:
+        with requests.Session() as ieo_session:
+            ieo_session.trust_env = False
+            return download_followup(identity, ieo_session, dest, min(max_bytes, MAX_PDF), min(timeout, 60))
+    except FollowupError as exc:
+        if (exc.http_status != 403 or imf_browser is None
+                or imf_browser.enabled is not True):
+            raise
+    # A real HTTP 403 permits one whole-chain retry over the already selected
+    # cloud client. The same identity, response bounds and PDF checks still apply.
+    with imf_browser.http_session() as ieo_session:
+        return download_followup(identity, ieo_session, dest, min(max_bytes, MAX_PDF), min(timeout, 60))
 
 
 def download_pdf(session: requests.Session, urls: Iterable[str], dest: Path, timeout: int, max_bytes: int, impersonate: bool = False, profile: str | None = None, proxy: str | None = None) -> tuple[str | None, str]:
@@ -2177,7 +2236,7 @@ def _main(imf_browser=None) -> int:
                 dest = output_dir / filename
                 try:
                     official_followup = resolve_imf_ieo_followup(
-                        cfg, session, item, dest, args.request_timeout, max_bytes)
+                        cfg, session, item, dest, args.request_timeout, max_bytes, imf_browser=imf_browser)
                     if official_followup is not None:
                         used_url, status = official_followup["pdf_url"], "ok"
                 except Exception as exc:

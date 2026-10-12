@@ -38,7 +38,7 @@ runs:
         test "$RUNNER_OS" = Linux
         npm install --prefix "$RUNNER_TEMP/imf-source-browser" --no-audit --no-fund playwright@1.64.0
         "$RUNNER_TEMP/imf-source-browser/node_modules/.bin/playwright" install --with-deps chromium
-        python -m pip install requests==2.34.2 curl_cffi==0.16.3 pypdf==6.19.0
+        python -m pip install requests==2.34.2 curl_cffi==0.16.3 pypdf==6.19.0 PySocks==1.7.1
         curl --fail --location --silent --show-error --connect-timeout 10 --max-time 90 \
           https://github.com/SagerNet/sing-box/releases/download/v1.14.3/sing-box-1.14.3-linux-amd64.tar.gz \
           --output "$RUNNER_TEMP/imf-sing-box.tar.gz"

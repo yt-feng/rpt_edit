@@ -38,7 +38,9 @@ class FollowupIntakeTests(unittest.TestCase):
         class Clock(datetime):
             @classmethod
             def now(cls, tz=None): return NOW
-        session = Mock()
+        from unittest.mock import MagicMock
+        session = MagicMock()
+        session.__enter__.return_value = session
         session.get.side_effect = [fixture.Response(followup.DIRECTORY_URL, fixture.directory(), 404 if failed else 200),
                                    fixture.Response(fixture.LANDING, fixture.landing()),
                                    fixture.Response(fixture.PDF_URL, fixture.pdf_bytes())]
