@@ -1,20 +1,20 @@
 name: Institution fetch test
 
-# Temporary branch only: two exact Spanish candidate pages; no PDF clicks,
+# Temporary branch only: one exact observed Fiscal book page; no PDF clicks,
 # producer/translation/publication/cache/queue writes. Never merge this workflow.
 on:
   workflow_dispatch:
     inputs:
       allow_cloud_browser:
-        description: "Explicit authorization for these two cloud-only page observations"
+        description: "Explicit authorization for this single cloud-only book observation"
         type: boolean
         required: true
         default: false
 permissions:
   contents: read
 jobs:
-  observe-spanish-editions:
-    if: github.event_name == 'workflow_dispatch' && inputs.allow_cloud_browser == true && github.repository == 'yt-feng/rpt_edit' && github.ref == 'refs/heads/codex/imf-spanish-edition-observation-20261013'
+  observe-fiscal-book:
+    if: github.event_name == 'workflow_dispatch' && inputs.allow_cloud_browser == true && github.repository == 'yt-feng/rpt_edit' && github.ref == 'refs/heads/codex/imf-fiscal-book-observation-20261013'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -27,14 +27,14 @@ jobs:
         with:
           python-version: '3.11'
       - name: Offline observation guards
-        run: python -m unittest discover -s scripts -p 'test_cloud_imf_spanish_observation.py'
+        run: python -m unittest discover -s scripts -p 'test_cloud_imf_fiscal_observation.py'
       - name: Set up existing authorized cloud route
         uses: ./.github/actions/setup-imf-browser
         with:
           institutions: imf
       - name: Node offline observation checks
-        run: node --test scripts/test_cloud_imf_spanish_observation.cjs
-      - name: Observe two exact Spanish candidate pages
+        run: node --test scripts/test_cloud_imf_fiscal_observation.cjs
+      - name: Observe one exact observed Fiscal book page
         env:
           PROXY_SUBSCRIPTION_URL: ${{ secrets.PROXY_SUBSCRIPTION_URL }}
           EXPLICIT_CLOUD_BROWSER_APPROVAL: 'true'
@@ -44,12 +44,12 @@ jobs:
           test "$GITHUB_ACTIONS" = true
           test "$RUNNER_OS" = Linux
           test "$IMF_CLOUD_BROWSER_ENABLED" = true
-          xvfb-run --auto-servernum python scripts/cloud_imf_spanish_observation.py
+          xvfb-run --auto-servernum python scripts/cloud_imf_fiscal_observation.py
       - name: Upload public observations only
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: imf-spanish-edition-observation-${{ github.run_id }}
-          path: _imf_spanish_observation/*.json
+          name: imf-fiscal-book-observation-${{ github.run_id }}
+          path: _imf_fiscal_observation/*.json
           if-no-files-found: warn
           retention-days: 7
