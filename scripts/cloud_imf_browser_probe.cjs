@@ -56,8 +56,7 @@ async function main() {
     });
     const response = await page.goto(LANDING, {waitUntil: "domcontentloaded", timeout: 45000});
     report.landing_status = response ? response.status() : null;
-    report.human_verification_title = (await page.title()).trim().toLowerCase() === "human verification";
-    if (report.human_verification_title) throw new Error("human_verification_required");
+    report.initial_human_verification_title = (await page.title()).trim().toLowerCase() === "human verification";
     // Wait only for ordinary asynchronous page rendering, within this navigation.
     // No refresh, challenge interaction, session changes or second navigation.
     await Promise.all([
@@ -99,7 +98,7 @@ async function main() {
     Object.assign(report, {category: "verified_browser_bytes", bytes: size, sha256: sha,
       bytes_verified: true, accepted: false, pdf_parser_validation: "required_next_step"});
   } catch (error) {
-    const known = new Set(["source_identity_mismatch", "official_pdf_link_mismatch", "download_failed", "human_verification_required",
+    const known = new Set(["source_identity_mismatch", "official_pdf_link_mismatch", "download_failed",
       "pdf_size_mismatch", "pdf_bytes_mismatch"]);
     report.category = known.has(error.message) ? error.message :
       error.name === "TimeoutError" ? "browser_source_timeout" : "browser_probe_failed";
@@ -107,6 +106,10 @@ async function main() {
     if (page) {
       try {
         report.human_verification_title = (await page.title()).trim().toLowerCase() === "human verification";
+        report.final_human_verification_title = report.human_verification_title;
+        if (!report.bytes_verified && report.final_human_verification_title) {
+          report.category = "human_verification_not_completed";
+        }
       } catch (_) {} // Keep only the last observed fixed classification.
     }
     if (browser) await browser.close().catch(() => {});

@@ -34,6 +34,7 @@ jobs:
             scripts/fetch_institution_latest_pdfs.py
             scripts/institution_pending_intake.py
             scripts/test_cloud_imf_proxy_browser_probe.py
+            scripts/test_cloud_imf_browser_probe.cjs
           sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v4
         with:
@@ -45,6 +46,7 @@ jobs:
         run: |
           python -m unittest discover -s scripts -p test_cloud_imf_proxy_browser_probe.py
           node --check scripts/cloud_imf_browser_probe.cjs
+          node scripts/test_cloud_imf_browser_probe.cjs
       - name: Install pinned official cloud clients
         shell: bash
         run: |

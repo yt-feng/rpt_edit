@@ -132,7 +132,9 @@ class ProbeTests(unittest.TestCase):
         self.assertEqual(code.count("page.goto("), 1)
         self.assertNotIn("page.reload(", code)
         self.assertEqual(code.count('waitFor({state: "visible", timeout: 15000})'), 2)
-        self.assertIn('if (report.human_verification_title) throw new Error("human_verification_required")', code)
+        self.assertIn('report.initial_human_verification_title =', code)
+        self.assertIn('report.final_human_verification_title =', code)
+        self.assertNotIn('throw new Error("human_verification_required")', code)
         self.assertIn('report.final_navigation_status = response.status()', code)
 
 
