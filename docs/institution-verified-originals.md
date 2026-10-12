@@ -40,6 +40,14 @@ If the exact Crossref record returns 404, an English report may instead use an
 actual eLibrary link in its hash-bound official IMF preview. Its independently
 visible DOI, ISBN, full title, series, year and issue must all agree; this route
 records `official_source_preview` provenance rather than claiming Crossref success.
+For the two supported technical-assistance series, an explicit Spanish-only
+statement in the same IMF preview permits one original-language issue candidate
+only after the deposited English page actually returns 404. The Spanish page
+must independently identify its DOI, ISBN, series, year, issue, language, complete
+title, page count and actual PDF link. The PDF must match that complete title,
+edition and page count. `publisher_original_edition` provenance retains the English
+source DOI and the Spanish edition DOI separately; an unverified candidate is
+never accepted as a download.
 There is no fixed report URL, guessed journal identifier, exported browser session,
 or automatic challenge interaction in this path.
 

@@ -66,6 +66,9 @@ def validate_live_download(row: dict) -> None:
             except ValueError:
                 raise InvalidSourceHealth("source_health_contract_invalid") from None
             require(proof["pages"] == metadata["original_edition"]["pages"])
+            require(isinstance(proof["title"], str) and ":" in proof["title"]
+                    and title_key(proof["title"].split(":", 1)[0])
+                    == title_key(metadata["original_edition"]["title"].split(":", 1)[0]))
             provenance_hash = metadata["source_crossref_sha256"]
         else:
             raise InvalidSourceHealth("source_health_contract_invalid")
