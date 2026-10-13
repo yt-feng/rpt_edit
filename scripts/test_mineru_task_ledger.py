@@ -795,6 +795,96 @@ class StoreAndIntegrationTests(unittest.TestCase):
                 wrapper.run_batch(1,[(1,pdf)],args)
                 wrapper.run_batch(3,[(22,pdf)],args)
             self.assertEqual(identities[0],identities[1])
+    def test_pending_continuation_reuses_original_task_without_another_post(self):
+        import run_pdf_to_xhs_in_batches as wrapper
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source = root/'original.pdf'; source.write_bytes(b'%PDF-original')
+            outcome = root/'outcome.json'
+            clock = Clock(); provider = FakeProvider(); store = m.FileStore(root/'ledger')
+            commands = []
+            def child(cmd, *, text, env):
+                commands.append(list(cmd))
+                if len(commands) == 2:
+                    self.assertEqual(env['MINERU_FORBID_NEW_SUBMISSIONS'], '1')
+                    provider.mode = 'done'
+                ledger = m.Ledger(store, provider, 'consulting', 'https://mineru.net', OPTIONS, TOKENS,
+                    clock=clock.time, sleep=clock.sleep,
+                    forbid_new_submissions=env.get('MINERU_FORBID_NEW_SUBMISSIONS') == '1')
+                _, summary = ledger.run([(source, source.name)], timeout=20, interval=2, queue_budget=4)
+                code = 0 if summary['ready_for_generation'] else 75
+                if code == 75:
+                    outcome.write_text(json.dumps({'schema': 1, 'category': 'mineru_unavailable'}))
+                return unittest.mock.Mock(returncode=code)
+            with patch.object(wrapper.subprocess, 'run', side_effect=child), patch.object(wrapper.time, 'sleep') as pause:
+                result, attempts = wrapper.run_pending_task_attempts(['frozen-command'], outcome, attempts=3)
+            self.assertEqual((result.returncode, attempts, len(provider.posts)), (0, 2, 1))
+            self.assertEqual(commands, [['frozen-command'], ['frozen-command']])
+            self.assertFalse(outcome.exists())
+            pause.assert_called_once_with(60)
+
+    def test_pending_continuation_stops_at_cap_and_does_not_retry_other_outcomes(self):
+        import run_pdf_to_xhs_in_batches as wrapper
+        cases = [(75, {'schema': 1, 'category': 'mineru_unavailable'}, 3),
+                 (2, {'schema': 1, 'category': 'mineru_unavailable'}, 1),
+                 (75, None, 1), (75, {'schema': 1, 'category': 'unknown'}, 1), (0, None, 1)]
+        for code, receipt, expected_attempts in cases:
+            with self.subTest(code=code, receipt=receipt), tempfile.TemporaryDirectory() as temporary:
+                outcome = Path(temporary)/'outcome.json'
+                outcome.write_text(json.dumps({'schema': 1, 'category': 'mineru_unavailable'}))
+                environments = []
+                def child(cmd, *, text, env):
+                    environments.append(env)
+                    self.assertFalse(outcome.exists())
+                    if receipt is not None: outcome.write_text(json.dumps(receipt))
+                    return unittest.mock.Mock(returncode=code)
+                with patch.object(wrapper.subprocess, 'run', side_effect=child), patch.object(wrapper.time, 'sleep'):
+                    result, attempts = wrapper.run_pending_task_attempts(['frozen'], outcome, attempts=3)
+                self.assertEqual((result.returncode, attempts), (code, expected_attempts))
+                for environment in environments[1:]:
+                    self.assertEqual(environment['MINERU_FORBID_NEW_SUBMISSIONS'], '1')
+
+    def test_pending_continuation_rejects_unbounded_attempts_before_child(self):
+        import run_pdf_to_xhs_in_batches as wrapper
+        for attempts, delay in [(0, 60), (4, 60), (True, 60), (3, -1), (3, 601)]:
+            with patch.object(wrapper.subprocess, 'run') as child, self.assertRaises(ValueError):
+                wrapper.run_pending_task_attempts([], Path('/unused'), attempts=attempts, delay=delay)
+            child.assert_not_called()
+
+    def test_pending_continuation_and_later_batches_share_one_extraction_deadline(self):
+        import run_pdf_to_xhs_in_batches as wrapper
+        with tempfile.TemporaryDirectory() as temporary:
+            outcome = Path(temporary)/'outcome.json'; clock = Clock(); calls = []
+            def child(cmd, *, text, env, timeout):
+                calls.append((cmd, timeout, env))
+                clock.now += 4
+                outcome.write_text(json.dumps({'schema': 1, 'category': 'mineru_unavailable'}))
+                return unittest.mock.Mock(returncode=75)
+            with patch.object(wrapper.subprocess, 'run', side_effect=child), \
+                    patch.object(wrapper.time, 'monotonic', side_effect=clock.time), \
+                    patch.object(wrapper.time, 'sleep', side_effect=clock.sleep):
+                result, attempts = wrapper.run_pending_task_attempts(
+                    ['frozen', '--poll-timeout', '3600'], outcome, attempts=3, delay=2, deadline=10)
+                later, later_attempts = wrapper.run_pending_task_attempts(
+                    ['next-frozen'], outcome, attempts=3, delay=2, deadline=10)
+            self.assertEqual((result.returncode, attempts, later.returncode, later_attempts), (75, 2, 75, 0))
+            self.assertEqual([call[1] for call in calls], [10, 4])
+            self.assertEqual([call[0][-1] for call in calls], ['5', '1'])
+            self.assertEqual(calls[1][2]['MINERU_FORBID_NEW_SUBMISSIONS'], '1')
+
+    def test_child_timeout_stops_without_pending_receipt_or_retry(self):
+        import run_pdf_to_xhs_in_batches as wrapper
+        with tempfile.TemporaryDirectory() as temporary:
+            outcome = Path(temporary)/'outcome.json'
+            def child(*args, **kwargs):
+                outcome.write_text(json.dumps({'schema': 1, 'category': 'mineru_unavailable'}))
+                raise wrapper.subprocess.TimeoutExpired(args[0], kwargs['timeout'])
+            with patch.object(wrapper.subprocess, 'run', side_effect=child) as run, \
+                    patch.object(wrapper.time, 'monotonic', return_value=0), patch.object(wrapper.time, 'sleep') as pause:
+                result, attempts = wrapper.run_pending_task_attempts(['frozen'], outcome, attempts=3, deadline=10)
+            self.assertEqual((result.returncode, attempts, run.call_count), (75, 1, 1))
+            self.assertFalse(outcome.exists()); pause.assert_not_called()
+
     def test_every_workflow_caller_has_private_durable_scope_and_bounded_serialization(self):
         callers=[]
         for path in (ROOT/'.github/workflows').glob('*.yml'):

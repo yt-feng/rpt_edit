@@ -21,6 +21,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 from pathlib import Path
 from typing import Any
 
@@ -197,7 +198,12 @@ def run_batch(batch_index: int, batch: list[PDFRecord], args: argparse.Namespace
         cmd = build_child_command(args, tmp_input, source_map)
         outcome_path = Path(tmp) / "provider-outcome.json"
         cmd.extend(["--provider-outcome-path", str(outcome_path)])
-        result = subprocess.run(cmd, text=True)
+        result, poll_attempts = run_pending_task_attempts(
+            cmd, outcome_path,
+            attempts=getattr(args, 'pending_task_attempts', 1),
+            delay=getattr(args, 'pending_task_retry_delay', 60),
+            deadline=getattr(args, '_extraction_deadline', None),
+        )
         provider_category = ""
         deferred_sources = 0
         if outcome_path.is_file():
@@ -217,7 +223,51 @@ def run_batch(batch_index: int, batch: list[PDFRecord], args: argparse.Namespace
             "status": "ok" if result.returncode == 0 else "failed",
             "provider_failure_category": provider_category,
             "deferred_sources": deferred_sources,
+            "pending_task_attempts": poll_attempts,
         }
+
+
+def run_pending_task_attempts(cmd, outcome_path, *, attempts=1, delay=60, deadline=None):
+    """Resume only an accepted pending task, using the same frozen input map.
+
+    Exit 75 is emitted before result generation when the full original MinerU
+    inventory is still pending. Every continuation forbids new submissions;
+    terminal, transport, authentication and generation failures stop immediately.
+    """
+    if type(attempts) is not int or not 1 <= attempts <= 3:
+        raise ValueError('Pending task attempts must be between one and three')
+    if type(delay) is not int or not 0 <= delay <= 600:
+        raise ValueError('Pending task retry delay must be between zero and 600 seconds')
+    for attempt in range(1, attempts + 1):
+        outcome_path.unlink(missing_ok=True)
+        remaining = None if deadline is None else deadline - time.monotonic()
+        if remaining is not None and remaining <= 0:
+            log('Extraction time budget exhausted; no additional task started.')
+            return subprocess.CompletedProcess(cmd, 75), attempt - 1
+        environment = os.environ.copy()
+        if attempt > 1:
+            environment['MINERU_FORBID_NEW_SUBMISSIONS'] = '1'
+        child = list(cmd)
+        if remaining is not None and '--poll-timeout' in child:
+            index = child.index('--poll-timeout') + 1
+            child[index] = str(min(int(child[index]), max(1, int(remaining) - 5)))
+        try:
+            result = subprocess.run(child, text=True, env=environment,
+                                    **({'timeout': remaining} if remaining is not None else {}))
+        except subprocess.TimeoutExpired:
+            outcome_path.unlink(missing_ok=True)
+            log('Extraction time budget exhausted; saved work retained without downstream publication.')
+            return subprocess.CompletedProcess(cmd, 75), attempt
+        if result.returncode != 75 or attempt == attempts:
+            return result, attempt
+        try:
+            outcome = json.loads(outcome_path.read_text())
+        except (OSError, ValueError):
+            return result, attempt
+        if outcome != {'schema': 1, 'category': 'mineru_unavailable'}:
+            return result, attempt
+        log(f'MinerU task still pending; continuing accepted task {attempt + 1}/{attempts} after {delay}s (new submissions forbidden).')
+        time.sleep(delay if deadline is None else min(delay, max(0, deadline - time.monotonic())))
 
 
 def write_summary(output_dir: Path, payload: dict[str, Any]) -> None:
@@ -303,8 +353,16 @@ def main() -> int:
     parser.add_argument("--poll-interval", type=int, default=15)
     parser.add_argument("--mineru-retries", type=int, default=1)
     parser.add_argument("--mineru-no-progress-timeout", type=int, default=600)
+    parser.add_argument("--pending-task-attempts", type=int, default=1,
+                        help="Bounded pending-only attempts (1-3); continuations forbid new MinerU submissions.")
+    parser.add_argument("--pending-task-retry-delay", type=int, default=60)
+    parser.add_argument("--extraction-timeout", type=int, default=0,
+                        help="Shared wall-clock seconds for all batches and continuations (0 = existing unbounded wrapper behavior).")
     parser.add_argument("--watermark", default="KC桌面")
     args = parser.parse_args()
+    if not 0 <= args.extraction_timeout <= 7200:
+        parser.error('--extraction-timeout must be between zero and 7200 seconds')
+    args._extraction_deadline = time.monotonic() + args.extraction_timeout if args.extraction_timeout else None
 
     input_dir = Path(args.input_dir).resolve()
     output_dir = Path(args.output_dir).resolve()
