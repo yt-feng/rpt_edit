@@ -17,7 +17,22 @@
       },
       "admitted_at": "2026-10-13T02:48:56.680935+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-10-13T02:48:56.680935+00:00",
+      "last_attempted_at": "2026-10-13T04:36:50.651518+00:00",
+      "attempts": 2
+    },
+    "imf:2a0365759114a7a4bec799cfad172b641696912139fb3d1a3c611c8aa2da": {
+      "item": {
+        "title": "Resilience, Risk, and Transformation",
+        "source_url": "https://www.imf.org/en/publications/gfsr/issues/2026/10/13/global-financial-stability-report-october-2026",
+        "guid": "2a0365759114a7a4bec799cfad172b641696912139fb3d1a3c611c8aa2da",
+        "date": "2026-10-13T03:15:00+00:00",
+        "pdf_candidates": [],
+        "scrape_url": "https://www.imf.org/en/publications/gfsr/issues/2026/10/13/global-financial-stability-report-october-2026",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/gfsr/issues/2026/10/13/global-financial-stability-report-october-2026"
+      },
+      "admitted_at": "2026-10-13T04:36:50.651518+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-10-13T04:36:50.651518+00:00",
       "attempts": 1
     }
   }
