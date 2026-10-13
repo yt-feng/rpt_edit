@@ -312,6 +312,8 @@ raise SystemExit(int(os.environ.get('STUB_EXIT', '0')))
             self.assertEqual(len(calls),1)
             self.assertEqual(calls[0][1:3],['scripts/repair_portal_extended_checkpoint.py',operation])
             self.assertIn('--child-only',calls[0]);self.assertNotIn('--stage-only',calls[0])
+            if operation == 'restore':
+                self.assertEqual(calls[0][calls[0].index('--github-output')+1],str(self.root/'output'))
 
     def test_dispatch_requires_an_explicit_true_frontier_and_retains_normal_progress(self):
         guard = self.step('Dispatch the next bounded per-language cursors', job=self.followup)['if']

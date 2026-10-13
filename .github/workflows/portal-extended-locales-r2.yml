@@ -369,7 +369,7 @@ jobs:
             python3 -B scripts/repair_portal_extended_checkpoint.py restore \
               --generation "$SOURCE_GENERATION" --locale "$LOCALE" --request "$REPAIR_EVIDENCE" \
               --checkpoint "$RUNNER_TEMP/locale-checkpoint.json" --corpus "$RUNNER_TEMP/extended-source-corpus.json" \
-              "${repair_args[@]}"
+              --github-output "$GITHUB_OUTPUT" "${repair_args[@]}"
             echo "present=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
