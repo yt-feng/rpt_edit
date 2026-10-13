@@ -24,6 +24,43 @@ RELEASE = {'slot': 'a', 'release_id': 'a'*32, 'tree_sha256': 'b'*64}
 PRODUCER = queue_tests.PRODUCER
 
 
+class GitHubRawLogTests(unittest.TestCase):
+    def process(self, value):
+        return mock.Mock(stdout=io.BytesIO(value), wait=mock.Mock(return_value=0),
+                         poll=mock.Mock(return_value=0))
+
+    def test_raw_log_feature_detection_preserves_exact_bytes_and_one_request(self):
+        raw=b'2026-10-12T01:00:00Z \x1b[36mshell\x1b[0m\n'
+        for supported in (True,False):
+            with self.subTest(supported=supported):
+                help_output=b'api --allow-escape-sequences' if supported else b'legacy api help'
+                with mock.patch.object(recovery.subprocess,'run',return_value=mock.Mock(returncode=0,stdout=help_output)) as help_call, \
+                     mock.patch.object(recovery.subprocess,'Popen',side_effect=lambda *a,**k:self.process(raw)) as request, \
+                     mock.patch.object(recovery.threading,'Timer'):
+                    gh=recovery.GitHub('example/repo')
+                    self.assertEqual(gh.raw('actions/jobs/123/logs'),raw)
+                    self.assertEqual(gh.raw('actions/jobs/456/logs'),raw)
+                help_call.assert_called_once()
+                self.assertEqual(request.call_count,2)
+                for call in request.call_args_list:
+                    self.assertEqual('--allow-escape-sequences' in call.args[0],supported)
+                    self.assertEqual(call.kwargs['stdout'],recovery.subprocess.PIPE)
+                    self.assertEqual(call.kwargs['stderr'],recovery.subprocess.DEVNULL)
+
+    def test_metadata_never_enables_raw_log_flag_and_failed_help_never_requests(self):
+        with mock.patch.object(recovery.subprocess,'run') as help_call, \
+             mock.patch.object(recovery.subprocess,'Popen',return_value=self.process(b'{}')) as request, \
+             mock.patch.object(recovery.threading,'Timer'):
+            self.assertEqual(recovery.GitHub('example/repo').raw('actions/runs/123'),b'{}')
+            help_call.assert_not_called()
+            self.assertNotIn('--allow-escape-sequences',request.call_args.args[0])
+        with mock.patch.object(recovery.subprocess,'run',return_value=mock.Mock(returncode=1,stdout=b'private error')), \
+             mock.patch.object(recovery.subprocess,'Popen') as request:
+            with self.assertRaisesRegex(ExpansionError,'recovered_github_cli_help_invalid'):
+                recovery.GitHub('example/repo').raw('actions/jobs/123/logs')
+            request.assert_not_called()
+
+
 def fixture(count=2, *, start=0, day=DAY, commit='c'*40):
     pages, records = {}, []
     for index in range(start, start+count):

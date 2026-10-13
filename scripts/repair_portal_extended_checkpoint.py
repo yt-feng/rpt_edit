@@ -28,6 +28,10 @@ BP = re.compile(rf'({NUMBER})\s*(?:个基点|個基點|基点|基點|(?:basis\s+
 
 # Only repository-authored fixed guard names may reach public Actions logs.
 PUBLIC_REPAIR_REJECTIONS = frozenset({
+    'recovered_github_read_failed',
+    'recovered_github_budget_exhausted',
+    'recovered_github_response_oversized',
+    'recovered_github_cli_help_invalid',
     'completion_adoption_invalid',
     'completion_candidate_unproved',
     'completion_checkpoint_regressed',
@@ -132,6 +136,7 @@ PUBLIC_REPAIR_FRAMES = {
     'portal_extended_continuation.py': {'verify_origin_run', 'checkpoint_evidence', 'validate_snapshot',
         'read_origin', 'candidate_evidence'},
     'portal_extended_r2.py': {'restore_candidate', '_get', 'checkpoint_is_valid'},
+    'portal_extended_recovered_admission.py': {'raw', 'api', 'require'},
 }
 PUBLIC_REPAIR_PHASES = {'frozen_evidence', 'source_authentication', 'unit_eligibility',
                        'prepared_proof', 'current_state', 'source_claim'}
