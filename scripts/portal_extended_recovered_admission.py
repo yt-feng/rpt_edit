@@ -48,15 +48,30 @@ class GitHub:
         require(re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', repository), 'recovered_repository_invalid')
         self.repository = repository
         self.deadline = None
+        self._job_log_flags = None
 
     def raw(self, suffix, maximum=MAX_API_BYTES):
         """Bound bytes/time, never expose gh stderr or a signed download URL."""
         process = None
         timer = None
         try:
-            remaining = 60 if self.deadline is None else min(60, self.deadline - time.monotonic())
+            deadline = min(self.deadline if self.deadline is not None else float('inf'), time.monotonic()+60)
+            remaining = deadline-time.monotonic()
             require(remaining > 0, 'recovered_github_budget_exhausted')
-            process = subprocess.Popen(['gh', 'api', f'repos/{self.repository}/{suffix}'],
+            flags = []
+            if re.fullmatch(r'actions/jobs/[1-9][0-9]*/logs', suffix):
+                # New gh versions reject ANSI even in captured log responses.
+                # Feature-detect before the one request; never render raw bytes.
+                if self._job_log_flags is None:
+                    help_result = subprocess.run(['gh','api','--help'], capture_output=True,
+                        timeout=min(10,remaining))
+                    require(help_result.returncode == 0 and 0 < len(help_result.stdout) <= 128*1024,
+                            'recovered_github_cli_help_invalid')
+                    self._job_log_flags = ['--allow-escape-sequences'] if b'--allow-escape-sequences' in help_result.stdout else []
+                flags = self._job_log_flags
+                remaining = deadline-time.monotonic()
+                require(remaining > 0, 'recovered_github_budget_exhausted')
+            process = subprocess.Popen(['gh', 'api', f'repos/{self.repository}/{suffix}', *flags],
                 stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
             timer = threading.Timer(remaining, process.kill)
             timer.daemon = True

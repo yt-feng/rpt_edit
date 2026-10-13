@@ -1,5 +1,6 @@
 """Exact complete-to-complete French fallback repair in the serialized queue."""
 from __future__ import annotations
+from contextlib import contextmanager
 from dataclasses import dataclass
 from portal_extended_repair_contract import (RepairContract, LEGACY_FRENCH,
     MANUAL_STRICT_RETRY, MANUAL_STRICT_SECONDS)
@@ -21,6 +22,15 @@ POLICY = 'fr-quantity-fallback-v1'
 REVISION = 'fr-space-grouping-quarter-v1'
 WORKFLOW = '.github/workflows/portal-extended-locales-r2.yml'
 LOCALE = 'fr'
+
+
+@contextmanager
+def repair_phase(name):
+    try:
+        yield
+    except Exception as error:
+        error.repair_phase = name
+        raise
 
 
 def require(condition, message):
@@ -456,32 +466,36 @@ class RepairPipeline:
             value.setdefault('producer', origin['producer'])
         repair = request(value, require_units=not inspecting)
         with tempfile.TemporaryDirectory(prefix='fr-source-repair-') as temp:
-            corpus, old_raw, old_dir, origin, snapshot, summary = self.frozen(store, args.generation, repair, Path(temp))
+            with repair_phase('frozen_evidence'):
+                corpus, old_raw, old_dir, origin, snapshot, summary = self.frozen(store, args.generation, repair, Path(temp))
             if not self.contract.automatic or args.operation in {'prepare', 'inspect'}:
-                self.authenticate_original(store, origin, repository, api,
-                    completion_evidence=repair.get('completion_evidence'),
-                    capture=manual_strict and args.operation == 'prepare', snapshot=snapshot)
+                with repair_phase('source_authentication'):
+                    self.authenticate_original(store, origin, repository, api,
+                        completion_evidence=repair.get('completion_evidence'),
+                        capture=manual_strict and args.operation == 'prepare', snapshot=snapshot)
             if manual_strict:
-                from build_portal_extended_locales import NUMERIC_FALLBACK_CODES
-                old = json.loads(old_raw)
-                unit = repair['units'][0]
-                require(old['source_fallbacks'][unit]['code'] not in NUMERIC_FALLBACK_CODES,
-                        'Numeric advisory does not authorize manual inference')
-                source = self.units.required_units(corpus)[unit]
-                claim, outcome, _ = self.units.prior_outcome(store, unit, source)
-                ledger_status = outcome['status'] if outcome else ('unresolved' if claim else 'fresh')
-                summary['selected_unit_ledger_status'] = ledger_status
-                if not inspecting:
-                    require(ledger_status not in {'unresolved', 'terminal'},
-                            'Manual repair cannot reopen a terminal or unknown unit')
-                    expected = 'accepted-ledger' if outcome else 'fresh-authorized'
-                    # A request may resume its own accepted model result after a
-                    # later step failed; it never repeats that accepted inference.
-                    require(repair['unit_modes'][unit] == expected
-                            or (expected == 'accepted-ledger' and repair['unit_modes'][unit] == 'fresh-authorized'),
-                            'Manual repair unit mode differs from immutable ledger')
-                args.requires_engine = ledger_status == 'fresh'
-            prior = self.prepared_proof(store, repair)
+                with repair_phase('unit_eligibility'):
+                    from build_portal_extended_locales import NUMERIC_FALLBACK_CODES
+                    old = json.loads(old_raw)
+                    unit = repair['units'][0]
+                    require(old['source_fallbacks'][unit]['code'] not in NUMERIC_FALLBACK_CODES,
+                            'Numeric advisory does not authorize manual inference')
+                    source = self.units.required_units(corpus)[unit]
+                    claim, outcome, _ = self.units.prior_outcome(store, unit, source)
+                    ledger_status = outcome['status'] if outcome else ('unresolved' if claim else 'fresh')
+                    summary['selected_unit_ledger_status'] = ledger_status
+                    if not inspecting:
+                        require(ledger_status not in {'unresolved', 'terminal'},
+                                'Manual repair cannot reopen a terminal or unknown unit')
+                        expected = 'accepted-ledger' if outcome else 'fresh-authorized'
+                        # A request may resume its own accepted model result after a
+                        # later step failed; it never repeats that accepted inference.
+                        require(repair['unit_modes'][unit] == expected
+                                or (expected == 'accepted-ledger' and repair['unit_modes'][unit] == 'fresh-authorized'),
+                                'Manual repair unit mode differs from immutable ledger')
+                    args.requires_engine = ledger_status == 'fresh'
+            with repair_phase('prepared_proof'):
+                prior = self.prepared_proof(store, repair)
             if args.operation == 'prepare' and prior is not None and stage_only:
                 self.verify_proof(store, prior, args.generation)
                 outcome = {**self.result(corpus, has_work=False), 'staged_proof_sha256':prior,
@@ -494,9 +508,11 @@ class RepairPipeline:
                 self.guard_current(store, corpus, snapshot)
                 outcome = {**self.result(corpus, has_work=False), 'inspection': summary, 'frozen_request': repair}
             elif args.operation == 'prepare':
-                before, _ = self.guard_current(store, corpus, snapshot)
-                immutable_record(store, self.claim_key(store, repair, owner),
-                    {'request': repair, 'producer': producer_identity(owner), 'before_row': before}, kind='fr-repair-claim')
+                with repair_phase('current_state'):
+                    before, _ = self.guard_current(store, corpus, snapshot)
+                with repair_phase('source_claim'):
+                    immutable_record(store, self.claim_key(store, repair, owner),
+                        {'request': repair, 'producer': producer_identity(owner), 'before_row': before}, kind='fr-repair-claim')
                 outcome = self.result(corpus, has_work=True)
             else:
                 claim = self.read_optional(store, self.claim_key(store, repair, owner))

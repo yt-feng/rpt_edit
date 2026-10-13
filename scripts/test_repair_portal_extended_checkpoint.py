@@ -35,7 +35,30 @@ class RepairTests(unittest.TestCase):
                       ValueError('completion_log_hash_differs'), KeyError('secret-key'),
                       ExpansionError('completion_log_hash_differs: private')):
             self.assertEqual(repair.public_rejection(error),{
-                'status':'rejected','code':'exact-checkpoint-repair-failed','guard':'unclassified'})
+                'status':'rejected','code':'exact-checkpoint-repair-failed','guard':'unclassified',
+                'exception':type(error).__name__, 'phase':'unknown', 'frames':[]})
+
+    def test_public_failure_frames_and_phase_never_include_values_or_paths(self):
+        from portal_extended_french_repair import repair_phase, require
+        try:
+            with repair_phase('frozen_evidence'):
+                require(False,'private source')
+        except ExpansionError as error:
+            value=repair.public_rejection(error)
+        self.assertEqual(value['phase'],'frozen_evidence')
+        self.assertEqual(value['exception'],'ExpansionError')
+        self.assertEqual([(f['module'],f['function']) for f in value['frames']],
+                         [('portal_extended_french_repair.py','require')])
+        self.assertTrue(all(type(f['line']) is int and f['line']>0 for f in value['frames']))
+        self.assertNotIn('private',json.dumps(value))
+        self.assertNotIn('/',json.dumps(value))
+        nested=repair.TranslationUnitError('private field',KeyError('private key'))
+        nested.repair_phase='private phase'
+        value=repair.public_rejection(nested)
+        self.assertEqual(value['exception'],'TranslationUnitError')
+        self.assertEqual(value['phase'],'unknown')
+        self.assertEqual(value['wrapped']['exception'],'KeyError')
+        self.assertNotIn('private',json.dumps(value))
 
     def original(self):
         evidence={'producer':PRODUCER,'locales':{'fr':self.partial(registered=False)}}
