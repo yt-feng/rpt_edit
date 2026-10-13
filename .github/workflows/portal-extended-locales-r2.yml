@@ -17,7 +17,7 @@ on:
         description: "R2 round-trip, daily candidate, or read-only replay of an exact failed generation"
         required: true
         type: choice
-        options: [roundtrip, candidate, recovery-test, publication-resume, publication-check, english-resume, checkpoint-repair, strict-repair-stage, source-fallback-inspect]
+        options: [roundtrip, candidate, recovery-test, publication-resume, publication-check, english-resume, checkpoint-repair, strict-repair-stage, strict-repair-resolution, source-fallback-inspect]
         default: roundtrip
       locales:
         description: "all-supported = 33 non-English locales, or comma-separated subset; English is summary/commentary blog only, no originals/charts; up to 24 new detail pages"
@@ -64,7 +64,9 @@ concurrency:
         format('extended-locales-ineligible-{0}-{1}', github.run_id, github.run_attempt) ||
         inputs.operation == 'roundtrip' && format('extended-locales-r2-staging-{0}', github.ref) ||
         inputs.operation == 'publication-check' && format('extended-locales-publication-check-{0}', github.ref) ||
+        inputs.operation == 'source-fallback-inspect' && format('extended-locales-source-inspect-{0}', github.run_id) ||
         inputs.operation == 'strict-repair-stage' && format('extended-locales-strict-stage-{0}-{1}', inputs.locales, inputs.source_generation) ||
+        inputs.operation == 'strict-repair-resolution' && format('extended-locales-child-resolution-{0}', inputs.locales) ||
         inputs.operation == 'recovery-test' && format('extended-locales-r2-recovery-{0}', github.ref) || 'extended-locales-r2-pipeline' }}
   cancel-in-progress: false
 
@@ -167,7 +169,7 @@ jobs:
       actions: read
     if: >-
       ${{
-        inputs.operation == 'candidate' || inputs.operation == 'recovery-test' || inputs.operation == 'publication-resume' || inputs.operation == 'english-resume' || inputs.operation == 'checkpoint-repair' || inputs.operation == 'strict-repair-stage' || inputs.operation == 'source-fallback-inspect' ||
+        inputs.operation == 'candidate' || inputs.operation == 'recovery-test' || inputs.operation == 'publication-resume' || inputs.operation == 'english-resume' || inputs.operation == 'checkpoint-repair' || inputs.operation == 'strict-repair-stage' || inputs.operation == 'strict-repair-resolution' || inputs.operation == 'source-fallback-inspect' ||
         (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' &&
          github.event.workflow_run.head_branch == github.event.repository.default_branch &&
          github.event.workflow_run.head_repository.full_name == github.repository) ||
@@ -219,9 +221,10 @@ jobs:
               --request "$CONTINUATION_EVIDENCE" --seconds "$TRANSLATION_SECONDS" --github-output "$GITHUB_OUTPUT"
             exit 0
           fi
-          if [ "$REQUESTED_OPERATION" = "checkpoint-repair" ] || [ "$REQUESTED_OPERATION" = "strict-repair-stage" ]; then
+          if [ "$REQUESTED_OPERATION" = "checkpoint-repair" ] || [ "$REQUESTED_OPERATION" = "strict-repair-stage" ] || [ "$REQUESTED_OPERATION" = "strict-repair-resolution" ]; then
             repair_args=(--seconds "$TRANSLATION_SECONDS")
             if [ "$REQUESTED_OPERATION" = "strict-repair-stage" ]; then repair_args+=(--stage-only); fi
+            if [ "$REQUESTED_OPERATION" = "strict-repair-resolution" ]; then repair_args+=(--child-only); fi
             python3 -B scripts/repair_portal_extended_checkpoint.py prepare \
               --generation "$REQUESTED_SOURCE_GENERATION" --locale "$REQUESTED_LOCALES" \
               --request "$CONTINUATION_EVIDENCE" --github-output "$GITHUB_OUTPUT" "${repair_args[@]}"
@@ -290,6 +293,11 @@ jobs:
   locale:
     name: locale (${{ matrix.locale }})
     needs: source
+    # Every new normal, resumed and manual locale job shares the same lock.
+    # No ref, generation or operation suffix may split a language's writers.
+    concurrency:
+      group: extended-locale-${{ matrix.locale }}
+      cancel-in-progress: false
     if: needs.source.result == 'success' && needs.source.outputs.has_work == 'true' && github.event.repository.private == false
     runs-on: ubuntu-22.04
     timeout-minutes: 270
@@ -317,7 +325,7 @@ jobs:
       - name: Install source/R2 client dependencies
         run: python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2" "requests>=2.31,<3"
       - name: Restore fixed source generation
-        if: inputs.operation != 'checkpoint-repair' && inputs.operation != 'strict-repair-stage' && matrix.quality_repair == ''
+        if: inputs.operation != 'checkpoint-repair' && inputs.operation != 'strict-repair-stage' && inputs.operation != 'strict-repair-resolution' && matrix.quality_repair == ''
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -354,13 +362,14 @@ jobs:
             echo "present=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          if [ "$REQUESTED_OPERATION" = "checkpoint-repair" ] || [ "$REQUESTED_OPERATION" = "strict-repair-stage" ]; then
+          if [ "$REQUESTED_OPERATION" = "checkpoint-repair" ] || [ "$REQUESTED_OPERATION" = "strict-repair-stage" ] || [ "$REQUESTED_OPERATION" = "strict-repair-resolution" ]; then
             repair_args=(--seconds "$TRANSLATION_SECONDS")
             if [ "$REQUESTED_OPERATION" = "strict-repair-stage" ]; then repair_args+=(--stage-only); fi
+            if [ "$REQUESTED_OPERATION" = "strict-repair-resolution" ]; then repair_args+=(--child-only); fi
             python3 -B scripts/repair_portal_extended_checkpoint.py restore \
               --generation "$SOURCE_GENERATION" --locale "$LOCALE" --request "$REPAIR_EVIDENCE" \
               --checkpoint "$RUNNER_TEMP/locale-checkpoint.json" --corpus "$RUNNER_TEMP/extended-source-corpus.json" \
-              "${repair_args[@]}"
+              --github-output "$GITHUB_OUTPUT" "${repair_args[@]}"
             echo "present=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -381,7 +390,7 @@ jobs:
             echo "present=false" >> "$GITHUB_OUTPUT"
           fi
       - name: Restore verified incremental unit memo
-        if: inputs.operation != 'checkpoint-repair' && inputs.operation != 'strict-repair-stage' && matrix.quality_repair == ''
+        if: inputs.operation != 'checkpoint-repair' && inputs.operation != 'strict-repair-stage' && inputs.operation != 'strict-repair-resolution' && matrix.quality_repair == ''
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -398,7 +407,7 @@ jobs:
               --checkpoint "$RUNNER_TEMP/locale-seed.json" | tee -a "$GITHUB_STEP_SUMMARY"
           fi
       - name: Set up pinned Hy-MT2 CPU model without audit artifacts
-        if: matrix.quality_repair == '' || steps.checkpoint.outputs.requires_engine == 'true'
+        if: (matrix.quality_repair == '' && steps.checkpoint.outputs.requires_engine != 'false') || steps.checkpoint.outputs.requires_engine == 'true'
         uses: ./.github/actions/setup-offline-translation
         with:
           targets: ${{ matrix.locale }}
@@ -444,9 +453,10 @@ jobs:
               --plan "$QUALITY_REPAIR" --locale "$LOCALE" --generation "$SOURCE_GENERATION" \
               --checkpoint "$RUNNER_TEMP/locale-checkpoint.json" --corpus "$RUNNER_TEMP/extended-source-corpus.json" \
               --output "$RUNNER_TEMP/extended-candidate" --seconds "$TRANSLATION_SECONDS" > "$RUNNER_TEMP/build-result.json"
-          elif [ "$REQUESTED_OPERATION" = "checkpoint-repair" ] || [ "$REQUESTED_OPERATION" = "strict-repair-stage" ]; then
+          elif [ "$REQUESTED_OPERATION" = "checkpoint-repair" ] || [ "$REQUESTED_OPERATION" = "strict-repair-stage" ] || [ "$REQUESTED_OPERATION" = "strict-repair-resolution" ]; then
             repair_args=(--seconds "$TRANSLATION_SECONDS")
             if [ "$REQUESTED_OPERATION" = "strict-repair-stage" ]; then repair_args+=(--stage-only); fi
+            if [ "$REQUESTED_OPERATION" = "strict-repair-resolution" ]; then repair_args+=(--child-only); fi
             python3 -B scripts/repair_portal_extended_checkpoint.py build \
               --generation "$SOURCE_GENERATION" --locale "$LOCALE" --request "$REPAIR_EVIDENCE" \
               --checkpoint "$RUNNER_TEMP/locale-checkpoint.json" --output "$RUNNER_TEMP/extended-candidate" \
@@ -474,7 +484,7 @@ jobs:
             exit "$code"
           fi
       - name: Persist checkpoint even when the locale budget ended
-        if: always() && inputs.operation != 'recovery-test' && inputs.operation != 'checkpoint-repair' && inputs.operation != 'strict-repair-stage' && matrix.quality_repair == ''
+        if: always() && inputs.operation != 'recovery-test' && inputs.operation != 'checkpoint-repair' && inputs.operation != 'strict-repair-stage' && inputs.operation != 'strict-repair-resolution' && matrix.quality_repair == ''
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -496,7 +506,7 @@ jobs:
             exit 1
           fi
       - name: Persist complete or incomplete candidate pages privately
-        if: always() && inputs.operation != 'recovery-test' && inputs.operation != 'checkpoint-repair' && inputs.operation != 'strict-repair-stage' && matrix.quality_repair == ''
+        if: always() && inputs.operation != 'recovery-test' && inputs.operation != 'checkpoint-repair' && inputs.operation != 'strict-repair-stage' && inputs.operation != 'strict-repair-resolution' && matrix.quality_repair == ''
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -530,7 +540,7 @@ jobs:
             --checkpoint "$RUNNER_TEMP/locale-checkpoint.json" --corpus "$RUNNER_TEMP/extended-source-corpus.json" \
             --output "$RUNNER_TEMP/extended-candidate" --seconds "$TRANSLATION_SECONDS" | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Validate exact repaired units and persist the selected repair mode
-        if: (inputs.operation == 'checkpoint-repair' || inputs.operation == 'strict-repair-stage') && matrix.quality_repair == '' && steps.build.outputs.exit_code == '0'
+        if: (inputs.operation == 'checkpoint-repair' || inputs.operation == 'strict-repair-stage' || inputs.operation == 'strict-repair-resolution') && matrix.quality_repair == '' && steps.build.outputs.exit_code == '0'
         env:
           KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
@@ -544,6 +554,7 @@ jobs:
           set -euo pipefail
           repair_args=(--seconds "$TRANSLATION_SECONDS")
           if [ "$REQUESTED_OPERATION" = "strict-repair-stage" ]; then repair_args+=(--stage-only); fi
+          if [ "$REQUESTED_OPERATION" = "strict-repair-resolution" ]; then repair_args+=(--child-only); fi
           python3 -B scripts/repair_portal_extended_checkpoint.py persist \
             --generation "$SOURCE_GENERATION" --locale "$LOCALE" --request "$REPAIR_EVIDENCE" \
             --checkpoint "$RUNNER_TEMP/locale-checkpoint.json" --output "$RUNNER_TEMP/extended-candidate" \

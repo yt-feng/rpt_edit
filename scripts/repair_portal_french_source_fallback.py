@@ -83,6 +83,7 @@ class RepairEngine:
             if isinstance(value, dict) and 'retry_policy' in value:
                 keys.add('retry_policy')
                 if 'completion_evidence' in value: keys.add('completion_evidence')
+                if 'resolution_evidence' in value: keys.add('resolution_evidence')
         require(isinstance(value, dict) and set(value) == keys, 'fr_repair_request_invalid')
         if self.contract.automatic:
             require(value['locale'] == self.locale, 'quality_repair_locale_mismatch')
@@ -97,6 +98,9 @@ class RepairEngine:
         if 'completion_evidence' in value:
             from portal_extended_completion import request as completion_request
             completion_request(value['completion_evidence'])
+        if 'resolution_evidence' in value:
+            from portal_extended_manual_resolution import request as resolution_request
+            resolution_request(value['resolution_evidence'])
         if 'retry_policy' in value:
             require(value['retry_policy'] == MANUAL_STRICT_RETRY and len(units) == 1,
                     'manual_strict_repair_requires_one_exact_unit')
@@ -257,6 +261,8 @@ class RepairEngine:
         common = {'schema_version', 'policy', 'validator_revision', 'unit_sha256', 'claim_sha256', 'status'}
         require(isinstance(outcome, dict) and outcome.get('status') in {'accepted', 'terminal'}, 'fr_repair_ledger_outcome_invalid')
         extra = {'row'} if outcome['status'] == 'accepted' else {'failure_code'}
+        if self.contract.automatic and outcome['status']=='accepted' and 'manual_resolution_sha256' in outcome:
+            extra.add('manual_resolution_sha256')
         if self.contract.automatic:
             extra.add('mode')
             require(outcome.get('mode') in {'accepted-ledger', 'cache-only', 'fresh-inference'},
@@ -270,6 +276,11 @@ class RepairEngine:
             require(isinstance(row, dict) and set(row) == {'source', 'language', 'text'}
                     and row['source'] == source['source'] and row['language'] == source['language'], 'fr_repair_ledger_row_invalid')
             validate_text(row['source'], row['text'], self.locale, row['language'])
+            if 'manual_resolution_sha256' in outcome:
+                from portal_extended_manual_resolution import verify_admission
+                accepted,_,_=verify_admission(store,self,unit,source,claim,outcome['manual_resolution_sha256'])
+                require(outcome['mode']=='accepted-ledger' and row==accepted['row'],
+                        'resolution_ledger_row_differs')
         else:
             require(outcome['failure_code'] in TERMINAL_CODES,
                     'fr_repair_terminal_code_invalid')

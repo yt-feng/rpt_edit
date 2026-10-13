@@ -112,6 +112,64 @@ class ManualStrictTests(unittest.TestCase):
                 store=self.store, repository=fixtures.fixtures.REPOSITORY, api=self.f.api, manual_strict=True)
         return json.loads(output.getvalue()),factory
 
+    def test_child_result_then_successful_producer_import_and_cache_only_adoption(self):
+        from portal_extended_manual_resolution import POLICY
+        from portal_extended_repair_cache import CacheFirstTranslator
+        child={'run_id':'3','attempt':'1','sha':'c'*40}
+        adopter={'run_id':'4','attempt':'1','sha':'d'*40}
+        unit=self.request()['units'][0]
+        source=self.pipeline.units.required_units(self.f.corpus)[unit]
+        parent={**self.pipeline.units.claim_contract(unit,source),'producer':fixtures.fixtures.OWNER}
+        parent_key=self.pipeline.units.ledger_key(self.store,unit,'started.json')
+        self.pipeline.units.create_record(self.store,parent_key,parent)
+        parent_bytes=self.store._get(parent_key,maximum=1024*1024)
+        request={**self.request(),'resolution_evidence':{'policy':POLICY,
+            'claim_sha256':digest(stable_bytes(parent)),'producer':fixtures.fixtures.OWNER,
+            'source_job_id':21,'locale_job_id':22}}
+        def api(path):
+            if '/runs/1/' in path:return self.f.api(path)
+            run_id=int(path.split('/runs/')[1].split('/')[0])
+            owner={2:fixtures.fixtures.OWNER,3:child,4:adopter}[run_id]
+            run={**self.f.run_record,'id':run_id,'head_sha':owner['sha'],'conclusion':'failure' if run_id==2 else 'success'}
+            jobs=[{**j,'id':run_id*10+i+1,'run_id':run_id,'head_sha':owner['sha'],
+                   'conclusion':'failure' if run_id==2 and i==1 else 'success'} for i,j in enumerate(self.f.jobs)]
+            return {'total_count':len(jobs),'jobs':jobs} if '/jobs?' in path else run
+        class Translator(fixtures.fixtures.RepairTranslator):
+            def cached_translation(self,*args,**kwargs):return None
+        translator=Translator()
+        def execute(operation,*,child_only,owner,repair):
+            args=SimpleNamespace(operation=operation,generation=self.generation,locale=self.locale,
+                checkpoint=self.f.root/('child-checkpoint.json' if child_only else 'adopt-checkpoint.json'),
+                corpus=self.f.root/'child-corpus.json',output=self.f.root/('child-output' if child_only else 'adopt-output'),
+                github_output=None,seconds=900,stage_only=False,child_only=child_only)
+            output=io.StringIO()
+            with redirect_stdout(output),patch('offline_translation.OfflineTranslator',return_value=translator) as factory, \
+                 patch('portal_extended_repair_cache.CacheFirstTranslator',side_effect=lambda value:value):
+                self.pipeline.run(args,repair,owner,store=self.store,repository=fixtures.fixtures.REPOSITORY,
+                    api=api,manual_strict=True)
+            return json.loads(output.getvalue()),factory
+        before_queue=copy.deepcopy(queue(self.store,self.locale))
+        before_memo=copy.deepcopy(read_state(self.store,'memo',self.locale))
+        for operation in ('prepare','restore','build','persist'):
+            value,_=execute(operation,child_only=True,owner=child,repair=request)
+        self.assertEqual(len(translator.calls),1)
+        self.assertEqual(queue(self.store,self.locale),before_queue)
+        self.assertEqual(read_state(self.store,'memo',self.locale),before_memo)
+        self.assertIsNone(self.pipeline.units.ledger_outcome(self.store,unit,source)[1])
+        self.assertFalse((self.f.root/'child-output').exists())
+        completion=value['completion_sha256']
+        repair=copy.deepcopy(request);repair['resolution_evidence']['completion_sha256']=completion
+        for operation in ('prepare','restore','build','persist'):
+            value,factory=execute(operation,child_only=False,owner=adopter,repair=repair)
+            self.assertEqual(factory.call_count,0)
+        self.assertEqual(value['residual_fallbacks'],0)
+        self.assertEqual(debt_rows(self.store,self.locale),{})
+        self.assertEqual(self.store._get(parent_key,maximum=1024*1024),parent_bytes)
+        outcome=self.pipeline.units.ledger_outcome(self.store,unit,source)[1]
+        self.assertEqual(outcome['mode'],'accepted-ledger')
+        self.assertIn('manual_resolution_sha256',outcome)
+        self.assertEqual(len(translator.calls),1)
+
     def test_stage_changes_only_immutable_evidence_then_auto_adopts_latest_memo(self):
         request=self.request(); selected=request['units'][0]
         before_queue=copy.deepcopy(queue(self.store,self.locale))

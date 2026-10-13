@@ -36,6 +36,14 @@ stage 使用独立的 locale/generation concurrency，仅新增不可变 source 
 
 stage 完成不是正式采用。旧 debt 仍是持久恢复队列；之后的串行 quality source 按原公平调度读到 accepted ledger，生成不含手工 retry policy 的新 request，使用禁止推理的 build，针对当时最新 Memo 生成新的 proof 并通过既有 current-state guards 采用。不能直接把旧 stage 捕获的 Memo 快照写回；若其间 Memo 前进，旧 prepared commit 必须拒绝。最终以正式 candidate、quality-debt 和发布读回为准。
 
+### 精确失败 owner 的一次手工 child resolution
+
+`strict-repair-resolution` 是 reviewed-main 的显式手工操作，采用独立手工组；所有新版 locale jobs 共用只包含 locale 的 `extended-locale-*` 锁和 `cancel-in-progress=false`，不按 ref/generation/operation 分裂。上线迁移先清点旧代码的所有非终态运行，移除仍可能开始该语言工作的旧 pending job，并确认旧进行中矩阵里该语言唯一 job 已完成；不得取消整个矩阵。普通矩阵最多两个 worker 不变，手工只增加一个明确指定的 locale job。它只接受同一单元、model、validator、source/origin/snapshot 及原始 started claim SHA；原 owner 的精确 run/attempt/SHA、source 成功 job 和 locale 失败 job 必须已结束并通过 GitHub API 验真。获得 locale 锁后再次核对 source/current snapshot、child terminal/accepted 状态和原 outcome 的 typed missing，然后才可原子创建 child started。普通自动计划仍不重新调用 unknown/terminal 单元。
+
+该操作以原 claim SHA 为固定唯一 child slot，最多一次 900 秒、既有三次质量尝试。原 started 不改写，不通过更换 namespace、revision 或 source key 重置。child started 后没有 accepted 结果时仍禁止再次推理。译文通过既有校验后，先写入私有不可变 accepted row 并读回；存储异常只允许 typed missing 后重传一次相同字节，绝不重发模型请求。有效结果已存在时只读回并补 completion receipt，不加载模型。child 不重建候选、不写 Memo/queue/debt、不发布。
+
+之后单独的串行 `checkpoint-repair` 请求引用 child completion SHA，验证它的原请求和 source claim，以及实际已成功的 source/locale jobs。仅此时可新增带 `manual_resolution_sha256` 的 accepted parent outcome；它明确归因于 child accepted receipt，原失败 owner 不被改称成功。再沿用禁止推理的候选重建、最新 Memo 合并和原 CAS guards 完成采用；任何缺失、未知或不符的 child 结果均保留未决，不扩展尝试次数。
+
 原始 source job 必须继续通过来源校验。若原始 locale job 超时、由后续 run 完成，新结果会保留实际完成 owner 的不可变 receipt，并要求该 run 的精确 source/locale jobs 都成功。历史缺失 receipt 时，显式严格请求可附 `completion_evidence`：固定 producer、两个 job ID、原始 job log SHA256 和前一 checkpoint。仅接受同一 main workflow 的后继提交、精确 generation/day/source/checkpoint/candidate/manifest 完成日志；整体 run 因其它语言失败不影响这两个成功 job 的证明。只读检查不写 receipt，prepare 才条件创建并读回私有 adoption pointer。
 
 完成凭据绑定完整 snapshot。后续部分修复必须逐层验证实际成功的 repair producer 和 before/after proof，不能借用同 generation 的其它候选。发布 ACK 后用精确不可变输入 row 认证并清理已结束的 tail，不重建已确认候选。
