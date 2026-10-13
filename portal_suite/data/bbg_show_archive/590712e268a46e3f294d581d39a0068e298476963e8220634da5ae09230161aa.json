@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "id": "590712e268a46e3f294d581d39a0068e298476963e8220634da5ae09230161aa",
+  "slug": "bbg-20261013-590712e268a46e3f",
+  "date": "2026-10-13",
+  "title": "OpenAI失控模型入侵Hugging Face",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-10-12/odd-lots-how-openai-s-rogue-model-hacked-hugging-face-video",
+  "start": 0.0,
+  "end": 90.0,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 7.52,
+      "en": "After the Hugging Face incident, they're like, wow, we actually turned out to be pretty glad that the companies were ignoring our calls",
+      "zh": "Hugging Face事件后，他们觉得，哇，我们其实挺庆幸那些公司没理我们"
+    },
+    {
+      "start": 7.52,
+      "end": 19.44,
+      "en": "Because this did really help wake up the world My read is that none of this was intentional on the open AI side Sure, and I think that that's pretty clear if you look at the sequence of events where you had",
+      "zh": "因为这确实唤醒了世界。我的理解是，OpenAI这边并非有意为之。当然，如果你看事件顺序，这一点很清楚，当时"
+    },
+    {
+      "start": 20.4,
+      "end": 28.64,
+      "en": "You know that the hugging face attacks were actually from open AI swarm number two In that particular line of swarms the German swarm lineage was a separate",
+      "zh": "Hugging Face的攻击其实来自OpenAI的第二群。在那个特定的群系中，德国群系是独立的"
+    },
+    {
+      "start": 28.88,
+      "end": 39.44,
+      "en": "Yeah swarm lineage But the the hugging face attacks were were from the second swarm in its particular lineage that we know of There was a first swarm in that lineage that took down a bunch of open AI's internal systems",
+      "zh": "是的，群系。但Hugging Face的攻击来自该群系中的第二群。我们知道，该群系中还有第一群，它曾导致OpenAI内部系统瘫痪"
+    },
+    {
+      "start": 39.68,
+      "end": 49.28,
+      "en": "And they were like that's funny And then they like reset it and set it running again Right and they weren't like you know going to the news being like look at us We had a swarm incident that took over our own internal infrastructure, right?",
+      "zh": "他们觉得挺有趣，然后重置并再次运行。他们并没有去新闻上说，看看我们，我们发生了群事件，接管了自己的内部基础设施，对吧？"
+    },
+    {
+      "start": 50.16,
+      "end": 59.28,
+      "en": "And the the sort of hugging face swarm was detected by hugging face They presumably thought that it was humans behind it rather than a eyes behind it reported it to the FBI",
+      "zh": "Hugging Face群是被Hugging Face检测到的。他们大概以为背后是人类而非AI，于是报告给了FBI"
+    },
+    {
+      "start": 59.76,
+      "end": 68.88,
+      "en": "And then open AI didn't realize that it was them until days later When they were investigating a second what they thought was a second internal incident and they found",
+      "zh": "然后OpenAI几天后才意识到是他们自己。当时他们在调查第二起内部事件，并发现"
+    },
+    {
+      "start": 69.76,
+      "end": 81.2,
+      "en": "Like hugging face credentials in their logs and they're like oh, we should alert hugging face that like someone has been hacking both them and us And that like these particular credentials have been compromised and hugging face was like yes",
+      "zh": "日志中有Hugging Face的凭证，他们说，哦，我们应该提醒Hugging Face，有人一直在攻击他们和我们，这些凭证已被泄露。Hugging Face说，是的"
+    },
+    {
+      "start": 81.2,
+      "end": 89.2,
+      "en": "Those are the credentials that attacked us and then open AI was like Why are the credentials that attacked you on our servers and hugging face was like yes, why indeed",
+      "zh": "那些就是攻击我们的凭证。然后OpenAI说，为什么攻击你们的凭证在我们的服务器上？Hugging Face说，是啊，为什么"
+    },
+    {
+      "start": 89.68,
+      "end": 90.0,
+      "en": "And open AI was like oh, it was us",
+      "zh": "OpenAI说，哦，是我们"
+    }
+  ]
+}
