@@ -573,7 +573,9 @@ jobs:
            (needs.source.outputs.has_work == 'false' && needs.locale.result == 'skipped')) &&
           vars.PORTAL_EXTENDED_AUTO_PUBLISH_LOCALES != '' }}
     runs-on: ubuntu-22.04
-    timeout-minutes: 20
+    # Full 33-locale R2 verification can exceed 20 minutes. Keep enough time
+    # to finish the handoff job after dispatch so its consumer can verify success.
+    timeout-minutes: 60
     permissions:
       contents: read
       actions: write
