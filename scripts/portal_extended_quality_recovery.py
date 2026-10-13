@@ -110,6 +110,7 @@ def read_plan(store, identity):
             and plan['policy'] == QUALITY_POLICY and plan['mode'] in {'repair','prepared-tail'}, 'plan_contract_invalid')
     pipeline = RepairPipeline(quality_contract(plan['locale']))
     pipeline.units.request(plan['request'])
+    require('retry_policy' not in plan['request'], 'automatic_plan_cannot_request_manual_retries')
     producer_identity(plan['owner'])
     selection = plan['selection']
     require(isinstance(selection, dict) and set(selection) == {'accepted_ledger_units','fresh_authorized_units',

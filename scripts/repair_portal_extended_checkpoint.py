@@ -438,6 +438,7 @@ def main():
     parser.add_argument('--request',required=True);parser.add_argument('--corpus',type=Path)
     parser.add_argument('--checkpoint',type=Path);parser.add_argument('--output',type=Path)
     parser.add_argument('--github-output',type=Path);parser.add_argument('--seconds',type=int,default=14400)
+    parser.add_argument('--stage-only',action='store_true')
     args=parser.parse_args()
     from build_portal_extended_locales import validate_budget
     validate_budget(args.seconds)
@@ -450,8 +451,18 @@ def main():
     from review_portal_extended_handoff import api
     repository=os.environ['GITHUB_REPOSITORY']
     from portal_extended_french_repair import POLICY as FRENCH_POLICY, run as french_repair
+    from portal_extended_repair_contract import QUALITY_POLICY
+    if args.stage_only and (not isinstance(value, dict) or value.get('policy') != QUALITY_POLICY):
+        raise ExpansionError('Staging requires an exact manual strict quality request')
     if isinstance(value,dict) and value.get('policy') == FRENCH_POLICY:
         return french_repair(args,value,owner,store=once_store(),repository=repository,api=api)
+    from portal_extended_repair_contract import QUALITY_POLICY, MANUAL_STRICT_RETRY, quality_contract
+    if isinstance(value,dict) and value.get('policy') == QUALITY_POLICY:
+        if value.get('retry_policy') != MANUAL_STRICT_RETRY:
+            raise ExpansionError('Manual quality repair requires its exact bounded retry policy')
+        from portal_extended_french_repair import RepairPipeline
+        return RepairPipeline(quality_contract(args.locale)).run(
+            args,value,owner,store=once_store(),repository=repository,api=api,manual_strict=True)
     if args.operation == 'inspect':
         raise ExpansionError('Source fallback inspection requires its exact supported policy')
     repair=request(value);store=once_store()

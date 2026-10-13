@@ -22,7 +22,7 @@ def expression_value(expression, values, *, cancelled=False):
     """Evaluate only the fixed workflow boolean grammar used by these guards."""
     expression = expression.strip().removeprefix('${{').removesuffix('}}').strip()
     expression = expression.replace('always()', 'True').replace('cancelled()', str(cancelled))
-    expression = re.sub(r'\b(?:matrix|steps|needs|inputs|github)\.[a-zA-Z0-9_.]+',
+    expression = re.sub(r'\b(?:matrix|steps|needs|inputs|github|vars)\.[a-zA-Z0-9_.]+',
                         lambda match: repr(values.get(match.group(), '')), expression)
     expression = expression.replace('&&', ' and ').replace('||', ' or ')
     expression = re.sub(r'!(?!=)', ' not ', expression)
@@ -63,6 +63,13 @@ class ConsumerAdmissionTests(unittest.TestCase):
         self.assertEqual(active[shared], 'old-active-batch')
         self.assertEqual(skipped, 'extended-locales-ineligible-123-1')
         self.assertFalse(self.workflow['concurrency']['cancel-in-progress'])
+
+    def test_strict_stage_isolated_from_production_but_serialized_for_exact_target(self):
+        values={'github.event_name':'workflow_dispatch','inputs.operation':'strict-repair-stage',
+                'inputs.locales':'my','inputs.source_generation':GENERATION}
+        self.assertEqual(self.group(**values),'extended-locales-strict-stage-my-'+GENERATION)
+        self.assertNotEqual(self.group(**values),self.group(**{'github.event_name':'workflow_dispatch',
+                                                             'inputs.operation':'candidate'}))
 
     def test_every_rejected_source_event_has_an_isolated_group(self):
         for result in ('success', 'failure', 'cancelled', 'skipped', 'timed_out', 'action_required', ''):
@@ -236,10 +243,32 @@ raise SystemExit(int(os.environ.get('STUB_EXIT', '0')))
         result, calls = self.execute(step, REQUESTED_OPERATION='checkpoint-repair')
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(len(calls), 1); self.assert_identity(calls[0], 'build')
-        legacy = self.step('Validate exact repaired units and complete candidate before original-intent adoption')
+        legacy = self.step('Validate exact repaired units and persist the selected repair mode')
         values = {'inputs.operation': 'checkpoint-repair', 'steps.build.outputs.exit_code': '0'}
         self.assertTrue(condition(legacy['if'], values))
         self.assertFalse(condition(legacy['if'], {**values, 'matrix.quality_repair': PLAN}))
+
+    def test_strict_stage_only_reaches_immutable_repair_and_never_publication(self):
+        values={'inputs.operation':'strict-repair-stage','steps.build.outputs.exit_code':'0',
+                'github.ref':'refs/heads/main','needs.source.result':'success',
+                'needs.source.outputs.has_work':'true','needs.locale.result':'success',
+                'needs.source.outputs.source_admission':'admitted'}
+        for name in ('Restore verified incremental unit memo',
+                     'Persist checkpoint even when the locale budget ended',
+                     'Persist complete or incomplete candidate pages privately'):
+            self.assertFalse(condition(self.step(name)['if'],values))
+        for name in ('publication_handoff','english_publication_handoff','continue_admitted_batches'):
+            self.assertFalse(condition(self.workflow['jobs'][name]['if'],values))
+        for name,operation in (
+            ('Restore locale checkpoint from private R2','restore'),
+            ('Run bounded locale translation and retain timeout state','build'),
+            ('Validate exact repaired units and persist the selected repair mode','persist')):
+            self.log.unlink(missing_ok=True)
+            result,calls=self.execute(self.step(name),QUALITY_REPAIR='',REQUESTED_OPERATION='strict-repair-stage')
+            self.assertEqual(result.returncode,0,result.stderr)
+            self.assertEqual(len(calls),1)
+            self.assertEqual(calls[0][1:3],['scripts/repair_portal_extended_checkpoint.py',operation])
+            self.assertIn('--stage-only',calls[0]);self.assertIn('--seconds',calls[0])
 
     def test_dispatch_requires_an_explicit_true_frontier_and_retains_normal_progress(self):
         guard = self.step('Dispatch the next bounded per-language cursors', job=self.followup)['if']

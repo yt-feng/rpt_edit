@@ -1,7 +1,8 @@
 """Exact complete-to-complete French fallback repair in the serialized queue."""
 from __future__ import annotations
 from dataclasses import dataclass
-from portal_extended_repair_contract import RepairContract, LEGACY_FRENCH
+from portal_extended_repair_contract import (RepairContract, LEGACY_FRENCH,
+    MANUAL_STRICT_RETRY, MANUAL_STRICT_SECONDS)
 
 import copy
 import json
@@ -14,7 +15,7 @@ from portal_extended_daily_queue import batch_admission, immutable_record
 from portal_extended_incremental import content_key, read_state, write_state
 from portal_extended_locales import ExpansionError, daily_corpus_day, digest, stable_bytes
 from portal_extended_r2 import (HEX64, MAX_CHECKPOINT_BYTES, MAX_SOURCE_BYTES,
-    MAX_CANDIDATE_MANIFEST_BYTES, MAX_CANDIDATE_PAGE_BYTES, R2NotFound, R2Store, checkpoint_is_valid)
+    MAX_CANDIDATE_MANIFEST_BYTES, MAX_CANDIDATE_PAGE_BYTES, R2NotFound, R2Store, R2TransportError, checkpoint_is_valid)
 
 POLICY = 'fr-quantity-fallback-v1'
 REVISION = 'fr-space-grouping-quarter-v1'
@@ -122,7 +123,7 @@ class RepairPipeline:
         require(run.get('id') == int(owner['run_id']) and run.get('run_attempt') == int(owner['attempt'])
                 and run.get('head_sha') == owner['sha'] and run.get('path') == WORKFLOW
                 and run.get('status') == 'completed' and run.get('conclusion') in {'success', 'failure'}
-                and run.get('event') in ({'workflow_dispatch', 'workflow_run'} if self.contract.automatic else {'workflow_dispatch'}) and run.get('head_branch') == 'main'
+                and run.get('event') in ({'workflow_dispatch', 'workflow_run'} if self.contract.automatic and 'retry_policy' not in proof['request'] else {'workflow_dispatch'}) and run.get('head_branch') == 'main'
                 and all((run.get(k) or {}).get('full_name') == repository for k in ('repository', 'head_repository'))
                 and (run.get('repository') or {}).get('private') is False,
                 'French repair producer is not an exact completed public main dispatch')
@@ -201,7 +202,16 @@ class RepairPipeline:
         try:
             previous = store._get(name, maximum=maximum)
         except R2NotFound:
-            store._put(name, raw, metadata={'kind': kind})
+            # Staging may overlap serialized accepted-ledger reuse. Never replace
+            # a concurrently created manifest, even before detecting a mismatch.
+            try:
+                store.client.put_object(Bucket=store.bucket, Key=name, Body=raw,
+                    ContentType='application/octet-stream', CacheControl='private, no-store',
+                    Metadata={'sha256':digest(raw),'kind':kind}, IfNoneMatch='*')
+            except Exception as error:
+                code = str(getattr(error, 'response', {}).get('Error', {}).get('Code', ''))
+                if code not in {'PreconditionFailed','412','ConditionalRequestConflict','409'}:
+                    raise R2TransportError('Repair immutable write outcome unresolved') from None
             previous = store._get(name, maximum=maximum)
         require(previous == raw, 'French repair cannot overwrite immutable evidence')
 
@@ -373,11 +383,11 @@ class RepairPipeline:
         save_queue(store, self.locale, rows)
 
 
-    def persist(self, store, generation, repair, owner, checkpoint, output):
+    def persist(self, store, generation, repair, owner, checkpoint, output, *, prepare_only=False):
         verify_rebuild = self.units.verify_rebuild
         prior = self.prepared_proof(store, repair)
         if prior is not None:
-            return self.commit_prepared(store, prior)
+            return self.verify_proof(store, prior, generation) if prepare_only else self.commit_prepared(store, prior)
         claim = self.read_optional(store, self.claim_key(store, repair, owner))
         require(claim is not None and claim['request'] == repair and claim['producer'] == producer_identity(owner),
                 'French repair requires its exact source-job claim')
@@ -406,9 +416,9 @@ class RepairPipeline:
             identity = digest(stable_bytes(proof))
             immutable_record(store, self.proof_key(store, identity), proof, kind='fr-source-fallback-repair-proof')
             self.verify_proof(store, identity, generation)
-            immutable_record(store, self.repair_key(store, repair, 'prepared.json'), {'proof_sha256': identity},
-                             kind='fr-source-fallback-repair-prepared')
-        return self.commit_prepared(store, identity)
+            self.put_immutable_bytes(store, self.repair_key(store, repair, 'prepared.json'),
+                stable_bytes({'proof_sha256': identity}), kind='fr-source-fallback-repair-prepared', maximum=65536)
+        return self.verify_proof(store, identity, generation) if prepare_only else self.commit_prepared(store, identity)
 
 
     def result(self, corpus, *, has_work):
@@ -419,10 +429,18 @@ class RepairPipeline:
                 'source_admission': '', 'english_admission': '', 'stopped_locales_json': '[]'}
 
 
-    def run(self, args, value, owner, *, store, repository, api):
+    def run(self, args, value, owner, *, store, repository, api, manual_strict=False):
         request, rebuild = self.units.request, self.units.rebuild
         self.check_generation(args.generation, args.locale)
         inspecting = args.operation == 'inspect'
+        stage_only = bool(getattr(args, 'stage_only', False))
+        require(not stage_only or manual_strict, 'Only explicit strict repair may stage immutable evidence')
+        require(('retry_policy' in value) == manual_strict,
+                'Manual retry policy requires the explicit reviewed dispatcher')
+        if manual_strict:
+            require(self.contract.automatic and value.get('retry_policy') == MANUAL_STRICT_RETRY
+                    and 1 <= args.seconds <= MANUAL_STRICT_SECONDS,
+                    'Manual strict repair exceeds its single-unit CPU bound')
         if inspecting:
             # Read-only discovery may fill these two previously unknown hashes from
             # authenticated private origin evidence; mutation must pin them itself.
@@ -431,13 +449,38 @@ class RepairPipeline:
             value = dict(value)
             value.setdefault('source_sha256', origin['source_sha256'])
             value.setdefault('origin_sha256', digest(stable_bytes(origin)))
+            value.setdefault('producer', origin['producer'])
         repair = request(value, require_units=not inspecting)
         with tempfile.TemporaryDirectory(prefix='fr-source-repair-') as temp:
             corpus, old_raw, old_dir, origin, snapshot, summary = self.frozen(store, args.generation, repair, Path(temp))
             if not self.contract.automatic or args.operation in {'prepare', 'inspect'}:
                 self.authenticate_original(store, origin, repository, api)
+            if manual_strict:
+                from build_portal_extended_locales import NUMERIC_FALLBACK_CODES
+                old = json.loads(old_raw)
+                unit = repair['units'][0]
+                require(old['source_fallbacks'][unit]['code'] not in NUMERIC_FALLBACK_CODES,
+                        'Numeric advisory does not authorize manual inference')
+                source = self.units.required_units(corpus)[unit]
+                claim, outcome, _ = self.units.prior_outcome(store, unit, source)
+                ledger_status = outcome['status'] if outcome else ('unresolved' if claim else 'fresh')
+                summary['selected_unit_ledger_status'] = ledger_status
+                if not inspecting:
+                    require(ledger_status not in {'unresolved', 'terminal'},
+                            'Manual repair cannot reopen a terminal or unknown unit')
+                    expected = 'accepted-ledger' if outcome else 'fresh-authorized'
+                    # A request may resume its own accepted model result after a
+                    # later step failed; it never repeats that accepted inference.
+                    require(repair['unit_modes'][unit] == expected
+                            or (expected == 'accepted-ledger' and repair['unit_modes'][unit] == 'fresh-authorized'),
+                            'Manual repair unit mode differs from immutable ledger')
+                args.requires_engine = ledger_status == 'fresh'
             prior = self.prepared_proof(store, repair)
-            if args.operation == 'prepare' and prior is not None:
+            if args.operation == 'prepare' and prior is not None and stage_only:
+                self.verify_proof(store, prior, args.generation)
+                outcome = {**self.result(corpus, has_work=False), 'staged_proof_sha256':prior,
+                           'mutable_production_writes':0, 'publication_performed':False}
+            elif args.operation == 'prepare' and prior is not None:
                 proof = self.commit_prepared(store, prior)
                 self.record_completion(store, prior, proof, owner)
                 outcome = self.result(corpus, has_work=False)
@@ -470,12 +513,16 @@ class RepairPipeline:
                                 raise ExpansionError('quality_repair_unplanned_inference')
                         translator = LedgerOnlyTranslator()
                     else:
-                        translator = OfflineTranslator(validation_attempts=1, quantity_policy='advisory')
+                        translator = OfflineTranslator(validation_attempts=3 if manual_strict else 1, quantity_policy='advisory')
                         if self.contract.automatic:
                             from portal_extended_repair_cache import CacheFirstTranslator
                             translator = CacheFirstTranslator(translator)
                     delta = rebuild(store, corpus, old_raw, old_dir, args.output, fresh_checkpoint, repair,
                                     owner, translator, seconds=args.seconds)
+                    if manual_strict:
+                        require(delta['accepted_units'] == repair['units'] and not delta['terminal_units']
+                                and delta['fallbacks_before'] - delta['fallbacks_after'] == 1,
+                                'Manual strict unit was not accepted; original candidate remains unchanged')
                     args.checkpoint.write_bytes(fresh_checkpoint.read_bytes())
                     (args.output.parent/'fr-source-fallback-repair-proof.json').write_bytes(stable_bytes(delta))
                     outcome = {'status': 'complete-candidate', 'changed': delta['changed'],
@@ -484,9 +531,11 @@ class RepairPipeline:
                     from build_portal_extended_locales import public_translation_diagnostics
                     outcome.update(public_translation_diagnostics(translator, self.locale))
                 elif args.operation == 'persist':
-                    proof = self.persist(store, args.generation, repair, owner, args.checkpoint, args.output)
+                    proof = self.persist(store, args.generation, repair, owner, args.checkpoint, args.output, prepare_only=stage_only)
                     outcome = {'status': 'complete-candidate', 'proof_sha256': digest(stable_bytes(proof)),
                                'changed': proof['delta']['changed'], 'residual_fallbacks': proof['delta']['fallbacks_after']}
+                    if stage_only:
+                        outcome.update(prepared_only=True, mutable_production_writes=0, publication_performed=False)
                 else:
                     raise ExpansionError('Unsupported French repair operation')
         if args.github_output:

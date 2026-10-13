@@ -1,7 +1,7 @@
 """Exact French quantity-fallback recovery with a durable one-revision unit ledger."""
 from __future__ import annotations
 from dataclasses import dataclass
-from portal_extended_repair_contract import RepairContract, LEGACY_FRENCH
+from portal_extended_repair_contract import RepairContract, LEGACY_FRENCH, MANUAL_STRICT_RETRY
 import argparse
 import copy
 import json
@@ -78,7 +78,10 @@ class RepairEngine:
     def request(self, value, *, require_units=True):
         keys = {'policy', 'validator_revision', 'source_sha256', 'origin_sha256', 'producer',
                 'checkpoint_sha256', 'candidate_id', 'manifest_sha256', 'units'}
-        if self.contract.automatic: keys.update({'locale','unit_modes'})
+        if self.contract.automatic:
+            keys.update({'locale','unit_modes'})
+            if isinstance(value, dict) and 'retry_policy' in value:
+                keys.add('retry_policy')
         require(isinstance(value, dict) and set(value) == keys, 'fr_repair_request_invalid')
         if self.contract.automatic:
             require(value['locale'] == self.locale, 'quality_repair_locale_mismatch')
@@ -90,6 +93,9 @@ class RepairEngine:
         require(isinstance(units, list) and (1 if require_units else 0) <= len(units) <= MAX_UNITS
                 and all(isinstance(unit, str) and HEX64.fullmatch(unit) for unit in units)
                 and units == sorted(set(units)), 'fr_repair_units_invalid')
+        if 'retry_policy' in value:
+            require(value['retry_policy'] == MANUAL_STRICT_RETRY and len(units) == 1,
+                    'manual_strict_repair_requires_one_exact_unit')
         if self.contract.automatic:
             modes = value['unit_modes']
             require(isinstance(modes, dict) and set(modes) == set(units)

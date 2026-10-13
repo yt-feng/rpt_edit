@@ -223,12 +223,15 @@ def inspect(store, generation, locale, checkpoint_sha, candidate_id, output):
         text, language, markdown = pending
         pending_summary = {'sha256': digest(text.encode()), 'characters': len(text),
                            'whitespace_words': len(text.split()), 'source_language': language, 'markdown': markdown}
-    from portal_extended_continuation import queue
+    from portal_extended_continuation import queue, read_origin
     from portal_extended_quality import debt_rows
     registered = queue(store, locale).get(generation, {})
     debt = debt_rows(store, locale).get(generation, {})
     snapshot = registered.get('snapshot', {})
-    current = {'registered_status': registered.get('status'),
+    origin = read_origin(store, generation)
+    current = {'origin_sha256': digest(stable_bytes(origin)) if origin else None,
+               'origin_producer': origin.get('producer') if origin else None,
+               'registered_status': registered.get('status'),
                'candidate_id': snapshot.get('candidate_id'),
                'checkpoint_sha256': snapshot.get('checkpoint_sha256'),
                'quality_debt_status': debt.get('quality_status'),
