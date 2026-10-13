@@ -77,7 +77,8 @@ def probe(ledger, client, bucket, output):
     with tempfile.TemporaryDirectory(prefix='adb-pinned-originals-') as directory:
         path = Path(directory)/'originals'
         manifest = restore(ledger, OriginalCache(client, bucket), Backlog(client, bucket), value, path)
-        row = value['sources'][5]
+        row = sorted(value['sources'], key=lambda source: source['local_filename'])[5]
+        require(row['local_filename'] == 'ADB_Understanding-Emission-Trends-in-Mongolia-Insights-from-Envi_368670f7.pdf', 'selected_source_mismatch')
         binding = ledger.bind(path/row['local_filename'], row['local_filename'])
         claim, _ = ledger.store.get('sources/'+binding['id'])
         root, _ = ledger._read_batch(claim['batch_key'])
