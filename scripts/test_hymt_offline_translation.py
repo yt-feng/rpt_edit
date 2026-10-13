@@ -332,6 +332,28 @@ class HyMTTests(unittest.TestCase):
                     self.assertNotIn('HYMTPH', prompt)
                     self.assertNotIn('KC_PH', prompt)
 
+    def test_final_burmese_retry_uses_direct_prompt_without_extra_calls_or_sampling_changes(self):
+        engine = object.__new__(h._HyMTEngine); engine.port = 12345
+        source = '普通标题 __KC_PH_001__'
+        response = {'choices': [{'finish_reason': 'stop', 'message': {'content': 'translation'}}]}
+        for retry in range(3):
+            with self.subTest(retry=retry), mock.patch.object(h, 'request_json', return_value=response) as request:
+                engine.translate(source, 'zh', 'my', quality_retry=retry)
+                payload = request.call_args.args[2]
+                prompt = payload['messages'][0]['content']
+                self.assertTrue(prompt.endswith(source))
+                self.assertEqual(payload['grammar'], h.UNICODE_TEXT_GRAMMAR)
+                self.assertEqual(payload['max_tokens'], h.MANIFEST['sampling']['max_tokens'])
+                self.assertEqual(payload['seed'], h.MANIFEST['sampling']['seed'] + retry)
+                self.assertEqual(request.call_count, 1)
+                if retry == 2:
+                    self.assertTrue(prompt.startswith('Translate the following Chinese text into Burmese.'))
+                    self.assertIn('__KC_PH_001__: 1 occurrence(s)', prompt)
+                    self.assertNotIn('previous draft', prompt)
+                    self.assertNotIn('__HYMTPH_...__', prompt)
+                else:
+                    self.assertNotIn('These exact tokens must appear', prompt)
+
     def test_placeholder_diagnostics_describe_format_damage_without_repairing_it(self):
         original = '__HYMTPH_0000__ and __HYMTPH_0001__'
         raw = r'__ HYMTPH_0000 __ and \_\_HYMTPH\_0001\_\_'

@@ -484,8 +484,10 @@ class _HyMTEngine:
                       'Copy each complete numeric expression, date, percentage, currency and unit exactly '
                       'from the input; do not convert its scale or currency. Preserve every placeholder and '
                       'Markdown delimiter exactly. Output only the corrected translation.\n' + prompt)
-        if target == 'en' and quality_retry == 2:
-            # The final English attempt may protect a whole financial fact.
+        if target in {'en', 'my'} and quality_retry == 2:
+            # A final retry may protect a whole financial fact. A concise
+            # direct prompt also gives short Burmese units a distinct retry
+            # after verbose repair instructions exhaust the output limit.
             # Describe the actual tokens, not invented namespace examples or
             # only noun/resource semantics. Validation still requires every
             # original token and the fully restored source quantities.
@@ -499,7 +501,7 @@ class _HyMTEngine:
                 'in the same order. Do not translate, omit, duplicate, or explain a token. '
             ) if counts else ''
             prompt = (
-                f'Translate the following {LANGUAGES[source]} text into English. '
+                f'Translate the following {LANGUAGES[source]} text into {LANGUAGES[target]}. '
                 'Output only the translation, without explanation, commentary, or notes. '
                 + protected_instruction +
                 'Do not add numbers, units, or formatting. Preserve all other source figures and Markdown. '
