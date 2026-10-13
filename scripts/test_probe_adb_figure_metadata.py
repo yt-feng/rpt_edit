@@ -3,7 +3,7 @@ from pathlib import Path
 import unittest
 from unittest.mock import Mock
 import mineru_figure_sources as figures
-from probe_adb_figure_metadata import numbers, structural_failure, probe
+from probe_adb_figure_metadata import numbers, structural_failure, probe, failed_table_pair
 from restore_completed_institution_sources import selection
 
 class MetadataTests(unittest.TestCase):
@@ -17,6 +17,25 @@ class MetadataTests(unittest.TestCase):
         self.assertEqual(rows[0]['width'], 200)
         self.assertNotIn(secret, json.dumps(rows))
         self.assertEqual(len(rows), 2)
+
+    def test_only_exact_failed_table_pair_can_be_encrypted(self):
+        box = [10, 20, 50, 100]
+        content = [{'type': 'table', 'page_idx': 0, 'bbox': [100, 100, 500, 500],
+                    'img_path': 'images/a.jpg', 'table_body': '<table>private-content</table>'}]
+        middle = {'_backend': 'hybrid', '_version_name': '3.4.4', '_ocr_enable': True, '_effort': 'medium',
+            'pdf_info': [{'page_idx': 0, 'page_size': [100, 200], 'para_blocks': [
+                {'type': 'table', 'bbox': box, 'blocks': [{'type': 'table_body', 'bbox': box,
+                    'lines': [{'spans': [{'type': 'table', 'bbox': box, 'image_path': 'a.jpg',
+                        'html': '<table>private-middle</table>'}]}]}]}]}]}
+        try: figures._normalise(content, middle)
+        except figures.FigureSourceError as error:
+            pair = failed_table_pair(error); public = structural_failure(error)
+        self.assertEqual(pair['content_html'], content[0]['table_body'])
+        self.assertEqual(pair['middle_html'], '<table>private-middle</table>')
+        self.assertEqual(pair['page_idx'], 0)
+        self.assertNotIn('private', json.dumps(public))
+        try: figures._bbox([0, -1, 1, 1], 2, 2)
+        except figures.FigureSourceError as error: self.assertIsNone(failed_table_pair(error))
 
     def test_nonnumeric_values_never_export(self):
         for value in ['private', ['private'], [float('inf')], [True], list(range(5))]:

@@ -6,6 +6,12 @@ on:
       - scripts/probe_adb_figure_metadata.py
       - scripts/test_probe_adb_figure_metadata.py
   workflow_dispatch:
+    inputs:
+      recipient_cert_pem:
+        description: Optional RSA3072+ recipient for one encrypted failing table pair
+        required: false
+        default: ''
+        type: string
 permissions:
   contents: read
 jobs:
@@ -35,6 +41,7 @@ jobs:
       - run: python3 -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF pypdf==6.19.0 'boto3>=1.37.32,<2'
       - name: Read pinned source and cached result without writes
         env:
+          RECIPIENT_CERT_PEM: ${{ inputs.recipient_cert_pem }}
           MINERU_LEDGER_BACKEND: r2
           MINERU_CHECKPOINT_SCOPE: institution
           MINERU_FORBID_NEW_SUBMISSIONS: '1'
@@ -54,3 +61,10 @@ jobs:
           path: ${{ runner.temp }}/adb-figure-metadata.json
           if-no-files-found: error
           retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: always() && inputs.recipient_cert_pem != ''
+        with:
+          name: adb-table-encrypted-${{ github.run_id }}
+          path: ${{ runner.temp }}/adb-figure-metadata.cms
+          if-no-files-found: error
+          retention-days: 1
