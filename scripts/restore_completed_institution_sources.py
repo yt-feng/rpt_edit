@@ -70,6 +70,9 @@ def restore(ledger, cache, backlog, value, output):
         validate_payload(binding, payload)
         selected.append(binding); payloads.append(payload)
     require(sum(len(payload) for payload in payloads) <= MAX_TOTAL, 'original bytes bound')
+    active_holds = backlog.entries()
+    held_ids = {item['id'] for record in active_holds.values() for item in record['files']}
+    selected_held_count = sum(binding['id'] in held_ids for binding in selected)
     # Inspect all original siblings, including the four already delivered. Their
     # complete success is required, but their PDF bytes are never materialized.
     for root in roots:
@@ -84,6 +87,8 @@ def restore(ledger, cache, backlog, value, output):
                 'downloaded': value['sources'], 'source_checks': [],
                 'recovery': {'mode': 'completed_originals', 'source_run_id': value['source_run_id'],
                              'original_members': len(bindings), 'selected_members': len(selected),
+                             'selected_sources_in_existing_holds': selected_held_count,
+                             'existing_hold_roots_preserved': len(active_holds),
                              'provider_posts': 0, 'fresh_feed_requests': 0}}
     (output/'institution_run_manifest.json').write_bytes(encoded(manifest))
     return manifest

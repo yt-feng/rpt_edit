@@ -38,6 +38,7 @@ class RecoveryTests(unittest.TestCase):
         self.ledger.bind.side_effect = lambda path, name: self.binding(name, path.read_bytes())
         self.cache = Mock(); self.cache.get.side_effect = lambda binding: self.payloads[binding['id']]
         self.backlog = Mock(); self.backlog.validate_versions.side_effect = Backlog.validate_versions
+        self.backlog.entries.return_value = {}
         self.backlog._read.side_effect = lambda key: (self.versions[key.split('/')[1][:-5]], None)
 
     @staticmethod
@@ -57,6 +58,7 @@ class RecoveryTests(unittest.TestCase):
         self.assertEqual(len(list(self.output.glob('*.pdf'))), 6)
         self.assertEqual(sum(len(call.args[1]['files']) for call in read.call_args_list), 10)
         self.assertEqual(result['recovery']['provider_posts'], 0)
+        self.assertEqual(result['recovery']['selected_sources_in_existing_holds'], 0)
         self.assertEqual(result['downloaded'], self.value['sources'])
         self.ledger.provider.submit.assert_not_called()
         self.ledger.store.put.assert_not_called()
