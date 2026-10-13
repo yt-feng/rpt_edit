@@ -283,6 +283,7 @@ jobs:
             --input-dir _institution_latest_pdfs \
             --output-dir "xhs_notes/institutions/$DATE" \
             --batch-size 5 \
+            --pending-task-attempts 3 \
             --chart-source-only \
             --keep-mineru-raw \
             --skip-existing "$SKIP_EXISTING" 2>&1 | tee institution_xhs_progress.log
