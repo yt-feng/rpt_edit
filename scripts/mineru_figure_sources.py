@@ -202,9 +202,11 @@ def _table_html_matches(content_html, middle_html):
 
     The hybrid content list emits `` $...$ `` where middle JSON retains
     ``<eq>...</eq>`` and prefixes ``images/`` on its bare hashed JPEG img src.
-    Every formula character, image basename, table cell and other HTML byte
-    must remain identical. Unbalanced or nested equation wrappers reject;
-    this does not parse, clean or otherwise normalise arbitrary HTML.
+    MinerU 3.4.4 decodes HTML entities once inside each equation before
+    wrapping it in math delimiters. After that exact serialization, every
+    formula character, image basename, table cell and other HTML byte must
+    remain identical. Unbalanced or nested equation wrappers reject; entities
+    outside equations and arbitrary HTML are never normalized.
     """
     if content_html == middle_html:
         return True
@@ -216,7 +218,7 @@ def _table_html_matches(content_html, middle_html):
         equation, closing, tail = part.partition("</eq>")
         if not closing or "</eq>" in tail:
             return False
-        converted.extend((" $", equation, "$ ", tail))
+        converted.extend((" $", html.unescape(equation), "$ ", tail))
     equation_html = "".join(converted)
     if content_html == equation_html:
         return True
