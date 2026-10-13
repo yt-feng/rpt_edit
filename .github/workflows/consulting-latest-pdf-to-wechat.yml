@@ -176,6 +176,7 @@ jobs:
             --output-dir "xhs_notes/consulting/$DATE" \
             --batch-size 5 \
             --pending-task-attempts 3 \
+            --extraction-timeout 2400 \
             --chart-source-only \
             --keep-mineru-raw \
             --skip-existing "$SKIP_EXISTING" 2>&1 | tee consulting_xhs_progress.log

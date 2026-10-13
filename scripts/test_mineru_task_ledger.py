@@ -851,6 +851,40 @@ class StoreAndIntegrationTests(unittest.TestCase):
                 wrapper.run_pending_task_attempts([], Path('/unused'), attempts=attempts, delay=delay)
             child.assert_not_called()
 
+    def test_pending_continuation_and_later_batches_share_one_extraction_deadline(self):
+        import run_pdf_to_xhs_in_batches as wrapper
+        with tempfile.TemporaryDirectory() as temporary:
+            outcome = Path(temporary)/'outcome.json'; clock = Clock(); calls = []
+            def child(cmd, *, text, env, timeout):
+                calls.append((cmd, timeout, env))
+                clock.now += 4
+                outcome.write_text(json.dumps({'schema': 1, 'category': 'mineru_unavailable'}))
+                return unittest.mock.Mock(returncode=75)
+            with patch.object(wrapper.subprocess, 'run', side_effect=child), \
+                    patch.object(wrapper.time, 'monotonic', side_effect=clock.time), \
+                    patch.object(wrapper.time, 'sleep', side_effect=clock.sleep):
+                result, attempts = wrapper.run_pending_task_attempts(
+                    ['frozen', '--poll-timeout', '3600'], outcome, attempts=3, delay=2, deadline=10)
+                later, later_attempts = wrapper.run_pending_task_attempts(
+                    ['next-frozen'], outcome, attempts=3, delay=2, deadline=10)
+            self.assertEqual((result.returncode, attempts, later.returncode, later_attempts), (75, 2, 75, 0))
+            self.assertEqual([call[1] for call in calls], [10, 4])
+            self.assertEqual([call[0][-1] for call in calls], ['5', '1'])
+            self.assertEqual(calls[1][2]['MINERU_FORBID_NEW_SUBMISSIONS'], '1')
+
+    def test_child_timeout_stops_without_pending_receipt_or_retry(self):
+        import run_pdf_to_xhs_in_batches as wrapper
+        with tempfile.TemporaryDirectory() as temporary:
+            outcome = Path(temporary)/'outcome.json'
+            def child(*args, **kwargs):
+                outcome.write_text(json.dumps({'schema': 1, 'category': 'mineru_unavailable'}))
+                raise wrapper.subprocess.TimeoutExpired(args[0], kwargs['timeout'])
+            with patch.object(wrapper.subprocess, 'run', side_effect=child) as run, \
+                    patch.object(wrapper.time, 'monotonic', return_value=0), patch.object(wrapper.time, 'sleep') as pause:
+                result, attempts = wrapper.run_pending_task_attempts(['frozen'], outcome, attempts=3, deadline=10)
+            self.assertEqual((result.returncode, attempts, run.call_count), (75, 1, 1))
+            self.assertFalse(outcome.exists()); pause.assert_not_called()
+
     def test_every_workflow_caller_has_private_durable_scope_and_bounded_serialization(self):
         callers=[]
         for path in (ROOT/'.github/workflows').glob('*.yml'):
