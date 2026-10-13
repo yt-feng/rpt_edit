@@ -207,6 +207,40 @@ def repair_ledger_diagnostics(store, corpus, checkpoint, locale):
             'truncated':len(selected)>20}
 
 
+def current_memo_diagnostics(store, corpus, checkpoint, locale):
+    """Look for already validated exact fallback units in one current memo."""
+    from portal_extended_incremental import read_state
+    from portal_extended_repair_contract import quality_contract
+    from repair_portal_french_source_fallback import RepairEngine
+    from build_portal_extended_locales import validate_text
+    pointer = read_state(store,'memo',locale)
+    generation, checksum = pointer.get('generation'), pointer.get('sha256')
+    if generation is None and checksum is None:
+        return {'present':False}
+    safe_part(generation,label='memo generation',pattern=HEX64)
+    safe_part(checksum,label='memo checkpoint sha',pattern=HEX64)
+    raw = store._get(store.checkpoint_object_key(locale,generation,checksum),maximum=MAX_CHECKPOINT_BYTES)
+    if digest(raw) != checksum: raise ExpansionError('Current memo checksum differs')
+    value = json.loads(raw)
+    engine = RepairEngine(quality_contract(locale))
+    engine.checkpoint_units(value,generation)
+    required = engine.required_units(corpus)
+    selected = sorted(set(checkpoint.get('source_fallbacks',{})) & set(required))
+    results = []
+    for unit in selected[:20]:
+        row, fallback = value['rows'].get(unit), value.get('source_fallbacks',{}).get(unit)
+        source = required[unit]
+        if row is not None:
+            if row['source'] != source['source'] or row['language'] != source['language']:
+                raise ExpansionError('Current memo selected unit source differs')
+            validate_text(source['source'],row['text'],locale,source['language'])
+        results.append({'unit_sha256':unit,
+            'status':'validated-row' if row is not None else 'source-fallback' if fallback is not None else 'absent',
+            'row_sha256':digest(stable_bytes(row)) if row is not None else None})
+    return {'present':True,'generation':generation,'checkpoint_sha256':checksum,
+            'units':results,'total_selected_units':len(selected),'maximum_reported_units':20,'truncated':len(selected)>20}
+
+
 def inspect(store, generation, locale, checkpoint_sha, candidate_id, output):
     for value, label in ((generation, 'generation'), (checkpoint_sha, 'checkpoint sha'), (candidate_id, 'candidate')):
         safe_part(value, label=label, pattern=HEX64)
@@ -282,6 +316,7 @@ def inspect(store, generation, locale, checkpoint_sha, candidate_id, output):
         'source_fallback_diagnostics': source_fallback_diagnostics(checkpoint),
         'current_continuation': current,
         'repair_ledger': repair_ledger_diagnostics(store,corpus,checkpoint,locale),
+        'current_memo': current_memo_diagnostics(store,corpus,checkpoint,locale),
         'paid_provider_requests': 0,
         'production_writes': 0, 'model_calls': 0}
     (output/'inspection.json').write_bytes(stable_bytes(result))

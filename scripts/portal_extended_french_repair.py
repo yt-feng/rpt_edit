@@ -16,7 +16,7 @@ from portal_extended_daily_queue import batch_admission, immutable_record
 from portal_extended_incremental import content_key, read_state, write_state
 from portal_extended_locales import ExpansionError, daily_corpus_day, digest, stable_bytes
 from portal_extended_r2 import (HEX64, MAX_CHECKPOINT_BYTES, MAX_SOURCE_BYTES,
-    MAX_CANDIDATE_MANIFEST_BYTES, MAX_CANDIDATE_PAGE_BYTES, R2NotFound, R2Store, R2TransportError, checkpoint_is_valid)
+    MAX_CANDIDATE_MANIFEST_BYTES, MAX_CANDIDATE_PAGE_BYTES, R2NotFound, R2Store, R2TransportError, checkpoint_is_valid, error_code)
 
 POLICY = 'fr-quantity-fallback-v1'
 REVISION = 'fr-space-grouping-quarter-v1'
@@ -223,8 +223,7 @@ class RepairPipeline:
                     ContentType='application/octet-stream', CacheControl='private, no-store',
                     Metadata={'sha256':digest(raw),'kind':kind}, IfNoneMatch='*')
             except Exception as error:
-                code = str(getattr(error, 'response', {}).get('Error', {}).get('Code', ''))
-                if code not in {'PreconditionFailed','412','ConditionalRequestConflict','409'}:
+                if error_code(error) not in {'preconditionfailed','412','conditionalrequestconflict','409'}:
                     raise R2TransportError('Repair immutable write outcome unresolved') from None
             previous = store._get(name, maximum=maximum)
         require(previous == raw, 'French repair cannot overwrite immutable evidence')

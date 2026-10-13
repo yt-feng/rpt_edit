@@ -16,7 +16,7 @@ from build_portal_extended_locales import (CHECKPOINT_VERSION, SOURCE_FALLBACK_V
 from offline_translation import MODEL_ID, OfflineTranslationValidationError, TranslationBudgetExceeded
 from portal_extended_continuation import producer_identity
 from portal_extended_locales import ExpansionError, digest, file_for_url, render_document, stable_bytes, validate_corpus
-from portal_extended_r2 import (HEX64, MAX_CHECKPOINT_BYTES, R2NotFound, R2TransportError, checkpoint_is_valid)
+from portal_extended_r2 import (HEX64, MAX_CHECKPOINT_BYTES, R2NotFound, R2TransportError, checkpoint_is_valid, error_code)
 
 POLICY = 'fr-quantity-fallback-v1'
 REVISION = 'fr-space-grouping-quarter-v1'
@@ -228,8 +228,7 @@ class RepairEngine:
             store.client.put_object(Bucket=store.bucket, Key=key, Body=raw, ContentType='application/json',
                 CacheControl='private, no-store', Metadata={'sha256': digest(raw), 'kind': self.policy}, IfNoneMatch='*')
         except Exception as error:
-            code = str(getattr(error, 'response', {}).get('Error', {}).get('Code', ''))
-            if code in {'PreconditionFailed', '412', 'ConditionalRequestConflict', '409'}:
+            if error_code(error) in {'preconditionfailed', '412', 'conditionalrequestconflict', '409'}:
                 return False
             raise R2TransportError('fr_repair_ledger_write_unresolved') from None
         require(store._get(key, maximum=MAX_LEDGER_BYTES) == raw, 'fr_repair_ledger_readback_invalid')

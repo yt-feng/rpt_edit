@@ -121,6 +121,52 @@ class DurableContractTests(unittest.TestCase):
             self.attempt(translator)
         self.assert_unused(translator)
 
+    def test_malformed_outcome_write_error_preserves_unknown_without_model_replay(self):
+        import hymt_offline_translation as hymt
+        class Engine(hymt._HyMTEngine):
+            def __init__(self): self.calls = 0
+            def translate(self, *args, **kwargs):
+                self.calls += 1
+                return 'Chiffre d’affaires USD10m.'
+        for response in (None, [], {'Error':None}, {'Error':[]}):
+            with self.subTest(response=response), tempfile.TemporaryDirectory() as temporary:
+                self.client.objects.clear()
+                engine = Engine()
+                translator = CacheFirstTranslator(OfflineTranslator(cache_dir=Path(temporary)/'cache',
+                    model_dir=Path(temporary)/'model', engine_factory=lambda *args:engine,
+                    validation_attempts=3, quantity_policy='advisory'))
+                error = RuntimeError('PRIVATE transport details')
+                error.response = response
+                original = self.client.put_object
+                def failing(**kwargs):
+                    if kwargs['Key'].endswith('/outcome.json'): raise error
+                    return original(**kwargs)
+                with patch.object(self.client, 'put_object', side_effect=failing):
+                    with self.assertRaisesRegex(R2TransportError, '^fr_repair_ledger_write_unresolved$'):
+                        self.attempt(translator)
+                self.assertEqual(engine.calls,1)
+                claim,outcome = self.engine.ledger_outcome(self.store,self.unit,self.source)
+                self.assertIsNotNone(claim); self.assertIsNone(outcome)
+                before = copy.deepcopy(self.client.objects)
+                retry = ProbeTranslator()
+                with self.assertRaisesRegex(ExpansionError,'started_unresolved'): self.attempt(retry)
+                self.assert_unused(retry)
+                self.assertEqual(self.client.objects,before)
+
+    def test_immutable_repair_writers_classify_malformed_storage_errors(self):
+        from portal_extended_french_repair import RepairPipeline
+        from portal_extended_completion import immutable
+        pipeline = RepairPipeline(contract.quality_contract('fr'))
+        for response in (None, [], {'Error':None}, {'Error':[]}):
+            error = RuntimeError('PRIVATE transport details'); error.response = response
+            for writer in (lambda: self.engine.create_record(self.store,'test.json',{'ok':True}),
+                           lambda: immutable(self.store,'test.json',{'ok':True}),
+                           lambda: pipeline.put_immutable_bytes(self.store,'test.json',b'{}',kind='test',maximum=10)):
+                with self.subTest(response=response), patch.object(self.client,'put_object',side_effect=error):
+                    before = copy.deepcopy(self.client.objects)
+                    with self.assertRaises(R2TransportError) as caught: writer()
+                    self.assertNotIn('PRIVATE',str(caught.exception))
+                    self.assertEqual(self.client.objects,before)
     def test_locales_and_markdown_have_separate_logical_unit_keys(self):
         identities = set()
         for locale in ('fr', 'de', 'hi', 'tr'):

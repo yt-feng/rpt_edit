@@ -4,7 +4,7 @@ import json
 import re
 
 from portal_extended_locales import ExpansionError, digest, stable_bytes
-from portal_extended_r2 import HEX64, R2NotFound, R2TransportError
+from portal_extended_r2 import HEX64, R2NotFound, R2TransportError, error_code
 
 POLICY = 'exact-locale-completion-v1'
 WORKFLOW = '.github/workflows/portal-extended-locales-r2.yml'
@@ -42,8 +42,7 @@ def immutable(store, key, value):
         store.client.put_object(Bucket=store.bucket,Key=key,Body=raw,ContentType='application/json',
             CacheControl='private, no-store',Metadata={'sha256':digest(raw),'kind':POLICY},IfNoneMatch='*')
     except Exception as error:
-        code=str(getattr(error,'response',{}).get('Error',{}).get('Code',''))
-        if code not in {'PreconditionFailed','412','ConditionalRequestConflict','409'}:
+        if error_code(error) not in {'preconditionfailed','412','conditionalrequestconflict','409'}:
             raise R2TransportError('completion_write_unresolved') from None
     require(store._get(key,maximum=65536)==raw,'completion_immutable_conflict')
 
