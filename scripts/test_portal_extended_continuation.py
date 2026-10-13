@@ -286,6 +286,17 @@ class ContinuationTests(unittest.TestCase):
         with self.assertRaisesRegex(ExpansionError, 'new directory'):
             inspect(self.store, self.gen, 'fr', proof['checkpoint_sha256'], proof['candidate_id'], self.root/'inspection')
 
+    def test_inspection_distinguishes_immutable_input_from_current_registered_candidate(self):
+        proof = self.partial()
+        complete = self.finish()
+        before = copy.deepcopy(self.store.client.objects)
+        result = inspect(self.store, self.gen, 'fr', proof['checkpoint_sha256'], proof['candidate_id'], self.root/'inspection')
+        self.assertEqual(result['status'], 'incomplete-candidate')
+        self.assertEqual(result['current_continuation']['registered_status'], 'complete')
+        self.assertEqual(result['current_continuation']['candidate_id'], complete['candidate_id'])
+        self.assertNotEqual(result['current_continuation']['candidate_id'], proof['candidate_id'])
+        self.assertEqual(self.store.client.objects, before)
+
     def test_quantity_inspection_emits_bounded_signatures_without_text(self):
         from inspect_portal_extended_continuation import quantity_diagnostics
         rows = {digest(str(number).encode()): {'source': 'Private source rose 50 basis points.',
@@ -313,6 +324,30 @@ class ContinuationTests(unittest.TestCase):
         self.assertTrue(side['truncated'])
         self.assertEqual(len(side['rows'][0]['values'][0]), 128)
         self.assertTrue(side['rows'][0]['value_truncated'])
+
+    def test_fallback_inspection_reports_bounded_lengths_without_source_or_unknown_codes(self):
+        from inspect_portal_extended_continuation import source_fallback_diagnostics
+        source = 'Private sentence. ' * 110
+        fallbacks = {digest(str(index).encode()): {'source': source, 'code': 'offline-token-limit'}
+                     for index in range(25)}
+        before = copy.deepcopy(fallbacks)
+        result = source_fallback_diagnostics({'source_fallbacks': fallbacks})
+        self.assertEqual(fallbacks, before)
+        self.assertEqual((result['fallback_unit_count'], len(result['reported_units'])), (25, 20))
+        self.assertTrue(result['truncated'])
+        row = result['reported_units'][0]
+        self.assertEqual(row['source_sha256'], digest(source.encode()))
+        self.assertEqual(row['source_characters'], len(source))
+        self.assertGreater(row['fragment_count'], 1)
+        self.assertLessEqual(row['maximum_fragment_characters'], 1801)
+        self.assertNotIn('Private', json.dumps(result))
+        limited = source_fallback_diagnostics({'source_fallbacks': {
+            digest(b'long'): {'source': 'x' * 1900, 'code': 'Private diagnostic message'}}})
+        self.assertEqual(limited['reported_units'][0]['split_status'], 'offline-context-limit')
+        self.assertEqual(limited['reported_units'][0]['code'], 'other')
+        self.assertNotIn('Private', json.dumps(limited))
+        with self.assertRaisesRegex(ExpansionError, 'unit identity'):
+            source_fallback_diagnostics({'source_fallbacks': {'private-key': {'source': source}}})
 
     def test_unit_alias_signals_normalize_invisible_separators_digits_and_word_order(self):
         from inspect_portal_extended_continuation import unit_alias_signals

@@ -123,6 +123,36 @@ def quantity_diagnostics(checkpoint):
             'maximum_quantity_rows_per_side': 64, 'maximum_value_characters': 128}
 
 
+def source_fallback_diagnostics(checkpoint):
+    """Distinguish output-token exhaustion from long input without exposing text."""
+    from build_portal_extended_locales import PUBLIC_VALIDATION_CODES
+    from hymt_offline_translation import OfflineTranslationError, split_sentences
+    fallbacks = checkpoint.get('source_fallbacks', {})
+    if not isinstance(fallbacks, dict):
+        raise ExpansionError('Invalid diagnostic source fallback inventory')
+    rows = []
+    for key, row in fallbacks.items():
+        if not isinstance(key, str) or not HEX64.fullmatch(key):
+            raise ExpansionError('Invalid diagnostic fallback unit identity')
+        if not isinstance(row, dict) or not isinstance(row.get('source'), str):
+            raise ExpansionError('Invalid diagnostic fallback source')
+        if len(rows) >= 20:
+            continue
+        source = row['source']
+        result = {'unit_sha256': key, 'source_sha256': digest(source.encode()),
+                  'source_characters': len(source), 'whitespace_words': len(source.split()),
+                  'code': row.get('code') if row.get('code') in PUBLIC_VALIDATION_CODES else 'other'}
+        try:
+            fragments = split_sentences(source)
+            result.update(split_status='available', fragment_count=len(fragments),
+                          maximum_fragment_characters=max(map(len, fragments), default=0))
+        except OfflineTranslationError:
+            result.update(split_status='offline-context-limit')
+        rows.append(result)
+    return {'fallback_unit_count': len(fallbacks), 'reported_units': rows,
+            'maximum_reported_units': 20, 'truncated': len(fallbacks) > len(rows)}
+
+
 def source_unit_protection_signals(text):
     """Reproduce the existing repair mask without inference or source output."""
     from financial_quantity_integrity import NUMBER
@@ -193,6 +223,17 @@ def inspect(store, generation, locale, checkpoint_sha, candidate_id, output):
         text, language, markdown = pending
         pending_summary = {'sha256': digest(text.encode()), 'characters': len(text),
                            'whitespace_words': len(text.split()), 'source_language': language, 'markdown': markdown}
+    from portal_extended_continuation import queue
+    from portal_extended_quality import debt_rows
+    registered = queue(store, locale).get(generation, {})
+    debt = debt_rows(store, locale).get(generation, {})
+    snapshot = registered.get('snapshot', {})
+    current = {'registered_status': registered.get('status'),
+               'candidate_id': snapshot.get('candidate_id'),
+               'checkpoint_sha256': snapshot.get('checkpoint_sha256'),
+               'quality_debt_status': debt.get('quality_status'),
+               'quality_debt_candidate_id': debt.get('candidate_id'),
+               'quality_debt_source_fallback_units': debt.get('source_fallback_unit_count')}
     result = {'schema_version': 1, 'read_only': True, 'generation': generation,
         'source_day': daily_corpus_day(corpus), 'source_sha256': source['sha256'],
         'source_document_count': len(docs), 'locale': locale,
@@ -204,6 +245,8 @@ def inspect(store, generation, locale, checkpoint_sha, candidate_id, output):
         'remaining_source_urls': sorted(source_urls - set(completed)),
         'next_pending_unit': pending_summary, 'checkpoint_policy': 'validated-units-with-source-fallback',
         'quantity_diagnostics': quantity_diagnostics(checkpoint),
+        'source_fallback_diagnostics': source_fallback_diagnostics(checkpoint),
+        'current_continuation': current,
         'paid_provider_requests': 0,
         'production_writes': 0, 'model_calls': 0}
     (output/'inspection.json').write_bytes(stable_bytes(result))
