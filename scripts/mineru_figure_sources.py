@@ -210,21 +210,24 @@ def _table_html_matches(content_html, middle_html):
     """
     if content_html == middle_html:
         return True
-    parts = middle_html.split("<eq>")
-    if "</eq>" in parts[0]:
-        return False
-    converted = [parts[0]]
-    for part in parts[1:]:
-        equation, closing, tail = part.partition("</eq>")
-        if not closing or "</eq>" in tail:
-            return False
-        converted.extend((" $", html.unescape(equation), "$ ", tail))
-    equation_html = "".join(converted)
-    if content_html == equation_html:
-        return True
+    # Prefix only the pre-existing supported image form before decoding any
+    # equation entities, matching the provider's serialization order. Decoded
+    # formula text must never become a new candidate for path rewriting.
     image_html = re.sub(r'<img src="([0-9a-f]{64}\.jpg)"/>',
-                        r'<img src="images/\1"/>', equation_html)
-    return content_html == image_html
+                        r'<img src="images/\1"/>', middle_html)
+    for candidate in (middle_html, image_html):
+        parts = candidate.split("<eq>")
+        if "</eq>" in parts[0]:
+            return False
+        converted = [parts[0]]
+        for part in parts[1:]:
+            equation, closing, tail = part.partition("</eq>")
+            if not closing or "</eq>" in tail:
+                return False
+            converted.extend((" $", html.unescape(equation), "$ ", tail))
+        if content_html == "".join(converted):
+            return True
+    return False
 
 
 def _metadata_files(root):

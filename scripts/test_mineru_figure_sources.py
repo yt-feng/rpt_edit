@@ -450,6 +450,19 @@ print('tls_cache_authority_import_ready')
         self.assertTrue(figures._table_html_matches(' $x&amp;$ ', '<eq>x&amp;amp;</eq>'))
         self.assertFalse(figures._table_html_matches(' $x&$ ', '<eq>x&amp;amp;</eq>'))
 
+    def test_equation_decoding_cannot_introduce_image_prefix_rewrites(self):
+        filename = 'a' * 64 + '.jpg'
+        encoded_image = f'&lt;img src=&quot;{filename}&quot;/&gt;'
+        middle = '<eq>' + encoded_image + '</eq>'
+        official = f' $<img src="{filename}"/>$ '
+        self.assertTrue(figures._table_html_matches(official, middle))
+        self.assertFalse(figures._table_html_matches(official.replace(filename, 'images/'+filename), middle))
+        # An existing literal image is prefixed before the adjacent equation
+        # entity is decoded; exact pre-prefix legacy table bytes stay accepted.
+        middle = f'<img src="{filename}"/><eq>x&#x27;</eq>'
+        self.assertTrue(figures._table_html_matches(f'<img src="images/{filename}"/>' + " $x'$ ", middle))
+        self.assertTrue(figures._table_html_matches(f'<img src="{filename}"/>' + " $x'$ ", middle))
+
     def test_equation_entity_compatibility_rejects_nonformula_or_semantic_changes(self):
         middle = "<table><tr><td><eq>x&#x27; + 27</eq></td><td>R&amp;D</td></tr></table>"
         valid = "<table><tr><td> $x' + 27$ </td><td>R&amp;D</td></tr></table>"
