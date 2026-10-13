@@ -9,6 +9,9 @@ on:
       - scripts/institution_dependency_backlog.py
       - scripts/test_institution_dependency_backlog.py
       - scripts/test_institution_backlog_pipeline.py
+      - scripts/restore_completed_institution_sources.py
+      - scripts/test_restore_completed_institution_sources.py
+      - institution_feeds/completed_source_recovery/**
       - scripts/institution_hold_provenance.py
       - scripts/test_institution_hold_provenance.py
       - scripts/institution_source_health.py
@@ -67,6 +70,7 @@ jobs:
       - run: python3 -B scripts/test_institution_original_cache.py
       - run: python3 -B scripts/test_institution_dependency_backlog.py
       - run: python3 -B scripts/test_institution_backlog_pipeline.py
+      - run: python3 -B scripts/test_restore_completed_institution_sources.py
       - run: python3 -B scripts/test_institution_hold_provenance.py
       - run: python3 -B scripts/test_inspect_durable_mineru.py
       - run: python3 -B scripts/test_inspect_institution_feed_holds.py
