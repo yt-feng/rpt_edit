@@ -52,7 +52,24 @@ def structural_failure(error):
     return frames[-8:]
 
 
-def inspect_payload(payload):
+def failed_table_pair(error):
+    trace = error.__traceback__
+    while trace:
+        frame = trace.tb_frame
+        if Path(frame.f_code.co_filename).name == 'mineru_figure_sources.py' and frame.f_code.co_name == '_normalise':
+            local = frame.f_locals; parent = local.get('parent'); item = local.get('item')
+            if (isinstance(parent, dict) and parent.get('kind') == 'table'
+                    and isinstance(item, dict) and item.get('type') == 'table'
+                    and isinstance(parent.get('refs'), list) and len(parent['refs']) == 1
+                    and isinstance(local.get('body_text'), str)
+                    and isinstance(parent['refs'][0].get('html'), str)):
+                return {'content_html': local['body_text'], 'middle_html': parent['refs'][0]['html'],
+                    'content_index': local['index'], 'page_idx': local['pi']}
+        trace = trace.tb_next
+    return None
+
+
+def inspect_payload(payload, export=None, context=None):
     import mineru_figure_sources as figures
     from consume_legacy_mineru import safe_unzip
     with tempfile.TemporaryDirectory(prefix='adb-metadata-') as directory:
@@ -64,10 +81,23 @@ def inspect_payload(payload):
             result = figures._normalise(content, middle)
             return {'status': 'valid', 'pages': len(result['pages']), 'visuals': len(result['records'])}
         except figures.FigureSourceError as error:
-            return {'status': 'rejected', 'category': error.category, 'frames': structural_failure(error)}
+            result = {'status': 'rejected', 'category': error.category, 'frames': structural_failure(error)}
+            pair = failed_table_pair(error)
+            if export is not None:
+                require(pair is not None, 'failed_table_pair_missing')
+                from export_market_views_original_page_qa import encrypt_payload
+                recipient, certificate, target = export
+                plaintext = encoded({'schema': 1, 'context': context, 'table_pair': pair})
+                require(len(plaintext) <= 256*1024, 'table_pair_size_bound')
+                ciphertext = encrypt_payload(plaintext, recipient)
+                with open(target, 'xb') as output:
+                    os.chmod(target, 0o600); output.write(ciphertext)
+                result['encrypted_table'] = {'ciphertext_sha256': digest(ciphertext),
+                    'ciphertext_bytes': len(ciphertext), 'plaintext_sha256': digest(plaintext), **certificate}
+            return result
 
 
-def probe(ledger, client, bucket, output):
+def probe(ledger, client, bucket, output, export=None):
     require(ledger.scope == 'institution' and ledger.forbid_new_submissions, 'read_only_scope')
     ledger = copy.copy(ledger); ledger.store = copy.copy(ledger.store)
     client = ReadOnlyR2Client(client); ledger.store.client = client
@@ -92,7 +122,9 @@ def probe(ledger, client, bucket, output):
             'provider_posts': 0, 'provider_uploads': 0, 'cache_writes': 0, 'ledger_writes': 0,
             'fresh_feed_requests': 0, 'model_calls': 0, 'publication_writes': 0,
             'original_members': manifest['recovery']['original_members'],
-            'metadata': inspect_payload(payload)}
+            'metadata': inspect_payload(payload, export, {'source_binding': binding,
+                'selection_sha256': checksum, 'result_zip_sha256': digest(payload),
+                'source_run_id': value['source_run_id']})}
     ledger.store.verify()
     output.write_bytes(encoded(result))
     print(json.dumps(result, sort_keys=True))
@@ -107,8 +139,16 @@ def main():
         and os.environ.get('GITHUB_REF') == 'refs/heads/main'
         and os.environ.get('GITHUB_WORKFLOW_REF') == repo+'/'+WORKFLOW+'@refs/heads/main', 'reviewed_main_only')
     try:
+        export = None
+        certificate = os.environ.get('RECIPIENT_CERT_PEM', '')
+        if certificate:
+            from export_market_views_original_page_qa import checked_recipient
+            recipient, metadata = checked_recipient(certificate)
+            target = args.output.with_suffix('.cms')
+            require(not target.exists() and not target.is_symlink(), 'encrypted_output_exists')
+            export = recipient, metadata, target
         ledger = cli_ledger(args.output.parent)
-        probe(ledger, ledger.store.client, ledger.store.bucket, args.output)
+        probe(ledger, ledger.store.client, ledger.store.bucket, args.output, export)
     except Exception as error:
         args.output.write_bytes(encoded({'schema': 1, 'diagnostic_only': True,
             'status': 'stopped', 'error_type': type(error).__name__}))
