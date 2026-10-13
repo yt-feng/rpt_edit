@@ -28,6 +28,14 @@ prepared tail 中断可从同一 proof 只完成原精确 before/after 写入。
 
 自动 handoff 支持每种 locale 的精确 repair/completion proof，按独立 publication-ready 判断完整且无 budget/failure 的候选。零 fallback 继续 translation-ready；仅已验证数字校验类别的历史 fallback 可发布，但 translation-ready 仍为 false，原回退记录与数量保留。新 proof 记录独立字段；旧不可变 proof 通过完整计数/哈希清单、错误码与 source/manifest 身份验证后按同一策略读取，不覆盖旧对象。混合或未知非数字类别继续阻断。已有活动页面仍须逐字节复现批准 HTML；源正文变化继续阻止旧译文改绑。
 
+## 显式单元严格暂存
+
+当只读 `recovery-test` 证明某个非数字 fallback 可通过既有严格验证，但正式矩阵仍在运行时，可在 reviewed-main 手工 dispatch 使用 `strict-repair-stage`。请求沿用 `extended-quality-debt-v1` 的完整 source/origin/producer/checkpoint/candidate/manifest 身份，增加 `retry_policy=manual-strict-three-attempts-v1`，只选一个精确 unit，预算 1..900 秒。它复用原始提示词、验证器和 accepted cache；至多原有三次有界质量尝试，自动计划拒绝该 retry policy，仍只允许一次。
+
+stage 使用独立的 locale/generation concurrency，仅新增不可变 source claim、原子 unit ledger、checkpoint/candidate/proof/prepared 对象；不会写 Memo、generation pointer、completed、continuation queue 或 quality-debt，也不会 handoff 或自续。candidate 和 prepared pointer 采用条件创建并读回，不能覆盖并发已有对象。terminal/unknown ledger 在创建新 source claim 前即阻止，失败的选中单元使 job 失败且不暂存候选。
+
+stage 完成不是正式采用。旧 debt 仍是持久恢复队列；之后的串行 quality source 按原公平调度读到 accepted ledger，生成不含手工 retry policy 的新 request，使用禁止推理的 build，针对当时最新 Memo 生成新的 proof 并通过既有 current-state guards 采用。不能直接把旧 stage 捕获的 Memo 快照写回；若其间 Memo 前进，旧 prepared commit 必须拒绝。最终以正式 candidate、quality-debt 和发布读回为准。
+
 ## 公平推进与摘要
 
 已有 incomplete 普通页继续原 claim/续跑流程。对没有进行中页任务的语言，quality 与确实存在的 ordinary 待办交替，每个语言每轮只有一个 matrix row。空 ordinary 轮次不占位置。quality 只有已经提交、完整验证的新 accepted-unit delta 才可续发；当前 generation 完成后可推进同语言其它债或新文章。普通页最后一轮取得实际 durable 进展后，也可交给一次有界 debt scan。若扫描只遇 terminal/unknown/blocked，零 accepted 进展就停止自续。

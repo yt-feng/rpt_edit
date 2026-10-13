@@ -5,6 +5,8 @@ from portal_extended_locales import ExpansionError, select_locales
 
 QUALITY_POLICY = 'extended-quality-debt-v1'
 QUALITY_REVISION = 'cldr48-complete-number-v1'
+MANUAL_STRICT_RETRY = 'manual-strict-three-attempts-v1'
+MANUAL_STRICT_SECONDS = 900
 
 
 @dataclass(frozen=True)
