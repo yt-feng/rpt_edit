@@ -4,6 +4,7 @@ import unittest
 from unittest.mock import Mock
 import mineru_figure_sources as figures
 from probe_adb_figure_metadata import numbers, structural_failure, probe
+from restore_completed_institution_sources import selection
 
 class MetadataTests(unittest.TestCase):
     def test_failure_has_only_bounded_structural_data(self):
@@ -30,10 +31,16 @@ class MetadataTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'read_only_scope'): probe(ledger, Mock(), 'bucket', Path('unused'))
         ledger.store.get.assert_not_called()
 
+    def test_original_manifest_order_is_not_the_production_batch_order(self):
+        value, _ = selection('adb-261013')
+        selected = sorted(value['sources'], key=lambda row: row['local_filename'])[5]
+        self.assertEqual(selected['local_filename'], 'ADB_Understanding-Emission-Trends-in-Mongolia-Insights-from-Envi_368670f7.pdf')
+        self.assertNotEqual(selected, value['sources'][5])
+
     def test_only_fixed_selection_and_readonly_wrappers(self):
         script = Path('scripts/probe_adb_figure_metadata.py').read_text()
         self.assertIn("selection('adb-261013')", script)
-        self.assertIn("value['sources'][5]", script)
+        self.assertIn("sorted(value['sources'], key=lambda source: source['local_filename'])[5]", script)
         for wrapper in ('ReadOnlyR2Client(client)', 'ReadOnlyStore(ledger.store)', 'ReadOnlyProvider(ledger.provider'):
             self.assertIn(wrapper, script)
 
