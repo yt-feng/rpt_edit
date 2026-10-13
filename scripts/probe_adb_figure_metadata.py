@@ -116,6 +116,8 @@ def probe(ledger, client, bucket, output, export=None):
         require(counts['all_succeeded'], 'original_root_incomplete')
         payload = ResultCache(client, bucket).get(binding, rows[binding['id']]['_recovery_lineage'])
         require(payload is not None, 'selected_cached_result_missing')
+        require(binding['id'] == '69b51fc0ea8adf67776f819bc5b46a324f1057d0f4ca5b41cac58703357d8c9e'
+            and digest(payload) == 'd5e8113adad684e5141ffd73740a655c227f4f0f26a49914e28810993c04d571', 'observed_result_binding_mismatch')
         result = {'schema': 1, 'diagnostic_only': True, 'selection_sha256': checksum,
             'source_ordinal': 6, 'source_binding_sha256': binding['id'],
             'original_pdf_sha256': binding['sha256'], 'result_zip_sha256': digest(payload),
