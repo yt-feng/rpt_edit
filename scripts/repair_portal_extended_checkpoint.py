@@ -26,6 +26,106 @@ WORKFLOW = '.github/workflows/portal-extended-locales-r2.yml'
 BP = re.compile(rf'({NUMBER})\s*(?:个基点|個基點|基点|基點|(?:basis\s+points?|bps?)(?![A-Za-z0-9_]))', re.I)
 
 
+# Only repository-authored fixed guard names may reach public Actions logs.
+PUBLIC_REPAIR_REJECTIONS = frozenset({
+    'completion_adoption_invalid',
+    'completion_candidate_unproved',
+    'completion_checkpoint_regressed',
+    'completion_checkpoint_unproved',
+    'completion_current_row_advanced',
+    'completion_evidence_invalid',
+    'completion_hash_invalid',
+    'completion_identity_invalid',
+    'completion_immutable_conflict',
+    'completion_job_identity_invalid',
+    'completion_job_inventory_incomplete',
+    'completion_job_not_unique',
+    'completion_job_unproved',
+    'completion_locale_invalid',
+    'completion_locale_outside_origin',
+    'completion_log_hash_differs',
+    'completion_log_size_invalid',
+    'completion_previous_checkpoint_unproved',
+    'completion_producer_evidence_missing',
+    'completion_receipt_binding_invalid',
+    'completion_record_not_canonical',
+    'completion_record_oversized',
+    'completion_repair_chain_exceeds_bound',
+    'completion_repair_lineage_differs',
+    'completion_repair_locale_differs',
+    'completion_request_invalid',
+    'completion_requested_jobs_differ',
+    'completion_requested_snapshot_differs',
+    'completion_requires_current_complete_result',
+    'completion_run_unproved',
+    'completion_snapshot_lineage_missing',
+    'completion_source_claim_unproved',
+    'completion_source_hash_unproved',
+    'completion_source_lineage_unproved',
+    'fr_repair_cache_only_rebuild_failed',
+    'fr_repair_candidate_cache_binding_invalid',
+    'fr_repair_candidate_coverage_changed',
+    'fr_repair_checkpoint_binding_invalid',
+    'fr_repair_checkpoint_bytes_invalid',
+    'fr_repair_complete_candidate_required',
+    'fr_repair_conflicting_cache_units',
+    'fr_repair_fallback_counts_invalid',
+    'fr_repair_fallback_policy_invalid',
+    'fr_repair_identity_invalid',
+    'fr_repair_ledger_claim_invalid',
+    'fr_repair_ledger_name_invalid',
+    'fr_repair_ledger_not_canonical',
+    'fr_repair_ledger_outcome_invalid',
+    'fr_repair_ledger_readback_invalid',
+    'fr_repair_ledger_row_invalid',
+    'fr_repair_ledger_too_large',
+    'fr_repair_ledger_unit_invalid',
+    'fr_repair_manifest_bytes_invalid',
+    'fr_repair_new_checkpoint_invalid',
+    'fr_repair_noop_identity_changed',
+    'fr_repair_orphan_ledger_outcome',
+    'fr_repair_outcome_already_exists',
+    'fr_repair_output_not_fresh',
+    'fr_repair_output_overlap',
+    'fr_repair_policy_invalid',
+    'fr_repair_preserved_checkpoint_changed',
+    'fr_repair_proof_changed',
+    'fr_repair_request_invalid',
+    'fr_repair_selected_unit_ineligible',
+    'fr_repair_source_binding_invalid',
+    'fr_repair_terminal_code_invalid',
+    'fr_repair_unit_binding_invalid',
+    'fr_repair_unit_claim_already_exists',
+    'fr_repair_unit_started_unresolved',
+    'fr_repair_units_invalid',
+    'fr_repair_unselected_cache_miss',
+    'manual_strict_repair_requires_one_exact_unit',
+    'quality_repair_legacy_terminal',
+    'quality_repair_locale_mismatch',
+    'quality_repair_outcome_mode_invalid',
+    'quality_repair_planned_ledger_missing',
+    'quality_repair_unit_modes_invalid',
+})
+PUBLIC_REPAIR_MESSAGES = {
+    'French repair original source identity differs': 'original_source_identity_differs',
+    'French repair source bytes differ': 'source_bytes_differ',
+    'French repair checkpoint bytes differ': 'checkpoint_bytes_differ',
+    'French repair requires the entire original complete page set': 'complete_page_set_required',
+    'French repair original job inventory is incomplete': 'original_job_inventory_incomplete',
+    'French repair original locale did not succeed': 'original_locale_not_successful',
+    'French repair registered outcome advanced': 'registered_outcome_advanced',
+    'French repair completed receipts are invalid': 'completed_receipts_invalid',
+    'Numeric advisory does not authorize manual inference': 'numeric_advisory_ineligible',
+    'Manual repair cannot reopen a terminal or unknown unit': 'terminal_or_unknown_unit',
+    'Manual repair unit mode differs from immutable ledger': 'unit_mode_differs',
+}
+
+def public_rejection(error):
+    message = str(error) if isinstance(error, ExpansionError) else ""
+    guard = message if message in PUBLIC_REPAIR_REJECTIONS else PUBLIC_REPAIR_MESSAGES.get(message, "unclassified")
+    return {"status":"rejected", "code":"exact-checkpoint-repair-failed", "guard":guard}
+
+
 def validate_text(source, translated, locale, source_language):
     # This explicitly requested legacy repair must still verify the contract
     # bound into its immutable receipts. Automatic SEO generation/debt recovery
@@ -530,5 +630,5 @@ if __name__=='__main__':
     try:raise SystemExit(main())
     except R2TransportError:
         print(json.dumps({'status':'rejected','code':'exact-checkpoint-repair-remote-stop','remote_stop':True}));raise SystemExit(1) from None
-    except Exception:
-        print(json.dumps({'status':'rejected','code':'exact-checkpoint-repair-failed'}));raise SystemExit(1) from None
+    except Exception as error:
+        print(json.dumps(public_rejection(error)));raise SystemExit(1) from None

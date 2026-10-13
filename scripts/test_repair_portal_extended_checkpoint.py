@@ -26,6 +26,17 @@ class RepairTests(unittest.TestCase):
     api=fixtures.IntentTests.api
     partial=fixtures.IntentTests.partial
 
+    def test_public_rejection_only_emits_fixed_guard_labels(self):
+        for code in repair.PUBLIC_REPAIR_REJECTIONS:
+            self.assertEqual(repair.public_rejection(ExpansionError(code))['guard'],code)
+        for message,code in repair.PUBLIC_REPAIR_MESSAGES.items():
+            self.assertEqual(repair.public_rejection(ExpansionError(message))['guard'],code)
+        for error in (ExpansionError('private source or translated text'),
+                      ValueError('completion_log_hash_differs'), KeyError('secret-key'),
+                      ExpansionError('completion_log_hash_differs: private')):
+            self.assertEqual(repair.public_rejection(error),{
+                'status':'rejected','code':'exact-checkpoint-repair-failed','guard':'unclassified'})
+
     def original(self):
         evidence={'producer':PRODUCER,'locales':{'fr':self.partial(registered=False)}}
         identity=intent.register_intent(self.store,self.gen,evidence,'example/repo',self.api)
