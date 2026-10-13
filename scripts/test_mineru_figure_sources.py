@@ -429,6 +429,50 @@ print('tls_cache_authority_import_ready')
         shutil.rmtree(fixture.raw)
         self.assertEqual(len(fixture.validate()), 1)
 
+    def test_equation_entities_decode_once_and_preserve_source_proof(self):
+        # Official 3.4.4 serializer unescapes only the <eq> payload. The failed
+        # admitted ADB table uses this numeric apostrophe entity in formulas.
+        body = "<table><tr><td><eq>x&#x27; + y&#39; &lt; 27 &amp; z</eq></td><td>R&amp;D</td></tr></table>"
+        content = "<table><tr><td> $x' + y' < 27 & z$ </td><td>R&amp;D</td></tr></table>"
+        fixture = self.fixture(visuals=[visual(0, [35, 100, 350, 360], body=body)])
+        fixture.content[0]['table_body'] = content
+        fixture.write_metadata()
+        hashes = {'content_list': digest((fixture.raw/'content_list.json').read_bytes()),
+                  'middle': digest((fixture.raw/'middle.json').read_bytes())}
+        fixture.create(); fixture.status()
+        proof = fixture.proof()
+        self.assertEqual(proof['provider_json_sha256'], hashes)
+        self.assertEqual(proof['metadata']['records'][0]['body_text'], content)
+        self.assertEqual(proof['assets'][0]['mode'], 'authenticated_original_crop')
+        import shutil
+        shutil.rmtree(fixture.raw)
+        self.assertEqual(len(fixture.validate()), 1)
+        self.assertTrue(figures._table_html_matches(' $x&amp;$ ', '<eq>x&amp;amp;</eq>'))
+        self.assertFalse(figures._table_html_matches(' $x&$ ', '<eq>x&amp;amp;</eq>'))
+
+    def test_equation_decoding_cannot_introduce_image_prefix_rewrites(self):
+        filename = 'a' * 64 + '.jpg'
+        encoded_image = f'&lt;img src=&quot;{filename}&quot;/&gt;'
+        middle = '<eq>' + encoded_image + '</eq>'
+        official = f' $<img src="{filename}"/>$ '
+        self.assertTrue(figures._table_html_matches(official, middle))
+        self.assertFalse(figures._table_html_matches(official.replace(filename, 'images/'+filename), middle))
+        # An existing literal image is prefixed before the adjacent equation
+        # entity is decoded; exact pre-prefix legacy table bytes stay accepted.
+        middle = f'<img src="{filename}"/><eq>x&#x27;</eq>'
+        self.assertTrue(figures._table_html_matches(f'<img src="images/{filename}"/>' + " $x'$ ", middle))
+        self.assertTrue(figures._table_html_matches(f'<img src="{filename}"/>' + " $x'$ ", middle))
+
+    def test_equation_entity_compatibility_rejects_nonformula_or_semantic_changes(self):
+        middle = "<table><tr><td><eq>x&#x27; + 27</eq></td><td>R&amp;D</td></tr></table>"
+        valid = "<table><tr><td> $x' + 27$ </td><td>R&amp;D</td></tr></table>"
+        for changed in (valid.replace('27', '28'), valid.replace("x'", 'x'),
+                        valid.replace('R&amp;D', 'R&D'), valid.replace('<td>', '<th>', 1),
+                        valid.replace(' $', '$', 1), valid.replace("x'", "y'")):
+            with self.subTest(case=digest(changed.encode())):
+                self.assertFalse(figures._table_html_matches(changed, middle))
+        self.assertFalse(figures._table_html_matches('<td>R&D</td>', '<td>R&amp;D</td>'))
+
     def test_equation_wrapper_compatibility_does_not_clean_or_change_table_content(self):
         middle = "<table><tr><td><eq>x_1</eq></td><td>27</td></tr></table>"
         valid = middle.replace("<eq>", " $").replace("</eq>", "$ ")
