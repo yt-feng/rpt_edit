@@ -9,7 +9,7 @@ import re
 from collections import Counter
 
 from build_portal_extended_locales import (CHECKPOINT_VERSION, SOURCE_FALLBACK_VERSION,
-    build, translate_document, validate_text as validate_current_text)
+    build, translate_document, TranslationUnitError, validate_text as validate_current_text)
 from financial_quantity_integrity import NUMBER, quantity_issues
 from offline_translation import MODEL_ID, OfflineTranslationValidationError
 from portal_extended_continuation import (checkpoint_evidence, producer_identity, queue,
@@ -17,7 +17,7 @@ from portal_extended_continuation import (checkpoint_evidence, producer_identity
 from portal_extended_daily_queue import immutable_record, write_verified
 from portal_extended_locales import ExpansionError, daily_corpus_day, digest, stable_bytes
 from portal_extended_r2 import (DEFAULT_PREFIX, HEX64, MAX_CHECKPOINT_BYTES,
-    MAX_CANDIDATE_PAGE_BYTES, R2NotFound, R2Store, R2TransportError, checkpoint_is_valid, require_env)
+    MAX_CANDIDATE_PAGE_BYTES, R2NotFound, R2Store, R2TransportError, R2IntegrityError, checkpoint_is_valid, require_env)
 from portal_extended_recovery_intent import (acknowledged, key, read_index, read_receipt,
     source, POLICY as INTENT_POLICY)
 
@@ -120,10 +120,48 @@ PUBLIC_REPAIR_MESSAGES = {
     'Manual repair unit mode differs from immutable ledger': 'unit_mode_differs',
 }
 
+PUBLIC_REPAIR_FRAMES = {
+    'repair_portal_extended_checkpoint.py': {'main', 'public_rejection'},
+    'portal_extended_french_repair.py': {'run', 'frozen', 'authenticate_original', 'guard_current',
+        'prepared_proof', 'read_optional', 'require', 'repair_phase'},
+    'repair_portal_french_source_fallback.py': {'request', 'frozen', 'inspect_frozen', 'checkpoint_units',
+        'verify_cached_pages', 'required_units', 'prior_outcome', 'require', 'get'},
+    'build_portal_extended_locales.py': {'validate_text', 'translate_document', 'get'},
+    'portal_extended_completion.py': {'authenticate', 'verify_log_evidence', 'completed_jobs', 'require',
+        'optional', 'record', 'immutable'},
+    'portal_extended_continuation.py': {'verify_origin_run', 'checkpoint_evidence', 'validate_snapshot',
+        'read_origin', 'candidate_evidence'},
+    'portal_extended_r2.py': {'restore_candidate', '_get', 'checkpoint_is_valid'},
+}
+PUBLIC_REPAIR_PHASES = {'frozen_evidence', 'source_authentication', 'unit_eligibility',
+                       'prepared_proof', 'current_state', 'source_claim'}
+
+
 def public_rejection(error):
     message = str(error) if isinstance(error, ExpansionError) else ""
     guard = message if message in PUBLIC_REPAIR_REJECTIONS else PUBLIC_REPAIR_MESSAGES.get(message, "unclassified")
-    return {"status":"rejected", "code":"exact-checkpoint-repair-failed", "guard":guard}
+    categories = {ExpansionError:'ExpansionError', R2NotFound:'R2NotFound', R2TransportError:'R2TransportError',
+        R2IntegrityError:'R2IntegrityError', TranslationUnitError:'TranslationUnitError',
+        OfflineTranslationValidationError:'OfflineTranslationValidationError', KeyError:'KeyError',
+        ValueError:'ValueError', TypeError:'TypeError', AttributeError:'AttributeError',
+        FileNotFoundError:'FileNotFoundError', RuntimeError:'RuntimeError'}
+    frames = []
+    current = error.__traceback__
+    scripts = Path(__file__).resolve().parent
+    while current is not None:
+        code = current.tb_frame.f_code
+        path = Path(code.co_filename)
+        if (path.name in PUBLIC_REPAIR_FRAMES and code.co_name in PUBLIC_REPAIR_FRAMES[path.name]
+                and path.resolve() == scripts/path.name):
+            frames.append({'module':path.name, 'function':code.co_name, 'line':current.tb_lineno})
+        current = current.tb_next
+    phase = getattr(error, 'repair_phase', '')
+    result = {"status":"rejected", "code":"exact-checkpoint-repair-failed", "guard":guard,
+            "exception":categories.get(type(error), 'other'),
+            "phase":phase if isinstance(phase, str) and phase in PUBLIC_REPAIR_PHASES else 'unknown', "frames":frames[-12:]}
+    if type(error) is TranslationUnitError and isinstance(error.error, Exception) and type(error.error) is not TranslationUnitError:
+        result['wrapped'] = public_rejection(error.error)
+    return result
 
 
 def validate_text(source, translated, locale, source_language):
