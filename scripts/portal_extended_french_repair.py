@@ -100,7 +100,7 @@ class RepairPipeline:
         return corpus, checkpoint, candidate, origin, snapshot, summary
 
 
-    def authenticate_original(self, store, origin, repository, api):
+    def authenticate_original(self, store, origin, repository, api, *, completion_evidence=None, capture=False, snapshot=None, completed_row=None):
         producer = producer_identity(origin['producer'])
         path = f'repos/{repository}/actions/runs/{producer["run_id"]}/attempts/{producer["attempt"]}'
         run, page = api(path), api(path+'/jobs?per_page=100')
@@ -111,10 +111,14 @@ class RepairPipeline:
         admitted = batch_admission(store, origin['generation'])
         verify_origin_run(origin, run, jobs, repository, admitted=admitted)
         matched = [job for job in jobs if job.get('name') == f'locale ({self.locale})']
-        require(len(matched) == 1 and matched[0].get('status') == 'completed'
+        if (len(matched) == 1 and matched[0].get('status') == 'completed'
                 and matched[0].get('conclusion') == 'success'
                 and matched[0].get('run_id') == int(producer['run_id'])
-                and matched[0].get('head_sha') == producer['sha'], 'French repair original locale did not succeed')
+                and matched[0].get('head_sha') == producer['sha']):
+            return
+        require(self.contract.automatic, 'French repair original locale did not succeed')
+        from portal_extended_completion import authenticate
+        authenticate(store,origin,self.locale,repository,api,adoption=completion_evidence,capture=capture,expected_snapshot=snapshot,completed_row=completed_row)
 
 
     def verify_repair_producer(self, proof, run, jobs, repository, *, completion=None):
@@ -454,7 +458,9 @@ class RepairPipeline:
         with tempfile.TemporaryDirectory(prefix='fr-source-repair-') as temp:
             corpus, old_raw, old_dir, origin, snapshot, summary = self.frozen(store, args.generation, repair, Path(temp))
             if not self.contract.automatic or args.operation in {'prepare', 'inspect'}:
-                self.authenticate_original(store, origin, repository, api)
+                self.authenticate_original(store, origin, repository, api,
+                    completion_evidence=repair.get('completion_evidence'),
+                    capture=manual_strict and args.operation == 'prepare', snapshot=snapshot)
             if manual_strict:
                 from build_portal_extended_locales import NUMERIC_FALLBACK_CODES
                 old = json.loads(old_raw)

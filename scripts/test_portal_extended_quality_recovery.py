@@ -114,6 +114,7 @@ class RecoveryTests(unittest.TestCase):
         self.assertEqual(summary['accepted_units'],2); self.assertFalse(summary['continue'])
 
     def test_snapshot_ack_recovered_only_from_exact_immutable_old_result(self):
+        self.legacy_result()
         old=copy.deepcopy(queue(self.store,'fr')[self.generation]);save_queue(self.store,'fr',{})
         jobs,blocked=self.select();self.assertEqual(blocked,[]);self.assertEqual(len(jobs),1)
         self.assertEqual(queue(self.store,'fr')[self.generation],old)
@@ -127,6 +128,7 @@ class RecoveryTests(unittest.TestCase):
         self.assertEqual(queue(self.store,'fr'),{});self.assertTrue(debt_rows(self.store,'fr'))
 
     def test_two_immutable_results_cannot_guess_old_continuation_count(self):
+        self.legacy_result()
         row=copy.deepcopy(queue(self.store,'fr')[self.generation]);row['continuations']=1
         key=self.store.key('incremental','continuation-results',self.generation,'fr',digest(stable_bytes(row))+'.json')
         self.store._put(key,stable_bytes(row),metadata={'kind':'test'})
@@ -165,12 +167,24 @@ class RecoveryTests(unittest.TestCase):
         self.assertEqual(queue(self.store,'fr'),{})
 
     def test_advanced_completed_page_never_restores_ack(self):
+        self.legacy_result()
         save_queue(self.store,'fr',{})
         pages=read_state(self.store,'completed','fr',fixtures.DAY)['pages']
         pages[fixtures.URL]['generation']='d'*64
         write_state(self.store,'completed','fr',{'pages':pages},fixtures.DAY)
         jobs,blocked=self.select();self.assertEqual(jobs,[]);self.assertEqual(blocked[0]['code'],'completed_page_receipt_advanced')
         self.assertEqual(queue(self.store,'fr'),{})
+
+    def legacy_result(self):
+        """Model a result written before completion-owner receipts existed."""
+        rows=queue(self.store,'fr');row=rows[self.generation]
+        row.pop('completion_sha256',None)
+        prefix=self.store.key('incremental','continuation-results',self.generation,'fr')+'/'
+        for key in list(self.client.objects):
+            if key.startswith(prefix):del self.client.objects[key]
+        raw=stable_bytes(row)
+        self.store._put(prefix+digest(raw)+'.json',raw,metadata={'kind':'test-legacy-result'})
+        save_queue(self.store,'fr',rows)
 
     def test_existing_noncomplete_not_reconstructed_or_reclaimed(self):
         rows=queue(self.store,'fr');rows[self.generation]['status']='blocked';save_queue(self.store,'fr',rows)

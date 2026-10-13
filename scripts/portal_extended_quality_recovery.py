@@ -147,7 +147,7 @@ def exact_result(store, locale, generation, row):
     require(store._get(key,maximum=65536) == raw,'historical_result_checksum_invalid')
     require(row.get('status') == 'complete' and type(row.get('continuations')) is int
             and 0 <= row['continuations'] <= MAX_CONTINUATIONS
-            and set(row) <= {'status','continuations','snapshot','source_repair_sha256','source_repair_completion_sha256'},
+            and set(row) <= {'status','continuations','snapshot','completion_sha256','source_repair_sha256','source_repair_completion_sha256'},
             'historical_result_contract_invalid')
     return row
 
@@ -267,7 +267,7 @@ def prepare_one(store, locale, generation, debt, owner, repository, api):
             'producer':origin['producer'], **{k:row['snapshot'][k] for k in
                 ('checkpoint_sha256','candidate_id','manifest_sha256')}, 'units':[], 'unit_modes':{}}
         corpus, old, candidate, _, snapshot, inspection = pipeline.frozen(store, generation, request, workspace)
-        pipeline.authenticate_original(store, origin, repository, api)
+        pipeline.authenticate_original(store, origin, repository, api, completed_row=row, snapshot=row['snapshot'])
         require(snapshot == row['snapshot'], 'historical_snapshot_changed')
         # Never write an ACK restoration until every original page receipt and
         # the full immutable source/checkpoint/render binding has been verified.
@@ -412,12 +412,18 @@ def resume_prepared(store, locales, owner, repository, api, *, budget=None):
             proof_id = pipeline.prepared_proof(store, plan['request'])
             if proof_id is None: continue
             authorize()
-            pipeline.authenticate_original(store, read_origin(store, plan['generation']), repository, cached_api)
             proof = pipeline.verify_proof(store, proof_id, plan['generation'])
+            current = queue(store, locale).get(plan['generation'], {})
+            # Publication ACK may already have pruned the mutable row. The
+            # verified proof retains its exact immutable input result, so the
+            # original completion can still be authenticated before clearing
+            # this tail without recreating an acknowledged candidate.
+            pipeline.authenticate_original(store, read_origin(store, plan['generation']), repository, cached_api,
+                completed_row=proof['before_row'] if not current else None,
+                snapshot=proof['before_row']['snapshot'] if not current else None)
             if not proof['delta']['changed']:
                 write_state(store, 'quality-recovery-active', locale, {'plan':''})
                 continue
-            current = queue(store, locale).get(plan['generation'], {})
             expected = {**proof['after_row'], 'source_repair_sha256':proof_id}
             if not current and plan['generation'] not in debt_rows(store, locale):
                 write_state(store, 'quality-recovery-active', locale, {'plan':''})
