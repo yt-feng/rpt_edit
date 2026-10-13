@@ -4368,6 +4368,30 @@
     "imf:721579d885b8b65ed4eadde236b29e32203c53154241d779c4b3f4ffcb76": {
       "first_seen": "2026-10-12",
       "status": "downloaded"
+    },
+    "imf:0d6dc398f7625946df5c2a88519e981f44d18fc2e0196bdff150e09c226f": {
+      "first_seen": "2026-10-13",
+      "status": "downloaded"
+    },
+    "imf:2a0365759114a7a4bec799cfad172b641696912139fb3d1a3c611c8aa2da": {
+      "first_seen": "2026-10-13",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/work1381.htm": {
+      "first_seen": "2026-10-13",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/work1380.htm": {
+      "first_seen": "2026-10-13",
+      "status": "too_old"
+    },
+    "bruegel:12587": {
+      "first_seen": "2026-10-13",
+      "status": "downloaded"
+    },
+    "bruegel:12580": {
+      "first_seen": "2026-10-13",
+      "status": "downloaded"
     }
   }
 }
