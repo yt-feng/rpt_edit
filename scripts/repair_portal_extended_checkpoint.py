@@ -133,6 +133,7 @@ PUBLIC_REPAIR_FRAMES = {
     'portal_extended_completion.py', 'portal_extended_continuation.py',
     'portal_extended_r2.py', 'portal_extended_recovered_admission.py',
     'offline_translation.py', 'hymt_offline_translation.py',
+    'portal_extended_manual_resolution.py',
 }
 PUBLIC_REPAIR_PHASES = {'frozen_evidence', 'source_authentication', 'unit_eligibility',
                        'prepared_proof', 'current_state', 'source_claim'}
@@ -577,6 +578,7 @@ def main():
     parser.add_argument('--checkpoint',type=Path);parser.add_argument('--output',type=Path)
     parser.add_argument('--github-output',type=Path);parser.add_argument('--seconds',type=int,default=14400)
     parser.add_argument('--stage-only',action='store_true')
+    parser.add_argument('--child-only',action='store_true')
     args=parser.parse_args()
     from build_portal_extended_locales import validate_budget
     validate_budget(args.seconds)
@@ -592,6 +594,9 @@ def main():
     from portal_extended_repair_contract import QUALITY_POLICY
     if args.stage_only and (not isinstance(value, dict) or value.get('policy') != QUALITY_POLICY):
         raise ExpansionError('Staging requires an exact manual strict quality request')
+    if args.child_only and (not isinstance(value,dict) or value.get('policy')!=QUALITY_POLICY
+                           or 'resolution_evidence' not in value or args.stage_only):
+        raise ExpansionError('Child resolution requires its exact serialized manual request')
     if isinstance(value,dict) and value.get('policy') == FRENCH_POLICY:
         return french_repair(args,value,owner,store=once_store(),repository=repository,api=api)
     from portal_extended_repair_contract import QUALITY_POLICY, MANUAL_STRICT_RETRY, quality_contract

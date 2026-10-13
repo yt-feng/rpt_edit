@@ -447,7 +447,10 @@ class RepairPipeline:
         self.check_generation(args.generation, args.locale)
         inspecting = args.operation == 'inspect'
         stage_only = bool(getattr(args, 'stage_only', False))
+        child_only = bool(getattr(args, 'child_only', False))
         require(not stage_only or manual_strict, 'Only explicit strict repair may stage immutable evidence')
+        require(not child_only or (manual_strict and not stage_only and 'resolution_evidence' in value),
+                'Child resolution requires its explicit manual request')
         require(('retry_policy' in value) == manual_strict,
                 'Manual retry policy requires the explicit reviewed dispatcher')
         if manual_strict:
@@ -480,10 +483,23 @@ class RepairPipeline:
                     require(old['source_fallbacks'][unit]['code'] not in NUMERIC_FALLBACK_CODES,
                             'Numeric advisory does not authorize manual inference')
                     source = self.units.required_units(corpus)[unit]
+                    if 'resolution_evidence' in repair:
+                        from portal_extended_manual_resolution import preflight, result as child_result, adopt
+                        require(not stage_only, 'Child resolution uses the serialized workflow')
+                        if args.operation in {'prepare','inspect'}:
+                            if child_only or inspecting:
+                                preflight(store,self.units,repair,source,repository,api)
+                            elif not inspecting:
+                                self.guard_current(store,corpus,snapshot)
+                                adopt(store,self.units,repair,source,repository,api)
+                        started, accepted = child_result(store,self.units,repair,source)
+                        if child_only:
+                            require(started is None or accepted is not None,'resolution_child_started_unresolved')
+                            args.requires_engine = accepted is None
                     claim, outcome, _ = self.units.prior_outcome(store, unit, source)
                     ledger_status = outcome['status'] if outcome else ('unresolved' if claim else 'fresh')
                     summary['selected_unit_ledger_status'] = ledger_status
-                    if not inspecting:
+                    if not inspecting and not child_only:
                         require(ledger_status not in {'unresolved', 'terminal'},
                                 'Manual repair cannot reopen a terminal or unknown unit')
                         expected = 'accepted-ledger' if outcome else 'fresh-authorized'
@@ -492,9 +508,9 @@ class RepairPipeline:
                         require(repair['unit_modes'][unit] == expected
                                 or (expected == 'accepted-ledger' and repair['unit_modes'][unit] == 'fresh-authorized'),
                                 'Manual repair unit mode differs from immutable ledger')
-                    args.requires_engine = ledger_status == 'fresh'
+                    if not child_only: args.requires_engine = ledger_status == 'fresh'
             with repair_phase('prepared_proof'):
-                prior = self.prepared_proof(store, repair)
+                prior = None if child_only else self.prepared_proof(store, repair)
             if args.operation == 'prepare' and prior is not None and stage_only:
                 self.verify_proof(store, prior, args.generation)
                 outcome = {**self.result(corpus, has_work=False), 'staged_proof_sha256':prior,
@@ -538,25 +554,37 @@ class RepairPipeline:
                         if self.contract.automatic:
                             from portal_extended_repair_cache import CacheFirstTranslator
                             translator = CacheFirstTranslator(translator)
-                    delta = rebuild(store, corpus, old_raw, old_dir, args.output, fresh_checkpoint, repair,
-                                    owner, translator, seconds=args.seconds)
-                    if manual_strict:
-                        require(delta['accepted_units'] == repair['units'] and not delta['terminal_units']
-                                and delta['fallbacks_before'] - delta['fallbacks_after'] == 1,
-                                'Manual strict unit was not accepted; original candidate remains unchanged')
-                    args.checkpoint.write_bytes(fresh_checkpoint.read_bytes())
-                    (args.output.parent/'fr-source-fallback-repair-proof.json').write_bytes(stable_bytes(delta))
-                    outcome = {'status': 'complete-candidate', 'changed': delta['changed'],
-                               'selected_units': len(repair['units']), 'accepted_units': len(delta['accepted_units']),
-                               'terminal_units': len(delta['terminal_units']), 'residual_fallbacks': delta['fallbacks_after']}
+                    if child_only:
+                        from portal_extended_manual_resolution import stage
+                        accepted=stage(store,self.units,repair,source,owner,translator,args.seconds)
+                        outcome={'status':'accepted-child-result','accepted_result_sha256':digest(stable_bytes(accepted)),
+                                 'mutable_production_writes':0,'publication_performed':False}
+                    else:
+                        delta = rebuild(store, corpus, old_raw, old_dir, args.output, fresh_checkpoint, repair,
+                                        owner, translator, seconds=args.seconds)
+                        if manual_strict:
+                            require(delta['accepted_units'] == repair['units'] and not delta['terminal_units']
+                                    and delta['fallbacks_before'] - delta['fallbacks_after'] == 1,
+                                    'Manual strict unit was not accepted; original candidate remains unchanged')
+                        args.checkpoint.write_bytes(fresh_checkpoint.read_bytes())
+                        (args.output.parent/'fr-source-fallback-repair-proof.json').write_bytes(stable_bytes(delta))
+                        outcome = {'status': 'complete-candidate', 'changed': delta['changed'],
+                                   'selected_units': len(repair['units']), 'accepted_units': len(delta['accepted_units']),
+                                   'terminal_units': len(delta['terminal_units']), 'residual_fallbacks': delta['fallbacks_after']}
                     from build_portal_extended_locales import public_translation_diagnostics
                     outcome.update(public_translation_diagnostics(translator, self.locale))
                 elif args.operation == 'persist':
-                    proof = self.persist(store, args.generation, repair, owner, args.checkpoint, args.output, prepare_only=stage_only)
-                    outcome = {'status': 'complete-candidate', 'proof_sha256': digest(stable_bytes(proof)),
-                               'changed': proof['delta']['changed'], 'residual_fallbacks': proof['delta']['fallbacks_after']}
-                    if stage_only:
-                        outcome.update(prepared_only=True, mutable_production_writes=0, publication_performed=False)
+                    if child_only:
+                        from portal_extended_manual_resolution import complete
+                        identity=complete(store,self.units,repair,source,owner)
+                        outcome={'status':'accepted-child-result','completion_sha256':identity,
+                                 'mutable_production_writes':0,'publication_performed':False}
+                    else:
+                        proof = self.persist(store, args.generation, repair, owner, args.checkpoint, args.output, prepare_only=stage_only)
+                        outcome = {'status': 'complete-candidate', 'proof_sha256': digest(stable_bytes(proof)),
+                                   'changed': proof['delta']['changed'], 'residual_fallbacks': proof['delta']['fallbacks_after']}
+                        if stage_only:
+                            outcome.update(prepared_only=True, mutable_production_writes=0, publication_performed=False)
                 else:
                     raise ExpansionError('Unsupported French repair operation')
         if args.github_output:

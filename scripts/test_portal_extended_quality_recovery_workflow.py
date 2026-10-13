@@ -71,6 +71,17 @@ class ConsumerAdmissionTests(unittest.TestCase):
         self.assertNotEqual(self.group(**values),self.group(**{'github.event_name':'workflow_dispatch',
                                                              'inputs.operation':'candidate'}))
 
+    def test_unknown_child_resolution_uses_shared_locale_job_lock(self):
+        self.assertNotEqual(self.group(**{'github.event_name':'workflow_dispatch',
+            'inputs.operation':'strict-repair-resolution','inputs.locales':'my'}),self.group(**{
+            'github.event_name':'workflow_dispatch','inputs.operation':'candidate'}))
+        self.assertEqual(self.workflow['jobs']['locale']['concurrency'],{
+            'group':'extended-locale-${{ matrix.locale }}','cancel-in-progress':False})
+        self.assertEqual(self.workflow['jobs']['locale']['strategy']['max-parallel'],2)
+        self.assertFalse(self.workflow['concurrency']['cancel-in-progress'])
+        self.assertEqual(self.group(**{'github.event_name':'workflow_dispatch',
+            'inputs.operation':'source-fallback-inspect'}),'extended-locales-source-inspect-123')
+
     def test_every_rejected_source_event_has_an_isolated_group(self):
         for result in ('success', 'failure', 'cancelled', 'skipped', 'timed_out', 'action_required', ''):
             for branch in ('main', 'feature'):
@@ -92,6 +103,7 @@ class ConsumerAdmissionTests(unittest.TestCase):
         for operation in ('candidate', 'publication-resume', 'english-resume', 'checkpoint-repair',
                           'source-fallback-inspect', 'roundtrip', 'publication-check', 'recovery-test'):
             expected = {'roundtrip': 'extended-locales-r2-staging-refs/heads/main',
+                        'source-fallback-inspect': 'extended-locales-source-inspect-123',
                         'publication-check': 'extended-locales-publication-check-refs/heads/main',
                         'recovery-test': 'extended-locales-r2-recovery-refs/heads/main'}.get(
                             operation, 'extended-locales-r2-pipeline')
@@ -269,6 +281,37 @@ raise SystemExit(int(os.environ.get('STUB_EXIT', '0')))
             self.assertEqual(len(calls),1)
             self.assertEqual(calls[0][1:3],['scripts/repair_portal_extended_checkpoint.py',operation])
             self.assertIn('--stage-only',calls[0]);self.assertIn('--seconds',calls[0])
+
+    def test_child_only_writes_private_result_and_never_normal_persistence_or_handoff(self):
+        values={'inputs.operation':'strict-repair-resolution','steps.build.outputs.exit_code':'0',
+                'github.ref':'refs/heads/main','needs.source.result':'success',
+                'needs.source.outputs.has_work':'true','needs.locale.result':'success',
+                'needs.source.outputs.source_admission':'admitted'}
+        for name in ('Restore verified incremental unit memo',
+                     'Persist checkpoint even when the locale budget ended',
+                     'Persist complete or incomplete candidate pages privately'):
+            self.assertFalse(condition(self.step(name)['if'],values))
+        for name in ('publication_handoff','english_publication_handoff','continue_admitted_batches'):
+            self.assertFalse(condition(self.workflow['jobs'][name]['if'],values))
+        model=self.step('Set up pinned Hy-MT2 CPU model without audit artifacts')
+        self.assertFalse(condition(model['if'],{**values,'steps.checkpoint.outputs.requires_engine':'false'}))
+        self.assertTrue(condition(model['if'],{**values,'steps.checkpoint.outputs.requires_engine':'true'}))
+        for required,expected in (('',True),('false',False),('true',True)):
+            self.assertEqual(condition(model['if'],{'inputs.operation':'checkpoint-repair',
+                'matrix.quality_repair':'','steps.checkpoint.outputs.requires_engine':required}),expected)
+        for required,expected in (('',False),('false',False),('true',True)):
+            self.assertEqual(condition(model['if'],{'matrix.quality_repair':PLAN,
+                'steps.checkpoint.outputs.requires_engine':required}),expected)
+        for name,operation in (
+            ('Restore locale checkpoint from private R2','restore'),
+            ('Run bounded locale translation and retain timeout state','build'),
+            ('Validate exact repaired units and persist the selected repair mode','persist')):
+            self.log.unlink(missing_ok=True)
+            result,calls=self.execute(self.step(name),QUALITY_REPAIR='',REQUESTED_OPERATION='strict-repair-resolution')
+            self.assertEqual(result.returncode,0,result.stderr)
+            self.assertEqual(len(calls),1)
+            self.assertEqual(calls[0][1:3],['scripts/repair_portal_extended_checkpoint.py',operation])
+            self.assertIn('--child-only',calls[0]);self.assertNotIn('--stage-only',calls[0])
 
     def test_dispatch_requires_an_explicit_true_frontier_and_retains_normal_progress(self):
         guard = self.step('Dispatch the next bounded per-language cursors', job=self.followup)['if']
