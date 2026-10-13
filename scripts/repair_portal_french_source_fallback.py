@@ -82,6 +82,7 @@ class RepairEngine:
             keys.update({'locale','unit_modes'})
             if isinstance(value, dict) and 'retry_policy' in value:
                 keys.add('retry_policy')
+                if 'completion_evidence' in value: keys.add('completion_evidence')
         require(isinstance(value, dict) and set(value) == keys, 'fr_repair_request_invalid')
         if self.contract.automatic:
             require(value['locale'] == self.locale, 'quality_repair_locale_mismatch')
@@ -93,6 +94,9 @@ class RepairEngine:
         require(isinstance(units, list) and (1 if require_units else 0) <= len(units) <= MAX_UNITS
                 and all(isinstance(unit, str) and HEX64.fullmatch(unit) for unit in units)
                 and units == sorted(set(units)), 'fr_repair_units_invalid')
+        if 'completion_evidence' in value:
+            from portal_extended_completion import request as completion_request
+            completion_request(value['completion_evidence'])
         if 'retry_policy' in value:
             require(value['retry_policy'] == MANUAL_STRICT_RETRY and len(units) == 1,
                     'manual_strict_repair_requires_one_exact_unit')

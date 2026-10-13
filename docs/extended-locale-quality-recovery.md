@@ -36,6 +36,10 @@ stage 使用独立的 locale/generation concurrency，仅新增不可变 source 
 
 stage 完成不是正式采用。旧 debt 仍是持久恢复队列；之后的串行 quality source 按原公平调度读到 accepted ledger，生成不含手工 retry policy 的新 request，使用禁止推理的 build，针对当时最新 Memo 生成新的 proof 并通过既有 current-state guards 采用。不能直接把旧 stage 捕获的 Memo 快照写回；若其间 Memo 前进，旧 prepared commit 必须拒绝。最终以正式 candidate、quality-debt 和发布读回为准。
 
+原始 source job 必须继续通过来源校验。若原始 locale job 超时、由后续 run 完成，新结果会保留实际完成 owner 的不可变 receipt，并要求该 run 的精确 source/locale jobs 都成功。历史缺失 receipt 时，显式严格请求可附 `completion_evidence`：固定 producer、两个 job ID、原始 job log SHA256 和前一 checkpoint。仅接受同一 main workflow 的后继提交、精确 generation/day/source/checkpoint/candidate/manifest 完成日志；整体 run 因其它语言失败不影响这两个成功 job 的证明。只读检查不写 receipt，prepare 才条件创建并读回私有 adoption pointer。
+
+完成凭据绑定完整 snapshot。后续部分修复必须逐层验证实际成功的 repair producer 和 before/after proof，不能借用同 generation 的其它候选。发布 ACK 后用精确不可变输入 row 认证并清理已结束的 tail，不重建已确认候选。
+
 ## 公平推进与摘要
 
 已有 incomplete 普通页继续原 claim/续跑流程。对没有进行中页任务的语言，quality 与确实存在的 ordinary 待办交替，每个语言每轮只有一个 matrix row。空 ordinary 轮次不占位置。quality 只有已经提交、完整验证的新 accepted-unit delta 才可续发；当前 generation 完成后可推进同语言其它债或新文章。普通页最后一轮取得实际 durable 进展后，也可交给一次有界 debt scan。若扫描只遇 terminal/unknown/blocked，零 accepted 进展就停止自续。

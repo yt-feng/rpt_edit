@@ -237,6 +237,12 @@ def record_result(store, locale, corpus, result, *, checkpoint_sha=None, owner=N
         elif status != 'complete' and not keys > old_keys and snapshot['completed_pages'] <= before['completed_pages']:
             status, reason = 'blocked', 'No continuation progress; automatic continuation stopped'
     rows[generation] = {'status': status, 'continuations': previous['continuations'], 'snapshot': snapshot}
+    if status == 'complete' and os.environ.get('GITHUB_ACTIONS') == 'true':
+        # Preserve the actual successful continuation owner, independently of
+        # the original source producer whose locale may have exhausted budget.
+        from portal_extended_completion import record
+        rows[generation]['completion_sha256'] = record(store, read_origin(store,generation),
+            locale, snapshot, producer_identity(previous['owner']))
     if reason:
         rows[generation]['reason'] = reason
     # Immutable attempt evidence survives later queue acknowledgement.

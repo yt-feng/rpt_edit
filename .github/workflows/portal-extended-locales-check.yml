@@ -117,6 +117,7 @@ jobs:
           python -B scripts/test_portal_extended_repair_contract.py
           python -B scripts/test_portal_extended_quality_recovery.py
           python -B scripts/test_portal_extended_manual_strict_repair.py
+          python -B scripts/test_portal_extended_completion.py
           python -B scripts/test_portal_extended_quality_recovery_workflow.py
           python -B scripts/test_portal_extended_incremental.py
           python -B scripts/test_portal_extended_continuation.py
