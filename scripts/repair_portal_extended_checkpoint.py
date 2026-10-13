@@ -124,19 +124,15 @@ PUBLIC_REPAIR_MESSAGES = {
     'Manual repair unit mode differs from immutable ledger': 'unit_mode_differs',
 }
 
+# Function names come from code objects of these exact repository files, not
+# exception messages or locals. Include repair/build internals after inference.
 PUBLIC_REPAIR_FRAMES = {
-    'repair_portal_extended_checkpoint.py': {'main', 'public_rejection'},
-    'portal_extended_french_repair.py': {'run', 'frozen', 'authenticate_original', 'guard_current',
-        'prepared_proof', 'read_optional', 'require', 'repair_phase'},
-    'repair_portal_french_source_fallback.py': {'request', 'frozen', 'inspect_frozen', 'checkpoint_units',
-        'verify_cached_pages', 'required_units', 'prior_outcome', 'require', 'get'},
-    'build_portal_extended_locales.py': {'validate_text', 'translate_document', 'get'},
-    'portal_extended_completion.py': {'authenticate', 'verify_log_evidence', 'completed_jobs', 'require',
-        'optional', 'record', 'immutable'},
-    'portal_extended_continuation.py': {'verify_origin_run', 'checkpoint_evidence', 'validate_snapshot',
-        'read_origin', 'candidate_evidence'},
-    'portal_extended_r2.py': {'restore_candidate', '_get', 'checkpoint_is_valid'},
-    'portal_extended_recovered_admission.py': {'raw', 'api', 'require'},
+    'repair_portal_extended_checkpoint.py', 'portal_extended_french_repair.py',
+    'repair_portal_french_source_fallback.py', 'portal_extended_repair_cache.py',
+    'build_portal_extended_locales.py', 'portal_extended_locales.py',
+    'portal_extended_completion.py', 'portal_extended_continuation.py',
+    'portal_extended_r2.py', 'portal_extended_recovered_admission.py',
+    'offline_translation.py', 'hymt_offline_translation.py',
 }
 PUBLIC_REPAIR_PHASES = {'frozen_evidence', 'source_authentication', 'unit_eligibility',
                        'prepared_proof', 'current_state', 'source_claim'}
@@ -156,8 +152,7 @@ def public_rejection(error):
     while current is not None:
         code = current.tb_frame.f_code
         path = Path(code.co_filename)
-        if (path.name in PUBLIC_REPAIR_FRAMES and code.co_name in PUBLIC_REPAIR_FRAMES[path.name]
-                and path.resolve() == scripts/path.name):
+        if path.name in PUBLIC_REPAIR_FRAMES and path.resolve() == scripts/path.name:
             frames.append({'module':path.name, 'function':code.co_name, 'line':current.tb_lineno})
         current = current.tb_next
     phase = getattr(error, 'repair_phase', '')

@@ -41,6 +41,35 @@ class ManualStrictTests(unittest.TestCase):
                 'retry_policy':MANUAL_STRICT_RETRY, 'units':[unit],
                 'unit_modes':{unit:'fresh-authorized'}}
 
+    def test_ledger_inspection_reads_fresh_then_accepted_without_model_or_writes(self):
+        from inspect_portal_extended_continuation import repair_ledger_diagnostics
+        def inspect():
+            before=copy.deepcopy(self.client.objects)
+            with patch('offline_translation.OfflineTranslator',side_effect=AssertionError('inspection inferred')):
+                value=repair_ledger_diagnostics(self.store,self.f.corpus,self.f.old,self.locale)
+            self.assertEqual(before,self.client.objects)
+            self.assertEqual(value['total_selected_units'],1)
+            self.assertNotIn('Revenue',json.dumps(value))
+            return value['units'][0]
+        self.assertEqual(inspect()['status'],'fresh')
+        self.operation('prepare');self.operation('restore');self.operation('build')
+        unit=self.request()['units'][0]
+        claim,outcome=self.pipeline.units.ledger_outcome(self.store,unit,self.pipeline.units.required_units(self.f.corpus)[unit])
+        value=inspect()
+        self.assertEqual(value['status'],'accepted')
+        self.assertEqual(value['claim_sha256'],digest(stable_bytes(claim)))
+        self.assertEqual(value['outcome_sha256'],digest(stable_bytes(outcome)))
+
+    def test_ledger_inspection_preserves_unresolved_claim(self):
+        from inspect_portal_extended_continuation import repair_ledger_diagnostics
+        unit=self.request()['units'][0];source=self.pipeline.units.required_units(self.f.corpus)[unit]
+        claim={**self.pipeline.units.claim_contract(unit,source),'producer':fixtures.fixtures.OWNER}
+        self.pipeline.units.create_record(self.store,self.pipeline.units.ledger_key(self.store,unit,'started.json'),claim)
+        before=copy.deepcopy(self.client.objects)
+        value=repair_ledger_diagnostics(self.store,self.f.corpus,self.f.old,self.locale)['units'][0]
+        self.assertEqual(value['status'],'unresolved');self.assertIsNone(value['outcome_sha256'])
+        self.assertEqual(before,self.client.objects)
+
     def operation(self, operation, request=None, *, translator=None, stage=True, seconds=900):
         args = SimpleNamespace(operation=operation, generation=self.generation, locale=self.locale,
             checkpoint=self.f.root/'manual.json', corpus=self.f.root/'manual-source.json',
