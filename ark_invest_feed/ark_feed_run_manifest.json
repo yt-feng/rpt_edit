@@ -1,6 +1,6 @@
 {
   "feed_url": "https://www.ark-invest.com/feed",
-  "date_folder": "261006",
+  "date_folder": "261013",
   "since_days": 1,
   "max_pub_age_days": 120,
   "include_types": [
@@ -9,24 +9,24 @@
     "newsletters",
     "white papers"
   ],
-  "feed_item_count": 1405,
+  "feed_item_count": 1407,
   "selected_count": 1,
   "written": [
     {
       "source": "ark_invest_feed",
       "institution_name": "木头姐ARK",
-      "title": "#528: OpenAI’s 1.2 Billion Users Could Be Its Agentic Advantage, & More",
+      "title": "#529: OpenAI’s $20 Billion Reporting Gap Unsettles The AI Trade, & More",
       "type": "Newsletters",
       "category": "Newsletters",
-      "source_url": "https://www.ark-invest.com/newsletters/issue-528",
-      "guid": "https://www.ark-invest.com/newsletters/issue-528",
-      "pub_date": "Mon, 05 Oct 2026 20:01:00 GMT",
-      "updated": "2026-10-05T22:44:31.306+00:00",
-      "event_datetime": "2026-10-05T22:44:31.306000+00:00",
-      "feed_key": "046bc6ad0b939409",
+      "source_url": "https://www.ark-invest.com/newsletters/issue-529",
+      "guid": "https://www.ark-invest.com/newsletters/issue-529",
+      "pub_date": "Mon, 12 Oct 2026 20:01:00 GMT",
+      "updated": "2026-10-12T20:15:49.883+00:00",
+      "event_datetime": "2026-10-12T20:15:49.883000+00:00",
+      "feed_key": "3cae4de2ef0ed3b1",
       "source_mineru": "source_mineru.md",
       "note": "note.md",
-      "output_dir": "xhs_notes/ark/261006/0001-ARK_528-OpenAI-s-1.2-Billion-Users-Could-Be-Its-Agentic-Advantage-More_046bc6ad0b939409"
+      "output_dir": "xhs_notes/ark/261013/0001-ARK_529-OpenAI-s-20-Billion-Reporting-Gap-Unsettles-The-AI-Trade-More_3cae4de2ef0ed3b1"
     }
   ],
   "status": "ok"
