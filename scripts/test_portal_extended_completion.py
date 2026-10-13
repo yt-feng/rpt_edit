@@ -124,6 +124,16 @@ class CompletionTests(unittest.TestCase):
         self.assertEqual(self.authenticate(completed_row=self.row),identity)
         self.assertEqual(exact_result(self.store,self.locale,self.generation,self.row),self.row)
 
+    def test_readonly_inspection_reports_exact_receipt_without_writes(self):
+        from inspect_portal_extended_continuation import inspect
+        identity=self.authenticate()
+        before=copy.deepcopy(self.client.objects)
+        value=inspect(self.store,self.generation,self.locale,self.snapshot['checkpoint_sha256'],
+            self.snapshot['candidate_id'],self.f.root/'inspection')
+        self.assertEqual(value['current_continuation']['completion_receipt_sha256'],identity)
+        self.assertEqual(value['production_writes'],0)
+        self.assertEqual(before,self.client.objects)
+
     def test_native_completion_preserves_actual_continuation_owner(self):
         active={**self.row,'status':'claimed','owner':self.owner}
         self.save_row(active)

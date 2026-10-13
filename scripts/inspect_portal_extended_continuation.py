@@ -188,6 +188,25 @@ def source_unit_protection_signals(text):
             'third_extra_quantity_count':len(extra)}
 
 
+def repair_ledger_diagnostics(store, corpus, checkpoint, locale):
+    """Read at most twenty exact fallback ledgers; never construct a translator."""
+    from portal_extended_repair_contract import quality_contract
+    from repair_portal_french_source_fallback import RepairEngine
+    engine = RepairEngine(quality_contract(locale))
+    required = engine.required_units(corpus)
+    selected = sorted(set(checkpoint.get('source_fallbacks', {})) & set(required))
+    result = []
+    for unit in selected[:20]:
+        claim, outcome, legacy = engine.prior_outcome(store, unit, required[unit])
+        result.append({'unit_sha256':unit,
+            'status':outcome['status'] if outcome else ('unresolved' if claim else 'fresh'),
+            'claim_sha256':digest(stable_bytes(claim)) if claim else None,
+            'outcome_sha256':digest(stable_bytes(outcome)) if outcome else None,
+            'legacy':legacy})
+    return {'units':result, 'total_selected_units':len(selected), 'maximum_reported_units':20,
+            'truncated':len(selected)>20}
+
+
 def inspect(store, generation, locale, checkpoint_sha, candidate_id, output):
     for value, label in ((generation, 'generation'), (checkpoint_sha, 'checkpoint sha'), (candidate_id, 'candidate')):
         safe_part(value, label=label, pattern=HEX64)
@@ -237,6 +256,18 @@ def inspect(store, generation, locale, checkpoint_sha, candidate_id, output):
                'quality_debt_status': debt.get('quality_status'),
                'quality_debt_candidate_id': debt.get('candidate_id'),
                'quality_debt_source_fallback_units': debt.get('source_fallback_unit_count')}
+    if origin:
+        from portal_extended_completion import optional, adoption_key, receipt_key
+        adopted = optional(store,adoption_key(store,origin,locale))
+        identity = registered.get('completion_sha256') or (adopted or {}).get('completion_sha256')
+        if identity:
+            receipt = optional(store,receipt_key(store,identity))
+            if (not receipt or digest(stable_bytes(receipt)) != identity
+                    or receipt.get('origin_sha256') != current['origin_sha256']
+                    or receipt.get('generation') != generation or receipt.get('locale') != locale
+                    or receipt.get('source_sha256') != source['sha256']):
+                raise ExpansionError('Completion receipt readback differs from exact source')
+            current['completion_receipt_sha256'] = identity
     result = {'schema_version': 1, 'read_only': True, 'generation': generation,
         'source_day': daily_corpus_day(corpus), 'source_sha256': source['sha256'],
         'source_document_count': len(docs), 'locale': locale,
@@ -250,6 +281,7 @@ def inspect(store, generation, locale, checkpoint_sha, candidate_id, output):
         'quantity_diagnostics': quantity_diagnostics(checkpoint),
         'source_fallback_diagnostics': source_fallback_diagnostics(checkpoint),
         'current_continuation': current,
+        'repair_ledger': repair_ledger_diagnostics(store,corpus,checkpoint,locale),
         'paid_provider_requests': 0,
         'production_writes': 0, 'model_calls': 0}
     (output/'inspection.json').write_bytes(stable_bytes(result))
