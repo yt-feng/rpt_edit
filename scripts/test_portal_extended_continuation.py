@@ -286,6 +286,17 @@ class ContinuationTests(unittest.TestCase):
         with self.assertRaisesRegex(ExpansionError, 'new directory'):
             inspect(self.store, self.gen, 'fr', proof['checkpoint_sha256'], proof['candidate_id'], self.root/'inspection')
 
+    def test_inspection_distinguishes_immutable_input_from_current_registered_candidate(self):
+        proof = self.partial()
+        complete = self.finish()
+        before = copy.deepcopy(self.store.client.objects)
+        result = inspect(self.store, self.gen, 'fr', proof['checkpoint_sha256'], proof['candidate_id'], self.root/'inspection')
+        self.assertEqual(result['status'], 'incomplete-candidate')
+        self.assertEqual(result['current_continuation']['registered_status'], 'complete')
+        self.assertEqual(result['current_continuation']['candidate_id'], complete['candidate_id'])
+        self.assertNotEqual(result['current_continuation']['candidate_id'], proof['candidate_id'])
+        self.assertEqual(self.store.client.objects, before)
+
     def test_quantity_inspection_emits_bounded_signatures_without_text(self):
         from inspect_portal_extended_continuation import quantity_diagnostics
         rows = {digest(str(number).encode()): {'source': 'Private source rose 50 basis points.',
