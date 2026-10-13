@@ -314,6 +314,30 @@ class ContinuationTests(unittest.TestCase):
         self.assertEqual(len(side['rows'][0]['values'][0]), 128)
         self.assertTrue(side['rows'][0]['value_truncated'])
 
+    def test_fallback_inspection_reports_bounded_lengths_without_source_or_unknown_codes(self):
+        from inspect_portal_extended_continuation import source_fallback_diagnostics
+        source = 'Private sentence. ' * 110
+        fallbacks = {digest(str(index).encode()): {'source': source, 'code': 'offline-token-limit'}
+                     for index in range(25)}
+        before = copy.deepcopy(fallbacks)
+        result = source_fallback_diagnostics({'source_fallbacks': fallbacks})
+        self.assertEqual(fallbacks, before)
+        self.assertEqual((result['fallback_unit_count'], len(result['reported_units'])), (25, 20))
+        self.assertTrue(result['truncated'])
+        row = result['reported_units'][0]
+        self.assertEqual(row['source_sha256'], digest(source.encode()))
+        self.assertEqual(row['source_characters'], len(source))
+        self.assertGreater(row['fragment_count'], 1)
+        self.assertLessEqual(row['maximum_fragment_characters'], 1801)
+        self.assertNotIn('Private', json.dumps(result))
+        limited = source_fallback_diagnostics({'source_fallbacks': {
+            digest(b'long'): {'source': 'x' * 1900, 'code': 'Private diagnostic message'}}})
+        self.assertEqual(limited['reported_units'][0]['split_status'], 'offline-context-limit')
+        self.assertEqual(limited['reported_units'][0]['code'], 'other')
+        self.assertNotIn('Private', json.dumps(limited))
+        with self.assertRaisesRegex(ExpansionError, 'unit identity'):
+            source_fallback_diagnostics({'source_fallbacks': {'private-key': {'source': source}}})
+
     def test_unit_alias_signals_normalize_invisible_separators_digits_and_word_order(self):
         from inspect_portal_extended_continuation import unit_alias_signals
         result = unit_alias_signals('Private ៥០ ចំណុច\u200bមូលដ្ឋាន; ពិន្ទុគោល ៧; 60 bps; 3 BPSPrivate')
