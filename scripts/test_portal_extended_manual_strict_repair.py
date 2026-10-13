@@ -70,6 +70,36 @@ class ManualStrictTests(unittest.TestCase):
         self.assertEqual(value['status'],'unresolved');self.assertIsNone(value['outcome_sha256'])
         self.assertEqual(before,self.client.objects)
 
+    def test_current_memo_probe_finds_independently_validated_exact_row_without_writes(self):
+        from inspect_portal_extended_continuation import current_memo_diagnostics
+        def inspect():
+            before=copy.deepcopy(self.client.objects)
+            with patch('offline_translation.OfflineTranslator',side_effect=AssertionError('inspection inferred')):
+                value=current_memo_diagnostics(self.store,self.f.corpus,self.f.old,self.locale)
+            self.assertEqual(before,self.client.objects)
+            self.assertNotIn('Revenue',json.dumps(value))
+            return value
+        self.assertEqual(inspect()['units'][0]['status'],'source-fallback')
+        unit=self.request()['units'][0]
+        original=self.f.old['source_fallbacks'][unit]
+        row={'source':original['source'],'language':original['language'],'text':'Chiffre d’affaires USD10m.'}
+        latest=copy.deepcopy(self.f.old)
+        latest['source_generation']='d'*64
+        latest['rows'][unit]=row
+        del latest['source_fallbacks'][unit]
+        raw=stable_bytes(latest); checksum=digest(raw)
+        self.store._put(self.store.checkpoint_object_key(self.locale,'d'*64,checksum),raw,metadata={'kind':'checkpoint'})
+        write_state(self.store,'memo',self.locale,{'generation':'d'*64,'sha256':checksum})
+        value=inspect()
+        self.assertEqual(value['generation'],'d'*64)
+        self.assertEqual(value['units'][0]['status'],'validated-row')
+        self.assertEqual(value['units'][0]['row_sha256'],digest(stable_bytes(row)))
+        latest['rows'].pop(unit)
+        raw=stable_bytes(latest); checksum=digest(raw)
+        self.store._put(self.store.checkpoint_object_key(self.locale,'d'*64,checksum),raw,metadata={'kind':'checkpoint'})
+        write_state(self.store,'memo',self.locale,{'generation':'d'*64,'sha256':checksum})
+        self.assertEqual(inspect()['units'][0]['status'],'absent')
+
     def operation(self, operation, request=None, *, translator=None, stage=True, seconds=900):
         args = SimpleNamespace(operation=operation, generation=self.generation, locale=self.locale,
             checkpoint=self.f.root/'manual.json', corpus=self.f.root/'manual-source.json',
