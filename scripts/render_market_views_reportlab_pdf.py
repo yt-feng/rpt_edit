@@ -8,6 +8,7 @@ cannot be registered as TrueType fonts.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -742,6 +743,16 @@ def build_pdf(summary_dir: Path, output_pdf: Path, *, _budget_chars: int = 4200)
         )
     story.append(Paragraph(clean_text(summary.get("title") or "Market Views｜全球投行叙事汇编"), styles["PortalTitle"]))
     story.append(Paragraph(clean_text(summary.get("subtitle") or "Daily market views roundup"), styles["PortalSubtitle"]))
+    delivery = summary.get("delivery_coverage") or {}
+    daily_total = summary.get("expected_source_reports", delivery.get("expected_reports", len(reports)))
+    daily_missing = daily_total - delivery.get("included_reports", len(reports))
+    if summary.get("source_kind") == "daily-digest":
+        story.append(Paragraph(clean_text(
+            f"当日来源摘要版：已整理 {delivery.get('included_reports', len(reports))} / "
+            f"已选 {daily_total} 份研究；"
+            f"暂缺 {daily_missing} 份。"
+            "本期按可核验来源出刊，未完成报告不阻塞当日交付。"
+        ), styles["PortalSmall"]))
     story.append(Paragraph(
         clean_text(
             f"投行/券商 {source_counts['bank_research']} 篇 | 战略咨询 {source_counts['consulting']} 篇 | "
@@ -850,6 +861,19 @@ def build_pdf(summary_dir: Path, output_pdf: Path, *, _budget_chars: int = 4200)
         ),
         styles["PortalBody"],
     ))
+    if summary.get("source_kind") == "daily-digest":
+        delivery = summary.get("delivery_coverage") or {}
+        story.append(Paragraph(clean_text(
+            f"选定来源 {daily_total} 份；"
+            f"已整理 {delivery.get('included_reports', len(reports))} 份；"
+            f"暂缺 {daily_missing} 份。"
+            "来源摘要保留原文观点和数字，不将单篇摘录表述为跨机构共识。"
+        ), styles["PortalBody"]))
+        skipped = [*(summary.get("skipped_reports") or []), *(summary.get("unavailable_originals") or [])]
+        if skipped:
+            story.append(Paragraph("暂未纳入的来源", styles["PortalH2"]))
+            for report in skipped:
+                story.append(Paragraph(clean_text(report.get("source_pdf") or "未命名文件"), styles["PortalSmall"]))
     if summary.get("source_kind") == "ocr-synthesis":
         inventory = summary.get("source_inventory") or {}
         story.append(Paragraph(clean_text(
@@ -917,6 +941,8 @@ def build_pdf(summary_dir: Path, output_pdf: Path, *, _budget_chars: int = 4200)
             + ", ".join(missing_figure_ids)
         )
     render_stats = {
+        "pdf_sha256": hashlib.sha256(output_pdf.read_bytes()).hexdigest(),
+        "summary_sha256": hashlib.sha256((summary_dir / "market_views_structured.json").read_bytes()).hexdigest(),
         "figure_candidate_count": len(figures),
         "selected_figure_count": len(selected_figure_ids),
         "rendered_figure_count": len(rendered_figure_ids),

@@ -2273,6 +2273,8 @@ def main() -> int:
     parser.add_argument("--figures-per-bank-section", type=int, default=4,
                         help="Maximum source exhibits rendered for each bank-led theme.")
     parser.add_argument("--compile", default="false")
+    parser.add_argument("--daily-delivery-receipt", type=Path,
+                        help="Verified available-source receipt for the bounded daily source-digest edition")
     args = parser.parse_args()
 
     root = Path(args.dropbox_output_root)
@@ -2286,6 +2288,20 @@ def main() -> int:
         raise RuntimeError(f"Primary bank source date folder could not be resolved under: {root}")
     primary_date_dir = date_dirs[0]
     require_primary_report_dirs(primary_date_dir)
+    daily_receipt = None
+    if args.daily_delivery_receipt is not None:
+        from market_views_partial_sources import verify_delivery
+        receipt_path = args.daily_delivery_receipt.resolve()
+        if receipt_path.parent != primary_date_dir.resolve():
+            raise ValueError("Daily delivery receipt must belong to the exact primary source directory")
+        context = json.loads(receipt_path.read_text(encoding="utf-8"))
+        daily_receipt = verify_delivery(
+            primary_date_dir, date_folder=report_date,
+            source_run_id=context.get("source_run_id"),
+            source_execution_sha=context.get("source_execution_sha"),
+        )
+        if extra_roots or args.max_reports:
+            raise ValueError("Daily delivery uses only its complete verified included inventory")
     log(f"Primary bank source date={primary_date_dir.name}; Market Views issue date={report_date}")
 
     report_dirs: list[Path] = []
@@ -2301,7 +2317,12 @@ def main() -> int:
             )
         log(f"Using {len(source_dirs)} report directories from {source_dir}")
         report_dirs.extend(source_dirs)
-    report_dirs, source_aliases = unique_original_report_dirs(report_dirs)
+    if daily_receipt is not None:
+        # The daily receipt authenticates its included subset; the normal native
+        # inventory validator deliberately requires an entirely different, full set.
+        source_aliases = {}
+    else:
+        report_dirs, source_aliases = unique_original_report_dirs(report_dirs)
     if args.max_reports > 0:
         report_dirs = report_dirs[: args.max_reports]
     if not report_dirs:
@@ -2372,7 +2393,13 @@ def main() -> int:
     for stale_path in out_dir.glob("deepseek_bank_section_*_error.txt"):
         stale_path.unlink()
     (out_dir / "prompt_for_market_views.md").write_text(build_prompt(reports, figures, args), encoding="utf-8")
-    summary = build_market_summary(reports, figures, args, out_dir)
+    if daily_receipt is not None:
+        if len(reports) != daily_receipt["included_reports"]:
+            raise ValueError("Daily delivery included report inventory changed before rendering")
+        from market_views_source_digest import make_summary
+        summary = make_summary(reports, figures, daily_receipt)
+    else:
+        summary = build_market_summary(reports, figures, args, out_dir)
     summary = json.loads(sanitize_text(json.dumps(summary, ensure_ascii=False)))
     coverage = summary.get("coverage") or {}
     summary["source_inventory"] = source_inventory_counts(reports)

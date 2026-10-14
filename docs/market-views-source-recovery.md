@@ -1,5 +1,51 @@
 # Market Views source recovery
 
+## Daily delivery independent of complete report processing
+
+[`market-views-daily-guard.yml`](../.github/workflows/market-views-daily-guard.yml)
+checks the actual private PDF and metadata every hour at minute 17 and after
+Daily/PDF workflow completion. From 06:00 Beijing time, a missing issue is built
+from the latest exact source date (today or yesterday). This workflow does not
+wait for all matrix shards, translation, article generation, or the GitHub jobs
+steps API. GitHub schedules can be delayed; the next invocation repeats the
+missing-publication check.
+
+The ordinary MinerU/model workflow remains the primary route. Each Daily shard
+also snapshots individually verified sources, including parsed originals whose
+article generation failed, to a separate private `market-views-available`
+handoff. The guard admits only sources bound to the exact selected manifest,
+producer run, execution SHA and original bytes. A broken shard or report is
+omitted while healthy sources continue. If source snapshots are unavailable,
+the guard uses retained exact originals, or a separately bound fresh Dropbox
+selection when Daily metadata/artifacts are unavailable. These lineages are
+never mixed.
+
+The deadline edition uses source-attributed thematic excerpts without a model
+dependency. Native text is read on every page; sparse pages may use OCR. Each
+PDF has a 45-second extraction allowance, the batch has a 10-minute allowance,
+and a report requiring more than 24 OCR pages is omitted. Original chart regions
+are retained where verified; whole-page screenshots are not the report body.
+At least one substantive current-source report is required. The cover and
+coverage appendix identify included, missing, and unavailable-download sources;
+an incomplete selection is never labelled complete. The output is capped at
+10 modules and 70 pages.
+
+Publication is serialized with the ordinary PDF workflow. The exact PDF,
+structured coverage and retained source receipt are hash-bound before upload.
+The guard reads back the full private PDF and receipt, verifies the portal list
+and membership download gate, and archives a neutral public copy. A verified
+existing issue is an idempotent no-op. A `daily-digest` cannot replace a standard
+or OCR-synthesis issue; the ordinary workflow can later upgrade the digest.
+Storage or source outages remain explicit failures, retried on later guard
+invocations instead of being reported as delivery success.
+
+Manual `acceptance_only=true, force_fallback=true` builds from a deliberately
+incomplete original subset with no model calls or publication writes. It retains
+the full selected denominator and produces a public-safe PDF plus sanitized
+coverage evidence. Production rejects the fault-injection option. Contract
+tests cover incomplete shards, corrupt sources, source identity, deadlines,
+rendered PDF/receipt binding, no downgrade, and actual partial PDF rendering.
+
 ## Primary architecture
 
 Market Views uses **MinerU API parsing on GitHub Actions** as its primary source

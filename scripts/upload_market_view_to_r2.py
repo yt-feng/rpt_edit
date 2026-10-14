@@ -24,6 +24,7 @@ LEGACY_VARIANTS_PREFIX = f"{MARKET_VIEWS_PREFIX}/legacy-variants"
 PDF_CONTENT_TYPE = "application/pdf"
 METADATA_CONTENT_TYPE = "application/json; charset=utf-8"
 MIN_PDF_BYTES = 1024
+EDITION_RANKS = {"source-pages": 0, "daily-digest": 1, "ocr-synthesis": 2, "standard": 3}
 
 
 class PrivatePublicationInvalid(RuntimeError):
@@ -231,6 +232,35 @@ def validate_existing_private_pair(
             f"Existing R2 Market Views item disagrees with its PDF for {item_key}: "
             + ", ".join(mismatches)
         )
+    if item.get("edition") == "daily-digest":
+        receipt_sha = item.get("source_receipt_sha256", "")
+        if not re.fullmatch(r"[a-f0-9]{64}", str(receipt_sha)):
+            raise PrivatePublicationInvalid("Daily delivery receipt hash is missing")
+        receipt_key = f"{MARKET_VIEWS_PREFIX}/receipts/{date_key}/{receipt_sha}.json"
+        if item.get("source_receipt_key") != receipt_key:
+            raise PrivatePublicationInvalid("Daily delivery receipt key disagrees with its date/hash")
+        raw_receipt = _read_r2_body(client.get_object(Bucket=bucket, Key=receipt_key), receipt_key)
+        if hashlib.sha256(raw_receipt).hexdigest() != receipt_sha:
+            raise PrivatePublicationInvalid("Daily delivery receipt bytes disagree with the index hash")
+        from market_views_publication import validate_daily_delivery_record
+        try:
+            receipt = validate_daily_delivery_record(json.loads(raw_receipt), date_folder=date_key)
+        except (ValueError, TypeError) as exc:
+            raise PrivatePublicationInvalid("Daily delivery source receipt is invalid") from exc
+        expected_delivery = {
+            "source_inventory_sha256": receipt["source_inventory_sha256"],
+            "source_manifest_sha256": receipt["manifest_sha256"],
+            "source_expected_reports": receipt.get("expected_source_reports", receipt["expected_reports"]),
+            "source_selected_reports": receipt["expected_reports"],
+            "source_unavailable_reports": len(receipt.get("unavailable_originals", [])),
+            "source_summarized_reports": receipt["included_reports"],
+            "source_skipped_reports": receipt["skipped_reports"],
+            "source_run_id": receipt["source_run_id"],
+            "source_execution_sha": receipt["source_execution_sha"],
+            "quality_status": "partial" if receipt["skipped_reports"] or receipt.get("unavailable_originals") else "source-digest",
+        }
+        if any(item.get(key) != value for key, value in expected_delivery.items()):
+            raise PrivatePublicationInvalid("Daily delivery item disagrees with its source receipt")
     return item
 
 
@@ -277,7 +307,7 @@ def private_publication_complete(
             return False
         raise
     if expected_edition is not None and item.get("edition", "standard") != expected_edition:
-        ranks = {"source-pages": 0, "ocr-synthesis": 1, "standard": 2}
+        ranks = EDITION_RANKS
         current = item.get("edition", "standard")
         if (allow_edition_upgrade and current in ranks and expected_edition in ranks
                 and ranks[current] < ranks[expected_edition]):
@@ -350,10 +380,18 @@ def upload_market_view(
 ) -> dict[str, Any]:
     """Upload and verify the PDF, then publish its metadata item."""
     issue_date, date_key = parse_issue_date(date_value)
-    if edition not in {"standard", "source-pages", "ocr-synthesis"}:
+    if edition not in EDITION_RANKS:
         raise ValueError("Unknown Market Views edition")
     path = Path(pdf_path).expanduser()
     synthesis = None
+    delivery = None
+    if edition == "daily-digest":
+        if source_receipt is None:
+            raise ValueError("Daily digest publication requires its verified source receipt")
+        from market_views_publication import validate_daily_delivery_receipt, validate_daily_delivery_pdf
+        receipt_path = Path(source_receipt)
+        delivery = validate_daily_delivery_receipt(receipt_path.parent, date_folder=date_key)
+        validate_daily_delivery_pdf(path, delivery)
     if edition == "ocr-synthesis":
         if source_receipt is None:
             raise ValueError("OCR synthesis publication requires its verified source receipt")
@@ -389,6 +427,30 @@ def upload_market_view(
     data = read_valid_pdf(path)
     size_bytes = len(data)
     sha256 = hashlib.sha256(data).hexdigest()
+    if delivery is not None:
+        pdf_exists, pdf_head = r2_object_exists(resolved_client, resolved_bucket, pdf_key)
+        item_exists, item_head = r2_object_exists(resolved_client, resolved_bucket, item_key)
+        if pdf_exists and item_exists:
+            try:
+                existing = validate_existing_private_pair(resolved_client, resolved_bucket,
+                    pdf_key=pdf_key, item_key=item_key, pdf_head=pdf_head, item_head=item_head,
+                    issue_date=issue_date, date_key=date_key, filename=filename)
+            except PrivatePublicationInvalid:
+                existing = None
+            except Exception as exc:
+                if not _r2_response_is_missing(exc):
+                    raise
+                existing = None
+            # A demonstrably invalid/incomplete stored pair is exactly what the
+            # independent guardian repairs. Unavailable storage still raises.
+            if existing is None:
+                rank = -1
+            else:
+                rank = EDITION_RANKS.get(existing.get("edition", "standard"), -1)
+            if rank > EDITION_RANKS[edition] or (existing is not None and existing.get("edition") == edition
+                    and existing.get("source_inventory_sha256") == delivery["source_inventory_sha256"]
+                    and existing.get("source_summarized_reports", 0) >= delivery["included_reports"]):
+                return {**existing, "skipped_existing": True, "preserved_higher_or_equal_edition": True}
     if if_absent:
         pdf_exists, pdf_head = r2_object_exists(resolved_client, resolved_bucket, pdf_key)
         item_exists, item_head = r2_object_exists(resolved_client, resolved_bucket, item_key)
@@ -427,6 +489,18 @@ def upload_market_view(
             return {**existing_item, "skipped_existing": True}
 
     timestamp = _utc_timestamp(updated_at)
+
+    delivery_receipt_key = None
+    if delivery is not None:
+        receipt_body = Path(source_receipt).read_bytes()
+        if hashlib.sha256(receipt_body).hexdigest() != delivery["source_receipt_sha256"]:
+            raise ValueError("Daily delivery receipt changed after validation")
+        delivery_receipt_key = f"{MARKET_VIEWS_PREFIX}/receipts/{date_key}/{delivery['source_receipt_sha256']}.json"
+        resolved_client.put_object(Bucket=resolved_bucket, Key=delivery_receipt_key, Body=receipt_body,
+            ContentType=METADATA_CONTENT_TYPE, CacheControl="private, max-age=86400")
+        stored_receipt = _read_r2_body(resolved_client.get_object(Bucket=resolved_bucket, Key=delivery_receipt_key), delivery_receipt_key)
+        if stored_receipt != receipt_body:
+            raise RuntimeError("Daily delivery source receipt did not verify after upload")
 
     resolved_client.put_object(
         Bucket=resolved_bucket,
@@ -484,6 +558,18 @@ def upload_market_view(
             source_summarized_reports=synthesis["summarized_reports"],
             source_skipped_reports=synthesis["skipped_reports"],
         )
+    elif delivery is not None:
+        item.update(edition="daily-digest",
+            quality_status="partial" if delivery["skipped_reports"] or delivery.get("unavailable_originals") else "source-digest",
+            title=f"Market Views · {issue_date.isoformat()}（来源摘要，{delivery['included_reports']}/{delivery.get('expected_source_reports', delivery['expected_reports'])}篇）",
+            source_inventory_sha256=delivery["source_inventory_sha256"],
+            source_manifest_sha256=delivery["manifest_sha256"],
+            source_receipt_sha256=delivery["source_receipt_sha256"], source_receipt_key=delivery_receipt_key,
+            source_expected_reports=delivery.get("expected_source_reports", delivery["expected_reports"]),
+            source_selected_reports=delivery["expected_reports"], source_unavailable_reports=len(delivery.get("unavailable_originals", [])),
+            source_summarized_reports=delivery["included_reports"],
+            source_skipped_reports=delivery["skipped_reports"], source_run_id=delivery["source_run_id"],
+            source_execution_sha=delivery["source_execution_sha"])
     item_body = (json.dumps(item, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n").encode(
         "utf-8"
     )
@@ -502,7 +588,7 @@ def main() -> int:
     parser.add_argument("--date", required=True, help="Issue date in YYMMDD or YYYYMMDD form.")
     parser.add_argument("--pdf", required=True, help="Path to market_views_<date>.pdf.")
     parser.add_argument("--bucket", default="", help="Optional R2 bucket override.")
-    parser.add_argument("--edition", choices=("standard", "source-pages", "ocr-synthesis"), default="standard")
+    parser.add_argument("--edition", choices=tuple(EDITION_RANKS), default="standard")
     parser.add_argument("--source-receipt", default=None, help="Exact OCR synthesis receipt beside the generated PDF.")
     parser.add_argument(
         "--if-absent",
