@@ -20,6 +20,9 @@ import time
 
 LEGAL = re.compile(r"disclaimer|disclosure|all rights reserved|not (?:an? )?(?:offer|investment advice)|"
                    r"copyright|analyst certification|distribution of ratings|免责声明|版权|分析师声明|评级分布|"
+                   r"(?:investors?|recipients?)\s+should\s+consider.{0,160}(?:single|one)\s+factor.{0,100}investment\s+decision|"
+                   r"intended\s+solely\s+for\s+(?:the\s+)?recipient|may\s+not\s+be\s+(?:further\s+)?distributed|"
+                   r"does\s+and\s+seeks\s+to\s+do\s+business\s+with|"
                    r"https?://|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}", re.I)
 RESEARCH = re.compile(r"growth|inflation|econom|market|forecast|expect|demand|supply|revenue|earnings|"
                       r"investment|interest rate|valuation|policy|yield|equity|capital|consumer|"
@@ -75,6 +78,47 @@ def substantive_sentences(text: str, *, limit: int = 12, max_chars: int = 600) -
         if len(results) >= limit:
             break
     return results
+
+
+def daily_category_for(report: dict) -> str:
+    """Classify the report subject, never incidental words in its body.
+
+    In particular EV must not match 'preview', AI must not match 'retail', and
+    a company earnings preview belongs to its sector rather than a broad equity
+    strategy merely because it mentions earnings or valuation.
+    """
+    from build_market_views_pdf import BANK_CATEGORY_RULES
+    title = str(report.get("title") or "").casefold().replace("_", " ")
+
+    def matches(keyword):
+        if keyword.isascii():
+            pattern = re.escape(keyword).replace(r"\ ", r"\s+")
+            return bool(re.search(r"(?<![a-z0-9])" + pattern + r"(?![a-z0-9])", title))
+        return keyword in title
+
+    if any(matches(word) for word in ("telecom", "telecommunications", "broadband", "电信", "宽带", "有线电视")):
+        return "电信、宽带与有线网络"
+    if any(matches(word) for word in ("equity strategy", "quant strategy", "tech strategy", "equity weekly",
+                                     "portfolio strategy", "股票策略", "量化策略")):
+        return "股票策略、估值与资金流"
+    additions = {
+        "AI、半导体与硬件": ("iphone", "smartphone", "apple", "tsmc", "nvidia", "semis", "handset", "智能手机", "台积电", "苹果"),
+        "软件、互联网与数字平台": ("payment technology", "payment processing", "payments", "fintech", "amazon", "amzn", "aws",
+            "alphabet", "google", "meta", "microsoft", "tencent", "alibaba", "jd.com", "pdd", "baidu", "支付", "金融科技"),
+        "汽车、新能源与工业": ("autos", "automotive", "electric vehicles", "nevs", "bevs", "phevs", "toyota", "tesla"),
+    }
+    generic = {"宏观、央行与利率", "外汇与跨境资金", "股票策略、估值与资金流",
+               "日本、韩国与亚洲市场", "欧洲、美洲与新兴市场"}
+    scored = []
+    for index, (category, keywords) in enumerate(BANK_CATEGORY_RULES):
+        hits = [word for word in (*keywords, *additions.get(category, ())) if matches(word)]
+        if not hits:
+            continue
+        score = sum(3 if " " in word or word in additions.get(category, ()) else 1 for word in hits)
+        # Specific sector evidence in the title outweighs generic 'earnings'
+        # and geographical labels; an explicit strategy title returned above.
+        scored.append((category not in generic, score, -index, category))
+    return max(scored)[-1] if scored else "其他公司与行业信号"
 
 
 def _write_json(path: Path, value) -> None:
@@ -257,17 +301,14 @@ def extract_candidates(manifest: Path, originals_dir: Path, destination: Path, *
 
 def make_summary(reports: list[dict], figures: list[dict], receipt: dict) -> dict:
     """A thematic, attributed excerpt edition; no model or inferred consensus."""
-    from build_market_views_pdf import bank_alias, bank_category_for, cap_bank_plan, select_section_figures
+    from build_market_views_pdf import bank_alias, cap_bank_plan, select_section_figures
     included = {row["report_id"] for row in receipt["reports"] if row["status"] == "included"}
     if len(reports) != receipt["included_reports"] or {Path(row.get("path", "")).name for row in reports} != included:
         raise ValueError("daily_digest_report_inventory_mismatch")
     by_id = {row["id"]: row for row in reports}
     grouped = {}
     for report in reports:
-        # Telecom sector titles often mention satellite broadband alongside
-        # cable; that does not turn the whole report into aerospace research.
-        title = str(report.get("title") or "")
-        heading = "电信、宽带与有线网络" if re.search(r"telecom|broadband|电信|宽带|有线电视", title, re.I) else bank_category_for(report)
+        heading = daily_category_for(report)
         grouped.setdefault(heading, []).append(report["id"])
     plan_rows = cap_bank_plan([{"heading": heading, "report_ids": ids}
                               for heading, ids in grouped.items()])

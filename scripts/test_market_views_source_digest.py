@@ -87,6 +87,20 @@ class ExtractionTests(unittest.TestCase):
         self.assertTrue(any('We expect economic growth' in value for value in selected))
         self.assertFalse(any('Valuations Reset' in value for value in selected))
 
+    def test_observed_investment_and_distribution_notices_are_not_source_quotes(self):
+        notices = [
+            'Investors should consider this report as only a single factor in making their investment decision.',
+            'Investors should consider MS as only a single factor in making their investment decision.',
+            'The information contained in the Product is intended solely for the recipient and may not be further '
+            'distributed by the recipient to any third party. 2026 Citi Global Markets Inc.',
+        ]
+        for notice in notices:
+            with self.subTest(notice=notice):
+                self.assertEqual(digest.substantive_sentences(notice), [])
+                selected = digest.substantive_sentences(notice + '\n\n' + TEXT)
+                self.assertTrue(selected)
+                self.assertTrue(selected[0].startswith('We expect economic growth'))
+
     def test_missing_bad_and_slow_sources_do_not_block_later_originals(self):
         original = self.root / "good.pdf"
         sha = pdf(original)
@@ -181,6 +195,7 @@ class DeliveryPublicationTests(unittest.TestCase):
         self.assertEqual(item["source_summarized_reports"], 1)
         self.assertEqual(item["source_expected_reports"], 2)
         self.assertTrue(uploader.private_publication_complete(DATE, client=self.client, bucket="test"))
+
         self.client.objects[item["source_receipt_key"]]["Body"] += b" "
         self.assertFalse(uploader.private_publication_complete(DATE, client=self.client, bucket="test"))
 
@@ -286,6 +301,29 @@ class DeliveryPublicationTests(unittest.TestCase):
         self.assertEqual(item["source_unavailable_reports"], 1)
         self.assertIn("1/3", item["title"])
         self.assertTrue(uploader.private_publication_complete(DATE, client=self.client, bucket="test"))
+
+
+class DailyCategoryTests(unittest.TestCase):
+    def test_actual_company_previews_stay_in_their_sectors(self):
+        cases = [
+            ('GS AMERICAS PAYMENT TECHNOLOGY 3Q26 Preview: Expect strong spending trends', '软件、互联网与数字平台'),
+            ('HSBC Amazon.com Q3 results preview: Delivering on AWS cloud and AI potential', '软件、互联网与数字平台'),
+            ('JPM Apple Inc iPhone revenues: Revisiting near-term estimates', 'AI、半导体与硬件'),
+            ('HSBC Semiconductor Earnings Preview: TSMC', 'AI、半导体与硬件'),
+            ('HSBC Retail Sector Q3 Preview', '消费、零售与奢侈品'),
+            ('Bernstein Asia Quant Strategy & Asia Semis & Internet: Asia Tech Strategy 4Q26', '股票策略、估值与资金流'),
+            ('Cables Satellite Telecom Market Outlook', '电信、宽带与有线网络'),
+            ('EV battery demand outlook', '汽车、新能源与工业'),
+        ]
+        for title, expected in cases:
+            with self.subTest(title=title):
+                self.assertEqual(digest.daily_category_for({'title': title}), expected)
+
+    def test_unknown_title_does_not_inherit_incidental_body_or_partial_word_matches(self):
+        for title in ('Market Update Preview', 'Goldman Sachs Research Briefing'):
+            with self.subTest(title=title):
+                self.assertEqual(digest.daily_category_for({'title': title,
+                    'digest': 'AI chip EV battery industrial auto earnings market outlook'}), '其他公司与行业信号')
 
 
 if __name__ == "__main__":
