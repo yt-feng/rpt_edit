@@ -4392,6 +4392,18 @@
     "bruegel:12580": {
       "first_seen": "2026-10-13",
       "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/work1382.htm": {
+      "first_seen": "2026-10-14",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/serv_07oct26_512_e.htm": {
+      "first_seen": "2026-10-14",
+      "status": "too_old"
+    },
+    "bruegel:12567": {
+      "first_seen": "2026-10-14",
+      "status": "downloaded"
     }
   }
 }
