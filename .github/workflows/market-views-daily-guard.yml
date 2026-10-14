@@ -1,0 +1,216 @@
+name: Market Views daily publication guard
+run-name: Market Views guard ${{ inputs.date_folder || 'latest fresh source' }}${{ inputs.acceptance_only && ' acceptance' || '' }}
+
+on:
+  schedule:
+    # Avoid the busy top of the hour. The script uses the Beijing 06:00 cutoff.
+    - cron: '17 * * * *'
+  workflow_run:
+    workflows: ['Daily report articles and translations', 'Market views daily PDF']
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      date_folder:
+        description: 'Optional exact latest Dropbox source date, YYMMDD'
+        required: false
+        default: ''
+      source_run_id:
+        description: 'Optional exact authenticated Daily source run for a reviewed recovery'
+        required: false
+        default: ''
+      acceptance_only:
+        description: 'Build a private acceptance artifact without publishing'
+        type: boolean
+        default: false
+      force_fallback:
+        description: 'Acceptance only: exercise the independent source fallback'
+        type: boolean
+        default: false
+  pull_request:
+    paths:
+      - '.github/workflows/market-views-daily-guard.yml'
+      - 'scripts/market_views_daily_guard.py'
+      - 'scripts/test_market_views_daily_guard.py'
+      - 'scripts/market_views_partial_sources.py'
+      - 'scripts/test_market_views_partial_sources.py'
+      - 'scripts/market_views_source_digest.py'
+      - 'scripts/test_market_views_source_digest.py'
+      - 'scripts/publish_daily_market_views.py'
+      - 'scripts/test_publish_daily_market_views.py'
+      - 'scripts/market_views_publication.py'
+      - 'scripts/test_market_views_publication.py'
+      - 'scripts/upload_market_view_to_r2.py'
+      - 'scripts/test_upload_market_view_to_r2.py'
+      - 'scripts/build_market_views_pdf.py'
+      - 'scripts/render_market_views_reportlab_pdf.py'
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  # Publication holds the same lock as the ordinary PDF publisher. Acceptance
+  # has no publication writes and does not delay the daily release.
+  group: ${{ github.event_name == 'pull_request' && format('market-views-guard-contract-{0}', github.run_id) || (inputs.acceptance_only == true && format('market-views-guard-acceptance-{0}', github.run_id) || 'market-views-daily-pdf') }}
+  cancel-in-progress: false
+
+env:
+  PYTHONUNBUFFERED: '1'
+
+jobs:
+  contract:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install --retries 0 requests PyYAML PyMuPDF Pillow pypdf reportlab 'boto3>=1.37.32,<2'
+      - name: Verify independent daily publication contracts
+        run: |
+          python3 -B scripts/test_market_views_daily_guard.py
+          for test_file in scripts/test_market_views_partial_sources.py scripts/test_market_views_source_digest.py scripts/test_publish_daily_market_views.py; do
+            if [ -f "$test_file" ]; then python3 -B "$test_file"; fi
+          done
+          python3 -B scripts/test_market_views_publication.py
+          python3 -B scripts/test_upload_market_view_to_r2.py
+
+  ensure-publication:
+    if: >-
+      ${{ github.event_name != 'pull_request' &&
+          (github.ref == 'refs/heads/main' ||
+           (github.event_name == 'workflow_dispatch' && inputs.acceptance_only == true)) &&
+          (github.event_name != 'workflow_run' ||
+           (github.event.workflow_run.head_branch == 'main' &&
+            github.event.workflow_run.head_repository.full_name == github.repository)) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Match the execution SHA recorded in fresh-source receipts.
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+          sparse-checkout: |
+            .github
+            scripts
+            prompts
+            requirements.txt
+            market_view_summaries
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install source and publication dependencies
+        run: python3 -m pip install --retries 2 --disable-pip-version-check requests 'boto3>=1.37.32,<2' PyMuPDF Pillow pypdf reportlab PyYAML
+      - name: Prepare exact fresh sources without waiting for Daily completion
+        id: prepare
+        timeout-minutes: 20
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          ACCEPTANCE_ONLY: ${{ inputs.acceptance_only }}
+          FORCE_FALLBACK: ${{ inputs.force_fallback }}
+          DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
+          DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
+          DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET || 'portal-suite-pdfs' }}
+        run: |
+          args=(prepare --workspace "$RUNNER_TEMP/market-views-guard")
+          if [ -n "$DATE_FOLDER" ]; then args+=(--date-folder "$DATE_FOLDER"); fi
+          if [ -n "$SOURCE_RUN_ID" ]; then args+=(--source-run-id "$SOURCE_RUN_ID"); fi
+          if [ "$ACCEPTANCE_ONLY" = true ]; then args+=(--acceptance-only); fi
+          if [ "$FORCE_FALLBACK" = true ]; then args+=(--force-fallback); fi
+          python3 -B scripts/market_views_daily_guard.py "${args[@]}"
+      - name: Verify existing publication is actually visible in the portal
+        if: steps.prepare.outputs.should_build == 'false' && steps.prepare.outputs.private_publication_verified == 'true'
+        timeout-minutes: 5
+        env:
+          DATE_FOLDER: ${{ steps.prepare.outputs.date_folder }}
+          PORTAL_SITE_URL: https://kcdesk.com
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET || 'portal-suite-pdfs' }}
+        run: |
+          for attempt in 1 2 3; do
+            if python3 -B scripts/inspect_market_views_live.py --dates "$DATE_FOLDER" --output "$RUNNER_TEMP/market-views-guard/live-inspection.json"; then exit 0; fi
+            if [ "$attempt" -lt 3 ]; then sleep 15; fi
+          done
+          exit 1
+      - name: Install readable Chinese fonts and bounded OCR runtime
+        if: steps.prepare.outputs.should_build == 'true'
+        timeout-minutes: 5
+        continue-on-error: true
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends fonts-noto-cjk tesseract-ocr tesseract-ocr-eng tesseract-ocr-chi-sim
+      - name: Materialize private publishing image
+        if: steps.prepare.outputs.should_build == 'true'
+        env:
+          PORTAL_PRIVATE_PUBLISH_ASSET_KEY: ${{ secrets.PORTAL_PRIVATE_PUBLISH_ASSET_KEY }}
+        run: bash scripts/materialize_private_social_asset.sh prompts
+      - name: Build and publish available daily issue
+        id: publish
+        if: steps.prepare.outputs.should_build == 'true'
+        timeout-minutes: 30
+        env:
+          ACCEPTANCE_ONLY: ${{ inputs.acceptance_only }}
+          FORCE_FALLBACK: ${{ inputs.force_fallback }}
+          CONTEXT_PATH: ${{ steps.prepare.outputs.context_path }}
+          PORTAL_SITE_URL: https://kcdesk.com
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET || 'portal-suite-pdfs' }}
+        run: |
+          args=(--context "$CONTEXT_PATH" --workspace "$RUNNER_TEMP/market-views-guard")
+          if [ "$ACCEPTANCE_ONLY" = true ]; then args+=(--acceptance-only); fi
+          if [ "$FORCE_FALLBACK" = true ]; then args+=(--force-fallback); fi
+          python3 -B scripts/publish_daily_market_views.py "${args[@]}"
+      - name: Archive public-safe daily issue
+        if: steps.publish.outputs.published == 'true'
+        env:
+          DATE_FOLDER: ${{ steps.prepare.outputs.date_folder }}
+          PUBLIC_PDF: ${{ steps.publish.outputs.public_pdf }}
+        run: |
+          target="market_view_summaries/$DATE_FOLDER/market_views_$DATE_FOLDER.pdf"
+          mkdir -p "$(dirname "$target")"
+          cp "$PUBLIC_PDF" "$target"
+          git restore --source=HEAD --worktree -- prompts/zsxq_img.jpg
+          git add -f "$target"
+          python3 -B scripts/check_public_identity.py
+          git reset -- "$target"
+          bash scripts/commit_output_dir.sh "$target" "Archive available Market Views $DATE_FOLDER" 8 true true
+      - name: Retain public-safe acceptance PDF and delivery evidence
+        if: always() && steps.prepare.outputs.should_build == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: market-views-daily-delivery-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/market-views-guard/public/*.pdf
+            ${{ runner.temp }}/market-views-guard/public/delivery-coverage.json
+            ${{ runner.temp }}/market-views-guard/delivery-result.json
+            ${{ runner.temp }}/market-views-guard/rendered/*/market_views_render_stats.json
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Retain sanitized guardian decision
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: market-views-guard-decision-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/market-views-guard/plan.json
+            ${{ runner.temp }}/market-views-guard/live-inspection.json
+          if-no-files-found: ignore
+          retention-days: 7

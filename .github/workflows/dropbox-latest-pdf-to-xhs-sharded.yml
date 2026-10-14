@@ -634,6 +634,31 @@ jobs:
             --manifest "_selected_macro_manifest/selected_to_process_manifest.json" \
             --directory "$OUTPUT_DIR" \
             --complete "${{ steps.completed.outputs.complete == 'true' || steps.shard_summary.outcome == 'success' }}"
+      - name: Snapshot individually ready Market Views sources
+        if: ${{ always() && steps.generation_checkpoint.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          if [ ! -f _selected_macro_manifest/selected_to_process_manifest.json ] || [ ! -d "$OUTPUT_DIR" ]; then
+            echo "::notice::No source-bound report directory is available for a Market Views snapshot."
+            exit 0
+          fi
+          SNAPSHOT_DIR="$RUNNER_TEMP/market-views-available/shard_${{ matrix.shard_index }}"
+          python scripts/market_views_partial_sources.py prepare \
+            --manifest _selected_macro_manifest/selected_to_process_manifest.json \
+            --directory "$OUTPUT_DIR" --destination "$SNAPSHOT_DIR" \
+            --date-folder "${{ needs.select-macro-reports.outputs.latest_folder }}" \
+            --source-run-id "$GITHUB_RUN_ID" --source-execution-sha "$GITHUB_SHA" \
+            --shard-index "${{ matrix.shard_index }}" \
+            --reports-per-shard "${{ needs.resolve-inputs.outputs.reports_per_shard }}"
+          python scripts/private_workflow_handoff.py upload-dir \
+            --source "$SNAPSHOT_DIR" \
+            --key "_private-workflow-handoff/market-views-available/$GITHUB_RUN_ID/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_${{ matrix.shard_index }}.tar.gz"
       - name: Upload shard to private R2 handoff
         if: ${{ steps.gate.outputs.run == 'true' }}
         env:

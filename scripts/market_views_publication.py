@@ -7,6 +7,7 @@ from pathlib import Path
 import re
 
 RECEIPT_NAME = "ocr_synthesis_receipt.json"
+DAILY_RECEIPT_NAME = "daily_delivery_receipt.json"
 OCR_CACHE_RECOVERY_WORKFLOW = ".github/workflows/recover-ocr-cache-sources.yml"
 SHA256 = re.compile(r"[a-f0-9]{64}")
 NORMAL_KINDS = {"xhs", "native-pdf", "mineru-recovery", "legacy-daily"}
@@ -30,6 +31,118 @@ def source_inventory_sha256(reports):
     _require(len({name for name, _ in inventory}) == len(inventory), "duplicate_source_inventory")
     raw = json.dumps(sorted(inventory), ensure_ascii=False, separators=(",", ":")).encode()
     return hashlib.sha256(raw).hexdigest()
+
+
+def validate_daily_delivery_record(value, *, date_folder):
+    """Validate the source inventory retained in a private publication receipt."""
+    from upload_market_view_to_r2 import parse_issue_date
+    date = parse_issue_date(str(date_folder))[1]
+    _require(isinstance(value, dict) and type(value.get("schema_version")) is int and value["schema_version"] == 1
+             and value.get("source_kind") == "daily-digest" and value.get("date_folder") == date,
+             "invalid_daily_delivery_receipt")
+    _require(re.fullmatch(r"[1-9][0-9]*", str(value.get("source_run_id", "")))
+             and re.fullmatch(r"[a-f0-9]{40}", str(value.get("source_execution_sha", ""))),
+             "invalid_daily_delivery_producer")
+    rows = value.get("reports")
+    inventory = source_inventory_sha256(rows)
+    expected, included, skipped = (value.get(key) for key in ("expected_reports", "included_reports", "skipped_reports"))
+    _require(all(type(number) is int for number in (expected, included, skipped))
+             and expected > 0 and included > 0 and skipped >= 0
+             and included + skipped == expected == len(rows)
+             and sum(row.get("status") == "included" for row in rows) == included
+             and sum(row.get("status") == "skipped" for row in rows) == skipped,
+             "invalid_daily_delivery_counts")
+    _require(value.get("source_inventory_sha256") == inventory
+             and SHA256.fullmatch(str(value.get("manifest_sha256", ""))), "daily_delivery_inventory_mismatch")
+    unavailable = value.get("unavailable_originals", [])
+    _require(isinstance(unavailable, list) and all(isinstance(row, dict)
+             and isinstance(row.get("source_pdf"), str) and Path(row["source_pdf"]).name == row["source_pdf"]
+             and "\\" not in row["source_pdf"] and Path(row["source_pdf"]).suffix.lower() == ".pdf"
+             and re.fullmatch(r"[a-z][a-z0-9_]{0,79}", str(row.get("reason", ""))) for row in unavailable),
+             "daily_delivery_unavailable_originals_invalid")
+    _require(len({row["source_pdf"] for row in unavailable}) == len(unavailable)
+             and not {row["source_pdf"] for row in unavailable}.intersection(row["source_pdf"] for row in rows)
+             and value.get("expected_source_reports", expected) == expected + len(unavailable),
+             "daily_delivery_expected_source_count_mismatch")
+    _require(value.get("complete_source_inventory") is (skipped == 0 and not unavailable),
+             "daily_delivery_completeness_mismatch")
+    for row in rows:
+        if row["status"] == "skipped":
+            _require(re.fullmatch(r"[a-z][a-z0-9_]{0,79}", str(row.get("reason", ""))),
+                     "missing_daily_delivery_skip_reason")
+        else:
+            _require(isinstance(row.get("report_id"), str) and row["report_id"]
+                     and re.fullmatch(r"[a-z][a-z0-9_-]{0,79}", str(row.get("source_method", ""))),
+                     "invalid_daily_delivery_included_source")
+    return value
+
+
+def validate_daily_delivery_receipt(root, *, date_folder, source_run_id=None, source_execution_sha=None):
+    """Verify every copied source byte before allowing the deadline edition."""
+    root = Path(root)
+    raw = (root / DAILY_RECEIPT_NAME).read_bytes()
+    value = validate_daily_delivery_record(json.loads(raw), date_folder=date_folder)
+    if source_run_id is not None:
+        _require(value["source_run_id"] == str(source_run_id), "daily_delivery_producer_mismatch")
+    if source_execution_sha is not None:
+        _require(value["source_execution_sha"] == source_execution_sha, "daily_delivery_producer_mismatch")
+    from market_views_partial_sources import verify_delivery
+    verify_delivery(root, date_folder=date_folder, source_run_id=value["source_run_id"],
+                    source_execution_sha=value["source_execution_sha"])
+    for row in value["reports"]:
+        if row["status"] != "included" or row["source_method"] != "source-digest":
+            continue
+        evidence = json.loads((root / row["report_id"] / "source_excerpt_evidence.json").read_bytes())
+        count = evidence.get("page_count")
+        _require(evidence.get("source_pdf") == row["source_pdf"]
+                 and evidence.get("content_sha256") == row["content_sha256"]
+                 and type(count) is int and count > 0
+                 and [page.get("page") for page in evidence.get("examined_pages", [])] == list(range(1, count + 1)),
+                 "daily_delivery_excerpt_source_mismatch")
+        excerpts = evidence.get("excerpts")
+        _require(isinstance(excerpts, list) and excerpts and all(isinstance(item, dict)
+                 and type(item.get("page")) is int and 1 <= item["page"] <= count
+                 and isinstance(item.get("text"), str) and len(item["text"]) >= 40 for item in excerpts),
+                 "daily_delivery_excerpt_evidence_invalid")
+        for figure in evidence.get("figures", []):
+            box, size = figure.get("crop_bbox", []), figure.get("page_size", [])
+            _require(len(box) == 4 and len(size) == 2 and all(type(number) in (int, float) for number in box + size)
+                     and size[0] > 0 and size[1] > 0 and box[2] > box[0] and box[3] > box[1]
+                     and (box[2] - box[0]) * (box[3] - box[1]) / (size[0] * size[1]) <= .70,
+                     "daily_delivery_full_page_figure_rejected")
+    return {**value, "source_receipt_sha256": hashlib.sha256(raw).hexdigest()}
+
+
+def validate_daily_delivery_pdf(pdf_path, receipt):
+    """Bind rendered PDF bytes to the checked source inventory and coverage."""
+    path = Path(pdf_path)
+    summary_path = path.parent / "market_views_structured.json"
+    summary_raw = summary_path.read_bytes()
+    summary = json.loads(summary_raw)
+    _require(summary.get("source_kind") == "daily-digest", "daily_delivery_pdf_kind_mismatch")
+    context = summary.get("delivery_receipt") or {}
+    _require(all(context.get(key) == receipt[key] for key in
+                 ("date_folder", "source_run_id", "source_execution_sha", "source_inventory_sha256")),
+             "daily_delivery_pdf_source_mismatch")
+    _require(summary.get("delivery_coverage") == {key: receipt[key] for key in
+                 ("expected_reports", "included_reports", "skipped_reports")}, "daily_delivery_pdf_coverage_mismatch")
+    omitted = {row["source_pdf"] for row in receipt["reports"] if row["status"] == "skipped"}
+    _require({row.get("source_pdf") for row in summary.get("skipped_reports", [])} == omitted,
+             "daily_delivery_pdf_omissions_missing")
+    _require(summary.get("unavailable_originals", []) == receipt.get("unavailable_originals", [])
+             and summary.get("expected_source_reports", receipt["expected_reports"]) ==
+                 receipt.get("expected_source_reports", receipt["expected_reports"]),
+             "daily_delivery_pdf_unavailable_originals_missing")
+    stats = json.loads((path.parent / "market_views_render_stats.json").read_bytes())
+    _require(stats.get("pdf_sha256") == hashlib.sha256(path.read_bytes()).hexdigest()
+             and stats.get("summary_sha256") == hashlib.sha256(summary_raw).hexdigest(),
+             "daily_delivery_pdf_render_binding_mismatch")
+    import fitz
+    with fitz.open(path) as document:
+        _require(1 <= len(document) <= 70 and stats.get("page_count") == len(document)
+                 and type(stats.get("module_count")) is int and 1 <= stats["module_count"] <= 10
+                 and any(page.get_text().strip() for page in document), "daily_delivery_pdf_limits_invalid")
+    return summary
 
 
 def validate_ocr_cache_recovery_lineage(receipt, *, source_run_id, source_execution_sha,
@@ -221,14 +334,14 @@ def publication_plan(pdf_path, date_value, *, source_kind, force_rebuild=False,
     """Only reuse a readable matching edition; lower editions are rebuilt."""
     from market_views_source_preview import readable_pdf, degraded_pdf
     from upload_market_view_to_r2 import private_publication_complete
-    _require(source_kind in NORMAL_KINDS | {"ocr-synthesis"}, "unsupported_publication_source_kind")
-    edition = "ocr-synthesis" if source_kind == "ocr-synthesis" else "standard"
+    _require(source_kind in NORMAL_KINDS | {"ocr-synthesis", "daily-digest"}, "unsupported_publication_source_kind")
+    edition = source_kind if source_kind in {"ocr-synthesis", "daily-digest"} else "standard"
     if force_rebuild or acceptance_only:
         return {"should_build": True, "edition": edition, "reason": "explicit_rebuild"}
     path = Path(pdf_path)
     if not readable_pdf(path) or degraded_pdf(path):
         return {"should_build": True, "edition": edition, "reason": "missing_or_source_pages_pdf"}
-    if edition == "ocr-synthesis" and not source_inventory:
+    if edition in {"ocr-synthesis", "daily-digest"} and not source_inventory:
         return {"should_build": True, "edition": edition, "reason": "unbound_source_inventory"}
     complete = private_publication_complete(
         date_value, expected_edition=edition, allow_edition_upgrade=True,

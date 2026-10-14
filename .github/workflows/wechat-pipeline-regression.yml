@@ -193,6 +193,10 @@ jobs:
           python scripts/test_recover_private_wechat_handoff.py
           python scripts/test_market_views_workflow_contract.py
           python scripts/test_market_views_publication.py
+          python scripts/test_market_views_daily_guard.py
+          python scripts/test_market_views_partial_sources.py
+          python scripts/test_market_views_source_digest.py
+          python scripts/test_publish_daily_market_views.py
           python scripts/test_build_market_views_ocr_fallback.py
           python scripts/test_market_views_cross_report.py
           python scripts/test_inspect_durable_mineru.py
