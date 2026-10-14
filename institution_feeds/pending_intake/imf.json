@@ -1,39 +1,5 @@
 {
   "schema": 1,
   "institution": "imf",
-  "items": {
-    "imf:0d6dc398f7625946df5c2a88519e981f44d18fc2e0196bdff150e09c226f": {
-      "item": {
-        "title": "Fear and Shortages: Identifying Geopolitical Risk and Supply Disruptions in Energy Markets",
-        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/10/06/fear-and-shortages-identifying-geopolitical-risk-and-supply-disruptions-in-energy-markets-580178",
-        "guid": "0d6dc398f7625946df5c2a88519e981f44d18fc2e0196bdff150e09c226f",
-        "date": "2026-10-13T02:00:00+00:00",
-        "pdf_candidates": [
-          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026218-source-pdf.pdf",
-          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026218.pdf"
-        ],
-        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/10/06/fear-and-shortages-identifying-geopolitical-risk-and-supply-disruptions-in-energy-markets-580178",
-        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/10/06/fear-and-shortages-identifying-geopolitical-risk-and-supply-disruptions-in-energy-markets-580178"
-      },
-      "admitted_at": "2026-10-13T02:48:56.680935+00:00",
-      "since_days": 7,
-      "last_attempted_at": "2026-10-13T04:36:50.651518+00:00",
-      "attempts": 2
-    },
-    "imf:2a0365759114a7a4bec799cfad172b641696912139fb3d1a3c611c8aa2da": {
-      "item": {
-        "title": "Resilience, Risk, and Transformation",
-        "source_url": "https://www.imf.org/en/publications/gfsr/issues/2026/10/13/global-financial-stability-report-october-2026",
-        "guid": "2a0365759114a7a4bec799cfad172b641696912139fb3d1a3c611c8aa2da",
-        "date": "2026-10-13T03:15:00+00:00",
-        "pdf_candidates": [],
-        "scrape_url": "https://www.imf.org/en/publications/gfsr/issues/2026/10/13/global-financial-stability-report-october-2026",
-        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/gfsr/issues/2026/10/13/global-financial-stability-report-october-2026"
-      },
-      "admitted_at": "2026-10-13T04:36:50.651518+00:00",
-      "since_days": 7,
-      "last_attempted_at": "2026-10-13T04:36:50.651518+00:00",
-      "attempts": 1
-    }
-  }
+  "items": {}
 }
