@@ -35,6 +35,26 @@ original batches do not release result rows to generation, even when the
 requested subset has completed. See
 [MinerU in-flight recovery](mineru-inflight-recovery.md) for the exact gates.
 
+### Daily source status after the matrix finishes
+
+The `source-outcome` job verifies the exact selected shard inventory, run ID,
+executing commit and successful private R2 handoff steps before releasing the
+PDF and article consumers. GitHub can briefly return completed jobs without
+their step records. Read those missing records from the individual job endpoint
+and retry incomplete API snapshots within a bounded window; a successful job
+conclusion alone is not sufficient evidence of a complete handoff. Identity
+mismatches and actual failed steps retain the existing rejection and recovery
+behavior.
+
+If a previous run stopped only at this status check, first revalidate its full
+job inventory with `daily_market_source_status.py`. When every exact shard and
+handoff passes, dispatch `market-views-latex-pdf.yml` with that original run ID,
+source date, shard count and selected-report count. This reuses the retained
+private shards for the missing PDF. The issue date follows the selected Dropbox
+folder, which can be the previous calendar day. Verify the completed private
+publication receipt, public-safe PDF commit and dated live catalogue entry;
+article delivery remains a separate acceptance boundary.
+
 ## Recovery within the MinerU chain
 
 The durable client can move to another configured key only after HTTP 401 or

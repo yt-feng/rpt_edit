@@ -2,7 +2,127 @@
 """Read actual matrix outcomes before selecting the normal or degraded edition."""
 import argparse
 import json
+import math
 import re
+import subprocess
+import sys
+import time
+
+
+class JobsPending(RuntimeError):
+    """GitHub has not exposed a complete job snapshot yet."""
+
+
+def github_json(endpoint, timeout):
+    """Use the existing gh credentials without placing diagnostics in outputs."""
+    try:
+        result = subprocess.run(
+            ["gh", "api", endpoint], capture_output=True, text=True,
+            check=False, timeout=timeout,
+        )
+    except subprocess.TimeoutExpired as exc:
+        raise JobsPending("GitHub jobs request timed out") from exc
+    if result.returncode:
+        # Re-reading cannot fix an authentication, permission or endpoint error.
+        # Do not echo gh's response body into workflow outputs or logs.
+        if (re.search(r"HTTP 403\b", result.stderr)
+                and re.search(r"rate.?limit|secondary.?limit|abuse detection", result.stderr, re.I)):
+            raise JobsPending("GitHub jobs request was rate limited")
+        if re.search(r"HTTP (401|403|404)\b", result.stderr):
+            raise ValueError("GitHub jobs request was denied or not found")
+        raise JobsPending("GitHub jobs request failed temporarily")
+    try:
+        return json.loads(result.stdout)
+    except json.JSONDecodeError as exc:
+        raise JobsPending("GitHub jobs response was incomplete") from exc
+
+
+def _live_snapshot(repository, expected_shards, run_id, sha, no_work, request):
+    page = request(f"repos/{repository}/actions/runs/{run_id}/jobs?filter=latest&per_page=100")
+    if not isinstance(page, dict) or not isinstance(page.get("jobs"), list):
+        raise JobsPending("Daily jobs inventory is not available")
+    jobs = page["jobs"]
+    total = page.get("total_count")
+    if type(total) is not int or total < 0 or total > 100 or len(jobs) > 100:
+        raise ValueError("Invalid daily jobs inventory size")
+    if total != len(jobs) or not jobs:
+        raise JobsPending("Daily jobs inventory is incomplete")
+
+    shards = {}
+    for position, job in enumerate(jobs):
+        if not isinstance(job, dict):
+            raise ValueError("Invalid daily job entry")
+        match = re.fullmatch(r"process-shard \(([0-9]+)\)", job.get("name", ""))
+        if not match:
+            continue
+        index = int(match[1])
+        if (index in shards or index >= expected_shards
+                or type(job.get("id")) is not int or job["id"] <= 0
+                or job.get("run_id") != int(run_id) or job.get("head_sha") != sha):
+            raise ValueError("Daily shard identity differs")
+        shards[index] = position
+    if set(shards) != set(range(expected_shards)):
+        raise JobsPending("Daily shard inventory is not complete yet")
+
+    required_gate = "Gate shard" if no_work else "Upload shard to private R2 handoff"
+
+    def incomplete(job):
+        steps = job.get("steps")
+        return (job.get("status") != "completed" or not isinstance(steps, list) or not steps
+                or any(not isinstance(step, dict) or step.get("status") != "completed" for step in steps)
+                or (job.get("conclusion") == "success"
+                    and not any(step.get("name") == required_gate for step in steps)))
+
+    for position in shards.values():
+        job = jobs[position]
+        if incomplete(job):
+            # A completed matrix job can briefly have no steps in list-jobs.
+            # Hydrate only that exact job; never substitute another run/attempt.
+            detail = request(f"repos/{repository}/actions/jobs/{job['id']}")
+            if (not isinstance(detail, dict)
+                    or any(detail.get(key) != job.get(key) for key in ("id", "name", "run_id", "head_sha"))):
+                raise ValueError("Daily shard detail identity differs")
+            jobs[position] = detail
+            if incomplete(detail):
+                raise JobsPending("Daily shard steps are not complete yet")
+    return page
+
+
+def evaluate_live(repository, expected_shards, run_id, sha, selected_count=None, *,
+                  timeout=180, poll_interval=5, api=github_json,
+                  monotonic=time.monotonic, sleep=time.sleep):
+    """Wait briefly for complete API evidence, then use the unchanged strict gate."""
+    if (not re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", repository)
+            or not re.fullmatch(r"[1-9][0-9]*", str(run_id))
+            or not re.fullmatch(r"[a-f0-9]{40}", sha)
+            or type(expected_shards) is not int or not 0 <= expected_shards <= 100
+            or (selected_count is not None and (type(selected_count) is not int or selected_count < 0))
+            or not math.isfinite(timeout) or not math.isfinite(poll_interval)
+            or timeout <= 0 or poll_interval <= 0):
+        raise ValueError("Invalid live daily source status request")
+    if expected_shards == 0 and selected_count != 0:
+        raise ValueError("No shards for nonempty selection")
+    deadline = monotonic() + timeout
+
+    def request(endpoint):
+        remaining = deadline - monotonic()
+        if remaining <= 0:
+            raise JobsPending("Daily jobs evidence deadline reached")
+        return api(endpoint, timeout=min(20, remaining))
+
+    attempt = 0
+    while True:
+        attempt += 1
+        try:
+            page = _live_snapshot(repository, expected_shards, run_id, sha, selected_count == 0, request)
+            return evaluate(page, expected_shards, run_id, sha, selected_count)
+        except JobsPending as exc:
+            remaining = deadline - monotonic()
+            if remaining <= 0:
+                raise TimeoutError(f"Complete daily shard evidence unavailable after {timeout:g}s: {exc}") from exc
+            delay = min(poll_interval * 2 ** min(attempt - 1, 2), remaining)
+            print(f"Daily source status attempt {attempt}: {exc}; retrying in {delay:g}s.", file=sys.stderr)
+            sleep(delay)
 
 
 def evaluate(jobs_page, expected_shards, run_id, sha, selected_count=None):
@@ -123,13 +243,22 @@ def verify_frozen_daily(run, jobs_page, run_id, repository):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--jobs", required=True)
+    source = parser.add_mutually_exclusive_group(required=True)
+    source.add_argument("--jobs", help="Evaluate a saved jobs response without network access")
+    source.add_argument("--repository", help="Read and hydrate live GitHub jobs for owner/repository")
+    parser.add_argument("--timeout", type=float, default=180)
+    parser.add_argument("--poll-interval", type=float, default=5)
     parser.add_argument("--selected-count", type=int)
     parser.add_argument("--expected-shards", type=int, required=True)
     parser.add_argument("--run-id", required=True)
     parser.add_argument("--execution-sha", required=True)
     args = parser.parse_args()
-    result = evaluate(json.load(open(args.jobs)), args.expected_shards, args.run_id, args.execution_sha, args.selected_count)
+    if args.jobs:
+        with open(args.jobs, encoding="utf-8") as handle:
+            result = evaluate(json.load(handle), args.expected_shards, args.run_id, args.execution_sha, args.selected_count)
+    else:
+        result = evaluate_live(args.repository, args.expected_shards, args.run_id, args.execution_sha,
+                               args.selected_count, timeout=args.timeout, poll_interval=args.poll_interval)
     print(f"primary_ready={str(result['primary_ready']).lower()}")
     print(f"degraded_shards={result['degraded_shards']}")
     print(f"provider_only={str(result['provider_only']).lower()}")

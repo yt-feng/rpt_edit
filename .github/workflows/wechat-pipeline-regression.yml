@@ -22,7 +22,7 @@ on:
       - "scripts/*replay_report_translation_shards*"
       - "scripts/*private_workflow_handoff*"
       - "scripts/*market_views*"
-      - "scripts/daily_market_source_status.py"
+      - "scripts/*daily_market_source_status*"
       - "scripts/*replay_daily_sources*"
       - "scripts/accept_market_source_preview.py"
       - ".github/workflows/market-views-source-preview-acceptance.yml"
@@ -91,7 +91,7 @@ on:
       - "scripts/*replay_report_translation_shards*"
       - "scripts/*private_workflow_handoff*"
       - "scripts/*market_views*"
-      - "scripts/daily_market_source_status.py"
+      - "scripts/*daily_market_source_status*"
       - "scripts/*replay_daily_sources*"
       - "scripts/accept_market_source_preview.py"
       - ".github/workflows/market-views-source-preview-acceptance.yml"
@@ -199,6 +199,7 @@ jobs:
           python scripts/test_recover_daily_mineru_sources.py
           python scripts/test_private_market_ocr_checkpoint.py
           python scripts/test_market_views_source_preview.py
+          python scripts/test_daily_market_source_status.py
           python scripts/test_replay_daily_sources.py
           python scripts/test_market_views_source_dates.py
           python scripts/test_market_views_figures.py
