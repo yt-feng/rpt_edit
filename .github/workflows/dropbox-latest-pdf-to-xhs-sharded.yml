@@ -696,9 +696,9 @@ jobs:
           EXPECTED_SHARDS: ${{ needs.select-macro-reports.outputs.effective_shard_count }}
           SELECTED_COUNT: ${{ needs.select-macro-reports.outputs.selected_count }}
         run: |
-          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/jobs?filter=latest&per_page=100" > "$RUNNER_TEMP/daily-jobs.json"
           python3 scripts/daily_market_source_status.py \
-            --jobs "$RUNNER_TEMP/daily-jobs.json" --expected-shards "$EXPECTED_SHARDS" --selected-count "$SELECTED_COUNT" \
+            --repository "$GITHUB_REPOSITORY" --timeout 180 --poll-interval 5 \
+            --expected-shards "$EXPECTED_SHARDS" --selected-count "$SELECTED_COUNT" \
             --run-id "$GITHUB_RUN_ID" --execution-sha "$GITHUB_SHA" >> "$GITHUB_OUTPUT"
 
   package-publish-ready:
