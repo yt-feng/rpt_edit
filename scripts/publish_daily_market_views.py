@@ -14,6 +14,7 @@ import time
 
 from market_views_partial_sources import (
     RECEIPT_NAME, collect_candidates, read_selection, write_delivery_receipt,
+    _substantive as receipt_source_is_substantive,
 )
 from market_views_source_digest import extract_candidates, substantive_sentences
 
@@ -22,16 +23,23 @@ def usable_excerpts(candidates, reasons):
     result = {}
     for name, candidate in candidates.items():
         try:
-            if not (Path(candidate['directory']) / 'source_mineru.md').is_file():
+            directory = Path(candidate['directory'])
+            source = directory / 'source_mineru.md'
+            if not source.is_file():
                 reasons[name] = 'daily_source_adapter_unavailable'
                 continue
-            evidence = Path(candidate['directory']) / 'source_excerpt_evidence.json'
+            evidence = directory / 'source_excerpt_evidence.json'
             if evidence.is_file():
                 text = '\n\n'.join(row['text'] for row in json.loads(evidence.read_text())['excerpts'])
             else:
-                text = (Path(candidate['directory']) / 'source_mineru.md').read_text(encoding='utf-8')
+                text = source.read_text(encoding='utf-8')
             if not substantive_sentences(text, limit=3):
                 raise ValueError('no_substantive_source_text')
+            # Match the final receipt's source-content gate here, while one
+            # incomplete report can still become an explicit omission.
+            if not receipt_source_is_substantive(source, directory):
+                reasons[name] = 'source_content_too_short'
+                continue
             result[name] = candidate
         except (OSError, ValueError, KeyError, TypeError):
             reasons[name] = 'no_substantive_source_text'

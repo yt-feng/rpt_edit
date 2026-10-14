@@ -72,6 +72,39 @@ class DailyDeliveryTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'manifest_changed'):
             publisher.assemble(self.context, self.root / 'run')
 
+    def test_valid_but_short_source_is_omitted_before_receipt_and_healthy_pdf_renders(self):
+        originals = self.root / 'two-originals'
+        originals.mkdir()
+        rows = []
+        texts = [
+            ('00-short.pdf', 'Market demand is improving as policy support helps revenue growth.'),
+            ('01-healthy.pdf', 'Market demand is improving as policy support helps revenue growth. '
+             'Revenue growth is expected to remain strong because consumer demand continues to increase across the economy.'),
+        ]
+        for name, text in texts:
+            path = originals / name
+            with fitz.open() as document:
+                page = document.new_page()
+                page.insert_textbox(fitz.Rect(40, 40, 540, 300), text, fontsize=11)
+                document.save(path)
+            rows.append({'process_local_path': f'_selected_macro_pdfs/{name}',
+                         'content_sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
+        manifest = self.root / 'two-selected.json'
+        manifest.write_text(json.dumps(rows))
+        context = {**self.context, 'manifest_path': str(manifest), 'originals_dir': str(originals),
+                   'selected_manifest_sha256': hashlib.sha256(manifest.read_bytes()).hexdigest()}
+        with patch('upload_market_view_to_r2.upload_market_view') as upload, \
+             patch.dict('os.environ', {'DEEPSEEK_API_KEY': ''}):
+            result = publisher.deliver(context, self.root / 'two-run', acceptance_only=True)
+        upload.assert_not_called()
+        self.assertEqual((1, 2, 1), tuple(result[key] for key in ('included_reports', 'expected_reports', 'skipped_reports')))
+        receipt = json.loads((self.root / 'two-run/sources/261014/daily_delivery_receipt.json').read_text())
+        self.assertEqual(('skipped', 'source_content_too_short'),
+                         (receipt['reports'][0]['status'], receipt['reports'][0]['reason']))
+        self.assertEqual('included', receipt['reports'][1]['status'])
+        with fitz.open(result['public_pdf']) as pdf:
+            self.assertTrue(any('1/2' in page.get_text().replace(' ', '') for page in pdf))
+
     def test_acceptance_fault_cannot_be_selected_for_production(self):
         with self.assertRaisesRegex(ValueError, 'acceptance_only'):
             publisher.deliver(self.context, self.root / 'run', force_fallback=True)
@@ -80,7 +113,8 @@ class DailyDeliveryTests(unittest.TestCase):
         good, bad = self.root / 'good', self.root / 'bad'
         good.mkdir()
         bad.mkdir()
-        (good / 'source_mineru.md').write_text('Market earnings recovered strongly as demand increased across industrial sectors and operating margins improved.')
+        (good / 'source_mineru.md').write_text('Market earnings recovered strongly as demand increased across industrial sectors and operating margins improved. '
+            'Consumer spending is expected to increase as household income rises across the economy.')
         (bad / 'source_mineru.md').write_text('Contact us. Legal disclosure.')
         reasons = {}
         result = publisher.usable_excerpts({'good': {'directory': good}, 'bad': {'directory': bad}}, reasons)
