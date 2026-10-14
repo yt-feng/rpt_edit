@@ -472,6 +472,7 @@ class WorkflowContractTests(unittest.TestCase):
         self.assertNotIn('DEEPSEEK_API_KEY:', text)
         self.assertNotIn('MINER_U:', text)
         self.assertIn('scripts/inspect_market_views_live.py --dates', text)
+        self.assertIn('ref: ${{ github.sha }}', text)
 
 
 if __name__ == '__main__':

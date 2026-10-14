@@ -94,7 +94,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.acceptance_only == true && github.sha || 'main' }}
+          # Match the execution SHA recorded in fresh-source receipts.
+          ref: ${{ github.sha }}
           fetch-depth: 1
           sparse-checkout: |
             .github
