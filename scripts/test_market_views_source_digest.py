@@ -205,6 +205,24 @@ class DeliveryPublicationTests(unittest.TestCase):
         self.assertEqual(view['sources'], [{'report_id': 'R001', 'pages': [2, 3]}])
         self.assertNotIn('Valuations Reset', json.dumps(summary))
 
+    def test_generated_commentary_cannot_replace_the_bound_original_source(self):
+        included = next(row for row in self.receipt['reports'] if row['status'] == 'included')
+        path = self.source_root / included['report_id']
+        generated = ('We expect the market to collapse as consumer demand weakens, '
+                     'and investment will decline sharply over the coming year.')
+        (path / 'wechat_article.md').write_text(generated)
+        report = {'id': 'R001', 'path': str(path), 'title': 'Economic outlook',
+                  'source_group': 'bank_research', 'institution_name': 'Research institution',
+                  'extract': generated, 'digest': generated}
+        summary = digest.make_summary([report], [], self.receipt)
+        view = summary['bank_roundup']['sections'][0]['bank_views'][0]
+        self.assertIn('economic growth to improve', view['view'])
+        self.assertNotIn('collapse', json.dumps(summary))
+        self.assertNotIn('decline sharply', json.dumps(summary))
+        (path / 'source_mineru.md').write_text('No substantive original transcript.')
+        with self.assertRaisesRegex(ValueError, 'no_substantive_excerpt'):
+            digest.make_summary([report], [], self.receipt)
+
     def test_bound_source_bytes_date_and_rendered_bytes_cannot_be_substituted(self):
         with self.assertRaisesRegex(ValueError, "invalid_daily_delivery_receipt"):
             publication.validate_daily_delivery_receipt(self.source_root, date_folder="261013")

@@ -290,7 +290,11 @@ def make_summary(reports: list[dict], figures: list[dict], receipt: dict) -> dic
                 sentences = [row["text"] for row in selected]
                 pages = sorted({row["page"] for row in selected})
             else:
-                sentences = substantive_sentences(report.get("extract") or report.get("digest") or "", limit=2)
+                # Standard report extracts prioritize generated articles. This
+                # edition labels the text as source excerpts, so only the bound
+                # original transcript may supply quotations without page evidence.
+                raw_source = Path(report.get("path", "")) / "source_mineru.md"
+                sentences = substantive_sentences(raw_source.read_text(encoding="utf-8"), limit=2)
             if not sentences:
                 raise ValueError("daily_digest_report_has_no_substantive_excerpt")
             views.append({"bank": bank_alias(report), "view": sentences[0], "data_points": sentences[1:3],

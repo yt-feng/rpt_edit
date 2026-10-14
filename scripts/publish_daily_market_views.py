@@ -19,7 +19,6 @@ from market_views_source_digest import extract_candidates, substantive_sentences
 
 
 def usable_excerpts(candidates, reasons):
-    from build_market_views_pdf import report_extract
     result = {}
     for name, candidate in candidates.items():
         try:
@@ -30,7 +29,7 @@ def usable_excerpts(candidates, reasons):
             if evidence.is_file():
                 text = '\n\n'.join(row['text'] for row in json.loads(evidence.read_text())['excerpts'])
             else:
-                text = report_extract(Path(candidate['directory']), 2200)
+                text = (Path(candidate['directory']) / 'source_mineru.md').read_text(encoding='utf-8')
             if not substantive_sentences(text, limit=3):
                 raise ValueError('no_substantive_source_text')
             result[name] = candidate
