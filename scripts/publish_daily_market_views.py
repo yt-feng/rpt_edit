@@ -26,11 +26,15 @@ def usable_excerpts(candidates, reasons):
             if not (Path(candidate['directory']) / 'source_mineru.md').is_file():
                 reasons[name] = 'daily_source_adapter_unavailable'
                 continue
-            text = report_extract(Path(candidate['directory']), 2200)
+            evidence = Path(candidate['directory']) / 'source_excerpt_evidence.json'
+            if evidence.is_file():
+                text = '\n\n'.join(row['text'] for row in json.loads(evidence.read_text())['excerpts'])
+            else:
+                text = report_extract(Path(candidate['directory']), 2200)
             if not substantive_sentences(text, limit=3):
                 raise ValueError('no_substantive_source_text')
             result[name] = candidate
-        except (OSError, ValueError):
+        except (OSError, ValueError, KeyError, TypeError):
             reasons[name] = 'no_substantive_source_text'
     return result
 

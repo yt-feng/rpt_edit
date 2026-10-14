@@ -37,6 +37,10 @@ class GuardError(ValueError):
     """Fixed diagnostic categories; private metadata is never reflected."""
 
 
+class DropboxUnavailable(GuardError):
+    """Discovery could not read Dropbox, rather than observing an old batch."""
+
+
 def reject(category):
     raise GuardError(category)
 
@@ -145,7 +149,7 @@ def checked_manifest(raw, date_folder):
         names.add(source)
     if len(dates) != 1:
         reject('selected_manifest_mixed_dates')
-    if next(iter(dates)) != date_folder:
+    if date_folder is not None and next(iter(dates)) != date_folder:
         return None
     return rows
 
@@ -238,27 +242,58 @@ class Github:
         reject('github_read_unavailable_after_retries')
 
 
-def discover_source(github, date_folder, workspace, now, source_run_id=''):
+def discover_source(github, date_folder, workspace, now, source_run_id='', *, diagnostics=None):
+    """Choose only authenticated manifests, isolating an unusable candidate.
+
+    A null date is used only after Dropbox discovery is unavailable. In that
+    case the newest source date proven by a fresh Daily manifest is chosen;
+    today's manual replay of an older batch cannot hide a newer source date.
+    """
+    def omitted(category):
+        if diagnostics is not None:
+            diagnostics[category] = diagnostics.get(category, 0) + 1
     candidates = [github.run(source_run_id)] if source_run_id else github.candidates(now)
+    best = (None, None, None)
+    best_date = None
     for producer in candidates:
         run_id = str(producer['id'])
         name = f'selected-macro-manifest-{run_id}'
-        if not github.has_artifact(run_id, name):
+        try:
+            if not github.has_artifact(run_id, name):
+                if source_run_id:
+                    reject('requested_daily_manifest_unavailable')
+                omitted('candidate_manifest_missing')
+                continue
+            destination = workspace / 'candidate-manifests' / run_id
+            github.download(run_id, name, destination)
+            manifest = destination / MANIFEST
+            if not manifest.is_file() or manifest.is_symlink():
+                reject('selected_manifest_file_missing')
+            raw = manifest.read_bytes()
+            rows = checked_manifest(raw, date_folder)
+        except (GuardError, OSError, UnicodeError) as error:
             if source_run_id:
-                reject('requested_daily_manifest_unavailable')
+                raise
+            omitted('candidate_manifest_unavailable' if isinstance(error, GuardError)
+                    and str(error) == 'github_read_unavailable_after_retries' else 'candidate_manifest_invalid')
             continue
-        destination = workspace / 'candidate-manifests' / run_id
-        github.download(run_id, name, destination)
-        manifest = destination / MANIFEST
-        if not manifest.is_file() or manifest.is_symlink():
-            reject('selected_manifest_file_missing')
-        raw = manifest.read_bytes()
-        rows = checked_manifest(raw, date_folder)
         if rows is not None:
-            return producer, raw, rows
+            if date_folder is not None:
+                return producer, raw, rows
+            candidate_date = PurePosixPath(rows[0]['dropbox_path']).parts[2]
+            age = (now.astimezone(BEIJING).date() - exact_date(candidate_date)).days
+            if not 0 <= age <= 1:
+                omitted('candidate_manifest_stale_or_future')
+                continue
+            if best_date is None or exact_date(candidate_date) > exact_date(best_date):
+                best, best_date = (producer, raw, rows), candidate_date
+            if age == 0:
+                return best
+            continue
         if source_run_id:
             reject('requested_daily_manifest_date_mismatch')
-    return None, None, None
+        omitted('candidate_manifest_other_date')
+    return best
 
 
 def restore_originals(github, producer, raw, rows, original_dir):
@@ -302,8 +337,14 @@ def verify_originals(original_dir, raw, rows):
 
 def latest_dropbox_date(now, requested=''):
     from download_dropbox_latest_pdfs import dropbox_access_token, list_folder, latest_date_folder
-    token = dropbox_access_token()
-    entry = latest_date_folder(list_folder(token, SOURCE_ROOT, recursive=False))
+    try:
+        token = dropbox_access_token()
+        entries = list_folder(token, SOURCE_ROOT, recursive=False)
+    except Exception:
+        # Only failed external reads get this category. A successful listing
+        # proving stale/future sources or an explicit-date mismatch still fails.
+        raise DropboxUnavailable('dropbox_discovery_unavailable') from None
+    entry = latest_date_folder(entries)
     name = str(entry['name'])
     exact_date(name)
     if requested and requested != name:
@@ -463,7 +504,21 @@ def prepare(workspace, *, now, repository, date_folder='', source_run_id='', acc
     validate_request(date_folder, source_run_id, acceptance_only, force_fallback, env['GITHUB_EVENT_NAME'])
     workspace = Path(workspace).resolve()
     workspace.mkdir(parents=True, exist_ok=True)
-    date_folder = (discover_date or latest_dropbox_date)(now, date_folder)
+    discovery_omissions = {}
+    date_authority = 'dropbox-latest'
+    prefetched = None
+    try:
+        date_folder = (discover_date or latest_dropbox_date)(now, date_folder)
+    except DropboxUnavailable:
+        github = github or Github(repository)
+        prefetched = discover_source(github, date_folder or None, workspace, now, source_run_id,
+                                     diagnostics=discovery_omissions)
+        if prefetched[0] is None:
+            reject('dropbox_unavailable_and_no_fresh_daily_manifest')
+        date_folder = PurePosixPath(prefetched[2][0]['dropbox_path']).parts[2]
+        if not 0 <= (now.astimezone(BEIJING).date() - exact_date(date_folder)).days <= 1:
+            reject('latest_source_is_stale_or_future')
+        date_authority = 'authenticated-daily-manifest-dropbox-unavailable'
     client = client or build_r2_client()
     bucket = bucket or r2_bucket()
     # Do not catch authentication, transport or truncated R2 response errors:
@@ -473,13 +528,16 @@ def prepare(workspace, *, now, repository, date_folder='', source_run_id='', acc
     plan = {'schema_version': 1, 'date_folder': date_folder, **decision,
             'private_publication_verified': complete, 'acceptance_only': acceptance_only,
             'force_fallback': force_fallback, 'provider_posts': 0, 'model_calls': 0,
-            'workflow_dispatches': 0, 'production_writes': 0}
+            'workflow_dispatches': 0, 'production_writes': 0,
+            'date_discovery_authority': date_authority,
+            'source_discovery_omissions': discovery_omissions}
     if not decision['should_build']:
         return plan
     github = github or Github(repository)
     fallback_reason = ''
     try:
-        producer, raw, rows = discover_source(github, date_folder, workspace, now, source_run_id)
+        producer, raw, rows = prefetched or discover_source(github, date_folder, workspace, now, source_run_id,
+                                                           diagnostics=discovery_omissions)
     except GuardError as error:
         if str(error) != 'github_read_unavailable_after_retries' or source_run_id:
             raise
@@ -522,6 +580,7 @@ def prepare(workspace, *, now, repository, date_folder='', source_run_id='', acc
                'selected_manifest_sha256': hashlib.sha256(raw).hexdigest(), 'expected_reports': len(rows),
                'original_validation': original_validation, 'unavailable_originals': unavailable,
                'expected_source_reports': len(rows) + len(unavailable), 'fallback_reason': fallback_reason,
+               'date_discovery_authority': date_authority, 'source_discovery_omissions': discovery_omissions,
                'reports_per_shard': reports_per_shard,
                'originals_dir': str(original_dir), 'manifest_path': str(original_dir / MANIFEST),
                'source_producer': producer, **retained}

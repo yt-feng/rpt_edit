@@ -203,6 +203,76 @@ class GithubRecoveryTests(unittest.TestCase):
         self.assertEqual(chosen['id'], int(RUN_ID))
         self.assertEqual(selected, rows())
 
+    def test_automatic_empty_or_bad_manifest_does_not_mask_valid_same_day_source(self):
+        for bad in (b'[]', b'{bad json', json.dumps([{'dropbox_path': '/unbound/261013/source.pdf'}]).encode()):
+            with self.subTest(bad=bad), tempfile.TemporaryDirectory() as temporary:
+                github = Mock()
+                github.candidates.return_value = [producer(id=22345), producer()]
+                github.has_artifact.return_value = True
+                def download(run_id, name, destination):
+                    destination.mkdir(parents=True)
+                    (destination / guard.MANIFEST).write_bytes(bad if run_id == '22345' else encoded_rows())
+                github.download.side_effect = download
+                diagnostics = {}
+                chosen, _, selected = guard.discover_source(github, '261013', Path(temporary), NOW,
+                                                             diagnostics=diagnostics)
+            self.assertEqual(chosen['id'], int(RUN_ID))
+            self.assertEqual(selected, rows())
+            self.assertEqual(diagnostics, {'candidate_manifest_invalid': 1})
+
+    def test_explicit_empty_manifest_remains_a_strict_failure(self):
+        github = Mock()
+        github.run.return_value = producer()
+        github.has_artifact.return_value = True
+        def download(run_id, name, destination):
+            destination.mkdir(parents=True)
+            (destination / guard.MANIFEST).write_bytes(b'[]')
+        github.download.side_effect = download
+        with tempfile.TemporaryDirectory() as temporary, self.assertRaisesRegex(guard.GuardError, 'manifest_count'):
+            guard.discover_source(github, '261013', Path(temporary), NOW, RUN_ID)
+
+    def test_fallback_date_prefers_newest_source_date_over_newest_run(self):
+        github = Mock()
+        github.candidates.return_value = [producer(id=22345), producer()]
+        github.has_artifact.return_value = True
+        def download(run_id, name, destination):
+            destination.mkdir(parents=True)
+            (destination / guard.MANIFEST).write_bytes(encoded_rows('261013' if run_id == '22345' else '261014'))
+        github.download.side_effect = download
+        with tempfile.TemporaryDirectory() as temporary:
+            chosen, _, selected = guard.discover_source(github, None, Path(temporary), NOW)
+        self.assertEqual(chosen['id'], int(RUN_ID))
+        self.assertEqual(selected, rows('261014'))
+
+    def test_fallback_date_never_uses_stale_or_future_manifests(self):
+        for date in ('261012', '261015'):
+            with self.subTest(date=date), tempfile.TemporaryDirectory() as temporary:
+                github = Mock()
+                github.candidates.return_value = [producer()]
+                github.has_artifact.return_value = True
+                def download(run_id, name, destination):
+                    destination.mkdir(parents=True)
+                    (destination / guard.MANIFEST).write_bytes(encoded_rows(date))
+                github.download.side_effect = download
+                diagnostics = {}
+                result = guard.discover_source(github, None, Path(temporary), NOW, diagnostics=diagnostics)
+            self.assertEqual(result, (None, None, None))
+            self.assertEqual(diagnostics, {'candidate_manifest_stale_or_future': 1})
+
+
+class DateDiscoveryTests(unittest.TestCase):
+    def test_only_failed_external_reads_receive_unavailable_category(self):
+        with patch('download_dropbox_latest_pdfs.dropbox_access_token', side_effect=RuntimeError('token unavailable')):
+            with self.assertRaises(guard.DropboxUnavailable):
+                guard.latest_dropbox_date(NOW)
+        for date, requested in (('261012', ''), ('261015', ''), ('261014', '261013')):
+            with self.subTest(date=date, requested=requested), \
+                    patch('download_dropbox_latest_pdfs.dropbox_access_token', return_value='token'), \
+                    patch('download_dropbox_latest_pdfs.list_folder', return_value=[{'.tag': 'folder', 'name': date}]):
+                with self.assertRaises(guard.GuardError) as rejected:
+                    guard.latest_dropbox_date(NOW, requested)
+                self.assertNotIsInstance(rejected.exception, guard.DropboxUnavailable)
+
 
 class BoundedOriginalDownloadTests(unittest.TestCase):
     def test_expired_intake_budget_makes_no_request(self):
@@ -306,6 +376,86 @@ class PreparationTests(unittest.TestCase):
         self.assertEqual(context['source_kind'], 'fresh-dropbox')
         self.assertEqual(context['source_execution_sha'], GUARD_SHA)
         self.assertEqual(retained.call_args.args[2], '')
+
+    def test_dropbox_outage_uses_authenticated_daily_manifest_date_for_noop(self):
+        with tempfile.TemporaryDirectory() as temporary, \
+                patch.object(guard, 'discover_source', return_value=(producer(), encoded_rows(), rows())) as sources, \
+                patch.object(guard, 'restore_originals') as restore:
+            result = guard.prepare(Path(temporary), now=NOW, repository=REPOSITORY, env=environment(),
+                client=Mock(), bucket='test',
+                discover_date=Mock(side_effect=guard.DropboxUnavailable('dropbox_discovery_unavailable')),
+                publication_check=Mock(return_value=True))
+        self.assertFalse(result['should_build'])
+        self.assertEqual(result['date_folder'], '261013')
+        self.assertEqual(result['date_discovery_authority'], 'authenticated-daily-manifest-dropbox-unavailable')
+        self.assertIsNone(sources.call_args.args[1])
+        restore.assert_not_called()
+
+    def test_exact_manual_source_can_recover_during_dropbox_outage(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            def restore(github, source, raw, selected, destination):
+                destination.mkdir()
+                (destination / guard.MANIFEST).write_bytes(raw)
+                (destination / '01-private-source.pdf').write_bytes(PDF)
+                return True
+            with patch.object(guard, 'discover_source', return_value=(producer(), encoded_rows(), rows())) as sources, \
+                    patch.object(guard, 'restore_originals', side_effect=restore), \
+                    patch.object(guard, 'restore_handoffs', return_value={'handoff_dir': '', 'available_dir': ''}):
+                result = guard.prepare(root, now=NOW, repository=REPOSITORY, env=environment('workflow_dispatch'),
+                    client=Mock(), bucket='test', date_folder='261013', source_run_id=RUN_ID,
+                    acceptance_only=True, discover_date=Mock(side_effect=guard.DropboxUnavailable('unavailable')),
+                    publication_check=Mock(return_value=True))
+                context = json.loads(Path(result['context_path']).read_text())
+        self.assertTrue(result['should_build'])
+        self.assertEqual(sources.call_count, 1)
+        self.assertEqual(sources.call_args.args[1], '261013')
+        self.assertEqual(sources.call_args.args[4], RUN_ID)
+        self.assertEqual(context['source_run_id'], RUN_ID)
+        self.assertEqual(context['date_discovery_authority'], 'authenticated-daily-manifest-dropbox-unavailable')
+
+    def test_known_bad_latest_date_never_falls_back_to_previous_daily(self):
+        for reason in ('latest_source_is_stale_or_future', 'requested_date_is_not_latest_dropbox_batch'):
+            with self.subTest(reason=reason), tempfile.TemporaryDirectory() as temporary, \
+                    patch.object(guard, 'discover_source') as sources:
+                with self.assertRaisesRegex(guard.GuardError, reason):
+                    guard.prepare(Path(temporary), now=NOW, repository=REPOSITORY, env=environment(),
+                        client=Mock(), bucket='test', discover_date=Mock(side_effect=guard.GuardError(reason)),
+                        publication_check=Mock(return_value=True))
+                sources.assert_not_called()
+
+    def test_outage_without_fresh_daily_cannot_fabricate_current_date(self):
+        with tempfile.TemporaryDirectory() as temporary, \
+                patch.object(guard, 'discover_source', return_value=(None, None, None)), \
+                patch.object(guard, 'download_fresh_originals') as fresh:
+            with self.assertRaisesRegex(guard.GuardError, 'no_fresh_daily_manifest'):
+                guard.prepare(Path(temporary), now=NOW, repository=REPOSITORY, env=environment(),
+                    client=Mock(), bucket='test', discover_date=Mock(side_effect=guard.DropboxUnavailable('unavailable')),
+                    publication_check=Mock(return_value=False))
+        fresh.assert_not_called()
+
+    def test_all_automatic_bad_manifests_still_attempt_independent_fresh_dropbox(self):
+        github = Mock()
+        github.candidates.return_value = [producer()]
+        github.has_artifact.return_value = True
+        def download(run_id, name, destination):
+            destination.mkdir(parents=True)
+            (destination / guard.MANIFEST).write_bytes(b'[]')
+        github.download.side_effect = download
+        def fresh(date_folder, destination):
+            destination.mkdir()
+            (destination / guard.MANIFEST).write_bytes(encoded_rows())
+            (destination / '01-private-source.pdf').write_bytes(PDF)
+            return encoded_rows(), rows(), []
+        with tempfile.TemporaryDirectory() as temporary, \
+                patch.object(guard, 'download_fresh_originals', side_effect=fresh) as fallback, \
+                patch.object(guard, 'restore_handoffs', return_value={'handoff_dir': '', 'available_dir': ''}):
+            result = self.prepare(Path(temporary), Mock(return_value=False), github=github)
+            context = json.loads(Path(result['context_path']).read_text())
+        fallback.assert_called_once()
+        self.assertEqual(context['source_kind'], 'fresh-dropbox')
+        self.assertEqual(context['source_run_id'], environment()['GITHUB_RUN_ID'])
+        self.assertEqual(context['source_discovery_omissions'], {'candidate_manifest_invalid': 1})
 
 
 class WorkflowContractTests(unittest.TestCase):

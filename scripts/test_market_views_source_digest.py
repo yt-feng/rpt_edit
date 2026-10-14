@@ -74,6 +74,19 @@ class ExtractionTests(unittest.TestCase):
         self.assertTrue(values)
         self.assertFalse(any("Disclaimer" in value or "新增市场信号" in value for value in values))
 
+    def test_observed_filenames_and_strategy_headlines_are_not_research_assertions(self):
+        filename = ('03-Bernstein-Asia Quant Strategy & Asia Semis & Internet：Asia Tech Strategy 4Q26：'
+                    'Valuations Reset， Revisions Slow...Stick to Quality & Value tech names-261013')
+        headline = ('Asia Quant Strategy & Asia Semis & Internet Asia Tech Strategy 4Q26: '
+                    'Valuations Reset, Revisions Slow...Stick to Quality & Value tech names')
+        assertion = ('As we argued in our recent note on the sector, we are in a narrative-driven market '
+                     'which creates extreme sensitivity to headlines due to perceived terminal value changes.')
+        text = '# ' + headline + '\n\n' + filename + '\n\n' + headline + '\n\n' + assertion + '\n\n' + TEXT
+        selected = digest.substantive_sentences(text)
+        self.assertEqual(selected[0], assertion)
+        self.assertTrue(any('We expect economic growth' in value for value in selected))
+        self.assertFalse(any('Valuations Reset' in value for value in selected))
+
     def test_missing_bad_and_slow_sources_do_not_block_later_originals(self):
         original = self.root / "good.pdf"
         sha = pdf(original)
@@ -170,6 +183,27 @@ class DeliveryPublicationTests(unittest.TestCase):
         self.assertTrue(uploader.private_publication_complete(DATE, client=self.client, bucket="test"))
         self.client.objects[item["source_receipt_key"]]["Body"] += b" "
         self.assertFalse(uploader.private_publication_complete(DATE, client=self.client, bucket="test"))
+
+    def test_evidence_quotes_own_their_pages_and_telecom_does_not_become_aerospace(self):
+        included = next(row for row in self.receipt['reports'] if row['status'] == 'included')
+        path = self.source_root / included['report_id']
+        write_json(path / 'source_excerpt_evidence.json', {'excerpts': [
+            {'page': 1, 'text': 'Asia Tech Strategy 4Q26: Valuations Reset, Revisions Slow and Quality Value Tech Names'},
+            {'page': 2, 'text': 'We expect telecom demand to improve as household incomes recover over the coming year.'},
+            {'page': 3, 'text': 'Broadband investment has increased while the market continues to expand in rural regions.'},
+            {'page': 4, 'text': 'Subscriber earnings are expected to rise as demand strengthens over the coming quarter.'},
+            {'page': 33, 'text': 'Satellite market revenues have grown substantially in a later appendix that is not quoted.'},
+        ]})
+        report = {'id': 'R001', 'path': str(path), 'title': 'Cables Satellite Telecom Market Outlook',
+                  'source_group': 'bank_research', 'institution_name': 'Research institution',
+                  'extract': '03-Bernstein-Asia Quant Strategy Valuations Reset Market Forecast-261013'}
+        summary = digest.make_summary([report], [], self.receipt)
+        section = summary['bank_roundup']['sections'][0]
+        view = section['bank_views'][0]
+        self.assertEqual(section['heading'], '电信、宽带与有线网络')
+        self.assertTrue(view['view'].startswith('We expect telecom'))
+        self.assertEqual(view['sources'], [{'report_id': 'R001', 'pages': [2, 3]}])
+        self.assertNotIn('Valuations Reset', json.dumps(summary))
 
     def test_bound_source_bytes_date_and_rendered_bytes_cannot_be_substituted(self):
         with self.assertRaisesRegex(ValueError, "invalid_daily_delivery_receipt"):

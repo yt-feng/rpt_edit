@@ -25,11 +25,38 @@ RESEARCH = re.compile(r"growth|inflation|econom|market|forecast|expect|demand|su
                       r"investment|interest rate|valuation|policy|yield|equity|capital|consumer|"
                       r"增长|通胀|经济|市场|预计|预测|需求|供给|收入|盈利|投资|利率|估值|政策|资本|消费", re.I)
 FIGURE = re.compile(r"\b(?:exhibit|figure|chart)\s*\d|图表\s*\d|图\s*\d", re.I)
+FILENAME_LINE = re.compile(r"^\d{2,6}[-_](?:[A-Za-z]|[\u3400-\u9fff])|\.pdf(?:\s|$)|[-_]\d{6,8}$", re.I)
+EN_ASSERTION = re.compile(r"\b(?:is|are|was|were|has|have|had|will|would|can|could|may|might|must|should|"
+    r"expects?|expected|believes?|believed|anticipates?|anticipated|forecasts?|forecasted|projects?|projected|"
+    r"remains?|remained|increases?|increased|decreases?|decreased|declines?|declined|grows?|grew|rises?|rose|falls?|fell|"
+    r"improves?|improved|supports?|supported|suggests?|suggested|reflects?|reflected|continues?|continued|"
+    r"indicates?|indicated|benefits?|benefited|depends?|depended|generates?|generated|accounts?|accounted|"
+    r"represents?|represented|reaches?|reached|leads?|led|reduces?|reduced|expands?|expanded|contracts?|contracted|"
+    r"shows?|showed|observes?|observed|sees?|saw|finds?|found|notes?|noted|argues?|argued|estimates?|estimated)\b", re.I)
+ZH_ASSERTION = re.compile(r"预计|预期|认为|显示|表明|达到|增长|下降|上升|提高|降低|增加|减少|放缓|加快|扩大|收缩|"
+                          r"推动|支撑|抑制|导致|受到|保持|维持|取决于|意味着|有望|将会|仍然|已经|正在|是|为")
+
+
+def _assertion(value: str) -> bool:
+    han = len(re.findall(r"[\u3400-\u9fff]", value))
+    if han >= 18:
+        return bool(ZH_ASSERTION.search(value) and re.search(r"[。！？]$", value))
+    words = re.findall(r"[A-Za-z]+(?:'[a-z]+)?", value)
+    predicate = EN_ASSERTION.search(value)
+    if not predicate or not re.search(r"[A-Za-z]{2,}", value[:predicate.start()]):
+        return False
+    # English headlines usually consist of title-cased noun phrases. A verb
+    # keyword alone (e.g. 'Forecast') must not make that a research assertion.
+    title_case = sum(word[:1].isupper() for word in words) / max(len(words), 1)
+    return title_case < .60 or bool(re.search(r"[.!?][\"”')]*$", value))
 
 
 def substantive_sentences(text: str, *, limit: int = 12, max_chars: int = 600) -> list[str]:
     """Retain literal source sentences; never invent connective conclusions."""
-    text = re.sub(r"!\[[^\]]*\]\([^)]*\)", " ", str(text or ""))
+    text = "\n".join(line for line in str(text or "").splitlines()
+                     if not re.match(r"^\s*#{1,6}(?:\s|$)", line)
+                     and not FILENAME_LINE.search(line.strip()))
+    text = re.sub(r"!\[[^\]]*\]\([^)]*\)", " ", text)
     text = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", text)
     text = re.sub(r"<[^>]+>", " ", text)
     blocks = re.split(r"\n\s*\n|(?<=[。！？])|(?<=[.!?])\s+(?=[A-Z])", text)
@@ -42,7 +69,7 @@ def substantive_sentences(text: str, *, limit: int = 12, max_chars: int = 600) -
             continue
         if len(re.findall(r"[A-Za-z]{3,}", value)) < 7 and len(re.findall(r"[\u3400-\u9fff]", value)) < 18:
             continue
-        if not RESEARCH.search(value) or value in results:
+        if FILENAME_LINE.search(value) or not RESEARCH.search(value) or not _assertion(value) or value in results:
             continue
         results.append(value)
         if len(results) >= limit:
@@ -230,27 +257,46 @@ def extract_candidates(manifest: Path, originals_dir: Path, destination: Path, *
 
 def make_summary(reports: list[dict], figures: list[dict], receipt: dict) -> dict:
     """A thematic, attributed excerpt edition; no model or inferred consensus."""
-    from build_market_views_pdf import bank_alias, heuristic_bank_plan, select_section_figures
+    from build_market_views_pdf import bank_alias, bank_category_for, cap_bank_plan, select_section_figures
     included = {row["report_id"] for row in receipt["reports"] if row["status"] == "included"}
     if len(reports) != receipt["included_reports"] or {Path(row.get("path", "")).name for row in reports} != included:
         raise ValueError("daily_digest_report_inventory_mismatch")
     by_id = {row["id"]: row for row in reports}
+    grouped = {}
+    for report in reports:
+        # Telecom sector titles often mention satellite broadband alongside
+        # cable; that does not turn the whole report into aerospace research.
+        title = str(report.get("title") or "")
+        heading = "电信、宽带与有线网络" if re.search(r"telecom|broadband|电信|宽带|有线电视", title, re.I) else bank_category_for(report)
+        grouped.setdefault(heading, []).append(report["id"])
+    plan_rows = cap_bank_plan([{"heading": heading, "report_ids": ids}
+                              for heading, ids in grouped.items()])
     sections, executive = [], []
-    for plan in heuristic_bank_plan(reports):
+    for plan in plan_rows:
         views = []
         for rid in plan["report_ids"]:
             report = by_id[rid]
-            sentences = substantive_sentences(report.get("extract") or report.get("digest") or "", limit=3)
+            evidence_path = Path(report.get("path", "")) / "source_excerpt_evidence.json"
+            evidence_rows, pages = [], []
+            if evidence_path.is_file():
+                evidence = json.loads(evidence_path.read_text(encoding="utf-8"))
+                for row in evidence.get("excerpts", []):
+                    for sentence in substantive_sentences(row.get("text", ""), limit=3):
+                        if sentence not in {entry["text"] for entry in evidence_rows}:
+                            evidence_rows.append({"text": sentence, "page": row["page"]})
+                # The publication renderer retains one main view and one
+                # supporting excerpt; cite only the text it will display.
+                selected = evidence_rows[:2]
+                sentences = [row["text"] for row in selected]
+                pages = sorted({row["page"] for row in selected})
+            else:
+                sentences = substantive_sentences(report.get("extract") or report.get("digest") or "", limit=2)
             if not sentences:
                 raise ValueError("daily_digest_report_has_no_substantive_excerpt")
             views.append({"bank": bank_alias(report), "view": sentences[0], "data_points": sentences[1:3],
                           "marginal_change": "", "report_ids": [rid]})
-            evidence_path = Path(report.get("path", "")) / "source_excerpt_evidence.json"
-            if evidence_path.is_file():
-                evidence = json.loads(evidence_path.read_text(encoding="utf-8"))
-                pages = sorted({row["page"] for row in evidence.get("excerpts", [])})
-                if pages:
-                    views[-1]["sources"] = [{"report_id": rid, "pages": pages}]
+            if pages:
+                views[-1]["sources"] = [{"report_id": rid, "pages": pages}]
             if len(executive) < 8:
                 executive.append(bank_alias(report) + "：" + sentences[0])
         sections.append({"heading": plan["heading"], "thesis": "本节按主题列出已取得来源的研究摘录，保留机构归属与原始图表。",

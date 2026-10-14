@@ -798,13 +798,15 @@ def build_pdf(summary_dir: Path, output_pdf: Path, *, _budget_chars: int = 4200)
             story.append(Paragraph("<b>催化剂与后续观察</b>", styles["PortalLabel"]))
             for point in section["catalysts"]:
                 story.append(Paragraph("- " + clean_text(point), styles["PortalBody"]))
-        story.append(Paragraph("<b>机构观点对照</b>", styles["PortalLabel"]))
+        view_label = "机构观点摘录" if summary.get("source_kind") == "daily-digest" else "机构观点对照"
+        story.append(Paragraph(f"<b>{view_label}</b>", styles["PortalLabel"]))
         for view in section.get("bank_views") or []:
             bank = clean_text(view.get("bank") or "投行")
             body = clean_text(view.get("view") or "")
             story.append(Paragraph(f"<b>{bank}</b>｜{body}", styles["PortalBankView"]))
             for data_point in view.get("data_points") or []:
-                story.append(Paragraph("数据：" + clean_text(data_point), styles["PortalSmall"]))
+                prefix = "原文补充：" if summary.get("source_kind") == "daily-digest" else "数据："
+                story.append(Paragraph(prefix + clean_text(data_point), styles["PortalSmall"]))
             if view.get("marginal_change"):
                 story.append(Paragraph("边际变化：" + clean_text(view.get("marginal_change")), styles["PortalSmall"]))
             source_labels = []
@@ -957,7 +959,7 @@ def build_pdf(summary_dir: Path, output_pdf: Path, *, _budget_chars: int = 4200)
     stats_path.write_text(json.dumps(render_stats, ensure_ascii=False, indent=2), encoding="utf-8")
     log(
         f"Fast PDF generated: {output_pdf} ({output_pdf.stat().st_size} bytes); "
-        f"{'OCR reconstructed charts' if summary.get('source_kind') == 'ocr-synthesis' else 'MinerU figures'} "
+        f"{'OCR reconstructed charts' if summary.get('source_kind') == 'ocr-synthesis' else 'Original-source figures' if summary.get('source_kind') == 'daily-digest' else 'MinerU figures'} "
         f"rendered={len(rendered_figure_ids)}/{len(selected_figure_ids)}"
     )
 

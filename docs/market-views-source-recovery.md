@@ -20,6 +20,11 @@ the guard uses retained exact originals, or a separately bound fresh Dropbox
 selection when Daily metadata/artifacts are unavailable. These lineages are
 never mixed.
 
+Dropbox discovery outages can also use a still-fresh, authenticated Daily
+manifest to establish the source date. Automatic discovery skips empty or
+malformed candidate manifests and continues; explicit run requests remain
+strict. A positively identified stale/future date is never bypassed.
+
 The deadline edition uses source-attributed thematic excerpts without a model
 dependency. Native text is read on every page; sparse pages may use OCR. Each
 PDF has a 45-second extraction allowance, the batch has a 10-minute allowance,
