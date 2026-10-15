@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "source_job_id": "116174580136",
+  "source_run_id": "38658714099",
+  "sources": [
+    {
+      "bytes": 3468553,
+      "local_filename": "IMF_The-Bangkok-Blueprint-for-Fraud-Resilient-Financial-Services_d0dfd917.pdf",
+      "sha256": "1d169e6f816bdd6446855694cd5bee7961c06cd4a0441cb442561f9af5090aae"
+    },
+    {
+      "bytes": 13430632,
+      "local_filename": "IMF_The-Managing-Director-s-Global-Policy-Agenda-Annual-Meetings_78a92160.pdf",
+      "sha256": "03d5438deb8e409e23b5010441d3a45f0d7703bc5c8861212dfeab3a8c79b018"
+    },
+    {
+      "bytes": 7344364,
+      "local_filename": "IMF_Fiscal-Monetary-Interactions-The-Role-of-Debt-Maturity_7677b19a.pdf",
+      "sha256": "f6418776bf2666a2204d67e22da9bbbaf6ce2a1b07a565b2e7e0f1e1b5824e08"
+    },
+    {
+      "bytes": 837337,
+      "local_filename": "BIS_Money-and-the-architecture-of-trust_47e814e8.pdf",
+      "sha256": "33b782c048c56f61de8ce61559e7cea5143a364ffd848a23313304acd92e055c"
+    }
+  ]
+}
