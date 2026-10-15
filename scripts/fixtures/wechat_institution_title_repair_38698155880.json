@@ -8,6 +8,15 @@
     "diagnostic_head": "dc60acf66e777c6ff443e3d0ff676c6c07135ed3",
     "scope": "exact_three_existing_articles_only"
   },
+  "reviewed_preview_url": {
+    "diagnostic_run_id": 38707283661,
+    "diagnostic_head": "78ec4b9895b970d413eb69b91bf383a930d478f2",
+    "prefix": "http://mp.weixin.qq.com/s?",
+    "suffix": "#rd",
+    "query_names": ["__biz", "tempkey", "chksm"],
+    "volatile_parameter": "tempkey",
+    "decoded_value_chars": 232
+  },
   "files": {
     "wechat_draft_summary.json": "d0eecd14d37e4199565da071f97cf1cc5979a23056c3e65742bd11a1814aedd1",
     "draft_payload_01.json": "10ac0697438a7ce4fc1545755f8b92c58ba5baac2eb4e34345ea06904572b483",

@@ -201,8 +201,8 @@ def all_field_read_diagnostics(first, second, writable_fields):
     if any(len(json.dumps([left, right], ensure_ascii=False).encode()) > 2 * MAX_HTML_BYTES
            for left, right in zip(first_rows, second_rows)):
         return {'diagnostic_only': True, 'error_category': 'live_field_byte_bound'}
-    # Same serialization as the plan's full_live_articles_sha256, so every
-    # diagnostic read is explicitly associated with its independent receipt.
+    # Same serialization as the raw read receipt, so each diagnostic read is
+    # explicitly associated without treating volatile fields as stable.
     group_hash = lambda rows: hashlib.sha256(json.dumps(rows, ensure_ascii=False, sort_keys=True,
                                                         separators=(',', ':')).encode()).hexdigest()
     result = {'diagnostic_only': True, 'acceptance_policy_changed': False,

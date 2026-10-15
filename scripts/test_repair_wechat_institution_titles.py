@@ -78,20 +78,27 @@ class BoundedTitleRepairTests(unittest.TestCase):
             path.write_text(json.dumps(record, ensure_ascii=False))
         self.source = {'media_id': 'test-only-draft', 'articles': articles, 'old_records': records, 'pins': self.pins}
         self.actual = copy.deepcopy(articles)
-        for article in self.actual:
+        for index, article in enumerate(self.actual):
             for field in repair.UPLOAD_ONLY:
                 article.pop(field)
-            article['url'] = 'https://example.com/existing-draft'
+            article['url'] = 'http://mp.weixin.qq.com/s?__biz=account&tempkey=' + 'a' * 232 + '&chksm=checksum' + str(index) + '#rd'
         self.data = {'news_item': self.actual}
         self.progress = {'attempted_indices': [], 'verified_indices': [], 'updates': []}
         self.contract = patch.object(repair, 'summarize_draft_get_response', return_value={'ok': True})
         self.contract.start()
         self.addCleanup(self.contract.stop)
 
-    def run_repair(self, *, unknown=False, apply_post=True, mutate=None):
+    def run_repair(self, *, unknown=False, apply_post=True, mutate=None, rotate_tempkey=False):
         state = copy.deepcopy(self.data)
         posts = []
+        reads = 0
         def get(*args):
+            nonlocal reads
+            reads += 1
+            if rotate_tempkey:
+                for row in state['news_item']:
+                    prefix, rest = row['url'].split('&tempkey=', 1)
+                    row['url'] = prefix + '&tempkey=' + str(reads).zfill(232) + '&' + rest.split('&', 1)[1]
             return copy.deepcopy(state)
         def post(session, url, payload, timeout, *, max_attempts):
             self.assertIn('/draft/update?', url)
@@ -163,8 +170,61 @@ class BoundedTitleRepairTests(unittest.TestCase):
         changed = copy.deepcopy(self.actual)
         changed[0]['title'] = self.pins['articles'][0]['selected_title']
         self.assertEqual(before, repair.protected_live_facts(changed))
-        changed[0]['url'] = 'https://example.com/changed'
+        changed[0]['url'] = changed[0]['url'].replace('checksum0', 'checksum-changed')
         self.assertNotEqual(before, repair.protected_live_facts(changed))
+
+    def test_only_reviewed_tempkey_rotation_leaves_a_stable_plan_and_payload(self):
+        first = copy.deepcopy(self.data)
+        second = copy.deepcopy(first)
+        for row in second['news_item']:
+            row['url'] = row['url'].replace('a' * 232, 'b' * 232)
+        changes = repair.blog_changes(self.archive, self.source)
+        self.assertNotEqual(repair.digest(first['news_item']), repair.digest(second['news_item']))
+        self.assertEqual(repair.plan_for(first, self.source, changes), repair.plan_for(second, self.source, changes))
+        final, posts = self.run_repair(rotate_tempkey=True)
+        self.assertEqual(posts, [0, 1, 2])
+        self.assertEqual(self.progress['live_before'], self.progress['live_after'])
+        self.assertNotEqual(self.progress['observed_volatile_before'], self.progress['observed_volatile_after'])
+        for before, after in zip(self.actual, final['news_item']):
+            self.assertEqual({k: v for k, v in before.items() if k in repair.WRITABLE and k != 'title'},
+                             {k: v for k, v in after.items() if k in repair.WRITABLE and k != 'title'})
+
+    def test_preview_other_url_bytes_unknown_fields_and_types_remain_bound(self):
+        for field, value in [('url', self.actual[0]['url'].replace('checksum0', 'different')),
+                             ('thumb_url', 'changed'), ('cover_info', {'changed': True}),
+                             ('unknown', True), ('need_open_comment', False)]:
+            changed = copy.deepcopy(self.data)
+            changed['news_item'][0][field] = value
+            with self.subTest(field=field):
+                self.assertFalse(repair.unchanged_articles(changed, self.actual))
+
+    def test_unreviewed_preview_host_path_parameter_shapes_are_rejected(self):
+        original = self.actual[0]['url']
+        for value in [original.replace('mp.weixin.qq.com', 'example.com'),
+                      original.replace('/s?', '/other?'), original.replace('#rd', '#changed'),
+                      original.replace('tempkey=', 'unknown='), original.replace('a' * 232, 'short'),
+                      original.replace('&chksm=', '&tempkey=x&chksm='),
+                      original.replace('tempkey=', 'tempkey=%QZ')]:
+            with self.subTest(shape=value[:40]), self.assertRaises(repair.RepairError):
+                repair.reviewed_preview_parts(value)
+
+    def test_partial_success_is_recorded_before_later_unverified_post(self):
+        calls = []
+        state = copy.deepcopy(self.data)
+        def post(_session, _url, payload, _timeout, *, max_attempts):
+            self.assertEqual(max_attempts, 1)
+            index = payload['index']; calls.append(index)
+            if index == 0:
+                state['news_item'][0]['title'] = payload['articles']['title']
+            raise TimeoutError('unconfirmed')
+        with patch.object(repair, 'get_draft', side_effect=lambda *args: copy.deepcopy(state)), \
+                patch.object(repair, 'post_wechat_json', side_effect=post), patch.object(repair.time, 'sleep'):
+            with self.assertRaisesRegex(repair.RepairError, 'title_update_not_verified'):
+                repair.repair_titles(None, 'token', self.source, self.data, self.progress, lambda: None)
+        self.assertEqual(calls, [0, 1])
+        self.assertEqual(self.progress['attempted_indices'], [0, 1])
+        self.assertEqual(self.progress['verified_indices'], [0])
+        self.assertEqual([row['index'] for row in self.progress['updates']], [0])
 
     def test_unknown_success_is_read_back_without_repeat_post(self):
         _, posts = self.run_repair(unknown=True)
