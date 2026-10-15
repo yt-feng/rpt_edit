@@ -17,6 +17,13 @@ class ResumeWorkflowTests(unittest.TestCase):
     def test_generated_workflow_is_current(self):
         self.assertEqual(self.recovery, generate(self.source))
 
+    def test_complete_provenance_bundle_is_preserved_and_checked_in_both_workflows(self):
+        for workflow in (self.source, self.recovery):
+            self.assertIn('copy_locale_manifest_bundle', workflow)
+            self.assertIn('scripts/verify_portal_locale_manifest_bundle.py', workflow)
+            self.assertIn('--release "$STATIC_RELEASE" --tree "$STATIC_TREE_SHA256"', workflow)
+            self.assertNotIn('required_paths+=(data/i18n/source-fallbacks', workflow)
+
     def test_deployment_and_rollback_jobs_are_identical(self):
         def jobs(text):
             return dict(re.findall(r'^  ([a-z_]+):\n(.*?)(?=^  [a-z_]+:\n|\Z)',

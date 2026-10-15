@@ -23,7 +23,7 @@ on:
         type: string
         default: "1"
   pull_request:
-    paths: ['scripts/*locale*', 'scripts/verify_prepared_static_slot.py', '.github/workflows/locale-manifest-regression.yml']
+    paths: ['scripts/*locale*', 'scripts/verify_prepared_static_slot.py', 'scripts/audit_portal_shadow_preview.py', 'scripts/test_audit_portal_shadow_preview.py', '.github/workflows/locale-manifest-regression.yml']
   push:
     branches: [main]
     paths: ['scripts/portal_locale_manifest.py', 'scripts/build_portal_locales.py', 'scripts/test_locale_manifest_compaction.py', '.github/workflows/locale-manifest-regression.yml']
@@ -107,9 +107,10 @@ jobs:
           LOCALE_MANIFEST_DIAGNOSTICS: ${{ inputs.diagnostic_run_id && format('{0}/locale-regression-diagnostics/locale-full-diagnostics.json', runner.temp) || '' }}
           LOCALE_MANIFEST_FULL: ${{ inputs.manifest_run_id && format('{0}/locale-regression-full/candidate/data/i18n/manifest.json', runner.temp) || '' }}
           LOCALE_RESOLUTION_SCALE: '126432'
+          LOCALE_MANIFEST_SHARD_SCALE: '110000'
         run: |
           set -euo pipefail
           python -m pip install 'requests>=2.31,<3' 'Pillow>=10.1,<12'
-          for name in test_locale_manifest_compaction test_portal_locale_manifest test_build_portal_locales test_portal_locale_resolution test_portal_locale_source_fallback test_verify_prepared_static_slot test_verify_portal_locale_routes test_audit_portal_shadow_preview test_verify_portal_chinese_parity test_resume_portal_locale_candidate; do
+          for name in test_locale_manifest_compaction test_locale_manifest_shards test_verify_portal_locale_manifest_bundle test_portal_locale_resume_workflow test_portal_locale_manifest test_build_portal_locales test_portal_locale_resolution test_portal_locale_source_fallback test_verify_prepared_static_slot test_verify_portal_locale_routes test_audit_portal_shadow_preview test_verify_portal_chinese_parity test_resume_portal_locale_candidate; do
             python -B scripts/$name.py
           done

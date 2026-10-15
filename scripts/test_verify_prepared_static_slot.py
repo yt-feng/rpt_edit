@@ -138,6 +138,29 @@ class PreparedStaticSlotTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'coverage.ko'):
             self.verify(locale_origin=ORIGIN)
 
+    def test_source_shards_bind_committed_files_and_reject_missing_or_corrupt_bytes(self) -> None:
+        from test_verify_portal_locale_manifest_bundle import sharded_fixture
+        manifest, files = self.locale_files()
+        manifest, shards = sharded_fixture(manifest)
+        files.update(shards)
+        self.prepare_locales(manifest, files)
+        self.assertEqual(self.verify(locale_origin=ORIGIN)['locale_source_shards_verified'], 1)
+        relative = next(iter(shards))
+        key = publisher.slot_prefix(self.slot) + relative
+        original = self.client.objects[key]['body']
+        self.client.objects[key]['body'] = b'x' * len(original)
+        with self.assertRaisesRegex(RuntimeError, 'content differs'):
+            self.verify(locale_origin=ORIGIN)
+        self.client.objects[key]['body'] = original
+        # A root descriptor must agree with the committed inventory before GET.
+        manifest['source_fallbacks']['shards'][0]['byte_size'] += 1
+        self.prepare_locales(manifest, files)
+        self.client.operations.clear()
+        with self.assertRaisesRegex(RuntimeError, 'committed static manifest'):
+            self.verify(locale_origin=ORIGIN)
+        self.assertNotIn(('get', key), self.client.operations)
+
+
     def test_three_megabyte_source_fallback_manifest_passes_the_same_route_contract(self) -> None:
         manifest, files = self.locale_files()
         rows = {}

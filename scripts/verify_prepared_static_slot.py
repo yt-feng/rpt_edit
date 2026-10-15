@@ -335,6 +335,19 @@ def verify_prepared_static_slot(
         REQUIRED_LOCALE_PATHS if "data/i18n/manifest.json" in files else ()
     ) + (REQUIRED_EXTENDED_BASE_PATHS if has_extended else ())
     locale_manifest = None
+    locale_shards_verified = 0
+    def resolve_locale_shard(row: dict[str, Any]) -> bytes:
+        nonlocal locale_shards_verified
+        relative = row["path"]
+        descriptor = files.get(relative)
+        if (descriptor is None or descriptor["size"] != row["byte_size"]
+                or descriptor["sha256"] != row["sha256"]):
+            raise RuntimeError(f"Locale source shard differs from the committed static manifest: {relative}")
+        body = read_verified_candidate_body(
+            client, bucket, prefix + relative, descriptor, maximum=MAX_LOCALE_MANIFEST_BYTES,
+        )
+        locale_shards_verified += 1
+        return body
     if locale_origin is not None and "data/i18n/manifest.json" not in files:
         raise RuntimeError("Prepared locale manifest is required when locale origin is provided")
     for relative in required_paths:
@@ -343,7 +356,7 @@ def verify_prepared_static_slot(
         if locale_origin is not None and relative == "data/i18n/manifest.json":
             locale_manifest = parse_locale_manifest(read_verified_candidate_body(
                 client, bucket, prefix + relative, files[relative], maximum=MAX_LOCALE_MANIFEST_BYTES,
-            ))
+            ), shard_resolver=resolve_locale_shard)
         else:
             verify_object_body(client, bucket, prefix + relative, files[relative])
 
@@ -393,6 +406,7 @@ def verify_prepared_static_slot(
         "tree_sha256": tree,
         "static_objects_verified": len(required_paths),
         "runtime_objects_verified": len(expected_runtime),
+        "locale_source_shards_verified": locale_shards_verified,
     }
     if locale_report is not None:
         result["locale_routes_status"] = locale_report["status"]

@@ -843,6 +843,39 @@ class ShadowPreviewAuditTests(unittest.TestCase):
         with self.assertRaisesRegex(audit.AuditError, 'coverage.ko'):
             self.run_audit(plan, responses)
 
+    def test_source_shards_require_shadow_headers_exact_bytes_and_stable_release(self) -> None:
+        from test_verify_portal_locale_manifest_bundle import sharded_fixture
+        plan, responses = response_fixture()
+        root = responses['/data/i18n/manifest.json']
+        value, shards = sharded_fixture(json.loads(root.body))
+        root.body = json.dumps(value).encode()
+        relative, body = next(iter(shards.items()))
+        responses['/' + relative] = FakeResponse(body, headers=protected_headers())
+        result, opener = self.run_audit(plan, responses)
+        self.assertEqual(result['source_shards_verified'], 1)
+        self.assertEqual(sum(request.full_url.endswith('/data/i18n/manifest.json') for request in opener.requests), 2)
+        responses['/' + relative].headers = FakeHeaders({})
+        with self.assertRaisesRegex(audit.AuditError, 'indexing header'):
+            self.run_audit(plan, responses)
+        responses['/' + relative] = FakeResponse(b'x' * len(body), headers=protected_headers())
+        with self.assertRaisesRegex(audit.AuditError, 'shard byte size or hash'):
+            self.run_audit(plan, responses)
+
+        responses['/' + relative] = FakeResponse(body, headers=protected_headers())
+        class ChangedOnSecondRead(FakeResponse):
+            reads = 0
+            def read(self, limit=-1):
+                self.reads += 1
+                if self.reads == 2:
+                    return b'{}'
+                return super().read(limit)
+        for path in ('/data/i18n/manifest.json', '/.well-known/edge-state'):
+            original = responses[path]
+            responses[path] = ChangedOnSecondRead(original.body, headers=protected_headers())
+            with self.subTest(path=path), self.assertRaisesRegex(audit.AuditError, 'release changed'):
+                self.run_audit(plan, responses)
+            responses[path] = original
+
     def test_verifies_manifest_data_size_and_digest(self) -> None:
         plan, responses = response_fixture()
         response = responses["/data/i18n/ja/charts.json"]

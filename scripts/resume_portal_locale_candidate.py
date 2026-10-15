@@ -23,9 +23,11 @@ import check_portal_app_budget as app_budget
 from edge_route_cutover import request_status
 import verify_portal_chinese_parity as parity
 from verify_prepared_static_slot import (
-    read_json_object as read_bounded_json_object, read_verified_candidate_body, static_tree_sha256,
+    read_json_object as read_bounded_json_object, read_verified_candidate_body, read_bounded_body, static_tree_sha256,
 )
-from portal_locale_manifest import LocaleManifestError, load_locale_manifest, validate_translation_resolution
+from portal_locale_manifest import (
+    LocaleManifestError, MAX_LOCALE_MANIFEST_BYTES, parse_locale_manifest, validate_translation_resolution,
+)
 from verify_portal_locale_routes import RouteVerificationError, declared_checks
 
 
@@ -489,17 +491,16 @@ def validate_remote_slot(client: Any, bucket: str, slot: str, release: str, tree
     return manifest
 
 
-def read_candidate_object(client: Any, bucket: str, key: str, descriptor: dict[str, Any]) -> bytes:
+def read_candidate_object(client: Any, bucket: str, key: str, descriptor: dict[str, Any], *, maximum: int | None = None) -> bytes:
     """Retry only transient object reads; always close streams and verify bytes."""
+    size = descriptor["size"]
+    require(type(size) is int and size >= 0 and (maximum is None or size <= maximum),
+            f"Candidate object exceeds its byte size bound: {key}")
     for attempt in range(len(READ_RETRY_DELAYS) + 1):
-        stream = None
         try:
             stream = client.get_object(Bucket=bucket, Key=key)["Body"]
-            body = publisher.body_bytes(stream)
+            body = read_bounded_body(stream, size)
         except Exception as error:
-            if stream is not None and hasattr(stream, "close"):
-                stream.close()
-                stream = None
             code = publisher.upload_error_code(error)
             retryable = code in publisher.RETRYABLE_UPLOAD_ERROR_CODES or type(error).__name__ in {
                 "ReadTimeoutError", "ResponseStreamingError", "IncompleteReadError", "ConnectionClosedError",
@@ -510,9 +511,6 @@ def read_candidate_object(client: Any, bucket: str, key: str, descriptor: dict[s
             print(f"Locale resume read_retry attempt={attempt + 1} delay_seconds={delay} code={code}", flush=True)
             time.sleep(delay)
             continue
-        finally:
-            if stream is not None and hasattr(stream, "close"):
-                stream.close()
         require(len(body) == descriptor["size"] and hashlib.sha256(body).hexdigest() == descriptor["sha256"],
                 f"Candidate downloaded file differs from manifest: {key}")
         return body
@@ -523,16 +521,28 @@ def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any],
     files = manifest["files"]
     prefix = publisher.slot_prefix(manifest["slot"])
     downloaded: set[str] = set()
-    def fetch_one(relative: str) -> str:
+    def fetch_one(relative: str, *, maximum: int | None = None) -> str:
         require(relative in files, f"Candidate audit file is absent from manifest: {relative}")
         descriptor = files[relative]
-        body = read_candidate_object(client, bucket, prefix + relative, descriptor)
+        body = read_candidate_object(client, bucket, prefix + relative, descriptor, maximum=maximum)
         write_local(site_dir, relative, body)
         return relative
-    downloaded.add(fetch_one("data/i18n/manifest.json"))
     try:
-        locale_manifest = load_locale_manifest(site_dir / "data/i18n/manifest.json")
-    except LocaleManifestError as error:
+        downloaded.add(fetch_one("data/i18n/manifest.json", maximum=MAX_LOCALE_MANIFEST_BYTES))
+        def resolve_locale_shard(row: dict[str, Any]) -> bytes:
+            relative = row["path"]
+            descriptor = files.get(relative)
+            require(isinstance(descriptor, dict) and descriptor.get("size") == row["byte_size"]
+                    and descriptor.get("sha256") == row["sha256"],
+                    f"Candidate locale source shard differs from committed manifest: {relative}")
+            body = read_candidate_object(client, bucket, prefix + relative, descriptor,
+                                         maximum=MAX_LOCALE_MANIFEST_BYTES)
+            write_local(site_dir, relative, body)
+            downloaded.add(relative)
+            return body
+        locale_manifest = parse_locale_manifest((site_dir / "data/i18n/manifest.json").read_bytes(),
+                                                shard_resolver=resolve_locale_shard)
+    except (LocaleManifestError, ResumeError) as error:
         raise ResumeError(f"Candidate locale manifest is invalid: {error}") from error
     require(locale_manifest.get("quality_gate_version") == 3 and set(locale_manifest.get("locales", [])) == set(LOCALES),
             "Candidate locale coverage is incomplete")

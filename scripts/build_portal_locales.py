@@ -44,7 +44,8 @@ from portal_locale_literals import is_chart_geography_identity_label, is_chart_m
 from portal_locale_scope import deferred_locale_source, restrict_html_to_cohort
 from portal_locale_report_preview import localize_report_preview
 from portal_locale_detail_hooks import defer_unverified_report_preview, inject_locale_detail_hooks
-from portal_locale_manifest import LocaleManifestError, parse_locale_manifest, encode_locale_manifest
+from portal_locale_manifest import (LocaleManifestError, parse_locale_manifest,
+                                    validate_locale_manifest_capacity, write_locale_manifest_bundle)
 from repair_portal_ja_catalog_titles import apply_ja_catalog_title_repairs
 
 CACHE_SCHEMA_VERSION = 1
@@ -698,10 +699,9 @@ def stable_json_bytes(value: Any) -> bytes:
 
 def write_locale_manifest(path: Path, manifest: dict[str, Any]) -> None:
     try:
-        body = encode_locale_manifest(manifest)
+        write_locale_manifest_bundle(path, manifest)
     except LocaleManifestError as error:
         raise TranslationError(str(error)) from error
-    path.write_bytes(body)
 
 
 def empty_cache(model: str = DEFAULT_DEEPSEEK_MODEL, *, provider: str = "deepseek") -> dict[str, Any]:
@@ -5866,9 +5866,9 @@ def _build_localized_release(
         },
     }
     try:
-        # Reject an over-capacity provenance inventory before rendering or
-        # touching release files. The final manifest is checked again below.
-        encode_locale_manifest(resolution_manifest)
+        # Validate every bounded provenance partition before rendering. The
+        # final root binds the same complete source inventory below.
+        validate_locale_manifest_capacity(resolution_manifest)
     except LocaleManifestError as error:
         raise TranslationError(f"Locale source accounting failed before rendering: {error}") from error
     log(f"Locale source accounting passed: rendering_pages_per_locale={len(localized_html_sources)}")

@@ -578,7 +578,7 @@ class PortalLocaleBuildTests(unittest.TestCase):
     def test_capacity_failure_precedes_rendering_and_asset_writes(self) -> None:
         before = {path.relative_to(self.site): path.read_bytes()
                   for path in self.site.rglob("*") if path.is_file()}
-        with mock.patch.object(builder, "encode_locale_manifest", side_effect=portal_locale_manifest.LocaleManifestError(
+        with mock.patch.object(builder, "validate_locale_manifest_capacity", side_effect=portal_locale_manifest.LocaleManifestError(
                 "Expanded source fallback table exceeds safety budget")):
             with self.assertRaisesRegex(builder.TranslationError, "before rendering"):
                 self._build(RecordingTranslator())

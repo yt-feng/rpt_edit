@@ -455,7 +455,11 @@ def fetch(
                 Request(target, headers={"Cache-Control": "no-cache", "User-Agent": "Portal-Shadow-Audit/1.0"}),
                 timeout=timeout,
             )
-            body = response.read(MAX_RESPONSE_BYTES + 1)
+            try:
+                body = response.read(MAX_RESPONSE_BYTES + 1)
+            finally:
+                if hasattr(response, "close"):
+                    response.close()
             elapsed = time.monotonic() - started
             if response.status != 200:
                 raise AuditError(f"Preview returned HTTP {response.status}: {relative}")
@@ -738,8 +742,17 @@ def audit_preview(
 
     manifest_body, manifest_headers, elapsed = fetch(opener, base_url, "/data/i18n/manifest.json")
     require_shadow_header(manifest_headers, "/data/i18n/manifest.json")
+    shard_count = 0
+    def resolve_locale_shard(descriptor: dict[str, Any]) -> bytes:
+        nonlocal shard_count
+        path = "/" + descriptor["path"]
+        body, headers, duration = fetch(opener, base_url, path)
+        require_shadow_header(headers, path)
+        rows.append({"path": path, "bytes": len(body), "milliseconds": round(duration * 1000)})
+        shard_count += 1
+        return body
     try:
-        manifest = parse_locale_manifest(manifest_body)
+        manifest = parse_locale_manifest(manifest_body, shard_resolver=resolve_locale_shard)
     except LocaleManifestError as error:
         raise AuditError(str(error)) from error
     required_files = manifest_files(manifest)
@@ -812,6 +825,14 @@ def audit_preview(
             raise AuditError(f"Shadow locale data does not match its manifest: {path}")
         rows.append({"path": path, "locale": locale, "bytes": len(body), "milliseconds": round(elapsed * 1000)})
 
+    if shard_count:
+        final_root, headers, _elapsed = fetch(opener, base_url, "/data/i18n/manifest.json")
+        require_shadow_header(headers, "/data/i18n/manifest.json")
+        final_state, headers, _elapsed = fetch(opener, base_url, "/.well-known/edge-state")
+        require_shadow_header(headers, "/.well-known/edge-state")
+        if final_root != manifest_body or json_object(final_state, "Shadow Edge state") != state:
+            raise AuditError("Shadow locale bundle release changed during verification")
+
     return {
         "schema_version": 1,
         "base_url": base_url,
@@ -819,6 +840,7 @@ def audit_preview(
         "tree_sha256": expected_tree,
         "sample_count": len(samples),
         "asset_count": len(assets),
+        "source_shards_verified": shard_count,
         "application_routes": application_routes,
         "zsxq_cleanup": {
             locale: {**row, "status": "passed" if row["status"] == "sampled" else row["status"]}

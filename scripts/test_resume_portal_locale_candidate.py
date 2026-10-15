@@ -179,7 +179,7 @@ class ResumeTests(unittest.TestCase):
         relative = "data/chart_search_index.json"
         key = publisher.slot_prefix("b") + relative
         self.r2.objects[key]["body"] = b"altered file"
-        with self.assertRaisesRegex(resume.ResumeError, "downloaded file differs from manifest"):
+        with self.assertRaisesRegex(resume.ResumeError, "Candidate object read failed"):
             resume.download_candidate_files(self.r2, "bucket", self.manifest, self.site, workers=1)
         self.assertFalse((self.site / relative).exists())
         self.manifest["files"].pop(relative)
@@ -511,6 +511,25 @@ class ResumeTests(unittest.TestCase):
                 with self.assertRaisesRegex(resume.ResumeError, "locale manifest is invalid"):
                     resume.download_candidate_files(self.r2, "bucket", self.manifest, self.site, workers=1)
 
+    def test_download_resolves_all_source_shards_only_inside_committed_slot(self):
+        from test_verify_portal_locale_manifest_bundle import sharded_fixture
+        path = 'data/i18n/manifest.json'
+        prefix = publisher.slot_prefix('b')
+        value, shards = sharded_fixture(json.loads(self.r2.objects[prefix + path]['body']))
+        for relative, body in {path: encoded(value), **shards}.items():
+            self.r2.objects[prefix + relative] = {'body': body}
+            self.manifest['files'][relative] = {'size': len(body), 'sha256': hashlib.sha256(body).hexdigest()}
+        restored = resume.download_candidate_files(self.r2, 'bucket', self.manifest, self.site, workers=1)
+        self.assertTrue(set(shards).issubset(restored))
+        for relative, body in shards.items():
+            self.assertEqual((self.site / relative).read_bytes(), body)
+        relative = next(iter(shards))
+        self.manifest['files'][relative]['sha256'] = '0' * 64
+        self.r2.operations.clear()
+        with self.assertRaisesRegex(resume.ResumeError, 'source shard differs from committed'):
+            resume.download_candidate_files(self.r2, 'bucket', self.manifest, self.site, workers=1)
+        self.assertNotIn(('get', prefix + relative), self.r2.operations)
+
     def restore(self, **kwargs):
         options = dict(github=self.github, client=self.r2, bucket="bucket", repository=REPO, run_id=321, run_attempt=1,
                        site_dir=self.site, diagnostics_dir=self.diag, work_dir=self.work, origin=ORIGIN,
@@ -784,6 +803,28 @@ class CandidateReadRetryTests(unittest.TestCase):
 
     def descriptor(self):
         return {"size": len(self.BODY), "sha256": hashlib.sha256(self.BODY).hexdigest()}
+
+    def test_empty_static_file_keeps_bounded_read_compatibility(self):
+        stream = io.BytesIO(b'')
+        client = Mock()
+        client.get_object.return_value = {'Body': stream}
+        self.assertEqual(resume.read_candidate_object(client, 'bucket', self.KEY,
+                         {'size': 0, 'sha256': hashlib.sha256(b'').hexdigest()}), b'')
+        self.assertTrue(stream.closed)
+        client.get_object.assert_called_once_with(Bucket='bucket', Key=self.KEY)
+
+    def test_oversized_descriptor_stops_before_read_and_stream_is_bounded(self):
+        client = Mock()
+        with self.assertRaisesRegex(resume.ResumeError, 'byte size bound'):
+            resume.read_candidate_object(client, 'bucket', self.KEY, self.descriptor(), maximum=1)
+        client.get_object.assert_not_called()
+        stream = Mock()
+        stream.read.return_value = b'x' * (len(self.BODY) + 1)
+        client.get_object.return_value = {'Body': stream}
+        with self.assertRaisesRegex(resume.ResumeError, 'read failed'):
+            resume.read_candidate_object(client, 'bucket', self.KEY, self.descriptor())
+        stream.read.assert_called_once_with(len(self.BODY) + 1)
+        stream.close.assert_called_once_with()
 
     @staticmethod
     def read_error(code):

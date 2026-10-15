@@ -758,8 +758,7 @@ jobs:
               install -m 0600 "_neutral_site/sitemap-$locale.xml" \
                 "_release_validation/candidate/sitemap-$locale.xml"
             done
-            install -m 0600 _neutral_site/data/i18n/manifest.json \
-              _release_validation/candidate/data/i18n/manifest.json
+            python3 -c 'from pathlib import Path; from scripts.portal_locale_manifest import copy_locale_manifest_bundle; copy_locale_manifest_bundle(Path("_neutral_site/data/i18n/manifest.json"), Path("_release_validation/candidate/data/i18n/manifest.json"))'
             install -m 0600 "$RUNNER_TEMP/multilingual-review-identity.json" \
               _release_validation/candidate/multilingual-review-identity.json
             if [ "$EXTENDED_READY" = "true" ]; then
@@ -1669,6 +1668,11 @@ jobs:
               --expected-file "_release_validation/candidate/data/i18n/manifest.json" --retry-404
             cmp _release_validation/candidate/data/i18n/manifest.json \
               "$RUNNER_TEMP/public-locale-manifest-after.json"
+            python3 -B scripts/verify_portal_locale_manifest_bundle.py \
+              --manifest _release_validation/candidate/data/i18n/manifest.json \
+              --origin "$origin" --output "$RUNNER_TEMP/public-locale-bundle-after" \
+              --release "$STATIC_RELEASE" --tree "$STATIC_TREE_SHA256" \
+              | tee _release_acceptance/locale-source-bundle.json
           fi
           public_brand_root="$RUNNER_TEMP/public-brand-after"
           mkdir -p "$public_brand_root/assets"
@@ -1880,6 +1884,7 @@ jobs:
           path: |
             _release_validation/candidate/chart-index-expected.json
             _release_acceptance/chart-index.json
+            _release_acceptance/locale-source-bundle.json
           if-no-files-found: error
           retention-days: 7
 
