@@ -14,8 +14,14 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 WORKFLOW = (ROOT / '.github/workflows/institution-latest-pdf-to-wechat.yml').read_text()
-MANIFEST = Path('institution_feeds/reviewed_originals/imf-20261012-reviewed.json')
-SELECTION = 'imf-20261012-reviewed'
+SELECTIONS = {
+    'imf-20261012-reviewed': '250557000edbc46f0629393a7a43a139b37926cb54c58535ea498866ccd77e67',
+    'imf-20261015-reviewed': 'c880842e7f022145eaca780dd52017934444ab7c7f1be7208a9cc7f74b81196b',
+}
+
+
+def manifest_path(selection):
+    return Path('institution_feeds/reviewed_originals') / (selection + '.json')
 
 
 def step(name):
@@ -32,10 +38,10 @@ FETCH = run_block(step('Fetch latest institution PDFs'))
 
 class ReviewedIntakeTests(unittest.TestCase):
     def selector(self, root, *, selection='none', event='workflow_dispatch', manifest=True):
-        source = root / MANIFEST
         if manifest:
+            source = root / manifest_path(selection)
             source.parent.mkdir(parents=True, exist_ok=True)
-            source.write_bytes((ROOT / MANIFEST).read_bytes())
+            source.write_bytes((ROOT / manifest_path(selection)).read_bytes())
         (root / 'scripts').symlink_to(ROOT / 'scripts')
         binaries = root / 'bin'; binaries.mkdir()
         (binaries / 'python').symlink_to(sys.executable)
@@ -55,11 +61,12 @@ class ReviewedIntakeTests(unittest.TestCase):
                 self.assertEqual(result.returncode, 0, result.stderr)
                 self.assertEqual(output.read_text(), 'manifest_path=\n')
                 self.assertEqual(list(runtime.iterdir()), [])
-                self.assertFalse((root / MANIFEST).exists())
+                self.assertFalse((root / 'institution_feeds').exists())
 
     def test_unknown_and_nonmanual_selection_fail_without_shell_execution(self):
         for selection, event in (('unknown', 'workflow_dispatch'), ('$(touch INJECTED)', 'workflow_dispatch'),
-                                 ('none; touch INJECTED', 'workflow_dispatch'), (SELECTION, 'schedule')):
+                                 ('none; touch INJECTED', 'workflow_dispatch'),
+                                 *((choice, 'schedule') for choice in SELECTIONS)):
             with self.subTest(selection=selection, event=event), tempfile.TemporaryDirectory() as directory:
                 root = Path(directory)
                 result, output, runtime = self.selector(root, selection=selection, event=event, manifest=False)
@@ -70,32 +77,33 @@ class ReviewedIntakeTests(unittest.TestCase):
                 self.assertNotIn(selection, result.stdout + result.stderr)
 
     def test_selected_manifest_is_immutable_validated_temp_copy(self):
-        with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
-            result, output, runtime = self.selector(root, selection=SELECTION)
-            self.assertEqual(result.returncode, 0, result.stderr)
-            copied = Path(output.read_text().strip().removeprefix('manifest_path='))
-            self.assertEqual(copied.parent, runtime)
-            self.assertEqual(copied.read_bytes(), (ROOT / MANIFEST).read_bytes())
-            expected = re.search(r'expected = "([a-f0-9]{64})"', SELECT).group(1)
-            self.assertEqual(hashlib.sha256(copied.read_bytes()).hexdigest(), expected)
-            (root / MANIFEST).write_text('changed after selection')
-            self.assertEqual(hashlib.sha256(copied.read_bytes()).hexdigest(), expected)
-            self.assertEqual(copied.stat().st_mode & 0o777, 0o600)
+        for selection, expected in SELECTIONS.items():
+            with self.subTest(selection=selection), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                result, output, runtime = self.selector(root, selection=selection)
+                self.assertEqual(result.returncode, 0, result.stderr)
+                copied = Path(output.read_text().strip().removeprefix('manifest_path='))
+                self.assertEqual(copied.parent, runtime)
+                self.assertEqual(copied.read_bytes(), (ROOT / manifest_path(selection)).read_bytes())
+                self.assertEqual(hashlib.sha256(copied.read_bytes()).hexdigest(), expected)
+                (root / manifest_path(selection)).write_text('changed after selection')
+                self.assertEqual(hashlib.sha256(copied.read_bytes()).hexdigest(), expected)
+                self.assertEqual(copied.stat().st_mode & 0o777, 0o600)
 
     def test_missing_changed_or_symlink_manifest_is_rejected_before_fetch(self):
-        for mode in ('missing', 'changed', 'symlink'):
-            with self.subTest(mode=mode), tempfile.TemporaryDirectory() as directory:
-                root = Path(directory)
-                source = root / MANIFEST; source.parent.mkdir(parents=True)
-                if mode == 'changed':
-                    source.write_bytes((ROOT / MANIFEST).read_bytes() + b'\n')
-                elif mode == 'symlink':
-                    source.symlink_to(ROOT / MANIFEST)
-                result, output, runtime = self.selector(root, selection=SELECTION, manifest=False)
-                self.assertNotEqual(result.returncode, 0)
-                self.assertFalse(output.exists())
-                self.assertEqual(list(runtime.iterdir()), [])
+        for selection in SELECTIONS:
+            for mode in ('missing', 'changed', 'symlink'):
+                with self.subTest(selection=selection, mode=mode), tempfile.TemporaryDirectory() as directory:
+                    root = Path(directory)
+                    source = root / manifest_path(selection); source.parent.mkdir(parents=True)
+                    if mode == 'changed':
+                        source.write_bytes((ROOT / manifest_path(selection)).read_bytes() + b'\n')
+                    elif mode == 'symlink':
+                        source.symlink_to(ROOT / manifest_path(selection))
+                    result, output, runtime = self.selector(root, selection=selection, manifest=False)
+                    self.assertNotEqual(result.returncode, 0)
+                    self.assertFalse(output.exists())
+                    self.assertEqual(list(runtime.iterdir()), [])
 
     def test_fetch_argument_is_optional_and_never_split_or_interpolated(self):
         script = re.sub(r"\$\{\{ github\.event\.inputs\.[a-z_]+ \|\| '([^']*)' \}\}", lambda m: m[1], FETCH)
@@ -130,7 +138,7 @@ class ReviewedIntakeTests(unittest.TestCase):
         inputs = WORKFLOW.split('      reviewed_originals:\n', 1)[1].split('      force_reprocess:', 1)[0]
         self.assertIn('type: choice\n', inputs)
         self.assertIn('default: none\n', inputs)
-        self.assertEqual(re.findall(r'^          - (.+)$', inputs, re.M), ['none', SELECTION])
+        self.assertEqual(re.findall(r'^          - (.+)$', inputs, re.M), ['none', *SELECTIONS])
         selection = step('Select reviewed institution originals')
         self.assertIn("REVIEWED_ORIGINALS: ${{ github.event.inputs.reviewed_originals || 'none' }}", selection)
         self.assertNotIn('${{', SELECT)
