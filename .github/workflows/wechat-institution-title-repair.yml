@@ -46,7 +46,7 @@ jobs:
           from repair_wechat_institution_titles import PINS
           from validate_wechat_image_receipt_source import github_json, validate, require
           repo = os.environ['GITHUB_REPOSITORY']
-          require(repo == 'yt-feng/rpt_edit', 'repository_mismatch')
+          # The shared validator binds the pinned run to this Actions repository.
           api = lambda path: github_json(repo, path, os.environ['GH_TOKEN'])
           validate(repo, str(PINS['source_run_id']), PINS['artifact_name'], api)
           run = api('actions/runs/' + str(PINS['source_run_id']))

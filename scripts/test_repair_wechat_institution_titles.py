@@ -239,6 +239,8 @@ class WorkflowContractTests(unittest.TestCase):
         self.assertIn('default: false', text)
         self.assertIn('run-id: 38698155880', text)
         self.assertIn('name: institution-wechat-drafts-261015-38698155880', text)
+        self.assertIn("repo = os.environ['GITHUB_REPOSITORY']", text)
+        self.assertIn("validate(repo, str(PINS['source_run_id']), PINS['artifact_name'], api)", text)
         self.assertIn("run.get('head_sha') == PINS['source_head']", text)
         self.assertIn('expected-plan-sha256 "$EXPECTED_PLAN"', text)
         self.assertIn("if: inputs.apply", text)
