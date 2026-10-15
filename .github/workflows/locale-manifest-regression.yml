@@ -12,6 +12,16 @@ on:
         required: false
         type: string
         default: "1"
+      manifest_run_id:
+        description: "Optional completed Neutral run whose full candidate manifest must round-trip (instead of diagnostics)"
+        required: false
+        type: string
+        default: ""
+      manifest_run_attempt:
+        description: "Exact attempt containing the complete candidate validation artifact"
+        required: false
+        type: string
+        default: "1"
   pull_request:
     paths: ['scripts/*locale*', 'scripts/verify_prepared_static_slot.py', '.github/workflows/locale-manifest-regression.yml']
   push:
@@ -31,18 +41,23 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Check production diagnostic identity and bounds
-        if: inputs.diagnostic_run_id != ''
+      - name: Check production artifact identity and bounds
+        if: inputs.diagnostic_run_id != '' || inputs.manifest_run_id != ''
         env:
           GH_TOKEN: ${{ github.token }}
           DIAGNOSTIC_RUN_ID: ${{ inputs.diagnostic_run_id }}
           DIAGNOSTIC_RUN_ATTEMPT: ${{ inputs.diagnostic_run_attempt }}
+          MANIFEST_RUN_ID: ${{ inputs.manifest_run_id }}
+          MANIFEST_RUN_ATTEMPT: ${{ inputs.manifest_run_attempt }}
         run: |
           python - <<'PY'
           import json, os, re, subprocess
           repo = os.environ['GITHUB_REPOSITORY']
-          run_id = os.environ['DIAGNOSTIC_RUN_ID']
-          attempt = os.environ['DIAGNOSTIC_RUN_ATTEMPT']
+          full_manifest = bool(os.environ['MANIFEST_RUN_ID'])
+          if full_manifest and os.environ['DIAGNOSTIC_RUN_ID']:
+              raise SystemExit('Choose one exact full manifest or accounting diagnostic')
+          run_id = os.environ['MANIFEST_RUN_ID'] if full_manifest else os.environ['DIAGNOSTIC_RUN_ID']
+          attempt = os.environ['MANIFEST_RUN_ATTEMPT'] if full_manifest else os.environ['DIAGNOSTIC_RUN_ATTEMPT']
           if not all(re.fullmatch(r'[1-9][0-9]{0,19}', value) for value in (run_id, attempt)):
               raise SystemExit('Diagnostics require an exact numeric run and attempt')
           def api(path):
@@ -50,10 +65,15 @@ jobs:
           run = api(f'actions/runs/{run_id}/attempts/{attempt}')
           if (run.get('path') != '.github/workflows/neutral-edge-cutover.yml'
                   or run.get('head_repository', {}).get('full_name') != repo
-                  or run.get('status') != 'completed' or run.get('conclusion') != 'failure'):
-              raise SystemExit('Diagnostics must belong to a completed failed Neutral run in this repository')
-          name = f'neutral-translation-diagnostics-{run_id}-{attempt}'
-          artifacts = api(f'actions/runs/{run_id}/artifacts?per_page=100')['artifacts']
+                  or run.get('status') != 'completed'
+                  or run.get('conclusion') not in ({'success', 'failure'} if full_manifest else {'failure'})):
+              raise SystemExit('Artifact must belong to the requested completed Neutral run in this repository')
+          prefix = 'neutral-release-validation' if full_manifest else 'neutral-translation-diagnostics'
+          name = f'{prefix}-{run_id}-{attempt}'
+          inventory = api(f'actions/runs/{run_id}/artifacts?per_page=100')
+          artifacts = inventory['artifacts']
+          if inventory.get('total_count') != len(artifacts) or len(artifacts) > 100:
+              raise SystemExit('Artifact inventory is incomplete or exceeds bounds')
           matches = [item for item in artifacts if item['name'] == name]
           if len(matches) != 1:
               raise SystemExit('Expected exactly one production diagnostic artifact')
@@ -74,9 +94,18 @@ jobs:
           run-id: ${{ inputs.diagnostic_run_id }}
           name: neutral-translation-diagnostics-${{ inputs.diagnostic_run_id }}-${{ inputs.diagnostic_run_attempt }}
           path: ${{ runner.temp }}/locale-regression-diagnostics
+      - name: Retrieve exact complete candidate manifest
+        if: inputs.manifest_run_id != ''
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.manifest_run_id }}
+          name: neutral-release-validation-${{ inputs.manifest_run_id }}-${{ inputs.manifest_run_attempt }}
+          path: ${{ runner.temp }}/locale-regression-full
       - name: Test bounded manifests and existing acceptance contracts
         env:
           LOCALE_MANIFEST_DIAGNOSTICS: ${{ inputs.diagnostic_run_id && format('{0}/locale-regression-diagnostics/locale-full-diagnostics.json', runner.temp) || '' }}
+          LOCALE_MANIFEST_FULL: ${{ inputs.manifest_run_id && format('{0}/locale-regression-full/candidate/data/i18n/manifest.json', runner.temp) || '' }}
           LOCALE_RESOLUTION_SCALE: '126432'
         run: |
           set -euo pipefail
