@@ -16,7 +16,7 @@ from build_portal_suite_site import (
     render_blog_legacy_redirect, sanitize_blog_html, validate_blog_archive_record,
 )
 from push_portal_translated_to_wechat_drafts import draft_group_key, translated_article_title_metadata
-from wechat_html_diagnostics import article_content_diagnostics, compare_html, MAX_EVENTS
+from wechat_html_diagnostics import article_content_diagnostics, all_field_read_diagnostics, compare_html, MAX_EVENTS
 
 
 class CompleteGeneratedTitleTests(unittest.TestCase):
@@ -291,6 +291,55 @@ class BoundedTitleRepairTests(unittest.TestCase):
 
 
 class HtmlDiagnosticTests(unittest.TestCase):
+    def test_double_read_diagnostic_binds_each_read_and_never_emits_values(self):
+        first = {'news_item': [{'title': 'PRIVATE-TITLE', 'content': 'PRIVATE-BODY',
+                               'url': 'https://private.example/path?token=SECRET-A&mid=123', 'unknown': 1} for _ in range(3)]}
+        second = copy.deepcopy(first)
+        second['news_item'][1]['url'] = 'https://private.example/path?token=SECRET-B&mid=123'
+        second['news_item'][2]['unknown'] = 2
+        report = all_field_read_diagnostics(first, second, repair.WRITABLE)
+        self.assertEqual(report['first_full_live_articles_sha256'], repair.digest(first['news_item']))
+        self.assertEqual(report['second_full_live_articles_sha256'], repair.digest(second['news_item']))
+        self.assertEqual([row['changed_fields'] for row in report['articles']], [[], ['url'], ['unknown']])
+        self.assertTrue(all(row['writable_fields_equal'] for row in report['articles']))
+        url = report['articles'][1]['fields']['url']
+        self.assertEqual(url['first']['url']['host_path_sha256'], url['second']['url']['host_path_sha256'])
+        self.assertNotEqual(url['first']['url']['query_sha256'], url['second']['url']['query_sha256'])
+        serialized = json.dumps(report)
+        for secret in ['PRIVATE-TITLE', 'PRIVATE-BODY', 'private.example', '/path', 'SECRET-A', 'SECRET-B']:
+            self.assertNotIn(secret, serialized)
+        self.assertFalse(report['acceptance_policy_changed'])
+
+    def test_double_read_diagnostic_retains_missing_null_and_writable_changes(self):
+        first = {'news_item': [{'content': 'original', 'optional': None} for _ in range(3)]}
+        second = copy.deepcopy(first)
+        del second['news_item'][0]['optional']
+        second['news_item'][1]['content'] = 'changed'
+        report = all_field_read_diagnostics(first, second, repair.WRITABLE)
+        self.assertEqual(report['articles'][0]['changed_fields'], ['optional'])
+        self.assertEqual(report['articles'][0]['fields']['optional']['second']['type'], 'missing')
+        self.assertFalse(report['articles'][1]['writable_fields_equal'])
+
+    def test_double_read_boolean_integer_and_nested_types_are_distinct(self):
+        first = {'news_item': [{'need_open_comment': 0, 'nested': {'value': 1}} for _ in range(3)]}
+        second = copy.deepcopy(first)
+        second['news_item'][0]['need_open_comment'] = False
+        second['news_item'][1]['nested']['value'] = True
+        report = all_field_read_diagnostics(first, second, repair.WRITABLE)
+        self.assertNotEqual(report['first_full_live_articles_sha256'], report['second_full_live_articles_sha256'])
+        self.assertEqual(report['articles'][0]['changed_fields'], ['need_open_comment'])
+        self.assertEqual(report['articles'][1]['changed_fields'], ['nested'])
+        self.assertFalse(report['articles'][0]['writable_fields_equal'])
+
+    def test_double_read_query_names_and_field_count_are_bounded(self):
+        name = 'private name ' * 10
+        first = {'news_item': [{'url': 'https://example.com/?' + name + '=SECRET'} for _ in range(3)]}
+        report = all_field_read_diagnostics(first, first, repair.WRITABLE)
+        self.assertNotIn(name, json.dumps(report))
+        self.assertNotIn('SECRET', json.dumps(report))
+        bad = {'news_item': [{str(i): i for i in range(101)} for _ in range(3)]}
+        self.assertIn('error_category', all_field_read_diagnostics(bad, bad, repair.WRITABLE))
+
     def test_entity_and_attribute_order_difference_is_evidence_only(self):
         report = compare_html('<p id="x" class="a">A&amp;B</p>', "<p class='a' id='x'>A&#38;B</p>")
         self.assertFalse(report['raw_equal'])

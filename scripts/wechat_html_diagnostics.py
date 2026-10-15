@@ -5,6 +5,7 @@ import hashlib
 from html.parser import HTMLParser
 import json
 import re
+from urllib.parse import parse_qsl, urlsplit
 
 MAX_HTML_BYTES = 1024 * 1024
 MAX_EVENTS = 4000
@@ -167,3 +168,60 @@ def article_content_diagnostics(data, source):
         }
         output.append(row)
     return {'diagnostic_only': True, 'acceptance_policy_changed': False, 'articles': output}
+
+
+def field_facts(value, present):
+    kind = ('missing' if not present else 'null' if value is None else 'boolean' if isinstance(value, bool)
+            else 'integer' if isinstance(value, int) else 'number' if isinstance(value, float)
+            else 'string' if isinstance(value, str) else 'object' if isinstance(value, dict)
+            else 'array' if isinstance(value, list) else 'unsupported')
+    raw = json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()
+    facts = {'present': present, 'type': kind, 'serialized_bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest()}
+    if isinstance(value, str) and value.startswith(('http://', 'https://')):
+        parts = urlsplit(value)
+        query = parse_qsl(parts.query, keep_blank_values=True, max_num_fields=100)
+        facts['url'] = {
+            'scheme': parts.scheme,
+            'netloc_sha256': fingerprint(parts.netloc), 'path_sha256': fingerprint(parts.path),
+            'query_sha256': fingerprint(parts.query), 'fragment_sha256': fingerprint(parts.fragment),
+            'host_path_sha256': fingerprint((parts.netloc.lower(), parts.path)),
+            'query_parameters': [{'name': safe_name(name) if len(name) <= 40 else 'name-sha256-' + fingerprint(name),
+                                  'value_sha256': fingerprint(item), 'value_chars': len(item)} for name, item in query],
+        }
+    return facts
+
+
+def all_field_read_diagnostics(first, second, writable_fields):
+    """Compare two reads, exposing no values and granting no repair permission."""
+    groups = [data.get('news_item') if isinstance(data, dict) else None for data in (first, second)]
+    if any(not isinstance(rows, list) or len(rows) != 3
+           or any(not isinstance(row, dict) or len(row) > 100 for row in rows) for rows in groups):
+        return {'diagnostic_only': True, 'error_category': 'live_draft_count_or_field_bound'}
+    first_rows, second_rows = groups
+    if any(len(json.dumps([left, right], ensure_ascii=False).encode()) > 2 * MAX_HTML_BYTES
+           for left, right in zip(first_rows, second_rows)):
+        return {'diagnostic_only': True, 'error_category': 'live_field_byte_bound'}
+    # Same serialization as the plan's full_live_articles_sha256, so every
+    # diagnostic read is explicitly associated with its independent receipt.
+    group_hash = lambda rows: hashlib.sha256(json.dumps(rows, ensure_ascii=False, sort_keys=True,
+                                                        separators=(',', ':')).encode()).hexdigest()
+    result = {'diagnostic_only': True, 'acceptance_policy_changed': False,
+              'first_full_live_articles_sha256': group_hash(first_rows),
+              'second_full_live_articles_sha256': group_hash(second_rows), 'articles': []}
+    for index, (left, right) in enumerate(zip(first_rows, second_rows)):
+        keys = sorted(set(left) | set(right))
+        # JSON distinguishes false/0, true/1 and nested type changes even when
+        # Python == does not. Use the same canonical representation as hashes.
+        canonical = lambda value: json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':'))
+        changed = [key for key in keys if (key in left) != (key in right)
+                   or canonical(left.get(key)) != canonical(right.get(key))]
+        row = {'index': index, 'changed_fields': [safe_name(key) for key in changed],
+               'writable_fields_equal': not set(changed).intersection(writable_fields), 'fields': {}}
+        for key in keys:
+            try:
+                row['fields'][safe_name(key)] = {'first': field_facts(left.get(key), key in left),
+                                                 'second': field_facts(right.get(key), key in right)}
+            except (ValueError, TypeError, UnicodeError):
+                row['fields'][safe_name(key)] = {'error_category': 'field_diagnostic_bound_or_parse_failure'}
+        result['articles'].append(row)
+    return result
