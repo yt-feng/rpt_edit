@@ -51,6 +51,11 @@ class ProbeTests(unittest.TestCase):
             operation(document)
             raw=document.tobytes(no_new_id=True)
         path.write_bytes(raw)
+    def test_explicit_selection_bound_cannot_broaden_probe(self):
+        for limit in (0, -1, 101, True, 1.5):
+            with self.subTest(limit=limit), self.assertRaisesRegex(probe.ProbeError, 'selected_visuals_bound'):
+                probe.compare_cached_pdf(self.root/'missing.pdf', b'', original_sha256='0'*64,
+                                         max_images=limit)
     def test_equal_original_has_no_text_paths_pixels_or_source_handoff(self):
         result=self.compare()
         self.assertEqual((result['stage'],result['status'],result['checked_page_count']),('complete','checked',1))
