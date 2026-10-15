@@ -319,6 +319,7 @@ def main():
                 # Audit only: compare a second independent read to locate
                 # server-returned field drift. The plan remains bound to the
                 # first read and the apply/write path is unchanged.
+                time.sleep(2)
                 second_read = get_draft(session, token, source['media_id'], 30)
                 result['live_field_diagnostics'] = all_field_read_diagnostics(initial, second_read, WRITABLE)
                 save()
