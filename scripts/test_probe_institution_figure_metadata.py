@@ -59,5 +59,52 @@ class ProbeTests(unittest.TestCase):
         row = dict(p.selection()['sources'][0], local_filename='../outside.pdf')
         with self.assertRaises(ValueError): p.binding_for(row)
 
+    def test_valid_segment_merge_exercises_production_consumer_on_exact_original(self):
+        original = b'%PDF-fixture-original'
+        row = dict(p.selection()['sources'][2], sha256=digest(original), bytes=len(original))
+        binding = p.binding_for(row)
+        ledger = Mock(); ledger.clock.return_value = 0
+        plan = {'segments': [{'binding': {'part': 1}, 'page_start': 1, 'page_end': 200},
+                             {'binding': {'part': 2}, 'page_start': 201, 'page_end': 214}]}
+        proof = {'status': 'verified', 'production_consumer_verified': True,
+                 'private_handoff_replay_verified': True, 'production_acceptance': False,
+                 'complete_source_handoff': False, 'image_count': 8}
+        def verify(path, payload, original_sha, budget):
+            self.assertEqual(path.read_bytes(), original)
+            self.assertEqual(payload, b'merged-result')
+            self.assertEqual(original_sha, binding['sha256'])
+            budget()
+            return proof
+        with patch.object(p, 'OriginalCache') as originals, \
+                patch.object(p, 'read_segment_plan', return_value=plan), \
+                patch.object(p, 'cached_payload', side_effect=[b'first', b'second']) as cached, \
+                patch.object(p, 'merge_segments', return_value=b'merged-result') as merged, \
+                patch.object(p, 'inspect_payload', return_value={'status': 'valid'}), \
+                patch.object(p, 'verify_production_figures', side_effect=verify) as verifier:
+            originals.return_value.get.return_value = original
+            result = p.inspect_source(ledger, Mock(), 'private', binding)
+        self.assertEqual(cached.call_count, 2)
+        self.assertEqual(merged.call_args.args[:2], (plan, [b'first', b'second']))
+        self.assertEqual(verifier.call_count, 1)
+        self.assertEqual(result['production_figure_consumer'], proof)
+        self.assertEqual(result['merge']['status'], 'valid')
+        self.assertFalse(result['production_figure_consumer']['production_acceptance'])
+        ledger.provider.submit.assert_not_called()
+        ledger.store.put.assert_not_called()
+
+    def test_rejected_metadata_never_calls_production_consumer(self):
+        binding = p.binding_for(p.selection()['sources'][0])
+        ledger = Mock(); ledger.clock.return_value = 0
+        with patch.object(p, 'OriginalCache') as originals, \
+                patch.object(p, 'read_segment_plan', return_value=None), \
+                patch.object(p, 'cached_payload', return_value=b'result'), \
+                patch.object(p, 'inspect_payload', return_value={'status': 'rejected'}), \
+                patch.object(p, 'verify_production_figures') as verifier:
+            originals.return_value.get.return_value = b'%PDF-fixture'
+            result = p.inspect_source(ledger, Mock(), 'private', binding)
+        verifier.assert_not_called()
+        self.assertEqual(result['metadata']['status'], 'rejected')
+        self.assertNotIn('production_figure_consumer', result)
+
 
 if __name__ == '__main__': unittest.main()

@@ -15,6 +15,7 @@ from institution_original_cache import OriginalCache, validate_binding, OPTIONS
 from mineru_result_cache import ResultCache
 from probe_mineru_figure_binding import ReadOnlyR2Client, ReadOnlyStore, ReadOnlyProvider, require, ProbeError
 from probe_adb_figure_metadata import inspect_payload, structural_failure
+from probe_consulting_mineru_figure_binding import verify_production_figures
 
 WORKFLOW = '.github/workflows/institution-figure-metadata-probe.yml'
 SELECTION = Path(__file__).parent / 'fixtures/institution_sources/figure_metadata_20261015.json'
@@ -51,6 +52,9 @@ def cached_payload(ledger, cache, binding):
 
 def inspect_source(ledger, client, bucket, binding):
     import mineru_figure_sources as figures
+    deadline = ledger.clock() + 480
+    def budget():
+        require(ledger.clock() < deadline, 'probe_deadline')
     original = OriginalCache(client, bucket).get(binding)
     require(original is not None, 'original_cache_missing')
     plan = read_segment_plan(ledger, binding)
@@ -77,6 +81,14 @@ def inspect_source(ledger, client, bucket, binding):
                 return result
         result['merge'] = {'status': 'valid'}
     result.update(result_zip_sha256=digest(payload), metadata=inspect_payload(payload))
+    if result['metadata']['status'] == 'valid':
+        # Reuse the real source-only image producer, exact original crops and
+        # consumer replay after raw MinerU data is removed. All files remain in
+        # disposable private directories; this is not a completed publication.
+        with tempfile.TemporaryDirectory(prefix='institution-figure-acceptance-') as directory:
+            path = Path(directory) / 'original.pdf'; path.write_bytes(original)
+            result['production_figure_consumer'] = verify_production_figures(
+                path, payload, binding['sha256'], budget)
     return result
 
 
@@ -96,7 +108,8 @@ def probe(ledger, client, bucket):
                           else type(error).__name__)
         results.append(result)
     reader.store.verify()
-    return {'schema': 1, 'diagnostic_only': True, 'source_run_id': '38658714099', 'sources': results,
+    return {'schema': 1, 'diagnostic_only': True, 'production_acceptance': False,
+        'source_run_id': '38658714099', 'sources': results,
         'provider_posts': 0, 'provider_uploads': 0, 'cache_writes': 0, 'ledger_writes': 0,
         'fresh_feed_requests': 0, 'model_calls': 0, 'publication_writes': 0}
 
