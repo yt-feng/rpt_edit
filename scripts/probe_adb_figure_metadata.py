@@ -35,6 +35,10 @@ def structural_failure(error):
             for key in ('ordinal', 'bi', 'pi', 'index', 'width', 'height', 'w', 'h', 'low', 'high'):
                 value = local.get(key)
                 if type(value) in (int, float) and math.isfinite(value): row[key] = value
+            for key in ('records', 'parents', 'used', 'matches', 'unmatched'):
+                value = local.get(key)
+                if isinstance(value, (list, set)):
+                    row[key + '_count'] = len(value)
             for key in ('value', 'size', 'box', 'body'):
                 if key in local:
                     row[key+'_type'] = type(local[key]).__name__
