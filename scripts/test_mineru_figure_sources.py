@@ -759,6 +759,32 @@ print('tls_cache_authority_import_ready')
             with self.assertRaises(figures.FigureSourceError):
                 fixture.create()
 
+    def test_metadata_rejections_distinguish_shape_without_disclosing_content(self):
+        for case, expected in (("missing_parent", "parent_match"),
+                               ("duplicate", "duplicate_parent"),
+                               ("unmatched", "visual_coverage")):
+            with self.subTest(case=case):
+                fixture = self.fixture(visuals=[visual(0, [35, 100, 180, 260],
+                    body="PRIVATE_TABLE_CONTENT")])
+                if case == "missing_parent":
+                    fixture.content[0]["img_path"] = "images/PRIVATE_SOURCE_PATH.jpg"
+                elif case == "duplicate":
+                    fixture.content.append(copy.deepcopy(fixture.content[0]))
+                else:
+                    fixture.content.clear()
+                with self.assertRaises(figures.FigureSourceError) as caught:
+                    figures._normalise(fixture.content, fixture.middle)
+                diagnostic = caught.exception.diagnostic
+                self.assertEqual(diagnostic["stage"], expected)
+                self.assertNotIn("PRIVATE", json.dumps(diagnostic))
+                self.assertEqual(str(caught.exception), "figure_metadata_ambiguous")
+
+    def test_figure_diagnostic_rejects_arbitrary_fields_and_values(self):
+        error = figures.FigureSourceError("figure_metadata_ambiguous", diagnostic={
+            "stage": "private source text", "page_index": True, "content_index": "private",
+            "match_count": -1, "parent_count": 10**30, "html": "private", "record_count": 3})
+        self.assertEqual(error.diagnostic, {"category": "figure_metadata_ambiguous", "record_count": 3})
+
     def test_asset_pixel_and_original_or_markdown_binding_tamper_rejected(self):
         fixture = self.fixture(visuals=[visual(0, [35, 100, 180, 260])])
         fixture.create()

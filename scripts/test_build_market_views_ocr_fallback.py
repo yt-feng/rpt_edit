@@ -479,6 +479,7 @@ class OCRSynthesisTests(unittest.TestCase):
         response = Mock(status_code=200)
         response.json.return_value = {"choices": [{"message": {"content": '{"ok":true}'}}],
                                       "usage": {"prompt_tokens": 12, "completion_tokens": 3, "total_tokens": 15}}
+        response.iter_content.return_value = [json.dumps(response.json.return_value).encode()]
         usage = self.root / "usage"
         with patch.dict("os.environ", {"DEEPSEEK_API_KEY": "fixture-only", "DEEPSEEK_USAGE_DIR": str(usage)}):
             with patch("deepseek_http.requests.post", return_value=response) as post:

@@ -52,6 +52,7 @@ from mineru_result_cache import OPTIONS as CACHE_OPTIONS, SUPPORTED_SCOPES, Resu
 from mineru_daily_result_cache import persist_authentication
 from mineru_daily_result_transport import download_result
 from mineru_completed_child_reuse import result_lineage, reuse_completed_children
+from mineru_figure_sources import FigureSourceError
 from consume_legacy_mineru import ConsumerError, NetworkStop, download_once, safe_unzip, valid_url
 
 MINERU_BASE_URL = "https://mineru.net"
@@ -1473,6 +1474,8 @@ def main() -> int:
             try:
                 status = process_pdf(pdf_path, row, output_dir, args)
             except Exception as exc:
+                if isinstance(exc, FigureSourceError):
+                    log("MinerU figure diagnostic: " + json.dumps(exc.diagnostic, sort_keys=True))
                 status = {
                     "source_pdf": pdf_path.name if args.chart_source_only else str(pdf_path),
                     "mineru_state": row.get("state"),
@@ -1504,6 +1507,8 @@ def main() -> int:
             record_deferred(deferred_sources)
         return 0 if successful_reports == len(pdfs) else 2
     except Exception as exc:
+        if isinstance(exc, FigureSourceError):
+            log("MinerU figure diagnostic: " + json.dumps(exc.diagnostic, sort_keys=True))
         if recoverable_provider_error(exc):
             record_provider_outcome(args, "mineru_unavailable")
         print(f"ERROR: {exc}", file=sys.stderr)

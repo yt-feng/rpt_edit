@@ -3,6 +3,8 @@ import base64
 import copy
 import hashlib
 import json
+import os
+from pathlib import Path
 import unittest
 import zlib
 from unittest.mock import patch
@@ -38,6 +40,45 @@ class CompactionTests(unittest.TestCase):
         self.assertEqual(codec.parse_locale_manifest(raw), original)
         self.assertEqual(original, self.fixture())
         codec.validate_translation_resolution(codec.parse_locale_manifest(raw), LOCALES)
+
+    def test_decoding_keeps_records_shared_instead_of_reexpanding_each_locale(self):
+        original, raw = self.packed()
+        packed = json.loads(raw)['source_fallbacks']
+        # A table that is small when retained once must not be rejected using
+        # its hypothetical JSON size if repeated for each language.
+        retained = sum(len(codec._json_bytes(row)) for row in packed['records'])
+        retained += sum(len(key.encode()) + 8 for rows in packed['units'].values() for key in rows)
+        with patch.object(codec, 'MAX_EXPANDED_FALLBACK_BYTES', retained):
+            decoded = codec.parse_locale_manifest(raw)
+        self.assertEqual(decoded, original)
+        rows = decoded['source_fallbacks']['units']
+        key = next(iter(rows['ko']))
+        self.assertIs(rows['ko'][key], rows['ja'][key])
+        self.assertIs(rows['ja'][key], rows['ar'][key])
+        shared = rows['ko'][key]
+        for mutate in (lambda: shared.__setitem__('source', 'Altered source'),
+                       lambda: shared.update(source='Altered source'),
+                       lambda: shared.pop('source'), lambda: shared.clear()):
+            with self.assertRaises(TypeError):
+                mutate()
+        self.assertEqual(copy.deepcopy(decoded), original)
+        editable = dict(shared)
+        editable['source'] = 'Independent edit'
+        self.assertEqual(decoded, original)
+        with patch.object(codec, 'MAX_EXPANDED_FALLBACK_BYTES', retained - 1):
+            with self.assertRaisesRegex(codec.LocaleManifestError, 'safety budget'):
+                codec.parse_locale_manifest(raw)
+
+    def test_shared_records_do_not_bypass_reference_limit_or_identity(self):
+        _, raw = self.packed()
+        with patch.object(codec, 'MAX_FALLBACK_REFERENCES', 2):
+            with self.assertRaisesRegex(codec.LocaleManifestError, 'safety budget'):
+                codec.parse_locale_manifest(raw)
+        value = json.loads(raw)
+        rows = value['source_fallbacks']['units']['ja']
+        rows['0' * 64] = rows.pop(next(iter(rows)))
+        with self.assertRaisesRegex(codec.LocaleManifestError, 'identity differs'):
+            codec.parse_locale_manifest(codec._json_bytes(value))
 
     def test_bad_reference_and_hash_remain_fatal(self):
         _, raw = self.packed()
@@ -131,7 +172,10 @@ class CompactionTests(unittest.TestCase):
 
     def test_regression_growing_distinct_provenance_exceeds_intern_only_capacity(self):
         value = self.fixture()
-        count = 32000
+        # Production on 2026-10-15 failed after 164,393 references: every
+        # language recreated a full copy despite the compressed wire format.
+        # Exercise an even larger source-preserving release with the same caps.
+        count = 56000
         value['source_unit_count'] = count
         for locale in LOCALES:
             rows = {}
@@ -151,7 +195,8 @@ class CompactionTests(unittest.TestCase):
         self.assertEqual(packed['source_fallbacks']['schema_version'], 3)
         self.assertLess(len(raw), codec.MAX_LOCALE_MANIFEST_BYTES)
         self.assertEqual(codec.parse_locale_manifest(raw), value)
-        with patch.object(codec, 'MAX_EXPANDED_FALLBACK_BYTES', 32 * 1024 * 1024):
+        self.assertGreater(len(codec._json_bytes(value)), codec.MAX_EXPANDED_FALLBACK_BYTES)
+        with patch.object(codec, 'MAX_EXPANDED_FALLBACK_BYTES', 8 * 1024 * 1024):
             with self.assertRaisesRegex(codec.LocaleManifestError, 'safety budget'):
                 codec.encode_locale_manifest(value)
 
@@ -177,6 +222,36 @@ class CompactionTests(unittest.TestCase):
         restored = codec.parse_locale_manifest(raw)
         self.assertEqual(restored, value)
         self.assertEqual(sum(restored['source_fallbacks']['counts'].values()), 40042)
+
+    @unittest.skipUnless(os.environ.get('LOCALE_MANIFEST_DIAGNOSTICS'), 'Exact production diagnostics were not requested')
+    def test_exact_production_diagnostics_roundtrip_without_losing_source_units(self):
+        path = Path(os.environ['LOCALE_MANIFEST_DIAGNOSTICS'])
+        self.assertFalse(path.is_symlink())
+        self.assertTrue(0 < path.stat().st_size <= 256 * 1024 * 1024)
+        report = json.loads(path.read_text())
+        self.assertIs(report.get('preflight_only'), False)
+        count, units = report['source_unit_count'], report['source_fallbacks']
+        self.assertIs(type(count), int)
+        self.assertGreater(count, 0)
+        self.assertEqual(set(units), set(LOCALES))
+        counts = {locale: len(rows) for locale, rows in units.items()}
+        self.assertEqual(counts, report['source_fallback_counts'])
+        self.assertEqual(counts, report['remaining_units'])
+        # This reconstructs only the exact accounting block rejected before
+        # rendering. It does not claim that a release was built or published.
+        value = self.fixture()
+        value.update(source_unit_count=count,
+                     translation_entry_count={locale: count - n for locale, n in counts.items()},
+                     resolved_entry_count=dict.fromkeys(LOCALES, count),
+                     coverage={locale: (count - n) / count for locale, n in counts.items()},
+                     source_fallbacks={'schema_version': 1, 'units': units, 'counts': counts})
+        codec.validate_translation_resolution(value, LOCALES)
+        raw = codec.encode_locale_manifest(value)
+        self.assertEqual(codec.parse_locale_manifest(raw), value)
+        print(json.dumps({'production_accounting_roundtrip': 'passed', 'source_unit_count': count,
+                          'source_fallback_counts': counts, 'encoded_bytes': len(raw),
+                          'wire_limit': codec.MAX_LOCALE_MANIFEST_BYTES,
+                          'retained_limit': codec.MAX_EXPANDED_FALLBACK_BYTES}, sort_keys=True))
 
 
 if __name__ == '__main__':

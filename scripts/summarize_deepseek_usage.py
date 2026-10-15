@@ -51,7 +51,7 @@ def load_prices(path: Path | None) -> dict[str, dict[str, Decimal]]:
 
 def _empty() -> dict[str, Any]:
     return {
-        "http_attempts": 0, "successes": 0, "http_errors": 0, "transport_errors": 0,
+        "http_attempts": 0, "successes": 0, "http_errors": 0, "transport_errors": 0, "response_errors": 0,
         "usage_reported_attempts": 0, "usage_missing_attempts": 0,
         "retry_attempts": 0, "key_failover_attempts": 0,
         **{name: 0 for name in TOKEN_FIELDS},
@@ -64,7 +64,7 @@ def _empty() -> dict[str, Any]:
 def _count(row: dict[str, Any], event: dict[str, Any], prices: dict[str, dict[str, Decimal]]) -> None:
     row["http_attempts"] += 1
     outcome = _identifier(event.get("outcome"))
-    row[{"success": "successes", "http_error": "http_errors"}.get(outcome, "transport_errors")] += 1
+    row[{"success": "successes", "http_error": "http_errors", "response_error": "response_errors"}.get(outcome, "transport_errors")] += 1
     if (_integer(event.get("attempt")) or 1) > 1:
         row["retry_attempts"] += 1
     if (_integer(event.get("key_index")) or 1) > 1:
@@ -164,6 +164,7 @@ def markdown_report(summary: dict[str, Any]) -> str:
         "## DeepSeek observed usage", "", summary["coverage"], "",
         f"Timezone: {summary['timezone']}; date: {summary['date_filter'] or 'all artifact dates'}.", "",
         f"HTTP attempts: **{totals['http_attempts']}**; logical requests: **{totals['logical_requests']}**; "
+        f"invalid completion responses: **{totals.get('response_errors', 0)}**; "
         f"attempts without usage: **{totals['usage_missing_attempts']}**; "
         f"duplicate events ignored: **{summary['duplicate_events_ignored']}**.", "",
         f"Cost: {summary['cost_basis']}.", "",

@@ -12,12 +12,30 @@ import zlib
 
 
 MAX_LOCALE_MANIFEST_BYTES = 16 * 1024 * 1024
+# Bound the decoded table and retained records plus reference keys. Locale maps
+# share their interned records; never recreate one full record per language.
 MAX_EXPANDED_FALLBACK_BYTES = 64 * 1024 * 1024
 MAX_FALLBACK_REFERENCES = 300_000
 
 
 class LocaleManifestError(ValueError):
     """A locale manifest does not account for its source units faithfully."""
+
+
+class _SharedFallbackRecord(dict):
+    """A shared provenance row cannot be changed through one locale's view."""
+
+    def _readonly(self, *args: Any, **kwargs: Any) -> None:
+        raise TypeError("Source fallback provenance is read-only; copy the record before editing")
+
+    __setitem__ = __delitem__ = clear = pop = popitem = setdefault = update = __ior__ = _readonly
+
+    def __copy__(self) -> dict[str, Any]:
+        return dict(self)
+
+    def __deepcopy__(self, memo: dict[int, Any]) -> dict[str, Any]:
+        import copy
+        return _SharedFallbackRecord(copy.deepcopy(dict(self), memo))
 
 
 def parse_locale_manifest(body: bytes) -> dict[str, Any]:
@@ -125,7 +143,12 @@ def _json_bytes(value: Any) -> bytes:
 
 
 def _expand_fallback_records(manifest: dict[str, Any]) -> dict[str, Any]:
-    """Decode a lossless intern table without weakening the 16 MiB wire limit."""
+    """Resolve references while keeping interned records shared and bounded.
+
+    These are read-only release manifests. Returning the same record for each
+    reference preserves the intern table's storage bound through all readers;
+    copying it per locale undid compaction and hit the cap as the catalog grew.
+    """
     fallback = manifest.get("source_fallbacks")
     if isinstance(fallback, dict) and fallback.get("schema_version") == 3:
         fallback = _decompress_fallback_records(fallback)
@@ -139,25 +162,30 @@ def _expand_fallback_records(manifest: dict[str, Any]) -> dict[str, Any]:
         raise LocaleManifestError("Invalid interned source fallback table")
     if any(not isinstance(row, dict) for row in records):
         raise LocaleManifestError("Invalid interned source fallback record")
-    sizes = [len(_json_bytes(row)) for row in records]
-    expanded, used, total, references = {}, set(), 0, 0
+    records = [_SharedFallbackRecord(row) for row in records]
+    total = sum(len(_json_bytes(row)) for row in records)
+    if total > MAX_EXPANDED_FALLBACK_BYTES:
+        raise LocaleManifestError("Retained source fallback table exceeds safety budget")
+    expanded, used, references = {}, set(), 0
     for locale, rows in units.items():
         if not isinstance(rows, dict):
             raise LocaleManifestError("Invalid interned source fallback locale")
         expanded[locale] = {}
         for key, index in rows.items():
-            if type(index) is not int or not 0 <= index < len(records):
+            if not isinstance(key, str) or type(index) is not int or not 0 <= index < len(records):
                 raise LocaleManifestError("Invalid interned source fallback reference")
-            total += sizes[index] + len(key.encode("utf-8")) + 8
+            # Full source/context/reason strings remain in records once. The
+            # locale map retains only its key and reference to that same row.
+            total += len(key.encode("utf-8")) + 8
             references += 1
             if total > MAX_EXPANDED_FALLBACK_BYTES or references > MAX_FALLBACK_REFERENCES:
                 raise LocaleManifestError(
-                    "Expanded source fallback table exceeds safety budget: "
+                    "Retained source fallback table exceeds safety budget: "
                     f"bytes={total}/{MAX_EXPANDED_FALLBACK_BYTES}, "
                     f"references={references}/{MAX_FALLBACK_REFERENCES}"
                 )
             used.add(index)
-            expanded[locale][key] = dict(records[index])
+            expanded[locale][key] = records[index]
     if used != set(range(len(records))):
         raise LocaleManifestError("Unused interned source fallback record")
     manifest = dict(manifest)

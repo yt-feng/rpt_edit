@@ -44,13 +44,26 @@ ERRORS = {"figure_metadata_invalid", "figure_metadata_ambiguous",
 
 
 class FigureSourceError(ValueError):
-    def __init__(self, category: str):
+    def __init__(self, category: str, *, diagnostic=None):
         self.category = category if category in ERRORS else "figure_proof_invalid"
+        # Public failure logs need enough structure to identify a provider
+        # format change without leaking source text, paths or arbitrary locals.
+        self.diagnostic = {"category": self.category}
+        if isinstance(diagnostic, dict):
+            stage = diagnostic.get("stage")
+            if stage in {"metadata_inventory", "parent_match", "duplicate_parent",
+                         "duplicate_reference", "visual_coverage", "visual_budget"}:
+                self.diagnostic["stage"] = stage
+            for key in ("content_lists", "middle_lists", "content_index", "page_index",
+                        "match_count", "record_count", "parent_count", "unmatched_count"):
+                value = diagnostic.get(key)
+                if type(value) is int and 0 <= value <= MAX_ITEMS * MAX_PAGES:
+                    self.diagnostic[key] = value
         super().__init__(self.category)
 
 
-def _fail(category="figure_metadata_invalid"):
-    raise FigureSourceError(category)
+def _fail(category="figure_metadata_invalid", **diagnostic):
+    raise FigureSourceError(category, diagnostic=diagnostic)
 
 
 def _sha(value: bytes) -> str:
@@ -249,7 +262,8 @@ def _metadata_files(root):
     if not contents and not middles:
         return None
     if len(contents) != 1 or len(middles) != 1:
-        _fail("figure_metadata_ambiguous")
+        _fail("figure_metadata_ambiguous", stage="metadata_inventory",
+              content_lists=len(contents), middle_lists=len(middles))
     return contents[0], middles[0], paths
 
 
@@ -338,11 +352,16 @@ def _normalise(content, middle):
                    and (p["refs"] and p["refs"][0]["ref"] == ref or not p["refs"] and not ref)
                    and max(abs(a - b) for a, b in zip(p["body_bbox"], points)) <= 2]
         if len(matches) != 1:
-            _fail("figure_metadata_ambiguous")
+            _fail("figure_metadata_ambiguous", stage="parent_match",
+                  content_index=index, page_index=pi, match_count=len(matches))
         parent = matches[0]
         identity = (pi, parent["block_index"])
-        if identity in used or ref and any(r["ref"] == ref for r in records):
-            _fail("figure_metadata_ambiguous")
+        if identity in used:
+            _fail("figure_metadata_ambiguous", stage="duplicate_parent",
+                  content_index=index, page_index=pi)
+        if ref and any(r["ref"] == ref for r in records):
+            _fail("figure_metadata_ambiguous", stage="duplicate_reference",
+                  content_index=index, page_index=pi)
         used.add(identity)
         captions = item.get(kind + "_caption", [])
         notes = item.get(kind + "_footnote", [])
@@ -359,8 +378,12 @@ def _normalise(content, middle):
                         "body_text": body_text, "content_captions": captions, "content_footnotes": notes,
                         "captions": parent["captions"], "footnotes": parent["footnotes"],
                         "block_index": parent["block_index"]})
-    if len(records) > MAX_VISUALS or used != {(p["page_idx"], p["block_index"]) for p in parents}:
-        _fail("figure_metadata_ambiguous")
+    if len(records) > MAX_VISUALS:
+        _fail("figure_metadata_ambiguous", stage="visual_budget", record_count=len(records))
+    unmatched = {(p["page_idx"], p["block_index"]) for p in parents} - used
+    if unmatched:
+        _fail("figure_metadata_ambiguous", stage="visual_coverage", record_count=len(records),
+              parent_count=len(parents), unmatched_count=len(unmatched))
     return {"profile": profile, "pages": pages, "records": records}
 
 

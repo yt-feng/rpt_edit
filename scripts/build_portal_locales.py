@@ -1305,6 +1305,9 @@ def deepseek_translate_batch(
                 retry_base_seconds=4,
                 retry_max_seconds=45,
                 allow_model_fallback=False,
+                # This metered caller validates the returned envelope itself;
+                # preserve its one-request accounting and output-retry budget.
+                validate_completion=False,
                 logger=log,
             )
             run_state.response(request_id, locale, response)
