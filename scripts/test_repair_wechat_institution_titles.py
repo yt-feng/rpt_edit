@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import copy
 from datetime import date
+import hashlib
 import json
 from pathlib import Path
 import tempfile
@@ -120,6 +121,50 @@ class BoundedTitleRepairTests(unittest.TestCase):
         self.assertEqual(self.progress['verified_indices'], [0, 1, 2])
         for old, new, pin in zip(self.actual, result['news_item'], self.pins['articles']):
             self.assertEqual(new, dict(old, title=pin['selected_title']))
+        self.assertEqual(self.progress['live_before'], self.progress['live_after'])
+
+    def bind_reviewed_live_html(self):
+        for actual, expected, pin in zip(self.data['news_item'], self.source['articles'], self.pins['articles']):
+            actual['content'] = expected['content'].replace('src=', 'data-src=')
+            for prefix, text in [('producer', expected['content']), ('live', actual['content'])]:
+                pin[prefix + '_html_sha256'] = hashlib.sha256(text.encode()).hexdigest()
+                pin[prefix + '_html_bytes'] = len(text.encode())
+
+    def test_reviewed_exact_live_html_is_sent_unchanged_and_bound_in_receipt(self):
+        self.bind_reviewed_live_html()
+        before = copy.deepcopy(self.data['news_item'])
+        final, posts = self.run_repair()
+        self.assertEqual(posts, [0, 1, 2])
+        for previous, actual, pin in zip(before, final['news_item'], self.pins['articles']):
+            self.assertEqual(actual, dict(previous, title=pin['selected_title']))
+        self.assertEqual(self.progress['live_before'], self.progress['live_after'])
+        self.assertEqual(self.progress['live_after']['html_sha256'], [pin['live_html_sha256'] for pin in self.pins['articles']])
+
+    def test_reviewed_html_requires_both_exact_producer_and_live_binding(self):
+        self.bind_reviewed_live_html()
+        for key in ('producer_html_sha256', 'live_html_sha256', 'producer_html_bytes', 'live_html_bytes'):
+            original = self.pins['articles'][0][key]
+            self.pins['articles'][0][key] = '0' * 64 if key.endswith('sha256') else 1
+            with self.subTest(key=key), self.assertRaisesRegex(repair.RepairError, 'live_payload_changed_content'):
+                repair.validate_live(self.data, self.source)
+            self.pins['articles'][0][key] = original
+
+    def test_unreviewed_attribute_only_edit_and_cross_article_body_rejected(self):
+        self.bind_reviewed_live_html()
+        for content in [self.data['news_item'][0]['content'].replace('<p>', '<p style="color:red">'),
+                        self.data['news_item'][1]['content']]:
+            changed = copy.deepcopy(self.data)
+            changed['news_item'][0]['content'] = content
+            with self.assertRaisesRegex(repair.RepairError, 'live_payload_changed_content'):
+                repair.validate_live(changed, self.source)
+
+    def test_protected_live_hash_covers_all_fields_except_title(self):
+        before = repair.protected_live_facts(self.actual)
+        changed = copy.deepcopy(self.actual)
+        changed[0]['title'] = self.pins['articles'][0]['selected_title']
+        self.assertEqual(before, repair.protected_live_facts(changed))
+        changed[0]['url'] = 'https://example.com/changed'
+        self.assertNotEqual(before, repair.protected_live_facts(changed))
 
     def test_unknown_success_is_read_back_without_repeat_post(self):
         _, posts = self.run_repair(unknown=True)
@@ -296,6 +341,7 @@ class WorkflowContractTests(unittest.TestCase):
         self.assertEqual(repair.PINS['source_run_id'], 38698155880)
         self.assertEqual(len(repair.PINS['files']), 3)
         self.assertEqual(len(repair.PINS['articles']), 3)
+        self.assertEqual(repair.PINS['reviewed_live_html']['diagnostic_run_id'], 38703812822)
         text = (Path(__file__).parents[1] / '.github/workflows/wechat-pipeline-regression.yml').read_text()
         self.assertIn('python scripts/test_repair_wechat_institution_titles.py', text)
 

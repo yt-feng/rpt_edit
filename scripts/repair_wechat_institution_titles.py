@@ -52,6 +52,23 @@ def digest(value):
                                      separators=(',', ':')).encode()).hexdigest()
 
 
+def html_binding_matches(content, pin, prefix):
+    return (isinstance(content, str) and len(content.encode()) == pin.get(prefix + '_html_bytes')
+            and hashlib.sha256(content.encode()).hexdigest() == pin.get(prefix + '_html_sha256'))
+
+
+def reviewed_content_matches(actual, expected, pin):
+    """Allow only the exact producer bytes or this article's reviewed live bytes.
+
+    Diagnostic run 38703812822 proved that the three returned bodies differ
+    only at their four img events: src becomes data-src, the same qpic image
+    uses its HTTPS /640 rendition, and the void tag is no longer self-closing.
+    No generic HTML normalization or prose/media-only equivalence is accepted.
+    """
+    return (actual == expected or
+            (html_binding_matches(expected, pin, 'producer') and html_binding_matches(actual, pin, 'live')))
+
+
 def read_json(path, expected_sha=None):
     require(path.is_file() and not path.is_symlink(), 'input_not_regular_file')
     require(0 < path.stat().st_size <= 1024 * 1024, 'input_size_bound')
@@ -96,7 +113,10 @@ def load_source(artifact_root, pins=PINS):
                load_blog_draft_articles(artifact_root / 'wechat_drafts', parse_blog_start_date(BLOG_START_DATE))}
     require(set(records) == {row['old_blog_fingerprint'] for row in pins['articles']},
             'producer_blog_binding_mismatch')
-    return {'media_id': draft['media_id'], 'articles': materialize_private_article_payload(articles, ''),
+    materialized = materialize_private_article_payload(articles, '')
+    for article, pin in zip(materialized, pins['articles']):
+        require(html_binding_matches(article['content'], pin, 'producer'), 'producer_html_binding_mismatch')
+    return {'media_id': draft['media_id'], 'articles': materialized,
             'payload': payload, 'summary': summary, 'title_log': log, 'pins': pins,
             'old_records': records}
 
@@ -121,6 +141,9 @@ def validate_live(data, source):
                 continue  # These upload-only crop inputs are never sent by this repair.
             if key == 'article_type' and value == 'news' and key not in current:
                 continue  # Older draft/get responses omit the default article type.
+            if key == 'content':
+                require(reviewed_content_matches(current.get(key), value, pin), 'live_payload_changed_content')
+                continue
             require(key in current and current[key] == value, 'live_payload_changed_' + key)
         require(not current.get('content_source_url'), 'live_source_url_changed')
     checks = summarize_draft_get_response(data, 3, [dict(row, title=a['title'])
@@ -155,6 +178,7 @@ def plan_for(data, source, changes):
     return {'source_run_id': source['pins']['source_run_id'], 'article_count': 3,
             'draft_identity_sha256': digest(source['media_id']),
             'full_live_articles_sha256': digest(actual),
+            'reviewed_live_html': source['pins']['reviewed_live_html'],
             'unreturned_upload_only_fields': sorted({key for row in actual for key in UPLOAD_ONLY if key not in row}),
             'articles': [{'index': index, 'current_title': current['title'], 'selected_title': pin['selected_title'],
                           'old_blog_fingerprint': change['old']['fingerprint'],
@@ -169,8 +193,17 @@ def unchanged_articles(data, expected):
     return live_articles(data) == expected
 
 
+def protected_live_facts(articles):
+    """Hash every returned field except the sole authorized title change."""
+    protected = [{key: value for key, value in row.items() if key != 'title'} for row in articles]
+    return {'article_count': len(articles), 'all_non_title_fields_sha256': digest(protected),
+            'article_non_title_fields_sha256': [digest(row) for row in protected],
+            'html_sha256': [hashlib.sha256(row['content'].encode()).hexdigest() for row in articles]}
+
+
 def repair_titles(session, token, source, initial, progress, save, timeout=30):
     baseline = copy.deepcopy(validate_live(initial, source))
+    progress['live_before'] = protected_live_facts(baseline)
     for index, pin in enumerate(source['pins']['articles']):
         # Recheck every field of all three articles immediately before a write.
         before = get_draft(session, token, source['media_id'], timeout)
@@ -215,6 +248,9 @@ def repair_titles(session, token, source, initial, progress, save, timeout=30):
     final = get_draft(session, token, source['media_id'], timeout)
     require(unchanged_articles(final, baseline), 'final_full_payload_mismatch')
     validate_live(final, source)
+    progress['live_after'] = protected_live_facts(live_articles(final))
+    require(progress['live_after'] == progress['live_before'], 'non_title_fields_changed')
+    save()
     return final
 
 

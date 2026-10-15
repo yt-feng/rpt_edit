@@ -3,6 +3,11 @@
   "source_head": "566d74cb32ce1de545836c1182c076c4a2bdb033",
   "artifact_name": "institution-wechat-drafts-261015-38698155880",
   "receipt_dir": "wechat_drafts/institutions/261015",
+  "reviewed_live_html": {
+    "diagnostic_run_id": 38703812822,
+    "diagnostic_head": "dc60acf66e777c6ff443e3d0ff676c6c07135ed3",
+    "scope": "exact_three_existing_articles_only"
+  },
   "files": {
     "wechat_draft_summary.json": "d0eecd14d37e4199565da071f97cf1cc5979a23056c3e65742bd11a1814aedd1",
     "draft_payload_01.json": "10ac0697438a7ce4fc1545755f8b92c58ba5baac2eb4e34345ea06904572b483",
@@ -15,6 +20,10 @@
       "old_title": "IMF：财政与货币互动中债务期限的作用，短期国债占比高时紧缩对债务的推",
       "selected_title": "IMF：财政与货币互动中债务期限的作用",
       "subtitle": "短期国债占比高时紧缩对债务的推升更持久",
+      "producer_html_sha256": "87ea27ebf3b16c6c7d42a0c6af5dfe0b6638a767ad8c04250e1482c47878e97b",
+      "producer_html_bytes": 7672,
+      "live_html_sha256": "b4ccbf399ddf6478a4b400c19d1146277a21851650eb1d2238fd0ff21fb0b43d",
+      "live_html_bytes": 7698,
       "old_blog_fingerprint": "677fb2cbd720af62e6928b459b7b549802dcae00581d5e73a094a8c6871889cd"
     },
     {
@@ -23,6 +32,10 @@
       "old_title": "IMF：数字资金服务防欺诈的曼谷蓝图，欺诈已从未经授权交易转向受害者主",
       "selected_title": "IMF：数字资金服务防欺诈的曼谷蓝图",
       "subtitle": "欺诈已从未经授权交易转向受害者主动授权",
+      "producer_html_sha256": "a456408665e75e8245b2b632a8a9efc865e48afe2e3a55eba737038cd567bd73",
+      "producer_html_bytes": 6567,
+      "live_html_sha256": "d38b07bb55ccc37ba563a53414e3f18e9a43c11d6b880319eabc8c3656dc047b",
+      "live_html_bytes": 6593,
       "old_blog_fingerprint": "2a088b2930d833d0be650a0d82d0b4880565a27d7a98727508373f10a5e41b26"
     },
     {
@@ -31,6 +44,10 @@
       "old_title": "IMF：总裁全球政策议程与年会，全球增长保住但能源进口国与科技链外地区",
       "selected_title": "IMF：总裁全球政策议程与年会",
       "subtitle": "全球增长保住但能源进口国与科技链外地区走弱",
+      "producer_html_sha256": "e88cef5418aa0e8c6037edc6cf7dbf2f95c9234012e1701a12540827995610d6",
+      "producer_html_bytes": 7264,
+      "live_html_sha256": "78c73ecc4edc14544af38dcf7d3c29075f2795b4f2bbcafec68bd9c45e968cba",
+      "live_html_bytes": 7290,
       "old_blog_fingerprint": "dd67de7fb361b712bbcbc3446bbb85a11faa8cc3c7c45898513fd21dfd64dd24"
     }
   ]
