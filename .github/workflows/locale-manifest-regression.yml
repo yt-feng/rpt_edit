@@ -1,5 +1,17 @@
 name: Locale manifest regression
 on:
+  workflow_dispatch:
+    inputs:
+      diagnostic_run_id:
+        description: "Optional failed Neutral run whose complete source accounting must round-trip"
+        required: false
+        type: string
+        default: ""
+      diagnostic_run_attempt:
+        description: "Exact attempt containing the source-accounting diagnostics"
+        required: false
+        type: string
+        default: "1"
   pull_request:
     paths: ['scripts/*locale*', 'scripts/verify_prepared_static_slot.py', '.github/workflows/locale-manifest-regression.yml']
   push:
@@ -7,6 +19,7 @@ on:
     paths: ['scripts/portal_locale_manifest.py', 'scripts/build_portal_locales.py', 'scripts/test_locale_manifest_compaction.py', '.github/workflows/locale-manifest-regression.yml']
 permissions:
   contents: read
+  actions: read
 jobs:
   test:
     runs-on: ubuntu-24.04
@@ -18,7 +31,52 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Check production diagnostic identity and bounds
+        if: inputs.diagnostic_run_id != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DIAGNOSTIC_RUN_ID: ${{ inputs.diagnostic_run_id }}
+          DIAGNOSTIC_RUN_ATTEMPT: ${{ inputs.diagnostic_run_attempt }}
+        run: |
+          python - <<'PY'
+          import json, os, re, subprocess
+          repo = os.environ['GITHUB_REPOSITORY']
+          run_id = os.environ['DIAGNOSTIC_RUN_ID']
+          attempt = os.environ['DIAGNOSTIC_RUN_ATTEMPT']
+          if not all(re.fullmatch(r'[1-9][0-9]{0,19}', value) for value in (run_id, attempt)):
+              raise SystemExit('Diagnostics require an exact numeric run and attempt')
+          def api(path):
+              return json.loads(subprocess.check_output(['gh', 'api', f'repos/{repo}/{path}'], timeout=60))
+          run = api(f'actions/runs/{run_id}/attempts/{attempt}')
+          if (run.get('path') != '.github/workflows/neutral-edge-cutover.yml'
+                  or run.get('head_repository', {}).get('full_name') != repo
+                  or run.get('status') != 'completed' or run.get('conclusion') != 'failure'):
+              raise SystemExit('Diagnostics must belong to a completed failed Neutral run in this repository')
+          name = f'neutral-translation-diagnostics-{run_id}-{attempt}'
+          artifacts = api(f'actions/runs/{run_id}/artifacts?per_page=100')['artifacts']
+          matches = [item for item in artifacts if item['name'] == name]
+          if len(matches) != 1:
+              raise SystemExit('Expected exactly one production diagnostic artifact')
+          artifact = matches[0]
+          if (artifact.get('expired') is not False
+                  or not 0 < artifact.get('size_in_bytes', 0) <= 96 * 1024 * 1024
+                  or artifact.get('workflow_run', {}).get('id') != int(run_id)
+                  or artifact.get('workflow_run', {}).get('head_sha') != run['head_sha']):
+              raise SystemExit('Production diagnostic identity or download bounds differ')
+          print(json.dumps({'run_id': int(run_id), 'attempt': int(attempt), 'head_sha': run['head_sha'],
+                            'artifact_id': artifact['id'], 'archive_bytes': artifact['size_in_bytes']}, sort_keys=True))
+          PY
+      - name: Retrieve exact production source accounting
+        if: inputs.diagnostic_run_id != ''
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.diagnostic_run_id }}
+          name: neutral-translation-diagnostics-${{ inputs.diagnostic_run_id }}-${{ inputs.diagnostic_run_attempt }}
+          path: ${{ runner.temp }}/locale-regression-diagnostics
       - name: Test bounded manifests and existing acceptance contracts
+        env:
+          LOCALE_MANIFEST_DIAGNOSTICS: ${{ inputs.diagnostic_run_id && format('{0}/locale-regression-diagnostics/locale-full-diagnostics.json', runner.temp) || '' }}
         run: |
           set -euo pipefail
           python -m pip install 'requests>=2.31,<3' 'Pillow>=10.1,<12'

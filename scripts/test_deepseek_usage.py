@@ -15,7 +15,7 @@ from unittest.mock import Mock, patch
 
 import requests
 
-from deepseek_http import request_with_key_fallback, request_with_retry
+from deepseek_http import DeepSeekResponseError, request_with_key_fallback, request_with_retry
 from deepseek_usage import record_attempt
 from summarize_deepseek_usage import load_prices, markdown_report, summarize
 
@@ -30,8 +30,8 @@ def response(status: int = 200, usage=USAGE) -> Mock:
     result.json.return_value = {
         "id": "private-id", "usage": usage,
         "choices": [{"message": {"content": "private generated report"}}],
-        "error": "private original error",
     }
+    result.iter_content.return_value = [json.dumps(result.json.return_value).encode()]
     return result
 
 
@@ -78,6 +78,24 @@ class DeepSeekUsageTests(unittest.TestCase):
         self.assertIn("test_deepseek_usage", event["operation"])
         self.assertNotIn("private", json.dumps(event))
         self.assertEqual(event["outcome"], "success")
+
+    @patch("deepseek_http.time.sleep")
+    @patch("deepseek_http.requests.post")
+    def test_200_error_is_not_counted_as_success_and_diagnostics_do_not_echo_body(self, post, sleep):
+        failed = response(200, None)
+        failed.json.return_value = {"error": {"code": "timeout", "message": "private key and report text"}}
+        post.side_effect = [failed, response()]
+        self.request(max_attempts=2)
+        events = sorted(self.read_events(), key=lambda row: row["attempt"])
+        self.assertEqual([row["outcome"] for row in events], ["response_error", "success"])
+        self.assertEqual(events[0]["response_error"], "provider_unavailable")
+        self.assertFalse(events[0]["usage_reported"])
+        self.assertNotIn("private", json.dumps(events))
+        totals = summarize([self.events])["totals"]
+        self.assertEqual(totals["successes"], 1)
+        self.assertEqual(totals["response_errors"], 1)
+        self.assertEqual(totals["transport_errors"], 0)
+        self.assertEqual(totals["usage_missing_attempts"], 1)
 
     @patch("deepseek_http.requests.post")
     def test_reasoning_is_observed_as_output_subset_without_double_counting(self, post):

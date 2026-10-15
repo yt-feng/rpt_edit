@@ -2811,6 +2811,7 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
         self.assertEqual(request.call_count, 2)
         for call in request.call_args_list:
             self.assertEqual(call.kwargs["max_attempts"], 1)
+            self.assertFalse(call.kwargs["validate_completion"])
             self.assertEqual(call.kwargs["api_keys"], [("configured", "test-primary-secret")])
         report = json.loads(diagnostics.read_text())
         self.assertEqual(report["provider_requests"], 2)

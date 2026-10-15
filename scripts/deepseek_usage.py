@@ -67,7 +67,7 @@ def record_attempt(
     *, request_id: str, operation: str, model: str, attempt: int,
     retry_attempt: int, model_switches: int, key_index: int,
     elapsed_ms: int, response: Any = None, transport_error: bool = False,
-    thinking_mode: str = "unknown",
+    thinking_mode: str = "unknown", response_error: str | None = None,
 ) -> None:
     """Record allowlisted metadata; accounting failures never retry a paid call."""
     directory = os.getenv("DEEPSEEK_USAGE_DIR", "").strip()
@@ -115,11 +115,18 @@ def record_attempt(
             "elapsed_ms": max(0, elapsed_ms),
             "http_status": status,
             "outcome": "transport_error" if transport_error else (
+                "response_error" if response_error else
                 "success" if status is not None and 200 <= status < 300 else "http_error"
             ),
             "usage_reported": any(value is not None for value in counters.values()),
             "usage": counters,
         }
+        if response_error in {
+            "invalid_json", "invalid_envelope", "provider_unavailable", "insufficient_balance",
+            "authentication_failed", "invalid_request", "content_filtered", "provider_error",
+            "missing_choices", "generation_interrupted", "missing_content", "response_too_large",
+        }:
+            event["response_error"] = response_error
         target = Path(directory) / now.strftime("%Y-%m-%d")
         target.mkdir(parents=True, exist_ok=True)
         # Readers only see completed JSON files. Unique files avoid lost updates
