@@ -45,6 +45,22 @@ class MetadataTests(unittest.TestCase):
         self.assertNotIn('private', json.dumps(rows))
         self.assertEqual(rows[0]['value_type'], 'str')
 
+    def test_visual_coverage_failure_discloses_counts_without_source_text(self):
+        box = [10, 20, 50, 100]
+        middle = {'_backend': 'hybrid', '_version_name': '3.4.4', '_ocr_enable': True, '_effort': 'medium',
+            'pdf_info': [{'page_idx': 0, 'page_size': [100, 200], 'para_blocks': [
+                {'type': 'table', 'bbox': box, 'blocks': [{'type': 'table_body', 'bbox': box,
+                    'lines': [{'spans': [{'type': 'table', 'bbox': box, 'image_path': 'private.jpg',
+                        'html': '<table>private-content</table>'}]}]}]}]}]}
+        try:
+            figures._normalise([], middle)
+        except figures.FigureSourceError as error:
+            rows = structural_failure(error)
+        self.assertEqual(rows[0]['records_count'], 0)
+        self.assertEqual(rows[0]['parents_count'], 1)
+        self.assertEqual(rows[0]['used_count'], 0)
+        self.assertNotIn('private', json.dumps(rows))
+
     def test_writing_ledger_rejected_before_any_reads(self):
         ledger = Mock(scope='institution', forbid_new_submissions=False)
         with self.assertRaisesRegex(ValueError, 'read_only_scope'): probe(ledger, Mock(), 'bucket', Path('unused'))
