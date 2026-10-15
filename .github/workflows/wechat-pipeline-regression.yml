@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "scripts/*wechat*"
+      - "scripts/fixtures/wechat_institution_title_repair_38698155880.json"
       - "scripts/*free_editorial_images*"
       - "scripts/stock_editorial_photos.json"
       - "scripts/*article_generation_progress*"
@@ -73,6 +74,7 @@ on:
     branches: [main]
     paths:
       - "scripts/*wechat*"
+      - "scripts/fixtures/wechat_institution_title_repair_38698155880.json"
       - "scripts/*free_editorial_images*"
       - "scripts/stock_editorial_photos.json"
       - "scripts/*article_generation_progress*"
@@ -223,6 +225,8 @@ jobs:
           python scripts/test_post_blog_refresh.py
           python scripts/test_check_completed_shard.py
           python scripts/test_wechat_output_contract.py
+          python scripts/test_wechat_filename_titles.py
+          python scripts/test_repair_wechat_institution_titles.py
           python scripts/test_wechat_api_verification.py
           python scripts/test_free_editorial_images.py
           python scripts/test_wechat_media_contract.py

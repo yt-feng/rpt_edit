@@ -1,0 +1,93 @@
+name: Repair recovered IMF draft titles
+run-name: IMF existing title ${{ inputs.apply && 'repair' || 'audit' }} from 38698155880
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: Apply the reviewed plan to the existing three articles and their Blog records
+        type: boolean
+        default: false
+        required: true
+      expected_plan_sha256:
+        description: Exact plan_sha256 from the successful read-only audit (required for apply)
+        type: string
+        required: false
+permissions:
+  actions: read
+  contents: write
+concurrency:
+  group: wechat-institution-title-repair-38698155880
+  cancel-in-progress: false
+jobs:
+  repair:
+    if: github.ref == 'refs/heads/main'
+    runs-on: [self-hosted, wechat-draft]
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          sparse-checkout: |
+            .github/workflows
+            scripts
+            prompts
+            requirements.txt
+            portal_suite/data/blog_archive
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r requirements.txt
+      - name: Validate the pinned successful producer and its exact artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          PYTHONPATH=scripts python - <<'PY'
+          import os
+          from repair_wechat_institution_titles import PINS
+          from validate_wechat_image_receipt_source import github_json, validate, require
+          repo = os.environ['GITHUB_REPOSITORY']
+          # The shared validator binds the pinned run to this Actions repository.
+          api = lambda path: github_json(repo, path, os.environ['GH_TOKEN'])
+          validate(repo, str(PINS['source_run_id']), PINS['artifact_name'], api)
+          run = api('actions/runs/' + str(PINS['source_run_id']))
+          require(run.get('head_sha') == PINS['source_head'] and run.get('head_branch') == 'main'
+                  and run.get('path') == '.github/workflows/institution-latest-pdf-to-wechat.yml',
+                  'source_workflow_or_head_mismatch')
+          print('Pinned producer and exact unexpired artifact verified.')
+          PY
+      - uses: actions/download-artifact@v4
+        with:
+          name: institution-wechat-drafts-261015-38698155880
+          run-id: 38698155880
+          github-token: ${{ github.token }}
+          path: _imf_title_source
+      - name: Test title preservation and bounded repair contract
+        run: python scripts/test_repair_wechat_institution_titles.py
+      - name: Audit or update only the three pinned existing article titles
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+          APPLY: ${{ inputs.apply }}
+          EXPECTED_PLAN: ${{ inputs.expected_plan_sha256 }}
+        run: |
+          OPTIONS=()
+          if [ "$APPLY" = true ]; then OPTIONS+=(--apply --expected-plan-sha256 "$EXPECTED_PLAN"); fi
+          python scripts/repair_wechat_institution_titles.py \
+            --artifact-root _imf_title_source --output _imf_title_repair "${OPTIONS[@]}"
+      - name: Commit the three verified Blog record replacements
+        if: inputs.apply
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- portal_suite/data/blog_archive/20261015
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Restore complete titles for the three recovered IMF articles"
+          bash scripts/push_main_with_rebase_retry.sh 5
+      - name: Save audit, progress, and corrected receipt for the same draft
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: institution-wechat-title-repair-${{ github.run_id }}
+          path: _imf_title_repair
+          retention-days: 7
+          if-no-files-found: warn

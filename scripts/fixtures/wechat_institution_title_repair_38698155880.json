@@ -1,0 +1,37 @@
+{
+  "source_run_id": 38698155880,
+  "source_head": "566d74cb32ce1de545836c1182c076c4a2bdb033",
+  "artifact_name": "institution-wechat-drafts-261015-38698155880",
+  "receipt_dir": "wechat_drafts/institutions/261015",
+  "files": {
+    "wechat_draft_summary.json": "d0eecd14d37e4199565da071f97cf1cc5979a23056c3e65742bd11a1814aedd1",
+    "draft_payload_01.json": "10ac0697438a7ce4fc1545755f8b92c58ba5baac2eb4e34345ea06904572b483",
+    "wechat_title_log.json": "d2ab8a21e8848a67ca8d34a2485ab5626ca72cb389161b78cb9f2ed76744e8ad"
+  },
+  "articles": [
+    {
+      "report_dir": "portal_translated_reports/institutions/261015/01-0001-IMF_Fiscal-Monetary-Interactions-The-Role-of-Debt-Maturity_7677b19a",
+      "source_report_name": "IMF Fiscal-Monetary-Interactions-The-Role-of-Debt-Maturity 7677b19a",
+      "old_title": "IMF：财政与货币互动中债务期限的作用，短期国债占比高时紧缩对债务的推",
+      "selected_title": "IMF：财政与货币互动中债务期限的作用",
+      "subtitle": "短期国债占比高时紧缩对债务的推升更持久",
+      "old_blog_fingerprint": "677fb2cbd720af62e6928b459b7b549802dcae00581d5e73a094a8c6871889cd"
+    },
+    {
+      "report_dir": "portal_translated_reports/institutions/261015/02-0002-IMF_The-Bangkok-Blueprint-for-Fraud-Resilient-Financial-Services_d0dfd917",
+      "source_report_name": "IMF The-Bangkok-Blueprint-for-Fraud-Resilient-Financial-Services d0dfd917",
+      "old_title": "IMF：数字资金服务防欺诈的曼谷蓝图，欺诈已从未经授权交易转向受害者主",
+      "selected_title": "IMF：数字资金服务防欺诈的曼谷蓝图",
+      "subtitle": "欺诈已从未经授权交易转向受害者主动授权",
+      "old_blog_fingerprint": "2a088b2930d833d0be650a0d82d0b4880565a27d7a98727508373f10a5e41b26"
+    },
+    {
+      "report_dir": "portal_translated_reports/institutions/261015/03-0003-IMF_The-Managing-Director-s-Global-Policy-Agenda-Annual-Meetings_78a92160",
+      "source_report_name": "IMF The-Managing-Director-s-Global-Policy-Agenda-Annual-Meetings 78a92160",
+      "old_title": "IMF：总裁全球政策议程与年会，全球增长保住但能源进口国与科技链外地区",
+      "selected_title": "IMF：总裁全球政策议程与年会",
+      "subtitle": "全球增长保住但能源进口国与科技链外地区走弱",
+      "old_blog_fingerprint": "dd67de7fb361b712bbcbc3446bbb85a11faa8cc3c7c45898513fd21dfd64dd24"
+    }
+  ]
+}
