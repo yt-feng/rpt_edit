@@ -2,6 +2,7 @@
 from __future__ import annotations
 import argparse
 import copy
+from contextlib import ExitStack
 import json
 import os
 from pathlib import Path
@@ -9,11 +10,12 @@ import tempfile
 
 from mineru_task_ledger import digest, encoded, exact_json
 from mineru_completed_child_reuse import read_completed_batch
-from mineru_page_segments import read_segment_plan, merge_segments
+from mineru_page_segments import read_segment_plan, merge_segments, SegmentArchive
 from institution_dependency_backlog import cli_ledger
 from institution_original_cache import OriginalCache, validate_binding, OPTIONS
 from mineru_result_cache import ResultCache
 from probe_mineru_figure_binding import ReadOnlyR2Client, ReadOnlyStore, ReadOnlyProvider, require, ProbeError
+from probe_mineru_figure_binding import compare_cached_pdf, _difference
 from probe_adb_figure_metadata import inspect_payload, structural_failure
 from probe_consulting_mineru_figure_binding import verify_production_figures
 
@@ -48,6 +50,58 @@ def cached_payload(ledger, cache, binding):
     payload = cache.get(binding, rows[binding['id']]['_recovery_lineage'])
     require(payload is not None, 'source_result_cache_missing')
     return payload
+
+
+def embedded_pdf(payload):
+    import mineru_figure_sources as figures
+    from consume_legacy_mineru import safe_unzip
+    with tempfile.TemporaryDirectory(prefix='institution-embedded-diagnostic-') as directory:
+        root = Path(directory); safe_unzip(payload, root)
+        found = figures._metadata_files(root)
+        require(found is not None, 'provider_metadata_missing')
+        pdfs = [path for path in found[2] if path.is_file() and path.suffix.lower() == '.pdf']
+        require(len(pdfs) == 1, 'embedded_pdf_ambiguous')
+        return figures._regular(pdfs[0], root, 512 * 1024 * 1024)
+
+
+def segment_pixel_diagnostics(original, merged, plan, payloads, binding, archive, page_index, budget):
+    """Compare one actually selected failing page at all immutable boundaries."""
+    import fitz
+    import mineru_figure_sources as figures
+    require(type(page_index) is int and page_index >= 0, 'diagnostic_page_invalid')
+    matches = [(segment, payload) for segment, payload in zip(plan['segments'], payloads)
+               if segment['page_start'] <= page_index + 1 <= segment['page_end']]
+    require(len(matches) == 1, 'diagnostic_segment_ambiguous')
+    segment, payload = matches[0]
+    physical = archive.get(binding, segment['binding'])
+    require(physical is not None, 'segment_archive_missing')
+    local_index = page_index + 1 - segment['page_start']
+    inputs = [('original', original, page_index), ('physical_segment', physical, local_index),
+              ('provider_segment', embedded_pdf(payload), local_index),
+              ('merged_provider', embedded_pdf(merged), page_index)]
+    result = {'diagnostic_only': True, 'production_acceptance': False,
+              'page_index': page_index, 'segment_page_index': local_index,
+              'page_start': segment['page_start'], 'page_end': segment['page_end'],
+              'documents': {}, 'boundaries': {}}
+    with ExitStack() as stack:
+        stack.enter_context(figures._silent_mupdf())
+        images, geometries = {}, {}
+        for name, raw, index in inputs:
+            budget()
+            document = stack.enter_context(fitz.open(stream=raw, filetype='pdf'))
+            require(not document.is_encrypted and index < len(document), 'diagnostic_page_count')
+            result['documents'][name] = {'sha256': digest(raw), 'pages': len(document),
+                'catalog': {key: document.xref_get_key(document.pdf_catalog(), key)[0]
+                            for key in ('OCProperties', 'OutputIntents')}}
+            geometries[name] = figures._geometry(document[index])
+            images[name] = figures._render(document[index]); stack.callback(images[name].close)
+        for left, right in (('original', 'physical_segment'), ('physical_segment', 'provider_segment'),
+                            ('provider_segment', 'merged_provider')):
+            budget()
+            result['boundaries'][left + '_to_' + right] = {
+                'geometry_equal': exact_json(geometries[left], geometries[right]),
+                'pixels': _difference(images[left], images[right])}
+    return result
 
 
 def inspect_source(ledger, client, bucket, binding):
@@ -89,6 +143,22 @@ def inspect_source(ledger, client, bucket, binding):
             path = Path(directory) / 'original.pdf'; path.write_bytes(original)
             result['production_figure_consumer'] = verify_production_figures(
                 path, payload, binding['sha256'], budget)
+            if result['production_figure_consumer']['status'] == 'rejected':
+                # Acceptance remains rejected. Diagnostics use the same eight
+                # production decisions, never the generic probe's 100 images.
+                try:
+                    comparison = compare_cached_pdf(path, payload, original_sha256=binding['sha256'],
+                        clock=ledger.clock, deadline=deadline, max_images=8)
+                    result['pixel_diagnostic'] = comparison
+                    failed = next((page for page in comparison.get('pages', [])
+                                   if page.get('default_rgb_equal') is False), None)
+                    if plan is not None and failed is not None:
+                        result['segment_pixel_diagnostic'] = segment_pixel_diagnostics(
+                            original, payload, plan, payloads, binding,
+                            SegmentArchive(client, bucket), failed['page_index'], budget)
+                except Exception as error:
+                    result['pixel_diagnostic_error'] = (str(error) if isinstance(error, ProbeError)
+                                                        else type(error).__name__)
     return result
 
 

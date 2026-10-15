@@ -652,12 +652,14 @@ def output_intent_restoration_diagnostics(original,embedded_bytes,authentic,supp
     return result
 
 
-def compare_cached_pdf(original_path,payload,*,original_sha256,clock=time.monotonic,deadline=None):
+def compare_cached_pdf(original_path,payload,*,original_sha256,clock=time.monotonic,deadline=None,
+                       max_images=MAX_VISUALS):
     """Match the four production gates; alternate annotation renders are diagnostic only."""
     import fitz
     from PIL import Image
     import mineru_figure_sources as figures
     from consume_legacy_mineru import safe_unzip
+    require(type(max_images) is int and 1 <= max_images <= MAX_VISUALS, 'selected_visuals_bound')
     original_path = Path(original_path)
     original = original_path.read_bytes()
     require(digest(original) == original_sha256,'original_bytes_changed')
@@ -672,10 +674,10 @@ def compare_cached_pdf(original_path,payload,*,original_sha256,clock=time.monoto
         embedded = [path for path in paths if path.is_file() and path.suffix.lower() == '.pdf']
         require(len(embedded)==1,'embedded_pdf_ambiguous')
         embedded_raw = figures._regular(embedded[0],root,512*1024*1024)
-        decisions = figures._decisions(metadata,MAX_VISUALS)
+        decisions = figures._decisions(metadata,max_images)
         used_pages = sorted({record['page_idx'] for record,decision in zip(metadata['records'],decisions)
                              if decision['selected']})
-        require(len(used_pages)<=MAX_VISUALS,'selected_pages_bound')
+        require(len(used_pages)<=max_images,'selected_pages_bound')
         result = {'status':'checked','stage':'complete','original_pdf_sha256':digest(original),
             'original_pdf_bytes':len(original),'embedded_pdf_sha256':digest(embedded_raw),
             'embedded_pdf_bytes':len(embedded_raw),'result_zip_sha256':digest(payload),'result_zip_bytes':len(payload),

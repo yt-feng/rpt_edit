@@ -1,5 +1,6 @@
 import copy
 import unittest
+import fitz
 from unittest.mock import Mock, patch
 
 import probe_institution_figure_metadata as p
@@ -105,6 +106,55 @@ class ProbeTests(unittest.TestCase):
         verifier.assert_not_called()
         self.assertEqual(result['metadata']['status'], 'rejected')
         self.assertNotIn('production_figure_consumer', result)
+
+    def test_rejected_consumer_diagnostic_uses_exact_eight_image_limit(self):
+        binding = p.binding_for(p.selection()['sources'][0])
+        ledger = Mock(); ledger.clock.return_value = 0
+        proof = {'status': 'rejected', 'category': 'figure_source_pixels_mismatch',
+                 'production_consumer_verified': False}
+        with patch.object(p, 'OriginalCache') as originals, \
+                patch.object(p, 'read_segment_plan', return_value=None), \
+                patch.object(p, 'cached_payload', return_value=b'result'), \
+                patch.object(p, 'inspect_payload', return_value={'status': 'valid'}), \
+                patch.object(p, 'verify_production_figures', return_value=proof), \
+                patch.object(p, 'compare_cached_pdf', return_value={'pages': []}) as compare:
+            originals.return_value.get.return_value = b'%PDF-fixture'
+            result = p.inspect_source(ledger, Mock(), 'private', binding)
+        self.assertEqual(compare.call_args.kwargs['max_images'], 8)
+        self.assertEqual(compare.call_args.kwargs['deadline'], 480)
+        self.assertEqual(compare.call_args.kwargs['original_sha256'], binding['sha256'])
+        self.assertIs(result['production_figure_consumer'], proof)
+        self.assertFalse(proof['production_consumer_verified'])
+
+    def test_segment_diagnostic_identifies_split_catalog_loss_without_acceptance(self):
+        with fitz.open() as document:
+            group = document.add_ocg('PRIVATE GROUP', on=False)
+            document.new_page(width=30, height=30)
+            page = document.new_page(width=30, height=30)
+            page.draw_rect(fitz.Rect(5, 5, 25, 25), fill=(1, 0, 0), oc=group)
+            original = document.tobytes(no_new_id=True)
+        with fitz.open(stream=original, filetype='pdf') as document, fitz.open() as split, fitz.open() as merged:
+            split.insert_pdf(document, from_page=1, to_page=1)
+            physical = split.tobytes(garbage=4, deflate=True, no_new_id=True)
+            merged.insert_pdf(document)
+            merged_raw = merged.tobytes(garbage=4, deflate=True, no_new_id=True)
+        binding, segment_binding = {'id': 'original'}, {'id': 'segment'}
+        archive = Mock(); archive.get.return_value = physical
+        plan = {'segments': [{'binding': segment_binding, 'page_start': 2, 'page_end': 2}]}
+        with patch.object(p, 'embedded_pdf', side_effect=[physical, merged_raw]):
+            result = p.segment_pixel_diagnostics(original, b'merged', plan, [b'provider'],
+                                                 binding, archive, 1, lambda: None)
+        archive.get.assert_called_once_with(binding, segment_binding)
+        self.assertEqual(result['segment_page_index'], 0)
+        docs = result['documents']
+        self.assertEqual(docs['original']['catalog']['OCProperties'], 'dict')
+        self.assertEqual(docs['physical_segment']['catalog']['OCProperties'], 'null')
+        boundaries = result['boundaries']
+        self.assertGreater(boundaries['original_to_physical_segment']['pixels']['diff_pixel_count'], 0)
+        self.assertEqual(boundaries['physical_segment_to_provider_segment']['pixels']['diff_pixel_count'], 0)
+        self.assertEqual(boundaries['provider_segment_to_merged_provider']['pixels']['diff_pixel_count'], 0)
+        self.assertFalse(result['production_acceptance'])
+        self.assertNotIn('PRIVATE', str(result))
 
 
 if __name__ == '__main__': unittest.main()
