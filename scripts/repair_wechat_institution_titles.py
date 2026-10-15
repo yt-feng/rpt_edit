@@ -30,7 +30,7 @@ from push_portal_translated_to_wechat_drafts import (
 )
 from update_blog_archive_from_wechat_drafts import assert_public_archive_identity
 from wechat_title_optimizer import title_quality_issues
-from wechat_html_diagnostics import article_content_diagnostics
+from wechat_html_diagnostics import article_content_diagnostics, all_field_read_diagnostics
 
 PINS = json.loads((Path(__file__).parent / 'fixtures/wechat_institution_title_repair_38698155880.json').read_text())
 WRITABLE = ('title', 'author', 'digest', 'content', 'content_source_url',
@@ -315,6 +315,13 @@ def main():
             # never weaken validate_live or authorize a write.
             result['content_diagnostics'] = article_content_diagnostics(initial, source)
             save()
+            if not args.apply:
+                # Audit only: compare a second independent read to locate
+                # server-returned field drift. The plan remains bound to the
+                # first read and the apply/write path is unchanged.
+                second_read = get_draft(session, token, source['media_id'], 30)
+                result['live_field_diagnostics'] = all_field_read_diagnostics(initial, second_read, WRITABLE)
+                save()
             plan = plan_for(initial, source, changes)
             result.update(plan=plan, plan_sha256=digest(plan))
             save()
