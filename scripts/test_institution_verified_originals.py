@@ -83,6 +83,20 @@ class ReadOnlyR2:
 
 
 class VerifiedOriginalTests(unittest.TestCase):
+    def test_october15_selection_contains_only_the_three_proven_pending_originals(self):
+        path = Path('institution_feeds/reviewed_originals/imf-20261015-reviewed.json')
+        selection = verified.VerifiedOriginals(path, cache_factory=lambda: self.fail('Unexpected R2 read'))
+        self.assertEqual(digest(path.read_bytes()), 'c880842e7f022145eaca780dd52017934444ab7c7f1be7208a9cc7f74b81196b')
+        pinned = json.loads(Path('scripts/fixtures/institution_sources/figure_metadata_20261015.json').read_bytes())
+        expected = {row['local_filename']: (row['sha256'], row['bytes'])
+                    for row in pinned['sources'] if row['local_filename'].startswith('IMF_')}
+        actual = {row['binding']['source']: (row['sha256'], row['size']) for row in selection.records.values()}
+        self.assertEqual(actual, expected)
+        self.assertEqual(len(actual), 3)
+        for row in selection.records.values():
+            self.assertEqual(filename(row['item']), row['binding']['source'])
+        self.assertEqual(sorted(row['pages'] for row in selection.records.values()), [9, 48, 214])
+
     def setup_selection(self, root, value=None, payload=None):
         payload = payload if payload is not None else pdf()
         value = value or manifest()

@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "institution": "imf",
+  "frozen_pending_sha256": "86c1b8fea5e2efb13303b211b53c5f75ac3356b1466a3bc1a63e60e00149d779",
+  "records": [
+    {
+      "item": {
+        "title": "The Bangkok Blueprint for Fraud-Resilient Financial Services",
+        "source_url": "https://www.imf.org/en/publications/policy-papers/issues/2026/10/01/the-bangkok-blueprint-for-fraud-resilient-financial-services-580113",
+        "guid": "a66df46b1ef12da5f71eb94460be5b63eb1d832cd3392d901d61af90a032",
+        "date": "2026-10-14T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/pp/2026/english/ppea2026038.pdf",
+          "https://www.imf.org/-/media/files/publications/pp/2026/english/ppea2026038-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/policy-papers/issues/2026/10/01/the-bangkok-blueprint-for-fraud-resilient-financial-services-580113",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/policy-papers/issues/2026/10/01/the-bangkok-blueprint-for-fraud-resilient-financial-services-580113"
+      },
+      "official_landing_url": "https://www.elibrary.imf.org/view/journals/007/2026/038/007.2026.issue-038-en.xml?cid=580113-com-dsp-crossref",
+      "official_pdf_url": "https://www.elibrary.imf.org/downloadpdf/view/journals/007/2026/038/007.2026.issue-038-en.pdf",
+      "doi": "10.5089/9798229063357.007",
+      "sha256": "1d169e6f816bdd6446855694cd5bee7961c06cd4a0441cb442561f9af5090aae",
+      "size": 3468553,
+      "pages": 48,
+      "binding": {
+        "source": "IMF_The-Bangkok-Blueprint-for-Fraud-Resilient-Financial-Services_d0dfd917.pdf",
+        "sha256": "1d169e6f816bdd6446855694cd5bee7961c06cd4a0441cb442561f9af5090aae",
+        "size": 3468553,
+        "scope": "institution",
+        "endpoint": "https://mineru.net",
+        "options": {
+          "model": "vlm",
+          "language": "en",
+          "ocr": true
+        },
+        "id": "eb602e319a14ba4d55f56dc33b2b7e317dfc09b3928d0208554702a7cde7db14"
+      },
+      "verification": {
+        "method": "official_browser_download",
+        "review": "approved",
+        "receipt_sha256": "d9475cf5bed1053ba572fdab161e876e5ca32db894a90982b111d25665a26836",
+        "reviewed_at": "2026-10-15T06:52:17.974377+00:00"
+      }
+    },
+    {
+      "item": {
+        "title": "The Managing Director's Global Policy Agenda Annual Meetings 2026: Navigating an Uncertain World",
+        "source_url": "https://www.imf.org/en/publications/policy-papers/issues/2026/10/13/the-managing-director-s-global-policy-agenda-annual-meetings-2026-navigating-an-uncertain-580432",
+        "guid": "0c452c10e72acc2a14213e652adf41fc148298c99818aec4ec9a05c233ff",
+        "date": "2026-10-13T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/pp/2026/english/ppea2026048.pdf",
+          "https://www.imf.org/-/media/files/publications/pp/2026/english/ppea2026048-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/policy-papers/issues/2026/10/13/the-managing-director-s-global-policy-agenda-annual-meetings-2026-navigating-an-uncertain-580432",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/policy-papers/issues/2026/10/13/the-managing-director-s-global-policy-agenda-annual-meetings-2026-navigating-an-uncertain-580432"
+      },
+      "official_landing_url": "https://www.elibrary.imf.org/view/journals/007/2026/048/007.2026.issue-048-en.xml?cid=580432-com-dsp-crossref",
+      "official_pdf_url": "https://www.elibrary.imf.org/downloadpdf/view/journals/007/2026/048/007.2026.issue-048-en.pdf",
+      "doi": "10.5089/9798229065382.007",
+      "sha256": "03d5438deb8e409e23b5010441d3a45f0d7703bc5c8861212dfeab3a8c79b018",
+      "size": 13430632,
+      "pages": 9,
+      "binding": {
+        "source": "IMF_The-Managing-Director-s-Global-Policy-Agenda-Annual-Meetings_78a92160.pdf",
+        "sha256": "03d5438deb8e409e23b5010441d3a45f0d7703bc5c8861212dfeab3a8c79b018",
+        "size": 13430632,
+        "scope": "institution",
+        "endpoint": "https://mineru.net",
+        "options": {
+          "model": "vlm",
+          "language": "en",
+          "ocr": true
+        },
+        "id": "5c0128a41f4fe8d3381b0e1f06aef561bd5dc3db9a161d0ee356c8b03057b570"
+      },
+      "verification": {
+        "method": "official_browser_download",
+        "review": "approved",
+        "receipt_sha256": "46873e733e40f26eb764f9dccb221540fee7d5a22e156b701a5e8fce5dcc0b01",
+        "reviewed_at": "2026-10-15T06:52:17.974549+00:00"
+      }
+    },
+    {
+      "item": {
+        "title": "Fiscal-Monetary Interactions: The Role of Debt Maturity",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/10/08/fiscal-monetary-interactions-the-role-of-debt-maturity-580312",
+        "guid": "da42b67c1330dd475f37b8e032b8e1e5c90b4f36c9220a439a300b56b1fb",
+        "date": "2026-10-13T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026219-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026219.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/10/08/fiscal-monetary-interactions-the-role-of-debt-maturity-580312",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/10/08/fiscal-monetary-interactions-the-role-of-debt-maturity-580312"
+      },
+      "official_landing_url": "https://www.elibrary.imf.org/view/journals/001/2026/219/001.2026.issue-219-en.xml?cid=580312-com-dsp-crossref",
+      "official_pdf_url": "https://www.elibrary.imf.org/downloadpdf/view/journals/001/2026/219/001.2026.issue-219-en.pdf",
+      "doi": "10.5089/9798229063203.001",
+      "sha256": "f6418776bf2666a2204d67e22da9bbbaf6ce2a1b07a565b2e7e0f1e1b5824e08",
+      "size": 7344364,
+      "pages": 214,
+      "binding": {
+        "source": "IMF_Fiscal-Monetary-Interactions-The-Role-of-Debt-Maturity_7677b19a.pdf",
+        "sha256": "f6418776bf2666a2204d67e22da9bbbaf6ce2a1b07a565b2e7e0f1e1b5824e08",
+        "size": 7344364,
+        "scope": "institution",
+        "endpoint": "https://mineru.net",
+        "options": {
+          "model": "vlm",
+          "language": "en",
+          "ocr": true
+        },
+        "id": "8ae9b743ccdd57a2e44c07236297a47a00d5ca20ced1b62bb576e0b91769eb7e"
+      },
+      "verification": {
+        "method": "official_browser_download",
+        "review": "approved",
+        "receipt_sha256": "1f6ff8ea2cbf79dfb9b51decdc39cc135b8a49b4058beb889d4dd35f3b10e445",
+        "reviewed_at": "2026-10-15T06:52:17.974576+00:00"
+      }
+    }
+  ]
+}

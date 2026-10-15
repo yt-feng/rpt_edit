@@ -44,6 +44,7 @@ on:
         options:
           - none
           - imf-20261012-reviewed
+          - imf-20261015-reviewed
       force_reprocess:
         description: "Ignore seen-state and overwrite today's generated outputs"
         required: true
@@ -151,7 +152,7 @@ jobs:
               echo "manifest_path=" >> "$GITHUB_OUTPUT"
               exit 0
               ;;
-            imf-20261012-reviewed)
+            imf-20261012-reviewed|imf-20261015-reviewed)
               if [ "$EVENT_NAME" != "workflow_dispatch" ]; then
                 echo "::error::Reviewed originals require an explicit manual dispatch."
                 exit 1
@@ -172,11 +173,16 @@ jobs:
           sys.path.insert(0, "scripts")
           from institution_verified_originals import VerifiedOriginals
 
-          source = Path("institution_feeds/reviewed_originals/imf-20261012-reviewed.json")
+          selection = os.environ["REVIEWED_ORIGINALS"]
+          checksums = {
+              "imf-20261012-reviewed": "250557000edbc46f0629393a7a43a139b37926cb54c58535ea498866ccd77e67",
+              "imf-20261015-reviewed": "c880842e7f022145eaca780dd52017934444ab7c7f1be7208a9cc7f74b81196b",
+          }
+          source = Path("institution_feeds/reviewed_originals") / (selection + ".json")
           if source.is_symlink() or not source.is_file() or source.stat().st_size > 512 * 1024:
               raise SystemExit("Reviewed originals metadata file is invalid.")
           raw = source.read_bytes()
-          expected = "250557000edbc46f0629393a7a43a139b37926cb54c58535ea498866ccd77e67"
+          expected = checksums[selection]
           if hashlib.sha256(raw).hexdigest() != expected:
               raise SystemExit("Reviewed originals metadata SHA-256 mismatch.")
           with tempfile.NamedTemporaryFile(dir=os.environ["RUNNER_TEMP"], prefix="imf-reviewed-", suffix=".json", delete=False) as stream:
