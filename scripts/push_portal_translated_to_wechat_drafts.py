@@ -2860,8 +2860,23 @@ def translated_article_title_metadata(
                 original_title = candidate
                 break
     raw_title = title_from_markdown(markdown, fallback_title)
+    # A saved, complete generated title belongs to this article only while it
+    # still matches its first heading. Combining that heading with a subtitle
+    # can otherwise turn a valid short title into a clipped 35-character clause.
+    # A later manual heading edit must continue to take precedence.
+    decision = status.get("wechat_title_decision", {}) if isinstance(status, dict) else {}
+    selected_title = str(decision.get("selected_title") or "") if isinstance(decision, dict) else ""
+    first_heading = next((strip_markdown_markup(line.strip()) for line in markdown.splitlines()
+                          if line.strip().startswith("#") and not APPENDIX_RE.match(line.strip())), "")
+    selected_title = normalize_space(selected_title)
+    heading_title = ensure_title_has_institution(first_heading, institution_name) if first_heading else ""
+    title_input = raw_title
+    if (selected_title and selected_title == normalize_space(heading_title)
+            and len(selected_title) <= WECHAT_TITLE_MAX_CHARS
+            and not title_quality_issues(selected_title, institution_name, source_report_name)):
+        title_input = selected_title
     title = sharpen_wechat_title(
-        ensure_title_has_institution(raw_title, institution_name),
+        ensure_title_has_institution(title_input, institution_name),
         institution_name,
     )
     wechat_title = fit_wechat_title(title, institution_name)
