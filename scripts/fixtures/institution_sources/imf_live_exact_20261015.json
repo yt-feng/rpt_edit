@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "source_run_id": "38658714099",
+  "records": [
+    {
+      "item": {
+        "title": "The Bangkok Blueprint for Fraud-Resilient Financial Services",
+        "source_url": "https://www.imf.org/en/publications/policy-papers/issues/2026/10/01/the-bangkok-blueprint-for-fraud-resilient-financial-services-580113",
+        "guid": "a66df46b1ef12da5f71eb94460be5b63eb1d832cd3392d901d61af90a032",
+        "date": "2026-10-14T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/pp/2026/english/ppea2026038.pdf",
+          "https://www.imf.org/-/media/files/publications/pp/2026/english/ppea2026038-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/policy-papers/issues/2026/10/01/the-bangkok-blueprint-for-fraud-resilient-financial-services-580113",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/policy-papers/issues/2026/10/01/the-bangkok-blueprint-for-fraud-resilient-financial-services-580113"
+      },
+      "bytes": 3468553,
+      "local_filename": "IMF_The-Bangkok-Blueprint-for-Fraud-Resilient-Financial-Services_d0dfd917.pdf",
+      "sha256": "1d169e6f816bdd6446855694cd5bee7961c06cd4a0441cb442561f9af5090aae"
+    },
+    {
+      "item": {
+        "title": "The Managing Director's Global Policy Agenda Annual Meetings 2026: Navigating an Uncertain World",
+        "source_url": "https://www.imf.org/en/publications/policy-papers/issues/2026/10/13/the-managing-director-s-global-policy-agenda-annual-meetings-2026-navigating-an-uncertain-580432",
+        "guid": "0c452c10e72acc2a14213e652adf41fc148298c99818aec4ec9a05c233ff",
+        "date": "2026-10-13T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/pp/2026/english/ppea2026048.pdf",
+          "https://www.imf.org/-/media/files/publications/pp/2026/english/ppea2026048-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/policy-papers/issues/2026/10/13/the-managing-director-s-global-policy-agenda-annual-meetings-2026-navigating-an-uncertain-580432",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/policy-papers/issues/2026/10/13/the-managing-director-s-global-policy-agenda-annual-meetings-2026-navigating-an-uncertain-580432"
+      },
+      "bytes": 13430632,
+      "local_filename": "IMF_The-Managing-Director-s-Global-Policy-Agenda-Annual-Meetings_78a92160.pdf",
+      "sha256": "03d5438deb8e409e23b5010441d3a45f0d7703bc5c8861212dfeab3a8c79b018"
+    },
+    {
+      "item": {
+        "title": "Fiscal-Monetary Interactions: The Role of Debt Maturity",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/10/08/fiscal-monetary-interactions-the-role-of-debt-maturity-580312",
+        "guid": "da42b67c1330dd475f37b8e032b8e1e5c90b4f36c9220a439a300b56b1fb",
+        "date": "2026-10-13T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026219-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026219.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/10/08/fiscal-monetary-interactions-the-role-of-debt-maturity-580312",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/10/08/fiscal-monetary-interactions-the-role-of-debt-maturity-580312"
+      },
+      "bytes": 7344364,
+      "local_filename": "IMF_Fiscal-Monetary-Interactions-The-Role-of-Debt-Maturity_7677b19a.pdf",
+      "sha256": "f6418776bf2666a2204d67e22da9bbbaf6ce2a1b07a565b2e7e0f1e1b5824e08"
+    }
+  ]
+}

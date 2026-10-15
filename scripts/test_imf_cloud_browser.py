@@ -331,8 +331,114 @@ class BrowserTests(unittest.TestCase):
              patch.object(b, 'read_message', side_effect=messages), patch.object(b.os, 'killpg') as stop:
             with b.CloudImfBrowser(fetch_subscription=Mock(), decode_subscription=Mock()) as instance:
                 instance._proxy = 'socks5h://127.0.0.1:5555'
-                with patch.object(instance, '_start'):
+                with patch.object(instance, '_start', return_value=set()):
                     yield instance, Path(folder) / 'result.pdf', proc, spawn, stop
+
+    @contextlib.contextmanager
+    def source_route_mocks(self, statuses, messages):
+        processes = []
+        events = []
+        def spawn(*args, **kwargs):
+            proc = Mock(pid=123 + len(processes), poll=Mock(return_value=None), wait=Mock(return_value=0))
+            processes.append(proc)
+            events.append(('browser', len(processes)))
+            return proc
+        with self.startup(statuses) as (instance, get, fetch, clients), tempfile.TemporaryDirectory() as folder, \
+             patch.object(b.subprocess, 'Popen', side_effect=spawn), \
+             patch.object(b, 'read_message', side_effect=messages), \
+             patch.object(b.os, 'killpg', side_effect=lambda pid, sig: events.append(('stop', pid))):
+            yield instance, Path(folder), processes, get, fetch, clients, events
+
+    @staticmethod
+    def mock_verified_pdf(path, *args, **kwargs):
+        data = b'%PDF-mock'
+        path.write_bytes(data)
+        return dict(sha256=hashlib.sha256(data).hexdigest(), bytes=len(data), pages=14)
+
+    def test_source_http_rejection_switches_before_pdf_and_keeps_exact_proof(self):
+        for rejected in b.RETRY_LANDING_STATUSES:
+            with self.subTest(status=rejected), self.source_route_mocks([204, 204],
+                    [{**PAGE, 'landing_status': rejected}, PAGE, RESULT]) as (instance, folder, procs, get, fetch, clients, events), \
+                 patch.object(b, 'verify_pdf', side_effect=self.mock_verified_pdf) as verify:
+                proof = instance.download(PUBLICATION, folder / 'result.pdf', 1024, 'a' * 64)
+                self.assertEqual(set(proof), b.PROOF_FIELDS)
+                self.assertEqual(proof['source_guid'], PUBLICATION['source_guid'])
+                self.assertEqual(proof['doi'], PUBLICATION['doi'])
+                self.assertEqual(instance.last_source_attempts, [{'route': 1, 'landing_status': rejected},
+                                                                 {'route': 2, 'landing_status': 200}])
+                self.assertEqual(clients, [('open', 1), ('close', 1), ('open', 2)])
+                self.assertEqual(events, [('browser', 1), ('stop', 123), ('browser', 2), ('stop', 124)])
+                procs[0].stdin.write.assert_not_called()
+                procs[1].stdin.write.assert_called_once()
+                self.assertEqual(json.loads(procs[1].stdin.write.call_args.args[0]), {'pdf_url': PDF})
+                self.assertEqual(verify.call_args.args[3], 'a' * 64)
+                fetch.assert_called_once(); self.assertEqual(get.call_count, 2)
+
+    def test_three_source_rejections_are_bounded_and_next_source_has_own_budget(self):
+        pages = [{**PAGE, 'landing_status': 403}] * 4 + [PAGE, RESULT]
+        with self.source_route_mocks([204] * 4, pages) as (instance, folder, procs, get, fetch, clients, _), \
+             patch.object(b, 'verify_pdf', self.mock_verified_pdf):
+            with self.assertRaisesRegex(b.BrowserDownloadError, 'landing_http_rejected'):
+                instance.download(PUBLICATION, folder / 'failed.pdf', 1024)
+            self.assertEqual([row['route'] for row in instance.last_source_attempts], [1, 2, 3])
+            self.assertFalse((folder / 'failed.pdf').exists())
+            for proc in procs: proc.stdin.write.assert_not_called()
+            proof = instance.download({**PUBLICATION, 'source_guid': 'next-source'}, folder / 'next.pdf', 1024)
+            self.assertEqual(proof['source_guid'], 'next-source')
+            self.assertEqual(instance.last_source_attempts, [{'route': 3, 'landing_status': 403},
+                                                            {'route': 1, 'landing_status': 200}])
+            self.assertEqual(get.call_count, 4); fetch.assert_called_once()
+
+    def test_connectivity_attempts_count_towards_publication_route_budget(self):
+        with self.source_route_mocks([503, 204, 503, 204],
+                [{**PAGE, 'landing_status': 403}, PAGE, RESULT]) as (instance, folder, procs, get, fetch, clients, _), \
+             patch.object(b, 'verify_pdf', self.mock_verified_pdf):
+            with self.assertRaisesRegex(b.BrowserDownloadError, 'landing_http_rejected'):
+                instance.download(PUBLICATION, folder / 'failed.pdf', 1024)
+            self.assertEqual(len(procs), 1)
+            self.assertEqual(get.call_count, 3)
+            self.assertIsNone(instance._proxy)
+            # Connectivity exhaustion while switching is not a cached startup
+            # failure: a different publication may still use a configured route.
+            instance.download(PUBLICATION, folder / 'next.pdf', 1024)
+            self.assertEqual(get.call_count, 4); fetch.assert_called_once()
+
+    def test_no_source_rotation_for_identity_protocol_or_post_download_errors(self):
+        wrong = deepcopy(PAGE); wrong['metadata']['citation_doi'] = ['10.5089/9798229063074.029']
+        cases = [[wrong], [b.BrowserDownloadError('imf_browser_phase_timeout')],
+                 [{'stage': 'error', 'landing_status': 403}],
+                 [PAGE, {**RESULT, 'pdf_status': 403}], [PAGE, RESULT]]
+        cases += [[{**PAGE, 'landing_status': value}] for value in (True, '403', 202, 405)]
+        for messages in cases:
+            with self.subTest(messages=messages), self.source_route_mocks([204], messages) as \
+                    (instance, folder, procs, get, fetch, clients, _), \
+                 patch.object(b, 'verify_pdf', side_effect=b.BrowserDownloadError('imf_browser_pdf_bytes_changed')):
+                with self.assertRaises(b.BrowserDownloadError):
+                    instance.download(PUBLICATION, folder / 'failed.pdf', 1024)
+                self.assertEqual(len(procs), 1); self.assertEqual(get.call_count, 1)
+                self.assertFalse((folder / 'failed.pdf').exists())
+                self.assertEqual(clients, [('open', 1)])
+
+    def test_sigterm_while_switching_closes_both_clients_and_restores_handler(self):
+        previous = signal.getsignal(signal.SIGTERM)
+        with self.assertRaises(KeyboardInterrupt):
+            with self.source_route_mocks([204, KeyboardInterrupt()], [{**PAGE, 'landing_status': 403}]) as \
+                    (instance, folder, procs, get, fetch, clients, events):
+                instance.download(PUBLICATION, folder / 'failed.pdf', 1024)
+        self.assertEqual(clients, [('open', 1), ('close', 1), ('open', 2), ('close', 2)])
+        procs[0].stdin.write.assert_not_called()
+        self.assertEqual(events, [('browser', 1), ('stop', 123)])
+        self.assertIs(signal.getsignal(signal.SIGTERM), previous)
+
+    def test_original_edition_transition_is_retained_across_route_change(self):
+        with self.startup([204, 204]) as (instance, get, fetch, clients), \
+             patch.object(instance, '_download_page', side_effect=[b._OriginalEdition404(),
+                 b._LandingHttpRejected(403), {'accepted': True}]) as page:
+            proof = instance.download(PUBLICATION, Path('/unused-mocked-destination'), 1024)
+            self.assertEqual(proof, {'accepted': True})
+            self.assertEqual([call.kwargs['source_landing_status'] for call in page.call_args_list], [None, 404, 404])
+            self.assertEqual(get.call_count, 2)
+            self.assertEqual(clients, [('open', 1), ('close', 1), ('open', 2)])
 
     def test_metadata_timeout_kills_child_before_return(self):
         with self.download_mocks([b.BrowserDownloadError('imf_browser_phase_timeout')]) as (instance, dest, proc, spawn, stop):
