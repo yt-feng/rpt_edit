@@ -15,7 +15,7 @@ import os
 from pathlib import Path
 import re
 import time
-from urllib.parse import unquote_plus
+from urllib.parse import unquote_plus, urlsplit
 
 import requests
 
@@ -37,6 +37,7 @@ PINS = json.loads((Path(__file__).parent / 'fixtures/wechat_institution_title_re
 WRITABLE = ('title', 'author', 'digest', 'content', 'content_source_url',
             'thumb_media_id', 'need_open_comment', 'only_fans_can_comment')
 UPLOAD_ONLY = {'pic_crop_1_1', 'pic_crop_235_1'}
+DERIVED_AFTER_UPDATE = {'title', 'content', 'cover_info', 'url', 'thumb_url'}
 
 
 class RepairError(ValueError):
@@ -59,15 +60,49 @@ def html_binding_matches(content, pin, prefix):
 
 
 def reviewed_content_matches(actual, expected, pin):
-    """Allow only the exact producer bytes or this article's reviewed live bytes.
+    """Allow only this article's exact producer and two source-bound GET forms.
 
     Diagnostic run 38703812822 proved that the three returned bodies differ
     only at their four img events: src becomes data-src, the same qpic image
     uses its HTTPS /640 rendition, and the void tag is no longer self-closing.
+    Run 38709576359 adds only the observed four img terminators (two spaces +
+    slash-close); all bytes of that representation are separately pinned.
     No generic HTML normalization or prose/media-only equivalence is accepted.
     """
     return (actual == expected or
-            (html_binding_matches(expected, pin, 'producer') and html_binding_matches(actual, pin, 'live')))
+            (html_binding_matches(expected, pin, 'producer')
+             and any(html_binding_matches(actual, pin, variant) for variant in ('live', 'post_update'))))
+
+
+def original_cover(article):
+    """Reconstruct the exact original GET crop object from pinned producer inputs."""
+    rows = []
+    for field, ratio in [('pic_crop_235_1', '2.35_1'), ('pic_crop_1_1', '1_1')]:
+        value = article.get(field)
+        require(isinstance(value, str) and re.fullmatch(r'[0-9.]+_[0-9.]+_[0-9.]+_[0-9.]+', value),
+                'producer_crop_shape_changed')
+        values = value.split('_')
+        require(all(0 <= float(item) <= 1 for item in values), 'producer_crop_range_changed')
+        rows.append(dict(zip(('ratio', 'x1', 'y1', 'x2', 'y2'), (ratio, *values))))
+    return {'crop_percent_list': rows}
+
+
+def interrupted_crop_state(current, pin):
+    """Only the exact observed index-zero state can enter a crop restoration."""
+    return (bool(pin.get('interrupted_cover_sha256'))
+            and current.get('title') == pin['selected_title']
+            and html_binding_matches(current.get('content'), pin, 'post_update')
+            and digest(current.get('cover_info')) == pin['interrupted_cover_sha256'])
+
+
+def update_content(content, pin):
+    """Always resend the same exact input already observed in the first update."""
+    if html_binding_matches(content, pin, 'live'):
+        return content
+    require(html_binding_matches(content, pin, 'post_update'), 'update_html_binding_mismatch')
+    restored, count = re.subn(r'(<img\b[^>]*?)  />', r'\1>', content)
+    require(count == 4 and html_binding_matches(restored, pin, 'live'), 'update_html_inverse_mismatch')
+    return restored
 
 
 def read_json(path, expected_sha=None):
@@ -117,6 +152,8 @@ def load_source(artifact_root, pins=PINS):
     materialized = materialize_private_article_payload(articles, '')
     for article, pin in zip(materialized, pins['articles']):
         require(html_binding_matches(article['content'], pin, 'producer'), 'producer_html_binding_mismatch')
+        require(digest(original_cover(article)) == pins['reviewed_update_response']['original_cover_sha256'],
+                'producer_cover_binding_mismatch')
     return {'media_id': draft['media_id'], 'articles': materialized,
             'payload': payload, 'summary': summary, 'title_log': log, 'pins': pins,
             'old_records': records}
@@ -175,7 +212,7 @@ def validate_live(data, source):
             if key == 'title':
                 continue
             if key in UPLOAD_ONLY and key not in current:
-                continue  # These upload-only crop inputs are never sent by this repair.
+                continue  # GET returns cover_info; updates explicitly resend these source-bound inputs.
             if key == 'article_type' and value == 'news' and key not in current:
                 continue  # Older draft/get responses omit the default article type.
             if key == 'content':
@@ -183,6 +220,10 @@ def validate_live(data, source):
                 continue
             require(key in current and digest(current[key]) == digest(value), 'live_payload_changed_' + key)
         require(not current.get('content_source_url'), 'live_source_url_changed')
+        require(digest(current.get('cover_info')) == digest(original_cover(expected))
+                or interrupted_crop_state(current, pin), 'live_cover_crop_changed')
+        require(valid_updated_urls(current, current, source['pins']['reviewed_update_response']),
+                'live_derived_url_shape_changed')
     checks = summarize_draft_get_response(data, 3, [dict(row, title=a['title'])
                                                 for row, a in zip(source['articles'], actual)])
     require(checks['ok'] is True, 'live_media_or_editorial_contract_mismatch')
@@ -217,8 +258,12 @@ def plan_for(data, source, changes):
             'stable_live_articles_sha256': digest(stable_articles(actual)),
             'reviewed_live_html': source['pins']['reviewed_live_html'],
             'reviewed_preview_url': source['pins']['reviewed_preview_url'],
+            'reviewed_update_response': source['pins']['reviewed_update_response'],
             'unreturned_upload_only_fields': sorted({key for row in actual for key in UPLOAD_ONLY if key not in row}),
             'articles': [{'index': index, 'current_title': current['title'], 'selected_title': pin['selected_title'],
+                          'action': ('restore_original_cover' if interrupted_crop_state(current, pin)
+                                     else 'restore_title' if current['title'] != pin['selected_title'] else 'already_complete'),
+                          'target_cover_sha256': digest(original_cover(source['articles'][index])),
                           'old_blog_fingerprint': change['old']['fingerprint'],
                           'new_blog_fingerprint': change['new']['fingerprint'],
                           'blog_already_updated': change['already_updated'],
@@ -241,24 +286,88 @@ def protected_live_facts(articles):
             'html_sha256': [hashlib.sha256(row['content'].encode()).hexdigest() for row in articles]}
 
 
+def unchanged_other_fields(articles):
+    """All fields other than the explicitly checked update-response representations."""
+    return digest([{key: value for key, value in row.items() if key not in DERIVED_AFTER_UPDATE}
+                   for row in articles])
+
+
+def valid_updated_urls(before, after, policy):
+    # This exception applies only after the one authorized POST for this index.
+    # Before writes, chksm and the complete thumbnail URL remain snapshot-bound.
+    _left_policy, left = reviewed_preview_parts(before.get('url'))
+    _right_policy, right = reviewed_preview_parts(after.get('url'))
+    if left[0] != right[0] or any(not re.fullmatch(r'[0-9a-f]{' + str(policy['preview_checksum_chars']) + '}',
+                                                 pairs[2][2]) for pairs in (left, right)):
+        return False
+    thumbs = []
+    for row in (before, after):
+        value = row.get('thumb_url')
+        if not isinstance(value, str) or not 0 < len(value) <= 2048:
+            return False
+        parts = urlsplit(value)
+        if (parts.scheme not in {'http', 'https'} or parts.netloc not in policy['thumbnail_hosts']
+                or not re.fullmatch(r'/[A-Za-z0-9_-]+/[A-Za-z0-9_-]{10,512}/[0-9]{1,4}', parts.path)):
+            return False
+        thumbs.append(parts)
+    # Account, endpoint, query, fragment and all non-path URL spelling stay bound.
+    return (thumbs[0].scheme, thumbs[0].netloc, thumbs[0].query, thumbs[0].fragment,
+            thumbs[0].path.split('/')[1]) == (thumbs[1].scheme, thumbs[1].netloc, thumbs[1].query,
+                                             thumbs[1].fragment, thumbs[1].path.split('/')[1])
+
+
+def verified_update_response(data, before, index, source):
+    actual = live_articles(data)
+    for position, (old, row, pin, original) in enumerate(zip(before, actual, source['pins']['articles'], source['articles'])):
+        if position != index:
+            if digest(stable_articles([row])) != digest(stable_articles([old])):
+                return False
+            continue
+        if (row.get('title') != pin['selected_title']
+                or not html_binding_matches(row.get('content'), pin, 'post_update')
+                or digest(row.get('cover_info')) != digest(original_cover(original))
+                or unchanged_other_fields([row]) != unchanged_other_fields([old])
+                or not valid_updated_urls(old, row, source['pins']['reviewed_update_response'])):
+            return False
+    validate_live(data, source)
+    return True
+
+
+def record_candidate_difference(progress, save, stage, index, expected, candidate, source):
+    evidence = {'stage': stage, 'index': index}
+    for name, diagnostic in [
+        ('fields', lambda: all_field_read_diagnostics({'news_item': expected}, candidate, WRITABLE)),
+        ('content', lambda: article_content_diagnostics(candidate, source))]:
+        try:
+            evidence[name] = diagnostic()
+        except Exception:
+            evidence[name] = {'diagnostic_only': True, 'error_category': 'candidate_diagnostic_bound_or_parse_failure'}
+    progress['stopped_candidate'] = evidence
+    save()
+
+
 def repair_titles(session, token, source, initial, progress, save, timeout=30):
     baseline = copy.deepcopy(validate_live(initial, source))
     progress['live_before'] = protected_live_facts(baseline)
+    progress['other_returned_fields_before_sha256'] = unchanged_other_fields(baseline)
     progress['observed_volatile_before'] = volatile_url_facts(baseline)
     for index, pin in enumerate(source['pins']['articles']):
         # Recheck all writable and stable returned fields immediately before a
         # write. Only the observed read-only tempkey value may have changed.
         before = get_draft(session, token, source['media_id'], timeout)
-        require(unchanged_articles(before, baseline), 'live_group_changed_before_update')
+        if not unchanged_articles(before, baseline):
+            record_candidate_difference(progress, save, 'before_update', index, baseline, before, source)
+            raise RepairError('live_group_changed_before_update')
         baseline = copy.deepcopy(live_articles(before))
-        if baseline[index]['title'] == pin['selected_title']:
+        restoring_crop = interrupted_crop_state(baseline[index], pin)
+        if baseline[index]['title'] == pin['selected_title'] and not restoring_crop:
             progress['verified_indices'].append(index)
             save()
             continue
         update = {key: baseline[index][key] for key in WRITABLE if key in baseline[index]}
         update['title'] = pin['selected_title']
-        wanted = copy.deepcopy(baseline)
-        wanted[index]['title'] = pin['selected_title']
+        update['content'] = update_content(baseline[index]['content'], pin)
+        update.update({key: source['articles'][index][key] for key in UPLOAD_ONLY})
         progress['attempted_indices'].append(index)
         save()
         acknowledged = False
@@ -271,28 +380,52 @@ def repair_titles(session, token, source, initial, progress, save, timeout=30):
             pass  # The outcome is unknown: read back, never repeat this POST.
         verified = None
         for attempt in range(3):
+            candidate = None
             try:
                 candidate = get_draft(session, token, source['media_id'], timeout)
-                if unchanged_articles(candidate, wanted):
+                if verified_update_response(candidate, baseline, index, source):
                     verified = candidate
                     break
-                require(unchanged_articles(candidate, baseline), 'live_group_changed_after_update')
+                if not unchanged_articles(candidate, baseline):
+                    record_candidate_difference(progress, save, 'after_update', index, baseline, candidate, source)
+                    raise RepairError('live_group_changed_after_update')
             except RepairError:
+                if candidate is not None and 'stopped_candidate' not in progress:
+                    record_candidate_difference(progress, save, 'after_update', index, baseline, candidate, source)
                 raise
             except Exception:
+                if candidate is not None:
+                    record_candidate_difference(progress, save, 'after_update', index, baseline, candidate, source)
                 pass
             if attempt < 2:
                 time.sleep(2)
         require(verified is not None, 'title_update_not_verified_stop_without_retry')
         baseline = copy.deepcopy(live_articles(verified))
         progress['verified_indices'].append(index)
-        progress['updates'].append({'index': index, 'acknowledged': acknowledged, 'readback_verified': True})
+        progress['updates'].append({'index': index, 'acknowledged': acknowledged, 'readback_verified': True,
+                                    'action': 'restore_original_cover' if restoring_crop else 'restore_title',
+                                    'original_crop_verified': True, 'post_html_binding_verified': True,
+                                    'sent_content_sha256': hashlib.sha256(update['content'].encode()).hexdigest(),
+                                    'derived_field_diagnostics': all_field_read_diagnostics(before, verified, WRITABLE)})
         save()
     final = get_draft(session, token, source['media_id'], timeout)
-    require(unchanged_articles(final, baseline), 'final_full_payload_mismatch')
+    if not unchanged_articles(final, baseline):
+        record_candidate_difference(progress, save, 'final', None, baseline, final, source)
+        raise RepairError('final_full_payload_mismatch')
     validate_live(final, source)
     progress['live_after'] = protected_live_facts(live_articles(final))
-    require(progress['live_after'] == progress['live_before'], 'non_title_fields_changed')
+    progress['other_returned_fields_after_sha256'] = unchanged_other_fields(live_articles(final))
+    require(progress['other_returned_fields_after_sha256'] == progress['other_returned_fields_before_sha256'],
+            'other_returned_fields_changed')
+    progress['source_bound_article_checks'] = [
+        {'index': index, 'original_cover_sha256': digest(original_cover(original)),
+         'actual_cover_sha256': digest(row.get('cover_info')),
+         'producer_content_sha256': pin['producer_html_sha256'],
+         'actual_content_sha256': hashlib.sha256(row['content'].encode()).hexdigest(),
+         'same_cover_media': digest(row['thumb_media_id']) == digest(original['thumb_media_id'])}
+        for index, (row, original, pin) in enumerate(zip(live_articles(final), source['articles'], source['pins']['articles']))]
+    require(all(row['original_cover_sha256'] == row['actual_cover_sha256'] and row['same_cover_media']
+                for row in progress['source_bound_article_checks']), 'final_original_cover_not_restored')
     progress['observed_volatile_after'] = volatile_url_facts(live_articles(final))
     save()
     return final
@@ -377,8 +510,8 @@ def main():
                 final = repair_titles(session, token, source, initial, result, save)
                 write_corrected_receipts(args.output, source, final)
                 result['blog'] = replace_blog_records(args.archive_root, source)
-                result['writable_payload_preserved'] = True
-                result['stable_non_title_fields_preserved'] = True
+                result['producer_content_and_cover_verified'] = True
+                result['other_returned_fields_preserved'] = True
             result['ok'] = True
     except Exception as exc:
         result['error_category'] = str(exc) if isinstance(exc, RepairError) else 'repair_contract_or_transport_stop'
