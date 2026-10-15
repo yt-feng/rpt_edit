@@ -5,6 +5,10 @@ on:
       - scripts/institution_source_health.py
       - scripts/institution_pending_intake.py
       - scripts/institution_verified_originals.py
+      - scripts/institution_admitted_originals.py
+      - scripts/test_institution_admitted_originals.py
+      - scripts/probe_institution_admitted_originals.py
+      - .github/workflows/institution-admitted-original-probe.yml
       - scripts/test_institution_verified_originals.py
       - scripts/test_institution_reviewed_intake.py
       - institution_feeds/reviewed_originals/**
@@ -38,6 +42,7 @@ jobs:
           node-version: '22'
       - run: python3 -m pip install --disable-pip-version-check 'requests>=2.31,<3' 'pypdf==6.19.0'
       - run: python3 -B scripts/test_institution_verified_originals.py
+      - run: python3 -B scripts/test_institution_admitted_originals.py
       - run: python3 -B scripts/test_institution_reviewed_intake.py
       - run: python3 -B scripts/test_institution_source_health.py
       - run: python3 -B scripts/test_institution_pending_intake.py

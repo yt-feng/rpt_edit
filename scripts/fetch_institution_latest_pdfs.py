@@ -72,6 +72,7 @@ import requests
 
 from institution_pending_intake import PendingIntake
 from institution_verified_originals import VerifiedOriginalError, VerifiedOriginals
+from institution_admitted_originals import AdmittedOriginalError, AdmittedOriginals
 
 try:  # Optional: impersonate a real Chrome TLS/HTTP2 fingerprint to pass WAFs (IMF).
     from curl_cffi import requests as cffi_requests  # type: ignore
@@ -417,7 +418,7 @@ def write_source_health_summary(source_checks: list[dict[str, Any]]) -> None:
     summary_path = os.getenv("GITHUB_STEP_SUMMARY")
     if not summary_path:
         return
-    status_label = {"ok": "OK", "degraded": "DEGRADED", "empty": "EMPTY", "error": "ERROR"}
+    status_label = {"ok": "OK", "degraded": "DEGRADED", "empty": "EMPTY", "error": "ERROR", "resumed": "RESUMED"}
     lines = [
         "## Institution source health",
         "",
@@ -431,6 +432,10 @@ def write_source_health_summary(source_checks: list[dict[str, Any]]) -> None:
             f"| {check.get('item_count', 0)} | {check.get('new_pdf_count', 0)} | {detail} |"
         )
     for check in source_checks:
+        if check.get("admitted_resume_count", 0):
+            lines.append(f"- {check['institution']}: {check['admitted_resume_count']} admitted original(s) resumed; "
+                         f"{check['live_download_attempted']} live source download attempt(s). "
+                         "Prior official receipts establish the restored bytes; no fresh HTTP success is claimed.")
         if check.get("verified_original_recovery_count", 0):
             lines.append(f"- {check['institution']}: {check['verified_original_recovery_count']} reviewed original(s) "
                          "recovered from private cache. Live PDF access remains unverified.")
@@ -2072,6 +2077,8 @@ def _main(imf_browser=None) -> int:
     if pending:
         pending.save()
     force_reprocess = as_bool(args.force_reprocess)
+    admitted_originals = (AdmittedOriginals() if pending and not force_reprocess
+                          and os.environ.get("INSTITUTION_ADMITTED_ORIGINALS") == "true" else None)
     if force_reprocess:
         log("Force reprocess enabled: ignoring seen-state dedup for matching fresh PDFs.")
 
@@ -2155,6 +2162,9 @@ def _main(imf_browser=None) -> int:
 
         new_count = 0
         verified_original_count = 0
+        admitted_resume_count = 0
+        admitted_resume_rejected = []
+        live_download_attempted = 0
         eligible_count = 0
         resolution_failure_count = 0
         resolution_failure_samples: list[str] = []
@@ -2230,7 +2240,22 @@ def _main(imf_browser=None) -> int:
                     if len(resolution_failure_samples) < 3:
                         resolution_failure_samples.append(str(exc))
                     continue
+            if recovered is None and key == "imf" and admitted_originals:
+                title = item["title"] or item["guid"] or item["source_url"]
+                filename = f"{cfg['token']}_{slug(title)}_{short_hash(dedup_key)}.pdf"
+                dest = output_dir / filename
+                try:
+                    recovered = admitted_originals.restore(item, filename, pending, dest, max_bytes,
+                                                           force=force_reprocess, seen=seen_items)
+                    if recovered is not None:
+                        used_url, status = recovered["pdf_url"], "ok"
+                except AdmittedOriginalError as exc:
+                    # Reject reuse, but the official live route remains independent
+                    # of private registry availability, growth or conflicting history.
+                    admitted_resume_rejected.append(str(exc))
+                    warn(f"  IMF admitted-original reuse rejected: {exc}; trying official live acquisition")
             if recovered is None and key == "imf":
+                live_download_attempted += 1
                 title = item["title"] or item["guid"] or item["source_url"]
                 filename = f"{cfg['token']}_{slug(title)}_{short_hash(dedup_key)}.pdf"
                 dest = output_dir / filename
@@ -2421,7 +2446,10 @@ def _main(imf_browser=None) -> int:
             }
             if recovered is not None:
                 record.update(recovered)
-                verified_original_count += 1
+                if recovered["acquisition_method"] == "admitted_original_cache":
+                    admitted_resume_count += 1
+                else:
+                    verified_original_count += 1
             if live_download is not None:
                 record["imf_live_download"] = live_download
             if official_followup is not None:
@@ -2432,10 +2460,13 @@ def _main(imf_browser=None) -> int:
             log(f"  saved {filename} ({record['bytes'] // 1024} KB) <- {used_url}")
 
         health_detail = discovery_error
+        if admitted_resume_rejected:
+            health_detail += (f"; {len(admitted_resume_rejected)} admitted-original reuse attempt(s) rejected: "
+                              + ", ".join(sorted(set(admitted_resume_rejected))))
         if source_status == "ok" and resolution_failure_count:
             source_status = "error" if resolution_failure_count >= eligible_count else "degraded"
-            health_detail = (
-                f"{resolution_failure_count}/{eligible_count} unseen recent item(s) "
+            health_detail += (
+                ("; " if health_detail else "") + f"{resolution_failure_count}/{eligible_count} unseen recent item(s) "
                 "could not be resolved or downloaded"
             )
             if resolution_failure_samples:
@@ -2450,12 +2481,18 @@ def _main(imf_browser=None) -> int:
 
         if discovery_error:
             # Cached originals do not demonstrate a functioning live source.
-            source_status = "degraded" if new_count > verified_original_count else "error"
+            source_status = "degraded" if new_count > verified_original_count + admitted_resume_count else "error"
             if discovery_error not in health_detail:
                 health_detail = discovery_error + "; " + health_detail
 
+        if admitted_resume_count:
+            if source_status == "ok":
+                source_status = "resumed"
+            health_detail += (f"; {admitted_resume_count} admitted original(s) resumed from verified prior publication; "
+                              f"{live_download_attempted} live source download attempt(s)")
+
         if verified_original_count:
-            if source_status in {"ok", "empty"}:
+            if source_status in {"ok", "empty", "resumed"}:
                 source_status = "degraded"
             health_detail += (f"; {verified_original_count} reviewed original(s) recovered from private cache; "
                               "live PDF access for these sources was not verified")
@@ -2473,6 +2510,10 @@ def _main(imf_browser=None) -> int:
             "required_for_clean_zero": bool(cfg.get("required_for_clean_zero")),
             "error": health_detail,
         })
+        if key == "imf" and admitted_originals:
+            source_checks[-1].update(admitted_resume_count=admitted_resume_count,
+                                    live_download_attempted=live_download_attempted,
+                                    admitted_resume_rejected_count=len(admitted_resume_rejected))
         if key == "imf" and verified_originals:
             source_checks[-1].update(verified_original_recovery_count=verified_original_count,
                                     verified_original_manifest_sha256=verified_originals.manifest_sha256)
@@ -2509,7 +2550,7 @@ def _main(imf_browser=None) -> int:
     log(f"Done. Downloaded {len(downloaded)} new PDF(s), skipped {len(skipped)}.")
     blocking_checks = [
         check for check in source_checks
-        if check.get("required_for_clean_zero") and check["status"] != "ok"
+        if check.get("required_for_clean_zero") and check["status"] not in {"ok", "resumed"}
     ]
     if not downloaded and blocking_checks:
         names = ", ".join(f"{check['institution']}={check['status']}" for check in blocking_checks)

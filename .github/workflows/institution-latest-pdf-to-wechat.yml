@@ -229,6 +229,7 @@ jobs:
           PROXY_SUBSCRIPTION_URL: ${{ secrets.PROXY_SUBSCRIPTION_URL }}
           IMF_PENDING_RETRIES: ${{ github.event.inputs.imf_pending_retries || '10' }}
           REVIEWED_ORIGINALS_MANIFEST: ${{ steps.reviewed_originals.outputs.manifest_path }}
+          INSTITUTION_ADMITTED_ORIGINALS: "true"
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}

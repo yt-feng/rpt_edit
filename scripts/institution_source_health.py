@@ -18,6 +18,7 @@ import sys
 from fetch_institution_latest_pdfs import DEFAULT_PUBLIC_INSTITUTION_KEYS, INSTITUTIONS, short_hash, slug
 from imf_elibrary_resolver import ResolutionError, source_url, title_key, validate_official_pair, validate_publication_url
 from institution_verified_originals import RECOVERY_FIELDS, official_url
+from institution_admitted_originals import RESUME_FIELDS, AdmittedOriginalError, validate_resume
 
 
 LIVE_DOWNLOAD_FIELDS = {"schema", "source_guid", "source_url", "landing_url", "pdf_url", "doi", "title",
@@ -173,12 +174,27 @@ def classify(manifest: object, *, producer_exit_code: int, log_exit_code: int,
     blocked = []
     actual_downloads = Counter(row["institution"] for row in downloaded)
     recovered = Counter()
+    resumed = Counter()
+    live_attempts = 0
+    has_resume_checks = False
     recovery_manifests = {}
     for row in downloaded:
         recovery_fields = {field for field in row if field == "acquisition_method"
                            or (isinstance(field, str) and field.startswith("verified_original_"))}
         live_fields = {field for field in row if isinstance(field, str) and field.startswith("imf_live_download")}
         followup_fields = {field for field in row if isinstance(field, str) and field.startswith("imf_official_followup")}
+        resume_fields = {field for field in row if field == "acquisition_method"
+                         or (isinstance(field, str) and field.startswith("admitted_original_"))}
+        if "admitted_original_resume" in row or row.get("acquisition_method") == "admitted_original_cache":
+            require(resume_fields == RESUME_FIELDS and recovery_fields == {"acquisition_method"}
+                    and not live_fields and not followup_fields and manifest["force_reprocess"] is False)
+            try:
+                validate_resume(row)
+            except (AdmittedOriginalError, ValueError, TypeError, KeyError):
+                raise InvalidSourceHealth("source_health_contract_invalid") from None
+            resumed[row["institution"]] += 1
+            continue
+        require(not (resume_fields - {"acquisition_method"}))
         if live_fields:
             require(live_fields == {"imf_live_download"} and not recovery_fields and not followup_fields)
             validate_live_download(row)
@@ -203,7 +219,9 @@ def classify(manifest: object, *, producer_exit_code: int, log_exit_code: int,
             "institution", "institution_en", "status", "item_count", "new_pdf_count",
             "eligible_item_count", "resolution_failure_count", "deferred_retry_count", "discovery_error", "required_for_clean_zero", "error"}
         recovery_fields = {"verified_original_recovery_count", "verified_original_manifest_sha256"}
-        require(isinstance(check, dict) and set(check) in (fields, fields | recovery_fields))
+        resume_fields = {"admitted_resume_count", "live_download_attempted", "admitted_resume_rejected_count"}
+        require(isinstance(check, dict) and set(check) in (fields, fields | recovery_fields,
+                fields | resume_fields, fields | recovery_fields | resume_fields))
         key = check["institution"]
         require(isinstance(key, str) and key in enabled and key not in checked)
         checked.append(key)
@@ -221,16 +239,28 @@ def classify(manifest: object, *, producer_exit_code: int, log_exit_code: int,
             require(key == "imf" and isinstance(check["verified_original_manifest_sha256"], str)
                     and bool(re.fullmatch(r"[a-f0-9]{64}", check["verified_original_manifest_sha256"]))
                     and (not recovery_count or check["verified_original_manifest_sha256"] == recovery_manifests[key]))
+        resume_count = count(check.get("admitted_resume_count", 0))
+        require(resume_count == resumed[key] and resume_count + recovery_count <= new)
+        if resume_fields <= set(check):
+            require(key == "imf")
+            attempted = count(check["live_download_attempted"])
+            require(count(check["admitted_resume_rejected_count"]) <= attempted)
+            require(new - recovery_count - resume_count <= attempted <= eligible - recovery_count - resume_count)
+            live_attempts += attempted
+            has_resume_checks = True
         deferred = count(check["deferred_retry_count"])
         require(deferred <= total and (key == "imf" or deferred == 0))
         discovery_error = check["discovery_error"]
         require(type(discovery_error) is bool)
         status = check["status"]
-        require(status in {"ok", "empty", "error", "degraded"})
-        if discovery_error and new == recovery_count:
+        require(status in {"ok", "empty", "error", "degraded", "resumed"})
+        if discovery_error and new == recovery_count + resume_count:
             require(status == "error")
         if status == "ok":
-            require(total > 0 and failures == deferred == recovery_count == 0 and not discovery_error)
+            require(total > 0 and failures == deferred == recovery_count == resume_count == 0 and not discovery_error)
+        elif status == "resumed":
+            require(total > 0 and resume_count > 0 and failures == deferred == recovery_count == 0
+                    and not discovery_error and resume_fields <= set(check))
         elif status == "empty":
             require(total == eligible == new == failures == deferred == 0 and not discovery_error)
         elif status == "degraded":
@@ -240,8 +270,8 @@ def classify(manifest: object, *, producer_exit_code: int, log_exit_code: int,
             require((total == eligible == new == failures == 0)
                     or (0 < eligible == failures and new == 0)
                     or (deferred > 0 and eligible == failures == new == 0)
-                    or (discovery_error and new == recovery_count))
-        if check["required_for_clean_zero"] and status != "ok":
+                    or (discovery_error and new == recovery_count + resume_count))
+        if check["required_for_clean_zero"] and status not in {"ok", "resumed"}:
             blocked.append(key)
     # A max-total cap may end a successful run early, but never a zero-PDF run.
     require(checked == enabled[:len(checked)] and all(key in checked for key in actual_downloads))
@@ -249,12 +279,16 @@ def classify(manifest: object, *, producer_exit_code: int, log_exit_code: int,
         require(checked == enabled)
     known_health_exit = not downloaded and bool(blocked)
     require((producer_exit_code == 2) == known_health_exit)
-    return {
+    result = {
         "source_health": "degraded" if blocked else "healthy",
         "source_health_required_failure_count": str(len(blocked)),
         "source_health_failed_institutions": ",".join(blocked),
         "source_health_backlog_only": "true" if known_health_exit else "false",
     }
+    if has_resume_checks:
+        result.update(source_health_admitted_resume_count=str(sum(resumed.values())),
+                      source_health_live_download_attempted=str(live_attempts))
+    return result
 
 
 def main(argv: list[str] | None = None) -> int:
