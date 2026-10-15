@@ -26,6 +26,7 @@ import sys
 import time
 import unicodedata
 import zlib
+from decimal import Decimal, InvalidOperation
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
@@ -2566,6 +2567,86 @@ def wechat_image_url_identity(url: str) -> str:
     return f"{parts.netloc.lower()}{parts.path}?{parts.query}"
 
 
+COVER_CROP_FIELDS = (("pic_crop_235_1", "2.35_1"), ("pic_crop_1_1", "1_1"))
+
+
+def _crop_coordinates(values: list[Any]) -> tuple[Decimal, ...]:
+    if len(values) != 4:
+        raise ValueError("Cover crop must have four coordinates")
+    coordinates = []
+    for value in values:
+        if type(value) not in (str, int, float) or len(str(value)) > 32:
+            raise ValueError("Invalid cover crop coordinate type")
+        if isinstance(value, str) and not re.fullmatch(r"[0-9]+(?:\.[0-9]+)?", value):
+            raise ValueError("Invalid cover crop coordinate string")
+        try:
+            coordinate = Decimal(str(value))
+        except InvalidOperation as error:
+            raise ValueError("Invalid cover crop coordinate") from error
+        if not coordinate.is_finite() or not 0 <= coordinate <= 1:
+            raise ValueError("Cover crop coordinate outside image")
+        coordinates.append(coordinate)
+    x1, y1, x2, y2 = coordinates
+    if x1 >= x2 or y1 >= y2:
+        raise ValueError("Cover crop rectangle is empty or reversed")
+    return tuple(coordinates)
+
+
+def expected_cover_crops(expected: dict[str, Any] | None) -> dict[str, tuple[Decimal, ...]]:
+    crops = {}
+    for field, ratio in COVER_CROP_FIELDS:
+        if field in (expected or {}):
+            value = expected[field]
+            if not isinstance(value, str) or len(value) > 128:
+                raise ValueError("Invalid expected cover crop")
+            crops[ratio] = _crop_coordinates(value.split("_"))
+    return crops
+
+
+def wechat_cover_crop_contract_check(article: dict[str, Any], expected: dict[str, Any] | None) -> dict[str, Any]:
+    """Verify explicit source crops from GET cover_info, never echoed inputs.
+
+    Missing source crop inputs intentionally preserve older/default-crop
+    contracts. Numeric strings and JSON numbers compare as exact decimals.
+    """
+    try:
+        wanted = expected_cover_crops(expected)
+    except ValueError:
+        return {"matches": False, "expected_valid": False, "expected_crop_count": 0}
+    result = {"matches": True, "expected_valid": True, "expected_crop_count": len(wanted)}
+    if not wanted:
+        return result
+    cover = article.get("cover_info")
+    rows = cover.get("crop_percent_list") if isinstance(cover, dict) else None
+    found = {}
+    try:
+        if not isinstance(rows, list) or not 0 < len(rows) <= 16:
+            raise ValueError("Missing or invalid returned cover crop inventory")
+        for row in rows:
+            if not isinstance(row, dict) or not isinstance(row.get("ratio"), str) or row["ratio"] in found:
+                raise ValueError("Ambiguous returned cover crop ratio")
+            ratio = row["ratio"]
+            found[ratio] = (_crop_coordinates([row.get(key) for key in ("x1", "y1", "x2", "y2")])
+                            if ratio in wanted else None)
+        result["matches"] = all(found.get(ratio) == crop for ratio, crop in wanted.items())
+    except ValueError:
+        result["matches"] = False
+    return result
+
+
+def dry_run_draft_response(articles: list[dict[str, Any]]) -> dict[str, Any]:
+    """Simulate GET crop representation only for the explicit dry-run path."""
+    rows = []
+    for article in articles:
+        row = dict(article)
+        if expected_cover_crops(article):
+            row["cover_info"] = {"crop_percent_list": [
+                dict(zip(("ratio", "x1", "y1", "x2", "y2"), (ratio, *article[field].split("_"))))
+                for field, ratio in COVER_CROP_FIELDS if field in article]}
+        rows.append(row)
+    return {"news_item": rows}
+
+
 def wechat_media_contract_check(article: dict[str, Any], expected: dict[str, Any] | None) -> dict[str, Any]:
     actual_images = wechat_content_images(article.get("content"))
     expected_images = wechat_content_images((expected or {}).get("content"))
@@ -2577,6 +2658,7 @@ def wechat_media_contract_check(article: dict[str, Any], expected: dict[str, Any
         len(actual_urls) == len(expected_urls)
         and all(actual_urls) and all(expected_urls) and actual_urls == expected_urls
     )
+    crop_check = wechat_cover_crop_contract_check(article, expected)
     footer_count = sum(alt == "KC桌面" for _url, alt in expected_images)
     actual_credits = generated_image_credits(article.get("content"))
     expected_credits = generated_image_credits((expected or {}).get("content"))
@@ -2587,8 +2669,10 @@ def wechat_media_contract_check(article: dict[str, Any], expected: dict[str, Any
     matches_credits = not actual_incomplete and not expected_incomplete and (
         expected is None or actual_credits == expected_credits)
     return {
-        "matches": matches_cover and matches_images and matches_credits,
+        "matches": matches_cover and matches_images and matches_credits and crop_check["matches"],
         "matches_cover": matches_cover,
+        "matches_cover_crop": crop_check["matches"],
+        "expected_cover_crop_count": crop_check["expected_crop_count"],
         "matches_inline_images": matches_images,
         "matches_image_credits": matches_credits,
         "image_credit_count": len(actual_credits),
@@ -2620,6 +2704,8 @@ def repair_existing_draft_media(
         for actual, expected in zip(actual_articles, expected_articles)
     ):
         return []
+    if any(not wechat_cover_crop_contract_check({}, expected)["expected_valid"] for expected in expected_articles):
+        return []  # Invalid expected inputs must never be submitted as a repair.
     repaired = []
     for index, (actual, expected) in enumerate(zip(actual_articles, expected_articles)):
         if wechat_media_contract_check(actual, expected)["matches"]:
@@ -2627,6 +2713,7 @@ def repair_existing_draft_media(
         # Keep unrelated existing metadata; only replace cover/content media.
         update = {key: actual[key] for key in ("title", "author", "digest", "content_source_url", "need_open_comment", "only_fans_can_comment") if key in actual}
         update.update(content=expected.get("content", ""), thumb_media_id=expected.get("thumb_media_id", ""))
+        update.update({field: expected[field] for field, _ratio in COVER_CROP_FIELDS if field in expected})
         response = post_wechat_json(session,
             f"https://api.weixin.qq.com/cgi-bin/draft/update?access_token={access_token}",
             {"media_id": media_id, "index": index, "articles": update}, timeout,
@@ -3542,7 +3629,7 @@ def main() -> int:
             publish_id = f"DRY_RUN_PUBLISH_{draft_index:02d}" if args.publish else ""
             reused_existing = False
             draft_get = summarize_draft_get_response(
-                {"news_item": articles},
+                dry_run_draft_response(articles),
                 len(articles),
                 articles,
             )

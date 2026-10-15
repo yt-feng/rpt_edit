@@ -224,8 +224,16 @@ def validate_live(data, source):
                 or interrupted_crop_state(current, pin), 'live_cover_crop_changed')
         require(valid_updated_urls(current, current, source['pins']['reviewed_update_response']),
                 'live_derived_url_shape_changed')
-    checks = summarize_draft_get_response(data, 3, [dict(row, title=a['title'])
-                                                for row, a in zip(source['articles'], actual)])
+    comparison = []
+    for original, current, pin in zip(source['articles'], actual, source['pins']['articles']):
+        expected = dict(original, title=current['title'])
+        if interrupted_crop_state(current, pin):
+            # This one exact crop is already authenticated above and is the
+            # explicit restoration target, not an accepted final crop state.
+            for key in UPLOAD_ONLY:
+                expected.pop(key, None)
+        comparison.append(expected)
+    checks = summarize_draft_get_response(data, 3, comparison)
     require(checks['ok'] is True, 'live_media_or_editorial_contract_mismatch')
     return actual
 

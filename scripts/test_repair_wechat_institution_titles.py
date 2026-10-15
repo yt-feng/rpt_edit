@@ -15,7 +15,7 @@ from build_portal_suite_site import (
     blog_article_fingerprint, blog_public_slug,
     render_blog_legacy_redirect, sanitize_blog_html, validate_blog_archive_record,
 )
-from push_portal_translated_to_wechat_drafts import draft_group_key, translated_article_title_metadata
+from push_portal_translated_to_wechat_drafts import draft_group_key, translated_article_title_metadata, wechat_cover_crop_contract_check
 from wechat_html_diagnostics import article_content_diagnostics, all_field_read_diagnostics, compare_html, MAX_EVENTS
 
 
@@ -287,6 +287,23 @@ class BoundedTitleRepairTests(unittest.TestCase):
         with self.assertRaisesRegex(repair.RepairError, 'live_cover_crop_changed'):
             repair.validate_live(self.data, self.source)
 
+    def test_shared_crop_guard_accepts_completed_audit_and_only_pinned_interrupted_entrance(self):
+        def crop_summary(data, count, expected):
+            self.assertEqual(count, 3)
+            return {'ok': all(wechat_cover_crop_contract_check(actual, wanted)['matches']
+                              for actual, wanted in zip(data['news_item'], expected))}
+        with patch.object(repair, 'summarize_draft_get_response', side_effect=crop_summary):
+            for current, pin in zip(self.actual, self.pins['articles']):
+                current['title'] = pin['selected_title']
+                current['content'] = current['content'].replace('alt="chart">', 'alt="chart"  />')
+            repair.validate_live(self.data, self.source)
+            current = self.actual[0]
+            current['cover_info'] = {'crop_percent_list': [{'observed_wrong_crop': True}]}
+            self.pins['articles'][0]['interrupted_cover_sha256'] = repair.digest(current['cover_info'])
+            repair.validate_live(self.data, self.source)
+            current['cover_info']['extra'] = False
+            with self.assertRaisesRegex(repair.RepairError, 'live_cover_crop_changed'):
+                repair.validate_live(self.data, self.source)
     def test_post_signature_and_thumbnail_changes_are_allowed_only_on_exact_updated_index(self):
         candidate = copy.deepcopy(self.data)
         row = candidate['news_item'][0]

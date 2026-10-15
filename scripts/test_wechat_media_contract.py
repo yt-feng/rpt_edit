@@ -200,6 +200,161 @@ class ImageAdmissionTests(unittest.TestCase):
             self.assertEqual("PUBLIC_PLACEHOLDER", public[0]["content_source_url"])
 
 
+class CoverCropReadbackTests(unittest.TestCase):
+    def setUp(self):
+        # Exact crop inputs from the recovered IMF producer, independently
+        # reflected by draft/get cover_info in its original accepted receipt.
+        self.expected = dict(article(), pic_crop_235_1="0_0.121693_1_0.878307",
+                             pic_crop_1_1="0.21875_0_0.78125_1")
+        self.returned = copy.deepcopy(self.expected)
+        self.returned.pop("pic_crop_235_1"); self.returned.pop("pic_crop_1_1")
+        self.returned["cover_info"] = {"crop_percent_list": [
+            {"ratio": "2.35_1", "x1": "0", "y1": "0.121693", "x2": "1", "y2": "0.878307"},
+            {"ratio": "1_1", "x1": "0.21875", "y1": "0", "x2": "0.78125", "y2": "1"}]}
+
+    def test_real_crop_object_matches_source_and_numeric_get_representations(self):
+        raw = json.dumps(self.returned["cover_info"], sort_keys=True, separators=(",", ":")).encode()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), "1a4bd1fae0c14cf031857ead5a3e3b3fa948c4de105c4be895058bedf26092c6")
+        self.assertTrue(portal.wechat_media_contract_check(self.returned, self.expected)["matches"])
+        for row in self.returned["cover_info"]["crop_percent_list"]:
+            for key in ("x1", "y1", "x2", "y2"):
+                row[key] = float(row[key])
+        self.assertTrue(portal.wechat_media_contract_check(self.returned, self.expected)["matches"])
+
+    def test_unchanged_media_id_cannot_hide_changed_crop_or_echoed_upload_fields(self):
+        self.returned["cover_info"]["crop_percent_list"][1]["x1"] = "0"
+        self.returned.update({field: self.expected[field] for field, _ratio in portal.COVER_CROP_FIELDS})
+        check = portal.wechat_media_contract_check(self.returned, self.expected)
+        self.assertTrue(check["matches_cover"])
+        self.assertFalse(check["matches_cover_crop"])
+        self.assertFalse(portal.summarize_draft_get_response({"news_item": [self.returned]}, 1, [self.expected])["ok"])
+
+    def test_missing_duplicate_nonfinite_boolean_or_out_of_range_crop_rejected(self):
+        missing = copy.deepcopy(self.returned); missing.pop("cover_info")
+        variants = [missing]
+        duplicate = copy.deepcopy(self.returned)
+        duplicate["cover_info"]["crop_percent_list"].append(copy.deepcopy(duplicate["cover_info"]["crop_percent_list"][0]))
+        variants.append(duplicate)
+        for bad in [True, False, float("nan"), float("inf"), "NaN", "1.000001", "-0.1", None, {}, ""]:
+            value = copy.deepcopy(self.returned)
+            value["cover_info"]["crop_percent_list"][0]["y1"] = bad
+            variants.append(value)
+        for value in variants:
+            with self.subTest(crop=value.get("cover_info")):
+                self.assertFalse(portal.wechat_cover_crop_contract_check(value, self.expected)["matches"])
+
+    def test_legacy_no_crop_and_explicit_crop_rejection_fallback_remain_compatible(self):
+        legacy = article()
+        self.assertTrue(portal.wechat_media_contract_check(legacy, legacy)["matches"])
+        expected = copy.deepcopy(self.expected)
+        portal.clear_cover_crop_fields([expected])
+        self.assertTrue(portal.wechat_media_contract_check(legacy, expected)["matches"])
+        single = dict(legacy, pic_crop_1_1=self.expected["pic_crop_1_1"])
+        self.returned["cover_info"]["crop_percent_list"] = self.returned["cover_info"]["crop_percent_list"][1:]
+        self.assertTrue(portal.wechat_media_contract_check(self.returned, single)["matches"])
+
+    def test_dry_run_simulates_crop_response_without_loosening_real_get(self):
+        self.assertFalse(portal.summarize_draft_get_response({"news_item": [self.expected]}, 1, [self.expected])["ok"])
+        simulated = portal.dry_run_draft_response([self.expected])
+        self.assertTrue(portal.summarize_draft_get_response(simulated, 1, [self.expected])["ok"])
+        self.assertNotIn("cover_info", self.expected)
+
+    def test_automatic_media_repair_forwards_exact_crops_and_requires_get_crop_acceptance(self):
+        old = copy.deepcopy(self.returned)
+        old["content"] = old["content"].replace("body-image", "stale-image")
+        with patch.object(portal, "get_draft", side_effect=[{"news_item": [old]}, {"news_item": [self.returned]}]), \
+                patch.object(portal, "post_wechat_json", return_value=response({"errcode": 0})) as post:
+            result = portal.verify_draft_get(object(), "TOKEN", "EXISTING", 30, 1, [self.expected], True)
+        self.assertTrue(result["ok"])
+        self.assertEqual(result["media_repaired_indices"], [0])
+        payload = post.call_args.args[2]["articles"]
+        for field, _ratio in portal.COVER_CROP_FIELDS:
+            self.assertEqual(payload[field], self.expected[field])
+        self.assertEqual(post.call_args.kwargs["max_attempts"], 1)
+        self.assertNotIn("cover_info", payload)
+
+    def test_wrong_crop_after_update_fails_without_second_post(self):
+        wrong = copy.deepcopy(self.returned)
+        wrong["cover_info"]["crop_percent_list"][0]["y1"] = "0"
+        with patch.object(portal, "get_draft", return_value={"news_item": [wrong]}), \
+                patch.object(portal, "post_wechat_json", return_value=response({"errcode": 0})) as post, \
+                patch.object(portal, "sleep_before_wechat_retry"):
+            result = portal.verify_draft_get(object(), "TOKEN", "EXISTING", 30, 1, [self.expected], True)
+        self.assertFalse(result["ok"])
+        self.assertEqual(post.call_count, 1)
+
+    def test_unknown_post_outcome_only_reads_again_and_accepts_exact_crop(self):
+        old = copy.deepcopy(self.returned)
+        old["cover_info"]["crop_percent_list"][0]["y1"] = "0"
+        with patch.object(portal, "get_draft", side_effect=[{"news_item": [old]}, {"news_item": [self.returned]}]), \
+                patch.object(portal, "post_wechat_json", side_effect=portal.WeChatError("transport outcome unknown")) as post, \
+                patch.object(portal, "sleep_before_wechat_retry"):
+            result = portal.verify_draft_get(object(), "TOKEN", "EXISTING", 30, 1, [self.expected], True)
+        self.assertTrue(result["ok"])
+        self.assertEqual(post.call_count, 1)
+        self.assertEqual(post.call_args.kwargs["max_attempts"], 1)
+
+    def test_invalid_source_crop_is_never_posted(self):
+        for value in (None, True, "0_0_0_1", "0_0_1_2", "0_NaN_1_1"):
+            expected = dict(self.expected, pic_crop_1_1=value)
+            with self.subTest(value=value), patch.object(portal, "get_draft", return_value={"news_item": [self.returned]}), \
+                    patch.object(portal, "post_wechat_json") as post, patch.object(portal, "sleep_before_wechat_retry"):
+                result = portal.verify_draft_get(object(), "TOKEN", "EXISTING", 30, 1, [expected], True)
+                self.assertFalse(result["ok"])
+                post.assert_not_called()
+
+    def test_normal_new_reused_and_dry_run_draft_entry_points_keep_crop_contract(self):
+        for mode in ("new", "reused", "dry_run"):
+            with self.subTest(mode=mode), tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary)
+                translated = root / "translated"
+                report = translated / "261015" / "01-report"
+                report.mkdir(parents=True)
+                (report / "translated.md").write_text("# " + self.expected["title"] + "\n\n正文。\n")
+                output = root / "drafts"
+                built = {
+                    "article": copy.deepcopy(self.expected), "report_dir": str(report),
+                    "title": self.expected["title"], "wechat_title": self.expected["title"],
+                    "institution_name": "高盛", "source_report_name": "全球市场行业数据更新",
+                    "content_chars": len(self.expected["content"]),
+                    "content_bytes": len(self.expected["content"].encode()), "visible_text_chars": 30,
+                    "inline_images": [], "body_image_count": 1, "ai_image_count": 0, "cover_image": "cover.jpg",
+                }
+                argv = ["uploader", "--translated-root", str(translated), "--date-folder", "261015",
+                        "--output-root", str(output), "--trailing-image", "",
+                        "--site-url", "https://private.example.invalid",
+                        "--wechat-appid", "test-appid", "--wechat-secret", "test-secret",
+                        "--draft-delay-seconds", "0", "--draft-verify-delay-seconds", "0"]
+                if mode == "dry_run":
+                    argv.append("--dry-run")
+                old = copy.deepcopy(self.returned)
+                old["content"] = old["content"].replace("body-image", "stale-image")
+                with patch.object(portal.sys, "argv", argv), patch.object(portal, "log"), \
+                        patch.object(portal.requests, "Session", return_value=object()), \
+                        patch.object(portal, "get_stable_access_token", return_value="TOKEN"), \
+                        patch.object(portal, "build_article", return_value=built), \
+                        patch.object(portal, "find_recent_draft_by_titles", return_value="EXISTING" if mode == "reused" else ""), \
+                        patch.object(portal, "add_draft", return_value="NEW") as add, \
+                        patch.object(portal, "get_draft", side_effect=[{"news_item": [old]}, {"news_item": [self.returned]}]) as get, \
+                        patch.object(portal, "post_wechat_json", return_value=response({"errcode": 0})) as post:
+                    self.assertEqual(portal.main(), 0)
+                summary = json.loads((output / "261015" / "wechat_draft_summary.json").read_text())
+                draft = summary["drafts"][0]
+                self.assertTrue(draft["draft_get"]["ok"])
+                self.assertEqual(draft["reused_existing"], mode == "reused")
+                self.assertEqual(add.call_count, int(mode == "new"))
+                if mode == "dry_run":
+                    get.assert_not_called()
+                    post.assert_not_called()
+                else:
+                    self.assertEqual(post.call_count, 1)
+                    self.assertEqual(draft["draft_get"]["media_repaired_indices"], [0])
+                    update = post.call_args.args[2]
+                    self.assertEqual(update["media_id"], "EXISTING" if mode == "reused" else "NEW")
+                    for field, _ratio in portal.COVER_CROP_FIELDS:
+                        self.assertEqual(update["articles"][field], self.expected[field])
+
+
 class MediaReadbackTests(unittest.TestCase):
     def commons_credit(self, author, filename):
         return attribution_html({"source":"commons", "author":author, "license":"CC BY 4.0",
