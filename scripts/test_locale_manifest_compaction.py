@@ -12,6 +12,18 @@ import portal_locale_manifest as codec
 from test_portal_locale_manifest import with_source_fallback, LOCALES
 
 
+def retained_accounting(fallback):
+    if fallback['schema_version'] in {3, 4}:
+        fallback = codec._decompress_fallback_records(fallback)
+    if fallback['schema_version'] == 1:
+        unique_rows = {codec._json_bytes(row) for rows in fallback['units'].values() for row in rows.values()}
+        row_bytes = sum(map(len, unique_rows))
+    else:
+        row_bytes = sum(len(codec._json_bytes(row)) for row in fallback['records'])
+    ref_bytes = sum(len(key.encode()) + 8 for rows in fallback['units'].values() for key in rows)
+    return row_bytes, ref_bytes
+
+
 class CompactionTests(unittest.TestCase):
     def fixture(self):
         value = with_source_fallback({'schema_version': 1})
@@ -114,10 +126,10 @@ class CompactionTests(unittest.TestCase):
             with self.assertRaisesRegex(codec.LocaleManifestError, 'byte size'):
                 codec.encode_locale_manifest({'schema_version': 1, 'padding': 'a' * 200})
 
-    def compressed(self):
+    def compressed(self, schema_version=3):
         original, raw = self.packed()
         value = json.loads(raw)
-        value['source_fallbacks'] = codec._compress_fallback_records(value['source_fallbacks'])
+        value['source_fallbacks'] = codec._compress_fallback_records(value['source_fallbacks'], schema_version=schema_version)
         return original, value
 
     def replace_compressed_table(self, value, table):
@@ -170,6 +182,100 @@ class CompactionTests(unittest.TestCase):
         with self.assertRaises(codec.LocaleManifestError):
             codec.parse_locale_manifest(codec._json_bytes(value))
 
+    def test_schema4_omits_only_derived_digest_and_preserves_shared_semantics(self):
+        original, value = self.compressed(4)
+        table = json.loads(zlib.decompress(base64.b64decode(value['source_fallbacks']['data'])))
+        self.assertTrue(all(set(row) == {'source', 'context', 'reason', 'translation_class'} for row in table['records']))
+        restored = codec.parse_locale_manifest(codec._json_bytes(value))
+        self.assertEqual(restored, original)
+        units = restored['source_fallbacks']['units']
+        key = next(iter(units['ko']))
+        self.assertIs(units['ko'][key], units['ja'][key])
+        self.assertIs(units['ja'][key], units['ar'][key])
+        with self.assertRaises(TypeError):
+            units['ko'][key]['source_sha256'] = '0' * 64
+        self.assertEqual(original, self.fixture())
+
+    def test_all_four_schemas_keep_identical_retained_accounting(self):
+        original, packed = self.packed()
+        expected = retained_accounting(original['source_fallbacks'])
+        self.assertEqual(retained_accounting(json.loads(packed)['source_fallbacks']), expected)
+        for version in (3, 4):
+            _, compressed = self.compressed(version)
+            self.assertEqual(retained_accounting(compressed['source_fallbacks']), expected)
+
+    def test_schema4_rejects_original_bad_hash_before_omitting_it(self):
+        value, raw = self.packed()
+        packed = json.loads(raw)['source_fallbacks']
+        packed['records'][0]['source_sha256'] = '0' * 64
+        with self.assertRaisesRegex(codec.LocaleManifestError, 'hash before compaction'):
+            codec._compress_fallback_records(packed, schema_version=4)
+        key = next(iter(value['source_fallbacks']['units']['ko']))
+        value['source_fallbacks']['units']['ko'][key]['source_sha256'] = '0' * 64
+        with patch.object(codec, 'MAX_LOCALE_MANIFEST_BYTES', len(codec._json_bytes(value)) - 1):
+            with self.assertRaisesRegex(codec.LocaleManifestError, 'hash differs'):
+                codec.encode_locale_manifest(value)
+
+    def test_schema4_keeps_original_key_prompt_class_and_source_binding(self):
+        _, original = self.compressed(4)
+        table = json.loads(zlib.decompress(base64.b64decode(original['source_fallbacks']['data'])))
+        for mutate in (lambda t: t['records'][0].update(source='Altered source 45%'),
+                       lambda t: t['records'][0].update(translation_class='official-name'),
+                       lambda t: t['keys'].__setitem__(0, '0' * 64)):
+            value, bad = copy.deepcopy(original), copy.deepcopy(table)
+            mutate(bad); self.replace_compressed_table(value, bad)
+            with self.assertRaisesRegex(codec.LocaleManifestError, 'identity differs'):
+                codec.parse_locale_manifest(codec._json_bytes(value))
+        value = copy.deepcopy(original); value['prompt_version'] += '-changed'
+        with self.assertRaisesRegex(codec.LocaleManifestError, 'identity differs'):
+            codec.parse_locale_manifest(codec._json_bytes(value))
+
+    def test_schema4_rejects_missing_extra_or_conflicting_record_fields(self):
+        _, original = self.compressed(4)
+        table = json.loads(zlib.decompress(base64.b64decode(original['source_fallbacks']['data'])))
+        mutations = [lambda t: t['records'][0].pop('source'),
+                     lambda t: t['records'][0].pop('context'),
+                     lambda t: t['records'][0].update(source_sha256='0' * 64),
+                     lambda t: t['records'][0].update(extra='unexpected'),
+                     lambda t: t['records'][0].update(source=42),
+                     lambda t: t.update(extra='unexpected')]
+        for mutate in mutations:
+            value, bad = copy.deepcopy(original), copy.deepcopy(table)
+            mutate(bad); self.replace_compressed_table(value, bad)
+            with self.assertRaises(codec.LocaleManifestError):
+                codec.parse_locale_manifest(codec._json_bytes(value))
+
+    def test_schema4_full_restored_records_still_count_toward_retained_budget(self):
+        original, raw = self.packed()
+        packed = json.loads(raw)['source_fallbacks']
+        retained = sum(len(codec._json_bytes(row)) for row in packed['records'])
+        retained += sum(len(key.encode()) + 8 for rows in packed['units'].values() for key in rows)
+        value = dict(original, source_fallbacks=codec._compress_fallback_records(packed, schema_version=4))
+        self.assertLess(value['source_fallbacks']['byte_size'], retained)
+        with patch.object(codec, 'MAX_EXPANDED_FALLBACK_BYTES', retained):
+            self.assertEqual(codec.parse_locale_manifest(codec._json_bytes(value)), original)
+        with patch.object(codec, 'MAX_EXPANDED_FALLBACK_BYTES', retained - 1):
+            with self.assertRaisesRegex(codec.LocaleManifestError, 'safety budget'):
+                codec.parse_locale_manifest(codec._json_bytes(value))
+        with patch.object(codec, 'MAX_FALLBACK_REFERENCES', 2):
+            with self.assertRaisesRegex(codec.LocaleManifestError, 'safety budget'):
+                codec.parse_locale_manifest(codec._json_bytes(value))
+
+    def test_schema4_keeps_strict_encoding_size_digest_stream_and_schema_guards(self):
+        _, original = self.compressed(4)
+        for field, bad in [('schema_version', 5), ('schema_version', 4.0), ('encoding', 'gzip'),
+                           ('byte_size', True), ('byte_size', 1), ('byte_size', codec.MAX_EXPANDED_FALLBACK_BYTES + 1),
+                           ('sha256', '0' * 64), ('data', '!not-base64!'), ('extra', 'unexpected')]:
+            value = copy.deepcopy(original); value['source_fallbacks'][field] = bad
+            with self.subTest(field=field, bad=bad), self.assertRaises(codec.LocaleManifestError):
+                codec.parse_locale_manifest(codec._json_bytes(value))
+        zipped = base64.b64decode(original['source_fallbacks']['data'])
+        for bad in (zipped[:-1], zipped + b'junk', zipped + zipped, zlib.compress(b'x' * 10000)):
+            value = copy.deepcopy(original)
+            value['source_fallbacks']['data'] = base64.b64encode(bad).decode('ascii')
+            with self.assertRaises(codec.LocaleManifestError):
+                codec.parse_locale_manifest(codec._json_bytes(value))
+
     def test_regression_growing_distinct_provenance_exceeds_intern_only_capacity(self):
         value = self.fixture()
         # Production on 2026-10-15 failed after 164,393 references: every
@@ -192,7 +298,7 @@ class CompactionTests(unittest.TestCase):
             value['coverage'][locale] = 0.0
         raw = codec.encode_locale_manifest(value)
         packed = json.loads(raw)
-        self.assertEqual(packed['source_fallbacks']['schema_version'], 3)
+        self.assertEqual(packed['source_fallbacks']['schema_version'], 4)
         self.assertLess(len(raw), codec.MAX_LOCALE_MANIFEST_BYTES)
         self.assertEqual(codec.parse_locale_manifest(raw), value)
         self.assertGreater(len(codec._json_bytes(value)), codec.MAX_EXPANDED_FALLBACK_BYTES)
@@ -248,10 +354,43 @@ class CompactionTests(unittest.TestCase):
         codec.validate_translation_resolution(value, LOCALES)
         raw = codec.encode_locale_manifest(value)
         self.assertEqual(codec.parse_locale_manifest(raw), value)
+        row_bytes, ref_bytes = retained_accounting(json.loads(raw)['source_fallbacks'])
         print(json.dumps({'production_accounting_roundtrip': 'passed', 'source_unit_count': count,
                           'source_fallback_counts': counts, 'encoded_bytes': len(raw),
                           'wire_limit': codec.MAX_LOCALE_MANIFEST_BYTES,
+                          'retained_row_bytes': row_bytes, 'retained_reference_bytes': ref_bytes,
+                          'retained_total_bytes': row_bytes + ref_bytes,
+                          'references': sum(counts.values()), 'reference_limit': codec.MAX_FALLBACK_REFERENCES,
                           'retained_limit': codec.MAX_EXPANDED_FALLBACK_BYTES}, sort_keys=True))
+
+    @unittest.skipUnless(os.environ.get('LOCALE_MANIFEST_FULL'), 'Exact complete manifest was not requested')
+    def test_exact_complete_manifest_roundtrip_retains_all_metadata_and_bounds(self):
+        path = Path(os.environ['LOCALE_MANIFEST_FULL'])
+        original = codec.load_locale_manifest(path)
+        old_body = path.read_bytes()
+        old_wire = json.loads(old_body)
+        self.assertIn(old_wire['source_fallbacks']['schema_version'], (3, 4))
+        new_body = codec.encode_locale_manifest(original)
+        new_wire = json.loads(new_body)
+        self.assertEqual(new_wire['source_fallbacks']['schema_version'], 4)
+        self.assertEqual(codec.parse_locale_manifest(new_body), original)
+        self.assertEqual({key: value for key, value in old_wire.items() if key != 'source_fallbacks'},
+                         {key: value for key, value in new_wire.items() if key != 'source_fallbacks'})
+        packed = codec._decompress_fallback_records(new_wire['source_fallbacks'])
+        row_bytes = sum(len(codec._json_bytes(row)) for row in packed['records'])
+        ref_bytes = sum(len(key.encode()) + 8 for rows in packed['units'].values() for key in rows)
+        references = sum(len(rows) for rows in packed['units'].values())
+        self.assertLessEqual(row_bytes + ref_bytes, codec.MAX_EXPANDED_FALLBACK_BYTES)
+        self.assertLessEqual(references, codec.MAX_FALLBACK_REFERENCES)
+        print(json.dumps({'complete_manifest_roundtrip': 'passed', 'source_unit_count': original['source_unit_count'],
+                          'input_sha256': hashlib.sha256(old_body).hexdigest(),
+                          'before_wire_bytes': len(old_body), 'after_wire_bytes': len(new_body),
+                          'wire_limit': codec.MAX_LOCALE_MANIFEST_BYTES,
+                          'before_decoded_table_bytes': old_wire['source_fallbacks']['byte_size'],
+                          'after_decoded_table_bytes': new_wire['source_fallbacks']['byte_size'],
+                          'retained_row_bytes': row_bytes, 'retained_reference_bytes': ref_bytes,
+                          'retained_total_bytes': row_bytes + ref_bytes, 'retained_limit': codec.MAX_EXPANDED_FALLBACK_BYTES,
+                          'references': references, 'reference_limit': codec.MAX_FALLBACK_REFERENCES}, sort_keys=True))
 
 
 if __name__ == '__main__':
