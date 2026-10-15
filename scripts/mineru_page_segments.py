@@ -158,8 +158,19 @@ def prepare_segments(ledger, original_pdf, source, directory, *, allow_plan_writ
             prior = existing['segments'][index] if existing is not None else None
             payload = archive.get(original, prior['binding']) if archive is not None and prior is not None else None
             if payload is None:
+                # Old frozen plans may predate physical-archive preservation.
+                # Reproduce their exact old bytes only when the saved binding
+                # proves them; never turn the fixed splitter into a new claim.
+                if prior is not None:
+                    with fitz.open() as legacy:
+                        legacy.insert_pdf(document, from_page=start, to_page=end-1)
+                        candidate = legacy.tobytes(garbage=4, deflate=True, no_new_id=True)
+                    if len(candidate) == prior['binding']['size'] and digest(candidate) == prior['binding']['sha256']:
+                        payload = candidate
+            if payload is None:
                 with fitz.open() as part:
                     part.insert_pdf(document, from_page=start, to_page=end-1)
+                    _preserve_page_groups(document, document, part, start, start, 0, end-start)
                     payload = part.tobytes(garbage=4, deflate=True, no_new_id=True)
             require(len(payload) <= MAX_PDF_BYTES, 'segment PDF exceeds size limit')
             with fitz.open(stream=payload, filetype='pdf') as part:
@@ -256,6 +267,76 @@ def _rewrite_markdown(text, resources):
     return text
 
 
+_UNSUPPORTED_PAGE_GROUP = object()
+
+
+def _static_page_group(document, index):
+    """Read only self-contained transparency settings, never drawing resources."""
+    from mineru_pdf_graph import parse_pdf_value
+    from pypdf.generic import DictionaryObject, NameObject, BooleanObject
+    kind, raw = document.xref_get_key(document.page_xref(index), 'Group')
+    if kind == 'null':
+        return None
+    if kind == 'xref':
+        pieces = raw.split()
+        if not (len(pieces) == 3 and pieces[0].isdigit() and pieces[1:] == ['0', 'R']):
+            return _UNSUPPORTED_PAGE_GROUP
+        raw = document.xref_object(int(pieces[0]), compressed=True)
+    else:
+        if kind != 'dict':
+            return _UNSUPPORTED_PAGE_GROUP
+    try:
+        value = parse_pdf_value(raw)
+    except ValueError:
+        return _UNSUPPORTED_PAGE_GROUP
+    if not isinstance(value, DictionaryObject):
+        return _UNSUPPORTED_PAGE_GROUP
+    values = {str(key): value.raw_get(key) for key in value}
+    if not (set(values) <= {'/Type', '/S', '/CS', '/I', '/K'}
+            and isinstance(values.get('/S'), NameObject) and values['/S'] == '/Transparency'
+            and isinstance(values.get('/CS'), NameObject)
+            and values['/CS'] in {'/DeviceRGB', '/DeviceCMYK', '/DeviceGray'}
+            and ('/Type' not in values or isinstance(values['/Type'], NameObject) and values['/Type'] == '/Group')
+            and all(key not in values or isinstance(values[key], BooleanObject) for key in ('/I', '/K'))):
+        return _UNSUPPORTED_PAGE_GROUP
+    canonical = {'/S': str(values['/S']), '/CS': str(values['/CS']),
+                 '/I': values['/I'].value if '/I' in values else False,
+                 '/K': values['/K'].value if '/K' in values else False}
+    return raw, canonical
+
+
+def _preserve_page_groups(original, provider, target, original_start, provider_start, target_start, count):
+    """Reattach static page context dropped by insert_pdf, with exact page order.
+
+    Frozen segment bytes are never changed. Only a missing provider Group can
+    inherit the exact original's self-contained transparency settings. Existing
+    provider settings must agree; stream/resource references are not admitted.
+    The resulting full pages still pass the normal exact original pixel gate.
+    """
+    receipts = []
+    for index in range(count):
+        oi, pi, ti = original_start+index, provider_start+index, target_start+index
+        source = _static_page_group(original, oi)
+        supplied = _static_page_group(provider, pi)
+        # Preserve the previous import behavior outside this proven static
+        # case. Resource-based color spaces or other group settings receive no
+        # new repair or blanket rejection; the normal exact pixel gate decides.
+        if source is _UNSUPPORTED_PAGE_GROUP or source is None and supplied is _UNSUPPORTED_PAGE_GROUP:
+            continue
+        if source is None:
+            require(supplied is None, 'provider page group differs')
+            continue
+        require(supplied is not _UNSUPPORTED_PAGE_GROUP, 'provider page group differs')
+        require(supplied is None or exact_json(source[1], supplied[1]), 'provider page group differs')
+        current = _static_page_group(target, ti)
+        require(current is not _UNSUPPORTED_PAGE_GROUP, 'assembled page group differs')
+        require(current is None or exact_json(source[1], current[1]), 'assembled page group differs')
+        target.xref_set_key(target.page_xref(ti), 'Group', source[0])
+        receipts.append({'page_index': oi, 'original_group_sha256': digest(encoded(source[1])),
+                         'provider_group_was_missing': supplied is None})
+    return receipts
+
+
 def merge_segments(plan, segment_zips, original_pdf):
     """Merge validated metadata with global page indexes and collision-free assets.
 
@@ -268,6 +349,7 @@ def merge_segments(plan, segment_zips, original_pdf):
     original_pdf = Path(original_pdf)
     require(digest(original_pdf.read_bytes()) == plan['original_binding']['sha256'], 'original bytes changed')
     files, markdowns, content, pages, profile = {}, [], [], [], None
+    group_receipts = []
     with fitz.open(original_pdf) as original, fitz.open() as joined, tempfile.TemporaryDirectory(prefix='mineru-segment-merge-') as temporary:
         require(original.page_count == plan['page_count'], 'original page count differs')
         for index, (segment, payload) in enumerate(zip(plan['segments'], segment_zips), 1):
@@ -287,6 +369,8 @@ def merge_segments(plan, segment_zips, original_pdf):
                     require(exact_json(_geometry(provider_pdf[pi]), _geometry(original[offset+pi])),
                             'embedded PDF geometry differs')
                 joined.insert_pdf(provider_pdf)
+                group_receipts.extend(_preserve_page_groups(original, provider_pdf, joined,
+                                                            offset, 0, offset, count))
             current_profile = {key: middle.get(key) for key in PROFILE}
             require(profile is None or exact_json(profile, current_profile), 'segment parser profiles differ')
             profile = current_profile
@@ -306,9 +390,14 @@ def merge_segments(plan, segment_zips, original_pdf):
             markdowns.append(_rewrite_markdown(markdown, resources))
             content.extend(_rewrite_json(segment_content, resources, offset, count))
             pages.extend(_rewrite_json(middle['pdf_info'], resources, offset, count))
-        # Preserve the provider's actual returned pages. Existing figure proofs
-        # compare these pages pixel-for-pixel against the authentic original.
+        # Preserve returned drawing objects and the exact original static page
+        # context lost by physical page import. Existing figure proofs compare
+        # the complete selected pages pixel-for-pixel with the authentic source.
         files['source.pdf'] = joined.tobytes(garbage=4, deflate=True, no_new_id=True)
+    if group_receipts:
+        files['segment_render_context.json'] = encoded({'schema': 1,
+            'policy': 'source-bound-static-page-groups-v1',
+            'original_pdf_sha256': plan['original_binding']['sha256'], 'pages': group_receipts})
     merged_middle = {**profile, 'pdf_info': pages}
     _normalise(content, merged_middle)
     files.update({'full.md': ('\n\n'.join(markdowns)+'\n').encode(),

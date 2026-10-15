@@ -106,6 +106,83 @@ class SegmentTests(unittest.TestCase):
         return segments.run_segments(self.ledger, self.original, 'original.pdf', self.directory,
             result_cache=self.cache, downloader=kwargs.pop('downloader', self.provider.download), **kwargs)
 
+    def test_frozen_legacy_segments_restore_static_groups_and_replay_original_crops(self):
+        from probe_consulting_mineru_figure_binding import verify_production_figures
+        with fitz.open(self.original) as document:
+            for index in (0, 200):
+                page = document[index]
+                page.draw_rect(fitz.Rect(35, 100, 185, 260), fill=(.7, .2, .5), fill_opacity=.4)
+                document.xref_set_key(page.xref, 'Group', '<</S/Transparency/CS/DeviceRGB>>')
+            raw = document.tobytes(no_new_id=True)
+        self.original.write_bytes(raw)
+        # Reproduce the pre-fix frozen uploads: physical imports dropped Group.
+        with patch.object(segments, '_preserve_page_groups', return_value=[]):
+            plan = segments.prepare_segments(self.ledger, self.original, 'original.pdf', self.directory)
+        self.assertEqual(segments.prepare_segments(self.ledger, self.original, 'original.pdf',
+                                                    self.root/'prearchive-replay'), plan)
+        archive = segments.SegmentArchive(self.cache.client, 'private')
+        physical, payloads = [], []
+        for part in plan['segments']:
+            raw_part = (self.directory/Path(part['binding']['source']).name).read_bytes()
+            physical.append(raw_part); payloads.append(result_zip(raw_part))
+            archive.preserve(plan['original_binding'], part['binding'], raw_part)
+        with patch.object(segments, '_preserve_page_groups', side_effect=AssertionError('must reuse frozen bytes')):
+            replay_plan = segments.prepare_segments(self.ledger, self.original, 'original.pdf',
+                                                    self.root/'replayed', archive=archive)
+        self.assertEqual(plan, replay_plan)
+        merged = segments.merge_segments(plan, payloads, self.original)
+        with zipfile.ZipFile(io.BytesIO(merged)) as result:
+            receipt = json.loads(result.read('segment_render_context.json'))
+        self.assertEqual([row['page_index'] for row in receipt['pages']], [0, 200])
+        self.assertTrue(all(row['provider_group_was_missing'] for row in receipt['pages']))
+        self.assertEqual(receipt['original_pdf_sha256'], digest(self.original.read_bytes()))
+        proof = verify_production_figures(self.original, merged, digest(self.original.read_bytes()), lambda: None)
+        self.assertEqual(proof['status'], 'verified', proof)
+        self.assertEqual(proof['image_count'], 2)
+        self.assertTrue(proof['private_handoff_replay_verified'])
+        for part, before in zip(plan['segments'], physical):
+            self.assertEqual(archive.get(plan['original_binding'], part['binding']), before)
+        # A real body change survives restoration and remains rejected by the
+        # original full-page pixel gate, including after a source Group repair.
+        with fitz.open(stream=physical[1], filetype='pdf') as changed:
+            changed[0].draw_rect(fitz.Rect(40, 110, 80, 150), fill=(1, 0, 0))
+            tampered = changed.tobytes(no_new_id=True)
+        altered = segments.merge_segments(plan, [payloads[0], result_zip(tampered)], self.original)
+        rejection = verify_production_figures(self.original, altered, digest(self.original.read_bytes()), lambda: None)
+        self.assertEqual(rejection.get('category'), 'figure_source_pixels_mismatch')
+        self.assertFalse(rejection['production_consumer_verified'])
+
+    def test_new_physical_segments_preserve_group_across_page_200(self):
+        with fitz.open(self.original) as document:
+            for index in (0, 200):
+                document.xref_set_key(document.page_xref(index), 'Group', '<</S/Transparency/CS/DeviceRGB>>')
+            raw = document.tobytes(no_new_id=True)
+        self.original.write_bytes(raw)
+        plan = segments.prepare_segments(self.ledger, self.original, 'original.pdf', self.directory)
+        for part in plan['segments']:
+            with fitz.open(self.directory/Path(part['binding']['source']).name) as split:
+                self.assertEqual(segments._static_page_group(split, 0)[1],
+                                 {'/S': '/Transparency', '/CS': '/DeviceRGB', '/I': False, '/K': False})
+
+    def test_static_group_conflicts_reject_and_unsupported_source_keeps_existing_behavior(self):
+        with fitz.open() as source, fitz.open() as provider, fitz.open() as target:
+            for document in (source, provider, target):
+                document.new_page(width=40, height=40)
+            source.xref_set_key(source.page_xref(0), 'Group', '<</S/Transparency/CS/DeviceRGB>>')
+            provider.xref_set_key(provider.page_xref(0), 'Group',
+                                 '<</Type/Group/S/Transparency/CS/DeviceRGB/I false/K false>>')
+            self.assertEqual(len(segments._preserve_page_groups(source, provider, target, 0, 0, 0, 1)), 1)
+            target.xref_set_key(target.page_xref(0), 'Group', 'null')
+            for setting in ('<</S/Transparency/CS/DeviceCMYK>>', '<</S/Transparency>>'):
+                provider.xref_set_key(provider.page_xref(0), 'Group', setting)
+                with self.assertRaisesRegex(LedgerError, 'provider page group differs'):
+                    segments._preserve_page_groups(source, provider, target, 0, 0, 0, 1)
+                self.assertEqual(target.xref_get_key(target.page_xref(0), 'Group')[0], 'null')
+            # Missing CS is legal but outside this observed static repair. It
+            # must not add a new failure on a previously unselected page.
+            source.xref_set_key(source.page_xref(0), 'Group', '<</S/Transparency>>')
+            self.assertEqual(segments._preserve_page_groups(source, provider, target, 0, 0, 0, 1), [])
+
     def test_boundary_and_deterministic_frozen_bytes(self):
         for count in (199, 200):
             target = self.root/f'{count}.pdf'; pdf(target, count)
