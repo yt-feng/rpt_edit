@@ -320,6 +320,17 @@ class HtmlDiagnosticTests(unittest.TestCase):
         self.assertEqual(report['articles'][0]['fields']['optional']['second']['type'], 'missing')
         self.assertFalse(report['articles'][1]['writable_fields_equal'])
 
+    def test_double_read_boolean_integer_and_nested_types_are_distinct(self):
+        first = {'news_item': [{'need_open_comment': 0, 'nested': {'value': 1}} for _ in range(3)]}
+        second = copy.deepcopy(first)
+        second['news_item'][0]['need_open_comment'] = False
+        second['news_item'][1]['nested']['value'] = True
+        report = all_field_read_diagnostics(first, second, repair.WRITABLE)
+        self.assertNotEqual(report['first_full_live_articles_sha256'], report['second_full_live_articles_sha256'])
+        self.assertEqual(report['articles'][0]['changed_fields'], ['need_open_comment'])
+        self.assertEqual(report['articles'][1]['changed_fields'], ['nested'])
+        self.assertFalse(report['articles'][0]['writable_fields_equal'])
+
     def test_double_read_query_names_and_field_count_are_bounded(self):
         name = 'private name ' * 10
         first = {'news_item': [{'url': 'https://example.com/?' + name + '=SECRET'} for _ in range(3)]}

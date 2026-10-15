@@ -198,6 +198,9 @@ def all_field_read_diagnostics(first, second, writable_fields):
            or any(not isinstance(row, dict) or len(row) > 100 for row in rows) for rows in groups):
         return {'diagnostic_only': True, 'error_category': 'live_draft_count_or_field_bound'}
     first_rows, second_rows = groups
+    if any(len(json.dumps([left, right], ensure_ascii=False).encode()) > 2 * MAX_HTML_BYTES
+           for left, right in zip(first_rows, second_rows)):
+        return {'diagnostic_only': True, 'error_category': 'live_field_byte_bound'}
     # Same serialization as the plan's full_live_articles_sha256, so every
     # diagnostic read is explicitly associated with its independent receipt.
     group_hash = lambda rows: hashlib.sha256(json.dumps(rows, ensure_ascii=False, sort_keys=True,
@@ -207,11 +210,11 @@ def all_field_read_diagnostics(first, second, writable_fields):
               'second_full_live_articles_sha256': group_hash(second_rows), 'articles': []}
     for index, (left, right) in enumerate(zip(first_rows, second_rows)):
         keys = sorted(set(left) | set(right))
-        require_size = len(json.dumps([left, right], ensure_ascii=False).encode()) <= 2 * MAX_HTML_BYTES
-        if not require_size:
-            result['articles'].append({'index': index, 'error_category': 'live_field_byte_bound'})
-            continue
-        changed = [key for key in keys if (key in left) != (key in right) or left.get(key) != right.get(key)]
+        # JSON distinguishes false/0, true/1 and nested type changes even when
+        # Python == does not. Use the same canonical representation as hashes.
+        canonical = lambda value: json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':'))
+        changed = [key for key in keys if (key in left) != (key in right)
+                   or canonical(left.get(key)) != canonical(right.get(key))]
         row = {'index': index, 'changed_fields': [safe_name(key) for key in changed],
                'writable_fields_equal': not set(changed).intersection(writable_fields), 'fields': {}}
         for key in keys:
