@@ -1,7 +1,7 @@
 {
   "feed_url": "https://www.ark-invest.com/feed",
-  "date_folder": "261013",
-  "since_days": 1,
+  "date_folder": "261015",
+  "since_days": 3,
   "max_pub_age_days": 120,
   "include_types": [
     "articles",
@@ -9,24 +9,24 @@
     "newsletters",
     "white papers"
   ],
-  "feed_item_count": 1407,
+  "feed_item_count": 1409,
   "selected_count": 1,
   "written": [
     {
       "source": "ark_invest_feed",
       "institution_name": "木头姐ARK",
-      "title": "#529: OpenAI’s $20 Billion Reporting Gap Unsettles The AI Trade, & More",
-      "type": "Newsletters",
-      "category": "Newsletters",
-      "source_url": "https://www.ark-invest.com/newsletters/issue-529",
-      "guid": "https://www.ark-invest.com/newsletters/issue-529",
-      "pub_date": "Mon, 12 Oct 2026 20:01:00 GMT",
-      "updated": "2026-10-12T20:15:49.883+00:00",
-      "event_datetime": "2026-10-12T20:15:49.883000+00:00",
-      "feed_key": "3cae4de2ef0ed3b1",
+      "title": "Bitcoin’s Post-Quantum Solutions",
+      "type": "Articles",
+      "category": "Analyst Research",
+      "source_url": "https://www.ark-invest.com/articles/analyst-research/bitcoins-post-quantum-solutions",
+      "guid": "https://www.ark-invest.com/articles/analyst-research/bitcoins-post-quantum-solutions",
+      "pub_date": "Wed, 14 Oct 2026 20:01:00 GMT",
+      "updated": "0001-01-01T05:00:00.000+00:00",
+      "event_datetime": "2026-10-14T20:01:00+00:00",
+      "feed_key": "1cc6cb5179e9555f",
       "source_mineru": "source_mineru.md",
       "note": "note.md",
-      "output_dir": "xhs_notes/ark/261013/0001-ARK_529-OpenAI-s-20-Billion-Reporting-Gap-Unsettles-The-AI-Trade-More_3cae4de2ef0ed3b1"
+      "output_dir": "xhs_notes/ark/261015/0001-ARK_Bitcoin-s-Post-Quantum-Solutions_1cc6cb5179e9555f"
     }
   ],
   "status": "ok"
