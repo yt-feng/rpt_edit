@@ -28,7 +28,7 @@ def pdf(path, count):
         doc.save(path)
 
 
-def result_zip(raw, *, label='part', profile='3.4.4', metadata=True, inline_table=False):
+def result_zip(raw, *, label='part', profile='3.4.4', metadata=True, inline_table=False, visual_count=1):
     with fitz.open(stream=raw, filetype='pdf') as doc:
         count = len(doc)
     html = '<table><tr><td><img src="'+'a'*64+'.jpg"/></td></tr></table>' if inline_table else ''
@@ -39,16 +39,25 @@ def result_zip(raw, *, label='part', profile='3.4.4', metadata=True, inline_tabl
     middle = {'_backend': 'hybrid', '_version_name': profile, '_ocr_enable': True, '_effort': 'medium',
               'pdf_info': [{'page_idx': i, 'page_size': [400, 500], 'para_blocks': [parent] if i == 0 else []}
                            for i in range(count)]}
+    content_rows, extra_images = [content], []
+    for index in range(1, visual_count):
+        pi = index * count // visual_count
+        name = f'images/dense-{index}.png'
+        item, block = visual(index, [35, 100, 185, 260], kind='chart', ref=name, page_idx=pi)
+        content_rows.append(item); middle['pdf_info'][pi]['para_blocks'].append(block)
+        extra_images.append(name)
     picture = io.BytesIO(); Image.new('RGB', (700, 500), (40, 100, 160)).save(picture, 'PNG')
     output = io.BytesIO()
     with zipfile.ZipFile(output, 'w', zipfile.ZIP_DEFLATED) as archive:
         archive.writestr('result/full.md', label+'\n![](images/same.png)\n<img src="images/same.png">\n')
         archive.writestr('result/images/same.png', picture.getvalue())
+        for name in extra_images:
+            archive.writestr('result/' + name, picture.getvalue())
         if inline_table:
             archive.writestr('result/images/'+'a'*64+'.jpg', picture.getvalue())
         archive.writestr('result/source.pdf', raw)
         if metadata:
-            archive.writestr('result/content_list.json', json.dumps([content]))
+            archive.writestr('result/content_list.json', json.dumps(content_rows))
             archive.writestr('result/middle.json', json.dumps(middle))
     return output.getvalue()
 
@@ -198,6 +207,25 @@ class SegmentTests(unittest.TestCase):
         value['segments'][1]['page_start'] = 200
         self.ledger.store.put(segments.plan_key(plan['original_binding']), value, version)
         with self.assertRaisesRegex(LedgerError, 'frozen segment span'): self.run_parts()
+        self.assertFalse(self.provider.posts)
+
+    def test_merge_preserves_1432_visuals_from_independent_complete_segments(self):
+        import mineru_figure_sources as figures
+        plan = segments.prepare_segments(self.ledger, self.original, 'original.pdf', self.directory)
+        payloads = [result_zip((self.directory / Path(part['binding']['source']).name).read_bytes(),
+                              visual_count=count)
+                    for part, count in zip(plan['segments'], (1330, 102))]
+        merged = segments.merge_segments(plan, payloads, self.original)
+        root = self.root / 'dense-merged'
+        safe_unzip(merged, root)
+        found = figures._metadata_files(root)
+        metadata = figures._normalise(found[0][1], found[1][1])
+        self.assertEqual(len(metadata['records']), 1432)
+        self.assertEqual(len(metadata['pages']), 202)
+        self.assertEqual(metadata['records'][1330]['page_idx'], 200)
+        self.assertEqual(len({row['ref'] for row in metadata['records']}), 1432)
+        self.assertEqual(figures._check_excerpt(metadata), metadata)
+        self.assertEqual(sum(row['selected'] for row in figures._decisions(metadata, 8)), 8)
         self.assertFalse(self.provider.posts)
 
     def test_merge_resource_names_and_global_metadata_then_real_original_figure_proof(self):

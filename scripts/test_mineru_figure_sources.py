@@ -123,6 +123,57 @@ class Fixture:
 
 
 class FigureSourceTests(unittest.TestCase):
+    def test_dense_200_page_metadata_keeps_complete_inventory_with_only_eight_crops(self):
+        # Observed production shape: 1,330 uniquely bound visuals in the first
+        # 200-page segment, even though the article selects at most eight.
+        visuals = [visual(index, [35, 100, 185, 260], kind="chart",
+                          page_idx=index * 200 // 1330) for index in range(1330)]
+        fixture = self.fixture(visuals=visuals, pages=200)
+        fixture.create(maximum=8); fixture.status()
+        proof = fixture.proof()
+        self.assertEqual(len(proof["metadata"]["records"]), 1330)
+        self.assertEqual(len(proof["metadata"]["pages"]), 200)
+        self.assertEqual(len(proof["assets"]), 8)
+        self.assertEqual(sum(row["selected"] for row in proof["decisions"]), 8)
+        self.assertEqual(len(proof["pages"]), 2)
+        import shutil
+        shutil.rmtree(fixture.raw)
+        self.assertEqual(len(fixture.validate()), 8)
+        self.assertEqual(figures._check_excerpt(proof["metadata"]), proof["metadata"])
+        # A forged unselected record remains invalid even with new sidecar and
+        # status hashes; consumer replay checks all 1,330 source occurrences.
+        fixture.mutate(lambda value: value["metadata"]["records"][-1].update(
+            ref=value["metadata"]["records"][0]["ref"]))
+        fixture.status()
+        with self.assertRaises(figures.FigureSourceError) as caught:
+            fixture.validate()
+        self.assertEqual(caught.exception.diagnostic["stage"], "duplicate_reference")
+
+    def test_dense_metadata_still_rejects_unmatched_or_duplicate_records_after_image_limit(self):
+        visuals = [visual(index, [35, 100, 185, 260], kind="chart",
+                          page_idx=index // 7) for index in range(1002)]
+        content = [row for row, _ in visuals]
+        middle = {"_backend": "hybrid", "_version_name": "3.4.4", "_ocr_enable": True,
+                  "_effort": "medium", "pdf_info": [
+                      {"page_idx": pi, "page_size": [400, 500],
+                       "para_blocks": [parent for row, parent in visuals if row["page_idx"] == pi]}
+                      for pi in range(144)]}
+        self.assertEqual(len(figures._normalise(content, middle)["records"]), 1002)
+        for rows, stage in ((content[:-1], "visual_coverage"),
+                            (content + [copy.deepcopy(content[-1])], "duplicate_parent")):
+            with self.assertRaises(figures.FigureSourceError) as caught:
+                figures._normalise(rows, middle)
+            self.assertEqual(caught.exception.diagnostic["stage"], stage)
+
+    def test_selected_image_budget_is_independent_of_metadata_budget(self):
+        fixture = self.fixture()
+        with self.assertRaises(figures.FigureSourceError):
+            fixture.create(maximum=figures.MAX_VISUALS + 1)
+        self.assertFalse((fixture.report / figures.SIDECAR).exists())
+        with self.assertRaises(figures.FigureSourceError):
+            figures._normalise([{"type": "unused", "page_idx": 0}] * (figures.MAX_ITEMS + 1),
+                               fixture.middle)
+
     def test_fractional_page_dimensions_create_status_and_replay_with_exact_mupdf_raster(self):
         for actual, provider, expected in (((595.2, 500), (595, 500), [2480, 2084]),
                                           ((400.08001, 500.16), (400, 500), [1667, 2084])):

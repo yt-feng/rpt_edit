@@ -25,6 +25,10 @@ SIDECAR = "source_figure_map.json"
 MAX_JSON = 32 * 1024 * 1024
 MAX_ITEMS = 20000
 MAX_PAGES = 1000
+# The complete metadata inventory can contain many more visuals than an
+# article selects. Keep it within the existing content-list bound, independently
+# of the unchanged selected-image/render budget below.
+MAX_METADATA_VISUALS = MAX_ITEMS
 MAX_VISUALS = 1000
 MAX_IMAGE_BYTES = 64 * 1024 * 1024
 MAX_PIXELS = 80_000_000
@@ -278,7 +282,7 @@ def _normalise(content, middle):
     pdf_info = middle.get("pdf_info")
     if not isinstance(pdf_info, list) or not 1 <= len(pdf_info) <= MAX_PAGES:
         _fail()
-    pages, parents = [], []
+    pages, parents, parents_by_reference = [], [], {}
     for ordinal, page in enumerate(pdf_info):
         if not isinstance(page, dict) or _int(page.get("page_idx"), 0, MAX_PAGES - 1) != ordinal:
             _fail()
@@ -329,10 +333,13 @@ def _normalise(content, middle):
                 _fail()
             if refs and refs[0]["bbox"] != body:
                 _fail()
-            parents.append({"page_idx": ordinal, "block_index": bi, "kind": kind,
-                            "body_bbox": body, "refs": refs, "captions": captions, "footnotes": notes})
+            parent = {"page_idx": ordinal, "block_index": bi, "kind": kind,
+                      "body_bbox": body, "refs": refs, "captions": captions, "footnotes": notes}
+            parents.append(parent)
+            key = (ordinal, kind, refs[0]["ref"] if refs else "")
+            parents_by_reference.setdefault(key, []).append(parent)
         pages.append({"page_idx": ordinal, "provider_size": size, "text_blocks": text_blocks})
-    records, used = [], set()
+    records, used, used_references = [], set(), set()
     for index, item in enumerate(content):
         if not isinstance(item, dict) or not isinstance(item.get("type"), str):
             _fail()
@@ -348,9 +355,8 @@ def _normalise(content, middle):
         box = _bbox(item.get("bbox"), 1000, 1000)
         w, h = pages[pi]["provider_size"]
         points = [box[0] * w / 1000, box[1] * h / 1000, box[2] * w / 1000, box[3] * h / 1000]
-        matches = [p for p in parents if p["page_idx"] == pi and p["kind"] == kind
-                   and (p["refs"] and p["refs"][0]["ref"] == ref or not p["refs"] and not ref)
-                   and max(abs(a - b) for a, b in zip(p["body_bbox"], points)) <= 2]
+        matches = [p for p in parents_by_reference.get((pi, kind, ref), [])
+                   if max(abs(a - b) for a, b in zip(p["body_bbox"], points)) <= 2]
         if len(matches) != 1:
             _fail("figure_metadata_ambiguous", stage="parent_match",
                   content_index=index, page_index=pi, match_count=len(matches))
@@ -359,10 +365,12 @@ def _normalise(content, middle):
         if identity in used:
             _fail("figure_metadata_ambiguous", stage="duplicate_parent",
                   content_index=index, page_index=pi)
-        if ref and any(r["ref"] == ref for r in records):
+        if ref and ref in used_references:
             _fail("figure_metadata_ambiguous", stage="duplicate_reference",
                   content_index=index, page_index=pi)
         used.add(identity)
+        if ref:
+            used_references.add(ref)
         captions = item.get(kind + "_caption", [])
         notes = item.get(kind + "_footnote", [])
         if any(not isinstance(v, list) or len(v) > 1000 for v in (captions, notes)):
@@ -378,7 +386,7 @@ def _normalise(content, middle):
                         "body_text": body_text, "content_captions": captions, "content_footnotes": notes,
                         "captions": parent["captions"], "footnotes": parent["footnotes"],
                         "block_index": parent["block_index"]})
-    if len(records) > MAX_VISUALS:
+    if len(records) > MAX_METADATA_VISUALS:
         _fail("figure_metadata_ambiguous", stage="visual_budget", record_count=len(records))
     unmatched = {(p["page_idx"], p["block_index"]) for p in parents} - used
     if unmatched:
@@ -430,7 +438,7 @@ def _check_excerpt(value):
         for index, block in blocks:
             ordered[_int(index, 0, MAX_ITEMS - 1)] = block
         middle["pdf_info"].append({"page_idx": page["page_idx"], "page_size": page["provider_size"], "para_blocks": ordered})
-    if len(records) > MAX_VISUALS:
+    if len(records) > MAX_METADATA_VISUALS:
         _fail()
     last = max((r["index"] for r in records), default=-1)
     _int(last + 1, 0, MAX_ITEMS)
