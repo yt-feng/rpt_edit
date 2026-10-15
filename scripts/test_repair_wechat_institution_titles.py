@@ -60,9 +60,12 @@ class BoundedTitleRepairTests(unittest.TestCase):
         articles, records = [], {}
         for index, pin in enumerate(self.pins['articles']):
             article = {'title': pin['old_title'], 'author': 'KC桌面', 'digest': '完整摘要',
-                       'content': f'<p>原文正文{index}。</p><img src="https://example.com/{index}.png" alt="chart">',
+                       'content': f'<p>原文正文{index}。</p>' + ''.join(f'<img src="https://example.com/{index}-{j}.png" alt="chart">' for j in range(4)),
                        'thumb_media_id': f'cover-{index}', 'need_open_comment': 0, 'only_fans_can_comment': 0,
                        'article_type': 'news', 'pic_crop_1_1': '0_0_1_1', 'pic_crop_235_1': '0_0_1_1'}
+            for prefix, text in [('producer', article['content']), ('live', article['content']), ('post_update', article['content'].replace('alt="chart">', 'alt="chart"  />'))]:
+                pin[prefix + '_html_sha256'] = hashlib.sha256(text.encode()).hexdigest()
+                pin[prefix + '_html_bytes'] = len(text.encode())
             articles.append(article)
             stored_content = sanitize_blog_html(article['content'])
             fingerprint = blog_article_fingerprint(article['title'], stored_content)
@@ -81,7 +84,9 @@ class BoundedTitleRepairTests(unittest.TestCase):
         for index, article in enumerate(self.actual):
             for field in repair.UPLOAD_ONLY:
                 article.pop(field)
-            article['url'] = 'http://mp.weixin.qq.com/s?__biz=account&tempkey=' + 'a' * 232 + '&chksm=checksum' + str(index) + '#rd'
+            article['url'] = 'http://mp.weixin.qq.com/s?__biz=account&tempkey=' + 'a' * 232 + '&chksm=' + str(index) * 76 + '#rd'
+            article['thumb_url'] = f'http://mmbiz.qpic.cn/mmbiz_jpg/coverimageidentity{index}/1080?wx_fmt=jpeg'
+            article['cover_info'] = repair.original_cover(articles[index])
         self.data = {'news_item': self.actual}
         self.progress = {'attempted_indices': [], 'verified_indices': [], 'updates': []}
         self.contract = patch.object(repair, 'summarize_draft_get_response', return_value={'ok': True})
@@ -107,11 +112,14 @@ class BoundedTitleRepairTests(unittest.TestCase):
             index = payload['index']
             wanted = {key: state['news_item'][index][key] for key in repair.WRITABLE if key in state['news_item'][index]}
             wanted['title'] = self.pins['articles'][index]['selected_title']
+            wanted['content'] = repair.update_content(wanted['content'], self.pins['articles'][index])
+            wanted.update({key: self.source['articles'][index][key] for key in repair.UPLOAD_ONLY})
             self.assertEqual(payload['articles'], wanted)
-            self.assertFalse(set(payload['articles']) & repair.UPLOAD_ONLY)
             posts.append(index)
             if apply_post:
                 state['news_item'][index]['title'] = wanted['title']
+                state['news_item'][index]['content'] = wanted['content'].replace('alt="chart">', 'alt="chart"  />')
+                state['news_item'][index]['cover_info'] = repair.original_cover(self.source['articles'][index])
             if mutate:
                 mutate(state)
             if unknown:
@@ -127,13 +135,13 @@ class BoundedTitleRepairTests(unittest.TestCase):
         self.assertEqual(posts, [0, 1, 2])
         self.assertEqual(self.progress['verified_indices'], [0, 1, 2])
         for old, new, pin in zip(self.actual, result['news_item'], self.pins['articles']):
-            self.assertEqual(new, dict(old, title=pin['selected_title']))
-        self.assertEqual(self.progress['live_before'], self.progress['live_after'])
+            self.assertEqual(new, dict(old, title=pin['selected_title'], content=old['content'].replace('alt="chart">', 'alt="chart"  />')))
+        self.assertEqual(self.progress['other_returned_fields_before_sha256'], self.progress['other_returned_fields_after_sha256'])
 
     def bind_reviewed_live_html(self):
         for actual, expected, pin in zip(self.data['news_item'], self.source['articles'], self.pins['articles']):
             actual['content'] = expected['content'].replace('src=', 'data-src=')
-            for prefix, text in [('producer', expected['content']), ('live', actual['content'])]:
+            for prefix, text in [('producer', expected['content']), ('live', actual['content']), ('post_update', actual['content'].replace('alt="chart">', 'alt="chart"  />'))]:
                 pin[prefix + '_html_sha256'] = hashlib.sha256(text.encode()).hexdigest()
                 pin[prefix + '_html_bytes'] = len(text.encode())
 
@@ -143,9 +151,9 @@ class BoundedTitleRepairTests(unittest.TestCase):
         final, posts = self.run_repair()
         self.assertEqual(posts, [0, 1, 2])
         for previous, actual, pin in zip(before, final['news_item'], self.pins['articles']):
-            self.assertEqual(actual, dict(previous, title=pin['selected_title']))
-        self.assertEqual(self.progress['live_before'], self.progress['live_after'])
-        self.assertEqual(self.progress['live_after']['html_sha256'], [pin['live_html_sha256'] for pin in self.pins['articles']])
+            self.assertEqual(actual, dict(previous, title=pin['selected_title'], content=previous['content'].replace('alt="chart">', 'alt="chart"  />')))
+        self.assertEqual(self.progress['other_returned_fields_before_sha256'], self.progress['other_returned_fields_after_sha256'])
+        self.assertEqual(self.progress['live_after']['html_sha256'], [pin['post_update_html_sha256'] for pin in self.pins['articles']])
 
     def test_reviewed_html_requires_both_exact_producer_and_live_binding(self):
         self.bind_reviewed_live_html()
@@ -170,7 +178,7 @@ class BoundedTitleRepairTests(unittest.TestCase):
         changed = copy.deepcopy(self.actual)
         changed[0]['title'] = self.pins['articles'][0]['selected_title']
         self.assertEqual(before, repair.protected_live_facts(changed))
-        changed[0]['url'] = changed[0]['url'].replace('checksum0', 'checksum-changed')
+        changed[0]['url'] = changed[0]['url'].replace('&chksm=' + '0' * 76, '&chksm=' + 'f' * 76)
         self.assertNotEqual(before, repair.protected_live_facts(changed))
 
     def test_only_reviewed_tempkey_rotation_leaves_a_stable_plan_and_payload(self):
@@ -183,14 +191,14 @@ class BoundedTitleRepairTests(unittest.TestCase):
         self.assertEqual(repair.plan_for(first, self.source, changes), repair.plan_for(second, self.source, changes))
         final, posts = self.run_repair(rotate_tempkey=True)
         self.assertEqual(posts, [0, 1, 2])
-        self.assertEqual(self.progress['live_before'], self.progress['live_after'])
+        self.assertEqual(self.progress['other_returned_fields_before_sha256'], self.progress['other_returned_fields_after_sha256'])
         self.assertNotEqual(self.progress['observed_volatile_before'], self.progress['observed_volatile_after'])
         for before, after in zip(self.actual, final['news_item']):
-            self.assertEqual({k: v for k, v in before.items() if k in repair.WRITABLE and k != 'title'},
-                             {k: v for k, v in after.items() if k in repair.WRITABLE and k != 'title'})
+            self.assertEqual({k: v for k, v in before.items() if k in repair.WRITABLE and k not in {'title', 'content'}},
+                             {k: v for k, v in after.items() if k in repair.WRITABLE and k not in {'title', 'content'}})
 
     def test_preview_other_url_bytes_unknown_fields_and_types_remain_bound(self):
-        for field, value in [('url', self.actual[0]['url'].replace('checksum0', 'different')),
+        for field, value in [('url', self.actual[0]['url'].replace('&chksm=' + '0' * 76, '&chksm=' + 'f' * 76)),
                              ('thumb_url', 'changed'), ('cover_info', {'changed': True}),
                              ('unknown', True), ('need_open_comment', False)]:
             changed = copy.deepcopy(self.data)
@@ -216,6 +224,7 @@ class BoundedTitleRepairTests(unittest.TestCase):
             index = payload['index']; calls.append(index)
             if index == 0:
                 state['news_item'][0]['title'] = payload['articles']['title']
+                state['news_item'][0]['content'] = payload['articles']['content'].replace('alt="chart">', 'alt="chart"  />')
             raise TimeoutError('unconfirmed')
         with patch.object(repair, 'get_draft', side_effect=lambda *args: copy.deepcopy(state)), \
                 patch.object(repair, 'post_wechat_json', side_effect=post), patch.object(repair.time, 'sleep'):
@@ -246,6 +255,75 @@ class BoundedTitleRepairTests(unittest.TestCase):
         self.data['news_item'][0]['title'] = self.pins['articles'][0]['selected_title']
         _, posts = self.run_repair()
         self.assertEqual(posts, [1, 2])
+
+    def test_observed_partial_update_restores_original_crop_without_blind_title_retry(self):
+        current = self.data['news_item'][0]
+        current['title'] = self.pins['articles'][0]['selected_title']
+        current['content'] = current['content'].replace('alt="chart">', 'alt="chart"  />')
+        current['cover_info'] = {'crop_percent_list': [{'observed_wrong_crop': True}]}
+        self.pins['articles'][0]['interrupted_cover_sha256'] = repair.digest(current['cover_info'])
+        plan = repair.plan_for(self.data, self.source, repair.blog_changes(self.archive, self.source))
+        self.assertEqual([row['action'] for row in plan['articles']],
+                         ['restore_original_cover', 'restore_title', 'restore_title'])
+        final, posts = self.run_repair()
+        self.assertEqual(posts, [0, 1, 2])
+        self.assertEqual(self.progress['updates'][0]['action'], 'restore_original_cover')
+        for row, original in zip(final['news_item'], self.source['articles']):
+            self.assertEqual(row['cover_info'], repair.original_cover(original))
+        self.assertEqual(self.progress['updates'][0]['sent_content_sha256'],
+                         self.pins['articles'][0]['live_html_sha256'])
+
+    def test_interrupted_crop_exception_requires_exact_title_html_and_crop_identity(self):
+        self.data['news_item'][0]['cover_info'] = {'observed_wrong_crop': True}
+        self.pins['articles'][0]['interrupted_cover_sha256'] = repair.digest(self.data['news_item'][0]['cover_info'])
+        with self.assertRaisesRegex(repair.RepairError, 'live_cover_crop_changed'):
+            repair.validate_live(self.data, self.source)
+        self.data['news_item'][0]['title'] = self.pins['articles'][0]['selected_title']
+        with self.assertRaisesRegex(repair.RepairError, 'live_cover_crop_changed'):
+            repair.validate_live(self.data, self.source)
+        self.data['news_item'][0]['content'] = self.data['news_item'][0]['content'].replace('alt="chart">', 'alt="chart"  />')
+        repair.validate_live(self.data, self.source)
+        self.data['news_item'][0]['cover_info']['extra'] = False
+        with self.assertRaisesRegex(repair.RepairError, 'live_cover_crop_changed'):
+            repair.validate_live(self.data, self.source)
+
+    def test_post_signature_and_thumbnail_changes_are_allowed_only_on_exact_updated_index(self):
+        candidate = copy.deepcopy(self.data)
+        row = candidate['news_item'][0]
+        row['title'] = self.pins['articles'][0]['selected_title']
+        row['content'] = row['content'].replace('alt="chart">', 'alt="chart"  />')
+        row['url'] = row['url'].replace('&chksm=' + '0' * 76, '&chksm=' + 'f' * 76)
+        row['thumb_url'] = row['thumb_url'].replace('/1080?', '/0?')
+        self.assertTrue(repair.verified_update_response(candidate, self.actual, 0, self.source))
+        self.assertFalse(repair.unchanged_articles(candidate, self.actual))
+        for position, field, value in [(1, 'url', candidate['news_item'][1]['url'].replace('1' * 76, 'e' * 76)),
+                                       (0, 'unknown', True), (0, 'need_open_comment', False),
+                                       (0, 'thumb_url', row['thumb_url'].replace('mmbiz.qpic.cn', 'example.com')),
+                                       (0, 'content', row['content'].replace('原文', '改变')),
+                                       (0, 'cover_info', {'different': True})]:
+            changed = copy.deepcopy(candidate)
+            changed['news_item'][position][field] = value
+            with self.subTest(position=position, field=field):
+                self.assertFalse(repair.verified_update_response(changed, self.actual, 0, self.source))
+
+    def test_failure_preserves_safe_candidate_diagnostics_and_stops_after_one_post(self):
+        with self.assertRaisesRegex(repair.RepairError, 'live_group_changed_after_update'):
+            self.run_repair(mutate=lambda state: state['news_item'][0].update(cover_info={'wrong': True}))
+        self.assertEqual(self.progress['attempted_indices'], [0])
+        evidence = self.progress['stopped_candidate']
+        self.assertEqual((evidence['stage'], evidence['index']), ('after_update', 0))
+        self.assertIn('cover_info', evidence['fields']['articles'][0]['changed_fields'])
+        self.assertNotIn('test-only-draft', json.dumps(evidence))
+
+    def test_update_content_accepts_only_the_exact_inverse_of_four_known_img_endings(self):
+        pin = self.pins['articles'][0]
+        live = self.source['articles'][0]['content']
+        post = live.replace('alt="chart">', 'alt="chart"  />')
+        self.assertEqual(repair.update_content(post, pin), live)
+        for changed in [post.replace('  />', ' />', 1), post.replace('原文', '改变'),
+                        post.replace('alt="chart"', 'alt="edited"', 1)]:
+            with self.assertRaises(repair.RepairError):
+                repair.update_content(changed, pin)
 
     def test_completed_replay_is_read_only(self):
         for row, pin in zip(self.data['news_item'], self.pins['articles']):

@@ -13,7 +13,11 @@
     "diagnostic_head": "78ec4b9895b970d413eb69b91bf383a930d478f2",
     "prefix": "http://mp.weixin.qq.com/s?",
     "suffix": "#rd",
-    "query_names": ["__biz", "tempkey", "chksm"],
+    "query_names": [
+      "__biz",
+      "tempkey",
+      "chksm"
+    ],
     "volatile_parameter": "tempkey",
     "decoded_value_chars": 232
   },
@@ -33,7 +37,10 @@
       "producer_html_bytes": 7672,
       "live_html_sha256": "b4ccbf399ddf6478a4b400c19d1146277a21851650eb1d2238fd0ff21fb0b43d",
       "live_html_bytes": 7698,
-      "old_blog_fingerprint": "677fb2cbd720af62e6928b459b7b549802dcae00581d5e73a094a8c6871889cd"
+      "old_blog_fingerprint": "677fb2cbd720af62e6928b459b7b549802dcae00581d5e73a094a8c6871889cd",
+      "post_update_html_bytes": 7710,
+      "post_update_html_sha256": "2b6817eb0182e46081f0085e6192e442e57438e6cba5fcce1a907bfc0a4bf765",
+      "interrupted_cover_sha256": "0ad05adc5cb70ea459ce6fa14a0d0330393f4d4f9ed3005f9e25a7b32e5a286d"
     },
     {
       "report_dir": "portal_translated_reports/institutions/261015/02-0002-IMF_The-Bangkok-Blueprint-for-Fraud-Resilient-Financial-Services_d0dfd917",
@@ -45,7 +52,9 @@
       "producer_html_bytes": 6567,
       "live_html_sha256": "d38b07bb55ccc37ba563a53414e3f18e9a43c11d6b880319eabc8c3656dc047b",
       "live_html_bytes": 6593,
-      "old_blog_fingerprint": "2a088b2930d833d0be650a0d82d0b4880565a27d7a98727508373f10a5e41b26"
+      "old_blog_fingerprint": "2a088b2930d833d0be650a0d82d0b4880565a27d7a98727508373f10a5e41b26",
+      "post_update_html_bytes": 6605,
+      "post_update_html_sha256": "26088fe572d7688d527b3bb4c6347240d934fd8bac04f9e30438d2531e57503a"
     },
     {
       "report_dir": "portal_translated_reports/institutions/261015/03-0003-IMF_The-Managing-Director-s-Global-Policy-Agenda-Annual-Meetings_78a92160",
@@ -57,7 +66,22 @@
       "producer_html_bytes": 7264,
       "live_html_sha256": "78c73ecc4edc14544af38dcf7d3c29075f2795b4f2bbcafec68bd9c45e968cba",
       "live_html_bytes": 7290,
-      "old_blog_fingerprint": "dd67de7fb361b712bbcbc3446bbb85a11faa8cc3c7c45898513fd21dfd64dd24"
+      "old_blog_fingerprint": "dd67de7fb361b712bbcbc3446bbb85a11faa8cc3c7c45898513fd21dfd64dd24",
+      "post_update_html_bytes": 7302,
+      "post_update_html_sha256": "c925e63d85d3554c59f46871c5e430dd151a329cde545e62aad7e1bb648e949f"
     }
-  ]
+  ],
+  "reviewed_update_response": {
+    "diagnostic_run_id": 38709576359,
+    "attempted_run_id": 38709290510,
+    "diagnostic_head": "6b28459e260e366277d0aa7c0464f15132c6c398",
+    "original_cover_sha256": "1a4bd1fae0c14cf031857ead5a3e3b3fa948c4de105c4be895058bedf26092c6",
+    "scope": "only_the_current_single_update_target",
+    "post_html_transform": "each_of_four_img_start_tags_ends_with_two_spaces_slash_close",
+    "preview_checksum_chars": 76,
+    "thumbnail_hosts": [
+      "mmbiz.qpic.cn",
+      "mmbiz.qlogo.cn"
+    ]
+  }
 }
