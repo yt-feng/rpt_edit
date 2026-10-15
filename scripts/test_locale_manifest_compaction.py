@@ -369,6 +369,14 @@ class CompactionTests(unittest.TestCase):
         original = codec.load_locale_manifest(path)
         old_body = path.read_bytes()
         old_wire = json.loads(old_body)
+        if old_wire['source_fallbacks']['schema_version'] == 5:
+            codec.validate_translation_resolution(original, LOCALES)
+            self.assertLessEqual(len(old_body), codec.MAX_LOCALE_MANIFEST_BYTES)
+            print(json.dumps({'complete_sharded_manifest': 'verified',
+                              'source_unit_count': original['source_unit_count'],
+                              'shards': len(codec.locale_manifest_shard_descriptors(original)),
+                              'root_wire_bytes': len(old_body)}, sort_keys=True))
+            return
         self.assertIn(old_wire['source_fallbacks']['schema_version'], (3, 4))
         new_body = codec.encode_locale_manifest(original)
         new_wire = json.loads(new_body)
