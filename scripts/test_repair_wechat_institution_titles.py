@@ -15,6 +15,7 @@ from build_portal_suite_site import (
     render_blog_legacy_redirect, sanitize_blog_html, validate_blog_archive_record,
 )
 from push_portal_translated_to_wechat_drafts import draft_group_key, translated_article_title_metadata
+from wechat_html_diagnostics import article_content_diagnostics, compare_html, MAX_EVENTS
 
 
 class CompleteGeneratedTitleTests(unittest.TestCase):
@@ -231,6 +232,51 @@ class BoundedTitleRepairTests(unittest.TestCase):
         self.data['news_item'][1]['is_deleted'] = 1
         with self.assertRaisesRegex(repair.RepairError, 'live_article_deleted'):
             repair.validate_live(self.data, self.source)
+
+    def test_diagnostic_never_authorizes_changed_html_or_posts(self):
+        self.data['news_item'][0]['content'] = self.data['news_item'][0]['content'].replace('<p>', '<p class="server-added">')
+        report = article_content_diagnostics(self.data, self.source)
+        self.assertTrue(report['diagnostic_only'])
+        self.assertFalse(report['acceptance_policy_changed'])
+        self.assertFalse(report['articles'][0]['content']['raw_equal'])
+        with patch.object(repair, 'post_wechat_json') as post:
+            with self.assertRaisesRegex(repair.RepairError, 'live_payload_changed_content'):
+                repair.validate_live(self.data, self.source)
+            post.assert_not_called()
+
+
+class HtmlDiagnosticTests(unittest.TestCase):
+    def test_entity_and_attribute_order_difference_is_evidence_only(self):
+        report = compare_html('<p id="x" class="a">A&amp;B</p>', "<p class='a' id='x'>A&#38;B</p>")
+        self.assertFalse(report['raw_equal'])
+        self.assertFalse(report['parsed_events_equal'])
+        self.assertTrue(report['attribute_order_normalized_events_equal'])
+        self.assertTrue(report['all_text_events_equal'])
+        self.assertTrue(report['tag_sequence_equal'])
+        self.assertFalse(report['acceptance_policy_changed'])
+
+    def test_body_urls_and_attribute_values_are_hashes_only(self):
+        report = compare_html('<p style="color:red">UNIQUE-PRIVATE-BODY</p><img src="https://private.example/old-secret">',
+                              '<p style="color:blue">EDITED-PRIVATE-BODY</p><img src="https://private.example/new-secret">')
+        serialized = json.dumps(report)
+        for private in ['UNIQUE-PRIVATE-BODY', 'EDITED-PRIVATE-BODY', 'private.example', 'old-secret', 'new-secret', 'red', 'blue']:
+            self.assertNotIn(private, serialized)
+        self.assertFalse(report['concatenated_text_equal'])
+        self.assertEqual(report['actual']['tag_counts'], {'img': 1, 'p': 1})
+        self.assertGreater(report['difference_count'], 0)
+
+    def test_duplicate_attributes_and_comments_are_not_discarded(self):
+        report = compare_html('<p class="x" class="y">T</p><!--first-->', '<p class="x">T</p><!--second-->')
+        self.assertEqual(report['expected']['duplicate_attribute_count'], 1)
+        self.assertFalse(report['attribute_order_normalized_events_equal'])
+        self.assertTrue(report['all_text_events_equal'])
+        self.assertGreater(report['difference_count'], 0)
+
+    def test_event_and_byte_bounds_reject_without_exposing_content(self):
+        with self.assertRaisesRegex(ValueError, 'html_event_bound'):
+            compare_html('<p></p>' * MAX_EVENTS, '')
+        with self.assertRaisesRegex(ValueError, 'html_byte_bound_or_type'):
+            compare_html('x' * (1024 * 1024 + 1), '')
 
 
 class WorkflowContractTests(unittest.TestCase):
