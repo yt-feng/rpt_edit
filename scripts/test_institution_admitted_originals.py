@@ -30,7 +30,7 @@ class ReadOnlyRegistry(MemoryR2):
         super().__init__(); self.lists = []
     def list_objects_v2(self, **kwargs):
         self.lists.append(kwargs)
-        return dict(IsTruncated=False, Contents=[dict(Key=key, Size=len(row['Body']))
+        return dict(IsTruncated=False, Contents=[dict(Key=key, Size=len(row['Body']), ETag=digest(row['Body']))
                     for key, row in sorted(self.objects.items()) if key.startswith(kwargs['Prefix'])])
     def put_object(self, **kwargs):
         raise AssertionError('Recovery cannot write storage')
@@ -158,7 +158,7 @@ class AdmittedTests(unittest.TestCase):
         self.assertEqual(adapter.audit['list_requests'], 1)
 
     def test_listing_requires_complete_unique_bounded_inventory(self):
-        entry = dict(Key=self.key, Size=len(encoded(self.value)))
+        entry = dict(Key=self.key, Size=len(encoded(self.value)), ETag=digest(encoded(self.value)))
         cases = [dict(IsTruncated=True, Contents=[entry]),
                  dict(IsTruncated=False, Contents=[entry, entry]),
                  dict(IsTruncated=False, Contents=[dict(entry, Key=a.PREFIX+'unexpected.json')]),
@@ -170,11 +170,24 @@ class AdmittedTests(unittest.TestCase):
         with patch.object(a, 'MAX_REGISTRY_BYTES', 1), self.assertRaisesRegex(a.AdmittedOriginalError, 'registry_bound'):
             self.restore()
 
+    def test_raw_metadata_bytes_are_bounded_before_get_and_listing_change_is_rejected(self):
+        raw = encoded(self.value) + b' ' * 5000
+        save(self.store, self.key, raw)
+        with patch.object(a, 'MAX_REGISTRY_BYTES', len(encoded(self.value)) + 1000):
+            with self.assertRaisesRegex(a.AdmittedOriginalError, 'registry_bound'):
+                self.restore()
+        self.assertEqual(self.store.gets, [])
+        snapshot = self.store.list_objects_v2(Prefix=a.PREFIX)
+        save(self.store, self.key, encoded(self.value))
+        with patch.object(self.store, 'list_objects_v2', return_value=snapshot):
+            with self.assertRaisesRegex(a.AdmittedOriginalError, 'registry_changed'):
+                self.restore()
+
     def test_conflict_on_later_listing_page_cannot_be_missed(self):
         _, second, _, second_key = fixture(self.store, 2)
         first = dict(IsTruncated=True, NextContinuationToken='page2',
-                     Contents=[dict(Key=self.key, Size=len(encoded(self.value)))])
-        last = dict(IsTruncated=False, Contents=[dict(Key=second_key, Size=len(encoded(second)))])
+                     Contents=[dict(Key=self.key, Size=len(encoded(self.value)), ETag=digest(encoded(self.value)))])
+        last = dict(IsTruncated=False, Contents=[dict(Key=second_key, Size=len(encoded(second)), ETag=digest(encoded(second)))])
         with patch.object(self.store, 'list_objects_v2', side_effect=[first, last]) as listing:
             with self.assertRaisesRegex(a.AdmittedOriginalError, 'ambiguous_binding'): self.restore()
             self.assertEqual(listing.call_count, 2)

@@ -114,7 +114,7 @@ class AdmittedOriginals:
         except Exception:
             raise AdmittedOriginalError('admitted_original_registry_unavailable') from None
         client, bucket = self.cache.client, self.cache.bucket
-        keys, tokens, token = [], set(), None
+        keys, tokens, token, listed_bytes = {}, set(), None, 0
         for _ in range(2):
             require(self.clock() < deadline, 'admitted_original_registry_deadline')
             kwargs = dict(Bucket=bucket, Prefix=PREFIX, MaxKeys=1000)
@@ -132,9 +132,13 @@ class AdmittedOriginals:
                 key = entry.get('Key') if isinstance(entry, dict) else None
                 require(isinstance(key, str) and re.fullmatch(re.escape(PREFIX) + '[a-f0-9]{64}\\.json', key)
                         and type(entry.get('Size')) is int and 0 < entry['Size'] <= MAX_OBJECT
+                        and isinstance(entry.get('ETag'), str) and 0 < len(entry['ETag']) <= 128
                         and key not in keys, 'admitted_original_registry_key')
-                keys.append(key)
+                keys[key] = entry
+                listed_bytes += entry['Size']
+                self.audit['registry_bytes'] = listed_bytes
                 self.audit['registry_records'] = len(keys)
+                require(listed_bytes <= MAX_REGISTRY_BYTES, 'admitted_original_registry_bound')
             require(len(keys) <= MAX_RECORDS, 'admitted_original_registry_bound')
             if not response['IsTruncated']:
                 break
@@ -144,20 +148,18 @@ class AdmittedOriginals:
             tokens.add(token)
         else:
             raise AdmittedOriginalError('admitted_original_registry_bound')
-        backlog, records, total = Backlog(client, bucket), {}, 0
+        backlog, records = Backlog(client, bucket), {}
         for key in sorted(keys):
             require(self.clock() < deadline, 'admitted_original_registry_deadline')
             try:
                 self.audit['metadata_reads'] += 1
-                value, _ = backlog._read(key.removeprefix('_workflow-cache/institution-dependencies/v1/'))
+                value, version = backlog._read(key.removeprefix('_workflow-cache/institution-dependencies/v1/'))
                 require(isinstance(value, dict), 'admitted_original_registry_disappeared')
+                require(version == keys[key]['ETag'], 'admitted_original_registry_changed')
                 binding = value.get('binding')
                 validate_binding(binding)
                 require(key == PREFIX + binding['id'] + '.json', 'admitted_original_registry_binding')
                 backlog.validate_versions(value, binding)
-                total += len(encoded(value))
-                self.audit['registry_bytes'] = total
-                require(total <= MAX_REGISTRY_BYTES, 'admitted_original_registry_bound')
             except AdmittedOriginalError:
                 raise
             except Exception:
