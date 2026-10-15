@@ -81,7 +81,8 @@ class ProbeTests(unittest.TestCase):
                 patch.object(p, 'cached_payload', side_effect=[b'first', b'second']) as cached, \
                 patch.object(p, 'merge_segments', return_value=b'merged-result') as merged, \
                 patch.object(p, 'inspect_payload', return_value={'status': 'valid'}), \
-                patch.object(p, 'verify_production_figures', side_effect=verify) as verifier:
+                patch.object(p, 'verify_production_figures', side_effect=verify) as verifier, \
+                patch.object(p, 'compare_cached_pdf', return_value={'pages': []}):
             originals.return_value.get.return_value = original
             result = p.inspect_source(ledger, Mock(), 'private', binding)
         self.assertEqual(cached.call_count, 2)
@@ -155,6 +156,42 @@ class ProbeTests(unittest.TestCase):
         self.assertEqual(boundaries['provider_segment_to_merged_provider']['pixels']['diff_pixel_count'], 0)
         self.assertFalse(result['production_acceptance'])
         self.assertNotIn('PRIVATE', str(result))
+
+    def test_embedded_pdf_reads_real_zip_into_private_child_directory(self):
+        import io, json, zipfile
+        payload = io.BytesIO()
+        with zipfile.ZipFile(payload, 'w') as archive:
+            archive.writestr('full.md', 'fixture')
+            archive.writestr('content_list.json', '[]')
+            archive.writestr('middle.json', json.dumps({'pdf_info': []}))
+            archive.writestr('source.pdf', b'%PDF-fixture')
+        self.assertEqual(p.embedded_pdf(payload.getvalue()), b'%PDF-fixture')
+
+    def test_cache_miss_download_is_exact_done_lineage_read_only_and_counted(self):
+        binding = p.binding_for(p.selection()['sources'][0])
+        ledger, cache, download = Mock(), Mock(), Mock(return_value=b'result')
+        lineage = {'batch_id': 'job', 'batch_key': 'batches/'+'a'*32,
+            'parent_batch_key': 'batches/'+'a'*32, 'data_id': binding['id'], 'child_ordinal': 0}
+        ledger.store.get.return_value = ({'binding': binding, 'batch_key': lineage['batch_key']}, None)
+        root = {'files': [binding], 'key': lineage['batch_key'], 'batch_id': 'job'}
+        ledger._read_batch.return_value = root, None
+        cache.get.return_value = None
+        row = {'state': 'done', '_recovery_lineage': lineage, 'full_zip_url': 'https://PRIVATE.invalid/result'}
+        downloads = []
+        with patch.object(p, 'read_completed_batch', return_value=(
+                {binding['id']: row}, {'all_succeeded': True})), patch.object(p, 'validate_zip') as validate:
+            self.assertEqual(p.cached_payload(ledger, cache, binding, download=download, downloads=downloads), b'result')
+        download.assert_called_once_with(row['full_zip_url'])
+        validate.assert_called_once_with(b'result')
+        self.assertEqual(downloads[0]['status'], 'validated')
+        self.assertEqual(downloads[0]['source_binding_sha256'], binding['id'])
+        self.assertNotIn('PRIVATE', str(downloads))
+        cache.put.assert_not_called(); ledger.store.put.assert_not_called(); ledger.provider.submit.assert_not_called()
+        download.reset_mock(); cache.get.side_effect = ValueError('invalid cache receipt')
+        with patch.object(p, 'read_completed_batch', return_value=(
+                {binding['id']: row}, {'all_succeeded': True})), self.assertRaisesRegex(ValueError, 'invalid cache'):
+            p.cached_payload(ledger, cache, binding, download=download, downloads=[])
+        download.assert_not_called()
 
 
 if __name__ == '__main__': unittest.main()

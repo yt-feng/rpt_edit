@@ -9,11 +9,13 @@ from pathlib import Path
 import tempfile
 
 from mineru_task_ledger import digest, encoded, exact_json
-from mineru_completed_child_reuse import read_completed_batch
+from mineru_completed_child_reuse import read_completed_batch, result_lineage
 from mineru_page_segments import read_segment_plan, merge_segments, SegmentArchive
 from institution_dependency_backlog import cli_ledger
 from institution_original_cache import OriginalCache, validate_binding, OPTIONS
-from mineru_result_cache import ResultCache
+from mineru_result_cache import ResultCache, identity, validate_zip
+from mineru_task_ledger import DONE
+from consume_legacy_mineru import download_once
 from probe_mineru_figure_binding import ReadOnlyR2Client, ReadOnlyStore, ReadOnlyProvider, require, ProbeError
 from probe_mineru_figure_binding import compare_cached_pdf, _difference
 from probe_adb_figure_metadata import inspect_payload, structural_failure
@@ -40,15 +42,27 @@ def binding_for(row):
     return value
 
 
-def cached_payload(ledger, cache, binding):
+def cached_payload(ledger, cache, binding, *, download=None, budget=lambda: None, downloads=None):
     claim, _ = ledger.store.get('sources/' + binding['id'])
     require(isinstance(claim, dict) and exact_json(claim.get('binding'), binding), 'source_claim_missing')
     root, _ = ledger._read_batch(claim['batch_key'])
     require(any(exact_json(item, binding) for item in root['files']), 'source_root_mismatch')
     rows, counts = read_completed_batch(ledger, root)
     require(counts['all_succeeded'], 'source_root_incomplete')
-    payload = cache.get(binding, rows[binding['id']]['_recovery_lineage'])
-    require(payload is not None, 'source_result_cache_missing')
+    row = rows[binding['id']]
+    payload = cache.get(binding, row['_recovery_lineage'])
+    if payload is None:
+        require(download is not None, 'source_result_cache_missing')
+        require(str(row.get('state', '')).lower() in DONE, 'source_result_incomplete')
+        lineage = result_lineage(ledger, binding, root, row)
+        audit = {'source_binding_sha256': binding['id'], 'cache_identity_sha256': identity(binding, lineage),
+                 'status': 'attempted'}
+        budget()
+        if downloads is not None:
+            downloads.append(audit)
+        payload = download(row.get('full_zip_url'))
+        budget(); validate_zip(payload); budget()
+        audit.update(status='validated', bytes=len(payload), result_zip_sha256=digest(payload))
     return payload
 
 
@@ -56,7 +70,7 @@ def embedded_pdf(payload):
     import mineru_figure_sources as figures
     from consume_legacy_mineru import safe_unzip
     with tempfile.TemporaryDirectory(prefix='institution-embedded-diagnostic-') as directory:
-        root = Path(directory); safe_unzip(payload, root)
+        root = Path(directory) / 'raw'; safe_unzip(payload, root)
         found = figures._metadata_files(root)
         require(found is not None, 'provider_metadata_missing')
         pdfs = [path for path in found[2] if path.is_file() and path.suffix.lower() == '.pdf']
@@ -104,7 +118,7 @@ def segment_pixel_diagnostics(original, merged, plan, payloads, binding, archive
     return result
 
 
-def inspect_source(ledger, client, bucket, binding):
+def inspect_source(ledger, client, bucket, binding, *, download=None, downloads=None):
     import mineru_figure_sources as figures
     deadline = ledger.clock() + 480
     def budget():
@@ -116,11 +130,12 @@ def inspect_source(ledger, client, bucket, binding):
     result = {'source_binding_sha256': binding['id'], 'original_pdf_sha256': digest(original),
               'segmented': plan is not None}
     if plan is None:
-        payload = cached_payload(ledger, cache, binding)
+        payload = cached_payload(ledger, cache, binding, download=download, budget=budget, downloads=downloads)
     else:
         payloads, reports = [], []
         for segment in plan['segments']:
-            payload = cached_payload(ledger, cache, segment['binding'])
+            payload = cached_payload(ledger, cache, segment['binding'], download=download,
+                                     budget=budget, downloads=downloads)
             payloads.append(payload)
             reports.append({'page_start': segment['page_start'], 'page_end': segment['page_end'],
                 'result_zip_sha256': digest(payload), 'metadata': inspect_payload(payload)})
@@ -143,8 +158,8 @@ def inspect_source(ledger, client, bucket, binding):
             path = Path(directory) / 'original.pdf'; path.write_bytes(original)
             result['production_figure_consumer'] = verify_production_figures(
                 path, payload, binding['sha256'], budget)
-            if result['production_figure_consumer']['status'] == 'rejected':
-                # Acceptance remains rejected. Diagnostics use the same eight
+            if result['production_figure_consumer']['status'] == 'rejected' or plan is not None:
+                # Diagnostics never change acceptance and use the same eight
                 # production decisions, never the generic probe's 100 images.
                 try:
                     comparison = compare_cached_pdf(path, payload, original_sha256=binding['sha256'],
@@ -152,6 +167,17 @@ def inspect_source(ledger, client, bucket, binding):
                     result['pixel_diagnostic'] = comparison
                     failed = next((page for page in comparison.get('pages', [])
                                    if page.get('default_rgb_equal') is False), None)
+                    if plan is not None and failed is None:
+                        import fitz
+                        with fitz.open(stream=original, filetype='pdf') as document:
+                            # The pinned source's prior exact cloud diagnostic
+                            # failed at page 1; page 0 already matched. It remains
+                            # eligible only if among the actual eight decisions.
+                            checked = sorted(comparison.get('pages', []),
+                                             key=lambda page: page['page_index'] != 1)
+                            failed = next((page for page in checked
+                                if document.xref_get_key(document.page_xref(page['page_index']), 'Group')[0]
+                                != 'null'), None)
                     if plan is not None and failed is not None:
                         result['segment_pixel_diagnostic'] = segment_pixel_diagnostics(
                             original, payload, plan, payloads, binding,
@@ -162,7 +188,7 @@ def inspect_source(ledger, client, bucket, binding):
     return result
 
 
-def probe(ledger, client, bucket):
+def probe(ledger, client, bucket, *, download=lambda url: download_once(url, timeout=20)):
     require(ledger.scope == 'institution' and ledger.forbid_new_submissions, 'read_only_scope')
     reader = copy.copy(ledger); reader.store = copy.copy(ledger.store)
     client = ReadOnlyR2Client(client); reader.store.client = client
@@ -170,17 +196,22 @@ def probe(ledger, client, bucket):
     results = []
     for ordinal, row in enumerate(selection()['sources'], 1):
         reader.provider = ReadOnlyProvider(ledger.provider, ledger.clock, ledger.clock() + 480)
-        result = {'ordinal': ordinal}
+        downloads = []
+        result = {'ordinal': ordinal, 'provider_zip_downloads': downloads}
         try:
-            result.update(inspect_source(reader, client, bucket, binding_for(row)))
+            result.update(inspect_source(reader, client, bucket, binding_for(row),
+                                         download=download, downloads=downloads))
         except Exception as error:
             result.update(status='stopped', category=str(error) if isinstance(error, ProbeError)
                           else type(error).__name__)
+        result['provider_status_gets'] = reader.provider.gets
         results.append(result)
     reader.store.verify()
     return {'schema': 1, 'diagnostic_only': True, 'production_acceptance': False,
         'source_run_id': '38658714099', 'sources': results,
         'provider_posts': 0, 'provider_uploads': 0, 'cache_writes': 0, 'ledger_writes': 0,
+        'provider_zip_download_attempts': sum(len(row['provider_zip_downloads']) for row in results),
+        'provider_status_gets': sum(row['provider_status_gets'] for row in results),
         'fresh_feed_requests': 0, 'model_calls': 0, 'publication_writes': 0}
 
 
