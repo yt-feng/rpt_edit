@@ -9,13 +9,14 @@ on:
   workflow_dispatch:
     inputs:
       scope:
-        description: "Recent live publications, or the exact 17 previously reviewed IMF sources (live download only)"
+        description: "Recent publications, reviewed IMF17, or exact IMF3 live original-byte acceptance"
         required: false
         type: choice
         default: recent
         options:
           - recent
           - imf-reviewed-20261012
+          - imf-live-exact-20261015
       institutions:
         description: "Comma list or all (imf,worldbank,bis,oecd,adb,wef,unctad,wto,bruegel)"
         required: true
@@ -59,6 +60,7 @@ jobs:
         run: |
           python scripts/test_fetch_institution_latest_pdfs.py
           python scripts/test_imf_fetch_test_scope.py
+          python scripts/test_imf_live_source_probe.py
 
       - name: Set up official IMF download route
         uses: ./.github/actions/setup-imf-browser
@@ -82,13 +84,17 @@ jobs:
           fi
           case "$FETCH_SCOPE" in
             recent) ;;
-            imf-reviewed-20261012)
+            imf-reviewed-20261012|imf-live-exact-20261015)
               test "$FETCH_INSTITUTIONS" = imf
               ;;
             *) echo '::error::Unknown institution fetch scope'; exit 1 ;;
           esac
           set +e
-          if [ "$FETCH_SCOPE" = imf-reviewed-20261012 ]; then
+          if [ "$FETCH_SCOPE" = imf-live-exact-20261015 ]; then
+            "${fetch_runner[@]}" scripts/imf_live_source_probe.py \
+              2>&1 | tee fetch_test.log
+            statuses=("${PIPESTATUS[@]}")
+          elif [ "$FETCH_SCOPE" = imf-reviewed-20261012 ]; then
             "${fetch_runner[@]}" scripts/imf_fetch_test_scope.py --date "$fetch_date" \
               2>&1 | tee fetch_test.log
             statuses=("${PIPESTATUS[@]}")
@@ -106,6 +112,11 @@ jobs:
             statuses=("${PIPESTATUS[@]}")
           fi
           set -e
+          if [ "$FETCH_SCOPE" = imf-live-exact-20261015 ]; then
+            test "${statuses[0]}" -eq 0
+            test "${statuses[1]}" -eq 0
+            exit 0
+          fi
           python scripts/institution_source_health.py \
             --producer-exit-code "${statuses[0]}" --log-exit-code "${statuses[1]}" \
             --manifest _fetch_test/institution_run_manifest.json \
@@ -121,6 +132,9 @@ jobs:
           cat _fetch_test/institution_run_manifest.json || true
           echo "===== link archive (original PDF URLs) ====="
           cat _fetch_test/test_archive.jsonl 2>/dev/null || echo "(empty)"
+          if [ -f _fetch_test/exact-scope-acceptance.json ]; then
+            cat _fetch_test/exact-scope-acceptance.json
+          fi
 
       - name: Validate downloaded files are real PDFs
         run: |

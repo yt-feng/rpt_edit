@@ -25,6 +25,7 @@ import imf_cloud_client as client
 
 VERSION = "1.14.3"
 MAX_MESSAGE = 256 * 1024
+RETRY_LANDING_STATUSES = frozenset({403, 429, 502, 503, 504})
 SAFE_ENV = {"PATH", "HOME", "RUNNER_TEMP", "PLAYWRIGHT_PACKAGE_ROOT",
             "PLAYWRIGHT_BROWSERS_PATH", "LANG", "LC_ALL", "DISPLAY", "XAUTHORITY"}
 PROOF_FIELDS = {"schema", "source_guid", "source_url", "landing_url", "pdf_url", "doi", "title",
@@ -55,6 +56,13 @@ class BrowserDownloadError(ValueError):
 
 class _OriginalEdition404(Exception):
     """Internal single alternate-page transition after a real source HTTP404."""
+
+
+class _LandingHttpRejected(BrowserDownloadError):
+    """A typed HTTP rejection observed before the parent authorizes a PDF."""
+    def __init__(self, status):
+        super().__init__("imf_browser_landing_http_rejected")
+        self.status = status
 
 
 def publication_provenance(publication):
@@ -422,6 +430,10 @@ class CloudImfBrowser:
         self._fetch, self._decode = fetch_subscription, decode_subscription
         self._stack = contextlib.ExitStack()
         self._proxy = None
+        self._active_index = None
+        self._outbounds = ()
+        self._binary = None
+        self.last_source_attempts = []
         self._attempted = False
         self._startup_error = None
         self._signal_previous = None
@@ -442,8 +454,13 @@ class CloudImfBrowser:
     def _start(self):
         require_cloud()
         if self._proxy:
-            return
+            return set()
         if self._attempted:
+            if self._startup_error is None and self._outbounds:
+                tried = set()
+                if self._next_source_route(tried):
+                    return tried
+                raise BrowserDownloadError("imf_browser_connectivity_rejected")
             raise BrowserDownloadError(self._startup_error or "imf_browser_start_failed")
         self._attempted = True
         try:
@@ -458,32 +475,13 @@ class CloudImfBrowser:
                 raise BrowserDownloadError("imf_browser_subscription_missing")
             with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
                 body = self._fetch(subscription, 8)
-            outbounds = select_outbounds(body, self._decode)
+            self._outbounds = tuple(select_outbounds(body, self._decode))
+            self._binary = binary
             self._signal_previous = signal.getsignal(signal.SIGTERM)
             signal.signal(signal.SIGTERM, lambda *_: (_ for _ in ()).throw(KeyboardInterrupt()))
-            from curl_cffi import requests as cffi, CurlOpt
-            for outbound in outbounds:
-                candidate = contextlib.ExitStack()
-                try:
-                    proxy = candidate.enter_context(client.running_client(binary, outbound))
-                    response = None
-                    connected = False
-                    try:
-                        response = cffi.get("https://www.gstatic.com/generate_204", timeout=8,
-                                            proxies={"http": proxy, "https": proxy},
-                                            curl_options={CurlOpt.NOPROXY: ""}, allow_redirects=False, stream=True)
-                        connected = response.status_code == 204
-                    except Exception:
-                        pass  # Fixed bounded connectivity fallback, never source-request retries.
-                    finally:
-                        if response is not None:
-                            response.close()
-                    if connected:
-                        self._stack.callback(candidate.pop_all().close)
-                        self._proxy = proxy
-                        return
-                finally:
-                    candidate.close()
+            tried = set()
+            if self._activate(range(len(self._outbounds)), tried):
+                return tried
             raise BrowserDownloadError("imf_browser_connectivity_rejected")
         except BrowserDownloadError as error:
             self._startup_error = str(error)
@@ -497,6 +495,50 @@ class CloudImfBrowser:
             self._startup_error = "imf_browser_start_failed"
             self._stack.close()
             raise BrowserDownloadError(self._startup_error) from None
+
+    def _activate(self, indices, tried):
+        """Replace only this batch's ephemeral cloud client; never system state."""
+        require_cloud()
+        self._stack.close()
+        self._proxy = self._active_index = None
+        from curl_cffi import requests as cffi, CurlOpt
+        for index in indices:
+            tried.add(index)
+            with contextlib.ExitStack() as candidate:
+                proxy = candidate.enter_context(client.running_client(self._binary, self._outbounds[index]))
+                response = None
+                connected = False
+                try:
+                    response = cffi.get("https://www.gstatic.com/generate_204", timeout=8,
+                                        proxies={"http": proxy, "https": proxy},
+                                        curl_options={CurlOpt.NOPROXY: ""}, allow_redirects=False, stream=True)
+                    connected = type(response.status_code) is int and response.status_code == 204
+                except Exception:
+                    pass
+                finally:
+                    if response is not None:
+                        response.close()
+                if connected:
+                    self._stack.callback(candidate.pop_all().close)
+                    self._proxy, self._active_index = proxy, index
+                    return True
+        return False
+
+    def _next_source_route(self, tried):
+        # _download_page has already stopped its child in finally. The same
+        # route is never retried for this publication, even on connectivity
+        # failure. A later publication gets its own independent budget.
+        indices = [index for index in range(len(self._outbounds)) if index not in tried]
+        if not indices:
+            return False
+        try:
+            return self._activate(indices, tried)
+        except client.UnsupportedNode as error:
+            raise BrowserDownloadError("imf_browser_" + error.code) from None
+        except BrowserDownloadError:
+            raise
+        except Exception:
+            raise BrowserDownloadError("imf_browser_start_failed") from None
 
     @contextlib.contextmanager
     def http_session(self):
@@ -513,6 +555,7 @@ class CloudImfBrowser:
             yield session
 
     def download(self, publication, dest, max_bytes, expected_sha256=None):
+        self.last_source_attempts = []
         if not self.enabled or not self._entered:
             raise BrowserDownloadError("imf_browser_not_enabled")
         require_cloud()
@@ -537,13 +580,22 @@ class CloudImfBrowser:
                 raise ValueError
         except Exception:
             raise BrowserDownloadError("imf_browser_publication_invalid") from None
-        self._start()
-        try:
-            return self._download_page(publication, dest, max_bytes, expected_sha256, provenance)
-        except _OriginalEdition404:
-            # The first browser has closed in _download_page's finally. There
-            # is exactly one alternate page; no recursion or route rotation.
-            return self._download_page(publication, dest, max_bytes, expected_sha256, provenance, source_landing_status=404)
+        tried = self._start()
+        tried.add(self._active_index)
+        source_landing_status = None
+        while True:
+            try:
+                return self._download_page(publication, dest, max_bytes, expected_sha256, provenance,
+                                           source_landing_status=source_landing_status)
+            except _OriginalEdition404:
+                # One original-edition transition, retained across any route
+                # change. It never returns to the missing English edition.
+                if source_landing_status is not None:
+                    raise BrowserDownloadError("imf_browser_landing_http_rejected") from None
+                source_landing_status = 404
+            except _LandingHttpRejected as error:
+                if error.status not in RETRY_LANDING_STATUSES or not self._next_source_route(tried):
+                    raise BrowserDownloadError("imf_browser_landing_http_rejected") from None
 
     def _download_page(self, publication, dest, max_bytes, expected_sha256, provenance, *, source_landing_status=None):
         from imf_elibrary_resolver import validate_landing_metadata, validate_publication_url
@@ -570,6 +622,10 @@ class CloudImfBrowser:
                 write_public_evidence(publication, page)
                 if page.get("stage") != "metadata":
                     raise BrowserDownloadError("imf_browser_page_not_ready")
+                self.last_source_attempts.append({
+                    "route": self._active_index + 1 if type(self._active_index) is int else None,
+                    "landing_status": page.get("landing_status") if type(page.get("landing_status")) is int else None,
+                })
                 if type(page.get("landing_status")) is not int or page["landing_status"] != 200:
                     if type(page.get("landing_status")) is int and page["landing_status"] == 404 and source_landing_status is None:
                         try:
@@ -581,6 +637,8 @@ class CloudImfBrowser:
                             pass
                         else:
                             raise _OriginalEdition404()
+                    if type(page.get("landing_status")) is int:
+                        raise _LandingHttpRejected(page["landing_status"])
                     raise BrowserDownloadError("imf_browser_landing_http_rejected")
                 if page.get("ready") is not True:
                     raise BrowserDownloadError("imf_browser_page_not_ready")
