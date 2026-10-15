@@ -77,9 +77,10 @@ jobs:
       - name: Test bounded manifests and existing acceptance contracts
         env:
           LOCALE_MANIFEST_DIAGNOSTICS: ${{ inputs.diagnostic_run_id && format('{0}/locale-regression-diagnostics/locale-full-diagnostics.json', runner.temp) || '' }}
+          LOCALE_RESOLUTION_SCALE: '126432'
         run: |
           set -euo pipefail
           python -m pip install 'requests>=2.31,<3' 'Pillow>=10.1,<12'
-          for name in test_locale_manifest_compaction test_portal_locale_manifest test_build_portal_locales test_portal_locale_source_fallback test_verify_prepared_static_slot test_verify_portal_locale_routes test_audit_portal_shadow_preview test_verify_portal_chinese_parity test_resume_portal_locale_candidate; do
+          for name in test_locale_manifest_compaction test_portal_locale_manifest test_build_portal_locales test_portal_locale_resolution test_portal_locale_source_fallback test_verify_prepared_static_slot test_verify_portal_locale_routes test_audit_portal_shadow_preview test_verify_portal_chinese_parity test_resume_portal_locale_candidate; do
             python -B scripts/$name.py
           done

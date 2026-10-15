@@ -1084,6 +1084,21 @@ def _valid_source_fallback(locale: str, unit: TranslationUnit, cache: dict[str, 
             and isinstance(row.get("reason"), str) and bool(row["reason"]))
 
 
+def _checked_resolved_source_count(
+    units: Iterable[TranslationUnit],
+    translated_keys: set[str],
+    retained_keys: set[str],
+    locale: str,
+) -> int:
+    # The union is an inventory-sized allocation. Build it once, not for every
+    # unit's membership check, so coverage validation stays linear as we grow.
+    resolved_keys = translated_keys | retained_keys
+    unresolved = [unit.key for unit in units if unit.key not in resolved_keys]
+    if unresolved:
+        raise TranslationError(f"{locale} translation coverage is incomplete: {len(unresolved)} units")
+    return len(resolved_keys)
+
+
 def translated_text(value: str, context: str, locale: str, cache: dict[str, Any]) -> str:
     output: list[str] = []
     entries = cache["locales"][locale]
@@ -5815,6 +5830,7 @@ def _build_localized_release(
     }
     resolved_translation_counts: dict[str, int] = {}
     resolved_entry_counts: dict[str, int] = {}
+    log(f"Locale source resolution started: units={len(units)}")
     for locale in LOCALES:
         entries = cache["locales"][locale]
         resolved = {
@@ -5823,11 +5839,11 @@ def _build_localized_release(
             if _valid_cache_row(locale, unit, entries.get(unit.key))
         }
         retained = {unit.key for unit in units.values() if _valid_source_fallback(locale, unit, cache)}
-        unresolved = [unit.key for unit in units.values() if unit.key not in resolved | retained]
-        if unresolved:
-            raise TranslationError(f"{locale} translation coverage is incomplete: {len(unresolved)} units")
+        resolved_count = _checked_resolved_source_count(units.values(), resolved, retained, locale)
         resolved_translation_counts[locale] = len(resolved)
-        resolved_entry_counts[locale] = len(resolved | retained)
+        resolved_entry_counts[locale] = resolved_count
+        log(f"Locale source resolution passed: locale={locale} translated={len(resolved)} "
+            f"retained={len(retained)} resolved={resolved_count}")
 
     resolution_manifest = {
         "schema_version": 1,
@@ -5855,6 +5871,7 @@ def _build_localized_release(
         encode_locale_manifest(resolution_manifest)
     except LocaleManifestError as error:
         raise TranslationError(f"Locale source accounting failed before rendering: {error}") from error
+    log(f"Locale source accounting passed: rendering_pages_per_locale={len(localized_html_sources)}")
 
     locale_css_source = assets_root / "locale.css"
     locale_runtime_source = assets_root / "locale-runtime.js"
@@ -5889,6 +5906,7 @@ def _build_localized_release(
         chinese_discovery_updates[path] = updated
 
     for locale in LOCALES:
+        log(f"Locale rendering started: locale={locale} pages={len(localized_html_sources)}")
         locale_root = root / locale
         if locale_root.exists():
             shutil.rmtree(locale_root)
@@ -6049,6 +6067,7 @@ def _build_localized_release(
                 render_localized_llms(filtered_source, name, locale, cache, site_url),
                 encoding="utf-8",
             )
+        log(f"Locale rendering complete: locale={locale} pages={len(localized_html_sources)}")
 
     lastmods = sitemap_lastmod_lookup(root)
     lastmod_dates = [parsed for value in lastmods.values() if (parsed := parse_publication_date(value))]
