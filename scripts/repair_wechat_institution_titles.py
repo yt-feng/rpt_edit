@@ -15,6 +15,7 @@ import os
 from pathlib import Path
 import re
 import time
+from urllib.parse import unquote_plus
 
 import requests
 
@@ -129,6 +130,42 @@ def live_articles(data):
     return rows
 
 
+def reviewed_preview_parts(value):
+    """Bind the observed read-only preview URL and preserve its raw spelling."""
+    policy = PINS['reviewed_preview_url']
+    require(isinstance(value, str) and len(value) <= 2048
+            and value.startswith(policy['prefix']) and value.endswith(policy['suffix']),
+            'preview_url_shape_changed')
+    query = value[len(policy['prefix']):-len(policy['suffix'])]
+    pairs = [part.partition('=') for part in query.split('&')]
+    require([name for name, _sep, _value in pairs] == policy['query_names']
+            and all(sep == '=' and item for _name, sep, item in pairs), 'preview_url_query_changed')
+    token = pairs[1][2]
+    require(token.isascii() and not re.search(r'\s|%(?![0-9A-Fa-f]{2})|[#?]', token)
+            and len(unquote_plus(token)) == policy['decoded_value_chars'], 'preview_tempkey_shape_changed')
+    return policy, pairs
+
+
+def stable_articles(articles):
+    """Ignore only the proved tempkey value; retain every other field/byte."""
+    output = copy.deepcopy(articles)
+    for row in output:
+        policy, pairs = reviewed_preview_parts(row.get('url'))
+        stable_pairs = [(name, sep, '[reviewed-tempkey-value]' if name == policy['volatile_parameter'] else value)
+                        for name, sep, value in pairs]
+        row['url'] = policy['prefix'] + '&'.join(name + sep + value for name, sep, value in stable_pairs) + policy['suffix']
+    return output
+
+
+def volatile_url_facts(articles):
+    output = []
+    for index, row in enumerate(articles):
+        _policy, pairs = reviewed_preview_parts(row.get('url'))
+        output.append({'index': index, 'field': 'url', 'query_parameter': 'tempkey',
+                       'raw_url_sha256': digest(row['url']), 'raw_parameter_sha256': digest(pairs[1][2])})
+    return output
+
+
 def validate_live(data, source):
     actual = live_articles(data)
     for current, expected, pin in zip(actual, source['articles'], source['pins']['articles']):
@@ -144,7 +181,7 @@ def validate_live(data, source):
             if key == 'content':
                 require(reviewed_content_matches(current.get(key), value, pin), 'live_payload_changed_content')
                 continue
-            require(key in current and current[key] == value, 'live_payload_changed_' + key)
+            require(key in current and digest(current[key]) == digest(value), 'live_payload_changed_' + key)
         require(not current.get('content_source_url'), 'live_source_url_changed')
     checks = summarize_draft_get_response(data, 3, [dict(row, title=a['title'])
                                                 for row, a in zip(source['articles'], actual)])
@@ -177,8 +214,9 @@ def plan_for(data, source, changes):
     actual = validate_live(data, source)
     return {'source_run_id': source['pins']['source_run_id'], 'article_count': 3,
             'draft_identity_sha256': digest(source['media_id']),
-            'full_live_articles_sha256': digest(actual),
+            'stable_live_articles_sha256': digest(stable_articles(actual)),
             'reviewed_live_html': source['pins']['reviewed_live_html'],
+            'reviewed_preview_url': source['pins']['reviewed_preview_url'],
             'unreturned_upload_only_fields': sorted({key for row in actual for key in UPLOAD_ONLY if key not in row}),
             'articles': [{'index': index, 'current_title': current['title'], 'selected_title': pin['selected_title'],
                           'old_blog_fingerprint': change['old']['fingerprint'],
@@ -190,24 +228,29 @@ def plan_for(data, source, changes):
 
 
 def unchanged_articles(data, expected):
-    return live_articles(data) == expected
+    return digest(stable_articles(live_articles(data))) == digest(stable_articles(expected))
 
 
 def protected_live_facts(articles):
-    """Hash every returned field except the sole authorized title change."""
-    protected = [{key: value for key, value in row.items() if key != 'title'} for row in articles]
-    return {'article_count': len(articles), 'all_non_title_fields_sha256': digest(protected),
-            'article_non_title_fields_sha256': [digest(row) for row in protected],
+    """Preserve writable bytes and all stable returned fields except title."""
+    protected = [{key: value for key, value in row.items() if key != 'title'} for row in stable_articles(articles)]
+    writable = [{key: value for key, value in row.items() if key in WRITABLE and key != 'title'} for row in articles]
+    return {'article_count': len(articles), 'stable_non_title_fields_sha256': digest(protected),
+            'article_stable_non_title_fields_sha256': [digest(row) for row in protected],
+            'writable_non_title_fields_sha256': digest(writable),
             'html_sha256': [hashlib.sha256(row['content'].encode()).hexdigest() for row in articles]}
 
 
 def repair_titles(session, token, source, initial, progress, save, timeout=30):
     baseline = copy.deepcopy(validate_live(initial, source))
     progress['live_before'] = protected_live_facts(baseline)
+    progress['observed_volatile_before'] = volatile_url_facts(baseline)
     for index, pin in enumerate(source['pins']['articles']):
-        # Recheck every field of all three articles immediately before a write.
+        # Recheck all writable and stable returned fields immediately before a
+        # write. Only the observed read-only tempkey value may have changed.
         before = get_draft(session, token, source['media_id'], timeout)
         require(unchanged_articles(before, baseline), 'live_group_changed_before_update')
+        baseline = copy.deepcopy(live_articles(before))
         if baseline[index]['title'] == pin['selected_title']:
             progress['verified_indices'].append(index)
             save()
@@ -241,7 +284,7 @@ def repair_titles(session, token, source, initial, progress, save, timeout=30):
             if attempt < 2:
                 time.sleep(2)
         require(verified is not None, 'title_update_not_verified_stop_without_retry')
-        baseline = wanted
+        baseline = copy.deepcopy(live_articles(verified))
         progress['verified_indices'].append(index)
         progress['updates'].append({'index': index, 'acknowledged': acknowledged, 'readback_verified': True})
         save()
@@ -250,6 +293,7 @@ def repair_titles(session, token, source, initial, progress, save, timeout=30):
     validate_live(final, source)
     progress['live_after'] = protected_live_facts(live_articles(final))
     require(progress['live_after'] == progress['live_before'], 'non_title_fields_changed')
+    progress['observed_volatile_after'] = volatile_url_facts(live_articles(final))
     save()
     return final
 
@@ -310,6 +354,7 @@ def main():
         with requests.Session() as session:
             token = get_stable_access_token(session, os.environ['WECHAT_MP_APPID'], os.environ['WECHAT_MP_APPSECRET'], 30)
             initial = get_draft(session, token, source['media_id'], 30)
+            result['raw_first_live_articles_sha256'] = digest(live_articles(initial))
             # Preserve bounded, content-free evidence even when strict byte
             # binding rejects a server-returned representation. Diagnostics
             # never weaken validate_live or authorize a write.
@@ -332,7 +377,8 @@ def main():
                 final = repair_titles(session, token, source, initial, result, save)
                 write_corrected_receipts(args.output, source, final)
                 result['blog'] = replace_blog_records(args.archive_root, source)
-                result['full_payload_preserved'] = True
+                result['writable_payload_preserved'] = True
+                result['stable_non_title_fields_preserved'] = True
             result['ok'] = True
     except Exception as exc:
         result['error_category'] = str(exc) if isinstance(exc, RepairError) else 'repair_contract_or_transport_stop'
