@@ -30,6 +30,7 @@ from push_portal_translated_to_wechat_drafts import (
 )
 from update_blog_archive_from_wechat_drafts import assert_public_archive_identity
 from wechat_title_optimizer import title_quality_issues
+from wechat_html_diagnostics import article_content_diagnostics
 
 PINS = json.loads((Path(__file__).parent / 'fixtures/wechat_institution_title_repair_38698155880.json').read_text())
 WRITABLE = ('title', 'author', 'digest', 'content', 'content_source_url',
@@ -273,6 +274,11 @@ def main():
         with requests.Session() as session:
             token = get_stable_access_token(session, os.environ['WECHAT_MP_APPID'], os.environ['WECHAT_MP_APPSECRET'], 30)
             initial = get_draft(session, token, source['media_id'], 30)
+            # Preserve bounded, content-free evidence even when strict byte
+            # binding rejects a server-returned representation. Diagnostics
+            # never weaken validate_live or authorize a write.
+            result['content_diagnostics'] = article_content_diagnostics(initial, source)
+            save()
             plan = plan_for(initial, source, changes)
             result.update(plan=plan, plan_sha256=digest(plan))
             save()
