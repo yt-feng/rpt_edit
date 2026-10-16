@@ -1,5 +1,36 @@
 {
   "schema": 1,
   "institution": "imf",
-  "items": {}
+  "items": {
+    "imf:62e69f5e55951efba5191fb5663ae649a8c7db0ea32f74704b280e7063e4": {
+      "item": {
+        "title": "Regional Economic Outlook Update: Sub-Saharan Africa, October 2026",
+        "source_url": "https://www.imf.org/en/publications/reo/ssa/issues/2026/10/15/regional-economic-outlook-for-sub-saharan-africa-october-2026",
+        "guid": "62e69f5e55951efba5191fb5663ae649a8c7db0ea32f74704b280e7063e4",
+        "date": "2026-10-15T09:30:00+00:00",
+        "pdf_candidates": [],
+        "scrape_url": "https://www.imf.org/en/publications/reo/ssa/issues/2026/10/15/regional-economic-outlook-for-sub-saharan-africa-october-2026",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/reo/ssa/issues/2026/10/15/regional-economic-outlook-for-sub-saharan-africa-october-2026"
+      },
+      "admitted_at": "2026-10-16T00:01:00.780935+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-10-16T00:01:00.780935+00:00",
+      "attempts": 1
+    },
+    "imf:638764b36df63d22e782e010f7e8393177456654264f2a240d05ca4c899b": {
+      "item": {
+        "title": "Liberia: Fourth Review Under the Extended Credit Facility Arrangement and First Review Under the Resilience and Sustainability Facility Arrangement-Press Release Staff Report; and Statement by the Executive Director for Liberia",
+        "source_url": "https://www.imf.org/en/publications/cr/issues/2026/10/15/liberia-fourth-review-under-the-extended-credit-facility-arrangement-and-first-review-580540",
+        "guid": "638764b36df63d22e782e010f7e8393177456654264f2a240d05ca4c899b",
+        "date": "2026-10-15T04:00:00+00:00",
+        "pdf_candidates": [],
+        "scrape_url": "https://www.imf.org/en/publications/cr/issues/2026/10/15/liberia-fourth-review-under-the-extended-credit-facility-arrangement-and-first-review-580540",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/cr/issues/2026/10/15/liberia-fourth-review-under-the-extended-credit-facility-arrangement-and-first-review-580540"
+      },
+      "admitted_at": "2026-10-16T00:01:00.780935+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-10-16T00:01:00.780935+00:00",
+      "attempts": 1
+    }
+  }
 }
