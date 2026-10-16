@@ -4420,6 +4420,38 @@
     "imf:da42b67c1330dd475f37b8e032b8e1e5c90b4f36c9220a439a300b56b1fb": {
       "first_seen": "2026-10-15",
       "status": "downloaded"
+    },
+    "imf:62e69f5e55951efba5191fb5663ae649a8c7db0ea32f74704b280e7063e4": {
+      "first_seen": "2026-10-16",
+      "status": "downloaded"
+    },
+    "imf:638764b36df63d22e782e010f7e8393177456654264f2a240d05ca4c899b": {
+      "first_seen": "2026-10-16",
+      "status": "downloaded"
+    },
+    "worldbank:099205210152637711": {
+      "first_seen": "2026-10-16",
+      "status": "downloaded"
+    },
+    "worldbank:099419010152613555": {
+      "first_seen": "2026-10-16",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/bisbull138.htm": {
+      "first_seen": "2026-10-16",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/mark_12oct26_516_e.htm": {
+      "first_seen": "2026-10-16",
+      "status": "no_pdf"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/roi_07oct26_514_e.htm": {
+      "first_seen": "2026-10-16",
+      "status": "too_old"
+    },
+    "bruegel:12608": {
+      "first_seen": "2026-10-16",
+      "status": "downloaded"
     }
   }
 }
