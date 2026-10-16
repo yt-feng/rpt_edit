@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "id": "04bd1e97f3a8b885814c716bf19916ab77c741cd85886cc153c01038d1882904",
+  "slug": "bbg-20261015-04bd1e97f3a8b885",
+  "date": "2026-10-15",
+  "title": "纽约大学马库斯：AI公司无法自我监管，需要独立审查机制",
+  "speaker": "Gary Marcus",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-10-15/the-china-show-10-15-2026-video",
+  "start": 4486.1,
+  "end": 4536.3,
+  "segments": [
+    {
+      "start": 4486.1,
+      "end": 4492.2,
+      "en": "Do you think they can self-regulate? I mean what other safeguards still need to be in place. I mean no, they can't self-regulate",
+      "zh": "你认为他们能自我监管吗？还需要哪些保障措施？不，他们无法自我监管。"
+    },
+    {
+      "start": 4492.2,
+      "end": 4497.3,
+      "en": "I mean they've shown themselves to be kind of incompetent and cyber security not done the right things",
+      "zh": "他们表现出在网络安全方面有些无能，没有做正确的事。"
+    },
+    {
+      "start": 4497.5,
+      "end": 4504.5,
+      "en": "Around sandboxing and monitoring. They have released new systems that are harder to monitor when we all know that monitoring is important",
+      "zh": "在沙盒和监控方面。他们发布了更难监控的新系统，而众所周知监控很重要。"
+    },
+    {
+      "start": 4504.7,
+      "end": 4515.9,
+      "en": "They're clearly not self-regulating themselves adequately. What we really need is something like an FDA procedure where you have to submit your model to external review by independent scientists",
+      "zh": "他们显然没有充分自我监管。我们真正需要的是类似FDA的程序，你必须将模型提交给独立科学家进行外部审查。"
+    },
+    {
+      "start": 4515.9,
+      "end": 4524.3,
+      "en": "Who don't have skin in the game who say you know do the benefits out way the risks just like we would do if somebody released a new drug. You know a new model might be dangerous",
+      "zh": "他们没有利益牵扯，会评估收益是否大于风险，就像有人发布新药时我们会做的那样。新模型可能很危险。"
+    },
+    {
+      "start": 4524.3,
+      "end": 4533.7,
+      "en": "In fact the current one is a little bit dangerous the next model might be more dangerous. We can't trust companies that need to IPO where they run out of cash to make the right decisions",
+      "zh": "事实上当前模型有点危险，下一个可能更危险。我们不能信任那些需要上市、现金耗尽的公司做出正确决定。"
+    },
+    {
+      "start": 4533.7,
+      "end": 4536.3,
+      "en": "They made the wrong decision around GPT-6 Astra",
+      "zh": "他们在GPT-6 Astra上做出了错误决定。"
+    }
+  ]
+}
