@@ -1,7 +1,7 @@
 {
   "feed_url": "https://www.ark-invest.com/feed",
-  "date_folder": "261015",
-  "since_days": 3,
+  "date_folder": "261016",
+  "since_days": 1,
   "max_pub_age_days": 120,
   "include_types": [
     "articles",
@@ -9,24 +9,24 @@
     "newsletters",
     "white papers"
   ],
-  "feed_item_count": 1409,
+  "feed_item_count": 1410,
   "selected_count": 1,
   "written": [
     {
       "source": "ark_invest_feed",
       "institution_name": "木头姐ARK",
-      "title": "Bitcoin’s Post-Quantum Solutions",
-      "type": "Articles",
-      "category": "Analyst Research",
-      "source_url": "https://www.ark-invest.com/articles/analyst-research/bitcoins-post-quantum-solutions",
-      "guid": "https://www.ark-invest.com/articles/analyst-research/bitcoins-post-quantum-solutions",
-      "pub_date": "Wed, 14 Oct 2026 20:01:00 GMT",
-      "updated": "0001-01-01T05:00:00.000+00:00",
-      "event_datetime": "2026-10-14T20:01:00+00:00",
-      "feed_key": "1cc6cb5179e9555f",
+      "title": "The Bitcoin Quarterly: Q3 2026",
+      "type": "Crypto Reports",
+      "category": "Crypto Reports",
+      "source_url": "https://www.ark-invest.com/crypto-reports/bitcoin-quarterly-q3-2026",
+      "guid": "https://www.ark-invest.com/crypto-reports/bitcoin-quarterly-q3-2026",
+      "pub_date": "Thu, 15 Oct 2026 12:35:00 GMT",
+      "updated": "2026-10-15T01:02:49.790+00:00",
+      "event_datetime": "2026-10-15T12:35:00+00:00",
+      "feed_key": "90d25a9cde59779c",
       "source_mineru": "source_mineru.md",
       "note": "note.md",
-      "output_dir": "xhs_notes/ark/261015/0001-ARK_Bitcoin-s-Post-Quantum-Solutions_1cc6cb5179e9555f"
+      "output_dir": "xhs_notes/ark/261016/0001-ARK_The-Bitcoin-Quarterly-Q3-2026_90d25a9cde59779c"
     }
   ],
   "status": "ok"
