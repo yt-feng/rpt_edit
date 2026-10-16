@@ -45,6 +45,27 @@ def environment(event='schedule'):
 
 
 class PublicationDecisionTests(unittest.TestCase):
+    def test_midnight_rollover_waits_only_until_beijing_cutoff(self):
+        early = datetime(2026, 10, 16, 17, 30, tzinfo=timezone.utc)
+        state = guard.source_date_state('261015', early, allow_wait=True)
+        self.assertEqual(state, {'source_age_days': 2, 'waiting_for_fresh_source': True,
+                                'wait_until': '2026-10-17T06:00:00+08:00'})
+        last_minute = datetime(2026, 10, 16, 21, 59, tzinfo=timezone.utc)
+        self.assertTrue(guard.source_date_state('261015', last_minute, allow_wait=True)['waiting_for_fresh_source'])
+        cutoff = datetime(2026, 10, 16, 22, 0, tzinfo=timezone.utc)
+        with self.assertRaisesRegex(guard.GuardError, 'stale_or_future'):
+            guard.source_date_state('261015', cutoff, allow_wait=True)
+        self.assertTrue(guard.publication_decision('261016', cutoff, False)['should_build'])
+
+    def test_waiting_never_extends_to_older_future_or_weekend_sources(self):
+        early = datetime(2026, 10, 16, 17, 30, tzinfo=timezone.utc)
+        for date, now in (('261014', early), ('261018', early),
+                          ('261015', datetime(2026, 10, 17, 17, 30, tzinfo=timezone.utc))):
+            with self.subTest(date=date, now=now), self.assertRaisesRegex(guard.GuardError, 'stale_or_future'):
+                guard.source_date_state(date, now, allow_wait=True)
+        with self.assertRaisesRegex(guard.GuardError, 'stale_or_future'):
+            guard.publication_decision('261015', early, True)
+
     def test_beijing_cutoff_uses_calendar_day_and_does_not_wait_for_shards(self):
         before = datetime(2026, 10, 13, 21, 59, tzinfo=timezone.utc)
         cutoff = datetime(2026, 10, 13, 22, 0, tzinfo=timezone.utc)
@@ -261,6 +282,14 @@ class GithubRecoveryTests(unittest.TestCase):
 
 
 class DateDiscoveryTests(unittest.TestCase):
+    def test_only_opted_in_latest_discovery_can_observe_precutoff_pending_source(self):
+        early = datetime(2026, 10, 16, 17, 30, tzinfo=timezone.utc)
+        with patch('download_dropbox_latest_pdfs.dropbox_access_token', return_value='token'), \
+                patch('download_dropbox_latest_pdfs.list_folder', return_value=[{'.tag': 'folder', 'name': '261015'}]):
+            self.assertEqual(guard.latest_dropbox_date(early, allow_wait=True), '261015')
+            with self.assertRaisesRegex(guard.GuardError, 'stale_or_future'):
+                guard.latest_dropbox_date(early)
+
     def test_only_failed_external_reads_receive_unavailable_category(self):
         with patch('download_dropbox_latest_pdfs.dropbox_access_token', side_effect=RuntimeError('token unavailable')):
             with self.assertRaises(guard.DropboxUnavailable):
@@ -322,6 +351,40 @@ class BoundedOriginalDownloadTests(unittest.TestCase):
 
 
 class PreparationTests(unittest.TestCase):
+    def test_pending_latest_source_has_no_publication_claim_or_cloud_work(self):
+        early = datetime(2026, 10, 16, 17, 30, tzinfo=timezone.utc)
+        publication = Mock()
+        with tempfile.TemporaryDirectory() as temporary, \
+                patch.object(guard, 'discover_source') as sources, \
+                patch.object(guard, 'download_fresh_originals') as originals, \
+                patch('private_workflow_handoff.build_r2_client') as storage:
+            root = Path(temporary)
+            plan = guard.prepare(root, now=early, repository=REPOSITORY, env=environment(),
+                                 discover_date=lambda now, requested: '261015', publication_check=publication)
+            output, summary = root / 'workflow-output', root / 'summary'
+            guard.write_outputs(plan, root, {'GITHUB_OUTPUT': str(output), 'GITHUB_STEP_SUMMARY': str(summary)})
+            self.assertFalse(plan['should_build'])
+            self.assertFalse(plan['private_publication_verified'])
+            self.assertEqual(plan['production_writes'], 0)
+            self.assertEqual(plan['reason'], 'awaiting_fresh_source_before_cutoff')
+            self.assertEqual(plan['wait_until'], '2026-10-17T06:00:00+08:00')
+            self.assertEqual(json.loads((root / 'plan.json').read_text()), plan)
+            self.assertIn('private_publication_verified=false', output.read_text())
+            self.assertIn('261015', summary.read_text())
+            self.assertIn('2026-10-17T06:00:00+08:00', summary.read_text())
+            self.assertIn('no publication is claimed', summary.read_text())
+        for call in (publication, sources, originals, storage):
+            call.assert_not_called()
+
+    def test_explicit_recovery_and_acceptance_never_silently_wait(self):
+        early = datetime(2026, 10, 16, 17, 30, tzinfo=timezone.utc)
+        for options in ({'date_folder': '261015'}, {'date_folder': '261015', 'source_run_id': RUN_ID},
+                        {'acceptance_only': True}):
+            with self.subTest(options=options), tempfile.TemporaryDirectory() as temporary, \
+                    self.assertRaisesRegex(guard.GuardError, 'stale_or_future'):
+                guard.prepare(Path(temporary), now=early, repository=REPOSITORY, env=environment('workflow_dispatch'),
+                    discover_date=lambda now, requested: '261015', publication_check=Mock(), **options)
+
     def prepare(self, root, publication_check, **kwargs):
         return guard.prepare(root, now=NOW, repository=REPOSITORY, env=environment(), client=Mock(),
                              bucket='test', discover_date=lambda now, requested: '261013',

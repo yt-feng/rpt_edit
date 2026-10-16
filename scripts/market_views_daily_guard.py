@@ -81,14 +81,31 @@ def require_cloud_main(env, *, acceptance_only=False):
     return repository
 
 
-def publication_decision(date_folder, now, complete, *, acceptance_only=False, cutoff_hour=6):
-    """Publication failure and unavailable storage must be distinguished upstream."""
-    if now.tzinfo is None or type(complete) is not bool or not 0 <= cutoff_hour <= 23:
+def source_date_state(date_folder, now, *, allow_wait=False, cutoff_hour=6):
+    """Allow yesterday's valid source to wait only until today's cutoff.
+
+    Waiting is not publication eligibility: an age-two batch is never passed to
+    the publisher or reported as today's completed issue. There is no weekend
+    extension, and future or older sources remain hard failures.
+    """
+    if now.tzinfo is None or not 0 <= cutoff_hour <= 23:
         reject('invalid_guard_clock_or_publication_state')
     local = now.astimezone(BEIJING)
     age = (local.date() - exact_date(date_folder)).days
-    if not 0 <= age <= 1:
-        reject('latest_source_is_stale_or_future')
+    if 0 <= age <= 1:
+        return {'source_age_days': age, 'waiting_for_fresh_source': False}
+    if allow_wait and age == 2 and local.hour < cutoff_hour:
+        return {'source_age_days': age, 'waiting_for_fresh_source': True,
+                'wait_until': local.replace(hour=cutoff_hour, minute=0, second=0, microsecond=0).isoformat()}
+    reject('latest_source_is_stale_or_future')
+
+
+def publication_decision(date_folder, now, complete, *, acceptance_only=False, cutoff_hour=6):
+    """Publication failure and unavailable storage must be distinguished upstream."""
+    if type(complete) is not bool:
+        reject('invalid_guard_clock_or_publication_state')
+    source_date_state(date_folder, now, cutoff_hour=cutoff_hour)
+    local = now.astimezone(BEIJING)
     if complete and not acceptance_only:
         return {'should_build': False, 'reason': 'verified_private_publication'}
     if not acceptance_only and local.hour < cutoff_hour:
@@ -335,7 +352,7 @@ def verify_originals(original_dir, raw, rows):
     return {'verified_count': len(verified), 'omitted_count': len(omitted), 'omissions': omitted}
 
 
-def latest_dropbox_date(now, requested=''):
+def latest_dropbox_date(now, requested='', *, allow_wait=False):
     from download_dropbox_latest_pdfs import dropbox_access_token, list_folder, latest_date_folder
     try:
         token = dropbox_access_token()
@@ -349,8 +366,7 @@ def latest_dropbox_date(now, requested=''):
     exact_date(name)
     if requested and requested != name:
         reject('requested_date_is_not_latest_dropbox_batch')
-    if not 0 <= (now.astimezone(BEIJING).date() - exact_date(name)).days <= 1:
-        reject('latest_source_is_stale_or_future')
+    source_date_state(name, now, allow_wait=allow_wait)
     return name
 
 
@@ -507,8 +523,10 @@ def prepare(workspace, *, now, repository, date_folder='', source_run_id='', acc
     discovery_omissions = {}
     date_authority = 'dropbox-latest'
     prefetched = None
+    allow_wait = not (date_folder or source_run_id or acceptance_only or force_fallback)
     try:
-        date_folder = (discover_date or latest_dropbox_date)(now, date_folder)
+        date_folder = (discover_date(now, date_folder) if discover_date else
+                       latest_dropbox_date(now, date_folder, allow_wait=allow_wait))
     except DropboxUnavailable:
         github = github or Github(repository)
         prefetched = discover_source(github, date_folder or None, workspace, now, source_run_id,
@@ -519,18 +537,23 @@ def prepare(workspace, *, now, repository, date_folder='', source_run_id='', acc
         if not 0 <= (now.astimezone(BEIJING).date() - exact_date(date_folder)).days <= 1:
             reject('latest_source_is_stale_or_future')
         date_authority = 'authenticated-daily-manifest-dropbox-unavailable'
+    freshness = source_date_state(date_folder, now, allow_wait=allow_wait)
+    plan = {'schema_version': 1, 'date_folder': date_folder,
+            'private_publication_verified': False, 'acceptance_only': acceptance_only,
+            'force_fallback': force_fallback, 'provider_posts': 0, 'model_calls': 0,
+            'workflow_dispatches': 0, 'production_writes': 0,
+            'date_discovery_authority': date_authority,
+            'source_discovery_omissions': discovery_omissions, **freshness}
+    if freshness['waiting_for_fresh_source']:
+        plan.update({'should_build': False, 'reason': 'awaiting_fresh_source_before_cutoff'})
+        return plan
     client = client or build_r2_client()
     bucket = bucket or r2_bucket()
     # Do not catch authentication, transport or truncated R2 response errors:
     # they cannot authorize treating an existing publication as missing.
     complete = (publication_check or private_publication_complete)(date_folder, client=client, bucket=bucket)
     decision = publication_decision(date_folder, now, complete, acceptance_only=acceptance_only)
-    plan = {'schema_version': 1, 'date_folder': date_folder, **decision,
-            'private_publication_verified': complete, 'acceptance_only': acceptance_only,
-            'force_fallback': force_fallback, 'provider_posts': 0, 'model_calls': 0,
-            'workflow_dispatches': 0, 'production_writes': 0,
-            'date_discovery_authority': date_authority,
-            'source_discovery_omissions': discovery_omissions}
+    plan.update({**decision, 'private_publication_verified': complete})
     if not decision['should_build']:
         return plan
     github = github or Github(repository)
@@ -608,7 +631,10 @@ def write_outputs(plan, workspace, env):
     if summary:
         with open(summary, 'a', encoding='utf-8') as stream:
             stream.write(f"Market Views guard: `{plan['reason']}`; source date `{plan['date_folder']}`.\n")
-    print(f"Market Views guard: {plan['reason']}; date={plan['date_folder']}; should_build={plan['should_build']}")
+            if plan.get('waiting_for_fresh_source'):
+                stream.write(f"Awaiting a fresh source until `{plan['wait_until']}`; no publication is claimed.\n")
+    suffix = f"; wait_until={plan['wait_until']}" if plan.get('waiting_for_fresh_source') else ''
+    print(f"Market Views guard: {plan['reason']}; date={plan['date_folder']}; should_build={plan['should_build']}{suffix}")
 
 
 def main():
