@@ -66,7 +66,7 @@ class PortalOpsAlertTests(unittest.TestCase):
                     "wechat_verified=true, verified_article_count=3, verified_draft_count=1", {})
                 self.assertIn("已入微信草稿箱并完成回读验证（3 篇文章，1 个草稿）", text)
                 self.assertIn("报告构建作业已完成", text)
-                self.assertIn("来源抓取不完整", text)
+                self.assertIn("来源健康检查未通过", text)
                 self.assertIn("已验证交付的草稿不因此变为投递失败", text)
                 self.assertNotIn("已经依次尝试", text)
 
@@ -78,7 +78,7 @@ class PortalOpsAlertTests(unittest.TestCase):
                 text = alerts.workflow_alert_text("Institution latest PDF to WeChat",
                     "build=success, source_health=failure, wechat=success, dry_run=false, " + extra, {})
                 self.assertIn("上传作业已完成，尚未确认草稿回读结果", text)
-                self.assertIn("来源抓取不完整", text)
+                self.assertIn("来源健康检查未通过", text)
                 self.assertNotIn("已入微信草稿箱", text)
 
     def test_institution_dry_run_overrides_any_delivery_fields(self):

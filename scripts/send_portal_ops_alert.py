@@ -134,7 +134,7 @@ def workflow_alert_text(workflow: str, source_results: str, env: dict[str, str])
         }.get(results.get("build"), "尚未确认报告构建结果")
         lines.append(f"报告构建：{build}。")
         if results.get("source_health") == "failure":
-            source = "来源抓取不完整，部分必需来源尚未取得"
+            source = "来源健康检查未通过，具体缺失或缓存恢复情况请查看抓取结果"
             source += "；已验证交付的草稿不因此变为投递失败" if verified else "；微信投递结果以上述独立状态为准"
         else:
             source = {
