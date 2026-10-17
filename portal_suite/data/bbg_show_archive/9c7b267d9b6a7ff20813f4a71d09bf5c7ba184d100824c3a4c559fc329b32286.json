@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "id": "9c7b267d9b6a7ff20813f4a71d09bf5c7ba184d100824c3a4c559fc329b32286",
+  "slug": "bbg-20261017-9c7b267d9b6a7ff2",
+  "date": "2026-10-17",
+  "title": "纽约大学教授：AI或成有缺陷的工具",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-10-15/nyu-s-marcus-on-why-ai-may-be-a-flawed-tool-video",
+  "start": 0.0,
+  "end": 85.9,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 5.2,
+      "en": "Give us a flavor to kick us off of your view of where we are now.",
+      "zh": "先谈谈你对当前形势的看法。"
+    },
+    {
+      "start": 5.2,
+      "end": 11.0,
+      "en": "And when you hear people like Rishi Sunak talk about the next industrial revolution, what is your reaction?",
+      "zh": "听到苏纳克等人谈论下一次工业革命，你作何反应？"
+    },
+    {
+      "start": 11.0,
+      "end": 17.4,
+      "en": "I mean AI could be the next industrial revolution, but the industrial revolution raised productivity.",
+      "zh": "AI可能是下一次工业革命，但工业革命提高了生产率。"
+    },
+    {
+      "start": 17.4,
+      "end": 22.0,
+      "en": "And so far AI has not really done that. There's been a lot of promises.",
+      "zh": "而到目前为止，AI并未真正实现这一点。有很多承诺。"
+    },
+    {
+      "start": 22.0,
+      "end": 26.7,
+      "en": "When ChachiBT came out, there were stories about how it was going to 10X everything.",
+      "zh": "ChatGPT问世时，有报道称它将使一切效率提升十倍。"
+    },
+    {
+      "start": 26.7,
+      "end": 30.3,
+      "en": "There were going to be a lot of billion dollar companies with one employee.",
+      "zh": "将出现许多只有一名员工的十亿美元公司。"
+    },
+    {
+      "start": 30.3,
+      "end": 37.3,
+      "en": "It hasn't 10X things that was yet another study yesterday showing that it's hard to find measurable impact of AI.",
+      "zh": "它并未使效率提升十倍，昨天还有研究显示很难找到AI的可衡量影响。"
+    },
+    {
+      "start": 37.3,
+      "end": 41.7,
+      "en": "That was not true in the industrial revolution, although you could ask how long did it play out.",
+      "zh": "工业革命时期并非如此，尽管你可以问它持续了多久。"
+    },
+    {
+      "start": 41.7,
+      "end": 46.9,
+      "en": "We may eventually have AI 10Xing people, but I don't think we will with a current technology.",
+      "zh": "我们最终可能让AI使人们效率提升十倍，但我认为当前技术做不到。"
+    },
+    {
+      "start": 46.9,
+      "end": 53.1,
+      "en": "I think one thing outsiders don't understand is AI is actually a whole grab bag of different technologies.",
+      "zh": "我认为外界不了解的一点是，AI实际上是各种技术的集合。"
+    },
+    {
+      "start": 53.1,
+      "end": 56.1,
+      "en": "Most of the work right now is on large language models.",
+      "zh": "目前大部分工作都集中在大型语言模型上。"
+    },
+    {
+      "start": 56.1,
+      "end": 61.9,
+      "en": "But large language models, which I joke the other day, might soon be called large liability modules.",
+      "zh": "但大型语言模型，我前几天开玩笑说，可能很快会被叫做大型责任模块。"
+    },
+    {
+      "start": 61.9,
+      "end": 64.9,
+      "en": "Because they're not very well constrained.",
+      "zh": "因为它们没有受到很好的约束。"
+    },
+    {
+      "start": 64.9,
+      "end": 73.5,
+      "en": "They don't really follow instructions. And for most business applications, if you have an intern that doesn't follow instructions, you fire them.",
+      "zh": "它们并不真正遵循指令。对于大多数商业应用来说，如果你的实习生不遵循指令，你会解雇他们。"
+    },
+    {
+      "start": 73.5,
+      "end": 80.9,
+      "en": "LLMs don't really follow instructions. All the so-called rogue AI things are examples of that, where they're not really following instructions.",
+      "zh": "大型语言模型并不真正遵循指令。所有所谓的流氓AI事件都是例子，它们并不真正遵循指令。"
+    },
+    {
+      "start": 80.9,
+      "end": 85.9,
+      "en": "They're following loosely. If you told an employee, hey, do really well on this exam.",
+      "zh": "它们只是松散地遵循。如果你告诉员工，嘿，这次考试要考好。"
+    }
+  ]
+}
