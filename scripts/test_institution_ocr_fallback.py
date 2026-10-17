@@ -193,6 +193,47 @@ class InstitutionOcrTests(unittest.TestCase):
             self.assertEqual(result["returncode"], 0 if mode == "provider_failure" else 2)
             self.assertEqual(recover.call_count, int(mode == "provider_failure"))
 
+    def test_completed_pending_attempt_keeps_ocr_permission_when_next_poll_has_no_budget(self):
+        args = producer.build_arg_parser().parse_args(["--chart-source-only"])
+        args.input_dir, args.output_dir = str(self.inputs), str(self.output)
+        args.institution_ocr_fallback = True
+        args.pending_task_attempts, args.pending_task_retry_delay = 3, 2
+        args._extraction_deadline = 10
+        clock = [0]
+        def child(command, **kwargs):
+            self.assertEqual(kwargs["timeout"], 10)
+            outcome = Path(command[command.index("--provider-outcome-path") + 1])
+            inventory = Path(command[command.index("--ocr-fallback-inventory-path") + 1])
+            source_map = json.loads(Path(command[command.index("--mineru-source-map") + 1]).read_bytes())
+            outcome.write_text(json.dumps({"schema": 1, "category": "mineru_unavailable"}))
+            inventory.write_text(json.dumps({"schema": 1, "sources": list(source_map["files"].values()),
+                                              "deferred_sources": 0}))
+            clock[0] = 10
+            return SimpleNamespace(returncode=75)
+        with patch.object(wrapper.subprocess, "run", side_effect=child) as calls, \
+                patch.object(wrapper.time, "monotonic", side_effect=lambda: clock[0]), \
+                patch.object(wrapper.time, "sleep"), \
+                patch.object(ocr, "recover_batch", return_value={"ocr_reports": 1, "reused_reports": 0,
+                    "deferred_sources": 0, "failed_reports": 0, "failures": []}) as recover:
+            result = wrapper.run_batch(1, [(1, next(self.inputs.iterdir()))], args)
+        self.assertEqual(calls.call_count, 1)
+        recover.assert_called_once()
+        self.assertEqual(result["returncode"], 0)
+        self.assertEqual(result["mineru_returncode"], 75)
+        self.assertEqual(result["pending_task_attempts"], 1)
+        self.assertEqual(result["provider_failure_category"], "mineru_unavailable")
+
+    def test_no_budget_at_invocation_start_cannot_reuse_stale_provider_permission(self):
+        outcome = self.root / "stale-outcome.json"
+        outcome.write_text(json.dumps({"schema": 1, "category": "mineru_unavailable"}))
+        with patch.object(wrapper.subprocess, "run") as child, \
+                patch.object(wrapper.time, "monotonic", return_value=10):
+            result, attempts = wrapper.run_pending_task_attempts(
+                ["new-source-command"], outcome, attempts=3, deadline=10)
+        child.assert_not_called()
+        self.assertEqual((result.returncode, attempts), (75, 0))
+        self.assertFalse(outcome.exists())
+
     @unittest.skipUnless(os.environ.get("REQUIRE_MARKET_VIEWS_OCR_TESTS") == "1", "real OCR runs in cloud CI")
     def test_real_native_and_scanned_pages_feed_verified_institution_source(self):
         import fitz

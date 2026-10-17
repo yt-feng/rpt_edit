@@ -265,12 +265,16 @@ def run_pending_task_attempts(cmd, outcome_path, *, attempts=1, delay=60, deadli
         raise ValueError('Pending task attempts must be between one and three')
     if type(delay) is not int or not 0 <= delay <= 600:
         raise ValueError('Pending task retry delay must be between zero and 600 seconds')
+    # Never accept a prior invocation's receipt. After a completed pending
+    # attempt below, however, preserve its proved provider-only result if the
+    # shared budget prevents starting another child: OCR still needs that proof.
+    outcome_path.unlink(missing_ok=True)
     for attempt in range(1, attempts + 1):
-        outcome_path.unlink(missing_ok=True)
         remaining = None if deadline is None else deadline - time.monotonic()
         if remaining is not None and remaining <= 0:
             log('Extraction time budget exhausted; no additional task started.')
             return subprocess.CompletedProcess(cmd, 75), attempt - 1
+        outcome_path.unlink(missing_ok=True)
         environment = os.environ.copy()
         if attempt > 1:
             environment['MINERU_FORBID_NEW_SUBMISSIONS'] = '1'
