@@ -1,5 +1,5 @@
 // Customer delivery only: no caller-supplied object keys, URLs or bucket prefixes.
-import { CustomerContentApiError } from "./customer-content-api.js";
+import { CustomerContentApiError, normalizeCustomerContentQuery } from "./customer-content-api.js";
 
 export const CONTENT_DATA_PREFIX = "_customer-content-data/v1";
 const REPORT_ID = /^[a-f0-9]{24}$/;
@@ -77,6 +77,20 @@ function listPage(rows, query, filter) {
   const items = available.slice(0, limit);
   const next = available.length > limit ? btoa(JSON.stringify({ filter, after: items.at(-1).key })).replaceAll("+", "-").replaceAll("/", "_").replace(/=+$/, "") : "";
   return { items: items.map(({ row }) => row), next_cursor: next };
+}
+
+async function reportListFilter(context, date, search) {
+  // A digest keeps even a 200-character CJK query within the cursor's 512-byte
+  // contract. Bind account and API scope without hashing the whole catalog;
+  // current membership and report permissions are still checked on every page.
+  const binding = JSON.stringify({
+    version: 2, account: context.user.id, date, search,
+    access_mode: context.grant.access_mode,
+    scopes: [...(context.grant.scopes || [])].sort(),
+    report_ids: [...(context.grant.report_ids || [])].sort(),
+  });
+  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(binding));
+  return `reports-v2:${[...new Uint8Array(digest)].map(value => value.toString(16).padStart(2, "0")).join("")}`;
 }
 
 function dataResponse(body, type, filename, size, etag = "") {
@@ -176,10 +190,11 @@ export function createCustomerContentData(deps) {
     async listReports(env, query, context) {
       if (query.date && !contentDate(query.date)) failure(400, "invalid_request");
       const date = contentDate(query.date);
-      const search = text(query.q, 200).trim().toLowerCase();
+      const search = normalizeCustomerContentQuery(query.q);
       const rows = (await allowed(env, await catalog(env, context), context)).map(publicContentReport).filter(Boolean)
-        .filter((row) => (!date || row.date === date) && (!search || [row.title, row.title_zh, row.title_en, row.institution].join(" ").toLowerCase().includes(search)));
-      return listPage(rows, query, `reports:${date}:${encodeURIComponent(search)}`);
+        .filter((row) => (!date || row.date === date) && (!search || [row.title, row.title_zh, row.title_en, row.institution]
+          .join(" ").normalize("NFKC").replace(/\s+/gu, " ").toLowerCase().includes(search)));
+      return listPage(rows, query, await reportListFilter(context, date, search));
     },
     async getReport(env, query, context) { return publicContentReport(await report(env, query, context)); },
     async listArtifacts(env, query, context) {

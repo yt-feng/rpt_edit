@@ -120,6 +120,32 @@ test("actual Worker membership mode preserves current web entitlement and observ
   assert.equal((await f.call(`/api/content/v1/reports/${REPORT}/download`, key.secret)).status, 404);
 });
 
+test("actual Worker exposes report search with grant-filtered results and query-bound pagination", async t => {
+  const f = setup(t), second = "c".repeat(24), hidden = "d".repeat(24);
+  f.bucket.seed("edge-static/runtime-data/catalog.json", { items: [
+    { id: REPORT, title: "合成报告一", title_en: "Synthetic report one", bank_name: "示例研究院", date_folder: "261012", available: true },
+    { id: second, title: "合成报告二", title_en: "Synthetic report two", bank_name: "示例研究院", date_folder: "261011", available: true },
+    { id: hidden, title: "未授权合成报告", title_en: "Hidden synthetic report", bank_name: "Hidden institution", date_folder: "261013", available: true },
+  ] });
+  await f.grant({ report_ids: [REPORT, second] }); const key = await f.key();
+  const firstResponse = await f.call(`/api/content/v1/reports?q=${encodeURIComponent(" ＳＹＮＴＨＥＴＩＣ　report ")}&limit=1`, key.secret);
+  assert.equal(firstResponse.status, 200, await firstResponse.clone().text());
+  const first = await firstResponse.json();
+  assert.deepEqual(first.items.map(row => row.id), [REPORT]); assert.ok(first.next_cursor);
+  const cursor = encodeURIComponent(first.next_cursor);
+  const secondResponse = await f.call(`/api/content/v1/reports?q=SYNTHETIC%20REPORT&limit=1&cursor=${cursor}`, key.secret);
+  assert.equal(secondResponse.status, 200, await secondResponse.clone().text());
+  assert.deepEqual((await secondResponse.json()).items.map(row => row.id), [second]);
+  assert.equal((await f.call(`/api/content/v1/reports?q=report&limit=1&cursor=${cursor}`, key.secret)).status, 400);
+  const chinese = await (await f.call(`/api/content/v1/reports?q=${encodeURIComponent("示例研究院")}&date=2026-10-11`, key.secret)).json();
+  assert.deepEqual(chinese.items.map(row => row.id), [second]);
+  assert.deepEqual(await (await f.call("/api/content/v1/reports?q=hidden", key.secret)).json(), { ok: true, items: [], next_cursor: null });
+  await f.grant({ report_ids: [second] });
+  assert.equal((await f.call(`/api/content/v1/reports?q=synthetic%20report&limit=1&cursor=${cursor}`, key.secret)).status, 400);
+  const restricted = await (await f.call("/api/content/v1/reports?q=synthetic%20report", key.secret)).json();
+  assert.deepEqual(restricted.items.map(row => row.id), [second]);
+});
+
 test("actual Worker denies private object locators, foreign report IDs, and account disable immediately", async t => {
   const f = setup(t); await f.grant(); const key = await f.key();
   assert.equal((await f.call(`/api/content/v1/reports/${"c".repeat(24)}/download`, key.secret)).status, 403);

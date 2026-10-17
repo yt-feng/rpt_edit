@@ -1,0 +1,2 @@
+# Official MCP SDK, supported 1.x maintenance line. CLI needs no dependencies.
+mcp>=1.28,<2

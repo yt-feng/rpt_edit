@@ -137,6 +137,10 @@ def verify_candidate_locale_routes(
 
 REQUIRED_STATIC_PATHS = (
     "index.html",
+    "developer-api.html",
+    "content-api.openapi.json",
+    "downloads/content-agent.zip",
+    "downloads/content-agent.zip.sha256",
     "robots.txt",
     "feed.xml",
     "data/catalog.json",

@@ -95,6 +95,69 @@ test("cursor carries filters and remains bounded across pages", async () => {
   await assert.rejects(state.api.listReports({}, { limit: 1, cursor: first.next_cursor, date: "2026-10-12" }, state.context));
 });
 
+test("report search matches normalized public titles and institutions within the authorized corpus", async () => {
+  const state = fixture(), hiddenId = "e".repeat(24);
+  state.deps.loadCatalog = async () => ({ items: [
+    { id: reportId, title: "Ｅｎｅｒｇｙ　 Outlook", title_zh: "全球能源展望", title_en: "Energy outlook", bank_name: "示例研究院", date_folder: "261012" },
+    { id: otherId, title: "Market strategy", title_en: "Allocation review", institution: "Example Research", date_folder: "261011" },
+    { id: hiddenId, title: "Hidden energy outlook", institution: "Hidden Research", private_path: "private-energy-data", date_folder: "261013" },
+  ] });
+  state.context.grant = { access_mode: "granted_corpus", report_ids: [reportId, otherId] };
+  const api = createCustomerContentData(state.deps);
+  for (const q of ["  ENERGY  OUTLOOK  ", "全球能源", "示例研究院"]) {
+    assert.deepEqual((await api.listReports({}, { q, limit: 10 }, state.context)).items.map(row => row.id), [reportId]);
+  }
+  for (const q of ["allocation", "EXAMPLE RESEARCH"]) {
+    assert.deepEqual((await api.listReports({}, { q, limit: 10 }, state.context)).items.map(row => row.id), [otherId]);
+  }
+  for (const q of ["hidden", "private-energy-data", "not found"]) {
+    assert.deepEqual(await api.listReports({}, { q, limit: 10 }, state.context), { items: [], next_cursor: "" });
+  }
+  assert.equal((await api.listReports({}, { q: "energy", date: "2026-10-11", limit: 10 }, state.context)).items.length, 0);
+  assert.equal((await api.listReports({}, { q: "　 ", limit: 10 }, state.context)).items.length, 2);
+  await assert.rejects(api.listReports({}, { q: "x".repeat(201), limit: 10 }, state.context), { code: "invalid_request" });
+});
+
+test("search cursors stay bounded and bind query, date, account and API authorization", async () => {
+  const state = fixture(), query = "研".repeat(200);
+  state.deps.loadCatalog = async () => ({ items: [
+    { id: reportId, title: `${query}一`, date_folder: "261012" },
+    { id: otherId, title: `${query}二`, date_folder: "261011" },
+  ] });
+  state.context.grant = { access_mode: "granted_corpus", report_ids: [], scopes: ["reports:read"] };
+  const api = createCustomerContentData(state.deps);
+  const first = await api.listReports({}, { q: query, limit: 1 }, state.context);
+  assert.ok(first.next_cursor.length > 0 && first.next_cursor.length <= 512);
+  const next = { q: `　${query} `, cursor: first.next_cursor, limit: 1 };
+  assert.deepEqual((await api.listReports({}, next, state.context)).items.map(row => row.id), [otherId]);
+  for (const changed of [{ q: "研" }, { q: "" }, { date: "2026-10-12" }]) {
+    await assert.rejects(api.listReports({}, { ...next, ...changed }, state.context), { code: "invalid_request" });
+  }
+  for (const changed of [
+    { user: { id: "another-account" } },
+    { grant: { ...state.context.grant, report_ids: [otherId] } },
+    { grant: { ...state.context.grant, scopes: ["reports:read", "artifacts:read"] } },
+    { grant: { ...state.context.grant, access_mode: "membership" } },
+  ]) {
+    await assert.rejects(api.listReports({}, next, { ...state.context, ...changed }), { code: "invalid_request" });
+  }
+});
+
+test("each search page reapplies current membership without hashing the catalog into the cursor", async () => {
+  const state = fixture();
+  state.deps.loadCatalog = async () => ({ items: [
+    { id: reportId, title: "Energy one", date_folder: "261012" },
+    { id: otherId, title: "Energy two", date_folder: "261011" },
+  ] });
+  let visible = new Set([reportId, otherId]);
+  state.deps.allowedReports = async (_env, reports) => reports.filter(row => visible.has(row.id));
+  const api = createCustomerContentData(state.deps);
+  const first = await api.listReports({}, { q: "Energy", limit: 1 }, state.context);
+  visible = new Set([reportId]);
+  const second = await api.listReports({}, { q: "ｅｎｅｒｇｙ", limit: 1, cursor: first.next_cursor }, state.context);
+  assert.deepEqual(second.items, []);
+});
+
 test("published translation download and filtered listing do not depend on chart or fallback-text availability", async () => {
   const state = fixture();
   state.rows.set(`${prefix}/reports/${reportId}/manifest.json`, JSON.stringify(manifest()));
