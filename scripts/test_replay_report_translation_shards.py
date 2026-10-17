@@ -94,6 +94,79 @@ class ReplayTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 replay.coordinates(run, date, indices)
 
+    def recovered_jobs(self):
+        return {"jobs": self.jobs["jobs"] + [
+            {"name": f"deliver-recovered-report-articles / {stage}", "status": "completed", "conclusion": "success"}
+            for stage in ("generate", "deliver", "publish")]}
+
+    def test_legacy_recovered_plan_uses_verified_recovery_instead_of_raw_shards(self):
+        original = '_private-workflow-handoff/xhs/123/260920'
+        recovered = '_private-workflow-handoff/xhs-recovery/123/260920/' + 'a' * 64 + '/articles'
+        with patch.object(replay, 'list_keys', return_value=[recovered + '/shard_0.tar.gz', recovered + '/unrelated.json']) as listing:
+            actual = replay.resolve_source_prefix(self.plan, original, self.run, self.recovered_jobs())
+            self.assertEqual(actual, recovered)
+            listing.assert_called_once_with('_private-workflow-handoff/xhs-recovery/123/260920')
+            with self.assertRaisesRegex(ValueError, 'changed after recovery preparation'):
+                replay.resolve_source_prefix(self.plan, original, self.run, self.recovered_jobs(), original)
+        with patch.object(replay, 'list_keys') as listing:
+            self.assertEqual(replay.resolve_source_prefix(self.plan, original, self.run, self.jobs), original)
+            listing.assert_not_called()
+
+    def test_recovery_is_not_selected_from_incomplete_jobs_or_ambiguous_archives(self):
+        original = '_private-workflow-handoff/xhs/123/260920'
+        recovered = '_private-workflow-handoff/xhs-recovery/123/260920/' + 'a' * 64 + '/articles'
+        jobs = self.recovered_jobs()
+        jobs['jobs'][-1]['conclusion'] = 'failure'
+        with patch.object(replay, 'list_keys') as listing, self.assertRaisesRegex(ValueError, 'not completely verified'):
+            replay.resolve_source_prefix(self.plan, original, self.run, jobs)
+        listing.assert_not_called()
+        for keys in ([], [recovered + '/shard_0.tar.gz', recovered.replace('a' * 64, 'b' * 64) + '/shard_0.tar.gz']):
+            with patch.object(replay, 'list_keys', return_value=keys), self.assertRaisesRegex(ValueError, 'missing or ambiguous'):
+                replay.resolve_source_prefix(self.plan, original, self.run, self.recovered_jobs())
+
+    def test_bound_source_prefix_never_searches_and_must_match_original_run_and_jobs(self):
+        original = '_private-workflow-handoff/xhs/123/260920'
+        recovered = '_private-workflow-handoff/xhs-recovery/123/260920/' + 'a' * 64 + '/articles'
+        plan = dict(self.plan, schema_version=3, source_prefix=recovered)
+        with patch.object(replay, 'list_keys') as listing:
+            self.assertEqual(replay.resolve_source_prefix(plan, original, self.run, self.recovered_jobs()), recovered)
+            listing.assert_not_called()
+            for run, jobs in ((dict(self.run, id=124), self.recovered_jobs()), (self.run, self.jobs)):
+                with self.assertRaisesRegex(ValueError, 'original workflow outcome'):
+                    replay.resolve_source_prefix(plan, original, run, jobs)
+
+    def test_recovered_source_receipt_and_all_planned_hashes_are_validated(self):
+        prefix = '_private-workflow-handoff/xhs-recovery/123/260920/' + 'a' * 64 + '/articles'
+        run = dict(self.run, head_sha='c' * 40)
+        receipt = {'source_kind': 'mineru-recovery', 'source_run_id': '123', 'source_execution_sha': 'c' * 40,
+                   'source_handoff_run_id': '123', 'source_handoff_execution_sha': 'c' * 40}
+        with tempfile.TemporaryDirectory() as temp:
+            date_root = Path(temp) / '260920'
+            root = date_root / 'shard_0'
+            root.mkdir(parents=True)
+            provenance = {'manifest_sha256': 'a' * 64,
+                          'source_receipt_json': json.dumps({'manifest_sha256': 'a' * 64})}
+            (root / 'source_provenance.json').write_text(json.dumps(provenance))
+            with patch('recover_report_articles.validate_articles', return_value=receipt) as validate, \
+                 patch.object(replay.shards, 'selected_reports') as selected:
+                replay.validate_recovered_sources(self.plan, prefix, run, date_root)
+                validate.assert_called_once_with(root, self.plan['source_count'], '260920')
+                self.assertEqual([call.args[1] for call in selected.call_args_list], list(range(5)))
+                selected.side_effect = ValueError('Source changed after planning')
+                with self.assertRaisesRegex(ValueError, 'Source changed'):
+                    replay.validate_recovered_sources(self.plan, prefix, run, date_root)
+            for key, value in (('source_run_id', '124'), ('source_execution_sha', 'd' * 40),
+                               ('source_handoff_run_id', '124'), ('source_handoff_execution_sha', 'd' * 40)):
+                with patch('recover_report_articles.validate_articles', return_value={**receipt, key: value}), \
+                     self.assertRaisesRegex(ValueError, 'original Daily identity'):
+                    replay.validate_recovered_sources(self.plan, prefix, run, date_root)
+            for mutation in ({'manifest_sha256': 'b' * 64},
+                             {'source_receipt_json': json.dumps({'manifest_sha256': 'b' * 64})}):
+                (root / 'source_provenance.json').write_text(json.dumps({**provenance, **mutation}))
+                with patch('recover_report_articles.validate_articles', return_value=receipt), \
+                     self.assertRaisesRegex(ValueError, 'original Daily identity'):
+                    replay.validate_recovered_sources(self.plan, prefix, run, date_root)
+
     def test_completed_slot_reused_without_upload_and_global_index_21_preserved(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
@@ -122,6 +195,26 @@ class ReplayTests(unittest.TestCase):
             (root / "portal_translated_reports/260920/21-report/portal_translated_report_21.pdf").write_bytes(b"partial")
             with self.assertRaises(ValueError):
                 replay.validate_result(self.plan, 4, root)
+
+    def test_completed_bound_plan_slot_cannot_reuse_different_extraction(self):
+        plan = copy.deepcopy(self.plan)
+        plan['schema_version'] = 3
+        plan['source_prefix'] = '_private-workflow-handoff/xhs/123/260920'
+        for record in plan['reports']:
+            record.update(source_method='mineru', source_markdown='source_mineru.md', source_provenance_sha256=None)
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            completed_result(root, plan, 4)
+            path = root / 'portal_translated_reports/260920/21-report/translation_status.json'
+            status = json.loads(path.read_text())
+            record = plan['reports'][-1]
+            status.update({key: record[key] for key in ('source_method', 'source_markdown', 'source_sha256', 'source_provenance_sha256')})
+            path.write_text(json.dumps(status))
+            replay.validate_result(plan, 4, root)
+            status['source_sha256'] = 'f' * 64
+            path.write_text(json.dumps(status))
+            with self.assertRaisesRegex(ValueError, 'extraction identity'):
+                replay.validate_result(plan, 4, root)
 
     def test_exact_union_merges_21_reports_and_refuses_missing_member(self):
         with tempfile.TemporaryDirectory() as temp:

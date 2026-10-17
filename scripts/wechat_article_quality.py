@@ -72,6 +72,13 @@ FORBIDDEN_META_HEADING_RE = re.compile(
     r")",
     re.I,
 )
+# ``portal`` is also ordinary report vocabulary (data/customer portals). Only
+# the configured placeholder/brand or an explicit invitation identifies a CTA.
+# The real public host remains covered separately below.
+PORTAL_CTA_PATTERN = (
+    r"(?<![A-Za-z0-9_])portal(?:\.example\.invalid|\s+suite)(?![A-Za-z0-9_])|"
+    r"(?:请|欢迎|敬请)\s*(?:访问|前往|点击|登录|打开)\s*portal(?![A-Za-z0-9_])"
+)
 MODEL_CTA_RE = re.compile(
     r"(?:"
     r"扫码(?:交流|加入|领取|查看)?|知识星球|加微信|朋友圈(?:查看|领取|更新)|设为星标|设置星标|关注并星标|"
@@ -80,7 +87,7 @@ MODEL_CTA_RE = re.compile(
     r"社群.{0,8}(?:扫码|加入|领取|获取|交流)|继续拆.{0,12}报告|"
     r"完整报告.{0,24}(?:获取|领取|查看|阅读|继续|扫码|加入|参见)|"
     r"(?:获取|领取|查看|阅读).{0,12}(?:原文|完整报告)|"
-    r"更新信息参见|portal|k[cC]d[eE]sk(?:\.com)?|[ΚK][СC]ⅾ?е?ѕ?k|"
+    rf"更新信息参见|{PORTAL_CTA_PATTERN}|k[cC]d[eE]sk(?:\.com)?|[ΚK][СC]ⅾ?е?ѕ?k|"
     r"如果你是从.{0,30}搜到这里|单篇文章只能解决|"
     r"(?:更多|后续).{0,16}(?:内容|报告|交流).{0,12}(?:关注|扫码|加入|查看)"
     r")",
@@ -93,6 +100,26 @@ COMMENT_LABEL_LINE_RE = re.compile(
     re.I | re.M,
 )
 SENTENCE_RE = re.compile(r"[^。！？!?；;]+[。！？!?；;]?")
+
+
+def contains_cta_sentence(text: str, *patterns: re.Pattern[str]) -> bool:
+    """Match CTA phrases within the same sentence and Markdown line.
+
+    Cleaning and validation must use the same scope: unrelated statements on
+    either side of a full stop/semicolon cannot form a reader invitation.
+    Complete renderer image tokens are syntax, not prose.
+    """
+    masked = PORTAL_IMAGE_TOKEN_RE.sub("IMAGE_PLACEHOLDER", text or "")
+    return any(
+        pattern.search(sentence)
+        for line in masked.splitlines()
+        for sentence in SENTENCE_RE.findall(line)
+        for pattern in patterns
+    )
+
+
+def contains_model_cta(text: str) -> bool:
+    return contains_cta_sentence(text, MODEL_CTA_RE)
 
 
 def _plain_label(value: str) -> str:
@@ -157,13 +184,6 @@ def strip_forbidden_meta_sections(markdown: str) -> tuple[str, list[str]]:
 
 
 def _strip_cta_sentences(line: str) -> tuple[str, bool]:
-    # ``PORTAL_IMAGE`` is also the renderer's exact image-placeholder syntax.
-    # Mask complete placeholders while looking for prose CTAs so the broad
-    # ``portal`` brand guard cannot delete a legitimate image line.
-    def contains_model_cta(value: str) -> bool:
-        masked = PORTAL_IMAGE_TOKEN_RE.sub("IMAGE_PLACEHOLDER", value or "")
-        return bool(MODEL_CTA_RE.search(masked))
-
     if not contains_model_cta(line):
         return line, False
     sentences = SENTENCE_RE.findall(line)
@@ -214,8 +234,7 @@ def audit_wechat_article_markdown(markdown: str) -> list[str]:
         if heading and len(heading.group(1)) >= 2 and is_forbidden_meta_heading(heading.group(2)):
             issues.append("forbidden_meta_section")
             break
-    masked = PORTAL_IMAGE_TOKEN_RE.sub("IMAGE_PLACEHOLDER", markdown or "")
-    if MODEL_CTA_RE.search(masked):
+    if contains_model_cta(markdown):
         issues.append("model_cta")
     if re.search(r"(?:编辑评论)\s*[：:]", markdown or "", flags=re.I):
         issues.append("legacy_comment_label")

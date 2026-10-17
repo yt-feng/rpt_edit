@@ -46,6 +46,7 @@ jobs:
       shard_indices: ${{ steps.plan.outputs.shard_indices }}
       plan_sha256: ${{ steps.plan.outputs.plan_sha256 }}
       selected_count: ${{ steps.plan.outputs.selected_count }}
+      source_prefix: ${{ steps.plan.outputs.source_prefix }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -75,6 +76,7 @@ jobs:
     env:
       PLAN_SHA256: ${{ needs.validate-plan.outputs.plan_sha256 }}
       SHARD_INDEX: ${{ matrix.shard_index }}
+      SOURCE_PREFIX: ${{ needs.validate-plan.outputs.source_prefix }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -93,6 +95,7 @@ jobs:
             --source-run-id "$SOURCE_RUN_ID" --date-folder "$DATE_FOLDER" \
             --failed-shards "$FAILED_SHARDS" --plan-dir "$RUNNER_TEMP/translation-plan" \
             --plan-sha256 "$PLAN_SHA256" --shard-index "$SHARD_INDEX" \
+            --source-prefix "$SOURCE_PREFIX" \
             --output-root "$RUNNER_TEMP/translation-output"
       - name: Install Chinese fonts
         if: steps.sources.outputs.complete != 'true'

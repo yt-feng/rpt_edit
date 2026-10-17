@@ -89,19 +89,9 @@ jobs:
           SOURCE_WORKFLOW: ${{ inputs.source_workflow }}
           SOURCE_RESULTS: ${{ inputs.source_results }}
         run: |
-          cat > "$RUNNER_TEMP/portal-ops-alert.txt" <<EOF
-          微信文章自动任务未成功完成，请打开 GitHub Action 查看失败步骤。
-
-          Workflow：$SOURCE_WORKFLOW
-          Job 结果：$SOURCE_RESULTS
-          触发方式：$GITHUB_EVENT_NAME
-          分支：$GITHUB_REF_NAME
-          运行地址：$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
-
-          Final PDF 主流程已经依次尝试 MinerU key 池和 DeepSeek 主备 key。若生成步骤失败，请优先检查 API 余额、Token 到期状态及服务状态；若微信步骤失败，请检查固定 IP runner 和公众号接口状态。已完成的分片和已验证草稿会保留，修复后可续跑。
-          EOF
           python scripts/send_portal_ops_alert.py \
             --subject "Portal workflow failed | $SOURCE_WORKFLOW" \
-            --text-file "$RUNNER_TEMP/portal-ops-alert.txt" \
+            --source-workflow "$SOURCE_WORKFLOW" \
+            --workflow-results "$SOURCE_RESULTS" \
             --dedupe-key "${{ steps.alert-window.outputs.dedupe_key }}" \
             --severity critical

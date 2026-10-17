@@ -18,7 +18,7 @@ import zipfile
 
 from consume_legacy_mineru import safe_unzip
 from mineru_result_cache import identity as cache_identity, missing, conflict
-from mineru_task_ledger import LedgerError, digest, encoded, exact_json, schema_v1
+from mineru_task_ledger import LedgerError, REJECTED_STATES, digest, encoded, exact_json, schema_v1
 from mineru_terminal_recovery import task_identity
 
 POLICY = 'physical-page-segments-v1'
@@ -206,10 +206,10 @@ def _claim(ledger, binding, *, required):
     batch, _ = ledger._read_batch(claim['batch_key'])
     require(exact_json(batch['files'], [binding]) and 'recovery_parent' not in batch,
             'segment task is not its exact singleton')
-    require(batch['state'] in {'accepted', 'uploaded', 'terminal', 'auth_rejected'},
+    require(batch['state'] in {'accepted', 'uploaded', 'terminal'} | REJECTED_STATES,
             'ambiguous segment submission')
     if required:
-        require(batch['state'] != 'auth_rejected' and bool(batch['batch_id']), 'segment task unaccepted')
+        require(batch['state'] not in REJECTED_STATES and bool(batch['batch_id']), 'segment task unaccepted')
     return batch
 
 

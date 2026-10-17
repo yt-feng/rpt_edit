@@ -80,7 +80,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF reportlab PyYAML
+      - run: python -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF pypdf==6.19.0 reportlab PyYAML
       - name: Test strict cached OCR source recovery and existing synthesis
         run: |
           python -B scripts/test_recover_ocr_cache_sources.py
@@ -148,7 +148,7 @@ jobs:
           name: selected-macro-pdfs-${{ inputs.source_run_id }}
           path: ${{ runner.temp }}/ocr-selected-originals
       - name: Install verification and deterministic rendering dependencies
-        run: python -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF reportlab 'boto3>=1.37.32,<2'
+        run: python -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF pypdf==6.19.0 reportlab 'boto3>=1.37.32,<2'
       - name: Restore and verify complete OCR sources from cache only
         if: inputs.source_mode == 'synthesis'
         env:

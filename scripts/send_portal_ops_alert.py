@@ -24,6 +24,61 @@ MIN_DEDUPE_HOURS = 1
 MAX_DEDUPE_HOURS = 720
 
 
+def workflow_alert_text(workflow: str, source_results: str, env: dict[str, str]) -> str:
+    """Describe observed consumer outcomes without guessing provider failures."""
+    results = {}
+    for item in source_results.split(","):
+        key, separator, value = item.partition("=")
+        if separator:
+            results[key.strip()] = value.strip()
+    lines = ["自动任务有未完成的环节，请按下列交付状态检查对应步骤。", ""]
+    if workflow == "Daily report articles and translations":
+        no_work = results.get("no_work") == "true" and results.get("selected_count") == "0"
+        if no_work:
+            wechat = "本次无新增来源，未声称新增草稿"
+        elif results.get("wechat_enabled") == "false":
+            wechat = "本次未启用"
+        elif results.get("wechat_source") == "portal_translated":
+            wechat = "已完成草稿投递与回读验证" if results.get("translated_wechat") == "success" else "尚未完成草稿交付"
+        elif results.get("wechat") == "success":
+            wechat = "已完成草稿投递与回读验证"
+        elif (results.get("wechat_enabled") == "true" and results.get("wechat_source") == "xhs_notes"
+              and results.get("recovered_articles") == "success"):
+            wechat = "已通过恢复链路完成草稿投递与回读验证"
+        else:
+            wechat = "尚未确认完成草稿交付"
+        lines.append(f"微信文章：{wechat}。")
+        market = ("本次无新增来源" if no_work else
+                  "已验证交付" if results.get("delivery_gate") == "success" else "尚未确认交付")
+        lines.append(f"Market Views：{market}。")
+        if no_work:
+            translated = "本次无新增来源"
+        elif results.get("translation_requested") == "0":
+            translated = "本次未启用"
+        elif results.get("translated") == "success":
+            translated = "已完成"
+        elif results.get("translation_shards") in {"failure", "cancelled"}:
+            translated = "分片未全部完成，合并交付尚未完成；请查看失败分片日志和 runner 注释"
+        else:
+            translated = "尚未确认完成"
+        lines.append(f"报告全文翻译：{translated}。")
+        source_kind = results.get("recovery_source_kind")
+        if results.get("market_source_recovery") == "success" and source_kind == "mineru-recovery":
+            lines.append("来源恢复：MinerU 结果已恢复；本次恢复未使用 OCR。")
+        elif (results.get("market_source_recovery") == "success" and source_kind == "ocr-synthesis") or results.get("ocr_page_source_recovery") == "success":
+            lines.append("来源恢复：OCR 来源已就绪；微信交付结果以上述独立状态为准。")
+        lines.append("")
+    failed = [key for key, value in results.items() if value in {"failure", "cancelled"}]
+    if failed:
+        lines.append("未完成的步骤：" + "、".join(failed))
+    lines += [f"Workflow：{workflow}", f"Job 结果：{source_results}",
+              f"触发方式：{env.get('GITHUB_EVENT_NAME', '')}",
+              f"分支：{env.get('GITHUB_REF_NAME', '')}",
+              "运行地址：" + env.get("GITHUB_SERVER_URL", "https://github.com") + "/" + env.get("GITHUB_REPOSITORY", "") + "/actions/runs/" + env.get("GITHUB_RUN_ID", ""), "",
+              "整体任务失败不代表所有文章均未交付。以上仅根据已记录的步骤结果判断；具体原因请查看首次失败步骤的错误及 runner 注释。未获得明确 API 错误时，不将原因归为余额、Token 或服务故障。已验证草稿和完成的分片会保留，恢复时复用。"]
+    return "\n".join(lines)
+
+
 def normalize_worker_url(value: str) -> str:
     base = (value or "").strip() or DEFAULT_WORKER_BASE_URL
     if base.startswith("/"):
@@ -132,6 +187,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--subject", required=True)
     parser.add_argument("--text")
     parser.add_argument("--text-file", type=Path)
+    parser.add_argument("--source-workflow")
+    parser.add_argument("--workflow-results")
     parser.add_argument("--dedupe-key", required=True)
     parser.add_argument(
         "--dedupe-hours",
@@ -154,6 +211,8 @@ def main() -> int:
     text = args.text or ""
     if args.text_file:
         text = args.text_file.read_text(encoding="utf-8")
+    if args.source_workflow:
+        text = workflow_alert_text(args.source_workflow, args.workflow_results or "", dict(os.environ))
     signing_key = os.environ.get("OPS_ALERT_SIGNING_KEY", "").strip()
     result = send_alert(
         worker_base_url=args.worker_base_url,

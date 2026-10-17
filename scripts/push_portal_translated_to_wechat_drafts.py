@@ -50,7 +50,12 @@ from sensitive_content_guard import (
     nomura_sensitive_wechat_report_reasons,
     sanitize_wechat_stock_language,
 )
-from wechat_article_quality import audit_wechat_article_markdown, sanitize_wechat_article_markdown
+from wechat_article_quality import (
+    PORTAL_CTA_PATTERN,
+    audit_wechat_article_markdown,
+    contains_cta_sentence,
+    sanitize_wechat_article_markdown,
+)
 from wechat_image_quality import is_article_image_candidate, source_chart_images, is_publication_furniture_metadata
 from free_editorial_images import download_editorial_image, attribution_html
 
@@ -116,7 +121,7 @@ MID_ARTICLE_CTA_RE = re.compile(
     r"每天我会|国际信源汇编|完整报告与\s*(?:编辑|KC)评论|完整报告和\s*(?:编辑|KC)评论|更多国际信源|"
     r"喂给\s*AI|人工快速扫|市场\s*dynamics|图表合集|加入.*讨论|继续拆完整报告|"
     r"这篇可以沿着|几条线索看|重点不是复述报告|如果你是从|单篇文章只能解决|"
-    r"更新信息参见|portal|k[cC]d[eE]sk(?:\.com)?)",
+    rf"更新信息参见|{PORTAL_CTA_PATTERN}|k[cC]d[eE]sk(?:\.com)?)",
     re.I,
 )
 MID_ARTICLE_CTA_CONTEXT_RE = re.compile(
@@ -874,7 +879,7 @@ def clean_digest_candidate(text: str) -> str:
     cleaned = remove_generic_title_noise(cleaned)
     cleaned = TRAILING_DISCLOSURE_RE.sub("", cleaned)
     cleaned = normalize_space(cleaned).strip(" ，,。；;：:、-—")
-    if not cleaned or MID_ARTICLE_CTA_RE.search(cleaned) or MID_ARTICLE_CTA_CONTEXT_RE.search(cleaned):
+    if not cleaned or is_mid_article_cta_text(cleaned):
         return ""
     if re.match(r"^(?:图|表)\s*\d+[\.:：\s]", cleaned) or cleaned.startswith("来源："):
         return ""
@@ -1024,10 +1029,10 @@ def clean_markdown(markdown: str) -> str:
 
 
 def is_mid_article_cta_text(text: str) -> bool:
-    cleaned = normalize_space(strip_markdown_markup(text))
+    cleaned = "\n".join(strip_markdown_markup(line) for line in (text or "").splitlines())
     if not cleaned:
         return False
-    return bool(MID_ARTICLE_CTA_RE.search(cleaned) or MID_ARTICLE_CTA_CONTEXT_RE.search(cleaned))
+    return contains_cta_sentence(cleaned, MID_ARTICLE_CTA_RE, MID_ARTICLE_CTA_CONTEXT_RE)
 
 
 def strip_mid_article_cta_sentences(text: str) -> str:

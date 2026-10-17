@@ -237,6 +237,28 @@ class BacklogTests(unittest.TestCase):
         self.assertEqual(self.backlog.versions([binding])[0]['sha256'], binding['sha256'])
         self.assertEqual(len(self.provider.posts), 1)
 
+    def test_undated_official_source_preserves_exact_provenance_without_blocking_batch(self):
+        sources = self.inputs[:2]
+        bindings = [self.ledger.bind(*source) for source in sources]
+        rows = [dict(local_filename=binding['source'], sha256=binding['sha256'], bytes=binding['size'],
+                     published='2026-10-16T00:00:00Z' if index == 0 else '',
+                     source_page_url=f'https://www.weforum.org/publications/report-{index}',
+                     pdf_url=f'https://www3.weforum.org/docs/report-{index}.pdf', feed_pdf_candidates=[])
+                for index, binding in enumerate(bindings)]
+        manifest = self.folder/'undated-manifest.json'
+        manifest.write_text(json.dumps({'downloaded': rows}))
+        with patch.dict(b.os.environ, {'INSTITUTION_SOURCE_MANIFEST': str(manifest)}):
+            b.preserve_manifest_versions(self.ledger, sources)
+        saved = self.backlog.versions(bindings)
+        self.assertEqual([row['published'] for row in saved], ['2026-10-16T00:00:00Z', ''])
+        self.assertEqual([row['sha256'] for row in saved], [binding['sha256'] for binding in bindings])
+        before = len(self.client.puts)
+        for changes in ({'published': None}, {'published': 20261016}, {'source_page_url': ''},
+                        {'pdf_url': ''}, {'bytes': 1}, {'sha256': 'f'*64}):
+            with self.subTest(changes=changes), self.assertRaises(m.LedgerError):
+                self.backlog.save_versions(bindings[:1], [dict(saved[0], **changes)], [])
+        self.assertEqual(len(self.client.puts), before)
+
     def test_live_proof_survives_pre_handoff_versions_and_enables_exact_empty_feed_hold(self):
         row, item, _ = live_hold_fixture()
         path = self.folder/row['local_filename']; path.write_bytes(b'%PDF-synthetic-live-original')

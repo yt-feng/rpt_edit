@@ -68,6 +68,7 @@ LEDGER_ERROR_CATEGORIES = {
     'Stored task has duplicate source identities': 'stored_task_duplicate_sources',
     'No MinerU token identities available': 'credentials_missing',
     'All configured MinerU credentials were definitively rejected; saved batch is auth_rejected': 'credentials_rejected',
+    'All configured MinerU credentials are rejected or quota-limited; saved batch retained': 'credentials_quota_limited',
     'Accepted task refers to a definitively rejected credential': 'accepted_task_credential_rejected',
     'Stored authentication rejection history is malformed': 'credential_rejection_history_invalid',
     'Stored authentication rejection state is inconsistent': 'credential_rejection_state_invalid',
@@ -122,6 +123,9 @@ LEDGER_ERROR_CATEGORIES = {
     'MinerU post transport outcome unknown; saved task retained': 'provider_post_transport_unknown',
     'MinerU put transport outcome unknown; saved task retained': 'provider_upload_transport_unknown',
     'MinerU submission acknowledgement is incomplete': 'provider_submission_ack_incomplete',
+    'MinerU provider protocol failure: invalid_json; saved task retained': 'provider_response_invalid_json',
+    'MinerU provider protocol failure: malformed_success; saved task retained': 'provider_response_invalid_success',
+    'MinerU provider protocol failure: incomplete_acknowledgement; saved task retained': 'provider_submission_ack_incomplete',
 }
 WRAPPED_RECOVERY_CATEGORIES = {
     'NetworkStop': 'child_result_network_stop',

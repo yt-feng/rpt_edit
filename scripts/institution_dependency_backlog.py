@@ -153,8 +153,12 @@ class Backlog:
                     and row.get('local_filename') == binding['source'] and type(row.get('bytes')) is int
                     and row['bytes'] == binding['size']
                     and (row.get('sha256') is None or row['sha256'] == binding['sha256'])
+                    # Some official feeds (notably WEF) omit publication dates.
+                    # Retain that explicit unknown value; exact PDF bytes and
+                    # both source URLs still identify the publication.
+                    and isinstance(row.get('published'), str) and len(row['published']) <= 2048
                     and all(isinstance(row.get(key), str) and 0 < len(row[key]) <= 2048
-                            for key in ('source_page_url', 'published', 'pdf_url')),
+                            for key in ('source_page_url', 'pdf_url')),
                     'Institution publication version binding')
 
     def versions(self, bindings):
@@ -343,7 +347,10 @@ def preserve_manifest_versions(ledger, sources):
 def verify_handoff(extracted, translated):
     """Every extracted report must appear in the successful translated handoff."""
     extracted, translated = Path(extracted).resolve(), Path(translated).resolve()
-    expected = {path.parent.resolve() for path in extracted.rglob('source_mineru.md')}
+    from report_extraction_source import resolve_extraction_source
+    expected = {path.parent.resolve() for name in ('source_mineru.md', 'source_ocr.md')
+                for path in extracted.rglob(name)}
+    extractions = {source: resolve_extraction_source(source) for source in expected}
     summary = json.loads((translated/'translation_summary.json').read_bytes())
     require(bool(expected) and not summary.get('failures') and summary.get('selected_count') == len(expected)
             and summary.get('successful_count') == len(expected) and isinstance(summary.get('reports'), list)
@@ -355,6 +362,10 @@ def verify_handoff(extracted, translated):
         require(source in expected and source not in actual and translated in output.parents
                 and pdf.parent == output and pdf.is_file() and not pdf.is_symlink(),
                 'Institution translated handoff binding')
+        extraction = extractions[source]
+        if extraction.method == 'ocr':
+            require(all(row.get(key) == value for key, value in extraction.identity().items()),
+                    'Institution translated OCR provenance mismatch')
         with pdf.open('rb') as stream: require(stream.read(5) == b'%PDF-', 'Institution translated PDF missing')
         actual.add(source)
     require(actual == expected, 'Institution translated source coverage')

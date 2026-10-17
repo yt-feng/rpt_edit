@@ -22,6 +22,11 @@ MAX_CHECKPOINT_BYTES = 64 * 1024
 # MinerU's official error-code table: https://mineru.net/apiManage/docs
 # A0211 is expired authentication; A0202 is an invalid token.
 AUTH_REJECTION_CODES = {'A0211', 'A0202'}
+# A daily task or HTML allowance rejection is explicit non-acceptance, unlike
+# an unclassified HTTP 429 or a lost response to a submission.
+QUOTA_REJECTION_CODES = {'-60018', '-60019'}
+QUOTA_RETRY_SECONDS = 24 * 60 * 60
+REJECTED_STATES = {'auth_rejected', 'quota_rejected'}
 
 
 class LedgerError(RuntimeError):
@@ -37,6 +42,34 @@ class DefinitiveAuthRejection(LedgerError):
             raise LedgerError('Invalid definitive authentication rejection')
         self.code, self.http_status = code, http_status
         super().__init__(f'MinerU authentication definitively rejected: {code}, HTTP {http_status}')
+
+
+class DefinitiveQuotaRejection(LedgerError):
+    """The provider explicitly refused the request because its key has no quota."""
+    def __init__(self, code, http_status):
+        if (not isinstance(code, str) or code not in QUOTA_REJECTION_CODES
+                or type(http_status) is not int or not 200 <= http_status < 500):
+            raise LedgerError('Invalid definitive quota rejection')
+        self.code, self.http_status = code, http_status
+        super().__init__(f'MinerU quota definitively rejected: {code}, HTTP {http_status}')
+
+
+class ProviderTransportError(LedgerError):
+    """A provider transport failure, separate from local binding/store failures."""
+    def __init__(self, method):
+        if method not in {'get', 'post', 'put'}:
+            raise LedgerError('Invalid MinerU transport method')
+        self.method = method.upper()
+        super().__init__(f'MinerU {self.method} transport outcome unknown; saved task retained')
+
+
+class ProviderProtocolError(LedgerError):
+    """An unusable provider success response; never permission to repeat POST."""
+    def __init__(self, reason):
+        if reason not in {'invalid_json', 'malformed_success', 'incomplete_acknowledgement'}:
+            raise LedgerError('Invalid MinerU protocol failure category')
+        self.reason = reason
+        super().__init__(f'MinerU provider protocol failure: {reason}; saved task retained')
 
 
 def encoded(value):
@@ -204,6 +237,8 @@ class Provider:
         except Exception:
             if status == 401:
                 raise DefinitiveAuthRejection('HTTP401', 401) from None
+            if status == 200:
+                raise ProviderProtocolError('invalid_json') from None
             raise LedgerError(f'MinerU response is not valid JSON: HTTP {status}') from None
         code = None
         if isinstance(data, dict):
@@ -212,13 +247,13 @@ class Provider:
                 code = data.get('msgCode')
             if code is None:
                 code = data.get('msg_code')
-        normalized = code.strip().upper() if isinstance(code, str) else ''
+        normalized = code.strip().upper() if isinstance(code, str) else str(code) if type(code) is int else ''
         # Even an auth-shaped reply cannot authorize another POST if it also
         # contains an acceptance acknowledgement. Leave the saved intent
         # ambiguous rather than infer that the first task was rejected.
         body = data.get('data') if isinstance(data, dict) else None
         acknowledgement = any(
-            isinstance(candidate, dict) and any(key in candidate for key in ('batch_id', 'file_urls'))
+            isinstance(candidate, dict) and any(key in candidate for key in ('batch_id', 'task_id', 'file_urls'))
             for candidate in (data, body)
         )
         auth_rejection = (type(status) is int and 200 <= status < 500 and status != 429
@@ -227,6 +262,13 @@ class Provider:
             if acknowledgement:
                 raise LedgerError('MinerU authentication rejection conflicts with a submission acknowledgement')
             raise DefinitiveAuthRejection(normalized if normalized in AUTH_REJECTION_CODES else 'HTTP401', status)
+        if type(status) is int and 200 <= status < 500 and normalized in QUOTA_REJECTION_CODES:
+            if acknowledgement:
+                raise LedgerError('MinerU quota rejection conflicts with a submission acknowledgement')
+            raise DefinitiveQuotaRejection(normalized, status)
+        if status == 200 and (not isinstance(data, dict)
+                or (code in (None, 0, '0') and not isinstance(data.get('data'), dict))):
+            raise ProviderProtocolError('malformed_success')
         if (response.status_code >= 400 or not isinstance(data, dict)
                 or code not in (None, 0, '0') or not isinstance(data.get('data'), dict)):
             # Do not retain arbitrary provider error bodies, URLs or tokens.
@@ -241,7 +283,7 @@ class Provider:
         try:
             return getattr(self.http, method)(*args, **kwargs)
         except Exception:
-            raise LedgerError(f'MinerU {method} transport outcome unknown; saved task retained') from None
+            raise ProviderTransportError(method) from None
 
     def submit(self, items, options, token, timeout):
         files = [{'name': item['source'].rsplit('/', 1)[-1], 'data_id': item['id'],
@@ -252,7 +294,7 @@ class Provider:
         batch_id, urls = body.get('batch_id'), body.get('file_urls')
         if (not isinstance(batch_id, str) or not batch_id or not isinstance(urls, list)
                 or len(urls) != len(items) or not all(isinstance(u, str) and u.startswith('https://') for u in urls)):
-            raise LedgerError('MinerU submission acknowledgement is incomplete')
+            raise ProviderProtocolError('incomplete_acknowledgement')
         return batch_id, urls
 
     def upload(self, url, raw, timeout):
@@ -267,7 +309,7 @@ class Provider:
 
 
 class Ledger:
-    def __init__(self, store, provider, scope, endpoint, options, tokens, *, clock=time.monotonic, sleep=time.sleep, forbid_new_submissions=False):
+    def __init__(self, store, provider, scope, endpoint, options, tokens, *, clock=time.monotonic, sleep=time.sleep, wallclock=time.time, forbid_new_submissions=False):
         validate_scope(scope)
         if endpoint != 'https://mineru.net':
             raise LedgerError('Unexpected extraction provider endpoint')
@@ -279,7 +321,7 @@ class Ledger:
         self.tokens = {token_fingerprint(token): token for _, token in tokens}
         if not self.tokens:
             raise LedgerError('No MinerU token identities available')
-        self.clock, self.sleep = clock, sleep
+        self.clock, self.sleep, self.wallclock = clock, sleep, wallclock
         if type(forbid_new_submissions) is not bool:
             raise LedgerError('Invalid no-new-submission policy')
         self.forbid_new_submissions = forbid_new_submissions
@@ -303,7 +345,7 @@ class Ledger:
                 or row.get('endpoint') != self.endpoint or not exact_json(row.get('options'), self.options)
                 or row.get('key') != key
                 or not re.fullmatch(r'[a-f0-9]{64}', str(row.get('token_identity') or ''))
-                or (row.get('state') != 'auth_rejected' and row.get('token_identity') not in self.tokens)
+                or (row.get('state') not in REJECTED_STATES and row.get('token_identity') not in self.tokens)
                 or not isinstance(row.get('files'), list) or not 1 <= len(row['files']) <= 5):
             raise LedgerError('Stored task scope, source, options or token identity mismatch')
         rejections = row.get('auth_rejections', [])
@@ -317,12 +359,33 @@ class Ledger:
                 raise LedgerError('Stored authentication rejection history is malformed')
             DefinitiveAuthRejection(rejection['code'], rejection['http_status'])
             rejected_tokens.add(rejection['token_identity'])
+        quotas = row.get('quota_rejections', [])
+        if not isinstance(quotas, list):
+            raise LedgerError('Stored quota rejection history is malformed')
+        quota_tokens = set()
+        for rejection in quotas:
+            if (not isinstance(rejection, dict)
+                    or set(rejection) != {'token_identity', 'code', 'http_status', 'retry_after'}
+                    or not re.fullmatch(r'[a-f0-9]{64}', str(rejection.get('token_identity') or ''))
+                    or rejection['token_identity'] in quota_tokens
+                    or type(rejection['retry_after']) is not int or rejection['retry_after'] <= 0):
+                raise LedgerError('Stored quota rejection history is malformed')
+            DefinitiveQuotaRejection(rejection['code'], rejection['http_status'])
+            quota_tokens.add(rejection['token_identity'])
         if row.get('state') == 'auth_rejected':
             if (not rejections or row.get('batch_id') is not None
                     or row['token_identity'] != rejections[-1]['token_identity']):
                 raise LedgerError('Stored authentication rejection state is inconsistent')
+        elif row.get('state') == 'quota_rejected':
+            if (not quotas or row.get('batch_id') is not None
+                    or row['token_identity'] not in quota_tokens):
+                raise LedgerError('Stored quota rejection state is inconsistent')
         elif row.get('state') in {'accepted', 'uploaded', 'terminal'} and row['token_identity'] in rejected_tokens:
             raise LedgerError('Accepted task refers to a definitively rejected credential')
+        if row.get('state') in {'accepted', 'uploaded', 'terminal'} and any(
+                entry['token_identity'] == row['token_identity'] and entry['retry_after'] > self.wallclock()
+                for entry in quotas):
+            raise LedgerError('Accepted task refers to a quota-rejected credential before its cooldown')
         for item in row['files']:
             if not isinstance(item, dict):
                 raise LedgerError('Stored source binding is malformed')
@@ -364,8 +427,8 @@ class Ledger:
         if self.forbid_new_submissions:
             raise LedgerError('Replay cannot submit an unaccepted task; new submissions forbidden')
         items, key = row['files'], row['key']
-        if row.get('state') not in {'claiming', 'auth_rejected'} or row.get('batch_id') is not None:
-            raise LedgerError('Only unaccepted or definitively auth-rejected claims may be submitted')
+        if row.get('state') not in {'claiming'} | REJECTED_STATES or row.get('batch_id') is not None:
+            raise LedgerError('Only unaccepted or definitively rejected claims may be submitted')
         if set(paths).intersection(item['id'] for item in items) != {item['id'] for item in items}:
             raise LedgerError('Authentication-rejected batch requires its complete original source inventory')
         for item in items:
@@ -374,6 +437,8 @@ class Ledger:
                 raise LedgerError('Original source bytes changed before task submission')
         rejections = row.setdefault('auth_rejections', [])
         rejected = {entry['token_identity'] for entry in rejections}
+        quotas = row.get('quota_rejections', [])
+        rejected.update(entry['token_identity'] for entry in quotas if entry['retry_after'] > self.wallclock())
         identities = list(self.tokens)
         if row['token_identity'] in identities:
             identities.remove(row['token_identity'])
@@ -401,10 +466,25 @@ class Ledger:
                 row['state'] = 'auth_rejected'
                 version = self.store.put(key, row, version)
                 continue
+            except DefinitiveQuotaRejection as error:
+                # Keep one bounded cooldown per identity. Expired quotas may be
+                # retried on a later run; permanent auth rejections never are.
+                updated = {'token_identity': identity, 'code': error.code, 'http_status': error.http_status,
+                           'retry_after': int(self.wallclock()) + QUOTA_RETRY_SECONDS}
+                if any(entry['token_identity'] == identity for entry in quotas):
+                    quotas = [updated if entry['token_identity'] == identity else entry for entry in quotas]
+                else:
+                    quotas.append(updated)
+                rejected.add(identity)
+                row.update(state='quota_rejected', quota_rejections=quotas)
+                version = self.store.put(key, row, version)
+                continue
             row.update(state='accepted', batch_id=batch_id)
             version = self.store.put(key, row, version)  # Before any upload or poll.
             break
         else:
+            if quotas:
+                raise LedgerError('All configured MinerU credentials are rejected or quota-limited; saved batch retained')
             raise LedgerError('All configured MinerU credentials were definitively rejected; saved batch is auth_rejected')
         for item, url in zip(items, urls):
             raw = Path(paths[item['id']]).read_bytes()
@@ -494,7 +574,7 @@ class Ledger:
             bound = {item['id']: item for item in batch['files']}
             if any(not exact_json(bound.get(item['id']), item) for item in requested):
                 raise LedgerError('Requested PDF does not match accepted task bytes and scope')
-            if batch.get('state') == 'auth_rejected':
+            if batch.get('state') in REJECTED_STATES:
                 if ({item['id'] for item in requested} != set(bound)
                         or {item['id'] for item in items} != set(bound)):
                     raise LedgerError('Authentication-rejected batch requires only its complete original source inventory')

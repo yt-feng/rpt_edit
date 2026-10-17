@@ -47,7 +47,7 @@ from wechat_article_quality import (
 )
 from deepseek_http import deepseek_api_keys_from_env, request_with_key_fallback
 from wechat_editorial_binding import bind_generated_article
-from mineru_task_ledger import R2Store, digest, exact_json, from_environment, input_sources, schema_v1, LedgerError, DefinitiveAuthRejection
+from mineru_task_ledger import R2Store, digest, exact_json, from_environment, input_sources, schema_v1, LedgerError, DefinitiveAuthRejection, DefinitiveQuotaRejection, ProviderTransportError, ProviderProtocolError
 from mineru_result_cache import OPTIONS as CACHE_OPTIONS, SUPPORTED_SCOPES, ResultCache, ResultCacheError
 from mineru_daily_result_cache import persist_authentication
 from mineru_daily_result_transport import download_result
@@ -315,7 +315,7 @@ def run_source_batch(ledger, sources, *, timeout, interval=15, queue_budget=600,
 
 
 def result_cache_contexts(ledger, sources, results):
-    """Read bound original or verified recovery contexts after the full-batch gate."""
+    """Read exact original or verified recovery contexts for selected source rows."""
     if (not isinstance(ledger.store, R2Store) or ledger.scope not in SUPPORTED_SCOPES
             or (ledger.scope in {'institution', 'consulting'} and not exact_json(ledger.options, CACHE_OPTIONS))):
         return None, {}
@@ -1359,6 +1359,8 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--mineru-no-progress-timeout", type=int, default=600, help="End this poll attempt after no state progress; retain the accepted task for the next run.")
     parser.add_argument("--mineru-source-map", help="Exact local source bindings supplied by the batch wrapper.")
     parser.add_argument("--provider-outcome-path", help=argparse.SUPPRESS)
+    parser.add_argument("--institution-ocr-fallback", action="store_true", help=argparse.SUPPRESS)
+    parser.add_argument("--ocr-fallback-inventory-path", help=argparse.SUPPRESS)
     parser.add_argument("--watermark", default=XHS_WATERMARK)
     return parser
 
@@ -1366,17 +1368,22 @@ def build_arg_parser() -> argparse.ArgumentParser:
 def record_provider_outcome(args, category):
     path = getattr(args, "provider_outcome_path", None)
     if path:
+        inventory_path = getattr(args, "ocr_fallback_inventory_path", None)
+        inventory = getattr(args, "_ocr_fallback_inventory", None)
+        if category == "mineru_unavailable" and inventory_path and inventory is not None:
+            Path(inventory_path).write_text(json.dumps(inventory), encoding="utf-8")
         Path(path).write_text(json.dumps({"schema": 1, "category": category}), encoding="utf-8")
 
 
 def recoverable_provider_error(error):
-    if isinstance(error, DefinitiveAuthRejection):
+    if isinstance(error, (DefinitiveAuthRejection, DefinitiveQuotaRejection, ProviderTransportError, ProviderProtocolError)):
         return True
     if isinstance(error, NetworkStop):
         return str(error) in {"network_stop", "tls_certificate_expired"}
     if isinstance(error, LedgerError):
         return (str(error) in {
             "All configured MinerU credentials were definitively rejected; saved batch is auth_rejected",
+            "All configured MinerU credentials are rejected or quota-limited; saved batch retained",
             "Task attempt time budget exhausted; saved task retained",
             "MinerU GET transport outcome unknown; saved task retained",
             "MinerU POST transport outcome unknown; saved task retained",
@@ -1384,9 +1391,73 @@ def recoverable_provider_error(error):
     return False
 
 
+def preserve_institution_completed_sources(ledger, sources, output_dir, args):
+    """Materialize exact healthy sources for the opt-in mixed extraction handoff.
+
+    This does not mark any partial provider batch ready or release paid copy.
+    Each result retains its original/child lineage and the regular cache proof;
+    the wrapper must still cover every eligible source before translation.
+    """
+    from mineru_completed_child_reuse import read_completed_batch
+    from mineru_page_segments import read_segment_plan
+    if (ledger.scope != 'institution' or not args.chart_source_only or not args.institution_ocr_fallback
+            or not isinstance(ledger.store, R2Store)):
+        raise LedgerError('Partial source preservation requires opted-in Institution source-only extraction')
+    selected, roots = {}, {}
+    for path, source in sources:
+        binding = ledger.bind(path, source)
+        claim, _ = ledger.store.get('sources/' + binding['id'])
+        if claim is None and read_segment_plan(ledger, binding) is not None:
+            continue  # A split original has no original provider task to reuse.
+        if (not schema_v1(claim) or not exact_json(claim.get('binding'), binding)
+                or not isinstance(claim.get('batch_key'), str)):
+            raise LedgerError('Institution partial source claim mismatch')
+        root, _ = ledger._read_batch(claim['batch_key'])
+        if (root['state'] not in {'accepted', 'uploaded', 'terminal'} or not root.get('batch_id')
+                or 'recovery_parent' in root or sum(exact_json(item, binding) for item in root['files']) != 1):
+            raise LedgerError('Institution partial source task mismatch')
+        selected[binding['id']] = (Path(path), source, binding)
+        roots[root['key']] = root
+    successful = {}
+    for root in roots.values():
+        try:
+            rows, _ = read_completed_batch(ledger, root)
+        except Exception as error:
+            if not recoverable_provider_error(error):
+                raise
+            continue
+        for sid, row in rows.items():
+            if sid in selected and str(row.get('state', '')).lower() in DONE_STATES:
+                successful[selected[sid][0]] = row
+    # Validate every local source before writing any partial materialization.
+    for path, source, binding in selected.values():
+        if not exact_json(ledger.bind(path, source), binding):
+            raise LedgerError('Institution partial source bytes changed')
+    available = [(path, source) for path, source in sources if Path(path) in successful]
+    args._mineru_result_cache, args._mineru_result_contexts = result_cache_contexts(ledger, available, successful)
+    if args._mineru_result_cache is None:
+        raise LedgerError('Institution partial source preservation requires its exact result cache contract')
+    retained = 0
+    for path, _ in available:
+        try:
+            status = process_pdf(Path(path), successful[Path(path)], output_dir, args)
+            if status.get('error') or status.get('source_markdown') != 'source_mineru.md':
+                raise LedgerError('Institution partial source materialization incomplete')
+            retained += 1
+        except Exception as error:
+            if not recoverable_provider_error(error):
+                raise
+    return retained
+
+
 def main() -> int:
     args = build_arg_parser().parse_args()
     try:
+        # Retry receipts must describe this exact child invocation. A later
+        # binding failure cannot reuse an earlier provider-only OCR permission.
+        for receipt_path in (args.provider_outcome_path, args.ocr_fallback_inventory_path):
+            if receipt_path:
+                Path(receipt_path).unlink(missing_ok=True)
         mineru_tokens = mineru_tokens_from_env()
         if not mineru_tokens:
             # Replay must first prove an existing accepted binding. Missing
@@ -1409,6 +1480,10 @@ def main() -> int:
         from institution_original_cache import preserve_sources
         preserve_sources(ledger, sources)
         dependencies_enabled = os.environ.get('INSTITUTION_DEPENDENCY_BACKLOG') == '1'
+        institution_ocr_fallback = bool(args.institution_ocr_fallback)
+        if institution_ocr_fallback and (not dependencies_enabled or ledger.scope != 'institution'
+                                        or not args.chart_source_only or not args.ocr_fallback_inventory_path):
+            raise LedgerError('Institution OCR fallback requires source-only extraction and exact dependency inventory')
         deferred_sources = 0
         def record_deferred(count):
             if args.provider_outcome_path:
@@ -1424,12 +1499,17 @@ def main() -> int:
                 return 0
             eligible_paths = {Path(path) for path, _ in sources}
             pdfs = [path for path in pdfs if path in eligible_paths]
+        if institution_ocr_fallback:
+            args._ocr_fallback_inventory = {'schema': 1, 'sources': [
+                {key: binding[key] for key in ('source', 'sha256', 'size')}
+                for binding in (ledger.bind(path, name) for path, name in sources)
+            ], 'deferred_sources': deferred_sources}
         results, task_summary = run_source_batch(ledger,
             sources,
             timeout=args.poll_timeout, interval=args.poll_interval,
             queue_budget=args.mineru_no_progress_timeout,
         )
-        if (dependencies_enabled and not task_summary.get("ready_for_generation")
+        if (dependencies_enabled and not institution_ocr_fallback and not task_summary.get("ready_for_generation")
                 and hold_terminal_failure(ledger, sources)):
             sources, held_now = filter_sources(ledger, sources)
             deferred_sources += held_now
@@ -1460,6 +1540,9 @@ def main() -> int:
             # No paid generation or downstream publication on partial extraction.
             log("Extraction incomplete; saved tasks retained for exact-source recovery.")
             original_failed = any(batch["failed"] for batch in task_summary.get("original_batches", []))
+            if institution_ocr_fallback:
+                retained = preserve_institution_completed_sources(ledger, sources, output_dir, args)
+                log(f'Institution partial sources retained from MinerU: {retained}; remaining eligible sources require OCR.')
             record_provider_outcome(args, "mineru_unavailable")
             return 2 if task_summary["failed"] or original_failed else 75
 
