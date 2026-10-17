@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - "scripts/*send_portal_ops_alert*"
+      - "scripts/institution_wechat_delivery_receipt.py"
+      - "scripts/test_institution_wechat_delivery_receipt.py"
       - ".github/workflows/portal-ops-alert.yml"
       - "scripts/*wechat*"
       - "scripts/fixtures/wechat_institution_title_repair_38698155880.json"
@@ -79,6 +81,8 @@ on:
     branches: [main]
     paths:
       - "scripts/*send_portal_ops_alert*"
+      - "scripts/institution_wechat_delivery_receipt.py"
+      - "scripts/test_institution_wechat_delivery_receipt.py"
       - ".github/workflows/portal-ops-alert.yml"
       - "scripts/*wechat*"
       - "scripts/fixtures/wechat_institution_title_repair_38698155880.json"
@@ -180,6 +184,7 @@ jobs:
       - name: Test source discovery, draft verification and static publication
         run: |
           python scripts/test_send_portal_ops_alert.py
+          python scripts/test_institution_wechat_delivery_receipt.py
           python scripts/test_check_portal_ops_alert_window.py
           python scripts/test_fetch_institution_latest_pdfs.py
           python scripts/test_institution_pending_intake.py

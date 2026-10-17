@@ -1,8 +1,6 @@
 import hashlib
 import hmac
 import json
-from pathlib import Path
-import tempfile
 import unittest
 from unittest import mock
 
@@ -66,7 +64,7 @@ class PortalOpsAlertTests(unittest.TestCase):
                     "wechat_verified=true, verified_article_count=3, verified_draft_count=1", {})
                 self.assertIn("已入微信草稿箱并完成回读验证（3 篇文章，1 个草稿）", text)
                 self.assertIn("报告构建作业已完成", text)
-                self.assertIn("来源抓取不完整", text)
+                self.assertIn("来源健康检查未通过", text)
                 self.assertIn("已验证交付的草稿不因此变为投递失败", text)
                 self.assertNotIn("已经依次尝试", text)
 
@@ -78,7 +76,7 @@ class PortalOpsAlertTests(unittest.TestCase):
                 text = alerts.workflow_alert_text("Institution latest PDF to WeChat",
                     "build=success, source_health=failure, wechat=success, dry_run=false, " + extra, {})
                 self.assertIn("上传作业已完成，尚未确认草稿回读结果", text)
-                self.assertIn("来源抓取不完整", text)
+                self.assertIn("来源健康检查未通过", text)
                 self.assertNotIn("已入微信草稿箱", text)
 
     def test_institution_dry_run_overrides_any_delivery_fields(self):
@@ -158,88 +156,6 @@ class PortalOpsAlertTests(unittest.TestCase):
         )
         self.assertNotIn("secret", request.data.decode("utf-8"))
         self.assertEqual(json.loads(request.data)["dedupe_window_hours"], 24)
-
-
-class InstitutionDeliveryReceiptTests(unittest.TestCase):
-    def setUp(self):
-        from push_portal_translated_to_wechat_drafts import draft_group_key
-
-        self.temporary = tempfile.TemporaryDirectory()
-        self.addCleanup(self.temporary.cleanup)
-        self.output = Path(self.temporary.name) / "20261017"
-        self.output.mkdir()
-        self.payload = {"articles": [{"title": "研究摘要", "author": "研究编辑", "content": "<p>经济增长保持稳定。</p>"}]}
-        self.summary = {
-            "date_folder": self.output.name, "dry_run": False, "status": "verified",
-            "selected_count": 1, "draft_count": 1, "articles": [{"title": "研究摘要"}],
-            "drafts": [{
-                "media_id": "sample-media-id", "payload": "draft_payload_001.json", "article_count": 1,
-                "group_key": draft_group_key(self.payload["articles"]), "status": "verified",
-                "draft_get": {"ok": True, "article_count": 1, "expected_article_count": 1,
-                              "matches_editorial_contract": True, "matches_expected_article_count": True,
-                              "matches_expected_titles": True, "matches_media_contract": True},
-            }],
-        }
-        self.save()
-
-    def save(self):
-        (self.output / "wechat_draft_summary.json").write_text(json.dumps(self.summary), encoding="utf-8")
-        (self.output / "draft_payload_001.json").write_text(json.dumps(self.payload), encoding="utf-8")
-
-    def assert_unconfirmed(self):
-        self.assertEqual(alerts.institution_wechat_delivery_outputs(self.output),
-                         {"wechat_verified": "false", "verified_article_count": "0", "verified_draft_count": "0"})
-
-    def test_saved_complete_readback_produces_only_verified_counts(self):
-        self.assertEqual(alerts.institution_wechat_delivery_outputs(self.output),
-                         {"wechat_verified": "true", "verified_article_count": "1", "verified_draft_count": "1"})
-
-    def test_unfinished_dry_run_and_wrong_date_receipts_are_not_delivery(self):
-        for key, value in (("status", "in_progress"), ("dry_run", True), ("date_folder", "20261016"),
-                           ("selected_count", 2), ("draft_count", 2)):
-            with self.subTest(key=key):
-                previous = self.summary[key]
-                self.summary[key] = value
-                self.save()
-                self.assert_unconfirmed()
-                self.summary[key] = previous
-
-    def test_incomplete_readback_is_not_delivery(self):
-        readback = self.summary["drafts"][0]["draft_get"]
-        for key, value in list(readback.items()):
-            with self.subTest(key=key):
-                readback[key] = False if isinstance(value, bool) else 2
-                self.save()
-                self.assert_unconfirmed()
-                readback[key] = value
-
-    def test_receipt_cannot_be_reused_for_changed_payload(self):
-        self.payload["articles"][0]["content"] = "<p>这是另一份报告。</p>"
-        self.save()
-        self.assert_unconfirmed()
-
-    def test_missing_or_invalid_summary_and_payload_are_unconfirmed(self):
-        for name in ("wechat_draft_summary.json", "draft_payload_001.json"):
-            with self.subTest(name=name):
-                path = self.output / name
-                path.unlink()
-                self.assert_unconfirmed()
-                path.write_text("[]", encoding="utf-8")
-                self.assert_unconfirmed()
-                self.save()
-
-    def test_duplicate_receipt_does_not_inflate_counts(self):
-        self.summary["drafts"] *= 2
-        self.summary.update(draft_count=2, selected_count=2, articles=self.summary["articles"] * 2)
-        self.save()
-        self.assert_unconfirmed()
-
-    def test_payload_path_cannot_escape_receipt_directory(self):
-        path = self.output / "draft_payload_001.json"
-        outside = self.output.parent / "draft_payload_external.json"
-        path.rename(outside)
-        path.symlink_to(outside)
-        self.assert_unconfirmed()
 
 
 if __name__ == "__main__":
