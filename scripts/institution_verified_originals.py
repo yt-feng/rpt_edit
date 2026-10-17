@@ -129,6 +129,66 @@ def _validate_record(record):
         raise VerifiedOriginalError("verified_original_review_date") from None
 
 
+def _producer_records(data):
+    """Bind a reviewed failed producer's manifest to its cached original bytes.
+
+    Schema 2 carries the exact authenticated producer manifest instead of
+    inventing a DOI or a page count absent from that receipt. The workflow pins
+    this reviewed selection's checksum; no live source discovery is involved.
+    """
+    from fetch_institution_latest_pdfs import short_hash, slug
+    producer = data['producer']
+    require(isinstance(producer, dict) and set(producer) == {
+        'run_id', 'head_sha', 'artifact_id', 'artifact_sha256', 'manifest_sha256'}
+        and type(producer['run_id']) is int and producer['run_id'] > 0
+        and type(producer['artifact_id']) is int and producer['artifact_id'] > 0
+        and isinstance(producer['head_sha'], str) and re.fullmatch('[a-f0-9]{40}', producer['head_sha'])
+        and all(isinstance(producer[key], str) and HASH.fullmatch(producer[key])
+                for key in ('artifact_sha256', 'manifest_sha256')), 'verified_original_producer_receipt')
+    raw = data['source_manifest_json']
+    require(isinstance(raw, str) and 0 < len(raw.encode('utf-8')) <= MAX_MANIFEST
+            and digest(raw.encode('utf-8')) == producer['manifest_sha256'],
+            'verified_original_producer_manifest_checksum')
+    try:
+        manifest = json.loads(raw, object_pairs_hook=_object)
+    except VerifiedOriginalError:
+        raise
+    except Exception:
+        raise VerifiedOriginalError('verified_original_producer_manifest_json') from None
+    require(isinstance(manifest, dict) and isinstance(manifest.get('downloaded'), list)
+            and type(manifest.get('downloaded_count')) is int
+            and manifest['downloaded_count'] == len(manifest['downloaded'])
+            and isinstance(manifest.get('date'), str) and re.fullmatch('[0-9]{6}', manifest['date'])
+            and all(isinstance(row, dict) for row in manifest['downloaded']),
+            'verified_original_producer_manifest')
+    result = []
+    for selected in data['records']:
+        require(isinstance(selected, dict) and set(selected) == {'item', 'binding'},
+                'verified_original_producer_selection')
+        item, binding = selected['item'], selected['binding']
+        try:
+            validate_item(item); validate_binding(binding)
+        except Exception:
+            raise VerifiedOriginalError('verified_original_binding') from None
+        require(bool(item['title'].strip())
+                and binding['source'] == f"IMF_{slug(item['title'])}_{short_hash('imf:' + item['guid'])}.pdf",
+                'verified_original_selected_identity')
+        matches = [row for row in manifest['downloaded'] if row.get('local_filename') == binding['source']]
+        require(len(matches) == 1, 'verified_original_producer_publication')
+        row = matches[0]
+        require(row.get('institution') == 'imf' and row.get('title') == item['title']
+                and row.get('source_page_url') == item['source_url'] and row.get('published') == item['date']
+                and row.get('feed_pdf_candidates') == item['pdf_candidates']
+                and row.get('sha256') == binding['sha256'] and type(row.get('bytes')) is int
+                and row['bytes'] == binding['size'] and row.get('date') == manifest.get('date')
+                and official_url(row.get('source_page_url'), pdf=False)
+                and official_url(row.get('pdf_url'), pdf=True), 'verified_original_producer_publication')
+        result.append(dict(item=item, binding=binding, sha256=binding['sha256'], size=binding['size'],
+            official_landing_url=row['source_page_url'], official_pdf_url=row['pdf_url'], pages=None,
+            verification={'method': 'official_producer_archive', 'receipt_sha256': producer['manifest_sha256']}))
+    return result
+
+
 def _cache():
     from private_workflow_handoff import build_r2_client, r2_bucket
     return OriginalCache.single_attempt(build_r2_client(), r2_bucket())
@@ -165,8 +225,10 @@ class VerifiedOriginals:
             raise
         except Exception:
             raise VerifiedOriginalError("verified_original_manifest_json") from None
-        require(isinstance(data, dict) and set(data) == {"schema", "institution", "frozen_pending_sha256", "records"}
-                and type(data["schema"]) is int and data["schema"] == 1 and data["institution"] == "imf"
+        require(isinstance(data, dict) and type(data.get("schema")) is int and data["schema"] in {1, 2}
+                and set(data) == ({"schema", "institution", "frozen_pending_sha256", "records"}
+                    | ({'producer', 'source_manifest_json'} if data['schema'] == 2 else set()))
+                and data["institution"] == "imf"
                 and isinstance(data["frozen_pending_sha256"], str) and HASH.fullmatch(data["frozen_pending_sha256"])
                 and isinstance(data["records"], list) and 1 <= len(data["records"]) <= MAX_RECORDS,
                 "verified_original_manifest_schema")
@@ -177,8 +239,10 @@ class VerifiedOriginals:
         self.records = {}
         hashes, sources, urls = set(), set(), set()
         total = 0
-        for row in data["records"]:
-            _validate_record(row)
+        rows = _producer_records(data) if data['schema'] == 2 else data['records']
+        for row in rows:
+            if data['schema'] == 1:
+                _validate_record(row)
             key = "imf:" + row["item"]["guid"]
             require(key not in self.records and row["sha256"] not in hashes
                     and row["binding"]["source"] not in sources and row["official_pdf_url"] not in urls,
@@ -212,7 +276,9 @@ class VerifiedOriginals:
             raise
         except Exception:
             raise VerifiedOriginalError("verified_original_cache_invalid") from None
-        require(pdf_pages(payload) == row["pages"], "verified_original_page_count")
+        pages = pdf_pages(payload)
+        require(0 < pages <= 5000 and (row['pages'] is None or pages == row['pages']),
+                "verified_original_page_count")
         destination = Path(destination)
         require(destination.name == filename and not destination.is_symlink()
                 and (not destination.exists() or destination.is_file()), "verified_original_destination")
@@ -231,4 +297,4 @@ class VerifiedOriginals:
                 "verified_original_manifest_sha256": self.manifest_sha256,
                 "verified_original_binding_id": row["binding"]["id"],
                 "verified_original_receipt_sha256": row["verification"]["receipt_sha256"],
-                "verified_original_pages": row["pages"], "verified_original_landing_url": row["official_landing_url"]}
+                "verified_original_pages": pages, "verified_original_landing_url": row["official_landing_url"]}
