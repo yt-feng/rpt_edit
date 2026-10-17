@@ -1,21 +1,5 @@
 {
   "schema": 1,
   "institution": "imf",
-  "items": {
-    "imf:74d8db8233c171213861d1f872b00e7b34fdfffc2772b202becd9f42c84c": {
-      "item": {
-        "title": "Regional Economic Outlook for Europe, October 2026",
-        "source_url": "https://www.imf.org/en/publications/reo/eu/issues/2026/10/16/regional-economic-outlook-europe-october-2026",
-        "guid": "74d8db8233c171213861d1f872b00e7b34fdfffc2772b202becd9f42c84c",
-        "date": "2026-10-16T21:00:00+00:00",
-        "pdf_candidates": [],
-        "scrape_url": "https://www.imf.org/en/publications/reo/eu/issues/2026/10/16/regional-economic-outlook-europe-october-2026",
-        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/reo/eu/issues/2026/10/16/regional-economic-outlook-europe-october-2026"
-      },
-      "admitted_at": "2026-10-17T00:06:22.505316+00:00",
-      "since_days": 7,
-      "last_attempted_at": "2026-10-17T06:13:10.562587+00:00",
-      "attempts": 3
-    }
-  }
+  "items": {}
 }
