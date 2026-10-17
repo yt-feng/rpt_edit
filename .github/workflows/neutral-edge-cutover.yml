@@ -278,6 +278,7 @@ jobs:
           node --input-type=module --check < portal_suite/site_src/assets/newsfeed-app.js
           python3 -B scripts/check_portal_app_budget.py --candidate portal_suite/site_src/assets/app.js
           python3 -B scripts/test_check_portal_app_budget.py
+          python3 -B scripts/build_content_agent_assets.py --check
           python3 -B scripts/test_reportify_api_grab.py
           python3 -B scripts/test_reportify_local_qr.py
           python3 -B scripts/test_portal_lazy_assets.py
@@ -1200,6 +1201,7 @@ jobs:
           set -euo pipefail
           required_paths=(
             index.html developer-api.html assets/app.js assets/account-services.js assets/newsfeed-app.js data/catalog.json data/catalog_preview.json
+            content-api.openapi.json downloads/content-agent.zip downloads/content-agent.zip.sha256
             data/catalog_recommendations.json data/search_index.json
             data/chart_search_index.json data/password_rules.json
             reports/institutions/bernstein/index.html sitemap-baidu.xml

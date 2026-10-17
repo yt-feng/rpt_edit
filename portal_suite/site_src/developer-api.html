@@ -8,7 +8,7 @@
   <meta name="description" content="了解 KC桌面 API 可读取的报告字段、图表描述、解析文本、中英翻译与过程稿元数据。提供完整字段表、JSON 示例、cURL 与 Python 接入步骤。">
   <link rel="canonical" href="https://portal.example.invalid/developer-api.html">
   <link rel="stylesheet" href="assets/styles.css?v=site-20260908a">
-  <link rel="stylesheet" href="assets/developer-api.css?v=docs-20261012a">
+  <link rel="stylesheet" href="assets/developer-api.css?v=docs-20261018a">
 </head>
 <body data-page="developer-api" data-analytics-auto="manual">
   <header class="topbar">
@@ -23,7 +23,7 @@
       <div class="api-hero-actions"><a class="api-primary" data-api-link href="#apiStart">开始接入 ↗</a><a data-api-link href="#api-reports">查看可用字段</a><a href="/?request=access">联系开通</a></div>
       <div class="api-facts"><span><strong>5</strong> 个读取接口</span><span><strong>7</strong> 类关联材料</span><span><strong>JSON + 原文件</strong> 交付</span></div>
     </div><aside class="api-flow" aria-label="内容读取流程"><div class="api-flow-label"><span>ONE REPORT · CONNECTED CONTENT</span><span>READ ONLY</span></div><ol><li><span>01</span><div><b>找到报告</b><small>报告 ID · 标题 · 机构 · 日期</small></div></li><li><span>02</span><div><b>查看关联材料</b><small>图表 · 文本 · 译文 · 元数据</small></div></li><li><span>03</span><div><b>下载到自己的系统</b><small>PDF · Markdown · JSON · 图像</small></div></li></ol></aside></div>
-    <div class="api-tab-wrap"><nav class="api-tabs" data-api-tabs aria-label="API 文档章节"><a id="tab-overview" data-api-tab href="#api-overview">概览与接入</a><a id="tab-reports" data-api-tab href="#api-reports">报告字段</a><a id="tab-charts" data-api-tab href="#api-charts">图表与图片</a><a id="tab-text" data-api-tab href="#api-text">文本与翻译</a><a id="tab-metadata" data-api-tab href="#api-metadata">过程稿元数据</a><a id="tab-examples" data-api-tab href="#api-examples">接口与示例</a><a id="tab-access" data-api-tab href="#api-access">权限与排错</a></nav><p class="api-tab-hint">左右滑动可查看全部章节</p></div>
+    <div class="api-tab-wrap"><nav class="api-tabs" data-api-tabs aria-label="API 文档章节"><a id="tab-overview" data-api-tab href="#api-overview">概览与接入</a><a id="tab-reports" data-api-tab href="#api-reports">报告字段</a><a id="tab-charts" data-api-tab href="#api-charts">图表与图片</a><a id="tab-text" data-api-tab href="#api-text">文本与翻译</a><a id="tab-metadata" data-api-tab href="#api-metadata">过程稿元数据</a><a id="tab-examples" data-api-tab href="#api-examples">接口与示例</a><a id="tab-agents" data-api-tab href="#api-agents">MCP 与 Agent 接入</a><a id="tab-access" data-api-tab href="#api-access">权限与排错</a></nav><p class="api-tab-hint">左右滑动可查看全部章节</p></div>
 <section class="api-panel" id="api-overview" data-api-panel><p class="api-kicker">01 / START HERE</p><h2>把已有研究内容，接入自己的系统</h2><p class="api-panel-intro">5 个只读接口，围绕同一个报告 ID 连接资料、图表、译文与结构化说明。先跑通一个请求，再按需要选择数据。</p>
 <div class="api-card-grid">
 <article class="api-card"><p class="api-card-label">RESEARCH LIBRARY</p><h3>建立自己的研究资料库</h3><p>用报告 ID 串联机构、日期、原始 PDF、已解析文本和已有译文，让资料进入你的内部系统。</p><a data-api-link href="#api-reports">查看报告字段 →</a></article>
@@ -369,12 +369,13 @@
 <tr><td><code>/reports/{id}/artifacts</code></td><td><code>artifacts:read</code></td><td>关联内容列表；返回 <code>{ok, items, next_cursor}</code>。</td></tr>
 <tr><td><code>/reports/{id}/artifacts/{artifactId}</code></td><td><code>artifacts:read</code></td><td>下载指定关联文件，成功时按其 MIME 类型返回文件字节。</td></tr>
 </tbody></table></div><h3>查询参数</h3><div class="api-table-wrap" tabindex="0" role="region" aria-label="支持的查询参数"><table class="api-field-table"><caption>支持的查询参数</caption><thead><tr><th scope="col">字段</th><th scope="col">类型 / 返回条件</th><th scope="col">说明与用途</th></tr></thead><tbody>
+<tr><td><code>q</code></td><td>报告列表 · 可选</td><td>搜索标题、中英文标题和机构，NFKC 规范化后最多 200 个字符；大小写不敏感、连续空格归一，可与 date 合用。不是全文或语义检索。</td></tr>
 <tr><td><code>date</code></td><td>报告列表 · 可选</td><td>真实有效的 <code>YYYY-MM-DD</code>，按报告日期筛选；不是上传时间或更新时间。</td></tr>
 <tr><td><code>kind</code></td><td>关联内容列表 · 可选</td><td>按材料类型精确筛选，例如 <code>chart</code>、<code>translation</code>、<code>metadata</code>。</td></tr>
 <tr><td><code>language</code></td><td>关联内容列表 · 可选</td><td>按语言标识精确筛选，例如 <code>en</code>、<code>zh</code> 或 <code>und</code>。</td></tr>
 <tr><td><code>limit</code></td><td>两种列表 · 可选</td><td>整数 1–100，默认 25。</td></tr>
-<tr><td><code>cursor</code></td><td>两种列表 · 可选</td><td>上一次响应中的 <code>next_cursor</code>，原样使用并进行 URL 编码。翻页时保持原来的日期、类型与语言筛选。</td></tr>
-</tbody></table></div><div class="api-note">详情与文件下载接口不接受查询参数。列表没有关键词搜索、日期区间或更新时间筛选参数；不要传入 <code>q</code>、<code>from</code> 等未列出的参数。同一参数也不能重复传递。</div><div class="api-codebox"><div class="api-codebar"><span>cURL · 读取指定日期的报告</span><button type="button" data-api-copy="code-report-date" aria-label="复制cURL · 读取指定日期的报告">复制</button></div><pre><code id="code-report-date">curl --fail-with-body \
+<tr><td><code>cursor</code></td><td>两种列表 · 可选</td><td>上一次响应中的 <code>next_cursor</code>，原样使用并进行 URL 编码。翻页时保持原来的关键词、日期、类型与语言筛选。</td></tr>
+</tbody></table></div><div class="api-note">详情与文件下载接口不接受查询参数。报告列表可使用 <code>q</code> 搜索标题与机构；当前没有日期区间或更新时间筛选参数，不要传入 <code>from</code> 等未列出的参数。同一参数也不能重复传递。</div><div class="api-codebox"><div class="api-codebar"><span>cURL · 读取指定日期的报告</span><button type="button" data-api-copy="code-report-date" aria-label="复制cURL · 读取指定日期的报告">复制</button></div><pre><code id="code-report-date">curl --fail-with-body \
   -H &quot;Authorization: Bearer $KCD_API_KEY&quot; \
   &#x27;https://kcdesk.com/api/content/v1/reports?date=2026-10-08&amp;limit=100&#x27;</code></pre></div><div class="api-split"><div class="api-codebox"><div class="api-codebar"><span>cURL · 查看单份报告</span><button type="button" data-api-copy="code-report-request" aria-label="复制cURL · 查看单份报告">复制</button></div><pre><code id="code-report-request">curl --fail-with-body \
   -H &quot;Authorization: Bearer $KCD_API_KEY&quot; \
@@ -415,9 +416,17 @@ for report in pages(&quot;/reports&quot;, {&quot;date&quot;: &quot;2026-10-08&qu
     print(report[&quot;id&quot;], report[&quot;title&quot;])
     path = &quot;/reports/&quot; + report[&quot;id&quot;] + &quot;/artifacts&quot;
     for item in pages(path, {&quot;kind&quot;: &quot;translation&quot;, &quot;language&quot;: &quot;en&quot;}):
-        print(&quot;  &quot;, item[&quot;id&quot;], item.get(&quot;filename&quot;), item[&quot;mime_type&quot;])</code></pre></div><p>例子适合先跑通接入。实际长期同步时，请增加请求间隔、失败记录和有限重试，并按下一个页签中的错误码处理授权与额度问题。</p>
+        print(&quot;  &quot;, item[&quot;id&quot;], item.get(&quot;filename&quot;), item[&quot;mime_type&quot;])</code></pre></div><p>例子适合先跑通接入。实际长期同步时，请增加请求间隔、失败记录和有限重试，并按「权限与排错」页签中的错误码处理授权与额度问题。</p>
 </section>
-<section class="api-panel" id="api-access" data-api-panel><p class="api-kicker">07 / ACCESS & SUPPORT</p><h2>把权限和调用规则，一次看明白</h2><p class="api-panel-intro">先区分授权问题、额度问题与暂时性服务问题，再决定下一步操作。</p>
+<section class="api-panel" id="api-agents" data-api-panel><p class="api-kicker">07 / AGENT ACCESS</p><h2>把研究内容交给你的 AI 助手</h2><p class="api-panel-intro">同一份内容授权和 API Key，可以通过 REST、命令行、MCP 或 Agent Skill 使用。搜索报告、读取已有译文和图表说明，并把原文件保存到自己的工作目录。</p>
+<div class="api-hero-actions"><a class="api-primary" href="downloads/content-agent.zip" download>下载 Agent 工具包 ↗</a><a href="content-api.openapi.json">OpenAPI 接口说明</a></div>
+<div class="api-card-grid"><article class="api-card"><p class="api-card-label">MCP</p><h3>标准工具调用</h3><p>使用官方 Python MCP SDK 的本地 stdio 适配器。提供报告搜索、详情、元数据、材料列表、文本读取和文件下载 6 个工具。</p></article><article class="api-card"><p class="api-card-label">SKILL + CLI</p><h3>同一套研究流程</h3><p>工具包内含 SKILL.md 与零第三方依赖的 Python CLI。先发现内容，再选文件读取；保留来源、语言、节选与截断标志。</p></article><article class="api-card"><p class="api-card-label">OPENCLAW / HERMES</p><h3>放进已有 Agent</h3><p>OpenClaw 可加载本地 Skill；Hermes 可加载 Skill 或配置 stdio MCP。安装步骤与配置示例见工具包 README。</p></article></div>
+<h3>先用一条命令跑通</h3><ol class="api-steps"><li>开通内容 API、生成密钥，将其保存在环境变量 <code>KCD_API_KEY</code> 中。</li><li>下载并解压工具包。Python 3.10 或以上可直接运行 CLI；MCP 另按 README 创建隔离环境并安装 <code>requirements-mcp.txt</code>。</li><li>在解压后的目录运行下面命令，先查看授权范围内的结果，再读取列表返回的报告和材料 ID。</li></ol>
+<div class="api-codebox"><div class="api-codebar"><span>CLI · 搜索报告标题与机构</span><button type="button" data-api-copy="code-agent-search" aria-label="复制 CLI 搜索命令">复制</button></div><pre><code id="code-agent-search">python3 scripts/content_client.py search-reports --q "半导体" --limit 10</code></pre></div>
+<div class="api-table-wrap" tabindex="0" role="region" aria-label="Agent 工具"><table class="api-field-table"><thead><tr><th>工具</th><th>用途</th></tr></thead><tbody><tr><td><code>content_search_reports</code></td><td>按标题、机构关键词或日期搜索报告；通过游标翻页。</td></tr><tr><td><code>content_get_report</code></td><td>获取报告标题、机构、日期和文件可用性等信息。</td></tr><tr><td><code>content_get_metadata</code></td><td>读取报告级结构化说明。</td></tr><tr><td><code>content_list_artifacts</code></td><td>发现已有的文本、译文、图表和图片，可按类型和语言筛选。</td></tr><tr><td><code>content_read_artifact</code></td><td>读取有大小上限的文本/JSON，保留节选及截断信息。</td></tr><tr><td><code>content_download</code></td><td>把原 PDF 或指定材料实际下载到配置的本地目录。</td></tr></tbody></table></div>
+<div class="api-note">工具包提供本地 MCP 和接入配置，不包含远程托管 MCP 服务。OpenClaw、Hermes 的实际客户端验收需在各自环境完成；接入协议通过测试不代表每份报告都有全部材料。工具只读取已有内容，不现场生成译文或研究。一次 Agent 操作可能调用多次底层 API；返回的调用统计便于核对，不替代服务端账单。</div>
+</section>
+<section class="api-panel" id="api-access" data-api-panel><p class="api-kicker">08 / ACCESS & SUPPORT</p><h2>把权限和调用规则，一次看明白</h2><p class="api-panel-intro">先区分授权问题、额度问题与暂时性服务问题，再决定下一步操作。</p>
 <h3 id="apiPermissions">授权范围、密钥与有效期</h3><div class="api-table-wrap" tabindex="0" role="region" aria-label="授权与密钥规则"><table class="api-field-table"><caption>授权与密钥规则</caption><thead><tr><th scope="col">项目</th><th scope="col">具体行为</th></tr></thead><tbody>
 <tr><td>沿用网站现有权限</td><td>按现有账号的报告访问权限读取。PDF 和关联文件下载共享网站原有的试用下载次数，按报告去重；同一报告的多个文件不会重复扣一次性报告下载名额。</td></tr>
 <tr><td>单独授权 API 内容</td><td>管理员可以授权指定报告集合，也可以授权全部 API 内容。此模式的内容范围独立设置，不会改变网页会员状态。</td></tr>
@@ -441,10 +450,10 @@ for report in pages(&quot;/reports&quot;, {&quot;date&quot;: &quot;2026-10-08&qu
 <tr><td>503</td><td><code>service_unavailable</code></td><td>采用有限次数的渐增等待重试，例如 2、5、15 秒；持续失败时停止并记录错误，避免循环占用额度。</td></tr>
 </tbody></table></div><h3>接入时常见的几个问题</h3><details><summary>列表能看到报告，为什么下载不一定成功？</summary><p>列表描述的是可见记录。下载时仍会重新检查当前授权、会员或试用权限、文件是否可用，以及账号剩余额度；请始终检查下载响应的 HTTP 状态。</p></details><details><summary>查询某种语言得到空列表，是什么意思？</summary><p>当前报告没有可返回的该语言材料。可以先去掉语言筛选查看实际列表；<code>und</code> 是未标明语言，不能视为英文。</p></details><details><summary>怎样按天更新自己的资料库？</summary><p>遍历目标日期的报告，再遍历每份报告的关联文件；在自己的系统中按 ID 与可选 SHA-256 去重。近期日期可以重复复查，以发现补发的材料。当前没有“自某更新时间之后”的查询参数或推送订阅。</p></details><details><summary>能通过这个 API 发起 AI 研究或即时翻译吗？</summary><p>目前这里提供已授权内容的读取与下载。AI 研究仍使用网站现有入口和次数；缺失的译文、图表或文本不会因读取请求而现场生成。</p></details>
 </section>
-    <div class="api-docs-footer">文档版本 v1 · 字段与行为核对于 2026-10-12。实际可用内容以账号授权与关联内容列表为准。需要开通或调整额度：<strong>info@kcdesk.com</strong>。</div>
+    <div class="api-docs-footer">文档版本 v1 · 字段与行为核对于 2026-10-18。实际可用内容以账号授权与关联内容列表为准。需要开通或调整额度：<strong>info@kcdesk.com</strong>。</div>
     <div id="api-copy-status" class="api-copy-status" role="status" aria-live="polite" aria-atomic="true"></div>
   </main>
   <footer class="legal-footer"><a href="/">报告检索</a><a href="research.html">AI 研究</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="/?request=support">联系 KC桌面</a></footer>
-  <script src="assets/site-runtime.js"></script><script src="assets/contact.js?v=site-20260908a"></script><script src="assets/analytics.js"></script><script src="assets/app.js?v=site-20260908a"></script><script src="assets/developer-api.js?v=docs-20261012a"></script>
+  <script src="assets/site-runtime.js"></script><script src="assets/contact.js?v=site-20260908a"></script><script src="assets/analytics.js"></script><script src="assets/app.js?v=site-20260908a"></script><script src="assets/developer-api.js?v=docs-20261018a"></script>
 </body>
 </html>

@@ -4,6 +4,15 @@ The public usage guide is `portal_suite/site_src/developer-api.html`. This note
 documents the Worker boundary and its offline regression coverage. Existing web
 download and English editorial access policies are separate from these API routes.
 
+The portable CLI, Agent Skill and optional official-SDK stdio MCP adapter live in
+`integrations/content-agent`. Its README covers local OpenClaw and Hermes setup.
+`python3 scripts/build_content_agent_assets.py` produces the public OpenAPI 3.1
+contract and a deterministic five-file `downloads/content-agent.zip` plus SHA-256
+sidecar in the site source. Run it after changing the toolkit; `--check` rejects
+stale assets in CI and before publication. The archive contains no credentials,
+tests, internal commercial documents or runtime dependencies. MCP dependencies
+are installed by the customer from its included requirements file.
+
 ## Account and key authorization
 
 `createCustomerContentApi(adapters)` returns `matches(path)` and
@@ -59,7 +68,7 @@ fields when both are supplied.
 
 | Content route suffix after `/api/content/v1` | Adapter | Query / result |
 | --- | --- | --- |
-| `/reports` | `listReports` | `{date?,cursor,limit}` → `{items,next_cursor}` |
+| `/reports` | `listReports` | `{q?,date?,cursor,limit}` → `{items,next_cursor}` |
 | `/reports/{id}` | `getReport` | `{reportId}` → public row or null; route wraps `{ok,report}` |
 | `/reports/{id}/download` | `downloadReport` | `{reportId}` → file Response |
 | `/reports/{id}/artifacts` | `listArtifacts` | `{reportId,kind?,language?,cursor,limit}` → `{items,next_cursor}` |
@@ -72,6 +81,26 @@ bucket prefix, provider URL, local path, workflow ID or draft locator.
 
 Lists default to 25 records and accept at most 100. Cursors are opaque and bounded
 to 512 characters. Empty results are 200 with `items:[]` and `next_cursor:null`.
+
+`GET /api/content/v1/reports?q=...` searches the public report title, Chinese title,
+English title and institution together using a case-insensitive substring match.
+It does not search report bodies or run semantic/AI research. The query and public
+searchable text use Unicode NFKC normalization and collapse whitespace to one
+space. Queries are trimmed and lowercased; an empty or whitespace-only `q` is
+equivalent to omitting it. The decoded query is limited to 800 UTF-16 code units
+before normalization and 200 Unicode code points after normalization. Unicode
+control, format and surrogate characters are rejected, including tabs, newlines
+and zero-width controls. Repeated `q` parameters are invalid. `q` combines with
+the existing exact `date=YYYY-MM-DD` filter; it is not accepted on artifact routes.
+
+Report-list cursors bind the normalized query, date, account ID and current API
+grant scope (access mode, scopes and explicit report IDs) using a fixed-size
+digest, keeping long Chinese queries within the cursor limit. Changing those
+inputs requires starting again without a cursor. Pre-search report-list cursors
+also need to be restarted once. A cursor is not an authorization token: every
+page still checks the current account/key/grant and reapplies membership and
+report filtering. Catalog additions alone do not invalidate a cursor.
+
 Known public fields are selected explicitly; arbitrary adapter properties are
 not serialized. A descriptor has `id,report_id,kind,language,mime_type,size`, with
 optional `filename,sha256,text_scope,page_number`. An existing chart's list size

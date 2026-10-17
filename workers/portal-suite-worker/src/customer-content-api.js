@@ -187,8 +187,16 @@ function validQuery(url, allowed) {
     if (!allowed.includes(name) || url.searchParams.getAll(name).length !== 1) fail(400, "invalid_request");
   }
 }
+export function normalizeCustomerContentQuery(value = "") {
+  // Bound the decoded input before normalization, and reject invisible controls
+  // instead of silently turning a different query into an accepted one.
+  if (typeof value !== "string" || value.length > 800 || /[\p{Cc}\p{Cf}\p{Cs}]/u.test(value)) fail(400, "invalid_request");
+  const normalized = value.normalize("NFKC").replace(/\s+/gu, " ").trim().toLowerCase();
+  if ([...normalized].length > 200) fail(400, "invalid_request");
+  return normalized;
+}
 function listQuery(url, artifacts = false) {
-  validQuery(url, artifacts ? ["kind", "language", "cursor", "limit"] : ["date", "cursor", "limit"]);
+  validQuery(url, artifacts ? ["kind", "language", "cursor", "limit"] : ["q", "date", "cursor", "limit"]);
   const rawLimit = url.searchParams.get("limit"), limit = rawLimit === null ? 25 : Number(rawLimit);
   if ((rawLimit !== null && !/^\d{1,3}$/u.test(rawLimit)) || !Number.isInteger(limit) || limit < 1 || limit > 100) fail(400, "invalid_request");
   const cursor = url.searchParams.get("cursor") || null;
@@ -203,6 +211,8 @@ function listQuery(url, artifacts = false) {
       }
     }
   } else {
+    const search = url.searchParams.get("q");
+    if (search !== null) query.q = normalizeCustomerContentQuery(search);
     const date = url.searchParams.get("date");
     if (date !== null) {
       if (!/^\d{4}-\d\d-\d\d$/u.test(date) || !Number.isFinite(Date.parse(date)) || new Date(date).toISOString().slice(0, 10) !== date) fail(400, "invalid_request");

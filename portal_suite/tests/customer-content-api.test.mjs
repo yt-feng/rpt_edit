@@ -164,6 +164,26 @@ test("listing validates pagination and date, sanitizes descriptors, and never ta
   assert.equal(f.bucket.reads.every(path => path.startsWith("_customer-content-api/v1/")), true);
 });
 
+test("report search normalizes printable queries and rejects malformed input before metering", async () => {
+  const f = fixture(); await f.grant(); const key = await f.key();
+  const search = encodeURIComponent("  ＥＮＥＲＧＹ　 Outlook  ");
+  assert.equal((await f.request(`/api/content/v1/reports?q=${search}`, { auth: key.secret })).status, 200);
+  assert.equal(f.calls.at(-1)[1].q, "energy outlook");
+  assert.equal((await f.request("/api/content/v1/reports?q=%20%20", { auth: key.secret })).status, 200);
+  assert.equal(f.calls.at(-1)[1].q, "");
+  assert.equal((await f.request(`/api/content/v1/reports?q=${encodeURIComponent("研".repeat(200))}`, { auth: key.secret })).status, 200);
+  const writes = f.bucket.writes.length, calls = f.calls.length;
+  for (const query of ["q=a&q=b", `q=${encodeURIComponent("研".repeat(201))}`, `q=${"%20".repeat(801)}`,
+    "q=energy%00", "q=energy%0Aoutlook", "q=energy%09outlook", "q=energy%E2%80%8Boutlook", "q=energy%C2%85outlook"]) {
+    const response = await f.request(`/api/content/v1/reports?${query}`, { auth: key.secret });
+    assert.equal(response.status, 400, query.slice(0, 80));
+    assert.equal((await response.json()).error, "invalid_request");
+  }
+  assert.equal((await f.request("/api/content/v1/reports/r1/artifacts?q=energy", { auth: key.secret })).status, 400);
+  assert.equal(f.bucket.writes.length, writes);
+  assert.equal(f.calls.length, calls);
+});
+
 test("all keys share account request limits; atomic contention cannot double spend", async () => {
   const f = fixture(); await f.grant({ requests_per_minute: 1 }); const first = await f.key(), second = await f.key();
   const results = await Promise.all([first, second].map(key => f.request("/api/content/v1/reports", { auth: key.secret })));
