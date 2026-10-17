@@ -24,7 +24,22 @@ def write_json(path: Path, payload: dict) -> None:
     temporary.replace(path)
 
 
-def create_plan(date_dir: Path, max_reports: str = "all", reports_per_shard: int = 5) -> dict:
+def source_prefix_identity(prefix: str, date: str) -> tuple[str, str | None]:
+    """Accept only the two Daily source layouts, bound to one run and date."""
+    if not isinstance(prefix, str):
+        raise ValueError("Invalid translation source prefix")
+    match = re.fullmatch(r"_private-workflow-handoff/xhs/([1-9][0-9]*)/" + re.escape(date), prefix)
+    if match:
+        return match[1], None
+    match = re.fullmatch(r"_private-workflow-handoff/xhs-recovery/([1-9][0-9]*)/"
+                        + re.escape(date) + r"/([a-f0-9]{64})/articles", prefix)
+    if not match:
+        raise ValueError("Invalid translation source prefix")
+    return match[1], match[2]
+
+
+def create_plan(date_dir: Path, max_reports: str = "all", reports_per_shard: int = 5,
+                source_prefix: str = "") -> dict:
     from build_portal_translated_reports import find_report_dirs, parse_selection_limit
 
     if not 1 <= reports_per_shard <= 8:
@@ -47,6 +62,9 @@ def create_plan(date_dir: Path, max_reports: str = "all", reports_per_shard: int
         "reports_per_shard": reports_per_shard, "shard_count": math.ceil(len(selected) / reports_per_shard),
         "reports": records,
     }
+    if source_prefix:
+        source_prefix_identity(source_prefix, date_dir.name)
+        plan.update(schema_version=3, source_prefix=source_prefix)
     plan["plan_sha256"] = hashlib.sha256(json.dumps(plan, sort_keys=True).encode()).hexdigest()
     return plan
 
@@ -55,8 +73,12 @@ def load_plan(path: Path) -> dict:
     plan = json.loads(path.read_text(encoding="utf-8"))
     stored_digest = plan.get("plan_sha256")
     actual = hashlib.sha256(json.dumps({key: value for key, value in plan.items() if key != "plan_sha256"}, sort_keys=True).encode()).hexdigest()
-    if stored_digest != actual or plan.get("schema_version") not in {1, 2}:
+    if stored_digest != actual or plan.get("schema_version") not in {1, 2, 3}:
         raise ValueError("Translation plan checksum or schema mismatch")
+    if plan["schema_version"] == 3:
+        source_prefix_identity(plan.get("source_prefix"), plan["date_folder"])
+    elif "source_prefix" in plan:
+        raise ValueError("Legacy translation plans cannot declare a source prefix")
     reports = plan["reports"]
     if not reports or len(reports) != plan["selected_count"]:
         raise ValueError("Translation plan has missing report records")
@@ -70,7 +92,7 @@ def load_plan(path: Path) -> dict:
             raise ValueError("Unsafe source report path in translation plan")
         if not isinstance(item.get("source_sha256"), str) or not re.fullmatch(r"[a-f0-9]{64}", item["source_sha256"]):
             raise ValueError("Invalid translation source hash")
-        if plan["schema_version"] == 2:
+        if plan["schema_version"] >= 2:
             method = item.get("source_method")
             expected_name = {"mineru": "source_mineru.md", "ocr": "source_ocr.md"}.get(method) if isinstance(method, str) else None
             provenance = item.get("source_provenance_sha256")
@@ -129,6 +151,8 @@ def checkpoint_scope(plan: dict, shard_index: int) -> str:
 def materialize(plan: dict, shard_index: int, prefix: str, date_dir: Path) -> None:
     from private_workflow_handoff import download_directory, validate_prefix
 
+    if plan.get("source_prefix") and prefix.rstrip("/") != plan["source_prefix"]:
+        raise ValueError("Translation source prefix changed after planning")
     prefix = validate_prefix(prefix)
     source_shards = sorted({PurePosixPath(record["relative_dir"]).parts[0] for record in shard_records(plan, shard_index)})
     for source_shard in source_shards:
@@ -177,7 +201,7 @@ def merge_shards(plan: dict, shard_root: Path, output_root: Path) -> dict:
             status = json.loads((directory / "translation_status.json").read_text(encoding="utf-8"))
             if status.get("global_index") != index or not str(status.get("source_report_dir", "")).endswith("/" + expected_source):
                 raise ValueError(f"Translation status points at a different source: {index}")
-            if plan["schema_version"] == 2 and any(
+            if plan["schema_version"] >= 2 and any(
                     status.get(key) != expected[index].get(key) for key in
                     ("source_method", "source_markdown", "source_sha256", "source_provenance_sha256")):
                 raise ValueError(f"Translation extraction identity changed: {index}")
@@ -227,6 +251,7 @@ def main() -> int:
     plan_cmd.add_argument("--date-dir", type=Path, required=True)
     plan_cmd.add_argument("--max-reports", default="all")
     plan_cmd.add_argument("--reports-per-shard", type=int, default=5)
+    plan_cmd.add_argument("--source-prefix", required=True)
     plan_cmd.add_argument("--output", type=Path, required=True)
     worker = subparsers.add_parser("materialize")
     worker.add_argument("--plan", type=Path, required=True)
@@ -243,7 +268,7 @@ def main() -> int:
     download.add_argument("--destination", type=Path, required=True)
     args = parser.parse_args()
     if args.command == "plan":
-        plan = create_plan(args.date_dir, args.max_reports, args.reports_per_shard)
+        plan = create_plan(args.date_dir, args.max_reports, args.reports_per_shard, args.source_prefix)
         write_json(args.output, plan)
         if os.environ.get("GITHUB_OUTPUT"):
             with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:

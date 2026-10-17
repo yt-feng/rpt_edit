@@ -202,6 +202,32 @@ class TranslationShardTests(unittest.TestCase):
         self.assertEqual(download.call_count, 1)
         self.assertEqual(download.call_args.args[0], 'private/run/date/shard_1.tar.gz')
 
+    def test_plan_binds_recovered_location_and_refuses_original_raw_location(self):
+        self.sources(6)
+        prefix = '_private-workflow-handoff/xhs-recovery/123/260919/' + 'a' * 64 + '/articles'
+        plan = shards.create_plan(self.date, source_prefix=prefix)
+        self.assertEqual(plan['schema_version'], 3)
+        self.assertEqual(shards.load_plan(self.save_plan(plan))['source_prefix'], prefix)
+        with mock.patch('private_workflow_handoff.download_directory') as download:
+            with self.assertRaisesRegex(ValueError, 'prefix changed'):
+                shards.materialize(plan, 0, '_private-workflow-handoff/xhs/123/260919', self.date)
+            download.assert_not_called()
+            shards.materialize(plan, 0, prefix, self.date)
+            self.assertEqual(download.call_args.args[0], prefix + '/shard_0.tar.gz')
+        changed = dict(plan, source_prefix=prefix.replace('/123/', '/124/'))
+        with self.assertRaisesRegex(ValueError, 'checksum'):
+            shards.load_plan(self.save_plan(changed))
+        merged = shards.merge_shards(plan, self.outputs(plan), self.root / 'merged')
+        self.assertEqual(merged['successful_count'], 6)
+
+    def test_bound_source_prefix_rejects_cross_date_and_arbitrary_paths(self):
+        self.sources(1)
+        for prefix in ('_private-workflow-handoff/xhs/123/260920',
+                       '_private-workflow-handoff/xhs/123/260919/../260918',
+                       'other/123/260919', '_private-workflow-handoff/xhs-recovery/123/260919/bad/articles'):
+            with self.subTest(prefix=prefix), self.assertRaisesRegex(ValueError, 'source prefix'):
+                shards.create_plan(self.date, source_prefix=prefix)
+
     def test_results_do_not_pollute_existing_raw_shard_inventory(self):
         self.sources(6)
         plan = shards.create_plan(self.date)

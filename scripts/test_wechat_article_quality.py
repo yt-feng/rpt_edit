@@ -108,6 +108,45 @@ class WeChatArticleQualityTests(unittest.TestCase):
         self.assertIn("企业更关注现金流", cleaned)
         self.assertIn("用户社群贡献了30%的复购", cleaned)
 
+    def test_separate_facts_cannot_form_a_cta_across_sentence_boundaries(self) -> None:
+        # Previously the sanitizer retained both sentences while its audit
+        # combined them into `完整报告.{0,24}查看` and rejected the article.
+        for delimiter in ("。", "；", ";", "！", "?", "\n"):
+            with self.subTest(delimiter=delimiter):
+                fact = f"完整报告覆盖了三类公司{delimiter}查看样本数据可见交付周期缩短。"
+                source = f"# 研究机构：交付周期变化\n\n## 样本数据解释变化\n\n{fact}\n"
+                cleaned, changes = sanitize_wechat_article_markdown(source)
+                self.assertIn(fact, cleaned)
+                self.assertNotIn("removed_model_cta", changes)
+                self.assertEqual([], audit_wechat_article_markdown(cleaned))
+                self.assertEqual(cleaned, self.sanitize(cleaned))
+
+    def test_portal_report_vocabulary_and_assets_are_preserved(self) -> None:
+        fact = "企业通过 Customer Portal 提供数据，Transportal 平台覆盖三类客户。"
+        image = "![数据平台](assets/portal_chart.png)"
+        source = f"# 研究机构：客户平台覆盖范围\n\n## 样本说明平台使用情况\n\n{fact}\n\n{image}\n"
+        cleaned = self.sanitize(source)
+        self.assertIn(fact, cleaned)
+        self.assertIn(image, cleaned)
+        self.assertEqual([], audit_wechat_article_markdown(cleaned))
+
+    def test_actual_ctas_and_private_brand_tokens_remain_blocked(self) -> None:
+        for cta in (
+            "完整报告可在下方查看。",
+            "更多内容欢迎访问 Portal。",
+            "portal.example.invalid",
+            "Portal Suite",
+            "".join(("kc", "desk", ".com")),
+            "ΚСⅾеѕk",
+        ):
+            with self.subTest(cta=cta):
+                source = f"# 研究机构：交付周期变化\n\n## 样本说明变化\n\n正文事实保留。{cta}\n"
+                self.assertIn("model_cta", audit_wechat_article_markdown(source))
+                cleaned = self.sanitize(source)
+                self.assertIn("正文事实保留。", cleaned)
+                self.assertNotIn(cta, cleaned)
+                self.assertEqual([], audit_wechat_article_markdown(cleaned))
+
     def test_keeps_complete_portal_image_placeholder(self) -> None:
         source = """# 波士顿咨询：主判断
 

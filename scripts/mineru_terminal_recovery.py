@@ -15,7 +15,7 @@ import re
 import uuid
 
 from mineru_task_ledger import (
-    DONE, FAILED, LedgerError, digest, encoded, exact_json, schema_v1,
+    DONE, FAILED, REJECTED_STATES, LedgerError, digest, encoded, exact_json, schema_v1,
 )
 
 POLICY = 'terminal-failed-recovery-v1'
@@ -339,9 +339,10 @@ class TerminalRecovery:
                 or not exact_json(row.get('recovery_parent'), expected['recovery_parent'])
                 or (row['state'] == 'claiming' and row['token_identity'] != entry['initial_token_identity'])):
             raise LedgerError('Recovery child does not match its durable parent reservation')
-        rejections = row.get('auth_rejections', [])
-        if ((rejections and rejections[0]['token_identity'] != entry['initial_token_identity'])
-                or (row['token_identity'] != entry['initial_token_identity'] and not rejections)):
+        histories = [row.get('auth_rejections', []), row.get('quota_rejections', [])]
+        initial_rejections = {history[0]['token_identity'] for history in histories if history}
+        if ((initial_rejections and entry['initial_token_identity'] not in initial_rejections)
+                or (row['token_identity'] != entry['initial_token_identity'] and not initial_rejections)):
             raise LedgerError('Recovery child credential changed without its original definitive rejection')
         return row, version
 
@@ -436,7 +437,7 @@ class TerminalRecovery:
                     raise LedgerError('Ambiguous recovery child blocks new submissions; saved task retained')
                 interrupted = {item['id']: ('submission_unknown', child['key']) for item in child['files']}
                 break
-            if child['state'] in {'claiming', 'auth_rejected'}:
+            if child['state'] in {'claiming'} | REJECTED_STATES:
                 if any(page_limit_failure(row) for row in latest_rows.values()):
                     blocked_by_page_limit = True
                     break

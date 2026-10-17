@@ -45,6 +45,25 @@ from push_xhs_notes_to_wechat_drafts import (
 
 
 class WeChatOutputContractTests(unittest.TestCase):
+    def test_render_preserves_source_facts_without_cross_sentence_cta_false_positive(self) -> None:
+        facts = (
+            "完整报告覆盖三类企业；查看样本可见交付周期缩短。"
+            "Customer Portal 平台记录了客户数量变化。"
+        )
+        markdown = (
+            "# 研究机构：客户交付周期变化\n\n## 样本记录平台变化\n\n"
+            f"{facts}\n\n更多完整报告可扫码加入社群查看。\n"
+        )
+        content, *_ = render_fitted_wechat_html(
+            markdown, "客户交付周期变化", BRAND, {}, [], "", BOTTOM_DISCLAIMER,
+            "", "客户交付周期报告", 1200, 19500, 18000,
+        )
+        self.assertIn("完整报告覆盖三类企业", content)
+        self.assertIn("查看样本可见交付周期缩短", content)
+        self.assertIn("Customer Portal", content)
+        self.assertNotIn("扫码加入社群", content)
+        self.assertEqual(1, content.count(FINAL_CTA_TEXT))
+
     def test_real_portal_builder_uses_shared_identity_and_credits(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

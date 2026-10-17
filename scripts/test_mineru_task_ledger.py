@@ -425,6 +425,97 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual((summary['provider_posts'], http.post.call_count), (2, 2))
         self.assertEqual(self.saved_batch()['auth_rejections'][0]['code'], 'A0202')
 
+    def test_daily_quota_rejection_tries_next_pool_key_and_keeps_accepted_identity(self):
+        http = self.http_provider([self.response(code=-60018), self.accepted_response()])
+        rows, summary = self.run_task(wallclock=lambda: 1000)
+        self.assertEqual((len(rows), summary['provider_posts'], http.post.call_count), (5, 2, 2))
+        saved = self.saved_batch()
+        self.assertEqual(saved['quota_rejections'], [{'token_identity': m.token_fingerprint(TOKENS[0][1]),
+                         'code': '-60018', 'http_status': 200, 'retry_after': 1000 + m.QUOTA_RETRY_SECONDS}])
+        self.assertEqual(saved['token_identity'], m.token_fingerprint(TOKENS[1][1]))
+        self.run_task(tokens=list(reversed(TOKENS)), wallclock=lambda: 1001)
+        self.assertEqual(http.post.call_count, 2)
+        self.assertTrue(all(call.kwargs['headers']['Authorization'] == 'Bearer ' + TOKENS[1][1]
+                            for call in http.get.call_args_list))
+
+    def test_quota_exhausted_pool_is_durable_and_can_resume_after_cooldown(self):
+        http = self.http_provider([self.response(code=-60018), self.response(429, code='-60018')])
+        with self.assertRaisesRegex(m.LedgerError, 'quota-limited'):
+            self.run_task(wallclock=lambda: 1000)
+        saved = self.saved_batch()
+        self.assertEqual(saved['state'], 'quota_rejected')
+        claims = {path.name: path.read_bytes() for path in (self.root/'ledger/sources').glob('*.json')}
+        with self.assertRaisesRegex(m.LedgerError, 'quota-limited'):
+            self.run_task(wallclock=lambda: 1001)
+        self.assertEqual(http.post.call_count, 2)
+        http.post.side_effect = [self.accepted_response()]
+        rows, summary = self.run_task(wallclock=lambda: 1000 + m.QUOTA_RETRY_SECONDS)
+        self.assertEqual((len(rows), summary['provider_posts'], http.post.call_count), (5, 1, 3))
+        self.assertEqual(self.saved_batch()['key'], saved['key'])
+        self.assertEqual(claims, {path.name: path.read_bytes() for path in (self.root/'ledger/sources').glob('*.json')})
+
+    def test_mixed_quota_and_auth_rejection_can_use_new_healthy_key_without_retrying_pool(self):
+        http = self.http_provider([self.response(code=-60018), self.response(code='A0211')])
+        with self.assertRaisesRegex(m.LedgerError, 'quota-limited'):
+            self.run_task(wallclock=lambda: 1000)
+        with self.assertRaisesRegex(m.LedgerError, 'quota-limited'):
+            self.run_task(wallclock=lambda: 1001)
+        http.post.side_effect = [self.accepted_response()]
+        rows, summary = self.run_task(tokens=[('replacement', 'healthy-replacement')], wallclock=lambda: 1002)
+        self.assertEqual((len(rows), summary['provider_posts'], http.post.call_count), (5, 1, 3))
+
+    def test_quota_rejected_claim_requires_complete_source_inventory_and_cannot_replay(self):
+        http = self.http_provider([self.response(code=-60018), self.response(code=-60018)])
+        with self.assertRaises(m.LedgerError):
+            self.run_task(self.inputs[:2], wallclock=lambda: 1000)
+        for inputs in (self.inputs[:1], self.inputs[:3]):
+            with self.assertRaisesRegex(m.LedgerError, 'complete original source inventory'):
+                self.run_task(inputs, tokens=[('new', 'healthy')], wallclock=lambda: 1001)
+        with self.assertRaisesRegex(m.LedgerError, 'new submissions forbidden'):
+            self.run_task(self.inputs[:2], tokens=[('new', 'healthy')], forbid_new_submissions=True,
+                          wallclock=lambda: 1001)
+        self.assertEqual(http.post.call_count, 2)
+
+    def test_quota_rejection_must_be_saved_before_next_key(self):
+        http = self.http_provider([self.response(code=-60018), self.accepted_response()])
+        original_put = self.store.put
+        def fail_rejection(key, value, previous=None):
+            if value.get('state') == 'quota_rejected':
+                raise OSError('checkpoint unavailable')
+            return original_put(key, value, previous)
+        with patch.object(self.store, 'put', side_effect=fail_rejection), self.assertRaises(OSError):
+            self.run_task(wallclock=lambda: 1000)
+        self.assertEqual((http.post.call_count, self.saved_batch()['state']), (1, 'submitting'))
+
+    def test_quota_code_with_acceptance_or_server_error_never_switches_keys(self):
+        for index, reply in enumerate((self.response(500, code=-60018), self.response(429, code='unknown'),
+                self.response(code=-60018, data={'batch_id': 'possibly-accepted'}),
+                self.response(code=-60018, task_id='possibly-accepted'))):
+            with self.subTest(index=index):
+                store = m.FileStore(self.root/f'quota-ambiguous-{index}')
+                http = self.http_provider([reply, self.accepted_response()])
+                with self.assertRaises(m.LedgerError):
+                    self.run_task(store=store, wallclock=lambda: 1000)
+                with self.assertRaisesRegex(m.LedgerError, 'Ambiguous'):
+                    self.run_task(store=store, wallclock=lambda: 1001)
+                self.assertEqual(http.post.call_count, 1)
+
+    def test_malformed_quota_history_does_not_authorize_new_submission(self):
+        http = self.http_provider([self.response(code=-60018), self.response(code=-60018)])
+        with self.assertRaises(m.LedgerError):
+            self.run_task(wallclock=lambda: 1000)
+        path = next((self.root/'ledger/batches').glob('*.json'))
+        original = path.read_bytes()
+        for change in (lambda row: row.update(quota_rejections=[]),
+                       lambda row: row.update(batch_id='possibly-accepted'),
+                       lambda row: row['quota_rejections'][0].update(code='unknown'),
+                       lambda row: row['quota_rejections'][0].update(retry_after=True),
+                       lambda row: row['quota_rejections'].append(row['quota_rejections'][0])):
+            value = json.loads(original); change(value); path.write_bytes(m.encoded(value))
+            with self.assertRaises(m.LedgerError):
+                self.run_task(tokens=[('new', 'healthy')], wallclock=lambda: 1001)
+        self.assertEqual(http.post.call_count, 2)
+
     def test_all_auth_rejections_keep_exact_claim_and_resume_only_with_new_healthy_key(self):
         http = self.http_provider([self.response(code='A0211'), self.response(code='A0202')])
         with self.assertRaisesRegex(m.LedgerError, 'saved batch is auth_rejected'):
@@ -566,6 +657,29 @@ class LedgerTests(unittest.TestCase):
 
 
 class ProviderContractTests(unittest.TestCase):
+    def test_transport_failures_are_typed_for_ocr_without_leaking_provider_exception(self):
+        import pdf_to_xhs_batch as batch
+        for method in ('get', 'post', 'put'):
+            http = unittest.mock.Mock()
+            getattr(http, method).side_effect = TimeoutError('secret-token https://signed.invalid')
+            with self.subTest(method=method), self.assertRaises(m.ProviderTransportError) as caught:
+                m.Provider(http, 'https://mineru.net').request(method, 'https://mineru.net/test')
+            self.assertEqual(caught.exception.method, method.upper())
+            self.assertTrue(batch.recoverable_provider_error(caught.exception))
+            self.assertNotIn('secret-token', str(caught.exception))
+            self.assertNotIn('signed.invalid', str(caught.exception))
+
+    def test_documented_quota_codes_are_typed_and_enable_provider_fallback(self):
+        import pdf_to_xhs_batch as batch
+        for code in (-60018, '-60018', '-60019'):
+            response = unittest.mock.Mock(status_code=200)
+            response.json.return_value = {'code': code, 'message': 'secret-token'}
+            with self.subTest(code=code), self.assertRaises(m.DefinitiveQuotaRejection) as caught:
+                m.Provider.parse(response)
+            self.assertTrue(batch.recoverable_provider_error(caught.exception))
+            self.assertEqual(caught.exception.code, str(code))
+            self.assertNotIn('secret-token', str(caught.exception))
+
     def test_only_definitive_auth_replies_have_typed_sanitized_rejection(self):
         for status, payload, expected in (
             (200, {'code': 'A0211', 'message': 'raw-secret-token'}, 'A0211'),

@@ -153,8 +153,12 @@ class Backlog:
                     and row.get('local_filename') == binding['source'] and type(row.get('bytes')) is int
                     and row['bytes'] == binding['size']
                     and (row.get('sha256') is None or row['sha256'] == binding['sha256'])
+                    # Some official feeds (notably WEF) omit publication dates.
+                    # Retain that explicit unknown value; exact PDF bytes and
+                    # both source URLs still identify the publication.
+                    and isinstance(row.get('published'), str) and len(row['published']) <= 2048
                     and all(isinstance(row.get(key), str) and 0 < len(row[key]) <= 2048
-                            for key in ('source_page_url', 'published', 'pdf_url')),
+                            for key in ('source_page_url', 'pdf_url')),
                     'Institution publication version binding')
 
     def versions(self, bindings):

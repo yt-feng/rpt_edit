@@ -47,7 +47,7 @@ from wechat_article_quality import (
 )
 from deepseek_http import deepseek_api_keys_from_env, request_with_key_fallback
 from wechat_editorial_binding import bind_generated_article
-from mineru_task_ledger import R2Store, digest, exact_json, from_environment, input_sources, schema_v1, LedgerError, DefinitiveAuthRejection
+from mineru_task_ledger import R2Store, digest, exact_json, from_environment, input_sources, schema_v1, LedgerError, DefinitiveAuthRejection, DefinitiveQuotaRejection, ProviderTransportError
 from mineru_result_cache import OPTIONS as CACHE_OPTIONS, SUPPORTED_SCOPES, ResultCache, ResultCacheError
 from mineru_daily_result_cache import persist_authentication
 from mineru_daily_result_transport import download_result
@@ -1359,6 +1359,8 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--mineru-no-progress-timeout", type=int, default=600, help="End this poll attempt after no state progress; retain the accepted task for the next run.")
     parser.add_argument("--mineru-source-map", help="Exact local source bindings supplied by the batch wrapper.")
     parser.add_argument("--provider-outcome-path", help=argparse.SUPPRESS)
+    parser.add_argument("--institution-ocr-fallback", action="store_true", help=argparse.SUPPRESS)
+    parser.add_argument("--ocr-fallback-inventory-path", help=argparse.SUPPRESS)
     parser.add_argument("--watermark", default=XHS_WATERMARK)
     return parser
 
@@ -1366,17 +1368,22 @@ def build_arg_parser() -> argparse.ArgumentParser:
 def record_provider_outcome(args, category):
     path = getattr(args, "provider_outcome_path", None)
     if path:
+        inventory_path = getattr(args, "ocr_fallback_inventory_path", None)
+        inventory = getattr(args, "_ocr_fallback_inventory", None)
+        if category == "mineru_unavailable" and inventory_path and inventory is not None:
+            Path(inventory_path).write_text(json.dumps(inventory), encoding="utf-8")
         Path(path).write_text(json.dumps({"schema": 1, "category": category}), encoding="utf-8")
 
 
 def recoverable_provider_error(error):
-    if isinstance(error, DefinitiveAuthRejection):
+    if isinstance(error, (DefinitiveAuthRejection, DefinitiveQuotaRejection, ProviderTransportError)):
         return True
     if isinstance(error, NetworkStop):
         return str(error) in {"network_stop", "tls_certificate_expired"}
     if isinstance(error, LedgerError):
         return (str(error) in {
             "All configured MinerU credentials were definitively rejected; saved batch is auth_rejected",
+            "All configured MinerU credentials are rejected or quota-limited; saved batch retained",
             "Task attempt time budget exhausted; saved task retained",
             "MinerU GET transport outcome unknown; saved task retained",
             "MinerU POST transport outcome unknown; saved task retained",
@@ -1409,6 +1416,10 @@ def main() -> int:
         from institution_original_cache import preserve_sources
         preserve_sources(ledger, sources)
         dependencies_enabled = os.environ.get('INSTITUTION_DEPENDENCY_BACKLOG') == '1'
+        institution_ocr_fallback = bool(args.institution_ocr_fallback)
+        if institution_ocr_fallback and (not dependencies_enabled or ledger.scope != 'institution'
+                                        or not args.chart_source_only or not args.ocr_fallback_inventory_path):
+            raise LedgerError('Institution OCR fallback requires source-only extraction and exact dependency inventory')
         deferred_sources = 0
         def record_deferred(count):
             if args.provider_outcome_path:
@@ -1424,12 +1435,17 @@ def main() -> int:
                 return 0
             eligible_paths = {Path(path) for path, _ in sources}
             pdfs = [path for path in pdfs if path in eligible_paths]
+        if institution_ocr_fallback:
+            args._ocr_fallback_inventory = {'schema': 1, 'sources': [
+                {key: binding[key] for key in ('source', 'sha256', 'size')}
+                for binding in (ledger.bind(path, name) for path, name in sources)
+            ], 'deferred_sources': deferred_sources}
         results, task_summary = run_source_batch(ledger,
             sources,
             timeout=args.poll_timeout, interval=args.poll_interval,
             queue_budget=args.mineru_no_progress_timeout,
         )
-        if (dependencies_enabled and not task_summary.get("ready_for_generation")
+        if (dependencies_enabled and not institution_ocr_fallback and not task_summary.get("ready_for_generation")
                 and hold_terminal_failure(ledger, sources)):
             sources, held_now = filter_sources(ledger, sources)
             deferred_sources += held_now

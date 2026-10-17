@@ -11,7 +11,7 @@ import re
 import tempfile
 
 import portal_translation_shards as shards
-from private_workflow_handoff import build_r2_client, download_directory, r2_bucket, upload_directory
+from private_workflow_handoff import build_r2_client, download_directory, list_keys, r2_bucket, upload_directory
 from recover_private_wechat_handoff import fetch_source_metadata
 
 SOURCE_WORKFLOW = ".github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml"
@@ -67,6 +67,63 @@ def validate_plan(plan: dict, date: str, matrix: dict[int, dict], expected_hash:
         raise ValueError("Private translation plan changed after recovery preparation")
 
 
+def recovery_completed(jobs: dict) -> bool:
+    names = {f"deliver-recovered-report-articles / {stage}" for stage in ("generate", "deliver", "publish")}
+    records = [job for job in jobs["jobs"] if job.get("name") in names]
+    if not records or all(job.get("conclusion") == "skipped" for job in records):
+        return False
+    if (len(records) != len(names) or {job["name"] for job in records} != names
+            or any(job.get("status") != "completed" or job.get("conclusion") != "success" for job in records)):
+        raise ValueError("Original recovered article delivery is not completely verified")
+    return True
+
+
+def resolve_source_prefix(plan: dict, original_prefix: str, run: dict, jobs: dict,
+                          expected_prefix: str = "") -> str:
+    """Older plans omitted the distinct recovered source location.
+
+    Resolve only the original Daily's successful recovery, never a most-recent
+    archive or an arbitrary fallback after a source hash mismatch.
+    """
+    recovered = recovery_completed(jobs)
+    prefix = plan.get("source_prefix")
+    if prefix is None:
+        prefix = original_prefix
+        if recovered:
+            root = f"_private-workflow-handoff/xhs-recovery/{run['id']}/{plan['date_folder']}"
+            pattern = re.compile(re.escape(root) + r"/[a-f0-9]{64}/articles/shard_0\.tar\.gz")
+            candidates = [key.removesuffix("/shard_0.tar.gz") for key in list_keys(root) if pattern.fullmatch(key)]
+            if len(candidates) != 1:
+                raise ValueError("Original recovered translation source is missing or ambiguous")
+            prefix = candidates[0]
+    source_run, manifest = shards.source_prefix_identity(prefix, plan["date_folder"])
+    if source_run != str(run["id"]) or bool(manifest) != recovered:
+        raise ValueError("Translation source prefix differs from the original workflow outcome")
+    if expected_prefix and prefix != expected_prefix:
+        raise ValueError("Translation source prefix changed after recovery preparation")
+    return prefix
+
+
+def validate_recovered_sources(plan: dict, prefix: str, run: dict, date_root: Path) -> None:
+    """Authenticate the original recovery receipt and every planned extraction."""
+    _, manifest = shards.source_prefix_identity(prefix, plan["date_folder"])
+    if manifest is None:
+        return
+    from recover_report_articles import PROVENANCE, validate_articles
+    root = date_root / "shard_0"
+    receipt = validate_articles(root, plan["source_count"], plan["date_folder"])
+    provenance = json.loads((root / PROVENANCE).read_text(encoding="utf-8"))
+    source_receipt = json.loads(provenance["source_receipt_json"])
+    manifest_key = "manifest_sha256" if receipt["source_kind"] == "mineru-recovery" else "selected_manifest_sha256"
+    if (receipt["source_run_id"] != str(run["id"]) or receipt["source_execution_sha"] != run["head_sha"]
+            or receipt["source_handoff_run_id"] != str(run["id"])
+            or receipt["source_handoff_execution_sha"] != run["head_sha"]
+            or provenance.get("manifest_sha256") != manifest or source_receipt.get(manifest_key) != manifest):
+        raise ValueError("Recovered translation source does not match the original Daily identity")
+    for index in range(plan["shard_count"]):
+        shards.selected_reports(plan, index, date_root)
+
+
 def validate_result(plan: dict, index: int, root: Path) -> None:
     records = shards.shard_records(plan, index)
     date_root = root / "portal_translated_reports" / plan["date_folder"]
@@ -91,6 +148,15 @@ def validate_result(plan: dict, index: int, root: Path) -> None:
                 or not (directory / "translated.md").read_text(encoding="utf-8").strip()
                 or (directory / pdf_name).stat().st_size <= 1024):
             raise ValueError("Recovered PDF or its source identity is incomplete")
+        record = expected[global_index]
+        if plan["schema_version"] >= 2 and any(status.get(key) != record.get(key) for key in
+                ("source_method", "source_markdown", "source_sha256", "source_provenance_sha256")):
+            raise ValueError("Recovered PDF extraction identity differs from the original plan")
+        if plan["schema_version"] == 1 and (
+                status.get("source_method", "mineru") != "mineru"
+                or status.get("source_markdown", "source_mineru.md") != "source_mineru.md"
+                or status.get("source_sha256", record["source_sha256"]) != record["source_sha256"]):
+            raise ValueError("Legacy recovered PDF extraction identity changed")
 
 
 def restore_completed_slot(plan: dict, index: int, prefix: str, destination: Path, *, client=None, bucket=None) -> bool:
@@ -117,6 +183,7 @@ def main() -> int:
     parser.add_argument("--failed-shards", required=True)
     parser.add_argument("--plan-dir", required=True, type=Path)
     parser.add_argument("--plan-sha256", default="")
+    parser.add_argument("--source-prefix", default="")
     parser.add_argument("--shard-index", type=int)
     parser.add_argument("--output-root", type=Path, required=True)
     args = parser.parse_args()
@@ -130,12 +197,17 @@ def main() -> int:
     plan = shards.load_plan(args.plan_dir / "plan.json")
     validate_plan(plan, args.date_folder, matrix, args.plan_sha256)
     if args.command == "prepare":
+        source_prefix = resolve_source_prefix(plan, prefix, run, jobs, args.source_prefix)
         with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
             output.write(f"shard_indices={json.dumps(requested)}\nplan_sha256={plan['plan_sha256']}\nselected_count={plan['selected_count']}\n")
+            output.write(f"source_prefix={source_prefix}\n")
     elif args.command == "materialize":
         complete = restore_completed_slot(plan, args.shard_index, prefix, args.output_root)
         if not complete:
-            shards.materialize(plan, args.shard_index, prefix, Path("xhs_notes/dropbox") / args.date_folder)
+            source_prefix = resolve_source_prefix(plan, prefix, run, jobs, args.source_prefix)
+            date_root = Path("xhs_notes/dropbox") / args.date_folder
+            shards.materialize(plan, args.shard_index, source_prefix, date_root)
+            validate_recovered_sources(plan, source_prefix, run, date_root)
         with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
             output.write(f"complete={str(complete).lower()}\n")
         with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as output:

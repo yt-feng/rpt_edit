@@ -86,9 +86,9 @@ class BacklogPipelineTests(unittest.TestCase):
             self.sources.append((path.resolve(), path.name))
         self.provider = Provider(items); self.ledger.provider = self.provider
 
-    def run_primary(self):
+    def run_primary(self, *extra_args):
         argv = ['primary', '--input-dir', str(self.inputs), '--output-dir', str(self.output),
-                '--chart-source-only', '--provider-outcome-path', str(self.outcome)]
+                '--chart-source-only', '--provider-outcome-path', str(self.outcome), *extra_args]
         with (patch.object(sys, 'argv', argv),
               patch.dict(os.environ, {'MINER_U': 'test-token', 'INSTITUTION_DEPENDENCY_BACKLOG': '1'}),
               patch.object(backlog, 'ALLOWED', frozenset({failure_message_hash(ERROR)})),
@@ -131,6 +131,40 @@ class BacklogPipelineTests(unittest.TestCase):
         self.assertFalse(list(self.output.rglob('source_mineru.md')))
         if self.outcome.exists():
             self.assertNotEqual(json.loads(self.outcome.read_text()).get('category'), 'institution_dependencies_deferred')
+
+    def test_opted_in_fallback_records_exact_sources_without_creating_new_holds(self):
+        inventory = self.root/'ocr-inventory.json'
+        code, downloads, holds = self.run_primary('--institution-ocr-fallback',
+                                                 '--ocr-fallback-inventory-path', str(inventory))
+        self.assertEqual((code, downloads, holds), (2, 0, {}))
+        self.assertEqual(json.loads(self.outcome.read_text()), {'schema': 1, 'category': 'mineru_unavailable'})
+        result = json.loads(inventory.read_text())
+        self.assertEqual(result, {'schema': 1, 'deferred_sources': 0, 'sources': [
+            {key: binding[key] for key in ('source', 'sha256', 'size')}
+            for binding in (self.ledger.bind(path, name) for path, name in sorted(self.sources))]})
+        self.assertEqual((self.provider.posts, self.provider.uploads), (0, 0))
+
+    def test_fallback_inventory_excludes_existing_dependency_holds(self):
+        inventory = self.root/'ocr-inventory.json'
+        eligible = [self.sources[0]]
+        with patch.object(backlog, 'filter_sources', return_value=(eligible, 1)), \
+                patch.object(primary, 'run_source_batch', side_effect=m.ProviderTransportError('get')):
+            code, _, holds = self.run_primary('--institution-ocr-fallback',
+                                             '--ocr-fallback-inventory-path', str(inventory))
+        binding = self.ledger.bind(*eligible[0])
+        self.assertEqual((code, holds), (2, {}))
+        self.assertEqual(json.loads(inventory.read_text()), {'schema': 1, 'deferred_sources': 1,
+            'sources': [{key: binding[key] for key in ('source', 'sha256', 'size')}]})
+
+    def test_binding_failure_never_mints_provider_or_ocr_inventory(self):
+        inventory = self.root/'ocr-inventory.json'
+        with patch.object(backlog, 'preserve_manifest_versions', side_effect=m.LedgerError('publication mismatch')):
+            code, _, holds = self.run_primary('--institution-ocr-fallback',
+                                             '--ocr-fallback-inventory-path', str(inventory))
+        self.assertEqual((code, holds), (2, {}))
+        self.assertFalse(inventory.exists())
+        self.assertFalse(self.outcome.exists())
+        self.assertEqual(self.provider.polls, {})
 
     def test_subset_knobs_reject_before_backlog_access_or_resume_acknowledgements(self):
         for option in (['--shard-index', '1'], ['--shard-count', '2'],

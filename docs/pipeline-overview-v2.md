@@ -332,13 +332,41 @@ Its default report selection mode is `all`, with no user-requested total cap;
 fresh exact-date recovery preserves that complete source scope.
 It keeps exact source bindings and accepted MinerU task identities in a durable
 private R2 ledger. A new submission may move to the next configured credential
-only after an explicit authentication rejection without any acceptance
-acknowledgement. Accepted tasks always keep their original credential and batch
+only after an explicit authentication rejection or documented daily-quota
+rejection (`-60018` / `-60019`) without any acceptance acknowledgement. Quota
+rejections have a durable 24-hour cooldown; authentication rejections remain
+excluded until credentials change. Accepted tasks always keep their original credential and batch
 ID. Timeouts, failed parsing, polling errors and ambiguous acknowledgements do
 not by themselves authorize another submission. Explicit cloud recovery retains
 the original records and permits bounded child tasks only for freshly verified,
 specifically approved terminal failures. The detailed contract is in
 [MinerU in-flight recovery](mineru-inflight-recovery.md).
+
+Provider transport failures carry a typed outcome so GET/POST/PUT failures can
+reach the existing source-recovery and OCR gates without relying on the case of
+an error string. An unknown submission response still retains the submitted
+intent and never authorizes another POST. Local source-binding, storage and
+editorial errors remain distinct from provider failures.
+
+Institution publication identity accepts an explicitly empty publication date
+when the source does not supply one. Original PDF hash, size, source page and
+download URL remain required; no date is inferred or fabricated. This prevents
+one undated source from stopping an otherwise valid extraction batch before
+any provider request.
+
+Daily alert emails report WeChat draft verification, Market Views delivery and
+full-report translation separately. A recovered article delivery can succeed
+while a translation runner fails. The alert does not infer API balance or key
+failure from the overall workflow conclusion. Editorial CTA sanitation and
+audit use the same sentence boundaries, preserving factual uses of “Portal”
+while still removing promotion and reserved publication domains.
+
+New PDF translation plans bind their source archive prefix into the plan hash.
+Recovery-generated articles live in a different private prefix from the original
+shards. Failed-shard replay preserves this distinction, verifies the recovery
+receipt and original source identities, and continues to write completed PDF
+shards into the original output slots. Legacy plans resolve only the unique
+verified recovery for that exact original run and date.
 
 The daily Dropbox path and explicit source recovery share an immutable private
 R2 cache of complete MinerU result ZIPs. Each cache entry binds the exact original

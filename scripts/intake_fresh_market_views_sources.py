@@ -144,18 +144,19 @@ def _check_existing(ledger, authority, bindings):
         if row is not None:
             row, _ = ledger._read_batch(entry['key'])
             if ('recovery_parent' in row or not exact_json(row['files'], expected['files'])
-                    or row['state'] not in {'claiming', 'auth_rejected', 'accepted', 'uploaded', 'terminal', 'submitting'}):
+                    or row['state'] not in {'claiming', 'auth_rejected', 'quota_rejected', 'accepted', 'uploaded', 'terminal', 'submitting'}):
                 fail('intake_existing_root_mismatch')
-            rejections = row.get('auth_rejections', [])
-            if ((rejections and rejections[0]['token_identity'] != entry['initial_token_identity'])
-                    or (row['token_identity'] != entry['initial_token_identity'] and not rejections)):
+            histories = [row.get('auth_rejections', []), row.get('quota_rejections', [])]
+            initial_rejections = {history[0]['token_identity'] for history in histories if history}
+            if ((initial_rejections and entry['initial_token_identity'] not in initial_rejections)
+                    or (row['token_identity'] != entry['initial_token_identity'] and not initial_rejections)):
                 fail('intake_existing_root_mismatch')
             if row['state'] == 'submitting':
                 fail('ambiguous_intake_submission_retained')
             if row['state'] == 'claiming' and not exact_json(row, expected):
                 fail('intake_unsubmitted_root_mismatch')
-            if row['state'] == 'auth_rejected':
-                if not row.get('auth_rejections') or row['auth_rejections'][0]['token_identity'] != entry['initial_token_identity']:
+            if row['state'] in {'auth_rejected', 'quota_rejected'}:
+                if entry['initial_token_identity'] not in initial_rejections:
                     fail('intake_existing_root_mismatch')
             if row['state'] in {'accepted', 'uploaded', 'terminal'} and (not isinstance(row.get('batch_id'), str) or not row['batch_id']):
                 fail('intake_existing_root_mismatch')
@@ -168,7 +169,7 @@ def _check_existing(ledger, authority, bindings):
                 fail('intake_claim_root_missing')
             if reference is not None and not exact_json(reference, wanted):
                 fail('intake_existing_claim_mismatch')
-            if row is not None and row['state'] in {'accepted', 'uploaded', 'terminal', 'auth_rejected'} and reference is None:
+            if row is not None and row['state'] in {'accepted', 'uploaded', 'terminal', 'auth_rejected', 'quota_rejected'} and reference is None:
                 fail('intake_accepted_claim_missing')
 
 

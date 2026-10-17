@@ -1343,6 +1343,7 @@ jobs:
           python scripts/portal_translation_shards.py plan \
             --date-dir "xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}" \
             --max-reports "${{ needs.resolve-inputs.outputs.translated_report_count }}" \
+            --source-prefix "${{ steps.sources.outputs.source_prefix }}" \
             --reports-per-shard 5 --output "$RUNNER_TEMP/translation-plan/plan.json"
           python scripts/private_workflow_handoff.py upload-dir \
             --source "$RUNNER_TEMP/translation-plan" \
@@ -1867,9 +1868,16 @@ jobs:
         select=${{ needs.select-macro-reports.result }},
         shards=${{ needs.process-shard.result }},
         source_outcome=${{ needs.source-outcome.result }},
+        no_work=${{ needs.source-outcome.outputs.no_work }},
+        selected_count=${{ needs.select-macro-reports.outputs.selected_count }},
         delivery_gate=${{ needs.validate-market-delivery.result }},
         article_delivery_gate=${{ needs.validate-report-delivery.result }},
         recovered_articles=${{ needs.deliver-recovered-report-articles.result }},
+        recovered_article_count=${{ needs.deliver-recovered-report-articles.outputs.article_count }},
+        wechat_enabled=${{ needs.resolve-inputs.outputs.wechat_draft_upload }},
+        wechat_source=${{ needs.resolve-inputs.outputs.wechat_draft_source }},
+        translation_requested=${{ needs.resolve-inputs.outputs.translated_report_count }},
+        recovery_source_kind=${{ needs.recover-market-sources.outputs.source_kind }},
         package=${{ needs.package-publish-ready.result }},
         market_source_recovery=${{ needs.recover-market-sources.result }},
         ocr_page_source_recovery=${{ needs.recover-ocr-page-sources.result }},

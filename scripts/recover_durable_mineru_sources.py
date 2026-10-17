@@ -68,6 +68,7 @@ LEDGER_ERROR_CATEGORIES = {
     'Stored task has duplicate source identities': 'stored_task_duplicate_sources',
     'No MinerU token identities available': 'credentials_missing',
     'All configured MinerU credentials were definitively rejected; saved batch is auth_rejected': 'credentials_rejected',
+    'All configured MinerU credentials are rejected or quota-limited; saved batch retained': 'credentials_quota_limited',
     'Accepted task refers to a definitively rejected credential': 'accepted_task_credential_rejected',
     'Stored authentication rejection history is malformed': 'credential_rejection_history_invalid',
     'Stored authentication rejection state is inconsistent': 'credential_rejection_state_invalid',
