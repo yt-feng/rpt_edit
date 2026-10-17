@@ -24,6 +24,47 @@ MIN_DEDUPE_HOURS = 1
 MAX_DEDUPE_HOURS = 720
 
 
+def institution_wechat_delivery_outputs(output_dir: Path) -> dict[str, str]:
+    """Summarize a completed upload's saved readback without calling WeChat.
+
+    Call only after this invocation's uploader succeeds. Restored or partial
+    checkpoints must never establish a fresh delivery on their own.
+    """
+    unconfirmed = {"wechat_verified": "false", "verified_article_count": "0", "verified_draft_count": "0"}
+    try:
+        summary = json.loads((output_dir / "wechat_draft_summary.json").read_text(encoding="utf-8"))
+        if (summary.get("dry_run") is not False or summary.get("status") != "verified"
+                or summary.get("date_folder") != output_dir.name):
+            return unconfirmed
+        from verify_existing_wechat_drafts import load_drafts
+        from push_portal_translated_to_wechat_drafts import draft_group_key
+
+        drafts = load_drafts(output_dir)
+        rows = summary.get("drafts", [])
+        article_count = sum(len(draft["articles"]) for draft in drafts)
+        if (type(summary.get("draft_count")) is not int or summary["draft_count"] != len(drafts)
+                or type(summary.get("selected_count")) is not int or summary["selected_count"] != article_count
+                or len(rows) != len(drafts) or len(summary.get("articles", [])) != article_count):
+            return unconfirmed
+        groups = set()
+        for row, draft in zip(rows, drafts):
+            readback = row.get("draft_get", {})
+            group = draft_group_key(draft["articles"])
+            if (row.get("media_id") != draft["media_id"] or row.get("status") != "verified"
+                    or row.get("group_key") != group or group in groups
+                    or readback.get("article_count") != len(draft["articles"])
+                    or readback.get("expected_article_count") != len(draft["articles"])
+                    or not all(readback.get(key) is True for key in (
+                        "ok", "matches_editorial_contract", "matches_expected_article_count",
+                        "matches_expected_titles", "matches_media_contract"))):
+                return unconfirmed
+            groups.add(group)
+        return {"wechat_verified": "true", "verified_article_count": str(article_count),
+                "verified_draft_count": str(len(drafts))}
+    except (OSError, ValueError, TypeError, AttributeError, KeyError):
+        return unconfirmed
+
+
 def workflow_alert_text(workflow: str, source_results: str, env: dict[str, str]) -> str:
     """Describe observed consumer outcomes without guessing provider failures."""
     results = {}
@@ -68,6 +109,40 @@ def workflow_alert_text(workflow: str, source_results: str, env: dict[str, str])
         elif (results.get("market_source_recovery") == "success" and source_kind == "ocr-synthesis") or results.get("ocr_page_source_recovery") == "success":
             lines.append("来源恢复：OCR 来源已就绪；微信交付结果以上述独立状态为准。")
         lines.append("")
+    elif workflow == "Institution latest PDF to WeChat":
+        verified = (results.get("wechat_verified") == "true" and results.get("dry_run") == "false"
+                    and all(results.get(key, "").isdigit() and int(results[key]) > 0
+                            for key in ("verified_article_count", "verified_draft_count")))
+        if results.get("dry_run") == "true":
+            wechat = "本次为 dry-run，未执行草稿投递"
+        elif verified:
+            wechat = ("已入微信草稿箱并完成回读验证（" + results["verified_article_count"]
+                      + " 篇文章，" + results["verified_draft_count"] + " 个草稿）")
+        else:
+            wechat = {
+                "success": "上传作业已完成，尚未确认草稿回读结果",
+                "failure": "上传作业未完成，尚未确认本次完整交付",
+                "cancelled": "上传作业已取消，尚未确认本次完整交付",
+                "skipped": "本次未执行草稿投递",
+            }.get(results.get("wechat"), "尚未确认草稿投递结果")
+        lines.append(f"微信文章：{wechat}。")
+        build = {
+            "success": "报告构建作业已完成",
+            "failure": "报告构建作业未全部完成，请查看首次失败步骤",
+            "cancelled": "报告构建作业已取消",
+            "skipped": "本次未执行报告构建",
+        }.get(results.get("build"), "尚未确认报告构建结果")
+        lines.append(f"报告构建：{build}。")
+        if results.get("source_health") == "failure":
+            source = "来源抓取不完整，部分必需来源尚未取得"
+            source += "；已验证交付的草稿不因此变为投递失败" if verified else "；微信投递结果以上述独立状态为准"
+        else:
+            source = {
+                "success": "来源检查已完成",
+                "cancelled": "来源检查已取消，尚未确认来源完整性",
+                "skipped": "本次未执行独立来源检查，来源完整性请查看抓取结果",
+            }.get(results.get("source_health"), "尚未确认来源抓取结果")
+        lines.extend([f"来源抓取：{source}。", ""])
     failed = [key for key, value in results.items() if value in {"failure", "cancelled"}]
     if failed:
         lines.append("未完成的步骤：" + "、".join(failed))

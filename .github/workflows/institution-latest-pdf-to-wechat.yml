@@ -45,6 +45,7 @@ on:
           - none
           - imf-20261012-reviewed
           - imf-20261015-reviewed
+          - imf-europe-20261017-cached
       force_reprocess:
         description: "Ignore seen-state and overwrite today's generated outputs"
         required: true
@@ -152,7 +153,7 @@ jobs:
               echo "manifest_path=" >> "$GITHUB_OUTPUT"
               exit 0
               ;;
-            imf-20261012-reviewed|imf-20261015-reviewed)
+            imf-20261012-reviewed|imf-20261015-reviewed|imf-europe-20261017-cached)
               if [ "$EVENT_NAME" != "workflow_dispatch" ]; then
                 echo "::error::Reviewed originals require an explicit manual dispatch."
                 exit 1
@@ -177,6 +178,7 @@ jobs:
           checksums = {
               "imf-20261012-reviewed": "250557000edbc46f0629393a7a43a139b37926cb54c58535ea498866ccd77e67",
               "imf-20261015-reviewed": "c880842e7f022145eaca780dd52017934444ab7c7f1be7208a9cc7f74b81196b",
+              "imf-europe-20261017-cached": "ab27239ae15d4680794800e46ed4b3102e7fdda8bccbdb312c9451c8337100e9",
           }
           source = Path("institution_feeds/reviewed_originals") / (selection + ".json")
           if source.is_symlink() or not source.is_file() or source.stat().st_size > 512 * 1024:
@@ -509,6 +511,10 @@ jobs:
     if: ${{ needs.fetch-and-build.outputs.pdf_count != '0' }}
     runs-on: [self-hosted, wechat-draft]
     timeout-minutes: 120
+    outputs:
+      wechat_verified: ${{ steps.upload.outputs.wechat_verified }}
+      verified_article_count: ${{ steps.upload.outputs.verified_article_count }}
+      verified_draft_count: ${{ steps.upload.outputs.verified_draft_count }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -559,6 +565,7 @@ jobs:
           path: .
 
       - name: Build and upload WeChat drafts
+        id: upload
         env:
           WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
           WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
@@ -591,6 +598,19 @@ jobs:
             --min-inline-images "3" \
             --max-inline-images "3" \
             "${ARGS[@]}" 2>&1 | tee institution_wechat_progress.log
+
+          # Only this successful upload's final receipt can confirm delivery.
+          PYTHONPATH=scripts python - "$DATE" <<'PY'
+          import os
+          import sys
+          from pathlib import Path
+          from send_portal_ops_alert import institution_wechat_delivery_outputs
+
+          outputs = institution_wechat_delivery_outputs(Path("wechat_drafts/institutions") / sys.argv[1])
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as handle:
+              for key, value in outputs.items():
+                  handle.write(f"{key}={value}\n")
+          PY
 
       - name: Archive WeChat draft diagnostics
         if: ${{ always() }}
@@ -656,5 +676,9 @@ jobs:
         build=${{ needs.fetch-and-build.result }},
         source_health=${{ needs.source-health.result }},
         wechat=${{ needs.upload-wechat-drafts.result }},
+        dry_run=${{ github.event.inputs.dry_run || 'false' }},
+        wechat_verified=${{ needs.upload-wechat-drafts.outputs.wechat_verified }},
+        verified_article_count=${{ needs.upload-wechat-drafts.outputs.verified_article_count }},
+        verified_draft_count=${{ needs.upload-wechat-drafts.outputs.verified_draft_count }},
         handoff_cleanup=${{ needs.cleanup-private-handoff.result }}
     secrets: inherit

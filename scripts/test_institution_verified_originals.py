@@ -63,11 +63,32 @@ def manifest(rows=None):
     return dict(schema=1, institution="imf", frozen_pending_sha256="2"*64, records=rows or [record()])
 
 
+def producer_manifest(payload=None):
+    row = record(payload=payload)
+    source, binding = row['item'], row['binding']
+    publication = dict(institution='imf', title=source['title'], local_filename=binding['source'],
+                       source_page_url=source['source_url'], published=source['date'],
+                       pdf_url=source['pdf_candidates'][0], feed_pdf_candidates=source['pdf_candidates'],
+                       sha256=binding['sha256'], bytes=binding['size'], date='261012')
+    raw = json.dumps(dict(date='261012', downloaded_count=1, downloaded=[publication]))
+    return dict(schema=2, institution='imf', frozen_pending_sha256='2'*64,
+                producer=dict(run_id=123, head_sha='3'*40, artifact_id=456,
+                              artifact_sha256='4'*64, manifest_sha256=digest(raw.encode())),
+                source_manifest_json=raw, records=[dict(item=source, binding=binding)])
+
+
+def change_producer_publication(value, mutate):
+    source = json.loads(value['source_manifest_json'])
+    mutate(source)
+    value['source_manifest_json'] = json.dumps(source)
+    value['producer']['manifest_sha256'] = digest(value['source_manifest_json'].encode())
+
+
 class ReadOnlyR2:
     def __init__(self, row, payload):
         self.key = original.OriginalCache.key(row["binding"])
         self.payload = payload
-        self.metadata = {"sha256": row["sha256"], "kind": "institution-original-proof"}
+        self.metadata = {"sha256": row["binding"]["sha256"], "kind": "institution-original-proof"}
         self.content_type = "application/pdf"
         self.calls = []
 
@@ -121,6 +142,82 @@ class VerifiedOriginalTests(unittest.TestCase):
             self.assertEqual(pending.path.read_bytes(), before)
             self.assertEqual(len(store.calls), 1)
             self.assertEqual(list(root.glob(".verified-original-*")), [])
+
+    def test_failed_producer_archive_restores_without_mineru_admission_or_state_writes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            selection, pending, store, dest = self.setup_selection(root, producer_manifest())
+            before = pending.path.read_bytes()
+            self.assertIsNone(selection.records['imf:synthetic-1']['pages'])
+            result = selection.restore(item(), dest.name, pending, dest, original.MAX_PDF)
+            self.assertEqual(dest.read_bytes(), pdf())
+            self.assertEqual(result['verified_original_pages'], 2)
+            self.assertEqual(result['pdf_url'], item()['pdf_candidates'][0])
+            self.assertEqual(result['verified_original_receipt_sha256'],
+                             producer_manifest()['producer']['manifest_sha256'])
+            self.assertEqual(pending.path.read_bytes(), before)
+            self.assertEqual(len(store.calls), 1)
+            self.assertEqual(set(path.name for path in root.iterdir()),
+                             {'pending.json', 'reviewed.json', dest.name})
+
+    def test_europe_selection_binds_exact_original_failed_run_and_only_selected_publication(self):
+        path = Path('institution_feeds/reviewed_originals/imf-europe-20261017-cached.json')
+        raw = path.read_bytes()
+        self.assertEqual(digest(raw), 'ab27239ae15d4680794800e46ed4b3102e7fdda8bccbdb312c9451c8337100e9')
+        data = json.loads(raw)
+        self.assertEqual(data['producer'], dict(run_id=38984663136,
+            head_sha='ff052eff4b1b6843e86372ee93799a2454c529c0', artifact_id=12081923844,
+            artifact_sha256='db3e297276f22c4cc2201205761b407420fe0bc4d90fd2d7b456321481e4f8b6',
+            manifest_sha256='587458de79cc50be98567a062da0e5155b44c81344974ff7cb9fc7652d962c9f'))
+        selection = verified.VerifiedOriginals(path, cache_factory=lambda: self.fail('Unexpected R2 read'))
+        self.assertEqual(list(selection.records), ['imf:74d8db8233c171213861d1f872b00e7b34fdfffc2772b202becd9f42c84c'])
+        row = next(iter(selection.records.values()))
+        self.assertEqual(row['binding']['id'], 'de2a34bcfa661abcdf0c82db9702d1fb9d76f0f93759b6782bcb291504a11809')
+        self.assertEqual(row['sha256'], '4c3172f10a8fe354088740510fc72254bd90c3577dcd95fc10c5fa3fced1ebfc')
+        self.assertEqual(row['size'], 5643283)
+        self.assertEqual(row['item']['date'], '2026-10-16T21:00:00+00:00')
+        self.assertEqual(row['binding']['source'], filename(row['item']))
+        self.assertEqual(row['official_landing_url'], row['item']['source_url'])
+        self.assertEqual(row['official_pdf_url'],
+                         'https://www.imf.org/-/media/files/publications/reo/eur/2026/october/english/text.pdf')
+        self.assertEqual(json.loads(data['source_manifest_json'])['downloaded_count'], 4)
+
+    def test_producer_receipt_and_exact_publication_are_validated_before_cache(self):
+        mutations = [
+            lambda x: x['producer'].update(run_id=True),
+            lambda x: x['producer'].update(head_sha='bad'),
+            lambda x: x['producer'].update(artifact_sha256='bad'),
+            lambda x: x.update(source_manifest_json=x['source_manifest_json'] + '\n'),
+            lambda x: x['records'][0]['item'].update(title='Different report'),
+            lambda x: x['records'][0]['binding'].update(id='0'*64),
+            lambda x: x['records'].append(copy.deepcopy(x['records'][0])),
+        ]
+        for field, replacement in (
+                ('institution', 'other'), ('title', 'Other report'), ('published', item(2)['date']+' '),
+                ('source_page_url', item(2)['source_url']), ('pdf_url', 'https://untrusted.invalid/report.pdf'),
+                ('feed_pdf_candidates', []), ('sha256', '0'*64), ('bytes', True), ('date', '261011'),
+                ('local_filename', 'Different.pdf')):
+            mutations.append(lambda x, field=field, replacement=replacement: change_producer_publication(
+                x, lambda source: source['downloaded'][0].update({field: replacement})))
+        mutations.extend([
+            lambda x: change_producer_publication(x, lambda source: source.update(downloaded_count=2)),
+            lambda x: change_producer_publication(x, lambda source: source.update(date=None)),
+            lambda x: change_producer_publication(x, lambda source: source['downloaded'].append(
+                copy.deepcopy(source['downloaded'][0]))),
+        ])
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory)/'reviewed.json'
+            for index, mutate in enumerate(mutations):
+                value = producer_manifest(); mutate(value); path.write_text(json.dumps(value))
+                with self.subTest(index=index), self.assertRaises(verified.VerifiedOriginalError):
+                    verified.VerifiedOriginals(path, cache_factory=lambda: self.fail('Unexpected R2 read'))
+            for raw, code in (('{private malformed content', 'producer_manifest_json'),
+                              ('{"date":"261012","date":"261012"}', 'duplicate_json_key')):
+                value = producer_manifest(); value['source_manifest_json'] = raw
+                value['producer']['manifest_sha256'] = digest(raw.encode())
+                path.write_text(json.dumps(value))
+                with self.subTest(raw=raw), self.assertRaisesRegex(verified.VerifiedOriginalError, code):
+                    verified.VerifiedOriginals(path)
 
     def test_whole_manifest_is_validated_before_any_cache_read(self):
         mutations = [
@@ -289,11 +386,11 @@ class VerifiedOriginalTests(unittest.TestCase):
             with self.subTest(identity=field), self.assertRaisesRegex(verified.VerifiedOriginalError, "ieo_identity"):
                 verified._validate_record(changed)
 
-    def fetch(self, root, *, enabled=True, sources=None, cache_missing=False, live_success=False):
+    def fetch(self, root, *, enabled=True, sources=None, cache_missing=False, live_success=False, value=None):
         class Clock(datetime):
             @classmethod
             def now(cls, tz=None): return NOW
-        value = manifest(); review = root/"reviewed.json"; review.write_text(json.dumps(value))
+        value = value or manifest(); review = root/"reviewed.json"; review.write_text(json.dumps(value))
         store = ReadOnlyR2(value["records"][0], pdf())
         cache = original.OriginalCache(store, "synthetic-private")
         if cache_missing:
@@ -340,6 +437,24 @@ class VerifiedOriginalTests(unittest.TestCase):
             self.assertEqual(data["skipped"][0]["reason"],"verified_original_cache_missing")
             self.assertNotIn("imf:synthetic-1",json.loads((root/"seen.json").read_text())["items"])
             self.assertIn("imf:synthetic-1",json.loads((root/"pending.json").read_text())["items"])
+
+    def test_failed_producer_selection_follows_existing_fetch_and_pending_boundaries(self):
+        for cache_missing in (False, True):
+            with self.subTest(cache_missing=cache_missing), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                PendingIntake(root/'pending.json', {}, now=NOW).admit(item(), 7)
+                code, data, status, live, factory = self.fetch(
+                    root, value=producer_manifest(), cache_missing=cache_missing)
+                self.assertEqual((live, factory, status['source_health']), (0, 1, 'degraded'))
+                self.assertEqual((code, data['downloaded_count']), (2, 0) if cache_missing else (0, 1))
+                self.assertIn('imf:synthetic-1', json.loads((root/'pending.json').read_text())['items'])
+                if cache_missing:
+                    self.assertEqual(data['skipped'][0]['reason'], 'verified_original_cache_missing')
+                    self.assertNotIn('imf:synthetic-1', json.loads((root/'seen.json').read_text())['items'])
+                else:
+                    self.assertEqual(data['downloaded'][0]['sha256'], record()['sha256'])
+                    self.assertEqual(data['downloaded'][0]['published'], item()['date'])
+                    self.assertEqual(data['downloaded'][0]['verified_original_pages'], 2)
 
     def test_new_matching_report_cannot_use_allowlist_without_previous_admission(self):
         with tempfile.TemporaryDirectory() as directory:

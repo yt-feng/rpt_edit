@@ -17,6 +17,7 @@ WORKFLOW = (ROOT / '.github/workflows/institution-latest-pdf-to-wechat.yml').rea
 SELECTIONS = {
     'imf-20261012-reviewed': '250557000edbc46f0629393a7a43a139b37926cb54c58535ea498866ccd77e67',
     'imf-20261015-reviewed': 'c880842e7f022145eaca780dd52017934444ab7c7f1be7208a9cc7f74b81196b',
+    'imf-europe-20261017-cached': 'ab27239ae15d4680794800e46ed4b3102e7fdda8bccbdb312c9451c8337100e9',
 }
 
 
