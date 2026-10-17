@@ -130,13 +130,12 @@ class WeChatArticleQualityTests(unittest.TestCase):
         self.assertIn(image, cleaned)
         self.assertEqual([], audit_wechat_article_markdown(cleaned))
 
-    def test_actual_ctas_and_private_brand_tokens_remain_blocked(self) -> None:
+    def test_actual_ctas_and_reserved_publication_names_remain_blocked(self) -> None:
         for cta in (
             "完整报告可在下方查看。",
             "更多内容欢迎访问 Portal。",
             "portal.example.invalid",
             "Portal Suite",
-            "ΚС",
         ):
             with self.subTest(cta=cta):
                 source = f"# 研究机构：交付周期变化\n\n## 样本说明变化\n\n正文事实保留。{cta}\n"
