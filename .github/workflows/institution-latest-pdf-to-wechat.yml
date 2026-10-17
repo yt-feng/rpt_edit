@@ -206,6 +206,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends fonts-noto-cjk
 
+      - name: Install required institution OCR fallback tools
+        if: ${{ inputs.completed_source_recovery == '' || inputs.completed_source_recovery == 'none' }}
+        timeout-minutes: 5
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends tesseract-ocr tesseract-ocr-eng tesseract-ocr-chi-sim
+          tesseract --list-langs
+
       - name: Export visible dependency holds before fetching originals
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
@@ -302,9 +310,11 @@ jobs:
           set -o pipefail
           DATE="${{ steps.fetch.outputs.date_folder }}"
           SKIP_EXISTING="false"
+          OCR_ARGS=(--institution-ocr-fallback)
           if [ -n "$COMPLETED_SOURCE_RECOVERY" ] && [ "$COMPLETED_SOURCE_RECOVERY" != none ]; then
             export MINERU_FORBID_NEW_SUBMISSIONS=1
             export INSTITUTION_DEPENDENCY_BACKLOG=0
+            OCR_ARGS=()
           fi
           if [ "${{ github.event.inputs.force_reprocess || 'false' }}" = "true" ]; then
             rm -rf "xhs_notes/institutions/$DATE"
@@ -317,6 +327,7 @@ jobs:
             --pending-task-attempts 3 \
             --extraction-timeout 2400 \
             --chart-source-only \
+            "${OCR_ARGS[@]}" \
             --keep-mineru-raw \
             --skip-existing "$SKIP_EXISTING" 2>&1 | tee institution_xhs_progress.log
           if [ -n "$COMPLETED_SOURCE_RECOVERY" ] && [ "$COMPLETED_SOURCE_RECOVERY" != none ]; then
@@ -330,6 +341,19 @@ jobs:
               output.write('generated_report_count=6\ndeferred_source_count=0\n')
           PYCODE
           fi
+
+      - name: Preserve extracted OCR page evidence in private R2
+        if: ${{ always() && !cancelled() && hashFiles('xhs_notes/institutions/**/source_ocr.md') != '' }}
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          DATE="${{ steps.fetch.outputs.date_folder }}"
+          python scripts/private_workflow_handoff.py upload-dir \
+            --source "xhs_notes/institutions/$DATE" \
+            --key "$PRIVATE_HANDOFF_ROOT/${{ github.run_id }}/$DATE/extracted-sources.tar.gz"
 
       - name: Set up free local translation models
         if: ${{ steps.extract.outputs.generated_report_count != '0' }}

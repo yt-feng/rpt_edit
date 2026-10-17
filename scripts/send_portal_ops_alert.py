@@ -42,11 +42,9 @@ def workflow_alert_text(workflow: str, source_results: str, env: dict[str, str])
             wechat = "已完成草稿投递与回读验证" if results.get("translated_wechat") == "success" else "尚未完成草稿交付"
         elif results.get("wechat") == "success":
             wechat = "已完成草稿投递与回读验证"
-        elif results.get("wechat_enabled") == "true" and results.get("recovered_articles") == "success":
+        elif (results.get("wechat_enabled") == "true" and results.get("wechat_source") == "xhs_notes"
+              and results.get("recovered_articles") == "success"):
             wechat = "已通过恢复链路完成草稿投递与回读验证"
-            count = results.get("recovered_article_count", "")
-            if count.isdigit() and int(count) > 0:
-                wechat += f"（{int(count)} 篇）"
         else:
             wechat = "尚未确认完成草稿交付"
         lines.append(f"微信文章：{wechat}。")

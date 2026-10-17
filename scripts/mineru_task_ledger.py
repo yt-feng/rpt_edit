@@ -63,6 +63,15 @@ class ProviderTransportError(LedgerError):
         super().__init__(f'MinerU {self.method} transport outcome unknown; saved task retained')
 
 
+class ProviderProtocolError(LedgerError):
+    """An unusable provider success response; never permission to repeat POST."""
+    def __init__(self, reason):
+        if reason not in {'invalid_json', 'malformed_success', 'incomplete_acknowledgement'}:
+            raise LedgerError('Invalid MinerU protocol failure category')
+        self.reason = reason
+        super().__init__(f'MinerU provider protocol failure: {reason}; saved task retained')
+
+
 def encoded(value):
     return json.dumps(value, sort_keys=True, separators=(',', ':'), ensure_ascii=False).encode()
 
@@ -228,6 +237,8 @@ class Provider:
         except Exception:
             if status == 401:
                 raise DefinitiveAuthRejection('HTTP401', 401) from None
+            if status == 200:
+                raise ProviderProtocolError('invalid_json') from None
             raise LedgerError(f'MinerU response is not valid JSON: HTTP {status}') from None
         code = None
         if isinstance(data, dict):
@@ -255,6 +266,9 @@ class Provider:
             if acknowledgement:
                 raise LedgerError('MinerU quota rejection conflicts with a submission acknowledgement')
             raise DefinitiveQuotaRejection(normalized, status)
+        if status == 200 and (not isinstance(data, dict)
+                or (code in (None, 0, '0') and not isinstance(data.get('data'), dict))):
+            raise ProviderProtocolError('malformed_success')
         if (response.status_code >= 400 or not isinstance(data, dict)
                 or code not in (None, 0, '0') or not isinstance(data.get('data'), dict)):
             # Do not retain arbitrary provider error bodies, URLs or tokens.
@@ -280,7 +294,7 @@ class Provider:
         batch_id, urls = body.get('batch_id'), body.get('file_urls')
         if (not isinstance(batch_id, str) or not batch_id or not isinstance(urls, list)
                 or len(urls) != len(items) or not all(isinstance(u, str) and u.startswith('https://') for u in urls)):
-            raise LedgerError('MinerU submission acknowledgement is incomplete')
+            raise ProviderProtocolError('incomplete_acknowledgement')
         return batch_id, urls
 
     def upload(self, url, raw, timeout):

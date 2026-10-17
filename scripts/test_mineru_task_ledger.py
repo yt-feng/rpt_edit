@@ -705,7 +705,23 @@ class ProviderContractTests(unittest.TestCase):
         with self.assertRaises(m.LedgerError) as caught:
             m.Provider.parse(response)
         self.assertNotIsInstance(caught.exception, m.DefinitiveAuthRejection)
+        self.assertIsInstance(caught.exception, m.ProviderProtocolError)
         self.assertNotIn('raw-secret-token', str(caught.exception))
+
+    def test_only_malformed_success_protocol_can_enable_ocr_without_rotating_keys(self):
+        import pdf_to_xhs_batch as batch
+        for payload in ([], {'code': 0}, {'code': '0', 'data': []}):
+            response = unittest.mock.Mock(status_code=200); response.json.return_value = payload
+            with self.subTest(payload=payload), self.assertRaises(m.ProviderProtocolError) as caught:
+                m.Provider.parse(response)
+            self.assertTrue(batch.recoverable_provider_error(caught.exception))
+        for status, payload in ((200, {'code': -500}), (400, {'code': -500}),
+                                (200, {'code': 'unknown'}), (200, {'code': -60006})):
+            response = unittest.mock.Mock(status_code=status); response.json.return_value = payload
+            with self.subTest(status=status, payload=payload), self.assertRaises(m.LedgerError) as caught:
+                m.Provider.parse(response)
+            self.assertNotIsInstance(caught.exception, m.ProviderProtocolError)
+            self.assertFalse(batch.recoverable_provider_error(caught.exception))
 
     def test_native_payload_and_exact_poll_identity_preserve_batching(self):
         http=unittest.mock.Mock()
@@ -739,7 +755,7 @@ class ProviderContractTests(unittest.TestCase):
         provider=m.Provider(http,'https://mineru.net')
         for data in ({'batch_id':'accepted','file_urls':[]},{'file_urls':['https://upload.invalid']}, {'batch_id':'accepted','file_urls':['http://upload.invalid']}):
             response.json.return_value={'code':0,'data':data}
-            with self.assertRaises(m.LedgerError):provider.submit([{'source':'a.pdf','id':'a'*64}],OPTIONS,'token',5)
+            with self.assertRaises(m.ProviderProtocolError):provider.submit([{'source':'a.pdf','id':'a'*64}],OPTIONS,'token',5)
         http.put.return_value=unittest.mock.Mock(status_code=500)
         with self.assertRaises(m.LedgerError):provider.upload('https://upload.invalid',b'bytes',4)
         self.assertEqual(http.put.call_args.kwargs['timeout'],4)

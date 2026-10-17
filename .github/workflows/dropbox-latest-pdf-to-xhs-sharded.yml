@@ -1873,7 +1873,6 @@ jobs:
         delivery_gate=${{ needs.validate-market-delivery.result }},
         article_delivery_gate=${{ needs.validate-report-delivery.result }},
         recovered_articles=${{ needs.deliver-recovered-report-articles.result }},
-        recovered_article_count=${{ needs.deliver-recovered-report-articles.outputs.article_count }},
         wechat_enabled=${{ needs.resolve-inputs.outputs.wechat_draft_upload }},
         wechat_source=${{ needs.resolve-inputs.outputs.wechat_draft_source }},
         translation_requested=${{ needs.resolve-inputs.outputs.translated_report_count }},

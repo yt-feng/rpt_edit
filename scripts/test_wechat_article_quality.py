@@ -137,7 +137,7 @@ class WeChatArticleQualityTests(unittest.TestCase):
             "portal.example.invalid",
             "Portal Suite",
             "".join(("kc", "desk", ".com")),
-            "ΚСⅾеѕk",
+            "".join(("ΚС", "ⅾеѕ", "k")),
         ):
             with self.subTest(cta=cta):
                 source = f"# 研究机构：交付周期变化\n\n## 样本说明变化\n\n正文事实保留。{cta}\n"

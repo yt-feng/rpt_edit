@@ -86,6 +86,11 @@ def expected_item_dir(output_dir: Path, pdf: Path, index: int) -> Path:
 
 
 def is_already_converted(item_dir: Path, *, chart_source_only: bool = False, generate_xhs: bool = False) -> bool:
+    if chart_source_only and ((item_dir / "source_ocr.md").exists() or (item_dir / "source_ocr.md").is_symlink()):
+        from report_extraction_source import resolve_extraction_source
+        source = resolve_extraction_source(item_dir)
+        status = json.loads((item_dir / "status.json").read_bytes())
+        return source.method == "ocr" and status.get("chart_source_only") is True and not status.get("error")
     required = CHART_SOURCE_MARKERS if chart_source_only else {"source_mineru.md", *REPORT_MARKERS}
     if generate_xhs and not chart_source_only:
         required = {*required, "note.md"}
@@ -95,6 +100,9 @@ def is_already_converted(item_dir: Path, *, chart_source_only: bool = False, gen
 def count_generated_report_dirs(output_dir: Path, *, chart_source_only: bool = False, generate_xhs: bool = False) -> int:
     if not output_dir.exists():
         return 0
+    if chart_source_only:
+        return sum(is_already_converted(path, chart_source_only=True)
+                   for path in output_dir.iterdir() if path.is_dir())
     markers = CHART_SOURCE_MARKERS if chart_source_only else REPORT_MARKERS
     if generate_xhs and not chart_source_only:
         markers = {*markers, "note.md"}
@@ -172,6 +180,8 @@ def build_child_command(args: argparse.Namespace, tmp_input: Path, source_map: P
         cmd.append("--keep-mineru-raw")
     if getattr(args, "generate_xhs", False):
         cmd.append("--generate-xhs")
+    if getattr(args, "institution_ocr_fallback", False):
+        cmd.append("--institution-ocr-fallback")
     return cmd
 
 
@@ -198,6 +208,9 @@ def run_batch(batch_index: int, batch: list[PDFRecord], args: argparse.Namespace
         cmd = build_child_command(args, tmp_input, source_map)
         outcome_path = Path(tmp) / "provider-outcome.json"
         cmd.extend(["--provider-outcome-path", str(outcome_path)])
+        ocr_inventory_path = Path(tmp) / "ocr-fallback-inventory.json"
+        if getattr(args, "institution_ocr_fallback", False):
+            cmd.extend(["--ocr-fallback-inventory-path", str(ocr_inventory_path)])
         result, poll_attempts = run_pending_task_attempts(
             cmd, outcome_path,
             attempts=getattr(args, 'pending_task_attempts', 1),
@@ -215,15 +228,29 @@ def run_batch(batch_index: int, batch: list[PDFRecord], args: argparse.Namespace
                   and type(outcome['deferred_sources']) is int and 0 <= outcome['deferred_sources'] <= len(batch)
                   and os.environ.get('INSTITUTION_DEPENDENCY_BACKLOG') == '1' and result.returncode == 0):
                 deferred_sources = outcome['deferred_sources']
+        ocr_recovery = None
+        returncode = result.returncode
+        if (getattr(args, "institution_ocr_fallback", False) and returncode != 0
+                and provider_category == "mineru_unavailable" and ocr_inventory_path.is_file()):
+            from institution_ocr_fallback import recover_batch
+            if getattr(args, '_institution_ocr_deadline', None) is None:
+                args._institution_ocr_deadline = time.monotonic() + 1800
+            ocr_recovery = recover_batch(json.loads(ocr_inventory_path.read_bytes()), bindings,
+                                         tmp_input, Path(args.output_dir), deadline=args._institution_ocr_deadline)
+            deferred_sources = ocr_recovery["deferred_sources"]
+            returncode = result.returncode if ocr_recovery["failed_reports"] else 0
+            log(f"Institution OCR continuation: {ocr_recovery['ocr_reports']} OCR, "
+                f"{ocr_recovery['reused_reports']} verified existing, {ocr_recovery['failed_reports']} failed.")
         return {
             "batch_index": batch_index,
             "pdf_count": len(batch),
             "files": copied,
-            "returncode": result.returncode,
-            "status": "ok" if result.returncode == 0 else "failed",
+            "returncode": returncode,
+            "status": "ok" if returncode == 0 else "failed",
             "provider_failure_category": provider_category,
             "deferred_sources": deferred_sources,
             "pending_task_attempts": poll_attempts,
+            **({"mineru_returncode": result.returncode, "ocr_fallback": ocr_recovery} if ocr_recovery else {}),
         }
 
 
@@ -358,8 +385,14 @@ def main() -> int:
     parser.add_argument("--pending-task-retry-delay", type=int, default=60)
     parser.add_argument("--extraction-timeout", type=int, default=0,
                         help="Shared wall-clock seconds for all batches and continuations (0 = existing unbounded wrapper behavior).")
+    parser.add_argument("--institution-ocr-fallback", action="store_true",
+                        help="Continue eligible institution sources with page OCR after proved provider-only failure.")
     parser.add_argument("--watermark", default="KC桌面")
     args = parser.parse_args()
+    if args.institution_ocr_fallback and (not args.chart_source_only
+            or os.environ.get('INSTITUTION_DEPENDENCY_BACKLOG') != '1'
+            or os.environ.get('MINERU_FORBID_NEW_SUBMISSIONS') == '1'):
+        parser.error('--institution-ocr-fallback requires normal institution source-only extraction')
     if not 0 <= args.extraction_timeout <= 7200:
         parser.error('--extraction-timeout must be between zero and 7200 seconds')
     args._extraction_deadline = time.monotonic() + args.extraction_timeout if args.extraction_timeout else None

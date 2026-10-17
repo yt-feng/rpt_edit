@@ -354,6 +354,21 @@ download URL remain required; no date is inferred or fabricated. This prevents
 one undated source from stopping an otherwise valid extraction batch before
 any provider request.
 
+Normal Institution extraction explicitly enables an OCR continuation after the
+configured MinerU pool and accepted-task attempts cannot supply the source.
+Only a typed provider failure with the current, byte-verified eligible source
+inventory can enter it. Existing dependency holds stay excluded, healthy
+MinerU sources are retained, and binding/editorial/storage failures do not
+trigger OCR. Each fallback source records page evidence, original PDF identity
+and an extraction receipt as `source_ocr.md`; the existing translation,
+article generation, draft upload and readback steps consume that same source.
+The special completed-original replay remains MinerU-only. OCR runs on Actions
+with required Tesseract language packages and bounded per-source execution.
+OCR page evidence is also retained per run in the private Institution handoff as
+`extracted-sources.tar.gz`, including when another source fails. This archive
+supports exact-source inspection/recovery; ordinary reruns do not automatically
+import another run's extraction archive.
+
 Daily alert emails report WeChat draft verification, Market Views delivery and
 full-report translation separately. A recovered article delivery can succeed
 while a translation runner fails. The alert does not infer API balance or key

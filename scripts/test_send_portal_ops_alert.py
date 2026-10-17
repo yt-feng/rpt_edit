@@ -24,18 +24,19 @@ class FakeResponse:
 class PortalOpsAlertTests(unittest.TestCase):
     def test_recovered_wechat_success_is_separate_from_translation_runner_failure(self):
         text = alerts.workflow_alert_text("Daily report articles and translations",
-            "shards=failure, recovered_articles=success, recovered_article_count=54, "
+            "shards=failure, recovered_articles=success, recovered_article_count=55, "
             "wechat_enabled=true, wechat_source=xhs_notes, wechat=skipped, "
             "delivery_gate=success, market_source_recovery=success, recovery_source_kind=mineru-recovery, "
             "ocr_page_source_recovery=skipped, translation_requested=all, translation_shards=failure, translated=skipped", {})
-        self.assertIn("已通过恢复链路完成草稿投递与回读验证（54 篇）", text)
+        self.assertIn("已通过恢复链路完成草稿投递与回读验证。", text)
+        self.assertNotIn("（55 篇）", text)
         self.assertIn("Market Views：已验证交付", text)
         self.assertIn("报告全文翻译：分片未全部完成", text)
         self.assertIn("本次恢复未使用 OCR", text)
         self.assertNotIn("已经依次尝试", text)
 
     def test_generated_recovery_without_enabled_upload_is_not_delivery(self):
-        for extra in ("wechat_enabled=false", "", "wechat_enabled=true, wechat_source=portal_translated"):
+        for extra in ("wechat_enabled=false", "", "wechat_enabled=true", "wechat_enabled=true, wechat_source=portal_translated"):
             with self.subTest(extra=extra):
                 text = alerts.workflow_alert_text("Daily report articles and translations",
                     "recovered_articles=success, recovered_article_count=54, " + extra, {})
