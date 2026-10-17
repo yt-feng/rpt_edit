@@ -604,7 +604,7 @@ jobs:
           import os
           import sys
           from pathlib import Path
-          from send_portal_ops_alert import institution_wechat_delivery_outputs
+          from institution_wechat_delivery_receipt import institution_wechat_delivery_outputs
 
           outputs = institution_wechat_delivery_outputs(Path("wechat_drafts/institutions") / sys.argv[1])
           with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as handle:
