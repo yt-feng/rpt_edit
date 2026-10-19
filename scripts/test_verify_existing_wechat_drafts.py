@@ -179,7 +179,7 @@ class RestoredIdentityTests(unittest.TestCase):
             self.assertNotIn("TOPSECRET", json.dumps(report))
 
     def test_malformed_response_is_unknown_not_absent(self):
-        for data in ({}, {"news_item": "broken"}, {"news_item": [{}]}, []):
+        for data in ({}, {"news_item": []}, {"news_item": "broken"}, {"news_item": [{}]}, []):
             with self.subTest(data=data):
                 report = self.readback(data)
                 self.assertIsNone(report["drafts"][0]["id_exists"])

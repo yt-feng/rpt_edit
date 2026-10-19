@@ -116,7 +116,7 @@ def verify_restored_identity(draft: dict[str, Any], session: requests.Session, t
         with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
             data = get_draft(session, token, draft["media_id"], timeout)
         rows = data.get("news_item", data.get("articles")) if isinstance(data, dict) else None
-        if (not isinstance(rows, list) or not all(isinstance(row, dict)
+        if (not isinstance(rows, list) or not rows or not all(isinstance(row, dict)
                 and isinstance(row.get("title"), str) and row["title"].strip() for row in rows)):
             raise ValueError("Malformed draft identity response")
         titles = [normalize_space(row["title"]) for row in rows]
