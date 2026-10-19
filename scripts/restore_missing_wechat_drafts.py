@@ -214,6 +214,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--expected-articles", type=int, default=15)
     parser.add_argument("--timeout", type=int, default=60)
     parser.add_argument("--max-pages", type=int, default=50)
+    parser.add_argument("--require-checkpoint", action="store_true",
+                        help="Fail before authentication if a prior restoration checkpoint was not restored")
     args = parser.parse_args(argv)
     if args.output_dir:
         args.output = args.output_dir / "restoration_summary.json"
@@ -222,6 +224,8 @@ def main(argv: list[str] | None = None) -> int:
     if args.output.resolve().is_relative_to(args.artifact_root.resolve()):
         parser.error("restoration checkpoint must be outside the archived source directory")
     try:
+        if args.require_checkpoint and not args.output.is_file():
+            raise RestoreBlocked("required_restoration_checkpoint_missing")
         drafts = load_drafts(args.artifact_root)
         validate_source_receipts(args.artifact_root, drafts)
         appid = os.environ.get("WECHAT_MP_APPID", "").strip()

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Restoration must preserve accepted IDs and never duplicate uncertain adds."""
 
+import contextlib
+import io
 import json
 from pathlib import Path
 import tempfile
@@ -198,6 +200,49 @@ class RestorationTests(unittest.TestCase):
                 path.write_text(json.dumps(changed))
                 with self.subTest(key=key), self.assertRaises(restore.RestoreBlocked):
                     restore.validate_source_receipts(root, [original])
+
+    def test_required_missing_checkpoint_stops_before_source_auth_or_any_api(self):
+        for output_option in ("--output", "--output-dir"):
+            with self.subTest(output_option=output_option), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                destination = root / "result" if output_option == "--output-dir" else root / "result" / "receipt.json"
+                receipt = destination / "restoration_summary.json" if output_option == "--output-dir" else destination
+                with patch.object(restore.requests, "Session") as session, \
+                        patch.object(restore, "load_drafts") as load, \
+                        patch.object(restore, "get_stable_access_token") as auth, \
+                        patch.object(restore, "post_wechat_json") as post, \
+                        patch.object(restore, "restore_missing") as run, contextlib.redirect_stdout(io.StringIO()):
+                    code = restore.main(["--artifact-root", str(root / "source"), output_option,
+                                         str(destination), "--require-checkpoint"])
+                self.assertEqual(1, code)
+                self.assertFalse(receipt.exists())
+                error = json.loads(receipt.with_suffix(".error.json").read_text())
+                self.assertEqual("required_restoration_checkpoint_missing", error["error"]["reason"])
+                for mocked in (session, load, auth, post, run):
+                    mocked.assert_not_called()
+
+    def test_required_existing_checkpoint_resumes_without_new_add(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            output = root / "result" / "restoration_summary.json"
+            with patch.object(restore, "scan_inventory", return_value=inventory([("accepted", ["文章一", "文章二"])])), \
+                    patch.object(restore, "get_draft", side_effect=WeChatError("missing", errcode=40007)), \
+                    patch.object(restore, "verify_draft_get", return_value={"ok": True, "article_count": 2}), \
+                    patch.object(restore, "post_wechat_json") as post:
+                self.assertTrue(self.run_restore(output)["ok"])
+                with patch.object(restore.requests, "Session") as session, \
+                        patch.object(restore, "load_drafts", return_value=self.drafts()), \
+                        patch.object(restore, "validate_source_receipts"), \
+                        patch.object(restore, "get_stable_access_token", return_value="TOKEN") as auth, \
+                        patch.dict(restore.os.environ, {"WECHAT_MP_APPID": "APP", "WECHAT_MP_APPSECRET": "SECRET"}), \
+                        contextlib.redirect_stdout(io.StringIO()):
+                    code = restore.main(["--artifact-root", str(root / "source"), "--output-dir", str(output.parent),
+                                         "--expected-articles", "2", "--require-checkpoint"])
+                self.assertEqual(0, code)
+                session.assert_called_once()
+                auth.assert_called_once()
+                post.assert_not_called()
+            self.assertEqual("accepted", json.loads(output.read_text())["drafts"][0]["media_id"])
 
 
 if __name__ == "__main__":
