@@ -3,12 +3,16 @@ description: Restore same-run draft receipts before retrying an interrupted uplo
 
 inputs:
   name:
-    description: Exact diagnostic artifact name for this upload job
+    description: Base diagnostic artifact name, without the attempt suffix
     required: true
   path:
     description: Original extraction directory
     required: false
     default: "."
+  checkpoint-path:
+    description: Exact restored directory that must contain a WeChat summary or submission checkpoint
+    required: false
+    default: ""
 
 runs:
   using: composite
@@ -19,19 +23,53 @@ runs:
       uses: actions/github-script@v7
       env:
         RECEIPT_ARTIFACT_NAME: ${{ inputs.name }}
+        CURRENT_RUN_ATTEMPT: ${{ github.run_attempt }}
       with:
         script: |
+          const currentAttempt = Number(process.env.CURRENT_RUN_ATTEMPT);
+          if (!Number.isSafeInteger(currentAttempt) || currentAttempt < 2) {
+            throw new Error('Invalid restoration attempt; stop before uploading.');
+          }
           const artifacts = await github.paginate(github.rest.actions.listWorkflowRunArtifacts, {
             owner: context.repo.owner, repo: context.repo.repo, run_id: context.runId,
           });
-          const receipt = artifacts.find(item => item.name === process.env.RECEIPT_ARTIFACT_NAME);
-          if (receipt?.expired) throw new Error('Prior draft receipt expired; verify existing drafts before retrying.');
-          core.setOutput('found', receipt ? 'true' : 'false');
-          if (!receipt) core.notice('No prior draft diagnostic artifact exists for this job.');
+          const base = process.env.RECEIPT_ARTIFACT_NAME;
+          const prefix = base + '-attempt-';
+          const candidates = artifacts.flatMap(item => {
+            if (typeof item.name !== 'string' || !item.name.startsWith(prefix)) return [];
+            const suffix = item.name.slice(prefix.length);
+            if (!/^[1-9][0-9]*$/.test(suffix)) return [];
+            const attempt = Number(suffix);
+            return Number.isSafeInteger(attempt) && attempt < currentAttempt ? [{ item, attempt }] : [];
+          });
+          const latest = candidates.length ? Math.max(...candidates.map(row => row.attempt)) : null;
+          if ((latest !== null && latest !== currentAttempt - 1) || (latest === null && currentAttempt !== 2)) {
+            throw new Error('The immediately preceding attempt has no checkpoint; stop before uploading. Older receipts cannot establish its outcome.');
+          }
+          const matches = latest === null ? artifacts.filter(item => item.name === base)
+            : candidates.filter(row => row.attempt === latest).map(row => row.item);
+          if (matches.length > 1) throw new Error('Prior draft checkpoint name is ambiguous; stop before uploading.');
+          const receipt = matches[0];
+          if (!receipt) throw new Error('Prior draft checkpoint is missing; stop before uploading. Verify the prior attempt before starting a new upload.');
+          if (receipt.expired !== false) throw new Error('Prior draft receipt expired or unavailable; verify existing drafts before retrying.');
+          core.setOutput('found', 'true');
+          core.setOutput('artifact_name', receipt.name);
 
     - name: Restore prior draft receipts
       if: ${{ steps.locate.outputs.found == 'true' }}
       uses: actions/download-artifact@v4
       with:
-        name: ${{ inputs.name }}
+        name: ${{ steps.locate.outputs.artifact_name }}
         path: ${{ inputs.path }}
+
+    - name: Validate restored delivery checkpoint
+      if: ${{ github.run_attempt > 1 && inputs.checkpoint-path != '' }}
+      shell: python
+      env:
+        CHECKPOINT_PATH: ${{ inputs.checkpoint-path }}
+        CHECKPOINT_VALIDATOR: ${{ github.action_path }}/../resilient-diagnostic-artifact/validate_wechat_checkpoint.py
+      run: |
+        import os
+        import runpy
+
+        runpy.run_path(os.environ['CHECKPOINT_VALIDATOR'], run_name='__main__')

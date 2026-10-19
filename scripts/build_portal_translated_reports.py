@@ -1488,6 +1488,8 @@ def main() -> int:
     all_reports = find_report_dirs(date_dir)
     if not all_reports:
         raise RuntimeError(f"No report outputs with verified extraction Markdown found under {date_dir}")
+    input_report_count = len(all_reports)
+    institution_exclusions: list[dict[str, str]] = []
 
     included_cn = parse_institution_filter(args.include_institutions)
     if included_cn:
@@ -1497,6 +1499,8 @@ def main() -> int:
             if institution in included_cn:
                 kept.append(report_dir)
             else:
+                institution_exclusions.append({"source_report_dir": str(report_dir),
+                                               "institution_name": institution or "", "reason": "outside_include_filter"})
                 log(f"Skipping institution report outside include filter ({institution or 'unknown'}): {report_dir.name}")
         all_reports = kept
         if not all_reports:
@@ -1511,6 +1515,8 @@ def main() -> int:
         for report_dir in all_reports:
             institution = infer_institution_name(report_dir.name)
             if institution and institution in excluded_cn:
+                institution_exclusions.append({"source_report_dir": str(report_dir),
+                                               "institution_name": institution, "reason": "excluded_institution"})
                 log(f"Excluding institution report ({institution}): {report_dir.name}")
             else:
                 kept.append(report_dir)
@@ -1579,6 +1585,11 @@ def main() -> int:
 
     payload = {
         "date_folder": date_dir.name,
+        "input_report_count": input_report_count,
+        "include_institutions": sorted(included_cn),
+        "exclude_institutions": sorted(excluded_cn),
+        "institution_excluded_count": len(institution_exclusions),
+        "institution_exclusions": institution_exclusions,
         "max_reports": "all" if max_reports is None else max_reports,
         "selected_count": len(selected),
         "successful_count": len(summary),

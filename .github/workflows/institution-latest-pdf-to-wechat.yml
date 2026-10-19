@@ -512,9 +512,11 @@ jobs:
     runs-on: [self-hosted, wechat-draft]
     timeout-minutes: 120
     outputs:
-      wechat_verified: ${{ steps.upload.outputs.wechat_verified }}
-      verified_article_count: ${{ steps.upload.outputs.verified_article_count }}
-      verified_draft_count: ${{ steps.upload.outputs.verified_draft_count }}
+      delivery_complete: ${{ steps.delivery.outputs.delivery_complete }}
+      wechat_verified: ${{ steps.delivery.outputs.wechat_verified }}
+      verified_article_count: ${{ steps.delivery.outputs.verified_article_count }}
+      verified_draft_count: ${{ steps.delivery.outputs.verified_draft_count }}
+      policy_excluded_count: ${{ steps.delivery.outputs.policy_excluded_count }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -563,6 +565,7 @@ jobs:
         with:
           name: institution-wechat-drafts-${{ needs.fetch-and-build.outputs.date_folder }}-${{ github.run_id }}
           path: .
+          checkpoint-path: wechat_drafts/institutions/${{ needs.fetch-and-build.outputs.date_folder }}
 
       - name: Build and upload WeChat drafts
         id: upload
@@ -575,8 +578,8 @@ jobs:
           DATE="${{ needs.fetch-and-build.outputs.date_folder }}"
           TRANSLATED_DIR="portal_translated_reports/institutions/$DATE"
           if [ ! -d "$TRANSLATED_DIR" ]; then
-            echo "::warning::No translated reports at $TRANSLATED_DIR; nothing to upload."
-            exit 0
+            echo "::error::Expected translated reports are missing at $TRANSLATED_DIR."
+            exit 1
           fi
 
           ARGS=()
@@ -599,29 +602,44 @@ jobs:
             --max-inline-images "3" \
             "${ARGS[@]}" 2>&1 | tee institution_wechat_progress.log
 
-          # Only this successful upload's final receipt can confirm delivery.
-          PYTHONPATH=scripts python - "$DATE" <<'PY'
-          import os
-          import sys
-          from pathlib import Path
-          from institution_wechat_delivery_receipt import institution_wechat_delivery_outputs
-
-          outputs = institution_wechat_delivery_outputs(Path("wechat_drafts/institutions") / sys.argv[1])
-          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as handle:
-              for key, value in outputs.items():
-                  handle.write(f"{key}={value}\n")
-          PY
+      - name: Verify complete current WeChat delivery
+        id: delivery
+        if: ${{ steps.upload.outcome == 'success' && github.event.inputs.publish != 'true' }}
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+        run: |
+          DATE="${{ needs.fetch-and-build.outputs.date_folder }}"
+          MAX_ARTICLES="${{ github.event.inputs.max_translated || 'all' }}"
+          VERIFY_ARGS=()
+          if [ "${{ github.event.inputs.dry_run || 'false' }}" = true ]; then
+            VERIFY_ARGS+=(--dry-run)
+          fi
+          python scripts/institution_wechat_delivery_receipt.py \
+            --output-dir "wechat_drafts/institutions/$DATE" \
+            --source-dir "portal_translated_reports/institutions/$DATE" \
+            --source-kind "portal-translated" \
+            --expected-count "${{ needs.fetch-and-build.outputs.pdf_count }}" \
+            --max-articles "$MAX_ARTICLES" \
+            --include-institutions "${{ github.event.inputs.institutions || 'all' }}" \
+            --exclude-institutions "rand,brookings" \
+            --output "wechat_drafts/institutions/$DATE/delivery_verification.json" \
+            "${VERIFY_ARGS[@]}"
 
       - name: Archive WeChat draft diagnostics
+        id: archive_wechat_receipts
         if: ${{ always() }}
         uses: ./.github/actions/resilient-diagnostic-artifact
         with:
-          name: institution-wechat-drafts-${{ needs.fetch-and-build.outputs.date_folder }}-${{ github.run_id }}
+          name: institution-wechat-drafts-${{ needs.fetch-and-build.outputs.date_folder }}-${{ github.run_id }}-attempt-${{ github.run_attempt }}
           path: |
             wechat_drafts/institutions
             institution_wechat_progress.log
-          if-no-files-found: ignore
-          retention-days: 2
+          if-no-files-found: error
+          retention-days: 14
+          required: "true"
+          checkpoint-path: wechat_drafts/institutions/${{ needs.fetch-and-build.outputs.date_folder }}
 
       - name: Update public Blog archive
         run: |
@@ -644,7 +662,7 @@ jobs:
 
   cleanup-private-handoff:
     needs: [fetch-and-build, upload-wechat-drafts]
-    if: ${{ always() && needs.fetch-and-build.result == 'success' && needs.upload-wechat-drafts.result == 'success' }}
+    if: ${{ always() && needs.fetch-and-build.result == 'success' && needs.upload-wechat-drafts.result == 'success' && needs.upload-wechat-drafts.outputs.delivery_complete == 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:

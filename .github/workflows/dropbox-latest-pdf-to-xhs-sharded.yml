@@ -1127,6 +1127,12 @@ jobs:
     if: ${{ !cancelled() && needs.process-shard.result == 'success' && needs.source-outcome.outputs.primary_ready == 'true' && needs.resolve-inputs.outputs.wechat_draft_upload == 'true' && needs.resolve-inputs.outputs.wechat_draft_source == 'xhs_notes' }}
     runs-on: [self-hosted, wechat-draft]
     timeout-minutes: 180
+    outputs:
+      delivery_complete: ${{ steps.delivery.outputs.delivery_complete }}
+      wechat_verified: ${{ steps.delivery.outputs.wechat_verified }}
+      verified_article_count: ${{ steps.delivery.outputs.verified_article_count }}
+      verified_draft_count: ${{ steps.delivery.outputs.verified_draft_count }}
+      policy_excluded_count: ${{ steps.delivery.outputs.policy_excluded_count }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -1175,6 +1181,7 @@ jobs:
         with:
           name: xhs-notes-wechat-drafts-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}
           path: .
+          checkpoint-path: wechat_drafts/xhs_notes/${{ needs.select-macro-reports.outputs.latest_folder }}
 
       - name: Upload generated xhs notes to WeChat drafts
         id: upload_xhs_wechat
@@ -1203,6 +1210,7 @@ jobs:
             --dropbox-output-root "xhs_notes/dropbox" \
             --date-folder "$DATE_FOLDER" \
             --output-root "wechat_drafts/xhs_notes" \
+            --expected-source-count "${{ needs.select-macro-reports.outputs.selected_count }}" \
             --max-articles "$MAX_ARTICLES" \
             --articles-per-draft "${{ needs.resolve-inputs.outputs.wechat_draft_articles_per_draft }}" \
             --max-body-chars "${{ needs.resolve-inputs.outputs.wechat_draft_max_body_chars }}" \
@@ -1210,16 +1218,40 @@ jobs:
             --max-inline-images "${{ needs.resolve-inputs.outputs.wechat_draft_max_inline_images }}" \
             "${PUBLISH_ARGS[@]}" 2>&1 | tee -a wechat_drafts_progress.log
 
+      - name: Verify complete current WeChat delivery
+        id: delivery
+        if: ${{ steps.upload_xhs_wechat.outcome == 'success' && needs.resolve-inputs.outputs.wechat_freepublish != 'true' }}
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+        run: |
+          DATE="${{ needs.select-macro-reports.outputs.latest_folder }}"
+          MAX_ARTICLES="${{ needs.resolve-inputs.outputs.translated_report_count }}"
+          if [ "$MAX_ARTICLES" = "0" ]; then MAX_ARTICLES="all"; fi
+          VERIFY_ARGS=()
+          python scripts/institution_wechat_delivery_receipt.py \
+            --output-dir "wechat_drafts/xhs_notes/$DATE" \
+            --source-dir "xhs_notes/dropbox/$DATE" \
+            --source-kind "xhs" \
+            --expected-count "${{ needs.select-macro-reports.outputs.selected_count }}" \
+            --max-articles "$MAX_ARTICLES" \
+            --output "wechat_drafts/xhs_notes/$DATE/delivery_verification.json" \
+            "${VERIFY_ARGS[@]}"
+
       - name: Archive WeChat draft diagnostics
+        id: archive_wechat_receipts
         if: ${{ always() }}
         uses: ./.github/actions/resilient-diagnostic-artifact
         with:
-          name: xhs-notes-wechat-drafts-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}
+          name: xhs-notes-wechat-drafts-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}-attempt-${{ github.run_attempt }}
           path: |
             ${{ env.WECHAT_DRAFT_DIR }}
             wechat_drafts_progress.log
-          if-no-files-found: warn
-          retention-days: 2
+          if-no-files-found: error
+          retention-days: 14
+          required: "true"
+          checkpoint-path: wechat_drafts/xhs_notes/${{ needs.select-macro-reports.outputs.latest_folder }}
 
       - name: Update public Blog archive
         if: ${{ steps.upload_xhs_wechat.outcome == 'success' }}
@@ -1521,6 +1553,12 @@ jobs:
     if: ${{ !cancelled() && needs.build-portal-translated-reports.result == 'success' && needs.resolve-inputs.outputs.translated_report_count != '0' && needs.resolve-inputs.outputs.wechat_draft_upload == 'true' && needs.resolve-inputs.outputs.wechat_draft_source == 'portal_translated' }}
     runs-on: [self-hosted, wechat-draft]
     timeout-minutes: 180
+    outputs:
+      delivery_complete: ${{ steps.delivery.outputs.delivery_complete }}
+      wechat_verified: ${{ steps.delivery.outputs.wechat_verified }}
+      verified_article_count: ${{ steps.delivery.outputs.verified_article_count }}
+      verified_draft_count: ${{ steps.delivery.outputs.verified_draft_count }}
+      policy_excluded_count: ${{ steps.delivery.outputs.policy_excluded_count }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -1563,6 +1601,7 @@ jobs:
         with:
           name: portal-translated-wechat-drafts-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}
           path: .
+          checkpoint-path: wechat_drafts/${{ needs.select-macro-reports.outputs.latest_folder }}
 
       - name: Upload Portal translated reports to WeChat drafts
         id: upload_portal_wechat
@@ -1593,16 +1632,39 @@ jobs:
             --max-inline-images "${{ needs.resolve-inputs.outputs.wechat_draft_max_inline_images }}" \
             "${PUBLISH_ARGS[@]}" 2>&1 | tee wechat_drafts_progress.log
 
+      - name: Verify complete current WeChat delivery
+        id: delivery
+        if: ${{ steps.upload_portal_wechat.outcome == 'success' && needs.resolve-inputs.outputs.wechat_freepublish != 'true' }}
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+        run: |
+          DATE="${{ needs.select-macro-reports.outputs.latest_folder }}"
+          MAX_ARTICLES="${{ needs.resolve-inputs.outputs.translated_report_count }}"
+          VERIFY_ARGS=()
+          python scripts/institution_wechat_delivery_receipt.py \
+            --output-dir "wechat_drafts/$DATE" \
+            --source-dir "portal_translated_reports/$DATE" \
+            --source-kind "portal-translated" \
+            --expected-count "${{ needs.select-macro-reports.outputs.selected_count }}" \
+            --max-articles "$MAX_ARTICLES" \
+            --output "wechat_drafts/$DATE/delivery_verification.json" \
+            "${VERIFY_ARGS[@]}"
+
       - name: Archive WeChat draft diagnostics
+        id: archive_wechat_receipts
         if: ${{ always() }}
         uses: ./.github/actions/resilient-diagnostic-artifact
         with:
-          name: portal-translated-wechat-drafts-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}
+          name: portal-translated-wechat-drafts-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}-attempt-${{ github.run_attempt }}
           path: |
             ${{ env.WECHAT_DRAFT_DIR }}
             wechat_drafts_progress.log
           if-no-files-found: error
-          retention-days: 2
+          retention-days: 14
+          required: "true"
+          checkpoint-path: wechat_drafts/${{ needs.select-macro-reports.outputs.latest_folder }}
 
       - name: Update public Blog archive
         run: |
@@ -1665,6 +1727,9 @@ jobs:
           WECHAT_ENABLED: ${{ needs.resolve-inputs.outputs.wechat_draft_upload }}
           WECHAT_SOURCE: ${{ needs.resolve-inputs.outputs.wechat_draft_source }}
           WECHAT_RESULT: ${{ needs.push-xhs-notes-wechat-drafts.result }}
+          WECHAT_DELIVERY_COMPLETE: ${{ needs.push-xhs-notes-wechat-drafts.outputs.delivery_complete }}
+          TRANSLATED_DELIVERY_COMPLETE: ${{ needs.push-portal-translated-wechat-drafts.outputs.delivery_complete }}
+          WECHAT_PUBLISH: ${{ needs.resolve-inputs.outputs.wechat_freepublish }}
           TRANSLATION_COUNT: ${{ needs.resolve-inputs.outputs.translated_report_count }}
           TRANSLATION_RESULT: ${{ needs.build-portal-translated-reports.result }}
           TRANSLATED_WECHAT_RESULT: ${{ needs.push-portal-translated-wechat-drafts.result }}
@@ -1679,8 +1744,10 @@ jobs:
           if [ "$WECHAT_ENABLED" = true ]; then
             if [ "$WECHAT_SOURCE" = portal_translated ]; then
               test "$TRANSLATED_WECHAT_RESULT" = success
+              if [ "$WECHAT_PUBLISH" != true ]; then test "$TRANSLATED_DELIVERY_COMPLETE" = true; fi
             elif [ "$PRIMARY_READY" = true ]; then
               test "$WECHAT_RESULT" = success
+              if [ "$WECHAT_PUBLISH" != true ]; then test "$WECHAT_DELIVERY_COMPLETE" = true; fi
             else
               test "$RECOVERED_DELIVERY" = success
             fi
