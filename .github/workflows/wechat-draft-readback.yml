@@ -12,6 +12,11 @@ on:
         description: "Exact diagnostic artifact name from the upload run"
         required: true
         type: string
+      audit_presence:
+        description: "Read-only title search across current drafts and published records, preserving later edits"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   actions: read
@@ -50,7 +55,9 @@ jobs:
         run: python -m pip install -r requirements.txt
 
       - name: Test draft readback
-        run: python scripts/test_verify_existing_wechat_drafts.py
+        run: |
+          python scripts/test_verify_existing_wechat_drafts.py
+          python scripts/test_audit_wechat_article_presence.py
 
       - name: Download existing draft diagnostics
         uses: actions/download-artifact@v4
@@ -61,6 +68,7 @@ jobs:
           path: _wechat_readback_source
 
       - name: Verify existing drafts without creating or publishing
+        if: ${{ inputs.audit_presence != true }}
         env:
           WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
           WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
@@ -70,11 +78,21 @@ jobs:
             --artifact-root _wechat_readback_source \
             --output _wechat_readback_result/verification.json
 
+      - name: Locate article titles in current drafts and published records
+        if: ${{ inputs.audit_presence == true }}
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+        run: |
+          python scripts/audit_wechat_article_presence.py \
+            --artifact-root _wechat_readback_source \
+            --output _wechat_readback_result/presence.json
+
       - name: Archive readback result
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
           name: wechat-readback-${{ github.run_id }}
-          path: _wechat_readback_result/verification.json
+          path: _wechat_readback_result/*.json
           if-no-files-found: warn
           retention-days: 7
