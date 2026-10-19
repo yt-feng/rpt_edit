@@ -34,8 +34,11 @@ def failure(exc: Exception) -> dict[str, Any]:
 
 
 def validate_source_receipts(root: Path, drafts: list[dict[str, Any]]) -> None:
+    summaries = list(root.rglob("wechat_draft_summary.json"))
+    if not summaries or any("articles" not in draft for draft in drafts):
+        raise RestoreBlocked("source_receipt_has_no_complete_article_payload")
     by_id = {draft["media_id"]: draft for draft in drafts}
-    for path in root.rglob("wechat_draft_summary.json"):
+    for path in summaries:
         source = json.loads(path.read_text(encoding="utf-8"))
         if source.get("status") != "verified" or source.get("publish") is not False or source.get("dry_run") is not False:
             raise RestoreBlocked("source_receipt_is_not_verified_draft_only")

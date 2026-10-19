@@ -205,6 +205,8 @@ def main(argv: list[str] | None = None) -> int:
         parser.error("timeout and max-pages must be positive")
     try:
         drafts = load_drafts(args.artifact_root)
+        if any("articles" not in draft for draft in drafts):
+            raise ValueError("Title inventory audit requires complete archived article payloads; use default ID readback for restoration receipts")
         appid = os.environ.get("WECHAT_MP_APPID", "").strip()
         secret = os.environ.get("WECHAT_MP_APPSECRET", "").strip()
         if not appid or not secret:
