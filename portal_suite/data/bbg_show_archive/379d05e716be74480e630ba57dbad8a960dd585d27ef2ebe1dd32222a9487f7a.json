@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "id": "379d05e716be74480e630ba57dbad8a960dd585d27ef2ebe1dd32222a9487f7a",
+  "slug": "bbg-20261018-379d05e716be7448",
+  "date": "2026-10-18",
+  "title": "硅谷防谍训练：擦白板、防美人计，AI竞赛下的商业窃密焦虑",
+  "speaker": "Morgan Meager",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-10-18/bloomberg-this-weekend-10-18-2026-video",
+  "start": 2131.5,
+  "end": 2259.9,
+  "segments": [
+    {
+      "start": 2131.5,
+      "end": 2137.7,
+      "en": "His lawyer has stressed that he has not been charged with acting as a foreign agent. He's just been charged with planting this recording device.",
+      "zh": "他的律师强调，他并未被控充当外国代理人，仅被控安装该录音设备。"
+    },
+    {
+      "start": 2137.7,
+      "end": 2145.1,
+      "en": "I mean, it kind of, this case kind of comes in this moment in Silicon Valley where people are on edge.",
+      "zh": "这起案件发生在硅谷人心惶惶的时刻。"
+    },
+    {
+      "start": 2145.1,
+      "end": 2150.5,
+      "en": "I mean, even before this incident, open AI had been advising its employees to look out for people trying to steal company secrets, so they had been running training sessions telling employees to wipe the whiteboards in case cleaning staff had been compromised.",
+      "zh": "即便在此事件之前，OpenAI就一直建议员工警惕试图窃取公司机密的人，还开展培训，告诉员工擦干净白板，以防清洁人员被策反。"
+    },
+    {
+      "start": 2150.5,
+      "end": 2158.7,
+      "en": "They'd been advising employees how to look out for honeypot traps in and also. Yeah, I loved that when it was like if a woman is hitting on you, it's probably not because of you. Like think about where you work.",
+      "zh": "他们还建议员工提防美人计陷阱。我喜欢那句：如果有女性搭讪你，很可能不是因为你本人，想想你在哪儿工作。"
+    },
+    {
+      "start": 2158.7,
+      "end": 2167.5,
+      "en": "It was a little abrupt, but yeah, they were like, basically, does she think you're cute or is she a spy? It gave me like World War II, you know, V for Victory, poster vibes.",
+      "zh": "有点突兀，但基本上他们是在问：她是觉得你可爱，还是间谍？这让我想起二战时‘胜利’海报的感觉。"
+    },
+    {
+      "start": 2167.5,
+      "end": 2173.0,
+      "en": "Yeah, so I mean, this kind of reveals the attention that this was kind of expected that people were expecting people to be trying to take company secrets and this comes after, in January, a former Google employee was charged for stealing Google secrets and he was actually found in that case to be secretly working for two Chinese companies which, and he's sought to have stolen the information to benefit these two companies.",
+      "zh": "这揭示了人们的警觉，他们预料到会有人试图窃取公司机密。此前在1月，一名前谷歌员工被控窃取谷歌机密，该案发现他秘密为两家中国公司工作，并试图窃取信息以利于这两家公司。"
+    },
+    {
+      "start": 2173.0,
+      "end": 2183.3,
+      "en": "And then even going back a bit further, I mean, in 2022, another Saudi national was charged working for, he was employed by X at the time for stealing company secrets.",
+      "zh": "再往前看，2022年另一名沙特国民被控窃取公司机密，当时他受雇于X。"
+    },
+    {
+      "start": 2183.3,
+      "end": 2193.6,
+      "en": "So, I mean, industrial espionage is not new, but I think when it clashes with this hyper-competitive AI space, I mean, people are worried. Of course, these are top tech companies.",
+      "zh": "商业间谍并非新鲜事，但当它与竞争激烈的AI领域碰撞时，人们确实担忧。当然，这些都是顶级科技公司。"
+    },
+    {
+      "start": 2193.6,
+      "end": 2205.1,
+      "en": "I want to get to your new piece that you have coming out. It's about who is training the AI models, okay? So it used to be digital equivalent of blue collar workers. That's kind of how do you say it, but how is it changing?",
+      "zh": "我想谈谈你即将发表的新文章，关于谁在训练AI模型。过去这相当于数字蓝领工作，现在如何变化？"
+    },
+    {
+      "start": 2205.1,
+      "end": 2214.7,
+      "en": "Yeah, so I think we have this impression. People think about data workers as kind of low wage work. We're more familiar with this idea of Amazon Mechanical Turk, which is this very famous American platform.",
+      "zh": "是的，我们有一种印象，认为数据工作者是低薪工作。我们更熟悉亚马逊Mechanical Turk这个著名的美国平台。"
+    },
+    {
+      "start": 2214.7,
+      "end": 2222.5,
+      "en": "It has been running for over 21 years and people were employed through the platform. They did kind of things like click on the cat in the photo, click on the car in the photo and they'd earn a couple of cents per task.",
+      "zh": "它已运行超过21年，人们通过该平台受雇，做诸如点击照片中的猫、点击照片中的车之类的工作，每项任务赚几美分。"
+    },
+    {
+      "start": 2222.5,
+      "end": 2231.1,
+      "en": "And so this is what data work has been known for, but there's really these shifts going on in the data industry and that's signified by the fact that Amazon Mechanical Turk actually shut down last month.",
+      "zh": "这就是数据工作的传统印象，但数据行业正在发生转变，标志就是亚马逊Mechanical Turk上月关闭。"
+    },
+    {
+      "start": 2231.1,
+      "end": 2240.0,
+      "en": "And so in its place, we're kind of seeing these new data companies. A lot of them are focusing or say they're focusing on white collar work. So they're focusing on so called experts.",
+      "zh": "取而代之的是新型数据公司，许多专注于或声称专注于白领工作，即所谓的专家。"
+    },
+    {
+      "start": 2240.0,
+      "end": 2246.4,
+      "en": "These experts, they're not purely data workers. They might be doing data work on the side of their other job. So I spoke to you for this story, a radiologist, Annie Bricksey.",
+      "zh": "这些专家并非纯粹的数据工作者，他们可能在主业之外兼职做数据工作。我为此采访了放射科医生安妮·布里克斯。"
+    },
+    {
+      "start": 2246.4,
+      "end": 2252.0,
+      "en": "And she does radiology full time and she works at a hospital. And then in her spare time, she is training AI models because she thinks that AI models can help her profession deal with an ever-increasing demand for scans.",
+      "zh": "她全职在医院做放射科工作，业余时间训练AI模型，因为她认为AI模型能帮助她的行业应对不断增长的扫描需求。"
+    },
+    {
+      "start": 2252.0,
+      "end": 2259.9,
+      "en": "And so that's really interesting that we're seeing this influx of white collar workers enter this data work industry where we've really kind of had it associated with a different profile of labor before.",
+      "zh": "有趣的是，我们看到白领工作者涌入数据工作行业，而此前该行业与另一种劳动力形象相关联。"
+    }
+  ]
+}
