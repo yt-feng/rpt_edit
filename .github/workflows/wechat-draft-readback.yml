@@ -147,11 +147,17 @@ jobs:
           WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
           PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
           EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          REQUIRE_CHECKPOINT: ${{ github.run_attempt > 1 }}
         run: |
+          RESTORE_OPTIONS=()
+          if [ "$REQUIRE_CHECKPOINT" = true ]; then
+            RESTORE_OPTIONS+=(--require-checkpoint)
+          fi
           python scripts/restore_missing_wechat_drafts.py \
             --artifact-root _wechat_readback_source \
             --output _wechat_restore_result/restore_receipt.json \
-            --expected-articles "$EXPECTED_ARTICLES"
+            --expected-articles "$EXPECTED_ARTICLES" \
+            "${RESTORE_OPTIONS[@]}"
 
       - name: Archive restored draft receipts
         if: ${{ always() && inputs.restore_missing == true }}
