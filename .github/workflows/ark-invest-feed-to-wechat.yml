@@ -306,6 +306,12 @@ jobs:
     if: ${{ needs.fetch-and-build.outputs.article_count != '0' }}
     runs-on: [self-hosted, wechat-draft]
     timeout-minutes: 90
+    outputs:
+      delivery_complete: ${{ steps.delivery.outputs.delivery_complete }}
+      wechat_verified: ${{ steps.delivery.outputs.wechat_verified }}
+      verified_article_count: ${{ steps.delivery.outputs.verified_article_count }}
+      verified_draft_count: ${{ steps.delivery.outputs.verified_draft_count }}
+      policy_excluded_count: ${{ steps.delivery.outputs.policy_excluded_count }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -364,8 +370,10 @@ jobs:
         with:
           name: ark-invest-wechat-drafts-${{ needs.fetch-and-build.outputs.date_folder }}-${{ github.run_id }}
           path: .
+          checkpoint-path: wechat_drafts/ark/${{ needs.fetch-and-build.outputs.date_folder }}
 
       - name: Build and upload WeChat drafts
+        id: upload
         env:
           WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
           WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
@@ -398,15 +406,42 @@ jobs:
             --max-inline-images "3" \
             "${ARGS[@]}" 2>&1 | tee ark_wechat_progress.log
 
+      - name: Verify complete current WeChat delivery
+        id: delivery
+        if: ${{ steps.upload.outcome == 'success' && github.event.inputs.publish != 'true' }}
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+        run: |
+          DATE="${{ needs.fetch-and-build.outputs.date_folder }}"
+          MAX_ARTICLES="all"
+          VERIFY_ARGS=()
+          if [ "${{ github.event.inputs.dry_run || 'false' }}" = true ]; then
+            VERIFY_ARGS+=(--dry-run)
+          fi
+          python scripts/institution_wechat_delivery_receipt.py \
+            --output-dir "wechat_drafts/ark/$DATE" \
+            --source-dir "portal_translated_reports/ark/$DATE" \
+            --source-kind "portal-translated" \
+            --expected-count "${{ needs.fetch-and-build.outputs.article_count }}" \
+            --max-articles "$MAX_ARTICLES" \
+            --output "wechat_drafts/ark/$DATE/delivery_verification.json" \
+            "${VERIFY_ARGS[@]}"
+
       - name: Archive WeChat draft diagnostics
+        id: archive_wechat_receipts
         if: ${{ always() }}
         uses: ./.github/actions/resilient-diagnostic-artifact
         with:
-          name: ark-invest-wechat-drafts-${{ needs.fetch-and-build.outputs.date_folder }}-${{ github.run_id }}
+          name: ark-invest-wechat-drafts-${{ needs.fetch-and-build.outputs.date_folder }}-${{ github.run_id }}-attempt-${{ github.run_attempt }}
           path: |
             wechat_drafts/ark
             ark_wechat_progress.log
-          if-no-files-found: ignore
+          if-no-files-found: error
+          retention-days: 14
+          required: "true"
+          checkpoint-path: wechat_drafts/ark/${{ needs.fetch-and-build.outputs.date_folder }}
 
       - name: Update public Blog archive
         run: |

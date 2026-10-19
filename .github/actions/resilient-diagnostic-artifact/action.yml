@@ -16,6 +16,14 @@ inputs:
     description: Artifact retention period
     required: false
     default: "2"
+  required:
+    description: Fail the job if a critical delivery checkpoint cannot be archived
+    required: false
+    default: "false"
+  checkpoint-path:
+    description: Directory containing required WeChat summary or submission checkpoint JSON
+    required: false
+    default: ""
 
 outputs:
   uploaded:
@@ -25,13 +33,34 @@ outputs:
 runs:
   using: composite
   steps:
+    - name: Validate required delivery checkpoint
+      if: ${{ inputs.required == 'true' }}
+      shell: python
+      env:
+        CHECKPOINT_PATH: ${{ inputs.checkpoint-path }}
+        CHECKPOINT_VALIDATOR: ${{ github.action_path }}/validate_wechat_checkpoint.py
+        ARTIFACT_NAME: ${{ inputs.name }}
+        CURRENT_RUN_ATTEMPT: ${{ github.run_attempt }}
+      run: |
+        import os
+        import re
+        import runpy
+
+        attempt = os.environ.get('CURRENT_RUN_ATTEMPT', '')
+        name = os.environ.get('ARTIFACT_NAME', '')
+        if not re.fullmatch(r'[1-9][0-9]*', attempt) or not name.endswith('-attempt-' + attempt):
+            raise SystemExit('Required checkpoints must use the current attempt artifact name.')
+        runpy.run_path(os.environ['CHECKPOINT_VALIDATOR'], run_name='__main__')
+
     - name: Upload diagnostic artifact
       id: primary
       continue-on-error: true
       uses: actions/upload-artifact@v4
       with:
         name: ${{ inputs.name }}
-        path: ${{ inputs.path }}
+        path: |
+          ${{ inputs.path }}
+          ${{ inputs.checkpoint-path }}
         if-no-files-found: ${{ inputs.if-no-files-found }}
         retention-days: ${{ inputs.retention-days }}
 
@@ -42,7 +71,9 @@ runs:
       uses: actions/upload-artifact@v4
       with:
         name: ${{ inputs.name }}
-        path: ${{ inputs.path }}
+        path: |
+          ${{ inputs.path }}
+          ${{ inputs.checkpoint-path }}
         if-no-files-found: ${{ inputs.if-no-files-found }}
         retention-days: ${{ inputs.retention-days }}
         overwrite: true
@@ -55,10 +86,19 @@ runs:
         PRIMARY_OUTCOME: ${{ steps.primary.outcome }}
         RETRY_OUTCOME: ${{ steps.retry.outcome }}
         ARTIFACT_NAME: ${{ inputs.name }}
+        REQUIRED: ${{ inputs.required }}
+        PRIMARY_ARTIFACT_ID: ${{ steps.primary.outputs.artifact-id }}
+        RETRY_ARTIFACT_ID: ${{ steps.retry.outputs.artifact-id }}
       run: |
         if [ "$PRIMARY_OUTCOME" = "success" ] || [ "$RETRY_OUTCOME" = "success" ]; then
-          echo "uploaded=true" >> "$GITHUB_OUTPUT"
-          exit 0
+          if [ "${REQUIRED:-false}" != true ] || [ -n "${PRIMARY_ARTIFACT_ID:-}${RETRY_ARTIFACT_ID:-}" ]; then
+            echo "uploaded=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
         fi
         echo "uploaded=false" >> "$GITHUB_OUTPUT"
+        if [ "${REQUIRED:-false}" = true ]; then
+          echo "::error::Required delivery checkpoint '$ARTIFACT_NAME' was not archived. Preserve the source handoff and verify existing drafts before retrying."
+          exit 1
+        fi
         echo "::warning::Diagnostic artifact '$ARTIFACT_NAME' could not be archived after two attempts. The primary workflow result is unchanged."

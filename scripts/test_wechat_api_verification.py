@@ -113,6 +113,120 @@ class WeChatJsonTests(unittest.TestCase):
         self.assertEqual(1, post.call_count)
         recover.assert_called_once()
 
+    def test_ambiguous_add_still_invisible_never_sends_a_second_post(self):
+        with (
+            patch.object(portal, "post_wechat_json", side_effect=portal.WeChatError("wechat/json request failed")) as post,
+            patch.object(portal, "recover_draft_after_ambiguous_add", return_value=""),
+            patch.object(portal, "sleep_before_wechat_retry") as sleep,
+        ):
+            with self.assertRaisesRegex(portal.WeChatError, "outcome is unknown"):
+                portal.add_draft(object(), "TOKEN", [article()], 30)
+        post.assert_called_once()
+        sleep.assert_not_called()
+
+
+class DraftSubmissionCheckpointTests(unittest.TestCase):
+    def submit(self, root, submit):
+        return portal.add_draft_with_checkpoint(object(), "TOKEN", [article()], 30, root, [article()],
+                                                account_id="TEST_APP", submit=submit)
+
+    def receipt(self, root):
+        return portal.draft_submission_receipt(root, [article()], account_id="TEST_APP")
+
+    def test_inflight_precedes_post_and_accepted_id_precedes_payload(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            def accepted(*_args):
+                self.assertEqual("add_in_flight", self.receipt(root)["status"])
+                self.assertNotIn("media_id", self.receipt(root))
+                self.assertFalse(list(root.glob("draft_payload_*.json")))
+                return "ACCEPTED"
+            self.assertEqual("ACCEPTED", self.submit(root, accepted))
+            self.assertEqual("accepted", self.receipt(root)["status"])
+            self.assertEqual("ACCEPTED", self.receipt(root)["media_id"])
+            self.assertFalse(list(root.glob("draft_payload_*.json")))
+            again = Mock()
+            self.assertEqual("ACCEPTED", self.submit(root, again))
+            again.assert_not_called()
+            self.assertNotIn("TEST_APP", next(root.glob("draft_submission_*.json")).read_text())
+
+    def test_timeout_stays_unknown_until_delayed_readback_recovers_without_post(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            original = Mock(side_effect=requests.Timeout("TOKEN PRIVATE"))
+            with self.assertRaises(requests.Timeout):
+                self.submit(root, original)
+            self.assertEqual("add_outcome_unknown", self.receipt(root)["status"])
+            self.assertNotIn("media_id", self.receipt(root))
+            retry = Mock()
+            with patch.object(portal, "recover_draft_after_ambiguous_add", side_effect=["", "LATE_ACCEPTED"]):
+                with self.assertRaisesRegex(portal.WeChatError, "Previous draft/add outcome is unknown"):
+                    self.submit(root, retry)
+                self.assertEqual("LATE_ACCEPTED", self.submit(root, retry))
+            original.assert_called_once()
+            retry.assert_not_called()
+            self.assertEqual("LATE_ACCEPTED", self.receipt(root)["media_id"])
+            self.assertNotIn("PRIVATE", json.dumps(self.receipt(root)))
+
+    def test_process_interruption_keeps_inflight_and_blocks_reposting(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            with self.assertRaises(KeyboardInterrupt):
+                self.submit(root, Mock(side_effect=KeyboardInterrupt))
+            self.assertEqual("add_in_flight", self.receipt(root)["status"])
+            retry = Mock()
+            with patch.object(portal, "recover_draft_after_ambiguous_add", return_value=""):
+                with self.assertRaisesRegex(portal.WeChatError, "outcome is unknown"):
+                    self.submit(root, retry)
+            retry.assert_not_called()
+
+    def test_rejected_size_has_no_media_id_and_can_split_without_unknown_state(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            with self.assertRaises(portal.WeChatError):
+                self.submit(root, Mock(side_effect=portal.WeChatError("article size out of limit", errcode=45008)))
+            receipt = self.receipt(root)
+            self.assertEqual("rejected", receipt["status"])
+            self.assertNotIn("media_id", receipt)
+            self.assertEqual({}, portal.saved_draft_receipt(root, [article()], account_id="TEST_APP"))
+            self.assertEqual("ACCEPTED", self.submit(root, Mock(return_value="ACCEPTED")))
+
+    def test_account_mismatch_and_malformed_receipt_stop_before_post(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            self.submit(root, Mock(return_value="ACCEPTED"))
+            submit = Mock()
+            with self.assertRaisesRegex(portal.WeChatError, "another account"):
+                portal.add_draft_with_checkpoint(object(), "TOKEN", [article()], 30, root, [article()],
+                                                 account_id="DIFFERENT_APP", submit=submit)
+            submit.assert_not_called()
+            path = next(root.glob("draft_submission_*.json"))
+            receipt = self.receipt(root)
+            receipt.update(status="rejected", media_id="UNEXPECTED")
+            path.write_text(json.dumps(receipt))
+            with self.assertRaisesRegex(portal.WeChatError, "invalid"):
+                self.submit(root, submit)
+            submit.assert_not_called()
+
+    def test_unknown_split_prefix_is_preserved_before_retrying_larger_group(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            portal.checkpoint_draft_submission(root, [article()], "add_in_flight", account_id="TEST_APP")
+            second = dict(article(), title="Another report")
+            self.assertEqual(1, portal.saved_draft_prefix_length(root, [article(), second], account_id="TEST_APP"))
+
+    def test_bound_accepted_ledger_wins_over_stale_summary_payload_fallback(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            self.submit(root, Mock(return_value="NEW_ACCEPTED"))
+            portal.write_json(root / "draft_payload_01.json", {"articles": [article()]})
+            portal.write_json(root / "wechat_draft_summary.json", {"dry_run": False, "drafts": [{
+                "media_id": "OLDER_UNRELATED", "group_key": "older-source-key",
+                "payload": "draft_payload_01.json", "published": False,
+            }]})
+            receipt = portal.saved_draft_receipt(root, [article()], account_id="TEST_APP")
+            self.assertEqual("NEW_ACCEPTED", receipt["media_id"])
+
 
 class WeChatReadbackTests(unittest.TestCase):
     def test_temporary_non_json_response_is_retried_using_get_only(self):
@@ -223,6 +337,36 @@ class WeChatUploaderRecoveryTests(unittest.TestCase):
             }.items():
                 stack.enter_context(patch.object(uploader, name, mocked))
             return uploader.main()
+
+    def test_both_entrypoints_recover_accepted_id_when_payload_write_crashes(self):
+        for uploader in (portal, xhs):
+            with self.subTest(uploader=uploader.__name__), tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary)
+                add = Mock(return_value="ACCEPTED_BEFORE_PAYLOAD")
+                lookup = Mock(return_value="")
+                verify = Mock(return_value={"ok": True})
+                publish = Mock(return_value="PUBLISHED")
+                original_write = uploader.write_json
+                def fail_payload(path, value):
+                    if Path(path).name.startswith("draft_payload_"):
+                        raise OSError("fixture payload write interrupted")
+                    return original_write(path, value)
+                with patch.object(uploader, "write_json", side_effect=fail_payload):
+                    with self.assertRaisesRegex(OSError, "payload write interrupted"):
+                        self.run_uploader(uploader, root, verification=verify, add=add, lookup=lookup, publish=publish)
+                output = root / "output/260914"
+                receipt = json.loads(next(output.glob("draft_submission_*.json")).read_text())
+                self.assertEqual("accepted", receipt["status"])
+                self.assertEqual("ACCEPTED_BEFORE_PAYLOAD", receipt["media_id"])
+                self.assertFalse((output / "wechat_draft_summary.json").exists())
+                verify.assert_not_called()
+                publish.assert_not_called()
+                lookup.reset_mock()
+                self.assertEqual(0, self.run_uploader(uploader, root, verification=verify, add=add,
+                                                       lookup=lookup, publish=publish))
+                add.assert_called_once()
+                lookup.assert_not_called()
+                self.assertEqual("ACCEPTED_BEFORE_PAYLOAD", verify.call_args.args[2])
 
     def test_both_entrypoints_checkpoint_before_verification_and_reuse_on_retry(self):
         for uploader in (portal, xhs):

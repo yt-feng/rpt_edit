@@ -64,6 +64,7 @@ on:
       - "scripts/postprocess_podcast.py"
       - "scripts/sensitive_content_guard.py"
       - "scripts/*xhs_draft*"
+      - "scripts/*xhs_delivery_completeness*"
       - "scripts/*institution_pending_intake*"
       - "scripts/*institution_ocr_fallback*"
       - "scripts/*institution_dependency_backlog*"
@@ -77,6 +78,7 @@ on:
       - ".github/workflows/daily-bilingual-podcast-videos.yml"
       - ".github/workflows/portal-chart-historical-backfill.yml"
       - ".github/actions/restore-wechat-diagnostics/**"
+      - ".github/actions/resilient-diagnostic-artifact/**"
   push:
     branches: [main]
     paths:
@@ -141,6 +143,7 @@ on:
       - "scripts/postprocess_podcast.py"
       - "scripts/sensitive_content_guard.py"
       - "scripts/*xhs_draft*"
+      - "scripts/*xhs_delivery_completeness*"
       - "scripts/*institution_pending_intake*"
       - "scripts/*institution_ocr_fallback*"
       - "scripts/*institution_dependency_backlog*"
@@ -154,6 +157,7 @@ on:
       - ".github/workflows/daily-bilingual-podcast-videos.yml"
       - ".github/workflows/portal-chart-historical-backfill.yml"
       - ".github/actions/restore-wechat-diagnostics/**"
+      - ".github/actions/resilient-diagnostic-artifact/**"
   workflow_dispatch:
 
 permissions:
@@ -185,6 +189,9 @@ jobs:
         run: |
           python scripts/test_send_portal_ops_alert.py
           python scripts/test_institution_wechat_delivery_receipt.py
+          python scripts/test_wechat_delivery_workflows.py
+          python scripts/test_wechat_checkpoint_actions.py
+          python scripts/test_xhs_delivery_completeness.py
           python scripts/test_check_portal_ops_alert_window.py
           python scripts/test_fetch_institution_latest_pdfs.py
           python scripts/test_institution_pending_intake.py

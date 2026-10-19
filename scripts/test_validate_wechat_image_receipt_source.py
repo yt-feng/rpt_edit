@@ -24,6 +24,13 @@ class ReceiptSourceTests(unittest.TestCase):
         with patch('subprocess.run', side_effect=FileNotFoundError('gh')):
             self.assertTrue(source.validate(REPO, '123', NAME, self.api)['artifact_verified'])
 
+    def test_attempt_suffix_is_supported_without_relaxing_exact_name_binding(self):
+        name = NAME + '-attempt-2'
+        self.rows = [dict(id=456, name=name, expired=False), dict(id=457, name=NAME, expired=False)]
+        self.assertEqual(456, source.validate(REPO, '123', name, self.api)['artifact_id'])
+        with self.assertRaises(source.ReceiptSourceError):
+            source.validate(REPO, '123', NAME + '-attempt-1', self.api)
+
     def test_failed_incomplete_or_foreign_run_not_admitted(self):
         for change in ({'conclusion':'failure'}, {'status':'in_progress'}, {'id':124},
                        {'head_repository':{'full_name':'other/reports'}}):

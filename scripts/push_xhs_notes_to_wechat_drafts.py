@@ -44,9 +44,11 @@ from push_portal_translated_to_wechat_drafts import (  # noqa: E402
     WECHAT_TITLE_MAX_CHARS,
     WeChatError,
     add_draft,
+    add_draft_with_checkpoint,
     article_payload,
     content_within_limits,
     checkpoint_wechat_drafts,
+    checkpoint_draft_submission,
     draft_group_key,
     saved_draft_receipt,
     saved_draft_prefix_length,
@@ -173,7 +175,42 @@ def clean_xhs_markdown(markdown: str) -> str:
 def generation_failure_skip_reason(markdown: str) -> str:
     if GENERATION_FAILURE_RE.search(markdown or ""):
         return "deepseek_generation_failed_placeholder"
+    body = re.sub(r"(?m)^#{1,6}\s+.*$", "", markdown or "")
+    body = MD_IMAGE_RE.sub("", body)
+    body = re.sub(r"<[^>]+>", "", body)
+    if not body.strip():
+        return "empty_wechat_article_body"
     return ""
+
+
+def write_early_delivery_summary(output_dir: Path, summary: dict[str, Any]) -> None:
+    """Record a failed/empty selection without losing previously accepted IDs."""
+    path = output_dir / "wechat_draft_summary.json"
+    if path.exists():
+        try:
+            previous = json.loads(path.read_text(encoding="utf-8"))
+            if (not isinstance(previous, dict) or previous.get("date_folder") != output_dir.name
+                    or not isinstance(previous.get("drafts", []), list)
+                    or any(not isinstance(row, dict) for row in previous.get("drafts", []))):
+                raise ValueError("Previous receipt does not match this date")
+        except (OSError, ValueError):
+            write_json(output_dir / "wechat_delivery_failure.json", summary)
+            raise RuntimeError("Cannot replace an unreadable or mismatched prior WeChat receipt") from None
+        accepted = [row for row in previous.get("drafts", [])
+                    if isinstance(row.get("media_id"), str) and row["media_id"].strip()
+                    and not row["media_id"].startswith("DRY_RUN_")]
+        if accepted and previous.get("dry_run") is False:
+            if summary.get("dry_run") is not False:
+                write_json(output_dir / "wechat_delivery_failure.json", summary)
+                raise RuntimeError("Cannot replace accepted WeChat receipts with an empty dry-run summary")
+            summary.update(
+                drafts=[{**row, "readback_from_previous_attempt": True} for row in accepted],
+                draft_count=len(accepted), preserved_previous_draft_count=len(accepted),
+                current_run_verified_draft_count=0, current_run_verified_article_count=0,
+            )
+    temporary = path.with_suffix(".json.tmp")
+    write_json(temporary, summary)
+    temporary.replace(path)
 
 
 def read_json(path: Path) -> dict[str, Any]:
@@ -608,6 +645,8 @@ def main() -> int:
     parser.add_argument("--max-articles", default="all")
     parser.add_argument("--article-offset", type=int, default=0)
     parser.add_argument("--articles-per-draft", type=int, default=DEFAULT_ARTICLES_PER_DRAFT)
+    parser.add_argument("--expected-source-count", type=int,
+                        help="Required full source report count before applying max-articles and article-offset")
     parser.add_argument("--max-inline-images", type=int, default=DEFAULT_MIN_INLINE_IMAGES)
     parser.add_argument("--min-inline-images", type=int, default=DEFAULT_MIN_INLINE_IMAGES)
     parser.add_argument("--max-body-chars", type=int, default=DEFAULT_BODY_VISIBLE_CHARS)
@@ -655,6 +694,8 @@ def main() -> int:
     max_articles = parse_selection_limit(args.max_articles, "--max-articles")
     if args.article_offset < 0:
         raise ValueError("--article-offset must be non-negative")
+    if args.expected_source_count is not None and args.expected_source_count < 0:
+        raise ValueError("--expected-source-count must be non-negative")
     if not 1 <= args.articles_per_draft <= 9:
         raise ValueError("--articles-per-draft must be between 1 and 9")
     if args.max_inline_images < 0:
@@ -691,6 +732,18 @@ def main() -> int:
 
     output_dir = Path(args.output_root) / date_dir.name
     output_dir.mkdir(parents=True, exist_ok=True)
+    if args.expected_source_count is not None and len(report_dirs) != args.expected_source_count:
+        summary_path = output_dir / "wechat_draft_summary.json"
+        write_early_delivery_summary(output_dir, {
+            "date_folder": date_dir.name, "source": "xhs_notes/dropbox",
+            "dry_run": args.dry_run, "publish": args.publish,
+            "status": "failed_source_count_mismatch",
+            "expected_source_count": args.expected_source_count, "source_report_count": len(report_dirs),
+            "input_selected_count": len(selected), "selected_count": 0, "draft_count": 0,
+            "drafts": [], "articles": [],
+        })
+        log(f"Source report count mismatch: expected {args.expected_source_count}, found {len(report_dirs)}; wrote {summary_path}")
+        return 1
     if not selected:
         summary_path = output_dir / "wechat_draft_summary.json"
         title_log_path = write_wechat_title_log(
@@ -706,19 +759,21 @@ def main() -> int:
             "publish": args.publish,
             "max_articles": "all" if max_articles is None else max_articles,
             "input_selected_count": 0,
+            "expected_source_count": args.expected_source_count,
+            "source_report_count": len(report_dirs),
             "selected_count": 0,
             "skipped_title_policy_count": 0,
             "skipped_title_policy": [],
             "draft_count": 0,
-            "status": "skipped_no_xhs_wechat_articles",
+            "status": "failed_no_xhs_wechat_articles",
             "message": f"No xhs report articles selected from {date_dir}",
             "title_log": str(title_log_path),
             "drafts": [],
             "articles": [],
         }
-        write_json(summary_path, summary)
+        write_early_delivery_summary(output_dir, summary)
         log(f"No xhs report articles selected from {date_dir}; wrote skip summary: {summary_path}")
-        return 0
+        return 1
 
     input_selected_count = len(selected)
     skipped_title_policy: list[dict[str, Any]] = []
@@ -761,13 +816,13 @@ def main() -> int:
             [*skipped_title_policy, *skipped_generation_failures],
         )
         if skipped_title_policy and skipped_generation_failures:
-            status = "skipped_title_policy_and_generation_failure"
+            status = "failed_title_policy_and_generation_failure"
             message = f"All selected xhs articles were blocked by title policy or failed generation under {date_dir}"
         elif skipped_title_policy:
             status = "skipped_title_policy"
             message = f"All selected xhs articles were blocked by title policy under {date_dir}"
         else:
-            status = "skipped_generation_failure"
+            status = "failed_generation_failure"
             message = f"All selected xhs report article bodies were missing or failed generation under {date_dir}"
         summary = {
             "date_folder": date_dir.name,
@@ -776,6 +831,8 @@ def main() -> int:
             "publish": args.publish,
             "max_articles": "all" if max_articles is None else max_articles,
             "input_selected_count": input_selected_count,
+            "expected_source_count": args.expected_source_count,
+            "source_report_count": len(report_dirs),
             "selected_count": 0,
             "skipped_title_policy_count": len(skipped_title_policy),
             "skipped_title_policy": skipped_title_policy,
@@ -788,9 +845,9 @@ def main() -> int:
             "drafts": [],
             "articles": [],
         }
-        write_json(summary_path, summary)
+        write_early_delivery_summary(output_dir, summary)
         log(f"{message}; wrote skip summary: {summary_path}")
-        return 0
+        return 1 if skipped_generation_failures else 0
 
     log(
         f"Selected {len(selected)} xhs WeChat articles from {date_dir} "
@@ -827,9 +884,9 @@ def main() -> int:
         nonlocal use_safe_cover_for_future
         public_articles = article_payload(group)
         articles = materialize_private_article_payload(public_articles, args.site_url)
-        receipt = {} if args.dry_run else saved_draft_receipt(output_dir, public_articles)
+        receipt = {} if args.dry_run else saved_draft_receipt(output_dir, public_articles, account_id=args.wechat_appid)
         if not args.dry_run and not receipt:
-            saved_prefix = saved_draft_prefix_length(output_dir, public_articles)
+            saved_prefix = saved_draft_prefix_length(output_dir, public_articles, account_id=args.wechat_appid)
             if saved_prefix:
                 create_draft(group[:saved_prefix])
                 create_draft(group[saved_prefix:])
@@ -878,7 +935,8 @@ def main() -> int:
                         args.draft_delay_seconds,
                         args.dry_run,
                     )
-                    media_id = add_draft(session, access_token, articles, args.timeout)
+                    media_id = add_draft_with_checkpoint(session, access_token, articles, args.timeout, output_dir,
+                                                         public_articles, account_id=args.wechat_appid, submit=add_draft)
                 except WeChatError as exc:
                     if is_cover_crop_error(exc):
                         use_safe_cover_for_future = True
@@ -886,14 +944,16 @@ def main() -> int:
                         clear_cover_crop_fields(articles)
                         pacing_sleep(f"Before retrying WeChat draft {draft_index}", args.draft_delay_seconds, args.dry_run)
                         try:
-                            media_id = add_draft(session, access_token, articles, args.timeout)
+                            media_id = add_draft_with_checkpoint(session, access_token, articles, args.timeout, output_dir,
+                                                                 public_articles, account_id=args.wechat_appid, submit=add_draft)
                         except WeChatError as retry_exc:
                             if not is_cover_crop_error(retry_exc):
                                 raise
                             log("Normalizing each article's existing cover for one final crop recovery attempt.")
                             normalize_group_cover_media(session, access_token, group, articles, output_dir, draft_index, args.timeout)
                             pacing_sleep(f"Before retrying WeChat draft {draft_index} with normalized covers", args.draft_delay_seconds, args.dry_run)
-                            media_id = add_draft(session, access_token, articles, args.timeout)
+                            media_id = add_draft_with_checkpoint(session, access_token, articles, args.timeout, output_dir,
+                                                                 public_articles, account_id=args.wechat_appid, submit=add_draft)
                     elif is_article_size_error(exc) and len(group) > 1:
                         split_at = max(1, len(group) // 2)
                         log(
@@ -906,6 +966,8 @@ def main() -> int:
                     else:
                         raise
 
+        if not args.dry_run:
+            checkpoint_draft_submission(output_dir, public_articles, "accepted", account_id=args.wechat_appid, media_id=media_id)
         sync_article_media_fields(public_articles, articles)
         payload_path = output_dir / f"draft_payload_{draft_index:02d}.json"
         # Keep the deployment hostname out of public Blog archive inputs.
@@ -983,6 +1045,8 @@ def main() -> int:
         "publish": args.publish,
         "max_articles": "all" if max_articles is None else max_articles,
         "input_selected_count": input_selected_count,
+        "expected_source_count": args.expected_source_count,
+        "source_report_count": len(report_dirs),
         "selected_count": len(selected),
         "skipped_title_policy_count": len(skipped_title_policy),
         "skipped_title_policy": skipped_title_policy,
@@ -1021,11 +1085,11 @@ def main() -> int:
             for item in built_articles
         ],
     }
-    summary["status"] = "dry_run" if args.dry_run else "verified"
+    summary["status"] = "partial_generation_failure" if skipped_generation_failures else ("dry_run" if args.dry_run else "verified")
     summary_path = output_dir / "wechat_draft_summary.json"
     write_json(summary_path, summary)
     log(f"Wrote summary: {summary_path}")
-    return 0
+    return 1 if skipped_generation_failures else 0
 
 
 if __name__ == "__main__":
