@@ -260,5 +260,7 @@ jobs:
           python scripts/test_download_dropbox_latest_pdfs.py
           python scripts/test_inspect_dropbox_source.py
           python scripts/test_verify_existing_wechat_drafts.py
+          python scripts/test_audit_wechat_article_presence.py
+          python scripts/test_restore_missing_wechat_drafts.py
           python scripts/test_sensitive_title_guard.py
           python scripts/test_update_blog_archive_from_wechat_drafts.py

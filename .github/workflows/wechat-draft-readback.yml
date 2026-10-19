@@ -1,5 +1,5 @@
 name: Verify existing WeChat drafts
-run-name: Verify WeChat drafts from run ${{ inputs.source_run_id }}
+run-name: "${{ inputs.restore_missing && 'Restore missing' || inputs.audit_presence && 'Locate' || 'Verify' }} WeChat drafts from run ${{ inputs.source_run_id }}"
 
 on:
   workflow_dispatch:
@@ -11,6 +11,21 @@ on:
       artifact_name:
         description: "Exact diagnostic artifact name from the upload run"
         required: true
+        type: string
+      audit_presence:
+        description: "Read-only title search across current drafts and published records, preserving later edits"
+        required: false
+        default: false
+        type: boolean
+      restore_missing:
+        description: "Restore missing archived articles into drafts only, preserving current drafts and edits"
+        required: false
+        default: false
+        type: boolean
+      expected_articles:
+        description: "Exact archived article count required for restoration"
+        required: false
+        default: "15"
         type: string
 
 permissions:
@@ -30,17 +45,51 @@ jobs:
         env:
           SOURCE_RUN_ID: ${{ inputs.source_run_id }}
           ARTIFACT_NAME: ${{ inputs.artifact_name }}
+          AUDIT_PRESENCE: ${{ inputs.audit_presence }}
+          RESTORE_MISSING: ${{ inputs.restore_missing }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
         run: |
           [[ "$SOURCE_RUN_ID" =~ ^[0-9]+$ ]]
           [[ "$ARTIFACT_NAME" =~ ^[a-zA-Z0-9_-]+$ ]]
+          [[ "$AUDIT_PRESENCE" != true || "$RESTORE_MISSING" != true ]]
+          if [[ "$RESTORE_MISSING" == true ]]; then
+            [[ "$EXPECTED_ARTICLES" =~ ^[1-9][0-9]*$ ]]
+          fi
 
       - name: Checkout verification code
         uses: actions/checkout@v4
         with:
           sparse-checkout: |
             .github/workflows
+            .github/actions
             scripts
             requirements.txt
+
+      - name: Bind restoration to a successful producer and its exact live receipt
+        if: ${{ inputs.restore_missing == true }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          ARTIFACT_NAME: ${{ inputs.artifact_name }}
+        run: |
+          PYTHONPATH=scripts python3 - <<'PY'
+          import os
+          from validate_wechat_image_receipt_source import github_json, require, validate
+          repo = os.environ['GITHUB_REPOSITORY']
+          source = os.environ['SOURCE_RUN_ID']
+          api = lambda path: github_json(repo, path, os.environ['GH_TOKEN'])
+          validate(repo, source, os.environ['ARTIFACT_NAME'], api)
+          run = api('actions/runs/' + source)
+          allowed = {
+              '.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml',
+              '.github/workflows/institution-latest-pdf-to-wechat.yml',
+              '.github/workflows/consulting-latest-pdf-to-wechat.yml',
+              '.github/workflows/ark-invest-feed-to-wechat.yml',
+          }
+          require(run.get('head_branch') == 'main' and run.get('path') in allowed,
+                  'restoration_source_is_not_a_production_upload')
+          print('Successful production upload and exact receipt artifact verified.')
+          PY
 
       - uses: actions/setup-python@v5
         with:
@@ -50,7 +99,10 @@ jobs:
         run: python -m pip install -r requirements.txt
 
       - name: Test draft readback
-        run: python scripts/test_verify_existing_wechat_drafts.py
+        run: |
+          python scripts/test_verify_existing_wechat_drafts.py
+          python scripts/test_audit_wechat_article_presence.py
+          python scripts/test_restore_missing_wechat_drafts.py
 
       - name: Download existing draft diagnostics
         uses: actions/download-artifact@v4
@@ -61,6 +113,7 @@ jobs:
           path: _wechat_readback_source
 
       - name: Verify existing drafts without creating or publishing
+        if: ${{ inputs.audit_presence != true && inputs.restore_missing != true }}
         env:
           WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
           WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
@@ -70,11 +123,51 @@ jobs:
             --artifact-root _wechat_readback_source \
             --output _wechat_readback_result/verification.json
 
+      - name: Locate article titles in current drafts and published records
+        if: ${{ inputs.audit_presence == true }}
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+        run: |
+          python scripts/audit_wechat_article_presence.py \
+            --artifact-root _wechat_readback_source \
+            --output _wechat_readback_result/presence.json
+
+      - name: Restore checkpoint from an interrupted restoration
+        if: ${{ inputs.restore_missing == true }}
+        uses: ./.github/actions/restore-wechat-diagnostics
+        with:
+          name: wechat-restored-drafts-${{ github.run_id }}
+          path: _wechat_restore_result
+
+      - name: Restore missing archived articles as drafts and read them back
+        if: ${{ inputs.restore_missing == true }}
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+        run: |
+          python scripts/restore_missing_wechat_drafts.py \
+            --artifact-root _wechat_readback_source \
+            --output _wechat_restore_result/restore_receipt.json \
+            --expected-articles "$EXPECTED_ARTICLES"
+
+      - name: Archive restored draft receipts
+        if: ${{ always() && inputs.restore_missing == true }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: wechat-restored-drafts-${{ github.run_id }}
+          path: _wechat_restore_result
+          if-no-files-found: warn
+          overwrite: true
+          retention-days: 7
+
       - name: Archive readback result
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
           name: wechat-readback-${{ github.run_id }}
-          path: _wechat_readback_result/verification.json
+          path: _wechat_readback_result/*.json
           if-no-files-found: warn
           retention-days: 7
