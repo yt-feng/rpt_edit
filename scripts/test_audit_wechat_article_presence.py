@@ -22,7 +22,7 @@ def response(data, status=200):
     return result
 
 
-def group(identifier, titles, published=False, author="KCDeskNotes"):
+def group(identifier, titles, published=False, author="Edited author"):
     return {"article_id" if published else "media_id": identifier, "update_time": 1792381404,
             "content": {"create_time": 1792367749, "news_item": [
                 {"title": title, "author": author, "content": "BODY_MUST_NOT_ESCAPE",
@@ -51,7 +51,7 @@ class PresenceAuditTests(unittest.TestCase):
                 self.assertEqual("title_candidates_found", article[kind]["status"])
                 match = article[kind]["candidates"][0]
                 self.assertEqual("normalized_title_only", match["match_basis"])
-                self.assertEqual("KCDeskNotes", match["author"])
+                self.assertEqual("Edited author", match["author"])
                 self.assertEqual(1792381404, match["group_times"]["update_time"])
                 self.assertEqual(1792381400, match["article_times"]["publish_time"])
                 self.assertIn("__biz=public", match["url"])
