@@ -1,5 +1,96 @@
 {
   "schema": 1,
   "institution": "imf",
-  "items": {}
+  "items": {
+    "imf:d6f52f3f8c70e39cd0457b14ecc2d0c10a0e9536efee574cb6698890c073": {
+      "item": {
+        "title": "Monetary Policy Transmission Through Banking: Evidence from Eswatini",
+        "source_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/10/16/monetary-policy-transmission-through-banking-evidence-from-eswatini-580567",
+        "guid": "d6f52f3f8c70e39cd0457b14ecc2d0c10a0e9536efee574cb6698890c073",
+        "date": "2026-10-19T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026102.pdf",
+          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026102-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/10/16/monetary-policy-transmission-through-banking-evidence-from-eswatini-580567",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/selected-issues-papers/issues/2026/10/16/monetary-policy-transmission-through-banking-evidence-from-eswatini-580567"
+      },
+      "admitted_at": "2026-10-20T00:52:57.548458+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-10-20T00:52:57.548458+00:00",
+      "attempts": 1
+    },
+    "imf:ae3a47010889bd0ae472420fb33c68df6154321d6482398977c331ba8f86": {
+      "item": {
+        "title": "Policy Priorities for More Efficient Capital Allocation, Labor Absorption, and Higher Productivity: Cambodia",
+        "source_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/10/16/policy-priorities-for-more-efficient-capital-allocation-labor-absorption-and-higher-580396",
+        "guid": "ae3a47010889bd0ae472420fb33c68df6154321d6482398977c331ba8f86",
+        "date": "2026-10-19T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026099.pdf",
+          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026099-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/10/16/policy-priorities-for-more-efficient-capital-allocation-labor-absorption-and-higher-580396",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/selected-issues-papers/issues/2026/10/16/policy-priorities-for-more-efficient-capital-allocation-labor-absorption-and-higher-580396"
+      },
+      "admitted_at": "2026-10-20T00:52:57.548458+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-10-20T00:52:57.548458+00:00",
+      "attempts": 1
+    },
+    "imf:3783aa49927603ea8aa486cc13a5059586e63f811a46b9ae5d4d9a4c21f8": {
+      "item": {
+        "title": "Financing Cambodia’s Progress Toward the Sustainable Development Goals",
+        "source_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/10/16/financing-cambodias-progress-toward-the-sustainable-development-goals-580402",
+        "guid": "3783aa49927603ea8aa486cc13a5059586e63f811a46b9ae5d4d9a4c21f8",
+        "date": "2026-10-19T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026100.pdf",
+          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026100-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/10/16/financing-cambodias-progress-toward-the-sustainable-development-goals-580402",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/selected-issues-papers/issues/2026/10/16/financing-cambodias-progress-toward-the-sustainable-development-goals-580402"
+      },
+      "admitted_at": "2026-10-20T00:52:57.548458+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-10-20T00:52:57.548458+00:00",
+      "attempts": 1
+    },
+    "imf:41f07196ede080a2e14951389fb52cf37d2c45526a48634259b129d0f2f6": {
+      "item": {
+        "title": "Fiscal Risks from Electricity Sector Policy in Eswatini",
+        "source_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/10/16/fiscal-risks-from-electricity-sector-policy-in-eswatini-580487",
+        "guid": "41f07196ede080a2e14951389fb52cf37d2c45526a48634259b129d0f2f6",
+        "date": "2026-10-19T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026101.pdf",
+          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026101-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/10/16/fiscal-risks-from-electricity-sector-policy-in-eswatini-580487",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/selected-issues-papers/issues/2026/10/16/fiscal-risks-from-electricity-sector-policy-in-eswatini-580487"
+      },
+      "admitted_at": "2026-10-20T00:52:57.548458+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-10-20T00:52:57.548458+00:00",
+      "attempts": 1
+    },
+    "imf:ec20f86336140219306a5e76d74b31783f380f4528686c474dfccaca4ab9": {
+      "item": {
+        "title": "How is Labor Demand Changing as AI Improves? New Global Evidence",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/10/14/how-is-labor-demand-changing-as-ai-improves-new-global-evidence-579847",
+        "guid": "ec20f86336140219306a5e76d74b31783f380f4528686c474dfccaca4ab9",
+        "date": "2026-10-19T03:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026220-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026220.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/10/14/how-is-labor-demand-changing-as-ai-improves-new-global-evidence-579847",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/10/14/how-is-labor-demand-changing-as-ai-improves-new-global-evidence-579847"
+      },
+      "admitted_at": "2026-10-20T00:52:57.548458+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-10-20T00:52:57.548458+00:00",
+      "attempts": 1
+    }
+  }
 }
