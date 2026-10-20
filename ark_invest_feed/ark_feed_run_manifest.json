@@ -1,6 +1,6 @@
 {
   "feed_url": "https://www.ark-invest.com/feed",
-  "date_folder": "261016",
+  "date_folder": "261020",
   "since_days": 1,
   "max_pub_age_days": 120,
   "include_types": [
@@ -9,24 +9,40 @@
     "newsletters",
     "white papers"
   ],
-  "feed_item_count": 1410,
-  "selected_count": 1,
+  "feed_item_count": 1412,
+  "selected_count": 2,
   "written": [
     {
       "source": "ark_invest_feed",
       "institution_name": "木头姐ARK",
-      "title": "The Bitcoin Quarterly: Q3 2026",
-      "type": "Crypto Reports",
-      "category": "Crypto Reports",
-      "source_url": "https://www.ark-invest.com/crypto-reports/bitcoin-quarterly-q3-2026",
-      "guid": "https://www.ark-invest.com/crypto-reports/bitcoin-quarterly-q3-2026",
-      "pub_date": "Thu, 15 Oct 2026 12:35:00 GMT",
-      "updated": "2026-10-15T01:02:49.790+00:00",
-      "event_datetime": "2026-10-15T12:35:00+00:00",
-      "feed_key": "90d25a9cde59779c",
+      "title": "#530: Recursion’s Phenomics AI Platform Delivers Clinical Proof Points, & More",
+      "type": "Newsletters",
+      "category": "Newsletters",
+      "source_url": "https://www.ark-invest.com/newsletters/issue-530",
+      "guid": "https://www.ark-invest.com/newsletters/issue-530",
+      "pub_date": "Mon, 19 Oct 2026 21:40:00 GMT",
+      "updated": "2026-10-20T01:46:01.520+00:00",
+      "event_datetime": "2026-10-20T01:46:01.520000+00:00",
+      "feed_key": "53befde543acaa88",
       "source_mineru": "source_mineru.md",
       "note": "note.md",
-      "output_dir": "xhs_notes/ark/261016/0001-ARK_The-Bitcoin-Quarterly-Q3-2026_90d25a9cde59779c"
+      "output_dir": "xhs_notes/ark/261020/0001-ARK_530-Recursion-s-Phenomics-AI-Platform-Delivers-Clinical-Proof-Points-Mor_53befde543acaa88"
+    },
+    {
+      "source": "ark_invest_feed",
+      "institution_name": "木头姐ARK",
+      "title": "ARK’s Expected Share Price For Tesla In 2031",
+      "type": "Articles",
+      "category": "Valuation Models",
+      "source_url": "https://www.ark-invest.com/articles/valuation-models/arks-expected-share-price-for-tesla-2031",
+      "guid": "https://www.ark-invest.com/articles/valuation-models/arks-expected-share-price-for-tesla-2031",
+      "pub_date": "Mon, 19 Oct 2026 21:20:00 GMT",
+      "updated": "0001-01-01T05:00:00.000+00:00",
+      "event_datetime": "2026-10-19T21:20:00+00:00",
+      "feed_key": "f7f4044f9d1c84b9",
+      "source_mineru": "source_mineru.md",
+      "note": "note.md",
+      "output_dir": "xhs_notes/ark/261020/0002-ARK_ARK-s-Expected-Share-Price-For-Tesla-In-2031_f7f4044f9d1c84b9"
     }
   ],
   "status": "ok"
