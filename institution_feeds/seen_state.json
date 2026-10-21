@@ -4724,6 +4724,14 @@
     "bruegel:12528": {
       "first_seen": "2026-10-20",
       "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publications/bank-liquidity-regulation-and-growth-private-credit": {
+      "first_seen": "2026-10-21",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/acc_10oct26_519_e.htm": {
+      "first_seen": "2026-10-21",
+      "status": "too_old"
     }
   }
 }
