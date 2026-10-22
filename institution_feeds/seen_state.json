@@ -4732,6 +4732,54 @@
     "wto:https://www.wto.org/english/news_e/news26_e/acc_10oct26_519_e.htm": {
       "first_seen": "2026-10-21",
       "status": "too_old"
+    },
+    "imf:77d834912b98fea9b73987e1aea17530119ec580bbea0116da2c9c431a56": {
+      "first_seen": "2026-10-22",
+      "status": "downloaded"
+    },
+    "imf:2e361ad232ed5536e81b6685976ec844138e0ffde7abf24732174b14d4f7": {
+      "first_seen": "2026-10-22",
+      "status": "downloaded"
+    },
+    "imf:bd9a8e175e1f37c6286616e0a95957253b02783beb37987729ee9d0797e0": {
+      "first_seen": "2026-10-22",
+      "status": "downloaded"
+    },
+    "imf:c588482c59280ba315ca555687083ec08de3beb98d845c949f94862f12fa": {
+      "first_seen": "2026-10-22",
+      "status": "downloaded"
+    },
+    "imf:f0844b984383f155114413877c6021433462a80cc0c89e76f43cd0360c50": {
+      "first_seen": "2026-10-22",
+      "status": "downloaded"
+    },
+    "imf:709ce17581e0024ff067b0839ad4b5a4d0f70c5793baffe8efaadd3501b0": {
+      "first_seen": "2026-10-22",
+      "status": "downloaded"
+    },
+    "imf:67bbdc062dbf2012c460bec0b839dffcf9079dbd261a98cac2f3cfecfe37": {
+      "first_seen": "2026-10-22",
+      "status": "downloaded"
+    },
+    "imf:d9487288d5c9fec07487f317837a3908fcb5d264ec5577d136765ea20c89": {
+      "first_seen": "2026-10-22",
+      "status": "too_old"
+    },
+    "worldbank:099656210212622853": {
+      "first_seen": "2026-10-22",
+      "status": "downloaded"
+    },
+    "worldbank:099727410212633318": {
+      "first_seen": "2026-10-22",
+      "status": "downloaded"
+    },
+    "worldbank:099556010212642150": {
+      "first_seen": "2026-10-22",
+      "status": "downloaded"
+    },
+    "wef:https://www.weforum.org/publications/small-markets-global-winners-pathways-to-competitive-industries-beyond-trade-distortions": {
+      "first_seen": "2026-10-22",
+      "status": "no_pdf"
     }
   }
 }
