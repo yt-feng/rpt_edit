@@ -122,6 +122,7 @@ jobs:
           python -B scripts/test_portal_extended_quality_recovery_workflow.py
           python -B scripts/test_portal_extended_incremental.py
           python -B scripts/test_portal_extended_continuation.py
+          python -B scripts/test_portal_extended_unstarted_claims.py
           python -B scripts/test_portal_extended_recovery_intent.py
           python -B scripts/test_repair_portal_extended_checkpoint.py
           python -B scripts/test_repair_portal_french_source_fallback.py

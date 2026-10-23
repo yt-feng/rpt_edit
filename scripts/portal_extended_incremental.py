@@ -267,6 +267,11 @@ def main() -> int:
             quality_resumed = resume_prepared(store, locales, producer, os.environ.get('GITHUB_REPOSITORY', ''), api, budget=quality_budget)
             source_progress('prepared-quality-tails', 'complete', resumed=len(quality_resumed), **quality_budget.snapshot())
         stopped = []
+        unstarted = None
+        if producer and args.operation == 'prepare' and not args.generation:
+            from portal_extended_unstarted_claims import for_source
+            from review_portal_extended_handoff import api
+            unstarted = for_source(store, os.environ['GITHUB_REPOSITORY'], producer, api)
         if producer and not recovery:
             from portal_extended_continuation import partition_stopped_locales
             source_progress('continuation-evidence', 'start', locales=len(locales))
@@ -274,7 +279,7 @@ def main() -> int:
             # intervening ordinary-generation proof audit has its own job cap.
             with quality_budget.exclude_elapsed():
                 locales, stopped = partition_stopped_locales(store, locales,
-                    progress=lambda **counts: source_progress('continuation-evidence', **counts))
+                    progress=lambda **counts: source_progress('continuation-evidence', **counts), unstarted=unstarted)
             source_progress('continuation-evidence', 'complete', eligible=len(locales), stopped=len(stopped),
                             elapsed_seconds=round(time.monotonic()-started, 1))
         if producer and args.operation == 'prepare' and not args.generation:
@@ -341,7 +346,7 @@ def main() -> int:
                     if active:
                         register(store, corpus, tuple(active), producer)
         else:
-            result = pending(store, locales, args.corpus) if producer else None
+            result = pending(store, locales, args.corpus, unstarted=unstarted) if producer else None
             if result is None:
                 from portal_extended_daily_queue import all_queued, prepare_queued, read_corpus
                 if all_queued(store):
@@ -417,6 +422,10 @@ def main() -> int:
             source_progress('english-selection', 'start')
             result = include_english_matrix(store, result)
             source_progress('english-selection', 'complete')
+        if unstarted is not None:
+            # Expensive audits/English planning must finish before changing a
+            # recovered owner. Matrix outputs appear only after verified writes.
+            result['unstarted_claim_recovery_count'] = unstarted.commit()
         if args.github_output:
             with args.github_output.open('a') as stream:
                 for key in ('has_work', 'generation', 'locales_json', 'locale_jobs_json', 'day', 'stopped_locales_json'):
