@@ -7,6 +7,9 @@ import os
 from datetime import datetime
 from pathlib import Path
 import re
+import sys
+import threading
+import time
 from urllib.parse import urlsplit
 from zoneinfo import ZoneInfo
 import requests
@@ -20,6 +23,15 @@ from portal_extended_locales import (
 from portal_extended_r2 import (R2Store, R2NotFound, R2IntegrityError, HEX64, MODEL_ID, DEFAULT_PREFIX,
                                R2StoreError, checkpoint_is_valid, MAX_CHECKPOINT_BYTES)
 from assemble_portal_extended_locales import verified_candidate
+
+_PROGRESS_LOCK = threading.Lock()
+
+
+def source_progress(phase, stage, **counts):
+    """Immediate source-stage diagnostics without private content or keys."""
+    event = {'source_prepare_phase': phase, 'stage': stage, **counts}
+    with _PROGRESS_LOCK:
+        print(json.dumps(event, sort_keys=True), file=sys.stderr, flush=True)
 
 
 def today() -> str:
@@ -223,7 +235,9 @@ def main() -> int:
         raise ExpansionError('English daily inclusion requires reviewed main public Actions')
     store = R2Store.from_env(args.prefix)
     if args.operation in {'prepare', 'prepare-recovery', 'prepare-publication'}:
+        started = time.monotonic()
         requested_locales = locales = select_locales(args.locales)
+        source_progress('prepare', 'start', locales=len(locales))
         day = today()
         recovery = args.operation == 'prepare-recovery'
         publication = args.operation == 'prepare-publication'
@@ -239,7 +253,9 @@ def main() -> int:
         if producer and args.operation == 'prepare' and not args.generation:
             from portal_extended_recovery_intent import consume_one
             from review_portal_extended_handoff import api
+            source_progress('recovery-intent', 'start')
             consume_one(store, locales, os.environ['GITHUB_REPOSITORY'], api)
+            source_progress('recovery-intent', 'complete', elapsed_seconds=round(time.monotonic()-started, 1))
         from portal_extended_quality_recovery import ScanBudget
         quality_budget = ScanBudget()
         quality_jobs, quality_blocked, quality_resumed = [], [], []
@@ -247,14 +263,21 @@ def main() -> int:
         if producer and args.operation == 'prepare' and not args.generation:
             from portal_extended_quality_recovery import resume_prepared
             from review_portal_extended_handoff import api
+            source_progress('prepared-quality-tails', 'start')
             quality_resumed = resume_prepared(store, locales, producer, os.environ.get('GITHUB_REPOSITORY', ''), api, budget=quality_budget)
+            source_progress('prepared-quality-tails', 'complete', resumed=len(quality_resumed), **quality_budget.snapshot())
         stopped = []
         if producer and not recovery:
             from portal_extended_continuation import partition_stopped_locales
-            locales, stopped = partition_stopped_locales(store, locales)
+            source_progress('continuation-evidence', 'start', locales=len(locales))
+            locales, stopped = partition_stopped_locales(store, locales,
+                progress=lambda **counts: source_progress('continuation-evidence', **counts))
+            source_progress('continuation-evidence', 'complete', eligible=len(locales), stopped=len(stopped),
+                            elapsed_seconds=round(time.monotonic()-started, 1))
         if producer and args.operation == 'prepare' and not args.generation:
             from portal_extended_quality_recovery import prepare as prepare_quality, read_plan, pending_tail_locales
             from review_portal_extended_handoff import api
+            source_progress('quality-selection', 'start')
             resumed_locales = {read_plan(store, identity)['locale'] for identity in quality_resumed}
             quality_reserved = pending_tail_locales(store,locales,completed=resumed_locales)
             locales = tuple(locale for locale in locales if locale not in quality_reserved)
@@ -262,6 +285,9 @@ def main() -> int:
                 os.environ.get('GITHUB_REPOSITORY', ''), api, budget=quality_budget)
             selected_quality = {job['locale'] for job in quality_jobs}
             locales = tuple(locale for locale in locales if locale not in selected_quality)
+            source_progress('quality-selection', 'complete', jobs=len(quality_jobs), reserved=len(quality_reserved),
+                            **quality_budget.snapshot())
+        source_progress('source-selection', 'start', locales=len(locales))
         if not locales:
             result = {'has_work': False, 'generation': '', 'locales_json': '[]', 'day': day}
         elif args.generation:
@@ -338,6 +364,7 @@ def main() -> int:
                     if result['has_work'] and producer:
                         register(store, json.loads(args.corpus.read_text()),
                                  tuple(json.loads(result['locales_json'])), producer)
+        source_progress('source-selection', 'complete', elapsed_seconds=round(time.monotonic()-started, 1))
         if 'locale_jobs_json' not in result:
             result['locale_jobs_json'] = json.dumps([{'locale': locale, 'generation': result['generation'], 'day': result['day']}
                 for locale in json.loads(result['locales_json'])])
@@ -373,7 +400,9 @@ def main() -> int:
             result['pending_counts_json'] = json.dumps({locale: len(pending_docs(store, full['documents'], locale, admitted['day']))
                                                        for locale in requested_locales})
         from portal_extended_quality import quality_summary
+        source_progress('quality-summary', 'start')
         result.update(quality_summary(store, requested_locales))
+        source_progress('quality-summary', 'complete')
         result['quality_recovery_plan_count'] = len(quality_jobs)
         result['quality_recovery_resumed_tail_count'] = len(quality_resumed)
         if quality_jobs:
@@ -382,7 +411,9 @@ def main() -> int:
                                                           for job in quality_jobs)
         result['stopped_locales_json'] = json.dumps(stopped)
         if args.include_english:
+            source_progress('english-selection', 'start')
             result = include_english_matrix(store, result)
+            source_progress('english-selection', 'complete')
         if args.github_output:
             with args.github_output.open('a') as stream:
                 for key in ('has_work', 'generation', 'locales_json', 'locale_jobs_json', 'day', 'stopped_locales_json'):
@@ -391,6 +422,8 @@ def main() -> int:
                 stream.write('requested_locales='+','.join(requested_locales)+'\n')
                 for key in ('source_admission', 'pending_counts_json', 'english_admission', 'english_pending_count', 'quality_repair_plans_json'):
                     stream.write(key + '=' + result.get(key, '') + '\n')
+        source_progress('prepare', 'complete', jobs=len(json.loads(result['locale_jobs_json'])),
+                        elapsed_seconds=round(time.monotonic()-started, 1))
 
     else:
         if select_locales(args.locale) != (args.locale,): raise ExpansionError('Expected one locale')

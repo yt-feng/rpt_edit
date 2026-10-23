@@ -4,6 +4,7 @@ import json
 import os
 from pathlib import Path
 import tempfile
+import threading
 import unittest
 from unittest.mock import MagicMock, Mock, patch
 
@@ -616,6 +617,54 @@ class ContinuationTests(unittest.TestCase):
                 self.assertEqual((diagnostic[0]['locale'], diagnostic[0]['model_calls']), ('pt',0))
                 self.assertEqual(queue(self.store, 'pt'), before)
                 self.assertEqual(json.loads(result['pending_counts_json']), {'fr':2,'pt':26})
+
+    def test_source_inventory_overlap_is_bounded_and_keeps_requested_order(self):
+        from portal_extended_continuation import MAX_SOURCE_SCAN_WORKERS, partition_stopped_locales
+        locales = ('fr', 'pt', 'de', 'es', 'it', 'ja', 'ko', 'ar')
+        barrier = threading.Barrier(MAX_SOURCE_SCAN_WORKERS)
+        lock = threading.Lock()
+        counts = {'active': 0, 'peak': 0}
+        seen = []
+        def read_queue(_store, locale):
+            with lock:
+                counts['active'] += 1
+                counts['peak'] = max(counts['peak'], counts['active'])
+                seen.append(locale)
+            try:
+                # Four independent reads must overlap. A serial regression
+                # breaks the barrier instead of silently consuming job time.
+                barrier.wait(timeout=2)
+                return {}
+            finally:
+                with lock:
+                    counts['active'] -= 1
+        before = copy.deepcopy(self.store.client.objects)
+        events = []
+        with patch('portal_extended_continuation.queue', side_effect=read_queue):
+            eligible, stopped = partition_stopped_locales(self.store, locales, progress=lambda **event: events.append(event))
+        self.assertEqual((eligible, stopped), (locales, []))
+        self.assertCountEqual(seen, locales)
+        self.assertEqual(counts, {'active': 0, 'peak': MAX_SOURCE_SCAN_WORKERS})
+        self.assertEqual(self.store.client.objects, before)
+        self.assertEqual(len([event for event in events if event['stage'] == 'complete']), len(locales))
+
+    def test_source_progress_is_immediate_and_contains_only_counts_and_locale(self):
+        stream = Mock()
+        with patch.object(incremental.sys, 'stderr', stream):
+            incremental.source_progress('continuation-evidence', 'progress', locale='fr', generations=12, checked=3)
+        output = ''.join(call.args[0] for call in stream.write.call_args_list)
+        self.assertEqual(json.loads(output), {'source_prepare_phase': 'continuation-evidence',
+            'stage': 'progress', 'locale': 'fr', 'generations': 12, 'checked': 3})
+        stream.flush.assert_called_once()
+
+    def test_source_job_budget_keeps_setup_and_diagnostic_headroom(self):
+        import yaml
+        path = Path(__file__).resolve().parent.parent / '.github/workflows/portal-extended-locales-r2.yml'
+        source = yaml.safe_load(path.read_text())['jobs']['source']
+        step = next(step for step in source['steps'] if step.get('id') == 'source')
+        self.assertEqual(source['timeout-minutes'], 60)
+        self.assertEqual(step['timeout-minutes'], 50)
+        self.assertIn('set -euo pipefail', step['run'])
 
     def test_stopped_but_corrupt_checkpoint_is_fatal_not_an_isolated_diagnostic(self):
         proof = self.partial(locale='pt')
