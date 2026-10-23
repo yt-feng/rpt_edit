@@ -277,7 +277,7 @@ def validate_snapshot(store, locale, generation, row):
     return manifest, keys
 
 
-def partition_stopped_locales(store, locales, *, progress=None):
+def partition_stopped_locales(store, locales, *, progress=None, unstarted=None):
     """Keep known stopped cursors visible while healthy locales can advance.
 
     Storage, origin/hash, or schema failures still propagate; only recognized
@@ -308,7 +308,8 @@ def partition_stopped_locales(store, locales, *, progress=None):
                 producer_identity(row.get('owner'))
             reason = ''
             if row['status'] in {'started', 'claimed'}:
-                reason = 'Missing completed checkpoint outcome; diagnosis required'
+                if unstarted is None or not unstarted.eligible(locale, generation, row, origin):
+                    reason = 'Missing completed checkpoint outcome; diagnosis required'
             elif row['status'] == 'blocked':
                 reason = row.get('reason')
                 if not isinstance(reason, str) or not reason or len(reason) > 500:
@@ -319,6 +320,8 @@ def partition_stopped_locales(store, locales, *, progress=None):
                 blocked.append({'locale': locale, 'generation': generation, 'source_day': origin['source_day'],
                                 'status': row['status'], 'continuations': row['continuations'],
                                 'reason': reason, 'model_calls': 0})
+                if unstarted is not None and (locale, generation) in unstarted.reasons:
+                    blocked[-1]['recovery_code'] = unstarted.reasons[(locale, generation)]
             if progress:
                 progress(locale=locale, stage='progress', generations=len(rows), checked=checked)
         if progress:
@@ -339,7 +342,7 @@ def partition_stopped_locales(store, locales, *, progress=None):
     return tuple(eligible), stopped
 
 
-def pending(store, locales, output, *, generation=None, producer=None):
+def pending(store, locales, output, *, generation=None, producer=None, unstarted=None):
     """Select and claim one already-started generation before any daily collection."""
     groups = {}
     all_queues = {locale: queue(store, locale) for locale in locales}
@@ -353,6 +356,10 @@ def pending(store, locales, output, *, generation=None, producer=None):
             if not origin or not origin_allows_locale(origin, locale):
                 raise ExpansionError('Pending generation lacks its original source proof')
             if row['status'] != 'incomplete':
+                if (row['status'] in {'started', 'claimed'} and unstarted is not None
+                    and unstarted.eligible(locale, current, row, origin)):
+                    groups.setdefault((origin['source_day'], current), []).append(locale)
+                    continue
                 raise ExpansionError(f'Continuation stopped for {locale}/{current}: '+row.get('reason', 'missing completed checkpoint outcome'))
             if row['continuations'] >= MAX_CONTINUATIONS:
                 raise ExpansionError(f'Continuation bound reached for {locale}/{current}; retained for diagnosis')
@@ -371,6 +378,11 @@ def pending(store, locales, output, *, generation=None, producer=None):
     store.restore_source(selected, output)
     for locale in active:
         rows = all_queues[locale]
+        if rows[selected]['status'] in {'started', 'claimed'}:
+            # No worker consumed this allocation. Preserve its original state,
+            # immutable snapshot and count; transfer only after source prepares.
+            unstarted.stage(locale, selected, rows[selected])
+            continue
         rows[selected] = {**rows[selected], 'status': 'claimed', 'continuations': rows[selected]['continuations'] + 1,
                           'owner': owner or read_origin(store, selected)['producer']}
         save_queue(store, locale, rows)
