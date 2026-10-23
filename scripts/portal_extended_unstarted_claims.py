@@ -93,7 +93,8 @@ def unused_owner(api, owner, repository):
     workers = [job for job in jobs if str(job.get('name', '')).startswith('locale (')]
     require(bool(workers), 'owner_locale_inventory_missing')
     require(all(job.get('conclusion') == 'skipped' and job.get('runner_id') is None
-        and job.get('steps') == [] for job in jobs if job is not sources[0]), 'owner_worker_may_have_started')
+        and job.get('runner_name') is None and job.get('steps') == []
+        for job in jobs if job is not sources[0]), 'owner_worker_may_have_started')
     after = run_identity(api(latest), owner, repository)
     require(after == before, 'owner_attempt_changed')
     return {'owner':owner, 'run':exact, 'source_job_id':sources[0]['id'],
@@ -105,6 +106,7 @@ class UnstartedClaims:
         self.store, self.repository, self.owner, self.api = store, repository, producer_identity(owner), api
         self.lock = threading.Lock()
         self.owners, self.origins, self.proofs, self.reasons, self.transfers = {}, {}, {}, {}, {}
+        self.interrupted = {}
         self.api_reads, self.api_seconds, self.clock = 0, 0, time.monotonic
 
     def read(self, path):
@@ -130,13 +132,21 @@ class UnstartedClaims:
                 run = self.read(path)
                 jobs = all_jobs(self.read, path, owner)
                 admitted = batch_admission(self.store, origin['generation']) if origin.get('source_admission') else None
-                # Downstream publication still applies this unchanged check.
-                # Failed original sources need a different provenance repair.
                 verify_origin_run(origin, run, jobs, self.repository, admitted=admitted)
             except ScanBoundReached:
                 raise
             except Exception:
-                self.origins[identity] = False
+                # Preserve the strict default. A canceled original source
+                # requires independent admission and explicit unused-run proof.
+                try:
+                    from portal_extended_interrupted_origin import prove
+                    self.interrupted[identity] = prove(self.store, origin, self.repository, self.read)
+                except ScanBoundReached:
+                    raise
+                except Exception:
+                    self.origins[identity] = False
+                else:
+                    self.origins[identity] = True
             else:
                 self.origins[identity] = True
         require(self.origins[identity], 'original_source_unproved')
@@ -181,12 +191,19 @@ class UnstartedClaims:
         require(current_owner() == self.owner, 'transfer_owner_changed')
         checked = []
         refreshed = {}
+        interrupted = {}
         # Verify every selected row and every owner before the first write.
         for (locale, generation), saved in self.transfers.items():
             before = saved['before']
             after = {**before, 'owner':self.owner}
             origin = read_origin(self.store, generation)
             require(origin is not None and digest(stable_bytes(origin)) == saved['origin_sha256'], 'transfer_origin_changed')
+            origin_id = saved['origin_sha256']
+            if origin_id in self.interrupted and origin_id not in interrupted:
+                from portal_extended_interrupted_origin import prove
+                proof = prove(self.store, origin, self.repository, self.read)
+                require(proof == self.interrupted[origin_id], 'transfer_origin_evidence_changed')
+                interrupted[origin_id] = (origin, proof)
             if before['status'] == 'claimed':
                 validate_snapshot(self.store, locale, generation, before)
             owner_key = digest(stable_bytes(before['owner']))
@@ -196,6 +213,8 @@ class UnstartedClaims:
             receipt = {'schema_version':1, 'policy':POLICY, 'repository':self.repository,
                 'locale':locale, 'generation':generation, 'origin_sha256':saved['origin_sha256'],
                 'before':before, 'after':after, 'evidence':saved['proof'], 'paid_provider_requests':0}
+            if origin_id in interrupted:
+                receipt['interrupted_origin_sha256'] = digest(stable_bytes(interrupted[origin_id][1]))
             raw = stable_bytes(receipt)
             require(len(raw) <= MAX_RECEIPT_BYTES, 'transfer_receipt_too_large')
             key = self.store.key('incremental', 'unstarted-claim-transfers', generation, locale, digest(raw)+'.json')
@@ -208,6 +227,11 @@ class UnstartedClaims:
                     raise UnprovedClaim('transfer_receipt_missing') from None
                 require(previous == raw, 'transfer_receipt_changed')
             checked.append((locale, generation, before, after, key, receipt))
+        # The proof depends only on independent capture and the original run,
+        # so a replacement failure cannot strand an immutable proof pointer.
+        from portal_extended_interrupted_origin import record
+        for origin, proof in interrupted.values():
+            record(self.store, origin, proof)
         for locale, generation, before, after, key, receipt in checked:
             immutable_record(self.store, key, receipt, kind='unstarted-claim-transfer')
             rows = queue(self.store, locale)

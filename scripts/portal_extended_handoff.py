@@ -129,6 +129,11 @@ def save_handoff(store, batch, *, day, pages, producer):
         if origin['source_day'] != day or not all(origin_allows_locale(origin, locale) for locale in batch['candidates']):
             raise ExpansionError('Handoff does not match its registered original source')
         value['source_origin_sha256'] = digest(stable_bytes(origin))
+        from portal_extended_interrupted_origin import read_proof
+        interrupted = read_proof(store, origin)
+        if interrupted is not None:
+            value['interrupted_origin_sha256'] = digest(stable_bytes(interrupted))
+            value['interrupted_origin_results'] = {}
         checkpoints, repairs, completions = {}, {}, {}
         for locale, candidate in batch['candidates'].items():
             row = queue(store, locale).get(batch['generation'], {})
@@ -139,6 +144,10 @@ def save_handoff(store, batch, *, day, pages, producer):
             if not checkpoint_evidence(store, locale, batch['generation'], checksum):
                 raise ExpansionError('Complete handoff lacks its immutable checkpoint')
             checkpoints[locale] = checksum
+            if interrupted is not None:
+                from portal_extended_quality_recovery import exact_result
+                exact_result(store, locale, batch['generation'], row)
+                value['interrupted_origin_results'][locale] = digest(stable_bytes(row))
             if 'source_repair_sha256' in row:
                 repairs[locale] = row['source_repair_sha256']
                 if 'source_repair_completion_sha256' in row:
@@ -214,6 +223,8 @@ def read_handoff(store, identity):
     handoff_quality(store, value)
     proofs = source_repair_proofs(store, value)
     source_repair_completions(store, value, proofs)
+    from portal_extended_interrupted_origin import handoff_proof
+    handoff_proof(store, value)
     return value
 
 

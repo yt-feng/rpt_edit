@@ -246,7 +246,8 @@ def admission_is_valid(admitted, run, jobs, repository):
     return admitted
 
 
-def producer_is_valid(receipt, run, jobs, repository, admitted=None, *, origin=None, original_run=None, original_jobs=None):
+def producer_is_valid(receipt, run, jobs, repository, admitted=None, *, origin=None, original_run=None, original_jobs=None,
+                      interrupted_origin=None):
     producer = receipt['producer']
     if receipt.get('source_origin_sha256'):
         from portal_extended_continuation import origin_allows_locale, verify_origin_run
@@ -259,7 +260,16 @@ def producer_is_valid(receipt, run, jobs, repository, admitted=None, *, origin=N
                 and set(receipt['continuation_checkpoints']) == set(receipt['batch']['candidates'])
                 and all(re.fullmatch(r'[0-9a-f]{64}', str(value)) for value in receipt['continuation_checkpoints'].values()),
                 'Continuation checkpoint inventory is invalid')
-        verify_origin_run(origin, original_run or {}, original_jobs or [], repository, admitted=admitted)
+        if receipt.get('interrupted_origin_sha256'):
+            from portal_extended_interrupted_origin import bound_proof
+            require(isinstance(interrupted_origin, dict)
+                    and digest(stable_bytes(interrupted_origin)) == receipt['interrupted_origin_sha256'],
+                    'Interrupted original source lacks its authenticated explicit proof')
+            bound_proof(interrupted_origin, origin, repository)
+        else:
+            verify_origin_run(origin, original_run or {}, original_jobs or [], repository, admitted=admitted)
+    else:
+        require(not receipt.get('interrupted_origin_sha256'), 'Interrupted proof requires its original source receipt')
     require(run.get('id') == int(producer['run_id']) and run.get('run_attempt') == int(producer['attempt'])
             and run.get('head_sha') == producer['sha'], 'Producer run identity mismatch')
     require(run.get('status') == 'completed' and run.get('conclusion') in ('success', 'failure')
@@ -365,8 +375,13 @@ def main():
                 and len(original_response.get('jobs', [])) == original_response['total_count'],
                 'Original producer job inventory is incomplete')
         original_jobs, original_run = original_response['jobs'], api(original_path)
+    interrupted_origin = None
+    if receipt.get('interrupted_origin_sha256'):
+        from portal_extended_interrupted_origin import authenticate_handoff
+        interrupted_origin = authenticate_handoff(store, receipt, origin, repository, api)
     producer_is_valid(receipt, api(producer_path), jobs['jobs'], repository, admitted,
-                      origin=origin, original_run=original_run, original_jobs=original_jobs)
+                      origin=origin, original_run=original_run, original_jobs=original_jobs,
+                      interrupted_origin=interrupted_origin)
     from portal_extended_handoff import source_repair_proofs, source_repair_completions
     from portal_extended_french_repair import pipeline_for_proof
     repairs = source_repair_proofs(store, receipt)

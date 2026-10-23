@@ -151,7 +151,7 @@ class UnstartedClaimTests(unittest.TestCase):
     def test_incomplete_duplicate_and_started_job_inventories_never_transfer(self):
         before = self.claimed()
         cases = []
-        for change in ({'runner_id':42}, {'steps':[{'name':'checkout'}]}, {'conclusion':'cancelled'},
+        for change in ({'runner_id':42}, {'runner_name':'assigned-runner'}, {'steps':[{'name':'checkout'}]}, {'conclusion':'cancelled'},
                        {'conclusion':'success'}, {'status':'in_progress'}):
             jobs = skipped_jobs(OLD); jobs[1].update(change); cases.append(jobs)
         jobs = skipped_jobs(OLD); jobs[0]['conclusion']='success'; cases.append(jobs)
