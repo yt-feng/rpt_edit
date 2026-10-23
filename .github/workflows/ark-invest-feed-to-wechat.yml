@@ -170,11 +170,10 @@ jobs:
 
       - name: Install Chinese fonts
         if: ${{ steps.replay.outputs.enabled != 'true' }}
-        timeout-minutes: 5
+        timeout-minutes: 8
         continue-on-error: true
         run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends fonts-noto-cjk
+          bash scripts/install_runner_apt_packages.sh fonts-noto-cjk
 
       - name: Fetch new ARK feed items
         id: fetch

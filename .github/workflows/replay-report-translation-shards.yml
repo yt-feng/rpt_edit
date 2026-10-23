@@ -99,11 +99,10 @@ jobs:
             --output-root "$RUNNER_TEMP/translation-output"
       - name: Install Chinese fonts
         if: steps.sources.outputs.complete != 'true'
-        timeout-minutes: 5
+        timeout-minutes: 8
         continue-on-error: true
         run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends fonts-noto-cjk
+          bash scripts/install_runner_apt_packages.sh fonts-noto-cjk
       - name: Set up free local translation models
         if: steps.sources.outputs.complete != 'true'
         uses: ./.github/actions/setup-offline-translation

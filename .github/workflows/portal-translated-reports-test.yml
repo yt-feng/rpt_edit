@@ -76,11 +76,10 @@ jobs:
           pip install reportlab
 
       - name: Install Chinese fonts
-        timeout-minutes: 5
+        timeout-minutes: 8
         continue-on-error: true
         run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends fonts-noto-cjk
+          bash scripts/install_runner_apt_packages.sh fonts-noto-cjk
 
       - name: Set up free local translation models
         uses: ./.github/actions/setup-offline-translation

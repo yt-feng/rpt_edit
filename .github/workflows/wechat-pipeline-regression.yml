@@ -3,6 +3,7 @@ name: WeChat pipeline regression
 on:
   pull_request:
     paths:
+      - "scripts/*runner_apt_packages*"
       - "scripts/*send_portal_ops_alert*"
       - "scripts/institution_wechat_delivery_receipt.py"
       - "scripts/test_institution_wechat_delivery_receipt.py"
@@ -82,6 +83,7 @@ on:
   push:
     branches: [main]
     paths:
+      - "scripts/*runner_apt_packages*"
       - "scripts/*send_portal_ops_alert*"
       - "scripts/institution_wechat_delivery_receipt.py"
       - "scripts/test_institution_wechat_delivery_receipt.py"
@@ -176,10 +178,14 @@ jobs:
           python-version: "3.11"
       - name: Install test dependencies
         run: python -m pip install -r requirements.txt reportlab pypdf pypdfium2==5.13.0 "boto3>=1.37.32,<2" "PyYAML>=6,<7"
-      - name: Install real cloud OCR regression dependencies
+      - name: Test bounded runner dependency setup
         run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends tesseract-ocr tesseract-ocr-eng tesseract-ocr-chi-sim
+          bash -n scripts/install_runner_apt_packages.sh
+          python scripts/test_install_runner_apt_packages.py
+      - name: Install real cloud OCR regression dependencies
+        timeout-minutes: 8
+        run: |
+          bash scripts/install_runner_apt_packages.sh tesseract-ocr tesseract-ocr-eng tesseract-ocr-chi-sim fonts-noto-cjk
           TESSDATA_DIR="$(tesseract --list-langs 2>/dev/null | sed -n '1s/.*"\(.*\)".*/\1/p')"
           test -n "$TESSDATA_DIR"
           test -f "$TESSDATA_DIR/eng.traineddata"
