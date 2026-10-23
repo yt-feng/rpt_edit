@@ -10,6 +10,69 @@ from portal_extended_r2 import (DEFAULT_PREFIX, HEX64, MAX_CHECKPOINT_BYTES,
     MAX_CANDIDATE_MANIFEST_BYTES, R2Store, checkpoint_is_valid, partial_manifest_is_valid, safe_part)
 
 
+class _ReadOnlyCursorClient:
+    """Expose only the bounded HEAD/GET operations used by R2Store._get."""
+    def __init__(self, client):
+        self.head_object = client.head_object
+        self.get_object = client.get_object
+
+    def __getattr__(self, name):
+        raise ExpansionError('Cursor inspection permits only HEAD and GET storage operations')
+
+
+def cursor_locales(value):
+    from portal_extended_locales import select_locales
+    if value == 'all-supported':
+        raise ExpansionError('Cursor inspection requires an explicit locale inventory')
+    return select_locales(value)
+
+
+def inspect_cursors(store, generation, locales, output):
+    """Read one exact generation's registered owners; no translation or mutation."""
+    from portal_extended_continuation import origin_allows_locale, producer_identity, queue, read_origin
+    safe_part(generation, label='generation', pattern=HEX64)
+    locales = cursor_locales(locales)
+    if output.exists():
+        raise ExpansionError('Inspection output must be a new directory')
+    # Even an accidental helper write/list cannot reach the storage client.
+    reader = R2Store(_ReadOnlyCursorClient(store.client), store.bucket, store.prefix)
+    origin = read_origin(reader, generation)
+    if origin is None:
+        raise ExpansionError('Cursor inspection requires a registered generation origin')
+    original_producer = producer_identity(origin['producer'])
+    rows = []
+    for locale in locales:
+        if not origin_allows_locale(origin, locale):
+            raise ExpansionError('Requested locale does not belong to the exact generation')
+        row = queue(reader, locale).get(generation)
+        if row is None:
+            raise ExpansionError('Requested generation has no registered locale cursor')
+        owner = None
+        if row['status'] in {'started', 'claimed'} or 'owner' in row:
+            owner = producer_identity(row.get('owner'))
+        snapshot = row.get('snapshot')
+        hashes = None
+        if snapshot is not None or row['status'] != 'started':
+            fields = ('checkpoint_sha256', 'candidate_id', 'manifest_sha256')
+            if (not isinstance(snapshot, dict)
+                or any(not isinstance(snapshot.get(key), str) or not HEX64.fullmatch(snapshot[key]) for key in fields)
+                or any(type(snapshot.get(key)) is not int or snapshot[key] < 0
+                       for key in ('completed_pages', 'resolved_units'))):
+                raise ExpansionError('Registered cursor snapshot is missing or malformed')
+            hashes = {key: snapshot[key] for key in fields}
+        rows.append({'locale': locale, 'status': row['status'], 'continuations': row['continuations'],
+                     'owner': owner, 'snapshot_hashes': hashes,
+                     'cursor_sha256': digest(stable_bytes(row))})
+    result = {'schema_version': 1, 'read_only': True, 'mode': 'cursor_only',
+              'evidence_scope': 'registered-cursor-identities', 'generation': generation,
+              'source_day': origin['source_day'], 'source_sha256': origin['source_sha256'],
+              'origin_sha256': digest(stable_bytes(origin)), 'origin_producer': original_producer,
+              'cursors': rows, 'production_writes': 0, 'model_calls': 0, 'paid_provider_requests': 0}
+    output.mkdir(parents=True)
+    (output/'inspection.json').write_bytes(stable_bytes(result))
+    return result
+
+
 def unit_alias_signals(text):
     """Only fixed unit-name booleans/counts, never surrounding private wording."""
     from financial_quantity_integrity import NUMBER
@@ -405,12 +468,26 @@ def inspect_english(store, source_store, generation, checkpoint_sha, candidate_i
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--mode', choices=('exact', 'cursor_only'), default='exact')
     parser.add_argument('--prefix')
     parser.add_argument('--source-prefix', default=DEFAULT_PREFIX)
-    for option in ('generation', 'locale', 'checkpoint-sha', 'candidate-id'):
+    for option in ('generation', 'locale'):
         parser.add_argument('--'+option, required=True)
+    parser.add_argument('--checkpoint-sha')
+    parser.add_argument('--candidate-id')
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
+    if args.mode == 'cursor_only':
+        if args.checkpoint_sha or args.candidate_id:
+            parser.error('cursor_only does not accept checkpoint or candidate inputs')
+        safe_part(args.generation, label='generation', pattern=HEX64)
+        cursor_locales(args.locale)
+        result = inspect_cursors(R2Store.from_env(args.prefix or DEFAULT_PREFIX),
+                                 args.generation, args.locale, args.output)
+        print(json.dumps(result, sort_keys=True))
+        return
+    if not args.checkpoint_sha or not args.candidate_id:
+        parser.error('exact inspection requires --checkpoint-sha and --candidate-id')
     if args.locale == 'en':
         from portal_english_commentary import PREFIX
         store = R2Store.from_env(args.prefix or PREFIX)
