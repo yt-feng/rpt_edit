@@ -72,6 +72,8 @@ class ContinuationTests(unittest.TestCase):
             result = inspect_cursors(self.store, self.gen, 'fr,pt', self.root/'cursor-inspection')
         self.assertEqual(self.store.client.objects, before)
         self.assertEqual(result['origin_producer'], PRODUCER)
+        self.assertIsNone(result['source_admission'])
+        self.assertIsNone(result['source_admission_metadata'])
         self.assertEqual([row['locale'] for row in result['cursors']], ['fr', 'pt'])
         for row in result['cursors']:
             self.assertEqual((row['status'], row['continuations'], row['owner']), ('started', 0, PRODUCER))
@@ -79,6 +81,40 @@ class ContinuationTests(unittest.TestCase):
         self.assertEqual((result['model_calls'], result['paid_provider_requests'], result['production_writes']), (0, 0, 0))
         self.assertEqual(list((self.root/'cursor-inspection').iterdir()), [self.root/'cursor-inspection/inspection.json'])
         self.assertNotIn(self.corpus['documents'][0]['url'], json.dumps(result))
+
+    def test_cursor_only_emits_bound_admission_identity_without_private_inventory(self):
+        from portal_extended_daily_queue import prepare_queued, read_corpus, WORKFLOW
+        docs, saved = self.admitted_docs()
+        selected = prepare_queued(self.store, ('fr',))
+        generation = selected['generation']
+        register(self.store, read_corpus(self.store, generation), ('fr',), PRODUCER)
+        before = copy.deepcopy(self.store.client.objects)
+        with patch('hymt_offline_translation.HyMTOfflineTranslator.__init__', side_effect=AssertionError('No model initialization')):
+            result = inspect_cursors(self.store, generation, 'fr', self.root/'admitted-inspection')
+        self.assertEqual(result['source_admission'], saved['admission'])
+        self.assertEqual(result['source_admission_metadata'], {'schema_version': 1,
+            'producer': {**PRODUCER, 'repository': 'example/repo', 'workflow': WORKFLOW},
+            'day': DAY, 'full_generation': saved['generation']})
+        self.assertNotEqual(generation, saved['generation'])  # The inspected batch is a strict subset.
+        self.assertEqual(self.store.client.objects, before)
+        self.assertEqual((result['model_calls'], result['production_writes']), (0, 0))
+        for doc in docs:
+            self.assertNotIn(doc['url'], json.dumps(result))
+
+    def test_cursor_only_rejects_admission_binding_change_before_emitting_metadata(self):
+        from portal_extended_daily_queue import prepare_queued, read_corpus, batch_admission
+        self.admitted_docs()
+        selected = prepare_queued(self.store, ('fr',))
+        generation = selected['generation']
+        register(self.store, read_corpus(self.store, generation), ('fr',), PRODUCER)
+        admitted = batch_admission(self.store, generation)
+        before = copy.deepcopy(self.store.client.objects)
+        for changed in (None, {**admitted, 'admission': 'e'*64}, {**admitted, 'day': '2026-09-24'}):
+            with self.subTest(changed=changed), patch('portal_extended_daily_queue.batch_admission',
+                    side_effect=[admitted, changed]), self.assertRaisesRegex(ExpansionError, 'source admission differs'):
+                inspect_cursors(self.store, generation, 'fr', self.root/'changed-admission')
+            self.assertFalse((self.root/'changed-admission').exists())
+            self.assertEqual(self.store.client.objects, before)
 
     def test_cursor_only_distinguishes_current_claim_owner_from_original_producer(self):
         proof = self.partial()

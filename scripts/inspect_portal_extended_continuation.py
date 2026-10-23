@@ -40,6 +40,19 @@ def inspect_cursors(store, generation, locales, output):
     if origin is None:
         raise ExpansionError('Cursor inspection requires a registered generation origin')
     original_producer = producer_identity(origin['producer'])
+    admission_identity = origin.get('source_admission')
+    admission_metadata = None
+    if admission_identity:
+        from portal_extended_daily_queue import batch_admission
+        admitted = batch_admission(reader, generation)
+        if (admitted is None or admitted['admission'] != admission_identity
+                or admitted['day'] != origin['source_day']):
+            raise ExpansionError('Cursor source admission differs from its registered origin')
+        # This identifies the independently captured inventory for a subsequent
+        # GitHub run/job check; object integrity alone does not prove capture.
+        admission_metadata = {'schema_version': admitted['schema_version'],
+            'producer': admitted['producer'], 'day': admitted['day'],
+            'full_generation': admitted['generation']}
     rows = []
     for locale in locales:
         if not origin_allows_locale(origin, locale):
@@ -67,6 +80,7 @@ def inspect_cursors(store, generation, locales, output):
               'evidence_scope': 'registered-cursor-identities', 'generation': generation,
               'source_day': origin['source_day'], 'source_sha256': origin['source_sha256'],
               'origin_sha256': digest(stable_bytes(origin)), 'origin_producer': original_producer,
+              'source_admission': admission_identity, 'source_admission_metadata': admission_metadata,
               'cursors': rows, 'production_writes': 0, 'model_calls': 0, 'paid_provider_requests': 0}
     output.mkdir(parents=True)
     (output/'inspection.json').write_bytes(stable_bytes(result))
