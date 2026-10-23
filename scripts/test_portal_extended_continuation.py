@@ -11,14 +11,14 @@ from unittest.mock import MagicMock, Mock, patch
 from build_portal_extended_locales import build
 from offline_translation import TranslationBudgetExceeded
 from portal_extended_locales import ExpansionError, digest, make_corpus, stable_bytes
-from portal_extended_r2 import R2Store, R2IntegrityError
+from portal_extended_r2 import R2Store, R2IntegrityError, R2StoreError
 import portal_extended_incremental as incremental
 from portal_extended_continuation import (MAX_CONTINUATIONS, MAX_PENDING_GENERATIONS, adopt_existing,
     acknowledge_published, action_owner, pending, queue, read_origin, register, restore_claimed_checkpoint,
     save_queue, verify_origin_run)
 from portal_extended_handoff import next_registered_batch, read_handoff, save_handoff
 from review_portal_extended_handoff import producer_is_valid
-from inspect_portal_extended_continuation import inspect
+from inspect_portal_extended_continuation import inspect, inspect_cursors, _ReadOnlyCursorClient
 from test_portal_extended_incremental import DAY, daily_doc
 from test_portal_extended_locales import FakeTranslator, ORIGIN
 from test_portal_extended_r2 import FakeR2
@@ -64,6 +64,78 @@ class ContinuationTests(unittest.TestCase):
     def test_fixture_keeps_original_actions_ownership_checks_enabled(self):
         self.assertEqual(os.environ['GITHUB_ACTIONS'], 'true')
         self.assertEqual(action_owner(), PRODUCER)
+
+    def test_cursor_only_reads_explicit_started_owners_without_models_or_writes(self):
+        register(self.store, self.corpus, ('fr', 'pt'), PRODUCER)
+        before = copy.deepcopy(self.store.client.objects)
+        with patch('hymt_offline_translation.HyMTOfflineTranslator.__init__', side_effect=AssertionError('No model initialization')):
+            result = inspect_cursors(self.store, self.gen, 'fr,pt', self.root/'cursor-inspection')
+        self.assertEqual(self.store.client.objects, before)
+        self.assertEqual(result['origin_producer'], PRODUCER)
+        self.assertEqual([row['locale'] for row in result['cursors']], ['fr', 'pt'])
+        for row in result['cursors']:
+            self.assertEqual((row['status'], row['continuations'], row['owner']), ('started', 0, PRODUCER))
+            self.assertIsNone(row['snapshot_hashes'])
+        self.assertEqual((result['model_calls'], result['paid_provider_requests'], result['production_writes']), (0, 0, 0))
+        self.assertEqual(list((self.root/'cursor-inspection').iterdir()), [self.root/'cursor-inspection/inspection.json'])
+        self.assertNotIn(self.corpus['documents'][0]['url'], json.dumps(result))
+
+    def test_cursor_only_distinguishes_current_claim_owner_from_original_producer(self):
+        proof = self.partial()
+        current = {'run_id': '789', 'attempt': '2', 'sha': 'c'*40}
+        pending(self.store, ('fr',), self.root/'claim-source.json', producer=current)
+        before = copy.deepcopy(self.store.client.objects)
+        result = inspect_cursors(self.store, self.gen, 'fr', self.root/'claimed-inspection')
+        self.assertEqual(result['origin_producer'], PRODUCER)
+        self.assertEqual(result['cursors'][0]['owner'], current)
+        self.assertEqual(result['cursors'][0]['continuations'], 1)
+        self.assertEqual(result['cursors'][0]['snapshot_hashes'], proof)
+        self.assertEqual(self.store.client.objects, before)
+
+    def test_cursor_only_rejects_invalid_owner_or_snapshot_without_output_or_writes(self):
+        register(self.store, self.corpus, ('fr',), PRODUCER)
+        for row in ({'status': 'started', 'continuations': 0, 'owner': {**PRODUCER, 'attempt': '0'}},
+                    {'status': 'started', 'continuations': 0},
+                    {'status': 'claimed', 'continuations': 1, 'owner': PRODUCER, 'snapshot': {}}):
+            with self.subTest(row=row):
+                save_queue(self.store, 'fr', {self.gen: row})
+                before = copy.deepcopy(self.store.client.objects)
+                with self.assertRaises(ExpansionError):
+                    inspect_cursors(self.store, self.gen, 'fr', self.root/'invalid-inspection')
+                self.assertFalse((self.root/'invalid-inspection').exists())
+                self.assertEqual(self.store.client.objects, before)
+
+    def test_cursor_only_rejects_ambiguous_or_unknown_scope_before_storage(self):
+        for generation, locales in (('not-a-generation', 'fr'), (self.gen, 'fr,fr'),
+                                    (self.gen, 'all-supported'), (self.gen, 'en'), (self.gen, 'fr,unknown')):
+            with self.subTest(generation=generation, locales=locales):
+                with self.assertRaises((ExpansionError, R2StoreError)):
+                    inspect_cursors(None, generation, locales, self.root/'unused-inspection')
+        register(self.store, self.corpus, ('fr',), PRODUCER)
+        with self.assertRaisesRegex(ExpansionError, 'does not belong'):
+            inspect_cursors(self.store, self.gen, 'pt', self.root/'foreign-inspection')
+
+    def test_cursor_storage_adapter_cannot_write_delete_list_or_make_transfers(self):
+        reader = _ReadOnlyCursorClient(self.store.client)
+        for method in ('put_object', 'delete_object', 'list_objects_v2', 'upload_file', 'download_file', 'get_paginator'):
+            with self.subTest(method=method), self.assertRaises(ExpansionError):
+                getattr(reader, method)
+        self.assertTrue(callable(reader.head_object))
+        self.assertTrue(callable(reader.get_object))
+
+    def test_inspection_cli_keeps_exact_hashes_required_and_validates_cursor_mode_before_r2(self):
+        import inspect_portal_extended_continuation as inspection
+        from contextlib import redirect_stderr
+        import io
+        base = ['inspect', '--generation', self.gen, '--locale', 'fr', '--output', str(self.root/'cli')]
+        for extra in ([], ['--checkpoint-sha', 'a'*64],
+                      ['--mode', 'cursor_only', '--candidate-id', 'b'*64]):
+            with self.subTest(extra=extra), patch('sys.argv', base+extra), \
+                    patch.object(R2Store, 'from_env') as connect, redirect_stderr(io.StringIO()), \
+                    self.assertRaises(SystemExit) as stopped:
+                inspection.main()
+            self.assertEqual(stopped.exception.code, 2)
+            connect.assert_not_called()
 
     def partial(self, *, registered=True, locale='fr'):
         if registered:
