@@ -810,8 +810,15 @@ class HyMTOfflineTranslator:
             prefix = re.match(r'^(?:\s*>\s*)*(?:\s{0,3}#{1,6}\s+|\s*[-+*]\s+(?:\[[ xX]\]\s+)?|\s*\d+[.)]\s+)?', line).group()
             try:
                 translated = prefix + self.translate(line[len(prefix):], target, source)
-            except OfflineTranslationValidationError as error:
-                if source_fallback is None:
+            except OfflineTranslationError as error:
+                # An unsplittable source sentence is a content limitation,
+                # not a broken runtime. Reports already opt in to retaining
+                # rejected units; use that same explicit, diagnosed path
+                # instead of losing the whole report/shard. Strict callers
+                # and all other runtime failures still stop here.
+                retainable = (isinstance(error, OfflineTranslationValidationError)
+                              or error.code == 'offline-context-limit')
+                if source_fallback is None or not retainable:
                     raise
                 # Preserve the complete source unit, including its exact
                 # prefix, links, figures and line ending. Invalid model output
