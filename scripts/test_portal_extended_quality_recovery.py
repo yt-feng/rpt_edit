@@ -448,6 +448,34 @@ class RecoveryTests(unittest.TestCase):
         self.assertEqual(jobs,[]);self.assertTrue(budget.stopped);self.assertLessEqual(budget.reads,2)
         self.assertFalse(recovery.followup(self.store,[],fixtures.OWNER)['continue'])
 
+    def test_unrelated_verification_preserves_remaining_time_and_read_limits(self):
+        now = [0]
+        budget = recovery.ScanBudget(seconds=300, reads=2, api_reads=1, clock=lambda: now[0])
+        now[0] = 40
+        budget.consume('r2')
+        with budget.exclude_elapsed():
+            now[0] += 600
+        budget.consume('r2')
+        budget.consume('api')
+        self.assertEqual((budget.reads, budget.api_reads), (2, 1))
+        self.assertEqual(budget.deadline - now[0], 260)
+        for kind in ('r2', 'api'):
+            with self.assertRaises(recovery.ScanBudgetStop): budget.consume(kind)
+
+    def test_excluding_verification_does_not_reset_consumed_scan_time(self):
+        now = [0]
+        budget = recovery.ScanBudget(seconds=300, clock=lambda: now[0])
+        now[0] = 40
+        with budget.exclude_elapsed():
+            now[0] += 600
+        now[0] += 260
+        with self.assertRaises(recovery.ScanBudgetStop): budget.consume('r2')
+        self.assertTrue(budget.stopped)
+        self.assertEqual(budget.reads, 0)
+        with budget.exclude_elapsed():
+            now[0] += 600
+        with self.assertRaises(recovery.ScanBudgetStop): budget.consume('r2')
+
     def test_empty_ordinary_turn_does_not_stall_debt(self):
         write_state(self.store,'quality-recovery-turn','fr',{'last':'quality'})
         with patch.object(recovery,'normal_work',return_value=False):
