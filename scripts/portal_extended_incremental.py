@@ -270,8 +270,11 @@ def main() -> int:
         if producer and not recovery:
             from portal_extended_continuation import partition_stopped_locales
             source_progress('continuation-evidence', 'start', locales=len(locales))
-            locales, stopped = partition_stopped_locales(store, locales,
-                progress=lambda **counts: source_progress('continuation-evidence', **counts))
+            # Tail recovery and quality selection share one bounded scan; the
+            # intervening ordinary-generation proof audit has its own job cap.
+            with quality_budget.exclude_elapsed():
+                locales, stopped = partition_stopped_locales(store, locales,
+                    progress=lambda **counts: source_progress('continuation-evidence', **counts))
             source_progress('continuation-evidence', 'complete', eligible=len(locales), stopped=len(stopped),
                             elapsed_seconds=round(time.monotonic()-started, 1))
         if producer and args.operation == 'prepare' and not args.generation:

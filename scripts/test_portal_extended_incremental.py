@@ -318,4 +318,40 @@ class EnglishMatrixTests(unittest.TestCase):
                 connect.assert_not_called()
 
 
+class SourceScanTimingTests(unittest.TestCase):
+    def test_slow_continuation_audit_leaves_quality_selection_its_remaining_budget(self):
+        from portal_extended_quality_recovery import ScanBudget
+        now = [0]
+        budget = ScanBudget(clock=lambda: now[0])
+        class SelectionReached(Exception): pass
+        def resume(*args, **kwargs):
+            self.assertIs(kwargs['budget'], budget)
+            now[0] += 40
+            budget.consume('r2')
+            return []
+        def partition(store, locales, **kwargs):
+            now[0] += 600
+            return locales, []
+        def select(*args, **kwargs):
+            self.assertIs(kwargs['budget'], budget)
+            budget.consume('r2')
+            self.assertEqual(budget.reads, 2)
+            self.assertEqual(budget.deadline - now[0], 260)
+            raise SelectionReached()
+        environment = {'GITHUB_ACTIONS': 'true', 'GITHUB_REF': 'refs/heads/main',
+                       'GITHUB_RUN_ID': '1', 'GITHUB_RUN_ATTEMPT': '1',
+                       'GITHUB_SHA': 'a'*40, 'GITHUB_REPOSITORY': 'owner/repo'}
+        with mock.patch.dict('os.environ', environment, clear=True), \
+             mock.patch('sys.argv', ['incremental', 'prepare', '--locales', 'fr']), \
+             mock.patch.object(R2Store, 'from_env'), \
+             mock.patch('portal_extended_recovery_intent.consume_one'), \
+             mock.patch('portal_extended_quality_recovery.ScanBudget', return_value=budget), \
+             mock.patch('portal_extended_quality_recovery.resume_prepared', side_effect=resume), \
+             mock.patch('portal_extended_continuation.partition_stopped_locales', side_effect=partition), \
+             mock.patch('portal_extended_quality_recovery.pending_tail_locales', return_value=()), \
+             mock.patch('portal_extended_quality_recovery.prepare', side_effect=select), \
+             self.assertRaises(SelectionReached):
+            main()
+
+
 if __name__ == '__main__': unittest.main()

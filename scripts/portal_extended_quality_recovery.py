@@ -43,6 +43,15 @@ class ScanBudget:
         self.reads = self.api_reads = 0
         self.stopped = False
 
+    @contextlib.contextmanager
+    def exclude_elapsed(self):
+        """Keep unrelated source verification outside the shared scan timer."""
+        started = self.clock()
+        try:
+            yield
+        finally:
+            self.deadline += self.clock() - started
+
     def consume(self, kind):
         count, limit = (self.reads,self.read_limit) if kind == 'r2' else (self.api_reads,self.api_limit)
         if self.clock() >= self.deadline or count >= limit:
