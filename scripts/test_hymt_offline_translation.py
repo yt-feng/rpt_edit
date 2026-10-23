@@ -869,6 +869,7 @@ class HyMTTests(unittest.TestCase):
 
     def test_markdown_fallback_does_not_swallow_runtime_transport_or_programming_errors(self):
         for error in (h.OfflineTranslationError('Missing model provenance'),
+                      h.OfflineTranslationError('request timeout', code='offline-request-timeout'),
                       OSError('transport failed'), TypeError('programming failure')):
             with self.subTest(error=error):
                 def fail(_text, error=error):
@@ -879,6 +880,33 @@ class HyMTTests(unittest.TestCase):
                     translator.translate_markdown('Revenue grew 12.5%.\n', 'zh', 'en', source_fallback=events.append)
                 self.assertNotIsInstance(caught.exception, h.OfflineTranslationValidationError)
                 self.assertEqual(events, [])
+        self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
+
+    def test_markdown_context_limit_retains_complete_unit_and_reuses_neighbors(self):
+        oversized = '> - Cash reserves were USD 120 million ' + 'with additional context ' * 100 + '\r\n'
+        source = '# Revenue\r\n\r\n' + oversized + 'Revenue grew 12.5%.\r\n'
+        translator = self.translator(lambda text: text.replace('Revenue grew', '收入增长').replace('Revenue', '收入'))
+        events = []
+        for _ in range(2):
+            result = translator.translate_markdown(source, 'zh', 'en', source_fallback=events.append)
+            self.assertEqual(result, '# 收入\r\n\r\n' + oversized + '收入增长 12.5%.\r\n')
+        self.assertEqual(len(self.engine.calls), 2)  # Reuse accepted neighboring units.
+        self.assertEqual(len(list(Path(self.directory.name).rglob('*.json'))), 2)
+        self.assertEqual([event['line'] for event in events], [3, 3])
+        self.assertEqual(events[0]['source_sha256'], h.hashlib.sha256(oversized.encode()).hexdigest())
+        self.assertIn('context limit', events[0]['reason'])
+        self.assertNotIn('Cash reserves', json.dumps(events))
+        with self.assertRaises(h.OfflineTranslationError) as caught:
+            translator.translate_markdown(source, 'zh', 'en')
+        self.assertEqual(caught.exception.code, 'offline-context-limit')
+
+    def test_context_limit_diagnostic_write_failure_still_stops_report(self):
+        translator = self.translator(lambda _: '翻译')
+        def failed_diagnostics(_event):
+            raise OSError('diagnostic checkpoint write failed')
+        with self.assertRaisesRegex(OSError, 'checkpoint write failed'):
+            translator.translate_markdown('word ' * 500, 'zh', 'en', source_fallback=failed_diagnostics)
+        self.assertEqual(self.engine.calls, [])
         self.assertFalse(list(Path(self.directory.name).rglob('*.json')))
 
     def test_diagnostic_write_failure_still_stops_report_fallback(self):

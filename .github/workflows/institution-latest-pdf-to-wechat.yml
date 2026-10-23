@@ -201,20 +201,18 @@ jobs:
               output.write(f"manifest_path={copied}\n")
           PY
 
-      - name: Install Chinese fonts
-        timeout-minutes: 5
-        continue-on-error: true
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends fonts-noto-cjk
-
       - name: Install required institution OCR fallback tools
         if: ${{ inputs.completed_source_recovery == '' || inputs.completed_source_recovery == 'none' }}
-        timeout-minutes: 5
+        timeout-minutes: 8
         run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends tesseract-ocr tesseract-ocr-eng tesseract-ocr-chi-sim
+          bash scripts/install_runner_apt_packages.sh tesseract-ocr tesseract-ocr-eng tesseract-ocr-chi-sim
           tesseract --list-langs
+
+      - name: Install Chinese fonts
+        timeout-minutes: 8
+        continue-on-error: true
+        run: |
+          bash scripts/install_runner_apt_packages.sh fonts-noto-cjk
 
       - name: Export visible dependency holds before fetching originals
         env:

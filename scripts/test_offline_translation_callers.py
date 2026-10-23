@@ -142,6 +142,39 @@ class OfflineTranslationCallerTests(unittest.TestCase):
             self.assertFalse((root / 'editorial').exists())
         self.paid.assert_not_called()
 
+    def test_full_report_context_limit_is_rendered_with_notice_and_diagnostics(self):
+        oversized = 'Cash reserves were USD 120 million ' + 'with additional context ' * 100 + '\n'
+        markdown = '# Revenue grew.\n\n' + oversized + '\nRevenue grew.\n'
+        engine = Mock()
+        engine.translate.side_effect = lambda text, *_: {
+            'Revenue grew.': '收入增长。', 'Growth report': '增长报告'}[text]
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / 'source'
+            source.mkdir()
+            (source / 'source_mineru.md').write_text(markdown)
+            self.factory.return_value = OfflineTranslator(cache_dir=root / 'memo', engine_factory=lambda *_: engine)
+            args = Namespace(max_images_per_report=1, title_refine=True)
+            with patch.object(reports, 'report_title', return_value='Growth report'), \
+                    patch.object(reports, 'is_public_or_consulting_report', return_value=False), \
+                    patch.object(reports, 'prepare_clean_markdown', return_value=(markdown, [])), \
+                    patch.object(reports, 'render_pdf') as render:
+                result = reports.process_report(source, root / 'out', 60, args)
+            self.assertEqual(result['global_index'], 60)
+            self.assertEqual(result['pdf'], 'portal_translated_report_60.pdf')
+            self.assertEqual(result['untranslated_unit_count'], 1)
+            self.assertEqual(result['translation_notice'], '部分内容保留原文')
+            self.assertIn(oversized.rstrip(), render.call_args.args[0])
+            self.assertIn('> 部分内容保留原文。', render.call_args.args[0])
+            output = Path(result['output_dir'])
+            diagnostics = json.loads((output / 'translation_fallbacks.json').read_text())
+            status = json.loads((output / 'translation_status.json').read_text())
+            self.assertEqual(diagnostics['fallbacks'], status['translation_fallbacks'])
+            self.assertIn('context limit', diagnostics['fallbacks'][0]['reason'])
+            self.assertEqual(engine.translate.call_count, 2)
+            self.assertEqual(len(list((root / 'memo').rglob('*.json'))), 2)
+        self.paid.assert_not_called()
+
     def test_full_report_filename_runtime_failure_is_not_source_fallback(self):
         self.engine.translate.side_effect = RuntimeError('runtime unavailable')
         args = Namespace()

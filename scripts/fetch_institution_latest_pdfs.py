@@ -1520,9 +1520,34 @@ def filter_institution_pdf_candidates(institution: str, candidates: list[str]) -
     return [url for url in candidates if _bcg_pdf_host_allowed(url)] if institution == "bcg" else candidates
 
 
+def _without_bcg_external_pdf_footnotes(html_text: str, base_url: str) -> str:
+    """Exclude explicitly numbered external citations, never report downloads.
+
+    BCG web articles can cite company filings as <a><sup>viii</sup></a>.
+    Those links do not promise a PDF version of the BCG article. Remove only
+    that precise markup before discovery, including its duplicate analytics
+    attributes. An ordinary external download or a URL also advertised outside
+    the citation remains visible to the missing-main-PDF health check.
+    """
+    if not _bcg_pdf_host_allowed(base_url) or urlsplit(base_url).hostname not in {"bcg.com", "www.bcg.com"}:
+        return html_text
+
+    def remove_citation(match: re.Match[str]) -> str:
+        anchor = match.group(0)
+        urls = [urljoin(base_url, html.unescape(value.group(1).strip()))
+                for value in PDF_HREF_RE.finditer(anchor)]
+        return "" if urls and all(not _bcg_pdf_host_allowed(url) for url in urls) else anchor
+
+    return re.sub(
+        r"<a\b[^>]*>\s*<sup(?:\s[^>]*)?>\s*(?:[0-9]+|[ivxlcdm]+)\s*</sup>\s*</a\s*>",
+        remove_citation, html_text, flags=re.I,
+    )
+
+
 def scrape_pdf_candidates(html_text: str, base_url: str) -> list[str]:
     if urlsplit(base_url).hostname in {"bis.org", "www.bis.org"}:
         return scrape_bis_pdf_candidates(html_text, base_url)
+    html_text = _without_bcg_external_pdf_footnotes(html_text, base_url)
     host = urlsplit(base_url).netloc
     candidates: list[str] = []
     seen: set[str] = set()

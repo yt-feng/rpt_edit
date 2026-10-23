@@ -176,7 +176,9 @@ jobs:
         (github.event_name == 'push' && contains(github.event.head_commit.message, '[r2-candidate]'))
       }}
     runs-on: ubuntu-22.04
-    timeout-minutes: 20
+    # Verify retained per-locale proofs plus the separately bounded 5-minute
+    # quality scan before any matrix runs. Keep setup/diagnostic headroom.
+    timeout-minutes: 60
     outputs:
       has_work: ${{ steps.source.outputs.has_work }}
       generation: ${{ steps.source.outputs.generation }}
@@ -201,6 +203,7 @@ jobs:
         run: python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2" "requests>=2.31,<3"
       - name: Continue registered original generations before selecting today new detail pages
         id: source
+        timeout-minutes: 50
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}

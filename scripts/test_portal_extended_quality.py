@@ -4,6 +4,7 @@ import json
 import os
 from pathlib import Path
 import tempfile
+import threading
 import unittest
 from unittest.mock import patch
 
@@ -15,7 +16,7 @@ from portal_extended_incremental import prepare, read_state, remember_candidate,
 from portal_extended_locales import ExpansionError, digest, make_corpus, stable_bytes
 from portal_extended_quality import (candidate_quality, debt_rows, handoff_quality, proof_key, quality_fields,
                                      quality_summary, record_quality, verify_quality)
-from portal_extended_r2 import R2NotFound, R2Store
+from portal_extended_r2 import R2IntegrityError, R2NotFound, R2Store
 from test_portal_extended_incremental import DAY, URL, daily_doc, raw_page
 from test_portal_extended_locales import FakeTranslator
 from test_portal_extended_r2 import FakeR2
@@ -222,6 +223,33 @@ class QualityTests(unittest.TestCase):
         self.assertEqual((eligible, stopped), (('fr',), []))
         self.assertEqual(queue(self.store, 'fr'), before)
         self.assertEqual(quality_summary(self.store, ('fr',))['quality_debt_source_fallback_units'], 2)
+
+    def test_parallel_complete_cursors_preserve_each_locale_debt_and_reject_corrupt_peer(self):
+        locales = ('fr', 'pt')
+        register(self.store, self.corpus, locales, PRODUCER)
+        results = {locale: self.candidate(locale)[0] for locale in locales}
+        for locale in locales:
+            write_state(self.store, 'quality-debt', locale, {'generations': {}})
+        before = {locale: copy.deepcopy(queue(self.store, locale)) for locale in locales}
+        barrier = threading.Barrier(2)
+        def overlapping_record(*args, **kwargs):
+            barrier.wait(timeout=2)
+            return record_quality(*args, **kwargs)
+        with patch('portal_extended_quality.record_quality', side_effect=overlapping_record):
+            self.assertEqual(partition_stopped_locales(self.store, locales), (locales, []))
+        for locale in locales:
+            self.assertEqual(queue(self.store, locale), before[locale])
+            row = debt_rows(self.store, locale)[self.generation]
+            self.assertEqual(row['candidate_id'], results[locale]['candidate_id'])
+            self.assertEqual(row['source_fallback_unit_count'], 2)
+        self.assertNotEqual(debt_rows(self.store, 'fr')[self.generation]['proof_sha256'],
+                            debt_rows(self.store, 'pt')[self.generation]['proof_sha256'])
+        checksum = before['pt'][self.generation]['snapshot']['checkpoint_sha256']
+        key = self.store.checkpoint_object_key('pt', self.generation, checksum)
+        self.store.client.objects[key]['body'] = b'broken'
+        with self.assertRaises((ExpansionError, R2IntegrityError)):
+            partition_stopped_locales(self.store, locales)
+        self.assertEqual({locale: queue(self.store, locale) for locale in locales}, before)
 
     def test_proof_and_debt_replay_write_nothing_and_leak_no_source(self):
         result, _, _, _ = self.candidate()

@@ -415,7 +415,15 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertLess(upload, cutover)
         self.assertLess(cutover, deploy)
         self.assertIn("--max-workers 16", self.workflow[upload:cutover])
-        self.assertIn("timeout-minutes: 150", self.workflow[prepare:cutover])
+        preparation = self.workflow[prepare:cutover]
+        preparation_timeout = int(re.search(r"^    timeout-minutes: (\d+)$", preparation, re.M)[1])
+        upload_step = self.workflow[upload:cutover].split("      - name:", 1)[0]
+        upload_timeout = int(re.search(r"^        timeout-minutes: (\d+)$", upload_step, re.M)[1])
+        # The observed full build takes 111 minutes before the 44k-file upload.
+        # Leave 30 minutes for post-upload checks without weakening either gate.
+        self.assertGreaterEqual(upload_timeout, 90)
+        self.assertGreaterEqual(preparation_timeout, 120 + upload_timeout + 30)
+        self.assertLessEqual(preparation_timeout, 360)
         transaction = self.workflow[cutover:].split("  cleanup_multilingual_shadow:", 1)[0]
         job_timeout = int(re.search(r"^    timeout-minutes: (\d+)$", transaction, re.M)[1])
         step_timeouts = [int(value) for value in re.findall(r"^        timeout-minutes: (\d+)$", transaction, re.M)]

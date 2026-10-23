@@ -480,11 +480,10 @@ jobs:
         run: echo "::notice::Shard ${{ matrix.shard_index }} is already complete; ${{ steps.completed.outputs.reason }}."
       - name: Install Chinese fonts for cover images
         if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
-        timeout-minutes: 5
+        timeout-minutes: 8
         continue-on-error: true
         run: |
-          sudo apt-get update
-          sudo apt-get install -y fonts-noto-cjk fonts-arphic-ukai
+          bash scripts/install_runner_apt_packages.sh fonts-noto-cjk fonts-arphic-ukai
       - name: Install Python dependencies
         if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
         run: |
@@ -1423,11 +1422,10 @@ jobs:
             --prefix "${{ needs.plan-portal-translated-reports.outputs.source_prefix }}" \
             --date-dir "xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}"
       - name: Install Chinese fonts
-        timeout-minutes: 5
+        timeout-minutes: 8
         continue-on-error: true
         run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends fonts-noto-cjk
+          bash scripts/install_runner_apt_packages.sh fonts-noto-cjk
       - name: Set up free local translation models
         uses: ./.github/actions/setup-offline-translation
         with:

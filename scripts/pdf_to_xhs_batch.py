@@ -381,12 +381,14 @@ def load_font(size: int, bold: bool = False):
     candidates = [
         "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc" if bold else "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
         "/usr/share/fonts/truetype/noto/NotoSansCJK-Bold.ttc" if bold else "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
     ]
     for candidate in candidates:
         if Path(candidate).exists():
             return ImageFont.truetype(candidate, size)
-    return ImageFont.load_default()
+    # The optional system-font download can time out. PyMuPDF already bundles a
+    # CJK font, so covers must keep Chinese glyphs instead of using Latin-only
+    # DejaVu/default box glyphs. The bundled fallback has one regular weight.
+    return ImageFont.truetype(BytesIO(fitz.Font("cjk").buffer), size)
 
 
 def load_kai_font(size: int):

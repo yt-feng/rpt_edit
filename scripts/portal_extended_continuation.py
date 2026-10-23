@@ -5,6 +5,7 @@ Matrix workers only update their own locale ledger. Immutable origins and result
 objects survive removal of acknowledged queue entries.
 """
 from __future__ import annotations
+from concurrent.futures import ThreadPoolExecutor
 import json
 import os
 from pathlib import Path
@@ -16,6 +17,7 @@ from portal_extended_r2 import (HEX64, MAX_CHECKPOINT_BYTES, MAX_CANDIDATE_MANIF
 
 MAX_PENDING_GENERATIONS = 64
 MAX_CONTINUATIONS = 3
+MAX_SOURCE_SCAN_WORKERS = 4
 
 
 def producer_identity(value):
@@ -275,16 +277,22 @@ def validate_snapshot(store, locale, generation, row):
     return manifest, keys
 
 
-def partition_stopped_locales(store, locales):
+def partition_stopped_locales(store, locales, *, progress=None):
     """Keep known stopped cursors visible while healthy locales can advance.
 
     Storage, origin/hash, or schema failures still propagate; only recognized
     lifecycle stops are isolated. A separate workflow job reports them as failure.
     """
-    eligible, stopped = [], []
-    for locale in locales:
+    # Each locale owns a distinct mutable debt ledger. Verify those independent
+    # inventories concurrently, keeping each locale's generation order and all
+    # existing evidence checks. The source workflow remains serialized and this
+    # scan never claims a continuation or starts translation.
+    def inspect_locale(locale):
         blocked = []
-        for generation, row in queue(store, locale).items():
+        rows = queue(store, locale)
+        if progress:
+            progress(locale=locale, stage='start', generations=len(rows), checked=0)
+        for checked, (generation, row) in enumerate(rows.items(), 1):
             origin = read_origin(store, generation)
             if not origin or not origin_allows_locale(origin, locale):
                 raise ExpansionError('Registered cursor has no valid original source')
@@ -311,11 +319,23 @@ def partition_stopped_locales(store, locales):
                 blocked.append({'locale': locale, 'generation': generation, 'source_day': origin['source_day'],
                                 'status': row['status'], 'continuations': row['continuations'],
                                 'reason': reason, 'model_calls': 0})
+            if progress:
+                progress(locale=locale, stage='progress', generations=len(rows), checked=checked)
+        if progress:
+            progress(locale=locale, stage='complete', generations=len(rows), checked=len(rows))
         if blocked:
             first = sorted(blocked, key=lambda row: (row['source_day'], row['generation']))[0]
-            stopped.append({**first, 'stopped_generation_count': len(blocked)})
-        else:
-            eligible.append(locale)
+            return None, {**first, 'stopped_generation_count': len(blocked)}
+        return locale, None
+
+    if not locales:
+        return (), []
+    with ThreadPoolExecutor(max_workers=min(MAX_SOURCE_SCAN_WORKERS, len(locales))) as executor:
+        results = list(executor.map(inspect_locale, locales))
+    # map retains the requested locale order; worker completion timing cannot
+    # change source selection or diagnostic ordering.
+    eligible = [locale for locale, _ in results if locale is not None]
+    stopped = [row for _, row in results if row is not None]
     return tuple(eligible), stopped
 
 

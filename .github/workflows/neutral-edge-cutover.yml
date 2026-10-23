@@ -125,7 +125,9 @@ jobs:
         )
       }}
     runs-on: ubuntu-22.04
-    timeout-minutes: 150
+    # Preparing 44k+ files used 111 minutes before upload in run 39864542229.
+    # Reserve a separate bounded upload window plus post-upload verification.
+    timeout-minutes: 240
     outputs:
       changed: ${{ steps.release_delta.outputs.changed }}
       static_release: ${{ steps.runtime_context.outputs.static_release }}
@@ -1773,6 +1775,7 @@ jobs:
             --output "$RUNNER_TEMP/shadow-samples.json"
 
       - name: Upload inactive static slot and immutable runtime
+        timeout-minutes: 90
         id: static_upload
         if: steps.release_delta.outputs.changed == 'true' && (steps.operation.outputs.multilingual_enabled != 'true' || steps.locale_build.outputs.ready == 'true')
         env:

@@ -281,6 +281,33 @@ class BCGDiscoveryEvidenceTests(unittest.TestCase):
         self.assertEqual(manifest["source_checks"][0]["resolution_failure_count"], 0)
         self.assertEqual(seen["bcg:" + self.CURRENT_PAGE]["status"], "no_pdf")
 
+    def test_bcg_web_article_with_only_external_footnotes_is_not_a_missing_report(self):
+        page = "https://www.bcg.com/publications/2026/united-states-the-ai-powered-holiday-what-retailers-need-to-know"
+        markup = (Path(__file__).parent / "fixtures/institution_sources/bcg_holiday_citations.html").read_text()
+        with tempfile.TemporaryDirectory() as directory:
+            code, manifest, seen, _gets, downloads = self.run_bcg_main(directory, self.item(page), markup)
+        self.assertEqual((code, downloads), (0, []))
+        self.assertEqual(manifest["skipped"][0]["reason"], "no_pdf")
+        self.assertEqual(manifest["source_checks"][0]["resolution_failure_count"], 0)
+        self.assertEqual(seen["bcg:" + page]["status"], "no_pdf")
+
+    def test_footnote_filter_preserves_official_pdf_and_non_bcg_sources(self):
+        for label in ("5", "viii"):
+            markup = f'<a data-href="{self.SEA_PDF}"><sup>{label}</sup></a><a href="{self.OFFICIAL_PDF}"><sup>1</sup></a>'
+            self.assertEqual(fetcher.scrape_pdf_candidates(markup, self.CURRENT_PAGE), [self.OFFICIAL_PDF])
+            for other_page in ("https://external.example/article", "https://www.bcg.com.evil.test/article"):
+                self.assertEqual(set(fetcher.scrape_pdf_candidates(markup, other_page)), {self.SEA_PDF, self.OFFICIAL_PDF})
+
+    def test_external_download_stays_unresolved_even_when_also_cited_as_footnote(self):
+        citation = f'<a data-href="{self.SEA_PDF}"><sup>v</sup></a>'
+        for download in (f'<a href="{self.SEA_PDF}">Download report</a>',
+                         f'<meta name="citation_pdf_url" content="{self.SEA_PDF}">',
+                         f'<script>var report = "{self.SEA_PDF}";</script>'):
+            with self.subTest(download=download), tempfile.TemporaryDirectory() as directory:
+                code, manifest, seen, _gets, downloads = self.run_bcg_main(directory, self.item(), citation + download)
+            self.assertEqual((code, seen, downloads), (2, {}, []))
+            self.assertEqual(manifest["skipped"][0]["reason"], "main_pdf_missing")
+
     def test_external_citation_before_official_report_cannot_win_generic_link_order(self):
         page = f'<a href="{self.SEA_PDF}">Citation</a><a href="{self.OFFICIAL_PDF}">Report</a>'
         with tempfile.TemporaryDirectory() as directory:
