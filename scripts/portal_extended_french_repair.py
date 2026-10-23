@@ -119,7 +119,15 @@ class RepairPipeline:
                 and isinstance(jobs, list) and len(jobs) == page['total_count'],
                 'French repair original job inventory is incomplete')
         admitted = batch_admission(store, origin['generation'])
-        verify_origin_run(origin, run, jobs, repository, admitted=admitted)
+        try:
+            verify_origin_run(origin, run, jobs, repository, admitted=admitted)
+        except ExpansionError:
+            from portal_extended_interrupted_origin import authenticate as interrupted_origin
+            interrupted_origin(store, origin, repository, api)
+            from portal_extended_completion import authenticate
+            authenticate(store, origin, self.locale, repository, api, adoption=completion_evidence,
+                capture=capture, expected_snapshot=snapshot, completed_row=completed_row)
+            return
         matched = [job for job in jobs if job.get('name') == f'locale ({self.locale})']
         if (len(matched) == 1 and matched[0].get('status') == 'completed'
                 and matched[0].get('conclusion') == 'success'

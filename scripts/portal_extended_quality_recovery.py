@@ -77,6 +77,20 @@ class ScanBudget:
                 'max_seconds':MAX_SCAN_SECONDS,'max_r2_reads':self.read_limit,'max_api_reads':self.api_limit}
 
 
+def cached_attempt_api(api, budget):
+    """Cache immutable exact attempts; latest-run guards always re-read GitHub."""
+    responses = {}
+    def read(path):
+        if '/attempts/' not in path:
+            budget.consume('api')
+            return api(path)
+        if path not in responses:
+            budget.consume('api')
+            responses[path] = api(path)
+        return responses[path]
+    return read
+
+
 def ordered_locales(store, locales):
     key=store.key('incremental','quality-recovery-scheduler','cursor.json')
     try: value=json.loads(store._get(key,maximum=4096))
@@ -353,12 +367,7 @@ def prepare(store, locales, owner, repository, api, *, budget=None):
     store = budget.storage(store)
     jobs, blocked = [], []
     # Cache exact original run/job reads within this source job, not across runs.
-    responses = {}
-    def cached_api(path):
-        if path not in responses:
-            budget.consume('api')
-            responses[path] = api(path)
-        return responses[path]
+    cached_api = cached_attempt_api(api, budget)
     for locale_index, locale in enumerate(locales):
         try:
             rows = queue(store, locale)
@@ -405,12 +414,8 @@ def resume_prepared(store, locales, owner, repository, api, *, budget=None):
     control_store = store
     locales = ordered_locales(control_store,locales)
     store = budget.storage(store)
-    resumed, responses = [], {}
-    def cached_api(path):
-        if path not in responses:
-            budget.consume('api')
-            responses[path] = api(path)
-        return responses[path]
+    resumed = []
+    cached_api = cached_attempt_api(api, budget)
     for locale in locales:
         try:
             identity = read_state(store, 'quality-recovery-active', locale).get('plan')
