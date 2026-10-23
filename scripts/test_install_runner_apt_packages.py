@@ -124,10 +124,23 @@ class RunnerAptTests(unittest.TestCase):
         block = text[install:].split("\n      - name:", 1)[0]
         self.assertIn("timeout-minutes: 8", block)
         self.assertIn("bash scripts/install_runner_apt_packages.sh", block)
-        self.assertIn("fonts-noto-cjk", block)
+        self.assertNotIn("fonts-noto-cjk", block)
         self.assertIn('test -f "$TESSDATA_DIR/eng.traineddata"', block)
         self.assertIn('test -f "$TESSDATA_DIR/chi_sim.traineddata"', block)
         self.assertNotIn("continue-on-error", block)
+        optional = text.index("- name: Exercise optional Chinese font setup")
+        verify = text.index("- name: Verify required OCR and released package locks after optional fonts")
+        self.assertLess(install, optional)
+        self.assertLess(optional, verify)
+        self.assertIn("continue-on-error: true", text[optional:verify])
+        self.assertIn("timeout-minutes: 8", text[optional:verify])
+        block = text[verify:].split("\n      - name:", 1)[0]
+        self.assertNotIn("continue-on-error", block)
+        self.assertIn("LOCK_EX | fcntl.LOCK_NB", block)
+        for path in ("/var/lib/dpkg/lock-frontend", "/var/lib/dpkg/lock",
+                     "/var/lib/apt/lists/lock", "/var/cache/apt/archives/lock"):
+            self.assertIn(path, block)
+        self.assertIn("python scripts/test_pdf_to_xhs_fonts.py", text)
 
 
 if __name__ == "__main__":
