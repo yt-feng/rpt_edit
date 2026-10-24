@@ -108,11 +108,13 @@ jobs:
       - name: Check new modules and unchanged offline translation contracts
         run: |
           set -euo pipefail
-          python -m pip install 'requests>=2.31,<3' 'Pillow>=10.1,<12' 'PyYAML>=6,<7'
+          python -m pip install 'requests>=2.31,<3' 'Pillow>=10.1,<12' 'PyYAML>=6,<7' 'boto3>=1.34,<2'
           python -B scripts/test_portal_extended_locales.py
           python -B scripts/test_portal_extended_hardening.py
           python -B scripts/test_portal_extended_source_fallback.py
           python -B scripts/test_portal_extended_r2.py
+          python -B scripts/test_portal_extended_r2_sdk.py
+          python -B scripts/test_portal_extended_source_reads.py
           python -B scripts/test_portal_extended_quality.py
           python -B scripts/test_portal_extended_repair_contract.py
           python -B scripts/test_portal_extended_quality_recovery.py

@@ -13,7 +13,7 @@ import re
 from portal_extended_locales import (ExpansionError, daily_corpus_day, digest,
     select_locales, stable_bytes, validate_corpus)
 from portal_extended_r2 import (HEX64, MAX_CHECKPOINT_BYTES, MAX_CANDIDATE_MANIFEST_BYTES,
-    MAX_SOURCE_BYTES, R2NotFound, checkpoint_is_valid, partial_manifest_is_valid)
+    R2NotFound, checkpoint_is_valid, partial_manifest_is_valid)
 
 MAX_PENDING_GENERATIONS = 64
 MAX_CONTINUATIONS = 3
@@ -66,7 +66,8 @@ def read_origin(store, generation):
         or list(select_locales(','.join(value['locales']))) != value['locales']):
         raise ExpansionError('Invalid generation origin receipt')
     producer_identity(value.get('producer'))
-    corpus_raw = store._get(store.source_key(generation), maximum=MAX_SOURCE_BYTES)
+    from portal_extended_daily_queue import read_corpus_bytes
+    corpus_raw = read_corpus_bytes(store, generation)
     corpus = json.loads(corpus_raw)
     docs = validate_corpus(corpus)
     if (digest(corpus_raw) != value['source_sha256'] or corpus['documents_sha256'] != generation
@@ -115,7 +116,8 @@ def register(store, corpus, locales, producer):
         raise ExpansionError('Only bounded daily sources may be registered')
     locales = select_locales(','.join(locales))
     producer = producer_identity(producer)
-    source_raw = store._get(store.source_key(generation), maximum=MAX_SOURCE_BYTES)
+    from portal_extended_daily_queue import read_corpus_bytes
+    source_raw = read_corpus_bytes(store, generation)
     if json.loads(source_raw) != corpus:
         raise ExpansionError('Registered source differs from stored source')
     old = read_origin(store, generation)
@@ -192,7 +194,8 @@ def candidate_evidence(store, locale, generation, candidate, checksum=''):
         or manifest.get('source_document_count') != origin['pages']
         or not isinstance(manifest.get('failures'), list) or type(manifest.get('budget_exhausted')) is not bool):
         raise ExpansionError('Continuation candidate inventory or outcome is invalid')
-    corpus = json.loads(store._get(store.source_key(generation), maximum=MAX_SOURCE_BYTES))
+    from portal_extended_daily_queue import read_corpus
+    corpus = read_corpus(store, generation)
     source_urls = {doc['url'] for doc in corpus['documents']}
     completed = [row['source_url'] for row in manifest['pages']]
     if len(set(completed)) != len(completed) or not set(completed) <= source_urls:
