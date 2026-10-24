@@ -1676,6 +1676,18 @@
     "bcg:https://www.bcg.com/publications/2026/unified-agentic-core-insurance": {
       "first_seen": "2026-10-22",
       "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/saudi-arabia-consumer-outlook": {
+      "first_seen": "2026-10-24",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/united-states-the-ai-powered-holiday-what-retailers-need-to-know": {
+      "first_seen": "2026-10-24",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/new-drug-modalities-pipeline-plateau": {
+      "first_seen": "2026-10-24",
+      "status": "no_pdf"
     }
   }
 }
