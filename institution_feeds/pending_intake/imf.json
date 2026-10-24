@@ -2,127 +2,109 @@
   "schema": 1,
   "institution": "imf",
   "items": {
-    "imf:77d834912b98fea9b73987e1aea17530119ec580bbea0116da2c9c431a56": {
+    "imf:202b9da14b44c6535aa3e6af43600f695e53d2e966911b55a30c5e9a472b": {
       "item": {
-        "title": "Georgia: Technical Assistance Report-Data For Decision (D4D) Report on Residential Property Price Index (April 13–24, 2026)",
-        "source_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/21/georgia-technical-assistance-report-data-for-decision-d4d-report-on-residential-property-580584",
-        "guid": "77d834912b98fea9b73987e1aea17530119ec580bbea0116da2c9c431a56",
-        "date": "2026-10-21T04:00:00+00:00",
+        "title": "Recurring Natural Disasters and Macroeconomic Scarring: A Risk Adjusted DIGNAD Framework",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/10/23/recurring-natural-disasters-and-macroeconomic-scarring-a-risk-adjusted-dignad-framework-579393",
+        "guid": "202b9da14b44c6535aa3e6af43600f695e53d2e966911b55a30c5e9a472b",
+        "date": "2026-10-23T04:00:00+00:00",
         "pdf_candidates": [
-          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026085.pdf",
-          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026085-source-pdf.pdf"
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026222-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026222.pdf"
         ],
-        "scrape_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/21/georgia-technical-assistance-report-data-for-decision-d4d-report-on-residential-property-580584",
-        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/21/georgia-technical-assistance-report-data-for-decision-d4d-report-on-residential-property-580584"
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/10/23/recurring-natural-disasters-and-macroeconomic-scarring-a-risk-adjusted-dignad-framework-579393",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/10/23/recurring-natural-disasters-and-macroeconomic-scarring-a-risk-adjusted-dignad-framework-579393"
       },
-      "admitted_at": "2026-10-22T00:22:19.358839+00:00",
+      "admitted_at": "2026-10-24T00:11:33.704863+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-10-22T00:22:19.358839+00:00",
+      "last_attempted_at": "2026-10-24T00:11:33.704863+00:00",
       "attempts": 1
     },
-    "imf:2e361ad232ed5536e81b6685976ec844138e0ffde7abf24732174b14d4f7": {
+    "imf:288b0b0f49c62ebcea24d52642b0dce6b55d7405b465e241b584f159c700": {
       "item": {
-        "title": "Thailand: Technical Assistance Report-Report on Government Finance Statistics and Public Sector Debt Statistics Mission (February 23-27, 2026)",
-        "source_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/21/thailand-technical-assistance-report-report-on-government-finance-statistics-and-public-580579",
-        "guid": "2e361ad232ed5536e81b6685976ec844138e0ffde7abf24732174b14d4f7",
-        "date": "2026-10-21T04:00:00+00:00",
+        "title": "Effectiveness of Monetary Policy Transmission in Morocco amid Reforms to the Monetary Policy Framework",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/10/23/effectiveness-of-monetary-policy-transmission-in-morocco-amid-reforms-to-the-monetary-578726",
+        "guid": "288b0b0f49c62ebcea24d52642b0dce6b55d7405b465e241b584f159c700",
+        "date": "2026-10-23T04:00:00+00:00",
         "pdf_candidates": [
-          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026084.pdf",
-          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026084-source-pdf.pdf"
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026223-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026223.pdf"
         ],
-        "scrape_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/21/thailand-technical-assistance-report-report-on-government-finance-statistics-and-public-580579",
-        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/21/thailand-technical-assistance-report-report-on-government-finance-statistics-and-public-580579"
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/10/23/effectiveness-of-monetary-policy-transmission-in-morocco-amid-reforms-to-the-monetary-578726",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/10/23/effectiveness-of-monetary-policy-transmission-in-morocco-amid-reforms-to-the-monetary-578726"
       },
-      "admitted_at": "2026-10-22T00:22:19.358839+00:00",
+      "admitted_at": "2026-10-24T00:11:33.704863+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-10-22T00:22:19.358839+00:00",
+      "last_attempted_at": "2026-10-24T00:11:33.704863+00:00",
       "attempts": 1
     },
-    "imf:bd9a8e175e1f37c6286616e0a95957253b02783beb37987729ee9d0797e0": {
+    "imf:8127a7a21b9cbaefb40831acdd02561ce3820dff559bf0089bcb4d21a045": {
       "item": {
-        "title": "Common Monetary Area: Technical Assistance Report-Project Sunbird and Cross-Border Payments with CBDC",
-        "source_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/21/common-monetary-area-technical-assistance-report-project-sunbird-and-cross-border-payments-580589",
-        "guid": "bd9a8e175e1f37c6286616e0a95957253b02783beb37987729ee9d0797e0",
-        "date": "2026-10-21T04:00:00+00:00",
+        "title": "The Global Fiscal Actions (GFA) Dataset",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/10/23/the-global-fiscal-actions-gfa-dataset-580695",
+        "guid": "8127a7a21b9cbaefb40831acdd02561ce3820dff559bf0089bcb4d21a045",
+        "date": "2026-10-23T04:00:00+00:00",
         "pdf_candidates": [
-          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026086.pdf",
-          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026086-source-pdf.pdf"
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026221-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026221.pdf"
         ],
-        "scrape_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/21/common-monetary-area-technical-assistance-report-project-sunbird-and-cross-border-payments-580589",
-        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/21/common-monetary-area-technical-assistance-report-project-sunbird-and-cross-border-payments-580589"
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/10/23/the-global-fiscal-actions-gfa-dataset-580695",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/10/23/the-global-fiscal-actions-gfa-dataset-580695"
       },
-      "admitted_at": "2026-10-22T00:22:19.358839+00:00",
+      "admitted_at": "2026-10-24T00:11:33.704863+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-10-22T00:22:19.358839+00:00",
+      "last_attempted_at": "2026-10-24T00:11:33.704863+00:00",
       "attempts": 1
     },
-    "imf:c588482c59280ba315ca555687083ec08de3beb98d845c949f94862f12fa": {
+    "imf:96d6dbd1fda7aa2bec36f1eb68ef4a1c96164681caab34d67dbb7ee21a0b": {
       "item": {
-        "title": "Common Monetary Area: Project Sunbird and cross-border payments with CBDC",
-        "source_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/15/common-monetary-area-project-sunbird-and-cross-border-payments-with-cbdc-580545",
-        "guid": "c588482c59280ba315ca555687083ec08de3beb98d845c949f94862f12fa",
-        "date": "2026-10-21T04:00:00+00:00",
+        "title": "Republic of Türkiye: Technical Assistance Report-Fiscal Transparency Evaluation Update",
+        "source_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/22/republic-of-trkiye-technical-assistance-report-fiscal-transparency-evaluation-update-580600",
+        "guid": "96d6dbd1fda7aa2bec36f1eb68ef4a1c96164681caab34d67dbb7ee21a0b",
+        "date": "2026-10-23T04:00:00+00:00",
         "pdf_candidates": [
-          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026072.pdf",
-          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026072-source-pdf.pdf"
+          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026087.pdf",
+          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026087-source-pdf.pdf"
         ],
-        "scrape_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/15/common-monetary-area-project-sunbird-and-cross-border-payments-with-cbdc-580545",
-        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/15/common-monetary-area-project-sunbird-and-cross-border-payments-with-cbdc-580545"
+        "scrape_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/22/republic-of-trkiye-technical-assistance-report-fiscal-transparency-evaluation-update-580600",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/22/republic-of-trkiye-technical-assistance-report-fiscal-transparency-evaluation-update-580600"
       },
-      "admitted_at": "2026-10-22T00:22:19.358839+00:00",
+      "admitted_at": "2026-10-24T00:11:33.704863+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-10-22T00:22:19.358839+00:00",
+      "last_attempted_at": "2026-10-24T00:11:33.704863+00:00",
       "attempts": 1
     },
-    "imf:f0844b984383f155114413877c6021433462a80cc0c89e76f43cd0360c50": {
+    "imf:82797e340f25130fe00c13a7df6df6e0b371a6cce3ffda48b2dda713c7fa": {
       "item": {
-        "title": "Republic of Yemen: Request for a Staff-Monitored Program-Press Release; and Staff Report",
-        "source_url": "https://www.imf.org/en/publications/cr/issues/2026/10/21/republic-of-yemen-request-for-a-staff-monitored-program-press-release-and-staff-report-580605",
-        "guid": "f0844b984383f155114413877c6021433462a80cc0c89e76f43cd0360c50",
-        "date": "2026-10-21T04:00:00+00:00",
+        "title": "Regional Economic Outlook for the Middle East and Central Asia, October 2026",
+        "source_url": "https://www.imf.org/en/publications/reo/meca/issues/2026/10/22/regional-economic-outlook-middle-east-central-asia-october-2026",
+        "guid": "82797e340f25130fe00c13a7df6df6e0b371a6cce3ffda48b2dda713c7fa",
+        "date": "2026-10-22T06:00:00+00:00",
         "pdf_candidates": [],
-        "scrape_url": "https://www.imf.org/en/publications/cr/issues/2026/10/21/republic-of-yemen-request-for-a-staff-monitored-program-press-release-and-staff-report-580605",
-        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/cr/issues/2026/10/21/republic-of-yemen-request-for-a-staff-monitored-program-press-release-and-staff-report-580605"
+        "scrape_url": "https://www.imf.org/en/publications/reo/meca/issues/2026/10/22/regional-economic-outlook-middle-east-central-asia-october-2026",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/reo/meca/issues/2026/10/22/regional-economic-outlook-middle-east-central-asia-october-2026"
       },
-      "admitted_at": "2026-10-22T00:22:19.358839+00:00",
+      "admitted_at": "2026-10-24T00:11:33.704863+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-10-22T00:22:19.358839+00:00",
+      "last_attempted_at": "2026-10-24T00:11:33.704863+00:00",
       "attempts": 1
     },
-    "imf:709ce17581e0024ff067b0839ad4b5a4d0f70c5793baffe8efaadd3501b0": {
+    "imf:1d6f82aeba61413b8f5c2a5e2fb2556f7a927f6645a945eb1d714418b416": {
       "item": {
-        "title": "Uganda's Government Bond Yield Curve: Structure, Drivers, and Policy Implications",
-        "source_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/10/20/uganda-s-government-bond-yield-curve-structure-drivers-and-policy-implications-580610",
-        "guid": "709ce17581e0024ff067b0839ad4b5a4d0f70c5793baffe8efaadd3501b0",
+        "title": "Republic of Türkiye: Fiscal Transparency Evaluation Update",
+        "source_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/20/republic-of-trkiye-fiscal-transparency-evaluation-update-580594",
+        "guid": "1d6f82aeba61413b8f5c2a5e2fb2556f7a927f6645a945eb1d714418b416",
         "date": "2026-10-21T04:00:00+00:00",
         "pdf_candidates": [
-          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026103.pdf",
-          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026103-source-pdf.pdf"
+          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026074.pdf",
+          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026074-source-pdf.pdf"
         ],
-        "scrape_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/10/20/uganda-s-government-bond-yield-curve-structure-drivers-and-policy-implications-580610",
-        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/selected-issues-papers/issues/2026/10/20/uganda-s-government-bond-yield-curve-structure-drivers-and-policy-implications-580610"
+        "scrape_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/20/republic-of-trkiye-fiscal-transparency-evaluation-update-580594",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/10/20/republic-of-trkiye-fiscal-transparency-evaluation-update-580594"
       },
-      "admitted_at": "2026-10-22T00:22:19.358839+00:00",
+      "admitted_at": "2026-10-24T00:11:33.704863+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-10-22T00:22:19.358839+00:00",
-      "attempts": 1
-    },
-    "imf:67bbdc062dbf2012c460bec0b839dffcf9079dbd261a98cac2f3cfecfe37": {
-      "item": {
-        "title": "Financial Deepening: Unpacking Barriers for Stronger Growth, Uganda",
-        "source_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/10/20/financial-deepening-unpacking-barriers-for-stronger-growth-uganda-580616",
-        "guid": "67bbdc062dbf2012c460bec0b839dffcf9079dbd261a98cac2f3cfecfe37",
-        "date": "2026-10-21T04:00:00+00:00",
-        "pdf_candidates": [
-          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026104.pdf",
-          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026104-source-pdf.pdf"
-        ],
-        "scrape_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/10/20/financial-deepening-unpacking-barriers-for-stronger-growth-uganda-580616",
-        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/selected-issues-papers/issues/2026/10/20/financial-deepening-unpacking-barriers-for-stronger-growth-uganda-580616"
-      },
-      "admitted_at": "2026-10-22T00:22:19.358839+00:00",
-      "since_days": 7,
-      "last_attempted_at": "2026-10-22T00:22:19.358839+00:00",
+      "last_attempted_at": "2026-10-24T00:11:33.704863+00:00",
       "attempts": 1
     }
   }
