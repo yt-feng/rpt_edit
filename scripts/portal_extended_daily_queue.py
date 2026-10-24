@@ -8,11 +8,14 @@ never by discovering/scraping historical URLs.
 from __future__ import annotations
 
 import argparse
+from collections import OrderedDict
+from concurrent.futures import Future
 import json
 import os
 from pathlib import Path
 import re
 import tempfile
+from threading import Lock
 import time
 from urllib.parse import urlsplit
 
@@ -29,6 +32,50 @@ POLICY = 'daily-source-admission-v1'
 WORKFLOW = '.github/workflows/portal-extended-locales-source.yml'
 MAX_DAYS = 32
 MAX_RECORD_BYTES = 65536
+_SOURCE_CACHE_INIT_LOCK = Lock()
+
+
+class _SourceCorpusCache:
+    """Bounded, store-owned bytes for verified immutable source generations only."""
+
+    def __init__(self, *, max_entries=32, max_bytes=MAX_SOURCE_BYTES):
+        self.max_entries = max_entries
+        self.max_bytes = max_bytes
+        self.entries = OrderedDict()
+        self.byte_count = 0
+        self.inflight = {}
+        self.lock = Lock()
+
+    def read(self, key, load):
+        with self.lock:
+            if key in self.entries:
+                self.entries.move_to_end(key)
+                return self.entries[key]
+            future = self.inflight.get(key)
+            leader = future is None
+            if leader:
+                future = self.inflight[key] = Future()
+        if not leader:
+            return future.result()
+        try:
+            raw = load()
+        except BaseException as error:
+            # Share this attempt with current readers, but retain no failure.
+            with self.lock:
+                future.set_exception(error)
+                del self.inflight[key]
+            raise
+        with self.lock:
+            if self.max_entries > 0 and len(raw) <= self.max_bytes:
+                while self.entries and (len(self.entries) >= self.max_entries
+                                        or self.byte_count + len(raw) > self.max_bytes):
+                    _, removed = self.entries.popitem(last=False)
+                    self.byte_count -= len(removed)
+                self.entries[key] = raw
+                self.byte_count += len(raw)
+            future.set_result(raw)
+            del self.inflight[key]
+        return raw
 
 
 def checked_producer(value):
@@ -133,13 +180,33 @@ def read_admission(store, identity):
     return value
 
 
-def read_corpus(store, generation):
+def read_corpus_bytes(store, generation):
+    """Reuse exact source bytes only after R2, corpus and generation validation.
+
+    No queue, receipt or checkpoint pointer passes through this cache. Keeping
+    it on the store bounds both its lifetime and its memory; callers parsing
+    the immutable bytes receive independent objects rather than shared dicts.
+    """
     safe_part(generation, label='source generation', pattern=HEX64)
-    corpus = json.loads(store._get(store.source_key(generation), maximum=MAX_SOURCE_BYTES))
-    validate_corpus(corpus)
-    if corpus['documents_sha256'] != generation:
-        raise R2IntegrityError('Admitted source generation differs')
-    return corpus
+    key = store.source_key(generation)
+    with _SOURCE_CACHE_INIT_LOCK:
+        cache = getattr(store, '_source_corpus_cache', None)
+        if cache is None:
+            cache = store._source_corpus_cache = _SourceCorpusCache()
+
+    def load():
+        raw = store._get(key, maximum=MAX_SOURCE_BYTES)
+        corpus = json.loads(raw)
+        validate_corpus(corpus)
+        if corpus['documents_sha256'] != generation:
+            raise R2IntegrityError('Admitted source generation differs')
+        return raw
+
+    return cache.read((store.bucket, key), load)
+
+
+def read_corpus(store, generation):
+    return json.loads(read_corpus_bytes(store, generation))
 
 
 def inventory(store, entry):

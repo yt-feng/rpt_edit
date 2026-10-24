@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import Mock, call, patch
 
 from portal_extended_r2 import (
     R2IntegrityError,
@@ -14,6 +15,8 @@ from portal_extended_r2 import (
     R2PermissionError,
     R2Store,
     R2StoreError,
+    R2TransportError,
+    READ_RETRY_DELAYS,
     classify,
     fake_permission_check,
     require_staging_prefix,
@@ -30,18 +33,30 @@ class Denied(Exception):
     response = {"Error": {"Code": "AccessDenied"}, "ResponseMetadata": {"HTTPStatusCode": 403}}
 
 
+class HttpError(Exception):
+    def __init__(self, code: str, status: int, retries: int | None = 0):
+        self.response = {"Error": {"Code": code}, "ResponseMetadata": {"HTTPStatusCode": status}}
+        if retries is not None:
+            self.response["ResponseMetadata"]["RetryAttempts"] = retries
+
+
 class FakeBody:
     def __init__(self, body: bytes):
         self.body = body
+        self.closed = False
 
     def read(self, maximum: int = -1) -> bytes:
         return self.body[:maximum] if maximum >= 0 else self.body
+
+    def close(self) -> None:
+        self.closed = True
 
 
 class FakeR2:
     def __init__(self):
         self.objects: dict[str, dict] = {}
         self.deny = False
+        self.bodies: list[FakeBody] = []
 
     def put_object(self, *, Bucket, Key, Body, ContentType, CacheControl, Metadata):
         if self.deny:
@@ -62,7 +77,9 @@ class FakeR2:
             raise Denied()
         if Key not in self.objects:
             raise Missing()
-        return {"Body": FakeBody(self.objects[Key]["body"])}
+        body = FakeBody(self.objects[Key]["body"])
+        self.bodies.append(body)
+        return {"Body": body, "ResponseMetadata": {"RetryAttempts": 0}}
 
 
 class R2Tests(unittest.TestCase):
@@ -73,6 +90,12 @@ class R2Tests(unittest.TestCase):
         self.store = R2Store(self.client, "private-bucket", "_extended-locales/staging/test")
         self.corpus = corpus()
         self.generation = self.corpus["documents_sha256"]
+        sleep_patch = patch("portal_extended_r2.time.sleep")
+        self.sleep = sleep_patch.start()
+        self.addCleanup(sleep_patch.stop)
+        jitter_patch = patch("portal_extended_r2.random.uniform", return_value=0.25)
+        jitter_patch.start()
+        self.addCleanup(jitter_patch.stop)
 
     def tearDown(self):
         self.tmp.cleanup()
@@ -137,6 +160,142 @@ class R2Tests(unittest.TestCase):
         self.client.put_source = None
         with self.assertRaises(R2IntegrityError):
             self.store._verify_head({"ContentLength": 1, "Metadata": {"sha256": "0" * 64}}, "x", 2, "1" * 64)
+
+    def seed_read(self) -> tuple[str, bytes, dict]:
+        self.client = FakeR2()
+        self.store.client = self.client
+        key, body = "read-test", b"complete source or candidate page"
+        self.store._put(key, body, metadata={})
+        return key, body, self.client.head_object(Bucket="private-bucket", Key=key)
+
+    def test_head_failure_does_not_start_another_sdk_retry_chain(self):
+        key, _body, _head = self.seed_read()
+        self.client.head_object = Mock(side_effect=HttpError("429", 429))
+        self.client.get_object = Mock(wraps=self.client.get_object)
+        with self.assertRaises(R2TransportError):
+            self.store._get(key, maximum=1024)
+        self.assertEqual(self.client.head_object.call_count, 1)
+        self.client.get_object.assert_not_called()
+        self.sleep.assert_not_called()
+
+    def test_throttling_exhaustion_is_not_missing_checkpoint(self):
+        self.client.head_object = Mock(side_effect=HttpError("429", 429))
+        self.client.get_object = Mock(wraps=self.client.get_object)
+        destination = self.root / "checkpoint.json"
+        with self.assertRaises(R2TransportError):
+            self.store.restore_checkpoint("fr", self.generation, destination)
+        self.assertEqual(self.client.head_object.call_count, 1)
+        self.sleep.assert_not_called()
+        self.client.get_object.assert_not_called()
+        self.assertFalse(destination.exists())
+
+    def test_get_request_failure_does_not_start_another_sdk_retry_chain(self):
+        for error in (HttpError("429", 429), HttpError("ServiceUnavailable", 503)):
+            with self.subTest(error=error.response):
+                key, _body, head = self.seed_read()
+                self.client.head_object = Mock(return_value=head)
+                self.client.get_object = Mock(side_effect=error)
+                with self.assertRaises(R2TransportError):
+                    self.store._get(key, maximum=1024)
+                self.assertEqual(self.client.head_object.call_count, 1)
+                self.assertEqual(self.client.get_object.call_count, 1)
+        self.sleep.assert_not_called()
+
+    def test_request_failures_without_retry_authority_fail_once(self):
+        errors = [
+            (HttpError("AccessDenied", 403), R2PermissionError),
+            (HttpError("", 404), R2NotFound),
+            (HttpError("NoSuchKey", 404), R2NotFound),
+            (HttpError("UnknownError", 400), R2TransportError),
+            (HttpError("InternalError", 500, retries=None), R2TransportError),
+            (HttpError("429", 429, retries=8), R2TransportError),
+            (TimeoutError("SDK retry metadata absent"), R2TransportError),
+            (OSError("unclassified transport error"), R2TransportError),
+        ]
+        for error, expected in errors:
+            with self.subTest(error=error), self.assertRaises(expected):
+                self.client.head_object = Mock(side_effect=error)
+                self.store._get("object", maximum=1024)
+            self.assertEqual(self.client.head_object.call_count, 1)
+        self.sleep.assert_not_called()
+
+    def test_post_put_head_failure_does_not_replay_put(self):
+        key, body, _head = self.seed_read()
+        self.client.put_object = Mock(wraps=self.client.put_object)
+        self.client.head_object = Mock(side_effect=HttpError("429", 429))
+        with self.assertRaises(R2TransportError):
+            self.store._put(key, body, metadata={})
+        self.assertEqual(self.client.put_object.call_count, 1)
+        self.assertEqual(self.client.head_object.call_count, 1)
+        self.sleep.assert_not_called()
+
+    def test_put_failure_is_not_replayed_by_read_retry(self):
+        self.client.put_object = Mock(side_effect=HttpError("429", 429))
+        self.client.head_object = Mock(wraps=self.client.head_object)
+        with self.assertRaises(R2TransportError):
+            self.store._put("object", b"body", metadata={})
+        self.assertEqual(self.client.put_object.call_count, 1)
+        self.client.head_object.assert_not_called()
+        self.sleep.assert_not_called()
+
+    def test_stream_timeout_closes_and_restarts_only_get(self):
+        key, body, head = self.seed_read()
+        self.client.head_object = Mock(return_value=head)
+        broken, complete = FakeBody(b"partial"), FakeBody(body)
+        broken.read = Mock(side_effect=TimeoutError("interrupted stream"))
+        self.client.get_object = Mock(side_effect=[{"Body": broken}, {"Body": complete}])
+        self.assertEqual(self.store._get(key, maximum=1024), body)
+        self.assertEqual(self.client.head_object.call_count, 1)
+        self.assertEqual(self.client.get_object.call_count, 2)
+        self.assertTrue(broken.closed)
+        self.assertTrue(complete.closed)
+        self.sleep.assert_called_once_with(2.25)
+
+    def test_stream_retry_exhaustion_closes_every_body(self):
+        key, body, head = self.seed_read()
+        self.client.head_object = Mock(return_value=head)
+        bodies = [FakeBody(body) for _ in range(len(READ_RETRY_DELAYS) + 1)]
+        for stream in bodies:
+            stream.read = Mock(side_effect=TimeoutError("interrupted stream"))
+        self.client.get_object = Mock(side_effect=[{"Body": stream} for stream in bodies])
+        with self.assertRaises(R2TransportError):
+            self.store._get(key, maximum=1024)
+        self.assertEqual(self.client.head_object.call_count, 1)
+        self.assertEqual(self.client.get_object.call_count, len(bodies))
+        self.assertTrue(all(stream.closed for stream in bodies))
+        self.assertEqual(self.sleep.call_args_list, [call(delay + 0.25) for delay in READ_RETRY_DELAYS])
+
+    def test_stream_does_not_multiply_sdk_retries_or_retry_unknown_errors(self):
+        for error, retries in [(TimeoutError("interrupted stream"), 8), (OSError("unknown"), 0)]:
+            with self.subTest(error=error, retries=retries):
+                key, body, head = self.seed_read()
+                self.client.head_object = Mock(return_value=head)
+                broken = FakeBody(body)
+                broken.read = Mock(side_effect=error)
+                self.client.get_object = Mock(return_value={"Body": broken, "ResponseMetadata": {"RetryAttempts": retries}})
+                with self.assertRaises(R2TransportError):
+                    self.store._get(key, maximum=1024)
+                self.assertEqual(self.client.get_object.call_count, 1)
+                self.assertTrue(broken.closed)
+        self.sleep.assert_not_called()
+
+    def test_checksum_and_length_validation_never_retry(self):
+        for change in ("checksum", "length", "maximum"):
+            with self.subTest(change=change):
+                key, body, head = self.seed_read()
+                if change == "checksum":
+                    head["Metadata"]["sha256"] = "0" * 64
+                elif change == "length":
+                    head["ContentLength"] += 1
+                self.client.head_object = Mock(return_value=head)
+                stream = FakeBody(body)
+                self.client.get_object = Mock(return_value={"Body": stream})
+                with self.assertRaises(R2IntegrityError):
+                    self.store._get(key, maximum=1 if change == "maximum" else 1024)
+                self.assertEqual(self.client.head_object.call_count, 1)
+                self.assertEqual(self.client.get_object.call_count, 0 if change == "maximum" else 1)
+                self.assertEqual(stream.closed, change != "maximum")
+        self.sleep.assert_not_called()
 
 
 if __name__ == "__main__":
