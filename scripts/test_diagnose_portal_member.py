@@ -18,6 +18,12 @@ spec.loader.exec_module(diagnostic)
 
 
 class DiagnosticTest(unittest.TestCase):
+    def test_database_selection_is_bounded_and_does_not_require_password_columns(self):
+        selected = {"username": "Example", "id": "selected", "email": "private"}
+        with patch.object(diagnostic, "database_rows", return_value=[selected, {"username": "other"}]) as request:
+            self.assertEqual(diagnostic.selected_database_users(hashlib.sha256(b"example").hexdigest()), [selected])
+            self.assertEqual(request.call_args[0][1]["select"], "id,username,email")
+
     def test_only_selected_outcomes_leave_the_read_only_client(self):
         now = datetime.now(timezone.utc).isoformat()
         day = datetime.now(timezone.utc).date().isoformat()

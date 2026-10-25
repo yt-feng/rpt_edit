@@ -5,11 +5,39 @@ import os
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from urllib.parse import quote, unquote
+from urllib.parse import quote, unquote, urlencode, urlsplit
+from urllib.request import Request, urlopen
 
 
 def selected_fields(row, fields):
     return {key: row[key] for key in fields if key in (row or {})}
+
+
+def database_rows(table, params):
+    base = os.environ["SUPABASE_URL"].rstrip("/")
+    if urlsplit(base).scheme != "https" or urlsplit(base).username:
+        raise ValueError("invalid database origin")
+    key = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
+    request = Request(base + "/rest/v1/" + table + "?" + urlencode(params),
+                      headers={"apikey": key, "Authorization": "Bearer " + key})
+    with urlopen(request, timeout=20) as response:
+        raw = response.read(2 * 1024 * 1024 + 1)
+    if len(raw) > 2 * 1024 * 1024:
+        raise ValueError("bounded database response exceeded")
+    result = json.loads(raw)
+    if not isinstance(result, list):
+        raise ValueError("invalid database response")
+    return result
+
+
+def selected_database_users(wanted):
+    selected = []
+    for offset in range(0, 10000, 1000):
+        rows = database_rows("site_users", {"select": "id,username,email", "order": "id.asc", "limit": "1000", "offset": str(offset)})
+        selected.extend(row for row in rows if hashlib.sha256(str(row.get("username", "")).strip().lower().encode()).hexdigest() == wanted)
+        if len(rows) < 1000:
+            return selected
+    raise ValueError("bounded account selection exceeded")
 
 
 def main():
@@ -49,18 +77,21 @@ def main():
         finally:
             body.close()
 
+    database = bool(os.environ.get("SUPABASE_URL") and os.environ.get("SUPABASE_SERVICE_ROLE_KEY"))
     prefix = "_account/users/username/"
-    matched = [key for key in keys(prefix) if hashlib.sha256(unquote(key[len(prefix):]).lower().encode()).hexdigest() == wanted]
+    matched = selected_database_users(wanted) if database else [read(key) for key in keys(prefix)
+        if hashlib.sha256(unquote(key[len(prefix):]).lower().encode()).hexdigest() == wanted]
     report = {"read_only": True, "matched_account_count": len(matched)}
     if len(matched) == 1:
-        user = read(matched[0]) or {}
+        user = matched[0] or {}
         email, uid = str(user.get("email", "")), str(user.get("id", ""))
         if not email or not uid:
             raise ValueError("selected account identity incomplete")
         def account_key(*parts):
             return "_account/" + "/".join(quote(part, safe="~()*!.'-") for part in parts)
         access = read(account_key("access", email)) or {}
-        entitlement = read(account_key("entitlements", email)) or {}
+        entitlement = ((database_rows("user_entitlements", {"email": "eq." + email, "order": "updated_at.desc", "limit": "1"}) or [{}])[0]
+                       if database else read(account_key("entitlements", email)) or {})
         states = [read(account_key("user-state", kind, value)) or {} for kind, value in [("email", email), ("id", uid)]]
         access_fields = ("status", "access_mode", "duration_value", "duration_unit", "starts_at", "current_period_end",
                          "expires_at", "lifetime", "download_limit", "download_count", "created_at", "updated_at", "revoked_at")

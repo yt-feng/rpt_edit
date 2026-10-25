@@ -134,6 +134,7 @@ async function main() {
   const context = {
     window, document, URLSearchParams, Promise, Map, PUBLIC_BRAND: 'KC桌面', CONTENT_LOCALE: input.locale, EXTERNAL_SOURCE: 'external',
     loadJson: async path => { calls.push(['loadJson', path]); if (path.includes('catalog')) throw new Error('Full catalog fallback is forbidden'); return {}; },
+    loadDetailJson: async path => { calls.push(['loadJson', path]); if (path.includes('catalog')) throw new Error('Full catalog fallback is forbidden'); return {}; },
     loadOptionalJson: async path => { calls.push(['loadOptionalJson', path]); return { items: [] }; },
     loadReportDetailRecord() { throw new Error('Unverified base detail fallback is forbidden'); },
     reportPreviewFromParams() { calls.push(['queryPreview']); return { title: '未经验证的中文标题' }; },
