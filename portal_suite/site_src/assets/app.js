@@ -1424,6 +1424,26 @@
 
   const readerAssetLoads = new Map();
   const readerReportContexts = new Map();
+  function initSiteFeedback() {
+    if (window.PortalFeedback) {
+      window.PortalFeedback.mount();
+      return;
+    }
+    if (document.querySelector("script[data-site-feedback-loader]")) return;
+    if (!document.querySelector("link[data-site-feedback-style]")) {
+      const stylesheet = document.createElement("link");
+      stylesheet.rel = "stylesheet";
+      stylesheet.href = "/assets/site-feedback.css?v=feedback-v1";
+      stylesheet.dataset.siteFeedbackStyle = "";
+      document.head.append(stylesheet);
+    }
+    const script = document.createElement("script");
+    script.src = "/assets/site-feedback.js?v=feedback-v1";
+    script.async = true;
+    script.dataset.siteFeedbackLoader = "";
+    document.head.append(script);
+  }
+
   function loadReaderAsset(name, globalName) {
     if (window[globalName]) return Promise.resolve(window[globalName]);
     if (readerAssetLoads.has(name)) return readerAssetLoads.get(name);
@@ -14506,6 +14526,8 @@
     initAccountGate("/api");
   }
 
+  // Preserved commentary and extended locales also use this shared bootstrap.
+  initSiteFeedback();
   const boot = page === "english-commentary"
     ? initEnglishCommentaryAccount
     : page === "research"

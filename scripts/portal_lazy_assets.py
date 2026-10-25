@@ -12,7 +12,7 @@ NEWSFEED_LOADER = re.compile(r'(const NEWSFEED_APP_ASSET = "assets/newsfeed-app\
 
 def fingerprint_reader_loaders(root: Path) -> None:
     for loader_name, assets in {
-        "app.js": ("report-discussion.js", "report-discussion.css", "download-invitation.js", "download-invitation.css"),
+        "app.js": ("report-discussion.js", "report-discussion.css", "download-invitation.js", "download-invitation.css", "site-feedback.js", "site-feedback.css"),
         "site-runtime.js": ("site-feedback.js", "site-feedback.css"),
     }.items():
         loader = root / "assets" / loader_name

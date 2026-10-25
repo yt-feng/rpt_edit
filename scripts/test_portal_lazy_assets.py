@@ -12,7 +12,7 @@ from portal_lazy_assets import fingerprint_newsfeed_loader, fingerprint_reader_l
 
 SOURCE_ASSETS = Path(__file__).resolve().parents[1] / "portal_suite/site_src/assets"
 READER_ASSETS = {
-    "app.js": ("report-discussion.js", "report-discussion.css", "download-invitation.js", "download-invitation.css"),
+    "app.js": ("report-discussion.js", "report-discussion.css", "download-invitation.js", "download-invitation.css", "site-feedback.js", "site-feedback.css"),
     "site-runtime.js": ("site-feedback.js", "site-feedback.css"),
 }
 
