@@ -86,3 +86,10 @@ jobs:
           python3 -B scripts/test_publish_course_full_directory.py
           python3 -B scripts/test_portal_lazy_assets.py
           python3 -B scripts/test_collect_report_discussion_starters.py
+
+      - name: Check verified UI-only release and rollback boundaries
+        run: |
+          python3 -m pip install --disable-pip-version-check 'PyYAML>=6,<7'
+          python3 -B scripts/test_prepare_portal_ui_hotfix.py
+          python3 -B scripts/test_verify_portal_ui_hotfix_live.py
+          python3 -B scripts/test_portal_ui_hotfix_workflow.py
