@@ -1,0 +1,40 @@
+name: Original-name course directory private publish
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: course-full-directory-private-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: ${{ github.ref == 'refs/heads/main' && vars.PORTAL_AUTOMATION_ENABLED == 'true' }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .course-directory/course-full-v1.json.aesgcm
+            scripts/publish_course_full_directory.py
+            scripts/test_publish_course_full_directory.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check --quiet 'boto3>=1.36,<2' 'cryptography>=42,<47'
+      - name: Validate original-name directory contract
+        run: python -B scripts/test_publish_course_full_directory.py
+      - name: Publish and read back private original-name directory
+        env:
+          COURSE_FULL_DIRECTORY_BUNDLE_KEY_B64: ${{ secrets.COURSE_FULL_DIRECTORY_BUNDLE_KEY_B64 }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: python -B scripts/publish_course_full_directory.py --bundle .course-directory/course-full-v1.json.aesgcm

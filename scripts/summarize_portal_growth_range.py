@@ -50,13 +50,24 @@ MEMBERSHIP_ACTIONS = {
     "deduplicated", "form_error", "form_abandon",
 }
 MEMBERSHIP_SUCCESS_ACTIONS = {"submitted", "deduplicated"}
+POST_DOWNLOAD_ACTIONS = {
+    "post_download_shown", "post_download_viewed", "post_download_signup_click",
+    "post_download_registered", "post_download_dismiss", "post_download_continue_reading",
+    "post_download_discussion", "post_download_research", "post_download_related_open",
+}
+POST_DOWNLOAD_CONTINUATIONS = {
+    "post_download_continue_reading", "post_download_discussion",
+    "post_download_research", "post_download_related_open",
+}
+POST_DOWNLOAD_ACCESS_ACTIONS = {"password_download", "account_download", "account_or_password_download"}
 JOURNEY_ACTIONS: dict[str, set[str]] = {
     "membership_request": MEMBERSHIP_ACTIONS,
     "account_auth": {
         "cta_impression", "cta_click", "modal_open", "mode_selected", "form_start",
         "form_submit", "form_abandon", "modal_close", "intent_resumed", "register",
         "login", "login_recovered", "logout", "password_change",
-    },
+    } | (POST_DOWNLOAD_ACTIONS - {"post_download_related_open"}),
+    "report_open": {"post_download_related_open"},
     "report_chat_interaction": {
         "entry_impression", "entry_click", "composer_impression", "composer_start",
         "prompt_selected", "auth_prompt", "auth_resume", "submit", "success", "error",
@@ -80,7 +91,7 @@ JOURNEY_PLACEMENTS = {
     "navigation", "home_hero", "research_intro", "research_limit", "report_detail",
     "daily_goal", "account_modal", "research_tab", "home_research", "blog_article", "public_cache",
     "guest", "registered", "member", "admin", "free", "paid", "premium",
-    "account", "membership", "access", "support", "privacy", "refund", "deep_link",
+    "account", "membership", "access", "support", "privacy", "refund", "deep_link", "post_download",
 }
 JOURNEY_CONTEXTS = {"report", "course"}
 ENGAGEMENT_EVENT_TYPES = {
@@ -268,6 +279,7 @@ def event_fingerprint(event: dict[str, Any]) -> str:
         return f"id:{event_id}"
     fields = (
         event.get("ts"),
+        event.get("client_ts"),
         event.get("type"),
         event.get("session_id"),
         event.get("visitor_id"),
@@ -282,6 +294,7 @@ def event_fingerprint(event: dict[str, Any]) -> str:
         event.get("outcome"),
         event.get("request_kind"),
         event.get("measurement_version"),
+        event.get("access_state"),
     )
     return "fallback:" + "\u001f".join(clean_text(value, 240) for value in fields)
 
@@ -557,6 +570,7 @@ def public_journey_diagnostics(events: Iterable[dict[str, Any]], start: date, en
     grouped: dict[tuple[str, str, str, str, str], list[dict[str, Any]]] = defaultdict(list)
     daily: dict[tuple[str, str, str], list[dict[str, Any]]] = defaultdict(list)
     registration_errors: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    daily_registration_errors: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
     for event in events:
         day = event_date(event)
         event_type = clean_text(event.get("type"), 80).lower()
@@ -569,7 +583,9 @@ def public_journey_diagnostics(events: Iterable[dict[str, Any]], start: date, en
         grouped[(event_type, action, status, placement, context)].append(event)
         daily[(day.isoformat(), event_type, action)].append(event)
         if event_type == "account_auth" and action == "register" and status in {"error", "failure", "failed"}:
-            registration_errors[registration_error_category(event.get("error"))].append(event)
+            category = registration_error_category(event.get("error"))
+            registration_errors[category].append(event)
+            daily_registration_errors[(day.isoformat(), category)].append(event)
 
     def counts(rows: list[dict[str, Any]], server: bool) -> dict[str, int | None]:
         session_ids = {clean_text(row.get("session_id"), 160) for row in rows if clean_text(row.get("session_id"), 160)}
@@ -609,6 +625,10 @@ def public_journey_diagnostics(events: Iterable[dict[str, Any]], start: date, en
             {"category": category, **counts(rows, False)}
             for category, rows in sorted(registration_errors.items())
         ],
+        "daily_registration_error_categories": [
+            {"date": day, "category": category, **counts(rows, False)}
+            for (day, category), rows in sorted(daily_registration_errors.items())
+        ],
         "daily_actions": [
             {"date": day, "event_type": event_type, "action": action,
              **counts(rows, event_type in SERVER_AUDIT_EVENT_TYPES)}
@@ -624,6 +644,149 @@ def public_journey_diagnostics(events: Iterable[dict[str, Any]], start: date, en
             "Historical missing context, source_count, chart_count and current_streak cannot be reconstructed from client events.",
             "Admin account activity on ordinary product surfaces and internal QA are not excluded automatically.",
             "export_pdf_print_opened confirms a print dialog only, not a rendered PDF download.",
+        ],
+    }
+
+
+def public_post_download_diagnostics(events: Iterable[dict[str, Any]], start: date, end: date) -> dict[str, Any]:
+    """Observe sequences without joining feature-hashed visitors or server times.
+
+    A missing action is unavailable, including in historical windows. Equal
+    client timestamps permit a possible sequence, but never prove its order.
+    """
+    observations: list[dict[str, Any]] = []
+    for event in events:
+        day = event_date(event)
+        if not day or not start <= day <= end or not is_product_event(event):
+            continue
+        event_type = clean_text(event.get("type"), 80).lower()
+        action = clean_text(event.get("action"), 80).lower()
+        placement = clean_text(event.get("placement"), 80).lower()
+        kind = "download_success" if event_type == "download_success" else ""
+        if placement == "post_download":
+            if action in POST_DOWNLOAD_ACTIONS and event_type == ("report_open" if action == "post_download_related_open" else "account_auth"):
+                kind = action
+            elif event_type == "account_auth" and action == "register" and event.get("status") == "success":
+                kind = "registration_success"
+        if not kind:
+            continue
+        state = clean_text(event.get("access_state"), 80).lower()
+        observations.append({
+            "kind": kind, "day": day.isoformat(),
+            "state": state if state in {"guest", "signed_in"} else "unknown",
+            "download_access": action if kind == "download_success" and action in POST_DOWNLOAD_ACCESS_ACTIONS else "unknown",
+            "session": clean_text(event.get("session_id"), 160),
+            "time": parse_instant(event.get("client_ts")),
+        })
+    post_rows = [row for row in observations if row["kind"] != "download_success"]
+    observed_post_sessions = {row["session"] for row in post_rows if row["session"]}
+    # A window can straddle rollout. Older downloads without invitation
+    # telemetry must not become a fabricated zero-exposure denominator.
+    observations = [row for row in observations if row["kind"] != "download_success"
+                    or post_rows and (not row["session"] or row["session"] in observed_post_sessions)]
+    grouped: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
+    timed_sessions: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in observations:
+        if row["kind"] != "download_success":
+            grouped[(row["kind"], row["state"])].append(row)
+        if row["session"] and row["time"] is not None:
+            timed_sessions[row["session"]].append(row)
+    for rows in timed_sessions.values():
+        rows.sort(key=lambda row: row["time"])
+
+    def matches(row: dict[str, Any], stage: tuple[set[str], str | None], download_access: str | None = None) -> bool:
+        kinds, state = stage
+        return (row["kind"] in kinds and (state is None or row["state"] == state)
+                and (download_access is None or row["kind"] != "download_success" or row["download_access"] == download_access))
+
+    def sequence_sessions(stages: list[tuple[set[str], str | None]], *, allow_ties: bool, download_access: str | None = None) -> int:
+        count = 0
+        for rows in timed_sessions.values():
+            previous = None
+            for stage in stages:
+                found = next((row for row in rows if matches(row, stage, download_access)
+                              and (previous is None or row["time"] > previous
+                                   or allow_ties and row["time"] == previous)), None)
+                if found is None:
+                    break
+                previous = found["time"]
+            else:
+                count += 1
+        return count
+
+    def measure(stages: list[tuple[set[str], str | None]], download_access: str | None = None) -> dict[str, Any]:
+        stage_rows = [[row for row in observations if matches(row, stage, download_access)] for stage in stages]
+        coverage = "observed"
+        if any(not rows for rows in stage_rows):
+            coverage = "unavailable"
+        elif any(not any(row["session"] and row["time"] is not None for row in rows) for rows in stage_rows):
+            coverage = "insufficient_client_context"
+        if coverage != "observed":
+            return {"coverage": coverage, "sessions": None, "ambiguous_timestamp_sessions": None}
+        ordered = sequence_sessions(stages, allow_ties=False, download_access=download_access)
+        return {"coverage": coverage, "sessions": ordered,
+                "ambiguous_timestamp_sessions": sequence_sessions(stages, allow_ties=True, download_access=download_access) - ordered}
+
+    download = ({"download_success"}, None)
+    viewed = ({"post_download_viewed"}, None)
+    click = ({"post_download_signup_click"}, None)
+    registered = ({"registration_success"}, None)
+    def signup_stages(download_access: str | None = None) -> list[dict[str, Any]]:
+        stages = []
+        path: list[tuple[set[str], str | None]] = []
+        previous_count = None
+        previous_ambiguous = None
+        for name, stage in (("download_success", download), ("viewed_after_download", viewed),
+                            ("signup_click_after_view", click), ("registration_after_signup_click", registered)):
+            path.append(stage)
+            measured = measure(path, download_access)
+            count = measured["sessions"]
+            ambiguous = measured["ambiguous_timestamp_sessions"]
+            has_ambiguous_order = bool(ambiguous or previous_ambiguous)
+            stages.append({"step": name, **measured,
+                           "rate_from_previous_observed_stage": safe_rate(count, previous_count) if previous_count is not None and not has_ambiguous_order else None,
+                           "rate_unavailable_reason": "ambiguous_client_timestamps" if has_ambiguous_order else ("unavailable_stage_or_denominator" if count is None or not previous_count else None)})
+            previous_count = count
+            previous_ambiguous = ambiguous
+        return stages
+    state_paths = []
+    for state, outcome in (("guest", "registration"), ("signed_in", "continuation"),
+                           ("unknown", "registration"), ("unknown", "continuation")):
+        path = [download, ({"post_download_viewed"}, state)]
+        if outcome == "registration":
+            path.extend([({"post_download_signup_click"}, state), registered])
+        else:
+            path.append((POST_DOWNLOAD_CONTINUATIONS, state))
+        state_paths.append({"access_state": state, "outcome": outcome, **measure(path)})
+    return {
+        "schema": "portal-post-download-diagnostics-v1",
+        "coverage": "unavailable" if not post_rows else ("viewport_observations" if any(row["kind"] == "post_download_viewed" for row in post_rows) else "partial_observations"),
+        "first_observed_date": min((row["day"] for row in post_rows), default=None),
+        "denominator_scope": "explicit_sessions_with_observed_post_download_events",
+        "events_without_explicit_session": sum(not row["session"] for row in observations),
+        "events_without_valid_client_time": sum(row["time"] is None for row in observations),
+        "observed_actions": [
+            {"action": action, "access_state": state, "events": len(rows),
+             "client_sessions": len({row["session"] for row in rows if row["session"]}),
+             "timestamped_client_sessions": len({row["session"] for row in rows if row["session"] and row["time"] is not None})}
+            for (action, state), rows in sorted(grouped.items())
+        ],
+        "ordered_signup_stages": signup_stages(),
+        "by_download_access": [
+            {"download_access": access, "ordered_signup_stages": signup_stages(access)}
+            for access in ("password_download", "account_download", "account_or_password_download", "unknown")
+        ],
+        "state_paths": state_paths,
+        "notes": [
+            "shown records rendering; only viewed records viewport exposure or a direct interaction establishing visibility.",
+            "Missing actions remain unavailable/null; historical exposure and conversion cannot be reconstructed as zero.",
+            "Download denominators include only explicit sessions with observed post-download events, never all historical downloads in a mixed rollout window.",
+            "Sequences require explicit session_id and strictly increasing client_ts; server arrival time and visitor identity are never substitutes.",
+            "Equal-time possible paths are reported separately as ambiguous_timestamp_sessions and excluded from ordered counts.",
+            "Registration requires account_auth/register/success at post_download; the registered UI marker alone is not registration.",
+            "Access state comes only from explicit guest/signed_in values at exposure and action; absent state remains unknown.",
+            "Download access uses only the controlled download_success action; combined/unknown access stays separate and is never inferred from URLs.",
+            "Counts are observed sessions, not unique accounts, causal uplift, paid members or revenue; state paths may overlap within a session.",
         ],
     }
 
@@ -741,13 +904,29 @@ def public_download_diagnostics(sessions: Iterable[Session]) -> dict[str, Any]:
     rows = list(sessions)
     attempts = [session for session in rows if session.has("download_attempt")]
     error_groups: dict[str, list[Session]] = defaultdict(list)
-    for session in rows:
+    controlled_errors: dict[tuple[str, str], set[int]] = defaultdict(set)
+    for session_index, session in enumerate(rows):
         categories = {
             download_error_category(event) for event in session.events
             if clean_text(event.get("type"), 80).lower() == "download_error"
         }
         for category in categories:
             error_groups[category].append(session)
+        for event in session.events:
+            if event.get("type") != "download_error":
+                continue
+            action = clean_text(event.get("action"), 80).lower()
+            access = action if action in POST_DOWNLOAD_ACCESS_ACTIONS else "unknown"
+            status = clean_text(event.get("status"), 80)
+            message = clean_text(event.get("error"), 200).lower()
+            reason = "other_or_unclassified"
+            if status == "401":
+                reason = "authentication_unspecified"
+                if re.search(r"password.*incorrect|incorrect.*password|密码.*(?:错误|不正确|不匹配)", message):
+                    reason = "report_password_mismatch"
+                elif re.search(r"session.*(?:expired|invalid)|please.*log.?in|请.*(?:重新登录|先登录)|登录.*(?:失效|过期)", message):
+                    reason = "login_required_or_expired"
+            controlled_errors[(access, reason)].add(session_index)
     return {
         "attempt_sessions": len(attempts),
         "attempt_and_success_sessions": sum(session.has("download_success") for session in attempts),
@@ -757,11 +936,14 @@ def public_download_diagnostics(sessions: Iterable[Session]) -> dict[str, Any]:
         "success_without_observed_attempt_sessions": sum(session.has("download_success") and not session.has("download_attempt") for session in rows),
         "attempt_with_observed_success_rate": safe_rate(sum(session.has("download_success") for session in attempts), len(attempts)),
         "error_categories": [{"category": category, "sessions": len(group)} for category, group in sorted(error_groups.items())],
+        "error_access_and_reason": [{"download_access": access, "reason": reason, "sessions": len(group)}
+                                    for (access, reason), group in sorted(controlled_errors.items())],
         "notes": [
             "Attempt/outcome intersections describe the same session, not a matched report or verified action order.",
             "Pending, error and success can coexist in a session; do not sum them as mutually exclusive outcomes.",
             "A missing success may be unobserved completion, abandonment or failure; it is not a confirmed failed download.",
             "Download success means the file was handed to the browser save flow, not verified disk persistence.",
+            "HTTP 401 alone does not distinguish a report-password mismatch from an expired login; controlled reason categories require explicit evidence.",
         ],
     }
 
@@ -1337,6 +1519,7 @@ def build_growth_review(
         "acquisition_channels": channels,
         "onsite_search_demand": public_search_demand(session_rows, min_count),
         "journey_diagnostics": public_journey_diagnostics(rows, start, end),
+        "post_download_diagnostics": public_post_download_diagnostics(rows, start, end),
         "membership_request_diagnostics": public_membership_diagnostics(session_rows),
         "download_diagnostics": public_download_diagnostics(session_rows),
         "session_segments": public_session_segments(session_rows, site_hosts, min_count),
@@ -1450,6 +1633,27 @@ def markdown_summary(review: dict[str, Any]) -> str:
     ])
     for row in download.get("error_categories", []):
         lines.append(f"| {row['category']} | {row['sessions']} |")
+    post_download = review.get("post_download_diagnostics") or {}
+    lines.extend([
+        "", "## 下载后注册与继续阅读", "",
+        f"观测覆盖：{post_download.get('coverage', 'unavailable')}。shown 仅表示渲染；viewed 才表示进入视口或直接交互确认可见。",
+        "| 同会话有序阶段 | 会话 | 同时间戳、顺序未确定会话 | 前一步观测转化率 |",
+        "|---|---:|---:|---:|",
+    ])
+    for row in post_download.get("ordered_signup_stages", []):
+        lines.append(f"| {row['step']} | {observed(row['sessions'])} | {observed(row['ambiguous_timestamp_sessions'])} | {observed(row['rate_from_previous_observed_stage'])} |")
+    lines.extend(["", "| 下载权限方式 | 有序下载→可见→注册点击→注册成功会话 | 顺序未确定会话 |", "|---|---:|---:|"])
+    for row in post_download.get("by_download_access", []):
+        final = row["ordered_signup_stages"][-1]
+        lines.append(f"| {row['download_access']} | {observed(final['sessions'])} | {observed(final['ambiguous_timestamp_sessions'])} |")
+    lines.extend(["", "| 明确账号状态 | 有序结果 | 会话 | 顺序未确定会话 |", "|---|---|---:|---:|"])
+    for row in post_download.get("state_paths", []):
+        lines.append(f"| {row['access_state']} | {row['outcome']} | {observed(row['sessions'])} | {observed(row['ambiguous_timestamp_sessions'])} |")
+    lines.extend([
+        "", "以上只使用明确 session_id 与严格递增的 client_ts；同时间戳单列为顺序未确定，不用服务端到达时间或访客标识补推。",
+        "注册以 post_download 入口的 account_auth/register/success 为准；registered 提示事件不能替代注册成功。缺失阶段保持未观测，不回填历史 0。",
+        "游客注册与已登录继续阅读按明确 access_state 分开；密码下载、账号下载与混合/未知方式分开，不根据 URL 推断。这里统计观测会话，不代表唯一账号、付费转化、收入或因果提升。", "",
+    ])
     for title, dimension in (("设备", "device"), ("新老访客", "visitor_status")):
         lines.extend([
             "", f"## {title}分组", "",

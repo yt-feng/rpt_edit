@@ -384,9 +384,10 @@ async function main() {
     let importCalls = 0;
     const workerSource = fs.readFileSync(path.join(root, "workers/portal-suite-worker/src/index.js"), "utf8");
     assert.match(workerSource, /if \(pathname === "\/locale\/report-detail"\) \{\s*const \{ handleLocaleReportDetail \} = await import\("\.\/locale-report-detail\.js"\)/);
+    // This VM exercises local handlers; unused named module imports are removed generically.
     const code = workerSource.replace(/^import\s*\{[\s\S]*?\}\s*from\s*["']\.\/source-lead-adapter\.js["'];\s*/m,
       "function publicSourceLeadItem() {} async function readStoredSourceLead() {} async function searchSourceLeadMetadata() {} function sourceLeadAdapterEnabled() { return false; }\n")
-      .replace(/^import\s*\{[^}]+\}\s*from\s*["']\.\/research-news(?:-snapshot)?\.js["'];\s*/gm, "")
+      .replace(/^import\s*\{[^}]+\}\s*from\s*["']\.\/[^"']+\.js["'];\s*/gm, "")
       .replaceAll('await import("./locale-report-detail.js")', "await __loadLocale()")
       .replace("export default {", "globalThis.worker = {");
     const context = vm.createContext({ crypto: webcrypto, Request, Response, URL, URLSearchParams, TextEncoder, TextDecoder, Headers, AbortController, setTimeout, clearTimeout, console,

@@ -1007,6 +1007,19 @@
   }
 
   const MEMBERSHIP_REQUEST_KINDS = new Set(["membership", "support", "privacy", "refund", "access"]);
+  let membershipDraftCache = null;
+
+  function membershipRequestDraftState() {
+    const session = loadAuthSession();
+    const user = session && session.user;
+    const owner = session ? String(user && (user.id || user.username || user.email) || session.token) : "";
+    if (!membershipDraftCache) document.addEventListener("portal-auth-change", membershipRequestDraftState);
+    if (!membershipDraftCache || membershipDraftCache.owner !== owner) membershipDraftCache = { owner, items: new Map() };
+    for (const [kind, draft] of membershipDraftCache.items) {
+      if (draft.expires <= Date.now()) membershipDraftCache.items.delete(kind);
+    }
+    return membershipDraftCache;
+  }
 
   function membershipRequestKind(value) {
     const kind = String(value || "").trim().toLowerCase();
@@ -1285,6 +1298,11 @@
               <button class="secondary-button" id="accountAiCreditsRefresh" type="button">刷新次数</button>
               <div id="accountAiCreditsStatus" class="status-line" role="status" aria-live="polite"></div>
             </section>
+            <section class="account-ai-credits" aria-labelledby="accountCourseFullTitle">
+              <strong id="accountCourseFullTitle">课程原名目录</strong>
+              <p>连续会员满两个月可查看原始文件名，逐条 Request 索取材料。</p>
+              <a class="secondary-button" href="/course-full.html">进入课程原名目录 →</a>
+            </section>
             <details class="account-api-panel" id="accountApiPanel">
               <summary>开发者 API <span>管理自己的访问密钥</span></summary>
               <p>管理员开通 API 权限后，可在这里生成密钥。<a href="/developer-api.html" target="_blank" rel="noopener">阅读 API 文档 ↗</a></p>
@@ -1513,7 +1531,7 @@
       onRegister: () => showAccountModal(workerUrl, { item, source, mode: "register", placement: "post_download", resumeIntent: true }),
       track: (action, data = {}) => trackEvent(workerUrl, action === "related_open" ? "report_open" : "account_auth", {
         ...analyticsReportPayload(item, source), action: `post_download_${action}`, placement: "post_download",
-        status: "success", ...(data.report_id ? { report_id: data.report_id, parent_report_id: item.id } : {}),
+        status: "success", access_state: data.access_state, ...(data.report_id ? { report_id: data.report_id, parent_report_id: item.id } : {}),
       }),
     })).catch(() => {});
   }
@@ -1664,6 +1682,12 @@
     let membershipRequestStarted = false;
     let membershipRequestImpressed = false;
     let membershipRequestAbandoned = false;
+    const draftState = membershipRequestDraftState();
+    const draftKind = membershipRequestKind(context.requestKind);
+    const restoredDraft = draftState.items.get(draftKind);
+    draftState.items.delete(draftKind);
+    const draftFields = [membershipRequesterEmail, membershipContactChannel, membershipContactValue, membershipRequestMessage];
+    if (restoredDraft) draftFields.forEach((field, index) => { field.value = restoredDraft.values[index]; });
     let requestView = Boolean(context.requestKind);
     let hasRequestView = requestView;
     const MEMBERSHIP_REQUEST_ACTIONS = new Set(["form_impression", "form_open", "form_start", "form_submit", "submitted", "deduplicated", "form_error", "form_abandon"]);
@@ -1863,6 +1887,13 @@
 
     function disposeAccountModal() {
       accountServices.close();
+      if (!membershipRequestCompleted && !membershipRequestActive && (membershipRequestStarted || restoredDraft)
+          && membershipRequestDraftState() === draftState) {
+        draftState.items.set(draftKind, {
+          values: draftFields.map((field, index) => String(field.value || "").slice(0, [254, 16, 160, 600][index])),
+          expires: membershipRequestStarted ? Date.now() + 30 * 60 * 1000 : restoredDraft.expires,
+        });
+      }
       if (membershipRequestStarted && !membershipRequestCompleted && !membershipRequestActive && !membershipRequestAbandoned) {
         membershipRequestAbandoned = true;
         trackMembershipRequest("form_abandon", { status: "abandoned" });
@@ -2139,6 +2170,7 @@
       submit.textContent = mode === "register" ? "注册并登录" : "登录";
       toggle.textContent = mode === "register" ? "已有账号，去登录" : "注册新账号";
       document.getElementById("accountModalTitle").textContent = mode === "register" ? "免费创建研究账号" : "登录 KC桌面";
+      updateUsernameHint();
       answer.value = "";
       loadAccountCaptcha(workerUrl, status).then((token) => { captchaToken = token; });
     }
@@ -2197,6 +2229,20 @@
       if (startedAuthModes.has(mode)) return;
       startedAuthModes.add(mode);
       trackEvent(workerUrl, "account_auth", { action: "form_start", placement: authPlacement, status: mode });
+    });
+    function updateUsernameHint() {
+      const hint = document.getElementById("accountUsernameHint");
+      const value = String(username.value || "").trim().toLowerCase().replace(/^@+/, "");
+      const invalid = mode === "register" && Boolean(value) && !/^[a-z0-9][a-z0-9_.-]{2,31}$/.test(value);
+      username.setAttribute("aria-invalid", String(invalid));
+      if (hint) hint.textContent = invalid
+        ? "请使用 3–32 位英文字母、数字、点、短横线或下划线，以字母或数字开头。例如 reader_01；中文名可换成拼音。"
+        : "3–32 位，以英文字母或数字开头，可包含点、短横线和下划线；不支持中文或空格。";
+      return !invalid;
+    }
+    username.addEventListener("input", updateUsernameHint);
+    username.addEventListener("blur", () => {
+      if (mode === "register" && updateUsernameHint()) username.value = String(username.value || "").trim().toLowerCase().replace(/^@+/, "");
     });
     refresh.addEventListener("click", () => loadAccountCaptcha(workerUrl, status).then((token) => { captchaToken = token; }));
     if (contactQrToggle) contactQrToggle.addEventListener("click", refreshVerifiedContactQr);
@@ -2290,6 +2336,7 @@
           }
           if (!response.ok || !data.ok) throw new Error(data.detail || "申请提交失败，请稍后重试。");
           membershipRequestCompleted = true;
+          draftState.items.delete(draftKind);
           membershipRequesterEmail.readOnly = true;
           membershipContactChannel.disabled = true;
           membershipContactValue.readOnly = true;
@@ -10945,6 +10992,9 @@
     ) {
       return "PDF 暂不可用。";
     }
+    if (status === 401 && /password.*incorrect|incorrect.*password|密码.*(?:错误|不正确)/i.test(text)) {
+      return "报告下载密码不匹配。请重新打开收到的完整链接，或重新粘贴报告密码；已有会员也可选择账号下载。";
+    }
     if (/password/i.test(text)) return localizedContactText(text);
     if (/configured/i.test(text)) return "PDF download is temporarily unavailable. Please try again later.";
     return localizedContactText(text) || "Download failed.";
@@ -14532,7 +14582,7 @@
     ? initEnglishCommentaryAccount
     : page === "research"
     ? initResearch
-    : page === "blog-article" || page === "developer-api"
+    : page === "blog-article" || page === "developer-api" || page === "course-full"
       ? initContentAccount
     : page === "report"
     ? initReport

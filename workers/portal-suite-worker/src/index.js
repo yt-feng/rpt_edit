@@ -6,6 +6,15 @@ import {
 } from "./source-lead-adapter.js";
 import { researchNewsEvidence } from "./research-news.js";
 import { readResearchNewsSnapshot, researchNewsPublicUrl } from "./research-news-snapshot.js";
+import {
+  reconcileMembershipContinuity,
+  validateContinuityVerification,
+} from "./course-membership-continuity.js";
+import {
+  fullDirectoryFileType,
+  loadCourseFullDirectory,
+  queryCourseFullDirectory,
+} from "./course-full-directory.js";
 
 const CACHE_TTL_MS = 5 * 60 * 1000;
 const RUNTIME_RELEASE_REFRESH_MS = 1000;
@@ -2802,9 +2811,15 @@ async function saveUserAdminState(env, user, fields, adminUser) {
     updated_at: now,
     updated_by: normalizeEmail(adminUser && adminUser.email) || String(adminUser && adminUser.username || ""),
   };
+  const membershipChanged = hasDisabled && disabled !== Boolean(existing.disabled);
+  const continuityBefore = membershipChanged ? await prepareCourseMembershipChange(env, payload.email) : null;
+  if (membershipChanged) payload.membership_change_id = crypto.randomUUID();
   const keys = userAdminStateKeys({ ...user, ...payload });
   if (!keys.length) throw new Error("User identity is required.");
   await Promise.all(keys.map((key) => r2PutJson(env, key, payload)));
+  if (membershipChanged) {
+    await trackCourseMembershipChange(env, payload.email, continuityBefore, { state: payload }, "account_status_changed");
+  }
   return payload;
 }
 
@@ -2929,7 +2944,12 @@ async function saveEntitlementInR2(env, email, fields, now = new Date().toISOStr
 
 async function saveEntitlement(env, email, fields) {
   const now = new Date().toISOString();
-  if (!hasSupabaseConfig(env)) return saveEntitlementInR2(env, email, fields, now);
+  const continuityBefore = await prepareCourseMembershipChange(env, email);
+  if (!hasSupabaseConfig(env)) {
+    const saved = await saveEntitlementInR2(env, email, fields, now);
+    await trackCourseMembershipChange(env, email, continuityBefore, { entitlement: saved }, "entitlement_issued");
+    return saved;
+  }
   const query = queryString({ email: `eq.${email}`, order: "updated_at.desc", limit: "1" });
   const existingRows = await supabaseRequest(env, "GET", `/rest/v1/user_entitlements?${query}`);
   const existing = Array.isArray(existingRows) && existingRows.length
@@ -2946,13 +2966,17 @@ async function saveEntitlement(env, email, fields) {
   if (existing && existing.id) {
     const patchQuery = queryString({ id: `eq.${existing.id}`, select: "*" });
     const rows = await supabaseRequest(env, "PATCH", `/rest/v1/user_entitlements?${patchQuery}`, payload, { preferReturn: true });
-    return validateEntitlementRow(Array.isArray(rows) && rows.length ? rows[0] : payload, email);
+    const saved = validateEntitlementRow(Array.isArray(rows) && rows.length ? rows[0] : payload, email);
+    await trackCourseMembershipChange(env, email, continuityBefore, { entitlement: saved }, "entitlement_updated");
+    return saved;
   }
   const rows = await supabaseRequest(env, "POST", "/rest/v1/user_entitlements?select=*", {
     ...payload,
     created_at: now,
   }, { preferReturn: true });
-  return validateEntitlementRow(Array.isArray(rows) && rows.length ? rows[0] : payload, email);
+  const saved = validateEntitlementRow(Array.isArray(rows) && rows.length ? rows[0] : payload, email);
+  await trackCourseMembershipChange(env, email, continuityBefore, { entitlement: saved }, "entitlement_issued");
+  return saved;
 }
 
 function validateReportPurchaseRow(row, expected = {}) {
@@ -4223,7 +4247,9 @@ async function saveAccessGrant(env, email, fields, adminUser) {
     updated_at: now,
     updated_by: normalizeEmail(adminUser && adminUser.email) || String(adminUser && adminUser.username || ""),
   };
+  const continuityBefore = await prepareCourseMembershipChange(env, normalized);
   const writeResult = await writeAccessGrantDurably(env, normalized, payload, snapshot.etag);
+  const continuitySaved = await trackCourseMembershipChange(env, normalized, continuityBefore, { access: writeResult.record }, "administrator_access_changed");
   let auditSaved = true;
   try {
     await writeAccessGrantAudit(env, normalized, existing, writeResult.record, adminUser);
@@ -4236,6 +4262,7 @@ async function saveAccessGrant(env, email, fields, adminUser) {
       primary_verified: true,
       backup_count: writeResult.backup_count,
       audit_saved: auditSaved,
+      continuity_saved: continuitySaved,
       warning: Boolean(writeResult.backup_error || !auditSaved),
     },
   };
@@ -5165,6 +5192,185 @@ function courseAccessCandidate(choice, nowMs = Date.now()) {
   };
 }
 
+function courseMembershipContinuityKey(email) {
+  return accountKey("membership-continuity", "v1", normalizeEmail(email));
+}
+
+async function courseMembershipSnapshotFromRows(email, rows) {
+  const entitlement = rows.entitlement || null;
+  const stored = rows.access || null;
+  const state = rows.state || {};
+  const access = publicAccessGrant(stored ? { ...stored, source: "stored" } : null);
+  const user = { email: normalizeEmail(email), disabled: Boolean(state.disabled) };
+  const effective = effectiveAccessChoiceForUser(user, entitlement, access);
+  const candidates = (effective.choices || []).filter((choice) => (
+    ["admin", "entitlement"].includes(choice.kind)
+    && choice.access.active && choice.access.status === "active"
+    && choice.access.access_mode === "all" && choice.access.download_limit === 0
+    && choice.access.duration_value !== TRIAL_3D_DURATION_VALUE
+  ));
+  const ends = candidates.map((choice) => {
+    let end = choice.access.lifetime ? Infinity : Date.parse(choice.access.current_period_end);
+    // An older entitlement is suppressed once a stored administrator decision
+    // expires. Its apparent longer end cannot prove coverage past that point.
+    if (choice.kind === "entitlement" && stored && access.active && !access.lifetime
+      && accessAuthorityRank(choice.access) <= accessAuthorityRank(access)) {
+      end = Math.min(end, Date.parse(access.current_period_end));
+    }
+    return end;
+  }).filter((end) => end > Date.now());
+  const end = ends.length ? Math.max(...ends) : 0;
+  // Only authority/version fields are hashed: account registration, login,
+  // reporting usage and display-name changes never create membership tenure.
+  const fingerprint = await sha256Hex(JSON.stringify({
+    entitlement: entitlement && {
+      id: entitlement.id, plan: entitlement.plan, status: entitlement.status,
+      lifetime: entitlement.lifetime, current_period_end: entitlement.current_period_end,
+      updated_at: entitlement.updated_at, grant_source: entitlement.grant_source,
+      source_reference: entitlement.source_reference, paddle_last_event_id: entitlement.paddle_last_event_id,
+      paddle_last_occurred_at: entitlement.paddle_last_occurred_at,
+    },
+    access: stored && {
+      id: stored.id, change_id: stored.change_id, updated_at: stored.updated_at,
+      access_mode: stored.access_mode, status: stored.status, lifetime: stored.lifetime,
+      current_period_end: stored.current_period_end, download_limit: stored.download_limit,
+      duration_value: stored.duration_value,
+    },
+    state: {
+      disabled: Boolean(state.disabled), membership_change_id: state.membership_change_id || "",
+      // Older status records have no dedicated membership version.
+      legacy_updated_at: state.membership_change_id ? "" : state.updated_at || "",
+    },
+  }));
+  return {
+    fingerprint, active: Boolean(end), covered_until: end === Infinity ? null : end ? new Date(end).toISOString() : null,
+    reason: state.disabled ? "account_disabled" : "membership_inactive",
+    rows,
+  };
+}
+
+async function readCourseMembershipSnapshot(env, email) {
+  const normalized = normalizeEmail(email);
+  const [entitlement, access, user] = await Promise.all([
+    findEntitlement(env, normalized),
+    findStoredAccessGrant(env, normalized),
+    findSiteUserByEmail(env, normalized),
+  ]);
+  const state = await findUserAdminState(env, user || { email: normalized });
+  if (accountDisabled(user)) state.disabled = true;
+  return courseMembershipSnapshotFromRows(normalized, { entitlement, access, state });
+}
+
+async function prepareCourseMembershipChange(env, email) {
+  // Failure to prepare continuity must never stop a primary revocation. A new
+  // authority fingerprint still prevents reuse of an older continuity record.
+  try { return await readCourseMembershipSnapshot(env, email); } catch (_error) { return null; }
+}
+
+async function trackCourseMembershipChange(env, email, before, changed, reason) {
+  try {
+    const after = before ? await courseMembershipSnapshotFromRows(email, { ...before.rows, ...changed }) : null;
+    await reconcileMembershipContinuity({
+      bucket: accountBucket(env), key: courseMembershipContinuityKey(email),
+      loadMembership: () => readCourseMembershipSnapshot(env, email),
+      transition: before && after ? { before, after, reason } : null,
+    });
+    return true;
+  } catch (_error) {
+    return false;
+  }
+}
+
+async function inferAuditedCourseMembershipStart(env, email, membership, nowMs) {
+  const row = membership.rows && membership.rows.access;
+  if (!row || !accessGrantActive(row) || row.status !== "active" || row.access_mode !== "all" || row.download_limit !== 0
+    || row.duration_value === TRIAL_3D_DURATION_VALUE || !row.change_id) return null;
+  const changedMs = Date.parse(row.updated_at || "");
+  if (!Number.isFinite(changedMs) || changedMs > nowMs) return null;
+  // A matching immutable audit proves the actual full-membership state at this
+  // mutation. created_at alone cannot distinguish a lapse or reactivation.
+  const auditKey = accessGrantAuditKey(email, row.updated_at, row.change_id);
+  const audit = await r2GetJsonStrict(env, auditKey);
+  if (!audit || audit.type !== "user_access_update" || normalizeEmail(audit.email) !== normalizeEmail(email)
+    || audit.updated_at !== row.updated_at || audit.next?.updated_at !== row.updated_at
+    || audit.next?.change_id !== row.change_id || audit.next?.active !== true
+    || !accessGrantMatchesExpected(audit.next, row)) return null;
+  const state = membership.rows.state || {};
+  if (state.disabled) return null;
+  let sinceMs = changedMs;
+  if (state.updated_at) {
+    const stateMs = Date.parse(state.updated_at);
+    if (!Number.isFinite(stateMs) || stateMs > nowMs) return null;
+    sinceMs = Math.max(sinceMs, stateMs);
+  }
+  return { since: new Date(sinceMs).toISOString(), audit_reason: `matching_access_audit:${row.change_id}` };
+}
+
+async function courseFullAccessForUser(env, user) {
+  if (accountDisabled(user)) return { allowed: false, since: null, eligible_at: null, reason: "account_disabled" };
+  const email = normalizeEmail(user && user.email);
+  const result = await reconcileMembershipContinuity({
+    bucket: accountBucket(env), key: courseMembershipContinuityKey(email),
+    loadMembership: () => readCourseMembershipSnapshot(env, email),
+    inferLegacyStart: (membership, nowMs) => inferAuditedCourseMembershipStart(env, email, membership, nowMs),
+  });
+  return result.access;
+}
+
+async function handleCourseFullAccess(request, env) {
+  let user;
+  try {
+    user = await currentUserFromRequest(env, request);
+  } catch (error) {
+    return privateJsonResponse(request, env, accessErrorStatus(error) === 503 ? 503 : 401, {
+      allowed: false, since: null, eligible_at: null, reason: "authentication_required",
+    });
+  }
+  try {
+    return privateJsonResponse(request, env, 200, await courseFullAccessForUser(env, user));
+  } catch (_error) {
+    return privateJsonResponse(request, env, 503, {
+      allowed: false, since: null, eligible_at: null, reason: "verification_unavailable",
+    });
+  }
+}
+
+async function verifyCourseMembershipContinuityForAdmin(env, email, payload, adminUser) {
+  const verification = validateContinuityVerification({
+    since: payload.since,
+    audit_reason: payload.audit_reason,
+    actor: normalizeEmail(adminUser.email) || String(adminUser.username || ""),
+  });
+  const current = await readCourseMembershipSnapshot(env, email);
+  if (!current.active) {
+    const error = new Error("该账号当前没有有效的完整会员资格，无法核验连续会员起点。");
+    error.code = "CONTINUITY_INVALID_VERIFICATION";
+    throw error;
+  }
+  const result = await reconcileMembershipContinuity({
+    bucket: accountBucket(env), key: courseMembershipContinuityKey(email),
+    loadMembership: () => readCourseMembershipSnapshot(env, email),
+    verification: { ...verification, fingerprint: current.fingerprint },
+  });
+  return result.access;
+}
+
+async function handleCourseFullDirectory(request, env) {
+  let user;
+  try { user = await currentUserFromRequest(env, request); }
+  catch (_error) { return privateJsonResponse(request, env, 401, { allowed: false, detail: "请先登录。" }); }
+  try {
+    const access = await courseFullAccessForUser(env, user);
+    if (!access.allowed) return privateJsonResponse(request, env, 403, {
+      ...access, detail: "完整原名目录仅向当前有效且连续成为会员满两个月的账号开放。",
+    });
+    const directory = await loadCourseFullDirectory(accountBucket(env));
+    return privateJsonResponse(request, env, 200, queryCourseFullDirectory(directory, new URL(request.url).searchParams));
+  } catch (_error) {
+    return privateJsonResponse(request, env, 503, { allowed: false, detail: "完整原名目录暂时无法读取，请稍后重试。" });
+  }
+}
+
 async function courseAccessForUser(env, user, nowMs = Date.now()) {
   if (accountDisabled(user)) return { can_access: false, required_remaining_days: COURSE_MIN_REMAINING_DAYS };
   if (isPrivilegedAccount(user)) {
@@ -5740,9 +5946,17 @@ function cleanCourseDirectoryRequestId(value) {
   return /^[a-z0-9][a-z0-9_-]{7,79}$/u.test(id) ? id : "";
 }
 
-async function courseDirectoryRequestItem(env, idValue) {
+async function courseDirectoryRequestItem(env, idValue, full = false) {
   const id = cleanCourseDirectoryRequestId(idValue);
   if (!id) return null;
+  if (full) {
+    const directory = await loadCourseFullDirectory(accountBucket(env));
+    const item = directory.items.find((candidate) => candidate.id === id);
+    return item ? {
+      id, title: item.name, course_title: "完整原名目录", folders: item.folders.join(" / "),
+      extension: item.extension, file_type: fullDirectoryFileType(item.extension), size_label: item.size_label, date: item.date,
+    } : null;
+  }
   const directory = await loadCourseDirectory(env);
   const item = directory.items.find((candidate) => candidate && candidate.id === id);
   if (!item) return null;
@@ -5805,7 +6019,7 @@ function courseDirectoryRequestEmailContent(record) {
   };
 }
 
-async function handleCourseDirectoryRequest(request, env, ctx) {
+async function handleCourseDirectoryRequest(request, env, ctx, full = false) {
   if (!reportRequestOriginAllowed(request, env)) {
     return privateJsonResponse(request, env, 403, { ok: false, detail: "申请来源无效。" });
   }
@@ -5837,29 +6051,34 @@ async function handleCourseDirectoryRequest(request, env, ctx) {
   }
   let access;
   try {
-    access = await courseAccessForUser(env, user);
+    access = full ? await courseFullAccessForUser(env, user) : await courseAccessForUser(env, user);
   } catch (_error) {
     return privateJsonResponse(request, env, 503, { ok: false, detail: "课程会员资格暂时无法核验。" });
   }
-  if (!access.can_access) {
+  if (!(full ? access.allowed : access.can_access)) {
     return privateJsonResponse(request, env, 403, {
       ok: false,
-      detail: "仅剩余有效期至少 30 天的会员可以申请目录资源。",
-      required_remaining_days: COURSE_MIN_REMAINING_DAYS,
+      detail: full ? "完整原名目录仅向当前有效且连续成为会员满两个月的账号开放。" : "仅剩余有效期至少 30 天的会员可以申请目录资源。",
+      ...(full ? access : { required_remaining_days: COURSE_MIN_REMAINING_DAYS }),
     });
   }
   let resource;
   try {
-    resource = await courseDirectoryRequestItem(env, payload.directory_item_id);
+    resource = await courseDirectoryRequestItem(env, payload.directory_item_id, full);
   } catch (_error) {
     return privateJsonResponse(request, env, 503, { ok: false, detail: "课程文件目录暂时无法核验。" });
   }
   if (!resource) return privateJsonResponse(request, env, 404, { ok: false, detail: "目录资源不存在。" });
 
-  const requesterEmail = normalizeEmail(user.email);
+  const accountEmail = normalizeEmail(user.email);
+  const requesterEmail = full && (!accountEmail || /@users(?:\.portal)?\.example\.invalid$/u.test(accountEmail) || user.email_is_generated)
+    ? normalizeEmail(payload.requester_email) : accountEmail;
+  if (full && (!requesterEmail || requesterEmail.length > 254 || /@users(?:\.portal)?\.example\.invalid$/u.test(requesterEmail))) {
+    return privateJsonResponse(request, env, 400, { ok: false, detail: "请提供可接收回复的邮箱。" });
+  }
   const nowMs = Date.now();
-  const digest = await reportRequestPrivateHash(env, "course-directory-dedupe", `${requesterEmail}|${resource.id}`);
-  const key = `${COURSE_DIRECTORY_REQUEST_PREFIX}/items/${digest}.json`;
+  const digest = await reportRequestPrivateHash(env, full ? "course-full-directory-dedupe" : "course-directory-dedupe", `${full ? accountEmail : requesterEmail}|${resource.id}`);
+  const key = `${full ? "_course-full-directory-requests/v1" : COURSE_DIRECTORY_REQUEST_PREFIX}/items/${digest}.json`;
   const record = {
     request_id: digest,
     directory_item_id: resource.id,
@@ -5877,6 +6096,7 @@ async function handleCourseDirectoryRequest(request, env, ctx) {
     requester_user_id: cleanReportRequestText(user.id, 100),
     requester_username: cleanReportRequestText(user.username, 80),
     authenticated: true,
+    ...(full ? { directory_variant: "original_names" } : {}),
     page_path: cleanReportRequestPagePath(payload.page_path),
   };
   try {
@@ -5898,7 +6118,7 @@ async function handleCourseDirectoryRequest(request, env, ctx) {
         subject: content.subject,
         html: content.html,
         text: content.text,
-        tags: ["portal-course-directory-request"],
+        tags: [full ? "portal-course-full-directory-request" : "portal-course-directory-request"],
       });
     } catch (error) {
       result = { sent: false, detail: String(error && error.message || "Email send failed.") };
@@ -5917,14 +6137,14 @@ async function handleCourseDirectoryRequest(request, env, ctx) {
     await sendFormAcknowledgement(env, key, completed);
     rewardWaitUntil(ctx, persistAnalyticsEvent(request, env, {
       type: "course_material_request",
-      path: "/course/directory-request",
+      path: full ? "/course/full/directory-request" : "/course/directory-request",
       data: {
-        page: "course-library",
-        source: "directory",
+        page: full ? "course-full-library" : "course-library",
+        source: full ? "full-directory" : "directory",
         action: completed.status === "sent" ? "submitted" : "failed",
         status: completed.status,
         material_id: resource.id,
-        material_title: resource.title,
+        ...(full ? {} : { material_title: resource.title }),
         result_count: completed.status === "sent" ? 1 : 0,
       },
     }, user));
@@ -6274,9 +6494,14 @@ async function applyPaddleEntitlementEventInR2(env, binding, identity, fields) {
 async function applyPaddleEntitlementEvent(env, binding, event, fields) {
   const identity = validPaddleEventIdentity(event);
   if (!identity) return { action: "invalid", entitlement: binding };
-  return hasSupabaseConfig(env)
+  const continuityBefore = await prepareCourseMembershipChange(env, binding.email);
+  const result = await (hasSupabaseConfig(env)
     ? applyPaddleEntitlementEventInSupabase(env, binding, identity, fields)
-    : applyPaddleEntitlementEventInR2(env, binding, identity, fields);
+    : applyPaddleEntitlementEventInR2(env, binding, identity, fields));
+  if (result.action === "applied") {
+    await trackCourseMembershipChange(env, binding.email, continuityBefore, { entitlement: result.entitlement }, "paddle_entitlement_changed");
+  }
+  return result;
 }
 
 async function processPaddleEvent(env, event) {
@@ -23409,6 +23634,10 @@ async function handleAccountAdminUserAccess(request, env) {
     if (isPrivilegedAccount(user)) {
       return jsonResponse(request, env, 400, { detail: "系统角色账号不能写入普通用户授权。" });
     }
+    if (payload.action === "verify_membership_continuity") {
+      const continuity = await verifyCourseMembershipContinuityForAdmin(env, email, payload, adminUser);
+      return privateJsonResponse(request, env, 200, { ok: true, verified: true, membership_continuity: continuity });
+    }
     const saveResult = await saveAccessGrant(env, email, payload, adminUser);
     const access = saveResult.access;
     const verifiedAccess = await findAccessGrant(env, email);
@@ -23435,6 +23664,11 @@ async function handleAccountAdminUserAccess(request, env) {
       access,
     });
   } catch (error) {
+    if (error && ["CONTINUITY_CONFLICT", "CONTINUITY_INVALID_VERIFICATION"].includes(error.code)) {
+      return privateJsonResponse(request, env, error.code === "CONTINUITY_CONFLICT" ? 409 : 400, {
+        code: error.code, detail: error.message,
+      });
+    }
     if (error && error.code === "ACCESS_CONFLICT") {
       return jsonResponse(request, env, 409, {
         code: error.code,
@@ -27108,6 +27342,18 @@ export default {
 
     if (pathname === "/course/access" && request.method === "GET") {
       return handleCourseAccess(request, env);
+    }
+
+    if (pathname === "/course/full/access" && request.method === "GET") {
+      return handleCourseFullAccess(request, env);
+    }
+
+    if (pathname === "/course/full/directory" && request.method === "GET") {
+      return handleCourseFullDirectory(request, env);
+    }
+
+    if (pathname === "/course/full/directory-request" && request.method === "POST") {
+      return handleCourseDirectoryRequest(request, env, ctx, true);
     }
 
     if (pathname === "/course/directory" && request.method === "GET") {

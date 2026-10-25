@@ -50,10 +50,16 @@
     card.className = "download-invitation";
     card.setAttribute("aria-label", "下载后继续阅读与研究");
     card.tabIndex = -1;
-    let destroyed = false, signingUp = false, signupClicked = false, registeredTracked = false;
+    let destroyed = false, signingUp = false, signupClicked = false, registeredTracked = false, viewed = false;
+    let visibilityObserver = null, visibleFraction = 0;
     let lastSignedIn = null;
     const currentSession = () => { try { return typeof getSession === "function" ? getSession() : null; } catch (_error) { return null; } };
-    const emit = (action, data = {}) => { try { if (typeof track === "function") track(action, { report_id: reportId, source, ...data }); } catch (_error) { /* Analytics must not interrupt reading. */ } };
+    const emit = (action, data = {}) => { try { if (typeof track === "function") track(action, { report_id: reportId, source, access_state: currentSession() ? "signed_in" : "guest", ...data }); } catch (_error) { /* Analytics must not interrupt reading. */ } };
+    function markViewed() {
+      if (destroyed || viewed || document.visibilityState === "hidden") return;
+      viewed = true; emit("viewed"); visibilityObserver?.disconnect();
+    }
+    function visibilityChanged() { if (visibleFraction >= 0.25) markViewed(); }
     const localePrefix = window.location.pathname.match(/^\/(en|ko|ja|ar|zh-Hant)(?:\/|$)/i)?.[0].replace(/\/$/, "") || "";
     const researchHref = `${localePrefix}/research.html`;
     const readingHref = document.getElementById("detail") ? "#detail" : "#externalDetail";
@@ -63,8 +69,8 @@
       const signedIn = Boolean(currentSession());
       lastSignedIn = signedIn;
       const actions = signedIn
-        ? `<a class="download-invitation-primary" href="${readingHref}">继续阅读</a>${document.getElementById("reportDiscussionHost") ? '<a class="download-invitation-secondary" href="#reportDiscussionHost">参与讨论</a>' : ""}<a class="download-invitation-secondary" href="${researchHref}">继续 AI 研究</a>`
-        : '<button class="download-invitation-primary" type="button" data-invitation-register>免费注册，继续探索</button><a class="download-invitation-secondary" href="' + readingHref + '">继续阅读</a>';
+        ? `<a class="download-invitation-primary" href="${readingHref}" data-invitation-continue="continue_reading">继续阅读</a>${document.getElementById("reportDiscussionHost") ? '<a class="download-invitation-secondary" href="#reportDiscussionHost" data-invitation-continue="discussion">参与讨论</a>' : ""}<a class="download-invitation-secondary" href="${researchHref}" data-invitation-continue="research">继续 AI 研究</a>`
+        : '<button class="download-invitation-primary" type="button" data-invitation-register>免费注册，继续探索</button><a class="download-invitation-secondary" href="' + readingHref + '" data-invitation-continue="continue_reading">继续阅读</a>';
       card.innerHTML = `
         <div class="download-invitation-top"><p class="download-invitation-received" role="status">PDF已接收并交给浏览器保存。</p><button class="download-invitation-dismiss" type="button" data-invitation-dismiss aria-label="关闭下载后提示 / Dismiss">×</button></div>
         <h3>${signedIn ? "继续这一轮研究" : "把这份报告作为研究的起点"}</h3>
@@ -91,12 +97,16 @@
       if (!target || destroyed) return;
       const dismiss = target.closest("[data-invitation-dismiss]");
       if (dismiss) {
-        event.preventDefault(); saveState(key, "dismissed"); emit("dismiss"); api.destroy(); return;
+        event.preventDefault(); markViewed(); saveState(key, "dismissed"); emit("dismiss"); api.destroy(); return;
+      }
+      const continuation = target.closest("[data-invitation-continue]");
+      if (continuation && ["continue_reading", "discussion", "research"].includes(continuation.dataset.invitationContinue)) {
+        markViewed(); emit(continuation.dataset.invitationContinue); return;
       }
       const link = target.closest("[data-invitation-related]");
       if (link) {
         const relatedItem = related[Number(link.dataset.invitationRelated)];
-        if (relatedItem) emit("related_open", { report_id: relatedItem.id, parent_report_id: reportId });
+        if (relatedItem) { markViewed(); emit("related_open", { report_id: relatedItem.id, parent_report_id: reportId }); }
         return;
       }
       const button = target.closest("[data-invitation-register]");
@@ -105,6 +115,7 @@
       if (currentSession()) { refresh(); return; }
       if (typeof onRegister !== "function") return;
       signingUp = true; signupClicked = true; button.disabled = true;
+      markViewed();
       emit("signup_click");
       try {
         await onRegister({ item, source, mode: "register", placement: "post_download", resumeIntent: true });
@@ -129,6 +140,8 @@
         card.removeEventListener("click", clicked);
         document.removeEventListener("portal-auth-change", refresh);
         document.removeEventListener("portal-auth-complete", authCompleted);
+        document.removeEventListener("visibilitychange", visibilityChanged);
+        visibilityObserver?.disconnect();
         card.remove();
         if (instances.get(container)?.api === api) instances.delete(container);
       },
@@ -139,6 +152,16 @@
     document.addEventListener("portal-auth-change", refresh);
     document.addEventListener("portal-auth-complete", authCompleted);
     saveState(key, "shown"); emit("shown");
+    if (typeof window.IntersectionObserver === "function") {
+      visibilityObserver = new window.IntersectionObserver((entries) => {
+        for (const entry of entries) if (entry.target === card) {
+          visibleFraction = entry.isIntersecting ? entry.intersectionRatio : 0;
+          visibilityChanged();
+        }
+      }, { threshold: [0, 0.25] });
+      visibilityObserver.observe(card);
+      document.addEventListener("visibilitychange", visibilityChanged);
+    }
     return api;
   }
   window.PortalDownloadInvitation = { show };

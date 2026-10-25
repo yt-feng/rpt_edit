@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <title>Course 原始目录 | KC桌面</title>
+  <meta name="description" content="连续会员专用的课程原始文件目录。">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <link rel="stylesheet" href="assets/styles.css?v=site-20261025a">
+  <link rel="stylesheet" href="assets/course-full.css?v=course-full-v1">
+</head>
+<body data-page="course-full">
+  <header class="topbar">
+    <a class="brand compact" href="/" aria-label="KC桌面 home"><img src="assets/app-mark.svg" alt="" width="30" height="30"><span>KC桌面</span></a>
+    <nav class="topbar-actions" aria-label="站点导航">
+      <a class="topbar-link" href="/">首页</a><a class="topbar-link" href="courses.html">Course</a>
+      <a id="newsfeedNav" class="topbar-link" href="newsfeed.html">Newsfeed</a>
+      <button id="accountGate" class="account-button" type="button">登录</button>
+    </nav>
+  </header>
+  <main class="shell course-full-shell" id="courseFullApp">
+    <section class="course-full-hero">
+      <p class="course-full-kicker">MEMBER DIRECTORY</p>
+      <h1>Course 原始目录</h1>
+      <p>按原始文件名称与目录层级查找资料。当前有效、连续满两个自然月的会员可查看并逐项提交索取申请。</p>
+      <a href="courses.html">返回主题课程入口 →</a>
+    </section>
+    <section class="course-full-gate" aria-labelledby="courseFullGateTitle">
+      <p class="course-full-kicker">ACCESS</p>
+      <h2 id="courseFullGateTitle">正在核验会员资格</h2>
+      <p id="courseFullGateMessage" role="status" aria-live="polite">请稍候。</p>
+      <p class="course-full-dates" id="courseFullDates" hidden></p>
+      <div class="course-full-actions">
+        <button class="primary" id="courseFullLogin" type="button" hidden>登录账号</button>
+        <button class="secondary" id="courseFullRetry" type="button">重新核验</button>
+        <button class="secondary" id="courseFullVerify" type="button" data-membership-request-open="support" hidden>联系核验会员记录</button>
+      </div>
+    </section>
+    <section class="course-full-directory" id="courseFullDirectory" aria-labelledby="courseFullDirectoryTitle" hidden>
+      <div class="course-full-directory-heading"><div><p class="course-full-kicker">FIND A FILE</p><h2 id="courseFullDirectoryTitle">查找与索取资料</h2></div><p id="courseFullUpdated"></p></div>
+      <form id="courseFullFilters" class="course-full-filters" role="search">
+        <label class="course-full-search" for="courseFullSearch">文件名或目录关键词<input id="courseFullSearch" type="search" maxlength="160" autocomplete="off" placeholder="输入关键词"></label>
+        <label for="courseFullFolder">目录<select id="courseFullFolder"><option value="">全部目录</option></select></label>
+        <label for="courseFullType">文件类型<select id="courseFullType"><option value="">全部类型</option></select></label>
+        <button class="primary" id="courseFullSearchButton" type="submit">搜索</button>
+      </form>
+      <p class="course-full-note">文件名称按原始目录展示。选择「申请索取」后，我们会通过邮箱联系你。</p>
+      <div class="course-full-reply" id="courseFullReply" hidden><label for="courseFullReplyEmail">回复邮箱 / Reply email</label><input id="courseFullReplyEmail" type="email" autocomplete="email" maxlength="254" required><p>请填写可接收资料回复的邮箱。</p></div>
+      <p id="courseFullStatus" class="course-full-status" role="status" aria-live="polite"></p>
+      <ul id="courseFullItems" class="course-full-items" aria-label="文件目录"></ul>
+      <div class="course-full-pagination" id="courseFullPagination" hidden>
+        <button class="secondary" id="courseFullPrevious" type="button">上一页</button>
+        <span id="courseFullPageLabel"></span>
+        <button class="secondary" id="courseFullNext" type="button">下一页</button>
+      </div>
+      <p id="courseFullRequestStatus" class="course-full-status" role="status" aria-live="polite"></p>
+    </section>
+    <noscript><p>请启用 JavaScript 后登录并查看会员目录。</p></noscript>
+  </main>
+  <footer class="legal-footer"><a href="/">首页检索</a><a href="courses.html">Course</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></footer>
+  <script src="assets/site-runtime.js"></script>
+  <script src="assets/contact.js?v=site-20261025a"></script>
+  <script src="assets/analytics.js"></script>
+  <script src="assets/app.js?v=site-20261025a"></script>
+  <script src="assets/course-full.js?v=course-full-v1"></script>
+</body>
+</html>

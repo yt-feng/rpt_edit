@@ -18,9 +18,10 @@ assert.match(workerSource, importPattern, "Worker must statically import the sup
 
 const runnableAdapter = adapterSource.replace(/\nexport\s*\{[\s\S]*?\};\s*$/m, "\n");
 assert.notEqual(runnableAdapter, adapterSource, "adapter exports must be removed for the VM harness");
+// This VM exercises local handlers; unused named module imports are removed generically.
 const runnableWorker = workerSource
   .replace(importPattern, "")
-  .replace(/^import\s*\{[^}]+\}\s*from\s*["']\.\/research-news(?:-snapshot)?\.js["'];\s*/gm, "")
+  .replace(/^import\s*\{[^}]+\}\s*from\s*["']\.\/[^"']+\.js["'];\s*/gm, "")
   .replace(/\bexport default\s*\{/, "globalThis.__workerExport = {");
 
 function extractFunction(source, name) {

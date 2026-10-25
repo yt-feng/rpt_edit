@@ -16,6 +16,7 @@ function functionSource(name) {
 }
 
 function createHarness({ session = null, fetchResponse, authRefresh } = {}) {
+  let now = Date.now();
   const elements = new Map();
   const requests = [];
   const events = [];
@@ -84,14 +85,19 @@ function createHarness({ session = null, fetchResponse, authRefresh } = {}) {
   }
   const trigger = createElement("originalRequestLink");
   document.activeElement = trigger;
+  const setSession = (value) => {
+    session = value;
+    document.dispatchEvent({ type: "portal-auth-change" });
+  };
   const context = vm.createContext({
     document, page: "index", URL, Set, AbortController, setTimeout, clearTimeout,
+    Date: class extends Date { static now() { return now; } },
     CustomEvent: class { constructor(type, options = {}) { this.type = type; this.detail = options.detail; } },
     window: { alert() {}, clearInterval, setInterval, setTimeout, clearTimeout },
     MEMBERSHIP_REQUEST_KINDS: new Set(["membership", "support", "privacy", "refund", "access"]),
     loadAuthSession: () => session,
     authHeaders: () => session ? { Authorization: `Bearer ${session.token}` } : {},
-    saveAuthSession: (value) => { session = value; }, clearAuthSession: () => { session = null; },
+    saveAuthSession: setSession, clearAuthSession: () => setSession(null),
     authUserLabel: () => session?.user?.username || "登录", titleText: (item) => item.title || "",
     escapeHtml: (value) => String(value || "").replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;"),
     accessContactGuidanceHtml: () => "申请开通权限", journeyPageUrl: (name) => `/${name}`,
@@ -113,15 +119,17 @@ function createHarness({ session = null, fetchResponse, authRefresh } = {}) {
   // admin runtime test separately verifies first-load script insertion.
   vm.runInContext(accountServices, context, { filename: "account-services.js" });
   vm.runInContext([
-    "let accountServicesLoad = null;",
+    "let accountServicesLoad = null; let membershipDraftCache = null;",
     functionSource("loadAccountServices"), functionSource("initLazyAccountServices"), functionSource("isAdminASession"),
+    functionSource("membershipRequestDraftState"),
     functionSource("membershipRequestKind"), functionSource("membershipRequestCopy"),
     functionSource("accountModalMarkup"), functionSource("showAccountModal"),
   ].join("\n"), context);
   return {
     document, trigger, requests, events, documentEvents, captchaLoads,
     getSession: () => session,
-    setSession: (value) => { session = value; },
+    setSession,
+    advanceTime: (milliseconds) => { now += milliseconds; },
     get: (id) => elements.get(id),
     open: (options = { requestKind: "membership" }) => context.showAccountModal("/api", options),
     membershipEvents: () => events.filter((event) => event.type === "membership_request"),
@@ -196,6 +204,106 @@ test("ordinary login keeps its existing primary form and does not count unseen a
   assert.equal(h.get("membershipRequestForm").hidden, false);
   await h.get("accountClose").emit("click");
   assert.equal(h.membershipEvents().some(({ action }) => action === "form_abandon"), false, "opening alone is not form abandonment");
+});
+
+for (const dismissal of ["close", "escape", "backdrop"]) {
+  test(`an interrupted application restores its page-memory draft after ${dismissal}`, async () => {
+    const h = createHarness();
+    await h.open();
+    await h.fill();
+    if (dismissal === "close") await h.get("accountClose").emit("click");
+    else await h.get("accountModal").emit(dismissal === "escape" ? "keydown" : "click", { key: "Escape" });
+    await h.open();
+    assert.equal(h.get("membershipRequesterEmail").value, "person@example.com");
+    assert.equal(h.get("membershipContactChannel").value, "wechat");
+    assert.equal(h.get("membershipContactValue").value, "private-contact-0123");
+    assert.equal(h.get("membershipRequestMessage").value, "Private report interest");
+    assert.equal(h.requests.length, 0, "restoration must not submit the application");
+    assert.equal(h.membershipEvents().filter(({ action }) => action === "form_start").length, 1,
+      "restoration is not a new user input event");
+    await h.get("accountClose").emit("click");
+  });
+}
+
+test("membership and access drafts remain isolated", async () => {
+  const h = createHarness();
+  await h.open();
+  await h.fill();
+  await h.get("accountClose").emit("click");
+  await h.open({ requestKind: "access" });
+  assert.equal(h.get("membershipContactValue").value, "");
+  await h.edit("membershipContactValue", "access-contact");
+  await h.get("accountClose").emit("click");
+  await h.open();
+  assert.equal(h.get("membershipContactValue").value, "private-contact-0123");
+  await h.get("accountClose").emit("click");
+  await h.open({ requestKind: "access" });
+  assert.equal(h.get("membershipContactValue").value, "access-contact");
+  await h.get("accountClose").emit("click");
+});
+
+test("accepted submission clears the saved draft", async () => {
+  const h = createHarness();
+  await h.open();
+  await h.fill();
+  await h.get("accountClose").emit("click");
+  await h.open();
+  await h.submit();
+  assert.equal(h.requests.length, 1);
+  await h.get("accountClose").emit("click");
+  await h.open();
+  assert.equal(h.get("membershipRequesterEmail").value, "");
+  assert.equal(h.get("membershipContactChannel").value, "");
+  assert.equal(h.get("membershipContactValue").value, "");
+  assert.equal(h.get("membershipRequestMessage").value, "");
+  await h.get("accountClose").emit("click");
+});
+
+test("drafts expire after thirty minutes and reopening does not extend their lifetime", async () => {
+  const h = createHarness();
+  await h.open();
+  await h.fill();
+  await h.get("accountClose").emit("click");
+  h.advanceTime(29 * 60 * 1000);
+  await h.open();
+  assert.equal(h.get("membershipContactValue").value, "private-contact-0123");
+  await h.get("accountClose").emit("click");
+  h.advanceTime(60 * 1000);
+  await h.open();
+  assert.equal(h.get("membershipContactValue").value, "");
+  await h.get("accountClose").emit("click");
+});
+
+test("token refresh retains the draft but switching accounts clears it even when switching back", async () => {
+  const first = { token: "first-token", user: { id: "member-1", email: "first@example.com" } };
+  const h = createHarness({ session: first });
+  await h.open();
+  await h.edit("membershipContactChannel", "wechat");
+  await h.edit("membershipContactValue", "first-contact");
+  await h.get("accountClose").emit("click");
+  h.setSession({ ...first, token: "refreshed-token" });
+  await h.open();
+  assert.equal(h.get("membershipContactValue").value, "first-contact");
+  assert.equal(h.get("membershipRequesterEmail").value, "first@example.com");
+  await h.get("accountClose").emit("click");
+  h.setSession({ token: "second-token", user: { id: "member-2", email: "second@example.com" } });
+  h.setSession(first);
+  await h.open();
+  assert.equal(h.get("membershipContactValue").value, "");
+  await h.get("accountClose").emit("click");
+});
+
+test("an account change while the application is open cannot save the previous account's draft", async () => {
+  const h = createHarness({ session: { token: "first-token", user: { id: "member-1", email: "first@example.com" } } });
+  await h.open();
+  await h.edit("membershipContactChannel", "wechat");
+  await h.edit("membershipContactValue", "first-contact");
+  h.setSession(null);
+  await h.get("accountClose").emit("click");
+  await h.open();
+  assert.equal(h.get("membershipRequesterEmail").value, "");
+  assert.equal(h.get("membershipContactValue").value, "");
+  await h.get("accountClose").emit("click");
 });
 
 test("validation attempts are measured and preserve values without sending a request", async () => {
