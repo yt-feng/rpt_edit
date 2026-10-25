@@ -500,7 +500,7 @@ jobs:
           fi
           python3 -m json.tool "$RUNNER_TEMP/api-locale-invalid.json" >/dev/null
 
-          for endpoint in rewards course/access \
+          for endpoint in rewards course/access course/full/access course/full/directory \
             account/ai-research-credits account/content-api account/expiry-reminders content/v1/reports; do
             code="$(curl --silent --show-error --max-time 20 \
               --output "$RUNNER_TEMP/api-anonymous.json" \

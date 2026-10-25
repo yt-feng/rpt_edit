@@ -7,6 +7,7 @@ const vm = require("node:vm");
 const root = path.resolve(__dirname, "..");
 const workerPath = path.join(root, "workers/portal-suite-worker/src/index.js");
 const worker = fs.readFileSync(workerPath, "utf8");
+// This VM exercises local handlers; unused named module imports are removed generically.
 const workerWithoutImports = worker.replace(
   /^import\s*\{[\s\S]*?\}\s*from\s*["']\.\/source-lead-adapter\.js["'];\s*/m,
   `function publicSourceLeadItem() { return {}; }
@@ -14,7 +15,7 @@ const workerWithoutImports = worker.replace(
    async function searchSourceLeadMetadata() { return { items: [], total: 0 }; }
    function sourceLeadAdapterEnabled() { return false; }
   `,
-).replace(/^[ \t]*import\s*\{[^}]+\}\s*from\s*["']\.\/research-news(?:-snapshot)?\.js["'];\s*/gm, "");
+).replace(/^[ \t]*import\s*\{[^}]+\}\s*from\s*["']\.\/[^"']+\.js["'];\s*/gm, "");
 assert.notEqual(workerWithoutImports, worker, "the Worker module import must be replaced for the VM harness");
 
 function extractFunction(source, name) {

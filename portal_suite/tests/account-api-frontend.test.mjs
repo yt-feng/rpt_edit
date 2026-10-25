@@ -192,7 +192,7 @@ test("admin controls hide on auth change and ignore stale selected-user data", a
 });
 
 test("API docs have an isolated boot path and content endpoints; secret handlers never persist or track keys", () => {
-  assert.match(app, /page === "blog-article" \|\| page === "developer-api"\s*\? initContentAccount/u);
+  assert.match(app, /page === "blog-article" \|\| page === "developer-api" \|\| page === "course-full"\s*\? initContentAccount/u);
   assert.match(docs, /data-page="developer-api"/u);
   for (const path of ["/reports", "/reports/{id}/download", "/reports/{id}/artifacts/{artifactId}"]) assert.ok(docs.includes(path));
   assert.ok(docs.includes("https://kcdesk.com/api/content/v1"));

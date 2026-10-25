@@ -54,7 +54,122 @@ def event(
     return row
 
 
+def post_event(identifier: str, session: str, kind: str, second: int | None, *, state: str = "guest", **extra: object) -> dict[str, object]:
+    event_type = "download_success" if kind == "download" else ("report_open" if kind == "post_download_related_open" else "account_auth")
+    action = extra.pop("download_action", "password_download") if kind == "download" else kind
+    return event(identifier, "2026-10-25", session, "private-visitor-for-post-download",
+                 event_type=event_type, action=action, status="success", placement="post_download",
+                 client_ts=f"2026-10-25T09:00:{second:02d}+08:00" if second is not None else None,
+                 access_state=state, **extra)
+
+
 class GrowthReviewTest(unittest.TestCase):
+    def post_diagnostics(self, rows: list[dict[str, object]]) -> dict[str, object]:
+        return growth.build_growth_review(rows, "2026-10-25", "2026-10-25")["post_download_diagnostics"]
+
+    def test_post_download_historical_absence_and_render_only_are_not_zero_exposure(self) -> None:
+        rows = [post_event("historical-download", "historical-session", "download", 1)]
+        diagnostic = self.post_diagnostics(rows)
+        self.assertEqual(diagnostic["coverage"], "unavailable")
+        self.assertIsNone(diagnostic["first_observed_date"])
+        self.assertIsNone(diagnostic["ordered_signup_stages"][0]["sessions"])
+        for stage in diagnostic["ordered_signup_stages"][1:]:
+            self.assertIsNone(stage["sessions"])
+            self.assertIsNone(stage["rate_from_previous_observed_stage"])
+        rows.append(post_event("rendered", "historical-session", "post_download_shown", 2))
+        diagnostic = self.post_diagnostics(rows)
+        self.assertEqual(diagnostic["coverage"], "partial_observations")
+        self.assertIsNone(diagnostic["ordered_signup_stages"][1]["sessions"])
+
+    def test_post_download_sequence_uses_client_order_and_authoritative_registration(self) -> None:
+        rows = [post_event(f"private-event-{index}", "private-explicit-session", kind, index,
+                           ts=f"2026-10-25T10:00:{10-index:02d}+08:00", report_id="" if kind == "register" else "private-report")
+                for index, kind in enumerate(("download", "post_download_viewed", "post_download_signup_click", "register"), 1)]
+        rows += [dict(rows[1]), post_event("ui-marker", "private-explicit-session", "post_download_registered", 5)]
+        rows.append(post_event("before-rollout-download", "no-invitation-measurement", "download", 0))
+        review = growth.build_growth_review(reversed(rows), "2026-10-25", "2026-10-25")
+        diagnostic = review["post_download_diagnostics"]
+        self.assertEqual(diagnostic["coverage"], "viewport_observations")
+        self.assertEqual([row["sessions"] for row in diagnostic["ordered_signup_stages"]], [1, 1, 1, 1])
+        self.assertEqual(diagnostic["ordered_signup_stages"][-1]["rate_from_previous_observed_stage"], 1.0)
+        self.assertEqual(diagnostic["ordered_signup_stages"][-1]["ambiguous_timestamp_sessions"], 0)
+        cohorts = {row["download_access"]: row for row in diagnostic["by_download_access"]}
+        self.assertEqual(cohorts["password_download"]["ordered_signup_stages"][-1]["sessions"], 1)
+        self.assertIsNone(cohorts["account_download"]["ordered_signup_stages"][-1]["sessions"])
+        serialized = json.dumps(review) + growth.markdown_summary(review)
+        for private in ("private-event-", "private-explicit-session", "private-visitor-for-post-download", "private-report"):
+            self.assertNotIn(private, serialized)
+
+    def test_post_download_does_not_join_sessions_or_use_server_time_as_order(self) -> None:
+        rows = []
+        for prefix, times in (("reversed", (4, 3, 2, 1)), ("tied", (1, 2, 2, 3))):
+            rows.extend(post_event(f"{prefix}-{index}", prefix, kind, second)
+                        for index, (kind, second) in enumerate(zip(("download", "post_download_viewed", "post_download_signup_click", "register"), times)))
+        rows.extend(post_event(f"split-{index}", "split-download" if index == 0 else "split-registration", kind, index + 1)
+                    for index, kind in enumerate(("download", "post_download_viewed", "post_download_signup_click", "register")))
+        diagnostic = self.post_diagnostics(rows)
+        final = diagnostic["ordered_signup_stages"][-1]
+        self.assertEqual(final["sessions"], 0)
+        self.assertEqual(final["ambiguous_timestamp_sessions"], 1)
+        self.assertEqual(final["coverage"], "observed")
+        self.assertIsNone(final["rate_from_previous_observed_stage"])
+        self.assertEqual(final["rate_unavailable_reason"], "ambiguous_client_timestamps")
+
+    def test_post_download_missing_identity_and_client_time_remain_unavailable(self) -> None:
+        for session, timestamps in (("", (1, 2, 3, 4)), ("has-session", (None, None, None, None))):
+            with self.subTest(session=session):
+                rows = [post_event(f"missing-{index}", session, kind, second)
+                        for index, (kind, second) in enumerate(zip(("download", "post_download_viewed", "post_download_signup_click", "register"), timestamps))]
+                diagnostic = self.post_diagnostics(rows)
+                final = diagnostic["ordered_signup_stages"][-1]
+                self.assertIsNone(final["sessions"])
+                self.assertEqual(final["coverage"], "insufficient_client_context")
+                field = "events_without_explicit_session" if not session else "events_without_valid_client_time"
+                self.assertEqual(diagnostic[field], 4)
+
+    def test_post_download_ui_marker_wrong_placement_failed_register_and_bots_are_not_conversion(self) -> None:
+        rows = [post_event(f"start-{index}", "session", kind, index + 1)
+                for index, kind in enumerate(("download", "post_download_viewed", "post_download_signup_click", "post_download_registered"))]
+        wrong_placement = post_event("wrong-placement", "session", "register", 5)
+        wrong_placement["placement"] = "navigation"
+        failed = post_event("failed", "session", "register", 6)
+        failed["status"] = "error"
+        bot = post_event("bot", "session", "register", 7, bot_hint="verified_bot")
+        diagnostic = self.post_diagnostics(rows + [wrong_placement, failed, bot])
+        self.assertIsNone(diagnostic["ordered_signup_stages"][-1]["sessions"])
+        self.assertNotIn("registration_success", {row["action"] for row in diagnostic["observed_actions"]})
+
+    def test_post_download_states_and_download_access_are_explicit_controlled_cohorts(self) -> None:
+        rows = []
+        for session, state, access in (("guest-session", "guest", "password_download"),
+                                       ("unknown-session", "private-account-state", "private-download-action")):
+            rows.extend(post_event(f"{session}-{index}", session, kind, index + 1, state=state,
+                                   download_action=access, path="/report.html?password=private-password")
+                        for index, kind in enumerate(("download", "post_download_viewed", "post_download_signup_click", "register")))
+        for session, access in (("member-session", "account_download"), ("combined-session", "account_or_password_download")):
+            rows.extend(post_event(f"{session}-{index}", session, kind, index + 1, state="signed_in", download_action=access)
+                        for index, kind in enumerate(("download", "post_download_viewed", "post_download_related_open")))
+        review = growth.build_growth_review(rows, "2026-10-25", "2026-10-25")
+        diagnostic = review["post_download_diagnostics"]
+        state_paths = {(row["access_state"], row["outcome"]): row for row in diagnostic["state_paths"]}
+        self.assertEqual(state_paths[("guest", "registration")]["sessions"], 1)
+        self.assertEqual(state_paths[("unknown", "registration")]["sessions"], 1)
+        self.assertEqual(state_paths[("signed_in", "continuation")]["sessions"], 2)
+        cohorts = {row["download_access"]: row for row in diagnostic["by_download_access"]}
+        self.assertEqual(cohorts["unknown"]["ordered_signup_stages"][-1]["sessions"], 1)
+        self.assertEqual(cohorts["account_or_password_download"]["ordered_signup_stages"][0]["sessions"], 1)
+        serialized = json.dumps(diagnostic) + growth.markdown_summary(review)
+        for private in ("private-account-state", "private-download-action", "private-password"):
+            self.assertNotIn(private, serialized)
+
+    def test_post_download_actions_and_placement_survive_journey_allowlists(self) -> None:
+        rows = [post_event(f"controlled-{index}", "session", action, index + 1)
+                for index, action in enumerate(sorted(growth.POST_DOWNLOAD_ACTIONS))]
+        review = growth.build_growth_review(rows, "2026-10-25", "2026-10-25")
+        actions = review["journey_diagnostics"]["client_actions"]
+        self.assertEqual({row["action"] for row in actions}, growth.POST_DOWNLOAD_ACTIONS)
+        self.assertEqual({row["placement"] for row in actions}, {"post_download"})
+
     def test_legacy_json_rendering_does_not_invent_download_intersections(self) -> None:
         # Captured from the pre-diagnostics builder at 9e46db30, with an attempt
         # and a success in different sessions. The old JSON has totals only.
@@ -227,6 +342,25 @@ class GrowthReviewTest(unittest.TestCase):
         serialized = json.dumps(review) + growth.markdown_summary(review)
         self.assertNotIn("private-status", serialized)
         self.assertNotIn("private-detail", serialized)
+
+    def test_401_is_not_automatically_an_expired_login_and_error_days_are_available(self) -> None:
+        rows = [
+            event("a", "2026-10-01", "a", "a", event_type="download_error", action="password_download", status="401", error="Password is incorrect."),
+            event("b", "2026-10-01", "b", "b", event_type="download_error", action="account_download", status="401", error="Session expired"),
+            event("c", "2026-10-01", "c", "c", event_type="download_error", action="private-method", status="401", error="private-detail"),
+            event("d", "2026-10-01", "d", "d", event_type="account_auth", action="register", status="error", error="用户名格式不正确"),
+        ]
+        review = growth.build_growth_review(rows, "2026-10-01", "2026-10-01")
+        self.assertEqual(review["download_diagnostics"]["error_access_and_reason"], [
+            {"download_access": "account_download", "reason": "login_required_or_expired", "sessions": 1},
+            {"download_access": "password_download", "reason": "report_password_mismatch", "sessions": 1},
+            {"download_access": "unknown", "reason": "authentication_unspecified", "sessions": 1},
+        ])
+        errors = review["journey_diagnostics"]["daily_registration_error_categories"]
+        self.assertEqual(errors[0]["date"], "2026-10-01")
+        self.assertEqual(errors[0]["category"], "username_validation")
+        self.assertNotIn("private-detail", json.dumps(review))
+        self.assertNotIn("private-method", json.dumps(review))
 
     def test_session_segments_use_first_observation_and_preserve_unknown(self) -> None:
         rows = [

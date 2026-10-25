@@ -16,7 +16,7 @@ function functionSource(name) {
 }
 
 test("research and article startup initialize account controls without catalog requests or duplicate article views", async () => {
-  for (const page of ["research", "blog-article"]) {
+  for (const page of ["research", "blog-article", "course-full"]) {
     const calls = [];
     const context = vm.createContext({
       page,
@@ -105,6 +105,7 @@ test("switching from login to registration records each form start once per moda
     window: { alert() {}, clearInterval, setInterval },
     trackEvent: (_url, _type, payload) => events.push({ ...payload }),
     accountModalMarkup: () => "", loadAuthSession: () => null,
+    membershipRequestDraftState: () => ({ items: new Map() }), membershipRequestKind: () => "membership",
     initLazyAccountServices: () => ({ close() {}, refresh() {} }),
     loadAccountCaptcha: () => Promise.resolve("captcha"),
     registrationNoticeText: () => "账号提示", localizedContactText: (value) => String(value || ""),
@@ -173,6 +174,7 @@ test("invalid registration names preserve the solved captcha and valid names use
     window: { alert() {}, clearInterval, setInterval },
     trackEvent: (_url, _type, payload) => events.push({ ...payload }),
     accountModalMarkup: () => "", loadAuthSession: () => null,
+    membershipRequestDraftState: () => ({ items: new Map() }), membershipRequestKind: () => "membership",
     initLazyAccountServices: () => ({ close() {}, refresh() {} }),
     loadAccountCaptcha: async () => { captchaLoads += 1; return "captcha"; },
     registrationNoticeText: () => "账号提示", localizedContactText: (value) => String(value || ""),
@@ -183,6 +185,10 @@ test("invalid registration names preserve the solved captcha and valid names use
   });
   await showAccount("/api", { mode: "register", placement: "navigation" });
   get("accountUsername").value = "中文名字";
+  await get("accountUsername").emit("input");
+  assert.equal(get("accountUsername").getAttribute("aria-invalid"), "true");
+  assert.match(get("accountUsernameHint").textContent, /拼音/u);
+  assert.equal(requests.length, 0, "typing guidance must not send a request");
   get("accountEmail").value = "example@example.com";
   get("accountPassword").value = "sample-password";
   get("accountCaptchaAnswer").value = "solved";
@@ -193,11 +199,21 @@ test("invalid registration names preserve the solved captcha and valid names use
   assert.equal(get("accountCaptchaAnswer").value, "solved");
   assert.equal(events.filter(({ action, status }) => action === "register" && status === "error").length, 1);
   get("accountUsername").value = " @Yourname_01 ";
+  await get("accountUsername").emit("blur");
+  assert.equal(get("accountUsername").value, "yourname_01");
+  assert.equal(get("accountUsername").getAttribute("aria-invalid"), "false");
   await get("accountAuthForm").emit("submit", { preventDefault() {} });
   assert.equal(requests.length, 1);
   assert.equal(requests[0].username, "yourname_01");
   assert.equal(requests[0].captcha_answer, "solved");
   assert.equal(captchaLoads, initialCaptchaLoads + 1, "a sent request still refreshes a consumed captcha");
+});
+
+test("report-password mismatch gives recovery guidance without mislabelling every 401", () => {
+  const message = vm.runInNewContext(`(${functionSource("downloadErrorMessage")})`, { localizedContactText: (value) => value });
+  assert.match(message(401, "Password is incorrect.", {}), /重新打开收到的完整链接/u);
+  assert.equal(message(401, "Session expired", {}), "Session expired");
+  assert.equal(message(503, "temporarily unavailable", {}), "temporarily unavailable");
 });
 
 test("report search and AI research have separate navigation entries and composers", () => {

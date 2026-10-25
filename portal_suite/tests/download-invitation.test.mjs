@@ -4,10 +4,11 @@ import vm from "node:vm";
 import test from "node:test";
 const source = await readFile(new URL("../site_src/assets/download-invitation.js", import.meta.url), "utf8");
 
-function harness({ signedIn = false, storageThrows = false } = {}) {
+function harness({ signedIn = false, storageThrows = false, observe = false } = {}) {
   let auth = signedIn ? { token: "fixture", user: { id: "member" } } : null;
   const events = new Map(), storage = new Map(), tracks = [], registerCalls = [];
   const document = {
+    visibilityState: "visible",
     getElementById: (id) => ["detail", "reportDiscussionHost"].includes(id) ? {} : null,
     addEventListener(name, listener) { if (!events.has(name)) events.set(name, new Set()); events.get(name).add(listener); },
     removeEventListener(name, listener) { events.get(name)?.delete(listener); },
@@ -38,6 +39,12 @@ function harness({ signedIn = false, storageThrows = false } = {}) {
   const window = { document, location: { origin: "https://portal.example.invalid", href: "https://portal.example.invalid/en/report.html?id=one&password=private-secret", pathname: "/en/report.html" },
     sessionStorage: { getItem(key) { if (storageThrows) throw new Error("blocked"); return storage.get(key); }, setItem(key, value) { if (storageThrows) throw new Error("blocked"); storage.set(key, value); } },
   };
+  let observer;
+  if (observe) window.IntersectionObserver = class {
+    constructor(callback) { this.callback = callback; observer = this; }
+    observe(target) { this.target = target; }
+    disconnect() { this.disconnected = true; }
+  };
   vm.runInNewContext(source, { window, document, URL, console });
   const container = new Element();
   const options = { container, item: { id: "one", title: "Current report" }, source: "catalog", getSession: () => auth,
@@ -46,6 +53,8 @@ function harness({ signedIn = false, storageThrows = false } = {}) {
     createContainer: () => new Element(),
     show: (overrides = {}) => window.PortalDownloadInvitation.show({ ...options, ...overrides }),
     setAuth(value) { auth = value; document.dispatch("portal-auth-change"); },
+    intersect(ratio) { observer.callback([{ target: observer.target, isIntersecting: ratio > 0, intersectionRatio: ratio }]); },
+    observer: () => observer,
   };
 }
 
@@ -86,7 +95,7 @@ test("dismissal and repeated report downloads do not repeat the invitation in a 
   await h.container.children[0].click("[data-invitation-dismiss]");
   assert.equal(h.container.children.length, 0);
   assert.equal(h.show(), null); assert.equal(h.show({ container: h.createContainer() }), null);
-  assert.deepEqual(h.tracks.map((entry) => entry.event), ["shown", "dismiss"]);
+  assert.deepEqual(h.tracks.map((entry) => entry.event), ["shown", "viewed", "dismiss"]);
   assert.equal(h.events.get("portal-auth-change").size, 0); assert.equal(h.events.get("portal-auth-complete").size, 0);
   assert.ok(h.show({ item: { id: "another-report" } }));
 });
@@ -110,14 +119,16 @@ test("signup resumes the current report and tracks only a confirmed new registra
   await card.click("[data-invitation-register]");
   assert.equal(h.registerCalls[0].mode, "register"); assert.equal(h.registerCalls[0].resumeIntent, true);
   assert.equal(h.registerCalls[0].item.id, "one");
-  assert.deepEqual(h.tracks.map((entry) => entry.event), ["shown", "signup_click", "registered"]);
+  assert.deepEqual(h.tracks.map((entry) => entry.event), ["shown", "viewed", "signup_click", "registered"]);
+  assert.equal(h.tracks[1].data.access_state, "guest");
+  assert.equal(h.tracks.at(-1).data.access_state, "signed_in");
   assert.doesNotMatch(card.innerHTML, /data-invitation-register/u); assert.equal(card.focused, true); assert.equal(card.scrolled, true);
 });
 
 test("login recovery and merely closing the registration modal do not count as registrations", async () => {
   const h = harness(); h.show(); const card = h.container.children[0];
   await card.click("[data-invitation-register]");
-  assert.deepEqual(h.tracks.map((entry) => entry.event), ["shown", "signup_click"]);
+  assert.deepEqual(h.tracks.map((entry) => entry.event), ["shown", "viewed", "signup_click"]);
   h.setAuth({ token: "existing", user: { id: "old-member" } });
   h.document.dispatch("portal-auth-complete", { action: "login_recovered", placement: "post_download" });
   h.document.dispatch("portal-auth-complete", { action: "register", placement: "navigation" });
@@ -131,4 +142,25 @@ test("rerendering a different report cleans old handlers and maintains one activ
   assert.equal(h.events.get("portal-auth-change").size, 1); assert.equal(h.events.get("portal-auth-complete").size, 1);
   current.destroy(); assert.equal(h.container.children.length, 0);
   assert.equal(h.events.get("portal-auth-change").size, 0);
+});
+
+test("viewed requires actual viewport exposure in a visible tab and is emitted once", () => {
+  const h = harness({ observe: true }); h.show();
+  h.intersect(0); h.intersect(0.2);
+  assert.deepEqual(h.tracks.map((row) => row.event), ["shown"]);
+  h.document.visibilityState = "hidden"; h.intersect(0.8);
+  assert.equal(h.tracks.length, 1);
+  h.document.visibilityState = "visible"; h.document.dispatch("visibilitychange");
+  h.intersect(1); h.document.dispatch("visibilitychange");
+  assert.deepEqual(h.tracks.map((row) => row.event), ["shown", "viewed"]);
+  assert.equal(h.observer().disconnected, true);
+  h.show().destroy(); assert.equal(h.events.get("visibilitychange").size, 0);
+});
+
+test("signed-in continuation actions are measured separately from guest signup", async () => {
+  const h = harness({ signedIn: true }); h.show(); const card = h.container.children[0];
+  await card.click("[data-invitation-continue]", { invitationContinue: "discussion" });
+  assert.deepEqual(h.tracks.map((row) => row.event), ["shown", "viewed", "discussion"]);
+  assert.ok(h.tracks.every((row) => row.data.access_state === "signed_in"));
+  assert.equal(h.registerCalls.length, 0);
 });
