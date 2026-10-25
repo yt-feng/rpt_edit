@@ -457,6 +457,116 @@ test("an exact current immutable grant audit proves a conservative legacy starti
   assert.equal((await request(env, "/course/full/access")).data.since, recovered.data.since);
 });
 
+test("legacy tenure is recovered before the first renewal or no-op account-state migration", async (t) => {
+  const { bucket, env } = fixture(t);
+  const row = seedGrant(bucket, { updated_at: "2026-08-01T00:00:00Z" });
+  seedGrantAudit(bucket, row);
+  assert.equal(bucket.json(continuityKey), null);
+  assert.equal((await grant(env, bucket, { renew: true })).response.status, 200);
+  const renewed = await request(env, "/course/full/access");
+  assert.equal(renewed.data.allowed, true);
+  assert.equal(renewed.data.since, "2026-08-01T00:00:00.000Z");
+
+  const other = new MemoryR2();
+  for (const [storageKey, value] of bucket.rows) if (storageKey.startsWith("_account/users/")) other.rows.set(storageKey, value);
+  const legacy = seedGrant(other, { updated_at: "2026-08-01T00:00:00Z" });
+  seedGrantAudit(other, legacy);
+  const otherEnv = { ...env, REPORT_BUCKET: other };
+  assert.equal((await request(otherEnv, "/account-admin/user-status", { user: admin, body: { email: member.email, disabled: false } })).response.status, 200);
+  const migrated = await request(otherEnv, "/course/full/access");
+  assert.equal(migrated.data.allowed, true);
+  assert.equal(migrated.data.since, "2026-08-01T00:00:00.000Z");
+
+  const resetBucket = new MemoryR2();
+  for (const [storageKey, value] of bucket.rows) if (storageKey.startsWith("_account/users/")) resetBucket.rows.set(storageKey, value);
+  const resetLegacy = seedGrant(resetBucket, { updated_at: "2026-08-01T00:00:00Z" });
+  seedGrantAudit(resetBucket, resetLegacy);
+  const resetEnv = { ...env, REPORT_BUCKET: resetBucket };
+  assert.equal((await request(resetEnv, "/account-admin/user-password-reset", { user: admin, body: { email: member.email, confirm_reset: true } })).response.status, 200);
+  const headers = await loginAfterPasswordReset(resetEnv);
+  const reset = await request(resetEnv, "/course/full/access", { headers });
+  assert.equal(reset.data.allowed, true);
+  assert.equal(reset.data.since, "2026-08-01T00:00:00.000Z");
+});
+
+function seedRenewalChain(bucket, changes = {}) {
+  const oldest = seedGrant(bucket, { updated_at: "2026-08-01T00:00:00Z", change_id: "august", current_period_end: "2026-09-02T00:00:00Z", ...changes.oldest });
+  const previous = { ...oldest, updated_at: "2026-09-01T00:00:00Z", change_id: "september", current_period_end: "2026-10-02T00:00:00Z", ...changes.previous };
+  const current = seedGrant(bucket, { updated_at: "2026-10-01T00:00:00Z", change_id: "october" });
+  seedGrantAudit(bucket, oldest);
+  if (!changes.missingPrevious) seedGrantAudit(bucket, previous, { previous: { ...oldest, active: true }, ...changes.previousAudit });
+  seedGrantAudit(bucket, current, { previous: { ...previous, active: true, ...changes.previousLink } });
+  return { current, previous, oldest };
+}
+
+test("exact uninterrupted legacy renewal audits recover tenure and stop once two months are proven", async (t) => {
+  const { bucket, env } = fixture(t);
+  const { oldest } = seedRenewalChain(bucket);
+  // An older predecessor is deliberately absent: eligible evidence is enough.
+  seedGrantAudit(bucket, oldest, { previous: { ...oldest, updated_at: "2026-07-01T00:00:00Z", change_id: "unneeded-july", active: true } });
+  const result = await request(env, "/course/full/access");
+  assert.equal(result.data.allowed, true);
+  assert.equal(result.data.since, "2026-08-01T00:00:00.000Z");
+  assert.equal(bucket.reads.filter((storageKey) => storageKey.startsWith("_account/access_audit/")).length, 3);
+});
+
+test("missing, tampered, inactive or gapped legacy links cannot extend the verified lower bound", async (t) => {
+  const { env } = fixture(t);
+  for (const changes of [
+    { missingPrevious: true },
+    { previousAudit: { email: "different@example.com" } },
+    { previousAudit: { next: { ...member, active: true } } },
+    { previousLink: { note: "tampered snapshot" } },
+    { previousLink: { active: false } },
+    { previousLink: { access_mode: "filters" } },
+    { previousLink: { download_limit: 10 } },
+    { previousLink: { duration_value: "trial_3d" } },
+    { previous: { current_period_end: "2026-09-30T23:59:59Z" } },
+    { previous: { updated_at: "2026-10-02T00:00:00Z" } },
+  ]) {
+    const bucket = new MemoryR2();
+    for (const [storageKey, value] of env.REPORT_BUCKET.rows) if (storageKey.startsWith("_account/users/")) bucket.rows.set(storageKey, value);
+    seedRenewalChain(bucket, changes);
+    const result = await request({ ...env, REPORT_BUCKET: bucket }, "/course/full/access");
+    assert.equal(result.data.allowed, false, JSON.stringify(changes));
+    assert.equal(result.data.since, "2026-10-01T00:00:00.000Z", JSON.stringify(changes));
+  }
+});
+
+test("legacy renewal recovery stops at an account-state boundary and is bounded to 24 audits", async (t) => {
+  const { bucket, env } = fixture(t);
+  seedRenewalChain(bucket);
+  seedUserState(bucket, { updated_at: "2026-09-15T00:00:00Z" });
+  const limited = await request(env, "/course/full/access");
+  assert.equal(limited.data.allowed, false);
+  assert.equal(limited.data.since, "2026-09-15T00:00:00.000Z");
+
+  const other = new MemoryR2();
+  for (const [storageKey, value] of bucket.rows) if (storageKey.startsWith("_account/users/")) other.rows.set(storageKey, value);
+  let previous;
+  for (let day = 1; day <= 25; day += 1) {
+    const current = seedGrant(other, { updated_at: `2026-10-${String(day).padStart(2, "0")}T00:00:00Z`, change_id: `daily-${day}` });
+    seedGrantAudit(other, current, previous ? { previous: { ...previous, active: true } } : {});
+    previous = current;
+  }
+  const bounded = await request({ ...env, REPORT_BUCKET: other }, "/course/full/access");
+  assert.equal(bounded.data.allowed, false);
+  assert.equal(bounded.data.since, "2026-10-02T00:00:00.000Z");
+  assert.equal(other.reads.filter((storageKey) => storageKey.startsWith("_account/access_audit/")).length, 24);
+});
+
+test("failed first legacy recovery cannot block a primary revocation", async (t) => {
+  const { bucket, env } = fixture(t);
+  const row = seedGrant(bucket, { updated_at: "2026-08-01T00:00:00Z" });
+  seedGrantAudit(bucket, row);
+  bucket.failPrefix = continuityKey;
+  const revoked = await grant(env, bucket, { access_mode: "none" });
+  assert.equal(revoked.response.status, 200);
+  assert.equal(revoked.data.durability.continuity_saved, false);
+  assert.equal(bucket.json(key("access", member.email)).status, "inactive");
+  assert.equal(bucket.json(continuityKey), null);
+});
+
 test("mismatched audit and newly renewed grants never borrow the earlier account age", async (t) => {
   const { bucket, env } = fixture(t);
   const row = seedGrant(bucket, { updated_at: "2026-08-01T00:00:00Z" });
