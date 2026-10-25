@@ -2812,13 +2812,17 @@ async function saveUserAdminState(env, user, fields, adminUser) {
     updated_by: normalizeEmail(adminUser && adminUser.email) || String(adminUser && adminUser.username || ""),
   };
   const membershipChanged = hasDisabled && disabled !== Boolean(existing.disabled);
-  const continuityBefore = membershipChanged ? await prepareCourseMembershipChange(env, payload.email) : null;
-  if (membershipChanged) payload.membership_change_id = crypto.randomUUID();
+  // Legacy fingerprints include updated_at, so even a session-only write must
+  // link its first dedicated membership version to the prior authority state.
+  const membershipVersionChanged = membershipChanged || !existing.membership_change_id;
+  const continuityBefore = membershipVersionChanged ? await prepareCourseMembershipChange(env, payload.email) : null;
+  if (membershipVersionChanged) payload.membership_change_id = crypto.randomUUID();
   const keys = userAdminStateKeys({ ...user, ...payload });
   if (!keys.length) throw new Error("User identity is required.");
   await Promise.all(keys.map((key) => r2PutJson(env, key, payload)));
-  if (membershipChanged) {
-    await trackCourseMembershipChange(env, payload.email, continuityBefore, { state: payload }, "account_status_changed");
+  if (membershipVersionChanged) {
+    await trackCourseMembershipChange(env, payload.email, continuityBefore, { state: payload },
+      membershipChanged ? "account_status_changed" : "account_state_version_initialized");
   }
   return payload;
 }
