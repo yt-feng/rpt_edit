@@ -289,7 +289,7 @@ def worker_ready(worker_base_url, report_id, *, opener=None):
     status, result = http_json(url, opener=opener, max_bytes=2 * 1024 * 1024, missing_ok=True)
     if status == 404:
         return False
-    if (status != 200 or not isinstance(result, dict) or result.get("ok") is not True
+    if (status != 200 or not isinstance(result, dict) or result.get("ok") is False
             or result.get("source") != "catalog" or result.get("report_id") != report_id
             or not isinstance(result.get("comments"), list)):
         raise DiscussionError("worker_readiness_unconfirmed")

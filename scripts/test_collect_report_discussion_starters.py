@@ -217,7 +217,7 @@ class TransportTests(unittest.TestCase):
             self.assertIsNone(request.data)
             self.assertIsNone(request.get_header("X-portal-signature"))
             self.assertEqual(timeout, 30)
-            return Response({"ok": True, "source": "catalog", "report_id": report_id(1), "comments": []})
+            return Response({"source": "catalog", "report_id": report_id(1), "starter": None, "starter_status": "none", "comments": []})
         self.assertTrue(collector.worker_ready("https://portal.example.invalid/api", report_id(1), opener=opener))
         self.assertEqual(len(calls), 1)
 
@@ -227,7 +227,7 @@ class TransportTests(unittest.TestCase):
             response.status = 404
             return response
         self.assertFalse(collector.worker_ready("https://portal.example.invalid/api", report_id(1), opener=missing))
-        valid = {"ok": True, "source": "catalog", "report_id": report_id(1), "comments": []}
+        valid = {"source": "catalog", "report_id": report_id(1), "starter": None, "starter_status": "none", "comments": []}
         samples = [(200, {**valid, "source": "hot"}), (200, {**valid, "report_id": report_id(2)}),
                    (200, {**valid, "comments": {}}), (200, {**valid, "ok": False}), (503, valid)]
         for status, result in samples:
@@ -271,7 +271,7 @@ class TransportTests(unittest.TestCase):
         environment = {name: "fixture" for name in ("OPS_ALERT_SIGNING_KEY", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_BUCKET")}
         environment.update(PORTAL_SITE_URL="https://portal.example.invalid", PORTAL_WORKER_URL="/api", R2_ACCOUNT_ID="a" * 32)
         payload = catalog(*range(100))
-        responses = [(200, payload), (200, {"ok": True, "source": "catalog", "report_id": report_id(0), "comments": []})]
+        responses = [(200, payload), (200, {"source": "catalog", "report_id": report_id(0), "starter": None, "starter_status": "none", "comments": []})]
         client = Mock()
         modules = {"boto3": SimpleNamespace(client=client), "botocore": SimpleNamespace(),
                    "botocore.config": SimpleNamespace(Config=lambda **kwargs: kwargs)}
