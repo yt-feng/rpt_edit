@@ -19360,14 +19360,15 @@ async function handleFeedback(request, env) {
     const nowMs = Date.now();
     const digest = await reportRequestPrivateHash(env, "feedback-dedupe", `${requesterEmail}|${category}|${message}|${pagePath}`);
     const key = `_feedback/v1/items/${digest}.json`;
-    const accepted = (deduplicated) => privateJsonResponse(request, env, 202, {
+    const accepted = (deduplicated, acknowledgement) => privateJsonResponse(request, env, 202, {
       ok: true, deduplicated, request_id: digest,
+      confirmation_email_sent: acknowledgement?.status === "sent",
       detail: "反馈已收到，感谢您的帮助。 / Thank you. Your feedback has been received.",
     });
     const existing = await r2GetJsonObjectStrict(env, key);
     if (reportRequestDisposition(existing && existing.value, nowMs)) {
-      await sendFormAcknowledgement(env, key, existing.value);
-      return accepted(true);
+      const acknowledgement = await sendFormAcknowledgement(env, key, existing.value);
+      return accepted(true, acknowledgement);
     }
     const [ipAllowed, emailAllowed] = await Promise.all([
       reserveReportRequestRateLimit(env, "feedback-ip", reportRequestClientIp(request), REPORT_REQUEST_IP_RATE_LIMIT, nowMs),
@@ -19383,8 +19384,8 @@ async function handleFeedback(request, env) {
     };
     const reservation = await reserveReportRequestRecord(env, key, record, nowMs);
     if (reservation.disposition !== "reserved") {
-      await sendFormAcknowledgement(env, key, reservation.record);
-      return accepted(true);
+      const acknowledgement = await sendFormAcknowledgement(env, key, reservation.record);
+      return accepted(true, acknowledgement);
     }
     const notificationRecipient = ownerNotificationEmail(env);
     let result;
@@ -19408,8 +19409,8 @@ async function handleFeedback(request, env) {
       httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
     });
     if (completed.status !== "sent") return fail(502, "反馈已保存，通知发送暂未成功，请稍后重试。 / Feedback saved. Please retry later to complete delivery.", { retryable: true, request_id: digest });
-    await sendFormAcknowledgement(env, key, completed);
-    return accepted(false);
+    const acknowledgement = await sendFormAcknowledgement(env, key, completed);
+    return accepted(false, acknowledgement);
   } catch (_error) {
     return fail(503, "反馈服务暂时不可用，请稍后重试。 / Feedback is temporarily unavailable. Please try later.", { retryable: true });
   }

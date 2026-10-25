@@ -43,6 +43,7 @@ test("feedback persists safely and sends owner notification plus bilingual reque
   const { env, bucket, sent } = fixture(t);
   const result = await submit(env, body({ message: "Button <script>alert(1)</script> failed", recipient: "attacker@example.net", sender: "attacker@example.net" }));
   assert.equal(result.status, 202); assert.equal(result.data.ok, true);
+  assert.equal(result.data.confirmation_email_sent, true);
   assert.equal(sent.length, 2); assert.deepEqual(sent[0].to, [{ email: OWNER }]);
   assert.deepEqual(sent[0].tags, ["portal-feedback"]);
   assert.match(sent[0].htmlContent, /&lt;script&gt;/u); assert.doesNotMatch(sent[0].htmlContent, /<script>|private=secret|attacker/u);
@@ -106,6 +107,7 @@ test("feedback owner failure stays retryable while receipt failure does not fail
   assert.equal(bucket.rows("_feedback/v1/items/")[0].status, "failed");
   const retried = await submit(env);
   assert.equal(retried.status, 202); assert.equal(retried.data.ok, true);
+  assert.equal(retried.data.confirmation_email_sent, false);
   assert.equal(bucket.rows("_feedback/v1/items/")[0].status, "sent");
   assert.equal(bucket.rows("_form-acknowledgements/v1/items/")[0].status, "failed");
   assert.equal((await submit(env)).data.deduplicated, true); assert.equal(sent.length, 3);
