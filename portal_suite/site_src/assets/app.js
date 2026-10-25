@@ -7833,14 +7833,12 @@
     });
   }
 
+  const rejectedDownloadPasswords = new Map();
+
   function getRememberedDownloadPassword(reportId = "") {
     reportId = String(reportId || "");
     try {
-      if (reportId) {
-        const scoped = localStorage.getItem(`${DOWNLOAD_PASSWORD_KEY}:${reportId}`) || "";
-        if (scoped) return scoped;
-      }
-      return localStorage.getItem(DOWNLOAD_PASSWORD_KEY) || "";
+      return reportId ? localStorage.getItem(`${DOWNLOAD_PASSWORD_KEY}:${reportId}`) || "" : "";
     } catch (_error) {
       return "";
     }
@@ -7850,7 +7848,7 @@
     reportId = String(reportId || "");
     const password = String(value || "");
     try {
-      localStorage.setItem(DOWNLOAD_PASSWORD_KEY, password);
+      localStorage.removeItem(DOWNLOAD_PASSWORD_KEY);
       if (reportId) localStorage.setItem(`${DOWNLOAD_PASSWORD_KEY}:${reportId}`, password);
     } catch (_error) {
       // Ignore private browsing/localStorage restrictions.
@@ -7862,19 +7860,33 @@
     }
   }
 
-  function clearRememberedDownloadPassword(reportId = "") {
+  function clearRememberedDownloadPassword(reportId = "", failedPassword = "") {
     reportId = String(reportId || "");
+    const failed = String(failedPassword || "");
+    if (!reportId || !failed) return;
+    const rejected = rejectedDownloadPasswords.get(reportId) || new Set();
+    rejected.add(failed);
+    rejectedDownloadPasswords.set(reportId, rejected);
     try {
-      localStorage.removeItem(DOWNLOAD_PASSWORD_KEY);
-      if (reportId) localStorage.removeItem(`${DOWNLOAD_PASSWORD_KEY}:${reportId}`);
+      for (const key of [DOWNLOAD_PASSWORD_KEY, `${DOWNLOAD_PASSWORD_KEY}:${reportId}`]) {
+        if (localStorage.getItem(key) === failed) localStorage.removeItem(key);
+      }
     } catch (_error) {
       // Ignore private browsing/localStorage restrictions.
     }
     try {
-      if (reportId) sessionStorage.removeItem(`${DOWNLOAD_PASSWORD_KEY}:${reportId}`);
+      const key = `${DOWNLOAD_PASSWORD_KEY}:${reportId}`;
+      if (sessionStorage.getItem(key) === failed) sessionStorage.removeItem(key);
     } catch (_error) {
       // Ignore private browsing/sessionStorage restrictions.
     }
+    try {
+      if (deliveryPasswordFromHistory(reportId) === failed) {
+        const state = { ...window.history.state };
+        delete state.portalDeliveryReportId; delete state.portalDeliveryPassword;
+        window.history.replaceState(state, "", window.location.href);
+      }
+    } catch (_error) { /* Rejected values are also suppressed in memory. */ }
   }
 
   function deliveryPasswordFromLocation(params) {
@@ -7889,22 +7901,20 @@
     const state = window.history.state;
     if (!state || typeof state !== "object") return "";
     const savedId = String(state.portalDeliveryReportId || "");
-    if (savedId && reportId && savedId !== String(reportId)) return "";
+    if (!reportId || savedId !== String(reportId)) return "";
     return String(state.portalDeliveryPassword || "");
   }
 
   function getRecoverableDownloadPassword(reportId, explicitPassword) {
-    const direct = String(explicitPassword || deliveryPasswordFromLocation() || "");
-    if (direct) return direct;
-    const fromHistory = deliveryPasswordFromHistory(reportId);
-    if (fromHistory) return fromHistory;
+    const candidates = [explicitPassword, deliveryPasswordFromLocation(), deliveryPasswordFromHistory(reportId)];
     try {
-      const fromSession = sessionStorage.getItem(`${DOWNLOAD_PASSWORD_KEY}:${reportId}`) || "";
-      if (fromSession) return fromSession;
+      candidates.push(sessionStorage.getItem(`${DOWNLOAD_PASSWORD_KEY}:${reportId}`));
     } catch (_error) {
       // Ignore private browsing/sessionStorage restrictions.
     }
-    return getRememberedDownloadPassword(reportId);
+    candidates.push(getRememberedDownloadPassword(reportId));
+    const rejected = rejectedDownloadPasswords.get(String(reportId));
+    return String(candidates.find((value) => value && !rejected?.has(String(value))) || "");
   }
 
   function rememberDeliveryPassword(reportId, value) {
@@ -11750,49 +11760,33 @@
   async function requestReportPassword(workerUrl, id) {
     const token = getAdminToken();
     if (!canUseDeliveryTools()) throw new Error("Private tools are locked.");
-    try {
-      const response = await fetch(`${workerUrl}/admin/report-password`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", ...authHeaders() },
-        body: JSON.stringify({ id, token }),
-      });
-      const data = await response.json().catch(() => ({}));
-      if (!response.ok) {
-        if (response.status === 401) clearAdminToken();
-        const fallback = response.status >= 500 ? getAdminPlainKey() : "";
-        if (fallback) return { id, password: fallback };
-        throw new Error(data.error || "Could not generate delivery link.");
-      }
-      return data;
-    } catch (error) {
-      const fallback = getAdminPlainKey();
-      if (fallback) return { id, password: fallback };
-      throw error;
+    const response = await fetch(`${workerUrl}/admin/report-password`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", ...authHeaders() },
+      body: JSON.stringify({ id, token }),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || typeof data?.password !== "string" || !data.password.trim()) {
+      if (response.status === 401) clearAdminToken();
+      throw new Error(data?.error || "Could not generate delivery link.");
     }
+    return data;
   }
 
   async function requestExternalPassword(workerUrl, id, source = EXTERNAL_SOURCE) {
     const token = getAdminToken();
     if (!canUseDeliveryTools()) throw new Error("Private tools are locked.");
-    try {
-      const response = await fetch(`${workerUrl}/admin/report-password`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", ...authHeaders() },
-        body: JSON.stringify({ id, token, source }),
-      });
-      const data = await response.json().catch(() => ({}));
-      if (!response.ok) {
-        if (response.status === 401) clearAdminToken();
-        const fallback = response.status >= 500 ? getAdminPlainKey() : "";
-        if (fallback) return { id, password: fallback };
-        throw new Error(data.error || "Could not generate delivery link.");
-      }
-      return data;
-    } catch (error) {
-      const fallback = getAdminPlainKey();
-      if (fallback) return { id, password: fallback };
-      throw error;
+    const response = await fetch(`${workerUrl}/admin/report-password`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", ...authHeaders() },
+      body: JSON.stringify({ id, token, source }),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || typeof data?.password !== "string" || !data.password.trim()) {
+      if (response.status === 401) clearAdminToken();
+      throw new Error(data?.error || "Could not generate delivery link.");
     }
+    return data;
   }
 
   function initDetailAdmin(item, workerUrl) {
@@ -12047,6 +12041,7 @@
       button.disabled = true;
       const session = loadAuthSession();
       const action = session ? "account_or_password_download" : "password_download";
+      const submittedPassword = input.value;
       status.textContent = session ? "Checking account access..." : "Checking password...";
       let downloadErrorTracked = false;
       trackEvent(workerUrl, "download_attempt", {
@@ -12059,7 +12054,7 @@
           headers: { "Content-Type": "application/json", ...authHeaders() },
           body: JSON.stringify({
             id: item.id,
-            password: input.value,
+            password: submittedPassword,
             password_group: item.password_group || "default",
           }),
         });
@@ -12073,7 +12068,10 @@
           } catch (_err) {
             // Ignore non-JSON errors.
           }
-          if (response.status === 401) clearRememberedDownloadPassword(item.id);
+          if (response.status === 401) {
+            clearRememberedDownloadPassword(item.id, submittedPassword);
+            if (input.value === submittedPassword) input.value = "";
+          }
           trackEvent(workerUrl, "download_error", {
             ...analyticsReportPayload(item, "catalog"),
             action,
@@ -12087,7 +12085,10 @@
         const blob = await response.blob();
         triggerBlobDownload(blob, response.headers.get("Content-Disposition"), item.filename);
         showDownloadInvitation(item, workerUrl, "catalog");
-        if (!session && input.value) rememberDeliveryPassword(item.id, input.value);
+        if (!session && submittedPassword && input.value === submittedPassword) {
+          rejectedDownloadPasswords.get(String(item.id))?.delete(submittedPassword);
+          rememberDeliveryPassword(item.id, submittedPassword);
+        }
         trackEvent(workerUrl, "download_success", {
           ...analyticsReportPayload(item, "catalog"),
           action,
@@ -12558,7 +12559,7 @@
       } catch (_error) {
         // Keep generic message.
       }
-      if (response.status === 401) clearRememberedDownloadPassword(item.id);
+      if (response.status === 401) clearRememberedDownloadPassword(item.id, password);
       trackEvent(workerUrl, "download_error", {
         ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),
         action: options.auth ? "account_download" : "password_download",
@@ -12587,6 +12588,7 @@
     const blob = await response.blob();
     triggerBlobDownload(blob, response.headers.get("Content-Disposition"), `${item.id}.pdf`);
     showDownloadInvitation(item, workerUrl, item.source || EXTERNAL_SOURCE);
+    if (!options.auth && !contactDownload) rejectedDownloadPasswords.get(String(item.id))?.delete(password);
     rememberDeliveryPassword(item.id, password);
     trackEvent(workerUrl, "download_success", {
       ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),

@@ -81,7 +81,7 @@ jobs:
 
       - name: Check reader discussions, feedback and form confirmations
         run: |
-          node --test portal_suite/tests/form-acknowledgement.test.mjs portal_suite/tests/membership-request.test.mjs portal_suite/tests/report-request.test.mjs portal_suite/tests/engagement-rewards.test.mjs portal_suite/tests/newsfeed-policy-worker.test.mjs portal_suite/tests/site-feedback*.test.mjs portal_suite/tests/report-discussion*.test.mjs portal_suite/tests/download-invitation*.test.mjs
+          node --test portal_suite/tests/form-acknowledgement.test.mjs portal_suite/tests/membership-request.test.mjs portal_suite/tests/report-request.test.mjs portal_suite/tests/engagement-rewards.test.mjs portal_suite/tests/newsfeed-policy-worker.test.mjs portal_suite/tests/site-feedback*.test.mjs portal_suite/tests/report-discussion*.test.mjs portal_suite/tests/download-invitation*.test.mjs portal_suite/tests/download-password-context.test.mjs
           node --test portal_suite/tests/course-membership-continuity.test.mjs portal_suite/tests/course-full-directory.test.mjs portal_suite/tests/course-full-frontend.test.mjs portal_suite/tests/journey-frontend.test.mjs
           python3 -B scripts/test_publish_course_full_directory.py
           python3 -B scripts/test_portal_lazy_assets.py

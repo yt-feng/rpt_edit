@@ -106,6 +106,23 @@ an observed post-download event. A review spanning launch does not include
 older uninstrumented downloads as presumed unexposed sessions; overall download
 totals remain in the separate `download_diagnostics` section.
 
+## Delivery password context
+
+Delivery links keep their explicit password and URL encoding. Device/session
+password recovery is scoped to the report ID; the old global last-used value
+and history entries without a matching report ID cannot fill another report.
+After a 401 rejection, only the exact submitted value is cleared from matching
+storage/history and suppressed for that report for the current page lifetime.
+Focus, page restoration and URL fallbacks cannot revive it. A newer replacement
+entered while the request is pending is preserved. A later confirmed password
+download can validate that same value again; initialization, pending preparation
+and account-authorized downloads do not establish password validity.
+
+Delivery-link generation requires a successful API response containing a
+password. An HTTP error, missing password or network failure is surfaced as a
+generation failure, never replaced with a locally cached administrator key.
+The regression suite uses synthetic values and reports no delivery credentials.
+
 ## Independent original-name Course directory
 
 `/course-full.html` is a separate account-area entry; the existing
