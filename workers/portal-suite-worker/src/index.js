@@ -7,6 +7,7 @@ import {
 import { researchNewsEvidence } from "./research-news.js";
 import { readResearchNewsSnapshot, researchNewsPublicUrl } from "./research-news-snapshot.js";
 import {
+  membershipEligibleAt,
   reconcileMembershipContinuity,
   validateContinuityVerification,
 } from "./course-membership-continuity.js";
@@ -5268,7 +5269,19 @@ async function readCourseMembershipSnapshot(env, email) {
 async function prepareCourseMembershipChange(env, email) {
   // Failure to prepare continuity must never stop a primary revocation. A new
   // authority fingerprint still prevents reuse of an older continuity record.
-  try { return await readCourseMembershipSnapshot(env, email); } catch (_error) { return null; }
+  try {
+    const before = await readCourseMembershipSnapshot(env, email);
+    // Recover provable legacy tenure while its authority is still current.
+    // Otherwise a first renewal or account-state migration would replace the
+    // evidence before the member ever opens the original course directory.
+    await reconcileMembershipContinuity({
+      bucket: accountBucket(env), key: courseMembershipContinuityKey(email),
+      loadMembership: () => readCourseMembershipSnapshot(env, email),
+      inferLegacyStart: (membership, nowMs) => inferAuditedCourseMembershipStart(env, email, membership, nowMs),
+    });
+    const checked = await readCourseMembershipSnapshot(env, email);
+    return checked.fingerprint === before.fingerprint ? checked : null;
+  } catch (_error) { return null; }
 }
 
 async function trackCourseMembershipChange(env, email, before, changed, reason) {
@@ -5291,23 +5304,45 @@ async function inferAuditedCourseMembershipStart(env, email, membership, nowMs) 
     || row.duration_value === TRIAL_3D_DURATION_VALUE || !row.change_id) return null;
   const changedMs = Date.parse(row.updated_at || "");
   if (!Number.isFinite(changedMs) || changedMs > nowMs) return null;
-  // A matching immutable audit proves the actual full-membership state at this
-  // mutation. created_at alone cannot distinguish a lapse or reactivation.
-  const auditKey = accessGrantAuditKey(email, row.updated_at, row.change_id);
-  const audit = await r2GetJsonStrict(env, auditKey);
-  if (!audit || audit.type !== "user_access_update" || normalizeEmail(audit.email) !== normalizeEmail(email)
-    || audit.updated_at !== row.updated_at || audit.next?.updated_at !== row.updated_at
-    || audit.next?.change_id !== row.change_id || audit.next?.active !== true
-    || !accessGrantMatchesExpected(audit.next, row)) return null;
   const state = membership.rows.state || {};
   if (state.disabled) return null;
-  let sinceMs = changedMs;
+  let stateMs = 0;
   if (state.updated_at) {
-    const stateMs = Date.parse(state.updated_at);
+    stateMs = Date.parse(state.updated_at);
     if (!Number.isFinite(stateMs) || stateMs > nowMs) return null;
-    sinceMs = Math.max(sinceMs, stateMs);
   }
-  return { since: new Date(sinceMs).toISOString(), audit_reason: `matching_access_audit:${row.change_id}` };
+  // Walk only exact immutable links. A previous snapshot alone cannot prove
+  // tenure: its own audit must match, and it must cover the later mutation.
+  // Stop once this conservative lower bound proves eligibility, or after 24
+  // reads. Missing or broken older links never invalidate the newer evidence.
+  const seen = new Set();
+  let current = row, sinceMs = null, links = 0;
+  for (; links < 24;) {
+    const currentMs = Date.parse(current.updated_at || "");
+    const auditKey = accessGrantAuditKey(email, current.updated_at, current.change_id);
+    if (seen.has(auditKey)) break;
+    seen.add(auditKey);
+    const audit = await r2GetJsonStrict(env, auditKey);
+    if (!audit || audit.type !== "user_access_update" || normalizeEmail(audit.email) !== normalizeEmail(email)
+      || audit.updated_at !== current.updated_at || audit.next?.updated_at !== current.updated_at
+      || audit.next?.change_id !== current.change_id || audit.next?.active !== true
+      || !accessGrantMatchesExpected(audit.next, current)) break;
+    links += 1;
+    sinceMs = Math.max(currentMs, stateMs);
+    if (Date.parse(membershipEligibleAt(new Date(sinceMs).toISOString())) <= nowMs || currentMs <= stateMs) break;
+    const previous = audit.previous;
+    const previousMs = Date.parse(previous?.updated_at || "");
+    const previousEnd = previous?.lifetime === true ? Infinity : Date.parse(previous?.current_period_end || "");
+    if (!previous || previous.active !== true || previous.status !== "active" || previous.access_mode !== "all"
+      || previous.download_limit !== 0 || previous.duration_value === TRIAL_3D_DURATION_VALUE || !previous.change_id
+      || normalizeEmail(previous.email) !== normalizeEmail(email) || !Number.isFinite(previousMs)
+      || previousMs > currentMs || !(previousEnd >= currentMs)) break;
+    current = previous;
+  }
+  return sinceMs === null ? null : {
+    since: new Date(sinceMs).toISOString(),
+    audit_reason: `matching_access_audit:${row.change_id}:links:${links}`,
+  };
 }
 
 async function courseFullAccessForUser(env, user) {
