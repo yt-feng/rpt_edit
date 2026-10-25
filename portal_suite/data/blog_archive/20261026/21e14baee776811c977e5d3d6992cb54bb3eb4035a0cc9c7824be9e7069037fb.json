@@ -1,0 +1,22 @@
+{
+  "author": "KC桌面",
+  "content": "<section style=\"margin:0 0 22px;padding:18px 16px;border-left:5px solid #C9A227;background:#F7F3E8\"><p style=\"margin:0 0 8px;color:#7A5B12;font-size:14px;font-weight:700\">外资精译</p><p style=\"margin:0;color:#142033;font-size:21px;font-weight:700;line-height:1.4\">花旗：MiniMax评估M3.1Flash开源与AI技术出口临时登记</p></section>\n<p style=\"margin:10px 0;line-height:1.78;color:#202631;font-size:16px\">10月23日，MiniMax把M3.1 Flash的模型权重开源，总参数428B、激活参数23B。这份<span style=\"color:#2457A7;font-weight:700\">Citi</span>研报值得关注的判断不在参数本身，而在两个几乎同时发生的事实：模型上线72小时内处理了超过<span style=\"color:#2457A7;font-weight:700;text-decoration:underline\">100万</span>亿token，以及公司已完成AI技术出口的临时登记程序。前者说明推理侧的实际使用环境和企业级智能体工作流的可用性在<span style=\"color:#2F8F5B;font-weight:700\">改善</span>，后者说明其面向全球用户的服务连续性暂时有了制度层面的缓冲。</p>\n<p style=\"margin:10px 0;line-height:1.78;color:#202631;font-size:16px\">先看数字。<span style=\"color:#2457A7;font-weight:700;text-decoration:underline\">100万</span>亿token、72小时，这是报告里信息量较大的一个参照点。<span style=\"color:#2457A7;font-weight:700\">Citi</span>把这种采用速度归因于更低的推理单位成本和更好的实用性，而不是单纯的模型能力跃升。<span style=\"color:#2F8F5B;font-weight:700;text-decoration:underline\">换句话说</span>，市场对模型的检验正在从“参数有多大”转向“跑起来有多便宜、能不能嵌进真实业务流程”。</p>\n<p style=\"margin:14px 0;text-align:center\"><img src=\"https://mmbiz.qpic.cn/sz_mmbiz_jpg/YBsHov7VYOXOd4bdXllSib0jYibzlppL3ZEfSVtgLvvwcSP8lLibt2IEsCgbUJoEGW4RHiatqyONWrnicqTgOvBhWG4Znnq04Xk1icakdt7gCufcg/0?from=appmsg\" alt=\"研报原图 1\" style=\"max-width:100%;height:auto;display:block;margin:0 auto\" loading=\"lazy\" decoding=\"async\" referrerpolicy=\"no-referrer\"></p>\n<p style=\"margin:10px 0;line-height:1.78;color:#202631;font-size:16px\">开源动作本身也值得拆开看。M3.1 Flash相比此前M3系列，在稀疏<span style=\"color:#2F8F5B;font-weight:700;text-decoration:underline\">注意</span>力、量化感知训练和功耗感知调度上做了改进，指向的都是推理效率。配套侧，MiniMax与T-Head、Kunlunxin等芯片厂商，以及Together AI、Fireworks、Modal等推理与云平台合作，首日即打通开源访问，并接入vLLM、SGLang、Hugging Face等社区。这套组合说明开源不只是放权重，而是在铺一条跨芯片、跨云的分发路径。</p>\n<section style=\"margin:18px 0;padding:13px 15px;background:#F1F8F4;border-left:4px solid #2F8F5B;color:#223044;font-size:15px;line-height:1.75\"><strong>KC评论：</strong> 72小时<span style=\"color:#2457A7;font-weight:700;text-decoration:underline\">100万</span>亿token这个数字，比开源本身更能说明问题。简单说，权重开放只是降低了尝试门槛，真正影响采用速度的是单位推理成本能不能降到企业愿意持续调用的水平；后续更值得看的是这种调用量在免费流量退潮后还能留下多少。</section>\n<section style=\"margin:28px 0 0;padding-top:12px;border-top:1px solid #D9DEE7;color:#737D8C;font-size:12px;line-height:1.75\"><p style=\"margin:0 0 8px\">——人工智能免责声明（部分内容由人工智能工具辅助生成）</p><p style=\"margin:0\">撰稿：James<br>责编：KC<br>排版：胡桃</p></section>\n<p style=\"margin:14px 0;text-align:center\"><img src=\"https://mmbiz.qpic.cn/sz_mmbiz_jpg/YBsHov7VYOVhasQa55KWjiaaDLtWicrsT9YbF2AotDNLRXJFk3iaCtDy6N3n3iaqQAupGU1jJDj1BvenE2SVSibKoSbiaOzGibrYFElFQ7s5aEROkA/0?from=appmsg\" alt=\"KC桌面\" style=\"max-width:100%;height:auto;display:block;margin:0 auto\" loading=\"lazy\" decoding=\"async\" referrerpolicy=\"no-referrer\"></p>\n<p style=\"margin:16px 0 0;color:#A3ABB8;font-size:12px;line-height:1.55;text-align:left\">Original report: 05-CITI-MiniMax -0100.HK- Assessing M3.1 Flash Open-Sourcing and Temporary Registration for AI Tech Export-261023</p>\n<p style=\"margin:16px 0 0;padding:14px 16px;background:#EAF2FB;border-left:4px solid #2E6FB7;color:#152033;font-size:15px;line-height:1.75;font-weight:600\">更新信息参见portal.example.invalid</p>",
+  "date": "2026-10-26",
+  "digest": "外资精译 花旗：MiniMax评估M3.1Flash开源与AI技术出口临时登记 10月23日，MiniMax把M3.1 Flash的模型权重开源，总参数428B、激活参数23B。这份Citi研报值得关注的判断不在参数本身，而在两个几乎同时发生的事实：模型上线72小时内处理了超过100万亿token，以及公司已完成AI技术出口的临时登记程序。前者说明推理侧的实际使用环境和企业级智能体工作流的可用性在改善，后者说明其面向全球用户的服务连续性",
+  "fingerprint": "21e14baee776811c977e5d3d6992cb54bb3eb4035a0cc9c7824be9e7069037fb",
+  "last_date": "2026-10-26",
+  "legacy_slugs": [
+    "20261026-xhs_notes-21e14baee776811c"
+  ],
+  "origins": [
+    {
+      "date": "2026-10-26",
+      "source": "xhs_notes"
+    }
+  ],
+  "schema_version": 1,
+  "slug": "20261026-21e14baee776811c",
+  "source": "xhs_notes",
+  "source_report_name": "0005-05-CITI-MiniMax -0100.HK- Assessing M3.1 Flash Open-Sourcing and Temporary Registration for AI Tech Export-261023.pdf",
+  "title": "花旗：MiniMax评估M3.1Flash开源与AI技术出口临时登记"
+}
