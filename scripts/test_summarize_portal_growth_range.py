@@ -467,6 +467,105 @@ class GrowthReviewTest(unittest.TestCase):
         self.assertEqual(journey["daily_actions"][0]["client_sessions"], 2)
         self.assertEqual(growth.controlled_journey_value("blog_article", growth.JOURNEY_PLACEMENTS), "blog_article")
 
+    def test_new_feature_coverage_and_errors_preserve_missing_history_and_controlled_values(self) -> None:
+        rows = [
+            event("course", "2026-10-25", "private-session", "private-visitor", event_type="journey_interaction",
+                  measurement_version="journey-v1", placement="course_full", action="request_result", status="deduplicated",
+                  result_count=0, query="private course query", directory_item_id="private-directory-id"),
+            event("feedback", "2026-10-25", "private-session", "private-visitor", event_type="journey_interaction",
+                  measurement_version="journey-v1", placement="feedback", action="result", status="error", error="timeout"),
+            event("discussion-legacy", "2026-10-25", "private-session", "private-visitor", event_type="journey_interaction",
+                  placement="report_discussion", action="load_result", status="success", result_count=0, duration_ms=0),
+            event("unknown", "2026-10-25", "private-session", "private-visitor", event_type="journey_interaction",
+                  measurement_version="journey-v1", placement="private-placement", action="private-action", status="error", error="private error body"),
+            event("mismatched", "2026-10-25", "private-session", "private-visitor", event_type="journey_interaction",
+                  measurement_version="journey-v1", placement="english_commentary", action="comment_submit", status="error", error="private email@example.net"),
+        ]
+        review = growth.build_growth_review(rows, "2026-10-01", "2026-10-25")
+        journey = review["journey_diagnostics"]
+        coverage = {row["placement"]: row for row in journey["feature_measurement_coverage"]}
+        self.assertEqual(coverage["course_full"]["first_observed_date"], "2026-10-25")
+        self.assertEqual(coverage["course_full"]["observed_actions"], ["request_result"])
+        self.assertEqual(coverage["course_full"]["events"], 1)
+        for placement in ("report_discussion", "english_commentary"):
+            self.assertEqual(coverage[placement]["coverage"], "unavailable")
+            self.assertIsNone(coverage[placement]["events"])
+            self.assertIsNone(coverage[placement]["first_observed_date"])
+        by_action = {row["action"]: row for row in journey["client_actions"]}
+        self.assertEqual(by_action["request_result"]["numeric_metric_coverage"]["result_count"]["zero_events"], 1)
+        self.assertEqual(by_action["load_result"]["numeric_metric_coverage"]["result_count"]["observed_events"], 0)
+        self.assertIsNone(by_action["load_result"]["numeric_metric_coverage"]["duration_ms"]["mean"])
+        self.assertEqual({row["category"] for row in journey["interaction_error_categories"]}, {"timeout", "other"})
+        serialized = json.dumps(review) + growth.markdown_summary(review)
+        for private in ("private-session", "private-visitor", "private course query", "private-directory-id", "private-placement", "private-action", "private error body", "private email@example.net"):
+            self.assertNotIn(private, serialized)
+
+    def test_form_confirmation_results_are_provider_audits_not_customer_sessions(self) -> None:
+        rows = [event("page", "2026-10-25", "browser-session", "browser-visitor")]
+        for index, (kind, status) in enumerate((("course", "provider_accepted"), ("course", "failed"), ("feedback", "outcome_unknown"), ("private-form", "private-status"))):
+            rows.append(event(f"audit-{index}", "2026-10-25", f"server-session-{index}", f"server-visitor-{index}",
+                              event_type="form_confirmation", action="provider_result", status=status,
+                              measurement_version="journey-v1", request_kind=kind, recipient="private@example.net"))
+        rows.append(dict(rows[1]))
+        review = growth.build_growth_review(rows, "2026-10-25", "2026-10-25")
+        self.assertEqual(review["totals"]["sessions"], 1)
+        self.assertEqual(review["totals"]["registration_sessions"], 0)
+        self.assertEqual(review["data_quality"]["server_audit_events_excluded_from_sessions"], 4)
+        results = review["journey_diagnostics"]["form_confirmation_results"]
+        self.assertEqual({(row["request_kind"], row["status"]) for row in results}, {
+            ("course", "provider_accepted"), ("course", "failed"), ("feedback", "outcome_unknown"), ("other", "other"),
+        })
+        self.assertTrue(all(row["events"] == 1 and row["client_sessions"] is None for row in results))
+        self.assertEqual(review["journey_diagnostics"]["client_actions"], [])
+        serialized = json.dumps(review) + growth.markdown_summary(review)
+        for private in ("private-form", "private-status", "private@example.net", "server-session", "server-visitor"):
+            self.assertNotIn(private, serialized)
+        self.assertIn("不代表已进入收件箱", serialized)
+
+    def test_explicit_denial_errors_are_counted_without_treating_eligibility_as_a_failure(self) -> None:
+        rows = [event(f"denied-{index}", "2026-10-25", "session", "visitor", event_type="journey_interaction",
+                      placement=placement, action=action, status="denied", error=error)
+                for index, (placement, action, error) in enumerate((
+                    ("english_commentary", "read_error", "quota"),
+                    ("english_commentary", "read_error", "auth"),
+                    ("course_full", "access_result", ""),
+                    ("course_full", "access_result", "private denial text"),
+                ))]
+        errors = growth.build_growth_review(rows, "2026-10-25", "2026-10-25")["journey_diagnostics"]["interaction_error_categories"]
+        self.assertEqual({row["category"] for row in errors}, {"quota", "auth"})
+        self.assertTrue(all(row["placement"] == "english_commentary" and row["events"] == 1 for row in errors))
+
+    def test_loading_latency_excludes_missing_invalid_and_legacy_zero_measurements(self) -> None:
+        values = [100, 300, 0, None, -1, True, "600", float("nan"), float("inf"), 1_000_001]
+        rows = [event(f"load-{index}", "2026-10-25", "session", "visitor", event_type="report_open",
+                      action="detail_load_ready", status="success", duration_ms=value)
+                for index, value in enumerate(values)]
+        rows += [event("fallback", "2026-10-25", "session", "visitor", event_type="report_open", action="detail_load_fallback", status="recovered", duration_ms=8000),
+                 event("start", "2026-10-25", "session", "visitor", event_type="report_open", action="detail_load_start", status="interactive", duration_ms=0),
+                 event("legacy", "2026-10-25", "session", "visitor", event_type="report_open", action="post_download_related_open", duration_ms=0)]
+        journey = growth.build_growth_review(rows, "2026-10-25", "2026-10-25")["journey_diagnostics"]
+        by_action = {row["action"]: row for row in journey["client_actions"]}
+        latency = by_action["detail_load_ready"]["numeric_metric_coverage"]["duration_ms"]
+        self.assertEqual(latency, {"observed_events": 3, "missing_events": 7, "zero_events": 1, "positive_events": 2, "mean": 133.33, "p95": 300.0, "maximum": 300.0})
+        self.assertEqual(by_action["detail_load_fallback"]["status"], "recovered")
+        for action in ("detail_load_start", "post_download_related_open"):
+            metric = by_action[action]["numeric_metric_coverage"]["duration_ms"]
+            self.assertEqual(metric["observed_events"], 0)
+            self.assertEqual(metric["missing_events"], 1)
+            self.assertIsNone(metric["p95"])
+
+    def test_automatic_loading_diagnostics_do_not_inflate_report_open_or_active_engagement(self) -> None:
+        rows = [event(f"loading-{index}", "2026-10-25", "loading-session", "loading-visitor", event_type="report_open", action=action)
+                for index, action in enumerate(growth.REPORT_LOADING_ACTIONS)]
+        rows += [event("actual-open", "2026-10-25", "open-session", "open-visitor", event_type="report_open"),
+                 event("actual-read-click", "2026-10-25", "click-session", "click-visitor", event_type="journey_interaction", placement="english_commentary", action="read_click"),
+                 event("automatic-list", "2026-10-25", "automatic-session", "automatic-visitor", event_type="journey_interaction", placement="course_full", action="directory_start")]
+        review = growth.build_growth_review(rows, "2026-10-25", "2026-10-25")
+        self.assertEqual(review["totals"]["sessions"], 4)
+        self.assertEqual(review["totals"]["report_open_sessions"], 1)
+        self.assertEqual(review["totals"]["intentional_engaged_sessions"], 2)
+        self.assertEqual(review["totals"]["engaged_sessions"], 1)
+
     def test_primary_backup_and_missing_id_fallback_are_deduplicated(self) -> None:
         first = event("event-a", "2026-08-12", "session-a", "visitor-a")
         mirror = dict(first)

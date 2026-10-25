@@ -13,6 +13,7 @@
   // Keep the public ingestion contract separate from server-only audit events.
   // An unsupported caller must not poison valid events in the same batch.
   const PUBLIC_EVENT_TYPES = new Set([
+    "journey_interaction",
     "account_auth", "course_material_request", "daily_file_download",
     "delivery_link_generate", "download_attempt", "download_error",
     "download_pending", "download_success", "membership_request", "newsfeed_interaction",

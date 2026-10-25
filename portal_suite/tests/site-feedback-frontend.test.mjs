@@ -5,7 +5,7 @@ import test from "node:test";
 
 const source = await readFile(new URL("../site_src/assets/site-feedback.js", import.meta.url), "utf8");
 function harness(initialSession = null, response = async () => new Response(JSON.stringify({ ok: true }), { status: 202 })) {
-  const controls = new Map(), events = new Map(), sent = [], appended = [];
+  const controls = new Map(), events = new Map(), sent = [], appended = [], analytics = [];
   let stored = initialSession, mounted = false;
   const document = { readyState: "complete", activeElement: null,
     body: { append(node) { appended.push(node); mounted = true; } },
@@ -32,12 +32,13 @@ function harness(initialSession = null, response = async () => new Response(JSON
   controls.get("#siteFeedbackWebsite").tabIndex = -1;
   document.createElement = () => new Element("container");
   const window = { document, location: { pathname: "/reports/deep/path.html", href: "https://portal.example.invalid/reports/deep/path.html?private=secret" },
+    PortalSuiteAnalytics: { track(type, data) { analytics.push({ type, ...JSON.parse(JSON.stringify(data)) }); } },
     localStorage: { getItem: () => stored ? JSON.stringify(stored) : null },
     addEventListener() {}, setTimeout, clearTimeout,
     async fetch(url, init) { sent.push({ url, init, body: JSON.parse(init.body) }); return response(url, init); },
   };
   vm.runInNewContext(source, { window, document, AbortController, console });
-  return { document, window, controls, sent, appended,
+  return { document, window, controls, sent, appended, analytics,
     el: (selector) => controls.get(selector),
     setSession(value) { stored = value; events.get("portal-auth-change")?.(); },
     async open() { await controls.get(".site-feedback-launch").fire("click"); },
@@ -94,6 +95,40 @@ test("feedback prevents duplicate submits, preserves message on delivery failure
   assert.equal(h.el("#siteFeedbackMessage").value, "The button is broken.");
   assert.equal(h.el(".site-feedback-status").dataset.state, "error");
   assert.equal(h.el(".site-feedback-submit").disabled, false);
+  assert.equal(h.analytics.filter(({ action }) => action === "submit").length, 1);
+  assert.equal(h.analytics.at(-1).action, "result");
+  assert.equal(h.analytics.at(-1).status, "error");
+  assert.equal(h.analytics.at(-1).error, "unavailable");
+  assert.doesNotMatch(JSON.stringify(h.analytics), /guest@example|button is broken|Please retry later|private=secret/);
+});
+
+test("feedback measures first input once per submission and distinguishes accepted duplicate results without recording content", async () => {
+  let calls = 0;
+  const h = harness(null, async () => Response.json({ ok: true, deduplicated: ++calls > 1, confirmation_email_sent: true }, { status: 202 }));
+  await h.open();
+  for (let attempt = 0; attempt < 2; attempt++) {
+    h.el("#siteFeedbackEmail").value = "private-reply@example.net";
+    h.el("#siteFeedbackMessage").value = "Private feedback body about Original course.pdf";
+    await h.el("form").fire("input"); await h.el("form").fire("input");
+    assert.equal(h.analytics.filter(({ action }) => action === "form_start").length, attempt + 1);
+    await h.send();
+  }
+  assert.deepEqual(h.analytics.map(({ action }) => action), ["open", "form_start", "submit", "result", "form_start", "submit", "result"]);
+  const outcomes = h.analytics.filter(({ action }) => action === "result");
+  assert.deepEqual(outcomes.map(({ status, deduplicated, acknowledgement_status }) => [status, deduplicated, acknowledgement_status]), [
+    ["success", false, "provider_accepted"], ["deduplicated", true, "provider_accepted"],
+  ]);
+  assert.ok(h.analytics.every((event) => event.type === "journey_interaction" && event.placement === "feedback" && event.measurement_version === "journey-v1"));
+  assert.doesNotMatch(JSON.stringify(h.analytics), /private-reply|Private feedback|Original course|private=secret|"message"|"email"|"query"/);
+});
+
+test("feedback timeout is measured without treating an unconfirmed submission as success", async () => {
+  const h = harness(null, async () => { throw Object.assign(new Error("private response detail"), { name: "AbortError" }); });
+  await h.open(); h.el("#siteFeedbackEmail").value = "guest@example.net"; h.el("#siteFeedbackMessage").value = "Private text";
+  await h.send();
+  assert.equal(h.analytics.at(-1).status, "error"); assert.equal(h.analytics.at(-1).error, "timeout");
+  assert.equal(h.analytics.some(({ status }) => status === "success"), false);
+  assert.doesNotMatch(JSON.stringify(h.analytics), /Private text|private response detail|guest@example/);
 });
 
 test("feedback respects native validity and closes with Escape while retaining focus", async () => {

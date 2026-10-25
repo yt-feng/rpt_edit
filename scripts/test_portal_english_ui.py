@@ -86,7 +86,7 @@ class EnglishUITests(unittest.TestCase):
         script = assets['assets/english-commentary.js'].decode()
         self.assertNotIn('innerHTML', script); self.assertNotIn('localStorage.setItem', script)
         self.assertIn('portal-auth-change', script); self.assertIn('pagehide', script)
-        self.assertIn('visibilitychange', script); self.assertIn('current().token !== signedIn.token', script)
+        self.assertIn('visibilitychange', script); self.assertIn('current()?.user.id !== signedIn.user.id', script)
         self.assertIn('cache: "no-store"', script); self.assertIn('data', script)
 
 

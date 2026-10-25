@@ -267,7 +267,13 @@ test("guest membership request persists privately before configured owner delive
     const serialized = `${row.key}\n${JSON.stringify(row.value)}`;
     assert.doesNotMatch(serialized, /203\.0\.113\.40|guest@example\.net|guest-<wechat>/u);
   }
-  assert.equal([...bucket.data.keys()].some((key) => key.startsWith("_analytics/")), false);
+  const audit = bucket.jsonRows("_analytics/events/").map(row => row.value);
+  assert.equal(audit.length, 1); assert.equal(audit[0].type, "form_confirmation");
+  assert.equal(audit[0].request_kind, "membership"); assert.equal(audit[0].status, "provider_accepted");
+  assert.equal(audit[0].user, null); assert.equal(audit[0].session_id, "");
+  for (const privateValue of [body.requester_email, body.contact_value, body.note, ownerEmail]) {
+    assert.equal(JSON.stringify(audit).includes(privateValue), false);
+  }
 });
 
 test("authenticated membership requests bind the current account and reject invalid or disabled sessions", async () => {

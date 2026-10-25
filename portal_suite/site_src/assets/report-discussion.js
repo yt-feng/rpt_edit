@@ -36,6 +36,9 @@
     section.append(heading, starter, list, login, form, status);
     container.append(section);
     const identity = { source: options.source || options.item.source || "catalog", report_id: options.item.id };
+    function track(action, status = "", extra = {}) {
+      try { root.PortalSuiteAnalytics?.track("journey_interaction", { measurement_version: "journey-v1", placement: "report_discussion", action, status, ...identity, ...extra }); } catch (_) { /* Telemetry is best effort. */ }
+    }
     const endpoint = options.workerUrl.replace(/\/+$/, "") + "/report-discussion";
     let alive = true, pendingId = "", pendingBody = "", loadSequence = 0;
 
@@ -63,8 +66,9 @@
             const response = await fetch(endpoint, { method: "DELETE", headers: { "Content-Type": "application/json", ...options.authHeaders?.() }, body: JSON.stringify({ ...identity, comment_id: comment.id }) });
             const data = await response.json();
             if (!response.ok) throw new Error(data.detail || "删除失败。");
+            track("delete_result", "success");
             await load();
-          } catch (error) { setStatus(error.message, true); remove.disabled = false; }
+          } catch (error) { track("delete_result", "error", { error: "unavailable" }); setStatus(error.message, true); remove.disabled = false; }
         });
         meta.append(remove);
       }
@@ -87,27 +91,32 @@
           starter.append(ai);
         }
         const comments = Array.isArray(data.comments) ? data.comments : [];
+        track("load_result", "success", { count: comments.length, result_count: data.starter?.kind === "ai" ? 1 : 0 });
         count.textContent = comments.length ? comments.length + " 条评论" : "";
         list.replaceChildren(...comments.map(row));
         if (!comments.length) list.append(element("p", "report-discussion-empty", "还没有读者评论，欢迎留下你的判断。"));
         setStatus(""); auth();
-      } catch (error) { if (sequence === loadSequence) setStatus(error.message, true); }
+      } catch (error) { if (alive && sequence === loadSequence) track("load_result", "error", { error: "unavailable" }); if (sequence === loadSequence) setStatus(error.message, true); }
     }
-    login.addEventListener("click", () => options.onLogin?.());
+    login.addEventListener("click", () => { track("login_click"); options.onLogin?.(); });
+    let started = false;
+    body.addEventListener("input", () => { if (!started) { started = true; track("form_start"); } });
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       if (!options.getSession?.()) { options.onLogin?.(); return; }
       const text = body.value.trim();
       if (!text) return;
       if (!pendingId || pendingBody !== text) { pendingId = crypto.randomUUID(); pendingBody = text; }
+      track("comment_submit", "pending");
       submit.disabled = true; setStatus("正在发布评论…");
       try {
         const response = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json", ...options.authHeaders?.() }, body: JSON.stringify({ ...identity, body: text, request_id: pendingId }) });
         const data = await response.json();
         if (!response.ok) throw new Error(data.detail || "评论发布失败。");
+        track("comment_result", "success"); started = false;
         body.value = ""; pendingId = ""; pendingBody = "";
         await load();
-      } catch (error) { setStatus(error.message, true); }
+      } catch (error) { track("comment_result", "error", { error: "unavailable" }); setStatus(error.message, true); }
       finally { submit.disabled = false; }
     });
     const authChange = () => { auth(); load(); };

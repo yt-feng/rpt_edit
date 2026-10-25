@@ -48,6 +48,11 @@ test("feedback persists safely and sends owner notification plus bilingual reque
   assert.deepEqual(sent[0].tags, ["portal-feedback"]);
   assert.match(sent[0].htmlContent, /&lt;script&gt;/u); assert.doesNotMatch(sent[0].htmlContent, /<script>|private=secret|attacker/u);
   assertAcknowledgement(sent[1], "guest@example.net");
+  const audit = bucket.rows("_analytics/events/").filter(row => row.type === "form_confirmation");
+  assert.equal(audit.length, 1); assert.equal(audit[0].status, "provider_accepted");
+  assert.equal(audit[0].request_kind, "feedback"); assert.equal(audit[0].action, "provider_result");
+  assert.equal(audit[0].user, null); assert.equal(audit[0].session_id, "");
+  assert.doesNotMatch(JSON.stringify(audit), /guest@example|Button|script|attacker|mail-[0-9]/u);
   const [saved] = bucket.rows("_feedback/v1/items/");
   assert.equal(saved.status, "sent"); assert.equal(saved.page_path, "/report.html");
   assert.equal(saved.category, "bug"); assert.equal(saved.metadata.cacheControl, "private, no-store");
@@ -77,6 +82,7 @@ test("feedback duplicates and concurrent submissions send each email once", asyn
   assert.equal(again.data.deduplicated, true); assert.equal(sent.length, 2);
   assert.equal(bucket.rows("_feedback/v1/items/").length, 1);
   assert.equal(bucket.rows("_form-acknowledgements/v1/items/").length, 1);
+  assert.equal(bucket.rows("_analytics/events/").filter(row => row.type === "form_confirmation").length, 1);
 });
 
 test("feedback applies the six-per-email limit to distinct requests", async (t) => {
@@ -110,6 +116,8 @@ test("feedback owner failure stays retryable while receipt failure does not fail
   assert.equal(retried.data.confirmation_email_sent, false);
   assert.equal(bucket.rows("_feedback/v1/items/")[0].status, "sent");
   assert.equal(bucket.rows("_form-acknowledgements/v1/items/")[0].status, "failed");
+  const audit = bucket.rows("_analytics/events/").filter(row => row.type === "form_confirmation");
+  assert.equal(audit.length, 1); assert.equal(audit[0].status, "failed");
   assert.equal((await submit(env)).data.deduplicated, true); assert.equal(sent.length, 3);
 });
 
