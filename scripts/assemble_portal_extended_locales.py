@@ -18,7 +18,7 @@ from portal_extended_locales import (
     validate_corpus, daily_corpus_day,
 )
 from offline_translation import MODEL_ID
-from portal_extended_ui import UI_VERSION, standard_detail, standard_homepage, ui_assets
+from portal_extended_ui import UI_VERSION, standard_detail, standard_homepage, ui_assets, public_asset_hashes
 
 NS = 'http://www.sitemaps.org/schemas/sitemap/0.9'
 XHTML = 'http://www.w3.org/1999/xhtml'
@@ -184,6 +184,7 @@ def assemble(
         raise ExpansionError('Require a complete inactive site root')
     if (root / 'data/extended-locales/assembly.json').exists():
         raise ExpansionError('Require a fresh inactive tree and the complete approved locale set')
+    asset_hashes = public_asset_hashes(root) if presentation else None
     # Fresh per-locale candidates are added independently, so a failed language
     # does not relabel or overwrite established ko/ja/ar mirrors.
     manifests, payloads = {}, {}
@@ -248,13 +249,13 @@ def assemble(
         if presentation:
             planned[f'{code}/index.html'] = standard_homepage(code,
                 detail_pages,
-                origin=origin, alternates=home_alternates)
+                origin=origin, alternates=home_alternates, asset_hashes=asset_hashes)
             for doc in docs:
                 key = (Path(code) / file_for_url(doc['url'], origin=origin)).as_posix()
                 # Preserve a localized source homepage in old non-daily fixtures.
                 if key != f'{code}/index.html':
                     planned[key] = standard_detail(planned[key], code, doc['url'], origin=origin,
-                                                   alternates=all_alternates[doc['url']])
+                                                   alternates=all_alternates[doc['url']], asset_hashes=asset_hashes)
     if presentation:
         planned.update(ui_assets())
     if 'index.html' not in planned:

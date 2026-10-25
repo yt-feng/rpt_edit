@@ -29,7 +29,7 @@ class PublicationTests(unittest.TestCase):
         # A production tree carries these established shared assets before
         # extended composition. Model that contract instead of an HTML-only tree.
         repository = Path(__file__).resolve().parent.parent
-        for name in ('styles.css', 'blog.css', 'app.js', 'contact.js'):
+        for name in ('styles.css', 'blog.css', 'app.js', 'contact.js', 'analytics.js'):
             (assets/name).write_bytes((repository/'portal_suite/site_src/assets'/name).read_bytes())
         (assets/'locale.css').write_bytes((repository/'portal_suite/locale_assets/locale.css').read_bytes())
         # Exact source main/controls used by the established locale mirrors.
@@ -58,6 +58,23 @@ class PublicationTests(unittest.TestCase):
     def publish(self, batches):
         workspace = Path(tempfile.mkdtemp(dir=self.base))
         return compose(self.root, self.store, batches, workspace)
+
+    def test_publication_uses_final_assets_for_home_and_detail_without_changing_candidate(self):
+        batch = self.candidate()
+        candidate = self.base/'1/candidate'
+        original = {path.relative_to(candidate): path.read_bytes() for path in candidate.rglob('*') if path.is_file()}
+        # Materialized/built bytes intentionally differ from repository source.
+        for name in ('app.js', 'analytics.js', 'locale.css'):
+            (self.root/'assets'/name).write_text('Final prepared release bytes: '+name)
+        result = self.publish([batch])
+        self.assertTrue(result['ready'])
+        self.assertTrue(all(row['translation_calls'] == 0 for row in result['replays']))
+        for relative in ('fr/index.html', 'fr/'+file_for_url(URL).as_posix()):
+            html = (self.root/relative).read_text()
+            for name in ('app.js', 'analytics.js', 'locale.css'):
+                self.assertIn('/assets/'+name+'?v='+digest((self.root/'assets'/name).read_bytes())[:12], html)
+            self.assertLess(html.index('src="/assets/analytics.js?'), html.index('src="/assets/app.js?'))
+        self.assertEqual(original, {path.relative_to(candidate): path.read_bytes() for path in candidate.rglob('*') if path.is_file()})
 
     def legacy_bn_candidate(self, *, current_rule=False):
         body = '<h1>Research</h1><p>政策利率上升'+('九成' if current_rule else '25个基点')+'。</p>'
@@ -530,8 +547,11 @@ class PublicationTests(unittest.TestCase):
             return result
         session = mock.Mock(); session.get.side_effect = response
         count = snapshot_public(session, self.root, corpus)
-        self.assertEqual(count, 6)
-        self.assertEqual(len(seen), 7)
+        self.assertEqual(count, 12)
+        self.assertEqual(len(seen), 13)
+        for name in ('styles.css', 'blog.css', 'locale.css', 'contact.js', 'analytics.js', 'app.js'):
+            self.assertIn(ORIGIN+'/assets/'+name, seen)
+            self.assertEqual((self.root/'assets'/name).read_bytes(), b'public snapshot')
         self.assertEqual((self.root/'robots.txt').read_bytes(), b'public snapshot')
         self.assertFalse((self.root/'ko/blog/20260925-new.html').exists())
         self.assertTrue((self.root/'ja/blog/20260925-new.html').exists())

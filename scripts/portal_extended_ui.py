@@ -20,6 +20,8 @@ from portal_extended_locales import (
 
 UI_VERSION = 'portal-shared-v1'
 ASSETS = ('extended-locales.css', 'extended-locales.js')
+PUBLIC_ASSET_NAMES = ('styles.css', 'blog.css', 'locale.css', 'extended-locales.css',
+                      'contact.js', 'analytics.js', 'app.js', 'extended-locales.js')
 ASSET_ROOT = Path(__file__).resolve().parent.parent / 'portal_suite/locale_assets'
 SITE_ASSETS = ASSET_ROOT.parent / 'site_src/assets'
 
@@ -28,8 +30,33 @@ def ui_assets() -> dict[str, bytes]:
     return {'assets/' + name: (ASSET_ROOT / name).read_bytes() for name in ASSETS}
 
 
-def asset_markup(*, index=False, origin=ORIGIN) -> str:
+def public_asset_hashes(root: Path) -> dict[str, str]:
+    """Bind presentation to final built assets, including this UI's overlay."""
+    overlay = ui_assets()
+    hashes = {}
+    for name in PUBLIC_ASSET_NAMES:
+        relative = 'assets/' + name
+        if relative in overlay:
+            raw = overlay[relative]
+        else:
+            path = root / relative
+            if (not path.is_file() or any(p.is_symlink() for p in (root, root / 'assets', path))
+                    or not 0 < path.stat().st_size <= 8 * 1024 * 1024):
+                raise ExpansionError('Final shared presentation asset is missing, linked or oversized')
+            raw = path.read_bytes()
+        hashes[name] = digest(raw)
+    return hashes
+
+
+def asset_markup(*, index=False, origin=ORIGIN, asset_hashes: dict[str, str] | None = None) -> str:
+    if asset_hashes is not None and (
+        set(asset_hashes) != set(PUBLIC_ASSET_NAMES)
+        or any(not isinstance(value, str) or re.fullmatch(r'[0-9a-f]{64}', value) is None for value in asset_hashes.values())
+    ):
+        raise ExpansionError('Shared presentation asset identity differs')
     def version(name):
+        if asset_hashes is not None:
+            return asset_hashes[name][:12]
         path = ASSET_ROOT / name if name in (*ASSETS, 'locale.css') else SITE_ASSETS / name
         return digest(path.read_bytes())[:12]
     css = ''.join(f'<link rel="stylesheet" href="/assets/{name}?v={version(name)}">'
@@ -37,7 +64,7 @@ def asset_markup(*, index=False, origin=ORIGIN) -> str:
     # Keep the established account/catalog handlers. Localized cards have their
     # own IDs so the source catalog cannot replace the approved collection.
     scripts = ''.join(f'<script defer src="/assets/{name}?v={version(name)}"></script>'
-                      for name in ('contact.js', 'app.js'))
+                      for name in ('contact.js', 'analytics.js', 'app.js'))
     if index:
         scripts += f'<script defer src="/assets/extended-locales.js?v={version("extended-locales.js")}"></script>'
     # Resolve relative data requests against the established root catalog.
@@ -111,11 +138,12 @@ def chrome(locale: str, home_label: str, source_label: str, *, source: str,
     return top, bottom
 
 
-def standard_detail(raw: bytes, locale: str, url: str, *, alternates: dict[str, str], origin=ORIGIN) -> bytes:
+def standard_detail(raw: bytes, locale: str, url: str, *, alternates: dict[str, str], origin=ORIGIN,
+                    asset_hashes: dict[str, str] | None = None) -> bytes:
     parts = page_parts(raw, locale, url, origin=origin)
     top, footer = chrome(locale, parts['home'], parts['source'], source=url, alternates=alternates, origin=origin)
     head = parts['html'].split('</head>', 1)[0]
-    head = re.sub(r'<style>.*?</style>', '', head, flags=re.S) + asset_markup(origin=origin)
+    head = re.sub(r'<style>.*?</style>', '', head, flags=re.S) + asset_markup(origin=origin, asset_hashes=asset_hashes)
     home = origin + '/' + locale + '/'
     # All content blocks, source links and notice copy survive verbatim.
     return (head + f'''</head><body class="blog-page blog-article-page extended-page" data-page="blog-article" data-extended-ui="{UI_VERSION}">
@@ -130,7 +158,8 @@ def standard_detail(raw: bytes, locale: str, url: str, *, alternates: dict[str, 
 
 
 def standard_homepage(locale: str, pages: list[tuple[str, bytes]], *, origin=ORIGIN,
-                      alternates: dict[str, str] | None = None, portal_home: str | None = None) -> bytes:
+                      alternates: dict[str, str] | None = None, portal_home: str | None = None,
+                      asset_hashes: dict[str, str] | None = None) -> bytes:
     if not pages:
         raise ExpansionError('Locale homepage requires approved details')
     parts = [page_parts(raw, locale, url, origin=origin) for url, raw in pages]
@@ -152,7 +181,7 @@ def standard_homepage(locale: str, pages: list[tuple[str, bytes]], *, origin=ORI
     rendered = f'''<!doctype html><html lang="{locale}" dir="{direction(locale)}"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>KC桌面 · {escape(NATIVE[locale])}</title>
 <meta name="description" content="KC桌面 · {escape(NATIVE[locale], quote=True)}"><meta name="robots" content="index,follow">
-<link rel="canonical" href="{escape(canonical, quote=True)}"><script type="application/ld+json">{schema}</script>{asset_markup(index=True, origin=origin)}</head>
+<link rel="canonical" href="{escape(canonical, quote=True)}"><script type="application/ld+json">{schema}</script>{asset_markup(index=True, origin=origin, asset_hashes=asset_hashes)}</head>
 <body class="blog-page extended-page" data-page="blog-article" data-extended-ui="{UI_VERSION}">{top}
 <main class="shell"><section class="search-panel" aria-labelledby="extendedTitle">
 <div class="search-copy"><p class="blog-kicker">KC桌面</p><h1 id="extendedTitle">{escape(NATIVE[locale])}</h1>

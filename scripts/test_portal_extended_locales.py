@@ -286,6 +286,9 @@ class CandidateTests(BuildFixture, unittest.TestCase):
 class AssemblyTests(BuildFixture, unittest.TestCase):
     def staging(self):
         root=self.base/'site';root.mkdir()
+        assets=root/'assets';assets.mkdir()
+        for name in ('styles.css', 'blog.css', 'locale.css', 'app.js', 'contact.js', 'analytics.js'):
+            (assets/name).write_text('Synthetic built asset: '+name)
         originals={HOME:html(body='<h1>Research library</h1><p>Independent market research.</p><p><a href="/blog/20260922-test.html">Research note</a></p>'),
                    BLOG:html(BLOG,body='<h1>Research note</h1><p>Source based analysis for readers.</p>',extra='<script type="application/ld+json">'+json.dumps({'@type':'Article','url':BLOG,'datePublished':'2026-09-22','dateModified':'2026-09-22'})+'</script>')}
         for url,raw in originals.items():p=root/file_for_url(url);p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(raw)
@@ -296,6 +299,14 @@ class AssemblyTests(BuildFixture, unittest.TestCase):
         result=assemble(root,self.c,[self.base/'candidate'],('fr',))
         self.assertEqual(result['status'],'dry-run');self.assertFalse((root/'fr').exists())
         self.assertEqual((root/'index.html').read_bytes(),originals[HOME])
+    def test_shared_presentation_uses_prepared_asset_bytes_for_index_and_detail(self):
+        self.runbuild();root,_=self.staging()
+        assemble(root,self.c,[self.base/'candidate'],('fr',),apply=True)
+        for relative in ('fr/index.html', 'fr/blog/20260922-test.html'):
+            page=(root/relative).read_text()
+            for name in ('analytics.js', 'app.js'):
+                self.assertIn('/assets/'+name+'?v='+digest((root/'assets'/name).read_bytes())[:12],page)
+            self.assertLess(page.index('src="/assets/analytics.js?'),page.index('src="/assets/app.js?'))
     def test_approval_is_explicit_and_exact(self):
         self.runbuild();root,_=self.staging()
         with self.assertRaises(ExpansionError):assemble(root,self.c,[self.base/'candidate'],('pt',),apply=True)

@@ -1,10 +1,12 @@
 """Presentation regressions; synthetic text is not a translation assessment."""
 import re
+import tempfile
 import unittest
 from pathlib import Path
 
 from portal_extended_locales import COPY, ORIGIN, ExpansionError, render_document, select_locales
-from portal_extended_ui import UI_VERSION, page_parts, standard_detail, standard_homepage, ui_assets
+from portal_extended_ui import UI_VERSION, PUBLIC_ASSET_NAMES, page_parts, standard_detail, standard_homepage, ui_assets, public_asset_hashes
+from portal_lazy_assets import fingerprint_reader_loaders
 from audit_portal_extended_live import check_page
 
 URL = ORIGIN + '/blog/20260930-layout.html'
@@ -48,6 +50,8 @@ class SharedUITests(unittest.TestCase):
                     self.assertIn('class="legal-footer blog-footer"', text)
                     for asset in ('styles.css', 'blog.css', 'locale.css', 'extended-locales.css'):
                         self.assertIn('/assets/'+asset+'?v=', text)
+                    self.assertEqual(text.count('src="/assets/analytics.js?v='), 1)
+                    self.assertLess(text.index('src="/assets/analytics.js?v='), text.index('src="/assets/app.js?v='))
                     self.assertIn('id="accountGate"', text)
                     self.assertIn('data-auth-open="register"', text)
                     self.assertIn('data-extended-ui="'+UI_VERSION+'"', text)
@@ -112,8 +116,48 @@ class SharedUITests(unittest.TestCase):
         from portal_extended_locales import digest
         from portal_extended_ui import SITE_ASSETS
         text = standard_homepage('fr', [(URL, fixture())]).decode()
-        for name in ('app.js', 'contact.js'):
+        for name in ('app.js', 'contact.js', 'analytics.js'):
             self.assertIn('/assets/'+name+'?v='+digest((SITE_ASSETS/name).read_bytes())[:12], text)
+
+    def test_final_loader_digest_follows_leaf_only_change_on_home_and_detail(self):
+        from portal_extended_locales import digest
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary); assets = root/'assets'; assets.mkdir()
+            for name in PUBLIC_ASSET_NAMES:
+                (assets/name).write_text('Synthetic built asset: '+name)
+            app = assets/'app.js'
+            app.write_text('load("/assets/site-feedback.js?v=old");')
+            leaf = assets/'site-feedback.js'; leaf.write_text('first feedback module')
+            fingerprint_reader_loaders(root)
+            before = public_asset_hashes(root)
+            raw = fixture(); parts = page_parts(raw, 'fr', URL)
+            first = standard_detail(raw, 'fr', URL, alternates={}, asset_hashes=before)
+            leaf.write_text('updated feedback module without an app source edit')
+            fingerprint_reader_loaders(root)
+            after = public_asset_hashes(root)
+            self.assertNotEqual(before['app.js'], after['app.js'])
+            self.assertEqual(after['app.js'], digest(app.read_bytes()))
+            self.assertEqual(before['analytics.js'], after['analytics.js'])
+            home = standard_homepage('fr', [(URL, raw)], asset_hashes=after)
+            detail = standard_detail(raw, 'fr', URL, alternates={}, asset_hashes=after)
+            for page in (home, detail):
+                self.assertIn(('/assets/app.js?v='+after['app.js'][:12]).encode(), page)
+                self.assertNotIn(('/assets/app.js?v='+before['app.js'][:12]).encode(), page)
+                self.assertIn(('/assets/analytics.js?v='+after['analytics.js'][:12]).encode(), page)
+            self.assertNotEqual(first, detail)
+            self.assertIn(parts['content'].encode(), detail)
+            self.assertIn(parts['notice'].encode(), detail)
+            schema = re.search(rb'<script type="application/ld\+json">.*?</script>', raw).group()
+            self.assertIn(schema, detail)
+
+    def test_missing_or_invalid_final_asset_identity_does_not_fall_back_to_source(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary); (root/'assets').mkdir()
+            with self.assertRaisesRegex(ExpansionError, 'Final shared presentation asset'):
+                public_asset_hashes(root)
+        for hashes in ({}, {name: 'invalid' for name in PUBLIC_ASSET_NAMES}):
+            with self.assertRaisesRegex(ExpansionError, 'asset identity'):
+                standard_homepage('fr', [(URL, fixture())], asset_hashes=hashes)
 
 
 if __name__ == '__main__':
