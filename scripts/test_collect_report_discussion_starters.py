@@ -208,6 +208,13 @@ class Response(io.BytesIO):
 
 
 class TransportTests(unittest.TestCase):
+    def test_catalog_request_identifies_the_operations_client(self):
+        def opener(request, timeout):
+            self.assertEqual(request.get_header("User-agent"), "portal-report-discussion-starters/1.0")
+            self.assertEqual(request.get_header("Accept"), "application/json")
+            return Response({"items": []})
+        self.assertEqual(collector.http_json("https://portal.example.invalid/data/catalog.json", opener=opener), (200, {"items": []}))
+
     def test_readiness_checks_the_exact_catalog_report_without_authorization_or_mutation(self):
         calls = []
         def opener(request, timeout):
@@ -216,6 +223,7 @@ class TransportTests(unittest.TestCase):
             self.assertEqual(request.full_url, f"https://portal.example.invalid/api/report-discussion?source=catalog&report_id={report_id(1)}")
             self.assertIsNone(request.data)
             self.assertIsNone(request.get_header("X-portal-signature"))
+            self.assertEqual(request.get_header("User-agent"), "portal-report-discussion-starters/1.0")
             self.assertEqual(timeout, 30)
             return Response({"source": "catalog", "report_id": report_id(1), "starter": None, "starter_status": "none", "comments": []})
         self.assertTrue(collector.worker_ready("https://portal.example.invalid/api", report_id(1), opener=opener))
@@ -298,6 +306,7 @@ class TransportTests(unittest.TestCase):
             self.assertEqual(json.loads(request.data), payload)
             expected = hmac.new(b"fixture-secret", b"1234567." + request.data, hashlib.sha256).hexdigest()
             self.assertEqual(request.get_header("X-portal-signature"), "sha256=" + expected)
+            self.assertEqual(request.get_header("User-agent"), "portal-report-discussion-starters/1.0")
             self.assertEqual(timeout, 90)
             return Response({"ok": True, "generated": True, "status": "ready"})
         self.assertEqual(collector.generate_http("https://portal.example.invalid/api", "fixture-secret", payload, opener=opener, timestamp=1234567), {"status": "ready"})

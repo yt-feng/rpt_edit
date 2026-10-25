@@ -259,7 +259,9 @@ def https_base(value):
 
 
 def http_json(url, *, body=None, headers=None, timeout=30, opener=None, max_bytes=MAX_JSON_BYTES, missing_ok=False):
-    request = urllib.request.Request(url, data=body, headers=headers or {"Accept": "application/json"}, method="POST" if body is not None else "GET")
+    request_headers = {"Accept": "application/json", "User-Agent": "portal-report-discussion-starters/1.0"}
+    request_headers.update(headers or {})
+    request = urllib.request.Request(url, data=body, headers=request_headers, method="POST" if body is not None else "GET")
     open_request = opener or urllib.request.build_opener(NoRedirect()).open
     try:
         response = open_request(request, timeout=timeout)
