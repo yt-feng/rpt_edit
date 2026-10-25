@@ -1,0 +1,324 @@
+name: Portal verified UI hotfix
+
+on:
+  workflow_dispatch:
+    inputs:
+      expected_release:
+        description: Exact currently active release, prevents queued stale publication
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portal-production-release
+  cancel-in-progress: false
+
+jobs:
+  hotfix:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    steps:
+      - name: Require audited main branch
+        run: |
+          set -euo pipefail
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "The edge safety baseline can only run from main." >&2
+            exit 1
+          fi
+
+      - name: Checkout audited edge hotfix sources
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate UI hotfix before private configuration
+        run: |
+          set -euo pipefail
+          python3 -m pip install --disable-pip-version-check 'boto3>=1.34,<2' 'requests>=2.31,<3' 'Pillow>=10.1,<12' 'pypdf>=4,<6' 'PyYAML>=6,<7'
+          python3 -B scripts/check_public_identity.py
+          python3 -B scripts/test_prepare_portal_ui_hotfix.py
+          python3 -B scripts/test_verify_portal_ui_hotfix_live.py
+          python3 -B scripts/test_portal_ui_hotfix_workflow.py
+          node --test portal_suite/tests/report-detail-performance.test.mjs portal_suite/tests/password-download-boundary.test.mjs
+          node scripts/test_portal_english_ui.js
+
+
+      - name: Read and validate current live edge state
+        env:
+          LIVE_ORIGIN: ${{ secrets.PORTAL_SITE_URL }}
+          EXPECTED_RELEASE: ${{ inputs.expected_release }}
+        run: |
+          set -euo pipefail
+          echo "::add-mask::$LIVE_ORIGIN"
+          site_host="$(python3 - <<'PY'
+          import os
+          from urllib.parse import urlsplit
+
+          parsed = urlsplit(os.environ["LIVE_ORIGIN"])
+          if (
+              parsed.scheme != "https"
+              or not parsed.hostname
+              or parsed.username is not None
+              or parsed.password is not None
+              or parsed.port is not None
+              or parsed.path not in {"", "/"}
+              or parsed.query
+              or parsed.fragment
+          ):
+              raise SystemExit("Configured site URL is not a bare HTTPS origin")
+          print(parsed.hostname.lower())
+          PY
+          )"
+          origin="https://$site_host"
+          echo "::add-mask::$origin"
+          echo "::add-mask::$site_host"
+          alias_hosts=""
+          if [ "$(printf '%s' "$site_host" | awk -F. '{print NF}')" -eq 2 ] \
+            && [ "${site_host#www.}" = "$site_host" ]
+          then
+            alias_hosts="www.$site_host"
+            echo "::add-mask::$alias_hosts"
+          fi
+          printf 'LIVE_ORIGIN=%s\n' "$origin" >> "$GITHUB_ENV"
+          printf 'SITE_HOST=%s\n' "$site_host" >> "$GITHUB_ENV"
+          printf 'EDGE_ALIAS_HOSTS=%s\n' "$alias_hosts" >> "$GITHUB_ENV"
+          nonce="${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-${RANDOM}"
+          state_url="${origin}/.well-known/edge-state?hotfix=${nonce}"
+          curl --fail --silent --show-error \
+            --connect-timeout 10 --max-time 30 \
+            --output "$RUNNER_TEMP/live-edge-state.json" \
+            -- "$state_url"
+          STATE_PATH="$RUNNER_TEMP/live-edge-state.json" python3 - <<'PY'
+          import json
+          import os
+          import re
+          from pathlib import Path
+
+          state = json.loads(Path(os.environ["STATE_PATH"]).read_text(encoding="utf-8"))
+          if not isinstance(state, dict) or set(state) != {
+              "schema_version", "slot", "release_id", "tree_sha256"
+          }:
+              raise SystemExit("Live edge state has an unsupported shape")
+          if state["schema_version"] != 1:
+              raise SystemExit("Live edge state schema is unsupported")
+          slot = state["slot"]
+          release = state["release_id"]
+          tree = state["tree_sha256"]
+          if slot not in {"a", "b"}:
+              raise SystemExit("Live edge state slot is invalid")
+          if not isinstance(release, str) or re.fullmatch(r"[0-9a-f]{32}", release) is None:
+              raise SystemExit("Live edge state release is invalid")
+          if not isinstance(tree, str) or re.fullmatch(r"[0-9a-f]{64}", tree) is None:
+              raise SystemExit("Live edge state tree is invalid")
+          if release != os.environ["EXPECTED_RELEASE"]:
+              raise SystemExit("Active release changed before UI hotfix; recheck before dispatching")
+          with Path(os.environ["GITHUB_ENV"]).open("a", encoding="utf-8") as handle:
+              handle.write(f"STATIC_SLOT={slot}\n")
+              handle.write(f"STATIC_PREFIX=edge-static/slots/{slot}/\n")
+              handle.write(f"STATIC_RELEASE={release}\n")
+              handle.write(f"STATIC_TREE_SHA256={tree}\n")
+          print(f"validated_live_edge_state slot={slot} release={release} tree={tree}")
+          PY
+
+      - name: Materialize only UI deployment values
+        env:
+          PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}
+        run: |
+          set -euo pipefail
+          python3 scripts/render_private_config.py --github-add-mask
+          python3 scripts/render_private_config.py --skip-generated-files --root portal_suite/site_src
+          python3 -B scripts/check_portal_app_budget.py --candidate portal_suite/site_src/assets/app.js
+
+      - name: Prepare verified inactive UI candidate from the active release
+        timeout-minutes: 60
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: |
+          set -euo pipefail
+          release="$(python3 -c 'import hashlib,os; print(hashlib.sha256((os.environ["GITHUB_SHA"]+":"+os.environ["GITHUB_RUN_ID"]+":"+os.environ["GITHUB_RUN_ATTEMPT"]+":ui").encode()).hexdigest()[:32])')"
+          python3 -B scripts/prepare_portal_ui_hotfix.py \
+            --active-state "$RUNNER_TEMP/live-edge-state.json" --live-origin "$LIVE_ORIGIN" \
+            --source-root portal_suite/site_src --locale-assets portal_suite/locale_assets \
+            --release "$release" --output "$RUNNER_TEMP/ui-hotfix.json" --output-env "$GITHUB_ENV"
+          python3 -B scripts/verify_prepared_static_slot.py \
+            --slot "$(python3 -c 'import json,os; print(json.load(open(os.environ["RUNNER_TEMP"]+"/ui-hotfix.json"))["slot"])')" \
+            --release "$release" \
+            --tree "$(python3 -c 'import json,os; print(json.load(open(os.environ["RUNNER_TEMP"]+"/ui-hotfix.json"))["tree_sha256"])')" \
+            --locale-origin "$LIVE_ORIGIN"
+
+      - name: Prepare edge runtime for the verified candidate
+        env:
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}
+        run: |
+          set -euo pipefail
+          if [ -z "$R2_BUCKET" ]; then
+            echo "Required deployment value is not configured: R2_BUCKET" >&2
+            exit 1
+          fi
+          mkdir -p .edge_ui_hotfix
+          cp workers/edge-static-host/src/index.js .edge_ui_hotfix/index.js
+          cat > .edge_ui_hotfix/wrangler.toml <<EOF
+          name = "svc-04df8d213b73"
+          main = "index.js"
+          compatibility_date = "2026-08-12"
+          workers_dev = false
+          preview_urls = false
+
+          [cache]
+          enabled = false
+
+          [vars]
+          STATIC_PREFIX = "$STATIC_PREFIX"
+          STATIC_RELEASE = "$STATIC_RELEASE"
+          STATIC_TREE_SHA256 = "$STATIC_TREE_SHA256"
+          CANONICAL_HOST = "$SITE_HOST"
+
+          [[r2_buckets]]
+          binding = "STATIC_BUCKET"
+          bucket_name = "$R2_BUCKET"
+
+          [[services]]
+          binding = "API"
+          service = "portal-suite-worker"
+
+          [observability]
+          enabled = false
+          EOF
+          python3 scripts/render_private_config.py --skip-generated-files --root .edge_ui_hotfix/wrangler.toml
+          python3 - <<'PY'
+          import os, tomllib
+          from pathlib import Path
+          value = tomllib.loads(Path('.edge_ui_hotfix/wrangler.toml').read_text())['name']
+          print(f'::add-mask::{value}')
+          with open(os.environ['GITHUB_ENV'], 'a') as handle:
+              handle.write('EDGE_PRIVATE_SCRIPT_NAME='+value+'\n')
+          PY
+
+      - name: Capture exact edge rollback target
+        timeout-minutes: 2
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
+        run: >-
+          python3 -B scripts/capture_edge_worker_deployment.py
+          --script-name "$EDGE_PRIVATE_SCRIPT_NAME"
+          --output-env "$GITHUB_ENV"
+
+      - name: Recheck the active release immediately before deployment
+        run: |
+          python3 -B scripts/verify_portal_ui_hotfix_live.py \
+            --origin "$LIVE_ORIGIN" --receipt "$RUNNER_TEMP/ui-hotfix.json" --expect-previous
+
+      - name: Deploy verified UI hotfix
+        id: edge_deploy
+        timeout-minutes: 5
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
+          workingDirectory: .edge_ui_hotfix
+          command: deploy
+          wranglerVersion: "4.125.0"
+
+      - name: Verify candidate assets and public access boundaries
+        id: edge_routes_verify
+        timeout-minutes: 10
+        env:
+          EDGE_VERIFY_ATTEMPTS: "6"
+          EDGE_VERIFY_CONSECUTIVE: "2"
+        run: |
+          set -euo pipefail
+          export EDGE_SCRIPT_NAME="$EDGE_PRIVATE_SCRIPT_NAME"
+          python3 -B scripts/edge_route_cutover.py verify
+          for attempt in $(seq 1 6); do
+            if python3 -B scripts/verify_portal_ui_hotfix_live.py \
+              --origin "$LIVE_ORIGIN" --receipt "$RUNNER_TEMP/ui-hotfix.json"; then
+              exit 0
+            fi
+            sleep 10
+          done
+          exit 1
+
+      - name: Roll back failed edge hotfix
+        id: edge_rollback
+        if: >-
+          ${{ failure() &&
+              steps.edge_deploy.outcome != 'skipped' && steps.edge_deploy.outcome != '' &&
+              steps.edge_routes_verify.outcome != 'success' }}
+        timeout-minutes: 5
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
+          workingDirectory: .edge_ui_hotfix
+          command: rollback ${{ env.EDGE_PREVIOUS_VERSION_ID }} --message "Automated rollback after edge hotfix verification failure"
+          wranglerVersion: "4.125.0"
+
+      - name: Verify rollback restored service availability
+        if: ${{ failure() && steps.edge_rollback.outcome == 'success' }}
+        timeout-minutes: 5
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
+          origin="${LIVE_ORIGIN%/}"
+          echo "::add-mask::$origin"
+          for attempt in $(seq 1 18); do
+            root_headers="$RUNNER_TEMP/rollback-root-$attempt.headers"
+            root_status="$(curl --silent --show-error --max-redirs 0 \
+              --connect-timeout 10 --max-time 30 \
+              --dump-header "$root_headers" --output /dev/null \
+              --write-out '%{http_code}' -- "$origin/" || true)"
+            root_location="$(awk 'BEGIN { IGNORECASE=1 } /^location:/ { sub(/^[^:]*:[[:space:]]*/, ""); sub(/\r$/, ""); print; exit }' "$root_headers" 2>/dev/null || true)"
+            api_status="$(curl --silent --show-error --max-redirs 0 \
+              --connect-timeout 10 --max-time 30 \
+              --output /dev/null --write-out '%{http_code}' -- "$origin/api/health" || true)"
+            state_path="$RUNNER_TEMP/rollback-state-$attempt.json"
+            state_status="$(curl --silent --show-error --max-redirs 0 \
+              --connect-timeout 10 --max-time 30 \
+              --output "$state_path" --write-out '%{http_code}' \
+              -- "$origin/.well-known/edge-state?rollback=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-$attempt" || true)"
+            if python3 -B scripts/capture_edge_worker_deployment.py \
+              --script-name "$EDGE_PRIVATE_SCRIPT_NAME" \
+              --expect-version "$EDGE_PREVIOUS_VERSION_ID" \
+              && [ "$root_status" = "200" ] && [ -z "$root_location" ] \
+              && [ "$api_status" = "200" ] && [ "$state_status" = "200" ] \
+              && STATE_PATH="$state_path" python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          state = json.loads(Path(os.environ["STATE_PATH"]).read_text(encoding="utf-8"))
+          expected = json.loads((Path(os.environ["RUNNER_TEMP"]) / "live-edge-state.json").read_text())
+          if state != expected:
+              raise SystemExit("Rollback state does not match the captured deployment state")
+          PY
+            then
+              echo "edge_hotfix_rollback=exact_version_and_state_restored"
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "Rollback did not restore canonical service availability." >&2
+          exit 1
+
+      - name: Preserve bounded UI hotfix receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portal-ui-hotfix-${{ github.run_id }}
+          path: ${{ runner.temp }}/ui-hotfix.json
+          if-no-files-found: ignore
+          retention-days: 7
