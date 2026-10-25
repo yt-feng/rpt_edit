@@ -291,9 +291,11 @@ assert.match(commentOrderHandler, /await requireSuperUser\(request, env\)/, "onl
 assert.doesNotMatch(commentOrderHandler, /Promise\.all|hotReportCommentKey/, "reordering must not rewrite individual comment objects");
 assert.match(
   app,
-  /isHotReportItem\(item\)[\s\S]*?\$\{hotReportCommentsMarkup\(\)\}[\s\S]*?\$\{externalRelatedMarkup\(\)\}/,
-  "hot-report comments must render before Related Reports",
+  /item = await fetchDocDetailItem\(workerUrl, item\);\s*initReportDiscussion\(item, workerUrl, item\.source \|\| EXTERNAL_SOURCE\)/,
+  "all external report kinds, including hot reports, must mount the shared discussion after their identity resolves",
 );
+assert.doesNotMatch(app, /\$\{hotReportCommentsMarkup\(\)\}/, "hot reports must not render a duplicate legacy comment box");
+assert.match(worker, /listHotComments:[^\n]*listHotReportCommentRows/, "shared discussion must retain existing hot-report comments");
 assert.match(
   styles,
   /\.hot-comment-owner-alias\[hidden\][\s\S]*?display:\s*none\s*!important/,

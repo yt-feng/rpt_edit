@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { withOwnerNotificationMock } from "./form-acknowledgement-fixture.mjs";
 import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
@@ -98,15 +99,7 @@ async function postReportRequest(env, body, options = {}) {
   return { response, data };
 }
 
-async function withMockFetch(mock, callback) {
-  const original = globalThis.fetch;
-  globalThis.fetch = mock;
-  try {
-    return await callback();
-  } finally {
-    globalThis.fetch = original;
-  }
-}
+const withMockFetch = withOwnerNotificationMock;
 
 function brevoSuccess(messageId = "message-1") {
   return new Response(JSON.stringify({ messageId }), {
@@ -253,7 +246,7 @@ test("owner notification configuration controls provider delivery without leakin
   }
 });
 
-test("an id-only Report A detail self-heals canonical metadata and sends exactly one real provider request", async () => {
+test("an id-only Report A detail self-heals canonical metadata and sends one canonical owner notification", async () => {
   const bucket = new MemoryR2();
   const env = envFor(bucket);
   const originId = "report-a:7272f7466fea33f5ca7e66afc23a0a90";
@@ -330,7 +323,7 @@ test("an id-only Report A detail self-heals canonical metadata and sends exactly
     assert.equal(submitted.data.ok, true);
   });
 
-  assert.equal(deliveries.length, 1, "one click must make exactly one Brevo send call");
+  assert.equal(deliveries.length, 1, "one click must make exactly one owner notification call");
   assert.deepEqual(deliveries[0].to, [{ email: EXPECTED_CONTACT }]);
   assert.match(deliveries[0].subject, new RegExp(canonicalTitle, "u"));
   assert.doesNotMatch(deliveries[0].subject, /FAKE CLIENT TITLE/u);

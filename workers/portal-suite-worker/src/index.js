@@ -993,7 +993,7 @@ function allowedOrigin(request, env) {
 function corsHeaders(request, env) {
   return {
     "Access-Control-Allow-Origin": allowedOrigin(request, env),
-    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    "Access-Control-Allow-Methods": "GET, POST, DELETE, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type, Authorization, Range, X-Portal-Timestamp, X-Portal-Signature, X-Upload-ID, X-Upload-Fingerprint",
     "Access-Control-Expose-Headers": "Content-Disposition, Content-Length, Content-Range, Accept-Ranges, X-Portal-Preview-Pages",
     "Vary": "Origin",
@@ -5049,6 +5049,9 @@ async function handleAuth(request, env) {
         if (recovered) return recovered;
         throw error;
       }
+      await sendFormAcknowledgement(env, `registration:${user.id || user.username}`, {
+        status: "sent", requester_email: user.email, attempted_at: user.created_at || now,
+      });
       return authSuccessResponse(request, env, 201, user);
     }
 
@@ -5661,6 +5664,7 @@ async function handleCourseMaterialRequest(request, env, ctx) {
   try {
     const reservation = await reserveReportRequestRecord(env, key, record, nowMs);
     if (reservation.disposition !== "reserved") {
+      await sendFormAcknowledgement(env, key, reservation.record);
       return privateJsonResponse(request, env, 202, {
         ok: true,
         deduplicated: true,
@@ -5694,6 +5698,7 @@ async function handleCourseMaterialRequest(request, env, ctx) {
       updated_at: completedAt,
     };
     await r2PutJson(env, key, completed);
+    await sendFormAcknowledgement(env, key, completed);
     rewardWaitUntil(ctx, persistAnalyticsEvent(request, env, {
       type: "course_material_request",
       path: "/course/material-request",
@@ -5877,6 +5882,7 @@ async function handleCourseDirectoryRequest(request, env, ctx) {
   try {
     const reservation = await reserveReportRequestRecord(env, key, record, nowMs);
     if (reservation.disposition !== "reserved") {
+      await sendFormAcknowledgement(env, key, reservation.record);
       return privateJsonResponse(request, env, 202, {
         ok: true,
         deduplicated: true,
@@ -5908,6 +5914,7 @@ async function handleCourseDirectoryRequest(request, env, ctx) {
       updated_at: completedAt,
     };
     await r2PutJson(env, key, completed);
+    await sendFormAcknowledgement(env, key, completed);
     rewardWaitUntil(ctx, persistAnalyticsEvent(request, env, {
       type: "course_material_request",
       path: "/course/directory-request",
@@ -16733,6 +16740,7 @@ async function handleReportChatRequest(request, env, ctx) {
     const existing = await r2GetJsonObjectStrict(env, key);
     const existingDisposition = reportRequestDisposition(existing && existing.value, nowMs);
     if (existingDisposition) {
+      await sendFormAcknowledgement(env, key, existing.value);
       return privateJsonResponse(request, env, 202, {
         ok: true,
         status: "duplicate",
@@ -16760,6 +16768,7 @@ async function handleReportChatRequest(request, env, ctx) {
     }
     const reservation = await reserveReportRequestRecord(env, key, record, nowMs);
     if (reservation.disposition !== "reserved") {
+      await sendFormAcknowledgement(env, key, reservation.record);
       return privateJsonResponse(request, env, 202, {
         ok: true,
         status: "duplicate",
@@ -16794,6 +16803,7 @@ async function handleReportChatRequest(request, env, ctx) {
       updated_at: completedAt,
     };
     await r2PutJson(env, key, completed);
+    await sendFormAcknowledgement(env, key, completed);
     scheduleReportChatAnalytics(request, env, ctx, user, {
       action: "request",
       status: completed.status,
@@ -18186,6 +18196,7 @@ async function handleNewsfeedTopicRequest(request, env, ctx) {
     const key = `${NEWSFEED_TOPIC_REQUEST_PREFIX}/items/${digest}.json`;
     const existing = await r2GetJsonObjectStrict(env, key);
     if (reportRequestDisposition(existing && existing.value, nowMs)) {
+      await sendFormAcknowledgement(env, key, existing.value);
       return privateJsonResponse(request, env, 202, {
         ok: true,
         status: "duplicate",
@@ -18229,6 +18240,7 @@ async function handleNewsfeedTopicRequest(request, env, ctx) {
     };
     const reservation = await reserveReportRequestRecord(env, key, record, nowMs);
     if (reservation.disposition !== "reserved") {
+      await sendFormAcknowledgement(env, key, reservation.record);
       return privateJsonResponse(request, env, 202, {
         ok: true,
         status: "duplicate",
@@ -18264,6 +18276,7 @@ async function handleNewsfeedTopicRequest(request, env, ctx) {
       updated_at: completedAt,
     };
     await r2PutJson(env, key, completed);
+    await sendFormAcknowledgement(env, key, completed);
     rewardWaitUntil(ctx, persistAnalyticsEvent(request, env, {
       type: "newsfeed_topic_request",
       path: "/newsfeed/topics/request",
@@ -18630,7 +18643,11 @@ function newsfeedEmailHtml(payload) {
   `;
 }
 
-async function sendNewsfeedEmail(env, { to, subject, html, text, tags = ["portal-newsfeed"] }) {
+async function sendNewsfeedEmail(env, { to, subject, html, text, tags = ["portal-newsfeed"], sender = null }) {
+  const senderEmail = normalizeEmail(sender && sender.email);
+  const messageSender = senderEmail
+    ? { email: senderEmail, name: cleanReportRequestText(sender.name, 100) || PUBLIC_BRAND }
+    : null;
   if (newsfeedEmailProvider(env) === "brevo") {
     const response = await fetchWithTimeout("https://api.brevo.com/v3/smtp/email", {
       method: "POST",
@@ -18640,7 +18657,7 @@ async function sendNewsfeedEmail(env, { to, subject, html, text, tags = ["portal
         "api-key": cleanEnv(env.BREVO_API_KEY),
       },
       body: JSON.stringify({
-        sender: newsfeedSender(env),
+        sender: messageSender || newsfeedSender(env),
         to: [{ email: to }],
         subject,
         htmlContent: html,
@@ -18660,7 +18677,7 @@ async function sendNewsfeedEmail(env, { to, subject, html, text, tags = ["portal
   if (hasCloudflareEmailBinding(env)) {
     const response = await env.EMAIL.send({
       to,
-      from: newsfeedEmailFrom(env),
+      from: messageSender ? `${messageSender.name} <${messageSender.email}>` : newsfeedEmailFrom(env),
       subject,
       html,
       text,
@@ -18668,6 +18685,94 @@ async function sendNewsfeedEmail(env, { to, subject, html, text, tags = ["portal
     return { sent: true, provider: "cloudflare", response };
   }
   return { sent: false, detail: "Cloudflare Email binding is not configured." };
+}
+
+function formAcknowledgementEmailContent() {
+  const subject = "已收到您的提交 / We received your submission";
+  const text = [
+    "您好，我们已收到您提交的表单。",
+    "任何疑问，请联系微信：macroGate，或者 WhatsApp：+1 (740) 875-3400。",
+    "",
+    "Thank you. We have received your form submission.",
+    "If you have any questions, please contact us on WeChat: macroGate, or WhatsApp: +1 (740) 875-3400.",
+  ].join("\n");
+  return {
+    subject,
+    text,
+    html: `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.7;color:#101828;white-space:pre-wrap">${escapeNewsfeedHtml(text)}</div>`,
+  };
+}
+
+async function sendFormAcknowledgement(env, submissionKey, record) {
+  // Keep customer acknowledgements independent of the owner notification. A
+  // failed receipt must not undo an accepted request or an account creation.
+  if (!record || record.status !== "sent") return { status: "not_accepted" };
+  const recipient = normalizeEmail(record.requester_email);
+  if (!recipient || isGeneratedEmail(recipient)) return { status: "no_email" };
+  try {
+    const submittedAt = String(record.attempted_at || record.created_at || "");
+    if (!submissionKey || !submittedAt) return { status: "invalid_submission" };
+    const digest = await reportRequestPrivateHash(
+      env, "form-acknowledgement", `${submissionKey}|${submittedAt}|${recipient}`,
+    );
+    const key = `_form-acknowledgements/v1/items/${digest}.json`;
+    const existing = await r2GetJsonObjectStrict(env, key);
+    if (existing) return { status: existing.value && existing.value.status || "outcome_unknown", deduplicated: true };
+    const now = new Date().toISOString();
+    const pending = {
+      version: 1,
+      submission_key: String(submissionKey),
+      submission_attempted_at: submittedAt,
+      requester_email: recipient,
+      status: "pending",
+      attempted_at: now,
+      updated_at: now,
+      sent_at: "",
+      provider: newsfeedEmailProvider(env),
+      message_id: "",
+      last_error: "",
+    };
+    const metadata = { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" };
+    const claimed = await accountBucket(env).put(key, JSON.stringify(pending), {
+      onlyIf: { etagDoesNotMatch: "*" },
+      httpMetadata: metadata,
+    });
+    if (claimed === null) return { status: "pending", deduplicated: true };
+    // A pending marker is terminal for automatic retry: a timeout or a Worker
+    // interruption can occur after the provider has accepted the email.
+    let result;
+    let status;
+    try {
+      result = await sendNewsfeedEmail(env, {
+        to: recipient,
+        ...formAcknowledgementEmailContent(),
+        sender: { email: CONTACT_EMAIL, name: PUBLIC_BRAND },
+        tags: ["portal-form-acknowledgement"],
+      });
+      status = result && result.sent ? "sent" : "failed";
+    } catch (_error) {
+      result = { detail: "Email delivery outcome could not be confirmed." };
+      status = "outcome_unknown";
+    }
+    const completedAt = new Date().toISOString();
+    const completed = {
+      ...pending,
+      status,
+      provider: cleanReportRequestText(result && result.provider || pending.provider, 40),
+      message_id: cleanReportRequestText(result && result.messageId, 200),
+      last_error: status === "sent" ? "" : cleanReportRequestText(result && result.detail, 500),
+      sent_at: status === "sent" ? completedAt : "",
+      updated_at: completedAt,
+    };
+    await accountBucket(env).put(key, JSON.stringify(completed), {
+      ...(claimed && claimed.etag ? { onlyIf: { etagMatches: claimed.etag } } : {}),
+      httpMetadata: metadata,
+    });
+    return { status };
+  } catch (_error) {
+    console.error("Form acknowledgement could not be recorded or completed.");
+    return { status: "unavailable" };
+  }
 }
 
 function reportRequestOriginAllowed(request, env) {
@@ -19091,6 +19196,7 @@ async function handleMembershipRequest(request, env) {
     record.request_id = dedupe.digest;
     const existing = await r2GetJsonObjectStrict(env, dedupe.key);
     if (reportRequestDisposition(existing && existing.value, nowMs)) {
+      await sendFormAcknowledgement(env, dedupe.key, existing.value);
       return privateJsonResponse(request, env, 202, {
         ok: true,
         deduplicated: true,
@@ -19136,6 +19242,7 @@ async function handleMembershipRequest(request, env) {
 
     const reservation = await reserveReportRequestRecord(env, dedupe.key, record, nowMs);
     if (reservation.disposition !== "reserved") {
+      await sendFormAcknowledgement(env, dedupe.key, reservation.record);
       return privateJsonResponse(request, env, 202, {
         ok: true,
         deduplicated: true,
@@ -19170,6 +19277,7 @@ async function handleMembershipRequest(request, env) {
       updated_at: completedAt,
     };
     await putMembershipRequestRecord(env, dedupe.key, completed);
+    await sendFormAcknowledgement(env, dedupe.key, completed);
     if (completed.status !== "sent") {
       return privateJsonResponse(request, env, 502, {
         ok: false,
@@ -19190,6 +19298,121 @@ async function handleMembershipRequest(request, env) {
       retryable: true,
       detail: "申请服务暂时不可用，请稍后重试。",
     });
+  }
+}
+
+function feedbackEmailContent(record) {
+  const fields = [
+    ["反馈类型 / Category", record.category],
+    ["反馈内容 / Message", record.message],
+    ["回复邮箱 / Email", record.requester_email],
+    ["账号 / Account", record.requester_username || "Guest"],
+    ["页面 / Page", record.page_path],
+    ["提交时间 / Submitted", record.attempted_at],
+    ["反馈编号 / Reference", record.request_id],
+  ];
+  const text = [`${PUBLIC_BRAND} 网站意见反馈 / Website feedback`, "",
+    ...fields.map(([label, value]) => `${label}: ${value}`)].join("\n\n");
+  return {
+    subject: `${PUBLIC_BRAND} 网站反馈 / Feedback: ${record.category}`,
+    text,
+    html: `<div style="font-family:sans-serif;line-height:1.7;white-space:pre-wrap">${escapeNewsfeedHtml(text)}</div>`,
+  };
+}
+
+async function handleFeedback(request, env) {
+  const fail = (status, detail, extra = {}) => privateJsonResponse(request, env, status, { ok: false, detail, ...extra });
+  if (!reportRequestOriginAllowed(request, env)) return fail(403, "反馈来源无效。 / Invalid feedback origin.");
+  if (String(request.headers.get("Content-Type") || "").split(";", 1)[0].trim().toLowerCase() !== "application/json") {
+    return fail(415, "请使用 JSON 提交。 / JSON is required.");
+  }
+  if (Number(request.headers.get("Content-Length") || 0) > REPORT_REQUEST_MAX_BODY_BYTES) {
+    return fail(413, "反馈内容过大。 / Feedback is too large.");
+  }
+  let payload;
+  try {
+    const raw = await request.text();
+    if (new TextEncoder().encode(raw).byteLength > REPORT_REQUEST_MAX_BODY_BYTES) return fail(413, "反馈内容过大。 / Feedback is too large.");
+    payload = JSON.parse(raw);
+  } catch (_error) { return fail(400, "反馈格式无效。 / Invalid feedback format."); }
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) return fail(400, "反馈格式无效。 / Invalid feedback format.");
+  if (String(payload.honeypot || payload.website || "").trim()) {
+    return privateJsonResponse(request, env, 202, { ok: true, deduplicated: true, detail: "反馈已收到。 / Feedback received." });
+  }
+  let user = null;
+  if (bearerToken(request)) {
+    try { user = await currentUserFromRequest(env, request); }
+    catch (_error) { return fail(401, "请重新登录后提交。 / Please sign in again."); }
+  }
+  const category = String(payload.category || "").trim().toLowerCase();
+  if (!["bug", "content", "suggestion", "other"].includes(category)) return fail(400, "请选择反馈类型。 / Select a feedback category.");
+  const message = String(payload.message || "").normalize("NFKC").replace(/\r\n?/gu, "\n")
+    .replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/gu, " ").trim();
+  if (message.length < 5 || message.length > 2000) return fail(400, "请填写 5–2000 字的反馈。 / Enter 5–2000 characters.");
+  const accountEmail = normalizeEmail(user && user.email);
+  const requesterEmail = accountEmail && !isGeneratedEmail(accountEmail)
+    && !Boolean(user && user.email_is_generated) && accountEmail !== PUBLIC_REDACTED_ACCOUNT_EMAIL
+    ? accountEmail : normalizeEmail(payload.requester_email);
+  if (!requesterEmail || requesterEmail.length > 254 || isGeneratedEmail(requesterEmail)
+      || requesterEmail === PUBLIC_REDACTED_ACCOUNT_EMAIL) return fail(400, "请填写有效邮箱。 / Enter a valid email address.");
+  const pagePath = cleanReportRequestPagePath(payload.page_path);
+  try {
+    const nowMs = Date.now();
+    const digest = await reportRequestPrivateHash(env, "feedback-dedupe", `${requesterEmail}|${category}|${message}|${pagePath}`);
+    const key = `_feedback/v1/items/${digest}.json`;
+    const accepted = (deduplicated, acknowledgement) => privateJsonResponse(request, env, 202, {
+      ok: true, deduplicated, request_id: digest,
+      confirmation_email_sent: acknowledgement?.status === "sent",
+      detail: "反馈已收到，感谢您的帮助。 / Thank you. Your feedback has been received.",
+    });
+    const existing = await r2GetJsonObjectStrict(env, key);
+    if (reportRequestDisposition(existing && existing.value, nowMs)) {
+      const acknowledgement = await sendFormAcknowledgement(env, key, existing.value);
+      return accepted(true, acknowledgement);
+    }
+    const [ipAllowed, emailAllowed] = await Promise.all([
+      reserveReportRequestRateLimit(env, "feedback-ip", reportRequestClientIp(request), REPORT_REQUEST_IP_RATE_LIMIT, nowMs),
+      reserveReportRequestRateLimit(env, "feedback-email", requesterEmail, REPORT_REQUEST_EMAIL_RATE_LIMIT, nowMs),
+    ]);
+    if (!ipAllowed || !emailAllowed) return fail(429, "提交过于频繁，请稍后再试。 / Too many submissions. Please try later.", { retryable: true });
+    const record = {
+      request_id: digest, category, message, page_path: pagePath,
+      requester_email: requesterEmail,
+      requester_user_id: cleanReportRequestText(user && user.id, 100),
+      requester_username: cleanReportRequestText(user && user.username, 80),
+      authenticated: Boolean(user),
+    };
+    const reservation = await reserveReportRequestRecord(env, key, record, nowMs);
+    if (reservation.disposition !== "reserved") {
+      const acknowledgement = await sendFormAcknowledgement(env, key, reservation.record);
+      return accepted(true, acknowledgement);
+    }
+    const notificationRecipient = ownerNotificationEmail(env);
+    let result;
+    try {
+      result = await sendNewsfeedEmail(env, {
+        to: notificationRecipient, ...feedbackEmailContent(reservation.record), tags: ["portal-feedback"],
+      });
+    } catch (_error) { result = { sent: false, detail: "Feedback notification delivery could not be confirmed." }; }
+    const completedAt = new Date().toISOString();
+    const completed = {
+      ...reservation.record,
+      status: result && result.sent ? "sent" : "failed",
+      notification_recipient: notificationRecipient,
+      provider: cleanReportRequestText(result && result.provider, 40),
+      message_id: cleanReportRequestText(result && result.messageId, 200),
+      last_error: result && result.sent ? "" : cleanReportRequestText(result && result.detail, 500),
+      sent_at: result && result.sent ? completedAt : "",
+      updated_at: completedAt,
+    };
+    await accountBucket(env).put(key, JSON.stringify(completed), {
+      httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
+    });
+    if (completed.status !== "sent") return fail(502, "反馈已保存，通知发送暂未成功，请稍后重试。 / Feedback saved. Please retry later to complete delivery.", { retryable: true, request_id: digest });
+    const acknowledgement = await sendFormAcknowledgement(env, key, completed);
+    return accepted(false, acknowledgement);
+  } catch (_error) {
+    return fail(503, "反馈服务暂时不可用，请稍后重试。 / Feedback is temporarily unavailable. Please try later.", { retryable: true });
   }
 }
 
@@ -19544,6 +19767,7 @@ async function handleReportRequest(request, env) {
     const existing = await r2GetJsonObjectStrict(env, key);
     const existingDisposition = reportRequestDisposition(existing && existing.value, nowMs);
     if (existingDisposition) {
+      await sendFormAcknowledgement(env, key, existing.value);
       return reportRequestAcceptedResponse(
         request,
         env,
@@ -19573,6 +19797,7 @@ async function handleReportRequest(request, env) {
 
     const reservation = await reserveReportRequestRecord(env, key, record, nowMs);
     if (reservation.disposition !== "reserved") {
+      await sendFormAcknowledgement(env, key, reservation.record);
       return reportRequestAcceptedResponse(
         request,
         env,
@@ -19610,6 +19835,7 @@ async function handleReportRequest(request, env) {
       updated_at: completedAt,
     };
     await r2PutJson(env, key, completed);
+    await sendFormAcknowledgement(env, key, completed);
     await upsertReportRequestAdminIndex(env, key, completed).catch((indexError) => {
       console.error(`${PUBLIC_BRAND} report request queue index update failed`, {
         request_id: key.split("/").pop().replace(/\.json$/i, ""),
@@ -26554,19 +26780,21 @@ async function customerContentAllowedReports(env, reports, context) {
     )));
 }
 
-async function customerContentText(env, report) {
+async function customerContentText(env, report, { strictReportId = false } = {}) {
   const catalog = await loadCatalog(env);
+  const accepts = (resolved) => resolved?.has_body && (!strictReportId
+    || (!resolved.aliased && String(resolved.entry?.id || "") === String(report.id)));
   let history = null;
   try { history = await loadReportTextHistoryIndex(env, report); } catch { /* current shard may still be available */ }
   if (history) {
     const resolved = resolveReportTextEntry(catalog, history, report);
-    if (resolved?.has_body) return { text: publicBrandDocumentText(resolved.entry.text), text_scope: "partial_excerpt" };
+    if (accepts(resolved)) return { text: publicBrandDocumentText(resolved.entry.text), text_scope: "partial_excerpt" };
   }
   for (const date of reportTextCurrentDates(report).slice(0, 3)) {
     const index = await loadReportTextCurrentIndex(env, report, date);
     if (!index) continue;
     const resolved = resolveReportTextEntry(catalog, index, report);
-    if (resolved?.has_body) return { text: publicBrandDocumentText(resolved.entry.text), text_scope: "partial_excerpt" };
+    if (accepts(resolved)) return { text: publicBrandDocumentText(resolved.entry.text), text_scope: "partial_excerpt" };
   }
   return null;
 }
@@ -26610,6 +26838,93 @@ async function handleCustomerContentApi(request, env, ctx) {
     findAccount: customerContentAccount,
   }).handle(request, env, ctx);
   return response || privateJsonResponse(request, env, 404, { ok: false, error: "content_not_found" });
+}
+
+async function discussionReport(env, source, id) {
+  if (!validLocaleDetailId(source, id)) return null;
+  if (source === "catalog") {
+    const item = findReport(await loadCatalog(env), id);
+    return item ? { ...item, id, source } : null;
+  }
+  const item = await resolveLocaleDetailPublicItem(env, source, id);
+  return item ? { ...item, id, source } : null;
+}
+
+async function discussionReportText(env, report) {
+  if (report.source !== "catalog") return null;
+  // Reuse authenticated storage internally; no report text or object URL is
+  // exposed by the public discussion endpoint.
+  const { validateContentManifest } = await import("./customer-content-data.js");
+  const key = `_customer-content-data/v1/reports/${report.id}/manifest.json`;
+  const object = await accountBucket(env).get(key);
+  if (object) {
+    if (Number(object.size) > 2 * 1024 * 1024) throw new Error("Discussion manifest exceeds limit");
+    const raw = await object.text();
+    if (new TextEncoder().encode(raw).byteLength > 2 * 1024 * 1024) throw new Error("Discussion manifest exceeds limit");
+    const manifest = validateContentManifest(JSON.parse(raw), report.id);
+    const descriptor = manifest.artifacts.filter((row) => row.kind === "text"
+      && /(?:^|\/)source_(?:clean|mineru)\.md$/i.test(row.filename)
+      && ["text/plain", "text/markdown"].includes(row.mime_type) && row.size <= 4 * 1024 * 1024)
+      .sort((a, b) => Number(/source[_-]clean/i.test(b.filename)) - Number(/source[_-]clean/i.test(a.filename)))[0];
+    if (descriptor) {
+      const blob = await accountBucket(env).get(descriptor.object_key);
+      if (!blob || Number(blob.size) !== descriptor.size) throw new Error("Discussion text binding unavailable");
+      const bytes = new Uint8Array(await blob.arrayBuffer());
+      if (bytes.byteLength !== descriptor.size) throw new Error("Discussion text size mismatch");
+      const digest = [...new Uint8Array(await crypto.subtle.digest("SHA-256", bytes))]
+        .map((value) => value.toString(16).padStart(2, "0")).join("");
+      if (digest !== descriptor.sha256) throw new Error("Discussion text hash mismatch");
+      return { text: publicBrandDocumentText(new TextDecoder().decode(bytes)), text_scope: "partial_excerpt" };
+    }
+  }
+  return customerContentText(env, report, { strictReportId: true });
+}
+
+async function reportDiscussionService() {
+  const { createReportDiscussion } = await import("./report-discussion.js");
+  return createReportDiscussion({
+    bucket: accountBucket, resolveReport: discussionReport, currentUser: currentUserFromRequest,
+    publicName: (user) => publicAccountDisplayName(user.username, accountRole(user)),
+    isAdmin: isSuperAccount, isDisabled: accountDisabled,
+    json: privateJsonResponse, originAllowed: reportRequestOriginAllowed,
+    readText: discussionReportText, generateJson: deepseekJson,
+    listHotComments: async (env, id) => (await listHotReportCommentRows(env, id)).map((entry) => entry.item),
+    writeHotComment: handleHotReportComments,
+  });
+}
+
+async function handleDiscussionGeneration(request, env) {
+  if (Number(request.headers.get("Content-Length") || 0) > 4096) {
+    return privateJsonResponse(request, env, 413, { ok: false, status: "invalid_request" });
+  }
+  const raw = await request.text();
+  if (new TextEncoder().encode(raw).byteLength > 4096) {
+    return privateJsonResponse(request, env, 413, { ok: false, status: "invalid_request" });
+  }
+  try { await verifyOpsAlertSignature(request, env, raw); }
+  catch { return privateJsonResponse(request, env, 403, { ok: false, status: "not_authorized" }); }
+  let payload;
+  try { payload = JSON.parse(raw); } catch { return privateJsonResponse(request, env, 400, { ok: false, status: "invalid_request" }); }
+  const source = String(payload?.source || ""), id = String(payload?.report_id || "");
+  if (source !== "catalog" || !validLocaleDetailId(source, id)) {
+    return privateJsonResponse(request, env, 400, { ok: false, status: "invalid_request" });
+  }
+  try {
+    const digest = await sha256Hex(`${source}:${id}`);
+    const eligibility = await r2GetJsonStrict(env, `_report-discussions/v1/eligibility/${digest}.json`);
+    const activated = Date.parse(eligibility?.activated_at || ""), firstSeen = Date.parse(eligibility?.first_seen_at || "");
+    if (eligibility?.version !== 1 || eligibility.source !== source || eligibility.report_id !== id
+        || !Number.isFinite(activated) || !Number.isFinite(firstSeen) || firstSeen <= activated || firstSeen > Date.now() + 60000) {
+      return privateJsonResponse(request, env, 403, { ok: false, status: "not_authorized" });
+    }
+    if (!cleanEnv(env.DEEPSEEK_API_KEY)) {
+      return privateJsonResponse(request, env, 503, { ok: false, status: "provider_unavailable" });
+    }
+    const result = await (await reportDiscussionService()).generate(env, { source, report_id: id }, { authorizedNewReport: true });
+    return privateJsonResponse(request, env, 200, { ok: true, ...result });
+  } catch {
+    return privateJsonResponse(request, env, 503, { ok: false, status: "unavailable" });
+  }
 }
 
 export default {
@@ -26751,6 +27066,10 @@ export default {
       return handleMembershipRequest(request, env);
     }
 
+    if (pathname === "/feedback" && request.method === "POST") {
+      return handleFeedback(request, env);
+    }
+
     if (pathname === "/membership/contact-card" && request.method === "GET") {
       return handleMembershipContactCard(request, env);
     }
@@ -26837,6 +27156,14 @@ export default {
 
     if (pathname === "/ops/alerts/email" && request.method === "POST") {
       return handleOpsAlertEmail(request, env);
+    }
+
+    if (pathname === "/report-discussion" && ["GET", "POST", "DELETE"].includes(request.method)) {
+      return (await reportDiscussionService()).handle(request, env);
+    }
+
+    if (pathname === "/ops/report-discussions/generate" && request.method === "POST") {
+      return handleDiscussionGeneration(request, env);
     }
 
     if (pathname === "/vid2ppt/redeem-code" && request.method === "POST") {

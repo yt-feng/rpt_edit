@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { assertAcknowledgement, withOwnerNotificationMock } from "./form-acknowledgement-fixture.mjs";
 import { createHmac } from "node:crypto";
 import path from "node:path";
 import test from "node:test";
@@ -299,7 +300,7 @@ async function register(env) {
   const equation = svg.match(/>(\d+) \+ (\d+) = \?</u);
   assert.ok(equation, "captcha equation must be readable in the fixture");
   const answer = String(Number(equation[1]) + Number(equation[2]));
-  const auth = await jsonRequest(env, "/auth", {
+  const auth = await withOwnerNotificationMock(() => { throw new Error("unexpected outbound registration request"); }, () => jsonRequest(env, "/auth", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({
@@ -310,7 +311,7 @@ async function register(env) {
       captcha_token: captcha.data.token,
       captcha_answer: answer,
     }),
-  });
+  }));
   assert.equal(auth.response.status, 201);
   assert.ok(auth.data.token);
   return auth.data.token;
@@ -1296,18 +1297,19 @@ test("eligible members can request a matched directory resource without exposing
     const first = await submit("file-directory-01");
     assert.equal(first.response.status, 202, JSON.stringify(first.data));
     assert.equal(first.data.deduplicated, false);
-    assert.equal(sent.length, 1);
+    assert.equal(sent.length, 2);
+    assertAcknowledgement(sent[1].body, email);
     assert.match(JSON.stringify(sent[0].body), /中国证监会 IPO 审核规则与案例/u);
     assert.doesNotMatch(JSON.stringify(sent[0].body), /伪造标题|attacker@example\.net|private\/source/u);
 
     const duplicate = await submit("file-directory-01");
     assert.equal(duplicate.response.status, 202);
     assert.equal(duplicate.data.deduplicated, true);
-    assert.equal(sent.length, 1);
+    assert.equal(sent.length, 2);
 
     const missing = await submit("file-directory-99");
     assert.equal(missing.response.status, 404);
-    assert.equal(sent.length, 1);
+    assert.equal(sent.length, 2);
     const requestRows = [...bucket.rows.entries()].filter(([key]) => key.startsWith("_course-directory-requests/v1/items/"));
     assert.equal(requestRows.length, 1);
     assert.equal(JSON.parse(requestRows[0][1].value).status, "sent");
@@ -1436,12 +1438,15 @@ test("course decks never stream from the site and eligible members request each 
     const duplicate = await submit("maifu-01");
     assert.equal(duplicate.response.status, 202);
     assert.equal(duplicate.data.deduplicated, true);
-    assert.equal(sent.length, 1);
+    assert.equal(sent.length, 2);
+    assertAcknowledgement(sent[1].body, email);
 
     const second = await submit("maifu-02");
     assert.equal(second.response.status, 202);
     assert.equal(second.data.deduplicated, false);
-    assert.equal(sent.length, 2, "each deck must create its own request");
+    assert.equal(sent.length, 4, "each deck creates an owner notification and acknowledgement");
+    assert.deepEqual(sent[2].body.to, [{ email: ownerEmail }]);
+    assertAcknowledgement(sent[3].body, email);
     const requestRows = [...bucket.rows.entries()].filter(([key]) => key.startsWith("_course-material-requests/v1/items/"));
     assert.equal(requestRows.length, 2);
     assert.ok(requestRows.every(([, row]) => JSON.parse(row.value).status === "sent"));
@@ -1769,7 +1774,8 @@ test("report chat archives privately, supports admin curation and public cache r
     assert.equal(requestResult.data.status, "sent");
     assert.equal(JSON.stringify(requestResult.data).includes(ownerEmail), false);
     assert.equal(Object.hasOwn(requestResult.data, "notification_recipient"), false);
-    assert.equal(sent.length, 1);
+    assert.equal(sent.length, 2);
+    assertAcknowledgement(sent[1].body, "guest@example.com");
     assert.equal(sent[0].url, "https://api.brevo.com/v3/smtp/email");
     assert.deepEqual(sent[0].body.to, [{ email: ownerEmail }]);
     assert.equal(JSON.stringify(sent[0].body).includes("attacker@example.net"), false);
@@ -1789,7 +1795,7 @@ test("report chat archives privately, supports admin curation and public cache r
     });
     assert.equal(duplicate.response.status, 202);
     assert.equal(duplicate.data.status, "duplicate");
-    assert.equal(sent.length, 1);
+    assert.equal(sent.length, 2);
   } finally {
     globalThis.fetch = originalFetch;
   }

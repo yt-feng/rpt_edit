@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { withOwnerNotificationMock } from "./form-acknowledgement-fixture.mjs";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
@@ -130,15 +131,7 @@ async function getContactCard(env, options = {}) {
   return worker.fetch(request, env, { waitUntil() {} });
 }
 
-async function withMockFetch(mock, callback) {
-  const original = globalThis.fetch;
-  globalThis.fetch = mock;
-  try {
-    return await callback();
-  } finally {
-    globalThis.fetch = original;
-  }
-}
+const withMockFetch = withOwnerNotificationMock;
 
 function brevoSuccess(messageId = "membership-message-1") {
   return new Response(JSON.stringify({ messageId }), {
@@ -535,12 +528,12 @@ test("contact card is read only after active account authentication and always u
   assert.equal(disabledBucket.getKeys.includes(CONTACT_CARD_KEY), false);
 });
 
-test("CONTACT_EMAIL is retained only as the server-side owner fallback", async () => {
+test("CONTACT_EMAIL stays server-side for owner notifications and acknowledgement sender", async () => {
   const source = await readFile(workerPath, "utf8");
   const uses = source.split("\n")
     .map((line, index) => ({ line: index + 1, text: line.trim() }))
     .filter((entry) => entry.text.includes("CONTACT_EMAIL"));
-  assert.equal(uses.length, 3);
+  assert.equal(uses.length, 4);
   assert.match(uses[0].text, /^const CONTACT_EMAIL =/u);
   const fallbackUses = uses.slice(1).filter((entry) => entry.text.startsWith("return "));
   assert.equal(fallbackUses.length, 1);
@@ -548,5 +541,6 @@ test("CONTACT_EMAIL is retained only as the server-side owner fallback", async (
     assert.match(use.text, /^return .+ \? email : CONTACT_EMAIL;$/u, `public CONTACT_EMAIL use at line ${use.line}`);
   }
   assert.equal(uses.slice(1).filter((entry) => /^to: CONTACT_EMAIL,$/u.test(entry.text)).length, 1);
+  assert.equal(uses.filter((entry) => entry.text === "sender: { email: CONTACT_EMAIL, name: PUBLIC_BRAND },").length, 1);
   assert.doesNotMatch(source, /contact:\s*CONTACT_EMAIL|联系邮箱\s*\$\{CONTACT_EMAIL\}|Contact:\s*\$\{CONTACT_EMAIL\}/u);
 });
