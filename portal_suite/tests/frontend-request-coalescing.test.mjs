@@ -29,6 +29,8 @@ function setup() {
   }
   const context = vm.createContext({
     AbortController, setTimeout, clearTimeout,
+    window: { setTimeout, clearTimeout },
+    trackEvent() {},
     AUTH_SESSION_KEY: "session",
     authSessionRefreshes: new Map(),
     HOT_REPORT_SOURCE: "hot",
@@ -52,7 +54,7 @@ function setup() {
   });
   vm.runInContext([
     "loadAuthSession", "saveAuthSession", "clearAuthSession", "authHeaders", "authSessionRequestKey",
-    "waitForAuthSessionRefresh", "refreshAuthSession", "fetchReportAccess", "initReportAccessControls", "adminUsersSnapshotIsFresh",
+    "waitForAuthSessionRefresh", "refreshAuthSession", "fetchRewardRequest", "fetchReportAccess", "initReportAccessControls", "adminUsersSnapshotIsFresh",
   ].map(extractFunction).join("\n"), context);
   function respond(index, payload, status = 200) {
     requests[index].resolve(new Response(JSON.stringify(payload), { status, headers: { "content-type": "application/json" } }));

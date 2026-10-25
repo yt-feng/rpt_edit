@@ -679,6 +679,19 @@
     return response.json();
   }
 
+  async function loadDetailJson(path, timeoutMs = 8000) {
+    const controller = new AbortController();
+    let timer;
+    try {
+      return await Promise.race([
+        loadJson(path, { signal: controller.signal }),
+        new Promise((_, reject) => { timer = setTimeout(() => {
+          controller.abort(); reject(new Error("报告信息加载超时，请重试。"));
+        }, timeoutMs); }),
+      ]);
+    } finally { clearTimeout(timer); }
+  }
+
   async function fetchRewardRequest(input, init = {}, timeoutMessage = "请求超时，请重试。", timeoutMs = 18_000) {
     const controller = new AbortController();
     let timeoutId = 0;
@@ -11422,9 +11435,10 @@
     const endpoint = source === HOT_REPORT_SOURCE
       ? `${workerUrl}/hot-reports/access?report_id=${encodeURIComponent(item.id)}`
       : `${workerUrl}/entitlement?report_id=${encodeURIComponent(item.id)}&source=${encodeURIComponent(source)}`;
-    const response = await fetch(
+    const response = await fetchRewardRequest(
       endpoint,
       { cache: "no-store", headers: { "Authorization": `Bearer ${session.token}` } },
+      "下载权限核验超时，请重试。", 12000,
     );
     const data = await response.json().catch(() => ({}));
     if (!response.ok) {
@@ -11583,6 +11597,10 @@
         }
         if (passwordForm) passwordForm.hidden = false;
         statusTarget(error.message || "账号状态读取失败。", "error");
+        trackEvent(workerUrl, "report_open", { report_id: item.id, source, action: "access_check_error", status: error.name === "RewardTimeoutError" ? "timeout" : "error" });
+        const retry = document.createElement("button");
+        retry.type = "button"; retry.textContent = "重新检查下载权限";
+        retry.addEventListener("click", refresh, { once: true }); status.append(retry);
       }
     }
 
@@ -11863,7 +11881,7 @@
     const prefix = reportDetailShardPrefix(reportId);
     let payload;
     try {
-      payload = await loadJson(`data/report_details/${prefix}.json`);
+      payload = await loadDetailJson(`data/report_details/${prefix}.json`);
     } catch (_error) {
       return null;
     }
@@ -11903,7 +11921,7 @@
       : "";
     const availabilityMarkup = availabilityKnown && !available
       ? textOnlySearchGuidanceMarkup(item)
-      : '<p class="subtle" aria-live="polite">下载权限正在后台补充…</p>';
+      : '<p class="subtle" aria-live="polite">正在加载下载入口…</p>';
     detail.innerHTML = `
       ${detailTitleMarkup(item)}
       <div class="detail-grid">
@@ -12120,20 +12138,27 @@
   async function initReport() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
-    const configPromise = loadJson("data/config.json").catch(() => ({})).then((value) => {
-      initAccountGate(workerBaseUrl(value));
+    const started = Date.now();
+    const configPromise = loadDetailJson("data/config.json", 3000).catch(() => ({})).then((value) => {
+      if (!earlyDownload) initAccountGate(workerBaseUrl(value));
       return value;
     });
     initNewsfeedNav();
     const previewItem = reportPreviewFromParams(params, id) || cachedReportPreview(id);
+    const earlyDownload = previewItem?.available === true;
+    if (earlyDownload) initAccountGate("/api");
     if (previewItem) {
       document.title = `${titleText(previewItem)} | ${PUBLIC_BRAND}`;
-      renderReportFirstPaint(previewItem);
+      if (earlyDownload) renderDetail(previewItem, { worker_base_url: "/api" }, [previewItem], new Map(), {
+        password: deliveryPasswordFromLocation(params), trackPageView: false, relatedItems: [],
+      });
+      else renderReportFirstPaint(previewItem);
     }
     trackEvent("", "page_view", {
       page: "report",
       ...analyticsReportPayload(previewItem || { id }, "catalog"),
     });
+    trackEvent("/api", "report_open", { report_id: id, source: "catalog", action: "detail_load_start", status: earlyDownload ? "interactive" : "pending" });
     const detailRecord = await loadReportDetailRecord(id);
     let items;
     let item;
@@ -12143,9 +12168,15 @@
       relatedItems = detailRecord.related;
       items = [item, ...relatedItems];
     } else {
-      const catalog = await loadJson("data/catalog.json");
-      items = Array.isArray(catalog.items) ? catalog.items : [];
+      const catalog = previewItem ? { items: [previewItem] }
+        : await loadDetailJson("data/catalog.json").catch(() => null);
+      items = Array.isArray(catalog?.items) ? catalog.items : [];
       item = items.find((entry) => entry.id === id);
+      if (!catalog && /^[a-f0-9]{16,64}$/i.test(id || "")) {
+        item = { id, title: "报告详情", available: true };
+        items = [item];
+      }
+      trackEvent("/api", "report_open", { report_id: id, source: "catalog", action: "detail_load_fallback", status: item ? "recovered" : "not_found", duration_ms: Date.now() - started });
     }
     if (!item) {
       document.getElementById("detail").innerHTML = '<div class="error-state">Report not found.</div>';
@@ -12154,15 +12185,17 @@
     const searchTextById = new Map();
     rememberReportPreview(item);
     document.title = `${titleText(item)} | ${PUBLIC_BRAND}`;
-    renderReportFirstPaint(item, relatedItems);
+    if (!earlyDownload) renderReportFirstPaint(item, relatedItems);
     const config = await configPromise;
     const workerUrl = workerBaseUrl(config);
     initAdminGate(workerUrl);
-    renderDetail(item, config, items, searchTextById, {
+    if (earlyDownload) refreshRelatedReports(item, items, searchTextById, relatedItems);
+    else renderDetail(item, config, items, searchTextById, {
       password: deliveryPasswordFromLocation(params),
       relatedItems,
       trackPageView: false,
     });
+    trackEvent(workerUrl, "report_open", { report_id: id, source: "catalog", action: "detail_load_ready", status: "success", duration_ms: Date.now() - started });
     loadCatalogPdfOverrides(workerUrl).then((overrides) => {
       if (!Array.isArray(overrides) || !overrides.length) return;
       const mergedItems = mergeCatalogPdfOverrides(items, overrides);
@@ -12173,7 +12206,7 @@
         : null;
       const itemChanged = isPdfAvailable(nextItem) !== isPdfAvailable(item)
         || Number(nextItem.size_bytes || 0) !== Number(item.size_bytes || 0);
-      if (itemChanged) {
+      if (itemChanged && !earlyDownload) {
         item = nextItem;
         document.title = `${titleText(item)} | ${PUBLIC_BRAND}`;
         renderDetail(item, config, mergedItems, searchTextById, {
@@ -12189,11 +12222,6 @@
         refreshRelatedReports(item, mergedItems, searchTextById);
       }
     });
-    // The text index only improves related-report ranking, so load it after
-    // the detail renders instead of blocking the page on a large download.
-    // Related reports intentionally use catalog metadata only. Downloading the
-    // complete text corpus here competed with the user's first download and
-    // could exhaust memory on mobile browsers.
   }
 
   function refreshRelatedReports(item, catalogItems, searchTextById, relatedItems = null) {

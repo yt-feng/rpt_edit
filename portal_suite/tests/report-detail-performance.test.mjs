@@ -38,11 +38,55 @@ function deferred() {
   return { promise, reject, resolve };
 }
 
+test("detail requests time out even when headers/body never settle and abort the transfer", async () => {
+  let deadline, signal, cleared = false;
+  const context = vm.createContext({
+    AbortController, Promise,
+    setTimeout(callback) { deadline = callback; return 1; },
+    clearTimeout() { cleared = true; },
+    loadJson(_path, options) { signal = options.signal; return new Promise(() => {}); },
+  });
+  vm.runInContext(`${extractAsyncFunction(appSource, "loadDetailJson")}\nglobalThis.load = loadDetailJson;`, context);
+  const request = context.load("data/report_details/ab.json");
+  deadline();
+  await assert.rejects(request, /加载超时/);
+  assert.equal(signal.aborted, true);
+  assert.equal(cleared, true);
+});
+
+test("known report links enable download before metadata/config and never replace an active form", async () => {
+  const metadata = deferred(), config = deferred();
+  const calls = [], renders = [];
+  const item = { id: "a".repeat(24), title: "Report", available: true };
+  const context = vm.createContext({
+    URLSearchParams, Map, PUBLIC_BRAND: "KC桌面",
+    window: { location: { search: `?id=${item.id}` } },
+    document: { title: "", getElementById: () => ({ innerHTML: "" }) },
+    loadDetailJson(path) { calls.push(path); return config.promise; },
+    loadReportDetailRecord: () => metadata.promise,
+    reportPreviewFromParams: () => item, cachedReportPreview: () => null,
+    initAccountGate: () => calls.push("account"), initAdminGate: () => {}, initNewsfeedNav: () => {},
+    renderDetail: (...args) => renders.push(args), renderReportFirstPaint: () => assert.fail("interactive report must not revert to loading"),
+    trackEvent: () => {}, analyticsReportPayload: () => ({}), titleText: (row) => row.title,
+    workerBaseUrl: () => "/api", deliveryPasswordFromLocation: () => "link-secret",
+    rememberReportPreview: () => {}, refreshRelatedReports: () => calls.push("related"),
+    loadCatalogPdfOverrides: async () => [],
+  });
+  vm.runInContext(`${extractAsyncFunction(appSource, "initReport")}\nglobalThis.run = initReport;`, context);
+  const loading = context.run();
+  assert.equal(renders.length, 1, "interactive controls must be synchronous even while both fetches are pending");
+  assert.equal(renders[0][4].password, "link-secret");
+  metadata.resolve(null); config.reject(new Error("offline")); await loading;
+  assert.equal(renders.length, 1, "late metadata/config must preserve typed password and in-flight download");
+  assert.equal(calls.filter((value) => value === "account").length, 1);
+  assert.equal(calls.includes("data/catalog.json"), false, "a missing shard must not start a full catalog download when preview metadata exists");
+});
+
 test("report detail shards use the shared prefix algorithm and validate records", async () => {
   const requested = [];
   const reportId = "A:Report";
   const context = vm.createContext({
-    loadJson: async (path) => {
+    loadDetailJson: async (path) => {
       requested.push(path);
       return {
         reports: {
@@ -184,7 +228,7 @@ test("a report detail shard hit renders before PDF overrides and skips the full 
       calls.push("shard");
       return detailRecord;
     },
-    loadJson: async (path) => {
+    loadDetailJson: async (path) => {
       calls.push(path);
       if (path === "data/catalog.json") throw new Error("full catalog must not load on a shard hit");
       if (path === "data/config.json") return configGate.promise;
@@ -246,7 +290,7 @@ test("a missing report detail shard falls back to the legacy full catalog", asyn
       getElementById: () => ({ innerHTML: "" }),
     },
     loadReportDetailRecord: async () => null,
-    loadJson: async (path) => {
+    loadDetailJson: async (path) => {
       calls.push(path);
       if (path === "data/config.json") return { worker_base_url: "/api" };
       if (path === "data/catalog.json") {
