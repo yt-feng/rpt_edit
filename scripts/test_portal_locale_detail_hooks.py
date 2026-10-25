@@ -146,6 +146,7 @@ async function main() {
     trackEvent: noop, analyticsReportPayload: () => ({}), initNewsfeedNav: noop,
     rememberReportPreview: item => calls.push(['cache', item.title]), workerBaseUrl: () => '',
     initAccountGate: noop, initAdminGate: noop, deliveryPasswordFromLocation: () => '',
+    initReportDiscussion: (item, _workerUrl, source) => calls.push(['discussion', item.title, source]),
     renderDetail: item => paints.push(item.title), loadCatalogPdfOverrides: async () => [],
     fetchDocDetailItem: async (url, item) => { calls.push(['workerDetail']); return { ...item, title: '未经验证的中文服务端标题' }; },
     shouldDeferLocalizedHomeCatalog: () => true,
@@ -505,6 +506,7 @@ class LocaleDetailHookContracts(unittest.TestCase):
             self.assertEqual([call[0] for call in result["calls"] if call[0] in ("prepare", "apply", "workerDetail")],
                              ["prepare", "apply", "workerDetail", "apply"])
             self.assertNotIn("未经验证", title)
+            self.assertIn(["discussion", title, "external"], result["calls"])
 
     @unittest.skipUnless(NODE, "Node.js is required for deferred-module readiness checks")
     def test_module_ready_event_releases_wait_before_timeout(self):

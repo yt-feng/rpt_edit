@@ -43,6 +43,7 @@ jobs:
           python3 -B scripts/test_audit_portal_chinese_discovery_plan.py
           python3 -B scripts/test_portal_locale_manifest.py
           python3 -B scripts/test_portal_locale_source_fallback.py
+          python3 -B scripts/test_portal_locale_detail_hooks.py
           python3 -B scripts/test_verify_portal_locale_routes.py
           python3 -B scripts/test_verify_prepared_static_slot.py
           python3 -B scripts/test_resume_portal_locale_candidate.py
