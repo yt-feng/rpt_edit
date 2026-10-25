@@ -19,6 +19,7 @@ from portal_extended_locales import (ORIGIN, ExpansionError, daily_corpus_day, p
                                      select_locales, validate_corpus)
 from portal_extended_publication import checked_batches, compose
 from portal_extended_r2 import HEX64, R2Store, safe_part
+from portal_extended_ui import ASSETS, PUBLIC_ASSET_NAMES
 
 
 class StagingReplayStore:
@@ -55,8 +56,9 @@ def completed_candidates(store, corpus, locales):
 
 def snapshot_public(session, root, corpus):
     # No discovery, PDFs, protected APIs or arbitrary origins: exact stored URLs
-    # plus the already-established mirrors and public discovery files only.
+    # plus established mirrors, discovery files and exact shared UI assets.
     requested = {'/': False, '/robots.txt': False, '/sitemap.xml': False}
+    requested.update({'/assets/' + name: False for name in PUBLIC_ASSET_NAMES if name not in ASSETS})
     for doc in corpus['documents']:
         public_url(doc['url'])
         relative = doc['url'].removeprefix(ORIGIN)

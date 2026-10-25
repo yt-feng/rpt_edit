@@ -26,7 +26,7 @@ from portal_extended_locales import (
     stable_bytes, validate_corpus,
 )
 from portal_extended_r2 import HEX64, MAX_CHECKPOINT_BYTES, checkpoint_is_valid, safe_part
-from portal_extended_ui import UI_VERSION, standard_detail, standard_homepage, ui_assets
+from portal_extended_ui import UI_VERSION, standard_detail, standard_homepage, ui_assets, public_asset_hashes
 from portal_approved_quantity_contract import CONTRACT_ID, PARSER_SHA256, bindings, quantity_issues as approved_quantity_issues
 
 LEDGER = 'data/extended-locales/assembly.json'
@@ -244,6 +244,7 @@ def compose(root: Path, store, batches: list[dict], workspace: Path, *, active_i
                 'quantity_parser_sha256': proof['quantity_parser_sha256'], 'checkpoint_sha256': restored['sha256'],
                 'checkpoint_binding': restored.get('binding', 'incoming-exact-byte-replay'),
                 'pages': len(current_docs), 'translation_calls': 0})
+    asset_hashes = public_asset_hashes(root)
     planned, clusters = {}, {}
     locales = tuple(locale for locale in select_locales('all-supported') if any(k[0] == locale for k in pages))
     home_alternates = locale_home_alternates(
@@ -274,7 +275,7 @@ def compose(root: Path, store, batches: list[dict], workspace: Path, *, active_i
             planned[(Path(locale)/relative).as_posix()] = head_alternates(html, cluster).encode()
         for locale in locales:
             if (locale, url) in pages:
-                html = standard_detail(pages[locale, url], locale, url, alternates=cluster).decode()
+                html = standard_detail(pages[locale, url], locale, url, alternates=cluster, asset_hashes=asset_hashes).decode()
                 planned[(Path(locale)/relative).as_posix()] = (head_alternates(html, cluster) if locale in HREFLANG else html).encode()
     index = ET.Element(f'{{{NS}}}sitemapindex')
     counts = {}
@@ -285,6 +286,7 @@ def compose(root: Path, store, batches: list[dict], workspace: Path, *, active_i
             locale, [(url, pages[locale, url]) for url in urls], origin=ORIGIN,
             alternates=home_alternates,
             portal_home=(root/'index.html').read_text(),
+            asset_hashes=asset_hashes,
         )
         planned[f'{locale}/index.html'] = head_alternates(
             planned[f'{locale}/index.html'].decode(), home_alternates,
