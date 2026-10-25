@@ -2,13 +2,16 @@
 from __future__ import annotations
 
 from copy import deepcopy
+import contextlib
 from datetime import datetime, timedelta, timezone
 import hashlib
 import hmac
 import io
 import json
 from pathlib import Path
+from types import SimpleNamespace
 import unittest
+from unittest.mock import Mock, patch
 
 import collect_report_discussion_starters as collector
 
@@ -205,6 +208,87 @@ class Response(io.BytesIO):
 
 
 class TransportTests(unittest.TestCase):
+    def test_readiness_checks_the_exact_catalog_report_without_authorization_or_mutation(self):
+        calls = []
+        def opener(request, timeout):
+            calls.append(request)
+            self.assertEqual(request.method, "GET")
+            self.assertEqual(request.full_url, f"https://portal.example.invalid/api/report-discussion?source=catalog&report_id={report_id(1)}")
+            self.assertIsNone(request.data)
+            self.assertIsNone(request.get_header("X-portal-signature"))
+            self.assertEqual(timeout, 30)
+            return Response({"ok": True, "source": "catalog", "report_id": report_id(1), "comments": []})
+        self.assertTrue(collector.worker_ready("https://portal.example.invalid/api", report_id(1), opener=opener))
+        self.assertEqual(len(calls), 1)
+
+    def test_old_worker_plain_text_404_waits_but_other_invalid_responses_fail_closed(self):
+        def missing(*_args, **_kwargs):
+            response = io.BytesIO(b"Not found")
+            response.status = 404
+            return response
+        self.assertFalse(collector.worker_ready("https://portal.example.invalid/api", report_id(1), opener=missing))
+        valid = {"ok": True, "source": "catalog", "report_id": report_id(1), "comments": []}
+        samples = [(200, {**valid, "source": "hot"}), (200, {**valid, "report_id": report_id(2)}),
+                   (200, {**valid, "comments": {}}), (200, {**valid, "ok": False}), (503, valid)]
+        for status, result in samples:
+            with self.subTest(status=status, result=result):
+                with self.assertRaises(collector.DiscussionError):
+                    collector.worker_ready("https://portal.example.invalid/api", report_id(1),
+                        opener=lambda *_args, **_kwargs: Response(result, status))
+
+    def test_main_does_not_construct_storage_or_touch_baseline_when_worker_not_ready(self):
+        environment = {name: "fixture" for name in ("OPS_ALERT_SIGNING_KEY", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_BUCKET")}
+        environment.update(PORTAL_SITE_URL="https://portal.example.invalid", PORTAL_WORKER_URL="/api", R2_ACCOUNT_ID="a" * 32)
+        for readiness, exit_code in [(False, 0), (collector.DiscussionError("worker_readiness_unconfirmed"), 1)]:
+            stdout, stderr = io.StringIO(), io.StringIO()
+            with self.subTest(readiness=readiness), patch.dict(collector.os.environ, environment), \
+                    patch.object(collector, "http_json", return_value=(200, catalog(*range(100)))), \
+                    patch.object(collector, "worker_ready", side_effect=readiness if isinstance(readiness, Exception) else None, return_value=readiness) as ready, \
+                    patch.object(collector, "R2Store") as storage, patch.object(collector, "collect") as collect, \
+                    contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+                self.assertEqual(collector.main([]), exit_code)
+                ready.assert_called_once_with("https://portal.example.invalid/api", report_id(0))
+                storage.assert_not_called()
+                collect.assert_not_called()
+                if exit_code == 0:
+                    self.assertEqual(json.loads(stdout.getvalue()), {"ok": True, "waiting_for_worker": True, "attempted": 0})
+                else:
+                    self.assertEqual(json.loads(stderr.getvalue())["code"], "worker_readiness_unconfirmed")
+
+    def test_main_rejects_partial_catalog_before_readiness_or_storage(self):
+        environment = {name: "fixture" for name in ("OPS_ALERT_SIGNING_KEY", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_BUCKET")}
+        environment.update(PORTAL_SITE_URL="https://portal.example.invalid", PORTAL_WORKER_URL="/api", R2_ACCOUNT_ID="a" * 32)
+        partial = catalog(*range(100))
+        partial["item_count"] = 101
+        with patch.dict(collector.os.environ, environment), patch.object(collector, "http_json", return_value=(200, partial)), \
+                patch.object(collector, "worker_ready") as ready, patch.object(collector, "R2Store") as storage, \
+                contextlib.redirect_stderr(io.StringIO()):
+            self.assertEqual(collector.main([]), 1)
+            ready.assert_not_called()
+            storage.assert_not_called()
+
+    def test_main_creates_storage_only_after_valid_readiness_response(self):
+        environment = {name: "fixture" for name in ("OPS_ALERT_SIGNING_KEY", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_BUCKET")}
+        environment.update(PORTAL_SITE_URL="https://portal.example.invalid", PORTAL_WORKER_URL="/api", R2_ACCOUNT_ID="a" * 32)
+        payload = catalog(*range(100))
+        responses = [(200, payload), (200, {"ok": True, "source": "catalog", "report_id": report_id(0), "comments": []})]
+        client = Mock()
+        modules = {"boto3": SimpleNamespace(client=client), "botocore": SimpleNamespace(),
+                   "botocore.config": SimpleNamespace(Config=lambda **kwargs: kwargs)}
+        def make_client(*_args, **_kwargs):
+            self.assertEqual(http.call_count, 2, "readiness must finish before any storage client exists")
+            return object()
+        client.side_effect = make_client
+        with patch.dict(collector.os.environ, environment), patch.dict(collector.sys.modules, modules), \
+                patch.object(collector, "http_json", side_effect=responses) as http, patch.object(collector, "R2Store") as storage, \
+                patch.object(collector, "collect", return_value={"ok": True, "baseline_created": True, "attempted": 0}) as collect, \
+                contextlib.redirect_stdout(io.StringIO()):
+            self.assertEqual(collector.main([]), 0)
+            client.assert_called_once()
+            storage.assert_called_once()
+            self.assertIs(collect.call_args.args[0], storage.return_value)
+            self.assertEqual(collect.call_args.args[1], payload)
+
     def test_signed_generation_body_and_exact_endpoint_are_bound_and_called_once(self):
         calls = []
         payload = {"source": "catalog", "report_id": report_id(2)}

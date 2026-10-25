@@ -258,7 +258,7 @@ def https_base(value):
     return urllib.parse.urlunsplit(parsed).rstrip("/")
 
 
-def http_json(url, *, body=None, headers=None, timeout=30, opener=None, max_bytes=MAX_JSON_BYTES):
+def http_json(url, *, body=None, headers=None, timeout=30, opener=None, max_bytes=MAX_JSON_BYTES, missing_ok=False):
     request = urllib.request.Request(url, data=body, headers=headers or {"Accept": "application/json"}, method="POST" if body is not None else "GET")
     open_request = opener or urllib.request.build_opener(NoRedirect()).open
     try:
@@ -270,11 +270,30 @@ def http_json(url, *, body=None, headers=None, timeout=30, opener=None, max_byte
         raw = response.read(max_bytes + 1)
     if len(raw) > max_bytes:
         raise DiscussionError("http_response_too_large")
+    if status == 404 and missing_ok:
+        return status, None
     try:
         result = json.loads(raw)
     except (ValueError, UnicodeDecodeError):
         raise DiscussionError("http_response_invalid") from None
     return status, result
+
+
+def worker_ready(worker_base_url, report_id, *, opener=None):
+    """Do not initialize or advance discovery before the new Worker is live."""
+    if not isinstance(report_id, str) or not ID.fullmatch(report_id):
+        raise DiscussionError("readiness_report_invalid")
+    url = https_base(worker_base_url) + "/report-discussion?" + urllib.parse.urlencode({
+        "source": "catalog", "report_id": report_id,
+    })
+    status, result = http_json(url, opener=opener, max_bytes=2 * 1024 * 1024, missing_ok=True)
+    if status == 404:
+        return False
+    if (status != 200 or not isinstance(result, dict) or result.get("ok") is not True
+            or result.get("source") != "catalog" or result.get("report_id") != report_id
+            or not isinstance(result.get("comments"), list)):
+        raise DiscussionError("worker_readiness_unconfirmed")
+    return True
 
 
 def generate_http(worker_base_url, signing_key, payload, *, opener=None, timestamp=None):
@@ -305,18 +324,22 @@ def main(argv=None):
             raise DiscussionError("configuration_missing")
         if not re.fullmatch(r"[a-fA-F0-9]{32}", os.environ["R2_ACCOUNT_ID"]):
             raise DiscussionError("configuration_invalid")
+        site = https_base(os.environ["PORTAL_SITE_URL"])
+        status, catalog = http_json(site + "/data/catalog.json")
+        if status != 200:
+            raise DiscussionError("catalog_http_status")
+        rows, _ = validate_catalog(catalog)
+        worker_url = os.environ["PORTAL_WORKER_URL"].strip()
+        if worker_url.startswith("/"):
+            worker_url = site + worker_url
+        if not worker_ready(worker_url, next(iter(rows))):
+            print(json.dumps({"ok": True, "waiting_for_worker": True, "attempted": 0}, sort_keys=True))
+            return 0
         import boto3
         from botocore.config import Config
         client = boto3.client("s3", endpoint_url=f"https://{os.environ['R2_ACCOUNT_ID']}.r2.cloudflarestorage.com",
             aws_access_key_id=os.environ["R2_ACCESS_KEY_ID"], aws_secret_access_key=os.environ["R2_SECRET_ACCESS_KEY"],
             region_name="auto", config=Config(connect_timeout=10, read_timeout=20, retries={"total_max_attempts": 1, "mode": "standard"}))
-        site = https_base(os.environ["PORTAL_SITE_URL"])
-        status, catalog = http_json(site + "/data/catalog.json")
-        if status != 200:
-            raise DiscussionError("catalog_http_status")
-        worker_url = os.environ["PORTAL_WORKER_URL"].strip()
-        if worker_url.startswith("/"):
-            worker_url = site + worker_url
         summary = collect(R2Store(client, os.environ["R2_BUCKET"]), catalog,
             lambda payload: generate_http(worker_url, os.environ["OPS_ALERT_SIGNING_KEY"], payload), max_batch=args.max_batch)
         print(json.dumps(summary, sort_keys=True))
