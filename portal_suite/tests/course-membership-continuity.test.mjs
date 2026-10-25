@@ -189,6 +189,27 @@ async function verify(env, since = "2026-08-01") {
   return request(env, "/account-admin/user-access", { user: admin, body: { action: "verify_membership_continuity", email: member.email, since, audit_reason: "Verified uninterrupted membership receipts" } });
 }
 
+function seedUserState(bucket, changes = {}) {
+  const row = { user_id: member.id, email: member.email, disabled: false, updated_at: "2026-08-01T00:00:00Z", ...changes };
+  for (const field of ["id", "email"]) bucket.seed(key("user-state", field, member[field]), row);
+  return row;
+}
+
+async function loginAfterPasswordReset(env) {
+  const captcha = await request(env, "/captcha", { user: null });
+  assert.equal(captcha.response.status, 200);
+  const svg = Buffer.from(captcha.data.image.split(",", 2)[1], "base64").toString("utf8");
+  const equation = svg.match(/>(\d+) \+ (\d+) = \?</u);
+  assert.ok(equation);
+  const login = await request(env, "/auth", { user: null, body: {
+    action: "login", username: member.username, password: "123456",
+    captcha_token: captcha.data.token, captcha_answer: String(Number(equation[1]) + Number(equation[2])),
+  } });
+  assert.equal(login.response.status, 200);
+  assert.ok(login.data.token);
+  return { Authorization: `Bearer ${login.data.token}` };
+}
+
 async function grant(env, bucket, changes = {}) {
   const existing = bucket.json(key("access", member.email));
   return request(env, "/account-admin/user-access", { user: admin, body: { email: member.email, access_mode: "all", duration_months: "12", institutions: [], industries: [], page_ranges: [], confirm_scope_change: true, expected_change_id: existing?.change_id || "", expected_updated_at: existing?.updated_at || "", ...changes } });
@@ -215,6 +236,96 @@ test("full access is private, account age is insufficient, and only the existing
   assert.equal(full.data.since, "2026-07-31T16:00:00.000Z");
   assert.equal(full.data.allowed, true);
   assert.equal(bucket.json(key("access", member.email)).change_id, "initial-grant", "verification does not change ordinary access");
+});
+
+for (const stateKind of ["missing", "legacy", "versioned"]) {
+  for (const action of ["enable_noop", "password_reset"]) {
+    test(`${stateKind} state ${action} preserves verified tenure, but subsequent disable/re-enable resets it`, async (t) => {
+      const { bucket, env } = fixture(t);
+      seedGrant(bucket);
+      if (stateKind !== "missing") seedUserState(bucket, stateKind === "versioned" ? { membership_change_id: "fixture-existing-version" } : {});
+      assert.equal((await verify(env)).response.status, 200);
+      const before = bucket.json(continuityKey);
+      t.mock.timers.setTime(Date.parse("2026-10-26T00:00:00Z"));
+      const edited = action === "enable_noop"
+        ? await request(env, "/account-admin/user-status", { user: admin, body: { email: member.email, disabled: false } })
+        : await request(env, "/account-admin/user-password-reset", { user: admin, body: { email: member.email, confirm_reset: true } });
+      assert.equal(edited.response.status, 200);
+      const state = bucket.json(key("user-state", "email", member.email));
+      assert.ok(state.membership_change_id);
+      assert.equal(bucket.json(key("user-state", "id", member.id)).membership_change_id, state.membership_change_id);
+      const after = bucket.json(continuityKey);
+      assert.equal(after.since, before.since);
+      assert.equal(after.evidence, "verified");
+      if (stateKind === "versioned") {
+        assert.equal(state.membership_change_id, "fixture-existing-version");
+        assert.equal(after.revision, before.revision);
+      } else {
+        assert.notEqual(after.authority_fingerprint, before.authority_fingerprint);
+        const audit = bucket.json(`${continuityKey}/events/${after.revision}.json`);
+        assert.equal(audit.previous_revision, before.revision);
+        assert.equal(audit.audit_reason, "account_state_version_initialized");
+      }
+      let headers = {};
+      if (action === "password_reset") {
+        assert.equal((await request(env, "/course/full/access")).response.status, 401, "the old session epoch is rejected");
+        headers = await loginAfterPasswordReset(env);
+      }
+      const access = await request(env, "/course/full/access", { headers });
+      assert.equal(access.response.status, 200);
+      assert.equal(access.data.allowed, true);
+      assert.equal(access.data.since, before.since);
+
+      assert.equal((await request(env, "/account-admin/user-status", { user: admin, body: { email: member.email, disabled: true } })).response.status, 200);
+      const disabled = bucket.json(key("user-state", "email", member.email));
+      assert.notEqual(disabled.membership_change_id, state.membership_change_id);
+      assert.equal(bucket.json(continuityKey).since, null);
+      assert.equal((await request(env, "/course/full/access", { headers })).response.status, 401);
+      t.mock.timers.setTime(Date.parse("2026-10-26T00:00:01Z"));
+      assert.equal((await request(env, "/account-admin/user-status", { user: admin, body: { email: member.email, disabled: false } })).response.status, 200);
+      assert.notEqual(bucket.json(key("user-state", "email", member.email)).membership_change_id, disabled.membership_change_id);
+      const reenabled = await request(env, "/course/full/access", { headers });
+      assert.equal(reenabled.response.status, 200);
+      assert.equal(reenabled.data.allowed, false);
+      assert.equal(reenabled.data.since, "2026-10-26T00:00:01.000Z");
+    });
+  }
+}
+
+test("legacy migration cannot retain an already unmatched authority fingerprint", async (t) => {
+  const { bucket, env } = fixture(t);
+  seedGrant(bucket);
+  seedUserState(bucket);
+  assert.equal((await verify(env)).response.status, 200);
+  // Simulate a prior status transition whose continuity hook was missed.
+  seedUserState(bucket, { updated_at: "2026-10-25T00:00:00Z" });
+  t.mock.timers.setTime(Date.parse("2026-10-26T00:00:00Z"));
+  assert.equal((await request(env, "/account-admin/user-status", { user: admin, body: { email: member.email, disabled: false } })).response.status, 200);
+  const access = await request(env, "/course/full/access");
+  assert.equal(access.data.allowed, false);
+  assert.equal(access.data.since, "2026-10-26T00:00:00.000Z");
+  assert.equal(bucket.json(continuityKey).evidence, "observed");
+});
+
+test("failed migration cannot preserve stale tenure or block a primary account disablement", async (t) => {
+  const { bucket, env } = fixture(t);
+  seedGrant(bucket);
+  seedUserState(bucket);
+  assert.equal((await verify(env)).response.status, 200);
+  const before = bucket.json(continuityKey);
+  t.mock.timers.setTime(Date.parse("2026-10-26T00:00:00Z"));
+  bucket.failPrefix = continuityKey;
+  assert.equal((await request(env, "/account-admin/user-status", { user: admin, body: { email: member.email, disabled: false } })).response.status, 200);
+  assert.ok(bucket.json(key("user-state", "email", member.email)).membership_change_id);
+  assert.equal(bucket.json(continuityKey).revision, before.revision);
+  bucket.failPrefix = "";
+  const observed = await request(env, "/course/full/access");
+  assert.equal(observed.data.allowed, false);
+  assert.equal(observed.data.since, "2026-10-26T00:00:00.000Z");
+  bucket.failPrefix = continuityKey;
+  assert.equal((await request(env, "/account-admin/user-status", { user: admin, body: { email: member.email, disabled: true } })).response.status, 200);
+  assert.equal(bucket.json(key("user-state", "email", member.email)).disabled, true);
+  assert.equal((await request(env, "/course/full/access")).response.status, 401);
 });
 
 test("new grants are tracked at issuance, renewal retains tenure, narrowing and lapse reset it", async (t) => {
