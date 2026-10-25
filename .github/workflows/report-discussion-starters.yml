@@ -4,22 +4,32 @@ on:
   schedule:
     - cron: "13,43 * * * *"
   workflow_dispatch:
+  workflow_run:
+    workflows: [Neutral edge catalog refresh]
+    types: [completed]
+    branches: [main]
 
 permissions:
   contents: read
 
-concurrency:
-  group: report-discussion-starters
-  cancel-in-progress: false
-
 jobs:
   collect:
-    if: ${{ github.ref == 'refs/heads/main' && vars.PORTAL_AUTOMATION_ENABLED == 'true' }}
+    if: >-
+      github.ref == 'refs/heads/main' && vars.PORTAL_AUTOMATION_ENABLED == 'true' &&
+      (github.event_name != 'workflow_run' ||
+       (github.event.workflow_run.conclusion == 'success' &&
+        github.event.workflow_run.head_branch == 'main' &&
+        github.event.workflow_run.head_repository.full_name == github.repository))
+    # Skip failed/untrusted releases before taking the collector's lock.
+    concurrency:
+      group: report-discussion-starters
+      cancel-in-progress: false
     runs-on: ubuntu-22.04
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 1
           persist-credentials: false
           sparse-checkout-cone-mode: false
