@@ -241,8 +241,14 @@ jobs:
           set -euo pipefail
           export EDGE_SCRIPT_NAME="$EDGE_PRIVATE_SCRIPT_NAME"
           python3 -B scripts/edge_route_cutover.py verify
-          python3 -B scripts/verify_portal_ui_hotfix_live.py \
-            --origin "$LIVE_ORIGIN" --receipt "$RUNNER_TEMP/ui-hotfix.json"
+          for attempt in $(seq 1 6); do
+            if python3 -B scripts/verify_portal_ui_hotfix_live.py \
+              --origin "$LIVE_ORIGIN" --receipt "$RUNNER_TEMP/ui-hotfix.json"; then
+              exit 0
+            fi
+            sleep 10
+          done
+          exit 1
 
       - name: Roll back failed edge hotfix
         id: edge_rollback
