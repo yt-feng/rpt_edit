@@ -15,7 +15,7 @@ class Response:
 
 class Acceptance(unittest.TestCase):
     def fixture(self):
-        pages = {'report.html': b'report-with-new-app-hash', 'assets/app.js': b'bounded-detail-loader',
+        pages = {'charts.html': b'charts-with-new-analytics-hash', 'report.html': b'report-with-new-app-hash', 'assets/app.js': b'bounded-detail-loader',
                  'en/index.html': b'public-preview-index', 'en/blog/20261024-aaaaaaaaaaaaaaaa.html': b'public-preview-only'}
         receipt = {'slot': 'b', 'release_id': '2'*32, 'tree_sha256': '3'*64,
                    'previous': {'schema_version': 1, 'slot': 'a', 'release_id': '1'*32, 'tree_sha256': '4'*64},
@@ -32,7 +32,8 @@ class Acceptance(unittest.TestCase):
                     return Response(state)
                 if path == '/api/health': return Response({'ok': True})
                 if path == '/api/course/full/access': return Response({}, 401)
-                name = 'en/index.html' if path == '/en/' else path[1:]
+                if path == '/charts.html': return Response(b'', 301, {'Location': '/charts'})
+                name = 'charts.html' if path == '/charts' else 'en/index.html' if path == '/en/' else path[1:]
                 raw = pages[name] + (b'corrupt' if self.corrupt else b'')
                 return Response(raw)
             def post(self, url, **kwargs):
@@ -45,6 +46,8 @@ class Acceptance(unittest.TestCase):
         receipt, session = self.fixture()
         self.assertEqual(verify(ORIGIN, receipt, session)['status'], 'passed')
         self.assertTrue(any('/assets/app.js?v=' in call for call in session.calls))
+        self.assertIn(ORIGIN+'/charts', session.calls)
+        self.assertNotIn(ORIGIN+'/charts.html', session.calls)
         self.assertFalse(any('/download' in call for call in session.calls))
 
     def test_stale_bytes_wrong_state_and_exposed_body_fail(self):

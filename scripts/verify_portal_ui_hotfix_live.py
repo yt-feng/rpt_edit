@@ -49,7 +49,7 @@ def verify(origin, receipt, session, *, expect_previous=False):
         digest = descriptor["sha256"]
         if not re.fullmatch(r"[0-9a-f]{64}", digest):
             raise ValueError("Invalid asset digest")
-        route = "/" if name == "index.html" else "/en/" if name == "en/index.html" else "/" + name
+        route = {"index.html": "/", "charts.html": "/charts", "en/index.html": "/en/"}.get(name, "/" + name)
         url = origin + route + ("?v=" + digest[:12] if name.startswith("assets/") else "")
         response = fetch(session, url)
         if response.status_code != 200 or len(response.content) != descriptor["size"] or hashlib.sha256(response.content).hexdigest() != digest:
