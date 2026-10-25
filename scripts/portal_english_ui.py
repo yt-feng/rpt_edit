@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT/'portal_suite/locale_assets'
 PUBLIC_KEYS = ('id', 'title', 'preview', 'datePublished')
 PUBLIC_ASSET_NAMES = ('styles.css', 'blog.css', 'extended-locales.css', 'english-commentary.css',
-                      'app.js', 'english-commentary.js', 'extended-locales.js')
+                      'analytics.js', 'app.js', 'english-commentary.js', 'extended-locales.js')
 
 
 def preview_item(item):
@@ -41,7 +41,7 @@ def head(title, preview, canonical, *, approved=False, article=None, asset_hashe
     css = ''.join(f'<link rel="stylesheet" href="/assets/{name}?v={version(name)}">'
                   for name in ('styles.css', 'blog.css', 'extended-locales.css', 'english-commentary.css'))
     scripts = ''.join(f'<script defer src="/assets/{name}?v={version(name)}"></script>'
-                      for name in ('app.js', 'english-commentary.js', 'extended-locales.js'))
+                      for name in ('analytics.js', 'app.js', 'english-commentary.js', 'extended-locales.js'))
     schema = {'@context': 'https://schema.org', '@type': 'BlogPosting' if article else 'CollectionPage',
               'url': canonical, 'headline': title, 'description': preview, 'inLanguage': 'en'}
     if article:

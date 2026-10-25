@@ -28,51 +28,94 @@
   const button = document.getElementById("englishRead"), container = document.getElementById("englishFullCommentary");
   if (!button || !container) return;
   const status = document.getElementById("englishReadStatus"), membership = document.getElementById("englishMembership");
-  let epoch = 0, controller = null;
+  let epoch = 0, controller = null, pendingLogin = false, resumeRead = false;
   const current = () => { try { return session(localStorage.getItem(SESSION)); } catch (_) { return null; } };
+  let identity = current()?.user.id || "";
+  function track(action, status = "", error = "") {
+    try { window.PortalSuiteAnalytics?.track("journey_interaction", {
+      measurement_version: "journey-v1", placement: "english_commentary", action, status, error,
+      report_id: button.dataset.commentaryId,
+    }); } catch (_) { /* Reading never depends on telemetry. */ }
+  }
   function clear() {
     epoch += 1; if (controller) controller.abort(); controller = null;
     container.replaceChildren(); container.hidden = true; button.disabled = false; membership.hidden = true;
     status.textContent = "Only the preview is public. Select Read full commentary to continue.";
   }
-  document.addEventListener("portal-auth-change", clear);
-  window.addEventListener("storage", (event) => { if (event.key === SESSION) clear(); });
-  window.addEventListener("pagehide", clear);
-  document.addEventListener("visibilitychange", () => { if (document.hidden) clear(); });
-  button.addEventListener("click", async () => {
-    clear();
+  function authChanged() {
+    const next = current()?.user.id || "";
+    if (next === identity) return;
+    const continueLogin = pendingLogin && !identity && next;
+    clear(); identity = next; resumeRead = false;
+    if (continueLogin) { pendingLogin = false; read("read_resume"); }
+    else pendingLogin = false;
+  }
+  document.addEventListener("portal-auth-change", authChanged);
+  document.addEventListener("portal-auth-complete", (event) => {
+    if (pendingLogin && event.detail?.placement === "english_commentary" && current()) {
+      pendingLogin = false; read("read_resume");
+    }
+  });
+  window.addEventListener("storage", (event) => { if (event.key === SESSION) authChanged(); });
+  function suspend() { resumeRead = resumeRead || !container.hidden || Boolean(controller); clear(); }
+  function restore() {
+    authChanged();
+    if (resumeRead && current()) { resumeRead = false; read("read_resume"); }
+  }
+  window.addEventListener("pagehide", suspend);
+  window.addEventListener("pageshow", restore);
+  document.addEventListener("visibilitychange", () => { if (document.hidden) suspend(); else restore(); });
+  function openLogin() {
+    pendingLogin = true;
+    document.dispatchEvent(new CustomEvent("portal-open-auth", { detail: {
+      mode: "login", placement: "english_commentary", resumeIntent: true,
+    } }));
+  }
+  async function read(action = "read_click") {
+    clear(); track(action);
     const signedIn = current();
     if (!signedIn) {
       status.textContent = "Sign in to read full commentary. Your account includes 3 free full reads.";
-      document.dispatchEvent(new CustomEvent("portal-open-auth", { detail: { mode: "login", placement: "english_commentary" } }));
-      return;
+      track("login_required", "guest"); openLogin(); return;
     }
+    identity = signedIn.user.id;
     const expected = epoch;
     controller = new AbortController(); const activeController = controller;
     const timer = setTimeout(() => activeController.abort(), 20000);
     button.disabled = true; status.textContent = "Checking access…";
+    track("read_request", "pending");
     try {
       const response = await fetch("/api/english/commentary/read", { method: "POST", cache: "no-store", credentials: "same-origin",
         headers: { "Content-Type": "application/json", "Authorization": `Bearer ${signedIn.token}` },
         body: JSON.stringify({ id: button.dataset.commentaryId }), signal: activeController.signal });
       const value = await response.json();
-      if (expected !== epoch || !current() || current().token !== signedIn.token) return;
+      if (expected !== epoch || current()?.user.id !== signedIn.user.id) return;
       if (response.status === 402) {
         membership.hidden = false; status.textContent = "Your free allowance is used. Join as a website member to read more commentary.";
-        return;
+        track("read_error", "denied", "quota"); return;
       }
       if (response.status === 401) {
-        status.textContent = "Please sign in again. No full commentary was returned."; return;
+        // A refreshed token supersedes the rejected request; never clear it.
+        if (current()?.token !== signedIn.token) { read("read_resume"); return; }
+        try { localStorage.removeItem(SESSION); } catch (_) { /* Storage may be unavailable. */ }
+        document.dispatchEvent(new CustomEvent("portal-auth-change"));
+        status.textContent = "Please sign in again to continue reading.";
+        track("read_error", "denied", "auth"); openLogin(); return;
       }
       if (!response.ok || !validFull(value, button.dataset.commentaryId)) throw new Error("unavailable");
       renderBlocks(container, value.blocks, document);
       status.textContent = value.access === "member" ? "Member access."
         : `${value.remaining} free full reads remaining. Re-reading this commentary is free.`;
+      track("read_success", "success");
     } catch (_) {
-      if (expected === epoch) status.textContent = "Full commentary is temporarily unavailable. Please try again.";
+      if (expected === epoch) {
+        status.textContent = "Full commentary is temporarily unavailable. Please try again.";
+        track("read_error", "error", activeController.signal.aborted ? "timeout" : "unavailable");
+      }
     } finally {
       clearTimeout(timer);
       if (expected === epoch) { button.disabled = false; controller = null; }
     }
-  });
+  }
+  button.addEventListener("click", () => read());
 }());

@@ -2,6 +2,10 @@
   "use strict";
   if (window.PortalFeedback) return;
 
+  function track(action, status = "", extra = {}) {
+    try { window.PortalSuiteAnalytics?.track("journey_interaction", { measurement_version: "journey-v1", placement: "feedback", action, status, ...extra }); } catch (_) { /* Telemetry is best effort. */ }
+  }
+
   function session() {
     try {
       const saved = JSON.parse(window.localStorage.getItem("portal_auth_session") || "null");
@@ -51,7 +55,7 @@
     const honeypot = byId("siteFeedbackWebsite");
     const submit = container.querySelector(".site-feedback-submit");
     const status = container.querySelector(".site-feedback-status");
-    let busy = false, controller = null, identity = "", revision = 0;
+    let busy = false, controller = null, identity = "", revision = 0, started = false;
     let returnFocus = launcher;
     const setStatus = (text, error = false) => {
       status.textContent = text;
@@ -63,7 +67,7 @@
       if (nextIdentity !== identity) {
         revision += 1;
         if (controller) controller.abort();
-        form.reset();
+        form.reset(); started = false;
         setStatus("");
       }
       identity = nextIdentity;
@@ -79,6 +83,7 @@
       returnFocus?.focus();
     }
     launcher.addEventListener("click", () => {
+      track("open");
       returnFocus = document.activeElement || launcher;
       updateIdentity();
       if (typeof dialog.showModal === "function") dialog.showModal();
@@ -104,6 +109,7 @@
     });
     document.addEventListener("portal-auth-change", updateIdentity);
     window.addEventListener("storage", (event) => { if (event.key === "portal_auth_session") updateIdentity(); });
+    form.addEventListener("input", () => { if (!started) { started = true; track("form_start"); } });
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       if (busy || !form.reportValidity()) return;
@@ -111,7 +117,7 @@
       const owner = current ? String(current.user.id) : "";
       if (owner !== identity) { updateIdentity(); setStatus("账号已变化，请检查内容后重新提交。 / Your account changed. Please review and submit again.", true); return; }
       const ticket = revision;
-      busy = true;
+      busy = true; track("submit", "pending");
       [submit, email, category, message].forEach((control) => { control.disabled = true; });
       form.setAttribute("aria-busy", "true");
       submit.textContent = "提交中… / Sending…";
@@ -130,9 +136,12 @@
         const result = await response.json().catch(() => ({}));
         if (ticket !== revision) return;
         if (!response.ok || !result.ok) throw new Error(result.detail || "提交暂未成功，请稍后重试。 / Please try again later.");
+        track("result", result.deduplicated ? "deduplicated" : "success", { deduplicated: result.deduplicated === true, acknowledgement_status: result.confirmation_email_sent === true ? "provider_accepted" : "unknown" });
+        started = false;
         setStatus("反馈已收到，感谢您的帮助。 / Thank you. Your feedback has been received.");
         message.value = "";
       } catch (error) {
+        if (ticket === revision) track("result", "error", { error: error.name === "AbortError" ? "timeout" : "unavailable" });
         if (ticket === revision) setStatus(error.name === "AbortError"
           ? "提交结果暂未确认，可稍后重试。 / Delivery is not yet confirmed. You may retry later."
           : error.message || "提交暂未成功，请稍后重试。 / Please try again later.", true);

@@ -2,6 +2,10 @@
   "use strict";
   if (window.PortalCourseFull) return;
   const mounts = new WeakMap();
+  function track(action, status = "", extra = {}) {
+    try { window.PortalSuiteAnalytics?.track("journey_interaction", { measurement_version: "journey-v1", placement: "course_full", action, status, ...extra }); } catch (_) { /* Telemetry is best effort. */ }
+  }
+
   function session() {
     try {
       const current = JSON.parse(window.localStorage.getItem("portal_auth_session") || "null");
@@ -102,6 +106,7 @@
       if (needsReply && (!suppliedEmail || !email.reportValidity())) {
         setStatus(requestStatus, "请填写可接收回复的邮箱。", "error"); email.focus(); return;
       }
+      track("request_submit", "pending");
       pendingRequests.add(item.id); button.disabled = true; button.textContent = "正在提交…";
       setStatus(requestStatus, "正在提交索取申请…");
       try {
@@ -111,6 +116,7 @@
         }) });
         if (!current(rev)) return;
         if (data.ok !== true) throw new Error("申请暂未确认，请稍后重试。");
+        track("request_result", data.deduplicated ? "deduplicated" : "success", { deduplicated: data.deduplicated === true, acknowledgement_status: data.confirmation_email_sent === true ? "provider_accepted" : "unknown" });
         const label = data.deduplicated ? "申请已记录" : "申请已提交";
         submitted.set(item.id, label); button.textContent = label;
         const visibleButton = requestButtons.get(item.id);
@@ -118,6 +124,7 @@
         setStatus(requestStatus, "申请已收到，我们会通过邮箱与你联系。 / Request received. We will contact you by email.", "success");
       } catch (error) {
         if (!current(rev)) return;
+        track("request_result", "error", { error: error.name === "AbortError" ? "timeout" : error.status === 401 ? "auth" : error.status === 403 ? "forbidden" : "unavailable" });
         if (error.status === 401 || error.status === 403) { await refresh(); return; }
         button.disabled = false; button.textContent = "重新申请";
         const visibleButton = requestButtons.get(item.id);
@@ -150,6 +157,7 @@
       if (!allowed || !current(rev)) return;
       previous.disabled = true; next.disabled = true; items.replaceChildren(); pagination.hidden = true;
       setStatus(status, "正在加载目录…");
+      track("directory_start", "pending");
       const params = new URLSearchParams({ q: search.value.trim(), folder: folder.value, file_type: fileType.value, page: String(targetPage), page_size: "30" });
       try {
         const data = await api(`directory?${params.toString()}`);
@@ -159,12 +167,14 @@
         hasMore = data.has_more === true;
         facets(folder, data.facets?.folders, "全部目录"); facets(fileType, data.facets?.file_types, "全部类型");
         const count = renderItems(data.items);
+        track("directory_result", "success", { result_count: count });
         setStatus(status, count ? `找到 ${data.total} 项，当前显示 ${count} 项。` : "没有匹配的文件，请更换关键词或筛选条件。");
         const generated = dateLabel(data.generated_at); updated.textContent = generated ? `目录更新时间：${generated}（北京时间）` : "";
         pageLabel.textContent = `第 ${page} 页`;
         previous.disabled = page <= 1; next.disabled = !hasMore; pagination.hidden = page <= 1 && !hasMore;
       } catch (error) {
         if (!current(rev) || expectedList !== listRevision) return;
+        track("directory_result", "error", { error: error.name === "AbortError" ? "timeout" : error.status === 401 ? "auth" : error.status === 403 ? "forbidden" : "unavailable" });
         if (error.status === 401) { lock("请重新登录", "登录状态已失效，请登录后重新核验。", true); return; }
         if (error.status === 403) { denied(error.data?.access || error.data); return; }
         setStatus(status, error.name === "AbortError" ? "目录加载超时，请点击搜索重试。" : error.message, "error");
@@ -182,11 +192,13 @@
       fileType.replaceChildren(node("option", "全部类型")); fileType.value = "";
       identity = fingerprint(session());
       const rev = revision;
+      track("access_start", identity ? "pending" : "guest");
       if (!identity) { lock("登录后核验会员资格", "当前有效、连续满两个自然月的会员可查看原始目录。", true); return; }
       lock("正在核验会员资格", "请稍候。"); retry.disabled = true;
       try {
         const data = await api("access");
         if (!current(rev)) return;
+        track("access_result", data.allowed === true ? "success" : "denied", { access_state: data.allowed === true ? "allowed" : data.reason });
         if (data.allowed !== true) { denied(data); return; }
         setDates(data); allowed = true; gate.dataset.state = "allowed";
         title.textContent = "会员资格已通过核验"; message.textContent = "可按原始目录查找资料，并逐项提交索取申请。";
@@ -195,15 +207,18 @@
         await loadDirectory(1);
       } catch (error) {
         if (!current(rev)) return;
+        track("access_result", "error", { error: error.name === "AbortError" ? "timeout" : error.status === 401 ? "auth" : "unavailable" });
         if (error.status === 401) lock("请重新登录", "登录状态已失效，请登录后重新核验。", true);
         else lock("暂时无法核验会员资格", "请稍后点击重新核验。", false, true);
       } finally { if (current(rev)) retry.disabled = false; }
     }
-    function openLogin() { document.dispatchEvent(new CustomEvent("portal-open-auth", { detail: { mode: "login", placement: "course_full" } })); }
+    function openLogin() { track("login_click"); document.dispatchEvent(new CustomEvent("portal-open-auth", { detail: { mode: "login", placement: "course_full" } })); }
     function filter(event) { event.preventDefault(); loadDirectory(1); }
     function storage(event) { if (event.key === "portal_auth_session") refresh(); }
     function back() { if (page > 1) loadDirectory(page - 1); }
     function forward() { if (hasMore) loadDirectory(page + 1); }
+    function verifyClick() { track("verify_click"); }
+    verify.addEventListener("click", verifyClick);
     login.addEventListener("click", openLogin); retry.addEventListener("click", refresh);
     filters.addEventListener("submit", filter); folder.addEventListener("change", filter); fileType.addEventListener("change", filter);
     previous.addEventListener("click", back); next.addEventListener("click", forward);
@@ -212,6 +227,7 @@
       destroyed = true; revision += 1; for (const controller of controllers) controller.abort();
       clearDirectory(); dates.textContent = ""; dates.hidden = true;
       document.removeEventListener("portal-auth-change", refresh); window.removeEventListener("storage", storage);
+      verify.removeEventListener("click", verifyClick);
       login.removeEventListener("click", openLogin); retry.removeEventListener("click", refresh);
       filters.removeEventListener("submit", filter); folder.removeEventListener("change", filter); fileType.removeEventListener("change", filter);
       previous.removeEventListener("click", back); next.removeEventListener("click", forward); mounts.delete(root);

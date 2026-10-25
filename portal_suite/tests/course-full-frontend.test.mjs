@@ -30,13 +30,14 @@ function harness(t, initialSession = member, handler = (url) => url.endsWith("/a
   for (const match of html.matchAll(/id="courseFull(\w+)"/g)) elements.set(match[1], new Element("div"));
   const gate = new Element("section"); gate.append(elements.get("GateTitle"));
   const root = elements.get("App"); root.querySelector = (selector) => elements.get(selector.replace("#courseFull", ""));
-  const documentEvents = new Map(), windowEvents = new Map(), dispatched = [], calls = [];
+  const documentEvents = new Map(), windowEvents = new Map(), dispatched = [], calls = [], analytics = [];
   const document = { readyState: "loading", createElement: (tag) => new Element(tag), getElementById: (id) => id === "courseFullApp" ? root : null,
     addEventListener(name, callback) { documentEvents.set(name, callback); }, removeEventListener(name) { documentEvents.delete(name); },
     dispatchEvent(event) { dispatched.push(event); documentEvents.get(event.type)?.(event); },
   };
   let stored = initialSession;
   const window = { document, location: { pathname: "/course-full.html", href: "https://kcdesk.com/course-full.html?private=omitted" },
+    PortalSuiteAnalytics: { track(type, data) { analytics.push({ type, ...JSON.parse(JSON.stringify(data)) }); } },
     localStorage: { getItem() { return JSON.stringify(stored); } },
     setTimeout() { return 1; }, clearTimeout() {},
     addEventListener(name, callback) { windowEvents.set(name, callback); }, removeEventListener(name) { windowEvents.delete(name); },
@@ -45,7 +46,7 @@ function harness(t, initialSession = member, handler = (url) => url.endsWith("/a
   vm.runInNewContext(source, { window, document, URLSearchParams, AbortController, Intl, CustomEvent: class { constructor(type, options) { this.type = type; this.detail = options.detail; } } });
   const instance = window.PortalCourseFull.mount();
   t.after(() => instance.destroy());
-  return { window, calls, dispatched, gate, root, instance,
+  return { window, calls, dispatched, gate, root, instance, analytics,
     el: (name) => elements.get(name),
     setSession(value, storage = false) { stored = value; return storage ? windowEvents.get("storage")?.({ key: "portal_auth_session" }) : documentEvents.get("portal-auth-change")?.(); },
     async settle() { await new Promise((resolve) => setImmediate(resolve)); },
@@ -71,6 +72,7 @@ test("anonymous users load no private data and login opens the existing account 
   assert.equal(h.dispatched[0].type, "portal-open-auth");
   assert.equal(h.dispatched[0].detail.mode, "login");
   assert.equal(h.dispatched[0].detail.placement, "course_full");
+  assert.deepEqual(h.analytics.map(({ action, status }) => [action, status]), [["access_start", "guest"], ["login_click", ""]]);
 });
 
 test("unverified history and incomplete tenure show dates without fetching the directory", async (t) => {
@@ -83,6 +85,9 @@ test("unverified history and incomplete tenure show dates without fetching the d
     assert.match(h.el("Dates").textContent, /北京时间/);
     if (reason === "needs_history_verification") assert.match(h.el("GateTitle").textContent, /历史需要核验/);
     if (reason === "tenure_incomplete") assert.match(h.el("GateTitle").textContent, /尚未满两个月/);
+    assert.equal(h.analytics.at(-1).action, "access_result");
+    assert.equal(h.analytics.at(-1).status, "denied");
+    assert.equal(h.analytics.at(-1).access_state, reason);
   }
 });
 
@@ -106,6 +111,12 @@ test("authorized users receive plain original names and server-driven filters an
   h.el("Next").fire("click"); await h.settle();
   assert.match(h.calls.at(-1).url, /page=2/);
   assert.equal(h.el("PageLabel").textContent, "第 2 页");
+  assert.deepEqual(h.analytics.slice(0, 4).map(({ action, status }) => [action, status]), [
+    ["access_start", "pending"], ["access_result", "success"], ["directory_start", "pending"], ["directory_result", "success"],
+  ]);
+  assert.equal(h.analytics.at(-1).result_count, 1);
+  assert.ok(h.analytics.every((event) => event.type === "journey_interaction" && event.placement === "course_full" && event.measurement_version === "journey-v1"));
+  assert.doesNotMatch(JSON.stringify(h.analytics), /Example|Original & name|原始目录|Folder <A>|cash & debt|member@example|test-member-token|private=|directory_item_id|"query"|"folder"/);
 });
 
 test("missing catalog is explicitly unavailable and never presented as a complete empty inventory", async (t) => {
@@ -115,6 +126,9 @@ test("missing catalog is explicitly unavailable and never presented as a complet
   assert.doesNotMatch(h.el("Status").textContent, /没有匹配|找到 0|完整/);
   assert.equal(h.el("Items").children.length, 0);
   assert.equal(h.el("Pagination").hidden, true);
+  assert.equal(h.analytics.at(-1).action, "directory_result");
+  assert.equal(h.analytics.at(-1).status, "error");
+  assert.equal(h.analytics.at(-1).error, "unavailable");
 });
 
 test("one item request is authenticated, deduplicated in flight, and never downloads a file", async (t) => {
@@ -132,6 +146,11 @@ test("one item request is authenticated, deduplicated in flight, and never downl
   assert.equal(button.textContent, "申请已记录"); assert.equal(button.disabled, true);
   assert.match(h.el("RequestStatus").textContent, /Request received/);
   await button.fire("click"); assert.equal(h.calls.length, 3);
+  assert.equal(h.analytics.filter(({ action }) => action === "request_submit").length, 1);
+  const result = h.analytics.find(({ action }) => action === "request_result");
+  assert.equal(result.status, "deduplicated"); assert.equal(result.deduplicated, true);
+  assert.equal(result.acknowledgement_status, "unknown");
+  assert.doesNotMatch(JSON.stringify(h.analytics), /Example|example-directory-id|member@example|test-member-token|private=/);
 });
 
 test("request failures preserve a retry action, including a row rerendered while pending", async (t) => {
@@ -145,6 +164,10 @@ test("request failures preserve a retry action, including a row rerendered while
   assert.equal(h.requestButton().disabled, false);
   assert.equal(h.requestButton().textContent, "重新申请");
   assert.equal(h.el("RequestStatus").dataset.state, "error");
+  assert.equal(h.analytics.at(-1).action, "request_result");
+  assert.equal(h.analytics.at(-1).status, "error");
+  assert.equal(h.analytics.at(-1).error, "unavailable");
+  assert.doesNotMatch(JSON.stringify(h.analytics), /Please retry later/);
 });
 
 test("legacy accounts can supply a reply email while real account emails remain authoritative", async (t) => {
@@ -157,6 +180,9 @@ test("legacy accounts can supply a reply email while real account emails remain 
     await h.requestButton().fire("click");
     assert.equal(JSON.parse(h.calls.at(-1).options.body).requester_email, "reply@example.net");
     assert.equal(h.requestButton().textContent, "申请已提交");
+    assert.equal(h.analytics.at(-1).action, "request_result");
+    assert.equal(h.analytics.at(-1).status, "success");
+    assert.doesNotMatch(JSON.stringify(h.analytics), /reply@example|legacy@|Example lesson|example-directory-id/);
   }
   const h = harness(t); await h.settle();
   assert.equal(h.el("Reply").hidden, true);
@@ -198,4 +224,11 @@ test("mounting twice adds no duplicate fetch or listeners", async (t) => {
   const h = harness(t); await h.settle();
   assert.equal(h.window.PortalCourseFull.mount(h.root), h.instance);
   assert.equal(h.calls.length, 2);
+  h.el("Verify").fire("click");
+  assert.equal(h.analytics.filter(({ action }) => action === "verify_click").length, 1);
+  h.instance.destroy(); h.el("Verify").fire("click");
+  assert.equal(h.analytics.filter(({ action }) => action === "verify_click").length, 1);
+  const next = h.window.PortalCourseFull.mount(h.root); t.after(() => next.destroy());
+  h.el("Verify").fire("click");
+  assert.equal(h.analytics.filter(({ action }) => action === "verify_click").length, 2);
 });

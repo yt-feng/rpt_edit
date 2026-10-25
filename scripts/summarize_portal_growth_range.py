@@ -42,7 +42,7 @@ ADMIN_EVENT_TYPES = {
     "daily_file_download",
     "delivery_link_generate",
 }
-SERVER_AUDIT_EVENT_TYPES = {"report_chat"}
+SERVER_AUDIT_EVENT_TYPES = {"report_chat", "form_confirmation"}
 MEMBERSHIP_MEASUREMENT_VERSION = "membership-v1"
 MEMBERSHIP_REQUEST_KINDS = {"membership", "access", "support", "privacy", "refund"}
 MEMBERSHIP_ACTIONS = {
@@ -60,6 +60,22 @@ POST_DOWNLOAD_CONTINUATIONS = {
     "post_download_research", "post_download_related_open",
 }
 POST_DOWNLOAD_ACCESS_ACTIONS = {"password_download", "account_download", "account_or_password_download"}
+REPORT_LOADING_ACTIONS = {"detail_load_start", "detail_load_fallback", "detail_load_ready", "access_check_error"}
+JOURNEY_FEATURE_ACTIONS = {
+    "course_full": {"access_start", "access_result", "directory_start", "directory_result", "login_click", "verify_click", "request_submit", "request_result"},
+    "feedback": {"open", "form_start", "submit", "result"},
+    "report_discussion": {"load_result", "login_click", "form_start", "comment_submit", "comment_result", "delete_result"},
+    "english_commentary": {"read_click", "login_required", "read_request", "read_success", "read_error", "read_resume"},
+}
+JOURNEY_INTENTIONAL_ACTIONS = {
+    "course_full": {"login_click", "verify_click", "request_submit"},
+    "feedback": {"open", "form_start", "submit"},
+    "report_discussion": {"login_click", "form_start", "comment_submit", "delete_result"},
+    "english_commentary": {"read_click"},
+}
+JOURNEY_ERROR_CATEGORIES = {"auth", "quota", "forbidden", "network", "timeout", "server", "validation", "unavailable", "unknown"}
+FORM_CONFIRMATION_KINDS = {"registration", "report", "course", "membership", "research", "newsfeed", "feedback", "unknown"}
+FORM_CONFIRMATION_STATUSES = {"provider_accepted", "failed", "outcome_unknown", "unavailable", "no_email"}
 JOURNEY_ACTIONS: dict[str, set[str]] = {
     "membership_request": MEMBERSHIP_ACTIONS,
     "account_auth": {
@@ -67,7 +83,9 @@ JOURNEY_ACTIONS: dict[str, set[str]] = {
         "form_submit", "form_abandon", "modal_close", "intent_resumed", "register",
         "login", "login_recovered", "logout", "password_change",
     } | (POST_DOWNLOAD_ACTIONS - {"post_download_related_open"}),
-    "report_open": {"post_download_related_open"},
+    "report_open": {"post_download_related_open"} | REPORT_LOADING_ACTIONS,
+    "journey_interaction": set().union(*JOURNEY_FEATURE_ACTIONS.values()),
+    "form_confirmation": {"provider_result"},
     "report_chat_interaction": {
         "entry_impression", "entry_click", "composer_impression", "composer_start",
         "prompt_selected", "auth_prompt", "auth_resume", "submit", "success", "error",
@@ -86,12 +104,15 @@ JOURNEY_STATUSES = {
     "login", "register", "validation", "request_failed", "list_unavailable",
     "already_claimed_today", "already_owned", "anonymous", "authenticated",
     "guest", "signed_in", "pending", "abandoned",
+    "interactive", "recovered", "not_found", "timeout", "denied", "deduplicated",
+    "provider_accepted", "outcome_unknown", "unavailable", "no_email",
 }
 JOURNEY_PLACEMENTS = {
     "navigation", "home_hero", "research_intro", "research_limit", "report_detail",
     "daily_goal", "account_modal", "research_tab", "home_research", "blog_article", "public_cache",
     "guest", "registered", "member", "admin", "free", "paid", "premium",
     "account", "membership", "access", "support", "privacy", "refund", "deep_link", "post_download",
+    "course_full", "feedback", "report_discussion", "english_commentary",
 }
 JOURNEY_CONTEXTS = {"report", "course"}
 ENGAGEMENT_EVENT_TYPES = {
@@ -390,7 +411,7 @@ class Session:
     landing_report_ids: set[str] = field(default_factory=set)
 
     def event_types(self) -> Counter[str]:
-        return Counter(clean_text(event.get("type"), 80).lower() for event in self.events)
+        return Counter(clean_text(event.get("type"), 80).lower() for event in self.events if not is_report_loading_event(event))
 
     def is_engaged(self) -> bool:
         types = self.event_types()
@@ -405,11 +426,13 @@ class Session:
         )
 
     def has(self, event_type: str) -> bool:
-        return any(clean_text(event.get("type"), 80).lower() == event_type for event in self.events)
+        return any(clean_text(event.get("type"), 80).lower() == event_type and not is_report_loading_event(event) for event in self.events)
 
     def is_intentionally_engaged(self) -> bool:
         """Require a controlled active action; exposure and auto-rendering do not qualify."""
         for event in self.events:
+            if is_report_loading_event(event):
+                continue
             event_type = clean_text(event.get("type"), 80).lower()
             action = clean_text(event.get("action"), 80).lower()
             success = clean_text(event.get("status"), 80).lower() in {"success", "ok", "completed"}
@@ -424,6 +447,8 @@ class Session:
             if event_type == "reward_claim" and action in {"daily", "points"} and success:
                 return True
             if event_type == "report_chat_interaction" and action in INTENTIONAL_CHAT_ACTIONS:
+                return True
+            if event_type == "journey_interaction" and action in JOURNEY_INTENTIONAL_ACTIONS.get(clean_text(event.get("placement"), 80).lower(), set()):
                 return True
             if event_type == "membership_request" and action in {"form_start", "form_submit", "submitted", "deduplicated"}:
                 return True
@@ -442,6 +467,11 @@ class Session:
             and clean_text(event.get("status"), 80).lower() in {"success", "ok", "completed"}
             for event in self.events
         )
+
+
+def is_report_loading_event(event: dict[str, Any]) -> bool:
+    return (clean_text(event.get("type"), 80).lower() == "report_open"
+            and clean_text(event.get("action"), 80).lower() in REPORT_LOADING_ACTIONS)
 
 
 def session_key(event: dict[str, Any], fallback_index: int) -> str:
@@ -571,14 +601,18 @@ def public_journey_diagnostics(events: Iterable[dict[str, Any]], start: date, en
     daily: dict[tuple[str, str, str], list[dict[str, Any]]] = defaultdict(list)
     registration_errors: dict[str, list[dict[str, Any]]] = defaultdict(list)
     daily_registration_errors: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
+    feature_events: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    feature_errors: dict[tuple[str, str, str], list[dict[str, Any]]] = defaultdict(list)
+    form_confirmations: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
     for event in events:
         day = event_date(event)
         event_type = clean_text(event.get("type"), 80).lower()
         if not day or not start <= day <= end or is_bot_event(event) or event_type not in JOURNEY_ACTIONS:
             continue
-        action = controlled_journey_value(event.get("action"), JOURNEY_ACTIONS[event_type])
         status = controlled_journey_value(event.get("status"), JOURNEY_STATUSES)
         placement = controlled_journey_value(event.get("placement"), JOURNEY_PLACEMENTS)
+        allowed_actions = JOURNEY_FEATURE_ACTIONS.get(placement, set()) if event_type == "journey_interaction" else JOURNEY_ACTIONS[event_type]
+        action = controlled_journey_value(event.get("action"), allowed_actions)
         context = controlled_journey_value(event.get("context"), JOURNEY_CONTEXTS)
         grouped[(event_type, action, status, placement, context)].append(event)
         daily[(day.isoformat(), event_type, action)].append(event)
@@ -586,6 +620,16 @@ def public_journey_diagnostics(events: Iterable[dict[str, Any]], start: date, en
             category = registration_error_category(event.get("error"))
             registration_errors[category].append(event)
             daily_registration_errors[(day.isoformat(), category)].append(event)
+        if event_type == "journey_interaction":
+            if placement in JOURNEY_FEATURE_ACTIONS and event.get("measurement_version") == "journey-v1" and action in allowed_actions:
+                feature_events[placement].append(event)
+            category = controlled_journey_value(event.get("error"), JOURNEY_ERROR_CATEGORIES)
+            if status in {"error", "failure", "failed", "timeout"} or status == "denied" and category in JOURNEY_ERROR_CATEGORIES:
+                feature_errors[(placement, action, category)].append(event)
+        if event_type == "form_confirmation" and action == "provider_result":
+            kind = controlled_journey_value(event.get("request_kind"), FORM_CONFIRMATION_KINDS)
+            result = controlled_journey_value(event.get("status"), FORM_CONFIRMATION_STATUSES)
+            form_confirmations[(kind, result)].append(event)
 
     def counts(rows: list[dict[str, Any]], server: bool) -> dict[str, int | None]:
         session_ids = {clean_text(row.get("session_id"), 160) for row in rows if clean_text(row.get("session_id"), 160)}
@@ -603,24 +647,55 @@ def public_journey_diagnostics(events: Iterable[dict[str, Any]], start: date, en
             "placement": placement, "context": context, **counts(rows, server),
         }
         numeric_metrics = {}
-        for field_name in ("source_count", "chart_count", "question_length", "remaining", "current_streak"):
+        for field_name in ("source_count", "chart_count", "question_length", "remaining", "current_streak", "result_count", "count", "duration_ms"):
             values = [
                 float(row[field_name]) for row in rows
                 if isinstance(row.get(field_name), (int, float))
                 and not isinstance(row.get(field_name), bool)
                 and 0 <= row[field_name] <= 1_000_000
+                # Older generic numeric fields were defaulted to zero by the
+                # Worker. Only the new contract can establish observations.
+                and (field_name not in {"result_count", "count", "duration_ms"}
+                     or event_type == "journey_interaction" and row.get("measurement_version") == "journey-v1"
+                     or field_name == "duration_ms" and event_type == "report_open" and action in {"detail_load_fallback", "detail_load_ready"})
             ]
             numeric_metrics[field_name] = {
                 "observed_events": len(values), "missing_events": len(rows) - len(values),
                 "zero_events": sum(value == 0 for value in values),
                 "positive_events": sum(value > 0 for value in values),
             }
+            if field_name == "duration_ms":
+                values.sort()
+                numeric_metrics[field_name].update({
+                    "mean": round(sum(values) / len(values), 2) if values else None,
+                    "p95": values[(95 * len(values) + 99) // 100 - 1] if values else None,
+                    "maximum": values[-1] if values else None,
+                })
         item["numeric_metric_coverage"] = numeric_metrics
         (server_rows if server else client_rows).append(item)
     return {
         "schema": "portal-journey-diagnostics-v1",
         "client_actions": client_rows,
         "server_audit_actions": server_rows,
+        "feature_measurement_coverage": [
+            {
+                "placement": placement, "measurement_version": "journey-v1",
+                "coverage": "observed" if rows else "unavailable",
+                "first_observed_date": min(event_date(row).isoformat() for row in rows) if rows else None,
+                "events": len(rows) if rows else None,
+                "observed_actions": sorted({controlled_journey_value(row.get("action"), JOURNEY_FEATURE_ACTIONS[placement]) for row in rows}),
+            }
+            for placement in sorted(JOURNEY_FEATURE_ACTIONS)
+            for rows in [feature_events[placement]]
+        ],
+        "interaction_error_categories": [
+            {"placement": placement, "action": action, "category": category, **counts(rows, False)}
+            for (placement, action, category), rows in sorted(feature_errors.items())
+        ],
+        "form_confirmation_results": [
+            {"request_kind": kind, "status": status, **counts(rows, True)}
+            for (kind, status), rows in sorted(form_confirmations.items())
+        ],
         "registration_error_categories": [
             {"category": category, **counts(rows, False)}
             for category, rows in sorted(registration_errors.items())
@@ -644,6 +719,10 @@ def public_journey_diagnostics(events: Iterable[dict[str, Any]], start: date, en
             "Historical missing context, source_count, chart_count and current_streak cannot be reconstructed from client events.",
             "Admin account activity on ordinary product surfaces and internal QA are not excluded automatically.",
             "export_pdf_print_opened confirms a print dialog only, not a rendered PDF download.",
+            "journey-v1 coverage begins with observed versioned events; absent features or actions are unmeasured, not zero conversions.",
+            "Provider acceptance is an email-provider acknowledgement, not inbox delivery; form confirmations never become client sessions or registrations.",
+            "Report detail loading and access-check diagnostics are excluded from report-open conversion and intentional engagement.",
+            "Latency statistics use valid observed milliseconds only; historical default-zero numeric fields are not reconstructed as measurements.",
         ],
     }
 
@@ -1671,7 +1750,7 @@ def markdown_summary(review: dict[str, Any]) -> str:
         "D1/D7 保留既有定义；历史缺失回访标记可能被归档为 false，功能内散列也会拆分身份，因此历史留存仅作方向性参考，不能当作精确账号留存。", "",
     ])
     journey = review.get("journey_diagnostics", {})
-    for title, key in (("注册、会员申请、研究与签到：客户端动作", "client_actions"), ("研究：服务端审计", "server_audit_actions")):
+    for title, key in (("注册、申请、阅读、讨论与反馈：客户端动作", "client_actions"), ("研究与表单回执：服务端审计", "server_audit_actions")):
         lines.extend([
             "", f"## {title}", "",
             "| 类型 | 动作 | 状态 | 入口 | 上下文 | 事件 | 客户端会话 | 无客户端会话事件 |",
@@ -1683,10 +1762,23 @@ def markdown_summary(review: dict[str, Any]) -> str:
                 f"| {row['event_type']} | {row['action']} | {row['status']} | {row['placement']} | "
                 f"{row['context']} | {row['events']} | {sessions} | {row['events_without_client_session']} |"
             )
+    lines.extend(["", "### 新功能埋点覆盖", "", "| 入口 | 覆盖 | 首次观测 | 版本化事件 | 已观测动作 |", "|---|---|---|---:|---|"])
+    for row in journey.get("feature_measurement_coverage", []):
+        lines.append(f"| {row['placement']} | {row['coverage']} | {row['first_observed_date'] or '未观测'} | {observed(row['events'])} | {', '.join(row['observed_actions']) or '未观测'} |")
+    lines.extend(["", "### 加载耗时", "", "| 类型 | 动作 | 状态 | 入口 | 有效耗时事件 | 缺失耗时 | 平均毫秒 | P95 毫秒 |", "|---|---|---|---|---:|---:|---:|---:|"])
+    for row in journey.get("client_actions", []):
+        latency = row.get("numeric_metric_coverage", {}).get("duration_ms", {})
+        if latency.get("observed_events", 0):
+            lines.append(f"| {row['event_type']} | {row['action']} | {row['status']} | {row['placement']} | {latency['observed_events']} | {latency['missing_events']} | {observed(latency.get('mean'))} | {observed(latency.get('p95'))} |")
+    lines.extend(["", "### 表单回执供应商结果", "", "| 表单类型 | 结果 | 事件 |", "|---|---|---:|"])
+    for row in journey.get("form_confirmation_results", []):
+        lines.append(f"| {row['request_kind']} | {row['status']} | {row['events']} |")
     lines.extend([
         "", "未记录入口曝光不能解释为没人看见；popular_impression 历史记录仅代表列表渲染。",
         "服务端审计与客户端动作分开统计，功能内散列访客标识不能作为跨功能人数；各行动会话不能相加。",
         "现有 PDF 打印打开事件不代表已下载渲染完成的 PDF。", "",
+        "新功能仅按 journey-v1 的实际事件标记覆盖；未观测入口、动作及耗时不补历史 0。加载诊断不算作新的报告打开或主动参与。",
+        "provider_accepted 仅表示邮件供应商已接受，不代表已进入收件箱；回执按表单类型单列，不进入客户端会话、注册或转化分母。", "",
     ])
     demand = review.get("onsite_search_demand", {})
     lines.extend([

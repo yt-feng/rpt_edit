@@ -42,7 +42,7 @@ class EnglishPublicationTests(unittest.TestCase):
                                        f'<sitemap><loc>{ORIGIN}/sitemap-extended-fr.xml</loc></sitemap></sitemapindex>')
         assets = root/'assets'; assets.mkdir()
         source = Path(__file__).resolve().parents[1]/'portal_suite/site_src/assets'
-        for name in ('styles.css', 'blog.css', 'app.js'):
+        for name in ('styles.css', 'blog.css', 'analytics.js', 'app.js'):
             (assets/name).write_bytes((source/name).read_bytes())
         return root
 

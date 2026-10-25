@@ -83,6 +83,23 @@ D1/D7 为保持既有报告兼容而保留原定义，没有采用上述新分�
 
 入口曝光指真实可见曝光；历史 `popular_impression` 仅表示列表渲染，未记录曝光的日期不能补零。注册表单事件用 `status=login|register` 区分模式，最终成功仍要求 `action=register` 且 `status=success|ok|completed`。同一会话可先失败后成功，所以分组会话不可相加，也不能据此声称严格顺序漏斗或净新增账号数。图表数、来源数和连续签到天数等字段分别记录已观测、缺失、零和正数，历史缺失值不按零处理；旧 PDF 打印打开事件与新文件生成事件分开统计。
 
+## 课程、反馈、讨论、英文阅读与回执
+
+这些客户端动作使用 `type=journey_interaction`、`measurement_version=journey-v1`。动作必须与对应入口匹配；目录原名、目录项 ID、搜索文字、反馈正文、评论正文、收件人和原始错误文本不进入该事件。
+
+| placement | 动作 | 诊断用途 |
+|---|---|---|
+| `course_full` | `access_start/result`、`directory_start/result`、`login_click`、`verify_click`、`request_submit/result` | 区分资格核验、目录加载和 Request 提交停顿；列表结果数仅为汇总数字 |
+| `feedback` | `open`、`form_start`、`submit`、`result` | 区分打开、开始填写、提交和受理；重复提交单列 |
+| `report_discussion` | `load_result`、`login_click`、`form_start`、`comment_submit/result`、`delete_result` | 观察讨论加载和真实评论提交，不记录评论内容 |
+| `english_commentary` | `read_click`、`login_required`、`read_request`、`read_success/error`、`read_resume` | 区分登录衔接、权限/额度限制、请求失败和恢复阅读 |
+
+`feature_measurement_coverage` 按入口输出首次版本化事件日期和已观测动作。未出现该入口或动作只代表未观测，不能补成历史零转化，也不能用这些局部覆盖的动作除以整个历史访问量。`interaction_error_categories` 仅汇总受控错误类别。明确点击、填写或提交计入主动参与；自动核验、列表加载和恢复阅读不计入主动参与。
+
+`report_open` 的 `detail_load_start`、`detail_load_fallback`、`detail_load_ready` 和 `access_check_error` 是运行诊断，独立于报告打开转化。加载完成/回退与版本化新功能的有效 `duration_ms` 输出观测、缺失、零、正数、平均值、P95 和最大值；旧事件默认产生的零不能当作真实耗时。P95 使用最近秩，始终同时展示有效样本数。客户端耗时反映客户端完成该阶段的时间，不等同于服务器执行时间或实际 PDF 下载完成时间。
+
+表单回执另用服务端 `form_confirmation/provider_result`，按受控 `request_kind`（注册、报告、课程、会员、研究、Newsfeed、反馈）汇总于 `form_confirmation_results`。`provider_accepted` 表示邮件供应商已接受；`failed`、`outcome_unknown`、`unavailable` 分开，不能据此声称进入收件箱。重复请求复用原回执记录，不制造新的供应商接受事件。该事件只由服务端写入，且与 `report_chat` 一样排除在客户端会话、注册和增长转化分母之外。
+
 ## 已知边界
 
 - 2026-08-19 同批发布还升级了 `page_view`、来源与会话字段，因此此前后的原始 PV、直接访问和 self-referrer 不能简单同比。动作复盘采用人类会话、外部首次落地和处理／对照比较降低口径变化影响。

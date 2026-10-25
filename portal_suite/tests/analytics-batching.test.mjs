@@ -297,3 +297,58 @@ test("single-event clients remain compatible and invalid authorization cannot in
   assert.equal(event.page, "privacy");
   assert.equal(event.user, null);
 });
+
+
+test("journey events survive browser batching and private course/form fields never reach storage", async () => {
+  const client = browser();
+  const samples = [
+    { placement: "course_full", action: "request_result", status: "deduplicated", deduplicated: true, acknowledgement_status: "unknown" },
+    { placement: "feedback", action: "result", status: "success", acknowledgement_status: "provider_accepted" },
+    { placement: "report_discussion", action: "comment_result", status: "success", report_id: "public-report-1" },
+    { placement: "english_commentary", action: "read_error", status: "denied", error: "auth", report_id: "20261001-aaaaaaaaaaaaaaaa" },
+  ];
+  assert.ok((await Promise.all(samples.map(data => client.track("journey_interaction", {
+    measurement_version: "journey-v1", ...data,
+    email: "PRIVATE-email", message: "PRIVATE-message", report_title: "PRIVATE-filename", material_id: "PRIVATE-material",
+    query: "PRIVATE-search", target: "PRIVATE-folder", directory_item_id: "PRIVATE-course-id",
+  })))).every(Boolean));
+  const saved = [];
+  for (const post of client.posts()) {
+    const res = await worker.fetch(new Request("https://worker.test/analytics", {
+      method: "POST", headers: { "Content-Type": "application/json", Origin: "https://portal.example.invalid" }, body: post.body,
+    }), { ALLOWED_ORIGIN: "https://portal.example.invalid", REPORT_BUCKET: { async put(key, value) { if (key.startsWith("_analytics/events/")) saved.push(JSON.parse(value)); } } });
+    assert.equal(res.status, 204);
+  }
+  assert.equal(saved.length, 4);
+  for (const sample of samples) {
+    const found = saved.find(event => event.placement === sample.placement);
+    for (const [key, value] of Object.entries(sample)) assert.equal(found[key], value);
+    assert.equal(found.measurement_version, "journey-v1"); assert.ok(found.session_id);
+    assert.equal(found.duration_ms, null); assert.equal(found.result_count, null);
+  }
+  assert.doesNotMatch(JSON.stringify(saved), /PRIVATE-/);
+});
+
+test("journey normalization cannot bypass allowlists and client cannot forge email provider audit", async () => {
+  const saved = [];
+  const env = { ALLOWED_ORIGIN: "https://portal.example.invalid", REPORT_BUCKET: { async put(key, value) { if (key.startsWith("_analytics/events/")) saved.push(JSON.parse(value)); } } };
+  const send = payload => worker.fetch(new Request("https://worker.test/analytics", {
+    method: "POST", headers: { "Content-Type": "application/json", Origin: "https://portal.example.invalid" }, body: JSON.stringify(payload),
+  }), env);
+  for (const type of [{ type: " JOURNEY_INTERACTION " }, {}]) {
+    assert.equal((await send({ ...type, path: "/course-full.html?password=PRIVATE-password", query: "PRIVATE-query", data: {
+      type: "journey_interaction", placement: "course_full", action: "PRIVATE-label", status: "PRIVATE-label", error: "PRIVATE-error",
+      report_id: "PRIVATE-course-id", source: "PRIVATE-label", request_kind: "PRIVATE-label", measurement_version: "PRIVATE-label",
+      duration_ms: -1, result_count: "PRIVATE-label", count: NaN, body: "PRIVATE-body",
+    } })).status, 204);
+  }
+  assert.equal(saved.length, 2);
+  for (const event of saved) {
+    assert.equal(event.type, "journey_interaction"); assert.equal(event.path, "/course-full.html");
+    for (const field of ["action", "status", "error", "report_id", "source", "request_kind", "measurement_version", "query"]) assert.equal(event[field], "");
+    for (const field of ["duration_ms", "result_count", "count"]) assert.equal(event[field], null);
+  }
+  assert.doesNotMatch(JSON.stringify(saved), /PRIVATE-/);
+  assert.equal((await send({ type: "form_confirmation", data: { action: "provider_result", status: "provider_accepted" } })).status, 400);
+  assert.equal(saved.length, 2);
+});

@@ -50,12 +50,50 @@ function browserFixture(initialSession, fetch) {
     createDocumentFragment: () => ({ children: [], append(node) { this.children.push(node); } }),
     createElement: (tag) => ({ tag, textContent: "" }) };
   const context = vm.createContext({ document: doc, window: { addEventListener(name, handler) { windowListeners[name] = handler; } },
-    localStorage: { getItem: () => auth.value }, AbortController, setTimeout, clearTimeout, fetch,
-    CustomEvent: class { constructor(type, options) { this.type = type; this.detail = options.detail; } } });
+    localStorage: { getItem: () => auth.value, removeItem() { auth.value = null; } }, AbortController, setTimeout, clearTimeout, fetch,
+    CustomEvent: class { constructor(type, options) { this.type = type; this.detail = options?.detail; } } });
   vm.runInContext(readFileSync(require.resolve("../portal_suite/locale_assets/english-commentary.js"), "utf8"), context);
   return { elements, listeners, windowListeners, doc, auth, click: () => elements.englishRead.handlers.click() };
 }
 const signedIn = JSON.stringify({ token: "synthetic-session", user: { id: "account" } });
+
+test("a requested read resumes once after login without requiring a second button click", async () => {
+  let calls = 0;
+  const browser = browserFixture(null, async () => { calls++; return { ok: true, status: 200, json: async () => full() }; });
+  await browser.click();
+  assert.equal(browser.doc.lastEvent.detail.resumeIntent, true);
+  browser.auth.value = signedIn;
+  browser.listeners["portal-auth-change"]();
+  browser.listeners["portal-auth-complete"]({ detail: { placement: "english_commentary", resumeIntent: true } });
+  await new Promise(setImmediate);
+  assert.equal(calls, 1);
+  assert.equal(browser.elements.englishFullCommentary.hidden, false);
+});
+
+test("same-account token refresh does not abort a pending read or erase an authorized body", async () => {
+  let release;
+  const browser = browserFixture(signedIn, () => new Promise((resolve) => { release = resolve; }));
+  const pending = browser.click();
+  browser.auth.value = JSON.stringify({ token: "refreshed", user: { id: "account" } });
+  browser.listeners["portal-auth-change"]();
+  release({ ok: true, status: 200, json: async () => full() }); await pending;
+  assert.equal(browser.elements.englishFullCommentary.hidden, false);
+  browser.listeners["portal-auth-change"]();
+  assert.equal(browser.elements.englishFullCommentary.hidden, false);
+});
+
+test("returning to a hidden tab restores the read through authorization and never across logout", async () => {
+  let calls = 0;
+  const browser = browserFixture(signedIn, async () => { calls++; return { ok: true, status: 200, json: async () => full() }; });
+  await browser.click(); browser.doc.hidden = true; browser.listeners.visibilitychange();
+  assert.equal(browser.elements.englishFullCommentary.hidden, true);
+  browser.doc.hidden = false; browser.listeners.visibilitychange(); await new Promise(setImmediate);
+  assert.equal(calls, 2); assert.equal(browser.elements.englishFullCommentary.hidden, false);
+  browser.doc.hidden = true; browser.listeners.visibilitychange();
+  browser.auth.value = null; browser.listeners["portal-auth-change"]();
+  browser.doc.hidden = false; browser.listeners.visibilitychange(); await new Promise(setImmediate);
+  assert.equal(calls, 2); assert.equal(browser.elements.englishFullCommentary.hidden, true);
+});
 
 test("anonymous read opens established login and never sends a private-body request", async () => {
   let calls = 0;
@@ -73,7 +111,7 @@ test("authenticated display uses only the authorized commentary endpoint and doe
   await browser.click(); assert.equal(browser.elements.englishFullCommentary.hidden, false);
   assert.equal(browser.elements.englishFullCommentary.children[0].textContent, full().blocks[0].text);
   assert.match(browser.elements.englishReadStatus.textContent, /2 free full reads/);
-  browser.listeners["portal-auth-change"]();
+  browser.auth.value = null; browser.listeners["portal-auth-change"]();
   assert.equal(browser.elements.englishFullCommentary.hidden, true); assert.equal(browser.elements.englishFullCommentary.children.length, 0);
 });
 test("exhausted allowance opens existing membership request action without displaying a body", async () => {
@@ -96,4 +134,31 @@ test("malformed API body stays undisplayed; hidden/pagehide clears authorized te
   browser.doc.hidden = true; browser.listeners.visibilitychange();
   assert.equal(browser.elements.englishFullCommentary.children.length, 0);
   browser.windowListeners.pagehide(); assert.equal(browser.elements.englishFullCommentary.hidden, true);
+});
+
+
+test("an expired session is cleared before login and the requested read resumes", async () => {
+  let calls = 0;
+  const browser = browserFixture(signedIn, async () => ++calls === 1
+    ? { ok: false, status: 401, json: async () => ({ error: "unauthorized" }) }
+    : { ok: true, status: 200, json: async () => full() });
+  await browser.click();
+  assert.equal(browser.auth.value, null);
+  assert.equal(browser.doc.lastEvent.type, "portal-open-auth");
+  browser.auth.value = signedIn; browser.listeners["portal-auth-change"]();
+  await new Promise(setImmediate);
+  assert.equal(calls, 2); assert.equal(browser.elements.englishFullCommentary.hidden, false);
+});
+
+test("a rejected old token retries the refreshed token without logging out", async () => {
+  let release, calls = 0;
+  const browser = browserFixture(signedIn, async (_url, options) => ++calls === 1
+    ? new Promise(resolve => { release = resolve; })
+    : { ok: true, status: 200, json: async () => full() });
+  const pending = browser.click();
+  browser.auth.value = JSON.stringify({ token: "new-token", user: { id: "account" } });
+  browser.listeners["portal-auth-change"]();
+  release({ ok: false, status: 401, json: async () => ({}) }); await pending; await new Promise(setImmediate);
+  assert.equal(JSON.parse(browser.auth.value).token, "new-token");
+  assert.equal(calls, 2); assert.equal(browser.elements.englishFullCommentary.hidden, false);
 });

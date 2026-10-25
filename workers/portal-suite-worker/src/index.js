@@ -5,6 +5,7 @@ import {
   sourceLeadAdapterEnabled,
 } from "./source-lead-adapter.js";
 import { researchNewsEvidence } from "./research-news.js";
+import { journeyAnalyticsPayload } from "./journey-analytics.js";
 import { readResearchNewsSnapshot, researchNewsPublicUrl } from "./research-news-snapshot.js";
 import {
   membershipEligibleAt,
@@ -362,6 +363,7 @@ const ANALYTICS_EVENT_MAX_BODY_BYTES = 24 * 1024;
 const ANALYTICS_EVENT_MAX_BATCH_SIZE = 20;
 const ANALYTICS_EVENT_WRITE_CONCURRENCY = 4;
 const PUBLIC_ANALYTICS_EVENT_TYPES = new Set([
+  "journey_interaction",
   "account_auth",
   "course_material_request",
   "daily_file_download",
@@ -8356,7 +8358,7 @@ function membershipAnalyticsPayload(payload) {
 }
 
 function analyticsEventFromPayload(request, payload, user, ipHash) {
-  payload = membershipAnalyticsPayload(payload);
+  payload = journeyAnalyticsPayload(membershipAnalyticsPayload(payload));
   const now = new Date();
   const cf = request.cf || {};
   const data = payload && typeof payload.data === "object" && payload.data ? payload.data : {};
@@ -8399,7 +8401,7 @@ function analyticsEventFromPayload(request, payload, user, ipHash) {
     availability: cleanAnalyticsText(data.availability || data.response_status || payload.availability, 40),
     page_ranges: cleanAnalyticsText(data.page_ranges || payload.page_ranges, 120),
     page_range_labels: cleanAnalyticsText(data.page_range_labels || payload.page_range_labels, 160),
-    result_count: cleanAnalyticsNumber(data.result_count),
+    result_count: type === "journey_interaction" ? analyticsOptionalCount(data.result_count) : cleanAnalyticsNumber(data.result_count),
     total_count: cleanAnalyticsNumber(data.total_count),
     cache_status: cleanAnalyticsText(data.cache_status, 60),
     report_id: cleanAnalyticsText(data.report_id || data.id, 120),
@@ -8409,9 +8411,13 @@ function analyticsEventFromPayload(request, payload, user, ipHash) {
     institution: cleanAnalyticsText(data.institution, 160),
     target: cleanAnalyticsText(data.target || data.material_id, 240),
     action: cleanAnalyticsText(data.action, 80),
-    ...(type === "membership_request" ? {
+    ...(["membership_request", "journey_interaction", "form_confirmation"].includes(type) ? {
       measurement_version: data.measurement_version,
       request_kind: data.request_kind,
+    } : {}),
+    ...(["journey_interaction", "form_confirmation"].includes(type) ? {
+      acknowledgement_status: data.acknowledgement_status,
+      deduplicated: data.deduplicated,
     } : {}),
     status: cleanAnalyticsText(data.status || data.response_status, 80),
     access_state: cleanAnalyticsText(data.access_state, 80),
@@ -8422,9 +8428,9 @@ function analyticsEventFromPayload(request, payload, user, ipHash) {
     item_count: cleanAnalyticsNumber(data.item_count),
     region_count: cleanAnalyticsNumber(data.region_count),
     tier: cleanAnalyticsText(data.tier, 40),
-    count: cleanAnalyticsNumber(data.count),
+    count: type === "journey_interaction" ? analyticsOptionalCount(data.count) : cleanAnalyticsNumber(data.count),
     limit: data.limit === null ? null : cleanAnalyticsNumber(data.limit),
-    duration_ms: cleanAnalyticsNumber(data.duration_ms),
+    duration_ms: ["journey_interaction", "form_confirmation", "report_open"].includes(type) ? analyticsOptionalCount(data.duration_ms) : cleanAnalyticsNumber(data.duration_ms),
     error: cleanAnalyticsText(data.error, 180),
     referrer,
     referrer_host: analyticsReferrerHost(data.referrer_host || referrer),
@@ -19032,6 +19038,16 @@ async function sendFormAcknowledgement(env, submissionKey, record) {
       ...(claimed && claimed.etag ? { onlyIf: { etagMatches: claimed.etag } } : {}),
       httpMetadata: metadata,
     });
+    const requestKind = String(submissionKey).startsWith("registration:") ? "registration"
+      : /course/.test(submissionKey) ? "course" : /membership/.test(submissionKey) ? "membership"
+      : /feedback/.test(submissionKey) ? "feedback" : /newsfeed/.test(submissionKey) ? "newsfeed"
+      : /report-chat/.test(submissionKey) ? "research" : /report-requests/.test(submissionKey) ? "report" : "unknown";
+    await persistAnalyticsEvent(new Request("https://portal.example.invalid/form-confirmation"), env, {
+      type: "form_confirmation", path: "/form-confirmation", data: {
+        measurement_version: "journey-v1", request_kind: requestKind, action: "provider_result",
+        status: status === "sent" ? "provider_accepted" : status,
+      },
+    }, null).catch(() => null);
     return { status };
   } catch (_error) {
     console.error("Form acknowledgement could not be recorded or completed.");
