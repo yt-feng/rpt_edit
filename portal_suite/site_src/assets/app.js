@@ -1454,6 +1454,8 @@
   function initReportDiscussion(item, workerUrl, source = "catalog", related = []) {
     if (!workerUrl || !item?.id) return;
     readerReportContexts.set(String(item.id), { item, source, related });
+    // Hot reports retain their established moderator alias and ordering tools.
+    if (source === HOT_REPORT_SOURCE) return;
     const detail = document.getElementById("detail") || document.getElementById("externalDetail");
     if (!detail) return;
     let host = document.getElementById("reportDiscussionHost");
@@ -12929,6 +12931,7 @@
           </div>
           <div id="externalDetailDeliveryStatus" class="status-line" aria-live="polite"></div>
         </section>
+        <div id="reportDiscussionHost">${hotReportCommentsMarkup()}</div>
         ${externalRelatedMarkup()}
       `;
       const form = document.getElementById("externalDetailForm");
@@ -13010,6 +13013,7 @@
         }
       });
       initResilientPasswordInput(input, item.id, passwordFromLink, setStatus);
+      initHotReportComments(item, workerUrl);
       searchIndexPromise.then(() => initExternalRelated(
         item,
         workerUrl,

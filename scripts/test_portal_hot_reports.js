@@ -292,9 +292,15 @@ assert.doesNotMatch(commentOrderHandler, /Promise\.all|hotReportCommentKey/, "re
 assert.match(
   app,
   /item = await fetchDocDetailItem\(workerUrl, item\);\s*initReportDiscussion\(item, workerUrl, item\.source \|\| EXTERNAL_SOURCE\)/,
-  "all external report kinds, including hot reports, must mount the shared discussion after their identity resolves",
+  "resolved external reports must initialize their source-specific discussion context",
 );
-assert.doesNotMatch(app, /\$\{hotReportCommentsMarkup\(\)\}/, "hot reports must not render a duplicate legacy comment box");
+const discussionInitializer = extractFunction(app, "initReportDiscussion");
+assert.match(discussionInitializer, /readerReportContexts\.set[\s\S]*?if \(source === HOT_REPORT_SOURCE\) return;/,
+  "hot reports must retain reader context but skip the generic discussion box");
+assert.match(app, /isHotReportItem\(item\)[\s\S]*?\$\{hotReportCommentsMarkup\(\)\}[\s\S]*?\$\{externalRelatedMarkup\(\)\}/,
+  "hot report comment and moderator tools must remain before related reports");
+assert.match(app, /initResilientPasswordInput\(input, item\.id, passwordFromLink, setStatus\);\s*initHotReportComments\(item, workerUrl\);/,
+  "hot report comments must keep their posting, alias and ordering event handlers");
 assert.match(worker, /listHotComments:[^\n]*listHotReportCommentRows/, "shared discussion must retain existing hot-report comments");
 assert.match(
   styles,
