@@ -1,6 +1,7 @@
 (() => {
   "use strict";
 
+  const RUNTIME_SCRIPT_URL = document.currentScript && document.currentScript.src;
   const STARTED_AT = Date.parse("2019-10-03T00:00:00+08:00");
   const SECOND = 1000;
   const DAY = 24 * 60 * 60 * SECOND;
@@ -76,7 +77,23 @@
     });
   }
 
+  function loadFeedback() {
+    if (window.PortalFeedback || document.querySelector("script[data-site-feedback-loader]")) return;
+    const base = RUNTIME_SCRIPT_URL || new URL("/assets/site-runtime.js", window.location.href).href;
+    const stylesheet = document.createElement("link");
+    stylesheet.rel = "stylesheet";
+    stylesheet.href = new URL("site-feedback.css?v=feedback-v1", base).href;
+    stylesheet.dataset.siteFeedbackStyle = "";
+    document.head.append(stylesheet);
+    const script = document.createElement("script");
+    script.src = new URL("site-feedback.js?v=feedback-v1", base).href;
+    script.async = true;
+    script.dataset.siteFeedbackLoader = "";
+    document.head.append(script);
+  }
+
   function startCounter() {
+    loadFeedback();
     ensurePrimaryNavigation();
     const banner = createRuntimeBanner() || document.querySelector("[data-site-runtime]");
     const value = banner && banner.querySelector("[data-site-runtime-value]");

@@ -1422,6 +1422,80 @@
     }
   }
 
+  const readerAssetLoads = new Map();
+  const readerReportContexts = new Map();
+  function loadReaderAsset(name, globalName) {
+    if (window[globalName]) return Promise.resolve(window[globalName]);
+    if (readerAssetLoads.has(name)) return readerAssetLoads.get(name);
+    const sources = {
+      discussion: ["/assets/report-discussion.js?v=discussion-v1", "/assets/report-discussion.css?v=discussion-v1"],
+      invitation: ["/assets/download-invitation.js?v=invitation-v1", "/assets/download-invitation.css?v=invitation-v1"],
+    };
+    const promise = new Promise((resolve, reject) => {
+      const link = document.createElement("link");
+      link.rel = "stylesheet"; link.href = sources[name][1]; document.head.append(link);
+      const script = document.createElement("script");
+      script.src = sources[name][0]; script.async = true;
+      const timer = window.setTimeout(fail, 15000);
+      function fail() {
+        window.clearTimeout(timer); script.remove(); link.remove(); readerAssetLoads.delete(name);
+        reject(new Error("页面工具暂时未加载成功，请刷新重试。"));
+      }
+      script.onload = () => {
+        window.clearTimeout(timer);
+        if (window[globalName]) resolve(window[globalName]); else fail();
+      };
+      script.onerror = fail; document.head.append(script);
+    });
+    readerAssetLoads.set(name, promise);
+    return promise;
+  }
+
+  function initReportDiscussion(item, workerUrl, source = "catalog", related = []) {
+    if (!workerUrl || !item?.id) return;
+    readerReportContexts.set(String(item.id), { item, source, related });
+    const detail = document.getElementById("detail") || document.getElementById("externalDetail");
+    if (!detail) return;
+    let host = document.getElementById("reportDiscussionHost");
+    if (!host) {
+      host = document.createElement("div"); host.id = "reportDiscussionHost"; detail.after(host);
+    }
+    host.dataset.reportId = String(item.id);
+    loadReaderAsset("discussion", "PortalDiscussion").then((module) => {
+      if (host.dataset.reportId !== String(item.id)) return;
+      module.mount(host, { item, source, workerUrl, getSession: loadAuthSession, authHeaders,
+        onLogin: () => showAccountModal(workerUrl, { item, source, mode: "login", placement: "report_discussion", resumeIntent: true }) });
+    }).catch(() => { host.textContent = "讨论区暂时未加载成功，请刷新重试。"; });
+  }
+
+  function showDownloadInvitation(item, workerUrl, source = "catalog") {
+    const detail = document.getElementById("detail") || document.getElementById("externalDetail");
+    if (!detail || !item?.id) return;
+    let host = document.getElementById("downloadInvitationHost");
+    if (!host) {
+      host = document.createElement("div"); host.id = "downloadInvitationHost";
+      const anchor = detail.querySelector(".unlock-box") || detail.firstElementChild;
+      if (anchor) anchor.after(host); else detail.append(host);
+    }
+    const context = readerReportContexts.get(String(item.id));
+    const related = (context?.related || []).slice(0, 3).map((row) => ({
+      id: row.id, title: titleZhText(row) || titleText(row), href: reportPageUrl(row.id),
+    }));
+    if (!related.length) {
+      document.querySelectorAll(".related-row.report-link").forEach((link) => {
+        if (related.length < 3) related.push({ id: link.dataset.id, title: link.textContent.trim().slice(0, 200), href: reportPageUrl(link.dataset.id) });
+      });
+    }
+    loadReaderAsset("invitation", "PortalDownloadInvitation").then((module) => module.show({
+      container: host, item, source, related, getSession: loadAuthSession,
+      onRegister: () => showAccountModal(workerUrl, { item, source, mode: "register", placement: "post_download", resumeIntent: true }),
+      track: (action, data = {}) => trackEvent(workerUrl, action === "related_open" ? "report_open" : "account_auth", {
+        ...analyticsReportPayload(item, source), action: `post_download_${action}`, placement: "post_download",
+        status: "success", ...(data.report_id ? { report_id: data.report_id, parent_report_id: item.id } : {}),
+      }),
+    })).catch(() => {});
+  }
+
   let accountServicesLoad = null;
   function loadAccountServices() {
     if (window.PortalAccountServices) return Promise.resolve(window.PortalAccountServices);
@@ -2365,7 +2439,7 @@
           recordMembershipOpen();
           focusMembershipRequest();
         }
-        document.dispatchEvent(new CustomEvent("portal-auth-complete", { detail: { resumeIntent: context.resumeIntent === true && !continueMembershipRequest, placement: authPlacement } }));
+        document.dispatchEvent(new CustomEvent("portal-auth-complete", { detail: { resumeIntent: context.resumeIntent === true && !continueMembershipRequest, placement: authPlacement, action: data.recovered ? "login_recovered" : mode } }));
         if (context.resumeIntent && !continueMembershipRequest) {
           trackEvent(workerUrl, "account_auth", { action: "intent_resumed", placement: authPlacement, status: "success" });
           finish();
@@ -11325,6 +11399,7 @@
     statusTarget("文件已就绪，正在下载…");
     const blob = await responseBlobWithProgress(response, progress);
     triggerBlobDownload(blob, response.headers.get("Content-Disposition"), item.filename);
+    showDownloadInvitation(item, workerUrl, "catalog");
     setDownloadMessage(progress, "下载完成，浏览器正在保存文件。", 100);
     trackEvent(workerUrl, "download_success", {
       ...analyticsReportPayload(item, "catalog"),
@@ -11870,6 +11945,7 @@
     };
 
     initDetailAdmin(item, workerUrl);
+    initReportDiscussion(item, workerUrl, "catalog", related);
     initTextOnlyTextAccess(item, workerUrl);
     initTextOnlyPdfUpload(item, workerUrl);
     initReportAccessControls(item, workerUrl, "catalog", (statusTarget) => (
@@ -11938,6 +12014,7 @@
 
         const blob = await response.blob();
         triggerBlobDownload(blob, response.headers.get("Content-Disposition"), item.filename);
+        showDownloadInvitation(item, workerUrl, "catalog");
         if (!session && input.value) rememberDeliveryPassword(item.id, input.value);
         trackEvent(workerUrl, "download_success", {
           ...analyticsReportPayload(item, "catalog"),
@@ -12437,6 +12514,7 @@
     }
     const blob = await response.blob();
     triggerBlobDownload(blob, response.headers.get("Content-Disposition"), `${item.id}.pdf`);
+    showDownloadInvitation(item, workerUrl, item.source || EXTERNAL_SOURCE);
     rememberDeliveryPassword(item.id, password);
     trackEvent(workerUrl, "download_success", {
       ...analyticsReportPayload(item, item.source || EXTERNAL_SOURCE),
@@ -12715,6 +12793,7 @@
     initAdminGate(workerUrl);
     initNewsfeedNav();
     item = await fetchDocDetailItem(workerUrl, item);
+    initReportDiscussion(item, workerUrl, item.source || EXTERNAL_SOURCE);
     const passwordFromLink = deliveryPasswordFromLocation(params);
     const shortUrl = externalPageUrl(item, passwordFromLink, {
       compact: isContactOnlyItem(item) && item.__detail_fetched === true,
@@ -12850,7 +12929,6 @@
           </div>
           <div id="externalDetailDeliveryStatus" class="status-line" aria-live="polite"></div>
         </section>
-        ${hotReportCommentsMarkup()}
         ${externalRelatedMarkup()}
       `;
       const form = document.getElementById("externalDetailForm");
@@ -12932,7 +13010,6 @@
         }
       });
       initResilientPasswordInput(input, item.id, passwordFromLink, setStatus);
-      initHotReportComments(item, workerUrl);
       searchIndexPromise.then(() => initExternalRelated(
         item,
         workerUrl,

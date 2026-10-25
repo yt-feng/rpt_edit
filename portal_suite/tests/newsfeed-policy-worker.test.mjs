@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { assertAcknowledgement } from "./form-acknowledgement-fixture.mjs";
 import { createHmac } from "node:crypto";
 import path from "node:path";
 import test from "node:test";
@@ -494,7 +495,8 @@ test("topic-limit requests are member-owned, deduplicated, private, and email th
   assert.equal(first.response.status, 202, JSON.stringify(first.data));
   assert.equal(first.data.ok, true);
   assert.equal(first.data.policy.request_allowed, true);
-  assert.equal(fetchState.emails.length, 1);
+  assert.equal(fetchState.emails.length, 2);
+  assertAcknowledgement(fetchState.emails[1], user.email);
   assert.deepEqual(fetchState.emails[0].to, [{ email: ownerEmail }]);
   assert.equal(JSON.stringify(first.data).includes(ownerEmail), false);
   assert.equal(Object.hasOwn(first.data, "notification_recipient"), false);
@@ -513,7 +515,7 @@ test("topic-limit requests are member-owned, deduplicated, private, and email th
   const duplicate = await submit({ topic: "A fourth member topic", page_path: "/newsfeed.html" });
   assert.equal(duplicate.response.status, 202);
   assert.equal(duplicate.data.deduplicated, true);
-  assert.equal(fetchState.emails.length, 1);
+  assert.equal(fetchState.emails.length, 2);
 
   const honeypot = await jsonRequest(env, "/newsfeed/topics/request", {
     method: "POST",
@@ -521,7 +523,7 @@ test("topic-limit requests are member-owned, deduplicated, private, and email th
     body: JSON.stringify({ topic: "Bot topic", website: "https://spam.invalid" }),
   });
   assert.equal(honeypot.response.status, 202);
-  assert.equal(fetchState.emails.length, 1);
+  assert.equal(fetchState.emails.length, 2);
 
   const belowLimitBucket = new MemoryR2();
   const belowLimitEnv = envFor(belowLimitBucket);

@@ -163,7 +163,12 @@ test("user-facing brand positions use the canonical public brand", () => {
   for (const oldBrand of ["Portal Suite", "Portal Alternate", "Portal 娱乐", "Support Contact", "MacroGate", "Twotigers"]) {
     assert.equal(context.brandFns.publicBrandText(oldBrand), "KC桌面");
   }
-  assert.doesNotMatch(workerSource, /CONTACT_WECHAT|Contact WeChat|联系微信/u);
+  // The user explicitly requested WeChat/WhatsApp in transactional receipts.
+  // Keep the contact isolated from report metadata and account display names.
+  const acknowledgement = extractFunction(workerSource, "formAcknowledgementEmailContent");
+  assert.match(acknowledgement, /联系微信：macroGate/u);
+  assert.match(acknowledgement, /WhatsApp：\+1 \(740\) 875-3400/u);
+  assert.doesNotMatch(workerSource.replace(acknowledgement, ""), /CONTACT_WECHAT|Contact WeChat|联系微信/u);
   assert.match(workerSource, /embedded-v2:/u);
   assert.doesNotMatch(workerSource, /embedded-v1:/u);
   assert.equal(context.brandFns.publicAccountDisplayName("Twotigers", "super"), "KC桌面管理员");

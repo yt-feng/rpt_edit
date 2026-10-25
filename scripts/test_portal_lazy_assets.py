@@ -8,9 +8,13 @@ from urllib.parse import parse_qs, urljoin, urlsplit
 
 import build_portal_locales as locales
 from build_portal_suite_site import version_assets
-from portal_lazy_assets import fingerprint_newsfeed_loader
+from portal_lazy_assets import fingerprint_newsfeed_loader, fingerprint_reader_loaders
 
 SOURCE_ASSETS = Path(__file__).resolve().parents[1] / "portal_suite/site_src/assets"
+READER_ASSETS = {
+    "app.js": ("report-discussion.js", "report-discussion.css", "download-invitation.js", "download-invitation.css"),
+    "site-runtime.js": ("site-feedback.js", "site-feedback.css"),
+}
 
 
 class LazyAssetTests(unittest.TestCase):
@@ -38,6 +42,8 @@ class LazyAssetTests(unittest.TestCase):
             module = root / "assets/newsfeed-app.js"
             page = root / "newsfeed.html"
             app.write_bytes((SOURCE_ASSETS / "app.js").read_bytes())
+            for asset in READER_ASSETS["app.js"]:
+                (root / "assets" / asset).write_bytes((SOURCE_ASSETS / asset).read_bytes())
             module.write_bytes((SOURCE_ASSETS / "newsfeed-app.js").read_bytes())
             page.write_text('<html><body><script src="assets/app.js?v=old"></script></body></html>')
             versions = []
@@ -107,6 +113,71 @@ class LazyAssetTests(unittest.TestCase):
                 child_versions.append(child_digest)
             self.assertEqual(len(set(outputs)), 3)
             self.assertEqual(len(set(child_versions)), 3)
+
+    def test_reader_javascript_and_css_changes_invalidate_loader_and_html(self):
+        # Exercise every lazy dependency through the production fingerprint
+        # chain. CSS-only changes must invalidate the loader just like JS.
+        for loader_name, assets in READER_ASSETS.items():
+            for changed_asset in assets:
+                with self.subTest(loader=loader_name, changed=changed_asset), tempfile.TemporaryDirectory() as temporary:
+                    root = Path(temporary)
+                    (root / "assets").mkdir()
+                    loader = root / "assets" / loader_name
+                    loader.write_text("\n".join(f'load("/assets/{name}?v=old");' for name in assets))
+                    page = root / "report.html"
+                    page.write_text(f'<script src="assets/{loader_name}?v=old"></script>')
+                    for name in assets:
+                        (root / "assets" / name).write_text(f"Initial content for {name}")
+                    version_assets(root)
+                    original_loader, original_page = loader.read_bytes(), page.read_bytes()
+                    unchanged_hashes = {name: hashlib.sha256((root / "assets" / name).read_bytes()).hexdigest()[:12] for name in assets}
+                    child = root / "assets" / changed_asset
+                    child.write_text(child.read_text() + "\n/* Child-only revision */\n")
+                    version_assets(root)
+                    child_digest = hashlib.sha256(child.read_bytes()).hexdigest()[:12]
+                    self.assertIn(f"{changed_asset}?v={child_digest}", loader.read_text())
+                    self.assertNotEqual(original_loader, loader.read_bytes())
+                    self.assertNotEqual(original_page, page.read_bytes())
+                    loader_digest = hashlib.sha1(loader.read_bytes()).hexdigest()[:8]
+                    self.assertIn(f'assets/{loader_name}?v={loader_digest}', page.read_text())
+                    for name in assets:
+                        if name != changed_asset:
+                            self.assertIn(f"{name}?v={unchanged_hashes[name]}", loader.read_text())
+                    completed = loader.read_bytes(), page.read_bytes()
+                    version_assets(root)
+                    self.assertEqual(completed, (loader.read_bytes(), page.read_bytes()))
+
+    def test_each_referenced_reader_dependency_is_required(self):
+        for loader_name, assets in READER_ASSETS.items():
+            for missing in assets:
+                with self.subTest(loader=loader_name, missing=missing), tempfile.TemporaryDirectory() as temporary:
+                    root = Path(temporary)
+                    (root / "assets").mkdir()
+                    (root / "assets" / loader_name).write_text("\n".join(f'load("/assets/{name}?v=old");' for name in assets))
+                    for name in assets:
+                        if name != missing:
+                            (root / "assets" / name).write_text("Available dependency")
+                    with self.assertRaisesRegex(ValueError, re.escape(f"Reader asset is missing: {missing}")):
+                        fingerprint_reader_loaders(root)
+
+    def test_legacy_pages_without_reader_loaders_need_no_reader_assets(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            # A page without assets and an older ordinary app both stay valid.
+            fingerprint_reader_loaders(root)
+            (root / "assets").mkdir()
+            app = root / "assets/app.js"
+            app.write_text('const legacyApplication = "no lazy reader modules";')
+            runtime = root / "assets/site-runtime.js"
+            runtime.write_text('const clockOnlyRuntime = true;')
+            originals = app.read_bytes(), runtime.read_bytes()
+            page = root / "index.html"
+            page.write_text('<script src="assets/app.js"></script><script src="assets/site-runtime.js"></script>')
+            version_assets(root)
+            self.assertEqual(originals, (app.read_bytes(), runtime.read_bytes()))
+            for loader in (app, runtime):
+                digest = hashlib.sha1(loader.read_bytes()).hexdigest()[:8]
+                self.assertIn(f'assets/{loader.name}?v={digest}', page.read_text())
 
     def test_missing_module_fails_before_publication(self):
         with tempfile.TemporaryDirectory() as temporary:

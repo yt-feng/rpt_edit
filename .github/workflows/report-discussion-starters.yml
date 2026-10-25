@@ -1,0 +1,50 @@
+name: New report discussion starters
+
+on:
+  schedule:
+    - cron: "13,43 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: report-discussion-starters
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    if: ${{ github.ref == 'refs/heads/main' && vars.PORTAL_AUTOMATION_ENABLED == 'true' }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github/workflows/report-discussion-starters.yml
+            scripts/collect_report_discussion_starters.py
+            scripts/test_collect_report_discussion_starters.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Test new-report baseline and generation boundaries
+        run: python3 -B scripts/test_collect_report_discussion_starters.py
+
+      - name: Install private storage client
+        run: python3 -m pip install --disable-pip-version-check "boto3>=1.36,<2"
+
+      - name: Baseline catalog and generate newly discovered report starters
+        env:
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+          PORTAL_WORKER_URL: ${{ secrets.PORTAL_WORKER_URL }}
+          OPS_ALERT_SIGNING_KEY: ${{ secrets.OPS_ALERT_SIGNING_KEY || secrets.PASSWORD_SECRET }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: python3 -B scripts/collect_report_discussion_starters.py --max-batch 20

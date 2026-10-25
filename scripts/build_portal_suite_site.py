@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from portal_lazy_assets import fingerprint_newsfeed_loader
+from portal_lazy_assets import fingerprint_newsfeed_loader, fingerprint_reader_loaders
 from portal_discovery_quality import (
     ReportSourceIndex, editorial_topic_labels, original_report_names,
     repair_institution_prefix, research_entities, sentence_excerpt, title_quality_flags,
@@ -4866,6 +4866,7 @@ def version_assets(output: Path) -> None:
     effect immediately. Only busts when the file content actually changes.
     """
     fingerprint_newsfeed_loader(output)
+    fingerprint_reader_loaders(output)
     versions: dict[str, str] = {}
     for rel in (
         "assets/app.js",
