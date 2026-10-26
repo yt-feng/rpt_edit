@@ -201,6 +201,31 @@ class HotfixTests(unittest.TestCase):
         self.assertEqual(result, 'copied')
         self.assertEqual(self.client.objects[self.target_prefix+path]['ContentType'], 'text/html')
 
+    def test_exact_destination_reuse_needs_one_head_and_no_source_read(self):
+        path = 'ko/report.html'; source = self.source_prefix+path; target = self.target_prefix+path
+        self.client.objects[target] = copy.deepcopy(self.client.objects[source])
+        self.client.objects.pop(source)
+        with patch.object(self.client, 'head_object', wraps=self.client.head_object) as head:
+            self.assertEqual(hotfix.copy_verified(self.client, self.bucket, source, target,
+                                                 self.manifest['files'][path]), 'reused')
+        self.assertEqual(head.call_count, 1)
+        self.assertEqual(head.call_args.kwargs['Key'], target)
+        self.assertEqual(self.client.trace, [])
+
+    def test_immutable_destination_reuse_requires_exact_release_and_never_overwrites(self):
+        path = 'ko/report.html'; source = self.source_prefix+path; target = self.target_prefix+path
+        self.client.objects[target] = copy.deepcopy(self.client.objects[source])
+        self.client.objects[target]['Metadata']['release-id'] = self.new_release
+        self.assertEqual(hotfix.copy_verified(self.client, self.bucket, source, target,
+                                             self.manifest['files'][path], target_release=self.new_release), 'reused')
+        self.client.objects[target]['Metadata']['release-id'] = self.old_release
+        before = copy.deepcopy(self.client.objects)
+        with self.assertRaisesRegex(RuntimeError, 'Immutable runtime object already exists'):
+            hotfix.copy_verified(self.client, self.bucket, source, target,
+                                 self.manifest['files'][path], target_release=self.new_release)
+        self.assertEqual(self.client.objects, before)
+        self.assertEqual(self.client.trace, [])
+
     def test_asset_symlink_is_rejected_before_mutation(self):
         path = self.source/'assets/course-full.js'; raw = path.read_bytes(); path.unlink()
         target = self.root/'outside.js'; target.write_bytes(raw); path.symlink_to(target)
