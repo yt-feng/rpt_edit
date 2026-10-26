@@ -95,6 +95,18 @@ class EnglishPublicationTests(unittest.TestCase):
         self.assertIn('data-english-commentary-link', (self.root/'index.html').read_text())
         self.assertFalse(any('/releases/' in key for key in self.engine.client.objects))
 
+    def test_published_english_asset_shares_final_account_namespace_and_exact_version(self):
+        from portal_english_ui import account_session_key
+        batch = self.candidate()
+        app = self.root/'assets/app.js'
+        app.write_bytes(app.read_bytes().replace(b'portal_auth_session', b'deployment_auth_session'))
+        self.assemble([batch])
+        raw = (self.root/'assets/english-commentary.js').read_bytes()
+        self.assertEqual(account_session_key(raw, 'SESSION'), 'deployment_auth_session')
+        expected = '/assets/english-commentary.js?v='+digest(raw)[:12]
+        for path in (self.root/'en').rglob('*.html'):
+            self.assertIn(expected, path.read_text())
+
     def test_current_homepage_div_navigation_accepts_approved_english(self):
         batch = self.candidate()
         homepage = (Path(__file__).resolve().parents[1]/'portal_suite/site_src/index.html').read_text()
@@ -234,6 +246,27 @@ class EnglishPublicationTests(unittest.TestCase):
         with self.assertRaisesRegex(ExpansionError, 'preview-only projection'):
             verify_prepared_ledger(self.store, self.original, identity, self.base/'wrong-asset-review')
 
+    def test_old_prepared_session_mismatch_cannot_pass_review_or_resume(self):
+        from portal_english_ui import ui_assets
+        batch = self.candidate()
+        app = self.root/'assets/app.js'
+        app.write_bytes(app.read_bytes().replace(b'portal_auth_session', b'tenant_auth_session'))
+        # Recreate the old publication path: account assets were materialized,
+        # locale assets were not, but every file and preview fingerprint matched.
+        def unbound_assets(root):
+            assets = ui_assets(root)
+            assets['assets/english-commentary.js'] = assets['assets/english-commentary.js'].replace(
+                b'tenant_auth_session', b'portal_auth_session')
+            return assets
+        with mock.patch('portal_english_publication.ui_assets', side_effect=unbound_assets):
+            self.assemble([batch])
+        identity = self.pin(); before = copy.deepcopy(self.engine.client.objects)
+        with self.assertRaisesRegex(ExpansionError, 'account session keys differ'):
+            verify_prepared_ledger(self.store, self.original, identity, self.base/'old-review')
+        with self.assertRaisesRegex(ExpansionError, 'account session keys differ'):
+            recover_prepared(self.store, self.original, identity, self.base/'old-resume')
+        self.assertEqual(self.engine.client.objects, before)
+
     def test_missing_shared_asset_prevents_prepared_review(self):
         batch = self.candidate(); self.assemble([batch])
         (self.root/'assets/app.js').unlink()
@@ -309,12 +342,18 @@ class EnglishPublicationTests(unittest.TestCase):
             if '/api/english/commentary' in url:
                 from portal_english_ui import preview_item
                 return reply(value={'policy': POLICY, 'total': 1, 'items': [preview_item(item) for item in ledger['items']]})
-            relative = 'en/index.html' if url.endswith('/en/') else url[len(ORIGIN)+1:]
+            relative = 'en/index.html' if url.endswith('/en/') else url[len(ORIGIN)+1:].split('?', 1)[0]
             return reply(raw=(self.root/relative).read_bytes(), headers={'Content-Language': 'en'})
         session = mock.Mock(); session.get.side_effect = get
         session.post.return_value = reply(401, {'error': 'login_required'}, headers={'Cache-Control': 'private, no-store', 'X-Robots-Tag': 'noindex'})
         proof = audit_live(self.store, identity, session)
         self.assertEqual(proof['status'], 'passed'); self.assertEqual(proof['anonymous_full_read'], 'denied')
+        self.assertEqual(proof['english_account_session'], 'matched')
+        app_path = self.root/'assets/app.js'; original_app = app_path.read_bytes()
+        app_path.write_bytes(original_app.replace(b'portal_auth_session', b'changed_auth_session'))
+        with self.assertRaisesRegex(ValueError, 'fingerprint differs'):
+            audit_live(self.store, identity, session)
+        app_path.write_bytes(original_app)
         session.post.return_value = reply(200, {'blocks': [{'tag': 'p', 'text': 'SECRET FULL BODY'}]})
         with self.assertRaises(ExpansionError): audit_live(self.store, identity, session)
         wrong_version = {**identity, 'release_id': 'f'*32}

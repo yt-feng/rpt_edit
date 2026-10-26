@@ -23,7 +23,7 @@ import publish_static_slot as publish
 import portal_english_publication as english
 from check_portal_app_budget import check_budget
 from portal_extended_r2 import R2Store
-from portal_english_ui import PUBLIC_ASSET_NAMES, detail, homepage
+from portal_english_ui import PUBLIC_ASSET_NAMES, bind_account_session, detail, homepage
 from resume_portal_locale_candidate import live_state, read_pinned_manifest
 from verify_prepared_static_slot import read_json_object, read_verified_candidate_body, static_tree_sha256
 
@@ -140,6 +140,11 @@ def build_patch(client: Any, bucket: str, active: dict[str, str], manifest: dict
         require(not root.is_symlink() and path.is_file() and not path.is_symlink() and 0 < path.stat().st_size <= MAX_ASSET_BYTES, 'Materialized UI asset is missing, linked or oversized')
         bodies[relative] = path.read_bytes()
         files[relative] = descriptor_with_body(old[relative], bodies[relative])
+    # The shared app has already been materialized for this deployment. Locale
+    # assets arrive later and must use that exact account storage namespace.
+    relative = 'assets/english-commentary.js'
+    bodies[relative] = bind_account_session(bodies[relative], bodies['assets/app.js'])
+    files[relative] = descriptor_with_body(old[relative], bodies[relative])
     # Bind lazy module URLs to the actual candidate, including retained assets.
     def lazy(match: re.Match[str]) -> str:
         relative = match[1].lstrip('/')

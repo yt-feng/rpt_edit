@@ -6,7 +6,7 @@ import tempfile
 import unittest
 
 from portal_english_commentary import build, make_source, extract_editorial
-from portal_english_ui import detail, homepage, preview_item, ui_assets
+from portal_english_ui import account_session_key, bind_account_session, detail, homepage, preview_item, ui_assets
 from portal_extended_locales import ExpansionError
 from test_portal_english_commentary import DAY, IDENTIFIER, URL, COMMENT, SyntheticTranslator, page
 
@@ -22,6 +22,28 @@ def item(index=1):
 
 
 class EnglishUITests(unittest.TestCase):
+    def test_locale_account_key_is_bound_to_final_materialized_app_before_fingerprinting(self):
+        source = (ROOT/'portal_suite/locale_assets/english-commentary.js').read_bytes()
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary); (root/'assets').mkdir()
+            app = (ROOT/'portal_suite/site_src/assets/app.js').read_bytes().replace(
+                b'portal_auth_session', b'deployment_auth_session')
+            (root/'assets/app.js').write_bytes(app)
+            actual = ui_assets(root)['assets/english-commentary.js']
+            self.assertEqual(account_session_key(actual, 'SESSION'), account_session_key(app, 'AUTH_SESSION_KEY'))
+            self.assertEqual(actual, source.replace(b'portal_auth_session', b'deployment_auth_session'))
+            self.assertEqual(bind_account_session(actual, app), actual)
+            self.assertEqual((ROOT/'portal_suite/locale_assets/english-commentary.js').read_bytes(), source)
+
+    def test_missing_ambiguous_or_nonliteral_account_contract_blocks_assembly(self):
+        script = b'const SESSION = "portal_auth_session";'
+        valid = b'const AUTH_SESSION_KEY = "deployment_auth_session";'
+        for app in (b'', valid+valid, b'const AUTH_SESSION_KEY = dynamicValue;',
+                    b'const AUTH_SESSION_KEY = "";', b'const AUTH_SESSION_KEY = "bad key";'):
+            with self.subTest(app=app), self.assertRaises(ExpansionError): bind_account_session(script, app)
+        for english in (b'', script+script, b'const SESSION = getKey();'):
+            with self.subTest(script=english), self.assertRaises(ExpansionError): bind_account_session(english, valid)
+
     def test_public_projection_cannot_leak_full_body_or_originals_through_unknown_private_fields(self):
         self.assertEqual(set(preview_item(item())), {'id', 'title', 'preview', 'datePublished'})
         for raw in (detail(item()), homepage([item()])):

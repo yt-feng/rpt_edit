@@ -22,9 +22,32 @@ def preview_item(item):
     return value
 
 
-def ui_assets():
-    return {'assets/'+name: (ASSETS/name).read_bytes()
-            for name in ('english-commentary.js', 'english-commentary.css', 'extended-locales.js', 'extended-locales.css')}
+def account_session_key(script: bytes, name: str) -> str:
+    """Read the one literal storage key from a final public account asset."""
+    require(name in {'AUTH_SESSION_KEY', 'SESSION'}, 'Unknown account session declaration')
+    declarations = re.findall(r'\bconst\s+' + name + r'\s*=\s*([^;\n]+);', script.decode('utf-8'))
+    require(len(declarations) == 1, 'Account session declaration is missing or ambiguous')
+    value = re.fullmatch(r'''(["'])([A-Za-z0-9_.:-]{1,128})\1''', declarations[0])
+    require(value is not None, 'Account session key must be a bounded literal')
+    return value[2]
+
+
+def bind_account_session(script: bytes, app: bytes) -> bytes:
+    """Locale assets are added after private rendering; use the final app key."""
+    key = account_session_key(app, 'AUTH_SESSION_KEY')
+    account_session_key(script, 'SESSION')
+    bound = re.sub(r'''(\bconst\s+SESSION\s*=\s*)(["'])[A-Za-z0-9_.:-]{1,128}\2''',
+                   lambda match: match[1] + '"' + key + '"', script.decode('utf-8')).encode('utf-8')
+    require(account_session_key(bound, 'SESSION') == key, 'English account session binding differs')
+    return bound
+
+
+def ui_assets(root=None):
+    assets = {'assets/'+name: (ASSETS/name).read_bytes()
+              for name in ('english-commentary.js', 'english-commentary.css', 'extended-locales.js', 'extended-locales.css')}
+    app = (root or ROOT/'portal_suite/site_src')/'assets/app.js'
+    assets['assets/english-commentary.js'] = bind_account_session(assets['assets/english-commentary.js'], app.read_bytes())
+    return assets
 
 
 def head(title, preview, canonical, *, approved=False, article=None, asset_hashes=None):
