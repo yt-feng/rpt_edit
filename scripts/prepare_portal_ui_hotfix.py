@@ -77,12 +77,14 @@ def source_head(client: Any, bucket: str, key: str, descriptor: dict[str, Any], 
 
 
 def copy_verified(client: Any, bucket: str, source: str, target: str, descriptor: dict[str, Any], *, source_release: str = '', target_release: str = '', retry_sleep: Callable[[float], None] = time.sleep) -> str:
-    source_metadata = source_head(client, bucket, source, descriptor, source_release)
     current = optional_head(client, bucket, target)
     if current and metadata_matches(current, descriptor, target_release):
+        # The destination already matches the pinned candidate descriptor.
+        # Source validation is needed only when an object must be copied.
         return 'reused'
     if target_release:
         require(current is None, 'Immutable runtime object already exists with different metadata')
+    source_metadata = source_head(client, bucket, source, descriptor, source_release)
     args = dict(Bucket=bucket, Key=target, CopySource={'Bucket': bucket, 'Key': source}, CopySourceIfMatch=source_metadata['ETag'], MetadataDirective='COPY')
     if target_release:
         args.update(publish.upload_extra_args(descriptor), MetadataDirective='REPLACE')
