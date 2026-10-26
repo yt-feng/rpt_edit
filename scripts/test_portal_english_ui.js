@@ -1,6 +1,8 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const { readFileSync } = require("node:fs");
+const { execFileSync } = require("node:child_process");
+const path = require("node:path");
 const vm = require("node:vm");
 const { session, validFull, renderBlocks } = require("../portal_suite/locale_assets/english-commentary.js");
 const id = "20261001-aaaaaaaaaaaaaaaa";
@@ -36,26 +38,112 @@ test("approved full text renders only through textContent, not HTML interpolatio
   assert.equal(container.hidden, false);
 });
 
-function browserFixture(initialSession, fetch) {
+function browserFixture(initialSession, fetch, options = {}) {
   function element(id) {
     return { id, hidden: id !== "englishRead", disabled: false, textContent: "", dataset: { commentaryId: "20261001-aaaaaaaaaaaaaaaa" },
       handlers: {}, children: [], addEventListener(name, handler) { this.handlers[name] = handler; },
       replaceChildren(fragment) { this.children = fragment ? fragment.children : []; } };
   }
   const elements = Object.fromEntries(["englishRead", "englishFullCommentary", "englishReadStatus", "englishMembership"].map((key) => [key, element(key)]));
-  const listeners = {}, windowListeners = {}, auth = { value: initialSession };
+  const listeners = {}, windowListeners = {}, auth = {};
+  const storageKey = options.storageKey || "portal_auth_session";
+  const storage = new Map(Object.entries(options.extraStorage || {})), removedKeys = [];
+  if (initialSession != null) storage.set(storageKey, initialSession);
+  Object.defineProperty(auth, "value", {
+    get: () => storage.get(storageKey) || null,
+    set: (value) => value == null ? storage.delete(storageKey) : storage.set(storageKey, value),
+  });
   const doc = { hidden: false, getElementById: (key) => elements[key],
     addEventListener(name, handler) { listeners[name] = handler; },
     dispatchEvent(event) { this.lastEvent = event; if (listeners[event.type]) listeners[event.type](event); },
     createDocumentFragment: () => ({ children: [], append(node) { this.children.push(node); } }),
     createElement: (tag) => ({ tag, textContent: "" }) };
   const context = vm.createContext({ document: doc, window: { addEventListener(name, handler) { windowListeners[name] = handler; } },
-    localStorage: { getItem: () => auth.value, removeItem() { auth.value = null; } }, AbortController, setTimeout, clearTimeout, fetch,
+    localStorage: { getItem: (key) => storage.get(key) || null,
+      removeItem(key) { removedKeys.push(key); storage.delete(key); } }, AbortController, setTimeout, clearTimeout, fetch,
     CustomEvent: class { constructor(type, options) { this.type = type; this.detail = options?.detail; } } });
-  vm.runInContext(readFileSync(require.resolve("../portal_suite/locale_assets/english-commentary.js"), "utf8"), context);
-  return { elements, listeners, windowListeners, doc, auth, click: () => elements.englishRead.handlers.click() };
+  vm.runInContext(options.source || readFileSync(require.resolve("../portal_suite/locale_assets/english-commentary.js"), "utf8"), context);
+  return { elements, listeners, windowListeners, doc, auth, storage, removedKeys, click: () => elements.englishRead.handlers.click() };
 }
 const signedIn = JSON.stringify({ token: "synthetic-session", user: { id: "account" } });
+
+const deployedSessionKey = "synthetic_deployment_auth_session";
+let deployedSource;
+function deployedFixture(initialSession, fetch, options = {}) {
+  if (!deployedSource) {
+    // Exercise the real final-asset binder with the same namespace rewrite as
+    // deployment. The public source alone cannot expose this integration bug.
+    deployedSource = execFileSync("python3", ["-B", "-c", `
+import pathlib, re, sys
+sys.path.insert(0, sys.argv[1])
+from portal_english_ui import bind_account_session
+script = pathlib.Path(sys.argv[2]).read_bytes()
+app = pathlib.Path(sys.argv[3]).read_bytes()
+app, changed = re.subn(rb'const AUTH_SESSION_KEY = "[^"]+";',
+                      ('const AUTH_SESSION_KEY = "'+sys.argv[4]+'";').encode(), app)
+assert changed == 1
+sys.stdout.buffer.write(bind_account_session(script, app))
+`, __dirname, require.resolve("../portal_suite/locale_assets/english-commentary.js"),
+      path.resolve(__dirname, "../portal_suite/site_src/assets/app.js"), deployedSessionKey], { encoding: "utf8" });
+  }
+  return browserFixture(initialSession, fetch, { ...options, source: deployedSource, storageKey: deployedSessionKey });
+}
+
+test("the final deployment namespace reuses the signed-in account and directly reads full commentary", async () => {
+  let calls = 0;
+  const browser = deployedFixture(signedIn, async (url, request) => {
+    calls++;
+    assert.equal(url, "/api/english/commentary/read");
+    assert.equal(request.headers.Authorization, "Bearer synthetic-session");
+    return { ok: true, status: 200, json: async () => full() };
+  });
+  await browser.click();
+  assert.equal(calls, 1); assert.equal(browser.doc.lastEvent, undefined);
+  assert.equal(browser.elements.englishFullCommentary.hidden, false);
+  assert.equal(browser.elements.englishFullCommentary.children[0].textContent, full().blocks[0].text);
+});
+
+test("a deployment session cannot be substituted by the unbound source namespace", async () => {
+  let calls = 0;
+  const browser = deployedFixture(null, async () => { calls++; }, { extraStorage: { portal_auth_session: signedIn } });
+  await browser.click();
+  assert.equal(calls, 0); assert.equal(browser.doc.lastEvent.type, "portal-open-auth");
+  assert.equal(browser.elements.englishFullCommentary.hidden, true);
+});
+
+test("guest login in the deployment namespace resumes the requested read exactly once", async () => {
+  let calls = 0;
+  const browser = deployedFixture(null, async () => { calls++; return { ok: true, status: 200, json: async () => full() }; });
+  await browser.click(); assert.equal(calls, 0);
+  assert.equal(browser.doc.lastEvent.type, "portal-open-auth");
+  browser.auth.value = signedIn;
+  browser.listeners["portal-auth-change"]();
+  browser.listeners["portal-auth-complete"]({ detail: { placement: "english_commentary", resumeIntent: true } });
+  await new Promise(setImmediate);
+  assert.equal(calls, 1); assert.equal(browser.elements.englishFullCommentary.hidden, false);
+});
+
+test("a rejected deployment session clears its actual key while preserving unrelated storage", async () => {
+  const browser = deployedFixture(signedIn, async () => ({ ok: false, status: 401, json: async () => ({ error: "unauthorized" }) }),
+    { extraStorage: { portal_auth_session: "unrelated-source-value" } });
+  await browser.click();
+  assert.equal(browser.auth.value, null);
+  assert.deepEqual(browser.removedKeys, [deployedSessionKey]);
+  assert.equal(browser.storage.get("portal_auth_session"), "unrelated-source-value");
+  assert.equal(browser.doc.lastEvent.type, "portal-open-auth");
+  assert.equal(browser.elements.englishFullCommentary.hidden, true);
+});
+
+test("cross-tab logout under the deployment session key clears previously authorized commentary", async () => {
+  const browser = deployedFixture(signedIn, async () => ({ ok: true, status: 200, json: async () => full() }));
+  await browser.click(); assert.equal(browser.elements.englishFullCommentary.hidden, false);
+  browser.auth.value = null;
+  browser.windowListeners.storage({ key: "portal_auth_session" });
+  assert.equal(browser.elements.englishFullCommentary.hidden, false);
+  browser.windowListeners.storage({ key: deployedSessionKey });
+  assert.equal(browser.elements.englishFullCommentary.hidden, true);
+  assert.equal(browser.elements.englishFullCommentary.children.length, 0);
+});
 
 test("a requested read resumes once after login without requiring a second button click", async () => {
   let calls = 0;

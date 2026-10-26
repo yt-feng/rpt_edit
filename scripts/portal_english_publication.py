@@ -205,7 +205,7 @@ def compose(root, store, source_store, active, batches, workspace):
     require(1 <= len(ordered) <= 5000, 'English approved page bound differs')
     if previous and batches == old_batches:
         require(previous['items'] == ordered, 'Carry-forward cannot change the approved English ledger')
-    assets = ui_assets()
+    assets = ui_assets(root)
     asset_hashes = {}
     for name in PUBLIC_ASSET_NAMES:
         relative = 'assets/'+name
@@ -320,6 +320,7 @@ def preflight_api(session):
 
 
 def audit_live(store, identity, session):
+    from verify_portal_ui_hotfix_live import verify_english_account_session
     response = session.get(ORIGIN+'/.well-known/edge-state', timeout=(10, 30), allow_redirects=False)
     require(response.status_code == 200 and len(response.content) <= 65536
             and all(response.json().get(key) == value for key, value in identity.items()), 'Live English site version differs')
@@ -340,6 +341,8 @@ def audit_live(store, identity, session):
                 and digest(response.content) == expected['sha256'], 'Live English preview/sitemap bytes differ')
         if relative.startswith('en/'):
             require(response.headers.get('Content-Language') == 'en', 'Live English language header differs')
+        if relative == 'en/index.html':
+            verify_english_account_session(ORIGIN, response.content, session)
     response = session.get(ORIGIN+'/api/english/commentary?page=1', timeout=(10, 30), allow_redirects=False)
     require(response.status_code == 200 and len(response.content) <= MAX_MANIFEST, 'Live English public preview API failed')
     value = response.json()
@@ -352,7 +355,8 @@ def audit_live(store, identity, session):
     require('no-store' in response.headers.get('Cache-Control', '')
             and 'noindex' in response.headers.get('X-Robots-Tag', ''), 'Private English API response headers differ')
     return {'site_release': identity['release_id'], 'ledger_sha256': active['ledger_sha256'],
-            'page_count': len(items), 'public_samples': len(samples), 'anonymous_full_read': 'denied', 'status': 'passed'}
+            'page_count': len(items), 'public_samples': len(samples), 'anonymous_full_read': 'denied',
+            'english_account_session': 'matched', 'status': 'passed'}
 
 
 def main():

@@ -2,11 +2,13 @@
 from __future__ import annotations
 import argparse
 import hashlib
+from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
 from urllib.parse import urlsplit
 import requests
+from portal_english_ui import account_session_key
 
 
 def identity(receipt):
@@ -22,6 +24,40 @@ def fetch(session, url, *, body=None):
     if len(response.content) > 4 * 1024 * 1024:
         raise ValueError("Acceptance response exceeds bound")
     return response
+
+
+def verify_english_account_session(origin, page, session, *, cached=None):
+    """Check the deployed scripts referenced by this exact English preview."""
+    references = {name: [] for name in ("app.js", "english-commentary.js")}
+    class Scripts(HTMLParser):
+        def handle_starttag(self, tag, attrs):
+            if tag != "script":
+                return
+            for key, value in attrs:
+                if key != "src" or not value:
+                    continue
+                for name in references:
+                    if urlsplit(value).path == "/assets/" + name:
+                        references[name].append(value)
+        handle_startendtag = handle_starttag
+    parser = Scripts(); parser.feed(page.decode("utf-8")); parser.close()
+    scripts = {}
+    for name, values in references.items():
+        if len(values) != 1 or not re.fullmatch(r"/assets/" + re.escape(name) + r"\?v=[0-9a-f]{12}", values[0]):
+            raise ValueError("English account script reference is missing or ambiguous")
+        url = origin.rstrip("/") + values[0]
+        raw = (cached or {}).get(url)
+        if raw is None:
+            response = fetch(session, url)
+            if response.status_code != 200:
+                raise ValueError("English account script is unavailable")
+            raw = response.content
+        if hashlib.sha256(raw).hexdigest()[:12] != values[0].rsplit("=", 1)[1]:
+            raise ValueError("English account script fingerprint differs")
+        scripts[name] = raw
+    if account_session_key(scripts["app.js"], "AUTH_SESSION_KEY") != account_session_key(scripts["english-commentary.js"], "SESSION"):
+        raise ValueError("English commentary and account session keys differ")
+    return {"english_account_session": "matched"}
 
 
 def verify(origin, receipt, session, *, expect_previous=False):
@@ -42,6 +78,7 @@ def verify(origin, receipt, session, *, expect_previous=False):
     english = sorted(name for name in changes if re.fullmatch(r"en/blog/\d{8}-[0-9a-f]{16}\.html", name))
     if english:
         samples.update(["en/index.html", english[0], english[-1]])
+    checked = {}
     for name in sorted(samples):
         if not re.fullmatch(r"(?:assets/[A-Za-z0-9._-]+|[A-Za-z0-9._-]+\.html|en/(?:index|blog/\d{8}-[0-9a-f]{16})\.html)", name):
             raise ValueError("Unexpected acceptance path")
@@ -54,6 +91,10 @@ def verify(origin, receipt, session, *, expect_previous=False):
         response = fetch(session, url)
         if response.status_code != 200 or len(response.content) != descriptor["size"] or hashlib.sha256(response.content).hexdigest() != digest:
             raise ValueError("Live UI bytes differ from committed candidate")
+        checked[url] = response.content
+    account_session = {}
+    if english:
+        account_session = verify_english_account_session(origin, checked[origin + "/" + english[0]], session, cached=checked)
     health = fetch(session, origin + "/api/health")
     if health.status_code != 200:
         raise ValueError("API health failed")
@@ -69,7 +110,7 @@ def verify(origin, receipt, session, *, expect_previous=False):
     state = fetch(session, origin + "/.well-known/edge-state?ui-hotfix=" + receipt["release_id"])
     if state.status_code != 200 or state.json() != expected:
         raise ValueError("Live release changed during acceptance")
-    return {"status": "passed", "release_id": receipt["release_id"], "public_assets_verified": len(samples), "anonymous_full_reads": "denied"}
+    return {"status": "passed", "release_id": receipt["release_id"], "public_assets_verified": len(samples), "anonymous_full_reads": "denied", **account_session}
 
 
 def main():

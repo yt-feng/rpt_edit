@@ -75,7 +75,8 @@ class HotfixTests(unittest.TestCase):
         bodies.update({path: ('{"retained":' + str(index) + '}').encode() for index, path in enumerate(publish.DEFAULT_RUNTIME_PATHS)})
         for name in hotfix.ASSETS:
             (self.locale/name if name == 'english-commentary.js' else self.source/'assets'/name).write_bytes(f'// replacement {name}\n'.encode())
-        (self.source/'assets/app.js').write_text('const feedback="/assets/site-feedback.js?v=feedback-v1"; const news="assets/newsfeed-app.js?v=old";')
+        (self.source/'assets/app.js').write_text('const AUTH_SESSION_KEY = "deployment_auth_session"; const feedback="/assets/site-feedback.js?v=feedback-v1"; const news="assets/newsfeed-app.js?v=old";')
+        (self.locale/'english-commentary.js').write_text('const SESSION = "portal_auth_session";')
         private_body = {'schema_version': 1, 'policy': english.POLICY, 'locale': 'en', 'content_kind': 'secondary-commentary',
                         'id': '20261024-'+'c'*16, 'title': 'Approved interpretation', 'preview': 'A short approved preview.',
                         'datePublished': '2026-10-24', 'editorial_sha256': 'd'*64, 'blocks': [{'tag': 'p', 'text': 'PRIVATE_AUTHORIZED_BODY_ONLY'}]}
@@ -132,6 +133,8 @@ class HotfixTests(unittest.TestCase):
         root = self.client.objects[self.target_prefix+'report.html']['Body']
         self.assertIn(b'Keep body', root); self.assertNotIn(b'?v=old', root)
         app = self.client.objects[self.target_prefix+'assets/app.js']['Body']
+        self.assertEqual(self.client.objects[self.target_prefix+'assets/english-commentary.js']['Body'],
+                         b'const SESSION = "deployment_auth_session";')
         leaf_hash = result['changed_files']['assets/site-feedback.js']['sha256'][:12].encode()
         self.assertIn(b'/assets/site-feedback.js?v='+leaf_hash, app)
         candidate = json.loads(self.client.objects[publish.manifest_key('b')]['Body'])
