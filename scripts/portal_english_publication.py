@@ -18,7 +18,7 @@ from build_portal_extended_locales import reject_symlinks
 from portal_english_commentary import PREFIX, POLICY, extract_editorial, exact, require, text
 from portal_english_pipeline import (MAX_BODY, MAX_MANIFEST, content_key, hash_value,
                                      put_verified, read_json, restore_candidate, verify_body)
-from portal_english_ui import PUBLIC_ASSET_NAMES, detail, homepage, preview_item, ui_assets
+from portal_english_ui import PUBLIC_ASSET_NAMES, account_session_key, detail, homepage, preview_item, ui_assets
 from portal_extended_locales import ORIGIN, digest, stable_bytes
 from portal_extended_r2 import DEFAULT_PREFIX, R2NotFound, R2Store, safe_relative
 
@@ -154,15 +154,19 @@ def verify_prepared_ledger(store, source_store, identity, workspace):
     # prepare_release materializes deployment-specific assets; this reviewer
     # runs in a clean checkout. Reproduce URLs from the exact uploaded tree,
     # never from this runner's source-file hashes.
-    asset_hashes = {}
+    asset_hashes, session_keys = {}, {}
     for name in PUBLIC_ASSET_NAMES:
         descriptor = pinned['files'].get('assets/'+name)
         require(isinstance(descriptor, dict), 'Prepared English public asset is missing')
         hash_value(descriptor['sha256'])
-        read_verified_candidate_body(store.client, store.bucket,
-                                     slot_prefix(identity['slot'])+'assets/'+name,
-                                     descriptor, maximum=MAX_MANIFEST)
+        raw = read_verified_candidate_body(store.client, store.bucket,
+                                           slot_prefix(identity['slot'])+'assets/'+name,
+                                           descriptor, maximum=MAX_MANIFEST)
+        if name in {'app.js', 'english-commentary.js'}:
+            session_keys[name] = account_session_key(raw, 'AUTH_SESSION_KEY' if name == 'app.js' else 'SESSION')
         asset_hashes[name] = descriptor['sha256']
+    require(session_keys['app.js'] == session_keys['english-commentary.js'],
+            'Prepared English commentary and account session keys differ')
     expected = {'en/index.html': homepage(ordered, approved=True, asset_hashes=asset_hashes)}
     expected.update({f'en/blog/{item["id"]}.html': detail(item, approved=True, asset_hashes=asset_hashes)
                      for item in ordered})

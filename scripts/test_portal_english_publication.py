@@ -246,6 +246,27 @@ class EnglishPublicationTests(unittest.TestCase):
         with self.assertRaisesRegex(ExpansionError, 'preview-only projection'):
             verify_prepared_ledger(self.store, self.original, identity, self.base/'wrong-asset-review')
 
+    def test_old_prepared_session_mismatch_cannot_pass_review_or_resume(self):
+        from portal_english_ui import ui_assets
+        batch = self.candidate()
+        app = self.root/'assets/app.js'
+        app.write_bytes(app.read_bytes().replace(b'portal_auth_session', b'tenant_auth_session'))
+        # Recreate the old publication path: account assets were materialized,
+        # locale assets were not, but every file and preview fingerprint matched.
+        def unbound_assets(root):
+            assets = ui_assets(root)
+            assets['assets/english-commentary.js'] = assets['assets/english-commentary.js'].replace(
+                b'tenant_auth_session', b'portal_auth_session')
+            return assets
+        with mock.patch('portal_english_publication.ui_assets', side_effect=unbound_assets):
+            self.assemble([batch])
+        identity = self.pin(); before = copy.deepcopy(self.engine.client.objects)
+        with self.assertRaisesRegex(ExpansionError, 'account session keys differ'):
+            verify_prepared_ledger(self.store, self.original, identity, self.base/'old-review')
+        with self.assertRaisesRegex(ExpansionError, 'account session keys differ'):
+            recover_prepared(self.store, self.original, identity, self.base/'old-resume')
+        self.assertEqual(self.engine.client.objects, before)
+
     def test_missing_shared_asset_prevents_prepared_review(self):
         batch = self.candidate(); self.assemble([batch])
         (self.root/'assets/app.js').unlink()
