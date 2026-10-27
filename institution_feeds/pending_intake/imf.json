@@ -1,5 +1,21 @@
 {
   "schema": 1,
   "institution": "imf",
-  "items": {}
+  "items": {
+    "imf:4e0e3820afea9f3adfb4d7b12e152112d35df87f8da976a95595ccc9a394": {
+      "item": {
+        "title": "Republic of Madagascar: Third and Fourth Reviews Under the Extend Credit Facility Arrangement, Request for a Waiver of Nonobservance of a Performance Criterion, Modification of Performance Criteria, Financing Assurances Review",
+        "source_url": "https://www.imf.org/en/publications/cr/issues/2026/10/26/republic-of-madagascar-third-and-fourth-reviews-under-the-extend-credit-facility-580773",
+        "guid": "4e0e3820afea9f3adfb4d7b12e152112d35df87f8da976a95595ccc9a394",
+        "date": "2026-10-26T04:00:00+00:00",
+        "pdf_candidates": [],
+        "scrape_url": "https://www.imf.org/en/publications/cr/issues/2026/10/26/republic-of-madagascar-third-and-fourth-reviews-under-the-extend-credit-facility-580773",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/cr/issues/2026/10/26/republic-of-madagascar-third-and-fourth-reviews-under-the-extend-credit-facility-580773"
+      },
+      "admitted_at": "2026-10-27T01:17:26.026047+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-10-27T01:17:26.026047+00:00",
+      "attempts": 1
+    }
+  }
 }
