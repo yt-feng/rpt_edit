@@ -1,6 +1,6 @@
 {
   "feed_url": "https://www.ark-invest.com/feed",
-  "date_folder": "261022",
+  "date_folder": "261027",
   "since_days": 1,
   "max_pub_age_days": 120,
   "include_types": [
@@ -9,24 +9,24 @@
     "newsletters",
     "white papers"
   ],
-  "feed_item_count": 1414,
+  "feed_item_count": 1415,
   "selected_count": 1,
   "written": [
     {
       "source": "ark_invest_feed",
       "institution_name": "木头姐ARK",
-      "title": "The DeFi Quarterly: Q3 2026",
-      "type": "Crypto Reports",
-      "category": "Crypto Reports",
-      "source_url": "https://www.ark-invest.com/crypto-reports/defi-quarterly-q3-2026",
-      "guid": "https://www.ark-invest.com/crypto-reports/defi-quarterly-q3-2026",
-      "pub_date": "Wed, 21 Oct 2026 13:00:00 GMT",
-      "updated": "2026-10-21T22:44:26.925+00:00",
-      "event_datetime": "2026-10-21T22:44:26.925000+00:00",
-      "feed_key": "895dd2bb12109015",
+      "title": "#531: Tesla Wants To Own Transportation Of All Kinds, & More",
+      "type": "Newsletters",
+      "category": "Newsletters",
+      "source_url": "https://www.ark-invest.com/newsletters/issue-531",
+      "guid": "https://www.ark-invest.com/newsletters/issue-531",
+      "pub_date": "Mon, 26 Oct 2026 21:45:00 GMT",
+      "updated": "2026-10-27T01:49:38.803+00:00",
+      "event_datetime": "2026-10-27T01:49:38.803000+00:00",
+      "feed_key": "b6e2522f6ccdbf55",
       "source_mineru": "source_mineru.md",
       "note": "note.md",
-      "output_dir": "xhs_notes/ark/261022/0001-ARK_The-DeFi-Quarterly-Q3-2026_895dd2bb12109015"
+      "output_dir": "xhs_notes/ark/261027/0001-ARK_531-Tesla-Wants-To-Own-Transportation-Of-All-Kinds-More_b6e2522f6ccdbf55"
     }
   ],
   "status": "ok"
