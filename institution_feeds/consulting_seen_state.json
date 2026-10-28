@@ -1,34 +1,6 @@
 {
   "version": 1,
   "items": {
-    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/people%20and%20organizational%20performance/our%20insights/the%20state%20of%20organizations/2026/the-state-of-organizations-2026-vf.pdf": {
-      "first_seen": "2026-06-29",
-      "status": "downloaded"
-    },
-    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/quantumblack/our%20insights/the%20state%20of%20ai/november%202025/the-state-of-ai-2025-agents-innovation_cmyk-v1.pdf": {
-      "first_seen": "2026-06-29",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/a-new-playbook-for-commercial-real-estate-investors": {
-      "first_seen": "2026-06-29",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/how-the-factory-of-the-future-reshapes-manufacturing": {
-      "first_seen": "2026-06-29",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/how-cpg-retail-leaders-maximize-ai-roi": {
-      "first_seen": "2026-06-29",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/how-ai-is-reshaping-the-global-food-system": {
-      "first_seen": "2026-06-29",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/insurance-value-creation-an-early-look-at-returns": {
-      "first_seen": "2026-06-29",
-      "status": "downloaded"
-    },
     "bcg:https://www.bcg.com/publications/2026/us-and-china-ai-strategy-causing-global-ai-divide": {
       "first_seen": "2026-06-30",
       "status": "downloaded"
@@ -1651,6 +1623,50 @@
     },
     "bcg:https://www.bcg.com/publications/2026/balance-ai-innovation-and-governance": {
       "first_seen": "2026-10-27",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/mckinsey%20global%20institute/our%20research/at%20250%20sustaining%20americas%20competitive%20edge/at-250-sustaining-americas-competitive-edge-final.pdf": {
+      "first_seen": "2026-10-28",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/building-better-with-lean-construction": {
+      "first_seen": "2026-10-28",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/telcos-new-paths-to-value-in-the-ai-era": {
+      "first_seen": "2026-10-28",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-ai-can-reshape-sales-channels-in-emerging-markets": {
+      "first_seen": "2026-10-28",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-retailers-can-improve-margins-to-drive-returns": {
+      "first_seen": "2026-10-28",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/cios-openclaw-and-the-new-wave-of-ai-agents": {
+      "first_seen": "2026-10-28",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-agentic-ai-is-transforming-retail-merchandising": {
+      "first_seen": "2026-10-28",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/consumers-are-ready-for-ai-health-care-are-systems": {
+      "first_seen": "2026-10-28",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/making-ai-productivity-deliver-real-value": {
+      "first_seen": "2026-10-28",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/why-ai-in-b2b-pricing-isnt-plug-and-play": {
+      "first_seen": "2026-10-28",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/the-cfos-ai-agenda-from-automation-to-advantage": {
+      "first_seen": "2026-10-28",
       "status": "downloaded"
     }
   }
