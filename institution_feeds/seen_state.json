@@ -4500,6 +4500,30 @@
     "wto:https://www.wto.org/english/news_e/news26_e/refrm_23oct26_524_e.htm": {
       "first_seen": "2026-10-27",
       "status": "no_pdf"
+    },
+    "worldbank:099955110272640957": {
+      "first_seen": "2026-10-28",
+      "status": "downloaded"
+    },
+    "worldbank:099029210272612056": {
+      "first_seen": "2026-10-28",
+      "status": "downloaded"
+    },
+    "worldbank:099012310272610710": {
+      "first_seen": "2026-10-28",
+      "status": "downloaded"
+    },
+    "worldbank:099022010272678114": {
+      "first_seen": "2026-10-28",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/bisbull140.htm": {
+      "first_seen": "2026-10-28",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/safe_phl_21oct26_520_e.htm": {
+      "first_seen": "2026-10-28",
+      "status": "too_old"
     }
   }
 }
