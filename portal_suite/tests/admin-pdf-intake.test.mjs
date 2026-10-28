@@ -411,7 +411,7 @@ test("stale active upload leases become retryable failures and old terminal reco
   assert.equal(bucket.json(`_admin-uploads/v1/items/${UPLOAD_A}.json`).status, "failed");
 });
 
-test("contact-only upload binds a request, exposes availability, enforces three-month access, and never overwrites", async () => {
+test("contact-only upload binds a request, exposes availability, allows one-month membership, and never overwrites", async () => {
   const bucket = new MemoryR2();
   const admin = await seedUser(bucket, ADMIN);
   const token = userToken(admin);
@@ -503,16 +503,17 @@ test("contact-only upload binds a request, exposes availability, enforces three-
   const monthlyPdf = await request(env, `/contact-report/pdf?source=report-a&id=${encodeURIComponent(originId)}`, {
     headers: authHeaders(userToken(monthly)),
   });
-  assert.equal(monthlyPdf.response.status, 402);
-  assert.equal(monthlyPdf.data.required_months, 3);
+  assert.equal(monthlyPdf.response.status, 200);
+  assert.match(monthlyPdf.response.headers.get("content-type") || "", /application\/pdf/u);
+  assert.equal(await monthlyPdf.response.text(), "%PDF-1.7\nfixture");
   const monthlyAccess = await request(
     env,
     `/entitlement?report_id=${encodeURIComponent(originId)}&source=report-a`,
     { headers: authHeaders(userToken(monthly)) },
   );
   assert.equal(monthlyAccess.response.status, 200);
-  assert.equal(monthlyAccess.data.can_download, false);
-  assert.equal(monthlyAccess.data.required_months, 3);
+  assert.equal(monthlyAccess.data.can_download, true);
+  assert.equal(monthlyAccess.data.required_months, 1);
 
   const quarterly = await seedUser(bucket, {
     id: "quarterly-id",
@@ -543,7 +544,7 @@ test("contact-only upload binds a request, exposes availability, enforces three-
   );
   assert.equal(quarterlyAccess.response.status, 200);
   assert.equal(quarterlyAccess.data.can_download, true);
-  assert.equal(quarterlyAccess.data.required_months, 3);
+  assert.equal(quarterlyAccess.data.required_months, 1);
 
   const pdfKeysBefore = bucket.keys("_contact-reports/v1/pdfs/");
   const overwrite = await upload(env, "/account-admin/contact-report-pdf", token, UPLOAD_C, FINGERPRINT_B, {

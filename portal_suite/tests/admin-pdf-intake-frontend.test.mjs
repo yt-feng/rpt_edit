@@ -594,7 +594,7 @@ test("unified intake and contact availability UI cover every supported source wi
   assert.match(app, /compact: isContactOnlyItem\(item\) && item\.__detail_fetched === true/u);
   assert.match(app, /contact-report\/item/u);
   assert.match(app, /contact-report\/pdf\?/u);
-  assert.match(app, /3个月及以上会员登录后可直接下载全文/u);
+  assert.match(app, /1个月及以上全站会员登录后可直接下载全文/u);
   assert.doesNotMatch(app, /href="\$\{[^}]*download_url/u);
   assert.match(app, /\^report-a:\[A-Za-z0-9_-\]\{1,180\}\$/u);
   assert.match(styles, /\.account-admin-upload-progress/u);

@@ -46,7 +46,7 @@ jobs:
           python3 -B scripts/test_prepare_portal_ui_hotfix.py
           python3 -B scripts/test_verify_portal_ui_hotfix_live.py
           python3 -B scripts/test_portal_ui_hotfix_workflow.py
-          node --test portal_suite/tests/report-detail-performance.test.mjs portal_suite/tests/password-download-boundary.test.mjs
+          node --test portal_suite/tests/report-detail-performance.test.mjs portal_suite/tests/download-password-context.test.mjs portal_suite/tests/report-monthly-access-frontend.test.mjs
           node scripts/test_portal_english_ui.js
 
 

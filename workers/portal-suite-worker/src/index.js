@@ -274,8 +274,8 @@ const HOT_REPORT_MAX_PDF_BYTES = 95 * 1024 * 1024;
 const HOT_REPORT_STORAGE_LIMIT_BYTES = 2 * 1024 * 1024 * 1024;
 const HOT_REPORT_ORPHAN_GRACE_MS = 60 * 60 * 1000;
 const HOT_REPORT_DELETING_STALE_MS = 15 * 60 * 1000;
-const HOT_REPORT_MIN_MONTHS = 3;
-const HOT_REPORT_REQUIRED_PLAN = "3个月会员";
+const HOT_REPORT_MIN_MONTHS = 1;
+const HOT_REPORT_REQUIRED_PLAN = "1个月及以上全站会员";
 const ADMIN_UPLOAD_PREFIX = "_admin-uploads/v1";
 const ADMIN_UPLOAD_ID_PATTERN = /^(?:[a-f0-9]{8}-[a-f0-9]{4}-[1-8][a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}|upload-[a-f0-9]{32,64})$/i;
 const ADMIN_UPLOAD_FINGERPRINT_PATTERN = /^[a-f0-9]{64}$/i;
@@ -1745,6 +1745,11 @@ function normalizeUsername(value) {
 function normalizeEmail(value) {
   const email = String(value || "").trim().toLowerCase();
   return EMAIL_PATTERN.test(email) ? email : "";
+}
+
+function registrationEmailDomainBlocked(value) {
+  const domain = (normalizeEmail(value).split("@")[1] || "").replace(/\.+$/, "");
+  return domain === "mailinator.com" || domain.endsWith(".mailinator.com");
 }
 
 function isSuperAccount(user) {
@@ -5064,6 +5069,12 @@ async function handleAuth(request, env) {
         if (recovered) return recovered;
         return jsonResponse(request, env, 409, { detail: "用户名或邮箱已被注册。" });
       }
+      if (registrationEmailDomainBlocked(email)) {
+        return jsonResponse(request, env, 400, {
+          code: "EMAIL_DOMAIN_BLOCKED",
+          detail: "暂不支持使用该邮箱域名注册，请使用其他邮箱。",
+        });
+      }
       const now = new Date().toISOString();
       const passwordFields = await hashUserPassword(env, password);
       const fields = {
@@ -5153,7 +5164,7 @@ async function handleEntitlement(request, env) {
     const user = await currentUserFromRequest(env, request);
     const reportId = String(url.searchParams.get("report_id") || "").trim();
     const source = String(url.searchParams.get("source") || "catalog").trim() || "catalog";
-    // Contact-only sources use the same three-month membership policy as the
+    // Contact-only sources use the same monthly membership policy as the
     // corresponding PDF endpoint.  Keeping this decision in the shared access
     // response prevents the detail page from advertising a download that the
     // Worker will reject one click later.
@@ -11755,8 +11766,8 @@ async function handleHotReportPdf(request, env) {
         return jsonResponse(request, env, 402, {
           error: accessContactMessage(
             request,
-            "近期热门报告需至少 3 个月会员。",
-            "Recent featured reports require at least three months of membership. ",
+            "近期热门报告需有效的 1 个月及以上全站会员。",
+            "Recent featured reports require an active site-wide membership of at least one month. ",
           ),
           required_plan: HOT_REPORT_REQUIRED_PLAN,
           required_months: HOT_REPORT_MIN_MONTHS,
@@ -20803,8 +20814,8 @@ async function handleContactReportPdf(request, env, forcedSource = "") {
     return jsonResponse(request, env, 402, {
       error: accessContactMessage(
         request,
-        "该报告需至少 3 个月会员。",
-        "This report requires at least three months of membership. ",
+        "该报告需有效的 1 个月及以上全站会员。",
+        "This report requires an active site-wide membership of at least one month. ",
       ),
       required_plan: HOT_REPORT_REQUIRED_PLAN,
       required_months: HOT_REPORT_MIN_MONTHS,
@@ -23772,6 +23783,12 @@ async function handleAccountAdminUserCreate(request, env) {
   }
   if (!email) {
     return jsonResponse(request, env, 400, { detail: "请输入有效邮箱。" });
+  }
+  if (registrationEmailDomainBlocked(email)) {
+    return jsonResponse(request, env, 400, {
+      code: "EMAIL_DOMAIN_BLOCKED",
+      detail: "暂不支持使用该邮箱域名注册，请使用其他邮箱。",
+    });
   }
   if (password.length < 4 || password.length > 128) {
     return jsonResponse(request, env, 400, { detail: "密码需为 4-128 位。" });

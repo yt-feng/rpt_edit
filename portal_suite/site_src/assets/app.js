@@ -3402,7 +3402,7 @@
                 </label>
                 ${uploadProgressMarkup("accountAdminHotReportUpload")}
                 <div class="account-admin-hot-actions">
-                  <span>3个月及以上会员可下载全文。</span>
+                  <span>1个月及以上全站会员可下载全文。</span>
                   <button class="primary" type="submit">上传到近期热门报告</button>
                 </div>
               </form>
@@ -8403,6 +8403,11 @@
     `;
   }
 
+  function updateHotReportMembershipHint(section) {
+    const hint = section && section.querySelector(".external-hint");
+    if (hint) hint.textContent = "精选近期热门 PDF；1个月及以上全站会员可下载全文。";
+  }
+
   function hotReportRow(item) {
     item = publicSearchItem(item, HOT_REPORT_SOURCE);
     const docItem = { ...item, source: HOT_REPORT_SOURCE };
@@ -8412,7 +8417,7 @@
       item.institution,
       item.date,
       formatSize(item.size_bytes),
-      "3个月及以上会员",
+      "1个月及以上全站会员",
     ].map((value) => String(value || "").trim()).filter(Boolean).join(" · ");
     const zh = item.title_cn && item.title_cn !== item.title ? item.title_cn : "";
     return `
@@ -8598,6 +8603,7 @@
     initNewsfeedNav();
 
     const hotReportsSection = document.getElementById("hotReportsSection");
+    updateHotReportMembershipHint(hotReportsSection);
     const hotReportsResults = document.getElementById("hotReportsResults");
     const hotReportsCount = document.getElementById("hotReportsCount");
     const hotReportsStatus = document.getElementById("hotReportsStatus");
@@ -11403,7 +11409,7 @@
     return `
       <section class="account-access" id="accountAccess" hidden>
         <h3>${contactReport ? "会员下载" : externalReport ? "报告访问" : "Account access"}</h3>
-        <p class="subtle" id="accountAccessHint">${contactReport ? "3个月及以上会员可下载全文。" : externalReport ? "登录后可查看1页预览。" : "登录后可查看账号下载权限。"}</p>
+        <p class="subtle" id="accountAccessHint">${contactReport ? "1个月及以上全站会员可下载全文。" : externalReport ? "登录后可查看1页预览。" : "登录后可查看账号下载权限。"}</p>
         <div class="account-access-actions">
           <button class="secondary-button" id="openAccountPanel" type="button">注册 / 登录</button>
           <button class="primary" id="accountDownloadReport" type="button" hidden>账号下载</button>
@@ -11514,7 +11520,7 @@
     const status = document.getElementById("accountAccessStatus");
     const passwordForm = document.getElementById("unlockForm") || document.getElementById("externalDetailForm");
     const isHotReport = source === HOT_REPORT_SOURCE;
-    const isThreeMonthReport = isHotReport || isContactOnlyItem(item);
+    const isMemberReport = isHotReport || isContactOnlyItem(item);
     const context = { item, source };
     let accessRequestId = 0;
 
@@ -11558,8 +11564,8 @@
         return;
       }
       if (!session) {
-        hint.innerHTML = isThreeMonthReport
-          ? "登录后可查看下载权限；需至少 3 个月会员。"
+        hint.innerHTML = isMemberReport
+          ? "登录后可查看下载权限；需有效的 1 个月及以上全站会员。"
           : "登录后可查看账号下载权限。";
         statusTargetHtml(`请先注册或登录。${accessContactGuidanceHtml()}`);
         return;
@@ -11581,8 +11587,8 @@
           statusTarget(summary ? `可直接使用账号下载；${summary}。` : "可直接使用账号下载。", "ok");
         } else {
           if (passwordForm) passwordForm.hidden = false;
-          if (isThreeMonthReport) {
-            statusTargetHtml(`当前权益未达到 3 个月。${accessContactGuidanceHtml()}`);
+          if (isMemberReport) {
+            statusTargetHtml(`当前账号尚未开通此报告下载权限；需有效的 1 个月及以上全站会员。${accessContactGuidanceHtml()}`);
           } else {
             statusTargetHtml(summary
               ? `当前账号有${summary}，但不包含此报告。${accessContactGuidanceHtml()}`
@@ -11768,7 +11774,9 @@
         "hot_report_generation",
       ];
     for (const key of previewKeys) {
-      const value = item && item[key];
+      const value = key === "required_plan" && ["hot", "authority", "report-a"].includes(item.source)
+        ? "1个月及以上全站会员"
+        : item && item[key];
       if (value === undefined || value === null || value === "") continue;
       url.searchParams.set(key, String(value).slice(0, key.includes("title") ? 320 : 160));
     }
@@ -12283,7 +12291,9 @@
       rating: params.get("rating") || "",
       description: params.get("description") || "",
       filename: params.get("filename") || "",
-      required_plan: params.get("required_plan") || "",
+      required_plan: ["hot", "authority", "report-a"].includes(source)
+        ? "1个月及以上全站会员"
+        : params.get("required_plan") || "",
       hot_report_generation: params.get("hot_report_generation") || "",
     });
   }
@@ -12918,7 +12928,7 @@
         ${field("Date", item.date || "-")}
         ${field("Pages", item.page_count ? `${item.page_count}页` : "-")}
         ${contactAvailable ? field("PDF", formatSize(item.size_bytes) || "Available") : ""}
-        ${contactAvailable ? field("全文权限", "3个月及以上会员") : ""}
+        ${contactAvailable ? field("全文权限", "1个月及以上全站会员") : ""}
       `
       : (isReportAItem(item) ? `
         ${field("板块", docSourceLabel(item))}
@@ -12928,13 +12938,13 @@
         ${field("Author", item.author || "-")}
         ${field("Pages", item.page_count ? `${item.page_count}页` : "-")}
         ${contactAvailable ? field("PDF", formatSize(item.size_bytes) || "Available") : ""}
-        ${contactAvailable ? field("全文权限", "3个月及以上会员") : ""}
+        ${contactAvailable ? field("全文权限", "1个月及以上全站会员") : ""}
       ` : (isHotReportItem(item) ? `
         ${field("板块", docSourceLabel(item))}
         ${field("Institution", item.institution || "-")}
         ${field("Date", item.date || "-")}
         ${field("PDF", formatSize(item.size_bytes) || "Available")}
-        ${field("全文权限", "3个月及以上会员")}
+        ${field("全文权限", "1个月及以上全站会员")}
       ` : (isThinkTankItem(item) ? `
         ${field("板块", docSourceLabel(item))}
         ${field("Institution", item.institution || "-")}
@@ -12952,8 +12962,8 @@
         <h1 class="detail-title">${escapeHtml(displayTitle)}</h1>
         ${zh ? `<p class="detail-title-zh">${escapeHtml(zh)}</p>` : ""}
         <p class="subtle">${isContactOnlyItem(item)
-          ? (contactAvailable ? "3个月及以上会员可下载全文。" : `${docSourceLabel(item)}检索线索。`)
-          : (isHotReportItem(item) ? "3个月及以上会员可下载全文。" : "Password-protected report delivery.")}</p>
+          ? (contactAvailable ? "1个月及以上全站会员可下载全文。" : `${docSourceLabel(item)}检索线索。`)
+          : (isHotReportItem(item) ? "1个月及以上全站会员可下载全文。" : "Password-protected report delivery.")}</p>
       </div>
       <div class="detail-grid">
         ${detailFields}
@@ -12965,7 +12975,7 @@
           ${detailHeader}
           <section class="unlock-box authority-contact-box contact-report-available-box">
             <h3>PDF 已补齐</h3>
-            <p class="subtle">这份报告已绑定原检索记录。3个月及以上会员登录后可直接下载全文。</p>
+            <p class="subtle">这份报告已绑定原检索记录。1个月及以上全站会员登录后可直接下载全文。</p>
           </section>
           ${workerUrl ? accountAccessMarkup(item) : ""}
           ${externalRelatedMarkup()}

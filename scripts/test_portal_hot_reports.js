@@ -31,6 +31,9 @@ function extractAsyncFunction(source, name) {
 
 const planDefinitions = worker.match(/const VID2PPT_PORTAL_GIFT_PLANS = \{[\s\S]*?\n\};/);
 assert.ok(planDefinitions, "Vid2PPT plan definitions must exist");
+const hotReportMinimumDefinition = worker.match(/^const HOT_REPORT_MIN_MONTHS = (\d+);$/m);
+assert.ok(hotReportMinimumDefinition, "hot report membership minimum must exist");
+assert.equal(Number(hotReportMinimumDefinition[1]), 1, "monthly memberships include hot reports");
 const publicBrandDefinition = worker.match(/^const PUBLIC_BRAND = .*;$/m);
 const publicSourceBrandPatternDefinition = worker.match(/^const PUBLIC_SOURCE_BRAND_PATTERN = .*;$/m);
 const publicSourceBrandDetectorDefinition = worker.match(/^const PUBLIC_SOURCE_BRAND_DETECTOR = .*;$/m);
@@ -42,7 +45,7 @@ const accessSandbox = {};
 vm.runInNewContext(`
   const TRIAL_3D_DOWNLOAD_LIMIT = 10;
   ${planDefinitions[0]}
-  const HOT_REPORT_MIN_MONTHS = 3;
+  ${hotReportMinimumDefinition[0]}
   function isPrivilegedAccount(user) { return Boolean(user && user.privileged); }
   ${extractFunction(worker, "hotReportPlanMonths")}
   ${extractFunction(worker, "hotReportAccessMonths")}
@@ -82,15 +85,15 @@ vm.runInNewContext(`
 assert.equal(accessSandbox.result.adminOneMonthWithStaleQuarter.months, 1);
 assert.equal(
   accessSandbox.result.adminOneMonthWithStaleQuarter.qualifies,
-  false,
-  "an authoritative one-month administrator grant must not inherit a stale NOVA-Q entitlement",
+  true,
+  "an authoritative one-month administrator grant qualifies on its own",
 );
 assert.equal(accessSandbox.result.adminThreeMonths.months, 3);
 assert.equal(accessSandbox.result.adminThreeMonths.qualifies, true);
 assert.equal(accessSandbox.result.adminLifetime.months, Number.POSITIVE_INFINITY);
 assert.equal(accessSandbox.result.adminLifetime.qualifies, true);
 assert.equal(accessSandbox.result.novaMonth.months, 1);
-assert.equal(accessSandbox.result.novaMonth.qualifies, false, "NOVA-M must not unlock hot reports");
+assert.equal(accessSandbox.result.novaMonth.qualifies, true, "NOVA-M must unlock hot reports");
 assert.equal(accessSandbox.result.novaQuarter.months, 3);
 assert.equal(accessSandbox.result.novaQuarter.qualifies, true, "NOVA-Q must unlock hot reports");
 assert.equal(accessSandbox.result.novaYear.months, 12);
@@ -174,7 +177,7 @@ assert.match(
 );
 
 assert.match(indexHtml, /id="hotReportsSection"[\s\S]*?id="hotReportsResults"/, "the home page must expose the hot-report section");
-assert.match(indexHtml, /3个月及以上会员可下载全文/);
+assert.match(indexHtml, /1个月及以上全站会员可下载全文/);
 assert.match(indexHtml, /id="hotReportsPrev"[\s\S]*?id="hotReportsPageInfo"[\s\S]*?id="hotReportsNext"/, "hot reports must expose accessible page navigation");
 assert.match(indexHtml, /id="hotReportsRetry"[\s\S]*?重新加载/, "a failed page request must offer an explicit retry action");
 assert.match(app, /fetch\(hotReportRequestUrl\(cleanQuery, cursor, localeIds\), \{ signal: controller\.signal \}\)/, "the home UI must load indexed hot-report pages");

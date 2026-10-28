@@ -182,11 +182,11 @@ test("invalid, honeypot and owner-rejected forms never send an acknowledgement",
   assert.equal(bucket.json(ACK_PREFIX).length, 0);
 });
 
-async function auth(env, action = "register", extra = {}) {
+async function auth(env, action = "register", extra = {}, route = "/auth") {
   const captcha = await request(env, "/captcha");
   const svg = Buffer.from(captcha.data.image.split(",")[1], "base64").toString("utf8");
   const [, left, right] = svg.match(/>(\d+) \+ (\d+) = \?</u);
-  return request(env, "/auth", { action, username: "new-reader", email: READER, password: "test-password-123", captcha_token: captcha.data.token, captcha_answer: String(Number(left) + Number(right)), ...extra });
+  return request(env, route, { action, username: "new-reader", email: READER, password: "test-password-123", captcha_token: captcha.data.token, captcha_answer: String(Number(left) + Number(right)), ...extra });
 }
 
 test("new registration sends one welcome receipt; account recovery and login do not resend it", async (t) => {
@@ -215,3 +215,98 @@ test("welcome provider failure never rolls back new registration", async (t) => 
   assert.equal((await auth(env, "login")).response.status, 200);
   assert.equal(sent.length, 1);
 });
+
+
+for (const route of ["/auth", "/api/auth"]) {
+  test(`${route} refuses new Mailinator accounts without writes or email delivery`, async (t) => {
+    const { env, bucket } = fixture();
+    const sent = mockDelivery(t);
+    for (const email of ["reader@mailinator.com", "  Reader@MAILINATOR.COM  ", "reader@sub.mailinator.com", "reader@mailinator.com."]) {
+      const rejected = await auth(env, "register", { email }, route);
+      assert.equal(rejected.response.status, 400, JSON.stringify(rejected.data));
+      assert.equal(rejected.data.code, "EMAIL_DOMAIN_BLOCKED");
+      assert.match(rejected.data.detail, /请使用其他邮箱/u);
+      assert.equal(bucket.rows.size, 0, "blocked signup must not create users, acknowledgement reservations, or other records");
+      assert.equal(sent.length, 0, "blocked signup must not send verification or welcome email");
+      assert.equal(rejected.data.token, undefined);
+    }
+  });
+}
+
+test("signup domain matching keeps other email domains and similar names eligible", async (t) => {
+  const { env, bucket } = fixture();
+  const sent = mockDelivery(t);
+  for (const [index, email] of ["reader@example.net", "reader@notmailinator.com", "reader@mailinator.com.example.net"].entries()) {
+    const created = await auth(env, "register", { username: `allowed-reader-${index}`, email });
+    assert.equal(created.response.status, 201, JSON.stringify(created.data));
+    assert.equal(created.data.user.email, email);
+    assert.ok(created.data.token);
+  }
+  assert.equal(sent.length, 3);
+  assert.equal(bucket.json(ACK_PREFIX).length, 3);
+});
+
+function seedAuthUser(bucket, env, identity, password) {
+  const salt = "registration-domain-test-salt";
+  const hash = createHmac("sha256", env.MASTER_KEY)
+    .update(`user-password:${salt}:${password}`).digest("hex");
+  const user = {
+    ...identity, email_is_generated: false,
+    password_salt: salt, password_hash: `hmac_sha256$${hash}`,
+    created_at: "2026-01-01T00:00:00.000Z", updated_at: "2026-01-01T00:00:00.000Z",
+  };
+  for (const field of ["id", "username", "email"]) {
+    bucket.rows.set(`_account/users/${field}/${encodeURIComponent(user[field])}`, {
+      value: JSON.stringify(user), etag: `seed-${field}`,
+    });
+  }
+  return user;
+}
+
+function authToken(env, user) {
+  const now = Math.floor(Date.now() / 1000);
+  const payload = Buffer.from(JSON.stringify({
+    kind: "user", sub: user.id, username: user.username, email: user.email,
+    session_epoch: "", iat: now, exp: now + 3600,
+  })).toString("base64url");
+  const signature = createHmac("sha256", env.MASTER_KEY)
+    .update(`portal:account-token:v1:${payload}`).digest("base64url");
+  return `${payload}.${signature}`;
+}
+
+test("an existing Mailinator user can still log in, refresh a session, and recover the same account", async (t) => {
+  const { env, bucket } = fixture();
+  const sent = mockDelivery(t);
+  const user = seedAuthUser(bucket, env, {
+    id: "existing-mailinator-id", username: "existing-reader", email: "existing-reader@mailinator.com",
+  }, "test-password-123");
+  for (const action of ["login", "register"]) {
+    const result = await auth(env, action, { username: user.username, email: user.email });
+    assert.equal(result.response.status, 200, JSON.stringify(result.data));
+    assert.equal(result.data.user.id, user.id);
+    assert.ok(result.data.token);
+  }
+  const refreshed = await request(env, "/api/auth", undefined, { Authorization: `Bearer ${authToken(env, user)}` });
+  assert.equal(refreshed.response.status, 200);
+  assert.equal(refreshed.data.user.id, user.id);
+  assert.equal(sent.length, 0);
+  assert.equal(bucket.json(ACK_PREFIX).length, 0);
+});
+
+for (const route of ["/account-admin/user", "/api/account-admin/user"]) {
+  test(`${route} applies the same new-account email rule`, async (t) => {
+    const { env, bucket } = fixture();
+    const sent = mockDelivery(t);
+    const admin = seedAuthUser(bucket, env, {
+      id: "domain-admin-id", username: "admin-a", email: "admin-a@users.portal.example.invalid",
+    }, "test-password-123");
+    const before = [...bucket.rows.entries()];
+    const rejected = await request(env, route, {
+      username: "admin-created-reader", email: "reader@SUB.MAILINATOR.COM", password: "test-password-123",
+    }, { Authorization: `Bearer ${authToken(env, admin)}` });
+    assert.equal(rejected.response.status, 400, JSON.stringify(rejected.data));
+    assert.equal(rejected.data.code, "EMAIL_DOMAIN_BLOCKED");
+    assert.deepEqual([...bucket.rows.entries()], before, "admin creation rejection must not mutate existing accounts or write new rows");
+    assert.equal(sent.length, 0);
+  });
+}

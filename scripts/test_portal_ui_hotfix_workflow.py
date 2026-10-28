@@ -1,6 +1,7 @@
 """Deployment ordering and rollback boundaries for the bounded UI-only route."""
 from pathlib import Path
 import re
+import shlex
 import subprocess
 import unittest
 import yaml
@@ -12,6 +13,14 @@ class Workflow(unittest.TestCase):
         self.raw = (ROOT/'.github/workflows/portal-ui-hotfix.yml').read_text()
         self.workflow = yaml.safe_load(self.raw)
         self.steps = self.workflow['jobs']['hotfix']['steps']
+    def test_ui_validation_references_existing_regression_tests(self):
+        commands = next(step['run'] for step in self.steps if step.get('name') == 'Validate UI hotfix before private configuration')
+        paths = [token for line in commands.splitlines() if line.strip().startswith('node --test ')
+                 for token in shlex.split(line)[2:] if token.endswith('.test.mjs')]
+        self.assertIn('portal_suite/tests/download-password-context.test.mjs', paths)
+        self.assertIn('portal_suite/tests/report-monthly-access-frontend.test.mjs', paths)
+        for path in paths:
+            self.assertTrue((ROOT / path).is_file(), path)
     def test_prod_lock_main_origin_guards_and_no_content_generation(self):
         self.assertEqual(self.workflow['concurrency'], {'group': 'portal-production-release', 'cancel-in-progress': False})
         commands = '\n'.join(step.get('run','') for step in self.steps)
