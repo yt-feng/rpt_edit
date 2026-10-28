@@ -83,9 +83,7 @@
       return { catalog: previewCatalog, needsSynchronousFullCatalog: false };
     }
     if (deferLocalizedHomeCatalog) {
-      // A missing/invalid locale overlay makes the preview request fail closed.
-      // Keep first paint small and empty instead of immediately downloading the
-      // multi-megabyte source catalog (which would also expose Chinese titles).
+      // Invalid overlays leave the preview empty; never fetch the source catalog here.
       return {
         catalog: { items: [], item_count: 0, total_item_count: 0, updated_at_bjt: "" },
         needsSynchronousFullCatalog: false,
@@ -669,9 +667,7 @@
   }
 
   async function loadJson(path, options = {}) {
-    // Static JSON is revisioned at the edge and has validators. Let the browser
-    // reuse it across visits; API requests continue to opt into no-store at
-    // their individual call sites.
+    // Reuse validated static JSON; API callers set no-store separately.
     const response = await fetch(path, { cache: "default", ...options });
     if (!response.ok) {
       throw new Error(`Could not load ${path}: ${response.status}`);
@@ -1204,8 +1200,7 @@
       if (observer) document.querySelectorAll("[data-auth-open], [data-research-entry]").forEach((element) => observer.observe(element));
     };
     sync();
-    // Shared navigation is inserted by site-runtime at DOMContentLoaded.
-    // Observe those late entrypoints as well as the static first-paint buttons.
+    // Include navigation inserted later by site-runtime.
     document.addEventListener("DOMContentLoaded", sync, { once: true });
     document.addEventListener("portal-auth-change", sync);
     document.addEventListener("click", (event) => {
@@ -2799,8 +2794,7 @@
       const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(material));
       return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0")).join("");
     }
-    // Format-preserving fallback for older browsers. The server uses this value
-    // only to prevent one upload_id from being reused for a different file.
+    // Older-browser fallback; the server uses this only to bind uploads to files.
     let hash = 2166136261;
     for (let index = 0; index < material.length; index += 1) {
       hash ^= material.charCodeAt(index);
@@ -6341,8 +6335,7 @@
     if (!targets.hotReportSection || targets.hotReportSection.hidden || !targets.hotReportList) return [];
     if (targets.hotReportLoadPromise) {
       if (!options.forceRefresh) return targets.hotReportLoadPromise;
-      // Upload completion must read after the write, even if the preview's
-      // earlier GET is still running. Coalesce concurrent forced refreshes.
+      // Refresh after the upload write; coalesce callers waiting on the same GET.
       const source = targets.hotReportLoadPromise;
       if (!targets.hotReportRefreshPromise || targets.hotReportRefreshSource !== source) {
         const queued = source.then(() => loadAdminHotReports(workerUrl, targets)).finally(() => {
@@ -6351,8 +6344,7 @@
             targets.hotReportRefreshSource = null;
           }
         });
-        // A second upload completed after a queued GET started needs another
-        // read after that GET. Only requests waiting on the same read share it.
+        // An upload completed after this GET started needs a subsequent read.
         targets.hotReportRefreshSource = source;
         targets.hotReportRefreshPromise = queued;
       }
@@ -6370,8 +6362,7 @@
           collection = await fetchAdminHotReportPage(workerUrl, previous);
         } catch (error) {
           if (!error || error.status !== 409) throw error;
-          // A generation change invalidates the old cursor and loaded rows.
-          // Restart just the first page; further pages remain user initiated.
+          // A new generation restarts page one; later pages still require a click.
           collection = await fetchAdminHotReportPage(workerUrl);
           restarted = true;
         }
@@ -6500,10 +6491,7 @@
         ? `${cachedCount} users · ${kind === "error" ? "最近同步" : "核验中…"}`
         : (kind === "error" ? "未核验" : "核验中…");
     }
-    // The summary already contains the latest verified snapshot. A transient
-    // live refresh must not erase that useful table and leave the administrator
-    // unable to inspect or select users. Only show the empty-state row when no
-    // verified snapshot exists at all.
+    // Preserve the verified user table if its live refresh fails.
     if (targets.users && !cachedCount) {
       targets.users.innerHTML = `<tr><td colspan="11"><div class="empty-state">${escapeHtml(message)}</div></td></tr>`;
     }
@@ -8565,8 +8553,7 @@
       }
       return fullCatalogPromise;
     };
-    // The small preview owns first paint. On a normal home load the large
-    // catalog starts only after the first hot-report request has been issued.
+    // Paint the preview and request hot reports before loading the large catalog.
     const initialCatalog = initialHomeCatalog(previewCatalog, deferLocalizedHomeCatalog);
     let catalog = initialCatalog.catalog;
     if (initialCatalog.needsSynchronousFullCatalog) catalog = await startFullCatalogLoad();
@@ -11652,8 +11639,7 @@
   }
 
   function reportPageUrl(id, options = {}) {
-    // Extended reading locales share the source catalog; they do not publish
-    // their own authenticated report application. Established locales keep it.
+    // Extended locales share the source app; established locales keep their own.
     const sourceCatalog = typeof document !== "undefined" && document.body?.dataset.extendedUi;
     const url = new URL(sourceCatalog ? "/report.html" : "report.html", window.location.href);
     url.searchParams.set("id", id);
@@ -12874,9 +12860,7 @@
     let recommendationCatalogPromise = null;
     function recommendationCatalogAfterPaint() {
       if (recommendationCatalogPromise) return recommendationCatalogPromise;
-      // Locale detail pages already have translated recent recommendations and
-      // four bounded Worker sources. Do not download the 14k-item historical
-      // recommendation catalog merely to add another background candidate set.
+      // Locale pages already have recent recommendations and four Worker sources.
       if (shouldDeferLocalizedHomeCatalog(CONTENT_LOCALE)) return Promise.resolve([]);
       recommendationCatalogPromise = new Promise((resolve) => {
         const start = () => {
