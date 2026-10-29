@@ -4524,6 +4524,30 @@
     "wto:https://www.wto.org/english/news_e/news26_e/safe_phl_21oct26_520_e.htm": {
       "first_seen": "2026-10-28",
       "status": "too_old"
+    },
+    "imf:f68d2b2ccee4e42c327c66f7de39ebf68db9e3a0ec9be4f1ed28245fbc91": {
+      "first_seen": "2026-10-29",
+      "status": "downloaded"
+    },
+    "worldbank:099315410282637734": {
+      "first_seen": "2026-10-29",
+      "status": "downloaded"
+    },
+    "worldbank:099228110282631001": {
+      "first_seen": "2026-10-29",
+      "status": "downloaded"
+    },
+    "wef:https://www.weforum.org/publications/regulation-of-digital-assets-in-a-shifting-global-landscape": {
+      "first_seen": "2026-10-29",
+      "status": "no_pdf"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/ldevc_26oct26_525_e.htm": {
+      "first_seen": "2026-10-29",
+      "status": "no_pdf"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/safe_zwe_22oct26_523_e.htm": {
+      "first_seen": "2026-10-29",
+      "status": "too_old"
     }
   }
 }
