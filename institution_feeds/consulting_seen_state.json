@@ -1,26 +1,6 @@
 {
   "version": 1,
   "items": {
-    "bcg:https://www.bcg.com/publications/2026/us-and-china-ai-strategy-causing-global-ai-divide": {
-      "first_seen": "2026-06-30",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/agentic-ai-pc-insurance-portfolio-management": {
-      "first_seen": "2026-06-30",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/value-creators-rankings-strong-markets-hard-choices": {
-      "first_seen": "2026-06-30",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/how-ai-first-banks-are-rewriting-the-rules-of-retail-banking": {
-      "first_seen": "2026-06-30",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/processed-and-pressured-cpgs-lost-decade-of-r-and-d": {
-      "first_seen": "2026-06-30",
-      "status": "downloaded"
-    },
     "bcg:https://www.bcg.com/publications/2026/how-ceos-can-optimize-ai-token-costs": {
       "first_seen": "2026-07-01",
       "status": "no_pdf"
@@ -1667,6 +1647,42 @@
     },
     "bcg:https://www.bcg.com/publications/2026/the-cfos-ai-agenda-from-automation-to-advantage": {
       "first_seen": "2026-10-28",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/people%20and%20organizational%20performance/our%20insights/the%20state%20of%20organizations/2026/the-state-of-organizations-2026-vf.pdf": {
+      "first_seen": "2026-10-29",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/quantumblack/our%20insights/the%20state%20of%20ai/november%202025/the-state-of-ai-2025-agents-innovation_cmyk-v1.pdf": {
+      "first_seen": "2026-10-29",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/what-us-fashion-shoppers-value": {
+      "first_seen": "2026-10-29",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/the-new-rules-of-m-and-a-in-power-and-utilities": {
+      "first_seen": "2026-10-29",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/usmca-2-0-a-turning-point-for-north-americas-autos": {
+      "first_seen": "2026-10-29",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-cios-can-prove-the-value-of-tech-in-the-age-of-ai": {
+      "first_seen": "2026-10-29",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/why-b2b-software-firms-need-a-go-to-market-reset": {
+      "first_seen": "2026-10-29",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/beyond-gdp-unlocking-growth-and-job-creation": {
+      "first_seen": "2026-10-29",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/the-digital-first-future-of-health-care": {
+      "first_seen": "2026-10-29",
       "status": "downloaded"
     }
   }
