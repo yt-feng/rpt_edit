@@ -1,24 +1,5 @@
 {
   "schema": 1,
   "institution": "imf",
-  "items": {
-    "imf:f68d2b2ccee4e42c327c66f7de39ebf68db9e3a0ec9be4f1ed28245fbc91": {
-      "item": {
-        "title": "Republic of Armenia: Technical Assistance Report-Climate Policy Diagnostic",
-        "source_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/28/republic-of-armenia-technical-assistance-report-climate-policy-diagnostic-580785",
-        "guid": "f68d2b2ccee4e42c327c66f7de39ebf68db9e3a0ec9be4f1ed28245fbc91",
-        "date": "2026-10-28T04:00:00+00:00",
-        "pdf_candidates": [
-          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026088.pdf",
-          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026088-source-pdf.pdf"
-        ],
-        "scrape_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/28/republic-of-armenia-technical-assistance-report-climate-policy-diagnostic-580785",
-        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/28/republic-of-armenia-technical-assistance-report-climate-policy-diagnostic-580785"
-      },
-      "admitted_at": "2026-10-29T01:29:20.844714+00:00",
-      "since_days": 7,
-      "last_attempted_at": "2026-10-29T01:29:20.844714+00:00",
-      "attempts": 1
-    }
-  }
+  "items": {}
 }
