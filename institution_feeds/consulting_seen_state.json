@@ -1,54 +1,6 @@
 {
   "version": 1,
   "items": {
-    "bcg:https://www.bcg.com/publications/2026/how-ceos-can-optimize-ai-token-costs": {
-      "first_seen": "2026-07-01",
-      "status": "no_pdf"
-    },
-    "bcg:https://www.bcg.com/publications/2025/norway-the-transparency-act": {
-      "first_seen": "2026-07-01",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/managing-ai-token-costs": {
-      "first_seen": "2026-07-01",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/ai-is-moving-corporate-learning-out-of-the-classroom": {
-      "first_seen": "2026-07-01",
-      "status": "no_pdf"
-    },
-    "bcg:https://www.bcg.com/publications/2026/the-era-of-token-based-competition-is-here": {
-      "first_seen": "2026-07-01",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/gulf-states-economic-resilience": {
-      "first_seen": "2026-07-01",
-      "status": "no_pdf"
-    },
-    "bcg:https://www.bcg.com/publications/2026/the-four-gaps-in-next-best-action-programs": {
-      "first_seen": "2026-07-01",
-      "status": "no_pdf"
-    },
-    "bcg:https://www.bcg.com/publications/2026/india-cybersecurity-in-the-age-of-ai-bfsi": {
-      "first_seen": "2026-07-01",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/scaling-blended-finance": {
-      "first_seen": "2026-07-01",
-      "status": "no_pdf"
-    },
-    "bcg:https://www.bcg.com/publications/2026/why-we-still-need-a-cio-in-the-ai-first-era": {
-      "first_seen": "2026-07-01",
-      "status": "no_pdf"
-    },
-    "bcg:https://www.bcg.com/publications/2026/the-future-of-influence-and-brand-discovery": {
-      "first_seen": "2026-07-01",
-      "status": "no_pdf"
-    },
-    "bcg:https://www.bcg.com/publications/2026/rebuilding-asset-management-for-an-ai-first-world": {
-      "first_seen": "2026-07-01",
-      "status": "downloaded"
-    },
     "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/risk/our%20insights/mckinsey%20on%20risk%20number%2020/mckinsey-on-risk-and-resilience-number-20-2025.pdf": {
       "first_seen": "2026-07-02",
       "status": "downloaded"
@@ -1683,6 +1635,54 @@
     },
     "bcg:https://www.bcg.com/publications/2026/the-digital-first-future-of-health-care": {
       "first_seen": "2026-10-29",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/people%20and%20organizational%20performance/our%20insights/the%20state%20of%20organizations/2026/the-state-of-organizations-2026.pdf": {
+      "first_seen": "2026-10-30",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/quantumblack/our%20insights/the%20state%20of%20ai/march%202025/the-state-of-ai-how-organizations-are-rewiring-to-capture-value_final.pdf": {
+      "first_seen": "2026-10-30",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/critical-minerals-risk-blind-spots": {
+      "first_seen": "2026-10-30",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/india-talent-is-already-on-your-payroll": {
+      "first_seen": "2026-10-30",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/who-pays-for-ai-infrastructure": {
+      "first_seen": "2026-10-30",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/navigate-energy-policy-uncertainty": {
+      "first_seen": "2026-10-30",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/southeast-asia-ai-momentum-to-value": {
+      "first_seen": "2026-10-30",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/what-happens-when-europes-data-stops-flowing": {
+      "first_seen": "2026-10-30",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/distribution-is-the-new-source-of-advantage": {
+      "first_seen": "2026-10-30",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/product-teams-make-ai-sales-agents-smarter": {
+      "first_seen": "2026-10-30",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/consumers-trust-ai-to-buy-better-brands-must-adapt": {
+      "first_seen": "2026-10-30",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/private-equitys-future-digital-first-and-ai-powered": {
+      "first_seen": "2026-10-30",
       "status": "downloaded"
     }
   }
