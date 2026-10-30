@@ -37,7 +37,13 @@ jobs:
 
       - name: Check recurring locale refresh failures before merge
         run: |
-          python3 -m pip install --disable-pip-version-check "requests>=2.31,<3" "Pillow>=10.1,<12"
+          python3 -m pip install --disable-pip-version-check "requests>=2.31,<3" "Pillow>=10.1,<12" "boto3>=1.34,<2"
+          python3 -B scripts/test_r2_transport.py
+          python3 -B scripts/test_portal_extended_r2.py
+          python3 -B scripts/test_portal_extended_r2_sdk.py
+          python3 -B scripts/test_publish_static_slot.py
+          python3 -B scripts/test_validate_portal_locale_checkpoint.py
+          python3 -B scripts/test_neutral_refresh_resilience_workflow.py
           python3 -B scripts/test_portal_locale_literals.py
           python3 -B scripts/test_build_portal_locales.py
           python3 -B scripts/test_audit_portal_chinese_discovery_plan.py

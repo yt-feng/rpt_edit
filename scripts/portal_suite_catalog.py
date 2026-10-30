@@ -41,6 +41,7 @@ from build_bank_report_catalog import (
 )
 from finalize_outputs import sanitize_text
 from portal_r2_prefix import DEFAULT_R2_PREFIX, validated_catalog_r2_prefix
+from r2_transport import install_r2_retry_handler
 
 DROPBOX_CONTENT = "https://content.dropboxapi.com/2"
 DEFAULT_STORAGE_LIMIT_GIB = 100.0
@@ -240,19 +241,22 @@ def download_dropbox_file(token: str, dropbox_path: str, local_path: Path) -> No
 def build_r2_client() -> Any:
     try:
         import boto3  # type: ignore
+        from botocore.config import Config  # type: ignore
     except Exception as exc:  # pragma: no cover - exercised in Actions
         raise RuntimeError("boto3 is required for --sync-r2. Install it with: pip install boto3") from exc
 
     account_id = require_env("R2_ACCOUNT_ID")
     access_key = require_env("R2_ACCESS_KEY_ID")
     secret_key = require_env("R2_SECRET_ACCESS_KEY")
-    return boto3.client(
+    client = boto3.client(
         "s3",
         endpoint_url=f"https://{account_id}.r2.cloudflarestorage.com",
         aws_access_key_id=access_key,
         aws_secret_access_key=secret_key,
         region_name="auto",
+        config=Config(retries={"total_max_attempts": 9, "mode": "adaptive"}, connect_timeout=10, read_timeout=60),
     )
+    return install_r2_retry_handler(client)
 
 
 def upload_pdf_to_r2(client: Any, bucket: str, key: str, local_path: Path) -> None:

@@ -11,7 +11,6 @@ import os
 from pathlib import Path
 import re
 import sys
-import time
 from typing import Any, Callable
 from urllib.error import HTTPError
 from urllib.parse import urlsplit
@@ -23,12 +22,13 @@ import check_portal_app_budget as app_budget
 from edge_route_cutover import request_status
 import verify_portal_chinese_parity as parity
 from verify_prepared_static_slot import (
-    read_json_object as read_bounded_json_object, read_verified_candidate_body, read_bounded_body, static_tree_sha256,
+    read_json_object as read_bounded_json_object, read_verified_candidate_body, static_tree_sha256,
 )
 from portal_locale_manifest import (
     LocaleManifestError, MAX_LOCALE_MANIFEST_BYTES, parse_locale_manifest, validate_translation_resolution,
 )
 from verify_portal_locale_routes import RouteVerificationError, declared_checks
+from r2_transport import read_r2_bytes
 
 
 LOCALES = ("ko", "ja", "ar")
@@ -82,7 +82,6 @@ PUBLIC_PATHS = frozenset((
 SHA40 = re.compile(r"[0-9a-f]{40}\Z")
 MAX_API_BYTES = 64 * 1024 * 1024
 MAX_APP_BUNDLE_BYTES = 16 * 1024 * 1024
-READ_RETRY_DELAYS = (2, 5, 10, 20, 30)
 DOWNLOAD_WORKERS = 4
 
 
@@ -492,29 +491,20 @@ def validate_remote_slot(client: Any, bucket: str, slot: str, release: str, tree
 
 
 def read_candidate_object(client: Any, bucket: str, key: str, descriptor: dict[str, Any], *, maximum: int | None = None) -> bytes:
-    """Retry only transient object reads; always close streams and verify bytes."""
+    """Read without multiplying SDK retries; retain exact manifest verification."""
     size = descriptor["size"]
     require(type(size) is int and size >= 0 and (maximum is None or size <= maximum),
             f"Candidate object exceeds its byte size bound: {key}")
-    for attempt in range(len(READ_RETRY_DELAYS) + 1):
-        try:
-            stream = client.get_object(Bucket=bucket, Key=key)["Body"]
-            body = read_bounded_body(stream, size)
-        except Exception as error:
-            code = publisher.upload_error_code(error)
-            retryable = code in publisher.RETRYABLE_UPLOAD_ERROR_CODES or type(error).__name__ in {
-                "ReadTimeoutError", "ResponseStreamingError", "IncompleteReadError", "ConnectionClosedError",
-            }
-            if not retryable or attempt >= len(READ_RETRY_DELAYS):
-                raise ResumeError(f"Candidate object read failed: {key}; code={code or type(error).__name__}") from error
-            delay = READ_RETRY_DELAYS[attempt]
-            print(f"Locale resume read_retry attempt={attempt + 1} delay_seconds={delay} code={code}", flush=True)
-            time.sleep(delay)
-            continue
-        require(len(body) == descriptor["size"] and hashlib.sha256(body).hexdigest() == descriptor["sha256"],
-                f"Candidate downloaded file differs from manifest: {key}")
-        return body
-    raise AssertionError("Unreachable read retry state")
+    try:
+        # Empty static objects are valid; the exact length and checksum below
+        # still reject any unexpected byte returned within this minimal bound.
+        body = read_r2_bytes(client, bucket, key, maximum=max(1, size))
+    except Exception as error:
+        code = publisher.upload_error_code(error)
+        raise ResumeError(f"Candidate object read failed: {key}; code={code or type(error).__name__}") from error
+    require(len(body) == size and hashlib.sha256(body).hexdigest() == descriptor["sha256"],
+            f"Candidate downloaded file differs from manifest: {key}")
+    return body
 
 
 def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any], site_dir: Path, *, workers: int = 16) -> set[str]:

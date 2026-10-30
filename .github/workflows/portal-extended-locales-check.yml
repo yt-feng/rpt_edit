@@ -4,6 +4,12 @@ on:
   pull_request:
     paths:
       - 'scripts/*extended*'
+      - 'scripts/*r2_transport*'
+      - 'scripts/*validate_portal_locale_checkpoint*'
+      - 'scripts/*neutral_refresh_resilience_workflow*'
+      - 'scripts/*publish_static_slot*'
+      - 'scripts/chart_search_r2.py'
+      - 'scripts/portal_suite_catalog.py'
       - 'scripts/fixtures/extended_source_readers_335.json'
       - 'scripts/*french_source_fallback*'
       - 'scripts/*restore_published_catalog*'
@@ -42,6 +48,12 @@ on:
     branches: [main, codex/extended-locales-r2-20260924]
     paths:
       - 'scripts/*extended*'
+      - 'scripts/*r2_transport*'
+      - 'scripts/*validate_portal_locale_checkpoint*'
+      - 'scripts/*neutral_refresh_resilience_workflow*'
+      - 'scripts/*publish_static_slot*'
+      - 'scripts/chart_search_r2.py'
+      - 'scripts/portal_suite_catalog.py'
       - 'scripts/fixtures/extended_source_readers_335.json'
       - 'scripts/*french_source_fallback*'
       - 'scripts/*restore_published_catalog*'
@@ -114,6 +126,11 @@ jobs:
           python -B scripts/test_portal_extended_source_fallback.py
           python -B scripts/test_portal_extended_r2.py
           python -B scripts/test_portal_extended_r2_sdk.py
+          python -B scripts/test_r2_transport.py
+          python -B scripts/test_publish_static_slot.py
+          python -B scripts/test_chart_search_index.py
+          python -B scripts/test_validate_portal_locale_checkpoint.py
+          python -B scripts/test_neutral_refresh_resilience_workflow.py
           python -B scripts/test_portal_extended_source_reads.py
           python -B scripts/test_portal_extended_quality.py
           python -B scripts/test_portal_extended_repair_contract.py

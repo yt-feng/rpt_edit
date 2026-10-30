@@ -22,6 +22,7 @@ from portal_suite_catalog import (
     validated_catalog_r2_prefix,
 )
 from publish_static_slot import runtime_manifest_key, runtime_release_prefix, valid_runtime_manifest
+from r2_transport import R2BodyError, read_r2_bytes
 
 RELEASE_RE = re.compile(r"[a-f0-9]{32}")
 ID_RE = re.compile(r"[a-f0-9]{24}")
@@ -101,20 +102,9 @@ def catalog_rows(catalog: dict[str, Any]) -> dict[str, dict[str, Any]]:
 
 def read_object(client: Any, bucket: str, key: str, limit: int) -> bytes:
     try:
-        response = client.get_object(Bucket=bucket, Key=key)
-        length = response.get("ContentLength")
-        require(type(length) is int and 0 < length <= limit, "runtime_object_size_invalid")
-        body = response["Body"]
-        try:
-            raw = body.read(limit + 1)
-        finally:
-            close = getattr(body, "close", None)
-            if close:
-                close()
-        require(isinstance(raw, bytes) and len(raw) == length, "runtime_object_size_mismatch")
-        return raw
-    except CatalogInheritanceError:
-        raise
+        return read_r2_bytes(client, bucket, key, maximum=limit, require_content_length=True)
+    except R2BodyError as error:
+        raise CatalogInheritanceError("runtime_object_" + error.category) from None
     except Exception:
         raise CatalogInheritanceError("runtime_object_read_failed") from None
 

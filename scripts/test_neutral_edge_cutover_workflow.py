@@ -194,8 +194,8 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn('--cache-path "$RUNNER_TEMP/portal-title-cache/cache-v1.json"', self.workflow[translate:detect])
         self.assertIn('--seed-catalog-path "$RUNNER_TEMP/previous-public-catalog.json"', self.workflow[translate:detect])
         self.assertIn("if: always()", self.workflow[detect:save])
-        self.assertIn("from translate_portal_titles import load_title_cache", self.workflow[detect:save])
-        self.assertLess(self.workflow[detect:save].index("load_title_cache(Path("),
+        self.assertIn("scripts/validate_portal_locale_checkpoint.py --kind title", self.workflow[detect:save])
+        self.assertLess(self.workflow[detect:save].index("scripts/validate_portal_locale_checkpoint.py --kind title"),
                         self.workflow[detect:save].index('echo "present=true"'))
         self.assertIn("if: always() && steps.title_checkpoint.outputs.present == 'true'", self.workflow[save:locale])
         self.assertIn("uses: actions/cache/save@v4", self.workflow[save:locale])
@@ -498,7 +498,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         hot_report_download = self.workflow[hot_report_source:restore]
         self.assertIn("if: steps.operation.outputs.multilingual_enabled == 'true'", hot_report_download)
         self.assertIn('key = "_hot-reports/indexes/public-v2.json"', hot_report_download)
-        self.assertIn("client.get_object(Bucket=bucket, Key=key)", hot_report_download)
+        self.assertIn("read_r2_bytes(client, bucket, key, maximum=4 * 1024 * 1024)", hot_report_download)
         self.assertIn("Hot Reports public translation source is unavailable", hot_report_download)
         self.assertIn('Path(os.environ["RUNNER_TEMP"]) / "hot-reports-public-v2.json"', hot_report_download)
 
@@ -574,7 +574,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertLess(diagnostics, validate_release)
         diagnostics_step = self.workflow[diagnostics:validate_release]
         self.assertIn("if: always() && steps.operation.outputs.multilingual_enabled == 'true'", diagnostics_step)
-        self.assertIn("uses: actions/upload-artifact@v4", diagnostics_step)
+        self.assertIn("uses: ./.github/actions/resilient-diagnostic-artifact", diagnostics_step)
         self.assertIn("locale-preflight-diagnostics.json", diagnostics_step)
         self.assertIn("locale-full-diagnostics*.json", diagnostics_step)
         self.assertIn('index_args=(--index-start-date "$PORTAL_MULTILINGUAL_INDEX_START_DATE")', locale)

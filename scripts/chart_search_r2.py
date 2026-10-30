@@ -14,6 +14,8 @@ from collections import Counter
 from pathlib import Path, PurePosixPath
 from typing import Any
 
+from r2_transport import install_r2_retry_handler, read_r2_bytes
+
 
 DEFAULT_PREFIX = "_chart-search/v1"
 DEFAULT_STORAGE_BUDGET_BYTES = 100 * 1024 * 1024 * 1024
@@ -52,9 +54,9 @@ def client_and_bucket() -> tuple[Any, str]:
         aws_access_key_id=require_env("R2_ACCESS_KEY_ID"),
         aws_secret_access_key=require_env("R2_SECRET_ACCESS_KEY"),
         region_name="auto",
-        config=Config(retries={"max_attempts": 8, "mode": "adaptive"}),
+        config=Config(retries={"total_max_attempts": 9, "mode": "adaptive"}, connect_timeout=10, read_timeout=60),
     )
-    return client, require_env("R2_BUCKET")
+    return install_r2_retry_handler(client), require_env("R2_BUCKET")
 
 
 def default_document(kind: str) -> dict[str, Any]:
@@ -82,13 +84,13 @@ def is_not_found(error: Exception) -> bool:
 
 def read_json_object(client: Any, bucket: str, key: str, kind: str) -> tuple[dict[str, Any], bool]:
     try:
-        response = client.get_object(Bucket=bucket, Key=key)
+        body = read_r2_bytes(client, bucket, key, maximum=128 * 1024 * 1024)
     except Exception as exc:  # botocore is an optional runtime dependency
         if is_not_found(exc):
             return default_document(kind), False
         raise RuntimeError(f"Unable to download chart-search {kind}") from exc
     try:
-        value = json.loads(response["Body"].read().decode("utf-8"))
+        value = json.loads(body.decode("utf-8"))
     except (KeyError, UnicodeDecodeError, json.JSONDecodeError) as exc:
         raise RuntimeError(f"Stored chart-search {kind} is invalid") from exc
     if not isinstance(value, dict) or int(value.get("schema_version") or 0) != 1:

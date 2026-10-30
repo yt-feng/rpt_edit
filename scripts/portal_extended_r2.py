@@ -22,6 +22,10 @@ from typing import Any, Iterable
 
 from portal_extended_locales import ORIGIN, digest, stable_bytes, validate_corpus
 from offline_translation import MODEL_ID, PROVIDER
+from r2_transport import (
+    R2BodyError, install_r2_retry_handler, normalize_r2_throttling as _normalize_r2_bare_429,
+    read_r2_bytes, retryable_stream_error, sdk_retry_count,
+)
 
 
 SCHEMA_VERSION = 1
@@ -91,35 +95,7 @@ def build_r2_client() -> Any:
     # R2 also reports throttling as bare 429 or ServiceUnavailable responses.
     # Normalize before both SDK retry selection and adaptive rate limiting so
     # every thread sharing this client observes the same throttling feedback.
-    client.meta.events.register_first("needs-retry.s3", _normalize_r2_bare_429, unique_id="r2-bare-429")
-    return client
-
-
-def _normalize_r2_bare_429(response: Any = None, operation: Any = None, **_kwargs: Any) -> None:
-    """Feed R2 read/write throttling into the existing native retry budget."""
-    if getattr(operation, "name", None) not in {"HeadObject", "GetObject", "PutObject"}:
-        return
-    if not isinstance(response, tuple) or len(response) != 2:
-        return
-    http_response, parsed = response
-    status = getattr(http_response, "status_code", None)
-    if not isinstance(parsed, dict):
-        return
-    details = parsed.get("Error")
-    if details is None:
-        details = {}
-    if not isinstance(details, dict):
-        return
-    code = str(details.get("Code") or "").strip().lower()
-    same_object_throttle = (
-        status == 503
-        and code == "serviceunavailable"
-        and "reduce your concurrent request rate for the same object" in str(details.get("Message") or "").lower()
-    )
-    if not (status == 429 and code in {"", "429", "serviceunavailable"}) and not same_object_throttle:
-        return
-    details["Code"] = "SlowDown"
-    parsed["Error"] = details
+    return install_r2_retry_handler(client)
 
 
 def error_code(error: BaseException) -> str:
@@ -156,28 +132,6 @@ def classify(error: BaseException, operation: str) -> R2StoreError:
     return R2TransportError(f"R2 request failed during {operation}: {code or status or type(error).__name__}")
 
 
-def retryable_stream_error(error: BaseException) -> bool:
-    # Unknown errors and validation failures are not evidence of a transient
-    # connection failure, even though classify() exposes a transport error.
-    if isinstance(error, R2StoreError):
-        return False
-    transport_errors: tuple[type[BaseException], ...] = (TimeoutError, ConnectionError)
-    try:
-        from botocore.exceptions import (  # type: ignore
-            ConnectionClosedError,
-            ConnectTimeoutError,
-            EndpointConnectionError,
-            ReadTimeoutError,
-            ResponseStreamingError,
-        )
-    except ImportError:  # Unit tests do not require the AWS SDK.
-        pass
-    else:
-        transport_errors += (ConnectionClosedError, ConnectTimeoutError, EndpointConnectionError,
-                             ReadTimeoutError, ResponseStreamingError)
-    return isinstance(error, transport_errors)
-
-
 def uncertain_put_error(error: BaseException) -> bool:
     """Recognize outcomes worth reconciling, without creating a retry loop."""
     if isinstance(error, R2StoreError) or is_missing(error):
@@ -186,22 +140,6 @@ def uncertain_put_error(error: BaseException) -> bool:
     if code in {"accessdenied", "invalidaccesskeyid", "signaturedoesnotmatch", "forbidden"} or status in {"401", "403"}:
         return False
     return code in RETRYABLE_CODES or status in RETRYABLE_CODES or retryable_stream_error(error)
-
-
-def sdk_retry_count(response: Any) -> int | None:
-    """Return None for absent retry metadata, -1 for unreadable metadata."""
-    if not isinstance(response, dict):
-        return None
-    metadata = response.get("ResponseMetadata") or {}
-    if not isinstance(metadata, dict):
-        return -1
-    if "RetryAttempts" not in metadata:
-        return None
-    try:
-        return int(metadata["RetryAttempts"])
-    except (TypeError, ValueError):
-        # An unreadable retry count must not multiply an unknown SDK budget.
-        return -1
 
 
 def safe_part(value: str, *, label: str, pattern: re.Pattern[str] | None = None) -> str:
@@ -353,36 +291,18 @@ class R2Store:
         return self.candidate_key(locale, generation, candidate_id, "candidate-ready.json")
 
     def _read_with_retry(self, key: str, *, maximum: int | None = None) -> Any:
-        """Use SDK request retries, then recover only interrupted GET streams."""
+        """Use one native request budget and bounded interrupted-stream recovery."""
         operation = "head" if maximum is None else "get"
-        for attempt in range(len(READ_RETRY_DELAYS) + 1):
-            response = None
-            stream_started = False
-            try:
-                if maximum is None:
-                    return self.client.head_object(Bucket=self.bucket, Key=key)
-                response = self.client.get_object(Bucket=self.bucket, Key=key)
-                stream = response["Body"]
-                try:
-                    stream_started = True
-                    return stream.read(maximum + 1)
-                finally:
-                    stream.close()
-            except Exception as error:
-                if isinstance(error, R2StoreError):
-                    raise
-                error_retries = sdk_retry_count(getattr(error, "response", None))
-                # SDK request failures, including transport exceptions without
-                # retry metadata, must not start another SDK retry chain.
-                if (
-                    attempt == len(READ_RETRY_DELAYS)
-                    or not stream_started
-                    or not retryable_stream_error(error)
-                    or error_retries not in {None, 0}
-                    or sdk_retry_count(response) not in {None, 0}
-                ):
-                    raise classify(error, f"{operation} {key}") from error
-                time.sleep(READ_RETRY_DELAYS[attempt] + random.uniform(0, READ_RETRY_JITTER))
+        try:
+            if maximum is None:
+                return self.client.head_object(Bucket=self.bucket, Key=key)
+            return read_r2_bytes(self.client, self.bucket, key, maximum=maximum)
+        except R2StoreError:
+            raise
+        except R2BodyError as error:
+            raise R2IntegrityError(f"R2 object body {error.category}: {key}") from error
+        except Exception as error:
+            raise classify(error, f"{operation} {key}") from error
 
     @staticmethod
     def _head_matches_write(head: dict[str, Any], expected_length: int, metadata: dict[str, str],

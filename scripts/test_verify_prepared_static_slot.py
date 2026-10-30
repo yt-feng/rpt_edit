@@ -12,7 +12,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 import publish_static_slot as publisher
 import verify_prepared_static_slot as guard
@@ -21,6 +21,28 @@ from test_verify_portal_locale_routes import ORIGIN, describe, fixture as locale
 
 
 class PreparedStaticSlotTests(unittest.TestCase):
+    def test_prepared_body_stream_recovers_then_still_checks_committed_checksum(self):
+        self.prepare()
+        relative = "index.html"
+        key = publisher.slot_prefix(self.slot) + relative
+        descriptor = self.manifest["files"][relative]
+        raw = self.client.objects[key]["body"]
+        for restored, valid in ((raw, True), (b"x" * len(raw), False)):
+            with self.subTest(valid=valid):
+                broken, complete = io.BytesIO(b"partial"), io.BytesIO(restored)
+                broken.read = Mock(side_effect=TimeoutError("interrupted"))
+                with patch.object(self.client, "get_object", side_effect=[
+                    {"Body": broken}, {"Body": complete},
+                ]) as get, patch("r2_transport.time.sleep"):
+                    if valid:
+                        self.assertEqual(guard.read_verified_candidate_body(
+                            self.client, "bucket", key, descriptor, maximum=1024), raw)
+                    else:
+                        with self.assertRaisesRegex(RuntimeError, "content differs"):
+                            guard.read_verified_candidate_body(self.client, "bucket", key, descriptor, maximum=1024)
+                self.assertEqual(get.call_count, 2)
+                self.assertTrue(broken.closed and complete.closed)
+
     def test_metadata_and_candidate_guard_import_without_optional_http_packages(self):
         for script in ('verify_prepared_static_slot.py', 'audit_portal_extended_live.py'):
             result = subprocess.run([sys.executable, '-S', '-B', str(Path(__file__).with_name(script)), '--help'],

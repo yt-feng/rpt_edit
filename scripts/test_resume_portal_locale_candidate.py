@@ -620,7 +620,7 @@ class ResumeTests(unittest.TestCase):
         oversized = io.BytesIO(b"x" * 33)
         with patch("verify_prepared_static_slot.MAX_COMMITTED_MANIFEST_BYTES", 32), \
              patch.object(self.r2, "get_object", return_value={"Body": oversized}):
-            with self.assertRaisesRegex(resume.ResumeError, "byte size bound"):
+            with self.assertRaisesRegex(resume.ResumeError, "size_invalid"):
                 resume.read_pinned_manifest(self.r2, "bucket", PREVIOUS)
         self.assertTrue(oversized.closed)
         corrupted = io.BytesIO(b"x" * (len(APP) + 1))
@@ -801,6 +801,11 @@ class CandidateReadRetryTests(unittest.TestCase):
     BODY = b"committed candidate object"
     KEY = "edge-static/slots/b/ko/blog/new.html"
 
+    def setUp(self):
+        jitter = patch("r2_transport.random.uniform", return_value=0)
+        jitter.start()
+        self.addCleanup(jitter.stop)
+
     def descriptor(self):
         return {"size": len(self.BODY), "sha256": hashlib.sha256(self.BODY).hexdigest()}
 
@@ -832,20 +837,22 @@ class CandidateReadRetryTests(unittest.TestCase):
         error.response = {"Error": {"Code": code}}
         return error
 
-    @patch.object(resume.time, "sleep")
-    def test_service_unavailable_and_slowdown_retry_then_succeed(self, sleep):
-        for code in ("ServiceUnavailable", "SlowDown"):
-            with self.subTest(code=code):
-                sleep.reset_mock()
-                stream = io.BytesIO(self.BODY)
-                client = Mock()
-                client.get_object.side_effect = [self.read_error(code), self.read_error(code), {"Body": stream}]
-                self.assertEqual(resume.read_candidate_object(client, "bucket", self.KEY, self.descriptor()), self.BODY)
-                self.assertEqual(client.get_object.call_count, 3)
-                self.assertEqual(sleep.call_args_list, [call(2), call(5)])
-                self.assertTrue(stream.closed)
+    @patch("r2_transport.time.sleep")
+    def test_request_throttling_does_not_start_another_native_sdk_chain(self, sleep):
+        for code in ("ServiceUnavailable", "SlowDown", "429"):
+            for retries in (None, 0, 8):
+                with self.subTest(code=code, retries=retries):
+                    error = self.read_error(code)
+                    if retries is not None:
+                        error.response["ResponseMetadata"] = {"RetryAttempts": retries}
+                    client = Mock()
+                    client.get_object.side_effect = error
+                    with self.assertRaisesRegex(resume.ResumeError, "Candidate object read failed"):
+                        resume.read_candidate_object(client, "bucket", self.KEY, self.descriptor())
+                    client.get_object.assert_called_once_with(Bucket="bucket", Key=self.KEY)
+        sleep.assert_not_called()
 
-    @patch.object(resume.time, "sleep")
+    @patch("r2_transport.time.sleep")
     def test_access_denied_and_no_such_key_never_retry(self, sleep):
         for code in ("AccessDenied", "NoSuchKey"):
             with self.subTest(code=code):
@@ -856,7 +863,7 @@ class CandidateReadRetryTests(unittest.TestCase):
                 client.get_object.assert_called_once_with(Bucket="bucket", Key=self.KEY)
         sleep.assert_not_called()
 
-    @patch.object(resume.time, "sleep")
+    @patch("r2_transport.time.sleep")
     def test_hash_mismatch_never_retries_and_closes_stream(self, sleep):
         stream = io.BytesIO(b"x" * len(self.BODY))
         client = Mock()
@@ -867,7 +874,7 @@ class CandidateReadRetryTests(unittest.TestCase):
         self.assertTrue(stream.closed)
         sleep.assert_not_called()
 
-    @patch.object(resume.time, "sleep")
+    @patch("r2_transport.time.sleep")
     def test_successful_stream_is_closed_without_wait(self, sleep):
         stream = io.BytesIO(self.BODY)
         client = Mock()
@@ -876,7 +883,7 @@ class CandidateReadRetryTests(unittest.TestCase):
         self.assertTrue(stream.closed)
         sleep.assert_not_called()
 
-    @patch.object(resume.time, "sleep")
+    @patch("r2_transport.time.sleep")
     def test_nonretryable_stream_failure_is_closed(self, sleep):
         stream = Mock()
         stream.read.side_effect = ValueError("malformed stream")
@@ -888,10 +895,10 @@ class CandidateReadRetryTests(unittest.TestCase):
         self.assertEqual(client.get_object.call_count, 1)
         sleep.assert_not_called()
 
-    @patch.object(resume.time, "sleep")
+    @patch("r2_transport.time.sleep")
     def test_transient_stream_is_closed_before_backoff_and_next_attempt(self, sleep):
         failed_stream = Mock()
-        failed_stream.read.side_effect = self.read_error("ServiceUnavailable")
+        failed_stream.read.side_effect = TimeoutError("interrupted response")
         good_stream = io.BytesIO(self.BODY)
         client = Mock()
         client.get_object.side_effect = [{"Body": failed_stream}, {"Body": good_stream}]
@@ -901,28 +908,31 @@ class CandidateReadRetryTests(unittest.TestCase):
         self.assertTrue(good_stream.closed)
         sleep.assert_called_once_with(2)
 
-    @patch.object(resume.time, "sleep")
-    def test_retry_exhaustion_has_six_attempts_and_bounded_waits(self, sleep):
+    @patch("r2_transport.time.sleep")
+    def test_stream_failure_after_sdk_retries_does_not_restart_get(self, sleep):
+        stream = Mock()
+        stream.read.side_effect = TimeoutError("interrupted response")
         client = Mock()
-        client.get_object.side_effect = self.read_error("SlowDown")
-        with self.assertRaisesRegex(resume.ResumeError, "code=slowdown"):
+        client.get_object.return_value = {"Body": stream, "ResponseMetadata": {"RetryAttempts": 1}}
+        with self.assertRaisesRegex(resume.ResumeError, "code=TimeoutError"):
             resume.read_candidate_object(client, "bucket", self.KEY, self.descriptor())
-        self.assertEqual(client.get_object.call_count, 6)
-        self.assertEqual(sleep.call_args_list, [call(2), call(5), call(10), call(20), call(30)])
+        client.get_object.assert_called_once_with(Bucket="bucket", Key=self.KEY)
+        stream.close.assert_called_once_with()
+        sleep.assert_not_called()
 
-    @patch.object(resume.time, "sleep")
-    def test_retry_exhaustion_closes_every_failed_stream(self, sleep):
-        streams = [Mock() for _ in range(6)]
+    @patch("r2_transport.time.sleep")
+    def test_stream_recovery_stops_after_four_gets_and_closes_every_response(self, sleep):
+        streams = [Mock() for _ in range(4)]
         for stream in streams:
-            stream.read.side_effect = self.read_error("ServiceUnavailable")
+            stream.read.side_effect = TimeoutError("interrupted response")
         client = Mock()
         client.get_object.side_effect = [{"Body": stream} for stream in streams]
-        with self.assertRaisesRegex(resume.ResumeError, "code=serviceunavailable"):
+        with self.assertRaisesRegex(resume.ResumeError, "code=TimeoutError"):
             resume.read_candidate_object(client, "bucket", self.KEY, self.descriptor())
         for stream in streams:
             stream.close.assert_called_once_with()
-        self.assertEqual(client.get_object.call_count, 6)
-        self.assertEqual(sleep.call_count, 5)
+        self.assertEqual(client.get_object.call_count, 4)
+        self.assertEqual(sleep.call_args_list, [call(2), call(4), call(8)])
 
 
 class ReadTransportTests(unittest.TestCase):

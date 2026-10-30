@@ -20,6 +20,7 @@ import xml.etree.ElementTree as ET
 from portal_extended_locales import select_locales, file_for_url
 from audit_portal_extended_live import check_page
 from portal_extended_ui import UI_VERSION
+from r2_transport import R2BodyError, read_r2_bytes
 from portal_locale_manifest import (
     MAX_LOCALE_MANIFEST_BYTES, parse_locale_manifest, validate_translation_resolution,
 )
@@ -72,12 +73,12 @@ def read_bounded_body(body: Any, maximum: int) -> bytes:
 
 def read_json_object(client: Any, bucket: str, key: str) -> dict[str, Any] | None:
     try:
-        body = client.get_object(Bucket=bucket, Key=key)["Body"]
+        body = read_r2_bytes(client, bucket, key, maximum=MAX_COMMITTED_MANIFEST_BYTES)
     except Exception as error:
         if upload_error_code(error) in {"404", "nosuchkey", "notfound"} or isinstance(error, KeyError):
             return None
         raise
-    value = json.loads(read_bounded_body(body, MAX_COMMITTED_MANIFEST_BYTES).decode("utf-8"))
+    value = json.loads(body.decode("utf-8"))
     return value if isinstance(value, dict) else None
 
 
@@ -88,7 +89,12 @@ def read_verified_candidate_body(
         raise RuntimeError(f"Prepared object byte size exceeds its bound: {key}")
     if not remote_object_matches_descriptor(client, bucket, key, descriptor):
         raise RuntimeError(f"Prepared object metadata differs from its manifest: {key}")
-    body = read_bounded_body(client.get_object(Bucket=bucket, Key=key)["Body"], int(descriptor["size"]))
+    try:
+        body = read_r2_bytes(client, bucket, key, maximum=int(descriptor["size"]))
+    except R2BodyError as error:
+        if error.category == "size_invalid":
+            raise RuntimeError("Prepared object exceeds its byte size bound") from error
+        raise RuntimeError(f"Prepared object content differs from its manifest: {key}") from error
     if len(body) != descriptor["size"] or hashlib.sha256(body).hexdigest() != descriptor["sha256"]:
         raise RuntimeError(f"Prepared object content differs from its manifest: {key}")
     return body

@@ -72,6 +72,31 @@ class PublishedCatalogTests(unittest.TestCase):
             callback()
         self.assertEqual(caught.exception.category, category)
 
+    def test_runtime_read_recovers_interrupted_stream_and_closes_every_body(self):
+        broken, complete = io.BytesIO(b"partial"), io.BytesIO(b"complete")
+        broken.read = mock.Mock(side_effect=TimeoutError("interrupted"))
+        client = mock.Mock()
+        client.get_object.side_effect = [
+            {"ContentLength": 8, "Body": broken},
+            {"ContentLength": 8, "Body": complete},
+        ]
+        with mock.patch("r2_transport.time.sleep"):
+            self.assertEqual(restore.read_object(client, "bucket", "catalog", 32), b"complete")
+        self.assertEqual(client.get_object.call_count, 2)
+        self.assertTrue(broken.closed and complete.closed)
+
+    def test_invalid_runtime_length_closes_body_without_retry(self):
+        for length, raw, category in ((99, b"abc", "runtime_object_size_invalid"),
+                                      (4, b"abc", "runtime_object_size_mismatch"),
+                                      (None, b"abc", "runtime_object_size_invalid")):
+            with self.subTest(length=length):
+                body = io.BytesIO(raw)
+                client = mock.Mock()
+                client.get_object.return_value = {"ContentLength": length, "Body": body}
+                self.assert_category(category, lambda: restore.read_object(client, "bucket", "catalog", 32))
+                client.get_object.assert_called_once()
+                self.assertTrue(body.closed)
+
     def test_runtime_manifest_binds_release_tree_bytes_and_catalog_ids(self):
         client = FakeR2()
         raw = client.add_release(ACTIVE, catalog(item()))

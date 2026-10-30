@@ -44,9 +44,13 @@ class FakeBody:
     def __init__(self, body: bytes):
         self.body = body
         self.closed = False
+        self.position = 0
 
     def read(self, maximum: int = -1) -> bytes:
-        return self.body[:maximum] if maximum >= 0 else self.body
+        end = self.position + maximum if maximum >= 0 else len(self.body)
+        result = self.body[self.position:end]
+        self.position += len(result)
+        return result
 
     def close(self) -> None:
         self.closed = True

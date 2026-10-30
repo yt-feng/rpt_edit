@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import io
+import gzip
 import json
 import os
 import tempfile
@@ -25,7 +26,7 @@ class MissingObject(KeyError):
 class R2UploadError(RuntimeError):
     def __init__(self, code: str):
         super().__init__(f"injected R2 upload error: {code}")
-        self.response = {"Error": {"Code": code}}
+        self.response = {"Error": {"Code": code}, "ResponseMetadata": {"RetryAttempts": 0}}
 
 
 class FakePaginator:
@@ -85,6 +86,7 @@ class FakeR2:
                 "Metadata": dict(row.get("metadata") or {}),
                 "ContentType": row.get("content_type") or "",
                 "CacheControl": row.get("cache_control") or "",
+                "ContentEncoding": row.get("content_encoding") or "",
             }
 
     def put_object(self, *, Bucket: str, Key: str, Body, Metadata=None, **kwargs):
@@ -99,6 +101,7 @@ class FakeR2:
                 "metadata": dict(Metadata or {}),
                 "content_type": kwargs.get("ContentType") or "",
                 "cache_control": kwargs.get("CacheControl") or "",
+                "content_encoding": kwargs.get("ContentEncoding") or "",
             }
         return {}
 
@@ -120,6 +123,7 @@ class FakeR2:
                 "metadata": dict(extra.get("Metadata") or {}),
                 "content_type": extra.get("ContentType") or "",
                 "cache_control": extra.get("CacheControl") or "",
+                "content_encoding": extra.get("ContentEncoding") or "",
             }
 
     def delete_objects(self, *, Bucket: str, Delete: dict):
@@ -368,7 +372,7 @@ class StaticSlotPublisherTests(unittest.TestCase):
         key = "edge-static/slots/a/index.html"
         client.put_object(Bucket="bucket", Key=key, Body=b"site")
         error = R2UploadError("UnknownError")
-        error.response["ResponseMetadata"] = {"HTTPStatusCode": 429}
+        error.response["ResponseMetadata"] = {"HTTPStatusCode": 429, "RetryAttempts": 0}
         client.head_failures[key] = [error]
         delays = []
         metadata = publisher.head_object_with_retry(client, "bucket", key, retry_sleep=delays.append)
@@ -622,7 +626,7 @@ class StaticSlotPublisherTests(unittest.TestCase):
             self.assertNotIn(publisher.slot_prefix("a") + "obsolete.txt", client.objects)
             self.assertIn(publisher.slot_prefix("b") + "obsolete.txt", client.objects)
 
-    def test_failed_upload_keeps_previous_manifest_and_forces_clean_recovery(self) -> None:
+    def test_failed_upload_keeps_previous_manifest_and_reuses_verified_partial_files(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             build_site(root)
@@ -642,8 +646,101 @@ class StaticSlotPublisherTests(unittest.TestCase):
             client.fail_upload_suffix = ""
             recovered = self.publish(client, root, 4, "b")
             self.assertTrue(recovered["recovered_incomplete_slot"])
-            self.assertEqual(recovered["uploaded_files"], recovered["file_count"])
+            self.assertEqual(recovered["uploaded_files"], 1)
+            self.assertEqual(recovered["skipped_files"], recovered["file_count"] - 1)
             self.assertNotIn(publisher.incomplete_key("a"), client.objects)
+
+    def test_partial_recovery_rewrites_same_size_bad_hash_or_delivery_attributes(self) -> None:
+        for field, value in (("metadata", {"sha256": "0" * 64}),
+                             ("content_type", "application/octet-stream"),
+                             ("cache_control", "private"),
+                             ("content_encoding", "gzip")):
+            with self.subTest(field=field), tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary)
+                build_site(root)
+                client = FakeR2()
+                first = self.publish(client, root, 1)
+                key = publisher.slot_prefix("a") + "assets/app.js"
+                client.objects[key][field] = value
+                publisher.put_json(client, "bucket", publisher.incomplete_key("a"),
+                                   {"release_id": release(2)})
+                before = client.upload_attempts[key]
+                result = self.publish(client, root, 3, "b")
+                self.assertTrue(result["recovered_incomplete_slot"])
+                self.assertEqual(result["uploaded_files"], 1)
+                self.assertEqual(client.upload_attempts[key], before + 1)
+                self.assertEqual(result["skipped_files"], first["file_count"] - 1)
+
+    def test_partial_recovery_restores_missing_gzip_encoding_without_changing_bytes(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            build_site(root)
+            (root / "data/cache.json.gz").write_bytes(gzip.compress(b'{"cached":true}'))
+            client = FakeR2()
+            first = self.publish(client, root, 1)
+            key = publisher.slot_prefix("a") + "data/cache.json.gz"
+            before_body = client.objects[key]["body"]
+            self.assertEqual(client.objects[key]["content_encoding"], "gzip")
+            del client.objects[key]["content_encoding"]
+            publisher.put_json(client, "bucket", publisher.incomplete_key("a"),
+                               {"release_id": release(2)})
+            before = client.upload_attempts[key]
+            result = self.publish(client, root, 3, "b")
+            self.assertTrue(result["recovered_incomplete_slot"])
+            self.assertEqual(result["uploaded_files"], 1)
+            self.assertEqual(client.upload_attempts[key], before + 1)
+            self.assertEqual(result["skipped_files"], first["file_count"] - 1)
+            self.assertEqual(client.objects[key]["body"], before_body)
+            self.assertEqual(client.objects[key]["content_encoding"], "gzip")
+
+    def test_native_or_exhausted_sdk_errors_never_start_another_upload_or_head_chain(self) -> None:
+        for marker, retries in ((True, 0), (False, 8), (False, None), (False, "unknown")):
+            with self.subTest(marker=marker, retries=retries), tempfile.NamedTemporaryFile() as handle:
+                client = FakeR2()
+                client._r2_native_retry_policy = marker
+                error = R2UploadError("ServiceUnavailable")
+                if retries is None:
+                    error.response.pop("ResponseMetadata")
+                else:
+                    error.response["ResponseMetadata"]["RetryAttempts"] = retries
+                client.upload_failures["object"] = [error]
+                client.head_failures["object"] = [error]
+                delays = []
+                with self.assertRaises(R2UploadError):
+                    publisher.upload_file_with_retry(client, handle.name, "bucket", "object", retry_sleep=delays.append)
+                with self.assertRaises(R2UploadError):
+                    publisher.head_object_with_retry(client, "bucket", "object", retry_sleep=delays.append)
+                self.assertEqual(client.upload_attempts["object"], 1)
+                self.assertEqual(client.head_attempts["object"], 1)
+                self.assertEqual(delays, [])
+
+    def test_unknown_manifest_write_outcome_is_reconciled_without_another_put(self) -> None:
+        client = FakeR2()
+        original = client.put_object
+        writes = []
+        def lost_response(**kwargs):
+            writes.append(kwargs["Key"])
+            original(**kwargs)
+            error = R2UploadError("ServiceUnavailable")
+            error.response["ResponseMetadata"]["RetryAttempts"] = 8
+            raise error
+        client.put_object = lost_response
+        publisher.put_json(client, "bucket", "manifest", {"version": 1}, Metadata={"release-id": "one"})
+        self.assertEqual(writes, ["manifest"])
+        self.assertEqual(json.loads(client.objects["manifest"]["body"]), {"version": 1})
+
+    def test_unknown_manifest_write_cannot_accept_different_stored_bytes(self) -> None:
+        client = FakeR2()
+        client.put_object(Bucket="bucket", Key="manifest", Body=b'{"version":0}',
+                          ContentType="application/json", CacheControl="no-store")
+        writes = []
+        def rejected(**kwargs):
+            writes.append(kwargs["Key"])
+            raise R2UploadError("ServiceUnavailable")
+        client.put_object = rejected
+        with self.assertRaises(R2UploadError):
+            publisher.put_json(client, "bucket", "manifest", {"version": 1})
+        self.assertEqual(writes, ["manifest"])
 
     def test_manifest_is_committed_after_all_slot_content_uploads(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

@@ -21,6 +21,10 @@ from pathlib import Path
 from typing import Any, Callable, Iterable
 
 from check_public_brand import check_public_brand
+from r2_transport import (
+    install_r2_retry_handler, native_retry_handler_installed, read_r2_bytes,
+    request_retry_count, transient_request_error,
+)
 
 
 SCHEMA_VERSION = 1
@@ -249,7 +253,7 @@ def upload_file_with_retry(
     retry_sleep: Callable[[float], None] | None = None,
     **kwargs: Any,
 ) -> None:
-    """Retry only bounded, explicitly transient R2/S3 upload failures."""
+    """Use the native budget; fallback only with explicit zero-retry authority."""
     sleeper = retry_sleep or time.sleep
     total_attempts = len(UPLOAD_RETRY_DELAYS_SECONDS) + 1
     for attempt in range(1, total_attempts + 1):
@@ -258,7 +262,8 @@ def upload_file_with_retry(
             return
         except Exception as error:
             code = upload_error_code(error)
-            if code not in RETRYABLE_UPLOAD_ERROR_CODES or attempt >= total_attempts:
+            if (native_retry_handler_installed(client) or request_retry_count(error) != 0
+                or code not in RETRYABLE_UPLOAD_ERROR_CODES or attempt >= total_attempts):
                 raise
             delay = UPLOAD_RETRY_DELAYS_SECONDS[attempt - 1]
             print(
@@ -277,12 +282,7 @@ def head_object_with_retry(
     *,
     retry_sleep: Callable[[float], None] | None = None,
 ) -> dict[str, Any]:
-    """Retry transient HEAD failures that R2 may expose as numeric S3 codes.
-
-    In particular, an HTTP 429 can escape botocore's adaptive retry handler.
-    Keep this application retry bounded, and leave missing objects and permanent
-    errors to the caller so a throttled request is never treated as verification.
-    """
+    """Never restart a configured SDK retry chain or accept a failed HEAD."""
     sleeper = retry_sleep or time.sleep
     total_attempts = len(HEAD_RETRY_DELAYS_SECONDS) + 1
     for attempt in range(1, total_attempts + 1):
@@ -293,10 +293,8 @@ def head_object_with_retry(
             response = getattr(error, "response", None)
             metadata = response.get("ResponseMetadata") if isinstance(response, dict) else None
             status = str(metadata.get("HTTPStatusCode") or "") if isinstance(metadata, dict) else ""
-            if (
-                code not in RETRYABLE_HEAD_ERROR_CODES
-                and status not in {"408", "429", "500", "502", "503", "504"}
-            ) or attempt >= total_attempts:
+            if (native_retry_handler_installed(client) or request_retry_count(error) != 0
+                or not transient_request_error(error) or attempt >= total_attempts):
                 raise
             delay = HEAD_RETRY_DELAYS_SECONDS[attempt - 1]
             print(
@@ -393,7 +391,7 @@ def body_bytes(body: Any) -> bytes:
 
 def read_json_object(client: Any, bucket: str, key: str) -> dict[str, Any] | None:
     try:
-        response = client.get_object(Bucket=bucket, Key=key)
+        body = read_r2_bytes(client, bucket, key, maximum=64 * 1024 * 1024)
     except Exception as error:  # botocore is optional during local unit tests.
         response_code = str(
             getattr(error, "response", {}).get("Error", {}).get("Code", "")
@@ -401,7 +399,7 @@ def read_json_object(client: Any, bucket: str, key: str) -> dict[str, Any] | Non
         if response_code in {"404", "nosuchkey", "notfound"} or isinstance(error, KeyError):
             return None
         raise
-    payload = json.loads(body_bytes(response["Body"]).decode("utf-8"))
+    payload = json.loads(body.decode("utf-8"))
     return payload if isinstance(payload, dict) else None
 
 
@@ -469,14 +467,27 @@ def json_bytes(payload: dict[str, Any]) -> bytes:
 
 
 def put_json(client: Any, bucket: str, key: str, payload: dict[str, Any], **kwargs: Any) -> None:
-    client.put_object(
-        Bucket=bucket,
-        Key=key,
-        Body=json_bytes(payload),
-        ContentType="application/json",
-        CacheControl="no-store",
-        **kwargs,
-    )
+    body = json_bytes(payload)
+    try:
+        client.put_object(
+            Bucket=bucket, Key=key, Body=body,
+            ContentType="application/json", CacheControl="no-store", **kwargs,
+        )
+    except Exception as error:
+        # Manifest/marker writes are idempotent, but an unknown outcome must be
+        # reconciled against exact bytes and attributes, never blindly replayed.
+        if not transient_request_error(error):
+            raise
+        try:
+            actual = read_r2_bytes(client, bucket, key, maximum=max(1, len(body)))
+            head = head_object_with_retry(client, bucket, key)
+        except Exception:
+            raise error
+        if (actual != body or head.get("ContentType") != "application/json"
+            or head.get("CacheControl") != "no-store"
+            or not all((head.get("Metadata") or {}).get(name) == value
+                       for name, value in (kwargs.get("Metadata") or {}).items())):
+            raise error
 
 
 def delete_keys(client: Any, bucket: str, keys: Iterable[str]) -> int:
@@ -510,8 +521,10 @@ def remote_object_matches_descriptor(
     bucket: str,
     key: str,
     descriptor: dict[str, Any],
+    *,
+    require_delivery_attributes: bool = False,
 ) -> bool:
-    """Verify an object before trusting a previous manifest's skip decision."""
+    """Verify current bytes and delivery attributes before reusing an object."""
     try:
         metadata = head_object_with_retry(client, bucket, key)
     except Exception as error:
@@ -522,6 +535,12 @@ def remote_object_matches_descriptor(
         int(metadata.get("ContentLength", -1)) == int(descriptor["size"])
         and str((metadata.get("Metadata") or {}).get("sha256") or "")
         == descriptor["sha256"]
+        and (not require_delivery_attributes or (
+            "content_type" in descriptor and "cache_control" in descriptor
+            and metadata.get("ContentType") == descriptor["content_type"]
+            and metadata.get("CacheControl") == descriptor["cache_control"]
+            and (metadata.get("ContentEncoding") or "") == (descriptor.get("content_encoding") or "")
+        ))
     )
 
 
@@ -793,14 +812,15 @@ def publish_static_slot(
     for relative, descriptor in entries.items():
         key = prefix + relative
         if (
-            not force_reupload
-            and previous_files.get(relative) == descriptor
-            and remote_before.get(key) == int(descriptor["size"])
+            remote_before.get(key) == int(descriptor["size"])
+            and (force_reupload or previous_files.get(relative) == descriptor)
         ):
             skip_candidates.append(relative)
         else:
             upload_relatives.append(relative)
 
+    # An interrupted slot can reuse completed writes only after checking them
+    # against the current desired descriptor, regardless of its old manifest.
     # Listing proves only key and length.  Before carrying an object into a new
     # release manifest, require the SHA-256 metadata written by this publisher;
     # an old, missing, or same-length overwritten object is uploaded again.
@@ -819,6 +839,7 @@ def publish_static_slot(
                 bucket,
                 prefix + relative,
                 entries[relative],
+                require_delivery_attributes=True,
             ): relative
             for relative in skip_candidates
         }
@@ -989,7 +1010,9 @@ def build_r2_client() -> tuple[Any, Any]:
         config=Config(
             signature_version="s3v4",
             max_pool_connections=24,
-            retries={"max_attempts": 8, "mode": "adaptive"},
+            retries={"total_max_attempts": 9, "mode": "adaptive"},
+            connect_timeout=10,
+            read_timeout=60,
         ),
     )
     transfer = TransferConfig(
@@ -998,7 +1021,7 @@ def build_r2_client() -> tuple[Any, Any]:
         max_concurrency=2,
         use_threads=True,
     )
-    return client, transfer
+    return install_r2_retry_handler(client), transfer
 
 
 def append_github_values(path_value: str, values: dict[str, Any]) -> None:
