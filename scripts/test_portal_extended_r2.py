@@ -70,7 +70,8 @@ class FakeR2:
         if Key not in self.objects:
             raise Missing()
         value = self.objects[Key]
-        return {"ContentLength": value["ContentLength"], "Metadata": value["Metadata"]}
+        return {name: copy.deepcopy(value[name]) for name in
+                ("ContentLength", "Metadata", "ContentType", "CacheControl")}
 
     def get_object(self, *, Bucket, Key):
         if self.deny:
@@ -152,6 +153,101 @@ class R2Tests(unittest.TestCase):
         result = self.store.restore_candidate("fr", self.generation, uploaded["candidate_id"], restored)
         self.assertEqual(result["completed_page_count"], 2)
         self.assertEqual((candidate / "fr/index.html").read_bytes(), (restored / "fr/index.html").read_bytes())
+
+    def test_identical_candidate_replay_avoids_all_duplicate_puts(self):
+        candidate = self.root / "candidate"
+        build(self.corpus, "fr", candidate, self.root / "memo.json", FakeTranslator())
+        first = self.store.upload_candidate(candidate, "fr", self.generation)
+        self.client.put_object = Mock(wraps=self.client.put_object)
+        second = self.store.upload_candidate(candidate, "fr", self.generation)
+        self.assertEqual(first, second)
+        self.client.put_object.assert_not_called()
+        self.store.restore_candidate("fr", self.generation, second["candidate_id"], self.root / "restored")
+
+    def test_interrupted_candidate_upload_resumes_without_rewriting_verified_pages(self):
+        candidate = self.root / "candidate"
+        manifest = build(self.corpus, "fr", candidate, self.root / "memo.json", FakeTranslator())
+        candidate_id = manifest["files_sha256"]
+        first_key = self.store.candidate_key("fr", self.generation, candidate_id, manifest["pages"][0]["path"])
+        failed_key = self.store.candidate_key("fr", self.generation, candidate_id, manifest["pages"][1]["path"])
+        ready_key = self.store.candidate_ready_key("fr", self.generation, candidate_id)
+        write = self.client.put_object
+
+        def interrupt_second_page(**kwargs):
+            if kwargs["Key"] == failed_key:
+                raise HttpError("ServiceUnavailable", 429, retries=8)
+            return write(**kwargs)
+
+        self.client.put_object = Mock(side_effect=interrupt_second_page)
+        with self.assertRaises(R2TransportError):
+            self.store.upload_candidate(candidate, "fr", self.generation)
+        self.assertIn(first_key, self.client.objects)
+        self.assertNotIn(ready_key, self.client.objects)
+        self.client.put_object = Mock(wraps=write)
+        result = self.store.upload_candidate(candidate, "fr", self.generation)
+        self.assertTrue(result["ready"])
+        self.assertEqual([entry.kwargs["Key"] for entry in self.client.put_object.call_args_list],
+                         [failed_key, result["manifest_key"], ready_key])
+
+    def test_changed_candidate_diagnostics_update_manifest_and_receipt_only(self):
+        candidate = self.root / "candidate"
+        build(self.corpus, "fr", candidate, self.root / "memo.json", FakeTranslator())
+        first = self.store.upload_candidate(candidate, "fr", self.generation)
+        path = candidate / "candidate-manifest.json"
+        manifest = json.loads(path.read_bytes())
+        manifest["translation_calls_this_run"] = 0
+        manifest["cache_hits"] = 123
+        path.write_text(json.dumps(manifest), encoding="utf-8")
+        self.client.put_object = Mock(wraps=self.client.put_object)
+        second = self.store.upload_candidate(candidate, "fr", self.generation)
+        self.assertEqual(first["candidate_id"], second["candidate_id"])
+        self.assertNotEqual(first["manifest_sha256"], second["manifest_sha256"])
+        self.assertEqual([entry.kwargs["Key"] for entry in self.client.put_object.call_args_list],
+                         [second["manifest_key"], second["ready_key"]])
+        self.store.restore_candidate("fr", self.generation, second["candidate_id"], self.root / "restored")
+
+    def test_checkpoint_replay_reuses_object_and_pointer_but_updates_new_content(self):
+        checkpoint = self.root / "checkpoint.json"
+        value = {"model": MODEL_ID, "locale": "fr", "version": "extended-static-v2",
+                 "source_generation": self.generation, "rows": {}}
+        checkpoint.write_text(json.dumps(value), encoding="utf-8")
+        first = self.store.put_checkpoint("fr", self.generation, checkpoint)
+        self.client.put_object = Mock(wraps=self.client.put_object)
+        self.assertEqual(first, self.store.put_checkpoint("fr", self.generation, checkpoint))
+        self.client.put_object.assert_not_called()
+        value["rows"]["new"] = {"source": "source", "language": "fr", "text": "texte"}
+        checkpoint.write_text(json.dumps(value), encoding="utf-8")
+        second = self.store.put_checkpoint("fr", self.generation, checkpoint)
+        self.assertNotEqual(first["object_key"], second["object_key"])
+        self.assertEqual([entry.kwargs["Key"] for entry in self.client.put_object.call_args_list],
+                         [second["object_key"], second["pointer_key"]])
+
+    def test_reuse_requires_matching_bytes_metadata_and_delivery_attributes(self):
+        changes = {
+            "length": lambda value: value.update(ContentLength=1),
+            "checksum": lambda value: value["Metadata"].update(sha256="0" * 64),
+            "identity": lambda value: value["Metadata"].update(kind="other"),
+            "content_type": lambda value: value.update(ContentType="text/plain"),
+            "cache_control": lambda value: value.update(CacheControl="public"),
+        }
+        for label, change in changes.items():
+            with self.subTest(change=label):
+                self.client = FakeR2()
+                self.store.client = self.client
+                self.store._put("object", b"abc", metadata={"kind": "test"})
+                change(self.client.objects["object"])
+                self.client.put_object = Mock(wraps=self.client.put_object)
+                self.store._put("object", b"abc", metadata={"kind": "test"}, reuse_identical=True)
+                self.client.put_object.assert_called_once()
+
+    def test_preflight_failure_never_writes(self):
+        for error, expected in ((Denied(), R2PermissionError), (HttpError("429", 429), R2TransportError)):
+            with self.subTest(error=error):
+                self.client.head_object = Mock(side_effect=error)
+                self.client.put_object = Mock()
+                with self.assertRaises(expected):
+                    self.store._put("object", b"abc", metadata={}, reuse_identical=True)
+                self.client.put_object.assert_not_called()
 
     def test_permission_and_integrity_fail_closed(self):
         self.assertEqual(fake_permission_check()["permission_failure"], "R2PermissionError")
@@ -235,7 +331,71 @@ class R2Tests(unittest.TestCase):
         with self.assertRaises(R2TransportError):
             self.store._put("object", b"body", metadata={})
         self.assertEqual(self.client.put_object.call_count, 1)
-        self.client.head_object.assert_not_called()
+        self.client.head_object.assert_called_once()
+        self.sleep.assert_not_called()
+
+    def test_transient_put_response_is_reconciled_without_replaying_the_write(self):
+        for error in (HttpError("ServiceUnavailable", 503, retries=8),
+                      HttpError("ServiceUnavailable", 429), TimeoutError("response lost")):
+            with self.subTest(error=error):
+                self.client = FakeR2()
+                self.store.client = self.client
+                write = self.client.put_object
+
+                def committed_without_response(**kwargs):
+                    write(**kwargs)
+                    raise error
+
+                self.client.put_object = Mock(side_effect=committed_without_response)
+                self.client.head_object = Mock(wraps=self.client.head_object)
+                result = self.store._put("object", b"abc", metadata={"kind": "test"})
+                self.assertEqual(result["bytes"], 3)
+                self.client.put_object.assert_called_once()
+                self.client.head_object.assert_called_once()
+        self.sleep.assert_not_called()
+
+    def test_reconciliation_cannot_accept_different_object_attributes(self):
+        changes = {
+            "length": lambda value: value.update(ContentLength=1),
+            "checksum": lambda value: value["Metadata"].update(sha256="0" * 64),
+            "identity": lambda value: value["Metadata"].update(kind="other"),
+            "content_type": lambda value: value.update(ContentType="text/plain"),
+            "cache_control": lambda value: value.update(CacheControl="public"),
+        }
+        for label, change in changes.items():
+            with self.subTest(change=label):
+                self.client = FakeR2()
+                self.store.client = self.client
+                self.store._put("object", b"abc", metadata={"kind": "test"})
+                change(self.client.objects["object"])
+                self.client.put_object = Mock(side_effect=HttpError("ServiceUnavailable", 503, retries=8))
+                self.client.head_object = Mock(wraps=self.client.head_object)
+                with self.assertRaises(R2TransportError):
+                    self.store._put("object", b"abc", metadata={"kind": "test"})
+                self.client.put_object.assert_called_once()
+                self.client.head_object.assert_called_once()
+        self.sleep.assert_not_called()
+
+    def test_permission_and_unknown_put_errors_do_not_reconcile_or_replay(self):
+        for error, expected in ((Denied(), R2PermissionError),
+                                (HttpError("UnknownError", 400), R2TransportError),
+                                (OSError("unknown"), R2TransportError)):
+            with self.subTest(error=error):
+                self.client.put_object = Mock(side_effect=error)
+                self.client.head_object = Mock()
+                with self.assertRaises(expected):
+                    self.store._put("object", b"abc", metadata={})
+                self.client.put_object.assert_called_once()
+                self.client.head_object.assert_not_called()
+        self.sleep.assert_not_called()
+
+    def test_failed_reconciliation_never_replays_put(self):
+        self.client.put_object = Mock(side_effect=HttpError("ServiceUnavailable", 503, retries=8))
+        self.client.head_object = Mock(side_effect=HttpError("429", 429, retries=8))
+        with self.assertRaises(R2TransportError):
+            self.store._put("object", b"abc", metadata={})
+        self.client.put_object.assert_called_once()
+        self.client.head_object.assert_called_once()
         self.sleep.assert_not_called()
 
     def test_stream_timeout_closes_and_restarts_only_get(self):

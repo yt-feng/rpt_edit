@@ -242,7 +242,9 @@ class RepairPipeline:
         engine = self
         class ImmutableCandidateStore:
             def __getattr__(self, name): return getattr(store, name)
-            def _put(self, name, raw, *, metadata):
+            def _put(self, name, raw, *, metadata, reuse_identical=False):
+                # The shared uploader may request reuse; this adapter always
+                # enforces the stronger exact-byte, create-only contract.
                 limit = MAX_CANDIDATE_PAGE_BYTES if metadata['kind'] == 'candidate-page' else MAX_CANDIDATE_MANIFEST_BYTES
                 engine.put_immutable_bytes(store, name, raw, kind=metadata['kind'], maximum=limit)
                 return {'sha256': digest(raw)}

@@ -33,7 +33,8 @@ MAX_CANDIDATE_PAGE_BYTES = 4 * 1024 * 1024
 HEX64 = re.compile(r"^[0-9a-f]{64}$")
 LOCALE = re.compile(r"^[a-z]{2,3}(?:-[A-Za-z]{4}|-[A-Z]{2})?$")
 RETRYABLE_CODES = frozenset(
-    {"408", "429", "500", "502", "503", "504", "slowdown", "throttling", "requestlimitexceeded"}
+    {"408", "429", "500", "502", "503", "504", "slowdown", "throttling", "requestlimitexceeded",
+     "serviceunavailable", "internalerror", "requesttimeout"}
 )
 # Streaming reads happen after the SDK returns, outside its retry handler.
 # Including jitter, the three waits total at most 17 seconds per streamed GET.
@@ -87,7 +88,7 @@ def build_r2_client() -> Any:
             read_timeout=60,
         ),
     )
-    # R2 sometimes returns a bare HTTP 429 instead of an S3 SlowDown code.
+    # R2 also reports throttling as bare 429 or ServiceUnavailable responses.
     # Normalize before both SDK retry selection and adaptive rate limiting so
     # every thread sharing this client observes the same throttling feedback.
     client.meta.events.register_first("needs-retry.s3", _normalize_r2_bare_429, unique_id="r2-bare-429")
@@ -95,18 +96,27 @@ def build_r2_client() -> Any:
 
 
 def _normalize_r2_bare_429(response: Any = None, operation: Any = None, **_kwargs: Any) -> None:
-    """Let the SDK handle bare R2 throttling with its existing retry budget."""
-    if getattr(operation, "name", None) not in {"HeadObject", "GetObject"}:
+    """Feed R2 read/write throttling into the existing native retry budget."""
+    if getattr(operation, "name", None) not in {"HeadObject", "GetObject", "PutObject"}:
         return
     if not isinstance(response, tuple) or len(response) != 2:
         return
     http_response, parsed = response
-    if getattr(http_response, "status_code", None) != 429 or not isinstance(parsed, dict):
+    status = getattr(http_response, "status_code", None)
+    if not isinstance(parsed, dict):
         return
     details = parsed.get("Error")
     if details is None:
         details = {}
-    if not isinstance(details, dict) or str(details.get("Code") or "").strip() not in {"", "429"}:
+    if not isinstance(details, dict):
+        return
+    code = str(details.get("Code") or "").strip().lower()
+    same_object_throttle = (
+        status == 503
+        and code == "serviceunavailable"
+        and "reduce your concurrent request rate for the same object" in str(details.get("Message") or "").lower()
+    )
+    if not (status == 429 and code in {"", "429", "serviceunavailable"}) and not same_object_throttle:
         return
     details["Code"] = "SlowDown"
     parsed["Error"] = details
@@ -166,6 +176,16 @@ def retryable_stream_error(error: BaseException) -> bool:
         transport_errors += (ConnectionClosedError, ConnectTimeoutError, EndpointConnectionError,
                              ReadTimeoutError, ResponseStreamingError)
     return isinstance(error, transport_errors)
+
+
+def uncertain_put_error(error: BaseException) -> bool:
+    """Recognize outcomes worth reconciling, without creating a retry loop."""
+    if isinstance(error, R2StoreError) or is_missing(error):
+        return False
+    code, status = error_code(error), error_status(error)
+    if code in {"accessdenied", "invalidaccesskeyid", "signaturedoesnotmatch", "forbidden"} or status in {"401", "403"}:
+        return False
+    return code in RETRYABLE_CODES or status in RETRYABLE_CODES or retryable_stream_error(error)
 
 
 def sdk_retry_count(response: Any) -> int | None:
@@ -364,26 +384,63 @@ class R2Store:
                     raise classify(error, f"{operation} {key}") from error
                 time.sleep(READ_RETRY_DELAYS[attempt] + random.uniform(0, READ_RETRY_JITTER))
 
-    def _put(self, key: str, body: bytes, *, metadata: dict[str, str], cache_control: str = "private, no-store") -> dict[str, Any]:
+    @staticmethod
+    def _head_matches_write(head: dict[str, Any], expected_length: int, metadata: dict[str, str],
+                            expected_type: str, cache_control: str) -> bool:
+        try:
+            length = int(head.get("ContentLength") or 0)
+        except (TypeError, ValueError):
+            return False
+        actual_metadata = head.get("Metadata")
+        return (
+            length == expected_length
+            and isinstance(actual_metadata, dict)
+            and all(actual_metadata.get(name) == value for name, value in metadata.items())
+            and head.get("ContentType") == expected_type
+            and head.get("CacheControl") == cache_control
+        )
+
+    def _put(self, key: str, body: bytes, *, metadata: dict[str, str], cache_control: str = "private, no-store",
+             reuse_identical: bool = False) -> dict[str, Any]:
         if not body:
             raise R2IntegrityError(f"Refusing to persist empty R2 object: {key}")
         checksum = sha256_bytes(body)
-        custom = {"sha256": checksum, **metadata}
+        custom = {**metadata, "sha256": checksum}
+        expected_type = content_type(key)
+        result = {"key": key, "bytes": len(body), "sha256": checksum}
+        if reuse_identical:
+            try:
+                head = self._read_with_retry(key)
+            except R2NotFound:
+                pass
+            else:
+                if self._head_matches_write(head, len(body), custom, expected_type, cache_control):
+                    return result
         try:
             self.client.put_object(
                 Bucket=self.bucket,
                 Key=key,
                 Body=body,
-                ContentType=content_type(key),
+                ContentType=expected_type,
                 CacheControl=cache_control,
                 Metadata=custom,
             )
         except Exception as error:
+            # A timed-out PUT may already have committed. Reconcile once using
+            # the read client's bounded retries; never start another PUT chain.
+            if uncertain_put_error(error):
+                try:
+                    head = self._read_with_retry(key)
+                except R2NotFound:
+                    pass
+                else:
+                    if self._head_matches_write(head, len(body), custom, expected_type, cache_control):
+                        return result
             raise classify(error, f"put {key}") from error
         # A delayed/throttled verification must never replay the successful PUT.
         head = self._read_with_retry(key)
         self._verify_head(head, key, len(body), checksum)
-        return {"key": key, "bytes": len(body), "sha256": checksum}
+        return result
 
     def _get(self, key: str, *, maximum: int) -> bytes:
         head = self._read_with_retry(key)
@@ -455,7 +512,8 @@ class R2Store:
         checkpoint_is_valid(value, locale, generation)
         checksum = sha256_bytes(body)
         object_key = self.checkpoint_object_key(locale, generation, checksum)
-        self._put(object_key, body, metadata={"kind": "translation-checkpoint", "locale": locale, "generation": generation})
+        self._put(object_key, body, metadata={"kind": "translation-checkpoint", "locale": locale, "generation": generation},
+                  reuse_identical=True)
         pointer = {
             "schema_version": SCHEMA_VERSION,
             "locale": locale,
@@ -468,7 +526,8 @@ class R2Store:
         }
         pointer_body = json_bytes(pointer)
         pointer_key = self.checkpoint_pointer_key(locale, generation)
-        self._put(pointer_key, pointer_body, metadata={"kind": "checkpoint-pointer", "locale": locale, "generation": generation})
+        self._put(pointer_key, pointer_body, metadata={"kind": "checkpoint-pointer", "locale": locale, "generation": generation},
+                  reuse_identical=True)
         return {"locale": locale, "generation": generation, "object_key": object_key, "pointer_key": pointer_key,
                 "bytes": len(body), "sha256": checksum}
 
@@ -537,10 +596,12 @@ class R2Store:
                 raise R2IntegrityError(f"Candidate page checksum failed: {relative}")
             key = self.candidate_key(locale, generation, candidate_id, relative)
             uploaded.append(self._put(key, page, metadata={"kind": "candidate-page", "locale": locale,
-                                                              "generation": generation, "candidate": candidate_id}))
+                                                              "generation": generation, "candidate": candidate_id},
+                                      reuse_identical=True))
         manifest_key = self.candidate_manifest_key(locale, generation, candidate_id)
         uploaded.append(self._put(manifest_key, body, metadata={"kind": "candidate-manifest", "locale": locale,
-                                                                   "generation": generation, "candidate": candidate_id}))
+                                                                   "generation": generation, "candidate": candidate_id},
+                                  reuse_identical=True))
         result: dict[str, Any] = {
             "schema_version": SCHEMA_VERSION,
             "locale": locale,
@@ -557,7 +618,8 @@ class R2Store:
             ready_body = json_bytes(ready)
             ready_key = self.candidate_ready_key(locale, generation, candidate_id)
             self._put(ready_key, ready_body, metadata={"kind": "candidate-ready", "locale": locale,
-                                                        "generation": generation, "candidate": candidate_id})
+                                                        "generation": generation, "candidate": candidate_id},
+                      reuse_identical=True)
             result["ready"] = True
             result["ready_key"] = ready_key
         else:
