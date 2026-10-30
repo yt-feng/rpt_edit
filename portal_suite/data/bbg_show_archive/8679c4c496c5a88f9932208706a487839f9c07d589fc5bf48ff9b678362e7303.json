@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "8679c4c496c5a88f9932208706a487839f9c07d589fc5bf48ff9b678362e7303",
+  "slug": "bbg-20261029-8679c4c496c5a88f",
+  "date": "2026-10-29",
+  "title": "腾讯Dawson Tong：WorkBuddy如何靠开源模型突围？",
+  "speaker": "Dawson Tong",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-10-29/the-china-show-10-29-2026-video",
+  "start": 4700.5,
+  "end": 4741.2,
+  "segments": [
+    {
+      "start": 4700.5,
+      "end": 4707.9,
+      "en": "So, that's where we have been investing this year, starting in March, I would say.",
+      "zh": "这就是我们今年从三月开始投入的方向。"
+    },
+    {
+      "start": 4709.42,
+      "end": 4718.02,
+      "en": "And after that, I think we see a lot of user adoption with the latest models, LLMs,",
+      "zh": "之后，我们看到最新的大语言模型带来了大量用户采用，"
+    },
+    {
+      "start": 4718.02,
+      "end": 4728.78,
+      "en": "from the open-weight model players in combination with work buddy, integrated with document editing capabilities,",
+      "zh": "来自开放权重模型提供方，结合工作助手，集成了文档编辑能力，"
+    },
+    {
+      "start": 4728.78,
+      "end": 4741.2,
+      "en": "browser-use capabilities, and we're able to build a much more user-friendly agentic products for our users.",
+      "zh": "浏览器使用能力，我们能为用户打造更友好的智能体产品。"
+    }
+  ]
+}

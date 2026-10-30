@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "id": "447a73bf8bcabb7d93a14d48069cb735de24cbaf187f6d0551d5ef06029facf0",
+  "slug": "bbg-20261029-447a73bf8bcabb7d",
+  "date": "2026-10-29",
+  "title": "CLSA Sanjeev Rana：AI推理带动CPU需求，存储产品全面受益？",
+  "speaker": "Sanjeev Rana",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-10-29/the-china-show-10-29-2026-video",
+  "start": 2655.2,
+  "end": 2750.1,
+  "segments": [
+    {
+      "start": 2655.2,
+      "end": 2662.05,
+      "en": "So as a result, we expect them to win win share. Sanjeev, I want to ask you about the risk to the overall memory thesis.",
+      "zh": "因此，我们预计他们将赢得份额。Sanjeev，我想问你关于整体存储逻辑的风险。"
+    },
+    {
+      "start": 2662.37,
+      "end": 2671.21,
+      "en": "I'll use in a GPUs versus CPUs as an example in how many people say because of the changes in the technology and demands it's not CPUs more than GPUs.",
+      "zh": "我以GPU与CPU为例，很多人说由于技术和需求的变化，CPU的需求增长超过GPU。"
+    },
+    {
+      "start": 2671.21,
+      "end": 2686.61,
+      "en": "The reason I just underscored that point is, are there any, are you watching any specific developments around a technology curve that could actually undermine the overall thesis on memory?",
+      "zh": "我强调这一点的原因是，你是否在关注任何可能削弱整体存储逻辑的技术曲线发展？"
+    },
+    {
+      "start": 2686.61,
+      "end": 2696.25,
+      "en": "Yes, your right. CPUs are better for certain kind of workloads, especially in AI inference and agent AI.",
+      "zh": "是的，你说得对。CPU更适合某些类型的工作负载，尤其是在AI推理和智能体AI中。"
+    },
+    {
+      "start": 2696.25,
+      "end": 2703.57,
+      "en": "So as a result, the demand for CPUs has exploded in the last one year or so.",
+      "zh": "因此，过去一年左右CPU的需求爆发式增长。"
+    },
+    {
+      "start": 2703.57,
+      "end": 2713.53,
+      "en": "GPUs are more suitable for AI training. But the common theme here is that whether CPUs or GPUs, both of them need lots of memory.",
+      "zh": "GPU更适合AI训练。但共同点是，无论是CPU还是GPU，它们都需要大量存储。"
+    },
+    {
+      "start": 2713.53,
+      "end": 2721.37,
+      "en": "So GPUs need HBM and CPUs need more like a server DRAM, which is also a very high ASP product.",
+      "zh": "GPU需要HBM，而CPU更需要服务器DRAM，这也是一个非常高单价的产品。"
+    },
+    {
+      "start": 2721.37,
+      "end": 2730.89,
+      "en": "So overall, as long as the AI adoption continues to increase, I think we will have opportunities",
+      "zh": "总体而言，只要AI采用率持续增长，我认为我们将有机会"
+    },
+    {
+      "start": 2730.89,
+      "end": 2739.21,
+      "en": "to sell all sort of memory products, whether it's HBMs, server DRAMs or enterprise SSDs in case of data centers.",
+      "zh": "销售各种存储产品，无论是HBM、服务器DRAM还是数据中心的企业级SSD。"
+    },
+    {
+      "start": 2739.21,
+      "end": 2750.1,
+      "en": "So this memory, like AI industry is offering a lot of multi-growth opportunity for memory suppliers.",
+      "zh": "因此，存储就像AI行业一样，为存储供应商提供了许多多元增长机会。"
+    }
+  ]
+}

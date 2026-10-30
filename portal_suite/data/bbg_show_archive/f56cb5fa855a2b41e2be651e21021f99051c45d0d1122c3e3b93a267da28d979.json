@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "id": "f56cb5fa855a2b41e2be651e21021f99051c45d0d1122c3e3b93a267da28d979",
+  "slug": "bbg-20261029-f56cb5fa855a2b41",
+  "date": "2026-10-29",
+  "title": "腾讯Dawson Tong：被指追赶字节阿里，船到底漏在哪？",
+  "speaker": "Dawson Tong",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-10-29/the-china-show-10-29-2026-video",
+  "start": 4519.0,
+  "end": 4613.7,
+  "segments": [
+    {
+      "start": 4519.0,
+      "end": 4526.42,
+      "en": "Do you feel though that Tencent is sort of playing catch-up to some of the other larger players, whether it's bite dance or Ali Baba?",
+      "zh": "你是否觉得腾讯在追赶其他大型玩家，比如字节跳动或阿里巴巴？"
+    },
+    {
+      "start": 4526.42,
+      "end": 4530.66,
+      "en": "I mean, Ponemah has talked about it as well, as we're onboard the ship right now.",
+      "zh": "我的意思是，Ponemah也谈到了这一点，就像我们现在在船上一样。"
+    },
+    {
+      "start": 4530.66,
+      "end": 4536.54,
+      "en": "But maybe the ship has been a bit leaky. Where do you think you've been leaky in the development?",
+      "zh": "但也许这艘船有点漏水。你认为在发展中哪里出现了漏洞？"
+    },
+    {
+      "start": 4536.54,
+      "end": 4545.54,
+      "en": "Because you've also talked about you, maybe in the early days, did not prioritize the hiring of top level engineers",
+      "zh": "因为你也谈到过，也许在早期，没有优先招聘顶级工程师"
+    },
+    {
+      "start": 4545.54,
+      "end": 4551.34,
+      "en": "and like, where are you right now? How would you assess how you're trying to capitalize on the AI buildout?",
+      "zh": "那么你现在处于什么位置？你如何评估你试图利用AI建设的方式？"
+    },
+    {
+      "start": 4551.34,
+      "end": 4556.66,
+      "en": "Well, as I mentioned, there are multiple layers that we play in the stack.",
+      "zh": "嗯，正如我提到的，我们在技术栈的多个层面都有参与。"
+    },
+    {
+      "start": 4556.66,
+      "end": 4562.34,
+      "en": "So I think we were pretty strong at the info level.",
+      "zh": "所以我认为我们在信息层面相当强。"
+    },
+    {
+      "start": 4562.34,
+      "end": 4572.1,
+      "en": "That was a time, I think, because of the lack of compute, we didn't allocate enough for model training of high.",
+      "zh": "那是一个时期，我认为由于计算资源缺乏，我们没有为高级模型训练分配足够资源。"
+    },
+    {
+      "start": 4572.1,
+      "end": 4579.66,
+      "en": "And also, there were some team dynamics that we were trying to sort out, I would say, two years,",
+      "zh": "此外，还有一些团队动态我们试图解决，我想说，两三年前。"
+    },
+    {
+      "start": 4579.66,
+      "end": 4591.62,
+      "en": "three years ago. But this year, in fact, we're seeing a lot of improvement with the high model, as you might see",
+      "zh": "但今年，事实上，我们看到高级模型有很多改进，正如你可能看到的"
+    },
+    {
+      "start": 4591.62,
+      "end": 4595.18,
+      "en": "in some of the benchmarks out there.",
+      "zh": "在一些基准测试中。"
+    },
+    {
+      "start": 4595.18,
+      "end": 4603.94,
+      "en": "High four preview has captured a lot of interest and also being used quite extensively.",
+      "zh": "High four预览版引发了大量关注，也得到了相当广泛的使用。"
+    },
+    {
+      "start": 4603.94,
+      "end": 4612.86,
+      "en": "Compared to roughly half a year ago when Ponemah made the statement of a leaky ship, I think we've come a long way.",
+      "zh": "相比大约半年前Ponemah所说的“漏水的船”，我认为我们已经取得了长足进步。"
+    }
+  ]
+}
