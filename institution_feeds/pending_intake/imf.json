@@ -1,5 +1,186 @@
 {
   "schema": 1,
   "institution": "imf",
-  "items": {}
+  "items": {
+    "imf:df1e373e9f2a817e6cca2165c54995eacb7e671c8e12f3984b8746dd46d5": {
+      "item": {
+        "title": "Ukraine: Technical Assistance Report-Assessment of Energy Subsidy Fiscal Cost and Reform Options",
+        "source_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/30/ukraine-technical-assistance-report-assessment-of-energy-subsidy-fiscal-cost-and-reform-580797",
+        "guid": "df1e373e9f2a817e6cca2165c54995eacb7e671c8e12f3984b8746dd46d5",
+        "date": "2026-10-30T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026089.pdf",
+          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026089-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/30/ukraine-technical-assistance-report-assessment-of-energy-subsidy-fiscal-cost-and-reform-580797",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/technical-assistance-reports/issues/2026/10/30/ukraine-technical-assistance-report-assessment-of-energy-subsidy-fiscal-cost-and-reform-580797"
+      },
+      "admitted_at": "2026-10-31T01:19:32.699103+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-10-31T01:19:32.699103+00:00",
+      "attempts": 1
+    },
+    "imf:d10f62c022d2fb2ab04f2353bd55050e0ba9b86f6abdb427c94781ebfb3a": {
+      "item": {
+        "title": "Alternative Trade Corridors of the GCC: The Case of IMEC",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/10/30/alternative-trade-corridors-of-the-gcc-the-case-of-imec-580811",
+        "guid": "d10f62c022d2fb2ab04f2353bd55050e0ba9b86f6abdb427c94781ebfb3a",
+        "date": "2026-10-30T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026237-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026237.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/10/30/alternative-trade-corridors-of-the-gcc-the-case-of-imec-580811",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/10/30/alternative-trade-corridors-of-the-gcc-the-case-of-imec-580811"
+      },
+      "admitted_at": "2026-10-31T01:19:32.699103+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-10-31T01:19:32.699103+00:00",
+      "attempts": 1
+    },
+    "imf:ac5eeea8e4794665fcb1f5e653b9f486bc1e3a01591c3dbafc28588f7078": {
+      "item": {
+        "title": "Nowcasting Economic Activity in Afghanistan",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/10/31/nowcasting-economic-activity-in-afghanistan-580814",
+        "guid": "ac5eeea8e4794665fcb1f5e653b9f486bc1e3a01591c3dbafc28588f7078",
+        "date": "2026-10-30T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026238-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026238.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/10/31/nowcasting-economic-activity-in-afghanistan-580814",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/10/31/nowcasting-economic-activity-in-afghanistan-580814"
+      },
+      "admitted_at": "2026-10-31T01:19:32.699103+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-10-31T01:19:32.699103+00:00",
+      "attempts": 1
+    },
+    "imf:a4288d5a11bb718f4a70e4e29e513dc46602dab56cc101ea45b1331a12d5": {
+      "item": {
+        "title": "Options for Tax System Reform in Asia and the Pacific",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/10/30/options-for-tax-system-reform-in-asia-and-the-pacific-580165",
+        "guid": "a4288d5a11bb718f4a70e4e29e513dc46602dab56cc101ea45b1331a12d5",
+        "date": "2026-10-30T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026232-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026232.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/10/30/options-for-tax-system-reform-in-asia-and-the-pacific-580165",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/10/30/options-for-tax-system-reform-in-asia-and-the-pacific-580165"
+      },
+      "admitted_at": "2026-10-31T01:19:32.699103+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-10-31T01:19:32.699103+00:00",
+      "attempts": 1
+    },
+    "imf:9ea5aa90f64cebdddf3504dc685f03b05db2e73ffc85a8807a4febcb9059": {
+      "item": {
+        "title": "On the Role and Effectiveness of Fiscal Rules and Independent Fiscal Councils",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/10/30/on-the-role-and-effectiveness-of-fiscal-rules-and-independent-fiscal-councils-580705",
+        "guid": "9ea5aa90f64cebdddf3504dc685f03b05db2e73ffc85a8807a4febcb9059",
+        "date": "2026-10-30T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026233-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026233.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/10/30/on-the-role-and-effectiveness-of-fiscal-rules-and-independent-fiscal-councils-580705",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/10/30/on-the-role-and-effectiveness-of-fiscal-rules-and-independent-fiscal-councils-580705"
+      },
+      "admitted_at": "2026-10-31T01:19:32.699103+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-10-31T01:19:32.699103+00:00",
+      "attempts": 1
+    },
+    "imf:e030d300067cd1e4e83cd9d8efc1572ad6f56e62ca93cef99afddee33278": {
+      "item": {
+        "title": "Global Pension Reform Database 1952 – 2025: From Narrative to Data Using AI",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/10/30/global-pension-reform-database-1952-2025-from-narrative-to-data-using-ai-580808",
+        "guid": "e030d300067cd1e4e83cd9d8efc1572ad6f56e62ca93cef99afddee33278",
+        "date": "2026-10-30T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026236-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026236.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/10/30/global-pension-reform-database-1952-2025-from-narrative-to-data-using-ai-580808",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/10/30/global-pension-reform-database-1952-2025-from-narrative-to-data-using-ai-580808"
+      },
+      "admitted_at": "2026-10-31T01:19:32.699103+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-10-31T01:19:32.699103+00:00",
+      "attempts": 1
+    },
+    "imf:f4eebda7d194483a87159fb718806411024e125f84ee8179654e18d0f165": {
+      "item": {
+        "title": "Deconstructing the Stablecoin Sandwich: The Cost of Cross-Border Stablecoin Transfers",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/10/30/deconstructing-the-stablecoin-sandwich-the-cost-of-cross-border-stablecoin-transfers-580817",
+        "guid": "f4eebda7d194483a87159fb718806411024e125f84ee8179654e18d0f165",
+        "date": "2026-10-30T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026230-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026230.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/10/30/deconstructing-the-stablecoin-sandwich-the-cost-of-cross-border-stablecoin-transfers-580817",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/10/30/deconstructing-the-stablecoin-sandwich-the-cost-of-cross-border-stablecoin-transfers-580817"
+      },
+      "admitted_at": "2026-10-31T01:19:32.699103+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-10-31T01:19:32.699103+00:00",
+      "attempts": 1
+    },
+    "imf:790aee4da213f7755d1b8aa43367857ce696c2979270d7d002a3aee3f969": {
+      "item": {
+        "title": "A Global DSGE Model for Oil-Dependent Economies",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/10/30/a-global-dsge-model-for-oil-dependent-economies-580802",
+        "guid": "790aee4da213f7755d1b8aa43367857ce696c2979270d7d002a3aee3f969",
+        "date": "2026-10-30T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026234-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026234.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/10/30/a-global-dsge-model-for-oil-dependent-economies-580802",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/10/30/a-global-dsge-model-for-oil-dependent-economies-580802"
+      },
+      "admitted_at": "2026-10-31T01:19:32.699103+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-10-31T01:19:32.699103+00:00",
+      "attempts": 1
+    },
+    "imf:e9cb2e26dc44cb3a96bb96042d7e59a32639a12e8e2a7faee8269ebbfc39": {
+      "item": {
+        "title": "Are European Firms Financially Constrained?",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/10/30/are-european-firms-financially-constrained-580805",
+        "guid": "e9cb2e26dc44cb3a96bb96042d7e59a32639a12e8e2a7faee8269ebbfc39",
+        "date": "2026-10-30T04:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026235-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026235.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/10/30/are-european-firms-financially-constrained-580805",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/10/30/are-european-firms-financially-constrained-580805"
+      },
+      "admitted_at": "2026-10-31T01:19:32.699103+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-10-31T01:19:32.699103+00:00",
+      "attempts": 1
+    },
+    "imf:08da56d83d5c1cbbd592cede396e22e73ad88a40732f6191fa020cd3bfdf": {
+      "item": {
+        "title": "The Macroeconomic Impact of AI Access Disruptions",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/10/30/the-macroeconomic-impact-of-ai-sanctions-580110",
+        "guid": "08da56d83d5c1cbbd592cede396e22e73ad88a40732f6191fa020cd3bfdf",
+        "date": "2026-10-29T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026231-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026231.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/10/30/the-macroeconomic-impact-of-ai-sanctions-580110",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/10/30/the-macroeconomic-impact-of-ai-sanctions-580110"
+      },
+      "admitted_at": "2026-10-31T01:19:32.699103+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-10-31T01:19:32.699103+00:00",
+      "attempts": 1
+    }
+  }
 }
