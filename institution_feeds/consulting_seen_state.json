@@ -1,34 +1,6 @@
 {
   "version": 1,
   "items": {
-    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/risk/our%20insights/mckinsey%20on%20risk%20number%2020/mckinsey-on-risk-and-resilience-number-20-2025.pdf": {
-      "first_seen": "2026-07-02",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/the-science-behind-next-best-action-programs": {
-      "first_seen": "2026-07-02",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/discover-the-agentic-era-of-next-best-action": {
-      "first_seen": "2026-07-02",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/agent-native-marketing-operating-model": {
-      "first_seen": "2026-07-02",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/cloud-ai-cost-beyond-token-pricing": {
-      "first_seen": "2026-07-02",
-      "status": "no_pdf"
-    },
-    "bcg:https://www.bcg.com/publications/2026/the-ceos-guide-to-physical-ai": {
-      "first_seen": "2026-07-02",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/an-imperative-for-growth-and-the-new-economics-of-asset-management": {
-      "first_seen": "2026-07-02",
-      "status": "downloaded"
-    },
     "bcg:https://www.bcg.com/publications/2026/harnessing-the-human-side-of-transformations": {
       "first_seen": "2026-07-03",
       "status": "downloaded"
@@ -1683,6 +1655,38 @@
     },
     "bcg:https://www.bcg.com/publications/2026/private-equitys-future-digital-first-and-ai-powered": {
       "first_seen": "2026-10-30",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/carve-out-strategy-both-companies": {
+      "first_seen": "2026-10-31",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/putting-africas-capital-to-work": {
+      "first_seen": "2026-10-31",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-cpg-companies-win-agentic-commerce": {
+      "first_seen": "2026-10-31",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/saas-pricing-must-change-agentic-ai": {
+      "first_seen": "2026-10-31",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/preparing-students-ai-first-workplaces": {
+      "first_seen": "2026-10-31",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/the-ai-forward-cpg-marketing-organization": {
+      "first_seen": "2026-10-31",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/the-2026-global-automotive-supplier-study": {
+      "first_seen": "2026-10-31",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/rebuilding-asset-management-for-an-ai-first-world": {
+      "first_seen": "2026-10-31",
       "status": "downloaded"
     }
   }
