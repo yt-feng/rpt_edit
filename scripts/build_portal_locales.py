@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import concurrent.futures
 from collections import deque
+from collections.abc import Mapping, MutableMapping
 from dataclasses import dataclass, replace
 from datetime import date, datetime
 from decimal import Decimal, InvalidOperation, ROUND_FLOOR
@@ -43,6 +44,7 @@ from portal_locale_history import plan_history_release
 from portal_locale_literals import is_chart_geography_identity_label, is_chart_metric_identity_label, is_japanese_identity_label, is_latin_name_literal, is_machine_asset_reference, is_optical_acronym_label, is_shared_japanese_keyword, is_short_latin_label_translation
 from portal_locale_scope import deferred_locale_source, restrict_html_to_cohort
 from portal_locale_report_preview import localize_report_preview
+from portal_locale_text_store import FileTextMapping, StagedTextMapping
 from portal_locale_detail_hooks import defer_unverified_report_preview, inject_locale_detail_hooks
 from portal_locale_manifest import (LocaleManifestError, parse_locale_manifest,
                                     validate_locale_manifest_capacity, write_locale_manifest_bundle)
@@ -4927,7 +4929,7 @@ def locale_index_decision(
 
 
 def build_locale_index_plan(
-    original_html: dict[Path, str],
+    original_html: Mapping[Path, str],
     canonical_by_path: dict[Path, str],
     *,
     site_url: str,
@@ -5293,7 +5295,7 @@ def update_robots(root: Path, site_url: str) -> None:
 
 
 def commit_chinese_discovery(
-    root: Path, updates: dict[Path, str], site_url: str, generated_date: str,
+    root: Path, updates: Mapping[Path, str], site_url: str, generated_date: str,
 ) -> None:
     """Commit discovery only after locale validation; restore exact originals on failure."""
     # Keep potentially large HTML backups on disk and outside the release tree.
@@ -5329,13 +5331,14 @@ def copy_locale_assets(root: Path, locale: str) -> None:
 
 
 def incremental_locale_html_sources(
-    original_html: dict[Path, str],
+    original_html: Mapping[Path, str],
     canonical_by_path: dict[Path, str],
     index_plan: dict[Path, LocaleIndexDecision],
     *,
     root: Path,
     site_url: str,
-) -> tuple[dict[Path, str], frozenset[str]]:
+    destination: MutableMapping[Path, str] | None = None,
+) -> tuple[MutableMapping[Path, str], frozenset[str]]:
     """Select new detail pages and useful hubs before collecting paid units.
 
     The plan is updated for omitted secondary hubs, so Chinese hreflang,
@@ -5346,21 +5349,22 @@ def incremental_locale_html_sources(
         [decision.canonical_root for decision in index_plan.values() if decision.canonical_root]
         + [site_url + "/" + path.relative_to(root).as_posix() for path in original_html]
     )
-    selected = {
-        path: source for path, source in original_html.items()
+    selected = dict.fromkeys(
+        path for path in original_html
         if index_plan[path].page_kind in {"core", "hub"}
         or path.relative_to(root).as_posix() in LOCALE_APPLICATION_SHELLS
         or (index_plan[path].indexable and index_plan[path].page_kind in {"report-detail", "blog-detail"})
-    }
+    )
     details = frozenset(
         index_plan[path].canonical_root for path in selected
         if index_plan[path].page_kind in {"report-detail", "blog-detail"}
     )
     omitted: set[Path] = set()
-    for path, source in selected.items():
+    for path in selected:
         decision = index_plan[path]
         if decision.page_kind != "hub" or urlsplit(decision.canonical_root).path in {"/", "/reports/", "/blog/"}:
             continue
+        source = original_html[path]
         linked = {
             urljoin(canonical_by_path[path], html_unescape(raw)).split("#", 1)[0].split("?", 1)[0]
             for _quote, raw in re.findall(r'\bhref\s*=\s*([\"\'])(.*?)\1', source, flags=re.I | re.S)
@@ -5382,12 +5386,13 @@ def incremental_locale_html_sources(
         + [site_url + "/" + path.relative_to(root).as_posix() for path in selected
            if path.relative_to(root).as_posix() in LOCALE_APPLICATION_SHELLS]
     )
-    return {
-        path: restrict_html_to_cohort(
-            source, canonical_by_path[path] or site_url + "/" + path.relative_to(root).as_posix(), available, known,
+    if destination is None:
+        destination = {}
+    for path in selected:
+        destination[path] = restrict_html_to_cohort(
+            original_html[path], canonical_by_path[path] or site_url + "/" + path.relative_to(root).as_posix(), available, known,
         )
-        for path, source in selected.items()
-    }, known
+    return destination, known
 
 
 def _build_localized_release(
@@ -5421,6 +5426,7 @@ def _build_localized_release(
     max_provider_requests: int | None = None,
     max_provider_cost_cny: str | float | int | None = None,
     run_state: TranslationRun,
+    html_workspace: Path,
 ) -> dict[str, Any]:
     if translation_scope not in {"release", "month", "incremental"}:
         raise TranslationError("Translation scope must be release, month, or incremental")
@@ -5467,7 +5473,9 @@ def _build_localized_release(
             validate_site_verification_html(relative, path.read_bytes())
             continue
         html_paths.append(path)
-    original_html = {path: path.read_text(encoding="utf-8") for path in html_paths}
+    # The archive grows on every refresh. Retain names and metadata, not a
+    # second in-memory copy of every Chinese page beside the model and units.
+    original_html = FileTextMapping(html_paths)
     canonical_by_path = {path: extract_canonical(source) for path, source in original_html.items()}
     index_plan = build_locale_index_plan(
         original_html,
@@ -5542,11 +5550,13 @@ def _build_localized_release(
         run_state.data["history_release"] = history_plan
         run_state.write()
     scoped_cohort = history_plan is not None or incremental
-    incremental_sources: dict[Path, str] | None = None
+    localized_html_sources = StagedTextMapping(html_workspace / "localized")
+    incremental_sources: MutableMapping[Path, str] | None = None
     incremental_known: frozenset[str] = frozenset()
     if incremental:
         incremental_sources, incremental_known = incremental_locale_html_sources(
             original_html, canonical_by_path, index_plan, root=root, site_url=site_url,
+            destination=localized_html_sources,
         )
     canonicals = [
         decision.canonical_root
@@ -5670,7 +5680,6 @@ def _build_localized_release(
 
     units: dict[str, TranslationUnit] = {}
     priority_units: dict[str, TranslationUnit] = {}
-    localized_html_sources: dict[Path, str] = {}
     eligible_detail_urls = frozenset(
         decision.canonical_root for decision in index_plan.values()
         if decision.indexable and decision.page_kind in {"report-detail", "blog-detail"}
@@ -5896,7 +5905,9 @@ def _build_localized_release(
         + (root / "assets" / "locale-detail.js").read_bytes()
     ).hexdigest()[:12]
 
-    chinese_discovery_updates = {}
+    # Keep pending discovery changes on disk until every locale and manifest
+    # has passed. The existing commit still backs up/rolls back exact bytes.
+    chinese_discovery_updates = StagedTextMapping(html_workspace / "discovery")
     for path, source in original_html.items():
         discovery_canonical = canonical_by_path[path] if index_plan[path].indexable else ""
         updated = inject_root_discovery(source, discovery_canonical, site_url, asset_digest)
@@ -6212,7 +6223,10 @@ def build_localized_release(**kwargs: Any) -> dict[str, Any]:
         limit = 6
     run_state = TranslationRun(kwargs.get("diagnostics_out"), limit, kwargs.get("max_provider_cost_cny"))
     try:
-        result = _build_localized_release(**kwargs, run_state=run_state)
+        with tempfile.TemporaryDirectory(prefix="portal-locale-html-") as temporary:
+            result = _build_localized_release(
+                **kwargs, run_state=run_state, html_workspace=Path(temporary),
+            )
         run_state.data["status"] = "passed"
         run_state.data["ready"] = not kwargs.get("preflight_only", False)
         return result

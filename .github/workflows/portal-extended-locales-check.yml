@@ -7,6 +7,11 @@ on:
       - 'scripts/*r2_transport*'
       - 'scripts/*validate_portal_locale_checkpoint*'
       - 'scripts/*neutral_refresh_resilience_workflow*'
+      - 'scripts/*portal_locale_text_store*'
+      - 'scripts/build_portal_locales.py'
+      - 'scripts/*run_with_resource_monitor*'
+      - 'scripts/*recover_neutral_runner_loss*'
+      - '.github/workflows/neutral-edge-runner-recovery.yml'
       - 'scripts/*publish_static_slot*'
       - 'scripts/chart_search_r2.py'
       - 'scripts/portal_suite_catalog.py'
@@ -51,6 +56,11 @@ on:
       - 'scripts/*r2_transport*'
       - 'scripts/*validate_portal_locale_checkpoint*'
       - 'scripts/*neutral_refresh_resilience_workflow*'
+      - 'scripts/*portal_locale_text_store*'
+      - 'scripts/build_portal_locales.py'
+      - 'scripts/*run_with_resource_monitor*'
+      - 'scripts/*recover_neutral_runner_loss*'
+      - '.github/workflows/neutral-edge-runner-recovery.yml'
       - 'scripts/*publish_static_slot*'
       - 'scripts/chart_search_r2.py'
       - 'scripts/portal_suite_catalog.py'
@@ -131,6 +141,9 @@ jobs:
           python -B scripts/test_chart_search_index.py
           python -B scripts/test_validate_portal_locale_checkpoint.py
           python -B scripts/test_neutral_refresh_resilience_workflow.py
+          python -B scripts/test_portal_locale_text_store.py
+          python -B scripts/test_run_with_resource_monitor.py
+          python -B scripts/test_recover_neutral_runner_loss.py
           python -B scripts/test_portal_extended_source_reads.py
           python -B scripts/test_portal_extended_quality.py
           python -B scripts/test_portal_extended_repair_contract.py

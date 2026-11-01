@@ -367,6 +367,9 @@ jobs:
           python3 -B scripts/test_r2_transport.py
           python3 -B scripts/test_validate_portal_locale_checkpoint.py
           python3 -B scripts/test_neutral_refresh_resilience_workflow.py
+          python3 -B scripts/test_portal_locale_text_store.py
+          python3 -B scripts/test_run_with_resource_monitor.py
+          python3 -B scripts/test_recover_neutral_runner_loss.py
           python3 scripts/test_neutral_edge_cutover_workflow.py
           python3 -B scripts/test_portal_locale_resume_workflow.py
           python3 -B scripts/test_resume_portal_locale_candidate.py
@@ -927,6 +930,8 @@ jobs:
 
       - name: Build Korean Japanese and Arabic static locales
         id: locale_build
+        # Bound inventory/rendering as well as inference; leave time to save checkpoints.
+        timeout-minutes: ${{ (inputs.translation_scope == 'release' || inputs.translation_scope == 'month') && 180 || 75 }}
         if: steps.operation.outputs.multilingual_enabled == 'true'
         env:
           PORTAL_MULTILINGUAL_INDEX_START_DATE: ${{ vars.PORTAL_MULTILINGUAL_INDEX_START_DATE || '' }}
@@ -1002,14 +1007,16 @@ jobs:
             "${index_args[@]}"
           )
           # Offline inference has no paid fallback; accepted translations persist on failure.
-          python3 -B scripts/build_portal_locales.py "${locale_args[@]}" \
+          python3 -B scripts/run_with_resource_monitor.py --label locale-preflight -- \
+            python3 -B scripts/build_portal_locales.py "${locale_args[@]}" \
             --preflight-only --preflight-batches-per-locale 1 \
             --offline-time-budget-seconds 60 \
             --workers 1 \
             --diagnostics-out "$RUNNER_TEMP/locale-preflight-diagnostics.json" \
             "${cache_args[@]}"
           test -s _neutral_site/data/i18n/cache-v1.json.gz
-          python3 -B scripts/build_portal_locales.py "${locale_args[@]}" \
+          python3 -B scripts/run_with_resource_monitor.py --label locale-build -- \
+            python3 -B scripts/build_portal_locales.py "${locale_args[@]}" \
             --cache-in _neutral_site/data/i18n/cache-v1.json.gz \
             --offline-time-budget-seconds 600 \
             --checkpoint-on-budget --workers 1 \

@@ -243,6 +243,18 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertNotIn("DEEPSEEK_API_KEY", locale)
         self.assertNotIn("DEEPL_API_KEY", locale)
 
+    def test_locale_inventory_and_rendering_have_a_bound_and_resource_telemetry(self):
+        locale = self.workflow.split("Build Korean Japanese and Arabic static locales", 1)[1].split(
+            "Detect multilingual translation checkpoint", 1)[0]
+        self.assertIn("timeout-minutes: ${{", locale)
+        self.assertIn("&& 180 || 75 }}", locale)
+        self.assertIn("run_with_resource_monitor.py --label locale-preflight --", locale)
+        self.assertIn("run_with_resource_monitor.py --label locale-build --", locale)
+        self.assertNotIn("continue-on-error", locale)
+        persistence = self.workflow.split("Detect multilingual translation checkpoint", 1)[1].split(
+            "Report optional cache service failures", 1)[0]
+        self.assertIn("if: always()", persistence)
+
     def test_month_scope_is_rejected_before_provider_calls_unless_shadow(self):
         locale = self.workflow.split("Build Korean Japanese and Arabic static locales", 1)[1].split(
             "Detect multilingual translation checkpoint", 1)[0]
