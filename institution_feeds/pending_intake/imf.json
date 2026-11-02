@@ -1,24 +1,5 @@
 {
   "schema": 1,
   "institution": "imf",
-  "items": {
-    "imf:764daaffc30f3b3ed79c8f187dcf8e58a78f8a45860af3407d18f6135714": {
-      "item": {
-        "title": "The Macroeconomic Impact of AI Access Disruptions",
-        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/10/30/the-macroeconomic-impact-of-ai-access-disruptions-580110",
-        "guid": "764daaffc30f3b3ed79c8f187dcf8e58a78f8a45860af3407d18f6135714",
-        "date": "2026-10-30T04:00:00+00:00",
-        "pdf_candidates": [
-          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026231-source-pdf.pdf",
-          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026231.pdf"
-        ],
-        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/10/30/the-macroeconomic-impact-of-ai-access-disruptions-580110",
-        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/10/30/the-macroeconomic-impact-of-ai-access-disruptions-580110"
-      },
-      "admitted_at": "2026-11-01T00:37:41.901038+00:00",
-      "since_days": 7,
-      "last_attempted_at": "2026-11-01T00:37:41.901038+00:00",
-      "attempts": 1
-    }
-  }
+  "items": {}
 }
