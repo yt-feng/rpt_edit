@@ -38,6 +38,8 @@ function fixture(options = {}) {
         return new Response(options.rejectDispatch ? "private upstream rejection token=secret" : null, { status: options.rejectDispatch || 204 });
       }
       const status = new URL(url).searchParams.get("status");
+      const tokenRejection = options.rejectReadTokens && options.rejectReadTokens[init.headers.Authorization];
+      if (tokenRejection) return new Response("private credential permissions", { status: tokenRejection });
       if (options.failRead || options.failStatus === status) return new Response("private upstream status", { status: 503 });
       const rows = status ? [...(options.runs || []), ...(options.activeRuns || [])].filter((run) => run.status === status) : options.runs || [];
       return Response.json({ workflow_runs: rows });
@@ -69,6 +71,62 @@ test("manual refresh dispatches a fixed repository event and stores acceptance w
   assert.equal(JSON.parse(dispatched[0].body).event_type, REPORT_REFRESH_EVENT);
   assert.deepEqual(Object.keys(JSON.parse(dispatched[0].body).client_payload).sort(), ["request_id", "requested_at"]);
   assert.doesNotMatch(JSON.stringify(result), /private-test|token|untrusted|rehearse/);
+});
+
+test("separate read and dispatch credentials keep workflow GETs on the read token", async () => {
+  const f = fixture();
+  f.env.GH_READ_TOKEN = "private-read-token";
+  const result = await f.invoke("POST");
+  assert.equal(result.status, 202);
+  const reads = f.calls.filter((call) => call.method !== "POST");
+  const writes = f.calls.filter((call) => call.method === "POST");
+  assert.equal(reads.length, 6);
+  assert.ok(reads.every((call) => call.headers.Authorization === "Bearer private-read-token"));
+  assert.equal(writes.length, 1);
+  assert.equal(writes[0].headers.Authorization, "Bearer private-test-dispatch-token");
+  assert.doesNotMatch(JSON.stringify(result), /private-read|private-test/);
+});
+
+test("workflow reads fall back once to the dispatch credential after a 401 or 403", async () => {
+  for (const rejection of [401, 403]) {
+    const f = fixture({ rejectReadTokens: { "Bearer private-read-token": rejection } });
+    f.env.GH_READ_TOKEN = "private-read-token";
+    const result = await f.invoke("POST");
+    assert.equal(result.status, 202);
+    const reads = f.calls.filter((call) => call.method !== "POST");
+    assert.equal(reads.length, 12);
+    const perUrl = new Map();
+    for (const call of reads) perUrl.set(call.url, [...(perUrl.get(call.url) || []), call]);
+    for (const calls of perUrl.values()) {
+      assert.deepEqual(calls.map((call) => call.headers.Authorization), ["Bearer private-read-token", "Bearer private-test-dispatch-token"]);
+    }
+    assert.equal(f.calls.filter((call) => call.method === "POST").length, 1);
+  }
+});
+
+test("all rejected read credentials fail closed and never dispatch or reserve a receipt", async () => {
+  const f = fixture({ rejectReadTokens: {
+    "Bearer private-read-token": 403,
+    "Bearer private-test-dispatch-token": 401,
+  } });
+  f.env.GH_READ_TOKEN = "private-read-token";
+  const result = await f.invoke("POST");
+  assert.equal(result.status, 503);
+  assert.equal(result.body.state, "unavailable");
+  assert.equal(result.body.can_refresh, false);
+  assert.equal(f.calls.filter((call) => call.method === "POST").length, 0);
+  assert.equal(f.bucket.rows.has(REPORT_REFRESH_STATE_KEY), false);
+  assert.ok(f.calls.length <= 12);
+  assert.doesNotMatch(JSON.stringify(result), /private|permissions|credential/);
+});
+
+test("non-authentication read errors do not try another token or issue a dispatch", async () => {
+  const f = fixture({ failRead: true });
+  f.env.GH_READ_TOKEN = "private-read-token";
+  const result = await f.invoke("POST");
+  assert.equal(result.status, 503);
+  assert.equal(f.calls.filter((call) => call.method === "POST").length, 0);
+  assert.ok(f.calls.every((call) => call.headers.Authorization === "Bearer private-read-token"));
 });
 
 test("a just-completed earlier manual run cannot be mistaken for the new request", async () => {

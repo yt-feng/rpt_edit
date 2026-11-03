@@ -86,7 +86,10 @@ export async function handleReportRefresh(request, env, dependencies) {
     return respond(request, env, 503, { state: "unavailable", message: "手工刷新暂未配置。", requested_at: "", run: null, can_refresh: false });
   }
   const dispatchToken = value(env.GH_DISPATCH_TOKEN);
-  const readToken = isToken(dispatchToken) ? dispatchToken : value(env.GH_READ_TOKEN || env.GITHUB_TOKEN || env.GH_TOKEN);
+  // Reads and repository dispatches can have different token permissions. Reuse
+  // the existing read credential first; the write token is a bounded fallback.
+  const readToken = [env.GH_READ_TOKEN, env.GITHUB_TOKEN, env.GH_TOKEN, dispatchToken]
+    .map(value).find(isToken) || "";
   const configured = Boolean(isToken(dispatchToken));
   if (!isToken(readToken) || !env.REPORT_BUCKET) {
     return respond(request, env, 503, { state: "unavailable", message: "手工刷新暂未配置。", requested_at: "", run: null, can_refresh: false });
@@ -107,7 +110,12 @@ export async function handleReportRefresh(request, env, dependencies) {
       env.REPORT_BUCKET.get(REPORT_REFRESH_STATE_KEY),
       Promise.all(queries.map(async (status) => {
         const query = status ? `branch=main&per_page=1&status=${status}` : "branch=main&per_page=30";
-        const response = await fetchWithTimeout(`${baseUrl}/actions/workflows/${WORKFLOW}/runs?${query}`, { headers: headers(readToken) }, 5500);
+        const url = `${baseUrl}/actions/workflows/${WORKFLOW}/runs?${query}`;
+        let response = await fetchWithTimeout(url, { headers: headers(readToken) }, 5500);
+        if ([401, 403].includes(response.status) && isToken(dispatchToken) && dispatchToken !== readToken) {
+          await response.body?.cancel().catch(() => {});
+          response = await fetchWithTimeout(url, { headers: headers(dispatchToken) }, 5500);
+        }
         if (!response.ok) throw new Error("Run status unavailable");
         const payload = await response.json();
         if (!Array.isArray(payload.workflow_runs)) throw new Error("Invalid run status");
