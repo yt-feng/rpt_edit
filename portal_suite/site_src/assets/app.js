@@ -6629,6 +6629,7 @@
     if (existing) {
       if (existing.__externalSourceConnection) existing.__externalSourceConnection.close();
       if (existing.__researchAccessControls) existing.__researchAccessControls.close();
+      existing.__reportRefreshControls?.close();
       existing.remove();
     }
     document.body.insertAdjacentHTML("beforeend", accountAdminModalMarkup({
@@ -6642,6 +6643,11 @@
     }));
 
     const modal = document.getElementById("accountAdminModal");
+    if (isSuperSession(session)) import("/assets/admin-report-refresh.js?v=report-refresh-20261103").then((tools) => {
+      if (modal.isConnected) modal.__reportRefreshControls = tools.mountAdminReportRefresh({ root: modal, workerUrl, authHeaders });
+    }).catch(() => {
+      modal.querySelector("#accountAdminStatus").textContent = "同步工具加载失败，请关闭后台后重试。";
+    });
     const sourceConnection = initExternalSourceConnection(workerUrl, modal);
     modal.__externalSourceConnection = sourceConnection;
     const researchAccessControls = initLazyAccountServices(workerUrl, modal, true);
@@ -7252,6 +7258,7 @@
     }
 
     function finish() {
+      modal.__reportRefreshControls?.close();
       sourceConnection.close();
       researchAccessControls.close();
       if (accountAdminRefreshTimer) {

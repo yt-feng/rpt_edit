@@ -3,7 +3,7 @@
 
 The caller must hold portal-production-release throughout preparation and
 cutover. Catalogs, translations, sitemaps and private English content retain
-exactly their currently published bytes. Only six assets, existing root HTML
+exactly their currently published bytes. Only seven assets, existing root HTML
 script versions, and projections of the already approved English ledger change.
 """
 from __future__ import annotations
@@ -27,7 +27,8 @@ from portal_english_ui import PUBLIC_ASSET_NAMES, bind_account_session, detail, 
 from resume_portal_locale_candidate import live_state, read_pinned_manifest
 from verify_prepared_static_slot import read_json_object, read_verified_candidate_body, static_tree_sha256
 
-ASSETS = frozenset(('app.js', 'analytics.js', 'course-full.js', 'site-feedback.js', 'report-discussion.js', 'english-commentary.js'))
+ADDED_ASSETS = frozenset(('admin-report-refresh.js',))
+ASSETS = ADDED_ASSETS | frozenset(('app.js', 'analytics.js', 'course-full.js', 'site-feedback.js', 'report-discussion.js', 'english-commentary.js'))
 MAX_ASSET_BYTES = 2 * 1024 * 1024
 MAX_HTML_BYTES = 8 * 1024 * 1024
 WORKERS = 4
@@ -136,12 +137,12 @@ def build_patch(client: Any, bucket: str, active: dict[str, str], manifest: dict
     old = manifest['files']; files = {path: dict(row) for path, row in old.items()}; bodies = {}
     for name in sorted(ASSETS):
         relative = 'assets/' + name
-        require(relative in old, 'UI hotfix cannot introduce a new asset')
+        require(relative in old or name in ADDED_ASSETS, 'UI hotfix cannot introduce an unapproved asset')
         root = locale_assets if name == 'english-commentary.js' else source_root / 'assets'
         path = root / name
         require(not root.is_symlink() and path.is_file() and not path.is_symlink() and 0 < path.stat().st_size <= MAX_ASSET_BYTES, 'Materialized UI asset is missing, linked or oversized')
         bodies[relative] = path.read_bytes()
-        files[relative] = descriptor_with_body(old[relative], bodies[relative])
+        files[relative] = descriptor_with_body(old.get(relative) or publish.describe_file(path), bodies[relative])
     # The shared app has already been materialized for this deployment. Locale
     # assets arrive later and must use that exact account storage namespace.
     relative = 'assets/english-commentary.js'
@@ -178,7 +179,7 @@ def build_patch(client: Any, bucket: str, active: dict[str, str], manifest: dict
             assembly['public_files'][relative] = {'sha256': files[relative]['sha256'], 'bytes': len(raw)}
         raw = english.stable_bytes(english.checked_assembly(assembly))
         bodies[english.ASSEMBLY] = raw; files[english.ASSEMBLY] = descriptor_with_body(old[english.ASSEMBLY], raw)
-    bodies = {key: body for key, body in bodies.items() if files[key] != old[key]}
+    bodies = {key: body for key, body in bodies.items() if files[key] != old.get(key)}
     require(bool(bodies), 'UI hotfix has no changes')
     return bodies, files, approved
 
@@ -214,7 +215,10 @@ def prepare(client: Any, bucket: str, *, active_state: dict[str, Any], release: 
         source = publish.slot_prefix(active['slot']) + relative; target = prefix + relative
         if relative not in bodies:
             return copy_verified(client, bucket, source, target, files[relative])
-        source_head(client, bucket, source, original['files'][relative])
+        if relative in original['files']:
+            source_head(client, bucket, source, original['files'][relative])
+        else:
+            require(relative.removeprefix('assets/') in ADDED_ASSETS, 'Unexpected added UI asset')
         current = optional_head(client, bucket, target)
         if current and metadata_matches(current, files[relative]):
             return 'reused'

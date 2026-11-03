@@ -20,6 +20,7 @@ class Acceptance(unittest.TestCase):
                  'assets/english-commentary.js': f'const SESSION = "{english_key}";'.encode()}
         scripts = ''.join('<script defer src="/'+name+'?v='+hashlib.sha256(body).hexdigest()[:12]+'"></script>'
                           for name, body in pages.items() if name.startswith('assets/')).encode()
+        pages['assets/admin-report-refresh.js'] = b'export function mountAdminReportRefresh() {}'
         pages.update({'en/index.html': scripts+b'public-preview-index',
                       'en/blog/20261024-aaaaaaaaaaaaaaaa.html': scripts+b'public-preview-only'})
         receipt = {'slot': 'b', 'release_id': '2'*32, 'tree_sha256': '3'*64,
@@ -53,6 +54,7 @@ class Acceptance(unittest.TestCase):
         self.assertEqual(result['status'], 'passed')
         self.assertEqual(result['english_account_session'], 'matched')
         self.assertTrue(any('/assets/app.js?v=' in call for call in session.calls))
+        self.assertTrue(any('/assets/admin-report-refresh.js?v=' in call for call in session.calls))
         self.assertIn(ORIGIN+'/charts', session.calls)
         self.assertNotIn(ORIGIN+'/charts.html', session.calls)
         self.assertFalse(any('/download' in call for call in session.calls))

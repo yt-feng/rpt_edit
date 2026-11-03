@@ -155,6 +155,35 @@ class HotfixTests(unittest.TestCase):
         self.assertTrue(all(row[3] == before[row[2]]['ETag'] for row in copies))
         self.assertFalse(any(row[0] == 'copy' and row[1] == self.target_prefix+retained for row in self.client.trace))
 
+    def test_first_report_refresh_module_is_added_and_versioned_without_touching_reports(self):
+        relative = 'assets/admin-report-refresh.js'
+        self.client.objects.pop(self.source_prefix + relative)
+        self.manifest['files'].pop(relative)
+        self.manifest['file_count'] = len(self.manifest['files'])
+        self.manifest['total_bytes'] = sum(row['size'] for row in self.manifest['files'].values())
+        self.manifest['tree_sha256'] = static_tree_sha256(self.manifest['files'])
+        self.active['tree_sha256'] = self.manifest['tree_sha256']
+        publish.put_json(self.client, self.bucket, publish.manifest_key('a'), self.manifest)
+        app = self.source/'assets/app.js'
+        app.write_text(app.read_text() + ' import("/assets/admin-report-refresh.js?v=initial");')
+        self.client.trace.clear()
+        result = self.run_prepare()
+        self.assertIn(relative, result['changed_files'])
+        module = self.client.objects[self.target_prefix + relative]
+        self.assertIn(module['ContentType'], ('text/javascript', 'application/javascript'))
+        digest = hashlib.sha256(module['Body']).hexdigest()[:12].encode()
+        self.assertIn(b'/assets/admin-report-refresh.js?v=' + digest,
+                      self.client.objects[self.target_prefix + 'assets/app.js']['Body'])
+        self.assertFalse(result['content_changed'])
+        self.assertEqual(self.client.objects[self.target_prefix + 'data/catalog.json']['Body'],
+                         self.client.objects[self.source_prefix + 'data/catalog.json']['Body'])
+
+    def test_unapproved_added_asset_is_rejected_before_writes(self):
+        with patch.object(hotfix, 'ASSETS', hotfix.ASSETS | {'extra-tool.js'}):
+            with self.assertRaisesRegex(RuntimeError, 'unapproved asset'):
+                self.run_prepare()
+        self.assertEqual(self.client.trace, [])
+
     def test_changed_active_before_commit_aborts_with_incomplete_target(self):
         def guard():
             self.guard_calls += 1

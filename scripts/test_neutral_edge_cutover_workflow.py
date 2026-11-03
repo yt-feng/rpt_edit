@@ -374,7 +374,8 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn("github.event.workflow_run.head_repository.full_name == github.repository", self.workflow)
         self.assertIn('case "$GITHUB_EVENT_NAME" in', self.workflow)
         self.assertIn('rehearse|locale-shadow|migrate) operation="$REQUESTED_OPERATION"', self.workflow)
-        self.assertIn('schedule|workflow_run)', self.workflow)
+        self.assertIn('schedule|workflow_run|repository_dispatch)', self.workflow)
+        self.assertIn('types: [portal-dropbox-report-refresh]', self.workflow)
 
         operation = self.workflow[
             self.workflow.index("Require reviewed main operation"):

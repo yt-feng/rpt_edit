@@ -5,6 +5,7 @@ import {
   sourceLeadAdapterEnabled,
 } from "./source-lead-adapter.js";
 import { researchNewsEvidence } from "./research-news.js";
+import { handleReportRefresh } from "./report-refresh.js";
 import { journeyAnalyticsPayload } from "./journey-analytics.js";
 import { readResearchNewsSnapshot, researchNewsPublicUrl } from "./research-news-snapshot.js";
 import {
@@ -23595,6 +23596,7 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
       user: publicUser(adminUser),
       dashboard_title: isSuper ? "管理后台" : "运营后台",
       can_view_users: isSuper,
+      can_refresh_reports: isSuper,
       can_view_wechat: isSuper,
       can_view_analytics: isSuper,
       users: isSuper ? userRows : [],
@@ -27560,6 +27562,12 @@ export default {
 
     if (pathname === "/admin/report-password" && request.method === "POST") {
       return handleAdminReportPassword(request, env);
+    }
+
+    if (pathname === "/account-admin/report-refresh" && ["GET", "POST"].includes(request.method)) {
+      return handleReportRefresh(request, env, {
+        authorize: requireSuperUser, respond: jsonResponse, repository: githubRepo, fetchWithTimeout,
+      });
     }
 
     if (pathname === "/account-admin/summary" && request.method === "GET") {

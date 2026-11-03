@@ -88,6 +88,16 @@ class ReleaseAdmissionTests(unittest.TestCase):
         self.assertEqual(self.group(), 'portal-release-ineligible-124-2')
         self.assertIn('cancel-in-progress: false', SOURCE)
 
+    def test_only_fixed_dropbox_dispatch_can_enter_production_queue(self):
+        self.context['github']['event_name'] = 'repository_dispatch'
+        self.context['vars']['NEUTRAL_SCHEDULE_ENABLED'] = 'false'
+        for action, expected in (('portal-dropbox-report-refresh', True), ('unrelated-event', False)):
+            with self.subTest(action=action):
+                self.context['github']['event']['action'] = action
+                self.assertEqual(bool(evaluate(job_block('prepare_release'), self.context)), expected)
+                self.assertEqual(self.group(), 'portal-production-release' if expected
+                                 else 'portal-release-ineligible-123-1')
+
     def test_manual_approval_handshake_stays_parallel_and_cutover_waits_for_review(self):
         for review, approval in (('english_daily_review', 'english_approval'),
                                  ('extended_daily_review', 'extended_locales_approval')):

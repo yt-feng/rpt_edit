@@ -13,7 +13,7 @@ from urllib.parse import urlencode
 WORKFLOW = '.github/workflows/neutral-edge-cutover.yml'
 UPLOAD_STEP = 'Upload inactive static slot and immutable runtime'
 RUNNER_LOSS = 'The hosted runner lost communication with the server.'
-AUTOMATIC_EVENTS = {'schedule', 'workflow_run'}
+AUTOMATIC_EVENTS = {'schedule', 'workflow_run', 'repository_dispatch'}
 ACTIVE = {'queued', 'requested', 'waiting', 'pending', 'in_progress'}
 IDENTITY = ('id', 'run_attempt', 'head_sha', 'head_branch', 'event', 'path', 'workflow_id')
 

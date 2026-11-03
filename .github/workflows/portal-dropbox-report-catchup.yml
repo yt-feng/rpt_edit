@@ -1,0 +1,55 @@
+name: Dropbox report source catch-up
+
+on:
+  schedule:
+    # Lightweight metadata checks also cover delayed source uploads and late
+    # GitHub schedules, without starting a complete release every hour.
+    - cron: "17 * * * *"
+  workflow_run:
+    workflows: [Neutral edge catalog refresh]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portal-dropbox-source-catchup
+  cancel-in-progress: false
+
+jobs:
+  inspect:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (vars.NEUTRAL_SCHEDULE_ENABLED == 'true' &&
+       (vars.PORTAL_MULTILINGUAL_ENABLED != 'true' || vars.PORTAL_MULTILINGUAL_LIVE == 'true') &&
+       (github.event_name == 'schedule' ||
+        (github.event.workflow_run.conclusion == 'success' &&
+         github.event.workflow_run.head_repository.full_name == github.repository)))
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+          sparse-checkout: scripts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install metadata reader
+        run: python3 -m pip install --disable-pip-version-check "requests>=2.31,<3"
+      - name: Validate catch-up decisions
+        run: python3 -B scripts/test_catch_up_dropbox_reports.py
+      - name: Request an incremental release only for unpublished source reports
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+          DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
+          DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
+          DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+        run: python3 -B scripts/catch_up_dropbox_reports.py

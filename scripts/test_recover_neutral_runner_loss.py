@@ -102,6 +102,13 @@ class RecoveryTests(unittest.TestCase):
                 self.assertEqual(github.execute()['status'], 'skipped')
                 self.assertEqual(github.writes, [])
 
+    def test_dropbox_dispatch_retains_one_proven_preupload_runner_loss_retry(self):
+        github = FakeGitHub()
+        github.event['event'] = github.run['event'] = 'repository_dispatch'
+        result = github.execute()
+        self.assertEqual(result['run_attempt'], 2)
+        self.assertEqual(github.writes, [('actions/runs/123/rerun-failed-jobs', 'POST')])
+
     def test_stale_event_or_nonfailure_run_never_writes(self):
         for change in [{'run_attempt': 2}, {'head_sha': 'b' * 40}, {'status': 'in_progress'},
                        {'conclusion': 'cancelled'}, {'conclusion': 'timed_out'}, {'conclusion': 'success'}]:

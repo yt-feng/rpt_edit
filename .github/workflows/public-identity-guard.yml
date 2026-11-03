@@ -47,6 +47,8 @@ jobs:
           python3 -B scripts/test_portal_locale_text_store.py
           python3 -B scripts/test_run_with_resource_monitor.py
           python3 -B scripts/test_recover_neutral_runner_loss.py
+          python3 -B scripts/test_catch_up_dropbox_reports.py
+          node --test portal_suite/tests/admin-report-refresh.test.mjs portal_suite/tests/admin-report-refresh-frontend.test.mjs
           python3 -B scripts/test_portal_locale_literals.py
           python3 -B scripts/test_build_portal_locales.py
           python3 -B scripts/test_audit_portal_chinese_discovery_plan.py

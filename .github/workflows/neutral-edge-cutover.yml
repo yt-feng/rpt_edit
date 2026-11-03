@@ -1,7 +1,9 @@
 name: Neutral edge catalog refresh
-run-name: Neutral edge ${{ github.event_name == 'workflow_dispatch' && format('{0} ({1})', inputs.operation, inputs.translation_scope || 'incremental') || 'automatic incremental refresh' }}
+run-name: Neutral edge ${{ github.event_name == 'workflow_dispatch' && format('{0} ({1})', inputs.operation, inputs.translation_scope || 'incremental') || github.event_name == 'repository_dispatch' && format('Dropbox refresh ({0})', github.event.client_payload.source_generation || 'manual') || 'automatic incremental refresh' }}
 
 on:
+  repository_dispatch:
+    types: [portal-dropbox-report-refresh]
   schedule:
     - cron: "30 1,5,9,13 * * *"
   workflow_run:
@@ -78,6 +80,7 @@ concurrency:
     ${{
       (
         github.event_name == 'workflow_dispatch' ||
+        (github.event_name == 'repository_dispatch' && github.event.action == 'portal-dropbox-report-refresh') ||
         (
           vars.NEUTRAL_SCHEDULE_ENABLED == 'true' &&
           (
@@ -107,6 +110,7 @@ jobs:
     if: >-
       ${{
         github.event_name == 'workflow_dispatch' ||
+        (github.event_name == 'repository_dispatch' && github.event.action == 'portal-dropbox-report-refresh') ||
         (
           vars.NEUTRAL_SCHEDULE_ENABLED == 'true' &&
           (
@@ -181,7 +185,7 @@ jobs:
                 *) echo "::error::Unsupported manual Neutral operation"; exit 2 ;;
               esac
               ;;
-            schedule|workflow_run)
+            schedule|workflow_run|repository_dispatch)
               operation="migrate"
               ;;
             *)
