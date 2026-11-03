@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "id": "ef0255bcbf6a9d6209a7f388f764689727363f23af7a363815d6cf51c3810158",
+  "slug": "bbg-20261103-ef0255bcbf6a9d62",
+  "date": "2026-11-03",
+  "title": "最危险的漏洞不在外面：CEO说内部可能就是缺口，生产系统还怎么守？",
+  "speaker": "Tan Su Shan",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-11-03/the-china-show-11-03-2026-video",
+  "start": 1257.8,
+  "end": 1321.8,
+  "segments": [
+    {
+      "start": 1257.8,
+      "end": 1264.8,
+      "en": "I guess before we move to the macro final question on AI and cybersecurity given the by Nance hack over the weekend.",
+      "zh": "我想在进入宏观最后关于AI和网络安全的问题之前，鉴于周末Nance遭黑客攻击。"
+    },
+    {
+      "start": 1264.8,
+      "end": 1268.8,
+      "en": "What's your assessment of the nature of the threat the new threat.",
+      "zh": "你对这种新威胁的性质有何评估？"
+    },
+    {
+      "start": 1268.8,
+      "end": 1280.8,
+      "en": "I think if you're always connected to the internet and you have hot wallets and you don't have mitigants then you know back to good old basic cyber hygiene.",
+      "zh": "我认为如果你一直联网，有热钱包，又没有缓解措施，那就得回到基本的网络安全卫生。"
+    },
+    {
+      "start": 1280.8,
+      "end": 1288.8,
+      "en": "My learning is cyber hygiene trumps everything and treat inside as the outside that means trust nothing.",
+      "zh": "我的经验是网络安全卫生高于一切，把内部当作外部，即不信任任何东西。"
+    },
+    {
+      "start": 1288.8,
+      "end": 1293.8,
+      "en": "It could be that the vulnerability sitting right inside your organization.",
+      "zh": "漏洞可能就在你组织内部。"
+    },
+    {
+      "start": 1293.8,
+      "end": 1302.8,
+      "en": "Number one number two is access right whether it's your laptop your servers whenever make sure you really protect access to production.",
+      "zh": "第一第二是访问权限，无论是笔记本电脑还是服务器，都要确保真正保护生产环境的访问。"
+    },
+    {
+      "start": 1302.8,
+      "end": 1309.8,
+      "en": "We've learned that over the years do not let your production systems be open to everyone and anyone.",
+      "zh": "多年来我们学到，不要让生产系统对所有人开放。"
+    },
+    {
+      "start": 1309.8,
+      "end": 1321.8,
+      "en": "Anyone touching production make sure you have a strong system of security make sure every code every change management they're doing has strong gates so that you're protecting your production.",
+      "zh": "任何接触生产环境的人，都要有强大的安全体系，确保每个代码、每次变更管理都有强力的关卡，从而保护生产环境。"
+    }
+  ]
+}

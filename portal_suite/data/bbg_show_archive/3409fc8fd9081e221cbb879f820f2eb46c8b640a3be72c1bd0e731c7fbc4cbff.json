@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "id": "3409fc8fd9081e221cbb879f820f2eb46c8b640a3be72c1bd0e731c7fbc4cbff",
+  "slug": "bbg-20261103-3409fc8fd9081e22",
+  "date": "2026-11-03",
+  "title": "星展CEO陈淑珊：AI模型不站队，中美通吃如何优化成本？",
+  "speaker": "Tan Su Shan",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-11-03/the-china-show-11-03-2026-video",
+  "start": 1082.8,
+  "end": 1167.8,
+  "segments": [
+    {
+      "start": 1082.8,
+      "end": 1091.8,
+      "en": "Okay and I think you've been on record by saying I'm saying the bank is agnostic whether that's US or Chinese models that you use.",
+      "zh": "好的，我记得你曾公开表示，银行对于使用美国还是中国的模型持中立态度。"
+    },
+    {
+      "start": 1091.8,
+      "end": 1098.8,
+      "en": "If you could be more maybe specific on specifically what Chinese models are you looking to bake into what are you guys working with.",
+      "zh": "能否具体说说，你们打算将哪些中国模型整合进来，目前正在与哪些合作？"
+    },
+    {
+      "start": 1098.8,
+      "end": 1109.8,
+      "en": "Well you know we're open minded you know that they could be Chinese they could be Singaporean they could be Asian models they could be you know European models they could be Western frontier models were open minded.",
+      "zh": "我们持开放态度，可能是中国的、新加坡的、亚洲的，也可能是欧洲或西方的前沿模型，我们都愿意考虑。"
+    },
+    {
+      "start": 1109.8,
+      "end": 1117.8,
+      "en": "The key thing is obviously baseline is cyber security and we use you know AI code scan to make sure that there's no vulnerabilities.",
+      "zh": "关键基础当然是网络安全，我们使用AI代码扫描来确保没有漏洞。"
+    },
+    {
+      "start": 1117.8,
+      "end": 1129.8,
+      "en": "The second is we have built something called a router it's like an open router but we look at how we can optimize our use of SLM's or LLM's and how do we do that.",
+      "zh": "其次，我们构建了一个叫路由器的组件，类似开放路由器，但我们会优化使用小模型或大模型的方式。"
+    },
+    {
+      "start": 1129.8,
+      "end": 1138.8,
+      "en": "The first is you have something called a KV cache right a cache means if you and I asked the same question we don't have to boil the ocean for the same answer we reuse the same answer.",
+      "zh": "首先是KV缓存，缓存意味着如果你我问同样的问题，我们不必大海捞针，可以复用相同的答案。"
+    },
+    {
+      "start": 1138.8,
+      "end": 1142.8,
+      "en": "So you're being more optimized on your token consumption that.",
+      "zh": "这样你的token消耗就更优化了。"
+    },
+    {
+      "start": 1142.8,
+      "end": 1153.8,
+      "en": "And the second is you know not all tasks needs an LLM some simple task you can just use an SLM and that's when the open router can help to optimize the use of your models.",
+      "zh": "其次，并非所有任务都需要大模型，简单任务用小模型即可，这时开放路由器能帮助优化模型使用。"
+    },
+    {
+      "start": 1153.8,
+      "end": 1162.8,
+      "en": "And so whilst we you know increase our token consumption by some five times we've actually decreased our total token costs.",
+      "zh": "因此，尽管我们的token消耗增加了约五倍，但总token成本实际上下降了。"
+    },
+    {
+      "start": 1162.8,
+      "end": 1167.8,
+      "en": "So there are ways that you can optimize and we're learning as we're doing.",
+      "zh": "所以有办法优化，我们也在实践中不断学习。"
+    }
+  ]
+}

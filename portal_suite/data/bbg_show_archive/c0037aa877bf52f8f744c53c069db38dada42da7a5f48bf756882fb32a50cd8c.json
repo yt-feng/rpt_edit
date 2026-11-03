@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "id": "c0037aa877bf52f8f744c53c069db38dada42da7a5f48bf756882fb32a50cd8c",
+  "slug": "bbg-20261103-c0037aa877bf52f8",
+  "date": "2026-11-03",
+  "title": "星展CEO陈淑珊：自主代理一律不批，控制平面能管住谁？",
+  "speaker": "Tan Su Shan",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-11-03/the-china-show-11-03-2026-video",
+  "start": 976.8,
+  "end": 1082.8,
+  "segments": [
+    {
+      "start": 976.8,
+      "end": 987.8,
+      "en": "You've warned though that some of these AI agents need tight controls because they can pursue a goal in unexpected ways and I know you guys highlight also 430 AI use cases as well.",
+      "zh": "你曾警告说，其中一些AI代理需要严格控制，因为它们可能以意想不到的方式追求目标。我知道你们还强调了430个AI用例。"
+    },
+    {
+      "start": 987.8,
+      "end": 992.8,
+      "en": "Where do you draw the line on autonomy are there actually agents now that are executing tasks without.",
+      "zh": "你们在自主性上如何划界？现在真的有代理在无监督下执行任务吗？"
+    },
+    {
+      "start": 992.8,
+      "end": 999.8,
+      "en": "So we don't allow autonomous agents even we think that we're not ready for that and so we don't allow autonomous agents at all.",
+      "zh": "所以我们不允许自主代理，甚至我们认为我们还没准备好，因此我们完全不允许自主代理。"
+    },
+    {
+      "start": 999.8,
+      "end": 1004.8,
+      "en": "What we do do is we're building a harness and we're building a control plane.",
+      "zh": "我们做的是构建一个治理框架和一个控制平面。"
+    },
+    {
+      "start": 1004.8,
+      "end": 1016.8,
+      "en": "What does a control plane do a control plane allows the enterprise to look at whose agents doing what what can they access and that goes back to basic cyber hygiene as a human",
+      "zh": "控制平面做什么？它让企业查看谁的代理在做什么、能访问什么，这又回到基本网络卫生，作为人类"
+    },
+    {
+      "start": 1016.8,
+      "end": 1028.8,
+      "en": "built and agent the agent can only access what the humans allowed to access and having things that they're then gates to allow to or not allow your agents access to particular information is crucial.",
+      "zh": "构建代理，代理只能访问人类允许访问的内容，并设置关卡允许或不允许代理访问特定信息，这至关重要。"
+    },
+    {
+      "start": 1028.8,
+      "end": 1037.8,
+      "en": "We call that a jump host right so allowing or not allowing agents specific access to data and therefore allowing them to do tasks.",
+      "zh": "我们称之为跳板机，允许或不允许代理特定访问数据，从而允许它们执行任务。"
+    },
+    {
+      "start": 1037.8,
+      "end": 1045.8,
+      "en": "You have to have a control plane so that you're monitoring and so you have full accountability full observability and you see end to end what happens.",
+      "zh": "必须有控制平面来监控，实现完全问责和完全可观测性，端到端查看发生了什么。"
+    },
+    {
+      "start": 1045.8,
+      "end": 1057.8,
+      "en": "The other thing is get the data foundation right you know we've all got data we've all done M&A where you got third party data you've got integration you've got different ways of different countries during different things.",
+      "zh": "另一件事是打好数据基础，我们都有数据，都做过并购，有第三方数据、整合、不同国家不同方式。"
+    },
+    {
+      "start": 1057.8,
+      "end": 1072.8,
+      "en": "Get that data life cycle sorted out so from the day your data is born to the day it is perched who owns the data how do you keep it safe what are your models but how do you measure the efficacy and the safety of your models etc.",
+      "zh": "理顺数据生命周期，从数据产生到消亡，谁拥有数据、如何确保安全、模型是什么、如何衡量模型的有效性和安全性等。"
+    },
+    {
+      "start": 1072.8,
+      "end": 1082.8,
+      "en": "So building the framework building the control plane and building the observability is this is crucial but using AI to monitor AI that's a game changer.",
+      "zh": "构建框架、控制平面和可观测性至关重要，但用AI监控AI才是真正的变革。"
+    }
+  ]
+}
