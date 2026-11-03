@@ -63,6 +63,13 @@ class CatchUpTests(unittest.TestCase):
             self.assertEqual(self.run_catchup()["state"], "refresh_active")
         self.assertEqual(self.sent, [])
 
+    def test_superseded_pending_request_does_not_lose_its_source_batch(self):
+        generation = catchup.generation_for({(self.b, "261102")})
+        run = {"head_branch": "main", "display_title": f"Neutral edge Dropbox refresh ({generation})",
+               "status": "completed", "conclusion": "cancelled"}
+        self.assertEqual(self.run_catchup(GitHub(recent=[run]))["state"], "requested")
+        self.assertEqual(self.sent, [generation])
+
     def test_pdf_metadata_uses_same_content_identity_as_catalog(self):
         paths = []
         def reader(token, path, recursive=False):

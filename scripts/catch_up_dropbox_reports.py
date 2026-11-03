@@ -92,10 +92,13 @@ def catch_up(github, *, read_source, read_catalog, dispatch=dispatch_once):
         return {"state": "up_to_date", "source_reports": len(source)}
     generation = generation_for(missing)
     title = f"Neutral edge Dropbox refresh ({generation})"
-    if any(run.get("display_title") == title for run in workflow_runs(github)):
+    if any(run.get("display_title") == title and run.get("conclusion") != "cancelled"
+           for run in workflow_runs(github)):
         # The same missing set gets at most one automatic request. A program
         # failure is investigated, rather than retried every hour indefinitely.
         return {"state": "already_requested", "missing_reports": len(missing)}
+    # GitHub can replace an unstarted pending run with a different production
+    # release. That cancelled queue entry must not consume this source batch.
     if active_refresh(github):
         return {"state": "refresh_active"}
     accepted = dispatch(github, generation)
