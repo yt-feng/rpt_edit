@@ -1660,6 +1660,18 @@
     "bcg:https://www.bcg.com/publications/2026/five-barriers-ceos-must-overcome-for-ai-impact": {
       "first_seen": "2026-11-02",
       "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/maritime-fuel-mix-regulation-cost": {
+      "first_seen": "2026-11-03",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/brazil-turning-ai-ambition-into-reality": {
+      "first_seen": "2026-11-03",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/ai-medtech-commercial-operations": {
+      "first_seen": "2026-11-03",
+      "status": "downloaded"
     }
   }
 }
