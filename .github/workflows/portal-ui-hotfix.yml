@@ -18,7 +18,9 @@ concurrency:
 jobs:
   hotfix:
     runs-on: ubuntu-22.04
-    timeout-minutes: 90
+    # The verified UI clone took 57 minutes with a smaller release. Preserve
+    # time for the 53k+ file tree and the deployment/acceptance/rollback window.
+    timeout-minutes: 135
     steps:
       - name: Require audited main branch
         run: |
@@ -137,7 +139,7 @@ jobs:
           python3 -B scripts/check_portal_app_budget.py --candidate portal_suite/site_src/assets/app.js
 
       - name: Prepare verified inactive UI candidate from the active release
-        timeout-minutes: 60
+        timeout-minutes: 100
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
