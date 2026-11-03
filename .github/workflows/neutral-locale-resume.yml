@@ -107,7 +107,7 @@ jobs:
                 *) echo "::error::Unsupported manual Neutral operation"; exit 2 ;;
               esac
               ;;
-            schedule|workflow_run)
+            schedule|workflow_run|repository_dispatch)
               operation="migrate"
               ;;
             *)
