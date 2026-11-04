@@ -1,10 +1,6 @@
 {
   "version": 1,
   "items": {
-    "bcg:https://www.bcg.com/publications/2026/smart-compliance-esrs-sustainability-reporting": {
-      "first_seen": "2026-07-06",
-      "status": "downloaded"
-    },
     "mckinsey:https://www.mckinsey.com/~/media/mckinsey/about%20us/social%20responsibility/2025%20esg%20report/2025%20sustainable%20and%20inclusive%20growth%20report.pdf": {
       "first_seen": "2026-07-07",
       "status": "downloaded"
@@ -1672,6 +1668,18 @@
     "bcg:https://www.bcg.com/publications/2026/ai-medtech-commercial-operations": {
       "first_seen": "2026-11-03",
       "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/critical-minerals-geopolitics": {
+      "first_seen": "2026-11-04",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/holistic-resource-management-ceos": {
+      "first_seen": "2026-11-04",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/ai-war-gaming-stress-test-strategy": {
+      "first_seen": "2026-11-04",
+      "status": "no_pdf"
     }
   }
 }
