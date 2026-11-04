@@ -29,7 +29,9 @@ jobs:
         with:
           python-version: "3.12"
       - name: Validate the bilingual import contract
-        run: python scripts/test_sync_bbg_show_blog.py
+        run: |
+          python scripts/test_sync_bbg_show_blog.py
+          bash scripts/test_commit_output_dir.sh
       - name: Archive published scripts
         env:
           GH_TOKEN: ${{ github.token }}
@@ -40,12 +42,7 @@ jobs:
             --output-dir portal_suite/data/bbg_show_archive
       - name: Save bilingual articles for the normal site refresh
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- portal_suite/data/bbg_show_archive
-          if git diff --cached --quiet; then
-            echo "The bilingual archive is current."
-            exit 0
-          fi
-          git commit -m "Archive published BBG Show bilingual scripts"
-          git push origin HEAD:main
+          bash scripts/commit_output_dir.sh \
+            portal_suite/data/bbg_show_archive \
+            "Archive published BBG Show bilingual scripts" \
+            8 true
