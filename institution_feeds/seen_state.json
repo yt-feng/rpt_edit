@@ -365,41 +365,9 @@
       "first_seen": "2026-08-07",
       "status": "downloaded"
     },
-    "imf:7c28e4d5166f36f0d2a1c9e08638e8ed3bb0e18e92c069306e65cbb15559": {
-      "first_seen": "2026-07-06",
-      "status": "downloaded"
-    },
     "bis:https://www.bis.org/publ/bisbull126.htm": {
       "first_seen": "2026-08-07",
       "status": "too_old"
-    },
-    "oecd:https://www.oecd.org/en/publications/tax-co-operation-for-development-2025_d652a08b-en.html": {
-      "first_seen": "2026-07-06",
-      "status": "downloaded"
-    },
-    "oecd:https://www.oecd.org/en/publications/better-skills-data-for-smarter-financing-of-education-and-training_f77b4282-en.html": {
-      "first_seen": "2026-07-06",
-      "status": "downloaded"
-    },
-    "oecd:https://www.oecd.org/en/publications/developing-south-africa-s-national-student-assessment-framework_df78c382-en.html": {
-      "first_seen": "2026-07-06",
-      "status": "downloaded"
-    },
-    "oecd:https://www.oecd.org/en/publications/improving-learning-outcomes-in-catalonia-spain_238d6264-en.html": {
-      "first_seen": "2026-07-06",
-      "status": "downloaded"
-    },
-    "adb:27779": {
-      "first_seen": "2026-07-06",
-      "status": "downloaded"
-    },
-    "adb:1157681": {
-      "first_seen": "2026-07-06",
-      "status": "downloaded"
-    },
-    "wto:https://www.wto.org/english/news_e/news26_e/acc_06jul26_442_e.htm": {
-      "first_seen": "2026-07-06",
-      "status": "no_pdf"
     },
     "imf:5b0ae23d24c3daa0e4870dd261743e190aad11058e416d7622f59bb7454a": {
       "first_seen": "2026-07-07",
@@ -3967,6 +3935,74 @@
     },
     "wto:https://www.wto.org/english/news_e/news26_e/scm_30oct26_537_e.htm": {
       "first_seen": "2026-11-03",
+      "status": "no_pdf"
+    },
+    "bis:https://www.bis.org/publ/work1390.htm": {
+      "first_seen": "2026-11-04",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/unctad16-outcome-geneva-consensus-and-political-declaration": {
+      "first_seen": "2026-11-04",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/review-maritime-transport-2025": {
+      "first_seen": "2026-11-04",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/technology-and-innovation-report-2025": {
+      "first_seen": "2026-11-04",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/least-developed-countries-report-2025": {
+      "first_seen": "2026-11-04",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/digital-economy-report-2024": {
+      "first_seen": "2026-11-04",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/handbook-statistics-2025": {
+      "first_seen": "2026-11-04",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/economic-development-africa-report-2024": {
+      "first_seen": "2026-11-04",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/preparing-seize-artificial-intelligence-opportunities-strategic-national-policies": {
+      "first_seen": "2026-11-04",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/global-collaboration-inclusive-and-equitable-artificial-intelligence": {
+      "first_seen": "2026-11-04",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/harnessing-regional-integration-and-green-industrial-policy-enhancing-sustainable": {
+      "first_seen": "2026-11-04",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/fostering-environmentally-sustainable-electronic-commerce": {
+      "first_seen": "2026-11-04",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/strategic-diversification-empirical-insights-leveraging-economic-complexity-break-free": {
+      "first_seen": "2026-11-04",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/fragile-prosperity-natural-disasters-and-economic-growth-small-island-developing-states": {
+      "first_seen": "2026-11-04",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/poverty-and-disability-evidence-africa": {
+      "first_seen": "2026-11-04",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/revisiting-trade-poverty-nexus-developing-countries": {
+      "first_seen": "2026-11-04",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/fish_29oct26_539_e.htm": {
+      "first_seen": "2026-11-04",
       "status": "no_pdf"
     }
   }
