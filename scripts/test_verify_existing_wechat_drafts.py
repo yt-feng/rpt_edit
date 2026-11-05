@@ -3,6 +3,7 @@
 
 import json
 from pathlib import Path
+import re
 import tempfile
 import unittest
 from unittest.mock import Mock, patch
@@ -100,7 +101,19 @@ class ExistingDraftTests(unittest.TestCase):
         for path in root.glob("*.yml"):
             for step in path.read_text().split("      - name: "):
                 if step.startswith(("Archive WeChat draft diagnostics\n", "Archive WeChat draft maintenance diagnostics\n")):
-                    self.assertIn("if: ${{ always() }}", step, str(path))
+                    condition=re.search(r'(?m)^\s+if: \$\{\{\s*(.*?)\s*\}\}',step)
+                    self.assertIsNotNone(condition,str(path))
+                    expression=condition.group(1)
+                    self.assertIn('always()',expression,str(path))
+                    for outcome in ('success','failure','cancelled','skipped',''):
+                        evaluated=re.sub(r'steps\.[\w-]+\.outcome',repr(outcome),expression)
+                        evaluated=evaluated.replace('always()','True').replace('&&',' and ').replace('||',' or ')
+                        enabled=eval(evaluated,{'__builtins__':{}},{})
+                        with self.subTest(workflow=path.name,outcome=outcome):
+                            if outcome in ('success','failure','cancelled'):
+                                self.assertTrue(enabled,'An attempted upload must retain diagnostics after failed readback')
+                            elif 'required: "true"' in step:
+                                self.assertFalse(enabled,'A skipped upload cannot require a fictional submission checkpoint')
                     checked += 1
         self.assertEqual(9, checked)
 
