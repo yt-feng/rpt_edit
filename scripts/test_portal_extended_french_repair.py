@@ -378,7 +378,11 @@ class IntegrationTests(unittest.TestCase):
         jobs=workflow['jobs']
         trigger=workflow.get('on',workflow.get(True,workflow.get('true')))
         self.assertLessEqual(len(trigger['workflow_dispatch'].get('inputs',{})),25)
-        self.assertEqual(len(trigger['workflow_dispatch']['inputs']),7)
+        inputs=trigger['workflow_dispatch']['inputs']
+        self.assertEqual(set(inputs),{'operation','locales','source_generation','continuation_evidence',
+                                     'seconds','allow_source_fallback','diagnose_runtime','ordinary_request_sha256'})
+        self.assertEqual(inputs['ordinary_request_sha256']['default'],'')
+        self.assertIs(inputs['ordinary_request_sha256']['required'],False)
         for job in jobs.values():
             self.assertNotIn('runner.',json.dumps(job.get('env',{})))
         self.assertEqual(jobs['locale']['strategy']['max-parallel'],2)
