@@ -1,5 +1,35 @@
 # Source-following locale correction — 2026-10-02
 
+## Verified merge and runtime handoff
+
+Implementation `16bd1589f3fa6c4304587a726fe3e9606fb0debc` passed exact-head
+GitHub regression `37055682590`, public identity `37055682570`, and API cost
+controls `37055682469`. PR #201 merged normally at `2026-10-02T19:44:34Z`;
+main merge commit `bc8c0f872ca78b20fb58653d577715400342512b`.
+
+Private staging `37055737298` succeeded on that implementation head. It restored
+a source dated October 2 after an October 3 Asia/Shanghai capture, verified the
+new immutable source-refresh proof, independently resumed locale cursors, and
+restored checkpoint
+`f7c97533eb7d3b8872450b011fd82da7a11d7320c08da1c6b7aa45c217e2aff9`.
+English same-capture/timeout/checkpoint recovery and incomplete-candidate refusal
+also passed; English checkpoint
+`0e488c30c335c51efe3c39eedda6f560b288beeb28b4220f4173ac4f7193baf9`.
+These are isolated synthetic storage probes: zero model calls, zero ready
+production candidates, no deployment.
+
+The full read-only live collector found **56** latest-source Blog pages dated
+October 1; **all 56** yielded explicit KC secondary commentary. Its immutable
+corpus generation was
+`015cabcbd9f45806c476ee5ae7979ddbc8bcbaeda5cd710725127eb14f4bbc91`.
+Translation calls and writes were zero. This is source availability, not a
+completed translation or publication count. All 33-locale and English daily
+publication/reviewer opt-ins were read back enabled. The next dispatch is the
+fast source-admission workflow on reviewed main, which feeds the existing
+two-worker matrix automatically; dispatch receipts are reported separately.
+No subsequent Actions monitoring is requested. English live pages and the
+new source batch remain unaccepted until their normal runtime completion.
+
 ## Evidence and cause
 
 Main baseline: `c3fc24e1a198bb86225427b04c7b771a4c589840`.
