@@ -1,5 +1,105 @@
 {
   "schema": 1,
   "institution": "imf",
-  "items": {}
+  "items": {
+    "imf:1e85c18c67badf3b3096532ffb9704ba4b1b0caf06aa936b5427c59a193c": {
+      "item": {
+        "title": "Corporate Income Tax Reform and Firm Investment in Latvia",
+        "source_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/11/03/corporate-income-tax-reform-and-firm-investment-in-latvia-580911",
+        "guid": "1e85c18c67badf3b3096532ffb9704ba4b1b0caf06aa936b5427c59a193c",
+        "date": "2026-11-04T05:30:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026106.pdf",
+          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026106-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/11/03/corporate-income-tax-reform-and-firm-investment-in-latvia-580911",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/selected-issues-papers/issues/2026/11/03/corporate-income-tax-reform-and-firm-investment-in-latvia-580911"
+      },
+      "admitted_at": "2026-11-05T01:58:01.768860+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-05T01:58:01.768860+00:00",
+      "attempts": 1
+    },
+    "imf:60c143a731ba976ee728327ab781f34774977b88dad5bdee5be03f887ff3": {
+      "item": {
+        "title": "Housing Quality and Labor Mobility in Latvia",
+        "source_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/11/03/housing-quality-and-labor-mobility-in-latvia-580917",
+        "guid": "60c143a731ba976ee728327ab781f34774977b88dad5bdee5be03f887ff3",
+        "date": "2026-11-04T05:30:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026107.pdf",
+          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026107-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/11/03/housing-quality-and-labor-mobility-in-latvia-580917",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/selected-issues-papers/issues/2026/11/03/housing-quality-and-labor-mobility-in-latvia-580917"
+      },
+      "admitted_at": "2026-11-05T01:58:01.768860+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-05T01:58:01.768860+00:00",
+      "attempts": 1
+    },
+    "imf:f6edc001b8c23517a2880c1267e6673049b8e2b0100504cbf6eabc2c05ca": {
+      "item": {
+        "title": "Public Spending in Latvia: Outcomes and Efficiency in Education and Health",
+        "source_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/11/03/public-spending-in-latvia-outcomes-and-efficiency-in-education-and-health-580905",
+        "guid": "f6edc001b8c23517a2880c1267e6673049b8e2b0100504cbf6eabc2c05ca",
+        "date": "2026-11-04T05:30:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026105.pdf",
+          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026105-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/11/03/public-spending-in-latvia-outcomes-and-efficiency-in-education-and-health-580905",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/selected-issues-papers/issues/2026/11/03/public-spending-in-latvia-outcomes-and-efficiency-in-education-and-health-580905"
+      },
+      "admitted_at": "2026-11-05T01:58:01.768860+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-05T01:58:01.768860+00:00",
+      "attempts": 1
+    },
+    "imf:e64dd1b6392699c7d1808060997fdb14c28bb6408e86e948a26788ed11e6": {
+      "item": {
+        "title": "Uruguay: 2026 Article IV Consultation-Press Release and Staff Report",
+        "source_url": "https://www.imf.org/en/publications/cr/issues/2026/11/04/uruguay-2026-article-iv-consultation-press-release-and-staff-report-580928",
+        "guid": "e64dd1b6392699c7d1808060997fdb14c28bb6408e86e948a26788ed11e6",
+        "date": "2026-11-04T05:00:00+00:00",
+        "pdf_candidates": [],
+        "scrape_url": "https://www.imf.org/en/publications/cr/issues/2026/11/04/uruguay-2026-article-iv-consultation-press-release-and-staff-report-580928",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/cr/issues/2026/11/04/uruguay-2026-article-iv-consultation-press-release-and-staff-report-580928"
+      },
+      "admitted_at": "2026-11-05T01:58:01.768860+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-05T01:58:01.768860+00:00",
+      "attempts": 1
+    },
+    "imf:132e8c13474984f9e72f2396115b58882378ed9623f37e93b0b4df229531": {
+      "item": {
+        "title": "Uruguay: Selected Issues",
+        "source_url": "https://www.imf.org/en/publications/cr/issues/2026/11/04/uruguay-selected-issues-580933",
+        "guid": "132e8c13474984f9e72f2396115b58882378ed9623f37e93b0b4df229531",
+        "date": "2026-11-04T05:00:00+00:00",
+        "pdf_candidates": [],
+        "scrape_url": "https://www.imf.org/en/publications/cr/issues/2026/11/04/uruguay-selected-issues-580933",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/cr/issues/2026/11/04/uruguay-selected-issues-580933"
+      },
+      "admitted_at": "2026-11-05T01:58:01.768860+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-05T01:58:01.768860+00:00",
+      "attempts": 1
+    },
+    "imf:963dd35a0cd87411188fb25c31db84416857d6a7562bd5623267f40e2774": {
+      "item": {
+        "title": "Bosnia and Herzegovina: Central Bank Transparency Code Review",
+        "source_url": "https://www.imf.org/en/publications/cr/issues/2026/11/03/bosnia-and-herzegovina-central-bank-transparency-code-review-580923",
+        "guid": "963dd35a0cd87411188fb25c31db84416857d6a7562bd5623267f40e2774",
+        "date": "2026-11-04T05:00:00+00:00",
+        "pdf_candidates": [],
+        "scrape_url": "https://www.imf.org/en/publications/cr/issues/2026/11/03/bosnia-and-herzegovina-central-bank-transparency-code-review-580923",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/cr/issues/2026/11/03/bosnia-and-herzegovina-central-bank-transparency-code-review-580923"
+      },
+      "admitted_at": "2026-11-05T01:58:01.768860+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-05T01:58:01.768860+00:00",
+      "attempts": 1
+    }
+  }
 }
