@@ -215,9 +215,13 @@ class TransportRecoveryTests(unittest.TestCase):
         args = ['test', 'prepare-publication', '--generation', corpus['documents_sha256'],
                 '--corpus', str(self.root/'source.json'), '--locales', 'fr']
         with mock.patch.dict(incremental.os.environ, {'GITHUB_ACTIONS':'true', 'GITHUB_REF':'refs/heads/main',
-                'GITHUB_RUN_ID':'123', 'GITHUB_RUN_ATTEMPT':'1', 'GITHUB_SHA':'a'*40}), \
+                'GITHUB_RUN_ID':'123', 'GITHUB_RUN_ATTEMPT':'1', 'GITHUB_SHA':'a'*40,
+                'GITHUB_REPOSITORY':'example/repo', 'KC_PUBLIC_REPOSITORY':'true',
+                'GITHUB_EVENT_NAME':'workflow_dispatch',
+                'GITHUB_WORKFLOW_REF':'example/repo/.github/workflows/portal-extended-locales-r2.yml@refs/heads/main'}), \
              mock.patch('sys.argv', args), mock.patch.object(incremental, 'today', return_value='2026-09-29'), \
              mock.patch.object(incremental.R2Store, 'from_env', return_value=store), \
+             mock.patch('review_portal_extended_handoff.api', side_effect=AssertionError('Unregistered recovery must not inspect GitHub')), \
              mock.patch.object(incremental, 'collect_today', side_effect=AssertionError('No backfill')):
             with self.assertRaisesRegex(incremental.ExpansionError, 'registered original generation'):
                 incremental.main()

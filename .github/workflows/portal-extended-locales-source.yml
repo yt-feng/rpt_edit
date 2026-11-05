@@ -70,6 +70,7 @@ jobs:
     concurrency:
       group: extended-locales-source-admission
       cancel-in-progress: false
+      queue: max
     runs-on: ubuntu-22.04
     timeout-minutes: 50
     steps:

@@ -231,7 +231,10 @@ class WorkflowTests(unittest.TestCase):
         ])
         self.assertEqual(admission_trigger['types'], ['completed'])
         self.assertEqual(admission_trigger['branches'], ['main'])
-        for required in ('workflows: [Extended locale source admission]', 'timeout-minutes: 270', 'default: "14400"',
+        wake = yaml.safe_load((ROOT/'.github/workflows/portal-extended-consumer-wakeup.yml').read_text())
+        self.assertEqual(wake[True]['workflow_run']['workflows'], ['Extended locale source admission'])
+        self.assertNotIn('workflow_run', yaml.safe_load(source)[True])
+        for required in ('timeout-minutes: 270', 'default: "14400"',
                          "inputs.seconds || '14400'", '-gt 14400', 'max-parallel: 2',
                          "needs.source.outputs.has_work == 'true'", 'cancel-in-progress: false',
                          'prepare_operation=prepare', '--seed-checkpoint'):

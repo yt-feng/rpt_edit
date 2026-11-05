@@ -180,8 +180,11 @@ jobs:
       - name: Restore accepted WeChat draft receipts
         uses: ./.github/actions/restore-wechat-diagnostics
         with:
+          submission-step-names: |
+            Upload generated XHS notes to WeChat drafts
           name: xhs-notes-wechat-drafts-${{ github.event.inputs.date_folder || 'latest' }}-${{ github.run_id }}
           path: .
+          checkpoint-path: wechat_drafts/xhs_notes/${{ env.RESOLVED_DATE_FOLDER }}
 
       - name: Upload generated XHS notes to WeChat drafts
         id: upload_xhs_wechat
@@ -242,7 +245,7 @@ jobs:
         if: ${{ always() }}
         uses: ./.github/actions/resilient-diagnostic-artifact
         with:
-          name: xhs-notes-wechat-drafts-${{ github.event.inputs.date_folder || 'latest' }}-${{ github.run_id }}
+          name: xhs-notes-wechat-drafts-${{ github.event.inputs.date_folder || 'latest' }}-${{ github.run_id }}-attempt-${{ github.run_attempt }}
           path: |
             ${{ env.WECHAT_DRAFT_DIR }}
             wechat_drafts_progress.log

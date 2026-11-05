@@ -22,7 +22,7 @@ class Workflow(unittest.TestCase):
         for path in paths:
             self.assertTrue((ROOT / path).is_file(), path)
     def test_prod_lock_main_origin_guards_and_no_content_generation(self):
-        self.assertEqual(self.workflow['concurrency'], {'group': 'portal-production-release', 'cancel-in-progress': False})
+        self.assertEqual(self.workflow['concurrency'], {'group': 'portal-production-release', 'cancel-in-progress': False, 'queue': 'max'})
         commands = '\n'.join(step.get('run','') for step in self.steps)
         self.assertIn('"$GITHUB_REF" != "refs/heads/main"', commands)
         self.assertIn('release != os.environ["EXPECTED_RELEASE"]', commands)

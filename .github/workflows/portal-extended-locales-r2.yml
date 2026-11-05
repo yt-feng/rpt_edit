@@ -2,13 +2,15 @@
 # This workflow never publishes an incomplete candidate and never uploads
 # generated translations to Actions artifacts or caches.
 name: Extended locales private R2 pipeline
-run-name: Extended locale R2 ${{ inputs.operation || 'daily incremental' }} (${{ inputs.locales || vars.PORTAL_EXTENDED_INCREMENTAL_LOCALES || 'all-supported' }})
+run-name: >-
+  ${{ inputs.ordinary_request_sha256 != '' && inputs.operation == 'candidate' &&
+      inputs.source_generation == '' && inputs.continuation_evidence == '' &&
+      inputs.seconds == '14400' && inputs.allow_source_fallback == true && inputs.diagnose_runtime == false &&
+      format('Extended locale R2 ordinary {0} ({1})', inputs.ordinary_request_sha256, inputs.locales) ||
+      format('Extended locale R2 {0} ({1})', inputs.operation || 'daily incremental',
+        inputs.locales || vars.PORTAL_EXTENDED_INCREMENTAL_LOCALES || 'all-supported') }}
 
 on:
-  workflow_run:
-    workflows: [Extended locale source admission]
-    types: [completed]
-    branches: [main]
   push:
     branches: [codex/extended-locales-r2-20260924]
   workflow_dispatch:
@@ -49,6 +51,11 @@ on:
         required: false
         type: boolean
         default: false
+      ordinary_request_sha256:
+        description: "Internal ordinary wake-up identity; exact/manual recovery requests leave empty"
+        required: false
+        type: string
+        default: ""
 
 permissions:
   contents: read
@@ -69,6 +76,7 @@ concurrency:
         inputs.operation == 'strict-repair-resolution' && format('extended-locales-child-resolution-{0}', inputs.locales) ||
         inputs.operation == 'recovery-test' && format('extended-locales-r2-recovery-{0}', github.ref) || 'extended-locales-r2-pipeline' }}
   cancel-in-progress: false
+  queue: max
 
 env:
   EXTENDED_R2_PREFIX: _extended-locales/v1
@@ -301,6 +309,7 @@ jobs:
     concurrency:
       group: extended-locale-${{ matrix.locale }}
       cancel-in-progress: false
+      queue: max
     if: needs.source.result == 'success' && needs.source.outputs.has_work == 'true' && github.event.repository.private == false
     runs-on: ubuntu-22.04
     timeout-minutes: 270
@@ -670,6 +679,10 @@ jobs:
         run: python3 -B scripts/portal_english_handoff.py
 
   continue_admitted_batches:
+    concurrency:
+      group: extended-locale-ordinary-wakeup
+      cancel-in-progress: false
+      queue: max
     needs: [source, locale, publication_handoff]
     if: >-
       ${{ always() && !cancelled() && github.ref == 'refs/heads/main' &&
@@ -745,4 +758,5 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           SOURCE_LOCALES: ${{ needs.source.outputs.requested_locales }}
-        run: gh workflow run portal-extended-locales-r2.yml --repo "$GITHUB_REPOSITORY" --ref main -f operation=candidate -f locales="$SOURCE_LOCALES"
+          KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
+        run: python3 -B scripts/portal_extended_ordinary_wakeup.py

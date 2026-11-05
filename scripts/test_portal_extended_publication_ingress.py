@@ -613,7 +613,7 @@ class IngressTests(unittest.TestCase):
         self.assertNotIn('concurrency', value)
         capture_job, writer = value['jobs']['capture'], value['jobs']['source_snapshot']
         self.assertNotIn('concurrency', capture_job)
-        self.assertEqual(writer['concurrency'], {'group': 'extended-locales-source-admission', 'cancel-in-progress': False})
+        self.assertEqual(writer['concurrency'], {'group': 'extended-locales-source-admission', 'cancel-in-progress': False, 'queue': 'max'})
         self.assertEqual(writer['needs'], 'capture')
         captures = '\n'.join(row.get('run', '') for row in capture_job['steps'])
         writes = '\n'.join(row.get('run', '') for row in writer['steps'])
@@ -719,7 +719,7 @@ class IngressTests(unittest.TestCase):
         source = yaml.safe_load((root/'.github/workflows/portal-extended-locales-source.yml').read_text())
         consumer = yaml.safe_load((root/'.github/workflows/portal-extended-locales-r2.yml').read_text())
         for workflow in (source, consumer):
-            self.assertNotIn(wake['name'], workflow[True]['workflow_run']['workflows'])
+            self.assertNotIn(wake['name'], workflow[True].get('workflow_run', {}).get('workflows', []))
         self.assertEqual(wake[True]['schedule'], [{'cron': '17 * * * *'}])
         self.assertEqual(wake['concurrency'], {'group': 'extended-locale-publication-wake', 'cancel-in-progress': False})
         self.assertEqual(wake['permissions']['actions'], 'write')

@@ -63,7 +63,7 @@ class CheckpointArchiveTests(unittest.TestCase):
         for name in ("Upload diagnostic artifact", "Retry diagnostic artifact upload"):
             block = action.split("    - name: " + name + "\n", 1)[1].split("\n    - name:", 1)[0]
             self.assertIn("${{ inputs.checkpoint-path }}", block)
-            self.assertIn("name: ${{ inputs.name }}", block)
+            self.assertIn("name: ${{ inputs.name }}" if name == "Upload diagnostic artifact" else "name: ${{ inputs.name }}-retry", block)
 
     def test_critical_retry_cannot_overwrite_a_legacy_or_previous_attempt_name(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -101,7 +101,7 @@ class CheckpointArchiveTests(unittest.TestCase):
 class RestoredCheckpointContentTests(unittest.TestCase):
     def validate(self, path):
         return subprocess.run([sys.executable, "-c", step_script(RESTORE, "Validate restored delivery checkpoint")],
-                              env={**os.environ, "CHECKPOINT_PATH": str(path), "CHECKPOINT_VALIDATOR": str(VALIDATOR)},
+                              env={**os.environ, "CHECKPOINT_PATH": str(path), "CHECKPOINT_VALIDATOR": str(VALIDATOR), "PRIMARY_DOWNLOAD": "success"},
                               capture_output=True, text=True)
 
     def test_legacy_log_only_artifact_and_other_job_checkpoint_do_not_enable_upload(self):
@@ -125,7 +125,7 @@ class RestoredCheckpointContentTests(unittest.TestCase):
                 root = Path(tmp)
                 (root / filename).write_text(json.dumps(summary(root) if filename == "wechat_draft_summary.json" else submission()))
                 self.assertEqual(0, self.validate(root).returncode)
-        self.assertIn("if: ${{ github.run_attempt > 1 && inputs.checkpoint-path != '' }}", RESTORE.read_text())
+        self.assertIn("if: ${{ steps.locate.outputs.found == 'true' }}", RESTORE.read_text())
 
     def test_summary_date_ids_types_and_count_must_be_consistent_for_both_actions(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -166,59 +166,134 @@ class RestoredCheckpointContentTests(unittest.TestCase):
                 self.assertEqual(0, self.validate(root).returncode)
 
 
-@unittest.skipUnless(shutil.which("node"), "Node is needed to execute the GitHub script fixture")
 class CheckpointRestoreTests(unittest.TestCase):
-    def choose(self, names, current=4):
+    def choose(self, names, current=4, histories=None):
+        import wechat_attempt_history as history
         artifacts = [{"name": item, "expired": False} if isinstance(item, str) else item for item in names]
-        payload = {"script": step_script(RESTORE, "Locate prior draft receipts", "script"), "artifacts": artifacts}
-        harness = """
-        const fs = require('fs');
-        const input = JSON.parse(fs.readFileSync(0, 'utf8'));
-        const outputs = {};
-        const github = { paginate: async () => input.artifacts,
-                         rest: { actions: { listWorkflowRunArtifacts: () => {} } } };
-        const context = { repo: { owner: 'example', repo: 'reports' }, runId: 123 };
-        const core = { setOutput: (key, value) => outputs[key] = value };
-        const AsyncFunction = Object.getPrototypeOf(async function(){}).constructor;
-        new AsyncFunction('github', 'context', 'core', input.script)(github, context, core)
-          .then(() => process.stdout.write(JSON.stringify({ok: true, outputs})))
-          .catch(error => process.stdout.write(JSON.stringify({ok: false, error: error.message, outputs})));
-        """
-        result = subprocess.run([shutil.which("node"), "-e", harness], input=json.dumps(payload),
-                                env={**os.environ, "RECEIPT_ARTIFACT_NAME": "wechat-drafts-123",
-                                     "CURRENT_RUN_ATTEMPT": str(current)}, capture_output=True, text=True, check=True)
-        return json.loads(result.stdout)
+        def jobs(attempt):
+            if histories is None or attempt not in histories:
+                raise history.HistoryError("Missing complete attempt history")
+            return histories[attempt]
+        return history.choose_checkpoint(artifacts, current, "wechat-drafts-123", jobs,
+                                         "upload-wechat-drafts", ["Upload drafts"])
+
+    def skipped(self):
+        return [{"name": "upload-wechat-drafts", "status": "completed", "conclusion": "skipped"}]
+
+    def not_started(self):
+        return [{"name": "upload-wechat-drafts", "status": "completed", "conclusion": "failure", "steps": [
+            {"name": "Restore accepted WeChat draft receipts", "status": "completed", "conclusion": "failure"},
+            {"name": "Upload drafts", "status": "completed", "conclusion": "skipped"}]}]
 
     def test_latest_strictly_prior_attempt_wins_over_legacy_current_future_and_near_names(self):
         result = self.choose(["wechat-drafts-123", "wechat-drafts-123-attempt-1", "wechat-drafts-123-attempt-3",
                               "wechat-drafts-123-attempt-2", "wechat-drafts-123-attempt-4", "wechat-drafts-123-attempt-5",
                               "other-wechat-drafts-123-attempt-3", "wechat-drafts-123-attempt-3-extra"])
-        self.assertTrue(result["ok"])
-        self.assertEqual("wechat-drafts-123-attempt-3", result["outputs"]["artifact_name"])
+        self.assertEqual("wechat-drafts-123-attempt-3", result["artifact_name"])
         self.assertIn("name: ${{ steps.locate.outputs.artifact_name }}", RESTORE.read_text())
 
-    def test_legacy_exact_name_is_supported_only_without_prior_attempt_artifacts(self):
-        result = self.choose(["wechat-drafts-123", "wechat-drafts-123-attempt-2"], current=2)
-        self.assertTrue(result["ok"])
-        self.assertEqual("wechat-drafts-123", result["outputs"]["artifact_name"])
+    def test_legacy_exact_name_and_immutable_retry_copy_are_supported(self):
+        self.assertEqual("wechat-drafts-123", self.choose(["wechat-drafts-123"], current=2)["artifact_name"])
+        self.assertEqual("wechat-drafts-123-attempt-3-retry",
+            self.choose(["wechat-drafts-123-attempt-3-retry"])["artifact_name"])
+        self.assertEqual("wechat-drafts-123-attempt-3",
+            self.choose(["wechat-drafts-123-attempt-3-retry", "wechat-drafts-123-attempt-3"])["artifact_name"])
 
-    def test_missing_immediately_previous_attempt_cannot_fall_back_to_older_or_legacy(self):
-        for names in (["wechat-drafts-123-attempt-1"], ["wechat-drafts-123"],
-                      ["wechat-drafts-123", "wechat-drafts-123-attempt-1"]):
-            with self.subTest(names=names):
-                self.assertFalse(self.choose(names, current=3)["ok"])
+    def test_first_uploader_after_skipped_producer_or_restore_failures_needs_no_fictional_checkpoint(self):
+        result = self.choose([], current=3, histories={1:self.skipped(),2:self.not_started()})
+        self.assertEqual((result["found"],result["no_prior_submission"]),("false","true"))
+        self.assertEqual(json.loads(result["checked_attempts"]),[2,1])
+        self.assertEqual(self.choose([],current=2,histories={1:[]})["no_prior_submission"],"true")
 
-    def test_latest_expired_or_duplicate_checkpoint_never_falls_back_to_older(self):
+    def test_older_receipts_are_usable_only_across_proven_non_submitting_gaps(self):
+        result = self.choose(["wechat-drafts-123-attempt-1"], current=4,
+                             histories={3:self.not_started(),2:self.skipped()})
+        self.assertEqual(result["artifact_name"],"wechat-drafts-123-attempt-1")
+        with self.assertRaises(ValueError):
+            self.choose(["wechat-drafts-123-attempt-1"],current=4,histories={3:self.not_started()})
+
+    def test_any_begun_uncertain_missing_or_duplicate_submission_step_blocks_without_receipts(self):
+        for state in ("success","failure","cancelled",None):
+            records=self.not_started()
+            records[0]["steps"][1]["conclusion"]=state
+            with self.subTest(state=state),self.assertRaises(ValueError):
+                self.choose([],current=2,histories={1:records})
+        for records in ([{"name":"upload-wechat-drafts","status":"completed","conclusion":"failure"}],
+                        self.not_started()+self.not_started()):
+            with self.subTest(records=records),self.assertRaises(ValueError):
+                self.choose([],current=2,histories={1:records})
+
+    def test_expired_or_duplicate_checkpoint_never_falls_back_to_older(self):
         for rows in (["wechat-drafts-123-attempt-2", {"name": "wechat-drafts-123-attempt-3", "expired": True}],
-                     ["wechat-drafts-123", "wechat-drafts-123-attempt-3", "wechat-drafts-123-attempt-3"]):
-            with self.subTest(rows=rows):
-                self.assertFalse(self.choose(rows)["ok"])
+                     ["wechat-drafts-123-attempt-3", "wechat-drafts-123-attempt-3"]):
+            with self.subTest(rows=rows),self.assertRaises(ValueError):
+                self.choose(rows)
 
-    def test_missing_current_only_future_only_or_invalid_attempt_fails_closed(self):
-        for rows, attempt in (([], 4), (["wechat-drafts-123-attempt-4"], 4),
-                              (["wechat-drafts-123-attempt-5"], 4), (["wechat-drafts-123"], "bad")):
-            with self.subTest(rows=rows, attempt=attempt):
-                self.assertFalse(self.choose(rows, attempt)["ok"])
+    def test_download_outage_requires_a_successful_read_before_validating_receipts(self):
+        for primary,retry,expected in (("failure","failure",1),("failure","success",0),("success","skipped",0)):
+            with self.subTest(primary=primary,retry=retry),tempfile.TemporaryDirectory() as tmp:
+                root=Path(tmp)
+                (root/"wechat_draft_summary.json").write_text(json.dumps(summary(root)))
+                result=subprocess.run([sys.executable,"-c",step_script(RESTORE,"Validate restored delivery checkpoint")],
+                    env={**os.environ,"CHECKPOINT_PATH":str(root),"CHECKPOINT_VALIDATOR":str(VALIDATOR),
+                         "PRIMARY_DOWNLOAD":primary,"RETRY_DOWNLOAD":retry},capture_output=True,text=True)
+                self.assertEqual(result.returncode,expected)
+        self.assertIn("name: ${{ inputs.name }}-retry",ARCHIVE.read_text())
+        self.assertNotIn("overwrite: true",ARCHIVE.read_text())
+
+
+class GitHubHistoryTests(unittest.TestCase):
+    def test_paginated_complete_jobs_do_not_hide_a_later_uploader(self):
+        import io
+        from unittest.mock import Mock
+        from wechat_attempt_history import GitHubHistory
+        first=[{"id":i,"name":"other"} for i in range(1,101)]
+        last=[{"id":101,"name":"upload-wechat-drafts"}]
+        request=Mock(side_effect=[io.BytesIO(json.dumps({"total_count":101,"jobs":rows}).encode()) for rows in (first,last)])
+        reader=GitHubHistory("owner/repo",123,"secret",request=request)
+        self.assertEqual(len(reader.jobs(1)),101)
+        self.assertIn("page=2",request.call_args.args[0].full_url)
+
+    def test_partial_missing_duplicate_or_changed_pagination_is_rejected(self):
+        import io
+        from unittest.mock import Mock
+        from wechat_attempt_history import GitHubHistory
+        for values in ([{"total_count":2,"jobs":[{"id":1}]},{"total_count":2,"jobs":[]}],
+                       [{"total_count":2,"jobs":[{"id":1},{"id":1}]}],
+                       [{"total_count":2,"jobs":[{"id":1}]},{"total_count":3,"jobs":[{"id":2}]}]):
+            request=Mock(side_effect=[io.BytesIO(json.dumps(row).encode()) for row in values])
+            with self.subTest(values=values),self.assertRaises(ValueError):
+                GitHubHistory("owner/repo",123,"secret",request=request).jobs(1)
+
+    def test_transient_gets_have_bounded_retries_and_authentication_never_retries(self):
+        import io
+        from urllib.error import HTTPError
+        from unittest.mock import Mock
+        from wechat_attempt_history import GitHubHistory
+        request=Mock(side_effect=[HTTPError("https://api.github.com",503,"private",{},None),
+                                 TimeoutError(),io.BytesIO(b'{"run_attempt":2}')])
+        sleep=Mock()
+        self.assertEqual(GitHubHistory("owner/repo",123,"secret",request=request,sleep=sleep).get(),{"run_attempt":2})
+        self.assertEqual(request.call_count,3)
+        self.assertEqual(sleep.call_count,2)
+        request=Mock(side_effect=HTTPError("https://api.github.com",403,"private",{},None))
+        with self.assertRaisesRegex(ValueError,"HTTP 403"):
+            GitHubHistory("owner/repo",123,"secret",request=request,sleep=sleep).get()
+        self.assertEqual(request.call_count,1)
+
+    def test_persistent_service_or_invalid_json_outage_never_becomes_an_empty_history(self):
+        import io
+        from urllib.error import HTTPError
+        from unittest.mock import Mock
+        from wechat_attempt_history import GitHubHistory
+        for failures in ([HTTPError('https://api.github.com',503,'private-body',{},None)
+                          for _ in range(3)], [io.BytesIO(b'not-json') for _ in range(3)]):
+            request, sleep = Mock(side_effect=failures), Mock()
+            with self.subTest(failure=type(failures[0]).__name__), self.assertRaises(ValueError) as error:
+                GitHubHistory('owner/repo',123,'private-token',request=request,sleep=sleep).artifacts()
+            self.assertEqual((request.call_count,sleep.call_count),(3,2))
+            self.assertNotIn('private-token',str(error.exception))
+            self.assertNotIn('private-body',str(error.exception))
 
 
 if __name__ == "__main__":

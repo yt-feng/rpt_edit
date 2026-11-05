@@ -30,6 +30,7 @@ jobs:
     concurrency:
       group: portal-production-release
       cancel-in-progress: false
+      queue: max
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:

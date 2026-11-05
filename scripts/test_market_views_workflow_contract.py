@@ -3,6 +3,7 @@
 
 import ast
 import contextlib
+import copy
 import io
 import json
 import re
@@ -211,6 +212,7 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
             name: block for name, block in blocks.items()
             if "private_workflow_handoff.py download-shards" in block
             or "-f source_handoff_run_id=" in block
+            or "scripts/chart_dispatch_recovery.py" in block
         }
         self.assertTrue(consumers, "No producer handoff consumers were found")
         cleanup = blocks["cleanup-private-handoff"]
@@ -230,7 +232,10 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
                         self.assertIn('--expected-count "${{ needs.select-macro-reports.outputs.effective_shard_count }}"', block)
                 else:
                     self.assertIn("EXPECTED_SHARDS: ${{ needs.select-macro-reports.outputs.effective_shard_count }}", block)
-                    self.assertIn('-f expected_shards="$EXPECTED_SHARDS"', block)
+                    if "scripts/chart_dispatch_recovery.py" in block:
+                        self.assertIn("run: python3 -B scripts/chart_dispatch_recovery.py", block)
+                    else:
+                        self.assertIn('-f expected_shards="$EXPECTED_SHARDS"', block)
                 self.assertIn(f"      - {name}\n", blocks["cleanup-private-handoff"])
                 self.assertIn(f"      - {name}\n", blocks["notify-failure"])
                 for status in ("failure", "cancelled"):
@@ -280,7 +285,7 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         self.assertTrue(gate(chart, restored, primary_ready='false', recovery_kind='mineru-recovery'))
         self.assertFalse(gate(chart, restored, primary_ready='false', recovery_kind='ocr-synthesis'))
         self.assertFalse(gate(chart, restored, primary_ready='false', chart_enabled='false'))
-        self.assertIn('-f source_handoff_manifest_sha256="$MANIFEST_SHA"', chart)
+        self.assertIn('RECOVERED_MANIFEST: ${{ needs.deliver-recovered-report-articles.outputs.manifest_sha256 }}', chart)
 
     def test_actual_article_gate_rejects_green_pdf_with_skipped_required_outputs(self):
         block = job(UPSTREAM, 'validate-report-delivery')
@@ -1123,135 +1128,189 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
 
 
 class ChartDispatchRecoveryTests(unittest.TestCase):
-    """Execute the real dispatch shell with a local GitHub CLI fixture."""
+    """Fault injection against the production coordinator, without network/model calls."""
+
+    ENV = {"GITHUB_REPOSITORY": "example/repo", "DATE_FOLDER": "261104",
+        "SOURCE_RUN_ID": "41929604196", "EXPECTED_SHARDS": "17", "MAX_IMAGES": "0"}
 
     @staticmethod
     def stable_summary(**overrides):
-        return {
-            "workflow_unprocessed_count": 0,
-            "workflow_retryable_count": 0,
-            "workflow_stable_error_count": 1,
-            "request_limit_reached": False,
-            **overrides,
-        }
+        return {"workflow_unprocessed_count": 0, "workflow_retryable_count": 0,
+            "workflow_stable_error_count": 1, "request_limit_reached": False, **overrides}
 
-    def run_dispatch(self, attempts, **overrides):
-        block = job(UPSTREAM, "trigger-chart-search-index")
-        program = textwrap.dedent(block.split("        run: |\n", 1)[1])
-        with tempfile.TemporaryDirectory() as temp:
-            root = Path(temp)
-            fixture = root / "fixture.json"
-            fixture.write_text(json.dumps(attempts), encoding="utf-8")
-            calls_path = root / "calls.jsonl"
-            gh = root / "gh"
-            gh.write_text("#!" + sys.executable + "\n" + textwrap.dedent('''\
-                import json, os, sys
-                from pathlib import Path
-                args = sys.argv[1:]
-                log = Path(os.environ["CHART_CALLS"])
-                with log.open("a") as stream:
-                    stream.write(json.dumps(args) + "\\n")
-                calls = [json.loads(line) for line in log.read_text().splitlines()]
-                fixtures = json.loads(Path(os.environ["CHART_FIXTURE"]).read_text())
-                if args[:2] == ["workflow", "run"]:
-                    index = sum(row[:2] == ["workflow", "run"] for row in calls) - 1
-                    print(f"https://github.com/example/repo/actions/runs/{1001 + index}")
-                elif args[:2] == ["run", "watch"]:
-                    row = fixtures[int(args[2]) - 1001]
-                    raise SystemExit(0 if row.get("success") else 1)
-                elif args[:2] == ["run", "view"]:
-                    row = fixtures[int(args[2]) - 1001]
-                    print(row.get("outcome", "completed:failure"))
-                elif args[:2] == ["run", "download"]:
-                    row = fixtures[int(args[2]) - 1001]
-                    if "summary" not in row:
-                        raise SystemExit(1)
-                    target = Path(args[args.index("--dir") + 1])
-                    target.mkdir(parents=True, exist_ok=True)
-                    (target / "summary.json").write_text(json.dumps(row["summary"]))
+    def coordinator(self, existing=(), plans=(), **env):
+        import chart_dispatch_recovery as dispatch
+        request = dispatch.request_from_environment({**self.ENV, **env})
+        class Fixture:
+            def __init__(fixture):
+                fixture.runs, fixture.plans, fixture.posts, fixture.watches = [], list(plans), [], []
+                fixture.fail_reads, fixture.accept_invisibly = False, False
+                for spec in existing:
+                    fixture.append(spec)
+            def append(fixture, spec):
+                number = 1001 + len(fixture.runs)
+                fixture.runs.append({"id": number, "display_title": dispatch.title(request),
+                    "path": dispatch.WORKFLOW_PATH, "head_branch": "main", "head_sha": "a" * 40,
+                    "event": "workflow_dispatch", "repository": {"full_name": "example/repo", "private": False},
+                    "head_repository": {"full_name": "example/repo"}, "created_at": "2026-11-05T00:26:28Z",
+                    "status": "completed", "conclusion": "success", **copy.deepcopy(spec)})
+            def read(fixture, path):
+                if fixture.fail_reads:
+                    raise dispatch.RecoveryError("fixture GitHub unavailable")
+                if path.endswith("/actions/runs/41929604196"):
+                    return {"id": 41929604196, "path": dispatch.SOURCE_PATH, "head_branch": "main",
+                        "repository": {"full_name": "example/repo"}, "created_at": "2026-11-04T22:56:36Z"}
+                if "/workflows/" in path:
+                    return {"total_count": len(fixture.runs), "workflow_runs": copy.deepcopy(fixture.runs)}
+                number = int(path.rsplit("/", 1)[1])
+                return copy.deepcopy(next(row for row in fixture.runs if row["id"] == number))
+            def dispatch(fixture, bound, retry):
+                fixture.posts.append((copy.deepcopy(bound), retry))
+                if not fixture.accept_invisibly:
+                    fixture.append(fixture.plans.pop(0))
+            def watch(fixture, number, seconds):
+                fixture.watches.append(number)
+                row = next(row for row in fixture.runs if row["id"] == number)
+                remaining = row.get("transport_losses", 0)
+                if remaining:
+                    row["transport_losses"] = remaining - 1
                 else:
-                    raise SystemExit("Unexpected GitHub operation")
-                '''), encoding="utf-8")
-            gh.chmod(0o755)
-            # Keep the nested Python interpreter consistent with this test run.
-            (root / "python3").write_text("#!/bin/sh\nexec " + shlex.quote(sys.executable) + ' "$@"\n')
-            (root / "python3").chmod(0o755)
-            result = subprocess.run(["bash", "-c", program], cwd=root, env={
-                **os.environ,
-                "PATH": str(root) + os.pathsep + os.environ["PATH"],
-                "CHART_FIXTURE": str(fixture), "CHART_CALLS": str(calls_path),
-                "GITHUB_REPOSITORY": "example/repo", "DATE_FOLDER": "261104",
-                "SOURCE_RUN_ID": "41929604196", "EXPECTED_SHARDS": "17",
-                "MAX_IMAGES": "0", "RECOVERED_RESULT": "skipped",
-                "RECOVERED_MANIFEST": "", "SELECTED_COUNT": "40", **overrides,
-            }, capture_output=True, text=True, timeout=15)
-            calls = [json.loads(line) for line in calls_path.read_text().splitlines()]
-        return result, calls
+                    row.update(status="completed", conclusion=row.get("finish", "success"))
+            def summary(fixture, number, date):
+                return copy.deepcopy(next(row for row in fixture.runs if row["id"] == number).get("summary"))
+        return dispatch, request, Fixture()
 
-    @staticmethod
-    def dispatches(calls):
-        return [row for row in calls if row[:2] == ["workflow", "run"]]
+    def recover(self, dispatch, request, fixture):
+        with contextlib.redirect_stdout(io.StringIO()):
+            return dispatch.recover(request, fixture, sleep=lambda _: None)
 
-    def test_stable_failures_retry_distinct_executions_with_exact_source_binding(self):
-        stable = {"summary": self.stable_summary()}
-        result, calls = self.run_dispatch([stable, stable, {"success": True}])
-        self.assertEqual(result.returncode, 0, result.stderr)
-        dispatched = self.dispatches(calls)
-        self.assertEqual(len(dispatched), 3)
-        for number, args in enumerate(dispatched):
-            for field in ("date_folder=261104", "source_handoff_run_id=41929604196",
-                          "expected_shards=17", "expected_articles=0", "max_images=0"):
-                self.assertIn(field, args)
-            self.assertIn("retry_errors_now=" + ("true" if number else "false"), args)
-        downloads = [row for row in calls if row[:2] == ["run", "download"]]
-        self.assertEqual([row[row.index("--name") + 1] for row in downloads], [
-            "chart-search-summary-261104-1001", "chart-search-summary-261104-1002",
-        ])
+    def test_known_success_is_reused_without_dispatch_or_watch(self):
+        d, request, fixture = self.coordinator(existing=[{}])
+        self.assertEqual(self.recover(d, request, fixture), 1001)
+        self.assertEqual((fixture.posts, fixture.watches), ([], []))
 
-    def test_stable_recovery_is_bounded_to_three_executions(self):
-        stable = {"summary": self.stable_summary()}
-        result, calls = self.run_dispatch([stable, stable, stable, {"success": True}])
-        self.assertNotEqual(result.returncode, 0)
-        self.assertEqual(len(self.dispatches(calls)), 3)
+    def test_active_child_survives_parent_restart_and_watch_transport_loss(self):
+        d, request, fixture = self.coordinator(existing=[{
+            "status": "in_progress", "conclusion": None, "transport_losses": 1}])
+        self.assertEqual(self.recover(d, request, fixture), 1001)
+        self.assertEqual(fixture.posts, [])
+        self.assertEqual(fixture.watches, [1001, 1001])
 
-    def test_incomplete_transient_or_unverifiable_failures_never_redispatch(self):
-        cases = [
-            {},
-            {"summary": {}},
-            {"summary": self.stable_summary(workflow_retryable_count=1)},
-            {"summary": self.stable_summary(workflow_unprocessed_count=1)},
-            {"summary": self.stable_summary(request_limit_reached=True)},
-            {"summary": self.stable_summary(workflow_stable_error_count=0)},
-            {"summary": self.stable_summary(workflow_retryable_count="0")},
-        ]
-        for case in cases:
-            with self.subTest(case=case):
-                result, calls = self.run_dispatch([case, {"success": True}])
-                self.assertNotEqual(result.returncode, 0)
-                self.assertEqual(len(self.dispatches(calls)), 1)
+    def test_unknown_post_accepted_is_discovered_without_second_post(self):
+        d, request, fixture = self.coordinator(plans=[{"status": "in_progress", "conclusion": None}])
+        self.assertEqual(self.recover(d, request, fixture), 1001)
+        self.assertEqual(len(fixture.posts), 1)
+        self.assertEqual(fixture.posts[0], (request, False))
 
-    def test_unknown_watch_outcome_never_redispatches(self):
-        result, calls = self.run_dispatch([{
-            "summary": self.stable_summary(), "outcome": "in_progress:",
-        }, {"success": True}])
-        self.assertNotEqual(result.returncode, 0)
-        self.assertEqual(len(self.dispatches(calls)), 1)
-        self.assertFalse(any(row[:2] == ["run", "download"] for row in calls))
+    def test_unresolved_post_stops_and_next_parent_reuses_visible_child(self):
+        d, request, fixture = self.coordinator()
+        fixture.accept_invisibly = True
+        with self.assertRaisesRegex(d.RecoveryError, "outcome unknown"):
+            self.recover(d, request, fixture)
+        self.assertEqual(len(fixture.posts), 1)
+        fixture.append({})  # Accepted child appears after the response/discovery outage.
+        self.assertEqual(self.recover(d, request, fixture), 1001)
+        self.assertEqual(len(fixture.posts), 1)
 
-    def test_successful_first_execution_needs_no_recovery_reads(self):
-        result, calls = self.run_dispatch([{"success": True}])
-        self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertEqual([row[:2] for row in calls], [["workflow", "run"], ["run", "watch"]])
+    def test_post_acceptance_then_api_outage_is_reused_on_next_parent(self):
+        d, request, fixture = self.coordinator(plans=[{}])
+        original = fixture.dispatch
+        def dispatch_then_lose_reads(bound, retry):
+            original(bound, retry)
+            fixture.fail_reads = True
+        fixture.dispatch = dispatch_then_lose_reads
+        with self.assertRaises(d.RecoveryError): self.recover(d, request, fixture)
+        fixture.fail_reads = False
+        self.assertEqual(self.recover(d, request, fixture), 1001)
+        self.assertEqual(len(fixture.posts), 1)
 
-    def test_recovered_manifest_and_article_binding_survives_retry(self):
-        result, calls = self.run_dispatch([
-            {"summary": self.stable_summary()}, {"success": True},
-        ], RECOVERED_RESULT="success", RECOVERED_MANIFEST="a" * 64)
-        self.assertEqual(result.returncode, 0, result.stderr)
-        for args in self.dispatches(calls):
-            self.assertIn("source_handoff_manifest_sha256=" + "a" * 64, args)
-            self.assertIn("expected_shards=1", args)
-            self.assertIn("expected_articles=40", args)
+    def test_api_failure_never_authorizes_mutation(self):
+        d, request, fixture = self.coordinator()
+        fixture.fail_reads = True
+        with self.assertRaises(d.RecoveryError): self.recover(d, request, fixture)
+        self.assertEqual(fixture.posts, [])
+
+    def test_matching_title_with_wrong_run_identity_is_rejected(self):
+        for bad in ({"head_branch": "other"}, {"path": ".github/workflows/other.yml"},
+                    {"repository": {"full_name": "foreign/repo", "private": False}}):
+            with self.subTest(bad=bad):
+                d, request, fixture = self.coordinator(existing=[bad])
+                with self.assertRaises(d.RecoveryError): self.recover(d, request, fixture)
+                self.assertEqual(fixture.posts, [])
+
+    def test_different_request_digest_is_never_reused(self):
+        d, request, fixture = self.coordinator(existing=[{"display_title": "Chart request " + "f" * 64}], plans=[{}])
+        self.assertEqual(self.recover(d, request, fixture), 1002)
+        self.assertEqual(len(fixture.posts), 1)
+
+    def test_two_stable_failures_then_completion_keep_one_total_budget(self):
+        stable = {"conclusion": "failure", "summary": self.stable_summary()}
+        d, request, fixture = self.coordinator(existing=[stable], plans=[stable, {}])
+        self.assertEqual(self.recover(d, request, fixture), 1003)
+        self.assertEqual([retry for _, retry in fixture.posts], [True, True])
+        self.assertTrue(all(bound == request for bound, _ in fixture.posts))
+        self.assertEqual(self.recover(d, request, fixture), 1003)
+        self.assertEqual(len(fixture.posts), 2)
+
+    def test_three_failed_executions_cannot_reset_budget_on_parent_rerun(self):
+        stable = {"conclusion": "failure", "summary": self.stable_summary()}
+        d, request, fixture = self.coordinator(existing=[stable] * 3)
+        for _ in range(2):
+            with self.assertRaisesRegex(d.RecoveryError, "Three exact"):
+                self.recover(d, request, fixture)
+        self.assertEqual(fixture.posts, [])
+
+    def test_cancelled_transient_partial_and_unknown_failures_preserve_sources(self):
+        cases = [{"conclusion": "cancelled"}, {"conclusion": "failure"},
+            {"conclusion": "failure", "summary": self.stable_summary(workflow_retryable_count=1)},
+            {"conclusion": "failure", "summary": self.stable_summary(workflow_unprocessed_count=1)},
+            {"conclusion": "failure", "summary": self.stable_summary(request_limit_reached=True)}]
+        for spec in cases:
+            with self.subTest(spec=spec):
+                d, request, fixture = self.coordinator(existing=[spec])
+                with self.assertRaises(d.RecoveryError): self.recover(d, request, fixture)
+                self.assertEqual(fixture.posts, [])
+
+    def test_recovered_manifest_article_count_and_limits_change_request_identity(self):
+        d, normal, _ = self.coordinator()
+        _, recovered, _ = self.coordinator(RECOVERED_RESULT="success", RECOVERED_MANIFEST="a" * 64, SELECTED_COUNT="40")
+        self.assertNotEqual(d.request_id(normal), d.request_id(recovered))
+        self.assertEqual((recovered["expected_shards"], recovered["expected_articles"]), ("1", "40"))
+        for field, value in (("source_handoff_run_id", "99"), ("source_handoff_manifest_sha256", "b" * 64),
+                             ("expected_articles", "39"), ("max_images", "1"), ("date_folder", "261103")):
+            self.assertNotEqual(d.request_id(recovered), d.request_id({**recovered, field: value}))
+
+    def test_actual_post_timeout_is_not_retried(self):
+        import chart_dispatch_recovery as dispatch
+        request = dispatch.request_from_environment(self.ENV)
+        github = dispatch.GitHub("example/repo", sleep=lambda _: None)
+        with mock.patch.object(dispatch.subprocess, "run", side_effect=subprocess.TimeoutExpired("gh", 120)) as command:
+            github.dispatch(request, False)
+        self.assertEqual(command.call_count, 1)
+        arguments = command.call_args.args[0]
+        self.assertIn("dispatch_request_id=" + dispatch.request_id(request), arguments)
+        self.assertIn("expected_shards=17", arguments)
+
+    def test_child_refuses_a_digest_that_does_not_bind_its_actual_inputs(self):
+        import chart_dispatch_recovery as dispatch
+        request = dispatch.request_from_environment(self.ENV)
+        environment = {**self.ENV, "DISPATCH_REQUEST_ID": dispatch.request_id(request)}
+        with mock.patch.dict(os.environ, environment, clear=True), mock.patch.object(sys, "argv", ["test", "--validate-request"]):
+            self.assertEqual(dispatch.main(), 0)
+        environment["EXPECTED_SHARDS"] = "16"
+        with mock.patch.dict(os.environ, environment, clear=True), mock.patch.object(sys, "argv", ["test", "--validate-request"]):
+            with self.assertRaisesRegex(dispatch.RecoveryError, "digest mismatch"):
+                dispatch.main()
+
+    def test_workflow_authenticates_digest_before_model_or_handoff_work(self):
+        from pathlib import Path
+        parent = job(UPSTREAM, "trigger-chart-search-index")
+        child = (WORKFLOWS / "portal-chart-search-index.yml").read_text()
+        self.assertIn("run: python3 -B scripts/chart_dispatch_recovery.py", parent)
+        self.assertIn("sparse-checkout-cone-mode: false", parent)
+        self.assertIn("scripts/chart_dispatch_recovery.py --validate-request", child)
+        self.assertLess(child.index("--validate-request"), child.index("Download daily private shard handoff"))
+        self.assertLess(child.index("--validate-request"), child.index("Describe and index new chart hashes"))
 
 
 if __name__ == "__main__":

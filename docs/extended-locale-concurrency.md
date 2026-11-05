@@ -2,10 +2,10 @@
 
 The source workflow and translation consumer have separate concurrency contracts.
 The consumer serializes eligible work in `extended-locales-r2-pipeline`, with
-`cancel-in-progress: false` and at most two locale workers. GitHub evaluates this
-workflow-level concurrency before job conditions and retains only one pending
-run in a group. A new completion event can replace pending work even when all
-of its own jobs will be skipped.
+`cancel-in-progress: false`, `queue: max` and at most two locale workers. GitHub
+evaluates workflow-level concurrency before job conditions. The default
+`queue: single` retains only one pending run and lets a later incoming request
+replace it, even with cancellation of the running job disabled.
 
 On 2026-10-10, manual recovery run `38062743991` was cancelled when skipped source
 admission `38063336945` created no-op consumer `38063339570`. This did not interrupt
@@ -23,3 +23,61 @@ branches and repositories, replay the observed pending-replacement sequence,
 and retain all manual operation groups. Cloud checks and a useful queued successor
 are separate acceptance steps. This does not claim that all 33 locale outputs are
 complete or published.
+
+## Preserve exact recovery behind eligible automatic work
+
+On 2026-11-05, Khmer recovery `41957250517` waited behind the healthy translation
+matrix `41930937314`. Successful source admission `41963541042` then dispatched
+eligible automatic consumer `41963884620`. GitHub cancelled the Khmer request
+before any job started because both used the default single pending slot.
+Filtering skipped upstream events could not prevent this eligible replacement.
+
+Every workflow and job sharing the affected translation, per-locale,
+source-admission or `portal-production-release` writer groups now opts into
+`queue: max` and retains `cancel-in-progress: false`. This keeps serialization
+and the existing two-worker matrix budget while preserving up to 100 pending
+jobs/runs in each group. A full queue rejects additional incoming requests;
+the queue is bounded. GitHub orders waiting entries by when they entered the
+group, so workflow dispatch timestamps alone do not guarantee their order.
+
+The syntax is documented for both workflow and job concurrency in the official
+[GitHub concurrency guide](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency#example-queueing-multiple-pending-runs).
+It cannot be combined with `cancel-in-progress: true`. The policy regression
+enumerates every checked-in owner of these shared groups, including emergency
+and manual release workflows, because an incoming owner with the default policy
+could otherwise displace another workflow's exact pending request.
+`actions-durable-queues-regression.yml` runs that policy check on pull requests
+and main pushes touching any workflow, its generator or the policy test. It
+parses checked-in YAML only; it does not invoke source collection or models.
+
+Already cancelled requests must be dispatched again from fixed main after
+checking the remote outcome. Observing both ordinary and exact recovery entries
+in GitHub's concurrency group proves queue admission; the recovery's successful
+candidate, handoff and accepted release remain separate completion evidence.
+
+## Coalesce ordinary scans before entering the long-running queue
+
+`queue: max` preserves exact work, but repeated source admissions must not fill
+its bounded 100 slots with equivalent scans. Source completion events now enter
+`portal-extended-consumer-wakeup.yml`, a short Actions-only dispatcher. Successful
+same-repository main source events retain the existing admission checks. Its
+manual main-only entry has no inputs and uses the same configured locale set.
+Source collection and candidate validation still run through the original paths.
+
+The wake-up and ordinary continuation dispatcher share the small
+`extended-locale-ordinary-wakeup` lock. They inspect the authoritative consumer
+concurrency group and reuse only a verified **pending** ordinary request with
+the exact same locale order and default options: candidate, no exact generation
+or adoption evidence, 14,400 seconds, source fallback enabled, runtime diagnosis
+disabled. The request digest and guarded run title identify this protocol.
+Manual candidate requests and exact generation recoveries are never coalesced.
+An active ordinary scan cannot suppress its successor because newer admitted
+sources may not have been visible when the active scan selected its work.
+
+Inspection has a 12-request/120-second budget, three bounded GET attempts and
+response-size/inventory limits. A dispatch POST is sent at most once. An unknown
+POST acknowledgement is resolved against the exact request in the live group
+and a short, bounded workflow-run inventory, excluding runs observed before the
+POST. This also finds a child that already finished and left the group. Unknown
+acceptance or unavailable inspection fails without another POST; it does not
+alter the durable source queues. The short lock never waits for model work.

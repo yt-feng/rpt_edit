@@ -7,13 +7,14 @@ import hashlib
 import json
 import os
 import re
+import runpy
 import tempfile
 from datetime import datetime
 from pathlib import Path
-from urllib.error import HTTPError, URLError
-from urllib.request import Request, urlopen
+from urllib.request import urlopen
 
 from private_workflow_handoff import build_r2_client, download_directory, r2_bucket, upload_directory
+from wechat_attempt_history import GitHubHistory, never_submitted
 
 SOURCES = {
     "institution": ("institutions", ".github/workflows/institution-latest-pdf-to-wechat.yml"),
@@ -22,34 +23,13 @@ SOURCES = {
 
 
 def fetch_source_metadata(repository: str, run_id: str, token: str) -> tuple[dict, dict]:
-    if (not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]*/[A-Za-z0-9][A-Za-z0-9_.-]*", repository)
-            or not re.fullmatch(r"[1-9][0-9]*", run_id)):
-        raise ValueError("Invalid repository or source run ID")
-    if not token:
-        raise ValueError("GH_TOKEN is required for source-run verification")
-    base = f"https://api.github.com/repos/{repository}/actions/runs/{run_id}"
-    results = []
-    for url in (base, base + "/jobs?per_page=100"):
-        request = Request(url, headers={
-            "Authorization": f"Bearer {token}",
-            "Accept": "application/vnd.github+json",
-            "X-GitHub-Api-Version": "2022-11-28",
-        })
-        try:
-            with urlopen(request, timeout=30) as response:
-                result = json.load(response)
-        except HTTPError as exc:
-            status = exc.code
-            exc.close()
-            raise RuntimeError(f"GitHub source-run verification failed: HTTP {status}") from None
-        except (URLError, TimeoutError):
-            raise RuntimeError("GitHub source-run verification could not connect within the request timeout") from None
-        except (json.JSONDecodeError, UnicodeError):
-            raise RuntimeError("GitHub source-run verification returned invalid JSON") from None
-        if not isinstance(result, dict):
-            raise ValueError("GitHub source-run verification returned an unexpected response")
-        results.append(result)
-    return results[0], results[1]
+    reader = GitHubHistory(repository, run_id, token, request=urlopen)
+    run = reader.get()
+    attempt = run.get('run_attempt')
+    if type(attempt) is not int or not 1 <= attempt <= 100:
+        raise ValueError('Source attempt history is unknown or exceeds the bounded audit')
+    history = [{'attempt': number, 'jobs': reader.jobs(number)} for number in range(1, attempt + 1)]
+    return run, {'jobs': history[-1]['jobs'], 'attempts': history}
 
 
 def coordinates(source: str, run_id: str, date: str) -> tuple[str, str]:
@@ -63,20 +43,36 @@ def coordinates(source: str, run_id: str, date: str) -> tuple[str, str]:
 
 
 def validate_run(run: dict, jobs: dict, *, source: str, run_id: str, repository: str) -> None:
-    # The jobs endpoint lists the latest attempt. Earlier attempts could have
-    # accepted drafts even when the latest attempt skipped its upload job.
-    if run.get("run_attempt") != 1:
-        raise ValueError("Source run must have exactly one attempt; prior or unknown attempts require review")
+    attempt = run.get('run_attempt')
+    if type(attempt) is not int or not 1 <= attempt <= 100:
+        raise ValueError('Source attempt history is unknown or exceeds the bounded audit')
     if (str(run.get("id")) != run_id or run.get("path") != SOURCES[source][1]
             or run.get("head_branch") != "main"
             or (run.get("head_repository") or {}).get("full_name") != repository
             or run.get("status") != "completed" or run.get("conclusion") != "failure"):
         raise ValueError("Source must be the specified failed main-branch producer in this repository")
-    records = jobs.get("jobs", [])
+    history = jobs.get('attempts')
+    if history is None and attempt == 1:
+        history = [{'attempt': 1, 'jobs': jobs.get('jobs')}]
+    if (not isinstance(history, list) or [row.get('attempt') for row in history if isinstance(row, dict)]
+            != list(range(1, attempt + 1))):
+        raise ValueError('Every source attempt must have complete independent job history')
+    latest, observed_uploader = {}, False
+    for row in history:
+        records = row.get('jobs')
+        never_submitted(records, 'upload-wechat-drafts', ['Build and upload WeChat drafts'])
+        observed_uploader = observed_uploader or any(job.get('name') == 'upload-wechat-drafts' for job in records)
+        for job in records:
+            if job.get('name') == 'fetch-and-build':
+                if sum(other.get('name') == 'fetch-and-build' for other in records) != 1:
+                    raise ValueError('Original producer job identity is ambiguous')
+                latest['fetch-and-build'] = job
+    records = list(latest.values())
+    if not observed_uploader:
+        raise ValueError('Original uploader job identity was never observed')
     producer = [job for job in records if job.get("name") == "fetch-and-build"]
-    uploader = [job for job in records if job.get("name") == "upload-wechat-drafts"]
-    if len(producer) != 1 or len(uploader) != 1 or uploader[0].get("conclusion") != "skipped":
-        raise ValueError("Recovery requires an original upload job that never ran")
+    if len(producer) != 1:
+        raise ValueError('Recovery requires a completed original producer')
     steps = {step.get("name"): step.get("conclusion") for step in producer[0].get("steps", [])}
     for step in ("Build Portal translated report PDFs", "Upload translated reports to private R2 handoff"):
         if steps.get(step) != "success":
@@ -108,7 +104,27 @@ def merge_receipts(destination: Path, restored: Path) -> None:
     accepted = {}
     groups = {}
     metadata = {}
+    submissions = {}
+    validator = runpy.run_path(str(Path(__file__).resolve().parents[1] /
+        '.github/actions/resilient-diagnostic-artifact/validate_wechat_checkpoint.py'))['valid_submission']
     for directory in (restored, destination):
+        for path in directory.glob('draft_submission_*.json'):
+            if path.is_symlink() or not path.is_file():
+                raise ValueError('Private submission checkpoint is not a regular file')
+            receipt = json.loads(path.read_bytes())
+            if not validator(receipt, path.name):
+                raise ValueError('Private submission checkpoint is invalid')
+            previous = submissions.get(path.name)
+            if previous:
+                if any(previous.get(key) != receipt.get(key) for key in
+                       ('group_key', 'account_fingerprint', 'article_count', 'titles')):
+                    raise ValueError('Conflicting submission checkpoint identity')
+                if previous['status'] == receipt['status'] == 'accepted' and previous['media_id'] != receipt['media_id']:
+                    raise ValueError('Conflicting accepted submission IDs')
+                rank = {'rejected': 0, 'add_in_flight': 1, 'add_outcome_unknown': 2, 'accepted': 3}
+                if rank[previous['status']] > rank[receipt['status']]:
+                    continue
+            submissions[path.name] = receipt
         summary_path = directory / "wechat_draft_summary.json"
         if not summary_path.is_file():
             continue
@@ -134,9 +150,15 @@ def merge_receipts(destination: Path, restored: Path) -> None:
                     raise ValueError("Conflicting payload identities for the same accepted draft; review receipts")
             groups[group_key] = media_id
             accepted[media_id] = (dict(draft), payload)
-    if not accepted:
+    if not accepted and not submissions:
         raise ValueError("Private receipt checkpoint contains no accepted drafts")
     destination.mkdir(parents=True, exist_ok=True)
+    for filename, receipt in submissions.items():
+        temporary = destination / (filename + '.tmp')
+        temporary.write_text(json.dumps(receipt), encoding='utf-8')
+        temporary.replace(destination / filename)
+    if not accepted:
+        return  # Preserve uncertain writes for API readback; never invent success.
     merged = []
     for media_id, (draft, payload) in accepted.items():
         # Distinct attempts both start at draft_payload_01.json. Preserve each
@@ -173,14 +195,19 @@ def restore_receipts(prefix: str, destination: Path, *, client=None, bucket=None
 
 def save_receipts(prefix: str, receipts: Path) -> bool:
     summary_path = receipts / "wechat_draft_summary.json"
-    if not summary_path.is_file():
-        return False
-    summary = json.loads(summary_path.read_text(encoding="utf-8"))
+    summary = json.loads(summary_path.read_text(encoding="utf-8")) if summary_path.is_file() else {}
     if summary.get("dry_run"):
         raise ValueError("Cannot persist dry-run recovery receipts")
-    if not any(isinstance(draft, dict) and draft.get("media_id") for draft in summary.get("drafts", [])):
+    pending = list(receipts.glob('draft_submission_*.json'))
+    if not pending and not any(isinstance(draft, dict) and draft.get("media_id") for draft in summary.get("drafts", [])):
         print("No accepted drafts to checkpoint; preserving any existing private receipts")
         return False
+    if pending:
+        validator = runpy.run_path(str(Path(__file__).resolve().parents[1] /
+            '.github/actions/resilient-diagnostic-artifact/validate_wechat_checkpoint.py'))['valid_submission']
+        for path in pending:
+            if path.is_symlink() or not validator(json.loads(path.read_bytes()), path.name):
+                raise ValueError('Private submission checkpoint is invalid')
     upload_directory(receipts, prefix + "/recovery-receipts.tar.gz")
     return True
 

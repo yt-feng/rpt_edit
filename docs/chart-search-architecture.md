@@ -286,14 +286,26 @@ bounded exception chain; it never matches or logs private exception messages.
 - A non-zero `max_images` is an explicit whole-run ceiling. If the ceiling leaves unknown
   hashes, the child run fails after uploading its private checkpoint; the parent therefore
   retains the private source handoff for a later continuation instead of deleting it.
-- The daily parent can dispatch at most three distinct child executions against the
-  exact same handoff/date/manifest/shard binding. After a failed child, it first confirms
-  the completed failure on GitHub and downloads that exact run's named summary artifact.
-  Only zero unprocessed hashes, zero transient failures, no request-limit hit, and a
-  positive stable-image count permit another execution with `retry_errors_now=true`.
-  Successful hash descriptions remain cached, while each deterministic image gets at
-  most one quarantine attempt per child execution. Missing or ambiguous summaries,
-  transport errors, partial work, and transient failures stop recovery and retain sources.
+- The daily parent binds every source selector, recovered manifest hash, shard/article
+  count and request ceiling into a request digest. New children include that digest in
+  their GitHub run name and validate it against their actual inputs before downloading
+  sources or calling the model. Before dispatch, the parent looks up matching runs with
+  exact repository, workflow, event and main-branch identity. An existing successful child
+  completes the parent without another dispatch; an active child is reattached after a
+  parent interruption. Historical children without a digest are not guessed from titles.
+- GitHub's matching run inventory enforces at most three distinct executions across
+  parent reruns. Only an exact failed child's summary proving zero unprocessed hashes,
+  zero transient failures, no request-limit hit and positive stable-image failures
+  permits a new execution with `retry_errors_now=true`. Missing/ambiguous evidence,
+  cancelled children, partial work and transient failures retain sources for diagnosis.
+- A failed `gh run watch` is checked against the independent child outcome; confirmed
+  success completes the parent and an active child gets bounded further observation.
+  Every POST, including a timeout or lost response, is followed by bounded exact-request
+  discovery. An unresolved outcome stops the invocation without another POST and logs
+  its request/source identity; a later parent rerun begins with lookup. GitHub provides
+  no atomic dispatch idempotency key, so this is reattachment and reconciliation rather
+  than an exactly-once dispatch guarantee. Source cleanup still requires actual consumer
+  success, and all successful chart descriptions remain hash-cached.
 - Any remaining transient or not-yet-quarantined stable image failure follows the same
   fail-after-private-checkpoint rule. Only a complete run (successful hashes plus any
   hashes already quarantined after three separate executions) lets the parent remove the

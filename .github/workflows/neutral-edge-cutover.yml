@@ -101,6 +101,7 @@ concurrency:
       format('portal-release-ineligible-{0}-{1}', github.run_id, github.run_attempt)
     }}
   cancel-in-progress: false
+  queue: max
 
 jobs:
   prepare_release:

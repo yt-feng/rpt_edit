@@ -138,8 +138,11 @@ jobs:
       - name: Restore accepted WeChat draft receipts
         uses: ./.github/actions/restore-wechat-diagnostics
         with:
+          submission-step-names: |
+            Build, upload, or publish WeChat draft payloads
           name: portal-translated-wechat-drafts-${{ github.run_id }}
           path: .
+          checkpoint-path: wechat_drafts/${{ env.RESOLVED_DATE_FOLDER }}
 
       - name: Build, upload, or publish WeChat draft payloads
         env:
@@ -185,7 +188,7 @@ jobs:
         if: ${{ always() }}
         uses: ./.github/actions/resilient-diagnostic-artifact
         with:
-          name: portal-translated-wechat-drafts-${{ github.run_id }}
+          name: portal-translated-wechat-drafts-${{ github.run_id }}-attempt-${{ github.run_attempt }}
           path: |
             wechat_drafts
             wechat_drafts_progress.log

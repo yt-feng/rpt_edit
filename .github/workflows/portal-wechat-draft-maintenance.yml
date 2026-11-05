@@ -157,8 +157,12 @@ jobs:
       - name: Restore accepted WeChat draft receipts
         uses: ./.github/actions/restore-wechat-diagnostics
         with:
+          submission-step-names: |
+            Delete existing WeChat drafts from summary
+            Upload Portal translated reports to WeChat drafts
           name: portal-wechat-draft-maintenance-${{ env.DATE_FOLDER }}-${{ github.run_id }}
           path: ${{ env.WECHAT_DRAFT_DIR }}
+          checkpoint-path: ${{ env.WECHAT_DRAFT_DIR }}
 
       - name: Delete existing WeChat drafts from summary
         if: ${{ inputs.delete_existing == true }}
@@ -212,7 +216,7 @@ jobs:
         if: ${{ always() }}
         uses: ./.github/actions/resilient-diagnostic-artifact
         with:
-          name: portal-wechat-draft-maintenance-${{ env.DATE_FOLDER }}-${{ github.run_id }}
+          name: portal-wechat-draft-maintenance-${{ env.DATE_FOLDER }}-${{ github.run_id }}-attempt-${{ github.run_attempt }}
           path: ${{ env.WECHAT_DRAFT_DIR }}
           if-no-files-found: error
 
