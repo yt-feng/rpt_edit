@@ -281,6 +281,20 @@ class GitHubHistoryTests(unittest.TestCase):
             GitHubHistory("owner/repo",123,"secret",request=request,sleep=sleep).get()
         self.assertEqual(request.call_count,1)
 
+    def test_persistent_service_or_invalid_json_outage_never_becomes_an_empty_history(self):
+        import io
+        from urllib.error import HTTPError
+        from unittest.mock import Mock
+        from wechat_attempt_history import GitHubHistory
+        for failures in ([HTTPError('https://api.github.com',503,'private-body',{},None)
+                          for _ in range(3)], [io.BytesIO(b'not-json') for _ in range(3)]):
+            request, sleep = Mock(side_effect=failures), Mock()
+            with self.subTest(failure=type(failures[0]).__name__), self.assertRaises(ValueError) as error:
+                GitHubHistory('owner/repo',123,'private-token',request=request,sleep=sleep).artifacts()
+            self.assertEqual((request.call_count,sleep.call_count),(3,2))
+            self.assertNotIn('private-token',str(error.exception))
+            self.assertNotIn('private-body',str(error.exception))
+
 
 if __name__ == "__main__":
     unittest.main()

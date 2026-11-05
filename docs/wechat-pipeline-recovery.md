@@ -36,6 +36,8 @@ submission ledgers in R2, and verifies full live article delivery before updatin
 the Blog. Routine uploader retries retain their pinned code. Institution,
 consulting and exact-handoff recovery share their producer locks with
 `queue: max`, so a later schedule does not replace a queued recovery.
+Recovery dispatches require `main` and pin that dispatch's SHA for subsequent
+attempts, preserving the code that produced accepted draft group identities.
 
 `dropbox-latest-pdf-to-xhs-sharded.yml` freezes the selected original-PDF
 manifest before processing. The normal source order is:

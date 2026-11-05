@@ -55,6 +55,8 @@ class DeliveryWorkflowTests(unittest.TestCase):
     def test_private_recovery_requires_exact_complete_live_delivery_and_keeps_all_queued_handoffs(self):
         recovery = workflow('recover-private-wechat-handoff.yml')
         steps = recovery['jobs']['recover']['steps']
+        checkout = next(step for step in steps if step.get('uses') == 'actions/checkout@v4')
+        self.assertEqual(checkout['with']['ref'], '${{ github.sha }}')
         delivery = next(step for step in steps if step.get('id') == 'delivery')
         self.assertIn('institution_wechat_delivery_receipt.py', delivery['run'])
         self.assertIn('--expected-count "$EXPECTED_COUNT"', delivery['run'])

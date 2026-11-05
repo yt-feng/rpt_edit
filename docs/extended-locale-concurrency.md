@@ -54,3 +54,30 @@ Already cancelled requests must be dispatched again from fixed main after
 checking the remote outcome. Observing both ordinary and exact recovery entries
 in GitHub's concurrency group proves queue admission; the recovery's successful
 candidate, handoff and accepted release remain separate completion evidence.
+
+## Coalesce ordinary scans before entering the long-running queue
+
+`queue: max` preserves exact work, but repeated source admissions must not fill
+its bounded 100 slots with equivalent scans. Source completion events now enter
+`portal-extended-consumer-wakeup.yml`, a short Actions-only dispatcher. Successful
+same-repository main source events retain the existing admission checks. Its
+manual main-only entry has no inputs and uses the same configured locale set.
+Source collection and candidate validation still run through the original paths.
+
+The wake-up and ordinary continuation dispatcher share the small
+`extended-locale-ordinary-wakeup` lock. They inspect the authoritative consumer
+concurrency group and reuse only a verified **pending** ordinary request with
+the exact same locale order and default options: candidate, no exact generation
+or adoption evidence, 14,400 seconds, source fallback enabled, runtime diagnosis
+disabled. The request digest and guarded run title identify this protocol.
+Manual candidate requests and exact generation recoveries are never coalesced.
+An active ordinary scan cannot suppress its successor because newer admitted
+sources may not have been visible when the active scan selected its work.
+
+Inspection has a 12-request/120-second budget, three bounded GET attempts and
+response-size/inventory limits. A dispatch POST is sent at most once. An unknown
+POST acknowledgement is resolved against the exact request in the live group
+and a short, bounded workflow-run inventory, excluding runs observed before the
+POST. This also finds a child that already finished and left the group. Unknown
+acceptance or unavailable inspection fails without another POST; it does not
+alter the durable source queues. The short lock never waits for model work.

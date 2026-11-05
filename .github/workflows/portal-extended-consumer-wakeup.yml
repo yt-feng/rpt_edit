@@ -1,0 +1,43 @@
+name: Extended locale translation wake-up
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [Extended locale source admission]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: extended-locale-ordinary-wakeup
+  cancel-in-progress: false
+  queue: max
+
+jobs:
+  wake_pending_scan:
+    if: >-
+      ${{ github.event.repository.private == false && github.ref == 'refs/heads/main' &&
+          (github.event_name == 'workflow_dispatch' ||
+           (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' &&
+            github.event.workflow_run.head_branch == github.event.repository.default_branch &&
+            github.event.workflow_run.head_repository.full_name == github.repository)) }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: scripts/portal_extended_ordinary_wakeup.py
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Reuse one compatible pending ordinary scan or dispatch once
+        env:
+          GH_TOKEN: ${{ github.token }}
+          KC_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false && 'true' || 'false' }}
+          SOURCE_LOCALES: ${{ vars.PORTAL_EXTENDED_INCREMENTAL_LOCALES || 'all-supported' }}
+        run: python3 -B scripts/portal_extended_ordinary_wakeup.py

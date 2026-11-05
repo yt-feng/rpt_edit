@@ -6,12 +6,16 @@ on:
       - '.github/workflows/**'
       - 'scripts/build_portal_locale_resume_workflow.py'
       - 'scripts/test_actions_durable_queues.py'
+      - 'scripts/portal_extended_ordinary_wakeup.py'
+      - 'scripts/test_portal_extended_ordinary_wakeup.py'
   push:
     branches: [main]
     paths:
       - '.github/workflows/**'
       - 'scripts/build_portal_locale_resume_workflow.py'
       - 'scripts/test_actions_durable_queues.py'
+      - 'scripts/portal_extended_ordinary_wakeup.py'
+      - 'scripts/test_portal_extended_ordinary_wakeup.py'
   workflow_dispatch:
 
 permissions:
@@ -36,3 +40,5 @@ jobs:
         run: python3 -m pip install --disable-pip-version-check 'PyYAML>=6,<7'
       - name: Verify every shared writer retains pending recovery requests
         run: python3 -B -m unittest discover -s scripts -p test_actions_durable_queues.py -v
+      - name: Verify bounded ordinary scan coalescing and exact recovery isolation
+        run: python3 -B -m unittest discover -s scripts -p test_portal_extended_ordinary_wakeup.py -v

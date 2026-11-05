@@ -11,8 +11,7 @@ import runpy
 import tempfile
 from datetime import datetime
 from pathlib import Path
-from urllib.error import HTTPError, URLError
-from urllib.request import Request, urlopen
+from urllib.request import urlopen
 
 from private_workflow_handoff import build_r2_client, download_directory, r2_bucket, upload_directory
 from wechat_attempt_history import GitHubHistory, never_submitted

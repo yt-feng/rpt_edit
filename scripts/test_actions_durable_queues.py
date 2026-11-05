@@ -15,6 +15,7 @@ GROUP_MARKERS = (
     'extended-locales-r2-pipeline',
     'extended-locales-source-admission',
     'extended-locale-${{ matrix.locale }}',
+    'extended-locale-ordinary-wakeup',
 )
 EXPECTED_OWNERS = {
     ('neutral-edge-cutover.yml', 'workflow'),
@@ -27,6 +28,8 @@ EXPECTED_OWNERS = {
     ('portal-extended-locales-r2.yml', 'workflow'),
     ('portal-extended-locales-r2.yml', 'job:locale'),
     ('portal-extended-locales-source.yml', 'job:source_snapshot'),
+    ('portal-extended-consumer-wakeup.yml', 'workflow'),
+    ('portal-extended-locales-r2.yml', 'job:continue_admitted_batches'),
 }
 
 
