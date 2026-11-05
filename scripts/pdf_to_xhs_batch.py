@@ -1393,6 +1393,22 @@ def recoverable_provider_error(error):
     return False
 
 
+def institution_metadata_failure_fields(ledger, path, source_name, args, error):
+    """Permit independent OCR only for the frozen opt-in source's rejected metadata."""
+    if not (args.institution_ocr_fallback and args.chart_source_only
+            and ledger.scope == 'institution' and isinstance(error, FigureSourceError)):
+        return {}
+    from institution_ocr_fallback import METADATA_FAILURES
+    if error.category not in METADATA_FAILURES:
+        return {}
+    binding = ledger.bind(path, source_name)
+    frozen = {key: binding[key] for key in ('source', 'sha256', 'size')}
+    if frozen not in args._ocr_fallback_inventory['sources']:
+        raise LedgerError('Institution metadata fallback source binding changed')
+    return {'original_pdf_sha256': binding['sha256'],
+            'mineru_figure_failure_category': error.category}
+
+
 def preserve_institution_completed_sources(ledger, sources, output_dir, args):
     """Materialize exact healthy sources for the opt-in mixed extraction handoff.
 
@@ -1440,13 +1456,24 @@ def preserve_institution_completed_sources(ledger, sources, output_dir, args):
     if args._mineru_result_cache is None:
         raise LedgerError('Institution partial source preservation requires its exact result cache contract')
     retained = 0
-    for path, _ in available:
+    for path, source_name in available:
         try:
             status = process_pdf(Path(path), successful[Path(path)], output_dir, args)
             if status.get('error') or status.get('source_markdown') != 'source_mineru.md':
                 raise LedgerError('Institution partial source materialization incomplete')
             retained += 1
         except Exception as error:
+            fields = institution_metadata_failure_fields(ledger, path, source_name, args, error)
+            if fields:
+                row = successful[Path(path)]
+                status = {'source_pdf': Path(path).name, 'mineru_state': row.get('state'),
+                    'mineru_error': row.get('err_msg') or row.get('error') or '',
+                    'error': f'Report generation failed: {error}', **fields}
+                item_dir = output_dir / slug(Path(path).name)
+                item_dir.mkdir(parents=True, exist_ok=True)
+                (item_dir / 'status.json').write_text(json.dumps(status), encoding='utf-8')
+                log('MinerU figure diagnostic: ' + json.dumps(error.diagnostic, sort_keys=True))
+                continue
             if not recoverable_provider_error(error):
                 raise
     return retained
@@ -1567,6 +1594,8 @@ def main() -> int:
                     "mineru_error": row.get("err_msg") or row.get("error") or "",
                     "error": f"Report generation failed: {exc}",
                 }
+                source_name = next(name for path, name in sources if Path(path) == pdf_path)
+                status.update(institution_metadata_failure_fields(ledger, pdf_path, source_name, args, exc))
                 item_dir = output_dir / slug(pdf_path.name)
                 item_dir.mkdir(parents=True, exist_ok=True)
                 (item_dir / "status.json").write_text(
@@ -1577,7 +1606,9 @@ def main() -> int:
                 if args._mineru_result_cache is not None and isinstance(exc, (ResultCacheError, NetworkStop, ConsumerError)):
                     # No retries, CDN fallback or later paid generation after a
                     # failed private cache read or strict result download.
-                    if recoverable_provider_error(exc) and not any(item.get("error") for item in summary):
+                    if (recoverable_provider_error(exc)
+                            and all(not item.get("error") or item.get("mineru_figure_failure_category")
+                                    for item in summary)):
                         record_provider_outcome(args, "mineru_unavailable")
                     return 2
             summary.append(status)
@@ -1588,7 +1619,13 @@ def main() -> int:
                     successful_reports += 1
         (output_dir / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
         log(f"Done. Results written to {output_dir}; successful_reports={successful_reports}.")
-        if deferred_sources:
+        failures = [item for item in summary if item.get('error')]
+        if (institution_ocr_fallback and failures
+                and all(item.get('mineru_figure_failure_category') for item in failures)):
+            # The exact original bytes remain independently eligible for OCR;
+            # rejected metadata and every other integrity failure stay rejected.
+            record_provider_outcome(args, "mineru_unavailable")
+        if deferred_sources and not failures:
             record_deferred(deferred_sources)
         return 0 if successful_reports == len(pdfs) else 2
     except Exception as exc:

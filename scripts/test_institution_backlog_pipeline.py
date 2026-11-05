@@ -86,7 +86,7 @@ class BacklogPipelineTests(unittest.TestCase):
             self.sources.append((path.resolve(), path.name))
         self.provider = Provider(items); self.ledger.provider = self.provider
 
-    def run_primary(self, *extra_args):
+    def run_primary(self, *extra_args, figure_producer=None):
         argv = ['primary', '--input-dir', str(self.inputs), '--output-dir', str(self.output),
                 '--chart-source-only', '--provider-outcome-path', str(self.outcome), *extra_args]
         with (patch.object(sys, 'argv', argv),
@@ -95,7 +95,7 @@ class BacklogPipelineTests(unittest.TestCase):
               patch.object(primary, 'from_environment', return_value=self.ledger),
               patch.object(primary, 'download_once', return_value=result_zip()) as download,
               patch.object(primary, 'download_and_unzip', side_effect=AssertionError('Use source-bound result cache')),
-              patch.object(primary, 'create_chart_source_assets', return_value=[]),
+              patch.object(primary, 'create_chart_source_assets', side_effect=figure_producer or (lambda *a, **k: [])),
               patch.object(primary, 'safe_generate_text', side_effect=AssertionError('No paid copy in source extraction')),
               patch.object(primary, 'log'), patch('sys.stderr', new_callable=io.StringIO)):
             code = primary.main()
@@ -183,6 +183,86 @@ class BacklogPipelineTests(unittest.TestCase):
         self.assertFalse(inventory.exists())
         self.assertFalse(self.outcome.exists())
 
+    def completed_originals(self, batch_id, _token, _timeout):
+        return [{'data_id': self.provider.items[batch_id]['id'], 'state': 'done',
+                 'full_zip_url': 'https://results.invalid/' + batch_id}]
+
+    def test_metadata_only_rejection_mints_exact_opted_in_ocr_inventory(self):
+        inventory = self.root / 'ocr-inventory.json'
+        def reject_bad(_raw, assets, *_args, **_kwargs):
+            if assets.parent.name == 'bad':
+                raise primary.FigureSourceError('figure_metadata_invalid')
+            return []
+        with patch.object(self.provider, 'poll', side_effect=self.completed_originals):
+            code, downloads, holds = self.run_primary('--institution-ocr-fallback',
+                '--ocr-fallback-inventory-path', str(inventory), figure_producer=reject_bad)
+        self.assertEqual((code, downloads, holds), (2, 2, {}))
+        self.assertEqual(json.loads(self.outcome.read_bytes()), {'schema': 1, 'category': 'mineru_unavailable'})
+        self.assertEqual(len(json.loads(inventory.read_bytes())['sources']), 2)
+        bad = self.output / 'bad'
+        self.assertTrue((bad / 'source_mineru.md').exists())
+        status = json.loads((bad / 'status.json').read_bytes())
+        self.assertEqual(status['mineru_figure_failure_category'], 'figure_metadata_invalid')
+        self.assertEqual(status['original_pdf_sha256'], self.ledger.bind(*self.sources[1])['sha256'])
+        self.assertTrue(status['error'])
+        self.assertTrue((self.output / 'good' / 'source_mineru.md').is_file())
+        self.assertEqual((self.provider.posts, self.provider.uploads), (0, 0))
+        import institution_ocr_fallback as ocr
+        from report_extraction_source import resolve_extraction_source
+        from test_institution_ocr_fallback import pages
+        from types import SimpleNamespace
+        def worker(command, **_kwargs):
+            request = json.loads(Path(command[-1]).read_bytes())
+            ocr.extract_source(Path(request['pdf']), Path(request['output']), request['binding'], reader=pages)
+            return SimpleNamespace(returncode=0)
+        bindings = {name: {key: self.ledger.bind(path, name)[key] for key in ('source', 'sha256', 'size')}
+                    for path, name in self.sources}
+        result = ocr.recover_batch(json.loads(inventory.read_bytes()), bindings,
+                                   self.inputs, self.output, runner=worker)
+        self.assertEqual((result['ocr_reports'], result['reused_reports'], result['failed_reports']), (1, 1, 0))
+        self.assertEqual(resolve_extraction_source(bad).method, 'ocr')
+        self.assertFalse((bad / 'source_mineru.md').exists())
+        self.assertFalse((bad / 'mineru_raw').exists())
+        self.assertEqual(wrapper.count_generated_report_dirs(self.output, chart_source_only=True), 2)
+
+    def test_metadata_rejection_without_opt_in_and_integrity_failures_never_enable_ocr(self):
+        inventory = self.root / 'ocr-inventory.json'
+        for category, opted_in in [('figure_metadata_invalid', False),
+                                   ('figure_source_binding_mismatch', True),
+                                   ('figure_source_pixels_mismatch', True),
+                                   ('figure_proof_invalid', True), ('figure_asset_mismatch', True)]:
+            def reject(*_args, **_kwargs):
+                raise primary.FigureSourceError(category)
+            arguments = ('--institution-ocr-fallback', '--ocr-fallback-inventory-path', str(inventory)) if opted_in else ()
+            with self.subTest(category=category, opted_in=opted_in), \
+                    patch.object(self.provider, 'poll', side_effect=self.completed_originals):
+                code, _downloads, holds = self.run_primary(*arguments, figure_producer=reject)
+            self.assertEqual((code, holds), (2, {}))
+            self.assertFalse(inventory.exists())
+            self.assertFalse(self.outcome.exists())
+
+    def test_metadata_and_provider_download_failures_allow_ocr_in_either_order(self):
+        from consume_legacy_mineru import NetworkStop
+        inventory = self.root / 'ocr-inventory.json'
+        for categories in (['figure_metadata_invalid', 'network_stop'],
+                           ['network_stop', 'figure_metadata_invalid'],
+                           ['figure_source_binding_mismatch', 'network_stop']):
+            errors = iter(NetworkStop(category) if category == 'network_stop'
+                          else primary.FigureSourceError(category) for category in categories)
+            def reject(*_args, **_kwargs):
+                raise next(errors)
+            with self.subTest(categories=categories), \
+                    patch.object(self.provider, 'poll', side_effect=self.completed_originals):
+                code, _downloads, holds = self.run_primary('--institution-ocr-fallback',
+                    '--ocr-fallback-inventory-path', str(inventory), figure_producer=reject)
+            self.assertEqual((code, holds), (2, {}))
+            eligible = 'figure_source_binding_mismatch' not in categories
+            self.assertEqual(inventory.exists(), eligible)
+            self.assertEqual(self.outcome.exists(), eligible)
+            if eligible:
+                self.assertEqual(json.loads(self.outcome.read_bytes()),
+                                 {'schema': 1, 'category': 'mineru_unavailable'})
+
     def test_partial_provider_download_error_leaves_source_for_ocr(self):
         from consume_legacy_mineru import NetworkStop
         inventory = self.root/'ocr-inventory.json'
@@ -192,6 +272,25 @@ class BacklogPipelineTests(unittest.TestCase):
         self.assertEqual((code, holds), (2, {}))
         self.assertTrue(inventory.exists())
         self.assertEqual(json.loads(self.outcome.read_text()), {'schema': 1, 'category': 'mineru_unavailable'})
+
+    def test_partial_metadata_rejection_retains_exact_inventory_for_independent_ocr(self):
+        inventory = self.root / 'ocr-inventory.json'
+        def reject(*_args, **_kwargs):
+            raise primary.FigureSourceError('figure_metadata_ambiguous')
+        code, downloads, holds = self.run_primary('--institution-ocr-fallback',
+            '--ocr-fallback-inventory-path', str(inventory), figure_producer=reject)
+        self.assertEqual((code, downloads, holds), (2, 1, {}))
+        self.assertEqual(json.loads(self.outcome.read_bytes()), {'schema': 1, 'category': 'mineru_unavailable'})
+        self.assertEqual(len(json.loads(inventory.read_bytes())['sources']), 2)
+        status = json.loads((self.output / 'good' / 'status.json').read_bytes())
+        self.assertEqual(status['mineru_figure_failure_category'], 'figure_metadata_ambiguous')
+        self.assertTrue(status['error'])
+        import institution_ocr_fallback as ocr
+        self.assertTrue(ocr.rejected_metadata_source(self.output / 'good', 'good.pdf',
+                       self.ledger.bind(*self.sources[0])))
+        summary = json.loads((self.output / 'mineru_attempts_summary.json').read_bytes())
+        self.assertFalse(summary['ready_for_generation'])
+        self.assertEqual((self.provider.posts, self.provider.uploads), (0, 0))
 
     def test_fallback_inventory_excludes_existing_dependency_holds(self):
         inventory = self.root/'ocr-inventory.json'

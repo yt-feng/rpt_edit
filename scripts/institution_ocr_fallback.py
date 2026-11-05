@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -13,6 +14,7 @@ import time
 from report_extraction_source import digest, ocr_markdown_from_pages, resolve_extraction_source
 
 RECEIPT = "ocr_extraction_receipt.json"
+METADATA_FAILURES = frozenset({"figure_metadata_invalid", "figure_metadata_ambiguous"})
 
 
 def encoded(value):
@@ -54,6 +56,24 @@ def existing_source(directory: Path, filename: str, binding) -> bool:
                     "languages": "eng+chi_sim", "dpi": 220}
                 and status["wechat_source_provenance"]["content_sha256"] == binding["sha256"],
                 "institution_ocr_receipt_mismatch")
+    return True
+
+
+def rejected_metadata_source(directory: Path, filename: str, binding) -> bool:
+    """Recognize only this invocation's exact failed MinerU source, never reuse it."""
+    require(not directory.is_symlink(), "institution_ocr_output_symlink")
+    status_path = directory / "status.json"
+    if not status_path.exists():
+        return False
+    require(not status_path.is_symlink(), "institution_ocr_output_symlink")
+    status = json.loads(status_path.read_bytes())
+    if not isinstance(status, dict) or status.get("mineru_figure_failure_category") not in METADATA_FAILURES:
+        return False
+    require(status.get("error") and status.get("source_pdf") == filename
+            and status.get("original_pdf_sha256") == binding["sha256"]
+            and not (directory / "source_ocr.md").exists()
+            and not (directory / "source_ocr.md").is_symlink(),
+            "institution_ocr_rejected_metadata_mismatch")
     return True
 
 
@@ -125,7 +145,8 @@ def recover_batch(inventory, bindings, tmp_input: Path, output: Path, *, runner=
         destinations.add(directory)
         pdf = tmp_input / name
         verify_pdf(pdf, binding)
-        reused = existing_source(directory, name, binding)
+        rejected = rejected_metadata_source(directory, name, binding)
+        reused = False if rejected else existing_source(directory, name, binding)
         plans.append((pdf, directory, binding, reused))
     require(len(plans) + inventory["deferred_sources"] == len(bindings),
             "institution_ocr_selection_incomplete")
@@ -139,9 +160,10 @@ def recover_batch(inventory, bindings, tmp_input: Path, output: Path, *, runner=
         if remaining <= 0:
             failures.append({"source_sha256": binding["sha256"], "category": "ocr_time_budget_exhausted"})
             continue
-        with tempfile.TemporaryDirectory(prefix="institution-ocr-request-") as temporary:
+        with tempfile.TemporaryDirectory(prefix=".institution-ocr-request-", dir=output) as temporary:
             request = Path(temporary) / "request.json"
-            request.write_bytes(encoded({"pdf": str(pdf), "output": str(directory), "binding": binding}))
+            stage = Path(temporary) / "source"
+            request.write_bytes(encoded({"pdf": str(pdf), "output": str(stage), "binding": binding}))
             try:
                 result = runner([sys.executable, str(Path(__file__).resolve()), "--request", str(request)],
                                 timeout=remaining, capture_output=True, text=True)
@@ -151,9 +173,20 @@ def recover_batch(inventory, bindings, tmp_input: Path, output: Path, *, runner=
             if result.returncode != 0:
                 failures.append({"source_sha256": binding["sha256"], "category": "ocr_extraction_failed"})
                 continue
-        if not existing_source(directory, pdf.name, binding):
-            failures.append({"source_sha256": binding["sha256"], "category": "ocr_output_missing"})
-            continue
+            if not existing_source(stage, pdf.name, binding):
+                failures.append({"source_sha256": binding["sha256"], "category": "ocr_output_missing"})
+                continue
+            verify_pdf(pdf, binding)
+            # Only verified independent OCR replaces a rejected producer's
+            # premature Markdown marker, raw archive and partial figure assets.
+            if directory.exists():
+                require(not directory.is_symlink() and
+                        (rejected_metadata_source(directory, pdf.name, binding)
+                         or not any((directory / name).exists() or (directory / name).is_symlink()
+                                    for name in ("source_mineru.md", "source_ocr.md"))),
+                        "institution_ocr_output_changed")
+                shutil.rmtree(directory)
+            stage.replace(directory)
         completed += 1
     return {"ocr_reports": completed, "reused_reports": reused_count,
             "deferred_sources": inventory["deferred_sources"], "failed_reports": len(failures),

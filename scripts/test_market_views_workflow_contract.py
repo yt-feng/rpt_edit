@@ -1122,5 +1122,137 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
                 self.assertFalse(gate(notify, {"job": status}))
 
 
+class ChartDispatchRecoveryTests(unittest.TestCase):
+    """Execute the real dispatch shell with a local GitHub CLI fixture."""
+
+    @staticmethod
+    def stable_summary(**overrides):
+        return {
+            "workflow_unprocessed_count": 0,
+            "workflow_retryable_count": 0,
+            "workflow_stable_error_count": 1,
+            "request_limit_reached": False,
+            **overrides,
+        }
+
+    def run_dispatch(self, attempts, **overrides):
+        block = job(UPSTREAM, "trigger-chart-search-index")
+        program = textwrap.dedent(block.split("        run: |\n", 1)[1])
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            fixture = root / "fixture.json"
+            fixture.write_text(json.dumps(attempts), encoding="utf-8")
+            calls_path = root / "calls.jsonl"
+            gh = root / "gh"
+            gh.write_text("#!" + sys.executable + "\n" + textwrap.dedent('''\
+                import json, os, sys
+                from pathlib import Path
+                args = sys.argv[1:]
+                log = Path(os.environ["CHART_CALLS"])
+                with log.open("a") as stream:
+                    stream.write(json.dumps(args) + "\\n")
+                calls = [json.loads(line) for line in log.read_text().splitlines()]
+                fixtures = json.loads(Path(os.environ["CHART_FIXTURE"]).read_text())
+                if args[:2] == ["workflow", "run"]:
+                    index = sum(row[:2] == ["workflow", "run"] for row in calls) - 1
+                    print(f"https://github.com/example/repo/actions/runs/{1001 + index}")
+                elif args[:2] == ["run", "watch"]:
+                    row = fixtures[int(args[2]) - 1001]
+                    raise SystemExit(0 if row.get("success") else 1)
+                elif args[:2] == ["run", "view"]:
+                    row = fixtures[int(args[2]) - 1001]
+                    print(row.get("outcome", "completed:failure"))
+                elif args[:2] == ["run", "download"]:
+                    row = fixtures[int(args[2]) - 1001]
+                    if "summary" not in row:
+                        raise SystemExit(1)
+                    target = Path(args[args.index("--dir") + 1])
+                    target.mkdir(parents=True, exist_ok=True)
+                    (target / "summary.json").write_text(json.dumps(row["summary"]))
+                else:
+                    raise SystemExit("Unexpected GitHub operation")
+                '''), encoding="utf-8")
+            gh.chmod(0o755)
+            # Keep the nested Python interpreter consistent with this test run.
+            (root / "python3").write_text("#!/bin/sh\nexec " + shlex.quote(sys.executable) + ' "$@"\n')
+            (root / "python3").chmod(0o755)
+            result = subprocess.run(["bash", "-c", program], cwd=root, env={
+                **os.environ,
+                "PATH": str(root) + os.pathsep + os.environ["PATH"],
+                "CHART_FIXTURE": str(fixture), "CHART_CALLS": str(calls_path),
+                "GITHUB_REPOSITORY": "example/repo", "DATE_FOLDER": "261104",
+                "SOURCE_RUN_ID": "41929604196", "EXPECTED_SHARDS": "17",
+                "MAX_IMAGES": "0", "RECOVERED_RESULT": "skipped",
+                "RECOVERED_MANIFEST": "", "SELECTED_COUNT": "40", **overrides,
+            }, capture_output=True, text=True, timeout=15)
+            calls = [json.loads(line) for line in calls_path.read_text().splitlines()]
+        return result, calls
+
+    @staticmethod
+    def dispatches(calls):
+        return [row for row in calls if row[:2] == ["workflow", "run"]]
+
+    def test_stable_failures_retry_distinct_executions_with_exact_source_binding(self):
+        stable = {"summary": self.stable_summary()}
+        result, calls = self.run_dispatch([stable, stable, {"success": True}])
+        self.assertEqual(result.returncode, 0, result.stderr)
+        dispatched = self.dispatches(calls)
+        self.assertEqual(len(dispatched), 3)
+        for number, args in enumerate(dispatched):
+            for field in ("date_folder=261104", "source_handoff_run_id=41929604196",
+                          "expected_shards=17", "expected_articles=0", "max_images=0"):
+                self.assertIn(field, args)
+            self.assertIn("retry_errors_now=" + ("true" if number else "false"), args)
+        downloads = [row for row in calls if row[:2] == ["run", "download"]]
+        self.assertEqual([row[row.index("--name") + 1] for row in downloads], [
+            "chart-search-summary-261104-1001", "chart-search-summary-261104-1002",
+        ])
+
+    def test_stable_recovery_is_bounded_to_three_executions(self):
+        stable = {"summary": self.stable_summary()}
+        result, calls = self.run_dispatch([stable, stable, stable, {"success": True}])
+        self.assertNotEqual(result.returncode, 0)
+        self.assertEqual(len(self.dispatches(calls)), 3)
+
+    def test_incomplete_transient_or_unverifiable_failures_never_redispatch(self):
+        cases = [
+            {},
+            {"summary": {}},
+            {"summary": self.stable_summary(workflow_retryable_count=1)},
+            {"summary": self.stable_summary(workflow_unprocessed_count=1)},
+            {"summary": self.stable_summary(request_limit_reached=True)},
+            {"summary": self.stable_summary(workflow_stable_error_count=0)},
+            {"summary": self.stable_summary(workflow_retryable_count="0")},
+        ]
+        for case in cases:
+            with self.subTest(case=case):
+                result, calls = self.run_dispatch([case, {"success": True}])
+                self.assertNotEqual(result.returncode, 0)
+                self.assertEqual(len(self.dispatches(calls)), 1)
+
+    def test_unknown_watch_outcome_never_redispatches(self):
+        result, calls = self.run_dispatch([{
+            "summary": self.stable_summary(), "outcome": "in_progress:",
+        }, {"success": True}])
+        self.assertNotEqual(result.returncode, 0)
+        self.assertEqual(len(self.dispatches(calls)), 1)
+        self.assertFalse(any(row[:2] == ["run", "download"] for row in calls))
+
+    def test_successful_first_execution_needs_no_recovery_reads(self):
+        result, calls = self.run_dispatch([{"success": True}])
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual([row[:2] for row in calls], [["workflow", "run"], ["run", "watch"]])
+
+    def test_recovered_manifest_and_article_binding_survives_retry(self):
+        result, calls = self.run_dispatch([
+            {"summary": self.stable_summary()}, {"success": True},
+        ], RECOVERED_RESULT="success", RECOVERED_MANIFEST="a" * 64)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        for args in self.dispatches(calls):
+            self.assertIn("source_handoff_manifest_sha256=" + "a" * 64, args)
+            self.assertIn("expected_shards=1", args)
+            self.assertIn("expected_articles=40", args)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

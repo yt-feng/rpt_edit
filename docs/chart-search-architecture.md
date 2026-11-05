@@ -286,6 +286,14 @@ bounded exception chain; it never matches or logs private exception messages.
 - A non-zero `max_images` is an explicit whole-run ceiling. If the ceiling leaves unknown
   hashes, the child run fails after uploading its private checkpoint; the parent therefore
   retains the private source handoff for a later continuation instead of deleting it.
+- The daily parent can dispatch at most three distinct child executions against the
+  exact same handoff/date/manifest/shard binding. After a failed child, it first confirms
+  the completed failure on GitHub and downloads that exact run's named summary artifact.
+  Only zero unprocessed hashes, zero transient failures, no request-limit hit, and a
+  positive stable-image count permit another execution with `retry_errors_now=true`.
+  Successful hash descriptions remain cached, while each deterministic image gets at
+  most one quarantine attempt per child execution. Missing or ambiguous summaries,
+  transport errors, partial work, and transient failures stop recovery and retain sources.
 - Any remaining transient or not-yet-quarantined stable image failure follows the same
   fail-after-private-checkpoint rule. Only a complete run (successful hashes plus any
   hashes already quarantined after three separate executions) lets the parent remove the

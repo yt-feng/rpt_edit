@@ -382,8 +382,9 @@ def pending(store, locales, output, *, generation=None, producer=None, unstarted
     for locale in active:
         rows = all_queues[locale]
         if rows[selected]['status'] in {'started', 'claimed'}:
-            # No worker consumed this allocation. Preserve its original state,
-            # immutable snapshot and count; transfer only after source prepares.
+            # Preserve the immutable snapshot. Unused source claims retain
+            # their count; a proved failed worker spends a new bounded attempt.
+            # Transfer only after the complete source preparation succeeds.
             unstarted.stage(locale, selected, rows[selected])
             continue
         rows[selected] = {**rows[selected], 'status': 'claimed', 'continuations': rows[selected]['continuations'] + 1,
