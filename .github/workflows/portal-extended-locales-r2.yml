@@ -69,6 +69,7 @@ concurrency:
         inputs.operation == 'strict-repair-resolution' && format('extended-locales-child-resolution-{0}', inputs.locales) ||
         inputs.operation == 'recovery-test' && format('extended-locales-r2-recovery-{0}', github.ref) || 'extended-locales-r2-pipeline' }}
   cancel-in-progress: false
+  queue: max
 
 env:
   EXTENDED_R2_PREFIX: _extended-locales/v1
@@ -301,6 +302,7 @@ jobs:
     concurrency:
       group: extended-locale-${{ matrix.locale }}
       cancel-in-progress: false
+      queue: max
     if: needs.source.result == 'success' && needs.source.outputs.has_work == 'true' && github.event.repository.private == false
     runs-on: ubuntu-22.04
     timeout-minutes: 270

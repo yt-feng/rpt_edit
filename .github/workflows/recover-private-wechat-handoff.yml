@@ -27,6 +27,7 @@ permissions:
 concurrency:
   group: ${{ inputs.source == 'institution' && 'institution-latest-pdf-to-wechat' || 'consulting-latest-pdf-to-wechat' }}
   cancel-in-progress: false
+  queue: max
 
 jobs:
   recover:
@@ -66,8 +67,11 @@ jobs:
       - name: Restore accepted WeChat draft receipts from this recovery attempt
         uses: ./.github/actions/restore-wechat-diagnostics
         with:
+          submission-step-names: |
+            Upload and read back recovered drafts
           name: recovered-wechat-drafts-${{ github.run_id }}
           path: .
+          checkpoint-path: wechat_drafts/${{ steps.source.outputs.scope }}/${{ inputs.date_folder }}
 
       - name: Restore and validate exact private handoff and accepted receipts
         id: restore
@@ -87,6 +91,7 @@ jobs:
         run: bash scripts/materialize_private_social_asset.sh prompts
 
       - name: Upload and read back recovered drafts
+        id: upload
         env:
           WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
           WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
@@ -99,6 +104,21 @@ jobs:
             --date-folder "$DATE_FOLDER" --output-root "wechat_drafts/$SCOPE" \
             --max-articles all --articles-per-draft 8 --max-body-chars 1200 \
             --min-inline-images 3 --max-inline-images 3 2>&1 | tee recovery_wechat_progress.log
+
+      - name: Verify complete recovered WeChat delivery
+        id: delivery
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+          SCOPE: ${{ steps.source.outputs.scope }}
+        run: |
+          python scripts/institution_wechat_delivery_receipt.py \
+            --output-dir "wechat_drafts/$SCOPE/$DATE_FOLDER" \
+            --source-dir "portal_translated_reports/$SCOPE/$DATE_FOLDER" \
+            --source-kind portal-translated --expected-count "$EXPECTED_COUNT" \
+            --max-articles all --include-institutions all --exclude-institutions rand,brookings \
+            --output "wechat_drafts/$SCOPE/$DATE_FOLDER/delivery_verification.json"
 
       - name: Save accepted draft receipts even after readback failure
         if: ${{ always() && steps.restore.outcome == 'success' }}
@@ -113,15 +133,17 @@ jobs:
             --date-folder "$DATE_FOLDER" --expected-count "$EXPECTED_COUNT"
 
       - name: Archive WeChat draft diagnostics
-        if: ${{ always() }}
+        if: ${{ always() && steps.upload.outcome != '' && steps.upload.outcome != 'skipped' }}
         uses: ./.github/actions/resilient-diagnostic-artifact
         with:
-          name: recovered-wechat-drafts-${{ github.run_id }}
+          name: recovered-wechat-drafts-${{ github.run_id }}-attempt-${{ github.run_attempt }}
           path: |
             wechat_drafts
             recovery_wechat_progress.log
-          if-no-files-found: ignore
-          retention-days: "2"
+          if-no-files-found: error
+          retention-days: "14"
+          required: "true"
+          checkpoint-path: wechat_drafts/${{ steps.source.outputs.scope }}/${{ inputs.date_folder }}
 
       - name: Update public Blog archive
         run: |

@@ -86,6 +86,7 @@ env:
 concurrency:
   group: institution-latest-pdf-to-wechat
   cancel-in-progress: false
+  queue: max
 
 jobs:
   fetch-and-build:
@@ -627,7 +628,7 @@ jobs:
 
       - name: Archive WeChat draft diagnostics
         id: archive_wechat_receipts
-        if: ${{ always() }}
+        if: ${{ always() && steps.upload.outcome != '' && steps.upload.outcome != 'skipped' }}
         uses: ./.github/actions/resilient-diagnostic-artifact
         with:
           name: institution-wechat-drafts-${{ needs.fetch-and-build.outputs.date_folder }}-${{ github.run_id }}-attempt-${{ github.run_attempt }}

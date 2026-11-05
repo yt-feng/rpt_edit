@@ -76,7 +76,7 @@ class ConsumerAdmissionTests(unittest.TestCase):
             'inputs.operation':'strict-repair-resolution','inputs.locales':'my'}),self.group(**{
             'github.event_name':'workflow_dispatch','inputs.operation':'candidate'}))
         self.assertEqual(self.workflow['jobs']['locale']['concurrency'],{
-            'group':'extended-locale-${{ matrix.locale }}','cancel-in-progress':False})
+            'group':'extended-locale-${{ matrix.locale }}','cancel-in-progress':False,'queue':'max'})
         self.assertEqual(self.workflow['jobs']['locale']['strategy']['max-parallel'],2)
         self.assertFalse(self.workflow['concurrency']['cancel-in-progress'])
         self.assertEqual(self.group(**{'github.event_name':'workflow_dispatch',

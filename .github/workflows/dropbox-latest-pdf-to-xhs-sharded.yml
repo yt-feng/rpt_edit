@@ -1178,6 +1178,8 @@ jobs:
       - name: Restore accepted WeChat draft receipts
         uses: ./.github/actions/restore-wechat-diagnostics
         with:
+          submission-step-names: |
+            Upload generated xhs notes to WeChat drafts
           name: xhs-notes-wechat-drafts-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}
           path: .
           checkpoint-path: wechat_drafts/xhs_notes/${{ needs.select-macro-reports.outputs.latest_folder }}
@@ -1240,7 +1242,7 @@ jobs:
 
       - name: Archive WeChat draft diagnostics
         id: archive_wechat_receipts
-        if: ${{ always() }}
+        if: ${{ always() && steps.upload_xhs_wechat.outcome != '' && steps.upload_xhs_wechat.outcome != 'skipped' }}
         uses: ./.github/actions/resilient-diagnostic-artifact
         with:
           name: xhs-notes-wechat-drafts-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}-attempt-${{ github.run_attempt }}
@@ -1597,6 +1599,8 @@ jobs:
       - name: Restore accepted WeChat draft receipts
         uses: ./.github/actions/restore-wechat-diagnostics
         with:
+          submission-step-names: |
+            Upload Portal translated reports to WeChat drafts
           name: portal-translated-wechat-drafts-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}
           path: .
           checkpoint-path: wechat_drafts/${{ needs.select-macro-reports.outputs.latest_folder }}
@@ -1652,7 +1656,7 @@ jobs:
 
       - name: Archive WeChat draft diagnostics
         id: archive_wechat_receipts
-        if: ${{ always() }}
+        if: ${{ always() && steps.upload_portal_wechat.outcome != '' && steps.upload_portal_wechat.outcome != 'skipped' }}
         uses: ./.github/actions/resilient-diagnostic-artifact
         with:
           name: portal-translated-wechat-drafts-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}-attempt-${{ github.run_attempt }}
@@ -1767,6 +1771,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: scripts/chart_dispatch_recovery.py
       - name: Dispatch daily incremental chart index
         env:
           GH_TOKEN: ${{ github.token }}
@@ -1777,72 +1787,7 @@ jobs:
           RECOVERED_RESULT: ${{ needs.deliver-recovered-report-articles.result }}
           RECOVERED_MANIFEST: ${{ needs.deliver-recovered-report-articles.outputs.manifest_sha256 }}
           SELECTED_COUNT: ${{ needs.select-macro-reports.outputs.selected_count }}
-        run: |
-          set -euo pipefail
-          printf '%s' "$DATE_FOLDER" | grep -Eq '^[0-9]{6,8}$'
-          printf '%s' "$SOURCE_RUN_ID" | grep -Eq '^[0-9]+$'
-          MANIFEST_SHA=""
-          # Article counts bind recovered manifests; normal handoffs use the shard count.
-          EXPECTED_ARTICLES=0
-          if [ "$RECOVERED_RESULT" = success ]; then
-            printf '%s' "$RECOVERED_MANIFEST" | grep -Eq '^[a-f0-9]{64}$'
-            MANIFEST_SHA="$RECOVERED_MANIFEST"
-            EXPECTED_SHARDS=1
-            EXPECTED_ARTICLES="$SELECTED_COUNT"
-          fi
-          # Keep the same source binding through every attempt. Only an exact,
-          # completed child with stable-image-only residuals may be dispatched again.
-          # Three distinct executions preserve the builder's quarantine contract.
-          CHART_RETRY_ERRORS_NOW=false
-          for CHART_ATTEMPT in 1 2 3; do
-            RUN_URL="$(gh workflow run portal-chart-search-index.yml \
-              --repo "$GITHUB_REPOSITORY" \
-              --ref main \
-              -f date_folder="$DATE_FOLDER" \
-              -f source_handoff_run_id="$SOURCE_RUN_ID" \
-              -f source_handoff_manifest_sha256="$MANIFEST_SHA" \
-              -f expected_shards="$EXPECTED_SHARDS" \
-              -f expected_articles="$EXPECTED_ARTICLES" \
-              -f max_images="$MAX_IMAGES" \
-              -f retry_errors_now="$CHART_RETRY_ERRORS_NOW")"
-            CHART_RUN_ID="${RUN_URL##*/}"
-            if ! printf '%s\n' "$CHART_RUN_ID" | grep -Eq '^[0-9]+$'; then
-              echo "Unable to resolve dispatched chart-index run from: $RUN_URL" >&2
-              exit 1
-            fi
-            echo "::notice::Waiting for chart-index run $CHART_RUN_ID (attempt $CHART_ATTEMPT/3)."
-            if gh run watch "$CHART_RUN_ID" --repo "$GITHUB_REPOSITORY" --compact --exit-status --interval 15; then
-              exit 0
-            else
-              CHART_WATCH_STATUS=$?
-            fi
-            if [ "$CHART_ATTEMPT" = 3 ]; then exit "$CHART_WATCH_STATUS"; fi
-            # A failed watch can also mean a transport error. Never re-dispatch
-            # until GitHub confirms the existing child has actually failed.
-            CHART_OUTCOME="$(gh run view "$CHART_RUN_ID" --repo "$GITHUB_REPOSITORY" \
-              --json status,conclusion --jq '[.status, .conclusion] | join(":")')"
-            if [ "$CHART_OUTCOME" != completed:failure ]; then
-              echo "::error::Chart-index outcome is not a confirmed failure: $CHART_OUTCOME"
-              exit "$CHART_WATCH_STATUS"
-            fi
-            CHART_SUMMARY_DIR="$(mktemp -d)"
-            gh run download "$CHART_RUN_ID" --repo "$GITHUB_REPOSITORY" \
-              --name "chart-search-summary-$DATE_FOLDER-$CHART_RUN_ID" --dir "$CHART_SUMMARY_DIR"
-            python3 - "$CHART_SUMMARY_DIR/summary.json" <<'PYTHON'
-          import json
-          import sys
-          from pathlib import Path
-          row = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
-          names = ("workflow_unprocessed_count", "workflow_retryable_count", "workflow_stable_error_count")
-          counts = [row.get(name) for name in names]
-          if not all(type(value) is int and value >= 0 for value in counts):
-              raise SystemExit("Chart summary lacks exact workflow completion counts; source retained.")
-          if counts[0] != 0 or counts[1] != 0 or counts[2] <= 0 or row.get("request_limit_reached") is not False:
-              raise SystemExit("Chart failure is not stable-image-only; source retained.")
-          PYTHON
-            echo "::notice::Retrying stable chart images in a distinct execution; successful hashes stay cached."
-            CHART_RETRY_ERRORS_NOW=true
-          done
+        run: python3 -B scripts/chart_dispatch_recovery.py
 
   publish-customer-content:
     # Consume completed report outputs before either transient source cleanup.

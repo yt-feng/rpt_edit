@@ -81,6 +81,7 @@ permissions:
 concurrency:
   group: portal-production-release
   cancel-in-progress: false
+  queue: max
 
 jobs:
   prepare_release:

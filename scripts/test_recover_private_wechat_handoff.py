@@ -22,11 +22,11 @@ class RecoveryTests(unittest.TestCase):
             "status": "completed", "conclusion": "failure", "run_attempt": 1,
         }
         self.jobs = {"jobs": [
-            {"name": "fetch-and-build", "steps": [
+            {"id": 1, "name": "fetch-and-build", "steps": [
                 {"name": "Build Portal translated report PDFs", "conclusion": "success"},
                 {"name": "Upload translated reports to private R2 handoff", "conclusion": "success"},
             ]},
-            {"name": "upload-wechat-drafts", "conclusion": "skipped"},
+            {"id": 2, "name": "upload-wechat-drafts", "status": "completed", "conclusion": "skipped"},
         ]}
 
     def validate_run(self, run=None, jobs=None):
@@ -37,12 +37,14 @@ class RecoveryTests(unittest.TestCase):
         self.validate_run()
 
     def test_api_fetch_uses_exact_run_urls_auth_and_bounded_timeout(self):
-        responses = [io.BytesIO(json.dumps(value).encode()) for value in (self.run, self.jobs)]
+        response_jobs = {**self.jobs, 'total_count': len(self.jobs['jobs'])}
+        responses = [io.BytesIO(json.dumps(value).encode()) for value in (self.run, response_jobs)]
         with patch.object(recovery, "urlopen", side_effect=responses) as request:
             run, jobs = recovery.fetch_source_metadata("example/repo", "35545560867", "test-token")
-        self.assertEqual((run, jobs), (self.run, self.jobs))
+        self.assertEqual(run, self.run)
+        self.assertEqual(jobs['attempts'], [{'attempt': 1, 'jobs': self.jobs['jobs']}])
         base = "https://api.github.com/repos/example/repo/actions/runs/35545560867"
-        self.assertEqual([call.args[0].full_url for call in request.call_args_list], [base, base + "/jobs?per_page=100"])
+        self.assertEqual([call.args[0].full_url for call in request.call_args_list], [base, base + "/attempts/1/jobs?per_page=100&page=1"])
         for call in request.call_args_list:
             self.assertEqual(call.args[0].get_header("Authorization"), "Bearer test-token")
             self.assertEqual(call.kwargs, {"timeout": 30})
@@ -58,7 +60,7 @@ class RecoveryTests(unittest.TestCase):
     def test_api_errors_do_not_expose_response_body_or_token(self):
         error = HTTPError("https://api.github.com/", 403, "private response body", {}, None)
         with patch.object(recovery, "urlopen", side_effect=error):
-            with self.assertRaisesRegex(RuntimeError, r"^GitHub source-run verification failed: HTTP 403$"):
+            with self.assertRaisesRegex(ValueError, r"^GitHub source-run verification failed: HTTP 403$"):
                 recovery.fetch_source_metadata("owner/repo", "1", "private-token")
 
     def test_prior_or_unknown_attempts_cannot_hide_earlier_uploads(self):
@@ -67,8 +69,36 @@ class RecoveryTests(unittest.TestCase):
                 run = {**self.run, "run_attempt": attempt}
                 if attempt is None:
                     del run["run_attempt"]
-                with self.assertRaisesRegex(ValueError, "prior or unknown attempts require review"):
+                with self.assertRaises(ValueError):
                     self.validate_run(run=run)
+
+    def multiattempt(self):
+        original = copy.deepcopy(self.jobs['jobs'])
+        current = copy.deepcopy(original)
+        current[1].update(conclusion='failure', steps=[
+            {'name': 'Restore accepted WeChat draft receipts', 'status': 'completed', 'conclusion': 'failure'},
+            {'name': 'Build and upload WeChat drafts', 'status': 'completed', 'conclusion': 'skipped'}])
+        return {**self.run, 'run_attempt': 2}, {'jobs': current, 'attempts': [
+            {'attempt': 1, 'jobs': original}, {'attempt': 2, 'jobs': current}]}
+
+    def test_multiattempt_source_with_complete_skipped_submission_history_is_allowed(self):
+        run, jobs = self.multiattempt()
+        self.validate_run(run, jobs)
+        jobs['attempts'][1]['jobs'] = [jobs['attempts'][1]['jobs'][1]]
+        self.validate_run(run, jobs)  # A producer need not rerun with its blocked uploader.
+
+    def test_one_started_submission_in_any_attempt_or_missing_history_blocks_recovery(self):
+        for attempt in (0, 1):
+            for state in ('success', 'failure', 'cancelled', None):
+                run, jobs = self.multiattempt()
+                jobs['attempts'][attempt]['jobs'][1].update(conclusion='failure', steps=[
+                    {'name': 'Build and upload WeChat drafts', 'status': 'completed', 'conclusion': state}])
+                with self.subTest(attempt=attempt, state=state), self.assertRaises(ValueError):
+                    self.validate_run(run, jobs)
+        run, jobs = self.multiattempt()
+        jobs['attempts'].pop(0)
+        with self.assertRaises(ValueError):
+            self.validate_run(run, jobs)
 
     def test_other_workflow_branch_repository_run_or_success_is_rejected(self):
         for key, value in (("path", recovery.SOURCES["consulting"][1]), ("head_branch", "test"),
@@ -214,6 +244,48 @@ class RecoveryTests(unittest.TestCase):
             self.write_receipts(receipts, [("accepted-1", "group-1", "Title")])
             self.assertTrue(recovery.save_receipts("source", receipts))
             upload.assert_called_once_with(receipts, "source/recovery-receipts.tar.gz")
+
+    def test_uncertain_submission_without_summary_is_saved_and_never_posted_again_after_restore(self):
+        import push_portal_translated_to_wechat_drafts as portal
+        from test_wechat_api_verification import article
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            original, restored = root / 'original', root / 'restored'
+            original.mkdir()
+            portal.checkpoint_draft_submission(original, [article()], 'add_outcome_unknown', account_id='TEST_APP')
+            with patch.object(recovery, 'upload_directory') as upload:
+                self.assertTrue(recovery.save_receipts('exact/source', original))
+                upload.assert_called_once()
+            recovery.merge_receipts(restored, original)
+            retry = Mock(return_value='DUPLICATE')
+            with patch.object(portal, 'recover_draft_after_ambiguous_add', return_value=''):
+                with self.assertRaisesRegex(portal.WeChatError, 'outcome is unknown'):
+                    portal.add_draft_with_checkpoint(object(), 'TOKEN', [article()], 30, restored,
+                        [article()], account_id='TEST_APP', submit=retry)
+            retry.assert_not_called()
+            with patch.object(portal, 'recover_draft_after_ambiguous_add', return_value='ACCEPTED_BEFORE_TIMEOUT'):
+                self.assertEqual(portal.add_draft_with_checkpoint(object(), 'TOKEN', [article()], 30, restored,
+                    [article()], account_id='TEST_APP', submit=retry), 'ACCEPTED_BEFORE_TIMEOUT')
+            retry.assert_not_called()
+            self.assertFalse((restored / 'wechat_draft_summary.json').exists())
+
+    def test_stale_pending_submission_never_downgrades_accepted_id_and_conflicts_stop(self):
+        import push_portal_translated_to_wechat_drafts as portal
+        from test_wechat_api_verification import article
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            original, restored = root / 'original', root / 'restored'
+            original.mkdir(); restored.mkdir()
+            portal.checkpoint_draft_submission(original, [article()], 'add_in_flight', account_id='TEST_APP')
+            portal.checkpoint_draft_submission(restored, [article()], 'accepted', account_id='TEST_APP', media_id='ACCEPTED')
+            recovery.merge_receipts(restored, original)
+            submit = Mock(return_value='DUPLICATE')
+            self.assertEqual(portal.add_draft_with_checkpoint(object(), 'TOKEN', [article()], 30, restored,
+                [article()], account_id='TEST_APP', submit=submit), 'ACCEPTED')
+            submit.assert_not_called()
+            portal.checkpoint_draft_submission(original, [article()], 'accepted', account_id='TEST_APP', media_id='OTHER_ID')
+            with self.assertRaisesRegex(ValueError, 'Conflicting accepted submission IDs'):
+                recovery.merge_receipts(restored, original)
 
     def test_workflow_preserves_receipts_before_blog_and_never_regenerates_or_publishes(self):
         root = Path(__file__).resolve().parents[1]

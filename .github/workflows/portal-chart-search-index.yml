@@ -1,9 +1,14 @@
 name: Portal chart search index
-run-name: Chart search ${{ inputs.date_folder }} ${{ inputs.source_handoff_run_id || inputs.source_artifact_run_id }}
+run-name: ${{ inputs.dispatch_request_id && format('Chart request {0}', inputs.dispatch_request_id) || format('Chart search {0} {1}', inputs.date_folder, inputs.source_handoff_run_id || inputs.source_artifact_run_id) }}
 
 on:
   workflow_dispatch:
     inputs:
+      dispatch_request_id:
+        description: "Exact daily request digest for durable parent reattachment"
+        required: false
+        default: ""
+        type: string
       date_folder:
         description: "Report date folder to index, for example YYMMDD"
         required: true
@@ -116,6 +121,21 @@ jobs:
             prompts/wechat_report_article_prompt.md
             portal_suite/data/catalog.json
             requirements.txt
+
+      - name: Authenticate durable daily chart request
+        if: inputs.dispatch_request_id != ''
+        env:
+          DISPATCH_REQUEST_ID: ${{ inputs.dispatch_request_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          SOURCE_RUN_ID: ${{ inputs.source_handoff_run_id }}
+          HANDOFF_MANIFEST_SHA256: ${{ inputs.source_handoff_manifest_sha256 }}
+          ARTIFACT_RUN_ID: ${{ inputs.source_artifact_run_id }}
+          SOURCE_ARTIFACT_PATTERN: ${{ inputs.source_artifact_pattern }}
+          EXPECTED_SHARDS: ${{ inputs.expected_shards }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          MAX_IMAGES: ${{ inputs.max_images }}
+          ALLOW_INDEX_REMOVAL_MIGRATION: ${{ inputs.allow_index_removal_migration }}
+        run: python3 -B scripts/chart_dispatch_recovery.py --validate-request
 
       - uses: actions/setup-python@v5
         with:

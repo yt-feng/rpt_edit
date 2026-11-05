@@ -10,6 +10,33 @@ explicitly enabled.
 
 ## Source selection and shared consumers
 
+### Attempt history and draft checkpoints (2026-11-05)
+
+A workflow attempt number is global to the run. Retrying a failed source job can
+start the uploader for the first time in attempt 2 or later. The shared restore
+action audits every missing-checkpoint attempt using the complete, paginated
+GitHub job history and each consumer's exact submission step names. An absent or
+skipped uploader, or a completed job whose submission steps were all skipped,
+allows the first upload. A begun, cancelled or otherwise uncertain submission
+requires its accepted or in-flight checkpoint. A failed artifact lookup or an
+incomplete job page never counts as proof that no submission occurred.
+
+Checkpoints use `-attempt-N` names. A failed artifact upload retries under a
+separate immutable `-retry` name, preserving a first copy whose server-side
+acceptance may already have occurred. Missing receipts can be skipped only
+across independently proven non-submitting attempts. The uploader reuses
+accepted IDs; in-flight and unknown writes require API readback before any
+further submission.
+
+For an old pinned workflow whose upload never started, use
+`recover-private-wechat-handoff.yml` with the original source run, exact date
+and complete translated count. It audits every original attempt, restores the
+private translated handoff without regeneration, preserves accepted and unknown
+submission ledgers in R2, and verifies full live article delivery before updating
+the Blog. Routine uploader retries retain their pinned code. Institution,
+consulting and exact-handoff recovery share their producer locks with
+`queue: max`, so a later schedule does not replace a queued recovery.
+
 `dropbox-latest-pdf-to-xhs-sharded.yml` freezes the selected original-PDF
 manifest before processing. The normal source order is:
 

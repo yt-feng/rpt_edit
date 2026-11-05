@@ -134,9 +134,12 @@ jobs:
             --output _wechat_readback_result/presence.json
 
       - name: Restore checkpoint from an interrupted restoration
+        id: restore_receipts
         if: ${{ inputs.restore_missing == true }}
         uses: ./.github/actions/restore-wechat-diagnostics
         with:
+          submission-step-names: |
+            Restore missing archived articles as drafts and read them back
           name: wechat-restored-drafts-${{ github.run_id }}
           path: _wechat_restore_result
 
@@ -147,7 +150,7 @@ jobs:
           WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
           PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
           EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
-          REQUIRE_CHECKPOINT: ${{ github.run_attempt > 1 }}
+          REQUIRE_CHECKPOINT: ${{ steps.restore_receipts.outputs.found == 'true' }}
         run: |
           RESTORE_OPTIONS=()
           if [ "$REQUIRE_CHECKPOINT" = true ]; then
@@ -163,10 +166,9 @@ jobs:
         if: ${{ always() && inputs.restore_missing == true }}
         uses: actions/upload-artifact@v4
         with:
-          name: wechat-restored-drafts-${{ github.run_id }}
+          name: wechat-restored-drafts-${{ github.run_id }}-attempt-${{ github.run_attempt }}
           path: _wechat_restore_result
           if-no-files-found: warn
-          overwrite: true
           retention-days: 7
 
       - name: Archive readback result

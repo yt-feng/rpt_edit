@@ -613,7 +613,7 @@ class IngressTests(unittest.TestCase):
         self.assertNotIn('concurrency', value)
         capture_job, writer = value['jobs']['capture'], value['jobs']['source_snapshot']
         self.assertNotIn('concurrency', capture_job)
-        self.assertEqual(writer['concurrency'], {'group': 'extended-locales-source-admission', 'cancel-in-progress': False})
+        self.assertEqual(writer['concurrency'], {'group': 'extended-locales-source-admission', 'cancel-in-progress': False, 'queue': 'max'})
         self.assertEqual(writer['needs'], 'capture')
         captures = '\n'.join(row.get('run', '') for row in capture_job['steps'])
         writes = '\n'.join(row.get('run', '') for row in writer['steps'])
