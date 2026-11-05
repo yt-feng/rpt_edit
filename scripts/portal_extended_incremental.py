@@ -268,7 +268,8 @@ def main() -> int:
             source_progress('prepared-quality-tails', 'complete', resumed=len(quality_resumed), **quality_budget.snapshot())
         stopped = []
         unstarted = None
-        if producer and args.operation == 'prepare' and not args.generation:
+        if producer and ((args.operation == 'prepare' and not args.generation)
+                         or (publication and not args.continuation_evidence)):
             from portal_extended_unstarted_claims import for_source
             from review_portal_extended_handoff import api
             unstarted = for_source(store, os.environ['GITHUB_REPOSITORY'], producer, api)
@@ -319,7 +320,7 @@ def main() -> int:
                 origin = read_origin(store, args.generation)
                 if not origin or any(args.generation not in queue(store, locale) for locale in locales):
                     raise ExpansionError('Publication resume requires a registered original generation and existing checkpoint outcome')
-                result = pending(store, locales, args.corpus, generation=args.generation)
+                result = pending(store, locales, args.corpus, generation=args.generation, unstarted=unstarted)
                 if result is None:
                     result = {'has_work': False, 'generation': args.generation, 'locales_json': '[]',
                               'day': corpus_day, 'continuation': True}

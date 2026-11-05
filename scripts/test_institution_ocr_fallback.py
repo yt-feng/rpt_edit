@@ -96,6 +96,63 @@ class InstitutionOcrTests(unittest.TestCase):
         self.assertFalse((directory / "source_ocr.md").exists())
         self.assertFalse((self.output / wrapper.slug(list(self.bindings)[2])).exists())
 
+    def rejected_source(self):
+        name, binding = next(iter(self.bindings.items()))
+        directory = self.output / wrapper.slug(name)
+        directory.mkdir()
+        (directory / "source_mineru.md").write_text("Premature rejected MinerU marker.")
+        (directory / "mineru_raw").mkdir()
+        (directory / "mineru_raw" / "middle.json").write_text("rejected metadata")
+        (directory / "assets").mkdir()
+        (directory / "assets" / "source_image_01.png").write_bytes(b"rejected image")
+        (directory / "status.json").write_text(json.dumps({"source_pdf": name,
+            "original_pdf_sha256": binding["sha256"], "error": "figure_metadata_invalid",
+            "mineru_figure_failure_category": "figure_metadata_invalid"}))
+        return directory, name, binding
+
+    def test_rejected_metadata_uses_independent_ocr_and_discards_premature_mineru_assets(self):
+        directory, name, binding = self.rejected_source()
+        with self.assertRaisesRegex(ValueError, "existing_source_mismatch"):
+            ocr.existing_source(directory, name, binding)
+        result = self.recover()
+        self.assertEqual((result["ocr_reports"], result["reused_reports"], result["failed_reports"]), (3, 0, 0))
+        self.assertEqual(resolve_extraction_source(directory).method, "ocr")
+        self.assertTrue(ocr.existing_source(directory, name, binding))
+        self.assertEqual({path.name for path in directory.iterdir()},
+                         {"source_ocr.md", "source_ocr_pages.json", "status.json", ocr.RECEIPT})
+
+    def test_failed_ocr_keeps_rejected_source_closed_and_never_exposes_partial_ocr(self):
+        directory, name, binding = self.rejected_source()
+        original_status = (directory / "status.json").read_bytes()
+        def timeout(command, **kwargs):
+            request = json.loads(Path(command[-1]).read_bytes())
+            stage = Path(request["output"])
+            stage.mkdir()
+            (stage / "source_ocr.md").write_text("Incomplete OCR must remain isolated.")
+            raise subprocess.TimeoutExpired(command, kwargs["timeout"])
+        result = self.recover(runner=timeout)
+        self.assertEqual(result["failed_reports"], 3)
+        self.assertEqual((directory / "status.json").read_bytes(), original_status)
+        self.assertFalse(list(self.output.rglob("source_ocr.md")))
+        with self.assertRaisesRegex(ValueError, "existing_source_mismatch"):
+            ocr.existing_source(directory, name, binding)
+
+    def test_metadata_fallback_rejects_changed_binding_integrity_failure_and_mixed_markers(self):
+        directory, name, binding = self.rejected_source()
+        baseline = json.loads((directory / "status.json").read_bytes())
+        for change in ({"source_pdf": "different.pdf"}, {"original_pdf_sha256": "a" * 64},
+                       {"mineru_figure_failure_category": "figure_source_binding_mismatch"}):
+            (directory / "status.json").write_text(json.dumps(dict(baseline, **change)))
+            with self.subTest(change=change), patch.object(ocr.subprocess, "run") as worker:
+                with self.assertRaises(ValueError):
+                    self.recover(runner=worker)
+                worker.assert_not_called()
+        (directory / "status.json").write_text(json.dumps(baseline))
+        (directory / "source_ocr.md").write_text("A stale mixed source must stop recovery.")
+        with patch.object(ocr.subprocess, "run") as worker, self.assertRaises(ValueError):
+            self.recover(runner=worker)
+        worker.assert_not_called()
+
     def test_changed_page_evidence_cannot_keep_the_original_receipt(self):
         self.recover()
         name, binding = next(iter(self.bindings.items()))

@@ -10,6 +10,7 @@ import portal_extended_incremental as incremental
 from portal_extended_continuation import (partition_stopped_locales, pending, queue, register,
     require_active_owner, restore_claimed_checkpoint, save_queue)
 from portal_extended_locales import ExpansionError, stable_bytes
+from portal_extended_r2 import R2TransportError
 import test_portal_extended_continuation as fixtures
 
 OLD = {'run_id':'456', 'attempt':'1', 'sha':'c'*40}
@@ -80,6 +81,92 @@ class UnstartedClaimTests(unittest.TestCase):
 
     def receipts(self):
         return {key:value for key,value in self.store.client.objects.items() if '/unstarted-claim-transfers/' in key}
+
+    def terminal_worker(self, owner=OLD, locale='fr', conclusion='failure'):
+        jobs = skipped_jobs(owner)
+        jobs[0]['conclusion'] = 'success'
+        jobs[1].update(name=f'locale ({locale})', conclusion=conclusion, runner_id=42,
+            steps=[{'name':'Run bounded locale translation and retain timeout state', 'conclusion':'success'},
+                   {'name':'Persist complete or incomplete candidate pages privately', 'conclusion':conclusion}])
+        return jobs
+
+    def test_candidate_tail_failure_recovers_exact_snapshot_with_a_new_bounded_attempt(self):
+        from build_portal_extended_locales import build
+        from test_portal_extended_locales import FakeTranslator
+        before = self.claimed()
+        checkpoint = self.root/'failed-worker-checkpoint.json'
+        with patch.dict(os.environ, environment(OLD)):
+            restore_claimed_checkpoint(self.store, 'fr', self.gen, checkpoint)
+            output = self.root/'failed-worker-candidate'
+            self.assertEqual(build(self.f.corpus, 'fr', output, checkpoint, FakeTranslator())['status'],
+                             'complete-candidate')
+            incremental.remember_checkpoint(self.store, 'fr', self.gen, checkpoint)
+            with patch('portal_extended_continuation.record_result', side_effect=R2TransportError('serviceunavailable')):
+                with self.assertRaises(R2TransportError):
+                    incremental.remember_candidate(self.store, 'fr', self.f.corpus, output)
+        self.assertEqual(queue(self.store, 'fr')[self.gen], before)
+        self.jobs['456'] = self.terminal_worker()
+        scan = self.scan(); self.stage(scan)
+        with patch.dict(os.environ, environment()):
+            self.assertEqual(scan.commit(), 1)
+            self.assertEqual(scan.commit(), 1)
+            restored = restore_claimed_checkpoint(self.store, 'fr', self.gen, self.root/'recovered-checkpoint.json')
+        self.assertEqual(restored['sha256'], before['snapshot']['checkpoint_sha256'])
+        after = queue(self.store, 'fr')[self.gen]
+        self.assertEqual(after, {**before, 'owner':NEW, 'continuations':2})
+        receipt = json.loads(next(iter(self.receipts().values()))['body'])
+        self.assertEqual(receipt['policy'], recovery.TERMINAL_POLICY)
+        self.assertEqual(receipt['evidence']['terminal_locale_job_id'], 4562)
+
+    def test_terminal_worker_requires_exact_failed_locale_and_completed_owner(self):
+        before = self.claimed()
+        for changed in ({'name':'locale (pt)'}, {'conclusion':'success'}, {'conclusion':'skipped'},
+                        {'status':'in_progress'}, {'runner_id':None}, {'steps':[]}):
+            with self.subTest(changed=changed):
+                self.jobs['456'] = self.terminal_worker()
+                self.jobs['456'][1].update(changed)
+                self.assertEqual(partition_stopped_locales(self.store, ('fr',), unstarted=self.scan())[0], ())
+                self.assertEqual(queue(self.store, 'fr')[self.gen], before)
+        self.jobs['456'] = self.terminal_worker()
+        self.runs['456']['status'] = 'in_progress'
+        self.assertEqual(partition_stopped_locales(self.store, ('fr',), unstarted=self.scan())[0], ())
+        self.assertEqual(self.receipts(), {})
+
+    def test_terminal_worker_recovery_never_resets_or_exceeds_continuation_bound(self):
+        self.claimed(count=3)
+        self.jobs['456'] = self.terminal_worker()
+        before = copy.deepcopy(self.store.client.objects)
+        stopped = partition_stopped_locales(self.store, ('fr',), unstarted=self.scan())[1]
+        self.assertEqual(stopped[0]['recovery_code'], 'terminal_worker_continuation_bound_reached')
+        self.assertEqual(self.store.client.objects, before)
+
+    def test_exact_publication_resume_recovers_only_registered_generation_without_collection(self):
+        before = self.claimed()
+        self.jobs['456'] = self.terminal_worker()
+        output = self.root/'explicit-source.json'
+        args = ['test', 'prepare-publication', '--generation', self.gen, '--locales', 'fr',
+                '--corpus', str(output)]
+        with patch.dict(os.environ, environment()), patch('sys.argv', args), \
+             patch.object(incremental.R2Store, 'from_env', return_value=self.store), \
+             patch.object(incremental, 'today', return_value='2026-11-05'), \
+             patch('review_portal_extended_handoff.api', side_effect=self.api), \
+             patch.object(incremental, 'include_english_matrix', side_effect=AssertionError('No English planning')), \
+             patch.object(incremental.requests, 'Session', side_effect=AssertionError('No new collection')):
+            self.assertEqual(incremental.main(), 0)
+        self.assertEqual(output.read_bytes(), stable_bytes(self.f.corpus))
+        self.assertEqual(queue(self.store, 'fr')[self.gen], {**before, 'owner':NEW, 'continuations':2})
+
+    def test_cancelled_and_timed_out_workers_charge_one_attempt_and_recheck_evidence(self):
+        self.claimed()
+        for conclusion in ('cancelled', 'timed_out'):
+            with self.subTest(conclusion=conclusion):
+                self.jobs['456'] = self.terminal_worker(conclusion=conclusion)
+                scan = self.scan(); self.stage(scan)
+                self.jobs['456'][1]['conclusion'] = 'success'
+                state = copy.deepcopy(self.store.client.objects)
+                with patch.dict(os.environ, environment()), self.assertRaises(ExpansionError):
+                    scan.commit()
+                self.assertEqual(self.store.client.objects, state)
 
     def test_claimed_transfer_keeps_snapshot_counter_origin_and_exact_checkpoint(self):
         before = self.claimed()

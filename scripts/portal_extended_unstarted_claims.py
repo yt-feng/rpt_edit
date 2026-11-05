@@ -1,8 +1,9 @@
-"""Transfer only unused source-job claims; retain original source and CPU bounds.
+"""Recover unused source claims and exact terminal workers within CPU bounds.
 
 Used by the ordinary source job under the existing pipeline concurrency group.
 Inspection is read-only. Transfers commit after all source preparation, before
-matrix outputs are exposed, and preserve status, snapshot and continuation count.
+matrix outputs are exposed. Snapshots stay immutable; failed workers consume a
+new continuation while claims whose workers never started keep their allocation.
 """
 from __future__ import annotations
 
@@ -19,6 +20,7 @@ from portal_extended_r2 import R2NotFound
 
 WORKFLOW = '.github/workflows/portal-extended-locales-r2.yml'
 POLICY = 'unstarted-source-claim-transfer-v1'
+TERMINAL_POLICY = 'terminal-locale-claim-transfer-v1'
 MAX_OWNER_RUNS = 8
 MAX_ORIGIN_LOOKUPS = 8
 MAX_API_READS = 64
@@ -76,7 +78,7 @@ def all_jobs(api, path, owner):
     return jobs
 
 
-def unused_owner(api, owner, repository):
+def unused_owner(api, owner, repository, *, locale=None):
     """Latest and exact attempts must agree before and after the full job read."""
     owner = producer_identity(owner)
     latest = f'repos/{repository}/actions/runs/{owner["run_id"]}'
@@ -86,19 +88,44 @@ def unused_owner(api, owner, repository):
     require(before == exact and exact['conclusion'] in {'failure','cancelled','timed_out'}, 'owner_outcome_unproved')
     jobs = all_jobs(api, path, owner)
     sources = [job for job in jobs if job.get('name') == 'source']
-    require(len(sources) == 1 and sources[0].get('conclusion') in {'failure','cancelled','timed_out'},
-            'owner_source_not_failed')
+    require(len(sources) == 1, 'owner_source_not_unique')
     # A skipped, unexpanded matrix has a populated started_at on GitHub. Only
     # skipped + no runner + no steps is accepted, never timestamps alone.
     workers = [job for job in jobs if str(job.get('name', '')).startswith('locale (')]
     require(bool(workers), 'owner_locale_inventory_missing')
-    require(all(job.get('conclusion') == 'skipped' and job.get('runner_id') is None
-        and job.get('runner_name') is None and job.get('steps') == []
-        for job in jobs if job is not sources[0]), 'owner_worker_may_have_started')
+    if sources[0].get('conclusion') == 'success' and locale is not None:
+        # A persistence failure may leave a consumed claim with no result.
+        # Only that exact terminal worker can be replayed; successful siblings
+        # and unproved/missing workers never authorize another model attempt.
+        matching = [job for job in workers if job.get('name') == f'locale ({locale})']
+        require(len(matching) == 1, 'owner_terminal_locale_not_unique')
+        worker = matching[0]
+        require(worker.get('conclusion') in {'failure','cancelled','timed_out'}
+            and type(worker.get('runner_id')) is int and worker['runner_id'] > 0
+            and isinstance(worker.get('steps'), list) and bool(worker['steps']),
+            'owner_terminal_locale_unproved')
+        evidence = {'locale':locale, 'terminal_locale_job_id':worker['id']}
+    else:
+        require(sources[0].get('conclusion') in {'failure','cancelled','timed_out'},
+                'owner_source_not_failed')
+        require(all(job.get('conclusion') == 'skipped' and job.get('runner_id') is None
+            and job.get('runner_name') is None and job.get('steps') == []
+            for job in jobs if job is not sources[0]), 'owner_worker_may_have_started')
+        evidence = {'skipped_job_ids':sorted(job['id'] for job in jobs if job is not sources[0])}
     after = run_identity(api(latest), owner, repository)
     require(after == before, 'owner_attempt_changed')
-    return {'owner':owner, 'run':exact, 'source_job_id':sources[0]['id'],
-            'skipped_job_ids':sorted(job['id'] for job in jobs if job is not sources[0])}
+    return {'owner':owner, 'run':exact, 'source_job_id':sources[0]['id'], **evidence}
+
+
+def transferred_row(before, owner, proof):
+    after = {**before, 'owner':owner}
+    if 'terminal_locale_job_id' in proof:
+        require(before['status'] == 'claimed' and before['continuations'] < MAX_CONTINUATIONS,
+                'terminal_worker_continuation_bound_reached')
+        # A failed worker consumed its allocation. Charge a new bounded attempt
+        # while retaining the last proved immutable checkpoint and page set.
+        after['continuations'] += 1
+    return after
 
 
 class UnstartedClaims:
@@ -106,6 +133,7 @@ class UnstartedClaims:
         self.store, self.repository, self.owner, self.api = store, repository, producer_identity(owner), api
         self.lock = threading.Lock()
         self.owners, self.origins, self.proofs, self.reasons, self.transfers = {}, {}, {}, {}, {}
+        self.terminal_workers = {}
         self.interrupted = {}
         self.api_reads, self.api_seconds, self.clock = 0, 0, time.monotonic
 
@@ -171,7 +199,19 @@ class UnstartedClaims:
                     except Exception:
                         self.owners[owner_key] = 'owner_api_unavailable'
                 proof = self.owners[owner_key]
+                if proof == 'owner_source_not_failed' and row['status'] == 'claimed':
+                    worker_key = (owner_key, locale)
+                    if worker_key not in self.terminal_workers:
+                        try:
+                            self.terminal_workers[worker_key] = unused_owner(self.read, owner,
+                                self.repository, locale=locale)
+                        except UnprovedClaim as error:
+                            self.terminal_workers[worker_key] = str(error)
+                        except Exception:
+                            self.terminal_workers[worker_key] = 'owner_api_unavailable'
+                    proof = self.terminal_workers[worker_key]
                 require(isinstance(proof, dict), proof if isinstance(proof, str) else 'owner_run_unproved')
+                transferred_row(row, self.owner, proof)
                 self.proofs[key] = {'before':copy.deepcopy(row), 'origin_sha256':digest(stable_bytes(origin)),
                                     'proof':proof}
                 return True
@@ -195,7 +235,7 @@ class UnstartedClaims:
         # Verify every selected row and every owner before the first write.
         for (locale, generation), saved in self.transfers.items():
             before = saved['before']
-            after = {**before, 'owner':self.owner}
+            after = transferred_row(before, self.owner, saved['proof'])
             origin = read_origin(self.store, generation)
             require(origin is not None and digest(stable_bytes(origin)) == saved['origin_sha256'], 'transfer_origin_changed')
             origin_id = saved['origin_sha256']
@@ -206,11 +246,13 @@ class UnstartedClaims:
                 interrupted[origin_id] = (origin, proof)
             if before['status'] == 'claimed':
                 validate_snapshot(self.store, locale, generation, before)
-            owner_key = digest(stable_bytes(before['owner']))
+            proof_locale = locale if 'terminal_locale_job_id' in saved['proof'] else None
+            owner_key = digest(stable_bytes([before['owner'], proof_locale]))
             if owner_key not in refreshed:
-                refreshed[owner_key] = unused_owner(self.read, before['owner'], self.repository)
+                refreshed[owner_key] = unused_owner(self.read, before['owner'], self.repository, locale=proof_locale)
             require(refreshed[owner_key] == saved['proof'], 'transfer_owner_evidence_changed')
-            receipt = {'schema_version':1, 'policy':POLICY, 'repository':self.repository,
+            policy = TERMINAL_POLICY if 'terminal_locale_job_id' in saved['proof'] else POLICY
+            receipt = {'schema_version':1, 'policy':policy, 'repository':self.repository,
                 'locale':locale, 'generation':generation, 'origin_sha256':saved['origin_sha256'],
                 'before':before, 'after':after, 'evidence':saved['proof'], 'paid_provider_requests':0}
             if origin_id in interrupted:

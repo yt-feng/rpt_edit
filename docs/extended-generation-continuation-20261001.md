@@ -27,7 +27,7 @@ The locale job restores the claimed immutable checkpoint SHA, not a mutable
 A locale may continue at most three times, each within the existing 14,400-second
 budget. Each result must retain prior resolved unit identities and complete-page
 coverage and must add resolved units or complete pages unless it finishes.
-No progress, an unknown/interrupted outcome, a non-budget failure, corrupt proof,
+No progress, an unproved interrupted outcome, a non-budget failure, corrupt proof,
 or exhausted continuation count stops with a diagnostic. Exit 75 remains a
 failed/incomplete job, never a successful candidate. Retrying only a locale job
 without a new source-job claim stops before model setup. Started and claimed
@@ -80,6 +80,46 @@ diagnostic job is not a dependency of their protected handoff. Corrupt source,
 checkpoint, candidate or lifecycle schema still fails the source job. The
 progress-based daily followup retains the complete requested-locale frontier,
 including diagnosed locales, so neither progress nor completion is fabricated.
+
+## Terminal worker persistence failures
+
+An R2 failure after translation can leave an exact `claimed` row even when the
+worker has already stopped. Source selection now independently verifies the
+owner's completed run, exact attempt/commit, full job inventory, successful
+`source` job and the single matching locale job's failed, cancelled or timed-out
+outcome. Active, successful, missing, duplicate or identity-mismatched workers
+remain blocked. A started source claim whose workers never ran retains the
+existing stricter unused-worker proof.
+
+The replacement starts from the last validated immutable snapshot, with its
+original corpus and complete-page set. It does not infer completion from a log
+or use a newer mutable checkpoint pointer. A consumed failed worker charges one
+additional continuation, capped at the existing three; an unused source claim
+retains its count. The exact terminal-worker evidence and before/after rows are
+retained under policy `terminal-locale-claim-transfer-v1`. Evidence and current
+state are checked again immediately before writing, and interrupted writes are
+idempotent.
+
+For the Khmer cursor diagnosed on 2026-11-05, owner run `40564835920`, attempt
+`1`, commit `9b20afb390442b6a2c9f0c4fb7ea8812d8ad5deb`, locale job
+`122410582686` failed persisting the candidate on an R2 `ServiceUnavailable`.
+Its prior registered snapshot has 22 of 24 pages and checkpoint
+`cfb935f1ccc999a9eff5d9449ab031f121dcd28c2bff14a2d01ccbee39118416`.
+After the fix is on main, an exact recovery request is:
+
+```sh
+gh workflow run portal-extended-locales-r2.yml --ref main \
+  -f operation=publication-resume -f locales=km \
+  -f source_generation=cef9c8af1f949b88ffac544c96173c75758078aaf5387869f48fb7d39732d3b0 \
+  -f seconds=1800
+```
+
+Leave `continuation_evidence` empty because the source is already registered.
+This path plans only the exact stored generation, without collecting today's
+source or adding English work. It uses the existing global concurrency group
+with `cancel-in-progress=false`, so an active healthy matrix finishes first.
+Do not cancel that matrix to start recovery. The request is not completion or
+publication evidence; verify its resulting candidate, handoff and release jobs.
 
 ## Existing generation from before queue registration
 
