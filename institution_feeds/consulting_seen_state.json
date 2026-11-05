@@ -1,34 +1,6 @@
 {
   "version": 1,
   "items": {
-    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/about%20us/social%20responsibility/2025%20esg%20report/2025%20sustainable%20and%20inclusive%20growth%20report.pdf": {
-      "first_seen": "2026-07-07",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2024/overcoming-retail-complexity-with-ai-powered-pricing": {
-      "first_seen": "2026-07-07",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2020/infographic-creating-integrated-supply-chain-in-retail-grocery": {
-      "first_seen": "2026-07-07",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/race-to-automate-the-last-mile-of-grocery-deliveries": {
-      "first_seen": "2026-07-07",
-      "status": "no_pdf"
-    },
-    "bcg:https://www.bcg.com/publications/2013/retail-growth-omnichannel-alchemy-online-grocery-sales": {
-      "first_seen": "2026-07-07",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2020/private-brand-imperative-grocers": {
-      "first_seen": "2026-07-07",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2020/importance-of-offer-simplification-for-grocers": {
-      "first_seen": "2026-07-07",
-      "status": "downloaded"
-    },
     "mckinsey:https://www.mckinsey.com/~/media/mckinsey/industries/financial%20services/our%20insights/global%20banking%20annual%20review/global-banking-annual-review-2026-precision-with-speed-may-2026.pdf": {
       "first_seen": "2026-07-08",
       "status": "downloaded"
@@ -1680,6 +1652,14 @@
     "bcg:https://www.bcg.com/publications/2026/ai-war-gaming-stress-test-strategy": {
       "first_seen": "2026-11-04",
       "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/collections/thinking-new-boxes": {
+      "first_seen": "2026-11-05",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/trust-matters-year-end-sales-events": {
+      "first_seen": "2026-11-05",
+      "status": "downloaded"
     }
   }
 }
