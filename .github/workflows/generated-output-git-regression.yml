@@ -1,0 +1,74 @@
+name: Generated output Git regression
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/generated-output-git-regression.yml'
+      - 'scripts/commit_output_dir.sh'
+      - 'scripts/test_commit_output_dir.sh'
+      - 'scripts/test_commit_output_dir.py'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/generated-output-git-regression.yml'
+      - 'scripts/commit_output_dir.sh'
+      - 'scripts/test_commit_output_dir.sh'
+      - 'scripts/test_commit_output_dir.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  regression:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: git --version
+      - name: Check PDF opt-in and file size guards in temporary repositories
+        run: bash scripts/test_commit_output_dir.sh
+      - name: Inject concurrent Git writes and uncertain push acknowledgements
+        run: python3 -B scripts/test_commit_output_dir.py -v
+
+  legacy_git:
+    runs-on: ubuntu-22.04
+    container: ubuntu:22.04
+    timeout-minutes: 10
+    steps:
+      - name: Install legacy Git and Python inside this disposable test container
+        run: |
+          apt-get update -q
+          apt-get install -y --no-install-recommends git python3 ca-certificates
+          git --version | grep -E '^git version 2\.34\.'
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - run: bash scripts/test_commit_output_dir.sh
+      - run: python3 -B scripts/test_commit_output_dir.py -v
+
+  deployed_runner_compatibility:
+    needs: [regression, legacy_git]
+    if: >-
+      ${{ github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' &&
+          github.event.repository.private == false }}
+    runs-on: [self-hosted, wechat-draft]
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: git --version
+      - run: bash scripts/test_commit_output_dir.sh
+      - run: python3 -B scripts/test_commit_output_dir.py -v
