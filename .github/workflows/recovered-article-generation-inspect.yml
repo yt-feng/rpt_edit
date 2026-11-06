@@ -1,5 +1,5 @@
 name: Inspect exact recovered article generation failure
-run-name: Read-only article diagnostics for retained Daily 37695511597
+run-name: Read-only article diagnostics for retained Daily ${{ inputs.daily_run_id || '37695511597' }}
 on:
   pull_request:
     paths:
@@ -8,6 +8,11 @@ on:
       - scripts/test_inspect_recovered_article_generation.py
   workflow_dispatch:
     inputs:
+      daily_run_id:
+        description: Exact Daily pre-generation incident (42125786260; empty for legacy)
+        required: false
+        type: string
+        default: ''
       generation_run_id:
         description: Completed failed standalone recovery run to authenticate (empty for original)
         required: false
@@ -46,6 +51,7 @@ jobs:
       - run: python -m pip install --retries 0 --disable-pip-version-check requests Pillow PyMuPDF 'boto3>=1.37.32,<2'
       - name: Read exact retained generation checkpoint without mutations
         env:
+          DAILY_RUN_ID: ${{ inputs.daily_run_id }}
           GENERATION_RUN_ID: ${{ inputs.generation_run_id }}
           GH_TOKEN: ${{ github.token }}
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
@@ -54,6 +60,7 @@ jobs:
           R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
         run: |
           python -B scripts/inspect_recovered_article_generation.py \
+            --daily-run-id "$DAILY_RUN_ID" \
             --generation-run-id "$GENERATION_RUN_ID" \
             --output "$RUNNER_TEMP/recovered-article-generation-inspection.json"
       - name: Preserve content-free typed diagnosis

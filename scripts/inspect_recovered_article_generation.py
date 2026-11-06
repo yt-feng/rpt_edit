@@ -24,6 +24,12 @@ DATE_FOLDER = '261007'
 EXPECTED_REPORTS = 44
 MANIFEST_SHA256 = 'd16c57d614166f46f244b4a9ae65ffecce774be8cb1a52f52cdf968574e4a961'
 KEY = f'_private-workflow-handoff/xhs-recovery/{SOURCE_RUN_ID}/{DATE_FOLDER}/{MANIFEST_SHA256}/generation.tar.gz'
+# Pin the newly observed Daily incident independently of the legacy title case.
+DAILY_INCIDENT = {
+    'run_id': '42125786260', 'job_id': 127630232968, 'date_folder': '261105',
+    'expected_articles': 68, 'sha': 'c6cea6b6b890d2f2ac8a41487f3c85421d342d44',
+    'manifest_sha256': '0be6253b51e03cc20501e4267b8e3109668cf1b53e032531f831c7d24d10dc4e',
+}
 MAX_LOG_BYTES = 2 * 1024 * 1024
 MAX_JSON_BYTES = 16 * 1024 * 1024
 CATEGORIES = {'article_generation_failed', 'article_source_validation_failed', 'generated_article_unbound',
@@ -512,14 +518,83 @@ def inspect(client, bucket, original, handoff, jobs, repository, workspace, *, r
             'checkpoint_observation_only':True, 'archive_sha256':head['Metadata']['sha256'],'archive_size_bytes':head['ContentLength']}
 
 
+
+def inspect_daily(client, bucket, run, jobs, repository, workspace):
+    """Observe the exact failed Daily checkpoint without certifying reusable output."""
+    from market_views_source_readiness import require_source_readiness
+    case = DAILY_INCIDENT
+    sha = validate_ocr_producer(run, {'source_run_id': case['run_id']}, repository)
+    require(sha == case['sha'] and run.get('conclusion') == 'failure', 'inspection_generation_job_invalid')
+    require_source_readiness(run, jobs, source_kind='ocr-synthesis')
+    matches = [row for row in jobs['jobs'] if row.get('id') == case['job_id']]
+    require(len(matches) == 1, 'inspection_generation_job_missing')
+    job = matches[0]
+    require(job.get('run_id') == int(case['run_id']) and job.get('head_sha') == sha
+            and job.get('name') == 'deliver-recovered-report-articles / generate'
+            and job.get('status') == 'completed' and job.get('conclusion') == 'failure',
+            'inspection_generation_job_invalid')
+    checked = []
+    for name, outcome in (
+        ('Authenticate original upload and restore exact recovery sources', 'success'),
+        ('Generate only missing bound report articles', 'failure'),
+        ('Save generation progress even after interruption', 'success'),
+    ):
+        rows = [row for row in job.get('steps', []) if row.get('name') == name]
+        require(len(rows) == 1 and rows[0].get('status') == 'completed'
+                and rows[0].get('conclusion') == outcome and type(rows[0].get('number')) is int,
+                'inspection_generation_gate_invalid')
+        checked.append(rows[0]['number'])
+    require(checked == sorted(set(checked)) and all(n > 0 for n in checked), 'inspection_generation_gate_order_invalid')
+    key = (f"_private-workflow-handoff/xhs-recovery/{case['run_id']}/{case['date_folder']}/"
+           f"{case['manifest_sha256']}/generation.tar.gz")
+    head = exact_head(client, bucket, key)
+    root = workspace/'checkpoint'
+    download_directory(key, root, client=ReadOnlyClient(client, head), bucket=bucket)
+    context = decode(read(root/'context.json', MAX_JSON_BYTES))
+    expected = {'schema_version': 1, 'source_run_id': case['run_id'], 'source_handoff_run_id': case['run_id'],
+        'source_kind': 'ocr-synthesis', 'date_folder': case['date_folder'], 'expected_articles': case['expected_articles'],
+        'source_execution_sha': sha, 'handoff_execution_sha': sha, 'manifest_sha256': case['manifest_sha256']}
+    require(isinstance(context, dict) and set(context) == set(expected) | {'source_receipt_sha256'}
+            and all(context.get(key) == value for key, value in expected.items())
+            and type(context['schema_version']) is int and type(context['expected_articles']) is int
+            and isinstance(context['source_receipt_sha256'], str)
+            and re.fullmatch(r'[a-f0-9]{64}', context['source_receipt_sha256']), 'inspection_context_mismatch')
+    log = read(root/'private-diagnostics/private-generation.log', MAX_LOG_BYTES)
+    article_root = root/'articles'
+    require(article_root.is_dir() and not article_root.is_symlink(), 'inspection_articles_missing')
+    return {'schema_version': 1, 'diagnostics_only': True, 'checkpoint_observation_only': True,
+        'generation_run_id': case['run_id'], 'generation_job_id': case['job_id'],
+        'expected_articles': case['expected_articles'], 'date_folder': case['date_folder'],
+        'source_provenance_present': (article_root/'source_provenance.json').is_file(),
+        'observed_article_directory_count': sum(path.is_dir() for path in article_root.iterdir()),
+        'complete_article_receipt_present': (article_root/'article_recovery_receipt.json').is_file(),
+        'private_log_sha256': digest(log), 'archive_sha256': head['Metadata']['sha256'],
+        'archive_size_bytes': head['ContentLength'],
+        'provider_outcome_resolved': False, 'inspection_provider_posts': 0, 'object_writes': 0, 'object_deletions': 0,
+        **diagnostic(log.decode('utf-8', errors='replace'), {})}
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--generation-run-id',default='')
+    parser.add_argument('--daily-run-id', default='')
     parser.add_argument('--output',type=Path,required=True)
     args = parser.parse_args(argv)
     try:
         repository = runtime_identity(os.environ)
         from recovered_article_delivery import api, jobs
+        if args.daily_run_id:
+            require(args.daily_run_id == DAILY_INCIDENT['run_id'] and not args.generation_run_id,
+                    'inspection_recovery_run_invalid')
+            with tempfile.TemporaryDirectory(prefix='daily-generation-inspection-') as temp:
+                with (Path(temp)/'private-inspection.log').open('w') as private, redirect_stdout(private), redirect_stderr(private):
+                    result = inspect_daily(build_client(), require_env('R2_BUCKET'),
+                        api(repository, args.daily_run_id), jobs(repository, args.daily_run_id), repository, Path(temp))
+            args.output.parent.mkdir(parents=True, exist_ok=True)
+            result = {'success': True, **result}
+            args.output.write_text(json.dumps(result, sort_keys=True, indent=2)+'\n')
+            print(json.dumps(result, sort_keys=True))
+            return 0
         original, handoff = api(repository,SOURCE_RUN_ID), api(repository,HANDOFF_RUN_ID)
         job_page = jobs(repository,HANDOFF_RUN_ID)
         require(not args.generation_run_id or re.fullmatch(r'[1-9][0-9]{5,19}',args.generation_run_id),
