@@ -413,7 +413,7 @@ class DiagnosticTests(unittest.TestCase):
         import yaml
         path=Path(__file__).resolve().parents[1]/inspector.WORKFLOW
         value=yaml.safe_load(path.read_text());on=value.get('on',value.get(True))
-        self.assertEqual(set(on['workflow_dispatch']['inputs']),{'generation_run_id'})
+        self.assertEqual(set(on['workflow_dispatch']['inputs']),{'generation_run_id', 'daily_run_id'})
         self.assertEqual(value['permissions'],{'contents':'read','actions':'read'})
         text=path.read_text()
         for forbidden in ('DEEPSEEK','MINER_U','prepare --workspace','save-generation','upload-wechat','delete-prefix'):
@@ -424,6 +424,80 @@ class DiagnosticTests(unittest.TestCase):
              'GITHUB_REPOSITORY':'owner/repo','GITHUB_WORKFLOW_REF':f'owner/repo/{inspector.WORKFLOW}@refs/heads/main'}
         self.assertEqual(inspector.runtime_identity(env),'owner/repo')
         with self.assertRaises(ValueError):inspector.runtime_identity({**env,'GITHUB_EVENT_NAME':'pull_request'})
+
+
+
+class DailyInspectionTests(unittest.TestCase):
+    def setUp(self):
+        import tempfile
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        case = inspector.DAILY_INCIDENT
+        self.run = {'id': int(case['run_id']), 'path': '.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml',
+            'head_branch': 'main', 'head_sha': case['sha'], 'event': 'schedule', 'status': 'completed',
+            'conclusion': 'failure', 'repository': {'full_name': 'owner/repo'},
+            'head_repository': {'full_name': 'owner/repo'}}
+        name, gates = SOURCE_KIND_GATES[(self.run['path'], 'ocr-synthesis')]
+        step = lambda number, name, conclusion: dict(number=number, name=name, status='completed', conclusion=conclusion)
+        self.jobs = {'total_count': 2, 'jobs': [
+            dict(id=123456, run_id=self.run['id'], head_sha=case['sha'], name=name,
+                 status='completed', conclusion='success', steps=[step(n, name, 'success') for n, name in enumerate(gates, 1)]),
+            dict(id=case['job_id'], run_id=self.run['id'], head_sha=case['sha'], name='deliver-recovered-report-articles / generate',
+                 status='completed', conclusion='failure', steps=[
+                     step(6, 'Authenticate original upload and restore exact recovery sources', 'success'),
+                     step(7, 'Generate only missing bound report articles', 'failure'),
+                     step(8, 'Save generation progress even after interruption', 'success')])
+        ]}
+        self.context = {'schema_version': 1, 'source_run_id': case['run_id'], 'source_handoff_run_id': case['run_id'],
+            'source_kind': 'ocr-synthesis', 'date_folder': case['date_folder'], 'expected_articles': case['expected_articles'],
+            'source_execution_sha': case['sha'], 'handoff_execution_sha': case['sha'],
+            'manifest_sha256': case['manifest_sha256'], 'source_receipt_sha256': 'a'*64}
+        self.downloads = []
+
+    def download(self, key, destination, *, client, bucket):
+        self.assertIsInstance(client, inspector.ReadOnlyClient)
+        self.assertFalse(hasattr(client, 'put_object'))
+        self.assertFalse(hasattr(client, 'delete_object'))
+        self.downloads.append(key)
+        (destination/'articles').mkdir(parents=True)
+        (destination/'context.json').write_text(json.dumps(self.context))
+        private = destination/'private-diagnostics'; private.mkdir()
+        (private/'private-generation.log').write_text(
+            'Traceback (most recent call last):\n'
+            '  File "/PRIVATE/scripts/recover_report_articles.py", line 1, in generation_contract\n'
+            'FileNotFoundError: PRIVATE credential=SECRET source-text\n'
+            'Report article recovery stopped: article_source_validation_failed\n')
+
+    def inspect(self):
+        with patch.object(inspector, 'exact_head', return_value={'Metadata': {'sha256': 'b'*64}, 'ContentLength': 400}), \
+             patch.object(inspector, 'download_directory', side_effect=self.download):
+            return inspector.inspect_daily(object(), 'private', self.run, self.jobs, 'owner/repo', self.root)
+
+    def test_exact_empty_checkpoint_returns_content_free_failure_without_writes(self):
+        result = self.inspect()
+        self.assertEqual(result['observed_article_directory_count'], 0)
+        self.assertFalse(result['source_provenance_present'])
+        self.assertFalse(result['provider_outcome_resolved'])
+        self.assertEqual(result['typed_causes'], ['generation_file_missing'])
+        self.assertEqual(result['object_writes'], 0)
+        self.assertEqual(result['inspection_provider_posts'], 0)
+        self.assertEqual(len(self.downloads), 1)
+        self.assertIn(inspector.DAILY_INCIDENT['manifest_sha256'], self.downloads[0])
+        self.assertNotIn('PRIVATE', json.dumps(result))
+        self.assertNotIn('SECRET', json.dumps(result))
+
+    def test_wrong_identity_or_unsaved_failure_is_rejected_before_download(self):
+        for target, name, value in ((self.run, 'head_sha', 'b'*40),
+                                    (self.jobs['jobs'][1]['steps'][2], 'conclusion', 'failure')):
+            original = target[name]; target[name] = value
+            with self.assertRaises(Exception): self.inspect()
+            self.assertEqual(self.downloads, [])
+            target[name] = original
+
+    def test_wrong_manifest_context_is_rejected(self):
+        self.context['manifest_sha256'] = 'c'*64
+        with self.assertRaises(inspector.InspectionError): self.inspect()
 
 
 if __name__=='__main__':unittest.main()
