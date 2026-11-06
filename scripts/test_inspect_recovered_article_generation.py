@@ -495,6 +495,21 @@ class DailyInspectionTests(unittest.TestCase):
             self.assertEqual(self.downloads, [])
             target[name] = original
 
+    def test_empty_articles_directory_omitted_by_archive_is_valid_observation(self):
+        original=self.download
+        def without_empty_directory(*args,**kwargs):
+            original(*args,**kwargs)
+            (self.root/'checkpoint/articles').rmdir()
+            (self.root/'checkpoint/private-diagnostics/private-generation.log').write_text(
+                'ArticleRecoveryError: ocr_article_sources_incomplete\n'
+                'Report article recovery stopped: ocr_article_sources_incomplete\n')
+        self.download=without_empty_directory
+        result=self.inspect()
+        self.assertEqual(result['terminal_category'],'ocr_article_sources_incomplete')
+        self.assertEqual(result['typed_causes'],['source_batch_incomplete'])
+        self.assertEqual(result['phase'],'source_validation')
+        self.assertEqual(result['observed_article_directory_count'],0)
+
     def test_wrong_manifest_context_is_rejected(self):
         self.context['manifest_sha256'] = 'c'*64
         with self.assertRaises(inspector.InspectionError): self.inspect()

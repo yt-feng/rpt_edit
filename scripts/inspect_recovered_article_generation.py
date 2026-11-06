@@ -49,7 +49,7 @@ SAFE_SITES = {
     ('recover_report_articles.py', 'validate_articles'),
 }
 
-CATEGORIES |= {'unresolved_legacy_generation', 'article_progress_pending',
+CATEGORIES |= {'ocr_article_sources_incomplete', 'unresolved_legacy_generation', 'article_progress_pending',
     'article_progress_request_pending', 'article_progress_title_budget',
     'article_progress_identity_mismatch', 'article_progress_intent_persistence_failed',
     'article_progress_result_persistence_failed', 'article_progress_response_changed',
@@ -308,12 +308,13 @@ def diagnostic(log, status):
     if repair_error: causes.add('title_repair_failed')
     if 'FileNotFoundError' in types: causes.add('generation_file_missing')
     if category == 'generated_article_unbound': causes.add('editorial_binding_missing')
+    if category == 'ocr_article_sources_incomplete': causes.add('source_batch_incomplete')
     if category.startswith('checkpoint_'): causes.add('checkpoint_binding_failed')
     if 'DeepSeek generation failed for WeChat article:' in evidence: phase = 'body_generation'
     elif repair_error or 'title_quality_rejected' in causes: phase = 'title_generation'
     elif 'editorial_guard_failed' in causes: phase = 'editorial_guard'
     elif category == 'generated_article_unbound': phase = 'editorial_binding'
-    elif category == 'article_source_validation_failed' or category.startswith('checkpoint_'): phase = 'source_validation'
+    elif category in {'article_source_validation_failed', 'ocr_article_sources_incomplete'} or category.startswith('checkpoint_'): phase = 'source_validation'
     elif ('recover_report_articles.py', 'generation_contract') in sites: phase = 'generation_contract'
     else: phase = 'unknown'
     return {'terminal_category': category, 'failed_source_ordinal': ordinal, 'phase': phase,
@@ -561,12 +562,13 @@ def inspect_daily(client, bucket, run, jobs, repository, workspace):
             and re.fullmatch(r'[a-f0-9]{64}', context['source_receipt_sha256']), 'inspection_context_mismatch')
     log = read(root/'private-diagnostics/private-generation.log', MAX_LOG_BYTES)
     article_root = root/'articles'
-    require(article_root.is_dir() and not article_root.is_symlink(), 'inspection_articles_missing')
+    require(not article_root.is_symlink() and (not article_root.exists() or article_root.is_dir()),
+            'inspection_articles_missing')
     return {'schema_version': 1, 'diagnostics_only': True, 'checkpoint_observation_only': True,
         'generation_run_id': case['run_id'], 'generation_job_id': case['job_id'],
         'expected_articles': case['expected_articles'], 'date_folder': case['date_folder'],
         'source_provenance_present': (article_root/'source_provenance.json').is_file(),
-        'observed_article_directory_count': sum(path.is_dir() for path in article_root.iterdir()),
+        'observed_article_directory_count': sum(path.is_dir() for path in article_root.iterdir()) if article_root.exists() else 0,
         'complete_article_receipt_present': (article_root/'article_recovery_receipt.json').is_file(),
         'private_log_sha256': digest(log), 'archive_sha256': head['Metadata']['sha256'],
         'archive_size_bytes': head['ContentLength'],

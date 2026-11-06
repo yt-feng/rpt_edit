@@ -961,7 +961,16 @@ jobs:
           OCR_OUTCOME: ${{ steps.ocr-synthesis.outcome }}
           MINERU_SAVE_OUTCOME: ${{ steps.mineru-save.outcome }}
           OCR_SAVE_OUTCOME: ${{ steps.ocr-save.outcome }}
-        run: python -B scripts/recover_daily_ocr_page_sources.py outcomes
+          DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}
+          EXPECTED_REPORTS: ${{ needs.select-macro-reports.outputs.selected_count }}
+        run: python -B scripts/recover_daily_ocr_page_sources.py outcomes --synthesis-dir "_market_ocr_synthesis/$DATE_FOLDER"
+      - name: Confirm partial OCR synthesis requires original pages
+        if: ${{ steps.recovery-status.outputs.ocr_article_source_incomplete == 'true' }}
+        env:
+          ARTICLE_SOURCE_READY: ${{ steps.recovery-status.outputs.article_source_ready }}
+        run: |
+          test "$ARTICLE_SOURCE_READY" = false
+          echo "Partial synthesis remains eligible for Market Views; articles require all original pages."
       - name: Select the verified source edition
         id: source-kind
         env:
@@ -991,7 +1000,7 @@ jobs:
           retention-days: 30
 
   recover-ocr-page-sources:
-    # Complete page text can feed articles while Market Views synthesis remains
+    # Complete page text can feed articles when synthesis is partial or remains
     # failed/pending. This never submits OCR, MinerU or synthesis requests.
     needs: [resolve-inputs, select-macro-reports, source-outcome, recover-market-sources]
     if: >-
@@ -999,7 +1008,7 @@ jobs:
           needs.source-outcome.result == 'success' && needs.source-outcome.outputs.primary_ready == 'false' &&
           needs.resolve-inputs.outputs.replay_source_run_id == '' &&
           needs.select-macro-reports.outputs.selected_count != '0' &&
-          needs.recover-market-sources.result == 'failure' &&
+          (needs.recover-market-sources.result == 'failure' || needs.recover-market-sources.result == 'success') &&
           needs.recover-market-sources.outputs.mineru_recovery_failed == 'true' &&
           needs.recover-market-sources.outputs.ocr_attempted == 'true' &&
           needs.recover-market-sources.outputs.article_source_ready == 'false' }}
@@ -1309,7 +1318,7 @@ jobs:
   deliver-recovered-report-articles:
     needs: [resolve-inputs, select-macro-reports, source-outcome, recover-market-sources, recover-ocr-page-sources, push-xhs-notes-wechat-drafts]
     if: >-
-      ${{ !cancelled() && (needs.recover-market-sources.result == 'success' || needs.recover-ocr-page-sources.result == 'success') &&
+      ${{ !cancelled() && ((needs.recover-market-sources.result == 'success' && needs.recover-market-sources.outputs.article_source_ready == 'true') || needs.recover-ocr-page-sources.result == 'success') &&
           needs.source-outcome.outputs.primary_ready == 'false' &&
           needs.resolve-inputs.outputs.replay_source_run_id == '' &&
           (needs.resolve-inputs.outputs.wechat_draft_upload == 'true' ||
@@ -1319,7 +1328,7 @@ jobs:
     with:
       source_run_id: ${{ github.run_id }}
       source_handoff_run_id: ${{ github.run_id }}
-      source_kind: ${{ needs.recover-market-sources.result == 'success' && needs.recover-market-sources.outputs.source_kind || 'ocr-pages' }}
+      source_kind: ${{ needs.recover-ocr-page-sources.result == 'success' && 'ocr-pages' || needs.recover-market-sources.outputs.source_kind }}
       date_folder: ${{ needs.select-macro-reports.outputs.latest_folder }}
       expected_articles: ${{ needs.select-macro-reports.outputs.selected_count }}
       model: ${{ needs.resolve-inputs.outputs.model }}
