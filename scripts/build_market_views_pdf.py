@@ -2400,7 +2400,15 @@ def main() -> int:
         summary = make_summary(reports, figures, daily_receipt)
     else:
         summary = build_market_summary(reports, figures, args, out_dir)
-    summary = json.loads(sanitize_text(json.dumps(summary, ensure_ascii=False)))
+    # Receipt identities must remain byte-for-byte comparable with the source
+    # inventory. Brand aliases belong to display text, not source filenames.
+    # Omission labels are sanitized separately at the display boundary.
+    receipt_fields = {key: summary[key] for key in
+                      ("skipped_reports", "unavailable_originals", "delivery_receipt")
+                      if key in summary}
+    narrative = {key: value for key, value in summary.items() if key not in receipt_fields}
+    summary = {**json.loads(sanitize_text(json.dumps(narrative, ensure_ascii=False))),
+               **receipt_fields}
     coverage = summary.get("coverage") or {}
     summary["source_inventory"] = source_inventory_counts(reports)
     if coverage.get("bank_content_covered") != coverage.get("bank_reports"):
