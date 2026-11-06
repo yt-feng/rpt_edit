@@ -597,7 +597,7 @@ class PublicationTests(unittest.TestCase):
         self.assertLess(workflow.index('name: Verify protected Chinese release after locale build'),
                         workflow.index('name: Restore approved extended candidates and assemble inactive tree'))
         self.assertIn('--active-state "$RUNNER_TEMP/previous-edge-state.json"', workflow)
-        self.assertIn('Configure required reviewers before extended activation', workflow)
+        self.assertIn('Remove required reviewers for automatic deployment', workflow)
         self.assertIn("needs.extended_locales_approval.result == 'success'", workflow)
         self.assertIn("needs.prepare_release.outputs.extended_ready == 'true' && steps.extended_acceptance.outcome != 'success'", workflow)
 

@@ -251,7 +251,7 @@ jobs:
           fetch-depth: 1
           persist-credentials: false
 
-      - name: Require configured extended production approval environment
+      - name: Require automatic extended production environment
         if: steps.operation.outputs.extended_requested == 'true' || steps.operation.outputs.english_requested == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
@@ -259,7 +259,7 @@ jobs:
           set -euo pipefail
           gh api "repos/$GITHUB_REPOSITORY/environments/portal-extended-locales-production" \
             --jq '.protection_rules | any(.type == "required_reviewers" and (.reviewers | length > 0))' \
-            | python3 -c 'import sys; assert sys.stdin.read().strip() == "true", "Configure required reviewers before extended activation"'
+            | python3 -c 'import sys; assert sys.stdin.read().strip() == "false", "Remove required reviewers for automatic deployment"'
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -2385,7 +2385,7 @@ jobs:
         with:
           name: neutral-release-validation-${{ github.run_id }}-${{ github.run_attempt }}
           path: _release_validation
-      - name: Review exact daily handoff through the configured required-reviewer identity
+      - name: Validate and record exact daily handoff for automatic deployment
         env:
           GH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
@@ -2401,9 +2401,13 @@ jobs:
         run: python3 -B scripts/review_portal_extended_handoff.py
 
   extended_locales_approval:
-    needs: prepare_release
+    # Read exact-version environment variables only after automatic validation
+    # has written and verified them; no pending-deployment handshake is needed.
+    needs: [prepare_release, extended_daily_review]
     if: >-
       ${{
+        always() &&
+        (needs.extended_daily_review.result == 'success' || needs.extended_daily_review.result == 'skipped') &&
         needs.prepare_release.result == 'success' &&
         needs.prepare_release.outputs.extended_requested == 'true' &&
         needs.prepare_release.outputs.extended_ready == 'true' &&
@@ -2523,7 +2527,7 @@ jobs:
         with:
           name: neutral-release-validation-${{ github.run_id }}-${{ github.run_attempt }}
           path: _release_validation
-      - name: Review KC commentary through the existing configured required-reviewer identity
+      - name: Validate and record exact KC commentary for automatic deployment
         env:
           GH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
@@ -2538,9 +2542,11 @@ jobs:
         run: python3 -B scripts/review_portal_english_handoff.py
 
   english_approval:
-    needs: prepare_release
+    needs: [prepare_release, english_daily_review]
     if: >-
-      ${{ needs.prepare_release.result == 'success' && needs.prepare_release.outputs.changed == 'true' &&
+      ${{ always() &&
+        (needs.english_daily_review.result == 'success' || needs.english_daily_review.result == 'skipped') &&
+          needs.prepare_release.result == 'success' && needs.prepare_release.outputs.changed == 'true' &&
           needs.prepare_release.outputs.english_requested == 'true' && needs.prepare_release.outputs.english_ready == 'true' }}
     runs-on: ubuntu-22.04
     timeout-minutes: 10
@@ -2588,10 +2594,8 @@ jobs:
             --approved-ledger "$ENGLISH_LEDGER"
 
   reject_failed_daily_review:
-    # Review scripts must run alongside the protected approval jobs: they wait
-    # for pending_deployments before submitting the ordinary required review.
-    # Making approval depend on review would deadlock that handshake. Instead,
-    # explicitly reject this attempt's pending environment when review fails.
+    # Automatic environments have no approval wait to reject. Keep the bounded
+    # cleanup for an older attempt whose environment still has reviewers.
     needs: [prepare_release, extended_daily_review, english_daily_review]
     if: >-
       ${{ always() && needs.prepare_release.result == 'success' &&
@@ -2649,10 +2653,10 @@ jobs:
           require(bool(failures), 'No attempted automatic review failed')
           path = f'repos/{repository}/actions/runs/{run_id}'
           environment = api(f'repos/{repository}/environments/{ENVIRONMENT}')
-          require(environment.get('name') == ENVIRONMENT and any(
+          require(environment.get('name') == ENVIRONMENT, 'Failed review environment differs')
+          requires_review = any(
               row.get('type') == 'required_reviewers' and row.get('reviewers')
-              for row in environment.get('protection_rules', [])),
-              'Required reviewers must remain configured during failed review cleanup')
+              for row in environment.get('protection_rules', []))
           comment = f'Automatic review failed; rejecting release {run_id} attempt {attempt} at {sha}.'
           payload = {'environment_ids': [environment['id']], 'state': 'rejected', 'comment': comment}
           writes = 0
@@ -2671,6 +2675,13 @@ jobs:
                   require(len(selected) == 1 and selected[0].get('run_id') == int(run_id) and
                           selected[0].get('head_sha') == sha, 'Pending approval job identity differs')
                   approvals.extend(selected)
+              if not requires_review:
+                  require(all(row.get('status') in ('queued', 'waiting', 'pending') or
+                          (row.get('status') == 'completed' and row.get('conclusion') in
+                           ('failure', 'cancelled', 'skipped')) for row in approvals),
+                          'Failed automatic validation cannot have a successful approval')
+                  print('Automatic deployment is blocked by failed validation; no review wait to reject')
+                  break
               pending = api(path + '/pending_deployments')
               require(isinstance(pending, list), 'Pending approval response is invalid')
               pending = [row for row in pending if row.get('environment', {}).get('id') == environment['id']]

@@ -98,13 +98,20 @@ class ReleaseAdmissionTests(unittest.TestCase):
                 self.assertEqual(self.group(), 'portal-production-release' if expected
                                  else 'portal-release-ineligible-123-1')
 
-    def test_manual_approval_handshake_stays_parallel_and_cutover_waits_for_review(self):
+    def test_automatic_approval_waits_for_exact_version_validation(self):
         for review, approval in (('english_daily_review', 'english_approval'),
                                  ('extended_daily_review', 'extended_locales_approval')):
-            self.assertIn('needs: prepare_release', job_block(approval))
-            self.assertNotIn(review, job_block(approval).split('runs-on:', 1)[0])
+            self.assertIn(f'needs: [prepare_release, {review}]', job_block(approval))
+            self.assertIn('always()', job_block(approval))
             self.assertIn('name: portal-extended-locales-production', job_block(approval))
             self.assertIn(review, job_block('cutover').split('if:', 1)[0])
+            for result in ('success', 'skipped', 'failure', 'cancelled'):
+                context = {'needs': {'prepare_release': {'result': 'success', 'outputs': {
+                    'changed': 'true', 'operation': 'migrate', 'extended_requested': 'true',
+                    'extended_ready': 'true', 'english_requested': 'true', 'english_ready': 'true'}},
+                    review: {'result': result}}}
+                self.assertEqual(bool(evaluate(job_block(approval), context)),
+                                 result in ('success', 'skipped'))
         self.assertIn('Approve exact same-run English tree and private ledger', job_block('english_approval'))
         self.assertIn('Extended locale approval identity mismatch', job_block('extended_locales_approval'))
         outputs = {'multilingual_enabled': 'true', 'multilingual_live': 'true', 'locale_ready': 'true',
@@ -237,12 +244,14 @@ class FailedReviewCleanupTests(unittest.TestCase):
                     self.execute()
                 self.assertEqual(self.writes(), [])
 
-    def test_environment_protections_and_reviewer_identity_remain_required(self):
+    def test_automatic_environment_has_no_pending_review_to_reject(self):
         self.environment['protection_rules'] = []
-        with self.assertRaises(ExpansionError):
-            self.execute()
+        self.jobs['jobs'][1].update(status='completed', conclusion='skipped')
+        self.execute()
         self.assertEqual(self.writes(), [])
-        self.environment['protection_rules'] = [{'type': 'required_reviewers', 'reviewers': [{'id': 1}]}]
+        self.assertFalse(any(call[0].endswith('/pending_deployments') for call in self.calls))
+
+    def test_configured_reviewer_identity_remains_required_for_legacy_cleanup(self):
         self.pending[0]['current_user_can_approve'] = False
         with self.assertRaises(ExpansionError):
             self.execute()
