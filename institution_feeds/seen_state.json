@@ -373,61 +373,9 @@
       "first_seen": "2026-08-07",
       "status": "downloaded"
     },
-    "imf:618da3ace226f557f38f2531d157bd491f005eb4450f8057527e6cf428f8": {
-      "first_seen": "2026-07-08",
-      "status": "downloaded"
-    },
-    "imf:a4117c87ce1b1a90f1dd561a39b64d93144acad10391d5acda11a7b0e950": {
-      "first_seen": "2026-07-08",
-      "status": "downloaded"
-    },
-    "imf:b54a8268624d9ae0600a11e546287fcd6bdf20b11c1b508ffa6706c01e9d": {
-      "first_seen": "2026-07-08",
-      "status": "downloaded"
-    },
-    "imf:39baf1ec62aff003ca8df196e6e1ca8c508124c61cc9f254cdc3a82662c9": {
-      "first_seen": "2026-07-08",
-      "status": "downloaded"
-    },
-    "imf:13a5a1049fece6ed61ede25891822e4ea6fa1c28c86060083fee0b589287": {
-      "first_seen": "2026-07-08",
-      "status": "downloaded"
-    },
     "bis:https://www.bis.org/fsi/publ/insights76.htm": {
       "first_seen": "2026-08-07",
       "status": "too_old"
-    },
-    "oecd:https://www.oecd.org/en/publications/enhancing-adolescent-social-and-emotional-well-being_00ebd3dd-en.html": {
-      "first_seen": "2026-07-08",
-      "status": "downloaded"
-    },
-    "oecd:https://www.oecd.org/en/publications/skills-in-the-ai-age_972bd15e-en.html": {
-      "first_seen": "2026-07-08",
-      "status": "downloaded"
-    },
-    "oecd:https://www.oecd.org/en/publications/strengthening-capital-markets-in-bosnia-and-herzegovina_0b8fa0de-en.html": {
-      "first_seen": "2026-07-08",
-      "status": "downloaded"
-    },
-    "adb:1155601": {
-      "first_seen": "2026-07-08",
-      "status": "downloaded"
-    },
-    "wto:https://www.wto.org/english/news_e/news26_e/dgno_08jul26_445_e.htm": {
-      "first_seen": "2026-07-08",
-      "status": "no_pdf"
-    },
-    "wto:https://www.wto.org/english/news_e/news26_e/622r_446_e.htm": {
-      "first_seen": "2026-07-08",
-      "status": "downloaded"
-    },
-    "wto:https://www.wto.org/english/news_e/news26_e/fish_08jul26_449_e.htm": {
-      "first_seen": "2026-07-08",
-      "status": "downloaded"
-    },
-    "wto:https://www.wto.org/english/news_e/news26_e/ppesp_07jul26_447_e.htm": {
-      "first_seen": "2026-07-08",
-      "status": "no_pdf"
     },
     "imf:016bb8f9c588a8bcb2bed7e51cd12a085c9f6040b496872c1cd2ca62bd3c": {
       "first_seen": "2026-07-09",
@@ -3992,6 +3940,22 @@
     "wto:https://www.wto.org/english/news_e/news26_e/cotpt_29oct26_540_e.htm": {
       "first_seen": "2026-11-05",
       "status": "too_old"
+    },
+    "imf:13b6bd51abb38f358183bd66420c967ef188f8cce59e34f5d7f44528a5f5": {
+      "first_seen": "2026-11-06",
+      "status": "downloaded"
+    },
+    "imf:ac4534dd043aaa249d512151146e7af76026981b70dde3b1a0e5691594b8": {
+      "first_seen": "2026-11-06",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/world-investment-report-2026-international-investment-turbulent-era": {
+      "first_seen": "2026-11-06",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/envir_05nov26_541_e.htm": {
+      "first_seen": "2026-11-06",
+      "status": "no_pdf"
     }
   }
 }
