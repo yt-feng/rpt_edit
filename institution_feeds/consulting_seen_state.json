@@ -1,38 +1,6 @@
 {
   "version": 1,
   "items": {
-    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/industries/financial%20services/our%20insights/global%20banking%20annual%20review/global-banking-annual-review-2026-precision-with-speed-may-2026.pdf": {
-      "first_seen": "2026-07-08",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/eat-or-be-eaten-how-australian-restaurants-can-win-when-volumes-slow": {
-      "first_seen": "2026-07-08",
-      "status": "no_pdf"
-    },
-    "bcg:https://www.bcg.com/publications/2026/luxury-healthier-foundations-and-genai": {
-      "first_seen": "2026-07-08",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/data-centres-are-the-new-critical-infrastructure-does-canada-want-its-own": {
-      "first_seen": "2026-07-08",
-      "status": "no_pdf"
-    },
-    "bcg:https://www.bcg.com/publications/2026/middle-east-direct-to-device-in-mena-connectivity-and-resilience": {
-      "first_seen": "2026-07-08",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/building-climate-financial-resilience": {
-      "first_seen": "2026-07-08",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/reducing-clinical-procurement-costs-together": {
-      "first_seen": "2026-07-08",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/agentic-ai-strategy-cio-cto": {
-      "first_seen": "2026-07-08",
-      "status": "downloaded"
-    },
     "mckinsey:https://www.mckinsey.com/~/media/mckinsey/mckinsey%20global%20institute/our%20research/mckinsey%20global%20institute%202025%20in%20charts/mckinsey-global-institute-2025-in-charts.pdf": {
       "first_seen": "2026-07-09",
       "status": "downloaded"
@@ -1659,6 +1627,18 @@
     },
     "bcg:https://www.bcg.com/publications/2026/trust-matters-year-end-sales-events": {
       "first_seen": "2026-11-05",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/about%20us/social%20responsibility/2025%20esg%20report/2025%20sustainable%20and%20inclusive%20growth%20report.pdf": {
+      "first_seen": "2026-11-06",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/insurance-ceos-scale-ai-enterprise": {
+      "first_seen": "2026-11-06",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/energy-retailers-cut-household-bills": {
+      "first_seen": "2026-11-06",
       "status": "downloaded"
     }
   }
