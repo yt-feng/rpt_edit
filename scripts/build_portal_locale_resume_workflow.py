@@ -11,10 +11,10 @@ TARGET = ROOT / '.github/workflows/neutral-locale-resume.yml'
 
 def generate(source: str) -> str:
     prepare, downstream = source.split('\n  shadow_review_hold:\n', 1)
-    # Recovery always needs explicit fresh reviews of its original candidate.
+    # Recovery always needs fresh exact-version validation of its original candidate.
     # Delegated daily reviewers and their failure cleanup belong only to the
     # original workflow identity. Never copy their automatic cancellation into
-    # this workflow's legitimate manual approval wait.
+    # this workflow's independently prepared candidate validation.
     daily_only = {'extended_daily_review', 'english_daily_review', 'reject_failed_daily_review'}
     for name in daily_only:
         downstream = re.sub(r'\n  ' + name + r':\n.*?(?=\n  [a-z_]+:\n|\Z)',
@@ -23,8 +23,8 @@ def generate(source: str) -> str:
                         lambda match: '    needs: [' + ', '.join(
                             name for name in match[1].split(', ') if name not in daily_only) + ']',
                         downstream, flags=re.M)
-    # These two gates only wait for the removed daily jobs. Fresh protected
-    # approval success remains mandatory in the unchanged recovery cutover.
+    # These gates only wait for the removed daily jobs. Exact-version approval
+    # success remains mandatory in the unchanged recovery cutover.
     downstream = re.sub(
         r"^        \(needs\.(extended_daily_review|english_daily_review)\.result == 'success' "
         r"\|\| needs\.\1\.result == 'skipped'\) &&\n", '', downstream, flags=re.M)
@@ -174,7 +174,7 @@ jobs:
           if [ "$(jq -r .ready "$RUNNER_TEMP/extended-locales-review-identity.json")" = "true" ]; then
             gh api "repos/$GITHUB_REPOSITORY/environments/portal-extended-locales-production" \\
               --jq 'any(.protection_rules[]; .type == "required_reviewers" and (.reviewers | length > 0))' \\
-              | python3 -c 'import sys; assert sys.stdin.read().strip() == "true", "Configure required reviewers before extended activation"'
+              | python3 -c 'import sys; assert sys.stdin.read().strip() == "false", "Remove required reviewers for automatic deployment"'
           fi
 
 '''
@@ -216,7 +216,7 @@ jobs:
           if [ -f _neutral_site/data/english-commentary/assembly.json ]; then
             GH_TOKEN="${{ github.token }}" gh api "repos/$GITHUB_REPOSITORY/environments/portal-extended-locales-production" \\
               --jq 'any(.protection_rules[]; .type == "required_reviewers" and (.reviewers | length > 0))' \\
-              | python3 -c 'import sys; assert sys.stdin.read().strip() == "true", "Configure required reviewers before English recovery"'
+              | python3 -c 'import sys; assert sys.stdin.read().strip() == "false", "Remove required reviewers for automatic deployment"'
           fi
 
 '''

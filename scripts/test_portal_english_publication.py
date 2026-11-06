@@ -383,7 +383,8 @@ class EnglishPublicationTests(unittest.TestCase):
             with self.subTest(route=surviving_route), self.assertRaises(ExpansionError):
                 audit_live(self.store, identity, session)
 
-    def review_orchestration(self, *, can_approve=True, bad_capture=False, bad_readback=False):
+    def review_orchestration(self, *, can_approve=True, bad_capture=False, bad_readback=False,
+                            required_reviewers=True, changed_live_state=False):
         import review_portal_english_handoff as reviewer
         batch = self.candidate(); previous = self.pin(); self.assemble([batch]); candidate = self.pin('b', 'b'*32)
         handoff_id = next_ready(self.store, self.original, None, self.base/'review-handoff')
@@ -415,8 +416,10 @@ class EnglishPublicationTests(unittest.TestCase):
             if path.endswith('/runs/456/attempts/1'): return cpu
             if path.endswith('/environments/portal-extended-locales-production'):
                 return {'id': 42, 'name': 'portal-extended-locales-production',
-                        'protection_rules': [{'type': 'required_reviewers', 'reviewers': [{'type': 'User'}]}]}
+                        'protection_rules': ([{'type': 'required_reviewers', 'reviewers': [{'type': 'User'}]}]
+                                             if required_reviewers else [])}
             if '/pending_deployments' in path:
+                self.assertTrue(required_reviewers, 'Automatic environments must not poll or submit deployment reviews')
                 if payload is not None: submitted.append(payload); return [{'id': 999}]
                 return [{'environment': {'id': 42}, 'current_user_can_approve': can_approve}]
             if '/variables' in path:
@@ -430,12 +433,14 @@ class EnglishPublicationTests(unittest.TestCase):
                        'GITHUB_SHA': 'a'*40, 'GH_TOKEN': 'synthetic', 'ENGLISH_HANDOFF': handoff_id,
                        'CANDIDATE_SLOT': 'b', 'CANDIDATE_RELEASE': 'b'*32, 'CANDIDATE_STATIC_TREE': candidate['tree_sha256']}
         session = mock.Mock(); session.get.return_value = mock.Mock(status_code=200, content=stable_bytes(previous), json=lambda: previous)
+        if changed_live_state:
+            session.get.return_value.json = mock.Mock(side_effect=[previous, {**previous, 'release_id': 'c'*32}])
         session.__enter__ = lambda value: value; session.__exit__ = lambda *args: None
         with chdir(self.base), mock.patch.dict('os.environ', environment, clear=True), mock.patch.object(reviewer, 'api', side_effect=api), \
              mock.patch.object(reviewer, 'R2Store') as storage, mock.patch.object(reviewer.requests, 'Session', return_value=session), \
              mock.patch('builtins.print'):
             storage.from_env.return_value = self.store; storage.return_value = self.original
-            if not can_approve or bad_capture or bad_readback:
+            if (required_reviewers and not can_approve) or bad_capture or bad_readback or changed_live_state:
                 with self.assertRaises(ExpansionError): reviewer.main()
             else: reviewer.main()
         return variables, submitted
@@ -446,6 +451,25 @@ class EnglishPublicationTests(unittest.TestCase):
         self.assertEqual(submitted[0]['state'], 'approved')
         self.assertEqual(variables['PORTAL_ENGLISH_APPROVED_COMMIT_SHA'], 'a'*40)
         self.assertTrue(any('/publication-approvals/' in key for key in self.engine.client.objects))
+
+    def test_automatic_environment_keeps_exact_english_receipt_without_deployment_review(self):
+        variables, submitted = self.review_orchestration(required_reviewers=False, can_approve=False)
+        self.assertEqual(submitted, [])
+        self.assertEqual(variables['PORTAL_ENGLISH_APPROVED_COMMIT_SHA'], 'a'*40)
+        records = [json.loads(value['body']) for key, value in self.engine.client.objects.items()
+                   if '/publication-approvals/' in key]
+        self.assertEqual(len(records), 1)
+        self.assertEqual(records[0]['decision'], 'approved-for-automatic-deployment')
+        self.assertEqual(records[0]['identity']['ledger_sha256'], variables['PORTAL_ENGLISH_APPROVED_LEDGER'])
+
+    def test_automatic_environment_rejects_bad_capture_readback_and_changed_live_baseline(self):
+        for arguments in [{'bad_capture': True}, {'bad_readback': True}, {'changed_live_state': True}]:
+            fixture = EnglishPublicationTests(); fixture.setUp()
+            try:
+                _, submitted = fixture.review_orchestration(required_reviewers=False, **arguments)
+                self.assertEqual(submitted, [])
+                self.assertFalse(any('/publication-approvals/' in key for key in fixture.engine.client.objects))
+            finally: fixture.doCleanups()
 
     def test_missing_review_authority_bad_capture_or_failed_version_readback_never_submits_approval(self):
         for arguments in [{'can_approve': False}, {'bad_capture': True}, {'bad_readback': True}]:

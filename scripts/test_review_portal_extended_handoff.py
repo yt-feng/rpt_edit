@@ -125,7 +125,8 @@ class DailyReviewTests(unittest.TestCase):
         self.assertNotIn('extended_daily_review:', (root/'.github/workflows/neutral-locale-resume.yml').read_text())
 
     def run_delegated_review(self, *, can_approve=True, bad_identity=False, bad_readback=False,
-                             frozen=False, bad_capture=False):
+                             frozen=False, bad_capture=False, required_reviewers=True,
+                             changed_live_state=False):
         """Exercise the complete orchestration without credentials or network."""
         store = R2Store(FakeR2(), 'private', '_extended-locales/staging/review')
         corpus = make_corpus([daily_doc()])
@@ -175,8 +176,10 @@ class DailyReviewTests(unittest.TestCase):
                 return {'total_count': len(capture_jobs), 'jobs': capture_jobs}
             if path == env_path:
                 return {'id': 789, 'name': reviewer.ENVIRONMENT,
-                        'protection_rules': [{'type': 'required_reviewers', 'reviewers': [{'id': 42}]}]}
+                        'protection_rules': ([{'type': 'required_reviewers', 'reviewers': [{'id': 42}]}]
+                                             if required_reviewers else [])}
             if path == pending_path:
+                self.assertTrue(required_reviewers, 'Automatic environments must not poll or submit deployment reviews')
                 if method == 'POST':
                     self.assertTrue(can_approve)
                     self.assertEqual(payload['environment_ids'], [789])
@@ -198,6 +201,8 @@ class DailyReviewTests(unittest.TestCase):
         response = session.__enter__.return_value.get.return_value
         response.status_code, response.content = 200, json.dumps(previous).encode()
         response.json.return_value = previous
+        if changed_live_state:
+            response.json.side_effect = [previous, {**previous, 'release_id': 'changed-release'}]
         environment = {'GITHUB_ACTIONS': 'true', 'GITHUB_REF': 'refs/heads/main',
                        'GITHUB_EVENT_NAME': 'workflow_dispatch', 'GITHUB_REPOSITORY': 'example/repo',
                        'GITHUB_RUN_ID': '456', 'GITHUB_SHA': '1'*40, 'GH_TOKEN': 'test-only-not-a-credential',
@@ -226,6 +231,31 @@ class DailyReviewTests(unittest.TestCase):
         self.assertEqual(len(reviews), 1)
         self.assertEqual(self.saved_variables['PORTAL_EXTENDED_APPROVED_LOCALES'], 'fr,pt')
 
+    def test_automatic_environment_persists_exact_approval_without_pending_review(self):
+        self.run_delegated_review(required_reviewers=False, can_approve=False)
+        self.assertFalse(any('/pending_deployments' in path for path, _method, _payload in self.api_calls))
+        self.assertEqual(self.saved_variables['PORTAL_EXTENDED_APPROVED_LOCALES'], 'fr,pt')
+        self.assertEqual(self.saved_variables['PORTAL_EXTENDED_APPROVED_STATIC_TREE'], '2'*64)
+        records = [json.loads(value['body']) for key, value in self.review_objects.items()
+                   if '/publication-approvals/' in key]
+        self.assertEqual(len(records), 1)
+        self.assertEqual(records[0]['decision'], 'approved-for-automatic-deployment')
+        self.assertEqual(records[0]['identity']['static_tree_sha256'], '2'*64)
+
+    def test_automatic_environment_still_rejects_changed_identity_capture_or_live_baseline(self):
+        for changes in ({'bad_identity': True}, {'frozen': True, 'bad_capture': True},
+                        {'changed_live_state': True}):
+            with self.subTest(changes=changes), self.assertRaises(ExpansionError):
+                self.run_delegated_review(required_reviewers=False, **changes)
+            self.assertFalse(any(method for _path, method, _payload in self.api_calls))
+            self.assertFalse(any('/publication-approvals/' in key for key in self.review_objects))
+
+    def test_automatic_environment_readback_failure_does_not_create_approval_receipt(self):
+        with self.assertRaises(ExpansionError):
+            self.run_delegated_review(required_reviewers=False, bad_readback=True)
+        self.assertFalse(any('/pending_deployments' in path for path, _method, _payload in self.api_calls))
+        self.assertFalse(any('/publication-approvals/' in key for key in self.review_objects))
+
     def test_frozen_queue_orchestrator_verifies_original_capture_before_normal_approval(self):
         self.run_delegated_review(frozen=True)
         self.assertTrue(any('/runs/321/attempts/1' in path for path, _method, _value in self.api_calls))
@@ -251,6 +281,34 @@ class DailyReviewTests(unittest.TestCase):
         self.assertFalse(any(path.endswith('/pending_deployments') and method == 'POST'
                              for path, method, _payload in self.api_calls))
         self.assertFalse(any('/publication-approvals/' in key for key in self.review_objects))
+
+
+class AutomaticReviewEnvironmentTests(unittest.TestCase):
+    def test_environment_identity_and_rule_shape_must_be_present(self):
+        automatic = {'id': 789, 'name': reviewer.ENVIRONMENT, 'protection_rules': []}
+        self.assertFalse(reviewer.requires_deployment_review(automatic))
+        for changes in ({'id': None}, {'name': 'different'}, {'protection_rules': None},
+                        {'protection_rules': [None]}):
+            with self.subTest(changes=changes), self.assertRaises(ExpansionError):
+                reviewer.requires_deployment_review({**automatic, **changes})
+
+    def test_changed_environment_or_restored_review_gate_stops_automatic_validation(self):
+        automatic = {'id': 789, 'name': reviewer.ENVIRONMENT, 'protection_rules': []}
+        for changes in ({'id': 790}, {'protection_rules': [{'type': 'required_reviewers', 'reviewers': [{'id': 42}]}]}):
+            api = MagicMock(return_value={**automatic, **changes})
+            revalidate = MagicMock()
+            with self.subTest(changes=changes), self.assertRaises(ExpansionError):
+                reviewer.verify_automatic_review('example/repo', '456', automatic, revalidate, api_call=api)
+            self.assertEqual(api.call_count, 1)
+            revalidate.assert_not_called()
+
+    def test_changed_release_attempt_stops_automatic_validation(self):
+        automatic = {'id': 789, 'name': reviewer.ENVIRONMENT, 'protection_rules': []}
+        api = MagicMock(side_effect=[automatic, {'id': 456, 'run_attempt': 2}])
+        revalidate = MagicMock()
+        with patch.dict(os.environ, {'GITHUB_RUN_ATTEMPT': '1', 'GITHUB_SHA': '1'*40}), self.assertRaises(ExpansionError):
+            reviewer.verify_automatic_review('example/repo', '456', automatic, revalidate, api_call=api)
+        revalidate.assert_not_called()
 
 
 class APIRecoveryTests(unittest.TestCase):

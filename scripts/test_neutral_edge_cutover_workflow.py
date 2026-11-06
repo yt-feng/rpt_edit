@@ -21,6 +21,24 @@ WORKFLOW = ROOT / ".github/workflows/neutral-edge-cutover.yml"
 
 
 class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
+    def test_automatic_environment_preflight_accepts_no_reviewers_and_rejects_lookup_failure(self):
+        step = self.workflow.split('      - name: Require automatic extended production environment\n', 1)[1]
+        step = step.split('      - name:', 1)[0]
+        script = textwrap.dedent(step.split('        run: |\n', 1)[1])
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            gh = root / 'gh'
+            gh.write_text('#!/bin/sh\nprintf "%s\\n" "$REVIEWERS_PRESENT"\nexit "$LOOKUP_STATUS"\n')
+            gh.chmod(0o755)
+            for reviewers, status, accepted in [('false', '0', True), ('true', '0', False),
+                                               ('false', '1', False), ('', '0', False)]:
+                with self.subTest(reviewers=reviewers, status=status):
+                    result = subprocess.run(['bash', '-c', script], capture_output=True, text=True,
+                        env={**os.environ, 'PATH': str(root) + os.pathsep + os.environ['PATH'],
+                             'GITHUB_REPOSITORY': 'example/repo', 'REVIEWERS_PRESENT': reviewers,
+                             'LOOKUP_STATUS': status})
+                    self.assertEqual(result.returncode == 0, accepted, result.stderr)
+
     def test_catalog_inheritance_precedes_scan_and_is_checked_before_upload(self):
         names = ["Inherit published report catalog before Dropbox refresh",
                  "Refresh report catalog with additive PDF sync", "Build private static release",

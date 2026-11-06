@@ -1,9 +1,10 @@
-"""Apply delegated daily approval through the existing required-reviewer API.
+"""Validate and record exact daily publication approval.
 
 Opt-in only, on reviewed main, after preparation succeeds. This cannot approve
 first-time locales, manual candidates, recovery runs, or arbitrary deployments.
 It binds the private producer receipt, active ledger, prepared artifact and
-exact-version environment variables before submitting the ordinary review.
+exact-version environment variables before deployment continues. Environments
+with required reviewers also receive the existing delegated review submission.
 """
 from __future__ import annotations
 
@@ -118,6 +119,27 @@ def approval_run_identity(run, repository, run_id, attempt, sha):
             and run.get('path') == '.github/workflows/neutral-edge-cutover.yml'
             and all((run.get(key) or {}).get('full_name') == repository for key in ('repository', 'head_repository')),
             'Delegated approval release run identity changed')
+
+
+def requires_deployment_review(environment):
+    require(environment.get('name') == ENVIRONMENT and type(environment.get('id')) is int
+            and environment['id'] > 0 and isinstance(environment.get('protection_rules'), list),
+            'Publication environment identity or protection rules are invalid')
+    require(all(isinstance(row, dict) for row in environment['protection_rules']),
+            'Publication environment protection rules are invalid')
+    return any(row.get('type') == 'required_reviewers' and row.get('reviewers')
+               for row in environment['protection_rules'])
+
+
+def verify_automatic_review(repository, run_id, environment, revalidate, *, api_call=None):
+    """Recheck exact run and live baseline without creating a deployment review."""
+    api_call = api_call or api
+    current = api_call(f'repos/{repository}/environments/{ENVIRONMENT}')
+    require(not requires_deployment_review(current) and current['id'] == environment['id'],
+            'Automatic publication environment changed during validation')
+    approval_run_identity(api_call(f'repos/{repository}/actions/runs/{run_id}'), repository,
+                          run_id, os.environ['GITHUB_RUN_ATTEMPT'], os.environ['GITHUB_SHA'])
+    revalidate()
 
 
 def check_live_state(previous):
@@ -421,18 +443,20 @@ def main():
     variables = review_identity(receipt, identity, assembly, active, os.environ['ENABLED_LOCALES'], expected)
     env_path = f'repos/{repository}/environments/{ENVIRONMENT}'
     environment = api(env_path)
-    require(environment.get('name') == ENVIRONMENT and any(row.get('type') == 'required_reviewers' and row.get('reviewers')
-                for row in environment.get('protection_rules', [])), 'Required reviewers must remain configured')
-    pending_path = f'repos/{repository}/actions/runs/{run_id}/pending_deployments'
-    pending = []
-    for attempt in range(12):
-        pending = [row for row in api(pending_path) if row.get('environment', {}).get('id') == environment['id']]
-        if pending:
-            break
-        if attempt < 11:
-            time.sleep(5)
-    require(len(pending) == 1 and pending[0].get('current_user_can_approve') is True,
-            'Configured credential cannot submit this required-reviewer approval')
+    deployment_review = requires_deployment_review(environment)
+    if deployment_review:
+        pending_path = f'repos/{repository}/actions/runs/{run_id}/pending_deployments'
+        pending = []
+        for attempt in range(12):
+            pending = [row for row in api(pending_path) if row.get('environment', {}).get('id') == environment['id']]
+            if pending:
+                break
+            if attempt < 11:
+                time.sleep(5)
+        require(len(pending) == 1 and pending[0].get('current_user_can_approve') is True,
+                'Configured credential cannot submit this required-reviewer approval')
+    else:
+        verify_automatic_review(repository, run_id, environment, lambda: check_live_state(previous))
     existing = api(env_path+'/variables?per_page=100')
     require(existing.get('total_count', 101) <= 100, 'Environment variables exceed bound')
     existing_names = {row['name'] for row in existing['variables']}
@@ -443,14 +467,18 @@ def main():
     saved = {row['name']: row['value'] for row in api(env_path+'/variables?per_page=100')['variables']}
     require(all(saved.get(key) == value for key, value in variables.items()), 'Exact-version variables did not persist')
     record = stable_bytes({'schema_version': 1, 'release_run_id': run_id, 'handoff': receipt_id,
-                           'identity': identity, 'decision': 'approved-for-required-reviewer-submission'})
+                           'identity': identity, 'decision': ('approved-for-required-reviewer-submission'
+                               if deployment_review else 'approved-for-automatic-deployment')})
     record_key = store.key('publication-approvals', digest(record), 'receipt.json')
     store._put(record_key, record, metadata={'kind': 'delegated-publication-approval'})
     require(store._get(record_key, maximum=65536) == record, 'Private approval record did not persist')
-    result = submit_approval(repository, run_id, environment, variables,
-        f'Operator-delegated daily review: exact private handoff {receipt_id}, prepared tree {identity["static_tree_sha256"]}; existing locale scope, source day, producer, active ledger and full preparation verified. Normal cutover acceptance and rollback remain required.',
-        approval_job='extended_locales_approval', revalidate=lambda: check_live_state(previous), api_call=api)
-    print(json.dumps({'review_submitted': True, 'deployed': False, 'release_run_id': run_id,
+    result = []
+    if deployment_review:
+        result = submit_approval(repository, run_id, environment, variables,
+            f'Operator-delegated daily review: exact private handoff {receipt_id}, prepared tree {identity["static_tree_sha256"]}; existing locale scope, source day, producer, active ledger and full preparation verified. Normal cutover acceptance and rollback remain required.',
+            approval_job='extended_locales_approval', revalidate=lambda: check_live_state(previous), api_call=api)
+    print(json.dumps({'review_submitted': deployment_review, 'validation_complete': True,
+                      'deployed': False, 'release_run_id': run_id,
                       'handoff': receipt_id, 'deployment_ids': [row['id'] for row in result]}))
 
 

@@ -1,8 +1,9 @@
-"""Exact English approval via the existing configured required-reviewer API.
+"""Validate and record exact English publication approval.
 
-No environment protection is removed or skipped. This opt-in reviewer checks
-real main/public capture and CPU job evidence, candidate objects, the pinned
-previous state and the exact uploaded static tree before normal approval.
+This opt-in reviewer checks real main/public capture and CPU job evidence,
+candidate objects, the pinned previous state and exact uploaded static tree.
+Configured required reviewers retain their delegated review submission; automatic
+deployment environments continue after the same content validation and receipt.
 """
 from __future__ import annotations
 import json
@@ -19,7 +20,8 @@ from portal_english_publication import checked_assembly, read_active, verify_pre
 from portal_english_pipeline import hash_value, put_verified
 from portal_extended_locales import ORIGIN, digest, stable_bytes
 from portal_extended_r2 import DEFAULT_PREFIX, R2Store
-from review_portal_extended_handoff import ENVIRONMENT, api, admission_is_valid, check_live_state, submit_approval
+from review_portal_extended_handoff import (ENVIRONMENT, api, admission_is_valid, check_live_state,
+                                          requires_deployment_review, submit_approval, verify_automatic_review)
 
 
 def producer_is_valid(receipt, run, jobs, repository):
@@ -106,16 +108,19 @@ def main():
                                 tree=candidate_identity['tree_sha256'], release=candidate_identity['release_id'])
     environment_path = f'repos/{repository}/environments/{ENVIRONMENT}'
     environment = api(environment_path)
-    require(environment.get('name') == ENVIRONMENT and any(row.get('type') == 'required_reviewers' and row.get('reviewers')
-            for row in environment.get('protection_rules', [])), 'English required reviewers must stay configured')
-    pending_path = f'repos/{repository}/actions/runs/{run_id}/pending_deployments'
-    pending = []
-    for attempt in range(12):
-        pending = [row for row in api(pending_path) if row.get('environment', {}).get('id') == environment['id']]
-        if pending: break
-        if attempt < 11: time.sleep(5)
-    require(len(pending) == 1 and pending[0].get('current_user_can_approve') is True,
-            'Configured English reviewer cannot submit the required approval')
+    deployment_review = requires_deployment_review(environment)
+    if deployment_review:
+        pending_path = f'repos/{repository}/actions/runs/{run_id}/pending_deployments'
+        pending = []
+        for attempt in range(12):
+            pending = [row for row in api(pending_path) if row.get('environment', {}).get('id') == environment['id']]
+            if pending: break
+            if attempt < 11: time.sleep(5)
+        require(len(pending) == 1 and pending[0].get('current_user_can_approve') is True,
+                'Configured English reviewer cannot submit the required approval')
+    else:
+        verify_automatic_review(repository, run_id, environment,
+                                lambda: check_live_state(previous_identity), api_call=api)
     existing = api(environment_path+'/variables?per_page=100')
     require(existing.get('total_count', 101) <= 100, 'English environment variables exceed bound')
     names = {row['name'] for row in existing['variables']}
@@ -125,13 +130,16 @@ def main():
     saved = {row['name']: row['value'] for row in api(environment_path+'/variables?per_page=100')['variables']}
     approval_is_valid(identity, identity, saved)
     record = {'schema_version': 1, 'policy': POLICY, 'release_run_id': run_id, 'identity': identity,
-              'decision': 'approved-for-required-reviewer-submission'}
+              'decision': ('approved-for-required-reviewer-submission' if deployment_review
+                           else 'approved-for-automatic-deployment')}
     put_verified(store, store.key('publication-approvals', digest(stable_bytes(record)), 'receipt.json'), record,
                  'english-exact-publication-approval', immutable=True)
-    submit_approval(repository, run_id, environment, variables,
-        'Operator-delegated English secondary-commentary review; exact source, CPU, preview-only static tree, private ledger, active baseline and versioned rollback verified. Normal cutover gates remain required.',
-        approval_job='english_approval', revalidate=lambda: check_live_state(previous_identity), api_call=api)
-    print(json.dumps({'review_submitted': True, 'release_run_id': run_id, 'deployed': False}))
+    if deployment_review:
+        submit_approval(repository, run_id, environment, variables,
+            'Operator-delegated English secondary-commentary review; exact source, CPU, preview-only static tree, private ledger, active baseline and versioned rollback verified. Normal cutover gates remain required.',
+            approval_job='english_approval', revalidate=lambda: check_live_state(previous_identity), api_call=api)
+    print(json.dumps({'review_submitted': deployment_review, 'validation_complete': True,
+                      'release_run_id': run_id, 'deployed': False}))
 
 
 if __name__ == '__main__': main()

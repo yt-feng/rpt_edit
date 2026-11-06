@@ -36,6 +36,11 @@ class ResumeWorkflowTests(unittest.TestCase):
         self.assertEqual(set(recovery), shared | {'prepare_release'})
         for job in shared:
             expected = source[job]
+            if job in ('extended_locales_approval', 'english_approval'):
+                reviewer = 'extended_daily_review' if job == 'extended_locales_approval' else 'english_daily_review'
+                expected = expected.replace(f'needs: [prepare_release, {reviewer}]', 'needs: [prepare_release]')
+                expected = expected.replace(
+                    f"        (needs.{reviewer}.result == 'success' || needs.{reviewer}.result == 'skipped') &&\n", '')
             if job == 'cutover':
                 # Manual recovery has no delegated reviewers. Only remove
                 # their scheduling dependencies; retain all protected approvals
@@ -82,7 +87,7 @@ class ResumeWorkflowTests(unittest.TestCase):
         self.assertNotIn('restore_assemble_portal_extended_r2.py', preparation)
         self.assertIn("restored_identity(Path('_neutral_site'))", preparation)
         self.assertIn('extended_requested: ${{ steps.extended_assembly.outputs.ready }}', preparation)
-        self.assertIn('Configure required reviewers before extended activation', preparation)
+        self.assertIn('Remove required reviewers for automatic deployment', preparation)
         self.assertIn('name: Publish extended locale review identity', preparation)
 
     def test_restored_candidate_passes_local_route_gate_before_shadow_or_cutover(self):
@@ -100,7 +105,7 @@ class ResumeWorkflowTests(unittest.TestCase):
         self.assertIn('english_requested: ${{ steps.english_assembly.outputs.ready }}', preparation)
         self.assertIn('CANDIDATE_COMMIT_SHA: ${{ steps.static_upload.outputs.commit_sha }}', preparation)
         self.assertIn('ENGLISH_HANDOFF: ${{ steps.english_assembly.outputs.handoff }}', preparation)
-        self.assertIn('Configure required reviewers before English recovery', preparation)
+        self.assertIn('Remove required reviewers for automatic deployment', preparation)
         self.assertNotIn('english_daily_review:', self.recovery)
         self.assertIn('needs.english_approval.result == \'success\'', self.recovery)
 

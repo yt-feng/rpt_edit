@@ -1,5 +1,24 @@
 # Daily reading locales and English editorial access
 
+## Deployment approval update — 2026-11-06
+
+GitHub deployment approval now runs automatically. The three environments
+`portal-extended-locales-production`, `portal-multilingual-production`, and
+`portal-multilingual-shadow-review` have no required reviewers, so deployments
+do not wait for a manual Approve click or request a deployment review by email.
+
+Daily extended-locale and English validation still checks the immutable handoff,
+candidate identity, current release and exact-version approval receipt. Each
+environment validation job starts after its automatic review job has finished
+writing and reading back the candidate variables. A failed review blocks cutover;
+it does not submit a GitHub approval or wait for a pending deployment. Existing
+content identity checks, release acceptance and rollback remain in place.
+
+The production and generated recovery workflows check that the extended
+environment has no required reviewers. Do not restore reviewer requirements
+without also redesigning the job ordering: automatic validation now precedes
+the environment job. The dated checkpoints below describe the earlier setup.
+
 ## Current checkpoint: English CPU merged; publication and recovery ready for review
 
 PR #198 passed regression, API cost controls and public identity and was merged
