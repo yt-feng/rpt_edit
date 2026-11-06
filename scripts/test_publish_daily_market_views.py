@@ -9,6 +9,7 @@ from unittest.mock import patch
 
 import fitz
 import publish_daily_market_views as publisher
+from market_views_publication import validate_daily_delivery_pdf
 
 
 class DailyDeliveryTests(unittest.TestCase):
@@ -72,6 +73,31 @@ class DailyDeliveryTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'manifest_changed'):
             publisher.assemble(self.context, self.root / 'run')
 
+    def test_brand_normalization_preserves_exact_omitted_source_identity(self):
+        manifest = Path(self.context['manifest_path'])
+        rows = json.loads(manifest.read_text())
+        omitted_name = '00-Nomura-Morgan Stanley-市场研究.pdf'
+        rows[0]['process_local_path'] = '_selected_macro_pdfs/' + omitted_name
+        manifest.write_text(json.dumps(rows, ensure_ascii=False))
+        self.context.update(
+            selected_manifest_sha256=hashlib.sha256(manifest.read_bytes()).hexdigest(),
+            unavailable_originals=[{'source_pdf': 'Goldman Sachs-未下载.pdf',
+                                    'reason': 'original_download_failed'}])
+        result = publisher.deliver(self.context, self.root / 'branded', acceptance_only=True)
+        output = self.root / 'branded' / 'rendered' / self.context['date_folder']
+        receipt = json.loads((self.root / 'branded/sources' / self.context['date_folder'] /
+                              'daily_delivery_receipt.json').read_text())
+        summary = validate_daily_delivery_pdf(output / Path(result['public_pdf']).name, receipt)
+        self.assertEqual(summary['skipped_reports'][0]['source_pdf'], omitted_name)
+        self.assertEqual(summary['unavailable_originals'], self.context['unavailable_originals'])
+        self.assertEqual((3, 5, 1), tuple(result[key] for key in
+                         ('included_reports', 'expected_source_reports', 'skipped_reports')))
+        with fitz.open(result['public_pdf']) as pdf:
+            visible = ''.join(page.get_text() for page in pdf)
+        self.assertIn('NOM-MS', visible)
+        self.assertNotIn('Nomura', visible)
+        self.assertNotIn('Goldman Sachs', visible)
+
     def test_valid_but_short_source_is_omitted_before_receipt_and_healthy_pdf_renders(self):
         originals = self.root / 'two-originals'
         originals.mkdir()
@@ -108,6 +134,21 @@ class DailyDeliveryTests(unittest.TestCase):
     def test_acceptance_fault_cannot_be_selected_for_production(self):
         with self.assertRaisesRegex(ValueError, 'acceptance_only'):
             publisher.deliver(self.context, self.root / 'run', force_fallback=True)
+
+    def test_acceptance_rejects_a_rendered_issue_with_missing_omission_inventory(self):
+        def corrupt_summary(arguments, timeout):
+            publisher.run_command(arguments, timeout)
+            if arguments[0] == 'scripts/build_market_views_pdf.py':
+                path = self.root / 'invalid/rendered/261014/market_views_structured.json'
+                summary = json.loads(path.read_text())
+                summary['skipped_reports'] = []
+                path.write_text(json.dumps(summary))
+        with patch('upload_market_view_to_r2.upload_market_view') as upload:
+            with self.assertRaisesRegex(ValueError, 'daily_delivery_pdf_omissions_missing'):
+                publisher.deliver(self.context, self.root / 'invalid', acceptance_only=True,
+                                  force_fallback=True, runner=corrupt_summary)
+        upload.assert_not_called()
+        self.assertFalse((self.root / 'invalid/delivery-result.json').exists())
 
     def test_unusable_source_does_not_remove_healthy_sibling(self):
         good, bad = self.root / 'good', self.root / 'bad'

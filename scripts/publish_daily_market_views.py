@@ -124,6 +124,10 @@ def deliver(context, workspace, *, acceptance_only=False, force_fallback=False, 
         '--date-folder', date], 180)
     output = output_root / date
     pdf = output / f'market_views_{date}.pdf'
+    # Acceptance must exercise the same source/coverage/render binding gate
+    # as production, even though it never uploads the issue.
+    from market_views_publication import validate_daily_delivery_pdf
+    validate_daily_delivery_pdf(pdf, receipt)
     from prepare_public_market_view_pdf import prepare_public_copy
     public_pdf = workspace / 'public' / pdf.name
     prepare_public_copy(pdf, public_pdf)

@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+from finalize_outputs import sanitize_text
 import re
 from pathlib import Path
 from typing import Any
@@ -875,7 +876,7 @@ def build_pdf(summary_dir: Path, output_pdf: Path, *, _budget_chars: int = 4200)
         if skipped:
             story.append(Paragraph("暂未纳入的来源", styles["PortalH2"]))
             for report in skipped:
-                story.append(Paragraph(clean_text(report.get("source_pdf") or "未命名文件"), styles["PortalSmall"]))
+                story.append(Paragraph(clean_text(sanitize_text(report.get("source_pdf") or "未命名文件")), styles["PortalSmall"]))
     if summary.get("source_kind") == "ocr-synthesis":
         inventory = summary.get("source_inventory") or {}
         story.append(Paragraph(clean_text(
@@ -887,7 +888,7 @@ def build_pdf(summary_dir: Path, output_pdf: Path, *, _budget_chars: int = 4200)
         if skipped:
             story.append(Paragraph("跳过文件（单篇处理未完成，已继续其余报告）", styles["PortalH2"]))
             for report in skipped:
-                story.append(Paragraph(clean_text(report.get("source_pdf") or "未命名文件"), styles["PortalSmall"]))
+                story.append(Paragraph(clean_text(sanitize_text(report.get("source_pdf") or "未命名文件")), styles["PortalSmall"]))
     original_coverage = original_source_coverage_sentence(reports)
     if original_coverage:
         story.append(Paragraph(clean_text(original_coverage), styles["PortalBody"]))
