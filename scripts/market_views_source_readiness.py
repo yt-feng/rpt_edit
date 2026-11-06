@@ -84,13 +84,14 @@ def require_daily_page_fallback(jobs, run_id, sha):
 
     A continue-on-error MinerU step may have a successful REST conclusion. The
     checked workflow uses its actual outcome; REST must still prove it ran and
-    that no full source edition was successfully archived before pages fallback.
+    that no full article source was archived before pages fallback. A partial
+    Market Views edition needs its own successful, receipt-verified branch.
     """
     matches = [job for job in jobs if job.get('name') == 'recover-market-sources']
     _require(len(matches) == 1, 'daily_pages_recovery_job_missing_or_ambiguous')
     job = matches[0]
     _require(job.get('run_id') == run_id and job.get('head_sha') == sha
-             and job.get('status') == 'completed' and job.get('conclusion') == 'failure',
+            and job.get('status') == 'completed' and job.get('conclusion') in {'failure', 'success'},
              'daily_pages_recovery_not_failed')
     steps = job.get('steps')
     _require(isinstance(steps, list) and all(isinstance(step, dict) for step in steps),
@@ -98,12 +99,16 @@ def require_daily_page_fallback(jobs, run_id, sha):
     numbers = [step.get('number') for step in steps]
     _require(all(type(n) is int and n > 0 for n in numbers) and len(numbers) == len(set(numbers)),
              'daily_pages_recovery_steps_invalid')
+    partial = [step for step in steps if step.get('name') == 'Confirm partial OCR synthesis requires original pages']
+    partial_ready = (len(partial) == 1 and partial[0].get('status') == 'completed'
+                     and partial[0].get('conclusion') == 'success')
+    _require(job.get('conclusion') == 'failure' or partial_ready, 'daily_pages_recovery_not_failed')
     names = (
         ('Recover existing MinerU tasks for daily Market Views', {'success', 'failure'}),
         ('Save complete recovered MinerU sources to private R2', {'skipped', 'failure'}),
         ('Build complete OCR summaries and charts for Market Views', {'success', 'failure'}),
         ('Save private OCR synthesis cache even after interruption', {'success', 'failure'}),
-        ('Save complete OCR synthesis to private R2', {'skipped', 'failure'}),
+        ('Save complete OCR synthesis to private R2', {'success'} if partial_ready else {'skipped', 'failure'}),
         ('Capture Daily OCR page fallback eligibility', {'success'}),
     )
     selected = []
@@ -113,6 +118,10 @@ def require_daily_page_fallback(jobs, run_id, sha):
                  and matches[0].get('conclusion') in conclusions, 'daily_pages_prior_gate_invalid')
         selected.append(matches[0]['number'])
     _require(selected == sorted(selected), 'daily_pages_prior_gate_order_invalid')
+    if partial_ready:
+        _require(partial[0]['number'] > selected[-1], 'daily_pages_prior_gate_order_invalid')
+        synthesis = [step for step in steps if step.get('name') == 'Build complete OCR summaries and charts for Market Views']
+        _require(synthesis[0]['conclusion'] == 'success', 'daily_pages_prior_gate_invalid')
 
 
 def require_source_readiness(producer, jobs_page, *, source_kind=None):

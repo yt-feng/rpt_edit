@@ -19,15 +19,29 @@ from recover_ocr_cache_sources import (require, exact_head, download_verified,
     public_error_category, build_client)
 
 
-def recovery_outcomes(mineru, ocr, mineru_saved, ocr_saved):
+def recovery_outcomes(mineru, ocr, mineru_saved, ocr_saved, *, ocr_complete=False):
     """Use step outcomes, including failed continue-on-error attempts."""
     recognized = {'success', 'failure', 'cancelled', 'skipped', ''}
     require(all(value in recognized for value in (mineru, ocr, mineru_saved, ocr_saved)),
             'daily_recovery_outcome_invalid')
-    ready = (mineru == mineru_saved == 'success') or (ocr == ocr_saved == 'success')
+    require(type(ocr_complete) is bool, 'daily_recovery_outcome_invalid')
+    ready = (mineru == mineru_saved == 'success') or (ocr == ocr_saved == 'success' and ocr_complete)
     return {'mineru_recovery_failed': str(mineru == 'failure').lower(),
             'ocr_attempted': str(ocr in {'success', 'failure'}).lower(),
-            'article_source_ready': str(ready).lower()}
+            'article_source_ready': str(ready).lower(),
+            'ocr_article_source_incomplete': str(ocr == ocr_saved == 'success' and not ocr_complete).lower()}
+
+
+def complete_synthesis_for_articles(source, env):
+    """A publishable partial Market Views edition is not a full article source."""
+    from market_views_publication import validate_ocr_synthesis_receipt
+    count = env.get('EXPECTED_REPORTS', '')
+    require(re.fullmatch(r'[1-9][0-9]{0,3}', count) and int(count) <= 1000,
+            'daily_pages_selection_invalid')
+    receipt = validate_ocr_synthesis_receipt(source, date_folder=env.get('DATE_FOLDER', ''),
+        expected_reports=int(count), source_run_id=env.get('GITHUB_RUN_ID', ''),
+        execution_sha=env.get('GITHUB_SHA', ''))
+    return receipt['summarized_reports'] == int(count) and receipt['skipped_reports'] == 0
 
 
 def identity(env):
@@ -117,10 +131,16 @@ def main(argv=None):
     parser.add_argument('command', choices=('outcomes', 'recover', 'archive'))
     parser.add_argument('--input-dir', type=Path)
     parser.add_argument('--workspace', type=Path)
+    parser.add_argument('--synthesis-dir', type=Path)
     args = parser.parse_args(argv)
     if args.command == 'outcomes':
-        result = recovery_outcomes(*(os.environ.get(key, '') for key in
-            ('MINERU_OUTCOME', 'OCR_OUTCOME', 'MINERU_SAVE_OUTCOME', 'OCR_SAVE_OUTCOME')))
+        outcomes = tuple(os.environ.get(key, '') for key in
+            ('MINERU_OUTCOME', 'OCR_OUTCOME', 'MINERU_SAVE_OUTCOME', 'OCR_SAVE_OUTCOME'))
+        complete = False
+        if outcomes[1] == outcomes[3] == 'success':
+            require(args.synthesis_dir is not None, 'daily_synthesis_receipt_required')
+            complete = complete_synthesis_for_articles(args.synthesis_dir, os.environ)
+        result = recovery_outcomes(*outcomes, ocr_complete=complete)
         with open(require_env('GITHUB_OUTPUT'), 'a') as output:
             for name, value in result.items(): output.write(f'{name}={value}\n')
         return 0

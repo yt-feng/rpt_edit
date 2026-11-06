@@ -103,7 +103,7 @@ def gate(block, results, *, selected="64", cancelled=False, plan=None, primary_r
     expression = expression.replace("needs.source-outcome.outputs.provider_only", repr(provider_only))
     expression = expression.replace("needs.recover-market-sources.outputs.source_kind", repr(recovery_kind))
     expression = re.sub(r"needs\.recover-market-sources\.outputs\.(\w+)",
-                        lambda m: repr((recovery_outputs or {}).get(m[1], '')), expression)
+                        lambda m: repr({'article_source_ready': 'true', **(recovery_outputs or {})}.get(m[1], '')), expression)
     options = {
         "wechat_draft_upload": "true", "wechat_draft_source": "xhs_notes",
         "translated_report_count": "3", "replay_source_run_id": "",

@@ -206,13 +206,13 @@ class DailyPagesTests(unittest.TestCase):
     def test_outcome_permutations_never_fallback_before_real_mineru_failure_and_ocr_attempt(self):
         block=job(UPSTREAM,'recover-ocr-page-sources')
         for mineru,ocr,mineru_saved,ocr_saved in itertools.product(('success','failure','skipped','cancelled'),repeat=4):
-            outcomes=daily.recovery_outcomes(mineru,ocr,mineru_saved,ocr_saved)
+            outcomes=daily.recovery_outcomes(mineru,ocr,mineru_saved,ocr_saved,ocr_complete=True)
             expected=mineru=='failure' and ocr in {'success','failure'} and not(ocr==ocr_saved=='success')
             results={'select-macro-reports':'success','source-outcome':'success','recover-market-sources':'failure'}
             with self.subTest(mineru=mineru,ocr=ocr,mineru_saved=mineru_saved,ocr_saved=ocr_saved):
                 self.assertEqual(gate(block,results,primary_ready='false',recovery_outputs=outcomes),expected)
         outcomes={'mineru_recovery_failed':'true','ocr_attempted':'true','article_source_ready':'false'}
-        for result in ('success','skipped','cancelled'):
+        for result in ('skipped','cancelled'):
             self.assertFalse(gate(block,{**results,'recover-market-sources':result},primary_ready='false',recovery_outputs=outcomes))
         for args in ({'cancelled':True},{'primary_ready':'true'},{'selected':'0'},
                      {'plan':{'replay_source_run_id':'123'}}):
@@ -229,6 +229,33 @@ class DailyPagesTests(unittest.TestCase):
         for result in ('failure','skipped','cancelled'):
             self.assertFalse(gate(job(UPSTREAM,'deliver-recovered-report-articles'),
                 {**results,'recover-ocr-page-sources':result},primary_ready='false'))
+
+    def test_partial_synthesis_routes_articles_to_pages_and_keeps_market_views(self):
+        from test_recover_report_articles import ArticleRecoveryTests
+        harness=ArticleRecoveryTests();harness.setUp();self.addCleanup(harness.doCleanups)
+        fixture=harness.ocr(partial=True)
+        source=fixture.root/'summaries/261005'
+        receipt=json.loads((source/'ocr_synthesis_receipt.json').read_bytes())
+        env={'EXPECTED_REPORTS':'2','DATE_FOLDER':'261005','GITHUB_RUN_ID':receipt['source_run_id'],
+             'GITHUB_SHA':receipt['execution_sha']}
+        self.assertFalse(daily.complete_synthesis_for_articles(source,env))
+        outcomes=daily.recovery_outcomes('failure','success','skipped','success',ocr_complete=False)
+        self.assertEqual(outcomes['article_source_ready'],'false')
+        self.assertEqual(outcomes['ocr_article_source_incomplete'],'true')
+        results={'select-macro-reports':'success','source-outcome':'success','recover-market-sources':'success'}
+        self.assertTrue(gate(job(UPSTREAM,'recover-ocr-page-sources'),results,primary_ready='false',recovery_outputs=outcomes))
+        self.assertFalse(gate(job(UPSTREAM,'deliver-recovered-report-articles'),results,primary_ready='false',recovery_outputs=outcomes))
+        self.assertTrue(gate(job(UPSTREAM,'trigger-market-views'),results,primary_ready='false',recovery_kind='ocr-synthesis',recovery_outputs=outcomes))
+        results['recover-ocr-page-sources']='success'
+        self.assertTrue(gate(job(UPSTREAM,'deliver-recovered-report-articles'),results,primary_ready='false',recovery_outputs=outcomes))
+        producer={**self.f.producer,'status':'in_progress','conclusion':None}
+        observed=source_jobs();prior=observed['jobs'][0];prior['conclusion']='success'
+        for number in (2,4):prior['steps'][number]['conclusion']='success'
+        prior['steps'].append(dict(name='Confirm partial OCR synthesis requires original pages',number=7,
+                                   status='completed',conclusion='success'))
+        self.assertTrue(require_source_readiness(producer,observed,source_kind='ocr-pages')['ready'])
+        prior['steps'][-1]['conclusion']='skipped'
+        with self.assertRaises(ValueError):require_source_readiness(producer,observed,source_kind='ocr-pages')
 
     def test_workflow_uses_same_run_artifact_only_no_ocr_or_model_credentials(self):
         import yaml
