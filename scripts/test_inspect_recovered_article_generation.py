@@ -495,6 +495,11 @@ class DailyInspectionTests(unittest.TestCase):
             self.assertEqual(self.downloads, [])
             target[name] = original
 
+    def test_later_success_does_not_erase_the_pinned_failed_job_evidence(self):
+        self.run['conclusion']='success'
+        result=self.inspect()
+        self.assertEqual(result['generation_job_id'],inspector.DAILY_INCIDENT['job_id'])
+
     def test_empty_articles_directory_omitted_by_archive_is_valid_observation(self):
         original=self.download
         def without_empty_directory(*args,**kwargs):

@@ -525,7 +525,7 @@ def inspect_daily(client, bucket, run, jobs, repository, workspace):
     from market_views_source_readiness import require_source_readiness
     case = DAILY_INCIDENT
     sha = validate_ocr_producer(run, {'source_run_id': case['run_id']}, repository)
-    require(sha == case['sha'] and run.get('conclusion') == 'failure', 'inspection_generation_job_invalid')
+    require(sha == case['sha'], 'inspection_generation_job_invalid')
     require_source_readiness(run, jobs, source_kind='ocr-synthesis')
     matches = [row for row in jobs['jobs'] if row.get('id') == case['job_id']]
     require(len(matches) == 1, 'inspection_generation_job_missing')
@@ -591,7 +591,7 @@ def main(argv=None):
             with tempfile.TemporaryDirectory(prefix='daily-generation-inspection-') as temp:
                 with (Path(temp)/'private-inspection.log').open('w') as private, redirect_stdout(private), redirect_stderr(private):
                     result = inspect_daily(build_client(), require_env('R2_BUCKET'),
-                        api(repository, args.daily_run_id), jobs(repository, args.daily_run_id), repository, Path(temp))
+                        api(repository, args.daily_run_id), jobs(repository, args.daily_run_id, attempt=1), repository, Path(temp))
             args.output.parent.mkdir(parents=True, exist_ok=True)
             result = {'success': True, **result}
             args.output.write_text(json.dumps(result, sort_keys=True, indent=2)+'\n')
