@@ -377,25 +377,9 @@
       "first_seen": "2026-08-07",
       "status": "too_old"
     },
-    "imf:016bb8f9c588a8bcb2bed7e51cd12a085c9f6040b496872c1cd2ca62bd3c": {
-      "first_seen": "2026-07-09",
-      "status": "downloaded"
-    },
-    "imf:b75a2750184724f0e6f10bc023d9f3c2cf8226e7626062f74ac0205f5589": {
-      "first_seen": "2026-07-09",
-      "status": "downloaded"
-    },
     "bis:https://www.bis.org/publ/work1366.htm": {
       "first_seen": "2026-08-07",
       "status": "too_old"
-    },
-    "wto:https://www.wto.org/english/news_e/news26_e/dgno_08jul26_448_e.htm": {
-      "first_seen": "2026-07-09",
-      "status": "no_pdf"
-    },
-    "bruegel:12419": {
-      "first_seen": "2026-07-09",
-      "status": "downloaded"
     },
     "imf:3fb1f738e19de7e774da3d43c12e8fe763285e87b5d22959d48981eda826": {
       "first_seen": "2026-07-10",
@@ -3955,6 +3939,18 @@
     },
     "wto:https://www.wto.org/english/news_e/news26_e/envir_05nov26_541_e.htm": {
       "first_seen": "2026-11-06",
+      "status": "no_pdf"
+    },
+    "worldbank:099607311062625210": {
+      "first_seen": "2026-11-07",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/work1392.htm": {
+      "first_seen": "2026-11-07",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/safe_eec_06nov26_542_e.htm": {
+      "first_seen": "2026-11-07",
       "status": "no_pdf"
     }
   }
