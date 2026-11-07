@@ -2,40 +2,148 @@
   "schema": 1,
   "institution": "imf",
   "items": {
-    "imf:13b6bd51abb38f358183bd66420c967ef188f8cce59e34f5d7f44528a5f5": {
+    "imf:bfb39a5e60f00f9e97cc97f7b80e5781c27bf1a0ef74c8c3270bf76b1831": {
       "item": {
-        "title": "Solomon Islands: Technical Assistance Report-Financial Sector Stability Review",
-        "source_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/11/05/solomon-islands-technical-assistance-report-financial-sector-stability-review-580952",
-        "guid": "13b6bd51abb38f358183bd66420c967ef188f8cce59e34f5d7f44528a5f5",
-        "date": "2026-11-05T05:00:00+00:00",
+        "title": "IMFNow: The IMF Nowcasting Framework in R",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/11/06/imfnow-the-imf-nowcasting-framework-in-r-580823",
+        "guid": "bfb39a5e60f00f9e97cc97f7b80e5781c27bf1a0ef74c8c3270bf76b1831",
+        "date": "2026-11-06T05:00:00+00:00",
         "pdf_candidates": [
-          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026090.pdf",
-          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026090-source-pdf.pdf"
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026240-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026240.pdf"
         ],
-        "scrape_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/11/05/solomon-islands-technical-assistance-report-financial-sector-stability-review-580952",
-        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/technical-assistance-reports/issues/2026/11/05/solomon-islands-technical-assistance-report-financial-sector-stability-review-580952"
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/11/06/imfnow-the-imf-nowcasting-framework-in-r-580823",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/11/06/imfnow-the-imf-nowcasting-framework-in-r-580823"
       },
-      "admitted_at": "2026-11-06T01:58:11.481669+00:00",
+      "admitted_at": "2026-11-07T01:30:25.830863+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-06T01:58:11.481669+00:00",
+      "last_attempted_at": "2026-11-07T01:30:25.830863+00:00",
       "attempts": 1
     },
-    "imf:ac4534dd043aaa249d512151146e7af76026981b70dde3b1a0e5691594b8": {
+    "imf:48559e102a40aa0130eee51256a1d1758551275011001ebac88c382fd6c0": {
       "item": {
-        "title": "Nepal: Building An Effective Revenue Policy Unit",
-        "source_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/11/05/nepal-building-an-effective-revenue-policy-unit-580962",
-        "guid": "ac4534dd043aaa249d512151146e7af76026981b70dde3b1a0e5691594b8",
-        "date": "2026-11-05T05:00:00+00:00",
+        "title": "Household Vulnerability, Bank Solvency, and Policy Design in the Middle East War",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/11/06/household-vulnerability-bank-solvency-and-policy-design-in-the-middle-east-war-580946",
+        "guid": "48559e102a40aa0130eee51256a1d1758551275011001ebac88c382fd6c0",
+        "date": "2026-11-06T05:00:00+00:00",
         "pdf_candidates": [
-          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026075.pdf",
-          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026075-source-pdf.pdf"
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026243-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026243.pdf"
         ],
-        "scrape_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/11/05/nepal-building-an-effective-revenue-policy-unit-580962",
-        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/11/05/nepal-building-an-effective-revenue-policy-unit-580962"
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/11/06/household-vulnerability-bank-solvency-and-policy-design-in-the-middle-east-war-580946",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/11/06/household-vulnerability-bank-solvency-and-policy-design-in-the-middle-east-war-580946"
       },
-      "admitted_at": "2026-11-06T01:58:11.481669+00:00",
+      "admitted_at": "2026-11-07T01:30:25.830863+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-06T01:58:11.481669+00:00",
+      "last_attempted_at": "2026-11-07T01:30:25.830863+00:00",
+      "attempts": 1
+    },
+    "imf:fd6c97f3f395baade317eb828ab6ab3907fa72ea832ac0816f20f20a9826": {
+      "item": {
+        "title": "A Flexible Composite Term Structure of Inflation Expectations",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/11/06/a-flexible-composite-term-structure-of-inflation-expectations-580104",
+        "guid": "fd6c97f3f395baade317eb828ab6ab3907fa72ea832ac0816f20f20a9826",
+        "date": "2026-11-06T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026242-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026242.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/11/06/a-flexible-composite-term-structure-of-inflation-expectations-580104",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/11/06/a-flexible-composite-term-structure-of-inflation-expectations-580104"
+      },
+      "admitted_at": "2026-11-07T01:30:25.830863+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-07T01:30:25.830863+00:00",
+      "attempts": 1
+    },
+    "imf:8dafaa6411092994186408a9001e23bb05aba642e7336cc3455dcc0df8c0": {
+      "item": {
+        "title": "Monetary Policy Under Network-Level Bottlenecks",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/11/06/monetary-policy-under-network-level-bottlenecks-581019",
+        "guid": "8dafaa6411092994186408a9001e23bb05aba642e7336cc3455dcc0df8c0",
+        "date": "2026-11-06T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026244-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026244.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/11/06/monetary-policy-under-network-level-bottlenecks-581019",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/11/06/monetary-policy-under-network-level-bottlenecks-581019"
+      },
+      "admitted_at": "2026-11-07T01:30:25.830863+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-07T01:30:25.830863+00:00",
+      "attempts": 1
+    },
+    "imf:3d2e36cb3216e9f4c32756a18db6bc1237d7100a7a8bd25d5b55587c3299": {
+      "item": {
+        "title": "Divide and Indebt: How Geoeconomic Fragmentation Affects Public Debt and Macro-Fiscal Stability",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/11/06/divide-and-indebt-how-geoeconomic-fragmentation-affects-public-debt-and-macro-fiscal-580991",
+        "guid": "3d2e36cb3216e9f4c32756a18db6bc1237d7100a7a8bd25d5b55587c3299",
+        "date": "2026-11-06T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026239-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026239.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/11/06/divide-and-indebt-how-geoeconomic-fragmentation-affects-public-debt-and-macro-fiscal-580991",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/11/06/divide-and-indebt-how-geoeconomic-fragmentation-affects-public-debt-and-macro-fiscal-580991"
+      },
+      "admitted_at": "2026-11-07T01:30:25.830863+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-07T01:30:25.830863+00:00",
+      "attempts": 1
+    },
+    "imf:710c3b7610a9c1a2a34c7896cf47f83ef5c100de207100cb46f69bf7244b": {
+      "item": {
+        "title": "From Calibration to Estimation: A Modern Bayesian Framework for Quarterly Projection Models",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/11/06/from-calibration-to-estimation-a-modern-bayesian-framework-for-quarterly-projection-models-580820",
+        "guid": "710c3b7610a9c1a2a34c7896cf47f83ef5c100de207100cb46f69bf7244b",
+        "date": "2026-11-06T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026241-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026241.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/11/06/from-calibration-to-estimation-a-modern-bayesian-framework-for-quarterly-projection-models-580820",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/11/06/from-calibration-to-estimation-a-modern-bayesian-framework-for-quarterly-projection-models-580820"
+      },
+      "admitted_at": "2026-11-07T01:30:25.830863+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-07T01:30:25.830863+00:00",
+      "attempts": 1
+    },
+    "imf:90f642928eb2b47ec8d335639a9f8db1c6345757907de6cecf431697e4ee": {
+      "item": {
+        "title": "Kenya: Technical Assistance Report-Regulation and Supervision of Crypto Markets and Activities",
+        "source_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/11/06/kenya-technical-assistance-report-regulation-and-supervision-of-crypto-markets-and-580957",
+        "guid": "90f642928eb2b47ec8d335639a9f8db1c6345757907de6cecf431697e4ee",
+        "date": "2026-11-06T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026091.pdf",
+          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026091-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/11/06/kenya-technical-assistance-report-regulation-and-supervision-of-crypto-markets-and-580957",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/technical-assistance-reports/issues/2026/11/06/kenya-technical-assistance-report-regulation-and-supervision-of-crypto-markets-and-580957"
+      },
+      "admitted_at": "2026-11-07T01:30:25.830863+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-07T01:30:25.830863+00:00",
+      "attempts": 1
+    },
+    "imf:833287a58f686fcdff43e79f793fe30a6019f1d7d918e8deeadd6f7a4632": {
+      "item": {
+        "title": "Kenya: Regulation and Supervision of Crypto Markets and Activities",
+        "source_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/11/05/kenya-regulation-and-supervision-of-crypto-markets-and-activities-580967",
+        "guid": "833287a58f686fcdff43e79f793fe30a6019f1d7d918e8deeadd6f7a4632",
+        "date": "2026-11-06T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026076.pdf",
+          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026076-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/11/05/kenya-regulation-and-supervision-of-crypto-markets-and-activities-580967",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/11/05/kenya-regulation-and-supervision-of-crypto-markets-and-activities-580967"
+      },
+      "admitted_at": "2026-11-07T01:30:25.830863+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-07T01:30:25.830863+00:00",
       "attempts": 1
     }
   }
