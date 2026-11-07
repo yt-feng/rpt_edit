@@ -14,6 +14,7 @@ from portal_english_publication import (ASSEMBLY, NS, bind_release, checked_asse
                                        compose, read_active, read_ledger, read_static_assembly, recover_prepared, verify_prepared_ledger)
 from portal_extended_locales import ExpansionError, ORIGIN, digest, stable_bytes
 from portal_extended_r2 import R2NotFound, R2PermissionError
+from portal_smoke_get import DELAYS, retry_public_get
 from publish_static_slot import manifest_key, slot_prefix
 from verify_prepared_static_slot import static_tree_sha256
 from review_portal_english_handoff import approval_is_valid, producer_is_valid, review_identity
@@ -563,6 +564,37 @@ class EnglishReviewTests(unittest.TestCase):
                 producer_is_valid(receipt, {**run, **change}, jobs, 'example/repo')
         jobs[-1]['conclusion'] = 'failure'
         with self.assertRaises(ExpansionError): producer_is_valid(receipt, run, jobs, 'example/repo')
+
+
+class PublicResponseTests(unittest.TestCase):
+    def test_release_audit_retries_dropped_connection_and_temporary_status(self):
+        from requests.exceptions import ConnectionError
+
+        session = mock.Mock()
+        unavailable = mock.Mock(status_code=503, headers={'Retry-After': '18'})
+        accepted = mock.Mock(status_code=200, content=b'expected bytes')
+        session.get.side_effect = [ConnectionError('Remote end closed connection'), unavailable, accepted]
+        waits = []
+        result = retry_public_get(session, 'https://example.test/fr/', sleep=waits.append)
+        self.assertIs(result, accepted)
+        self.assertEqual(waits, [DELAYS[0], 18])
+        unavailable.close.assert_called_once()
+        self.assertTrue(all(call.kwargs['allow_redirects'] is False for call in session.get.call_args_list))
+
+    def test_release_audit_preserves_permanent_http_and_certificate_failures(self):
+        from requests.exceptions import SSLError
+
+        session = mock.Mock()
+        session.get.return_value = mock.Mock(status_code=403)
+        waits = []
+        self.assertEqual(retry_public_get(session, 'https://example.test/fr/', sleep=waits.append).status_code, 403)
+        session.get.assert_called_once()
+        session.reset_mock()
+        session.get.side_effect = SSLError('certificate verification failed')
+        with self.assertRaises(SSLError):
+            retry_public_get(session, 'https://example.test/fr/', sleep=waits.append)
+        session.get.assert_called_once()
+        self.assertEqual(waits, [])
 
 
 if __name__ == '__main__': unittest.main()
