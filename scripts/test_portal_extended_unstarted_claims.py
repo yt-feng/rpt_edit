@@ -208,6 +208,52 @@ class UnstartedClaimTests(unittest.TestCase):
         self.assertEqual(queue(self.store, 'fr')[self.gen], {**before, 'owner':NEW})
         self.assertNotIn('snapshot', queue(self.store, 'fr')[self.gen])
 
+    def test_cancelled_matrix_recovers_unused_jobs_and_one_interrupted_first_attempt(self):
+        locales = ('fr', 'pt', 'es', 'de')
+        register(self.store, self.f.corpus, locales, fixtures.PRODUCER)
+        for locale in locales:
+            rows = queue(self.store, locale)
+            rows[self.gen]['owner'] = OLD
+            save_queue(self.store, locale, rows)
+        jobs = self.terminal_worker(locale='fr', conclusion='cancelled')
+        common = {'run_id':456, 'head_sha':OLD['sha'], 'status':'completed'}
+        jobs[1]['steps'] = [
+            {'name':recovery.TRANSLATE_STEP, 'started_at':'2026-10-23T00:25:00Z', 'conclusion':None},
+            *({'name':name, 'started_at':None, 'completed_at':None, 'conclusion':None}
+              for name in recovery.PERSIST_STEPS),
+        ]
+        jobs += [
+            {**common, 'id':4563, 'name':'locale (pt)', 'conclusion':'cancelled',
+             'runner_id':None, 'runner_name':None, 'steps':[]},
+            {**common, 'id':4564, 'name':'locale (es)', 'conclusion':'success',
+             'runner_id':42, 'steps':[{'name':recovery.TRANSLATE_STEP, 'conclusion':'success'}]},
+            {**common, 'id':4565, 'name':'locale (de)', 'conclusion':'cancelled',
+             'runner_id':42, 'steps':[jobs[1]['steps'][0], jobs[1]['steps'][1],
+                                     {**jobs[1]['steps'][2], 'started_at':'2026-10-23T00:26:00Z'}]},
+        ]
+        self.jobs['456'] = jobs
+        scan = self.scan()
+        eligible, stopped = partition_stopped_locales(self.store, locales, unstarted=scan)
+        self.assertEqual(eligible, ('fr', 'pt'))
+        self.assertEqual([row['locale'] for row in stopped], ['es', 'de'])
+        self.assertEqual(self.calls.count(f'repos/{REPOSITORY}/actions/runs/456/attempts/1/jobs?per_page=100'), 1)
+        pending(self.store, eligible, self.root/'recovered.json', producer=NEW, unstarted=scan)
+        with patch.dict(os.environ, environment()):
+            self.assertEqual(scan.commit(), 2)
+        self.assertEqual(queue(self.store, 'fr')[self.gen], {'status':'started','continuations':1,'owner':NEW})
+        self.assertEqual(queue(self.store, 'pt')[self.gen], {'status':'started','continuations':0,'owner':NEW})
+        self.assertEqual(queue(self.store, 'es')[self.gen]['owner'], OLD)
+        policies = {json.loads(record['body'])['locale']:json.loads(record['body'])['policy']
+                    for record in self.receipts().values()}
+        self.assertEqual(policies, {'fr':recovery.INITIAL_REPLAY_POLICY, 'pt':recovery.POLICY})
+
+        self.runs['789'] = failed_run(NEW)
+        self.jobs['789'] = [{**job, 'run_id':789, 'head_sha':NEW['sha']} for job in jobs]
+        following = self.scan({'run_id':'999', 'attempt':'1', 'sha':'e'*40})
+        eligible, stopped = partition_stopped_locales(self.store, ('fr',), unstarted=following)
+        self.assertEqual(eligible, ())
+        self.assertEqual(stopped[0]['recovery_code'], 'initial_worker_replay_bound_reached')
+
     def test_failed_original_source_stays_blocked_before_any_model_or_write(self):
         self.claimed()
         self.origin_run['conclusion'] = 'cancelled'
