@@ -11,6 +11,7 @@ import xml.etree.ElementTree as ET
 
 from portal_extended_locales import ExpansionError, direction, select_locales
 from portal_extended_ui import UI_VERSION
+from portal_smoke_get import retry_public_get
 
 
 class MetadataParser(HTMLParser):
@@ -55,9 +56,9 @@ def parse_metadata(body: bytes) -> MetadataParser:
 
 
 def require_response(session, url: str) -> tuple[dict[str, str], bytes]:
-    response = session.get(url, timeout=(10, 60), allow_redirects=False,
-                           headers={'User-Agent': 'Extended-locale-live-audit/1.0',
-                                    'Cache-Control': 'no-cache'})
+    response = retry_public_get(session, url, timeout=(10, 60),
+                                headers={'User-Agent': 'Extended-locale-live-audit/1.0',
+                                         'Cache-Control': 'no-cache'})
     if response.status_code != 200:
         raise ExpansionError(f'Live extended route returned HTTP {response.status_code}: {url}')
     return dict(response.headers), response.content

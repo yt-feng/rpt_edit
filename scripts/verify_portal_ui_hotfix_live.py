@@ -9,6 +9,7 @@ import re
 from urllib.parse import urlsplit
 import requests
 from portal_english_ui import account_session_key
+from portal_smoke_get import retry_public_get
 
 
 def identity(receipt):
@@ -20,7 +21,7 @@ def identity(receipt):
 
 def fetch(session, url, *, body=None):
     kwargs = {"timeout": (10, 30), "allow_redirects": False}
-    response = session.get(url, **kwargs) if body is None else session.post(url, json=body, **kwargs)
+    response = retry_public_get(session, url) if body is None else session.post(url, json=body, **kwargs)
     if len(response.content) > 4 * 1024 * 1024:
         raise ValueError("Acceptance response exceeds bound")
     return response

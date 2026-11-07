@@ -54,6 +54,31 @@ def retry_after(headers, *, now):
     return delay
 
 
+def retry_public_get(session, url, *, timeout=(10, 30), headers=None, sleep=time.sleep, now=time.time):
+    """Retry a transient transport/status failure before checking the response."""
+    from requests import exceptions
+
+    delays = DELAYS[:2]
+    kwargs = {'headers': headers} if headers else {}
+    for attempt in range(len(delays) + 1):
+        try:
+            response = session.get(url, timeout=timeout, allow_redirects=False, **kwargs)
+        except exceptions.SSLError:
+            raise
+        except (exceptions.ConnectionError, exceptions.Timeout, exceptions.ChunkedEncodingError):
+            if attempt == len(delays):
+                raise SmokeFailure(f'public_get_transport_failed path={urlsplit(url).path}') from None
+            sleep(delays[attempt])
+            continue
+        status = response.status_code
+        if attempt == len(delays) or not (status in (408, 429) or 500 <= status <= 599):
+            return response
+        header = response.headers.get('Retry-After')
+        response.close()
+        server_delay = retry_after(f'Retry-After: {header}'.encode('iso-8859-1'), now=now) if header else 0
+        sleep(max(delays[attempt], server_delay))
+
+
 def smoke_get(label, origin, output, *, run=subprocess.run, sleep=time.sleep,
               now=time.time, emit=print):
     if label not in ENDPOINTS:

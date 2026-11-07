@@ -21,6 +21,7 @@ from portal_english_pipeline import (MAX_BODY, MAX_MANIFEST, content_key, hash_v
 from portal_english_ui import PUBLIC_ASSET_NAMES, account_session_key, detail, homepage, preview_item, ui_assets
 from portal_extended_locales import ORIGIN, digest, stable_bytes
 from portal_extended_r2 import DEFAULT_PREFIX, R2NotFound, R2Store, safe_relative
+from portal_smoke_get import retry_public_get
 
 ASSEMBLY = 'data/english-commentary/assembly.json'
 NS = 'http://www.sitemaps.org/schemas/sitemap/0.9'
@@ -315,7 +316,7 @@ def recover_prepared(store, source_store, identity, workspace):
 
 
 def preflight_api(session):
-    response = session.get(ORIGIN+'/api/english/commentary?page=1', timeout=(10, 30), allow_redirects=False)
+    response = retry_public_get(session, ORIGIN+'/api/english/commentary?page=1')
     require(len(response.content) <= MAX_MANIFEST, 'English API response exceeds bound')
     value = response.json()
     require((response.status_code == 404 and value == {'error': 'commentary_not_published'})
@@ -325,14 +326,14 @@ def preflight_api(session):
 
 def audit_live(store, identity, session):
     from verify_portal_ui_hotfix_live import verify_english_account_session
-    response = session.get(ORIGIN+'/.well-known/edge-state', timeout=(10, 30), allow_redirects=False)
+    response = retry_public_get(session, ORIGIN+'/.well-known/edge-state')
     require(response.status_code == 200 and len(response.content) <= 65536
             and all(response.json().get(key) == value for key, value in identity.items()), 'Live English site version differs')
     active = read_active(store, identity)
     if active is None:
-        response = session.get(ORIGIN+'/en/', timeout=(10, 30), allow_redirects=False)
+        response = retry_public_get(session, ORIGIN+'/en/')
         require(response.status_code == 404, 'Rollback without English must not keep English public pages')
-        response = session.get(ORIGIN+'/api/english/commentary', timeout=(10, 30), allow_redirects=False)
+        response = retry_public_get(session, ORIGIN+'/api/english/commentary')
         require(response.status_code == 404 and len(response.content) <= 4096
                 and response.json() == {'error': 'commentary_not_published'}, 'Rollback kept an independently selected English API ledger')
         return {'site_release': identity['release_id'], 'page_count': 0, 'english_absent': True, 'status': 'passed'}
@@ -340,14 +341,15 @@ def audit_live(store, identity, session):
     samples = {'en/index.html', f'en/blog/{items[0]["id"]}.html', f'en/blog/{items[-1]["id"]}.html', 'sitemap-en.xml'}
     for relative in sorted(samples):
         url = ORIGIN+'/en/' if relative == 'en/index.html' else ORIGIN+'/'+relative
-        response = session.get(url, timeout=(10, 30), allow_redirects=False); expected = active['public_files'][relative]
+        response = retry_public_get(session, url)
+        expected = active['public_files'][relative]
         require(response.status_code == 200 and len(response.content) == expected['bytes']
                 and digest(response.content) == expected['sha256'], 'Live English preview/sitemap bytes differ')
         if relative.startswith('en/'):
             require(response.headers.get('Content-Language') == 'en', 'Live English language header differs')
         if relative == 'en/index.html':
             verify_english_account_session(ORIGIN, response.content, session)
-    response = session.get(ORIGIN+'/api/english/commentary?page=1', timeout=(10, 30), allow_redirects=False)
+    response = retry_public_get(session, ORIGIN+'/api/english/commentary?page=1')
     require(response.status_code == 200 and len(response.content) <= MAX_MANIFEST, 'Live English public preview API failed')
     value = response.json()
     require(value.get('policy') == POLICY and value.get('total') == len(items)

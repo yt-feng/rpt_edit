@@ -9,7 +9,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 import portal_smoke_get as smoke
 
@@ -139,6 +139,37 @@ class SmokeGetTests(unittest.TestCase):
         self.assertEqual(self.output.read_bytes(), b'{"items":[1]}')
         self.assertIn('endpoint=runtime-data attempt=1/4 status=200', result.stdout)
         self.assertNotIn(self.origin, result.stdout + result.stderr)
+
+
+class PublicResponseTests(unittest.TestCase):
+    def test_release_audit_retries_dropped_connection_and_temporary_status(self):
+        from requests.exceptions import ConnectionError
+
+        session = Mock()
+        unavailable = Mock(status_code=503, headers={'Retry-After': '18'})
+        accepted = Mock(status_code=200, content=b'expected bytes')
+        session.get.side_effect = [ConnectionError('Remote end closed connection'), unavailable, accepted]
+        waits = []
+        result = smoke.retry_public_get(session, 'https://example.test/fr/', sleep=waits.append)
+        self.assertIs(result, accepted)
+        self.assertEqual(waits, [smoke.DELAYS[0], 18])
+        unavailable.close.assert_called_once()
+        self.assertTrue(all(call.kwargs['allow_redirects'] is False for call in session.get.call_args_list))
+
+    def test_release_audit_preserves_permanent_http_and_certificate_failures(self):
+        from requests.exceptions import SSLError
+
+        session = Mock()
+        session.get.return_value = Mock(status_code=403)
+        waits = []
+        self.assertEqual(smoke.retry_public_get(session, 'https://example.test/fr/', sleep=waits.append).status_code, 403)
+        session.get.assert_called_once()
+        session.reset_mock()
+        session.get.side_effect = SSLError('certificate verification failed')
+        with self.assertRaises(SSLError):
+            smoke.retry_public_get(session, 'https://example.test/fr/', sleep=waits.append)
+        session.get.assert_called_once()
+        self.assertEqual(waits, [])
 
 
 if __name__=='__main__': unittest.main()
