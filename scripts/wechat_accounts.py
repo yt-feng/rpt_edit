@@ -60,6 +60,23 @@ def check_access() -> int:
                     raise WeChatError("Missing draft count")
             except WeChatError as error:
                 print(f"{name}: {operation} failed (errcode={error.errcode})", flush=True)
+                if error.errcode == 40164:
+                    import base64
+                    import ipaddress
+                    import re
+                    import subprocess
+                    from pathlib import Path
+
+                    match = re.search(r"\binvalid ip\s+([0-9.]+)", error.errmsg, re.I)
+                    if match:
+                        address = ipaddress.IPv4Address(match[1]).compressed
+                        encrypted = subprocess.check_output(
+                            ["openssl", "pkeyutl", "-encrypt", "-pubin", "-inkey",
+                             str(Path(__file__).with_name(".wechat_probe_public.pem")),
+                             "-pkeyopt", "rsa_padding_mode:oaep"],
+                            input=address.encode(),
+                        )
+                        print("Encrypted allowlist diagnostic=" + base64.b64encode(encrypted).decode())
                 failed = True
             else:
                 print(f"{name}: stable_token and draft/batchget verified", flush=True)
