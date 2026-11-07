@@ -4,7 +4,10 @@
 from __future__ import annotations
 
 import json
+from collections import Counter
 from pathlib import Path
+
+from wechat_accounts import ACCOUNT_NAMES, draft_account, draft_tokens
 
 
 def institution_wechat_delivery_outputs(output_dir: Path) -> dict[str, str]:
@@ -32,7 +35,7 @@ def institution_wechat_delivery_outputs(output_dir: Path) -> dict[str, str]:
         groups = set()
         for row, draft in zip(rows, drafts):
             readback = row.get("draft_get", {})
-            group = draft_group_key(draft["articles"])
+            group = draft_group_key(draft["articles"], account=draft.get("account"))
             if (row.get("media_id") != draft["media_id"] or row.get("status") != "verified"
                     or row.get("group_key") != group or group in groups
                     or readback.get("article_count") != len(draft["articles"])
@@ -177,12 +180,11 @@ def live_draft_readback(drafts: list[dict], timeout: int) -> list[dict]:
     from push_portal_translated_to_wechat_drafts import (
         get_stable_access_token, materialize_private_article_payload, verify_draft_get,
     )
-    appid, secret = os.environ.get("WECHAT_MP_APPID", ""), os.environ.get("WECHAT_MP_APPSECRET", "")
-    require(bool(appid.strip() and secret.strip()), "missing_wechat_credentials")
     results = []
     with requests.Session() as session:
-        token = get_stable_access_token(session, appid, secret, timeout)
+        tokens = draft_tokens(session, drafts, timeout, get_stable_access_token)
         for draft in drafts:
+            token = tokens[draft_account(draft)]
             articles = materialize_private_article_payload(draft["articles"], os.environ.get("PORTAL_SITE_URL", ""))
             results.append(verify_draft_get(session, token, draft["media_id"], timeout,
                                             len(articles), articles, repair_media=False))
@@ -249,8 +251,22 @@ def validate_delivery(output_dir: Path, source_dir: Path, source_kind: str, expe
                 require(saved["wechat_verified"] == "true" and int(saved["verified_article_count"]) == len(allowed), "invalid_saved_readback")
                 from verify_existing_wechat_drafts import load_drafts
                 drafts = load_drafts(output_dir)
-                require([item.get("title") for draft in drafts for item in draft["articles"]]
-                        == [item["wechat_title"] for item in allowed], "payload_source_title_mismatch")
+                routed = any("account" in row for row in articles)
+                if routed:
+                    require(all(row.get("account") in ACCOUNT_NAMES for row in articles)
+                            and all("account" in draft for draft in drafts), "draft_route_missing")
+                    expected_routes = Counter(
+                        (row["account"], row["report_dir"], row["wechat_title"]) for row in articles
+                    )
+                    payload_routes = Counter(
+                        (draft["account"], directory, item.get("title"))
+                        for draft in drafts for directory, item in zip(draft["report_dirs"], draft["articles"])
+                    )
+                    require(payload_routes == expected_routes, "payload_source_route_mismatch")
+                else:
+                    require(not any("account" in draft for draft in drafts)
+                            and [item.get("title") for draft in drafts for item in draft["articles"]]
+                            == [item["wechat_title"] for item in allowed], "payload_source_title_mismatch")
                 current = (readback or live_draft_readback)(drafts, timeout)
                 require(isinstance(current, list) and len(current) == len(drafts), "incomplete_live_readback")
                 for draft, row in zip(drafts, current):
@@ -262,6 +278,9 @@ def validate_delivery(output_dir: Path, source_dir: Path, source_kind: str, expe
                         and row.get("media_repair_attempted", False) is False, "current_draft_verification_failed")
                 report.update(ok=True, delivery_complete=True, wechat_verified=True, status="verified",
                               verified_article_count=len(allowed), verified_draft_count=len(drafts))
+                if routed:
+                    counts = Counter(row["account"] for row in articles)
+                    report["verified_articles_by_account"] = {name: counts[account] for account, name in ACCOUNT_NAMES.items()}
     except DeliveryValidationError as exc:
         report["error_code"] = str(exc)
     except Exception as exc:

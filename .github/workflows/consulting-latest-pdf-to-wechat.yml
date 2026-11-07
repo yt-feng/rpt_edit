@@ -330,7 +330,7 @@ jobs:
       - name: Install Python dependencies
         run: |
           pip install -r requirements.txt
-          python -m pip install boto3
+          python -m pip install "boto3>=1.37.32,<2"
 
       - name: Download translated reports from private R2
         env:
@@ -361,6 +361,16 @@ jobs:
         env:
           WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
           WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+          WECHAT_MP_APPID_TT: ${{ secrets.WECHAT_MP_APPID_TT }}
+          WECHAT_MP_APPSECRET_TT: ${{ secrets.WECHAT_MP_APPSECRET_TT }}
+          WECHAT_MP_APPID_PANKOU: ${{ secrets.WECHAT_MP_APPID_PANKOU }}
+          WECHAT_MP_APPSECRET_PANKOU: ${{ secrets.WECHAT_MP_APPSECRET_PANKOU }}
+          WECHAT_ROUTING_START_DATE: ${{ vars.WECHAT_ROUTING_START_DATE }}
+          WECHAT_ROUTING_SCOPE: consulting
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
           PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
         run: |
           set -o pipefail
@@ -396,6 +406,10 @@ jobs:
         env:
           WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
           WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+          WECHAT_MP_APPID_TT: ${{ secrets.WECHAT_MP_APPID_TT }}
+          WECHAT_MP_APPSECRET_TT: ${{ secrets.WECHAT_MP_APPSECRET_TT }}
+          WECHAT_MP_APPID_PANKOU: ${{ secrets.WECHAT_MP_APPID_PANKOU }}
+          WECHAT_MP_APPSECRET_PANKOU: ${{ secrets.WECHAT_MP_APPSECRET_PANKOU }}
           PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
         run: |
           DATE="${{ needs.fetch-and-build.outputs.date_folder }}"

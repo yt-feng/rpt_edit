@@ -11,6 +11,8 @@ from typing import Any
 
 import requests
 
+from wechat_accounts import draft_account, draft_tokens
+
 from push_portal_translated_to_wechat_drafts import (
     WeChatError,
     get_draft,
@@ -27,7 +29,7 @@ def load_drafts(artifact_root: Path) -> list[dict[str, Any]]:
     if not summaries:
         return load_restored_drafts(root)
     drafts: list[dict[str, Any]] = []
-    seen: set[str] = set()
+    seen: set[tuple[str, str]] = set()
     for path in summaries:
         if not path.resolve().is_relative_to(root):
             raise ValueError("Summary escapes artifact directory")
@@ -36,7 +38,8 @@ def load_drafts(artifact_root: Path) -> list[dict[str, Any]]:
             raise ValueError("Cannot verify a dry-run summary")
         for draft in summary.get("drafts", []):
             media_id = str(draft.get("media_id") or "").strip()
-            if not media_id or media_id in seen:
+            identity = (draft_account(draft), media_id)
+            if not media_id or identity in seen:
                 raise ValueError("Summary contains a missing or duplicate draft ID")
             # Upload artifacts preserve payload files beside their summary even
             # when GitHub strips the common parent directory from the archive.
@@ -47,13 +50,23 @@ def load_drafts(artifact_root: Path) -> list[dict[str, Any]]:
             if not payload_path.resolve().is_relative_to(root):
                 raise ValueError("Payload escapes artifact directory")
             payload = json.loads(payload_path.read_text(encoding="utf-8"))
+            if payload.get("account") != draft.get("account"):
+                raise ValueError("Draft payload account differs from summary")
             articles = payload.get("articles")
             if not isinstance(articles, list) or not articles or not all(isinstance(a, dict) for a in articles):
                 raise ValueError("Draft payload must contain articles")
             if len(articles) != draft.get("article_count"):
                 raise ValueError("Payload article count differs from summary")
-            seen.add(media_id)
-            drafts.append({"media_id": media_id, "articles": articles})
+            seen.add(identity)
+            row = {"media_id": media_id, "articles": articles}
+            if "account" in draft:
+                dirs = draft.get("report_dirs")
+                if not isinstance(dirs, list) or len(dirs) != len(articles) or not all(
+                    isinstance(directory, str) and directory for directory in dirs
+                ):
+                    raise ValueError("Routed draft receipt must identify each source directory")
+                row.update(account=identity[0], report_dirs=dirs)
+            drafts.append(row)
     if not drafts:
         raise ValueError("Artifact contains no existing drafts")
     return drafts
@@ -141,14 +154,17 @@ def verify_restored_identity(draft: dict[str, Any], session: requests.Session, t
     return result
 
 
-def verify_existing(drafts: list[dict[str, Any]], session: requests.Session, token: str, timeout: int) -> dict[str, Any]:
+def verify_existing(drafts: list[dict[str, Any]], session: requests.Session, tokens: str | dict[str, str], timeout: int) -> dict[str, Any]:
     results = []
     for index, draft in enumerate(drafts, 1):
+        token = tokens if isinstance(tokens, str) else tokens[draft_account(draft)]
         if draft.get("verification_scope") == "restored_receipt_identity":
             result = verify_restored_identity(draft, session, token, timeout)
         else:
             articles = materialize_private_article_payload(draft["articles"], os.environ.get("PORTAL_SITE_URL", ""))
             result = verify_draft_get(session, token, draft["media_id"], timeout, len(articles), articles)
+        if "account" in draft:
+            result["account"] = draft["account"]
         results.append({"draft_index": index, **result})
     report = {
         "ok": bool(results) and all(item.get("ok") is True for item in results),
@@ -173,13 +189,9 @@ def main() -> int:
     parser.add_argument("--timeout", type=int, default=60)
     args = parser.parse_args()
     drafts = load_drafts(args.artifact_root)
-    appid = os.environ.get("WECHAT_MP_APPID", "").strip()
-    secret = os.environ.get("WECHAT_MP_APPSECRET", "").strip()
-    if not appid or not secret:
-        raise ValueError("WeChat application credentials are required")
     with requests.Session() as session:
-        token = get_stable_access_token(session, appid, secret, args.timeout)
-        report = verify_existing(drafts, session, token, args.timeout)
+        tokens = draft_tokens(session, drafts, args.timeout, get_stable_access_token)
+        report = verify_existing(drafts, session, tokens, args.timeout)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps({key: value for key, value in report.items() if key != "drafts"}, ensure_ascii=False))

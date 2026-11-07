@@ -10,6 +10,7 @@ import json
 import os
 import re
 import sys
+from functools import partial
 from pathlib import Path
 from typing import Any
 
@@ -42,6 +43,7 @@ from push_portal_translated_to_wechat_drafts import (  # noqa: E402
     WECHAT_SAFE_COVER_CROP_1_1,
     WECHAT_SAFE_COVER_CROP_235_1,
     WECHAT_TITLE_MAX_CHARS,
+    DraftDestination,
     WeChatError,
     add_draft,
     add_draft_with_checkpoint,
@@ -57,6 +59,7 @@ from push_portal_translated_to_wechat_drafts import (  # noqa: E402
     choose_cover_image as choose_report_cover_image,
     illustration_metadata,
     fake_static_image_url,
+    prepare_draft_destinations,
     get_stable_access_token,
     find_recent_draft_by_titles,
     is_article_size_error,
@@ -637,7 +640,7 @@ def build_article(
     }
 
 
-def main() -> int:
+def main(*, submit_draft=None) -> int:
     parser = argparse.ArgumentParser(description="Create WeChat drafts from xhs_notes/dropbox report articles.")
     parser.add_argument("--dropbox-output-root", default="xhs_notes/dropbox")
     parser.add_argument("--date-folder", default="latest")
@@ -856,40 +859,27 @@ def main() -> int:
         "non-hard-blocked title issues are rewritten without reducing article count)"
     )
 
-    session: requests.Session | None = None
-    access_token: str | None = None
-    if not args.dry_run:
-        session = requests.Session()
-        access_token = get_stable_access_token(session, args.wechat_appid, args.wechat_secret, args.timeout)
-        log("Fetched WeChat access token")
-
-    trailing_image_url = ""
-    trailing_image_path = resolve_repo_asset_path(args.trailing_image)
-    if args.trailing_image and not trailing_image_path:
-        raise RuntimeError(f"Trailing image not found: {args.trailing_image}")
-    if trailing_image_path:
-        if args.dry_run:
-            trailing_image_url = fake_static_image_url(str(trailing_image_path))
-        else:
-            if session is None or access_token is None:
-                raise RuntimeError("session and access_token are required outside dry-run")
-            trailing_image_url = upload_article_image(session, access_token, trailing_image_path, args.timeout)
-            log(f"Uploaded trailing image: {trailing_image_path}")
-            pacing_sleep("After uploading trailing image", args.image_upload_delay_seconds, args.dry_run)
+    session = requests.Session() if selected and not args.dry_run else None
+    routes, destinations, trailing_image_path = prepare_draft_destinations(
+        args, date_dir, selected, session, fetch_token=get_stable_access_token,
+        resolve_asset=resolve_repo_asset_path, upload_image=upload_article_image,
+    )
 
     drafts: list[dict[str, Any]] = []
     use_safe_cover_for_future = args.force_safe_cover
 
-    def create_draft(group: list[dict[str, Any]]) -> None:
+    def create_draft(group: list[dict[str, Any]], target: DraftDestination) -> None:
         nonlocal use_safe_cover_for_future
+        access_token = target.token
+        submit = partial(submit_draft, account=target.account) if submit_draft else add_draft
         public_articles = article_payload(group)
         articles = materialize_private_article_payload(public_articles, args.site_url)
-        receipt = {} if args.dry_run else saved_draft_receipt(output_dir, public_articles, account_id=args.wechat_appid)
+        receipt = {} if args.dry_run else saved_draft_receipt(output_dir, public_articles, account_id=target.appid, account=target.account)
         if not args.dry_run and not receipt:
-            saved_prefix = saved_draft_prefix_length(output_dir, public_articles, account_id=args.wechat_appid)
+            saved_prefix = saved_draft_prefix_length(output_dir, public_articles, account_id=target.appid, account=target.account)
             if saved_prefix:
-                create_draft(group[:saved_prefix])
-                create_draft(group[saved_prefix:])
+                create_draft(group[:saved_prefix], target)
+                create_draft(group[saved_prefix:], target)
                 return
         publish_id = str(receipt.get("publish_id") or "")
         draft_get = {"ok": False, "status": "pending_verification"}
@@ -936,7 +926,7 @@ def main() -> int:
                         args.dry_run,
                     )
                     media_id = add_draft_with_checkpoint(session, access_token, articles, args.timeout, output_dir,
-                                                         public_articles, account_id=args.wechat_appid, submit=add_draft)
+                                                         public_articles, account_id=target.appid, account=target.account, submit=submit)
                 except WeChatError as exc:
                     if is_cover_crop_error(exc):
                         use_safe_cover_for_future = True
@@ -945,7 +935,7 @@ def main() -> int:
                         pacing_sleep(f"Before retrying WeChat draft {draft_index}", args.draft_delay_seconds, args.dry_run)
                         try:
                             media_id = add_draft_with_checkpoint(session, access_token, articles, args.timeout, output_dir,
-                                                                 public_articles, account_id=args.wechat_appid, submit=add_draft)
+                                                                 public_articles, account_id=target.appid, account=target.account, submit=submit)
                         except WeChatError as retry_exc:
                             if not is_cover_crop_error(retry_exc):
                                 raise
@@ -953,32 +943,34 @@ def main() -> int:
                             normalize_group_cover_media(session, access_token, group, articles, output_dir, draft_index, args.timeout)
                             pacing_sleep(f"Before retrying WeChat draft {draft_index} with normalized covers", args.draft_delay_seconds, args.dry_run)
                             media_id = add_draft_with_checkpoint(session, access_token, articles, args.timeout, output_dir,
-                                                                 public_articles, account_id=args.wechat_appid, submit=add_draft)
+                                                                 public_articles, account_id=target.appid, account=target.account, submit=submit)
                     elif is_article_size_error(exc) and len(group) > 1:
                         split_at = max(1, len(group) // 2)
                         log(
                             "WeChat rejected draft group as too large; "
                             f"splitting {len(group)} articles into {split_at}+{len(group) - split_at} and retrying."
                         )
-                        create_draft(group[:split_at])
-                        create_draft(group[split_at:])
+                        create_draft(group[:split_at], target)
+                        create_draft(group[split_at:], target)
                         return
                     else:
                         raise
 
         if not args.dry_run:
-            checkpoint_draft_submission(output_dir, public_articles, "accepted", account_id=args.wechat_appid, media_id=media_id)
+            checkpoint_draft_submission(output_dir, public_articles, "accepted", account_id=target.appid, account=target.account, media_id=media_id)
         sync_article_media_fields(public_articles, articles)
         payload_path = output_dir / f"draft_payload_{draft_index:02d}.json"
         # Keep the deployment hostname out of public Blog archive inputs.
         write_json(payload_path, {
             "articles": public_articles,
             "source_reports": [item.get("source_metadata", {}) for item in group],
+            **({"account": target.account} if target.account is not None else {}),
         })
         drafts.append(
             {
                 "draft_index": draft_index,
-                "group_key": draft_group_key(public_articles),
+                "group_key": draft_group_key(public_articles, account=target.account),
+                **target.receipt_fields(group),
                 "status": "dry_run" if args.dry_run else "pending_verification",
                 "media_id": media_id,
                 "publish_id": publish_id,
@@ -1013,23 +1005,28 @@ def main() -> int:
             log(f"Draft {draft_index}: articles={len(articles)} media_id={media_id}")
 
     built_articles: list[dict[str, Any]] = []
-    pending_group: list[dict[str, Any]] = []
+    pending_groups: dict[str | None, list[dict[str, Any]]] = {account: [] for account in destinations}
     for idx, report_dir in enumerate(selected, 1):
         log(f"Building WeChat article {idx}/{len(selected)}: {report_dir.name}")
-        article = build_article(report_dir, idx, args, session, access_token, output_dir, trailing_image_url)
+        target = destinations[routes[report_dir]]
+        article = build_article(report_dir, idx, args, session, target.token, output_dir, target.trailing_image_url)
+        if target.account is not None:
+            article["account"] = target.account
         built_articles.append(article)
-        pending_group.append(article)
-        if len(pending_group) == args.articles_per_draft:
-            create_draft(pending_group)
-            pending_group = []
+        group = pending_groups[target.account]
+        group.append(article)
+        if len(group) == args.articles_per_draft:
+            create_draft(group, target)
+            group.clear()
         if idx < len(selected):
             pacing_sleep(
                 f"After building WeChat article {idx}/{len(selected)}",
                 args.article_delay_seconds,
                 args.dry_run,
             )
-    if pending_group:
-        create_draft(pending_group)
+    for account, group in pending_groups.items():
+        if group:
+            create_draft(group, destinations[account])
 
     title_log_path = write_wechat_title_log(
         output_dir,
@@ -1075,6 +1072,7 @@ def main() -> int:
                 "source_report_name": item["source_report_name"],
                 "translator_name": item.get("translator_name", ""),
                 "report_dir": item["report_dir"],
+                **({"account": item["account"]} if "account" in item else {}),
                 "content_chars": item["content_chars"],
                 "content_bytes": item["content_bytes"],
                 "visible_text_chars": item["visible_text_chars"],

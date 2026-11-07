@@ -14,6 +14,7 @@ from pathlib import Path
 from urllib.request import urlopen
 
 from private_workflow_handoff import build_r2_client, download_directory, r2_bucket, upload_directory
+from wechat_accounts import draft_account
 from wechat_attempt_history import GitHubHistory, never_submitted
 
 SOURCES = {
@@ -142,14 +143,15 @@ def merge_receipts(destination: Path, restored: Path) -> None:
             articles = payload.get("articles")
             if not isinstance(articles, list) or not articles or len(articles) != draft.get("article_count"):
                 raise ValueError("Recovery receipt payload does not match its accepted article count")
-            if group_key in groups and groups[group_key] != media_id:
+            identity = (draft_account(draft), media_id)
+            if group_key in groups and groups[group_key] != identity:
                 raise ValueError("Conflicting accepted media IDs for the same draft group; review receipts")
-            if media_id in accepted:
-                previous, previous_payload = accepted[media_id]
+            if identity in accepted:
+                previous, previous_payload = accepted[identity]
                 if previous["group_key"] != group_key or previous_payload.get("articles") != articles:
                     raise ValueError("Conflicting payload identities for the same accepted draft; review receipts")
-            groups[group_key] = media_id
-            accepted[media_id] = (dict(draft), payload)
+            groups[group_key] = identity
+            accepted[identity] = (dict(draft), payload)
     if not accepted and not submissions:
         raise ValueError("Private receipt checkpoint contains no accepted drafts")
     destination.mkdir(parents=True, exist_ok=True)
@@ -160,10 +162,11 @@ def merge_receipts(destination: Path, restored: Path) -> None:
     if not accepted:
         return  # Preserve uncertain writes for API readback; never invent success.
     merged = []
-    for media_id, (draft, payload) in accepted.items():
+    for (account, media_id), (draft, payload) in accepted.items():
         # Distinct attempts both start at draft_payload_01.json. Preserve each
         # payload under its media identity before writing the union summary.
-        filename = f"draft_payload_receipt_{hashlib.sha256(media_id.encode()).hexdigest()[:24]}.json"
+        identity = f"{account}\0{media_id}" if "account" in draft else media_id
+        filename = f"draft_payload_receipt_{hashlib.sha256(identity.encode()).hexdigest()[:24]}.json"
         (destination / filename).write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
         draft["payload"] = filename
         merged.append(draft)

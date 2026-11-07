@@ -81,6 +81,21 @@ missing historical cohorts, or all supported language publications. Track those
 as separate source/locale receipts; see
 [WeChat generation and recovery](wechat-pipeline-recovery.md).
 
+## WeChat account routing
+
+The primary Dropbox, institution, consulting, and ARK uploads share an
+article-level rotation across KC桌面, TT与老葛, and 盘口观市. The private R2
+routing ledger reserves each eligible article's destination by its source,
+original report identity, and source date. Recovery uses the same assignment.
+Images, cover media, draft creation, and readback use the assigned account.
+
+Run **Verify existing WeChat drafts** with **Check draft API access** from the
+WeChat runner before setting the `WECHAT_ROUTING_START_DATE` repository
+variable. The variable takes the first Beijing publication date in
+`YYYY-MM-DD` format. Dropbox batches use their source date plus one day.
+Earlier batches use their original single-account delivery path. Each
+successful delivery receipt records verified article counts by account.
+
 ## Public Blog title contract
 
 Every rendered article title ends exactly once with ` | KC桌面`. The suffix

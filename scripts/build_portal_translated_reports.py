@@ -28,6 +28,7 @@ import requests
 
 from deepseek_http import deepseek_api_keys_from_env, request_with_key_fallback
 from wechat_editorial_binding import BoundArticle, read_bound_article
+from wechat_account_routing import routing_source_name
 from report_extraction_source import has_extraction_source, resolve_extraction_source
 
 try:
@@ -1422,6 +1423,7 @@ def process_report(report_dir: Path, out_dir: Path, index: int, args: argparse.N
     status = {
         "global_index": index,
         "source_report_dir": str(report_dir),
+        "wechat_routing_source_name": routing_source_name(report_dir),
         **extraction.identity(),
         "title": display_title,
         "source_title": source_title,
