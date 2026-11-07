@@ -5,10 +5,13 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 from pathlib import Path
 from typing import Any
 
 import requests
+
+from wechat_accounts import DEFAULT_ACCOUNT, account_credentials, draft_account
 
 from push_portal_translated_to_wechat_drafts import (
     WeChatError,
@@ -32,23 +35,16 @@ def write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def collect_media_ids(summary: dict[str, Any], extra_media_ids: list[str]) -> list[str]:
-    media_ids: list[str] = []
+def collect_draft_targets(summary: dict[str, Any], extra_media_ids: list[str]) -> list[tuple[str, str]]:
+    targets = []
     for item in summary.get("drafts") or []:
         if not isinstance(item, dict):
             continue
         media_id = normalize_space(str(item.get("media_id") or ""))
         if media_id:
-            media_ids.append(media_id)
-    media_ids.extend(normalize_space(value) for value in extra_media_ids if normalize_space(value))
-
-    unique: list[str] = []
-    seen: set[str] = set()
-    for media_id in media_ids:
-        if media_id not in seen:
-            unique.append(media_id)
-            seen.add(media_id)
-    return unique
+            targets.append((draft_account(item), media_id))
+    targets.extend((DEFAULT_ACCOUNT, normalize_space(value)) for value in extra_media_ids if normalize_space(value))
+    return list(dict.fromkeys(targets))
 
 
 def delete_draft(session: requests.Session, access_token: str, media_id: str, timeout: int) -> dict[str, Any]:
@@ -61,17 +57,25 @@ def delete_draft(session: requests.Session, access_token: str, media_id: str, ti
     return parse_wechat_json(response, "draft/delete")
 
 
-def invalidate_deleted_receipt(summary_path: Path | None, summary: dict[str, Any], media_id: str) -> None:
+def invalidate_deleted_receipt(summary_path: Path | None, summary: dict[str, Any],
+                               media_id: str, account: str) -> None:
     """Remove only confirmed deletions from the uploader's reusable receipts."""
     if summary_path is None or not summary_path.exists():
         return
     drafts = summary.get("drafts") or []
     removed = [
         item for item in drafts
-        if isinstance(item, dict) and normalize_space(str(item.get("media_id") or "")) == media_id
+        if isinstance(item, dict) and draft_account(item) == account
+        and normalize_space(str(item.get("media_id") or "")) == media_id
     ]
     if not removed:
         return
+    for item in removed:
+        key = item.get("group_key", "")
+        if isinstance(key, str) and re.fullmatch(r"[a-f0-9]{64}", key):
+            submission = summary_path.parent / f"draft_submission_{key}.json"
+            if submission.is_file() and read_json(submission).get("media_id") == media_id:
+                submission.unlink()
     summary["drafts"] = [item for item in drafts if item not in removed]
     summary["draft_count"] = len(summary["drafts"])
     summary["status"] = "partially_deleted" if summary["drafts"] else "deleted"
@@ -97,9 +101,6 @@ def main() -> int:
         raise RuntimeError(f"Draft summary not found: {args.summary}")
     if not args.summary and not args.media_id:
         raise RuntimeError("--summary or at least one --media-id is required")
-    if not args.dry_run and (not args.wechat_appid or not args.wechat_secret):
-        raise RuntimeError("WECHAT_MP_APPID and WECHAT_MP_APPSECRET are required unless --dry-run is set")
-
     summary: dict[str, Any] = {}
     if args.summary and args.summary.exists():
         raw_summary = read_json(args.summary)
@@ -110,21 +111,26 @@ def main() -> int:
     summary = raw_summary
 
     summary_label = str(args.summary) if args.summary else "(media-id only)"
-    media_ids = collect_media_ids(summary, args.media_id)
-    if not media_ids:
+    targets = collect_draft_targets(summary, args.media_id)
+    if not targets:
         raise RuntimeError(f"No draft media_id values found in {summary_label}")
 
-    log(f"Deleting {len(media_ids)} WeChat draft(s) from {summary_label}")
+    log(f"Deleting {len(targets)} WeChat draft(s) from {summary_label}")
     results: list[dict[str, Any]] = []
 
     session: requests.Session | None = None
-    access_token = ""
+    tokens = {}
     if not args.dry_run:
         session = requests.Session()
-        access_token = get_stable_access_token(session, args.wechat_appid, args.wechat_secret, args.timeout)
+        for account in dict.fromkeys(account for account, _ in targets):
+            appid, secret = ((args.wechat_appid, args.wechat_secret) if account == DEFAULT_ACCOUNT
+                             else account_credentials(account))
+            if not appid or not secret:
+                raise RuntimeError("WECHAT_MP_APPID and WECHAT_MP_APPSECRET are required unless --dry-run is set")
+            tokens[account] = get_stable_access_token(session, appid, secret, args.timeout)
 
-    for media_id in media_ids:
-        record: dict[str, Any] = {"media_id": media_id}
+    for account, media_id in targets:
+        record: dict[str, Any] = {"media_id": media_id, "account": account}
         if args.dry_run:
             record["deleted"] = False
             record["dry_run"] = True
@@ -134,11 +140,11 @@ def main() -> int:
         try:
             if session is None:
                 raise RuntimeError("session is required outside dry-run")
-            delete_draft(session, access_token, media_id, args.timeout)
+            delete_draft(session, tokens[account], media_id, args.timeout)
             record["deleted"] = True
             # Persist immediately: a later API failure must not resurrect an
             # already deleted ID when the upload stage restores this summary.
-            invalidate_deleted_receipt(args.summary, summary, media_id)
+            invalidate_deleted_receipt(args.summary, summary, media_id, account)
             log(f"Deleted WeChat draft media_id={media_id}")
         except WeChatError as exc:
             record["deleted"] = False
@@ -155,7 +161,7 @@ def main() -> int:
     payload = {
         "summary": summary_label,
         "dry_run": args.dry_run,
-        "requested_count": len(media_ids),
+        "requested_count": len(targets),
         "deleted_count": sum(1 for item in results if item.get("deleted")),
         "results": results,
     }

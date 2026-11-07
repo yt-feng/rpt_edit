@@ -8,6 +8,7 @@ the runner workspace and R2. An unresolved draft POST intent blocks resubmission
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 from contextlib import redirect_stdout, redirect_stderr
 from datetime import datetime
 import hashlib
@@ -18,6 +19,8 @@ import re
 import shutil
 import sys
 import tempfile
+
+from wechat_accounts import draft_account
 
 DAILY = '.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml'
 MANUAL = '.github/workflows/market-views-mineru-recovery.yml'
@@ -449,11 +452,16 @@ def validate_delivery(workspace):
     require(isinstance(drafts, list) and bool(drafts) == bool(eligible)
             and summary.get('draft_count') == len(drafts), 'wechat_drafts_missing')
     media, groups, count = set(), set(), 0
+    routed = any("account" in row for row in rows)
+    payload_routes = Counter()
     from push_portal_translated_to_wechat_drafts import draft_group_key
     for draft in drafts:
         result = draft.get('draft_get', {})
         media_id, group = draft.get('media_id'), draft.get('group_key')
-        require(isinstance(media_id, str) and media_id and media_id not in media
+        account = draft.get('account')
+        identity = (draft_account(draft), media_id)
+        require(routed == (account is not None), 'wechat_draft_route_missing')
+        require(isinstance(media_id, str) and media_id and identity not in media
                 and isinstance(group, str) and SHA.fullmatch(group) and group not in groups
                 and draft.get('status') == 'verified' and result.get('ok') is True
                 and result.get('matches_editorial_contract') is True
@@ -465,15 +473,29 @@ def validate_delivery(workspace):
         payload = read_json(root / name)
         articles = payload.get('articles', [])
         require(articles and len(articles) == draft.get('article_count') == result.get('article_count')
-                and draft_group_key(articles) == group, 'wechat_payload_identity_changed')
-        count += len(articles); media.add(media_id); groups.add(group)
+                and payload.get('account') == account
+                and draft_group_key(articles, account=account) == group, 'wechat_payload_identity_changed')
+        if routed:
+            report_dirs = draft.get('report_dirs')
+            require(isinstance(report_dirs, list) and len(report_dirs) == len(articles)
+                    and all(isinstance(directory, str) and directory for directory in report_dirs),
+                    'wechat_draft_route_missing')
+            payload_routes.update((account, Path(directory).name, article.get('title'))
+                                  for directory, article in zip(report_dirs, articles))
+        count += len(articles)
+        media.add(identity)
+        groups.add(group)
+    if routed:
+        require(all('account' in row for row in rows), 'wechat_draft_route_missing')
+        expected_routes = Counter((draft_account(row), Path(row['report_dir']).name, row['wechat_title']) for row in rows)
+        require(payload_routes == expected_routes, 'wechat_payload_source_route_mismatch')
     require(count == len(eligible), 'wechat_article_coverage_incomplete')
     # Blog ingestion scans payload files, including restored aliases. Do not
     # let an old, now-unaccounted payload bypass the verified current partition.
     for path in root.glob('draft_payload_*.json'):
         payload = read_json(path)
         articles = payload.get('articles')
-        require(isinstance(articles, list) and articles and draft_group_key(articles) in groups,
+        require(isinstance(articles, list) and articles and draft_group_key(articles, account=payload.get("account")) in groups,
                 'wechat_unaccounted_archive_payload')
     result = {'schema_version': 1, 'complete': True, 'source_run_id': context['source_run_id'],
               'date_folder': context['date_folder'], 'article_count': count, 'draft_count': len(drafts),
@@ -498,10 +520,10 @@ def canonical_policy_record(record):
     return value
 
 
-def guarded_add_draft(client, bucket, prefix, session, token, articles, timeout):
+def guarded_add_draft(client, bucket, prefix, session, token, articles, timeout, *, account=None):
     """Never retry an unknown POST; preserve the existing known-rejection repair."""
     import push_portal_translated_to_wechat_drafts as api_module
-    group = api_module.draft_group_key(articles)
+    group = api_module.draft_group_key(articles, account=account)
     key = prefix + '/wechat-intents/' + group + '.json'
     intent = {'schema_version': 1, 'group_sha256': group, 'state': 'submitting'}
     try:
@@ -555,28 +577,28 @@ def upload_wechat(workspace, client, bucket):
     import push_xhs_notes_to_wechat_drafts as uploader
     context = state(workspace)
     article_receipt(workspace, context)
-    original_checkpoint, original_add = uploader.checkpoint_wechat_drafts, uploader.add_draft
+    original_checkpoint = uploader.checkpoint_wechat_drafts
     prefix = context_prefix(context)
 
     def checkpoint(*args, **kwargs):
         original_checkpoint(*args, **kwargs)
         save_receipts(workspace, client, bucket)
 
-    def add(session, token, articles, timeout):
-        return guarded_add_draft(client, bucket, prefix, session, token, articles, timeout)
+    def add(session, token, articles, timeout, *, account):
+        return guarded_add_draft(client, bucket, prefix, session, token, articles, timeout, account=account)
 
-    uploader.checkpoint_wechat_drafts, uploader.add_draft = checkpoint, add
+    uploader.checkpoint_wechat_drafts = checkpoint
     argv = sys.argv
     sys.argv = ['push_xhs_notes_to_wechat_drafts.py', '--dropbox-output-root', str(workspace / 'xhs'),
         '--date-folder', context['date_folder'], '--output-root', str(workspace / 'wechat_drafts' / 'xhs_notes'),
         '--max-articles', 'all', '--articles-per-draft', '8', '--max-body-chars', '1200',
         '--min-inline-images', '3', '--max-inline-images', '3']
     try:
-        require(uploader.main() == 0, 'wechat_upload_failed')
+        require(uploader.main(submit_draft=add) == 0, 'wechat_upload_failed')
         return validate_delivery(workspace)
     finally:
         sys.argv = argv
-        uploader.checkpoint_wechat_drafts, uploader.add_draft = original_checkpoint, original_add
+        uploader.checkpoint_wechat_drafts = original_checkpoint
 
 
 def main(argv=None):

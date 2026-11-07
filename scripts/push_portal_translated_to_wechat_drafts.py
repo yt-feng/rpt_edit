@@ -26,6 +26,7 @@ import sys
 import time
 import unicodedata
 import zlib
+from dataclasses import dataclass
 from decimal import Decimal, InvalidOperation
 from html.parser import HTMLParser
 from pathlib import Path
@@ -35,6 +36,8 @@ from urllib.parse import quote, urlsplit
 import requests
 from PIL import Image, ImageDraw
 
+from wechat_account_routing import plan_destinations
+from wechat_accounts import ACCOUNT_NAMES
 from institution_names import ensure_title_has_institution, infer_institution_name
 from wechat_title_optimizer import (
     clean_wechat_title as optimizer_clean_wechat_title,
@@ -2838,7 +2841,7 @@ def verify_draft_get(
     return summary
 
 
-def draft_group_key(articles: list[dict[str, Any]]) -> str:
+def draft_group_key(articles: list[dict[str, Any]], *, account: str | None = None) -> str:
     """Identify the source text even when a retry reuploads image media."""
     identity = [
         {
@@ -2848,20 +2851,23 @@ def draft_group_key(articles: list[dict[str, Any]]) -> str:
         }
         for item in articles
     ]
-    return hashlib.sha256(json.dumps(identity, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
+    raw = json.dumps(identity, ensure_ascii=False, sort_keys=True).encode("utf-8")
+    if account is not None:
+        raw = account.encode() + b"\0" + raw
+    return hashlib.sha256(raw).hexdigest()
 
 
 def draft_submission_receipt(output_dir: Path, public_articles: list[dict[str, Any]],
-                             *, account_id: str) -> dict[str, Any]:
-    key = draft_group_key(public_articles)
+                             *, account_id: str, account: str | None = None) -> dict[str, Any]:
+    key = draft_group_key(public_articles, account=account)
     path = output_dir / f"draft_submission_{key}.json"
     if not path.exists():
         return {}
     receipt = read_json(path)
-    account = hashlib.sha256(account_id.strip().encode("utf-8")).hexdigest()
+    fingerprint = hashlib.sha256(account_id.strip().encode("utf-8")).hexdigest()
     if (not account_id.strip() or not isinstance(receipt, dict)
             or receipt.get("schema_version") != 1 or receipt.get("group_key") != key
-            or receipt.get("account_fingerprint") != account
+            or receipt.get("account_fingerprint") != fingerprint
             or receipt.get("article_count") != len(public_articles)
             or receipt.get("titles") != payload_article_titles(public_articles)
             or receipt.get("status") not in {"add_in_flight", "add_outcome_unknown", "accepted", "rejected"}
@@ -2874,13 +2880,13 @@ def draft_submission_receipt(output_dir: Path, public_articles: list[dict[str, A
 
 def checkpoint_draft_submission(output_dir: Path, public_articles: list[dict[str, Any]],
                                 status: str, *, account_id: str, media_id: str = "",
-                                errcode: int | None = None) -> dict[str, Any]:
+                                errcode: int | None = None, account: str | None = None) -> dict[str, Any]:
     if not account_id.strip():
         raise WeChatError("An account identity is required for a draft submission receipt")
     if (status not in {"add_in_flight", "add_outcome_unknown", "accepted", "rejected"}
             or (status == "accepted" and (not isinstance(media_id, str) or not media_id.strip()))):
         raise WeChatError("Invalid draft submission checkpoint state")
-    key = draft_group_key(public_articles)
+    key = draft_group_key(public_articles, account=account)
     receipt = {"schema_version": 1, "group_key": key,
                "account_fingerprint": hashlib.sha256(account_id.strip().encode("utf-8")).hexdigest(),
                "article_count": len(public_articles), "titles": payload_article_titles(public_articles),
@@ -2898,17 +2904,17 @@ def checkpoint_draft_submission(output_dir: Path, public_articles: list[dict[str
 
 def add_draft_with_checkpoint(session: requests.Session, access_token: str, articles: list[dict[str, Any]],
                               timeout: int, output_dir: Path, public_articles: list[dict[str, Any]],
-                              *, account_id: str, submit=None) -> str:
-    receipt = draft_submission_receipt(output_dir, public_articles, account_id=account_id)
+                              *, account_id: str, submit=None, account: str | None = None) -> str:
+    receipt = draft_submission_receipt(output_dir, public_articles, account_id=account_id, account=account)
     if receipt.get("status") == "accepted":
         return receipt["media_id"]
     if receipt.get("status") in {"add_in_flight", "add_outcome_unknown"}:
         media_id = recover_draft_after_ambiguous_add(session, access_token, articles, timeout)
         if not media_id:
             raise WeChatError("Previous draft/add outcome is unknown; refusing another submission")
-        checkpoint_draft_submission(output_dir, public_articles, "accepted", account_id=account_id, media_id=media_id)
+        checkpoint_draft_submission(output_dir, public_articles, "accepted", account_id=account_id, account=account, media_id=media_id)
         return media_id
-    checkpoint_draft_submission(output_dir, public_articles, "add_in_flight", account_id=account_id)
+    checkpoint_draft_submission(output_dir, public_articles, "add_in_flight", account_id=account_id, account=account)
     try:
         media_id = (submit or add_draft)(session, access_token, articles, timeout)
         if not isinstance(media_id, str) or not media_id.strip():
@@ -2917,33 +2923,33 @@ def add_draft_with_checkpoint(session: requests.Session, access_token: str, arti
         errcode = exc.errcode if isinstance(exc, WeChatError) else None
         checkpoint_draft_submission(output_dir, public_articles,
                                     "rejected" if errcode is not None else "add_outcome_unknown",
-                                    account_id=account_id, errcode=errcode)
+                                    account_id=account_id, account=account, errcode=errcode)
         raise
-    checkpoint_draft_submission(output_dir, public_articles, "accepted", account_id=account_id, media_id=media_id)
+    checkpoint_draft_submission(output_dir, public_articles, "accepted", account_id=account_id, account=account, media_id=media_id)
     return media_id
 
 
 def saved_draft_receipt(output_dir: Path, public_articles: list[dict[str, Any]],
-                        *, account_id: str = "") -> dict[str, Any]:
-    submission = draft_submission_receipt(output_dir, public_articles, account_id=account_id)
+                        *, account_id: str = "", account: str | None = None) -> dict[str, Any]:
+    submission = draft_submission_receipt(output_dir, public_articles, account_id=account_id, account=account)
     summary_path = output_dir / "wechat_draft_summary.json"
     summary = read_json(summary_path)
     if summary_path.exists() and not isinstance(summary, dict):
         raise WeChatError(f"Cannot read existing draft receipt: {summary_path}")
     if not isinstance(summary, dict) or summary.get("dry_run"):
         return submission if submission.get("status") != "rejected" else {}
-    key = draft_group_key(public_articles)
+    key = draft_group_key(public_articles, account=account)
     if submission and submission.get("status") != "rejected":
         # Keep publish metadata only for the same accepted ID/source. A stale
         # summary's overwritten payload cannot replace the bound ledger ID.
         if submission.get("status") == "accepted":
             for draft in reversed(summary.get("drafts", [])):
                 if (isinstance(draft, dict) and draft.get("media_id") == submission["media_id"]
-                        and draft.get("group_key") == key):
+                        and draft.get("group_key") == key and draft.get("account") == account):
                     return {**draft, **submission}
         return submission
     for draft in reversed(summary.get("drafts", [])):
-        if not isinstance(draft, dict) or not draft.get("media_id"):
+        if not isinstance(draft, dict) or not draft.get("media_id") or draft.get("account") != account:
             continue
         saved_key = draft.get("group_key")
         if saved_key != key and draft.get("payload"):
@@ -2952,17 +2958,17 @@ def saved_draft_receipt(output_dir: Path, public_articles: list[dict[str, Any]],
             # legacy identities that included generated photo credits as prose.
             payload = read_json(output_dir / Path(draft["payload"]).name)
             if isinstance(payload, dict) and isinstance(payload.get("articles"), list) and all(isinstance(item, dict) for item in payload["articles"]):
-                saved_key = draft_group_key(payload["articles"])
+                saved_key = draft_group_key(payload["articles"], account=account)
         if saved_key == key:
             return dict(draft)
     return submission if submission.get("status") != "rejected" else {}
 
 
 def saved_draft_prefix_length(output_dir: Path, public_articles: list[dict[str, Any]],
-                             *, account_id: str = "") -> int:
+                             *, account_id: str = "", account: str | None = None) -> int:
     """Resume an accepted child group before retrying a previously split batch."""
     for length in range(len(public_articles) - 1, 0, -1):
-        if saved_draft_receipt(output_dir, public_articles[:length], account_id=account_id):
+        if saved_draft_receipt(output_dir, public_articles[:length], account_id=account_id, account=account):
             return length
     return 0
 
@@ -2973,11 +2979,11 @@ def checkpoint_wechat_drafts(output_dir: Path, drafts: list[dict[str, Any]], *, 
     previous = read_json(path)
     previous = previous if isinstance(previous, dict) and previous.get("dry_run", False) == dry_run else {}
     by_id = {
-        str(item["media_id"]): item
+        (item.get("account"), str(item["media_id"])): item
         for item in previous.get("drafts", [])
         if isinstance(item, dict) and item.get("media_id")
     }
-    by_id.update({str(item["media_id"]): item for item in drafts})
+    by_id.update({(item.get("account"), str(item["media_id"])): item for item in drafts})
     all_drafts = list(by_id.values())
     summary = {
         **previous,
@@ -3522,6 +3528,53 @@ def materialize_private_article_payload(
     return rendered
 
 
+@dataclass(frozen=True)
+class DraftDestination:
+    account: str | None
+    appid: str
+    token: str | None
+    trailing_image_url: str
+
+    def receipt_fields(self, group: list[dict[str, Any]]) -> dict[str, Any]:
+        if self.account is None:
+            return {}
+        return {"account": self.account, "report_dirs": [item["report_dir"] for item in group]}
+
+
+def prepare_draft_destinations(args, date_dir: Path, selected: list[Path], session: requests.Session | None,
+                               *, fetch_token, resolve_asset, upload_image):
+    """Resolve tokens and trailing image URLs before building account-bound payloads."""
+    routes, credentials = plan_destinations(args, date_dir, selected)
+    if not selected:
+        return routes, {}, None
+    trailing_path = resolve_asset(args.trailing_image)
+    if args.trailing_image and not trailing_path:
+        raise RuntimeError(f"Trailing image not found: {args.trailing_image}")
+
+    tokens = {}
+    for account in dict.fromkeys(routes.values()):
+        appid, secret = credentials[account]
+        try:
+            tokens[account] = fetch_token(session, appid, secret, args.timeout) if session is not None else None
+        except WeChatError as exc:
+            if account is None:
+                raise
+            raise WeChatError(f"WeChat token unavailable for {ACCOUNT_NAMES[account]} (errcode={exc.errcode})",
+                              errcode=exc.errcode) from None
+
+    destinations = {}
+    for account, token in tokens.items():
+        trailing_url = ""
+        if trailing_path:
+            if session is None:
+                trailing_url = fake_static_image_url(str(trailing_path))
+            else:
+                trailing_url = upload_image(session, token, trailing_path, args.timeout)
+                pacing_sleep("After uploading trailing image", args.image_upload_delay_seconds, args.dry_run)
+        destinations[account] = DraftDestination(account, credentials[account][0], token, trailing_url)
+    return routes, destinations, trailing_path
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Create WeChat Official Account drafts from Portal translated reports.")
     parser.add_argument("--translated-root", default="portal_translated_reports")
@@ -3659,34 +3712,20 @@ def main() -> int:
         "other title issues are rewritten without reducing article count)"
     )
 
-    session: requests.Session | None = None
-    access_token: str | None = None
-    if selected and not args.dry_run:
-        session = requests.Session()
-        access_token = get_stable_access_token(session, args.wechat_appid, args.wechat_secret, args.timeout)
-        log("Fetched WeChat access token")
-
-    trailing_image_url = ""
-    trailing_image_path: Path | None = None
-    if selected:
-        trailing_image_path = resolve_repo_asset_path(args.trailing_image)
-        if args.trailing_image and not trailing_image_path:
-            raise RuntimeError(f"Trailing image not found: {args.trailing_image}")
-        if trailing_image_path:
-            if args.dry_run:
-                trailing_image_url = fake_static_image_url(str(trailing_image_path))
-            else:
-                if session is None or access_token is None:
-                    raise RuntimeError("session and access_token are required outside dry-run")
-                trailing_image_url = upload_article_image(session, access_token, trailing_image_path, args.timeout)
-                log(f"Uploaded trailing image: {trailing_image_path}")
-                pacing_sleep("After uploading trailing image", args.image_upload_delay_seconds, args.dry_run)
+    session = requests.Session() if selected and not args.dry_run else None
+    routes, destinations, trailing_image_path = prepare_draft_destinations(
+        args, date_dir, selected, session, fetch_token=get_stable_access_token,
+        resolve_asset=resolve_repo_asset_path, upload_image=upload_article_image,
+    )
 
     built_articles = []
     for idx, report_dir in enumerate(selected, 1):
         start_time = time.monotonic()
         log(f"Building WeChat article {idx}/{len(selected)}: {report_dir.name}")
-        article_item = build_article(report_dir, idx, args, session, access_token, output_dir, trailing_image_url)
+        target = destinations[routes[report_dir]]
+        article_item = build_article(report_dir, idx, args, session, target.token, output_dir, target.trailing_image_url)
+        if target.account is not None:
+            article_item["account"] = target.account
         built_articles.append(article_item)
         log(
             f"Built WeChat article {idx}/{len(selected)} in {time.monotonic() - start_time:.1f}s: "
@@ -3698,15 +3737,16 @@ def main() -> int:
 
     drafts = []
 
-    def create_draft(group: list[dict[str, Any]]) -> None:
+    def create_draft(group: list[dict[str, Any]], target: DraftDestination) -> None:
+        access_token = target.token
         public_articles = article_payload(group)
         articles = materialize_private_article_payload(public_articles, args.site_url)
-        receipt = {} if args.dry_run else saved_draft_receipt(output_dir, public_articles, account_id=args.wechat_appid)
+        receipt = {} if args.dry_run else saved_draft_receipt(output_dir, public_articles, account_id=target.appid, account=target.account)
         if not args.dry_run and not receipt:
-            saved_prefix = saved_draft_prefix_length(output_dir, public_articles, account_id=args.wechat_appid)
+            saved_prefix = saved_draft_prefix_length(output_dir, public_articles, account_id=target.appid, account=target.account)
             if saved_prefix:
-                create_draft(group[:saved_prefix])
-                create_draft(group[saved_prefix:])
+                create_draft(group[:saved_prefix], target)
+                create_draft(group[saved_prefix:], target)
                 return
         publish_id = str(receipt.get("publish_id") or "")
         draft_get = {"ok": False, "status": "pending_verification"}
@@ -3747,7 +3787,7 @@ def main() -> int:
                     log(f"Creating WeChat draft {draft_index}")
                     pacing_sleep(f"Before creating WeChat draft {draft_index}", args.draft_delay_seconds, args.dry_run)
                     media_id = add_draft_with_checkpoint(session, access_token, articles, args.timeout, output_dir,
-                                                         public_articles, account_id=args.wechat_appid, submit=add_draft)
+                                                         public_articles, account_id=target.appid, account=target.account, submit=add_draft)
                 except WeChatError as exc:
                     if is_cover_crop_error(exc):
                         log("WeChat rejected explicit cover crop fields; keeping each cover and retrying without those fields.")
@@ -3755,7 +3795,7 @@ def main() -> int:
                         pacing_sleep(f"Before retrying WeChat draft {draft_index}", args.draft_delay_seconds, args.dry_run)
                         try:
                             media_id = add_draft_with_checkpoint(session, access_token, articles, args.timeout, output_dir,
-                                                                 public_articles, account_id=args.wechat_appid, submit=add_draft)
+                                                                 public_articles, account_id=target.appid, account=target.account, submit=add_draft)
                         except WeChatError as retry_exc:
                             if not is_cover_crop_error(retry_exc):
                                 raise
@@ -3763,21 +3803,21 @@ def main() -> int:
                             normalize_group_cover_media(session, access_token, group, articles, output_dir, draft_index, args.timeout)
                             pacing_sleep(f"Before retrying WeChat draft {draft_index} with normalized covers", args.draft_delay_seconds, args.dry_run)
                             media_id = add_draft_with_checkpoint(session, access_token, articles, args.timeout, output_dir,
-                                                                 public_articles, account_id=args.wechat_appid, submit=add_draft)
+                                                                 public_articles, account_id=target.appid, account=target.account, submit=add_draft)
                     elif is_article_size_error(exc) and len(group) > 1:
                         split_at = max(1, len(group) // 2)
                         log(
                             "WeChat rejected draft group as too large; "
                             f"splitting {len(group)} articles into {split_at}+{len(group) - split_at} and retrying."
                         )
-                        create_draft(group[:split_at])
-                        create_draft(group[split_at:])
+                        create_draft(group[:split_at], target)
+                        create_draft(group[split_at:], target)
                         return
                     else:
                         raise
 
         if not args.dry_run:
-            checkpoint_draft_submission(output_dir, public_articles, "accepted", account_id=args.wechat_appid, media_id=media_id)
+            checkpoint_draft_submission(output_dir, public_articles, "accepted", account_id=target.appid, account=target.account, media_id=media_id)
         sync_article_media_fields(public_articles, articles)
         payload_path = output_dir / f"draft_payload_{draft_index:02d}.json"
         # Persist only the public template. The deployment hostname exists
@@ -3785,11 +3825,13 @@ def main() -> int:
         write_json(payload_path, {
             "articles": public_articles,
             "source_reports": [item.get("source_metadata", {}) for item in group],
+            **({"account": target.account} if target.account is not None else {}),
         })
         drafts.append(
             {
                 "draft_index": draft_index,
-                "group_key": draft_group_key(public_articles),
+                "group_key": draft_group_key(public_articles, account=target.account),
+                **target.receipt_fields(group),
                 "status": "dry_run" if args.dry_run else "pending_verification",
                 "media_id": media_id,
                 "publish_id": publish_id,
@@ -3823,8 +3865,12 @@ def main() -> int:
         else:
             log(f"Draft {draft_index}: articles={len(articles)} media_id={media_id}")
 
-    for group in chunked(built_articles, args.articles_per_draft):
-        create_draft(group)
+    groups_by_account = {account: [] for account in destinations}
+    for article in built_articles:
+        groups_by_account[article.get("account")].append(article)
+    for account, articles in groups_by_account.items():
+        for group in chunked(articles, args.articles_per_draft):
+            create_draft(group, destinations[account])
 
     title_log_path = write_wechat_title_log(
         output_dir,
@@ -3869,6 +3915,7 @@ def main() -> int:
                 "source_report_name": item["source_report_name"],
                 "translator_name": item.get("translator_name", ""),
                 "report_dir": item["report_dir"],
+                **({"account": item["account"]} if "account" in item else {}),
                 "content_chars": item["content_chars"],
                 "content_bytes": item["content_bytes"],
                 "visible_text_chars": item["visible_text_chars"],

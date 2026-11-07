@@ -230,6 +230,8 @@ def main(argv: list[str] | None = None) -> int:
         if args.require_checkpoint and not args.output.is_file():
             raise RestoreBlocked("required_restoration_checkpoint_missing")
         drafts = load_drafts(args.artifact_root)
+        if any("account" in draft for draft in drafts):
+            raise RestoreBlocked("routed_drafts_require_source_workflow_recovery")
         validate_source_receipts(args.artifact_root, drafts)
         appid = os.environ.get("WECHAT_MP_APPID", "").strip()
         secret = os.environ.get("WECHAT_MP_APPSECRET", "").strip()
