@@ -34,15 +34,15 @@ MAX_STATE_BYTES = 16 * 1024 * 1024
 
 
 def markup_difference(actual, expected):
-    safe = {"amp;", "&amp;", "<p><br></p>", "<p><br/></p>", "<div>", "</div>", "\n", " ", "<br/>", "<br>"}
+    safe = {"amp;", "&amp;", "<p><br></p>", "<p><br/></p>", "<div>", "</div>", "\n", " ", "<br/>", "<br>", "  /"}
     changes = []
     for operation, a, b, c, d in SequenceMatcher(None, expected, actual, autojunk=False).get_opcodes():
         if operation == "equal":
             continue
         before, after = expected[a:b], actual[c:d]
         changes.append({"operation": operation, "before_length": len(before), "after_length": len(after),
-                        **({"before": before} if before in safe or len(before) <= 3 else {}),
-                        **({"after": after} if after in safe or len(after) <= 3 else {})})
+                        **({"before": before} if before in safe else {}),
+                        **({"after": after} if after in safe else {})})
     return {"equal_after_html_unescape": html.unescape(actual) == html.unescape(expected), "markup_changes": changes[:20]}
 
 

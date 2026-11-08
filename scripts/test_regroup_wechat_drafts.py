@@ -1,6 +1,5 @@
 """Exercise balanced groups and interrupted replacement without losing source drafts."""
 import copy
-import io
 import json
 import os
 from pathlib import Path
