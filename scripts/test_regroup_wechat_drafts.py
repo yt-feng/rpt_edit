@@ -65,6 +65,17 @@ class FakeWeChat:
 
 
 class GroupingTests(unittest.TestCase):
+    def test_wechat_image_tag_serialization_preserves_body_layout_and_exact_images(self):
+        expected = article(1)
+        expected["content"] = '<p>Editor text</p><img style="width:100%" src="https://mmbiz.qpic.cn/image/0?wx_fmt=jpeg">'
+        actual = {**expected, "content": expected["content"].replace('jpeg">', 'jpeg"  />')}
+        self.assertTrue(regroup.group_matches([actual], [expected]))
+        repeated = {**expected, "content": expected["content"].replace('jpeg">', 'jpeg" /  />')}
+        self.assertTrue(regroup.group_matches([repeated], [expected]))
+        for old, new in [('Editor text', 'Edited text'), ('width:100%', 'width:50%'), ('/image/', '/another-image/')]:
+            changed = {**actual, "content": actual["content"].replace(old, new)}
+            self.assertFalse(regroup.group_matches([changed], [expected]))
+
     def test_balanced_sizes_cover_three_groups_and_no_more_than_three_articles(self):
         self.assertEqual([3, 3, 2], draft_group_sizes(8))
         self.assertEqual([3, 3, 2, 2], draft_group_sizes(10))

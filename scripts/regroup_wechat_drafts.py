@@ -11,6 +11,7 @@ import hashlib
 import html
 import io
 import json
+import re
 from pathlib import Path
 
 import requests
@@ -20,7 +21,9 @@ from private_workflow_handoff import build_r2_client, r2_bucket
 from push_portal_translated_to_wechat_drafts import (
     WeChatError, add_draft, draft_news_items, get_draft, get_stable_access_token,
 )
-from repair_wechat_draft_images import WECHAT_DRAFT_WRITABLE_FIELDS, read_complete_draft_catalog
+from repair_wechat_draft_images import (
+    MANAGED_IMG_RE, WECHAT_DRAFT_WRITABLE_FIELDS, read_complete_draft_catalog,
+)
 from verify_existing_wechat_drafts import load_drafts
 from wechat_account_routing import parse_source_date
 from wechat_accounts import ACCOUNT_NAMES, account_credentials, draft_account, draft_tokens
@@ -84,6 +87,11 @@ def writable_articles(data):
     return result
 
 
+def canonical_image_content(content):
+    """WeChat may serialize the same void image tag as <img ...  />."""
+    return MANAGED_IMG_RE.sub(lambda match: re.sub(r"[\s/]*>$", ">", match.group(0)), content)
+
+
 def group_matches(actual, expected):
     if len(actual) != len(expected):
         return False
@@ -93,6 +101,10 @@ def group_matches(actual, expected):
             default = 0 if field in {"need_open_comment", "only_fans_can_comment", "show_cover_pic"} else ""
             if field == "article_type":
                 default = "news"
+            if field == "content":
+                if canonical_image_content(row.get(field, "")) != canonical_image_content(reference.get(field, "")):
+                    return False
+                continue
             if row.get(field, default) != reference.get(field, default):
                 return False
     return True
