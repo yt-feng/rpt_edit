@@ -38,8 +38,8 @@ def markup_difference(actual, expected):
             continue
         before, after = expected[a:b], actual[c:d]
         changes.append({"operation": operation, "before_length": len(before), "after_length": len(after),
-                        **({"before": before} if before in safe else {}),
-                        **({"after": after} if after in safe else {})})
+                        **({"before": before} if before in safe or len(before) <= 3 else {}),
+                        **({"after": after} if after in safe or len(after) <= 3 else {})})
     return {"equal_after_html_unescape": html.unescape(actual) == html.unescape(expected), "markup_changes": changes[:20]}
 
 
