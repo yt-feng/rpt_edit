@@ -577,17 +577,17 @@ class PrivateRoundTripTests(unittest.TestCase):
             for name, value in {'get_stable_access_token': token, 'build_article': build,
                                 'pacing_sleep': Mock(), 'DEFAULT_TRAILING_IMAGE': '',
                                 'find_recent_draft_by_titles': Mock(return_value=''),
-                                'verify_draft_get': Mock(return_value=readback)}.items():
+                                'verify_draft_get': Mock(side_effect=lambda *args: {**readback, 'article_count': args[4]})}.items():
                 stack.enter_context(patch.object(uploader, name, value))
             post = stack.enter_context(patch.object(api_module, 'post_wechat_json', return_value=object()))
-            stack.enter_context(patch.object(api_module, 'parse_wechat_json', return_value={'media_id': 'ELIGIBLE_ACK'}))
+            stack.enter_context(patch.object(api_module, 'parse_wechat_json', side_effect=[{'media_id': f'ELIGIBLE_ACK_{index}'} for index in range(3)]))
             receipt = delivery.upload_wechat(consumer, self.store, 'private')
             self.assertTrue(delivery.save_receipts(consumer, self.store, 'private'))
             if count == 7:
                 token.assert_not_called()
                 post.assert_not_called()
             else:
-                post.assert_called_once()
+                self.assertEqual(post.call_count, (7 - count + 2) // 3)
         self.assertEqual((receipt['source_report_count'], receipt['article_count'], receipt['policy_excluded_count'],
                           receipt['accounted_report_count']), (7, 7-count, count, 7))
         return consumer, environment
@@ -742,7 +742,7 @@ class PrivateRoundTripTests(unittest.TestCase):
                                 'find_recent_draft_by_titles': Mock(return_value='')}.items():
                 stack.enter_context(patch.object(uploader, name, value))
             post = stack.enter_context(patch.object(api_module, 'post_wechat_json', return_value=object()))
-            stack.enter_context(patch.object(api_module, 'parse_wechat_json', return_value={'media_id': 'DURABLE_ACK'}))
+            stack.enter_context(patch.object(api_module, 'parse_wechat_json', side_effect=[{'media_id': f'DURABLE_ACK_{index}'} for index in range(3)]))
             publish = stack.enter_context(patch.object(uploader, 'submit_publish'))
             for index in range(2):
                 consumer = self.harness.root / f'dispatch-{index}'
@@ -755,10 +755,10 @@ class PrivateRoundTripTests(unittest.TestCase):
                 else:
                     readback = {'ok': True, 'article_count': 7, 'matches_editorial_contract': True,
                                 'matches_expected_article_count': True, 'matches_expected_titles': True}
-                    with patch.object(uploader, 'verify_draft_get', return_value=readback):
+                    with patch.object(uploader, 'verify_draft_get', side_effect=lambda *args: {**readback, 'article_count': args[4]}):
                         self.assertEqual(delivery.upload_wechat(consumer, self.store, 'private')['article_count'], 7)
                     delivery.save_receipts(consumer, self.store, 'private')
-            post.assert_called_once()
+            self.assertEqual(post.call_count, 3)
             publish.assert_not_called()
 
     def test_changed_handoff_cannot_overwrite_generation_or_create_more_articles(self):

@@ -112,7 +112,7 @@ jobs:
           python scripts/push_portal_translated_to_wechat_drafts.py \
             --translated-root "portal_translated_reports/$SCOPE" \
             --date-folder "$DATE_FOLDER" --output-root "wechat_drafts/$SCOPE" \
-            --max-articles all --articles-per-draft 8 --max-body-chars 1200 \
+            --max-articles all --articles-per-draft 3 --max-body-chars 1200 \
             --min-inline-images 3 --max-inline-images 3 2>&1 | tee recovery_wechat_progress.log
 
       - name: Verify complete recovered WeChat delivery

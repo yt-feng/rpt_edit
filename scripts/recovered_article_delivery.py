@@ -591,7 +591,7 @@ def upload_wechat(workspace, client, bucket):
     argv = sys.argv
     sys.argv = ['push_xhs_notes_to_wechat_drafts.py', '--dropbox-output-root', str(workspace / 'xhs'),
         '--date-folder', context['date_folder'], '--output-root', str(workspace / 'wechat_drafts' / 'xhs_notes'),
-        '--max-articles', 'all', '--articles-per-draft', '8', '--max-body-chars', '1200',
+        '--max-articles', 'all', '--articles-per-draft', '3', '--max-body-chars', '1200',
         '--min-inline-images', '3', '--max-inline-images', '3']
     try:
         require(uploader.main(submit_draft=add) == 0, 'wechat_upload_failed')

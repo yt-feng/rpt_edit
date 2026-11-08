@@ -46,9 +46,9 @@ on:
         required: true
         default: "0"
       articles_per_draft:
-        description: "Number of articles in each WeChat draft item"
+        description: "Maximum articles per draft, evenly grouped with at least three drafts when possible"
         required: true
-        default: "8"
+        default: "3"
       max_body_chars:
         description: "Approximate visible Chinese character budget for each article"
         required: true
