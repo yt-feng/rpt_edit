@@ -9,7 +9,6 @@ from datetime import date, timedelta
 import hashlib
 import io
 import json
-import os
 from pathlib import Path
 
 import requests
@@ -27,6 +26,21 @@ from wechat_draft_grouping import balanced_draft_groups
 
 FIELDS = (*WECHAT_DRAFT_WRITABLE_FIELDS, "article_type", "show_cover_pic", "pic_crop_235_1", "pic_crop_1_1")
 MAX_STATE_BYTES = 16 * 1024 * 1024
+
+
+class ContentMismatch(ValueError):
+    def __init__(self, actual, expected):
+        super().__init__("replacement_content_changed")
+        self.differences = [
+            {"article": index, "field": field,
+             "actual_type": type(row.get(field)).__name__, "expected_type": type(reference.get(field)).__name__,
+             "actual_length": len(str(row.get(field, ""))), "expected_length": len(str(reference.get(field, ""))),
+             "actual_sha256": fingerprint(row.get(field)), "expected_sha256": fingerprint(reference.get(field)),
+             **({"actual": row.get(field), "expected": reference.get(field)}
+                if field in {"need_open_comment", "only_fans_can_comment", "show_cover_pic"} else {})}
+            for index, (row, reference) in enumerate(zip(actual, expected))
+            for field in FIELDS if row.get(field) != reference.get(field)
+        ]
 
 
 def require(condition, category):
@@ -156,7 +170,8 @@ def snapshot(drafts, tokens, session, timeout):
 
 def check_group(session, token, group, timeout):
     actual = writable_articles(get_draft(session, token, group["media_id"], timeout))
-    require(group_matches(actual, group["articles"]), "replacement_content_changed")
+    if not group_matches(actual, group["articles"]):
+        raise ContentMismatch(actual, group["articles"])
 
 
 def recover_pending_group(session, token, account, group, timeout):
@@ -258,6 +273,7 @@ def main(argv=None):
     parser.add_argument("--timeout", type=int, default=60)
     args = parser.parse_args(argv)
     report = {"complete": False, "applied": args.apply}
+    state = None
     try:
         with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
             drafts = source_drafts(args.artifact_root, args.publication_date)
@@ -283,7 +299,11 @@ def main(argv=None):
                         apply_account(state, account, tokens[account], session, args.timeout, checkpoint)
                 report = public_report(state, args.apply)
     except Exception as error:
+        if state is not None:
+            report = public_report(state, args.apply)
         report.update(error_type=type(error).__name__)
+        if isinstance(error, ContentMismatch):
+            report.update(error_code=str(error), field_differences=error.differences)
         if type(error) is ValueError:
             report["error_code"] = str(error)
         if isinstance(error, WeChatError):
