@@ -169,6 +169,7 @@ def recover_pending_group(session, token, account, group, timeout):
 
 def apply_account(state, account, token, session, timeout, checkpoint):
     target = state["accounts"][account]
+    check_originals(target, session, token, timeout)
     for group in target["groups"]:
         if group["status"] == "add_in_flight":
             recover_pending_group(session, token, target, group, timeout)
@@ -190,12 +191,7 @@ def apply_account(state, account, token, session, timeout, checkpoint):
         checkpoint.save(state)
 
     kept_ids = {group["media_id"] for group in target["groups"]}
-    # Validate every original before the first deletion, preserving edits made since snapshot.
-    for original in target["originals"]:
-        if original["status"] in {"deleted", "delete_in_flight"}:
-            continue
-        actual = writable_articles(get_draft(session, token, original["media_id"], timeout))
-        require(group_matches(actual, original["articles"]), "original_content_changed_since_snapshot")
+    check_originals(target, session, token, timeout)
 
     for original in target["originals"]:
         if original["media_id"] in kept_ids or original["status"] == "deleted":
@@ -227,6 +223,14 @@ def apply_account(state, account, token, session, timeout, checkpoint):
             "original_draft_still_present")
     target["status"] = "complete"
     checkpoint.save(state)
+
+
+def check_originals(target, session, token, timeout):
+    for original in target["originals"]:
+        if original["status"] in {"deleted", "delete_in_flight"}:
+            continue
+        actual = writable_articles(get_draft(session, token, original["media_id"], timeout))
+        require(group_matches(actual, original["articles"]), "original_content_changed_since_snapshot")
 
 
 def public_report(state, apply):

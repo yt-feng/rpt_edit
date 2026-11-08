@@ -283,6 +283,7 @@ jobs:
           python scripts/test_repair_wechat_institution_titles.py
           python scripts/test_wechat_api_verification.py
           python scripts/test_wechat_account_routing.py
+          python scripts/test_regroup_wechat_drafts.py
           python scripts/test_free_editorial_images.py
           python scripts/test_wechat_media_contract.py
           python scripts/test_wechat_editorial_images.py

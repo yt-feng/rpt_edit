@@ -36,9 +36,9 @@ on:
         required: true
         default: "0"
       articles_per_draft:
-        description: "Number of articles in each WeChat draft item"
+        description: "Maximum articles per draft, evenly grouped with at least three drafts when possible"
         required: true
-        default: "8"
+        default: "3"
       max_body_chars:
         description: "Approximate visible Chinese character budget for each article"
         required: true
@@ -212,7 +212,7 @@ jobs:
           fi
           MAX_ARTICLES="${{ github.event.inputs.max_articles || 'all' }}"
           ARTICLE_OFFSET="${{ github.event.inputs.article_offset || '0' }}"
-          ARTICLES_PER_DRAFT="${{ github.event.inputs.articles_per_draft || '8' }}"
+          ARTICLES_PER_DRAFT="${{ github.event.inputs.articles_per_draft || '3' }}"
           MAX_BODY_CHARS="${{ github.event.inputs.max_body_chars || '1200' }}"
           MIN_INLINE_IMAGES="${{ github.event.inputs.min_inline_images || '3' }}"
           MAX_INLINE_IMAGES="${{ github.event.inputs.max_inline_images || '3' }}"

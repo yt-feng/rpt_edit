@@ -38,6 +38,7 @@ from PIL import Image, ImageDraw
 
 from wechat_account_routing import plan_destinations
 from wechat_accounts import ACCOUNT_NAMES
+from wechat_draft_grouping import DEFAULT_ARTICLES_PER_DRAFT, account_group_sizes
 from institution_names import ensure_title_has_institution, infer_institution_name
 from wechat_title_optimizer import (
     clean_wechat_title as optimizer_clean_wechat_title,
@@ -85,7 +86,6 @@ FINAL_CTA_TEXT = f"更新信息参见{PUBLIC_SITE_HOST_PLACEHOLDER}"
 DEFAULT_BODY_HOOK = ""
 DEFAULT_BODY_VISIBLE_CHARS = 1200
 DEFAULT_MIN_INLINE_IMAGES = 3
-DEFAULT_ARTICLES_PER_DRAFT = 8
 DEFAULT_MAX_CONTENT_CHARS = 19500
 DEFAULT_MAX_CONTENT_BYTES = 18000
 RAW_MARKDOWN_TITLE_MAX_CHARS = 96
@@ -3736,6 +3736,7 @@ def main() -> int:
             pacing_sleep(f"After building WeChat article {idx}/{len(selected)}", args.article_delay_seconds, args.dry_run)
 
     drafts = []
+    group_sizes = account_group_sizes(selected, routes, output_dir, args.articles_per_draft)
 
     def create_draft(group: list[dict[str, Any]], target: DraftDestination) -> None:
         access_token = target.token
@@ -3869,8 +3870,10 @@ def main() -> int:
     for article in built_articles:
         groups_by_account[article.get("account")].append(article)
     for account, articles in groups_by_account.items():
-        for group in chunked(articles, args.articles_per_draft):
-            create_draft(group, destinations[account])
+        offset = 0
+        for size in group_sizes[account]:
+            create_draft(articles[offset:offset + size], destinations[account])
+            offset += size
 
     title_log_path = write_wechat_title_log(
         output_dir,

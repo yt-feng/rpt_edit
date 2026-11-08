@@ -56,9 +56,9 @@ on:
         required: true
         default: "all"
       articles_per_draft:
-        description: "Number of articles in each WeChat draft item"
+        description: "Maximum articles per draft, evenly grouped with at least three drafts when possible"
         required: true
-        default: "8"
+        default: "3"
       dry_run:
         description: "Build WeChat draft payloads without calling WeChat APIs"
         required: true
@@ -605,7 +605,7 @@ jobs:
             --output-root "wechat_drafts/institutions" \
             --max-articles "${{ github.event.inputs.max_translated || 'all' }}" \
             --include-institutions "${{ github.event.inputs.institutions || 'all' }}" \
-            --articles-per-draft "${{ github.event.inputs.articles_per_draft || '8' }}" \
+            --articles-per-draft "${{ github.event.inputs.articles_per_draft || '3' }}" \
             --max-body-chars "1200" \
             --min-inline-images "3" \
             --max-inline-images "3" \

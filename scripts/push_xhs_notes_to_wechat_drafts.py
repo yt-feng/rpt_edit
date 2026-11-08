@@ -16,6 +16,8 @@ from typing import Any
 
 import requests
 
+from wechat_draft_grouping import account_group_sizes
+
 SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
 
@@ -1006,6 +1008,8 @@ def main(*, submit_draft=None) -> int:
 
     built_articles: list[dict[str, Any]] = []
     pending_groups: dict[str | None, list[dict[str, Any]]] = {account: [] for account in destinations}
+    group_sizes = account_group_sizes(selected, routes, output_dir, args.articles_per_draft)
+    group_indices = dict.fromkeys(destinations, 0)
     for idx, report_dir in enumerate(selected, 1):
         log(f"Building WeChat article {idx}/{len(selected)}: {report_dir.name}")
         target = destinations[routes[report_dir]]
@@ -1015,9 +1019,10 @@ def main(*, submit_draft=None) -> int:
         built_articles.append(article)
         group = pending_groups[target.account]
         group.append(article)
-        if len(group) == args.articles_per_draft:
+        if len(group) == group_sizes[target.account][group_indices[target.account]]:
             create_draft(group, target)
             group.clear()
+            group_indices[target.account] += 1
         if idx < len(selected):
             pacing_sleep(
                 f"After building WeChat article {idx}/{len(selected)}",
