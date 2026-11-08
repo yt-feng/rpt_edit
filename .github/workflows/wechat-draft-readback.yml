@@ -1,9 +1,17 @@
 name: Verify existing WeChat drafts
-run-name: "${{ inputs.check_accounts_only && 'Check WeChat account access' || inputs.restore_missing && 'Restore missing' || inputs.audit_presence && 'Locate' || 'Verify' }} WeChat drafts from run ${{ inputs.source_run_id }}"
+run-name: "${{ inputs.check_accounts_only && 'Check WeChat account access' || inputs.regroup_date != '' && 'Regroup' || inputs.restore_missing && 'Restore missing' || inputs.audit_presence && 'Locate' || 'Verify' }} WeChat drafts from run ${{ inputs.source_run_id }}"
 
 on:
   workflow_dispatch:
     inputs:
+      regroup_date:
+        description: "Publication date to regroup remaining receipt-bound drafts, YYYY-MM-DD"
+        type: string
+        default: ""
+      regroup_apply:
+        description: "Apply regrouping after private backup and verified replacement readback"
+        type: boolean
+        default: false
       check_accounts_only:
         description: "Check draft API access for all three accounts without creating drafts"
         type: boolean
@@ -67,8 +75,88 @@ jobs:
           WECHAT_MP_APPSECRET_PANKOU: ${{ secrets.WECHAT_MP_APPSECRET_PANKOU }}
         run: python scripts/wechat_accounts.py --check-access
 
+  regroup-existing:
+    if: ${{ inputs.regroup_date != '' && !inputs.check_accounts_only }}
+    runs-on: [self-hosted, wechat-draft]
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            scripts
+            requirements.txt
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install -r requirements.txt "boto3>=1.37.32,<2"
+      - name: Bind regrouping to an accepted production draft artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          ARTIFACT_NAME: ${{ inputs.artifact_name }}
+          REGROUP_DATE: ${{ inputs.regroup_date }}
+          AUDIT_PRESENCE: ${{ inputs.audit_presence }}
+          RESTORE_MISSING: ${{ inputs.restore_missing }}
+        run: |
+          PYTHONPATH=scripts python - <<'PY'
+          import os
+          from datetime import date
+          from validate_wechat_image_receipt_source import github_json, require, validate
+          require(os.environ["AUDIT_PRESENCE"] != "true" and os.environ["RESTORE_MISSING"] != "true", "conflicting_regroup_modes")
+          date.fromisoformat(os.environ["REGROUP_DATE"])
+          repo = os.environ["GITHUB_REPOSITORY"]
+          source = os.environ["SOURCE_RUN_ID"]
+          api = lambda path: github_json(repo, path, os.environ["GH_TOKEN"])
+          validate(repo, source, os.environ["ARTIFACT_NAME"], api)
+          run = api("actions/runs/" + source)
+          allowed = {
+              ".github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml",
+              ".github/workflows/institution-latest-pdf-to-wechat.yml",
+              ".github/workflows/consulting-latest-pdf-to-wechat.yml",
+              ".github/workflows/ark-invest-feed-to-wechat.yml",
+          }
+          require(run.get("head_branch") == "main" and run.get("path") in allowed, "regroup_source_is_not_a_production_upload")
+          print("Verified source run, production workflow, and exact diagnostic artifact.")
+          PY
+      - uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.artifact_name }}
+          run-id: ${{ inputs.source_run_id }}
+          github-token: ${{ github.token }}
+          path: _wechat_regroup_source
+      - name: Regroup remaining drafts and verify their current contents
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+          WECHAT_MP_APPID_TT: ${{ secrets.WECHAT_MP_APPID_TT }}
+          WECHAT_MP_APPSECRET_TT: ${{ secrets.WECHAT_MP_APPSECRET_TT }}
+          WECHAT_MP_APPID_PANKOU: ${{ secrets.WECHAT_MP_APPID_PANKOU }}
+          WECHAT_MP_APPSECRET_PANKOU: ${{ secrets.WECHAT_MP_APPSECRET_PANKOU }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          REGROUP_DATE: ${{ inputs.regroup_date }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          REGROUP_APPLY: ${{ inputs.regroup_apply }}
+        run: |
+          OPTIONS=()
+          if [ "$REGROUP_APPLY" = true ]; then OPTIONS+=(--apply); fi
+          python scripts/regroup_wechat_drafts.py \
+            --artifact-root _wechat_regroup_source \
+            --source-run-id "$SOURCE_RUN_ID" --publication-date "$REGROUP_DATE" \
+            --output _wechat_regroup_result/summary.json "${OPTIONS[@]}"
+      - name: Archive regrouping counts
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: wechat-regroup-${{ github.run_id }}-${{ github.run_attempt }}
+          path: _wechat_regroup_result/summary.json
+          if-no-files-found: warn
+          retention-days: 14
+
   verify-existing:
-    if: ${{ !inputs.check_accounts_only }}
+    if: ${{ !inputs.check_accounts_only && inputs.regroup_date == '' }}
     runs-on: [self-hosted, wechat-draft]
     timeout-minutes: 20
     steps:
