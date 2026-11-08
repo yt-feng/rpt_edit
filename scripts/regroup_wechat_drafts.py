@@ -6,7 +6,9 @@ import argparse
 from collections import Counter
 from contextlib import redirect_stderr, redirect_stdout
 from datetime import date, timedelta
+from difflib import SequenceMatcher
 import hashlib
+import html
 import io
 import json
 from pathlib import Path
@@ -28,6 +30,19 @@ FIELDS = (*WECHAT_DRAFT_WRITABLE_FIELDS, "article_type", "show_cover_pic", "pic_
 MAX_STATE_BYTES = 16 * 1024 * 1024
 
 
+def markup_difference(actual, expected):
+    safe = {"amp;", "&amp;", "<p><br></p>", "<p><br/></p>", "<div>", "</div>", "\n", " ", "<br/>", "<br>"}
+    changes = []
+    for operation, a, b, c, d in SequenceMatcher(None, expected, actual, autojunk=False).get_opcodes():
+        if operation == "equal":
+            continue
+        before, after = expected[a:b], actual[c:d]
+        changes.append({"operation": operation, "before_length": len(before), "after_length": len(after),
+                        **({"before": before} if before in safe else {}),
+                        **({"after": after} if after in safe else {})})
+    return {"equal_after_html_unescape": html.unescape(actual) == html.unescape(expected), "markup_changes": changes[:20]}
+
+
 class ContentMismatch(ValueError):
     def __init__(self, actual, expected):
         super().__init__("replacement_content_changed")
@@ -36,6 +51,7 @@ class ContentMismatch(ValueError):
              "actual_type": type(row.get(field)).__name__, "expected_type": type(reference.get(field)).__name__,
              "actual_length": len(str(row.get(field, ""))), "expected_length": len(str(reference.get(field, ""))),
              "actual_sha256": fingerprint(row.get(field)), "expected_sha256": fingerprint(reference.get(field)),
+             **(markup_difference(row[field], reference[field]) if field == "content" else {}),
              **({"actual": row.get(field), "expected": reference.get(field)}
                 if field in {"need_open_comment", "only_fans_can_comment", "show_cover_pic"} else {})}
             for index, (row, reference) in enumerate(zip(actual, expected))
