@@ -3856,6 +3856,42 @@
     "wto:https://www.wto.org/english/news_e/news26_e/safe_eec_06nov26_542_e.htm": {
       "first_seen": "2026-11-07",
       "status": "no_pdf"
+    },
+    "adb:1188696": {
+      "first_seen": "2026-11-09",
+      "status": "downloaded"
+    },
+    "adb:1187991": {
+      "first_seen": "2026-11-09",
+      "status": "too_old"
+    },
+    "adb:1187536": {
+      "first_seen": "2026-11-09",
+      "status": "too_old"
+    },
+    "adb:1186486": {
+      "first_seen": "2026-11-09",
+      "status": "too_old"
+    },
+    "adb:1187561": {
+      "first_seen": "2026-11-09",
+      "status": "too_old"
+    },
+    "adb:1186506": {
+      "first_seen": "2026-11-09",
+      "status": "too_old"
+    },
+    "adb:1185876": {
+      "first_seen": "2026-11-09",
+      "status": "too_old"
+    },
+    "adb:1186146": {
+      "first_seen": "2026-11-09",
+      "status": "too_old"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/safe_eec_02nov26_536_e.htm": {
+      "first_seen": "2026-11-09",
+      "status": "too_old"
     }
   }
 }
