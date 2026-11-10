@@ -17,8 +17,8 @@
       },
       "admitted_at": "2026-11-07T01:30:25.830863+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-09T01:21:47.415676+00:00",
-      "attempts": 3
+      "last_attempted_at": "2026-11-10T03:56:20.370395+00:00",
+      "attempts": 4
     },
     "imf:48559e102a40aa0130eee51256a1d1758551275011001ebac88c382fd6c0": {
       "item": {
@@ -35,8 +35,8 @@
       },
       "admitted_at": "2026-11-07T01:30:25.830863+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-09T01:21:47.415676+00:00",
-      "attempts": 3
+      "last_attempted_at": "2026-11-10T03:56:20.370395+00:00",
+      "attempts": 4
     },
     "imf:fd6c97f3f395baade317eb828ab6ab3907fa72ea832ac0816f20f20a9826": {
       "item": {
@@ -53,8 +53,8 @@
       },
       "admitted_at": "2026-11-07T01:30:25.830863+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-09T01:21:47.415676+00:00",
-      "attempts": 3
+      "last_attempted_at": "2026-11-10T03:56:20.370395+00:00",
+      "attempts": 4
     },
     "imf:8dafaa6411092994186408a9001e23bb05aba642e7336cc3455dcc0df8c0": {
       "item": {
@@ -71,8 +71,8 @@
       },
       "admitted_at": "2026-11-07T01:30:25.830863+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-09T01:21:47.415676+00:00",
-      "attempts": 3
+      "last_attempted_at": "2026-11-10T03:56:20.370395+00:00",
+      "attempts": 4
     },
     "imf:3d2e36cb3216e9f4c32756a18db6bc1237d7100a7a8bd25d5b55587c3299": {
       "item": {
@@ -89,8 +89,8 @@
       },
       "admitted_at": "2026-11-07T01:30:25.830863+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-09T01:21:47.415676+00:00",
-      "attempts": 3
+      "last_attempted_at": "2026-11-10T03:56:20.370395+00:00",
+      "attempts": 4
     },
     "imf:710c3b7610a9c1a2a34c7896cf47f83ef5c100de207100cb46f69bf7244b": {
       "item": {
@@ -107,8 +107,8 @@
       },
       "admitted_at": "2026-11-07T01:30:25.830863+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-09T01:21:47.415676+00:00",
-      "attempts": 3
+      "last_attempted_at": "2026-11-10T03:56:20.370395+00:00",
+      "attempts": 4
     },
     "imf:90f642928eb2b47ec8d335639a9f8db1c6345757907de6cecf431697e4ee": {
       "item": {
@@ -125,8 +125,8 @@
       },
       "admitted_at": "2026-11-07T01:30:25.830863+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-09T01:21:47.415676+00:00",
-      "attempts": 3
+      "last_attempted_at": "2026-11-10T03:56:20.370395+00:00",
+      "attempts": 4
     },
     "imf:833287a58f686fcdff43e79f793fe30a6019f1d7d918e8deeadd6f7a4632": {
       "item": {
@@ -143,8 +143,53 @@
       },
       "admitted_at": "2026-11-07T01:30:25.830863+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-09T01:21:47.415676+00:00",
-      "attempts": 3
+      "last_attempted_at": "2026-11-10T03:56:20.370395+00:00",
+      "attempts": 4
+    },
+    "imf:bf7e28b751b7fe8e24909c1661da6c3a7d185519db38fbd3c14f64ce27fe": {
+      "item": {
+        "title": "Denmark: Selected Issues-Explaining the Increased Household Saving Rate in Denmark",
+        "source_url": "https://www.imf.org/en/publications/cr/issues/2026/11/06/denmark-selected-issues-explaining-the-increased-household-saving-rate-in-denmark-581007",
+        "guid": "bf7e28b751b7fe8e24909c1661da6c3a7d185519db38fbd3c14f64ce27fe",
+        "date": "2026-11-09T05:00:00+00:00",
+        "pdf_candidates": [],
+        "scrape_url": "https://www.imf.org/en/publications/cr/issues/2026/11/06/denmark-selected-issues-explaining-the-increased-household-saving-rate-in-denmark-581007",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/cr/issues/2026/11/06/denmark-selected-issues-explaining-the-increased-household-saving-rate-in-denmark-581007"
+      },
+      "admitted_at": "2026-11-10T03:56:20.370395+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-10T03:56:20.370395+00:00",
+      "attempts": 1
+    },
+    "imf:cf688d290023a2ad7f4ace8132194e8f74f9f6425462c1cc0d0e3406bad9": {
+      "item": {
+        "title": "Denmark: 2026 Article IV Consultation-Press Release; Staff Report; Staff Statement; and Statement by the Executive Director for Denmark",
+        "source_url": "https://www.imf.org/en/publications/cr/issues/2026/11/06/denmark-2026-article-iv-consultation-press-release-staff-report-staff-statement-and-580994",
+        "guid": "cf688d290023a2ad7f4ace8132194e8f74f9f6425462c1cc0d0e3406bad9",
+        "date": "2026-11-09T05:00:00+00:00",
+        "pdf_candidates": [],
+        "scrape_url": "https://www.imf.org/en/publications/cr/issues/2026/11/06/denmark-2026-article-iv-consultation-press-release-staff-report-staff-statement-and-580994",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/cr/issues/2026/11/06/denmark-2026-article-iv-consultation-press-release-staff-report-staff-statement-and-580994"
+      },
+      "admitted_at": "2026-11-10T03:56:20.370395+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-10T03:56:20.370395+00:00",
+      "attempts": 1
+    },
+    "imf:9567cb2f6ac81abaf8c4d13052aff6fd49764a025d85fc5e45babb7860e5": {
+      "item": {
+        "title": "Denmark: Selected Issues–The Operating Environment for Startups and Scale-Ups in Denmark",
+        "source_url": "https://www.imf.org/en/publications/cr/issues/2026/11/06/denmark-selected-issuesthe-operating-environment-for-startups-and-scale-ups-in-denmark-581014",
+        "guid": "9567cb2f6ac81abaf8c4d13052aff6fd49764a025d85fc5e45babb7860e5",
+        "date": "2026-11-09T05:00:00+00:00",
+        "pdf_candidates": [],
+        "scrape_url": "https://www.imf.org/en/publications/cr/issues/2026/11/06/denmark-selected-issuesthe-operating-environment-for-startups-and-scale-ups-in-denmark-581014",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/cr/issues/2026/11/06/denmark-selected-issuesthe-operating-environment-for-startups-and-scale-ups-in-denmark-581014"
+      },
+      "admitted_at": "2026-11-10T03:56:20.370395+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-10T03:56:20.370395+00:00",
+      "attempts": 1
     }
   }
 }
