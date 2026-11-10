@@ -395,6 +395,10 @@ read failures have a bounded grace period; they never issue another dispatch.
 The waiter verifies repository, workflow, main branch and child identity, and
 still fails on a terminal child failure, permission denial or its deadline.
 
+Generated-output commits inspect ignore rules independently of the alternate
+index. This lets the explicit public-PDF opt-in update an already tracked PDF
+from a sparse checkout while retaining the existing size, path and merge gates.
+
 The read-only WeChat presence audit accepts routed receipts and searches each
 article only in its recorded account (`kc`, `tt`, `pankou`). Authentication or
 inventory failure in one account preserves evidence from the others and keeps

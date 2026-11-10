@@ -249,6 +249,22 @@ os.execv(real,[real,*args])
         self.assertIsNone(self.remote_file('ignored/other.pdf'))
         self.assertIsNone(self.remote_file('ignored/inputs.json'))
 
+    def test_tracked_ignored_pdf_can_be_updated_from_sparse_checkout(self):
+        self.write(self.producer, 'ignored/report.pdf', 'previous public PDF\n')
+        self.git('add', '-f', 'ignored/report.pdf', cwd=self.producer)
+        self.git('commit', '-q', '-m', 'Previous public PDF', cwd=self.producer)
+        self.git('push', '-q', 'origin', 'HEAD:main', cwd=self.producer)
+        self.git('sparse-checkout', 'init', '--cone', cwd=self.producer)
+        self.git('sparse-checkout', 'set', 'ignored', cwd=self.producer)
+        self.write(self.producer, 'ignored/report.pdf', 'updated public PDF\n')
+        self.write(self.producer, 'ignored/inputs.json', 'private synthesis\n')
+        before = self.snapshot()
+        result = self.call('ignored/report.pdf', force=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertEqual(self.remote_file('ignored/report.pdf'), 'updated public PDF\n')
+        self.assertIsNone(self.remote_file('ignored/inputs.json'))
+        self.assertEqual(self.snapshot(), before)
+
     def test_oversized_intent_and_oversized_three_way_result_never_push(self):
         self.write(self.producer,'output/A.txt','too large\n');head=self.remote_head()
         self.assertEqual(self.call(limit=3).returncode,3)
