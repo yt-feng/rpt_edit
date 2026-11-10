@@ -26,6 +26,7 @@ from push_portal_translated_to_wechat_drafts import (
     post_wechat_json,
 )
 from verify_existing_wechat_drafts import load_drafts
+from wechat_accounts import account_credentials, draft_account
 
 
 ENDPOINTS = {"draft": "draft/batchget", "published": "freepublish/batchget"}
@@ -193,6 +194,39 @@ def audit_presence(drafts: list[dict[str, Any]], session: requests.Session, toke
     return build_report(drafts, inventories)
 
 
+def authenticated_audit(drafts, session, timeout, max_pages, page_size, *, account='kc'):
+    try:
+        # Shared authentication retries can print private provider responses.
+        with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+            token = get_stable_access_token(session, *account_credentials(account), timeout)
+    except Exception as exc:
+        inventories = {kind: empty_inventory(kind) for kind in ENDPOINTS}
+        for inventory in inventories.values():
+            inventory.update(stop_reason='authentication_error', errors=[safe_error(exc)])
+        return build_report(drafts, inventories)
+    return audit_presence(drafts, session, token, timeout, max_pages, page_size)
+
+
+def audit_accounts(drafts, session, timeout, max_pages, page_size):
+    groups = {}
+    for draft in drafts:
+        groups.setdefault(draft_account(draft), []).append(draft)
+    reports = {account: authenticated_audit(rows, session, timeout, max_pages, page_size, account=account)
+               for account, rows in groups.items()}
+    return {
+        'read_only': True, 'ok': all(report['ok'] for report in reports.values()),
+        'checked_at': datetime.now(timezone.utc).isoformat(),
+        'expected_draft_count': sum(report['expected_draft_count'] for report in reports.values()),
+        'expected_article_count': sum(report['expected_article_count'] for report in reports.values()),
+        'scope': 'Each receipt is searched only in its recorded WeChat account.',
+        'interpretation': 'Title matches are candidates, not proof of identical content. Endpoint nonmatches do not prove deletion or authorize restoration.',
+        'accounts': {account: {key: value for key, value in report.items() if key != 'articles'}
+                     for account, report in reports.items()},
+        'articles': [{**article, 'account': account} for account, report in reports.items()
+                     for article in report['articles']],
+    }
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--artifact-root", required=True, type=Path)
@@ -205,27 +239,13 @@ def main(argv: list[str] | None = None) -> int:
         parser.error("timeout and max-pages must be positive")
     try:
         drafts = load_drafts(args.artifact_root)
-        if any("account" in draft for draft in drafts):
-            raise ValueError("Use draft ID readback for a routed receipt")
         if any("articles" not in draft for draft in drafts):
             raise ValueError("Title inventory audit requires complete archived article payloads; use default ID readback for restoration receipts")
-        appid = os.environ.get("WECHAT_MP_APPID", "").strip()
-        secret = os.environ.get("WECHAT_MP_APPSECRET", "").strip()
-        if not appid or not secret:
-            raise ValueError("WeChat application credentials are required")
         with requests.Session() as session:
-            try:
-                # Shared authentication retries can log provider messages; do
-                # not emit those, or raw exception text, from this diagnostic.
-                with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
-                    token = get_stable_access_token(session, appid, secret, args.timeout)
-            except Exception as exc:
-                inventories = {kind: empty_inventory(kind) for kind in ENDPOINTS}
-                for inventory in inventories.values():
-                    inventory.update(stop_reason="authentication_error", errors=[safe_error(exc)])
-                report = build_report(drafts, inventories)
+            if any('account' in draft for draft in drafts):
+                report = audit_accounts(drafts, session, args.timeout, args.max_pages, args.page_size)
             else:
-                report = audit_presence(drafts, session, token, args.timeout, args.max_pages, args.page_size)
+                report = authenticated_audit(drafts, session, args.timeout, args.max_pages, args.page_size)
     except Exception as exc:
         report = {"read_only": True, "ok": False, "status": "unknown", "error": safe_error(exc)}
     args.output.parent.mkdir(parents=True, exist_ok=True)

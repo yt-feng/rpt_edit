@@ -1,4 +1,5 @@
 name: Daily report articles and translations
+run-name: Daily report articles and translations [${{ inputs.dropbox_date_folder || 'latest' }}]
 
 on:
   workflow_dispatch:
@@ -124,6 +125,7 @@ env:
 concurrency:
   group: final-pdf-to-xhs-notes
   cancel-in-progress: false
+  queue: max
 
 jobs:
   resolve-inputs:
@@ -303,6 +305,29 @@ jobs:
           REPLAY_DATE: ${{ needs.resolve-inputs.outputs.dropbox_date_folder }}
           REPLAY_ROOT: ${{ needs.resolve-inputs.outputs.dropbox_root }}
         run: python scripts/replay_daily_sources.py selection
+      - name: Record admitted source batch before any classification or generation
+        if: ${{ needs.resolve-inputs.outputs.replay_source_run_id == '' }}
+        env:
+          SOURCE_DATE: ${{ steps.dropbox.outputs.latest_folder }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          from sys import path
+          path.insert(0, 'scripts')
+          from download_dropbox_latest_pdfs import parse_date_folder
+          day = os.environ['SOURCE_DATE']
+          parse_date_folder(day)
+          Path('_daily_source_batch.json').write_text(json.dumps({'date_folder': day, 'run_id': os.environ['GITHUB_RUN_ID']}))
+          PY
+      - name: Retain source admission identity
+        if: ${{ needs.resolve-inputs.outputs.replay_source_run_id == '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-source-batch-${{ steps.dropbox.outputs.latest_folder }}-${{ github.run_id }}
+          path: _daily_source_batch.json
+          if-no-files-found: error
+          retention-days: 7
       - name: Select reports with DeepSeek
         if: ${{ needs.resolve-inputs.outputs.replay_source_run_id == '' }}
         id: select_macro
