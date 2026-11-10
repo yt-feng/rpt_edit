@@ -108,11 +108,8 @@ on:
         required: true
         type: boolean
         default: false
-  schedule:
-    # 18:00 UTC = 02:00 Asia/Shanghai. Dropbox reports normally arrive by
-    # 00:30, leaving a 90-minute readiness buffer before the long stable run.
-    # Report batch dates may be one calendar day behind the Beijing run date.
-    - cron: "0 18 * * *"
+  # Automatic starts go through daily-report-source-wakeup.yml so a delayed
+  # cron cannot queue another full run behind an already dispatched batch.
 
 permissions:
   contents: write
@@ -215,7 +212,7 @@ jobs:
           echo "commit_results=${{ github.event.inputs.commit_results || 'false' }}" >> "$GITHUB_OUTPUT"
       - name: Print resolved plan
         run: |
-          echo "::notice::Daily schedule is 02:00 Asia/Shanghai, 90 minutes after the usual 00:30 Dropbox readiness time. XHS, Xianyu, podcast copy and podcast audio/video are disabled."
+          echo "::notice::Daily source checks begin at 02:00 Asia/Shanghai through the deduplicating source wake-up. XHS, Xianyu, podcast copy and podcast audio/video are disabled."
           if [ -n "${{ steps.vars.outputs.expected_dropbox_date_folder }}" ]; then
             echo "::notice::Latest-source runs require the latest Dropbox batch within one calendar day of Beijing run date ${{ steps.vars.outputs.expected_dropbox_date_folder }}; older or future-dated batches fail closed."
           fi
