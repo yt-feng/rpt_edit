@@ -1,0 +1,60 @@
+name: Daily report source wake-up
+
+on:
+  schedule:
+    # Late Dropbox deliveries and missed Daily schedules get a metadata-only
+    # check at a different minute. No model runs in this workflow.
+    - cron: '47 * * * *'
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/daily-report-source-wakeup.yml'
+      - 'scripts/wake_daily_report_source.py'
+      - 'scripts/test_wake_daily_report_source.py'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: daily-report-source-wakeup-${{ github.event_name == 'pull_request' && github.run_id || 'main' }}
+  cancel-in-progress: false
+
+jobs:
+  contract:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install --disable-pip-version-check requests PyYAML
+      - run: python3 -B scripts/test_wake_daily_report_source.py
+
+  wake:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: contract
+    runs-on: ubuntu-22.04
+    timeout-minutes: 8
+    permissions:
+      contents: read
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+          sparse-checkout: scripts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install --disable-pip-version-check requests
+      - name: Start only an unattempted settled fresh report batch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
+          DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
+          DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+        run: python3 -B scripts/wake_daily_report_source.py

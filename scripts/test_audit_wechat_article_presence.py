@@ -166,6 +166,61 @@ class PresenceAuditTests(unittest.TestCase):
         for hidden in ("SECRET", "PRIVATE", "APPID"):
             self.assertNotIn(hidden, stdout.getvalue() + json.dumps(report))
 
+    def test_routed_receipts_never_match_a_title_in_the_wrong_account(self):
+        drafts = [{**self.expected()[0], 'account': account} for account in ('kc', 'tt', 'pankou')]
+        credentials = lambda account: (account + '-appid', account + '-secret')
+        with patch.object(audit, 'account_credentials', side_effect=credentials), \
+                patch.object(audit, 'get_stable_access_token', side_effect=['KC', 'TT', 'PANKOU']), \
+                patch.object(audit, 'post_wechat_json', side_effect=[
+                    page([group('kc-only', ['文章一'])]), page([]),
+                    page([group('tt-only', ['文章二'])]), page([]), page([]), page([])]):
+            report = audit.audit_accounts(drafts, object(), 20, 10, 20)
+        self.assertTrue(report['ok'])
+        self.assertEqual(report['expected_article_count'], 6)
+        self.assertEqual(report['expected_draft_count'], 3)
+        found = {(row['account'], row['expected_title']) for row in report['articles']
+                 if row['draft']['status'] == 'title_candidates_found'}
+        self.assertEqual(found, {('kc', '文章一'), ('tt', '文章二')})
+
+    def test_one_account_auth_failure_preserves_other_accounts_without_logging_credentials(self):
+        drafts = [{**self.expected()[0], 'account': account} for account in ('kc', 'tt')]
+        def credentials(account):
+            if account == 'kc':
+                raise ValueError('PRIVATE_CREDENTIAL')
+            return 'APPID', 'SECRET'
+        stdout = io.StringIO()
+        with patch.object(audit, 'account_credentials', side_effect=credentials), \
+                patch.object(audit, 'get_stable_access_token', return_value='TOKEN'), \
+                patch.object(audit, 'post_wechat_json', side_effect=[page([group('tt', ['文章一'])]), page([])]), \
+                contextlib.redirect_stdout(stdout):
+            report = audit.audit_accounts(drafts, object(), 20, 10, 20)
+        self.assertFalse(report['ok'])
+        self.assertEqual(report['accounts']['kc']['inventories']['draft']['stop_reason'], 'authentication_error')
+        self.assertTrue(report['accounts']['tt']['ok'])
+        for hidden in ('APPID', 'SECRET', 'TOKEN', 'PRIVATE_CREDENTIAL'):
+            self.assertNotIn(hidden, json.dumps(report) + stdout.getvalue())
+
+    def test_routed_main_writes_account_scoped_report_and_workflow_supplies_all_credentials(self):
+        drafts = [{**self.expected()[0], 'account': account} for account in ('kc', 'tt', 'pankou')]
+        with tempfile.TemporaryDirectory() as tmp:
+            output = Path(tmp) / 'presence.json'
+            with patch.object(audit, 'load_drafts', return_value=drafts), \
+                    patch.object(audit, 'account_credentials', return_value=('APPID', 'SECRET')), \
+                    patch.object(audit, 'get_stable_access_token', return_value='TOKEN'), \
+                    patch.object(audit, 'post_wechat_json', side_effect=[page([])] * 6) as post, \
+                    contextlib.redirect_stdout(io.StringIO()):
+                code = audit.main(['--artifact-root', tmp, '--output', str(output)])
+            report = json.loads(output.read_text())
+        self.assertEqual(code, 0)
+        self.assertEqual(post.call_count, 6)
+        self.assertEqual(set(report['accounts']), {'kc', 'tt', 'pankou'})
+        workflow = (Path(__file__).resolve().parents[1] / '.github/workflows/wechat-draft-readback.yml').read_text()
+        step = workflow.split('- name: Locate article titles in current drafts and published records', 1)[1].split('\n      - name:', 1)[0]
+        for suffix in ('', '_TT', '_PANKOU'):
+            for kind in ('APPID', 'APPSECRET'):
+                key = 'WECHAT_MP_' + kind + suffix
+                self.assertIn(key + ': ${{ secrets.' + key + ' }}', step)
+
 
 if __name__ == "__main__":
     unittest.main()

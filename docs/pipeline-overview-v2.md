@@ -376,6 +376,25 @@ failure from the overall workflow conclusion. Editorial CTA sanitation and
 audit use the same sentence boundaries, preserving factual uses of “Portal”
 while still removing promotion and reserved publication domains.
 
+The hourly `Daily report source wake-up` checks only Dropbox metadata after the
+02:00 Beijing start time. It admits a latest batch no more than one calendar day
+old, containing PDFs whose newest server modification is at least 15 minutes
+old. A current Daily run, an exact batch run title, or a dated source-admission /
+delivery artifact prevents another automatic dispatch, including after an
+attempted batch fails. The Daily workflow saves its date-only admission artifact
+before classification or generation and retains pending requests. A legacy
+failed download can recover only when job evidence proves classification and
+all processing never ran; incomplete source identities stop the wake-up.
+Dispatch uses the normal Daily defaults, including all reports, WeChat drafts,
+translations and no freepublish. An uncertain dispatch is read back without
+repeating the POST. Batch attempts are distinct from verified delivery.
+
+The read-only WeChat presence audit accepts routed receipts and searches each
+article only in its recorded account (`kc`, `tt`, `pankou`). Authentication or
+inventory failure in one account preserves evidence from the others and keeps
+the overall audit incomplete. A title match remains diagnostic evidence rather
+than proof of identical article content or authorization to recreate a draft.
+
 New PDF translation plans bind their source archive prefix into the plan hash.
 Recovery-generated articles live in a different private prefix from the original
 shards. Failed-shard replay preserves this distinction, verifies the recovery
