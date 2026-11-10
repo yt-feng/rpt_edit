@@ -1,0 +1,71 @@
+name: Recover public Market Views archive
+run-name: Recover public Market Views archive ${{ inputs.date_folder }}
+on:
+  workflow_dispatch:
+    inputs:
+      date_folder:
+        description: Exact YYMMDD of the already published private PDF
+        required: true
+        type: string
+      expected_private_sha256:
+        description: Exact private PDF SHA-256 from the accepted publication job
+        required: true
+        type: string
+  pull_request:
+    paths:
+      - '.github/workflows/market-views-public-archive-recovery.yml'
+      - 'scripts/restore_public_market_view_archive.py'
+      - 'scripts/test_restore_public_market_view_archive.py'
+permissions:
+  contents: read
+concurrency:
+  group: market-views-public-archive-${{ github.event_name == 'pull_request' && github.run_id || inputs.date_folder }}
+  cancel-in-progress: false
+jobs:
+  contract:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install --disable-pip-version-check requests Pillow pypdf
+      - run: python3 -B scripts/test_restore_public_market_view_archive.py
+  restore:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    needs: contract
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            scripts
+            market_view_summaries
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install --disable-pip-version-check requests Pillow pypdf 'boto3>=1.37.32,<2'
+      - name: Restore only the exact validated already published PDF
+        env:
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_SHA: ${{ inputs.expected_private_sha256 }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET || 'portal-suite-pdfs' }}
+        run: python3 -B scripts/restore_public_market_view_archive.py --date "$DATE_FOLDER" --expected-private-sha256 "$EXPECTED_SHA"
+      - name: Commit only the sanitized public PDF
+        env:
+          DATE_FOLDER: ${{ inputs.date_folder }}
+        run: |
+          target="market_view_summaries/$DATE_FOLDER/market_views_$DATE_FOLDER.pdf"
+          git add -f "$target"
+          python3 -B scripts/check_public_identity.py
+          git reset -- "$target"
+          bash scripts/commit_output_dir.sh "$target" "Restore public Market Views archive $DATE_FOLDER" 8 true true
