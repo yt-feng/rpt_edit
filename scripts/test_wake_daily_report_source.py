@@ -37,7 +37,9 @@ class GitHub:
         identity = int(path.split('/')[2])
         if '/artifacts?' in path:
             rows = self.artifacts.get(identity, [])
-            return {'total_count': len(rows), 'artifacts': copy.deepcopy(rows)}
+            page = int(parse_qs(urlsplit(path).query).get('page', ['1'])[0])
+            indexed = [{'id': index + 1, **row} for index, row in enumerate(rows)]
+            return {'total_count': len(rows), 'artifacts': copy.deepcopy(indexed[(page-1)*100:page*100])}
         rows = self.jobs.get(identity, [])
         return {'total_count': len(rows), 'jobs': copy.deepcopy(rows)}
 
@@ -80,6 +82,30 @@ class WakeTests(unittest.TestCase):
         github = GitHub([run(title='Daily report articles and translations [latest]', conclusion='failure')])
         github.artifacts[1] = [{'name': 'daily-source-batch-261109-1'}]
         self.assertEqual(self.wake(github)['state'], 'batch_already_attempted')
+
+    def test_full_batch_artifacts_can_span_pages_without_triggering_duplicate_generation(self):
+        github = GitHub([run(title='Daily report articles and translations [latest]')])
+        github.artifacts[1] = [{'name': 'usage-' + str(index)} for index in range(140)]
+        github.artifacts[1].append({'name': 'daily-source-batch-261109-1'})
+        self.assertEqual(self.wake(github)['state'], 'batch_already_attempted')
+        self.assertEqual(sum('/artifacts?' in path for path in github.calls), 2)
+
+    def test_changing_or_repeated_artifact_pages_never_authorize_dispatch(self):
+        for corruption in ('count', 'duplicate'):
+            github = GitHub([run(title='Daily report articles and translations [latest]')])
+            github.artifacts[1] = [{'name': 'usage-' + str(index)} for index in range(140)]
+            original = github.api
+            def request(path):
+                result = original(path)
+                if '/artifacts?' in path and 'page=2' in path:
+                    if corruption == 'count':
+                        result['total_count'] += 1
+                    else:
+                        result['artifacts'][0]['id'] = 1
+                return result
+            with self.subTest(corruption=corruption), patch.object(github, 'api', side_effect=request):
+                with self.assertRaisesRegex(ValueError, 'daily_artifact_inventory_incomplete'):
+                    self.wake(github)
 
     def test_unproven_legacy_progress_or_incomplete_inventories_never_dispatch(self):
         github = GitHub([run(title='Daily report articles and translations')])

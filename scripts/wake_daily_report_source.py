@@ -89,15 +89,33 @@ def title_for(day):
     return 'Daily report articles and translations [' + day + ']'
 
 
+def artifacts_for(github, run_id):
+    # Forty processing and translation shards can legitimately retain more than
+    # one API page. Keep a complete bounded inventory before declaring a date.
+    rows, total, seen = [], None, set()
+    for page in range(1, 6):
+        result = github.api(f'actions/runs/{run_id}/artifacts?per_page=100&page={page}')
+        chunk, observed = result.get('artifacts'), result.get('total_count')
+        require(isinstance(chunk, list) and type(observed) is int and 0 <= observed <= 500
+                and (total is None or observed == total)
+                and len(chunk) == min(100, observed - len(rows)), 'daily_artifact_inventory_incomplete')
+        total = observed
+        for row in chunk:
+            require(isinstance(row, dict) and type(row.get('id')) is int and row['id'] > 0
+                    and row['id'] not in seen, 'daily_artifact_inventory_incomplete')
+            seen.add(row['id'])
+        rows.extend(chunk)
+        if len(rows) == total:
+            return rows
+    raise ValueError('daily_artifact_inventory_incomplete')
+
+
 def attempted_date(github, run):
     match = re.fullmatch(r'Daily report articles and translations \[([0-9]{6}|[0-9]{8})\]',
                          str(run.get('display_title', '')))
     if match:
         return parse_date_folder(match[1])
-    result = github.api(f"actions/runs/{run['id']}/artifacts?per_page=100")
-    rows, total = result.get('artifacts'), result.get('total_count')
-    require(isinstance(rows, list) and type(total) is int and total == len(rows) <= 100,
-            'daily_artifact_inventory_incomplete')
+    rows = artifacts_for(github, run['id'])
     days = set()
     for row in rows:
         name = str(row.get('name', ''))
