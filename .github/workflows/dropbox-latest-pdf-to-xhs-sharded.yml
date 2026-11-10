@@ -1089,6 +1089,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            scripts/watch_dispatched_workflow.py
+            scripts/recover_neutral_runner_loss.py
       - name: Trigger Market Views from complete bank inputs
         env:
           GH_TOKEN: ${{ github.token }}
@@ -1124,7 +1131,9 @@ jobs:
             exit 1
           fi
           echo "::notice::Waiting for Market Views run $MARKET_RUN_ID."
-          gh run watch "$MARKET_RUN_ID" --repo "$GITHUB_REPOSITORY" --compact --exit-status --interval 15
+          python3 -B scripts/watch_dispatched_workflow.py \
+            --repo "$GITHUB_REPOSITORY" --run-id "$MARKET_RUN_ID" \
+            --workflow .github/workflows/market-views-latex-pdf.yml
 
   validate-market-delivery:
     needs: [resolve-inputs, select-macro-reports, source-outcome, recover-market-sources, trigger-market-views]

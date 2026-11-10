@@ -389,6 +389,12 @@ Dispatch uses the normal Daily defaults, including all reports, WeChat drafts,
 translations and no freepublish. An uncertain dispatch is read back without
 repeating the POST. Batch attempts are distinct from verified delivery.
 
+After dispatching Market Views, the Daily parent waits on the accepted child ID
+through authenticated GET requests. Brief 404 visibility gaps and temporary
+read failures have a bounded grace period; they never issue another dispatch.
+The waiter verifies repository, workflow, main branch and child identity, and
+still fails on a terminal child failure, permission denial or its deadline.
+
 The read-only WeChat presence audit accepts routed receipts and searches each
 article only in its recorded account (`kc`, `tt`, `pankou`). Authentication or
 inventory failure in one account preserves evidence from the others and keeps
