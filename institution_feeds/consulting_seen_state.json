@@ -1,10 +1,6 @@
 {
   "version": 1,
   "items": {
-    "bcg:https://www.bcg.com/publications/2026/middle-east-mega-projects-powered-by-renewables-a-practical-playbook": {
-      "first_seen": "2026-07-12",
-      "status": "downloaded"
-    },
     "bcg:https://www.bcg.com/publications/2026/ce-que-signifie-la-hausse-des-depenses-de-consommation": {
       "first_seen": "2026-07-13",
       "status": "no_pdf"
@@ -1584,6 +1580,26 @@
     "bcg:https://www.bcg.com/publications/2026/market-leaders-staying-on-top-longer": {
       "first_seen": "2026-11-07",
       "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/ai-medtech-commercial-excellence": {
+      "first_seen": "2026-11-10",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/why-ai-change-is-actually-a-people-change": {
+      "first_seen": "2026-11-10",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/ai-at-work-why-strategy-matters-more-than-tools": {
+      "first_seen": "2026-11-10",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/when-everyone-uses-ai-companies-risk-critical-skills": {
+      "first_seen": "2026-11-10",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/us-and-china-ai-strategy-causing-global-ai-divide": {
+      "first_seen": "2026-11-10",
+      "status": "downloaded"
     }
   }
 }
