@@ -189,6 +189,17 @@ class SourceTests(unittest.TestCase):
 
 
 class WorkflowTests(unittest.TestCase):
+    def test_daily_and_late_schedules_share_the_same_deduplicating_dispatcher(self):
+        root = Path(__file__).resolve().parents[1]
+        daily = yaml.safe_load((root / wakeup.WORKFLOW).read_text())
+        wake = yaml.safe_load((root / wakeup.WAKEUP).read_text())
+        events = lambda workflow: workflow.get('on', workflow.get(True, {}))
+        self.assertNotIn('schedule', events(daily), 'A late independent cron can queue duplicate paid work')
+        self.assertIn('workflow_dispatch', events(daily))
+        self.assertEqual({item['cron'] for item in events(wake)['schedule']}, {'0 18 * * *', '47 * * * *'})
+        self.assertIs(wake['concurrency']['cancel-in-progress'], False)
+        self.assertIn("|| 'main'", wake['concurrency']['group'])
+
     def test_admission_precedes_classification_and_wakeup_retains_existing_delivery_defaults(self):
         root = Path(__file__).resolve().parents[1]
         daily = yaml.safe_load((root / wakeup.WORKFLOW).read_text())

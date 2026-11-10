@@ -2,6 +2,9 @@ name: Daily report source wake-up
 
 on:
   schedule:
+    # Preserve the 02:00 Beijing daily start, through the same serialized
+    # source/active-run checks as every late-source recovery check.
+    - cron: '0 18 * * *'
     # Late Dropbox deliveries and missed Daily schedules get a metadata-only
     # check at a different minute. No model runs in this workflow.
     - cron: '47 * * * *'

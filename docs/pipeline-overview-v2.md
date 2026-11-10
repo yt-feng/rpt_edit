@@ -376,8 +376,12 @@ failure from the overall workflow conclusion. Editorial CTA sanitation and
 audit use the same sentence boundaries, preserving factual uses of “Portal”
 while still removing promotion and reserved publication domains.
 
-The hourly `Daily report source wake-up` checks only Dropbox metadata after the
-02:00 Beijing start time. It admits a latest batch no more than one calendar day
+`Daily report source wake-up` owns both the 02:00 Beijing daily check and the
+hourly late-source checks. The full Daily workflow has no independent cron:
+every automatic start passes through the same serialized deduplication checks,
+so a delayed schedule cannot queue a duplicate behind an active full run.
+The dispatcher checks only Dropbox metadata after the 02:00 Beijing start time.
+It admits a latest batch no more than one calendar day
 old, containing PDFs whose newest server modification is at least 15 minutes
 old. A current Daily run, an exact batch run title, or a dated source-admission /
 delivery artifact prevents another automatic dispatch, including after an
