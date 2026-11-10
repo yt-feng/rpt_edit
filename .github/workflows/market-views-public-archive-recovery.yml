@@ -32,8 +32,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python3 -m pip install --disable-pip-version-check requests Pillow pypdf
-      - run: python3 -B scripts/test_restore_public_market_view_archive.py
+      - run: python3 -m pip install --disable-pip-version-check requests Pillow 'pypdf==6.19.0' reportlab PyMuPDF
+      - run: |
+          python3 -B scripts/test_restore_public_market_view_archive.py
+          python3 -B scripts/test_prepare_public_market_view_pdf.py
   restore:
     if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
     needs: contract
@@ -50,7 +52,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python3 -m pip install --disable-pip-version-check requests Pillow pypdf 'boto3>=1.37.32,<2'
+      - run: python3 -m pip install --disable-pip-version-check requests Pillow 'pypdf==6.19.0' PyMuPDF 'boto3>=1.37.32,<2'
       - name: Restore only the exact validated already published PDF
         env:
           DATE_FOLDER: ${{ inputs.date_folder }}
