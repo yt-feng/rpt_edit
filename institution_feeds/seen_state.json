@@ -3892,6 +3892,58 @@
     "wto:https://www.wto.org/english/news_e/news26_e/safe_eec_02nov26_536_e.htm": {
       "first_seen": "2026-11-09",
       "status": "too_old"
+    },
+    "imf:3d2e36cb3216e9f4c32756a18db6bc1237d7100a7a8bd25d5b55587c3299": {
+      "first_seen": "2026-11-10",
+      "status": "downloaded"
+    },
+    "imf:48559e102a40aa0130eee51256a1d1758551275011001ebac88c382fd6c0": {
+      "first_seen": "2026-11-10",
+      "status": "downloaded"
+    },
+    "imf:710c3b7610a9c1a2a34c7896cf47f83ef5c100de207100cb46f69bf7244b": {
+      "first_seen": "2026-11-10",
+      "status": "downloaded"
+    },
+    "imf:833287a58f686fcdff43e79f793fe30a6019f1d7d918e8deeadd6f7a4632": {
+      "first_seen": "2026-11-10",
+      "status": "downloaded"
+    },
+    "imf:8dafaa6411092994186408a9001e23bb05aba642e7336cc3455dcc0df8c0": {
+      "first_seen": "2026-11-10",
+      "status": "downloaded"
+    },
+    "imf:90f642928eb2b47ec8d335639a9f8db1c6345757907de6cecf431697e4ee": {
+      "first_seen": "2026-11-10",
+      "status": "downloaded"
+    },
+    "imf:bfb39a5e60f00f9e97cc97f7b80e5781c27bf1a0ef74c8c3270bf76b1831": {
+      "first_seen": "2026-11-10",
+      "status": "downloaded"
+    },
+    "imf:fd6c97f3f395baade317eb828ab6ab3907fa72ea832ac0816f20f20a9826": {
+      "first_seen": "2026-11-10",
+      "status": "downloaded"
+    },
+    "imf:bf7e28b751b7fe8e24909c1661da6c3a7d185519db38fbd3c14f64ce27fe": {
+      "first_seen": "2026-11-10",
+      "status": "downloaded"
+    },
+    "imf:cf688d290023a2ad7f4ace8132194e8f74f9f6425462c1cc0d0e3406bad9": {
+      "first_seen": "2026-11-10",
+      "status": "downloaded"
+    },
+    "imf:9567cb2f6ac81abaf8c4d13052aff6fd49764a025d85fc5e45babb7860e5": {
+      "first_seen": "2026-11-10",
+      "status": "downloaded"
+    },
+    "wef:https://www.weforum.org/publications/enabling-the-electricity-era-from-proven-solutions-to-execution-at-scale": {
+      "first_seen": "2026-11-10",
+      "status": "no_pdf"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/tech_09nov26_543_e.htm": {
+      "first_seen": "2026-11-10",
+      "status": "no_pdf"
     }
   }
 }
