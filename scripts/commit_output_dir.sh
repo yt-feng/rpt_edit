@@ -106,7 +106,10 @@ trap 'rm -rf -- "$scratch"' EXIT
 export GIT_INDEX_FILE="$scratch/index"
 git read-tree "$ORIGINAL_BASE"
 if ! git --literal-pathspecs add -A -- "$OUTPUT_DIR"; then
-  if ! git check-ignore --quiet -- "$OUTPUT_DIR"; then
+  # A fresh alternate index in a sparse checkout can report an ignored tracked
+  # PDF as ignored during add. Inspect the ignore rule independently of index
+  # tracking; the separate opt-in below still admits only explicit PDF paths.
+  if ! git check-ignore --no-index --quiet -- "$OUTPUT_DIR"; then
     echo "ERROR: Could not freeze generated output changes."
     exit 2
   fi

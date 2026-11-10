@@ -345,7 +345,9 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         download = market.split("- name: Download bank inputs from private R2", 1)[1].split("\n      - name:", 1)[0]
         self.assertIn("EXPECTED_SHARDS: ${{ inputs.expected_shards || '0' }}", download)
         self.assertIn('--expected-count "$EXPECTED_SHARDS"', download)
-        self.assertIn('gh run watch "$MARKET_RUN_ID"', trigger)
+        self.assertIn('scripts/watch_dispatched_workflow.py', trigger)
+        self.assertIn('--run-id "$MARKET_RUN_ID"', trigger)
+        self.assertIn('--workflow .github/workflows/market-views-latex-pdf.yml', trigger)
 
     def test_recovered_sources_need_article_generation_before_unblocking_drafts(self):
         recovery = job(UPSTREAM, "recover-market-sources")

@@ -30,6 +30,7 @@ on:
       - "scripts/*market_views*"
       - "scripts/*daily_market_source_status*"
       - "scripts/*replay_daily_sources*"
+      - "scripts/*watch_dispatched_workflow*"
       - "scripts/accept_market_source_preview.py"
       - ".github/workflows/market-views-source-preview-acceptance.yml"
       - "scripts/*native_market_sources*"
@@ -110,6 +111,7 @@ on:
       - "scripts/*market_views*"
       - "scripts/*daily_market_source_status*"
       - "scripts/*replay_daily_sources*"
+      - "scripts/*watch_dispatched_workflow*"
       - "scripts/accept_market_source_preview.py"
       - ".github/workflows/market-views-source-preview-acceptance.yml"
       - "scripts/*native_market_sources*"
@@ -213,6 +215,7 @@ jobs:
           PY
       - name: Test source discovery, draft verification and static publication
         run: |
+          python scripts/test_watch_dispatched_workflow.py
           python scripts/test_send_portal_ops_alert.py
           python scripts/test_institution_wechat_delivery_receipt.py
           python scripts/test_wechat_delivery_workflows.py
