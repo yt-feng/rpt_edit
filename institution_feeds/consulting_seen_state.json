@@ -1,18 +1,6 @@
 {
   "version": 1,
   "items": {
-    "bcg:https://www.bcg.com/publications/2026/ce-que-signifie-la-hausse-des-depenses-de-consommation": {
-      "first_seen": "2026-07-13",
-      "status": "no_pdf"
-    },
-    "bcg:https://www.bcg.com/publications/2026/thailand-ai-infrastructure-strategic-opportunity": {
-      "first_seen": "2026-07-13",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/how-to-improve-defense-aviation-mission-readiness": {
-      "first_seen": "2026-07-13",
-      "status": "downloaded"
-    },
     "bcg:https://www.bcg.com/publications/2026/india-pressing-the-throttle": {
       "first_seen": "2026-07-14",
       "status": "downloaded"
@@ -1599,6 +1587,18 @@
     },
     "bcg:https://www.bcg.com/publications/2026/us-and-china-ai-strategy-causing-global-ai-divide": {
       "first_seen": "2026-11-10",
+      "status": "downloaded"
+    },
+    "mckinsey:https://pages.mckinsey.com/rs/473-ZYE-522/images/2025%20MWC%20McKinsey%20Highlights.pdf": {
+      "first_seen": "2026-11-11",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-industrial-companies-win-with-ai": {
+      "first_seen": "2026-11-11",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/italy-data-center-ai-energia-e-sovranita-in-italia": {
+      "first_seen": "2026-11-11",
       "status": "downloaded"
     }
   }
