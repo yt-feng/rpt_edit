@@ -24,7 +24,7 @@ from portal_extended_locales import ORIGIN, digest, stable_bytes, validate_corpu
 from offline_translation import MODEL_ID, PROVIDER
 from r2_transport import (
     R2BodyError, install_r2_retry_handler, normalize_r2_throttling as _normalize_r2_bare_429,
-    read_r2_bytes, retryable_stream_error, sdk_retry_count,
+    permanent_service_error, read_r2_bytes, retryable_stream_error, sdk_retry_count,
 )
 
 
@@ -137,7 +137,7 @@ def uncertain_put_error(error: BaseException) -> bool:
     if isinstance(error, R2StoreError) or is_missing(error):
         return False
     code, status = error_code(error), error_status(error)
-    if code in {"accessdenied", "invalidaccesskeyid", "signaturedoesnotmatch", "forbidden"} or status in {"401", "403"}:
+    if permanent_service_error(getattr(error, "response", None)) or status in {"401", "403"}:
         return False
     return code in RETRYABLE_CODES or status in RETRYABLE_CODES or retryable_stream_error(error)
 

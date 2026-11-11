@@ -154,16 +154,34 @@ class R2SDKTests(unittest.TestCase):
 
     def test_named_put_failures_are_not_normalized_retried_or_reconciled(self):
         cases = [(429, "AccessDenied", R2PermissionError), (403, "AccessDenied", R2PermissionError),
-                 (400, "InvalidArgument", R2TransportError)]
+                 (503, "AccessDenied", R2PermissionError),
+                 (400, "InvalidArgument", R2TransportError), (429, "InvalidArgument", R2TransportError),
+                 (503, "InvalidArgument", R2TransportError)]
         for status, code, expected in cases:
             body = f"<Error><Code>{code}</Code><Message>Rejected</Message></Error>".encode()
             with self.subTest(status=status, code=code), self.transport([http_response(status, body)]) as (send, sleep, acquire):
                 with self.assertRaises(expected) as raised:
                     self.store._put("object", b"abc", metadata={})
                 self.assertEqual(raised.exception.__cause__.response["Error"]["Code"], code)
+                self.assertEqual(raised.exception.__cause__.response["ResponseMetadata"]["HTTPStatusCode"], status)
+                self.assertEqual(raised.exception.__cause__.response["ResponseMetadata"]["RetryAttempts"], 0)
                 self.assertEqual([call.args[0].method for call in send.call_args_list], ["PUT"])
                 sleep.assert_not_called()
                 acquire.assert_not_called()
+
+    def test_permission_after_throttle_stops_with_original_error_and_retry_count(self):
+        body = b"<Error><Code>AccessDenied</Code><Message>Denied</Message></Error>"
+        with self.transport([http_response(429), http_response(429, body)]) as (send, sleep, acquire):
+            with self.assertRaises(R2PermissionError) as raised:
+                self.store._put("object", b"abc", metadata={})
+        cause = raised.exception.__cause__
+        self.assertIsInstance(cause, ClientError)
+        self.assertEqual(cause.response["Error"], {"Code": "AccessDenied", "Message": "Denied"})
+        self.assertEqual(cause.response["ResponseMetadata"]["HTTPStatusCode"], 429)
+        self.assertEqual(cause.response["ResponseMetadata"]["RetryAttempts"], 1)
+        self.assertEqual([call.args[0].method for call in send.call_args_list], ["PUT", "PUT"])
+        self.assertEqual(sleep.call_count, 1)
+        self.assertEqual(acquire.call_count, 1)
 
     def test_persistent_429_stops_at_one_native_nine_attempt_budget(self):
         self.assertEqual(self.client.meta.config.retries["total_max_attempts"], 9)

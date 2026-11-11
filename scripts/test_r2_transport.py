@@ -72,6 +72,38 @@ class TransportTests(unittest.TestCase):
         sleep.assert_not_called()
         acquire.assert_not_called()
 
+    def test_named_rejections_remain_final_before_the_next_genuine_throttle(self):
+        # A rejected response must not enable the client's adaptive limiter.
+        # Reuse the client to catch state leaking into the next request.
+        for status, code in [(429, "AccessDenied"), (503, "InvalidArgument")]:
+            body = f"<Error><Code>{code}</Code><Message>Rejected</Message></Error>".encode()
+            with self.subTest(status=status, code=code), self.http([response(status, body)]) as (send, sleep, acquire):
+                with self.assertRaises(ClientError) as raised:
+                    transport.read_r2_bytes(self.client, "bucket", "object", maximum=10)
+                self.assertEqual(raised.exception.response["Error"]["Code"], code)
+                self.assertEqual(raised.exception.response["ResponseMetadata"]["HTTPStatusCode"], status)
+                self.assertEqual(raised.exception.response["ResponseMetadata"]["RetryAttempts"], 0)
+                self.assertFalse(transport.transient_request_error(raised.exception))
+                self.assertEqual(send.call_count, 1)
+                sleep.assert_not_called()
+                acquire.assert_not_called()
+        with self.http([response(429), response(200, b"abc")]) as (send, sleep, acquire):
+            self.assertEqual(transport.read_r2_bytes(self.client, "bucket", "object", maximum=10), b"abc")
+        self.assertEqual(send.call_count, 2)
+        self.assertEqual(sleep.call_count, 1)
+        self.assertEqual(acquire.call_count, 1)
+
+    def test_modeled_permanent_error_keeps_its_sdk_exception_type(self):
+        body = b"<Error><Code>NoSuchKey</Code><Message>Missing</Message></Error>"
+        with self.http([response(503, body)]) as (send, sleep, acquire):
+            with self.assertRaises(self.client.exceptions.NoSuchKey) as raised:
+                transport.read_r2_bytes(self.client, "bucket", "object", maximum=10)
+        self.assertEqual(raised.exception.response["ResponseMetadata"]["HTTPStatusCode"], 503)
+        self.assertEqual(raised.exception.response["ResponseMetadata"]["RetryAttempts"], 0)
+        self.assertEqual(send.call_count, 1)
+        sleep.assert_not_called()
+        acquire.assert_not_called()
+
     def test_publisher_does_not_multiply_real_sdk_head_or_upload_budgets(self):
         import publish_static_slot
         with self.http([response(429) for _ in range(9)]) as (send, sleep, acquire):

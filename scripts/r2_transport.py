@@ -5,6 +5,7 @@ interrupted may start a fresh GET, and never after an SDK-retried request.
 """
 from __future__ import annotations
 
+from functools import partial
 import random
 import time
 from typing import Any
@@ -21,12 +22,25 @@ _THROTTLE_MESSAGES = (
     "reduce your concurrent request rate for the same object",
     "reduce your rate of simultaneous reads on the same object",
 )
+_PERMANENT_ERROR_CODES = frozenset({
+    "accessdenied", "invalidaccesskeyid", "signaturedoesnotmatch", "forbidden",
+    "invalidargument", "invalidrequest", "invalidbucketname", "malformedxml",
+    "invaliddigest", "baddigest", "entitytoosmall", "entitytoolarge",
+    "nosuchkey", "nosuchbucket", "notfound",
+})
 
 
 class R2BodyError(RuntimeError):
     def __init__(self, category: str):
         self.category = category
         super().__init__(f"R2 response body {category}")
+
+
+def permanent_service_error(response: Any) -> bool:
+    """Explicit service rejections take precedence over transient HTTP status."""
+    if not isinstance(response, dict) or not isinstance(response.get("Error"), dict):
+        return False
+    return str(response["Error"].get("Code") or "").strip().lower() in _PERMANENT_ERROR_CODES
 
 
 def normalize_r2_throttling(response: Any = None, operation: Any = None, **_kwargs: Any) -> None:
@@ -57,9 +71,41 @@ def normalize_r2_throttling(response: Any = None, operation: Any = None, **_kwar
     parsed["Error"] = details
 
 
+def reject_r2_permanent_error(response: Any = None, operation: Any = None,
+                             attempts: int = 1, exception_factory: Any = None,
+                             **_kwargs: Any) -> None:
+    """Preserve explicit rejections even when R2 sends a transient status.
+
+    Botocore 1.44 also classifies unmodeled errors by HTTP 429.  S3 does not
+    model AccessDenied on every object operation, so leaving its code intact
+    no longer prevents retries or adaptive throttling.  Raise before those
+    handlers without changing the service's error code, status or message.
+    Returning False is not a compatible veto on older botocore endpoints.
+    """
+    if getattr(operation, "name", None) not in _OBJECT_OPERATIONS:
+        return
+    if not isinstance(response, tuple) or len(response) != 2:
+        return
+    http_response, parsed = response
+    if getattr(http_response, "status_code", None) not in {429, 500, 502, 503, 504}:
+        return
+    if not permanent_service_error(parsed):
+        return
+    from botocore.exceptions import ClientError
+
+    parsed.setdefault("ResponseMetadata", {})["RetryAttempts"] = attempts - 1
+    error_class = exception_factory(parsed["Error"]["Code"]) if exception_factory else ClientError
+    raise error_class(parsed, operation.name)
+
+
 def install_r2_retry_handler(client: Any) -> Any:
     client.meta.events.register_first("needs-retry.s3", normalize_r2_throttling,
                                       unique_id="r2-object-throttling")
+    client.meta.events.register_first(
+        "needs-retry.s3",
+        partial(reject_r2_permanent_error, exception_factory=client.exceptions.from_code),
+        unique_id="r2-object-permanent-errors",
+    )
     client._r2_native_retry_policy = True
     return client
 
@@ -128,8 +174,7 @@ def transient_request_error(error: BaseException) -> bool:
             details, metadata = response.get("Error") or {}, response.get("ResponseMetadata") or {}
             code = str(details.get("Code") or "").lower() if isinstance(details, dict) else ""
             status = str(metadata.get("HTTPStatusCode") or "") if isinstance(metadata, dict) else ""
-            if code in {"accessdenied", "invalidaccesskeyid", "signaturedoesnotmatch", "forbidden",
-                        "404", "nosuchkey", "notfound", "nosuchbucket"} or status in {"401", "403", "404"}:
+            if permanent_service_error(response) or code == "404" or status in {"401", "403", "404"}:
                 return False
             if code in {"408", "429", "500", "502", "503", "504", "slowdown", "throttling",
                         "requestlimitexceeded", "serviceunavailable", "internalerror", "requesttimeout"} or status in {
