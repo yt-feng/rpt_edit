@@ -381,22 +381,6 @@
       "first_seen": "2026-08-07",
       "status": "too_old"
     },
-    "imf:15bed05ae7ecc44624d2371c6e2e74d01927ce0007c102e943e43b9ed8ca": {
-      "first_seen": "2026-07-13",
-      "status": "downloaded"
-    },
-    "imf:dc0ba45ab24710200e6447b4e460d9b2140e3d9461e2337b3e7825933c27": {
-      "first_seen": "2026-07-13",
-      "status": "downloaded"
-    },
-    "imf:7eb2958315ebab644a1ab12f176d800ff6c433fbe9e0136a2d409e089029": {
-      "first_seen": "2026-07-13",
-      "status": "downloaded"
-    },
-    "imf:158add6ce804a041e56f163d25585571e026aaa2b88f90f3c8b61fba5c7a": {
-      "first_seen": "2026-07-13",
-      "status": "downloaded"
-    },
     "worldbank:099536107012637783": {
       "first_seen": "2026-08-07",
       "status": "too_old"
@@ -473,77 +457,9 @@
       "first_seen": "2026-08-07",
       "status": "too_old"
     },
-    "worldbank:099222506022672608": {
-      "first_seen": "2026-07-13",
-      "status": "too_old"
-    },
-    "worldbank:099218506012639611": {
-      "first_seen": "2026-07-13",
-      "status": "too_old"
-    },
-    "worldbank:099535006012615930": {
-      "first_seen": "2026-07-13",
-      "status": "too_old"
-    },
-    "worldbank:099456206012615782": {
-      "first_seen": "2026-07-13",
-      "status": "too_old"
-    },
-    "worldbank:099254406012623954": {
-      "first_seen": "2026-07-13",
-      "status": "too_old"
-    },
-    "worldbank:099321106012639286": {
-      "first_seen": "2026-07-13",
-      "status": "too_old"
-    },
-    "worldbank:099355405292662886": {
-      "first_seen": "2026-07-13",
-      "status": "too_old"
-    },
-    "worldbank:099555005292625254": {
-      "first_seen": "2026-07-13",
-      "status": "too_old"
-    },
-    "worldbank:099826505282615159": {
-      "first_seen": "2026-07-13",
-      "status": "too_old"
-    },
-    "worldbank:099304305272691631": {
-      "first_seen": "2026-07-13",
-      "status": "too_old"
-    },
-    "worldbank:099425405272638618": {
-      "first_seen": "2026-07-13",
-      "status": "too_old"
-    },
     "bis:https://www.bis.org/publ/bisbull127.htm": {
       "first_seen": "2026-08-07",
       "status": "too_old"
-    },
-    "oecd:https://www.oecd.org/en/publications/cost-effective-active-labour-market-policies_a0d522a6-en.html": {
-      "first_seen": "2026-07-13",
-      "status": "downloaded"
-    },
-    "oecd:https://www.oecd.org/en/publications/policies-for-the-future-of-farming-and-food-in-peru_4a2aa5b8-en.html": {
-      "first_seen": "2026-07-13",
-      "status": "downloaded"
-    },
-    "oecd:https://www.oecd.org/en/publications/oecd-reviews-of-labour-market-and-social-policies-colombia-2026_bf7ac38f-en.html": {
-      "first_seen": "2026-07-13",
-      "status": "downloaded"
-    },
-    "oecd:https://www.oecd.org/en/publications/non-compete-and-related-clauses-in-canada_e3d104ea-en.html": {
-      "first_seen": "2026-07-13",
-      "status": "downloaded"
-    },
-    "adb:1158866": {
-      "first_seen": "2026-07-13",
-      "status": "downloaded"
-    },
-    "adb:1158776": {
-      "first_seen": "2026-07-13",
-      "status": "downloaded"
     },
     "bis:https://www.bis.org/publ/work1367.htm": {
       "first_seen": "2026-08-07",
@@ -3944,6 +3860,38 @@
     "wto:https://www.wto.org/english/news_e/news26_e/tech_09nov26_543_e.htm": {
       "first_seen": "2026-11-10",
       "status": "no_pdf"
+    },
+    "imf:744cc14a43083423126564d48fcf26e15db09db518327a6d9a3c75d7b03e": {
+      "first_seen": "2026-11-11",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/work1393.htm": {
+      "first_seen": "2026-11-11",
+      "status": "downloaded"
+    },
+    "wef:https://www.weforum.org/publications/cfo-climate-resilience-playbook-value-creation": {
+      "first_seen": "2026-11-11",
+      "status": "no_pdf"
+    },
+    "wef:https://www.weforum.org/publications/energy-transition-skills-new-economy-report": {
+      "first_seen": "2026-11-11",
+      "status": "no_pdf"
+    },
+    "wef:https://www.weforum.org/publications/bioeconomy-policy-index-from-mapping-to-meaning": {
+      "first_seen": "2026-11-11",
+      "status": "no_pdf"
+    },
+    "wef:https://www.weforum.org/publications/schwab-foundation-social-entrepreneurship-annual-report-2025-2026": {
+      "first_seen": "2026-11-11",
+      "status": "no_pdf"
+    },
+    "unctad:https://unctad.org/publication/global-trade-update-november-2026": {
+      "first_seen": "2026-11-11",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/acc_01nov26_545_e.htm": {
+      "first_seen": "2026-11-11",
+      "status": "too_old"
     }
   }
 }
