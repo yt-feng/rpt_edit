@@ -3892,6 +3892,30 @@
     "wto:https://www.wto.org/english/news_e/news26_e/acc_01nov26_545_e.htm": {
       "first_seen": "2026-11-11",
       "status": "too_old"
+    },
+    "imf:cc53cf2b5c8e572c72686c9796924844a4c835f863a066b87435b656c0d9": {
+      "first_seen": "2026-11-12",
+      "status": "downloaded"
+    },
+    "imf:6fbb7d6736f6154c3b6f711339fc4ff0c832a73bf858fb1ce2981826044e": {
+      "first_seen": "2026-11-12",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/work1394.htm": {
+      "first_seen": "2026-11-12",
+      "status": "downloaded"
+    },
+    "wef:https://www.weforum.org/publications/the-future-of-information-integrity-charting-a-global-path-in-a-fragmented-world": {
+      "first_seen": "2026-11-12",
+      "status": "no_pdf"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/safe_zaf_11nov26_546_e.htm": {
+      "first_seen": "2026-11-12",
+      "status": "no_pdf"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/sps_04nov26_548_e.htm": {
+      "first_seen": "2026-11-12",
+      "status": "too_old"
     }
   }
 }
