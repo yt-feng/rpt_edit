@@ -2,22 +2,37 @@
   "schema": 1,
   "institution": "imf",
   "items": {
-    "imf:744cc14a43083423126564d48fcf26e15db09db518327a6d9a3c75d7b03e": {
+    "imf:cc53cf2b5c8e572c72686c9796924844a4c835f863a066b87435b656c0d9": {
       "item": {
-        "title": "Zambia: Technical Assistance Report-Climate Change and Fiscal Risks",
-        "source_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/11/10/zambia-technical-assistance-report-climate-change-and-fiscal-risks-581029",
-        "guid": "744cc14a43083423126564d48fcf26e15db09db518327a6d9a3c75d7b03e",
-        "date": "2026-11-10T05:00:00+00:00",
+        "title": "The Monetary Policy Operational Framework in Samoa: Moving to an Interest-Rate-Based Target",
+        "source_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/11/11/the-monetary-policy-operational-framework-in-samoa-moving-to-an-interest-rate-based-target-581080",
+        "guid": "cc53cf2b5c8e572c72686c9796924844a4c835f863a066b87435b656c0d9",
+        "date": "2026-11-11T05:00:00+00:00",
         "pdf_candidates": [
-          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026092.pdf",
-          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026092-source-pdf.pdf"
+          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026108.pdf",
+          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026108-source-pdf.pdf"
         ],
-        "scrape_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/11/10/zambia-technical-assistance-report-climate-change-and-fiscal-risks-581029",
-        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/technical-assistance-reports/issues/2026/11/10/zambia-technical-assistance-report-climate-change-and-fiscal-risks-581029"
+        "scrape_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/11/11/the-monetary-policy-operational-framework-in-samoa-moving-to-an-interest-rate-based-target-581080",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/selected-issues-papers/issues/2026/11/11/the-monetary-policy-operational-framework-in-samoa-moving-to-an-interest-rate-based-target-581080"
       },
-      "admitted_at": "2026-11-11T01:39:09.016253+00:00",
+      "admitted_at": "2026-11-12T02:38:56.199345+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-11T01:39:09.016253+00:00",
+      "last_attempted_at": "2026-11-12T02:38:56.199345+00:00",
+      "attempts": 1
+    },
+    "imf:6fbb7d6736f6154c3b6f711339fc4ff0c832a73bf858fb1ce2981826044e": {
+      "item": {
+        "title": "Zimbabwe: Second Review under the Staff-Monitored Program-Press Release; and Staff Report",
+        "source_url": "https://www.imf.org/en/publications/cr/issues/2026/11/11/zimbabwe-second-review-under-the-staff-monitored-program-press-release-and-staff-report-581075",
+        "guid": "6fbb7d6736f6154c3b6f711339fc4ff0c832a73bf858fb1ce2981826044e",
+        "date": "2026-11-11T05:00:00+00:00",
+        "pdf_candidates": [],
+        "scrape_url": "https://www.imf.org/en/publications/cr/issues/2026/11/11/zimbabwe-second-review-under-the-staff-monitored-program-press-release-and-staff-report-581075",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/cr/issues/2026/11/11/zimbabwe-second-review-under-the-staff-monitored-program-press-release-and-staff-report-581075"
+      },
+      "admitted_at": "2026-11-12T02:38:56.199345+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-12T02:38:56.199345+00:00",
       "attempts": 1
     }
   }
