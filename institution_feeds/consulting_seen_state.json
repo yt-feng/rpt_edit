@@ -1,22 +1,6 @@
 {
   "version": 1,
   "items": {
-    "bcg:https://www.bcg.com/publications/2026/india-pressing-the-throttle": {
-      "first_seen": "2026-07-14",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/measuring-incrementality-in-next-best-action-programs": {
-      "first_seen": "2026-07-14",
-      "status": "no_pdf"
-    },
-    "bcg:https://www.bcg.com/publications/2026/the-four-pillars-cios-can-use-to-scale-agentic-ai": {
-      "first_seen": "2026-07-14",
-      "status": "no_pdf"
-    },
-    "bcg:https://www.bcg.com/publications/2026/transforming-patient-access-centers-with-ai": {
-      "first_seen": "2026-07-14",
-      "status": "downloaded"
-    },
     "bcg:https://www.bcg.com/publications/2020/industrial-products-makers-chart-new-path-digital": {
       "first_seen": "2026-07-15",
       "status": "downloaded"
@@ -1599,6 +1583,26 @@
     },
     "bcg:https://www.bcg.com/publications/2026/italy-data-center-ai-energia-e-sovranita-in-italia": {
       "first_seen": "2026-11-11",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/bcg-ai-transformation-client-zero": {
+      "first_seen": "2026-11-12",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/philippines-the-ai-maturity-report": {
+      "first_seen": "2026-11-12",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/luxury-brands-customers-feel-known": {
+      "first_seen": "2026-11-12",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/circularity-value-existing-materials": {
+      "first_seen": "2026-11-12",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/spanish-south-america-turning-ai-ambition-into-reality": {
+      "first_seen": "2026-11-12",
       "status": "downloaded"
     }
   }
