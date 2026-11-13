@@ -34,7 +34,7 @@ class ResumeTests(unittest.TestCase):
         f=pages_fixture.OCRPagesTests();f.setUp();self.addCleanup(f.doCleanups)
         f.seed(count);f.producer['id']=int(inspector.SOURCE_RUN_ID)
         f.request['source_run_id']=inspector.SOURCE_RUN_ID;f.env['GITHUB_RUN_ID']=inspector.HANDOFF_RUN_ID
-        f.recover()
+        f.recover(legacy=True)
         h=article_fixture.ArticleRecoveryTests();h.setUp();self.addCleanup(h.doCleanups)
         checkpoint=f.root/'delivery/checkpoint';output=checkpoint/'articles';output.mkdir(parents=True)
         context=delivery.validate_source(f.workspace/'source',{'SOURCE_RUN_ID':inspector.SOURCE_RUN_ID,

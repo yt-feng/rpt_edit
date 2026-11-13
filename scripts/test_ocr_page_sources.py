@@ -71,9 +71,20 @@ class OCRPagesTests(unittest.TestCase):
         stack.enter_context(redirect_stdout(io.StringIO()))
         return stack
 
-    def recover(self):
+    def recover(self, legacy=False):
         with self.forbidden():
-            return recovery.recover(self.input,self.producer,self.request,self.workspace,self.env,self.client,'private')
+            result = recovery.recover(self.input,self.producer,self.request,self.workspace,self.env,self.client,'private')
+        if legacy:
+            # Historical incident fixtures must retain their original v1
+            # receipt, rather than silently becoming a new v2 source package.
+            import shutil
+            root = self.workspace / 'source'
+            receipt = json.loads((root / pages.RECEIPT).read_bytes())
+            for report in receipt['reports']:
+                shutil.rmtree((root / report.pop('original_figures_path')).parent)
+            receipt.update(schema_version=1, policy=pages.LEGACY_POLICY, files=pages.inventory(root))
+            (root / pages.RECEIPT).write_bytes(pages.encode(receipt))
+        return result
 
     def archive(self):
         with self.forbidden():

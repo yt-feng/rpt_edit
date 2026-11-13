@@ -379,7 +379,7 @@ def inspect_checkpoint(root, original_sha, handoff_sha):
     metadata_path = article_root/'source_provenance.json'
     metadata, sources = None, []
     if metadata_path.exists():
-        from ocr_page_sources import EXTRACTION, POLICY, validate_pages_lineage, extraction_key
+        from ocr_page_sources import EXTRACTION, LEGACY_POLICY, validate_pages_lineage, extraction_key
         from market_views_publication import source_inventory_sha256
         metadata = decode(read(metadata_path, MAX_JSON_BYTES))
         bound = {'schema_version':1,'source_kind':'ocr-pages','date_folder':DATE_FOLDER,'expected_reports':EXPECTED_REPORTS,
@@ -397,7 +397,7 @@ def inspect_checkpoint(root, original_sha, handoff_sha):
             'source_inventory_sha256','extraction','files','cache_recovery'}
         require(isinstance(receipt,dict) and set(receipt) == receipt_keys
                 and type(receipt['schema_version']) is int and receipt['schema_version'] == 1
-                and receipt['policy'] == POLICY and receipt['source_kind'] == 'ocr-pages'
+                and receipt['policy'] == LEGACY_POLICY and receipt['source_kind'] == 'ocr-pages'
                 and receipt['complete'] is True and receipt['extraction'] == EXTRACTION
                 and type(receipt['expected_reports']) is int and type(receipt['report_count']) is int
                 and receipt['expected_reports'] == receipt['report_count'] == EXPECTED_REPORTS

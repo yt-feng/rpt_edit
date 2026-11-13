@@ -89,6 +89,11 @@ def source_chart_images(report_dir: Path, *, require_verified=False) -> list[Pat
             bindings = {item["path"]: item for item in mapping["assets"]
                         if not is_publication_furniture_metadata(item)
                         and not is_publication_furniture_metadata(records.get(item.get("index"), {}))}
+            if mapping.get('metadata', {}).get('pages'):
+                from mineru_figure_sources import article_figure_indices
+                ranked = article_figure_indices(mapping['metadata'], {row['index'] for row in bindings.values()})
+                by_index = {row['index']: path for path, row in bindings.items()}
+                paths = [report_dir / by_index[index] for index in ranked]
         except (OSError, ValueError, TypeError, AttributeError, KeyError):
             return []
     selected = []; seen = set()

@@ -21,6 +21,7 @@ from typing import Any
 
 POLICY = "mineru-source-figures-v1"
 RESTORED_POLICY = "mineru-source-figures-v2"
+ARTICLE_SELECTION_POLICY = "article-data-figures-v1"
 SIDECAR = "source_figure_map.json"
 MAX_JSON = 32 * 1024 * 1024
 MAX_ITEMS = 20000
@@ -586,14 +587,48 @@ def _crop(record, records, page_size, pixel_size):
             "attachments": decisions}
 
 
-def _decisions(metadata, maximum):
+def article_figure_indices(metadata, available=None):
+    """Prioritize exhibits, excluding small uncaptioned portraits and marks.
+
+    This only selects among the source inventory; it never changes its crop
+    proof. Old receipts retain their original, independently replayable policy.
+    """
+    ranked = []
+    for record in metadata["records"]:
+        if available is not None and record["index"] not in available:
+            continue
+        page = metadata["pages"][record["page_idx"]]
+        if not record["ref"] or _legal(record, page)["exclude"]:
+            continue
+        captions = " ".join([*record["content_captions"], *(r["text"] for r in record["captions"])])
+        box = record["body_bbox"]
+        width, height = box[2] - box[0], box[3] - box[1]
+        page_width, page_height = page["provider_size"]
+        if (record["kind"] == "image" and not captions.strip() and not record["body_text"].strip()
+                and (min(width, height) < 18 or
+                     (width * height < page_width * page_height * .012
+                      and (width < page_width * .2 or height < page_height * .08)))):
+            continue
+        exhibit = re.search(r"(?i)\b(?:exhibit|figure|fig\.?|chart|table)\s*\d+|(?:图表?|表)\s*\d+", captions)
+        priority = 0 if exhibit else 1 if captions.strip() or record["kind"] == "chart" else 2 if record["kind"] == "table" else 3
+        ranked.append((priority, record["page_idx"], record["index"]))
+    return [index for _, _, index in sorted(ranked)]
+
+
+def _decisions(metadata, maximum, *, article_figures=False):
     result, selected = [], 0
+    allowed = article_figure_indices(metadata) if article_figures else None
+    winners = set(allowed[:maximum]) if allowed is not None else None
     for record in metadata["records"]:
         legal = _legal(record, metadata["pages"][record["page_idx"]])
         if not record["ref"]:
             reason, choose = "no_provider_image", False
         elif legal["exclude"]:
             reason, choose = legal["reason"], False
+        elif allowed is not None and record["index"] not in allowed:
+            reason, choose = "exclude_small_uncaptioned_image", False
+        elif winners is not None and record["index"] not in winners:
+            reason, choose = "selection_limit", False
         elif selected >= maximum:
             reason, choose = "selection_limit", False
         else:
@@ -718,7 +753,7 @@ def _create(result_dir, assets_dir, found, original_sha, markdown_sha, original,
     source = report / "source_mineru.md"
     if _sha(_regular(source, report, MAX_JSON)) != markdown_sha:
         _fail("figure_source_binding_mismatch")
-    decisions = _decisions(metadata, maximum)
+    decisions = _decisions(metadata, maximum, article_figures=True)
     evidence_dir = report / "figure_source_evidence"
     if evidence_dir.exists() or (report / SIDECAR).exists() or list(assets_dir.glob("source_image_*")):
         _fail("figure_asset_mismatch")
@@ -872,7 +907,7 @@ def _create(result_dir, assets_dir, found, original_sha, markdown_sha, original,
                "embedded_pdf_sha256": _sha(embedded_bytes) if embedded_bytes is not None else None,
                "metadata": metadata, "metadata_sha256": _sha(_canonical(metadata)),
                "provider_json_sha256": {"content_list": _sha(content_raw), "middle": _sha(middle_raw)},
-               "max_images": maximum, "decisions": decisions,
+               "max_images": maximum, "decisions": decisions, "selection_policy": ARTICLE_SELECTION_POLICY,
                "provider_images": {ref: {k: v for k, v in p.items() if k not in {"original_path", "data"}} for ref, p in provider.items()},
                "pages": pages, "assets": assets}
     if restoration_proof is not None:
@@ -966,6 +1001,11 @@ def _validate(report, original_sha, markdown_sha, images, *, status_images=None)
     fields = {"schema", "policy", "authority", "original_pdf_sha256", "original_identity", "markdown_sha256",
               "authenticated_original_render", "embedded_pdf_sha256", "metadata", "metadata_sha256", "provider_json_sha256",
               "max_images", "decisions", "provider_images", "pages", "assets"}
+    article_figures = isinstance(value, dict) and "selection_policy" in value
+    if article_figures:
+        fields.add("selection_policy")
+        if value["selection_policy"] != ARTICLE_SELECTION_POLICY:
+            _fail("figure_proof_invalid")
     _keys(value, fields | ({"embedded_pdf_render_restoration"} if restored else set()))
     if (type(value["schema"]) is not int or value["schema"] not in (1, 2)
             or value["policy"] != (RESTORED_POLICY if restored else POLICY)
@@ -988,7 +1028,7 @@ def _validate(report, original_sha, markdown_sha, images, *, status_images=None)
     if _sha(_canonical(metadata)) != value["metadata_sha256"]:
         _fail("figure_proof_invalid")
     maximum = _int(value["max_images"], 0, MAX_VISUALS)
-    decisions = _decisions(metadata, maximum)
+    decisions = _decisions(metadata, maximum, article_figures=article_figures)
     if _canonical(decisions) != _canonical(value["decisions"]):
         _fail("figure_proof_invalid")
     if not isinstance(images, list) or any(not isinstance(v, str) for v in images):

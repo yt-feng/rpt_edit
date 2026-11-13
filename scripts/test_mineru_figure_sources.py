@@ -123,6 +123,35 @@ class Fixture:
 
 
 class FigureSourceTests(unittest.TestCase):
+    def test_portraits_do_not_consume_chart_limit_and_legacy_receipts_remain_valid(self):
+        from wechat_image_quality import source_chart_images
+        visuals = [visual(0, [300, 40, 326, 66], kind='image'),
+                   visual(1, [300, 75, 326, 101], kind='image'),
+                   visual(2, [35, 160, 260, 330], kind='chart',
+                          captions=[([35, 140, 260, 159], 'EXHIBIT 1: Revenue by quarter')])]
+        fixture = self.fixture(visuals=visuals)
+        fixture.create(maximum=1); fixture.status(); fixture.validate()
+        proof = fixture.proof()
+        self.assertEqual([asset['index'] for asset in proof['assets']], [2])
+        self.assertEqual(proof['selection_policy'], figures.ARTICLE_SELECTION_POLICY)
+        self.assertEqual(len(source_chart_images(fixture.report, require_verified=True)), 1)
+
+        legacy = self.fixture(visuals=visuals)
+        decision = figures._decisions
+        def old_policy(metadata, maximum, **_):
+            return decision(metadata, maximum)
+        with patch.object(figures, '_decisions', side_effect=old_policy):
+            legacy.create()
+        legacy.mutate(lambda value: value.pop('selection_policy'))
+        legacy.status(); legacy.validate()
+        self.assertEqual(len(legacy.selection['images']), 3)
+        self.assertEqual(source_chart_images(legacy.report, require_verified=True),
+                         [legacy.report / legacy.selection['images'][2]])
+        from build_portal_translated_reports import prepare_clean_markdown
+        _, translated = prepare_clean_markdown(legacy.report, legacy.root / 'translation', 1, strict_chart_images=True)
+        self.assertEqual(len(translated), 1)
+        self.assertEqual(Path(translated[0]['source_path']), legacy.report / legacy.selection['images'][2])
+
     def test_normal_wechat_generation_crops_original_vector_figures_despite_blank_provider_bitmap(self):
         import shutil
         import pdf_to_xhs_batch as producer
@@ -701,7 +730,7 @@ print('tls_cache_authority_import_ready')
         fixture = self.fixture(visuals=data, pages=3)
         fixture.create(maximum=1)
         self.assertEqual(len(fixture.proof()["decisions"]), 3)
-        self.assertEqual([d["reason"] for d in fixture.proof()["decisions"]], ["selected_source_visual", "selection_limit", "selection_limit"])
+        self.assertEqual([d["reason"] for d in fixture.proof()["decisions"]], ["selection_limit", "selection_limit", "selected_source_visual"])
         self.assertEqual(len(fixture.validate()), 1)
 
     def test_parent_wrong_column_footnote_excluded_nearest_other_parent_note_included(self):
