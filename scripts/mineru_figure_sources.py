@@ -21,7 +21,8 @@ from typing import Any
 
 POLICY = "mineru-source-figures-v1"
 RESTORED_POLICY = "mineru-source-figures-v2"
-ARTICLE_SELECTION_POLICY = "article-data-figures-v1"
+LEGACY_ARTICLE_SELECTION_POLICY = "article-data-figures-v1"
+ARTICLE_SELECTION_POLICY = "article-data-figures-v2"
 SIDECAR = "source_figure_map.json"
 MAX_JSON = 32 * 1024 * 1024
 MAX_ITEMS = 20000
@@ -587,7 +588,20 @@ def _crop(record, records, page_size, pixel_size):
             "attachments": decisions}
 
 
-def article_figure_indices(metadata, available=None):
+def _regulatory_rating_table(record, page):
+    body = _plain(record['body_text']).lower()
+    ratings = sum(bool(re.search(r'\b' + word + r'\b', body)) for word in ('buy', 'hold', 'sell'))
+    if ratings < 2:
+        return False
+    if 'investment banking clients' in body and re.search(r'rating categor|fundamental coverage', body):
+        return True
+    box = record['body_bbox']
+    return any(0 <= box[1] - block['bbox'][3] <= 24 and _overlap(box, block['bbox']) >= .8
+               and re.search(r'(?i)\b(?:equity\s+)?ratings?\s+distribution\b', block['text'])
+               for block in page['text_blocks'])
+
+
+def article_figure_indices(metadata, available=None, *, filter_regulatory=True):
     """Prioritize exhibits, excluding small uncaptioned portraits and marks.
 
     This only selects among the source inventory; it never changes its crop
@@ -599,6 +613,8 @@ def article_figure_indices(metadata, available=None):
             continue
         page = metadata["pages"][record["page_idx"]]
         if not record["ref"] or _legal(record, page)["exclude"]:
+            continue
+        if filter_regulatory and _regulatory_rating_table(record, page):
             continue
         captions = " ".join([*record["content_captions"], *(r["text"] for r in record["captions"])])
         box = record["body_bbox"]
@@ -615,9 +631,9 @@ def article_figure_indices(metadata, available=None):
     return [index for _, _, index in sorted(ranked)]
 
 
-def _decisions(metadata, maximum, *, article_figures=False):
+def _decisions(metadata, maximum, *, article_figures=False, filter_regulatory=True):
     result, selected = [], 0
-    allowed = article_figure_indices(metadata) if article_figures else None
+    allowed = article_figure_indices(metadata, filter_regulatory=filter_regulatory) if article_figures else None
     winners = set(allowed[:maximum]) if allowed is not None else None
     for record in metadata["records"]:
         legal = _legal(record, metadata["pages"][record["page_idx"]])
@@ -626,7 +642,7 @@ def _decisions(metadata, maximum, *, article_figures=False):
         elif legal["exclude"]:
             reason, choose = legal["reason"], False
         elif allowed is not None and record["index"] not in allowed:
-            reason, choose = "exclude_small_uncaptioned_image", False
+            reason, choose = ("exclude_article_furniture" if filter_regulatory else "exclude_small_uncaptioned_image"), False
         elif winners is not None and record["index"] not in winners:
             reason, choose = "selection_limit", False
         elif selected >= maximum:
@@ -1004,7 +1020,7 @@ def _validate(report, original_sha, markdown_sha, images, *, status_images=None)
     article_figures = isinstance(value, dict) and "selection_policy" in value
     if article_figures:
         fields.add("selection_policy")
-        if value["selection_policy"] != ARTICLE_SELECTION_POLICY:
+        if value["selection_policy"] not in {ARTICLE_SELECTION_POLICY, LEGACY_ARTICLE_SELECTION_POLICY}:
             _fail("figure_proof_invalid")
     _keys(value, fields | ({"embedded_pdf_render_restoration"} if restored else set()))
     if (type(value["schema"]) is not int or value["schema"] not in (1, 2)
@@ -1028,7 +1044,8 @@ def _validate(report, original_sha, markdown_sha, images, *, status_images=None)
     if _sha(_canonical(metadata)) != value["metadata_sha256"]:
         _fail("figure_proof_invalid")
     maximum = _int(value["max_images"], 0, MAX_VISUALS)
-    decisions = _decisions(metadata, maximum, article_figures=article_figures)
+    decisions = _decisions(metadata, maximum, article_figures=article_figures,
+        filter_regulatory=value.get('selection_policy') != LEGACY_ARTICLE_SELECTION_POLICY)
     if _canonical(decisions) != _canonical(value["decisions"]):
         _fail("figure_proof_invalid")
     if not isinstance(images, list) or any(not isinstance(v, str) for v in images):

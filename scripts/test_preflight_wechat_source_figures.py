@@ -2,7 +2,7 @@ import copy
 from pathlib import Path
 import tempfile
 import unittest
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 
 import preflight_wechat_source_figures as preflight
 from test_mineru_figure_sources import Fixture
@@ -10,6 +10,35 @@ from wechat_image_quality import source_chart_images
 
 
 class PreflightTests(unittest.TestCase):
+    def test_missing_backup_figures_are_reported_for_the_entire_batch_and_never_pass(self):
+        from original_pdf_figures import digest, encode
+        from ocr_page_sources import RECEIPT
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            fixture = Fixture(root / 'mineru'); fixture.create(); fixture.status()
+            original = root / 'originals'; original.mkdir()
+            (original / RECEIPT).write_bytes(b'{}')
+            (original / 'original.pdf').write_bytes(fixture.original.read_bytes())
+            text = 'Original report discussion.'
+            pages = [{'page': 1, 'text': text, 'text_sha256': digest(text.encode()),
+                      'empty_text': False, 'method': 'native'}]
+            reports, retained = [], []
+            for number in range(1, 4):
+                rid = f'R{number:03d}'; source = f'report-{number}.pdf'
+                directory = original / 'ocr_sources' / rid; directory.mkdir(parents=True)
+                (directory / 'pages.json').write_bytes(encode(pages))
+                reports.append({'id': rid, 'source_pdf': source, 'content_sha256': fixture.original_sha,
+                                'original_pdf_path': 'original.pdf', 'page_count': 1})
+                retained.append({'binding': {'source_pdf': source, 'content_sha256': fixture.original_sha},
+                                 'directory': fixture.report.relative_to(root).as_posix()})
+            with patch('market_views_source_digest._chart_regions', return_value=[]):
+                result = preflight.audit(original, root, root / 'audit', {'reports': reports}, {'reports': retained})
+            self.assertEqual(result['status'], 'incomplete')
+            self.assertEqual(result['category'], 'native_backup_missing_figures')
+            self.assertEqual(result['report_count'], 3)
+            self.assertEqual(result['missing_backup_source_ordinals'], [1, 2, 3])
+            self.assertEqual(result['primary_original_crops_replayed'], 3)
+
     def test_complete_chart_archive_has_an_explicit_profile_above_old_incident_limit(self):
         from inspect_market_views_r2_cache import bounded_size, InvalidObject
         head = {'ContentLength': 1018234618, 'Metadata': {'sha256': 'a' * 64}}

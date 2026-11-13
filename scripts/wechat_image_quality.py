@@ -57,6 +57,19 @@ def source_chart_images(report_dir: Path, *, require_verified=False) -> list[Pat
             raise ValueError('source_figure_audit_missing')
         paths = source_chart_images(report_dir)
         if status.get('images') and not paths and status.get('image_source_kind') != 'ocr_reconstructed_chart':
+            figure_map = report_dir / 'source_figure_map.json'
+            if figure_map.is_file() and not figure_map.is_symlink():
+                mapping = json.loads(figure_map.read_bytes())
+                from mineru_figure_sources import article_figure_indices, validate_figure_sources
+                available = {row['index'] for row in mapping['assets']}
+                if not article_figure_indices(mapping['metadata'], available):
+                    # A legacy source may contain only portraits or regulatory
+                    # appendices. Prove all carried assets before admitting a
+                    # genuine zero-business-figure inventory.
+                    validate_figure_sources(report_dir, expected_original_sha256=status.get('original_pdf_sha256'),
+                        expected_markdown_sha256=hashlib.sha256((report_dir / 'source_mineru.md').read_bytes()).hexdigest(),
+                        expected_images=status['images'])
+                    return []
             raise ValueError('source_figure_assets_missing')
         return paths
     assets = report_dir / "assets"
