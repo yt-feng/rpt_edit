@@ -1,0 +1,497 @@
+name: Guarded social publishing
+
+on:
+  workflow_dispatch:
+    inputs:
+      manifest_path:
+        description: Approved manifest under social_publish/outbox
+        required: true
+        type: string
+      mode:
+        description: Validate only, or publish after the protected environment approval
+        required: true
+        default: validate
+        type: choice
+        options:
+          - validate
+          - publish
+      confirm_content_id:
+        description: For publish mode, type the manifest content_id exactly
+        required: false
+        type: string
+  schedule:
+    # The queue remains dormant unless SOCIAL_AUTO_PUBLISH_ENABLED=true.
+    - cron: "37 * * * *"
+
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  # Shared with the reach monitor so a pause signal cannot race a provider POST.
+  group: social-publishing-control-plane
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: ${{ github.event_name == 'workflow_dispatch' || vars.SOCIAL_AUTO_PUBLISH_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      selected: ${{ steps.selection.outputs.selected }}
+      manifest_path: ${{ steps.selection.outputs.manifest_path }}
+      content_id: ${{ steps.inspect.outputs.content_id }}
+      manifest_sha256: ${{ steps.inspect.outputs.manifest_sha256 }}
+      platforms: ${{ steps.inspect.outputs.platforms }}
+      source_run_id: ${{ steps.source.outputs.source_run_id }}
+      source_artifact_name: ${{ steps.source.outputs.source_artifact_name }}
+    steps:
+      - name: Reject Actions reruns
+        if: github.run_attempt != 1
+        run: |
+          echo "A rerun could repeat an uncertain provider POST. Start a new workflow_dispatch after inspecting the durable receipt." >&2
+          exit 2
+
+      - name: Checkout public control plane
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Test guard contract without provider credentials
+        run: |
+          python3 -B scripts/test_social_publish_control.py
+          if [[ -f scripts/test_social_publish_youtube.py ]]; then
+            python3 -B scripts/test_social_publish_youtube.py
+          fi
+
+      - name: Select exactly one manifest
+        id: selection
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          MANUAL_MANIFEST_PATH: ${{ inputs.manifest_path || '' }}
+        run: |
+          set -euo pipefail
+          if [[ "$EVENT_NAME" == "schedule" ]]; then
+            python3 -B scripts/social_publish_control.py select \
+              --outbox-dir social_publish/outbox \
+              --ledger-dir social_publish/receipts \
+              --json-output "$RUNNER_TEMP/social-selection.json" \
+              --github-output "$GITHUB_OUTPUT"
+          else
+            case "$MANUAL_MANIFEST_PATH" in
+              social_publish/outbox/*.json) ;;
+              *)
+                echo "manifest_path must be a JSON file under social_publish/outbox" >&2
+                exit 2
+                ;;
+            esac
+            if [[ ! -f "$MANUAL_MANIFEST_PATH" ]]; then
+              echo "manifest_path does not exist on the selected Git ref" >&2
+              exit 2
+            fi
+            echo "selected=true" >> "$GITHUB_OUTPUT"
+            echo "manifest_path=$MANUAL_MANIFEST_PATH" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Inspect selected manifest without media or secrets
+        if: steps.selection.outputs.selected == 'true'
+        id: inspect
+        env:
+          MANIFEST_PATH: ${{ steps.selection.outputs.manifest_path }}
+        run: |
+          python3 -B scripts/social_publish_control.py inspect \
+            --manifest "$MANIFEST_PATH" \
+            --json-output "$RUNNER_TEMP/social-preview.json" \
+            --github-output "$GITHUB_OUTPUT"
+
+      - name: Resolve exact upstream artifact
+        if: steps.selection.outputs.selected == 'true'
+        id: source
+        env:
+          MANIFEST_RUN_ID: ${{ steps.inspect.outputs.source_run_id }}
+          MANIFEST_ARTIFACT_NAME: ${{ steps.inspect.outputs.source_artifact_name }}
+        run: |
+          set -euo pipefail
+          run_id="$MANIFEST_RUN_ID"
+          artifact_name="$MANIFEST_ARTIFACT_NAME"
+          if [[ -n "$run_id" && ! "$run_id" =~ ^[0-9]+$ ]]; then
+            echo "source_run_id must contain digits" >&2
+            exit 2
+          fi
+          if [[ -n "$artifact_name" ]] && \
+             { [[ "$artifact_name" == *"/"* ]] || [[ "$artifact_name" == *$'\r'* ]] || [[ "$artifact_name" == *$'\n'* ]]; }; then
+            echo "source_artifact_name is invalid" >&2
+            exit 2
+          fi
+          if { [[ -n "$run_id" ]] && [[ -z "$artifact_name" ]]; } || \
+             { [[ -z "$run_id" ]] && [[ -n "$artifact_name" ]]; }; then
+            echo "source_run_id and source_artifact_name must be set together" >&2
+            exit 2
+          fi
+          echo "source_run_id=$run_id" >> "$GITHUB_OUTPUT"
+          echo "source_artifact_name=$artifact_name" >> "$GITHUB_OUTPUT"
+
+      - name: Verify upstream run identity and success
+        if: steps.selection.outputs.selected == 'true' && steps.source.outputs.source_run_id != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ steps.source.outputs.source_run_id }}
+          ALLOWED_SOURCE_WORKFLOWS: ${{ vars.SOCIAL_ALLOWED_SOURCE_WORKFLOWS || 'Daily bilingual podcast videos' }}
+        run: |
+          set -euo pipefail
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_RUN_ID" > "$RUNNER_TEMP/social-source-run.json"
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          payload = json.loads(Path(os.environ["RUNNER_TEMP"] + "/social-source-run.json").read_text())
+          allowed_names = {
+              item.strip() for item in os.environ["ALLOWED_SOURCE_WORKFLOWS"].split("|") if item.strip()
+          }
+          repository = payload.get("repository") or {}
+          checks = (
+              str(payload.get("id")) == os.environ["SOURCE_RUN_ID"],
+              repository.get("full_name") == os.environ["GITHUB_REPOSITORY"],
+              payload.get("name") in allowed_names,
+              payload.get("head_branch") == "main",
+              payload.get("conclusion") == "success",
+              payload.get("event") in {"schedule", "workflow_dispatch"},
+          )
+          head_sha = payload.get("head_sha")
+          if not all(checks) or not isinstance(head_sha, str) or len(head_sha) != 40:
+              raise SystemExit("Upstream run is not an allowed successful main-branch source")
+          PY
+
+      - name: Download exact upstream artifact
+        if: steps.selection.outputs.selected == 'true' && steps.source.outputs.source_run_id != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ steps.source.outputs.source_run_id }}
+          SOURCE_ARTIFACT_NAME: ${{ steps.source.outputs.source_artifact_name }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/social-source"
+          gh run download "$SOURCE_RUN_ID" \
+            --repo "$GITHUB_REPOSITORY" \
+            --name "$SOURCE_ARTIFACT_NAME" \
+            --dir "$RUNNER_TEMP/social-source"
+
+      - name: Validate media and platform-specific copy
+        if: steps.selection.outputs.selected == 'true'
+        env:
+          MANIFEST_PATH: ${{ steps.selection.outputs.manifest_path }}
+          PLATFORMS: ${{ steps.inspect.outputs.platforms }}
+          HAS_SOURCE_ARTIFACT: ${{ steps.source.outputs.source_run_id != '' }}
+        run: |
+          set -euo pipefail
+          asset_root="$GITHUB_WORKSPACE"
+          if [[ "$HAS_SOURCE_ARTIFACT" == "true" ]]; then
+            asset_root="$RUNNER_TEMP/social-source"
+          fi
+          args=(
+            validate
+            --manifest "$MANIFEST_PATH"
+            --asset-root "$asset_root"
+            --json-output "$RUNNER_TEMP/social-preview.json"
+          )
+          if [[ ",$PLATFORMS," == *,youtube,* ]]; then
+            args+=(--require-media)
+          fi
+          python3 -B scripts/social_publish_control.py "${args[@]}"
+
+      - name: Write sanitized preparation summary
+        if: steps.selection.outputs.selected == 'true'
+        env:
+          CONTENT_ID: ${{ steps.inspect.outputs.content_id }}
+          MANIFEST_SHA256: ${{ steps.inspect.outputs.manifest_sha256 }}
+          PLATFORMS: ${{ steps.inspect.outputs.platforms }}
+          EVENT_NAME: ${{ github.event_name }}
+          REQUESTED_MODE: ${{ inputs.mode || 'publish' }}
+          PUBLISH_ENABLED: ${{ vars.SOCIAL_PUBLISH_ENABLED || 'false' }}
+          AUTO_PUBLISH_ENABLED: ${{ vars.SOCIAL_AUTO_PUBLISH_ENABLED || 'false' }}
+          APPROVED_CODE_SHA: ${{ github.sha }}
+        run: |
+          {
+            echo "### 社媒发布准备检查"
+            echo ""
+            echo "- Content ID：$CONTENT_ID"
+            echo "- Manifest SHA-256：$MANIFEST_SHA256"
+            echo "- 平台：$PLATFORMS"
+            echo "- 触发方式：$EVENT_NAME"
+            echo "- 请求模式：$REQUESTED_MODE"
+            echo "- 人工发布开关：$PUBLISH_ENABLED"
+            echo "- 自动队列开关：$AUTO_PUBLISH_ENABLED"
+            echo "- 审批代码 SHA：$APPROVED_CODE_SHA"
+            echo "- 传输方式：官方 OAuth/API；无 Cookie、无浏览器模拟"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload sanitized preview
+        if: steps.selection.outputs.selected == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: social-publish-preview-${{ steps.inspect.outputs.content_id }}-${{ github.run_id }}
+          path: ${{ runner.temp }}/social-preview.json
+          if-no-files-found: error
+          retention-days: 30
+
+  publish:
+    needs: prepare
+    if: >-
+      needs.prepare.outputs.selected == 'true' &&
+      (
+        (github.event_name == 'schedule' && vars.SOCIAL_AUTO_PUBLISH_ENABLED == 'true') ||
+        (github.event_name == 'workflow_dispatch' && inputs.mode == 'publish' && vars.SOCIAL_PUBLISH_ENABLED == 'true')
+      )
+    environment: social-production
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      actions: read
+      contents: write
+    steps:
+      - name: Checkout exact main control plane
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Load latest ledger without changing approved code
+        env:
+          MANIFEST_PATH: ${{ needs.prepare.outputs.manifest_path }}
+        run: |
+          set -euo pipefail
+          if [[ ! "$MANIFEST_PATH" =~ ^social_publish/outbox/[a-z0-9][a-z0-9._-]*\.json$ ]]; then
+            echo "Manifest path is not canonical" >&2
+            exit 2
+          fi
+          git fetch --depth=1 origin main
+          git cat-file blob "FETCH_HEAD:$MANIFEST_PATH" > "$RUNNER_TEMP/latest-main-manifest.json"
+          git restore --source=FETCH_HEAD --staged --worktree -- social_publish/receipts
+          if git cat-file -e "FETCH_HEAD:social_publish/PAUSED.json" 2>/dev/null; then
+            git restore --source=FETCH_HEAD --staged --worktree -- social_publish/PAUSED.json
+          else
+            git rm -f --ignore-unmatch social_publish/PAUSED.json
+          fi
+
+      - name: Enforce main ref, immutable manifest, and manual confirmation
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          CONTENT_ID: ${{ needs.prepare.outputs.content_id }}
+          CONFIRM_CONTENT_ID: ${{ inputs.confirm_content_id || '' }}
+          MANIFEST_PATH: ${{ needs.prepare.outputs.manifest_path }}
+          EXPECTED_MANIFEST_SHA256: ${{ needs.prepare.outputs.manifest_sha256 }}
+        run: |
+          set -euo pipefail
+          if [[ "$GITHUB_REF" != "refs/heads/main" ]]; then
+            echo "Publishing is allowed only from main" >&2
+            exit 2
+          fi
+          if [[ "$EVENT_NAME" == "workflow_dispatch" && "$CONFIRM_CONTENT_ID" != "$CONTENT_ID" ]]; then
+            echo "confirm_content_id does not match the prepared manifest" >&2
+            exit 2
+          fi
+          current_output="$RUNNER_TEMP/social-current-manifest-output"
+          python3 -B scripts/social_publish_control.py inspect \
+            --manifest "$MANIFEST_PATH" \
+            --github-output "$current_output" \
+            --json-output "$RUNNER_TEMP/social-current-preview.json"
+          current_digest="$(sed -n 's/^manifest_sha256=//p' "$current_output")"
+          if [[ "$current_digest" != "$EXPECTED_MANIFEST_SHA256" ]]; then
+            echo "The checked-out manifest does not match the approved digest." >&2
+            exit 2
+          fi
+          latest_output="$RUNNER_TEMP/social-latest-manifest-output"
+          python3 -B scripts/social_publish_control.py inspect \
+            --manifest "$RUNNER_TEMP/latest-main-manifest.json" \
+            --github-output "$latest_output" \
+            --json-output "$RUNNER_TEMP/social-latest-preview.json"
+          latest_digest="$(sed -n 's/^manifest_sha256=//p' "$latest_output")"
+          if [[ "$latest_digest" != "$EXPECTED_MANIFEST_SHA256" ]]; then
+            echo "The approved manifest changed on main while this job was waiting. Start a new validation and approval." >&2
+            exit 2
+          fi
+
+      - name: Re-test publisher before provider secrets are exposed
+        run: |
+          python3 -B scripts/test_social_publish_control.py
+          python3 -B scripts/test_social_publish_youtube.py
+          python3 -B scripts/test_preflight_social_publish.py
+          node --test scripts/test_social_receipt_crypto.mjs
+
+      - name: Validate private receipt key before any provider write
+        env:
+          SOCIAL_RECEIPT_KEY_B64: ${{ secrets.SOCIAL_RECEIPT_KEY_B64 }}
+        run: |
+          node scripts/social_receipt_crypto.mjs check-key
+
+      - name: Download exact upstream artifact again
+        if: needs.prepare.outputs.source_run_id != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ needs.prepare.outputs.source_run_id }}
+          SOURCE_ARTIFACT_NAME: ${{ needs.prepare.outputs.source_artifact_name }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/social-source"
+          gh run download "$SOURCE_RUN_ID" \
+            --repo "$GITHUB_REPOSITORY" \
+            --name "$SOURCE_ARTIFACT_NAME" \
+            --dir "$RUNNER_TEMP/social-source"
+
+      - name: Preflight and expose only YouTube credentials
+        if: contains(needs.prepare.outputs.platforms, 'youtube')
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}
+          YOUTUBE_REQUIRED_SCOPES: ${{ vars.YOUTUBE_REQUIRED_SCOPES || 'https://www.googleapis.com/auth/youtube.upload' }}
+        run: |
+          python3 -B scripts/preflight_social_publish.py \
+            --platform youtube \
+            --github-env "$GITHUB_ENV"
+
+      - name: Preflight and expose only LinkedIn credentials
+        if: contains(needs.prepare.outputs.platforms, 'linkedin')
+        env:
+          LINKEDIN_CLIENT_ID: ${{ secrets.LINKEDIN_CLIENT_ID }}
+          LINKEDIN_CLIENT_SECRET: ${{ secrets.LINKEDIN_CLIENT_SECRET }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_AUTHOR_URN: ${{ secrets.LINKEDIN_AUTHOR_URN }}
+          LINKEDIN_REQUIRED_SCOPES: ${{ vars.LINKEDIN_REQUIRED_SCOPES || 'w_member_social' }}
+        run: |
+          python3 -B scripts/preflight_social_publish.py \
+            --platform linkedin \
+            --github-env "$GITHUB_ENV"
+
+      - name: Preflight and expose only X credentials
+        if: contains(needs.prepare.outputs.platforms, 'x')
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          X_USER_ID: ${{ secrets.X_USER_ID }}
+          X_OAUTH1_SCOPES: ${{ vars.X_OAUTH1_SCOPES }}
+        run: |
+          python3 -B scripts/preflight_social_publish.py \
+            --platform x \
+            --github-env "$GITHUB_ENV"
+
+      - name: Reserve content ID before any provider write
+        id: reserve
+        env:
+          MANIFEST_PATH: ${{ needs.prepare.outputs.manifest_path }}
+          SOCIAL_MIN_INTERVAL_HOURS: ${{ vars.SOCIAL_MIN_INTERVAL_HOURS || '20' }}
+        run: |
+          python3 -B scripts/social_publish_control.py reserve \
+            --manifest "$MANIFEST_PATH" \
+            --ledger-dir social_publish/receipts \
+            --run-id "$GITHUB_RUN_ID" \
+            --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            --code-sha "$GITHUB_SHA" \
+            --json-output "$RUNNER_TEMP/social-reservation.json" \
+            --github-output "$GITHUB_OUTPUT"
+
+      - name: Commit reservation to the durable ledger
+        env:
+          RECEIPT_FILE: ${{ steps.reserve.outputs.receipt_file }}
+          CONTENT_ID: ${{ needs.prepare.outputs.content_id }}
+          SOCIAL_GIT_TOKEN: ${{ github.token }}
+        run: |
+          bash scripts/commit_social_receipt.sh reserve \
+            "$RECEIPT_FILE" \
+            "" \
+            "Reserve guarded social publication $CONTENT_ID" \
+            8
+
+      - name: Publish once through official APIs
+        id: provider_publish
+        env:
+          MANIFEST_PATH: ${{ needs.prepare.outputs.manifest_path }}
+          LINKEDIN_API_VERSION: ${{ vars.LINKEDIN_API_VERSION || '202608' }}
+        run: |
+          set -euo pipefail
+          asset_root="$GITHUB_WORKSPACE"
+          if [[ -n "${{ needs.prepare.outputs.source_run_id }}" ]]; then
+            asset_root="$RUNNER_TEMP/social-source"
+          fi
+          python3 -B scripts/social_publish_control.py publish \
+            --manifest "$MANIFEST_PATH" \
+            --asset-root "$asset_root" \
+            --ledger-dir social_publish/receipts \
+            --run-id "$GITHUB_RUN_ID" \
+            --private-receipt-output "$RUNNER_TEMP/social-private-receipt.json" \
+            --json-output "$RUNNER_TEMP/social-publish-receipt.json" \
+            --github-output "$GITHUB_OUTPUT"
+
+      - name: Encrypt private provider locators
+        id: seal_receipt
+        if: always() && steps.reserve.outcome == 'success'
+        env:
+          SOCIAL_RECEIPT_KEY_B64: ${{ secrets.SOCIAL_RECEIPT_KEY_B64 }}
+          CONTENT_ID: ${{ needs.prepare.outputs.content_id }}
+        run: |
+          node scripts/social_receipt_crypto.mjs seal \
+            --input "$RUNNER_TEMP/social-private-receipt.json" \
+            --output "social_publish/receipts/$CONTENT_ID.json.enc"
+
+      - name: Commit final or partial receipt
+        if: always() && steps.reserve.outcome == 'success' && steps.seal_receipt.outcome == 'success'
+        env:
+          CONTENT_ID: ${{ needs.prepare.outputs.content_id }}
+          PUBLIC_RECEIPT: ${{ steps.reserve.outputs.receipt_file }}
+          SOCIAL_GIT_TOKEN: ${{ github.token }}
+        run: |
+          bash scripts/commit_social_receipt.sh finalize \
+            "$PUBLIC_RECEIPT" \
+            "$PUBLIC_RECEIPT.enc" \
+            "Record guarded social publication $CONTENT_ID" \
+            8
+
+      - name: Upload sanitized publish receipt
+        if: always() && steps.reserve.outcome == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: social-publish-receipt-${{ needs.prepare.outputs.content_id }}-${{ github.run_id }}
+          path: |
+            ${{ steps.reserve.outputs.receipt_file }}
+            ${{ runner.temp }}/social-publish-receipt.json
+            ${{ github.workspace }}/social_publish/receipts/${{ needs.prepare.outputs.content_id }}.json.enc
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Materialize private email runtime values
+        if: failure()
+        env:
+          PORTAL_PRIVATE_CONFIG_B64: ${{ secrets.PORTAL_PRIVATE_CONFIG_B64 }}
+        run: |
+          python3 -B scripts/render_private_config.py \
+            --root scripts/send_portal_ops_alert.py \
+            --github-add-mask \
+            --skip-generated-files
+
+      - name: Email publication pause notice
+        if: failure()
+        env:
+          OPS_ALERT_SIGNING_KEY: ${{ secrets.OPS_ALERT_SIGNING_KEY || secrets.PASSWORD_SECRET }}
+          PORTAL_WORKER_URL: ${{ secrets.PORTAL_WORKER_URL }}
+          CONTENT_ID: ${{ needs.prepare.outputs.content_id }}
+        run: |
+          cat > "$RUNNER_TEMP/social-publish-alert.txt" <<EOF
+          社媒发布流程已暂停，没有执行自动补发。请打开 GitHub Action 检查已发布平台和 receipt，再决定是否人工恢复。
+
+          Content ID：$CONTENT_ID
+          运行地址：$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
+
+          该流程只使用官方 OAuth/API，不使用 Cookie。若失败分类为凭证失效，请完成平台重新授权并更新对应 GitHub Secret；若 receipt 为 reserved 或 partial，请先核对平台公开页面，避免重复发布。
+          EOF
+          python3 -B scripts/send_portal_ops_alert.py \
+            --subject "社媒发布已暂停 | $CONTENT_ID" \
+            --text-file "$RUNNER_TEMP/social-publish-alert.txt" \
+            --dedupe-key "social-publish:$CONTENT_ID:$GITHUB_RUN_ID" \
+            --dedupe-hours 168 \
+            --severity critical
