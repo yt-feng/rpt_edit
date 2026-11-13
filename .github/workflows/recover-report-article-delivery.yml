@@ -215,12 +215,27 @@ jobs:
             --blog-archive-root portal_suite/data/blog_archive
           bash scripts/commit_output_dir.sh portal_suite/data/blog_archive \
             "Archive recovered report articles $DATE_FOLDER" 8 true
+      - name: Resolve the acknowledged archive revision
+        id: archive_revision
+        run: |
+          for attempt in 1 2 3; do
+            if git fetch --no-tags --depth=1 origin main; then
+              echo "sha=$(git rev-parse --verify FETCH_HEAD)" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            if [ "$attempt" -lt 3 ]; then
+              sleep $((attempt * 2))
+            fi
+          done
+          exit 1
       - name: Bind publication request to the pushed archive and exact articles
+        env:
+          ARCHIVE_COMMIT: ${{ steps.archive_revision.outputs.sha }}
         run: |
           python scripts/watch_recovered_article_publication.py request \
             --drafts-root "$DELIVERY_WORKSPACE/wechat_drafts" \
             --archive-root portal_suite/data/blog_archive \
-            --archive-commit "$(git rev-parse HEAD)" \
+            --archive-commit "$ARCHIVE_COMMIT" \
             --output "$RUNNER_TEMP/recovered-publication-request.json"
       - name: Save the resumable public article publication request
         uses: actions/upload-artifact@v4
