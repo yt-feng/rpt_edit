@@ -151,9 +151,14 @@ def bounded_size(head: dict, limit: int = MAX_BYTES) -> int:
 
 class ReadOnlyClient:
     """Supply the existing handoff verifier with a bounded single GET downloader."""
-    def __init__(self, client, pinned_head=None):
+    def __init__(self, client, pinned_head=None, *, archive_limit=None, expanded_limit=None):
         self.client = client
         self.pinned_head = pinned_head
+        self.archive_limit = MAX_BYTES if archive_limit is None else archive_limit
+        self.expanded_limit = MAX_BYTES if expanded_limit is None else expanded_limit
+        if (type(self.archive_limit) is not int or not 0 < self.archive_limit <= 2 * 1024 ** 3
+                or type(self.expanded_limit) is not int or not 0 < self.expanded_limit <= 4 * 1024 ** 3):
+            raise InvalidObject('archive_limit_invalid')
 
     def head_object(self, **kwargs):
         head = self.client.head_object(**kwargs)
@@ -167,11 +172,11 @@ class ReadOnlyClient:
         body = response.get("Body")
         if body is None or not hasattr(body, "read"):
             raise InvalidObject("object_body")
-        limit = 1024 * 1024 if kwargs["Key"].endswith(".json") else MAX_BYTES
+        limit = 1024 * 1024 if kwargs["Key"].endswith(".json") else self.archive_limit
         return {**response, "Body": BoundedBody(body, limit)}
 
     def download_file(self, bucket, key, filename):
-        expected = bounded_size(self.head_object(Bucket=bucket, Key=key))
+        expected = bounded_size(self.head_object(Bucket=bucket, Key=key), self.archive_limit)
         response = self.get_object(Bucket=bucket, Key=key)
         body = response.get("Body")
         if body is None or not hasattr(body, "read"):
@@ -201,7 +206,7 @@ class ReadOnlyClient:
                     if index > MAX_MEMBERS or not (member.isfile() or member.isdir()):
                         raise InvalidObject("archive_member_limit")
                     expanded += member.size
-                    if expanded > MAX_BYTES:
+                    if expanded > self.expanded_limit:
                         raise InvalidObject("archive_expansion_limit")
                     path = Path(member.name)
                     if path.is_absolute() or ".." in path.parts:
