@@ -373,7 +373,7 @@ def receipt_root(workspace, context):
     return workspace / 'wechat_drafts' / 'xhs_notes' / context['date_folder']
 
 
-def save_receipts(workspace, client, bucket):
+def save_receipts(workspace, client, bucket, *, include_media=True):
     from private_workflow_handoff import upload_directory
     context = state(workspace)
     root = receipt_root(workspace, context)
@@ -391,7 +391,26 @@ def save_receipts(workspace, client, bucket):
     final_receipt = workspace / 'wechat_delivery_receipt.json'
     if final_receipt.is_file():
         shutil.copyfile(final_receipt, root / final_receipt.name)
-    upload_directory(root, context_prefix(context) + '/wechat-receipts.tar.gz', client=client, bucket=bucket)
+    key = context_prefix(context) + '/wechat-receipts.tar.gz'
+    if include_media:
+        # Keep the complete media diagnostics once at the end of delivery.
+        upload_directory(root, key, client=client, bucket=bucket)
+    else:
+        # Every group checkpoints twice (acceptance and readback). Media were
+        # already uploaded to WeChat; restore_delivery merges JSON receipts and
+        # payloads, rather than reusing this generated image cache. Repacking it
+        # for every ACK makes a large batch repeatedly transfer the same bytes.
+        with tempfile.TemporaryDirectory(prefix='wechat-receipt-checkpoint-', dir=workspace) as temporary:
+            compact = Path(temporary) / 'receipts'
+            compact.mkdir()
+            for path in root.rglob('*'):
+                relative = path.relative_to(root)
+                if relative.parts[0] == '_assets' or path.is_symlink() or not path.is_file():
+                    continue
+                target = compact / relative
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(path, target)
+            upload_directory(compact, key, client=client, bucket=bucket)
     return True
 
 
@@ -590,7 +609,7 @@ def upload_wechat(workspace, client, bucket):
 
     def checkpoint(*args, **kwargs):
         original_checkpoint(*args, **kwargs)
-        save_receipts(workspace, client, bucket)
+        save_receipts(workspace, client, bucket, include_media=False)
 
     def add(session, token, articles, timeout, *, account):
         return guarded_add_draft(client, bucket, prefix, session, token, articles, timeout, account=account)
