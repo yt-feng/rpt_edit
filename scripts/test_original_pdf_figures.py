@@ -43,6 +43,19 @@ def scanned_pdf(text):
 
 
 class OriginalFiguresTests(unittest.TestCase):
+    def test_unnumbered_banking_rating_appendix_is_excluded_and_previous_proof_replays(self):
+        text = ('Global research\nRating Distribution\nInvestment Banking Relationships\n'
+                'Buy Hold Sell\n50% 34% 16% 65% 58% 43%\n2026 2025 2024 2023 2022 2021\n'
+                'Source: Research\nSource: Rating definitions')
+        pdf, pages = scanned_pdf(text); sha = figures.digest(text.encode())
+        previous, retained = figures.extract(pdf, pages, source_sha256=sha, policy=figures.PREVIOUS_POLICY)
+        self.assertEqual(len(retained), 1)
+        figures.validate(previous, retained.__getitem__, original_pdf_sha256=figures.digest(pdf),
+                         source_sha256=sha, pdf=pdf, pages=pages)
+        current, files = figures.extract(pdf, pages, source_sha256=sha)
+        self.assertEqual(files, {})
+        self.assertEqual(current['candidate_count'], 0)
+
     def test_unnumbered_scanned_plot_grids_and_financial_snapshots_keep_original_pixels(self):
         examples = [
             'China imports\nIndex, sa, 3mma\n0 20 40 60 80 100\n2019 2020 2021 2022 2023 2024\nSource: Customs\n'
