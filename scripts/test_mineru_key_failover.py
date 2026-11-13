@@ -42,9 +42,11 @@ class FailoverTests(unittest.TestCase):
             clock=self.clock.time, sleep=self.clock.sleep, wallclock=self.clock.time,
             key_failover=enabled, forbid_new_submissions=forbid, **kwargs)
 
-    def start(self):
+    def start(self, start_index=0):
         self.provider = Provider()
         ledger = self.ledger()
+        identities = list(ledger.tokens.items())
+        ledger.tokens = dict(identities[start_index:] + identities[:start_index])
         items = [ledger.bind(*pair) for pair in self.inputs]
         key = ledger._create(items, {row['id']: path for row, (path, _) in zip(items, self.inputs)}, 100)
         self.root_key = key
@@ -85,6 +87,36 @@ class FailoverTests(unittest.TestCase):
         self.assertEqual([p[2] for p in self.provider.posts], [token for _, token in TOKENS])
         self.assertEqual({row['_recovery_lineage']['child_ordinal'] for _, row in rows}, {3})
         self.assert_original()
+
+    def test_shard_starting_on_third_key_moves_directly_to_fourth(self):
+        self.start(start_index=2)
+        self.provider.plans[TOKENS[3][1]] = 'done'
+        rows, summary = self.run_batch()
+        self.assertTrue(summary['ready_for_generation'])
+        self.assertEqual([p[2] for p in self.provider.posts], [TOKENS[2][1], TOKENS[3][1]])
+        self.assertEqual({row['_recovery_lineage']['child_ordinal'] for _, row in rows}, {1})
+        self.assert_original()
+
+    def test_fourth_key_wraps_to_first_without_repeating_the_starting_key(self):
+        self.start(start_index=3)
+        self.provider.plans[TOKENS[0][1]] = 'done'
+        _, summary = self.run_batch()
+        self.assertTrue(summary['ready_for_generation'])
+        self.assertEqual([p[2] for p in self.provider.posts], [TOKENS[3][1], TOKENS[0][1]])
+
+    def test_original_winner_still_reports_the_reserved_alternate_attempt(self):
+        self.start()
+        self.provider.plans[TOKENS[0][1]] = lambda items: [
+            {'data_id': item['id'], 'state': 'done' if self.clock.now >= 1 else 'pending',
+             **({'full_zip_url': 'https://results.invalid/original'} if self.clock.now >= 1 else {})}
+            for item in items]
+        rows, summary = TerminalRecovery(self.ledger(), automatic=True).run(self.inputs,
+            authorization={'run_id': '123', 'manifest_sha256': 'a' * 64},
+            timeout=30, interval=1, queue_budget=4, partial=True)
+        self.assertTrue(summary['ready_for_generation'])
+        self.assertEqual(len(self.provider.posts), 2)
+        self.assertEqual({row['_recovery_lineage']['child_ordinal'] for _, row in rows}, {0})
+        self.assertEqual({row['retry_count'] for row in summary['source_outcomes']}, {1})
 
     def test_completed_siblings_are_never_in_alternate_submission(self):
         self.start()
