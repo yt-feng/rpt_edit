@@ -175,6 +175,16 @@ class FigureSourceTests(unittest.TestCase):
         self.assertEqual(status['chart_source_image_count'], 1)
         self.assertEqual(status['original_pdf_sha256'], fixture.original_sha)
         self.assertEqual(len(source_chart_images(directory, require_verified=True)), 1)
+        args.generate_xhs = True
+        with patch.object(producer, 'download_and_unzip', side_effect=download), \
+                patch.object(producer, 'create_visual_assets', side_effect=AssertionError('cannot overwrite original assets')), \
+                patch.object(producer, 'safe_generate_text', return_value='# Source chart\n\nOriginal exhibit'), \
+                patch.object(producer, 'draw_title_card'), patch.object(producer, 'pad_image_for_xhs', return_value=True), \
+                patch.object(producer, 'generate_wechat_article'), patch.object(producer, 'make_cover'):
+            optional = producer.process_pdf(fixture.original, {'state': 'done', 'full_zip_url': 'https://example.invalid/result'}, output, args)
+        self.assertEqual(optional['images'], status['images'])
+        self.assertEqual(len(optional['xhs_images']), 2)
+        self.assertEqual(len(source_chart_images(directory, require_verified=True)), 1)
 
     def test_layout_only_html_table_recovers_original_pixels_instead_of_zero_figures(self):
         import shutil

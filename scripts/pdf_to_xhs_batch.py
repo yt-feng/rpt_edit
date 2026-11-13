@@ -1338,8 +1338,6 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
         title, subtitle = extract_cover_titles(note, fallback_title)
     status["cover_short_title"] = title
     status["cover_subtitle"] = subtitle
-    if status['xhs_generation_enabled']:
-        status['xhs_images'] = create_visual_assets(raw_dir, pdf_path, assets_dir, args.max_images, title=title)
     # The normal WeChat path needs the same original-page/layout proof as the
     # source-only recovery path. Standalone bitmap heuristics miss vector plots
     # and HTML tables even when MinerU supplied their page/bbox metadata.
@@ -1349,6 +1347,19 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
         original_pdf_sha256=status['original_pdf_sha256'], auth_original_pdf=pdf_path,
         markdown_sha256=digest((item_dir / 'source_mineru.md').read_bytes()))
     status['chart_source_image_count'] = len(status['images'])
+    if status['xhs_generation_enabled']:
+        # Build optional cards from the verified originals without overwriting
+        # the source assets or their immutable image map.
+        draw_title_card(title, assets_dir / 'xhs_card_01.png')
+        cards = ['assets/xhs_card_01.png']
+        for index, reference in enumerate(status['images'], 1):
+            card = assets_dir / f'xhs_card_{index + 1:02d}.png'
+            if pad_image_for_xhs(item_dir / reference, card, chart_number=index,
+                                 show_next_arrow=index < len(status['images'])):
+                cards.append(card.relative_to(item_dir).as_posix())
+            else:
+                cards.append(reference)
+        status['xhs_images'] = cards
     original_sidecar = item_dir / 'source_original_figures.json'
     if original_sidecar.is_file():
         status.update(original_figures_sha256=digest(original_sidecar.read_bytes()),
