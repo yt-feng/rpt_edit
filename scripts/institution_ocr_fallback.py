@@ -49,13 +49,21 @@ def existing_source(directory: Path, filename: str, binding) -> bool:
         raw = receipt.read_bytes()
         value = json.loads(raw)
         pages_raw = (directory / "source_ocr_pages.json").read_bytes()
-        require(digest(raw) == status["wechat_source_provenance"]["source_receipt_sha256"]
-                and value == {"schema": 1, "source": binding, "source_pdf": filename,
+        expected = {"schema": value.get('schema'), "source": binding, "source_pdf": filename,
                     "fallback_category": "mineru_unavailable", "page_count": len(json.loads(pages_raw)),
                     "source_pages_sha256": digest(pages_raw), "source_markdown_sha256": source.sha256,
                     "languages": "eng+chi_sim", "dpi": 220}
+        require(value.get('schema') in {1, 2}, 'institution_ocr_receipt_mismatch')
+        if value.get('schema') == 2:
+            from original_pdf_figures import SIDECAR
+            expected['original_figures_sha256'] = digest((directory / SIDECAR).read_bytes())
+        require(digest(raw) == status["wechat_source_provenance"]["source_receipt_sha256"]
+                and value == expected
                 and status["wechat_source_provenance"]["content_sha256"] == binding["sha256"],
                 "institution_ocr_receipt_mismatch")
+        if value.get('schema') == 2:
+            from original_pdf_figures import admitted
+            admitted(directory)
     return True
 
 
@@ -80,24 +88,32 @@ def rejected_metadata_source(directory: Path, filename: str, binding) -> bool:
 def extract_source(pdf: Path, directory: Path, binding, *, reader=None):
     """Write page evidence and explicit OCR provenance, never source_mineru.md."""
     verify_pdf(pdf, binding)
-    if existing_source(directory, pdf.name, binding):
-        return
+    reused = existing_source(directory, pdf.name, binding)
+    if reused:
+        from original_pdf_figures import SIDECAR
+        if resolve_extraction_source(directory).method == 'mineru' or (directory / SIDECAR).is_file():
+            return
     if reader is None:
         from build_market_views_ocr_fallback import extract_pages
         reader = extract_pages
-    pages = reader(pdf, languages="eng+chi_sim", dpi=220)
+    pages = (json.loads((directory / 'source_ocr_pages.json').read_bytes()) if reused
+             else reader(pdf, languages="eng+chi_sim", dpi=220))
     markdown = ocr_markdown_from_pages(pages, len(pages))
     raw_pages = encoded(pages)
     verify_pdf(pdf, binding)
-    receipt = encoded({"schema": 1, "source": binding, "source_pdf": pdf.name,
+    from original_pdf_figures import extract as extract_figures, encode as encode_figures, SIDECAR
+    figures, image_files = extract_figures(pdf.read_bytes(), pages, source_sha256=digest(markdown))
+    figure_raw = encode_figures(figures)
+    receipt = encoded({"schema": 2, "source": binding, "source_pdf": pdf.name,
         "fallback_category": "mineru_unavailable", "page_count": len(pages),
         "source_pages_sha256": digest(raw_pages), "source_markdown_sha256": digest(markdown),
-        "languages": "eng+chi_sim", "dpi": 220})
+        "languages": "eng+chi_sim", "dpi": 220, "original_figures_sha256": digest(figure_raw)})
     status = {
         "source_pdf": pdf.name, "source_original_filename": binding["source"],
         "source_method": "ocr", "source_markdown": "source_ocr.md",
         "original_pdf_sha256": binding["sha256"], "chart_source_only": True,
-        "chart_source_image_count": 0, "images": [],
+        "chart_source_image_count": len(image_files), "images": list(image_files),
+        "image_source_kind": "ocr_original_figures", "original_figures_sha256": digest(figure_raw),
         "ocr_fallback_reason": "mineru_unavailable", "ocr_page_count": len(pages),
         "wechat_source_provenance": {"source_kind": "ocr-pages", "source_pdf": pdf.name,
             "content_sha256": binding["sha256"], "source_receipt_sha256": digest(receipt),
@@ -106,7 +122,9 @@ def extract_source(pdf: Path, directory: Path, binding, *, reader=None):
     }
     require(not directory.is_symlink(), "institution_ocr_output_symlink")
     directory.mkdir(parents=True, exist_ok=True)
-    outputs = {"source_ocr_pages.json": raw_pages, RECEIPT: receipt,
+    outputs = {**image_files, SIDECAR: figure_raw, 'source_image_map.json': encoded({
+        'version': 1, 'source_sha256': digest(markdown), 'images': {name: name for name in image_files}}),
+        "source_ocr_pages.json": raw_pages, RECEIPT: receipt,
                "status.json": encoded(status), "source_ocr.md": markdown}
     for name in outputs:
         require(not (directory / name).is_symlink(), "institution_ocr_output_symlink")
@@ -114,9 +132,11 @@ def extract_source(pdf: Path, directory: Path, binding, *, reader=None):
     with tempfile.TemporaryDirectory(prefix=".institution-ocr-", dir=directory.parent) as temporary:
         stage = Path(temporary)
         for name, raw in outputs.items():
+            (stage / name).parent.mkdir(parents=True, exist_ok=True)
             (stage / name).write_bytes(raw)
         resolve_extraction_source(stage)
         for name in outputs:
+            (directory / name).parent.mkdir(parents=True, exist_ok=True)
             (stage / name).replace(directory / name)
     resolve_extraction_source(directory)
 

@@ -906,6 +906,28 @@ def validate_figure_sources(report_dir: Path, *, expected_original_sha256: str |
     New source producers must ensure the outer receipt requires this sidecar.
     """
     report = Path(report_dir)
+    from original_pdf_figures import SIDECAR as ORIGINAL_SIDECAR
+    native = report / ORIGINAL_SIDECAR
+    if native.exists() or native.is_symlink():
+        try:
+            # This alternative only fills a *proved empty* MinerU image
+            # selection. It cannot override any existing authenticated crop.
+            _hash(expected_original_sha256)
+            if _validate(report, expected_original_sha256, expected_markdown_sha256, [], status_images=expected_images) != {}:
+                _fail('figure_source_binding_mismatch')
+            value = _json(_regular(native, report, 2 * 1024 * 1024))
+            if (value['original_pdf_sha256'] != expected_original_sha256
+                    or value['source_sha256'] != expected_markdown_sha256):
+                _fail('figure_source_binding_mismatch')
+            from original_pdf_figures import admitted
+            paths = [path.relative_to(report).as_posix() for path in admitted(report)]
+            if paths != expected_images:
+                _fail('figure_source_binding_mismatch')
+            return {path: path for path in paths}
+        except FigureSourceError:
+            raise
+        except Exception:
+            _fail('figure_proof_invalid')
     sidecar = report / SIDECAR
     if not sidecar.exists():
         if sidecar.is_symlink() or (report / "figure_source_evidence").exists() or (report / "figure_source_evidence").is_symlink():
@@ -936,7 +958,7 @@ def _validate_render_restoration(value, **bindings):
     _fail("figure_proof_invalid")
 
 
-def _validate(report, original_sha, markdown_sha, images):
+def _validate(report, original_sha, markdown_sha, images, *, status_images=None):
     original_sha = _hash(original_sha, optional=True)
     markdown_sha = _hash(markdown_sha)
     value = _json(_regular(report / SIDECAR, report, MAX_JSON))
@@ -976,7 +998,7 @@ def _validate(report, original_sha, markdown_sha, images):
     status_path = report / "status.json"
     if status_path.exists() or status_path.is_symlink():
         status = _json(_regular(status_path, report, MAX_JSON))
-        if (not isinstance(status, dict) or status.get("images") != images
+        if (not isinstance(status, dict) or status.get("images") != (images if status_images is None else status_images)
                 or status.get("source_markdown") != "source_mineru.md"
                 or status.get("original_pdf_sha256") != original_sha):
             _fail("figure_source_binding_mismatch")

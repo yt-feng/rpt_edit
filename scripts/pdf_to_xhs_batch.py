@@ -708,6 +708,23 @@ def create_chart_source_assets(result_dir: Path, assets_dir: Path, max_images: i
     assets_dir.mkdir(parents=True, exist_ok=True)
     source = assets_dir.parent / "source_mineru.md"
     source_sha = markdown_sha256 or (digest(source.read_bytes()) if source.is_file() else "")
+    sidecar = assets_dir.parent / 'source_figure_map.json'
+    if sidecar.is_file() and original_pdf_sha256 is not None:
+        from mineru_figure_sources import validate_figure_sources
+        previous = json.loads(sidecar.read_bytes())
+        if previous.get('max_images') == max_images:
+            native = assets_dir.parent / 'source_original_figures.json'
+            selected = json.loads(native.read_bytes()) if native.is_file() else previous
+            existing_images = [row['path'] for row in selected['assets']]
+            if auth_original_pdf is not None and digest(Path(auth_original_pdf).read_bytes()) != original_pdf_sha256:
+                raise ValueError('original_figure_pdf_binding_mismatch')
+            validate_figure_sources(assets_dir.parent, expected_original_sha256=original_pdf_sha256,
+                expected_markdown_sha256=source_sha, expected_images=existing_images)
+            mapping = json.loads((assets_dir.parent / 'source_image_map.json').read_bytes())
+            if (mapping.get('source_sha256') != source_sha
+                    or set(mapping.get('images', {}).values()) != set(existing_images)):
+                raise ValueError('source_figure_map_binding_mismatch')
+            return existing_images
     selection = create_figure_sources(
         result_dir, assets_dir, original_pdf_sha256=original_pdf_sha256,
         markdown_sha256=source_sha, auth_original_pdf=auth_original_pdf,
@@ -716,6 +733,18 @@ def create_chart_source_assets(result_dir: Path, assets_dir: Path, max_images: i
     if selection is not None:
         write_source_image_map(result_dir, assets_dir, selection["copied_images"],
                                provider_references=selection["reference_images"])
+        if not selection['images'] and auth_original_pdf is not None and max_images > 0:
+            # Layout/HTML tables can have no standalone provider bitmap.
+            from original_pdf_figures import extract as original_figures, write as write_original_figures
+            raw_pdf = Path(auth_original_pdf).read_bytes()
+            if digest(raw_pdf) != original_pdf_sha256:
+                raise ValueError('original_figure_pdf_binding_mismatch')
+            with fitz.open(stream=raw_pdf, filetype='pdf') as document:
+                pages = [{'page': index + 1, 'text': page.get_text('text')} for index, page in enumerate(document)]
+            evidence, native_images = original_figures(raw_pdf, pages, source_sha256=source_sha, maximum=min(3, max_images))
+            if native_images:
+                write_original_figures(assets_dir.parent, evidence, native_images)
+                return list(native_images)
         return selection["images"]
 
     # Older cached results without provider metadata keep their previous route.
@@ -1281,6 +1310,10 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
             status["source_figure_map"] = sidecar.name
             status["source_figure_map_sha256"] = digest(sidecar.read_bytes())
         status["chart_source_image_count"] = len(status["images"])
+        original_sidecar = item_dir / 'source_original_figures.json'
+        if original_sidecar.is_file():
+            status.update(original_figures_sha256=digest(original_sidecar.read_bytes()),
+                          image_source_kind='original_pdf_figures')
         if not getattr(args, "keep_mineru_raw", False):
             shutil.rmtree(raw_dir)
         (item_dir / "status.json").write_text(
@@ -1305,7 +1338,28 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
         title, subtitle = extract_cover_titles(note, fallback_title)
     status["cover_short_title"] = title
     status["cover_subtitle"] = subtitle
-    status["images"] = create_visual_assets(raw_dir, pdf_path, assets_dir, args.max_images, title=title)
+    if status['xhs_generation_enabled']:
+        status['xhs_images'] = create_visual_assets(raw_dir, pdf_path, assets_dir, args.max_images, title=title)
+    # The normal WeChat path needs the same original-page/layout proof as the
+    # source-only recovery path. Standalone bitmap heuristics miss vector plots
+    # and HTML tables even when MinerU supplied their page/bbox metadata.
+    status['source_markdown'] = 'source_mineru.md'
+    status['original_pdf_sha256'] = digest(pdf_path.read_bytes())
+    status['images'] = create_chart_source_assets(raw_dir, assets_dir, args.max_images,
+        original_pdf_sha256=status['original_pdf_sha256'], auth_original_pdf=pdf_path,
+        markdown_sha256=digest((item_dir / 'source_mineru.md').read_bytes()))
+    status['chart_source_image_count'] = len(status['images'])
+    original_sidecar = item_dir / 'source_original_figures.json'
+    if original_sidecar.is_file():
+        status.update(original_figures_sha256=digest(original_sidecar.read_bytes()),
+                      image_source_kind='original_pdf_figures')
+    sidecar = item_dir / 'source_figure_map.json'
+    if sidecar.is_file():
+        status['source_figure_map'] = sidecar.name
+        status['source_figure_map_sha256'] = digest(sidecar.read_bytes())
+    # Preserve the verified parse if text generation later times out. A retry
+    # replays these existing crop proofs instead of rebuilding over them.
+    (item_dir / 'status.json').write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding='utf-8')
     generate_wechat_article(item_dir, pdf_path.name, source_text, args, status)
     try:
         make_cover(pdf_path, assets_dir / "cover.png", title, subtitle, args.watermark)

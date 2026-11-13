@@ -424,18 +424,23 @@ def chart_assets(raw_dir, assets_dir, maximum, *, original_pdf_sha256=None,
 
 def figure_source_status(directory):
     """Bind a newly produced sidecar so its later removal cannot become legacy."""
+    native = Path(directory) / 'source_original_figures.json'
+    if native.is_symlink():
+        fail('figure_source_contract')
+    native_fields = ({'original_figures_sha256': digest(native.read_bytes()),
+                      'image_source_kind': 'original_pdf_figures'} if native.is_file() else {})
     sidecar = Path(directory) / FIGURE_SIDECAR
     if sidecar.is_symlink():
         fail('figure_source_contract')
     if not sidecar.exists():
-        return {}
+        return native_fields
     if not sidecar.is_file():
         fail('figure_source_contract')
     with sidecar.open('rb') as stream:
         payload = stream.read(MAX_FIGURE_JSON + 1)
     if len(payload) > MAX_FIGURE_JSON:
         fail('figure_source_contract')
-    return {'source_figure_map': FIGURE_SIDECAR, 'source_figure_map_sha256': digest(payload)}
+    return {**native_fields, 'source_figure_map': FIGURE_SIDECAR, 'source_figure_map_sha256': digest(payload)}
 
 
 def materialize(plan, destination, *, downloader=download_once, asset_writer=chart_assets, max_images=28):

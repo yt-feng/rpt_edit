@@ -32,7 +32,7 @@ def is_publication_furniture_metadata(record: dict) -> bool:
     return False
 
 
-def source_chart_images(report_dir: Path) -> list[Path]:
+def source_chart_images(report_dir: Path, *, require_verified=False) -> list[Path]:
     """Read retained MinerU exhibits, never generated page/title/card artwork.
 
     A present source map limits the set to its source-bound assets, so stale
@@ -40,6 +40,25 @@ def source_chart_images(report_dir: Path) -> list[Path]:
     Authentication of the original handoff remains the producer's contract.
     """
     report_dir = Path(report_dir)
+    from original_pdf_figures import SIDECAR
+    original_figures = report_dir / SIDECAR
+    if original_figures.exists() or original_figures.is_symlink():
+        from original_pdf_figures import admitted
+        # Original OCR crops have their own explicit source/provenance proof.
+        # They never masquerade as a MinerU Markdown result.
+        paths = admitted(report_dir)
+        if any(not is_article_image_candidate(path) for path in paths):
+            raise ValueError('source_figure_asset_rejected')
+        return paths
+    if require_verified:
+        status_path = report_dir / 'status.json'
+        status = json.loads(status_path.read_bytes()) if status_path.is_file() else {}
+        if status.get('source_method') == 'ocr' and status.get('image_source_kind') != 'ocr_reconstructed_chart':
+            raise ValueError('source_figure_audit_missing')
+        paths = source_chart_images(report_dir)
+        if status.get('images') and not paths and status.get('image_source_kind') != 'ocr_reconstructed_chart':
+            raise ValueError('source_figure_assets_missing')
+        return paths
     assets = report_dir / "assets"
     if assets.is_symlink() or not assets.is_dir():
         return []

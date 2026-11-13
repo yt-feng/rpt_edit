@@ -123,6 +123,52 @@ class Fixture:
 
 
 class FigureSourceTests(unittest.TestCase):
+    def test_normal_wechat_generation_crops_original_vector_figures_despite_blank_provider_bitmap(self):
+        import shutil
+        import pdf_to_xhs_batch as producer
+        from wechat_image_quality import source_chart_images
+        fixture = self.fixture()
+        for image in fixture.raw.rglob('*.jpg'):
+            Image.new('RGB', (700, 500), 'white').save(image)
+        (fixture.raw / 'source.md').write_text('# Source research\n\nVector chart evidence from the original PDF.')
+        output = fixture.root / 'normal-daily'
+        def download(_url, target):
+            shutil.copytree(fixture.raw, target, dirs_exist_ok=True)
+        args = producer.build_arg_parser().parse_args(['--no-wechat-title-refine'])
+        with patch.object(producer, 'download_and_unzip', side_effect=download), \
+                patch.object(producer, 'create_visual_assets', side_effect=AssertionError('bitmap/card path is insufficient')), \
+                patch.object(producer, 'generate_wechat_article') as article, patch.object(producer, 'make_cover'):
+            status = producer.process_pdf(fixture.original, {'state': 'done', 'full_zip_url': 'https://example.invalid/result'}, output, args)
+            replay = producer.process_pdf(fixture.original, {'state': 'done', 'full_zip_url': 'https://example.invalid/result'}, output, args)
+        self.assertEqual(article.call_count, 2)
+        self.assertEqual(replay['images'], status['images'])
+        directory = output / producer.slug(fixture.original.name)
+        self.assertEqual(status['chart_source_image_count'], 1)
+        self.assertEqual(status['original_pdf_sha256'], fixture.original_sha)
+        self.assertEqual(len(source_chart_images(directory, require_verified=True)), 1)
+
+    def test_layout_only_html_table_recovers_original_pixels_instead_of_zero_figures(self):
+        import shutil
+        import pdf_to_xhs_batch as producer
+        from wechat_image_quality import source_chart_images
+        content, parent = visual(0, [35, 100, 185, 260], kind='table',
+                                 body='<table><tr><td>Revenue</td><td>42</td></tr></table>')
+        content['img_path'] = ''
+        parent['blocks'][0]['lines'][0]['spans'][0]['image_path'] = ''
+        fixture = self.fixture(visuals=[(content, parent)])
+        (fixture.raw / 'source.md').write_text('# Original research\n\nRevenue table from the original PDF.')
+        args = producer.build_arg_parser().parse_args(['--no-wechat-title-refine'])
+        output = fixture.root / 'layout-only'
+        with patch.object(producer, 'download_and_unzip', side_effect=lambda _url, target: shutil.copytree(fixture.raw, target)), \
+                patch.object(producer, 'generate_wechat_article'), patch.object(producer, 'make_cover'):
+            status = producer.process_pdf(fixture.original, {'state': 'done', 'full_zip_url': 'https://example.invalid/result'}, output, args)
+        directory = output / producer.slug(fixture.original.name)
+        self.assertEqual(status['image_source_kind'], 'original_pdf_figures')
+        self.assertEqual(len(source_chart_images(directory, require_verified=True)), 1)
+        figures.validate_figure_sources(directory, expected_original_sha256=fixture.original_sha,
+            expected_markdown_sha256=digest((directory / 'source_mineru.md').read_bytes()),
+            expected_images=status['images'])
+
     def test_dense_200_page_metadata_keeps_complete_inventory_with_only_eight_crops(self):
         # Observed production shape: 1,330 uniquely bound visuals in the first
         # 200-page segment, even though the article selects at most eight.

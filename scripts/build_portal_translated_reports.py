@@ -728,6 +728,24 @@ def prepare_clean_markdown(
             continue
         output_lines.append(stripped)
 
+    # OCR page text intentionally contains no fabricated image references.
+    # Carry its independently authenticated original exhibits into translation
+    # even when the text model/source Markdown did not mention an image token.
+    from wechat_image_quality import source_chart_images
+    copied_sources = {str(Path(row['source_path']).resolve()) for row in figures}
+    for path in source_chart_images(report_dir, require_verified=True):
+        if max_images > 0 and image_index > max_images:
+            break
+        if str(path.resolve()) in copied_sources:
+            continue
+        copied = copy_resolved_image_for_report(path, assets_dir, image_index, 'source_bound_original')
+        if copied:
+            token, meta = copied
+            meta['source_kind'] = ('ocr_original' if (report_dir / 'source_original_figures.json').is_file() else 'mineru')
+            figures.append(meta)
+            output_lines.extend(['', token, ''])
+            copied_sources.add(str(path.resolve()))
+            image_index += 1
     clean_md = "\n".join(output_lines)
     clean_md = re.sub(r"\n{4,}", "\n\n\n", clean_md).strip() + "\n"
     return sanitize_text(clean_md), figures

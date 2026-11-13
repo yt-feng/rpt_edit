@@ -9,6 +9,7 @@ import subprocess
 import tempfile
 from types import SimpleNamespace
 import unittest
+import fitz
 from unittest.mock import patch
 
 import institution_dependency_backlog as backlog
@@ -36,7 +37,10 @@ class InstitutionOcrTests(unittest.TestCase):
         self.bindings = {}
         for number in range(1, 4):
             path = self.inputs / f"{number:04d}-WorldBank-report-{number}.pdf"
-            path.write_bytes(b"%PDF-fixture-" + str(number).encode())
+            with fitz.open() as document:
+                page = document.new_page()
+                page.insert_text((40, 60), f'Original research report {number}, text only.')
+                document.save(path)
             self.bindings[path.name] = {"source": f"WorldBank-report-{number}.pdf",
                 "sha256": digest(path.read_bytes()), "size": path.stat().st_size}
         self.inventory = {"schema": 1, "sources": list(self.bindings.values()), "deferred_sources": 0}
@@ -96,6 +100,23 @@ class InstitutionOcrTests(unittest.TestCase):
         self.assertFalse((directory / "source_ocr.md").exists())
         self.assertFalse((self.output / wrapper.slug(list(self.bindings)[2])).exists())
 
+    def test_original_vector_chart_survives_institution_ocr_continuation(self):
+        from test_original_pdf_figures import chart_pdf
+        from wechat_image_quality import source_chart_images
+        name, _ = next(iter(self.bindings.items()))
+        pdf, _ = chart_pdf(1); path = self.inputs / name; path.write_bytes(pdf)
+        binding = {'source': 'WorldBank-report-1.pdf', 'size': len(pdf), 'sha256': digest(pdf)}
+        directory = self.output / 'with-original-chart'
+        ocr.extract_source(path, directory, binding, reader=pages)
+        self.assertTrue(ocr.existing_source(directory, name, binding))
+        self.assertEqual(resolve_extraction_source(directory).method, 'ocr')
+        self.assertEqual(len(source_chart_images(directory, require_verified=True)), 1)
+        import build_portal_translated_reports as translation
+        clean, images = translation.prepare_clean_markdown(directory, self.root / 'translation', max_images=3)
+        self.assertEqual(len(images), 1)
+        self.assertEqual(images[0]['source_kind'], 'ocr_original')
+        self.assertIn('[[PORTAL_IMAGE_001]]', clean)
+
     def rejected_source(self):
         name, binding = next(iter(self.bindings.items()))
         directory = self.output / wrapper.slug(name)
@@ -119,7 +140,8 @@ class InstitutionOcrTests(unittest.TestCase):
         self.assertEqual(resolve_extraction_source(directory).method, "ocr")
         self.assertTrue(ocr.existing_source(directory, name, binding))
         self.assertEqual({path.name for path in directory.iterdir()},
-                         {"source_ocr.md", "source_ocr_pages.json", "status.json", ocr.RECEIPT})
+                         {"source_ocr.md", "source_ocr_pages.json", "status.json", ocr.RECEIPT,
+                          "source_original_figures.json", "source_image_map.json"})
 
     def test_failed_ocr_keeps_rejected_source_closed_and_never_exposes_partial_ocr(self):
         directory, name, binding = self.rejected_source()
@@ -176,7 +198,7 @@ class InstitutionOcrTests(unittest.TestCase):
         (self.output / "original.pdf").write_bytes(b"%PDF-not-an-output")
         archive = self.root / "extracted-sources.tar.gz"
         count, _size, _digest = create_archive(self.output, archive)
-        self.assertEqual(count, 12)
+        self.assertEqual(count, 18)
         restored = self.root / "restored"
         extract_archive(archive, restored)
         for name, binding in self.bindings.items():

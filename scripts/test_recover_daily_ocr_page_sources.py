@@ -162,7 +162,7 @@ class DailyPagesTests(unittest.TestCase):
         for row in receipt['reports']:
             root=output/row['directory'];status=json.loads((root/'status.json').read_bytes())
             self.assertIn('Original page 2',(root/'source_ocr.md').read_text())
-            self.assertEqual(status['image_source_kind'],'ocr_pages_text_only')
+            self.assertEqual(status['image_source_kind'],'ocr_original_figures')
             self.assertEqual(status['images'],[])
 
     def test_live_daily_producer_and_queued_translations_admit_exact_source(self):

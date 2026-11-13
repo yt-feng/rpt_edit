@@ -200,6 +200,11 @@ def load_sources(source_dir, source_kind, expected_reports, date_folder, *, sour
                 "source_markdown": "source_ocr.md", "source_bytes": source, "status": {},
                 "source_pages_sha256": digest(pages_path.read_bytes()), "pages_path": pages_path,
                 "figures": [(root / row["latex_path"], row) for row in own_figures]})
+            if report.get('original_figures_path'):
+                original_figures = root / report['original_figures_path']
+                require(report['original_figures_path'] in files, 'ocr_unbound_original_figures')
+                plans[-1].update(original_figures_path=original_figures,
+                    original_figures=read_json(original_figures))
     require(len(plans) == expected_reports and len({row["directory"] for row in plans}) == expected_reports
             and len({row["source_pdf"] for row in plans}) == expected_reports, "source_count")
     source_hash = digest(raw)
@@ -219,6 +224,9 @@ def load_sources(source_dir, source_kind, expected_reports, date_folder, *, sour
         "sources": [{"directory": row["directory"], "source_markdown": row["source_markdown"],
             "source_markdown_sha256": digest(row["source_bytes"]), "provenance": row["provenance"],
             **({"source_status_json": row["source_status_json"]} if "source_status_json" in row else {})} for row in plans]}
+    for source, plan in zip(metadata['sources'], plans):
+        if 'original_figures_path' in plan:
+            source['source_original_figures_json'] = plan['original_figures_path'].read_text()
     if source_kind == "ocr-synthesis":
         metadata["source_figures_json"] = (root / "figure_candidates.json").read_text()
     return metadata, plans
@@ -286,7 +294,7 @@ def _stage_source(plan, directory):
     if "pages_path" in plan:
         shutil.copyfile(plan["pages_path"], directory / "source_ocr_pages.json")
         images, provenance = [], []
-        for number, (path, row) in enumerate(plan["figures"], 1):
+        for number, (path, row) in enumerate(plan["figures"] if 'original_figures' not in plan else [], 1):
             require(path.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp"}, "ocr_figure_format")
             relative = f"assets/ocr_reconstructed_{number:02d}{path.suffix.lower()}"
             target = directory / relative
@@ -298,6 +306,17 @@ def _stage_source(plan, directory):
                                "source_figure_path": row["latex_path"]})
         status.update(images=images, image_source_kind=("ocr_pages_text_only"
             if plan['provenance']['source_kind'] == 'ocr-pages' else "ocr_reconstructed_chart"), ocr_figures=provenance)
+        if 'original_figures' in plan:
+            from original_pdf_figures import write, SIDECAR
+            evidence = plan['original_figures']
+            files = {row['path']: (plan['original_figures_path'].parent / row['path']).read_bytes()
+                     for row in evidence['assets']}
+            write(directory, evidence, files)
+            # Preserve the exact producer bytes bound by the outer source receipt.
+            (directory / SIDECAR).write_bytes(plan['original_figures_path'].read_bytes())
+            status.update(images=list(files), chart_source_only=True,
+                chart_source_image_count=len(files), image_source_kind='ocr_original_figures',
+                original_figures_sha256=digest((directory / SIDECAR).read_bytes()), ocr_figures=[])
     status.update(source_pdf=plan["source_pdf"], original_filename=plan["original_filename"],
         original_pdf_sha256=plan["content_sha256"], source_markdown=plan["source_markdown"],
         source_method="ocr" if "pages_path" in plan else "mineru",
@@ -345,8 +364,8 @@ def validate_source_evidence(root, metadata):
                 and receipt["execution_sha"] == metadata["source_execution_sha"]
                 and receipt["selected_manifest_sha256"] == metadata["manifest_sha256"], "source_receipt_identity")
         if pages_only:
-            from ocr_page_sources import POLICY as PAGES_POLICY, EXTRACTION, validate_pages_lineage
-            require(receipt.get('policy') == PAGES_POLICY and receipt.get('extraction') == EXTRACTION
+            from ocr_page_sources import POLICY as PAGES_POLICY, LEGACY_POLICY, EXTRACTION, validate_pages_lineage
+            require(receipt.get('policy') in {PAGES_POLICY, LEGACY_POLICY} and receipt.get('extraction') == EXTRACTION
                     and receipt.get('expected_reports') == receipt.get('report_count') == metadata['expected_reports']
                     and 'source_figures_json' not in metadata,
                     'ocr_pages_article_contract_invalid')
@@ -384,6 +403,23 @@ def validate_source_evidence(root, metadata):
             require(source["source_markdown"] == "source_ocr.md" and digest(text) == source["source_markdown_sha256"]
                     and (directory / "source_ocr.md").read_bytes() == text, "ocr_source_text_binding")
             status = read_json(directory / "status.json")
+            if original.get('original_figures_path'):
+                from original_pdf_figures import SIDECAR, admitted
+                raw_figures = source.get('source_original_figures_json', '').encode()
+                sidecar_path = original['original_figures_path']
+                require(digest(raw_figures) == source_files[sidecar_path]['sha256']
+                        and (directory / SIDECAR).read_bytes() == raw_figures,
+                        'ocr_original_figure_binding')
+                evidence = json.loads(raw_figures)
+                refs = [row['path'] for row in evidence['assets']]
+                for ref in refs:
+                    require(digest((directory / ref).read_bytes()) == source_files[
+                        str(Path(sidecar_path).parent / ref)]['sha256'], 'ocr_original_figure_hash')
+                require(status.get('image_source_kind') == 'ocr_original_figures'
+                        and status.get('ocr_figures') == []
+                        and admitted(directory) == [directory / ref for ref in refs],
+                        'ocr_original_figure_binding')
+                continue
             expected_images, expected_proofs = [], []
             for number, figure in enumerate((row for row in figures if row["report_id"] == rid), 1):
                 path = f"assets/ocr_reconstructed_{number:02d}{Path(figure['latex_path']).suffix.lower()}"

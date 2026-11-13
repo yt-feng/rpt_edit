@@ -369,7 +369,7 @@ def xhs_card_number(path: Path) -> int:
 
 def extra_asset_images(report_dir: Path, already: set[Path]) -> list[tuple[str, Path]]:
     extras: list[tuple[str, Path]] = []
-    for path in source_chart_images(report_dir):
+    for path in source_chart_images(report_dir, require_verified=True):
         resolved = path.resolve()
         if resolved in already:
             continue
@@ -480,6 +480,7 @@ def build_article(
 
     refs = [ref for ref in markdown_local_image_refs(markdown) if not is_xhs_cover_or_card(ref)]
     image_items = extra_asset_images(report_dir, seen_paths)[:args.max_inline_images]
+    original_image_hashes = [hashlib.sha256(path.read_bytes()).hexdigest() for _, path in image_items]
     source_hashes = {hashlib.sha256(path.read_bytes()).hexdigest() for _, path in image_items}
     for ref in refs:
         if len(image_items) >= args.max_inline_images:
@@ -639,6 +640,8 @@ def build_article(
         "content_bytes": utf8_byte_count(content),
         "visible_text_chars": visible_text_chars,
         "body_image_count": body_image_count,
+        "source_image_count": min(len(original_image_hashes), fitted_image_count),
+        "source_image_sha256": original_image_hashes[:fitted_image_count],
     }
 
 
@@ -1083,6 +1086,8 @@ def main(*, submit_draft=None) -> int:
                 "visible_text_chars": item["visible_text_chars"],
                 "inline_image_count": len(item["inline_images"]),
                 "body_image_count": item["body_image_count"],
+                "source_image_count": item.get("source_image_count"),
+                "source_image_sha256": item.get("source_image_sha256"),
                 "cover_image": item["cover_image"],
             }
             for item in built_articles

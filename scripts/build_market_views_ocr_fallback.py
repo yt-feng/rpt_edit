@@ -534,7 +534,7 @@ def build(input_dir: Path, manifest: Path, expected_reports: int, date_folder: s
             "selected_manifest_sha256": sha(raw), "expected_reports": expected_reports, "attempted_reports": len(results),
             "summarized_reports": 0, "skipped_reports": len(skipped), "report_count": 0, "reports": skipped})
         raise RuntimeError("No selected PDF produced a complete synthesis")
-    reports, figures, receipts = [], [], []
+    reports, figures, receipts, original_figure_files = [], [], [], []
     for result in successful:
         rid, summaries = result["id"], result["summaries"]
         title = next((clean for summary in summaries if (clean := clean_research(summary["title"], boilerplate_only))), f"{rid} 研究主题")
@@ -566,13 +566,25 @@ def build(input_dir: Path, manifest: Path, expected_reports: int, date_folder: s
                             ("观点结构图" if spec["kind"] == "qualitative" else "OCR 数据整理重绘，近似值"),
                             "source_pages": spec["source_pages"], "chart_spec": spec})
             figure_ids.append(figure_id)
+        from original_pdf_figures import extract as extract_original_figures, encode as encode_original_figures, SIDECAR
+        from report_extraction_source import ocr_markdown_from_pages
+        original_raw = originals[result['source_pdf']].read_bytes()
+        if sha(original_raw) != result['content_sha256']:
+            raise ValueError('original_pdf_changed_before_figure_render')
+        original_figures, original_images = extract_original_figures(original_raw, result['pages'],
+            source_sha256=sha(ocr_markdown_from_pages(result['pages'], len(result['pages']))))
+        original_root = output / 'ocr_sources' / rid / 'original_figures'
+        for name, data in {**original_images, SIDECAR: encode_original_figures(original_figures)}.items():
+            target = original_root / name; target.parent.mkdir(parents=True, exist_ok=True); target.write_bytes(data)
+            original_figure_files.append(target)
         receipts.append({"id": rid, "status": "summarized", "source_pdf": result["source_pdf"], "content_sha256": result["content_sha256"],
                          "page_count": len(result["pages"]), "pages_covered": [page["page"] for page in result["pages"]],
                          "empty_text_pages": [page["page"] for page in result["pages"] if page["empty_text"]],
                          "chunk_count": len(result["chunks"]), "chunks_completed": len(summaries),
                          "publication_editing": {key: edited[key] for key in
                              ("removed_boilerplate_sentences", "removed_duplicate_sentences")},
-                         "figure_ids": figure_ids})
+                         "figure_ids": figure_ids,
+                         "original_figures_path": (original_root / SIDECAR).relative_to(output).as_posix()})
         print(f"OCR_SYNTHESIS_EDITED={rid} boilerplate_removed={edited['removed_boilerplate_sentences']} "
               f"duplicates_removed={edited['removed_duplicate_sentences']}", flush=True)
     cross_report, audit = synthesize(successful, reports, figures, cache_dir=cache_dir,
@@ -604,7 +616,8 @@ def build(input_dir: Path, manifest: Path, expected_reports: int, date_folder: s
                          [output / name for name in ("selected_to_process_manifest.json", "report_inputs.json", "figure_candidates.json", "market_views_structured.json", "cross_report_evidence.json")]
                          + [output / figure["latex_path"] for figure in figures]
                          + [output / "ocr_sources" / result["id"] / name for result in successful
-                            for name in ("pages.json", "chunks.json", "summaries.json")]]}
+                            for name in ("pages.json", "chunks.json", "summaries.json")]
+                         + original_figure_files]}
     write_json(output / RECEIPT_NAME, receipt)
     print("OCR_SYNTHESIS_EDITING_TOTAL " + " ".join(f"{key}={value}" for key, value in
           receipt["publication_editing"].items()), flush=True)

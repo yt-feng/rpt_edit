@@ -529,6 +529,24 @@ def validate_delivery(workspace):
     result['verified_articles_by_account'] = dict(sorted(account_counts.items()))
     result['verified_drafts_by_account'] = {account: len(sizes) for account, sizes in sorted(account_groups.items())}
     result['draft_article_counts_by_account'] = dict(sorted(account_groups.items()))
+    audited, source_images = 0, 0
+    from wechat_image_quality import source_chart_images
+    for row in rows:
+        hashes = row.get('source_image_sha256')
+        if hashes is None and row.get('source_image_count') is None:
+            # Historical draft acceptance remains readable, without claiming
+            # that its original figures were ever checked.
+            continue
+        directory = article_root / Path(row['report_dir']).name
+        available = [digest(path.read_bytes()) for path in source_chart_images(directory, require_verified=True)][:3]
+        require(isinstance(hashes, list) and hashes == available[:len(hashes)]
+                and (0 < len(hashes) <= len(available) if available else hashes == [])
+                and type(row.get('source_image_count')) is int
+                and row['source_image_count'] == len(hashes), 'wechat_source_figure_coverage_incomplete')
+        audited += 1; source_images += len(hashes)
+    result.update(figure_verification_complete=audited == len(rows),
+                  figure_audited_articles=audited, verified_source_image_count=source_images,
+                  missing_figure_audit_articles=len(rows) - audited)
     write_json(workspace / 'wechat_delivery_receipt.json', result)
     return result
 
@@ -622,7 +640,9 @@ def upload_wechat(workspace, client, bucket):
         '--min-inline-images', '3', '--max-inline-images', '3']
     try:
         require(uploader.main(submit_draft=add) == 0, 'wechat_upload_failed')
-        return validate_delivery(workspace)
+        result = validate_delivery(workspace)
+        require(result['figure_verification_complete'], 'wechat_source_figure_verification_incomplete')
+        return result
     finally:
         sys.argv = argv
         uploader.checkpoint_wechat_drafts = original_checkpoint
@@ -661,7 +681,9 @@ def main(argv=None):
         print(json.dumps({'status': 'complete', 'stage': args.command,
                           **({key: result[key] for key in ('article_count', 'draft_count', 'source_report_count',
                               'policy_excluded_count', 'accounted_report_count', 'verified_articles_by_account',
-                              'verified_drafts_by_account', 'draft_article_counts_by_account') if key in result})}))
+                              'verified_drafts_by_account', 'draft_article_counts_by_account',
+                              'figure_verification_complete', 'figure_audited_articles',
+                              'verified_source_image_count', 'missing_figure_audit_articles') if key in result})}))
         return 0
     except Exception as error:
         # Error text from SDKs, HTML generation or providers may contain bodies.
