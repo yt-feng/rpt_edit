@@ -28,7 +28,56 @@ def chart_pdf(count=4):
     return raw, pages
 
 
+def scanned_pdf(text):
+    with fitz.open() as template:
+        page = template.new_page(width=600, height=800)
+        page.insert_textbox(fitz.Rect(45, 40, 555, 740), text, fontsize=11)
+        page.draw_rect(fitz.Rect(70, 520, 500, 700), color=(.1, .3, .8))
+        pixels = page.get_pixmap(dpi=120, alpha=False).tobytes('png')
+    with fitz.open() as document:
+        page = document.new_page(width=600, height=800)
+        page.insert_image(page.rect, stream=pixels)
+        raw = document.tobytes()
+    return raw, [{'page': 1, 'text': text, 'method': 'ocr',
+                  'text_sha256': figures.digest(text.encode()), 'empty_text': False}]
+
+
 class OriginalFiguresTests(unittest.TestCase):
+    def test_unnumbered_scanned_plot_grids_and_financial_snapshots_keep_original_pixels(self):
+        examples = [
+            'China imports\nIndex, sa, 3mma\n0 20 40 60 80 100\n2019 2020 2021 2022 2023 2024\nSource: Customs\n'
+            'China export prices\n% yoy\n0 10 20 30 40\nSource: Research',
+            'Company snapshot\nFiscal Year Ending 2025 2026 2027 2028\nEPS 3.13 2.36 4.88 7.17\n'
+            'Revenue 3028 3709 4884 6205\nMkt cap 13983\n52-Week Range 29.35 12.00\n'
+            'For analyst certification and other important disclosures, please refer to the end of this report.',
+        ]
+        for text in examples:
+            with self.subTest(snapshot='Fiscal Year' in text):
+                pdf, pages = scanned_pdf(text); sha = figures.digest(text.encode())
+                legacy, old_files = figures.extract(pdf, pages, source_sha256=sha, policy=figures.LEGACY_POLICY)
+                self.assertEqual(old_files, {})
+                figures.validate(legacy, old_files.__getitem__, original_pdf_sha256=figures.digest(pdf),
+                                 source_sha256=sha, pdf=pdf, pages=pages)
+                proof, files = figures.extract(pdf, pages, source_sha256=sha)
+                self.assertEqual(len(files), 1)
+                self.assertEqual(proof['assets'][0]['kind'], 'original_pdf_chart_page')
+                figures.validate(proof, files.__getitem__, original_pdf_sha256=figures.digest(pdf),
+                                 source_sha256=sha, pdf=pdf, pages=pages)
+
+    def test_scanned_legal_appendix_and_numeric_prose_do_not_become_charts(self):
+        examples = [
+            'Analyst Certification\nImportant Disclosures\nRating Distribution\n% Buy Hold Sell\n'
+            '10 20 30 40 50 60 70 80 90 100 110 120\nSource: Bank\nSource: Ratings\nInvestment banking clients',
+            ('Revenue and EPS expanded across the operations described in this report with growth measured at '
+             '1% 2% 3% 4% 5% 6% 7% 8% 9% 10% 11% 12% and the following long narrative discusses how '
+             'management expects demand to develop across its markets during the coming quarters.\nSource: Company'),
+        ]
+        for text in examples:
+            pdf, pages = scanned_pdf(text)
+            proof, files = figures.extract(pdf, pages, source_sha256=figures.digest(text.encode()))
+            self.assertEqual(files, {})
+            self.assertEqual(proof['candidate_count'], 0)
+
     def test_real_vector_crops_are_replayed_and_admitted_as_ocr_originals(self):
         pdf, pages = chart_pdf()
         markdown = ocr_markdown_from_pages(pages, len(pages))
