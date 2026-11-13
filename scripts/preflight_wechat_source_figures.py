@@ -8,8 +8,7 @@ import sys
 import tempfile
 
 from recovered_article_delivery import api, DAILY, MANUAL
-from inspect_market_views_r2_cache import ReadOnlyClient, build_client
-from recover_ocr_cache_sources import exact_head
+from inspect_market_views_r2_cache import ReadOnlyClient, build_client, bounded_size, InvalidObject
 from private_workflow_handoff import download_directory, r2_bucket
 from ocr_page_sources import RECEIPT, validate_pages_receipt
 from original_pdf_figures import SIDECAR, digest, encode, extract, validate, write
@@ -17,6 +16,8 @@ from report_extraction_source import ocr_markdown_from_pages
 from wechat_image_quality import source_chart_images
 
 WORKFLOW = '.github/workflows/wechat-source-figure-preflight.yml'
+MAX_ARCHIVE_BYTES = 2 * 1024 ** 3
+MAX_EXPANDED_BYTES = 4 * 1024 ** 3
 
 
 class FigurePreflightError(ValueError):
@@ -39,6 +40,13 @@ def producer(run, run_id, repository, workflow):
             and run.get('head_repository', {}).get('full_name') == repository
             and re.fullmatch(r'[a-f0-9]{40}', run.get('head_sha', '')))
     return run['head_sha']
+
+
+def source_archive_head(client, bucket, key):
+    head = client.head_object(Bucket=bucket, Key=key)
+    bounded_size(head, MAX_ARCHIVE_BYTES)
+    require(re.fullmatch(r'[a-f0-9]{64}', str((head.get('Metadata') or {}).get('sha256', ''))))
+    return head
 
 
 def replay_primary(pdf, directory, selected):
@@ -83,8 +91,8 @@ def audit(original_root, primary_root, workspace, original_receipt, primary_rece
         pdf = (original_root / report['original_pdf_path']).read_bytes()
         require(digest(pdf) == report['content_sha256'])
         primary_directory = primary_root / primary['directory']
-        selected = source_chart_images(primary_directory, require_verified=True)
         try:
+            selected = source_chart_images(primary_directory, require_verified=True)
             replayed = replay_primary(pdf, primary_directory, selected) if selected else 0
         except Exception:
             raise FigurePreflightError(ordinal, 'primary_figure_replay_failed') from None
@@ -126,6 +134,7 @@ def audit(original_root, primary_root, workspace, original_receipt, primary_rece
 
 def main():
     result = {'status': 'incomplete', 'category': 'source_figure_preflight_not_verified'}
+    stage = 'producer_metadata'
     try:
         env = os.environ; repository = env.get('GITHUB_REPOSITORY', '')
         require(env.get('GITHUB_ACTIONS') == 'true' and env.get('GITHUB_REF') == 'refs/heads/main'
@@ -146,8 +155,13 @@ def main():
                 for prefix, identity, destination in (('market-ocr-pages-daily', run_id, 'originals'),
                                                        ('mineru-market-sources', recovery_id, 'primary')):
                     key = f'_private-workflow-handoff/{prefix}/{identity}/{date}/shard_0.tar.gz'
-                    head = exact_head(client, bucket, key)
-                    download_directory(key, root / destination, client=ReadOnlyClient(client, head), bucket=bucket)
+                    stage = destination + '_archive'
+                    head = source_archive_head(client, bucket, key)
+                    reader = ReadOnlyClient(client, head, archive_limit=MAX_ARCHIVE_BYTES, expanded_limit=MAX_EXPANDED_BYTES)
+                    download_directory(key, root / destination, client=reader, bucket=bucket)
+                    progress({'event': 'source_archive_verified', 'source_kind': destination,
+                              'archive_bytes': head['ContentLength']})
+                stage = 'source_receipts'
                 original = validate_pages_receipt(root / 'originals', date_folder=date, expected_reports=int(count),
                     source_run_id=run_id, execution_sha=original_sha, recovery_run_id=run_id, recovery_execution_sha=original_sha)
                 from recover_durable_mineru_sources import validate_sources
@@ -155,10 +169,16 @@ def main():
                     expected_recovery_run_id=recovery_id, expected_execution_sha=recovery_sha)
                 require(original['selected_manifest_sha256'] == primary['manifest_sha256'] == manifest
                         and primary['source_run_id'] == run_id and primary['source_execution_sha'] == original_sha)
+                stage = 'figure_replay'
                 result = audit(root / 'originals', root / 'primary', root, original, primary, progress)
         print(json.dumps({key: value for key, value in result.items() if key != 'reports'}, sort_keys=True))
     except Exception as error:
         result['error_type'] = type(error).__name__
+        result['stage'] = stage
+        if isinstance(error, InvalidObject) and str(error) in {'object_size_limit', 'archive_changed',
+                'archive_hash_mismatch', 'archive_expansion_limit', 'archive_member_limit', 'archive_format',
+                'archive_path', 'archive_duplicate_member', 'object_size_mismatch', 'object_body', 'archive_limit_invalid'}:
+            result['category'] = str(error)
         if isinstance(error, FigurePreflightError):
             result.update(category=error.category, source_ordinal=error.ordinal)
         print(json.dumps(result, sort_keys=True))
