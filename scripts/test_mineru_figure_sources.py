@@ -123,6 +123,47 @@ class Fixture:
 
 
 class FigureSourceTests(unittest.TestCase):
+    def test_banking_distribution_contacts_and_coverage_appendices_are_furniture(self):
+        examples = [
+            ('<table><tr><td>Rating Distribution</td><td>Investment Banking Relationships</td></tr>'
+             '<tr><td>Buy Hold Sell</td><td>50% 34% 16%</td></tr></table>', []),
+            ('<table><tr><td>Overweight (buy) Neutral (hold) Underweight (sell)</td></tr>'
+             '<tr><td>IB clients</td><td>83% 81% 72%</td></tr></table>',
+             [([35, 280, 350, 299], 'Equity Research Ratings Distribution')]),
+            ('<table><tr><td>Analyst Name</td><td>Equity Analyst</td></tr>'
+             '<tr><td>analyst@example.invalid</td><td>+852 1234 5678</td></tr></table>', []),
+            ('<table><tr><td>COMPANY (TICKER)</td><td>RATING (AS OF)</td><td>PRICE</td></tr>'
+             '<tr><td>Company A</td><td>O (11/10/2026)</td><td>HK$20</td></tr></table>',
+             [([35, 280, 350, 299], 'INDUSTRY COVERAGE: Utilities')]),
+        ]
+        for body, captions in examples:
+            fixture = self.fixture(visuals=[visual(0, [35, 300, 360, 390], body=body, captions=captions)])
+            fixture.create(); fixture.status(); fixture.validate()
+            self.assertEqual(fixture.selection['images'], [])
+
+        body, _ = examples[0]
+        legacy = self.fixture(visuals=[visual(0, [35, 300, 360, 390], body=body)])
+        decision = figures._decisions
+        def previous(metadata, maximum, **_):
+            return decision(metadata, maximum, article_figures=True, complete_furniture=False)
+        with patch.object(figures, '_decisions', side_effect=previous):
+            legacy.create()
+        legacy.mutate(lambda value: value.update(selection_policy=figures.PREVIOUS_ARTICLE_SELECTION_POLICY))
+        legacy.status(); legacy.validate()
+        self.assertEqual(len(legacy.selection['images']), 1)
+        from wechat_image_quality import source_chart_images
+        self.assertEqual(source_chart_images(legacy.report, require_verified=True), [])
+
+    def test_issuer_disclosure_scope_does_not_remove_a_business_chart_above_it(self):
+        blocks = [text_block([35, 180, 350, 195], 'Analyst Certification', 'title', 2),
+                  text_block([35, 220, 350, 235], 'Issuer Specific Regulatory Disclosures', 'title', 2)]
+        data = [visual(0, [35, 50, 350, 150], kind='chart',
+                       captions=[([35, 30, 350, 49], 'Figure 1: Revenue growth')]),
+                visual(1, [35, 280, 350, 450], kind='chart')]
+        fixture = self.fixture(visuals=data, text_blocks=blocks)
+        fixture.create(); fixture.status(); fixture.validate()
+        self.assertEqual([row['index'] for row in fixture.proof()['assets']], [0])
+
     def test_regulatory_ratings_distribution_is_excluded_and_old_policy_replays(self):
         from wechat_image_quality import source_chart_images
         body = ('<table><tr><td>Buy Hold Sell</td><td>61% 32% 7%</td></tr><tr>'

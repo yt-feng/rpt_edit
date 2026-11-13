@@ -22,7 +22,8 @@ from typing import Any
 POLICY = "mineru-source-figures-v1"
 RESTORED_POLICY = "mineru-source-figures-v2"
 LEGACY_ARTICLE_SELECTION_POLICY = "article-data-figures-v1"
-ARTICLE_SELECTION_POLICY = "article-data-figures-v2"
+PREVIOUS_ARTICLE_SELECTION_POLICY = "article-data-figures-v2"
+ARTICLE_SELECTION_POLICY = "article-data-figures-v3"
 SIDECAR = "source_figure_map.json"
 MAX_JSON = 32 * 1024 * 1024
 MAX_ITEMS = 20000
@@ -588,8 +589,51 @@ def _crop(record, records, page_size, pixel_size):
             "attachments": decisions}
 
 
-def _regulatory_rating_table(record, page):
+def _regulatory_rating_table(record, page, *, complete_furniture=True):
     body = _plain(record['body_text']).lower()
+    captions = ' '.join([*record['content_captions'], *(row['text'] for row in record['captions'])])
+    if complete_furniture:
+        combined = body + ' ' + captions.lower()
+        page_text = '\n'.join(row['text'] for row in page['text_blocks'])
+        box = record['body_bbox']
+        nearby = ' '.join(row['text'] for row in page['text_blocks']
+                          if 0 <= box[1] - row['bbox'][3] <= 24 and _overlap(box, row['bbox']) >= .8)
+        page_cues = _cues(page_text)
+        legal_scope = sum(bool(value) for name, value in page_cues.items() if name != 'banking_clients') >= 2
+        issuer_headers = [row for row in page['text_blocks']
+                          if re.fullmatch(r'\s*Issuer Specific Regulatory Disclosures\s*', row['text'], re.I)]
+        if (re.search(r'(?im)^\s*Analyst Certification\s*$', page_text)
+                and any(box[1] >= row['bbox'][3] for row in issuer_headers)):
+            return True
+        if (re.search(r'ratings?\s+distribution', combined)
+                and re.search(r'investment\s+banking|\bIB\s+clients', combined, re.I)):
+            return True
+        # Contact directories are sometimes emitted as tables by MinerU.
+        if (re.search(r'[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}', body)
+                and re.search(r'equity analyst|research associate|research analyst', body)
+                and not re.search(r'\bEPS\b|\brevenue\b|\bmarket cap\b', body, re.I)):
+            return True
+        if (re.search(r'industry coverage', captions + ' ' + nearby, re.I)
+                and re.search(r'company\s*\(ticker\)', body)
+                and re.search(r'rating\s*\(as of\)', body)):
+            return True
+        if legal_scope:
+            if (re.search(r'rating.{0,20}(?:history|price chart)|price target.{0,30}history',
+                          combined, re.I)
+                    or (record['kind'] in {'chart', 'image'}
+                        and re.search(r'\bas of\b.{0,80}\bGMT\b.{0,20}\bin\b', captions, re.I))):
+                return True
+            if (all(re.search(r'\b' + term + r'\b', body) for term in ('issuer', 'ticker', 'disclosures'))
+                    and re.search(r'stock rating|sector rating', body)):
+                return True
+            # A regulatory ratings chart may have no attached caption at all.
+            if (record['kind'] in {'chart', 'image'}
+                    and re.search(r'(?i)\banalyst certification\b|issuer specific regulatory disclosures', page_text)
+                    and any(re.search(r'(?i)rating.{0,30}(?:price chart|history)', block['text'])
+                        and 0 <= record['body_bbox'][1] - block['bbox'][3] <= 120
+                        and _overlap(record['body_bbox'], block['bbox']) >= .8
+                        for block in page['text_blocks'])):
+                return True
     ratings = sum(bool(re.search(r'\b' + word + r'\b', body)) for word in ('buy', 'hold', 'sell'))
     if ratings < 2:
         return False
@@ -601,7 +645,7 @@ def _regulatory_rating_table(record, page):
                for block in page['text_blocks'])
 
 
-def article_figure_indices(metadata, available=None, *, filter_regulatory=True):
+def article_figure_indices(metadata, available=None, *, filter_regulatory=True, complete_furniture=True):
     """Prioritize exhibits, excluding small uncaptioned portraits and marks.
 
     This only selects among the source inventory; it never changes its crop
@@ -614,7 +658,7 @@ def article_figure_indices(metadata, available=None, *, filter_regulatory=True):
         page = metadata["pages"][record["page_idx"]]
         if not record["ref"] or _legal(record, page)["exclude"]:
             continue
-        if filter_regulatory and _regulatory_rating_table(record, page):
+        if filter_regulatory and _regulatory_rating_table(record, page, complete_furniture=complete_furniture):
             continue
         captions = " ".join([*record["content_captions"], *(r["text"] for r in record["captions"])])
         box = record["body_bbox"]
@@ -631,9 +675,10 @@ def article_figure_indices(metadata, available=None, *, filter_regulatory=True):
     return [index for _, _, index in sorted(ranked)]
 
 
-def _decisions(metadata, maximum, *, article_figures=False, filter_regulatory=True):
+def _decisions(metadata, maximum, *, article_figures=False, filter_regulatory=True, complete_furniture=True):
     result, selected = [], 0
-    allowed = article_figure_indices(metadata, filter_regulatory=filter_regulatory) if article_figures else None
+    allowed = article_figure_indices(metadata, filter_regulatory=filter_regulatory,
+                                    complete_furniture=complete_furniture) if article_figures else None
     winners = set(allowed[:maximum]) if allowed is not None else None
     for record in metadata["records"]:
         legal = _legal(record, metadata["pages"][record["page_idx"]])
@@ -1020,7 +1065,7 @@ def _validate(report, original_sha, markdown_sha, images, *, status_images=None)
     article_figures = isinstance(value, dict) and "selection_policy" in value
     if article_figures:
         fields.add("selection_policy")
-        if value["selection_policy"] not in {ARTICLE_SELECTION_POLICY, LEGACY_ARTICLE_SELECTION_POLICY}:
+        if value["selection_policy"] not in {ARTICLE_SELECTION_POLICY, PREVIOUS_ARTICLE_SELECTION_POLICY, LEGACY_ARTICLE_SELECTION_POLICY}:
             _fail("figure_proof_invalid")
     _keys(value, fields | ({"embedded_pdf_render_restoration"} if restored else set()))
     if (type(value["schema"]) is not int or value["schema"] not in (1, 2)
@@ -1045,7 +1090,8 @@ def _validate(report, original_sha, markdown_sha, images, *, status_images=None)
         _fail("figure_proof_invalid")
     maximum = _int(value["max_images"], 0, MAX_VISUALS)
     decisions = _decisions(metadata, maximum, article_figures=article_figures,
-        filter_regulatory=value.get('selection_policy') != LEGACY_ARTICLE_SELECTION_POLICY)
+        filter_regulatory=value.get('selection_policy') != LEGACY_ARTICLE_SELECTION_POLICY,
+        complete_furniture=value.get('selection_policy') == ARTICLE_SELECTION_POLICY)
     if _canonical(decisions) != _canonical(value["decisions"]):
         _fail("figure_proof_invalid")
     if not isinstance(images, list) or any(not isinstance(v, str) for v in images):

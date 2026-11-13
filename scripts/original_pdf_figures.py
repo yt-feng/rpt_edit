@@ -12,13 +12,51 @@ from pathlib import Path
 import re
 
 SIDECAR = 'source_original_figures.json'
-POLICY = 'original-pdf-figures-v1'
+LEGACY_POLICY = 'original-pdf-figures-v1'
+POLICY = 'original-pdf-figures-v2'
 DPI = 180
 MAX_IMAGES = 3
 MAX_PIXELS = 40_000_000
 MAX_PDF_BYTES = 128 * 1024 * 1024
 CAPTION = re.compile(r'(?im)^\s*(?:exhibit|figure|fig\.?|chart|table|图表?|表)\s*(?:\d+|[一二三四五六七八九十]+)(?!\d)')
 FURNITURE = re.compile(r'(?im)^\s*(?:table of contents|contents|免责声明|分析师声明|目录|disclosures?|disclaimer)\s*[:：]?\s*$')
+
+
+def _scanned_data_page(page, text):
+    """Recognize unnumbered plot grids and financial snapshots in scans.
+
+    The result authorizes original page context only. It does not reconstruct
+    chart values or treat prose/phone numbers as a data table.
+    """
+    import fitz
+    images = page.get_image_info()
+    if not any((fitz.Rect(row['bbox']) & page.rect).get_area() >= .7 * page.rect.get_area()
+               and row.get('width', 0) >= 500 and row.get('height', 0) >= 500 for row in images):
+        return False
+    numbers = re.findall(r'(?<![A-Za-z])[-+]?\d+(?:[.,]\d+)*', text)
+    if len(numbers) < 12:
+        return False
+    # Only standalone appendix headings qualify; a research page's short
+    # footer pointing to disclosures must not hide its financial tables.
+    heading = re.search(r'(?im)^\s*(?:analyst certification|issuer specific regulatory disclosures|'
+                        r'important disclosures|other disclosures|disclosure appendix|disclosure section)\s*[:：]?\s*$', text[:1200])
+    if heading:
+        from mineru_figure_sources import _cues
+        if sum(bool(value) for name, value in _cues(text).items() if name != 'banking_clients') >= 2:
+            return False
+    financial = bool(re.search(r'(?i)\b(?:EPS|EBITDA|net\s+income|revenue)\b', text))
+    fiscal = bool(re.search(r'(?i)\bfiscal\s*year(?:\s+ending)?\b|\byear\s+ending\b', text))
+    snapshot = sum(bool(re.search(pattern, text, re.I)) for pattern in
+        (r'\b(?:mkt|market)\s*cap\b', r'52[ -]*week', r'\bavg\.?\s*daily\s*trading',
+         r'\bEV\s*/\s*(?:revenue|EBITDA)', r'\bsh\s+out\b', r'\bindustry\s+view\b'))
+    if financial and (fiscal or snapshot >= 2):
+        return True
+    sources = len(re.findall(r'(?i)\bsources?\s*[:：]|来源\s*[:：]', text))
+    units = bool(re.search(r'(?i)%|\b(?:index|yoy|qoq|mom|3mma|percent)\b|同比|环比|指数', text))
+    numeric_lines = sum(len(line) <= 85 and bool(re.search(r'\d', line))
+                        for line in text.splitlines() if line.strip())
+    density = sum(char.isdigit() for char in text) / max(1, len(re.sub(r'\s', '', text)))
+    return units and sources > 0 and (sources >= 2 or numeric_lines >= 5 or density >= .12)
 
 
 def digest(raw):
@@ -34,13 +72,13 @@ def require(condition):
         raise ValueError('original_figure_evidence_invalid')
 
 
-def extract(pdf, pages, *, source_sha256, maximum=MAX_IMAGES):
+def extract(pdf, pages, *, source_sha256, maximum=MAX_IMAGES, policy=POLICY):
     import fitz
     from mineru_figure_sources import _silent_mupdf
     from market_views_source_digest import _chart_regions
     require(isinstance(pdf, bytes) and pdf.startswith(b'%PDF-') and len(pdf) <= MAX_PDF_BYTES
             and isinstance(source_sha256, str) and re.fullmatch(r'[a-f0-9]{64}', source_sha256)
-            and type(maximum) is int and 1 <= maximum <= MAX_IMAGES)
+            and type(maximum) is int and 1 <= maximum <= MAX_IMAGES and policy in {POLICY, LEGACY_POLICY})
     candidates, files = [], {}
     with _silent_mupdf(), fitz.open(stream=pdf, filetype='pdf') as document:
         require(not document.needs_pass and 0 < len(document) <= 1000 and len(pages) == len(document))
@@ -54,7 +92,8 @@ def extract(pdf, pages, *, source_sha256, maximum=MAX_IMAGES):
             # plot at all. Preserve its original chart context only when the
             # verified page text identifies a numbered exhibit with data.
             mode = 'original_pdf_crop'
-            if not regions and CAPTION.search(text) and len(re.findall(r'\d+(?:\.\d+)?', text)) >= 4:
+            if not regions and ((CAPTION.search(text) and len(re.findall(r'\d+(?:\.\d+)?', text)) >= 4)
+                    or (policy == POLICY and _scanned_data_page(page, text))):
                 regions = [page.rect]
                 mode = 'original_pdf_chart_page'
             for region in regions:
@@ -83,7 +122,7 @@ def extract(pdf, pages, *, source_sha256, maximum=MAX_IMAGES):
             assets.append({**candidate, 'path': path, 'sha256': digest(raw), 'bytes': len(raw),
                            'width': pixmap.width, 'height': pixmap.height,
                            'rgb_sha256': digest(pixmap.samples)})
-        evidence = {'schema': 1, 'policy': POLICY, 'original_pdf_sha256': digest(pdf),
+        evidence = {'schema': 1, 'policy': policy, 'original_pdf_sha256': digest(pdf),
                     'source_sha256': source_sha256, 'page_count': len(document), 'dpi': DPI, 'max_images': maximum,
                     'candidate_count': len(candidates), 'candidate_pages': sorted({r['page'] for r in candidates}),
                     'assets': assets}
@@ -95,7 +134,7 @@ def validate(evidence, loader, *, original_pdf_sha256, source_sha256, pdf=None, 
     import io
     require(isinstance(evidence, dict) and set(evidence) == {'schema', 'policy', 'original_pdf_sha256',
             'source_sha256', 'page_count', 'dpi', 'max_images', 'candidate_count', 'candidate_pages', 'assets'}
-            and evidence['schema'] == 1 and evidence['policy'] == POLICY and evidence['dpi'] == DPI
+            and evidence['schema'] == 1 and evidence['policy'] in {POLICY, LEGACY_POLICY} and evidence['dpi'] == DPI
             and evidence['original_pdf_sha256'] == original_pdf_sha256
             and evidence['source_sha256'] == source_sha256
             and type(evidence['max_images']) is int and 1 <= evidence['max_images'] <= MAX_IMAGES
@@ -128,7 +167,8 @@ def validate(evidence, loader, *, original_pdf_sha256, source_sha256, pdf=None, 
         seen.add(asset['path'])
     if pdf is not None:
         require(digest(pdf) == original_pdf_sha256 and pages is not None)
-        rebuilt, rendered = extract(pdf, pages, source_sha256=source_sha256, maximum=evidence['max_images'])
+        rebuilt, rendered = extract(pdf, pages, source_sha256=source_sha256,
+                                    maximum=evidence['max_images'], policy=evidence['policy'])
         require(rebuilt == evidence and all(loader(path) == raw for path, raw in rendered.items()))
     return [asset['path'] for asset in evidence['assets']]
 
