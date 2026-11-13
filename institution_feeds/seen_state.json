@@ -473,42 +473,6 @@
       "first_seen": "2026-08-07",
       "status": "too_old"
     },
-    "oecd:https://www.oecd.org/en/publications/oecd-economic-surveys-united-kingdom-2026_aa997c6e-en.html": {
-      "first_seen": "2026-07-15",
-      "status": "downloaded"
-    },
-    "oecd:https://www.oecd.org/en/publications/mne-responses-to-the-global-minimum-tax_0bc9aac9-en.html": {
-      "first_seen": "2026-07-15",
-      "status": "downloaded"
-    },
-    "oecd:https://www.oecd.org/en/publications/adaptive-communal-space-in-cities_17581d7b-en.html": {
-      "first_seen": "2026-07-15",
-      "status": "downloaded"
-    },
-    "oecd:https://www.oecd.org/en/publications/the-spectrum-of-regulatory-models-and-its-application-to-the-digital-economy_b7456763-en.html": {
-      "first_seen": "2026-07-15",
-      "status": "downloaded"
-    },
-    "oecd:https://www.oecd.org/en/publications/energy-savings-insurance-implementation-roadmap-of-india_14441d8b-en.html": {
-      "first_seen": "2026-07-15",
-      "status": "downloaded"
-    },
-    "oecd:https://www.oecd.org/en/publications/flexibility-and-investor-protection-in-share-class-structures_49a978ad-en.html": {
-      "first_seen": "2026-07-15",
-      "status": "downloaded"
-    },
-    "wto:https://www.wto.org/english/news_e/news26_e/safe_zaf_14jul26_456_e.htm": {
-      "first_seen": "2026-07-15",
-      "status": "downloaded"
-    },
-    "wto:https://www.wto.org/english/news_e/news26_e/gc_14jul26_457_e.htm": {
-      "first_seen": "2026-07-15",
-      "status": "downloaded"
-    },
-    "wto:https://www.wto.org/english/news_e/news26_e/acc_09jul26_455_e.htm": {
-      "first_seen": "2026-07-15",
-      "status": "no_pdf"
-    },
     "bis:https://www.bis.org/publ/work1369.htm": {
       "first_seen": "2026-08-07",
       "status": "too_old"
@@ -3916,6 +3880,30 @@
     "wto:https://www.wto.org/english/news_e/news26_e/sps_04nov26_548_e.htm": {
       "first_seen": "2026-11-12",
       "status": "too_old"
+    },
+    "imf:90e470b026088fe6e456f296b52fb29b15b6d4739fbe0c8d01f768df4039": {
+      "first_seen": "2026-11-13",
+      "status": "downloaded"
+    },
+    "imf:6bd8578f58b08bddd8e2f72a54595265422de8ed946e1d3a9fa50f3bfb62": {
+      "first_seen": "2026-11-13",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publications/paper-177-gig-economy-and-digital-payments": {
+      "first_seen": "2026-11-13",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/work1395.htm": {
+      "first_seen": "2026-11-13",
+      "status": "downloaded"
+    },
+    "wef:https://www.weforum.org/publications/climate-adaptation-market-building-trillion-dollar-resilience": {
+      "first_seen": "2026-11-13",
+      "status": "no_pdf"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/acc_10nov26_550_e.htm": {
+      "first_seen": "2026-11-13",
+      "status": "no_pdf"
     }
   }
 }
