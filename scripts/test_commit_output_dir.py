@@ -9,6 +9,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import textwrap
 import unittest
 
 
@@ -102,6 +103,33 @@ os.execv(real,[real,*args])
                if p.is_file() and '.git' not in p.relative_to(self.producer).parts}
         return (self.git('rev-parse','HEAD',cwd=self.producer).stdout,
                 (self.producer/'.git/index').read_bytes(), (self.producer/'.git/config').read_bytes(), files)
+
+    def test_recovered_publication_resolves_pushed_revision_without_moving_code_head(self):
+        relative = 'portal_suite/data/blog_archive/20261113/' + 'c' * 64 + '.json'
+        self.write(self.producer, relative, '{"fixture":true}\n')
+        code_head = self.git('rev-parse', 'HEAD', cwd=self.producer).stdout.strip()
+        result = self.call(path='portal_suite/data/blog_archive')
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertEqual(self.git('rev-parse', 'HEAD', cwd=self.producer).stdout.strip(), code_head)
+        workflow = (SCRIPT.parents[1] / '.github/workflows/recover-report-article-delivery.yml').read_text()
+        block = workflow.split('- name: Resolve the acknowledged archive revision\n', 1)[1].split('\n      - ', 1)[0]
+        command = textwrap.dedent(block.split('        run: |\n', 1)[1])
+        output = self.root / 'archive-output'
+        resolved = subprocess.run(['bash', '-e', '-o', 'pipefail', '-c', command], cwd=self.producer,
+                                  env={**self.env, 'GITHUB_OUTPUT': str(output)}, capture_output=True, text=True, timeout=30)
+        self.assertEqual(resolved.returncode, 0, resolved.stdout + resolved.stderr)
+        archive_commit = output.read_text().strip().removeprefix('sha=')
+        self.assertEqual(archive_commit, self.remote_head())
+        self.assertNotEqual(archive_commit, code_head)
+        check = 'from pathlib import Path; from watch_recovered_article_publication import committed_record; committed_record(Path(%r), %r)'
+        env = {**self.env, 'PYTHONPATH': str(SCRIPT.parent)}
+        old = subprocess.run([sys.executable, '-c', check % (relative, code_head)], cwd=self.producer,
+                             env=env, capture_output=True, text=True, timeout=30)
+        self.assertNotEqual(old.returncode, 0)
+        self.assertIn('publication_archive_not_committed', old.stderr)
+        current = subprocess.run([sys.executable, '-c', check % (relative, archive_commit)], cwd=self.producer,
+                                 env=env, capture_output=True, text=True, timeout=30)
+        self.assertEqual(current.returncode, 0, current.stdout + current.stderr)
 
     def test_remote_additions_and_untouched_updates_survive_with_explicit_prune(self):
         self.write(self.producer,'output/A.txt','producer A\n')
