@@ -197,6 +197,17 @@ jobs:
         run: python scripts/recovered_article_delivery.py save-receipts --workspace "$DELIVERY_WORKSPACE"
       - name: Verify full delivery before archiving Blog articles
         run: python scripts/recovered_article_delivery.py validate-delivery --workspace "$DELIVERY_WORKSPACE"
+      - name: Stage verified WeChat delivery counts
+        continue-on-error: true
+        run: cp "$DELIVERY_WORKSPACE/wechat_delivery_receipt.json" "$RUNNER_TEMP/recovered-wechat-delivery.json"
+      - name: Archive verified WeChat delivery counts
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: recovered-wechat-delivery-${{ inputs.source_run_id }}-${{ github.run_id }}
+          path: ${{ runner.temp }}/recovered-wechat-delivery.json
+          if-no-files-found: error
+          retention-days: 30
       - name: Update and commit the verified public Blog archive
         run: |
           python scripts/update_blog_archive_from_wechat_drafts.py \
