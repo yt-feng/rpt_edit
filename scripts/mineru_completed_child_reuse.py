@@ -141,6 +141,10 @@ def reuse_completed_children(ledger, sources, results, summary):
             or (ledger.scope == 'institution' and not exact_json(ledger.options, OPTIONS))):
         return results, summary
     if summary.get('ready_for_generation') is True:
+        if summary.get('key_failover_attempts', 0) > 0:
+            # Constructed by the validated key-failover controller, rather than
+            # provider metadata; retain the selected task's exact cache identity.
+            return results, summary
         # This reserved metadata is ours, never an assertion from provider JSON.
         return [(path, {key: value for key, value in row.items() if key != '_recovery_lineage'})
                 for path, row in results], summary

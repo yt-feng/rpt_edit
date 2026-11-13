@@ -102,7 +102,7 @@ def main(argv=None):
         bucket = require_env('R2_BUCKET')
         ledger = Ledger(R2Store('dropbox', client=client, bucket=bucket),
             Provider(NoRedirectHTTP(requests.request), 'https://mineru.net'), 'dropbox',
-            'https://mineru.net', OPTIONS, credentials(os.environ))
+            'https://mineru.net', OPTIONS, credentials(os.environ), key_failover=True)
         receipt = recover_daily(ledger, args.input_dir, args.output_dir,
             args.expected_reports, args.date_folder, total_timeout=args.timeout,
             result_cache=ResultCache(client, bucket), authenticated_downloader=download_result)

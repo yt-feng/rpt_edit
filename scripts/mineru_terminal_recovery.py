@@ -390,6 +390,15 @@ class TerminalRecovery:
 
     def _run(self, paths_and_sources, authorization, timeout, interval, queue_budget, done_verifier, partial):
         root, paths = self._original(paths_and_sources)
+        failover, _ = self.store.get('keyfailovers/' + root['key'].split('/')[1])
+        prior_recovery, _ = self.store.get('recoveries/' + root['key'].split('/')[1])
+        if ((self.ledger.key_failover and not (prior_recovery or {}).get('children')) or failover is not None):
+            from mineru_key_failover import KeyFailover
+            result = KeyFailover(self.ledger, root, paths).run(timeout=timeout, interval=interval,
+                queue_budget=queue_budget, initial_waited=True, done_verifier=done_verifier)
+            if result is not None:
+                rows, summary = result
+                return (rows if partial or summary['ready_for_generation'] else []), summary
         deadline = self.ledger.clock() + timeout
         controller_key, control, _ = self._read_control(root)
         if control is not None and control['children'] and self.daily_retry_limit is None:

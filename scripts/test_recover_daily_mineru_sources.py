@@ -52,6 +52,25 @@ class DailyTests(unittest.TestCase):
         self.assertEqual(self.provider.posts, [])
         self.assertEqual(before, self.source_claims())
 
+    def test_next_key_pending_recovery_retains_complete_source_cache_and_handoff(self):
+        from mineru_task_ledger import token_fingerprint
+        self.clock()
+        self.ledger.wallclock = lambda: self.now
+        self.ledger.key_failover = True
+        self.ledger.tokens[token_fingerprint('second-private-token')] = 'second-private-token'
+        self.provider.plans['root-1'] = ['done', 'pending', 'done']
+        claims = self.source_claims()
+        cache = ResultCache(fixture.MemoryR2(), 'test')
+        result = self.recover(result_cache=cache)
+        self.assertEqual((result['report_count'], result['provider_posts']), (7, 1))
+        self.assertEqual(len(self.provider.posts[0]), 1)
+        self.assertEqual(self.validate()['report_count'], 7)
+        self.assertEqual(self.source_claims(), claims)
+        shutil.rmtree(self.output)
+        result = self.recover(result_cache=cache)
+        self.assertEqual((result['report_count'], result['provider_posts']), (7, 0))
+        self.assertEqual(len(self.provider.posts), 1)
+
     def test_only_failed_members_submitted_after_their_original_success_zips_are_saved(self):
         self.provider.plans['root-1'] = ['done', 'failed', 'failed']
         before = self.source_claims()

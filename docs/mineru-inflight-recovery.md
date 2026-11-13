@@ -31,8 +31,22 @@ continues to the existing generation and publishing gates. This recovery does
 not require the user's computer. See the full chain in
 [Automation Pipeline Overview](pipeline-overview-v2.md).
 
-A queue timeout is an unfinished accepted task. It must not trigger another
-upload, token rotation, or a successful publication result.
+## Bounded next-key recovery for queue stalls
+
+Production Dropbox, institution and consulting parsing rotates to another key
+after a confirmed queue stall. The original accepted task is preserved. A
+separate `keyfailovers/<original-batch>` controller conditionally reserves at most
+three alternate tasks, each on a distinct configured credential. Only unresolved
+members are uploaded; completed siblings and source claims remain unchanged.
+Every provider GET must account for the full accepted inventory before another
+task is reserved. Page-limit failures retain their segmentation/OCR path.
+
+The wait budget is shared across up to four keys. A rerun reuses saved task IDs,
+reservations and selected source winners; it does not reset the attempt budget.
+POST acknowledgement loss stops additional submissions. Read-only replay can
+reuse selected results without submitting tasks or writing ledger state. A
+queue timeout alone never proves generation or delivery complete; all-source and
+live WeChat readback gates still apply, with OCR after exhausted key attempts.
 
 The PDF wrapper preserves a stable original relative source name when it copies
 PDFs into temporary indexed batches. Each source claim binds this name, exact
@@ -55,8 +69,10 @@ and records submission intent. The provider batch ID is saved and read back
 before any upload or polling. A later run follows each requested PDF's claim and
 polls its original batch with its original credential, even after days or changed
 batch grouping. It may submit one batch containing only genuinely unclaimed
-inputs. No pending, failed, interrupted, or ambiguous task expires into permission
-to POST again. An unavailable original credential blocks accepted-task recovery.
+inputs. The bounded queue-stall and terminal-failure policies above reserve
+separate child identities; an interrupted or ambiguous submission never expires
+into permission to repeat its POST. An unavailable original credential blocks
+accepted-task recovery.
 
 ## Explicit authentication rejection
 

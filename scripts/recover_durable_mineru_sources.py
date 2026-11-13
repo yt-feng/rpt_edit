@@ -63,6 +63,7 @@ def safe_figure_source_ordinal(error, expected_reports):
 # Exact upstream messages only: no arbitrary provider, URL, source or storage
 # exception text is ever copied to public diagnostics. Unknowns stay generic.
 LEDGER_ERROR_CATEGORIES = {
+    'Invalid durable key failover binding': 'key_failover_binding_invalid',
     'Stored task scope, source, options or token identity mismatch': 'stored_task_identity_mismatch',
     'Stored source binding is malformed': 'stored_source_binding_invalid',
     'Stored task has duplicate source identities': 'stored_task_duplicate_sources',
@@ -637,6 +638,11 @@ def _recover_provider_sources(ledger, input_dir, manifest_path, output_dir, expe
                 if not isinstance(terminal, TerminalRecovery) or terminal.ledger is not ledger:
                     reject('terminal_recovery_factory_invalid')
                 terminal._read_control(batch)
+                failover, _ = ledger.store.get('keyfailovers/' + batch['key'].split('/')[1])
+                if failover is not None:
+                    from mineru_key_failover import KeyFailover
+                    KeyFailover(ledger, batch, {ledger.bind(path, source)['id']: path
+                        for path, source in group_pairs}).read()
                 terminals[batch['key']] = terminal
                 record_task(batch)
             incomplete_batches = []
@@ -1088,13 +1094,17 @@ def main():
             bucket = require_env('R2_BUCKET')
             store = R2Store('dropbox', client=client, bucket=bucket)
             ledger = Ledger(store, Provider(NoRedirectHTTP(requests.request), 'https://mineru.net'), 'dropbox',
-                            'https://mineru.net', OPTIONS, credentials(env))
+                            'https://mineru.net', OPTIONS, credentials(env), key_failover=True)
             receipt = recover_sources(ledger, args.input_dir, Path(args.input_dir) / MANIFEST,
                 args.output_dir, args.expected_reports, args.date_folder, source_run_id=args.source_run_id,
                 allow_fresh=args.allow_fresh, recovery_run_id=env.get('GITHUB_RUN_ID', ''), source_execution_sha=sha,
                 recovery_execution_sha=env.get('GITHUB_SHA', ''),
                 allowed_error_codes=codes, allowed_error_hashes=hashes, result_cache=ResultCache(client, bucket),
-                authenticated_downloader=download_result)
+                authenticated_downloader=download_result,
+                **({'continue_batches': True, 'total_timeout': 3000,
+                    'terminal_factory': lambda current, root: TerminalRecovery(current,
+                        allowed_error_codes=codes, allowed_error_hashes=hashes)}
+                   if args.source_run_id and not args.allow_fresh else {}))
     except (RecoveryError, LedgerError, ConsumerError, OSError, ValueError, KeyError, TypeError) as error:
         if isinstance(error, FigureSourceError):
             candidate = getattr(error, 'category', None)
