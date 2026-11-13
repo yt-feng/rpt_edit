@@ -16,6 +16,8 @@ on:
       - "scripts/*article_title_resume*"
       - "scripts/*recover_report_articles*"
       - "scripts/*recovered_article_delivery*"
+      - "scripts/*original_pdf_figures*"
+      - "scripts/*source_figures*"
       - "scripts/*watch_recovered_article_publication*"
       - "scripts/*report_extraction_source*"
       - "scripts/*chart_recovered_handoff*"
@@ -98,6 +100,8 @@ on:
       - "scripts/*article_title_resume*"
       - "scripts/*recover_report_articles*"
       - "scripts/*recovered_article_delivery*"
+      - "scripts/*original_pdf_figures*"
+      - "scripts/*source_figures*"
       - "scripts/*watch_recovered_article_publication*"
       - "scripts/*report_extraction_source*"
       - "scripts/*chart_recovered_handoff*"
@@ -227,6 +231,10 @@ jobs:
           python scripts/test_fetch_institution_latest_pdfs.py
           python scripts/test_institution_pending_intake.py
           python scripts/test_institution_ocr_fallback.py
+          python scripts/test_original_pdf_figures.py
+          python scripts/test_preflight_wechat_source_figures.py
+          python scripts/test_ocr_page_sources.py
+          python scripts/test_recover_daily_ocr_page_sources.py
           python scripts/test_institution_dependency_backlog.py
           python scripts/test_institution_backlog_pipeline.py
           python scripts/test_source_monitoring.py

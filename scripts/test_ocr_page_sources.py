@@ -71,9 +71,20 @@ class OCRPagesTests(unittest.TestCase):
         stack.enter_context(redirect_stdout(io.StringIO()))
         return stack
 
-    def recover(self):
+    def recover(self, legacy=False):
         with self.forbidden():
-            return recovery.recover(self.input,self.producer,self.request,self.workspace,self.env,self.client,'private')
+            result = recovery.recover(self.input,self.producer,self.request,self.workspace,self.env,self.client,'private')
+        if legacy:
+            # Historical incident fixtures must retain their original v1
+            # receipt, rather than silently becoming a new v2 source package.
+            import shutil
+            root = self.workspace / 'source'
+            receipt = json.loads((root / pages.RECEIPT).read_bytes())
+            for report in receipt['reports']:
+                shutil.rmtree((root / report.pop('original_figures_path')).parent)
+            receipt.update(schema_version=1, policy=pages.LEGACY_POLICY, files=pages.inventory(root))
+            (root / pages.RECEIPT).write_bytes(pages.encode(receipt))
+        return result
 
     def archive(self):
         with self.forbidden():
@@ -96,7 +107,7 @@ class OCRPagesTests(unittest.TestCase):
         self.assertEqual((receipt['source_kind'],receipt['report_count'],receipt['total_pages']),('ocr-pages',44,88))
         self.assertNotIn('summarized_reports',receipt); self.assertNotIn('model',receipt)
         self.assertEqual(receipt['cache_recovery']['archive_sha256'],self.request['archive_sha256'])
-        self.assertEqual(len(receipt['files']),133)
+        self.assertEqual(len(receipt['files']),177)
         self.archive(); self.assertEqual(self.client.uploads,[f'{pages.PREFIX}/999/261007/shard_0.tar.gz'])
         self.assertEqual(before,self.client.objects[self.cache_key])
         for name in ('market_views_structured.json','figure_candidates.json',recovery.RECEIPT):
@@ -110,6 +121,32 @@ class OCRPagesTests(unittest.TestCase):
             self.assertTrue(self.recover()['reused'])
         self.archive(); self.assertEqual((self.workspace/'source'/pages.RECEIPT).read_bytes(),raw)
         self.assertEqual(len(self.client.uploads),1)
+
+    def test_real_original_charts_reach_article_source_and_uploader_admission(self):
+        from test_original_pdf_figures import chart_pdf
+        from wechat_image_quality import source_chart_images
+        self.seed(1)
+        pdf, evidence = chart_pdf(2)
+        path = self.input / 'report-000.pdf'; path.write_bytes(pdf)
+        rows = json.loads(self.manifest.read_bytes()); rows[0]['content_sha256'] = pages.digest(pdf)
+        self.manifest.write_text(json.dumps(rows))
+        self.request['manifest_sha256'] = pages.digest(self.manifest.read_bytes())
+        (self.cache / 'pages' / (pages.extraction_key(pages.digest(pdf)) + '.json')).write_bytes(pages.encode({'pages': evidence}))
+        self.publish_cache(); self.recover()
+        metadata, plans = articles.load_sources(self.workspace / 'source', 'ocr-pages', 1, '261007',
+            source_run_id='123', source_execution_sha='a' * 40,
+            source_handoff_run_id='999', source_handoff_execution_sha='b' * 40)
+        root = self.root / 'article-sources'; root.mkdir()
+        directory = root / plans[0]['directory']
+        status = articles._stage_source(plans[0], directory)
+        (directory / 'status.json').write_text(json.dumps(status))
+        articles.validate_source_evidence(root, metadata)
+        self.assertEqual(resolve_extraction_source(directory).method, 'ocr')
+        images = source_chart_images(directory, require_verified=True)
+        self.assertEqual(len(images), 2)
+        images[0].write_bytes(b'changed chart')
+        with self.assertRaisesRegex(articles.ArticleRecoveryError, 'ocr_original_figure_hash'):
+            articles.validate_source_evidence(root, metadata)
 
     def test_private_pdf_exception_is_opt_in_validated_exact_and_namespace_bound(self):
         self.seed(); self.recover(); source=self.workspace/'source'
@@ -230,7 +267,7 @@ class OCRPagesTests(unittest.TestCase):
         self.assertEqual(receipt['source_kind'],'ocr-pages')
         for report in receipt['reports']:
             directory=output/report['directory']; status=articles.read_json(directory/'status.json')
-            self.assertEqual((status['images'],status['ocr_figures'],status['image_source_kind']),([],[],'ocr_pages_text_only'))
+            self.assertEqual((status['images'],status['ocr_figures'],status['image_source_kind']),([],[],'ocr_original_figures'))
             self.assertEqual(resolve_extraction_source(directory).method,'ocr')
             self.assertIn('Original page 2',(directory/'source_ocr.md').read_text())
         self.assertEqual(articles.validate_articles(output,44,'261007'),receipt)

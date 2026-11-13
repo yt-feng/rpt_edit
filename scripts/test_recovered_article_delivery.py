@@ -566,6 +566,7 @@ class PrivateRoundTripTests(unittest.TestCase):
                 'institution_name': 'Fixture', 'source_report_name': f'fixture-{index}.pdf',
                 'report_dir': str(report_dir), 'content_chars': 100, 'content_bytes': 200,
                 'visible_text_chars': 100, 'inline_images': [], 'body_image_count': 0,
+                'source_image_count': 0, 'source_image_sha256': [],
                 'cover_image': '', 'title_decision': {}}
 
         with ExitStack() as stack, redirect_stdout(io.StringIO()):
@@ -622,6 +623,9 @@ class PrivateRoundTripTests(unittest.TestCase):
         generation_skip = copy.deepcopy(summary)
         generation_skip['skipped_generation_failure_count'] = 1
         mutations.append(generation_skip)
+        forged_figures = copy.deepcopy(summary)
+        forged_figures['articles'][0].update(source_image_count=1, source_image_sha256=['f' * 64])
+        mutations.append(forged_figures)
         for index, changed in enumerate(mutations):
             delivery.write_json(path, changed)
             with self.subTest(index=index), self.assertRaises(delivery.DeliveryError):
@@ -748,6 +752,7 @@ class PrivateRoundTripTests(unittest.TestCase):
                 'institution_name': 'Fixture', 'source_report_name': f'source-{index}.pdf',
                 'report_dir': str(report_dir), 'content_chars': 100, 'content_bytes': 200,
                 'visible_text_chars': 100, 'inline_images': [], 'body_image_count': 0,
+                'source_image_count': 0, 'source_image_sha256': [],
                 'cover_image': '', 'title_decision': {}}
 
         def check_ack(*args):

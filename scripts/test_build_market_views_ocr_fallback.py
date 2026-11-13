@@ -83,6 +83,25 @@ class OCRSynthesisTests(unittest.TestCase):
                                cache_only=True, **changed)
                 ocr.assert_not_called(); provider.assert_not_called()
 
+    def test_articles_prefer_original_pdf_charts_over_model_reconstructions(self):
+        from test_original_pdf_figures import chart_pdf
+        import recover_report_articles as articles
+        from wechat_image_quality import source_chart_images
+        manifest = self.originals_fixture(count=1)
+        pdf, _ = chart_pdf(2)
+        path = self.originals / '01_Research.pdf'; path.write_bytes(pdf)
+        rows = json.loads(manifest.read_bytes()); rows[0]['content_sha256'] = fallback.sha(pdf)
+        manifest.write_text(json.dumps(rows))
+        self.build(manifest, count=1)
+        metadata, plans = articles.load_sources(self.root / 'summaries' / '261005', 'ocr-synthesis', 1, '261005')
+        output = self.root / 'article-evidence'; output.mkdir()
+        directory = output / plans[0]['directory']
+        status = articles._stage_source(plans[0], directory)
+        (directory / 'status.json').write_text(json.dumps(status))
+        articles.validate_source_evidence(output, metadata)
+        self.assertEqual(status['image_source_kind'], 'ocr_original_figures')
+        self.assertEqual(len(source_chart_images(directory, require_verified=True)), 2)
+
     def test_cache_only_summary_binds_model_and_base_url(self):
         manifest = self.originals_fixture(count=1)
         self.build(manifest, count=1)

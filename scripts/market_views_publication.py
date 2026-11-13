@@ -275,6 +275,20 @@ def validate_ocr_synthesis_receipt(root, *, date_folder, expected_reports, sourc
     _require(isinstance(figures, list) and figures and all(
         isinstance(figure, dict) and figure.get("report_id") in successful_ids
         and figure.get("latex_path") in checked for figure in figures), "missing_synthesis_chart_content")
+    for report in successful:
+        if not report.get('original_figures_path'):
+            continue
+        from original_pdf_figures import SIDECAR, validate as validate_original_figures
+        from report_extraction_source import ocr_markdown_from_pages
+        visual_root = f"ocr_sources/{report['id']}/original_figures"
+        sidecar = f'{visual_root}/{SIDECAR}'
+        _require(report['original_figures_path'] == sidecar and sidecar in checked,
+                 'missing_original_figure_evidence')
+        evidence = json.loads(checked[sidecar])
+        pages = json.loads(checked[f"ocr_sources/{report['id']}/pages.json"])
+        validate_original_figures(evidence, lambda name: checked[f'{visual_root}/{name}'],
+            original_pdf_sha256=report['content_sha256'],
+            source_sha256=hashlib.sha256(ocr_markdown_from_pages(pages, report['page_count'])).hexdigest())
     _require(isinstance(summary, dict) and isinstance(summary.get("bank_roundup"), dict)
              and isinstance(summary["bank_roundup"].get("sections"), list)
              and summary["bank_roundup"]["sections"],

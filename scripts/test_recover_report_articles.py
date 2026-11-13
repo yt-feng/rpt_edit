@@ -274,7 +274,7 @@ class ArticleRecoveryTests(unittest.TestCase):
             self.assertFalse((directory / "source_mineru.md").exists())
             self.assertTrue((directory / "source_ocr_pages.json").is_file())
             status = articles.read_json(directory / "status.json")
-            self.assertEqual((status["source_method"], status["image_source_kind"]), ("ocr", "ocr_reconstructed_chart"))
+            self.assertEqual((status["source_method"], status["image_source_kind"]), ("ocr", "ocr_original_figures"))
             self.assertEqual(read_bound_article(directory).binding["source_kind"], "ocr-synthesis")
         self.assertEqual(articles.validate_articles(self.root / "articles", 2, "261005"), receipt)
 
@@ -294,7 +294,7 @@ class ArticleRecoveryTests(unittest.TestCase):
             if item["path"] == "ocr_sources/R001/pages.json":
                 item.update(bytes=path.stat().st_size, sha256=articles.digest(path.read_bytes()))
         articles.write_json(root / "ocr_synthesis_receipt.json", source)
-        with self.paid(), self.assertRaisesRegex(articles.ArticleRecoveryError, "ocr_page_evidence"):
+        with self.paid(), self.assertRaisesRegex(ValueError, "OCR page order|ocr_page_evidence"):
             self.recover(full, expected=2, date="261005", kind="ocr-synthesis")
         self.assertEqual(self.calls, [])
 

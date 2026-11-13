@@ -47,7 +47,7 @@ class InspectionTests(unittest.TestCase):
         self.f.request['source_run_id']=inspector.SOURCE_RUN_ID
         self.addCleanup(patch.stopall)
         patch.object(inspector,'MANIFEST_SHA256',self.f.request['manifest_sha256']).start()
-        self.f.recover()
+        self.f.recover(legacy=True)
         self.workspace=self.f.root/'generation';self.workspace.mkdir()
         config={'SOURCE_RUN_ID':inspector.SOURCE_RUN_ID,'SOURCE_HANDOFF_RUN_ID':inspector.HANDOFF_RUN_ID,
                 'SOURCE_KIND':'ocr-pages','DATE_FOLDER':inspector.DATE_FOLDER,'EXPECTED_ARTICLES':44}

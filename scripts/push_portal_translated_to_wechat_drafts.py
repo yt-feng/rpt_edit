@@ -1832,7 +1832,7 @@ def prepare_cover_upload_image(path: Path, output_dir: Path, stem: str) -> Path:
 def choose_cover_image(report_dir: Path, figure_paths: dict[str, Path], fallback_dir: Path,
                        uploaded_paths: list[Path] | None = None, *, session=None,
                        title: str = "", timeout: int = 15) -> Path:
-    for path in source_chart_images(report_dir):
+    for path in source_chart_images(report_dir, require_verified=True):
         return path
     for token in sorted(figure_paths):
         path = figure_paths[token]
@@ -1863,7 +1863,7 @@ def select_source_figure_items(report_dir: Path, figure_paths: dict[str, Path], 
     ordered_tokens = list(dict.fromkeys(f"[[PORTAL_IMAGE_{m.group(1)}]]" for m in IMAGE_TOKEN_RE.finditer(markdown)))
     ordered_tokens.extend(token for token in figure_paths if token not in ordered_tokens)
     items = [(token, figure_paths[token]) for token in ordered_tokens if token in figure_paths]
-    items.extend((f"PORTAL_SOURCE_IMAGE_{i:03d}", path) for i, path in enumerate(source_chart_images(report_dir), 1))
+    items.extend((f"PORTAL_SOURCE_IMAGE_{i:03d}", path) for i, path in enumerate(source_chart_images(report_dir, require_verified=True), 1))
     selected = []; seen = set()
     for token, path in items:
         if len(selected) >= maximum:
@@ -3228,6 +3228,9 @@ def build_article(
     if heading_neutralization_changes:
         title_decision["body_heading_neutralization_changes"] = heading_neutralization_changes
     figure_paths = load_figure_paths(report_dir)
+    figure_records = read_json(report_dir / 'figure_manifest.json')
+    figure_sources = {row.get('token'): row.get('source_kind', 'mineru') for row in figure_records
+                      if isinstance(row, dict)} if isinstance(figure_records, list) else {}
 
     image_urls: dict[str, str] = {}
     uploaded_images: list[dict[str, str]] = []
@@ -3242,7 +3245,9 @@ def build_article(
             image_url = upload_article_image(session, access_token, upload_path, args.timeout)
             pacing_sleep(f"After uploading inline image {index}:{token}", args.image_upload_delay_seconds, args.dry_run)
         image_urls[token] = image_url
-        uploaded_images.append({"token": token, "path": str(upload_path), "url": image_url, "source": "mineru"})
+        uploaded_images.append({"token": token, "path": str(upload_path), "url": image_url,
+                                "source": figure_sources.get(token, 'mineru'),
+                                "source_sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
 
     target_min_images = len(uploaded_images) if uploaded_images else min(args.min_inline_images, args.max_inline_images)
     ai_image_index = 1
@@ -3342,7 +3347,11 @@ def build_article(
         "content_bytes": utf8_byte_count(content),
         "visible_text_chars": visible_text_chars,
         "body_image_count": body_image_count,
-        "ai_image_count": sum(1 for item in uploaded_images if item.get("source") != "mineru"),
+        "ai_image_count": sum(1 for item in uploaded_images if item.get("source") not in {"mineru", "ocr_original"}),
+        "source_image_count": sum(1 for item in uploaded_images[:fitted_image_count]
+                                  if item.get('source') in {'mineru', 'ocr_original'}),
+        "source_image_sha256": [item['source_sha256'] for item in uploaded_images[:fitted_image_count]
+                                if item.get('source') in {'mineru', 'ocr_original'}],
     }
 
 
@@ -3925,6 +3934,8 @@ def main() -> int:
                 "inline_image_count": len(item["inline_images"]),
                 "body_image_count": item["body_image_count"],
                 "ai_image_count": item["ai_image_count"],
+                "source_image_count": item.get("source_image_count"),
+                "source_image_sha256": item.get("source_image_sha256"),
                 "cover_image": item["cover_image"],
             }
             for item in built_articles

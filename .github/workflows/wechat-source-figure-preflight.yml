@@ -1,0 +1,74 @@
+name: Verify exact WeChat primary and backup source figures
+run-name: Read-only figure preflight for Daily ${{ inputs.source_run_id }}
+on:
+  pull_request:
+    paths:
+      - .github/workflows/wechat-source-figure-preflight.yml
+      - scripts/preflight_wechat_source_figures.py
+      - scripts/test_preflight_wechat_source_figures.py
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Completed original main Daily retaining complete original OCR pages
+        required: true
+        type: string
+      mineru_recovery_run_id:
+        description: Completed main MinerU recovery with its complete retained source handoff
+        required: true
+        type: string
+      date_folder:
+        required: true
+        type: string
+      expected_articles:
+        required: true
+        type: string
+      manifest_sha256:
+        required: true
+        type: string
+permissions:
+  contents: read
+  actions: read
+jobs:
+  contract:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install --disable-pip-version-check requests Pillow PyMuPDF PyYAML
+      - run: python -B scripts/test_preflight_wechat_source_figures.py
+  preflight:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install --disable-pip-version-check requests Pillow PyMuPDF 'boto3>=1.37.32,<2'
+      - name: Replay original chart pixels and both article figure consumers without provider or draft writes
+        env:
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          MINERU_RECOVERY_RUN_ID: ${{ inputs.mineru_recovery_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
+          MANIFEST_SHA256: ${{ inputs.manifest_sha256 }}
+          GH_TOKEN: ${{ github.token }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: python -B scripts/preflight_wechat_source_figures.py
+      - name: Preserve only numeric figure verification results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wechat-source-figure-preflight-${{ github.run_id }}
+          path: ${{ runner.temp }}/wechat-source-figure-preflight.json
+          if-no-files-found: warn
+          retention-days: 14

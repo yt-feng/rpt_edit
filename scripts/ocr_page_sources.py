@@ -6,7 +6,8 @@ from pathlib import Path
 import re
 
 KIND = 'ocr-pages'
-POLICY = 'verified-ocr-pages-v1'
+LEGACY_POLICY = 'verified-ocr-pages-v1'
+POLICY = 'verified-ocr-pages-v2'
 RECEIPT = 'ocr_pages_receipt.json'
 PREFIX = '_private-workflow-handoff/market-ocr-pages-cache-recovery'
 DAILY_PREFIX = '_private-workflow-handoff/market-ocr-pages-daily'
@@ -159,6 +160,8 @@ def build_pages(input_dir, manifest, cache, output, *, expected_reports, date_fo
     """
     from recover_durable_mineru_sources import frozen_inputs
     from market_views_publication import source_inventory_sha256
+    from original_pdf_figures import SIDECAR, extract as extract_figures
+    from report_extraction_source import ocr_markdown_from_pages
     raw, bindings, pairs = frozen_inputs(input_dir, manifest, expected_reports, date_folder)
     require(not output.exists() and not output.is_symlink(), 'ocr_pages_output_not_fresh')
     require(cache.is_dir() and not cache.is_symlink() and not (cache/'pages').is_symlink(), 'ocr_pages_cache_invalid')
@@ -172,18 +175,25 @@ def build_pages(input_dir, manifest, cache, output, *, expected_reports, date_fo
         key = extraction_key(binding['content_sha256'])
         cached = read(cache/'pages'/(key+'.json'))
         pages = checked_pages(cached, count)
+        visual_root = f'ocr_sources/{rid}/original_figures'
+        visuals, visual_files = extract_figures(pdf, pages,
+            source_sha256=digest(ocr_markdown_from_pages(pages, count)))
+        prepared[f'{visual_root}/{SIDECAR}'] = encode(visuals)
+        for name, data in visual_files.items():
+            prepared[f'{visual_root}/{name}'] = data
         originals_path = f'originals/{rid}.pdf'
         prepared[originals_path] = pdf
         prepared[f'ocr_sources/{rid}/page_cache.json'] = cached
         prepared[f'ocr_sources/{rid}/pages.json'] = encode(pages)
-        total += len(pdf) + len(cached) + len(encode(pages))
+        total += len(pdf) + len(cached) + len(encode(pages)) + len(encode(visuals)) + sum(map(len, visual_files.values()))
         require(total <= MAX_TOTAL_BYTES, 'ocr_pages_inventory_oversized')
         reports.append({'id': rid, 'source_pdf': binding['source_pdf'], 'content_sha256': binding['content_sha256'],
             'page_count': count, 'pages_covered': list(range(1,count+1)), 'original_pdf_path': originals_path,
-            'extraction_key': key, 'page_cache_sha256': digest(cached)})
+            'extraction_key': key, 'page_cache_sha256': digest(cached),
+            'original_figures_path': f'{visual_root}/{SIDECAR}'})
     require(len(reports) == expected_reports, 'ocr_pages_report_count_invalid')
     prepared['selected_to_process_manifest.json'] = raw
-    receipt = {'schema_version': 1, 'policy': POLICY, 'source_kind': KIND, 'complete': True,
+    receipt = {'schema_version': 2, 'policy': POLICY, 'source_kind': KIND, 'complete': True,
         'date_folder': date_folder, 'source_run_id': source_run_id, 'execution_sha': execution_sha,
         'expected_reports': expected_reports, 'report_count': len(reports),
         'total_pages': sum(row['page_count'] for row in reports), 'reports': reports,
@@ -220,7 +230,7 @@ def validate_pages_receipt(root, *, date_folder, expected_reports, source_run_id
     require(isinstance(value, dict), 'ocr_pages_receipt_contract_invalid')
     keys.add(lineage_field(value))
     require(isinstance(value,dict) and set(value) == keys and type(value['schema_version']) is int
-            and value['schema_version'] == 1 and value['policy'] == POLICY and value['source_kind'] == KIND
+            and (value['schema_version'], value['policy']) in {(1, LEGACY_POLICY), (2, POLICY)} and value['source_kind'] == KIND
             and value['complete'] is True and value['extraction'] == EXTRACTION,
             'ocr_pages_receipt_contract_invalid')
     require(type(expected_reports) is int and 1 <= expected_reports <= 1000
@@ -242,6 +252,8 @@ def validate_pages_receipt(root, *, date_folder, expected_reports, source_run_id
     for ordinal,(row,binding) in enumerate(zip(rows,bindings),1):
         rid=f'R{ordinal:03d}'; original=f'originals/{rid}.pdf'
         row_keys={'id','source_pdf','content_sha256','page_count','pages_covered','original_pdf_path','extraction_key','page_cache_sha256'}
+        if value['schema_version'] == 2:
+            row_keys.add('original_figures_path')
         require(isinstance(row,dict) and set(row)==row_keys and row['id']==rid
                 and row['source_pdf']==binding['source_pdf'] and row['content_sha256']==binding['content_sha256']
                 and row['original_pdf_path']==original and row['extraction_key']==extraction_key(binding['content_sha256']),
@@ -257,6 +269,18 @@ def validate_pages_receipt(root, *, date_folder, expected_reports, source_run_id
         pages=checked_pages(cached,count)
         require(read(root/pages_name)==encode(pages), 'ocr_pages_extracted_text_changed')
         allowed_files.update((original,cache_name,pages_name))
+        if value['schema_version'] == 2:
+            from original_pdf_figures import SIDECAR, validate as validate_figures
+            from report_extraction_source import ocr_markdown_from_pages
+            visual_root = f'ocr_sources/{rid}/original_figures'
+            sidecar = f'{visual_root}/{SIDECAR}'
+            require(row['original_figures_path'] == sidecar, 'ocr_pages_figure_path_invalid')
+            visuals = decode(read(root / sidecar))
+            refs = validate_figures(visuals, lambda name: read(root / visual_root / name),
+                original_pdf_sha256=binding['content_sha256'],
+                source_sha256=digest(ocr_markdown_from_pages(pages, count)), pdf=pdf, pages=pages)
+            allowed_files.add(sidecar)
+            allowed_files.update(f'{visual_root}/{name}' for name in refs)
     require({row['path'] for row in files}==allowed_files, 'ocr_pages_unexpected_files')
     require(type(value['total_pages']) is int and value['total_pages']==total_pages
             and value['source_inventory_sha256']==source_inventory_sha256(rows)==source_inventory_sha256(bindings),
