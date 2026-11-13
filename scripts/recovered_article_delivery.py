@@ -502,6 +502,14 @@ def validate_delivery(workspace):
               'source_report_count': expected, 'policy_excluded_count': len(blocked),
               'accounted_report_count': count + len(blocked),
               'article_receipt_sha256': digest((workspace / 'checkpoint' / 'articles' / ARTICLE_RECEIPT).read_bytes())}
+    account_counts, account_groups = Counter(), {}
+    for draft in drafts:
+        account = draft_account(draft)
+        account_counts[account] += int(draft['article_count'])
+        account_groups.setdefault(account, []).append(int(draft['article_count']))
+    result['verified_articles_by_account'] = dict(sorted(account_counts.items()))
+    result['verified_drafts_by_account'] = {account: len(sizes) for account, sizes in sorted(account_groups.items())}
+    result['draft_article_counts_by_account'] = dict(sorted(account_groups.items()))
     write_json(workspace / 'wechat_delivery_receipt.json', result)
     return result
 
@@ -633,7 +641,8 @@ def main(argv=None):
                     output.write(f'{key}={value}\n')
         print(json.dumps({'status': 'complete', 'stage': args.command,
                           **({key: result[key] for key in ('article_count', 'draft_count', 'source_report_count',
-                              'policy_excluded_count', 'accounted_report_count') if key in result})}))
+                              'policy_excluded_count', 'accounted_report_count', 'verified_articles_by_account',
+                              'verified_drafts_by_account', 'draft_article_counts_by_account') if key in result})}))
         return 0
     except Exception as error:
         # Error text from SDKs, HTML generation or providers may contain bodies.

@@ -478,7 +478,7 @@ class DeliveryWorkflowTests(unittest.TestCase):
         # sources, article bodies and draft receipts remain in private storage.
         for upload in text.split('uses: actions/upload-artifact@v4')[1:]:
             block = upload.split('\n      - ', 1)[0]
-            self.assertRegex(block, r'path: .*\b(?:recovered-publication-request|publication-state)\.json')
+            self.assertRegex(block, r'path: .*\b(?:recovered-publication-request|publication-state|recovered-wechat-delivery)\.json')
             self.assertNotIn('DELIVERY_WORKSPACE', block)
         self.assertLess(text.index('validate-delivery --workspace'), text.index('Update and commit'))
 
@@ -679,7 +679,13 @@ class PrivateRoundTripTests(unittest.TestCase):
                        'draft_get': {'ok': True, 'article_count': 7, 'matches_editorial_contract': True,
                            'matches_expected_article_count': True, 'matches_expected_titles': True}}]}
         delivery.write_json(root / 'wechat_draft_summary.json', summary)
-        self.assertEqual(delivery.validate_delivery(consumer)['article_count'], 7)
+        accepted = delivery.validate_delivery(consumer)
+        self.assertEqual(accepted['article_count'], 7)
+        self.assertEqual(accepted['verified_articles_by_account'], {'kc': 7})
+        self.assertEqual(accepted['verified_drafts_by_account'], {'kc': 1})
+        self.assertEqual(accepted['draft_article_counts_by_account'], {'kc': [7]})
+        self.assertFalse(any(name in json.dumps(accepted) for name in
+                             ('media_id', 'payload', 'report_dir', 'wechat_title', 'content')))
         with redirect_stdout(io.StringIO()):
             self.assertTrue(delivery.save_receipts(consumer, self.store, 'private'))
         next_consumer = self.harness.root / 'next-dispatch'
