@@ -1,8 +1,9 @@
-"""Durable, source-bound MinerU tasks. Accepted work is polled, never resubmitted.
+"""Durable, source-bound MinerU tasks with bounded alternate-key recovery.
 
 Private R2 is used by production workflows. The local backend supports offline
 CLI use. Unknown submission outcomes and interrupted claims need investigation;
-no lease expiry authorizes another provider POST.
+no lease expiry authorizes another provider POST. Confirmed queue stalls may
+reserve a distinct next-key task without changing the original source claim.
 """
 from __future__ import annotations
 
@@ -109,8 +110,26 @@ def validate_source(source):
 
 
 def validate_key(key):
-    if not isinstance(key, str) or not re.fullmatch(r'(sources/[a-f0-9]{64}|(?:batches|recoveries)/[a-f0-9]{32})', key):
+    if not isinstance(key, str) or not re.fullmatch(r'(sources/[a-f0-9]{64}|(?:batches|recoveries|keyfailovers)/[a-f0-9]{32})', key):
         raise LedgerError('Invalid ledger key')
+
+
+def validated_rows(batch, rows):
+    """Validate one provider GET before polling or admitting an alternate key."""
+    if not isinstance(rows, list):
+        raise LedgerError('Malformed MinerU result rows')
+    bound = {item['id'] for item in batch['files']}
+    seen = {}
+    for row in rows:
+        if not isinstance(row, dict) or row.get('data_id') not in bound or row['data_id'] in seen:
+            raise LedgerError('Unknown or duplicate result source identity')
+        state = str(row.get('state', '')).lower()
+        if state not in DONE | FAILED | ACTIVE:
+            raise LedgerError('Unknown MinerU result state')
+        if state in DONE and not (isinstance(row.get('full_zip_url'), str) and row['full_zip_url'].startswith('https://')):
+            raise LedgerError('Completed MinerU row lacks source result URL')
+        seen[row['data_id']] = row
+    return seen
 
 
 def decode(raw):
@@ -309,7 +328,7 @@ class Provider:
 
 
 class Ledger:
-    def __init__(self, store, provider, scope, endpoint, options, tokens, *, clock=time.monotonic, sleep=time.sleep, wallclock=time.time, forbid_new_submissions=False):
+    def __init__(self, store, provider, scope, endpoint, options, tokens, *, clock=time.monotonic, sleep=time.sleep, wallclock=time.time, forbid_new_submissions=False, key_failover=False):
         validate_scope(scope)
         if endpoint != 'https://mineru.net':
             raise LedgerError('Unexpected extraction provider endpoint')
@@ -325,6 +344,9 @@ class Ledger:
         if type(forbid_new_submissions) is not bool:
             raise LedgerError('Invalid no-new-submission policy')
         self.forbid_new_submissions = forbid_new_submissions
+        if type(key_failover) is not bool:
+            raise LedgerError('Invalid key failover policy')
+        self.key_failover = key_failover
         self.submission_posts = 0
 
     def bind(self, path, source):
@@ -422,7 +444,7 @@ class Ledger:
         self._submit_claimed(row, version, paths, deadline)
         return key
 
-    def _submit_claimed(self, row, version, paths, deadline):
+    def _submit_claimed(self, row, version, paths, deadline, *, only_token=None):
         """Try another key only after durable, definitive pre-acceptance rejection."""
         if self.forbid_new_submissions:
             raise LedgerError('Replay cannot submit an unaccepted task; new submissions forbidden')
@@ -440,6 +462,10 @@ class Ledger:
         quotas = row.get('quota_rejections', [])
         rejected.update(entry['token_identity'] for entry in quotas if entry['retry_after'] > self.wallclock())
         identities = list(self.tokens)
+        if only_token is not None:
+            if only_token not in self.tokens:
+                raise LedgerError('Key failover credential is unavailable')
+            identities = [only_token]
         if row['token_identity'] in identities:
             identities.remove(row['token_identity'])
             identities.insert(0, row['token_identity'])
@@ -510,18 +536,7 @@ class Ledger:
         last = {}
         while self.clock() < deadline:
             rows = self.provider.poll(batch['batch_id'], token, self._remaining(deadline))
-            if not isinstance(rows, list):
-                raise LedgerError('Malformed MinerU result rows')
-            seen = {}
-            for row in rows:
-                if not isinstance(row, dict) or row.get('data_id') not in bound or row['data_id'] in seen:
-                    raise LedgerError('Unknown or duplicate result source identity')
-                state = str(row.get('state', '')).lower()
-                if state not in DONE | FAILED | ACTIVE:
-                    raise LedgerError('Unknown MinerU result state')
-                if state in DONE and not (isinstance(row.get('full_zip_url'), str) and row['full_zip_url'].startswith('https://')):
-                    raise LedgerError('Completed MinerU row lacks source result URL')
-                seen[row['data_id']] = row
+            seen = validated_rows(batch, rows)
             last = seen
             states = {key: str(row['state']).lower() for key, row in seen.items()}
             if states != last_states:
@@ -581,6 +596,12 @@ class Ledger:
                 rejected_batches.append((batch, version))
             elif batch.get('state') not in {'accepted', 'uploaded', 'terminal'} or not batch.get('batch_id'):
                 raise LedgerError('Ambiguous existing task blocks new submissions')
+            failover, _ = self.store.get('keyfailovers/' + key.split('/')[1])
+            if failover is not None:
+                if len(requested) != len(batch['files']):
+                    raise LedgerError('Key failover requires its complete original inventory')
+                from mineru_key_failover import KeyFailover
+                KeyFailover(self, batch, {item['id']: paths[item['id']] for item in batch['files']}).read()
         if self.forbid_new_submissions and (fresh or rejected_batches):
             raise LedgerError('Replay requires existing accepted source bindings; new submissions forbidden')
         deadline = self.clock() + timeout
@@ -591,7 +612,29 @@ class Ledger:
         observed = {}
         original_batches = []
         for key, requested in groups.items():
-            selected_rows, original_batch = self._poll(key, requested, deadline, interval, queue_budget)
+            failover, _ = self.store.get('keyfailovers/' + key.split('/')[1])
+            root, _ = self._read_batch(key)
+            if failover is not None and len(requested) == len(root['files']):
+                selected_rows = {}
+                original_batch = {'key': key, 'admitted': len(root['files']), 'observed': 0,
+                    'completed': 0, 'failed': 0, 'pending': len(root['files']), 'missing': 0,
+                    'all_succeeded': False}
+            else:
+                selected_rows, original_batch = self._poll(key, requested, deadline, interval, queue_budget)
+            if ((self.key_failover and original_batch['pending'] > 0 or failover is not None)
+                    and len(requested) == original_batch['admitted'] and self.clock() < deadline):
+                from mineru_key_failover import KeyFailover
+                root_paths = {item['id']: paths[item['id']] for item in root['files']}
+                controller = KeyFailover(self, root, root_paths)
+                result = controller.run(timeout=self._remaining(deadline),
+                    interval=interval, queue_budget=queue_budget, initial_waited=True)
+                if result is not None:
+                    rows, outcome = result
+                    selected_rows = controller.last_rows
+                    original_batch = dict(original_batch, **{name: outcome[name]
+                        for name in ('completed', 'failed', 'pending')},
+                        all_succeeded=outcome['ready_for_generation'],
+                        key_failover_attempts=outcome['key_failover_attempts'])
             observed.update(selected_rows)
             original_batches.append(original_batch)
         for item in items:
@@ -608,6 +651,7 @@ class Ledger:
             'requested': len(items), 'completed': len(successes), 'failed': failed,
             'pending': pending, 'batch_keys': list(groups), 'provider_posts': self.submission_posts,
             'original_batches': original_batches, 'ready_for_generation': ready,
+            'key_failover_attempts': sum(row.get('key_failover_attempts', 0) for row in original_batches),
         }
 
 
@@ -627,7 +671,9 @@ def from_environment(output_dir, http, endpoint, options, tokens):
     if policy not in {'0', '1'}:
         raise LedgerError('Invalid no-new-submission policy')
     return Ledger(store, Provider(http, endpoint), scope, endpoint, options, tokens,
-                  forbid_new_submissions=policy == '1')
+                  forbid_new_submissions=policy == '1',
+                  key_failover=os.environ.get('GITHUB_ACTIONS') == 'true'
+                  and scope in {'dropbox', 'institution', 'consulting'} and policy != '1')
 
 
 def input_sources(pdfs, input_dir, source_map=None):

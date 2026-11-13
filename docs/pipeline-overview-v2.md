@@ -335,9 +335,15 @@ private R2 ledger. A new submission may move to the next configured credential
 only after an explicit authentication rejection or documented daily-quota
 rejection (`-60018` / `-60019`) without any acceptance acknowledgement. Quota
 rejections have a durable 24-hour cooldown; authentication rejections remain
-excluded until credentials change. Accepted tasks always keep their original credential and batch
-ID. Timeouts, failed parsing, polling errors and ambiguous acknowledgements do
-not by themselves authorize another submission. Explicit cloud recovery retains
+excluded until credentials change. Accepted tasks keep their original credential
+and batch ID. Production parsing now also has a bounded next-key policy for
+confirmed queue stalls: a separate private `keyfailovers` controller reserves at
+most three alternate tasks, each on a different credential, containing only
+unresolved sources. Completed siblings and original source pointers stay intact.
+Selected successful task identities persist across retries. Missing membership,
+polling errors and ambiguous submission acknowledgements stop further submissions.
+After the key budget is exhausted, incomplete sources continue to the OCR gates.
+Explicit terminal-failure cloud recovery retains
 the original records and permits bounded child tasks only for freshly verified,
 specifically approved terminal failures. The detailed contract is in
 [MinerU in-flight recovery](mineru-inflight-recovery.md).
