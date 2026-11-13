@@ -218,7 +218,10 @@ class KeyFailover:
             used.update(row['token_identity'] for row in self.root.get('auth_rejections', []))
             used.update(row['token_identity'] for row in self.root.get('quota_rejections', [])
                         if row['retry_after'] > self.ledger.wallclock())
-            next_token = next((identity for identity in self.ledger.tokens if identity not in used), None)
+            identities = list(self.ledger.tokens)
+            offset = (identities.index(self.root['token_identity']) + 1) % len(identities)
+            ordered = identities[offset:] + identities[:offset]
+            next_token = next((identity for identity in ordered if identity not in used), None)
             stalled = (self.ledger.wallclock() - control['last_progress_at'] >= stall
                        or initial_waited and not control['attempts'])
             active = any(str(row['state']).lower() in ACTIVE for _, _, rows in observations for row in rows.values())
@@ -247,7 +250,7 @@ class KeyFailover:
         outcomes = [{'data_id': sid, 'status': 'done' if sid in winners else
                      'submission_unknown' if unknown_submission else 'failed' if
                      str(latest.get(sid, {}).get('state', '')).lower() in FAILED else 'pending',
-                     'retry_count': winners.get(sid, {}).get('ordinal', len(control['attempts']) if control else 0)}
+                     'retry_count': sum(sid in entry['file_ids'] for entry in control['attempts']) if control else 0}
                     for sid in self.bindings]
         summary = {'requested': len(self.bindings), 'completed': len(winners), 'failed': failures,
             'pending': len(self.bindings) - len(winners) - failures, 'missing': 0,
