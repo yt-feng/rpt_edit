@@ -123,6 +123,28 @@ class Fixture:
 
 
 class FigureSourceTests(unittest.TestCase):
+    def test_regulatory_ratings_distribution_is_excluded_and_old_policy_replays(self):
+        from wechat_image_quality import source_chart_images
+        body = ('<table><tr><td>Buy Hold Sell</td><td>61% 32% 7%</td></tr><tr>'
+                '<td>% of companies in each rating category that are investment banking clients</td>'
+                '<td>39% 43% 30%</td></tr></table>')
+        fixture = self.fixture(visuals=[visual(0, [35, 300, 360, 390], body=body)])
+        fixture.create(); fixture.status(); fixture.validate()
+        self.assertEqual(fixture.selection['images'], [])
+        legacy = self.fixture(visuals=[visual(0, [35, 300, 360, 390], body=body)])
+        decision = figures._decisions
+        def old_policy(metadata, maximum, **_):
+            return decision(metadata, maximum, article_figures=True, filter_regulatory=False)
+        with patch.object(figures, '_decisions', side_effect=old_policy):
+            legacy.create()
+        legacy.mutate(lambda value: value.update(selection_policy=figures.LEGACY_ARTICLE_SELECTION_POLICY))
+        legacy.status(); legacy.validate()
+        self.assertEqual(len(legacy.selection['images']), 1)
+        self.assertEqual(source_chart_images(legacy.report, require_verified=True), [])
+        (legacy.report / legacy.selection['images'][0]).unlink()
+        with self.assertRaises(figures.FigureSourceError):
+            source_chart_images(legacy.report, require_verified=True)
+
     def test_portraits_do_not_consume_chart_limit_and_legacy_receipts_remain_valid(self):
         from wechat_image_quality import source_chart_images
         visuals = [visual(0, [300, 40, 326, 66], kind='image'),

@@ -84,7 +84,7 @@ def audit(original_root, primary_root, workspace, original_receipt, primary_rece
     by_source = {row['binding']['source_pdf']: row for row in primary_receipt['reports']}
     require(len(by_source) == len(original_receipt['reports']))
     source_receipt_sha = digest((original_root / RECEIPT).read_bytes())
-    rows = []
+    rows, missing_backups = [], []
     for ordinal, report in enumerate(original_receipt['reports'], 1):
         primary = by_source[report['source_pdf']]
         require(primary['binding']['content_sha256'] == report['content_sha256'])
@@ -119,11 +119,13 @@ def audit(original_root, primary_root, workspace, original_receipt, primary_rece
         row = {'ordinal': ordinal, 'primary_retained_figures': len(selected), 'primary_original_crops_replayed': replayed,
                'native_backup_figures': len(admitted), 'native_candidate_count': proof['candidate_count']}
         if selected and not admitted:
-            raise FigurePreflightError(ordinal, 'native_backup_missing_figures')
+            missing_backups.append(ordinal)
         rows.append(row)
         if ordinal % 5 == 0 or ordinal == len(original_receipt['reports']):
             progress({'event': 'source_figure_preflight_progress', 'checked_reports': ordinal})
-    return {'status': 'verified', 'report_count': len(rows), 'primary_reports_with_figures': sum(bool(r['primary_retained_figures']) for r in rows),
+    return {'status': 'incomplete' if missing_backups else 'verified',
+            **({'category': 'native_backup_missing_figures', 'missing_backup_source_ordinals': missing_backups} if missing_backups else {}),
+            'report_count': len(rows), 'primary_reports_with_figures': sum(bool(r['primary_retained_figures']) for r in rows),
             'primary_retained_figures': sum(r['primary_retained_figures'] for r in rows),
             'primary_original_crops_replayed': sum(r['primary_original_crops_replayed'] for r in rows),
             'native_backup_reports_with_figures': sum(bool(r['native_backup_figures']) for r in rows),
