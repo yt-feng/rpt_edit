@@ -1,26 +1,6 @@
 {
   "version": 1,
   "items": {
-    "bcg:https://www.bcg.com/publications/2020/industrial-products-makers-chart-new-path-digital": {
-      "first_seen": "2026-07-15",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/india-pharma-and-life-sciences-innovation-opportunity": {
-      "first_seen": "2026-07-15",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/ai-transforming-energy-trading": {
-      "first_seen": "2026-07-15",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/three-forces-that-are-reshaping-the-business-of-football": {
-      "first_seen": "2026-07-15",
-      "status": "no_pdf"
-    },
-    "bcg:https://www.bcg.com/publications/2026/global-m-and-a-rebound-fueled-by-ai": {
-      "first_seen": "2026-07-15",
-      "status": "no_pdf"
-    },
     "bcg:https://www.bcg.com/publications/2026/how-agentic-ai-transforms-marketing": {
       "first_seen": "2026-07-16",
       "status": "downloaded"
@@ -1603,6 +1583,18 @@
     },
     "bcg:https://www.bcg.com/publications/2026/spanish-south-america-turning-ai-ambition-into-reality": {
       "first_seen": "2026-11-12",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/canada-fr-les-canadiens-ont-un-budget-plus-serre-cette-annee-pour-leurs-achats-du-vendredi-fou": {
+      "first_seen": "2026-11-13",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/health-care-consumerization-patients": {
+      "first_seen": "2026-11-13",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/canadians-are-shopping-on-tighter-budgets-this-black-friday": {
+      "first_seen": "2026-11-13",
       "status": "downloaded"
     }
   }
