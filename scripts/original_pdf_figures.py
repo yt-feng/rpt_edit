@@ -13,7 +13,8 @@ import re
 
 SIDECAR = 'source_original_figures.json'
 LEGACY_POLICY = 'original-pdf-figures-v1'
-POLICY = 'original-pdf-figures-v2'
+PREVIOUS_POLICY = 'original-pdf-figures-v2'
+POLICY = 'original-pdf-figures-v3'
 DPI = 180
 MAX_IMAGES = 3
 MAX_PIXELS = 40_000_000
@@ -22,7 +23,7 @@ CAPTION = re.compile(r'(?im)^\s*(?:exhibit|figure|fig\.?|chart|table|图表?|表
 FURNITURE = re.compile(r'(?im)^\s*(?:table of contents|contents|免责声明|分析师声明|目录|disclosures?|disclaimer)\s*[:：]?\s*$')
 
 
-def _scanned_data_page(page, text):
+def _scanned_data_page(page, text, *, exclude_rating_distributions=True):
     """Recognize unnumbered plot grids and financial snapshots in scans.
 
     The result authorizes original page context only. It does not reconstruct
@@ -35,6 +36,9 @@ def _scanned_data_page(page, text):
         return False
     numbers = re.findall(r'(?<![A-Za-z])[-+]?\d+(?:[.,]\d+)*', text)
     if len(numbers) < 12:
+        return False
+    if (exclude_rating_distributions and re.search(r'\bratings?\s*distribution\b', text, re.I)
+            and re.search(r'\binvestment\s*banking\b', text, re.I)):
         return False
     # Only standalone appendix headings qualify; a research page's short
     # footer pointing to disclosures must not hide its financial tables.
@@ -78,7 +82,8 @@ def extract(pdf, pages, *, source_sha256, maximum=MAX_IMAGES, policy=POLICY):
     from market_views_source_digest import _chart_regions
     require(isinstance(pdf, bytes) and pdf.startswith(b'%PDF-') and len(pdf) <= MAX_PDF_BYTES
             and isinstance(source_sha256, str) and re.fullmatch(r'[a-f0-9]{64}', source_sha256)
-            and type(maximum) is int and 1 <= maximum <= MAX_IMAGES and policy in {POLICY, LEGACY_POLICY})
+            and type(maximum) is int and 1 <= maximum <= MAX_IMAGES
+            and policy in {POLICY, PREVIOUS_POLICY, LEGACY_POLICY})
     candidates, files = [], {}
     with _silent_mupdf(), fitz.open(stream=pdf, filetype='pdf') as document:
         require(not document.needs_pass and 0 < len(document) <= 1000 and len(pages) == len(document))
@@ -93,7 +98,8 @@ def extract(pdf, pages, *, source_sha256, maximum=MAX_IMAGES, policy=POLICY):
             # verified page text identifies a numbered exhibit with data.
             mode = 'original_pdf_crop'
             if not regions and ((CAPTION.search(text) and len(re.findall(r'\d+(?:\.\d+)?', text)) >= 4)
-                    or (policy == POLICY and _scanned_data_page(page, text))):
+                    or (policy != LEGACY_POLICY and _scanned_data_page(page, text,
+                            exclude_rating_distributions=policy == POLICY))):
                 regions = [page.rect]
                 mode = 'original_pdf_chart_page'
             for region in regions:
@@ -134,7 +140,7 @@ def validate(evidence, loader, *, original_pdf_sha256, source_sha256, pdf=None, 
     import io
     require(isinstance(evidence, dict) and set(evidence) == {'schema', 'policy', 'original_pdf_sha256',
             'source_sha256', 'page_count', 'dpi', 'max_images', 'candidate_count', 'candidate_pages', 'assets'}
-            and evidence['schema'] == 1 and evidence['policy'] in {POLICY, LEGACY_POLICY} and evidence['dpi'] == DPI
+            and evidence['schema'] == 1 and evidence['policy'] in {POLICY, PREVIOUS_POLICY, LEGACY_POLICY} and evidence['dpi'] == DPI
             and evidence['original_pdf_sha256'] == original_pdf_sha256
             and evidence['source_sha256'] == source_sha256
             and type(evidence['max_images']) is int and 1 <= evidence['max_images'] <= MAX_IMAGES
