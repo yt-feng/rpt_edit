@@ -2,37 +2,34 @@
   "schema": 1,
   "institution": "imf",
   "items": {
-    "imf:cc53cf2b5c8e572c72686c9796924844a4c835f863a066b87435b656c0d9": {
+    "imf:90e470b026088fe6e456f296b52fb29b15b6d4739fbe0c8d01f768df4039": {
       "item": {
-        "title": "The Monetary Policy Operational Framework in Samoa: Moving to an Interest-Rate-Based Target",
-        "source_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/11/11/the-monetary-policy-operational-framework-in-samoa-moving-to-an-interest-rate-based-target-581080",
-        "guid": "cc53cf2b5c8e572c72686c9796924844a4c835f863a066b87435b656c0d9",
-        "date": "2026-11-11T05:00:00+00:00",
-        "pdf_candidates": [
-          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026108.pdf",
-          "https://www.imf.org/-/media/files/publications/selected-issues-papers/2026/english/sipea2026108-source-pdf.pdf"
-        ],
-        "scrape_url": "https://www.imf.org/en/publications/selected-issues-papers/issues/2026/11/11/the-monetary-policy-operational-framework-in-samoa-moving-to-an-interest-rate-based-target-581080",
-        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/selected-issues-papers/issues/2026/11/11/the-monetary-policy-operational-framework-in-samoa-moving-to-an-interest-rate-based-target-581080"
+        "title": "Mexico: Selected Issues",
+        "source_url": "https://www.imf.org/en/publications/cr/issues/2026/11/12/mexico-selected-issues-581070",
+        "guid": "90e470b026088fe6e456f296b52fb29b15b6d4739fbe0c8d01f768df4039",
+        "date": "2026-11-12T05:00:00+00:00",
+        "pdf_candidates": [],
+        "scrape_url": "https://www.imf.org/en/publications/cr/issues/2026/11/12/mexico-selected-issues-581070",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/cr/issues/2026/11/12/mexico-selected-issues-581070"
       },
-      "admitted_at": "2026-11-12T02:38:56.199345+00:00",
+      "admitted_at": "2026-11-13T02:04:24.202169+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-12T02:38:56.199345+00:00",
+      "last_attempted_at": "2026-11-13T02:04:24.202169+00:00",
       "attempts": 1
     },
-    "imf:6fbb7d6736f6154c3b6f711339fc4ff0c832a73bf858fb1ce2981826044e": {
+    "imf:6bd8578f58b08bddd8e2f72a54595265422de8ed946e1d3a9fa50f3bfb62": {
       "item": {
-        "title": "Zimbabwe: Second Review under the Staff-Monitored Program-Press Release; and Staff Report",
-        "source_url": "https://www.imf.org/en/publications/cr/issues/2026/11/11/zimbabwe-second-review-under-the-staff-monitored-program-press-release-and-staff-report-581075",
-        "guid": "6fbb7d6736f6154c3b6f711339fc4ff0c832a73bf858fb1ce2981826044e",
-        "date": "2026-11-11T05:00:00+00:00",
+        "title": "Mexico: 2026 Article IV Consultation, Review Under the Flexible Credit Line Arrangement, and Request for Reduction of Access-Press Release; and Staff Report",
+        "source_url": "https://www.imf.org/en/publications/cr/issues/2026/11/12/mexico-2026-article-iv-consultation-review-under-the-flexible-credit-line-arrangement-and-581065",
+        "guid": "6bd8578f58b08bddd8e2f72a54595265422de8ed946e1d3a9fa50f3bfb62",
+        "date": "2026-11-12T05:00:00+00:00",
         "pdf_candidates": [],
-        "scrape_url": "https://www.imf.org/en/publications/cr/issues/2026/11/11/zimbabwe-second-review-under-the-staff-monitored-program-press-release-and-staff-report-581075",
-        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/cr/issues/2026/11/11/zimbabwe-second-review-under-the-staff-monitored-program-press-release-and-staff-report-581075"
+        "scrape_url": "https://www.imf.org/en/publications/cr/issues/2026/11/12/mexico-2026-article-iv-consultation-review-under-the-flexible-credit-line-arrangement-and-581065",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/cr/issues/2026/11/12/mexico-2026-article-iv-consultation-review-under-the-flexible-credit-line-arrangement-and-581065"
       },
-      "admitted_at": "2026-11-12T02:38:56.199345+00:00",
+      "admitted_at": "2026-11-13T02:04:24.202169+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-12T02:38:56.199345+00:00",
+      "last_attempted_at": "2026-11-13T02:04:24.202169+00:00",
       "attempts": 1
     }
   }
