@@ -1,6 +1,7 @@
 """Exercise missed schedules, late originals, duplicate wakes and lost POSTs."""
 import copy
 from datetime import datetime, timezone
+import json
 from pathlib import Path
 import subprocess
 import unittest
@@ -113,6 +114,61 @@ class WakeTests(unittest.TestCase):
             self.wake(github)
         with patch.object(github, 'api', return_value={'total_count': 101, 'workflow_runs': []}):
             with self.assertRaisesRegex(ValueError, 'daily_run_inventory_incomplete'):
+                self.wake(github)
+
+    def test_cancelled_legacy_upload_uses_its_retained_selection_manifest(self):
+        github = GitHub([run(title='Daily report articles and translations', conclusion='cancelled')])
+        github.artifacts[1] = [{'name': 'selected-macro-manifest-1', 'expired': False}]
+
+        def download(command, **kwargs):
+            self.assertEqual(command[:4], ['gh', 'run', 'download', '1'])
+            self.assertIn(REPO, command)
+            directory = Path(command[command.index('--dir') + 1])
+            (directory / 'selected_to_process_manifest.json').write_text(json.dumps([
+                {'dropbox_path': '/zip_backup/261108/research.pdf'},
+                {'dropbox_path': '/zip_backup/261108/nested/another.PDF'},
+            ]))
+            return subprocess.CompletedProcess(command, 0)
+
+        def submit(api, day):
+            api.rows.append(run(2))
+            return True
+
+        with patch.object(wakeup.subprocess, 'run', side_effect=download) as command:
+            self.assertEqual(self.wake(github, submit)['state'], 'dispatched')
+            command.assert_called_once()
+        with patch.object(wakeup, 'selected_manifest_date', return_value=wakeup.parse_date_folder(DAY)):
+            github.rows = github.rows[:1]
+            self.assertEqual(self.wake(github)['state'], 'batch_already_attempted')
+
+    def test_unavailable_or_duplicate_legacy_manifests_never_dispatch(self):
+        for artifacts in ([{'name': 'selected-macro-manifest-1', 'expired': True}],
+                          [{'name': 'selected-macro-manifest-1', 'expired': False}] * 2):
+            github = GitHub([run(title='Daily report articles and translations', conclusion='cancelled')])
+            github.artifacts[1] = artifacts
+            with self.subTest(artifacts=artifacts), patch.object(wakeup, 'selected_manifest_date') as read:
+                with self.assertRaisesRegex(ValueError, 'daily_selection_manifest_unavailable'):
+                    self.wake(github)
+                read.assert_not_called()
+
+    def test_malformed_or_mixed_legacy_source_paths_never_authorize_dispatch(self):
+        for rows in ([], [{}], [{'dropbox_path': '/different/261109/report.pdf'}],
+                     [{'dropbox_path': '/zip_backup/261109/../report.pdf'}],
+                     [{'dropbox_path': '/zip_backup/261108/report.pdf'},
+                      {'dropbox_path': '/zip_backup/261109/report.pdf'}]):
+            def download(command, **kwargs):
+                directory = Path(command[command.index('--dir') + 1])
+                (directory / 'selected_to_process_manifest.json').write_text(json.dumps(rows))
+                return subprocess.CompletedProcess(command, 0)
+            with self.subTest(rows=rows), patch.object(wakeup.subprocess, 'run', side_effect=download):
+                with self.assertRaises(ValueError):
+                    wakeup.selected_manifest_date(GitHub(), 1)
+
+    def test_legacy_manifest_download_failure_is_not_treated_as_an_unattempted_batch(self):
+        github = GitHub([run(title='Daily report articles and translations', conclusion='cancelled')])
+        github.artifacts[1] = [{'name': 'selected-macro-manifest-1', 'expired': False}]
+        with patch.object(wakeup.subprocess, 'run', return_value=subprocess.CompletedProcess([], 1)):
+            with self.assertRaisesRegex(ValueError, 'daily_selection_manifest_read_failed'):
                 self.wake(github)
 
     def test_failure_before_selection_can_recover_when_originals_arrive(self):

@@ -8,6 +8,7 @@ import os
 from pathlib import Path
 import re
 import subprocess
+import tempfile
 import time
 from urllib.parse import urlencode
 from zoneinfo import ZoneInfo
@@ -131,6 +132,14 @@ def attempted_date(github, run):
     require(len(days) <= 1, 'daily_source_date_ambiguous')
     if days:
         return days.pop()
+    # Older runs can have completed source selection without retaining a
+    # date-named marker or shard diagnostic. Their small selected manifest
+    # still binds the batch, including a run cancelled during draft upload.
+    manifests = [row for row in rows if row.get('name') == f'selected-macro-manifest-{run["id"]}']
+    if manifests:
+        require(len(manifests) == 1 and manifests[0].get('expired') is False,
+                'daily_selection_manifest_unavailable')
+        return selected_manifest_date(github, run['id'])
     # A failed source download can recover once fresh originals arrive. Only
     # prove that case when selection and every processing job never executed.
     result = github.api(f"actions/runs/{run['id']}/attempts/{run['run_attempt']}/jobs?per_page=100")
@@ -149,6 +158,34 @@ def attempted_date(github, run):
                     if str(job.get('name', '')).startswith('process-shard')),
             'daily_source_identity_unproven')
     return None
+
+
+def selected_manifest_date(github, run_id):
+    with tempfile.TemporaryDirectory(prefix='daily-source-identity-') as directory:
+        result = subprocess.run(
+            ['gh', 'run', 'download', str(run_id), '--repo', github.repository,
+             '--name', f'selected-macro-manifest-{run_id}', '--dir', directory],
+            capture_output=True, check=False, timeout=60,
+        )
+        require(result.returncode == 0, 'daily_selection_manifest_read_failed')
+        path = Path(directory) / 'selected_to_process_manifest.json'
+        require(path.is_file() and not path.is_symlink() and 0 < path.stat().st_size <= 1024 * 1024,
+                'daily_selection_manifest_invalid')
+        try:
+            rows = json.loads(path.read_bytes())
+        except (ValueError, UnicodeError):
+            raise ValueError('daily_selection_manifest_invalid') from None
+        require(isinstance(rows, list) and 0 < len(rows) <= 1000, 'daily_selection_manifest_invalid')
+        days = set()
+        for row in rows:
+            require(isinstance(row, dict), 'daily_selection_manifest_invalid')
+            match = re.fullmatch(r'/zip_backup/([0-9]{6}|[0-9]{8})/[^\r\n]+\.pdf',
+                                 str(row.get('dropbox_path', '')), re.I)
+            require(match is not None and '..' not in Path(row['dropbox_path']).parts,
+                    'daily_selection_manifest_source_invalid')
+            days.add(parse_date_folder(match[1]))
+        require(len(days) == 1, 'daily_source_date_ambiguous')
+        return days.pop()
 
 
 def dispatch(github, day):
