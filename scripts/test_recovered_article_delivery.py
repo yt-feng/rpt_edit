@@ -686,8 +686,23 @@ class PrivateRoundTripTests(unittest.TestCase):
         self.assertEqual(accepted['draft_article_counts_by_account'], {'kc': [7]})
         self.assertFalse(any(name in json.dumps(accepted) for name in
                              ('media_id', 'payload', 'report_dir', 'wechat_title', 'content')))
+        import random
+        assets = root / '_assets'
+        assets.mkdir()
+        (assets / 'large-cache.jpg').write_bytes(random.Random(17).randbytes(512 * 1024))
         with redirect_stdout(io.StringIO()):
             self.assertTrue(delivery.save_receipts(consumer, self.store, 'private'))
+        receipt_key = delivery.context_prefix(self.context) + '/wechat-receipts.tar.gz'
+        full_archive = self.store.objects[receipt_key]
+        with redirect_stdout(io.StringIO()):
+            self.assertTrue(delivery.save_receipts(consumer, self.store, 'private', include_media=False))
+        compact_archive = self.store.objects[receipt_key]
+        self.assertLess(len(compact_archive), len(full_archive) // 10)
+        import tarfile
+        with tarfile.open(fileobj=io.BytesIO(compact_archive), mode='r:gz') as archive:
+            self.assertFalse(any('_assets' in Path(member.name).parts for member in archive.getmembers()))
+        with tarfile.open(fileobj=io.BytesIO(full_archive), mode='r:gz') as archive:
+            self.assertTrue(any(member.name.endswith('large-cache.jpg') for member in archive.getmembers()))
         next_consumer = self.harness.root / 'next-dispatch'
         next_consumer.mkdir()
         with patch.object(delivery, 'authenticated_context', return_value=('a' * 40, 'b' * 40)), \
