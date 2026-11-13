@@ -1,36 +1,5 @@
 {
   "schema": 1,
   "institution": "imf",
-  "items": {
-    "imf:90e470b026088fe6e456f296b52fb29b15b6d4739fbe0c8d01f768df4039": {
-      "item": {
-        "title": "Mexico: Selected Issues",
-        "source_url": "https://www.imf.org/en/publications/cr/issues/2026/11/12/mexico-selected-issues-581070",
-        "guid": "90e470b026088fe6e456f296b52fb29b15b6d4739fbe0c8d01f768df4039",
-        "date": "2026-11-12T05:00:00+00:00",
-        "pdf_candidates": [],
-        "scrape_url": "https://www.imf.org/en/publications/cr/issues/2026/11/12/mexico-selected-issues-581070",
-        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/cr/issues/2026/11/12/mexico-selected-issues-581070"
-      },
-      "admitted_at": "2026-11-13T02:04:24.202169+00:00",
-      "since_days": 7,
-      "last_attempted_at": "2026-11-13T02:04:24.202169+00:00",
-      "attempts": 1
-    },
-    "imf:6bd8578f58b08bddd8e2f72a54595265422de8ed946e1d3a9fa50f3bfb62": {
-      "item": {
-        "title": "Mexico: 2026 Article IV Consultation, Review Under the Flexible Credit Line Arrangement, and Request for Reduction of Access-Press Release; and Staff Report",
-        "source_url": "https://www.imf.org/en/publications/cr/issues/2026/11/12/mexico-2026-article-iv-consultation-review-under-the-flexible-credit-line-arrangement-and-581065",
-        "guid": "6bd8578f58b08bddd8e2f72a54595265422de8ed946e1d3a9fa50f3bfb62",
-        "date": "2026-11-12T05:00:00+00:00",
-        "pdf_candidates": [],
-        "scrape_url": "https://www.imf.org/en/publications/cr/issues/2026/11/12/mexico-2026-article-iv-consultation-review-under-the-flexible-credit-line-arrangement-and-581065",
-        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/cr/issues/2026/11/12/mexico-2026-article-iv-consultation-review-under-the-flexible-credit-line-arrangement-and-581065"
-      },
-      "admitted_at": "2026-11-13T02:04:24.202169+00:00",
-      "since_days": 7,
-      "last_attempted_at": "2026-11-13T02:04:24.202169+00:00",
-      "attempts": 1
-    }
-  }
+  "items": {}
 }
