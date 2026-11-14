@@ -1,5 +1,75 @@
 {
   "schema": 1,
   "institution": "imf",
-  "items": {}
+  "items": {
+    "imf:4e500c40004f3e3d597183a089bbe7a5eded541ae14079a6a9a1eadbce04": {
+      "item": {
+        "title": "Cross-Border Banking Exposures and Macroeconomic Spillover Effects: The Case of Kenya",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/11/14/cross-border-banking-exposures-and-macroeconomic-spillover-effects-the-case-of-kenya-581101",
+        "guid": "4e500c40004f3e3d597183a089bbe7a5eded541ae14079a6a9a1eadbce04",
+        "date": "2026-11-13T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026245-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026245.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/11/14/cross-border-banking-exposures-and-macroeconomic-spillover-effects-the-case-of-kenya-581101",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/11/14/cross-border-banking-exposures-and-macroeconomic-spillover-effects-the-case-of-kenya-581101"
+      },
+      "admitted_at": "2026-11-14T01:56:56.454157+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-14T01:56:56.454157+00:00",
+      "attempts": 1
+    },
+    "imf:a07097db2fb74530c2861fa25d09bc0030152a17fb49ad51aefcb8997c8c": {
+      "item": {
+        "title": "Fast Payment Ecosystem Models and Performance in Brazil, the United States, and China",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/11/14/fast-payment-ecosystem-models-and-performance-in-brazil-the-united-states-and-china-581104",
+        "guid": "a07097db2fb74530c2861fa25d09bc0030152a17fb49ad51aefcb8997c8c",
+        "date": "2026-11-13T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026246-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026246.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/11/14/fast-payment-ecosystem-models-and-performance-in-brazil-the-united-states-and-china-581104",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/11/14/fast-payment-ecosystem-models-and-performance-in-brazil-the-united-states-and-china-581104"
+      },
+      "admitted_at": "2026-11-14T01:56:56.454157+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-14T01:56:56.454157+00:00",
+      "attempts": 1
+    },
+    "imf:f18082ae799df9ed739d37482639ba19f0d6a0fbd12756d041aa98b97303": {
+      "item": {
+        "title": "High-Frequency Evidence on Post-Covid Treasury Yields and Bond-Stock Comovement",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/11/14/high-frequency-evidence-on-post-covid-treasury-yields-and-bond-stock-comovement-581092",
+        "guid": "f18082ae799df9ed739d37482639ba19f0d6a0fbd12756d041aa98b97303",
+        "date": "2026-11-13T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026247-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026247.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/11/14/high-frequency-evidence-on-post-covid-treasury-yields-and-bond-stock-comovement-581092",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/11/14/high-frequency-evidence-on-post-covid-treasury-yields-and-bond-stock-comovement-581092"
+      },
+      "admitted_at": "2026-11-14T01:56:56.454157+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-14T01:56:56.454157+00:00",
+      "attempts": 1
+    },
+    "imf:359d0c7874c3a4c317abaccf5aa20ca9f67bf2ab3d6c2a63b6baf310ba84": {
+      "item": {
+        "title": "Climate Action, Fuel Dependency and Energy Security: Interactions from a Macroeconomic Perspective",
+        "source_url": "https://www.imf.org/en/publications/departmental-papers-policy-papers/issues/2026/11/13/climate-action-fuel-dependency-and-energy-security-interactions-from-a-macroeconomic-580938",
+        "guid": "359d0c7874c3a4c317abaccf5aa20ca9f67bf2ab3d6c2a63b6baf310ba84",
+        "date": "2026-11-13T05:00:00+00:00",
+        "pdf_candidates": [],
+        "scrape_url": "https://www.imf.org/en/publications/departmental-papers-policy-papers/issues/2026/11/13/climate-action-fuel-dependency-and-energy-security-interactions-from-a-macroeconomic-580938",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/departmental-papers-policy-papers/issues/2026/11/13/climate-action-fuel-dependency-and-energy-security-interactions-from-a-macroeconomic-580938"
+      },
+      "admitted_at": "2026-11-14T01:56:56.454157+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-14T01:56:56.454157+00:00",
+      "attempts": 1
+    }
+  }
 }
