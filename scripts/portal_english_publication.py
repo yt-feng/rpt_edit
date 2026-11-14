@@ -7,6 +7,7 @@ The public tree never receives original material or private commentary bodies.
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import json
 import os
 from pathlib import Path
@@ -26,6 +27,15 @@ from portal_smoke_get import retry_public_get
 ASSEMBLY = 'data/english-commentary/assembly.json'
 NS = 'http://www.sitemaps.org/schemas/sitemap/0.9'
 RELEASE = re.compile(r'[0-9a-f]{32}')
+
+
+def verified_reads(rows, verify):
+    """Run at most four independent reads, retaining every verification error."""
+    rows = list(rows)
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        for offset in range(0, len(rows), 8):
+            # Bound queued bodies as well as active requests on Python 3.11.
+            yield from pool.map(verify, rows[offset:offset+8])
 
 
 def checked_batches(rows):
@@ -97,8 +107,11 @@ def read_static_assembly(store, identity):
         descriptor = manifest['files'].get(relative)
         require(descriptor is not None and descriptor['sha256'] == row['sha256'] and descriptor['size'] == row['bytes'],
                 'English preview differs from the pinned static descriptor')
+    def verify_preview(relative):
         read_verified_candidate_body(store.client, store.bucket, slot_prefix(identity['slot'])+relative,
-                                     descriptor, maximum=MAX_MANIFEST)
+                                     manifest['files'][relative], maximum=MAX_MANIFEST)
+    for _ in verified_reads(value['public_files'], verify_preview):
+        pass
     return value
 
 
@@ -138,7 +151,8 @@ def verify_prepared_ledger(store, source_store, identity, workspace):
     assembly = read_static_assembly(store, identity); require(assembly is not None)
     ledger = read_ledger(store, assembly['ledger_sha256'])
     items = {}
-    for index, row in enumerate(assembly['batches']):
+    def verify_batch(entry):
+        index, row = entry
         directory = workspace/str(index)
         _, candidate, source = restore_candidate(store, source_store, row['generation'], row['candidate_id'], directory)
         docs = {doc['id']: doc for doc in source['documents']}
@@ -147,6 +161,9 @@ def verify_prepared_ledger(store, source_store, identity, workspace):
             verify_body(raw, item, docs[item['id']])
             require(store._get(store.key('bodies', item['body_sha256']+'.json'), maximum=MAX_BODY) == raw,
                     'Prepared private commentary differs from its admitted candidate')
+        return candidate['items']
+    for batch_items in verified_reads(enumerate(assembly['batches']), verify_batch):
+        for item in batch_items:
             items[item['id']] = item
     ordered = sorted(items.values(), key=lambda item: item['id'], reverse=True)
     require(ordered == ledger['items'] and len(ordered) == assembly['page_count'],
@@ -171,10 +188,13 @@ def verify_prepared_ledger(store, source_store, identity, workspace):
     expected = {'en/index.html': homepage(ordered, approved=True, asset_hashes=asset_hashes)}
     expected.update({f'en/blog/{item["id"]}.html': detail(item, approved=True, asset_hashes=asset_hashes)
                      for item in ordered})
-    for relative, raw in expected.items():
+    def verify_html(entry):
+        relative, raw = entry
         actual = read_verified_candidate_body(store.client, store.bucket, slot_prefix(identity['slot'])+relative,
                                              pinned['files'][relative], maximum=MAX_MANIFEST)
         require(actual == raw, 'Prepared English public HTML is not a preview-only projection')
+    for _ in verified_reads(expected.items(), verify_html):
+        pass
     return assembly
 
 
@@ -284,7 +304,7 @@ def bind_release(store, identity, previous, *, approved_ledger=''):
         require(active is not None and value['ledger_sha256'] == active['ledger_sha256']
                 and value['batches'] == active['batches'], 'Unapproved new English content cannot bind a site version')
     ledger = read_ledger(store, value['ledger_sha256']); require(len(ledger['items']) == value['page_count'])
-    for item in ledger['items']:
+    def verify_private_body(item):
         raw = store._get(store.key('bodies', item['body_sha256']+'.json'), maximum=MAX_BODY)
         require(digest(raw) == item['body_sha256'], 'Private English body checksum differs before version binding')
         body = json.loads(raw)
@@ -295,6 +315,8 @@ def bind_release(store, identity, previous, *, approved_ledger=''):
         require(isinstance(body['blocks'], list) and 1 <= len(body['blocks']) <= 500)
         for block in body['blocks']:
             exact(block, ['tag', 'text']); require(block['tag'] in {'p', 'li', 'h2', 'h3', 'h4'}); text(block['text'], english=True)
+    for _ in verified_reads(ledger['items'], verify_private_body):
+        pass
     release = identity['release_id']; require(isinstance(release, str) and RELEASE.fullmatch(release))
     binding = {'schema_version': 1, 'policy': POLICY, 'status': 'approved', 'site_release': release,
                'ledger_sha256': value['ledger_sha256']}

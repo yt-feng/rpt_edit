@@ -1,0 +1,37 @@
+name: Inspect stopped locale claim
+on:
+  workflow_dispatch:
+    inputs:
+      locale:
+        description: Exact stopped locale
+        type: string
+        required: true
+      source_generation:
+        description: Exact immutable source generation
+        type: string
+        required: true
+permissions:
+  contents: read
+jobs:
+  inspect:
+    if: github.ref == 'refs/heads/main' && github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install --disable-pip-version-check 'boto3>=1.34,<2'
+      - name: Read exact source and owner identities
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          KC_PUBLIC_REPOSITORY: 'true'
+          CLAIM_LOCALE: ${{ inputs.locale }}
+          CLAIM_GENERATION: ${{ inputs.source_generation }}
+        run: python3 -B scripts/inspect_portal_locale_claim.py --locale "$CLAIM_LOCALE" --generation "$CLAIM_GENERATION"

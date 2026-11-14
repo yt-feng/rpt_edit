@@ -3,6 +3,7 @@ import copy
 from contextlib import chdir
 import io
 import json
+import threading
 from pathlib import Path
 import unittest
 import xml.etree.ElementTree as ET
@@ -12,6 +13,7 @@ from portal_english_commentary import POLICY, build
 from portal_english_handoff import next_ready, read_handoff, verify_handoff
 from portal_english_publication import (ASSEMBLY, NS, bind_release, checked_assembly, checked_batches, audit_live, preflight_api,
                                        compose, read_active, read_ledger, read_static_assembly, recover_prepared, verify_prepared_ledger)
+from portal_english_publication import verified_reads
 from portal_extended_locales import ExpansionError, ORIGIN, digest, stable_bytes
 from portal_extended_r2 import R2NotFound, R2PermissionError
 from portal_smoke_get import DELAYS, retry_public_get
@@ -21,6 +23,33 @@ from review_portal_english_handoff import approval_is_valid, producer_is_valid, 
 import test_portal_english_pipeline as fixtures
 from test_portal_english_pipeline import CPU_PRODUCER, SOURCE_PRODUCER
 from test_portal_english_commentary import DAY, SyntheticTranslator, page
+
+
+class BoundedVerificationTests(unittest.TestCase):
+    def test_reads_overlap_with_at_most_four_workers_and_keep_order(self):
+        barrier = threading.Barrier(4)
+        lock = threading.Lock()
+        active = maximum = 0
+        def verify(value):
+            nonlocal active, maximum
+            with lock:
+                active += 1
+                maximum = max(maximum, active)
+            if value < 4:
+                barrier.wait(timeout=5)
+            with lock:
+                active -= 1
+            return value
+        self.assertEqual(list(verified_reads(range(24), verify)), list(range(24)))
+        self.assertEqual(maximum, 4)
+
+    def test_a_failed_read_is_not_suppressed(self):
+        def verify(value):
+            if value == 7:
+                raise ValueError('changed private body')
+            return value
+        with self.assertRaisesRegex(ValueError, 'changed private body'):
+            list(verified_reads(range(24), verify))
 
 
 class EnglishPublicationTests(unittest.TestCase):
