@@ -477,42 +477,6 @@
       "first_seen": "2026-08-07",
       "status": "too_old"
     },
-    "oecd:https://www.oecd.org/en/publications/enforcement-data-of-the-oecd-anti-bribery-convention-1999-2025_dad01040-en.html": {
-      "first_seen": "2026-07-16",
-      "status": "downloaded"
-    },
-    "oecd:https://www.oecd.org/en/publications/artificial-intelligence-and-open-finance_eb511c3c-en.html": {
-      "first_seen": "2026-07-16",
-      "status": "downloaded"
-    },
-    "oecd:https://www.oecd.org/en/publications/bridging-the-gaps-for-sustainable-development_d6b60ea7-en.html": {
-      "first_seen": "2026-07-16",
-      "status": "downloaded"
-    },
-    "oecd:https://www.oecd.org/en/publications/a-second-career-in-teaching_37722003-en.html": {
-      "first_seen": "2026-07-16",
-      "status": "downloaded"
-    },
-    "oecd:https://www.oecd.org/en/publications/environmental-tax-policy-review-of-romania_42ed5f84-en.html": {
-      "first_seen": "2026-07-16",
-      "status": "downloaded"
-    },
-    "adb:1154656": {
-      "first_seen": "2026-07-16",
-      "status": "downloaded"
-    },
-    "wto:https://www.wto.org/english/news_e/news26_e/rsmfn_16jul26_458_e.htm": {
-      "first_seen": "2026-07-16",
-      "status": "no_pdf"
-    },
-    "wto:https://www.wto.org/english/news_e/news26_e/tbt_10jul26_459_e.htm": {
-      "first_seen": "2026-07-16",
-      "status": "downloaded"
-    },
-    "wto:https://www.wto.org/english/news_e/news26_e/agng_09jul26_454_e.htm": {
-      "first_seen": "2026-07-16",
-      "status": "too_old"
-    },
     "oecd:https://www.oecd.org/en/publications/building-centre-of-government-capabilities-to-steer-and-deliver-complex-priorities_9899e2fe-en.html": {
       "first_seen": "2026-07-17",
       "status": "downloaded"
@@ -3903,6 +3867,46 @@
     },
     "wto:https://www.wto.org/english/news_e/news26_e/acc_10nov26_550_e.htm": {
       "first_seen": "2026-11-13",
+      "status": "no_pdf"
+    },
+    "imf:4e500c40004f3e3d597183a089bbe7a5eded541ae14079a6a9a1eadbce04": {
+      "first_seen": "2026-11-14",
+      "status": "downloaded"
+    },
+    "imf:a07097db2fb74530c2861fa25d09bc0030152a17fb49ad51aefcb8997c8c": {
+      "first_seen": "2026-11-14",
+      "status": "downloaded"
+    },
+    "imf:f18082ae799df9ed739d37482639ba19f0d6a0fbd12756d041aa98b97303": {
+      "first_seen": "2026-11-14",
+      "status": "downloaded"
+    },
+    "imf:359d0c7874c3a4c317abaccf5aa20ca9f67bf2ab3d6c2a63b6baf310ba84": {
+      "first_seen": "2026-11-14",
+      "status": "downloaded"
+    },
+    "worldbank:099140511132624614": {
+      "first_seen": "2026-11-14",
+      "status": "downloaded"
+    },
+    "worldbank:099047311132640193": {
+      "first_seen": "2026-11-14",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/work1396.htm": {
+      "first_seen": "2026-11-14",
+      "status": "downloaded"
+    },
+    "adb:1190001": {
+      "first_seen": "2026-11-14",
+      "status": "downloaded"
+    },
+    "wef:https://www.weforum.org/publications/top-10-emerging-technologies-for-planetary-health-energy-edition": {
+      "first_seen": "2026-11-14",
+      "status": "no_pdf"
+    },
+    "wto:https://www.wto.org/english/news_e/pres26_e/pr998_551_e.htm": {
+      "first_seen": "2026-11-14",
       "status": "no_pdf"
     }
   }
