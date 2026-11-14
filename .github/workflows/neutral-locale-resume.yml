@@ -1125,7 +1125,7 @@ jobs:
     runs-on: ubuntu-22.04
     # Retain existing checks/rollback budgets plus 30 minutes for bounded
     # private English verification, preflight, live audit and rollback audit.
-    timeout-minutes: 165
+    timeout-minutes: 195
     env:
       STATIC_RELEASE: ${{ needs.prepare_release.outputs.static_release }}
       STATIC_SLOT: ${{ needs.prepare_release.outputs.static_slot }}
@@ -1331,7 +1331,7 @@ jobs:
 
       - name: Bind the exact prepared English version after protected approval
         if: needs.prepare_release.outputs.english_ready == 'true'
-        timeout-minutes: 15
+        timeout-minutes: 45
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}

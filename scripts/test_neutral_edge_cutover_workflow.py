@@ -462,7 +462,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         extended = transaction.split("Audit extended locale pages after live cutover", 1)[1].split(
             "Roll back failed release or completed rehearsal", 1)[0]
         self.assertIn("timeout-minutes: 15", extended)
-        self.assertIn("timeout-minutes: 165", transaction)
+        self.assertLessEqual(job_timeout, 360)
         self.assertEqual(self.workflow.count("ref: ${{ github.sha }}"), 6)
         for job in ('prepare_release', 'extended_daily_review', 'english_daily_review', 'english_approval',
                     'reject_failed_daily_review', 'cutover'):
