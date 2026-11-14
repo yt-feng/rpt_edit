@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "3313a5bc83243d76963068e6469da45589ee0ac8eba1235912fe4d6cd3670bbb",
+  "slug": "bbg-20261114-3313a5bc83243d76",
+  "date": "2026-11-14",
+  "title": "苹果前芯片架构师谈AI芯片竞赛",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-11-12/power-on-podcast-the-ai-chip-race-video",
+  "start": 0.0,
+  "end": 90.0,
+  "segments": [
+    {
+      "start": 5.39,
+      "end": 13.91,
+      "en": "Welcome to Power On. We talk about Apple in the consumer tech industry. I'm Mark Irman and today we have a very interesting conversation and a very special guest",
+      "zh": "欢迎来到Power On。我们讨论消费科技领域的苹果。我是Mark Irman，今天我们有非常有趣的对话和一位特别嘉宾"
+    },
+    {
+      "start": 13.91,
+      "end": 22.11,
+      "en": "Gerard Williams, the third joining us to talk about the AI data center boom. What he's building at his new startup, Nuvecorp, what he built at Nuvea and",
+      "zh": "Gerard Williams三世加入我们，谈论AI数据中心热潮。他在新创公司Nuvecorp打造的东西，他在Nuvea和"
+    },
+    {
+      "start": 22.11,
+      "end": 33.55,
+      "en": "Policom, and of course what he did at Apple as the chief architect on their CPU technology. He worked on chips starting from the A7, the first 64-bit Apple",
+      "zh": "Policom所做的工作，当然还有他在苹果担任CPU技术首席架构师时的贡献。他参与的芯片从A7开始，那是苹果首款64位"
+    },
+    {
+      "start": 33.55,
+      "end": 42.99,
+      "en": "processor all the way up to the Apple M1 chip. We get into his time there, we get into his thoughts on John Ternis and Johnny Srujee and what it was like when",
+      "zh": "处理器一直到Apple M1芯片。我们聊了他在那里的时光，他对John Ternis和Johnny Srujee的看法，以及近二十年前"
+    },
+    {
+      "start": 42.99,
+      "end": 53.11,
+      "en": "he first came up with the idea almost two decades ago to build a server side CPU at Apple and stay tuned till the end. We have another round of Apple trivia.",
+      "zh": "他最初想到在苹果打造服务器端CPU时的情景。请坚持到最后，我们还有一轮苹果冷知识问答。"
+    },
+    {
+      "start": 53.11,
+      "end": 65.1,
+      "en": "So Gerard Williams, the third, I'm so glad to have you here just to give some background to those listening. Gerard has had an amazing career and there's",
+      "zh": "所以Gerard Williams三世，非常高兴你能来。给听众一些背景：Gerard有着惊人的职业生涯，目前"
+    },
+    {
+      "start": 65.1,
+      "end": 76.82,
+      "en": "probably no one better to talk to right now about the AI data center boom, the Silicon industry and all that coming together. Gerard, as you may be interested",
+      "zh": "可能没有人比他更适合谈论AI数据中心热潮、芯片产业以及所有这些的融合。Gerard，你可能感兴趣的是"
+    },
+    {
+      "start": 76.82,
+      "end": 86.54,
+      "en": "if you're listening to this podcast, he worked at Apple for a long time. Most recently he was a senior director in charge of CPU work, platform work. He",
+      "zh": "如果你在听这个播客，他在苹果工作了很长时间。最近他担任高级总监，负责CPU工作、平台工作。他"
+    },
+    {
+      "start": 86.54,
+      "end": 90.0,
+      "en": "worked all the way up to the M1 chip. He worked on the A7 chip and newer and so",
+      "zh": "一路做到M1芯片。他参与了A7芯片及更新芯片的工作，所以"
+    }
+  ]
+}
