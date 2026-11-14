@@ -51,10 +51,13 @@ class UnstartedClaimTests(unittest.TestCase):
                             for i, job in enumerate(self.f.jobs)]
         self.runs = {'456':failed_run(OLD)}
         self.jobs = {'456':skipped_jobs(OLD)}
+        self.checks = {}
         self.calls = []
 
     def api(self, path):
         self.calls.append(path)
+        if '/check-suites/' in path:
+            return copy.deepcopy(self.checks[path.split('/check-suites/')[1].split('/')[0]])
         run_id = path.split('/runs/')[1].split('/')[0]
         if run_id == '123':
             run, jobs = self.origin_run, self.origin_jobs
@@ -89,6 +92,55 @@ class UnstartedClaimTests(unittest.TestCase):
             steps=[{'name':'Run bounded locale translation and retain timeout state', 'conclusion':'success'},
                    {'name':'Persist complete or incomplete candidate pages privately', 'conclusion':conclusion}])
         return jobs
+
+    def missing_worker(self):
+        register(self.store, self.f.corpus, ('fr',), fixtures.PRODUCER)
+        rows = queue(self.store, 'fr'); rows[self.gen]['owner'] = OLD
+        save_queue(self.store, 'fr', rows)
+        self.runs['456'].update(conclusion='failure', check_suite_id=222)
+        self.jobs['456'] = self.terminal_worker(locale='pt', conclusion='success')
+        self.checks['222'] = {'total_count':len(self.jobs['456']), 'check_runs':[
+            {'id':job['id'], 'name':job['name'], 'status':'completed', 'conclusion':job['conclusion'],
+             'head_sha':OLD['sha'], 'check_suite':{'id':222}, 'app':{'slug':'github-actions'}}
+            for job in self.jobs['456']]}
+        return copy.deepcopy(rows[self.gen])
+
+    def test_missing_initial_worker_requires_two_matching_complete_inventories_and_spends_one_retry(self):
+        before = self.missing_worker(); original = copy.deepcopy(self.store.client.objects)
+        scan = self.scan(); self.stage(scan)
+        self.assertEqual(self.store.client.objects, original)
+        with patch.dict(os.environ, environment()):
+            self.assertEqual(scan.commit(), 1)
+        self.assertEqual(queue(self.store, 'fr')[self.gen], {**before, 'owner':NEW, 'continuations':1})
+        receipt = json.loads(next(iter(self.receipts().values()))['body'])
+        self.assertEqual(receipt['policy'], recovery.INITIAL_REPLAY_POLICY)
+        self.assertEqual(receipt['evidence']['missing_locale_job'], 'fr')
+        self.assertEqual(receipt['evidence']['check_run_ids'], [4561, 4562])
+        self.assertEqual(receipt['paid_provider_requests'], 0)
+        with self.assertRaisesRegex(ExpansionError, 'missing_worker_replay_bound_reached'):
+            recovery.transferred_row(queue(self.store, 'fr')[self.gen], OLD, receipt['evidence'], 'fr')
+
+    def test_missing_worker_never_replays_if_checks_are_partial_changed_foreign_or_present(self):
+        self.missing_worker(); original_checks = copy.deepcopy(self.checks['222'])
+        variants = [lambda d:d.update(total_count=3),
+                    lambda d:d['check_runs'][1].update(name='locale (fr)'),
+                    lambda d:d['check_runs'][1].update(head_sha='e'*40),
+                    lambda d:d['check_runs'][1].update(status='in_progress'),
+                    lambda d:d['check_runs'][1].update(app={'slug':'other'}),
+                    lambda d:d['check_runs'][1].update(check_suite={'id':333})]
+        before = copy.deepcopy(self.store.client.objects)
+        for mutate in variants:
+            self.checks['222'] = copy.deepcopy(original_checks); mutate(self.checks['222'])
+            self.assertEqual(partition_stopped_locales(self.store, ('fr',), unstarted=self.scan())[0], ())
+            self.assertEqual(self.store.client.objects, before)
+
+    def test_a_new_check_record_before_commit_prevents_missing_worker_transfer(self):
+        self.missing_worker(); scan = self.scan(); self.stage(scan)
+        self.checks['222']['total_count'] += 1
+        before = copy.deepcopy(self.store.client.objects)
+        with patch.dict(os.environ, environment()), self.assertRaises(ExpansionError):
+            scan.commit()
+        self.assertEqual(self.store.client.objects, before)
 
     def test_candidate_tail_failure_recovers_exact_snapshot_with_a_new_bounded_attempt(self):
         from build_portal_extended_locales import build

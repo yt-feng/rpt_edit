@@ -16,7 +16,7 @@ import time
 from portal_extended_continuation import (MAX_CONTINUATIONS, producer_identity,
     queue, read_origin, save_queue, validate_snapshot, verify_origin_run)
 from portal_extended_daily_queue import batch_admission, immutable_record
-from portal_extended_locales import ExpansionError, digest, stable_bytes
+from portal_extended_locales import ADDITIONAL, ExpansionError, digest, stable_bytes
 from portal_extended_r2 import R2NotFound
 
 WORKFLOW = '.github/workflows/portal-extended-locales-r2.yml'
@@ -111,13 +111,39 @@ def recoverable_matrix_workers(workers):
     return recovery
 
 
-def unused_owner(api, owner, repository, *, locale=None):
+def missing_worker_checks(api, owner, repository, run, jobs, locale):
+    """Cross-check two complete terminal inventories before one missing-job replay."""
+    require(locale in ADDITIONAL and not any(job['name'] == f'locale ({locale})' for job in jobs),
+            'owner_locale_worker_not_missing')
+    suite = run.get('check_suite_id')
+    require(type(suite) is int and suite > 0, 'owner_check_suite_unproved')
+    response = api(f'repos/{repository}/check-suites/{suite}/check-runs?per_page=100&filter=all')
+    checks = response.get('check_runs') if isinstance(response, dict) else None
+    require(isinstance(checks, list) and type(response.get('total_count')) is int
+        and len(checks) == response['total_count'] == len(jobs) <= MAX_JOBS,
+        'owner_check_inventory_incomplete')
+    by_id = {job['id']: job for job in jobs}
+    require(len({check.get('id') for check in checks if isinstance(check, dict)}) == len(jobs)
+        and all(isinstance(check, dict) and check.get('id') in by_id
+            and check.get('name') == by_id[check['id']]['name']
+            and check.get('status') == 'completed'
+            and check.get('conclusion') == by_id[check['id']]['conclusion']
+            and check.get('head_sha') == owner['sha']
+            and (check.get('check_suite') or {}).get('id') == suite
+            and (check.get('app') or {}).get('slug') == 'github-actions'
+            for check in checks), 'owner_check_inventory_differs')
+    return {'missing_locale_job': locale, 'check_suite_id': suite,
+            'check_run_ids': sorted(by_id)}
+
+
+def unused_owner(api, owner, repository, *, locale=None, missing_locale=None):
     """Latest and exact attempts must agree before and after the full job read."""
     owner = producer_identity(owner)
     latest = f'repos/{repository}/actions/runs/{owner["run_id"]}'
     path = latest+'/attempts/'+owner['attempt']
-    before = run_identity(api(latest), owner, repository)
-    exact = run_identity(api(path), owner, repository)
+    before_raw, exact_raw = api(latest), api(path)
+    before = run_identity(before_raw, owner, repository)
+    exact = run_identity(exact_raw, owner, repository)
     require(before == exact and exact['conclusion'] in FAILED, 'owner_outcome_unproved')
     jobs = all_jobs(api, path, owner)
     sources = [job for job in jobs if job.get('name') == 'source']
@@ -126,8 +152,14 @@ def unused_owner(api, owner, repository, *, locale=None):
     # skipped + no runner + no steps is accepted, never timestamps alone.
     workers = [job for job in jobs if str(job.get('name', '')).startswith('locale (')]
     require(bool(workers), 'owner_locale_inventory_missing')
-    if sources[0].get('conclusion') == 'success' and locale is None:
-        evidence = {'recoverable_matrix_workers': recoverable_matrix_workers(workers)}
+    if missing_locale is not None:
+        require(locale is None and sources[0].get('conclusion') == 'success'
+            and before_raw.get('check_suite_id') == exact_raw.get('check_suite_id'),
+            'owner_missing_worker_source_unproved')
+        evidence = missing_worker_checks(api, owner, repository, exact_raw, jobs, missing_locale)
+    elif sources[0].get('conclusion') == 'success' and locale is None:
+        evidence = {'recoverable_matrix_workers': recoverable_matrix_workers(workers),
+                    'matrix_worker_names': sorted(job['name'] for job in workers)}
     elif sources[0].get('conclusion') == 'success':
         # A persistence failure may leave a consumed claim with no result.
         # Only that exact terminal worker can be replayed; successful siblings
@@ -147,13 +179,21 @@ def unused_owner(api, owner, repository, *, locale=None):
             and job.get('runner_name') is None and job.get('steps') == []
             for job in jobs if job is not sources[0]), 'owner_worker_may_have_started')
         evidence = {'skipped_job_ids':sorted(job['id'] for job in jobs if job is not sources[0])}
-    after = run_identity(api(latest), owner, repository)
+    after_raw = api(latest)
+    after = run_identity(after_raw, owner, repository)
     require(after == before, 'owner_attempt_changed')
+    if missing_locale is not None:
+        require(after_raw.get('check_suite_id') == evidence['check_suite_id'], 'owner_check_suite_changed')
     return {'owner':owner, 'run':exact, 'source_job_id':sources[0]['id'], **evidence}
 
 
 def transferred_row(before, owner, proof, locale):
     after = {**before, 'owner':owner}
+    if 'missing_locale_job' in proof:
+        require(proof['missing_locale_job'] == locale and before['status'] == 'started'
+            and before['continuations'] == 0 and 'snapshot' not in before,
+            'missing_worker_replay_bound_reached')
+        after['continuations'] += 1
     if 'recoverable_matrix_workers' in proof:
         worker = proof['recoverable_matrix_workers'].get(f'locale ({locale})')
         require(worker is not None, 'owner_initial_locale_unproved')
@@ -176,6 +216,7 @@ class UnstartedClaims:
         self.lock = threading.Lock()
         self.owners, self.origins, self.proofs, self.reasons, self.transfers = {}, {}, {}, {}, {}
         self.terminal_workers = {}
+        self.missing_workers = {}
         self.interrupted = {}
         self.api_reads, self.api_seconds, self.clock = 0, 0, time.monotonic
 
@@ -254,6 +295,19 @@ class UnstartedClaims:
                             except Exception:
                                 self.terminal_workers[worker_key] = 'owner_api_unavailable'
                         proof = self.terminal_workers[worker_key]
+                elif (isinstance(proof, dict) and 'recoverable_matrix_workers' in proof
+                        and row['status'] == 'started' and row['continuations'] == 0
+                        and f'locale ({locale})' not in proof['matrix_worker_names']):
+                    worker_key = (owner_key, locale)
+                    if worker_key not in self.missing_workers:
+                        try:
+                            self.missing_workers[worker_key] = unused_owner(self.read, owner,
+                                self.repository, missing_locale=locale)
+                        except UnprovedClaim as error:
+                            self.missing_workers[worker_key] = str(error)
+                        except Exception:
+                            self.missing_workers[worker_key] = 'owner_api_unavailable'
+                    proof = self.missing_workers[worker_key]
                 require(isinstance(proof, dict), proof if isinstance(proof, str) else 'owner_run_unproved')
                 transferred_row(row, self.owner, proof, locale)
                 self.proofs[key] = {'before':copy.deepcopy(row), 'origin_sha256':digest(stable_bytes(origin)),
@@ -291,9 +345,11 @@ class UnstartedClaims:
             if before['status'] == 'claimed':
                 validate_snapshot(self.store, locale, generation, before)
             proof_locale = locale if 'terminal_locale_job_id' in saved['proof'] else None
-            owner_key = digest(stable_bytes([before['owner'], proof_locale]))
+            missing_locale = saved['proof'].get('missing_locale_job')
+            owner_key = digest(stable_bytes([before['owner'], proof_locale, missing_locale]))
             if owner_key not in refreshed:
-                refreshed[owner_key] = unused_owner(self.read, before['owner'], self.repository, locale=proof_locale)
+                refreshed[owner_key] = unused_owner(self.read, before['owner'], self.repository,
+                    locale=proof_locale, missing_locale=missing_locale)
             require(refreshed[owner_key] == saved['proof'], 'transfer_owner_evidence_changed')
             policy = TERMINAL_POLICY if 'terminal_locale_job_id' in saved['proof'] else POLICY
             if before['status'] == 'started' and after['continuations'] > before['continuations']:

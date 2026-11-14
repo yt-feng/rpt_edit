@@ -12,6 +12,8 @@ on:
         required: true
 permissions:
   contents: read
+  actions: read
+  checks: read
 jobs:
   inspect:
     if: github.ref == 'refs/heads/main' && github.event.repository.private == false
@@ -27,6 +29,7 @@ jobs:
       - run: python3 -m pip install --disable-pip-version-check 'boto3>=1.34,<2' 'requests>=2.31,<3'
       - name: Read exact source and owner identities
         env:
+          GH_TOKEN: ${{ github.token }}
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}

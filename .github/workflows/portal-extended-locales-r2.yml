@@ -175,6 +175,7 @@ jobs:
     permissions:
       contents: read
       actions: read
+      checks: read
     if: >-
       ${{
         inputs.operation == 'candidate' || inputs.operation == 'recovery-test' || inputs.operation == 'publication-resume' || inputs.operation == 'english-resume' || inputs.operation == 'checkpoint-repair' || inputs.operation == 'strict-repair-stage' || inputs.operation == 'strict-repair-resolution' || inputs.operation == 'source-fallback-inspect' ||
