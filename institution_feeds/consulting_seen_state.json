@@ -1,26 +1,6 @@
 {
   "version": 1,
   "items": {
-    "bcg:https://www.bcg.com/publications/2026/how-agentic-ai-transforms-marketing": {
-      "first_seen": "2026-07-16",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2024/real-cost-of-shipping-decarbonization": {
-      "first_seen": "2026-07-16",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/ceos-and-boards-are-aligned-on-ai-in-theory-but-divided-in-practice": {
-      "first_seen": "2026-07-16",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/middle-east-how-early-decisions-shape-the-fate-of-large-scale-projects": {
-      "first_seen": "2026-07-16",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/how-boards-and-ceos-can-govern-ai-together": {
-      "first_seen": "2026-07-16",
-      "status": "downloaded"
-    },
     "bcg:https://www.bcg.com/publications/2024/trust-imperative-4-0-genai-the-trust-multiplier-for-government": {
       "first_seen": "2026-07-18",
       "status": "downloaded"
@@ -1595,6 +1575,14 @@
     },
     "bcg:https://www.bcg.com/publications/2026/canadians-are-shopping-on-tighter-budgets-this-black-friday": {
       "first_seen": "2026-11-13",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/ai-personalizes-change-management-scale": {
+      "first_seen": "2026-11-14",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/ai-governance-banking-benchmark": {
+      "first_seen": "2026-11-14",
       "status": "downloaded"
     }
   }
