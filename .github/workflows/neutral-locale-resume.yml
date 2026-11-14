@@ -1125,7 +1125,7 @@ jobs:
     runs-on: ubuntu-22.04
     # Retain existing checks/rollback budgets plus 30 minutes for bounded
     # private English verification, preflight, live audit and rollback audit.
-    timeout-minutes: 165
+    timeout-minutes: 195
     env:
       STATIC_RELEASE: ${{ needs.prepare_release.outputs.static_release }}
       STATIC_SLOT: ${{ needs.prepare_release.outputs.static_slot }}
