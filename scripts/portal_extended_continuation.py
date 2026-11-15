@@ -412,21 +412,32 @@ def restore_claimed_checkpoint(store, locale, generation, output):
 
 
 def tracked_generations(store, locales):
-    generations = {}
-    for locale in locales:
+    def read_locale(locale):
+        completed = []
         for generation, row in queue(store, locale).items():
             if row['status'] == 'complete':
                 origin = read_origin(store, generation)
                 if not origin or not origin_allows_locale(origin, locale):
                     raise ExpansionError('Completed generation lacks original source proof')
-                generations.setdefault((origin['source_day'], generation), set()).add(locale)
+                completed.append((origin['source_day'], generation))
+        return locale, completed
+
+    generations = {}
+    selected = tuple(dict.fromkeys(locales))
+    if not selected:
+        return generations
+    with ThreadPoolExecutor(max_workers=min(MAX_SOURCE_SCAN_WORKERS, len(selected))) as executor:
+        for locale, completed in executor.map(read_locale, selected):
+            for source_day, generation in completed:
+                generations.setdefault((source_day, generation), set()).add(locale)
     return generations
 
 
 def acknowledge_published(store, locales, active):
     """Remove only exact live triples; immutable origins/results are retained."""
     published = {(locale, row['generation'], candidate) for row in active for locale, candidate in row['candidates'].items()}
-    for locale in locales:
+
+    def acknowledge_locale(locale):
         rows = queue(store, locale)
         # Preserve quality debt before ACK removes a legacy active render receipt.
         from portal_extended_quality import record_quality
@@ -439,6 +450,13 @@ def acknowledge_published(store, locales, active):
             row['status'] == 'complete' and (locale, generation, row['snapshot']['candidate_id']) in published)}
         if keep != rows:
             save_queue(store, locale, keep)
+
+    # Each locale has its own mutable ledgers. Keep its quality/anchor/ACK
+    # sequence intact while independent locales share the bounded read pool.
+    selected = tuple(dict.fromkeys(locales))
+    if selected:
+        with ThreadPoolExecutor(max_workers=min(MAX_SOURCE_SCAN_WORKERS, len(selected))) as executor:
+            list(executor.map(acknowledge_locale, selected))
 
 
 def verify_origin_run(origin, run, jobs, repository, *, admitted=None):

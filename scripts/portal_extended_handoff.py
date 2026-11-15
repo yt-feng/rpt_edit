@@ -12,6 +12,7 @@ import os
 from pathlib import Path
 import re
 import subprocess
+import sys
 import tempfile
 
 import requests
@@ -384,12 +385,15 @@ def main():
             if daily_corpus_day(corpus) != args.day:
                 raise ExpansionError('Source day changed after daily selection')
         # Respect the environment's normal networking; never alter proxy state.
+        print(json.dumps({'event': 'handoff-progress', 'stage': 'read-active-release'}), file=sys.stderr, flush=True)
         with requests.Session() as session:
             response = session.get(ORIGIN+'/.well-known/edge-state', timeout=(10, 30), allow_redirects=False)
             response.raise_for_status()
             if len(response.content) > 65536:
                 raise ExpansionError('Active release identity exceeds bound')
             active = read_active_batches(store, response.json())
+        print(json.dumps({'event': 'handoff-progress', 'stage': 'verify-completed-candidates',
+                          'requested_locales': len(select_locales(args.locales))}), file=sys.stderr, flush=True)
         ready = next_registered_batch(store, args.locales, args.enabled_locales, active, workspace,
                                       generation=repair_generation)
         if ready is None and repair_generation is None:
@@ -400,9 +404,12 @@ def main():
                               **quality_summary(store, select_locales(args.locales))}))
             return
         batch, corpus = ready
+        print(json.dumps({'event': 'handoff-progress', 'stage': 'save-verified-handoff',
+                          'selected_locales': len(batch['candidates'])}), file=sys.stderr, flush=True)
         receipt = save_handoff(store, batch, day=daily_corpus_day(corpus), pages=len(corpus['documents']), producer={
             'run_id': os.environ['GITHUB_RUN_ID'], 'attempt': os.environ['GITHUB_RUN_ATTEMPT'],
             'sha': os.environ['GITHUB_SHA']})
+        print(json.dumps({'event': 'handoff-progress', 'stage': 'dispatch-release'}), file=sys.stderr, flush=True)
         subprocess.run(['gh', 'workflow', 'run', 'neutral-edge-cutover.yml', '--repo', os.environ['GITHUB_REPOSITORY'],
             '--ref', 'main', '-f', 'operation=migrate', '-f', 'translation_scope=incremental',
             '-f', 'extended_locales='+','.join(batch['candidates']), '-f', 'extended_source_generation='+batch['generation'],
