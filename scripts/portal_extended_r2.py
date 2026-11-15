@@ -17,6 +17,7 @@ import random
 import re
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path, PurePosixPath
 from typing import Any, Iterable
 
@@ -34,6 +35,8 @@ MAX_SOURCE_BYTES = 32 * 1024 * 1024
 MAX_CHECKPOINT_BYTES = 8 * 1024 * 1024
 MAX_CANDIDATE_MANIFEST_BYTES = 2 * 1024 * 1024
 MAX_CANDIDATE_PAGE_BYTES = 4 * 1024 * 1024
+MAX_CANDIDATE_READERS = 4
+RESTORE_READ_BATCH = 8
 HEX64 = re.compile(r"^[0-9a-f]{64}$")
 LOCALE = re.compile(r"^[a-z]{2,3}(?:-[A-Za-z]{4}|-[A-Z]{2})?$")
 RETRYABLE_CODES = frozenset(
@@ -575,16 +578,25 @@ class R2Store:
             raise R2IntegrityError("Candidate is not complete or its id changed")
         destination.mkdir(parents=True, exist_ok=True)
         (destination / "candidate-manifest.json").write_bytes(manifest_body)
-        restored = 0
-        for row in manifest["pages"]:
-            relative = safe_relative(str(row["path"]))
+        planned = [(safe_relative(str(row["path"])), row) for row in manifest["pages"]]
+
+        def read_page(item):
+            relative, row = item
             body = self._get(self.candidate_key(locale, generation, candidate_id, relative), maximum=MAX_CANDIDATE_PAGE_BYTES)
             if len(body) != row["bytes"] or sha256_bytes(body) != row["sha256"]:
                 raise R2IntegrityError(f"Candidate restore checksum failed: {relative}")
-            target = destination / relative
-            target.parent.mkdir(parents=True, exist_ok=True)
-            target.write_bytes(body)
-            restored += 1
+            return relative, body
+
+        restored = 0
+        # Fetch and hash-check immutable pages concurrently; write in manifest
+        # order. Batches bound buffered bodies to eight page-size limits.
+        with ThreadPoolExecutor(max_workers=MAX_CANDIDATE_READERS) as executor:
+            for start in range(0, len(planned), RESTORE_READ_BATCH):
+                for relative, body in executor.map(read_page, planned[start:start + RESTORE_READ_BATCH]):
+                    target = destination / relative
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    target.write_bytes(body)
+                    restored += 1
         return {"ready": True, "locale": locale, "source_generation": generation, "candidate_id": candidate_id,
                 "completed_page_count": restored, "ready_key": ready_key}
 

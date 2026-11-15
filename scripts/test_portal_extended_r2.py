@@ -6,6 +6,7 @@ import copy
 import json
 from pathlib import Path
 import tempfile
+import threading
 import unittest
 from unittest.mock import Mock, call, patch
 
@@ -21,8 +22,9 @@ from portal_extended_r2 import (
     fake_permission_check,
     require_staging_prefix,
 )
-from test_portal_extended_locales import FakeTranslator, corpus
+from test_portal_extended_locales import FakeTranslator, corpus, html
 from build_portal_extended_locales import MODEL_ID, build
+from portal_extended_locales import document_from_html, make_corpus
 
 
 class Missing(Exception):
@@ -157,6 +159,48 @@ class R2Tests(unittest.TestCase):
         result = self.store.restore_candidate("fr", self.generation, uploaded["candidate_id"], restored)
         self.assertEqual(result["completed_page_count"], 2)
         self.assertEqual((candidate / "fr/index.html").read_bytes(), (restored / "fr/index.html").read_bytes())
+
+    def test_restore_bounds_parallel_reads_and_preserves_all_page_bytes(self):
+        origin = self.corpus["documents"][0]["url"].rstrip("/")
+        docs = [self.corpus["documents"][0]]
+        for number in range(9):
+            url = origin + f"/blog/20260922-reader-{number}.html"
+            docs.append(document_from_html(url, html(url, body="<h1>Research note</h1><p>Source based analysis.</p>")))
+        source = make_corpus(docs)
+        candidate = self.root / "parallel-candidate"
+        manifest = build(source, "fr", candidate, self.root / "parallel-memo.json", FakeTranslator())
+        uploaded = self.store.upload_candidate(candidate, "fr", source["documents_sha256"])
+        barrier, lock = threading.Barrier(4), threading.Lock()
+        active = peak = started = 0
+        fetched = []
+        read = self.store._get
+
+        def bounded_read(key, *, maximum):
+            nonlocal active, peak, started
+            if not key.endswith(".html"):
+                return read(key, maximum=maximum)
+            with lock:
+                active += 1
+                started += 1
+                ordinal = started
+                peak = max(peak, active)
+                fetched.append(key)
+            try:
+                if ordinal <= 4:
+                    barrier.wait(timeout=3)
+                return read(key, maximum=maximum)
+            finally:
+                with lock:
+                    active -= 1
+
+        restored = self.root / "parallel-restored"
+        with patch.object(self.store, "_get", side_effect=bounded_read):
+            result = self.store.restore_candidate("fr", source["documents_sha256"], uploaded["candidate_id"], restored)
+        self.assertEqual(peak, 4)
+        self.assertEqual(result["completed_page_count"], 10)
+        self.assertEqual(len(fetched), len(set(fetched)))
+        for row in manifest["pages"]:
+            self.assertEqual((candidate / row["path"]).read_bytes(), (restored / row["path"]).read_bytes())
 
     def test_identical_candidate_replay_avoids_all_duplicate_puts(self):
         candidate = self.root / "candidate"

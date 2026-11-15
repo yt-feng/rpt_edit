@@ -16,6 +16,7 @@ import portal_extended_incremental as incremental
 from portal_extended_continuation import (MAX_CONTINUATIONS, MAX_PENDING_GENERATIONS, adopt_existing,
     acknowledge_published, action_owner, pending, queue, read_origin, register, restore_claimed_checkpoint,
     save_queue, verify_origin_run)
+from portal_extended_continuation import tracked_generations
 from portal_extended_handoff import next_registered_batch, read_handoff, save_handoff
 from review_portal_extended_handoff import producer_is_valid
 from inspect_portal_extended_continuation import inspect, inspect_cursors, _ReadOnlyCursorClient
@@ -33,6 +34,58 @@ class StopAtLastUnit(FakeTranslator):
         if text == 'Second unique unfinished unit.':
             raise TranslationBudgetExceeded('synthetic deadline')
         return super().translate(text, **kwargs)
+
+
+class HandoffLedgerReadTests(unittest.TestCase):
+    def test_completed_inventory_is_bounded_parallel_and_keeps_locale_order(self):
+        locales = ('fr', 'pt', 'es', 'it', 'de', 'ru', 'th')
+        generations = {locale: f'{index + 1:064x}' for index, locale in enumerate(locales)}
+        barrier, lock = threading.Barrier(4), threading.Lock()
+        active = peak = started = 0
+
+        def read_queue(store, locale):
+            nonlocal active, peak, started
+            with lock:
+                active += 1
+                started += 1
+                ordinal = started
+                peak = max(peak, active)
+            try:
+                if ordinal <= 4:
+                    barrier.wait(timeout=3)
+                return {generations[locale]: {'status': 'complete'}}
+            finally:
+                with lock:
+                    active -= 1
+
+        with patch('portal_extended_continuation.queue', side_effect=read_queue), \
+             patch('portal_extended_continuation.read_origin', return_value={'source_day': DAY, 'locales': list(locales)}):
+            result = tracked_generations(Mock(), locales + ('fr',))
+        self.assertEqual(peak, 4)
+        self.assertEqual(started, len(locales))
+        self.assertEqual(list(result), [(DAY, generations[locale]) for locale in locales])
+        self.assertEqual(list(result.values()), [{locale} for locale in locales])
+
+    def test_parallel_ack_keeps_unpublished_and_incomplete_rows_per_locale(self):
+        locales = ('fr', 'pt', 'es', 'it', 'de', 'ru', 'th')
+        rows = {'a'*64: {'status': 'complete', 'snapshot': {'candidate_id': 'b'*64}},
+                'c'*64: {'status': 'incomplete', 'continuations': 0},
+                'd'*64: {'status': 'complete', 'snapshot': {'candidate_id': 'e'*64}}}
+        saved = {}
+        active = [{'generation': 'a'*64, 'candidates': {locale: 'b'*64 for locale in locales}}]
+
+        def save(store, locale, keep):
+            saved[locale] = copy.deepcopy(keep)
+
+        with patch('portal_extended_continuation.queue', side_effect=lambda store, locale: copy.deepcopy(rows)), \
+             patch('portal_extended_quality.record_quality', return_value={'translation_ready': True}) as quality, \
+             patch('portal_extended_quality_recovery.save_ack_anchor'), \
+             patch('portal_extended_continuation.save_queue', side_effect=save):
+            acknowledge_published(Mock(), locales + ('fr',), active)
+        self.assertEqual(set(saved), set(locales))
+        self.assertEqual(quality.call_count, len(locales))
+        for keep in saved.values():
+            self.assertEqual(keep, {key: value for key, value in rows.items() if key != 'a'*64})
 
 
 class ContinuationTests(unittest.TestCase):
