@@ -132,7 +132,9 @@ jobs:
     runs-on: ubuntu-22.04
     # Preparing 44k+ files used 111 minutes before upload in run 39864542229.
     # Reserve a separate bounded upload window plus post-upload verification.
-    timeout-minutes: 240
+    # A complete multilingual build can reach the final upload after three hours.
+    # Leave time for bounded upload and shadow acceptance at the current catalog size.
+    timeout-minutes: 300
     outputs:
       changed: ${{ steps.release_delta.outputs.changed }}
       static_release: ${{ steps.runtime_context.outputs.static_release }}
@@ -2818,7 +2820,7 @@ jobs:
     runs-on: ubuntu-22.04
     # Retain existing checks/rollback budgets plus 30 minutes for bounded
     # private English verification, preflight, live audit and rollback audit.
-    timeout-minutes: 195
+    timeout-minutes: 225
     env:
       STATIC_RELEASE: ${{ needs.prepare_release.outputs.static_release }}
       STATIC_SLOT: ${{ needs.prepare_release.outputs.static_slot }}
@@ -3006,7 +3008,9 @@ jobs:
           --output-env "$GITHUB_ENV"
 
       - name: Verify committed candidate immediately before cutover
-        timeout-minutes: 15
+        # Recheck all expanded locale pages and runtime bytes with bounded I/O.
+        # The 33-locale release exceeded the old 15-minute window.
+        timeout-minutes: 45
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}

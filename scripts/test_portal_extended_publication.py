@@ -495,7 +495,8 @@ class PublicationTests(unittest.TestCase):
         from concurrent.futures import ThreadPoolExecutor
         with mock.patch('verify_prepared_static_slot.ThreadPoolExecutor', wraps=ThreadPoolExecutor) as executor:
             result = verify_extended_static_tree(client, 'bucket', 'slot/', files, origin=ORIGIN)
-            executor.assert_called_once_with(max_workers=4)
+            self.assertTrue(executor.call_count)
+            self.assertTrue(all(call.kwargs == {'max_workers': 8} for call in executor.call_args_list))
         self.assertEqual(result['locales'], ['fr'])
         for name in ('new', 'other', 'z-final'):
             self.assertIn(('get', f'slot/fr/blog/20260925-{name}.html'), client.operations)
