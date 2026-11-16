@@ -814,6 +814,79 @@ class ShadowPreviewAuditTests(unittest.TestCase):
         with self.assertRaisesRegex(audit.AuditError, "crosses locale boundaries"):
             self.run_audit(plan, responses)
 
+    def test_production_sized_arabic_chart_overlay_uses_exact_manifest_bound(self) -> None:
+        plan, responses = response_fixture()
+        # Synthetic JSON with the exact byte length observed in run 43884870954.
+        size = 19_128_315
+        prefix, suffix = b'{"locale":"ar","title":"', b'"}'
+        remaining = size - len(prefix) - len(suffix)
+        body = prefix + "ع".encode() * (remaining // 2) + b"x" * (remaining % 2) + suffix
+        self.assertEqual(len(body), size)
+        path = "data/i18n/ar/chart-content.json"
+
+        def large_overlay(manifest):
+            old_path = manifest["chart_overlays"]["ar"]["path"]
+            manifest["chart_overlays"]["ar"] = {
+                "path": path, "byte_size": size, "sha256": hashlib.sha256(body).hexdigest(),
+            }
+            manifest["required_paths"].remove(old_path)
+            manifest["required_paths"].append(path)
+            manifest["required_paths"].sort()
+
+        replace_json_response(responses, "/data/i18n/manifest.json", large_overlay)
+        response = FakeResponse(body, headers=protected_headers("ar"))
+        response.read = mock.Mock(wraps=response.read)
+        responses["/" + path] = response
+        result, _opener = self.run_audit(plan, responses)
+        self.assertTrue(any(row["path"] == "/" + path and row["bytes"] == size for row in result["checks"]))
+        response.read.assert_called_once_with(size + 1)
+        # An allowed size never substitutes for the existing digest/header gates.
+        response.body = b"x" + body[1:]
+        with self.assertRaisesRegex(audit.AuditError, "does not match its manifest"):
+            self.run_audit(plan, responses)
+        response.body = body
+        replace_json_response(responses, "/data/i18n/manifest.json",
+                              lambda manifest: manifest["chart_overlays"]["ar"].update(byte_size=size + 1))
+        with self.assertRaisesRegex(audit.AuditError, "does not match its manifest"):
+            self.run_audit(plan, responses)
+        replace_json_response(responses, "/data/i18n/manifest.json",
+                              lambda manifest: manifest["chart_overlays"]["ar"].update(byte_size=size))
+        response.headers["Content-Language"] = "ko"
+        with self.assertRaisesRegex(audit.AuditError, "wrong Content-Language"):
+            self.run_audit(plan, responses)
+
+    def test_large_chart_budget_matches_the_production_build_contract(self) -> None:
+        workflow = (ROOT / ".github/workflows/neutral-edge-cutover.yml").read_text()
+        self.assertIn('"charts": 32_000_000', workflow)
+        self.assertEqual(audit.MAX_CHART_OVERLAY_BYTES, 32_000_000)
+
+    def test_ordinary_responses_keep_16_mib_even_for_undeclared_chart_urls(self) -> None:
+        for path in ("/robots.txt", "/ar/", "/assets/app.js", "/data/i18n/ar/chart-content.json"):
+            with self.subTest(path=path):
+                response = FakeResponse(b"x" * (audit.MAX_RESPONSE_BYTES + 1))
+                response.read = mock.Mock(wraps=response.read)
+                opener = FakeOpener({path: response})
+                with self.assertRaisesRegex(audit.AuditError, "oversized"):
+                    audit.fetch(opener, BASE_URL, path, attempts=1)
+                response.read.assert_called_once_with(audit.MAX_RESPONSE_BYTES + 1)
+
+    def test_overstated_manifest_runtime_size_fails_before_runtime_download(self) -> None:
+        for path, size in (("data/i18n/ar/chart-content.json", audit.MAX_CHART_OVERLAY_BYTES + 1),
+                           ("data/i18n/ar/catalog-titles.json", audit.MAX_RESPONSE_BYTES + 1)):
+            manifest, _bodies = manifest_fixture()
+            old_path = manifest["chart_overlays"]["ar"]["path"]
+            manifest["chart_overlays"]["ar"].update(path=path, byte_size=size)
+            manifest["required_paths"].remove(old_path)
+            manifest["required_paths"].append(path)
+            manifest["required_paths"].sort()
+            with self.subTest(path=path), self.assertRaisesRegex(audit.AuditError, "runtime bound"):
+                audit.manifest_files(manifest)
+        opener = mock.Mock()
+        for size in (True, 0, -1, "19128315", audit.MAX_CHART_OVERLAY_BYTES + 1):
+            with self.subTest(size=size), self.assertRaisesRegex(audit.AuditError, "response bound"):
+                audit.fetch(opener, BASE_URL, "/data/i18n/ar/chart-content.json", expected_bytes=size)
+        opener.open.assert_not_called()
+
     def test_source_fallback_requires_exact_provenance_and_keeps_file_checks(self) -> None:
         from test_portal_locale_manifest import with_source_fallback
 

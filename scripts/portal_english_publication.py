@@ -324,16 +324,23 @@ def bind_release(store, identity, previous, *, approved_ledger=''):
     return {'site_release': release, 'ledger_sha256': value['ledger_sha256'], 'page_count': value['page_count'], 'deployed': False}
 
 
-def recover_prepared(store, source_store, identity, workspace):
-    """Recover exact uploaded previews; fresh approval, no public rewrite/inference."""
+def recover_prepared(store, source_store, identity, workspace, *, previous=None):
+    """Recover uploaded previews, retaining only a verified active English version."""
     from portal_english_handoff import save_handoff
     assembly = read_static_assembly(store, identity)
-    if assembly is None: return {'ready': False, 'page_count': 0, 'translation_calls': 0, 'handoff': ''}
-    verify_prepared_ledger(store, source_store, identity, workspace/'verify')
-    batch = assembly['batches'][-1]
-    ready, manifest, _ = restore_candidate(store, source_store, batch['generation'], batch['candidate_id'], workspace/'handoff')
-    handoff = save_handoff(store, batch, ready, manifest)
-    return {'ready': True, 'page_count': assembly['page_count'], 'ledger_sha256': assembly['ledger_sha256'],
+    if assembly is None: return {'ready': False, 'requested': False, 'page_count': 0, 'translation_calls': 0, 'handoff': ''}
+    assembly = verify_prepared_ledger(store, source_store, identity, workspace/'verify')
+    active = read_active(store, previous)
+    # Match bind_release's carry-forward rule. Uploaded previews alone do not
+    # prove prior approval; the active version's binding and ledger must verify.
+    requested = not (active is not None and assembly['ledger_sha256'] == active['ledger_sha256']
+                     and assembly['batches'] == active['batches'])
+    handoff = ''
+    if requested:
+        batch = assembly['batches'][-1]
+        ready, manifest, _ = restore_candidate(store, source_store, batch['generation'], batch['candidate_id'], workspace/'handoff')
+        handoff = save_handoff(store, batch, ready, manifest)
+    return {'ready': True, 'requested': requested, 'page_count': assembly['page_count'], 'ledger_sha256': assembly['ledger_sha256'],
             'handoff': handoff, 'translation_calls': 0, 'deployed': False}
 
 
@@ -442,7 +449,7 @@ def main():
                       'ledger_sha256': value['ledger_sha256'], 'page_count': value['page_count'], 'handoff': args.handoff}
         elif args.operation == 'recover':
             with tempfile.TemporaryDirectory(prefix='english-prepared-recovery-') as temporary:
-                result = recover_prepared(store, source_store, candidate, Path(temporary))
+                result = recover_prepared(store, source_store, candidate, Path(temporary), previous=previous)
         elif args.operation == 'audit':
             import requests
             with requests.Session() as session: result = audit_live(store, candidate, session)
@@ -456,7 +463,7 @@ def main():
     if args.evidence_out: args.evidence_out.write_bytes(stable_bytes(result))
     if args.github_output:
         with args.github_output.open('a') as stream:
-            for key in ('ready', 'page_count', 'ledger_sha256', 'handoff'):
+            for key in ('ready', 'requested', 'page_count', 'ledger_sha256', 'handoff'):
                 value = result.get(key, '')
                 stream.write(key+'='+str(value).lower()+'\n')
     print(json.dumps(result, sort_keys=True))

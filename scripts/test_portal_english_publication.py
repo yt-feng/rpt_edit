@@ -341,6 +341,7 @@ class EnglishPublicationTests(unittest.TestCase):
         batch = self.candidate(); original = self.assemble([batch]); identity = self.pin()
         before = {key: dict(value) for key, value in self.engine.client.objects.items() if key.startswith(slot_prefix('a'))}
         result = recover_prepared(self.store, self.original, identity, self.base/'prepared-recovery')
+        self.assertTrue(result['ready']); self.assertTrue(result['requested'])
         self.assertEqual(result['ledger_sha256'], original['ledger_sha256'])
         self.assertEqual(read_handoff(self.store, result['handoff'])['batch'], batch)
         self.assertEqual(result['translation_calls'], 0); self.assertFalse(result['deployed'])
@@ -348,7 +349,89 @@ class EnglishPublicationTests(unittest.TestCase):
         with self.assertRaises(ExpansionError): bind_release(self.store, identity, None)
         with self.assertRaises(R2NotFound): read_active(self.store, identity)
         self.root = self.fresh_tree(); empty = self.pin('b', 'b'*32)
-        self.assertFalse(recover_prepared(self.store, self.original, empty, self.base/'no-english')['ready'])
+        missing = recover_prepared(self.store, self.original, empty, self.base/'no-english', previous=identity)
+        self.assertFalse(missing['ready']); self.assertFalse(missing['requested']); self.assertEqual(missing['handoff'], '')
+
+    def test_recovery_carries_verified_english_without_new_handoff_or_approval(self):
+        batch, previous, active = self.first_live()
+        self.root = self.fresh_tree(); self.assemble([batch], active); identity = self.pin('b', 'b'*32)
+        before = copy.deepcopy(self.engine.client.objects)
+        with mock.patch('portal_english_handoff.save_handoff') as save:
+            result = recover_prepared(self.store, self.original, identity, self.base/'retained-recovery', previous=previous)
+        self.assertTrue(result['ready']); self.assertFalse(result['requested'])
+        self.assertEqual(result['ledger_sha256'], active['ledger_sha256'])
+        self.assertEqual(result['handoff'], ''); save.assert_not_called()
+        self.assertEqual(self.engine.client.objects, before)
+        bind_release(self.store, identity, previous)
+        self.assertEqual(read_active(self.store, identity)['batches'], [batch])
+
+    def test_retained_recovery_still_validates_the_prepared_private_bodies(self):
+        batch, previous, active = self.first_live()
+        self.root = self.fresh_tree(); self.assemble([batch], active); identity = self.pin('b', 'b'*32)
+        item = read_ledger(self.store, active['ledger_sha256'])['items'][0]
+        key = self.store.key('bodies', item['body_sha256']+'.json')
+        original = self.engine.client.objects[key]['body']
+        self.store._put(key, bytes([original[0] ^ 1])+original[1:], metadata={'kind': 'english-private-body'})
+        with mock.patch('portal_english_handoff.save_handoff') as save:
+            with self.assertRaisesRegex(ExpansionError, 'Prepared private commentary differs'):
+                recover_prepared(self.store, self.original, identity, self.base/'invalid-retained', previous=previous)
+        save.assert_not_called()
+
+    def test_recovery_of_new_english_still_requires_exact_version_approval(self):
+        old, previous, active = self.first_live()
+        self.root = self.fresh_tree(); new = self.candidate('2026-10-02'); self.assemble([old, new], active)
+        identity = self.pin('b', 'b'*32)
+        result = recover_prepared(self.store, self.original, identity, self.base/'new-recovery', previous=previous)
+        self.assertTrue(result['ready']); self.assertTrue(result['requested'])
+        self.assertNotEqual(result['ledger_sha256'], active['ledger_sha256'])
+        self.assertEqual(read_handoff(self.store, result['handoff'])['batch'], new)
+        with self.assertRaisesRegex(ExpansionError, 'Unapproved new English content'):
+            bind_release(self.store, identity, previous)
+        bind_release(self.store, identity, previous, approved_ledger=result['ledger_sha256'])
+
+    def test_recovery_does_not_treat_an_unbound_previous_version_as_approved(self):
+        batch = self.candidate(); self.assemble([batch]); identity = self.pin()
+        with mock.patch('portal_english_handoff.save_handoff') as save:
+            with self.assertRaises(R2NotFound):
+                recover_prepared(self.store, self.original, identity, self.base/'unbound-previous', previous=identity)
+        save.assert_not_called()
+
+    def test_recovery_requires_both_the_active_ledger_and_batches_to_match(self):
+        batch, previous, active = self.first_live()
+        self.root = self.fresh_tree(); self.assemble([batch], active); identity = self.pin('b', 'b'*32)
+        # Either differing component requires approval, even when the other
+        # component matches a verified active version.
+        for changed in ({'ledger_sha256': 'f'*64}, {'batches': [{**batch, 'candidate_id': 'f'*64}]}):
+            with self.subTest(changed=next(iter(changed))):
+                with mock.patch('portal_english_publication.read_active', return_value={**active, **changed}):
+                    result = recover_prepared(self.store, self.original, identity,
+                                              self.base/('changed-'+next(iter(changed))), previous=previous)
+                self.assertTrue(result['requested']); self.assertTrue(result['handoff'])
+
+    def test_cli_recovery_passes_active_identity_and_emits_requested(self):
+        from portal_english_publication import main
+        previous = {'slot': 'a', 'release_id': 'a'*32, 'tree_sha256': 'a'*64}
+        candidate = {'slot': 'b', 'release_id': 'b'*32, 'tree_sha256': 'b'*64}
+        active_path, candidate_path = self.base/'active.json', self.base/'candidate.json'
+        output, evidence = self.base/'github-output', self.base/'evidence.json'
+        active_path.write_bytes(stable_bytes(previous)); candidate_path.write_bytes(stable_bytes(candidate))
+        result = {'ready': True, 'requested': False, 'page_count': 326, 'ledger_sha256': 'c'*64,
+                  'handoff': '', 'translation_calls': 0, 'deployed': False}
+        with mock.patch.dict('os.environ', {'GITHUB_ACTIONS': 'true', 'GITHUB_REF': 'refs/heads/main',
+                                            'KC_PUBLIC_REPOSITORY': 'true'}), \
+             mock.patch('sys.argv', ['portal_english_publication.py', 'recover', '--active-state', str(active_path),
+                                    '--candidate-state', str(candidate_path), '--github-output', str(output),
+                                    '--evidence-out', str(evidence)]), \
+             mock.patch('portal_english_publication.R2Store') as stores, \
+             mock.patch('portal_english_publication.recover_prepared', return_value=result) as recover, \
+             mock.patch('sys.stdout', new_callable=io.StringIO):
+            stores.from_env.return_value = self.store; stores.return_value = self.original
+            main()
+        self.assertEqual(recover.call_args.args[:3], (self.store, self.original, candidate))
+        self.assertEqual(recover.call_args.kwargs, {'previous': previous})
+        self.assertEqual(json.loads(evidence.read_bytes()), result)
+        self.assertIn('ready=true\nrequested=false\n', output.read_text())
+        self.assertIn('handoff=\n', output.read_text())
 
     def test_empty_source_does_not_make_a_fake_english_home_or_navigation(self):
         self.assertFalse(self.assemble([])['ready']); self.assertFalse((self.root/'en').exists())

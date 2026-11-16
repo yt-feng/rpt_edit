@@ -9,6 +9,7 @@ import json
 import random
 from pathlib import Path
 import tempfile
+import threading
 import unittest
 import weakref
 from unittest.mock import Mock, call, patch
@@ -1020,6 +1021,224 @@ class CandidateReadRetryTests(unittest.TestCase):
             stream.close.assert_called_once_with()
         self.assertEqual(client.get_object.call_count, 4)
         self.assertEqual(sleep.call_args_list, [call(2), call(4), call(8)])
+
+
+class CandidateStreamingDownloadTests(unittest.TestCase):
+    KEY = "edge-static/slots/b/ko/blog/new.html"
+    RELATIVE = "ko/blog/new.html"
+
+    def setUp(self):
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        self.root = Path(temporary.name)
+        self.target = self.root / self.RELATIVE
+        self.target.parent.mkdir(parents=True)
+        self.target.write_bytes(b"previous verified file")
+        jitter = patch("r2_transport.random.uniform", return_value=0)
+        jitter.start()
+        self.addCleanup(jitter.stop)
+
+    @staticmethod
+    def descriptor(body):
+        return {"size": len(body), "sha256": hashlib.sha256(body).hexdigest()}
+
+    def download(self, client, body, **kwargs):
+        resume.download_candidate_object(client, "bucket", self.KEY, self.descriptor(body),
+                                         self.root, self.RELATIVE, **kwargs)
+
+    def assert_no_partial_files(self):
+        self.assertEqual(list(self.root.rglob(".resume-*.tmp")), [])
+
+    def test_streams_large_body_in_bounded_chunks_and_atomically_publishes(self):
+        body = b"verified data" * (3 * 1024 * 1024 // 13 + 1)
+        amounts = []
+        case = self
+        class Stream(io.BytesIO):
+            def read(self, amount=-1):
+                amounts.append(amount)
+                case.assertEqual(case.target.read_bytes(), b"previous verified file")
+                case.assertGreater(amount, 0)
+                case.assertLessEqual(amount, resume.r2_transport.READ_CHUNK_BYTES)
+                return super().read(amount)
+        stream = Stream(body)
+        client = Mock()
+        client.get_object.return_value = {"Body": stream, "ContentLength": len(body)}
+        self.download(client, body)
+        self.assertGreater(len(amounts), 3)
+        self.assertEqual(self.target.read_bytes(), body)
+        self.assertTrue(stream.closed)
+        client.get_object.assert_called_once_with(Bucket="bucket", Key=self.KEY)
+        self.assert_no_partial_files()
+
+    @patch("r2_transport.time.sleep")
+    def test_invalid_content_never_replaces_existing_file_or_retries(self, sleep):
+        body = b"exact committed body"
+        for changed, declared in ((body[:-1], None), (b"x" * len(body), None),
+                                  (body + b"x", None), (body, len(body) - 1),
+                                  (body, True)):
+            with self.subTest(size=len(changed), declared=declared):
+                stream = io.BytesIO(changed)
+                client = Mock()
+                client.get_object.return_value = {"Body": stream}
+                if declared is not None:
+                    client.get_object.return_value["ContentLength"] = declared
+                with self.assertRaises(resume.ResumeError):
+                    self.download(client, body)
+                self.assertEqual(self.target.read_bytes(), b"previous verified file")
+                self.assertTrue(stream.closed)
+                self.assertEqual(client.get_object.call_count, 1)
+                self.assert_no_partial_files()
+        sleep.assert_not_called()
+
+    @patch("r2_transport.time.sleep")
+    def test_interrupted_stream_is_closed_and_partial_file_removed_before_retry(self, sleep):
+        body = b"exact committed body"
+        failed = Mock()
+        failed.read.side_effect = [body[:4], TimeoutError("interrupted body")]
+        good = io.BytesIO(body)
+        client = Mock()
+        client.get_object.side_effect = [{"Body": failed}, {"Body": good}]
+        def before_retry(_delay):
+            failed.close.assert_called_once_with()
+            self.assertEqual(self.target.read_bytes(), b"previous verified file")
+            self.assert_no_partial_files()
+        sleep.side_effect = before_retry
+        self.download(client, body)
+        self.assertEqual(self.target.read_bytes(), body)
+        self.assertTrue(good.closed)
+        self.assertEqual(client.get_object.call_count, 2)
+        sleep.assert_called_once_with(2)
+        self.assert_no_partial_files()
+
+    @patch("r2_transport.time.sleep")
+    def test_sdk_retry_authority_and_permanent_request_errors_are_not_restarted(self, sleep):
+        body = b"exact committed body"
+        for code in ("SlowDown", "AccessDenied", "NoSuchKey"):
+            client = Mock()
+            error = CandidateReadRetryTests.read_error(code)
+            error.response["ResponseMetadata"] = {"RetryAttempts": 0}
+            client.get_object.side_effect = error
+            with self.assertRaises(resume.ResumeError):
+                self.download(client, body)
+            self.assertEqual(client.get_object.call_count, 1)
+        for retries in (1, 8, -1):
+            stream = Mock()
+            stream.read.side_effect = TimeoutError("interrupted body")
+            client = Mock()
+            client.get_object.return_value = {"Body": stream, "ResponseMetadata": {"RetryAttempts": retries}}
+            with self.assertRaises(resume.ResumeError):
+                self.download(client, body)
+            stream.close.assert_called_once_with()
+            self.assertEqual(client.get_object.call_count, 1)
+        self.assertEqual(self.target.read_bytes(), b"previous verified file")
+        self.assert_no_partial_files()
+        sleep.assert_not_called()
+
+    @patch("r2_transport.time.sleep")
+    def test_stream_retry_budget_is_finite_and_every_partial_is_removed(self, sleep):
+        streams = [Mock() for _ in range(4)]
+        for stream in streams:
+            stream.read.side_effect = [b"part", TimeoutError("interrupted")]
+        client = Mock()
+        client.get_object.side_effect = [{"Body": stream} for stream in streams]
+        with self.assertRaises(resume.ResumeError):
+            self.download(client, b"exact committed body")
+        self.assertEqual(client.get_object.call_count, 4)
+        for stream in streams:
+            stream.close.assert_called_once_with()
+        self.assertEqual(sleep.call_args_list, [call(2), call(4), call(8)])
+        self.assertEqual(self.target.read_bytes(), b"previous verified file")
+        self.assert_no_partial_files()
+
+    def test_empty_file_is_verified_and_bounds_or_symlinks_stop_before_get(self):
+        stream = io.BytesIO(b"")
+        client = Mock()
+        client.get_object.return_value = {"Body": stream, "ContentLength": 0}
+        self.download(client, b"")
+        self.assertEqual(self.target.read_bytes(), b"")
+        self.assertTrue(stream.closed)
+        client.reset_mock()
+        with self.assertRaisesRegex(resume.ResumeError, "byte size bound"):
+            self.download(client, b"larger than allowed", maximum=1)
+        self.target.unlink()
+        self.target.symlink_to(self.root / "elsewhere")
+        with self.assertRaisesRegex(resume.ResumeError, "symbolic"):
+            self.download(client, b"body")
+        client.get_object.assert_not_called()
+        self.assert_no_partial_files()
+
+    def test_missing_or_malformed_body_is_rejected_without_partial_output(self):
+        for response in ({}, {"Body": io.StringIO("not bytes")}):
+            with self.subTest(response_keys=list(response)):
+                client = Mock()
+                client.get_object.return_value = response
+                with self.assertRaises(resume.ResumeError):
+                    self.download(client, b"body")
+                self.assertEqual(client.get_object.call_count, 1)
+                self.assertEqual(self.target.read_bytes(), b"previous verified file")
+                self.assert_no_partial_files()
+                if "Body" in response:
+                    self.assertTrue(response["Body"].closed)
+
+
+class BoundedRecoverySchedulingTests(unittest.TestCase):
+    def test_production_file_count_keeps_only_sixteen_submitted_results_and_runs_in_parallel(self):
+        worker_count = resume.DOWNLOAD_WORKERS
+        self.assertEqual(worker_count, 16)
+        lock = threading.Lock()
+        ready = threading.Event()
+        active = maximum_active = retained = maximum_retained = 0
+        original_pool = resume.ThreadPoolExecutor
+        class TrackingPool(original_pool):
+            def submit(self, *args, **kwargs):
+                nonlocal retained, maximum_retained
+                with lock:
+                    retained += 1
+                    maximum_retained = max(maximum_retained, retained)
+                future = super().submit(*args, **kwargs)
+                original_result = future.result
+                def result(*result_args, **result_kwargs):
+                    nonlocal retained
+                    try:
+                        return original_result(*result_args, **result_kwargs)
+                    finally:
+                        with lock:
+                            retained -= 1
+                future.result = result
+                return future
+        def verify(index):
+            nonlocal active, maximum_active
+            with lock:
+                active += 1
+                maximum_active = max(maximum_active, active)
+                if active == worker_count:
+                    ready.set()
+            try:
+                if index < worker_count and not ready.wait(5):
+                    raise AssertionError("Initial downloads did not run concurrently")
+                return index
+            finally:
+                with lock:
+                    active -= 1
+        with patch.object(resume, "ThreadPoolExecutor", TrackingPool):
+            completed = list(resume.bounded_results(range(37286), verify, workers=worker_count))
+        self.assertEqual(set(completed), set(range(37286)))
+        self.assertEqual(len(completed), 37286)
+        self.assertEqual(maximum_active, worker_count)
+        self.assertLessEqual(maximum_retained, worker_count)
+        self.assertEqual(retained, 0)
+
+    def test_first_failure_does_not_submit_the_remaining_catalog(self):
+        submitted = []
+        def items():
+            for index in range(37286):
+                submitted.append(index)
+                yield index
+        def verify(index):
+            raise ValueError("injected permanent failure")
+        with self.assertRaisesRegex(ValueError, "permanent failure"):
+            list(resume.bounded_results(items(), verify, workers=16))
+        self.assertLessEqual(len(submitted), 16)
 
 
 class ReadTransportTests(unittest.TestCase):
