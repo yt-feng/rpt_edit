@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "78bae6e73dd6a692b81c1f0a599d30994a60126346d818f814c41c85b7491f35",
+  "slug": "bbg-20261115-78bae6e73dd6a692",
+  "date": "2026-11-15",
+  "title": "前TSA局长：航空系统单点故障，如何避免再次上演？",
+  "speaker": "John Pistole",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-11-15/bloomberg-this-weekend-11-15-2026-video",
+  "start": 2219.8,
+  "end": 2309.0,
+  "segments": [
+    {
+      "start": 2219.84,
+      "end": 2228.32,
+      "en": "You kind of got to my question there. But I mean, Duffy is going after the contract are pretty hard. It was a single source contract. What is the better option from your perspective?",
+      "zh": "你差不多问到我的问题了。但我是说，达菲在合同问题上追得很紧。那是一份单一来源合同。从你的角度看，更好的选择是什么？"
+    },
+    {
+      "start": 2228.32,
+      "end": 2237.12,
+      "en": "Would it be to build parallel systems and then switch over, rather than trying to upgrade the current one? Is that even a possibility? Or do they just have to look at this whole thing organically",
+      "zh": "是建立并行系统然后切换，而不是试图升级当前系统？这有可能吗？还是他们必须从头有机地审视整个事情？"
+    },
+    {
+      "start": 2237.12,
+      "end": 2249.28,
+      "en": "from the start? That's a great question because it's something where I know for my TSA days and then of course, at the FBI, you never want a single point of failure. And so what are the redundancies",
+      "zh": "这是个好问题，因为我知道在TSA的日子，当然还有在FBI，你永远不想要单点故障。那么冗余是什么？"
+    },
+    {
+      "start": 2249.28,
+      "end": 2258.56,
+      "en": "and the backup redundancies to make sure that if there is an upgrade, people are doing upgrades every day. I mean, just look at what we're doing with AI. And hopefully that played no role.",
+      "zh": "以及备份冗余，以确保如果有升级，人们每天都在做升级。我是说，看看我们在AI上做的事情。希望那没有起作用。"
+    },
+    {
+      "start": 2258.56,
+      "end": 2270.64,
+      "en": "They've discounted that. What are those redundancies and make sure we don't have a single point of failure, which seems to be the proximate cause of this whole situation is meltdown, if you will.",
+      "zh": "他们已经排除了这一点。那些冗余是什么，确保我们没有单点故障，这似乎是整个情况的直接原因，可以说是承压。"
+    },
+    {
+      "start": 2270.64,
+      "end": 2280.0,
+      "en": "And what's concerned with me also is that in terms of the cancel flights, reschedule flights, delayed flights, it's not like we're going into a void that, oh yeah, tomorrow there's no flights",
+      "zh": "让我担心的还有，就取消航班、重新安排航班、延误航班而言，并不是说我们要进入一个空白，哦是的，明天没有航班。"
+    },
+    {
+      "start": 2280.0,
+      "end": 2292.32,
+      "en": "so we can just reschedule everything. I mean, there are full trial days. And so the question becomes what's to say with a high level of confidence that there won't be another situation",
+      "zh": "所以我们可以重新安排一切。我是说，有完整的审判日。那么问题变成了，如何高度自信地说不会再有另一种情况。"
+    },
+    {
+      "start": 2292.4,
+      "end": 2303.84,
+      "en": "this afternoon or tomorrow or especially next Wednesday or before Thanksgiving and the Sunday after, as I mentioned. So what level of confidence can we have that this is not going to be repeated",
+      "zh": "今天下午或明天，尤其是下周三或感恩节前以及我提到的之后的周日。那么我们能有多大信心认为这不会重演？"
+    },
+    {
+      "start": 2303.84,
+      "end": 2309.0,
+      "en": "because either a contractor or somebody else is doing an upgrade, which is necessary. Great",
+      "zh": "因为要么是承包商要么是其他人正在进行必要的升级。很好。"
+    }
+  ]
+}
