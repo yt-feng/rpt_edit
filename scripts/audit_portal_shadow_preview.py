@@ -32,6 +32,10 @@ DOUBLE_ENCODED_RE = re.compile(r"%[0-9a-fA-F]{2}")
 MAX_PLAN_BYTES = 1024 * 1024
 MAX_MANIFEST_PATHS = 8192
 MAX_RESPONSE_BYTES = 16 * 1024 * 1024
+# Match neutral-edge-cutover.yml's runtime_data_byte_limits.charts contract.
+# Only the manifest-declared chart overlay may use the larger response budget.
+MAX_CHART_OVERLAY_BYTES = 32_000_000
+CHART_OVERLAY_PATH_RE = re.compile(r"^/data/i18n/(?:ko|ja|ar)/chart-content\.json$")
 REQUIRED_SAMPLE_KINDS = (
     "home",
     "blog",
@@ -429,6 +433,7 @@ def fetch(
     attempts: int = 6,
     timeout: int = 30,
     validate_response: Callable[[bytes, Any], None] | None = None,
+    expected_bytes: int | None = None,
 ) -> tuple[bytes, Any, float]:
     validate_preview_path(relative, allow_query=True)
     base = validate_workers_dev_origin(base_url)
@@ -447,6 +452,12 @@ def fetch(
         raise AuditError("Preview retry count is invalid")
     if type(timeout) is not int or not 1 <= timeout <= 30:
         raise AuditError("Preview timeout is invalid")
+    maximum = MAX_RESPONSE_BYTES
+    if expected_bytes is not None:
+        limit = manifest_runtime_size_limit(relative)
+        if type(expected_bytes) is not int or not 0 < expected_bytes <= limit:
+            raise AuditError(f"Preview manifest byte size exceeds its response bound: {relative}")
+        maximum = expected_bytes
     last_error: BaseException | None = None
     for attempt in range(1, attempts + 1):
         started = time.monotonic()
@@ -456,14 +467,16 @@ def fetch(
                 timeout=timeout,
             )
             try:
-                body = response.read(MAX_RESPONSE_BYTES + 1)
+                body = response.read(maximum + 1)
             finally:
                 if hasattr(response, "close"):
                     response.close()
             elapsed = time.monotonic() - started
             if response.status != 200:
                 raise AuditError(f"Preview returned HTTP {response.status}: {relative}")
-            if len(body) > MAX_RESPONSE_BYTES:
+            if len(body) > maximum:
+                if expected_bytes is not None:
+                    raise AuditError(f"Preview response does not match its manifest (oversized): {relative}")
                 raise AuditError(f"Preview response is oversized: {relative}")
             if validate_response is not None:
                 validate_response(body, response.headers)
@@ -584,6 +597,10 @@ def validate_locale_feed(body: bytes, locale: str, public_origin: str) -> None:
         require_public_locale_url(value, locale, f"Shadow {locale} feed", public_origin)
 
 
+def manifest_runtime_size_limit(path: str) -> int:
+    return MAX_CHART_OVERLAY_BYTES if CHART_OVERLAY_PATH_RE.fullmatch(path) else MAX_RESPONSE_BYTES
+
+
 def validate_manifest_row(row: Any, locale: str, label: str) -> tuple[str, int, str]:
     if not isinstance(row, dict):
         raise AuditError(f"Shadow multilingual manifest has an invalid {label} row")
@@ -608,6 +625,8 @@ def validate_manifest_row(row: Any, locale: str, label: str) -> tuple[str, int, 
         or relative.startswith(f"{locale}/data/")
     ):
         raise AuditError(f"Shadow multilingual manifest crosses locale boundaries: {relative}")
+    if byte_size > manifest_runtime_size_limit(path):
+        raise AuditError(f"Shadow multilingual manifest byte size exceeds its runtime bound: {relative}")
     return path, byte_size, sha256
 
 
@@ -817,7 +836,7 @@ def audit_preview(
         rows.append({"path": asset, "bytes": len(body), "milliseconds": round(elapsed * 1000)})
 
     for path, (locale, expected_bytes, expected_sha256) in sorted(required_files.items()):
-        body, headers, elapsed = fetch(opener, base_url, path)
+        body, headers, elapsed = fetch(opener, base_url, path, expected_bytes=expected_bytes)
         require_shadow_header(headers, path)
         if str(headers.get("Content-Language") or "").strip().lower() != locale:
             raise AuditError(f"Shadow locale data has the wrong Content-Language: {path}")

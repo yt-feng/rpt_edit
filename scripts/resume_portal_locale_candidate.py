@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import argparse
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 import hashlib
 import io
 import json
@@ -11,7 +11,8 @@ import os
 from pathlib import Path
 import re
 import sys
-from typing import Any, Callable
+import tempfile
+from typing import Any, Callable, Iterable, Iterator
 from urllib.error import HTTPError
 from urllib.parse import urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
@@ -28,6 +29,7 @@ from portal_locale_manifest import (
     LocaleManifestError, MAX_LOCALE_MANIFEST_BYTES, parse_locale_manifest, validate_translation_resolution,
 )
 from verify_portal_locale_routes import RouteVerificationError, declared_checks
+import r2_transport
 from r2_transport import read_r2_bytes
 
 
@@ -85,7 +87,7 @@ MAX_API_BYTES = 64 * 1024 * 1024
 # The per-download limit remains the validated GitHub artifact size below.
 MAX_ARTIFACT_DOWNLOAD_BYTES = 512 * 1024 * 1024
 MAX_APP_BUNDLE_BYTES = 16 * 1024 * 1024
-DOWNLOAD_WORKERS = 4
+DOWNLOAD_WORKERS = 16
 
 
 class ResumeError(RuntimeError):
@@ -425,7 +427,7 @@ def download_diagnostics(github: Any, repository: str, run_id: int, attempt: int
         write_local(destination, name, body)
 
 
-def write_local(root: Path, relative: str, body: bytes) -> None:
+def local_target(root: Path, relative: str) -> Path:
     relative = publisher.safe_relative_path(relative)
     root = root.resolve()
     target = root / relative
@@ -435,7 +437,40 @@ def write_local(root: Path, relative: str, body: bytes) -> None:
         require(not current.is_symlink(), "Local output parent is a symbolic link")
         current = current.parent
     target.parent.mkdir(parents=True, exist_ok=True)
+    return target
+
+
+def write_local(root: Path, relative: str, body: bytes) -> None:
+    target = local_target(root, relative)
     target.write_bytes(body)
+
+
+def bounded_results(items: Iterable[Any], verify: Callable[[Any], Any], *, workers: int) -> Iterator[Any]:
+    """Keep at most one submitted task per worker, including on early failure."""
+    require(type(workers) is int and 1 <= workers <= 32, "Recovery worker count is invalid")
+    remaining = iter(items)
+    sentinel = object()
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        pending = set()
+        try:
+            for _ in range(workers):
+                item = next(remaining, sentinel)
+                if item is sentinel:
+                    break
+                pending.add(pool.submit(verify, item))
+            while pending:
+                done, pending = wait(pending, return_when=FIRST_COMPLETED)
+                while done:
+                    future = done.pop()
+                    result = future.result()
+                    del future
+                    yield result
+                    item = next(remaining, sentinel)
+                    if item is not sentinel:
+                        pending.add(pool.submit(verify, item))
+        finally:
+            for future in pending:
+                future.cancel()
 
 
 def assert_no_incomplete(client: Any, bucket: str, slot: str) -> None:
@@ -486,12 +521,12 @@ def validate_remote_slot(client: Any, bucket: str, slot: str, release: str, tree
     listed = publisher.list_objects(client, bucket, prefix)
     require(listed == {prefix + relative: int(row["size"]) for relative, row in files.items()}, "Candidate object tree differs from its committed manifest")
     progress = publisher._PublishProgress("resume_verify_metadata", objects=len(files), workers=workers)
-    with ThreadPoolExecutor(max_workers=workers) as pool:
-        checks = {pool.submit(publisher.remote_object_matches_descriptor, client, bucket, prefix + relative, descriptor): relative
-                  for relative, descriptor in files.items()}
-        for count, future in enumerate(as_completed(checks), 1):
-            require(future.result(), f"Candidate object metadata does not match: {checks[future]}")
-            progress.update(count)
+    def verify_metadata(row: tuple[str, dict[str, Any]]) -> tuple[str, bool]:
+        relative, descriptor = row
+        return relative, publisher.remote_object_matches_descriptor(client, bucket, prefix + relative, descriptor)
+    for count, (relative, matches) in enumerate(bounded_results(files.items(), verify_metadata, workers=workers), 1):
+        require(matches, f"Candidate object metadata does not match: {relative}")
+        progress.update(count)
     progress.finish(verified=len(files))
     runtime = publisher.valid_runtime_manifest(publisher.read_json_object(client, bucket, publisher.runtime_manifest_key(release)), release)
     require(runtime is not None, "Candidate immutable runtime manifest is invalid")
@@ -525,6 +560,75 @@ def read_candidate_object(client: Any, bucket: str, key: str, descriptor: dict[s
     return body
 
 
+def download_candidate_object(client: Any, bucket: str, key: str, descriptor: dict[str, Any],
+                              root: Path, relative: str, *, maximum: int | None = None) -> None:
+    """Stream one exact manifest object into place only after its hash is valid."""
+    expected_size = descriptor["size"]
+    require(type(expected_size) is int and expected_size >= 0
+            and (maximum is None or expected_size <= maximum),
+            f"Candidate object exceeds its byte size bound: {key}")
+    target = local_target(root, relative)
+    temporary: Path | None = None
+    try:
+        for attempt in range(len(r2_transport.READ_RETRY_DELAYS) + 1):
+            response = None
+            stream_started = False
+            try:
+                response = client.get_object(Bucket=bucket, Key=key)
+                stream = response["Body"]
+                try:
+                    declared = response.get("ContentLength")
+                    if declared is not None and (type(declared) is not int or declared != expected_size):
+                        raise r2_transport.R2BodyError("size_mismatch")
+                    descriptor_fd, name = tempfile.mkstemp(prefix=".resume-", suffix=".tmp", dir=target.parent)
+                    temporary = Path(name)
+                    with os.fdopen(descriptor_fd, "wb") as output:
+                        digest = hashlib.sha256()
+                        received = 0
+                        while True:
+                            stream_started = True
+                            chunk = stream.read(min(r2_transport.READ_CHUNK_BYTES, expected_size - received + 1))
+                            if not isinstance(chunk, bytes):
+                                raise r2_transport.R2BodyError("size_invalid")
+                            if not chunk:
+                                break
+                            received += len(chunk)
+                            if received > expected_size:
+                                raise r2_transport.R2BodyError("size_invalid")
+                            digest.update(chunk)
+                            output.write(chunk)
+                        require(received == expected_size and digest.hexdigest() == descriptor["sha256"],
+                                f"Candidate downloaded file differs from manifest: {key}")
+                finally:
+                    close = getattr(stream, "close", None)
+                    if close is not None:
+                        close()
+                # Recheck the destination before replacing it. A failed or
+                # interrupted read never leaves a partial public file.
+                require(local_target(root, relative) == target, "Local output path changed during recovery")
+                os.replace(temporary, target)
+                temporary = None
+                return
+            except Exception as error:
+                if temporary is not None:
+                    temporary.unlink(missing_ok=True)
+                    temporary = None
+                if (attempt == len(r2_transport.READ_RETRY_DELAYS) or not stream_started
+                    or not r2_transport.retryable_stream_error(error)
+                    or r2_transport.request_retry_count(error) not in {None, 0}
+                    or r2_transport.sdk_retry_count(response) not in {None, 0}):
+                    if isinstance(error, ResumeError):
+                        raise
+                    code = publisher.upload_error_code(error)
+                    raise ResumeError(f"Candidate object read failed: {key}; code={code or type(error).__name__}") from error
+                r2_transport.time.sleep(r2_transport.READ_RETRY_DELAYS[attempt]
+                                        + r2_transport.random.uniform(0, r2_transport.READ_RETRY_JITTER))
+    finally:
+        if temporary is not None:
+            temporary.unlink(missing_ok=True)
+    raise AssertionError("Unreachable candidate download retry state")
+
+
 def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any], site_dir: Path, *, workers: int = 16) -> set[str]:
     files = manifest["files"]
     prefix = publisher.slot_prefix(manifest["slot"])
@@ -532,8 +636,7 @@ def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any],
     def fetch_one(relative: str, *, maximum: int | None = None) -> str:
         require(relative in files, f"Candidate audit file is absent from manifest: {relative}")
         descriptor = files[relative]
-        body = read_candidate_object(client, bucket, prefix + relative, descriptor, maximum=maximum)
-        write_local(site_dir, relative, body)
+        download_candidate_object(client, bucket, prefix + relative, descriptor, site_dir, relative, maximum=maximum)
         return relative
     try:
         downloaded.add(fetch_one("data/i18n/manifest.json", maximum=MAX_LOCALE_MANIFEST_BYTES))
@@ -604,11 +707,9 @@ def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any],
     require(wanted.issubset(files), "Candidate is missing an audit or public artifact file")
     download_workers = min(workers, DOWNLOAD_WORKERS)
     progress = publisher._PublishProgress("resume_download", objects=len(wanted), workers=download_workers)
-    with ThreadPoolExecutor(max_workers=download_workers) as pool:
-        futures = {pool.submit(fetch_one, relative): relative for relative in sorted(wanted - downloaded)}
-        for future in as_completed(futures):
-            downloaded.add(future.result())
-            progress.update(len(downloaded))
+    for relative in bounded_results(sorted(wanted - downloaded), fetch_one, workers=download_workers):
+        downloaded.add(relative)
+        progress.update(len(downloaded))
     progress.finish(downloaded=len(downloaded))
     return downloaded
 

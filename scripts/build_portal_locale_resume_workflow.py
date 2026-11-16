@@ -96,14 +96,16 @@ jobs:
     outputs = outputs.replace('steps.operation.outputs.commit_sha', 'steps.static_upload.outputs.commit_sha')
     # A recovered extended release always needs fresh exact-candidate approval.
     outputs = outputs.replace('steps.operation.outputs.extended_requested', 'steps.extended_assembly.outputs.ready')
-    outputs = outputs.replace('steps.operation.outputs.english_requested', 'steps.english_assembly.outputs.ready')
+    # Retained English pages still need binding/audit, but only new content
+    # requires a new exact-ledger approval, as in ordinary incremental releases.
+    outputs = outputs.replace('steps.operation.outputs.english_requested', 'steps.english_assembly.outputs.requested')
     result = header + '    outputs:\n' + outputs + '    steps:\n'
     operation = steps['Require reviewed main operation']
     operation = operation.replace('${{ inputs.operation }}', 'migrate')
     operation = operation.replace('${{ inputs.translation_scope }}', '"incremental"')
     operation = operation.replace('${{ vars.PORTAL_MULTILINGUAL_ENABLED || \'false\' }}', '"true"')
-    # Every recovery is freshly reviewed, even if multilingual production was enabled meanwhile.
-    operation = operation.replace('${{ vars.PORTAL_MULTILINGUAL_LIVE || \'false\' }}', '"false"')
+    # Preserve the production activation policy. Fresh recovery validation must
+    # not turn an already-live release into a first-activation approval request.
     result += operation
     for name in ('Checkout public source', 'Set up Python'):
         result += steps[name]
@@ -238,11 +240,23 @@ jobs:
 
 '''
         block = steps[name].replace('steps.operation.outputs.commit_sha', 'steps.static_upload.outputs.commit_sha')
-        block = block.replace('steps.operation.outputs.english_requested', 'steps.english_assembly.outputs.ready')
+        block = block.replace('steps.operation.outputs.english_requested', 'steps.english_assembly.outputs.requested')
         if name == 'Publish metadata-only English exact-version review identity':
             block = block.replace('${{ inputs.english_handoff }}', '${{ steps.english_assembly.outputs.handoff }}')
         if name == 'Compute multilingual index policy identity':
             block = block.replace("${{ vars.PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH || '' }}", '""')
+        if name == 'Prepare isolated multilingual shadow worker':
+            # Recovery audits the exact restored candidate even when locales
+            # are already live; this is independent of first-activation policy.
+            live_condition = """            steps.operation.outputs.multilingual_enabled == 'true' &&
+            (
+              steps.operation.outputs.operation == 'locale-shadow' ||
+              steps.operation.outputs.multilingual_live != 'true'
+            )"""
+            if live_condition not in block:
+                raise ValueError('Unexpected production shadow activation condition')
+            block = block.replace(live_condition,
+                                  "            steps.operation.outputs.multilingual_enabled == 'true'", 1)
         result += block
     return result + '\n  shadow_review_hold:\n' + downstream
 
