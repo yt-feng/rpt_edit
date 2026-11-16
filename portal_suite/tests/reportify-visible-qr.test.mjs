@@ -62,7 +62,7 @@ test("pending and ready-download recovery choose a visible status and respect th
         showExternalLoginQr: (target) => { shown.push(target); return true; },
       };
       vm.createContext(context);
-      vm.runInContext(fn("pollExternalDetail"), context);
+      vm.runInContext(`${fn("externalPreparationMessage")}\n${fn("pollExternalDetail")}`, context);
       context.pollExternalDetail("/api", "1256239582803005440", delivery ? "delivery-password" : "", () => {},
         async () => { throw failure; }, null, deliveryStatus);
       await tick();
@@ -84,4 +84,54 @@ test("account polling passes its own status anchor and delivery polling passes i
   await download("/api", { id: "1256239582803005440" }, () => {});
   assert.equal(pollArgs[6], accountStatus);
   assert.match(fn("initExternalDetail"), /pollExternalDetail\(workerUrl, item\.id, input\.value,[\s\S]*?\), status\);/);
+});
+
+test("preparation failure polling stops and displays the server diagnosis and retry delay without account recovery", async () => {
+  let tick;
+  let stopped = false;
+  let downloaded = false;
+  let requested = false;
+  const statuses = [];
+  const context = {
+    Date, encodeURIComponent,
+    window: { setInterval: (callback) => { tick = callback; return 1; }, clearInterval: () => { stopped = true; } },
+    authHeaders: () => ({}),
+    fetch: async () => ({ json: async () => ({
+      ready: false, status: "failed", error_code: "upstream_unavailable", detail_code: "invalid_asset_url",
+      message: "上游文件地址暂不兼容，完整 PDF 尚未生成。", retry_after_seconds: 121, request_required: false,
+    }) }),
+    document: { getElementById: () => element() },
+    showExternalLoginQr: (_target, _worker, failure) => {
+      assert.equal(Boolean(failure.login_required || failure.reauth_available), false);
+      return false;
+    },
+  };
+  vm.createContext(context);
+  vm.runInContext(`${fn("externalPreparationMessage")}\n${fn("pollExternalDetail")}`, context);
+  context.pollExternalDetail("/api", "1300546606747226112", "", (message, kind) => statuses.push({ message, kind }),
+    () => { downloaded = true; }, () => { requested = true; });
+  await tick();
+  assert.equal(stopped, true);
+  assert.equal(downloaded, false);
+  assert.equal(requested, false);
+  assert.deepEqual(statuses.at(-1), {
+    message: "上游文件地址暂不兼容，完整 PDF 尚未生成。 121 秒后可重试。", kind: "error",
+  });
+});
+
+test("direct preparation rejection includes a bounded retry delay in the displayed download error", async () => {
+  const context = vm.createContext({
+    EXTERNAL_SOURCE: "external", URLSearchParams,
+    isContactOnlyItem: () => false, docEndpoint: () => "external", authHeaders: () => ({}),
+    trackEvent() {}, analyticsReportPayload: () => ({}), downloadErrorMessage: (_status, message) => message,
+    fetch: async () => ({ ok: false, status: 503, json: async () => ({
+      error: "完整文件暂未生成。", error_code: "upstream_unavailable", retry_after_seconds: 25,
+    }) }),
+  });
+  vm.runInContext(`${fn("externalPreparationMessage")}\n${fn("fetchExternalPdf")}`, context);
+  await assert.rejects(context.fetchExternalPdf("/api", { id: "1300546606747226112", source: "external" }, "", () => {}, { auth: true }),
+    /完整文件暂未生成。 25 秒后可重试。/);
+  for (const retry_after_seconds of [undefined, 0, -1, 601, Infinity, "bad"]) {
+    assert.equal(context.externalPreparationMessage("请重新点击下载。", { retry_after_seconds }), "请重新点击下载。");
+  }
 });

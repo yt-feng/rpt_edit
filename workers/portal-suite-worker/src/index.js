@@ -24930,6 +24930,35 @@ function externalStatusIsRecentFailure(stored) {
   return String(stored && stored.status || "") === "failed" && externalStatusAgeMs(stored) < 10 * 60 * 1000;
 }
 
+function externalPreparationFailure(stored, isAdmin, invalidCache = false) {
+  const errorCode = invalidCache ? "invalid_pdf" : String(stored && stored.error_code || "");
+  const detailCode = invalidCache ? "cached_pdf_invalid" : String(stored && stored.detail_code || "");
+  const messages = {
+    upstream_login_required: "Reportify 登录已失效，请重新连接账号后重试。",
+    upstream_access_required: "当前 Reportify 账号未获准下载这份报告，请在原站确认下载权限。",
+    upstream_unavailable: "报告来源暂时未返回可用的完整文件，请稍后重试。",
+    invalid_pdf: "文件完整性校验未通过，暂未提供下载，请重试。",
+    preparation_timeout: "报告准备已超时，请重新点击下载。",
+  };
+  const code = Object.prototype.hasOwnProperty.call(messages, errorCode) ? errorCode : "upstream_unavailable";
+  const retryAfter = externalStatusIsRecentFailure(stored)
+    ? Math.max(0, Math.min(600, Math.ceil((600000 - externalStatusAgeMs(stored)) / 1000))) : 0;
+  if (!isAdmin) return {
+    error: "这份报告暂时无法获取，请提交报告申请。",
+    message: "这份报告暂时无法获取，请提交报告申请。",
+  };
+  // Never return arbitrary upstream errors, URLs, or authentication values.
+  const safeDetails = new Set(["invalid_asset_url", "invalid_detail", "request_failed", "http_429",
+    "http_500", "http_502", "http_503", "http_504", "full_pdf_not_exposed", "invalid_download_response",
+    "download_status_unverified", "expected_page_count_missing", "not_pdf", "unreadable_pdf",
+    "page_count_mismatch", "cached_pdf_invalid", "credential_store_unavailable", "preparation_timeout"]);
+  const message = code === "upstream_unavailable" && detailCode === "invalid_asset_url"
+    ? "上游文件地址暂不兼容，完整 PDF 尚未生成。可打开 Reportify 原站查看。" : messages[code];
+  return { error: message, message, error_code: code,
+    ...(safeDetails.has(detailCode) ? { detail_code: detailCode } : {}),
+    retry_after_seconds: retryAfter };
+}
+
 function externalPendingResponse(request, env, stored = null) {
   return jsonResponse(request, env, 202, {
     status: stored && stored.status ? String(stored.status) : "pending",
@@ -25668,7 +25697,7 @@ async function handleExternalPdf(request, env, ctx = null) {
   }
   const restoredSession = reportifySession && Date.parse(reportifySession.updated_at) > Date.parse(String(stored && stored.updated_at || ""));
   if (externalStatusIsRecentFailure(stored) && !restoredSession) {
-    if (isAdmin && !reportifyToken) {
+    if (isAdmin && (stored.error_code === "upstream_login_required" || (!reportifyToken && !stored.error_code))) {
       const qr = await reportifyLoginQr(request);
       return jsonResponse(request, env, 503, {
         error: "报告准备失败。请扫描二维码登录 Reportify 后重试。",
@@ -25678,7 +25707,7 @@ async function handleExternalPdf(request, env, ctx = null) {
       });
     }
     return jsonResponse(request, env, 503, {
-      error: "报告准备失败，请提交报告申请。",
+      ...externalPreparationFailure(stored, isAdmin),
       request_required: !isAdmin,
       request_source: "external",
       request_report_id: id,
@@ -25729,10 +25758,20 @@ async function handleExternalStatus(request, env) {
   if (ready) return jsonResponse(request, env, 200, { ready, status: "ready" });
 
   const stored = await externalStoredStatus(env, id);
+  if (stored && ["queued", "running"].includes(stored.status) && !externalStatusIsActive(stored)) {
+    const isAdmin = await externalAdminRequest(request, env);
+    return privateJsonResponse(request, env, 200, {
+      ...externalPreparationFailure({ error_code: "preparation_timeout", detail_code: "preparation_timeout" }, isAdmin),
+      ready: false, status: "failed", request_required: !isAdmin,
+      request_source: "external", request_report_id: id,
+      updated_at: String(stored.updated_at || ""),
+    });
+  }
   if (stored && (stored.status === "failed" || stored.status === "ready")) {
     const isAdmin = await externalAdminRequest(request, env);
     const token = await reportifyStoredToken(env);
-    const credentialFailure = !token || stored.error_code === "upstream_login_required";
+    const credentialFailure = stored.error_code === "upstream_login_required"
+      || (!token && !stored.error_code && stored.status === "failed" && !invalidCache);
     const accessFailure = stored.error_code === "upstream_access_required";
     if (isAdmin && (credentialFailure || accessFailure)) {
       const response = await externalAccessFailure(request, env, id,
@@ -25747,9 +25786,9 @@ async function handleExternalStatus(request, env) {
       });
     }
     return jsonResponse(request, env, 200, {
+      ...externalPreparationFailure(stored, isAdmin, invalidCache || stored.status === "ready"),
       ready: false,
       status: "failed",
-      message: invalidCache || stored.status === "ready" ? "报告缓存异常，请提交报告申请。" : "报告准备失败，请提交报告申请。",
       request_required: !isAdmin,
       request_source: "external",
       request_report_id: id,

@@ -12333,6 +12333,12 @@
     return isAuthorityItem(item) || isReportAItem(item);
   }
 
+  function externalAdminSourceMarkup(item) {
+    if (!isSuperSession() || item?.source !== EXTERNAL_SOURCE || !validDocId(item)) return "";
+    const url = `https://${["report", "ify"].join("")}.cn/reports/${item.id}`;
+    return `<a style="overflow-wrap:anywhere" href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+  }
+
   function externalSinglePagePreviewMarkup() {
     return `
       <section class="unlock-box" id="externalSinglePagePreview">
@@ -12597,7 +12603,7 @@
         status: String(response.status),
         error: message,
       });
-      const error = new Error(downloadErrorMessage(response.status, message, data));
+      const error = new Error(downloadErrorMessage(response.status, externalPreparationMessage(message, data), data));
       if (data.preview_only || data.error_code === "preview_only") {
         error.preview_only = true;
         error.preview_report_id = String(data.preview_report_id || "");
@@ -12628,6 +12634,11 @@
     });
     statusTarget("下载已开始。", "ok");
     return { pending: false };
+  }
+
+  function externalPreparationMessage(message, data) {
+    const seconds = Math.ceil(Number(data?.retry_after_seconds));
+    return seconds > 0 && seconds <= 600 ? `${message} ${seconds} 秒后可重试。` : message;
   }
 
   function pollExternalDetail(workerUrl, id, password, statusTarget, onReady, onAbnormal, preferredStatusElement = null) {
@@ -12672,7 +12683,7 @@
           }
         } else if (data.status === "failed") {
           window.clearInterval(timer);
-          const message = data.message || "报告准备失败，请提交报告申请。";
+          const message = externalPreparationMessage(data.message || "报告准备失败，请提交报告申请。", data);
           statusTarget(message, "error");
           const statusElement = visibleStatusElement();
           if (showExternalLoginQr(statusElement, workerUrl, data, onReady)) return;
@@ -13127,6 +13138,7 @@
 
     target.innerHTML = `
       ${detailHeader}
+      <div id="externalAdminSource"></div>
       ${workerUrl ? externalSinglePagePreviewMarkup() : ""}
       <form class="unlock-box" id="externalDetailForm" data-explicit-delivery="${passwordFromLink ? "true" : "false"}" ${isSuperSession() || passwordFromLink ? "" : "hidden"}>
         <h3>PDF Download</h3>
@@ -13186,6 +13198,7 @@
 
     function refreshAdmin() {
       adminTools.hidden = !canUseDeliveryTools();
+      document.getElementById("externalAdminSource").innerHTML = externalAdminSourceMarkup(item);
     }
 
     async function submitDownload(event) {
