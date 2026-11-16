@@ -19,13 +19,14 @@ import sys
 import tempfile
 import textwrap
 import unittest
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 import zipfile
 
 from collect_deepseek_usage_artifacts import extract_events
 from deepseek_usage import record_attempt
 from summarize_deepseek_usage import summarize
 from verify_uploaded_usage_fixture import verify
+import verify_uploaded_usage_fixture as uploaded_fixture
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -197,6 +198,133 @@ class UsageWorkflowTests(unittest.TestCase):
                                         check=True, capture_output=True, text=True)
                 self.assertEqual(output.read_text().strip(), f"uploaded={str(uploaded).lower()}")
                 self.assertEqual("::warning::" in result.stdout, not uploaded)
+
+
+class UploadedFixtureReadTests(unittest.TestCase):
+    def setUp(self):
+        temporary = tempfile.TemporaryDirectory(); self.addCleanup(temporary.cleanup)
+        directory = Path(temporary.name)
+        self.fixture = b'{"kind":"artifact-path-smoke"}\n'
+        path = directory / uploaded_fixture.MEMBER
+        path.parent.mkdir(); path.write_bytes(self.fixture)
+        archive = io.BytesIO()
+        with zipfile.ZipFile(archive, 'w') as writer:
+            writer.writestr(uploaded_fixture.MEMBER, self.fixture)
+        self.payload = archive.getvalue()
+        self.session = MagicMock()
+        self.session.__enter__.return_value = self.session
+        self.clock = 0
+        self.sleep = MagicMock(side_effect=self.advance)
+        self.stderr = io.StringIO()
+        for mocked in (
+            patch.object(uploaded_fixture.requests, 'Session', return_value=self.session),
+            patch.object(uploaded_fixture.time, 'monotonic', side_effect=lambda: self.clock),
+            patch.object(uploaded_fixture.time, 'sleep', self.sleep),
+            patch('sys.stderr', self.stderr),
+            patch('sys.stdout', io.StringIO()),
+            patch.dict(os.environ, {'GITHUB_REPOSITORY': 'owner/repo', 'UPLOADED_ARTIFACT_ID': '123',
+                                    'GH_TOKEN': 'private-token', 'DEEPSEEK_USAGE_DIR': str(directory),
+                                    'UPLOADED_ARTIFACT_SHA256': hashlib.sha256(self.payload).hexdigest()}),
+        ):
+            mocked.start(); self.addCleanup(mocked.stop)
+
+    def advance(self, seconds):
+        self.clock += seconds
+
+    def response(self, status=200, *, chunks=None, headers=None):
+        result = MagicMock(status_code=status, headers=headers or {})
+        result.__enter__.return_value = result
+        result.raw.read1.side_effect = [self.payload, b''] if chunks is None else chunks
+        return result
+
+    def test_just_uploaded_404_and_transient_service_error_retry_only_the_exact_id(self):
+        responses = [self.response(404), self.response(503), self.response()]
+        self.session.get.side_effect = responses
+        self.assertEqual(uploaded_fixture.main(), 0)
+        self.assertEqual([call.args[0] for call in self.session.get.call_args_list],
+                         ['https://api.github.com/repos/owner/repo/actions/artifacts/123/zip'] * 3)
+        self.assertEqual([call.args[0] for call in self.sleep.call_args_list], [1, 2])
+        self.assertEqual(self.session.max_redirects, 3)
+        self.assertTrue(all(response.__exit__.call_count == 1 for response in responses))
+        self.assertNotIn('private-token', self.stderr.getvalue())
+
+    def test_transient_connection_and_interrupted_body_restart_before_exact_hash_check(self):
+        self.session.get.side_effect = [
+            uploaded_fixture.requests.exceptions.ConnectTimeout('https://signed.invalid/?secret=private-token'),
+            self.response(chunks=[b'partial', uploaded_fixture.ProtocolError('private-token')]),
+            self.response(),
+        ]
+        self.assertEqual(uploaded_fixture.main(), 0)
+        self.assertEqual(self.session.get.call_count, 3)
+        self.assertEqual(self.sleep.call_count, 2)
+        self.assertNotIn('private-token', self.stderr.getvalue())
+        self.assertNotIn('https://', self.stderr.getvalue())
+
+    def test_permanent_status_certificate_oversize_and_integrity_fail_without_retry(self):
+        outcomes = [*(self.response(code) for code in (400, 401, 403, 422)),
+                    uploaded_fixture.requests.exceptions.SSLError('https://signed.invalid/?secret=private-token'),
+                    self.response(headers={'Content-Length': str(uploaded_fixture.MAX_ARCHIVE + 1)}),
+                    self.response(chunks=[b'x' * (uploaded_fixture.MAX_ARCHIVE + 1)]),
+                    self.response(chunks=[b'wrong bytes', b''])]
+        for outcome in outcomes:
+            with self.subTest(outcome=type(outcome).__name__):
+                self.session.get.reset_mock(); self.sleep.reset_mock()
+                self.session.get.side_effect = [outcome]
+                with self.assertRaises(ValueError) as raised:
+                    uploaded_fixture.main()
+                self.assertEqual(self.session.get.call_count, 1)
+                self.sleep.assert_not_called()
+                self.assertNotIn('private-token', str(raised.exception))
+                self.assertNotIn('https://', str(raised.exception))
+
+    def test_unavailable_exact_id_exhausts_five_attempts_without_unbounded_polling(self):
+        self.session.get.side_effect = [self.response(404) for _ in range(5)]
+        with self.assertRaisesRegex(RuntimeError, 'failed after 5 attempts: HTTP 404'):
+            uploaded_fixture.main()
+        self.assertEqual(self.session.get.call_count, 5)
+        self.assertEqual([call.args[0] for call in self.sleep.call_args_list], [1, 2, 4, 8])
+        self.assertLess(self.clock, 55)
+
+    def test_remaining_budget_reduces_request_timeouts_and_prevents_another_retry(self):
+        def request(*args, **kwargs):
+            self.advance(30 if self.session.get.call_count == 1 else 14)
+            return self.response(429)
+        self.session.get.side_effect = request
+        with self.assertRaisesRegex(RuntimeError, 'elapsed budget'):
+            uploaded_fixture.main()
+        self.assertEqual(self.session.get.call_count, 2)
+        self.assertEqual(self.session.get.call_args_list[1].kwargs['timeout'], (1.75, 1.75))
+        self.assertEqual([call.args[0] for call in self.sleep.call_args_list], [1])
+        self.assertEqual(self.clock, 45)
+
+    def test_slow_body_obeys_elapsed_budget_between_available_chunks(self):
+        response = self.response()
+        def read(*args, **kwargs):
+            self.advance(1)
+            return b'x'
+        response.raw.read1.side_effect = read
+        self.session.get.side_effect = [response]
+        with self.assertRaisesRegex(RuntimeError, 'elapsed budget'):
+            uploaded_fixture.main()
+        self.assertEqual(self.clock, 45)
+        self.assertEqual(self.session.get.call_count, 1)
+        self.sleep.assert_not_called()
+
+    def test_invalid_identity_or_checksum_cannot_make_a_request(self):
+        for variable, value in (('UPLOADED_ARTIFACT_ID', '../123'), ('UPLOADED_ARTIFACT_SHA256', 'bad')):
+            with self.subTest(variable=variable), patch.dict(os.environ, {variable: value}):
+                with self.assertRaises(ValueError):
+                    uploaded_fixture.main()
+        self.session.get.assert_not_called()
+
+    def test_older_urllib3_stream_without_read1_keeps_a_bounded_read(self):
+        response = self.response()
+        response.raw.read1 = None
+        response.raw.read.side_effect = [self.payload[index:index + 1] for index in range(len(self.payload))] + [b'']
+        self.session.get.side_effect = [response]
+        self.assertEqual(uploaded_fixture.main(), 0)
+        self.assertTrue(all(call.args == (1,) for call in response.raw.read.call_args_list))
+        self.sleep.assert_not_called()
 
 
 if __name__ == "__main__":
