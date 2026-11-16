@@ -31,7 +31,7 @@ ADDED_ASSETS = frozenset(('admin-report-refresh.js',))
 ASSETS = ADDED_ASSETS | frozenset(('app.js', 'analytics.js', 'course-full.js', 'site-feedback.js', 'report-discussion.js', 'english-commentary.js'))
 MAX_ASSET_BYTES = 2 * 1024 * 1024
 MAX_HTML_BYTES = 8 * 1024 * 1024
-WORKERS = 4
+WORKERS = 8
 
 
 def require(condition: Any, message: str) -> None:
