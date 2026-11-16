@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 import re
 
-from reportify_pdf_grabber import MESSAGES, validate_pdf
+from reportify_pdf_grabber import ASSET_STAGES, MESSAGES, validate_pdf
 
 
 def read_result(path: Path, report_id: str) -> dict:
@@ -51,4 +51,11 @@ def status_fields(status: str, result: dict | None) -> dict:
         detail = result.get("detail_code")
         if isinstance(detail, str) and re.fullmatch(r"[a-z0-9_]{1,80}", detail):
             fields["detail_code"] = detail
+        if result.get("asset_stage") in ASSET_STAGES:
+            fields["asset_stage"] = result["asset_stage"]
+        for key, pattern in (("asset_scheme", r"[a-z][a-z0-9+.-]{0,20}"),
+                             ("asset_host", r"[a-z0-9.-]{1,253}")):
+            value = result.get(key)
+            if isinstance(value, str) and re.fullmatch(pattern, value):
+                fields[key] = value
     return fields

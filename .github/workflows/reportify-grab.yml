@@ -117,3 +117,12 @@ jobs:
             --status failed \
             --result-json "/tmp/${{ steps.resolve.outputs.id }}.result.json" \
             --message "Background preparation failed"
+
+      - name: Preserve safe acquisition result
+        if: ${{ always() && steps.resolve.outputs.id != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: reportify-result-${{ steps.resolve.outputs.id }}
+          path: /tmp/${{ steps.resolve.outputs.id }}.result.json
+          if-no-files-found: ignore
+          retention-days: 7

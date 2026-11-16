@@ -16,15 +16,23 @@ import os
 from pathlib import Path
 import re
 import sys
+import time
 from urllib.error import HTTPError, URLError
 from urllib.parse import urljoin, urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 
 API_ORIGIN = "https://api.reportify.cn"
-ASSET_HOSTS = {"api.reportify.cn", "s.reportify.cn", "files.reportify.cn", "reportify.cn", "www.reportify.cn"}
+ASSET_HOSTS = {
+    "api.reportify.cn", "s.reportify.cn", "files.reportify.cn", "reportify.cn", "www.reportify.cn",
+    # The authenticated official download API returns this exact Reportify COS bucket.
+    "reportify-1252068037.cos.ap-beijing.myqcloud.com",
+}
 SESSION_KEY = "reportify-auth/session.json"
 SESSION_MAX_AGE_SECONDS = 12 * 60 * 60
 MAX_PDF_BYTES = 100 * 1024 * 1024
+RETRY_DELAYS = (0.5, 1.5)
+TRANSIENT_HTTP_STATUSES = {408, 425, 429, 500, 502, 503, 504}
+ASSET_STAGES = {"request", "redirect", "detail_pdf", "official_download"}
 MESSAGES = {
     "upstream_login_required": "The upstream report requires a current authorized session.",
     "upstream_access_required": "The current upstream account cannot access the full report.",
@@ -86,8 +94,44 @@ def runtime_r2_client():
         raise ReportifyUnavailable("upstream_unavailable", "credential_store_unconfigured") from None
 
 
+def normalize_asset_url(value: str) -> str:
+    """Decode only recognized transport escaping, never guess a resource URL."""
+    if not isinstance(value, str):
+        return ""
+    value = value.strip()
+    for _ in range(2):
+        if value.startswith('"') and value.endswith('"'):
+            try:
+                decoded = json.loads(value)
+            except (ValueError, TypeError):
+                break
+            if not isinstance(decoded, str):
+                break
+            value = decoded.strip()
+        else:
+            break
+    value = value.replace("\\/", "/").replace("&amp;", "&")
+    for escaped, literal in (("0026", "&"), ("003d", "="), ("003f", "?"), ("002f", "/")):
+        value = re.sub(r"\\u" + escaped, lambda _match: literal, value, flags=re.IGNORECASE)
+    return value
+
+
+def asset_url_diagnostics(value: str, stage: str) -> dict[str, str]:
+    """Only the origin and a fixed stage may enter a result or Actions log."""
+    fields = {"asset_stage": stage if stage in ASSET_STAGES else "request"}
+    try:
+        parsed = urlsplit(normalize_asset_url(value))
+        scheme, host = parsed.scheme, parsed.hostname or ""
+    except ValueError:
+        return {**fields, "asset_scheme": "invalid", "asset_host": "invalid"}
+    fields["asset_scheme"] = scheme if re.fullmatch(r"[a-z][a-z0-9+.-]{0,20}", scheme) else "missing"
+    fields["asset_host"] = host if re.fullmatch(r"[a-z0-9.-]{1,253}", host) else "missing"
+    return fields
+
+
 def allowed_asset_url(value: str) -> bool:
     try:
+        value = normalize_asset_url(value)
         parsed = urlsplit(value)
         return bool(parsed.scheme == "https" and parsed.hostname in ASSET_HOSTS
                     and not parsed.username and not parsed.password and parsed.port in (None, 443)
@@ -102,36 +146,53 @@ class _NoRedirect(HTTPRedirectHandler):
 
 
 def fetch_bytes(url: str, *, token: str = "", cookie: str = "", maximum: int, accept: str) -> bytes:
-    """Follow bounded allowed HTTPS redirects; API credentials never reach a CDN."""
+    """Use bounded HTTPS redirects/retries; API credentials never reach a CDN."""
     opener = build_opener(_NoRedirect())
-    for _ in range(4):
+    retries, redirects = 0, 0
+    stage = "request"
+    while redirects < 4:
+        url = normalize_asset_url(url)
         if not allowed_asset_url(url):
-            raise ReportifyUnavailable("upstream_unavailable", "invalid_asset_url")
+            raise ReportifyUnavailable("upstream_unavailable", "invalid_asset_url",
+                                       **asset_url_diagnostics(url, stage))
         headers = {"Accept": accept, "User-Agent": "Mozilla/5.0", "Referer": "https://reportify.cn/"}
         if urlsplit(url).hostname == "api.reportify.cn":
             if token:
                 headers["Authorization"] = f"Bearer {token}"
-            if cookie:
+            elif cookie:
                 headers["Cookie"] = cookie
         try:
-            with opener.open(Request(url, headers=headers), timeout=90) as response:
+            with opener.open(Request(url, headers=headers), timeout=45) as response:
                 body = response.read(maximum + 1)
                 if len(body) > maximum:
                     raise ReportifyUnavailable("upstream_unavailable", "response_too_large")
                 return body
         except HTTPError as exc:
             if exc.code in {301, 302, 303, 307, 308} and exc.headers.get("Location"):
-                url = urljoin(url, exc.headers["Location"])
+                url = urljoin(url, normalize_asset_url(exc.headers["Location"]))
                 exc.close()
+                redirects += 1
+                stage = "redirect"
                 continue
             status = exc.code
             exc.close()
+            if status in TRANSIENT_HTTP_STATUSES and retries < len(RETRY_DELAYS):
+                time.sleep(RETRY_DELAYS[retries])
+                retries += 1
+                continue
             reason = ("upstream_login_required" if status == 401 else
                       "upstream_access_required" if status == 403 and (token or cookie) else
                       "upstream_login_required" if status == 403 else "upstream_unavailable")
             raise ReportifyUnavailable(reason, f"http_{status}") from None
-        except (URLError, TimeoutError, OSError, ValueError):
+        except (URLError, TimeoutError, OSError):
+            if retries < len(RETRY_DELAYS):
+                time.sleep(RETRY_DELAYS[retries])
+                retries += 1
+                continue
             raise ReportifyUnavailable("upstream_unavailable", "request_failed") from None
+        except ValueError:
+            raise ReportifyUnavailable("upstream_unavailable", "invalid_asset_url",
+                                       **asset_url_diagnostics(url, stage)) from None
     raise ReportifyUnavailable("upstream_unavailable", "too_many_redirects")
 
 
@@ -178,11 +239,13 @@ def authorized_pdf(detail: dict, *, authenticated: bool) -> tuple[str, int]:
     url = main.get("url_pdf")
     if not isinstance(url, str) or not url.strip():
         raise ReportifyUnavailable("upstream_unavailable", "full_pdf_not_exposed", expected_page_count=expected)
-    if not allowed_asset_url(url.strip()):
-        raise ReportifyUnavailable("upstream_unavailable", "invalid_asset_url", expected_page_count=expected)
+    url = normalize_asset_url(url)
+    if not allowed_asset_url(url):
+        raise ReportifyUnavailable("upstream_unavailable", "invalid_asset_url", expected_page_count=expected,
+                                   **asset_url_diagnostics(url, "detail_pdf"))
     if not expected:
         raise ReportifyUnavailable("upstream_unavailable", "expected_page_count_missing")
-    return url.strip(), expected
+    return url, expected
 
 
 def fetch_official_pdf(report_id: str, expected_pages: int, *, token: str = "", cookie: str = "",
@@ -240,9 +303,10 @@ def fetch_official_pdf(report_id: str, expected_pages: int, *, token: str = "", 
     urls = set(candidates)
     if len(urls) != 1:
         raise ReportifyUnavailable("upstream_unavailable", "invalid_download_response")
-    url = urls.pop()
+    url = normalize_asset_url(urls.pop())
     if not allowed_asset_url(url):
-        raise ReportifyUnavailable("upstream_unavailable", "invalid_asset_url")
+        raise ReportifyUnavailable("upstream_unavailable", "invalid_asset_url",
+                                   **asset_url_diagnostics(url, "official_download"))
     return fetch(url, token=token, cookie=cookie, maximum=MAX_PDF_BYTES, accept="application/pdf")
 
 
@@ -347,14 +411,16 @@ def main() -> int:
         client = runtime_r2_client() if args.session_from_r2 else None
         bucket = os.getenv("R2_BUCKET", "").strip() or "portal-suite-pdfs"
         token = stored_session_token(client, bucket) if client else args.auth_token.strip()
-        result = grab_report(report_id, output, token=token, cookie=args.cookie_header, cache_client=client, bucket=bucket)
+        # A newly connected account must not be mixed with a historical cookie.
+        cookie = "" if token else args.cookie_header
+        result = grab_report(report_id, output, token=token, cookie=cookie, cache_client=client, bucket=bucket)
     except ReportifyUnavailable as exc:
         result = {"version": 1, "id": report_id, "status": "failed", "validated": False,
                   "reason": exc.reason, "error_code": exc.reason, "detail_code": exc.detail_code,
                   "message": MESSAGES[exc.reason], **exc.metrics}
     write_result(result_path, result)
     # No signed URLs, token values, API bodies or raw transport exceptions.
-    print(json.dumps({key: result[key] for key in ("id", "status", "reason", "detail_code", "page_count", "expected_page_count") if key in result}))
+    print(json.dumps({key: result[key] for key in ("id", "status", "reason", "detail_code", "page_count", "expected_page_count", "asset_stage", "asset_scheme", "asset_host") if key in result}))
     return 0 if result["status"] == "ready" else 2
 
 

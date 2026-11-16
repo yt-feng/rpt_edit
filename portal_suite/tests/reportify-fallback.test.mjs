@@ -66,7 +66,7 @@ function harness({ payload = fixture(), owner = false, session = null, status = 
   vm.createContext(context);
   const names = ["isExternalId", "externalObjectKey", "externalStatusKey", "externalStoredStatus", "externalPutStatus",
     "reportifyStoredSession", "reportifyStoredToken", "reportifyStoreToken", "reportifyLoginQr",
-    "externalAdminRequest", "externalStatusAgeMs", "externalStatusIsActive", "externalStatusIsRecentFailure", "externalPendingResponse",
+    "externalAdminRequest", "externalStatusAgeMs", "externalStatusIsActive", "externalStatusIsRecentFailure", "externalPreparationFailure", "externalPendingResponse",
     "externalIsoDate", "slimExternalItem", "slimExternalDetailItem", "externalDetailPayload", "externalDetailItem", "externalDirectPdfUrl",
     "bytesToBinaryString", "binaryStringToBytes", "sanitizePdfExternalLinksBytes", "sanitizePdfExternalLinksBody", "externalPdfHasHeader",
     "externalValidatedPdfMetadata", "externalAccessFailure", "triggerExternalGrab", "handleExternalPdf", "handleExternalStatus", "handleReportifyLoginQrStatus"];
@@ -263,6 +263,67 @@ test("upstream 403 with a connected account is classified as unavailable access"
   const data = await (await h.context.handleExternalPdf(h.request, h.env)).json();
   assert.equal(data.error_code, "upstream_access_required");
   assert.equal(data.reauth_available, true);
+});
+
+test("expired preparation becomes a terminal retryable status instead of polling forever", async () => {
+  for (const status of ["queued", "running"]) {
+    for (const age of [5, 31]) {
+      const h = harness({ owner: true, session: freshSession(),
+        status: { status, updated_at: new Date(Date.now() - age * 60000).toISOString() } });
+      const response = await h.context.handleExternalStatus(
+        new Request("https://worker.example.test/external/status?id=1256239582803005440"), h.env);
+      const data = await response.json();
+      assert.equal(data.status, age > 30 ? "failed" : status);
+      if (age > 30) {
+        assert.equal(data.error_code, "preparation_timeout");
+        assert.equal(data.retry_after_seconds, 0);
+      }
+      assert.equal(h.calls.length, 0);
+    }
+  }
+});
+
+test("admin preparation errors retain safe diagnostics without misleading connection prompts", async () => {
+  const h = harness({ owner: true, status: { status: "failed", error_code: "upstream_unavailable",
+    detail_code: "invalid_asset_url", message: "private URL and credentials must not be returned",
+    updated_at: new Date(Date.now() - 60000).toISOString() } });
+  const data = await (await h.context.handleExternalStatus(
+    new Request("https://worker.example.test/external/status?id=1256239582803005440"), h.env)).json();
+  assert.equal(data.error_code, "upstream_unavailable");
+  assert.equal(data.detail_code, "invalid_asset_url");
+  assert.ok(data.retry_after_seconds > 0 && data.retry_after_seconds <= 540);
+  assert.equal(data.login_required, undefined);
+  assert.equal(h.calls.length, 0);
+  assert.doesNotMatch(JSON.stringify(data), /private URL|credentials/);
+});
+
+test("recent failed downloads and polling agree on diagnostics and retry timing", async () => {
+  const h = harness({ owner: true, session: { token: "test-session-value",
+    updated_at: new Date(Date.now() - 120000).toISOString() }, payload: fixture({ readable: true }),
+    status: { status: "failed", error_code: "invalid_pdf", detail_code: "page_count_mismatch",
+      updated_at: new Date(Date.now() - 60000).toISOString() } });
+  const response = await h.context.handleExternalPdf(h.request, h.env);
+  const data = await response.json();
+  assert.equal(response.status, 503);
+  assert.equal(data.error_code, "invalid_pdf");
+  assert.equal(data.detail_code, "page_count_mismatch");
+  assert.ok(data.retry_after_seconds > 0);
+  assert.equal(h.calls.length, 0);
+  const rejected = h.context.externalPreparationFailure({ status: "failed",
+    error_code: "private-secret", detail_code: "https://example.test/private" }, true);
+  assert.equal(rejected.error_code, "upstream_unavailable");
+  assert.equal(rejected.detail_code, undefined);
+});
+
+test("member failure responses omit administrator diagnostics and upstream identity", async () => {
+  const h = harness({ status: { status: "failed", error_code: "upstream_unavailable",
+    detail_code: "invalid_asset_url", updated_at: new Date().toISOString() } });
+  const data = await (await h.context.handleExternalStatus(
+    new Request("https://worker.example.test/external/status?id=1256239582803005440"), h.env)).json();
+  assert.equal(data.request_required, true);
+  assert.equal(data.error_code, undefined);
+  assert.equal(data.detail_code, undefined);
+  assert.doesNotMatch(JSON.stringify(data), /reportify|qrcode|test-session-value|invalid_asset_url/i);
 });
 
 test("owner status polling keeps authentication and displays connection recovery", () => {

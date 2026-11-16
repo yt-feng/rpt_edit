@@ -345,6 +345,7 @@ test("PDF source-policy response retains the original preview id for the UI", as
     EXTERNAL_SOURCE: "external", URLSearchParams,
     isContactOnlyItem: () => false, docEndpoint: () => "hot-reports", authHeaders: () => ({}),
     trackEvent: () => {}, analyticsReportPayload: () => ({}), downloadErrorMessage: (_status, message) => message,
+    externalPreparationMessage: vm.runInNewContext(`(${fn("externalPreparationMessage")})`),
     fetch: async () => ({ ok: false, status: 403, json: async () => ({
       error: "此类报告普通会员可查看1页预览。", error_code: "preview_only", preview_report_id: "1256239582803005440",
     }) }),
