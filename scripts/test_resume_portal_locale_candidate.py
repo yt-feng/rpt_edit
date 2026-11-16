@@ -10,8 +10,10 @@ import random
 from pathlib import Path
 import tempfile
 import unittest
+import weakref
 from unittest.mock import Mock, call, patch
 from urllib.error import HTTPError
+from urllib.request import Request
 import zipfile
 
 import publish_static_slot as publisher
@@ -50,18 +52,27 @@ class FakeGitHub:
         if "/jobs?" in path:
             return {"jobs": self.jobs}
         if "/artifacts?" in path:
-            return {"artifacts": [{"id": 99, "name": self.artifact_name, "expired": False, "workflow_run": {"id": 321}}]}
+            return {"artifacts": [{"id": 99, "name": self.artifact_name, "expired": False,
+                                   "size_in_bytes": len(self.archive()), "workflow_run": {"id": 321}}]}
         raise AssertionError(path)
+
+    def archive(self):
+        output = io.BytesIO()
+        with zipfile.ZipFile(output, "w") as archive:
+            for name, body in {**self.diagnostics, **self.archive_extra}.items():
+                archive.writestr(name, body)
+        return output.getvalue()
 
     def bytes(self, path):
         if path.endswith("/jobs/123/logs"):
             return self.logs.encode()
+        raise AssertionError(path)
+
+    def artifact_bytes(self, path, *, size_in_bytes):
         if path.endswith("/artifacts/99/zip"):
-            output = io.BytesIO()
-            with zipfile.ZipFile(output, "w") as archive:
-                for name, body in {**self.diagnostics, **self.archive_extra}.items():
-                    archive.writestr(name, body)
-            return output.getvalue()
+            body = self.archive()
+            assert len(body) <= size_in_bytes
+            return body
         raise AssertionError(path)
 
 
@@ -790,6 +801,82 @@ class ResumeTests(unittest.TestCase):
             with self.assertRaisesRegex(resume.ResumeError, 'total expanded'):
                 resume.download_diagnostics(self.github, REPO, 321, 1, self.diag)
 
+    def test_production_sized_locale_diagnostics_are_preserved_and_validated_sequentially(self):
+        sizes = {"locale-preflight-diagnostics.json": 225330008, "locale-full-diagnostics.json": 225241451}
+        archive_buffer = io.BytesIO()
+        expected_hashes = {}
+        chunk = b"x" * (1024 * 1024)
+        with zipfile.ZipFile(archive_buffer, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=1) as archive:
+            for name, size in sizes.items():
+                fields = b'"preflight_only":true' if "preflight" in name else b'"ready":true'
+                prefix = b'{"status":"passed",' + fields + b',"padding":"'
+                digest = hashlib.sha256()
+                with archive.open(name, "w") as member:
+                    member.write(prefix)
+                    digest.update(prefix)
+                    remaining = size - len(prefix) - 2
+                    while remaining:
+                        part = chunk[:min(remaining, len(chunk))]
+                        member.write(part)
+                        digest.update(part)
+                        remaining -= len(part)
+                    member.write(b'"}')
+                    digest.update(b'"}')
+                expected_hashes[name] = digest.hexdigest()
+            for name in ("chinese-parity.json", "chinese-performance.json"):
+                archive.writestr(name, self.github.diagnostics[name])
+        payload = archive_buffer.getvalue()
+        github = Mock()
+        github.json.return_value = {"artifacts": [{
+            "id": 99, "name": "neutral-translation-diagnostics-321-1", "expired": False,
+            "workflow_run": {"id": 321}, "size_in_bytes": len(payload),
+        }]}
+        github.artifact_bytes.return_value = payload
+        resume.download_diagnostics(github, REPO, 321, 1, self.diag)
+        for name, size in sizes.items():
+            path = self.diag / name
+            self.assertEqual(path.stat().st_size, size)
+            with path.open("rb") as source:
+                self.assertEqual(hashlib.file_digest(source, "sha256").hexdigest(), expected_hashes[name])
+        result = resume.validate_diagnostics(self.diag, APP, self.github.logs, ORIGIN, active_app=APP)
+        self.assertTrue(result["preflight_passed"] and result["locale_ready"])
+
+    def test_locale_json_trees_are_released_before_reading_the_next_diagnostic(self):
+        resume.download_diagnostics(self.github, REPO, 321, 1, self.diag)
+        decode = resume.decode_json
+        loaded = []
+        locale_tree = None
+
+        class TrackedDict(dict):
+            pass
+
+        def tracked_decode(body, name):
+            nonlocal locale_tree
+            if locale_tree is not None:
+                self.assertIsNone(locale_tree(), "Previous large locale JSON tree is still retained")
+            value = decode(body, name)
+            loaded.append(name)
+            if name.startswith("locale-"):
+                value = TrackedDict(value)
+                locale_tree = weakref.ref(value)
+            return value
+
+        with patch.object(resume, "decode_json", side_effect=tracked_decode):
+            result = resume.validate_diagnostics(self.diag, APP, self.github.logs, ORIGIN, active_app=APP)
+        self.assertEqual(loaded, list(resume.DIAGNOSTICS))
+        self.assertTrue(result["locale_ready"])
+
+    def test_artifact_size_metadata_is_checked_before_download(self):
+        for size in (None, 0, -1, True, "100", 1.5, resume.MAX_ARTIFACT_DOWNLOAD_BYTES + 1):
+            github = Mock()
+            github.json.return_value = {"artifacts": [{
+                "id": 99, "name": "neutral-translation-diagnostics-321-1", "expired": False,
+                "workflow_run": {"id": 321}, "size_in_bytes": size,
+            }]}
+            with self.subTest(size=size), self.assertRaisesRegex(resume.ResumeError, "download size"):
+                resume.download_diagnostics(github, REPO, 321, 1, self.diag)
+            github.artifact_bytes.assert_not_called()
+
     def test_live_change_during_restore_does_not_emit_resume_identity(self):
         self.live.side_effect = [PREVIOUS, {**PREVIOUS, "release_id": "9" * 32}]
         with self.assertRaisesRegex(resume.ResumeError, "during candidate restore"):
@@ -936,6 +1023,74 @@ class CandidateReadRetryTests(unittest.TestCase):
 
 
 class ReadTransportTests(unittest.TestCase):
+    def test_production_sized_artifact_uses_its_own_bound_and_extracts_required_diagnostics(self):
+        # The real source archive is 183,693,428 bytes (~175 MiB), and includes
+        # other diagnostic snapshots beyond the four required receipts.
+        output = io.BytesIO()
+        required = {name: encoded({"status": "passed"}) for name in resume.DIAGNOSTICS}
+        with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_STORED) as archive:
+            for name, body in required.items():
+                archive.writestr(name, body)
+            with archive.open("other-diagnostic-snapshot.bin", "w") as padding:
+                chunk = b"x" * (1024 * 1024)
+                for _ in range(175):
+                    padding.write(chunk)
+        payload = output.getvalue()
+        self.assertGreater(len(payload), resume.MAX_API_BYTES)
+        self.assertLess(len(payload), resume.MAX_ARTIFACT_DOWNLOAD_BYTES)
+        client = resume.GitHubClient("private-test-token")
+        client.opener = Mock()
+        response = io.BytesIO(payload)
+        client.opener.open.return_value = response
+        artifacts = {"artifacts": [{
+            "id": 99, "name": "neutral-translation-diagnostics-321-1", "expired": False,
+            "workflow_run": {"id": 321}, "size_in_bytes": len(payload),
+        }]}
+        with tempfile.TemporaryDirectory() as destination, patch.object(client, "json", return_value=artifacts):
+            resume.download_diagnostics(client, REPO, 321, 1, Path(destination))
+            for name, body in required.items():
+                self.assertEqual((Path(destination) / name).read_bytes(), body)
+            self.assertEqual(set(path.name for path in Path(destination).iterdir()), set(required))
+        self.assertTrue(response.closed)
+
+    def test_artifact_reader_rejects_invalid_size_and_still_bounds_actual_response(self):
+        client = resume.GitHubClient("private-test-token")
+        client.opener = Mock()
+        path = "/repos/example/repository/actions/artifacts/99/zip"
+        for size in (None, 0, -1, True, "100", resume.MAX_ARTIFACT_DOWNLOAD_BYTES + 1):
+            with self.subTest(size=size), self.assertRaisesRegex(resume.ResumeError, "download size"):
+                client.artifact_bytes(path, size_in_bytes=size)
+        client.opener.open.assert_not_called()
+        oversized = io.BytesIO(b"12345")
+        client.opener.open.return_value = oversized
+        with self.assertRaisesRegex(resume.ResumeError, "oversized"):
+            client.artifact_bytes(path, size_in_bytes=4)
+        self.assertTrue(oversized.closed)
+        with self.assertRaisesRegex(resume.ResumeError, "artifact route"):
+            client.artifact_bytes("/repos/example/repository/actions/jobs/123/logs", size_in_bytes=100)
+
+    def test_api_and_log_reader_keep_the_smaller_default_bound(self):
+        client = resume.GitHubClient("private-test-token")
+        client.opener = Mock()
+        for path in ("/repos/example/repository/actions/jobs/123/logs", "/repos/example/repository/actions/runs/321"):
+            response = io.BytesIO(b"12345")
+            client.opener.open.return_value = response
+            with self.subTest(path=path), patch.object(resume, "MAX_API_BYTES", 4):
+                with self.assertRaisesRegex(resume.ResumeError, "oversized"):
+                    client.bytes(path)
+            self.assertTrue(response.closed)
+
+    def test_github_redirect_keeps_https_and_strips_cross_host_authorization(self):
+        handler = resume.GitHubRedirect()
+        request = Request("https://api.github.com/repos/example/repository/actions/artifacts/99/zip",
+                          headers={"Authorization": "Bearer private-test-token"})
+        redirected = handler.redirect_request(request, None, 302, "", {}, "https://downloads.example.invalid/archive")
+        self.assertIsNone(redirected.get_header("Authorization"))
+        same_host = handler.redirect_request(request, None, 302, "", {}, "https://api.github.com/archive")
+        self.assertEqual(same_host.get_header("Authorization"), "Bearer private-test-token")
+        with self.assertRaisesRegex(resume.ResumeError, "outside HTTPS"):
+            handler.redirect_request(request, None, 302, "", {}, "http://downloads.example.invalid/archive")
+
     def test_github_user_agent_identifies_the_resume_client(self):
         client = resume.GitHubClient("private-test-token")
         client.opener = Mock()
