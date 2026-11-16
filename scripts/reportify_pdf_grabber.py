@@ -22,7 +22,11 @@ from urllib.parse import urljoin, urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 
 API_ORIGIN = "https://api.reportify.cn"
-ASSET_HOSTS = {"api.reportify.cn", "s.reportify.cn", "files.reportify.cn", "reportify.cn", "www.reportify.cn"}
+ASSET_HOSTS = {
+    "api.reportify.cn", "s.reportify.cn", "files.reportify.cn", "reportify.cn", "www.reportify.cn",
+    # The authenticated official download API returns this exact Reportify COS bucket.
+    "reportify-1252068037.cos.ap-beijing.myqcloud.com",
+}
 SESSION_KEY = "reportify-auth/session.json"
 SESSION_MAX_AGE_SECONDS = 12 * 60 * 60
 MAX_PDF_BYTES = 100 * 1024 * 1024

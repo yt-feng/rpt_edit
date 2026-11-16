@@ -442,6 +442,25 @@ class ReportifyApiGrabTests(unittest.TestCase):
             if not inline_url:
                 self.assertTrue(requests[1].full_url.endswith("/reports/1300546606747226112/download"))
 
+    def test_observed_official_cos_download_returns_all_56_pages_without_credentials(self):
+        url = "https://reportify-1252068037.cos.ap-beijing.myqcloud.com/reports/full.pdf?signature=private"
+        opener = mock.Mock()
+        opener.open.side_effect = [BytesIO(json.dumps(detail(56, url="")).encode()),
+                                  BytesIO(json.dumps({"url": url}).encode()), BytesIO(pdf(56))]
+        with mock.patch.object(grab, "build_opener", return_value=opener):
+            result = grab.grab_report("1300546606747226112", self.output, token="new-token",
+                                      cookie="old-cookie", fetch=grab.fetch_bytes)
+        self.assertEqual(result["page_count"], 56)
+        self.assertEqual(grab.validate_pdf(self.output.read_bytes(), 56), 56)
+        requests = [call.args[0] for call in opener.open.call_args_list]
+        self.assertEqual(requests[-1].full_url, url)
+        self.assertIsNone(requests[-1].get_header("Authorization"))
+        self.assertIsNone(requests[-1].get_header("Cookie"))
+        self.assertNotIn("signature", json.dumps(result))
+        for host in ("other-1252068037.cos.ap-beijing.myqcloud.com", "cos.ap-beijing.myqcloud.com",
+                     "reportify-1252068037.cos.ap-beijing.myqcloud.com.evil.example"):
+            self.assertFalse(grab.allowed_asset_url("https://" + host + "/full.pdf"))
+
     def test_new_r2_session_does_not_mix_in_historical_cookie(self):
         args = ["grab", "--url", "https://reportify.cn/reports/1300546606747226112", "--output", str(self.output),
                 "--session-from-r2", "--cookie-header", "old-cookie"]
