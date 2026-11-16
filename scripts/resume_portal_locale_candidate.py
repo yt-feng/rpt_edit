@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import base64
 from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 import hashlib
 import io
@@ -12,6 +13,7 @@ from pathlib import Path
 import re
 import sys
 import tempfile
+import threading
 from typing import Any, Callable, Iterable, Iterator
 from urllib.error import HTTPError
 from urllib.parse import urlsplit
@@ -64,6 +66,11 @@ DIAGNOSTICS = (
     "locale-preflight-diagnostics.json", "locale-full-diagnostics.json",
     "chinese-parity.json", "chinese-performance.json",
 )
+RETENTION_DIAGNOSTICS = (
+    "locale-retention.json", "locale-retention-active-manifest.json",
+    "chinese-parity.json", "chinese-performance.json",
+)
+SOURCE_PROOF = "chinese-locale-source.json"
 # Real per-locale diagnostics include detailed accounting for the complete
 # existing catalog (about 215 MiB each in run 43807184739). They are not small
 # approval receipts. Keep the complete JSON and all semantic checks, while
@@ -73,6 +80,9 @@ DIAGNOSTIC_MAX_BYTES = {
     'locale-full-diagnostics.json': 256 * 1024 * 1024,
     'chinese-parity.json': 16 * 1024 * 1024,
     'chinese-performance.json': 16 * 1024 * 1024,
+    'locale-retention.json': 24 * 1024 * 1024,
+    'locale-retention-active-manifest.json': 64 * 1024 * 1024,
+    SOURCE_PROOF: 64 * 1024 * 1024,
 }
 MAX_DIAGNOSTICS_EXPANDED_BYTES = 512 * 1024 * 1024
 PUBLIC_PATHS = frozenset((
@@ -380,7 +390,29 @@ def verify_logged_identity(logs: str, *, slot: str, release: str, tree: str, com
     require(not previous_trees or previous_trees == {previous["tree_sha256"]}, "Source log previous tree does not match")
 
 
-def download_diagnostics(github: Any, repository: str, run_id: int, attempt: int, destination: Path) -> None:
+def publication_mode(logs: str) -> str:
+    values = set(re.findall(r"(?m)^core_locale_publication_mode=([a-z-]+)\s*$", logs))
+    require(not values or values in ({"retained"}, {"translated"}),
+            "Source core locale publication mode is invalid or inconsistent")
+    return next(iter(values)) if values else "translated"
+
+
+def source_proof_logged(logs: str) -> bool:
+    lines = re.findall(r"(?m)^chinese_locale_source_sha256=([^\r\n]*)$", logs)
+    require(not lines or len(set(lines)) == 1 and re.fullmatch(r"[0-9a-f]{64}", lines[0]) is not None,
+            "Chinese source proof log identity is invalid")
+    return bool(lines)
+
+
+def diagnostic_names(mode: str, *, source_proof: bool = False) -> tuple[str, ...]:
+    require(mode in {"translated", "retained"}, "Core locale publication mode is invalid")
+    require(not source_proof or mode == "translated", "Retained release cannot claim a fresh locale source proof")
+    return RETENTION_DIAGNOSTICS if mode == "retained" else DIAGNOSTICS + ((SOURCE_PROOF,) if source_proof else ())
+
+
+def download_diagnostics(github: Any, repository: str, run_id: int, attempt: int, destination: Path,
+                         *, mode: str = "translated", source_proof: bool = False) -> None:
+    expected_names = set(diagnostic_names(mode, source_proof=source_proof))
     name = f"neutral-translation-diagnostics-{run_id}-{attempt}"
     phase("diagnostic_artifact_metadata")
     artifacts = paged_rows(github, f"/repos/{repository}/actions/runs/{run_id}/artifacts", "artifacts")
@@ -406,8 +438,9 @@ def download_diagnostics(github: Any, repository: str, run_id: int, attempt: int
                 if item.is_dir():
                     continue
                 name = Path(item.filename).name
-                if name not in DIAGNOSTICS:
+                if name not in DIAGNOSTIC_MAX_BYTES:
                     continue
+                require(name in expected_names, "Source diagnostics mix retained and fresh translation evidence")
                 require(name not in required, f'Diagnostic archive contains duplicate required entry: {name}')
                 maximum = DIAGNOSTIC_MAX_BYTES[name]
                 require(0 < item.file_size <= maximum,
@@ -422,7 +455,7 @@ def download_diagnostics(github: Any, repository: str, run_id: int, attempt: int
                 required[name] = body
     except (zipfile.BadZipFile, ValueError) as error:
         raise ResumeError("Source diagnostics archive is invalid") from error
-    require(set(required) == set(DIAGNOSTICS), "Source diagnostics artifact is incomplete")
+    require(set(required) == expected_names, "Source diagnostics artifact is incomplete")
     for name, body in required.items():
         write_local(destination, name, body)
 
@@ -442,7 +475,15 @@ def local_target(root: Path, relative: str) -> Path:
 
 def write_local(root: Path, relative: str, body: bytes) -> None:
     target = local_target(root, relative)
-    target.write_bytes(body)
+    descriptor_fd, name = tempfile.mkstemp(prefix=".resume-", suffix=".tmp", dir=target.parent)
+    temporary = Path(name)
+    try:
+        with os.fdopen(descriptor_fd, "wb") as output:
+            output.write(body)
+        require(local_target(root, relative) == target, "Local output path changed during recovery")
+        os.replace(temporary, target)
+    finally:
+        temporary.unlink(missing_ok=True)
 
 
 def bounded_results(items: Iterable[Any], verify: Callable[[Any], Any], *, workers: int) -> Iterator[Any]:
@@ -629,7 +670,9 @@ def download_candidate_object(client: Any, bucket: str, key: str, descriptor: di
     raise AssertionError("Unreachable candidate download retry state")
 
 
-def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any], site_dir: Path, *, workers: int = 16) -> set[str]:
+def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any], site_dir: Path, *, workers: int = 16,
+                             mode: str = "translated", source_receipt: Path | None = None) -> set[str]:
+    diagnostic_names(mode)
     files = manifest["files"]
     prefix = publisher.slot_prefix(manifest["slot"])
     downloaded: set[str] = set()
@@ -661,10 +704,29 @@ def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any],
         validate_translation_resolution(locale_manifest, LOCALES)
     except LocaleManifestError as error:
         raise ResumeError(f"Candidate locale coverage is incomplete: {error}") from error
-    require(locale_manifest.get("translation_scope") == "incremental" and
-            (locale_manifest.get("index_policy") or {}).get("mode") == "incremental-publication-cutoff",
-            "Candidate is not an incremental locale release")
+    if source_receipt is not None:
+        from restore_published_chinese_source import source_receipt as read_source_receipt
+        require(mode == "translated", "Retained release cannot change locale source policy")
+        core = read_source_receipt(source_receipt)["core_locales"]
+        scope = "incremental" if core["translation_scope"] == "incremental" else "release"
+        require(locale_manifest.get("translation_scope") == scope
+                and all((locale_manifest.get("index_policy") or {}).get(key) == core["index_policy"].get(key)
+                        for key in ("mode", "default", "index_start_date", "allowlist_count")),
+                "Candidate follow-up policy differs from its proven published source")
+    elif mode == "translated":
+        require(locale_manifest.get("translation_scope") == "incremental" and
+                (locale_manifest.get("index_policy") or {}).get("mode") == "incremental-publication-cutoff",
+                "Candidate is not an incremental locale release")
     wanted = set(PUBLIC_PATHS)
+    if source_receipt is not None and "data/i18n/history-release.json" in files:
+        wanted.add("data/i18n/history-release.json")
+    if mode == "retained":
+        from retain_published_core_locales import selected_paths
+        wanted.update(selected_paths(files))
+        # Legacy published manifests can bind the Chinese lazy asset without
+        # declaring application routes. Retention still rebinds and verifies it.
+        if isinstance(locale_manifest.get("lazy_javascript_assets"), dict) and "zh-Hans" in locale_manifest["lazy_javascript_assets"]:
+            wanted.add("assets/newsfeed-app.js")
     if 'data/english-commentary/assembly.json' in files or any(relative.startswith('en/') for relative in files):
         from portal_english_commentary import PREFIX
         from portal_english_publication import ASSEMBLY, read_static_assembly
@@ -678,7 +740,15 @@ def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any],
     if 'data/extended-locales/assembly.json' in files:
         from verify_prepared_static_slot import verify_extended_static_tree
         from portal_extended_locales import ORIGIN
-        extended = verify_extended_static_tree(client, bucket, prefix, files, origin=ORIGIN)
+        capture_lock = threading.Lock()
+        def capture_extended(relative: str, body: bytes) -> None:
+            # The verifier checks each body's committed length/hash before
+            # handing it off. Persist it atomically rather than GET it again.
+            write_local(site_dir, relative, body)
+            with capture_lock:
+                downloaded.add(relative)
+        extended = verify_extended_static_tree(client, bucket, prefix, files, origin=ORIGIN,
+                                               on_verified_body=capture_extended)
         wanted.update(('data/extended-locales/assembly.json', 'sitemap-extended.xml'))
         for locale in extended['locales']:
             wanted.add(f'sitemap-extended-{locale}.xml')
@@ -714,16 +784,72 @@ def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any],
     return downloaded
 
 
-def validate_diagnostics(directory: Path, app: bytes, logs: str, origin: str, *, active_app: bytes) -> dict[str, Any]:
+def validate_retention_proof(directory: Path, logs: str, previous: dict[str, Any],
+                             active_manifest: dict[str, Any], candidate: dict[str, Any]) -> None:
+    from retain_published_core_locales import MANIFEST, checked_manifest, selected_paths
+    require(publication_mode(logs) == "retained", "Source retention mode is not attested")
+    proofs = {}
+    for name, label in (("locale-retention.json", "retention_receipt_sha256"),
+                        ("locale-retention-active-manifest.json", "retention_active_manifest_sha256")):
+        raw = (directory / name).read_bytes()
+        expected = hashlib.sha256(raw).hexdigest()
+        require(set(re.findall(rf"(?m)^{label}=([0-9a-f]{{64}})\s*$", logs)) == {expected},
+                f"Source log does not attest {label}")
+        proofs[name] = decode_json(raw, name)
+    receipt = proofs["locale-retention.json"]
+    require(receipt.get("schema_version") == 1 and receipt.get("kind") == "published-core-locales"
+            and receipt.get("provider_requests") == 0, "Retention receipt is invalid")
+    require(receipt.get("source_state") == previous, "Retained source state differs from captured previous release")
+    original = checked_manifest(proofs["locale-retention-active-manifest.json"], previous)
+    require(original == active_manifest, "Retained active manifest differs from the pinned previous manifest")
+    paths = selected_paths(original["files"])
+    require(receipt.get("retained_files") == len(paths) and selected_paths(candidate["files"]) == paths,
+            "Retained candidate inventory differs from the previous release")
+    for relative in paths - {MANIFEST}:
+        require(all(candidate["files"][relative].get(key) == original["files"][relative].get(key)
+                    for key in ("size", "sha256")), f"Retained candidate descriptor changed: {relative}")
+    try:
+        raw = base64.b64decode(receipt["source_manifest_b64"], validate=True)
+    except (ValueError, KeyError, TypeError) as error:
+        raise ResumeError("Retained source manifest proof is invalid") from error
+    old = original["files"].get(MANIFEST, {})
+    require(0 < len(raw) <= MAX_LOCALE_MANIFEST_BYTES and len(raw) == old.get("size")
+            and hashlib.sha256(raw).hexdigest() == old.get("sha256"),
+            "Retained source manifest proof differs from the previous release")
+
+
+def validate_source_proof(client: Any, bucket: str, directory: Path, logs: str, origin: str,
+                          previous: dict[str, Any], active_manifest: dict[str, Any]) -> Path:
+    from restore_published_chinese_source import read_core_policy, source_receipt
+    path = directory / SOURCE_PROOF
+    raw = path.read_bytes()
+    require(source_proof_logged(logs) and
+            re.findall(r"(?m)^chinese_locale_source_sha256=([0-9a-f]{64})$", logs)[0] == hashlib.sha256(raw).hexdigest(),
+            "Source log does not attest the Chinese locale source proof")
+    receipt = source_receipt(path)
+    require(receipt.get("source_state") == previous and receipt.get("site_origin") == origin.rstrip("/")
+            and receipt.get("source_tree_sha256") == previous["tree_sha256"]
+            and receipt.get("source_file_count") == active_manifest["file_count"]
+            and receipt.get("provider_requests") == 0 and receipt.get("remote_mutations") == 0,
+            "Chinese locale source proof differs from the pinned previous release")
+    require(receipt["core_locales"] == read_core_policy(client, bucket, active_manifest, origin.rstrip("/")),
+            "Chinese locale source policy differs from the pinned previous release")
+    return path
+
+
+def validate_diagnostics(directory: Path, app: bytes, logs: str, origin: str, *, active_app: bytes,
+                         mode: str = "translated") -> dict[str, Any]:
+    diagnostic_names(mode)
     # Each locale report can exceed 200 MiB before JSON expansion. Validate and
     # release one tree before loading the next; retain complete source files.
-    preflight = decode_json((directory / "locale-preflight-diagnostics.json").read_bytes(), "locale-preflight-diagnostics.json")
-    require(preflight.get("status") == "passed" and preflight.get("preflight_only") is True, "Source locale preflight did not pass")
-    del preflight
-    full = decode_json((directory / "locale-full-diagnostics.json").read_bytes(), "locale-full-diagnostics.json")
-    require(full.get("status") == "passed" and full.get("ready") is True and not full.get("preflight_only")
-            and not full.get("stop_reason") and full.get("pending_repair_count", 0) == 0, "Source locale build is not ready")
-    del full
+    if mode == "translated":
+        preflight = decode_json((directory / "locale-preflight-diagnostics.json").read_bytes(), "locale-preflight-diagnostics.json")
+        require(preflight.get("status") == "passed" and preflight.get("preflight_only") is True, "Source locale preflight did not pass")
+        del preflight
+        full = decode_json((directory / "locale-full-diagnostics.json").read_bytes(), "locale-full-diagnostics.json")
+        require(full.get("status") == "passed" and full.get("ready") is True and not full.get("preflight_only")
+                and not full.get("stop_reason") and full.get("pending_repair_count", 0) == 0, "Source locale build is not ready")
+        del full
     report = decode_json((directory / "chinese-parity.json").read_bytes(), "chinese-parity.json")
     require(report.get("schema_version") == 1 and report.get("kind") == parity.VERIFY_KIND
             and report.get("site_origin") == origin.rstrip("/"), "Source Chinese parity identity is invalid")
@@ -743,7 +869,8 @@ def validate_diagnostics(directory: Path, app: bytes, logs: str, origin: str, *,
     require(performance["candidate_sha256"] in logs, "Source log does not attest Chinese performance")
     require(comparison["status"] == "passed", "Fresh Chinese performance comparison did not pass: " + ", ".join(comparison["violations"]))
     return {"chinese_parity_sha256": hashlib.sha256((directory / "chinese-parity.json").read_bytes()).hexdigest(),
-            "preflight_passed": True, "locale_ready": True, "performance_passed": True,
+            "publication_mode": mode, "preflight_passed": mode == "translated",
+            "locale_ready": mode == "translated", "performance_passed": True,
             "performance_comparison": comparison, "source_performance_active_compared": performance["active_compared"]}
 
 
@@ -766,12 +893,18 @@ def resume_candidate(*, github: Any, client: Any, bucket: str, repository: str, 
     verify_logged_identity(identity_logs, slot=slot, release=release, tree=expected_tree, commit=expected_commit, previous=previous)
     phase("live_baseline")
     require(fetch_live(origin) == previous, "Live Edge state changed since baseline capture")
-    download_diagnostics(github, repository, run_id, run_attempt, diagnostics_dir)
+    mode = publication_mode(logs)
+    has_source_proof = source_proof_logged(logs)
+    download_diagnostics(github, repository, run_id, run_attempt, diagnostics_dir, mode=mode, source_proof=has_source_proof)
     phase("diagnostic_performance_preflight")
     pinned_candidate = read_pinned_manifest(client, bucket, {"slot": slot, "release_id": release, "tree_sha256": expected_tree})
     pinned_previous = read_pinned_manifest(client, bucket, previous)
+    if mode == "retained":
+        validate_retention_proof(diagnostics_dir, logs, previous, pinned_previous, pinned_candidate)
+    source_receipt = (validate_source_proof(client, bucket, diagnostics_dir, logs, origin, previous, pinned_previous)
+                      if has_source_proof else None)
     diagnostics = validate_diagnostics(diagnostics_dir, read_pinned_app(client, bucket, pinned_candidate), logs, origin,
-                                       active_app=read_pinned_app(client, bucket, pinned_previous))
+                                       active_app=read_pinned_app(client, bucket, pinned_previous), mode=mode)
     comparison = {**diagnostics["performance_comparison"], "baseline_slot": previous["slot"],
                   "baseline_release_id": previous["release_id"], "baseline_tree_sha256": previous["tree_sha256"],
                   "source_active_compared": diagnostics["source_performance_active_compared"]}
@@ -780,14 +913,26 @@ def resume_candidate(*, github: Any, client: Any, bucket: str, repository: str, 
     manifest = validate_remote_slot(client, bucket, slot, release, expected_tree, workers=workers)
     require(manifest == pinned_candidate, "Candidate slot manifest changed after performance preflight")
     phase("candidate_file_download")
-    downloaded = download_candidate_files(client, bucket, manifest, site_dir, workers=workers)
+    downloaded = download_candidate_files(client, bucket, manifest, site_dir, workers=workers, mode=mode,
+                                          source_receipt=source_receipt)
+    if mode == "retained":
+        from retain_published_core_locales import validate_retention
+        phase("retained_file_verification")
+        validate_retention(site_dir, diagnostics_dir / "locale-retention.json",
+                           diagnostics_dir / "locale-retention-active-manifest.json")
+        diagnostics.update(retention_verified=True, locale_ready=True)
+    if source_receipt is not None:
+        from restore_published_chinese_source import validate_followup
+        phase("published_locale_continuity_verification")
+        validate_followup(site_dir, source_receipt)
+        diagnostics["source_snapshot_verified"] = True
     phase("final_identity_recheck")
     require(fetch_live(origin) == previous, "Live Edge state changed during candidate restore")
     assert_no_incomplete(client, bucket, slot)
     final_manifest = publisher.valid_manifest(publisher.read_json_object(client, bucket, publisher.manifest_key(slot)), slot)
     require(final_manifest == manifest, "Candidate slot manifest changed during restore")
     require(read_pinned_manifest(client, bucket, previous) == pinned_previous, "Previous slot manifest changed during restore")
-    for name in DIAGNOSTICS:
+    for name in diagnostic_names(mode, source_proof=has_source_proof):
         write_local(work_dir, name, (diagnostics_dir / name).read_bytes())
     result = {
         "schema_version": 1, "source_run_id": run_id, "source_run_attempt": run_attempt,
@@ -824,6 +969,7 @@ def main() -> int:
             **vars(args),
         )
         outputs = {key: result[key] for key in ("static_slot", "static_prefix", "tree_sha256", "static_release", "commit_sha", "chinese_parity_sha256")}
+        outputs["retained"] = "true" if result["publication_mode"] == "retained" else "false"
         publisher.append_github_values(os.getenv("GITHUB_OUTPUT", ""), outputs)
         publisher.append_github_values(os.getenv("GITHUB_ENV", ""), {
             "STATIC_SLOT": result["static_slot"], "STATIC_PREFIX": result["static_prefix"],

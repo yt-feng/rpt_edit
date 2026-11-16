@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import subprocess
+import json
 import re
 import os
 import sys
@@ -21,6 +22,184 @@ WORKFLOW = ROOT / ".github/workflows/neutral-edge-cutover.yml"
 
 
 class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
+    def test_catalog_and_locale_modes_keep_activation_history_and_handoff_contracts(self):
+        step = self.workflow.split('      - name: Require reviewed main operation\n', 1)[1]
+        script = textwrap.dedent(step.split('        run: |\n', 1)[1].split('      - name:', 1)[0])
+        variants = [({}, 'catalog'), ({'REQUESTED_PUBLICATION_MODE': 'locales'}, 'locales'),
+                    ({'EXTENDED_HANDOFF': 'verified-handoff', 'REQUESTED_PUBLICATION_MODE': 'locales'}, 'catalog'),
+                    ({'ENGLISH_HANDOFF': 'verified-handoff'}, 'catalog'),
+                    ({'REQUESTED_TRANSLATION_SCOPE': 'release'}, 'full'),
+                    ({'REQUESTED_OPERATION': 'rehearse'}, 'full'),
+                    ({'REQUESTED_OPERATION': 'locale-shadow', 'REQUESTED_TRANSLATION_SCOPE': 'month'}, 'full'),
+                    ({'PORTAL_MULTILINGUAL_LIVE_CONFIGURED': 'false'}, 'full'),
+                    ({'PORTAL_MULTILINGUAL_CONFIGURED': 'false'}, 'full'),
+                    ({'CATALOG_RECOVERY_RELEASE': 'a' * 32}, 'full'),
+                    ({'REQUESTED_PUBLICATION_MODE': 'invalid'}, None)]
+        for changes, expected in variants:
+            with self.subTest(changes=changes), tempfile.TemporaryDirectory() as temporary:
+                output, exported = Path(temporary) / 'output', Path(temporary) / 'env'
+                env = {'PATH': os.environ['PATH'], 'GITHUB_REF': 'refs/heads/main',
+                       'GITHUB_EVENT_NAME': 'workflow_dispatch', 'GITHUB_SHA': 'a' * 40,
+                       'GITHUB_OUTPUT': str(output), 'GITHUB_ENV': str(exported),
+                       'REQUESTED_OPERATION': 'migrate', 'REQUESTED_TRANSLATION_SCOPE': 'incremental',
+                       'REQUESTED_PUBLICATION_MODE': 'catalog', 'CATALOG_RECOVERY_RELEASE': '',
+                       'PORTAL_MULTILINGUAL_CONFIGURED': 'true', 'PORTAL_MULTILINGUAL_LIVE_CONFIGURED': 'true',
+                       'PORTAL_MULTILINGUAL_INDEX_START_DATE': '2026-01-01',
+                       'EXTENDED_LOCALES_REQUESTED': '', 'EXTENDED_SOURCE_GENERATION': '',
+                       'EXTENDED_CANDIDATE_IDS': '', 'EXTENDED_HANDOFF': '', 'ENGLISH_HANDOFF': '', **changes}
+                result = subprocess.run(['bash', '-c', script], env=env, text=True, capture_output=True)
+                if expected is None:
+                    self.assertNotEqual(result.returncode, 0)
+                    continue
+                self.assertEqual(result.returncode, 0, result.stderr)
+                values = dict(line.split('=', 1) for line in output.read_text().splitlines())
+                self.assertEqual(values['publication_mode'], expected)
+                self.assertEqual(values['english_requested'], str(bool(env['ENGLISH_HANDOFF'])).lower())
+                self.assertEqual(values['extended_requested'], str(bool(env['EXTENDED_HANDOFF'])).lower())
+
+    def test_catalog_retention_and_pinned_locale_source_preserve_existing_checks(self):
+        def step(name):
+            return self.workflow.split('      - name: ' + name + '\n', 1)[1].split('      - name:', 1)[0]
+        build = step('Build Korean Japanese and Arabic static locales')
+        self.assertLess(build.index('retain_published_core_locales.py'), build.index('build_portal_locales.py'))
+        self.assertIn('core_locale_publication_mode=retained', build)
+        self.assertIn('echo \'ready=true\' >> "$GITHUB_OUTPUT"', build)
+        for name in ('Restore resumable multilingual translation checkpoint',
+                     'Use active multilingual cache only without a CI checkpoint',
+                     'Detect multilingual translation checkpoint', 'Save multilingual translation checkpoint'):
+            self.assertIn("steps.operation.outputs.publication_mode != 'catalog'", step(name))
+        for name in ('Build private static release', 'Refresh report catalog with additive PDF sync',
+                     'Download private chart search index', 'Translate missing report titles'):
+            self.assertIn("if: steps.operation.outputs.publication_mode != 'locales'", step(name))
+        restored = step('Restore latest published Chinese source for locale refresh')
+        self.assertIn("if: steps.operation.outputs.publication_mode == 'locales'", restored)
+        self.assertIn('--active-manifest "$RUNNER_TEMP/previous-slot-manifest.json"', restored)
+        snapshot = step('Snapshot protected Chinese release before locale build')
+        self.assertIn('--active-manifest "$RUNNER_TEMP/chinese-locale-source.json"', snapshot)
+        validation = step('Validate complete static release')
+        self.assertIn('retention = validate_retention(', validation)
+        self.assertIn('set(retention["detail_prefixes"][locale])', validation)
+        self.assertIn('if index_policy != retention["index_policy"]:', validation)
+        for name in ('Preserve translation diagnostics even on failure', 'Build public validation artifact'):
+            for filename in ('locale-retention.json', 'locale-retention-active-manifest.json',
+                             'chinese-locale-source.json'):
+                self.assertIn(filename, step(name))
+        plan = step('Validate multilingual shadow sample plan before upload')
+        self.assertIn('manifest_files(load_locale_manifest(', plan)
+        self.assertLess(self.workflow.index('Validate multilingual shadow sample plan before upload'),
+                        self.workflow.index('Upload inactive static slot and immutable runtime'))
+
+    def test_locale_followup_requires_catalog_acceptance_and_cannot_recurse(self):
+        job = self.workflow.split('\n  schedule_locale_followup:\n', 1)[1].split('\n  cleanup_multilingual_shadow:', 1)[0]
+        self.assertIn("needs.prepare_release.outputs.publication_mode == 'catalog'", job)
+        self.assertIn("needs.prepare_release.result == 'success'", job)
+        self.assertIn("needs.prepare_release.outputs.changed != 'true' || needs.cutover.result == 'success'", job)
+        self.assertIn('actions: write', job)
+        self.assertIn('GH_TOKEN: ${{ github.token }}', job)
+        self.assertNotIn('GH_DISPATCH_TOKEN', job)
+        self.assertIn('scripts/dispatch_neutral_locale_followup.py', job)
+
+    def test_locale_followup_shell_keeps_verified_history_configuration(self):
+        from test_restore_published_chinese_source import PublishedChineseSourceTests
+        build = self.workflow.split('      - name: Build Korean Japanese and Arabic static locales\n', 1)[1]
+        prefix = '          history_state="$RUNNER_TEMP/active-locale-history.json"'
+        configuration = textwrap.dedent(prefix + build.split(prefix, 1)[1].split('          cache_args=()', 1)[0])
+        index_prefix = '          index_args=(--index-start-date'
+        index_setup = textwrap.dedent(index_prefix + build.split(index_prefix, 1)[1].split(
+            '          if [ -n "$PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH" ]', 1)[0])
+        for policy in ('incremental', 'history', 'allowlist'):
+            historical = policy == 'history'
+            fixture = PublishedChineseSourceTests()
+            fixture.setUp()
+            try:
+                if historical:
+                    previous = fixture.history_source()
+                allowlist = ''
+                if policy == 'allowlist':
+                    fixture.locale['translation_scope'] = 'release'
+                    fixture.locale['index_policy'].update(mode='fixed-publication-cutoff', default='hubs-only',
+                                                         allowlist_count=1)
+                    fixture.raw['data/i18n/manifest.json'] = json.dumps(fixture.locale).encode()
+                    fixture.publish_manifest()
+                    allowlist_path = fixture.base / 'allowlist.txt'
+                    allowlist_path.write_text('https://portal.example.invalid/\n')
+                    allowlist = allowlist_path.name
+                receipt, _value = fixture.receipt()
+                receipt.rename(fixture.base / 'chinese-locale-source.json')
+                output = fixture.base / 'github-output'
+                env = dict(os.environ, PUBLICATION_MODE='locales', NEUTRAL_OPERATION='migrate',
+                           RUNNER_TEMP=str(fixture.base), GITHUB_OUTPUT=str(output),
+                           PORTAL_MULTILINGUAL_TRANSLATION_SCOPE='incremental',
+                           PORTAL_MULTILINGUAL_INDEX_START_DATE='2026-10-01',
+                           PORTAL_MULTILINGUAL_HISTORY_START_DATE='2026-08-05',
+                           PORTAL_MULTILINGUAL_INDEX_ALLOWLIST_PATH=allowlist,
+                           PORTAL_MULTILINGUAL_HISTORY_PAUSED='false', PYTHONPATH=str(ROOT / 'scripts'))
+                program = 'set -euo pipefail\n' + configuration + index_setup + '\nprintf \'arguments=%s\\n\' "${index_args[*]}" >> "$GITHUB_OUTPUT"\n'
+                result = subprocess.run(['bash', '-c', program], cwd=fixture.base, env=env,
+                                        text=True, capture_output=True)
+                self.assertEqual(result.returncode, 0, result.stderr)
+                values = dict(line.split('=', 1) for line in output.read_text().splitlines())
+                config = json.loads((fixture.base / 'locale-followup-config.json').read_text())
+                self.assertEqual(values['translation_scope'], 'incremental' if policy == 'incremental' else 'release')
+                self.assertEqual(config['history_paused'], historical)
+                self.assertEqual('--history-' in values['arguments'], historical)
+                if historical:
+                    self.assertEqual(config['history_daily_limit'], previous['daily_limit'])
+                    self.assertEqual(json.loads(Path(config['history_state_in']).read_text()), previous)
+                else:
+                    self.assertEqual(config['history_state_in'], '')
+                self.assertIn('core_locale_publication_mode=translated', result.stdout)
+            finally:
+                fixture.doCleanups()
+
+    def test_retained_validation_inline_imports_execute_against_real_proof(self):
+        from unittest.mock import patch
+        from test_retain_published_core_locales import RetentionTests
+        fixture = RetentionTests()
+        fixture.setUp()
+        self.addCleanup(fixture.doCleanups)
+        fixture.run_retention()
+        (fixture.folder / 'locale-retention.json').write_bytes(fixture.receipt_path.read_bytes())
+        (fixture.folder / 'locale-retention-active-manifest.json').write_bytes(fixture.active_path.read_bytes())
+        step = self.workflow.split('      - name: Validate complete static release\n', 1)[1]
+        step = step.split('      - name:', 1)[0]
+        pattern = (r'          import sys\n          sys.path.insert\(0, "scripts"\)\n'
+                   r'          from portal_locale_manifest import load_locale_manifest\n.*?'
+                   r'(?=          if manifest.get\("quality_gate_version"\))')
+        match = re.search(pattern, step, re.S)
+        self.assertIsNotNone(match)
+        namespace = {'root': fixture.root, 'Path': Path, 'os': os}
+        with patch.dict(os.environ, {'RETAINED_CORE_LOCALES': 'true', 'RUNNER_TEMP': str(fixture.folder)}):
+            exec(textwrap.dedent(match.group(0)), namespace)
+        self.assertEqual(namespace['retention']['translation_scope'], 'incremental')
+        self.assertEqual(namespace['retention']['index_policy'], namespace['manifest']['index_policy'])
+
+    def test_locale_followup_ready_summary_keeps_fixed_policy_without_history_ledger(self):
+        from test_restore_published_chinese_source import PublishedChineseSourceTests
+        fixture = PublishedChineseSourceTests()
+        fixture.setUp()
+        self.addCleanup(fixture.doCleanups)
+        fixture.locale['translation_scope'] = 'release'
+        fixture.locale['index_policy'].update(mode='fixed-publication-cutoff', default='hubs-only')
+        fixture.raw['data/i18n/manifest.json'] = json.dumps(fixture.locale).encode()
+        fixture.publish_manifest()
+        receipt, _value = fixture.receipt()
+        receipt.rename(fixture.base / 'chinese-locale-source.json')
+        fixture.populate_followup()
+        (fixture.base / 'locale-full-diagnostics.json').write_text(json.dumps({'status': 'passed', 'ready': True}))
+        build = self.workflow.split('      - name: Build Korean Japanese and Arabic static locales\n', 1)[1]
+        build = build.split('      - name:', 1)[0]
+        program = textwrap.dedent(build.split('          python3 - <<\'PY\' >> "$GITHUB_OUTPUT"\n', 1)[1].split('          PY\n', 1)[0])
+        summary = fixture.base / 'summary'
+        env = dict(os.environ, PUBLICATION_MODE='locales', PORTAL_MULTILINGUAL_TRANSLATION_SCOPE='release',
+                   RUNNER_TEMP=str(fixture.base), GITHUB_STEP_SUMMARY=str(summary), PYTHONPATH=str(ROOT / 'scripts'))
+        result = subprocess.run([sys.executable, '-c', program], cwd=fixture.base, env=env,
+                                text=True, capture_output=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(result.stdout.strip(), 'ready=true')
+        self.assertIn('fixed-index candidate', summary.read_text())
+        self.assertFalse((fixture.root / 'data/i18n/history-release.json').exists())
+
     def test_automatic_environment_preflight_accepts_no_reviewers_and_rejects_lookup_failure(self):
         step = self.workflow.split('      - name: Require automatic extended production environment\n', 1)[1]
         step = step.split('      - name:', 1)[0]
@@ -173,8 +352,13 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn('if [ "$MULTILINGUAL_LIVE" = "true" ]', ledger_step)
         self.assertIn("do not reset the daily release quota", ledger_step)
         locale_step = self.workflow[build:self.workflow.index("Detect multilingual translation checkpoint")]
-        self.assertIn('--history-daily-limit 100', locale_step)
-        self.assertIn('--history-state-in "$RUNNER_TEMP/active-locale-history.json"', locale_step)
+        self.assertIn('history_daily_limit=100', locale_step)
+        self.assertIn('history_state="$RUNNER_TEMP/active-locale-history.json"', locale_step)
+        self.assertIn('--history-daily-limit "$history_daily_limit"', locale_step)
+        self.assertIn('--history-state-in "$history_state"', locale_step)
+        self.assertIn('from restore_published_chinese_source import followup_configuration', locale_step)
+        self.assertIn('history_state="$(jq -r \'.history_state_in // empty\' "$config")"', locale_step)
+        self.assertIn('validate_followup(Path("_neutral_site")', locale_step)
         self.assertIn('TZ=Asia/Shanghai date +%F', locale_step)
         self.assertIn('--history-start-date "$PORTAL_MULTILINGUAL_HISTORY_START_DATE"', locale_step)
         self.assertIn('true) index_args+=(--history-paused)', locale_step)
@@ -277,7 +461,9 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         locale = self.workflow.split("Build Korean Japanese and Arabic static locales", 1)[1].split(
             "Detect multilingual translation checkpoint", 1)[0]
         shell = locale.split("        run: |\n", 1)[1]
-        guard = textwrap.dedent(shell.split('          cache_args=()', 1)[0])
+        guard = 'case "$PORTAL_MULTILINGUAL_TRANSLATION_SCOPE" in' + shell.split(
+            'case "$PORTAL_MULTILINGUAL_TRANSLATION_SCOPE" in', 1)[1].split('          cache_args=()', 1)[0]
+        guard = textwrap.dedent(guard)
         self.assertIn('case "$PORTAL_MULTILINGUAL_TRANSLATION_SCOPE" in', guard)
         self.assertNotIn("python", guard)
         self.assertNotIn("curl", guard)
@@ -311,6 +497,8 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
                     "PORTAL_MULTILINGUAL_HISTORY_START_DATE": "2026-08-05",
                     "PORTAL_MULTILINGUAL_HISTORY_PAUSED": "false",
                     "RUNNER_TEMP": temporary,
+                    "history_daily_limit": "100",
+                    "history_state": str(Path(temporary) / 'active-locale-history.json'),
                     "PATH": "/usr/bin:/bin",
                 }
                 result = subprocess.run(["/bin/bash", "-c", setup + '\nprintf "%s\\n" "${index_args[@]}"'],
@@ -328,6 +516,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn("scripts/audit_portal_shadow_preview.py plan", self.workflow[plan:upload])
         upload_step = self.workflow[upload:self.workflow.index("Prepare isolated multilingual shadow worker")]
         self.assertIn('--max-workers 16', upload_step)
+        self.assertIn('--head-workers 8', upload_step)
         self.assertIn('automatic incremental refresh', self.workflow.split('\non:', 1)[0])
 
     def test_static_policy_validation_matches_only_the_selected_scope(self):
@@ -347,19 +536,19 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
             }}
             env = {"PORTAL_MULTILINGUAL_INDEX_START_DATE": "2026-09-05", "PORTAL_MULTILINGUAL_TRANSLATION_SCOPE": scope}
             with patch.dict(os.environ, env), self.subTest(scope=scope):
-                exec(block, {"manifest": manifest, "os": os})
+                exec(block, {"manifest": manifest, "os": os, "retention": None})
                 manifest["translation_scope"] = "different"
                 with self.assertRaises(SystemExit):
-                    exec(block, {"manifest": manifest, "os": os})
+                    exec(block, {"manifest": manifest, "os": os, "retention": None})
                 manifest["translation_scope"] = scope
                 manifest["index_policy"]["index_start_date"] = "2026-08-05"
                 with self.assertRaises(SystemExit):
-                    exec(block, {"manifest": manifest, "os": os})
+                    exec(block, {"manifest": manifest, "os": os, "retention": None})
                 manifest["index_policy"]["index_start_date"] = "2026-09-05"
                 if incremental:
                     manifest["index_policy"]["history_release_count"] = 1
                     with self.assertRaises(SystemExit):
-                        exec(block, {"manifest": manifest, "os": os})
+                        exec(block, {"manifest": manifest, "os": os, "retention": None})
 
     def test_schedule_and_content_triggers_are_gated_and_reviewed(self) -> None:
         trigger = self.workflow[: self.workflow.index("\npermissions:\n")]
@@ -463,7 +652,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
             "Roll back failed release or completed rehearsal", 1)[0]
         self.assertIn("timeout-minutes: 15", extended)
         self.assertLessEqual(job_timeout, 360)
-        self.assertEqual(self.workflow.count("ref: ${{ github.sha }}"), 6)
+        self.assertEqual(self.workflow.count("ref: ${{ github.sha }}"), 7)
         for job in ('prepare_release', 'extended_daily_review', 'english_daily_review', 'english_approval',
                     'reject_failed_daily_review', 'cutover'):
             block = re.search(r'^  '+job+r':\n(.*?)(?=^  [a-z_]+:\n|\Z)', self.workflow, re.M | re.S)[1]
@@ -628,7 +817,7 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
         self.assertIn('cp "_neutral_site/data/i18n/cache-v1.json.gz"', checkpoint)
         self.assertIn('echo "present=true" >> "$GITHUB_OUTPUT"', checkpoint)
         self.assertIn("uses: actions/cache/save@v4", checkpoint)
-        self.assertIn("if: always() && steps.locale_checkpoint.outputs.present == 'true'", checkpoint)
+        self.assertIn("if: always() && steps.operation.outputs.publication_mode != 'catalog' && steps.locale_checkpoint.outputs.present == 'true'", checkpoint)
         self.assertIn("${{ runner.temp }}/portal-locale-cache/cache-v1.json.gz", checkpoint)
         self.assertIn(
             "key: portal-locale-cache-${{ hashFiles('scripts/build_portal_locales.py') }}-"
@@ -779,6 +968,8 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
             upload
         ]
         self.assertIn("--build-contract scripts/build_portal_locales.py", delta)
+        self.assertIn("--build-contract scripts/retain_published_core_locales.py", delta)
+        self.assertIn("--build-contract scripts/restore_published_chinese_source.py", delta)
         self.assertIn("--build-contract portal_suite/locale_assets/locale.css", delta)
         self.assertIn("--build-contract portal_suite/locale_assets/locale-runtime.js", delta)
         for generated_contract in (

@@ -8,7 +8,7 @@ from __future__ import annotations
 from functools import partial
 import random
 import time
-from typing import Any
+from typing import Any, Callable
 
 READ_RETRY_DELAYS = (2, 4, 8)
 READ_RETRY_JITTER = 1
@@ -187,13 +187,19 @@ def transient_request_error(error: BaseException) -> bool:
     return False
 
 
-def read_r2_bytes(client: Any, bucket: str, key: str, *, maximum: int,
-                  require_content_length: bool = False, **get_kwargs: Any) -> bytes:
+def read_r2_into(client: Any, bucket: str, key: str, *, maximum: int,
+                 reset: Callable[[], None], write: Callable[[bytes], Any],
+                 require_content_length: bool = False, **get_kwargs: Any) -> int:
+    """Consume bounded chunks, resetting the sink before each body attempt.
+
+    Only failures raised by reading the response body may restart a GET. Local
+    sink failures and an SDK-retried request never receive another retry chain.
+    """
     if type(maximum) is not int or maximum <= 0:
         raise ValueError("R2 response bound must be a positive integer")
     for attempt in range(len(READ_RETRY_DELAYS) + 1):
         response = None
-        stream_started = False
+        stream_failed = False
         try:
             response = client.get_object(Bucket=bucket, Key=key, **get_kwargs)
             stream = response["Body"]
@@ -205,10 +211,14 @@ def read_r2_bytes(client: Any, bucket: str, key: str, *, maximum: int,
                                               or (require_content_length and declared == 0))
                 ):
                     raise R2BodyError("size_invalid")
-                chunks, size = [], 0
+                reset()
+                size = 0
                 while True:
-                    stream_started = True
-                    chunk = stream.read(min(READ_CHUNK_BYTES, maximum - size + 1))
+                    try:
+                        chunk = stream.read(min(READ_CHUNK_BYTES, maximum - size + 1))
+                    except Exception:
+                        stream_failed = True
+                        raise
                     if not isinstance(chunk, bytes):
                         raise R2BodyError("size_invalid")
                     if not chunk:
@@ -216,19 +226,27 @@ def read_r2_bytes(client: Any, bucket: str, key: str, *, maximum: int,
                     size += len(chunk)
                     if size > maximum:
                         raise R2BodyError("size_invalid")
-                    chunks.append(chunk)
+                    write(chunk)
                 if declared is not None and size != declared:
                     raise R2BodyError("size_mismatch")
-                return b"".join(chunks)
+                return size
             finally:
                 close = getattr(stream, "close", None)
                 if close is not None:
                     close()
         except Exception as error:
-            if (attempt == len(READ_RETRY_DELAYS) or not stream_started
+            if (attempt == len(READ_RETRY_DELAYS) or not stream_failed
                 or not retryable_stream_error(error)
                 or request_retry_count(error) not in {None, 0}
                 or sdk_retry_count(response) not in {None, 0}):
                 raise
             time.sleep(READ_RETRY_DELAYS[attempt] + random.uniform(0, READ_RETRY_JITTER))
     raise AssertionError("Unreachable R2 read retry state")
+
+
+def read_r2_bytes(client: Any, bucket: str, key: str, *, maximum: int,
+                  require_content_length: bool = False, **get_kwargs: Any) -> bytes:
+    chunks: list[bytes] = []
+    read_r2_into(client, bucket, key, maximum=maximum, reset=chunks.clear, write=chunks.append,
+                 require_content_length=require_content_length, **get_kwargs)
+    return b"".join(chunks)

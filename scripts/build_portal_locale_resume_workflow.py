@@ -15,7 +15,8 @@ def generate(source: str) -> str:
     # Delegated daily reviewers and their failure cleanup belong only to the
     # original workflow identity. Never copy their automatic cancellation into
     # this workflow's independently prepared candidate validation.
-    daily_only = {'extended_daily_review', 'english_daily_review', 'reject_failed_daily_review'}
+    daily_only = {'extended_daily_review', 'english_daily_review', 'reject_failed_daily_review',
+                  'schedule_locale_followup'}
     for name in daily_only:
         downstream = re.sub(r'\n  ' + name + r':\n.*?(?=\n  [a-z_]+:\n|\Z)',
                             '', downstream, flags=re.S)
@@ -103,6 +104,7 @@ jobs:
     operation = steps['Require reviewed main operation']
     operation = operation.replace('${{ inputs.operation }}', 'migrate')
     operation = operation.replace('${{ inputs.translation_scope }}', '"incremental"')
+    operation = operation.replace("${{ inputs.publication_mode || 'catalog' }}", '"locales"')
     operation = operation.replace('${{ vars.PORTAL_MULTILINGUAL_ENABLED || \'false\' }}', '"true"')
     # Preserve the production activation policy. Fresh recovery validation must
     # not turn an already-live release into a first-activation approval request.
@@ -110,7 +112,7 @@ jobs:
     for name in ('Checkout public source', 'Set up Python'):
         result += steps[name]
     result += '''      - name: Install read-only recovery dependencies
-        run: python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2" "Pillow>=10.1,<12" "requests>=2.31,<3"
+        run: python3 -m pip install --disable-pip-version-check -c requirements-neutral-release-constraints.txt "boto3>=1.34,<2" "Pillow>=10.1,<12" "requests>=2.31,<3"
 
       - name: Validate recovery code and shared release gates
         run: |
@@ -183,7 +185,11 @@ jobs:
 '''
     result += '''      - name: Confirm restored locale readiness
         id: locale_build
-        run: echo 'ready=true' >> "$GITHUB_OUTPUT"
+        env:
+          RETAINED_CORE_LOCALES: ${{ steps.static_upload.outputs.retained || 'false' }}
+        run: |
+          echo 'ready=true' >> "$GITHUB_OUTPUT"
+          echo "retained=$RETAINED_CORE_LOCALES" >> "$GITHUB_OUTPUT"
 
       - name: Retain exact Chinese parity report identity
         id: chinese_parity

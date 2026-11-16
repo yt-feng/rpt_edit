@@ -11,6 +11,7 @@ from unittest.mock import patch
 from pathlib import Path
 
 from check_public_brand import PublicBrandError, check_public_brand, main
+import check_public_brand as brand
 
 
 def write(path: Path, value: str) -> None:
@@ -23,6 +24,20 @@ def write_brand_mark(root: Path, label: str = "KC桌面") -> None:
 
 
 class PublicBrandCheckTests(unittest.TestCase):
+    def test_parallel_scan_preserves_counts_visible_brand_and_obfuscated_rejection(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            write(root / "index.html", "<title>KC桌面</title>")
+            write_brand_mark(root)
+            for index in range(20):
+                write(root / f"reports/{index}.html", "<head></head><body>clean report</body>")
+            serial = check_public_brand(root)
+            with patch.object(brand, "PARALLEL_FILE_THRESHOLD", 1), patch.object(brand.os, "cpu_count", return_value=2):
+                self.assertEqual(check_public_brand(root), serial)
+                write(root / "reports/19.html", "<head></head><body>Report<span></span>ify</body>")
+                with self.assertRaisesRegex(PublicBrandError, "reports/19.html: Reportify"):
+                    check_public_brand(root)
+
     def test_clean_materialized_site_passes(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

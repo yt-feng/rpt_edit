@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import FIRST_COMPLETED, ProcessPoolExecutor, wait
 import os
 import html
 import re
@@ -22,6 +23,8 @@ from render_private_config import CONFIG_ENV, RenderError, load_profile
 REQUIRED_PUBLIC_BRAND = "KC桌面"
 READ_CHUNK_SIZE = 1024 * 1024
 CHUNK_OVERLAP = 256
+PARALLEL_FILE_THRESHOLD = 512
+MAX_SCAN_WORKERS = 4
 FORBIDDEN_PUBLIC_PATHS = {"assets/contact-card.jpg"}
 REQUIRED_APP_MARK_PATH = "assets/app-mark.svg"
 REQUIRED_APP_MARK_LABELS = frozenset({"KC", "KC桌面"})
@@ -259,6 +262,7 @@ def check_public_brand(root: Path | str) -> dict[str, int]:
     homepage_brand_found = False
     file_count = 0
     byte_count = 0
+    files: list[tuple[Path, str]] = []
     for path in sorted(public_root.rglob("*")):
         relative = path.relative_to(public_root).as_posix()
         if path.is_symlink():
@@ -269,13 +273,47 @@ def check_public_brand(root: Path | str) -> dict[str, int]:
             violations.add(BrandViolation(relative, marker))
         if not path.is_file():
             continue
+        files.append((path, relative))
+
+    def accept(relative: str, result: tuple[set[str], bool, int]) -> None:
+        nonlocal file_count, byte_count, homepage_brand_found
         file_count += 1
-        markers, found, size = _scan_file(path)
+        markers, found, size = result
         byte_count += size
         if relative == "index.html":
             homepage_brand_found = found
         for marker in markers:
             violations.add(BrandViolation(relative, marker))
+
+    workers = min(MAX_SCAN_WORKERS, max(1, os.cpu_count() or 1))
+    if len(files) >= PARALLEL_FILE_THRESHOLD and workers > 1:
+        # Every file uses the same scanner. Its Unicode decoding and HTML
+        # parsing are CPU-bound, so processes avoid serializing on the GIL.
+        # Keep only two tasks per worker queued rather than one per site file.
+        remaining = iter(files)
+        with ProcessPoolExecutor(max_workers=workers) as pool:
+            pending = {}
+            def fill() -> None:
+                while len(pending) < workers * 2:
+                    item = next(remaining, None)
+                    if item is None:
+                        return
+                    path, relative = item
+                    pending[pool.submit(_scan_file, path)] = relative
+            fill()
+            try:
+                while pending:
+                    done, _ = wait(pending, return_when=FIRST_COMPLETED)
+                    for future in done:
+                        accept(pending.pop(future), future.result())
+                    fill()
+            except BaseException:
+                for future in pending:
+                    future.cancel()
+                raise
+    else:
+        for path, relative in files:
+            accept(relative, _scan_file(path))
 
     if not file_count:
         raise PublicBrandError("Public artifact contains no files")

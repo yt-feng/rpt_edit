@@ -34,7 +34,7 @@ class ResumeWorkflowTests(unittest.TestCase):
         shared = {'shadow_review_hold', 'multilingual_approval', 'extended_locales_approval',
                   'english_approval', 'cutover', 'cleanup_multilingual_shadow'}
         self.assertEqual(set(source), shared | {'prepare_release', 'extended_daily_review', 'english_daily_review',
-                                              'reject_failed_daily_review'})
+                                              'reject_failed_daily_review', 'schedule_locale_followup'})
         self.assertEqual(set(recovery), shared | {'prepare_release'})
         for job in shared:
             expected = source[job]
@@ -55,7 +55,7 @@ class ResumeWorkflowTests(unittest.TestCase):
 
     def test_manual_recovery_cannot_inherit_daily_review_cancellation_or_dangling_dependencies(self):
         for forbidden in ('extended_daily_review', 'english_daily_review', 'reject_failed_daily_review',
-                          'actions: write', "api(path + '/cancel'", 'GH_DISPATCH_TOKEN'):
+                          'schedule_locale_followup', 'actions: write', "api(path + '/cancel'", 'GH_DISPATCH_TOKEN'):
             self.assertNotIn(forbidden, self.recovery)
         for job in ('multilingual_approval', 'extended_locales_approval', 'english_approval'):
             self.assertIn(f"needs.{job}.result == 'success'", self.recovery)
@@ -206,6 +206,15 @@ class ResumeWorkflowTests(unittest.TestCase):
         self.assertIn('"$RUNNER_TEMP/chinese-recovery-performance.json"', preserve)
         self.assertIn('_release_validation/candidate/chinese-recovery-performance.json', preserve)
         self.assertIn('_release_validation/candidate/locale-resume-identity.json', preserve)
+
+    def test_retained_recovery_forwards_verified_proof_and_never_queues_another_build(self):
+        self.assertIn("RETAINED_CORE_LOCALES: ${{ steps.static_upload.outputs.retained || 'false' }}", self.recovery)
+        self.assertIn('echo "retained=$RETAINED_CORE_LOCALES" >> "$GITHUB_OUTPUT"', self.recovery)
+        self.assertIn('_release_validation/candidate/locale-retention.json', self.recovery)
+        self.assertIn('_release_validation/candidate/locale-retention-active-manifest.json', self.recovery)
+        self.assertIn('REQUESTED_PUBLICATION_MODE: "locales"', self.recovery)
+        self.assertNotIn('schedule_locale_followup:', self.recovery)
+        self.assertNotIn('dispatch_neutral_locale_followup.py', self.recovery)
 
     def test_embedded_python_and_shell_parse(self):
         for block in re.split(r'(?=^      - name: )', self.recovery, flags=re.M)[1:]:

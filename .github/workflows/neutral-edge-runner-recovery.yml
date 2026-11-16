@@ -20,7 +20,8 @@ jobs:
       github.event.workflow_run.head_branch == 'main' &&
       github.event.workflow_run.head_repository.full_name == github.repository &&
       github.event.workflow_run.run_attempt == 1 &&
-      (github.event.workflow_run.event == 'schedule' || github.event.workflow_run.event == 'workflow_run' || github.event.workflow_run.event == 'repository_dispatch')
+      (github.event.workflow_run.event == 'schedule' || github.event.workflow_run.event == 'workflow_run' || github.event.workflow_run.event == 'repository_dispatch' ||
+       (github.event.workflow_run.event == 'workflow_dispatch' && startsWith(github.event.workflow_run.display_title, 'Neutral edge migrate (incremental; locales) [source ')))
     runs-on: ubuntu-22.04
     timeout-minutes: 8
     permissions:

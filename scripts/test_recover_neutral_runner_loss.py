@@ -49,7 +49,7 @@ class FakeGitHub:
         self.before_second_read = None
         self.run_reads = 0
 
-    def api(self, suffix, method='GET'):
+    def api(self, suffix, method='GET', *, raw=False):
         self.calls.append((suffix, method))
         if method == 'POST':
             if self.advance:
@@ -83,6 +83,88 @@ class FakeGitHub:
 
 
 class RecoveryTests(unittest.TestCase):
+    def locale_followup(self):
+        github = FakeGitHub()
+        title = 'Neutral edge migrate (incremental; locales) [source 122:1]'
+        github.event.update(event='workflow_dispatch', display_title=title)
+        github.run.update(event='workflow_dispatch', display_title=title)
+        parent = {**github.run, 'id': 122, 'head_sha': 'b' * 40, 'event': 'schedule',
+                  'display_title': 'automatic incremental refresh (catalog)', 'conclusion': 'success'}
+        def job(identifier, name):
+            return dict(id=identifier, run_id=122, head_sha='b' * 40, name=name,
+                        status='completed', conclusion='success', runner_id=1, steps=[])
+        rows = [job(901, 'prepare_release'), job(902, 'cutover'), job(903, recovery.FOLLOWUP_JOB)]
+        rows[-1]['steps'] = [dict(name=recovery.FOLLOWUP_STEP, status='completed', conclusion='success')]
+        github.other_jobs.update({
+            'actions/runs/122': parent,
+            'actions/runs/122/attempts/1/jobs?per_page=100': dict(total_count=3, jobs=rows),
+            'actions/jobs/903/logs': '2026-11-01T02:20:00.123Z ' + json.dumps(
+                {'state': 'accepted', 'run_id': 123, 'source_run_id': 122}) + '\n',
+        })
+        return github
+
+    def test_proven_automatic_locale_followup_keeps_only_one_host_runner_retry(self):
+        github = self.locale_followup()
+        result = github.execute()
+        self.assertEqual(result['status'], 'recovered')
+        self.assertEqual(github.writes, [('actions/runs/123/rerun-failed-jobs', 'POST')])
+        self.assertEqual(github.calls.count(('actions/jobs/903/logs', 'GET')), 2)
+        self.assertEqual(github.calls.count(('actions/runs/122', 'GET')), 2)
+
+    def test_locale_followup_title_alone_or_echoed_receipt_cannot_authorize_retry(self):
+        for line in ('', 'echo ' + json.dumps({'state': 'accepted', 'run_id': 123, 'source_run_id': 122}),
+                     json.dumps({'state': 'accepted', 'run_id': 124, 'source_run_id': 122}),
+                     json.dumps({'state': 'accepted', 'run_id': 123, 'source_run_id': 121}),
+                     json.dumps({'state': 'coalesced', 'run_id': 123, 'source_run_id': 122})):
+            with self.subTest(line=line):
+                github = self.locale_followup()
+                github.other_jobs['actions/jobs/903/logs'] = line
+                self.assertEqual(github.execute()['reason'], 'locale_parent_dispatch_receipt_mismatch')
+                self.assertEqual(github.writes, [])
+
+    def test_locale_parent_attempt_main_repository_and_success_are_required(self):
+        for change in ({'run_attempt': 2}, {'head_branch': 'topic'}, {'conclusion': 'failure'},
+                       {'repository': {'full_name': 'other/repo'}}, {'path': '.github/workflows/other.yml'},
+                       {'workflow_id': 999}):
+            with self.subTest(change=change):
+                github = self.locale_followup()
+                github.other_jobs['actions/runs/122'].update(change)
+                self.assertEqual(github.execute()['reason'], 'locale_parent_identity_mismatch')
+                self.assertEqual(github.writes, [])
+
+    def test_locale_parent_catalog_and_dispatch_job_gates_are_not_optional(self):
+        for index in range(3):
+            github = self.locale_followup()
+            github.other_jobs['actions/runs/122/attempts/1/jobs?per_page=100']['jobs'][index]['conclusion'] = 'failure'
+            self.assertEqual(github.execute()['status'], 'skipped')
+            self.assertEqual(github.writes, [])
+        github = self.locale_followup()
+        github.other_jobs['actions/runs/122/attempts/1/jobs?per_page=100']['jobs'][-1]['steps'] = []
+        self.assertEqual(github.execute()['reason'], 'locale_parent_dispatch_not_successful')
+        self.assertEqual(github.writes, [])
+
+    def test_locale_followup_preserves_application_upload_and_downstream_rejections(self):
+        for mutate in (lambda github: github.annotations[0].update(message='Application validation failed'),
+                       lambda github: github.jobs[0]['steps'][2].update(status='in_progress'),
+                       lambda github: github.jobs[1].update(conclusion='success', runner_id=1)):
+            github = self.locale_followup(); mutate(github)
+            self.assertEqual(github.execute()['status'], 'skipped')
+            self.assertEqual(github.writes, [])
+
+    def test_locale_parent_proof_is_rechecked_before_any_rerun(self):
+        github = self.locale_followup()
+        github.before_second_read = lambda client: client.other_jobs['actions/runs/122'].update(run_attempt=2)
+        self.assertEqual(github.execute()['reason'], 'locale_parent_identity_mismatch')
+        self.assertEqual(github.writes, [])
+
+    def test_log_reader_is_bounded_and_returns_raw_text_without_json_parsing(self):
+        client = recovery.GitHub(REPOSITORY, sleep=lambda _: None)
+        with patch.object(recovery.subprocess, 'run', return_value=SimpleNamespace(returncode=0, stdout=b'timestamp log\n', stderr=b'')):
+            self.assertEqual(client.api('actions/jobs/903/logs', raw=True), 'timestamp log\n')
+        with patch.object(recovery.subprocess, 'run', return_value=SimpleNamespace(returncode=0, stdout=b'x' * (4 * 1024 * 1024 + 1), stderr=b'')):
+            with self.assertRaisesRegex(recovery.RecoveryError, 'oversized'):
+                client.api('actions/jobs/903/logs', raw=True)
+
     def test_exact_runner_loss_reruns_once_and_verifies_attempt(self):
         github = FakeGitHub()
         result = github.execute()

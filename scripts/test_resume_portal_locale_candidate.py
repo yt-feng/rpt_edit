@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import copy
+import base64
+from collections import Counter
 import hashlib
 import io
 import json
@@ -214,6 +216,48 @@ class ResumeTests(unittest.TestCase):
         with patch('verify_prepared_static_slot.verify_extended_static_tree', side_effect=RuntimeError('checksum mismatch')):
             with self.assertRaisesRegex(RuntimeError, 'checksum mismatch'):
                 resume.download_candidate_files(self.r2, 'bucket', self.manifest, self.site, workers=1)
+
+    def test_extended_validation_captures_exact_bytes_without_a_second_download(self):
+        from test_verify_prepared_static_slot import PreparedStaticSlotTests
+        from test_verify_portal_locale_routes import ORIGIN as fixture_origin
+        extra = PreparedStaticSlotTests().extended_files(locales=['fr', 'de'], pages_per_locale=40)
+        for name, body in extra.items():
+            sha = hashlib.sha256(body).hexdigest()
+            self.manifest['files'][name] = {'size': len(body), 'sha256': sha}
+            self.r2.objects[publisher.slot_prefix('b')+name] = {'body': body, 'metadata': {'sha256': sha}}
+        self.r2.operations.clear()
+        with patch('portal_extended_locales.ORIGIN', fixture_origin):
+            downloaded = resume.download_candidate_files(self.r2, 'bucket', self.manifest, self.site, workers=16)
+        operations = Counter(self.r2.operations)
+        self.assertTrue(set(extra).issubset(downloaded))
+        for name, body in extra.items():
+            self.assertEqual(operations['get', publisher.slot_prefix('b')+name], 1, name)
+            self.assertEqual((self.site/name).read_bytes(), body)
+        self.assertEqual(list(self.site.rglob('.resume-*.tmp')), [])
+
+    def test_extended_capture_does_not_preserve_a_checksum_mismatch(self):
+        from test_verify_prepared_static_slot import PreparedStaticSlotTests
+        from test_verify_portal_locale_routes import ORIGIN as fixture_origin
+        extra = PreparedStaticSlotTests().extended_files(locales=['fr'], pages_per_locale=2)
+        for name, body in extra.items():
+            sha = hashlib.sha256(body).hexdigest()
+            self.manifest['files'][name] = {'size': len(body), 'sha256': sha}
+            self.r2.objects[publisher.slot_prefix('b')+name] = {'body': body, 'metadata': {'sha256': sha}}
+        changed = 'fr/blog/20261116-report-0.html'
+        self.r2.objects[publisher.slot_prefix('b')+changed]['body'] = b'x' * len(extra[changed])
+        with patch('portal_extended_locales.ORIGIN', fixture_origin):
+            with self.assertRaisesRegex(RuntimeError, 'content differs'):
+                resume.download_candidate_files(self.r2, 'bucket', self.manifest, self.site, workers=16)
+        self.assertFalse((self.site/changed).exists())
+        self.assertEqual(list(self.site.rglob('.resume-*.tmp')), [])
+
+    def test_atomic_local_capture_preserves_previous_file_and_cleans_failed_replace(self):
+        target = self.site/'capture.json'; self.site.mkdir(exist_ok=True); target.write_bytes(b'previous')
+        with patch.object(resume.os, 'replace', side_effect=OSError('local replace failed')):
+            with self.assertRaisesRegex(OSError, 'local replace failed'):
+                resume.write_local(self.site, 'capture.json', b'new verified bytes')
+        self.assertEqual(target.read_bytes(), b'previous')
+        self.assertEqual(list(self.site.rglob('.resume-*.tmp')), [])
 
     def test_download_english_recovery_preserves_only_the_verified_public_previews_and_assets(self):
         extra = {'data/english-commentary/assembly.json': b'{}', 'sitemap-en.xml': b'sitemap',
@@ -543,12 +587,244 @@ class ResumeTests(unittest.TestCase):
         self.assertNotIn(('get', prefix + relative), self.r2.operations)
 
     def restore(self, **kwargs):
+        previous = getattr(self, "retained_previous", PREVIOUS)
         options = dict(github=self.github, client=self.r2, bucket="bucket", repository=REPO, run_id=321, run_attempt=1,
                        site_dir=self.site, diagnostics_dir=self.diag, work_dir=self.work, origin=ORIGIN,
                        expected_slot="b", expected_release=RELEASE, expected_tree=self.tree, expected_commit=COMMIT,
-                       expected_previous_release=PREVIOUS["release_id"], expected_previous_tree=PREVIOUS["tree_sha256"],
+                       expected_previous_release=previous["release_id"], expected_previous_tree=previous["tree_sha256"],
                        fetch_live=self.live, workers=4)
         return resume.resume_candidate(**{**options, **kwargs})
+
+    def use_retained_candidate(self):
+        from test_audit_portal_shadow_preview import manifest_fixture
+        import retain_published_core_locales as retention
+        locale, bodies = manifest_fixture()
+        locale.update(html_page_count=6, translation_scope="full", index_policy={"mode": "noindex"})
+        # Legacy manifests have no application_routes group, but their Chinese
+        # lazy asset must still be downloaded and rebound exactly.
+        old_lazy, new_lazy = b"old Chinese lazy module", b"fresh Chinese lazy module"
+        locale["lazy_javascript_assets"] = {"zh-Hans": {
+            "path": "assets/newsfeed-app.js", "byte_size": len(old_lazy),
+            "sha256": hashlib.sha256(old_lazy).hexdigest()}}
+        source_manifest = encoded(locale)
+        locale["lazy_javascript_assets"]["zh-Hans"].update(byte_size=len(new_lazy), sha256=hashlib.sha256(new_lazy).hexdigest())
+        bodies["/" + retention.MANIFEST] = encoded(locale)
+        bodies["/assets/newsfeed-app.js"] = new_lazy
+        for relative in retention.SHARED_ASSETS:
+            bodies.setdefault("/" + relative, b"published shared locale asset")
+        # Inventory-only locale assets must also be restored and rechecked.
+        bodies["/ko/assets/retained-only.js"] = b"published inventory-only locale asset"
+        for path, body in bodies.items():
+            relative = path.lstrip("/")
+            descriptor = {"size": len(body), "sha256": hashlib.sha256(body).hexdigest(),
+                          "content_type": "application/json", "cache_control": "public, max-age=0, must-revalidate"}
+            self.manifest["files"][relative] = descriptor
+            self.r2.objects[publisher.slot_prefix("b") + relative] = {"body": body, "metadata": {"sha256": descriptor["sha256"]}}
+        old_tree = self.tree
+        self.tree = resume.static_tree_sha256(self.manifest["files"])
+        self.manifest.update(tree_sha256=self.tree, file_count=len(self.manifest["files"]),
+                             total_bytes=sum(row["size"] for row in self.manifest["files"].values()))
+        self.save_manifest()
+        self.github.logs = self.github.logs.replace(old_tree, self.tree)
+        paths = retention.selected_paths(self.manifest["files"])
+        old_files = {path: copy.deepcopy(self.manifest["files"][path]) for path in paths | {"assets/app.js", "assets/newsfeed-app.js"}}
+        old_files[retention.MANIFEST].update(size=len(source_manifest), sha256=hashlib.sha256(source_manifest).hexdigest())
+        old_files["assets/newsfeed-app.js"].update(size=len(old_lazy), sha256=hashlib.sha256(old_lazy).hexdigest())
+        self.retained_previous = {**PREVIOUS, "tree_sha256": resume.static_tree_sha256(old_files)}
+        self.previous_manifest = {**self.retained_previous, "files": old_files, "file_count": len(old_files),
+                                  "total_bytes": sum(row["size"] for row in old_files.values())}
+        self.r2.objects[publisher.manifest_key("a")] = {"body": encoded(self.previous_manifest)}
+        for path in old_files:
+            self.r2.objects[publisher.slot_prefix("a") + path] = copy.deepcopy(self.r2.objects[publisher.slot_prefix("b") + path])
+        for path, body in ((retention.MANIFEST, source_manifest), ("assets/newsfeed-app.js", old_lazy)):
+            self.r2.objects[publisher.slot_prefix("a") + path] = {"body": body, "metadata": {"sha256": hashlib.sha256(body).hexdigest()}}
+        (self.work / "previous-edge-state.json").write_bytes(encoded(self.retained_previous))
+        self.live.return_value = copy.deepcopy(self.retained_previous)
+        receipt = {"schema_version": 1, "kind": "published-core-locales", "source_state": self.retained_previous,
+                   "retained_files": len(paths), "provider_requests": 0,
+                   "source_manifest_b64": base64.b64encode(source_manifest).decode()}
+        self.github.diagnostics = {name: body for name, body in self.github.diagnostics.items() if name.startswith("chinese-")}
+        self.github.diagnostics.update({"locale-retention.json": encoded(receipt),
+                                        "locale-retention-active-manifest.json": encoded(self.previous_manifest)})
+        self.github.logs += "core_locale_publication_mode=retained\n"
+        self.attest_retention_proofs()
+        return receipt
+
+    def attest_retention_proofs(self):
+        self.github.logs = "\n".join(line for line in self.github.logs.splitlines()
+                                     if not line.startswith(("retention_receipt_sha256=", "retention_active_manifest_sha256="))) + "\n"
+        for name, label in (("locale-retention.json", "retention_receipt_sha256"),
+                            ("locale-retention-active-manifest.json", "retention_active_manifest_sha256")):
+            self.github.logs += label + "=" + hashlib.sha256(self.github.diagnostics[name]).hexdigest() + "\n"
+
+    def test_retained_catalog_candidate_restores_exact_old_coverage_without_fresh_translation_reports(self):
+        self.use_retained_candidate()
+        result = self.restore()
+        self.assertEqual(result["publication_mode"], "retained")
+        self.assertTrue(result["retention_verified"] and result["locale_ready"])
+        self.assertFalse(result["preflight_passed"])
+        self.assertTrue(result["performance_passed"])
+        self.assertEqual(json.loads((self.site / "data/i18n/manifest.json").read_bytes())["translation_scope"], "full")
+        self.assertEqual((self.site / "ko/assets/retained-only.js").read_bytes(), b"published inventory-only locale asset")
+        self.assertEqual((self.site / "assets/newsfeed-app.js").read_bytes(), b"fresh Chinese lazy module")
+        for name in resume.RETENTION_DIAGNOSTICS:
+            self.assertEqual((self.work / name).read_bytes(), self.github.diagnostics[name])
+        self.assertFalse((self.work / "locale-full-diagnostics.json").exists())
+        self.assertFalse((self.work / "locale-preflight-diagnostics.json").exists())
+        self.assertTrue(all(operation in {"head", "get"} for operation, _key in self.r2.operations))
+
+    def test_retention_cannot_replace_fresh_evidence_without_explicit_source_mode(self):
+        self.use_retained_candidate()
+        self.github.logs = self.github.logs.replace("core_locale_publication_mode=retained\n", "")
+        with self.assertRaisesRegex(resume.ResumeError, "mix retained and fresh"):
+            self.restore()
+        self.assertFalse(self.site.exists())
+
+    def test_retention_rejects_missing_or_unattested_proof_before_bulk_reads(self):
+        self.use_retained_candidate()
+        for name in ("locale-retention.json", "locale-retention-active-manifest.json"):
+            body = self.github.diagnostics.pop(name)
+            with self.subTest(missing=name), self.assertRaisesRegex(resume.ResumeError, "incomplete"):
+                self.restore()
+            self.github.diagnostics[name] = body
+        self.github.logs = self.github.logs.replace("retention_receipt_sha256=", "unattested_receipt=")
+        with self.assertRaisesRegex(resume.ResumeError, "does not attest"):
+            self.restore()
+        self.assertFalse(self.site.exists())
+
+    def test_retention_proof_cannot_rebind_previous_identity_or_original_manifest_bytes(self):
+        receipt = self.use_retained_candidate()
+        for change, message in (({"source_state": {**self.retained_previous, "release_id": "9" * 32}}, "source state"),
+                                ({"source_manifest_b64": base64.b64encode(b"{}").decode()}, "source manifest proof")):
+            self.github.diagnostics["locale-retention.json"] = encoded({**receipt, **change})
+            self.attest_retention_proofs()
+            with self.subTest(change=change), self.assertRaisesRegex(resume.ResumeError, message):
+                self.restore()
+            self.assertFalse(self.site.exists())
+
+    def test_retained_file_descriptors_cannot_change_even_in_a_new_valid_candidate_tree(self):
+        self.use_retained_candidate()
+        old_tree = self.tree
+        self.manifest["files"]["ko/index.html"]["sha256"] = "f" * 64
+        self.tree = resume.static_tree_sha256(self.manifest["files"])
+        self.manifest["tree_sha256"] = self.tree
+        self.save_manifest()
+        self.github.logs = self.github.logs.replace(old_tree, self.tree)
+        with self.assertRaisesRegex(resume.ResumeError, "Retained candidate descriptor changed"):
+            self.restore()
+        self.assertFalse(self.site.exists())
+
+    def test_every_restored_retained_body_is_rechecked_before_emitting_identity(self):
+        self.use_retained_candidate()
+        download = resume.download_candidate_files
+        def corrupt_after_restore(*args, **kwargs):
+            result = download(*args, **kwargs)
+            (self.site / "ko/assets/retained-only.js").write_bytes(b"corrupt")
+            return result
+        with patch.object(resume, "download_candidate_files", side_effect=corrupt_after_restore):
+            with self.assertRaisesRegex(RuntimeError, "published file changed"):
+                self.restore()
+        self.assertFalse((self.work / "locale-resume-identity.json").exists())
+
+    def test_retained_mode_still_requires_fresh_chinese_performance_and_parity(self):
+        self.use_retained_candidate()
+        self.github.diagnostics["chinese-performance.json"] = encoded({"status": "passed", "active_compared": False})
+        with self.assertRaisesRegex(resume.ResumeError, "does not match uploaded app"):
+            self.restore()
+        self.assertFalse(self.site.exists())
+
+    def use_published_history_followup(self):
+        from portal_locale_history import plan_history_release
+        from restore_published_chinese_source import CORE_MANIFEST, HISTORY_LEDGER, read_core_policy
+        receipt = self.use_retained_candidate()
+        source = json.loads(base64.b64decode(receipt["source_manifest_b64"]))
+        candidates = {ORIGIN + "/blog/new.html": "2026-09-01"}
+        old_history = plan_history_release(candidates, history_start_date="2026-08-05", launch_date="2026-10-01",
+                                          today="2026-10-02", previous=None)
+        paused = plan_history_release(candidates, history_start_date="2026-08-05", launch_date="2026-10-01",
+                                     today="2026-10-03", previous=old_history, paused=True)
+        source.update(translation_scope="release", index_policy={
+            "mode": "fixed-publication-cutoff", "default": "hubs-only", "index_start_date": "2026-10-01", "allowlist_count": 0,
+            "history_release": {"history_start_date": "2026-08-05", "daily_limit": 100,
+                                "released_count": 1, "selected_today_count": 1, "paused": False}})
+        current = copy.deepcopy(source)
+        current["lazy_javascript_assets"] = json.loads(self.r2.objects[publisher.slot_prefix("b") + CORE_MANIFEST]["body"])["lazy_javascript_assets"]
+        current["index_policy"]["history_release"].update(paused=True, selected_today_count=0)
+        def update(slot, relative, body, manifest):
+            row = {"size": len(body), "sha256": hashlib.sha256(body).hexdigest(),
+                   "content_type": "application/json", "cache_control": "public, max-age=0, must-revalidate"}
+            manifest["files"][relative] = row
+            self.r2.objects[publisher.slot_prefix(slot) + relative] = {"body": body, "metadata": {"sha256": row["sha256"]}}
+        for slot, manifest, locale, ledger in (("a", self.previous_manifest, source, old_history),
+                                               ("b", self.manifest, current, paused)):
+            update(slot, CORE_MANIFEST, encoded(locale), manifest)
+            update(slot, HISTORY_LEDGER, encoded(ledger), manifest)
+            for code in resume.LOCALES:
+                update(slot, f"sitemap-{code}.xml", f"<urlset><url><loc>{ORIGIN}/{code}/blog/new.html</loc></url></urlset>".encode(), manifest)
+            manifest.update(tree_sha256=resume.static_tree_sha256(manifest["files"]), file_count=len(manifest["files"]),
+                            total_bytes=sum(row["size"] for row in manifest["files"].values()))
+            self.r2.objects[publisher.manifest_key(slot)] = {"body": encoded(manifest)}
+        self.retained_previous["tree_sha256"] = self.previous_manifest["tree_sha256"]
+        (self.work / "previous-edge-state.json").write_bytes(encoded(self.retained_previous))
+        self.live.return_value = copy.deepcopy(self.retained_previous)
+        self.github.logs = self.github.logs.replace(self.tree, self.manifest["tree_sha256"])
+        self.tree = self.manifest["tree_sha256"]
+        core = read_core_policy(self.r2, "bucket", self.previous_manifest, ORIGIN)
+        proof = {"schema_version": 1, "kind": "published-chinese-source", "source_state": self.retained_previous,
+                 "site_origin": ORIGIN, "source_tree_sha256": self.retained_previous["tree_sha256"],
+                 "source_file_count": self.previous_manifest["file_count"], "provider_requests": 0, "remote_mutations": 0,
+                 "core_locales": core}
+        self.github.logs = "\n".join(line for line in self.github.logs.splitlines()
+                                     if not line.startswith(("retention_", "core_locale_publication_mode="))) + "\ncore_locale_publication_mode=translated\n"
+        self.github.diagnostics = {name: body for name, body in self.github.diagnostics.items() if name.startswith("chinese-")}
+        self.github.diagnostics.update({"locale-preflight-diagnostics.json": encoded({"status": "passed", "preflight_only": True}),
+                                        "locale-full-diagnostics.json": encoded({"status": "passed", "ready": True}),
+                                        resume.SOURCE_PROOF: encoded(proof)})
+        self.github.logs += "chinese_locale_source_sha256=" + hashlib.sha256(encoded(proof)).hexdigest() + "\n"
+        return proof, old_history
+
+    def test_pinned_paused_history_followup_recovers_without_reopening_publication(self):
+        proof, previous_history = self.use_published_history_followup()
+        result = self.restore()
+        self.assertTrue(result["source_snapshot_verified"] and result["preflight_passed"])
+        self.assertEqual(result["publication_mode"], "translated")
+        self.assertEqual(json.loads((self.work / resume.SOURCE_PROOF).read_bytes()), proof)
+        history = json.loads((self.site / "data/i18n/history-release.json").read_bytes())
+        self.assertEqual(history["released"], previous_history["released"])
+        self.assertEqual(history["last_release_date"], previous_history["last_release_date"])
+        self.assertTrue(history["paused"])
+
+    def test_historical_candidate_without_logged_source_proof_still_cannot_recover(self):
+        self.use_published_history_followup()
+        del self.github.diagnostics[resume.SOURCE_PROOF]
+        self.github.logs = "\n".join(line for line in self.github.logs.splitlines() if not line.startswith("chinese_locale_source_sha256="))
+        with self.assertRaisesRegex(resume.ResumeError, "not an incremental"):
+            self.restore()
+        self.assertFalse((self.work / "locale-resume-identity.json").exists())
+
+    def test_logged_source_policy_must_equal_the_pinned_previous_policy(self):
+        proof, _history = self.use_published_history_followup()
+        proof["core_locales"]["index_policy"]["allowlist_count"] = 2
+        self.github.diagnostics[resume.SOURCE_PROOF] = encoded(proof)
+        self.github.logs = "\n".join(line for line in self.github.logs.splitlines() if not line.startswith("chinese_locale_source_sha256="))
+        self.github.logs += "\nchinese_locale_source_sha256=" + hashlib.sha256(encoded(proof)).hexdigest() + "\n"
+        with self.assertRaisesRegex(resume.ResumeError, "policy differs from the pinned"):
+            self.restore()
+        self.assertFalse(self.site.exists())
+
+    def test_followup_cannot_consume_another_history_day_after_restore(self):
+        self.use_published_history_followup()
+        download = resume.download_candidate_files
+        def advance_history(*args, **kwargs):
+            result = download(*args, **kwargs)
+            path = self.site / "data/i18n/history-release.json"
+            value = json.loads(path.read_bytes()); value["last_release_date"] = "2026-10-03"
+            path.write_bytes(encoded(value))
+            return result
+        with patch.object(resume, "download_candidate_files", side_effect=advance_history):
+            with self.assertRaisesRegex(RuntimeError, "consumed a release day"):
+                self.restore()
+        self.assertFalse((self.work / "locale-resume-identity.json").exists())
 
     def test_complete_restore_verifies_all_metadata_downloads_only_audit_files_and_never_mutates_remote(self):
         result = self.restore()
