@@ -366,6 +366,93 @@ class ReportifyApiGrabTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, "readback"):
                 upload.main()
 
+    def test_transport_escaped_first_party_urls_are_normalized(self):
+        url = "https://files.reportify.cn/report/full.pdf?first=1&signature=private"
+        variants = [url, json.dumps(url), json.dumps(json.dumps(url)),
+                    url.replace("/", "\\/"), url.replace("&", "&amp;"),
+                    url.replace("&", "\\u0026").replace("=", "\\u003d")]
+        for variant in variants:
+            with self.subTest(encoding=variants.index(variant)):
+                self.assertEqual(grab.authorized_pdf(detail(url=variant), authenticated=True)[0], url)
+                opener = mock.Mock()
+                opener.open.return_value = BytesIO(pdf(5))
+                with mock.patch.object(grab, "build_opener", return_value=opener):
+                    grab.fetch_bytes(variant, maximum=10000, accept="application/pdf")
+                self.assertEqual(opener.open.call_args.args[0].full_url, url)
+
+    def test_asset_failure_diagnostics_never_include_path_query_or_userinfo(self):
+        value = detail(url="https://user:private@cdn.example.test/private-path/report.pdf?signature=secret")
+        with self.assertRaises(grab.ReportifyUnavailable) as caught:
+            grab.authorized_pdf(value, authenticated=True)
+        metrics = caught.exception.metrics
+        self.assertEqual(metrics["asset_host"], "cdn.example.test")
+        self.assertEqual(metrics["asset_stage"], "detail_pdf")
+        self.assertEqual(metrics["asset_scheme"], "https")
+        safe = json.dumps(metrics)
+        for secret in ("private", "signature", "secret", "report.pdf", "user"):
+            self.assertNotIn(secret, safe)
+        fields = status_fields("failed", {"status": "failed", "reason": "upstream_unavailable", **metrics})
+        self.assertEqual(fields["asset_host"], "cdn.example.test")
+        self.assertNotIn("asset_host", status_fields("failed", {"asset_host": "private/path?secret"}))
+
+    def test_transient_http_and_connection_failures_retry_with_bounds(self):
+        for failure in (lambda: HTTPError("https://api.reportify.cn/report", 429, "private", {}, BytesIO()),
+                        lambda: URLError("private signed query")):
+            opener = mock.Mock()
+            opener.open.side_effect = [failure(), failure(), BytesIO(pdf(1))]
+            with mock.patch.object(grab, "build_opener", return_value=opener), mock.patch.object(grab.time, "sleep") as sleep:
+                self.assertTrue(grab.fetch_bytes("https://api.reportify.cn/report", maximum=10000,
+                                               accept="application/pdf").startswith(b"%PDF-"))
+            self.assertEqual(opener.open.call_count, 3)
+            self.assertEqual([call.args[0] for call in sleep.call_args_list], list(grab.RETRY_DELAYS))
+        opener.open.side_effect = URLError("private")
+        with mock.patch.object(grab, "build_opener", return_value=opener), mock.patch.object(grab.time, "sleep"):
+            opener.open.reset_mock()
+            with self.assertRaises(grab.ReportifyUnavailable) as caught:
+                grab.fetch_bytes("https://api.reportify.cn/report", maximum=100, accept="application/json")
+        self.assertEqual(caught.exception.detail_code, "request_failed")
+        self.assertEqual(opener.open.call_count, 3)
+
+    def test_auth_denial_is_not_retried_and_token_excludes_historical_cookie(self):
+        opener = mock.Mock()
+        opener.open.side_effect = HTTPError("https://api.reportify.cn/report", 403, "private", {}, BytesIO())
+        with mock.patch.object(grab, "build_opener", return_value=opener), mock.patch.object(grab.time, "sleep") as sleep:
+            with self.assertRaises(grab.ReportifyUnavailable):
+                grab.fetch_bytes("https://api.reportify.cn/report", token="current-token", cookie="old-cookie",
+                                 maximum=100, accept="application/json")
+        self.assertEqual(opener.open.call_count, 1)
+        sleep.assert_not_called()
+        request = opener.open.call_args.args[0]
+        self.assertEqual(request.get_header("Authorization"), "Bearer current-token")
+        self.assertIsNone(request.get_header("Cookie"))
+
+    def test_detail_and_official_download_use_same_new_account_without_old_cookie(self):
+        for inline_url in ("https://files.reportify.cn/report/full.pdf", ""):
+            opener = mock.Mock()
+            opener.open.side_effect = [BytesIO(json.dumps(detail(56, url=inline_url)).encode()), BytesIO(pdf(56))]
+            with mock.patch.object(grab, "build_opener", return_value=opener):
+                result = grab.grab_report("1300546606747226112", self.output, token="new-token",
+                                          cookie="old-cookie", fetch=grab.fetch_bytes)
+            self.assertEqual(result["page_count"], 56)
+            requests = [call.args[0] for call in opener.open.call_args_list]
+            for request in requests:
+                self.assertIsNone(request.get_header("Cookie"))
+                expected_auth = "Bearer new-token" if request.host == "api.reportify.cn" else None
+                self.assertEqual(request.get_header("Authorization"), expected_auth)
+            if not inline_url:
+                self.assertTrue(requests[1].full_url.endswith("/reports/1300546606747226112/download"))
+
+    def test_new_r2_session_does_not_mix_in_historical_cookie(self):
+        args = ["grab", "--url", "https://reportify.cn/reports/1300546606747226112", "--output", str(self.output),
+                "--session-from-r2", "--cookie-header", "old-cookie"]
+        result = {"id": "1300546606747226112", "status": "ready", "reason": ""}
+        with mock.patch("sys.argv", args), redirect_stdout(StringIO()), mock.patch.object(grab, "runtime_r2_client"), \
+                mock.patch.object(grab, "stored_session_token", return_value="new-token"), \
+                mock.patch.object(grab, "grab_report", return_value=result) as acquire:
+            self.assertEqual(grab.main(), 0)
+        self.assertEqual(acquire.call_args.kwargs["token"], "new-token")
+        self.assertEqual(acquire.call_args.kwargs["cookie"], "")
+
     def test_workflow_reads_r2_session_and_never_dispatches_or_launches_browser(self):
         workflow = (Path(__file__).resolve().parents[1] / ".github/workflows/reportify-grab.yml").read_text()
         self.assertIn("--session-from-r2", workflow)
