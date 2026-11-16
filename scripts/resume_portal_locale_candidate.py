@@ -63,16 +63,16 @@ DIAGNOSTICS = (
     "chinese-parity.json", "chinese-performance.json",
 )
 # Real per-locale diagnostics include detailed accounting for the complete
-# existing catalog (about 32 MiB each in run 36567911713). They are not small
+# existing catalog (about 215 MiB each in run 43807184739). They are not small
 # approval receipts. Keep the complete JSON and all semantic checks, while
 # bounding both each expanded member and total expanded diagnostic bytes.
 DIAGNOSTIC_MAX_BYTES = {
-    'locale-preflight-diagnostics.json': 64 * 1024 * 1024,
-    'locale-full-diagnostics.json': 64 * 1024 * 1024,
+    'locale-preflight-diagnostics.json': 256 * 1024 * 1024,
+    'locale-full-diagnostics.json': 256 * 1024 * 1024,
     'chinese-parity.json': 16 * 1024 * 1024,
     'chinese-performance.json': 16 * 1024 * 1024,
 }
-MAX_DIAGNOSTICS_EXPANDED_BYTES = 128 * 1024 * 1024
+MAX_DIAGNOSTICS_EXPANDED_BYTES = 512 * 1024 * 1024
 PUBLIC_PATHS = frozenset((
     "index.html", "feed.xml", "assets/app.js", "assets/styles.css", "assets/locale.css",
     "assets/locale-runtime.js", "data/catalog.json", "data/catalog_preview.json",
@@ -81,6 +81,9 @@ PUBLIC_PATHS = frozenset((
 ))
 SHA40 = re.compile(r"[0-9a-f]{40}\Z")
 MAX_API_BYTES = 64 * 1024 * 1024
+# Artifact ZIPs contain the full diagnostics, rather than a small API response.
+# The per-download limit remains the validated GitHub artifact size below.
+MAX_ARTIFACT_DOWNLOAD_BYTES = 512 * 1024 * 1024
 MAX_APP_BUNDLE_BYTES = 16 * 1024 * 1024
 DOWNLOAD_WORKERS = 4
 
@@ -122,7 +125,7 @@ class GitHubClient:
         self.token = token
         self.opener = build_opener(GitHubRedirect())
 
-    def bytes(self, path: str) -> bytes:
+    def _read(self, path: str, *, maximum: int) -> bytes:
         require(path.startswith("/repos/"), "Unexpected GitHub API route")
         request = Request("https://api.github.com" + path, headers={
             "Authorization": "Bearer " + self.token,
@@ -131,7 +134,7 @@ class GitHubClient:
         })
         try:
             with self.opener.open(request, timeout=60) as response:
-                body = response.read(MAX_API_BYTES + 1)
+                body = response.read(maximum + 1)
         except HTTPError as error:
             # Report the requested API route, never a redirected signed URL or
             # response headers. GitHub's bounded JSON message explains token
@@ -150,8 +153,18 @@ class GitHubClient:
             finally:
                 error.close()
             raise ResumeError(f"GitHub API request failed: route={urlsplit(path).path} status={error.code}{message}") from None
-        require(len(body) <= MAX_API_BYTES, "GitHub response is oversized")
+        require(len(body) <= maximum, "GitHub response is oversized")
         return body
+
+    def bytes(self, path: str) -> bytes:
+        return self._read(path, maximum=MAX_API_BYTES)
+
+    def artifact_bytes(self, path: str, *, size_in_bytes: int) -> bytes:
+        require(re.fullmatch(r"/repos/[^/?#]+/[^/?#]+/actions/artifacts/[1-9][0-9]*/zip", path) is not None,
+                "Unexpected GitHub artifact route")
+        require(type(size_in_bytes) is int and 0 < size_in_bytes <= MAX_ARTIFACT_DOWNLOAD_BYTES,
+                "Diagnostics artifact download size is invalid or exceeds its byte bound")
+        return self._read(path, maximum=size_in_bytes)
 
     def json(self, path: str) -> dict[str, Any]:
         return decode_json(self.bytes(path), "GitHub response")
@@ -374,8 +387,13 @@ def download_diagnostics(github: Any, repository: str, run_id: int, attempt: int
     artifact = matches[0]
     workflow_run = artifact.get("workflow_run") or {}
     require(not workflow_run or workflow_run.get("id") == run_id, "Diagnostics artifact belongs to another run")
+    require(type(artifact.get("id")) is int and artifact["id"] > 0, "Diagnostics artifact id is invalid")
+    require(type(artifact.get("size_in_bytes")) is int
+            and 0 < artifact["size_in_bytes"] <= MAX_ARTIFACT_DOWNLOAD_BYTES,
+            "Diagnostics artifact download size is invalid or exceeds its byte bound")
     phase("diagnostic_artifact_download")
-    data = github.bytes(f"/repos/{repository}/actions/artifacts/{int(artifact['id'])}/zip")
+    data = github.artifact_bytes(f"/repos/{repository}/actions/artifacts/{artifact['id']}/zip",
+                                 size_in_bytes=artifact["size_in_bytes"])
     required: dict[str, bytes] = {}
     expanded_bytes = 0
     try:
@@ -596,20 +614,23 @@ def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any],
 
 
 def validate_diagnostics(directory: Path, app: bytes, logs: str, origin: str, *, active_app: bytes) -> dict[str, Any]:
-    values = {name: decode_json((directory / name).read_bytes(), name) for name in DIAGNOSTICS}
-    preflight = values["locale-preflight-diagnostics.json"]
-    full = values["locale-full-diagnostics.json"]
+    # Each locale report can exceed 200 MiB before JSON expansion. Validate and
+    # release one tree before loading the next; retain complete source files.
+    preflight = decode_json((directory / "locale-preflight-diagnostics.json").read_bytes(), "locale-preflight-diagnostics.json")
     require(preflight.get("status") == "passed" and preflight.get("preflight_only") is True, "Source locale preflight did not pass")
+    del preflight
+    full = decode_json((directory / "locale-full-diagnostics.json").read_bytes(), "locale-full-diagnostics.json")
     require(full.get("status") == "passed" and full.get("ready") is True and not full.get("preflight_only")
             and not full.get("stop_reason") and full.get("pending_repair_count", 0) == 0, "Source locale build is not ready")
-    report = values["chinese-parity.json"]
+    del full
+    report = decode_json((directory / "chinese-parity.json").read_bytes(), "chinese-parity.json")
     require(report.get("schema_version") == 1 and report.get("kind") == parity.VERIFY_KIND
             and report.get("site_origin") == origin.rstrip("/"), "Source Chinese parity identity is invalid")
     parity._verify_digest(report, label="Source Chinese parity report")
     require(bool(publisher.SHA256_PATTERN.fullmatch(str(report.get("snapshot_digest", ""))))
             and bool(publisher.SHA256_PATTERN.fullmatch(str(report.get("verified_tree_digest", "")))), "Source Chinese parity digests are invalid")
     require(report["digest"] in logs and report["verified_tree_digest"] in logs, "Source log does not attest the downloaded parity report")
-    performance = values["chinese-performance.json"]
+    performance = decode_json((directory / "chinese-performance.json").read_bytes(), "chinese-performance.json")
     comparison = app_budget.check_budget(app, active_app)
     # The production multilingual build deliberately uses the absolute-only
     # producer contract. Preserve that evidence, then independently enforce the
