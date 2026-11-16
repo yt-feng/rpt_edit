@@ -132,7 +132,9 @@ jobs:
     runs-on: ubuntu-22.04
     # Preparing 44k+ files used 111 minutes before upload in run 39864542229.
     # Reserve a separate bounded upload window plus post-upload verification.
-    timeout-minutes: 240
+    # A complete multilingual build can reach the final upload after three hours.
+    # Leave time for bounded upload and shadow acceptance at the current catalog size.
+    timeout-minutes: 300
     outputs:
       changed: ${{ steps.release_delta.outputs.changed }}
       static_release: ${{ steps.runtime_context.outputs.static_release }}

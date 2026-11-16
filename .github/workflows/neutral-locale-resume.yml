@@ -52,9 +52,10 @@ concurrency:
 jobs:
   prepare_release:
     runs-on: ubuntu-22.04
-    # Restoring and verifying the complete immutable candidate includes thousands
-    # of bounded object reads before shadow acceptance; it does not rerun models.
-    timeout-minutes: 60
+    # Recovery verifies every object, reads every extended page, and downloads
+    # the complete audit tree before shadow acceptance; it does not rerun models.
+    # The current catalog has more than 63,000 objects and 8,000 extended pages.
+    timeout-minutes: 120
     outputs:
       changed: ${{ steps.release_delta.outputs.changed }}
       static_release: ${{ steps.static_upload.outputs.static_release }}

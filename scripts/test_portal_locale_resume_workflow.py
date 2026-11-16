@@ -72,7 +72,7 @@ class ResumeWorkflowTests(unittest.TestCase):
             self.assertNotIn(forbidden, preparation)
         self.assertIn('group: portal-production-release', preparation)
         self.assertIn('test "$GITHUB_REF" = "refs/heads/main"', preparation)
-        self.assertIn('    timeout-minutes: 60', preparation)
+        self.assertIn('    timeout-minutes: 120', preparation)
 
     def test_source_identity_is_not_replaced_by_recovery_commit(self):
         self.assertIn('candidate_commit: ${{ steps.static_upload.outputs.commit_sha }}', self.recovery)
