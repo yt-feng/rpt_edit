@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import copy
+from collections import Counter
 import hashlib
 import io
 import json
@@ -11,6 +12,8 @@ from pathlib import Path
 import subprocess
 import sys
 import tempfile
+import threading
+import time
 import unittest
 from unittest.mock import Mock, patch
 
@@ -18,6 +21,7 @@ import publish_static_slot as publisher
 import verify_prepared_static_slot as guard
 from test_publish_static_slot import FakeR2, release, write
 from test_verify_portal_locale_routes import ORIGIN, describe, fixture as locale_fixture
+from portal_extended_locales import direction, select_locales
 
 
 class PreparedStaticSlotTests(unittest.TestCase):
@@ -147,6 +151,134 @@ class PreparedStaticSlotTests(unittest.TestCase):
         self.assertTrue(all(operation in {"head", "get"} for operation, _key in self.client.operations))
         for path in files:
             self.assertIn(("get", publisher.slot_prefix(self.slot) + path), self.client.operations)
+        self.assertEqual(self.client.operations.count(("head", publisher.slot_prefix(self.slot) + "ja/report.html")), 1)
+
+    def extended_files(self, *, locales=None, pages_per_locale=33, page_counts=None) -> dict[str, bytes]:
+        locales = locales or select_locales("all-supported")
+        page_counts = page_counts or dict.fromkeys(locales, pages_per_locale)
+        files = {}
+
+        def page(locale, url):
+            return (f'<html lang="{locale}" dir="{direction(locale)}"><head>'
+                    f'<link rel="canonical" href="{url}"><meta name="robots" content="index,follow">'
+                    '</head><body><main>Published research</main></body></html>').encode()
+
+        for locale in locales:
+            files[f"{locale}/index.html"] = page(locale, f"{ORIGIN}/{locale}/")
+            files[f"{locale}/llms.txt"] = b"Published research collection"
+            urls = [f"{ORIGIN}/{locale}/blog/20261116-report-{number}.html" for number in range(page_counts[locale])]
+            for url in urls:
+                files[url.removeprefix(ORIGIN + "/")] = page(locale, url)
+            files[f"sitemap-extended-{locale}.xml"] = (
+                "<urlset>" + "".join(f"<url><loc>{url}</loc></url>" for url in urls) + "</urlset>"
+            ).encode()
+        files["sitemap-extended.xml"] = (
+            "<sitemapindex>" + "".join(f"<sitemap><loc>{ORIGIN}/sitemap-extended-{locale}.xml</loc></sitemap>"
+                                     for locale in locales) + "</sitemapindex>"
+        ).encode()
+        files["data/extended-locales/assembly.json"] = json.dumps({
+            "status": "assembled", "locales": list(locales), "paid_provider_requests": 0,
+            "deployment_performed": False, "locale_homepages": True,
+            "pages_per_locale": min(page_counts.values()), "page_counts": page_counts,
+        }).encode()
+        return files
+
+    def test_all_33_locale_pages_are_verified_with_bounded_parallelism_and_no_duplicate_sitemaps(self):
+        manifest, files = self.locale_files()
+        # Match the heterogeneous 8,065-page candidate in run 43807184739.
+        # pages_per_locale is only the minimum, not the total-work estimate.
+        page_counts = {
+            "bn": 342, "bo": 33, "cs": 342, "de": 278, "es": 278, "fa": 342,
+            "fr": 278, "gu": 342, "he": 294, "hi": 342, "id": 278, "it": 278,
+            "kk": 33, "km": 228, "mn": 33, "mr": 342, "ms": 278, "my": 158,
+            "nl": 342, "pl": 318, "pt": 278, "ru": 278, "ta": 342, "te": 318,
+            "th": 33, "tl": 318, "tr": 278, "ug": 33, "uk": 342, "ur": 342,
+            "vi": 278, "yue": 33, "zh-Hant": 33,
+        }
+        self.assertEqual(sum(page_counts.values()), 8065)
+        extended = self.extended_files(page_counts=page_counts)
+        self.prepare_locales(manifest, {**files, **extended})
+        counts_lock = threading.Lock()
+        active = peak = 0
+
+        def tracked(function):
+            def call(**kwargs):
+                nonlocal active, peak
+                with counts_lock:
+                    active += 1
+                    peak = max(peak, active)
+                try:
+                    time.sleep(0.0005)
+                    return function(**kwargs)
+                finally:
+                    with counts_lock:
+                        active -= 1
+            return call
+
+        self.client.head_object = tracked(self.client.head_object)
+        self.client.get_object = tracked(self.client.get_object)
+        diagnostics = io.StringIO()
+        with patch("sys.stderr", diagnostics):
+            result = self.verify(locale_origin=ORIGIN)
+        self.assertEqual(len(result["extended_locales"]), 33)
+        self.assertGreater(peak, 1)
+        self.assertLessEqual(peak, guard.VERIFY_WORKERS)
+        operations = Counter(self.client.operations)
+        for relative in extended:
+            self.assertEqual(operations["get", publisher.slot_prefix(self.slot) + relative], 1, relative)
+        for relative in publisher.DEFAULT_RUNTIME_PATHS:
+            self.assertEqual(operations["head", publisher.runtime_release_prefix(self.release) + Path(relative).name], 1)
+        # The final identity reads are deliberately not deduplicated.
+        self.assertEqual(operations["get", publisher.manifest_key(self.slot)], 2)
+        self.assertEqual(operations["get", publisher.runtime_manifest_key(self.release)], 2)
+        self.assertEqual(operations["head", publisher.incomplete_key(self.slot)], 3)
+        self.assertEqual(len(self.client.operations), 16443)
+        output = diagnostics.getvalue()
+        self.assertIn("phase=extended-pages completed=8065/8065", output)
+        self.assertIn("phase=final-identity", output)
+        self.assertIn("elapsed_seconds=", output)
+        for sensitive in (ORIGIN, self.release, self.manifest["tree_sha256"], "bucket"):
+            self.assertNotIn(sensitive, output)
+
+    def test_extended_middle_page_corruption_and_wrong_semantics_still_fail(self):
+        manifest, files = self.locale_files()
+        extended = self.extended_files(locales=("fr",), pages_per_locale=3)
+        self.prepare_locales(manifest, {**files, **extended})
+        relative = "fr/blog/20261116-report-1.html"
+        key = publisher.slot_prefix(self.slot) + relative
+        self.client.objects[key]["body"] = b"x" * len(extended[relative])
+        with self.assertRaisesRegex(RuntimeError, "content differs"):
+            self.verify(locale_origin=ORIGIN)
+        extended[relative] = extended[relative].replace(b'lang="fr"', b'lang="de"')
+        self.prepare_locales(manifest, {**files, **extended})
+        with self.assertRaisesRegex(ValueError, "language/direction"):
+            self.verify(locale_origin=ORIGIN)
+
+    def test_parallel_progress_flushes_heartbeat_while_work_is_waiting(self):
+        started = threading.Event()
+        unblock = threading.Event()
+
+        def work(_item):
+            started.set()
+            unblock.wait(timeout=1)
+
+        real_wait = guard.wait
+        waited = False
+
+        def heartbeat(pending, **kwargs):
+            nonlocal waited
+            if not waited:
+                self.assertTrue(started.wait(timeout=1))
+                waited = True
+                return set(), pending
+            unblock.set()
+            return real_wait(pending, **kwargs)
+
+        output = Mock()
+        with patch("sys.stderr", output), patch.object(guard, "wait", side_effect=heartbeat):
+            guard.verify_in_parallel("extended-pages", [1], work, guard.VerificationProgress())
+        self.assertGreaterEqual(output.flush.call_count, 3)
+        self.assertTrue(waited)
 
     def test_compressed_source_manifest_passes_the_committed_route_contract(self) -> None:
         from test_portal_locale_manifest import with_source_fallback, compress_source_fallback
