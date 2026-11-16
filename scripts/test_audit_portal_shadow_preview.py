@@ -2,14 +2,19 @@
 from __future__ import annotations
 
 import hashlib
+from http.client import IncompleteRead, RemoteDisconnected
 import importlib.util
+import io
 import json
 from email.message import Message
 import subprocess
+import socket
+import ssl
 import tempfile
 import unittest
 from pathlib import Path
 import sys
+import traceback
 from unittest import mock
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlsplit
@@ -53,11 +58,15 @@ class FakeResponse:
         self.body = body
         self.headers = FakeHeaders(headers or {})
         self.status = status
+        self.closed = False
 
     def read(self, limit: int = -1) -> bytes:
         if limit < 0:
             return self.body
         return self.body[:limit]
+
+    def close(self) -> None:
+        self.closed = True
 
 
 class FakeOpener:
@@ -74,6 +83,8 @@ class FakeOpener:
         relative = parsed.path + (("?" + parsed.query) if parsed.query else "")
         self.requests.append(request)
         response = self.responses.get(relative)
+        if isinstance(response, list):
+            response = response.pop(0)
         if response is None:
             raise URLError(f"missing fake response for {relative}")
         if isinstance(response, BaseException):
@@ -301,6 +312,180 @@ class ShadowPreviewAuditTests(unittest.TestCase):
         self.assertTrue(all(row["status"] == "passed" for row in routes["checks"]))
         self.assertTrue(all(request.full_url.startswith(BASE_URL + "/") for request in opener.requests))
         self.assertEqual(sum("newsfeed-app.js?v=" in request.full_url for request in opener.requests), 4)
+
+    def test_application_route_recovers_open_and_body_transport_interruptions(self) -> None:
+        plan, responses = application_response_fixture()
+        path = "/ko/newsfeed.html"
+        complete = responses[path]
+        partial = FakeResponse(b"discarded", headers=protected_headers("ko"))
+        partial.read = mock.Mock(side_effect=IncompleteRead(b"private partial body", 30))
+        responses[path] = [TimeoutError("private transport address"), partial, complete]
+        with mock.patch.object(audit, "fetch", wraps=audit.fetch) as fetched:
+            result, opener = self.run_audit(plan, responses)
+        self.assertEqual(result["application_routes"]["status"], "passed")
+        self.assertEqual(sum(urlsplit(request.full_url).path == path for request in opener.requests), 3)
+        self.assertTrue(partial.closed)
+        route_calls = [call for call in fetched.call_args_list if call.args[2] == path]
+        self.assertEqual(len(route_calls), 1)
+        self.assertEqual(route_calls[0].kwargs["attempts"], 3)
+        self.assertEqual(route_calls[0].kwargs["timeout"], 20)
+        self.assertLessEqual(route_calls[0].kwargs["max_total_time"], audit.ROUTE_TOTAL_SECONDS)
+
+    def test_application_route_exhaustion_reports_sanitized_cause_and_attempt_count(self) -> None:
+        plan, responses = application_response_fixture()
+        responses["/ko/newsfeed.html"] = TimeoutError("https://private.example/token=secret")
+        with self.assertRaisesRegex(audit.AuditError, r"/ko/newsfeed.html.*cause=timeout; attempts=3/3") as failure:
+            self.run_audit(plan, responses)
+        self.assertNotIn("private.example", str(failure.exception))
+        self.assertNotIn("secret", str(failure.exception))
+
+    def test_fetch_retries_classified_transport_errors_without_leaking_details(self) -> None:
+        secret = "https://private.example/path?token=secret"
+        cases = (
+            (TimeoutError(secret), "timeout"),
+            (URLError(TimeoutError(secret)), "timeout"),
+            (URLError(secret), "network-error"),
+            (socket.gaierror(-3, secret), "name-resolution"),
+            (ConnectionResetError(secret), "connection-error"),
+            (RemoteDisconnected(secret), "remote-disconnect"),
+            (IncompleteRead(secret.encode(), 99), "incomplete-body"),
+            (ssl.SSLEOFError(secret), "tls-transport"),
+        )
+        for error, cause in cases:
+            with self.subTest(cause=cause):
+                opener = mock.Mock()
+                opener.open.side_effect = [error, FakeResponse(b"complete")]
+                with mock.patch.object(audit.time, "sleep") as sleep:
+                    result = audit.fetch(opener, BASE_URL, "/ko/newsfeed.html", attempts=3)
+                self.assertEqual(result[0], b"complete")
+                self.assertEqual(opener.open.call_count, 2)
+                sleep.assert_called_once_with(2)
+                opener.open.side_effect = error
+                with mock.patch.object(audit.time, "sleep"), self.assertRaises(audit.AuditError) as failure:
+                    audit.fetch(opener, BASE_URL, "/ko/newsfeed.html?token=secret", attempts=3)
+                self.assertIn(f"cause={cause}; attempts=3/3", str(failure.exception))
+                formatted = "".join(traceback.format_exception(failure.exception))
+                self.assertNotIn("private.example", formatted)
+                self.assertNotIn("token=secret", str(failure.exception))
+
+    def test_transient_http_statuses_retry_and_close_error_responses(self) -> None:
+        for status in (408, 425, 429, 500, 502, 503, 504):
+            with self.subTest(status=status):
+                response_body = io.BytesIO(b"private response body")
+                error = HTTPError(BASE_URL + "/private", status, "private HTTP message", {}, response_body)
+                opener = mock.Mock()
+                opener.open.side_effect = [error, FakeResponse(b"complete")]
+                with mock.patch.object(audit.time, "sleep"):
+                    self.assertEqual(audit.fetch(opener, BASE_URL, "/ko/newsfeed.html")[0], b"complete")
+                self.assertTrue(response_body.closed)
+                self.assertEqual(opener.open.call_count, 2)
+
+    def test_permanent_http_errors_and_certificates_do_not_retry(self) -> None:
+        for status in (301, 302, 401, 403, 404, 410):
+            with self.subTest(status=status):
+                response = FakeResponse(b"private body", status=status)
+                response.read = mock.Mock(side_effect=TimeoutError("must not read permanent error body"))
+                opener = mock.Mock()
+                opener.open.return_value = response
+                with mock.patch.object(audit.time, "sleep") as sleep, self.assertRaisesRegex(audit.AuditError, f"HTTP {status}.*attempts=1/6"):
+                    audit.fetch(opener, BASE_URL, "/ko/newsfeed.html")
+                response.read.assert_not_called()
+                self.assertTrue(response.closed)
+                sleep.assert_not_called()
+                self.assertEqual(opener.open.call_count, 1)
+        for wrapped in (False, True):
+            error = ssl.SSLCertVerificationError("private TLS host")
+            opener = mock.Mock()
+            opener.open.side_effect = URLError(error) if wrapped else error
+            with mock.patch.object(audit.time, "sleep") as sleep, self.assertRaisesRegex(audit.AuditError, "certificate-verification.*attempts=1/6"):
+                audit.fetch(opener, BASE_URL, "/ko/newsfeed.html")
+            sleep.assert_not_called()
+            self.assertEqual(opener.open.call_count, 1)
+
+    def test_interrupted_and_short_bodies_are_discarded_closed_and_retried(self) -> None:
+        for error in (TimeoutError("private socket"), IncompleteRead(b"private bytes", 10), None):
+            with self.subTest(error=type(error).__name__):
+                partial = FakeResponse(b"short", headers={"Content-Length": "10"})
+                if error is not None:
+                    partial.read = mock.Mock(side_effect=error)
+                complete = FakeResponse(b"0123456789", headers={"Content-Length": "10"})
+                opener = mock.Mock()
+                opener.open.side_effect = [partial, complete]
+                with mock.patch.object(audit.time, "sleep"):
+                    result = audit.fetch(opener, BASE_URL, "/ko/newsfeed.html")
+                self.assertEqual(result[0], b"0123456789")
+                self.assertTrue(partial.closed)
+                self.assertTrue(complete.closed)
+
+    def test_oversized_responses_and_nonpropagation_contract_failures_do_not_retry(self) -> None:
+        for validation in (None, mock.Mock(side_effect=audit.AuditError("invalid contract"))):
+            response = FakeResponse(b"x" * (9 if validation is None else 1))
+            opener = mock.Mock()
+            opener.open.return_value = response
+            with mock.patch.object(audit, "MAX_RESPONSE_BYTES", 8), mock.patch.object(audit.time, "sleep") as sleep:
+                with self.assertRaisesRegex(audit.AuditError, "oversized|invalid contract"):
+                    audit.fetch(opener, BASE_URL, "/ko/newsfeed.html", validate_response=validation)
+            self.assertTrue(response.closed)
+            self.assertEqual(opener.open.call_count, 1)
+            sleep.assert_not_called()
+
+    def test_total_budget_bounds_retries_and_shrinks_remaining_socket_timeout(self) -> None:
+        clock = [0.0]
+        def open_response(*_args, **kwargs):
+            clock[0] += kwargs["timeout"]
+            raise TimeoutError("private socket")
+        def sleep(delay):
+            clock[0] += delay
+        opener = mock.Mock()
+        opener.open.side_effect = open_response
+        with mock.patch.object(audit.time, "monotonic", side_effect=lambda: clock[0]), mock.patch.object(audit.time, "sleep", side_effect=sleep) as slept:
+            with self.assertRaisesRegex(audit.AuditError, "cause=timeout; attempts=2/3"):
+                audit.fetch(opener, BASE_URL, "/ko/newsfeed.html", attempts=3, timeout=20, max_total_time=25)
+        self.assertEqual([call.kwargs["timeout"] for call in opener.open.call_args_list], [20, 3])
+        self.assertEqual(clock[0], 25)
+        slept.assert_called_once_with(2)
+
+    def test_response_after_total_budget_is_not_accepted(self) -> None:
+        clock = [0.0]
+        response = FakeResponse(b"complete")
+        def read(_limit):
+            clock[0] = 4.0
+            return b"complete"
+        response.read = read
+        opener = mock.Mock()
+        opener.open.return_value = response
+        with mock.patch.object(audit.time, "monotonic", side_effect=lambda: clock[0]), mock.patch.object(audit.time, "sleep") as sleep:
+            with self.assertRaisesRegex(audit.AuditError, "cause=timeout; attempts=1/3"):
+                audit.fetch(opener, BASE_URL, "/ko/newsfeed.html", attempts=3, max_total_time=3)
+        self.assertTrue(response.closed)
+        self.assertEqual(opener.open.call_count, 1)
+        sleep.assert_not_called()
+
+    def test_slow_stream_cannot_extend_budget_by_dribbling_body_bytes(self) -> None:
+        clock = [0.0]
+        response = FakeResponse(b"unused")
+        def read_one(_limit):
+            clock[0] += 1
+            return b"x"
+        response.read1 = mock.Mock(side_effect=read_one)
+        response.read = mock.Mock(side_effect=AssertionError("must use one socket read per iteration"))
+        opener = mock.Mock()
+        opener.open.return_value = response
+        with mock.patch.object(audit.time, "monotonic", side_effect=lambda: clock[0]), mock.patch.object(audit.time, "sleep") as sleep:
+            with self.assertRaisesRegex(audit.AuditError, "cause=timeout; attempts=1/3"):
+                audit.fetch(opener, BASE_URL, "/ko/newsfeed.html", attempts=3, max_total_time=3)
+        self.assertEqual(response.read1.call_count, 3)
+        self.assertTrue(all(call.args[0] <= 1024 * 1024 for call in response.read1.call_args_list))
+        response.read.assert_not_called()
+        self.assertTrue(response.closed)
+        sleep.assert_not_called()
+
+    def test_invalid_total_time_budgets_fail_before_network(self) -> None:
+        opener = mock.Mock()
+        for budget in (0, -1, True, "70", float("inf"), float("nan")):
+            with self.subTest(budget=budget), self.assertRaisesRegex(audit.AuditError, "time budget is invalid"):
+                audit.fetch(opener, BASE_URL, "/ko/newsfeed.html", max_total_time=budget)
+        opener.open.assert_not_called()
 
     def test_declared_shell_semantics_fail_shadow_even_when_hash_is_correct(self) -> None:
         for before, after, message in (

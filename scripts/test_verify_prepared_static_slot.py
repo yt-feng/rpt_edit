@@ -25,6 +25,44 @@ from portal_extended_locales import direction, select_locales
 
 
 class PreparedStaticSlotTests(unittest.TestCase):
+    def test_final_static_and_runtime_hash_streams_recover_without_partial_digest_reuse(self):
+        self.prepare()
+        for runtime in (False, True):
+            relative = "data/catalog.json" if runtime else "index.html"
+            key = (publisher.runtime_release_prefix(self.release) + "catalog.json" if runtime else
+                   publisher.slot_prefix(self.slot) + relative)
+            descriptor = (publisher.runtime_inventory(self.root)[1]["catalog.json"] if runtime else
+                          self.manifest["files"][relative])
+            raw = self.client.objects[key]["body"]
+            for valid in (True, False):
+                with self.subTest(runtime=runtime, valid=valid):
+                    broken = Mock()
+                    broken.read.side_effect = [raw[:1], TimeoutError("interrupted")]
+                    complete = io.BytesIO(raw if valid else b"x" * len(raw))
+                    with patch.object(self.client, "get_object", side_effect=[
+                        {"Body": broken}, {"Body": complete},
+                    ]) as get, patch("r2_transport.time.sleep") as sleep:
+                        if valid:
+                            guard.verify_object_body(self.client, "bucket", key, descriptor,
+                                                     runtime_release=self.release if runtime else None)
+                        else:
+                            with self.assertRaisesRegex(RuntimeError, "content differs"):
+                                guard.verify_object_body(self.client, "bucket", key, descriptor,
+                                                         runtime_release=self.release if runtime else None)
+                    self.assertEqual(get.call_count, 2); sleep.assert_called_once()
+                    broken.close.assert_called_once_with(); self.assertTrue(complete.closed)
+
+    def test_final_hash_stream_does_not_restart_an_sdk_retried_get(self):
+        self.prepare()
+        key = publisher.slot_prefix(self.slot) + "index.html"
+        stream = Mock(); stream.read.side_effect = TimeoutError("SDK already retried")
+        with patch.object(self.client, "get_object", return_value={
+            "Body": stream, "ResponseMetadata": {"RetryAttempts": 1},
+        }) as get, patch("r2_transport.time.sleep") as sleep:
+            with self.assertRaisesRegex(TimeoutError, "SDK already retried"):
+                guard.verify_object_body(self.client, "bucket", key, self.manifest["files"]["index.html"])
+        get.assert_called_once(); sleep.assert_not_called(); stream.close.assert_called_once_with()
+
     def test_prepared_body_stream_recovers_then_still_checks_committed_checksum(self):
         self.prepare()
         relative = "index.html"

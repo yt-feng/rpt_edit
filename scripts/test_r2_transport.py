@@ -2,6 +2,7 @@
 """Offline real-SDK throttling and bounded interrupted-stream contracts."""
 from contextlib import contextmanager
 import io
+import hashlib
 import os
 import tempfile
 from types import SimpleNamespace
@@ -219,6 +220,42 @@ class BoundedBodyTests(unittest.TestCase):
                 self.assertEqual(raised.exception.category, category)
                 self.assertTrue(stream.closed)
                 self.assertEqual(client.get_object.call_count, 1)
+        self.sleep.assert_not_called()
+
+    def test_streaming_sink_resets_after_interruption_and_receives_bounded_chunks(self):
+        raw = b"x" * (2 * transport.READ_CHUNK_BYTES + 3)
+        partial = Mock()
+        partial.read.side_effect = [b"partial", TimeoutError("interrupted")]
+        complete = io.BytesIO(raw)
+        client = SimpleNamespace(get_object=Mock(side_effect=[
+            {"Body": partial}, {"Body": complete, "ContentLength": len(raw)},
+        ]))
+        digests, chunks = [], []
+        def reset():
+            digests.append(hashlib.sha256())
+            chunks.clear()
+        def write(chunk):
+            digests[-1].update(chunk)
+            chunks.append(len(chunk))
+        count = transport.read_r2_into(client, "bucket", "key", maximum=len(raw), reset=reset, write=write)
+        self.assertEqual(count, len(raw))
+        self.assertEqual(len(digests), 2)
+        self.assertEqual(digests[-1].hexdigest(), hashlib.sha256(raw).hexdigest())
+        self.assertEqual(chunks, [transport.READ_CHUNK_BYTES, transport.READ_CHUNK_BYTES, 3])
+        partial.close.assert_called_once_with(); self.assertTrue(complete.closed)
+        self.sleep.assert_called_once_with(2)
+
+    def test_local_sink_failures_never_restart_a_get(self):
+        for stage in ("reset", "write"):
+            with self.subTest(stage=stage):
+                stream = io.BytesIO(b"abc")
+                client = SimpleNamespace(get_object=Mock(return_value={"Body": stream}))
+                callbacks = {"reset": Mock(), "write": Mock()}
+                callbacks[stage].side_effect = TimeoutError("local sink failed")
+                with self.assertRaisesRegex(TimeoutError, "local sink failed"):
+                    transport.read_r2_into(client, "bucket", "key", maximum=3, **callbacks)
+                client.get_object.assert_called_once()
+                self.assertTrue(stream.closed)
         self.sleep.assert_not_called()
 
 

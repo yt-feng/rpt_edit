@@ -21,7 +21,7 @@ import xml.etree.ElementTree as ET
 from portal_extended_locales import select_locales, file_for_url
 from audit_portal_extended_live import check_page
 from portal_extended_ui import UI_VERSION
-from r2_transport import R2BodyError, read_r2_bytes
+from r2_transport import R2BodyError, read_r2_bytes, read_r2_into
 from portal_locale_manifest import (
     MAX_LOCALE_MANIFEST_BYTES, parse_locale_manifest, validate_translation_resolution,
 )
@@ -246,17 +246,20 @@ def verify_extended_static_tree(
     client: Any, bucket: str, prefix: str, files: dict[str, dict[str, Any]],
     *, origin: str | None, verified_paths: set[str] | None = None,
     progress: VerificationProgress | None = None,
+    on_verified_body: Callable[[str, bytes], None] | None = None,
 ) -> dict[str, Any] | None:
     progress = progress or VerificationProgress()
     verified_paths = verified_paths or set()
     assembly_descriptor = files.get("data/extended-locales/assembly.json")
     if assembly_descriptor is None:
         return None
+    def read_body(relative: str, maximum: int) -> bytes:
+        body = read_verified_candidate_body(client, bucket, prefix + relative, files[relative], maximum=maximum)
+        if on_verified_body is not None:
+            on_verified_body(relative, body)
+        return body
     progress.report("extended-manifest")
-    assembly = json.loads(read_verified_candidate_body(
-        client, bucket, prefix + "data/extended-locales/assembly.json", assembly_descriptor,
-        maximum=1024 * 1024,
-    ).decode("utf-8"))
+    assembly = json.loads(read_body("data/extended-locales/assembly.json", 1024 * 1024).decode("utf-8"))
     locales = assembly.get("locales")
     if (
         assembly.get("status") != "assembled"
@@ -283,14 +286,12 @@ def verify_extended_static_tree(
             if path not in verified_paths:
                 assets.append(path)
         def verify_asset(path: str) -> None:
-            read_verified_candidate_body(client, bucket, prefix + path, files[path], maximum=4 * 1024 * 1024)
+            read_body(path, 4 * 1024 * 1024)
         verify_in_parallel("extended-assets", assets, verify_asset, progress)
     index_descriptor = files.get("sitemap-extended.xml")
     if index_descriptor is None:
         raise RuntimeError("Prepared extended sitemap index is missing")
-    index_body = read_verified_candidate_body(
-        client, bucket, prefix + "sitemap-extended.xml", index_descriptor, maximum=2 * 1024 * 1024,
-    )
+    index_body = read_body("sitemap-extended.xml", 2 * 1024 * 1024)
     index_locations = [str(node.text or "").strip() for node in ET.fromstring(index_body).findall(".//{*}loc")]
     expected_index = {f"{origin.rstrip('/')}/sitemap-extended-{locale}.xml" for locale in approved} if origin else set()
     if origin and set(index_locations) != expected_index:
@@ -302,10 +303,7 @@ def verify_extended_static_tree(
             descriptor = files.get(relative)
             if descriptor is None:
                 raise RuntimeError(f"Prepared extended object is missing: {relative}")
-            body = read_verified_candidate_body(
-                client, bucket, prefix + relative, descriptor,
-                maximum=4 * 1024 * 1024 if relative.endswith(".html") else 2 * 1024 * 1024,
-            )
+            body = read_body(relative, 4 * 1024 * 1024 if relative.endswith(".html") else 2 * 1024 * 1024)
             if relative.endswith(".html") and b"noindex" in body.lower():
                 raise RuntimeError(f"Prepared extended homepage remains noindex: {relative}")
             if relative == f"{locale}/index.html" and origin:
@@ -335,7 +333,7 @@ def verify_extended_static_tree(
 
     def verify_page(row: tuple[str, str, str]) -> None:
         path, url, locale = row
-        body = read_verified_candidate_body(client, bucket, prefix + path, files[path], maximum=4*1024*1024)
+        body = read_body(path, 4 * 1024 * 1024)
         check_page(body, url, locale, require_standard_ui=standard_ui)
 
     # Every page is verified. One bounded queue avoids a slow locale holding up
@@ -382,22 +380,17 @@ def verify_object_body(
             raise RuntimeError(f"Prepared immutable runtime metadata differs: {PurePosixPath(key).name}")
     elif not remote_object_matches_descriptor(client, bucket, key, descriptor):
         raise RuntimeError(f"Prepared object metadata differs from its manifest: {key}")
-    body = client.get_object(Bucket=bucket, Key=key)["Body"]
     digest = hashlib.sha256()
-    size = 0
+    def reset_digest() -> None:
+        nonlocal digest
+        digest = hashlib.sha256()
     try:
-        if not hasattr(body, "read"):
-            chunks = (body.encode("utf-8") if isinstance(body, str) else bytes(body),)
-        else:
-            chunks = iter(lambda: body.read(1024 * 1024), b"")
-        for chunk in chunks:
-            size += len(chunk)
-            if size > int(descriptor["size"]):
-                raise RuntimeError(f"Prepared object is larger than its manifest: {key}")
-            digest.update(chunk)
-    finally:
-        if hasattr(body, "close"):
-            body.close()
+        size = read_r2_into(client, bucket, key, maximum=max(1, int(descriptor["size"])),
+                            reset=reset_digest, write=lambda chunk: digest.update(chunk))
+    except R2BodyError as error:
+        if error.category == "size_invalid":
+            raise RuntimeError(f"Prepared object is larger than its manifest: {key}") from error
+        raise RuntimeError(f"Prepared object content differs from its manifest: {key}") from error
     if size != int(descriptor["size"]) or digest.hexdigest() != descriptor["sha256"]:
         raise RuntimeError(f"Prepared object content differs from its manifest: {key}")
 

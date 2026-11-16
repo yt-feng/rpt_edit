@@ -66,6 +66,7 @@ jobs:
       previous_release: ${{ steps.previous_state.outputs.previous_release }}
       previous_tree: ${{ steps.previous_state.outputs.previous_tree }}
       operation: ${{ steps.operation.outputs.operation }}
+      publication_mode: ${{ steps.operation.outputs.publication_mode }}
       candidate_commit: ${{ steps.static_upload.outputs.commit_sha }}
       multilingual_enabled: ${{ steps.operation.outputs.multilingual_enabled }}
       multilingual_live: ${{ steps.operation.outputs.multilingual_live }}
@@ -91,6 +92,8 @@ jobs:
         env:
           REQUESTED_OPERATION: migrate
           REQUESTED_TRANSLATION_SCOPE: "incremental"
+          REQUESTED_PUBLICATION_MODE: "locales"
+          CATALOG_RECOVERY_RELEASE: ${{ inputs.catalog_recovery_release || '' }}
           PORTAL_MULTILINGUAL_CONFIGURED: "true"
           PORTAL_MULTILINGUAL_LIVE_CONFIGURED: ${{ vars.PORTAL_MULTILINGUAL_LIVE || 'false' }}
           PORTAL_MULTILINGUAL_INDEX_START_DATE: ${{ vars.PORTAL_MULTILINGUAL_INDEX_START_DATE || '' }}
@@ -138,6 +141,22 @@ jobs:
             true|false) multilingual_live="$PORTAL_MULTILINGUAL_LIVE_CONFIGURED" ;;
             *) echo "::error::PORTAL_MULTILINGUAL_LIVE must be true or false"; exit 2 ;;
           esac
+          publication_mode="${REQUESTED_PUBLICATION_MODE:-catalog}"
+          case "$publication_mode" in
+            catalog|locales) ;;
+            *) echo "::error::Publication mode must be catalog or locales"; exit 2 ;;
+          esac
+          # Activation and historical operations retain the full build path.
+          # Separate English/extended handoffs still assemble and approve their
+          # exact candidates after the existing core languages are retained.
+          if [ "$operation" != "migrate" ] \
+            || [ "${REQUESTED_TRANSLATION_SCOPE:-incremental}" != "incremental" ] \
+            || [ "$multilingual_enabled" != "true" ] || [ "$multilingual_live" != "true" ] \
+            || [ -n "${CATALOG_RECOVERY_RELEASE:-}" ]; then
+            publication_mode="full"
+          elif [ "$extended_requested" = "true" ] || [ "$english_requested" = "true" ]; then
+            publication_mode="catalog"
+          fi
           if [ "$multilingual_enabled" = "true" ]; then
             if [ -n "$PORTAL_MULTILINGUAL_INDEX_START_DATE" ]; then
               INDEX_START_DATE="$PORTAL_MULTILINGUAL_INDEX_START_DATE" python3 - <<'PY'
@@ -161,6 +180,7 @@ jobs:
           printf 'PORTAL_MULTILINGUAL_ENABLED=%s\n' "$multilingual_enabled" >> "$GITHUB_ENV"
           printf 'PORTAL_MULTILINGUAL_LIVE=%s\n' "$multilingual_live" >> "$GITHUB_ENV"
           printf 'operation=%s\n' "$operation" >> "$GITHUB_OUTPUT"
+          printf 'publication_mode=%s\n' "$publication_mode" >> "$GITHUB_OUTPUT"
           printf 'commit_sha=%s\n' "$GITHUB_SHA" >> "$GITHUB_OUTPUT"
           printf 'multilingual_enabled=%s\n' "$multilingual_enabled" >> "$GITHUB_OUTPUT"
           printf 'multilingual_live=%s\n' "$multilingual_live" >> "$GITHUB_OUTPUT"
@@ -180,7 +200,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install read-only recovery dependencies
-        run: python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2" "Pillow>=10.1,<12" "requests>=2.31,<3"
+        run: python3 -m pip install --disable-pip-version-check -c requirements-neutral-release-constraints.txt "boto3>=1.34,<2" "Pillow>=10.1,<12" "requests>=2.31,<3"
 
       - name: Validate recovery code and shared release gates
         run: |
@@ -341,7 +361,11 @@ jobs:
 
       - name: Confirm restored locale readiness
         id: locale_build
-        run: echo 'ready=true' >> "$GITHUB_OUTPUT"
+        env:
+          RETAINED_CORE_LOCALES: ${{ steps.static_upload.outputs.retained || 'false' }}
+        run: |
+          echo 'ready=true' >> "$GITHUB_OUTPUT"
+          echo "retained=$RETAINED_CORE_LOCALES" >> "$GITHUB_OUTPUT"
 
       - name: Retain exact Chinese parity report identity
         id: chinese_parity
@@ -439,6 +463,14 @@ jobs:
       - name: Validate multilingual shadow sample plan before upload
         if: steps.release_delta.outputs.changed == 'true' && steps.operation.outputs.multilingual_enabled == 'true' && steps.locale_build.outputs.ready == 'true'
         run: |
+          python3 -B - <<'PY'
+          from pathlib import Path
+          import sys
+          sys.path.insert(0, "scripts")
+          from portal_locale_manifest import load_locale_manifest
+          from audit_portal_shadow_preview import manifest_files
+          manifest_files(load_locale_manifest(Path("_neutral_site/data/i18n/manifest.json")))
+          PY
           python3 -B scripts/audit_portal_shadow_preview.py plan \
             --root _neutral_site \
             --output "$RUNNER_TEMP/shadow-samples.json"
@@ -712,6 +744,7 @@ jobs:
           EXTENDED_READY: ${{ steps.extended_assembly.outputs.ready || 'false' }}
           EXTENDED_LOCALES: ${{ steps.extended_assembly.outputs.locales || '' }}
           ENGLISH_REQUESTED: ${{ steps.english_assembly.outputs.requested || 'false' }}
+          RETAINED_CORE_LOCALES: ${{ steps.locale_build.outputs.retained || 'false' }}
         run: |
           set -euo pipefail
           mkdir -p _release_validation/previous _release_validation/candidate
@@ -759,6 +792,16 @@ jobs:
             python3 -c 'from pathlib import Path; from scripts.portal_locale_manifest import copy_locale_manifest_bundle; copy_locale_manifest_bundle(Path("_neutral_site/data/i18n/manifest.json"), Path("_release_validation/candidate/data/i18n/manifest.json"))'
             install -m 0600 "$RUNNER_TEMP/multilingual-review-identity.json" \
               _release_validation/candidate/multilingual-review-identity.json
+            if [ "$RETAINED_CORE_LOCALES" = "true" ]; then
+              install -m 0600 "$RUNNER_TEMP/locale-retention.json" \
+                _release_validation/candidate/locale-retention.json
+              install -m 0600 "$RUNNER_TEMP/locale-retention-active-manifest.json" \
+                _release_validation/candidate/locale-retention-active-manifest.json
+            fi
+            if [ -s "$RUNNER_TEMP/chinese-locale-source.json" ]; then
+              install -m 0600 "$RUNNER_TEMP/chinese-locale-source.json" \
+                _release_validation/candidate/chinese-locale-source.json
+            fi
             if [ "$EXTENDED_READY" = "true" ]; then
               install -m 0600 _neutral_site/data/extended-locales/assembly.json \
                 _release_validation/candidate/extended-assembly.json
@@ -1061,7 +1104,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install exact English approval readers
-        run: python3 -m pip install --disable-pip-version-check 'boto3>=1.34,<2' 'requests>=2.31,<3'
+        run: python3 -m pip install --disable-pip-version-check -c requirements-neutral-release-constraints.txt 'boto3>=1.34,<2' 'requests>=2.31,<3'
       - uses: actions/download-artifact@v4
         with:
           name: neutral-release-validation-${{ github.run_id }}-${{ github.run_attempt }}
@@ -1319,7 +1362,7 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
         run: |
-          python3 -m pip install --disable-pip-version-check "boto3>=1.34,<2" "requests>=2.31,<3"
+          python3 -m pip install --disable-pip-version-check -c requirements-neutral-release-constraints.txt "boto3>=1.34,<2" "requests>=2.31,<3"
           locale_args=()
           if [ "$PORTAL_MULTILINGUAL_ENABLED" = "true" ]; then
             locale_args+=(--locale-origin "$LIVE_ORIGIN")

@@ -4,11 +4,17 @@
 from __future__ import annotations
 
 import argparse
+import errno
 import hashlib
+from http.client import BadStatusLine, IncompleteRead, RemoteDisconnected
 from html.parser import HTMLParser
 import json
+import math
 from pathlib import Path
 import re
+import socket
+import ssl
+import sys
 import time
 from typing import Any, Callable
 from urllib.error import HTTPError, URLError
@@ -17,7 +23,9 @@ from urllib.request import HTTPRedirectHandler, Request, build_opener
 from xml.etree import ElementTree as ET
 
 from portal_locale_manifest import LocaleManifestError, parse_locale_manifest, validate_translation_resolution
-from verify_portal_locale_routes import RouteVerificationError, verify_locale_routes
+from verify_portal_locale_routes import (
+    GROUP_TOTAL_SECONDS, ROUTE_TOTAL_SECONDS, RouteVerificationError, verify_locale_routes,
+)
 
 
 LOCALES = {"ko": "ltr", "ja": "ltr", "ar": "rtl"}
@@ -55,6 +63,46 @@ MANIFEST_ROW_GROUPS = ("chart_overlays", "hot_report_overlays")
 
 class AuditError(RuntimeError):
     """Raised when the isolated preview does not match its candidate."""
+
+
+class PreviewPropagationError(AuditError):
+    """An unchanged preview contract may need a fresh deployment to propagate."""
+
+
+def transport_failure(error: BaseException) -> tuple[bool, str]:
+    """Classify failures without including server text, URLs or partial bodies."""
+    if isinstance(error, HTTPError):
+        return error.code in {408, 425, 429} or 500 <= error.code <= 599, f"HTTP {error.code}"
+    if isinstance(error, URLError):
+        if isinstance(error.reason, BaseException):
+            return transport_failure(error.reason)
+        return True, "network-error"
+    if isinstance(error, ssl.SSLCertVerificationError):
+        return False, "certificate-verification"
+    if isinstance(error, TimeoutError):
+        return True, "timeout"
+    if isinstance(error, socket.gaierror):
+        return True, "name-resolution"
+    if isinstance(error, IncompleteRead):
+        return True, "incomplete-body"
+    if isinstance(error, RemoteDisconnected):
+        return True, "remote-disconnect"
+    if isinstance(error, ssl.SSLError):
+        return True, "tls-transport"
+    if isinstance(error, BadStatusLine):
+        return True, "invalid-http-status"
+    if isinstance(error, ConnectionError):
+        return True, "connection-error"
+    if isinstance(error, OSError):
+        return error.errno in {
+            errno.ECONNRESET, errno.ECONNABORTED, errno.ECONNREFUSED,
+            errno.EPIPE, errno.ETIMEDOUT, errno.ENETUNREACH, errno.EHOSTUNREACH,
+        }, "network-io-error"
+    if isinstance(error, PreviewPropagationError):
+        return True, str(error)
+    if isinstance(error, AuditError):
+        return False, str(error)
+    return False, type(error).__name__
 
 
 class NoRedirect(HTTPRedirectHandler):
@@ -434,6 +482,7 @@ def fetch(
     timeout: int = 30,
     validate_response: Callable[[bytes, Any], None] | None = None,
     expected_bytes: int | None = None,
+    max_total_time: float | None = None,
 ) -> tuple[bytes, Any, float]:
     validate_preview_path(relative, allow_query=True)
     base = validate_workers_dev_origin(base_url)
@@ -452,41 +501,84 @@ def fetch(
         raise AuditError("Preview retry count is invalid")
     if type(timeout) is not int or not 1 <= timeout <= 30:
         raise AuditError("Preview timeout is invalid")
+    if max_total_time is not None and (
+        type(max_total_time) not in (int, float) or not math.isfinite(max_total_time) or max_total_time <= 0
+    ):
+        raise AuditError("Preview total time budget is invalid")
     maximum = MAX_RESPONSE_BYTES
     if expected_bytes is not None:
         limit = manifest_runtime_size_limit(relative)
         if type(expected_bytes) is not int or not 0 < expected_bytes <= limit:
             raise AuditError(f"Preview manifest byte size exceeds its response bound: {relative}")
         maximum = expected_bytes
-    last_error: BaseException | None = None
+    deadline = time.monotonic() + max_total_time if max_total_time is not None else None
+    diagnostic_path = urlsplit(relative).path
+    last_cause = "time-budget"
+    completed_attempts = 0
     for attempt in range(1, attempts + 1):
         started = time.monotonic()
+        remaining = deadline - started if deadline is not None else timeout
+        if remaining <= 0:
+            break
+        completed_attempts = attempt
         try:
             response = opener.open(
                 Request(target, headers={"Cache-Control": "no-cache", "User-Agent": "Portal-Shadow-Audit/1.0"}),
-                timeout=timeout,
+                timeout=min(timeout, remaining),
             )
             try:
-                body = response.read(maximum + 1)
+                if response.status != 200:
+                    raise HTTPError(target, response.status, "", response.headers, None)
+                if deadline is not None and hasattr(response, "read1"):
+                    # HTTPResponse.read(size) can keep reading indefinitely if
+                    # a slow peer sends a few bytes before each socket timeout.
+                    # read1 performs at most one underlying read, so enforce
+                    # the elapsed budget between bounded chunks as well.
+                    chunks, size = [], 0
+                    while size <= maximum:
+                        if time.monotonic() >= deadline:
+                            raise TimeoutError()
+                        chunk = response.read1(min(1024 * 1024, maximum - size + 1))
+                        if not chunk:
+                            break
+                        chunks.append(chunk)
+                        size += len(chunk)
+                    body = b"".join(chunks)
+                else:
+                    body = response.read(maximum + 1)
             finally:
                 if hasattr(response, "close"):
                     response.close()
             elapsed = time.monotonic() - started
-            if response.status != 200:
-                raise AuditError(f"Preview returned HTTP {response.status}: {relative}")
+            if deadline is not None and time.monotonic() >= deadline:
+                raise TimeoutError()
             if len(body) > maximum:
                 if expected_bytes is not None:
-                    raise AuditError(f"Preview response does not match its manifest (oversized): {relative}")
-                raise AuditError(f"Preview response is oversized: {relative}")
+                    raise AuditError(f"Preview response does not match its manifest (oversized): {diagnostic_path}")
+                raise AuditError(f"Preview response is oversized: {diagnostic_path}")
+            content_length = response.headers.get("Content-Length")
+            if content_length is not None and str(content_length).isdigit() and len(body) != int(content_length):
+                raise IncompleteRead(b"", max(0, int(content_length) - len(body)))
             if validate_response is not None:
                 validate_response(body, response.headers)
             return body, response.headers, elapsed
-        except (HTTPError, URLError, TimeoutError, AuditError) as error:
-            last_error = error
-            if attempt < attempts:
-                time.sleep(2)
-    detail = f"; {last_error}" if isinstance(last_error, AuditError) else ""
-    raise AuditError(f"Preview fetch failed after retries: {relative}{detail}") from last_error
+        except (URLError, OSError, BadStatusLine, IncompleteRead, AuditError) as error:
+            retryable, last_cause = transport_failure(error)
+            if isinstance(error, HTTPError):
+                error.close()
+            if not retryable or attempt == attempts:
+                break
+            delay = min(2 ** attempt, 8)
+            if deadline is not None and deadline - time.monotonic() <= delay:
+                break
+            print(f"Preview retry: {diagnostic_path}; cause={last_cause}; attempt={attempt}/{attempts}", file=sys.stderr, flush=True)
+            time.sleep(delay)
+    # Chained network exceptions can contain URLs or response data. Keep only
+    # the bounded classification in the error exposed to CI logs.
+    raise AuditError(
+        f"Preview fetch failed after retries: {diagnostic_path}; cause={last_cause}; "
+        f"attempts={completed_attempts}/{attempts}"
+    ) from None
 
 
 def require_shadow_header(headers: Any, path: str) -> None:
@@ -517,7 +609,7 @@ def require_shadow_robots(body: bytes, headers: Any) -> None:
             for key in ("Content-Type", "X-Origin-Class", "CF-Cache-Status", "CF-Ray")
         }
         evidence.update(bytes=len(body), sha256=hashlib.sha256(body).hexdigest())
-        raise AuditError(f"{error}; response={json.dumps(evidence, sort_keys=True)}") from error
+        raise PreviewPropagationError(f"{error}; response={json.dumps(evidence, sort_keys=True)}") from error
 
 
 def json_object(body: bytes, label: str) -> dict[str, Any]:
@@ -781,13 +873,21 @@ def audit_preview(
         "milliseconds": round(elapsed * 1000),
     })
 
+    application_deadline = time.monotonic() + GROUP_TOTAL_SECONDS
+
     def fetch_application_route(url: str, timeout: int) -> tuple[int, dict[str, str], bytes]:
         parsed = urlsplit(url)
         if f"{parsed.scheme}://{parsed.netloc}" != base_url:
             raise RouteVerificationError("Application route request escaped the shadow origin")
         relative = parsed.path + (("?" + parsed.query) if parsed.query else "")
         try:
-            body, headers, _elapsed = fetch(opener, base_url, relative, attempts=1, timeout=timeout)
+            remaining = application_deadline - time.monotonic()
+            if remaining <= 0:
+                raise RouteVerificationError("Locale route group time budget exhausted")
+            body, headers, _elapsed = fetch(
+                opener, base_url, relative, attempts=3, timeout=timeout,
+                max_total_time=min(ROUTE_TOTAL_SECONDS, remaining),
+            )
             require_shadow_header(headers, relative)
         except AuditError as error:
             raise RouteVerificationError(str(error)) from error

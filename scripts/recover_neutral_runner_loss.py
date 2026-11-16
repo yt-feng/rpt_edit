@@ -14,6 +14,9 @@ WORKFLOW = '.github/workflows/neutral-edge-cutover.yml'
 UPLOAD_STEP = 'Upload inactive static slot and immutable runtime'
 RUNNER_LOSS = 'The hosted runner lost communication with the server.'
 AUTOMATIC_EVENTS = {'schedule', 'workflow_run', 'repository_dispatch'}
+LOCALE_FOLLOWUP_TITLE = re.compile(r'Neutral edge migrate \(incremental; locales\) \[source ([1-9][0-9]*):([1-9][0-9]*)\]')
+FOLLOWUP_JOB = 'schedule_locale_followup'
+FOLLOWUP_STEP = 'Queue one locale follow-up from the latest published Chinese snapshot'
 ACTIVE = {'queued', 'requested', 'waiting', 'pending', 'in_progress'}
 IDENTITY = ('id', 'run_attempt', 'head_sha', 'head_branch', 'event', 'path', 'workflow_id')
 
@@ -33,7 +36,7 @@ class GitHub:
         require(re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', repository), 'invalid_repository')
         self.repository, self.sleep = repository, sleep
 
-    def api(self, suffix, method='GET'):
+    def api(self, suffix, method='GET', *, raw=False):
         require(method in {'GET', 'POST'} and not suffix.startswith('/'), 'invalid_api_request')
         attempts = 3 if method == 'GET' else 1
         for attempt in range(attempts):
@@ -44,6 +47,8 @@ class GitHub:
                 )
                 if result.returncode == 0:
                     require(len(result.stdout) <= 4 * 1024 * 1024, 'github_response_oversized')
+                    if raw:
+                        return result.stdout.decode('utf-8')
                     return json.loads(result.stdout) if result.stdout.strip() else None
                 status = re.search(r'\bHTTP (\d{3})\b', result.stderr.decode('utf-8', errors='replace'))
                 if status and int(status[1]) not in {408, 429, 500, 502, 503, 504}:
@@ -90,6 +95,57 @@ def execution_started(job):
                 or any(step.get('status') == 'in_progress'
                        or step.get('conclusion') not in (None, 'skipped')
                        for step in job.get('steps') or []))
+
+
+def prove_locale_followup(github, run):
+    """Bind a dispatch title to its successful parent's exact emitted child ID."""
+    marker = LOCALE_FOLLOWUP_TITLE.fullmatch(str(run.get('display_title', '')))
+    require(run.get('event') == 'workflow_dispatch' and marker is not None,
+            'unproven_locale_followup')
+    parent_id, attempt = map(int, marker.groups())
+    require(parent_id < run['id'], 'locale_parent_identity_mismatch')
+    parent = github.api(f'actions/runs/{parent_id}')
+    require(trusted(parent, github.repository) and parent['id'] == parent_id
+            and parent['run_attempt'] == attempt and parent['workflow_id'] == run['workflow_id']
+            and parent.get('status') == 'completed' and parent.get('conclusion') == 'success',
+            'locale_parent_identity_mismatch')
+    rows = jobs_for(github, parent)
+    names = [row.get('name') for row in rows]
+    require(all(names.count(name) == 1 for name in ('prepare_release', 'cutover', FOLLOWUP_JOB)),
+            'locale_parent_jobs_ambiguous')
+    by_name = {row['name']: row for row in rows}
+    require(by_name['prepare_release'].get('conclusion') == 'success'
+            and by_name['prepare_release'].get('status') == 'completed'
+            and execution_started(by_name['prepare_release'])
+            and by_name['cutover'].get('status') == 'completed'
+            and by_name['cutover'].get('conclusion') in {'success', 'skipped'},
+            'locale_parent_catalog_not_accepted')
+    dispatch = by_name[FOLLOWUP_JOB]
+    require(dispatch.get('status') == 'completed' and dispatch.get('conclusion') == 'success'
+            and execution_started(dispatch), 'locale_parent_dispatch_not_successful')
+    steps = [step for step in dispatch.get('steps') or [] if step.get('name') == FOLLOWUP_STEP]
+    require(len(steps) == 1 and steps[0].get('status') == 'completed'
+            and steps[0].get('conclusion') == 'success', 'locale_parent_dispatch_not_successful')
+    logs = github.api(f"actions/jobs/{dispatch['id']}/logs", raw=True)
+    require(isinstance(logs, str), 'locale_parent_dispatch_log_invalid')
+    receipts = []
+    for line in logs.splitlines():
+        # Only exact stdout JSON is evidence; shell source/echo text cannot
+        # satisfy this after stripping the runner's timestamp decoration.
+        line = re.sub(r'^\d{4}-\d\d-\d\dT[^ ]+ +', '', line)
+        if not line.startswith('{') or not line.endswith('}'):
+            continue
+        try:
+            receipt = json.loads(line)
+        except ValueError:
+            continue
+        if (isinstance(receipt, dict) and set(receipt) == {'state', 'run_id', 'source_run_id'}
+            and receipt['state'] in {'accepted', 'already_dispatched'}
+            and type(receipt['run_id']) is int and type(receipt['source_run_id']) is int):
+            receipts.append(receipt)
+    require(receipts and all(row['run_id'] == run['id'] and row['source_run_id'] == parent_id for row in receipts),
+            'locale_parent_dispatch_receipt_mismatch')
+    return parent_id, attempt, dispatch['id']
 
 
 def prove_runner_loss(github, run):
@@ -162,7 +218,9 @@ def superseding_run(github, source):
 
 def recover(github, event_run, *, sleep=time.sleep):
     result = {'status': 'skipped', 'reason': '', 'run_id': event_run.get('id')}
-    if not trusted(event_run, github.repository) or event_run.get('event') not in AUTOMATIC_EVENTS:
+    locale_followup = (event_run.get('event') == 'workflow_dispatch'
+                       and LOCALE_FOLLOWUP_TITLE.fullmatch(str(event_run.get('display_title', ''))) is not None)
+    if not trusted(event_run, github.repository) or event_run.get('event') not in AUTOMATIC_EVENTS and not locale_followup:
         return {**result, 'reason': 'ineligible_source'}
     if event_run.get('run_attempt') != 1:
         return {**result, 'reason': 'automatic_retry_budget_exhausted'}
@@ -170,8 +228,11 @@ def recover(github, event_run, *, sleep=time.sleep):
     try:
         current = github.api(path)
         require(same_run(current, event_run, github.repository), 'source_attempt_changed')
+        require(not locale_followup or current.get('display_title') == event_run.get('display_title'),
+                'locale_followup_marker_changed')
         require(current.get('status') == 'completed' and current.get('conclusion') == 'failure',
                 'source_not_completed_failure')
+        parent_proof = prove_locale_followup(github, current) if locale_followup else None
         job_id = prove_runner_loss(github, current)
         superseded = superseding_run(github, current)
         if superseded is not None:
@@ -182,6 +243,8 @@ def recover(github, event_run, *, sleep=time.sleep):
                 and latest.get('status') == 'completed' and latest.get('conclusion') == 'failure',
                 'source_attempt_changed')
         require(prove_runner_loss(github, latest) == job_id, 'preparation_job_changed')
+        if locale_followup:
+            require(prove_locale_followup(github, latest) == parent_proof, 'locale_parent_proof_changed')
         superseded = superseding_run(github, latest)
         if superseded is not None:
             return {**result, 'reason': 'newer_refresh_supersedes', 'superseding_run_id': superseded}

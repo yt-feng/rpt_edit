@@ -45,7 +45,7 @@ jobs:
 
       - name: Check recurring locale refresh failures before merge
         run: |
-          python3 -m pip install --upgrade --disable-pip-version-check "requests>=2.31,<3" "Pillow>=10.1,<12" "boto3>=1.34,<2"
+          python3 -m pip install --upgrade --disable-pip-version-check -c requirements-neutral-release-constraints.txt "requests>=2.31,<3" "Pillow>=10.1,<12" "boto3>=1.34,<2"
           python3 -B scripts/test_r2_transport.py
           python3 -B scripts/test_portal_extended_r2.py
           python3 -B scripts/test_portal_extended_r2_sdk.py
@@ -76,6 +76,9 @@ jobs:
           python3 -B scripts/test_deepl_locale_repair.py
           python3 -B scripts/test_translate_portal_titles.py
           python3 -B scripts/test_restore_published_catalog.py
+          python3 -B scripts/test_retain_published_core_locales.py
+          python3 -B scripts/test_restore_published_chinese_source.py
+          python3 -B scripts/test_dispatch_neutral_locale_followup.py
           python3 -B scripts/test_portal_discovery_quality.py
 
       - name: Check authenticated external report delivery before merge

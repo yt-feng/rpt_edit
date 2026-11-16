@@ -1,0 +1,7 @@
+# Release transport versions verified together by the real SDK, streaming,
+# publisher, prepared-slot and recovery regression suites. Update in a reviewed
+# change with those checks; a scheduled release must not implicitly upgrade SDKs.
+boto3==1.44.3
+botocore==1.44.3
+s3transfer==0.19.3
+urllib3==2.8.0
