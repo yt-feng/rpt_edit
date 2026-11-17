@@ -1,12 +1,53 @@
 # WeChat generation and recovery
 
-Last reviewed: 2026-10-12.
+Last reviewed: 2026-11-17.
 
 The source fetch, WeChat draft creation, and public website release are separate
 stages. A successful upload must include a successful `draft/get` readback of
 the expected article count, titles, and editorial footer. Draft creation does
 not submit an article for publication unless the existing `publish` input is
 explicitly enabled.
+
+## Daily scheduling and progressive drafts (2026-11-17)
+
+The independent `portal-daily-source-clock` Worker checks the existing metadata
+wakeup workflow every half hour. It does not generate articles itself. It shares
+an R2 conditional-write receipt with the Portal Worker fallback, checks active
+and recently completed wakeups first, and reconciles uncertain dispatches before
+trying again. Deploy it using `daily-source-clock-deploy.yml`; it has a separate
+queue from website and language releases. A configured cron is not evidence that
+a particular source batch ran: inspect the resulting wakeup and Daily run.
+
+For new Daily draft runs, the full PDF manifest and resolved publishing options
+are frozen before any upload. Grouping uses the whole day's selected count and
+an eight-article maximum. Three accounts normally receive three balanced groups
+each. Sixty sources become twenty per account in groups of 7, 7 and 6. Eighty
+sources need ten groups, allocated 4, 3 and 3 across accounts: 32, 24 and 24
+articles, with eight in each group. Previously frozen groups and durable account
+assignments remain authoritative during recovery.
+
+Each generated report can publish its source-bound private ready archive after
+the existing image, editorial-binding and content checks. Short publisher runs
+scan all ready sources and upload a fixed group as soon as its members are ready;
+PDF processing and the remaining Zhihu/translation work continue independently.
+The draft box shows completed groups. No placeholder drafts or automatic
+deletion/regrouping of user-edited drafts are used.
+
+Early, final and recovered publishers share a per-producer job lock and R2 lease.
+Before draft creation they save the exact prepared article payload, figure and
+policy evidence. Accepted IDs and uncertain submission intents survive process
+failure; resumed generation must not change their submission identity. Verified
+drafts are read back by identity while preserving subsequent human edits. Final
+completion still requires the entire configured selection, including evidenced
+policy exclusions, and the existing downstream delivery gates.
+
+The current default draft cooldown is 90 seconds. An account's first submission
+keeps that wait; subsequent publisher invocations reuse the persisted attempt
+and acceptance times and wait only the remaining interval. Image, article and
+readback pacing remain enabled. The complete receipt retains source evidence so
+late retries do not depend on a self-hosted runner's leftover files or a cleaned
+transient source handoff. Producers without a frozen progressive configuration
+keep their original delivery path; do not dispatch a second uploader for them.
 
 ## Source selection and shared consumers
 
