@@ -27,11 +27,16 @@ class ReadOnlyApi:
 
 
 class ReadOnlyR2:
-    def __init__(self, value=None, error=None):
+    def __init__(self, value=None, error=None, heartbeat=None):
         self.error, self.calls = error, []
+        self.heartbeat = heartbeat
         self.body = io.BytesIO(json.dumps(value).encode() if not isinstance(value, bytes) else value)
     def get_object(self, **kwargs):
         self.calls.append(kwargs)
+        if kwargs['Key'] == clock.CHECK_KEY:
+            if self.heartbeat is None:
+                raise Missing('NoSuchKey')
+            return {'Body': io.BytesIO(json.dumps(self.heartbeat).encode())}
         if self.error:
             raise self.error
         return {'Body': self.body}
@@ -46,7 +51,8 @@ class ClockInspectionTests(unittest.TestCase):
         api = api or ReadOnlyApi([clock.HALF_HOURLY])
         result = clock.inspect_clock(lambda: api, lambda: client, lambda: 'private-test-bucket')
         self.assertEqual(api.calls, 1)
-        self.assertEqual(client.calls, [{'Bucket': 'private-test-bucket', 'Key': clock.RECEIPT_KEY}])
+        self.assertEqual(client.calls, [{'Bucket': 'private-test-bucket', 'Key': key}
+                                       for key in (clock.RECEIPT_KEY, clock.CHECK_KEY)])
         return result
 
     def test_observed_receipt_has_only_typed_fields_and_reads_no_other_object(self):
@@ -55,7 +61,7 @@ class ClockInspectionTests(unittest.TestCase):
         result = self.inspect(client)
         self.assertEqual(result, {'inspection_state': 'read_only', 'schedule_state': 'half_hourly_verified',
             'receipt_state': 'observed', 'requested_at': '2026-11-17T02:30:00.125Z',
-            'previous_dispatch_run_id': 123, 'run_id': 456})
+            'previous_dispatch_run_id': 123, 'run_id': 456, 'clock_check_state': 'not_observed'})
         self.assertTrue(client.body.closed)
         self.assertNotIn('private', json.dumps(result))
 
@@ -68,7 +74,7 @@ class ClockInspectionTests(unittest.TestCase):
         for error in (Missing('AccessDenied'), Missing('NoSuchBucket'), RuntimeError('private-token')):
             result = self.inspect(ReadOnlyR2(error=error), ReadOnlyApi(error=RuntimeError('private-api-body')))
             self.assertEqual(result, {'inspection_state': 'read_only', 'schedule_state': 'unavailable',
-                                      'receipt_state': 'unavailable'})
+                                      'receipt_state': 'unavailable', 'clock_check_state': 'not_observed'})
 
     def test_unconfirmed_post_states_do_not_claim_a_workflow_run_was_observed(self):
         for state in ('dispatching', 'accepted', 'unknown', 'rejected'):
@@ -97,10 +103,30 @@ class ClockInspectionTests(unittest.TestCase):
         for receipt_state, expected_code in (('not_observed', 0), ('invalid', 1), ('unavailable', 1)):
             output = io.StringIO()
             result = {'inspection_state': 'read_only', 'schedule_state': 'half_hourly_verified',
-                      'receipt_state': receipt_state}
+                      'receipt_state': receipt_state, 'clock_check_state': 'not_observed'}
             with patch.object(clock, 'inspect_clock', return_value=result), contextlib.redirect_stdout(output):
                 self.assertEqual(clock.main(), expected_code)
             self.assertEqual(json.loads(output.getvalue()), result)
+
+    def test_natural_tick_that_skips_dispatch_is_independently_observable(self):
+        for state in ('wake_recent', 'wake_active', 'inspection_unavailable', 'dispatch_cooldown'):
+            check = {'state': state, 'checked_at': '2026-11-17T02:00:00.125Z', 'run_id': 789,
+                     'secret': 'private-token'}
+            result = self.inspect(ReadOnlyR2(error=Missing('NoSuchKey'), heartbeat=check))
+            self.assertEqual(result['receipt_state'], 'not_observed')
+            self.assertEqual(result['clock_check_state'], state)
+            self.assertEqual(result['clock_checked_at'], check['checked_at'])
+            self.assertEqual(result['clock_run_id'], 789)
+            self.assertNotIn('private-token', json.dumps(result))
+
+    def test_heartbeat_invalid_fields_do_not_become_log_content(self):
+        good = {'state': 'wake_recent', 'checked_at': '2026-11-17T02:00:00Z', 'run_id': 789}
+        for changes in ({'state': 'private-token'}, {'checked_at': 'private-time'},
+                        {'checked_at': '2026-13-17T02:00:00Z'}, {'run_id': True}, {'run_id': -1}, {'run_id': None}):
+            result = self.inspect(ReadOnlyR2(self.receipt(), heartbeat={**good, **changes}))
+            self.assertEqual(result['clock_check_state'], 'invalid')
+            self.assertNotIn('clock_checked_at', result)
+            self.assertNotIn('clock_run_id', result)
 
     def test_workflow_inspection_cannot_reach_deployment_or_github_dispatch(self):
         path = Path(__file__).resolve().parents[1] / '.github/workflows/daily-source-clock-deploy.yml'

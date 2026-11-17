@@ -403,7 +403,10 @@ To read the independent Cloudflare clock's existing schedule and shared automati
 wake receipt without deploying or triggering source generation, run
 `gh workflow run daily-source-clock-deploy.yml --ref main -f inspect_only=true`;
 `not_observed` means no receipt exists yet, while `observed` includes the wake run
-ID and request time. This inspection does not itself confirm Daily delivery.
+ID and request time. The separate `clock_check_state` and `clock_checked_at`
+show the independent clock's most recent natural tick, including `wake_recent`
+or `wake_active` when no new dispatch was needed. Its heartbeat cannot release
+the shared dispatch lease. This inspection does not itself confirm Daily delivery.
 
 After dispatching Market Views, the Daily parent waits on the accepted child ID
 through authenticated GET requests. Brief 404 visibility gaps and temporary

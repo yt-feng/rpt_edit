@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { wakeDailyReportSource, DAILY_SOURCE_WAKEUP_STATE_KEY } from "../../workers/portal-suite-worker/src/daily-source-wakeup.js";
 import worker from "../../workers/portal-suite-worker/src/index.js";
-import independentClock from "../../workers/daily-source-wakeup/src/index.js";
+import independentClock, { DAILY_SOURCE_CLOCK_CHECK_KEY } from "../../workers/daily-source-wakeup/src/index.js";
 
 const NOW = Date.parse("2026-11-17T01:00:00Z");
 const HOUR = 60 * 60 * 1000;
@@ -223,4 +223,45 @@ test("isolated clock uses the same receipt and deduplication without a public HT
   assert.equal(f.bucket.read().state, "accepted");
   assert.equal((await f.invoke()).state, "dispatch_cooldown");
   assert.equal(independentClock.fetch, undefined);
+  assert.deepEqual(JSON.parse(f.bucket.rows.get(DAILY_SOURCE_CLOCK_CHECK_KEY).value), {
+    state: "accepted", checked_at: new Date(NOW).toISOString(),
+  });
+});
+
+test("isolated natural ticks record successful skips and failed reads without dispatching", async (t) => {
+  t.mock.method(Date, "now", () => NOW);
+  for (const [options, state, runId] of [
+    [{ runs: [run({ created_at: new Date(NOW).toISOString() })] }, "wake_recent", 42],
+    [{ runs: [run({ status: "in_progress" })] }, "wake_active", 42],
+    [{ failRead: 503 }, "inspection_unavailable", undefined],
+  ]) {
+    const f = fixture(options);
+    const fetchMock = t.mock.method(globalThis, "fetch", (url, init) => f.deps.fetchWithTimeout(String(url), init));
+    const pending = [];
+    await independentClock.scheduled({ cron: "*/30 * * * *" }, f.env, { waitUntil(promise) { pending.push(promise); } });
+    await Promise.all(pending);
+    const check = JSON.parse(f.bucket.rows.get(DAILY_SOURCE_CLOCK_CHECK_KEY).value);
+    assert.deepEqual(check, { state, checked_at: new Date(NOW).toISOString(), ...(runId ? { run_id: runId } : {}) });
+    assert.equal(f.posts().length, 0);
+    assert.equal(f.bucket.rows.has(DAILY_SOURCE_WAKEUP_STATE_KEY), false);
+    fetchMock.mock.restore();
+  }
+});
+
+test("heartbeat write failure cannot change the dispatch receipt or issue another POST", async (t) => {
+  const f = fixture();
+  t.mock.method(Date, "now", () => NOW);
+  t.mock.method(globalThis, "fetch", (url, init) => f.deps.fetchWithTimeout(String(url), init));
+  const write = f.bucket.put.bind(f.bucket);
+  f.bucket.put = async (key, ...args) => {
+    if (key === DAILY_SOURCE_CLOCK_CHECK_KEY) throw new Error("private storage error");
+    return write(key, ...args);
+  };
+  const pending = [];
+  await independentClock.scheduled({ cron: "*/30 * * * *" }, f.env, { waitUntil(promise) { pending.push(promise); } });
+  await Promise.all(pending);
+  assert.equal(f.posts().length, 1);
+  assert.equal(f.bucket.read().state, "accepted");
+  assert.equal((await f.invoke()).state, "dispatch_cooldown");
+  assert.equal(f.posts().length, 1);
 });
