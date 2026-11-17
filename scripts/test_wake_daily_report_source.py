@@ -34,7 +34,8 @@ class GitHub:
         if '/runs?' in path:
             status = parse_qs(urlsplit(path).query).get('status', [None])[0]
             rows = [row for row in self.rows if not status or row['status'] == status]
-            return {'total_count': len(rows), 'workflow_runs': copy.deepcopy(rows)}
+            page = int(parse_qs(urlsplit(path).query).get('page', ['1'])[0])
+            return {'total_count': len(rows), 'workflow_runs': copy.deepcopy(rows[(page-1)*100:page*100])}
         identity = int(path.split('/')[2])
         if '/artifacts?' in path:
             rows = self.artifacts.get(identity, [])
@@ -221,6 +222,80 @@ class WakeTests(unittest.TestCase):
         github.rows[0]['head_repository']['full_name'] = 'foreign/repo'
         with self.assertRaisesRegex(ValueError, 'daily_run_identity_invalid'):
             self.wake(github)
+
+    def test_trusted_active_candidate_stops_even_when_total_count_is_inconsistent(self):
+        for total in (0, 2, 101, 1001):
+            github = GitHub([run(43991573918, status='in_progress')])
+            with self.subTest(total=total), patch.object(github, 'api', return_value={'total_count': total, 'workflow_runs': github.rows}) as api, patch.object(wakeup, 'read_source', side_effect=AssertionError('Dropbox must not be read')):
+                self.assertEqual(self.wake(github), {'state': 'daily_active', 'run_id': 43991573918})
+                api.assert_called_once()
+
+    def test_active_status_transition_still_blocks_and_completed_transition_retries(self):
+        github = GitHub()
+        with patch.object(github, 'api', return_value={'total_count': 1, 'workflow_runs': [run(status='queued')]}) as api:
+            self.assertEqual(self.wake(github)['state'], 'daily_active')
+            api.assert_called_once()
+        with patch.object(github, 'api', side_effect=[{'total_count': 1, 'workflow_runs': [run()]}, {'total_count': 1, 'workflow_runs': [run(status='in_progress')]}]) as api:
+            self.assertEqual(self.wake(github)['state'], 'daily_active')
+            self.assertEqual(api.call_count, 2)
+
+    def test_empty_active_page_with_nonzero_total_is_retried_not_treated_as_absent(self):
+        github = GitHub()
+        with patch.object(github, 'api', side_effect=[{'total_count': 1, 'workflow_runs': []}, {'total_count': 1, 'workflow_runs': [run(status='in_progress')]}]) as api:
+            self.assertEqual(self.wake(github)['state'], 'daily_active')
+            self.assertEqual(api.call_count, 2)
+        with patch.object(github, 'api', return_value={'total_count': 1, 'workflow_runs': []}) as api:
+            with self.assertRaisesRegex(ValueError, 'daily_run_inventory_incomplete'):
+                self.wake(github)
+            self.assertEqual(api.call_count, 3)
+
+    def test_recent_run_inventory_spans_pages_and_finds_previously_attempted_batch(self):
+        github = GitHub([run(index, day='261108') for index in range(1, 102)] + [run(102)])
+        self.assertEqual(self.wake(github), {'state': 'batch_already_attempted', 'date_folder': DAY, 'run_id': 102})
+        recent_calls = [path for path in github.calls if 'created=' in path]
+        self.assertEqual(len(recent_calls), 2)
+        self.assertIn('page=2', recent_calls[1])
+
+    def test_recent_count_drift_and_duplicate_pages_restart_before_authorizing_absence(self):
+        for corruption in ('count', 'duplicate', 'short'):
+            github = GitHub([run(index) for index in range(1, 103)])
+            original = github.api
+            changed = [False]
+            def request(path):
+                result = original(path)
+                if 'page=2' in path and not changed[0]:
+                    changed[0] = True
+                    if corruption == 'count': result['total_count'] += 1
+                    if corruption == 'duplicate': result['workflow_runs'][0] = run(1)
+                    if corruption == 'short': result['workflow_runs'].pop()
+                return result
+            with self.subTest(corruption=corruption), patch.object(github, 'api', side_effect=request):
+                result = wakeup.runs(github, since='2026-11-07T00:00:00Z', sleep=lambda _: None)
+            self.assertEqual(len(result), 102)
+            self.assertEqual(len(github.calls), 4)
+            self.assertIn('page=1', github.calls[2])
+
+    def test_persistent_recent_inventory_incompleteness_never_dispatches(self):
+        github = GitHub([run(index, day='261108') for index in range(1, 103)])
+        original = github.api
+        def request(path):
+            result = original(path)
+            if 'created=' in path and 'page=2' in path:
+                result['workflow_runs'][0] = run(1)
+            return result
+        with patch.object(github, 'api', side_effect=request), self.assertRaisesRegex(ValueError, 'daily_run_inventory_incomplete'):
+            self.wake(github)
+        self.assertEqual(sum('created=' in path for path in github.calls), 6)
+
+    def test_active_shortcut_retains_repository_workflow_and_status_validation(self):
+        for mutation, reason in (({'path': '.github/workflows/foreign.yml'}, 'identity'),
+                                 ({'head_repository': {'full_name': 'foreign/repo'}}, 'identity'),
+                                 ({'status': 'unrecognized'}, 'status')):
+            github = GitHub()
+            candidate = {**run(status='in_progress'), **mutation}
+            with self.subTest(mutation=mutation), patch.object(github, 'api', return_value={'total_count': 1001, 'workflow_runs': [candidate]}):
+                with self.assertRaisesRegex(ValueError, 'daily_run_' + reason + '_invalid'):
+                    self.wake(github)
 
 
 class SourceTests(unittest.TestCase):
