@@ -132,13 +132,15 @@ def jobs(repository, run_id, attempt=None):
     return {'total_count': total, 'jobs': rows}
 
 
-def validate_original(run, attempts, config, repository, current_run_id):
+def validate_original(run, attempts, config, repository, current_run_id, *, progressive_plan=None):
     require(isinstance(run, dict) and str(run.get('id')) == config['SOURCE_RUN_ID']
             and run.get('path') == DAILY and run.get('head_branch') == 'main'
             and run.get('event') in {'schedule', 'workflow_dispatch'}
             and run.get('repository', {}).get('full_name') == repository
             and run.get('head_repository', {}).get('full_name') == repository
             and re.fullmatch(r'[a-f0-9]{40}', str(run.get('head_sha', ''))), 'original_daily_identity_invalid')
+    if progressive_plan is not None:
+        require_progressive_identity(progressive_plan, config, run['head_sha'])
     current = current_run_id == config['SOURCE_RUN_ID']
     require(run.get('status') == 'completed' or (current and run.get('status') == 'in_progress'),
             'original_daily_not_complete')
@@ -159,6 +161,14 @@ def validate_original(run, attempts, config, repository, current_run_id):
                 require(len(found) <= 1 and (not found or found[0].get('conclusion') == 'skipped'
                         or found[0].get('status') in {'queued', 'waiting', 'pending'}),
                         'original_upload_already_started')
+            elif (name == 'push-xhs-notes-wechat-drafts' and progressive_plan is not None
+                    and len(found) == 1 and found[0].get('status') == 'completed'
+                    and found[0].get('conclusion') in {'failure', 'cancelled'}
+                    and progressive_publisher_started(found[0])):
+                # A fixed source/group plan and its durable submission intents
+                # allow recovery to continue a stopped progressive publisher.
+                # An active or successful publisher is never taken over here.
+                continue
             else:
                 require(len(found) == 1 and found[0].get('conclusion') == 'skipped',
                         'original_upload_not_proven_skipped')
@@ -167,7 +177,40 @@ def validate_original(run, attempts, config, repository, current_run_id):
     return run['head_sha']
 
 
-def authenticated_context(config, env):
+def progressive_publisher_started(job):
+    steps = [step for step in job.get('steps', [])
+             if step.get('name') == 'Initialize progressive WeChat delivery plan']
+    return len(steps) == 1 and steps[0].get('status') == 'completed' and steps[0].get('conclusion') == 'success'
+
+
+def require_progressive_identity(plan, config, original_sha):
+    require(isinstance(plan, dict) and plan.get('schema_version') == 1
+            and plan.get('source_run_id') == config['SOURCE_RUN_ID']
+            and plan.get('source_execution_sha') == original_sha
+            and plan.get('date_folder') == config['DATE_FOLDER']
+            and isinstance(plan.get('sources'), list)
+            and len(plan['sources']) == config['EXPECTED_ARTICLES']
+            and SHA.fullmatch(str(plan.get('plan_sha256', ''))),
+            'progressive_original_identity_invalid')
+
+
+def optional_progressive_plan(client, bucket, config, original_sha):
+    key = (f"_private-workflow-handoff/daily-wechat-progressive/{config['SOURCE_RUN_ID']}/"
+           f"{config['DATE_FOLDER']}/plan.json")
+    try:
+        client.head_object(Bucket=bucket, Key=key)
+    except Exception as error:
+        code = str(getattr(error, 'response', {}).get('Error', {}).get('Code', ''))
+        if code in {'404', 'NoSuchKey', 'NotFound'}:
+            return None
+        raise DeliveryError('progressive_plan_unavailable') from None
+    from progressive_wechat_delivery import load_plan
+    plan = load_plan(client, bucket, config['SOURCE_RUN_ID'], config['DATE_FOLDER'], original_sha)
+    require(plan is not None, 'progressive_plan_unavailable')
+    return plan
+
+
+def authenticated_context(config, env, *, client=None, bucket=None, progressive=None):
     from market_views_publication import OCR_CACHE_RECOVERY_WORKFLOW
     repository = env.get('GITHUB_REPOSITORY', '')
     workflow_ref = env.get('GITHUB_WORKFLOW_REF', '')
@@ -178,9 +221,26 @@ def authenticated_context(config, env):
     original = api(repository, config['SOURCE_RUN_ID'])
     attempts = original.get('run_attempt')
     require(type(attempts) is int and 1 <= attempts <= 10, 'original_attempt_inventory_invalid')
-    original_sha = validate_original(original,
-        [jobs(repository, config['SOURCE_RUN_ID'], attempt) for attempt in range(1, attempts + 1)],
-        config, repository, env.get('GITHUB_RUN_ID', ''))
+    original_jobs = [jobs(repository, config['SOURCE_RUN_ID'], attempt)
+                     for attempt in range(1, attempts + 1)]
+    # Authenticate repository/run metadata before consulting any optional state.
+    # A skipped final upload can still have earlier short progressive publishers.
+    # Always inspect their fixed private namespace when R2 is available.
+    try:
+        original_sha = validate_original(original, original_jobs, config, repository, env.get('GITHUB_RUN_ID', ''))
+    except DeliveryError as error:
+        if str(error) != 'original_upload_not_proven_skipped' or client is None or progressive is None:
+            raise
+        plan = optional_progressive_plan(client, bucket, config, original['head_sha'])
+        require(plan is not None, 'original_upload_not_proven_skipped')
+        original_sha = validate_original(original, original_jobs, config, repository,
+                                         env.get('GITHUB_RUN_ID', ''), progressive_plan=plan)
+    else:
+        plan = optional_progressive_plan(client, bucket, config, original_sha) if client is not None else None
+    if plan is not None:
+        require_progressive_identity(plan, config, original_sha)
+        require(progressive is not None, 'progressive_delivery_state_required')
+        progressive.update(plan)
     handoff = original if config['SOURCE_HANDOFF_RUN_ID'] == config['SOURCE_RUN_ID'] else api(repository, config['SOURCE_HANDOFF_RUN_ID'])
     require(str(handoff.get('id')) == config['SOURCE_HANDOFF_RUN_ID']
             and handoff.get('repository', {}).get('full_name') == repository
@@ -248,7 +308,8 @@ def validate_source(root, config, original_sha, handoff_sha):
 
 def prepare(workspace, config, env, client, bucket):
     from private_workflow_handoff import download_directory
-    original_sha, handoff_sha = authenticated_context(config, env)
+    progressive = {}
+    original_sha, handoff_sha = authenticated_context(config, env, client=client, bucket=bucket, progressive=progressive)
     source = workspace / 'source'
     # The exact producer workflow and successful gates were authenticated above.
     prefix = PREFIXES[config['SOURCE_KIND']]
@@ -259,6 +320,9 @@ def prepare(workspace, config, env, client, bucket):
     download_directory(f"_private-workflow-handoff/{prefix}/{config['SOURCE_HANDOFF_RUN_ID']}/{config['DATE_FOLDER']}/shard_0.tar.gz",
                        source, client=client, bucket=bucket)
     context = validate_source(source, config, original_sha, handoff_sha)
+    if progressive:
+        require(progressive['manifest_sha256'] == context['manifest_sha256'], 'progressive_manifest_changed')
+        context['progressive_plan_sha256'] = progressive['plan_sha256']
     claim_original(context, client, bucket)
     write_json(workspace / 'context.json', context)
     checkpoint = workspace / 'checkpoint'
@@ -275,6 +339,8 @@ def prepare(workspace, config, env, client, bucket):
             authorize(checkpoint,context,generation_head)
     else:
         write_json(checkpoint / 'context.json', context)
+    if progressive:
+        write_json(checkpoint / 'progressive_plan.json', progressive)
     (checkpoint / 'articles').mkdir(parents=True, exist_ok=True)
     return context
 
@@ -331,7 +397,8 @@ def delivery_identity(context, article_root):
 def restore_delivery(workspace, config, env, client, bucket):
     # Reauthenticate the run, but use the exact package already checked by the
     # generation job; no private source contents are exposed through outputs.
-    original_sha, handoff_sha = authenticated_context(config, env)
+    progressive = {}
+    original_sha, handoff_sha = authenticated_context(config, env, client=client, bucket=bucket, progressive=progressive)
     manifest_sha = env.get('DELIVERY_MANIFEST_SHA256', '')
     require(SHA.fullmatch(manifest_sha), 'delivery_manifest_hash_invalid')
     prefix = f"_private-workflow-handoff/xhs-recovery/{config['SOURCE_RUN_ID']}/{config['DATE_FOLDER']}/{manifest_sha}"
@@ -345,6 +412,13 @@ def restore_delivery(workspace, config, env, client, bucket):
             and context['source_kind'] == config['SOURCE_KIND'] and context['date_folder'] == config['DATE_FOLDER']
             and context['expected_articles'] == config['EXPECTED_ARTICLES'] and context['manifest_sha256'] == manifest_sha,
             'delivery_context_changed')
+    if progressive:
+        require(context.get('progressive_plan_sha256') == progressive['plan_sha256']
+                and context['manifest_sha256'] == progressive['manifest_sha256']
+                and read_json(checkpoint / 'progressive_plan.json') == progressive,
+                'progressive_delivery_plan_changed')
+    else:
+        require('progressive_plan_sha256' not in context, 'progressive_delivery_plan_missing')
     write_json(workspace / 'context.json', context)
     claim_original(context, client, bucket)
     article_receipt(workspace, context)
@@ -426,6 +500,8 @@ def save_private_logs(workspace, destination):
 
 def validate_delivery(workspace):
     context = state(workspace)
+    if context.get('progressive_plan_sha256'):
+        return validate_progressive_recovery(workspace, context)
     receipt = article_receipt(workspace, context)
     root = receipt_root(workspace, context)
     summary = read_json(root / 'wechat_draft_summary.json')
@@ -551,6 +627,35 @@ def validate_delivery(workspace):
     return result
 
 
+def progressive_plan_for_context(workspace, context):
+    from progressive_wechat_delivery import validate_plan
+    plan = read_json(workspace / 'checkpoint' / 'progressive_plan.json')
+    validate_plan(plan)
+    require(plan['plan_sha256'] == context.get('progressive_plan_sha256')
+            and plan['source_run_id'] == context['source_run_id']
+            and plan['source_execution_sha'] == context['source_execution_sha']
+            and plan['date_folder'] == context['date_folder']
+            and plan['manifest_sha256'] == context['manifest_sha256'],
+            'progressive_delivery_plan_changed')
+    return plan
+
+
+def validate_progressive_recovery(workspace, context):
+    from progressive_wechat_delivery import validate_recovery_delivery
+    article_receipt(workspace, context)
+    plan = progressive_plan_for_context(workspace, context)
+    result = validate_recovery_delivery(plan, workspace / 'checkpoint' / 'articles', receipt_root(workspace, context))
+    require(result.get('ok') is True and result.get('delivery_complete') is True
+            and result.get('source_report_count') == context['expected_articles']
+            and result.get('figure_verification_complete') is True,
+            'progressive_wechat_delivery_incomplete')
+    result.update(schema_version=1, complete=True, source_run_id=context['source_run_id'],
+                  date_folder=context['date_folder'], progressive_plan_sha256=plan['plan_sha256'],
+                  article_receipt_sha256=digest((workspace / 'checkpoint' / 'articles' / ARTICLE_RECEIPT).read_bytes()))
+    write_json(workspace / 'wechat_delivery_receipt.json', result)
+    return result
+
+
 def canonical_policy_record(record):
     """Compare the complete recomputed policy evidence across runner paths."""
     require(isinstance(record, dict) and isinstance(record.get('report_dir'), str)
@@ -622,6 +727,12 @@ def upload_wechat(workspace, client, bucket):
     import push_xhs_notes_to_wechat_drafts as uploader
     context = state(workspace)
     article_receipt(workspace, context)
+    if context.get('progressive_plan_sha256'):
+        from progressive_wechat_delivery import resume_from_recovery
+        plan = progressive_plan_for_context(workspace, context)
+        resume_from_recovery(plan, workspace / 'checkpoint' / 'articles', receipt_root(workspace, context),
+                             workspace, client, bucket)
+        return validate_progressive_recovery(workspace, context)
     original_checkpoint = uploader.checkpoint_wechat_drafts
     prefix = context_prefix(context)
 

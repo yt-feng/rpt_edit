@@ -72,6 +72,86 @@ def context():
             'source_receipt_sha256': 'c' * 64, 'manifest_sha256': 'd' * 64}
 
 
+class ProgressiveRecoveryBridgeTests(unittest.TestCase):
+    def setUp(self):
+        import progressive_wechat_delivery as progressive
+        self.progressive = progressive
+        self.temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temporary.cleanup)
+        self.workspace = Path(self.temporary.name)
+        self.context = context()
+        sources, groups = [], []
+        for index in range(2):
+            source_pdf = f'source-{index}.pdf'
+            sha = str(index + 1) * 64
+            source = {'source_id': progressive.digest((source_pdf + '\0' + sha).encode()),
+                      'source_pdf': source_pdf, 'content_sha256': sha, 'selected': True, 'account': None,
+                      'staged_name': source_pdf, 'report_relative': f'shard_0/source-{index}'}
+            sources.append(source)
+            group = {'account': None, 'source_ids': [source['source_id']]}
+            groups.append({**group, 'group_id': progressive.digest(progressive.encoded(group))})
+        self.plan = {'schema_version': 1, 'source_run_id': self.context['source_run_id'],
+                     'source_execution_sha': self.context['source_execution_sha'],
+                     'date_folder': self.context['date_folder'], 'manifest_sha256': self.context['manifest_sha256'],
+                     'articles_per_draft': 3, 'reports_per_shard': 5, 'selection_limit': 2,
+                     'sources': sources, 'groups': groups}
+        self.plan['plan_sha256'] = progressive.digest(progressive.encoded(self.plan))
+        self.context['progressive_plan_sha256'] = self.plan['plan_sha256']
+        delivery.write_json(self.workspace / 'context.json', self.context)
+        delivery.write_json(self.workspace / 'checkpoint/progressive_plan.json', self.plan)
+        delivery.write_json(self.workspace / 'checkpoint/articles' / delivery.ARTICLE_RECEIPT, {})
+
+    def test_partial_primary_transfer_uses_shared_group_receipts_instead_of_legacy_upload(self):
+        import push_xhs_notes_to_wechat_drafts as uploader
+        result = {'ok': True, 'delivery_complete': True, 'article_count': 2, 'draft_count': 2,
+                  'source_report_count': 2, 'figure_verification_complete': True,
+                  'editorial_changes_preserved': True}
+        with patch.object(delivery, 'article_receipt'), \
+             patch.object(self.progressive, 'resume_from_recovery', return_value=result) as resume, \
+             patch.object(self.progressive, 'validate_recovery_delivery', return_value=dict(result)), \
+             patch.object(uploader, 'main') as legacy:
+            accepted = delivery.upload_wechat(self.workspace, Store(), 'private')
+        legacy.assert_not_called()
+        resume.assert_called_once()
+        self.assertEqual(resume.call_args.args[0], self.plan)
+        self.assertEqual(resume.call_args.args[1], self.workspace / 'checkpoint/articles')
+        self.assertTrue(accepted['complete'])
+        self.assertTrue(accepted['editorial_changes_preserved'])
+        self.assertEqual(accepted['source_run_id'], self.context['source_run_id'])
+        self.assertEqual(accepted['progressive_plan_sha256'], self.plan['plan_sha256'])
+
+    def test_recovery_sources_must_match_the_plan_before_claiming_or_generating(self):
+        changed = copy.deepcopy(self.plan)
+        changed['manifest_sha256'] = 'f' * 64
+        def authenticate(config_value, env, *, progressive, **kwargs):
+            progressive.update(changed)
+            return 'a' * 40, 'b' * 40
+        with patch.object(delivery, 'authenticated_context', side_effect=authenticate), \
+             patch('private_workflow_handoff.download_directory'), \
+             patch.object(delivery, 'validate_source', return_value=context()), \
+             patch.object(delivery, 'claim_original') as claim:
+            with self.assertRaisesRegex(delivery.DeliveryError, 'progressive_manifest_changed'):
+                delivery.prepare(self.workspace / 'new', config(), {}, Store(), 'private')
+        claim.assert_not_called()
+        self.assertFalse((self.workspace / 'new/context.json').exists())
+
+    def test_incomplete_progressive_or_unbound_plan_cannot_publish_complete_recovery(self):
+        result = {'ok': True, 'delivery_complete': False, 'source_report_count': 2,
+                  'figure_verification_complete': True}
+        with patch.object(delivery, 'article_receipt'), \
+             patch.object(self.progressive, 'validate_recovery_delivery', return_value=result):
+            with self.assertRaisesRegex(delivery.DeliveryError, 'progressive_wechat_delivery_incomplete'):
+                delivery.validate_delivery(self.workspace)
+        self.assertFalse((self.workspace / 'wechat_delivery_receipt.json').exists())
+        changed = copy.deepcopy(self.plan)
+        changed['sources'][0]['account'] = 'kc'
+        delivery.write_json(self.workspace / 'checkpoint/progressive_plan.json', changed)
+        with patch.object(delivery, 'article_receipt'), patch.object(self.progressive, 'resume_from_recovery') as resume:
+            with self.assertRaises(ValueError):
+                delivery.upload_wechat(self.workspace, Store(), 'private')
+        resume.assert_not_called()
+
+
 class SourceAuthenticationTests(unittest.TestCase):
     def cache_recovery_metadata(self):
         from market_views_publication import OCR_CACHE_RECOVERY_WORKFLOW
@@ -184,6 +264,65 @@ class SourceAuthenticationTests(unittest.TestCase):
                     delivery.validate_original(run, changed, config(), 'owner/repo', '999')
         with self.assertRaises(delivery.DeliveryError):
             delivery.validate_original(run, pages[1:], config(), 'owner/repo', '999')
+
+    def progressive_plan(self, config_value=None, **changes):
+        value = config_value or config()
+        return {'schema_version': 1, 'source_run_id': value['SOURCE_RUN_ID'],
+                'date_folder': value['DATE_FOLDER'], 'source_execution_sha': 'a' * 40,
+                'sources': [{}, {}], 'manifest_sha256': 'd' * 64, 'plan_sha256': 'e' * 64, **changes}
+
+    def progressive_marker(self):
+        return {'name': 'Initialize progressive WeChat delivery plan',
+                'status': 'completed', 'conclusion': 'success'}
+
+    def test_only_stopped_progressive_publishers_with_the_original_plan_can_transfer(self):
+        run, pages = original_fixture(2)
+        for page in pages:
+            page['jobs'][1].update(conclusion='failure', steps=[self.progressive_marker()])
+        plan = self.progressive_plan()
+        self.assertEqual(delivery.validate_original(run, pages, config(), 'owner/repo', '999',
+                                                    progressive_plan=plan), 'a' * 40)
+        for attempt in (0, 1):
+            for field, value in [('status', 'in_progress'), ('conclusion', 'success'), ('steps', []),
+                                 ('steps', [dict(self.progressive_marker(), conclusion='failure')])]:
+                changed = copy.deepcopy(pages)
+                changed[attempt]['jobs'][1][field] = value
+                with self.subTest(attempt=attempt, field=field, value=value), self.assertRaises(delivery.DeliveryError):
+                    delivery.validate_original(run, changed, config(), 'owner/repo', '999', progressive_plan=plan)
+        pages[0]['jobs'][2]['conclusion'] = 'failure'
+        with self.assertRaisesRegex(delivery.DeliveryError, 'original_upload_not_proven_skipped'):
+            delivery.validate_original(run, pages, config(), 'owner/repo', '999', progressive_plan=plan)
+
+    def test_progressive_transfer_rejects_different_batch_commit_run_or_count(self):
+        run, pages = original_fixture()
+        pages[0]['jobs'][1].update(conclusion='cancelled', steps=[self.progressive_marker()])
+        for field, value in [('source_run_id', '999'), ('date_folder', '261009'),
+                             ('source_execution_sha', 'b' * 40), ('sources', [{}]), ('plan_sha256', 'bad')]:
+            with self.subTest(field=field), self.assertRaisesRegex(delivery.DeliveryError, 'progressive_original_identity'):
+                delivery.validate_original(run, pages, config(), 'owner/repo', '999',
+                                           progressive_plan=self.progressive_plan(**{field: value}))
+
+    def test_skipped_final_upload_still_discovers_earlier_progressive_groups(self):
+        config_value, env, original, handoff, handoff_jobs, api, jobs = self.cache_recovery_metadata()
+        plan = self.progressive_plan(config_value)
+        discovered = {}
+        with patch.object(delivery, 'api', side_effect=api), patch.object(delivery, 'jobs', side_effect=jobs), \
+             patch.object(delivery, 'optional_progressive_plan', return_value=plan) as inspect:
+            result = delivery.authenticated_context(config_value, env, client=Store(), bucket='private', progressive=discovered)
+        self.assertEqual(result, ('a' * 40, 'b' * 40))
+        self.assertEqual(discovered, plan)
+        inspect.assert_called_once()
+
+    def test_missing_or_unreadable_progressive_state_never_authorizes_legacy_failed_upload(self):
+        store = Store()
+        self.assertIsNone(delivery.optional_progressive_plan(store, 'private', config(), 'a' * 40))
+        with patch.object(store, 'head_object', side_effect=StorageError('AccessDenied')):
+            with self.assertRaisesRegex(delivery.DeliveryError, 'progressive_plan_unavailable'):
+                delivery.optional_progressive_plan(store, 'private', config(), 'a' * 40)
+        run, pages = original_fixture()
+        pages[0]['jobs'][1].update(conclusion='failure')
+        with self.assertRaisesRegex(delivery.DeliveryError, 'original_upload_not_proven_skipped'):
+            delivery.validate_original(run, pages, config(), 'owner/repo', '999', progressive_plan=self.progressive_plan())
 
     def test_invalid_repository_or_source_does_not_call_services(self):
         run, pages = original_fixture()
