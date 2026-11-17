@@ -12,8 +12,19 @@ from private_workflow_handoff import build_r2_client, r2_bucket
 from sync_portal_worker_schedules import HALF_HOURLY, ScheduleApi
 
 RECEIPT_KEY = '_account/ops/daily-source-wakeup.json'
+CHECK_KEY = '_account/ops/daily-source-clock-check.json'
 MAX_RECEIPT_BYTES = 8192
 RECEIPT_STATES = {'dispatching', 'accepted', 'observed', 'unknown', 'rejected'}
+CHECK_STATES = RECEIPT_STATES | {'before_daily_start', 'unconfigured', 'inspection_unavailable',
+    'wake_active', 'wake_recent', 'dispatch_cooldown', 'dispatch_claimed', 'receipt_unavailable'}
+
+
+def utc_stamp(value):
+    if not isinstance(value, str) or not re.fullmatch(
+            r'[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\.[0-9]{1,6})?Z', value):
+        raise ValueError
+    datetime.fromisoformat(value.replace('Z', '+00:00'))
+    return value
 
 
 def safe_receipt(raw):
@@ -22,11 +33,7 @@ def safe_receipt(raw):
         row = json.loads(raw)
         if not isinstance(row, dict) or row.get('state') not in RECEIPT_STATES:
             raise ValueError
-        requested = row.get('requested_at')
-        if not isinstance(requested, str) or not re.fullmatch(
-                r'[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\.[0-9]{1,6})?Z', requested):
-            raise ValueError
-        datetime.fromisoformat(requested.replace('Z', '+00:00'))
+        requested = utc_stamp(row.get('requested_at'))
         result = {'receipt_state': row['state'], 'requested_at': requested}
         for field in ('run_id', 'previous_dispatch_run_id'):
             value = row.get(field)
@@ -42,22 +49,41 @@ def safe_receipt(raw):
         return {'receipt_state': 'invalid'}
 
 
-def read_receipt(client, bucket):
+def safe_check(raw):
+    try:
+        row = json.loads(raw)
+        if not isinstance(row, dict) or row.get('state') not in CHECK_STATES:
+            raise ValueError
+        result = {'clock_check_state': row['state'], 'clock_checked_at': utc_stamp(row.get('checked_at'))}
+        run = row.get('run_id')
+        if run is not None:
+            if type(run) is not int or not 1 <= run <= 2**53 - 1:
+                raise ValueError
+            result['clock_run_id'] = run
+        if row['state'] in {'wake_active', 'wake_recent', 'observed'} and run is None:
+            raise ValueError
+        return result
+    except (ValueError, TypeError, OverflowError):
+        return {'clock_check_state': 'invalid'}
+
+
+def read_receipt(client, bucket, *, heartbeat=False):
+    field = 'clock_check_state' if heartbeat else 'receipt_state'
     body = None
     try:
-        response = client.get_object(Bucket=bucket, Key=RECEIPT_KEY)
+        response = client.get_object(Bucket=bucket, Key=CHECK_KEY if heartbeat else RECEIPT_KEY)
         body = response['Body']
         raw = body.read(MAX_RECEIPT_BYTES + 1)
         if not isinstance(raw, bytes) or len(raw) > MAX_RECEIPT_BYTES:
-            return {'receipt_state': 'invalid'}
-        return safe_receipt(raw)
+            return {field: 'invalid'}
+        return safe_check(raw) if heartbeat else safe_receipt(raw)
     except Exception as error:
         response = getattr(error, 'response', {})
         details = response.get('Error', {}) if isinstance(response, dict) else {}
         code = details.get('Code') if isinstance(details, dict) else None
         if code in {'NoSuchKey', 'NotFound', '404'}:
-            return {'receipt_state': 'not_observed'}
-        return {'receipt_state': 'unavailable'}
+            return {field: 'not_observed'}
+        return {field: 'unavailable'}
     finally:
         if body is not None:
             with suppress(Exception):
@@ -72,9 +98,12 @@ def inspect_clock(api_factory, client_factory, bucket_getter):
     except Exception:
         result['schedule_state'] = 'unavailable'
     try:
-        result.update(read_receipt(client_factory(), bucket_getter()))
+        client, bucket = client_factory(), bucket_getter()
+        result.update(read_receipt(client, bucket))
+        result.update(read_receipt(client, bucket, heartbeat=True))
     except Exception:
-        result['receipt_state'] = 'unavailable'
+        result.setdefault('receipt_state', 'unavailable')
+        result.setdefault('clock_check_state', 'unavailable')
     return result
 
 
@@ -87,7 +116,8 @@ def main():
     # A new clock may legitimately have no receipt before its first eligible
     # tick. A successful read does not claim a wake or a Daily delivery occurred.
     return int(result['schedule_state'] != 'half_hourly_verified'
-               or result['receipt_state'] in {'invalid', 'unavailable'})
+               or result['receipt_state'] in {'invalid', 'unavailable'}
+               or result['clock_check_state'] in {'invalid', 'unavailable'})
 
 
 if __name__ == '__main__':

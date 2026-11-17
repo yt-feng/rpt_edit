@@ -62,24 +62,58 @@ def trusted(run, repository):
             and (run.get('repository') or {}).get('full_name') == repository)
 
 
-def runs(github, *, status=None, since=None):
+def runs(github, *, status=None, since=None, active_only=False, sleep=time.sleep):
+    """Read a bounded complete inventory, or one trusted proof of an active run.
+
+    GitHub may update total_count and workflow_runs at different instants. An
+    active candidate already prevents dispatch; proving absence still requires
+    a consistent complete scan, retried from page one when the inventory moves.
+    """
+    require(not active_only or status in ACTIVE, 'daily_run_status_invalid')
     query = {'branch': 'main', 'per_page': 100}
     if status:
         query['status'] = status
     if since:
         query['created'] = '>=' + since
-    result = github.api('actions/workflows/' + WORKFLOW.rsplit('/', 1)[-1] + '/runs?' + urlencode(query))
-    rows, total = result.get('workflow_runs'), result.get('total_count')
-    require(isinstance(rows, list) and type(total) is int and total == len(rows) <= 100,
-            'daily_run_inventory_incomplete')
-    require(all(trusted(row, github.repository) for row in rows), 'daily_run_identity_invalid')
-    return rows
+    reason = 'daily_run_inventory_incomplete'
+    for attempt in range(3):
+        rows, seen, total = [], set(), None
+        for page in range(1, 11):
+            result = github.api('actions/workflows/' + WORKFLOW.rsplit('/', 1)[-1]
+                                + '/runs?' + urlencode({**query, 'page': page}))
+            require(isinstance(result, dict), 'daily_run_inventory_incomplete')
+            chunk, observed = result.get('workflow_runs'), result.get('total_count')
+            require(isinstance(chunk, list) and len(chunk) <= 100, 'daily_run_inventory_incomplete')
+            require(all(trusted(row, github.repository) for row in chunk), 'daily_run_identity_invalid')
+            require(all(row.get('status') in {*ACTIVE, 'completed'} for row in chunk), 'daily_run_status_invalid')
+            if active_only:
+                active = [row for row in chunk if row['status'] in ACTIVE]
+                if active:
+                    # No count, later page or Dropbox read is needed to stop.
+                    return active[:1]
+                if chunk:
+                    reason = 'daily_run_status_changed'
+                    break
+            require(type(observed) is int and observed >= 0, 'daily_run_inventory_incomplete')
+            ids = [row['id'] for row in chunk]
+            if (observed > 1000 or (total is not None and observed != total)
+                    or len(chunk) != min(100, observed - len(rows))
+                    or len(ids) != len(set(ids)) or seen.intersection(ids)):
+                reason = 'daily_run_inventory_incomplete'
+                break
+            total = observed
+            seen.update(ids)
+            rows.extend(chunk)
+            if len(rows) == total:
+                return rows
+        if attempt < 2:
+            sleep((1, 3)[attempt])
+    raise ValueError(reason)
 
 
-def active_run(github):
+def active_run(github, *, sleep=time.sleep):
     for status in ACTIVE:
-        rows = runs(github, status=status)
-        require(all(row.get('status') == status for row in rows), 'daily_run_status_changed')
+        rows = runs(github, status=status, active_only=True, sleep=sleep)
         if rows:
             return rows[0]['id']
     return None
@@ -203,7 +237,7 @@ def wake(github, now, *, source_reader=read_source, submit=dispatch, sleep=time.
     require(now.tzinfo is not None, 'wakeup_clock_invalid')
     if now.astimezone(BEIJING).hour < 2:
         return {'state': 'before_daily_start'}
-    active = active_run(github)
+    active = active_run(github, sleep=sleep)
     if active:
         return {'state': 'daily_active', 'run_id': active}
     source = source_reader(now)
@@ -211,12 +245,12 @@ def wake(github, now, *, source_reader=read_source, submit=dispatch, sleep=time.
         return source
     day = source['date_folder']
     since = (now - timedelta(days=3)).strftime('%Y-%m-%dT%H:%M:%SZ')
-    recent = runs(github, since=since)
+    recent = runs(github, since=since, sleep=sleep)
     for run in recent:
         if attempted_date(github, run) == parse_date_folder(day):
             return {'state': 'batch_already_attempted', 'date_folder': day, 'run_id': run['id']}
     # Inspect the queue again immediately before the single dispatch.
-    active = active_run(github)
+    active = active_run(github, sleep=sleep)
     if active:
         return {'state': 'daily_active', 'run_id': active}
     previous = {run['id'] for run in recent}
@@ -225,7 +259,7 @@ def wake(github, now, *, source_reader=read_source, submit=dispatch, sleep=time.
     except (OSError, subprocess.TimeoutExpired):
         acknowledged = False
     for attempt in range(3):
-        observed = runs(github, since=since)
+        observed = runs(github, since=since, sleep=sleep)
         accepted = [run for run in observed if run['id'] not in previous
                     and run.get('display_title') == title_for(day)]
         require(len(accepted) <= 1, 'daily_dispatch_identity_ambiguous')
