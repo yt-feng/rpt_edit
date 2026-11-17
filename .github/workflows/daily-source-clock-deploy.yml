@@ -71,22 +71,16 @@ jobs:
           with os.fdopen(os.open(secret_path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600), 'w') as output:
               json.dump(values, output)
           PY
-      - name: Upload the isolated clock version
+      - name: Deploy the isolated clock with its credentials
         uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           workingDirectory: workers/daily-source-wakeup
           wranglerVersion: '4.125.0'
-          command: versions upload --secrets-file "${{ runner.temp }}/daily-clock-secrets.json" --tag "run-${{ github.run_id }}-${{ github.run_attempt }}"
-      - name: Activate the checked clock
-        uses: cloudflare/wrangler-action@v4
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
-          workingDirectory: workers/daily-source-wakeup
-          wranglerVersion: '4.125.0'
-          command: versions deploy --version-tag "run-${{ github.run_id }}-${{ github.run_attempt }}" --percentage 100 --yes
+          # deploy creates the first Worker as well as updating an existing one;
+          # versions upload requires an already-created Worker.
+          command: deploy --secrets-file "${{ runner.temp }}/daily-clock-secrets.json"
       - name: Apply the independent half-hour trigger
         uses: cloudflare/wrangler-action@v4
         with:
