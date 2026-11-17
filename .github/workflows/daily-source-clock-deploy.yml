@@ -34,6 +34,7 @@ jobs:
         with:
           persist-credentials: false
           sparse-checkout: |
+            .github/workflows
             workers
             portal_suite/tests
             scripts
