@@ -419,6 +419,20 @@ class ArchiveTests(unittest.TestCase):
             subject.publish_run(self.client, "bucket", "123", [], source_sha="b" * 40)
         self.assertFalse(any(key.startswith(subject.PREFIX) for key in self.client.rows))
 
+    def test_complete_source_export_roundtrips_through_real_customer_validation(self):
+        from test_reuse_completed_progressive_sources import ReuseTests
+        fixture = ReuseTests()
+        fixture.setUp()
+        self.addCleanup(fixture.doCleanups)
+        fixture.snapshot()
+        result = fixture.execute()
+        key = result['article_handoff_prefix'] + '/shard_0.tar.gz'
+        raw, _version, metadata = fixture.store.rows[key]
+        self.client.put_object(Bucket="bucket", Key=key, Body=raw, Metadata=metadata)
+        result = subject.publish_run(self.client, "bucket", "1234", [], source_sha="a" * 40)
+        self.assertEqual(result["handoffs"], 1)
+        self.assertEqual(result["unique_reports"], 12)
+
     def test_current_catalog_validation_rejects_empty_or_invalid_id_inventory(self):
         path = self.root / "catalog.json"
         for value in ({}, {"items": []}, {"items": [{"id": "../private"}]}, {"items": [{"id": "a" * 24}] * 2}):
