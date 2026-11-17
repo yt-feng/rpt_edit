@@ -82,7 +82,7 @@ def job(path, name):
 
 def gate(block, results, *, selected="64", cancelled=False, plan=None, primary_ready=None, provider_only="false",
          steps=None, prior_steps_success=True, chart_enabled="true", recovery_kind="mineru-recovery",
-         recovery_outputs=None):
+         recovery_outputs=None, primary_reused="false"):
     expression = re.search(r"(?s)\bif:.*?\$\{\{(.*?)\}\}", block).group(1)
     # GitHub adds success() when an expression has no explicit status function.
     # A continue-on-error step has failure outcome but successful conclusion;
@@ -101,6 +101,7 @@ def gate(block, results, *, selected="64", cancelled=False, plan=None, primary_r
         primary_ready = {"success": "true", "failure": "false"}.get(results.get("process-shard"), "")
     expression = expression.replace("needs.source-outcome.outputs.primary_ready", repr(primary_ready))
     expression = expression.replace("needs.source-outcome.outputs.provider_only", repr(provider_only))
+    expression = expression.replace("needs.deliver-recovered-report-articles.outputs.primary_reused", repr(primary_reused))
     expression = expression.replace("needs.recover-market-sources.outputs.source_kind", repr(recovery_kind))
     expression = re.sub(r"needs\.recover-market-sources\.outputs\.(\w+)",
                         lambda m: repr({'article_source_ready': 'true', **(recovery_outputs or {})}.get(m[1], '')), expression)
@@ -292,7 +293,17 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         self.assertTrue(gate(chart, restored, primary_ready='false', recovery_kind='mineru-recovery'))
         self.assertFalse(gate(chart, restored, primary_ready='false', recovery_kind='ocr-synthesis'))
         self.assertFalse(gate(chart, restored, primary_ready='false', chart_enabled='false'))
+        self.assertTrue(gate(chart, restored, primary_ready='false', recovery_kind='', primary_reused='true'))
+        for outcome in ('failure', 'skipped', 'cancelled'):
+            unavailable = {**restored, 'recover-market-sources': outcome, 'recover-ocr-page-sources': outcome}
+            self.assertTrue(gate(delivery, unavailable, primary_ready='false', recovery_kind=''))
+            self.assertTrue(gate(planner, unavailable, primary_ready='false'))
+        self.assertIn("recovery_sources_ready: ${{ (needs.recover-market-sources.result == 'success'", delivery)
+        self.assertIn("needs.recover-market-sources.outputs.article_source_ready == 'true'", delivery)
+        self.assertIn("|| needs.recover-ocr-page-sources.result == 'success'", delivery)
         self.assertIn('RECOVERED_MANIFEST: ${{ needs.deliver-recovered-report-articles.outputs.manifest_sha256 }}', chart)
+        self.assertIn('RECOVERED_PRIMARY_REUSED: ${{ needs.deliver-recovered-report-articles.outputs.primary_reused }}', chart)
+        self.assertIn('RECOVERED_ARTICLE_PREFIX: ${{ needs.deliver-recovered-report-articles.outputs.article_handoff_prefix }}', chart)
 
     def test_normal_translation_has_no_wechat_publisher_ancestor(self):
         blocks = dict(re.findall(r'(?ms)^  ([\w-]+):\n(.*?)(?=^  [\w-]+:\n|\Z)', UPSTREAM.read_text()))

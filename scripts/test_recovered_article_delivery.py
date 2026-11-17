@@ -4,8 +4,10 @@ import copy
 from contextlib import redirect_stdout
 import io
 import json
+import os
 from pathlib import Path
 import re
+import subprocess
 import tempfile
 import unittest
 from unittest.mock import Mock, patch
@@ -168,6 +170,48 @@ class PrimaryUploadWaitTests(unittest.TestCase):
             client.assert_not_called(); prepare.assert_not_called()
             self.assertFalse(workspace.exists())
             self.assertIn('primary_wait_deadline_reached', public.getvalue())
+
+    def test_wait_cli_authenticates_current_publisher_without_a_recovery_source_kind(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            workspace = Path(temporary) / 'not-created'
+            env = {**self.env, 'SOURCE_RUN_ID': self.config['SOURCE_RUN_ID'],
+                   'SOURCE_HANDOFF_RUN_ID': self.config['SOURCE_RUN_ID'], 'SOURCE_KIND': ''}
+            with patch.dict(delivery.os.environ, env, clear=True), patch.object(delivery, 'api', return_value=self.run), patch.object(delivery, 'jobs', return_value=self.page), patch('private_workflow_handoff.build_r2_client') as client, patch.object(delivery, 'prepare') as prepare, redirect_stdout(io.StringIO()):
+                self.assertEqual(delivery.main(['wait-primary-upload', '--workspace', str(workspace)]), 0)
+                with self.assertRaises(delivery.DeliveryError):
+                    delivery.inputs(delivery.os.environ)
+            client.assert_not_called(); prepare.assert_not_called()
+            self.assertFalse(workspace.exists())
+
+    def test_wait_retries_a_moving_job_inventory_from_current_run_identity(self):
+        for category in ('delivery_jobs_changed', 'delivery_jobs_incomplete'):
+            self.now, self.sleeps = 0, []
+            with self.subTest(category=category), patch.object(delivery, 'api', return_value=self.run) as api, patch.object(delivery, 'jobs', side_effect=[delivery.DeliveryError(category), self.page]) as jobs:
+                self.assertEqual(self.wait()['job_id'], 2)
+                self.assertEqual(jobs.call_count, 2)
+                self.assertEqual(api.call_count, 3)
+                self.assertEqual(self.sleeps, [1])
+        self.now, self.sleeps = 0, []
+        with patch.object(delivery, 'api', side_effect=[delivery.DeliveryError('delivery_github_metadata_failed'), self.run, self.run]) as api, patch.object(delivery, 'jobs', return_value=self.page):
+            self.assertEqual(self.wait()['job_id'], 2)
+            self.assertEqual(api.call_count, 3)
+            self.assertEqual(self.sleeps, [1])
+
+    def test_three_failed_reads_stop_without_workspace_r2_or_admission(self):
+        wait = delivery.wait_for_primary_upload
+        for category in ('delivery_jobs_changed', 'delivery_jobs_incomplete', 'delivery_github_metadata_failed'):
+            self.now, self.sleeps = 0, []
+            with self.subTest(category=category), tempfile.TemporaryDirectory() as temporary:
+                workspace = Path(temporary) / 'untouched'
+                env = {**self.env, **{key: str(value) for key, value in self.config.items()}}
+                def bounded(config, env):
+                    return wait(config, env, timeout=30, clock=lambda: self.now, sleep=self.sleep)
+                with patch.dict(delivery.os.environ, env, clear=True), patch.object(delivery, 'wait_for_primary_upload', side_effect=bounded), patch.object(delivery, 'api', return_value=self.run), patch.object(delivery, 'jobs', side_effect=delivery.DeliveryError(category)) as jobs, patch('private_workflow_handoff.build_r2_client') as client, patch.object(delivery, 'prepare') as prepare, redirect_stdout(io.StringIO()):
+                    self.assertEqual(delivery.main(['wait-primary-upload', '--workspace', str(workspace)]), 2)
+                self.assertEqual(jobs.call_count, 3)
+                self.assertEqual(self.sleeps, [1, 3])
+                client.assert_not_called(); prepare.assert_not_called()
+                self.assertFalse(workspace.exists())
 
     def test_wait_is_available_only_to_same_current_daily_producer(self):
         for key, value in (('GITHUB_RUN_ID', '999'), ('GITHUB_RUN_ATTEMPT', '11'),
@@ -398,6 +442,22 @@ class SourceAuthenticationTests(unittest.TestCase):
         pages[0]['jobs'][2]['conclusion'] = 'failure'
         with self.assertRaisesRegex(delivery.DeliveryError, 'original_upload_not_proven_skipped'):
             delivery.validate_original(run, pages, config(), 'owner/repo', '999', progressive_plan=plan)
+
+    def test_timed_out_progressive_publisher_requires_original_plan_and_completed_initialize(self):
+        run, pages = original_fixture()
+        pages[0]['jobs'][1].update(conclusion='timed_out', steps=[self.progressive_marker()])
+        plan = self.progressive_plan()
+        self.assertEqual(delivery.validate_original(run, pages, config(), 'owner/repo', '999', progressive_plan=plan), 'a' * 40)
+        with self.assertRaisesRegex(delivery.DeliveryError, 'original_upload_not_proven_skipped'):
+            delivery.validate_original(run, pages, config(), 'owner/repo', '999')
+        for steps in ([], [dict(self.progressive_marker(), conclusion='failure')],
+                      [dict(self.progressive_marker(), status='in_progress')]):
+            pages[0]['jobs'][1]['steps'] = steps
+            with self.subTest(steps=steps), self.assertRaisesRegex(delivery.DeliveryError, 'original_upload_not_proven_skipped'):
+                delivery.validate_original(run, pages, config(), 'owner/repo', '999', progressive_plan=plan)
+        pages[0]['jobs'][1]['steps'] = [self.progressive_marker()]
+        with self.assertRaisesRegex(delivery.DeliveryError, 'progressive_original_identity_invalid'):
+            delivery.validate_original(run, pages, config(), 'owner/repo', '999', progressive_plan=self.progressive_plan(source_execution_sha='b' * 40))
 
     def test_progressive_transfer_rejects_different_batch_commit_run_or_count(self):
         run, pages = original_fixture()
@@ -725,6 +785,72 @@ class DeliveryWorkflowTests(unittest.TestCase):
         self.assertLess(generate.index('prepare --workspace'), generate.index('Generate only missing bound report articles'))
         self.assertIn('timeout-minutes: 120', generate)
         self.assertIn('timeout-minutes: 181', wait)
+
+    def test_successful_primary_route_reuses_sources_without_regeneration_or_another_upload(self):
+        import yaml
+        path = Path(__file__).resolve().parents[1] / '.github/workflows/recover-report-article-delivery.yml'
+        workflow = yaml.safe_load(path.read_text())
+        generate = workflow['jobs']['generate']
+        steps = generate['steps']
+        names = [step.get('name') for step in steps]
+        wait_index = names.index('Wait for the original Daily publisher to finish')
+        download_index = names.index('Download the original Daily selection manifest for source reuse')
+        reuse_index = names.index('Reuse verified primary article sources after successful delivery')
+        self.assertLess(wait_index, download_index)
+        self.assertLess(download_index, reuse_index)
+        download = steps[download_index]
+        self.assertEqual(download['with']['name'], 'selected-macro-manifest-${{ inputs.source_run_id }}')
+        self.assertEqual(download['if'], '${{ inputs.wait_for_primary_upload }}')
+        reuse = steps[reuse_index]
+        self.assertEqual(reuse['id'], 'reuse')
+        self.assertEqual(reuse['if'], '${{ inputs.wait_for_primary_upload }}')
+        self.assertIn('reuse_completed_progressive_sources.py', reuse['run'])
+        self.assertIn('--manifest _selected_macro_manifest/selected_to_process_manifest.json', reuse['run'])
+        self.assertNotIn('continue-on-error', reuse)
+        for key in ('article_handoff_prefix', 'article_count', 'manifest_sha256'):
+            self.assertEqual(generate['outputs'][key], '${{ steps.reuse.outputs.' + key + ' || steps.complete.outputs.' + key + ' }}')
+        self.assertEqual(generate['outputs']['primary_reused'], '${{ steps.reuse.outputs.reuse }}')
+        for name in ('Authenticate original upload and restore exact recovery sources',
+                     'Generate only missing bound report articles'):
+            self.assertEqual(steps[names.index(name)]['if'], "${{ steps.reuse.outputs.reuse != 'true' }}")
+        complete = next(step for step in steps if step.get('id') == 'complete')
+        self.assertEqual(complete['if'], "${{ steps.reuse.outputs.reuse != 'true' }}")
+        checkpoint = steps[names.index('Save generation progress even after interruption')]
+        self.assertIn("steps.prepare.outcome == 'success'", checkpoint['if'])
+        self.assertIn("needs.generate.outputs.primary_reused != 'true'", workflow['jobs']['deliver']['if'])
+        self.assertIn("needs.deliver.result == 'success'", workflow['jobs']['publish']['if'])
+        routing_guard = steps[names.index('Require an explicit recovery source route')]
+        self.assertEqual(routing_guard['env']['REUSE_PRIMARY'], '${{ steps.reuse.outputs.reuse }}')
+        self.assertIn('test "$REUSE_PRIMARY" = true || test "$REUSE_PRIMARY" = false', routing_guard['run'])
+        marker = steps[names.index('Verify completed primary source reuse')]
+        self.assertEqual(marker['if'], "${{ steps.reuse.outputs.reuse == 'true' }}")
+        self.assertIn('test "$ARTICLE_COUNT" = "$EXPECTED_ARTICLES"', marker['run'])
+        self.assertLess(names.index('Require an explicit recovery source route'), names.index('Verify completed primary source reuse'))
+        events = workflow.get('on', workflow.get(True))
+        self.assertEqual(events['workflow_call']['outputs']['primary_reused']['value'], '${{ jobs.generate.outputs.primary_reused }}')
+
+    def test_missing_recovery_sources_block_regeneration_but_not_verified_primary_reuse(self):
+        import yaml
+        path = Path(__file__).resolve().parents[1] / '.github/workflows/recover-report-article-delivery.yml'
+        workflow = yaml.safe_load(path.read_text())
+        events = workflow.get('on', workflow.get(True))
+        for trigger in ('workflow_call', 'workflow_dispatch'):
+            option = events[trigger]['inputs']['recovery_sources_ready']
+            self.assertIs(option['default'], True)
+            self.assertEqual(option['type'], 'boolean')
+        steps = workflow['jobs']['generate']['steps']
+        names = [step.get('name') for step in steps]
+        guard = steps[names.index('Require verified recovery sources before regeneration')]
+        self.assertEqual(guard['if'], "${{ steps.reuse.outputs.reuse != 'true' }}")
+        self.assertEqual(guard['env']['RECOVERY_SOURCES_READY'], '${{ inputs.recovery_sources_ready }}')
+        self.assertLess(names.index('Verify completed primary source reuse'), names.index(guard['name']))
+        self.assertLess(names.index(guard['name']), names.index('Authenticate original upload and restore exact recovery sources'))
+        for ready in ('true', 'false', ''):
+            result = subprocess.run(['bash', '-e', '-c', guard['run']],
+                                    env={**os.environ, 'RECOVERY_SOURCES_READY': ready}, capture_output=True)
+            self.assertEqual(result.returncode == 0, ready == 'true')
+        self.assertNotIn('continue-on-error', guard)
+        self.assertNotIn('SOURCE_KIND', steps[names.index('Reuse verified primary article sources after successful delivery')]['run'])
 
     def test_workflow_exposes_complete_retained_shards_and_is_draft_only(self):
         path = Path(__file__).resolve().parents[1] / '.github/workflows/recover-report-article-delivery.yml'

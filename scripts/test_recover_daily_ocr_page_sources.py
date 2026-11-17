@@ -227,7 +227,9 @@ class DailyPagesTests(unittest.TestCase):
         self.assertFalse(gate(job(UPSTREAM,'trigger-chart-search-index'),results,primary_ready='false',recovery_kind=''))
         self.assertFalse(gate(job(UPSTREAM,'cleanup-market-source-recovery'),results,primary_ready='false'))
         for result in ('failure','skipped','cancelled'):
-            self.assertFalse(gate(job(UPSTREAM,'deliver-recovered-report-articles'),
+            # The caller still probes a completed primary source snapshot; its
+            # explicit readiness input blocks regeneration when that is absent.
+            self.assertTrue(gate(job(UPSTREAM,'deliver-recovered-report-articles'),
                 {**results,'recover-ocr-page-sources':result},primary_ready='false'))
 
     def test_partial_synthesis_routes_articles_to_pages_and_keeps_market_views(self):
@@ -244,7 +246,9 @@ class DailyPagesTests(unittest.TestCase):
         self.assertEqual(outcomes['ocr_article_source_incomplete'],'true')
         results={'select-macro-reports':'success','source-outcome':'success','recover-market-sources':'success'}
         self.assertTrue(gate(job(UPSTREAM,'recover-ocr-page-sources'),results,primary_ready='false',recovery_outputs=outcomes))
-        self.assertFalse(gate(job(UPSTREAM,'deliver-recovered-report-articles'),results,primary_ready='false',recovery_outputs=outcomes))
+        self.assertTrue(gate(job(UPSTREAM,'deliver-recovered-report-articles'),results,primary_ready='false',recovery_outputs=outcomes))
+        self.assertIn("recovery_sources_ready: ${{ (needs.recover-market-sources.result == 'success' && needs.recover-market-sources.outputs.article_source_ready == 'true') || needs.recover-ocr-page-sources.result == 'success' }}",
+                      job(UPSTREAM,'deliver-recovered-report-articles'))
         self.assertTrue(gate(job(UPSTREAM,'trigger-market-views'),results,primary_ready='false',recovery_kind='ocr-synthesis',recovery_outputs=outcomes))
         results['recover-ocr-page-sources']='success'
         self.assertTrue(gate(job(UPSTREAM,'deliver-recovered-report-articles'),results,primary_ready='false',recovery_outputs=outcomes))

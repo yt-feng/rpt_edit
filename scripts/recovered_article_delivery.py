@@ -134,6 +134,14 @@ def jobs(repository, run_id, attempt=None):
     return {'total_count': total, 'jobs': rows}
 
 
+def primary_wait_inputs(env):
+    """Waiting authenticates producer IDs before a recovery kind is available."""
+    config = {key: env.get(key, '') for key in ('SOURCE_RUN_ID', 'SOURCE_HANDOFF_RUN_ID')}
+    require(all(re.fullmatch(r'[1-9][0-9]{0,19}', value) for value in config.values()),
+            'invalid_delivery_run_id')
+    return config
+
+
 def wait_for_primary_upload(config, env, *, timeout=10800, poll=15,
                             clock=time.monotonic, sleep=time.sleep):
     """Wait only on the current Daily attempt; do not perform recovery admission.
@@ -169,7 +177,7 @@ def wait_for_primary_upload(config, env, *, timeout=10800, poll=15,
                 'primary_wait_producer_not_running')
         return run
     deadline = clock() + timeout
-    while clock() < deadline:
+    def inspect_publisher():
         current_run()
         page = jobs(repository, run_id, attempt)
         rows = page.get('jobs')
@@ -192,6 +200,25 @@ def wait_for_primary_upload(config, env, *, timeout=10800, poll=15,
                 # Recheck cancellation and attempt identity after reading jobs.
                 current_run()
                 return {'run_id': run_id, 'run_attempt': attempt, 'job_id': publisher['id']}
+        return None
+    while clock() < deadline:
+        for read_attempt in range(3):
+            try:
+                require(clock() < deadline, 'primary_wait_deadline_reached')
+                result = inspect_publisher()
+                require(clock() < deadline, 'primary_wait_deadline_reached')
+                break
+            except DeliveryError as error:
+                if str(error) not in {'delivery_github_metadata_failed', 'delivery_jobs_changed',
+                        'delivery_jobs_incomplete', 'primary_wait_jobs_incomplete'} or read_attempt == 2:
+                    raise
+                # Retry only reads, starting with the same-run identity check.
+                # Missing or moving inventories never establish completion.
+                remaining = deadline - clock()
+                require(remaining > 0, 'primary_wait_deadline_reached')
+                sleep(min((1, 3)[read_attempt], remaining))
+        if result is not None:
+            return result
         remaining = deadline - clock()
         if remaining > 0:
             sleep(min(poll, remaining))
@@ -229,7 +256,7 @@ def validate_original(run, attempts, config, repository, current_run_id, *, prog
                         'original_upload_already_started')
             elif (name == 'push-xhs-notes-wechat-drafts' and progressive_plan is not None
                     and len(found) == 1 and found[0].get('status') == 'completed'
-                    and found[0].get('conclusion') in {'failure', 'cancelled'}
+                    and found[0].get('conclusion') in {'failure', 'cancelled', 'timed_out'}
                     and progressive_publisher_started(found[0])):
                 # A fixed source/group plan and its durable submission intents
                 # allow recovery to continue a stopped progressive publisher.
@@ -835,7 +862,7 @@ def main(argv=None):
         # This stage uses only authenticated GitHub reads. Even a timeout leaves
         # source handoffs, generated content and accepted-draft state untouched.
         try:
-            result = wait_for_primary_upload(inputs(os.environ), os.environ)
+            result = wait_for_primary_upload(primary_wait_inputs(os.environ), os.environ)
         except Exception as error:
             category = str(error) if isinstance(error, DeliveryError) else type(error).__name__
             print(json.dumps({'status': 'incomplete', 'stage': args.command, 'category': category}))

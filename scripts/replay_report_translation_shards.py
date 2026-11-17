@@ -78,6 +78,30 @@ def recovery_completed(jobs: dict) -> bool:
     return True
 
 
+def validate_primary_reuse(jobs: dict, run: dict) -> None:
+    """Only the explicit successful reuse route may replay complete-primary inputs."""
+    if (not re.fullmatch(r'[a-f0-9]{40}', str(run.get('head_sha', '')))
+            or type(run.get('run_attempt')) is not int or run['run_attempt'] != 1
+            or jobs.get('total_count', len(jobs.get('jobs', []))) != len(jobs.get('jobs', []))):
+        raise ValueError('Completed primary source reuse is not completely verified')
+    names = {f'deliver-recovered-report-articles / {stage}': ('success' if stage == 'generate' else 'skipped')
+             for stage in ('generate', 'deliver', 'publish')}
+    names['push-xhs-notes-wechat-drafts'] = 'success'
+    rows = [row for row in jobs['jobs'] if row.get('name') in names]
+    if (len(rows) != len(names) or {row.get('name') for row in rows} != set(names)
+            or len({row.get('id') for row in rows}) != len(rows)
+            or any(row.get('status') != 'completed' or row.get('conclusion') != names[row['name']]
+                   or row.get('run_id') != run['id'] or row.get('head_sha') != run.get('head_sha')
+                   or type(row.get('id')) is not int or row['id'] <= 0
+                   or row.get('run_attempt', run['run_attempt']) != run['run_attempt'] for row in rows)):
+        raise ValueError('Completed primary source reuse is not completely verified')
+    generated = next(row for row in rows if row['name'] == 'deliver-recovered-report-articles / generate')
+    markers = [step for step in generated.get('steps', [])
+               if step.get('name') == 'Verify completed primary source reuse']
+    if len(markers) != 1 or markers[0].get('status') != 'completed' or markers[0].get('conclusion') != 'success':
+        raise ValueError('Completed primary source reuse marker is missing or unsuccessful')
+
+
 def resolve_source_prefix(plan: dict, original_prefix: str, run: dict, jobs: dict,
                           expected_prefix: str = "") -> str:
     """Older plans omitted the distinct recovered source location.
@@ -85,8 +109,16 @@ def resolve_source_prefix(plan: dict, original_prefix: str, run: dict, jobs: dic
     Resolve only the original Daily's successful recovery, never a most-recent
     archive or an arbitrary fallback after a source hash mismatch.
     """
-    recovered = recovery_completed(jobs)
     prefix = plan.get("source_prefix")
+    if isinstance(prefix, str) and prefix.startswith('_private-workflow-handoff/xhs-complete/'):
+        validate_primary_reuse(jobs, run)
+        source_run, manifest = shards.source_prefix_identity(prefix, plan['date_folder'])
+        if source_run != str(run['id']) or manifest is None:
+            raise ValueError('Translation source prefix differs from the original workflow outcome')
+        if expected_prefix and prefix != expected_prefix:
+            raise ValueError('Translation source prefix changed after recovery preparation')
+        return prefix
+    recovered = recovery_completed(jobs)
     if prefix is None:
         prefix = original_prefix
         if recovered:
@@ -109,8 +141,15 @@ def validate_recovered_sources(plan: dict, prefix: str, run: dict, date_root: Pa
     _, manifest = shards.source_prefix_identity(prefix, plan["date_folder"])
     if manifest is None:
         return
-    from recover_report_articles import PROVENANCE, validate_articles
     root = date_root / "shard_0"
+    if prefix.startswith('_private-workflow-handoff/xhs-complete/'):
+        from reuse_completed_progressive_sources import validate_complete_handoff
+        validate_complete_handoff(root, source_run_id=str(run['id']), date_folder=plan['date_folder'],
+            manifest_sha256=manifest, expected_articles=plan['source_count'], source_sha=run['head_sha'])
+        for index in range(plan['shard_count']):
+            shards.selected_reports(plan, index, date_root)
+        return
+    from recover_report_articles import PROVENANCE, validate_articles
     receipt = validate_articles(root, plan["source_count"], plan["date_folder"])
     provenance = json.loads((root / PROVENANCE).read_text(encoding="utf-8"))
     source_receipt = json.loads(provenance["source_receipt_json"])
