@@ -107,6 +107,7 @@ def gate(block, results, *, selected="64", cancelled=False, plan=None, primary_r
     options = {
         "wechat_draft_upload": "true", "wechat_draft_source": "xhs_notes",
         "translated_report_count": "3", "replay_source_run_id": "",
+        "wechat_freepublish": "false",
         **(plan or {}),
     }
     expression = re.sub(
@@ -242,10 +243,16 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
                     self.assertFalse(gate(cleanup, {**cleanup_results, name: status}))
                 for package in ("success", "failure", "cancelled", "skipped"):
                     self.assertTrue(gate(block, {
+                        "select-macro-reports": "success",
                         "process-shard": "success", "package-publish-ready": package,
                     }))
                 for shards in ("failure", "cancelled", "skipped"):
-                    self.assertFalse(gate(block, {"process-shard": shards}))
+                    if name == 'push-xhs-notes-wechat-drafts':
+                        self.assertTrue(gate(block, {"select-macro-reports": "success", "process-shard": shards}))
+                        self.assertFalse(gate(block, {"select-macro-reports": "success", "process-shard": shards},
+                                              plan={'wechat_freepublish': 'true'}))
+                    else:
+                        self.assertFalse(gate(block, {"process-shard": shards}))
                 self.assertFalse(gate(block, {"process-shard": "success"}, cancelled=True))
 
     def test_optional_outputs_keep_user_selection_gates(self):
@@ -275,8 +282,7 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         for outcome in ('success', 'failure', 'cancelled', 'skipped'):
             restored = {**results, 'deliver-recovered-report-articles': outcome}
             self.assertEqual(gate(planner, restored, primary_ready='false'), outcome == 'success')
-            self.assertFalse(gate(job(UPSTREAM, 'push-xhs-notes-wechat-drafts'),
-                                  restored, primary_ready='false'))
+        self.assertIn('push-xhs-notes-wechat-drafts', re.search(r'needs: \[(.*?)\]', delivery)[1])
         self.assertIn('needs.deliver-recovered-report-articles.outputs.article_handoff_prefix', planner)
         materialize = job(UPSTREAM, 'translate-report-shard')
         self.assertIn('--prefix "${{ needs.plan-portal-translated-reports.outputs.source_prefix }}"', materialize)
@@ -370,7 +376,7 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
             self.assertFalse(gate(trigger, {**results, "recover-market-sources": status}))
         results["recover-market-sources"] = "success"
         self.assertTrue(gate(trigger, results))
-        self.assertFalse(gate(job(UPSTREAM, "push-xhs-notes-wechat-drafts"), results))
+        self.assertTrue(gate(job(UPSTREAM, "push-xhs-notes-wechat-drafts"), results))
         self.assertTrue(gate(job(UPSTREAM, "deliver-recovered-report-articles"), results))
         self.assertIn('SOURCE_KIND="$RECOVERY_KIND"', trigger)
         self.assertIn('-f source_handoff_kind="$SOURCE_KIND"', trigger)
@@ -383,7 +389,7 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         recovered = {'select-macro-reports': 'success', 'process-shard': 'success'}
         self.assertTrue(gate(job(UPSTREAM, 'recover-market-sources'), recovered, primary_ready='false'))
         self.assertFalse(gate(job(UPSTREAM, 'trigger-market-views'), recovered, primary_ready='false'))
-        self.assertFalse(gate(job(UPSTREAM, 'push-xhs-notes-wechat-drafts'), recovered, primary_ready='false'))
+        self.assertTrue(gate(job(UPSTREAM, 'push-xhs-notes-wechat-drafts'), recovered, primary_ready='false'))
         self.assertTrue(gate(job(UPSTREAM, 'trigger-market-views'),
                              {**recovered, 'recover-market-sources': 'success'}, primary_ready='false'))
         final = job(UPSTREAM, 'validate-market-delivery')

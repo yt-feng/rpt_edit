@@ -90,7 +90,7 @@ on:
       wechat_draft_articles_per_draft:
         description: "Maximum articles per draft, evenly grouped with at least three drafts when possible."
         required: true
-        default: "3"
+        default: "8"
       wechat_draft_max_body_chars:
         description: "Approximate visible Chinese character budget for each WeChat draft article."
         required: true
@@ -205,7 +205,7 @@ jobs:
           echo "wechat_draft_upload=${{ github.event.inputs.wechat_draft_upload || 'true' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_source=${{ github.event.inputs.wechat_draft_source || 'xhs_notes' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_freepublish=${{ github.event.inputs.wechat_freepublish || 'false' }}" >> "$GITHUB_OUTPUT"
-          echo "wechat_draft_articles_per_draft=${{ github.event.inputs.wechat_draft_articles_per_draft || '3' }}" >> "$GITHUB_OUTPUT"
+          echo "wechat_draft_articles_per_draft=${{ github.event.inputs.wechat_draft_articles_per_draft || '8' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_max_body_chars=${{ github.event.inputs.wechat_draft_max_body_chars || '1200' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_min_inline_images=${{ github.event.inputs.wechat_draft_min_inline_images || '3' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_max_inline_images=${{ github.event.inputs.wechat_draft_max_inline_images || '3' }}" >> "$GITHUB_OUTPUT"
@@ -375,6 +375,20 @@ jobs:
               f.write(f"effective_shard_count={effective}\n")
           print(f"Selected {selected} PDF(s); running shard indices {indices}.")
           PY
+      - name: Freeze progressive WeChat publisher options
+        env:
+          PUBLISHING_OPTIONS_JSON: ${{ toJSON(needs.resolve-inputs.outputs) }}
+          DATE_FOLDER: ${{ steps.replay.outputs.latest_folder || steps.dropbox.outputs.latest_folder }}
+          SELECTED_COUNT: ${{ steps.replay.outputs.process_count || steps.select_macro.outputs.process_count }}
+          SHARD_COUNT: ${{ steps.shard_matrix.outputs.effective_shard_count }}
+        run: python scripts/progressive_wechat_workflow.py freeze
+      - name: Retain progressive WeChat publisher options
+        uses: actions/upload-artifact@v4
+        with:
+          name: progressive-wechat-config-${{ github.run_id }}
+          path: _progressive_wechat_config.json
+          if-no-files-found: error
+          retention-days: 30
       - name: Upload selected macro PDFs artifact
         uses: actions/upload-artifact@v4
         with:
@@ -681,6 +695,7 @@ jobs:
             --source "$SNAPSHOT_DIR" \
             --key "_private-workflow-handoff/market-views-available/$GITHUB_RUN_ID/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_${{ matrix.shard_index }}.tar.gz"
       - name: Upload shard to private R2 handoff
+        id: upload_shard
         if: ${{ steps.gate.outputs.run == 'true' }}
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
@@ -691,6 +706,23 @@ jobs:
           python scripts/private_workflow_handoff.py upload-dir \
             --source "$OUTPUT_DIR" \
             --key "$PRIVATE_HANDOFF_ROOT/${{ github.run_id }}/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_${{ matrix.shard_index }}.tar.gz"
+      - name: Wake short progressive WeChat publisher
+        if: ${{ steps.upload_shard.outcome == 'success' && needs.resolve-inputs.outputs.wechat_draft_upload == 'true' && needs.resolve-inputs.outputs.wechat_draft_source == 'xhs_notes' && needs.resolve-inputs.outputs.wechat_freepublish != 'true' }}
+        continue-on-error: true
+        timeout-minutes: 2
+        uses: actions/github-script@v7
+        env:
+          SOURCE_RUN_ID: ${{ github.run_id }}
+          DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}
+        with:
+          retries: 0
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner, repo: context.repo.repo,
+              workflow_id: 'progressive-wechat-delivery.yml', ref: 'main',
+              inputs: { source_run_id: process.env.SOURCE_RUN_ID, date_folder: process.env.DATE_FOLDER },
+            });
+            core.info('Requested a short upload of ready groups. Final Daily delivery remains required.');
       - name: Upload lightweight shard diagnostics
         if: ${{ always() && steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
         uses: actions/upload-artifact@v4
@@ -1163,7 +1195,13 @@ jobs:
 
   push-xhs-notes-wechat-drafts:
     needs: [resolve-inputs, select-macro-reports, process-shard, source-outcome]
-    if: ${{ !cancelled() && needs.process-shard.result == 'success' && needs.source-outcome.outputs.primary_ready == 'true' && needs.resolve-inputs.outputs.wechat_draft_upload == 'true' && needs.resolve-inputs.outputs.wechat_draft_source == 'xhs_notes' }}
+    if: ${{ !cancelled() && needs.select-macro-reports.result == 'success' && needs.select-macro-reports.outputs.selected_count != '0' && (needs.resolve-inputs.outputs.wechat_freepublish != 'true' || (needs.process-shard.result == 'success' && needs.source-outcome.outputs.primary_ready == 'true')) && needs.resolve-inputs.outputs.wechat_draft_upload == 'true' && needs.resolve-inputs.outputs.wechat_draft_source == 'xhs_notes' }}
+    # Partial primary delivery is resolved by recovery and the final receipt gate.
+    continue-on-error: true
+    concurrency:
+      group: daily-wechat-publisher-${{ github.run_id }}-${{ needs.select-macro-reports.outputs.latest_folder }}
+      cancel-in-progress: false
+      queue: max
     runs-on: [self-hosted, wechat-draft]
     timeout-minutes: 180
     outputs:
@@ -1198,7 +1236,8 @@ jobs:
           pip install -r requirements.txt
           python -m pip install "boto3>=1.37.32,<2"
 
-      - name: Download generated shards from private R2
+      - name: Download complete shards for explicit free publication
+        if: ${{ needs.resolve-inputs.outputs.wechat_freepublish == 'true' }}
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -1209,6 +1248,18 @@ jobs:
             --prefix "$PRIVATE_HANDOFF_ROOT/${{ github.run_id }}/${{ needs.select-macro-reports.outputs.latest_folder }}" \
             --destination "xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}" \
             --expected-count "${{ needs.select-macro-reports.outputs.effective_shard_count }}"
+
+      - name: Download frozen full selection manifest
+        uses: actions/download-artifact@v4
+        with:
+          name: selected-macro-manifest-${{ github.run_id }}
+          path: _selected_macro_manifest
+
+      - name: Download frozen publishing configuration
+        uses: actions/download-artifact@v4
+        with:
+          name: progressive-wechat-config-${{ github.run_id }}
+          path: _progressive_config
 
       - name: Materialize private publishing image
         env:
@@ -1224,10 +1275,29 @@ jobs:
           path: .
           checkpoint-path: wechat_drafts/xhs_notes/${{ needs.select-macro-reports.outputs.latest_folder }}
 
+      - name: Initialize progressive WeChat delivery plan
+        if: ${{ needs.resolve-inputs.outputs.wechat_freepublish != 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ github.run_id }}
+          SOURCE_SHA: ${{ github.sha }}
+          DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}
+          WECHAT_ROUTING_START_DATE: ${{ vars.WECHAT_ROUTING_START_DATE }}
+          WECHAT_ROUTING_SCOPE: dropbox
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+        run: |
+          python scripts/progressive_wechat_workflow.py plan \
+            --config _progressive_config/_progressive_wechat_config.json \
+            --manifest _selected_macro_manifest/selected_to_process_manifest.json
+
       - name: Upload generated xhs notes to WeChat drafts
         id: upload_xhs_wechat
         continue-on-error: true
         env:
+          GH_TOKEN: ${{ github.token }}
           WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
           WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
           WECHAT_MP_APPID_TT: ${{ secrets.WECHAT_MP_APPID_TT }}
@@ -1257,7 +1327,16 @@ jobs:
           else
             echo "::notice::Uploading generated xhs_notes articles to WeChat drafts from xhs_notes/dropbox/$DATE_FOLDER"
           fi
-          python scripts/push_xhs_notes_to_wechat_drafts.py \
+          UPLOADER=(python scripts/push_xhs_notes_to_wechat_drafts.py)
+          if [ "${{ needs.resolve-inputs.outputs.wechat_freepublish }}" != "true" ]; then
+            UPLOADER=(python scripts/progressive_wechat_delivery.py --complete-final
+              --manifest "_selected_macro_manifest/selected_to_process_manifest.json"
+              --source-run-id "$GITHUB_RUN_ID" --source-sha "$GITHUB_SHA"
+              --shard-count "${{ needs.select-macro-reports.outputs.effective_shard_count }}"
+              --reports-per-shard "${{ needs.resolve-inputs.outputs.reports_per_shard }}"
+              --handoff-prefix "$PRIVATE_HANDOFF_ROOT/$GITHUB_RUN_ID/$DATE_FOLDER" --workspace .)
+          fi
+          "${UPLOADER[@]}" \
             --dropbox-output-root "xhs_notes/dropbox" \
             --date-folder "$DATE_FOLDER" \
             --output-root "wechat_drafts/xhs_notes" \
