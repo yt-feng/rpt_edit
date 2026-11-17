@@ -10,11 +10,12 @@ from pathlib import Path
 import re
 import shutil
 import tempfile
+import time
 
 import progressive_wechat_delivery as progressive
 from market_views_partial_sources import read_selection
 from private_workflow_handoff import build_r2_client, r2_bucket, download_directory, upload_directory
-from recovered_article_delivery import api, jobs, DAILY
+from recovered_article_delivery import api, jobs, DAILY, DeliveryError
 from report_extraction_source import resolve_extraction_source
 from wechat_editorial_binding import read_bound_article
 
@@ -34,6 +35,18 @@ def require(condition, category):
 
 
 def primary_identity(source_run_id, env):
+    """Retry only classified transient reads, restarting the complete identity check."""
+    transient = {'delivery_jobs_changed', 'delivery_jobs_incomplete', 'delivery_github_metadata_failed'}
+    for attempt in range(3):
+        try:
+            return _primary_identity_once(source_run_id, env)
+        except DeliveryError as error:
+            if str(error) not in transient or attempt == 2:
+                raise
+            time.sleep((1, 3)[attempt])
+
+
+def _primary_identity_once(source_run_id, env):
     repository = env.get('GITHUB_REPOSITORY', '')
     sha = env.get('GITHUB_SHA', '')
     attempt = env.get('GITHUB_RUN_ATTEMPT', '')

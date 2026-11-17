@@ -193,6 +193,72 @@ class ReuseTests(unittest.TestCase):
         self.assertEqual(printed.getvalue(), 'completed_primary_source_reuse_failed\n')
         self.assertEqual(output.read_text(), 'reuse=false\n')
 
+    def test_transient_job_inventory_drift_restarts_full_identity_then_exports_once(self):
+        self.snapshot()
+        before = dict(self.store.rows)
+        with (patch.object(reuse, 'jobs', side_effect=[reuse.DeliveryError('delivery_jobs_changed'), self.jobs, self.jobs]) as jobs,
+              patch.object(reuse, 'api', return_value=self.run) as api,
+              patch.object(reuse.time, 'sleep') as sleep):
+            result = self.execute()
+        self.assertEqual(result['reuse'], 'true')
+        self.assertEqual(api.call_count, 3)
+        self.assertEqual(jobs.call_count, 3)
+        self.assertEqual([call.args[0] for call in sleep.call_args_list], [1])
+        self.assertEqual(set(self.store.rows) - set(before), {result['article_handoff_prefix'] + '/shard_0.tar.gz'})
+        self.assertTrue(all(self.store.rows[key] == value for key, value in before.items()))
+
+    def test_three_transient_inventory_failures_leave_r2_untouched(self):
+        before = dict(self.store.rows)
+        with (patch.object(reuse, 'jobs', side_effect=reuse.DeliveryError('delivery_jobs_incomplete')) as jobs,
+              patch.object(reuse, 'api', return_value=self.run) as api,
+              patch.object(reuse.time, 'sleep') as sleep):
+            with self.assertRaisesRegex(reuse.DeliveryError, 'delivery_jobs_incomplete'):
+                self.execute()
+        self.assertEqual(api.call_count, 3)
+        self.assertEqual(jobs.call_count, 3)
+        self.assertEqual([call.args[0] for call in sleep.call_args_list], [1, 3])
+        self.assertEqual(before, self.store.rows)
+
+    def test_transport_retry_still_rejects_changed_identity_without_another_retry(self):
+        before = dict(self.store.rows)
+        with (patch.object(reuse, 'api', side_effect=[reuse.DeliveryError('delivery_github_metadata_failed'),
+                                                   {**self.run, 'run_attempt': 2}]) as api,
+              patch.object(reuse, 'jobs') as jobs,
+              patch.object(reuse.time, 'sleep') as sleep):
+            with self.assertRaisesRegex(reuse.ReuseError, 'original_daily_changed'):
+                self.execute()
+        self.assertEqual(api.call_count, 2)
+        jobs.assert_not_called()
+        self.assertEqual([call.args[0] for call in sleep.call_args_list], [1])
+        self.assertEqual(before, self.store.rows)
+
+    def test_export_recheck_exhaustion_keeps_all_r2_objects_unchanged(self):
+        self.snapshot()
+        before = dict(self.store.rows)
+        failure = reuse.DeliveryError('delivery_jobs_changed')
+        with (patch.object(reuse, 'jobs', side_effect=[self.jobs, failure, failure, failure]) as jobs,
+              patch.object(reuse, 'api', return_value=self.run) as api,
+              patch.object(reuse.time, 'sleep') as sleep):
+            with self.assertRaisesRegex(reuse.DeliveryError, 'delivery_jobs_changed'):
+                self.execute()
+        self.assertEqual(api.call_count, 4)
+        self.assertEqual(jobs.call_count, 4)
+        self.assertEqual([call.args[0] for call in sleep.call_args_list], [1, 3])
+        self.assertEqual(before, self.store.rows)
+
+    def test_nontransient_metadata_and_invalid_marker_fail_immediately(self):
+        with (patch.object(reuse, 'api', side_effect=reuse.DeliveryError('delivery_github_metadata_invalid')) as api,
+              patch.object(reuse.time, 'sleep') as sleep):
+            with self.assertRaisesRegex(reuse.DeliveryError, 'metadata_invalid'):
+                self.execute()
+        api.assert_called_once()
+        sleep.assert_not_called()
+        self.jobs['jobs'][1]['steps'].pop()
+        with patch.object(reuse.time, 'sleep') as sleep:
+            with self.assertRaisesRegex(reuse.ReuseError, 'completion_unproven'):
+                self.execute()
+        sleep.assert_not_called()
+
 
 if __name__ == '__main__':
     unittest.main()
