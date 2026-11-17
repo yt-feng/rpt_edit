@@ -4,6 +4,11 @@ run-name: Recover report articles ${{ inputs.date_folder }} from Daily ${{ input
 on:
   workflow_dispatch:
     inputs:
+      recovery_sources_ready:
+        description: Verified recovery source handoff is available if primary reuse is unavailable
+        required: false
+        type: boolean
+        default: true
       source_run_id:
         description: Original Daily run whose article upload never started
         required: true
@@ -39,6 +44,16 @@ on:
         default: true
   workflow_call:
     inputs:
+      recovery_sources_ready:
+        description: Verified recovery source handoff is available if primary reuse is unavailable
+        required: false
+        type: boolean
+        default: true
+      wait_for_primary_upload:
+        description: Wait read-only for this Daily attempt's original publisher before recovery admission
+        required: false
+        type: boolean
+        default: false
       source_run_id:
         required: true
         type: string
@@ -67,6 +82,9 @@ on:
         type: boolean
         default: true
     outputs:
+      primary_reused:
+        description: The original primary already delivered and its verified complete source snapshot was reused
+        value: ${{ jobs.generate.outputs.primary_reused }}
       article_handoff_prefix:
         description: Private complete article shards, retained for downstream consumers
         value: ${{ jobs.generate.outputs.article_handoff_prefix }}
@@ -101,12 +119,13 @@ jobs:
   generate:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: ${{ inputs.wait_for_primary_upload && 360 || 180 }}
     outputs:
-      article_handoff_prefix: ${{ steps.complete.outputs.article_handoff_prefix }}
-      article_count: ${{ steps.complete.outputs.article_count }}
+      article_handoff_prefix: ${{ steps.reuse.outputs.article_handoff_prefix || steps.complete.outputs.article_handoff_prefix }}
+      article_count: ${{ steps.reuse.outputs.article_count || steps.complete.outputs.article_count }}
+      primary_reused: ${{ steps.reuse.outputs.reuse }}
       context_sha256: ${{ steps.complete.outputs.context_sha256 }}
-      manifest_sha256: ${{ steps.complete.outputs.manifest_sha256 }}
+      manifest_sha256: ${{ steps.reuse.outputs.manifest_sha256 || steps.complete.outputs.manifest_sha256 }}
     steps:
       - name: Initialize isolated article generation workspace
         run: echo "DELIVERY_WORKSPACE=$RUNNER_TEMP/recovered-report-articles-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" >> "$GITHUB_ENV"
@@ -119,12 +138,56 @@ jobs:
           cache: pip
       - name: Install generation and source verification dependencies
         run: python -m pip install -r requirements.txt boto3 reportlab
+      - name: Wait for the original Daily publisher to finish
+        if: ${{ inputs.wait_for_primary_upload }}
+        timeout-minutes: 181
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/recovered_article_delivery.py wait-primary-upload --workspace "$DELIVERY_WORKSPACE"
+      - name: Download the original Daily selection manifest for source reuse
+        if: ${{ inputs.wait_for_primary_upload }}
+        uses: actions/download-artifact@v4
+        with:
+          name: selected-macro-manifest-${{ inputs.source_run_id }}
+          path: _selected_macro_manifest
+      - name: Reuse verified primary article sources after successful delivery
+        id: reuse
+        if: ${{ inputs.wait_for_primary_upload }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/reuse_completed_progressive_sources.py \
+            --source-run-id "$SOURCE_RUN_ID" --date-folder "$DATE_FOLDER" \
+            --expected-articles "$EXPECTED_ARTICLES" --workspace "$DELIVERY_WORKSPACE" \
+            --manifest _selected_macro_manifest/selected_to_process_manifest.json
+      - name: Require an explicit recovery source route
+        if: ${{ inputs.wait_for_primary_upload }}
+        env:
+          REUSE_PRIMARY: ${{ steps.reuse.outputs.reuse }}
+        run: test "$REUSE_PRIMARY" = true || test "$REUSE_PRIMARY" = false
+      - name: Verify completed primary source reuse
+        if: ${{ steps.reuse.outputs.reuse == 'true' }}
+        env:
+          ARTICLE_HANDOFF_PREFIX: ${{ steps.reuse.outputs.article_handoff_prefix }}
+          ARTICLE_COUNT: ${{ steps.reuse.outputs.article_count }}
+          MANIFEST_SHA256: ${{ steps.reuse.outputs.manifest_sha256 }}
+        run: |
+          test -n "$ARTICLE_HANDOFF_PREFIX"
+          test "$ARTICLE_COUNT" = "$EXPECTED_ARTICLES"
+          test -n "$MANIFEST_SHA256"
+      - name: Require verified recovery sources before regeneration
+        if: ${{ steps.reuse.outputs.reuse != 'true' }}
+        env:
+          RECOVERY_SOURCES_READY: ${{ inputs.recovery_sources_ready }}
+        run: test "$RECOVERY_SOURCES_READY" = true
       - name: Authenticate original upload and restore exact recovery sources
+        if: ${{ steps.reuse.outputs.reuse != 'true' }}
         id: prepare
         env:
           GH_TOKEN: ${{ github.token }}
         run: python scripts/recovered_article_delivery.py prepare --workspace "$DELIVERY_WORKSPACE"
       - name: Generate only missing bound report articles
+        if: ${{ steps.reuse.outputs.reuse != 'true' }}
         timeout-minutes: 120
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_REPORT_NOTES_API_KEY }}
@@ -148,11 +211,12 @@ jobs:
         run: python scripts/recovered_article_delivery.py save-generation --workspace "$DELIVERY_WORKSPACE"
       - name: Verify and archive complete article handoff
         id: complete
+        if: ${{ steps.reuse.outputs.reuse != 'true' }}
         run: python scripts/recovered_article_delivery.py complete-generation --workspace "$DELIVERY_WORKSPACE"
 
   deliver:
     needs: [generate]
-    if: ${{ inputs.upload_wechat && needs.generate.result == 'success' }}
+    if: ${{ inputs.upload_wechat && needs.generate.result == 'success' && needs.generate.outputs.primary_reused != 'true' }}
     concurrency:
       group: daily-wechat-publisher-${{ inputs.source_run_id }}-${{ inputs.date_folder }}
       cancel-in-progress: false

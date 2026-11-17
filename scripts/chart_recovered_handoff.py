@@ -11,24 +11,43 @@ import re
 
 def selection(env) -> dict:
     values = {key: env.get(key, '') for key in ('DATE_FOLDER', 'HANDOFF_RUN_ID',
-              'ARTIFACT_RUN_ID', 'HANDOFF_MANIFEST_SHA256', 'EXPECTED_SHARDS', 'EXPECTED_ARTICLES')}
+              'ARTIFACT_RUN_ID', 'HANDOFF_MANIFEST_SHA256', 'EXPECTED_SHARDS', 'EXPECTED_ARTICLES', 'HANDOFF_KIND')}
     if (not re.fullmatch(r'[1-9][0-9]{0,19}', values['HANDOFF_RUN_ID'])
             or values['ARTIFACT_RUN_ID']
             or not re.fullmatch(r'[a-f0-9]{64}', values['HANDOFF_MANIFEST_SHA256'])
             or not re.fullmatch(r'(?:[0-9]{6}|[0-9]{8})', values['DATE_FOLDER'])
             or values['EXPECTED_SHARDS'] != '1'
-            or not re.fullmatch(r'[1-9][0-9]{0,3}', values['EXPECTED_ARTICLES'])):
+            or not re.fullmatch(r'[1-9][0-9]{0,3}', values['EXPECTED_ARTICLES'])
+            or values['HANDOFF_KIND'] not in {'', 'complete-primary'}):
         raise ValueError('invalid_recovered_chart_selection')
     datetime.strptime(values['DATE_FOLDER'], '%y%m%d' if len(values['DATE_FOLDER']) == 6 else '%Y%m%d')
     values['EXPECTED_ARTICLES'] = int(values['EXPECTED_ARTICLES'])
     if values['EXPECTED_ARTICLES'] > 1000:
         raise ValueError('invalid_recovered_chart_count')
-    values['prefix'] = ('_private-workflow-handoff/xhs-recovery/' + values['HANDOFF_RUN_ID'] + '/'
+    family = 'xhs-complete' if values['HANDOFF_KIND'] else 'xhs-recovery'
+    values['prefix'] = ('_private-workflow-handoff/' + family + '/' + values['HANDOFF_RUN_ID'] + '/'
                         + values['DATE_FOLDER'] + '/' + values['HANDOFF_MANIFEST_SHA256'] + '/articles')
     return values
 
 
 def validate_handoff(root: Path, config: dict) -> dict:
+    if config.get('HANDOFF_KIND') == 'complete-primary':
+        from reuse_completed_progressive_sources import validate_complete_handoff
+        from report_extraction_source import resolve_extraction_source
+        from build_chart_search_index import discover_candidates
+
+        validate_complete_handoff(root, config['HANDOFF_RUN_ID'], config['DATE_FOLDER'],
+                                  config['HANDOFF_MANIFEST_SHA256'], config['EXPECTED_ARTICLES'])
+        # Keep the original-image chart index separate from reconstructed OCR.
+        reports = sorted(path.parent for path in root.glob('*/status.json'))
+        if (len(reports) != config['EXPECTED_ARTICLES']
+                or any(resolve_extraction_source(path).method != 'mineru' for path in reports)):
+            raise ValueError('unsupported_complete_primary_chart_source_kind')
+        candidates = discover_candidates(root, {}, date_folder=config['DATE_FOLDER'])
+        if not candidates:
+            raise ValueError('complete_primary_chart_original_images_missing')
+        return {'complete': True, 'reports': config['EXPECTED_ARTICLES'], 'source_kind': 'complete-primary',
+                'original_image_count': len(candidates)}
     from recover_report_articles import validate_articles, read_json, PROVENANCE, RECEIPT
 
     if read_json(root / RECEIPT).get('source_kind') != 'mineru-recovery':

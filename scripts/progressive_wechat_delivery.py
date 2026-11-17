@@ -730,13 +730,43 @@ def save_complete(plan, output_dir, client, bucket, source_dirs):
         for source in plan['sources']:
             target = source_root / source['report_relative']
             shutil.copytree(source_dirs[source['source_id']], target)
-            status = read_json(target / 'status.json')
-            status.update(source_pdf=source['staged_name'], original_pdf_sha256=source['content_sha256'], wechat_article='wechat_article.md')
-            write_json(target / 'status.json', status)
+            # source_pdf is part of the editorial/provenance binding. Preserve
+            # producer bytes, including absolute staged paths and recovery names.
         upload_directory(source_root, prefix + '/sources.tar.gz', client=client, bucket=bucket)
     upload_directory(Path(output_dir), prefix + '/complete.tar.gz', client=client, bucket=bucket)
     marker = {'plan_sha256': plan['plan_sha256'], 'complete': True}
     client.put_object(Bucket=bucket, Key=prefix + '/complete.json', Body=encoded(marker), ContentType='application/json')
+
+
+def completed_source_directories(plan, source_root, complete):
+    """Read only a source snapshot authenticated by this plan's complete marker.
+
+    Ordinary ready admission remains staged-name-only. A durable completion may
+    originate from recovery, whose original filename and provenance must survive.
+    """
+    require(complete == {'plan_sha256': plan['plan_sha256'], 'complete': True}, 'progressive_complete_owner_changed')
+    from wechat_editorial_binding import read_bound_article
+    from report_extraction_source import resolve_extraction_source
+    result = {}
+    root = Path(source_root)
+    for source in plan['sources']:
+        relative = Path(source['report_relative'])
+        require(re.fullmatch(r'shard_[0-9]+/[^/\\]+', str(relative))
+                and relative.name not in {'.', '..'}, 'progressive_complete_source_path_invalid')
+        report = root / relative
+        require(not root.is_symlink() and not report.parent.is_symlink() and not report.is_symlink(), 'progressive_source_symlink')
+        status = read_json(report / 'status.json')
+        require(not (report / 'status.json').is_symlink() and not status.get('error')
+                and status.get('wechat_article') == 'wechat_article.md'
+                and status.get('original_pdf_sha256') == source['content_sha256']
+                and Path(str(status.get('source_pdf', ''))).name in {source['source_pdf'], source['staged_name']},
+                'progressive_complete_source_binding_mismatch')
+        provenance = status.get('wechat_source_provenance')
+        require(provenance is None or provenance.get('content_sha256') == source['content_sha256'], 'progressive_complete_provenance_mismatch')
+        require(read_bound_article(report) is not None, 'progressive_complete_editorial_binding_invalid')
+        resolve_extraction_source(report)
+        result[source['source_id']] = report
+    return result
 
 
 def validate_source_root(source_root, workspace):
@@ -799,7 +829,7 @@ def main(argv=None):
             if args.complete_final:
                 reset_source_root(source_root, args.workspace)
                 download_directory(prefix + '/sources.tar.gz', source_root, client=client, bucket=bucket)
-                directories = source_directories(plan, source_root)
+                directories = completed_source_directories(plan, source_root, complete)
                 # Remap runner-absolute paths from durable per-group receipts.
                 for group in plan['groups']:
                     restore_group(plan, group, group_directory(args.workspace, plan, group), client, bucket)

@@ -167,6 +167,76 @@ class ReplayTests(unittest.TestCase):
                      self.assertRaisesRegex(ValueError, 'original Daily identity'):
                     replay.validate_recovered_sources(self.plan, prefix, run, date_root)
 
+    def reused_jobs(self):
+        records = copy.deepcopy(self.jobs['jobs'])
+        for index, (name, conclusion) in enumerate((
+                ('push-xhs-notes-wechat-drafts', 'success'),
+                ('deliver-recovered-report-articles / generate', 'success'),
+                ('deliver-recovered-report-articles / deliver', 'skipped'),
+                ('deliver-recovered-report-articles / publish', 'skipped')), 50):
+            records.append({'id': index, 'name': name, 'status': 'completed', 'conclusion': conclusion,
+                            'run_id': 123, 'head_sha': 'c' * 40, 'run_attempt': 1,
+                            'steps': [{'name': 'Verify completed primary source reuse',
+                                       'status': 'completed', 'conclusion': 'success'}] if name.endswith(' / generate') else []})
+        return {'total_count': len(records), 'jobs': records}
+
+    def test_completed_primary_prefix_requires_explicit_bound_plan_and_verified_reuse(self):
+        prefix = '_private-workflow-handoff/xhs-complete/123/260920/' + 'a' * 64 + '/articles'
+        original = '_private-workflow-handoff/xhs/123/260920'
+        plan = dict(self.plan, schema_version=3, source_prefix=prefix)
+        run = dict(self.run, head_sha='c' * 40)
+        with patch.object(replay, 'list_keys') as listing:
+            self.assertEqual(replay.resolve_source_prefix(plan, original, run, self.reused_jobs()), prefix)
+            listing.assert_not_called()
+            with self.assertRaisesRegex(ValueError, 'changed after recovery preparation'):
+                replay.resolve_source_prefix(plan, original, run, self.reused_jobs(), original)
+            for old in (self.plan, dict(plan, source_prefix=original),
+                        dict(plan, source_prefix=prefix.replace('xhs-complete', 'xhs-recovery'))):
+                with self.subTest(plan=old), self.assertRaisesRegex(ValueError, 'not completely verified'):
+                    replay.resolve_source_prefix(old, original, run, self.reused_jobs())
+            listing.assert_not_called()
+
+    def test_reuse_marker_and_primary_job_identity_cannot_be_missing_changed_or_duplicated(self):
+        prefix = '_private-workflow-handoff/xhs-complete/123/260920/' + 'a' * 64 + '/articles'
+        plan = dict(self.plan, schema_version=3, source_prefix=prefix)
+        run = dict(self.run, head_sha='c' * 40)
+        for change in ('marker-missing', 'marker-failed', 'marker-duplicate', 'publisher-failed',
+                       'stage-active', 'stage-success', 'wrong-run', 'wrong-sha', 'wrong-attempt', 'missing-stage'):
+            jobs = self.reused_jobs()
+            generated = jobs['jobs'][-3]
+            if change == 'marker-missing': generated['steps'] = []
+            if change == 'marker-failed': generated['steps'][0]['conclusion'] = 'skipped'
+            if change == 'marker-duplicate': generated['steps'] *= 2
+            if change == 'publisher-failed': jobs['jobs'][-4]['conclusion'] = 'failure'
+            if change == 'stage-active': jobs['jobs'][-2]['status'] = 'in_progress'
+            if change == 'stage-success': jobs['jobs'][-2]['conclusion'] = 'success'
+            if change == 'wrong-run': generated['run_id'] = 124
+            if change == 'wrong-sha': generated['head_sha'] = 'd' * 40
+            if change == 'wrong-attempt': generated['run_attempt'] = 2
+            if change == 'missing-stage': jobs['jobs'].pop()
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                replay.resolve_source_prefix(plan, '_private-workflow-handoff/xhs/123/260920', run, jobs)
+
+    def test_completed_primary_receipt_and_each_planned_extraction_are_required(self):
+        prefix = '_private-workflow-handoff/xhs-complete/123/260920/' + 'a' * 64 + '/articles'
+        run = dict(self.run, head_sha='c' * 40)
+        with tempfile.TemporaryDirectory() as temporary:
+            date_root = Path(temporary) / '260920'
+            root = date_root / 'shard_0'
+            with patch('reuse_completed_progressive_sources.validate_complete_handoff') as validate, patch.object(replay.shards, 'selected_reports') as selected, patch('recover_report_articles.validate_articles') as legacy:
+                replay.validate_recovered_sources(self.plan, prefix, run, date_root)
+                validate.assert_called_once_with(root, source_run_id='123', date_folder='260920',
+                    manifest_sha256='a' * 64, expected_articles=self.plan['source_count'], source_sha='c' * 40)
+                self.assertEqual([call.args[1] for call in selected.call_args_list], list(range(5)))
+                legacy.assert_not_called()
+                selected.side_effect = ValueError('Source changed after planning')
+                with self.assertRaisesRegex(ValueError, 'Source changed'):
+                    replay.validate_recovered_sources(self.plan, prefix, run, date_root)
+            with patch('reuse_completed_progressive_sources.validate_complete_handoff', side_effect=ValueError('complete primary receipt mismatch')), patch.object(replay.shards, 'selected_reports') as selected:
+                with self.assertRaisesRegex(ValueError, 'receipt mismatch'):
+                    replay.validate_recovered_sources(self.plan, prefix, run, date_root)
+                selected.assert_not_called()
+
     def test_completed_slot_reused_without_upload_and_global_index_21_preserved(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

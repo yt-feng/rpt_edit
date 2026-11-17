@@ -7,6 +7,7 @@ import subprocess
 import tarfile
 import tempfile
 import textwrap
+from types import SimpleNamespace
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -377,6 +378,61 @@ class ArchiveTests(unittest.TestCase):
         handoff_reads = [key for key in self.client.reads if key.startswith("_private-workflow-handoff/")]
         self.assertEqual(handoff_reads, [self.key])
 
+    def test_only_exact_completed_primary_handoff_is_consumed(self):
+        raw = tar_bytes([("report/wechat_article.md", b"# Synthetic article\nText."),
+                         ("completed_primary_source_receipt.json", b'{"article_count":1}'),
+                         ("_completed_primary_proof/private/wechat_article.md", b"private proof must not be published")])
+        root = "_private-workflow-handoff/xhs-complete/123/261012/" + "a" * 64
+        self.key = root + "/articles/shard_0.tar.gz"
+        self.seed(raw)
+        for key in (root + "/sources.tar.gz", root + "/complete.tar.gz",
+                    root + "/shard_0.tar.gz", root + "/articles/shard_1.tar.gz",
+                    self.key.replace("a" * 64, "invalid-manifest"),
+                    self.key.replace("/123/", "/124/")):
+            self.client.put_object(Bucket="bucket", Key=key, Body=b"must never be read")
+        calls = []
+        def validate(directory, run_id, date, manifest, count, source_sha=None):
+            calls.append((run_id, date, manifest, count, source_sha))
+        bridge = SimpleNamespace(RECEIPT="completed_primary_source_receipt.json", validate_complete_handoff=validate)
+        with patch.dict("sys.modules", {"reuse_completed_progressive_sources": bridge}):
+            result = subject.publish_run(self.client, "bucket", "123", [], source_sha="b" * 40)
+        self.assertEqual(result["handoffs"], 1)
+        self.assertEqual(result["unique_reports"], 1)
+        self.assertEqual(calls, [("123", "261012", "a" * 64, 1, "b" * 40)])
+        handoff_reads = [key for key in self.client.reads if key.startswith("_private-workflow-handoff/")]
+        self.assertEqual(handoff_reads, [self.key])
+        for key, value in self.client.rows.items():
+            if key.startswith(subject.PREFIX):
+                self.assertNotIn(b"private proof must not be published", value[0])
+
+    def test_completed_primary_requires_bound_sha_and_validation_before_publication(self):
+        self.key = "_private-workflow-handoff/xhs-complete/123/261012/" + "a" * 64 + "/articles/shard_0.tar.gz"
+        self.seed(tar_bytes([("report/wechat_article.md", b"# Synthetic article\nText."),
+                             ("completed_primary_source_receipt.json", b'{"article_count":1}')]))
+        with self.assertRaisesRegex(ValueError, "completed_primary_source_sha_required"):
+            subject.publish_run(self.client, "bucket", "123", [])
+        def reject(*args, **kwargs):
+            raise ValueError("reuse_handoff_source_changed")
+        bridge = SimpleNamespace(RECEIPT="completed_primary_source_receipt.json", validate_complete_handoff=reject)
+        with patch.dict("sys.modules", {"reuse_completed_progressive_sources": bridge}), \
+                self.assertRaisesRegex(ValueError, "reuse_handoff_source_changed"):
+            subject.publish_run(self.client, "bucket", "123", [], source_sha="b" * 40)
+        self.assertFalse(any(key.startswith(subject.PREFIX) for key in self.client.rows))
+
+    def test_complete_source_export_roundtrips_through_real_customer_validation(self):
+        from test_reuse_completed_progressive_sources import ReuseTests
+        fixture = ReuseTests()
+        fixture.setUp()
+        self.addCleanup(fixture.doCleanups)
+        fixture.snapshot()
+        result = fixture.execute()
+        key = result['article_handoff_prefix'] + '/shard_0.tar.gz'
+        raw, _version, metadata = fixture.store.rows[key]
+        self.client.put_object(Bucket="bucket", Key=key, Body=raw, Metadata=metadata)
+        result = subject.publish_run(self.client, "bucket", "1234", [], source_sha="a" * 40)
+        self.assertEqual(result["handoffs"], 1)
+        self.assertEqual(result["unique_reports"], 12)
+
     def test_current_catalog_validation_rejects_empty_or_invalid_id_inventory(self):
         path = self.root / "catalog.json"
         for value in ({}, {"items": []}, {"items": [{"id": "../private"}]}, {"items": [{"id": "a" * 24}] * 2}):
@@ -405,12 +461,13 @@ class ArchiveTests(unittest.TestCase):
         program = r'''
 const assert = require('node:assert/strict');
 const AsyncFunction = Object.getPrototypeOf(async function(){}).constructor;
-const guard = new AsyncFunction('github', 'context', 'process', SCRIPT);
+const guard = new AsyncFunction('github', 'context', 'process', 'core', SCRIPT);
 const good = {id:123, path:'.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml', head_branch:'main',
  head_repository:{full_name:'owner/repo'}, status:'in_progress', head_sha:'reviewed'};
 const daily = {runId:123, workflow:'Daily report articles and translations', sha:'reviewed', repo:{owner:'owner',repo:'repo'}};
 async function accepted(run, context) {
- try { await guard({rest:{actions:{getWorkflowRun:async()=>({data:run})}}}, context, {env:{SOURCE_RUN_ID:'123'}}); return true; }
+ try { let output; await guard({rest:{actions:{getWorkflowRun:async()=>({data:run})}}}, context, {env:{SOURCE_RUN_ID:'123'}},
+   {setOutput:(name,value)=>{assert.equal(name,'source_sha');output=value;}}); assert.equal(output,run.head_sha); return true; }
  catch { return false; }
 }
 (async()=>{

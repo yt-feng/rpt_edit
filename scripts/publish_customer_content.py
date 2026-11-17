@@ -11,6 +11,7 @@ import gzip
 import hashlib
 import json
 import math
+import os
 import re
 import shutil
 import tarfile
@@ -371,7 +372,8 @@ def report_directories(root: Path) -> list[Path]:
     directories = {path.parent for pattern in (*TEXT_FILES, "translation_status.json", "translation_status_en.json") for path in root.rglob(pattern)}
     result = []
     for directory in sorted(directories):
-        if any(part in {"mineru_raw", ".git", ".translation_cache"} for part in directory.relative_to(root).parts):
+        if any(part in {"mineru_raw", ".git", ".translation_cache", "_completed_primary_proof"}
+               for part in directory.relative_to(root).parts):
             continue
         if directory.is_symlink() or root not in directory.resolve().parents and directory.resolve() != root:
             raise ValueError("symlink_content_directory")
@@ -629,18 +631,19 @@ def download_bounded(client: Any, bucket: str, key: str, destination: Path) -> i
         body.close()
 
 
-def publish_run(client: Any, bucket: str, run_id: str, catalog: list[dict], date_filter: str = "") -> dict:
+def publish_run(client: Any, bucket: str, run_id: str, catalog: list[dict], date_filter: str = "",
+                *, source_sha: str = "") -> dict:
     if not re.fullmatch(r"[1-9][0-9]{0,19}", run_id):
         raise ValueError("invalid_source_run")
     keys = []
-    for family in ("xhs", "xhs-recovery", "mineru-market-sources"):
+    for family in ("xhs", "xhs-recovery", "xhs-complete", "mineru-market-sources"):
         prefix = f"_private-workflow-handoff/{family}/{run_id}/"
         response = client.list_objects_v2(Bucket=bucket, Prefix=prefix, MaxKeys=1000)
         if response.get("IsTruncated"):
             raise ValueError("source_run_inventory_too_large")
         for row in response.get("Contents", []):
             key = row["Key"]
-            suffix = (r"(\d{6})/[a-f0-9]{64}/articles/shard_0\.tar\.gz" if family == "xhs-recovery"
+            suffix = (r"(\d{6})/[a-f0-9]{64}/articles/shard_0\.tar\.gz" if family in {"xhs-recovery", "xhs-complete"}
                       else r"(\d{6})/(?:shard_\d+|translated_\d+)\.tar\.gz" if family == "xhs"
                       else r"(\d{6})/shard_0\.tar\.gz")
             match = re.fullmatch(re.escape(prefix) + suffix, key)
@@ -659,6 +662,16 @@ def publish_run(client: Any, bucket: str, run_id: str, catalog: list[dict], date
         with tempfile.TemporaryDirectory(prefix="customer-api-publish-") as temp:
             directory = Path(temp) / "source"
             download_bounded(client, bucket, key, directory)
+            if key.startswith(f"_private-workflow-handoff/xhs-complete/{run_id}/"):
+                if not re.fullmatch(r"[a-f0-9]{40}", source_sha):
+                    raise ValueError("completed_primary_source_sha_required")
+                from reuse_completed_progressive_sources import RECEIPT, validate_complete_handoff
+                receipt = json.loads((directory / RECEIPT).read_bytes())
+                count = receipt.get("article_count") if isinstance(receipt, dict) else None
+                if type(count) is not int or not 1 <= count <= 1000:
+                    raise ValueError("completed_primary_source_count_invalid")
+                parts = key.split("/")
+                validate_complete_handoff(directory, run_id, parts[3], parts[4], count, source_sha=source_sha)
             result = publish_directory(client, bucket, directory, catalog, date, seen_reports=seen_reports)
             summary["report_publications"] += result["reports"]
             summary["artifact_publications"] += result["artifacts"]
@@ -683,7 +696,8 @@ def main() -> int:
             parser.error("--date is required with --source-root")
         result = publish_directory(client, bucket, args.source_root, catalog, date)
     else:
-        result = publish_run(client, bucket, args.source_run_id, catalog, date)
+        result = publish_run(client, bucket, args.source_run_id, catalog, date,
+                             source_sha=os.environ.get("SOURCE_EXECUTION_SHA", ""))
     print(json.dumps(result, sort_keys=True))
     return 0
 

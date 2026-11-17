@@ -742,6 +742,36 @@ Blog archive shards are another intentional small public output. Their
 sanitization, fingerprinting, concurrent-write handling, and edge publishing
 contract are documented in [Blog SEO and WeChat Output Contract](blog-seo-wechat-output.md).
 
+## Daily article delivery and translation overlap
+
+Daily freezes the complete selected source inventory before article generation.
+The three-account draft plan normally has three groups per account, with an
+eight-article group limit: 60 sources become 20 per account in 7/7/6 groups;
+80 sources require ten groups of eight, assigned as 4/3/3 groups. Existing
+accepted routes and draft IDs remain fixed during retries. Each completed
+article creates a private ready checkpoint; a short independent publisher sends
+each complete group while other PDF and article jobs continue. The existing
+90-second per-account draft interval is persisted across publisher invocations.
+
+Normal PDF translation starts after complete source generation and does not
+wait for WeChat upload. Only the recovery branch waits for the original
+publisher's exact run/attempt to finish. Failed publishers retain the existing
+source and draft-resume checks. A successful progressive publisher is never
+taken over: its complete source snapshot and acceptance evidence are validated
+and exported under the separate private `xhs-complete/<run>/<date>/<manifest>/articles`
+prefix, without another model call or draft submission. Translation, replay,
+chart indexing and customer-content delivery validate this handoff before use;
+private acceptance evidence is excluded from article and chart discovery.
+Snapshots preserve original source metadata and editorial bindings unchanged.
+
+The independent half-hour Cloudflare clock checks the metadata-only Daily
+wake-up workflow when GitHub's schedule is stale. Both readers retry moving
+GitHub inventories within fixed bounds; an existing trusted active run stops
+dispatch, while incomplete inventories cannot authorize a new run. The clock's
+last check is stored separately from its dispatch receipt and can be inspected
+without triggering work. Final full-delivery and downstream cleanup gates
+remain in place.
+
 ## Compatibility Note
 
 Some paths, scripts, prompts, workflows, and environment variables still use historical names. Renaming them would require a migration across GitHub Actions, scripts, generated folders, and downstream references, so this documentation cleanup leaves runtime names intact.

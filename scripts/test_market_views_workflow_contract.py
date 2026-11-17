@@ -82,7 +82,7 @@ def job(path, name):
 
 def gate(block, results, *, selected="64", cancelled=False, plan=None, primary_ready=None, provider_only="false",
          steps=None, prior_steps_success=True, chart_enabled="true", recovery_kind="mineru-recovery",
-         recovery_outputs=None):
+         recovery_outputs=None, primary_reused="false"):
     expression = re.search(r"(?s)\bif:.*?\$\{\{(.*?)\}\}", block).group(1)
     # GitHub adds success() when an expression has no explicit status function.
     # A continue-on-error step has failure outcome but successful conclusion;
@@ -101,6 +101,7 @@ def gate(block, results, *, selected="64", cancelled=False, plan=None, primary_r
         primary_ready = {"success": "true", "failure": "false"}.get(results.get("process-shard"), "")
     expression = expression.replace("needs.source-outcome.outputs.primary_ready", repr(primary_ready))
     expression = expression.replace("needs.source-outcome.outputs.provider_only", repr(provider_only))
+    expression = expression.replace("needs.deliver-recovered-report-articles.outputs.primary_reused", repr(primary_reused))
     expression = expression.replace("needs.recover-market-sources.outputs.source_kind", repr(recovery_kind))
     expression = re.sub(r"needs\.recover-market-sources\.outputs\.(\w+)",
                         lambda m: repr({'article_source_ready': 'true', **(recovery_outputs or {})}.get(m[1], '')), expression)
@@ -282,7 +283,8 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         for outcome in ('success', 'failure', 'cancelled', 'skipped'):
             restored = {**results, 'deliver-recovered-report-articles': outcome}
             self.assertEqual(gate(planner, restored, primary_ready='false'), outcome == 'success')
-        self.assertIn('push-xhs-notes-wechat-drafts', re.search(r'needs: \[(.*?)\]', delivery)[1])
+        self.assertNotIn('push-xhs-notes-wechat-drafts', re.search(r'needs: \[(.*?)\]', delivery)[1])
+        self.assertIn('wait_for_primary_upload: true', delivery)
         self.assertIn('needs.deliver-recovered-report-articles.outputs.article_handoff_prefix', planner)
         materialize = job(UPSTREAM, 'translate-report-shard')
         self.assertIn('--prefix "${{ needs.plan-portal-translated-reports.outputs.source_prefix }}"', materialize)
@@ -291,7 +293,35 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         self.assertTrue(gate(chart, restored, primary_ready='false', recovery_kind='mineru-recovery'))
         self.assertFalse(gate(chart, restored, primary_ready='false', recovery_kind='ocr-synthesis'))
         self.assertFalse(gate(chart, restored, primary_ready='false', chart_enabled='false'))
+        self.assertTrue(gate(chart, restored, primary_ready='false', recovery_kind='', primary_reused='true'))
+        for outcome in ('failure', 'skipped', 'cancelled'):
+            unavailable = {**restored, 'recover-market-sources': outcome, 'recover-ocr-page-sources': outcome}
+            self.assertTrue(gate(delivery, unavailable, primary_ready='false', recovery_kind=''))
+            self.assertTrue(gate(planner, unavailable, primary_ready='false'))
+        self.assertIn("recovery_sources_ready: ${{ (needs.recover-market-sources.result == 'success'", delivery)
+        self.assertIn("needs.recover-market-sources.outputs.article_source_ready == 'true'", delivery)
+        self.assertIn("|| needs.recover-ocr-page-sources.result == 'success'", delivery)
         self.assertIn('RECOVERED_MANIFEST: ${{ needs.deliver-recovered-report-articles.outputs.manifest_sha256 }}', chart)
+        self.assertIn('RECOVERED_PRIMARY_REUSED: ${{ needs.deliver-recovered-report-articles.outputs.primary_reused }}', chart)
+        self.assertIn('RECOVERED_ARTICLE_PREFIX: ${{ needs.deliver-recovered-report-articles.outputs.article_handoff_prefix }}', chart)
+
+    def test_normal_translation_has_no_wechat_publisher_ancestor(self):
+        blocks = dict(re.findall(r'(?ms)^  ([\w-]+):\n(.*?)(?=^  [\w-]+:\n|\Z)', UPSTREAM.read_text()))
+        def ancestors(name):
+            match = re.search(r'needs: \[(.*?)\]', blocks[name])
+            direct = set(match[1].split(', ')) if match else set()
+            return direct | {parent for child in direct for parent in ancestors(child)}
+        for name in ('plan-portal-translated-reports', 'translate-report-shard', 'build-portal-translated-reports'):
+            with self.subTest(job=name):
+                self.assertNotIn('push-xhs-notes-wechat-drafts', ancestors(name))
+        self.assertIn('deliver-recovered-report-articles', ancestors('plan-portal-translated-reports'))
+        self.assertIn('push-xhs-notes-wechat-drafts', ancestors('validate-report-delivery'))
+        recovery = blocks['deliver-recovered-report-articles']
+        self.assertFalse(gate(recovery, {'process-shard': 'success'}, primary_ready='true'))
+        planner = blocks['plan-portal-translated-reports']
+        self.assertTrue(gate(planner, {'process-shard': 'success', 'source-outcome': 'success',
+                                      'deliver-recovered-report-articles': 'skipped'}, primary_ready='true'))
+        self.assertFalse(gate(planner, {'process-shard': 'failure', 'deliver-recovered-report-articles': 'failure'}, primary_ready='false'))
 
     def test_actual_article_gate_rejects_green_pdf_with_skipped_required_outputs(self):
         block = job(UPSTREAM, 'validate-report-delivery')

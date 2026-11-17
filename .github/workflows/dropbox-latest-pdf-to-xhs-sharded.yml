@@ -1445,16 +1445,19 @@ jobs:
           exit 1
 
   deliver-recovered-report-articles:
-    needs: [resolve-inputs, select-macro-reports, source-outcome, recover-market-sources, recover-ocr-page-sources, push-xhs-notes-wechat-drafts]
+    needs: [resolve-inputs, select-macro-reports, source-outcome, recover-market-sources, recover-ocr-page-sources]
     if: >-
-      ${{ !cancelled() && ((needs.recover-market-sources.result == 'success' && needs.recover-market-sources.outputs.article_source_ready == 'true') || needs.recover-ocr-page-sources.result == 'success') &&
-          needs.source-outcome.outputs.primary_ready == 'false' &&
+      ${{ !cancelled() && needs.source-outcome.outputs.primary_ready == 'false' &&
           needs.resolve-inputs.outputs.replay_source_run_id == '' &&
           (needs.resolve-inputs.outputs.wechat_draft_upload == 'true' ||
            needs.resolve-inputs.outputs.translated_report_count != '0' ||
            (vars.CHART_SEARCH_ENABLED == 'true' && needs.recover-market-sources.outputs.source_kind == 'mineru-recovery')) }}
+    # Only the recovery branch waits for the primary publisher internally.
+    # A skipped recovery must not serialize normal translation behind WeChat.
     uses: ./.github/workflows/recover-report-article-delivery.yml
     with:
+      wait_for_primary_upload: true
+      recovery_sources_ready: ${{ (needs.recover-market-sources.result == 'success' && needs.recover-market-sources.outputs.article_source_ready == 'true') || needs.recover-ocr-page-sources.result == 'success' }}
       source_run_id: ${{ github.run_id }}
       source_handoff_run_id: ${{ github.run_id }}
       source_kind: ${{ needs.recover-ocr-page-sources.result == 'success' && 'ocr-pages' || needs.recover-market-sources.outputs.source_kind }}
@@ -1916,7 +1919,7 @@ jobs:
     if: >-
       ${{
         !cancelled() && ((needs.process-shard.result == 'success' && needs.source-outcome.outputs.primary_ready == 'true') ||
-          (needs.deliver-recovered-report-articles.result == 'success' && needs.recover-market-sources.outputs.source_kind == 'mineru-recovery')) &&
+          (needs.deliver-recovered-report-articles.result == 'success' && (needs.deliver-recovered-report-articles.outputs.primary_reused == 'true' || needs.recover-market-sources.outputs.source_kind == 'mineru-recovery'))) &&
         needs.select-macro-reports.outputs.selected_count != '0' &&
         vars.CHART_SEARCH_ENABLED == 'true'
       }}
@@ -1938,6 +1941,8 @@ jobs:
           SOURCE_RUN_ID: ${{ github.run_id }}
           RECOVERED_RESULT: ${{ needs.deliver-recovered-report-articles.result }}
           RECOVERED_MANIFEST: ${{ needs.deliver-recovered-report-articles.outputs.manifest_sha256 }}
+          RECOVERED_PRIMARY_REUSED: ${{ needs.deliver-recovered-report-articles.outputs.primary_reused }}
+          RECOVERED_ARTICLE_PREFIX: ${{ needs.deliver-recovered-report-articles.outputs.article_handoff_prefix }}
           SELECTED_COUNT: ${{ needs.select-macro-reports.outputs.selected_count }}
         run: python3 -B scripts/chart_dispatch_recovery.py
 
