@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "id": "55f99abb699cf1cb3a789545ad56705b8731c7809495fb2ad875fdb5b52933ef",
+  "slug": "bbg-20261117-55f99abb699cf1cb",
+  "date": "2026-11-17",
+  "title": "鲁比尼英伟达变局：反成美国AI助力，对华芯片管制会更严吗？",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-11-16/roubini-sees-nvidia-crisis-as-a-boon-for-us-ai-video",
+  "start": 0.0,
+  "end": 90.0,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 4.72,
+      "en": "Nooran Rabini of Rabini Macro Associates writing the bullish case for AI is even more bullish.",
+      "zh": "鲁比尼宏观协会的诺里尔·鲁比尼认为，AI的看涨理由更加看涨。"
+    },
+    {
+      "start": 4.72,
+      "end": 9.92,
+      "en": "The Jensen's target is a boon not a bane for U.S. great dominance of China in the AI race.",
+      "zh": "黄仁勋的目标对美国在AI竞赛中领先中国是利好而非利空。"
+    },
+    {
+      "start": 9.92,
+      "end": 13.6,
+      "en": "Nooran joins us now for more. Nooran, good morning. Good morning. Good for second time. Good to see you, buddy.",
+      "zh": "诺里尔现在加入我们。诺里尔，早上好。早上好。第二次了。很高兴见到你，伙计。"
+    },
+    {
+      "start": 13.6,
+      "end": 17.2,
+      "en": "Nice to meet you. Just expand that. Just if you can. Where do you think this is going?",
+      "zh": "很高兴见到你。请展开说说。如果可能的话。你认为这会走向何方？"
+    },
+    {
+      "start": 18.16,
+      "end": 29.04,
+      "en": "Well, in my view, we are in a race where China is going to dominate AI and it's all about frontier chips and frontier models. Why do I say this is a boon for the U.S.",
+      "zh": "在我看来，我们正处于一场竞赛中，中国将在AI领域占据主导，关键在于前沿芯片和前沿模型。为什么我说这对美国是利好？"
+    },
+    {
+      "start": 29.04,
+      "end": 36.0,
+      "en": "for three reasons. Reason number one, after what happened, as we agree, exor controls on chips are going to become much more radical.",
+      "zh": "有三个原因。第一，在发生的事情之后，正如我们一致认为的，芯片出口管制将变得更加激进。"
+    },
+    {
+      "start": 36.0,
+      "end": 43.76,
+      "en": "And all this thing of bypassing the Singapore or whatever not to get the advanced chip to China is going to stop completely. And they need those advanced chips to improve",
+      "zh": "所有通过新加坡等地绕过限制向中国获取先进芯片的做法将完全停止。而他们需要这些先进芯片来改进"
+    },
+    {
+      "start": 43.76,
+      "end": 54.08,
+      "en": "their own models. Reason number two is that even before the Jensen saga, both anthropic and opai stopped essentially permitting Chinese firms to use essentially",
+      "zh": "自己的模型。第二，甚至在黄仁勋事件之前，Anthropic和OpenAI基本上已停止允许中国公司使用"
+    },
+    {
+      "start": 54.88,
+      "end": 63.28,
+      "en": "distillation to use their models to improve their own training of deep seek and so on after what has happened, that's going to be more so. And the new models have not been released",
+      "zh": "蒸馏技术来利用他们的模型改进自己的训练，比如DeepSeek等。在发生的事情之后，这种情况将更加严重。而新模型尚未发布"
+    },
+    {
+      "start": 63.28,
+      "end": 72.88,
+      "en": "by anthropic and open AI are much more advanced than the previous ones. They're closer to AGI by using recursive self improvement. Again, that door is going to be shut down.",
+      "zh": "Anthropic和OpenAI发布的新模型比之前的模型先进得多。它们通过递归自我改进更接近AGI。再次，这扇门将被关闭。"
+    },
+    {
+      "start": 72.88,
+      "end": 83.44,
+      "en": "Three, for Navidia, there are right now startups that are using completely different architectures for chips and completely different design. They're going to be being playing the problem",
+      "zh": "第三，对英伟达来说，目前有初创公司采用完全不同的芯片架构和设计。它们将在几年后很好地解决这个问题。"
+    },
+    {
+      "start": 83.44,
+      "end": 90.0,
+      "en": "well in a few years from now chips that are 10 times faster of those of the GPU of Navidia using one third of the energy. Those are completely installed both. They're just startups,",
+      "zh": "几年后，芯片速度将比英伟达GPU快10倍，能耗仅三分之一。这些技术已完全成熟，它们只是初创公司。"
+    }
+  ]
+}
