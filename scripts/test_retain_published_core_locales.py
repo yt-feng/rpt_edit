@@ -85,6 +85,69 @@ class RetentionTests(unittest.TestCase):
         self.receipt_path.write_text(json.dumps(receipt))
         return receipt
 
+    def compose_extended_links(self):
+        from assemble_portal_extended_locales import head_alternates
+        source = ORIGIN + "/reports/old.html"
+        write(self.root / "fr/reports/old.html", html("fr/reports/old.html", locale="fr"))
+        write(self.root / "data/extended-locales/assembly.json", json.dumps({
+            "schema_version": 2, "status": "assembled", "locales": ["fr"],
+            "source_urls_by_locale": {"fr": [source]}}))
+        cluster = {"zh-Hans": source, "x-default": source,
+                   **{code: ORIGIN + "/" + code + "/reports/old.html" for code in (*retention.LOCALES, "fr")}}
+        for code in retention.LOCALES:
+            path = self.root / code / "reports/old.html"
+            path.write_text(head_alternates(path.read_text(), cluster))
+
+    def test_extended_composer_language_links_preserve_retained_body_and_identity(self):
+        receipt = self.run_retention()
+        remote_operations = list(self.client.operations)
+        self.compose_extended_links()
+        result = retention.validate_retention(self.root, self.receipt_path, self.active_path)
+        self.assertEqual(result["retained_files"], receipt["retained_files"])
+        self.assertEqual(self.client.operations, remote_operations)
+        self.assertIn('hreflang="fr"', (self.root / "ar/reports/old.html").read_text())
+        self.assertEqual(len(retention.retained_html_proofs(receipt, self.manifest)), 6)
+
+    def test_composed_html_still_rejects_body_canonical_script_and_wrong_links(self):
+        self.run_retention(); self.compose_extended_links()
+        path = self.root / "ar/reports/old.html"
+        good = path.read_text()
+        changes = [good.replace("old content", "changed content"),
+                   good.replace('rel="canonical"', 'rel="canonical" data-forged="true"'),
+                   good.replace("</head>", "<script>alert(1)</script></head>"),
+                   good.replace(ORIGIN + "/fr/reports/old.html", ORIGIN + "/fr/reports/other.html"),
+                   good.replace("</head>", '<link rel="alternate" hreflang="fr" href="' + ORIGIN + '/fr/reports/old.html"></head>')]
+        for changed in changes:
+            with self.subTest(change=changes.index(changed)):
+                path.write_text(changed)
+                with self.assertRaises(retention.RetentionError):
+                    retention.validate_retention(self.root, self.receipt_path, self.active_path)
+        path.write_text(good)
+        (self.root / "fr/reports/old.html").unlink()
+        with self.assertRaisesRegex(retention.RetentionError, "counterpart is not published"):
+            retention.validate_retention(self.root, self.receipt_path, self.active_path)
+
+    def test_html_discovery_proof_cannot_change_source_identity_or_inventory(self):
+        receipt = self.run_retention()
+        for field, value in (("source_sha256", "f" * 64), ("normalized_sha256", "invalid")):
+            changed = copy.deepcopy(receipt)
+            changed["html_discovery_proofs"]["files"]["ar/index.html"][field] = value
+            with self.assertRaises(retention.RetentionError):
+                retention.retained_html_proofs(changed, self.manifest)
+        changed = copy.deepcopy(receipt)
+        changed["html_discovery_proofs"]["files"].pop("ar/index.html")
+        with self.assertRaisesRegex(retention.RetentionError, "inventory differs"):
+            retention.retained_html_proofs(changed, self.manifest)
+
+    def test_legacy_receipt_keeps_exact_bytes_and_new_proof_does_not_allow_other_files(self):
+        receipt = self.run_retention()
+        receipt.pop("html_discovery_proofs")
+        self.receipt_path.write_text(json.dumps(receipt))
+        retention.validate_retention(self.root, self.receipt_path, self.active_path)
+        self.compose_extended_links()
+        with self.assertRaisesRegex(retention.RetentionError, "published file changed"):
+            retention.validate_retention(self.root, self.receipt_path, self.active_path)
+
     def test_catalog_changes_preserve_all_old_translations_without_remote_writes(self):
         chinese = (self.root / "data/catalog.json").read_bytes()
         new_page = (self.root / "reports/new.html").read_bytes()

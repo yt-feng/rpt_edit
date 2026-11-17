@@ -42,7 +42,10 @@ recovery retain the complete path. Live incremental handoffs can publish their
 approved additional-language or English content while retaining core translations.
 
 Retained files are streamed and hashed against the captured active static
-manifest. Translation provenance and coverage remain those of the original
+manifest. Approved extended-language composition may update retained HTML
+hreflang links. A source-bound normalized digest and the exact assembled link
+cluster allow that change while preserving the body and every other head field;
+older receipts continue to require exact bytes. Translation provenance and coverage remain those of the original
 translation. Only the manifest's Chinese lazy-JavaScript binding changes to
 the freshly built Chinese asset. Chinese discovery advertises only retained,
 indexable counterparts that actually exist. A private receipt preserves the

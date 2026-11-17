@@ -595,7 +595,7 @@ class ResumeTests(unittest.TestCase):
                        fetch_live=self.live, workers=4)
         return resume.resume_candidate(**{**options, **kwargs})
 
-    def use_retained_candidate(self):
+    def use_retained_candidate(self, *, discovery_proof=False):
         from test_audit_portal_shadow_preview import manifest_fixture
         import retain_published_core_locales as retention
         locale, bodies = manifest_fixture()
@@ -614,6 +614,14 @@ class ResumeTests(unittest.TestCase):
             bodies.setdefault("/" + relative, b"published shared locale asset")
         # Inventory-only locale assets must also be restored and rechecked.
         bodies["/ko/assets/retained-only.js"] = b"published inventory-only locale asset"
+        if discovery_proof:
+            for relative in self.manifest["files"]:
+                if relative.startswith(tuple(code + "/" for code in resume.LOCALES)) and relative.endswith(".html"):
+                    code, source_path = relative.split("/", 1)
+                    canonical = ORIGIN + "/" + relative.removesuffix("index.html")
+                    bodies["/" + relative] = (
+                        f'<html lang="{code}"><head><link rel="canonical" href="{canonical}"></head>'
+                        f'<body>published {code} {source_path}</body></html>').encode()
         for path, body in bodies.items():
             relative = path.lstrip("/")
             descriptor = {"size": len(body), "sha256": hashlib.sha256(body).hexdigest(),
@@ -643,6 +651,13 @@ class ResumeTests(unittest.TestCase):
         receipt = {"schema_version": 1, "kind": "published-core-locales", "source_state": self.retained_previous,
                    "retained_files": len(paths), "provider_requests": 0,
                    "source_manifest_b64": base64.b64encode(source_manifest).decode()}
+        if discovery_proof:
+            receipt["html_discovery_proofs"] = {"schema_version": 1, "site_origin": ORIGIN, "files": {
+                path: {"source_sha256": old_files[path]["sha256"],
+                       "normalized_sha256": retention.html_discovery_digest(
+                           self.r2.objects[publisher.slot_prefix("a") + path]["body"])}
+                for path in paths if path.startswith(tuple(code + "/" for code in resume.LOCALES))
+                and path.endswith(".html")}}
         self.github.diagnostics = {name: body for name, body in self.github.diagnostics.items() if name.startswith("chinese-")}
         self.github.diagnostics.update({"locale-retention.json": encoded(receipt),
                                         "locale-retention-active-manifest.json": encoded(self.previous_manifest)})
@@ -710,6 +725,64 @@ class ResumeTests(unittest.TestCase):
         self.manifest["tree_sha256"] = self.tree
         self.save_manifest()
         self.github.logs = self.github.logs.replace(old_tree, self.tree)
+        with self.assertRaisesRegex(resume.ResumeError, "Retained candidate descriptor changed"):
+            self.restore()
+        self.assertFalse(self.site.exists())
+
+    def replace_retained_candidate_file(self, relative, body):
+        old_tree = self.tree
+        row = self.manifest["files"][relative]
+        row.update(size=len(body), sha256=hashlib.sha256(body).hexdigest())
+        self.r2.objects[publisher.slot_prefix("b") + relative] = {"body": body, "metadata": {"sha256": row["sha256"]}}
+        self.tree = resume.static_tree_sha256(self.manifest["files"])
+        self.manifest.update(tree_sha256=self.tree, total_bytes=sum(row["size"] for row in self.manifest["files"].values()))
+        self.save_manifest()
+        self.github.logs = self.github.logs.replace(old_tree, self.tree)
+
+    def test_retained_html_proof_admits_candidate_links_but_requires_final_composer_validation(self):
+        from assemble_portal_extended_locales import head_alternates
+        self.use_retained_candidate(discovery_proof=True)
+        relative = "ar/blog/new.html"
+        source = self.r2.objects[publisher.slot_prefix("a") + relative]["body"]
+        body = head_alternates(source.decode(), {"fr": ORIGIN + "/fr/blog/new.html"}).encode()
+        self.replace_retained_candidate_file(relative, body)
+        resume.download_diagnostics(self.github, REPO, 321, 1, self.diag, mode="retained")
+        resume.validate_retention_proof(self.diag, self.github.logs, self.retained_previous,
+                                        self.previous_manifest, self.manifest)
+        with self.assertRaisesRegex(RuntimeError, "require an assembled extended ledger"):
+            self.restore()
+        self.assertEqual((self.site / relative).read_bytes(), body)
+        self.assertFalse((self.work / "locale-resume-identity.json").exists())
+
+    def test_retained_html_proof_does_not_admit_body_changes(self):
+        self.use_retained_candidate(discovery_proof=True)
+        relative = "ar/blog/new.html"
+        source = self.r2.objects[publisher.slot_prefix("a") + relative]["body"]
+        self.replace_retained_candidate_file(relative, source.replace(b"published", b"rewritten"))
+        with self.assertRaisesRegex(RuntimeError, "outside language links"):
+            self.restore()
+        self.assertFalse((self.work / "locale-resume-identity.json").exists())
+
+    def test_retained_html_proof_must_match_original_inventory_and_descriptors_before_restore(self):
+        receipt = self.use_retained_candidate(discovery_proof=True)
+        for mutation in ("missing", "source"):
+            invalid = copy.deepcopy(receipt)
+            rows = invalid["html_discovery_proofs"]["files"]
+            if mutation == "missing":
+                rows.pop("ar/blog/new.html")
+            else:
+                rows["ar/blog/new.html"]["source_sha256"] = "f" * 64
+            self.github.diagnostics["locale-retention.json"] = encoded(invalid)
+            self.attest_retention_proofs()
+            with self.subTest(mutation=mutation), self.assertRaisesRegex(RuntimeError, "discovery.*differs from active release"):
+                self.restore()
+            self.assertFalse(self.site.exists())
+
+    def test_retained_html_proof_preserves_non_html_binding_and_receipt_size_contract(self):
+        import retain_published_core_locales as retention
+        self.use_retained_candidate(discovery_proof=True)
+        self.assertEqual(resume.DIAGNOSTIC_MAX_BYTES["locale-retention.json"], retention.MAX_RECEIPT_BYTES)
+        self.replace_retained_candidate_file("ko/assets/retained-only.js", b"changed locale script")
         with self.assertRaisesRegex(resume.ResumeError, "Retained candidate descriptor changed"):
             self.restore()
         self.assertFalse(self.site.exists())

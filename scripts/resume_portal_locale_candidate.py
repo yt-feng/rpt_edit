@@ -80,7 +80,7 @@ DIAGNOSTIC_MAX_BYTES = {
     'locale-full-diagnostics.json': 256 * 1024 * 1024,
     'chinese-parity.json': 16 * 1024 * 1024,
     'chinese-performance.json': 16 * 1024 * 1024,
-    'locale-retention.json': 24 * 1024 * 1024,
+    'locale-retention.json': 64 * 1024 * 1024,
     'locale-retention-active-manifest.json': 64 * 1024 * 1024,
     SOURCE_PROOF: 64 * 1024 * 1024,
 }
@@ -786,7 +786,7 @@ def download_candidate_files(client: Any, bucket: str, manifest: dict[str, Any],
 
 def validate_retention_proof(directory: Path, logs: str, previous: dict[str, Any],
                              active_manifest: dict[str, Any], candidate: dict[str, Any]) -> None:
-    from retain_published_core_locales import MANIFEST, checked_manifest, selected_paths
+    from retain_published_core_locales import MANIFEST, checked_manifest, retained_html_proofs, selected_paths
     require(publication_mode(logs) == "retained", "Source retention mode is not attested")
     proofs = {}
     for name, label in (("locale-retention.json", "retention_receipt_sha256"),
@@ -805,7 +805,11 @@ def validate_retention_proof(directory: Path, logs: str, previous: dict[str, Any
     paths = selected_paths(original["files"])
     require(receipt.get("retained_files") == len(paths) and selected_paths(candidate["files"]) == paths,
             "Retained candidate inventory differs from the previous release")
-    for relative in paths - {MANIFEST}:
+    html_proofs = retained_html_proofs(receipt, original)
+    # Proof-backed HTML may have the approved composer's new language links.
+    # Restore still verifies the committed candidate bytes, then validates the
+    # normalized source digest and exact assembled cluster before readiness.
+    for relative in paths - {MANIFEST} - html_proofs.keys():
         require(all(candidate["files"][relative].get(key) == original["files"][relative].get(key)
                     for key in ("size", "sha256")), f"Retained candidate descriptor changed: {relative}")
     try:
