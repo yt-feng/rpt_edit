@@ -16,6 +16,7 @@ on:
       - "scripts/*article_title_resume*"
       - "scripts/*recover_report_articles*"
       - "scripts/*recovered_article_delivery*"
+      - "scripts/*reuse_completed_progressive_sources*"
       - "scripts/*original_pdf_figures*"
       - "scripts/*source_figures*"
       - "scripts/*watch_recovered_article_publication*"
@@ -100,6 +101,7 @@ on:
       - "scripts/*article_title_resume*"
       - "scripts/*recover_report_articles*"
       - "scripts/*recovered_article_delivery*"
+      - "scripts/*reuse_completed_progressive_sources*"
       - "scripts/*original_pdf_figures*"
       - "scripts/*source_figures*"
       - "scripts/*watch_recovered_article_publication*"
@@ -307,6 +309,7 @@ jobs:
           python scripts/test_delete_wechat_drafts.py
           python scripts/test_xhs_draft_streaming.py
           python scripts/test_progressive_wechat_delivery.py
+          python scripts/test_reuse_completed_progressive_sources.py
           python scripts/test_progressive_wechat_workflow.py
           python scripts/test_progressive_wechat_ready.py
           python scripts/test_download_dropbox_latest_pdfs.py

@@ -25,13 +25,13 @@ def write_json(path: Path, payload: dict) -> None:
 
 
 def source_prefix_identity(prefix: str, date: str) -> tuple[str, str | None]:
-    """Accept only the two Daily source layouts, bound to one run and date."""
+    """Accept only approved Daily source layouts, bound to one run and date."""
     if not isinstance(prefix, str):
         raise ValueError("Invalid translation source prefix")
     match = re.fullmatch(r"_private-workflow-handoff/xhs/([1-9][0-9]*)/" + re.escape(date), prefix)
     if match:
         return match[1], None
-    match = re.fullmatch(r"_private-workflow-handoff/xhs-recovery/([1-9][0-9]*)/"
+    match = re.fullmatch(r"_private-workflow-handoff/(?:xhs-recovery|xhs-complete)/([1-9][0-9]*)/"
                         + re.escape(date) + r"/([a-f0-9]{64})/articles", prefix)
     if not match:
         raise ValueError("Invalid translation source prefix")
