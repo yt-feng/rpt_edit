@@ -17,6 +17,7 @@ import finalize_outputs as finalize
 import pdf_to_xhs_batch as producer
 import postprocess_podcast as postprocess
 import private_workflow_handoff as handoff
+import package_publish_ready_outputs as packaging
 import progressive_wechat_ready as ready
 import run_pdf_to_xhs_in_batches as wrapper
 import sensitive_content_guard as guard
@@ -105,6 +106,56 @@ class ReadyTests(unittest.TestCase):
             ready.prepare_article(self.out, self.item, self.args)
         api.assert_not_called()
         self.assertIsNotNone(binding.read_bound_article(self.item))
+
+    def test_barclays_ready_then_full_finalizer_preserves_private_proofs_and_sanitizes_public_copy(self):
+        original_name = '01-Barclays-source.pdf'
+        self.pdf = self.pdf.rename(self.root / ('0001-' + original_name))
+        self.item = self.item.rename(self.out / producer.slug(self.pdf.name))
+        title = 'BARC：企业交付数量出现变化'
+        self.status.update(source_pdf=str(self.pdf), wechat_title=title,
+            wechat_title_decision={'needs_model_repair': False, 'selected_quality_issues': [],
+                'final_title_after_wording_guard': title, 'original_filename': original_name})
+        (self.item / 'wechat_article.md').write_text(f'# {title}\n\nBarclays Research 记录了交付数据。\n')
+        self.assertTrue(binding.bind_generated_article(self.item, self.status))
+        (self.item / 'status.json').write_text(json.dumps(self.status, ensure_ascii=False))
+        self.source_map.write_text(json.dumps({'schema': 1, 'files': {self.pdf.name: {
+            'source': original_name, 'sha256': ready.sha256(self.pdf.read_bytes()), 'size': self.pdf.stat().st_size}}}))
+        self.manifest.write_text(json.dumps([{'name': 'Barclays-source.pdf',
+            'process_local_path': str(self.root / original_name), 'content_sha256': ready.sha256(self.pdf.read_bytes())}]))
+        proof = self.item / 'source_original_figures.json'
+        proof.write_text(json.dumps({'original_name': original_name, 'caption': 'Barclays original evidence'}))
+        local_manifest = self.out / 'selected_to_process_manifest.json'
+        local_manifest.write_bytes(self.manifest.read_bytes())
+        proof_bytes, manifest_bytes = proof.read_bytes(), local_manifest.read_bytes()
+        before_decision = dict(self.status['wechat_title_decision'])
+        self.assertFalse(finalize.sanitize_file(proof))
+        self.publish()
+        self.assertIsNotNone(binding.read_bound_article(self.item))
+        self.assertEqual(proof.read_bytes(), proof_bytes)
+        argv = ['finalize', '--output-dir', str(self.out), '--model', self.args.model,
+                '--deepseek-base-url', self.args.deepseek_base_url]
+        with patch.object(postprocess, 'find_original_images', return_value=['assets/chart.png']), \
+                patch.object(finalize, 'call_deepseek', return_value='# 交付分析\n\nBarclays Research 记录了交付数据。\n') as model, \
+                patch.object(guard, 'free_api_check', return_value={'hit': False, 'hits': [], 'errors': []}) as free_api, \
+                patch.object(sys, 'argv', argv), contextlib.redirect_stdout(io.StringIO()):
+            postprocess.process_item(self.item, postprocess.build_arg_parser().parse_args([]))
+            self.assertEqual(finalize.main(), 0)
+        model.assert_called_once()  # Existing full-shard Zhihu still runs.
+        free_api.assert_called_once()  # Only new Zhihu copy; WeChat reuses its receipt.
+        after = json.loads((self.item / 'status.json').read_bytes())
+        self.assertEqual(after['source_pdf'], str(self.pdf))
+        self.assertEqual(after['wechat_title'], title)
+        self.assertEqual(after['wechat_title_decision'], before_decision)
+        self.assertEqual(after['original_pdf_sha256'], self.status['original_pdf_sha256'])
+        self.assertIsNotNone(binding.read_bound_article(self.item))
+        self.assertEqual(proof.read_bytes(), proof_bytes)
+        self.assertEqual(local_manifest.read_bytes(), manifest_bytes)
+        for path in (self.item / 'wechat_article.md', self.item / 'zhihu_article.md'):
+            self.assertNotIn('Barclays', path.read_text())
+            self.assertIn('BARC', path.read_text())
+            self.assertTrue(packaging.include_report_file(path, True))
+        for path in (self.item / 'status.json', proof, local_manifest):
+            self.assertFalse(packaging.include_report_file(path, True))
 
     def test_original_hash_status_and_manifest_must_all_agree_before_any_work(self):
         original_status = (self.item / 'status.json').read_bytes()
