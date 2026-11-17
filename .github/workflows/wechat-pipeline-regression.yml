@@ -22,6 +22,7 @@ on:
       - "scripts/*watch_recovered_article_publication*"
       - "scripts/*report_extraction_source*"
       - "scripts/*chart_recovered_handoff*"
+      - "scripts/*chart_search_index*"
       - ".github/workflows/portal-chart-search-index.yml"
       - ".github/workflows/recover-report-article-delivery.yml"
       - "scripts/test_post_blog_refresh.py"
@@ -107,6 +108,7 @@ on:
       - "scripts/*watch_recovered_article_publication*"
       - "scripts/*report_extraction_source*"
       - "scripts/*chart_recovered_handoff*"
+      - "scripts/*chart_search_index*"
       - ".github/workflows/portal-chart-search-index.yml"
       - ".github/workflows/recover-report-article-delivery.yml"
       - "scripts/test_post_blog_refresh.py"
@@ -256,6 +258,7 @@ jobs:
           python scripts/test_watch_recovered_article_publication.py
           python scripts/test_report_extraction_source.py
           python scripts/test_chart_recovered_handoff.py
+          python scripts/test_chart_search_index.py
           python scripts/test_private_generation_checkpoint.py
           python scripts/test_portal_translation_shards.py
           python scripts/test_replay_report_translation_shards.py
