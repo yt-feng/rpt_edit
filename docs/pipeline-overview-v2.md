@@ -399,6 +399,12 @@ Dispatch uses the normal Daily defaults, including all reports, WeChat drafts,
 translations and no freepublish. An uncertain dispatch is read back without
 repeating the POST. Batch attempts are distinct from verified delivery.
 
+To read the independent Cloudflare clock's existing schedule and shared automatic
+wake receipt without deploying or triggering source generation, run
+`gh workflow run daily-source-clock-deploy.yml --ref main -f inspect_only=true`;
+`not_observed` means no receipt exists yet, while `observed` includes the wake run
+ID and request time. This inspection does not itself confirm Daily delivery.
+
 After dispatching Market Views, the Daily parent waits on the accepted child ID
 through authenticated GET requests. Brief 404 visibility gaps and temporary
 read failures have a bounded grace period; they never issue another dispatch.
