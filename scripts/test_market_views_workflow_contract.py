@@ -282,7 +282,8 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         for outcome in ('success', 'failure', 'cancelled', 'skipped'):
             restored = {**results, 'deliver-recovered-report-articles': outcome}
             self.assertEqual(gate(planner, restored, primary_ready='false'), outcome == 'success')
-        self.assertIn('push-xhs-notes-wechat-drafts', re.search(r'needs: \[(.*?)\]', delivery)[1])
+        self.assertNotIn('push-xhs-notes-wechat-drafts', re.search(r'needs: \[(.*?)\]', delivery)[1])
+        self.assertIn('wait_for_primary_upload: true', delivery)
         self.assertIn('needs.deliver-recovered-report-articles.outputs.article_handoff_prefix', planner)
         materialize = job(UPSTREAM, 'translate-report-shard')
         self.assertIn('--prefix "${{ needs.plan-portal-translated-reports.outputs.source_prefix }}"', materialize)
@@ -292,6 +293,24 @@ class MarketViewsWorkflowContractTests(unittest.TestCase):
         self.assertFalse(gate(chart, restored, primary_ready='false', recovery_kind='ocr-synthesis'))
         self.assertFalse(gate(chart, restored, primary_ready='false', chart_enabled='false'))
         self.assertIn('RECOVERED_MANIFEST: ${{ needs.deliver-recovered-report-articles.outputs.manifest_sha256 }}', chart)
+
+    def test_normal_translation_has_no_wechat_publisher_ancestor(self):
+        blocks = dict(re.findall(r'(?ms)^  ([\w-]+):\n(.*?)(?=^  [\w-]+:\n|\Z)', UPSTREAM.read_text()))
+        def ancestors(name):
+            match = re.search(r'needs: \[(.*?)\]', blocks[name])
+            direct = set(match[1].split(', ')) if match else set()
+            return direct | {parent for child in direct for parent in ancestors(child)}
+        for name in ('plan-portal-translated-reports', 'translate-report-shard', 'build-portal-translated-reports'):
+            with self.subTest(job=name):
+                self.assertNotIn('push-xhs-notes-wechat-drafts', ancestors(name))
+        self.assertIn('deliver-recovered-report-articles', ancestors('plan-portal-translated-reports'))
+        self.assertIn('push-xhs-notes-wechat-drafts', ancestors('validate-report-delivery'))
+        recovery = blocks['deliver-recovered-report-articles']
+        self.assertFalse(gate(recovery, {'process-shard': 'success'}, primary_ready='true'))
+        planner = blocks['plan-portal-translated-reports']
+        self.assertTrue(gate(planner, {'process-shard': 'success', 'source-outcome': 'success',
+                                      'deliver-recovered-report-articles': 'skipped'}, primary_ready='true'))
+        self.assertFalse(gate(planner, {'process-shard': 'failure', 'deliver-recovered-report-articles': 'failure'}, primary_ready='false'))
 
     def test_actual_article_gate_rejects_green_pdf_with_skipped_required_outputs(self):
         block = job(UPSTREAM, 'validate-report-delivery')

@@ -72,6 +72,112 @@ def context():
             'source_receipt_sha256': 'c' * 64, 'manifest_sha256': 'd' * 64}
 
 
+class PrimaryUploadWaitTests(unittest.TestCase):
+    def setUp(self):
+        self.config = config()
+        self.config['SOURCE_HANDOFF_RUN_ID'] = self.config['SOURCE_RUN_ID']
+        self.run, pages = original_fixture()
+        self.run.update(status='in_progress', conclusion=None)
+        self.page = pages[0]
+        self.env = {'GITHUB_ACTIONS': 'true', 'GITHUB_REF': 'refs/heads/main',
+                    'GITHUB_REPOSITORY': 'owner/repo', 'GITHUB_RUN_ID': self.config['SOURCE_RUN_ID'],
+                    'GITHUB_RUN_ATTEMPT': '1', 'GITHUB_SHA': self.run['head_sha'],
+                    'GITHUB_WORKFLOW_REF': 'owner/repo/' + delivery.DAILY + '@refs/heads/main'}
+        self.now, self.sleeps = 0, []
+
+    def sleep(self, seconds):
+        self.now += seconds
+        self.sleeps.append(seconds)
+
+    def wait(self, **kwargs):
+        return delivery.wait_for_primary_upload(self.config, self.env, timeout=30, poll=10,
+            clock=lambda: self.now, sleep=self.sleep, **kwargs)
+
+    def page_with(self, status, conclusion=None):
+        page = copy.deepcopy(self.page)
+        page['jobs'][1].update(status=status, conclusion=conclusion)
+        return page
+
+    def test_same_attempt_waits_through_queued_and_active_before_returning_terminal_job(self):
+        with patch.object(delivery, 'api', return_value=self.run) as api, patch.object(delivery, 'jobs', side_effect=[self.page_with('queued'), self.page_with('in_progress'), self.page_with('completed', 'failure')]) as jobs:
+            result = self.wait()
+        self.assertEqual(result, {'run_id': self.config['SOURCE_RUN_ID'], 'run_attempt': 1, 'job_id': 2})
+        self.assertEqual(self.sleeps, [10, 10])
+        self.assertEqual(api.call_count, 4)  # Includes the final cancellation readback.
+        self.assertTrue(all(call.args == ('owner/repo', self.config['SOURCE_RUN_ID'], 1) for call in jobs.call_args_list))
+
+    def test_missing_publisher_is_pending_and_incomplete_inventory_is_never_admitted(self):
+        missing = {'total_count': 0, 'jobs': []}
+        with patch.object(delivery, 'api', return_value=self.run), patch.object(delivery, 'jobs', side_effect=[missing, self.page]):
+            self.assertEqual(self.wait()['job_id'], 2)
+        self.assertEqual(self.sleeps, [10])
+        for changed in ({**self.page, 'total_count': 99},
+                        {'total_count': 2, 'jobs': [self.page['jobs'][1], self.page['jobs'][1]]}):
+            with self.subTest(page=changed), patch.object(delivery, 'api', return_value=self.run), patch.object(delivery, 'jobs', return_value=changed):
+                with self.assertRaisesRegex(delivery.DeliveryError, 'primary_wait_jobs_incomplete'):
+                    self.wait()
+
+    def test_cancelled_producer_changed_attempt_or_identity_never_passes(self):
+        for changes, reason in (({'status': 'completed', 'conclusion': 'cancelled'}, 'producer_cancelled'),
+                                ({'run_attempt': 2}, 'producer_identity_changed'),
+                                ({'head_sha': 'b' * 40}, 'producer_identity_changed'),
+                                ({'head_repository': {'full_name': 'foreign/repo'}}, 'producer_identity_changed')):
+            with self.subTest(changes=changes), patch.object(delivery, 'api', return_value={**self.run, **changes}), patch.object(delivery, 'jobs') as jobs:
+                with self.assertRaisesRegex(delivery.DeliveryError, 'primary_wait_' + reason):
+                    self.wait()
+                jobs.assert_not_called()
+        cancelled = {**self.run, 'status': 'completed', 'conclusion': 'cancelled'}
+        with patch.object(delivery, 'api', side_effect=[self.run, cancelled]), patch.object(delivery, 'jobs', return_value=self.page):
+            with self.assertRaisesRegex(delivery.DeliveryError, 'producer_cancelled'):
+                self.wait()
+
+    def test_foreign_or_duplicate_publisher_jobs_never_pass(self):
+        for mutation in ('run', 'sha', 'attempt', 'duplicate', 'missing-conclusion'):
+            page = copy.deepcopy(self.page)
+            if mutation == 'run': page['jobs'][1]['run_id'] += 1
+            if mutation == 'sha': page['jobs'][1]['head_sha'] = 'b' * 40
+            if mutation == 'attempt': page['jobs'][1]['run_attempt'] = 2
+            if mutation == 'duplicate':
+                page['jobs'].append({**page['jobs'][1], 'id': 4}); page['total_count'] += 1
+            if mutation == 'missing-conclusion': page['jobs'][1]['conclusion'] = None
+            with self.subTest(mutation=mutation), patch.object(delivery, 'api', return_value=self.run), patch.object(delivery, 'jobs', return_value=page):
+                with self.assertRaises(delivery.DeliveryError):
+                    self.wait()
+
+    def test_timeout_is_read_only_and_preserves_original_admission(self):
+        with patch.object(delivery, 'api', return_value=self.run), patch.object(delivery, 'jobs', return_value=self.page_with('in_progress')), patch.object(delivery, 'prepare') as prepare, patch.object(delivery, 'write_json') as write:
+            with self.assertRaisesRegex(delivery.DeliveryError, 'primary_wait_deadline_reached'):
+                self.wait()
+            prepare.assert_not_called(); write.assert_not_called()
+        self.assertEqual(self.now, 30)
+        success = self.page_with('completed', 'success')
+        with patch.object(delivery, 'api', return_value=self.run), patch.object(delivery, 'jobs', return_value=success):
+            self.now = 0
+            self.assertEqual(self.wait()['job_id'], 2)
+        # Read-only waiting cannot turn a successful/unsupported publisher into
+        # permission to create another set of recovered drafts.
+        with self.assertRaisesRegex(delivery.DeliveryError, 'original_upload_not_proven_skipped'):
+            delivery.validate_original(self.run, [success], self.config, 'owner/repo', self.config['SOURCE_RUN_ID'])
+
+    def test_wait_cli_failure_creates_no_workspace_or_r2_client(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            workspace = Path(temporary) / 'not-created'
+            env = {**self.env, **{key: str(value) for key, value in self.config.items()}}
+            with patch.dict(delivery.os.environ, env, clear=True), patch.object(delivery, 'wait_for_primary_upload', side_effect=delivery.DeliveryError('primary_wait_deadline_reached')), patch('private_workflow_handoff.build_r2_client') as client, patch.object(delivery, 'prepare') as prepare, redirect_stdout(io.StringIO()) as public:
+                self.assertEqual(delivery.main(['wait-primary-upload', '--workspace', str(workspace)]), 2)
+            client.assert_not_called(); prepare.assert_not_called()
+            self.assertFalse(workspace.exists())
+            self.assertIn('primary_wait_deadline_reached', public.getvalue())
+
+    def test_wait_is_available_only_to_same_current_daily_producer(self):
+        for key, value in (('GITHUB_RUN_ID', '999'), ('GITHUB_RUN_ATTEMPT', '11'),
+                           ('GITHUB_WORKFLOW_REF', 'owner/repo/' + delivery.WORKFLOW + '@refs/heads/main')):
+            with self.subTest(key=key), patch.dict(self.env, {key: value}), patch.object(delivery, 'api') as api:
+                with self.assertRaisesRegex(delivery.DeliveryError, 'requires_current_daily'):
+                    self.wait()
+                api.assert_not_called()
+
+
 class ProgressiveRecoveryBridgeTests(unittest.TestCase):
     def setUp(self):
         import progressive_wechat_delivery as progressive
@@ -592,7 +698,8 @@ class DeliveryWorkflowTests(unittest.TestCase):
         path = Path(__file__).resolve().parents[1] / '.github/workflows/recover-report-article-delivery.yml'
         workflow = path.read_text()
         job = workflow.split('\n  generate:\n', 1)[1].split('\n  deliver:\n', 1)[0]
-        job_timeout = int(re.search(r'^    timeout-minutes: (\d+)$', job, re.M)[1])
+        self.assertIn('timeout-minutes: ${{ inputs.wait_for_primary_upload && 360 || 180 }}', job)
+        job_timeout = 180
         generate = job.split('- name: Generate only missing bound report articles\n', 1)[1].split('\n      - ', 1)[0]
         step_timeout = int(re.search(r'^        timeout-minutes: (\d+)$', generate, re.M)[1])
         self.assertEqual((job_timeout, step_timeout), (180, 120))
@@ -601,6 +708,23 @@ class DeliveryWorkflowTests(unittest.TestCase):
         self.assertIn("always() && steps.prepare.outcome == 'success'", checkpoint)
         self.assertIn('recovered_article_delivery.py save-generation', checkpoint)
         self.assertLess(job.index('Generate only missing bound report articles'), job.index('Save generation progress'))
+
+    def test_primary_wait_precedes_unmodified_recovery_admission_only_when_requested(self):
+        path = Path(__file__).resolve().parents[1] / '.github/workflows/recover-report-article-delivery.yml'
+        workflow = path.read_text()
+        call = workflow.split('  workflow_call:', 1)[1].split('permissions:', 1)[0]
+        option = call.split('      wait_for_primary_upload:', 1)[1].split('      source_run_id:', 1)[0]
+        self.assertIn('type: boolean', option)
+        self.assertIn('default: false', option)
+        generate = workflow.split('\n  generate:\n', 1)[1].split('\n  deliver:\n', 1)[0]
+        wait = generate.split('      - name: Wait for the original Daily publisher to finish', 1)[1].split('      - name:', 1)[0]
+        self.assertIn('if: ${{ inputs.wait_for_primary_upload }}', wait)
+        self.assertIn('wait-primary-upload --workspace', wait)
+        self.assertNotIn('continue-on-error:', wait)
+        self.assertLess(generate.index('wait-primary-upload --workspace'), generate.index('prepare --workspace'))
+        self.assertLess(generate.index('prepare --workspace'), generate.index('Generate only missing bound report articles'))
+        self.assertIn('timeout-minutes: 120', generate)
+        self.assertIn('timeout-minutes: 181', wait)
 
     def test_workflow_exposes_complete_retained_shards_and_is_draft_only(self):
         path = Path(__file__).resolve().parents[1] / '.github/workflows/recover-report-article-delivery.yml'

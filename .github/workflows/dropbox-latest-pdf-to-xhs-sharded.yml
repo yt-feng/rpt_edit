@@ -1445,7 +1445,7 @@ jobs:
           exit 1
 
   deliver-recovered-report-articles:
-    needs: [resolve-inputs, select-macro-reports, source-outcome, recover-market-sources, recover-ocr-page-sources, push-xhs-notes-wechat-drafts]
+    needs: [resolve-inputs, select-macro-reports, source-outcome, recover-market-sources, recover-ocr-page-sources]
     if: >-
       ${{ !cancelled() && ((needs.recover-market-sources.result == 'success' && needs.recover-market-sources.outputs.article_source_ready == 'true') || needs.recover-ocr-page-sources.result == 'success') &&
           needs.source-outcome.outputs.primary_ready == 'false' &&
@@ -1453,8 +1453,11 @@ jobs:
           (needs.resolve-inputs.outputs.wechat_draft_upload == 'true' ||
            needs.resolve-inputs.outputs.translated_report_count != '0' ||
            (vars.CHART_SEARCH_ENABLED == 'true' && needs.recover-market-sources.outputs.source_kind == 'mineru-recovery')) }}
+    # Only the recovery branch waits for the primary publisher internally.
+    # A skipped recovery must not serialize normal translation behind WeChat.
     uses: ./.github/workflows/recover-report-article-delivery.yml
     with:
+      wait_for_primary_upload: true
       source_run_id: ${{ github.run_id }}
       source_handoff_run_id: ${{ github.run_id }}
       source_kind: ${{ needs.recover-ocr-page-sources.result == 'success' && 'ocr-pages' || needs.recover-market-sources.outputs.source_kind }}

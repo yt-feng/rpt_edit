@@ -13,12 +13,14 @@ from contextlib import redirect_stdout, redirect_stderr
 from datetime import datetime
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import re
 import shutil
 import sys
 import tempfile
+import time
 
 from wechat_accounts import draft_account
 
@@ -130,6 +132,70 @@ def jobs(repository, run_id, attempt=None):
         require(value['jobs'], 'delivery_jobs_incomplete')
     require(len(rows) == total and len({row.get('id') for row in rows}) == total, 'delivery_jobs_incomplete')
     return {'total_count': total, 'jobs': rows}
+
+
+def wait_for_primary_upload(config, env, *, timeout=10800, poll=15,
+                            clock=time.monotonic, sleep=time.sleep):
+    """Wait only on the current Daily attempt; do not perform recovery admission.
+
+    Keeping this dependency inside the running recovery branch lets a skipped
+    recovery release normal translations immediately. The original prepare()
+    still decides whether a terminal publisher may be taken over.
+    """
+    repository = env.get('GITHUB_REPOSITORY', '')
+    run_id = config['SOURCE_RUN_ID']
+    attempt = env.get('GITHUB_RUN_ATTEMPT', '')
+    sha = env.get('GITHUB_SHA', '')
+    require(env.get('GITHUB_ACTIONS') == 'true' and env.get('GITHUB_REF') == 'refs/heads/main'
+            and env.get('GITHUB_WORKFLOW_REF') == f'{repository}/{DAILY}@refs/heads/main'
+            and run_id == config['SOURCE_HANDOFF_RUN_ID'] == env.get('GITHUB_RUN_ID')
+            and re.fullmatch(r'[1-9]|10', attempt) and re.fullmatch(r'[a-f0-9]{40}', sha),
+            'primary_wait_requires_current_daily')
+    require(all(isinstance(value, (int, float)) and math.isfinite(value) and value > 0
+                for value in (timeout, poll)) and timeout <= 10800 and poll <= 60,
+            'primary_wait_bounds_invalid')
+    attempt = int(attempt)
+    def current_run():
+        run = api(repository, run_id)
+        require(isinstance(run, dict) and str(run.get('id')) == run_id
+                and run.get('path') == DAILY and run.get('head_branch') == 'main'
+                and run.get('event') in {'schedule', 'workflow_dispatch'}
+                and run.get('head_sha') == sha and run.get('run_attempt') == attempt
+                and all((run.get(key) or {}).get('full_name') == repository
+                        for key in ('repository', 'head_repository')),
+                'primary_wait_producer_identity_changed')
+        require(run.get('conclusion') != 'cancelled', 'primary_wait_producer_cancelled')
+        require(run.get('status') == 'in_progress' and run.get('conclusion') is None,
+                'primary_wait_producer_not_running')
+        return run
+    deadline = clock() + timeout
+    while clock() < deadline:
+        current_run()
+        page = jobs(repository, run_id, attempt)
+        rows = page.get('jobs')
+        require(isinstance(rows, list) and page.get('total_count') == len(rows)
+                and len({row.get('id') for row in rows}) == len(rows), 'primary_wait_jobs_incomplete')
+        require(all(row.get('run_id') == int(run_id) and row.get('head_sha') == sha
+                    and type(row.get('id')) is int and row['id'] > 0
+                    and row.get('run_attempt', attempt) == attempt for row in rows),
+                'primary_wait_job_identity_changed')
+        found = [row for row in rows if row.get('name') == 'push-xhs-notes-wechat-drafts']
+        require(len(found) <= 1, 'primary_wait_publisher_ambiguous')
+        if found:
+            publisher = found[0]
+            require(publisher.get('status') in {'queued', 'waiting', 'pending', 'requested', 'in_progress', 'completed'},
+                    'primary_wait_publisher_status_invalid')
+            if publisher['status'] == 'completed':
+                require(publisher.get('conclusion') in {'skipped', 'success', 'failure', 'cancelled',
+                        'timed_out', 'neutral', 'action_required', 'startup_failure', 'stale'},
+                        'primary_wait_publisher_conclusion_missing')
+                # Recheck cancellation and attempt identity after reading jobs.
+                current_run()
+                return {'run_id': run_id, 'run_attempt': attempt, 'job_id': publisher['id']}
+        remaining = deadline - clock()
+        if remaining > 0:
+            sleep(min(poll, remaining))
+    raise DeliveryError('primary_wait_deadline_reached')
 
 
 def validate_original(run, attempts, config, repository, current_run_id, *, progressive_plan=None):
@@ -761,10 +827,21 @@ def upload_wechat(workspace, client, bucket):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=('prepare', 'save-generation', 'complete-generation',
+    parser.add_argument('command', choices=('wait-primary-upload', 'prepare', 'save-generation', 'complete-generation',
         'restore-delivery', 'upload-wechat', 'save-receipts', 'validate-delivery'))
     parser.add_argument('--workspace', type=Path, required=True)
     args = parser.parse_args(argv)
+    if args.command == 'wait-primary-upload':
+        # This stage uses only authenticated GitHub reads. Even a timeout leaves
+        # source handoffs, generated content and accepted-draft state untouched.
+        try:
+            result = wait_for_primary_upload(inputs(os.environ), os.environ)
+        except Exception as error:
+            category = str(error) if isinstance(error, DeliveryError) else type(error).__name__
+            print(json.dumps({'status': 'incomplete', 'stage': args.command, 'category': category}))
+            return 2
+        print(json.dumps({'status': 'complete', 'stage': args.command, **result}))
+        return 0
     workspace = args.workspace
     require(not workspace.is_symlink(), 'delivery_workspace_invalid')
     workspace.mkdir(parents=True, exist_ok=True)
