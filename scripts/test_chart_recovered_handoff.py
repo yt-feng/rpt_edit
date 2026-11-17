@@ -9,8 +9,9 @@ import subprocess
 import sys
 import tempfile
 import textwrap
+from types import ModuleType, SimpleNamespace
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 import chart_recovered_handoff as handoff
 
@@ -35,6 +36,84 @@ class RecoveredChartTests(unittest.TestCase):
                            ('EXPECTED_ARTICLES', '1001')]:
             with self.subTest(key=key, value=value), self.assertRaises(ValueError):
                 handoff.selection({**self.env(), key: value})
+
+    def test_complete_primary_route_binds_dispatch_digest_and_exact_private_prefix(self):
+        import chart_dispatch_recovery as dispatch
+        manifest = 'a' * 64
+        prefix = '_private-workflow-handoff/xhs-complete/123/261003/' + manifest + '/articles'
+        base = {'GITHUB_REPOSITORY': 'example/reports', 'DATE_FOLDER': '261003',
+                'SOURCE_RUN_ID': '123', 'EXPECTED_SHARDS': '6', 'SELECTED_COUNT': '7',
+                'RECOVERED_RESULT': 'success', 'RECOVERED_MANIFEST': manifest}
+        legacy = dispatch.request_from_environment(base)
+        self.assertNotIn('source_handoff_kind', legacy)
+        self.assertEqual(legacy, dispatch.request_from_environment({**base, 'HANDOFF_KIND': ''}))
+        request = dispatch.request_from_environment({**base, 'RECOVERED_PRIMARY_REUSED': 'true',
+                                                     'RECOVERED_ARTICLE_PREFIX': prefix})
+        self.assertEqual(request['source_handoff_kind'], 'complete-primary')
+        self.assertNotEqual(dispatch.request_id(request), dispatch.request_id(legacy))
+        with patch.object(dispatch.subprocess, 'run', return_value=subprocess.CompletedProcess([], 0)) as command:
+            dispatch.GitHub('example/reports').dispatch(request, False)
+        argv = command.call_args.args[0]
+        inputs = dict(argv[i + 1].split('=', 1) for i, value in enumerate(argv) if value == '-f')
+        self.assertEqual(inputs['source_handoff_kind'], 'complete-primary')
+        receiver = {'GITHUB_REPOSITORY': 'example/reports', 'DATE_FOLDER': inputs['date_folder'],
+                    'SOURCE_RUN_ID': inputs['source_handoff_run_id'],
+                    'HANDOFF_MANIFEST_SHA256': inputs['source_handoff_manifest_sha256'],
+                    'EXPECTED_ARTICLES': inputs['expected_articles'], 'EXPECTED_SHARDS': inputs['expected_shards'],
+                    'MAX_IMAGES': inputs['max_images'], 'HANDOFF_KIND': inputs['source_handoff_kind']}
+        self.assertEqual(dispatch.request_from_environment(receiver), request)
+        config = handoff.selection({**self.env(), 'HANDOFF_KIND': 'complete-primary'})
+        self.assertEqual(config['prefix'], prefix)
+        for change in ({'RECOVERED_RESULT': 'failure'}, {'RECOVERED_PRIMARY_REUSED': 'false'},
+                       {'RECOVERED_ARTICLE_PREFIX': prefix.replace('/123/', '/456/')},
+                       {'HANDOFF_KIND': 'foreign'}, {'RECOVERED_MANIFEST': ''}):
+            with self.subTest(change=change), self.assertRaises(dispatch.RecoveryError):
+                dispatch.request_from_environment({**base, 'RECOVERED_PRIMARY_REUSED': 'true',
+                                                   'RECOVERED_ARTICLE_PREFIX': prefix, **change})
+        for kind in ('unknown', '../xhs-complete'):
+            with self.assertRaises(ValueError):
+                handoff.selection({**self.env(), 'HANDOFF_KIND': kind})
+
+    def test_complete_primary_handoff_uses_shared_proof_and_keeps_original_image_boundary(self):
+        case, root, config = self.fixture()
+        config = handoff.selection({**self.env(), 'HANDOFF_MANIFEST_SHA256': config['HANDOFF_MANIFEST_SHA256'],
+                                    'HANDOFF_KIND': 'complete-primary'})
+        module = ModuleType('reuse_completed_progressive_sources')
+        module.validate_complete_handoff = Mock(return_value={'article_count': 7})
+        with patch.dict(sys.modules, {'reuse_completed_progressive_sources': module}), \
+             patch('recover_report_articles.validate_articles', side_effect=AssertionError('Wrong recovery receipt route')), \
+             patch('requests.Session.request', side_effect=AssertionError('No external calls')):
+            result = handoff.validate_handoff(root, config)
+            self.assertEqual(result, {'complete': True, 'reports': 7, 'source_kind': 'complete-primary',
+                                      'original_image_count': 7})
+            module.validate_complete_handoff.assert_called_once_with(root, '123', '261003',
+                                                        config['HANDOFF_MANIFEST_SHA256'], 7)
+            module.validate_complete_handoff.side_effect = ValueError('complete_source_binding_changed')
+            with patch('build_chart_search_index.discover_candidates') as candidates, \
+                 self.assertRaisesRegex(ValueError, 'binding_changed'):
+                handoff.validate_handoff(root, config)
+            candidates.assert_not_called()
+            module.validate_complete_handoff.side_effect = None
+            with patch('report_extraction_source.resolve_extraction_source', return_value=SimpleNamespace(method='ocr')), \
+                 patch('build_chart_search_index.discover_candidates') as candidates, \
+                 self.assertRaisesRegex(ValueError, 'unsupported_complete_primary'):
+                handoff.validate_handoff(root, config)
+            candidates.assert_not_called()
+
+    def test_workflow_validates_and_forwards_complete_primary_kind_to_both_receivers(self):
+        workflow = WORKFLOW.read_text()
+        self.assertIn('      source_handoff_kind:', workflow)
+        self.assertEqual(workflow.count('HANDOFF_KIND: ${{ inputs.source_handoff_kind }}'), 3)
+        step = workflow.split('      - name: Validate source selection\n', 1)[1].split('      - name:', 1)[0]
+        program = textwrap.dedent(step.split('        run: |\n', 1)[1])
+        base = {**os.environ, **self.env(), 'HANDOFF_KIND': 'complete-primary',
+                'MAX_IMAGES': '0', 'RETRY_ERRORS_NOW': 'false'}
+        self.assertEqual(subprocess.run(['bash', '-c', program], env=base, capture_output=True).returncode, 0)
+        for change in ({'HANDOFF_KIND': 'foreign'}, {'HANDOFF_MANIFEST_SHA256': '', 'EXPECTED_ARTICLES': '0'},
+                       {'ARTIFACT_RUN_ID': '456'}, {'EXPECTED_SHARDS': '2'}):
+            with self.subTest(change=change):
+                self.assertNotEqual(subprocess.run(['bash', '-c', program], env={**base, **change},
+                                                   capture_output=True).returncode, 0)
 
     def test_actual_workflow_shell_rejects_substitution_without_executing_it(self):
         workflow = WORKFLOW.read_text()

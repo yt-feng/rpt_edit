@@ -42,6 +42,14 @@ def request_from_environment(env):
     require(env.get("SOURCE_ARTIFACT_PATTERN", "publish-ready-*") == "publish-ready-*", "Unexpected daily artifact selector")
     require(env.get("ALLOW_INDEX_REMOVAL_MIGRATION", "false") == "false", "Durable chart requests cannot remove index records")
     manifest = env.get("HANDOFF_MANIFEST_SHA256", "")
+    kind = env.get("HANDOFF_KIND", "")
+    reused = env.get("RECOVERED_PRIMARY_REUSED", "")
+    require(reused in {"", "false", "true"}, "Invalid chart source reuse flag")
+    if reused == "true":
+        require(env.get("RECOVERED_RESULT") == "success" and kind in {"", "complete-primary"},
+                "Unverified complete-primary chart route")
+        kind = "complete-primary"
+    require(kind in {"", "complete-primary"}, "Invalid chart handoff kind")
     shards, articles = env.get("EXPECTED_SHARDS", "0"), env.get("EXPECTED_ARTICLES", "0")
     if env.get("RECOVERED_RESULT") == "success":
         manifest, shards, articles = env.get("RECOVERED_MANIFEST", ""), "1", env.get("SELECTED_COUNT", "")
@@ -51,13 +59,22 @@ def request_from_environment(env):
         require(re.fullmatch(r"[a-f0-9]{64}", manifest) and int(shards) == 1 and 0 < int(articles) <= 1000,
                 "Invalid recovered chart binding")
     else:
-        require(int(articles) == 0, "Unexpected chart article count")
-    return {"schema": 1, "repository": repository, "workflow": WORKFLOW_PATH,
+        require(int(articles) == 0 and not kind, "Unexpected chart article count or handoff kind")
+    if env.get("RECOVERED_ARTICLE_PREFIX"):
+        family = "xhs-complete" if kind else "xhs-recovery"
+        require(manifest and env["RECOVERED_ARTICLE_PREFIX"] ==
+                f"_private-workflow-handoff/{family}/{source}/{date}/{manifest}/articles",
+                "Chart article handoff prefix differs from its source identity")
+    request = {"schema": 1, "repository": repository, "workflow": WORKFLOW_PATH,
         "date_folder": date, "source_handoff_run_id": source,
         "source_handoff_manifest_sha256": manifest, "expected_shards": str(int(shards)),
         "expected_articles": str(int(articles)), "max_images": str(int(maximum)),
         "source_artifact_run_id": "", "source_artifact_pattern": "publish-ready-*",
         "allow_index_removal_migration": "false"}
+    # Preserve historical request hashes; only the new source route adds a field.
+    if kind:
+        request["source_handoff_kind"] = kind
+    return request
 
 
 def request_id(request):
@@ -98,6 +115,8 @@ class GitHub:
         for key in ("date_folder", "source_handoff_run_id", "source_handoff_manifest_sha256",
                     "expected_shards", "expected_articles", "max_images"):
             args += ["-f", key + "=" + request[key]]
+        if request.get("source_handoff_kind"):
+            args += ["-f", "source_handoff_kind=" + request["source_handoff_kind"]]
         args += ["-f", "dispatch_request_id=" + request_id(request), "-f", "retry_errors_now=" + str(retry).lower()]
         # A POST is never retried here. Its response can be lost after acceptance.
         try:

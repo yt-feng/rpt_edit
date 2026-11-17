@@ -22,6 +22,11 @@ on:
         required: false
         default: ""
         type: string
+      source_handoff_kind:
+        description: "Leave empty for original/recovered inputs; complete-primary selects a verified completed primary handoff"
+        required: false
+        default: ""
+        type: string
       expected_articles:
         description: "Exact recovered report count; required only with a recovered manifest hash"
         required: false
@@ -80,16 +85,19 @@ jobs:
           HANDOFF_RUN_ID: ${{ inputs.source_handoff_run_id }}
           ARTIFACT_RUN_ID: ${{ inputs.source_artifact_run_id }}
           HANDOFF_MANIFEST_SHA256: ${{ inputs.source_handoff_manifest_sha256 }}
+          HANDOFF_KIND: ${{ inputs.source_handoff_kind }}
           EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
           EXPECTED_SHARDS: ${{ inputs.expected_shards }}
           MAX_IMAGES: ${{ inputs.max_images }}
           RETRY_ERRORS_NOW: ${{ inputs.retry_errors_now }}
         run: |
           set -euo pipefail
+          HANDOFF_KIND="${HANDOFF_KIND:-}"
           printf '%s' "$DATE_FOLDER" | grep -Eq '^[0-9]{6,8}$'
           printf '%s' "$EXPECTED_SHARDS" | grep -Eq '^[0-9]+$'
           printf '%s' "$MAX_IMAGES" | grep -Eq '^[0-9]+$'
           printf '%s' "$RETRY_ERRORS_NOW" | grep -Eq '^(true|false)$'
+          test -z "$HANDOFF_KIND" || test "$HANDOFF_KIND" = complete-primary
           if { [ -n "$HANDOFF_RUN_ID" ] && [ -n "$ARTIFACT_RUN_ID" ]; } || \
              { [ -z "$HANDOFF_RUN_ID" ] && [ -z "$ARTIFACT_RUN_ID" ]; }; then
             echo "::error::Choose exactly one source: private handoff or historical artifact run."
@@ -107,6 +115,7 @@ jobs:
             test "$EXPECTED_ARTICLES" -le 1000
           else
             test "$EXPECTED_ARTICLES" = 0
+            test -z "$HANDOFF_KIND"
           fi
 
       - name: Checkout public source
@@ -129,6 +138,7 @@ jobs:
           DATE_FOLDER: ${{ inputs.date_folder }}
           SOURCE_RUN_ID: ${{ inputs.source_handoff_run_id }}
           HANDOFF_MANIFEST_SHA256: ${{ inputs.source_handoff_manifest_sha256 }}
+          HANDOFF_KIND: ${{ inputs.source_handoff_kind }}
           ARTIFACT_RUN_ID: ${{ inputs.source_artifact_run_id }}
           SOURCE_ARTIFACT_PATTERN: ${{ inputs.source_artifact_pattern }}
           EXPECTED_SHARDS: ${{ inputs.expected_shards }}
@@ -184,6 +194,7 @@ jobs:
           HANDOFF_RUN_ID: ${{ inputs.source_handoff_run_id }}
           ARTIFACT_RUN_ID: ${{ inputs.source_artifact_run_id }}
           HANDOFF_MANIFEST_SHA256: ${{ inputs.source_handoff_manifest_sha256 }}
+          HANDOFF_KIND: ${{ inputs.source_handoff_kind }}
           EXPECTED_SHARDS: ${{ inputs.expected_shards }}
           EXPECTED_ARTICLES: ${{ inputs.expected_articles }}
         run: python scripts/chart_recovered_handoff.py --destination _chart_input
