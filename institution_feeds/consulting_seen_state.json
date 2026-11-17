@@ -1572,6 +1572,10 @@
     "bcg:https://www.bcg.com/publications/2026/ai-governance-banking-benchmark": {
       "first_seen": "2026-11-14",
       "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/us-drug-pricing-changes-europe": {
+      "first_seen": "2026-11-17",
+      "status": "no_pdf"
     }
   }
 }
