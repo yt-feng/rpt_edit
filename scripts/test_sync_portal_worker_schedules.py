@@ -54,9 +54,19 @@ class ScheduleTests(unittest.TestCase):
 
     def test_unknown_schedules_preserved_exactly_and_partial_known_union_not_expanded(self):
         previous = ["11 15 * * MON", schedules.NEWSFEED_PARTS[0], "19 3 1 * *"]
-        self.assertEqual(schedules.desired_schedules(previous), previous + [schedules.REMINDER])
+        self.assertEqual(schedules.desired_schedules(previous), previous + [schedules.REMINDER, schedules.HALF_HOURLY])
         previous = ["11 15 * * MON", *schedules.NEWSFEED_PARTS]
-        self.assertEqual(schedules.desired_schedules(previous), [previous[0], schedules.NEWSFEED_UNION, schedules.REMINDER])
+        self.assertEqual(schedules.desired_schedules(previous), [previous[0], schedules.NEWSFEED_UNION, schedules.REMINDER, schedules.HALF_HOURLY])
+
+    def test_missing_half_hourly_trigger_is_installed_and_verified(self):
+        previous = [schedules.NEWSFEED_UNION, schedules.REMINDER]
+        api = Api(previous)
+        result = run(api)
+        self.assertTrue(result["half_hourly_verified"])
+        self.assertEqual(api.state, previous + [schedules.HALF_HOURLY])
+        self.assertEqual(sum(method == "PUT" for method, _ in api.calls), 1)
+        self.assertTrue(run(api)["half_hourly_verified"])
+        self.assertEqual(sum(method == "PUT" for method, _ in api.calls), 1)
 
     def test_limit_failure_and_initial_read_failure_never_write(self):
         for api in [Api(["1 1 * * *", "2 2 * * *", "3 3 * * *", "4 4 * * *", "5 5 * * *"]),
@@ -68,7 +78,8 @@ class ScheduleTests(unittest.TestCase):
     def test_update_is_one_put_followed_by_exact_readback_and_second_run_is_noop(self):
         api = Api()
         result = run(api)
-        self.assertEqual(result, {"ok": True, "changed": True, "schedule_count": 3, "rollback": "not_needed"})
+        self.assertEqual(result, {"ok": True, "changed": True, "schedule_count": 3,
+                                  "half_hourly_verified": True, "rollback": "not_needed"})
         self.assertEqual([method for method, _ in api.calls], ["GET", "GET", "PUT", "GET", "GET"])
         self.assertEqual(api.state, NEW)
         api.calls.clear()
