@@ -37,7 +37,7 @@ import requests
 from PIL import Image, ImageDraw
 
 from wechat_account_routing import plan_destinations
-from wechat_accounts import ACCOUNT_NAMES
+from wechat_accounts import ACCOUNT_NAMES, all_account_credentials
 from wechat_draft_grouping import DEFAULT_ARTICLES_PER_DRAFT, account_group_sizes
 from institution_names import ensure_title_has_institution, infer_institution_name
 from wechat_title_optimizer import (
@@ -3551,9 +3551,18 @@ class DraftDestination:
 
 
 def prepare_draft_destinations(args, date_dir: Path, selected: list[Path], session: requests.Session | None,
-                               *, fetch_token, resolve_asset, upload_image):
+                               *, fetch_token, resolve_asset, upload_image, planned_routes=None):
     """Resolve tokens and trailing image URLs before building account-bound payloads."""
-    routes, credentials = plan_destinations(args, date_dir, selected)
+    if planned_routes is None:
+        routes, credentials = plan_destinations(args, date_dir, selected)
+    else:
+        if set(planned_routes) != set(selected) or any(account not in {*ACCOUNT_NAMES, None} for account in planned_routes.values()):
+            raise ValueError("Invalid fixed WeChat destination plan")
+        routes = dict(planned_routes)
+        primary = (args.wechat_appid, args.wechat_secret)
+        credentials = {None: primary}
+        if any(account is not None for account in routes.values()):
+            credentials.update(dict.fromkeys(ACCOUNT_NAMES, ("", "")) if args.dry_run else all_account_credentials(primary))
     if not selected:
         return routes, {}, None
     trailing_path = resolve_asset(args.trailing_image)

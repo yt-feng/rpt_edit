@@ -39,7 +39,11 @@ except Exception:
             part.lower() in {"mineru_raw", "figure_source_evidence"} for part in path.parts
         )
 
-TEXT_SUFFIXES = {".md", ".txt", ".json", ".srt", ".vtt"}
+# JSON files are private machine receipts/manifests, not public copy. Replacing
+# a brand inside a source filename, title decision or evidence object breaks
+# the exact-byte bindings used by delivery and replay. Publication packaging
+# already excludes JSON; generated article text remains sanitized below.
+TEXT_SUFFIXES = {".md", ".txt", ".srt", ".vtt"}
 ZSXQ_IMAGE_MD = "![](https://github.com/source/example/blob/main/prompts/zsxq_img.jpg)"
 DISCLAIMER_TEXT = (
     "For informational purposes only. Portions may be generated, translated, summarized, or edited with "
@@ -225,7 +229,7 @@ def normalize_wechat_articles(output_dir: Path) -> int:
 def sanitize_file(path: Path) -> bool:
     from wechat_editorial_binding import advance_binding, read_bound_article
 
-    if is_source_material(path):
+    if path.suffix.lower() == '.json' or is_source_material(path):
         return False
     try:
         original = path.read_text(encoding="utf-8", errors="ignore")
@@ -397,7 +401,7 @@ def update_item_status(item_dir: Path, update: dict[str, Any]) -> None:
         except Exception:
             status = {}
     status.update(update)
-    status_path.write_text(sanitize_text(json.dumps(status, ensure_ascii=False, indent=2)), encoding="utf-8")
+    status_path.write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 def run_guard_if_enabled(output_dir: Path, args: argparse.Namespace) -> None:
@@ -488,7 +492,7 @@ def main() -> int:
     log(f"Enforced Xianyu hard constraints on {constrained_xianyu} files.")
     sanitized_after = sanitize_output_dir(output_dir)
     log(f"Sanitized {sanitized_after} generated text files after finalization.")
-    (output_dir / "finalize_summary.json").write_text(sanitize_text(json.dumps(summary, ensure_ascii=False, indent=2)), encoding="utf-8")
+    (output_dir / "finalize_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
     return 0
 
 

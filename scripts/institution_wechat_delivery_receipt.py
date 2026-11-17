@@ -210,6 +210,21 @@ def validate_delivery(output_dir: Path, source_dir: Path, source_kind: str, expe
             require(type(expected_count) is int and expected_count >= 0, "invalid_expected_count")
             require(source_kind in {"xhs", "portal-translated"}, "invalid_source_kind")
             require(source_dir.name == output_dir.name, "source_date_mismatch")
+            if (output_dir / "progressive_plan.json").is_file():
+                from progressive_wechat_delivery import validate_plan, source_directories, validate_progressive_delivery
+                require(source_kind == "xhs" and not dry_run and not include_institutions and not exclude_institutions,
+                        "progressive_verification_mode_invalid")
+                plan = validate_plan(read_object(output_dir / "progressive_plan.json"))
+                require(len(plan["sources"]) == expected_count and plan["date_folder"] == source_dir.name,
+                        "progressive_verification_source_mismatch")
+                from push_portal_translated_to_wechat_drafts import parse_selection_limit
+                limit = parse_selection_limit(max_articles, "--max-articles")
+                require(plan["selection_limit"] == (expected_count if limit is None else min(expected_count, limit)),
+                        "progressive_verification_selection_changed")
+                directories = source_directories(plan, source_dir)
+                require(len(directories) == expected_count, "progressive_verification_source_incomplete")
+                report.update(validate_progressive_delivery(output_dir, plan, directories, live=True))
+                return report
             allowed, blocked, institution_excluded = source_selection(
                 source_dir, source_kind, expected_count, max_articles, include_institutions, exclude_institutions)
             report.update(expected_article_count=len(allowed), policy_excluded_count=len(blocked),

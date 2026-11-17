@@ -645,7 +645,7 @@ def build_article(
     }
 
 
-def main(*, submit_draft=None) -> int:
+def main(*, submit_draft=None, selected_reports=None, planned_routes=None, fixed_group=False, preserve_verified=False) -> int:
     parser = argparse.ArgumentParser(description="Create WeChat drafts from xhs_notes/dropbox report articles.")
     parser.add_argument("--dropbox-output-root", default="xhs_notes/dropbox")
     parser.add_argument("--date-folder", default="latest")
@@ -732,7 +732,7 @@ def main(*, submit_draft=None) -> int:
     if not date_dir.exists():
         raise RuntimeError(f"Date folder not found: {date_dir}")
 
-    report_dirs = find_report_dirs(date_dir)
+    report_dirs = find_report_dirs(date_dir) if selected_reports is None else list(selected_reports)
     if max_articles is None:
         selected = report_dirs[args.article_offset :]
     else:
@@ -868,6 +868,7 @@ def main(*, submit_draft=None) -> int:
     routes, destinations, trailing_image_path = prepare_draft_destinations(
         args, date_dir, selected, session, fetch_token=get_stable_access_token,
         resolve_asset=resolve_repo_asset_path, upload_image=upload_article_image,
+        planned_routes={report: planned_routes[report] for report in selected} if planned_routes is not None else None,
     )
 
     drafts: list[dict[str, Any]] = []
@@ -994,7 +995,11 @@ def main(*, submit_draft=None) -> int:
         if not args.dry_run:
             log(f"Verifying WeChat draft {draft_index}: media_id={media_id}")
             pacing_sleep(f"Before verifying WeChat draft {draft_index}", args.draft_verify_delay_seconds, False)
-            draft_get = verify_draft_get(session, access_token, media_id, args.timeout, len(articles), articles, True)
+            saved_verification = receipt.get('draft_get', {})
+            if preserve_verified and saved_verification.get('ok') is True and saved_verification.get('matches_editorial_contract') is True:
+                draft_get = saved_verification
+            else:
+                draft_get = verify_draft_get(session, access_token, media_id, args.timeout, len(articles), articles, True)
             drafts[-1]["draft_get"] = draft_get
             drafts[-1]["status"] = "verified" if draft_get.get("ok") else "verification_failed"
             checkpoint_wechat_drafts(output_dir, drafts, dry_run=False)
@@ -1011,7 +1016,10 @@ def main(*, submit_draft=None) -> int:
 
     built_articles: list[dict[str, Any]] = []
     pending_groups: dict[str | None, list[dict[str, Any]]] = {account: [] for account in destinations}
-    group_sizes = account_group_sizes(selected, routes, output_dir, args.articles_per_draft)
+    group_sizes = ({account: [sum(route == account for route in routes.values())] for account in destinations}
+                   if fixed_group else account_group_sizes(selected, routes, output_dir, args.articles_per_draft))
+    if fixed_group and (len(destinations) > 1 or len(selected) > args.articles_per_draft):
+        raise ValueError("A fixed draft group must stay within one account and the configured size limit")
     group_indices = dict.fromkeys(destinations, 0)
     for idx, report_dir in enumerate(selected, 1):
         log(f"Building WeChat article {idx}/{len(selected)}: {report_dir.name}")

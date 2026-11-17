@@ -1,0 +1,165 @@
+name: Progressive Daily WeChat delivery
+run-name: Ready WeChat groups ${{ inputs.date_folder }} from Daily ${{ inputs.source_run_id }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Daily producer run that retained the frozen selection and publishing options
+        required: true
+        type: string
+      date_folder:
+        description: Exact Daily source date
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  actions: read
+
+# A newer signal replaces an older pending signal. Each pass scans all ready
+# groups, while the separate publisher job lock also preserves final delivery.
+concurrency:
+  group: progressive-wechat-signal-${{ inputs.source_run_id }}-${{ inputs.date_folder }}
+  cancel-in-progress: false
+
+jobs:
+  admit:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    outputs:
+      eligible: ${{ steps.source.outputs.eligible }}
+      source_sha: ${{ steps.source.outputs.source_sha }}
+    steps:
+      - name: Authenticate Daily producer and frozen configuration
+        id: source
+        uses: actions/github-script@v7
+        env:
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+        with:
+          script: |
+            const id = process.env.SOURCE_RUN_ID;
+            if (!/^[1-9][0-9]*$/.test(id) || !Number.isSafeInteger(Number(id)) ||
+                !/^(?:[0-9]{6}|[0-9]{8})$/.test(process.env.DATE_FOLDER)) {
+              throw new Error('Invalid Daily source identity');
+            }
+            const {data: run} = await github.rest.actions.getWorkflowRun({
+              owner: context.repo.owner, repo: context.repo.repo, run_id: Number(id),
+            });
+            const repository = `${context.repo.owner}/${context.repo.repo}`;
+            if (run.id !== Number(id) || run.path !== '.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml' ||
+                run.head_branch !== 'main' || run.head_repository?.full_name !== repository ||
+                run.repository?.full_name !== repository || !['schedule', 'workflow_dispatch'].includes(run.event) ||
+                !/^[a-f0-9]{40}$/.test(run.head_sha)) throw new Error('Untrusted Daily producer');
+            if (run.conclusion === 'cancelled') {
+              core.setOutput('eligible', 'false');
+              return;
+            }
+            let artifacts = [];
+            let total;
+            for (let page = 1; page <= 5; page++) {
+              const {data} = await github.rest.actions.listWorkflowRunArtifacts({
+                owner: context.repo.owner, repo: context.repo.repo, run_id: Number(id), per_page: 100, page,
+              });
+              if (!Number.isSafeInteger(data.total_count) || data.total_count > 500 ||
+                  (total !== undefined && total !== data.total_count)) throw new Error('Incomplete producer artifacts');
+              total = data.total_count;
+              artifacts.push(...data.artifacts);
+              if (artifacts.length === total) break;
+            }
+            if (artifacts.length !== total) throw new Error('Incomplete producer artifacts');
+            const configs = artifacts.filter(a => a.name === `progressive-wechat-config-${id}`);
+            if (configs.length === 0) {
+              core.info('This producer predates progressive delivery; its original delivery remains authoritative.');
+              core.setOutput('eligible', 'false');
+              return;
+            }
+            if (configs.length !== 1 || configs[0].expired) throw new Error('Invalid producer configuration artifact');
+            core.setOutput('source_sha', run.head_sha);
+            core.setOutput('eligible', 'true');
+
+  publish-ready:
+    needs: admit
+    if: needs.admit.outputs.eligible == 'true'
+    concurrency:
+      group: daily-wechat-publisher-${{ inputs.source_run_id }}-${{ inputs.date_folder }}
+      cancel-in-progress: false
+      queue: max
+    runs-on: [self-hosted, wechat-draft]
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          clean: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github/actions
+            scripts
+            prompts
+            requirements.txt
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install publishing dependencies
+        run: |
+          pip install -r requirements.txt
+          python -m pip install 'boto3>=1.37.32,<2'
+      - name: Download frozen publishing configuration
+        uses: actions/download-artifact@v4
+        with:
+          name: progressive-wechat-config-${{ inputs.source_run_id }}
+          run-id: ${{ inputs.source_run_id }}
+          github-token: ${{ github.token }}
+          path: _progressive_config
+      - name: Download frozen full selection
+        uses: actions/download-artifact@v4
+        with:
+          name: selected-macro-manifest-${{ inputs.source_run_id }}
+          run-id: ${{ inputs.source_run_id }}
+          github-token: ${{ github.token }}
+          path: _selected_macro_manifest
+      - name: Materialize private publishing image
+        env:
+          PORTAL_PRIVATE_PUBLISH_ASSET_KEY: ${{ secrets.PORTAL_PRIVATE_PUBLISH_ASSET_KEY }}
+        run: bash scripts/materialize_private_social_asset.sh prompts
+      - name: Upload currently ready fixed groups
+        id: upload
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          SOURCE_SHA: ${{ needs.admit.outputs.source_sha }}
+          DATE_FOLDER: ${{ inputs.date_folder }}
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+          WECHAT_MP_APPID_TT: ${{ secrets.WECHAT_MP_APPID_TT }}
+          WECHAT_MP_APPSECRET_TT: ${{ secrets.WECHAT_MP_APPSECRET_TT }}
+          WECHAT_MP_APPID_PANKOU: ${{ secrets.WECHAT_MP_APPID_PANKOU }}
+          WECHAT_MP_APPSECRET_PANKOU: ${{ secrets.WECHAT_MP_APPSECRET_PANKOU }}
+          WECHAT_ROUTING_START_DATE: ${{ vars.WECHAT_ROUTING_START_DATE }}
+          WECHAT_ROUTING_SCOPE: dropbox
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          PORTAL_SITE_URL: ${{ secrets.PORTAL_SITE_URL }}
+        run: |
+          set -o pipefail
+          python scripts/progressive_wechat_workflow.py once \
+            --config _progressive_config/_progressive_wechat_config.json \
+            --manifest _selected_macro_manifest/selected_to_process_manifest.json \
+            2>&1 | tee progressive_wechat_progress.log
+      - name: Retain ready-group diagnostics
+        if: ${{ always() && steps.upload.outcome != '' && steps.upload.outcome != 'skipped' }}
+        uses: ./.github/actions/resilient-diagnostic-artifact
+        with:
+          name: progressive-wechat-${{ inputs.source_run_id }}-${{ github.run_id }}-attempt-${{ github.run_attempt }}
+          path: |
+            wechat_drafts/xhs_notes/${{ inputs.date_folder }}
+            progressive_wechat_progress.log
+          if-no-files-found: error
+          required: 'true'
+          retention-days: 14
