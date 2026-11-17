@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "85879efbb3a2aecfffc5563a3dade05794b3989d87b7af0fdf18976455db203c",
+  "slug": "bbg-20261117-85879efbb3a2aecf",
+  "date": "2026-11-17",
+  "title": "AI²机器人郭彦东：开源AlphaBrain，机器人智能如何加速？",
+  "speaker": "Guo Yendong",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-11-17/the-china-show-11-17-2026-video",
+  "start": 4790.8,
+  "end": 4840.8,
+  "segments": [
+    {
+      "start": 4790.8,
+      "end": 4794.79,
+      "en": "Yeah, exactly. So, your foundational model you're talking about is alpha brain.",
+      "zh": "对，没错。你提到的基础模型是AlphaBrain。"
+    },
+    {
+      "start": 4794.79,
+      "end": 4803.79,
+      "en": "Yep. And we've heard, you know, from Unitries, Wang Xingxing talk about the advancements in artificial general intelligence might be coming much faster",
+      "zh": "是的。我们从Unitree的王兴兴那里听说，通用人工智能的进展可能比我们预期的要快得多。"
+    },
+    {
+      "start": 4803.79,
+      "end": 4808.79,
+      "en": "than we ever expected. Would you agree with that? Yeah, I think things grow faster and faster.",
+      "zh": "你同意吗？是的，我认为事情发展得越来越快。"
+    },
+    {
+      "start": 4808.79,
+      "end": 4816.79,
+      "en": "Typically, people write codes all by themselves, but these days, a lot of engineers leverage large foundation model to write code.",
+      "zh": "通常，人们自己写代码，但如今，许多工程师利用大基础模型来写代码。"
+    },
+    {
+      "start": 4816.79,
+      "end": 4825.79,
+      "en": "I think a lot of things get in faster and faster. And in the year 2000-23, I think we are one of the first companies who actually invent this large foundation model for robotics.",
+      "zh": "我认为很多事情发展得越来越快。在2023年，我们是首批真正为机器人发明这种大基础模型的公司之一。"
+    },
+    {
+      "start": 4825.79,
+      "end": 4830.79,
+      "en": "And we keep innovating. We keep publishing papers, we keep applying for patents.",
+      "zh": "我们持续创新。我们不断发表论文，不断申请专利。"
+    },
+    {
+      "start": 4830.79,
+      "end": 4834.79,
+      "en": "And we open source the large foundation model we call that alpha brain.",
+      "zh": "我们开源了名为AlphaBrain的大基础模型。"
+    },
+    {
+      "start": 4834.79,
+      "end": 4840.79,
+      "en": "So that many people can use our alpha brain to make their robot smarter and smarter.",
+      "zh": "这样许多人就能用我们的AlphaBrain让他们的机器人越来越智能。"
+    },
+    {
+      "start": 4840.79,
+      "end": 4840.8,
+      "en": "What do you think commercialization really hasn't taken off yet?",
+      "zh": "你认为商业化为什么还没有真正起飞？"
+    }
+  ]
+}

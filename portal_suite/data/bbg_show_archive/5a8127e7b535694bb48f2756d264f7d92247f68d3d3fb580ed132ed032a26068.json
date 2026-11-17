@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "id": "5a8127e7b535694bb48f2756d264f7d92247f68d3d3fb580ed132ed032a26068",
+  "slug": "bbg-20261117-5a8127e7b535694b",
+  "date": "2026-11-17",
+  "title": "智平方郭彦东：堆再多GPU也不够，物理世界AGI怎么训",
+  "speaker": "Guo Yendong",
+  "category": "shows",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-11-17/the-china-show-11-17-2026-video",
+  "start": 4919.8,
+  "end": 4985.8,
+  "segments": [
+    {
+      "start": 4919.8,
+      "end": 4923.79,
+      "en": "Well, this is a really good question. I do simple maths.",
+      "zh": "嗯，这是个很好的问题。我做个简单计算。"
+    },
+    {
+      "start": 4923.79,
+      "end": 4926.79,
+      "en": "I used to get my degree from Purdue University, I'm very proud of my university.",
+      "zh": "我毕业于普渡大学，我为母校感到非常自豪。"
+    },
+    {
+      "start": 4926.79,
+      "end": 4937.79,
+      "en": "I do very simple maths. If we keep using the current structure of large foundation model, no matter how much electricity we have, no matter how many GPUs we have,",
+      "zh": "我做个简单计算。如果继续沿用当前大模型的结构，无论我们有多少电力、多少GPU，"
+    },
+    {
+      "start": 4937.79,
+      "end": 4947.79,
+      "en": "that's not enough. So human beings just don't have enough GPU to train a fully completed NGI for physical world.",
+      "zh": "那都不够。人类没有足够的GPU来为物理世界训练一个完全成熟的通用人工智能。"
+    },
+    {
+      "start": 4947.79,
+      "end": 4951.79,
+      "en": "So we need to find another way to solve this problem.",
+      "zh": "所以我们需要另辟蹊径来解决这个问题。"
+    },
+    {
+      "start": 4951.79,
+      "end": 4954.79,
+      "en": "We invented a neural VLA.",
+      "zh": "我们发明了一种神经VLA。"
+    },
+    {
+      "start": 4954.79,
+      "end": 4958.79,
+      "en": "We find a lot of inspirations from how people bring work.",
+      "zh": "我们从人类工作方式中获得了很多灵感。"
+    },
+    {
+      "start": 4958.79,
+      "end": 4961.79,
+      "en": "Because people bring very efficient.",
+      "zh": "因为人类工作非常高效。"
+    },
+    {
+      "start": 4961.79,
+      "end": 4966.79,
+      "en": "We don't need that much electricity to train people how to think, how to act.",
+      "zh": "训练人类如何思考、如何行动并不需要那么多电力。"
+    },
+    {
+      "start": 4966.79,
+      "end": 4969.79,
+      "en": "We try to look at how neurons work.",
+      "zh": "我们尝试研究神经元是如何工作的。"
+    },
+    {
+      "start": 4969.79,
+      "end": 4978.79,
+      "en": "So that's the foundation model of the robot needs to be more efficient on the edge to lower the usage of the computing power.",
+      "zh": "所以机器人的基础模型需要在边缘端更高效，以降低算力使用。"
+    },
+    {
+      "start": 4978.79,
+      "end": 4985.79,
+      "en": "Yeah, and reduce the taxing on the grid as well, if you're doing edge computing.",
+      "zh": "是的，如果做边缘计算，也能减轻电网负担。"
+    },
+    {
+      "start": 4985.79,
+      "end": 4985.8,
+      "en": "But again, how are you right now directly impacted by lack of access to the most cutting-edge processors, GPUs?",
+      "zh": "但话说回来，目前无法获得最先进处理器和GPU，这对你们有多大直接影响？"
+    }
+  ]
+}
