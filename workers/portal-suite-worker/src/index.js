@@ -6,6 +6,7 @@ import {
 } from "./source-lead-adapter.js";
 import { researchNewsEvidence } from "./research-news.js";
 import { handleReportRefresh } from "./report-refresh.js";
+import { wakeDailyReportSource } from "./daily-source-wakeup.js";
 import { journeyAnalyticsPayload } from "./journey-analytics.js";
 import { readResearchNewsSnapshot, researchNewsPublicUrl } from "./research-news-snapshot.js";
 import {
@@ -27852,6 +27853,8 @@ export default {
       return;
     }
     if (!cron || cron === "*/30 * * * *") {
+      tasks.push(wakeDailyReportSource(env, { repository: githubRepo, fetchWithTimeout })
+        .then((result) => console.log("Daily source wake-up fallback", JSON.stringify(result))));
       tasks.push(refreshAdminDashboardSnapshots(env));
       tasks.push(warmThinkTankPdfCache(env));
       if (hotReportCleanupEnabled(env)) tasks.push(enforceHotReportStorageLimit(env));

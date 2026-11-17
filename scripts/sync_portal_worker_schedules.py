@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Reconcile only a Worker's Cron Triggers after the deployed API passes smoke.
 
-Versions upload/deploy do not apply triggers. Preserve unknown schedules and
+Versions upload/deploy do not apply triggers. Ensure the half-hour maintenance
+and Daily source wake-up clock exists. Preserve unknown schedules and
 merge only the complete four-entry, equivalent Newsfeed union. Never modify
 routes/domains. PUT is not retried: reconcile an unknown outcome by GET first.
 A failed verification restores the exact prior cron strings only while the
@@ -21,6 +22,7 @@ import time
 
 API_HOST = "api.cloudflare.com"
 REMINDER = "* 2-3 * * *"
+HALF_HOURLY = "*/30 * * * *"
 NEWSFEED_PARTS = (
     "*/10 17-18 * * *", "*/10 23 * * *", "*/10 0-3 * * *", "*/10 5-6 * * *",
 )
@@ -72,6 +74,8 @@ def desired_schedules(previous):
                 desired.append(value)
     if REMINDER not in desired:
         desired.append(REMINDER)
+    if HALF_HOURLY not in desired:
+        desired.append(HALF_HOURLY)
     if len(desired) > MAX_SCHEDULES:
         raise ScheduleError("schedule_limit")
     return desired
@@ -192,7 +196,8 @@ def sync_schedules(api, *, sleep=time.sleep):
     previous = api.get()  # A failed initial read can never lead to a PUT.
     desired = desired_schedules(previous)
     if same(previous, desired):
-        return {"ok": True, "changed": False, "schedule_count": len(previous), "rollback": "not_needed"}
+        return {"ok": True, "changed": False, "schedule_count": len(previous),
+                "half_hourly_verified": HALF_HOURLY in previous, "rollback": "not_needed"}
     # Narrow the lost-update window; the API has no documented schedule CAS.
     if not same(api.get(), previous):
         raise ScheduleError("concurrent_change", rollback="conflict")
@@ -203,7 +208,8 @@ def sync_schedules(api, *, sleep=time.sleep):
         pass
     try:
         if verify(api, desired, previous, sleep):
-            return {"ok": True, "changed": True, "schedule_count": len(desired), "rollback": "not_needed"}
+            return {"ok": True, "changed": True, "schedule_count": len(desired),
+                    "half_hourly_verified": HALF_HOURLY in desired, "rollback": "not_needed"}
     except ScheduleError as error:
         if error.code == "concurrent_change":
             raise
