@@ -115,6 +115,21 @@ class RecoveredChartTests(unittest.TestCase):
                 self.assertNotEqual(subprocess.run(['bash', '-c', program], env={**base, **change},
                                                    capture_output=True).returncode, 0)
 
+    def test_private_complete_proof_images_never_enter_chart_candidates(self):
+        from build_chart_search_index import discover_candidates
+
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            for relative in ('shard_0/report/assets/source_image_001.png',
+                             'shard_0/_completed_primary_proof/report/assets/source_image_002.png'):
+                image = root / relative
+                image.parent.mkdir(parents=True)
+                image.write_bytes(b'image-fixture')
+            candidates = discover_candidates(root, {}, date_folder='261003')
+            self.assertEqual(len(candidates), 1)
+            self.assertEqual(candidates[0].image_path.relative_to(root).as_posix(),
+                             'shard_0/report/assets/source_image_001.png')
+
     def test_actual_workflow_shell_rejects_substitution_without_executing_it(self):
         workflow = WORKFLOW.read_text()
         step = workflow.split('      - name: Validate source selection\n', 1)[1].split('      - name:', 1)[0]

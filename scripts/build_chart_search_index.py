@@ -420,6 +420,9 @@ def earliest_source_date(*values: Any) -> str:
 def iter_report_dirs(root: Path) -> Iterable[Path]:
     seen: set[Path] = set()
     for image in sorted(root.rglob("assets/source_image_*")):
+        # Completion proofs are private delivery evidence, never source reports.
+        if "_completed_primary_proof" in image.relative_to(root).parts:
+            continue
         if not image.is_file() or not IMAGE_NAME_RE.fullmatch(image.name):
             continue
         report_dir = image.parent.parent
