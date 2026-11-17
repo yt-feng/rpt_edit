@@ -18,7 +18,6 @@ import tempfile
 
 import requests
 
-REPOSITORY = 'yt-feng/rpt_edit'
 WORKFLOW = '.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml'
 CACHE = 'sensitive_content_guard_cache.json'
 
@@ -34,9 +33,11 @@ def sha256(data):
 
 def source_identity(pdf_path, item_dir, args, env):
     require(env.get('DAILY_PROGRESSIVE_WECHAT_READY') == 'true', 'ready_not_enabled')
-    require(env.get('GITHUB_ACTIONS') == 'true' and env.get('GITHUB_REPOSITORY') == REPOSITORY
+    repository = env.get('GITHUB_REPOSITORY', '')
+    require(re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', repository), 'invalid_repository')
+    require(env.get('GITHUB_ACTIONS') == 'true'
             and env.get('GITHUB_REF') == 'refs/heads/main'
-            and env.get('GITHUB_WORKFLOW_REF') == f'{REPOSITORY}/{WORKFLOW}@refs/heads/main'
+            and env.get('GITHUB_WORKFLOW_REF') == f'{repository}/{WORKFLOW}@refs/heads/main'
             and env.get('GITHUB_EVENT_NAME') in {'schedule', 'workflow_dispatch'}, 'untrusted_producer')
     run, execution, day = env.get('GITHUB_RUN_ID', ''), env.get('GITHUB_SHA', ''), env.get('DATE_FOLDER', '')
     require(re.fullmatch(r'[1-9][0-9]*', run) and re.fullmatch(r'[a-f0-9]{40}', execution)
@@ -159,8 +160,10 @@ def bounded_r2_client(env):
 def notify_publisher(identity, env):
     # Exactly one POST. An unknown response is left for later article/shard
     # signals; the shared publisher plan makes such signals idempotent.
+    repository = env.get('GITHUB_REPOSITORY', '')
+    require(re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', repository), 'invalid_repository')
     response = requests.post(
-        f'https://api.github.com/repos/{REPOSITORY}/actions/workflows/progressive-wechat-delivery.yml/dispatches',
+        f'https://api.github.com/repos/{repository}/actions/workflows/progressive-wechat-delivery.yml/dispatches',
         headers={'Authorization': 'Bearer ' + env['GH_TOKEN'], 'Accept': 'application/vnd.github+json',
                  'X-GitHub-Api-Version': '2022-11-28'},
         json={'ref': 'main', 'inputs': {'source_run_id': identity['source_run_id'],

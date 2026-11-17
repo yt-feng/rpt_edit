@@ -39,8 +39,8 @@ class ReadyTests(unittest.TestCase):
         self.source_map.write_text(json.dumps({'schema': 1, 'files': {self.pdf.name: {
             'source': '01-BIS-source.pdf', 'sha256': ready.sha256(self.pdf.read_bytes()), 'size': self.pdf.stat().st_size}}}))
         self.env = {'DAILY_PROGRESSIVE_WECHAT_READY': 'true', 'GITHUB_ACTIONS': 'true',
-            'GITHUB_REPOSITORY': ready.REPOSITORY, 'GITHUB_REF': 'refs/heads/main',
-            'GITHUB_WORKFLOW_REF': f'{ready.REPOSITORY}/{ready.WORKFLOW}@refs/heads/main',
+            'GITHUB_REPOSITORY': 'owner/reports', 'GITHUB_REF': 'refs/heads/main',
+            'GITHUB_WORKFLOW_REF': f'owner/reports/{ready.WORKFLOW}@refs/heads/main',
             'GITHUB_EVENT_NAME': 'workflow_dispatch', 'GITHUB_RUN_ID': '123', 'GITHUB_SHA': 'a' * 40,
             'DATE_FOLDER': '261116', 'PROGRESSIVE_WECHAT_MANIFEST': str(self.manifest),
             'PROGRESSIVE_WECHAT_FINALIZE_API_KEY': 'test-finalize-key', 'GH_TOKEN': 'test-token', 'R2_BUCKET': 'private'}
