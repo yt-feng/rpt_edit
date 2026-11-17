@@ -40,6 +40,7 @@ function fixture(options = {}) {
   const runs = options.runs || [run()];
   const deps = {
     repository: (config) => config.GH_REPO, now: () => NOW,
+    sleep: async () => {},
     fetchWithTimeout: async (url, init = {}) => {
       calls.push({ url, ...init });
       if (init.method === "POST") {
@@ -109,6 +110,87 @@ test("read permission rejection falls back to the existing dispatch credential",
   assert.equal((await f.invoke()).state, "accepted");
   assert.equal(f.posts().length, 1);
   assert.equal(f.posts()[0].headers.Authorization, "Bearer private-dispatch-token");
+});
+
+test("trusted active evidence survives count drift, active transitions and unrelated failed reads", async () => {
+  for (const total of [0, 1001, "moving"]) {
+    const f = fixture();
+    f.bucket.get = async () => { throw new Error("private R2 failure"); };
+    f.deps.fetchWithTimeout = async (url) => {
+      const query = new URL(url).searchParams;
+      if (query.get("status") === "queued") {
+        return Response.json({ total_count: total, workflow_runs: [run({ id: 88, status: "in_progress" })] });
+      }
+      return new Response(null, { status: 503 });
+    };
+    assert.deepEqual(await f.invoke(), { state: "wake_active", run_id: 88 });
+    assert.equal(f.bucket.rows.size, 0);
+  }
+});
+
+test("moving empty counts and completed status transitions retry before permitting a POST", async () => {
+  for (const first of [{ total_count: 1, workflow_runs: [] }, { total_count: 1, workflow_runs: [run()] }]) {
+    const f = fixture();
+    const normal = f.deps.fetchWithTimeout;
+    let reads = 0;
+    const waits = [];
+    f.deps.sleep = async (ms) => waits.push(ms);
+    f.deps.fetchWithTimeout = async (url, init) => {
+      if (new URL(url).searchParams.get("status") === "queued" && ++reads === 1) return Response.json(first);
+      return normal(url, init);
+    };
+    assert.equal((await f.invoke()).state, "accepted");
+    assert.equal(reads, 2);
+    assert.deepEqual(waits, [1000]);
+    assert.equal(f.posts().length, 1);
+  }
+});
+
+test("persistent incomplete latest inventory never proves absence or authorizes a lease", async () => {
+  const f = fixture();
+  const normal = f.deps.fetchWithTimeout;
+  let reads = 0;
+  const waits = [];
+  f.deps.sleep = async (ms) => waits.push(ms);
+  f.deps.fetchWithTimeout = async (url, init) => {
+    if (new URL(url).searchParams.get("event") === "schedule") {
+      reads += 1;
+      return Response.json({ total_count: 0, workflow_runs: [run()] });
+    }
+    return normal(url, init);
+  };
+  assert.equal((await f.invoke()).state, "inspection_unavailable");
+  assert.equal(reads, 3);
+  assert.deepEqual(waits, [1000, 3000]);
+  assert.equal(f.posts().length, 0);
+  assert.equal(f.bucket.rows.size, 0);
+});
+
+test("transient inventory transport is retried but a malformed candidate is never an empty result", async () => {
+  for (const failure of [429, 503, "timeout", "body_abort", "invalid_json", "foreign", "invalid_status"]) {
+    const f = fixture();
+    const normal = f.deps.fetchWithTimeout;
+    let reads = 0;
+    f.deps.fetchWithTimeout = async (url, init) => {
+      if (new URL(url).searchParams.get("event") === "schedule" && ++reads === 1) {
+        if (typeof failure === "number") return new Response(null, { status: failure });
+        if (failure === "timeout") throw new Error("private timeout message");
+        if (["body_abort", "invalid_json"].includes(failure)) {
+          return { ok: true, status: 200, async json() {
+            if (failure === "invalid_json") throw new SyntaxError("private response body");
+            throw new TypeError("private interrupted body");
+          } };
+        }
+        return Response.json({ total_count: 0, workflow_runs: [run(failure === "foreign"
+          ? { head_repository: { full_name: "other/repo" }, status: "queued" } : { status: "private_status" })] });
+      }
+      return normal(url, init);
+    };
+    const malformed = ["foreign", "invalid_status", "invalid_json"].includes(failure);
+    assert.equal((await f.invoke()).state, malformed ? "inspection_unavailable" : "accepted");
+    assert.equal(reads, malformed ? 1 : 2);
+    assert.equal(f.posts().length, malformed ? 0 : 1);
+  }
 });
 
 test("conditional R2 lease allows only one concurrent worker to POST", async () => {

@@ -12,7 +12,8 @@ function token(value) {
   return text === "unconfigured" ? "" : text;
 }
 
-export async function wakeDailyReportSource(env, { repository, fetchWithTimeout, now = Date.now }) {
+export async function wakeDailyReportSource(env, { repository, fetchWithTimeout, now = Date.now,
+  sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms)) }) {
   const nowMs = now();
   const beijingHour = new Date(nowMs + 8 * 60 * 60 * 1000).getUTCHours();
   if (beijingHour < 2) return { state: "before_daily_start" };
@@ -27,37 +28,71 @@ export async function wakeDailyReportSource(env, { repository, fetchWithTimeout,
     Authorization: `Bearer ${credential}`, Accept: "application/vnd.github+json",
     "Content-Type": "application/json", "User-Agent": "portal-suite-worker", "X-GitHub-Api-Version": "2022-11-28",
   });
-  async function readRuns(filter) {
+  async function readRunsOnce(filter) {
     const url = `${base}/runs?branch=main&per_page=1&${filter}`;
-    let response = await fetchWithTimeout(url, { headers: headers(readToken) }, 5500);
-    if ([401, 403].includes(response.status) && readToken !== dispatchToken) {
-      await response.body?.cancel().catch(() => {});
-      response = await fetchWithTimeout(url, { headers: headers(dispatchToken) }, 5500);
+    let response;
+    try {
+      response = await fetchWithTimeout(url, { headers: headers(readToken) }, 5500);
+      if ([401, 403].includes(response.status) && readToken !== dispatchToken) {
+        await response.body?.cancel().catch(() => {});
+        response = await fetchWithTimeout(url, { headers: headers(dispatchToken) }, 5500);
+      }
+    } catch (_error) {
+      throw new Error("run_inventory_transport");
     }
-    if (!response.ok) throw new Error("run_inventory_unavailable");
-    const payload = await response.json();
+    if (!response.ok) {
+      await response.body?.cancel().catch(() => {});
+      throw new Error(response.status === 429 || response.status >= 500 ? "run_inventory_transport" : "run_inventory_unavailable");
+    }
+    let payload;
+    try { payload = await response.json(); }
+    catch (error) {
+      throw new Error(error instanceof SyntaxError ? "run_inventory_invalid" : "run_inventory_transport");
+    }
     const rows = payload.workflow_runs;
-    if (!Number.isSafeInteger(payload.total_count) || payload.total_count < 0 || !Array.isArray(rows)
-        || rows.length !== Math.min(1, payload.total_count)) throw new Error("run_inventory_invalid");
+    if (!Array.isArray(rows) || rows.length > 1) throw new Error("run_inventory_invalid");
     const query = new URLSearchParams(filter);
     for (const run of rows) {
-      if (!Number.isSafeInteger(run.id) || run.id <= 0 || run.head_branch !== "main"
+      if (!run || !Number.isSafeInteger(run.id) || run.id <= 0 || run.head_branch !== "main"
           || run.path !== `.github/workflows/${WORKFLOW}` || run.head_repository?.full_name !== repo
-          || !EVENTS.includes(run.event) || !Number.isFinite(Date.parse(run.created_at))
-          || (query.has("status") && run.status !== query.get("status"))
+          || !EVENTS.includes(run.event) || typeof run.created_at !== "string" || !Number.isFinite(Date.parse(run.created_at))
+          || ![...ACTIVE, "completed"].includes(run.status)
           || (query.has("event") && run.event !== query.get("event"))) throw new Error("run_identity_invalid");
     }
+    // A trusted active row proves only that we must not POST. GitHub's count
+    // and status-filter snapshots can lag behind that row independently.
+    if (rows.some((run) => ACTIVE.includes(run.status))) return rows;
+    if (!Number.isSafeInteger(payload.total_count) || payload.total_count < 0
+        || rows.length !== Math.min(1, payload.total_count)
+        || (query.has("status") && rows.some((run) => run.status !== query.get("status")))) {
+      throw new Error("run_inventory_moving");
+    }
     return rows;
+  }
+  async function readRuns(filter) {
+    for (let attempt = 0; ; attempt += 1) {
+      try { return await readRunsOnce(filter); }
+      catch (error) {
+        if (attempt >= 2 || !["run_inventory_transport", "run_inventory_moving"].includes(error.message)) throw error;
+        await sleep([1000, 3000][attempt]);
+      }
+    }
   }
 
   let current;
   let receipt;
   let runs;
   try {
-    [current, runs] = await Promise.all([
+    const inspected = await Promise.allSettled([
       env.REPORT_BUCKET.get(DAILY_SOURCE_WAKEUP_STATE_KEY),
-      Promise.all([...EVENTS.map((event) => `event=${event}`), ...ACTIVE.map((status) => `status=${status}`)].map(readRuns)),
+      ...[...EVENTS.map((event) => `event=${event}`), ...ACTIVE.map((status) => `status=${status}`)].map(readRuns),
     ]);
+    const active = inspected.slice(1).flatMap((item) => item.status === "fulfilled" ? item.value : [])
+      .find((run) => ACTIVE.includes(run.status));
+    if (active) return { state: "wake_active", run_id: active.id };
+    if (inspected.some((item) => item.status !== "fulfilled")) throw new Error("inspection_incomplete");
+    current = inspected[0].value;
+    runs = inspected.slice(1).map((item) => item.value);
     receipt = current ? JSON.parse(await current.text()) : null;
     if (receipt && (!Number.isFinite(Date.parse(receipt.requested_at)) || !current.etag)) throw new Error("receipt_invalid");
   } catch (_error) {
