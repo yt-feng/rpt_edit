@@ -82,17 +82,21 @@ def dispatch_once(github, generation):
 
 
 def catch_up(github, *, read_source, read_catalog, dispatch=dispatch_once):
-    if active_refresh(github):
-        return {"state": "refresh_active"}
     source = read_source()
     if not source:
         return {"state": "source_not_ready"}
     missing = missing_reports(source, read_catalog())
     if not missing:
         return {"state": "up_to_date", "source_reports": len(source)}
+    # Folder dates can lag upload dates. Report the exact unpublished set even
+    # while another publication owns the queue; this check never uploads PDFs.
+    counts = {"missing_reports": len(missing), "source_reports": len(source)}
+    if active_refresh(github):
+        return {"state": "refresh_active", **counts}
     generation = generation_for(missing)
-    title = f"Neutral edge Dropbox refresh ({generation})"
-    if any(run.get("display_title") == title and run.get("conclusion") != "cancelled"
+    titles = {f"Neutral edge Dropbox refresh ({generation})",
+              f"Neutral edge Dropbox refresh ({generation}; catalog)"}
+    if any(run.get("display_title") in titles and run.get("conclusion") != "cancelled"
            for run in workflow_runs(github)):
         # The same missing set gets at most one automatic request. A program
         # failure is investigated, rather than retried every hour indefinitely.
@@ -100,7 +104,7 @@ def catch_up(github, *, read_source, read_catalog, dispatch=dispatch_once):
     # GitHub can replace an unstarted pending run with a different production
     # release. That cancelled queue entry must not consume this source batch.
     if active_refresh(github):
-        return {"state": "refresh_active"}
+        return {"state": "refresh_active", **counts}
     accepted = dispatch(github, generation)
     return {"state": "requested" if accepted else "dispatch_unconfirmed", "missing_reports": len(missing)}
 

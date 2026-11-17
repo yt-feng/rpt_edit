@@ -36,10 +36,17 @@ class CatchUpTests(unittest.TestCase):
         self.assertEqual(self.run_catchup(), {"state": "requested", "missing_reports": 1})
         self.assertEqual(self.sent, [catchup.generation_for({(self.b, "261102")})])
 
-    def test_existing_active_release_is_preserved_and_source_not_read(self):
-        result = catchup.catch_up(GitHub(active=True), read_source=lambda: self.fail("source read while active"),
-                                  read_catalog=lambda: self.fail("catalog read while active"))
-        self.assertEqual(result, {"state": "refresh_active"})
+    def test_existing_active_release_reports_exact_missing_set_without_dispatch(self):
+        with patch.object(catchup, "active_refresh", return_value=True) as active:
+            result = self.run_catchup()
+        self.assertEqual(result, {"state": "refresh_active", "missing_reports": 1, "source_reports": 2})
+        self.assertEqual(active.call_count, 1)
+        self.assertEqual(self.sent, [])
+
+    def test_active_release_with_no_missing_reports_is_up_to_date(self):
+        self.assertEqual(self.run_catchup(GitHub(active=True), source={(self.a, "261101")}),
+                         {"state": "up_to_date", "source_reports": 1})
+        self.assertEqual(self.sent, [])
 
     def test_same_folder_append_and_new_date_for_existing_content_are_detected(self):
         for source in ({(self.b, "261101")}, {(self.a, "261102")}):
@@ -53,22 +60,32 @@ class CatchUpTests(unittest.TestCase):
 
     def test_failed_or_finished_same_generation_is_not_repeated_every_hour(self):
         generation = catchup.generation_for({(self.b, "261102")})
-        run = {"head_branch": "main", "display_title": f"Neutral edge Dropbox refresh ({generation})",
-               "status": "completed", "conclusion": "failure"}
-        self.assertEqual(self.run_catchup(GitHub(recent=[run]))["state"], "already_requested")
+        for suffix in ("", "; catalog"):
+            for conclusion in ("failure", "success"):
+                with self.subTest(suffix=suffix, conclusion=conclusion):
+                    run = {"head_branch": "main", "display_title": f"Neutral edge Dropbox refresh ({generation}{suffix})",
+                           "status": "completed", "conclusion": conclusion}
+                    self.assertEqual(self.run_catchup(GitHub(recent=[run]))["state"], "already_requested")
         self.assertEqual(self.sent, [])
+
+    def test_new_title_for_a_different_missing_set_does_not_suppress_refresh(self):
+        run = {"head_branch": "main", "display_title": f"Neutral edge Dropbox refresh ({'f' * 64}; catalog)",
+               "status": "completed", "conclusion": "success"}
+        self.assertEqual(self.run_catchup(GitHub(recent=[run]))["state"], "requested")
+        self.assertEqual(len(self.sent), 1)
 
     def test_race_with_new_refresh_is_checked_before_dispatch(self):
         with patch.object(catchup, "active_refresh", side_effect=[False, True]):
-            self.assertEqual(self.run_catchup()["state"], "refresh_active")
+            self.assertEqual(self.run_catchup(), {"state": "refresh_active", "missing_reports": 1, "source_reports": 2})
         self.assertEqual(self.sent, [])
 
     def test_superseded_pending_request_does_not_lose_its_source_batch(self):
         generation = catchup.generation_for({(self.b, "261102")})
-        run = {"head_branch": "main", "display_title": f"Neutral edge Dropbox refresh ({generation})",
-               "status": "completed", "conclusion": "cancelled"}
-        self.assertEqual(self.run_catchup(GitHub(recent=[run]))["state"], "requested")
-        self.assertEqual(self.sent, [generation])
+        for suffix in ("", "; catalog"):
+            run = {"head_branch": "main", "display_title": f"Neutral edge Dropbox refresh ({generation}{suffix})",
+                   "status": "completed", "conclusion": "cancelled"}
+            self.assertEqual(self.run_catchup(GitHub(recent=[run]))["state"], "requested")
+        self.assertEqual(self.sent, [generation, generation])
 
     def test_pdf_metadata_uses_same_content_identity_as_catalog(self):
         paths = []
