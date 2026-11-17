@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { wakeDailyReportSource, DAILY_SOURCE_WAKEUP_STATE_KEY } from "../../workers/portal-suite-worker/src/daily-source-wakeup.js";
 import worker from "../../workers/portal-suite-worker/src/index.js";
+import independentClock from "../../workers/daily-source-wakeup/src/index.js";
 
 const NOW = Date.parse("2026-11-17T01:00:00Z");
 const HOUR = 60 * 60 * 1000;
@@ -207,4 +208,19 @@ test("normal half-hour scheduled entry runs the watchdog using existing environm
   await Promise.all(pending);
   assert.equal(f.posts().length, 1);
   assert.equal(f.bucket.read().state, "accepted");
+});
+
+test("isolated clock uses the same receipt and deduplication without a public HTTP entry", async (t) => {
+  const f = fixture();
+  t.mock.method(Date, "now", () => NOW);
+  t.mock.method(globalThis, "fetch", (url, init) => f.deps.fetchWithTimeout(String(url), init));
+  const pending = [];
+  await independentClock.scheduled({ cron: "*/30 * * * *" }, f.env, {
+    waitUntil(promise) { pending.push(promise); },
+  });
+  await Promise.all(pending);
+  assert.equal(f.posts().length, 1);
+  assert.equal(f.bucket.read().state, "accepted");
+  assert.equal((await f.invoke()).state, "dispatch_cooldown");
+  assert.equal(independentClock.fetch, undefined);
 });

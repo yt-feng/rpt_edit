@@ -1,0 +1,112 @@
+name: Deploy independent Daily source clock
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/daily-source-clock-deploy.yml'
+      - 'workers/daily-source-wakeup/**'
+      - 'workers/portal-suite-worker/src/daily-source-wakeup.js'
+      - 'portal_suite/tests/daily-source-wakeup.test.mjs'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: daily-source-clock-deploy-${{ github.event_name == 'pull_request' && github.run_id || 'main' }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            workers
+            portal_suite/tests
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node --test portal_suite/tests/daily-source-wakeup.test.mjs
+
+  deploy:
+    needs: check
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            workers/daily-source-wakeup
+            workers/portal-suite-worker/src/daily-source-wakeup.js
+            scripts/sync_portal_worker_schedules.py
+      - name: Configure the isolated clock and its credentials
+        env:
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          GH_READ_TOKEN: ${{ secrets.GH_READ_TOKEN || secrets.GH_DISPATCH_TOKEN }}
+          GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import json, os, re
+          from pathlib import Path
+          bucket = os.environ['R2_BUCKET_NAME']
+          assert re.fullmatch(r'[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]', bucket), 'Invalid R2 bucket'
+          values = {key: os.environ[key] for key in ('GH_READ_TOKEN', 'GH_DISPATCH_TOKEN')}
+          assert all(values.values()), 'Missing GitHub clock credentials'
+          config = {
+              'name': 'portal-daily-source-clock', 'main': 'src/index.js',
+              'compatibility_date': '2026-05-01', 'workers_dev': False,
+              'preview_urls': False,
+              'vars': {'GH_REPO': os.environ['GITHUB_REPOSITORY']},
+              'triggers': {'crons': ['*/30 * * * *']},
+              'r2_buckets': [{'binding': 'REPORT_BUCKET', 'bucket_name': bucket}],
+          }
+          Path('workers/daily-source-wakeup/wrangler.json').write_text(json.dumps(config))
+          secret_path = Path(os.environ['RUNNER_TEMP']) / 'daily-clock-secrets.json'
+          with os.fdopen(os.open(secret_path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600), 'w') as output:
+              json.dump(values, output)
+          PY
+      - name: Upload the isolated clock version
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          workingDirectory: workers/daily-source-wakeup
+          wranglerVersion: '4.125.0'
+          command: versions upload --secrets-file "${{ runner.temp }}/daily-clock-secrets.json" --tag "run-${{ github.run_id }}-${{ github.run_attempt }}"
+      - name: Activate the checked clock
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          workingDirectory: workers/daily-source-wakeup
+          wranglerVersion: '4.125.0'
+          command: versions deploy --version-tag "run-${{ github.run_id }}-${{ github.run_attempt }}" --percentage 100 --yes
+      - name: Apply the independent half-hour trigger
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          workingDirectory: workers/daily-source-wakeup
+          wranglerVersion: '4.125.0'
+          command: triggers deploy
+      - name: Verify the deployed trigger through Cloudflare
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+        run: |
+          PYTHONPATH=scripts python3 - <<'PY'
+          import os
+          from sync_portal_worker_schedules import ScheduleApi
+          api = ScheduleApi(os.environ['CLOUDFLARE_ACCOUNT_ID'], 'portal-daily-source-clock', os.environ['CLOUDFLARE_API_TOKEN'])
+          assert api.get() == ['*/30 * * * *'], 'Independent clock schedule mismatch'
+          print('Independent half-hour Daily source clock verified')
+          PY
+      - name: Remove temporary credentials
+        if: always()
+        run: rm -f "$RUNNER_TEMP/daily-clock-secrets.json"
