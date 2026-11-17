@@ -1682,6 +1682,15 @@ def main() -> int:
                     successful_reports += 1
                 elif status.get("wechat_article") == "wechat_article.md":
                     successful_reports += 1
+                    if os.environ.get('DAILY_PROGRESSIVE_WECHAT_READY') == 'true':
+                        # Optional per-source handoff is outside generation's
+                        # failure handler. Full-shard delivery remains intact.
+                        try:
+                            from progressive_wechat_ready import try_publish_ready
+                            try_publish_ready(pdf_path, output_dir / slug(pdf_path.name), args)
+                        except Exception as ready_error:
+                            log('Progressive WeChat source ready: unavailable ('
+                                + type(ready_error).__name__ + '); full-shard handoff retained.')
         (output_dir / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
         log(f"Done. Results written to {output_dir}; successful_reports={successful_reports}.")
         failures = [item for item in summary if item.get('error')]

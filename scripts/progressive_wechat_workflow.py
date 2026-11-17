@@ -40,7 +40,7 @@ def validate(config, env):
     require(count == 'all' or re.fullmatch(r'[0-9]+', count), 'invalid_article_count')
     require(all(re.fullmatch(r'[0-9]+', str(options.get(key, '')))
                 for key in OPTIONS if key != 'translated_report_count'), 'invalid_publishing_options')
-    require(1 <= int(options['wechat_draft_articles_per_draft']) <= 9, 'invalid_group_size')
+    require(1 <= int(options['wechat_draft_articles_per_draft']) <= 8, 'invalid_group_size')
     require(int(options['wechat_draft_max_body_chars']) >= 200, 'invalid_body_limit')
     require(int(options['wechat_draft_min_inline_images']) >= 0 and int(options['wechat_draft_max_inline_images']) >= 0,
             'invalid_image_limits')

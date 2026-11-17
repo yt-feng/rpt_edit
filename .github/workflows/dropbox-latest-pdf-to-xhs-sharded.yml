@@ -534,6 +534,11 @@ jobs:
         id: generate
         if: ${{ steps.gate.outputs.run == 'true' && steps.completed.outputs.complete != 'true' }}
         env:
+          GH_TOKEN: ${{ github.token }}
+          DAILY_PROGRESSIVE_WECHAT_READY: ${{ needs.resolve-inputs.outputs.wechat_draft_upload == 'true' && needs.resolve-inputs.outputs.wechat_draft_source == 'xhs_notes' && needs.resolve-inputs.outputs.wechat_freepublish != 'true' }}
+          DATE_FOLDER: ${{ needs.select-macro-reports.outputs.latest_folder }}
+          PROGRESSIVE_WECHAT_MANIFEST: _selected_macro_manifest/selected_to_process_manifest.json
+          PROGRESSIVE_WECHAT_FINALIZE_API_KEY: ${{ secrets.DEEPSEEK_FINALIZE_API_KEY }}
           MINERU_LEDGER_BACKEND: r2
           MINERU_CHECKPOINT_SCOPE: dropbox
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}

@@ -125,6 +125,12 @@ def embed_original_images(article: str, image_paths: list[str], max_images: int 
     clean = [p for p in image_paths if p.lower().endswith((".png", ".jpg", ".jpeg", ".webp"))]
     if not clean:
         return article
+    desired = [f"![{alt} {i}]({path})" for i, path in enumerate(clean[:max_images], 1)]
+    existing = re.findall(r"!\[(?:研报原图|Report chart) \d+\]\(assets/[^\)]+\)", article)
+    if existing == desired and not re.search(r"!\[研报图表 \d+\]\(assets/xhs_card_\d+\.png\)", article):
+        # A ready article passes this stage again during shard finalization.
+        # Preserve identical bytes so the sensitive guard can reuse its receipt.
+        return article
     article = re.sub(r"\n?!\[研报图表 \d+\]\(assets/xhs_card_\d+\.png\)\n?", "\n", article)
     article = re.sub(r"\n?!\[(?:研报原图|Report chart) \d+\]\(assets/[^\)]+\)\n?", "\n", article)
     images = [f"\n![{alt} {i}]({path})\n" for i, path in enumerate(clean[:max_images], 1)]

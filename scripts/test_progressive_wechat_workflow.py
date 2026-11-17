@@ -65,6 +65,11 @@ class ProgressiveWorkflowTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'invalid_publishing_options'):
             publisher.once_command(config, self.env, 'manifest.json')
 
+    def test_user_eight_article_limit_rejects_nine(self):
+        self.assertIsNotNone(publisher.once_command(self.config(wechat_draft_articles_per_draft='8'), self.env, 'manifest.json'))
+        with self.assertRaisesRegex(ValueError, 'invalid_group_size'):
+            self.config(wechat_draft_articles_per_draft='9')
+
     def test_shard_signal_does_not_fail_generation_or_dispatch_before_handoff(self):
         daily = workflow('dropbox-latest-pdf-to-xhs-sharded.yml')
         events = daily.get('on', daily.get(True))
