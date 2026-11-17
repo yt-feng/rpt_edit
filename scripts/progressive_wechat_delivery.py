@@ -739,6 +739,28 @@ def save_complete(plan, output_dir, client, bucket, source_dirs):
     client.put_object(Bucket=bucket, Key=prefix + '/complete.json', Body=encoded(marker), ContentType='application/json')
 
 
+def validate_source_root(source_root, workspace):
+    """Only replace a contained input directory, never a symlinked runner path."""
+    root = Path(os.path.abspath(source_root))
+    base = Path(os.path.abspath(workspace))
+    require(root != base and root.is_relative_to(base), 'progressive_source_root_outside_workspace')
+    current = base
+    require(not current.is_symlink(), 'progressive_source_root_symlink')
+    for part in root.relative_to(base).parts:
+        current /= part
+        require(not current.is_symlink(), 'progressive_source_root_symlink')
+    require(not root.exists() or root.is_dir(), 'progressive_source_root_not_directory')
+    return root
+
+
+def reset_source_root(source_root, workspace):
+    root = validate_source_root(source_root, workspace)
+    if root.exists():
+        shutil.rmtree(root)
+    root.mkdir(parents=True)
+    return root
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--manifest', type=Path, required=True)
@@ -767,7 +789,7 @@ def main(argv=None):
         print(json.dumps({'state': 'plan_ready', 'plan_sha256': plan['plan_sha256']}))
         return 0
     output_dir = args.output_root / args.date_folder
-    source_root = args.dropbox_output_root / args.date_folder
+    source_root = validate_source_root(args.dropbox_output_root / args.date_folder, args.workspace)
     prefix = progressive_prefix(args.source_run_id, args.date_folder)
     with publisher_lease(plan, client, bucket):
         complete, _version = read_object(client, bucket, prefix + '/complete.json')
@@ -775,6 +797,7 @@ def main(argv=None):
             require(complete == {'plan_sha256': plan['plan_sha256'], 'complete': True}, 'progressive_complete_owner_changed')
             download_directory(prefix + '/complete.tar.gz', output_dir, client=client, bucket=bucket)
             if args.complete_final:
+                reset_source_root(source_root, args.workspace)
                 download_directory(prefix + '/sources.tar.gz', source_root, client=client, bucket=bucket)
                 directories = source_directories(plan, source_root)
                 # Remap runner-absolute paths from durable per-group receipts.
@@ -786,6 +809,11 @@ def main(argv=None):
             return 0
         expected_prefix = f"_private-workflow-handoff/xhs/{args.source_run_id}/{args.date_folder}"
         require(args.handoff_prefix.rstrip('/') == expected_prefix, 'progressive_handoff_owner_invalid')
+        # checkout clean:false can leave another producer's same-day articles.
+        # Hash identity alone cannot attest that force_reprocess has completed.
+        # Only this producer's private handoffs may populate the current inputs;
+        # durable accepted groups live separately under .progressive-wechat.
+        reset_source_root(source_root, args.workspace)
         for index in range(args.shard_count):
             key = args.handoff_prefix.rstrip('/') + f'/shard_{index}.tar.gz'
             try:

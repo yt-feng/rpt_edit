@@ -325,6 +325,56 @@ class ProgressiveTests(unittest.TestCase):
             post.assert_not_called()
 
 
+    def main_arguments(self):
+        return ['--manifest', str(self.manifest), '--date-folder', '261116', '--source-run-id', '1234',
+                '--source-sha', 'a' * 40, '--shard-count', '6', '--reports-per-shard', '2',
+                '--handoff-prefix', '_private-workflow-handoff/xhs/1234/261116',
+                '--workspace', str(self.root), '--dropbox-output-root', str(self.source_root.parent),
+                '--output-root', str(self.output.parent), '--expected-source-count', '12', '--once']
+
+    def test_main_once_ignores_previous_runner_articles_with_identical_source_hashes(self):
+        self.materialize()
+        output = io.StringIO()
+        with patch.object(progressive, 'build_r2_client', return_value=self.store), patch.object(progressive, 'r2_bucket', return_value='private'), patch.object(progressive, 'publisher_owner', return_value={'run_id': '2345', 'run_attempt': 1, 'job_id': 12, 'job_name': 'publish-ready'}), patch.object(progressive, 'upload_group') as upload, patch.object(api, 'post_wechat_json') as post, redirect_stdout(output):
+            self.assertEqual(progressive.main(self.main_arguments()), 0)
+        upload.assert_not_called()
+        post.assert_not_called()
+        result = json.loads(output.getvalue().splitlines()[-1])
+        self.assertEqual(result['ready_source_count'], 0)
+        self.assertEqual(result['draft_count'], 0)
+        self.assertEqual(progressive.source_directories(self.plan, self.source_root), {})
+
+    def test_main_input_reset_preserves_accepted_group_receipts(self):
+        first = self.plan['groups'][0]
+        sources = [row for row in self.plan['sources'] if row['source_id'] in first['source_ids']]
+        self.send(self.materialize(sources))
+        accepted = progressive.read_json(self.output / 'wechat_draft_summary.json')['drafts'][0]['media_id']
+        self.materialize()
+        with patch.object(progressive, 'build_r2_client', return_value=self.store), patch.object(progressive, 'r2_bucket', return_value='private'), patch.object(progressive, 'publisher_owner', return_value={'run_id': '2345', 'run_attempt': 1, 'job_id': 12, 'job_name': 'publish-ready'}), patch.object(progressive, 'upload_group') as upload:
+            self.assertEqual(progressive.main(self.main_arguments()), 0)
+        upload.assert_not_called()
+        summary = progressive.read_json(self.output / 'wechat_draft_summary.json')
+        self.assertEqual(summary['source_report_count'], 0)
+        self.assertEqual(summary['drafts'][0]['media_id'], accepted)
+        self.assertTrue((progressive.group_directory(self.root, self.plan, first) / 'progressive_group.json').exists())
+
+    def test_main_rejects_source_root_and_parent_symlinks_without_touching_target(self):
+        target = self.root / 'untouched'
+        target.mkdir()
+        sentinel = target / 'sentinel.txt'
+        sentinel.write_text('keep')
+        for link in (self.source_root, self.source_root.parent):
+            with self.subTest(link=link):
+                if self.source_root.parent.exists():
+                    shutil.rmtree(self.source_root.parent)
+                link.parent.mkdir(parents=True, exist_ok=True)
+                link.symlink_to(target, target_is_directory=True)
+                with patch.object(progressive, 'build_r2_client', return_value=self.store), patch.object(progressive, 'r2_bucket', return_value='private'), self.assertRaisesRegex(ValueError, 'source_root_symlink'):
+                    progressive.main(self.main_arguments())
+                self.assertEqual(sentinel.read_text(), 'keep')
+                link.unlink()
+
+
     def test_corrupt_inventory_does_not_become_empty_input(self):
         self.store.rows[progressive.progressive_prefix('1234', '261116') + '/plan.json'] = (b'{}', '999', {})
         with self.assertRaisesRegex(ValueError, 'plan_invalid'):
