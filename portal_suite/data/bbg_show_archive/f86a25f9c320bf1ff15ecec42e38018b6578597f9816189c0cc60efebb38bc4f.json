@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "id": "f86a25f9c320bf1ff15ecec42e38018b6578597f9816189c0cc60efebb38bc4f",
+  "slug": "bbg-20261118-f86a25f9c320bf1f",
+  "date": "2026-11-18",
+  "title": "加州总检察长起诉OpenAI 指其未保障公众安全",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-11-17/openai-failed-to-keep-californians-safe-ag-bonta-says-video",
+  "start": 0.0,
+  "end": 88.67,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 12.48,
+      "en": "I want to start with the evidence, what evidence was presented to you, that OpenAI behaved acted in a way that was to California's mind illegal and prompted you to take action,",
+      "zh": "我想先问证据，呈交给您的是什么证据，表明OpenAI的行为在加州看来违法并促使您采取行动？"
+    },
+    {
+      "start": 12.48,
+      "end": 23.31,
+      "en": "please. Well, basically, there were multiple incidents, at least 80, where OpenAI failed to take",
+      "zh": "好的，基本上有多起事件，至少80起，OpenAI未能采取"
+    },
+    {
+      "start": 23.31,
+      "end": 30.39,
+      "en": "steps during the testing and development of advanced AI models to safeguard and monitor its own technology.",
+      "zh": "在先进AI模型的测试和开发过程中采取措施，保护和监控自己的技术。"
+    },
+    {
+      "start": 30.39,
+      "end": 41.39,
+      "en": "And their technology, their AI agents, if you will, escaped their contained testing environment, got onto the internet and could go anywhere in the world.",
+      "zh": "他们的技术，他们的AI代理，可以说，逃出了受控测试环境，进入互联网，可以到世界任何地方。"
+    },
+    {
+      "start": 41.39,
+      "end": 48.35,
+      "en": "And they got onto other systems and networks, the hugging face incident, obviously very well-known, most infamous.",
+      "zh": "它们进入了其他系统和网络，Hugging Face事件显然非常著名，最为臭名昭著。"
+    },
+    {
+      "start": 48.35,
+      "end": 60.99,
+      "en": "They got onto websites as far away as Australia, and they failed to take steps when they had a advanced model that they knew was sophisticated, advanced, persistent, and relentless.",
+      "zh": "它们进入了远在澳大利亚的网站，而当他们拥有一个已知复杂、先进、持久且无情的先进模型时，却未能采取措施。"
+    },
+    {
+      "start": 60.99,
+      "end": 64.79,
+      "en": "And so they failed to keep Californians safe.",
+      "zh": "所以他们未能保护加州人的安全。"
+    },
+    {
+      "start": 64.79,
+      "end": 70.07,
+      "en": "My job is to protect the health, safety and welfare of Californians, and that's why we brought the lawsuit.",
+      "zh": "我的职责是保护加州人的健康、安全和福祉，这就是我们提起诉讼的原因。"
+    },
+    {
+      "start": 70.07,
+      "end": 78.11,
+      "en": "You mentioned that the example of what happened in Australia, and then, as you say, your jurisdiction, your office's remit is to protect Californians.",
+      "zh": "您提到了澳大利亚发生的事例，然后如您所说，您的管辖区、您办公室的职责是保护加州人。"
+    },
+    {
+      "start": 78.11,
+      "end": 88.67,
+      "en": "What is the clearest example of harms to Californians from the activity that's been widely reported, and the OpenAI has also published its research on?",
+      "zh": "对加州人造成伤害的最明显例子是什么，来自广泛报道且OpenAI也发表了研究的活动？"
+    }
+  ]
+}
