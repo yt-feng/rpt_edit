@@ -1,18 +1,6 @@
 {
   "version": 1,
   "items": {
-    "bcg:https://www.bcg.com/publications/2026/why-most-ai-cost-reduction-programs-fall-short": {
-      "first_seen": "2026-07-20",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/future-economics-of-defense-aviation": {
-      "first_seen": "2026-07-20",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/building-enterprise-ai-agents-in-regulated-industries": {
-      "first_seen": "2026-07-20",
-      "status": "no_pdf"
-    },
     "bcg:https://www.bcg.com/publications/2026/scaling-agentic-ai-in-tech-procurement": {
       "first_seen": "2026-07-21",
       "status": "no_pdf"
@@ -1576,6 +1564,26 @@
     "bcg:https://www.bcg.com/publications/2026/us-drug-pricing-changes-europe": {
       "first_seen": "2026-11-17",
       "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/canada-ai-workforce-challenges": {
+      "first_seen": "2026-11-18",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/how-ceos-build-growth-strategy": {
+      "first_seen": "2026-11-18",
+      "status": "no_pdf"
+    },
+    "bcg:https://www.bcg.com/publications/2026/canada-fr-la-plus-grande-menace-pour-les-emplois-au-canada-nest-pas-lia-mais-lhesitation": {
+      "first_seen": "2026-11-18",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/brazil-what-would-it-take-for-land-restoration-to-take-off": {
+      "first_seen": "2026-11-18",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/agentic-ai-wholesale-credit-decisions": {
+      "first_seen": "2026-11-18",
+      "status": "downloaded"
     }
   }
 }
