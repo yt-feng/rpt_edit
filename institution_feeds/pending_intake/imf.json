@@ -1,24 +1,5 @@
 {
   "schema": 1,
   "institution": "imf",
-  "items": {
-    "imf:464cf1245121fd33eeec3e0ddda583ee83339770c8e60b66d2149680d501": {
-      "item": {
-        "title": "Republic of Armenia: Technical Assistance Report-Public Investment Management Assessment (PIMA) Update and Climate PIMA",
-        "source_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/11/16/republic-of-armenia-technical-assistance-report-public-investment-management-assessment-581113",
-        "guid": "464cf1245121fd33eeec3e0ddda583ee83339770c8e60b66d2149680d501",
-        "date": "2026-11-16T05:00:00+00:00",
-        "pdf_candidates": [
-          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026093.pdf",
-          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026093-source-pdf.pdf"
-        ],
-        "scrape_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/11/16/republic-of-armenia-technical-assistance-report-public-investment-management-assessment-581113",
-        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/technical-assistance-reports/issues/2026/11/16/republic-of-armenia-technical-assistance-report-public-investment-management-assessment-581113"
-      },
-      "admitted_at": "2026-11-17T04:17:31.114412+00:00",
-      "since_days": 7,
-      "last_attempted_at": "2026-11-17T04:17:31.114412+00:00",
-      "attempts": 1
-    }
-  }
+  "items": {}
 }
