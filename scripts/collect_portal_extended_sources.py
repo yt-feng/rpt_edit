@@ -25,6 +25,18 @@ def read_public(session, url: str, *, sitemap=False) -> bytes:
             raise ExpansionError('Unsafe sitemap URL')
     else: public_url(url)
     maximum = MAX_SITEMAP_BYTES if sitemap else MAX_DOCUMENT_BYTES
+    for delay in (2, 5, None):
+        try:
+            return _read_once(session, url, sitemap, maximum)
+        except requests.exceptions.SSLError:
+            raise
+        except (requests.ConnectionError, requests.Timeout, requests.exceptions.ChunkedEncodingError):
+            if delay is None:
+                raise
+            time.sleep(delay)
+
+
+def _read_once(session, url, sitemap, maximum):
     with session.get(url, timeout=(10, 30), stream=True, allow_redirects=False,
                      headers={'User-Agent': 'Portal-public-locale-build/1.0', 'Accept': 'application/xml,text/html'}) as response:
         if response.status_code != 200: raise ExpansionError(f'Public source returned HTTP {response.status_code}')
