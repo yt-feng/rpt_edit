@@ -124,8 +124,8 @@ Institution search feeds may advertise a future publication date or an explicit
 `publication_pending`, excluded from current download-failure counts, and kept
 out of the seen state so the next scheduled run can reconsider them. A changed
 release date/title is not a completed download. An actual required-source 403
-or unresolved released PDF remains a visible source-health failure; deferral
-does not assert that blocked IMF downloads are working.
+or unresolved released PDF appears as degraded intake in the run summary. The
+daily retry policy below determines when it also fails the workflow.
 
 Released IMF sources observed inside the normal intake window are saved in
 `institution_feeds/pending_intake/imf.json` before downloading. This checkpoint
@@ -233,12 +233,14 @@ to the existing private Institution backlog consumer. Unknown exits, incomplete
 manifests and log-write failures stop the build. The helper performs no source
 requests and changes no seen-state, source cache or dependency holds.
 
-The separate `source-health` job fails visibly whenever a checked required source
-remains unhealthy. WeChat upload and handoff cleanup depend on accepted generation
-and delivery results, independently of that health job; recovered private sources
-can therefore reach WeChat even during an unrelated discovery outage. Failure
-notification includes the source-health result. This does not resolve a source's
-HTTP 403 or label zero new PDFs as a healthy no-update result.
+During ordinary production intake, the first unhealthy observation for a required
+source appears in the run summary. The workflow records its Beijing date in
+`institution_feeds/source_retry_state.json`. A later day's fetch that still finds
+the same source unhealthy fails the independent `source-health` job. A healthy
+check clears that source's entry. A run limited to other institutions leaves its
+entry pending. Dry runs, forced reprocessing, reviewed cache recovery and custom
+intake windows or download limits retain immediate source diagnostics. WeChat
+upload and handoff cleanup run independently of the source-health check.
 
 The consulting figure probe now classifies failed GitHub reads by fixed operation
 (`run_metadata`, `job_metadata`, `job_logs`) and HTTP status, authentication error

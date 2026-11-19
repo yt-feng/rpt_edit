@@ -54,6 +54,26 @@ class FakeResponse:
         return None
 
 
+class WorldBankDownloadTests(unittest.TestCase):
+    def test_curated_download_keeps_wds_link_for_archive_and_fallback(self):
+        guid = "099944311182698746"
+        path = f"/curated/en/{guid}/pdf/IDU-7f86c108-cb61-4118-bacf-8d76d29ad860.pdf"
+        feed_url = "https://documents.worldbank.org" + path
+        public_file = "https://documents1.worldbank.org" + path
+        doc = {"guid": guid, "url": f"http://documents.worldbank.org/curated/en/{guid}", "pdfurl": feed_url}
+        with patch.object(fetcher, "http_get", return_value=FakeResponse(json_data={"documents": {"D40139784": doc}})):
+            item, = fetcher.collect_worldbank_items(fetcher.INSTITUTIONS["worldbank"], object(), 10, 1)
+        self.assertEqual(fetcher.worldbank_download_candidates(item["pdf_candidates"]), [public_file, feed_url])
+        self.assertEqual(item["pdf_candidates"], [feed_url])
+        self.assertEqual((item["guid"], item["source_url"]), (guid, doc["url"]))
+
+    def test_other_locations_and_already_canonical_urls_are_preserved(self):
+        urls = ["https://documents.worldbank.org/other/report.pdf",
+                "https://documents.worldbank.org.example.com/curated/en/123/pdf/report.pdf",
+                "https://documents1.worldbank.org/curated/en/123/pdf/report.pdf"]
+        self.assertEqual(fetcher.worldbank_download_candidates(urls), urls)
+
+
 class BISRedesignTests(unittest.TestCase):
     FIXTURES = Path(__file__).parent / "fixtures" / "institution_sources"
     REPORT_URL = "https://www.bis.org/publications/working-paper-1376-what-determines-banks-excess-demand-reserves"
