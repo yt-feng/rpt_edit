@@ -1,5 +1,78 @@
 {
   "schema": 1,
   "institution": "imf",
-  "items": {}
+  "items": {
+    "imf:242daf4819716891952552823464b6f0a714862ae4bf4c1c7167439d3a1b": {
+      "item": {
+        "title": "South Africa: Technical Assistance Report-Report on Environment and Climate Change Statistics ‒ Greenhouse Gas Emissions Accounts (September 28 ‒ October 2, 2026)",
+        "source_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/11/18/south-africa-technical-assistance-report-report-on-environment-and-climate-change-581152",
+        "guid": "242daf4819716891952552823464b6f0a714862ae4bf4c1c7167439d3a1b",
+        "date": "2026-11-18T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026094.pdf",
+          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026094-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/11/18/south-africa-technical-assistance-report-report-on-environment-and-climate-change-581152",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/technical-assistance-reports/issues/2026/11/18/south-africa-technical-assistance-report-report-on-environment-and-climate-change-581152"
+      },
+      "admitted_at": "2026-11-19T02:55:39.113026+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-19T02:55:39.113026+00:00",
+      "attempts": 1
+    },
+    "imf:f90ea500f00051b859e179338bcf86b0a8b32854d94b400e141672f9a37d": {
+      "item": {
+        "title": "Extension of the Period for Consent to Increase Quotas under the Sixteenth General Review of Quotas and to the NAB Rollback",
+        "source_url": "https://www.imf.org/en/publications/policy-papers/issues/2026/11/16/extension-of-the-period-for-consent-to-increase-quotas-under-the-sixteenth-general-review-581140",
+        "guid": "f90ea500f00051b859e179338bcf86b0a8b32854d94b400e141672f9a37d",
+        "date": "2026-11-18T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/pp/2026/english/ppea2026050.pdf",
+          "https://www.imf.org/-/media/files/publications/pp/2026/english/ppea2026050-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/policy-papers/issues/2026/11/16/extension-of-the-period-for-consent-to-increase-quotas-under-the-sixteenth-general-review-581140",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/policy-papers/issues/2026/11/16/extension-of-the-period-for-consent-to-increase-quotas-under-the-sixteenth-general-review-581140"
+      },
+      "admitted_at": "2026-11-19T02:55:39.113026+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-19T02:55:39.113026+00:00",
+      "attempts": 1
+    },
+    "imf:b437df4c314516587834859adb288cae8a557fa691ac0bbe26df4e5cebd2": {
+      "item": {
+        "title": "Central Bank Digital Currency - Looking Ahead Towards Future Financial Infrastructure",
+        "source_url": "https://www.imf.org/en/publications/policy-papers/issues/2026/11/16/central-bank-digital-currency-looking-ahead-towards-future-financial-infrastructure-581145",
+        "guid": "b437df4c314516587834859adb288cae8a557fa691ac0bbe26df4e5cebd2",
+        "date": "2026-11-18T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/pp/2026/english/ppea2026051.pdf",
+          "https://www.imf.org/-/media/files/publications/pp/2026/english/ppea2026051-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/policy-papers/issues/2026/11/16/central-bank-digital-currency-looking-ahead-towards-future-financial-infrastructure-581145",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/policy-papers/issues/2026/11/16/central-bank-digital-currency-looking-ahead-towards-future-financial-infrastructure-581145"
+      },
+      "admitted_at": "2026-11-19T02:55:39.113026+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-19T02:55:39.113026+00:00",
+      "attempts": 1
+    },
+    "imf:3fd2cf5eb9afe730eba91a41e292ae52ab33e7da2df8eae7125a7a5c6031": {
+      "item": {
+        "title": "Kingdom of Morocco: Liquidity Stress Testing",
+        "source_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/11/17/kingdom-of-morocco-liquidity-stress-testing-581157",
+        "guid": "3fd2cf5eb9afe730eba91a41e292ae52ab33e7da2df8eae7125a7a5c6031",
+        "date": "2026-11-17T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026077.pdf",
+          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026077-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/11/17/kingdom-of-morocco-liquidity-stress-testing-581157",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/11/17/kingdom-of-morocco-liquidity-stress-testing-581157"
+      },
+      "admitted_at": "2026-11-19T02:55:39.113026+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-19T02:55:39.113026+00:00",
+      "attempts": 1
+    }
+  }
 }
