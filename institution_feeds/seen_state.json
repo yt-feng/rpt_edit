@@ -493,29 +493,9 @@
       "first_seen": "2026-08-07",
       "status": "too_old"
     },
-    "imf:813d2f0ec367546cfa7c4a5e15e798009d5d892f92982446f95fecc23ec4": {
-      "first_seen": "2026-07-21",
-      "status": "downloaded"
-    },
-    "imf:f954a44c2b2fd5a82766ac88fd695d40fa4fc830fafe419de5f855ac7dfe": {
-      "first_seen": "2026-07-21",
-      "status": "too_old"
-    },
-    "imf:3fe4a16bfc73a30e7436bd15257a9deca003d5e544ef2ebfce96fda3fadd": {
-      "first_seen": "2026-07-21",
-      "status": "too_old"
-    },
     "bis:https://www.bis.org/publ/work1370.htm": {
       "first_seen": "2026-08-07",
       "status": "too_old"
-    },
-    "oecd:https://www.oecd.org/en/publications/corporate-tax-statistics-2026_73af6222-en.html": {
-      "first_seen": "2026-07-21",
-      "status": "downloaded"
-    },
-    "oecd:https://www.oecd.org/en/publications/artificial-intelligence-and-personal-finance_2858fdf4-en.html": {
-      "first_seen": "2026-07-21",
-      "status": "downloaded"
     },
     "adb:1162286": {
       "first_seen": "2026-08-07",
@@ -3804,6 +3784,30 @@
     "wto:https://www.wto.org/english/news_e/news26_e/tmwto_17nov26_552_e.htm": {
       "first_seen": "2026-11-18",
       "status": "downloaded"
+    },
+    "worldbank:099119511182632877": {
+      "first_seen": "2026-11-19",
+      "status": "downloaded"
+    },
+    "wef:https://www.weforum.org/publications/global-shapers-community-annual-report-2025-2026": {
+      "first_seen": "2026-11-19",
+      "status": "no_pdf"
+    },
+    "wef:https://www.weforum.org/publications/the-foresight-brief-chokepoints-past-present-and-future": {
+      "first_seen": "2026-11-19",
+      "status": "no_pdf"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/ddgjn_16nov26_555_e.htm": {
+      "first_seen": "2026-11-19",
+      "status": "no_pdf"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/trip_12nov26_553_e.htm": {
+      "first_seen": "2026-11-19",
+      "status": "too_old"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/tbt_10nov26_554_e.htm": {
+      "first_seen": "2026-11-19",
+      "status": "too_old"
     }
   }
 }
