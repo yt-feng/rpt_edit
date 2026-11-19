@@ -97,7 +97,8 @@ jobs:
       pdf_count: ${{ steps.extract.outputs.generated_report_count }}
       deferred_source_count: ${{ steps.extract.outputs.deferred_source_count }}
       source_health: ${{ steps.fetch.outputs.source_health }}
-      source_health_required_failure_count: ${{ steps.fetch.outputs.source_health_required_failure_count }}
+      source_health_failed_institutions: ${{ steps.fetch.outputs.source_health_failed_institutions }}
+      source_health_alert_institutions: ${{ steps.fetch.outputs.source_health_alert_institutions }}
     steps:
       - name: Initialize DeepSeek usage ledger
         shell: bash
@@ -237,6 +238,11 @@ jobs:
           MINER_U_4: ${{ secrets.MINER_U_4 }}
           PROXY_SUBSCRIPTION_URL: ${{ secrets.PROXY_SUBSCRIPTION_URL }}
           IMF_PENDING_RETRIES: ${{ github.event.inputs.imf_pending_retries || '10' }}
+          TRACK_SOURCE_RETRIES: >-
+            ${{ github.event_name == 'schedule' ||
+                (!inputs.force_reprocess && !inputs.dry_run && inputs.reviewed_originals == 'none' &&
+                 inputs.since_days == '7' && inputs.max_total == '100' && inputs.max_per_institution == '25' &&
+                 inputs.imf_pending_retries == 10) }}
           REVIEWED_ORIGINALS_MANIFEST: ${{ steps.reviewed_originals.outputs.manifest_path }}
           INSTITUTION_ADMITTED_ORIGINALS: "true"
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
@@ -275,7 +281,12 @@ jobs:
             2>&1 | tee institution_fetch_progress.log
           institution_fetch_status=("${PIPESTATUS[@]}")
           set -e
+          retry_args=()
+          if [ "${TRACK_SOURCE_RETRIES:-}" = true ]; then
+            retry_args+=(--retry-state institution_feeds/source_retry_state.json)
+          fi
           python scripts/institution_source_health.py \
+            "${retry_args[@]}" \
             --producer-exit-code "${institution_fetch_status[0]}" \
             --log-exit-code "${institution_fetch_status[1]}" \
             --manifest _institution_latest_pdfs/institution_run_manifest.json \
@@ -290,6 +301,10 @@ jobs:
         run: |
           python scripts/institution_pending_intake.py institution_feeds/pending_intake/imf.json
           bash scripts/commit_output_dir.sh "institution_feeds/pending_intake/imf.json" "Checkpoint unresolved IMF intake" 8 true
+
+      - name: Save validated source retry dates before downstream work
+        if: ${{ always() && !cancelled() && steps.fetch.outcome == 'success' && steps.fetch.outputs.source_health != 'accepted_source_recovery' }}
+        run: bash scripts/commit_output_dir.sh "institution_feeds/source_retry_state.json" "Update institution source retry dates" 8 true
 
       - name: Extract MinerU source and original images without paid copy
         id: extract
@@ -490,8 +505,7 @@ jobs:
           if-no-files-found: error
           retention-days: 30
 
-  # Source outages remain a failed job; they do not starve accepted private
-  # backlog recovery or prevent saving the recovered WeChat delivery receipts.
+  # Keep the first observation visible while the next daily fetch retries it.
   source-health:
     needs: fetch-and-build
     if: ${{ always() && !cancelled() && needs.fetch-and-build.outputs.source_health == 'degraded' }}
@@ -500,10 +514,15 @@ jobs:
     steps:
       - name: Report required source degradation independently
         env:
-          REQUIRED_FAILURE_COUNT: ${{ needs.fetch-and-build.outputs.source_health_required_failure_count }}
+          FAILED_SOURCES: ${{ needs.fetch-and-build.outputs.source_health_failed_institutions }}
+          ALERT_SOURCES: ${{ needs.fetch-and-build.outputs.source_health_alert_institutions }}
         run: |
-          echo "::error::Required institution source health remains degraded ($REQUIRED_FAILURE_COUNT sources). Accepted-source recovery was allowed independently."
-          exit 1
+          echo "Required sources with incomplete intake: $FAILED_SOURCES" >> "$GITHUB_STEP_SUMMARY"
+          if [ -n "$ALERT_SOURCES" ]; then
+            echo "::error::Required sources need attention: $ALERT_SOURCES"
+            exit 1
+          fi
+          echo "The next daily fetch will retry these sources." >> "$GITHUB_STEP_SUMMARY"
 
   upload-wechat-drafts:
     needs: fetch-and-build

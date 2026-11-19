@@ -324,13 +324,45 @@ set -e
                     self.assertEqual(health.main(args), 1)
                 self.assertFalse(output.exists()); self.assertNotIn("private", stderr.getvalue())
 
+    def test_alerts_only_after_a_later_failed_day_for_the_same_source(self):
+        with tempfile.TemporaryDirectory() as folder:
+            state = Path(folder) / "state.json"
+            state.write_text("{}")
+
+            def observe(day, checks):
+                report = {"date": day, "source_checks": [{"institution": key} for key in checks]}
+                return health.update_retry_state(state, report, [key for key in checks if checks[key]])
+
+            self.assertEqual(observe("261119", {"worldbank": True, "imf": True}), [])
+            self.assertEqual(observe("261119", {"worldbank": True}), [])
+            self.assertEqual(observe("261120", {"bis": True, "imf": False}), [])
+            self.assertEqual(observe("261120", {"worldbank": True}), ["worldbank"])
+            self.assertEqual(observe("261120", {"worldbank": False, "imf": True}), [])
+            self.assertEqual(json.loads(state.read_text()), {"bis": "2026-11-20", "imf": "2026-11-20"})
+
+    def test_invalid_fetch_and_damaged_retry_state_cannot_silence_an_alert(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            source, state, output = root / "manifest", root / "state", root / "output"
+            source.write_text(json.dumps(manifest()))
+            args = ["--manifest", str(source), "--date-folder", DATE, "--institutions", "imf",
+                    "--github-output", str(output), "--retry-state", str(state), "--log-exit-code", "0"]
+            for previous, code in (("{}", "1"), ('{"bad-source": "2026-10-11"}', "2")):
+                state.write_text(previous)
+                with redirect_stderr(io.StringIO()):
+                    self.assertEqual(health.main(args + ["--producer-exit-code", code]), 1)
+                self.assertFalse(output.exists())
+                self.assertEqual(state.read_text(), previous)
+
     def test_source_health_job_is_visible_but_not_an_upload_dependency(self):
         workflow = (Path(__file__).resolve().parents[1] / ".github/workflows/institution-latest-pdf-to-wechat.yml").read_text()
         source_job = workflow.split("\n  source-health:\n", 1)[1].split("\n  upload-wechat-drafts:\n", 1)[0]
         upload_job = workflow.split("\n  upload-wechat-drafts:\n", 1)[1].split("\n  cleanup-private-handoff:\n", 1)[0]
         notification = workflow.split("\n  notify-failure:\n", 1)[1]
         self.assertIn("source_health == 'degraded'", source_job)
-        self.assertIn("exit 1", source_job)
+        self.assertIn('if [ -n "$ALERT_SOURCES" ]; then', source_job)
+        self.assertIn("needs.fetch-and-build.outputs.source_health_alert_institutions", source_job)
+        self.assertIn('retry_args+=(--retry-state institution_feeds/source_retry_state.json)', workflow)
         self.assertIn("needs: fetch-and-build\n", upload_job)
         self.assertNotIn("source-health", upload_job)
         self.assertIn("needs: [fetch-and-build, source-health, upload-wechat-drafts, cleanup-private-handoff]", notification)

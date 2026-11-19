@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
-from datetime import datetime
+from datetime import date, datetime
 import json
 from pathlib import Path
 import re
@@ -291,6 +291,30 @@ def classify(manifest: object, *, producer_exit_code: int, log_exit_code: int,
     return result
 
 
+def update_retry_state(path: Path, manifest: dict, failed: list[str]) -> list[str]:
+    """Return sources still degraded on a later Beijing run date."""
+    require(not path.is_symlink())
+    pending = json.loads(path.read_text(encoding="utf-8"))
+    today = datetime.strptime(manifest["date"], "%y%m%d").date()
+    require(isinstance(pending, dict))
+    for source, first_day in pending.items():
+        require(source in INSTITUTIONS and INSTITUTIONS[source].get("required_for_clean_zero")
+                and isinstance(first_day, str) and date.fromisoformat(first_day) <= today)
+    alert = []
+    for check in manifest["source_checks"]:
+        source = check["institution"]
+        if source in failed:
+            first_day = pending.setdefault(source, today.isoformat())
+            if date.fromisoformat(first_day) < today:
+                alert.append(source)
+        else:
+            pending.pop(source, None)
+    replacement = path.with_suffix(".tmp")
+    replacement.write_text(json.dumps(pending, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    replacement.replace(path)
+    return alert
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--producer-exit-code", required=True, type=int)
@@ -299,12 +323,18 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--date-folder", required=True)
     parser.add_argument("--institutions", required=True)
     parser.add_argument("--github-output", required=True, type=Path)
+    parser.add_argument("--retry-state", type=Path,
+                        help="Record the first unhealthy Beijing date for each required production source")
     args = parser.parse_args(argv)
     try:
         require(not args.manifest.is_symlink() and args.manifest.stat().st_size <= 8 * 1024 * 1024)
-        result = classify(json.loads(args.manifest.read_text(encoding="utf-8")),
+        manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
+        result = classify(manifest,
                           producer_exit_code=args.producer_exit_code, log_exit_code=args.log_exit_code,
                           date_folder=args.date_folder, institutions=args.institutions)
+        failed = list(filter(None, result["source_health_failed_institutions"].split(",")))
+        alert = update_retry_state(args.retry_state, manifest, failed) if args.retry_state else failed
+        result["source_health_alert_institutions"] = ",".join(alert)
         with args.github_output.open("a", encoding="utf-8") as output:
             for key, value in result.items():
                 output.write(f"{key}={value}\n")
