@@ -1041,6 +1041,18 @@ def collect_worldbank_items(cfg: dict[str, Any], session: requests.Session, time
     return items
 
 
+def worldbank_download_candidates(candidates: list[str]) -> list[str]:
+    """Use the file host shown by the World Bank's Documents & Reports page."""
+    urls = []
+    for url in candidates:
+        # WDS can advertise the document page host for a curated file. The
+        # public record's PDF button serves the same path on fileURLDomain.
+        file_url = re.sub(r"^https?://documents\.worldbank\.org(?=/curated/[a-z]{2}/[0-9]+/pdf/)",
+                          "https://documents1.worldbank.org", url, flags=re.I)
+        urls.extend((file_url, url))
+    return list(dict.fromkeys(urls))
+
+
 # ------------------------------------------------------------------
 # PDF resolution + download
 # ------------------------------------------------------------------
@@ -2369,6 +2381,8 @@ def _main(imf_browser=None) -> int:
                 if matches_dependency_hold(held_versions, filename, item, candidates):
                     skipped.append({'institution': key, 'reason': 'dependency_hold', 'source_url': item['source_url']})
                     continue
+                if key == "worldbank":
+                    candidates = worldbank_download_candidates(candidates)
                 dest = output_dir / filename
                 used_url, status = download_pdf(session, candidates[:3], dest, args.request_timeout, max_bytes, impersonate=cfg.get("impersonate", False), profile=cfg.get("impersonate_profile"), proxy=cfg.get("_proxy"))
                 # A deterministic/direct candidate may have changed on the source site.
