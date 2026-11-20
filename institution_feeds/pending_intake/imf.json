@@ -17,8 +17,8 @@
       },
       "admitted_at": "2026-11-19T02:55:39.113026+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-19T02:55:39.113026+00:00",
-      "attempts": 1
+      "last_attempted_at": "2026-11-20T02:52:52.128373+00:00",
+      "attempts": 2
     },
     "imf:f90ea500f00051b859e179338bcf86b0a8b32854d94b400e141672f9a37d": {
       "item": {
@@ -35,8 +35,8 @@
       },
       "admitted_at": "2026-11-19T02:55:39.113026+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-19T02:55:39.113026+00:00",
-      "attempts": 1
+      "last_attempted_at": "2026-11-20T02:52:52.128373+00:00",
+      "attempts": 2
     },
     "imf:b437df4c314516587834859adb288cae8a557fa691ac0bbe26df4e5cebd2": {
       "item": {
@@ -53,8 +53,8 @@
       },
       "admitted_at": "2026-11-19T02:55:39.113026+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-19T02:55:39.113026+00:00",
-      "attempts": 1
+      "last_attempted_at": "2026-11-20T02:52:52.128373+00:00",
+      "attempts": 2
     },
     "imf:3fd2cf5eb9afe730eba91a41e292ae52ab33e7da2df8eae7125a7a5c6031": {
       "item": {
@@ -71,7 +71,61 @@
       },
       "admitted_at": "2026-11-19T02:55:39.113026+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-19T02:55:39.113026+00:00",
+      "last_attempted_at": "2026-11-20T02:52:52.128373+00:00",
+      "attempts": 2
+    },
+    "imf:ae743be3856682f27556efb035a6b8d2c47839284da37e9ed158644fab61": {
+      "item": {
+        "title": "Sixteenth Periodic Monitoring Report on the Status of Management Implementation Plans in Response to Board-Endorsed IEO Recommendations",
+        "source_url": "https://www.imf.org/en/publications/policy-papers/issues/2026/11/19/sixteenth-periodic-monitoring-report-on-the-status-of-management-implementation-plans-in-581205",
+        "guid": "ae743be3856682f27556efb035a6b8d2c47839284da37e9ed158644fab61",
+        "date": "2026-11-19T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/pp/2026/english/ppea2026052.pdf",
+          "https://www.imf.org/-/media/files/publications/pp/2026/english/ppea2026052-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/policy-papers/issues/2026/11/19/sixteenth-periodic-monitoring-report-on-the-status-of-management-implementation-plans-in-581205",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/policy-papers/issues/2026/11/19/sixteenth-periodic-monitoring-report-on-the-status-of-management-implementation-plans-in-581205"
+      },
+      "admitted_at": "2026-11-20T02:52:52.128373+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-20T02:52:52.128373+00:00",
+      "attempts": 1
+    },
+    "imf:90bea8b8110a87d48066e6b1aef8e3641ab2518b1131953488fa89c1cb38": {
+      "item": {
+        "title": "Liberia: Technical Assistance on Macroeconomic Framework – Scoping Mission",
+        "source_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/11/19/liberia-technical-assistance-on-macroeconomic-framework-scoping-mission-581192",
+        "guid": "90bea8b8110a87d48066e6b1aef8e3641ab2518b1131953488fa89c1cb38",
+        "date": "2026-11-19T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026079.pdf",
+          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026079-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/11/19/liberia-technical-assistance-on-macroeconomic-framework-scoping-mission-581192",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/11/19/liberia-technical-assistance-on-macroeconomic-framework-scoping-mission-581192"
+      },
+      "admitted_at": "2026-11-20T02:52:52.128373+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-20T02:52:52.128373+00:00",
+      "attempts": 1
+    },
+    "imf:402ac0c005b6504e3b8a25cf43731281a68d4716c80fc52d62799b78deea": {
+      "item": {
+        "title": "Republic of Burundi: Public Investment Management Assessment (PIMA) and Climate-PIMA",
+        "source_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/11/19/republic-of-burundi-public-investment-management-assessment-pima-and-climate-pima-581187",
+        "guid": "402ac0c005b6504e3b8a25cf43731281a68d4716c80fc52d62799b78deea",
+        "date": "2026-11-19T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026078.pdf",
+          "https://www.imf.org/-/media/files/publications/hls/2026/english/hlsea2026078-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/11/19/republic-of-burundi-public-investment-management-assessment-pima-and-climate-pima-581187",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/high-level-summary-technical-assistance-reports/issues/2026/11/19/republic-of-burundi-public-investment-management-assessment-pima-and-climate-pima-581187"
+      },
+      "admitted_at": "2026-11-20T02:52:52.128373+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-20T02:52:52.128373+00:00",
       "attempts": 1
     }
   }
