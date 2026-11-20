@@ -505,25 +505,9 @@
       "first_seen": "2026-08-07",
       "status": "too_old"
     },
-    "imf:cdbad682fcae421fbbfc2a74c04d63c2bda6f375b11cbcb2dcc2d86f21ba": {
-      "first_seen": "2026-07-22",
-      "status": "downloaded"
-    },
-    "imf:508872a1aa38ef2c8e7947a81aa3813612951362dc566f44e6508079c66e": {
-      "first_seen": "2026-07-22",
-      "status": "too_old"
-    },
-    "imf:5e0594e89a40ad7b079f9a3cc3d779743ce20f0c8c578b4597cbf81dbb40": {
-      "first_seen": "2026-07-22",
-      "status": "too_old"
-    },
     "bis:https://www.bis.org/publ/work1371.htm": {
       "first_seen": "2026-08-07",
       "status": "too_old"
-    },
-    "oecd:https://www.oecd.org/en/publications/financing-southeast-asia-s-blue-economy_5371e508-en.html": {
-      "first_seen": "2026-07-22",
-      "status": "downloaded"
     },
     "adb:1162401": {
       "first_seen": "2026-08-07",
@@ -3811,6 +3795,50 @@
     },
     "worldbank:099944311182698746": {
       "first_seen": "2026-11-19",
+      "status": "downloaded"
+    },
+    "worldbank:099952511192621372": {
+      "first_seen": "2026-11-20",
+      "status": "downloaded"
+    },
+    "worldbank:099053311192611943": {
+      "first_seen": "2026-11-20",
+      "status": "downloaded"
+    },
+    "wef:https://www.weforum.org/publications/nature-positive-transitions": {
+      "first_seen": "2026-11-20",
+      "status": "no_pdf"
+    },
+    "wef:https://www.weforum.org/publications/nature-positive-role-of-the-technology-sector": {
+      "first_seen": "2026-11-20",
+      "status": "no_pdf"
+    },
+    "wef:https://www.weforum.org/publications/transformation-of-industries-in-the-age-of-ai": {
+      "first_seen": "2026-11-20",
+      "status": "no_pdf"
+    },
+    "wef:https://www.weforum.org/publications/blueprint-to-action-china-s-path-to-ai-powered-industry-transformation": {
+      "first_seen": "2026-11-20",
+      "status": "no_pdf"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/ita_19nov26_560_e.htm": {
+      "first_seen": "2026-11-20",
+      "status": "no_pdf"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/trip_19nov26_557_e.htm": {
+      "first_seen": "2026-11-20",
+      "status": "no_pdf"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/stud_19nov26_558_e.htm": {
+      "first_seen": "2026-11-20",
+      "status": "no_pdf"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/good_16nov26_556_e.htm": {
+      "first_seen": "2026-11-20",
+      "status": "downloaded"
+    },
+    "bruegel:12720": {
+      "first_seen": "2026-11-20",
       "status": "downloaded"
     }
   }
