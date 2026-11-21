@@ -17,8 +17,8 @@
       },
       "admitted_at": "2026-11-19T02:55:39.113026+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-20T02:52:52.128373+00:00",
-      "attempts": 2
+      "last_attempted_at": "2026-11-21T02:58:03.731187+00:00",
+      "attempts": 3
     },
     "imf:f90ea500f00051b859e179338bcf86b0a8b32854d94b400e141672f9a37d": {
       "item": {
@@ -35,8 +35,8 @@
       },
       "admitted_at": "2026-11-19T02:55:39.113026+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-20T02:52:52.128373+00:00",
-      "attempts": 2
+      "last_attempted_at": "2026-11-21T02:58:03.731187+00:00",
+      "attempts": 3
     },
     "imf:b437df4c314516587834859adb288cae8a557fa691ac0bbe26df4e5cebd2": {
       "item": {
@@ -53,8 +53,8 @@
       },
       "admitted_at": "2026-11-19T02:55:39.113026+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-20T02:52:52.128373+00:00",
-      "attempts": 2
+      "last_attempted_at": "2026-11-21T02:58:03.731187+00:00",
+      "attempts": 3
     },
     "imf:3fd2cf5eb9afe730eba91a41e292ae52ab33e7da2df8eae7125a7a5c6031": {
       "item": {
@@ -71,8 +71,8 @@
       },
       "admitted_at": "2026-11-19T02:55:39.113026+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-20T02:52:52.128373+00:00",
-      "attempts": 2
+      "last_attempted_at": "2026-11-21T02:58:03.731187+00:00",
+      "attempts": 3
     },
     "imf:ae743be3856682f27556efb035a6b8d2c47839284da37e9ed158644fab61": {
       "item": {
@@ -89,8 +89,8 @@
       },
       "admitted_at": "2026-11-20T02:52:52.128373+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-20T02:52:52.128373+00:00",
-      "attempts": 1
+      "last_attempted_at": "2026-11-21T02:58:03.731187+00:00",
+      "attempts": 2
     },
     "imf:90bea8b8110a87d48066e6b1aef8e3641ab2518b1131953488fa89c1cb38": {
       "item": {
@@ -107,8 +107,8 @@
       },
       "admitted_at": "2026-11-20T02:52:52.128373+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-20T02:52:52.128373+00:00",
-      "attempts": 1
+      "last_attempted_at": "2026-11-21T02:58:03.731187+00:00",
+      "attempts": 2
     },
     "imf:402ac0c005b6504e3b8a25cf43731281a68d4716c80fc52d62799b78deea": {
       "item": {
@@ -125,7 +125,220 @@
       },
       "admitted_at": "2026-11-20T02:52:52.128373+00:00",
       "since_days": 7,
-      "last_attempted_at": "2026-11-20T02:52:52.128373+00:00",
+      "last_attempted_at": "2026-11-21T02:58:03.731187+00:00",
+      "attempts": 2
+    },
+    "imf:a352699c90c722aa72769fd04f0e36171fcd2885e31e6d6a6eb179a23768": {
+      "item": {
+        "title": "Keeping It Human",
+        "source_url": "https://www.imf.org/en/publications/fandd/issues/2026/12/cafe-economics-keeping-it-human-gita-bhatt",
+        "guid": "a352699c90c722aa72769fd04f0e36171fcd2885e31e6d6a6eb179a23768",
+        "date": "2026-11-20T14:00:00+00:00",
+        "pdf_candidates": [],
+        "scrape_url": "https://www.imf.org/en/publications/fandd/issues/2026/12/cafe-economics-keeping-it-human-gita-bhatt",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/fandd/issues/2026/12/cafe-economics-keeping-it-human-gita-bhatt"
+      },
+      "admitted_at": "2026-11-21T02:58:03.731187+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-21T02:58:03.731187+00:00",
+      "attempts": 1
+    },
+    "imf:fe6816cf71f18073c51bc83674921048d28995a1883d7fda0ecb5c2d453c": {
+      "item": {
+        "title": "Sudden Stops, Steady Remittances",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/11/20/sudden-stops-steady-remittances-581086",
+        "guid": "fe6816cf71f18073c51bc83674921048d28995a1883d7fda0ecb5c2d453c",
+        "date": "2026-11-20T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026248-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026248.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/11/20/sudden-stops-steady-remittances-581086",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/11/20/sudden-stops-steady-remittances-581086"
+      },
+      "admitted_at": "2026-11-21T02:58:03.731187+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-21T02:58:03.731187+00:00",
+      "attempts": 1
+    },
+    "imf:78e115ee304e61a72878441af32a748457af3de9cd3e9b9a8ff1ec6fa4a9": {
+      "item": {
+        "title": "Real-time Poverty Monitoring Using GDP Nowcasts: Evidence from India",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/11/20/real-time-poverty-monitoring-using-gdp-nowcasts-evidence-from-india-581242",
+        "guid": "78e115ee304e61a72878441af32a748457af3de9cd3e9b9a8ff1ec6fa4a9",
+        "date": "2026-11-20T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026252-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026252.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/11/20/real-time-poverty-monitoring-using-gdp-nowcasts-evidence-from-india-581242",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/11/20/real-time-poverty-monitoring-using-gdp-nowcasts-evidence-from-india-581242"
+      },
+      "admitted_at": "2026-11-21T02:58:03.731187+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-21T02:58:03.731187+00:00",
+      "attempts": 1
+    },
+    "imf:a9e2c4256db5b5536d9e496a08d9afd075a00e94bdad868a73d43355c338": {
+      "item": {
+        "title": "Credible Stabilizing Fiscal Policy: The Role of Macroframeworks",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/11/20/credible-stabilizing-fiscal-policy-the-role-of-macroframeworks-581249",
+        "guid": "a9e2c4256db5b5536d9e496a08d9afd075a00e94bdad868a73d43355c338",
+        "date": "2026-11-20T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026254-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026254.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/11/20/credible-stabilizing-fiscal-policy-the-role-of-macroframeworks-581249",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/11/20/credible-stabilizing-fiscal-policy-the-role-of-macroframeworks-581249"
+      },
+      "admitted_at": "2026-11-21T02:58:03.731187+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-21T02:58:03.731187+00:00",
+      "attempts": 1
+    },
+    "imf:7be22c7d7c765d4a4aa556b2951007f2548d17325b9e26bfc6563a990c39": {
+      "item": {
+        "title": "AI Diffusion, Implementation Capacity, and Firm Performance",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/11/20/ai-diffusion-implementation-capacity-and-firm-performance-581095",
+        "guid": "7be22c7d7c765d4a4aa556b2951007f2548d17325b9e26bfc6563a990c39",
+        "date": "2026-11-20T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026253-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026253.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/11/20/ai-diffusion-implementation-capacity-and-firm-performance-581095",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/11/20/ai-diffusion-implementation-capacity-and-firm-performance-581095"
+      },
+      "admitted_at": "2026-11-21T02:58:03.731187+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-21T02:58:03.731187+00:00",
+      "attempts": 1
+    },
+    "imf:9353a015f1ed140e5080a0c943a5e1649316caca4a9a2580d7c075f460e8": {
+      "item": {
+        "title": "Digital Banking in Latin America: Regulation and Market Conditions in Brazil, Colombia, and Mexico",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/11/20/digital-banking-in-latin-america-regulation-and-market-conditions-in-brazil-colombia-and-581089",
+        "guid": "9353a015f1ed140e5080a0c943a5e1649316caca4a9a2580d7c075f460e8",
+        "date": "2026-11-20T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026251-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026251.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/11/20/digital-banking-in-latin-america-regulation-and-market-conditions-in-brazil-colombia-and-581089",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/11/20/digital-banking-in-latin-america-regulation-and-market-conditions-in-brazil-colombia-and-581089"
+      },
+      "admitted_at": "2026-11-21T02:58:03.731187+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-21T02:58:03.731187+00:00",
+      "attempts": 1
+    },
+    "imf:282453fa16f602584c39df0ad3b67a75163cbad653cc112ee2cb4a5bfb1a": {
+      "item": {
+        "title": "Decomposing Brazil’s Exchange Rate Movements: Global vs. Domestic Drivers",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/11/20/decomposing-brazils-exchange-rate-movements-global-vs-581227",
+        "guid": "282453fa16f602584c39df0ad3b67a75163cbad653cc112ee2cb4a5bfb1a",
+        "date": "2026-11-20T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026249-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026249.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/11/20/decomposing-brazils-exchange-rate-movements-global-vs-581227",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/11/20/decomposing-brazils-exchange-rate-movements-global-vs-581227"
+      },
+      "admitted_at": "2026-11-21T02:58:03.731187+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-21T02:58:03.731187+00:00",
+      "attempts": 1
+    },
+    "imf:c824df486bb21e02ec912bcc1c3f22bc8dd52e7eda712326a0744bd15c8b": {
+      "item": {
+        "title": "Beyond Collateral: Alternative-Data Underwriting for SMEs in China and Its Relevance for Latin America and the Caribbean",
+        "source_url": "https://www.imf.org/en/publications/wp/issues/2026/11/20/beyond-collateral-alternative-data-underwriting-for-smes-in-china-and-its-relevance-for-581235",
+        "guid": "c824df486bb21e02ec912bcc1c3f22bc8dd52e7eda712326a0744bd15c8b",
+        "date": "2026-11-20T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026250-source-pdf.pdf",
+          "https://www.imf.org/-/media/files/publications/wp/2026/english/wpiea2026250.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/wp/issues/2026/11/20/beyond-collateral-alternative-data-underwriting-for-smes-in-china-and-its-relevance-for-581235",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/wp/issues/2026/11/20/beyond-collateral-alternative-data-underwriting-for-smes-in-china-and-its-relevance-for-581235"
+      },
+      "admitted_at": "2026-11-21T02:58:03.731187+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-21T02:58:03.731187+00:00",
+      "attempts": 1
+    },
+    "imf:3426bb84a31905978777e89460e521a19a480acad6379e429ca9c3b50c39": {
+      "item": {
+        "title": "Georgia: Technical Assistance Report-Strengthening Systemic Liquidity",
+        "source_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/11/19/georgia-technical-assistance-report-strengthening-systemic-liquidity-581182",
+        "guid": "3426bb84a31905978777e89460e521a19a480acad6379e429ca9c3b50c39",
+        "date": "2026-11-20T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026095.pdf",
+          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026095-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/11/19/georgia-technical-assistance-report-strengthening-systemic-liquidity-581182",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/technical-assistance-reports/issues/2026/11/19/georgia-technical-assistance-report-strengthening-systemic-liquidity-581182"
+      },
+      "admitted_at": "2026-11-21T02:58:03.731187+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-21T02:58:03.731187+00:00",
+      "attempts": 1
+    },
+    "imf:928ac40a121f15b342a4d052a94d96ed74e0bffa0c5ff4808fd0e037500a": {
+      "item": {
+        "title": "Honduras: Technical Assistance Report-Strengthening Consolidated Supervision",
+        "source_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/11/19/honduras-technical-assistance-report-strengthening-consolidated-supervision-581197",
+        "guid": "928ac40a121f15b342a4d052a94d96ed74e0bffa0c5ff4808fd0e037500a",
+        "date": "2026-11-20T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026096.pdf",
+          "https://www.imf.org/-/media/files/publications/tar/2026/english/tarea2026096-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/technical-assistance-reports/issues/2026/11/19/honduras-technical-assistance-report-strengthening-consolidated-supervision-581197",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/technical-assistance-reports/issues/2026/11/19/honduras-technical-assistance-report-strengthening-consolidated-supervision-581197"
+      },
+      "admitted_at": "2026-11-21T02:58:03.731187+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-21T02:58:03.731187+00:00",
+      "attempts": 1
+    },
+    "imf:eb5fe747a549a2b0ae973d058aced9bbc16d3c6eab69a37db62ddebfcf5c": {
+      "item": {
+        "title": "The Revenue Administration Gap Analysis Program: Bottom-Up Tax Gap Estimation Using Machine Learning Techniques",
+        "source_url": "https://www.imf.org/en/publications/tnm/issues/2026/11/20/the-revenue-administration-gap-analysis-program-bottom-up-tax-gap-estimation-using-machine-579970",
+        "guid": "eb5fe747a549a2b0ae973d058aced9bbc16d3c6eab69a37db62ddebfcf5c",
+        "date": "2026-11-20T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/tnm/2026/english/tnmea2026014.pdf",
+          "https://www.imf.org/-/media/files/publications/tnm/2026/english/tnmea2026014-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/tnm/issues/2026/11/20/the-revenue-administration-gap-analysis-program-bottom-up-tax-gap-estimation-using-machine-579970",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/tnm/issues/2026/11/20/the-revenue-administration-gap-analysis-program-bottom-up-tax-gap-estimation-using-machine-579970"
+      },
+      "admitted_at": "2026-11-21T02:58:03.731187+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-21T02:58:03.731187+00:00",
+      "attempts": 1
+    },
+    "imf:82a287faefc6a3b1704ce3f84c10bbe01c37e7b8c5cf01e586e3a36908fe": {
+      "item": {
+        "title": "How to Build a Resilient Payment Ecosystem in Fragile and Conflict-Affected States",
+        "source_url": "https://www.imf.org/en/publications/imf-how-to-notes/issues/2026/11/20/how-to-build-a-resilient-payment-ecosystem-in-fragile-and-conflict-affected-states-579899",
+        "guid": "82a287faefc6a3b1704ce3f84c10bbe01c37e7b8c5cf01e586e3a36908fe",
+        "date": "2026-11-20T05:00:00+00:00",
+        "pdf_candidates": [
+          "https://www.imf.org/-/media/files/publications/howtonotes/2026/english/htnea2026007.pdf",
+          "https://www.imf.org/-/media/files/publications/howtonotes/2026/english/htnea2026007-source-pdf.pdf"
+        ],
+        "scrape_url": "https://www.imf.org/en/publications/imf-how-to-notes/issues/2026/11/20/how-to-build-a-resilient-payment-ecosystem-in-fragile-and-conflict-affected-states-579899",
+        "coveo_unique_id": "42.46414$https://origin-www.imf.org/en/publications/imf-how-to-notes/issues/2026/11/20/how-to-build-a-resilient-payment-ecosystem-in-fragile-and-conflict-affected-states-579899"
+      },
+      "admitted_at": "2026-11-21T02:58:03.731187+00:00",
+      "since_days": 7,
+      "last_attempted_at": "2026-11-21T02:58:03.731187+00:00",
       "attempts": 1
     }
   }
