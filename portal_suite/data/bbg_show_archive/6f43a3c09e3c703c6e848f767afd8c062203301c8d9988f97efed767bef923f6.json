@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "6f43a3c09e3c703c6e848f767afd8c062203301c8d9988f97efed767bef923f6",
+  "slug": "bbg-20261121-6f43a3c09e3c703c",
+  "date": "2026-11-21",
+  "title": "摩根大通与Visa警示第三方供应商网络攻击风险",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-11-20/jpmorgan-visa-warn-of-cyberattack-on-outside-vendor-video",
+  "start": 0.0,
+  "end": 90.0,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 12.2,
+      "en": "Vulnerabilities have absolutely been dominating the news cycles recently and let me give you some quick stats about a decade ago There was around 7,000 vulnerabilities in cyber security in one year back in 2016 last year",
+      "zh": "漏洞问题近期绝对占据了新闻头条，让我给你一些快速数据：大约十年前，网络安全领域一年约有7000个漏洞；2016年，去年……"
+    },
+    {
+      "start": 12.2,
+      "end": 24.04,
+      "en": "We crossed 48,000 vulnerabilities in just one year This year as of this morning we crossed 102,000 publicly disclosed vulnerabilities in just year-to-date",
+      "zh": "我们一年内就突破了48000个漏洞。今年截至今天早上，年初至今公开披露的漏洞已超过102000个。"
+    },
+    {
+      "start": 24.4,
+      "end": 31.88,
+      "en": "So is AI fueling this? Yes, it is absolutely a part of it What are we facing from a technology standpoint a financial industry standpoint?",
+      "zh": "那么AI在助推吗？是的，绝对是部分原因。从技术和金融行业角度看，我们面临什么？"
+    },
+    {
+      "start": 32.08,
+      "end": 42.16,
+      "en": "We're facing an onslaught of vulnerabilities being discovered and actioned quicker than ever before 5-10 years ago, it was a human capital type issue",
+      "zh": "我们面临大量漏洞被更快发现和利用。5-10年前，这是人力资本型问题。"
+    },
+    {
+      "start": 42.38,
+      "end": 51.04,
+      "en": "Humans would find it humans would exploit it hence organized crime groups nation states insider threats What are we facing right now?",
+      "zh": "人类发现、人类利用，因此有组织犯罪集团、国家行为体、内部威胁。我们现在面临什么？"
+    },
+    {
+      "start": 51.04,
+      "end": 62.56,
+      "en": "AI assisted exploitation discovery at a scale where you don't need to sleep right you're relying on Automations you're relying on artificial intelligence super intelligence if you want to follow the political wording scheme",
+      "zh": "AI辅助的漏洞利用发现达到规模，你不需要睡觉，依赖自动化、人工智能、超级智能——如果你想用政治措辞的话。"
+    },
+    {
+      "start": 62.56,
+      "end": 73.68,
+      "en": "And that is what's fueling this issue One caveat I'd give you to your question I think we need to be also cautious as an industry not every attack not every outage is related",
+      "zh": "这就是推动问题的因素。对你的问题我有一个提醒：作为行业，我们需要谨慎，并非每次攻击、每次中断都相关。"
+    },
+    {
+      "start": 74.04,
+      "end": 84.52,
+      "en": "There are absolutely things happening even JP Morgan Chase is a good example recently And I know they've been in the news cycles. They had a software bug. They publicly disclose that and then less than 24 hours later",
+      "zh": "确实有些事情在发生，摩根大通就是个好例子。我知道他们最近上了新闻。他们有一个软件缺陷，公开披露后不到24小时……"
+    },
+    {
+      "start": 84.84,
+      "end": 90.0,
+      "en": "They and other financial institutions. I believe visa mastercard. They disclosed a third-party vendor had an issue",
+      "zh": "他们和其他金融机构，我相信是Visa、万事达卡，披露了一个第三方供应商有问题。"
+    }
+  ]
+}
