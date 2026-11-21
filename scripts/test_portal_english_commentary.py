@@ -398,7 +398,7 @@ class EnglishEditorialTests(unittest.TestCase):
              mock.patch('builtins.print') as printed:
             self.assertEqual(english_main(), 1)
         factory.assert_called_once_with(validation_attempts=3, quantity_policy='advisory',
-                                        materialized_validator=validate_model_fragment)
+                                        materialized_validator=validate_model_fragment, english_editorial=True)
         summary = json.loads(printed.call_args.args[0])
         self.assertEqual(summary['terminal_translation_diagnostics'], fake.failure_diagnostics)
         self.assertEqual(summary['terminal_validation_failure_count'], 1)

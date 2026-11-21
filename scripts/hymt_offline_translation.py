@@ -42,6 +42,13 @@ INSTALL_COMMAND = 'Use .github/actions/setup-offline-translation on a Linux GitH
 # runtime's grammar sampler rejects malformed/unfinished UTF-8 token sequences
 # before its chat parser sees them; no replacement or dropped byte is allowed.
 UNICODE_TEXT_GRAMMAR = r'root ::= [\x09\x0A\x0D\x20-\uD7FF\uE000-\U0010FFFF]*'
+# English editorial output already rejects Hiragana, Katakana, Han and Hangul.
+# Exclude the same ranges during decoding so a bilingual gloss cannot use up
+# the editorial retry budget.
+ENGLISH_EDITORIAL_GRAMMAR = (
+    r'root ::= [\x09\x0A\x0D\x20-\u303F\u3100-\u33FF\uA000-\uABFF'
+    r'\uD7B0-\uD7FF\uE000-\U0010FFFF]*'
+)
 # Recognize the complete reserved token even when a filename underscore or
 # Markdown emphasis touches it; those surrounding underscores are punctuation.
 _PLACEHOLDERS = re.compile(r'__(?:KC_PH_\d+|HYMTPH_\d+)__|__[A-Za-z0-9][A-Za-z0-9_]*?__')
@@ -465,7 +472,7 @@ class _HyMTEngine:
         self.log.close()
 
     def translate(self, text: str, source: str, target: str, *, quality_retry: int = 0,
-                  deadline: float | None = None) -> str:
+                  deadline: float | None = None, english_editorial: bool = False) -> str:
         prompt = (f'Translate the following text into {LANGUAGES[target]}. '
                   'Note that you should only output the translated result without any additional explanation. '
                   'Preserve all __KC_PH_...__ and __HYMTPH_...__ placeholders exactly, including their order. '
@@ -504,6 +511,11 @@ class _HyMTEngine:
                 + protected_instruction +
                 'Do not add numbers, units, or formatting. Preserve all other source figures and Markdown. '
                 'Translate this source text only:\n' + text)
+        grammar = UNICODE_TEXT_GRAMMAR
+        if english_editorial and target == 'en':
+            grammar = ENGLISH_EDITORIAL_GRAMMAR
+            prompt = ('Write the entire translation in English. Use established English names or romanize '
+                      'proper names. Translate parenthetical source text and omit bilingual glosses.\n' + prompt)
         sampling = dict(MANIFEST['sampling'])
         if quality_retry:
             # Keep the pinned model/runtime and all sampling bounds, while
@@ -520,7 +532,7 @@ class _HyMTEngine:
             try:
                 payload = {
                     'model': 'hymt-offline', 'messages': [{'role': 'user', 'content': prompt}],
-                    'stream': False, 'cache_prompt': False, 'grammar': UNICODE_TEXT_GRAMMAR, **sampling,
+                    'stream': False, 'cache_prompt': False, 'grammar': grammar, **sampling,
                 }
                 self.last_request_sha256 = hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest()
                 response = request_json(self.port, '/v1/chat/completions', payload, timeout=timeout)
@@ -552,7 +564,8 @@ class HyMTOfflineTranslator:
                  engine_factory: Callable[[str, str], object] | None = None, batch_size: int = 1,
                  diagnostic_callback: Callable[[dict], None] | None = None,
                  validation_attempts: int = 3, quantity_policy: str = 'strict',
-                 materialized_validator: Callable[[str], None] | None = None):
+                 materialized_validator: Callable[[str], None] | None = None,
+                 english_editorial: bool = False):
         self.cache_dir = Path(cache_dir or os.environ.get('HYMT_TRANSLATION_CACHE') or os.environ.get('PORTAL_OFFLINE_TRANSLATION_CACHE', '.cache/hymt-translation'))
         self.model_dir = Path(model_dir or os.environ.get('HYMT_MODEL_DIR', '.cache/hymt-model'))
         self._engine_factory = engine_factory
@@ -564,6 +577,7 @@ class HyMTOfflineTranslator:
         # bound. It must raise OfflineTranslationValidationError on rejection.
         # The complete-unit caller contract still runs after fragment assembly.
         self._materialized_validator = materialized_validator
+        self._english_editorial = english_editorial
         if validation_attempts not in {1, 2, 3}:
             raise ValueError('validation_attempts must be 1..3')
         if quantity_policy not in {'strict', 'advisory'}:
@@ -681,6 +695,8 @@ class HyMTOfflineTranslator:
                         with _LOCK:
                             if isinstance(engine, _HyMTEngine):
                                 budget = {'deadline': self.deadline} if self.deadline is not None else {}
+                                if self._english_editorial and target == 'en':
+                                    budget['english_editorial'] = True
                                 value = engine.translate(model_input, detected, target, quality_retry=attempt, **budget)
                             else:
                                 # Test doubles and future adapters retain the

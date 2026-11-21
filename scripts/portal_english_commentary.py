@@ -480,7 +480,7 @@ def main():
     require(all((args.corpus, args.output, args.checkpoint)), 'English corpus/output/checkpoint required')
     require(args.corpus.stat().st_size <= MAX_SOURCE_BYTES, 'English corpus too large')
     translator = OfflineTranslator(validation_attempts=3, quantity_policy='advisory',
-                                   materialized_validator=validate_model_fragment)
+                                   materialized_validator=validate_model_fragment, english_editorial=True)
     quantity_diagnostics = {}
     result = build(json.loads(args.corpus.read_text()), args.output, args.checkpoint,
                    translator, seconds=args.seconds, seed_checkpoint=args.seed_checkpoint,
