@@ -157,9 +157,9 @@ jobs:
         uses: ./.github/actions/resilient-diagnostic-artifact
         with:
           name: progressive-wechat-${{ inputs.source_run_id }}-${{ github.run_id }}-attempt-${{ github.run_attempt }}
-          path: |
-            wechat_drafts/xhs_notes/${{ inputs.date_folder }}
-            progressive_wechat_progress.log
+          path: progressive_wechat_progress.log
           if-no-files-found: error
-          required: 'true'
+          # A partial pass with no drafts has diagnostics but no draft receipt.
+          required: ${{ steps.upload.outputs.checkpoint_required == 'true' && 'true' || 'false' }}
+          checkpoint-path: wechat_drafts/xhs_notes/${{ inputs.date_folder }}
           retention-days: 14

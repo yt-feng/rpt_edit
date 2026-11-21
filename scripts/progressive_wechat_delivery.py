@@ -791,6 +791,12 @@ def reset_source_root(source_root, workspace):
     return root
 
 
+def report_draft_checkpoint(summary, github_output):
+    if github_output and summary['draft_count']:
+        with open(github_output, 'a', encoding='utf-8') as stream:
+            stream.write('checkpoint_required=true\n')
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--manifest', type=Path, required=True)
@@ -819,6 +825,7 @@ def main(argv=None):
         print(json.dumps({'state': 'plan_ready', 'plan_sha256': plan['plan_sha256']}))
         return 0
     output_dir = args.output_root / args.date_folder
+    github_output = os.environ.get('GITHUB_OUTPUT') if args.once else None
     source_root = validate_source_root(args.dropbox_output_root / args.date_folder, args.workspace)
     prefix = progressive_prefix(args.source_run_id, args.date_folder)
     with publisher_lease(plan, client, bucket):
@@ -826,6 +833,8 @@ def main(argv=None):
         if complete is not None:
             require(complete == {'plan_sha256': plan['plan_sha256'], 'complete': True}, 'progressive_complete_owner_changed')
             download_directory(prefix + '/complete.tar.gz', output_dir, client=client, bucket=bucket)
+            if github_output:
+                report_draft_checkpoint(read_json(output_dir / 'wechat_draft_summary.json'), github_output)
             if args.complete_final:
                 reset_source_root(source_root, args.workspace)
                 download_directory(prefix + '/sources.tar.gz', source_root, client=client, bucket=bucket)
@@ -855,6 +864,7 @@ def main(argv=None):
         directories = restore_ready_sources(plan, source_root, client, bucket)
         uploader_args = ['--dropbox-output-root', str(args.dropbox_output_root), *upload_args]
         summary = upload_ready_groups(plan, directories, output_dir, args.workspace, client, bucket, uploader_args)
+        report_draft_checkpoint(summary, github_output)
         if summary['status'] == 'verified' and len(directories) == len(plan['sources']):
             result = validate_progressive_delivery(output_dir, plan, directories, live=True)
             if args.complete_final:

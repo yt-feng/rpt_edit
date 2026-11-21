@@ -335,13 +335,16 @@ class ProgressiveTests(unittest.TestCase):
     def test_main_once_ignores_previous_runner_articles_with_identical_source_hashes(self):
         self.materialize()
         output = io.StringIO()
-        with patch.object(progressive, 'build_r2_client', return_value=self.store), patch.object(progressive, 'r2_bucket', return_value='private'), patch.object(progressive, 'publisher_owner', return_value={'run_id': '2345', 'run_attempt': 1, 'job_id': 12, 'job_name': 'publish-ready'}), patch.object(progressive, 'upload_group') as upload, patch.object(api, 'post_wechat_json') as post, redirect_stdout(output):
+        github_output = self.root / 'github-output'
+        github_output.touch()
+        with patch.dict(os.environ, {'GITHUB_OUTPUT': str(github_output)}), patch.object(progressive, 'build_r2_client', return_value=self.store), patch.object(progressive, 'r2_bucket', return_value='private'), patch.object(progressive, 'publisher_owner', return_value={'run_id': '2345', 'run_attempt': 1, 'job_id': 12, 'job_name': 'publish-ready'}), patch.object(progressive, 'upload_group') as upload, patch.object(api, 'post_wechat_json') as post, redirect_stdout(output):
             self.assertEqual(progressive.main(self.main_arguments()), 0)
         upload.assert_not_called()
         post.assert_not_called()
         result = json.loads(output.getvalue().splitlines()[-1])
         self.assertEqual(result['ready_source_count'], 0)
         self.assertEqual(result['draft_count'], 0)
+        self.assertEqual(github_output.read_text(), '')
         self.assertEqual(progressive.source_directories(self.plan, self.source_root), {})
 
     def test_main_input_reset_preserves_accepted_group_receipts(self):
@@ -350,12 +353,14 @@ class ProgressiveTests(unittest.TestCase):
         self.send(self.materialize(sources))
         accepted = progressive.read_json(self.output / 'wechat_draft_summary.json')['drafts'][0]['media_id']
         self.materialize()
-        with patch.object(progressive, 'build_r2_client', return_value=self.store), patch.object(progressive, 'r2_bucket', return_value='private'), patch.object(progressive, 'publisher_owner', return_value={'run_id': '2345', 'run_attempt': 1, 'job_id': 12, 'job_name': 'publish-ready'}), patch.object(progressive, 'upload_group') as upload:
+        github_output = self.root / 'github-output'
+        with patch.dict(os.environ, {'GITHUB_OUTPUT': str(github_output)}), patch.object(progressive, 'build_r2_client', return_value=self.store), patch.object(progressive, 'r2_bucket', return_value='private'), patch.object(progressive, 'publisher_owner', return_value={'run_id': '2345', 'run_attempt': 1, 'job_id': 12, 'job_name': 'publish-ready'}), patch.object(progressive, 'upload_group') as upload:
             self.assertEqual(progressive.main(self.main_arguments()), 0)
         upload.assert_not_called()
         summary = progressive.read_json(self.output / 'wechat_draft_summary.json')
         self.assertEqual(summary['source_report_count'], 0)
         self.assertEqual(summary['drafts'][0]['media_id'], accepted)
+        self.assertEqual(github_output.read_text(), 'checkpoint_required=true\n')
         self.assertTrue((progressive.group_directory(self.root, self.plan, first) / 'progressive_group.json').exists())
 
     def test_main_rejects_source_root_and_parent_symlinks_without_touching_target(self):
