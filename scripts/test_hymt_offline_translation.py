@@ -2,6 +2,7 @@
 import os
 import json
 from pathlib import Path
+import re
 import tempfile
 import time
 import unittest
@@ -347,6 +348,19 @@ class HyMTTests(unittest.TestCase):
         many = h.placeholder_diagnostics(' '.join(f'__KC_PH_{n:04d}__' for n in range(30)), '')
         self.assertEqual(len(many['missing_token_sha256']), 20)
         self.assertTrue(many['missing_tokens_truncated'])
+
+    def test_english_editorial_decoding_applies_the_existing_script_boundary(self):
+        engine = object.__new__(h._HyMTEngine)
+        engine.port = 12345
+        response = {'choices': [{'finish_reason': 'stop', 'message': {'content': 'translation'}}]}
+        with mock.patch.object(h, 'request_json', return_value=response) as request:
+            engine.translate('欧洲央行', 'zh', 'en', english_editorial=True)
+        payload = request.call_args.args[2]
+        self.assertIn('omit bilingual glosses', payload['messages'][0]['content'])
+        grammar = re.compile(payload['grammar'].removeprefix('root ::= '))
+        self.assertIsNotNone(grammar.fullmatch('São Paulo recorded 12.5%.\n'))
+        for source in ('Europe (欧洲)', '運用', 'ひらがな', 'カタカナ', '서울', '\ud800'):
+            self.assertIsNone(grammar.fullmatch(source))
 
     def test_english_final_retry_materializes_complete_source_facts_without_han(self):
         cases = [
