@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "id": "e3d69879a01d3c86bf75ce3de3fe127e7df2f1103886630b53208e06ce0fdd30",
+  "slug": "bbg-20261122-e3d69879a01d3c86",
+  "date": "2026-11-22",
+  "title": "2330亿现金：对5670亿算力支出，这笔账怎么算？",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-11-19/how-anthropic-plans-to-use-ipo-proceeds-video",
+  "start": 0.0,
+  "end": 89.32,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 6.44,
+      "en": "You know, you come out of the IPO with $233 billion of cash in short-term investments.",
+      "zh": "你知道，IPO后你会有2330亿美元的现金用于短期**。"
+    },
+    {
+      "start": 6.44,
+      "end": 13.76,
+      "en": "What does it allow you to do that you couldn't do before? Or rather, how will you behave differently now with that cash on the balance sheet?",
+      "zh": "这让你能做什么以前做不到的事？或者说，现在资产负债表上有这笔现金，你的行为会有何不同？"
+    },
+    {
+      "start": 13.76,
+      "end": 22.24,
+      "en": "So I think, you know, it's important that, you know, since the company was founded, you know, the founders left another lab to join the company, they had to hire a research team",
+      "zh": "所以我认为，重要的是，自公司成立以来，创始人离开另一个实验室加入公司，他们不得不组建一个研究团队"
+    },
+    {
+      "start": 22.24,
+      "end": 25.36,
+      "en": "and we've hired the best research team in the world, we believe.",
+      "zh": "而我们相信，我们已经组建了世界上最好的研究团队。"
+    },
+    {
+      "start": 25.36,
+      "end": 31.36,
+      "en": "And in addition to that, you know, they didn't have compute, they had to get, you know, a lot of compute over that time, but use it really efficiently.",
+      "zh": "除此之外，你知道，他们当时没有算力，必须在那段时间获得大量算力，但要非常高效地使用。"
+    },
+    {
+      "start": 31.36,
+      "end": 36.48,
+      "en": "So we've always been efficient, efficiency-focused, how we use compute, how we think about capital.",
+      "zh": "所以我们一直很高效，注重效率，无论是使用算力还是考虑资本的方式。"
+    },
+    {
+      "start": 36.48,
+      "end": 42.8,
+      "en": "And so, as we think about the position we're in right now, you know, if we look out in the future, we think of this kind of cone of uncertainty, right?",
+      "zh": "所以，当我们思考现在所处的位置时，你知道，如果我们展望未来，我们会想到这种不确定性锥，对吧？"
+    },
+    {
+      "start": 42.8,
+      "end": 48.92,
+      "en": "Yes. Yeah, we're on this exponential. Which relates to training versus inference around the cone of uncertainty.",
+      "zh": "是的。是的，我们处于这个指数增长上。这与不确定性锥周围的训练与推理有关。"
+    },
+    {
+      "start": 48.92,
+      "end": 54.36,
+      "en": "Right, it relates to, you know, demand in the business and revenue, it also relates to model capabilities.",
+      "zh": "对，它与业务需求和收入有关，也与模型能力有关。"
+    },
+    {
+      "start": 54.36,
+      "end": 62.4,
+      "en": "Basically, the further out you go, the wider that cone is. And so, as we think about it, we want to make investments that position us well for that cone of uncertainty",
+      "zh": "基本上，你越往远处看，那个锥就越宽。所以，当我们思考时，我们希望做出能让我们在这个不确定性锥中处于有利位置的**。"
+    },
+    {
+      "start": 62.4,
+      "end": 71.04,
+      "en": "and have the flexibility to continue to invest as we see more results from our business, but also capabilities from our models.",
+      "zh": "并能灵活地持续投入，随着我们业务成果增多，模型能力也在提升。"
+    },
+    {
+      "start": 71.04,
+      "end": 76.64,
+      "en": "Can I ask, to what degree you've gone the offense now with that cache, or you behave more opportunistically?",
+      "zh": "请问，你们现在在多大程度上利用这些资源采取攻势，还是更偏向机会主义？"
+    },
+    {
+      "start": 76.64,
+      "end": 81.48,
+      "en": "You know, you've had a different compute model to some of your peers.",
+      "zh": "你们知道，你们的计算模式与一些同行不同。"
+    },
+    {
+      "start": 81.48,
+      "end": 86.28,
+      "en": "You would call it, at one time, asset light, maybe more reliant on third parties.",
+      "zh": "你们曾称之为轻资产，可能更依赖第三方。"
+    },
+    {
+      "start": 86.28,
+      "end": 89.32,
+      "en": "What's going to be different about that strategy going forward?",
+      "zh": "未来这一策略会有什么不同？"
+    }
+  ]
+}
