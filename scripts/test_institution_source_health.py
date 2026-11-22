@@ -5,11 +5,13 @@ import copy
 from datetime import datetime, timezone
 import io
 import json
+import os
 from pathlib import Path
 import shlex
 import subprocess
 import sys
 import tempfile
+from textwrap import dedent
 import unittest
 from unittest.mock import Mock, patch
 
@@ -368,6 +370,29 @@ set -e
         self.assertIn("needs: [fetch-and-build, source-health, upload-wechat-drafts, cleanup-private-handoff]", notification)
         self.assertIn('institution_fetch_status=("${PIPESTATUS[@]}")\n          set -e', workflow)
         self.assertNotIn("continue-on-error", workflow.split("      - name: Fetch latest institution PDFs\n", 1)[1].split("      - name: Extract MinerU", 1)[0])
+
+    def test_workflow_requires_an_explicit_imf_source_selection(self):
+        root = Path(__file__).resolve().parents[1]
+        workflow = (root / ".github/workflows/institution-latest-pdf-to-wechat.yml").read_text()
+        selection, imf_setup = workflow.split("      - name: Select institution sources\n", 1)[1].split(
+            "      - name: Set up official IMF download route\n", 1)
+        script = dedent(selection.split("        run: |\n", 1)[1])
+        scheduled = "worldbank,bis,oecd,adb,wef,unctad,wto,bruegel"
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "outputs"
+            for requested, expected, includes_imf in (("", scheduled, "false"), (" ", scheduled, "false"),
+                                                       ("imf", "imf", "true"), ("all", "imf," + scheduled, "true"),
+                                                       ("BIS, IMF", "bis,imf", "true")):
+                with self.subTest(requested=requested):
+                    output.write_text("")
+                    subprocess.run(["bash", "-ec", script], cwd=root, check=True, capture_output=True,
+                                   env={**os.environ, "REQUESTED_INSTITUTIONS": requested, "GITHUB_OUTPUT": str(output)})
+                    self.assertEqual(output.read_text().splitlines(),
+                                     [f"institutions={expected}", f"includes_imf={includes_imf}"])
+        self.assertIn("&& steps.source_selection.outputs.includes_imf == 'true'", imf_setup)
+        self.assertIn("steps.source_selection.outputs.includes_imf == 'true' && steps.fetch.outcome", workflow)
+        self.assertIn("INSTITUTION_SOURCES: ${{ steps.source_selection.outputs.institutions }}", workflow)
+        self.assertEqual(workflow.count('--institutions "$INSTITUTION_SOURCES"'), 2)
 
 
 if __name__ == "__main__":

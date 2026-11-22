@@ -389,7 +389,7 @@ INSTITUTIONS: dict[str, dict[str, Any]] = {
         "required_for_clean_zero": True,
     },
 }
-# Sources the scheduled WeChat run pulls by default. Ordered by priority: when
+# Public sources selected by --institutions all. Ordered by priority: when
 # --max-total binds, earlier sources keep their quota. RAND and Brookings are
 # deliberately NOT here (topics too politically sensitive for the WeChat
 # account); they remain in INSTITUTIONS for explicit --institutions runs.
