@@ -157,7 +157,7 @@ jobs:
           PY
 
       - name: Set up official IMF download route
-        if: steps.source_selection.outputs.includes_imf == 'true'
+        if: ${{ (inputs.completed_source_recovery == '' || inputs.completed_source_recovery == 'none') && steps.source_selection.outputs.includes_imf == 'true' }}
         uses: ./.github/actions/setup-imf-browser
         with:
           institutions: ${{ steps.source_selection.outputs.institutions }}

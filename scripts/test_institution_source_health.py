@@ -389,7 +389,7 @@ set -e
                                    env={**os.environ, "REQUESTED_INSTITUTIONS": requested, "GITHUB_OUTPUT": str(output)})
                     self.assertEqual(output.read_text().splitlines(),
                                      [f"institutions={expected}", f"includes_imf={includes_imf}"])
-        self.assertIn("if: steps.source_selection.outputs.includes_imf == 'true'", imf_setup)
+        self.assertIn("&& steps.source_selection.outputs.includes_imf == 'true'", imf_setup)
         self.assertIn("steps.source_selection.outputs.includes_imf == 'true' && steps.fetch.outcome", workflow)
         self.assertIn("INSTITUTION_SOURCES: ${{ steps.source_selection.outputs.institutions }}", workflow)
         self.assertEqual(workflow.count('--institutions "$INSTITUTION_SOURCES"'), 2)
