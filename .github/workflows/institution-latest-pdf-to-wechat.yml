@@ -1,7 +1,7 @@
 name: Institution latest PDF to WeChat
 
 # Daily companion to the Dropbox main flow. Instead of Dropbox, it pulls the newest
-# public PDF reports from IMF / World Bank / BIS / OECD / ADB / WEF / UNCTAD / WTO /
+# public PDF reports from World Bank / BIS / OECD / ADB / WEF / UNCTAD / WTO /
 # Bruegel, runs them through the existing MinerU -> Portal translated -> WeChat draft
 # pipeline, and archives the original PDF links. The source PDFs themselves are
 # privately archived before extraction and never committed. Daily volume is bounded by max_total (default 100).
@@ -16,9 +16,9 @@ on:
         default: none
         options: [none, adb-261013]
       institutions:
-        description: "Comma list of sources, or all (imf,worldbank,bis,oecd,adb,wef,unctad,wto,bruegel; rand/brookings only when named explicitly)"
-        required: true
-        default: "all"
+        description: "Leave blank for scheduled sources. Use a comma list, imf, or all (includes IMF)."
+        required: false
+        default: ""
       since_days:
         description: "Only fetch reports published within this many days"
         required: true
@@ -136,11 +136,31 @@ jobs:
           python scripts/test_institution_source_health.py
           python scripts/test_institution_pending_intake.py
 
-      - name: Set up official IMF download route
+      - name: Select institution sources
+        id: source_selection
         if: ${{ inputs.completed_source_recovery == '' || inputs.completed_source_recovery == 'none' }}
+        shell: bash
+        env:
+          REQUESTED_INSTITUTIONS: ${{ inputs.institutions }}
+        run: |
+          PYTHONPATH=scripts python3 -B - <<'PY'
+          import os
+          from institution_source_health import enabled_sources
+
+          requested = os.environ['REQUESTED_INSTITUTIONS'].strip()
+          sources = enabled_sources(requested) if requested else [key for key in enabled_sources('all') if key != 'imf']
+          selection = ','.join(sources)
+          print(f'Institution sources: {selection}')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as stream:
+              stream.write(f'institutions={selection}\n')
+              stream.write(f"includes_imf={str('imf' in sources).lower()}\n")
+          PY
+
+      - name: Set up official IMF download route
+        if: steps.source_selection.outputs.includes_imf == 'true'
         uses: ./.github/actions/setup-imf-browser
         with:
-          institutions: ${{ github.event.inputs.institutions || 'all' }}
+          institutions: ${{ steps.source_selection.outputs.institutions }}
 
       - name: Select reviewed institution originals
         id: reviewed_originals
@@ -229,6 +249,7 @@ jobs:
         shell: bash
         env:
           COMPLETED_SOURCE_RECOVERY: ${{ inputs.completed_source_recovery }}
+          INSTITUTION_SOURCES: ${{ steps.source_selection.outputs.institutions }}
           MINERU_LEDGER_BACKEND: r2
           MINERU_CHECKPOINT_SCOPE: institution
           MINERU_FORBID_NEW_SUBMISSIONS: '1'
@@ -272,7 +293,7 @@ jobs:
             --imf-pending-retries "$IMF_PENDING_RETRIES" \
             --dependency-holds "$RUNNER_TEMP/institution-held-sources.json" \
             --date "$DATE" \
-            --institutions "${{ github.event.inputs.institutions || 'all' }}" \
+            --institutions "$INSTITUTION_SOURCES" \
             --since-days "${{ github.event.inputs.since_days || '7' }}" \
             --max-per-institution "${{ github.event.inputs.max_per_institution || '25' }}" \
             --max-total "${{ github.event.inputs.max_total || '100' }}" \
@@ -291,13 +312,13 @@ jobs:
             --log-exit-code "${institution_fetch_status[1]}" \
             --manifest _institution_latest_pdfs/institution_run_manifest.json \
             --date-folder "$DATE" \
-            --institutions "${{ github.event.inputs.institutions || 'all' }}" \
+            --institutions "$INSTITUTION_SOURCES" \
             --github-output "$GITHUB_OUTPUT"
 
       # Save discovery before fallible extraction/translation. Never commit
       # provisional downloaded seen-state in this checkpoint.
       - name: Persist pending IMF intake before downstream work
-        if: ${{ (inputs.completed_source_recovery == '' || inputs.completed_source_recovery == 'none') && always() && !cancelled() && steps.fetch.outcome != 'skipped' && hashFiles('institution_feeds/pending_intake/imf.json') != '' }}
+        if: ${{ always() && !cancelled() && steps.source_selection.outputs.includes_imf == 'true' && steps.fetch.outcome != 'skipped' && hashFiles('institution_feeds/pending_intake/imf.json') != '' }}
         run: |
           python scripts/institution_pending_intake.py institution_feeds/pending_intake/imf.json
           bash scripts/commit_output_dir.sh "institution_feeds/pending_intake/imf.json" "Checkpoint unresolved IMF intake" 8 true

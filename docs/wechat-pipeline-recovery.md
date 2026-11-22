@@ -119,6 +119,11 @@ the source-bound article checkpoint remains available independently.
 
 ## Institution discovery and consulting figure diagnostics
 
+The scheduled institution workflow and manual runs with a blank source selection
+fetch World Bank, BIS, OECD, ADB, WEF, UNCTAD, WTO and Bruegel. Select `imf` or
+include it explicitly in a manual run to retry IMF. The explicit `all` option
+also includes IMF. The existing IMF pending queue is retained for those runs.
+
 Institution search feeds may advertise a future publication date or an explicit
 `Coming Soon:` launch title before its PDF exists. These entries are recorded as
 `publication_pending`, excluded from current download-failure counts, and kept
@@ -127,7 +132,7 @@ release date/title is not a completed download. An actual required-source 403
 or unresolved released PDF appears as degraded intake in the run summary. The
 daily retry policy below determines when it also fails the workflow.
 
-Released IMF sources observed inside the normal intake window are saved in
+When IMF is selected, released sources observed inside the intake window are saved in
 `institution_feeds/pending_intake/imf.json` before downloading. This checkpoint
 retains the original source identity, publication date, official URL candidates,
 and first observation time; it does not mark a PDF downloaded or a handoff
