@@ -14596,12 +14596,25 @@ async function loadNewsfeedSettings(env, user) {
   };
 }
 
-async function saveNewsfeedSettings(env, user, settings) {
-  if (!env.REPORT_BUCKET) return settings;
-  return r2PutJson(env, newsfeedSettingsKey(user), {
-    ...(settings || {}),
-    updated_at: new Date().toISOString(),
-  });
+async function saveNewsfeedSettings(env, user, update) {
+  const key = newsfeedSettingsKey(user);
+  for (let attempt = 0; attempt < REPORT_REQUEST_WRITE_RETRIES; attempt += 1) {
+    const snapshot = await r2GetJsonObjectStrict(env, key);
+    const etag = String(snapshot && snapshot.object && snapshot.object.etag || "");
+    if (snapshot && (!snapshot.value || typeof snapshot.value !== "object" || Array.isArray(snapshot.value) || !etag)) {
+      throw new Error("Newsfeed settings version is unavailable.");
+    }
+    // Reapply only this action to the latest preferences and delivery state.
+    // A stale pin/language save must never restore a canceled subscription.
+    const current = { ...defaultNewsfeedSettings(user), ...(snapshot && snapshot.value || {}) };
+    const next = { ...await update(current), updated_at: new Date().toISOString() };
+    const written = await accountBucket(env).put(key, JSON.stringify(next), {
+      onlyIf: snapshot ? { etagMatches: etag } : { etagDoesNotMatch: "*" },
+      httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
+    });
+    if (written !== null) return next;
+  }
+  throw Object.assign(new Error("Newsfeed settings changed. Please retry."), { status: 409 });
 }
 
 function hasOwnField(object, field) {
@@ -18398,11 +18411,12 @@ async function handleNewsfeedPinTopic(request, env) {
     if (!findNewsfeedTopic(availableTopics, id)) {
       return jsonResponse(request, env, 404, { detail: "Topic not found.", code: "NEWSFEED_TOPIC_NOT_FOUND" });
     }
-    const settings = await loadNewsfeedSettings(env, user);
-    const next = new Set(settings.pinned || []);
-    if (pinned) next.add(id);
-    else next.delete(id);
-    await saveNewsfeedSettings(env, user, { ...settings, pinned: [...next] });
+    await saveNewsfeedSettings(env, user, (settings) => {
+      const next = new Set(settings.pinned || []);
+      if (pinned) next.add(id);
+      else next.delete(id);
+      return { ...settings, pinned: [...next] };
+    });
     const topics = await loadNewsfeedTopics(env, user);
     const customUsage = await newsfeedCustomTopicUsage(env, user, policy, topics.filter((item) => item.kind === "custom").length);
     return jsonResponse(request, env, 200, {
@@ -18421,23 +18435,27 @@ async function handleNewsfeedSettings(request, env) {
     if (!policy.can_subscribe) {
       throw new NewsfeedAccessError("An active membership is required for this Newsfeed feature.", 403, "NEWSFEED_MEMBERSHIP_REQUIRED");
     }
-    const settings = await loadNewsfeedSettings(env, user);
     const customUsage = await newsfeedCustomTopicUsage(env, user, policy);
     if (request.method === "GET") {
+      const settings = await loadNewsfeedSettings(env, user);
       return jsonResponse(request, env, 200, {
         settings: publicNewsfeedSettings(settings, user, env),
         ...newsfeedPolicyEnvelope(policy, customUsage),
       });
     }
     const payload = await request.json().catch(() => ({}));
-    let next = nextNewsfeedSettingsFromPayload(settings, user, payload);
-    if (next.digest_email_enabled && !normalizeEmail(next.digest_email)) return jsonResponse(request, env, 400, { detail: "A valid account email is required." });
-    try {
-      next = await validateNewsfeedNewsletterSelection(env, user, next);
-    } catch (error) {
-      return jsonResponse(request, env, 400, { detail: error.message || "Choose one newsletter." });
-    }
-    await saveNewsfeedSettings(env, user, next);
+    const next = await saveNewsfeedSettings(env, user, async (settings) => {
+      let next = nextNewsfeedSettingsFromPayload(settings, user, payload);
+      if (next.digest_email_enabled && !normalizeEmail(next.digest_email)) {
+        throw Object.assign(new Error("A valid account email is required."), { status: 400 });
+      }
+      try {
+        next = await validateNewsfeedNewsletterSelection(env, user, next);
+      } catch (error) {
+        throw Object.assign(error, { status: 400 });
+      }
+      return next;
+    });
     return jsonResponse(request, env, 200, {
       settings: publicNewsfeedSettings(next, user, env),
       ...newsfeedPolicyEnvelope(policy, customUsage),
@@ -18455,20 +18473,22 @@ async function handleNewsfeedEmailSend(request, env, options = {}) {
     if (!policy.can_subscribe) {
       throw new NewsfeedAccessError("An active membership is required for this Newsfeed feature.", 403, "NEWSFEED_MEMBERSHIP_REQUIRED");
     }
-    const settings = await loadNewsfeedSettings(env, user);
     const payload = await request.json().catch(() => ({}));
-    let next = nextNewsfeedSettingsFromPayload(settings, user, payload);
-    try {
-      next = await validateNewsfeedNewsletterSelection(env, user, next);
-    } catch (error) {
-      return jsonResponse(request, env, 400, { detail: error.message || "Choose one newsletter." });
-    }
-    if (!next.digest_email_enabled) {
-      return jsonResponse(request, env, 400, { detail: "Choose one newsletter before sending." });
-    }
-    const email = normalizeEmail(next.digest_email);
-    if (!email) return jsonResponse(request, env, 400, { detail: "A valid email is required." });
-    await saveNewsfeedSettings(env, user, next);
+    const next = await saveNewsfeedSettings(env, user, async (settings) => {
+      let next = nextNewsfeedSettingsFromPayload(settings, user, payload);
+      try {
+        next = await validateNewsfeedNewsletterSelection(env, user, next);
+      } catch (error) {
+        throw Object.assign(error, { status: 400 });
+      }
+      if (!next.digest_email_enabled) {
+        throw Object.assign(new Error("Choose one newsletter before sending."), { status: 400 });
+      }
+      if (!normalizeEmail(next.digest_email)) {
+        throw Object.assign(new Error("A valid email is required."), { status: 400 });
+      }
+      return next;
+    });
     const parts = newsfeedLocalParts(new Date(), next.digest_timezone);
     const due = { dateKey: newsfeedDateKey(parts), parts };
     let result;

@@ -97,7 +97,8 @@ export function fillAdminNewsfeedEditor(user, targets) {
     targets.newsfeedMode.value = access.mode || "auto";
     const expiry = access.expires_at || (user.effective_access || user.access || {}).current_period_end;
     targets.newsfeedExpiry.value = expiry ? new Date(expiry).toLocaleDateString("sv-SE", { timeZone: "Asia/Shanghai" }) : "";
-    targets.newsfeedExpiry.disabled = targets.newsfeedMode.value !== "enabled";
+    targets.newsfeedMode.disabled = Boolean(targets.newsfeedEditor.dataset.saving);
+    targets.newsfeedExpiry.disabled = targets.newsfeedMode.disabled || targets.newsfeedMode.value !== "enabled";
     targets.newsfeedStatus.textContent = "";
     mountAdminInlineEditor(targets, targets.newsfeedEditor, user.email);
     targets.newsfeedTitle.focus({ preventScroll: true });
@@ -131,12 +132,16 @@ export function bindNewsfeedEditor(workerUrl, targets, dependencies) {
     const { renderAdminUserTable, saveAdminNewsfeed } = dependencies;
     if (userSearch) userSearch.addEventListener("input", () => renderAdminUserTable(targets));
     document.getElementById("accountAdminNewsfeedClose")?.addEventListener("click", () => closeAdminInlineEditor(targets, newsfeedEditor));
-    newsfeedMode?.addEventListener("change", () => { newsfeedExpiry.disabled = newsfeedMode.value !== "enabled"; });
+    newsfeedMode?.addEventListener("change", () => { newsfeedExpiry.disabled = Boolean(newsfeedEditor.dataset.saving) || newsfeedMode.value !== "enabled"; });
     newsfeedEditor?.addEventListener("submit", async (event) => {
       event.preventDefault();
+      if (newsfeedEditor.dataset.saving) return;
       const selectedEmail = newsfeedEmail.value;
       const submit = newsfeedEditor.querySelector('button[type="submit"]');
+      newsfeedEditor.dataset.saving = "true";
       submit.disabled = true;
+      newsfeedMode.disabled = true;
+      newsfeedExpiry.disabled = true;
       newsfeedStatus.className = "status-line";
       newsfeedStatus.textContent = "正在保存并核验 Newsfeed 权限…";
       try {
@@ -152,7 +157,12 @@ export function bindNewsfeedEditor(workerUrl, targets, dependencies) {
           newsfeedStatus.className = "status-line error";
           newsfeedStatus.textContent = error.message;
         }
-      } finally { submit.disabled = false; }
+      } finally {
+        delete newsfeedEditor.dataset.saving;
+        submit.disabled = false;
+        newsfeedMode.disabled = false;
+        newsfeedExpiry.disabled = newsfeedMode.value !== "enabled";
+      }
     });
 }
 

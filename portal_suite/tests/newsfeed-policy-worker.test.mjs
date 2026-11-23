@@ -227,6 +227,154 @@ async function createTopic(env, token, topic) {
   });
 }
 
+function settingsRaceFixture(t, { existing = true, rss } = {}) {
+  const fetchState = installFetchMock(t, { rss });
+  const bucket = new MemoryR2();
+  const env = envFor(bucket, { BREVO_API_KEY: "brevo-test", NEWSFEED_EMAIL_PROVIDER: "brevo" });
+  const { user, token } = seedUser(bucket);
+  seedMemberAccess(bucket, user, 1);
+  seedCustomTopic(bucket, user, "race-one");
+  seedCustomTopic(bucket, user, "race-two");
+  const key = `_newsfeed/settings/${encodeURIComponent(user.email)}.json`;
+  if (existing) bucket.seed(key, {
+    user_key: encodeURIComponent(user.email), user_email: user.email, digest_email: user.email,
+    digest_email_enabled: true, newsletter_topic_id: "global-daily", pinned: ["global-daily"],
+    digest_language: "en", digest_timezone: "UTC", digest_send_time: "14:20",
+    preferred_regions: ["global"], interface_language: "en", digest_last_sent_date: "",
+  });
+  const post = (route, payload) => jsonRequest(env, `/newsfeed/${route}`, {
+    method: "POST", headers: { "content-type": "application/json", ...bearer(token) }, body: JSON.stringify(payload),
+  });
+  let beforeWrite;
+  const writes = [];
+  const put = bucket.put.bind(bucket);
+  bucket.put = async (writeKey, value, options) => {
+    if (writeKey === key) {
+      writes.push(options);
+      if (beforeWrite) {
+        const callback = beforeWrite; beforeWrite = null;
+        await callback();
+      }
+    }
+    return put(writeKey, value, options);
+  };
+  return { bucket, key, post, fetchState, writes,
+    value: () => JSON.parse(bucket.rows.get(key).value),
+    beforeWrite(callback) { beforeWrite = callback; },
+  };
+}
+
+test("pin and preference saves rebase on a concurrent explicit unsubscribe", async (t) => {
+  const f = settingsRaceFixture(t);
+  for (const [route, payload] of [["topics/pin", { id: "race-one", pinned: true }], ["settings", { interface_language: "zh-CN", preferred_regions: ["china"] }]]) {
+    f.bucket.seed(f.key, { ...f.value(), digest_email_enabled: true, newsletter_topic_id: "global-daily" });
+    f.beforeWrite(async () => {
+      const off = await f.post("settings", { digest_email_enabled: false });
+      assert.equal(off.response.status, 200, JSON.stringify(off.data));
+    });
+    const result = await f.post(route, payload);
+    assert.equal(result.response.status, 200, JSON.stringify(result.data));
+    assert.equal(f.value().digest_email_enabled, false);
+    assert.equal(f.value().newsletter_topic_id, "");
+    assert.ok(f.value().pinned.includes("race-one"));
+    if (route === "settings") {
+      assert.equal(result.data.settings.digest_email_enabled, false, "return the committed state after retry");
+      assert.equal(result.data.settings.interface_language, "zh-CN");
+      assert.deepEqual(result.data.settings.preferred_regions, ["china"]);
+    }
+  }
+  assert.equal(f.fetchState.emails.length, 0, "settings and pin actions never send email");
+  assert.ok(f.writes.every((options) => options.onlyIf.etagMatches));
+});
+
+test("concurrent pins and an unsubscribe retain each independent change", async (t) => {
+  const f = settingsRaceFixture(t);
+  f.beforeWrite(async () => {
+    const second = await f.post("topics/pin", { id: "race-two", pinned: true });
+    assert.equal(second.response.status, 200);
+  });
+  assert.equal((await f.post("topics/pin", { id: "race-one", pinned: true })).response.status, 200);
+  assert.deepEqual(new Set(f.value().pinned), new Set(["global-daily", "race-one", "race-two"]));
+  f.beforeWrite(async () => {
+    assert.equal((await f.post("topics/pin", { id: "race-one", pinned: false })).response.status, 200);
+  });
+  assert.equal((await f.post("settings", { digest_email_enabled: false })).response.status, 200);
+  assert.equal(f.value().digest_email_enabled, false);
+  assert.equal(f.value().newsletter_topic_id, "");
+  assert.deepEqual(new Set(f.value().pinned), new Set(["global-daily", "race-two"]));
+  assert.equal(f.fetchState.emails.length, 0);
+});
+
+test("preference updates preserve concurrent delivery metadata and first-creation state", async (t) => {
+  const f = settingsRaceFixture(t, { existing: false });
+  f.beforeWrite(async () => {
+    assert.equal((await f.post("settings", { digest_email_enabled: true, newsletter_topic_id: "race-two" })).response.status, 200);
+  });
+  assert.equal((await f.post("topics/pin", { id: "race-one", pinned: true })).response.status, 200);
+  assert.equal(f.writes[0].onlyIf.etagDoesNotMatch, "*");
+  assert.equal(f.value().digest_email_enabled, true);
+  assert.equal(f.value().newsletter_topic_id, "race-two");
+  assert.ok(f.value().pinned.includes("race-one"));
+  const delivered = "2026-11-23T03:00:00.000Z";
+  f.beforeWrite(() => f.bucket.seed(f.key, { ...f.value(), digest_last_sent_date: "2026-11-23", digest_last_sent_at: delivered, digest_last_send_result: "sent", future_delivery_field: "preserved" }));
+  const result = await f.post("settings", { digest_send_time: "19:45" });
+  assert.equal(result.response.status, 200, JSON.stringify(result.data));
+  assert.equal(f.value().digest_send_time, "19:45");
+  assert.equal(f.value().digest_last_sent_date, "2026-11-23");
+  assert.equal(f.value().digest_last_sent_at, delivered);
+  assert.equal(f.value().future_delivery_field, "preserved");
+  assert.equal(f.fetchState.emails.length, 0);
+});
+
+test("manual email settings retries prepare one send and respect a concurrent opt-out", async (t) => {
+  const f = settingsRaceFixture(t, { rss: `<rss><channel><item><title>Global markets and investment outlook as central banks update interest rate policy</title><link>https://www.bbc.com/news/business-markets-outlook</link><pubDate>${new Date().toUTCString()}</pubDate><description>Investors assess the global economic outlook and new monetary policy decisions.</description></item></channel></rss>` });
+  f.beforeWrite(async () => {
+    assert.equal((await f.post("topics/pin", { id: "race-one", pinned: true })).response.status, 200);
+  });
+  const sent = await f.post("email-test", {});
+  assert.equal(sent.response.status, 200, JSON.stringify(sent.data));
+  assert.equal(sent.data.sent, true, JSON.stringify(sent.data));
+  assert.equal(f.fetchState.emails.length, 1, "the storage retry must not retry the email provider");
+  assert.ok(f.value().pinned.includes("race-one"));
+  f.beforeWrite(async () => {
+    assert.equal((await f.post("settings", { digest_email_enabled: false })).response.status, 200);
+  });
+  const canceled = await f.post("email-send", {});
+  assert.equal(canceled.response.status, 400, JSON.stringify(canceled.data));
+  assert.equal(f.value().digest_email_enabled, false);
+  assert.equal(f.fetchState.emails.length, 1, "a preference-only send cannot restore the canceled subscription");
+});
+
+test("unreadable settings and exhausted CAS conflicts never overwrite or send", async (t) => {
+  const f = settingsRaceFixture(t);
+  const originalGet = f.bucket.get.bind(f.bucket);
+  for (const mode of ["read-failure", "missing-etag", "invalid-json", "invalid-object"]) {
+    const before = f.bucket.rows.get(f.key).value;
+    f.bucket.get = async (key) => {
+      if (key !== f.key) return originalGet(key);
+      if (mode === "read-failure") throw new Error("temporary read failure");
+      const object = await originalGet(key);
+      if (mode === "missing-etag") return { ...object, etag: "" };
+      return { ...object, async text() { return mode === "invalid-json" ? "{" : "[]"; } };
+    };
+    const result = await f.post("settings", { digest_email_enabled: false });
+    assert.equal(result.response.status, 503, `${mode}: ${JSON.stringify(result.data)}`);
+    assert.equal(f.bucket.rows.get(f.key).value, before);
+  }
+  f.bucket.get = originalGet;
+  const put = f.bucket.put.bind(f.bucket);
+  let conflicts = 0;
+  f.bucket.put = async (key, value, options) => {
+    if (key === f.key) { conflicts++; return null; }
+    return put(key, value, options);
+  };
+  const result = await f.post("email-test", {});
+  assert.equal(result.response.status, 409, JSON.stringify(result.data));
+  assert.equal(conflicts, 6);
+  assert.equal(f.writes.length, 0);
+  assert.equal(f.fetchState.emails.length, 0);
+});
+
 test("anonymous and free users receive fixed general Newsfeed access without paid generation", async (t) => {
   const fetchState = installFetchMock(t);
   const bucket = new MemoryR2();
