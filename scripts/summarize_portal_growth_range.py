@@ -17,7 +17,7 @@ from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any, Callable, Iterable
 from urllib.parse import urlsplit
 
 from build_portal_suite_site import (
@@ -130,6 +130,11 @@ INTENTIONAL_CHAT_ACTIONS = {
     "entry_click", "composer_start", "prompt_selected", "submit", "success",
     "popular_click", "popular_success", "export_docx_started", "export_pdf_started",
     "limit_request_submit", "limit_request_success",
+}
+INTENTIONAL_NEWSFEED_ACTIONS = {
+    "category_select", "topic_suggestion_select", "topic_open", "topic_pin", "article_open",
+    "topic_create", "topic_request", "email_subscription", "preferences_save", "email_test",
+    "email_send", "briefing_toggle",
 }
 AI_HOST_RE = re.compile(r"(?:^|\.)(?:chatgpt|perplexity|claude|gemini|copilot)\.", re.IGNORECASE)
 SEARCH_HOST_RE = re.compile(
@@ -447,6 +452,8 @@ class Session:
             if event_type == "reward_claim" and action in {"daily", "points"} and success:
                 return True
             if event_type == "report_chat_interaction" and action in INTENTIONAL_CHAT_ACTIONS:
+                return True
+            if event_type == "newsfeed_interaction" and action in INTENTIONAL_NEWSFEED_ACTIONS:
                 return True
             if event_type == "journey_interaction" and action in JOURNEY_INTENTIONAL_ACTIONS.get(clean_text(event.get("placement"), 80).lower(), set()):
                 return True
@@ -976,6 +983,10 @@ def download_error_category(event: dict[str, Any]) -> str:
         return "server_error"
     if status == "exception":
         return "client_exception"
+    if status == "network":
+        return "network_failure"
+    if status == "body":
+        return "body_read_failure"
     return "other" if status else "unspecified"
 
 
@@ -1878,14 +1889,20 @@ def r2_client() -> Any:
         aws_access_key_id=access_key,
         aws_secret_access_key=secret_key,
         region_name="auto",
-        config=Config(signature_version="s3v4", retries={"max_attempts": 8, "mode": "adaptive"}),
+        config=Config(signature_version="s3v4", max_pool_connections=32,
+                      connect_timeout=10, read_timeout=45,
+                      retries={"total_max_attempts": 4, "mode": "standard"}),
     )
 
 
 def list_keys(client: Any, bucket: str, prefix: str) -> list[str]:
     keys: list[str] = []
     continuation = ""
+    seen: set[str] = set()
     while True:
+        if continuation in seen or len(seen) >= 10000:
+            raise RuntimeError("R2 listing did not advance within its page bound")
+        seen.add(continuation)
         kwargs: dict[str, Any] = {"Bucket": bucket, "Prefix": prefix, "MaxKeys": 1000}
         if continuation:
             kwargs["ContinuationToken"] = continuation
@@ -1902,33 +1919,56 @@ def read_event(client: Any, bucket: str, keys: list[str]) -> dict[str, Any] | No
     for key in keys:
         try:
             response = client.get_object(Bucket=bucket, Key=key)
-            payload = json.loads(response["Body"].read().decode("utf-8"))
-            if isinstance(payload, dict):
+            body = response["Body"]
+            try:
+                raw = body.read(512 * 1024 + 1)
+                if len(raw) > 512 * 1024:
+                    continue
+                payload = json.loads(raw.decode("utf-8"))
+            finally:
+                body.close()
+            if isinstance(payload, dict) and clean_text(payload.get("type"), 80):
                 return payload
         except Exception:  # Try the mirrored copy before omitting a damaged event.
             continue
     return None
 
 
-def load_r2_range_events(start: date, end: date) -> tuple[list[dict[str, Any]], list[str]]:
+def load_r2_range_events(start: date, end: date, *, progress: Callable[[dict[str, Any]], None] | None = None) -> tuple[list[dict[str, Any]], list[str]]:
     client = r2_client()
     bucket = clean_text(os.environ.get("R2_BUCKET"), 240)
     if not bucket:
         raise RuntimeError("Missing R2_BUCKET")
-    candidates: dict[str, list[str]] = {}
-    for day in date_range(start, end):
-        day_text = day.isoformat()
-        for root in (PRIMARY_PREFIX, BACKUP_PREFIX):
-            prefix = f"{root}/{day_text}/"
-            for key in list_keys(client, bucket, prefix):
-                suffix = key[len(prefix):]
-                if suffix:
-                    candidates.setdefault(f"{day_text}/{suffix}", []).append(key)
-    if not candidates:
-        raise RuntimeError(f"No analytics events found from {start.isoformat()} through {end.isoformat()}")
+    loaded: list[dict[str, Any]] = []
+    # Keep only one day's object-key index and one bounded future batch in
+    # memory. The decoded events are read once and shared by both reports.
     with ThreadPoolExecutor(max_workers=24) as pool:
-        rows = list(pool.map(lambda keys: read_event(client, bucket, keys), candidates.values()))
-    loaded = [row for row in rows if row is not None]
+        for day in date_range(start, end):
+            day_text = day.isoformat()
+            candidates: dict[str, list[str]] = {}
+            try:
+                for root in (PRIMARY_PREFIX, BACKUP_PREFIX):
+                    prefix = f"{root}/{day_text}/"
+                    for key in list_keys(client, bucket, prefix):
+                        suffix = key[len(prefix):]
+                        if suffix:
+                            candidates.setdefault(suffix, []).append(key)
+            except Exception:
+                raise RuntimeError(f"Analytics listing failed for {day_text}; no complete report generated") from None
+            if progress:
+                progress({"date": day_text, "phase": "listed", "objects": len(candidates)})
+            keys = list(candidates.values())
+            read_count = 0
+            for offset in range(0, len(keys), 1000):
+                batch = list(pool.map(lambda mirrors: read_event(client, bucket, mirrors), keys[offset:offset + 1000]))
+                if any(row is None for row in batch):
+                    raise RuntimeError(f"Analytics object read failed for {day_text}; no complete report generated")
+                loaded.extend(batch)
+                read_count += len(batch)
+                if progress:
+                    progress({"date": day_text, "phase": "reading", "read": read_count, "objects": len(keys)})
+            if progress:
+                progress({"date": day_text, "phase": "complete", "read": read_count, "total_read": len(loaded)})
     if not loaded:
         raise RuntimeError(f"No readable analytics events found from {start.isoformat()} through {end.isoformat()}")
     covered = sorted({
@@ -1937,6 +1977,63 @@ def load_r2_range_events(start: date, end: date) -> tuple[list[dict[str, Any]], 
         if (day := event_date(row)) and start <= day <= end
     })
     return loaded, covered
+
+
+AGGREGATE_PRIVATE_KEYS = {"visitor_id", "session_id", "ip_hash", "email", "query", "referrer", "user_agent", "users"}
+
+
+def validate_aggregate_review(value: Any) -> None:
+    if not isinstance(value, dict) or not isinstance(value.get("privacy"), dict) or not value["privacy"] or any(value["privacy"].values()):
+        raise ValueError("Aggregate privacy assertion missing")
+
+    def check(node: Any) -> None:
+        if isinstance(node, dict):
+            if AGGREGATE_PRIVATE_KEYS.intersection(node):
+                raise ValueError("Private fields are not allowed in aggregate reports")
+            for child in node.values():
+                check(child)
+        elif isinstance(node, list):
+            for child in node:
+                check(child)
+    check(value)
+
+
+def read_previous_aggregate_reviews(*, limit: int = 4, exclude_window: tuple[str, str] | None = None) -> dict[str, Any]:
+    """Read at most four aggregate objects; never touch raw event prefixes."""
+    if not 1 <= limit <= 4:
+        raise ValueError("Archive context limit must be between 1 and 4")
+    client, bucket = r2_client(), clean_text(os.environ.get("R2_BUCKET"), 240)
+    if not bucket:
+        raise RuntimeError("Missing R2_BUCKET")
+    prefix = "_analytics/reviews/weekly/"
+    pattern = re.compile(re.escape(prefix) + r"(\d{4}-\d{2}-\d{2})_(\d{4}-\d{2}-\d{2})/growth-review\.json$")
+    candidates = []
+    for key in list_keys(client, bucket, prefix):
+        match = pattern.fullmatch(key)
+        if match and parse_date(match[1]) and parse_date(match[2]) and (match[1], match[2]) != exclude_window:
+            candidates.append((match[2], match[1], key))
+    reviews = []
+    for _, _, key in sorted(candidates, reverse=True)[:limit]:
+        response = client.get_object(Bucket=bucket, Key=key)
+        stream = response["Body"]
+        try:
+            body = stream.read(8 * 1024 * 1024 + 1)
+        finally:
+            stream.close()
+        if len(body) > 8 * 1024 * 1024:
+            raise ValueError("Aggregate archive exceeds the supported size")
+        report = json.loads(body.decode("utf-8"))
+        if report.get("schema") != "portal-growth-review-v1":
+            raise ValueError("Unsupported aggregate archive")
+        validate_aggregate_review(report)
+        reviews.append(report)
+    return {"schema": "portal-growth-archive-context-v1", "complete": True,
+            "generated_at": datetime.now(BJT).isoformat(timespec="seconds"), "review_count": len(reviews),
+            "reviews": reviews, "privacy": {"raw_events_included": False, "account_identifiers_included": False}}
+
+
+def archive_context_markdown(context: dict[str, Any]) -> str:
+    return "# 既有增长汇总存档\n\n" + "\n\n".join(markdown_summary(report) for report in context["reviews"])
 
 
 def parse_args() -> argparse.Namespace:
@@ -1950,11 +2047,27 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--min-count", type=int, default=2)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--markdown-output", type=Path)
+    parser.add_argument("--users-snapshot", type=Path)
+    parser.add_argument("--cohort-output", type=Path)
+    parser.add_argument("--cohort-markdown-output", type=Path)
+    parser.add_argument("--archive-context-output", type=Path)
+    parser.add_argument("--archive-context-limit", type=int, default=4)
+    parser.add_argument("--archive-context-only", action="store_true")
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
+    if args.archive_context_only:
+        context = read_previous_aggregate_reviews(limit=args.archive_context_limit)
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(json.dumps(context, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        if args.markdown_output:
+            args.markdown_output.write_text(archive_context_markdown(context), encoding="utf-8")
+        print(f"Aggregate archive context loaded: {context['review_count']} reviews.")
+        return 0
+    if bool(args.users_snapshot) != bool(args.cohort_output):
+        raise SystemExit("--users-snapshot and --cohort-output must be provided together")
     actions = load_action_ledger(args.actions)
     try:
         start, end = resolve_review_window(
@@ -1969,7 +2082,14 @@ def main() -> int:
         raise SystemExit("date range must contain 1-63 days")
     if not 1 <= args.min_count <= 100:
         raise SystemExit("--min-count must be between 1 and 100")
-    events, covered = load_r2_range_events(start, end)
+    if args.users_snapshot:
+        from summarize_portal_member_cohort import snapshot_accounts
+        snapshot_accounts(json.loads(args.users_snapshot.read_text(encoding="utf-8")))
+    if args.archive_context_output:
+        context = read_previous_aggregate_reviews(limit=args.archive_context_limit, exclude_window=(start.isoformat(), end.isoformat()))
+        args.archive_context_output.parent.mkdir(parents=True, exist_ok=True)
+        args.archive_context_output.write_text(json.dumps(context, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    events, covered = load_r2_range_events(start, end, progress=lambda row: print("analytics-read: " + json.dumps(row), flush=True))
     review = build_growth_review(
         events,
         start.isoformat(),
@@ -1985,6 +2105,12 @@ def main() -> int:
     review["data_quality"]["r2_dates_without_events"] = [
         day for day in review["data_quality"]["expected_dates"] if day not in set(covered)
     ]
+    review["data_quality"]["storage_read_complete"] = True
+    validate_aggregate_review(review)
+    if args.users_snapshot:
+        from summarize_portal_member_cohort import write_outputs
+        write_outputs(events, args.users_snapshot, args.catalog, start.isoformat(), end.isoformat(),
+                      args.cohort_output, args.cohort_markdown_output, site_host=args.site_host, min_count=args.min_count)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(review, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if args.markdown_output:
@@ -1995,4 +2121,9 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        raise SystemExit(main())
+    except Exception:
+        # SDK exceptions can include private object keys, request URLs or
+        # credentials. Progress already identifies the last completed day.
+        raise SystemExit("Growth analysis failed; no complete report was published.") from None

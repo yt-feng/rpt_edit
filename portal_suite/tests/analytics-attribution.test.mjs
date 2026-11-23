@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHmac } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
@@ -58,7 +59,7 @@ test("analytics client ships session and campaign context on every static page",
     "navigation_type", "device_type", "bot_hint",
   ]) assert.match(analytics, new RegExp(field, "u"), `${field} must be collected`);
 
-  const pages = ["index", "report", "doc", "delivery", "newsfeed", "activity", "privacy", "refund", "terms", "courses", "charts"];
+  const pages = ["index", "report", "doc", "delivery", "newsfeed", "activity", "privacy", "refund", "terms", "courses", "charts", "developer-api"];
   for (const page of pages) {
     const html = await readFile(path.join(root, `portal_suite/site_src/${page}.html`), "utf8");
     assert.match(html, /assets\/analytics\.js/u, `${page}.html must load the shared analytics client`);
@@ -76,7 +77,7 @@ test("pages with app-managed page views opt out of the shared automatic page vie
     );
   }
 
-  const autoPages = ["delivery", "activity", "privacy", "refund", "terms", "courses", "charts"];
+  const autoPages = ["delivery", "activity", "privacy", "refund", "terms", "courses", "charts", "developer-api"];
   for (const page of autoPages) {
     const html = await readFile(path.join(root, `portal_suite/site_src/${page}.html`), "utf8");
     assert.doesNotMatch(
@@ -319,13 +320,184 @@ test("daily acquisition groups the true landing session with source priority and
   assert.equal(summary.acquisition_landings.length, 3);
   assert.deepEqual(
     new Set(summary.acquisition_landings.map((row) => row.source)),
-    new Set(["newsletter", "direct"]),
+    new Set(["newsletter", "direct_or_unknown"]),
   );
   assert.deepEqual(
     new Set(summary.acquisition_landings.filter((row) => row.source === "newsletter").map((row) => row.utm_content)),
     new Set(["creative-a", "creative-b"]),
   );
   assert.equal(summary.acquisition_landings.some((row) => row.report_id === "report-b"), false);
+});
+
+test("developer documentation emits exactly one automatic landing page view", async () => {
+  const html = await readFile(path.join(root, "portal_suite/site_src/developer-api.html"), "utf8");
+  const client = analyticsBrowser();
+  client.window.document.body.dataset.page = html.match(/data-page="([^"]+)"/u)[1];
+  const manual = html.match(/data-analytics-auto="([^"]+)"/u);
+  if (manual) client.window.document.body.dataset.analyticsAuto = manual[1];
+  client.window.location.pathname = "/developer-api.html";
+  vm.runInNewContext(await readFile(path.join(root, "portal_suite/site_src/assets/analytics.js"), "utf8"), {
+    window: client.window, URL, URLSearchParams, TextEncoder,
+  });
+  await settleAnalytics();
+  assert.equal(await client.window.PortalSuiteAnalytics.track("page_view", { page: "developer-api" }), false);
+  const posts = client.requests.filter(({ init }) => init.method === "POST");
+  assert.equal(posts.length, 1);
+  const event = JSON.parse(posts[0].init.body);
+  assert.equal(event.path, "/developer-api.html");
+  assert.equal(event.data.landing_path, "/developer-api.html");
+  assert.equal(event.data.page, "developer-api");
+});
+
+async function ingestAnalytics(data, type = "page_view") {
+  const rows = new Map();
+  const response = await worker.fetch(new Request("https://worker.test/analytics", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Origin: "https://portal.example.invalid", Referer: "https://portal.example.invalid/report.html?private=secret" },
+    body: JSON.stringify({ type, path: "/report.html", data }),
+  }), {
+    MASTER_KEY: "analytics-fixture", ALLOWED_ORIGIN: "https://portal.example.invalid",
+    REPORT_BUCKET: { async put(key, value) { rows.set(key, JSON.parse(value)); } },
+  });
+  assert.equal(response.status, 204);
+  return [...rows.entries()].find(([key]) => key.startsWith("_analytics/events/"))[1];
+}
+
+test("explicit empty referrer never becomes the browser fetch self-referral", async () => {
+  for (const referrer of ["", null, "javascript:private"]) {
+    const event = await ingestAnalytics({ referrer });
+    assert.equal(event.referrer, "");
+    assert.equal(event.referrer_host, "direct");
+  }
+  const legacy = await ingestAnalytics({});
+  assert.equal(legacy.referrer, "https://portal.example.invalid/report.html", "legacy callers without a referrer field retain the sanitized fallback");
+});
+
+test("daily aggregates label legacy self-referrals as unknown while preserving external and campaign evidence", () => {
+  const hosts = __analyticsTest.analyticsSiteHosts({ ALLOWED_ORIGIN: "https://published.example, https://preview.example" });
+  const accumulator = __analyticsTest.emptyAnalyticsDayAccumulator("2026-11-23", "admin@example.invalid", "_analytics/events", "fixture", ["_analytics/events"], hosts);
+  for (const [index, data] of [
+    { referrer_host: "published.example" },
+    { referrer_host: "www.published.example" },
+    { referrer_host: "preview.example" },
+    { referrer_host: "portal.example.invalid" },
+    { referrer_host: "" },
+    { referrer_host: "published.example.foreign.example" },
+    { referrer_host: "google.com" },
+    { referrer_host: "published.example", utm_source: "newsletter" },
+  ].entries()) {
+    __analyticsTest.addAnalyticsDaySummaryEvent(accumulator, {
+      type: "page_view", path: "/report.html", landing_path: "/report.html", session_id: `session-${index}`, ...data,
+    });
+  }
+  const summary = __analyticsTest.publicAnalyticsDaySummary(accumulator, true);
+  const bySource = Object.fromEntries(summary.acquisition_landings.map((row) => [row.source, row.sessions]));
+  assert.deepEqual(bySource, { direct_or_unknown: 5, "google.com": 1, newsletter: 1, "published.example.foreign.example": 1 });
+  assert.equal(summary.top_referrer_hosts.find((row) => row.label === "direct_or_unknown")?.count, 6);
+});
+
+function cachedSummary(date, scan, generated = scan) {
+  const accumulator = __analyticsTest.emptyAnalyticsDayAccumulator(date, "admin@example.invalid", "_analytics/events", "fixture");
+  return { ...__analyticsTest.publicAnalyticsDaySummary(accumulator, true), scan_started_at: scan, generated_at: generated };
+}
+
+test("current-day cache expires at five minutes from scan start, not completion", () => {
+  const now = Date.parse("2026-11-23T12:00:00+08:00");
+  const fresh = cachedSummary("2026-11-23", "2026-11-23T11:55:01+08:00", "2026-11-23T11:59:59+08:00");
+  assert.equal(__analyticsTest.analyticsDaySummaryCacheFresh(fresh, fresh.date, now), true);
+  for (const overrides of [
+    { scan_started_at: "2026-11-23T11:55:00+08:00" },
+    { scan_started_at: "2026-11-23T11:54:59+08:00" },
+    { scan_started_at: "" }, { scan_started_at: "invalid" },
+    { scan_started_at: "2026-11-23T12:00:01+08:00" },
+    { generated_at: "invalid" }, { generated_at: "2026-11-23T12:00:01+08:00" },
+    { acquisition_schema_version: 3 }, { complete: false },
+  ]) assert.equal(__analyticsTest.analyticsDaySummaryCacheFresh({ ...fresh, ...overrides }, fresh.date, now), false, JSON.stringify(overrides));
+});
+
+test("Beijing midnight requires a new historical scan even when a long job completed after midnight", () => {
+  const now = Date.parse("2026-11-24T00:01:00+08:00");
+  for (const generated of ["2026-11-23T23:59:30+08:00", "2026-11-24T00:00:30+08:00"]) {
+    const partialDay = cachedSummary("2026-11-23", "2026-11-23T23:59:00+08:00", generated);
+    assert.equal(__analyticsTest.analyticsDaySummaryCacheFresh(partialDay, partialDay.date, now), false);
+  }
+  const closedDay = cachedSummary("2026-11-23", "2026-11-24T00:00:00+08:00", "2026-11-24T00:00:30+08:00");
+  assert.equal(__analyticsTest.analyticsDaySummaryCacheFresh(closedDay, closedDay.date, now), true);
+  assert.equal(__analyticsTest.analyticsDaySummaryCacheFresh(closedDay, closedDay.date, now + 30 * 86400000), true);
+  const future = cachedSummary("2026-11-25", "2026-11-24T00:00:00+08:00");
+  assert.equal(__analyticsTest.analyticsDaySummaryCacheFresh(future, future.date, now), false);
+});
+
+test("historical summaries with unreadable events are rebuilt instead of cached indefinitely", () => {
+  const now = Date.parse("2026-11-25T12:00:00+08:00");
+  const summary = cachedSummary("2026-11-23", "2026-11-24T01:00:00+08:00");
+  assert.equal(__analyticsTest.analyticsDaySummaryCacheFresh(summary, summary.date, now), true);
+  for (const skipped of [1, 4, undefined, null, "0"]) {
+    assert.equal(__analyticsTest.analyticsDaySummaryCacheFresh({ ...summary, skipped_count: skipped }, summary.date, now), false);
+  }
+});
+
+test("explicit day-summary refresh bypasses a fresh cache", async () => {
+  const now = Date.now(), date = new Date(now + 8 * 3600000).toISOString().slice(0, 10);
+  const user = { id: "fixture-admin", username: "admin-a", email: "admin-a@users.portal.example.invalid" };
+  const secret = "analytics-refresh-fixture";
+  const body = Buffer.from(JSON.stringify({ kind: "user", sub: user.id, username: user.username, email: user.email, iat: Math.floor(now / 1000), exp: Math.floor(now / 1000) + 3600 })).toString("base64url");
+  const signature = createHmac("sha256", secret).update(`portal:account-token:v1:${body}`).digest("base64url");
+  const rows = new Map([
+    ["_account/users/username/admin-a", user],
+    [`_account/analytics-day-summaries/${date}.json`, cachedSummary(date, new Date(now).toISOString())],
+  ]);
+  let listings = 0;
+  const env = { ACCOUNT_STORE_MODE: "r2", MASTER_KEY: secret, REPORT_BUCKET: {
+    async get(key) { return rows.has(key) ? { text: async () => JSON.stringify(rows.get(key)), json: async () => rows.get(key) } : null; },
+    async put() {},
+    async list() { listings += 1; return { objects: [], delimitedPrefixes: [], truncated: false }; },
+  } };
+  const request = (suffix) => new Request(`https://worker.test/account-admin/analytics-day-summary?date=${date}${suffix}`, { headers: { Authorization: `Bearer ${body}.${signature}` } });
+  const cached = await worker.fetch(request(""), env);
+  assert.equal(cached.status, 200);
+  assert.equal((await cached.json()).cached, true);
+  assert.equal(listings, 0);
+  const refreshed = await worker.fetch(request("&refresh=1"), env);
+  assert.equal(refreshed.status, 404, "the empty live archive must be checked instead of serving the cached count");
+  assert.ok(listings > 0);
+});
+
+test("report loading diagnostics remain events without inflating report opens", () => {
+  const events = ["detail_load_start", "detail_load_fallback", "detail_load_ready", "access_check_error", "", "post_download_related_open"]
+    .map((action) => ({ type: "report_open", action, report_id: "report-a", date: "2026-11-23" }));
+  events.push({ type: "download_success", report_id: "report-a", date: "2026-11-23" });
+  const top = __analyticsTest.analyticsTopReports(events);
+  assert.equal(top[0].opens, 2);
+  assert.equal(top[0].downloads, 1);
+  assert.equal(__analyticsTest.analyticsDailySeries(events)[0].opens, 2);
+  assert.equal(__analyticsTest.analyticsDailySeries(events)[0].events, 7);
+  assert.equal(events.filter(__analyticsTest.analyticsIsReportOpen).length, 2);
+});
+
+test("Newsfeed diagnostics survive storage and export only as bounded values", async () => {
+  const allowed = { category: "Tech", provider: "brevo", latency_bucket: "4_15s", reason: "NEWSFEED_TOPIC_LIMIT", custom_topic_remaining: 0 };
+  const stored = await ingestAnalytics({ ...allowed, query: "private topic" }, "newsfeed_interaction");
+  for (const event of [stored, __analyticsTest.publicAnalyticsEvent(stored)]) {
+    for (const [key, value] of Object.entries(allowed)) assert.equal(event[key], value);
+    assert.doesNotMatch(JSON.stringify(event), /private topic/u);
+  }
+  for (const value of ["PRIVATE@example.invalid", "https://private.example", "NEWSFEED_PRIVATE_FREE_TEXT", "newsfeed_topic_limit", "constructor", "__proto__", "x".repeat(1000), 4, null, {}, ["brevo"]]) {
+    const data = { category: value, provider: value, latency_bucket: value, reason: value, custom_topic_remaining: -1 };
+    const bad = await ingestAnalytics(data, "newsfeed_interaction");
+    for (const event of [bad, __analyticsTest.publicAnalyticsEvent({ type: "newsfeed_interaction", ...data })]) {
+      for (const key of ["category", "provider", "latency_bucket", "reason"]) assert.equal(event[key], "");
+      assert.equal(event.custom_topic_remaining, null);
+    }
+  }
+  assert.equal(__analyticsTest.publicAnalyticsEvent({ type: "newsfeed_interaction", custom_topic_remaining: 1e12 }).custom_topic_remaining, 1e6);
+  assert.equal(__analyticsTest.publicAnalyticsEvent({ type: "page_view", ...allowed }).reason, undefined);
+});
+
+test("Activity filters expose the already collected journey and subscription events", async () => {
+  const html = await readFile(path.join(root, "portal_suite/site_src/activity.html"), "utf8");
+  const options = new Set([...html.matchAll(/<option value="([^"]+)"/gu)].map((match) => match[1]));
+  for (const type of ["membership_request", "report_request", "newsfeed_interaction", "newsfeed_topic_request", "journey_interaction", "form_confirmation", "report_text_view", "reward_checkin", "reward_claim"]) assert.ok(options.has(type), type);
 });
 
 test("stored analytics labels are sanitized at every admin response boundary", () => {

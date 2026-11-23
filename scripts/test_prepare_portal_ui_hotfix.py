@@ -72,6 +72,12 @@ class HotfixTests(unittest.TestCase):
                        'blog/article.html': b'<body>Unchanged original article<script src="/assets/app.js?v=old"></script></body>',
                        'ko/report.html': b'<body>Unchanged locale shell</body>', 'data/i18n/manifest.json': b'{"translation":"retained"}',
                        'robots.txt': b'User-agent: *\nAllow: /\n', 'sitemap-en.xml': b'<urlset>retained sitemap</urlset>'})
+        site_source = Path(__file__).resolve().parents[1] / 'portal_suite/site_src'
+        developer = (site_source / 'developer-api.html').read_bytes()
+        bodies['developer-api.html'] = developer.replace(b'<body data-page="developer-api">', b'<body data-page="developer-api" data-analytics-auto="manual">')
+        activity = (site_source / 'activity.html').read_bytes()
+        self.assertIn(hotfix.ACTIVITY_OPTIONS_AFTER.encode(), activity)
+        bodies['activity.html'] = activity.replace(hotfix.ACTIVITY_OPTIONS_AFTER.encode(), hotfix.ACTIVITY_OPTIONS_BEFORE.encode())
         bodies.update({path: ('{"retained":' + str(index) + '}').encode() for index, path in enumerate(publish.DEFAULT_RUNTIME_PATHS)})
         for name in hotfix.ASSETS:
             (self.locale/name if name == 'english-commentary.js' else self.source/'assets'/name).write_bytes(f'// replacement {name}\n'.encode())
@@ -132,6 +138,13 @@ class HotfixTests(unittest.TestCase):
             self.assertNotIn(path, result['changed_files'])
         root = self.client.objects[self.target_prefix+'report.html']['Body']
         self.assertIn(b'Keep body', root); self.assertNotIn(b'?v=old', root)
+        for relative in ('developer-api.html', 'activity.html'):
+            old_html = before[self.source_prefix + relative]['Body']
+            patched_html = hotfix.root_html_analytics_patch(relative, old_html)
+            self.assertNotEqual(old_html, patched_html)
+            self.assertEqual(self.client.objects[self.target_prefix + relative]['Body'],
+                             hotfix.root_html_versions(patched_html, result['changed_files']))
+            self.assertIn(relative, result['changed_files'])
         app = self.client.objects[self.target_prefix+'assets/app.js']['Body']
         self.assertEqual(self.client.objects[self.target_prefix+'assets/english-commentary.js']['Body'],
                          b'const SESSION = "deployment_auth_session";')
@@ -299,6 +312,86 @@ class HotfixTests(unittest.TestCase):
         expected = raw.replace(b'href="assets/styles.css?v=old"',
             b'href="assets/styles.css?v=' + self.manifest['files']['assets/styles.css']['sha256'][:12].encode() + b'"')
         self.assertEqual(changed, expected)
+
+    def test_developer_analytics_patch_changes_only_the_actual_body_flag_and_is_idempotent(self):
+        raw = b'''<!doctype html><html><head><title>Published SEO title</title>
+<link rel="canonical" href="https://public.example/developer-api.html"><meta name="robots" content="index,follow">
+<!-- <body data-page="developer-api" data-analytics-auto="manual"> -->
+<script>const sample='<body data-page="developer-api" data-analytics-auto="manual">';</script></head>
+<body class='published' data-page='developer-api' data-analytics-auto='manual' data-extra="keep">
+<h1>Published heading</h1><p>Keep published prose &amp; spacing.</p></body></html>'''
+        expected = raw.replace(b" data-analytics-auto='manual'", b'')
+        changed = hotfix.root_html_analytics_patch('developer-api.html', raw)
+        self.assertEqual(changed, expected)
+        self.assertEqual(hotfix.root_html_analytics_patch('developer-api.html', changed), changed)
+        self.assertEqual(hotfix.root_html_analytics_patch('report.html', raw), raw)
+        self.assertEqual(hotfix.root_html_analytics_patch('ko/developer-api.html', raw), raw)
+
+    def test_activity_patch_changes_only_approved_event_options_and_is_idempotent(self):
+        prefix = '''<!doctype html><html><head><title>Live private activity title</title>
+<link rel="canonical" href="https://public.example/activity.html"><meta name="robots" content="noindex,nofollow">
+<!-- <select id="analyticsHistoryType">Do not touch</select> -->
+<script>const sample='<select id="analyticsHistoryType">Do not touch</select>';</script></head>
+<body data-page="activity"><h1>Live heading</h1><select id="unrelated"><option>keep</option></select>
+<select class="published" id='analyticsHistoryType' aria-label="Keep label">'''
+        suffix = '</select><p>Live counts and body remain unchanged.</p></body></html>'
+        raw = (prefix + hotfix.ACTIVITY_OPTIONS_BEFORE + suffix).encode()
+        expected = (prefix + hotfix.ACTIVITY_OPTIONS_AFTER + suffix).encode()
+        changed = hotfix.root_html_analytics_patch('activity.html', raw)
+        self.assertEqual(changed, expected)
+        self.assertEqual(hotfix.root_html_analytics_patch('activity.html', changed), changed)
+        for event in ('report_text_view', 'membership_request', 'report_request', 'newsfeed_interaction',
+                      'newsfeed_topic_request', 'journey_interaction', 'form_confirmation', 'reward_checkin', 'reward_claim'):
+            self.assertEqual(changed.count(f'<option value="{event}">'.encode()), 1)
+
+    def test_analytics_html_patch_rejects_missing_ambiguous_or_unexpected_markup(self):
+        developer_cases = [
+            '<div data-page="developer-api"></div>',
+            '<body data-page="report" data-analytics-auto="manual">',
+            '<body data-page="developer-api" data-page="developer-api">',
+            '<body data-page="developer-api" data-analytics-auto="off">',
+            '<body data-page="developer-api" data-analytics-auto="manual" data-analytics-auto="manual">',
+            '<body data-page="developer-api" data-analytics-auto="&#109;anual">',
+            '<body data-page="developer-api"></body><body data-page="developer-api">',
+            '<body data-page="developer-api" />',
+        ]
+        for raw in developer_cases:
+            with self.subTest(page='developer-api.html', html=raw), self.assertRaises(RuntimeError):
+                hotfix.root_html_analytics_patch('developer-api.html', raw.encode())
+        original = '<body data-page="activity"><select id="analyticsHistoryType">' + hotfix.ACTIVITY_OPTIONS_BEFORE + '</select></body>'
+        activity_cases = [
+            original.replace('id="analyticsHistoryType"', 'id="other"'),
+            original.replace('id="analyticsHistoryType"', 'id="analyticsHistoryType" id="analyticsHistoryType"'),
+            original.replace('</select>', ''),
+            original.replace('</select>', '</select><select id="analyticsHistoryType"></select>'),
+            original.replace('打开报告', 'Unreviewed changed label'),
+            original.replace('<option value="search">搜索</option>', '<option value="custom">Custom event</option>'),
+            original.replace('</select>', '<select></select></select>'),
+        ]
+        for raw in activity_cases:
+            with self.subTest(page='activity.html', html=raw[:100]), self.assertRaises(RuntimeError):
+                hotfix.root_html_analytics_patch('activity.html', raw.encode())
+
+    def test_unexpected_live_analytics_options_fail_before_any_target_write(self):
+        relative = 'activity.html'; key = self.source_prefix + relative
+        raw = self.client.objects[key]['Body'].replace('打开报告'.encode(), b'Unknown live option')
+        row = hotfix.descriptor_with_body(self.manifest['files'][relative], raw)
+        self.manifest['files'][relative] = row
+        self.manifest['tree_sha256'] = static_tree_sha256(self.manifest['files'])
+        self.manifest['total_bytes'] = sum(item['size'] for item in self.manifest['files'].values())
+        self.active['tree_sha256'] = self.manifest['tree_sha256']
+        self.client.put_object(Bucket=self.bucket, Key=key, Body=raw, **publish.upload_extra_args(row))
+        publish.put_json(self.client, self.bucket, publish.manifest_key('a'), self.manifest)
+        self.client.trace.clear()
+        with self.assertRaisesRegex(RuntimeError, 'Unexpected analytics event options'):
+            self.run_prepare()
+        self.assertEqual(self.client.trace, [])
+
+    def test_missing_live_analytics_page_fails_before_any_target_write(self):
+        self.manifest['files'].pop('developer-api.html')
+        with self.assertRaisesRegex(RuntimeError, 'Required analytics root HTML is missing'):
+            hotfix.build_patch(self.client, self.bucket, self.active, self.manifest, self.source, self.locale, None)
+        self.assertEqual(self.client.trace, [])
 
 
 if __name__ == '__main__': unittest.main()
