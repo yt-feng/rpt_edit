@@ -357,10 +357,11 @@ const ANALYTICS_DAY_SUMMARY_BATCH_SIZE = 200;
 const ANALYTICS_DAY_SUMMARY_TOP_LIMIT = 20;
 const ANALYTICS_ACQUISITION_SESSION_LIMIT = 50_000;
 const ANALYTICS_ACQUISITION_LANDING_LIMIT = 5_000;
-const ANALYTICS_ACQUISITION_SCHEMA_VERSION = 3;
+const ANALYTICS_ACQUISITION_SCHEMA_VERSION = 4;
 const ANALYTICS_DAY_SUMMARY_JOB_PREFIX = "_account/analytics-summary-jobs";
 const ANALYTICS_DAY_SUMMARY_PREFIX = "_account/analytics-day-summaries";
 const ANALYTICS_DAY_SUMMARY_JOB_TTL_MS = 2 * 60 * 60 * 1000;
+const ANALYTICS_CURRENT_DAY_SUMMARY_TTL_MS = 5 * 60 * 1000;
 const ANALYTICS_EVENT_MAX_BODY_BYTES = 24 * 1024;
 const ANALYTICS_EVENT_MAX_BATCH_SIZE = 20;
 const ANALYTICS_EVENT_WRITE_CONCURRENCY = 4;
@@ -8345,6 +8346,25 @@ function analyticsOptionalCount(value) {
   return Number.isFinite(number) && number >= 0 ? Math.min(1000000, Math.floor(number)) : null;
 }
 
+function analyticsNewsfeedDiagnostics(type, data) {
+  if (!["newsfeed_interaction", "newsfeed_topic_request"].includes(type)) return {};
+  const choice = (key, values) => typeof data[key] === "string" && values.includes(data[key]) ? data[key] : "";
+  return {
+    category: choice("category", ["Investment", "Tech", "Politics", "Industries"]),
+    provider: choice("provider", ["brevo", "cloudflare", "none"]),
+    latency_bucket: choice("latency_bucket", ["lt_1s", "1_4s", "4_15s", "gte_15s"]),
+    reason: choice("reason", [
+      "request_failed", "NEWSFEED_ACCESS", "NEWSFEED_LOGIN_REQUIRED", "NEWSFEED_MEMBERSHIP_REQUIRED",
+      "NEWSFEED_SERVICE", "NEWSFEED_TOPIC_BUSY", "NEWSFEED_TOPIC_BODY", "NEWSFEED_TOPIC_REQUIRED",
+      "NEWSFEED_TOPIC_LIMIT", "NEWSFEED_TOPIC_SERVICE", "NEWSFEED_TOPIC_NOT_FOUND", "NEWSFEED_SETTINGS_SERVICE",
+      "NEWSFEED_EMAIL_SERVICE", "NEWSFEED_REQUEST_ORIGIN", "NEWSFEED_REQUEST_BODY", "NEWSFEED_REQUEST_ACCESS",
+      "NEWSFEED_REQUEST_NOT_ELIGIBLE", "NEWSFEED_REQUEST_NOT_AT_LIMIT", "NEWSFEED_REQUEST_EMAIL",
+      "NEWSFEED_REQUEST_RATE", "NEWSFEED_REQUEST_SERVICE", "NEWSFEED_ARTICLE_SERVICE", "NEWSFEED_BRIEFING_SERVICE",
+    ]),
+    custom_topic_remaining: analyticsOptionalCount(data.custom_topic_remaining),
+  };
+}
+
 function membershipAnalyticsPayload(payload) {
   const data = payload && typeof payload.data === "object" && payload.data ? payload.data : {};
   if (String(payload.type || data.type || "").trim().toLowerCase() !== "membership_request") return payload;
@@ -8385,7 +8405,11 @@ function analyticsEventFromPayload(request, payload, user, ipHash) {
   const type = cleanAnalyticsText(payload.type || data.type || "event", 60).toLowerCase() || "event";
   const isReportChatEvent = type === "report_chat" || type === "report_chat_interaction";
   const isNewsfeedEvent = type === "newsfeed_interaction" || type === "newsfeed_topic_request";
-  const referrer = sanitizeAnalyticsReferrer(data.referrer || request.headers.get("Referer"));
+  // An explicitly empty browser referrer is meaningful. Fetch's Referer is
+  // our own page and cannot reconstruct the visitor's acquisition source.
+  const referrer = sanitizeAnalyticsReferrer(
+    Object.prototype.hasOwnProperty.call(data, "referrer") ? data.referrer : request.headers.get("Referer"),
+  );
   const userAgent = cleanAnalyticsText(request.headers.get("User-Agent"), 240);
   const botFields = analyticsBotFields(request, data);
   return {
@@ -8441,6 +8465,7 @@ function analyticsEventFromPayload(request, payload, user, ipHash) {
     access_state: cleanAnalyticsText(data.access_state, 80),
     view: cleanAnalyticsText(data.view, 80),
     outcome: cleanAnalyticsText(data.outcome, 80),
+    ...analyticsNewsfeedDiagnostics(type, data),
     topic_kind: cleanAnalyticsText(data.topic_kind, 80),
     topic_hash: cleanAnalyticsText(data.topic_hash, 128),
     item_count: cleanAnalyticsNumber(data.item_count),
@@ -9002,6 +9027,7 @@ function publicAnalyticsEvent(event) {
     access_state: publicBrandText(event.access_state),
     view: publicBrandText(event.view),
     outcome: publicBrandText(event.outcome),
+    ...analyticsNewsfeedDiagnostics(eventType, event),
     topic_kind: publicBrandText(event.topic_kind),
     topic_hash: event.topic_hash || "",
     item_count: event.item_count || 0,
@@ -9074,11 +9100,28 @@ function analyticsAcquisitionSessionKey(event) {
   return visitor ? `visitor:${visitor}:${landing}` : "";
 }
 
-function analyticsAcquisitionSource(event) {
-  return cleanAnalyticsText(
-    event && (event.utm_source || event.referrer_host || analyticsReferrerHost(event.referrer)),
-    120,
-  ) || "direct / unknown";
+function analyticsSiteHosts(env = {}) {
+  const hosts = new Set();
+  for (const origin of ["https://portal.example.invalid", ...String(env.ALLOWED_ORIGIN || "").split(",")]) {
+    try {
+      const host = new URL(origin.trim()).hostname.toLowerCase().replace(/^www\./, "");
+      hosts.add(host);
+      hosts.add(`www.${host}`);
+    } catch (_error) { /* Ignore an unconfigured origin. */ }
+  }
+  return [...hosts];
+}
+
+function analyticsReferrerSource(event, siteHosts = analyticsSiteHosts()) {
+  const host = cleanAnalyticsText(event && (event.referrer_host || analyticsReferrerHost(event.referrer)), 160).toLowerCase();
+  // Legacy self-referrals do not prove a direct visit; the external origin is
+  // simply unavailable. Keep raw events intact and label only the aggregate.
+  return !host || ["direct", "invalid", "unknown"].includes(host) || siteHosts.includes(host)
+    ? "direct_or_unknown" : host;
+}
+
+function analyticsAcquisitionSource(event, siteHosts) {
+  return cleanAnalyticsText(event && event.utm_source, 120) || analyticsReferrerSource(event, siteHosts);
 }
 
 function addAnalyticsAcquisitionLanding(accumulator, event) {
@@ -9101,7 +9144,7 @@ function addAnalyticsAcquisitionLanding(accumulator, event) {
   accumulator.acquisition_session_keys[sessionKey] = true;
   accumulator.acquisition_session_count += 1;
   const row = {
-    source: analyticsAcquisitionSource(event),
+    source: analyticsAcquisitionSource(event, accumulator.site_hosts),
     landing_path: landingPath,
     page: cleanAnalyticsText(event.page, 80),
     report_id: cleanAnalyticsText(event.report_id, 120),
@@ -9156,7 +9199,7 @@ function analyticsAcquisitionTop(map, limit = 50) {
     .slice(0, limit);
 }
 
-function emptyAnalyticsDayAccumulator(date, owner, root, jobId, roots = [root]) {
+function emptyAnalyticsDayAccumulator(date, owner, root, jobId, roots = [root], siteHosts = analyticsSiteHosts()) {
   const now = new Date().toISOString();
   return {
     version: ANALYTICS_ACQUISITION_SCHEMA_VERSION,
@@ -9165,6 +9208,7 @@ function emptyAnalyticsDayAccumulator(date, owner, root, jobId, roots = [root]) 
     date,
     root,
     roots,
+    site_hosts: siteHosts,
     root_index: 0,
     native_cursor: "",
     created_at: now,
@@ -9240,7 +9284,7 @@ function addAnalyticsDaySummaryEvent(accumulator, event) {
   if (session) accumulator.session_keys[session] = true;
   analyticsSummaryIncrement(accumulator.event_types, event.type || "event", 200);
   analyticsSummaryIncrement(accumulator.paths, analyticsSummaryPath(event.path), 5000);
-  analyticsSummaryIncrement(accumulator.referrers, event.referrer_host || analyticsReferrerHost(event.referrer), 2000);
+  analyticsSummaryIncrement(accumulator.referrers, analyticsReferrerSource(event, accumulator.site_hosts), 2000);
   analyticsSummaryIncrement(accumulator.countries, event.country || "unknown", 300);
   analyticsSummaryIncrement(accumulator.devices, event.device_type || analyticsDeviceType(event.user_agent), 20);
   const botFields = event.bot_hint
@@ -9294,6 +9338,7 @@ function publicAnalyticsDaySummary(accumulator, complete = false) {
     acquisition_landings: analyticsAcquisitionTop(accumulator.acquisition_landings),
     acquisition_schema_version: ANALYTICS_ACQUISITION_SCHEMA_VERSION,
     acquisition_truncated: Boolean(accumulator.acquisition_truncated),
+    scan_started_at: accumulator.created_at,
     generated_at: new Date().toISOString(),
   };
 }
@@ -9338,6 +9383,22 @@ async function advanceAnalyticsDaySummary(env, accumulator) {
   return { accumulator, complete: !listed.truncated };
 }
 
+function analyticsDaySummaryCacheFresh(cached, date, now = Date.now()) {
+  if (!cached || cached.date !== date || cached.complete !== true
+    || cached.skipped_count !== 0
+    || cached.acquisition_schema_version !== ANALYTICS_ACQUISITION_SCHEMA_VERSION
+    || !Array.isArray(cached.acquisition_landings)) return false;
+  const generatedAt = Date.parse(cached.generated_at || "");
+  const scanStartedAt = Date.parse(cached.scan_started_at || "");
+  if (!Number.isFinite(generatedAt) || !Number.isFinite(scanStartedAt)
+    || scanStartedAt > generatedAt || generatedAt > now || date > analyticsBjtDateKey(now)) return false;
+  const closedAt = Date.parse(`${date}T00:00:00+08:00`) + 24 * 60 * 60 * 1000;
+  // A scan started before a day closed may miss its last events even if it
+  // finished after midnight. Rebuild it once before retaining historical data.
+  if (now >= closedAt) return scanStartedAt >= closedAt;
+  return now - scanStartedAt < ANALYTICS_CURRENT_DAY_SUMMARY_TTL_MS;
+}
+
 async function handleAccountAdminAnalyticsDaySummary(request, env) {
   let admin;
   try {
@@ -9359,13 +9420,7 @@ async function handleAccountAdminAnalyticsDaySummary(request, env) {
   try {
     if (!requestedJobId && !forceRefresh) {
       const cached = await safeR2GetJson(env, analyticsDaySummarySnapshotKey(date));
-      if (
-        cached
-        && cached.date === date
-        && cached.complete === true
-        && cached.acquisition_schema_version === ANALYTICS_ACQUISITION_SCHEMA_VERSION
-        && Array.isArray(cached.acquisition_landings)
-      ) {
+      if (analyticsDaySummaryCacheFresh(cached, date)) {
         return jsonResponse(request, env, 200, { ...publicBrandValue(cached), cached: true, job_id: "", has_more: false });
       }
     }
@@ -9388,7 +9443,7 @@ async function handleAccountAdminAnalyticsDaySummary(request, env) {
       const roots = [ANALYTICS_PREFIX, ANALYTICS_BACKUP_PREFIX].filter((root) => availableRoots.has(root));
       const root = roots[0] || ANALYTICS_PREFIX;
       jobId = randomHex(12);
-      accumulator = emptyAnalyticsDayAccumulator(date, owner, root, jobId, roots);
+      accumulator = emptyAnalyticsDayAccumulator(date, owner, root, jobId, roots, analyticsSiteHosts(env));
     }
 
     const advanced = await advanceAnalyticsDaySummary(env, accumulator);
@@ -12033,11 +12088,16 @@ function analyticsTopSearches(events, limit = 20) {
     }));
 }
 
+function analyticsIsReportOpen(event) {
+  return event.type === "report_open"
+    && !["detail_load_start", "detail_load_fallback", "detail_load_ready", "access_check_error"].includes(event.action);
+}
+
 function analyticsTopReports(events, limit = 16) {
   const grouped = new Map();
   for (const event of events || []) {
     const type = String(event.type || "");
-    if (type !== "report_open" && type !== "download_success") continue;
+    if (!analyticsIsReportOpen(event) && type !== "download_success") continue;
     const id = cleanAnalyticsText(event.report_id, 120);
     if (!id) continue;
     const row = grouped.get(id) || {
@@ -12072,7 +12132,7 @@ function analyticsDailySeries(events) {
     const row = grouped.get(date) || { date, events: 0, searches: 0, opens: 0, downloads: 0, visitors: new Set() };
     row.events += 1;
     if (event.type === "search") row.searches += 1;
-    if (event.type === "report_open") row.opens += 1;
+    if (analyticsIsReportOpen(event)) row.opens += 1;
     if (event.type === "download_success") row.downloads += 1;
     const visitor = analyticsEventVisitorKey(event);
     if (visitor) row.visitors.add(visitor);
@@ -12109,7 +12169,7 @@ async function buildAnalyticsDashboard(env) {
     visitor_count: visitorSet.size,
     signed_in_user_count: userSet.size,
     search_count: events.filter((event) => event.type === "search").length,
-    report_open_count: events.filter((event) => event.type === "report_open").length,
+    report_open_count: events.filter(analyticsIsReportOpen).length,
     download_success_count: events.filter((event) => event.type === "download_success").length,
     delivery_link_count: events.filter((event) => event.type === "delivery_link_generate").length,
     top_searches: analyticsTopSearches(events),
@@ -27534,6 +27594,10 @@ export default {
   }),
   __analyticsTest: Object.freeze({
     addAnalyticsDaySummaryEvent,
+    analyticsDaySummaryCacheFresh,
+    analyticsDailySeries,
+    analyticsIsReportOpen,
+    analyticsSiteHosts,
     analyticsTopReports,
     analyticsTopSearches,
     emptyAnalyticsDayAccumulator,

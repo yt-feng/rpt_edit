@@ -3,8 +3,8 @@
 
 The caller must hold portal-production-release throughout preparation and
 cutover. Catalogs, translations, sitemaps and private English content retain
-exactly their currently published bytes. Only seven assets, existing root HTML
-script versions, and projections of the already approved English ledger change.
+exactly their currently published bytes. Only approved assets, root HTML asset
+versions, two exact analytics fixes, and approved English ledger projections change.
 """
 from __future__ import annotations
 
@@ -32,6 +32,40 @@ ASSETS = ADDED_ASSETS | frozenset(('app.js', 'account-services.js', 'newsfeed-ap
 MAX_ASSET_BYTES = 2 * 1024 * 1024
 MAX_HTML_BYTES = 8 * 1024 * 1024
 WORKERS = 8
+ANALYTICS_ROOT_PAGES = frozenset(('developer-api.html', 'activity.html'))
+ACTIVITY_OPTIONS_BEFORE = '''
+            <option value="">全部事件</option>
+            <option value="page_view">页面访问</option>
+            <option value="search">搜索</option>
+            <option value="report_chat">研究问答（服务端）</option>
+            <option value="report_chat_interaction">研究问答（交互）</option>
+            <option value="course_material_request">KC桌面学堂索取</option>
+            <option value="report_open">打开报告</option>
+            <option value="download_attempt">尝试下载</option>
+            <option value="download_success">下载成功</option>
+            <option value="download_error">下载失败</option>
+            <option value="download_pending">等待报告</option>
+            <option value="delivery_link_generate">生成发货链接</option>
+            <option value="account_auth">账号操作</option>
+            <option value="admin_user_update">用户权限操作</option>
+            <option value="daily_file_download">每日文件下载</option>
+          '''
+ACTIVITY_OPTIONS_AFTER = ACTIVITY_OPTIONS_BEFORE.replace(
+    '<option value="report_open">打开报告</option>',
+    '<option value="report_open">打开报告</option>\n'
+    '            <option value="report_text_view">查看报告文本</option>',
+).replace(
+    '<option value="account_auth">账号操作</option>',
+    '<option value="account_auth">账号操作</option>\n'
+    '            <option value="membership_request">会员与权限申请</option>\n'
+    '            <option value="report_request">报告申请</option>\n'
+    '            <option value="newsfeed_interaction">Newsfeed 交互</option>\n'
+    '            <option value="newsfeed_topic_request">Newsfeed 话题申请</option>\n'
+    '            <option value="journey_interaction">阅读与表单交互</option>\n'
+    '            <option value="form_confirmation">表单邮件确认</option>\n'
+    '            <option value="reward_checkin">签到奖励</option>\n'
+    '            <option value="reward_claim">领取奖励</option>',
+)
 
 
 def require(condition: Any, message: str) -> None:
@@ -134,8 +168,67 @@ def root_html_versions(body: bytes, files: dict[str, dict[str, Any]]) -> bytes:
     return source.encode('utf-8')
 
 
+def root_html_analytics_patch(relative: str, body: bytes) -> bytes:
+    """Apply only the two approved analytics edits to verified live HTML bytes."""
+    if relative not in ANALYTICS_ROOT_PAGES:
+        return body
+    source = body.decode('utf-8'); offsets = [0]
+    for line in source.splitlines(keepends=True): offsets.append(offsets[-1] + len(line))
+    bodies = []; selects = []; active_select = None
+    attribute = re.compile(r"\s+([A-Za-z_:][-\w:.]*)(?:\s*=\s*(?:\"([^\"]*)\"|'([^']*)'|([^\s>]+)))?")
+
+    class Targets(HTMLParser):
+        def position(self):
+            line, column = self.getpos()
+            return offsets[line - 1] + column
+
+        def handle_starttag(self, tag, attrs):
+            nonlocal active_select
+            raw = self.get_starttag_text(); start = self.position()
+            if tag == 'body': bodies.append((start, raw, attrs))
+            if tag == 'select' and active_select is not None:
+                raise RuntimeError('Unexpected nested analytics event select')
+            if any(name == 'id' and value == 'analyticsHistoryType' for name, value in attrs):
+                require(tag == 'select' and sum(name == 'id' for name, _ in attrs) == 1,
+                        'Ambiguous analytics event select')
+                active_select = start + len(raw)
+
+        def handle_endtag(self, tag):
+            nonlocal active_select
+            if tag == 'select' and active_select is not None:
+                selects.append((active_select, self.position()))
+                active_select = None
+
+        def handle_startendtag(self, tag, attrs):
+            require(tag not in {'body', 'select'}, 'Unexpected self-closing analytics HTML target')
+
+    parser = Targets(convert_charrefs=False); parser.feed(source); parser.close()
+    expected_page = 'developer-api' if relative == 'developer-api.html' else 'activity'
+    require(len(bodies) == 1, 'Expected one analytics page body')
+    start, raw, attrs = bodies[0]
+    require(sum(name == 'data-page' for name, _ in attrs) == 1 and dict(attrs).get('data-page') == expected_page,
+            'Unexpected analytics page identity')
+    if relative == 'developer-api.html':
+        flags = [value for name, value in attrs if name == 'data-analytics-auto']
+        require(len(flags) <= 1 and (not flags or flags == ['manual']), 'Unexpected analytics automatic pageview flag')
+        if not flags: return body
+        matches = [match for match in attribute.finditer(raw) if match[1].lower() == 'data-analytics-auto']
+        require(len(matches) == 1, 'Ambiguous analytics automatic pageview flag')
+        match = matches[0]
+        require(next((match[index] for index in (2, 3, 4) if match[index] is not None), '') == 'manual',
+                'Unexpected analytics automatic pageview encoding')
+        return (source[:start + match.start()] + source[start + match.end():]).encode('utf-8')
+    require(active_select is None and len(selects) == 1, 'Expected one complete analytics event select')
+    start, end = selects[0]
+    options = source[start:end]
+    require(options in {ACTIVITY_OPTIONS_BEFORE, ACTIVITY_OPTIONS_AFTER}, 'Unexpected analytics event options; live HTML retained')
+    if options == ACTIVITY_OPTIONS_AFTER: return body
+    return (source[:start] + ACTIVITY_OPTIONS_AFTER + source[end:]).encode('utf-8')
+
+
 def build_patch(client: Any, bucket: str, active: dict[str, str], manifest: dict[str, Any], source_root: Path, locale_assets: Path, store: R2Store) -> tuple[dict[str, bytes], dict[str, dict[str, Any]], dict[str, Any] | None]:
     old = manifest['files']; files = {path: dict(row) for path, row in old.items()}; bodies = {}
+    require(ANALYTICS_ROOT_PAGES <= set(old), 'Required analytics root HTML is missing from the active release')
     for name in sorted(ASSETS):
         relative = 'assets/' + name
         require(relative in old or name in ADDED_ASSETS, 'UI hotfix cannot introduce an unapproved asset')
@@ -164,7 +257,7 @@ def build_patch(client: Any, bucket: str, active: dict[str, str], manifest: dict
         if '/' in relative or not relative.endswith('.html'):
             continue
         raw = read_verified_candidate_body(client, bucket, publish.slot_prefix(active['slot']) + relative, old[relative], maximum=MAX_HTML_BYTES)
-        updated = root_html_versions(raw, files)
+        updated = root_html_versions(root_html_analytics_patch(relative, raw), files)
         if updated != raw:
             bodies[relative] = updated; files[relative] = descriptor_with_body(old[relative], updated)
     approved = english.read_active(store, active)

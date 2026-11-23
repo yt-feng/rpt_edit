@@ -304,11 +304,21 @@
     });
   }
 
+  function downloadError(reportId, stage) {
+    if (!["network", "body"].includes(stage)) return false;
+    // Never accept the thrown error, response body, URL or account details.
+    return track("download_error", {
+      report_id: String(reportId || "").slice(0, 120), source: "catalog",
+      action: "account_download", status: stage, error: `${stage}_failed`,
+    });
+  }
+
   root.PortalSuiteAnalytics = {
     track,
     visitorId,
     currentSession,
     loadWorkerBaseUrl,
+    downloadError,
   };
 
   if (typeof root.addEventListener === "function") {

@@ -11463,6 +11463,7 @@
       });
     } catch (error) {
       resetDownloadProgress(progress);
+      window.PortalSuiteAnalytics?.downloadError?.(item.id, "network");
       throw error;
     } finally {
       window.clearInterval(waitingTimer);
@@ -11480,7 +11481,13 @@
       throw new Error(downloadErrorMessage(response.status, data.error || "Download failed.", data));
     }
     statusTarget("文件已就绪，正在下载…");
-    const blob = await responseBlobWithProgress(response, progress);
+    let blob;
+    try { blob = await responseBlobWithProgress(response, progress); }
+    catch (error) {
+      resetDownloadProgress(progress);
+      window.PortalSuiteAnalytics?.downloadError?.(item.id, "body");
+      throw error;
+    }
     triggerBlobDownload(blob, response.headers.get("Content-Disposition"), item.filename);
     showDownloadInvitation(item, workerUrl, "catalog");
     setDownloadMessage(progress, "下载完成，浏览器正在保存文件。", 100);

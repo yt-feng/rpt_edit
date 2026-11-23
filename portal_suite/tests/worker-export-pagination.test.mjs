@@ -102,6 +102,7 @@ function loadAnalyticsExportHandler(options = {}) {
     "readAnalyticsExportObjects",
     "listAnalyticsExportPage",
     "analyticsOptionalCount",
+    "analyticsNewsfeedDiagnostics",
     "publicAnalyticsEvent",
     "handleAccountAdminAnalyticsEventsExport",
   ]) {
