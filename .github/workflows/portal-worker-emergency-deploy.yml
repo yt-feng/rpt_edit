@@ -38,6 +38,7 @@ jobs:
             .github/workflows/course-directory-private-publish.yml
             .github/workflows/market-views-latex-pdf.yml
             workers/portal-suite-worker/src
+            workers/daily-source-wakeup/src
             portal_suite/locale_assets
             portal_suite/site_src
             portal_suite/tests
@@ -91,10 +92,35 @@ jobs:
             scripts/publish_customer_content.py
             scripts/private_workflow_handoff.py
             scripts/test_publish_customer_content.py
+            scripts/deepseek_http.py
+            scripts/deepseek_usage.py
+            scripts/free_editorial_images.py
+            scripts/institution_names.py
+            scripts/market_views_partial_sources.py
+            scripts/portal_translation_shards.py
+            scripts/progressive_wechat_delivery.py
+            scripts/push_portal_translated_to_wechat_drafts.py
+            scripts/push_xhs_notes_to_wechat_drafts.py
+            scripts/recovered_article_delivery.py
+            scripts/report_extraction_source.py
+            scripts/reuse_completed_progressive_sources.py
+            scripts/run_pdf_to_xhs_in_batches.py
+            scripts/sensitive_content_guard.py
+            scripts/test_progressive_wechat_delivery.py
+            scripts/test_reuse_completed_progressive_sources.py
+            scripts/title_source_claim_support.py
+            scripts/verify_existing_wechat_drafts.py
+            scripts/wechat_account_routing.py
+            scripts/wechat_accounts.py
+            scripts/wechat_article_quality.py
+            scripts/wechat_draft_grouping.py
+            scripts/wechat_editorial_binding.py
+            scripts/wechat_image_quality.py
+            scripts/wechat_title_optimizer.py
 
       - name: Validate legacy access compatibility
         run: |
-          python3 -m pip install --disable-pip-version-check "pypdf>=4,<6" "Pillow>=10.1,<12" "zxing-cpp>=2.3,<4"
+          python3 -m pip install --disable-pip-version-check "pypdf>=4,<6" "Pillow>=10.1,<12" "zxing-cpp>=2.3,<4" "requests>=2.31,<3"
           python3 -B scripts/test_reportify_api_grab.py
           python3 -B scripts/test_reportify_local_qr.py
           python3 -B scripts/check_public_identity.py
