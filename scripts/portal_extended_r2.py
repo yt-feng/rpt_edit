@@ -382,6 +382,26 @@ class R2Store:
             raise R2IntegrityError(f"R2 object checksum mismatch: {key}")
         return body
 
+    def _get_candidate_page(self, key: str, *, length: int, checksum: str) -> bytes:
+        """Read an immutable page against its already verified manifest, without HEAD."""
+        if (type(length) is not int or not 0 < length <= MAX_CANDIDATE_PAGE_BYTES
+                or not isinstance(checksum, str) or HEX64.fullmatch(checksum) is None):
+            raise R2IntegrityError("Candidate page descriptor is invalid")
+        try:
+            # The response length and bounded stream are checked before these
+            # bytes can reach disk. The manifest digest is the page authority.
+            body = read_r2_bytes(self.client, self.bucket, key, maximum=length,
+                                 require_content_length=True)
+        except R2StoreError:
+            raise
+        except R2BodyError as error:
+            raise R2IntegrityError(f"Candidate page body {error.category}") from error
+        except Exception as error:
+            raise classify(error, f"get {key}") from error
+        if len(body) != length or sha256_bytes(body) != checksum:
+            raise R2IntegrityError("Candidate restore checksum or length failed")
+        return body
+
     @staticmethod
     def _verify_head(head: dict[str, Any], key: str, expected_length: int, expected_checksum: str) -> None:
         actual_length = int(head.get("ContentLength") or 0)
@@ -553,6 +573,13 @@ class R2Store:
         locale = safe_part(locale, label="locale", pattern=LOCALE)
         generation = safe_part(generation, label="source generation", pattern=HEX64)
         candidate_id = safe_part(candidate_id, label="candidate id", pattern=HEX64)
+        manifest_path = destination / "candidate-manifest.json"
+        if destination.is_symlink() or manifest_path.is_symlink():
+            raise R2IntegrityError("Candidate restore destination must not be a symlink")
+        # Repeated restores may reuse the destination. Withdraw its completion
+        # marker before any remote read so a failure cannot mix old and new files
+        # under a stale complete-candidate manifest.
+        manifest_path.unlink(missing_ok=True)
         ready_key = self.candidate_ready_key(locale, generation, candidate_id)
         ready_body = self._get(ready_key, maximum=512 * 1024)
         try:
@@ -577,14 +604,12 @@ class R2Store:
         if manifest["status"] != "complete-candidate" or manifest["files_sha256"] != candidate_id:
             raise R2IntegrityError("Candidate is not complete or its id changed")
         destination.mkdir(parents=True, exist_ok=True)
-        (destination / "candidate-manifest.json").write_bytes(manifest_body)
         planned = [(safe_relative(str(row["path"])), row) for row in manifest["pages"]]
 
         def read_page(item):
             relative, row = item
-            body = self._get(self.candidate_key(locale, generation, candidate_id, relative), maximum=MAX_CANDIDATE_PAGE_BYTES)
-            if len(body) != row["bytes"] or sha256_bytes(body) != row["sha256"]:
-                raise R2IntegrityError(f"Candidate restore checksum failed: {relative}")
+            body = self._get_candidate_page(self.candidate_key(locale, generation, candidate_id, relative),
+                                            length=row["bytes"], checksum=row["sha256"])
             return relative, body
 
         restored = 0
@@ -597,6 +622,8 @@ class R2Store:
                     target.parent.mkdir(parents=True, exist_ok=True)
                     target.write_bytes(body)
                     restored += 1
+        # A failed page read must never leave a complete-candidate marker.
+        manifest_path.write_bytes(manifest_body)
         return {"ready": True, "locale": locale, "source_generation": generation, "candidate_id": candidate_id,
                 "completed_page_count": restored, "ready_key": ready_key}
 

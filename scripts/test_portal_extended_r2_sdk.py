@@ -82,6 +82,13 @@ class R2SDKTests(unittest.TestCase):
         self.assertEqual(sleep.call_count, 1)
         self.assertEqual(acquire.call_count, 1)
 
+    def test_candidate_page_uses_get_only_and_preserves_native_retry(self):
+        with self.transport([http_response(429), http_response(200, b"abc")]) as (send, sleep, acquire):
+            self.assertEqual(self.store._get_candidate_page("object", length=3, checksum=sha256_bytes(b"abc")), b"abc")
+        self.assertEqual([call.args[0].method for call in send.call_args_list], ["GET", "GET"])
+        self.assertEqual(sleep.call_count, 1)
+        self.assertEqual(acquire.call_count, 1)
+
     def test_post_put_head_throttles_do_not_replay_the_put(self):
         with self.transport([
             http_response(200),

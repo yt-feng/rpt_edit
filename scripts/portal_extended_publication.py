@@ -10,7 +10,10 @@ exact-HTML assembler. No inference or deployment occurs in this module.
 from __future__ import annotations
 
 import json
+from contextlib import contextmanager
 from pathlib import Path
+import sys
+import time
 import xml.etree.ElementTree as ET
 
 from assemble_portal_extended_locales import (
@@ -30,6 +33,49 @@ from portal_extended_ui import UI_VERSION, standard_detail, standard_homepage, u
 from portal_approved_quantity_contract import CONTRACT_ID, PARSER_SHA256, bindings, quantity_issues as approved_quantity_issues
 
 LEDGER = 'data/extended-locales/assembly.json'
+
+
+class CandidateProgress:
+    """Flush bounded stage counters without document, storage or exception data."""
+
+    def __init__(self, candidates_total: int, pages_total: int):
+        self.started = time.monotonic()
+        self.candidates_total = candidates_total
+        self.pages_total = pages_total
+        self.candidates_completed = self.pages_completed = 0
+        self.locale = ''
+        self.candidate_pages = 0
+
+    def emit(self, stage, status, started):
+        now = time.monotonic()
+        print(json.dumps({
+            'event': 'extended_publication_progress', 'stage': stage, 'status': status,
+            'locale': self.locale, 'candidate_pages': self.candidate_pages,
+            'candidates_total': self.candidates_total, 'candidates_completed': self.candidates_completed,
+            'pages_total': self.pages_total, 'pages_completed': self.pages_completed,
+            'stage_seconds': round(max(0, now - started), 3),
+            'elapsed_seconds': round(max(0, now - self.started), 3),
+        }, sort_keys=True), file=sys.stderr, flush=True)
+
+    @contextmanager
+    def stage(self, name):
+        started = time.monotonic()
+        self.emit(name, 'started', started)
+        try:
+            yield
+        except Exception:
+            self.emit(name, 'failed', started)
+            raise
+        else:
+            self.emit(name, 'completed', started)
+
+    @contextmanager
+    def candidate(self, locale, pages):
+        self.locale, self.candidate_pages = locale, pages
+        with self.stage('candidate'):
+            yield
+            self.candidates_completed += 1
+            self.pages_completed += pages
 
 
 class CacheOnly:
@@ -181,69 +227,77 @@ def compose(root: Path, store, batches: list[dict], workspace: Path, *, active_i
     if len(owners) > 20000:
         raise ExpansionError('Extended publication exceeds its page bound')
     pages, sources, candidate_ids, replays = {}, {}, {}, []
+    progress = CandidateProgress(len({(index, locale) for (locale, _url), index in owners.items()}), len(owners))
     for index, (row, corpus) in enumerate(zip(batches, corpora, strict=True)):
         for locale, candidate_id in row['candidates'].items():
             docs = [doc for doc in corpus['documents'] if owners[locale, doc['url']] == index]
             if not docs:
                 continue
-            work = workspace/f'{index}-{locale}'
-            work.mkdir()
-            original_dir = work/'approved'
-            store.restore_candidate(locale, row['generation'], candidate_id, original_dir)
-            approved_manifest, _approved_files = verified_candidate(original_dir, corpus)
-            frozen = (row['generation'], locale, candidate_id) in active_approvals
-            seed = work/'seed.json'
-            restored = (restore_active_checkpoint(store, active_ledger, locale, row['generation'], candidate_id, seed)
-                        if frozen else store.restore_checkpoint(locale, row['generation'], seed))
-            if not restored.get('present'):
-                raise ExpansionError('Approved checkpoint is absent')
-            # Prove the checkpoint reproduces the actual approved HTML, not
-            # merely a new plausible translation with the same model name.
-            proof = prove_approved_baseline(corpus, locale, work, seed, approved_manifest, allow_frozen=frozen)
-            validator = proof['quantity_validator']
-            # Extra or newer latest-cache rows never enter current-source
-            # replay; this seed only contains units proven against approval.
-            approved_seed = proof['checkpoint']
-            current_docs = [current_document(root, doc) for doc in docs]
-            current = make_corpus(current_docs)
-            directory = work/'current'
-            checkpoint = work/'current.json'
-            replay = build(current, locale, directory, checkpoint, CacheOnly(),
-                allow_source_fallback=True, seed_checkpoint=approved_seed, quantity_validator=validator)
-            if replay['status'] != 'complete-candidate' or replay['translation_calls_this_run'] != 0:
-                raise ExpansionError('Current-source replay requires unapproved translation units')
-            generation = current['documents_sha256']
-            store.put_source(current)
-            store.put_checkpoint(locale, generation, checkpoint)
-            saved = store.upload_candidate(directory, locale, generation)
-            if not saved['ready']:
-                raise ExpansionError('Replayed candidate has not been persisted completely')
-            staging = work/'tree'
-            staging.mkdir()
-            (staging/'index.html').write_bytes((root/'index.html').read_bytes())
-            (staging/'robots.txt').write_bytes((root/'robots.txt').read_bytes())
-            for doc in current_docs:
-                relative = file_for_url(doc['url'])
-                for prefix in ('', 'ko', 'ja', 'ar'):
-                    source = root/prefix/relative
-                    if source.is_file() and not source.is_symlink():
-                        target = staging/prefix/relative
-                        target.parent.mkdir(parents=True, exist_ok=True)
-                        target.write_bytes(source.read_bytes())
-                sources[doc['url']] = doc
-            # The existing exact source-HTML SHA and complete-candidate gates
-            # operate on the freshly rendered generation without exceptions.
-            assemble(staging, current, [directory], (locale,), apply=True,
-                     existing_locales=('ko', 'ja', 'ar'), presentation=False)
-            for doc in current_docs:
-                pages[locale, doc['url']] = (staging/locale/file_for_url(doc['url'])).read_bytes()
-            candidate_ids[locale] = candidate_id
-            replays.append({'locale': locale, 'approved_generation': row['generation'],
-                'approved_candidate': candidate_id, 'source_generation': generation,
-                'candidate_id': saved['candidate_id'], 'quantity_contract': proof['quantity_contract'],
-                'quantity_parser_sha256': proof['quantity_parser_sha256'], 'checkpoint_sha256': restored['sha256'],
-                'checkpoint_binding': restored.get('binding', 'incoming-exact-byte-replay'),
-                'pages': len(current_docs), 'translation_calls': 0})
+            with progress.candidate(locale, len(docs)):
+                work = workspace/f'{index}-{locale}'
+                work.mkdir()
+                original_dir = work/'approved'
+                with progress.stage('restore'):
+                    store.restore_candidate(locale, row['generation'], candidate_id, original_dir)
+                    approved_manifest, _approved_files = verified_candidate(original_dir, corpus)
+                frozen = (row['generation'], locale, candidate_id) in active_approvals
+                seed = work/'seed.json'
+                with progress.stage('checkpoint'):
+                    restored = (restore_active_checkpoint(store, active_ledger, locale, row['generation'], candidate_id, seed)
+                                if frozen else store.restore_checkpoint(locale, row['generation'], seed))
+                    if not restored.get('present'):
+                        raise ExpansionError('Approved checkpoint is absent')
+                # Prove the checkpoint reproduces the actual approved HTML, not
+                # merely a new plausible translation with the same model name.
+                with progress.stage('baseline'):
+                    proof = prove_approved_baseline(corpus, locale, work, seed, approved_manifest, allow_frozen=frozen)
+                validator = proof['quantity_validator']
+                # Extra or newer latest-cache rows never enter current-source
+                # replay; this seed only contains units proven against approval.
+                approved_seed = proof['checkpoint']
+                with progress.stage('current_build'):
+                    current_docs = [current_document(root, doc) for doc in docs]
+                    current = make_corpus(current_docs)
+                    directory = work/'current'
+                    checkpoint = work/'current.json'
+                    replay = build(current, locale, directory, checkpoint, CacheOnly(),
+                        allow_source_fallback=True, seed_checkpoint=approved_seed, quantity_validator=validator)
+                    if replay['status'] != 'complete-candidate' or replay['translation_calls_this_run'] != 0:
+                        raise ExpansionError('Current-source replay requires unapproved translation units')
+                generation = current['documents_sha256']
+                with progress.stage('persist'):
+                    store.put_source(current)
+                    store.put_checkpoint(locale, generation, checkpoint)
+                    saved = store.upload_candidate(directory, locale, generation)
+                    if not saved['ready']:
+                        raise ExpansionError('Replayed candidate has not been persisted completely')
+                with progress.stage('assemble'):
+                    staging = work/'tree'
+                    staging.mkdir()
+                    (staging/'index.html').write_bytes((root/'index.html').read_bytes())
+                    (staging/'robots.txt').write_bytes((root/'robots.txt').read_bytes())
+                    for doc in current_docs:
+                        relative = file_for_url(doc['url'])
+                        for prefix in ('', 'ko', 'ja', 'ar'):
+                            source = root/prefix/relative
+                            if source.is_file() and not source.is_symlink():
+                                target = staging/prefix/relative
+                                target.parent.mkdir(parents=True, exist_ok=True)
+                                target.write_bytes(source.read_bytes())
+                        sources[doc['url']] = doc
+                    # The existing exact source-HTML SHA and complete-candidate gates
+                    # operate on the freshly rendered generation without exceptions.
+                    assemble(staging, current, [directory], (locale,), apply=True,
+                             existing_locales=('ko', 'ja', 'ar'), presentation=False)
+                    for doc in current_docs:
+                        pages[locale, doc['url']] = (staging/locale/file_for_url(doc['url'])).read_bytes()
+                candidate_ids[locale] = candidate_id
+                replays.append({'locale': locale, 'approved_generation': row['generation'],
+                    'approved_candidate': candidate_id, 'source_generation': generation,
+                    'candidate_id': saved['candidate_id'], 'quantity_contract': proof['quantity_contract'],
+                    'quantity_parser_sha256': proof['quantity_parser_sha256'], 'checkpoint_sha256': restored['sha256'],
+                    'checkpoint_binding': restored.get('binding', 'incoming-exact-byte-replay'),
+                    'pages': len(current_docs), 'translation_calls': 0})
     asset_hashes = public_asset_hashes(root)
     planned, clusters = {}, {}
     locales = tuple(locale for locale in select_locales('all-supported') if any(k[0] == locale for k in pages))

@@ -1,6 +1,9 @@
 import copy
 import json
+import io
+from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
+import sys
 import tempfile
 import unittest
 import xml.etree.ElementTree as ET
@@ -58,6 +61,60 @@ class PublicationTests(unittest.TestCase):
     def publish(self, batches):
         workspace = Path(tempfile.mkdtemp(dir=self.base))
         return compose(self.root, self.store, batches, workspace)
+
+    def test_candidate_progress_is_flushed_aggregate_only_with_actual_completion_counts(self):
+        batches = [self.candidate('fr'), self.candidate('pt')]
+        with mock.patch('builtins.print') as output:
+            result = self.publish(batches)
+        self.assertTrue(result['ready'])
+        rows = [json.loads(entry.args[0]) for entry in output.call_args_list]
+        self.assertEqual(len(rows), 28)
+        expected_keys = {'event', 'stage', 'status', 'locale', 'candidate_pages',
+                         'candidates_total', 'candidates_completed', 'pages_total', 'pages_completed',
+                         'stage_seconds', 'elapsed_seconds'}
+        stages = ['candidate', 'restore', 'checkpoint', 'baseline', 'current_build', 'persist', 'assemble']
+        for locale in ('fr', 'pt'):
+            entries = [row for row in rows if row['locale'] == locale]
+            self.assertEqual([row['stage'] for row in entries if row['status'] == 'started'], stages)
+            self.assertEqual([row['stage'] for row in entries if row['status'] == 'completed'], stages[1:] + ['candidate'])
+        for call, row in zip(output.call_args_list, rows, strict=True):
+            self.assertEqual(call.kwargs, {'file': sys.stderr, 'flush': True})
+            self.assertEqual(set(row), expected_keys)
+            self.assertEqual(row['candidates_total'], 2)
+            self.assertEqual(row['pages_total'], 2)
+            self.assertGreaterEqual(row['stage_seconds'], 0)
+            self.assertGreaterEqual(row['elapsed_seconds'], row['stage_seconds'])
+        completed = [row for row in rows if row['stage'] == 'candidate' and row['status'] == 'completed']
+        self.assertEqual([(row['candidates_completed'], row['pages_completed']) for row in completed], [(1, 1), (2, 2)])
+        serialized = json.dumps(rows)
+        for private in (str(self.base), URL, batches[0]['generation'], batches[0]['candidates']['fr'], 'private-bucket'):
+            self.assertNotIn(private, serialized)
+
+    def test_failed_stage_does_not_log_error_data_or_claim_completion(self):
+        batch = self.candidate()
+        private = 'private storage endpoint and document body'
+        with mock.patch.object(self.store, 'restore_candidate', side_effect=RuntimeError(private)), \
+                mock.patch('builtins.print') as output:
+            with self.assertRaisesRegex(RuntimeError, private):
+                self.publish([batch])
+        rows = [json.loads(entry.args[0]) for entry in output.call_args_list]
+        self.assertEqual([(row['stage'], row['status']) for row in rows],
+                         [('candidate', 'started'), ('restore', 'started'), ('restore', 'failed'), ('candidate', 'failed')])
+        self.assertTrue(all(row['candidates_completed'] == row['pages_completed'] == 0 for row in rows))
+        self.assertTrue(all(entry.kwargs == {'file': sys.stderr, 'flush': True} for entry in output.call_args_list))
+        self.assertNotIn(private, json.dumps(rows))
+        self.assertFalse((self.root/'data/extended-locales/assembly.json').exists())
+
+    def test_progress_preserves_stdout_for_cli_json(self):
+        batch = self.candidate()
+        stdout, stderr = io.StringIO(), io.StringIO()
+        with redirect_stdout(stdout), redirect_stderr(stderr):
+            result = self.publish([batch])
+            print(json.dumps({'ready': result['ready']}))
+        self.assertEqual(json.loads(stdout.getvalue()), {'ready': True})
+        self.assertEqual(len(stderr.getvalue().splitlines()), 14)
+        self.assertTrue(all(json.loads(line)['event'] == 'extended_publication_progress'
+                            for line in stderr.getvalue().splitlines()))
 
     def test_publication_uses_final_assets_for_home_and_detail_without_changing_candidate(self):
         batch = self.candidate()
