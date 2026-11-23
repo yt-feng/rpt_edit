@@ -71,7 +71,7 @@ test("admin export asset and activity export control are shipped", async () => {
   assert.match(activity, /id="analyticsHistoryUser"/u);
   assert.match(activity, /id="analyticsHistoryUserOptions"/u);
   assert.match(app, /import\(versionedSiteAssetUrl\("assets\/xlsx-export\.js"\)\)/u);
-  assert.match(app, /account-admin\/users-export/u);
+  assert.match(app, /assets\/admin-users\.js/u);
   assert.match(app, /account-admin\/analytics-events-export/u);
 });
 
@@ -97,15 +97,13 @@ test("admin summary loader returns fresh data and propagates export failures", a
   );
 
   const exportFunction = extractFunction(app, "exportAdminUsersToExcel");
-  assert.match(exportFunction, /fetchFreshAdminUsers\(workerUrl\)/u);
+  assert.match(exportFunction, /loadFreshAdminUsers\(workerUrl, targets\)/u);
   assert.doesNotMatch(exportFunction, /loadAccountAdminSummary/u);
 
   const summaryFunction = extractFunction(app, "loadAccountAdminSummary");
-  assert.match(
-    summaryFunction,
-    /backgroundRetry: true[\s\S]*loadFreshAdminUsers\(workerUrl, targets\)/u,
-    "the delayed summary retry must restore live users instead of leaving a stale snapshot",
-  );
+  assert.doesNotMatch(summaryFunction, /loadFreshAdminUsers/u, "dashboard refresh must not replace the separately verified users");
+  assert.doesNotMatch(extractFunction(app, "renderAccountAdminSummary"), /accountAdminUsersByEmail|renderAdminUserTable/u);
+
 });
 
 test("full-history export ignores current page filters", () => {

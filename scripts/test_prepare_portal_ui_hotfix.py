@@ -184,6 +184,27 @@ class HotfixTests(unittest.TestCase):
                 self.run_prepare()
         self.assertEqual(self.client.trace, [])
 
+    def test_new_admin_module_is_published_with_its_actual_loader_hash(self):
+        relative = 'assets/admin-users.js'
+        self.client.objects.pop(self.source_prefix + relative)
+        self.manifest['files'].pop(relative)
+        self.manifest['file_count'] = len(self.manifest['files'])
+        self.manifest['total_bytes'] = sum(row['size'] for row in self.manifest['files'].values())
+        self.manifest['tree_sha256'] = static_tree_sha256(self.manifest['files'])
+        self.active['tree_sha256'] = self.manifest['tree_sha256']
+        publish.put_json(self.client, self.bucket, publish.manifest_key('a'), self.manifest)
+        app = self.source / 'assets/app.js'
+        app.write_text(app.read_text() + ' import(new URL("assets/admin-users.js?v=initial", document.baseURI));')
+        self.client.trace.clear()
+        result = self.run_prepare()
+        for asset in ('admin-users.js', 'account-services.js', 'newsfeed-app.js', 'styles.css'):
+            self.assertIn('assets/' + asset, result['changed_files'])
+        module = self.client.objects[self.target_prefix + relative]
+        digest = hashlib.sha256(module['Body']).hexdigest()[:12].encode()
+        self.assertIn(b'assets/admin-users.js?v=' + digest,
+                      self.client.objects[self.target_prefix + 'assets/app.js']['Body'])
+        self.assertFalse(result['content_changed'])
+
     def test_changed_active_before_commit_aborts_with_incomplete_target(self):
         def guard():
             self.guard_calls += 1
@@ -267,6 +288,16 @@ class HotfixTests(unittest.TestCase):
 <script>const text='<script src="assets/app.js?v=inline">';</script>'''
         changed = hotfix.root_html_versions(raw, self.manifest['files'])
         expected = raw.replace(b"src='assets/app.js?v=real'", b"src='assets/app.js?v="+self.manifest['files']['assets/app.js']['sha256'][:12].encode()+b"'")
+        self.assertEqual(changed, expected)
+
+    def test_stylesheet_version_changes_only_real_stylesheet_href(self):
+        raw = b'''<!-- <link rel="stylesheet" href="assets/styles.css?v=comment"> -->
+<link rel="canonical" href="assets/styles.css?v=canonical">
+<link rel="stylesheet" data-href="assets/styles.css?v=data" href="assets/styles.css?v=old">
+<p>assets/styles.css?v=body</p>'''
+        changed = hotfix.root_html_versions(raw, self.manifest['files'])
+        expected = raw.replace(b'href="assets/styles.css?v=old"',
+            b'href="assets/styles.css?v=' + self.manifest['files']['assets/styles.css']['sha256'][:12].encode() + b'"')
         self.assertEqual(changed, expected)
 
 

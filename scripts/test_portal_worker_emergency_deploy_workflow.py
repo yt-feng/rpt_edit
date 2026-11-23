@@ -87,11 +87,11 @@ class PortalWorkerEmergencyDeployWorkflowTests(unittest.TestCase):
         self.assertIn("python3 -B scripts/test_sync_portal_worker_schedules.py", self.workflow)
         self.assertIn("python3 -B scripts/test_sync_portal_worker_schedules.py", public_ci)
 
-    def test_rendered_crons_fit_five_trigger_limit_with_same_newsfeed_union(self) -> None:
+    def test_rendered_crons_fit_five_trigger_limit_with_all_day_newsfeed(self) -> None:
         import ast
         config = self.workflow.split("[triggers]", 1)[1].split("[[r2_buckets]]", 1)[0]
         crons = ast.literal_eval(config.split("crons =", 1)[1].strip())
-        self.assertEqual(set(crons), {"*/30 * * * *", "*/10 0-3,5-6,17-18,23 * * *", "* 2-3 * * *"})
+        self.assertEqual(set(crons), {"*/30 * * * *", "*/10 * * * *", "* 2-3 * * *"})
         self.assertEqual(len(crons), 3)
 
     def test_job_and_steps_reserve_time_for_rollback(self) -> None:

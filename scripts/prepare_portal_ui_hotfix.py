@@ -27,8 +27,8 @@ from portal_english_ui import PUBLIC_ASSET_NAMES, bind_account_session, detail, 
 from resume_portal_locale_candidate import live_state, read_pinned_manifest
 from verify_prepared_static_slot import read_json_object, read_verified_candidate_body, static_tree_sha256
 
-ADDED_ASSETS = frozenset(('admin-report-refresh.js',))
-ASSETS = ADDED_ASSETS | frozenset(('app.js', 'analytics.js', 'course-full.js', 'site-feedback.js', 'report-discussion.js', 'english-commentary.js'))
+ADDED_ASSETS = frozenset(('admin-report-refresh.js', 'admin-users.js'))
+ASSETS = ADDED_ASSETS | frozenset(('app.js', 'account-services.js', 'newsfeed-app.js', 'styles.css', 'analytics.js', 'course-full.js', 'site-feedback.js', 'report-discussion.js', 'english-commentary.js'))
 MAX_ASSET_BYTES = 2 * 1024 * 1024
 MAX_HTML_BYTES = 8 * 1024 * 1024
 WORKERS = 8
@@ -108,22 +108,23 @@ def copy_verified(client: Any, bucket: str, source: str, target: str, descriptor
 
 
 def root_html_versions(body: bytes, files: dict[str, dict[str, Any]]) -> bytes:
-    """Change actual script src values only, preserving all other HTML bytes."""
+    """Version approved scripts and stylesheets, preserving other HTML bytes."""
     source = body.decode('utf-8'); offsets = [0]
     for line in source.splitlines(keepends=True): offsets.append(offsets[-1] + len(line))
     replacements = []
     attribute = re.compile(r"\s+([A-Za-z_:][-\w:.]*)(?:\s*=\s*(?:\"([^\"]*)\"|'([^']*)'|([^\s>]+)))?")
     class Scripts(HTMLParser):
         def handle_starttag(self, tag, attrs):
-            if tag != 'script': return
+            attr_name = 'src' if tag == 'script' else 'href' if tag == 'link' and 'stylesheet' in (dict(attrs).get('rel') or '').lower().split() else ''
+            if not attr_name: return
             raw = self.get_starttag_text(); line, column = self.getpos(); start = offsets[line - 1] + column
-            require(sum(name == 'src' for name, _ in attrs) <= 1, 'Ambiguous script src attributes')
+            require(sum(name == attr_name for name, _ in attrs) <= 1, 'Ambiguous UI asset attributes')
             for match in attribute.finditer(raw):
-                if match[1].lower() != 'src': continue
+                if match[1].lower() != attr_name: continue
                 group = next((number for number in (2, 3, 4) if match[number] is not None), None)
                 if group is None: continue
                 value = match[group]
-                path = re.fullmatch(r'(?:/|\./)?assets/([a-z0-9_.-]+\.js)(?:\?v=[a-zA-Z0-9_.-]+)?', value)
+                path = re.fullmatch(r'(?:/|\./)?assets/([a-z0-9_.-]+\.(?:js|css))(?:\?v=[a-zA-Z0-9_.-]+)?', value)
                 if path and path[1] in ASSETS:
                     replacement = value.split('?', 1)[0] + '?v=' + files['assets/' + path[1]]['sha256'][:12]
                     replacements.append((start + match.start(group), start + match.end(group), replacement))

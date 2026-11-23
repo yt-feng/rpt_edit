@@ -2783,9 +2783,12 @@ async function findUserAdminState(env, user = {}) {
   };
 }
 
-async function mergeSiteUserAdminState(env, user) {
+async function mergeSiteUserAdminState(env, user, includeNewsfeed = false) {
   if (!user) return null;
-  const state = await findUserAdminState(env, user);
+  const [state, newsfeed] = await Promise.all([
+    findUserAdminState(env, user),
+    includeNewsfeed ? findNewsfeedAdminAccessSnapshot(env, user) : null,
+  ]);
   return {
     ...user,
     disabled: Boolean(state.disabled),
@@ -2793,6 +2796,7 @@ async function mergeSiteUserAdminState(env, user) {
     disabled_at: state.disabled_at || "",
     disabled_by: state.disabled_by || "",
     session_epoch: String(state.session_epoch || ""),
+    ...(newsfeed ? { newsfeed_access: newsfeed.grant } : {}),
   };
 }
 
@@ -8147,6 +8151,7 @@ function adminVisibleUser(user, entitlementRow, accessRow) {
     entitlement,
     access,
     effective_access: effectiveAccessForUser(user, entitlementRow, accessRow),
+    newsfeed: adminVisibleNewsfeedAccess(user, entitlementRow, accessRow),
   };
 }
 
@@ -13050,7 +13055,7 @@ function accountExportRowKey(row, keyFields) {
 async function listAllSupabaseAccountRows(env, table, params, options = {}) {
   const pageSize = Math.max(1, Math.min(1000, Number(options.pageSize) || ACCOUNT_ADMIN_EXPORT_PAGE_SIZE));
   const maxRows = Math.max(1, Number(options.maxRows) || ACCOUNT_ADMIN_EXPORT_MAX_USERS);
-  const maxPages = Math.ceil(maxRows / pageSize) + 1;
+  const maxPages = options.untilEmpty ? 100 : Math.ceil(maxRows / pageSize) + 1;
   const keyFields = Array.isArray(options.keyFields) && options.keyFields.length ? options.keyFields : ["id"];
   const cursorField = String(options.cursorField || keyFields[0] || "id");
   const rows = [];
@@ -13094,7 +13099,7 @@ async function listAllSupabaseAccountRows(env, table, params, options = {}) {
         throw new Error(`Account export exceeds the ${maxRows}-user hard limit.`);
       }
     }
-    if (page.length < pageSize) break;
+    if (options.untilEmpty ? page.length === 0 : page.length < pageSize) break;
     if (added === 0) throw new Error(`Account export pagination made no progress for ${table}.`);
     if (!nextCursor || requestedCursors.has(nextCursor)) {
       throw new Error(`Account export pagination cursor repeated for ${table}.`);
@@ -13159,6 +13164,7 @@ async function listAllSiteUsersForExport(env) {
     }, {
       keyFields: ["id"],
       cursorField: "id",
+      untilEmpty: true,
       maxRows: ACCOUNT_ADMIN_EXPORT_MAX_USERS,
     });
   } else {
@@ -13178,6 +13184,7 @@ async function listAllEntitlementsForExport(env) {
     }, {
       keyFields: ["id"],
       cursorField: "id",
+      untilEmpty: true,
       maxRows: ACCOUNT_ADMIN_EXPORT_MAX_USERS,
     });
   } else {
@@ -13220,7 +13227,7 @@ async function loadAllAdminUsersForExport(env) {
   const visibleUsers = await mapWithConcurrency(users, ACCOUNT_ADMIN_EXPORT_CONCURRENCY, async (user) => {
     const email = normalizeEmail(user.email);
     const [mergedUser, access] = await Promise.all([
-      mergeSiteUserAdminState(env, user),
+      mergeSiteUserAdminState(env, user, true),
       findAccessGrant(env, email),
     ]);
     return adminVisibleUser(mergedUser, entitlementsByEmail.get(email), access);
@@ -14234,8 +14241,73 @@ function generalNewsfeedPolicy(authenticated = false) {
   };
 }
 
+function normalizeStoredNewsfeedAccess(value) {
+  if (!value) return { mode: "auto", expires_at: "", updated_at: "" };
+  const mode = String(value.mode || "");
+  const expiresAt = String(value.expires_at || "");
+  if (!["auto", "enabled", "disabled"].includes(mode)
+    || (expiresAt && !Number.isFinite(Date.parse(expiresAt)))) {
+    throw new Error("Newsfeed access verification failed.");
+  }
+  return { mode, expires_at: expiresAt, updated_at: String(value.updated_at || "") };
+}
+
+function newsfeedAdminAccessKey(user) {
+  return accountKey("newsfeed-access", normalizeEmail(user && user.email));
+}
+
+async function findNewsfeedAdminAccessSnapshot(env, user) {
+  const snapshot = await r2GetJsonObjectStrict(env, newsfeedAdminAccessKey(user));
+  const value = snapshot && snapshot.value;
+  const etag = String(snapshot && snapshot.object && snapshot.object.etag || "");
+  if (snapshot && (!value || !etag || normalizeEmail(value.email) !== normalizeEmail(user.email)
+    || String(value.user_id || "") !== String(user.id || ""))) {
+    throw new Error("Newsfeed access identity verification failed.");
+  }
+  return { grant: normalizeStoredNewsfeedAccess(value), etag };
+}
+
+function newsfeedMemberPolicy(months = 0) {
+  const advanced = months >= NEWSFEED_ADVANCED_MIN_MONTHS;
+  return {
+    version: NEWSFEED_POLICY_VERSION,
+    tier: advanced ? "advanced" : "member",
+    authenticated: true,
+    active_member: true,
+    qualifying_months: Number.isFinite(months) ? months : null,
+    custom_topic_limit: advanced ? NEWSFEED_ADVANCED_CUSTOM_TOPIC_LIMIT : NEWSFEED_MEMBER_CUSTOM_TOPIC_LIMIT,
+    can_create_custom: true,
+    can_pin: true,
+    can_subscribe: true,
+    can_generate_narrative: true,
+  };
+}
+
+function adminVisibleNewsfeedAccess(user, entitlementRow, accessRow) {
+  const grant = normalizeStoredNewsfeedAccess(user && user.newsfeed_access);
+  const expired = Boolean(grant.expires_at && !periodIsCurrent(grant.expires_at));
+  const choice = effectiveAccessChoiceForUser(user, entitlementRow, accessRow);
+  const membership = Boolean(choice.access && choice.access.active && choice.access.access_mode === "all");
+  const blocked = accountDisabled(user) || grant.mode === "disabled";
+  const explicit = grant.mode === "enabled" && !expired;
+  const enabled = !blocked && (isSuperAccount(user) || explicit || membership);
+  const months = hotReportAccessMonths({
+    effective_access: choice.access, effective_access_kind: choice.kind,
+    access: publicAccessGrant(accessRow), entitlement: publicEntitlement(entitlementRow),
+  });
+  return {
+    ...grant, expired, enabled,
+    source: !enabled ? "none" : isSuperAccount(user) ? "role" : explicit ? "admin" : "membership",
+    custom_topic_limit: !enabled ? 0 : isSuperAccount(user) ? null
+      : newsfeedMemberPolicy(membership ? months : 0).custom_topic_limit,
+  };
+}
+
 async function newsfeedPolicyForUser(env, user) {
   if (!user) return generalNewsfeedPolicy(false);
+  if (accountDisabled(user)) return generalNewsfeedPolicy(true);
+  const { grant } = await findNewsfeedAdminAccessSnapshot(env, user);
+  if (grant.mode === "disabled") return generalNewsfeedPolicy(true);
   if (isSuperAccount(user)) {
     return {
       version: NEWSFEED_POLICY_VERSION,
@@ -14250,22 +14322,16 @@ async function newsfeedPolicyForUser(env, user) {
       can_generate_narrative: true,
     };
   }
+  if (grant.mode === "enabled" && (!grant.expires_at || periodIsCurrent(grant.expires_at))) {
+    // A standalone grant guarantees basic Newsfeed access, while an existing
+    // advanced membership keeps its larger topic quota. Report-store downtime
+    // must not revoke this independently verified administrator grant.
+    const membership = await reportAccessForUser(env, user, "", "catalog").catch(() => null);
+    return newsfeedMemberPolicy(membership && membership.can_download ? hotReportAccessMonths(membership) : 0);
+  }
   const access = await reportAccessForUser(env, user, "", "catalog");
   if (!access.can_download) return generalNewsfeedPolicy(true);
-  const rawMonths = hotReportAccessMonths(access);
-  const advanced = rawMonths >= NEWSFEED_ADVANCED_MIN_MONTHS;
-  return {
-    version: NEWSFEED_POLICY_VERSION,
-    tier: advanced ? "advanced" : "member",
-    authenticated: true,
-    active_member: true,
-    qualifying_months: Number.isFinite(rawMonths) ? rawMonths : null,
-    custom_topic_limit: advanced ? NEWSFEED_ADVANCED_CUSTOM_TOPIC_LIMIT : NEWSFEED_MEMBER_CUSTOM_TOPIC_LIMIT,
-    can_create_custom: true,
-    can_pin: true,
-    can_subscribe: true,
-    can_generate_narrative: true,
-  };
+  return newsfeedMemberPolicy(hotReportAccessMonths(access));
 }
 
 function publicNewsfeedPolicy(policy) {
@@ -21497,6 +21563,12 @@ async function attemptNewsfeedDigestEmail(env, settings, due, options = {}) {
   const email = normalizeEmail(settings.digest_email);
   if (!email) return { result: { sent: false, detail: "No digest email is configured." }, payload: null };
   const payload = await fetchNewsfeedDigestPayload(env, settings, options.user || null);
+  if (!Array.isArray(payload && payload.headlines) || !payload.headlines.length) {
+    return {
+      result: { sent: false, code: "NEWSFEED_CONTENT_EMPTY", detail: "No stories are available for this newsletter yet. Please try again later." },
+      payload,
+    };
+  }
   const result = await sendNewsfeedEmail(env, {
     to: email,
     subject: options.subject || newsfeedEmailSubject(settings, due),
@@ -21529,19 +21601,49 @@ async function newsfeedUserForStoredSettings(env, settings = {}) {
 async function recordNewsfeedEmailAttempt(env, userKey, settings, result, due = null, options = {}) {
   const sent = Boolean(result && result.sent);
   const now = new Date().toISOString();
-  const next = {
-    ...settings,
-    user_key: userKey,
-    digest_last_attempt_at: now,
-    digest_last_send_result: sent ? "sent" : "failed",
-    digest_last_send_detail: sent ? "" : String(result && result.detail || result && result.message || "Email send failed.").slice(0, 500),
+  const applyAttempt = (current) => {
+    const next = {
+      ...current,
+      user_key: userKey,
+      digest_last_attempt_at: now,
+      digest_last_send_result: sent ? "sent" : "failed",
+      digest_last_send_detail: sent ? "" : String(result && result.detail || result && result.message || "Email send failed.").slice(0, 500),
+    };
+    if (sent) {
+      next.digest_last_sent_at = now;
+      if (!options.test && due && due.dateKey && String(due.dateKey) > String(next.digest_last_sent_date || "")) {
+        next.digest_last_sent_date = due.dateKey;
+      }
+    }
+    return next;
   };
-  if (sent) {
-    next.digest_last_sent_at = now;
-    if (!options.test && due && due.dateKey) next.digest_last_sent_date = due.dateKey;
+  const key = `${NEWSFEED_SETTINGS_PREFIX}/${userKey}.json`;
+  let latest = settings;
+  try {
+    for (let attempt = 0; attempt < 4; attempt += 1) {
+      const snapshot = await r2GetJsonObjectStrict(env, key);
+      // Sending may overlap a subscription edit or deletion. Record delivery
+      // fields against the latest version without restoring old preferences.
+      if (!snapshot) return { ...applyAttempt(latest), digest_state_saved: false };
+      const current = snapshot.value;
+      const etag = String(snapshot.object && snapshot.object.etag || "");
+      if (!current || typeof current !== "object" || Array.isArray(current) || !etag) {
+        throw new Error("Newsfeed settings version is unavailable.");
+      }
+      latest = current;
+      const next = applyAttempt(current);
+      const written = await accountBucket(env).put(key, JSON.stringify(next), {
+        onlyIf: { etagMatches: etag },
+        httpMetadata: { contentType: "application/json; charset=utf-8", cacheControl: "private, no-store" },
+      });
+      if (written !== null) return { ...next, digest_state_saved: true };
+    }
+  } catch (_error) {
+    console.error("Newsfeed delivery state could not be saved.");
   }
-  await r2PutJson(env, `${NEWSFEED_SETTINGS_PREFIX}/${userKey}.json`, next);
-  return next;
+  // A state-write failure must not turn a provider-accepted email into a
+  // reported send failure or overwrite a concurrently saved subscription.
+  return { ...applyAttempt(latest), digest_state_saved: false };
 }
 
 async function sendDueNewsfeedDigestEmails(env) {
@@ -23419,19 +23521,8 @@ function refreshAdminAnalyticsSnapshotOnce(env) {
 }
 
 async function refreshAdminUsersSnapshot(env) {
-  const [userRows, entitlementRows] = await Promise.all([listSiteUsers(env), listEntitlementRows(env)]);
-  if (!Array.isArray(userRows) || !userRows.length) throw new Error("User list is not ready.");
-  const entitlementsByEmail = entitlementMap(entitlementRows);
-  // This periodic raw rebuild intentionally re-reads every R2-backed record so
-  // it can repair the dashboard snapshot if an earlier mutation-side patch
-  // failed. The live export follows the same canonical state/access policy.
-  const accessRows = await Promise.all(userRows.map((user) => findAccessGrant(env, user.email)));
-  const users = sortAdminVisibleUsers(userRows.map((user, index) => adminVisibleUser(
-    user,
-    entitlementsByEmail.get(normalizeEmail(user.email)),
-    accessRows[index],
-  )));
-  return writeAdminSnapshot(env, ADMIN_USERS_SNAPSHOT_KEY, { users });
+  const users = await loadAllAdminUsersForExport(env);
+  return writeAdminSnapshot(env, ADMIN_USERS_SNAPSHOT_KEY, { users, complete: true, total: users.length });
 }
 
 function refreshAdminUsersSnapshotOnce(env) {
@@ -23456,7 +23547,14 @@ async function patchAdminUsersSnapshotUser(env, user) {
   else users.unshift(user);
   await writeAdminSnapshot(env, ADMIN_USERS_SNAPSHOT_KEY, {
     users: sortAdminVisibleUsers(users),
-  }, { partial: !hasPreviousUsers });
+    complete: Boolean(hasPreviousUsers && previous.data.complete && !previous.partial),
+    total: users.length,
+  }, {
+    partial: !hasPreviousUsers || Boolean(previous.partial) || !previous.data.complete,
+    // A single-row mutation must not make an old whole-directory read fresh.
+    updated_at: hasPreviousUsers ? previous.updated_at : new Date().toISOString(),
+    patched_at: new Date().toISOString(),
+  });
   return true;
 }
 
@@ -23466,7 +23564,6 @@ async function refreshAdminDashboardSnapshots(env) {
   await Promise.allSettled([
     refreshAdminPicksSnapshotOnce(env),
     refreshAdminAnalyticsSnapshotOnce(env),
-    refreshAdminUsersSnapshotOnce(env),
   ]);
   const filesSnapshot = hasAdminSnapshot(filesResult)
     ? filesResult
@@ -23575,7 +23672,9 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
         ctx,
       }), null) : Promise.resolve({ data: null, status: null }),
       isSuper ? settleAdminSnapshotModule(loadAdminSnapshotModule(env, ADMIN_USERS_SNAPSHOT_KEY, {
-        refresh: () => refreshAdminUsersSnapshotOnce(env),
+        // User management loads the canonical paginated directory separately.
+        // Dashboard snapshots must never trigger an unbounded private scan.
+        refresh: null,
         timeoutMs: 15000,
         fallback: { users: [] },
         ctx,
@@ -23626,6 +23725,155 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
   }
 }
 
+async function handleAccountAdminUsersPage(request, env) {
+  try {
+    await requireSuperUser(request, env);
+  } catch (error) {
+    return privateJsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+  try {
+    const params = new URL(request.url).searchParams;
+    const pageSize = Math.max(1, Math.min(100, Math.floor(Number(params.get("page_size")) || 100)));
+    const mode = hasSupabaseConfig(env) ? "supabase" : "r2";
+    const rawCursor = String(params.get("cursor") || "");
+    let after = "";
+    if (rawCursor) {
+      const cursor = rawCursor.length <= 4096 ? decodeAnalyticsHistoryCursor(rawCursor) : null;
+      if (!cursor || cursor.version !== 1 || cursor.kind !== "admin-users" || cursor.mode !== mode
+        || typeof cursor.after !== "string" || !cursor.after || cursor.after.length > 2048) {
+        throw new TypeError("Invalid user-list cursor.");
+      }
+      after = cursor.after;
+    }
+    let rawUsers;
+    let next = "";
+    if (mode === "supabase") {
+      const query = queryString({
+        select: "id,username,email,email_is_generated,site_origin,registered_site,source_site,created_at,updated_at,last_login_at",
+        order: "id.asc", limit: String(pageSize), ...(after ? { id: `gt.${after}` } : {}),
+      });
+      rawUsers = await supabaseRequest(env, "GET", `/rest/v1/site_users?${query}`);
+      if (!Array.isArray(rawUsers) || rawUsers.length > pageSize) throw new Error("User-list page is invalid.");
+      let previous = after;
+      for (const row of rawUsers) {
+        const id = String(row && row.id || "");
+        if (!id || (previous && id <= previous)) throw new Error("User-list pagination did not advance.");
+        previous = id;
+      }
+      // The database may cap pages below the requested size. Only an empty
+      // keyset page proves completion; a short page is never the full count.
+      if (rawUsers.length) next = previous;
+    } else {
+      const listed = await accountBucket(env).list({
+        prefix: accountKey("users", "id", ""), limit: pageSize, cursor: after || undefined,
+      });
+      const keys = (Array.isArray(listed && listed.objects) ? listed.objects : []).map((row) => String(row.key || ""));
+      if (keys.length > pageSize || keys.some((key) => !key.startsWith(accountKey("users", "id", "")))) {
+        throw new Error("User-list page is invalid.");
+      }
+      rawUsers = await mapWithConcurrency(keys, ACCOUNT_ADMIN_EXPORT_CONCURRENCY, (key) => r2GetJsonStrict(env, key));
+      if (listed && listed.truncated) {
+        next = String(listed.cursor || "");
+        if (!next || next === after || !keys.length) throw new Error("User-list pagination did not advance.");
+      }
+    }
+    const userRows = rawUsers.map((row) => validateSiteUserRow(row));
+    if (userRows.some((row) => !row)) throw new Error("User-list account verification failed.");
+    let entitlementsByEmail = new Map();
+    if (mode === "supabase" && userRows.length) {
+      const emails = [...new Set(userRows.map((row) => normalizeEmail(row.email)))];
+      const rows = await listAllSupabaseAccountRows(env, "user_entitlements", {
+        select: "id,email,site_origin,source_site,grant_source,source_plan_code,source_reference,plan,status,lifetime,current_period_end,updated_at",
+        order: "id.asc", email: `in.(${emails.map((email) => JSON.stringify(email)).join(",")})`,
+      }, { keyFields: ["id"], cursorField: "id", pageSize: 100, untilEmpty: true });
+      entitlementsByEmail = entitlementMap(rows.map((row) => validateEntitlementRow(row, row && row.email)));
+    }
+    const users = await mapWithConcurrency(userRows, ACCOUNT_ADMIN_EXPORT_CONCURRENCY, async (row) => {
+      const email = normalizeEmail(row.email);
+      const [user, access, entitlement] = await Promise.all([
+        mergeSiteUserAdminState(env, row, true), findAccessGrant(env, email),
+        mode === "supabase" ? Promise.resolve(entitlementsByEmail.get(email)) : findEntitlement(env, email),
+      ]);
+      return adminVisibleUser(user, entitlement, access);
+    });
+    return privateJsonResponse(request, env, 200, {
+      users: sortAdminVisibleUsers(users), verified: true, complete: !next,
+      has_more: Boolean(next), next_cursor: next ? encodeAnalyticsHistoryCursor({
+        version: 1, kind: "admin-users", mode, after: next,
+      }) : "", generated_at: new Date().toISOString(),
+    });
+  } catch (error) {
+    return privateJsonResponse(request, env, error instanceof TypeError ? 400 : 503, {
+      code: "user_list_unavailable", detail: error.message || "User list is unavailable.",
+    });
+  }
+}
+
+async function handleAccountAdminUserNewsfeed(request, env) {
+  let adminUser;
+  try {
+    adminUser = await requireSuperUser(request, env);
+  } catch (error) {
+    return privateJsonResponse(request, env, 403, { detail: error.message || "Admin access denied." });
+  }
+  try {
+    const payload = request.method === "POST" ? await request.json() : {};
+    const email = normalizeEmail(request.method === "POST" ? payload.email : new URL(request.url).searchParams.get("email"));
+    if (!email) throw new TypeError("Email is required.");
+    const storedUser = await findSiteUserByEmail(env, email);
+    if (!storedUser) return privateJsonResponse(request, env, 404, { detail: "User not found." });
+    let user = await mergeSiteUserAdminState(env, storedUser, true);
+    if (request.method === "POST") {
+      if (isPrivilegedAccount(user)) throw new TypeError("系统角色账号不能写入普通用户授权。");
+      const mode = String(payload.newsfeed_mode || "");
+      const rawExpiry = String(payload.newsfeed_expires_at || "");
+      if (!["auto", "enabled", "disabled"].includes(mode)) throw new TypeError("请选择有效的 Newsfeed 权限。");
+      if (mode === "enabled" && rawExpiry && (!/^\d{4}-\d{2}-\d{2}T/.test(rawExpiry) || !periodIsCurrent(rawExpiry))) {
+        throw new TypeError("Newsfeed 到期时间必须是有效的未来时间。");
+      }
+      const grant = {
+        mode, expires_at: mode === "enabled" && rawExpiry ? new Date(rawExpiry).toISOString() : "",
+        updated_at: new Date().toISOString(),
+      };
+      const snapshot = await findNewsfeedAdminAccessSnapshot(env, user);
+      const previous = snapshot.grant;
+      if (Object.prototype.hasOwnProperty.call(payload, "expected_updated_at")
+        && String(payload.expected_updated_at || "") !== previous.updated_at) {
+        return privateJsonResponse(request, env, 409, { code: "NEWSFEED_ACCESS_CONFLICT", detail: "Newsfeed 权限已变化，请刷新后再保存。" });
+      }
+      const changeId = crypto.randomUUID();
+      const auditKey = accountKey("newsfeed_access_audit", email, changeId);
+      const audit = { email, user_id: user.id, previous, next: grant, updated_at: grant.updated_at,
+        updated_by: normalizeEmail(adminUser.email), change_id: changeId, status: "pending" };
+      await r2PutJson(env, auditKey, audit);
+      const written = await accountBucket(env).put(newsfeedAdminAccessKey(user), JSON.stringify({
+        ...grant, email, user_id: user.id, change_id: changeId, updated_by: normalizeEmail(adminUser.email),
+      }), {
+        onlyIf: snapshot.etag ? { etagMatches: snapshot.etag } : { etagDoesNotMatch: "*" },
+        httpMetadata: { contentType: "application/json; charset=utf-8" },
+      });
+      if (!written) return privateJsonResponse(request, env, 409, { code: "NEWSFEED_ACCESS_CONFLICT", detail: "Newsfeed 权限已变化，请刷新后再保存。" });
+      user = await mergeSiteUserAdminState(env, storedUser, true);
+      if (JSON.stringify(user.newsfeed_access) !== JSON.stringify(grant)) throw new Error("Newsfeed save verification failed.");
+      await r2PutJson(env, auditKey, { ...audit, status: "saved" });
+    }
+    const [access, entitlement] = await Promise.all([findAccessGrant(env, email), findEntitlement(env, email)]);
+    const visibleUser = adminVisibleUser(user, entitlement, access);
+    if (request.method === "POST") {
+      await patchAdminUsersSnapshotUser(env, visibleUser).catch(() => false);
+      await persistAnalyticsEvent(request, env, {
+        type: "admin_user_update", path: "/account-admin/user-newsfeed",
+        data: { target: email, action: `newsfeed_${visibleUser.newsfeed.mode}`, status: "success" },
+      }, adminUser).catch(() => null);
+    }
+    return privateJsonResponse(request, env, 200, { ok: true, verified: true, user: visibleUser, newsfeed: visibleUser.newsfeed });
+  } catch (error) {
+    return privateJsonResponse(request, env, error instanceof TypeError || error instanceof SyntaxError ? 400 : 503, {
+      detail: error.message || "Newsfeed 权限暂时无法保存，请稍后重试。",
+    });
+  }
+}
+
 async function handleAccountAdminUsersExport(request, env) {
   try {
     await requireSuperUser(request, env);
@@ -23637,6 +23885,8 @@ async function handleAccountAdminUsersExport(request, env) {
     return jsonResponse(request, env, 200, {
       users,
       total: users.length,
+      verified: true,
+      complete: true,
       generated_at: new Date().toISOString(),
     });
   } catch (error) {
@@ -23658,7 +23908,7 @@ async function handleAccountAdminUserAccessRead(request, env) {
   try {
     const storedUser = await findSiteUserByEmail(env, email);
     if (!storedUser) return jsonResponse(request, env, 404, { detail: "User not found." });
-    const user = await mergeSiteUserAdminState(env, storedUser);
+    const user = await mergeSiteUserAdminState(env, storedUser, true);
     const [access, entitlement, catalog] = await Promise.all([
       findAccessGrant(env, email),
       findEntitlement(env, email).catch(() => null),
@@ -23713,7 +23963,7 @@ async function handleAccountAdminUserAccess(request, env) {
     if (!accessGrantMatchesExpected(verifiedAccess, access)) {
       throw new Error("Access save verification failed. Please retry.");
     }
-    const visibleUser = adminVisibleUser(user, await findEntitlement(env, email).catch(() => null), access);
+    const visibleUser = adminVisibleUser(await mergeSiteUserAdminState(env, user, true), await findEntitlement(env, email).catch(() => null), access);
     if (visibleUser) await patchAdminUsersSnapshotUser(env, visibleUser).catch(() => false);
     await persistAnalyticsEvent(request, env, {
       type: "admin_user_update",
@@ -23817,7 +24067,7 @@ async function handleAccountAdminUserCreate(request, env) {
       created_at: now,
       updated_at: now,
     });
-    const merged = await mergeSiteUserAdminState(env, user);
+    const merged = await mergeSiteUserAdminState(env, user, true);
     const visibleUser = adminVisibleUser(merged, await findEntitlement(env, email).catch(() => null), await findAccessGrant(env, email).catch(() => publicAccessGrant(null)));
     await patchAdminUsersSnapshotUser(env, visibleUser).catch(() => false);
     await persistAnalyticsEvent(request, env, {
@@ -23865,7 +24115,7 @@ async function handleAccountAdminUserStatus(request, env) {
     if (!user) return jsonResponse(request, env, 404, { detail: "User not found." });
     if (isSuperAccount(user)) return jsonResponse(request, env, 400, { detail: "管理员账号不能禁用。" });
     const state = await saveUserAdminState(env, user, { disabled: Boolean(payload.disabled) }, adminUser);
-    const merged = await mergeSiteUserAdminState(env, { ...user, ...state });
+    const merged = await mergeSiteUserAdminState(env, { ...user, ...state }, true);
     const visibleUser = adminVisibleUser(merged, await findEntitlement(env, email).catch(() => null), await findAccessGrant(env, email).catch(() => publicAccessGrant(null)));
     await patchAdminUsersSnapshotUser(env, visibleUser).catch(() => false);
     await persistAnalyticsEvent(request, env, {
@@ -23937,7 +24187,7 @@ async function handleAccountAdminUserPasswordReset(request, env) {
 
     const nextSessionEpoch = randomHex(16);
     await saveUserAdminState(env, updated, { session_epoch: nextSessionEpoch }, adminUser);
-    const merged = await mergeSiteUserAdminState(env, updated);
+    const merged = await mergeSiteUserAdminState(env, updated, true);
     if (!constantTimeEqual(String(merged.session_epoch || ""), nextSessionEpoch)) {
       throw new Error("Session reset verification failed.");
     }
@@ -27614,6 +27864,14 @@ export default {
       return handleAccountAdminSummary(request, env, ctx);
     }
 
+    if (pathname === "/account-admin/users" && request.method === "GET") {
+      return handleAccountAdminUsersPage(request, env);
+    }
+
+    if (pathname === "/account-admin/user-newsfeed" && ["GET", "POST"].includes(request.method)) {
+      return handleAccountAdminUserNewsfeed(request, env);
+    }
+
     if (pathname === "/account-admin/users-export" && request.method === "GET") {
       return handleAccountAdminUsersExport(request, env);
     }
@@ -27864,7 +28122,7 @@ export default {
       tasks.push(repairContactReportIndexDirty(env));
       tasks.push(repairReportRequestAdminIndexIfNeeded(env));
     }
-    if (!cron || cron !== "*/30 * * * *") {
+    if (!cron || ["*/10 * * * *", "*/10 0-3,5-6,17-18,23 * * *", "*/10 17-18 * * *", "*/10 23 * * *", "*/10 0-3 * * *", "*/10 5-6 * * *"].includes(cron)) {
       tasks.push(warmNewsfeedCaches(env));
       tasks.push(sendDueNewsfeedDigestEmails(env));
     }
