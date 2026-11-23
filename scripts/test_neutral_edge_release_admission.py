@@ -65,7 +65,7 @@ class ReleaseAdmissionTests(unittest.TestCase):
                                 self.context['github']['event']['workflow_run']['conclusion'] = conclusion
                                 self.context['vars'].update(NEUTRAL_SCHEDULE_ENABLED=enabled,
                                     PORTAL_MULTILINGUAL_ENABLED=multilingual, PORTAL_MULTILINGUAL_LIVE=live)
-                                admitted = bool(evaluate(job_block('prepare_release'), self.context))
+                                admitted = bool(evaluate(job_block('source_admission'), self.context))
                                 expected = event == 'workflow_dispatch' or (enabled == 'true' and
                                     (multilingual != 'true' or live == 'true') and
                                     (event == 'schedule' or conclusion == 'success'))
@@ -79,7 +79,7 @@ class ReleaseAdmissionTests(unittest.TestCase):
             with self.subTest(change=change):
                 original = copy.deepcopy(upstream)
                 upstream.update(change)
-                self.assertFalse(evaluate(job_block('prepare_release'), self.context))
+                self.assertFalse(evaluate(job_block('source_admission'), self.context))
                 self.assertEqual(self.group(), 'portal-release-ineligible-123-1')
                 upstream.clear(); upstream.update(original)
         upstream['conclusion'] = 'failure'
@@ -94,9 +94,17 @@ class ReleaseAdmissionTests(unittest.TestCase):
         for action, expected in (('portal-dropbox-report-refresh', True), ('unrelated-event', False)):
             with self.subTest(action=action):
                 self.context['github']['event']['action'] = action
-                self.assertEqual(bool(evaluate(job_block('prepare_release'), self.context)), expected)
+                self.assertEqual(bool(evaluate(job_block('source_admission'), self.context)), expected)
                 self.assertEqual(self.group(), 'portal-production-release' if expected
                                  else 'portal-release-ineligible-123-1')
+
+    def test_superseded_and_failed_source_admissions_cannot_prepare_or_publish(self):
+        for result in ('success', 'failure', 'cancelled', 'skipped'):
+            for ready in ('true', 'false', ''):
+                context = {'needs': {'source_admission': {'result': result, 'outputs': {'ready': ready}}}}
+                self.assertEqual(bool(evaluate(job_block('prepare_release'), context)),
+                                 result == 'success' and ready == 'true')
+        self.assertIn('needs: source_admission', job_block('prepare_release'))
 
     def test_automatic_approval_waits_for_exact_version_validation(self):
         for review, approval in (('english_daily_review', 'english_approval'),

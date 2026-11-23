@@ -15,6 +15,7 @@ from pathlib import Path
 from test_neutral_edge_release_admission import (
     FailedReviewCancellationTests, FailedReviewCleanupTests, ReleaseAdmissionTests,
 )
+from test_admit_neutral_release_source import SourceAdmissionTests, WorkflowGateTests
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -652,8 +653,8 @@ class NeutralEdgeCutoverWorkflowTests(unittest.TestCase):
             "Roll back failed release or completed rehearsal", 1)[0]
         self.assertIn("timeout-minutes: 15", extended)
         self.assertLessEqual(job_timeout, 360)
-        self.assertEqual(self.workflow.count("ref: ${{ github.sha }}"), 7)
-        for job in ('prepare_release', 'extended_daily_review', 'english_daily_review', 'english_approval',
+        self.assertEqual(self.workflow.count("ref: ${{ github.sha }}"), 8)
+        for job in ('source_admission', 'prepare_release', 'extended_daily_review', 'english_daily_review', 'english_approval',
                     'reject_failed_daily_review', 'cutover'):
             block = re.search(r'^  '+job+r':\n(.*?)(?=^  [a-z_]+:\n|\Z)', self.workflow, re.M | re.S)[1]
             self.assertEqual(block.count("ref: ${{ github.sha }}"), 1, job)

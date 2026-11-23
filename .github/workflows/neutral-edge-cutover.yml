@@ -115,10 +115,9 @@ concurrency:
   queue: max
 
 jobs:
-  prepare_release:
+  source_admission:
     permissions:
       contents: read
-      actions: read
     if: >-
       ${{
         github.event_name == 'workflow_dispatch' ||
@@ -140,6 +139,47 @@ jobs:
           )
         )
       }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    outputs:
+      ready: ${{ steps.admission.outputs.ready }}
+      state: ${{ steps.admission.outputs.state }}
+    steps:
+      - name: Checkout frozen release source for admission
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+          # Read-only token also authenticates the exact-object comparison fetch.
+          # checkout removes its local credential configuration during cleanup.
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate source admission without cloud credentials
+        run: python3 -B scripts/test_admit_neutral_release_source.py
+      - name: Admit code against main once before publication writes
+        id: admission
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          python3 -B scripts/admit_neutral_release_source.py
+          --output "$RUNNER_TEMP/neutral-source-admission.json"
+      - name: Retain exact source admission and replay inputs
+        if: steps.admission.outcome == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: neutral-source-admission-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/neutral-source-admission.json
+          if-no-files-found: error
+          retention-days: 7
+
+  prepare_release:
+    needs: source_admission
+    permissions:
+      contents: read
+      actions: read
+    if: ${{ needs.source_admission.result == 'success' && needs.source_admission.outputs.ready == 'true' }}
     runs-on: ubuntu-22.04
     # Preparing 44k+ files used 111 minutes before upload in run 39864542229.
     # Reserve a separate bounded upload window plus post-upload verification.
