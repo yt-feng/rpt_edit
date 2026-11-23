@@ -2491,10 +2491,7 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
             for rule in rules
             for _start, _end, _quote, inner in builder.scan_quoted_css(rule.content_value)
         }
-        self.assertEqual(len(rules), 13)
-        self.assertEqual(literal_values, {
-            "暂无可选机构",
-            "封面暂不可用",
+        mobile_table_headers = [
             "用户名",
             "邮箱",
             "注册站点",
@@ -2505,10 +2502,22 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
             "权限来源",
             "注册",
             "最近登录",
+            "Newsfeed",
             "操作",
-        })
+        ]
+        fallback_values = {"暂无可选机构", "封面暂不可用"}
+        self.assertEqual(len(rules), len(mobile_table_headers) + len(fallback_values))
+        self.assertEqual(literal_values, set(mobile_table_headers) | fallback_values)
         table_rules = [rule for rule in rules if "account-admin-table" in rule.selector]
-        self.assertEqual(len(table_rules), 11)
+        self.assertEqual(
+            [
+                inner
+                for rule in table_rules
+                for _start, _end, _quote, inner in builder.scan_quoted_css(rule.content_value)
+            ],
+            mobile_table_headers,
+        )
+        self.assertEqual(len(table_rules), len(mobile_table_headers))
         self.assertTrue(all(rule.at_rules == ("@media (max-width: 820px)",) for rule in table_rules))
 
     def test_css_content_overrides_are_locale_scoped_and_preserve_media_queries(self) -> None:
