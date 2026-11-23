@@ -947,3 +947,69 @@ test("R2 admin directory pages retain every account and reject invalid or unauth
   const forbidden = await jsonRequest(env, "/account-admin/users", { headers: bearer(reader.token) });
   assert.equal(forbidden.response.status, 403);
 });
+
+test("private admin identities remain distinct and target the intended account without changing public redaction", async (t) => {
+  const delivery = installFetchMock(t);
+  const bucket = new MemoryR2();
+  const env = envFor(bucket);
+  const admin = seedUser(bucket, { id: "private-admin", username: "admin-a", email: "admin-a@users.portal.example.invalid" });
+  const first = seedUser(bucket, { id: "legacy-first", username: "twotigers-reader", email: "twotigers-reader@example.com",
+    private_note: "PRIVATE_ROW_FIELD", recovery_secret: "PRIVATE_RECOVERY_FIELD" });
+  const second = seedUser(bucket, { id: "legacy-second", username: "macro-gate-reader", email: "macro-gate-reader@example.com" });
+  const beta = seedUser(bucket, { id: "normal-beta", username: "beta-reader", email: "beta-reader@example.com" });
+  seedMemberAccess(bucket, beta.user, 1);
+  const directory = await jsonRequest(env, "/account-admin/users", { headers: bearer(admin.token) });
+  assert.equal(directory.response.status, 200);
+  assert.match(directory.response.headers.get("Cache-Control"), /private.*no-store/);
+  const byEmail = new Map(directory.data.users.map((user) => [user.email, user]));
+  assert.equal(byEmail.size, 4);
+  for (const { user: original } of [first, second, beta, admin]) {
+    const visible = byEmail.get(original.email);
+    assert.deepEqual({ id: visible.id, username: visible.username, email: visible.email },
+      { id: original.id, username: original.username, email: original.email });
+    assert.equal(Object.hasOwn(visible, "password_hash"), false);
+    assert.equal(Object.hasOwn(visible, "password_salt"), false);
+    assert.equal(Object.hasOwn(visible, "session_epoch"), false);
+    assert.equal(Object.hasOwn(visible, "private_note"), false);
+    assert.equal(Object.hasOwn(visible, "recovery_secret"), false);
+  }
+  const exported = await jsonRequest(env, "/account-admin/users-export", { headers: bearer(admin.token) });
+  assert.equal(exported.response.status, 200);
+  assert.equal(exported.data.total, 4);
+  assert.deepEqual(new Set(exported.data.users.map((user) => user.email)), new Set(byEmail.keys()));
+  for (const { user, token } of [first, second]) {
+    const auth = await jsonRequest(env, "/auth", { headers: bearer(token) });
+    assert.equal(auth.response.status, 200);
+    assert.equal(auth.data.user.id, user.id);
+    assert.equal(auth.data.user.email, "redacted@users.example.invalid");
+    assert.notEqual(auth.data.user.username, user.username);
+  }
+  const selected = byEmail.get(first.user.email);
+  const saved = await jsonRequest(env, "/account-admin/user-newsfeed", {
+    method: "POST", headers: { ...bearer(admin.token), "content-type": "application/json" },
+    body: JSON.stringify({ email: selected.email, newsfeed_mode: "enabled", expected_updated_at: "" }),
+  });
+  assert.equal(saved.response.status, 200, JSON.stringify(saved.data));
+  assert.equal(saved.data.user.id, selected.id);
+  assert.equal(saved.data.user.email, selected.email);
+  assert.equal(saved.data.user.username, selected.username);
+  assert.equal(saved.data.user.newsfeed.enabled, true);
+  assert.equal(saved.data.user.effective_access.active, false, "Newsfeed does not grant report access");
+  const stored = JSON.parse(bucket.rows.get(`_account/newsfeed-access/${encodeURIComponent(selected.email)}`).value);
+  assert.equal(stored.user_id, selected.id);
+  assert.equal(stored.email, selected.email);
+  for (const untouched of [second.user, beta.user]) {
+    assert.equal(bucket.rows.has(`_account/newsfeed-access/${encodeURIComponent(untouched.email)}`), false);
+  }
+  const reread = await jsonRequest(env, `/account-admin/user-newsfeed?email=${encodeURIComponent(selected.email)}`, { headers: bearer(admin.token) });
+  assert.equal(reread.data.user.id, selected.id);
+  assert.equal(reread.data.newsfeed.mode, "enabled");
+  for (const headers of [{}, bearer(beta.token)]) {
+    for (const path of ["/account-admin/users", "/account-admin/users-export", `/account-admin/user-newsfeed?email=${encodeURIComponent(selected.email)}`]) {
+      const forbidden = await jsonRequest(env, path, { headers });
+      assert.equal(forbidden.response.status, 403);
+      assert.equal(JSON.stringify(forbidden.data).includes(selected.email), false);
+    }
+  }
+  assert.equal(delivery.emails.length, 0, "admin identity and entitlement operations send no email");
+});
