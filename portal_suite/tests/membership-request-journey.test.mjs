@@ -5,6 +5,10 @@ import vm from "node:vm";
 
 const source = await readFile(new URL("../site_src/assets/app.js", import.meta.url), "utf8");
 const accountServices = await readFile(new URL("../site_src/assets/account-services.js", import.meta.url), "utf8");
+const analyticsSource = await readFile(new URL("../site_src/assets/analytics.js", import.meta.url), "utf8");
+const payloadStart = analyticsSource.indexOf("  function membershipRequestPayload(");
+const payloadEnd = analyticsSource.indexOf("\n  }", payloadStart);
+const membershipPayloadSource = analyticsSource.slice(payloadStart, payloadEnd + 4);
 
 function functionSource(name) {
   const start = source.indexOf(`  async function ${name}(`) >= 0
@@ -15,7 +19,7 @@ function functionSource(name) {
   return source.slice(start, end + 4);
 }
 
-function createHarness({ session = null, fetchResponse, authRefresh } = {}) {
+function createHarness({ session = null, fetchResponse, authRefresh, pathname = "/", search = "", reportItem = null, analyticsBlocked = false } = {}) {
   let now = Date.now();
   const elements = new Map();
   const requests = [];
@@ -90,12 +94,13 @@ function createHarness({ session = null, fetchResponse, authRefresh } = {}) {
     document.dispatchEvent({ type: "portal-auth-change" });
   };
   const context = vm.createContext({
-    document, page: "index", URL, Set, AbortController, setTimeout, clearTimeout,
+    document, page: "index", URL, URLSearchParams, Set, AbortController, setTimeout, clearTimeout,
     Date: class extends Date { static now() { return now; } },
     CustomEvent: class { constructor(type, options = {}) { this.type = type; this.detail = options.detail; } },
-    window: { alert() {}, clearInterval, setInterval, setTimeout, clearTimeout },
+    window: { alert() {}, clearInterval, setInterval, setTimeout, clearTimeout, location: { pathname, search } },
     MEMBERSHIP_REQUEST_KINDS: new Set(["membership", "support", "privacy", "refund", "access"]),
     loadAuthSession: () => session,
+    cachedReportPreview: (id) => reportItem?.id === id ? reportItem : null,
     authHeaders: () => session ? { Authorization: `Bearer ${session.token}` } : {},
     saveAuthSession: setSession, clearAuthSession: () => setSession(null),
     authUserLabel: () => session?.user?.username || "登录", titleText: (item) => item.title || "",
@@ -118,11 +123,12 @@ function createHarness({ session = null, fetchResponse, authRefresh } = {}) {
   // Exercise the actual initializer with the real module already cached. The
   // admin runtime test separately verifies first-load script insertion.
   vm.runInContext(accountServices, context, { filename: "account-services.js" });
+  if (!analyticsBlocked) vm.runInContext(`${membershipPayloadSource}\nwindow.PortalSuiteAnalytics = { membershipRequestPayload };`, context);
   vm.runInContext([
     "let accountServicesLoad = null; let membershipDraftCache = null;",
     functionSource("loadAccountServices"), functionSource("initLazyAccountServices"), functionSource("isAdminASession"),
     functionSource("membershipRequestDraftState"),
-    functionSource("membershipRequestKind"), functionSource("membershipRequestCopy"),
+    functionSource("membershipRequestKind"), functionSource("membershipReportContext"), functionSource("membershipRequestCopy"),
     functionSource("accountModalMarkup"), functionSource("showAccountModal"),
   ].join("\n"), context);
   return {
@@ -130,6 +136,7 @@ function createHarness({ session = null, fetchResponse, authRefresh } = {}) {
     getSession: () => session,
     setSession,
     advanceTime: (milliseconds) => { now += milliseconds; },
+    setReportItem: (item) => { reportItem = item; },
     get: (id) => elements.get(id),
     open: (options = { requestKind: "membership" }) => context.showAccountModal("/api", options),
     membershipEvents: () => events.filter((event) => event.type === "membership_request"),
@@ -181,6 +188,76 @@ test("explicit application starts at the public form and switches to login witho
   assert.equal(h.document.activeElement, h.trigger);
   assert.equal(h.trigger.focusOptions.preventScroll, true);
   assert.equal(h.membershipEvents().filter(({ action }) => action === "form_abandon").length, 1);
+});
+
+test("detail access form displays the loaded report and carries the same context in requests and telemetry", async () => {
+  const id = "a".repeat(24), title = "A report about research";
+  const h = createHarness({ pathname: "/report.html", search: `?id=${id}&request=access&title=PRIVATE_QUERY_TITLE`, reportItem: { id, title } });
+  await h.open({ requestKind: "access", requestPlacement: "deep_link" });
+  assert.equal(h.get("membershipRequestReport").readOnly, true);
+  assert.equal(h.get("membershipRequestReport").value, title);
+  await h.fill();
+  await h.submit();
+  const request = JSON.parse(h.requests.find((row) => row.url.endsWith("/membership/request")).options.body);
+  assert.equal(request.report_id, id);
+  assert.equal(request.report_title, title);
+  assert.ok(h.membershipEvents().every((event) => event.report_id === id && event.report_title === title));
+  assert.doesNotMatch(JSON.stringify([...h.membershipEvents(), request]), /PRIVATE_QUERY_TITLE/);
+});
+
+test("an early static-footer deep link shows its ID and resolves the loaded title before submit", async () => {
+  const id = "b".repeat(24);
+  const h = createHarness({ pathname: "/report.html", search: `?id=${id}&request=access&title=UNTRUSTED_TITLE` });
+  await h.open({ requestKind: "access", requestPlacement: "deep_link" });
+  assert.equal(h.get("membershipRequestReport").value, id);
+  assert.equal(h.membershipEvents()[0].report_id, id);
+  assert.equal(h.membershipEvents()[0].report_title, "");
+  h.setReportItem({ id, title: "Loaded catalog title" });
+  await h.fill();
+  await h.submit();
+  const request = JSON.parse(h.requests.find((row) => row.url.endsWith("/membership/request")).options.body);
+  assert.equal(request.report_title, "Loaded catalog title");
+  assert.equal(h.membershipEvents().find((event) => event.action === "form_submit").report_title, "Loaded catalog title");
+});
+
+test("report context survives blocked analytics but does not leak into unrelated forms or invalid routes", async () => {
+  const id = "c".repeat(24);
+  const h = createHarness({ analyticsBlocked: true, reportItem: { id, title: "Current report" } });
+  await h.open({ requestKind: "membership", item: { id }, source: "catalog" });
+  assert.equal(h.get("membershipRequestReport").value, "Current report");
+  await h.fill();
+  await h.submit();
+  assert.equal(JSON.parse(h.requests.find((row) => row.url.endsWith("/membership/request")).options.body).report_id, id);
+  assert.equal(h.membershipEvents().length, 0);
+  for (const options of [
+    { requestKind: "privacy", item: { id } }, { requestKind: "refund", item: { id } }, { requestKind: "support", item: { id } },
+    { requestKind: "access", item: { id }, source: "external" },
+    { requestKind: "access", item: { id: "email@example.invalid" } },
+  ]) {
+    const other = createHarness({ pathname: "/report.html", search: `?id=${id}` });
+    await other.open(options);
+    assert.equal(other.get("membershipRequestReport"), undefined);
+    await other.fill(); await other.submit();
+    assert.equal(JSON.parse(other.requests.find((row) => row.url.endsWith("/membership/request")).options.body).report_id, undefined);
+    assert.ok(other.membershipEvents().every((event) => event.report_id === undefined));
+  }
+  const home = createHarness({ pathname: "/", search: `?id=${id}&request=access` });
+  await home.open({ requestKind: "access" });
+  assert.equal(home.get("membershipRequestReport"), undefined);
+});
+
+test("report context uses a fresh report when a same-kind draft is reopened and sanitizes display metadata", async () => {
+  const firstId = "d".repeat(24), nextId = "e".repeat(24);
+  const h = createHarness();
+  await h.open({ requestKind: "access", item: { id: firstId, title: "First report" } });
+  await h.fill();
+  await h.get("accountClose").emit("click");
+  await h.open({ requestKind: "access", item: { id: nextId, title: "<b>Second</b>\u0000 report" } });
+  assert.equal(h.get("membershipRequestReport").value, "Second report");
+  await h.submit();
+  const request = JSON.parse(h.requests.find((row) => row.url.endsWith("/membership/request")).options.body);
+  assert.equal(request.report_id, nextId);
+  assert.equal(request.report_title, "Second report");
 });
 
 test("ordinary login keeps its existing primary form and does not count unseen applications", async () => {

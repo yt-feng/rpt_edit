@@ -164,6 +164,39 @@ class PortalWorkerEmergencyDeployWorkflowTests(unittest.TestCase):
                 self.assertIn(path, paths)
         self.assertIn("python3 -B scripts/test_reportify_api_grab.py", self.workflow)
 
+    def test_validation_fixtures_and_their_transitive_imports_are_in_sparse_checkout(self) -> None:
+        sparse = self.workflow.split("sparse-checkout: |", 1)[1].split("\n      - name:", 1)[0]
+        paths = {line.strip() for line in sparse.splitlines() if line.strip()}
+        # daily-source-wakeup.test.mjs imports the independent clock, while
+        # customer-content's real export/readback fixture imports the completed
+        # source and editorial validation helpers. These are validation inputs,
+        # not additional Workers or publishing commands to deploy.
+        required = {"workers/daily-source-wakeup/src"}
+        required.update("scripts/" + name + ".py" for name in (
+            "test_publish_customer_content", "test_reuse_completed_progressive_sources",
+            "test_progressive_wechat_delivery", "progressive_wechat_delivery",
+            "reuse_completed_progressive_sources", "recovered_article_delivery",
+            "market_views_partial_sources", "report_extraction_source", "portal_translation_shards",
+            "run_pdf_to_xhs_in_batches", "private_workflow_handoff", "publish_customer_content",
+            "push_xhs_notes_to_wechat_drafts", "push_portal_translated_to_wechat_drafts",
+            "portal_discovery_quality", "deepseek_http", "deepseek_usage", "free_editorial_images",
+            "institution_names", "sensitive_content_guard", "title_source_claim_support",
+            "verify_existing_wechat_drafts", "wechat_account_routing", "wechat_accounts",
+            "wechat_article_quality", "wechat_draft_grouping", "wechat_editorial_binding",
+            "wechat_image_quality", "wechat_title_optimizer",
+        ))
+        self.assertEqual(required - paths, set())
+        for path in required:
+            self.assertTrue((ROOT / path).exists(), path)
+        validation = self.workflow.split("- name: Validate legacy access compatibility", 1)[1].split(
+            "- name: Materialize private deployment values", 1)[0]
+        self.assertIn('"requests>=2.31,<3"', validation)
+        self.assertIn('python3 -B scripts/test_publish_customer_content.py', validation)
+        self.assertEqual(self.workflow.count('workers/daily-source-wakeup/src'), 1)
+        deployment = self.workflow.split('- name: Materialize private deployment values', 1)[1]
+        self.assertNotIn('daily-source-wakeup', deployment)
+        self.assertNotIn('push_xhs_notes_to_wechat_drafts.py', deployment)
+
     def test_materialized_public_site_is_brand_checked_before_worker_upload(self) -> None:
         self.assertIn("scripts/check_public_brand.py", self.workflow)
         self.assertIn("scripts/test_check_public_brand.py", self.workflow)

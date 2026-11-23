@@ -273,33 +273,64 @@ assert.match(reportAccess[0], /custom_access_matched/);
 assert.match(reportAccess[0], /entitlement_access_matched/);
 assert.match(reportAccess[0], /trial_access_matched/);
 
-const adminSnapshotRefresh = worker.match(/async function refreshAdminUsersSnapshot[\s\S]+?(?=\nfunction refreshAdminUsersSnapshotOnce)/);
-assert.ok(adminSnapshotRefresh, "refreshAdminUsersSnapshot must exist");
+const adminUsersPage = extractAsyncFunction(worker, "handleAccountAdminUsersPage");
+assert.match(adminUsersPage, /await requireSuperUser\(request, env\)/, "canonical user pages must remain super-admin only");
+assert.match(adminUsersPage, /mergeSiteUserAdminState\(env, row, true\), findAccessGrant\(env, email\)/, "each page must strictly verify current account state and actual download grants");
 assert.doesNotMatch(
-  adminSnapshotRefresh[0],
+  adminUsersPage,
   /findAccessGrant[\s\S]*?catch\(\(\) => publicAccessGrant\(null\)\)/,
   "an unreadable admin grant must not be displayed as an entitlement-derived all-site grant",
 );
+assert.doesNotMatch(adminUsersPage, /ADMIN_USERS_SNAPSHOT_KEY|readAdminSnapshot/, "canonical user pages must not serve the old dashboard snapshot");
+assert.match(adminUsersPage, /verified: true, complete: !next/, "a canonical page must explicitly distinguish verified rows from a complete directory");
+const adminModal = extractFunction(app, "showAccountAdminModal");
 assert.match(
-  app,
-  /loadAccountAdminSummary\(workerUrl, targets\)\.then\([\s\S]*?!adminUsersSnapshotIsFresh\(summary\) && canManageUsers && exportUsers[\s\S]*?loadFreshAdminUsers\(workerUrl, targets\)/,
-  "opening the super admin panel must verify stale or missing user snapshots without refetching a fresh snapshot",
+  adminModal,
+  /loadAccountAdminSummary\(workerUrl, targets\)\.catch\(\(\) => null\);\s*if \(canManageUsers\) refreshAdminUserList\(workerUrl, targets\);/,
+  "opening the super admin panel must independently read the complete live directory regardless of snapshot freshness or summary failure",
 );
+assert.match(adminModal, /usersComplete: false/, "opening the panel must not label a partial snapshot as a complete directory");
 assert.match(
-  app,
+  adminModal,
   /const canManageUsers = !isOperatorOnly;/,
   "the operations panel must distinguish operator-only sessions from the super administrator",
 );
-assert.match(
-  app,
-  /if \(!adminUsersSnapshotIsFresh\(summary\) && targets\.canManageUsers && targets\.exportUsers && document\.getElementById\("accountAdminModal"\)\)/,
-  "background refresh must not call the super-only user export endpoint for an operator",
+assert.doesNotMatch(
+  extractAsyncFunction(app, "loadAccountAdminSummary"),
+  /refreshAdminUserList|loadFreshAdminUsers|adminUsersSnapshotIsFresh|users-export/,
+  "background summary refresh must not launch user-directory reads or depend on an old user snapshot",
 );
 assert.match(
-  app,
-  /if \(canManageUsers && exportUsers\) \{[\s\S]*?loadFreshAdminUsers\(workerUrl, targets\)/,
-  "manual refresh must not call the super-only user export endpoint for an operator",
+  adminModal,
+  /canManageUsers \? refreshAdminUserList\(workerUrl, targets\) : Promise\.resolve\(null\)/,
+  "manual refresh must only read canonical user pages for a super administrator",
 );
+assert.match(extractAsyncFunction(app, "fetchFreshAdminUsers"), /loadAdminUserTools\(\)[\s\S]*?\.fetchFreshAdminUsers\(workerUrl, authHeaders\(\)\)/, "the directory loader must use the authenticated paginated user module");
+
+const verifiedUsers = new Map([["verified@example.invalid", { email: "verified@example.invalid", effective_access: { access_mode: "filters" } }]]);
+const summarySandbox = {
+  accountAdminUsersByEmail: verifiedUsers,
+  renderAdminModuleNotice() {},
+  formatAdminDateTime(value) { return String(value || ""); },
+};
+vm.runInNewContext(extractFunction(app, "renderAccountAdminSummary"), summarySandbox);
+const summaryTargets = {
+  pickCount: {}, picks: {}, files: {}, status: {},
+  users: { innerHTML: "verified filtered-access row" }, userCount: { textContent: "1 complete user" }, usersComplete: true,
+};
+for (const state of ["fresh", "stale"]) {
+  summarySandbox.renderAccountAdminSummary({
+    users: [{ email: "stale@example.invalid", effective_access: { access_mode: "all" } }],
+    can_view_wechat: false, can_view_analytics: false, module_status: { users: { state } },
+  }, summaryTargets);
+  assert.equal(summarySandbox.accountAdminUsersByEmail, verifiedUsers, "a dashboard snapshot must not replace the verified directory map");
+  assert.equal(verifiedUsers.size, 1);
+  assert.ok(verifiedUsers.has("verified@example.invalid"));
+  assert.equal(verifiedUsers.get("verified@example.invalid").effective_access.access_mode, "filters");
+  assert.equal(summaryTargets.users.innerHTML, "verified filtered-access row", "summary refresh must not repaint user permission rows from its snapshot");
+  assert.equal(summaryTargets.userCount.textContent, "1 complete user");
+  assert.equal(summaryTargets.usersComplete, true);
+}
 
 assert.match(app, /function accountRightDurationText\(/);
 assert.match(app, /return `\$\{institutions\[0\]\}报告下载权限`/);

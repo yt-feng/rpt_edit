@@ -1703,6 +1703,7 @@ def render_report_seo_page(
         if key in item and item.get(key) is not None:
             detail_params[key] = "1" if bool(item.get(key)) else "0"
     detail_href = f"../report.html?{urlencode(detail_params)}"
+    access_href = f"../report.html?{urlencode({'id': report_id, 'request': 'access'})}"
     search_href = f"../?{urlencode({'q': title[:200]})}"
     text_only = not (bool(item.get("available")) and not bool(item.get("pdf_archived")))
     description = item_meta_description(item)
@@ -1908,7 +1909,7 @@ def render_report_seo_page(
       <a href="../about.html">关于{BLOG_PUBLIC_BRAND}</a>
       <a href="../terms.html">Terms of Service</a>
       <a href="../privacy.html">Privacy Policy</a>
-      <a href="../?request=access">申请报告访问</a>
+      <a href="{html_escape(access_href, quote=True)}">申请报告访问</a>
     </footer>
     <script src="../assets/contact.js"></script>
     <script src="../assets/analytics.js"></script>

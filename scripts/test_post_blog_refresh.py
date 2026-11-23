@@ -90,8 +90,9 @@ class PostBlogRefreshTests(unittest.TestCase):
         group = re.search(r'^  group: >-\n(.*?)^  cancel-in-progress: false$',
                           concurrency, re.M | re.S)
         self.assertIsNotNone(group, 'The root release lock must remain non-cancelling')
-        preparation = neutral.split('\n  prepare_release:\n', 1)[1]
-        admission = preparation.split('    if: >-\n', 1)[1].split('    runs-on:', 1)[0].strip()
+        admission_job = re.search(r'^  source_admission:\n(.*?)(?=^  [a-z_]+:\n|\Z)',
+                                  neutral, re.M | re.S).group(1)
+        admission = admission_job.split('    if: >-\n', 1)[1].split('    runs-on:', 1)[0].strip()
         self.assertTrue(admission.startswith('${{') and admission.endswith('}}'))
         expected = ("${{ ( " + ' '.join(admission[3:-2].split()) +
                     " ) && 'portal-production-release' || "

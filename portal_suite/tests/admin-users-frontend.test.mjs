@@ -19,7 +19,7 @@ function runtime(extra = {}) {
   const context = vm.createContext({ AbortController, URL, Date, Map, Set, ...extra,
     setTimeout: (fn, ms) => ms === 500 ? (fn(), 1) : 1, clearTimeout() {},
   });
-  vm.runInContext(source.replaceAll('export ', '') + '\nglobalThis.api = { fetchFreshAdminUsers, saveAdminNewsfeed, mountAdminInlineEditor, closeAdminInlineEditor, adminNewsfeedLabel, bindNewsfeedEditor };', context);
+  vm.runInContext(source.replaceAll('export ', '') + '\nglobalThis.api = { fetchFreshAdminUsers, saveAdminNewsfeed, mountAdminInlineEditor, closeAdminInlineEditor, adminNewsfeedLabel, bindNewsfeedEditor, fillAdminNewsfeedEditor };', context);
   return context;
 }
 const response = (body, status = 200) => ({ ok: status < 400, status, json: async () => body });
@@ -154,6 +154,52 @@ test('late Newsfeed save keeps the newly selected user draft and feedback unchan
   assert.equal(targets.newsfeedEmail.value, user(1).email);
   assert.equal(targets.newsfeedStatus.textContent, 'User 1 draft');
   assert.equal(rendered, 1);
+});
+
+test('pending Newsfeed save locks the shared controls and rejects duplicate submits', async () => {
+  for (const fails of [false, true]) {
+    const form = new Node('form'), submit = new Node('button'), close = new Node('button'); form.append(submit);
+    let finish, calls = 0;
+    const targets = { users: new Node('tbody'), editorHome: new Node(), newsfeedEditor: form, newsfeedEmail: { value: user(0).email }, newsfeedMode: new Node('select'), newsfeedExpiry: new Node('input'), newsfeedStatus: new Node(), newsfeedTitle: new Node(), newsfeedState: new Node() };
+    const ctx = runtime({ document: { getElementById: () => close } });
+    const saved = { ...user(0), newsfeed: { mode: 'enabled', expires_at: '2026-12-23T15:59:59.999Z' } };
+    ctx.api.fillAdminNewsfeedEditor(saved, targets);
+    ctx.api.bindNewsfeedEditor('/api', targets, { renderAdminUserTable() {}, saveAdminNewsfeed() { calls++; return new Promise((resolve, reject) => { finish = () => fails ? reject(new Error('retry later')) : resolve(saved); }); } });
+    const pending = form.listeners.submit({ preventDefault() {} });
+    assert.equal(submit.disabled, true);
+    assert.equal(targets.newsfeedMode.disabled, true);
+    assert.equal(targets.newsfeedExpiry.disabled, true);
+    await form.listeners.submit({ preventDefault() {} });
+    assert.equal(calls, 1);
+    // Reopening the same row must not re-enable inputs while its save is pending.
+    ctx.api.fillAdminNewsfeedEditor(saved, targets);
+    assert.equal(targets.newsfeedMode.disabled, true);
+    assert.equal(targets.newsfeedExpiry.disabled, true);
+    finish(); await pending;
+    assert.equal(submit.disabled, false);
+    assert.equal(targets.newsfeedMode.disabled, false);
+    assert.equal(targets.newsfeedExpiry.disabled, false);
+    assert.equal(targets.newsfeedMode.value, 'enabled');
+    assert.equal(targets.newsfeedExpiry.value, '2026-12-23');
+    assert.equal(targets.newsfeedStatus.className, fails ? 'status-line error' : 'status-line ok');
+  }
+});
+
+test('switching rows during a Newsfeed save keeps the new selection locked until completion', async () => {
+  const form = new Node('form'), submit = new Node('button'); form.append(submit);
+  let resolve;
+  const targets = { users: new Node('tbody'), editorHome: new Node(), newsfeedEditor: form, newsfeedEmail: { value: user(0).email }, newsfeedMode: new Node('select'), newsfeedExpiry: new Node('input'), newsfeedStatus: new Node(), newsfeedTitle: new Node(), newsfeedState: new Node() };
+  const ctx = runtime({ document: { getElementById: () => null } });
+  ctx.api.bindNewsfeedEditor('/api', targets, { renderAdminUserTable() {}, saveAdminNewsfeed: () => new Promise((done) => { resolve = done; }) });
+  const pending = form.listeners.submit({ preventDefault() {} });
+  ctx.api.fillAdminNewsfeedEditor({ ...user(1), newsfeed: { mode: 'auto' } }, targets);
+  assert.equal(targets.newsfeedMode.disabled, true);
+  resolve(user(0)); await pending;
+  assert.equal(targets.newsfeedEmail.value, user(1).email);
+  assert.equal(targets.newsfeedMode.value, 'auto');
+  assert.equal(targets.newsfeedMode.disabled, false);
+  assert.equal(targets.newsfeedExpiry.disabled, true);
+  assert.equal(targets.newsfeedStatus.textContent, '');
 });
 
 test('admin module URL stays at the site root from nested report and blog pages', () => {
