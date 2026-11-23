@@ -86,7 +86,8 @@ class FakeR2:
             raise Missing()
         body = FakeBody(self.objects[Key]["body"])
         self.bodies.append(body)
-        return {"Body": body, "ResponseMetadata": {"RetryAttempts": 0}}
+        return {"Body": body, "ContentLength": self.objects[Key]["ContentLength"],
+                "ResponseMetadata": {"RetryAttempts": 0}}
 
 
 class R2Tests(unittest.TestCase):
@@ -160,6 +161,71 @@ class R2Tests(unittest.TestCase):
         self.assertEqual(result["completed_page_count"], 2)
         self.assertEqual((candidate / "fr/index.html").read_bytes(), (restored / "fr/index.html").read_bytes())
 
+    def test_page_reads_skip_head_but_receipt_and_manifest_keep_head_validation(self):
+        candidate = self.root / "candidate"
+        manifest = build(self.corpus, "fr", candidate, self.root / "memo.json", FakeTranslator())
+        uploaded = self.store.upload_candidate(candidate, "fr", self.generation)
+        self.client.head_object = Mock(wraps=self.client.head_object)
+        self.client.get_object = Mock(wraps=self.client.get_object)
+        self.client.put_object = Mock(wraps=self.client.put_object)
+        result = self.store.restore_candidate("fr", self.generation, uploaded["candidate_id"], self.root / "restored")
+        self.assertEqual(result["completed_page_count"], len(manifest["pages"]))
+        self.assertEqual([entry.kwargs["Key"] for entry in self.client.head_object.call_args_list],
+                         [uploaded["ready_key"], uploaded["manifest_key"]])
+        self.assertEqual(self.client.get_object.call_count, 2 + len(manifest["pages"]))
+        self.client.put_object.assert_not_called()
+        self.assertTrue(all(body.closed for body in self.client.bodies))
+
+    def test_invalid_page_stream_never_writes_failed_page_or_complete_manifest(self):
+        candidate = self.root / "candidate"
+        manifest = build(self.corpus, "fr", candidate, self.root / "memo.json", FakeTranslator())
+        uploaded = self.store.upload_candidate(candidate, "fr", self.generation)
+        row = manifest["pages"][0]
+        key = self.store.candidate_key("fr", self.generation, uploaded["candidate_id"], row["path"])
+        original = self.client.objects[key]["body"]
+        get = self.client.get_object
+        cases = ("oversize_header", "oversize_stream", "truncated_stream", "short_header",
+                 "hash", "missing_length", "read_failure", "request_failure")
+        for case in cases:
+            with self.subTest(case=case):
+                content = (original + b"x" if case in {"oversize_header", "oversize_stream"}
+                           else original[:-1] if case in {"truncated_stream", "short_header"}
+                           else b"x" + original[1:] if case == "hash" else original)
+                stream = FakeBody(content)
+                stream.read = Mock(wraps=stream.read)
+                response = {"Body": stream, "ContentLength": len(original),
+                            "ResponseMetadata": {"RetryAttempts": 8}}
+                if case in {"oversize_header", "short_header"}:
+                    response["ContentLength"] = len(content)
+                if case == "missing_length":
+                    del response["ContentLength"]
+                if case == "read_failure":
+                    stream.read.side_effect = TimeoutError("private transport detail")
+
+                def changed_page(*, Bucket, Key):
+                    if Key == key:
+                        if case == "request_failure":
+                            raise HttpError("ServiceUnavailable", 503, retries=8)
+                        return response
+                    return get(Bucket=Bucket, Key=Key)
+
+                destination = self.root / ("failed-" + case)
+                self.client.get_object = Mock(side_effect=changed_page)
+                self.client.put_object = Mock()
+                expected = R2TransportError if case in {"read_failure", "request_failure"} else R2IntegrityError
+                with self.assertRaises(expected):
+                    self.store.restore_candidate("fr", self.generation, uploaded["candidate_id"], destination)
+                self.assertFalse((destination / row["path"]).exists())
+                self.assertFalse((destination / "candidate-manifest.json").exists())
+                self.assertEqual(sum(entry.kwargs["Key"] == key for entry in self.client.get_object.call_args_list), 1)
+                self.client.put_object.assert_not_called()
+                self.assertEqual(stream.closed, case != "request_failure")
+                if case in {"oversize_header", "missing_length", "request_failure"}:
+                    stream.read.assert_not_called()
+                if case == "oversize_stream":
+                    self.assertLessEqual(stream.position, len(original) + 1)
+        self.sleep.assert_not_called()
+
     def test_restore_bounds_parallel_reads_and_preserves_all_page_bytes(self):
         origin = self.corpus["documents"][0]["url"].rstrip("/")
         docs = [self.corpus["documents"][0]]
@@ -173,12 +239,10 @@ class R2Tests(unittest.TestCase):
         barrier, lock = threading.Barrier(4), threading.Lock()
         active = peak = started = 0
         fetched = []
-        read = self.store._get
+        read = self.store._get_candidate_page
 
-        def bounded_read(key, *, maximum):
+        def bounded_read(key, *, length, checksum):
             nonlocal active, peak, started
-            if not key.endswith(".html"):
-                return read(key, maximum=maximum)
             with lock:
                 active += 1
                 started += 1
@@ -188,19 +252,50 @@ class R2Tests(unittest.TestCase):
             try:
                 if ordinal <= 4:
                     barrier.wait(timeout=3)
-                return read(key, maximum=maximum)
+                return read(key, length=length, checksum=checksum)
             finally:
                 with lock:
                     active -= 1
 
         restored = self.root / "parallel-restored"
-        with patch.object(self.store, "_get", side_effect=bounded_read):
+        with patch.object(self.store, "_get_candidate_page", side_effect=bounded_read):
             result = self.store.restore_candidate("fr", source["documents_sha256"], uploaded["candidate_id"], restored)
         self.assertEqual(peak, 4)
         self.assertEqual(result["completed_page_count"], 10)
         self.assertEqual(len(fetched), len(set(fetched)))
         for row in manifest["pages"]:
             self.assertEqual((candidate / row["path"]).read_bytes(), (restored / row["path"]).read_bytes())
+
+    def test_repeat_restore_withdraws_old_complete_marker_before_any_read(self):
+        candidate = self.root / "candidate"
+        manifest = build(self.corpus, "fr", candidate, self.root / "memo.json", FakeTranslator())
+        uploaded = self.store.upload_candidate(candidate, "fr", self.generation)
+        destination = self.root / "reused-destination"
+        first_page = manifest["pages"][0]
+        page_key = self.store.candidate_key("fr", self.generation, uploaded["candidate_id"], first_page["path"])
+        get = self.client.get_object
+        for failing_key in (uploaded["ready_key"], uploaded["manifest_key"], page_key):
+            with self.subTest(key=failing_key):
+                self.client.get_object = get
+                self.store.restore_candidate("fr", self.generation, uploaded["candidate_id"], destination)
+                self.assertTrue((destination / "candidate-manifest.json").is_file())
+                original = (destination / first_page["path"]).read_bytes()
+
+                def failed_read(*, Bucket, Key):
+                    self.assertFalse((destination / "candidate-manifest.json").exists())
+                    if Key == failing_key:
+                        raise HttpError("ServiceUnavailable", 503, retries=8)
+                    return get(Bucket=Bucket, Key=Key)
+
+                self.client.get_object = failed_read
+                with self.assertRaises(R2TransportError):
+                    self.store.restore_candidate("fr", self.generation, uploaded["candidate_id"], destination)
+                self.assertFalse((destination / "candidate-manifest.json").exists())
+                self.assertEqual((destination / first_page["path"]).read_bytes(), original)
+        self.client.get_object = get
+        result = self.store.restore_candidate("fr", self.generation, uploaded["candidate_id"], destination)
+        self.assertTrue(result['ready'])
+        self.assertTrue((destination / "candidate-manifest.json").is_file())
 
     def test_identical_candidate_replay_avoids_all_duplicate_puts(self):
         candidate = self.root / "candidate"
