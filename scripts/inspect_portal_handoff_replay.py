@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Read exact Extended handoff receipts and export only replay identities.
+"""Read exact handoff receipts and export bounded replay metadata.
 
-This does not inspect source text, change a queue, approve a candidate, or
-dispatch publication. The publisher must still perform its normal checks.
+This does not export source text. Optional metadata mode reads pinned candidate
+and source descriptors, but never writes, approves, or dispatches publication.
+The publisher must still perform its normal checks.
 """
 from __future__ import annotations
 
@@ -97,15 +98,30 @@ def inspect(read_receipt: Callable[[str], bytes], requested: str) -> dict:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--receipt-hashes", default=os.environ.get("HANDOFF_SHA256S", ""))
+    parser.add_argument("--english-receipt-hashes", default=os.environ.get("ENGLISH_HANDOFF_SHA256S", ""))
+    parser.add_argument("--metadata", action="store_true")
+    parser.add_argument("--active-release", default=os.environ.get("ACTIVE_RELEASE", ""))
     parser.add_argument("--output", required=True, type=Path)
     args = parser.parse_args(argv)
     try:
         # Validate before initializing any service client or reading storage.
-        identities = receipt_hashes(args.receipt_hashes)
+        identities = receipt_hashes(args.receipt_hashes) if args.receipt_hashes.strip() else []
+        english = receipt_hashes(args.english_receipt_hashes) if args.english_receipt_hashes.strip() else []
+        if args.metadata:
+            if (not identities and not english) or len(identities) + len(english) > MAX_RECEIPTS:
+                raise InspectionError("Metadata receipt count is invalid.")
+            if re.fullmatch(r"[0-9a-f]{32}", args.active_release) is None:
+                raise InspectionError("An exact active release is required.")
+        elif not identities or english or args.active_release:
+            raise InspectionError("Receipt-only inputs are invalid.")
         store = R2Store.from_env(DEFAULT_PREFIX)
-        result = inspect(lambda identity: store._get(
-            store.key("publication-handoffs", identity, "receipt.json"), maximum=MAX_RECEIPT_BYTES,
-        ), "\n".join(identities))
+        if args.metadata:
+            from inspect_portal_replay_metadata import inspect_metadata
+            result = inspect_metadata(store, identities, english, args.active_release)
+        else:
+            result = inspect(lambda identity: store._get(
+                store.key("publication-handoffs", identity, "receipt.json"), maximum=MAX_RECEIPT_BYTES,
+            ), "\n".join(identities))
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps(result, ensure_ascii=True, sort_keys=True, indent=2) + "\n", encoding="utf-8")
         args.output.chmod(0o600)
