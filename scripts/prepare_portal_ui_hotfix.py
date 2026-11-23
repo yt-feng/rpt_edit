@@ -4,7 +4,8 @@
 The caller must hold portal-production-release throughout preparation and
 cutover. Catalogs, translations, sitemaps and private English content retain
 exactly their currently published bytes. Only approved assets, root HTML asset
-versions, two exact analytics fixes, and approved English ledger projections change.
+versions, two exact analytics fixes, their bound locale asset descriptors, and
+approved English ledger projections change.
 """
 from __future__ import annotations
 
@@ -24,8 +25,13 @@ import portal_english_publication as english
 from check_portal_app_budget import check_budget
 from portal_extended_r2 import R2Store
 from portal_english_ui import PUBLIC_ASSET_NAMES, bind_account_session, detail, homepage
+from portal_locale_manifest import (
+    FALLBACK_SHARD_DIRECTORY, MAX_LOCALE_MANIFEST_BYTES, locale_manifest_shard_descriptors,
+    parse_locale_manifest, validate_translation_resolution,
+)
 from resume_portal_locale_candidate import live_state, read_pinned_manifest
 from verify_prepared_static_slot import read_json_object, read_verified_candidate_body, static_tree_sha256
+import verify_portal_locale_routes as locale_routes
 
 ADDED_ASSETS = frozenset(('admin-report-refresh.js', 'admin-users.js'))
 ASSETS = ADDED_ASSETS | frozenset(('app.js', 'account-services.js', 'newsfeed-app.js', 'styles.css', 'analytics.js', 'course-full.js', 'site-feedback.js', 'report-discussion.js', 'english-commentary.js'))
@@ -226,6 +232,63 @@ def root_html_analytics_patch(relative: str, body: bytes) -> bytes:
     return (source[:start] + ACTIVITY_OPTIONS_AFTER + source[end:]).encode('utf-8')
 
 
+def patch_locale_asset_descriptors(client: Any, bucket: str, active: dict[str, str],
+                                   old: dict[str, dict[str, Any]], files: dict[str, dict[str, Any]]) -> bytes | None:
+    """Rebind only changed asset references; retain the original provenance encoding."""
+    relative = 'data/i18n/manifest.json'
+    if relative not in old:
+        return None
+    prefix = publish.slot_prefix(active['slot'])
+    raw = read_verified_candidate_body(client, bucket, prefix + relative, old[relative], maximum=MAX_LOCALE_MANIFEST_BYTES)
+
+    def matches(row: dict[str, Any], inventory: dict[str, dict[str, Any]]) -> bool:
+        descriptor = inventory.get(row['path'])
+        return bool(descriptor and type(row.get('byte_size')) is int
+                    and row['byte_size'] == descriptor['size'] and row.get('sha256') == descriptor['sha256'])
+
+    def checked(body: bytes, inventory: dict[str, dict[str, Any]]) -> dict[str, Any]:
+        def shard(row: dict[str, Any]) -> bytes:
+            require(matches(row, inventory), 'Locale source shard differs from pinned static manifest: ' + row['path'])
+            return read_verified_candidate_body(client, bucket, prefix + row['path'], old[row['path']], maximum=MAX_LOCALE_MANIFEST_BYTES)
+        manifest = parse_locale_manifest(body, shard_resolver=shard)
+        validate_translation_resolution(manifest, locale_routes.LOCALES)
+        declared_shards = {row['path'] for row in locale_manifest_shard_descriptors(manifest)}
+        require(declared_shards == {path for path in inventory if path.startswith(FALLBACK_SHARD_DIRECTORY + '/')},
+                'Locale source shard inventory differs from pinned manifest')
+        for row in locale_routes.declared_checks(manifest) or []:
+            require(matches(row, inventory), 'Locale route descriptor differs from pinned static manifest: ' + row['path'])
+        return manifest
+
+    # Validate the original graph before repairing any references. Never turn a
+    # mismatched old descriptor into apparently verified candidate metadata.
+    checked(raw, old)
+    manifest = json.loads(raw.decode('utf-8'))
+    changed_assets = {path for path, row in files.items() if path.startswith('assets/')
+                      and any(row[field] != old.get(path, {}).get(field) for field in ('size', 'sha256'))}
+    changed = False
+
+    def rebind(value: Any) -> None:
+        nonlocal changed
+        if isinstance(value, list):
+            for item in value: rebind(item)
+        elif isinstance(value, dict):
+            path = value.get('path')
+            if isinstance(path, str) and path in changed_assets:
+                require(matches(value, old), 'Changed locale asset descriptor differs from pinned static manifest: ' + path)
+                value.update(byte_size=files[path]['size'], sha256=files[path]['sha256'])
+                changed = True
+            for item in value.values(): rebind(item)
+
+    rebind(manifest)
+    if not changed:
+        return None
+    # Serialize the original representation, not the parser's expanded fallback
+    # records. Shard paths, coverage, translations and locale routes stay exact.
+    body = (json.dumps(manifest, ensure_ascii=False, sort_keys=True, separators=(',', ':')) + '\n').encode('utf-8')
+    checked(body, files)
+    return body
+
+
 def build_patch(client: Any, bucket: str, active: dict[str, str], manifest: dict[str, Any], source_root: Path, locale_assets: Path, store: R2Store) -> tuple[dict[str, bytes], dict[str, dict[str, Any]], dict[str, Any] | None]:
     old = manifest['files']; files = {path: dict(row) for path, row in old.items()}; bodies = {}
     require(ANALYTICS_ROOT_PAGES <= set(old), 'Required analytics root HTML is missing from the active release')
@@ -273,6 +336,10 @@ def build_patch(client: Any, bucket: str, active: dict[str, str], manifest: dict
             assembly['public_files'][relative] = {'sha256': files[relative]['sha256'], 'bytes': len(raw)}
         raw = english.stable_bytes(english.checked_assembly(assembly))
         bodies[english.ASSEMBLY] = raw; files[english.ASSEMBLY] = descriptor_with_body(old[english.ASSEMBLY], raw)
+    locale_body = patch_locale_asset_descriptors(client, bucket, active, old, files)
+    if locale_body is not None:
+        relative = 'data/i18n/manifest.json'
+        bodies[relative] = locale_body; files[relative] = descriptor_with_body(old[relative], locale_body)
     bodies = {key: body for key, body in bodies.items() if files[key] != old.get(key)}
     require(bool(bodies), 'UI hotfix has no changes')
     return bodies, files, approved
