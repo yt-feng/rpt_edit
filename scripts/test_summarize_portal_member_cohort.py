@@ -303,7 +303,7 @@ class StorageAndWorkflowTest(unittest.TestCase):
 
     def test_workflow_uses_canonical_profile_and_never_uploads_snapshot(self) -> None:
         source = (Path(__file__).parents[1] / ".github/workflows/portal-growth-review.yml").read_text()
-        self.assertIn("timeout-minutes: 180", source)
+        self.assertIn("timeout-minutes: 300", source)
         self.assertIn("ACCOUNT_STORE_MODE: supabase", source)
         self.assertIn("PORTAL_PRIVATE_CONFIG_B64", source)
         self.assertLess(source.index("name: Materialize canonical"), source.index("name: Read complete current"))

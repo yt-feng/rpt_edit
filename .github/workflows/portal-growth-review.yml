@@ -30,7 +30,7 @@ jobs:
   review:
     if: github.event_name == 'schedule' || github.actor == github.repository_owner
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 300
     steps:
       - uses: actions/checkout@v4
         with:
