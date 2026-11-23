@@ -31,6 +31,7 @@ const ADMIN = Object.freeze({
 
 let activeSupabaseRows = [];
 let activeExternalRequests = [];
+let activePageCap = Number.POSITIVE_INFINITY;
 
 function jsonResponse(body) {
   return new Response(JSON.stringify(body), {
@@ -57,7 +58,7 @@ globalThis.fetch = async (input) => {
     const rows = activeSupabaseRows
       .filter((row) => !cursor || row.id > cursor)
       .sort((left, right) => left.id.localeCompare(right.id))
-      .slice(0, limit);
+      .slice(0, Math.min(limit, activePageCap));
     return jsonResponse(rows);
   }
 
@@ -250,4 +251,82 @@ test("a failed first live verification still renders an actionable empty state",
   assert.match(targets.users.innerHTML, /读取失败/u);
   assert.equal(targets.userCount.textContent, "未核验");
   assert.equal(targets.usersNotice.hidden, false);
+});
+
+
+async function readPaginatedUsers(total, pageCap = Number.POSITIVE_INFINITY) {
+  activeSupabaseRows = userRows(total);
+  activePageCap = pageCap;
+  const all = [];
+  const calls = [];
+  let cursor = "";
+  do {
+    const bucket = new CountingR2();
+    activeExternalRequests = [];
+    const query = new URLSearchParams({ page_size: "100" });
+    if (cursor) query.set("cursor", cursor);
+    const response = await worker.fetch(new Request(`https://worker.test/account-admin/users?${query}`, {
+      headers: { authorization: `Bearer ${userToken(ADMIN)}` },
+    }), {
+      REPORT_BUCKET: bucket, AUTH_SECRET, ACCOUNT_STORE_MODE: "supabase", SUPABASE_URL,
+      SUPABASE_SERVICE_ROLE_KEY: "test-service-role-key", ALLOWED_ORIGIN: "https://portal.example.invalid",
+    }, { waitUntil() {} });
+    const body = await response.json();
+    assert.equal(response.status, 200, JSON.stringify(body));
+    assert.equal(body.verified, true);
+    assert.equal(body.complete, !body.has_more);
+    assert.equal(Boolean(body.next_cursor), body.has_more);
+    assert.ok(bucket.events.length < 1000, `R2 per-request budget exceeded: ${bucket.events.length}`);
+    assert.ok(activeExternalRequests.length < 50);
+    assert.ok(body.users.length <= 100);
+    all.push(...body.users);
+    calls.push({ count: body.users.length, complete: body.complete });
+    assert.ok(calls.length < 30, "pagination must terminate");
+    assert.notEqual(body.next_cursor || "completed", cursor || "start");
+    cursor = body.next_cursor;
+  } while (cursor);
+  activePageCap = Number.POSITIVE_INFINITY;
+  return { all, calls };
+}
+
+test("624 live users load completely in bounded requests without stale snapshots", async () => {
+  const { all, calls } = await readPaginatedUsers(624);
+  assert.equal(all.length, 624);
+  assert.equal(new Set(all.map((user) => user.email)).size, 624);
+  assert.equal(calls.length, 8, "seven data pages plus an empty completion page");
+  assert.equal(calls[0].count, 100);
+  assert.equal(calls[0].complete, false);
+  assert.equal(calls.at(-1).complete, true);
+  assert.ok(all.every((user) => user.newsfeed && user.newsfeed.mode === "auto"));
+});
+
+test("a server-clamped short page cannot masquerade as the full user list", async () => {
+  const { all, calls } = await readPaginatedUsers(624, 61);
+  assert.equal(all.length, 624);
+  assert.equal(new Set(all.map((user) => user.id)).size, 624);
+  assert.equal(calls[0].count, 61);
+  assert.equal(calls[0].complete, false);
+  assert.equal(calls.at(-1).count, 0);
+});
+
+test("patching one user never promotes a partial snapshot or resets directory freshness", async () => {
+  const source = await readFile(workerPath, "utf8");
+  const previous = {
+    updated_at: "2026-01-01T00:00:00.000Z", partial: true,
+    data: { users: [{ email: "cached@example.invalid" }], complete: false },
+  };
+  let written;
+  const patch = vm.runInNewContext(`(${extractFunction(source, "patchAdminUsersSnapshotUser")})`, {
+    ADMIN_USERS_SNAPSHOT_KEY: "snapshot", Date,
+    async safeR2GetJson() { return previous; },
+    hasAdminSnapshot(snapshot) { return Boolean(snapshot && snapshot.data); },
+    normalizeEmail(value) { return String(value || "").toLowerCase(); },
+    sortAdminVisibleUsers(users) { return users; },
+    async writeAdminSnapshot(_env, _key, data, extra) { written = { data, ...extra }; },
+  });
+  assert.equal(await patch({}, { email: "new@example.invalid" }), true);
+  assert.equal(written.partial, true);
+  assert.equal(written.data.complete, false);
+  assert.equal(written.updated_at, previous.updated_at);
+  assert.equal(written.data.users.length, 2);
 });

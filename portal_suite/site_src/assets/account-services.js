@@ -284,7 +284,7 @@
     return new Date(date.getTime() - date.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
   }
 
-  function initAdminResearchAccessControls(workerUrl, modal) {
+  function initAdminResearchAccessControls(workerUrl, modal, editorHooks = {}) {
     const byId = (id) => modal.querySelector(`#${id}`);
     const panel = byId("accountAdminResearchAccess");
     if (!panel) return { close() {} };
@@ -371,14 +371,15 @@
       if (busy) { setStatus(apiStatus, "请等待当前读取或保存完成，再选择其他用户。"); return; }
       if (selectedEmail !== button.dataset.email) creditOperation = null;
       trigger = button;
+      editorHooks.mount?.(panel, button.dataset.email);
       load(button.dataset.email);
       byId("accountAdminResearchTitle")?.focus?.({ preventScroll: true });
-      panel.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      if (!editorHooks.mount) panel.scrollIntoView({ block: "nearest", behavior: "smooth" });
     }
     modal.addEventListener("click", (event) => open(event.target.closest(".account-admin-research-user")));
     refresh.addEventListener("click", () => load(selectedEmail));
     byId("accountAdminResearchClose").addEventListener("click", () => {
-      if (!busy) { panel.hidden = true; if (trigger?.isConnected !== false) trigger?.focus?.({ preventScroll: true }); }
+      if (!busy) { panel.hidden = true; editorHooks.close?.(panel); if (trigger?.isConnected !== false) trigger?.focus?.({ preventScroll: true }); }
     });
     function updateReportScopeHint() {
       byId("accountAdminApiReportIdsHint").textContent = mode.value === "granted_corpus"

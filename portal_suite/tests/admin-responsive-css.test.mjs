@@ -36,7 +36,7 @@ function mediaSection(source, query) {
 }
 
 test("desktop admin workspace is wide enough for the user table and editor", () => {
-  assert.match(responsive, /\.account-admin-dialog\s*\{[\s\S]*?width:\s*min\(1480px,\s*calc\(100vw - 32px\)\)/u);
+  assert.match(responsive, /\.account-admin-dialog\s*\{[\s\S]*?width:\s*min\(1720px,\s*calc\(100vw - 32px\)\)/u);
   assert.match(responsive, /max-height:\s*min\(92dvh,\s*1040px\)/u);
   assert.match(responsive, /#accountAdminUsersSection \.account-admin-table\s*\{[\s\S]*?min-width:\s*1120px/u);
 
@@ -70,7 +70,7 @@ test("mobile user table is a labeled card list with touch-sized actions", () => 
   assert.match(mobile, /td:last-child:empty\s*\{[\s\S]*?display:\s*none/u);
 });
 
-test("mobile labels stay aligned with the 11-column user DOM contract", () => {
+test("mobile labels stay aligned with the 12-column user DOM contract", () => {
   const modalStart = app.indexOf('id="accountAdminUsersSection"');
   const tableStart = app.indexOf('<table class="account-admin-table">', modalStart);
   const tableEnd = app.indexOf("</table>", tableStart);
@@ -87,6 +87,7 @@ test("mobile labels stay aligned with the 11-column user DOM contract", () => {
     "权限来源",
     "注册",
     "最近登录",
+    "Newsfeed",
     "操作",
   ]);
 
@@ -98,7 +99,7 @@ test("mobile labels stay aligned with the 11-column user DOM contract", () => {
 
   const rowStart = app.indexOf("function adminUserRow(user)");
   const rowEnd = app.indexOf("function adminUserSortTimestamp", rowStart);
-  assert.equal((app.slice(rowStart, rowEnd).match(/<td/gu) || []).length, 11);
+  assert.equal((app.slice(rowStart, rowEnd).match(/<td/gu) || []).length, 12);
 });
 
 test("responsive cards preserve disabled-user treatment in dark mode", () => {

@@ -1,8 +1,11 @@
 """Deployment ordering and rollback boundaries for the bounded UI-only route."""
 from pathlib import Path
+import json
+import os
 import re
 import shlex
 import subprocess
+import tempfile
 import unittest
 import yaml
 
@@ -48,5 +51,30 @@ class Workflow(unittest.TestCase):
         rollback_readback = next(step['run'] for step in self.steps if step.get('name') == 'Verify rollback restored service availability')
         self.assertIn('live-edge-state.json', rollback_readback)
         self.assertIn('--expect-version "$EDGE_PREVIOUS_VERSION_ID"', rollback_readback)
+
+    def test_latest_captures_validated_state_inside_lock_but_exact_release_still_guards(self):
+        step = next(step for step in self.steps if step.get('name') == 'Read and validate current live edge state')
+        code = step['run'].split('STATE_PATH="$RUNNER_TEMP/live-edge-state.json" python3 - <<\'PY\'\n', 1)[1].rsplit('\nPY', 1)[0]
+        state = {'schema_version': 1, 'slot': 'a', 'release_id': 'a' * 32, 'tree_sha256': 'b' * 64}
+        with tempfile.TemporaryDirectory() as directory:
+            state_path = Path(directory) / 'state.json'
+            output_path = Path(directory) / 'env'
+            state_path.write_text(json.dumps(state))
+            for expected, success in [('latest', True), ('a' * 32, True), ('c' * 32, False), ('', False)]:
+                output_path.write_text('')
+                result = subprocess.run(['python3', '-c', code], env={**os.environ,
+                    'STATE_PATH': str(state_path), 'GITHUB_ENV': str(output_path), 'EXPECTED_RELEASE': expected},
+                    text=True, capture_output=True)
+                self.assertEqual(result.returncode == 0, success, result.stderr)
+                if success:
+                    self.assertIn('STATIC_RELEASE=' + 'a' * 32, output_path.read_text())
+                else:
+                    self.assertEqual(output_path.read_text(), '')
+            state['release_id'] = 'invalid'
+            state_path.write_text(json.dumps(state))
+            result = subprocess.run(['python3', '-c', code], env={**os.environ,
+                'STATE_PATH': str(state_path), 'GITHUB_ENV': str(output_path), 'EXPECTED_RELEASE': 'latest'},
+                text=True, capture_output=True)
+            self.assertNotEqual(result.returncode, 0)
 
 if __name__ == '__main__': unittest.main()

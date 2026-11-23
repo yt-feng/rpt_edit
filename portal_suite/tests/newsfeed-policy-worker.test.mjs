@@ -213,7 +213,7 @@ function installFetchMock(t, controls = {}) {
     if (url.includes("gdeltproject.org")) {
       return new Response(JSON.stringify({ articles: [] }), { status: 200, headers: { "content-type": "application/json" } });
     }
-    return new Response("<rss><channel></channel></rss>", { status: 200, headers: { "content-type": "application/rss+xml" } });
+    return new Response(state.rss || "<rss><channel></channel></rss>", { status: 200, headers: { "content-type": "application/rss+xml" } });
   };
   t.after(() => { globalThis.fetch = original; });
   return state;
@@ -540,7 +540,7 @@ test("topic-limit requests are member-owned, deduplicated, private, and email th
 });
 
 test("scheduled digest delivery revalidates active membership", async (t) => {
-  const fetchState = installFetchMock(t);
+  const fetchState = installFetchMock(t, { rss: `<rss><channel><item><title>Global markets and investment outlook as central banks update interest rate policy</title><link>https://www.bbc.com/news/business-markets-outlook</link><pubDate>${new Date().toUTCString()}</pubDate><description>Investors assess the global economic outlook and new monetary policy decisions.</description></item></channel></rss>` });
   const now = new Date();
   const sendTime = `${String(now.getUTCHours()).padStart(2, "0")}:${String(now.getUTCMinutes()).padStart(2, "0")}`;
 
@@ -638,4 +638,164 @@ test("Newsfeed analytics HMACs page and interaction visitor ids in both mirrors"
   assert.equal(storedInteraction.tier, "member");
   assert.equal(storedInteraction.count, 3);
   assert.equal(storedInteraction.limit, 3);
+});
+
+
+test("admin Newsfeed grants are independent, audited, verified, and leave email opt-in untouched", async (t) => {
+  installFetchMock(t);
+  const bucket = new MemoryR2();
+  const env = envFor(bucket);
+  const admin = seedUser(bucket, { id: "newsfeed-admin", username: "admin-a", email: "admin-a@users.portal.example.invalid" });
+  const reader = seedUser(bucket);
+  const expiresAt = new Date(Date.now() + 31 * 86400000).toISOString();
+  const grant = await jsonRequest(env, "/account-admin/user-newsfeed", {
+    method: "POST", headers: { ...bearer(admin.token), "content-type": "application/json" },
+    body: JSON.stringify({ email: reader.user.email, newsfeed_mode: "enabled", newsfeed_expires_at: expiresAt }),
+  });
+  assert.equal(grant.response.status, 200, JSON.stringify(grant.data));
+  assert.equal(grant.data.verified, true);
+  assert.equal(grant.data.newsfeed.enabled, true);
+  assert.equal(grant.data.newsfeed.source, "admin");
+  assert.equal(grant.data.newsfeed.expires_at, expiresAt);
+  assert.equal(grant.data.user.effective_access.active, false, "Newsfeed grant must not grant report downloads");
+  const readback = await jsonRequest(env, `/account-admin/user-newsfeed?email=${encodeURIComponent(reader.user.email)}`, {
+    headers: bearer(admin.token),
+  });
+  assert.deepEqual(readback.data.newsfeed, grant.data.newsfeed);
+  const topics = await jsonRequest(env, "/newsfeed/home?fast=1", { headers: bearer(reader.token) });
+  assert.equal(topics.response.status, 200, JSON.stringify(topics.data));
+  assert.equal(topics.data.policy.can_subscribe, true);
+  assert.equal(topics.data.policy.custom_topic_limit, 3);
+  const settings = await jsonRequest(env, "/newsfeed/settings", { headers: bearer(reader.token) });
+  assert.equal(settings.response.status, 200, JSON.stringify(settings.data));
+  assert.equal(settings.data.settings.digest_email_enabled, false, "access alone does not subscribe or choose interests");
+  const audits = [...bucket.rows.entries()].filter(([key]) => key.startsWith("_account/newsfeed_access_audit/"));
+  assert.equal(audits.length, 1);
+  assert.equal(JSON.parse(audits[0][1].value).status, "saved");
+});
+
+test("admin Newsfeed auto, disabled, expiry, and disabled-account boundaries preserve membership behavior", async (t) => {
+  installFetchMock(t);
+  const bucket = new MemoryR2();
+  const env = envFor(bucket);
+  const admin = seedUser(bucket, { id: "newsfeed-admin", username: "admin-a", email: "admin-a@users.portal.example.invalid" });
+  const reader = seedUser(bucket);
+  seedMemberAccess(bucket, reader.user, 2);
+  const save = (mode) => jsonRequest(env, "/account-admin/user-newsfeed", {
+    method: "POST", headers: { ...bearer(admin.token), "content-type": "application/json" },
+    body: JSON.stringify({ email: reader.user.email, newsfeed_mode: mode }),
+  });
+  const before = await jsonRequest(env, "/newsfeed/home?fast=1", { headers: bearer(reader.token) });
+  assert.equal(before.data.policy.custom_topic_limit, 5);
+  const disabled = await save("disabled");
+  assert.equal(disabled.data.newsfeed.enabled, false);
+  const denied = await jsonRequest(env, "/newsfeed/settings", { headers: bearer(reader.token) });
+  assert.equal(denied.response.status, 403);
+  const automatic = await save("auto");
+  assert.equal(automatic.data.newsfeed.source, "membership");
+  assert.equal(automatic.data.newsfeed.custom_topic_limit, 5);
+  const restored = await jsonRequest(env, "/newsfeed/home?fast=1", { headers: bearer(reader.token) });
+  assert.equal(restored.data.policy.custom_topic_limit, 5);
+  const enabledAdvanced = await save("enabled");
+  assert.equal(enabledAdvanced.data.newsfeed.custom_topic_limit, 5, "explicit access cannot downgrade advanced membership");
+  const enabledPolicy = await jsonRequest(env, "/newsfeed/home?fast=1", { headers: bearer(reader.token) });
+  assert.equal(enabledPolicy.data.policy.custom_topic_limit, 5);
+  const grantKey = `_account/newsfeed-access/${encodeURIComponent(reader.user.email)}`;
+  const storedGrant = JSON.parse(bucket.rows.get(grantKey).value);
+  bucket.seed(grantKey, { ...storedGrant, expires_at: new Date(Date.now() - 1000).toISOString() });
+  const expired = await jsonRequest(env, "/newsfeed/home?fast=1", { headers: bearer(reader.token) });
+  assert.equal(expired.data.policy.custom_topic_limit, 5, "expired override falls back to current membership");
+  bucket.rows.delete(`_account/access/${encodeURIComponent(reader.user.email)}`);
+  const expiredFree = await jsonRequest(env, "/newsfeed/settings", { headers: bearer(reader.token) });
+  assert.equal(expiredFree.response.status, 403);
+  await save("enabled");
+  bucket.seed(`_account/user-state/email/${encodeURIComponent(reader.user.email)}`, {
+    email: reader.user.email, user_id: reader.user.id, disabled: true, account_status: "disabled",
+  });
+  const blocked = await jsonRequest(env, "/newsfeed/settings", { headers: bearer(reader.token) });
+  assert.notEqual(blocked.response.status, 200, "explicit Newsfeed grant cannot revive a disabled account");
+});
+
+test("only super-admin can grant Newsfeed and invalid settings never modify account state", async (t) => {
+  installFetchMock(t);
+  const bucket = new MemoryR2();
+  const env = envFor(bucket);
+  const admin = seedUser(bucket, { id: "newsfeed-admin", username: "admin-a", email: "admin-a@users.portal.example.invalid" });
+  const reader = seedUser(bucket);
+  const post = (token, fields) => jsonRequest(env, "/account-admin/user-newsfeed", {
+    method: "POST", headers: { ...bearer(token), "content-type": "application/json" },
+    body: JSON.stringify({ email: reader.user.email, ...fields }),
+  });
+  assert.equal((await post(reader.token, { newsfeed_mode: "enabled", role: "super" })).response.status, 403);
+  assert.equal((await post(admin.token, { newsfeed_mode: "owner" })).response.status, 400);
+  assert.equal((await post(admin.token, { newsfeed_mode: "enabled", newsfeed_expires_at: "yesterday" })).response.status, 400);
+  assert.equal((await post(admin.token, { newsfeed_mode: "enabled", newsfeed_expires_at: "2020-01-01T00:00:00Z" })).response.status, 400);
+  assert.equal([...bucket.rows.keys()].filter((key) => key.startsWith("_account/newsfeed-access/")).length, 0);
+});
+
+
+test("Newsfeed saves cannot overwrite a concurrent account disable or session invalidation", async (t) => {
+  installFetchMock(t);
+  const bucket = new MemoryR2();
+  const env = envFor(bucket);
+  const admin = seedUser(bucket, { id: "newsfeed-admin", username: "admin-a", email: "admin-a@users.portal.example.invalid" });
+  const reader = seedUser(bucket);
+  const stateKey = `_account/user-state/email/${encodeURIComponent(reader.user.email)}`;
+  const put = bucket.put.bind(bucket);
+  const concurrentState = {
+    email: reader.user.email, user_id: reader.user.id, disabled: true, account_status: "disabled",
+    session_epoch: "a".repeat(32), updated_at: new Date().toISOString(),
+  };
+  bucket.put = async (key, value, options) => {
+    if (key.startsWith("_account/newsfeed-access/")) bucket.seed(stateKey, concurrentState);
+    assert.equal(key.startsWith("_account/user-state/"), false, "Newsfeed must not write account/session records");
+    return put(key, value, options);
+  };
+  const result = await jsonRequest(env, "/account-admin/user-newsfeed", {
+    method: "POST", headers: { ...bearer(admin.token), "content-type": "application/json" },
+    body: JSON.stringify({ email: reader.user.email, newsfeed_mode: "enabled", expected_updated_at: "" }),
+  });
+  assert.equal(result.response.status, 200, JSON.stringify(result.data));
+  assert.equal(result.data.newsfeed.enabled, false, "a grant does not reactivate the disabled account");
+  assert.deepEqual(JSON.parse(bucket.rows.get(stateKey).value), concurrentState);
+  const denied = await jsonRequest(env, "/newsfeed/settings", { headers: bearer(reader.token) });
+  assert.notEqual(denied.response.status, 200);
+  const staleSave = await jsonRequest(env, "/account-admin/user-newsfeed", {
+    method: "POST", headers: { ...bearer(admin.token), "content-type": "application/json" },
+    body: JSON.stringify({ email: reader.user.email, newsfeed_mode: "disabled", expected_updated_at: "" }),
+  });
+  assert.equal(staleSave.response.status, 409);
+  assert.equal(staleSave.data.code, "NEWSFEED_ACCESS_CONFLICT");
+});
+
+test("R2 admin directory pages retain every account and reject invalid or unauthorized cursors", async (t) => {
+  installFetchMock(t);
+  const bucket = new MemoryR2();
+  const env = envFor(bucket);
+  const admin = seedUser(bucket, { id: "newsfeed-admin", username: "admin-a", email: "admin-a@users.portal.example.invalid" });
+  const reader = seedUser(bucket);
+  for (let index = 0; index < 123; index += 1) {
+    const suffix = String(index).padStart(4, "0");
+    seedUser(bucket, { id: `directory-${suffix}`, username: `directory-${suffix}`, email: `directory-${suffix}@example.com` });
+  }
+  let cursor = "";
+  const users = [];
+  let pageCount = 0;
+  do {
+    const query = new URLSearchParams({ page_size: "100", ...(cursor ? { cursor } : {}) });
+    const page = await jsonRequest(env, `/account-admin/users?${query}`, { headers: bearer(admin.token) });
+    assert.equal(page.response.status, 200, JSON.stringify(page.data));
+    users.push(...page.data.users);
+    assert.equal(page.data.complete, !page.data.has_more);
+    cursor = page.data.next_cursor;
+    pageCount += 1;
+    assert.ok(pageCount <= 2);
+  } while (cursor);
+  assert.equal(users.length, 125);
+  assert.equal(new Set(users.map((user) => user.email)).size, 125);
+  assert.equal(pageCount, 2);
+  const invalid = await jsonRequest(env, "/account-admin/users?cursor=invalid", { headers: bearer(admin.token) });
+  assert.equal(invalid.response.status, 400);
+  const forbidden = await jsonRequest(env, "/account-admin/users", { headers: bearer(reader.token) });
+  assert.equal(forbidden.response.status, 403);
 });

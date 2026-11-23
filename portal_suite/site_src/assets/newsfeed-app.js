@@ -956,21 +956,17 @@ export async function initNewsfeedApp(dependencies) {
     const newsletterTopicId = enabled ? String(settings.newsletter_topic_id || "global-daily") : "";
     const providerNote = settings.email_provider_configured === false
       ? (state.interfaceLanguage === "zh-CN"
-        ? "邮件服务还没配置好，请先配置 Brevo API key。"
-        : "Email sender is not configured yet. Add the Brevo API key first.")
-      : (settings.email_provider === "brevo"
-        ? (state.interfaceLanguage === "zh-CN"
-          ? "Brevo 邮件服务已连接；保存后可立即发送 newsletter。"
-          : "Brevo email is connected. Save, then send a newsletter now.")
-        : (state.interfaceLanguage === "zh-CN"
-          ? "Cloudflare 邮件服务已连接；保存后可立即发送 newsletter。"
-          : "Cloudflare email is connected. Save, then send a newsletter now."));
+        ? "邮件服务暂不可用；你可以先保存设置，或联系网站管理员。"
+        : "Email delivery is temporarily unavailable. You can save your settings or contact support.")
+      : (state.interfaceLanguage === "zh-CN"
+        ? "保存订阅后，将按所选时间发送话题摘要；暂无内容时不会发送空邮件。"
+        : "Save your subscription to receive a topic digest at your chosen time. Empty digests are not sent.");
     const lastStatus = newsfeedEmailLastStatus(settings);
     return `
       <section class="news-email-settings">
         <div class="news-email-copy">
           <h2>${escapeHtml(newsfeedText(state, "digestEmail"))}</h2>
-          <p>${state.interfaceLanguage === "zh-CN" ? "每天定点发送最新摘要到邮箱。" : "Send the latest Daily Digest to your inbox once a day."}</p>
+          <p>${state.interfaceLanguage === "zh-CN" ? "先在「添加话题」输入你感兴趣的内容，再在这里选择该话题、勾选每日邮件并保存。收件地址固定为你的账号邮箱。" : "Create an interest with Add Topics, select it below, then enable daily email and save. Digests go to your account email."}</p>
         </div>
         <form id="newsEmailForm" class="news-email-form">
           <label>${escapeHtml(newsfeedText(state, "email"))}

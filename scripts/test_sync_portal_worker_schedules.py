@@ -14,7 +14,7 @@ SPEC = importlib.util.spec_from_file_location("schedules", ROOT / "scripts/sync_
 schedules = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(schedules)
 OLD = ["*/30 * * * *", *schedules.NEWSFEED_PARTS]
-NEW = ["*/30 * * * *", schedules.NEWSFEED_UNION, schedules.REMINDER]
+NEW = ["*/30 * * * *", schedules.NEWSFEED_ALL_DAY, schedules.REMINDER]
 
 class Api:
     def __init__(self, state=None, *, reads=(), puts=()):
@@ -42,24 +42,31 @@ def firing_minutes(cron):
     minutes = range(0, 60, int(minute[2:]))
     included = set()
     for part in hours.split(","):
-        bounds = [int(value) for value in part.split("-")]
+        bounds = [0, 23] if part == "*" else [int(value) for value in part.split("-")]
         included.update(range(bounds[0], bounds[-1] + 1))
     return {(hour, minute) for hour in included for minute in minutes}
 
 class ScheduleTests(unittest.TestCase):
-    def test_known_union_has_identical_daily_firing_times(self):
+    def test_newsfeed_covers_all_hours_and_preserves_every_old_delivery_tick(self):
         previous = set().union(*(firing_minutes(cron) for cron in schedules.NEWSFEED_PARTS))
-        self.assertEqual(previous, firing_minutes(schedules.NEWSFEED_UNION))
+        current = firing_minutes(schedules.NEWSFEED_ALL_DAY)
+        self.assertTrue(previous.issubset(current))
+        self.assertEqual(len(current), 24 * 6)
         self.assertEqual(schedules.desired_schedules(OLD), NEW)
 
-    def test_unknown_schedules_preserved_exactly_and_partial_known_union_not_expanded(self):
+    def test_unknown_schedules_preserved_exactly_while_known_newsfeed_clocks_are_replaced(self):
         previous = ["11 15 * * MON", schedules.NEWSFEED_PARTS[0], "19 3 1 * *"]
-        self.assertEqual(schedules.desired_schedules(previous), previous + [schedules.REMINDER, schedules.HALF_HOURLY])
+        self.assertEqual(schedules.desired_schedules(previous), [previous[0], schedules.NEWSFEED_ALL_DAY, previous[2], schedules.REMINDER, schedules.HALF_HOURLY])
         previous = ["11 15 * * MON", *schedules.NEWSFEED_PARTS]
-        self.assertEqual(schedules.desired_schedules(previous), [previous[0], schedules.NEWSFEED_UNION, schedules.REMINDER, schedules.HALF_HOURLY])
+        self.assertEqual(schedules.desired_schedules(previous), [previous[0], schedules.NEWSFEED_ALL_DAY, schedules.REMINDER, schedules.HALF_HOURLY])
+
+    def test_union_migration_and_missing_newsfeed_clock_are_idempotent(self):
+        self.assertEqual(schedules.desired_schedules([schedules.HALF_HOURLY, schedules.NEWSFEED_UNION, schedules.REMINDER]), NEW)
+        self.assertEqual(set(schedules.desired_schedules([schedules.HALF_HOURLY, schedules.REMINDER])), set(NEW))
+        self.assertEqual(schedules.desired_schedules(NEW), NEW)
 
     def test_missing_half_hourly_trigger_is_installed_and_verified(self):
-        previous = [schedules.NEWSFEED_UNION, schedules.REMINDER]
+        previous = [schedules.NEWSFEED_ALL_DAY, schedules.REMINDER]
         api = Api(previous)
         result = run(api)
         self.assertTrue(result["half_hourly_verified"])

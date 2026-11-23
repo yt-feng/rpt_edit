@@ -38,7 +38,7 @@ Supabase 正常路径的外部请求上界为：1 次账号分页 + 20 次初次
 
 `wrangler versions upload/deploy` 不会应用 Cron Triggers。应急发布工作流在 Worker 部署及现有线上 API 冒烟检查成功后，单独运行 `scripts/sync_portal_worker_schedules.py`；只有其 GET 读回核验成功才确认触发器配置已保存；这不证明实际 cron 已执行或客户已收到邮件。沿用现有 Cloudflare 账户/API token/Worker 名称，以及现有邮件服务配置（Brevo 或 Cloudflare Email binding），没有新增 secret。
 
-同步只访问当前 Worker 的 `/schedules` API。先读取完整列表，保留未知计划；仅当四条已知 Newsfeed 时段全部存在时，将其合并为等价的 `*/10 0-3,5-6,17-18,23 * * *`，再加入 `* 2-3 * * *`。正常旧配置从 5 条变为 3 条，触发时间不变；如果保留未知项后仍超过 5 条，写入前失败。不修改路由或域名。
+同步只访问当前 Worker 的 `/schedules` API。先读取完整列表，保留未知计划；已知 Newsfeed 时段及旧合并时段统一替换为全天每十分钟的 `*/10 * * * *`，使用户选择的发送时间和时区全天可用，并确保 `* 2-3 * * *` 提醒计划与 `*/30 * * * *` 维护计划存在。正常旧配置从 5 条变为 3 条，原 Newsfeed 时段保留并补齐其他时段；如果保留未知项后仍超过 5 条，写入前失败。不修改路由或域名。
 
 同步最多提交一次激活 PUT。回应不明时先 GET 核对，不盲目重发；读回要求最多 3 次内连续 2 次 cron 字符串集合完全一致。核验失败时，只有最新列表仍是本次已知旧值或目标值才恢复旧字符串列表并核验；遇到第三种并发状态或读不到当前状态时停止覆盖并报告 `conflict` 或 `unverified`。API 未提供已知的条件写保障，工作流发布锁及写前检查缩小并发窗口，不能宣称跨客户端原子更新。同步失败也触发现有 Worker 版本回滚。版本回滚本身不恢复触发器，因此应检查同步步骤的 `rollback` 结果；`verified` 才证明旧计划已恢复。
 
@@ -46,4 +46,4 @@ Supabase 正常路径的外部请求上界为：1 次账号分页 + 20 次初次
 
 `portal_suite/tests/expiry-reminders.test.mjs` 使用假 R2、假账户数据和假邮件服务，覆盖 500 以上账户的分页、并发去重、延期取消、退订、未知结果、时间窗口及真实 scheduled 入口的 48 次外部请求计数。测试不发送真实客户邮件，不读取线上账户记录或凭据。
 
-定时触发器同步由 `scripts/test_sync_portal_worker_schedules.py` 离线验证，覆盖真实响应包裹结构、未知计划保留、等价时间集合、未知 PUT 回应、恢复和并发保护；不调用 Cloudflare 真实接口。
+定时触发器同步由 `scripts/test_sync_portal_worker_schedules.py` 离线验证，覆盖真实响应包裹结构、未知计划保留、全天时段覆盖、未知 PUT 回应、恢复和并发保护；不调用 Cloudflare 真实接口。

@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       expected_release:
-        description: Exact currently active release, prevents queued stale publication
+        description: Exact active release, or latest to capture it after acquiring the publication lock
         required: true
         type: string
 
@@ -120,7 +120,7 @@ jobs:
               raise SystemExit("Live edge state release is invalid")
           if not isinstance(tree, str) or re.fullmatch(r"[0-9a-f]{64}", tree) is None:
               raise SystemExit("Live edge state tree is invalid")
-          if release != os.environ["EXPECTED_RELEASE"]:
+          if os.environ["EXPECTED_RELEASE"] != "latest" and release != os.environ["EXPECTED_RELEASE"]:
               raise SystemExit("Active release changed before UI hotfix; recheck before dispatching")
           with Path(os.environ["GITHUB_ENV"]).open("a", encoding="utf-8") as handle:
               handle.write(f"STATIC_SLOT={slot}\n")

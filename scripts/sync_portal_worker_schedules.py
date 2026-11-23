@@ -3,7 +3,7 @@
 
 Versions upload/deploy do not apply triggers. Ensure the half-hour maintenance
 and Daily source wake-up clock exists. Preserve unknown schedules and
-merge only the complete four-entry, equivalent Newsfeed union. Never modify
+replace known Newsfeed schedules with an all-day ten-minute clock. Never modify
 routes/domains. PUT is not retried: reconcile an unknown outcome by GET first.
 A failed verification restores the exact prior cron strings only while the
 current list is one of the two known states. Concurrent unrecognized changes
@@ -27,6 +27,7 @@ NEWSFEED_PARTS = (
     "*/10 17-18 * * *", "*/10 23 * * *", "*/10 0-3 * * *", "*/10 5-6 * * *",
 )
 NEWSFEED_UNION = "*/10 0-3,5-6,17-18,23 * * *"
+NEWSFEED_ALL_DAY = "*/10 * * * *"
 MAX_SCHEDULES = 5
 MAX_BODY = 128 * 1024
 READ_ATTEMPTS = 3
@@ -63,15 +64,15 @@ def parse_schedules(payload):
 
 def desired_schedules(previous):
     previous = validate_crons([{"cron": value} for value in previous])
-    desired = list(previous)
-    if all(value in previous for value in NEWSFEED_PARTS):
-        desired = []
-        for value in previous:
-            if value in NEWSFEED_PARTS:
-                if NEWSFEED_UNION not in desired and NEWSFEED_UNION not in previous:
-                    desired.append(NEWSFEED_UNION)
-            else:
-                desired.append(value)
+    desired = []
+    for value in previous:
+        if value in (*NEWSFEED_PARTS, NEWSFEED_UNION, NEWSFEED_ALL_DAY):
+            if NEWSFEED_ALL_DAY not in desired:
+                desired.append(NEWSFEED_ALL_DAY)
+        else:
+            desired.append(value)
+    if NEWSFEED_ALL_DAY not in desired:
+        desired.append(NEWSFEED_ALL_DAY)
     if REMINDER not in desired:
         desired.append(REMINDER)
     if HALF_HOURLY not in desired:

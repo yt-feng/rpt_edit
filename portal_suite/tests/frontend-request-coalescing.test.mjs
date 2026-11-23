@@ -54,7 +54,7 @@ function setup() {
   });
   vm.runInContext([
     "loadAuthSession", "saveAuthSession", "clearAuthSession", "authHeaders", "authSessionRequestKey",
-    "waitForAuthSessionRefresh", "refreshAuthSession", "fetchRewardRequest", "fetchReportAccess", "initReportAccessControls", "adminUsersSnapshotIsFresh",
+    "waitForAuthSessionRefresh", "refreshAuthSession", "fetchRewardRequest", "fetchReportAccess", "initReportAccessControls",
   ].map(extractFunction).join("\n"), context);
   function respond(index, payload, status = 200) {
     requests[index].resolve(new Response(JSON.stringify(payload), { status, headers: { "content-type": "application/json" } }));
@@ -150,17 +150,13 @@ test("public home metadata never fetches internal storage", () => {
   assert.doesNotMatch(extractFunction("initIndex"), /internal\/pdf-storage/u);
 });
 
-test("only a verified fresh users snapshot avoids the automatic live users export", () => {
-  const { context } = setup();
-  assert.equal(context.adminUsersSnapshotIsFresh({ users: [], module_status: { users: { state: "fresh", has_data: true } } }), true);
-  for (const summary of [null, {}, { users: [] },
-    { users: [], module_status: { users: { state: "updating", has_data: true } } },
-    { users: [], module_status: { users: { state: "fresh", has_data: false } } },
-    { module_status: { users: { state: "fresh", has_data: true } } },
-  ]) assert.equal(context.adminUsersSnapshotIsFresh(summary), false);
-  assert.match(app, /loadAccountAdminSummary\(workerUrl, targets\)\.then\(\(summary\) => \{\s*if \(!adminUsersSnapshotIsFresh\(summary\)/u);
-  assert.match(extractFunction("loadAccountAdminSummary"), /backgroundRetry: true[\s\S]*!adminUsersSnapshotIsFresh\(summary\)[\s\S]*loadFreshAdminUsers/u);
-  assert.match(extractFunction("showAccountAdminModal"), /forceRefresh: true[\s\S]*await loadFreshAdminUsers\(workerUrl, targets\)/u);
+test("admin entry always loads complete users independently of summary freshness", () => {
+  const show = extractFunction("showAccountAdminModal");
+  assert.match(show, /loadAccountAdminSummary\(workerUrl, targets\)\.catch/u);
+  assert.match(show, /if \(canManageUsers\) refreshAdminUserList\(workerUrl, targets\)/u);
+  assert.doesNotMatch(extractFunction("renderAccountAdminSummary"), /accountAdminUsersByEmail|renderAdminUserTable/u);
+  assert.doesNotMatch(extractFunction("loadAccountAdminSummary"), /loadFreshAdminUsers/u);
+  assert.match(show, /forceRefresh: true[\s\S]*refreshAdminUserList\(workerUrl, targets\)/u);
   assert.match(extractFunction("loadAdminUserAccess"), /cache: "no-store"/u);
-  assert.match(extractFunction("exportAdminUsersToExcel"), /fetchFreshAdminUsers\(workerUrl\)/u);
+  assert.match(extractFunction("exportAdminUsersToExcel"), /loadFreshAdminUsers\(workerUrl, targets\)/u);
 });

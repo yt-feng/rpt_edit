@@ -1550,7 +1550,7 @@
     if (accountServicesLoad) return accountServicesLoad;
     accountServicesLoad = new Promise((resolve, reject) => {
       const script = document.createElement("script");
-      script.src = "/assets/account-services.js?v=account-services-20261012";
+      script.src = "/assets/account-services.js?v=account-services-20261123";
       script.async = true;
       let settled = false;
       const timer = window.setTimeout(() => failed(), 20000);
@@ -1584,7 +1584,10 @@
         const create = await loadAccountServices();
         if (closed || modal.isConnected === false || (!admin && !visible)) return;
         const services = create({ loadAuthSession, authHeaders, escapeHtml, isAdminASession });
-        controls = admin ? services.initAdminResearchAccessControls(workerUrl, modal) : {
+        controls = admin ? services.initAdminResearchAccessControls(workerUrl, modal, {
+          mount: (editor, email) => mountAdminInlineEditor(modal.__adminUserTargets, editor, email),
+          close: (editor) => closeAdminInlineEditor(modal.__adminUserTargets, editor),
+        }) : {
           children: [services.initAccountApiControls(workerUrl, modal), services.initAccountReminderControls(workerUrl, modal), services.initAccountCreditControls(workerUrl, modal)],
           close() { this.children.forEach((child) => child.close()); },
         };
@@ -3493,6 +3496,7 @@
               <button class="secondary-button" id="accountAdminNewUser" type="button">新增用户</button>
             </div>
             <div id="accountAdminUsersNotice" class="account-admin-module-notice" hidden></div>
+            <label class="account-admin-user-search">查找用户<input id="accountAdminUserSearch" type="search" autocomplete="off" placeholder="搜索全部用户的用户名或邮箱"></label>
             <form id="accountAdminPasswordReset" class="account-admin-password-reset">
               <label>
                 <span>重置用户密码</span>
@@ -3528,7 +3532,7 @@
             </form>
             <form id="accountAdminUserEditor" class="account-admin-user-editor" hidden>
               <div class="account-admin-user-editor-head">
-                <strong id="accountAdminUserEditorTitle">编辑用户权限</strong>
+                <strong id="accountAdminUserEditorTitle" tabindex="-1">编辑用户权限</strong>
                 <button class="secondary-button" id="accountAdminUserEditorClose" type="button">关闭</button>
               </div>
               <input id="accountAdminAccessEmail" type="hidden">
@@ -3572,7 +3576,21 @@
               <div class="account-admin-user-editor-actions">
                 <button class="primary" type="submit">保存权限</button>
               </div>
+              <div id="accountAdminUserEditorStatus" class="status-line" role="status" aria-live="polite"></div>
             </form>
+            <form id="accountAdminNewsfeedEditor" class="account-admin-user-editor" hidden>
+              <div class="account-admin-user-editor-head"><strong id="accountAdminNewsfeedTitle" tabindex="-1">Newsfeed 权限</strong><button class="secondary-button" id="accountAdminNewsfeedClose" type="button">关闭</button></div>
+              <input id="accountAdminNewsfeedEmail" type="hidden">
+              <p id="accountAdminNewsfeedState" class="account-tool-note"></p>
+              <div class="account-admin-form-grid">
+                <label>开通方式<select id="accountAdminNewsfeedMode"><option value="enabled">单独开通 Newsfeed</option><option value="auto">跟随现有会员权限</option><option value="disabled">关闭 Newsfeed</option></select></label>
+                <label>到期日期（北京时间，含当天）<input id="accountAdminNewsfeedExpiry" type="date"><small>单独开通时可指定日期；留空为长期。</small></label>
+              </div>
+              <p class="account-tool-note">开通后，用户可在 Newsfeed 添加感兴趣的话题，并在“邮件订阅”选择话题、发送时间后启用每日邮件。此处只管理功能权限，不替用户订阅。</p>
+              <div class="account-admin-user-editor-actions"><button class="primary" type="submit">保存 Newsfeed 权限</button></div>
+              <div id="accountAdminNewsfeedStatus" class="status-line" role="status" aria-live="polite"></div>
+            </form>
+            <div id="accountAdminEditorHome" hidden></div>
             <section id="accountAdminResearchAccess" class="account-admin-user-editor account-research-access" hidden aria-labelledby="accountAdminResearchTitle">
               <div class="account-admin-user-editor-head"><strong id="accountAdminResearchTitle" tabindex="-1">AI 研究与 API 权限</strong><button class="secondary-button" id="accountAdminResearchClose" type="button">关闭</button></div>
               <p id="accountAdminResearchUser" class="account-tool-note"></p>
@@ -3619,6 +3637,7 @@
                     <th>权限来源</th>
                     <th>注册</th>
                     <th>最近登录</th>
+                    <th>Newsfeed</th>
                     <th>操作</th>
                   </tr>
                 </thead>
@@ -3631,89 +3650,16 @@
     `;
   }
 
-  function adminUserEntitlementLabel(user) {
-    if (user && user.role === "super") return "super";
-    const entitlement = user && user.entitlement || {};
-    if (entitlement.active) return entitlement.plan || "active";
-    return "free";
-  }
 
-  function adminUserAccessLabel(user) {
-    const access = user && (user.effective_access || user.access) || {};
-    if (access.source === "disabled") return "账号已禁用（不可下载）";
-    if (access.source === "error") return "权限读取失败（已拒绝）";
-    if (!access.active) return "未开通";
-    const suffix = accountRightUsageText(access);
-    if (access.access_mode === "all") return suffix ? `全站报告 · ${suffix}` : "全站报告";
-    if (access.access_mode === "filters") {
-      const parts = [];
-      if (Array.isArray(access.institutions) && access.institutions.length) parts.push(`机构 ${access.institutions.length}`);
-      if (Array.isArray(access.industries) && access.industries.length) parts.push(`行业 ${access.industries.length}`);
-      if (Array.isArray(access.page_ranges) && access.page_ranges.length) parts.push(`页数 ${access.page_ranges.length}`);
-      const label = parts.length ? parts.join(" / ") : "条件报告";
-      return suffix ? `${label} · ${suffix}` : label;
-    }
-    const label = access.access_mode || "active";
-    return suffix ? `${label} · ${suffix}` : label;
-  }
 
-  function adminUserAccessExpiry(user) {
-    const access = user && (user.effective_access || user.access) || {};
-    if (access.source === "disabled") return "-";
-    if (access.source === "error") return "核验失败";
-    if (!access.active) return "-";
-    if (access.lifetime) return "长期";
-    return access.current_period_end ? String(access.current_period_end).slice(0, 10) : "-";
-  }
 
-  function adminUserAccessSource(user) {
-    const access = user && (user.effective_access || user.access) || {};
-    const entitlement = user && user.entitlement || {};
-    if (access.source === "role") return "账号角色";
-    if (access.source === "disabled") return "账号已禁用";
-    if (["vid2ppt_nova", "vid2ppt_atlas"].includes(access.source)) return "历史会员权益";
-    if (access.source === "entitlement+stored") return "会员权益 + 后台授权";
-    if (access.source === "entitlement") {
-      return ["vid2ppt_nova", "vid2ppt_atlas"].includes(entitlement.grant_source)
-        ? "历史会员权益"
-        : "会员权益";
-    }
-    if (access.source === "stored") return "后台授权";
-    if (access.source === "error") return "核验失败（已拒绝）";
-    return "未授权";
-  }
+
+
+
+
 
   function adminUserViewModel(user) {
-    const disabled = Boolean(user && user.disabled);
-    const rawSiteOrigin = String(user && (user.site_origin || user.registered_site) || "portal");
-    const rawRegisteredSite = String(user && (user.registered_site || user.site_origin) || "portal");
-    const rawSourceSite = String(user && user.entitlement && user.entitlement.source_site || "");
-    const rawGrantSource = String(user && user.entitlement && user.entitlement.grant_source || "");
-    const historicalLinkedEntitlement = rawSourceSite === "vid2ppt" || ["vid2ppt_nova", "vid2ppt_atlas"].includes(rawGrantSource);
-    const publicOriginLabel = (value) => {
-      const text = String(value || "").trim();
-      if (!text || text === "portal") return PUBLIC_BRAND;
-      if (text === "vid2ppt") return "历史会员";
-      return publicBrandText(text, PUBLIC_BRAND);
-    };
-    return {
-      username: String(user && user.username || ""),
-      email: String(user && user.email || ""),
-      site_origin: publicOriginLabel(rawSiteOrigin),
-      registered_site: publicOriginLabel(rawRegisteredSite),
-      entitlement_source_site: historicalLinkedEntitlement ? "历史会员" : publicOriginLabel(rawSourceSite),
-      entitlement_grant_source: historicalLinkedEntitlement ? "历史会员" : publicBrandText(rawGrantSource),
-      entitlement_plan_code: historicalLinkedEntitlement ? "" : publicBrandText(user && user.entitlement && user.entitlement.source_plan_code),
-      status: disabled ? "已禁用" : "正常",
-      account: adminUserEntitlementLabel(user),
-      access: adminUserAccessLabel(user),
-      expiry: adminUserAccessExpiry(user),
-      registered: String(user && user.created_at || "").slice(0, 10),
-      last_login: String(user && user.last_login_at || "").replace("T", " ").slice(0, 16),
-      access_source: adminUserAccessSource(user),
-      access_updated: String(user && (user.effective_access || user.access) && (user.effective_access || user.access).updated_at || "").replace("T", " ").slice(0, 19),
-      disabled,
-    };
+    return accountAdminUserTools.adminUserViewModel(user, { PUBLIC_BRAND, publicBrandText, accountRightUsageText });
   }
 
   function adminUserRow(user) {
@@ -3734,9 +3680,10 @@
         <td>${escapeHtml(view.access_source)}</td>
         <td>${escapeHtml(view.registered)}</td>
         <td>${escapeHtml(view.last_login)}</td>
+        <td>${escapeHtml(adminNewsfeedLabel(user))}</td>
         <td>${canEditAccess || canToggleStatus ? `
           <div class="account-admin-row-actions">
-            ${canEditAccess ? `<button class="secondary-button account-admin-edit-user" type="button" data-email="${escapeHtml(email)}">编辑</button><button class="secondary-button account-admin-research-user" type="button" data-email="${escapeHtml(email)}">AI / API</button>` : ""}
+            ${canEditAccess ? `<button class="secondary-button account-admin-edit-user" type="button" data-email="${escapeHtml(email)}" aria-expanded="false">编辑</button><button class="secondary-button account-admin-newsfeed-user" type="button" data-email="${escapeHtml(email)}" aria-expanded="false">Newsfeed</button><button class="secondary-button account-admin-research-user" type="button" data-email="${escapeHtml(email)}">AI / API</button>` : ""}
             ${canToggleStatus ? `<button class="secondary-button account-admin-toggle-user" type="button" data-email="${escapeHtml(email)}" data-disabled="${disabled ? "false" : "true"}">${disabled ? "启用" : "禁用"}</button>` : ""}
           </div>
         ` : ""}</td>
@@ -3784,13 +3731,37 @@
   }
 
   function renderAdminUserTable(targets) {
-    if (!targets || !targets.users) return;
-    const rows = [...accountAdminUsersByEmail.values()].sort(compareAdminUsers);
-    if (targets.userCount) targets.userCount.textContent = `${rows.length} users`;
-    targets.users.innerHTML = rows.length
-      ? rows.map(adminUserRow).join("")
-      : '<tr><td colspan="11">暂无用户。</td></tr>';
-    renderAdminPasswordResetOptions(rows);
+    accountAdminUserTools?.renderAdminUserTable(targets, accountAdminUsersByEmail, {
+      compareAdminUsers, adminUserRow, renderAdminPasswordResetOptions, renderAdminUsersVerificationState,
+    });
+  }
+
+  let accountAdminUserTools = null;
+  async function loadAdminUserTools() {
+    if (!accountAdminUserTools) accountAdminUserTools = await import("/assets/admin-users.js?v=admin-users-20261123");
+    return accountAdminUserTools;
+  }
+
+  function mountAdminInlineEditor(targets, editor, email) {
+    return accountAdminUserTools?.mountAdminInlineEditor(targets, editor, email);
+  }
+
+  function closeAdminInlineEditor(targets, editor, email) {
+    return accountAdminUserTools?.closeAdminInlineEditor(targets, editor, email);
+  }
+
+  function adminNewsfeedLabel(user) {
+    return accountAdminUserTools?.adminNewsfeedLabel(user) || "待核验";
+  }
+
+  function fillAdminNewsfeedEditor(user, targets) {
+    accountAdminUserTools.fillAdminNewsfeedEditor(user, targets);
+  }
+
+  async function saveAdminNewsfeed(workerUrl, targets) {
+    const user = await (await loadAdminUserTools()).saveAdminNewsfeed(workerUrl, targets, authHeaders());
+    accountAdminUsersByEmail.set(String(user.email).toLowerCase(), user);
+    return user;
   }
 
   function optionMarkup(options = [], selected = []) {
@@ -3974,7 +3945,7 @@
         : `正在编辑 ${username || "用户"} 的下载权限。`;
     }
     requestAnimationFrame(() => {
-      targets.userEditor.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      mountAdminInlineEditor(targets, targets.userEditor, user.email);
       if (targets.accessMode) targets.accessMode.focus({ preventScroll: true });
     });
   }
@@ -4040,12 +4011,14 @@
     if (!response.ok) throw new Error(data.detail || "保存权限失败。");
     if (!data.verified) throw new Error("权限保存后读回校验失败，请重试。");
     const savedAccess = data.access && typeof data.access === "object" ? data.access : {};
-    targets.userEditor.dataset.expectedChangeId = String(savedAccess.change_id || "");
-    targets.userEditor.dataset.expectedUpdatedAt = String(savedAccess.updated_at || "");
-    targets.userEditor.dataset.originalAccessActive = savedAccess.active ? "true" : "false";
-    targets.userEditor.dataset.originalAccessScope = JSON.stringify(accessScopeSnapshot(savedAccess));
-    if (targets.accessExpiry) targets.accessExpiry.value = String(savedAccess.current_period_end || "").slice(0, 10);
-    if (targets.accessRenew) targets.accessRenew.checked = false;
+    if (targets.accessEmail.value === email) {
+      targets.userEditor.dataset.expectedChangeId = String(savedAccess.change_id || "");
+      targets.userEditor.dataset.expectedUpdatedAt = String(savedAccess.updated_at || "");
+      targets.userEditor.dataset.originalAccessActive = savedAccess.active ? "true" : "false";
+      targets.userEditor.dataset.originalAccessScope = JSON.stringify(accessScopeSnapshot(savedAccess));
+      if (targets.accessExpiry) targets.accessExpiry.value = String(savedAccess.current_period_end || "").slice(0, 10);
+      if (targets.accessRenew) targets.accessRenew.checked = false;
+    }
     const updated = data.user || null;
     if (updated && updated.email) accountAdminUsersByEmail.set(String(updated.email), updated);
     else {
@@ -6004,13 +5977,11 @@
   }
 
   function renderAccountAdminSummary(data, targets) {
-    const users = Array.isArray(data.users) ? data.users : [];
     const files = Array.isArray(data.files) ? data.files : [];
     const dailyPicks = Array.isArray(data.daily_picks) ? data.daily_picks : [];
     const wechatSchedule = data.wechat_schedule && typeof data.wechat_schedule === "object" ? data.wechat_schedule : {};
     const analytics = data.analytics && typeof data.analytics === "object" ? data.analytics : null;
     const moduleStatus = data.module_status && typeof data.module_status === "object" ? data.module_status : {};
-    accountAdminUsersByEmail = new Map(users.map((user) => [String(user.email || ""), user]));
     if (data.access_options && typeof data.access_options === "object") accountAdminAccessOptions = data.access_options;
     const canViewUsers = data.can_view_users !== false;
     const canViewWechat = data.can_view_wechat !== false;
@@ -6029,10 +6000,6 @@
       targets.wechatCount.textContent = wechatSchedule.total_batches ? `${wechatSchedule.total_batches} batches` : "";
       targets.wechatSchedule.innerHTML = renderAdminWechatSchedule(wechatSchedule);
       renderAdminModuleNotice(targets.wechatNotice, moduleStatus.wechat);
-    }
-    if (canViewUsers && targets.userCount && targets.users) {
-      renderAdminUserTable(targets);
-      renderAdminModuleNotice(targets.usersNotice, moduleStatus.users);
     }
     if (canViewAnalytics && targets.analytics && targets.analyticsCount) {
       targets.analyticsCount.textContent = analytics
@@ -6085,11 +6052,7 @@
     throw lastError || new Error("后台读取失败。");
   }
 
-  function adminUsersSnapshotIsFresh(summary) {
-    const status = summary && summary.module_status && summary.module_status.users;
-    return Boolean(summary && Array.isArray(summary.users) && status
-      && status.state === "fresh" && status.has_data === true);
-  }
+
 
   async function loadAccountAdminSummary(workerUrl, targets, options = {}) {
     targets.status.className = "status-line";
@@ -6108,12 +6071,7 @@
         accountAdminRefreshTimer = setTimeout(() => {
           accountAdminRefreshTimer = null;
           if (document.getElementById("accountAdminModal")) {
-            loadAccountAdminSummary(workerUrl, targets, { backgroundRetry: true }).then((summary) => {
-              if (!adminUsersSnapshotIsFresh(summary) && targets.canManageUsers && targets.exportUsers && document.getElementById("accountAdminModal")) {
-                return loadFreshAdminUsers(workerUrl, targets);
-              }
-              return null;
-            }).catch(() => null);
+            loadAccountAdminSummary(workerUrl, targets, { backgroundRetry: true }).catch(() => null);
           }
           }, 12000);
       }
@@ -6462,30 +6420,32 @@
   }
 
   async function fetchFreshAdminUsers(workerUrl) {
-    const response = await fetch(`${workerUrl}/account-admin/users-export`, {
-      cache: "no-store",
-      headers: authHeaders(),
-    });
-    const data = await response.json().catch(() => ({}));
-    if (!response.ok) throw new Error(data.detail || `用户读取失败 (${response.status})。`);
-    if (!Array.isArray(data.users)) throw new Error("用户接口返回的数据格式不完整。");
-    return data;
+    return (await loadAdminUserTools()).fetchFreshAdminUsers(workerUrl, authHeaders());
   }
 
   async function loadFreshAdminUsers(workerUrl, targets) {
-    const data = await fetchFreshAdminUsers(workerUrl);
-    accountAdminUsersByEmail = new Map(data.users.map((user) => [String(user.email || "").toLowerCase(), user]));
-    if (accountAdminLastSummary) accountAdminLastSummary = { ...accountAdminLastSummary, users: data.users };
-    if (targets.usersNotice) {
-      targets.usersNotice.hidden = true;
-      targets.usersNotice.textContent = "";
-    }
-    renderAdminUserTable(targets);
-    return data;
+    if (targets.usersLoadPromise) return targets.usersLoadPromise;
+    const before = new Map(accountAdminUsersByEmail);
+    targets.usersLoadPromise = (async () => {
+      const data = await fetchFreshAdminUsers(workerUrl);
+      if (targets.usersSection && targets.usersSection.isConnected === false) return data;
+      const complete = new Map(data.users.map((user) => [String(user.email || "").toLowerCase(), user]));
+      accountAdminUsersByEmail.forEach((user, email) => { if (user !== before.get(email)) complete.set(email, user); });
+      accountAdminUsersByEmail = complete;
+      targets.usersComplete = true;
+      if (targets.usersNotice) {
+        targets.usersNotice.hidden = true;
+        targets.usersNotice.textContent = "";
+      }
+      renderAdminUserTable(targets);
+      return { ...data, users: [...complete.values()] };
+    })();
+    try { return await targets.usersLoadPromise; }
+    finally { targets.usersLoadPromise = null; }
   }
 
   function renderAdminUsersVerificationState(targets, message, kind = "") {
-    const cachedCount = accountAdminUsersByEmail.size;
+    const cachedCount = targets.usersComplete === false ? 0 : accountAdminUsersByEmail.size;
     if (targets.userCount) {
       targets.userCount.textContent = cachedCount
         ? `${cachedCount} users · ${kind === "error" ? "最近同步" : "核验中…"}`
@@ -6493,12 +6453,23 @@
     }
     // Preserve the verified user table if its live refresh fails.
     if (targets.users && !cachedCount) {
-      targets.users.innerHTML = `<tr><td colspan="11"><div class="empty-state">${escapeHtml(message)}</div></td></tr>`;
+      targets.users.innerHTML = `<tr><td colspan="12"><div class="empty-state">${escapeHtml(message)}</div></td></tr>`;
     }
     if (targets.usersNotice) {
       targets.usersNotice.hidden = false;
       targets.usersNotice.className = kind ? `account-admin-module-notice ${kind}` : "account-admin-module-notice";
       targets.usersNotice.textContent = message;
+    }
+  }
+
+  async function refreshAdminUserList(workerUrl, targets) {
+    renderAdminUsersVerificationState(targets, "正在读取全部用户及最新权限，完成后显示总人数…");
+    try { return await loadFreshAdminUsers(workerUrl, targets); }
+    catch (error) {
+      renderAdminUsersVerificationState(targets, targets.usersComplete && accountAdminUsersByEmail.size
+        ? "完整列表刷新失败，保留上次完整结果。请重试；编辑时会单独读取最新权限。"
+        : error.message || "完整用户列表读取失败，请点击刷新重试。", "error");
+      return null;
     }
   }
 
@@ -6508,7 +6479,7 @@
     targets.status.className = "status-line";
     targets.status.textContent = "正在现场读取全部用户最新状态并生成 Excel…";
     try {
-      const data = await fetchFreshAdminUsers(workerUrl);
+      const data = await loadFreshAdminUsers(workerUrl, targets);
       const users = data.users;
       const rows = users.map(adminUserViewModel);
       const { buildXlsxWorkbook, downloadXlsx } = await import(versionedSiteAssetUrl("assets/xlsx-export.js"));
@@ -6625,6 +6596,7 @@
     const summaryOwner = String(session && session.user && (session.user.email || session.user.username) || "").toLowerCase();
     if (accountAdminLastSummaryOwner && accountAdminLastSummaryOwner !== summaryOwner) accountAdminLastSummary = null;
     accountAdminLastSummaryOwner = summaryOwner;
+    accountAdminUsersByEmail = new Map();
     const existing = document.getElementById("accountAdminModal");
     if (existing) {
       if (existing.__externalSourceConnection) existing.__externalSourceConnection.close();
@@ -6701,6 +6673,7 @@
     const requestIntakeSelection = document.getElementById("accountAdminRequestIntakeSelection");
     const requestIntakePdf = document.getElementById("accountAdminRequestIntakePdf");
     const userCount = document.getElementById("accountAdminUserCount");
+    const userSearch = document.getElementById("accountAdminUserSearch");
     const users = document.getElementById("accountAdminUsers");
     const usersSection = document.getElementById("accountAdminUsersSection");
     const exportUsers = document.getElementById("accountAdminExportUsers");
@@ -6715,6 +6688,16 @@
     const userEditor = document.getElementById("accountAdminUserEditor");
     const userEditorTitle = document.getElementById("accountAdminUserEditorTitle");
     const userEditorClose = document.getElementById("accountAdminUserEditorClose");
+    const userEditorStatus = document.getElementById("accountAdminUserEditorStatus");
+    const editorHome = document.getElementById("accountAdminEditorHome");
+    const researchEditor = document.getElementById("accountAdminResearchAccess");
+    const newsfeedEditor = document.getElementById("accountAdminNewsfeedEditor");
+    const newsfeedTitle = document.getElementById("accountAdminNewsfeedTitle");
+    const newsfeedEmail = document.getElementById("accountAdminNewsfeedEmail");
+    const newsfeedMode = document.getElementById("accountAdminNewsfeedMode");
+    const newsfeedExpiry = document.getElementById("accountAdminNewsfeedExpiry");
+    const newsfeedState = document.getElementById("accountAdminNewsfeedState");
+    const newsfeedStatus = document.getElementById("accountAdminNewsfeedStatus");
     const accessEmail = document.getElementById("accountAdminAccessEmail");
     const accessMode = document.getElementById("accountAdminAccessMode");
     const accessDuration = document.getElementById("accountAdminAccessDuration");
@@ -6770,6 +6753,7 @@
       reportChatArchiveStatus,
       reportChatArchiveList,
       userCount,
+      userSearch,
       users,
       usersSection,
       exportUsers,
@@ -6784,6 +6768,16 @@
       userEditor,
       userEditorTitle,
       userEditorClose,
+      userEditorStatus,
+      editorHome,
+      researchEditor,
+      newsfeedEditor,
+      newsfeedTitle,
+      newsfeedEmail,
+      newsfeedMode,
+      newsfeedExpiry,
+      newsfeedState,
+      newsfeedStatus,
       accessEmail,
       accessMode,
       accessDuration,
@@ -6799,7 +6793,9 @@
       filesNotice,
       usersNotice,
       canManageUsers,
+      usersComplete: false,
     };
+    modal.__adminUserTargets = targets;
 
     const catalogIntakeItems = new Map();
     const requestIntakeItems = new Map();
@@ -7294,36 +7290,16 @@
       hotReportMore.addEventListener("click", () => openAdminHotReportList(workerUrl, targets));
     }
     refresh.addEventListener("click", async () => {
+      refresh.disabled = true;
       await Promise.allSettled([
         sourceConnection.refresh(),
         loadAccountAdminSummary(workerUrl, targets, { forceRefresh: true }),
+        canManageUsers ? refreshAdminUserList(workerUrl, targets) : Promise.resolve(null),
         loadAccountAdminMarketViews(workerUrl, targets),
         canManageUsers ? loadAdminHotReports(workerUrl, targets, { forceRefresh: true }) : Promise.resolve([]),
         canManageUsers ? loadAdminReportChatHistory(workerUrl, targets) : Promise.resolve([]),
       ]);
-      if (canManageUsers && exportUsers) {
-        renderAdminUsersVerificationState(targets, "正在现场核验全部用户的最新权限…");
-        targets.status.className = "status-line";
-        targets.status.textContent = "正在同步读取最新用户状态…";
-        try {
-          const fresh = await loadFreshAdminUsers(workerUrl, targets);
-          targets.status.className = "status-line ok";
-          targets.status.textContent = `用户状态已同步：${fresh.users.length} 个用户。`;
-        } catch (error) {
-          const hasCachedUsers = accountAdminUsersByEmail.size > 0;
-          renderAdminUsersVerificationState(
-            targets,
-            hasCachedUsers
-              ? "现场核验暂时失败，当前继续显示最近一次成功数据；编辑单个用户时仍会重新读取最新权限。"
-              : (error.message || "最新用户状态读取失败，请稍后重试。"),
-            "error",
-          );
-          targets.status.className = hasCachedUsers ? "status-line ok" : "status-line error";
-          targets.status.textContent = hasCachedUsers
-            ? "后台已打开；用户表暂时显示最近一次成功数据。"
-            : (error.message || "最新用户状态读取失败。");
-        }
-      }
+      refresh.disabled = false;
     });
     if (canManageUsers && reportChatArchiveRefresh) {
       reportChatArchiveRefresh.addEventListener("click", () => loadAdminReportChatHistory(workerUrl, targets));
@@ -7447,7 +7423,8 @@
     if (newUser && userCreator) {
       newUser.addEventListener("click", () => {
         userCreator.hidden = false;
-        if (userEditor) userEditor.hidden = true;
+        closeAdminInlineEditor(targets, userEditor);
+        closeAdminInlineEditor(targets, newsfeedEditor);
         status.className = "status-line ok";
         status.textContent = "正在新增用户。";
         requestAnimationFrame(() => {
@@ -7486,9 +7463,12 @@
     }
     if (userEditorClose) {
       userEditorClose.addEventListener("click", () => {
-        if (userEditor) userEditor.hidden = true;
+        closeAdminInlineEditor(targets, userEditor);
       });
     }
+    loadAdminUserTools().then((tools) => {
+      if (modal.isConnected !== false) tools.bindNewsfeedEditor(workerUrl, targets, { renderAdminUserTable, saveAdminNewsfeed });
+    }).catch(() => null);
     if (users) {
       users.addEventListener("click", async (event) => {
         const toggle = event.target.closest(".account-admin-toggle-user");
@@ -7498,7 +7478,7 @@
           toggle.disabled = true;
           status.className = "status-line";
           status.textContent = disabled ? "正在禁用账号…" : "正在启用账号…";
-          try {
+            try {
             await updateAdminUserStatus(workerUrl, email, disabled);
             renderAdminUserTable(targets);
             status.textContent = disabled ? "账号已禁用。" : "账号已启用。";
@@ -7511,17 +7491,31 @@
           }
           return;
         }
-        const button = event.target.closest(".account-admin-edit-user");
+        const button = event.target.closest(".account-admin-edit-user, .account-admin-newsfeed-user");
         if (!button) return;
+        const isNewsfeed = button.classList.contains("account-admin-newsfeed-user");
+        const editor = isNewsfeed ? newsfeedEditor : userEditor;
         const email = String(button.dataset.email || "");
+        if (!editor.hidden && editor.dataset.email === email) {
+          closeAdminInlineEditor(targets, editor);
+          return;
+        }
+        closeAdminInlineEditor(targets, userEditor);
+        closeAdminInlineEditor(targets, newsfeedEditor);
+        const ticket = targets.editorRequest = (targets.editorRequest || 0) + 1;
         button.disabled = true;
         status.className = "status-line";
         status.textContent = "正在读取该用户的最新权限…";
         try {
           const user = await loadAdminUserAccess(workerUrl, email);
-          accountAdminUsersByEmail.set(String(user.email || email), user);
+          if (targets.editorRequest !== ticket || modal.isConnected === false) return;
+          accountAdminUsersByEmail.set(String(user.email || email).toLowerCase(), user);
           if (userCreator) userCreator.hidden = true;
-          fillUserAccessEditor(user, targets);
+          if (isNewsfeed) fillAdminNewsfeedEditor(user, targets);
+          else {
+            userEditorStatus.textContent = "";
+            fillUserAccessEditor(user, targets);
+          }
         } catch (error) {
           status.className = "status-line error";
           status.textContent = error.message || "读取最新用户权限失败，请刷新后台后再试。";
@@ -7533,22 +7527,34 @@
     if (userEditor) {
       userEditor.addEventListener("submit", async (event) => {
         event.preventDefault();
+        const selectedEmail = accessEmail.value;
         const submit = userEditor.querySelector("button[type='submit']");
         if (submit) submit.disabled = true;
         status.className = "status-line";
         status.textContent = "正在保存用户权限…";
+        userEditorStatus.className = "status-line";
+        userEditorStatus.textContent = status.textContent;
         try {
           const result = await saveUserAccess(workerUrl, targets);
           if (result && result.cancelled) {
             status.textContent = "已取消保存，用户权限没有变化。";
+            if (accessEmail.value === selectedEmail) userEditorStatus.textContent = status.textContent;
             return;
           }
           renderAdminUserTable(targets);
           status.textContent = "用户权限已保存，并已读回确认。";
           status.classList.add("ok");
+          if (accessEmail.value === selectedEmail) {
+            userEditorStatus.className = "status-line ok";
+            userEditorStatus.textContent = status.textContent;
+          }
         } catch (error) {
           status.textContent = error.message || "保存权限失败。";
           status.classList.add("error");
+          if (accessEmail.value === selectedEmail) {
+            userEditorStatus.className = "status-line error";
+            userEditorStatus.textContent = status.textContent;
+          }
         } finally {
           if (submit) submit.disabled = false;
         }
@@ -7740,27 +7746,8 @@
       }
     });
 
-    loadAccountAdminSummary(workerUrl, targets).then((summary) => {
-      if (!adminUsersSnapshotIsFresh(summary) && canManageUsers && exportUsers && document.getElementById("accountAdminModal")) {
-        renderAdminUsersVerificationState(targets, "正在现场核验全部用户的最新权限…");
-        return loadFreshAdminUsers(workerUrl, targets).catch((error) => {
-          const hasCachedUsers = accountAdminUsersByEmail.size > 0;
-          renderAdminUsersVerificationState(
-            targets,
-            hasCachedUsers
-              ? "现场核验暂时失败，当前继续显示最近一次成功数据；编辑单个用户时仍会重新读取最新权限。"
-              : (error.message || "最新用户状态读取失败，请点击刷新重试。"),
-            "error",
-          );
-          targets.status.className = hasCachedUsers ? "status-line ok" : "status-line error";
-          targets.status.textContent = hasCachedUsers
-            ? "后台已打开；用户表暂时显示最近一次成功数据。"
-            : (error.message || "最新用户状态读取失败，请点击刷新重试。");
-          return null;
-        });
-      }
-      return null;
-    }).catch(() => null);
+    loadAccountAdminSummary(workerUrl, targets).catch(() => null);
+    if (canManageUsers) refreshAdminUserList(workerUrl, targets);
     loadAccountAdminMarketViews(workerUrl, targets).catch(() => null);
     if (canManageUsers) {
       loadAdminHotReports(workerUrl, targets);

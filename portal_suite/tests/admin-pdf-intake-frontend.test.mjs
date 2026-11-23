@@ -542,6 +542,12 @@ test("account popup and Twotigers admin initialize in their own runtime scopes",
     loadAdminReportChatHistory() { return Promise.resolve([]); },
     renderAdminUsersVerificationState() {},
     loadFreshAdminUsers() { return Promise.resolve({ users: [] }); },
+    refreshAdminUserList() { return Promise.resolve(null); },
+    loadAdminUserTools() { return Promise.resolve({ bindNewsfeedEditor() {} }); },
+    mountAdminInlineEditor() {},
+    closeAdminInlineEditor() {},
+    renderAdminUserTable() {},
+    saveAdminNewsfeed() {},
   };
   const adminRuntime = runtime(adminSandbox, "showAccountAdminModal");
   assert.doesNotThrow(() => adminRuntime.showAccountAdminModal("/api"));

@@ -2224,6 +2224,7 @@ a.secondary-button {
 
 .account-admin-form-grid select,
 .account-admin-form-grid input,
+.account-admin-user-search input,
 .account-admin-note-field input {
   min-height: 42px;
   border: 1px solid var(--line);
@@ -7532,7 +7533,7 @@ body.chart-lightbox-open {
 }
 
 .account-admin-dialog {
-  width: min(1480px, calc(100vw - 32px));
+  width: min(1720px, calc(100vw - 32px));
   max-height: min(92vh, 1040px);
   max-height: min(92dvh, 1040px);
   overscroll-behavior: contain;
@@ -7564,7 +7565,31 @@ body.chart-lightbox-open {
 }
 
 #accountAdminUsersSection .account-admin-table :is(th, td):last-child {
-  width: 132px;
+  width: 240px;
+}
+
+.account-admin-user-search {
+  display: grid;
+  gap: 6px;
+  max-width: 520px;
+  margin-bottom: 14px;
+}
+
+.account-admin-user-search input {
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--panel);
+}
+
+.account-admin-editor-row > td {
+  padding: 8px 0 20px;
+  white-space: normal;
+}
+
+.account-admin-editor-row .account-admin-user-editor {
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .account-admin-more-button {
@@ -7621,8 +7646,38 @@ body.chart-lightbox-open {
 }
 
 @media (min-width: 821px) {
+  #accountAdminUsersSection .account-admin-table {
+    min-width: 1560px;
+  }
+
+  #accountAdminUsersSection .account-admin-table tr:not(.account-admin-editor-row) > :is(th, td) {
+    white-space: nowrap;
+    overflow-wrap: normal;
+  }
+
+  #accountAdminUsersSection .account-admin-table tr:not(.account-admin-editor-row) > :last-child {
+    position: sticky;
+    right: 0;
+    z-index: 1;
+    min-width: 240px;
+    background: var(--panel);
+    box-shadow: -8px 0 12px -12px var(--muted);
+  }
+
   #accountAdminUsersSection .account-admin-row-actions {
     flex-wrap: nowrap;
+  }
+
+  #accountAdminUsersSection .account-admin-row-actions button {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  #accountAdminUsersSection .account-admin-editor-row .account-admin-user-editor {
+    position: sticky;
+    left: 0;
+    width: min(1608px, calc(100vw - 112px));
+    max-width: 100%;
   }
 }
 
@@ -7865,7 +7920,8 @@ body.chart-lightbox-open {
   #accountAdminUsersSection .account-admin-table td:nth-child(8)::before { content: "权限来源"; }
   #accountAdminUsersSection .account-admin-table td:nth-child(9)::before { content: "注册"; }
   #accountAdminUsersSection .account-admin-table td:nth-child(10)::before { content: "最近登录"; }
-  #accountAdminUsersSection .account-admin-table td:nth-child(11)::before { content: "操作"; }
+  #accountAdminUsersSection .account-admin-table td:nth-child(11)::before { content: "Newsfeed"; }
+  #accountAdminUsersSection .account-admin-table td:nth-child(12)::before { content: "操作"; }
 
   #accountAdminUsersSection .account-admin-table td[colspan] {
     display: block;
