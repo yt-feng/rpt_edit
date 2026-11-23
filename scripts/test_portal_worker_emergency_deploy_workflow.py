@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import unittest
 from pathlib import Path
+import re
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -22,6 +23,31 @@ class PortalWorkerEmergencyDeployWorkflowTests(unittest.TestCase):
         self.assertIn("default: false", trigger)
         self.assertNotIn("schedule:", trigger)
         self.assertIn("vars.PORTAL_AUTOMATION_ENABLED == 'true' || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.allow_manual_deploy == true)", self.workflow)
+
+    def test_worker_ui_and_ci_pin_the_same_python_before_any_python_command(self) -> None:
+        sparse = self.workflow.split("sparse-checkout: |", 1)[1].split("\n      - name:", 1)[0]
+        paths = {line.strip() for line in sparse.splitlines() if line.strip()}
+        workflows = (
+            ".github/workflows/portal-worker-emergency-deploy.yml",
+            ".github/workflows/portal-ui-hotfix.yml",
+            ".github/workflows/public-identity-guard.yml",
+        )
+        versions = []
+        for path in workflows:
+            with self.subTest(workflow=path):
+                self.assertIn(path, paths, "The sparse deployment must include every inspected contract")
+                source = (ROOT / path).read_text(encoding="utf-8")
+                setups = list(re.finditer(r"uses: actions/setup-python@v5\n", source))
+                self.assertEqual(len(setups), 1)
+                setup = source[setups[0].start():].split("\n      - ", 1)[0]
+                version = re.search(r"python-version: ['\"]([^'\"]+)['\"]", setup)
+                self.assertIsNotNone(version)
+                versions.append(version[1])
+                first_python = re.search(r"(?m)^\s*(?:run: )?python3(?:\s|$)", source)
+                self.assertIsNotNone(first_python)
+                self.assertLess(setups[0].start(), first_python.start(),
+                                "Install the pinned interpreter before validation or dependency installation")
+        self.assertEqual(versions, ["3.11", "3.11", "3.11"])
 
     def test_release_does_not_touch_routes_or_static_data(self) -> None:
         self.assertIn("versions upload --keep-vars", self.workflow)
