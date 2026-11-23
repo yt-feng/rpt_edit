@@ -30,6 +30,7 @@ jobs:
           sparse-checkout-cone-mode: false
           sparse-checkout: |
             .github/workflows/public-identity-guard.yml
+            .github/workflows/portal-ui-hotfix.yml
             .github/workflows/customer-content-publish.yml
             .github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml
             .gitignore
@@ -117,6 +118,13 @@ jobs:
             scripts/wechat_editorial_binding.py
             scripts/wechat_image_quality.py
             scripts/wechat_title_optimizer.py
+
+      # Match PR validation and the UI hotfix, including basic ISO date parsing.
+      # Ubuntu's system Python is not the production validation interpreter.
+      - name: Set up production Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
       - name: Validate legacy access compatibility
         run: |
