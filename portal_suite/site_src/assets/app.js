@@ -1035,6 +1035,16 @@
     return MEMBERSHIP_REQUEST_KINDS.has(kind) ? kind : "membership";
   }
 
+  function membershipReportContext(context = {}, kind = context.requestKind || "membership") {
+    if (!["access", "membership"].includes(kind) || context.source && context.source !== "catalog") return {};
+    const id = String(context.item?.id || (/\/report\.html$/.test(window.location.pathname)
+      ? new URLSearchParams(window.location.search).get("id") || "" : "")).trim().toLowerCase();
+    if (!/^[a-f0-9]{16,64}$/.test(id)) return {};
+    const item = cachedReportPreview(id) || context.item;
+    return { report_id: id, report_title: String(item?.title || item?.filename ? titleText(item) : "")
+      .replace(/<[^>]*>|[\u0000-\u001f\u007f]/g, " ").replace(/\s+/g, " ").trim().slice(0, 360) };
+  }
+
   function membershipRequestCopy(value) {
     const kind = membershipRequestKind(value);
     const copy = {
@@ -1234,6 +1244,7 @@
     const session = loadAuthSession();
     const signedIn = Boolean(session);
     const requestCopy = membershipRequestCopy(context.requestKind);
+    const requestReport = membershipReportContext(context);
     const requestExpanded = Boolean(context.requestKind);
     const requesterEmail = signedIn && session.user ? String(session.user.email || "").trim() : "";
     const reportTitle = context.item ? titleText(context.item) : "";
@@ -1385,6 +1396,7 @@
             <p class="membership-request-intro" id="membershipRequestIntro" ${requestExpanded ? "" : "hidden"}>无需注册或登录，填写下面的联系方式即可提交申请。</p>
             <form id="membershipRequestForm" novalidate ${requestExpanded ? "" : "hidden"}>
               <input id="membershipRequestKind" type="hidden" value="${escapeHtml(requestCopy.kind)}">
+              ${requestReport.report_id ? `<label>当前报告<input id="membershipRequestReport" type="text" readonly value="${escapeHtml(requestReport.report_title || requestReport.report_id)}"></label>` : ""}
               <div class="membership-request-grid">
                 <label>常用邮箱
                   <input id="membershipRequesterEmail" name="requester_email" type="email" autocomplete="email" inputmode="email" value="${escapeHtml(requesterEmail)}" placeholder="${signedIn && !requesterEmail ? "使用当前账号邮箱" : "name@example.com"}"${signedIn ? " readonly" : " required"}>
@@ -1701,25 +1713,13 @@
     if (restoredDraft) draftFields.forEach((field, index) => { field.value = restoredDraft.values[index]; });
     let requestView = Boolean(context.requestKind);
     let hasRequestView = requestView;
-    const MEMBERSHIP_REQUEST_ACTIONS = new Set(["form_impression", "form_open", "form_start", "form_submit", "submitted", "deduplicated", "form_error", "form_abandon"]);
-    const MEMBERSHIP_REQUEST_PLACEMENTS = new Set(["account", "membership", "access", "support", "privacy", "refund", "deep_link"]);
-    const MEMBERSHIP_REQUEST_STATUSES = new Set(["guest", "signed_in", "pending", "success", "error", "abandoned"]);
-    const MEMBERSHIP_REQUEST_ERRORS = new Set(["validation_email", "validation_contact", "network", "server", "unknown"]);
-    const membershipPlacement = MEMBERSHIP_REQUEST_PLACEMENTS.has(context.requestPlacement)
-      ? context.requestPlacement
-      : MEMBERSHIP_REQUEST_PLACEMENTS.has(context.requestKind) ? context.requestKind : "account";
-
     function trackMembershipRequest(action, options = {}) {
-      if (!MEMBERSHIP_REQUEST_ACTIONS.has(action)) return;
-      const payload = {
-        measurement_version: "membership-v1",
-        action,
+      const payload = window.PortalSuiteAnalytics?.membershipRequestPayload?.(action, options, {
         request_kind: membershipRequestKind(membershipRequestKindInput && membershipRequestKindInput.value),
-        placement: membershipPlacement,
-        status: MEMBERSHIP_REQUEST_STATUSES.has(options.status) ? options.status : loadAuthSession() ? "signed_in" : "guest",
-      };
-      if (action === "form_error") payload.error = MEMBERSHIP_REQUEST_ERRORS.has(options.error) ? options.error : "unknown";
-      trackEvent(workerUrl, "membership_request", payload);
+        placement: context.requestPlacement, fallback_placement: context.requestKind,
+        authenticated: Boolean(loadAuthSession()), ...membershipReportContext(context),
+      });
+      if (payload) trackEvent(workerUrl, "membership_request", payload);
     }
 
     function recordMembershipOpen() {
@@ -2328,6 +2328,7 @@
               contact_value: contactValue,
               note,
               request_kind: requestKind,
+              ...membershipReportContext(context, requestKind),
               page_path: currentAnalyticsPath(),
               honeypot: String(membershipRequestWebsite && membershipRequestWebsite.value || "").slice(0, 160),
             }),

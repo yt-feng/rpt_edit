@@ -19378,6 +19378,18 @@ function membershipRequestKindLabel(kind) {
   })[kind] || "站内申请";
 }
 
+function membershipRequestReportContext(payload, requestKind) {
+  if (!["access", "membership"].includes(requestKind)) return {};
+  const reportId = cleanCatalogReportId(payload.report_id);
+  if (!reportId) return {};
+  // Informational request context only: it never changes access or establishes
+  // authoritative catalog metadata. Keep the existing request deduplication.
+  return {
+    report_id: reportId,
+    report_title: cleanReportRequestText(payload.report_title, 360),
+  };
+}
+
 function membershipContactChannelLabel(channel) {
   return ({
     wechat: "微信",
@@ -19392,6 +19404,10 @@ function membershipRequestEmailContent(record) {
     ["回复邮箱", record.requester_email],
     ["联系方式", `${membershipContactChannelLabel(record.contact_channel)}: ${record.contact_value}`],
     ["备注", record.note || "—"],
+    ...(record.report_id ? [
+      ["关联报告（申请上下文）", record.report_title || record.report_id],
+      ["报告页面", `/reports/${record.report_id}.html`],
+    ] : []),
     ["账号", record.authenticated ? (record.requester_username || record.requester_user_id || "已登录用户") : "游客"],
     ["页面路径", record.page_path || "—"],
     ["申请编号", record.request_id],
@@ -19607,6 +19623,7 @@ async function handleMembershipRequest(request, env) {
     contact_value: rawContactValue,
     note: rawNote,
     page_path: cleanReportRequestPagePath(payload.page_path),
+    ...membershipRequestReportContext(payload, requestKind),
   };
 
   try {

@@ -50,6 +50,7 @@ test("account modal exposes a public in-site membership request form", () => {
     membershipRequestCopy(kind) {
       return { kind: kind || "membership", title: "申请加入会员", button: "提交会员申请", note: "留下联系方式" };
     },
+    membershipReportContext() { return {}; },
     titleText() { return ""; },
     escapeHtml(value) { return String(value || ""); },
     accessContactGuidanceHtml() { return "提交站内申请"; },

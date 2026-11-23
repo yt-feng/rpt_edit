@@ -276,6 +276,61 @@ test("guest membership request persists privately before configured owner delive
   }
 });
 
+test("report-specific access requests preserve bounded context without granting access or changing deduplication", async () => {
+  const bucket = new MemoryR2();
+  const env = envFor(bucket);
+  const reportId = "a".repeat(24);
+  const deliveries = [];
+  await withMockFetch(async (_url, init) => {
+    deliveries.push(JSON.parse(String(init.body || "{}")));
+    return brevoSuccess();
+  }, async () => {
+    const first = await postMembershipRequest(env, requestBody({
+      request_kind: "access", report_id: reportId.toUpperCase(),
+      report_title: "Research <script>one</script>\n" + "x".repeat(400),
+      page_path: `/report.html?id=${reportId}&request=access`,
+    }));
+    assert.equal(first.response.status, 202);
+    assert.equal(first.data.deduplicated, false);
+    const second = await postMembershipRequest(env, requestBody({
+      request_kind: "access", report_id: "b".repeat(24), report_title: "Another report",
+    }));
+    assert.equal(second.response.status, 202);
+    assert.equal(second.data.deduplicated, true);
+  });
+  const rows = bucket.jsonRows("_membership-requests/v1/items/");
+  assert.equal(rows.length, 1);
+  assert.equal(rows[0].value.report_id, reportId);
+  assert.equal(rows[0].value.report_title.length, 360);
+  assert.doesNotMatch(rows[0].value.report_title, /[\r\n]/u);
+  assert.equal(deliveries.length, 1);
+  assert.match(deliveries[0].textContent, new RegExp(`/reports/${reportId}\\.html`));
+  assert.match(deliveries[0].htmlContent, /&lt;script&gt;one&lt;\/script&gt;/u);
+  assert.doesNotMatch(deliveries[0].htmlContent, /<script>/u);
+  assert.equal(bucket.putKeys.some(key => /^_account\/(access|entitlements|users)\//u.test(key)), false);
+  for (const row of bucket.jsonRows("_analytics/events/")) {
+    assert.notEqual(row.value.report_id, reportId);
+    assert.equal(row.value.session_id, "");
+  }
+});
+
+test("invalid or unrelated report context does not contaminate general service requests", async () => {
+  for (const overrides of [
+    { request_kind: "access", report_id: "../private/secret" },
+    { request_kind: "membership", report_id: "x".repeat(1000) },
+    ...["privacy", "refund", "support"].map(request_kind => ({ request_kind, report_id: "a".repeat(24) })),
+  ]) {
+    const bucket = new MemoryR2();
+    const result = await withMockFetch(async () => brevoSuccess(), () => postMembershipRequest(envFor(bucket), requestBody({
+      ...overrides, report_title: "Unrelated context",
+    })));
+    assert.equal(result.response.status, 202);
+    const record = bucket.jsonRows("_membership-requests/v1/items/")[0].value;
+    assert.equal(record.report_id, undefined);
+    assert.equal(record.report_title, undefined);
+  }
+});
+
 test("authenticated membership requests bind the current account and reject invalid or disabled sessions", async () => {
   const bucket = new MemoryR2();
   const env = envFor(bucket);

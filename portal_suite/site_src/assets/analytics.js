@@ -313,12 +313,33 @@
     });
   }
 
+  function membershipRequestPayload(action, options = {}, context = {}) {
+    if (!["form_impression", "form_open", "form_start", "form_submit", "submitted", "deduplicated", "form_error", "form_abandon"].includes(action)) return null;
+    const placements = ["account", "membership", "access", "support", "privacy", "refund", "deep_link"];
+    const kinds = ["membership", "access", "support", "privacy", "refund"];
+    const payload = {
+      measurement_version: "membership-v1", action,
+      request_kind: kinds.includes(context.request_kind) ? context.request_kind : "membership",
+      placement: placements.includes(context.placement) ? context.placement
+        : placements.includes(context.fallback_placement) ? context.fallback_placement : "account",
+      status: ["guest", "signed_in", "pending", "success", "error", "abandoned"].includes(options.status)
+        ? options.status : context.authenticated ? "signed_in" : "guest",
+    };
+    if (action === "form_error") payload.error = ["validation_email", "validation_contact", "network", "server", "unknown"].includes(options.error) ? options.error : "unknown";
+    if (["access", "membership"].includes(payload.request_kind) && /^[a-f0-9]{16,64}$/.test(context.report_id || "")) {
+      payload.report_id = context.report_id;
+      payload.report_title = String(context.report_title || "").replace(/<[^>]*>|[\u0000-\u001f\u007f]/g, " ").replace(/\s+/g, " ").trim().slice(0, 360);
+    }
+    return payload;
+  }
+
   root.PortalSuiteAnalytics = {
     track,
     visitorId,
     currentSession,
     loadWorkerBaseUrl,
     downloadError,
+    membershipRequestPayload,
   };
 
   if (typeof root.addEventListener === "function") {

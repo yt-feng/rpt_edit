@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from datetime import date
+from html import unescape
 import json
 from pathlib import Path
 import re
@@ -11,6 +12,7 @@ import sys
 import tempfile
 import unittest
 from unittest import mock
+from urllib.parse import parse_qs, urlsplit
 import xml.etree.ElementTree as ET
 
 
@@ -590,9 +592,33 @@ class SeoOutputTests(unittest.TestCase):
             self.assertNotIn("发布日期", page)
             self.assertNotIn("发布了《", page)
             self.assertIn('../assets/contact.js', page)
-            self.assertIn('href="../?request=access"', page)
+            self.assertIn('href="../report.html?id=report-a&amp;request=access"', page)
             self.assertNotIn("mailto:", page.lower())
             self.assertNotIn("password=", page)
+
+    def test_report_access_link_retains_report_context_on_existing_noindex_detail_route(self) -> None:
+        report_id = "3ba2800919bd211d1c5975ae"
+        for available in (True, False):
+            with self.subTest(available=available):
+                item = sample_item(report_id, "报告访问上下文", "2026-07-17")
+                item.update(available=available, pdf_archived=not available)
+                page = builder.render_report_seo_page(item, "https://portal.example.invalid", "2026-11-23")
+                match = re.search(r'<a href="([^"]+)">申请报告访问</a>', page)
+                self.assertIsNotNone(match)
+                link = urlsplit(unescape(match.group(1)))
+                self.assertEqual("../report.html", link.path)
+                self.assertEqual({"id": [report_id], "request": ["access"]}, parse_qs(link.query))
+                self.assertEqual("", link.netloc)
+                canonical = f"https://portal.example.invalid/reports/{report_id}.html"
+                self.assertIn(f'<link rel="canonical" href="{canonical}">', page)
+                self.assertIn("<h1>报告访问上下文</h1>", page)
+                self.assertIn("收录日期：2026-07-17", page)
+                report = graph_node(first_json_ld(page), "Report")
+                self.assertEqual(canonical, report["url"])
+                self.assertEqual(builder.SEO_PAGE_TEMPLATE_REVISION_DATE, report["dateModified"])
+                self.assertNotIn("datePublished", report)
+        detail = (ROOT / "portal_suite/site_src/report.html").read_text(encoding="utf-8")
+        self.assertIn('name="robots" content="noindex,follow,noarchive,max-image-preview:none"', detail)
 
     def test_text_only_static_report_links_to_a_complete_prefilled_home_search(self) -> None:
         long_title = "A" * 90 + "END"
