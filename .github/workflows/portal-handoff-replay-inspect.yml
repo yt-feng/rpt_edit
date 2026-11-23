@@ -1,0 +1,72 @@
+name: Inspect exact handoff replay identities
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/portal-handoff-replay-inspect.yml
+      - scripts/inspect_portal_handoff_replay.py
+      - scripts/test_inspect_portal_handoff_replay.py
+  workflow_dispatch:
+    inputs:
+      receipt_hashes:
+        description: Exact Extended receipt SHA-256 hashes, comma or newline separated (maximum 20)
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+# A read-only inspection never acquires the production or translation lock.
+concurrency:
+  group: portal-handoff-inspection-${{ github.run_id }}
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install --disable-pip-version-check 'requests>=2.31,<3'
+      - run: python3 -B scripts/test_inspect_portal_handoff_replay.py
+
+  inspect:
+    needs: test
+    if: >-
+      github.event_name == 'workflow_dispatch' &&
+      github.ref == 'refs/heads/main' &&
+      github.actor == github.repository_owner &&
+      github.triggering_actor == github.repository_owner
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install --disable-pip-version-check 'boto3>=1.34,<2' 'requests>=2.31,<3'
+      - name: Read exact immutable receipts and project replay identities
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          HANDOFF_SHA256S: ${{ inputs.receipt_hashes }}
+        run: >-
+          python3 -B scripts/inspect_portal_handoff_replay.py
+          --output "$RUNNER_TEMP/handoff-replay-identities.json"
+      - name: Upload hashes and producer mapping only
+        uses: actions/upload-artifact@v4
+        with:
+          name: handoff-replay-identities-${{ github.run_id }}
+          path: ${{ runner.temp }}/handoff-replay-identities.json
+          if-no-files-found: error
+          retention-days: 1
