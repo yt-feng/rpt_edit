@@ -132,8 +132,8 @@ function userToken(user) {
   return `${body}.${signature}`;
 }
 
-async function readLiveUsers(total) {
-  activeSupabaseRows = userRows(total);
+async function readLiveUsers(total, rows = userRows(total)) {
+  activeSupabaseRows = rows;
   activeExternalRequests = [];
   const bucket = new CountingR2();
   const response = await worker.fetch(new Request("https://worker.test/account-admin/users-export", {
@@ -254,8 +254,8 @@ test("a failed first live verification still renders an actionable empty state",
 });
 
 
-async function readPaginatedUsers(total, pageCap = Number.POSITIVE_INFINITY) {
-  activeSupabaseRows = userRows(total);
+async function readPaginatedUsers(total, pageCap = Number.POSITIVE_INFINITY, rows = userRows(total)) {
+  activeSupabaseRows = rows;
   activePageCap = pageCap;
   const all = [];
   const calls = [];
@@ -307,6 +307,27 @@ test("a server-clamped short page cannot masquerade as the full user list", asyn
   assert.equal(calls[0].count, 61);
   assert.equal(calls[0].complete, false);
   assert.equal(calls.at(-1).count, 0);
+});
+
+test("private canonical pagination and export retain distinct legacy-brand account identities", async () => {
+  const rows = userRows(125);
+  Object.assign(rows[12], { username: "twotigers-reader", email: "twotigers-reader@example.invalid" });
+  Object.assign(rows[112], { username: "macro-gate-reader", email: "macro-gate-reader@example.invalid" });
+  Object.assign(rows[124], { username: "beta-reader", email: "beta-reader@example.invalid" });
+  const { all, calls } = await readPaginatedUsers(rows.length, 61, rows);
+  assert.equal(calls.length, 4, "short pages still finish with a verified empty page");
+  const byEmail = new Map(all.map((user) => [user.email, user]));
+  assert.equal(byEmail.size, rows.length, "public redaction must not collapse private admin identities");
+  for (const source of [rows[12], rows[112], rows[124], ADMIN]) {
+    const user = byEmail.get(source.email);
+    assert.deepEqual({ id: user.id, username: user.username, email: user.email },
+      { id: source.id, username: source.username, email: source.email });
+  }
+  const exported = await readLiveUsers(rows.length, rows);
+  assert.equal(exported.response.status, 200);
+  assert.match(exported.response.headers.get("Cache-Control"), /no-store/);
+  assert.equal(exported.body.complete, true);
+  assert.deepEqual(new Set(exported.body.users.map((user) => user.email)), new Set(byEmail.keys()));
 });
 
 test("patching one user never promotes a partial snapshot or resets directory freshness", async () => {

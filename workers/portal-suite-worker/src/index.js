@@ -8143,11 +8143,18 @@ async function requireOperationsUser(request, env) {
 }
 
 function adminVisibleUser(user, entitlementRow, accessRow) {
+  // This projection is used only after super-admin authorization or by the
+  // private canonical export. Display redaction is not an account identity:
+  // several legacy accounts can share publicUser's redacted email placeholder.
+  validateSiteUserRow(user);
   const publicInfo = publicUser(user);
   const entitlement = isPrivilegedAccount(user) ? superEntitlement(user) : publicEntitlement(entitlementRow);
   const access = publicAccessGrant(accessRow);
   return {
     ...publicInfo,
+    id: String(user.id).trim(),
+    username: normalizeUsername(user.username),
+    email: normalizeEmail(user.email),
     last_login_at: user.last_login_at || "",
     entitlement,
     access,
