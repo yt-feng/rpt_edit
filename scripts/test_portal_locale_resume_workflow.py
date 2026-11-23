@@ -19,6 +19,36 @@ class ResumeWorkflowTests(unittest.TestCase):
     def test_generated_workflow_is_current(self):
         self.assertEqual(self.recovery, generate(self.source))
 
+    def test_recovery_uses_only_named_preparation_not_neighboring_admission_jobs(self):
+        # A preceding job can have outputs and even colliding display names.
+        # It must not replace release outputs or any recovery preparation step.
+        neighbor = '''  unrelated_gate:
+    outputs:
+      changed: ${{ steps.wrong.outputs.poison }}
+    steps:
+      - name: Require reviewed main operation
+        run: echo unrelated_preparation_must_not_run
+
+'''
+        for boundary in ('  prepare_release:\n', '  shadow_review_hold:\n'):
+            with self.subTest(boundary=boundary):
+                changed = self.source.replace(boundary, neighbor + boundary, 1)
+                self.assertEqual(generate(changed), self.recovery)
+        preparation = self.recovery.split('\n  shadow_review_hold:\n', 1)[0]
+        self.assertIn('changed: ${{ steps.release_delta.outputs.changed }}', preparation)
+        self.assertIn('static_tree: ${{ steps.static_upload.outputs.tree_sha256 }}', preparation)
+        self.assertIn('candidate_commit: ${{ steps.static_upload.outputs.commit_sha }}', preparation)
+        self.assertNotIn('steps.admission.outputs', self.recovery)
+        self.assertNotIn('source_admission', self.recovery)
+
+    def test_missing_or_ambiguous_prepare_job_fails_instead_of_using_another_job(self):
+        missing = self.source.replace('  prepare_release:\n', '  other_preparation:\n', 1)
+        duplicate = self.source.replace('  prepare_release:\n',
+            '  prepare_release:\n    runs-on: ubuntu-latest\n  prepare_release:\n', 1)
+        for changed in (missing, duplicate):
+            with self.assertRaisesRegex(ValueError, 'exactly one production prepare_release job'):
+                generate(changed)
+
     def test_complete_provenance_bundle_is_preserved_and_checked_in_both_workflows(self):
         for workflow in (self.source, self.recovery):
             self.assertIn('copy_locale_manifest_bundle', workflow)
@@ -33,7 +63,7 @@ class ResumeWorkflowTests(unittest.TestCase):
         source, recovery = jobs(self.source), jobs(self.recovery)
         shared = {'shadow_review_hold', 'multilingual_approval', 'extended_locales_approval',
                   'english_approval', 'cutover', 'cleanup_multilingual_shadow'}
-        self.assertEqual(set(source), shared | {'prepare_release', 'extended_daily_review', 'english_daily_review',
+        self.assertEqual(set(source), shared | {'source_admission', 'prepare_release', 'extended_daily_review', 'english_daily_review',
                                               'reject_failed_daily_review', 'schedule_locale_followup'})
         self.assertEqual(set(recovery), shared | {'prepare_release'})
         for job in shared:
@@ -54,7 +84,7 @@ class ResumeWorkflowTests(unittest.TestCase):
             self.assertEqual(expected, recovery[job], job)
 
     def test_manual_recovery_cannot_inherit_daily_review_cancellation_or_dangling_dependencies(self):
-        for forbidden in ('extended_daily_review', 'english_daily_review', 'reject_failed_daily_review',
+        for forbidden in ('source_admission', 'extended_daily_review', 'english_daily_review', 'reject_failed_daily_review',
                           'schedule_locale_followup', 'actions: write', "api(path + '/cancel'", 'GH_DISPATCH_TOKEN'):
             self.assertNotIn(forbidden, self.recovery)
         for job in ('multilingual_approval', 'extended_locales_approval', 'english_approval'):

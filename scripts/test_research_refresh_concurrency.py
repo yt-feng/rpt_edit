@@ -36,13 +36,19 @@ class ResearchRefreshConcurrencyTests(unittest.TestCase):
         group = re.search(r'^  group: >-\n(.*?)^  cancel-in-progress: false$',
                           concurrency, re.M | re.S)
         self.assertIsNotNone(group, 'The root release lock must remain non-cancelling')
-        preparation = release.split('\n  prepare_release:\n', 1)[1]
-        admission = preparation.split('    if: >-\n', 1)[1].split('    runs-on:', 1)[0].strip()
+        admission_job = re.search(r'^  source_admission:\n(.*?)(?=^  [a-z_]+:\n|\Z)',
+                                  release, re.M | re.S).group(1)
+        admission = admission_job.split('    if: >-\n', 1)[1].split('    runs-on:', 1)[0].strip()
         self.assertTrue(admission.startswith('${{') and admission.endswith('}}'))
         expected = ("${{ ( " + ' '.join(admission[3:-2].split()) +
                     " ) && 'portal-production-release' || "
                     "format('portal-release-ineligible-{0}-{1}', github.run_id, github.run_attempt) }}")
         self.assertEqual(' '.join(group.group(1).split()), expected)
+        preparation = re.search(r'^  prepare_release:\n(.*?)(?=^  [a-z_]+:\n|\Z)',
+                                release, re.M | re.S).group(1)
+        self.assertIn('needs: source_admission', preparation)
+        self.assertIn("needs.source_admission.result == 'success' && needs.source_admission.outputs.ready == 'true'",
+                      preparation)
         self.assertIn('default: false', self.workflow)
         self.assertIn('contents: read', self.workflow)
         self.assertIn('scripts/test_research_refresh_concurrency.py', self.workflow)

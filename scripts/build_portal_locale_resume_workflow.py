@@ -9,8 +9,26 @@ SOURCE = ROOT / '.github/workflows/neutral-edge-cutover.yml'
 TARGET = ROOT / '.github/workflows/neutral-locale-resume.yml'
 
 
+def job_body(source: str, name: str) -> str:
+    """Select one named job, never a workflow prefix containing other jobs."""
+    if source.count('\njobs:\n') != 1:
+        raise ValueError('Expected one production jobs mapping')
+    jobs = source.split('\njobs:\n', 1)[1]
+    matches = list(re.finditer(r'^  ([A-Za-z_][A-Za-z0-9_-]*):\n', jobs, re.M))
+    selected = [index for index, match in enumerate(matches) if match[1] == name]
+    if len(selected) != 1:
+        raise ValueError(f'Expected exactly one production {name} job')
+    index = selected[0]
+    end = matches[index + 1].start() if index + 1 < len(matches) else len(jobs)
+    return jobs[matches[index].end():end].removesuffix('\n')
+
+
 def generate(source: str) -> str:
-    prepare, downstream = source.split('\n  shadow_review_hold:\n', 1)
+    # Admission belongs to new builds. Recovery restores the exact uploaded
+    # candidate and keeps its own preparation/provenance checks; neither an
+    # earlier admission job's outputs nor another job's steps may leak in.
+    prepare = job_body(source, 'prepare_release')
+    _, downstream = source.split('\n  shadow_review_hold:\n', 1)
     # Recovery always needs fresh exact-version validation of its original candidate.
     # Delegated daily reviewers and their failure cleanup belong only to the
     # original workflow identity. Never copy their automatic cancellation into

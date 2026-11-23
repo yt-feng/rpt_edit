@@ -16,6 +16,8 @@ from test_neutral_edge_release_admission import (
     FailedReviewCancellationTests, FailedReviewCleanupTests, ReleaseAdmissionTests,
 )
 from test_admit_neutral_release_source import SourceAdmissionTests, WorkflowGateTests
+from test_research_refresh_concurrency import ResearchRefreshConcurrencyTests
+from test_post_blog_refresh import PostBlogRefreshTests
 
 
 ROOT = Path(__file__).resolve().parents[1]
