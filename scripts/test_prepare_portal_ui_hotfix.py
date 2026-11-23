@@ -11,8 +11,10 @@ from unittest.mock import patch
 import prepare_portal_ui_hotfix as hotfix
 import publish_static_slot as publish
 import portal_english_publication as english
+import portal_locale_manifest as locale_manifest
+import verify_prepared_static_slot as prepared_slot
 from portal_english_ui import PUBLIC_ASSET_NAMES, detail, homepage
-from verify_prepared_static_slot import static_tree_sha256
+from verify_prepared_static_slot import static_tree_sha256, verify_candidate_locale_routes
 
 
 class S3Error(Exception):
@@ -70,7 +72,8 @@ class HotfixTests(unittest.TestCase):
                        'report.html': b'<body data-page="report">Keep body<script src="assets/app.js?v=old"></script><script src="assets/analytics.js"></script></body>',
                        'index.html': b'<body>Keep home<script src="/assets/app.js?v=old"></script></body>',
                        'blog/article.html': b'<body>Unchanged original article<script src="/assets/app.js?v=old"></script></body>',
-                       'ko/report.html': b'<body>Unchanged locale shell</body>', 'data/i18n/manifest.json': b'{"translation":"retained"}',
+                       'ko/report.html': b'<body>Unchanged locale shell</body>',
+                       'data/i18n/manifest.json': b'{"schema_version":1,"coverage":{"ko":1,"ja":1,"ar":1},"translation":"retained"}',
                        'robots.txt': b'User-agent: *\nAllow: /\n', 'sitemap-en.xml': b'<urlset>retained sitemap</urlset>'})
         site_source = Path(__file__).resolve().parents[1] / 'portal_suite/site_src'
         developer = (site_source / 'developer-api.html').read_bytes()
@@ -120,6 +123,162 @@ class HotfixTests(unittest.TestCase):
     def guard(self): self.guard_calls += 1
     def run_prepare(self, guard=None):
         return hotfix.prepare(self.client, self.bucket, active_state=self.active, release=self.new_release, source_root=self.source, locale_assets=self.locale, assert_active=guard or self.guard)
+
+    def replace_source_bodies(self, bodies):
+        for relative, body in bodies.items():
+            row = hotfix.descriptor_with_body(self.manifest['files'].get(relative, {
+                'content_type': 'text/html' if relative.endswith('.html') else 'application/json',
+                'cache_control': publish.cache_control_for(Path(relative)),
+            }), body)
+            if relative.endswith('.js'): row['content_type'] = 'application/javascript'
+            self.manifest['files'][relative] = row
+            self.client.put_object(Bucket=self.bucket, Key=self.source_prefix + relative, Body=body, **publish.upload_extra_args(row))
+        self.manifest.update(file_count=len(self.manifest['files']),
+                             total_bytes=sum(row['size'] for row in self.manifest['files'].values()),
+                             tree_sha256=static_tree_sha256(self.manifest['files']))
+        self.active['tree_sha256'] = self.manifest['tree_sha256']
+        publish.put_json(self.client, self.bucket, publish.manifest_key('a'), self.manifest)
+        self.client.trace.clear()
+
+    def locale_fixture(self, *, sharded=False):
+        bodies = {}; value = {'schema_version': 1, 'coverage': dict.fromkeys(hotfix.locale_routes.LOCALES, 1.0),
+                              'application_routes': {}, 'lazy_javascript_assets': {}}
+        def describe(relative, body):
+            bodies[relative] = body
+            return {'path': relative, 'byte_size': len(body), 'sha256': hashlib.sha256(body).hexdigest()}
+        for locale, direction in hotfix.locale_routes.LOCALES.items():
+            value['application_routes'][locale] = {}
+            for filename, page in hotfix.locale_routes.APPLICATION_PAGES.items():
+                body = (f'<html lang="{locale}" dir="{direction}"><head><meta name="robots" content="noindex,follow"></head>'
+                        f'<body data-page="{page}"><aside data-kc-locale-help>'
+                        f'<a data-kc-chinese-entry data-kc-chinese-equivalent hreflang="zh-Hans" href="https://portal.example.invalid/{filename}">中文</a>'
+                        '<a data-kc-chinese-entry hreflang="zh-Hans" href="https://portal.example.invalid/">Chinese home</a>'
+                        '<span data-kc-public-account-contact><a href="mailto:info@kcdesk.com" dir="ltr">info@kcdesk.com</a></span>'
+                        '<p data-kc-locale-error hidden></p></aside><main>Retained translation</main></body></html>').encode()
+                value['application_routes'][locale][filename] = describe(f'{locale}/{filename}', body)
+        value['recovery_asset'] = describe('assets/locale-recovery.js', b'/* retained recovery */')
+        value['detail_asset'] = describe('assets/locale-detail.js', b'/* retained detail */')
+        for locale, prefix in [('zh-Hans', ''), *((locale, f'{locale}/') for locale in hotfix.locale_routes.LOCALES)]:
+            relative = prefix + 'assets/newsfeed-app.js'
+            raw = self.client.objects[self.source_prefix + relative]['Body'] if not prefix else f'/* retained {locale} newsfeed */'.encode()
+            value['lazy_javascript_assets'][locale] = describe(relative, raw)
+        # Additional covered descriptors must follow their actual candidate too;
+        # a Newsfeed-only replacement would miss app, analytics and CSS bindings.
+        value['shared_assets'] = {name: {**describe('assets/' + name, self.client.objects[self.source_prefix + 'assets/' + name]['Body']), 'owner': 'retained'}
+                                  for name in ('app.js', 'admin-users.js', 'analytics.js', 'styles.css')}
+        if sharded:
+            source = 'Retained source text'; prompt = 'test-locale-v1'
+            key = hashlib.sha256(f'{prompt}\0copy\0{source}'.encode()).hexdigest()
+            row = {'source': source, 'context': 'html:p', 'reason': 'translation_time_budget', 'translation_class': 'copy',
+                   'source_sha256': hashlib.sha256(source.encode()).hexdigest()}
+            units = {'ko': {key: row}, 'ja': {}, 'ar': {}}
+            shard, body = locale_manifest._encode_fallback_shard(units, key[0], prompt)
+            bodies[shard['path']] = body
+            value.update(prompt_version=prompt, source_unit_count=1,
+                         translation_entry_count={'ko': 0, 'ja': 1, 'ar': 1}, coverage={'ko': 0, 'ja': 1, 'ar': 1},
+                         resolved_entry_count=dict.fromkeys(units, 1), resolved_coverage=dict.fromkeys(units, 1),
+                         source_fallbacks={'schema_version': 5, 'counts': {'ko': 1, 'ja': 0, 'ar': 0}, 'shards': [shard]})
+        for relative in (*prepared_slot.REQUIRED_STATIC_PATHS, *prepared_slot.REQUIRED_LOCALE_PATHS):
+            if relative not in self.manifest['files'] and relative not in bodies:
+                bodies[relative] = ('Retained fixture: ' + relative).encode()
+        bodies['data/i18n/manifest.json'] = json.dumps(value, ensure_ascii=False).encode()
+        self.replace_source_bodies(bodies)
+        return value
+
+    def test_locale_asset_graph_rebinds_actual_candidate_and_passes_the_unchanged_route_guard(self):
+        original = self.locale_fixture()
+        before = copy.deepcopy(self.client.objects)
+        result = self.run_prepare()
+        candidate = json.loads(self.client.objects[publish.manifest_key('b')]['Body'])
+        raw = self.client.objects[self.target_prefix + 'data/i18n/manifest.json']['Body']
+        updated = locale_manifest.parse_locale_manifest(raw)
+        for descriptor in [updated['lazy_javascript_assets']['zh-Hans'], *updated['shared_assets'].values()]:
+            row = candidate['files'][descriptor['path']]
+            self.assertEqual((descriptor['byte_size'], descriptor['sha256']), (row['size'], row['sha256']))
+        self.assertEqual(updated['application_routes'], original['application_routes'])
+        self.assertEqual(updated['coverage'], original['coverage'])
+        for locale in hotfix.locale_routes.LOCALES:
+            self.assertEqual(updated['lazy_javascript_assets'][locale], original['lazy_javascript_assets'][locale])
+        self.assertTrue(all(row['owner'] == 'retained' for row in updated['shared_assets'].values()))
+        expected = copy.deepcopy(original)
+        expected['lazy_javascript_assets']['zh-Hans'] = updated['lazy_javascript_assets']['zh-Hans']
+        expected['shared_assets'] = updated['shared_assets']
+        self.assertEqual(updated, expected, 'only asset descriptor hashes and sizes may change')
+        self.assertEqual(candidate['files']['data/i18n/manifest.json']['sha256'], hashlib.sha256(raw).hexdigest())
+        self.assertIn('data/i18n/manifest.json', result['changed_files'])
+        for key, value in before.items(): self.assertEqual(self.client.objects[key], value, key)
+        report = verify_candidate_locale_routes(self.client, self.bucket, self.target_prefix, candidate['files'], updated, 'https://portal.example.invalid')
+        self.assertEqual(report['status'], 'passed')
+        self.assertEqual(report['request_count'], 24)
+        stale = copy.deepcopy(updated); stale['lazy_javascript_assets']['zh-Hans'] = original['lazy_javascript_assets']['zh-Hans']
+        with self.assertRaisesRegex(RuntimeError, 'Locale route descriptor differs'):
+            verify_candidate_locale_routes(self.client, self.bucket, self.target_prefix, candidate['files'], stale, 'https://portal.example.invalid')
+
+    def test_sharded_locale_provenance_is_revalidated_but_never_reencoded_or_replaced(self):
+        original = self.locale_fixture(sharded=True)
+        shard = original['source_fallbacks']['shards'][0]
+        before = copy.deepcopy(self.client.objects[self.source_prefix + shard['path']])
+        result = self.run_prepare()
+        raw = self.client.objects[self.target_prefix + 'data/i18n/manifest.json']['Body']
+        updated = json.loads(raw)
+        for key in ('source_fallbacks', 'source_unit_count', 'prompt_version', 'coverage', 'translation_entry_count', 'resolved_entry_count', 'resolved_coverage'):
+            self.assertEqual(updated[key], original[key], key)
+        self.assertEqual(self.client.objects[self.target_prefix + shard['path']], before)
+        self.assertNotIn(shard['path'], result['changed_files'])
+        verified = locale_manifest.parse_locale_manifest(raw, shard_resolver=lambda row: self.client.objects[self.target_prefix + row['path']]['Body'])
+        locale_manifest.validate_translation_resolution(verified, hotfix.locale_routes.LOCALES)
+        self.assertEqual(verified['source_fallbacks']['schema_version'], 5)
+        report = prepared_slot.verify_prepared_static_slot(
+            self.client, self.bucket, slot=result['slot'], release=result['release_id'], tree=result['tree_sha256'],
+            locale_origin='https://portal.example.invalid',
+        )
+        self.assertTrue(report['verified'])
+        self.assertEqual(report['locale_routes_status'], 'passed')
+        self.assertEqual(report['locale_objects_verified'], 24)
+        self.assertEqual(report['locale_source_shards_verified'], 1)
+
+    def test_old_locale_descriptor_mismatches_fail_before_any_candidate_write(self):
+        original = self.locale_fixture()
+        for section, key in [('lazy_javascript_assets', 'zh-Hans'), ('shared_assets', 'analytics.js'), ('application_routes', 'ko')]:
+            value = copy.deepcopy(original)
+            row = value[section][key]['report.html'] if section == 'application_routes' else value[section][key]
+            row['sha256'] = '0' * 64
+            self.replace_source_bodies({'data/i18n/manifest.json': json.dumps(value).encode()})
+            with self.subTest(section=section), self.assertRaisesRegex(RuntimeError, 'descriptor differs from pinned static manifest'):
+                self.run_prepare()
+            self.assertEqual(self.client.trace, [])
+
+    def test_legacy_compressed_provenance_keeps_its_original_encoding(self):
+        original = self.locale_fixture(sharded=True)
+        shard = original['source_fallbacks']['shards'][0]
+        original['source_fallbacks'] = json.loads(self.client.objects[self.source_prefix + shard['path']]['Body'])['source_fallbacks']
+        self.client.objects.pop(self.source_prefix + shard['path'])
+        self.manifest['files'].pop(shard['path'])
+        self.replace_source_bodies({'data/i18n/manifest.json': json.dumps(original).encode()})
+        result = self.run_prepare()
+        raw = self.client.objects[self.target_prefix + 'data/i18n/manifest.json']['Body']
+        self.assertEqual(json.loads(raw)['source_fallbacks'], original['source_fallbacks'])
+        self.assertEqual(json.loads(raw)['source_fallbacks']['schema_version'], 4)
+        locale_manifest.validate_translation_resolution(locale_manifest.parse_locale_manifest(raw), hotfix.locale_routes.LOCALES)
+        self.assertNotIn(shard['path'], result['changed_files'])
+
+    def test_missing_corrupt_or_extra_locale_shards_fail_before_candidate_copy(self):
+        original = self.locale_fixture(sharded=True)
+        shard = original['source_fallbacks']['shards'][0]
+        baseline = copy.deepcopy(self.client.objects)
+        inventory = copy.deepcopy(self.manifest)
+        for failure in ('missing', 'corrupt', 'extra', 'descriptor'):
+            self.client.objects = copy.deepcopy(baseline); self.manifest = copy.deepcopy(inventory)
+            self.active['tree_sha256'] = inventory['tree_sha256']; self.client.trace.clear()
+            if failure == 'missing': self.client.objects.pop(self.source_prefix + shard['path'])
+            elif failure == 'corrupt': self.client.objects[self.source_prefix + shard['path']]['Body'] = b'x' * shard['byte_size']
+            elif failure == 'extra': self.replace_source_bodies({hotfix.FALLBACK_SHARD_DIRECTORY + '/undeclared.json': b'{}'})
+            else:
+                value = copy.deepcopy(original); value['source_fallbacks']['shards'][0]['byte_size'] += 1
+                self.replace_source_bodies({'data/i18n/manifest.json': json.dumps(value).encode()})
+            with self.subTest(failure=failure), self.assertRaises((RuntimeError, S3Error)):
+                self.run_prepare()
+            self.assertEqual(self.client.trace, [])
 
     def test_full_clone_preserves_source_content_and_approved_ledger_with_manifest_last(self):
         before = copy.deepcopy(self.client.objects)
