@@ -57,6 +57,7 @@ test("one signed request signals the fixed wake workflow with only its exact pro
   const [[dispatch, options]] = f.calls;
   assert.equal(dispatch, "https://api.github.com/repos/downstream/reports/actions/workflows/daily-report-source-wakeup.yml/dispatches");
   assert.equal(options.method, "POST");
+  assert.equal(options.redirect, "manual");
   assert.equal(options.headers.Authorization, `Bearer ${env.GH_DISPATCH_TOKEN}`);
   assert.deepEqual(JSON.parse(options.body), { ref: "main", inputs: proof });
 });
@@ -96,6 +97,7 @@ test("missing signing and dispatch credentials are unavailable without a dispatc
 
 test("failed and uncertain GitHub dispatches never cause a second POST", async () => {
   for (const [options, state] of [
+    [{ githubStatus: 302 }, "wake_rejected"],
     [{ githubStatus: 403 }, "wake_rejected"],
     [{ githubStatus: 503 }, "wake_outcome_unknown"],
     [{ lost: true }, "wake_outcome_unknown"],

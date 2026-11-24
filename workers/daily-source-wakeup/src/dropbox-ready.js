@@ -83,7 +83,9 @@ export async function handleDropboxReady(request, env, { fetchWithTimeout, now =
     // with the polling wake. One POST is enough even on a lost acknowledgement.
     const response = await fetchWithTimeout(`https://api.github.com/repos/${repository}/actions/workflows/${WORKFLOW}/dispatches`, {
       method: "POST",
-      redirect: "error",
+      // Workers returns 3xx directly in manual mode. Reject it without
+      // forwarding credentials, just like other unaccepted responses.
+      redirect: "manual",
       headers: {
         Authorization: `Bearer ${credential}`,
         Accept: "application/vnd.github+json",
