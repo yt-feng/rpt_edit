@@ -42,6 +42,7 @@ jobs:
         run: |
           python3 -B scripts/check_portal_app_budget.py --candidate portal_suite/site_src/assets/app.js
           python3 -B scripts/test_check_portal_app_budget.py
+          python3 -B scripts/test_check_public_brand.py
 
       - name: Check recurring locale refresh failures before merge
         run: |
