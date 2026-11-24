@@ -7535,6 +7535,8 @@ body.chart-lightbox-open {
   display: flex;
   flex-direction: column;
   width: min(1720px, calc(100vw - 32px));
+  height: min(88vh, 960px);
+  height: min(88dvh, 960px);
   max-height: min(92vh, 1040px);
   max-height: min(92dvh, 1040px);
   padding: 0;

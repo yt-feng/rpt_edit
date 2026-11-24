@@ -39,6 +39,7 @@ function mediaSection(source, query) {
 test("desktop admin workspace is wide enough for the user table and editor", () => {
   assert.match(responsive, /\.account-admin-dialog\s*\{[\s\S]*?width:\s*min\(1720px,\s*calc\(100vw - 32px\)\)/u);
   assert.match(responsive, /max-height:\s*min\(92dvh,\s*1040px\)/u);
+  assert.match(responsive, /\bheight:\s*min\(88dvh,\s*960px\)/u);
   assert.match(responsive, /#accountAdminUsersSection \.account-admin-table\s*\{[\s\S]*?min-width:\s*1120px/u);
 
   const wide = mediaSection(responsive, "@media (min-width: 1180px)");
