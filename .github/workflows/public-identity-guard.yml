@@ -104,6 +104,9 @@ jobs:
 
       - name: Check private user directory and mobile admin controls
         run: |
+          node scripts/test_portal_entitlement_precedence.js
+          node scripts/test_portal_access_renewal.js
+          node scripts/test_portal_multi_institution_access.js
           node --test portal_suite/tests/admin-user-subrequests.test.mjs portal_suite/tests/admin-users-frontend.test.mjs portal_suite/tests/admin-responsive-css.test.mjs portal_suite/tests/admin-report-chat-history-frontend.test.mjs
 
       - name: Check reader discussions, feedback and form confirmations
