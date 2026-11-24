@@ -30,6 +30,7 @@ const ADMIN = Object.freeze({
 });
 
 let activeSupabaseRows = [];
+let activeEntitlementRows = [];
 let activeExternalRequests = [];
 let activePageCap = Number.POSITIVE_INFINITY;
 
@@ -71,24 +72,36 @@ globalThis.fetch = async (input) => {
     );
     assert.match(select, /(?:^|,)id(?:,|$)/u, "the admin export must select a unique pagination key");
     assert.equal(url.searchParams.get("order"), "id.asc");
-    return jsonResponse([]);
+    const after = String(url.searchParams.get("id") || "").replace(/^gt\./u, "");
+    const emailFilter = String(url.searchParams.get("email") || "");
+    const emails = emailFilter.startsWith("in.") ? JSON.parse(`[${emailFilter.slice(4, -1)}]`) : null;
+    return jsonResponse(activeEntitlementRows.filter((row) =>
+      (!after || row.id > after) && (!emails || emails.includes(row.email)),
+    ).slice(0, Math.min(Number(url.searchParams.get("limit") || 500), activePageCap)));
   }
   throw new Error(`unexpected Supabase path: ${url.pathname}`);
 };
 
 class CountingR2 {
-  constructor() {
+  constructor(rows = new Map(), pageCap = Infinity) {
     this.events = [];
+    this.rows = rows;
+    this.pageCap = pageCap;
   }
 
   async get(key) {
     this.events.push({ op: "get", key });
-    return null;
+    const value = this.rows.get(key);
+    return value ? { etag: `etag-${key}`, text: async () => JSON.stringify(value) } : null;
   }
 
   async list(options = {}) {
     this.events.push({ op: "list", key: String(options.prefix || "") });
-    return { objects: [], truncated: false };
+    const keys = [...this.rows.keys()].filter((key) => key.startsWith(options.prefix)).sort();
+    const offset = Number(options.cursor || 0);
+    const objects = keys.slice(offset, offset + Math.min(options.limit || 1000, this.pageCap)).map((key) => ({ key }));
+    const next = offset + objects.length;
+    return next < keys.length ? { objects, truncated: true, cursor: String(next) } : { objects, truncated: false };
   }
 
   async put(key) {
@@ -213,9 +226,8 @@ function extractFunction(source, name) {
   throw new Error(`${name} body is incomplete`);
 }
 
-function verificationRenderer(cachedUsers) {
+function verificationRenderer() {
   return vm.runInNewContext(`(${extractFunction(app, "renderAdminUsersVerificationState")})`, {
-    accountAdminUsersByEmail: new Map(cachedUsers.map((user) => [user.email, user])),
     escapeHtml(value) { return String(value || ""); },
   });
 }
@@ -223,11 +235,13 @@ function verificationRenderer(cachedUsers) {
 test("a failed live verification preserves cached admin user rows", () => {
   const cachedMarkup = "<tr><td>cached-user@example.invalid</td></tr>";
   const targets = {
-    userCount: { textContent: "1 users" },
+    userDirectory: new Map([["cached-user@example.invalid", { email: "cached-user@example.invalid" }]]),
+    usersComplete: true,
+    userCount: { textContent: "全部 1 位用户" },
     users: { innerHTML: cachedMarkup },
     usersNotice: { hidden: true, textContent: "", className: "" },
   };
-  const renderVerification = verificationRenderer([{ email: "cached-user@example.invalid" }]);
+  const renderVerification = verificationRenderer();
 
   renderVerification(targets, "最新用户状态读取失败，请稍后重试。", "error");
 
@@ -244,7 +258,7 @@ test("a failed first live verification still renders an actionable empty state",
     users: { innerHTML: "" },
     usersNotice: { hidden: true, textContent: "", className: "" },
   };
-  const renderVerification = verificationRenderer([]);
+  const renderVerification = verificationRenderer();
 
   renderVerification(targets, "最新用户状态读取失败，请稍后重试。", "error");
 
@@ -254,14 +268,15 @@ test("a failed first live verification still renders an actionable empty state",
 });
 
 
-async function readPaginatedUsers(total, pageCap = Number.POSITIVE_INFINITY, rows = userRows(total)) {
+async function readPaginatedUsers(total, pageCap = Infinity, rows = userRows(total), objects = new Map()) {
   activeSupabaseRows = rows;
   activePageCap = pageCap;
   const all = [];
   const calls = [];
   let cursor = "";
+  let r2Calls = 0;
   do {
-    const bucket = new CountingR2();
+    const bucket = new CountingR2(objects);
     activeExternalRequests = [];
     const query = new URLSearchParams({ page_size: "100" });
     if (cursor) query.set("cursor", cursor);
@@ -276,6 +291,7 @@ async function readPaginatedUsers(total, pageCap = Number.POSITIVE_INFINITY, row
     assert.equal(body.verified, true);
     assert.equal(body.complete, !body.has_more);
     assert.equal(Boolean(body.next_cursor), body.has_more);
+    r2Calls += bucket.events.length;
     assert.ok(bucket.events.length < 1000, `R2 per-request budget exceeded: ${bucket.events.length}`);
     assert.ok(activeExternalRequests.length < 50);
     assert.ok(body.users.length <= 100);
@@ -286,7 +302,7 @@ async function readPaginatedUsers(total, pageCap = Number.POSITIVE_INFINITY, row
     cursor = body.next_cursor;
   } while (cursor);
   activePageCap = Number.POSITIVE_INFINITY;
-  return { all, calls };
+  return { all, calls, r2Calls };
 }
 
 test("624 live users load completely in bounded requests without stale snapshots", async () => {
@@ -350,4 +366,116 @@ test("patching one user never promotes a partial snapshot or resets directory fr
   assert.equal(written.data.complete, false);
   assert.equal(written.updated_at, previous.updated_at);
   assert.equal(written.data.users.length, 2);
+});
+
+const recordKey = (...parts) => ["_account", ...parts.map(encodeURIComponent)].join("/");
+
+async function readDirectory(bucket, user = ADMIN) {
+  return worker.fetch(new Request("https://worker.test/account-admin/users?view=directory", {
+    headers: user ? { authorization: `Bearer ${userToken(user)}` } : {},
+  }), {
+    REPORT_BUCKET: bucket, AUTH_SECRET, ACCOUNT_STORE_MODE: "supabase", SUPABASE_URL,
+    SUPABASE_SERVICE_ROLE_KEY: "test-service-role-key", ALLOWED_ORIGIN: "https://portal.example.invalid",
+  }, { waitUntil() {} });
+}
+
+test("directory returns all live, canonical users with the same rights and far fewer R2 reads", async () => {
+  const rows = userRows(647);
+  const granted = rows[614], newsfeed = rows[623], disabled = rows[645], legacy = rows[646];
+  legacy.email = "twotigers-legacy@example.invalid";
+  const updated = "2026-11-24T09:00:00Z";
+  const expires = "2099-12-23T15:59:59.999Z";
+  const objects = new Map([
+    [recordKey("access", granted.email), {
+      id: "test-access", email: granted.email, access_mode: "all", status: "active", lifetime: false,
+      current_period_end: expires, duration_value: "1", download_limit: 0, download_count: 0, download_items: [],
+      institutions: [], industries: [], page_ranges: [], updated_at: updated, change_id: "test-version",
+    }],
+    [recordKey("newsfeed-access", newsfeed.email), {
+      email: newsfeed.email, user_id: newsfeed.id, mode: "enabled", expires_at: expires, updated_at: updated,
+    }],
+    [recordKey("user-state", "id", disabled.id), { user_id: disabled.id, email: disabled.email, disabled: true, updated_at: updated }],
+    // The older disabled record continues to win over a newer active copy.
+    [recordKey("user-state", "email", disabled.email), {
+      email: disabled.email, user_id: disabled.id, disabled: false, updated_at: "2026-11-25T09:00:00Z",
+    }],
+    [recordKey("access", legacy.email), {
+      id: "legacy-access", email: legacy.email, access_mode: "all", status: "active", lifetime: true,
+      current_period_end: null, duration_value: "lifetime", download_limit: 0, download_count: 0, download_items: [],
+      institutions: [], industries: [], page_ranges: [], updated_at: updated,
+    }],
+  ]);
+  activeEntitlementRows = [{
+    id: "ent-001", email: rows[600].email, plan: "annual", status: "active", lifetime: false, current_period_end: expires, updated_at: updated,
+  }];
+
+  try {
+    const paginated = await readPaginatedUsers(rows.length, 61, rows, objects);
+    activePageCap = 61;
+    activeExternalRequests = [];
+    const bucket = new CountingR2(objects, 1);
+    const result = await readDirectory(bucket);
+    const body = await result.json();
+    assert.equal(result.status, 200, JSON.stringify(body).slice(0, 180));
+    assert.match(result.headers.get("Cache-Control"), /private, no-store/u);
+    assert.deepEqual([body.verified, body.complete, body.has_more, body.total], [true, true, false, rows.length]);
+    const byEmail = new Map(body.users.map((user) => [user.email, user]));
+    assert.equal(byEmail.size, rows.length);
+    for (const prior of paginated.all) {
+      const current = byEmail.get(prior.email);
+      const stableState = (user) => user.role !== "super" ? user : {
+        ...user, entitlement: { ...user.entitlement, updated_at: "" },
+      };
+      assert.deepEqual(stableState(current), stableState(prior), `directory permission mismatch for ${prior.id}`);
+    }
+    assert.equal(byEmail.get(disabled.email).disabled, true);
+    assert.equal(byEmail.get(granted.email).effective_access.active, true);
+    assert.equal(byEmail.get(newsfeed.email).newsfeed.source, "admin");
+    assert.ok(bucket.events.filter(({ op }) => op === "list").length > 4, "short R2 pages must follow the cursor");
+    assert.ok(bucket.events.length < 25, `bulk directory issued ${bucket.events.length} R2 calls`);
+    assert.ok(paginated.r2Calls > 2500, `cursor scan issued ${paginated.r2Calls} R2 calls`);
+    assert.ok(activeExternalRequests.length < 50);
+    assert.ok(bucket.events.every(({ op }) => op !== "put"));
+  } finally {
+    activePageCap = Infinity;
+    activeEntitlementRows = [];
+  }
+});
+
+test("the fast directory refuses non-admins, corrupt records and a repeated storage cursor", async () => {
+  activeSupabaseRows = userRows(5);
+  const reader = activeSupabaseRows[1];
+  for (const user of [null, reader]) {
+    const bucket = new CountingR2();
+    const response = await readDirectory(bucket, user);
+    assert.equal(response.status, 403);
+    assert.ok(!bucket.events.some(({ op }) => op === "list"));
+    assert.ok(!Object.hasOwn(await response.json(), "users"));
+  }
+  const corrupt = new CountingR2(new Map([
+    [recordKey("newsfeed-access", reader.email), { mode: "enabled", email: reader.email, user_id: "wrong-id" }],
+  ]));
+  const looping = new CountingR2();
+  looping.list = async ({ prefix }) => ({ objects: [{ key: `${prefix}known` }], truncated: true, cursor: "repeated" });
+  for (const bucket of [corrupt, looping]) {
+    const response = await readDirectory(bucket);
+    assert.equal(response.status, 409);
+    assert.deepEqual(await response.json(), { code: "use_user_cursor" });
+  }
+});
+
+
+test("a dense directory falls back before hydrating more stored records than fit in one request", async () => {
+  activeSupabaseRows = userRows(430);
+  const rows = new Map(activeSupabaseRows.slice(1).flatMap((user) =>
+    ["id", "email"].map((kind) => [
+      recordKey("user-state", kind, user[kind]), { user_id: user.id, email: user.email, disabled: false },
+    ]),
+  ));
+  const bucket = new CountingR2(rows);
+  const response = await readDirectory(bucket);
+  assert.equal(response.status, 409);
+  assert.deepEqual(await response.json(), { code: "use_user_cursor" });
+  assert.ok(bucket.events.every(({ op, key }) => op === "list"
+    || !key.startsWith("_account/user-state/") || key.endsWith(encodeURIComponent(ADMIN.id)) || key.endsWith(encodeURIComponent(ADMIN.email))));
 });

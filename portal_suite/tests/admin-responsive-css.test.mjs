@@ -7,9 +7,10 @@ const appPath = new URL("../site_src/assets/app.js", import.meta.url);
 const responsiveMarker = "/* Account admin responsive workspace */";
 const darkMarker = "/* Automatic device dark mode */";
 
-const [styles, app] = await Promise.all([
+const [styles, app, users] = await Promise.all([
   readFile(stylesPath, "utf8"),
   readFile(appPath, "utf8"),
+  readFile(new URL("../site_src/assets/admin-users.js", import.meta.url), "utf8"),
 ]);
 
 const responsiveStart = styles.indexOf(responsiveMarker);
@@ -53,7 +54,8 @@ test("mobile admin modal becomes a full-height touch workspace", () => {
   assert.match(mobile, /\.account-admin-modal\s*\{[\s\S]*?place-items:\s*stretch;[\s\S]*?padding:\s*0/u);
   assert.match(mobile, /\.account-admin-dialog\s*\{[\s\S]*?min-height:\s*100dvh;[\s\S]*?max-height:\s*100dvh/u);
   assert.match(mobile, /\.account-admin-dialog > \.admin-close\s*\{[\s\S]*?position:\s*fixed/u);
-  assert.match(mobile, /\.account-admin-top\s*\{[\s\S]*?position:\s*sticky;[\s\S]*?background:\s*var\(--panel\)/u);
+  assert.match(responsive, /\.account-admin-content\s*\{[\s\S]*?overflow:\s*auto/u);
+  assert.match(responsive, /\.account-admin-user-toolbar\s*\{[\s\S]*?position:\s*sticky;[\s\S]*?top:\s*0/u);
   assert.match(mobile, /\.account-admin-user-editor-actions\s*\{[\s\S]*?position:\s*sticky;[\s\S]*?bottom:\s*0/u);
   assert.match(mobile, /\.account-admin-user-editor-actions \.primary\s*\{[\s\S]*?width:\s*100%/u);
 });
@@ -64,10 +66,10 @@ test("mobile user table is a labeled card list with touch-sized actions", () => 
   assert.match(mobile, /#accountAdminUsersSection \.account-admin-table thead\s*\{[\s\S]*?clip-path:\s*inset\(50%\)/u);
   assert.match(mobile, /#accountAdminUsersSection \.account-admin-table tbody\s*\{[\s\S]*?display:\s*grid;[\s\S]*?gap:\s*12px/u);
   assert.match(mobile, /#accountAdminUsersSection \.account-admin-table tr\s*\{[\s\S]*?border-radius:\s*12px/u);
-  assert.match(mobile, /\.account-admin-row-actions\s*\{[\s\S]*?repeat\(auto-fit,\s*minmax\(110px,\s*1fr\)\)/u);
+  assert.match(mobile, /\.account-admin-row-actions\s*\{[\s\S]*?repeat\(2,\s*minmax\(0,\s*1fr\)\)/u);
   assert.match(mobile, /\.account-admin-row-actions \.secondary-button\s*\{[\s\S]*?min-height:\s*44px/u);
-  assert.match(mobile, /td\[colspan\]:last-child::before\s*\{[\s\S]*?content:\s*none/u);
-  assert.match(mobile, /td:last-child:empty\s*\{[\s\S]*?display:\s*none/u);
+  assert.match(mobile, /td\[colspan\]::before\s*\{[\s\S]*?content:\s*none/u);
+  assert.match(mobile, /\.account-admin-mobile-user-details\s*\{[\s\S]*?display:\s*block/u);
 });
 
 test("mobile labels stay aligned with the 12-column user DOM contract", () => {
@@ -94,12 +96,12 @@ test("mobile labels stay aligned with the 12-column user DOM contract", () => {
   const mobile = mediaSection(responsive, "@media (max-width: 820px)");
   const labels = [...mobile.matchAll(/td:nth-child\((\d+)\)::before\s*\{\s*content:\s*"([^"]+)";/gu)]
     .sort((left, right) => Number(left[1]) - Number(right[1]))
-    .map((match) => match[2]);
-  assert.deepEqual(labels, headers);
+    .map((match) => [Number(match[1]), match[2]]);
+  assert.deepEqual(labels, [[6, "下载权限"], [7, "到期"], [11, "Newsfeed"]]);
 
-  const rowStart = app.indexOf("function adminUserRow(user)");
-  const rowEnd = app.indexOf("function adminUserSortTimestamp", rowStart);
-  assert.equal((app.slice(rowStart, rowEnd).match(/<td/gu) || []).length, 12);
+  const rowStart = users.indexOf("function adminUserRow(user, helpers)");
+  const rowEnd = users.indexOf("function adminUserSortTimestamp", rowStart);
+  assert.equal((users.slice(rowStart, rowEnd).match(/<td/gu) || []).length, 12);
 });
 
 test("responsive cards preserve disabled-user treatment in dark mode", () => {

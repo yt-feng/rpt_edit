@@ -82,7 +82,9 @@ test("RAG archive section is rendered only for the super-admin management view",
   assert.doesNotMatch(superSection, /\bhidden\b/u);
   assert.match(operatorSection, /\bhidden\b/u);
   assert.match(app, /showReportChatArchives:\s*canManageUsers/u);
-  assert.match(app, /if \(canManageUsers\) \{\s*loadAdminHotReports\(workerUrl, targets\);\s*loadAdminReportChatHistory\(workerUrl, targets\);/u);
+  assert.match(app, /canManageUsers \? loadAdminReportChatHistory\(workerUrl, targets\) : Promise\.resolve\(\)/u);
+  assert.match(superMarkup, /id="accountAdminOverview" hidden/u);
+  assert.match(extractFunction(app, "showAccountAdminModal"), /if \(!showUsers && !overviewStarted\) loadOverview\(\)/u);
 });
 
 test("RAG history loader accepts legacy and current API shapes and renders counts and curation state", async () => {
