@@ -91,6 +91,9 @@ jobs:
       - name: Configure the isolated clock and its credentials
         env:
           R2_BUCKET_NAME: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          DROPBOX_SOURCE_REPO: ${{ vars.DROPBOX_SOURCE_REPO }}
+          DROPBOX_SOURCE_REPO_ID: ${{ vars.DROPBOX_SOURCE_REPO_ID }}
+          DROPBOX_SOURCE_OWNER_ID: ${{ vars.DROPBOX_SOURCE_OWNER_ID }}
           GH_READ_TOKEN: ${{ secrets.GH_READ_TOKEN || secrets.GH_DISPATCH_TOKEN }}
           GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
         run: |
@@ -101,11 +104,18 @@ jobs:
           assert re.fullmatch(r'[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]', bucket), 'Invalid R2 bucket'
           values = {key: os.environ[key] for key in ('GH_READ_TOKEN', 'GH_DISPATCH_TOKEN')}
           assert all(values.values()), 'Missing GitHub clock credentials'
+          source = {key: os.environ[key] for key in (
+              'DROPBOX_SOURCE_REPO', 'DROPBOX_SOURCE_REPO_ID', 'DROPBOX_SOURCE_OWNER_ID'
+          )}
+          assert re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', source['DROPBOX_SOURCE_REPO']), 'Invalid Dropbox source repository'
+          assert all(re.fullmatch(r'[1-9][0-9]*', source[key]) for key in (
+              'DROPBOX_SOURCE_REPO_ID', 'DROPBOX_SOURCE_OWNER_ID'
+          )), 'Invalid Dropbox source repository or owner ID'
           config = {
               'name': 'portal-daily-source-clock', 'main': 'src/index.js',
               'compatibility_date': '2026-05-01', 'workers_dev': True,
               'preview_urls': False,
-              'vars': {'GH_REPO': os.environ['GITHUB_REPOSITORY']},
+              'vars': {'GH_REPO': os.environ['GITHUB_REPOSITORY'], **source},
               'triggers': {'crons': ['*/30 * * * *']},
               'r2_buckets': [{'binding': 'REPORT_BUCKET', 'bucket_name': bucket}],
           }

@@ -1,7 +1,6 @@
 // Scope the public relay to one GitHub Actions workflow and one destination.
 const ISSUER = "https://token.actions.githubusercontent.com";
 const AUDIENCE = "rpt-edit-dropbox-ready";
-const SOURCE = "yf2-stack/rpt_gdrive";
 const REF = "refs/heads/main";
 const ROUTE = "/dropbox-report-batch-ready";
 const WORKFLOW = "daily-report-source-wakeup.yml";
@@ -14,7 +13,7 @@ function decodeBase64Url(value) {
   return Uint8Array.from(atob(value.replace(/-/g, "+").replace(/_/g, "/")), (char) => char.charCodeAt(0));
 }
 
-function tokenForRun(authorization, runId, now) {
+function tokenForRun(authorization, runId, now, env) {
   const jwt = authorization?.startsWith("Bearer ") ? authorization.slice(7) : "";
   if (jwt.length > 8192) return null;
   try {
@@ -24,9 +23,11 @@ function tokenForRun(authorization, runId, now) {
     const seconds = Math.floor(now / 1000);
     if (header.alg !== "RS256" || typeof header.kid !== "string" || !/^[A-Za-z0-9_:-]{1,128}$/.test(header.kid)
         || claims.iss !== ISSUER || claims.aud !== AUDIENCE
-        || claims.repository !== SOURCE || claims.repository_id !== "1191522935"
-        || claims.repository_owner_id !== "270917424"
-        || claims.ref !== REF || claims.workflow_ref !== `${SOURCE}/.github/workflows/sync.yml@${REF}`
+        || !env.DROPBOX_SOURCE_REPO || !env.DROPBOX_SOURCE_REPO_ID || !env.DROPBOX_SOURCE_OWNER_ID
+        || claims.repository !== env.DROPBOX_SOURCE_REPO || claims.repository_id !== env.DROPBOX_SOURCE_REPO_ID
+        || claims.repository_owner_id !== env.DROPBOX_SOURCE_OWNER_ID
+        || claims.ref !== REF
+        || claims.workflow_ref !== `${env.DROPBOX_SOURCE_REPO}/.github/workflows/sync.yml@${REF}`
         || !["schedule", "workflow_dispatch"].includes(claims.event_name)
         || claims.run_id !== runId
         || ![claims.iat, claims.nbf, claims.exp].every(Number.isSafeInteger)
@@ -100,7 +101,7 @@ export async function handleDropboxReady(request, env, { fetchWithTimeout, now =
   if (!authorization) return respond("unauthorized", 401);
   const inputs = await readInputs(request);
   if (!inputs) return respond("invalid_batch_proof", 400);
-  const token = tokenForRun(authorization, inputs.upstream_run_id, now());
+  const token = tokenForRun(authorization, inputs.upstream_run_id, now(), env);
   if (!token) return respond("unauthorized", 401);
   try {
     if (!await verifyToken(token, fetchWithTimeout)) return respond("unauthorized", 401);

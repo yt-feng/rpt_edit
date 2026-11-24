@@ -22,23 +22,27 @@ flowchart TD
 
 | Owner | Workflow | Responsibility |
 | --- | --- | --- |
-| `yf2-stack/rpt_gdrive` | [GDrive to Dropbox Sync](https://github.com/yf2-stack/rpt_gdrive/actions/workflows/sync.yml) | Select Google Drive reports, prepare dated folders and upload PDFs under `/zip_backup/YYMMDD`. The GitHub schedule is 22:13 Beijing time, and sync runs use a serialized queue. |
-| `yt-feng/rpt_edit` | [Daily report source wake-up](../.github/workflows/daily-report-source-wakeup.yml) | Validate Dropbox batch readiness and dispatch the Daily workflow with `dropbox_date_folder` set to the exact date. |
-| `yt-feng/rpt_edit` | [Daily report articles and translations](../.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml) | Freeze original identities, run the sharded MinerU pipeline and verify article, PDF and translation delivery independently. |
+| `rpt_gdrive` | `GDrive to Dropbox Sync` | Select Google Drive reports, prepare dated folders and upload PDFs under `/zip_backup/YYMMDD`. The GitHub schedule is 22:13 Beijing time, and sync runs use a serialized queue. |
+| `rpt_edit` | [Daily report source wake-up](../.github/workflows/daily-report-source-wakeup.yml) | Validate Dropbox batch readiness and dispatch the Daily workflow with `dropbox_date_folder` set to the exact date. |
+| `rpt_edit` | [Daily report articles and translations](../.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml) | Freeze original identities, run the sharded MinerU pipeline and verify article, PDF and translation delivery independently. |
 
-After its Dropbox writes succeed, the sync lists the latest date that it wrote
-and verifies each new file revision is present. The signal describes all PDFs
-visible in that date folder. Google Drive completeness is tracked by the
-upstream download log. A Dropbox upload failure stops the ready signal.
+After its Dropbox writes succeed, the sync selects the newest date it wrote
+from the current or previous Beijing calendar day. It lists the folder and
+verifies that every newly written revision is visible. The signal describes
+all PDFs in that date folder. The upstream download log tracks Google Drive
+completeness. A Dropbox upload failure stops the ready signal.
 
 The upstream workflow sends the batch-ready signal to the isolated
 `portal-daily-source-clock` Cloudflare Worker at `/dropbox-report-batch-ready`.
 The upstream repository sets the `RPT_EDIT_WAKEUP_URL` variable to the relay URL.
 The relay verifies a short-lived GitHub Actions OIDC token with the audience
-`rpt-edit-dropbox-ready`. It checks the `yf2-stack/rpt_gdrive` repository and
+`rpt-edit-dropbox-ready`. It checks the `rpt_gdrive` repository and
 owner identities, the main-branch `sync.yml` workflow, a schedule or manual
 dispatch event, and equality between the token run ID and the payload run ID.
-Only the relay holds the credential used to dispatch the destination workflow.
+The relay reads the allowed upstream identity from `DROPBOX_SOURCE_REPO`,
+`DROPBOX_SOURCE_REPO_ID` and `DROPBOX_SOURCE_OWNER_ID` on the downstream
+repository. The relay holds the credential used to dispatch the destination
+workflow.
 
 The source wake-up accepts four `workflow_dispatch` inputs for the immediate
 handoff. All four belong to the same batch.
@@ -110,11 +114,11 @@ for a reviewed replay of that date.
 
 | Time | Observed stage |
 | --- | --- |
-| 08:59 | The [Market Views guard](https://github.com/yt-feng/rpt_edit/actions/runs/45301368148) rejected the stale source. |
-| 09:02 | The [source wake-up](https://github.com/yt-feng/rpt_edit/actions/runs/45301737306) still saw `261122` and waited for a fresh batch. |
-| 09:26 | GitHub created the [upstream scheduled sync](https://github.com/yf2-stack/rpt_gdrive/actions/runs/45305004834). Its job started two seconds later. |
+| 08:59 | The Market Views guard (`45301368148`) rejected the stale source. |
+| 09:02 | The source wake-up (`45301737306`) still saw `261122` and waited for a fresh batch. |
+| 09:26 | GitHub created the upstream scheduled sync (`45305004834`). Its job started two seconds later. |
 | 09:44 | The upstream run completed the Dropbox upload for `261123`. |
-| 10:01 | The [source wake-up](https://github.com/yt-feng/rpt_edit/actions/runs/45309162925) admitted `261123` with 48 PDFs and verified the [Daily dispatch](https://github.com/yt-feng/rpt_edit/actions/runs/45309350829). |
+| 10:01 | The source wake-up (`45309162925`) admitted `261123` with 48 PDFs and verified the Daily dispatch (`45309350829`). |
 
 GitHub created the sync run 11 hours 26 minutes after the former 22:00 schedule.
 Runner startup took two seconds, and the job finished in about 18 minutes. All

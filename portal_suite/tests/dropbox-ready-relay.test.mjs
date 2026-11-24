@@ -13,13 +13,19 @@ const jwk = { ...publicKey.export({ format: "jwk" }), kid: "issuer-key", use: "s
 const proof = {
   date_folder: "261123", upstream_run_id: "45305004834", pdf_count: "48", manifest_sha256: "f".repeat(64),
 };
-const env = { GH_REPO: "yt-feng/rpt_edit", GH_DISPATCH_TOKEN: "test-destination-credential" };
+const env = {
+  GH_REPO: "downstream/reports",
+  GH_DISPATCH_TOKEN: "test-destination-credential",
+  DROPBOX_SOURCE_REPO: "upstream/drive-sync",
+  DROPBOX_SOURCE_REPO_ID: "987654",
+  DROPBOX_SOURCE_OWNER_ID: "123456",
+};
 
 function jwt(overrides = {}, headerOverrides = {}) {
   const claims = {
-    iss: ISSUER, aud: "rpt-edit-dropbox-ready", repository: "yf2-stack/rpt_gdrive",
-    repository_id: "1191522935", repository_owner_id: "270917424", ref: "refs/heads/main",
-    workflow_ref: "yf2-stack/rpt_gdrive/.github/workflows/sync.yml@refs/heads/main",
+    iss: ISSUER, aud: "rpt-edit-dropbox-ready", repository: env.DROPBOX_SOURCE_REPO,
+    repository_id: env.DROPBOX_SOURCE_REPO_ID, repository_owner_id: env.DROPBOX_SOURCE_OWNER_ID, ref: "refs/heads/main",
+    workflow_ref: `${env.DROPBOX_SOURCE_REPO}/.github/workflows/sync.yml@refs/heads/main`,
     event_name: "schedule", run_id: proof.upstream_run_id, iat: seconds - 40, nbf: seconds - 40,
     exp: seconds + 260, ...overrides,
   };
@@ -62,7 +68,7 @@ test("one authenticated run signals the fixed wake workflow with only its exact 
   const [[jwks, jwksOptions], [dispatch, options]] = f.calls;
   assert.equal(jwks, `${ISSUER}/.well-known/jwks`);
   assert.equal(jwksOptions.headers, undefined);
-  assert.equal(dispatch, "https://api.github.com/repos/yt-feng/rpt_edit/actions/workflows/daily-report-source-wakeup.yml/dispatches");
+  assert.equal(dispatch, "https://api.github.com/repos/downstream/reports/actions/workflows/daily-report-source-wakeup.yml/dispatches");
   assert.equal(options.method, "POST");
   assert.equal(options.headers.Authorization, `Bearer ${env.GH_DISPATCH_TOKEN}`);
   assert.deepEqual(JSON.parse(options.body), { ref: "main", inputs: proof });
@@ -88,6 +94,7 @@ test("signed tokens from the wrong workflow, branch, repository, event, or time 
     { iat: seconds - 1200 },
   ]) assert.equal((await f.call(request({ token: jwt(claims) }))).status, 401);
   assert.equal((await f.call(request({ token: jwt({}, { alg: "none" }) }))).status, 401);
+  assert.equal((await f.call(request(), { ...env, DROPBOX_SOURCE_REPO_ID: "" })).status, 401);
   assert.deepEqual(f.calls, []);
 });
 
