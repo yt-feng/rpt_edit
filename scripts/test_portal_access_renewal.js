@@ -64,6 +64,6 @@ assert.equal(sandbox.result.lifetime, false, "lifetime access does not need a pe
 assert.match(app, /function prepareExpiredAccessRenewal\(/);
 assert.match(app, /dataset\.originalAccessActive = access\.active \? "true" : "false"/);
 assert.match(app, /targets\.accessExpiry\.value = String\(savedAccess\.current_period_end/);
-assert.match(app, /旧权限已过期；保存时将从今天按所选时长重新开通/);
+assert.match(app, /旧权限已过期。保存后将从今天按所选时长重新开通/);
 
 console.log("Portal Suite expired access renewal checks passed.");
