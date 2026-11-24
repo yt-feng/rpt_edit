@@ -10,8 +10,11 @@ import unittest
 from unittest.mock import patch
 from pathlib import Path
 
-from check_public_brand import PublicBrandError, check_public_brand, main
+from check_public_brand import PublicBrandError, check_profile_private_boundaries, check_public_brand, main
 import check_public_brand as brand
+from render_private_config import Root, load_profile, render_text_files
+
+REPO = Path(__file__).resolve().parents[1]
 
 
 def write(path: Path, value: str) -> None:
@@ -176,6 +179,20 @@ class PublicBrandCheckTests(unittest.TestCase):
             with self.assertRaisesRegex(PublicBrandError, "missing required brand"):
                 check_public_brand(root)
             self.assertEqual(main([str(root)]), 1)
+
+    def test_production_app_bundle_does_not_materialize_admin_identity(self) -> None:
+        marker = "admin-a"
+        profile = base64.b64encode(json.dumps({
+            "version": 1,
+            "replacements": [{"public": marker, "private": "synthetic-owner-handle"}],
+        }).encode("utf-8")).decode("ascii")
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary).resolve()
+            app = REPO / "portal_suite/site_src/assets/app.js"
+            write(root / "assets/app.js", app.read_text(encoding="utf-8"))
+            roots = (Root(path=root, is_directory=True),)
+            render_text_files(roots, load_profile(profile).replacements, reverse=False, excluded=set())
+            check_profile_private_boundaries(root, (marker,), encoded_profile=profile)
 
     def test_paths_and_symlinks_are_checked(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

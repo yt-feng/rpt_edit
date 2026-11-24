@@ -3563,7 +3563,7 @@
                   <span>到期日期（可精确指定）</span>
                   <input id="accountAdminAccessExpiry" type="date">
                 </label>
-                <div class="account-operator-access-field" data-admin-access-filter hidden>
+                <div class="account-operator-access-field" data-user-access-filter hidden>
                   <div class="account-operator-access-field-head">
                     <span>机构（可多选）</span>
                     <span id="accountAdminAccessInstitutionCount">已选 0</span>
@@ -3572,12 +3572,12 @@
                   <div class="account-operator-access-checkboxes" id="accountAdminAccessInstitutions" role="group" aria-label="机构下载权限"></div>
                   <small>直接勾选多个机构（最多 60 项）；已有但不在当前目录中的授权会标为“历史授权”并继续保留。</small>
                 </div>
-                <label data-admin-access-filter hidden>
+                <label data-user-access-filter hidden>
                   <span>行业</span>
                   <select id="accountAdminAccessIndustries" multiple></select>
                 </label>
               </div>
-              <div class="account-admin-page-ranges" id="accountAdminAccessPageRanges" data-admin-access-filter hidden></div>
+              <div class="account-admin-page-ranges" id="accountAdminAccessPageRanges" data-user-access-filter hidden></div>
               <label class="account-admin-note-field">
                 <span>备注</span>
                 <input id="accountAdminAccessNote" type="text" placeholder="可选">
@@ -3903,7 +3903,7 @@
     if (!targets || !targets.userEditor) return;
     const filters = targets.accessMode.value === "filters";
     const enabled = targets.accessMode.value !== "none";
-    targets.userEditor.querySelectorAll("[data-admin-access-filter]").forEach((field) => { field.hidden = !filters; });
+    targets.userEditor.querySelectorAll("[data-user-access-filter]").forEach((field) => { field.hidden = !filters; });
     if (targets.accessDuration) targets.accessDuration.disabled = !enabled;
     if (targets.accessExpiry) targets.accessExpiry.disabled = !enabled || targets.accessDuration.value === "lifetime";
     if (targets.accessRenew) targets.accessRenew.disabled = !enabled || targets.accessDuration.value === "lifetime";

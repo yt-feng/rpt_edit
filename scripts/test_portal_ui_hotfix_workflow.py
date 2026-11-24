@@ -52,6 +52,16 @@ class Workflow(unittest.TestCase):
         self.assertIn('live-edge-state.json', rollback_readback)
         self.assertIn('--expect-version "$EDGE_PREVIOUS_VERSION_ID"', rollback_readback)
 
+    def test_checks_private_identity_after_rendering_before_preparing_ui(self):
+        names = [step.get('name', '') for step in self.steps]
+        materialize = names.index('Materialize only UI deployment values')
+        prepare = names.index('Prepare verified inactive UI candidate from the active release')
+        self.assertLess(materialize, prepare)
+        command = self.steps[materialize]['run']
+        self.assertLess(command.index('--skip-generated-files'), command.index('check_public_brand.py'))
+        self.assertRegex(command, r'--forbid-profile-private-for admin-a\s')
+        self.assertIn('--forbid-profile-private-for admin-a@users.portal.example.invalid', command)
+
     def test_latest_captures_validated_state_inside_lock_but_exact_release_still_guards(self):
         step = next(step for step in self.steps if step.get('name') == 'Read and validate current live edge state')
         code = step['run'].split('STATE_PATH="$RUNNER_TEMP/live-edge-state.json" python3 - <<\'PY\'\n', 1)[1].rsplit('\nPY', 1)[0]

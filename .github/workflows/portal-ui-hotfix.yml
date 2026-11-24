@@ -137,6 +137,9 @@ jobs:
           set -euo pipefail
           python3 scripts/render_private_config.py --github-add-mask
           python3 scripts/render_private_config.py --skip-generated-files --root portal_suite/site_src
+          python3 -B scripts/check_public_brand.py portal_suite/site_src \
+            --forbid-profile-private-for admin-a \
+            --forbid-profile-private-for admin-a@users.portal.example.invalid
           python3 -B scripts/check_portal_app_budget.py --candidate portal_suite/site_src/assets/app.js
 
       - name: Prepare verified inactive UI candidate from the active release
