@@ -3816,6 +3816,22 @@
     "wef:https://www.weforum.org/publications/the-ai-energy-readiness-compass-aligning-ai-ambition-with-energy-system-realities": {
       "first_seen": "2026-11-21",
       "status": "no_pdf"
+    },
+    "unctad:https://unctad.org/publication/unctad-oecd-report-g20-investment-measures-33rd-report": {
+      "first_seen": "2026-11-24",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/tmg20_23nov26_559_e.htm": {
+      "first_seen": "2026-11-24",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/safe_eec_23nov26_561_e.htm": {
+      "first_seen": "2026-11-24",
+      "status": "no_pdf"
+    },
+    "bruegel:12733": {
+      "first_seen": "2026-11-24",
+      "status": "downloaded"
     }
   }
 }
