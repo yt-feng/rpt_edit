@@ -28,7 +28,7 @@ assert.doesNotMatch(app, /id="accountAdminAccessInstitutions" multiple/);
 assert.match(app, /id="accountAdminAccessInstitutionSearch" type="search"/);
 assert.match(app, /selectedAccessCheckboxValues\(targets\.accessInstitutions\)/);
 assert.match(app, /loadAdminUserAccess\(workerUrl, email, targets\)/);
-assert.match(app, /accountAdminAccessOptions = data\.access_options/);
+assert.match(app, /targets\.accessOptions = data\.access_options/);
 assert.match(worker, /pathname === "\/account-admin\/user-access" && request\.method === "GET"/);
 assert.match(worker, /access_options: accessOptionRowsFromCatalog\(catalog\)/);
 assert.match(worker, /\["ACCESS_INVALID_PAYLOAD", "ACCESS_EMPTY_FILTERS"\]\.includes\(error\.code\)/);
