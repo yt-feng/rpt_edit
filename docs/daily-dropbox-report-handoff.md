@@ -35,14 +35,14 @@ completeness. A Dropbox upload failure stops the ready signal.
 The upstream workflow sends the batch-ready signal to the isolated
 `portal-daily-source-clock` Cloudflare Worker at `/dropbox-report-batch-ready`.
 The upstream repository sets the `RPT_EDIT_WAKEUP_URL` variable to the relay URL.
-The relay verifies a short-lived GitHub Actions OIDC token with the audience
-`rpt-edit-dropbox-ready`. It checks the `rpt_gdrive` repository and
-owner identities, the main-branch `sync.yml` workflow, a schedule or manual
-dispatch event, and equality between the token run ID and the payload run ID.
-The relay reads the allowed upstream identity from `DROPBOX_SOURCE_REPO`,
-`DROPBOX_SOURCE_REPO_ID` and `DROPBOX_SOURCE_OWNER_ID` on the downstream
-repository. The relay holds the credential used to dispatch the destination
-workflow.
+Both repositories store the same dedicated 64-hex-character GitHub Actions
+secret named `REPORT_HANDOFF_SIGNING_KEY`. The downstream deployment loads it
+into the Worker. The upstream workflow computes HMAC-SHA-256 over the Unix
+timestamp, a single line feed, and the exact JSON request body bytes. It sends
+the signature in `Authorization: ReportHMAC <unix_seconds>.<lower_hex_hmac_sha256>`.
+The relay verifies the signature and accepts timestamps within five minutes
+of receipt. The signing key authenticates this route. The Worker uses its
+separate GitHub Actions credential to dispatch the source wake-up on `main`.
 
 The source wake-up accepts four `workflow_dispatch` inputs for the immediate
 handoff. All four belong to the same batch.
@@ -66,14 +66,14 @@ use ordinary polling readiness. The Daily workflow freezes the original PDF
 bytes for the admitted date when it selects the reports to process.
 
 The Daily source workflow serializes wake-ups and checks for an active Daily
-run before admitting a new batch. The existing automated admission check uses
-trusted run titles and source artifacts to recognize a previously attempted
-date. A run with an uncertain dispatch result is looked up by its exact date
-and workflow identity before recovery. Dropbox metadata checks run on the 02:00
-GitHub schedule, hourly GitHub checks, and a separate Cloudflare clock every
-half hour. A polling check admits the latest date when it falls within the
-current or previous Beijing calendar day and all PDFs have settled for at
-least 15 minutes according to Dropbox server timestamps. This also covers
+run before admitting a new batch. Repeated signals and polling use the same
+admission check, which recognizes an attempted date using trusted run titles
+and source artifacts. A run with an uncertain dispatch result is looked up by
+its exact date and workflow identity before recovery. Dropbox metadata checks
+run on the 02:00 GitHub schedule, hourly GitHub checks, and a separate Cloudflare
+clock every half hour. A polling check admits the latest date when it falls
+within the current or previous Beijing calendar day and all PDFs have settled
+for at least 15 minutes according to Dropbox server timestamps. This also covers
 late writes after a mismatched proof and a missed relay signal. For a reviewed
 source handoff recovery, the upstream workflow's `notify_existing_date` input
 can read a date folder settled for at least 15 minutes and send a fresh signal
