@@ -1,14 +1,6 @@
 {
   "version": 1,
   "items": {
-    "bcg:https://www.bcg.com/publications/2026/design-your-company-for-ai-not-ai-for-your-company": {
-      "first_seen": "2026-07-26",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/south-korea-capital-efficiency-and-value-creation": {
-      "first_seen": "2026-07-26",
-      "status": "downloaded"
-    },
     "mckinsey:https://www.mckinsey.com/~/media/mckinsey/industries/financial%20services/our%20insights/global%20banking%20annual%20review%202025/why-precision-not-heft-defines-the-future-of-banking.pdf": {
       "first_seen": "2026-07-27",
       "status": "downloaded"
@@ -1555,6 +1547,26 @@
     },
     "bcg:https://www.bcg.com/publications/2026/india-capital-goods-imperative": {
       "first_seen": "2026-11-21",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/strategic-clarity-ai-value-apac": {
+      "first_seen": "2026-11-24",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/ai-automation-reshape-manufacturing": {
+      "first_seen": "2026-11-24",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/india-winning-the-global-wardrobe": {
+      "first_seen": "2026-11-24",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/ai-changing-chief-of-staff-role": {
+      "first_seen": "2026-11-24",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/ai-boosts-insurance-advisor-productivity": {
+      "first_seen": "2026-11-24",
       "status": "downloaded"
     }
   }
