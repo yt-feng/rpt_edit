@@ -22,7 +22,7 @@ flowchart TD
 
 | Owner | Workflow | Responsibility |
 | --- | --- | --- |
-| `rpt_gdrive` | `GDrive to Dropbox Sync` | Select Google Drive reports, prepare dated folders and upload PDFs under `/zip_backup/YYMMDD`. The GitHub schedule is 22:13 Beijing time, and sync runs use a serialized queue. |
+| `rpt_gdrive` | `GDrive to Dropbox Sync` | Select Google Drive reports, prepare dated folders and upload PDFs under `/zip_backup/YYMMDD`. The GitHub schedule is 23:43 Beijing time, and sync runs use a serialized queue. |
 | `rpt_edit` | [Daily report source wake-up](../.github/workflows/daily-report-source-wakeup.yml) | Validate Dropbox batch readiness and dispatch the Daily workflow with `dropbox_date_folder` set to the exact date. |
 | `rpt_edit` | [Daily report articles and translations](../.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml) | Freeze original identities, run the sharded MinerU pipeline and verify article, PDF and translation delivery independently. |
 
@@ -79,6 +79,34 @@ source handoff recovery, the upstream workflow's `notify_existing_date` input
 can read a date folder settled for at least 15 minutes and send a fresh signal
 without copying files. An already attempted date, including one with later file
 additions, requires review against the retained original manifest before replay.
+
+## Google Drive arrival audit
+
+A read-only inventory of the configured source folder on November 24 covered
+1,224 current PDFs. The comparison uses 22 complete modified-date batches from
+November 2 through 23, excludes trashed files and PDFs at or above 10 MiB, and
+uses the later of Drive `createdTime` and `modifiedTime` when evaluating each
+cutoff. The sync assigns the batch date from Beijing `modifiedTime`.
+These fields describe the file and do not record every historical move into
+the source folder.
+
+| Beijing cutoff | Eligible PDFs whose creation and modification timestamps precede cutoff | Whole batches |
+| --- | --- | --- |
+| 22:00 | 869 of 1,133 | 8 of 22 |
+| 22:13 | 893 of 1,133 | 10 of 22 |
+| 23:43 | 1,129 of 1,133 | 21 of 22 |
+
+The latest same-day creation was 23:18:29 on November 13. The other four
+eligible files belong to the November 16 modified-date batch and were created
+around 19:30 on November 17. The 23:43 schedule leaves about 25 minutes after
+the latest observed same-day creation. Late historical additions to an already
+attempted date remain subject to the dated recovery path.
+
+All 48 eligible PDFs in batch `261123` matched the November 24 sync log.
+Their latest creation and modification timestamps were 20:36:40 and
+20:32:56 on November 23. The current inventory shows zero files created
+and zero files modified from November 23 at 22:13 through November 24 at
+09:26:03. The workflow's scheduled event is independent of this inventory.
 
 ## Delivery and recovery
 
