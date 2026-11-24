@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""Start one missed Daily batch after its Dropbox originals have settled."""
+"""Start one Daily batch from a verified Dropbox signal or settled metadata."""
 from __future__ import annotations
 
+from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -24,18 +26,74 @@ ACTIVE = ('in_progress', 'queued', 'pending', 'waiting', 'requested')
 BEIJING = ZoneInfo('Asia/Shanghai')
 
 
+@dataclass(frozen=True)
+class SourceReceipt:
+    date_folder: str
+    upstream_run_id: int
+    pdf_count: int
+    manifest_sha256: str
+
+
 def require(condition, reason):
     if not condition:
         raise ValueError(reason)
 
 
-def read_source(now, *, token=None, reader=list_folder):
+def parse_source_receipt(event):
+    require(isinstance(event, dict), 'source_receipt_event_invalid')
+    inputs = event.get('inputs')
+    if inputs is None:
+        return None
+    require(isinstance(inputs, dict), 'source_receipt_event_invalid')
+    fields = ('date_folder', 'upstream_run_id', 'pdf_count', 'manifest_sha256')
+    values = [inputs.get(field, '') for field in fields]
+    if values == [''] * len(fields):
+        return None
+    patterns = (r'[0-9]{6}', r'[1-9][0-9]{0,15}', r'[1-9][0-9]{0,7}', r'[0-9a-f]{64}')
+    require(all(isinstance(value, str) and re.fullmatch(pattern, value)
+                for pattern, value in zip(patterns, values)), 'source_receipt_inputs_invalid')
+    day, upstream_run_id, pdf_count, manifest_sha256 = values
+    try:
+        parse_date_folder(day)
+    except RuntimeError:
+        raise ValueError('source_receipt_date_invalid') from None
+    return SourceReceipt(day, int(upstream_run_id), int(pdf_count), manifest_sha256)
+
+
+def pdf_manifest_sha256(pdfs):
+    identities = set()
+    lines = []
+    for row in pdfs:
+        identity = row.get('id')
+        revision = row.get('rev')
+        require(all(isinstance(value, str) and re.fullmatch(r'[\x21-\x7e]+', value)
+                    for value in (identity, revision)), 'source_pdf_revision_invalid')
+        require(identity not in identities, 'source_pdf_identity_duplicate')
+        identities.add(identity)
+        lines.append(f'{identity}\t{revision}\n')
+    return hashlib.sha256(''.join(sorted(lines)).encode('ascii')).hexdigest()
+
+
+def read_source(now, *, receipt=None, token=None, reader=list_folder):
+    if receipt is not None:
+        day = receipt.date_folder
+        age = (now.astimezone(BEIJING).date() - parse_date_folder(day)).days
+        if not 0 <= age <= 1:
+            return {'state': 'waiting_for_fresh_source', 'date_folder': day}
     token = token or dropbox_access_token()
-    folder = select_date_folder(reader(token, '/zip_backup', recursive=False))
-    day = str(folder['name'])
-    age = (now.astimezone(BEIJING).date() - parse_date_folder(day)).days
-    if not 0 <= age <= 1:
-        return {'state': 'waiting_for_fresh_source', 'date_folder': day}
+    folders = reader(token, '/zip_backup', recursive=False)
+    if receipt is None:
+        folder = select_date_folder(folders)
+        day = str(folder['name'])
+        age = (now.astimezone(BEIJING).date() - parse_date_folder(day)).days
+        if not 0 <= age <= 1:
+            return {'state': 'waiting_for_fresh_source', 'date_folder': day}
+    else:
+        exact = [row for row in folders if row.get('.tag') == 'folder' and row.get('name') == day]
+        if not exact:
+            return {'state': 'source_not_visible', 'date_folder': day}
+        require(len(exact) == 1, 'source_folder_identity_invalid')
+        folder = exact[0]
     path = folder.get('path_lower') or folder.get('path_display')
     require(isinstance(path, str) and path.lower() == '/zip_backup/' + day,
             'source_folder_identity_invalid')
@@ -43,6 +101,10 @@ def read_source(now, *, token=None, reader=list_folder):
             if row.get('.tag') == 'file' and str(row.get('name', '')).lower().endswith('.pdf')]
     if not pdfs:
         return {'state': 'source_empty', 'date_folder': day}
+    if receipt is not None:
+        if len(pdfs) != receipt.pdf_count or pdf_manifest_sha256(pdfs) != receipt.manifest_sha256:
+            return {'state': 'source_inventory_changed', 'date_folder': day}
+        return {'state': 'ready', 'date_folder': day, 'pdf_count': len(pdfs)}
     modified = []
     for row in pdfs:
         stamp = row.get('server_modified', '')
@@ -233,26 +295,33 @@ def dispatch(github, day):
     return result.returncode == 0
 
 
-def wake(github, now, *, source_reader=read_source, submit=dispatch, sleep=time.sleep):
+def wake(github, now, *, receipt=None, source_reader=read_source, submit=dispatch, sleep=time.sleep):
     require(now.tzinfo is not None, 'wakeup_clock_invalid')
     if now.astimezone(BEIJING).hour < 2:
         return {'state': 'before_daily_start'}
+    proof = {}
+    if receipt is not None:
+        source = source_reader(now, receipt=receipt)
+        if source['state'] != 'ready':
+            return source
+        proof = {'source_proof': 'verified', 'date_folder': source['date_folder'], 'pdf_count': source['pdf_count']}
     active = active_run(github, sleep=sleep)
     if active:
-        return {'state': 'daily_active', 'run_id': active}
-    source = source_reader(now)
-    if source['state'] != 'ready':
-        return source
+        return {'state': 'daily_active', 'run_id': active, **proof}
+    if receipt is None:
+        source = source_reader(now)
+        if source['state'] != 'ready':
+            return source
     day = source['date_folder']
     since = (now - timedelta(days=3)).strftime('%Y-%m-%dT%H:%M:%SZ')
     recent = runs(github, since=since, sleep=sleep)
     for run in recent:
         if attempted_date(github, run) == parse_date_folder(day):
-            return {'state': 'batch_already_attempted', 'date_folder': day, 'run_id': run['id']}
+            return {'state': 'batch_already_attempted', 'date_folder': day, 'run_id': run['id'], **proof}
     # Inspect the queue again immediately before the single dispatch.
     active = active_run(github, sleep=sleep)
     if active:
-        return {'state': 'daily_active', 'run_id': active}
+        return {'state': 'daily_active', 'run_id': active, **proof}
     previous = {run['id'] for run in recent}
     try:
         acknowledged = submit(github, day)
@@ -265,7 +334,7 @@ def wake(github, now, *, source_reader=read_source, submit=dispatch, sleep=time.
         require(len(accepted) <= 1, 'daily_dispatch_identity_ambiguous')
         if accepted:
             return {'state': 'dispatched', 'date_folder': day, 'pdf_count': source['pdf_count'],
-                    'run_id': accepted[0]['id']}
+                    'run_id': accepted[0]['id'], **proof}
         if attempt < 2:
             sleep(3)
     raise ValueError('daily_dispatch_readback_pending' if acknowledged else 'daily_dispatch_outcome_unknown')
@@ -278,7 +347,13 @@ def main():
             and os.environ.get('GITHUB_WORKFLOW_REF') == repository + '/' + WAKEUP + '@refs/heads/main',
             'daily_wakeup_requires_main')
     try:
-        result = wake(GitHub(repository), datetime.now(timezone.utc))
+        receipt = None
+        if os.environ['GITHUB_EVENT_NAME'] == 'workflow_dispatch':
+            event = json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_bytes())
+            receipt = parse_source_receipt(event)
+        result = wake(GitHub(repository), datetime.now(timezone.utc), receipt=receipt)
+        if receipt is not None:
+            result['upstream_run_id'] = receipt.upstream_run_id
     except Exception as error:
         # Provider messages can contain credentials or private filenames.
         result = {'state': 'blocked', 'error_type': type(error).__name__}

@@ -292,7 +292,7 @@ test("normal half-hour scheduled entry runs the watchdog using existing environm
   assert.equal(f.bucket.read().state, "accepted");
 });
 
-test("isolated clock uses the same receipt and deduplication without a public HTTP entry", async (t) => {
+test("isolated clock retains its polling receipt and deduplication with the relay enabled", async (t) => {
   const f = fixture();
   t.mock.method(Date, "now", () => NOW);
   t.mock.method(globalThis, "fetch", (url, init) => f.deps.fetchWithTimeout(String(url), init));
@@ -304,7 +304,6 @@ test("isolated clock uses the same receipt and deduplication without a public HT
   assert.equal(f.posts().length, 1);
   assert.equal(f.bucket.read().state, "accepted");
   assert.equal((await f.invoke()).state, "dispatch_cooldown");
-  assert.equal(independentClock.fetch, undefined);
   assert.deepEqual(JSON.parse(f.bucket.rows.get(DAILY_SOURCE_CLOCK_CHECK_KEY).value), {
     state: "accepted", checked_at: new Date(NOW).toISOString(),
   });

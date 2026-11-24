@@ -13,6 +13,7 @@ on:
       - 'workers/daily-source-wakeup/**'
       - 'workers/portal-suite-worker/src/daily-source-wakeup.js'
       - 'portal_suite/tests/daily-source-wakeup.test.mjs'
+      - 'portal_suite/tests/dropbox-ready-relay.test.mjs'
       - 'scripts/inspect_daily_source_clock.py'
       - 'scripts/test_inspect_daily_source_clock.py'
       - 'scripts/private_workflow_handoff.py'
@@ -41,7 +42,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - run: node --test portal_suite/tests/daily-source-wakeup.test.mjs
+      - run: node --test portal_suite/tests/daily-source-wakeup.test.mjs portal_suite/tests/dropbox-ready-relay.test.mjs
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -102,7 +103,7 @@ jobs:
           assert all(values.values()), 'Missing GitHub clock credentials'
           config = {
               'name': 'portal-daily-source-clock', 'main': 'src/index.js',
-              'compatibility_date': '2026-05-01', 'workers_dev': False,
+              'compatibility_date': '2026-05-01', 'workers_dev': True,
               'preview_urls': False,
               'vars': {'GH_REPO': os.environ['GITHUB_REPOSITORY']},
               'triggers': {'crons': ['*/30 * * * *']},
