@@ -1,4 +1,5 @@
 name: Daily report source wake-up
+run-name: ${{ inputs.date_folder && format('Daily report source wake-up [{0}/{1}]', inputs.date_folder, inputs.upstream_run_id) || 'Daily report source wake-up' }}
 
 on:
   schedule:
@@ -9,6 +10,19 @@ on:
     # check at a different minute. No model runs in this workflow.
     - cron: '47 * * * *'
   workflow_dispatch:
+    inputs:
+      date_folder:
+        description: 'Verified Dropbox batch in YYMMDD. Leave all inputs blank for a reconciliation check.'
+        type: string
+      upstream_run_id:
+        description: 'GitHub Actions run ID of the upstream sync'
+        type: string
+      pdf_count:
+        description: 'Exact recursive PDF count after Dropbox readback'
+        type: string
+      manifest_sha256:
+        description: 'SHA-256 of the sorted Dropbox PDF IDs and revisions'
+        type: string
   pull_request:
     paths:
       - '.github/workflows/daily-report-source-wakeup.yml'
@@ -21,6 +35,7 @@ permissions:
 concurrency:
   group: daily-report-source-wakeup-${{ github.event_name == 'pull_request' && github.run_id || 'main' }}
   cancel-in-progress: false
+  queue: max
 
 jobs:
   contract:
@@ -54,7 +69,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: python3 -m pip install --disable-pip-version-check requests
-      - name: Start only an unattempted settled fresh report batch
+      - name: Start only an unattempted ready report batch
         env:
           GH_TOKEN: ${{ github.token }}
           DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}

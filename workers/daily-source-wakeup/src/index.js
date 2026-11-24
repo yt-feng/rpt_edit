@@ -1,5 +1,7 @@
 import { wakeDailyReportSource } from "../../portal-suite-worker/src/daily-source-wakeup.js";
 
+import { handleDropboxReady } from "./dropbox-ready.js";
+
 export const DAILY_SOURCE_CLOCK_CHECK_KEY = "_account/ops/daily-source-clock-check.json";
 const CHECK_STATES = new Set([
   "before_daily_start", "unconfigured", "inspection_unavailable", "wake_active", "wake_recent",
@@ -11,6 +13,10 @@ async function fetchWithTimeout(url, options, timeoutMs) {
 }
 
 export default {
+  fetch(request, env) {
+    return handleDropboxReady(request, env, { fetchWithTimeout });
+  },
+
   async scheduled(_event, env, ctx) {
     ctx.waitUntil((async () => {
       let result;

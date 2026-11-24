@@ -7,6 +7,10 @@ Production PDF parsing uses the **MinerU API from GitHub Actions**. Actions also
 run generation, private R2 handoff, PDF rendering and publication. The scheduled
 pipeline does not depend on a user's computer being awake or running a local job.
 
+The [Daily Dropbox report handoff](daily-dropbox-report-handoff.md) documents the
+cross-repository source sync, exact batch admission, and separate PDF and WeChat
+delivery checks.
+
 ## Purpose
 
 The repository automates a document-processing pipeline:
@@ -382,14 +386,14 @@ failure from the overall workflow conclusion. Editorial CTA sanitation and
 audit use the same sentence boundaries, preserving factual uses of “Portal”
 while still removing promotion and reserved publication domains.
 
-`Daily report source wake-up` owns both the 02:00 Beijing daily check and the
-hourly late-source checks. The full Daily workflow has no independent cron:
-every automatic start passes through the same serialized deduplication checks,
-so a delayed schedule cannot queue a duplicate behind an active full run.
-The dispatcher checks only Dropbox metadata after the 02:00 Beijing start time.
-It admits a latest batch no more than one calendar day
-old, containing PDFs whose newest server modification is at least 15 minutes
-old. A current Daily run, an exact batch run title, or a dated source-admission /
+`Daily report source wake-up` receives the upstream Dropbox batch-ready signal
+and runs the 02:00 Beijing daily check and hourly recovery checks. Every
+automatic start passes through the same serialized deduplication checks. After
+02:00 Beijing, a valid signal admits an exact source date no more than one
+calendar day old when its count and digest match Dropbox metadata. A polling
+check admits the latest batch of the same age when the newest PDF server
+modification is at least 15 minutes old. A current Daily run, an exact batch
+run title, or a dated source-admission /
 delivery artifact prevents another automatic dispatch, including after an
 attempted batch fails. The Daily workflow saves its date-only admission artifact
 before classification or generation and retains pending requests. A legacy

@@ -14,6 +14,9 @@ import wake_daily_report_source as wakeup
 NOW = datetime(2026, 11, 10, 0, 45, tzinfo=timezone.utc)
 DAY = '261109'
 REPO = 'owner/repo'
+RECEIPT_INPUTS = {'date_folder': DAY, 'upstream_run_id': '42', 'pdf_count': '2',
+                  'manifest_sha256': '46447e144cddd66d4c0c80102ae54e164cdfbd6ba3728f0c93c8dd9cdd50622d'}
+RECEIPT = wakeup.parse_source_receipt({'inputs': RECEIPT_INPUTS})
 
 
 def run(identity=1, *, day=DAY, status='completed', conclusion='success', title=None):
@@ -319,6 +322,110 @@ class SourceTests(unittest.TestCase):
             self.source(modified='unknown')
 
 
+class ReceiptTests(unittest.TestCase):
+    def reader(self, *, changed=False, visible=True):
+        def read(token, path, recursive):
+            self.assertEqual(token, 'TOKEN')
+            if not recursive:
+                self.assertEqual(path, '/zip_backup')
+                # A concurrent newer batch and an equivalent date alias must
+                # never replace the date given in the producer receipt.
+                names = ['261110', '20261109']
+                if visible:
+                    names.append(DAY)
+                return [{'.tag': 'folder', 'name': name, 'path_lower': '/zip_backup/' + name} for name in names]
+            self.assertEqual(path, '/zip_backup/' + DAY)
+            return [{'.tag': 'file', 'name': 'B.PDF', 'id': 'id:b', 'rev': '001d' if changed else '001c'},
+                    {'.tag': 'folder', 'name': 'nested.pdf'},
+                    {'.tag': 'file', 'name': 'A.pdf', 'id': 'id:a', 'rev': '001a'},
+                    {'.tag': 'file', 'name': 'metadata.json'}]
+        return read
+
+    def test_blank_dispatch_is_reconciliation_and_malformed_receipts_fail_closed(self):
+        self.assertIsNone(wakeup.parse_source_receipt({}))
+        self.assertIsNone(wakeup.parse_source_receipt({'inputs': dict.fromkeys(RECEIPT_INPUTS, '')}))
+        self.assertEqual(RECEIPT, wakeup.SourceReceipt(DAY, 42, 2, RECEIPT_INPUTS['manifest_sha256']))
+        for key, value in [('date_folder', '20261109'), ('date_folder', '261332'), ('date_folder', '261109\n'),
+                           ('upstream_run_id', ''), ('upstream_run_id', '0001'), ('upstream_run_id', 42),
+                           ('upstream_run_id', '1' * 17), ('pdf_count', '0'), ('pdf_count', None),
+                           ('pdf_count', '1' * 9), ('manifest_sha256', 'F' * 64)]:
+            with self.subTest(key=key, value=value), self.assertRaisesRegex(ValueError, 'source_receipt_'):
+                wakeup.parse_source_receipt({'inputs': {**RECEIPT_INPUTS, key: value}})
+
+    def test_exact_metadata_receipt_is_ready_without_waiting_for_server_modified(self):
+        source = wakeup.read_source(NOW, receipt=RECEIPT, token='TOKEN', reader=self.reader())
+        self.assertEqual(source, {'state': 'ready', 'date_folder': DAY, 'pdf_count': 2})
+
+    def test_missing_exact_folder_and_mismatched_readback_never_try_another_date(self):
+        for reader, receipt, state in [
+            (self.reader(visible=False), RECEIPT, 'source_not_visible'),
+            (self.reader(changed=True), RECEIPT, 'source_inventory_changed'),
+            (self.reader(), wakeup.SourceReceipt(DAY, 42, 3, RECEIPT.manifest_sha256), 'source_inventory_changed'),
+        ]:
+            with self.subTest(state=state, receipt=receipt):
+                def source(tick, *, receipt):
+                    return wakeup.read_source(tick, receipt=receipt, token='TOKEN', reader=reader)
+                result = wakeup.wake(GitHub(), NOW, receipt=receipt, source_reader=source, submit=self.fail)
+                self.assertEqual(result, {'state': state, 'date_folder': DAY})
+
+    def test_revision_digest_requires_distinct_ids_and_unambiguous_records(self):
+        for rows, reason in [
+            ([{'id': 'id:a', 'rev': '1'}, {'id': 'id:a', 'rev': '2'}], 'source_pdf_identity_duplicate'),
+            ([{'id': 'id:a', 'rev': '1\n'}], 'source_pdf_revision_invalid'),
+            ([{'id': 'id:a'}], 'source_pdf_revision_invalid'),
+        ]:
+            with self.subTest(rows=rows), self.assertRaisesRegex(ValueError, reason):
+                wakeup.pdf_manifest_sha256(rows)
+
+    def test_verified_event_and_timers_share_existing_daily_attempt_deduplication(self):
+        github, submissions = GitHub(), []
+
+        def source(tick, *, receipt):
+            return wakeup.read_source(tick, receipt=receipt, token='TOKEN', reader=self.reader())
+
+        def submit(api, day):
+            submissions.append(day)
+            api.rows.append(run(identity=2, day=day))
+            return True
+
+        result = wakeup.wake(github, NOW, receipt=RECEIPT, source_reader=source, submit=submit)
+        self.assertEqual(result['state'], 'dispatched')
+        verified_retry = wakeup.wake(github, NOW, receipt=RECEIPT, source_reader=source, submit=submit)
+        timer_retry = wakeup.wake(github, NOW, source_reader=lambda tick: source(tick, receipt=RECEIPT), submit=submit)
+        self.assertEqual(verified_retry['state'], 'batch_already_attempted')
+        self.assertEqual(timer_retry['state'], 'batch_already_attempted')
+        self.assertEqual(submissions, [DAY])
+
+    def test_verified_event_reports_proof_while_daily_is_active(self):
+        github = GitHub([run(identity=2, status='in_progress')])
+
+        def source(tick, *, receipt):
+            return wakeup.read_source(tick, receipt=receipt, token='TOKEN', reader=self.reader())
+
+        result = wakeup.wake(github, NOW, receipt=RECEIPT, source_reader=source, submit=self.fail)
+        self.assertEqual(result, {'state': 'daily_active', 'run_id': 2, 'source_proof': 'verified',
+                                  'date_folder': DAY, 'pdf_count': 2})
+
+        def changed_source(tick, *, receipt):
+            return wakeup.read_source(tick, receipt=receipt, token='TOKEN', reader=self.reader(changed=True))
+
+        result = wakeup.wake(github, NOW, receipt=RECEIPT, source_reader=changed_source, submit=self.fail)
+        self.assertEqual(result, {'state': 'source_inventory_changed', 'date_folder': DAY})
+
+    def test_receipt_keeps_freshness_bounds(self):
+        for day in ('261108', '261111'):
+            receipt = wakeup.SourceReceipt(day, 42, 2, RECEIPT.manifest_sha256)
+            state = wakeup.read_source(NOW, receipt=receipt, reader=self.fail)
+            self.assertEqual(state, {'state': 'waiting_for_fresh_source', 'date_folder': day})
+
+    def test_verified_receipt_respects_existing_beijing_cycle(self):
+        github = GitHub()
+        before_two = datetime(2026, 11, 9, 17, 59, tzinfo=timezone.utc)
+        state = wakeup.wake(github, before_two, receipt=RECEIPT, source_reader=self.fail, submit=self.fail)
+        self.assertEqual(state, {'state': 'before_daily_start'})
+        self.assertEqual(github.calls, [])
+
+
 class WorkflowTests(unittest.TestCase):
     def test_daily_and_late_schedules_share_the_same_deduplicating_dispatcher(self):
         root = Path(__file__).resolve().parents[1]
@@ -328,7 +435,11 @@ class WorkflowTests(unittest.TestCase):
         self.assertNotIn('schedule', events(daily), 'A late independent cron can queue duplicate paid work')
         self.assertIn('workflow_dispatch', events(daily))
         self.assertEqual({item['cron'] for item in events(wake)['schedule']}, {'0 18 * * *', '47 * * * *'})
+        self.assertEqual(set(events(wake)['workflow_dispatch']['inputs']), set(RECEIPT_INPUTS))
+        self.assertTrue(all(field.get('type') == 'string' and not field.get('required')
+                            for field in events(wake)['workflow_dispatch']['inputs'].values()))
         self.assertIs(wake['concurrency']['cancel-in-progress'], False)
+        self.assertEqual(wake['concurrency']['queue'], 'max')
         self.assertIn("|| 'main'", wake['concurrency']['group'])
 
     def test_admission_precedes_classification_and_wakeup_retains_existing_delivery_defaults(self):
