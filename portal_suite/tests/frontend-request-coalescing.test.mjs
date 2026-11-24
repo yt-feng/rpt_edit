@@ -152,11 +152,11 @@ test("public home metadata never fetches internal storage", () => {
 
 test("admin entry always loads complete users independently of summary freshness", () => {
   const show = extractFunction("showAccountAdminModal");
-  assert.match(show, /loadAccountAdminSummary\(workerUrl, targets\)\.catch/u);
+  assert.match(show, /if \(!showUsers && !overviewStarted\) loadOverview\(\)/u);
   assert.match(show, /if \(canManageUsers\) refreshAdminUserList\(workerUrl, targets\)/u);
   assert.doesNotMatch(extractFunction("renderAccountAdminSummary"), /accountAdminUsersByEmail|renderAdminUserTable/u);
   assert.doesNotMatch(extractFunction("loadAccountAdminSummary"), /loadFreshAdminUsers/u);
-  assert.match(show, /forceRefresh: true[\s\S]*refreshAdminUserList\(workerUrl, targets\)/u);
+  assert.match(show, /refresh: \(\) => refreshAdminUserList\(workerUrl, targets\)/u);
   assert.match(extractFunction("loadAdminUserAccess"), /cache: "no-store"/u);
   assert.match(extractFunction("exportAdminUsersToExcel"), /loadFreshAdminUsers\(workerUrl, targets\)/u);
 });

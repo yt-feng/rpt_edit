@@ -54,7 +54,9 @@ function fixture(responses, { hidden = false, existing = true } = {}) {
 const idle = { state: "idle", can_refresh: true, run: null };
 
 test("the Reports tool is limited to the super-admin view and loaded on demand", () => {
-  assert.match(app, /if \(isSuperSession\(session\)\) import\("\/assets\/admin-report-refresh\.js\?v=/);
+  assert.match(app, /const canManageUsers = isSuperSession\(session\);/u);
+  assert.match(app, /function loadOverview[\s\S]{0,200}if \(canManageUsers && !modal\.__reportRefreshControls\) \{\s*import\("\/assets\/admin-report-refresh\.js\?v=/u);
+  assert.match(app, /if \(!showUsers && !overviewStarted\) loadOverview\(\)/u);
   assert.match(app, /modal\.__reportRefreshControls\?\.close\(\)/);
   assert.match(source, /从 Dropbox 刷新 Reports/);
 });

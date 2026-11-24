@@ -789,6 +789,13 @@ const COURSE_DIRECTORY_COURSES = new Map(COURSE_CATALOG.map((course) => [course.
 const ACCOUNT_ADMIN_EXPORT_PAGE_SIZE = 500;
 const ACCOUNT_ADMIN_EXPORT_MAX_USERS = 5000;
 const ACCOUNT_ADMIN_EXPORT_CONCURRENCY = 8;
+const ADMIN_DIRECTORY_SQL_MAX_PAGES = 16;
+const ADMIN_DIRECTORY_R2_MAX_PAGES_PER_PREFIX = 8;
+// The Free plan allows 1,000 internal calls per request. Reserve space for
+// authentication, prefix listing and any platform overhead before hydration.
+const ADMIN_DIRECTORY_R2_MAX_RECORDS = 850;
+const ADMIN_SITE_USER_COLUMNS = "id,username,email,email_is_generated,site_origin,registered_site,source_site,created_at,updated_at,last_login_at";
+const ADMIN_ENTITLEMENT_COLUMNS = "id,email,site_origin,source_site,grant_source,source_plan_code,source_reference,plan,status,lifetime,current_period_end,updated_at";
 const ADMIN_GITHUB_FILES_TIMEOUT_MS = 12000;
 const ADMIN_GITHUB_SOURCE_TIMEOUT_MS = 8500;
 const ADMIN_GITHUB_ARTIFACT_TIMEOUT_MS = 2500;
@@ -2744,8 +2751,8 @@ function userAdminStateKeys(user = {}) {
   return keys;
 }
 
-async function findUserAdminState(env, user = {}) {
-  const keys = userAdminStateKeys(user);
+async function findUserAdminState(env, user = {}, listedKeys = null) {
+  const keys = userAdminStateKeys(user).filter((key) => !listedKeys || listedKeys.has(key));
   if (!keys.length) return {};
   const expectedEmail = normalizeEmail(user.email);
   const expectedId = String(user.id || "").trim();
@@ -2784,11 +2791,12 @@ async function findUserAdminState(env, user = {}) {
   };
 }
 
-async function mergeSiteUserAdminState(env, user, includeNewsfeed = false) {
+async function mergeSiteUserAdminState(env, user, includeNewsfeed = false, listedKeys = null) {
   if (!user) return null;
+  const readNewsfeed = includeNewsfeed && (!listedKeys || listedKeys.has(newsfeedAdminAccessKey(user)));
   const [state, newsfeed] = await Promise.all([
-    findUserAdminState(env, user),
-    includeNewsfeed ? findNewsfeedAdminAccessSnapshot(env, user) : null,
+    findUserAdminState(env, user, listedKeys),
+    readNewsfeed ? findNewsfeedAdminAccessSnapshot(env, user) : null,
   ]);
   return {
     ...user,
@@ -13122,7 +13130,7 @@ function accountExportRowKey(row, keyFields) {
 async function listAllSupabaseAccountRows(env, table, params, options = {}) {
   const pageSize = Math.max(1, Math.min(1000, Number(options.pageSize) || ACCOUNT_ADMIN_EXPORT_PAGE_SIZE));
   const maxRows = Math.max(1, Number(options.maxRows) || ACCOUNT_ADMIN_EXPORT_MAX_USERS);
-  const maxPages = options.untilEmpty ? 100 : Math.ceil(maxRows / pageSize) + 1;
+  const maxPages = options.maxPages || (options.untilEmpty ? 100 : Math.ceil(maxRows / pageSize) + 1);
   const keyFields = Array.isArray(options.keyFields) && options.keyFields.length ? options.keyFields : ["id"];
   const cursorField = String(options.cursorField || keyFields[0] || "id");
   const rows = [];
@@ -13222,16 +13230,17 @@ async function listAllR2AccountRows(env, prefix, options = {}) {
   return rows;
 }
 
-async function listAllSiteUsersForExport(env) {
+async function listAllSiteUsersForExport(env, options = {}) {
   let rows;
   if (hasSupabaseConfig(env)) {
     rows = await listAllSupabaseAccountRows(env, "site_users", {
-      select: "id,username,email,email_is_generated,site_origin,registered_site,source_site,created_at,updated_at,last_login_at",
+      select: ADMIN_SITE_USER_COLUMNS,
       order: "id.asc",
     }, {
       keyFields: ["id"],
       cursorField: "id",
       untilEmpty: true,
+      maxPages: options.maxPages,
       maxRows: ACCOUNT_ADMIN_EXPORT_MAX_USERS,
     });
   } else {
@@ -13242,16 +13251,17 @@ async function listAllSiteUsersForExport(env) {
   return rows.map((row) => validateSiteUserRow(row)).filter(Boolean);
 }
 
-async function listAllEntitlementsForExport(env) {
+async function listAllEntitlementsForExport(env, options = {}) {
   let rows;
   if (hasSupabaseConfig(env)) {
     rows = await listAllSupabaseAccountRows(env, "user_entitlements", {
-      select: "id,email,site_origin,source_site,grant_source,source_plan_code,source_reference,plan,status,lifetime,current_period_end,updated_at",
+      select: ADMIN_ENTITLEMENT_COLUMNS,
       order: "id.asc",
     }, {
       keyFields: ["id"],
       cursorField: "id",
       untilEmpty: true,
+      maxPages: options.maxPages,
       maxRows: ACCOUNT_ADMIN_EXPORT_MAX_USERS,
     });
   } else {
@@ -23829,6 +23839,87 @@ async function handleAccountAdminSummary(request, env, ctx = null) {
   }
 }
 
+async function listAdminDirectoryKeys(env, prefix) {
+  const keys = new Set();
+  const cursors = new Set();
+  let cursor;
+  for (let page = 0; page < ADMIN_DIRECTORY_R2_MAX_PAGES_PER_PREFIX; page += 1) {
+    const listed = await accountBucket(env).list({ prefix, limit: 1000, cursor });
+    if (!Array.isArray(listed?.objects) || listed.objects.length > 1000 || typeof listed.truncated !== "boolean") {
+      throw new Error("Invalid directory storage page.");
+    }
+    for (const { key } of listed.objects) {
+      if (typeof key !== "string" || !key.startsWith(prefix) || keys.has(key)) {
+        throw new Error("Invalid directory storage key.");
+      }
+      keys.add(key);
+    }
+    if (!listed.truncated) return keys;
+    cursor = listed.cursor;
+    if (!listed.objects.length || typeof cursor !== "string" || !cursor || cursors.has(cursor)) {
+      throw new Error("Directory storage pagination did not advance.");
+    }
+    cursors.add(cursor);
+  }
+  throw new Error("Directory storage listing exceeds the request budget.");
+}
+
+async function loadAdminUserDirectory(env) {
+  // R2 listing is strongly consistent. Listing the four canonical prefixes
+  // lets us skip thousands of GETs for absent records, without caching private
+  // account data or consulting the dashboard snapshot. This read model never
+  // supplies the authorization or optimistic version used by a user mutation.
+  const prefixes = [
+    accountKey("user-state", "email", ""),
+    accountKey("user-state", "id", ""),
+    accountKey("access", ""),
+    accountKey("newsfeed-access", ""),
+  ];
+  const limits = { maxPages: ADMIN_DIRECTORY_SQL_MAX_PAGES };
+  const [users, entitlementRows, ...prefixKeys] = await Promise.all([
+    listAllSiteUsersForExport(env, limits),
+    listAllEntitlementsForExport(env, limits),
+    ...prefixes.map((prefix) => listAdminDirectoryKeys(env, prefix)),
+  ]);
+  const emails = new Set();
+  const listedKeys = new Set();
+  for (const user of users) {
+    const email = normalizeEmail(user.email);
+    if (emails.has(email)) throw new Error("Duplicate directory identity.");
+    emails.add(email);
+    const keys = [...userAdminStateKeys(user), accountKey("access", email), newsfeedAdminAccessKey(user)];
+    for (const key of keys) {
+      if (prefixKeys.some((available) => available.has(key))) listedKeys.add(key);
+    }
+    if (listedKeys.size > ADMIN_DIRECTORY_R2_MAX_RECORDS) throw new Error("Directory exceeds the request budget.");
+  }
+  const entitlements = entitlementMap(entitlementRows);
+  return mapWithConcurrency(users, ACCOUNT_ADMIN_EXPORT_CONCURRENCY, async (row) => {
+    const email = normalizeEmail(row.email);
+    const [user, access] = await Promise.all([
+      mergeSiteUserAdminState(env, row, true, listedKeys),
+      listedKeys.has(accountKey("access", email)) ? findAccessGrant(env, email) : publicAccessGrant({ email, source: "none" }),
+    ]);
+    return adminVisibleUser(user, entitlements.get(email), access);
+  });
+}
+
+async function handleAccountAdminUserDirectory(request, env) {
+  if (hasSupabaseConfig(env)) {
+    try {
+      const users = await loadAdminUserDirectory(env);
+      return privateJsonResponse(request, env, 200, {
+        users, verified: true, complete: true, has_more: false, total: users.length,
+        generated_at: new Date().toISOString(),
+      });
+    } catch (_error) {
+      // Fall back to the canonical cursor path for a dense/older deployment or
+      // a failed storage read. Never return a truncated directory as complete.
+    }
+  }
+  return privateJsonResponse(request, env, 409, { code: "use_user_cursor" });
+}
+
 async function handleAccountAdminUsersPage(request, env) {
   try {
     await requireSuperUser(request, env);
@@ -23837,6 +23928,9 @@ async function handleAccountAdminUsersPage(request, env) {
   }
   try {
     const params = new URL(request.url).searchParams;
+    if (params.get("view") === "directory" && !params.has("cursor")) {
+      return handleAccountAdminUserDirectory(request, env);
+    }
     const pageSize = Math.max(1, Math.min(100, Math.floor(Number(params.get("page_size")) || 100)));
     const mode = hasSupabaseConfig(env) ? "supabase" : "r2";
     const rawCursor = String(params.get("cursor") || "");
@@ -23853,7 +23947,7 @@ async function handleAccountAdminUsersPage(request, env) {
     let next = "";
     if (mode === "supabase") {
       const query = queryString({
-        select: "id,username,email,email_is_generated,site_origin,registered_site,source_site,created_at,updated_at,last_login_at",
+        select: ADMIN_SITE_USER_COLUMNS,
         order: "id.asc", limit: String(pageSize), ...(after ? { id: `gt.${after}` } : {}),
       });
       rawUsers = await supabaseRequest(env, "GET", `/rest/v1/site_users?${query}`);
@@ -23887,7 +23981,7 @@ async function handleAccountAdminUsersPage(request, env) {
     if (mode === "supabase" && userRows.length) {
       const emails = [...new Set(userRows.map((row) => normalizeEmail(row.email)))];
       const rows = await listAllSupabaseAccountRows(env, "user_entitlements", {
-        select: "id,email,site_origin,source_site,grant_source,source_plan_code,source_reference,plan,status,lifetime,current_period_end,updated_at",
+        select: ADMIN_ENTITLEMENT_COLUMNS,
         order: "id.asc", email: `in.(${emails.map((email) => JSON.stringify(email)).join(",")})`,
       }, { keyFields: ["id"], cursorField: "id", pageSize: 100, untilEmpty: true });
       entitlementsByEmail = entitlementMap(rows.map((row) => validateEntitlementRow(row, row && row.email)));

@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
-import vm from "node:vm";
+import { compareAdminUsers } from "../site_src/assets/admin-users.js";
 
 const appPath = new URL("../site_src/assets/app.js", import.meta.url);
 const appSource = await readFile(appPath, "utf8");
@@ -23,19 +23,13 @@ function extractFunction(source, name) {
 }
 
 test("admin users sort active accounts by recent login or registration and disabled accounts last", () => {
-  const context = vm.createContext({ Date, String, Number, Boolean });
-  vm.runInContext(`
-    ${extractFunction(appSource, "adminUserSortTimestamp")}
-    ${extractFunction(appSource, "compareAdminUsers")}
-    globalThis.compare = compareAdminUsers;
-  `, context);
   const users = [
     { email: "disabled@example.invalid", disabled: true, last_login_at: "2026-08-24T10:00:00Z", created_at: "2026-08-24T10:00:00Z" },
     { email: "old@example.invalid", disabled: false, last_login_at: "2026-06-01T00:00:00Z", created_at: "2026-05-01T00:00:00Z" },
     { email: "new@example.invalid", disabled: false, last_login_at: "", created_at: "2026-08-23T00:00:00Z" },
     { email: "recent@example.invalid", disabled: false, last_login_at: "2026-08-24T00:00:00Z", created_at: "2026-01-01T00:00:00Z" },
   ];
-  users.sort(context.compare);
+  users.sort(compareAdminUsers);
   assert.deepEqual(users.map((user) => user.email), [
     "recent@example.invalid",
     "new@example.invalid",

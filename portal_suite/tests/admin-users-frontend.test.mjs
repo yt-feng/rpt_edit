@@ -19,17 +19,18 @@ function runtime(extra = {}) {
   const context = vm.createContext({ AbortController, URL, Date, Map, Set, ...extra,
     setTimeout: (fn, ms) => ms === 500 ? (fn(), 1) : 1, clearTimeout() {},
   });
-  vm.runInContext(source.replaceAll('export ', '') + '\nglobalThis.api = { fetchFreshAdminUsers, saveAdminNewsfeed, mountAdminInlineEditor, closeAdminInlineEditor, adminNewsfeedLabel, bindNewsfeedEditor, fillAdminNewsfeedEditor };', context);
+  vm.runInContext(source.replaceAll('export ', '') + '\nglobalThis.api = { fetchFreshAdminUsers, adminUserPage, renderAdminUserTable, saveAdminNewsfeed, mountAdminInlineEditor, closeAdminInlineEditor, adminNewsfeedLabel, bindNewsfeedEditor, fillAdminNewsfeedEditor };', context);
   return context;
 }
 const response = (body, status = 200) => ({ ok: status < 400, status, json: async () => body });
-const user = (i) => ({ email: `user${i}@example.invalid`, username: `User ${i}` });
+const user = (i) => ({ id: `user-${i}`, email: `user${i}@example.invalid`, username: `User ${i}` });
 
 test('complete user collection reads all 624 users across seven bounded pages', async () => {
   const calls = [];
   const ctx = runtime({ async fetch(url, options) {
     const parsed = new URL(url); const page = Number(parsed.searchParams.get('cursor') || 0);
-    assert.equal(parsed.searchParams.get('page_size'), '100');
+    assert.equal(parsed.searchParams.get('page_size'), page === 0 ? null : '100');
+    if (page === 0) assert.equal(parsed.searchParams.get('view'), 'directory');
     assert.equal(options.cache, 'no-store');
     calls.push(page);
     return response({ verified: true, users: Array.from({ length: page === 6 ? 24 : 100 }, (_, i) => user(page * 100 + i)), complete: page === 6, has_more: page < 6, next_cursor: page < 6 ? String(page + 1) : '' });
@@ -45,7 +46,7 @@ test('transient page failure retries only that page, preserving earlier users', 
   const ctx = runtime({ async fetch(url) {
     const page = new URL(url).searchParams.get('cursor') || 'first'; calls.push(page);
     if (page === 'second' && !failed) { failed = true; return response({}, 503); }
-    return response({ verified: true, users: [user(page === 'first' ? 0 : 1)], complete: page === 'second', has_more: page === 'first', next_cursor: 'second' });
+    return response({ verified: true, users: [user(page === 'first' ? 0 : 1)], complete: page === 'second', has_more: page === 'first', next_cursor: page === 'first' ? 'second' : '' });
   } });
   assert.equal((await ctx.api.fetchFreshAdminUsers('https://worker.test', {})).users.length, 2);
   assert.deepEqual(calls, ['first', 'second', 'second']);
@@ -66,33 +67,88 @@ test('incomplete or repeated user pages fail instead of returning a partial list
   assert.equal(calls, 1);
 });
 
+test('complete directory uses one request for 650 accounts and finds the last account from the first page', async () => {
+  const rows = Array.from({ length: 650 }, (_, i) => user(i));
+  const calls = [];
+  const ctx = runtime({ async fetch(url, options) {
+    assert.equal(options.cache, 'no-store');
+    calls.push(new URL(url).searchParams.toString());
+    return response({ verified: true, complete: true, has_more: false, total: rows.length, users: rows });
+  } });
+  const result = await ctx.api.fetchFreshAdminUsers('https://worker.test', {});
+  assert.equal(result.users.length, 650);
+  assert.deepEqual(calls, ['view=directory']);
+  const first = ctx.api.adminUserPage(result.users, '', 0);
+  assert.equal(first.rows.length, 25);
+  assert.equal(first.matches, 650);
+  assert.equal(first.totalPages, 26);
+  const search = ctx.api.adminUserPage(result.users, ' ＵＳＥＲ６４９@example.invalid ', 8);
+  assert.equal(search.matches, 1);
+  assert.equal(search.rows[0].email, 'user649@example.invalid');
+  assert.equal(ctx.api.adminUserPage(result.users, '', 0, user(649).email).page, 25,
+    'refresh can keep an open editor with its row even if sort order changes');
+});
+
+test('a bulk fallback or malformed complete count still requires a complete verified cursor read', async () => {
+  for (const bulk of [
+    response({ code: 'use_user_cursor' }, 409),
+    response({ verified: true, complete: true, has_more: false, total: 2, users: [user(99)] }),
+    response({ verified: true, complete: true, has_more: false, total: 2, users: [user(99), user(99)] }),
+  ]) {
+    const queries = [];
+    const ctx = runtime({ async fetch(url) {
+      const parsed = new URL(url);
+      queries.push(parsed.searchParams.toString());
+      return parsed.searchParams.get('view') ? bulk
+        : response({ verified: true, users: [user(0)], complete: true, has_more: false });
+    } });
+    const result = await ctx.api.fetchFreshAdminUsers('https://worker.test', {});
+    assert.deepEqual(Array.from(result.users, (row) => row.id), ['user-0']);
+    assert.deepEqual(queries, ['view=directory', 'page_size=100']);
+  }
+});
+
+test('closing a user directory aborts its request and does not start fallback pages', async () => {
+  let calls = 0;
+  const controller = new AbortController();
+  const ctx = runtime({ async fetch(_url, options) {
+    calls++;
+    return new Promise((resolve, reject) => options.signal.addEventListener('abort', () => reject(new Error('aborted'))));
+  } });
+  const pending = ctx.api.fetchFreshAdminUsers('https://worker.test', {}, controller.signal);
+  controller.abort();
+  await assert.rejects(pending, /aborted/u);
+  assert.equal(calls, 1);
+});
+
 test('first full load keeps concurrent user creation and coalesces duplicate refreshes', async () => {
   let resolve, calls = 0, rendered = [];
-  const ctx = vm.createContext({ accountAdminUsersByEmail: new Map(), fetchFreshAdminUsers() { calls++; return new Promise((done) => { resolve = done; }); },
-    renderAdminUserTable(targets) { rendered.push([ctx.accountAdminUsersByEmail.size, targets.usersComplete]); },
+  const ctx = vm.createContext({ fetchFreshAdminUsers() { calls++; return new Promise((done) => { resolve = done; }); },
+    renderAdminUserTable(targets) { rendered.push([targets.userDirectory.size, targets.usersComplete]); },
   });
   vm.runInContext(extract('loadFreshAdminUsers'), ctx);
-  const targets = { usersSection: { isConnected: true }, usersComplete: false };
+  const targets = { usersSection: { isConnected: true }, userDirectory: new Map(), usersComplete: false };
   const first = ctx.loadFreshAdminUsers('/api', targets), second = ctx.loadFreshAdminUsers('/api', targets);
-  ctx.accountAdminUsersByEmail.set('new@example.invalid', { email: 'new@example.invalid' });
+  targets.userDirectory.set('new@example.invalid', { email: 'new@example.invalid' });
   resolve({ users: Array.from({ length: 624 }, (_, i) => user(i)) });
   await Promise.all([first, second]);
   assert.equal(calls, 1);
-  assert.equal(ctx.accountAdminUsersByEmail.size, 625);
+  assert.equal(targets.userDirectory.size, 625);
   assert.deepEqual(rendered, [[625, true]]);
 });
 
-test('completed refresh keeps permission edits but includes newly registered users', async () => {
+test('completed refresh keeps concurrent permission edits but includes newly registered users', async () => {
   let resolve;
   const original = user(0);
-  const ctx = vm.createContext({ accountAdminUsersByEmail: new Map([[original.email, original]]), fetchFreshAdminUsers: () => new Promise((done) => { resolve = done; }), renderAdminUserTable() {} });
+  const ctx = vm.createContext({ fetchFreshAdminUsers: () => new Promise((done) => { resolve = done; }), renderAdminUserTable() {} });
   vm.runInContext(extract('loadFreshAdminUsers'), ctx);
-  const task = ctx.loadFreshAdminUsers('/api', { usersComplete: true });
+  const targets = { userDirectory: new Map([[original.email, original]]), usersComplete: true };
+  const task = ctx.loadFreshAdminUsers('/api', targets);
   const edited = { ...original, newsfeed: { enabled: true } };
-  ctx.accountAdminUsersByEmail.set(original.email, edited);
+  targets.userDirectory.set(original.email, edited);
   resolve({ users: [original, user(1)] }); await task;
-  assert.equal(ctx.accountAdminUsersByEmail.get(original.email), edited);
-  assert.equal(ctx.accountAdminUsersByEmail.size, 2);
+  assert.equal(targets.userDirectory.get(original.email), edited);
+  assert.equal(targets.userDirectory.size, 2);
 });
 
 class Node {
@@ -111,6 +167,31 @@ class Node {
   focus(options) { assert.equal(options.preventScroll, true); this.focused = true; }
   addEventListener(event, handler) { this.listeners[event] = handler; }
 }
+
+test('rendered directory keeps its full count but only creates one page of controls', () => {
+  const ctx = runtime({ document: { activeElement: null } });
+  const rows = Array.from({ length: 647 }, (_, i) => ({ ...user(i), role: 'user' }));
+  const map = new Map(rows.map((row) => [row.email, row]));
+  const targets = {
+    usersComplete: true, users: { contains: () => false }, userSearch: { value: '' },
+    userCount: {}, userPagination: {}, userPageLabel: {}, userPrevious: {}, userNext: {},
+    content: { scrollTop: 124 }, passwordTools: { open: false },
+  };
+  const helpers = {
+    PUBLIC_BRAND: '示例站', publicBrandText: (value) => value || '',
+    accountRightUsageText: () => '', escapeHtml: (value) => String(value),
+  };
+  ctx.api.renderAdminUserTable(targets, map, helpers);
+  assert.equal(targets.userCount.textContent, '全部 647 位用户');
+  assert.equal((targets.users.innerHTML.match(/<tr data-email=/g) || []).length, 25);
+  assert.equal(targets.userPageLabel.textContent, '1–25 / 647');
+  assert.equal(targets.content.scrollTop, 124);
+  targets.userSearch.value = 'user646@example.invalid';
+  ctx.api.renderAdminUserTable(targets, map, helpers);
+  assert.equal(targets.userCount.textContent, '匹配 1 / 647 位用户');
+  assert.match(targets.users.innerHTML, /data-email="user646@example.invalid"/u);
+  assert.equal(targets.userPagination.hidden, true);
+});
 
 test('inline editor moves below its own row and preserves its existing input state', () => {
   const ctx = runtime({ document: { createElement: (tag) => new Node(tag) } });
@@ -161,8 +242,9 @@ test('pending Newsfeed save locks the shared controls and rejects duplicate subm
     const form = new Node('form'), submit = new Node('button'), close = new Node('button'); form.append(submit);
     let finish, calls = 0;
     const targets = { users: new Node('tbody'), editorHome: new Node(), newsfeedEditor: form, newsfeedEmail: { value: user(0).email }, newsfeedMode: new Node('select'), newsfeedExpiry: new Node('input'), newsfeedStatus: new Node(), newsfeedTitle: new Node(), newsfeedState: new Node() };
-    const ctx = runtime({ document: { getElementById: () => close } });
+    const ctx = runtime({ document: { getElementById: () => close, createElement: (tag) => new Node(tag) } });
     const saved = { ...user(0), newsfeed: { mode: 'enabled', expires_at: '2026-12-23T15:59:59.999Z' } };
+    const row = new Node('tr'); row.dataset.email = saved.email; targets.users.append(row);
     ctx.api.fillAdminNewsfeedEditor(saved, targets);
     ctx.api.bindNewsfeedEditor('/api', targets, { renderAdminUserTable() {}, saveAdminNewsfeed() { calls++; return new Promise((resolve, reject) => { finish = () => fails ? reject(new Error('retry later')) : resolve(saved); }); } });
     const pending = form.listeners.submit({ preventDefault() {} });

@@ -543,7 +543,7 @@ test("account popup and Twotigers admin initialize in their own runtime scopes",
     renderAdminUsersVerificationState() {},
     loadFreshAdminUsers() { return Promise.resolve({ users: [] }); },
     refreshAdminUserList() { return Promise.resolve(null); },
-    loadAdminUserTools() { return Promise.resolve({ bindNewsfeedEditor() {} }); },
+    loadAdminUserTools() { return Promise.resolve({ bindAdminUserDirectory() {}, bindNewsfeedEditor() {} }); },
     mountAdminInlineEditor() {},
     closeAdminInlineEditor() {},
     renderAdminUserTable() {},
@@ -553,7 +553,7 @@ test("account popup and Twotigers admin initialize in their own runtime scopes",
   assert.doesNotThrow(() => adminRuntime.showAccountAdminModal("/api"));
   await new Promise((resolve) => setImmediate(resolve));
   assert.equal(scripts.length, 0, "opening the management popup must keep account tools lazy");
-  assert.equal(typeof get("accountAdminModal").__researchAccessControls.close, "function");
+  assert.equal(typeof get("accountAdminModal").__closeAdmin, "function");
 
   const trigger = fakeElement("research-user");
   trigger.dataset.email = "reader@example.invalid";

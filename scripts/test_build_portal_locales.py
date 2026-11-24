@@ -2483,7 +2483,7 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
                 {},
             )
 
-    def test_css_content_scanner_covers_course_fallback_and_all_mobile_table_headers(self) -> None:
+    def test_css_content_scanner_covers_course_fallback_and_mobile_user_card_labels(self) -> None:
         styles = (ROOT / "portal_suite" / "site_src" / "assets" / "styles.css").read_text(encoding="utf-8")
         rules = builder.scan_css_content_rules(styles, "styles.css")
         literal_values = {
@@ -2491,23 +2491,10 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
             for rule in rules
             for _start, _end, _quote, inner in builder.scan_quoted_css(rule.content_value)
         }
-        mobile_table_headers = [
-            "用户名",
-            "邮箱",
-            "注册站点",
-            "状态",
-            "账号",
-            "实际下载权限",
-            "到期",
-            "权限来源",
-            "注册",
-            "最近登录",
-            "Newsfeed",
-            "操作",
-        ]
+        mobile_user_labels = ["下载权限", "到期", "Newsfeed"]
         fallback_values = {"暂无可选机构", "封面暂不可用"}
-        self.assertEqual(len(rules), len(mobile_table_headers) + len(fallback_values))
-        self.assertEqual(literal_values, set(mobile_table_headers) | fallback_values)
+        self.assertEqual(len(rules), len(mobile_user_labels) + len(fallback_values))
+        self.assertEqual(literal_values, set(mobile_user_labels) | fallback_values)
         table_rules = [rule for rule in rules if "account-admin-table" in rule.selector]
         self.assertEqual(
             [
@@ -2515,9 +2502,9 @@ fetch(`/api/private?q=${encodeURIComponent("内部嵌套查询")}`);
                 for rule in table_rules
                 for _start, _end, _quote, inner in builder.scan_quoted_css(rule.content_value)
             ],
-            mobile_table_headers,
+            mobile_user_labels,
         )
-        self.assertEqual(len(table_rules), len(mobile_table_headers))
+        self.assertEqual(len(table_rules), len(mobile_user_labels))
         self.assertTrue(all(rule.at_rules == ("@media (max-width: 820px)",) for rule in table_rules))
 
     def test_css_content_overrides_are_locale_scoped_and_preserve_media_queries(self) -> None:

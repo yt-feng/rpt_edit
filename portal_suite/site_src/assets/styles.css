@@ -2224,7 +2224,6 @@ a.secondary-button {
 
 .account-admin-form-grid select,
 .account-admin-form-grid input,
-.account-admin-user-search input,
 .account-admin-note-field input {
   min-height: 42px;
   border: 1px solid var(--line);
@@ -7533,27 +7532,146 @@ body.chart-lightbox-open {
 }
 
 .account-admin-dialog {
+  display: flex;
+  flex-direction: column;
   width: min(1720px, calc(100vw - 32px));
+  height: min(88vh, 960px);
+  height: min(88dvh, 960px);
   max-height: min(92vh, 1040px);
   max-height: min(92dvh, 1040px);
-  overscroll-behavior: contain;
+  padding: 0;
+  overflow: hidden;
 }
 
 .account-admin-top {
-  padding-right: 40px;
+  flex: none;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  padding: 14px 72px 14px 22px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.account-admin-views {
+  display: flex;
+  gap: 4px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+}
+
+.account-admin-views button {
+  min-height: 34px;
+  padding: 0 13px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.account-admin-views button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--panel);
+}
+
+.account-admin-content {
+  min-height: 0;
+  min-width: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 0 22px 18px;
+}
+
+.account-admin-overview-tools,
+.account-admin-user-tools,
+.account-admin-user-pages {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.account-admin-overview-tools {
+  justify-content: space-between;
+  padding-top: 12px;
 }
 
 #accountAdminUsersSection {
-  scroll-margin-top: 76px;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-#accountAdminUsersSection .account-admin-heading {
-  justify-content: flex-start;
+.account-admin-user-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
   flex-wrap: wrap;
+  gap: 8px 14px;
+  padding: 10px 0;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
 }
 
-#accountAdminUserCount {
-  margin-right: auto;
+#accountAdminUserSearch {
+  flex: 1 1 270px;
+  min-width: 0;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+}
+
+#accountAdminUserCount,
+#accountAdminUserPageLabel {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+#accountAdminUserStatus,
+#accountAdminUsersNotice {
+  flex-basis: 100%;
+  min-height: 0;
+  margin: 0;
+}
+
+#accountAdminUserStatus:empty {
+  display: none;
+}
+
+.account-admin-user-pages {
+  justify-content: center;
+  margin: 4px 0 12px;
+}
+
+.account-admin-password-tools {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.account-admin-password-tools summary {
+  width: fit-content;
+  padding: 6px 0;
+  cursor: pointer;
+}
+
+.account-admin-mobile-user-status,
+.account-admin-mobile-user-details {
+  display: none;
 }
 
 #accountAdminUsersSection .account-admin-table-wrap {
@@ -7566,19 +7684,6 @@ body.chart-lightbox-open {
 
 #accountAdminUsersSection .account-admin-table :is(th, td):last-child {
   width: 240px;
-}
-
-.account-admin-user-search {
-  display: grid;
-  gap: 6px;
-  max-width: 520px;
-  margin-bottom: 14px;
-}
-
-.account-admin-user-search input {
-  width: 100%;
-  box-sizing: border-box;
-  background: var(--panel);
 }
 
 .account-admin-editor-row > td {
@@ -7748,7 +7853,7 @@ body.chart-lightbox-open {
     min-height: 100dvh;
     max-height: 100vh;
     max-height: 100dvh;
-    padding: 14px 12px calc(28px + env(safe-area-inset-bottom));
+    padding: 0;
     border: 0;
     border-radius: 0;
   }
@@ -7756,19 +7861,71 @@ body.chart-lightbox-open {
   .account-admin-dialog > .admin-close {
     position: fixed;
     z-index: 110;
-    top: max(10px, env(safe-area-inset-top));
-    right: 10px;
+    top: max(8px, env(safe-area-inset-top));
+    right: 8px;
+    width: 44px;
+    height: 44px;
   }
 
   .account-admin-top {
-    position: sticky;
-    z-index: 6;
-    top: 0;
-    margin: -14px -12px 12px;
-    padding: calc(14px + env(safe-area-inset-top)) 52px 13px 14px;
-    border-bottom: 1px solid var(--line);
+    gap: 6px 12px;
+    padding: calc(7px + env(safe-area-inset-top)) 54px 7px 12px;
     background: var(--panel);
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
+  }
+
+  .account-admin-top h3 {
+    font-size: 17px;
+  }
+
+  .account-admin-views button {
+    min-height: 44px;
+    padding-inline: 10px;
+  }
+
+  .account-admin-content {
+    padding: 0 12px calc(18px + env(safe-area-inset-bottom));
+  }
+
+  .account-admin-user-toolbar {
+    padding: 8px 0;
+  }
+
+  #accountAdminUserSearch,
+  .account-admin-user-tools {
+    width: 100%;
+  }
+
+  .account-admin-user-tools {
+    gap: 4px;
+  }
+
+  .account-admin-user-tools .secondary-button,
+  .account-admin-user-pages .secondary-button,
+  .account-admin-user-editor-head .secondary-button {
+    min-height: 44px;
+    padding-inline: 8px;
+  }
+
+  .account-admin-user-tools .secondary-button {
+    flex: 0 1 auto;
+    font-size: 12px;
+  }
+
+  #accountAdminUserCount {
+    margin-right: auto;
+  }
+
+  .account-admin-password-tools summary {
+    display: list-item;
+    min-height: 44px;
+    padding-block: 11px;
+  }
+
+  .account-admin-user-editor :is(input:not([type="checkbox"]):not([type="hidden"]), select, textarea),
+  .account-admin-password-reset select {
+    min-height: 44px;
+    min-width: 0;
+    font-size: 16px;
   }
 
   .account-admin-section {
@@ -7782,21 +7939,6 @@ body.chart-lightbox-open {
   .account-admin-wechat-summary {
     align-items: stretch;
     flex-wrap: wrap;
-  }
-
-  #accountAdminUsersSection .account-admin-heading {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-  }
-
-  #accountAdminUserCount {
-    margin: 0;
-    justify-self: end;
-  }
-
-  #accountAdminExportUsers,
-  #accountAdminNewUser {
-    width: 100%;
   }
 
   .account-admin-password-reset,
@@ -7876,7 +8018,7 @@ body.chart-lightbox-open {
   }
 
   #accountAdminUsersSection .account-admin-table tr {
-    overflow: hidden;
+    overflow: visible;
     border: 1px solid var(--line);
     border-radius: 12px;
     padding: 4px 12px 10px;
@@ -7896,9 +8038,8 @@ body.chart-lightbox-open {
     gap: 10px;
     align-items: start;
     width: 100%;
-    padding: 9px 0;
+    padding: 4px 0;
     border: 0;
-    border-bottom: 1px solid var(--line);
     background: transparent;
     overflow-wrap: anywhere;
   }
@@ -7910,68 +8051,92 @@ body.chart-lightbox-open {
     line-height: 1.5;
   }
 
-  #accountAdminUsersSection .account-admin-table td:nth-child(1)::before { content: "用户名"; }
-  #accountAdminUsersSection .account-admin-table td:nth-child(2)::before { content: "邮箱"; }
-  #accountAdminUsersSection .account-admin-table td:nth-child(3)::before { content: "注册站点"; }
-  #accountAdminUsersSection .account-admin-table td:nth-child(4)::before { content: "状态"; }
-  #accountAdminUsersSection .account-admin-table td:nth-child(5)::before { content: "账号"; }
-  #accountAdminUsersSection .account-admin-table td:nth-child(6)::before { content: "实际下载权限"; }
-  #accountAdminUsersSection .account-admin-table td:nth-child(7)::before { content: "到期"; }
-  #accountAdminUsersSection .account-admin-table td:nth-child(8)::before { content: "权限来源"; }
-  #accountAdminUsersSection .account-admin-table td:nth-child(9)::before { content: "注册"; }
-  #accountAdminUsersSection .account-admin-table td:nth-child(10)::before { content: "最近登录"; }
-  #accountAdminUsersSection .account-admin-table td:nth-child(11)::before { content: "Newsfeed"; }
-  #accountAdminUsersSection .account-admin-table td:nth-child(12)::before { content: "操作"; }
-
-  #accountAdminUsersSection .account-admin-table td[colspan] {
-    display: block;
-    padding: 20px 4px;
-    border-bottom: 0;
-    color: var(--muted);
-    text-align: center;
+  #accountAdminUsersSection .account-admin-table tr[data-email] > td:nth-child(1) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding-top: 7px;
   }
 
-  #accountAdminUsersSection .account-admin-table td[colspan]::before {
+  .account-admin-mobile-user-status {
+    display: inline-flex;
+    flex: none;
+  }
+
+  #accountAdminUsersSection .account-admin-table tr[data-email] > td:nth-child(2) {
+    display: block;
+    color: var(--muted);
+    font-size: 13px;
+    padding-bottom: 8px;
+  }
+
+  #accountAdminUsersSection .account-admin-table tr[data-email] > td:is(:nth-child(3), :nth-child(4), :nth-child(5), :nth-child(8), :nth-child(9), :nth-child(10)) {
     display: none;
   }
 
+  #accountAdminUsersSection .account-admin-table td:nth-child(6)::before { content: "下载权限"; }
+  #accountAdminUsersSection .account-admin-table td:nth-child(7)::before { content: "到期"; }
+  #accountAdminUsersSection .account-admin-table td:nth-child(11)::before { content: "Newsfeed"; }
+
   #accountAdminUsersSection .account-admin-table td:last-child {
     display: block;
-    width: auto;
-    margin: 4px -12px -10px;
-    padding: 12px;
-    border-bottom: 0;
-    background: var(--bg);
-  }
-
-  #accountAdminUsersSection .account-admin-table td:last-child::before {
-    display: block;
-    margin-bottom: 8px;
+    width: 100%;
+    margin-top: 4px;
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
   }
 
   #accountAdminUsersSection .account-admin-table td[colspan]:last-child {
     margin: 0;
-    padding: 20px 4px;
-    background: transparent;
+    padding: 12px 0;
+    border: 0;
   }
 
-  #accountAdminUsersSection .account-admin-table td[colspan]:last-child::before {
-    display: none;
+  #accountAdminUsersSection .account-admin-table td[colspan]::before {
     content: none;
   }
 
-  #accountAdminUsersSection .account-admin-table td:last-child:empty {
-    display: none;
+  #accountAdminUsersSection .account-admin-editor-row {
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
   }
 
-  #accountAdminUsersSection .account-admin-table td:nth-last-child(2):has(+ td:last-child:empty) {
-    border-bottom: 0;
+  #accountAdminUsersSection .account-admin-editor-row > td[colspan]:last-child {
+    padding: 0;
+  }
+
+  .account-admin-mobile-user-details {
+    display: block;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .account-admin-mobile-user-details summary {
+    width: fit-content;
+    min-height: 44px;
+    padding: 10px 0;
+    cursor: pointer;
+  }
+
+  .account-admin-mobile-user-details dl {
+    display: grid;
+    grid-template-columns: minmax(68px, auto) minmax(0, 1fr);
+    gap: 4px 8px;
+    margin: 0;
+  }
+
+  .account-admin-mobile-user-details dd {
+    margin: 0;
+    color: var(--ink);
   }
 
   #accountAdminUsersSection .account-admin-row-actions {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-    gap: 8px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
   }
 
   #accountAdminUsersSection .account-admin-row-actions .secondary-button {
