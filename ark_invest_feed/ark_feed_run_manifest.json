@@ -1,6 +1,6 @@
 {
   "feed_url": "https://www.ark-invest.com/feed",
-  "date_folder": "261117",
+  "date_folder": "261124",
   "since_days": 1,
   "max_pub_age_days": 120,
   "include_types": [
@@ -9,24 +9,24 @@
     "newsletters",
     "white papers"
   ],
-  "feed_item_count": 1424,
+  "feed_item_count": 1426,
   "selected_count": 1,
   "written": [
     {
       "source": "ark_invest_feed",
       "institution_name": "木头姐ARK",
-      "title": "#534: NVIDIA Faces A Major Leadership Test After Jensen Huang’s Resignation, & More",
+      "title": "#535: Anthropic’s Record IPO Highlights The Economics Of Frontier AI, & More",
       "type": "Newsletters",
       "category": "Newsletters",
-      "source_url": "https://www.ark-invest.com/newsletters/issue-534",
-      "guid": "https://www.ark-invest.com/newsletters/issue-534",
-      "pub_date": "Mon, 16 Nov 2026 21:00:00 GMT",
-      "updated": "2026-11-17T02:15:09.805+00:00",
-      "event_datetime": "2026-11-17T02:15:09.805000+00:00",
-      "feed_key": "353324523725d507",
+      "source_url": "https://www.ark-invest.com/newsletters/issue-535",
+      "guid": "https://www.ark-invest.com/newsletters/issue-535",
+      "pub_date": "Mon, 23 Nov 2026 22:30:00 GMT",
+      "updated": "2026-11-24T03:38:36.262+00:00",
+      "event_datetime": "2026-11-24T03:38:36.262000+00:00",
+      "feed_key": "ac8f891dabce4885",
       "source_mineru": "source_mineru.md",
       "note": "note.md",
-      "output_dir": "xhs_notes/ark/261117/0001-ARK_534-NVIDIA-Faces-A-Major-Leadership-Test-After-Jensen-Huang-s-Resignatio_353324523725d507"
+      "output_dir": "xhs_notes/ark/261124/0001-ARK_535-Anthropic-s-Record-IPO-Highlights-The-Economics-Of-Frontier-AI-More_ac8f891dabce4885"
     }
   ],
   "status": "ok"
