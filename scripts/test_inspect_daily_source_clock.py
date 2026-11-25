@@ -128,6 +128,17 @@ class ClockInspectionTests(unittest.TestCase):
             self.assertNotIn('clock_checked_at', result)
             self.assertNotIn('clock_run_id', result)
 
+    def test_upstream_clock_readback_exposes_only_typed_batch_and_run_fields(self):
+        row = {'state': 'sync_completed', 'checked_at': '2026-11-25T00:30:00Z',
+               'date_folder': '261124', 'run_id': 123, 'token': 'private'}
+        self.assertEqual(clock.safe_upstream_check(json.dumps(row)), {
+            'upstream_sync_state': 'sync_completed', 'upstream_checked_at': '2026-11-25T00:30:00Z',
+            'upstream_batch_date': '261124', 'upstream_run_id': 123,
+        })
+        for change in ({'run_id': None}, {'run_id': True}, {'date_folder': '261332'}, {'state': 'private'}):
+            self.assertEqual(clock.safe_upstream_check(json.dumps(dict(row, **change))),
+                             {'upstream_sync_state': 'invalid'})
+
     def test_workflow_inspection_cannot_reach_deployment_or_github_dispatch(self):
         path = Path(__file__).resolve().parents[1] / '.github/workflows/daily-source-clock-deploy.yml'
         workflow = yaml.safe_load(path.read_text())

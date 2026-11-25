@@ -1,6 +1,7 @@
 import { wakeDailyReportSource } from "../../portal-suite-worker/src/daily-source-wakeup.js";
 
 import { handleDropboxReady } from "./dropbox-ready.js";
+import { runUpstreamSyncClock } from "./upstream-drive-sync.js";
 
 export const DAILY_SOURCE_CLOCK_CHECK_KEY = "_account/ops/daily-source-clock-check.json";
 const CHECK_STATES = new Set([
@@ -18,6 +19,9 @@ export default {
   },
 
   async scheduled(_event, env, ctx) {
+    if (env.REPORT_UPSTREAM_SYNC_REPO) {
+      ctx.waitUntil(runUpstreamSyncClock(env, fetchWithTimeout));
+    }
     ctx.waitUntil((async () => {
       let result;
       try {

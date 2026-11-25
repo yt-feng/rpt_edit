@@ -14,6 +14,7 @@ on:
       - 'workers/portal-suite-worker/src/daily-source-wakeup.js'
       - 'portal_suite/tests/daily-source-wakeup.test.mjs'
       - 'portal_suite/tests/dropbox-ready-relay.test.mjs'
+      - 'portal_suite/tests/upstream-drive-sync.test.mjs'
       - 'scripts/inspect_daily_source_clock.py'
       - 'scripts/test_inspect_daily_source_clock.py'
       - 'scripts/private_workflow_handoff.py'
@@ -42,7 +43,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - run: node --test portal_suite/tests/daily-source-wakeup.test.mjs portal_suite/tests/dropbox-ready-relay.test.mjs
+      - run: node --test portal_suite/tests/daily-source-wakeup.test.mjs portal_suite/tests/dropbox-ready-relay.test.mjs portal_suite/tests/upstream-drive-sync.test.mjs
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -62,7 +63,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install boto3
-      - name: Read existing clock schedule and automatic wake receipt
+      - name: Read existing clock, upstream check and downstream wake receipt
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
@@ -70,6 +71,7 @@ jobs:
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          REPORT_UPSTREAM_SYNC_REPO: ${{ vars.REPORT_UPSTREAM_SYNC_REPO }}
           AWS_MAX_ATTEMPTS: '2'
           AWS_RETRY_MODE: standard
         run: python scripts/inspect_daily_source_clock.py
@@ -92,6 +94,7 @@ jobs:
         env:
           R2_BUCKET_NAME: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
           REPORT_HANDOFF_SIGNING_KEY: ${{ secrets.REPORT_HANDOFF_SIGNING_KEY }}
+          REPORT_UPSTREAM_SYNC_REPO: ${{ vars.REPORT_UPSTREAM_SYNC_REPO }}
           GH_READ_TOKEN: ${{ secrets.GH_READ_TOKEN || secrets.GH_DISPATCH_TOKEN }}
           GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
         run: |
@@ -103,6 +106,8 @@ jobs:
           values = {key: os.environ[key] for key in ('GH_READ_TOKEN', 'GH_DISPATCH_TOKEN', 'REPORT_HANDOFF_SIGNING_KEY')}
           assert all(values.values()), 'Missing GitHub clock or Dropbox relay credentials'
           assert re.fullmatch(r'[0-9a-f]{64}', values['REPORT_HANDOFF_SIGNING_KEY']), 'Invalid Dropbox relay signing key'
+          upstream = os.environ.get('REPORT_UPSTREAM_SYNC_REPO', '').strip()
+          assert not upstream or re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', upstream), 'Invalid upstream repository'
           config = {
               'name': 'portal-daily-source-clock', 'main': 'src/index.js',
               'compatibility_date': '2026-05-01', 'workers_dev': True,
@@ -111,6 +116,8 @@ jobs:
               'triggers': {'crons': ['*/30 * * * *']},
               'r2_buckets': [{'binding': 'REPORT_BUCKET', 'bucket_name': bucket}],
           }
+          if upstream:
+              config['vars']['REPORT_UPSTREAM_SYNC_REPO'] = upstream
           Path('workers/daily-source-wakeup/wrangler.json').write_text(json.dumps(config))
           secret_path = Path(os.environ['RUNNER_TEMP']) / 'daily-clock-secrets.json'
           with os.fdopen(os.open(secret_path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600), 'w') as output:
