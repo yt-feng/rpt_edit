@@ -577,22 +577,6 @@
       "first_seen": "2026-08-07",
       "status": "too_old"
     },
-    "imf:f81e7a975e56dc850a55c51928547af914311ad0e8451a97c608071e410a": {
-      "first_seen": "2026-07-27",
-      "status": "too_old"
-    },
-    "imf:0f6d01cb986772c689f05f52f99ceb42efda4ff4feb6c3a638a02489c0b1": {
-      "first_seen": "2026-07-27",
-      "status": "too_old"
-    },
-    "imf:bea3192893a033d649d0fa4bfd5eb2c76a2dfb32c02462ef72893b764a0e": {
-      "first_seen": "2026-07-27",
-      "status": "too_old"
-    },
-    "imf:1120ca222d68f7f02ceda9ff7e52242deebd4afc940b8832d779d5e16d9e": {
-      "first_seen": "2026-07-27",
-      "status": "too_old"
-    },
     "worldbank:099158007272624843": {
       "first_seen": "2026-08-07",
       "status": "too_old"
@@ -3832,6 +3816,26 @@
     "bruegel:12733": {
       "first_seen": "2026-11-24",
       "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/work1398.htm": {
+      "first_seen": "2026-11-25",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/foreign-investment-screening-legal-design-administrative-models-and-emerging-practice": {
+      "first_seen": "2026-11-25",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/dsb_24nov26_563_e.htm": {
+      "first_seen": "2026-11-25",
+      "status": "no_pdf"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/fsec_23nov26_562_e.htm": {
+      "first_seen": "2026-11-25",
+      "status": "no_pdf"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/val_20nov26_564_e.htm": {
+      "first_seen": "2026-11-25",
+      "status": "no_pdf"
     }
   }
 }
