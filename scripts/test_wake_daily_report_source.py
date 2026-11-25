@@ -418,12 +418,27 @@ class ReceiptTests(unittest.TestCase):
             state = wakeup.read_source(NOW, receipt=receipt, reader=self.fail)
             self.assertEqual(state, {'state': 'waiting_for_fresh_source', 'date_folder': day})
 
-    def test_verified_receipt_respects_existing_beijing_cycle(self):
+    def test_overnight_admission_requires_an_exact_previous_day_proof(self):
         github = GitHub()
         before_two = datetime(2026, 11, 9, 17, 59, tzinfo=timezone.utc)
-        state = wakeup.wake(github, before_two, receipt=RECEIPT, source_reader=self.fail, submit=self.fail)
-        self.assertEqual(state, {'state': 'before_daily_start'})
+
+        def source(tick, *, receipt):
+            assert tick == before_two
+            return wakeup.read_source(tick, receipt=receipt, token='TOKEN', reader=self.reader())
+
+        def submit(api, day):
+            api.rows.append(run(identity=2, day=day))
+            return True
+
+        for early_day in ('261108', '261110'):
+            receipt = wakeup.SourceReceipt(early_day, 42, 2, RECEIPT.manifest_sha256)
+            state = wakeup.wake(github, before_two, receipt=receipt, source_reader=self.fail, submit=self.fail)
+            self.assertEqual(state, {'state': 'before_daily_start'})
         self.assertEqual(github.calls, [])
+        result = wakeup.wake(github, before_two, receipt=RECEIPT, source_reader=source, submit=submit)
+        self.assertEqual(result['state'], 'dispatched')
+        self.assertEqual(result['source_proof'], 'verified')
+        self.assertEqual(result['date_folder'], DAY)
 
 
 class WorkflowTests(unittest.TestCase):

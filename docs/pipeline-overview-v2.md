@@ -389,8 +389,9 @@ while still removing promotion and reserved publication domains.
 `Daily report source wake-up` receives the upstream Dropbox batch-ready signal
 and runs the 02:00 Beijing daily check and hourly recovery checks. Every
 automatic start passes through the same serialized deduplication checks. After
-02:00 Beijing, a valid signal admits an exact source date no more than one
-calendar day old when its count and digest match Dropbox metadata. A polling
+midnight Beijing, a valid signal can admit the previous day's batch as soon
+as its count and digest match Dropbox metadata. The same path accepts a
+current-day batch from 02:00. A polling
 check admits the latest batch of the same age when the newest PDF server
 modification is at least 15 minutes old. A current Daily run, an exact batch
 run title, or a dated source-admission /

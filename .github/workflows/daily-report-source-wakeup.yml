@@ -3,8 +3,7 @@ run-name: ${{ inputs.date_folder && format('Daily report source wake-up [{0}/{1}
 
 on:
   schedule:
-    # Preserve the 02:00 Beijing daily start, through the same serialized
-    # source/active-run checks as every late-source recovery check.
+    # Recheck at 02:00 Beijing when an overnight Dropbox receipt has not arrived.
     - cron: '0 18 * * *'
     # Late Dropbox deliveries and missed Daily schedules get a metadata-only
     # check at a different minute. No model runs in this workflow.

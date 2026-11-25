@@ -297,7 +297,9 @@ def dispatch(github, day):
 
 def wake(github, now, *, receipt=None, source_reader=read_source, submit=dispatch, sleep=time.sleep):
     require(now.tzinfo is not None, 'wakeup_clock_invalid')
-    if now.astimezone(BEIJING).hour < 2:
+    beijing_now = now.astimezone(BEIJING)
+    if beijing_now.hour < 2 and (
+            receipt is None or beijing_now.date() - parse_date_folder(receipt.date_folder) != timedelta(days=1)):
         return {'state': 'before_daily_start'}
     proof = {}
     if receipt is not None:

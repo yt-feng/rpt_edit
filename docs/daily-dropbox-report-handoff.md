@@ -1,10 +1,11 @@
 # Daily Dropbox report handoff
 
-Reviewed 2026-11-24. All times below are Asia/Shanghai. A batch is identified by
+Reviewed 2026-11-25. All times below are Asia/Shanghai. A batch is identified by
 the date of its Dropbox source folder, normally the previous calendar day.
 
 ```mermaid
 flowchart TD
+  Q["23:43 GitHub cron or independent midnight make-up"] --> A
   A["rpt_gdrive: select and download Google Drive reports"] --> B["Upload PDFs to Dropbox /zip_backup/YYMMDD"]
   B --> R["Authenticated batch-ready signal"]
   R --> C["rpt_edit: Daily report source wake-up"]
@@ -26,11 +27,30 @@ flowchart TD
 | `rpt_edit` | [Daily report source wake-up](../.github/workflows/daily-report-source-wakeup.yml) | Validate Dropbox batch readiness and dispatch the Daily workflow with `dropbox_date_folder` set to the exact date. |
 | `rpt_edit` | [Daily report articles and translations](../.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml) | Freeze original identities, run the sharded MinerU pipeline and verify article, PDF and translation delivery independently. |
 
+
+The GitHub schedule at 23:43 is the first start opportunity. From midnight,
+the isolated half-hour Cloudflare clock checks the live upstream workflow
+inventory for the preceding source date. If the scheduled run has not started,
+or has failed, it can dispatch `rpt_gdrive` on `main` with `clock_sync_date`
+bound to that date. A native run in flight or completed successfully suppresses
+the make-up dispatch. R2 conditionally claims a dispatch, and the next tick
+reconciles uncertain outcomes with GitHub. A confirmed failed make-up run can
+be retried once. The source workflow serializes both triggers and uses the
+verified dated completion to skip a later duplicate download. If an already
+queued make-up run follows a successful native run, it can read back the
+exact Dropbox folder without downloading from Drive again.
+
+Set the downstream repository variable `REPORT_UPSTREAM_SYNC_REPO` to the
+source repository and use the deploy workflow to install the controller.
+The existing Worker Actions credential needs access to `sync.yml` in that
+repository. The deploy workflow's `inspect_only` mode reads the most recent
+upstream check, the downstream wake-up receipt, and the Cloudflare schedule.
+
 After its Dropbox writes succeed, the sync selects the newest date it wrote
 from the current or previous Beijing calendar day. It lists the folder and
 verifies that every newly written revision is visible. The signal describes
-all PDFs in that date folder. The upstream download log tracks Google Drive
-completeness. A Dropbox upload failure stops the ready signal.
+all PDFs in that date folder. A dated make-up run checks its expected Drive download batch and binds the
+receipt to that exact Dropbox date. A Dropbox upload failure stops the ready signal.
 
 The upstream workflow sends the batch-ready signal to the isolated
 `portal-daily-source-clock` Cloudflare Worker at `/dropbox-report-batch-ready`.
@@ -55,14 +75,14 @@ handoff. All four belong to the same batch.
 | `manifest_sha256` | Lowercase hex SHA-256 of the sorted Dropbox file ID and revision pairs, encoded as UTF-8 `id<TAB>rev<LF>` lines. |
 
 The receiver independently lists the exact Dropbox folder and checks the count
-and digest against current PDF metadata. After 02:00, for a batch from the
-current or previous Beijing date, a matching proof allows admission without the
-ordinary 15-minute settling delay. The wake-up reports `source_proof: verified`
+and digest against current PDF metadata. A matching proof for the previous
+Beijing date allows admission immediately, even from 00:00 to 02:00. A receipt
+for the current date can use the same path at or after 02:00. Verified
+admission skips the ordinary 15-minute settling delay. The wake-up reports `source_proof: verified`
 even if an active Daily run prevents dispatch. A relay acknowledgement confirms
 GitHub accepted a wake-up request. The wake-up record provides the Dropbox
-proof and the resulting Daily run ID or hold reason. Signals received before
-02:00 defer to the scheduled source checks. Calls with all four inputs blank
-use ordinary polling readiness. The Daily workflow freezes the original PDF
+proof and the resulting Daily run ID or hold reason. Calls with all four inputs
+blank use ordinary polling readiness from 02:00. The Daily workflow freezes the original PDF
 bytes for the admitted date when it selects the reports to process.
 
 The Daily source workflow serializes wake-ups and checks for an active Daily
@@ -153,3 +173,11 @@ Runner startup took two seconds, and the job finished in about 18 minutes. All
 48 Drive downloads attempted for `261123` succeeded and produced 48 new Dropbox
 writes. The same log recorded 112 HTTP 403s during downloads for earlier dates
 in the sync lookback (`261119`, `261120`, `261121`).
+
+## 2026-11-25 incident
+
+The 23:43 November 24 GitHub schedule created its first run at 08:06:39 on
+November 25, 8 hours 23 minutes after its configured time. Its runner started
+three seconds later. The downstream clock had been checking Dropbox overnight
+and only had the previous source batch. The independent clock now checks the
+upstream start as well as the downstream handoff.

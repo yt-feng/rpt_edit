@@ -212,7 +212,7 @@ jobs:
           echo "commit_results=${{ github.event.inputs.commit_results || 'false' }}" >> "$GITHUB_OUTPUT"
       - name: Print resolved plan
         run: |
-          echo "::notice::Daily source checks begin at 02:00 Asia/Shanghai through the deduplicating source wake-up. XHS, Xianyu, podcast copy and podcast audio/video are disabled."
+          echo "::notice::Dropbox readiness wakes this workflow for the exact batch. The 02:00 Asia/Shanghai check reconciles missing receipts. XHS, Xianyu, podcast copy and podcast audio/video are disabled."
           if [ -n "${{ steps.vars.outputs.expected_dropbox_date_folder }}" ]; then
             echo "::notice::Latest-source runs require the latest Dropbox batch within one calendar day of Beijing run date ${{ steps.vars.outputs.expected_dropbox_date_folder }}; older or future-dated batches fail closed."
           fi
