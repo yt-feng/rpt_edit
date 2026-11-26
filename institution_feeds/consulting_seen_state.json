@@ -1,10 +1,6 @@
 {
   "version": 1,
   "items": {
-    "bcg:https://www.bcg.com/publications/2026/building-investor-confidence-in-ai-strategy": {
-      "first_seen": "2026-07-28",
-      "status": "downloaded"
-    },
     "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/quantumblack/our%20insights/the%20state%20of%20ai/2025/the-state-of-ai-how-organizations-are-rewiring-to-capture-value_final.pdf?trk=public_post_comment-text": {
       "first_seen": "2026-07-29",
       "status": "downloaded"
@@ -1560,6 +1556,30 @@
     "bcg:https://www.bcg.com/publications/2026/agentic-ai-retail-on-shelf-availability": {
       "first_seen": "2026-11-25",
       "status": "no_pdf"
+    },
+    "mckinsey:https://pages.mckinsey.com/rs/473-ZYE-522/images/GEI_Global_Summary_July_2025.pdf": {
+      "first_seen": "2026-11-26",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/cop31-key-takeaways": {
+      "first_seen": "2026-11-26",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/telco-core-network-as-a-service": {
+      "first_seen": "2026-11-26",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/india-insurtech-landscape-and-trends-2026-insurance-in-the-age-of-ai": {
+      "first_seen": "2026-11-26",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/southeast-asia-nature-tech-solutions-climate-adaptation": {
+      "first_seen": "2026-11-26",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/ai-reshaping-corporate-growth-strategy": {
+      "first_seen": "2026-11-26",
+      "status": "downloaded"
     }
   }
 }
