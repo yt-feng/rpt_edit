@@ -106,9 +106,9 @@ class ProgressiveTests(unittest.TestCase):
         self.assertEqual(self.make_plan(), self.plan)
         for account in ('kc', 'tt', 'pankou'):
             sizes = [len(group['source_ids']) for group in self.plan['groups'] if group['account'] == account]
-            self.assertEqual(sizes, [2, 1, 1])
+            self.assertEqual(sizes, [1, 1, 2])
         mutated = copy.deepcopy(self.plan)
-        mutated['groups'][0]['source_ids'].reverse()
+        mutated['groups'][-1]['source_ids'].reverse()
         with self.assertRaisesRegex(ValueError, 'digest'):
             progressive.validate_plan(mutated)
     def test_first_ready_group_does_not_wait_for_earlier_or_other_shards(self):
@@ -194,6 +194,69 @@ class ProgressiveTests(unittest.TestCase):
         assigned, counts = progressive.balanced_route_reservation(self.store, 'private', routes, 8)
         self.assertTrue(all(assigned[source] == account for source, account in original.items()))
         self.assertEqual(sum(counts.values()), 10)
+
+    def test_pinned_sources_keep_three_drafts_per_account_when_possible(self):
+        accounts = tuple(progressive.ACCOUNT_NAMES)
+        for pinned, fresh, capacity, expected in (
+                ((13, 6, 5), 0, 3, (6, 3, 3)),
+                ((7, 1, 1), 0, 3, (4, 1, 1)),
+                ((100, 0, 0), 6, 8, (13, 3, 3)),
+                ((0, 0, 0), 8, 3, (3, 3, 2))):
+            with self.subTest(pinned=pinned, fresh=fresh, capacity=capacity):
+                routes = [progressive.digest(str(index).encode()) for index in range(sum(pinned) + fresh)]
+                pinned_accounts = [account for account, count in zip(accounts, pinned) for _ in range(count)]
+                original = dict(zip(routes, pinned_accounts))
+                store = Store()
+                store.put_object(Bucket='private', Key=progressive.ROUTING_KEY,
+                                 Body=progressive.encoded({'version': 1, 'assigned': original}))
+                assigned, counts = progressive.balanced_route_reservation(store, 'private', routes, capacity)
+                self.assertEqual({source: assigned[source] for source in original}, original)
+                self.assertEqual(set(assigned), set(routes))
+                self.assertEqual(counts, dict(zip(accounts, expected)))
+                # A second planner can see the reserved routes before the first writes its plan.
+                self.assertEqual(progressive.balanced_route_reservation(store, 'private', routes, capacity),
+                                 (assigned, counts))
+
+    def test_early_groups_per_account_survive_partial_source_delivery_and_resume(self):
+        self.store = Store()
+        rows = [{'process_local_path': f'_selected/{index:02d}-report.pdf',
+                 'content_sha256': progressive.digest(str(index).encode())} for index in range(1, 47)]
+        progressive.write_json(self.manifest, rows)
+        self.plan = self.make_plan(articles_per_draft=3, reports_per_shard=5)
+        groups = self.plan['groups']
+        accounts = tuple(progressive.ACCOUNT_NAMES)
+        for account, expected in zip(accounts, ([2, 2, 2, 2, 2, 3, 3], [2, 2, 2, 3, 3, 3], [2, 2, 2, 3, 3, 3])):
+            self.assertEqual([len(group['source_ids']) for group in groups if group['account'] == account], expected)
+        # The observed partial 46-source batch had reports 1–20 and 46 ready.
+        sources = self.plan['sources']
+        available = self.materialize(sources[:20] + sources[-1:])
+        partial = self.send(available)
+        names = progressive.ACCOUNT_NAMES.values()
+        self.assertEqual(partial['verified_drafts_by_account'], dict(zip(names, (4, 3, 3))))
+        accepted = list(self.uploaded)
+        self.send(available)
+        self.assertEqual(self.uploaded, accepted)
+        complete = self.materialize()
+        self.send(complete)
+        self.presence()
+        receipt = progressive.validate_progressive_delivery(self.output, self.plan, complete)
+        self.assertEqual(receipt['verified_article_count'], 46)
+        self.assertEqual(receipt['verified_draft_count'], 19)
+        self.assertEqual(receipt['verified_drafts_by_account'], dict(zip(names, (7, 6, 6))))
+        self.assertEqual(len(set(self.uploaded)), len(self.uploaded))
+
+    def test_resume_keeps_an_older_frozen_group_layout(self):
+        plan = self.make_plan(source_run_id='4321', articles_per_draft=8)
+        plan['groups'] = []
+        for account in progressive.ACCOUNT_NAMES:
+            group = {'account': account, 'source_ids': [
+                row['source_id'] for row in plan['sources'] if row['account'] == account]}
+            plan['groups'].append({**group, 'group_id': progressive.digest(progressive.encoded(group))})
+        del plan['plan_sha256']
+        plan['plan_sha256'] = progressive.digest(progressive.encoded(plan))
+        key = progressive.plan_prefix('4321', plan['date_folder']) + '/plan.json'
+        self.store.put_object(Bucket='private', Key=key, Body=progressive.encoded(plan))
+        self.assertEqual(self.make_plan(source_run_id='4321', articles_per_draft=8), plan)
 
     def test_pacing_is_durable_per_account_and_unknown_attempt_is_not_reset(self):
         clock = [100.0]

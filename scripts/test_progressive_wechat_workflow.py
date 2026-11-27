@@ -73,9 +73,9 @@ class ProgressiveWorkflowTests(unittest.TestCase):
     def test_shard_signal_does_not_fail_generation_or_dispatch_before_handoff(self):
         daily = workflow('dropbox-latest-pdf-to-xhs-sharded.yml')
         events = daily.get('on', daily.get(True))
-        self.assertEqual(events['workflow_dispatch']['inputs']['wechat_draft_articles_per_draft']['default'], '8')
+        self.assertEqual(events['workflow_dispatch']['inputs']['wechat_draft_articles_per_draft']['default'], '3')
         jobs = daily['jobs']
-        self.assertIn("wechat_draft_articles_per_draft || '8'", jobs['resolve-inputs']['steps'][0]['run'])
+        self.assertIn("wechat_draft_articles_per_draft || '3'", jobs['resolve-inputs']['steps'][0]['run'])
         steps = jobs['process-shard']['steps']
         upload = next(step for step in steps if step.get('id') == 'upload_shard')
         signal = next(step for step in steps if step.get('name') == 'Wake short progressive WeChat publisher')
