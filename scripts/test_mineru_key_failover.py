@@ -6,6 +6,7 @@ import unittest
 
 import mineru_task_ledger as m
 import test_mineru_task_ledger as fixture
+from mineru_completed_child_reuse import result_lineage
 from mineru_terminal_recovery import TerminalRecovery
 
 TOKENS = [('MINER_U' + ('' if i == 1 else '_' + str(i)), 'test-private-key-' + str(i))
@@ -38,7 +39,7 @@ class FailoverTests(unittest.TestCase):
     setUp = fixture.LedgerTests.setUp
 
     def ledger(self, *, enabled=True, forbid=False, **kwargs):
-        return m.Ledger(self.store, self.provider, 'daily', 'https://mineru.net', fixture.OPTIONS, TOKENS,
+        return m.Ledger(self.store, self.provider, 'dropbox', 'https://mineru.net', fixture.OPTIONS, TOKENS,
             clock=self.clock.time, sleep=self.clock.sleep, wallclock=self.clock.time,
             key_failover=enabled, forbid_new_submissions=forbid, **kwargs)
 
@@ -76,6 +77,16 @@ class FailoverTests(unittest.TestCase):
         self.assertEqual((summary['provider_posts'], len(self.provider.posts)), (0, 2))
         self.assertEqual(self.control()['winners'], chosen)
         self.assertEqual({row['_recovery_lineage']['child_ordinal'] for _, row in rows}, {1})
+        ledger = self.ledger()
+        root, _ = ledger._read_batch(self.root_key)
+        for (path, row), source in zip(rows, self.inputs):
+            self.assertEqual(path, source[0])
+            binding = ledger.bind(*source)
+            self.assertEqual(result_lineage(ledger, binding, root, row), row['_recovery_lineage'])
+        tampered = copy.deepcopy(rows[0][1])
+        tampered['_recovery_lineage']['batch_id'] = root['batch_id']
+        with self.assertRaisesRegex(m.LedgerError, 'key failover lineage mismatch'):
+            result_lineage(ledger, ledger.bind(*self.inputs[0]), root, tampered)
         self.assert_original()
 
     def test_fourth_key_can_finish_after_first_three_stall(self):

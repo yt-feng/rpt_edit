@@ -1458,10 +1458,10 @@ def recoverable_provider_error(error):
     return False
 
 
-def institution_metadata_failure_fields(ledger, path, source_name, args, error):
+def ocr_metadata_failure_fields(ledger, path, source_name, args, error):
     """Permit independent OCR only for the frozen opt-in source's rejected metadata."""
     if not (args.institution_ocr_fallback and args.chart_source_only
-            and ledger.scope == 'institution' and isinstance(error, FigureSourceError)):
+            and ledger.scope in {'institution', 'consulting'} and isinstance(error, FigureSourceError)):
         return {}
     from institution_ocr_fallback import METADATA_FAILURES
     if error.category not in METADATA_FAILURES:
@@ -1469,7 +1469,7 @@ def institution_metadata_failure_fields(ledger, path, source_name, args, error):
     binding = ledger.bind(path, source_name)
     frozen = {key: binding[key] for key in ('source', 'sha256', 'size')}
     if frozen not in args._ocr_fallback_inventory['sources']:
-        raise LedgerError('Institution metadata fallback source binding changed')
+        raise LedgerError('Metadata fallback source binding changed')
     return {'original_pdf_sha256': binding['sha256'],
             'mineru_figure_failure_category': error.category}
 
@@ -1528,7 +1528,7 @@ def preserve_institution_completed_sources(ledger, sources, output_dir, args):
                 raise LedgerError('Institution partial source materialization incomplete')
             retained += 1
         except Exception as error:
-            fields = institution_metadata_failure_fields(ledger, path, source_name, args, error)
+            fields = ocr_metadata_failure_fields(ledger, path, source_name, args, error)
             if fields:
                 row = successful[Path(path)]
                 status = {'source_pdf': Path(path).name, 'mineru_state': row.get('state'),
@@ -1574,10 +1574,12 @@ def main() -> int:
         from institution_original_cache import preserve_sources
         preserve_sources(ledger, sources)
         dependencies_enabled = os.environ.get('INSTITUTION_DEPENDENCY_BACKLOG') == '1'
-        institution_ocr_fallback = bool(args.institution_ocr_fallback)
-        if institution_ocr_fallback and (not dependencies_enabled or ledger.scope != 'institution'
-                                        or not args.chart_source_only or not args.ocr_fallback_inventory_path):
-            raise LedgerError('Institution OCR fallback requires source-only extraction and exact dependency inventory')
+        institution_ocr_fallback = args.institution_ocr_fallback and ledger.scope == 'institution' and dependencies_enabled
+        consulting_ocr_fallback = (args.institution_ocr_fallback and ledger.scope == 'consulting'
+                                   and not dependencies_enabled and isinstance(ledger.store, R2Store))
+        if args.institution_ocr_fallback and (not (institution_ocr_fallback or consulting_ocr_fallback)
+                                            or not args.chart_source_only or not args.ocr_fallback_inventory_path):
+            raise LedgerError('Original PDF OCR fallback requires source-only extraction and exact source inventory')
         deferred_sources = 0
         def record_deferred(count):
             if args.provider_outcome_path:
@@ -1593,11 +1595,14 @@ def main() -> int:
                 return 0
             eligible_paths = {Path(path) for path, _ in sources}
             pdfs = [path for path in pdfs if path in eligible_paths]
-        if institution_ocr_fallback:
-            args._ocr_fallback_inventory = {'schema': 1, 'sources': [
+        def ocr_inventory():
+            return {'schema': 1, 'sources': [
                 {key: binding[key] for key in ('source', 'sha256', 'size')}
                 for binding in (ledger.bind(path, name) for path, name in sources)
             ], 'deferred_sources': deferred_sources}
+
+        if institution_ocr_fallback:
+            args._ocr_fallback_inventory = ocr_inventory()
         results, task_summary = run_source_batch(ledger,
             sources,
             timeout=args.poll_timeout, interval=args.poll_interval,
@@ -1641,6 +1646,8 @@ def main() -> int:
             return 2 if task_summary["failed"] or original_failed else 75
 
         args._mineru_result_cache, args._mineru_result_contexts = result_cache_contexts(ledger, sources, successful_rows)
+        if consulting_ocr_fallback:
+            args._ocr_fallback_inventory = ocr_inventory()
 
         summary: list[dict[str, Any]] = []
         successful_reports = 0
@@ -1660,7 +1667,7 @@ def main() -> int:
                     "error": f"Report generation failed: {exc}",
                 }
                 source_name = next(name for path, name in sources if Path(path) == pdf_path)
-                status.update(institution_metadata_failure_fields(ledger, pdf_path, source_name, args, exc))
+                status.update(ocr_metadata_failure_fields(ledger, pdf_path, source_name, args, exc))
                 item_dir = output_dir / slug(pdf_path.name)
                 item_dir.mkdir(parents=True, exist_ok=True)
                 (item_dir / "status.json").write_text(
@@ -1671,7 +1678,7 @@ def main() -> int:
                 if args._mineru_result_cache is not None and isinstance(exc, (ResultCacheError, NetworkStop, ConsumerError)):
                     # No retries, CDN fallback or later paid generation after a
                     # failed private cache read or strict result download.
-                    if (recoverable_provider_error(exc)
+                    if (not consulting_ocr_fallback and recoverable_provider_error(exc)
                             and all(not item.get("error") or item.get("mineru_figure_failure_category")
                                     for item in summary)):
                         record_provider_outcome(args, "mineru_unavailable")
@@ -1694,7 +1701,7 @@ def main() -> int:
         (output_dir / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
         log(f"Done. Results written to {output_dir}; successful_reports={successful_reports}.")
         failures = [item for item in summary if item.get('error')]
-        if (institution_ocr_fallback and failures
+        if (args.institution_ocr_fallback and failures
                 and all(item.get('mineru_figure_failure_category') for item in failures)):
             # The exact original bytes remain independently eligible for OCR;
             # rejected metadata and every other integrity failure stay rejected.

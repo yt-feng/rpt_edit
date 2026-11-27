@@ -64,8 +64,11 @@ class BacklogPipelineTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         self.inputs = self.root/'pdfs'; self.inputs.mkdir()
         self.output = self.root/'out'; self.outcome = self.root/'outcome.json'
-        self.r2 = WithHeadR2(); self.store = m.R2Store('institution', client=self.r2, bucket='private-test')
-        self.ledger = RecordingLedger(self.store, None, 'institution', 'https://mineru.net',
+        self.seed_sources('institution')
+
+    def seed_sources(self, scope):
+        self.r2 = WithHeadR2(); self.store = m.R2Store(scope, client=self.r2, bucket='private-test')
+        self.ledger = RecordingLedger(self.store, None, scope, 'https://mineru.net',
                                      {'model': 'vlm', 'language': 'en', 'ocr': True}, [('MINER_U', 'test-token')])
         self.ledger.run_modes = []
         items = {}
@@ -78,7 +81,7 @@ class BacklogPipelineTests(unittest.TestCase):
                 path.write_bytes(document.tobytes(no_new_id=True))
             binding = self.ledger.bind(path, path.name); items[name] = binding
             key = 'batches/' + ('a' if name == 'good' else 'b') * 32
-            row = {'schema': 1, 'key': key, 'scope': 'institution', 'endpoint': 'https://mineru.net',
+            row = {'schema': 1, 'key': key, 'scope': scope, 'endpoint': 'https://mineru.net',
                    'options': self.ledger.options, 'token_identity': next(iter(self.ledger.tokens)),
                    'files': [binding], 'state': 'terminal', 'batch_id': name}
             self.store.put(key, row)
@@ -89,8 +92,10 @@ class BacklogPipelineTests(unittest.TestCase):
     def run_primary(self, *extra_args, figure_producer=None):
         argv = ['primary', '--input-dir', str(self.inputs), '--output-dir', str(self.output),
                 '--chart-source-only', '--provider-outcome-path', str(self.outcome), *extra_args]
+        institution = self.ledger.scope == 'institution'
         with (patch.object(sys, 'argv', argv),
-              patch.dict(os.environ, {'MINER_U': 'test-token', 'INSTITUTION_DEPENDENCY_BACKLOG': '1'}),
+              patch.dict(os.environ, {'MINER_U': 'test-token',
+                                      'INSTITUTION_DEPENDENCY_BACKLOG': '1' if institution else '0'}),
               patch.object(backlog, 'ALLOWED', frozenset({failure_message_hash(ERROR)})),
               patch.object(primary, 'from_environment', return_value=self.ledger),
               patch.object(primary, 'download_once', return_value=result_zip()) as download,
@@ -99,7 +104,7 @@ class BacklogPipelineTests(unittest.TestCase):
               patch.object(primary, 'safe_generate_text', side_effect=AssertionError('No paid copy in source extraction')),
               patch.object(primary, 'log'), patch('sys.stderr', new_callable=io.StringIO)):
             code = primary.main()
-            holds = backlog.configured(self.ledger)[1].entries()
+            holds = backlog.configured(self.ledger)[1].entries() if institution else {}
         return code, download.call_count, holds
 
     def test_new_known_failure_defers_one_root_and_releases_complete_sibling(self):
@@ -188,10 +193,17 @@ class BacklogPipelineTests(unittest.TestCase):
                  'full_zip_url': 'https://results.invalid/' + batch_id}]
 
     def test_metadata_only_rejection_mints_exact_opted_in_ocr_inventory(self):
+        self.check_metadata_ocr('figure_metadata_invalid')
+
+    def test_consulting_ambiguous_metadata_uses_bound_original_ocr(self):
+        self.seed_sources('consulting')
+        self.check_metadata_ocr('figure_metadata_ambiguous')
+
+    def check_metadata_ocr(self, category):
         inventory = self.root / 'ocr-inventory.json'
         def reject_bad(_raw, assets, *_args, **_kwargs):
             if assets.parent.name == 'bad':
-                raise primary.FigureSourceError('figure_metadata_invalid')
+                raise primary.FigureSourceError(category)
             return []
         with patch.object(self.provider, 'poll', side_effect=self.completed_originals):
             code, downloads, holds = self.run_primary('--institution-ocr-fallback',
@@ -202,7 +214,7 @@ class BacklogPipelineTests(unittest.TestCase):
         bad = self.output / 'bad'
         self.assertTrue((bad / 'source_mineru.md').exists())
         status = json.loads((bad / 'status.json').read_bytes())
-        self.assertEqual(status['mineru_figure_failure_category'], 'figure_metadata_invalid')
+        self.assertEqual(status['mineru_figure_failure_category'], category)
         self.assertEqual(status['original_pdf_sha256'], self.ledger.bind(*self.sources[1])['sha256'])
         self.assertTrue(status['error'])
         self.assertTrue((self.output / 'good' / 'source_mineru.md').is_file())

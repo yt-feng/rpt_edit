@@ -150,6 +150,11 @@ jobs:
             --force-reprocess "${{ github.event.inputs.force_reprocess || 'false' }}" \
             2>&1 | tee consulting_fetch_progress.log
 
+      - name: Install consulting OCR fallback tools
+        if: ${{ steps.fetch.outputs.pdf_count != '0' && inputs.legacy_recovery_request == '' }}
+        timeout-minutes: 8
+        run: bash scripts/install_runner_apt_packages.sh tesseract-ocr tesseract-ocr-eng tesseract-ocr-chi-sim
+
       - name: Extract MinerU source and original images without paid copy
         if: ${{ steps.fetch.outputs.pdf_count != '0' && inputs.legacy_recovery_request == '' }}
         env:
@@ -178,6 +183,7 @@ jobs:
             --pending-task-attempts 3 \
             --extraction-timeout 2400 \
             --chart-source-only \
+            --institution-ocr-fallback \
             --keep-mineru-raw \
             --skip-existing "$SKIP_EXISTING" 2>&1 | tee consulting_xhs_progress.log
 
