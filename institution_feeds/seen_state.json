@@ -613,18 +613,6 @@
       "first_seen": "2026-08-07",
       "status": "too_old"
     },
-    "imf:2225617de56707f55e44e626b584805c8d52061ff3f71d43470d2c9a9281": {
-      "first_seen": "2026-07-29",
-      "status": "too_old"
-    },
-    "imf:a763473821a742f64e9c6418420c0070693792d2bd00027c0bdafba0c88d": {
-      "first_seen": "2026-07-29",
-      "status": "too_old"
-    },
-    "oecd:https://www.oecd.org/en/publications/oecd-methodology-to-estimate-seea-air-emission-accounts_6fc092d8-en.html": {
-      "first_seen": "2026-07-29",
-      "status": "downloaded"
-    },
     "oecd:https://www.oecd.org/en/publications/promoting-the-development-of-the-semiconductor-ecosystem-in-panama_50f1e10d-en.html": {
       "first_seen": "2026-08-07",
       "status": "downloaded"
@@ -3800,6 +3788,34 @@
     "wto:https://www.wto.org/english/news_e/news26_e/val_20nov26_564_e.htm": {
       "first_seen": "2026-11-25",
       "status": "no_pdf"
+    },
+    "bis:https://www.bis.org/publications/fsi-insight-guidelines-counterparty-credit-risk-management-executive-summary": {
+      "first_seen": "2026-11-27",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/work1399.htm": {
+      "first_seen": "2026-11-27",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/fsi/publ/insights79.htm": {
+      "first_seen": "2026-11-27",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/review-maritime-transport-2026": {
+      "first_seen": "2026-11-27",
+      "status": "downloaded"
+    },
+    "unctad:https://unctad.org/publication/reducing-poverty-and-inequality-uganda-policy-analysis-and-options": {
+      "first_seen": "2026-11-27",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/agng_23nov26_565_e.htm": {
+      "first_seen": "2026-11-27",
+      "status": "no_pdf"
+    },
+    "bruegel:12746": {
+      "first_seen": "2026-11-27",
+      "status": "downloaded"
     }
   }
 }
