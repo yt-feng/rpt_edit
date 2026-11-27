@@ -99,9 +99,12 @@ successful delivery receipt records verified article counts by account.
 New account uploads use at most three articles per draft. Each account's
 eligible articles are divided into at least three nonempty drafts when it has
 three or more articles, with group sizes differing by at most one. An account
-with fewer than three articles gets one article per draft. An interrupted
-upload keeps its already accepted group boundaries before splitting the
-remaining articles.
+with fewer than three articles gets one article per draft. For the default
+Dropbox Daily upload, the first three groups per account hold at most two
+articles each, including the lead. Later groups hold up to three. The
+progressive publisher reuses the original plan on retry and reports verified
+draft counts by account. Other account uploads retain accepted groups when
+splitting the remaining articles after an interruption.
 
 The readback workflow can regroup a selected publication day's remaining
 receipt-bound drafts. It snapshots current draft content and editor changes

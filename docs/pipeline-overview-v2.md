@@ -750,13 +750,15 @@ contract are documented in [Blog SEO and WeChat Output Contract](blog-seo-wechat
 ## Daily article delivery and translation overlap
 
 Daily freezes the complete selected source inventory before article generation.
-The three-account draft plan normally has three groups per account, with an
-eight-article group limit: 60 sources become 20 per account in 7/7/6 groups;
-80 sources require ten groups of eight, assigned as 4/3/3 groups. Existing
-accepted routes and draft IDs remain fixed during retries. Each completed
-article creates a private ready checkpoint; a short independent publisher sends
-each complete group while other PDF and article jobs continue. The existing
-90-second per-account draft interval is persisted across publisher invocations.
+The default plan gives each account at least three separate drafts when it
+has three or more sources. Its first three groups each contain one or two
+articles including the lead. Later groups can contain up to three. For
+example, an account with 15 sources gets groups of 2/2/2/3/3/3. The planner
+alternates accounts when assigning fresh sources so each account can receive
+its first three leads early. Retries use the original batch plan and draft IDs.
+Each completed article creates a private ready checkpoint. A short independent
+publisher sends each complete group while other PDF and article jobs continue.
+It observes the 90-second per-account draft interval across invocations.
 
 Normal PDF translation starts after complete source generation and does not
 wait for WeChat upload. Only the recovery branch waits for the original

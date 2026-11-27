@@ -21,6 +21,7 @@ from private_workflow_handoff import build_r2_client, r2_bucket, download_direct
 from run_pdf_to_xhs_in_batches import unique_batch_name, slug
 from wechat_account_routing import read_routes, ROUTING_KEY, parse_source_date, route_start_date
 from wechat_accounts import ACCOUNT_NAMES
+from wechat_draft_grouping import DEFAULT_ARTICLES_PER_DRAFT, MIN_DRAFTS_PER_ACCOUNT
 
 
 class ProgressiveError(ValueError):
@@ -110,40 +111,55 @@ def load_plan(client, bucket, source_run_id, date_folder, source_execution_sha, 
     return plan
 
 
+def progressive_group_sizes(article_count, capacity, minimum_groups=0):
+    if not article_count:
+        return []
+    leads = min(MIN_DRAFTS_PER_ACCOUNT, article_count)
+    small_first = capacity == DEFAULT_ARTICLES_PER_DRAFT
+    # The first three drafts can each use two of the usual three article slots.
+    slots_needed = article_count + (leads if small_first else 0)
+    groups = max(leads, minimum_groups, (slots_needed + capacity - 1) // capacity)
+    size, extra = divmod(article_count, groups)
+    small, large = [size] * (groups - extra), [size + 1] * extra
+    return small + large if small_first else large + small
+
+
 def balanced_route_reservation(client, bucket, route_ids, capacity):
-    """Reserve the smallest globally balanced group inventory without moving old sources."""
+    """Reserve source routes and spread each account's articles across its drafts."""
     accounts = tuple(ACCOUNT_NAMES)
     for attempt in range(6):
         assigned, version = read_routes(client, bucket)
         before = dict(assigned)
         existing = {account: sum(assigned.get(source) == account for source in route_ids) for account in accounts}
         total = len(route_ids)
-        count = max(min(len(accounts) * 3, total), (total + capacity - 1) // capacity)
-        group_counts = {account: (existing[account] + capacity - 1) // capacity for account in accounts}
-        count = max(count, sum(group_counts.values()))
-        for _ in range(count - sum(group_counts.values())):
-            account = min(accounts, key=lambda item: (group_counts[item], accounts.index(item)))
-            group_counts[account] += 1
+        count = max(min(len(accounts) * MIN_DRAFTS_PER_ACCOUNT, total), (total + capacity - 1) // capacity)
+        slots = {account: (existing[account] + capacity - 1) // capacity for account in accounts}
+        for _ in range(count - sum(slots.values())):
+            account = min(accounts, key=slots.get)
+            slots[account] += 1
+        # Even a heavily preassigned manifest may have enough fresh sources
+        # left to give every account three distinct leads.
+        limits = {account: max(MIN_DRAFTS_PER_ACCOUNT, slots[account] * capacity) for account in accounts}
         quotas = dict(existing)
         for _ in range(total - sum(quotas.values())):
-            eligible = [account for account in accounts if quotas[account] < group_counts[account] * capacity]
-            account = min(eligible, key=lambda item: (quotas[item], accounts.index(item)))
+            eligible = [account for account in accounts if quotas[account] < limits[account]]
+            account = min(eligible, key=quotas.get)
             quotas[account] += 1
-        group_counts = {account: min(group_counts[account], quotas[account]) for account in accounts}
-        for _ in range(count - sum(group_counts.values())):
-            eligible = [account for account in accounts if group_counts[account] < quotas[account]]
-            account = min(eligible, key=lambda item: (group_counts[item], accounts.index(item)))
-            group_counts[account] += 1
+        # Derive group counts from the final quotas. A retry that reads the
+        # reserved routes before the plan was saved must recreate the same groups.
+        group_counts = {account: len(progressive_group_sizes(quotas[account], capacity)) for account in accounts}
+        if capacity != DEFAULT_ARTICLES_PER_DRAFT:
+            # Preserve the legacy global draft target for explicit group sizes.
+            for _ in range(count - sum(group_counts.values())):
+                eligible = [account for account in accounts if group_counts[account] < quotas[account]]
+                account = min(eligible, key=group_counts.get)
+                group_counts[account] += 1
         # Keep fresh fixed groups contiguous in source order, so the first group
         # need not wait for three accounts' interleaved reports to finish.
         unassigned = [source for source in route_ids if source not in assigned]
         remaining = {account: quotas[account] - existing[account] for account in accounts}
-        batches = {account: [] for account in accounts}
-        for account in accounts:
-            count = min(group_counts[account], quotas[account])
-            if count:
-                size, extra = divmod(quotas[account], count)
-                batches[account] = [size + int(index < extra) for index in range(count)]
+        batches = {account: progressive_group_sizes(quotas[account], capacity, group_counts[account])
+                   for account in accounts}
         offset = 0
         for index in range(max(map(len, batches.values()), default=0)):
             for account in accounts:
@@ -207,9 +223,7 @@ def create_plan(manifest, source_run_id, date_folder, source_execution_sha, repo
     for account in dict.fromkeys(row['account'] for row in sources[:limit]):
         source_ids = [row['source_id'] for row in sources[:limit] if row['account'] == account]
         if account is not None:
-            count = min(len(source_ids), group_counts[account])
-            size, extra = divmod(len(source_ids), count)
-            sizes = [size + int(index < extra) for index in range(count)]
+            sizes = progressive_group_sizes(len(source_ids), articles_per_draft, group_counts[account])
         else:
             sizes = [min(articles_per_draft, len(source_ids) - index) for index in range(0, len(source_ids), articles_per_draft)]
         offset = 0
@@ -429,6 +443,15 @@ def upload_group(plan, group, directories, directory, client, bucket, uploader_a
         uploader.xhs_article_title_metadata = original_metadata
 
 
+def verified_drafts_by_account(drafts):
+    counts = dict.fromkeys(ACCOUNT_NAMES.values(), 0)
+    for draft in drafts:
+        account = draft.get('account')
+        if account in ACCOUNT_NAMES and draft.get('media_id') and draft.get('status') == 'verified':
+            counts[ACCOUNT_NAMES[account]] += 1
+    return counts
+
+
 def aggregate(plan, directories, output_dir, workspace):
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -488,6 +511,8 @@ def aggregate(plan, directories, output_dir, workspace):
                'articles': [articles[source] for source in selected if source in articles],
                'skipped_title_policy_count': len(policies), 'skipped_title_policy': [policies[source] for source in selected if source in policies],
                'skipped_generation_failure_count': 0, 'skipped_generation_failures': []}
+    if any(group['account'] is not None for group in plan['groups']):
+        summary['verified_drafts_by_account'] = verified_drafts_by_account(drafts)
     write_json(output_dir / 'wechat_draft_summary.json', summary)
     return summary
 
@@ -630,6 +655,7 @@ def validate_progressive_delivery(output_dir, plan, source_dirs=None, *, live=Fa
               'editorial_changes_preserved': any(row.get('editorial_changes_preserved') for row in presence),
               'progressive_plan_sha256': plan['plan_sha256']}
     if any(source['account'] is not None for source in selected.values()):
+        result['verified_drafts_by_account'] = verified_drafts_by_account(rows)
         result['verified_articles_by_account'] = {name: sum(selected[source]['account'] == account for source in article_ids) for account, name in ACCOUNT_NAMES.items()}
     write_json(output_dir / 'delivery_verification.json', result)
     return result
@@ -871,7 +897,11 @@ def main(argv=None):
                 save_complete(plan, output_dir, client, bucket, directories)
             print(json.dumps({'state': 'complete', 'article_count': result['article_count'], 'draft_count': result['draft_count']}))
             return 0
-        print(json.dumps({'state': 'partial', 'ready_source_count': len(directories), 'article_count': summary['selected_count'], 'draft_count': summary['draft_count']}))
+        progress = {'state': 'partial', 'ready_source_count': len(directories),
+                    'article_count': summary['selected_count'], 'draft_count': summary['draft_count']}
+        if 'verified_drafts_by_account' in summary:
+            progress['verified_drafts_by_account'] = summary['verified_drafts_by_account']
+        print(json.dumps(progress, ensure_ascii=False))
         return 2 if args.complete_final else 0
 
 
