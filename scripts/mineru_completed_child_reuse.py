@@ -9,6 +9,7 @@ from __future__ import annotations
 import copy
 from pathlib import Path
 
+from mineru_key_failover import KeyFailover
 from mineru_task_ledger import DONE, FAILED, LedgerError, R2Store, encoded, exact_json, schema_v1
 from mineru_terminal_recovery import AUTOMATIC_POLICY, POLICY, TerminalRecovery, task_identity
 from mineru_result_cache import OPTIONS, SUPPORTED_SCOPES, identity
@@ -57,6 +58,18 @@ def result_lineage(ledger, binding, root, row):
         if not exact_json(lineage, original):
             raise LedgerError('Completed result original lineage mismatch')
         return original
+    child, _ = ledger._read_batch(lineage['batch_key'])
+    if 'key_failover_parent' in child:
+        failover = KeyFailover(ledger, root)
+        control, _, children = failover.read()
+        winner = (control or {}).get('winners', {}).get(binding['id'])
+        if winner != {'key': child['key'], 'ordinal': lineage['child_ordinal']}:
+            raise LedgerError('Completed result key failover winner mismatch')
+        _, selected, _ = children[winner['ordinal'] - 1]
+        expected = failover.lineage(row, selected, winner['ordinal'])['_recovery_lineage']
+        if not exact_json(lineage, expected):
+            raise LedgerError('Completed result key failover lineage mismatch')
+        return expected
     terminal, key, control = _controller(ledger, root)
     if control is None or lineage['child_ordinal'] > len(control['children']):
         raise LedgerError('Completed result recovery lineage is absent')

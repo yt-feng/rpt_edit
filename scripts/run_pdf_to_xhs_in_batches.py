@@ -94,7 +94,15 @@ def is_already_converted(item_dir: Path, *, chart_source_only: bool = False, gen
     required = CHART_SOURCE_MARKERS if chart_source_only else {"source_mineru.md", *REPORT_MARKERS}
     if generate_xhs and not chart_source_only:
         required = {*required, "note.md"}
-    return item_dir.is_dir() and all((item_dir / name).exists() for name in required)
+    if not item_dir.is_dir() or not all((item_dir / name).exists() for name in required):
+        return False
+    if not chart_source_only:
+        return True
+    try:
+        status = json.loads((item_dir / "status.json").read_bytes())
+    except (OSError, ValueError):
+        return False
+    return isinstance(status, dict) and not status.get("error")
 
 
 def count_generated_report_dirs(output_dir: Path, *, chart_source_only: bool = False, generate_xhs: bool = False) -> int:
@@ -239,7 +247,7 @@ def run_batch(batch_index: int, batch: list[PDFRecord], args: argparse.Namespace
                                          tmp_input, Path(args.output_dir), deadline=args._institution_ocr_deadline)
             deferred_sources = ocr_recovery["deferred_sources"]
             returncode = result.returncode if ocr_recovery["failed_reports"] else 0
-            log(f"Institution OCR continuation: {ocr_recovery['ocr_reports']} OCR, "
+            log(f"Original PDF OCR continuation: {ocr_recovery['ocr_reports']} OCR, "
                 f"{ocr_recovery['reused_reports']} verified existing, {ocr_recovery['failed_reports']} failed.")
         return {
             "batch_index": batch_index,
@@ -390,13 +398,16 @@ def main() -> int:
     parser.add_argument("--extraction-timeout", type=int, default=0,
                         help="Shared wall-clock seconds for all batches and continuations (0 = existing unbounded wrapper behavior).")
     parser.add_argument("--institution-ocr-fallback", action="store_true",
-                        help="Continue eligible institution sources with page OCR after proved provider-only failure.")
+                        help="Continue eligible institution or consulting sources with original PDF OCR.")
     parser.add_argument("--watermark", default="KC桌面")
     args = parser.parse_args()
-    if args.institution_ocr_fallback and (not args.chart_source_only
-            or os.environ.get('INSTITUTION_DEPENDENCY_BACKLOG') != '1'
-            or os.environ.get('MINERU_FORBID_NEW_SUBMISSIONS') == '1'):
-        parser.error('--institution-ocr-fallback requires normal institution source-only extraction')
+    if args.institution_ocr_fallback:
+        institution = os.environ.get('INSTITUTION_DEPENDENCY_BACKLOG') == '1'
+        consulting = (os.environ.get('MINERU_CHECKPOINT_SCOPE') == 'consulting'
+                      and os.environ.get('MINERU_LEDGER_BACKEND') == 'r2')
+        if (not args.chart_source_only or not (institution or consulting)
+                or os.environ.get('MINERU_FORBID_NEW_SUBMISSIONS') == '1'):
+            parser.error('--institution-ocr-fallback requires normal institution or consulting source-only extraction')
     if not 0 <= args.extraction_timeout <= 7200:
         parser.error('--extraction-timeout must be between zero and 7200 seconds')
     args._extraction_deadline = time.monotonic() + args.extraction_timeout if args.extraction_timeout else None

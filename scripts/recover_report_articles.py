@@ -28,6 +28,12 @@ SHA = re.compile(r"[a-f0-9]{64}")
 MAX_FILE_BYTES = 128 * 1024 * 1024
 MAX_FILES = 30000
 MAX_PRIVATE_FAILURE_BYTES = 128 * 1024
+# The consulting OCR fallback changes only the extraction CLI in the producer.
+# Keep existing article checkpoints compatible with that exact producer revision.
+EXTRACTION_ONLY_PRODUCER_HASHES = {
+    "4eae98ddc2c6766f2d45ea3973a26b4714c6c7b5272fd66468c0bfc2e5e945fb":
+        "e7181d79e089903742619adcfbd4f0d642a0a0abf417630b3327fcd57183814c",
+}
 PRIVATE_EXCEPTION_TYPES = {
     "ArticleRecoveryError", "ProgressError", "TimeoutError", "ConnectionError", "HTTPError",
     "ReadTimeout", "ConnectTimeout", "SSLError", "RequestException", "ChunkedEncodingError",
@@ -236,7 +242,10 @@ def generation_contract(args):
     files = ("pdf_to_xhs_batch.py", "wechat_editorial_binding.py", "wechat_article_quality.py",
              "wechat_title_optimizer.py", "title_source_claim_support.py", "sensitive_content_guard.py", "institution_names.py",
              "article_generation_progress.py", "legacy_article_title_resume.py")
-    value = {"files": {name: digest((Path(__file__).parent / name).read_bytes()) for name in files},
+    file_hashes = {name: digest((Path(__file__).parent / name).read_bytes()) for name in files}
+    producer_hash = file_hashes["pdf_to_xhs_batch.py"]
+    file_hashes["pdf_to_xhs_batch.py"] = EXTRACTION_ONLY_PRODUCER_HASHES.get(producer_hash, producer_hash)
+    value = {"files": file_hashes,
         "prompt_sha256": digest(Path(args.wechat_prompt_template).read_bytes()),
         "options": {key: getattr(args, key) for key in
                     ("model", "deepseek_base_url", "wechat_length", "wechat_prompt_chars", "community_cta", "wechat_title_refine")}}

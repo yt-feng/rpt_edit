@@ -29,11 +29,12 @@ def require(condition):
 
 
 class KeyFailover:
-    def __init__(self, ledger, root, paths):
+    def __init__(self, ledger, root, paths=None):
         self.ledger, self.store, self.root, self.paths = ledger, ledger.store, root, paths
         self.key = 'keyfailovers/' + root['key'].split('/')[1]
         self.bindings = {item['id']: item for item in root['files']}
-        require(set(paths) == set(self.bindings))
+        if paths is not None:
+            require(set(paths) == set(self.bindings))
         self.identity = task_identity(root)
         self.last_rows = {}
 
@@ -41,8 +42,9 @@ class KeyFailover:
         root, _ = self.ledger._read_batch(self.root['key'])
         require(task_identity(root) == self.identity)
         for sid, item in self.bindings.items():
-            raw = Path(self.paths[sid]).read_bytes()
-            require(len(raw) == item['size'] and digest(raw) == item['sha256'])
+            if self.paths is not None:
+                raw = Path(self.paths[sid]).read_bytes()
+                require(len(raw) == item['size'] and digest(raw) == item['sha256'])
             claim, _ = self.store.get('sources/' + sid)
             require(schema_v1(claim) and exact_json(claim.get('binding'), item)
                     and claim.get('batch_key') == self.root['key'])
@@ -108,6 +110,7 @@ class KeyFailover:
         return result
 
     def run(self, *, timeout, interval=15, queue_budget=300, initial_waited=False, done_verifier=None):
+        require(self.paths is not None)
         require(all(type(x) in {int, float} and math.isfinite(x) and x > 0 for x in (timeout, interval)))
         require(type(queue_budget) in {int, float} and math.isfinite(queue_budget) and queue_budget >= 0)
         require(type(initial_waited) is bool)
