@@ -217,6 +217,7 @@ class BacklogPipelineTests(unittest.TestCase):
         self.assertEqual(status['mineru_figure_failure_category'], category)
         self.assertEqual(status['original_pdf_sha256'], self.ledger.bind(*self.sources[1])['sha256'])
         self.assertTrue(status['error'])
+        self.assertFalse(wrapper.is_already_converted(bad, chart_source_only=True))
         self.assertTrue((self.output / 'good' / 'source_mineru.md').is_file())
         self.assertEqual((self.provider.posts, self.provider.uploads), (0, 0))
         import institution_ocr_fallback as ocr

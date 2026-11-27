@@ -94,7 +94,15 @@ def is_already_converted(item_dir: Path, *, chart_source_only: bool = False, gen
     required = CHART_SOURCE_MARKERS if chart_source_only else {"source_mineru.md", *REPORT_MARKERS}
     if generate_xhs and not chart_source_only:
         required = {*required, "note.md"}
-    return item_dir.is_dir() and all((item_dir / name).exists() for name in required)
+    if not item_dir.is_dir() or not all((item_dir / name).exists() for name in required):
+        return False
+    if not chart_source_only:
+        return True
+    try:
+        status = json.loads((item_dir / "status.json").read_bytes())
+    except (OSError, ValueError):
+        return False
+    return isinstance(status, dict) and not status.get("error")
 
 
 def count_generated_report_dirs(output_dir: Path, *, chart_source_only: bool = False, generate_xhs: bool = False) -> int:
