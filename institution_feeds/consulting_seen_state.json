@@ -1,38 +1,6 @@
 {
   "version": 1,
   "items": {
-    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/business%20functions/quantumblack/our%20insights/the%20state%20of%20ai/2025/the-state-of-ai-how-organizations-are-rewiring-to-capture-value_final.pdf?trk=public_post_comment-text": {
-      "first_seen": "2026-07-29",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/built-to-change-how-cities-compete-for-the-future": {
-      "first_seen": "2026-07-29",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/improving-governance-in-joint-ventures": {
-      "first_seen": "2026-07-29",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/how-us-auto-dealers-can-stay-ahead-as-margins-tighten": {
-      "first_seen": "2026-07-29",
-      "status": "no_pdf"
-    },
-    "bcg:https://www.bcg.com/publications/2026/air-travel-outlook-revenues-and-costs-are-rising": {
-      "first_seen": "2026-07-29",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/strait-of-hormuz-chokepoint-impacts-future-business": {
-      "first_seen": "2026-07-29",
-      "status": "no_pdf"
-    },
-    "bcg:https://www.bcg.com/publications/2026/consumers-are-feeling-squeezed-heres-how-cpgs-can-adapt": {
-      "first_seen": "2026-07-29",
-      "status": "downloaded"
-    },
-    "bcg:https://www.bcg.com/publications/2026/as-scale-grows-so-does-investor-ambition": {
-      "first_seen": "2026-07-29",
-      "status": "downloaded"
-    },
     "bcg:https://www.bcg.com/publications/2026/industrial-ai-commercialization": {
       "first_seen": "2026-07-30",
       "status": "no_pdf"
@@ -1579,6 +1547,26 @@
     },
     "bcg:https://www.bcg.com/publications/2026/ai-reshaping-corporate-growth-strategy": {
       "first_seen": "2026-11-26",
+      "status": "downloaded"
+    },
+    "mckinsey:https://www.mckinsey.com/~/media/mckinsey/industries/financial%20services/our%20insights/asset%20management%202026%20plenty%20for%20the%20few/asset-management-2026-plenty-for-the-few.pdf": {
+      "first_seen": "2026-11-27",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/middle-east-the-gcc-ai-pulse-2026-from-ai-ambition-to-advantage": {
+      "first_seen": "2026-11-27",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/india-how-can-bpo-providers-compete-in-the-post-agentic-world": {
+      "first_seen": "2026-11-27",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/india-climate-sustainability-capital-opportunity": {
+      "first_seen": "2026-11-27",
+      "status": "downloaded"
+    },
+    "bcg:https://www.bcg.com/publications/2026/africa-from-crisis-to-resilience-sustainable-water-opportunity": {
+      "first_seen": "2026-11-27",
       "status": "downloaded"
     }
   }
