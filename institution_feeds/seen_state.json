@@ -641,14 +641,6 @@
       "first_seen": "2026-08-07",
       "status": "too_old"
     },
-    "imf:4b869e24d4363c8cbb2f83b838a704f74bb8c3be7742d17755ed17273d82": {
-      "first_seen": "2026-07-30",
-      "status": "too_old"
-    },
-    "imf:168c6341bf241d84b3489d0eba7246f6f3e50d53e6faadc4fffa41ac984e": {
-      "first_seen": "2026-07-30",
-      "status": "too_old"
-    },
     "imf:588dc4ae03304b6ba929797093ec33369d2c33f8e8efcd10e2f021a3e4da": {
       "first_seen": "2026-08-07",
       "status": "too_old"
@@ -3815,6 +3807,14 @@
     },
     "bruegel:12746": {
       "first_seen": "2026-11-27",
+      "status": "downloaded"
+    },
+    "bis:https://www.bis.org/publ/work1400.htm": {
+      "first_seen": "2026-11-28",
+      "status": "downloaded"
+    },
+    "wto:https://www.wto.org/english/news_e/news26_e/jssdr_25nov26_566_e.htm": {
+      "first_seen": "2026-11-28",
       "status": "downloaded"
     }
   }
