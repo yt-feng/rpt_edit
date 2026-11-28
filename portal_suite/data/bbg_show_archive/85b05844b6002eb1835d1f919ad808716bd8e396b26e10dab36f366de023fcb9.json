@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "id": "85b05844b6002eb1835d1f919ad808716bd8e396b26e10dab36f366de023fcb9",
+  "slug": "bbg-20261128-85b05844b6002eb1",
+  "date": "2026-11-28",
+  "title": "麦当劳AI点餐员：8秒听错单，3秒接对单，下次点餐还靠谱吗？",
+  "speaker": "Bloomberg",
+  "category": "top-videos",
+  "source_url": "https://www.bloomberg.com/news/videos/2026-11-24/mcdonald-s-bets-on-crispy-chicken-and-ai-drive-thrus",
+  "start": 0.0,
+  "end": 83.54,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 8.72,
+      "en": "By this time next year, you could be talking to AI when you pull up at a McDonald's right through. I tested Archie, McDonald's AI order taker, and one of the first US locations using it.",
+      "zh": "明年此时，你在麦当劳得来速点餐时，可能就在和AI对话。我测试了麦当劳的AI点餐员Archie，它是美国首批使用该系统的门店之一。"
+    },
+    {
+      "start": 8.72,
+      "end": 14.16,
+      "en": "The first time, it took about eight seconds to respond. Uh, yeah, my code is f***ing.",
+      "zh": "第一次，它花了大约八秒才回应。呃，是的，我的代码是……"
+    },
+    {
+      "start": 14.16,
+      "end": 25.65,
+      "en": "And I'm sure I heard that right. Could you share your code again?",
+      "zh": "我确定我听对了。你能再说一遍代码吗？"
+    },
+    {
+      "start": 25.65,
+      "end": 37.42,
+      "en": "One moment, I'll get a crew member to help me.",
+      "zh": "稍等，我找工作人员来帮忙。"
+    },
+    {
+      "start": 37.42,
+      "end": 45.42,
+      "en": "When my list visit, it answered in about three seconds. It got my order right, and felt like a real-time conversation, though it did stumble over some words.",
+      "zh": "我上次来时，它大约三秒就回答了。它准确处理了我的订单，感觉像实时对话，尽管有些词它说得不太顺。"
+    },
+    {
+      "start": 45.42,
+      "end": 51.1,
+      "en": "What can I get for you? Um, yeah, can I please get the my crispy deluxe meal, please?",
+      "zh": "您想要点什么？嗯，请给我一份脆皮豪华套餐。"
+    },
+    {
+      "start": 53.1,
+      "end": 57.98,
+      "en": "With that you merged deluxe and crispy meal? Okay, we will make that a medium.",
+      "zh": "您把豪华和脆皮套餐合并了？好的，我们做成中份。"
+    },
+    {
+      "start": 60.48,
+      "end": 63.52,
+      "en": "With that with coke? Yeah, our diet coke, please.",
+      "zh": "配可乐吗？是的，请给我们健怡可乐。"
+    },
+    {
+      "start": 66.46,
+      "end": 70.78,
+      "en": "A medium deluxe and crispy meal with a diet coke. Anything else for you today?",
+      "zh": "一份中份豪华脆皮套餐配健怡可乐。今天还要别的吗？"
+    },
+    {
+      "start": 70.78,
+      "end": 78.08,
+      "en": "Do you have the much spicy way? We do not have much spicy meals.",
+      "zh": "你们有特辣味吗？我们没有特辣套餐。"
+    },
+    {
+      "start": 78.08,
+      "end": 83.54,
+      "en": "Would you like to try our crispy strips or make nuggets instead?",
+      "zh": "您想试试我们的脆条还是换成鸡块？"
+    }
+  ]
+}
